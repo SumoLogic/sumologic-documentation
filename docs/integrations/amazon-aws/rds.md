@@ -424,38 +424,6 @@ Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. 
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/lamda-cw-logs-source-fields.png')} alt="Fields" />   
 
-### Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the `dbidentifier`, `proxyname` fields.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
-
-### Field Extraction Rule(s)
-
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilityRdsCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
-```
-
-```sumo title="Parse Expression"
-| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop 
-| where eventSource = "rds.amazonaws.com" | "aws/rds" as namespace  
-| json field=requestParameters "dBInstanceIdentifier", "resourceName", "dBClusterIdentifier", "dBProxyName" as dBInstanceIdentifier1, resourceName, dBClusterIdentifier1, dBProxyName1 nodrop 
-| json field=responseElements "dBInstanceIdentifier", "dBClusterIdentifier", "dBProxy.dBProxyName", "dBProxyTargetGroup.dBProxyName" as dBInstanceIdentifier3, dBClusterIdentifier3, dBProxyName2, dBProxyName3 nodrop
-| parse field=resourceName "arn:aws:rds:*:db:*" as f1, dBInstanceIdentifier2 nodrop 
-| parse field=resourceName "arn:aws:rds:*:cluster:*" as f1, dBClusterIdentifier2 nodrop
-| if (resourceName matches "arn:aws:rds:*:db:*", dBInstanceIdentifier2, if (!isEmpty(dBInstanceIdentifier1), dBInstanceIdentifier1, dBInstanceIdentifier3) ) as dBInstanceIdentifier 
-| if (resourceName matches "arn:aws:rds:*:cluster:*", dBClusterIdentifier2, if (!isEmpty(dBClusterIdentifier1), dBClusterIdentifier1, dBClusterIdentifier3) ) as dBClusterIdentifier 
-| if (isEmpty(dBInstanceIdentifier), dBClusterIdentifier, dBInstanceIdentifier) as dbidentifier 
-| tolowercase(dbidentifier) as dbidentifier
-| if (!isEmpty(dBProxyName1), dBProxyName1, if (!isEmpty(dBProxyName2), dBProxyName2, dBProxyName3)) as proxyname
-| tolowercase(proxyname) as proxyname
-| fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, proxyname, accountid
-```
-
 ### Centralized AWS CloudTrail log collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
@@ -479,59 +447,34 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-#### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
-
-
-```
-Rule Name: AwsObservabilityGenericCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
-Parse Expression:
-if (isEmpty(namespace),"unknown",namespace) as namespace
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace 
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace 
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace 
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace 
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace 
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace 
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname 
-| parse field=_sourceHost "/aws/rds/proxy/*" as proxyname nodrop
-| parse field=_sourceHost "/aws/rds/instance/*/" as dbidentifier nodrop
-| parse field=_sourceHost "/aws/rds/cluster/*/" as dbidentifier nodrop
-| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop 
-| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop | apiid as apiName 
-| tolowercase(dbidentifier) as dbidentifier 
-| fields namespace, functionname, proxyname, dbidentifier, apiid, apiName
-```
-
-### Metric Rules
-
-Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
-
-```sql title="Rule 1"
-Rule name: AwsObservabilityRDSClusterMetricsEntityRule
-Metric match expression: Namespace=AWS/RDS DBClusterIdentifier=*
-Variable name: dbidentifier
-Tag sequence: $DBClusterIdentifier._1
-Save it
-```
-
-```sql title="Rule 2"
-Rule name: AwsObservabilityRDSInstanceMetricsEntityRule
-Metric match expression: Namespace=AWS/RDS DBInstanceIdentifier=*
-Variable name: dbidentifier
-Tag sequence: $DBInstanceIdentifier._1
-Save it
-```
-
 ## Installing the RDS app  
 
 Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-rds-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon RDS service is aws/rds.
+- `dbidentifier` The RDS database instance identifier.
+- `dBInstanceIdentifier` The identifier of the RDS DB instance.
+- `dBClusterIdentifier` The identifier of the RDS DB cluster.
+- `proxyname` The name of the RDS Proxy.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityRDSCloudTrailLogsFER** to extract fields `region`, `namespace`, `dBInstanceIdentifier`, `dBClusterIdentifier`, `dbidentifier`, `proxyname`, and `accountid` will be created as a part of app installation.
+
+The FER **AwsObservabilityRDSCloudWatchLogsFER** to extract fields `namespace`, `dbidentifier`, and `proxyname` will be created as a part of app installation.
+
+### Metric Rules
+
+The Metric Rules **AwsObservabilityRDSClusterMetricsRule** and **AwsObservabilityRDSInstanceMetricsRule** for the aws/rds namespace will be created as a part of app installation.
 
 ## Viewing the RDS dashboards  
 
@@ -546,7 +489,7 @@ Use this dashboard to:
 * Quickly identify problems in resource utilization.
 * Monitor database performance insights such as relative CPU load, non-CPU load, and overall database load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/01.-Amazon-RDS-Overview.png' alt="Amazon RDS - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### CloudTrail Audit Events
 
@@ -558,7 +501,7 @@ Use this dashboard to:
 * Monitor the most active users working on RDS infrastructure, database engines used in the infrastructure, and various events invoked on RDS clusters.
 * Monitor requests from malicious IP addresses using Sumo Logic’s Threat Intel.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/02.-Amazon-RDS-CloudTrail-Audit-Events.png' alt="Amazon RDS - CloudTrail Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Non-Describe CloudTrail Audit Events
 
@@ -570,7 +513,7 @@ Use this dashboard to:
 * Monitor and track snapshot-related events performed on RDS instances.
 * Monitor and track changes to security groups associated with your RDS infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Non-Describe-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/03.-Amazon-RDS-Non-Describe-CloudTrail-Audit-Events.png' alt="Amazon RDS - Non-Describe CloudTrail Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Overview By Database Instance
 
@@ -580,7 +523,7 @@ Use this dashboard to:
 * Quickly identify performance or resource utilization issues in your RDS clusters.
 * Monitor resource utilization with trend panels for CPU usage, available memory, network receive and transmit throughput, read and write IOPS, available free storage, and database connections across your Amazon RDS clusters and database instances.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview-By-Database-Instance.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/01.-Amazon-RDS-Overview-By-Database-Instance.png' alt="Amazon RDS - Overview By Database Instance" style={{border: '1px solid gray'}} width="800" />
 
 ### Performance Insights   
 
@@ -591,7 +534,7 @@ Use this dashboard to:
 * Identify when the CPU is overloaded, so you can throttle connections to the instance, tune SQL queries with a high CPU load, or consider a larger instance class to remedy the situation.
 * Identify high and consistent instances of any wait state (Non-CPU Load)  that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load doesn't exceed maximum CPU.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/02.-Amazon-RDS-Performance-Insights.png' alt="Amazon RDS - Performance Insights" style={{border: '1px solid gray'}} width="800" />
 
 ### 03. Amazon RDS Aurora Generic
 
@@ -604,7 +547,7 @@ Use this dashboard to:
 * Monitor the amount of storage used to ensure monitoring costs.
 * Monitor the percentage of requests that are served by the buffer cache to identify potential performance optimizations.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/03.-Amazon-RDS-Aurora-Generic.png' alt="Amazon RDS - Aurora Generic" style={{border: '1px solid gray'}} width="800" />
 
 ### Aurora MySQL
 
@@ -617,7 +560,7 @@ Use this dashboard to:
 * Monitor replica lag between Aurora DB clusters that are replicating across different AWS Regions.
 * Monitor the number of login failures to the database for security monitoring.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/04.-Amazon-RDS-Aurora-MySQL.png' alt="Amazon RDS - Aurora MySQL" style={{border: '1px solid gray'}} width="800" />
 
 ### Aurora MySQL Global Database and BackTrack Activity
 
@@ -631,7 +574,7 @@ Use this dashboard to:
 * Monitor the amount of redo log data that is transferred from the master AWS region to secondary AWS regions.
 * Monitor the number of write I/O operations replicated from the primary AWS region to the cluster volume in a secondary AWS region in an Aurora Global Database. The billing calculations for the primary AWS region in a global database use AuroraGlobalDBReplicatedWriteIO to account for cross-region replication within the global database.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/05.-Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png' alt="Amazon RDS - Aurora MySQL Global Database and Backtrack Activity" style={{border: '1px solid gray'}} width="800" />
 
 ### MySQL Logs - Overview
 
@@ -643,7 +586,7 @@ Use this dashboard to:
 * Get the number of failed and successful DB connections.
 * Get a quick breakdown of the protocol used for database connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Overview.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/06.-Amazon-RDS-MySQL-Logs-Overview.png' alt="Amazon RDS - MySQL Logs Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### MySQL Logs - Error Logs Analysis
 
@@ -656,7 +599,7 @@ Use this dashboard to:
 * Monitor database instances starting up and being ready for connection events.
 * Monitor MySQL RDS Cluster replication events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Error-Logs-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/07.-Amazon-RDS-MySQL-Logs-Error-Logs-Analysis.png' alt="Amazon RDS - MySQL Logs Error Logs Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### MySQL Logs - Slow Query Analysis
 
@@ -670,7 +613,7 @@ Use this dashboard to:
 * Check if **SQL SELECT** type queries can be shifted to read replicas for better performance.
 * Monitor trends of slow queries and compare them with history to check if something different is happening or might have happened to decide the next step.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Slow-Query-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/08.-Amazon-RDS-MySQL-Logs-Slow-Query-Analysis.png' alt="Amazon RDS - MySQL Logs Slow Query Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### MySQL Logs - Audit Logs Analysis
 
@@ -685,7 +628,7 @@ Use this dashboard to:
 * Identify typical user management activities being performed.
 * Quickly identify objects that are dropped.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/09.-Amazon-RDS-MySQL-Logs-Audit-Log-Analysis.png' alt="Amazon RDS - MySQL Logs Audit Log Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### MySQL Logs - Audit Log SQL Statements
 
@@ -695,7 +638,7 @@ Use this dashboard to:
 * Identify the top SQL statements and commands being executed, along with trends.
 * Get details on various SQL statements/commands (DML, DDL, DCL, TCL) being executed.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-Audit-Log-SQL-Statements.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/10.-Amazon-RDS-MySQL-Logs-Audit-Log-SQL-Statements.png' alt="Amazon RDS - MySQL Logs Audit Log SQL Statements" style={{border: '1px solid gray'}} width="800" />
 
 ### MySQL Logs - General Log Analysis
 
@@ -707,7 +650,7 @@ Use this dashboard to:
 * Monitor why certain things are failing by checking what exactly the client sent to the server to execute.
 * Monitor the type of SQL statements/queries (DML, DDL, DCL, TCL, and others) being sent by the client to execute.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-General-Log-Analysis.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/11.-Amazon-RDS-MySQL-Logs-General-Log-Analysis.png' alt="Amazon RDS - MySQL Logs General Log Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### PostgreSQL Logs - Overview
 
@@ -719,7 +662,7 @@ Use this dashboard to:
 * Obtain user activity and query execution by the database.
 * Obtain the slow queries count and distribution based on user, command type, and host.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Overview.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/12.-Amazon-RDS-PostgreSQL-Logs-Overview.png' alt="Amazon RDS - PostgreSQL Logs Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### PostgreSQL Logs - Errors
 
@@ -731,7 +674,7 @@ Use this dashboard to:
 * Obtain recent and top fatal and error events.
 * Obtain recent queries running into error with the error message.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Errors.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/13.-Amazon-RDS-PostgreSQL-Logs-Errors.png' alt="Amazon RDS - PostgreSQL Logs Errors" style={{border: '1px solid gray'}} width="800" />
 
 ### PostgreSQL Logs - Slow Query Overview
 
@@ -744,7 +687,7 @@ Use this dashboard to:
 * Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
 * Obtain the time comparison between the number of slow queries and their execution time over 1 day or 1 week.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/14.-Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png' alt="Amazon RDS - PostgreSQL Logs Slow Query Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### PostgreSQL Logs - Slow Query Details
 
@@ -755,7 +698,7 @@ Use this dashboard to:
 * Obtain the frequently fired slow queries.
 * Monitor the recent DML, DDL, and TCL statements that lead to slow queries.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Details.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/15.-Amazon-RDS-PostgreSQL-Logs-Slow-Query-Details.png' alt="Amazon RDS - PostgreSQL Logs Slow Query Details" style={{border: '1px solid gray'}} width="800" />
 
 ### PostgreSQL Logs - Security
 
@@ -767,7 +710,7 @@ Use this dashboard to:
 * Monitor database shutdown and system up events.
 * Identify the default user's authentication and generic activities.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Security.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/16.-Amazon-RDS-PostgreSQL-Logs-Security.png' alt="Amazon RDS - PostgreSQL Logs Security" style={{border: '1px solid gray'}} width="800" />
 
 ### PostgreSQL Logs - Query Execution Time
 
@@ -777,7 +720,7 @@ Use this dashboard to:
 * Obtain the number of queries executed and average query execution time by database.
 * Monitor time comparison for the number of queries executed and query execution time.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Query-Execution-Time.png')} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/17.-Amazon-RDS-PostgreSQL-Logs-Query-Execution-Time.png' alt="Amazon RDS - PostgreSQL Logs Query Execution Time" style={{border: '1px solid gray'}} width="800" />
 
 ### MSSQL Logs - Error Logs - Logon Analysis
 
@@ -787,7 +730,7 @@ Use this dashboard to:
 * Identify the authentication failures along with the reason for the user and client location that are used to connect.
 * Detect logon errors, including error codes, severity levels, and states.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Logon Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/18.-Amazon-RDS-MSSQL-Logs-Error-Logs-Logon-Analysis.png' alt="Amazon RDS - MSSQL Logs Error Logs Logon Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### MSSQL Logs - Error Logs - Infrastructure Overview
 
@@ -799,7 +742,7 @@ Use this dashboard to:
 * Monitors `DBCC CHECKDB` checks.
 * Track recent terminations of SQL Server instances and monitor the creation of new databases.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/19.-Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png' alt="Amazon RDS - MSSQL Logs Error Logs Infrastructure Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Oracle Logs - Alert Logs Analysis
 
@@ -810,7 +753,7 @@ Use this dashboard to:
 * Monitor ORA and TNS message events.
 * Monitor log switch activities, archival errors, tablespace extension issues, failures, warnings, and errors occurring on the Oracle RDS instance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Alert-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/20.-Amazon-RDS-Oracle-Logs-Alert-Logs-Analysis.png' alt="Amazon RDS - Oracle Logs Alert Logs Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### Oracle Logs - Audit Logs Analysis
 
@@ -820,7 +763,7 @@ Use this dashboard to:
 * Monitor successful and failed Amazon Oracle RDS events.
 * Monitor top usage by client, database user, and privileges on the Oracle RDS instance.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Audit-Logs-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/21.-Amazon-RDS-Oracle-Logs-Audit-Logs-Analysis.png' alt="Amazon RDS - Oracle Logs Audit Logs Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Oracle Logs - Listener Troubleshooting
@@ -831,7 +774,7 @@ Use this dashboard to:
 * Monitor listener process activity on the Oracle RDS instance.
 * Monitor database connections by host and application, track connection failures, analyze command execution statuses and trends, and gather insights from the Oracle Listener log.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Oracle-Logs-Listener-Troubleshooting.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/22.-Amazon-RDS-Oracle-Logs-Listener-Troubleshooting.png' alt="Amazon RDS - Oracle Logs Listener Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 ## Viewing the RDS Proxy dashboards
 
@@ -843,7 +786,7 @@ Use this dashboard to:
 * Monitor RDS Proxy availability and connection pool usage.
 * Track client and database connection metrics, including connection limits, Latency, and usage trends, to optimize performance and troubleshoot connectivity issues.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/23.-Amazon-RDS-Proxy-Overview.png' alt="Amazon RDS - Proxy Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Proxy - Client Connection Endpoint Performance
 
@@ -855,7 +798,7 @@ Use this dashboard to:
 * Analyze connection setup latency and performance trends.
 * Gain insights into how applications interact with the database via the proxy to identify potential bottlenecks or security issues.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Client-Connection-Endpoint-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/24.-Amazon-RDS-Proxy-Client-Connection-Endpoint-Performance.png' alt="Amazon RDS - Proxy Client Connection Endpoint Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Proxy - Query Endpoint Performance
 
@@ -867,7 +810,7 @@ Use this dashboard to:
 * Analyze query response latency to identify performance issues.
 * Optimize database performance by evaluating proxy-handled query behavior.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Query-Endpoint-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/25.-Amazon-RDS-Proxy-Query-Endpoint-Performance.png' alt="Amazon RDS - Proxy Query Endpoint Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Proxy - Target Performance
 
@@ -879,7 +822,7 @@ Use this dashboard to:
 * Analyze transaction behavior and connection health.
 * Optimize performance and ensure reliable proxy-to-database interactions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/26.-Amazon-RDS-Proxy-Target-Performance.png' alt="Amazon RDS - Proxy Target Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Proxy - TargetRole Performance
 
@@ -890,7 +833,7 @@ Use this dashboard to:
 * Analyze transaction behavior and connection health.
 * Optimize performance and ensure reliable proxy-to-database interactions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Target-Role-Performance.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/27.-Amazon-RDS-Proxy-TargetRole-Performance.png' alt="Amazon RDS - Proxy TargetRole Performance" style={{border: '1px solid gray'}} width="800" />
 
 ### Proxy - Audit
 
@@ -902,7 +845,7 @@ Use this dashboard to:
 * Identify the most active proxies.
 * Gain visibility into changes and audit trail for proxy-managed database interactions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Audit.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/28.-Amazon-RDS-Proxy-Audit.png' alt="Amazon RDS - Proxy Audit" style={{border: '1px solid gray'}} width="800" />
 
 ### Proxy - Log Analysis
 
@@ -914,4 +857,48 @@ Use this dashboard to:
 * Identify authentication issues, failures, and database availability problems.
 * Troubleshoot proxy operations effectively using log insights.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Proxy-Log-Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonRDS/29.-Amazon-RDS-Proxy-Log-Analysis.png' alt="Amazon RDS - Proxy Log Analysis" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for Amazon RDS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon RDS alerts
+
+These alerts are available for the Amazon RDS app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon RDS - High CPU Utilization` | This alert fires when we detect that the average CPU utilization for a database is high (>=85%) for an interval of 5 minutes. | Percentage >= 85% | Percentage < 85% |
+| `Amazon RDS - High Disk Queue Depth` | This alert fires when the average disk queue depth for a database is high (>=5) for an interval of 5 minutes. Higher this value, higher will be the number of outstanding I/Os (read/write requests) waiting to access the disk, which will impact the performance of your application. | Count >= 5 | Count < 5 |
+| `Amazon RDS - High Read Latency` | This alert fires when the average read latency of a database within a 5 minutes time interval is high (>=5 seconds). High read latency will affect the performance of your application. | Seconds >= 5 | Seconds < 5 |
+| `Amazon RDS - High Write Latency` | This alert fires when the average write latency of a database within a 5 minute interval is high (>=5 seconds). High write latencies will affect the performance of your application. | Seconds >= 5 | Seconds < 5 |
+| `Amazon RDS - Low Aurora Buffer Cache Hit Ratio` | This alert fires when the average RDS Aurora buffer cache hit ratio within a 5 minute interval is low (&lt;= 50%). This indicates that a lower percentage of requests were served by the buffer cache, which could further indicate a degradation in application performance. | Percentage &lt;= 50% | Percentage > 50% |
+| `Amazon RDS - Low Burst Balance` | This alert fires when we observe a low burst balance (&lt;= 50%) for a given database. A low burst balance indicates you won't be able to scale up as fast for burstable database workloads on gp2 volumes. | Percentage &lt;= 50% | Percentage > 50% |
+| `Amazon RDS - Low Free Storage` | This alert fires when the average free storage space of a RDS instance is low (< 512MB) for an interval of 15 minutes. | MB < 512 | MB >= 512 |
+| `Amazon RDS - Low Freeable Memory` | This alert fires when the average Freeable memory of an RDS instance is &lt; 128 MB for an interval of 15 minutes. If this value is lower you may need to scale up to a larger instance class. | MB &lt;= 128 | MB > 128 |
+| `Amazon RDS MSSQL - Authentication failures from the same client IP on multiple databases` | This alert fires when we detect a specific client IP attempting authentication failures on more than or equal to 10 databases over a 15 minute time-period. | Count >= 1 | Count < 1 |
+| `Amazon RDS MSSQL - Database observing authentication failures from multiple client IPs` | This alert fires when we detect more than or equal to 10 client IPs attempting authentication failures on the database over a 15-minute period. | Count >= 1 | Count < 1 |
+| `Amazon RDS MySQL - Excessive Slow Query Detected` | This alert fires when we detect the average time to execute a query is more than 5 seconds over last 10 minutes. | Count >= 1 | Count < 1 |
+| `Amazon RDS MySQL - High Authentication Failure` | This alert fires when we detect more than 10 authentication failures over a 5 minute time-period. | Count > 10 | Count &lt;= 10 |
+| `Amazon RDS - Oracle Logs - DB Crash` | This alert fires when we detect greater than or equal to 1 Oracle DB crash over a 5 minute time-period. | Count >= 1 | Count < 1 |
+| `Amazon RDS - Oracle Logs - Failed Connection Attempts` | This alert fires when we detect greater than or equal to 25 failed connection attempts over a 5 minute time-period. | Count >= 25 | Count < 25 |
+| `Amazon RDS PostgreSQL - Excessive Slow Query Detected` | This alert fires when we detect the average time to execute a query is more than 5 seconds over a 10 minutes. | Count > 0 | Count &lt;= 0 |
+| `Amazon RDS PostgreSQL - High Authentication Failure` | This alert fires when we detect more than 10 authentication failures in Postgres logs over a 5 minute time-period. | Count > 10 | Count &lt;= 10 |
+| `Amazon RDS PostgreSQL - High Errors` | This alert fires when we detect high number (>10) of error/fatal logs in Postgres logs over a 5 minutes time period. | Count > 10 | Count &lt;= 10 |
+| `Amazon RDS PostgreSQL - Statement Timeouts` | This alert fires when we detect Postgres logs show statement timeouts. | Count > 0 | Count &lt;= 0 |
+| `Amazon RDS - Unencrypted RDS resources created` | This alert fires when an CreateDBCluster or CreateDBInstance CloudTrail event is detected where StorageEncrypted is not set to true, indicating an unencrypted RDS resource was created. | Count >= 1 | Count < 1 |
+
+## Upgrade/Downgrade the Amazon RDS app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon RDS app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

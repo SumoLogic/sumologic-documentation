@@ -2,6 +2,7 @@
 id: sessionize
 title: sessionize Search Operator
 sidebar_label: sessionize
+description: Use the sessionize operator to correlate log messages across multiple systems using an extracted value, creating a unified session view.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -57,3 +58,12 @@ _sourceCategory=OS/Windows
 Here's an example of the results from this query:
 
 <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/sessionize.png')} alt="Sessionize" style={{border: '1px solid gray'}} width="800" />
+
+### Correlate web request start and completion events
+
+Track how requests flow through a service by matching a request ID across start and finish log messages:
+
+```sumo
+_sourceCategory=microservices
+| sessionize "requestId=* started" as (requestId), "requestId=$requestId completed in * ms" as (duration)
+```

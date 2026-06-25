@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} alt="SailPoint logo" width="100"/>
 
-SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance. The Sumo Logic app for SailPoint helps you monitor the user events, actions, operations, failed logins, successful logins, and user activities to your applications through SailPoint. This app consists of dashboards that give you visibility into the source deletion, user events, and geo locations of authentication events.
+SailPoint is an identity management solution that helps organizations manage employee permissions, digital identities, information security, data access, and compliance. The Sumo Logic app for SailPoint provides comprehensive visibility into identity governance and administration activities, including authentication events, access requests, provisioning operations, identity lifecycle changes, privileged access monitoring, source health, and workflow automation.
 
 ## Log types
 
@@ -143,27 +143,86 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **SailPoint - Overview** dashboard provides a summary of SailPoint events, actions, operations, event trend analysis, and a summary table for all user events.
+The **SailPoint - Overview** dashboard provides a high-level operational view of SailPoint activity, including total event volume, event type distribution, operation breakdown, trends, geolocation of events, and recent event history for rapid situational awareness.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Overview.png')} alt="overview"/>
 
-### Successful Authentications
-
-The **SailPoint - Successful Authentications** dashboard provides the details of success logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentications.png')} alt="Successful Authentications"/>
-
-### Failed Authentications
-
-The **SailPoint - Failed Authentications** dashboard shows the details of failed logins such as the geolocation, country, state, failed login trends, outlier, and top 10 users.
-
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentications.png')} alt="Failed Authentications"/>
-
 ### Security
 
-The **SailPoint - Security** dashboard provides a summary of source deletion events in source management operations.
+The **SailPoint - Security** dashboard highlights critical security signals, including source deletions, identity deletions, bulk account removals, admin configuration changes, and high-risk events that may indicate unauthorized access or insider threats.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="security"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Security.png')} alt="SailPoint - Security"/>
+
+### Failed authentication events
+
+The **SailPoint - Failed Authentication Events** dashboard provides focused analysis of failed login activity by user, source, and location, with geo maps, outlier detection, and trend comparisons to identify brute-force attacks and anomalies.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Failed-Authentication-Events.png')} alt="SailPoint - Failed Authentication Events"/>
+
+### Successful authentication events
+
+The **SailPoint - Successful Authentication Events** dashboard provides analysis of successful login events by user, source, and location, with geo maps and trends to validate expected access behavior.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Successful-Authentication-Events.png')} alt="SailPoint - Successful Authentication Events"/>
+
+### Identity inventory
+
+The **SailPoint - Identity Inventory** dashboard provides visibility into the identity population including status distribution, identity state breakdown, manager relationships, department and company breakdown, and governance anomalies like inactive identities with active state or missing managers.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Identity-Inventory.png')} alt="SailPoint - Identity Inventory"/>
+
+### Identity lifecycle and governance
+
+The **SailPoint - Identity Lifecycle and Governance** dashboard monitors identity lifecycle state changes, certification campaigns, access reviews, and governance events to help ensure compliance and proper identity management.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Identity-Lifecycle-and-Governance.png')} alt="SailPoint - Identity Lifecycle and Governance"/>
+
+### Access items
+
+The **SailPoint - Access Items** dashboard provides visibility into entitlement and role event breakdowns, trends, and summaries to monitor access item changes across identities.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Access-Items.png')} alt="SailPoint - Access Items"/>
+
+### Access requests and provisioning
+
+The **SailPoint - Access Requests & Provisioning** dashboard monitors access request lifecycle, including approvals, denials, provisioning successes and failures, entitlement changes, role assignments, and account modifications.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Access-Requests-&-Provisioning.png')} alt="SailPoint - Access Requests and Provisioning"/>
+
+### Privileged access and token activity
+
+The **SailPoint - Privileged Access & Token Activity** dashboard monitors personal access token usage, capability grants, admin configuration changes, secret modifications, and other privileged operations that may indicate insider threats or compromised credentials.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Privileged-Access-&-Token-Activity.png')} alt="SailPoint - Privileged Access and Token Activity"/>
+
+### Source health and configuration
+
+The **SailPoint - Source Health & Configuration** dashboard monitors source account aggregation health, connection test results, configuration changes, and source lifecycle events to help ensure identity data collection operates reliably.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Source-Health-&-Configuration.png')} alt="SailPoint - Source Health and Configuration"/>
+
+### Workflow and automation
+
+The **SailPoint - Workflow & Automation** dashboard tracks workflow executions, automation triggers, launcher activity, and workflow failures to monitor the health and effectiveness of automated governance processes.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/SailPoint-Workflow-&-Automation.png')} alt="SailPoint - Workflow and Automation"/>
+
+## Create monitors for the SailPoint app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### SailPoint app alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `SailPoint - Brute Force Detection (>5 Failed Authentications)` | This alert is triggered when a user exceeds five failed authentication attempts. This may indicate brute-force activity, credential stuffing, or unauthorized access attempts against SailPoint accounts. | Count > 5 | Count < = 5 |
+| `SailPoint - Bulk Account Removals` | This alert is triggered when a large number of account removals occur within a short period. This may indicate unauthorized mass deprovisioning, insider threats, or compromised admin credentials used to remove access at scale. | Count > 0 | Count < = 0 |
+| `SailPoint - Events from Embargoed Locations` | This alert is triggered when SailPoint activity is observed from embargoed or high-risk countries. | Count > 0 | Count < = 0 |
+| `SailPoint - Identity Uncorrelation Events` | This alert is triggered when an identity uncorrelation event is detected in SailPoint. This may indicate unauthorized account detachment, insider threat activity, or administrative changes that could weaken identity governance controls. | Count > 0 | Count < = 0 |
+| `SailPoint - Personal Access Token Usage Spike` | This alert is triggered when an unusual spike in personal access token usage is detected. This may indicate compromised API tokens, automated attacks using stolen credentials, or insider misuse of programmatic access. | Count > 2 | Count < = 2 |
+| `SailPoint - Source Deletion Events` | This alert is triggered when an identity source is deleted from SailPoint. This may indicate data sabotage, insider threat activity, or unauthorized administrative changes that could disrupt identity governance. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the SailPoint app (Optional)
 

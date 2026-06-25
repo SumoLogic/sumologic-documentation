@@ -2,6 +2,7 @@
 id: num
 title: num Search Operator
 sidebar_label: num
+description: Use the num operator to convert a field to a double-precision floating-point number for use in numeric calculations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,7 +18,9 @@ The `num` operator converts a field to a double value (64-bit IEEE 754 double-pr
 
 * The value of the field must be a negative/positive integer or a real number. For example, 500, 123234820932, or 352.748.
 
-## Example
+## Examples
+
+### Sort scheduled searches by execution time
 
 Use this query to use num to search for Scheduled Searches, and sort them by the time it took each search to execute in seconds. Without the conversion, the results would be sorted in alphabetical order.
 
@@ -30,3 +33,14 @@ _sourceCategory=concierge completed execution
 This query produces results like this:
 
 <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/numoperator.png')} alt="num operator" style={{border: '1px solid gray'}} width="800" />
+
+### Filter results by a numeric threshold
+
+After parsing a field, use `num` to cast the value before comparing it numerically:
+
+```sumo
+_sourceCategory=Apache/Access
+| parse "bytes=*" as bytes
+| num(bytes)
+| where bytes > 100000
+```
