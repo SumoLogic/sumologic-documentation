@@ -64,7 +64,7 @@ Before pushing any commit that changes docs content:
 ### Field Requirements
 - **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
 - **Technical Area**: REQUIRED field. Must be set from allowed values. Use file paths and content keywords to determine the correct area (see `.claude/commands/jira.md` for mappings).
-- **Existing Tech Docs Link** (`customfield_10750`):
+- **Existing Tech Docs Link** (`customfield_10750`): 
   - REQUIRED when transitioning to Published status
   - MUST be populated when creating or updating tickets that touch existing articles
   - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
