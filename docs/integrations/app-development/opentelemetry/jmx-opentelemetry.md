@@ -102,6 +102,10 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
 <EnvVarOpt/>

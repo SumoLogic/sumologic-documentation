@@ -18,14 +18,14 @@ import TabItem from '@theme/TabItem';
 This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-The Sumo Logic MCP server lets MCP clients (external AI models) securely query logs, investigate Cloud SIEM insights, and manage alerts and dashboards using natural language from your IDE or chat platform.
+The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 
 <!-- when MCP goes GA: mention it can work with Dojo AI agents, add endpoints to API doc-->
 
 ## Prerequisites
 
 * **Sumo Logic Administrator role**. You'll need this to create OAuth clients. If you're unsure whether you have this role, check your [Preferences](/docs/get-started/onboarding-checklists/).
-* **Sumo Logic OAuth client credentials**. The MCP client uses [OAuth client credentials](/docs/manage/security/oauth) to authenticate with Sumo Logic. For Claude Code CLI, you'll create them during the setup steps below.
+* **Sumo Logic OAuth credentials**. The MCP client uses [OAuth credentials](/docs/manage/security/oauth) to authenticate with Sumo Logic. For Claude Code CLI, you'll create them during the setup steps below.
 * **MCP server URL for your deployment**. OAuth tokens are deployment-bound, so you must use the correct URL for your Sumo Logic deployment:
    | Deployment | MCP Server URL |
    | :--- | :--- |
@@ -44,7 +44,6 @@ The Sumo Logic MCP server lets MCP clients (external AI models) securely query l
 
 ## Known limitations
 
-* **Cursor**. Cursor requires redirect URLs starting with `cursor://`, which is not yet supported by the Sumo Logic authorization server.
 * **VS Code**. Recent VS Code releases do not work with the authorization code flow when an explicit client ID and secret are provided.
 
 :::note
@@ -215,7 +214,6 @@ Tool identifiers are subject to change during the preview period.
 
 * `List the users in my org and format as an ASCII table`
 * `Show users who have never logged in`
-* `Delete those users`
 * `List all users and their roles`
 
 ## Example workflows
@@ -351,7 +349,9 @@ Yes. MCP supports multi-tool calls within a single conversational interaction.
 
 ### How does this affect my Sumo Logic usage?
 
-This capability in closed beta requires an AI Addendum. Contact your account representative for pricing information.
+While in preview, this capability requires an AI Addendum. Contact your account representative for pricing information.
+
+MCP-triggered actions can consume Sumo Logic resources in the same way equivalent UI or API actions do. For example, if an AI client uses MCP to run a log search, that search may consume search resources.
 
 :::note
 For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) remains the preferred option.

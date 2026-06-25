@@ -162,6 +162,9 @@ Mobot is in Extended Preview and has the following known limitations.
 * Only works with data that has been ingested and is still within your retention period.
 * Large time ranges (30 or more days) or deeply nested queries may be slow, time out, or hit platform limits.
 
+**Rate limits**
+* Each user is limited to 10 prompts per day. If you have a critical need that exceeds this limit, contact your account team.
+
 **Experience**
 * Performance and latency may vary depending on query complexity.
 * Responses may not always be fully accurate or complete.
@@ -196,6 +199,10 @@ Structured logs have predefined fields, allowing Mobot to map queries directly. 
 ### Will Mobot support additional capabilities over time?
 
 Yes. Mobot is designed to be extensible. Over time, more capabilities can be added as teams across the platform contribute new features. The current preview focuses on log analysis and platform how-to guidance, with additional capabilities planned for future releases.
+
+### Are there any usage restrictions for Mobot?
+
+Preview participants are limited to 10 prompts per user per day. This limit is subject to change when we reach GA based on preview learnings.
 
 ## Feedback
 
