@@ -121,7 +121,7 @@ Ensure you have **View Views** [role capability](/docs/manage/users-roles/roles/
         * **Search Mode**. Indicates the type of search mode, such as Manual Mode or Auto Parse Mode.
         * **Run Frequency**. Displays the frequency of run to collect the data.
         * **Start Date**. Date when data was first added to the scheduled view.
-        * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](/docs/manage/views/scheduled-views/lag-time).
+        * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](/docs/manage/scheduled-views/scheduled-view-lag-time).
         * **Timezone**. The timezone used for the scheduled view's time range calculations and run schedule.
         * **Last Accessed**. The date and time the scheduled view was last queried or accessed.
         * **AutoPause Status**. Indicates whether AutoPause is enabled for the scheduled view. When enabled, the scheduled view is automatically paused if it has not been accessed within a defined period, helping reduce unnecessary data scans and costs.
