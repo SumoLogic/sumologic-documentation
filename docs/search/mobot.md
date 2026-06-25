@@ -23,6 +23,15 @@ Mobot connects you to two specialized agents:
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
+## At a glance
+
+- **What it is**: Sumo Logic's AI-powered assistant for log investigation and platform guidance.
+- **Two agents**: Query Agent (log search queries) and Knowledge Agent (how-to answers from official docs).
+- **How it works**: Ask questions in plain English; Mobot translates them into Sumo Logic queries or returns documentation-sourced answers.
+- **Response time**: Typically under 2 seconds for most queries.
+- **Compatible log types**: JSON, partial JSON, and unstructured logs with Field Extraction Rules.
+- **AI provider**: Amazon Bedrock (no customer data used for training).
+
 :::training Sumo Logic Academy
 
 import SumoAcademy from '../reuse/sumo-logic-academy.md';
@@ -48,7 +57,7 @@ Mobot is ideal for all users across your organization:
 * **Automatic source detection**. Let Mobot choose a data source based on your question, or specify one yourself.
 * **Clarifications when needed**. If your request is ambiguous, Mobot asks follow-up questions to narrow intent.
 * **Smarter error handling**. Get clear messages and actionable suggestions instead of generic errors.
-* **Dashboard-aware translations (via RAG)**. Mobot learns from dashboards opened in your org in the last 90 days to better understand your intent and data structure.
+* **Dashboard-aware translations (via RAG, Retrieval-Augmented Generation)**. Mobot learns from dashboards opened in your org in the last 90 days to better understand your intent and data structure.
 * **Integrated workflow**. See your prompts, refinements, queries, and results all in one interface, with the ability to branch or revisit past conversations.
 
 ## Getting started
@@ -398,7 +407,7 @@ If you're on a [tiered pricing](/docs/manage/partitions/data-tiers/searching-dat
 
 ## Knowledge Agent
 
-Select **Knowledge Agent** to get help using Sumo Logic. Ask questions and get clear, accurate answers without leaving your workflow.
+Knowledge Agent is Sumo Logic's in-platform assistant for learning how to use the product. Ask how-to questions and get answers sourced directly from official Sumo Logic documentation.
 
 <img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
 
@@ -442,7 +451,7 @@ To get the most accurate answers, try the following when asking questions:
 * **Follow up naturally**. If the initial answer is close but not quite right, ask follow-up questions like "What about for Azure instead of AWS?"
 * **Reference specific features**. Use proper names when you know them: "How do I use Field Extraction Rules?" works better than "How do I extract fields?"
 
-## Security and compliance
+## How does Mobot handle security and compliance?
 
 Sumo Logic Mobot leverages foundational models provided by Amazon Bedrock, inheriting their robust compliance and security posture. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
