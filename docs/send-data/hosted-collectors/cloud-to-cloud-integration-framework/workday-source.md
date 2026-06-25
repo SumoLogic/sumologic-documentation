@@ -43,30 +43,69 @@ By default, the collection starts from the current date and time, but this setti
 
 This section demonstrates how to configure the Workday portal to integrate with Sumo Logic’s collection scripts. Configuring the Workday portal involves the following steps:
 
-#### Step 1: Register the API client
+:::note
+The tasks mentioned in the steps below can be accessed via the **Search Box** on the Workday Portal home page.
+:::
 
-1. To register the API client, access the **Register API Client** **for Integrations** task, and provide the following parameters:
+#### Step 1: Create an Integration System User
+
+1. Access the **Create Integration System User** task and provide the following parameters:
+    * **User Name**. SumoLogic_ISU
+    * **New Password** and **New Password Verify**. Enter a password.
+    * **Do Not Allow UI Sessions**. Select the check box.
+    * **Session Timeout Minutes**. 0 (disables session expiration).
+1. Click **OK**.
+1. Exempt the created user from the password expiration rule:
+    1. Access the **Maintain Password Rules** task.
+    1. Add the user to **System Users exempt from password expiration**.
+
+#### Step 2: Create a Security Group
+
+1. Access the **Create Security Group** task and provide the following parameters:
+    * **Type of Tenanted Security Group**. Integration System Security Group (Unconstrained)
+    * **Name**. SumoLogic Client Security Group
+1. Click **OK**.
+1. In the **Edit Integration System Security Group (Unconstrained)** window, provide the following parameters:
+    * **Integration System Users**. SumoLogic_ISU
+    * **Comment** (Optional). Provide a short description.
+1. Click **OK**.
+1. To attach the security group to a domain, access the **View Domain** task for the domain **System Auditing**.
+1. Select **Domain > Edit Security Policy Permissions** from the **System Auditing** related **Actions** menu.
+1. Add the **SumoLogic Client Security Group** you created to both tables:
+    * **Report/Task Permissions table**. View access.
+    * **Integration Permissions table**. Get access.
+1. Click **OK**.
+1. To apply policy changes, access the **Activate Pending Security Policy Changes** task and activate the changes you made.
+1. Click **OK**.
+
+:::important
+Both **View** and **Get** access are required on the **System Auditing** domain. If only Get access is granted, the Activity Logs API returns a `403 permission denied` error.
+:::
+
+#### Step 3: Register the API client
+
+1. Access the **Register API Client for Integrations** task and provide the following parameters:
     * **Client Name.** Sumo Logic Workday Collector
     * **Non-Expiring Refresh Tokens.** Yes
     * **Scope.** System, Integration, and Tenant Non-Configurable scopes are *required*.
-2. Click **OK**.
-3. Copy the **Client Secret** and **Client ID** before you navigate away from the page and store it securely. If you lose the **Client Secret**, you can generate a new one using the **Generate New API Client Secret** task.
-4. Click **Done**.
-5. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
+1. Click **OK**.
+1. Copy the **Client Secret** and **Client ID** before you navigate away from the page and store it securely. If you lose the **Client Secret**, you can generate a new one using the **Generate New API Client Secret** task.
+1. Click **Done**.
+1. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
     * **Workday REST API Endpoint.** The endpoint to use for access to the resources in your tenant.
     * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure an authorization code grant).
-6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action button.
-7. In the new pop up window, click **API Client > Manage Refresh Token for Integrations**.
-8. In the **Manage Refresh Token for Integrations** window, select **“SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
-9. In the newly opened window, select the **Generate New Refresh Token** checkbox and click **OK**.
-10. Copy the value of the **Refresh Token** column from the opened window and click **Done**.
+1. Go to the **API Clients for Integrations** tab, hover on the **”Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action button.
+1. In the new pop up window, click **API Client > Manage Refresh Token for Integrations**.
+1. In the **Manage Refresh Token for Integrations** window, select **”SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
+1. In the newly opened window, select the **Generate New Refresh Token** check box and click **OK**.
+1. Copy the value of the **Refresh Token** column from the opened window and click **Done**.
 
-#### Step 2: Enable your tenant to send data
+#### Step 4: Enable your tenant to send data
 
-1. To enable your Tenant to send data, access the **Edit Tenant Setup - System** task and ensure that the **Enable User Activity Logging** checkbox is selected.
-2. Access the **Edit Tenant Setup - Security** task and ensure that the **OAuth 2.0 Clients Enabled** checkbox is selected.
+1. To enable your tenant to send data, access the **Edit Tenant Setup - System** task and ensure that the **Enable User Activity Logging** check box is selected.
+1. Access the **Edit Tenant Setup - Security** task and ensure that the **OAuth 2.0 Clients Enabled** check box is selected.
 
-#### Step 3: Create a Custom sign on report
+#### Step 5: Create a custom sign-on report
 
 For customers that do not make use of the Recruiting Functional Area, the standard Candidate Signon report may not be available. The alternative is to create a new custom report with **Data Source = “All System Account Signons”** and **Data Source Filter** = **“Workday System Account Signons in Range”**. You can configure the fields using [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
 
@@ -96,7 +135,7 @@ For customers that do not make use of the Recruiting Functional Area, the standa
 
 ### Source configuration
 
-When you create a Citrix Cloud Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Workday Source, follow the steps below:
 
@@ -109,12 +148,12 @@ To configure a Workday Source, follow the steps below:
 7. **Fields** (Optional). Click the **+Add** field link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
-8. **Client ID**. Paste the Client ID copied from vendor configuration [Step 1](#step-1-register-the-api-client).
-9. **Client Secret**. Paste the Client Secret copied from [Step 1](#step-1-register-the-api-client).
-10. **Refresh Token URL**. Paste the Token endpoint copied from [Step 1](#step-1-register-the-api-client).
-11. **Refresh Token**. Paste the generated Refresh Token copied from [Step 1](#step-1-register-the-api-client).
-12. **SignOn Report URL**. Paste the SignOn Report URL from the vendor configuration [Step 3](#step-3-create-a-custom-sign-on-report).
-13. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1](#step-1-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
+8. **Client ID**. Paste the Client ID copied from vendor configuration [Step 3](#step-3-register-the-api-client).
+9. **Client Secret**. Paste the Client Secret copied from [Step 3](#step-3-register-the-api-client).
+10. **Refresh Token URL**. Paste the Token endpoint copied from [Step 3](#step-3-register-the-api-client).
+11. **Refresh Token**. Paste the generated Refresh Token copied from [Step 3](#step-3-register-the-api-client).
+12. **SignOn Report URL**. Paste the SignOn Report URL from the vendor configuration [Step 5](#step-5-create-a-custom-sign-on-report).
+13. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 3](#step-3-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
 14. **Collection Should begin** (Optional). Select the time range for how far back you want this source to start collecting data from Workday. This is set to **24 Hours ago** by default.
     :::note
       <CollBegin/>
@@ -203,13 +242,15 @@ To resolve this, provide the correct "tenant name".
 
 To resolve this:
 1. Provide the correct "client id" and "client secret".
-1. Enable the **The OAuth 2.0 Clients Enabled** checkbox. Refer to the **Workday App > OAuth 2.0 Clients Enabled** section described in [Step 2](#step-2-enable-your-tenant-to-send-data).
+1. Enable the **OAuth 2.0 Clients Enabled** check box. Refer to the **Workday App > OAuth 2.0 Clients Enabled** section described in [Step 4](#step-4-enable-your-tenant-to-send-data).
 
 #### Error 403 | Forbidden: permission denied
-- Token will be generated successfully in this case but Activity Logs API will return 403 forbidden error.
-- This is due to `System scope` is not provided to the API client.
+- Token is generated successfully but the Activity Logs API returns a 403 forbidden error.
+- This can occur when the `System` scope is not provided to the API client, or when the security group is missing the required domain security policy permissions.
 
-To resolve this, enable the `System scope`. Refer to the **Workday App > API Client** section described in [Step 1](#step-1-register-the-api-client).
+To resolve this:
+1. Ensure that the `System` scope is enabled for the API client. Refer to [Step 3](#step-3-register-the-api-client).
+1. Ensure that the security group has both **View** access (in the Report/Task Permissions table) and **Get** access (in the Integration Permissions table) on the **System Auditing** domain. Refer to [Step 2](#step-2-create-a-security-group).
 
 #### Error 404 |  Not Found: invalid_request
 - An invalid path parameter is provided in the token URL. For example, `/oauth/` instead of `/oauth2/`.
@@ -230,7 +271,7 @@ To resolve this, provide the correct "tenant name" and "hostname".
 #### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
 - Custom sign on report is not created as per the instructions
 
-To resolve this, [create a custom sign on report](#step-3-create-a-custom-sign-on-report) and configure the source accordingly.
+To resolve this, [create a custom sign-on report](#step-5-create-a-custom-sign-on-report) and configure the source accordingly.
 
 ## FAQ
 
