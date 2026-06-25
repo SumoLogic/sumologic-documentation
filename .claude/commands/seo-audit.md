@@ -28,8 +28,10 @@ Use the Read tool to read the complete file content including frontmatter.
 
 **Frontmatter**
 
-* [ ] `title` is under 60 characters — **Critical** if over 60
+* [ ] `title` present
+* [ ] `title` is under 60 characters — **Critical** if missing or over 60
 * [ ] `title` includes the primary keyword or product/feature name
+* [ ] `description` present — **Critical** if missing
 * [ ] `description` is 140–160 characters — **Warning** if shorter than 100 or longer than 160
 * [ ] `description` leads with an action verb or product name (not "This page" or "This doc")
 * [ ] `keywords` field present with 3–5 relevant terms — **Suggestion** if missing
@@ -37,6 +39,7 @@ Use the Read tool to read the complete file content including frontmatter.
 
 **Headings**
 
+* [ ] No H1 in body — title frontmatter generates H1; a second H1 breaks SEO — **Critical** if present
 * [ ] At least 2 H2 headings for pages over 500 words — **Suggestion** if none
 * [ ] No duplicate headings at the same level — **Warning** if duplicated
 * [ ] Headings are under 60 characters — **Suggestion** if over
