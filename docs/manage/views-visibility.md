@@ -80,7 +80,7 @@ For scheduled view query requirements, see [Scheduled Views Best Practices and E
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**.
 1. Click **+ Add View**. <br/><img src={useBaseUrl('/img/views/view-page-add-new.png')} alt="view-page" style={{border:'1px solid gray'}} width="800"/>
 1. Enter the following fields to create the scheduled view:
-    1. **Name**. Enter a name for the view. You will use this name in queries to search the view, so use a name that is descriptive and easy to remember. Names can contain alphanumeric characters; underscores (`_`) are the only special characters allowed. View names can only have (A-Z, a-z, 0-9), $, and _ after the first letter.
+    1. **Name**. Enter a name for the view. You will use this name in queries to search the view, so use a name that is descriptive and easy to remember. Names can contain alphanumeric characters; underscores (`_`) are the only special characters allowed.
     1. **Query**. Enter the full query that encompasses the data you would like indexed in the view. Parse operators and most search operators are supported in views.
     1. **Start Date**. Click the date that you would like to use as the start time of the index. All data from that point forward will be indexed in the scheduled view. The oldest selectable date represents the end of the retention period of your Sumo Logic account.
         :::note
