@@ -43,7 +43,7 @@ SumoLogic Lambda Extension is available in the following AWS regions:
 - us-west-1 (N. California)
 - us-west-2 (Oregon)
 - ca-west-1 (Calgary)
-- eusc-de-east-1 (Germany)
+- eusc-de-east-1 (AWS European Sovereign Cloud)
 
 ## AWS Lambda Supported Runtimes
 
