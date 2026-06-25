@@ -72,7 +72,7 @@ To explore data sources for a view:
 ## How to add a Scheduled View
 
 :::important
-To create a scheduled view, you must be an admin or have the Manage Scheduled Views [role capability](/docs/manage/users-roles/roles/role-capabilities/).
+To create a scheduled view, you must be an admin or have the Manage Views [role capability](/docs/manage/users-roles/roles/role-capabilities/).
 :::
 
 For scheduled view query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/views/scheduled-views/best-practices).
