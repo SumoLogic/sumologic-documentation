@@ -47,7 +47,7 @@ The **Views** page tracks three types of data sources:
 
 | Data Source | Description |
 |:--|:--|
-| [**Scheduled Views**](/docs/manage/views/scheduled-views/) | Predefined views that run on a schedule and store aggregated query results to an index. This is the default selection when you open the **Views** page. |
+| [**Scheduled Views**](/docs/manage/scheduled-views/) | Predefined views that run on a schedule and store aggregated query results to an index. This is the default selection when you open the **Views** page. |
 | [**Scheduled Searches**](/docs/alerts/scheduled-searches/) | Saved searches configured to run at a specified frequency and save results to a view via notifications. |
 | **Ad Hoc Searches** | Arbitrary queries run using the `save` view operator that write results to a view. Tracking for ad hoc searches is available from April 2026 onwards. Data written before this date may not be fully traceable. |
 
