@@ -217,9 +217,9 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 
 | Metric | Description |
 |:--|:--|
-| **ProvisionedConcurrentExecutions**      | Concurrent Executions using Provisioned Concurrency |
-| **ProvisionedConcurrencyUtilization**    | Fraction of Provisioned Concurrency in use         |
-| **ProvisionedConcurrencyInvocations**    | Number of Invocations using Provisioned Concurrency |
+| **ProvisionedConcurrentExecutions** | Concurrent Executions using Provisioned Concurrency |
+| **ProvisionedConcurrencyUtilization** | Fraction of Provisioned Concurrency in use |
+| **ProvisionedConcurrencyInvocations** | Number of Invocations using Provisioned Concurrency |
 | **ProvisionedConcurrencySpilloverInvocations** | Number of Invocations that are above Provisioned Concurrency |
 
 These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metrics-queries), as shown in the following example:
@@ -238,7 +238,7 @@ Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_crea
 
 #### Parse Expression
 
-Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like:
 
 ```sumo
 | json "recipientAccountId"
