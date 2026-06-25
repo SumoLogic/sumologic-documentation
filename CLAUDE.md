@@ -49,6 +49,8 @@ See `.claude/skills/pr-template-guide/SKILL.md` for examples and guidance.
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if "accept edits" is enabled. Always ask first.
 
+**Branch naming**: Branch names must always be the Jira ticket number only (e.g., `DOCS-1697`). No additional description.
+
 Before merging any PR, provide the user with the commit description and wait for explicit approval.
 
 Before pushing any commit that changes docs content:
@@ -62,7 +64,7 @@ Before pushing any commit that changes docs content:
 ### Field Requirements
 - **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
 - **Technical Area**: REQUIRED field. Must be set from allowed values. Use file paths and content keywords to determine the correct area (see `.claude/commands/jira.md` for mappings).
-- **Existing Tech Docs Link** (`customfield_10750`): 
+- **Existing Tech Docs Link** (`customfield_10750`):
   - REQUIRED when transitioning to Published status
   - MUST be populated when creating or updating tickets that touch existing articles
   - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
