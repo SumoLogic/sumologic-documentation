@@ -102,7 +102,7 @@ Once created, scheduled views are updated once per minute.
 The page has information about viewing information about the views/indexes configured for your organization.
 
 :::note
-Ensure you have **View Scheduled Views** [role capability](/docs/manage/users-roles/roles/role-capabilities/) to view information about scheduled views.
+Ensure you have **View Views** [role capability](/docs/manage/users-roles/roles/role-capabilities/) to view information about scheduled views.
 :::
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Views**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Views**. You can also click the **Go To...** menu at the top of the screen and select **Views**.
