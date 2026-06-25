@@ -1,17 +1,17 @@
 .aiTools {
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
-  padding: 12px 14px;
+  padding: 10px 12px;
   margin-bottom: 16px;
 }
 
 .header {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-600);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .action {
@@ -23,7 +23,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--ifm-color-emphasis-800);
   text-decoration: none;
   text-align: left;
@@ -38,4 +38,10 @@
 .action:disabled {
   opacity: 0.6;
   cursor: default;
+}
+
+.icon {
+  flex: 0 0 14px;
+  height: 14px;
+  width: 14px;
 }
