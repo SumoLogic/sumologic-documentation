@@ -2,11 +2,11 @@
 id: manage-orgs-for-mssps
 title: Manage Organizations for MSSPs
 sidebar_label: Manage Orgs for MSSPs
-description: Learn how to manage organizational Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs).
+description: Learn how to manage features, Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs).
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to manage Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
+This article describes how to manage features, Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
 
 ## Considerations
 
@@ -26,6 +26,38 @@ If you are logged in to a parent organization with child organizations that also
 This multi-insights list page (also known as a "federated" page) shows insights just as in a normal insights list page. When you click an insight on the page, you are automatically signed in to the child organization (if SSO is enabled for the child organization), and the insight's details open in the child organization's UI. You can also use the board view on the multi-insights page to move insights to different statuses.
 
 To be able to see insights in child organizations, add child organizations that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
+
+## Manage features
+
+As an MSSP administrator, you can manage feature availability for your child organizations directly from the Organizations UI. This allows you to opt in or opt out individual child organizations from specific Sumo Logic features without needing to contact Sumo Logic support.
+
+Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
+
+- **Opt-in**. You can explicitly enable them for one or more child organizations.
+- **Opt-out**. You can disable them for child organizations that do not require them.
+
+Some features include sub-features. You can expand a top-level feature to manage its sub-features individually.
+
+:::note
+You can apply changes to multiple child organizations in a single action.
+:::
+
+### Opt in a child organization to a feature
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
+1. Click the child organization you want to manage. A details pane opens on the right.
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll-down the details pane to the **Features** section and select **Manage Features**. <br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="Manage Features Button" style={{border: '1px solid gray'}} width="400"/>
+1. In the **Manage Features** panel, toggle next to the feature you want to enable.<br/><img src={useBaseUrl('img/manage/subscriptions/select-features.png')} alt="Select Features" style={{border: '1px solid gray'}} width="400"/>
+   - To manage sub-features, click the feature name to expand it and select the desired sub-features.
+1. Click **Save Changes** button to apply your changes.
+
+### Opt out a child organization from a feature
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
+1. Click the child organization you want to manage. A details pane opens on the right.
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll-down the details pane to the **Features** section and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="Manage Features Button" style={{border: '1px solid gray'}} width="400"/>
+1. In the **Manage Features** panel, toggle next to the feature you want to disable.<br/><img src={useBaseUrl('img/manage/subscriptions/de-select-features.png')} alt="De-select Features Button" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Save Changes** button to apply your changes.
 
 ## Manage content
 
