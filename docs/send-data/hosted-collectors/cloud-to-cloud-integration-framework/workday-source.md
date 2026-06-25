@@ -19,7 +19,7 @@ Workday is a cloud-based enterprise resource planning (ERP) system that enables 
 The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 
 :::note
-Upgrade the Workday source to the latest version 3.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+Upgrade the Workday source to the latest version 3.x.x for a seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
 :::
 
 ## Data collected
@@ -33,7 +33,7 @@ Upgrade the Workday source to the latest version 3.x.x for seamless data collect
 
 ### Prerequisite
 
-These instructions assume that the Security Administrator, System Auditor, and Report Administrator security groups are assigned to the user who will be configuring data collection in the Workday portal. Make sure the account used does not belong to an employee otherwise custom reports created by the user may no longer be available when they leave the organization.
+These instructions assume that the Security Administrator, System Auditor, and Report Administrator security groups are assigned to the user who will be configuring data collection in the Workday portal. Make sure the account used does not belong to an employee. Otherwise, custom reports created by the user may no longer be available when they leave the organization.
 
 Sumo Logic collects logs from Workday via a script that calls the Workday APIs. As part of the script configuration, you need to first configure log types that need to be collected, and these logs are then forwarded to Sumo Logic’s HTTPS source.
 
@@ -89,12 +89,12 @@ Both **View** and **Get** access are required on the **System Auditing** domain.
     * **Non-Expiring Refresh Tokens.** Yes
     * **Scope.** System, Integration, and Tenant Non-Configurable scopes are *required*.
 1. Click **OK**.
-1. Copy the **Client Secret** and **Client ID** before you navigate away from the page and store it securely. If you lose the **Client Secret**, you can generate a new one using the **Generate New API Client Secret** task.
+1. Copy the **Client Secret** and **Client ID** before you navigate away from the page and store them securely. If you lose the **Client Secret**, you can generate a new one using the **Generate New API Client Secret** task.
 1. Click **Done**.
-1. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
+1. To generate a refresh token, access the **View API Clients** task and copy the two parameters below from the top of the page:
     * **Workday REST API Endpoint.** The endpoint to use for access to the resources in your tenant.
     * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure an authorization code grant).
-1. Go to the **API Clients for Integrations** tab, hover on the **”Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action button.
+1. Go to the **API Clients for Integrations** tab, hover on the **"Sumo Logic Workday Collector API"** client, and click on the three-dot kebab action button.
 1. In the new pop up window, click **API Client > Manage Refresh Token for Integrations**.
 1. In the **Manage Refresh Token for Integrations** window, select **”SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
 1. In the newly opened window, select the **Generate New Refresh Token** check box and click **OK**.
@@ -109,10 +109,10 @@ Both **View** and **Get** access are required on the **System Auditing** domain.
 
 For customers that do not make use of the Recruiting Functional Area, the standard Candidate Signon report may not be available. The alternative is to create a new custom report with **Data Source = “All System Account Signons”** and **Data Source Filter** = **“Workday System Account Signons in Range”**. You can configure the fields using [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
 
-1. Go to **Copy Standard Report to Custom Report** task to create a Customs SignOn Report.
+1. Go to the **Copy Standard Report to Custom Report** task to create a Customs SignOn Report.
 2. Select **Candidate Signons and Attempted Signons** in **Standard Report** **Name** dropdown and click **OK**.
 3. In the new window, select **Optimized for Performance** checkbox, edit the report **Name** to **Custom Signons and Attempted Signons Report** and click **OK**.
-4. In the next window, edit the **Data Source Filter** field and select **Workday System Account Signons in Range** filter.
+4. In the next window, edit the **Data Source Filter** field and select the **Workday System Account Signons in Range** filter.
 5. Go to the **Columns** tab and click the **+** button to add the following new fields:
     * Operating System
     * Password Changed
@@ -124,7 +124,7 @@ For customers that do not make use of the Recruiting Functional Area, the standa
     * UI Client Type
     * Browser Type
     * Device is Trusted
-6. Remove the text in the **Column Heading Override** column, for **Field > Session ID** and **Field > System Account**. After configuring all the fields you can verify all the fields using the [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
+6. Remove the text in the **Column Heading Override** column, for **Field > Session ID** and **Field > System Account**. After configuring all the fields, you can verify all the fields using the [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
 7. If you're configuring Workday Source, go to the **Prompts** tab and look for the **Do Not Prompt at Runtime** column under the **Prompts Defaults** table. Make sure that checkboxes are disabled for the **From_Moment** and **To_Moment** rows.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Workday-SignOn-Report-Prompts-Tab.png')} alt="workday custom sign-on report prompt tab" style={{border: '1px solid gray'}} />
 8. Go to the **Advanced** tab and click the **Enable As Web Service** checkbox under **Web Service Options**.
 9. Go to the **Share** tab, enable **Share with specific users and groups** option, add **SumoLogic_ISU** in the **Authorized Users** field, and click **OK**.
@@ -139,13 +139,13 @@ When you create a Workday Source, you add it to a Hosted Collector. Before creat
 
 To configure a Workday Source, follow the steps below:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select for and select **Workday**.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The **description** is optional.
 5. For **Source Category** (Optional), enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata/) is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
-7. **Fields** (Optional). Click the **+Add** field link to define the fields you want to associate. Each field needs a name (key) and value.
+7. **Fields** (Optional). Click the **+Add** field link to define the fields you want to associate. Each field needs a name (key) and a value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 8. **Client ID**. Paste the Client ID copied from vendor configuration [Step 3](#step-3-register-the-api-client).
@@ -168,7 +168,7 @@ After configuring the Workday source, consider installing the Sumo Logic app for
 ## Metadata fields
 
 | Field | Value | Description |
-| :--- | :--- | :--- |
+|:--|:--|:--|
 | `_siemVendor` | `Workday` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Workday` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
@@ -194,7 +194,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | clientID | String  | Yes | `null` | A client ID from the Workday API client. |  |
 | clientSecret | String  | Yes | `null` | A client secret from the Workday API client. |  |
-| refreshTokenURL | String | Yes | `null` | The URL which will be used to fetch access token. |  |
+| refreshTokenURL | String | Yes | `null` | The URL which will be used to fetch the access token. |  |
 | refreshToken | String | Yes | `null` |  A non-expiring refresh token from the Workday API client. |  |
 | signOnReportURL | String | Yes | `null` | The URL which will be used to fetch sign-on activity logs. |  |
 | restApiURL  | String | Yes | `null` | The URL which will be used to fetch activity logs. |  |
@@ -226,7 +226,7 @@ The following section details how you can resolve various errors.
 
 #### Error 400 | Bad Request: invalid_grant
 - An invalid or expired refresh token is provided.
-- Existing token is deleted or a new one is generated hence making the existing one invalid.
+- Existing token is deleted, or a new one is generated, hence making the existing one invalid.
 
 To resolve this, generate a new refresh token and update the C2C configuration.
 
@@ -236,7 +236,7 @@ To resolve this, generate a new refresh token and update the C2C configuration.
 To resolve this, provide the correct "tenant name".
 
 #### Error 401 | Unauthorized: invalid_client
-- Invalid client id or client secret is provided.
+- An invalid client ID or client secret is provided.
 - A new client secret is generated, making the existing one invalid.
 - The **OAuth 2.0 Clients Enabled** checkbox under the **Edit Tenant Setup - Security** task is disabled.
 
@@ -245,7 +245,7 @@ To resolve this:
 1. Enable the **OAuth 2.0 Clients Enabled** check box. Refer to the **Workday App > OAuth 2.0 Clients Enabled** section described in [Step 4](#step-4-enable-your-tenant-to-send-data).
 
 #### Error 403 | Forbidden: permission denied
-- Token is generated successfully but the Activity Logs API returns a 403 forbidden error.
+- Token is generated successfully, but the Activity Logs API returns a 403 forbidden error.
 - This can occur when the `System` scope is not provided to the API client, or when the security group is missing the required domain security policy permissions.
 
 To resolve this:
@@ -268,8 +268,8 @@ To resolve this, provide the correct "Activity Logs URL".
 
 To resolve this, provide the correct "tenant name" and "hostname".
 
-#### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
-- Custom sign on report is not created as per the instructions
+#### Error | received sign-on report log time outside time filter window. Create a custom sign on the report as per the setup instructions
+- The custom sign-on report is not created as per the instructions
 
 To resolve this, [create a custom sign-on report](#step-5-create-a-custom-sign-on-report) and configure the source accordingly.
 
