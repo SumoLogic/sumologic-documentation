@@ -512,9 +512,7 @@ export default function AskAiSidepanel({
           <div className="ask-ai-header-shortcuts">
             <button
               type="button"
-              className={`ask-ai-shortcut-button ${
-                !isHistoryOpen ? 'is-active' : ''
-              }`}
+              className="ask-ai-shortcut-button"
               aria-label="Start a new conversation"
               title="Start a new conversation"
               onClick={handleNewConversation}
@@ -541,8 +539,8 @@ export default function AskAiSidepanel({
               className={`ask-ai-shortcut-button ${
                 isHistoryOpen ? 'is-active' : ''
               }`}
-              aria-label="Conversation history"
-              title="Conversation history"
+              aria-label="My conversation history"
+              title="My conversation history"
               onClick={handleConversationHistory}
             >
               <svg
