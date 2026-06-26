@@ -16,14 +16,16 @@ The Amazon ElastiCache dashboards provide visibility into key event and performa
 ## Log and metric types  
 
 The Amazon ElastiCache app uses the following logs and metrics:
+* [Amazon ElastiCache CloudTrail Logs](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 * [Amazon ElastiCache Host-Level Metrics for individual cache nodes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
-* [Amazon ElastiCache Cache Engine metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.Redis.html)
-* [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
-
+* [Amazon ElastiCache Cache Engine Metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.Redis.html)
 
 ### Sample log messages
 
-```json title="Sample CloudTrail Log Message"
+<details>
+<summary>Sample CloudTrail Log Message</summary>
+
+```json
 {
 	"eventVersion":"1.05",
 	"userIdentity":{
@@ -72,7 +74,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 	"recipientAccountId":"123456789038"
 }
 ```
-
+</details>
 
 ### Sample queries
 
@@ -111,7 +113,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect Amazon CloudWatch metrics
+### Collect Amazon ElastiCache CloudWatch metrics
 
 Sumo Logic supports collecting metrics using one of the following source types:
 
@@ -187,7 +189,9 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-As part of the app installation process, the following fields will be created by default:
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
 
 - `account` Name / alias to the AWS account.
 - `accountid` AWS account id.
@@ -195,7 +199,7 @@ As part of the app installation process, the following fields will be created by
 - `namespace` Namespace for Amazon ElastiCache service is AWS/ElastiCache.
 - `cacheclusterid` A cache cluster ID is a user-supplied, unique name used to identify and manage an Amazon ElastiCache cluster.
 
-### Field Extraction Rule(s)
+#### Field Extraction Rule(s)
 
 The FER **AwsObservabilityElastiCacheCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `cacheclusterid` will be created as a part of app installation.
 

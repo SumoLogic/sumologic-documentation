@@ -13,23 +13,26 @@ AWS API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSoc
 
 The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
-## Log and metrics types
+## Log and metric types
 
 The AWS API Gateway app uses the following logs and metrics:
 
-* Amazon API Gateway metrics:
-  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
-  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
-  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
-* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+* [Amazon API Gateway CloudTrail Logs](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 * Amazon API Gateway access logs:
   * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
   * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
   * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+* Amazon API Gateway Metrics:
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 
 ### Sample log messages
 
-```json title="Sample CloudTrail Log Message"
+<details>
+<summary>Sample CloudTrail Log Message</summary>
+
+```json
 {
    "eventVersion":"1.05",
    "userIdentity":{
@@ -71,8 +74,12 @@ The AWS API Gateway app uses the following logs and metrics:
    "recipientAccountId":"123408221234"
 }
 ```
+</details>
 
-```json title="Sample Access Log Message"
+<details>
+<summary>Sample Access Log Message</summary>
+
+```json
 {
   "requestId": "bf04adbf-eacc-4601-8c14-94605f242e1a",
   "extendedRequestId": "Sca3bFUQgi0EYeA=",
@@ -128,6 +135,7 @@ The AWS API Gateway app uses the following logs and metrics:
   "wafStatus": "200"
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -259,7 +267,10 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_REST_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
-      ```json title="JSON Log Format for REST API"
+   <details>
+   <summary>JSON Log Format for REST API</summary>
+
+      ```json
       {
          "accountId": "$context.accountId",
          "requestId": "$context.requestId",
@@ -325,12 +336,15 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
          "webaclArn": "$context.webaclArn"
       }
       ```
-
+   </details>
    * Enable Access logs for HTTP APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html#http-api-enable-logging) and  when you specify the `Log format` field use the below JSON.
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_HTTP_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
-      ```json title="JSON Log Format for HTTP API"
+   <details>
+   <summary>JSON Log Format for HTTP API</summary>
+
+      ```json
       {
          "requestId": "$context.requestId",
          "extendedRequestId": "$context.extendedRequestId",
@@ -386,12 +400,16 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
          "stage": "$context.stage"
       }
       ```
+   </details>
 
    * Enable Access logs for WebSocket APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-using-console) and  when you specify the `Log format` field use the below JSON.
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_WebSocket_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
-      ```json title="JSON Log Format for WebSocket API"
+   <details>
+   <summary>JSON Log Format for WebSocket API</summary>
+
+      ```json
       {
          "apiId": "$context.apiId",
          "authorizeError": "$context.authorize.error",
@@ -446,10 +464,15 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
          "wafStatus": "$context.waf.status"
       }
       ```
+   </details>
 
 5. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 
 ### Collect AWS API Gateway CloudTrail logs
+
+:::note
+CloudTrail data events will be collected under this source.
+:::
 
 #### Prerequisites
 
@@ -504,7 +527,9 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-As part of the app installation process, the following fields will be created by default:
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
 
 - `account` Name / alias to the AWS account.
 - `accountid` AWS account id.
@@ -513,7 +538,7 @@ As part of the app installation process, the following fields will be created by
 - `apiname` API Gateway API name.
 - `apiid` API Gateway API id.
 
-### Field Extraction Rule(s)
+#### Field Extraction Rule(s)
 
 The FER **AwsObservabilityAPIGatewayCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `apiname` from CloudTrail logs will be created as a part of app installation.
 
@@ -521,7 +546,7 @@ The FER **AwsObservabilityAPIGatewayAccessLogsFER** to extract fields `namespace
 
 The FER **AwsObservabilityAPIGatewayCloudWatchLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from CloudWatch logs will be created as a part of app installation.
 
-### Metric Rule(s)
+#### Metric Rule(s)
 
 The Metric Rule **AwsObservabilityAPIGatewayMetricsRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
 

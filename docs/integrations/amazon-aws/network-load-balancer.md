@@ -12,14 +12,95 @@ AWS Network Load Balancer service is distributed in OSI Layer 4 (the network lay
 
 The Sumo Logic app for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 
-## Metric types  
+## Log and metric types  
 
-The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
+The AWS Network Load Balancer app uses the following logs and metrics:
+* [AWS Network Load Balancer CloudTrail Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/cloudtrail-logs.html)
+* [AWS Network Load Balancer CloudWatch Metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html)
+
+### Sample logs
+
+<details>
+<summary>Sample CloudTrail Log Message</summary>
+
+```json
+{
+  "eventVersion": "1.11",
+  "userIdentity": {
+    "type": "AssumedRole",
+    "principalId": "AROATIK2E7SUFL6GB4G44:1782467664281479421",
+    "arn": "arn:aws:sts::224064240808:assumed-role/pdet-eks-irsa-prod-aws-lb-controller/1782467664281479421",
+    "accountId": "224064240808",
+    "accessKeyId": "ASIATIK2E7SUH6GUXFK4",
+    "sessionContext": {
+      "sessionIssuer": {
+        "type": "Role",
+        "principalId": "AROATIK2E7SUFL6GB4G44",
+        "arn": "arn:aws:iam::224064240808:role/pdet-eks-irsa-prod-aws-lb-controller",
+        "accountId": "224064240808",
+        "userName": "pdet-eks-irsa-prod-aws-lb-controller"
+      },
+      "webIdFederationData": {
+        "federatedProvider": "arn:aws:iam::224064240808:oidc-provider/oidc.eks.us-west-2.amazonaws.com/id/0499F131BE8B24AAE70BF8AD8EB16D3A",
+        "attributes": {}
+      },
+      "attributes": {
+        "creationDate": "2026-06-26T09:54:24Z",
+        "mfaAuthenticated": "false"
+      }
+    }
+  },
+  "eventTime": "2026-06-26T09:54:25Z",
+  "eventSource": "elasticloadbalancing.amazonaws.com",
+  "eventName": "DescribeLoadBalancers",
+  "awsRegion": "us-west-2",
+  "sourceIPAddress": "44.241.82.204",
+  "userAgent": "aws-sdk-go-v2/1.36.3 ua/2.1 os/linux lang/go#1.24.5 md/GOOS#linux md/GOARCH#amd64 api/elasticloadbalancingv2#1.45.0 elbv2.k8s.aws/v2.13.4 m/C,E",
+  "requestParameters": {
+    "loadBalancerArns": [
+      "arn:aws:elasticloadbalancing:us-west-2:224064240808:loadbalancer/net/k8s-gloosyst-gatewayp-9e3a2f18b7/262e2df5d81d69e3"
+    ]
+  },
+  "responseElements": null,
+  "requestID": "b231b530-2877-467d-9a0b-eb9b0fed0f39",
+  "eventID": "7800ac19-806e-434e-b2b0-aec11ad7d312",
+  "readOnly": true,
+  "eventType": "AwsApiCall",
+  "apiVersion": "2015-12-01",
+  "managementEvent": true,
+  "recipientAccountId": "224064240808",
+  "eventCategory": "Management",
+  "tlsDetails": {
+    "tlsVersion": "TLSv1.3",
+    "cipherSuite": "TLS_AES_128_GCM_SHA256",
+    "clientProvidedHostHeader": "elasticloadbalancing.us-west-2.amazonaws.com"
+  }
+}
+```
+</details>
 
 ### Sample queries
 
 ```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
 account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
+```
+
+```sql title="Successful Events Details"
+account=* region=* "\"eventsource\":\"elasticloadbalancing.amazonaws.com\"" "2015-12-01"
+| json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage", "apiVersion" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message, api_version nodrop
+| where event_source = "elasticloadbalancing.amazonaws.com" and api_version matches "2015-12-01"
+| where namespace matches "aws/networkelb" or isEmpty(namespace)
+| json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
+| parse field=arn ":assumed-role/*" as user nodrop
+| parse field=arn "arn:aws:iam::*:*" as accountid, user nodrop
+| json field=requestParameters "name" as networkloadbalancer nodrop
+| if (isBlank(accountid), recipient_account_id, accountid) as accountid
+| where (tolowercase(networkloadbalancer) matches tolowercase("*")) or isBlank(networkloadbalancer)
+| if (isEmpty(error_code), "Success", "Failure") as event_status
+| where event_status= "Success"
+| if (isEmpty(username), user, username) as user
+| count as event_count by event_name
+| sort by event_count, event_name asc
 ```
 
 ## Collecting logs and metrics for AWS Network Load Balancer
@@ -28,7 +109,7 @@ account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCoun
 
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect AWS Network Load Balancer metrics
+### Collect AWS Network Load Balancer CloudWatch metrics
 
 Sumo Logic supports collecting metrics using one of the following source types:
 
@@ -53,8 +134,8 @@ Follow the steps below to add custom metadata [fields](/docs/manage/fields) with
 #### Prerequisites
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
-2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
-3. Confirm that logs are being delivered to the Amazon S3 bucket.
+1. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
+1. Confirm that logs are being delivered to the Amazon S3 bucket.
 
    :::note
    Namespace for **AWS Network Load Balancer** service is **AWS/NetworkELB**.
@@ -71,6 +152,29 @@ Follow the steps below to collect logs for AWS Network Load Balancer (NLB):
          * You will have the option to automatically add or enable the field.
          * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
+### Centralized AWS CloudTrail log collection
+
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
+
+```sql
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
+```
+
+#### Parse Expression
+
+Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like:
+
+```sumo
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
+
 ## Installing the AWS Network Load Balancer app
 
 Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
@@ -79,7 +183,9 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-As part of the app installation process, the following fields will be created by default:
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
 
 - `account` Name / alias to the AWS account.
 - `accountid` AWS account id.
@@ -87,11 +193,11 @@ As part of the app installation process, the following fields will be created by
 - `namespace` Namespace for AWS Network Load Balancer Service is AWS/NetworkELB.
 - `networkloadbalancer` Network Load Balancer name.
 
-## Field Extraction Rule(s)
+#### Field Extraction Rule(s)
 
 The FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `networkloadbalancer` will be created as a part of app installation.
 
-## Metric rule(s)
+#### Metric rule(s)
 
 The Metric Rule **AwsObservabilityNLBMetricsRule** for the AWS/NetworkELB namespace will be created as a part of app installation.
 
