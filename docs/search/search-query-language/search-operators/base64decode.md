@@ -2,6 +2,7 @@
 id: base64decode
 title: base64Decode Search Operator
 sidebar_label: base64Decode
+description: Use the base64Decode operator to convert base64-encoded strings into readable ASCII or non-ASCII text in your log data.
 ---
 
 The `base64Decode` operator takes a base64 string and converts it to ASCII or non-ASCII string. Input must be a valid base64 string. Invalid input is returned unaltered.
@@ -25,17 +26,29 @@ The `base64Decode` operator takes a base64 string and converts it to ASCII or no
 
 ## Examples
 
-The following example returns `V` with a value of `http://codec.apache.org/commmons`:
+### Decode an ASCII base64 string
 
-`| base64Decode("aHR0cDovL2NvZGVjLmFwYWNoZS5vcmcvY29tbW1vbnM=") as V`
+The following returns `V` with a value of `http://codec.apache.org/commmons`:
 
-The following example returns `V` with a value of `This is a test string`:
+```sumo
+| base64Decode("aHR0cDovL2NvZGVjLmFwYWNoZS5vcmcvY29tbW1vbnM=") as V
+```
 
-`| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V`
+### Decode a UTF-16LE base64 string
 
-The Base64Decode function supports decoding non-ASCII characters in addition to ASCII. The following example returns `V` with a value of `ありがと ございます`:
+The following returns `V` with a value of `This is a test string`:
 
-`| base64Decode("44GC44KK44GM44GoIOOBlOOBluOBhOOBvuOBmQ==") as V`
+```sumo
+| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V
+```
+
+### Decode a non-ASCII base64 string
+
+The base64Decode function supports decoding non-ASCII characters in addition to ASCII. The following returns `V` with a value of `ありがと ございます`:
+
+```sumo
+| base64Decode("44GC44KK44GM44GoIOOBlOOBluOBhOOBvuOBmQ==") as V
+```
 
 :::note
 Make sure that the decoding format you are using matches the one you used for encoding.

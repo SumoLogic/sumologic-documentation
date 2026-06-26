@@ -17,17 +17,17 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 - .claude/skills/geo-guide/SKILL.md — Reference guide of GEO principles and patterns loaded as context by `/geo-optimize` and `/seo-audit`. Not an invocable command.
 
 ## Pull Requests
-**CRITICAL REQUIREMENT**: ALL pull requests MUST use the official template from `.github/PULL_REQUEST_TEMPLATE.md`. No exceptions.
+**CRITICAL REQUIREMENT**: Before creating ANY PR, MUST read `.github/PULL_REQUEST_TEMPLATE.md` and use EXACT checkbox labels from that file.
 
-### Key Rules
-1. **Template is mandatory** - Use the exact structure above for every PR
-2. **Additional sections** - Any extra sections (Summary, Testing Plan, etc.) go UNDER "Purpose of this pull request" heading, before "Select the type of change"
-3. **Pre-check the appropriate checkbox** - Check the correct box but leave ALL four checkboxes in the list. Never remove unchecked items from the "Select the type of change" section
+**Non-negotiable rules:**
+1. **Read template first** - Get current checkbox labels from `.github/PULL_REQUEST_TEMPLATE.md` (never guess or use old labels)
+2. **Use exact text** - Copy checkbox labels verbatim from the template file. Example current labels: "Minor Changes", "Update Content", "New Content", "Site and Tools" — but always read the file, these may be outdated.
+3. **Keep all checkboxes** - Pre-check one box, leave all four in the list
 4. **PR title format**: `TICKET - Description` (e.g., `DOCS-1234 - Add PostgreSQL app`)
-5. **Ask for ticket number** - Always ask before creating PRs (optional only for quick typo fixes)
-6. **Use full Jira link** - In the "Ticket (if applicable)" section, use the full URL (e.g., `https://sumologic.atlassian.net/browse/DOCS-1234`) not just the ticket number
+5. **Ask for ticket number** - Always ask for a Jira ticket before creating a PR. If the user doesn't have one, offer to create it using the Atlassian Jira MCP (optional for quick typo fixes).
+6. **Full Jira URL** - Use `https://sumologic.atlassian.net/browse/DOCS-1234` not ticket number alone
 
-For detailed examples and implementation guidance, see `.claude/skills/pr-template-guide/SKILL.md`.
+See `.claude/skills/pr-template-guide/SKILL.md` for examples and guidance.
 
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if "accept edits" is enabled. Always ask first.
@@ -40,81 +40,51 @@ Before pushing any commit that changes docs content:
 3. Wait for explicit approval before pushing
 
 ## Jira Rules
-- **Assignee**: Assign any newly created Jira ticket to the current user unless otherwise specified
-- **GitHub PR link**: After creating a PR, automatically update the Jira ticket's GitHub field (`customfield_10466`) with the PR URL
+**CRITICAL**: All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`.
+
+### Field Requirements
+- **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
+- **Technical Area**: REQUIRED field. Must be set from allowed values. Use file paths and content keywords to determine the correct area (see `.claude/commands/jira.md` for mappings).
+- **Existing Tech Docs Link** (`customfield_10750`): 
+  - REQUIRED when transitioning to Published status
+  - MUST be populated when creating or updating tickets that touch existing articles
+  - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
+- **GitHub PR link** (`customfield_10466`): After creating a PR, automatically update this field with the PR URL
+- **Description**: Always use `contentFormat: markdown`
+
+### Workflow Requirements
+- **Creating tickets**: Follow the three-approach pattern (user description, analyze changes, or file paths) defined in `.claude/commands/jira.md`
+- **Titles**: Sentence case, action verb, specific, under 10 words
+- **Descriptions**: Benefit-driven, active voice, under 150 words unless complex, markdown format
 - **Comment attribution**: Always append `— via Claude Code` to any comment posted to a Jira ticket
+- **Status transitions**: Use workflow states: Backlog → To Do → In Progress → Blocked → In Review → On Hold → Published → Closed
+
+### Publishing Checklist
+Before transitioning any ticket to Published:
+1. Verify "Existing Tech Docs Link" field is populated with production URL
+2. Verify "GitHub Pull Request" field has the merged PR URL
+3. Ensure PR has been merged to main branch
 
 ## GitHub Rules
 - **Assignee**: Assign any new PR to the current user unless otherwise specified
 
-## Capability Responses
-When asked about tools, skills, or "what can I do," lead with documentation-focused skills
-(doc creation, release notes, editing/review, Jira). Generic tools (Bash, Read, Write, etc.)
-are secondary — the primary work here is writing and editing docs.
+## Slash Commands
+Primary commands for documentation work. Proactively suggest when context fits — don't wait for the user to ask.
 
-Proactively suggest relevant commands when context fits — for example, suggest `/doc-from-jira` when
-a user mentions a Jira ticket, `/seo-audit` before a PR, or `/geo-optimize` when a doc needs
-discoverability improvements. Do not wait for the user to ask.
+**Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
+**Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
+**Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
+**Workflow:** `/jira`, `/review`
 
-When a user asks "what can I do", "what commands are available", or similar, share this reference:
+**When to proactively suggest:**
+- User mentions a Jira ticket → suggest `/doc-from-jira`
+- User is about to create a PR → suggest `/seo-audit` first
+- Doc needs discoverability improvements → suggest `/geo-optimize`
+- User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 
-### Slash commands
-
-**Creating docs**
-
-| Command | What it does |
-|---------|-------------|
-| `/doc` | Create a new feature, how-to, concept, reference, or troubleshooting doc |
-| `/doc-from-jira` | Fetch a DOCS Jira ticket and scaffold a complete doc from it |
-| `/app-doc` | Create a new app integration doc |
-| `/c2c-source-doc` | Create a new Cloud-to-Cloud source integration doc |
-
-**Release notes**
-
-| Command | What it does |
-|---------|-------------|
-| `/release-note-service` | New service release note |
-| `/release-note-collector` | New Collector release note |
-| `/release-note-cse` | New Cloud SIEM release note |
-| `/release-note-csoar` | New Cloud SOAR release note |
-| `/release-note-developer` | New developer/API release note |
-
-**Editing and reviewing**
-
-| Command | What it does |
-|---------|-------------|
-| `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
-| `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
-| `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
-| `/tone-check` | Check voice and tone against Sumo Logic style rules |
-| `/rewrite-intro` | Rewrite a doc's opening paragraph |
-| `/simplify` | Simplify overly complex content |
-| `/review` | Review a pull request |
-
-**Jira**
-
-| Command | What it does |
-|---------|-------------|
-| `/jira` | Create, update, search, or transition DOCS Jira tickets |
-| `/doc-from-jira` | Start a new doc from a Jira ticket (use this instead of `/jira` when the goal is to write a doc) |
-
-**Removing docs**
-
-| Command | What it does |
-|---------|-------------|
-| `/remove-doc` | Safely deprecate or move a doc with redirects |
-
-### Which audit command to use
-
-Run both for a thorough pre-PR check — they cover different things:
-
-- **`/audit-doc`** — structure, required sections, broken links, frontmatter completeness, style guide
-- **`/seo-audit`** — SEO/AEO/GEO signals: title length, description quality, question headings, direct answers, GEO patterns
-
-### `/jira` vs `/doc-from-jira`
-
-- Use **`/jira`** to manage tickets: create, search, update fields, change status, view your queue
-- Use **`/doc-from-jira`** when you have a ticket and want to start writing the doc it describes — it fetches the ticket and scaffolds the file
+**Key distinctions:**
+- `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
+- `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
 
 ## Commands
 
