@@ -21,9 +21,8 @@ To access Threat Intelligence in Sumo Logic,
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. **Status**. The current status of the indicator source (**Enabled** or **Disabled**).
 1. **Source Name**. The name of the threat intelligence indicator file. The name usually indicates the supplier of the indicators. 
-1. **Last Indicator Identified**. The date and time of the last successful poll.
-1. **Type**. Whether the source is **Static** (manually uploaded) or **Dynamic** (C2C collector-based).
-1. **Health**. The current health of the source, such as **Healthy** or **Error**.
+1. **Description**. The description of the threat intelligence indicator.
+1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
 1. **Number of Indicators**. The total count of threat intelligence indicators provided by the source. 
 
 :::note
@@ -87,7 +86,7 @@ When you add indicators, the event is recorded in the Audit Event Index. See [Au
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute, enter `validUntil` and for a value, enter a date. The attributes and values you enter must match attributes and values in the indicators. -->
 1. Click **Delete** on the **Delete Indicators** dialog.
 
-You do not have to wait until indicators reach the end of their retention period to delete them. You can [delete indicators](#delete-threat-intelligence-indicators) from the **Threat Intelligence** page, as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+You do not have to wait until indicators reach the end of their retention period to delete them. You can [delete indicators](#delete-threat-intelligence-indicators) from the **Sources** tab in the **Threat Intelligence** page, as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 :::note
 When you remove indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
@@ -101,7 +100,7 @@ Expired indicators are retained until they reach the end of the retention period
 
 By default, expired indicators are retained for 180 days. To change the retention period:
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
-1. Click the three-dot button in the upper-right corner of the page.<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
+1. Click the more actions button in the upper-right corner of the page.<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. Click **Edit Retention Period**.
 1. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180.<br/><img src={useBaseUrl('img/security/threat-intelligence-retention-period.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="400" />
 1. Click **Save**.
