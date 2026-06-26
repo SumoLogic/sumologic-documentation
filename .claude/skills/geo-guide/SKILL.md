@@ -112,7 +112,7 @@ Rewrite every H2 and H3 as a question a user would type into an AI tool.
 Every major page ends with a structured FAQ block. These are the highest-value content blocks for AI citation because they match how users query AI tools.
 
 ```markdown
-## Frequently asked questions
+## FAQ
 
 ### What is [feature name] in Sumo Logic?
 [One-sentence BLUF answer.]
