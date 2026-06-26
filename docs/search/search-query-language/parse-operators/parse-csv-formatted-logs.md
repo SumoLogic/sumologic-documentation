@@ -1,9 +1,10 @@
 ---
 id: parse-csv-formatted-logs
 title: Parse CSV Formatted Logs
+description: Use the CSV operator to parse comma-separated value formatted log entries with comma as the default delimiter.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **CSV** operator allows you to parse CSV (Comma Separated Values) formatted log entries. It uses a comma as the default delimiter.
 
@@ -41,18 +42,18 @@ Specify an escape, and quote character:
 Use the following query to parse a CSV file’s comma delimited fields as
 shown:
 
-```sql
+```sumo
 _sourceCategory=csv
 | csv _raw extract 1 as user2, 2 as id, 3 as name
 ```
 
 which provides results like:
 
-![csv example](/img/reuse/query-search/csv_example1.png)
+<img src={useBaseUrl('img/reuse/query-search/csv_example1.png')} alt="CSV example>" style={{border: '1px solid gray'}} width="600" />
 
 ### Parse a stream query and extract search terms
 
-```sql
+```sumo
 "Starting stream query"
 | parse "query=[*], queryId" as query
 | csv query extract searchTerms, op1, op2, op3
@@ -60,6 +61,6 @@ which provides results like:
 
 This produces results like:
 
-![csv operator](/img/reuse/query-search/csv_operator_example_695x65.png)
+<img src={useBaseUrl('img/reuse/query-search/csv_operator_example_695x65.png')} alt="CSV operator" style={{border: '1px solid gray'}} width="800" />
 
 For more information on parsing CSV files, see [Lookup](/docs/search/search-query-language/search-operators/lookup-classic) operator and [Save](/docs/search/search-query-language/search-operators/save-classic) operator.

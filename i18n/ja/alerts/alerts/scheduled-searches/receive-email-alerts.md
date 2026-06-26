@@ -19,8 +19,6 @@ There are three ways to receive the results of scheduled searches in email:
 
     You can be very specific with the alert condition—you can even set an exact number of results that triggers the email. Results can either be the number of log messages *OR* the number of aggregates returned by the saved search. If your saved search returns log messages, then the alert will use the number of messages you specify. If your query produces aggregate results, the alert will use the number of aggregates (or groups).
 
-* **Real Time Alerts.** (Not available to Sumo Logic Free accounts.) Real Time Alerts continuously monitor your Sumo Logic deployment, and return alert emails whenever conditions are met. You can learn more in [Create a Real Time Alert](create-real-time-alert.md).
-
 :::important
 Scheduled searches are run according to the time zone of an individual's computer and browser, not according to the time zone of logs.
 :::

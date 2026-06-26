@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon SNS is a unified logs and metrics app
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="SNS icon" width="50"/>
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -15,8 +15,8 @@ The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metric
 ## Log and Metrics types
 
 The Sumo Logic app for Amazon SNS uses:
-* SNS CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
-* SNS operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
+* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html).
+* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html).
 
 ### Sample log messages
 
@@ -48,7 +48,7 @@ eventCategory:"Management"
 
 ### Sample queries
 
-```sql title="Events By Status"
+```sumo title="Events By Status"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "sns.amazonaws.com"
@@ -95,49 +95,13 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.
     * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
     * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
     * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
     * **Timestamp Format.** Select **Automatically detect the format**.
     * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
-
-### Field in Field Schema
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for the `"topicname"` field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
-
-### Field Extraction Rule(s)
-
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-```sql
-Rule Name: AwsObservabilitySNSCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
-```
-
-**Parse Expression**:
-
-```sql
-| json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements nodrop
-| where event_source = "sns.amazonaws.com"
-| json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
-| parse field=arn ":assumed-role/*" as user nodrop
-| parse field=arn "arn:aws:iam::*:*" as accountid, user nodrop
-| json field=requestParameters "topicArn", "name", "resourceArn", "subscriptionArn" as req_topic_arn, req_topic_name, resource_arn, subscription_arn  nodrop
-| json field=responseElements "topicArn" as res_topic_arn nodrop
-| if (isBlank(req_topic_arn), res_topic_arn, req_topic_arn) as topic_arn
-| if (isBlank(topic_arn), resource_arn, topic_arn) as topic_arn
-| parse field=topic_arn "arn:aws:sns:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp nodrop
-| parse field=subscription_arn "arn:aws:sns:*:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp, arn_value_temp nodrop
-| if (isBlank(req_topic_name), topic_arn_name_temp, req_topic_name) as topicname
-| if (isBlank(accountid), recipient_account_id, accountid) as accountid
-| "aws/sns" as namespace
-| fields region, namespace, topicname, accountid
-```
 
 ## Centralized AWS CloudTrail Log Collection
 In case, you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.
@@ -147,7 +111,7 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 * **Scope (Specific Data)**: `_sourceCategory=aws/observability/cloudtrail/logs`
 * **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
@@ -160,9 +124,21 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 
 Now that you have set up collection for Amazon SNS, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon SNS service is aws/sns.
+- `topicname` Amazon SNS a Topic Name.
+
+## Field Extraction Rule(s)
+
+The FER **AwsObservabilitySNSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `topicname` will be created as a part of app installation.
 
 ## Viewing Amazon SNS dashboards
 
@@ -176,7 +152,7 @@ The **Amazon SNS - Overview** dashboard provides insights across CloudTrail even
 * Monitor number of messages and messages by publish size.
 * Monitor delivered and failed notifications.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Overview.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/1.-Amazon-SNS-Overview.png' alt="Amazon SNS - Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Audit Events  
 
@@ -189,7 +165,7 @@ Use this dashboard to:
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/2.-Amazon-SNS-Audit-Events.png' alt="Amazon SNS - Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Messages, Notifications  
 
@@ -203,7 +179,7 @@ Use this dashboard to:
 * Compare messages published and message size by today, yesterday, last week.  
 * Compare notifications delivered and failed by today, yesterday, last week.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Messages-Notifications.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/1.-Amazon-SNS-Messages-Notifications.png' alt="Amazon SNS - Messages, Notifications" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Threat Intel  
 
@@ -214,7 +190,7 @@ The **Amazon SNS - Threat Intel** dashboard provides insights across threat loca
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/3.-Amazon-SNS-Threat-Intel.png' alt="Amazon SNS - Threat Intel" style={{border: '1px solid gray'}} width="800" />
 
 ### Amazon SNS - Audit Events Details
 
@@ -225,4 +201,35 @@ Use this dashboard to:
 * Get all details of all subscription events.
 * Get details of all read only and non read only events.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon SNS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSNS/4.-Amazon-SNS-Audit-Events-Details.png' alt="Amazon SNS - Audit Events Details" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS SNS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS SNS alerts
+
+These alerts are available for the AWS SNS app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS SNS - Access from Highly Malicious Sources` | This alert fires when an Application AWS - SNS is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count &lt;= 0 |
+| `AWS SNS - Failed Events` | This alert fires when an SNS app has high number of failed events (>5) within last 5 minutes. | Count > 5 | Count &lt;= 5 |
+| `AWS SNS - Failed Notifications` | This alert fires where there are many failed notifications (>=5) within an interval of 5 minutes. | Count > 2 | Count &lt;= 2 |
+| `AWS SNS - Notification to DLQ` | This alert fires when an SNS topic messages are moved to a dead-letter queue. | Count > 0 | Count &lt;= 0 |
+| `AWS SNS - Notification to DLQ Failure` | This alert fires when an SNS topic messages that couldn't be moved to a dead-letter queue. | Count > 0 | Count &lt;= 0 |
+
+
+## Upgrade/Downgrade the Amazon SNS app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon SNS app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

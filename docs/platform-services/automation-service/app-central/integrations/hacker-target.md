@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hacker-target.png')} alt="hacker-target" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hacker-target.png')} alt="Hacker target icon" width="100"/>
 
-***Version: 1.1
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Utilize Hacker Target's investigational tools during an incident.
 
@@ -24,6 +24,29 @@ Utilize Hacker Target's investigational tools during an incident.
 * **Whois Lookup** (*Enrichment*) - Retrieve Whois information for the specified IP address.
 * **Page Links** (*Enrichment*) - Parse the html of a website and extract links from the page.
 
+## Configure Hacker Target in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your Hacker Target server URL, for example, `https://api.hackertarget.com`
+
+* **API Key**. Enter a Hacker Target [API key](https://hackertarget.com/ip-tools/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/hacker-target-configuration.png')} style={{border:'1px solid gray'}} alt="Hacker Target configuration" width="400"/>
+
+For information about Hacker Target, see the [Hacker Target website](https://hackertarget.com/).
+
 ## Change Log
 
 * December 19, 2019 - First upload
@@ -31,3 +54,4 @@ Utilize Hacker Target's investigational tools during an incident.
 * July 6, 2023 (v1.1)
 	+ Updated the integration with Environmental Variables
 	+ Integration renamed from Hacker Target OIF to Hacker Target
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

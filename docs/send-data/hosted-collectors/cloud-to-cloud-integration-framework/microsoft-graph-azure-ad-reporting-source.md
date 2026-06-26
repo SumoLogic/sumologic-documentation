@@ -8,14 +8,10 @@ tags:
 description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/microsoft-graph-azure-ad-reporting/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/microsoft-graph-azure-ad-reporting/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/microsoft-graph-azure-ad-reporting/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="40"/>
 
 The Microsoft Graph Azure AD Reporting Source collects [Directory Audit](https://docs.microsoft.com/en-us/graph/api/directoryaudit-list?view=graph-rest-1.0), [Sign-in](https://docs.microsoft.com/en-us/graph/api/signin-list?view=graph-rest-1.0), and [Provisioning](https://docs.microsoft.com/en-us/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0) data from the [Microsoft Graph API Azure AD activity reports](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -42,18 +38,12 @@ The user creating the service application does not need to be an administrator.�
 Use the following steps to create a service application:
 
 1. Log in to the [Azure Active Directory Portal](https://aad.portal.azure.com/).
-1. Then select **Azure Active Directory** in the left menu.
-    ![Azure AD step 2.png](/img/send-data/Azure-AD-step-2.png)
-1. Then select **App Registrations**.<br/>
-    ![Azure AD step 3 red box.png](/img/send-data/Azure-AD-step-3-red-box.png)
-1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.
-    ![Azure new registration in step 4.png](/img/send-data/Azure-new-registration-in-step-4.png)
-1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.
-    ![Azure created app in step 5.png](/img/send-data/Azure-created-app-in-step-5.png)
-1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.
-    ![Azure AD step 6.png](/img/send-data/Azure-AD-step-6.png)
-1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.
-    ![Azure AD step 7.png](/img/send-data/Azure-AD-step-7.png)
+1. Then select **Azure Active Directory** in the left menu.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-2.png')} alt="Select Azure Active Directory" style={{border: '1px solid gray'}} width="800" />
+1. Then select **App Registrations**.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-3-red-box.png')} alt="Select App Registrations" style={{border: '1px solid gray'}} width="300" />
+1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.<br/><img src={useBaseUrl('img/send-data/Azure-new-registration-in-step-4.png')} alt="Select new registration" style={{border: '1px solid gray'}} width="800" />
+1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.<br/><img src={useBaseUrl('img/send-data/Azure-created-app-in-step-5.png')} alt="Copy IDs" style={{border: '1px solid gray'}} width="800" />
+1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-6.png')} alt="Certificates and Secrets" style={{border: '1px solid gray'}} width="800" />
+1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Graph Azure AD Reporting Source.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-7.png')} alt="Client Secret Value" style={{border: '1px solid gray'}} width="800" />
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**. From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
 
 | **API**         | **Account Type**                       | **Permissions**                                                           |
@@ -67,7 +57,8 @@ Use the following steps to create a service application:
 | Provisioning    | Delegated (work or school account)     | AuditLog.Read.All and Directory.Read.All                                  |
 | Provisioning    | Delegated (personal Microsoft account) | Not supported.                                                            |
 | Provisioning    | Application                            | AuditLog.Read.All                                                         |
-![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
+
+<img src={useBaseUrl('img/send-data/azure-ad-step-8.png')} alt="Request API permissions" style={{border: '1px solid gray'}} width="800" />
 
 ### Source configuration
 
@@ -75,19 +66,23 @@ When you create a Microsoft Graph Azure AD Reporting Source, you add it to a Ho
 
 To configure a Microsoft Graph Azure AD Reporting Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **MS Graph Azure AD Reporting**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
 1. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
 1. **Application Client Secret Value**. Provide the Application Client Secret Value you created in step 7 of the setup section.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Directory Audit**, **Sign-in**, and **Provisioning**.
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Microsoft Graph Azure AD Reporting source, consider installing the Sumo Logic app for [Microsoft Graph Azure AD Reporting](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -120,18 +115,28 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | secret_key | String | Yes | `null` | Provide the Application Client Secret Value you created in Azure. |  |
 | application_id | String | Yes | `null` | Provide the Application (client) ID you got after you registered (created) the Azure Application. |  |
 | supported_apis | Array of strings | Yes |`null`  | Define one or more of the available APIs to collect: `Directory Audit`, `Sign-in`, and `Provisioning`. For example, for both you'd use: `["Directory Audit","Signin"]` |  |
+| azure_gov_l4 | Boolean | No | `false`  | Set to true if you are using Azure Government L4 environment. |  |
+| apiRetentionDays| Integer | No | `30` | Set the retention period (in days). The maximum supported value is **30 days**. If a higher value is configured, it will automatically be adjusted to 30 days, as API data retention is limited to 30 days ([reference](https://learn.microsoft.com/en-us/answers/questions/37734/sign-in-logs-older-than-the-30-day-limit)). |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/microsoft-graph-azure-ad-reporting/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-graph-azure-ad-reporting/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/microsoft-graph-azure-ad-reporting/example.tf
+```
+## Troubleshooting
 
-<a href="/files/c2c/microsoft-graph-azure-ad-reporting/example.tf" target="_blank">Download example</a>
+<details>
+  <summary>This request is throttled. Please try again after the value specified in the Retry-After header.</summary>
+  <div>
+    This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls. 
+  </div>
+</details>
 
 ## FAQ
 

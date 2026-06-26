@@ -2,19 +2,19 @@
 id: auth0
 title: Auth0
 sidebar_label: Auth0
-description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
+description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs and provides insight into security and operational issues.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Auth0 icon" width="50"/>
 
-Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
+Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs and provides insight into security and operational issues.
 
-For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
-
+For more information, see [Use Auth0 App for Sumo Logic](https://auth0.com/docs/customize/log-streams/sumo-logic-dashboard) in the Auth0 documentation.
 
 ## Collecting logs for Auth0
+
 This procedure explains how to collect error logs from Auth0.
 
 Sumo Logic collects the following log types:
@@ -30,112 +30,214 @@ Sumo Logic collects the following log types:
 * Rate limiting events
 * Other operational events and errors
 
-For more information about Auth0 logs, see [https://auth0.com/docs/api/managemen.../Logs/get_logs](https://auth0.com/docs/api/management/v2#!/Logs/get_logs)
-
+For more information about Auth0 logs, see [Search Log Events](https://auth0.com/docs/api/management/v2#!/Logs/get_logs) in the Auth0 documentation.
 
 ### Prerequisites
 
-Use the Auth0 Management Portal to configure the extension. For more information, see [https://auth0.com/docs/extensions/sumologic](https://auth0.com/docs/extensions/sumologic).
+Use the Auth0 Management Portal to configure the extension. For more information, see [Sumo Logic](https://marketplace.auth0.com/integrations/sumo-logic-log-streaming) in the Auth0 documentation.
 
+### Configure a collector
 
-### Configure a Collector
+Configure a hosted collector. Follow the directions in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
-Use the in-product [setup wizard](/docs/send-data/setup-wizard) in the Sumo Logic UI to configure a **Custom App**.
+### Configure a source
 
+Configure a source on the collector. Follow the directions in [Configure an HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
 
-### Configure a Source
-
-Source type is [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics).
-
-* **Name**: Required
-* **Category**:
-* **Timestamp Parsing Settings**:
-  * **Enable Timestamp Parsing**: True
-  * **Timezone**: Logs are sent in UTC by default and can be automatically detected
-  * **Timestamp Format**: Select **Specify a format** and use the following, \
-Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
-`Timestamp locator: `"date":"(.*?)\","`
-* **Multi-line Parsing Settings**:
-  * **Detect Messages Spanning Multiple Lines**: True
-  * **Multi Line Boundary**: Infer Boundaries
-
+Provide the required details in the fields below:
+* **Name**
+* **Source Category**
+* Select **Forward to SIEM** if you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM. If you select **Forward to SIEM**, also click the **+Add** link and add a field whose name is `_parser` with value */Parsers/System/Auth0/Auth0*.
+* **Timestamp Parsing**
+  * Select **Extract timestamp information from log file entries**.
+  * **Default Timezone**. Select the default time zone to use. Logs are sent in UTC by default and can be automatically detected.
+  * **Timestamp Format**. Select **Specify a format**. Click **Add Timestamp Format** and enter the following:
+     * **Format**: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'` 
+     * **Timestamp locator**: `"date":"(.*?)\","`
+* **Message Processing**
+   * Select **Multiline Processing**.
+   * For **Infer Message Boundaries**  select **Detect Automatically**.
 
 ### Use Field Extraction Rules
 
 Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_id"`
 
-
 ## Sample log messages
 
-```json title="Example 1"
+```json title="Example"
 {
-   "date": "2016-02-23T19:57:29.532Z",
-   "type": "sapi",
-   "client_id": "AaiyAPdpYdesoKnqjj8HJqRn4T5titww",
-   "client_name": "My application Name",
-   "ip": "190.257.209.19",
-   "location_info": {},
-   "details": {},
-   "user_id": "auth0|56c75c4e42b6359e98374bc2"
+   "log_id": "17809212622791780921262279178092126227917809212622794542",
+   "data": {
+      "date": "2026-06-08T17:51:02.279Z",
+      "type": "s",
+      "connection": "enterprise-db",
+      "connection_id": "con_nD3XkfFNuYUPnmbp",
+      "client_id": "7RyK6txXYPZTQGOAwwln6Eoie0gVZ2cu",
+      "client_name": "CloudSync Platform",
+      "ip": "fd64:3716:2209:2708::2273",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.132.236.84 Safari/537.36",
+      "details": {
+         "prompts": [
+            {
+               "name": "prompt-authenticate",
+               "completedAt": 1780921262279,
+               "connection": "enterprise-db",
+               "connection_id": "con_nD3XkfFNuYUPnmbp",
+               "strategy": "auth0",
+               "identity": 99716766,
+               "stats": {
+                  "loginsCount": 42
+               },
+               "elapsedTime": null
+            },
+            {
+               "name": "login",
+               "flow": "universal-login",
+               "initiatedAt": 1780921262279,
+               "completedAt": 1780921262279,
+               "user_id": "auth0|31148744",
+               "user_name": "system_proc",
+               "timers": {
+                  "rules": 70
+               },
+               "elapsedTime": 5864
+            }
+         ],
+         "initiatedAt": 1780921262279,
+         "completedAt": 1780921262279,
+         "elapsedTime": 6110,
+         "actions": {
+            "executions": [
+               "jp8LFtSdXIVcIeKjcTXnTNJ75zZ3h7kBftk1n1Vu8BD2LTbzx7JZqh4u"
+            ]
+         },
+         "session_id": "95W6HDLrCRBtqevKPcQlvkphsqHoTh6w",
+         "riskAssessment": {
+            "confidence": "high",
+            "version": "1",
+            "assessments": {
+               "UntrustedIP": {
+                  "confidence": "high",
+                  "code": "not_found_on_deny_list"
+               },
+               "NewDevice": {
+                  "confidence": "high",
+                  "code": "match",
+                  "details": {
+                        "device": "known",
+                        "useragent": "known"
+                  }
+               },
+               "ImpossibleTravel": {
+                  "confidence": "high",
+                  "code": "location_history_not_found"
+               },
+               "PhoneNumber": {
+                  "confidence": "neutral",
+                  "code": "phone_number_not_provided"
+               }
+            }
+         },
+         "transaction_id": "vTQ7fuKBzA1709dk1J50WcGZotESeIlr",
+         "session": {
+            "cookie": {
+               "mode": "persistent"
+            }
+         },
+         "form": {
+            "ulp-rememberUsername": "on"
+         },
+         "stats": {
+            "loginsCount": 42
+         }
+      },
+      "security_context": {
+         "ja3": "a1ffa339ba0853d979d34a96ac9e4b6b",
+         "ja4": "ca390ac92e1f55546a8faaacc6d553bcd190"
+      },
+      "hostname": "auth.acmecorp.com",
+      "user_id": "auth0|31148744",
+      "user_name": "system_proc",
+      "strategy": "auth0",
+      "strategy_type": "database",
+      "location_info": {
+         "latitude": 32.6713,
+         "longitude": -111.5766,
+         "country_code": "US",
+         "country_name": "United States",
+         "city_name": "Tucson",
+         "subdivision_code": "AZ",
+         "subdivision_name": "Arizona",
+         "continent_code": "NA",
+         "time_zone": "America/Phoenix",
+         "country_code3": "USA"
+      },
+      "$event_schema": {
+         "version": "1.0.0"
+      },
+      "environment_name": "env-region-4",
+      "log_id": "17809212622791780921262279178092126227917809212622794542",
+      "tenant_name": "nova-prod02"
+   }
 }
 ```
-
-
-```json title="Example 2"
-{
-   "date": "2016-11-14T21:50:33.473Z",
-   "type": "fp",
-   "description": "Wrong email or password.",
-   "connection": "Username-Password-Authentication",
-   "connection_id": "con_ABCDEF",
-   "client_id": "123987LKJsdfmnb",
-   "client_name": "www.sumologic.com",
-   "ip": "198.0.217.157",
-   "user_agent": "Other 0.0.0 / Other 0.0.0",
-   "details": {
-      "error": {
-         "message": "Wrong email or password."
-      }
-   },
-   "user_id": "auth0|123ASD987",
-   "user_name": "no-one@sumologic.com",
-   "strategy": "auth0",
-   "strategy_type": "database",
-   "_id": "321654987654321654987654321",
-   "isMobile": false
-}
-```
-
-
 
 ## Sample queries
 
-```sql title="Logins by Client per Day"
-_collector="productionappauth0Logs_Collector"
-| json "client_name"
-| where client_name != ""
-| timeslice by 1d
-| count by _timeslice, client_name
-| transpose row _timeslice column client_name
+```sumo title="Total Events"
+_sourceCategory={{Logsdatasource}} log_id
+| json "data", "log_id", "detail.data", "detail.log_id" as data, log_id, data2, log_id2 nodrop
+| if (!isEmpty(data), data, data2) as data
+| if (!isEmpty(log_id), log_id, log_id2) as log_id
+| json field=data "type", "user_name", "client_name", "connection", "ip" as type, user_name, client_name, connection, ip nodrop
+
+// global filters
+| where type matches "{{type}}" and user_name matches "{{user_name}}" and client_name matches "{{client_name}}" and connection matches "{{connection}}" and ip matches "{{ip}}" 
+
+// panel specific
+| count by log_id
+| count
 ```
 
-```sql title="Client Version Usage"
-_collector="productionappauth0Logs_Collector"
-| json "auth0_client.name", "auth0_client.version"
-| concat(%auth0_client.name, " ", %auth0_client.version) as auth0_client_version
+```sumo title="Login Status Over Time"
+_sourceCategory={{Logsdatasource}} log_id type ("s" OR "fp" OR "fu")
+| json "data", "log_id", "detail.data", "detail.log_id" as data, log_id, data2, log_id2 nodrop
+| if (!isEmpty(data), data, data2) as data
+| if (!isEmpty(log_id), log_id, log_id2) as log_id
+| json field=data "type", "user_name", "client_name", "connection", "ip" as type, user_name, client_name, connection, ip nodrop
+
+// global filters
+| where type matches "{{type}}" and ip matches "{{ip}}" 
+| where if ("{{user_name}}" = "*", true, user_name matches "{{user_name}}")
+| where if ("{{client_name}}" = "*", true, client_name matches "{{client_name}}")
+
+// panel specific
+| where !isBlank(type) and type in ("s", "fp", "fu")
+| if(type = "s", "success", "failure") as login_result
 | timeslice 1h
-| count by _timeslice, auth0_client_version
-| transpose row _timeslice column auth0_client_version
+| count by log_id, _timeslice, login_result
+| count by _timeslice, login_result
+| fillmissing timeslice, values all in login_result
+| transpose row _timeslice column login_result
 ```
 
-```sql title="Top 10 Recent Errors"
-_collector="productionappauth0Logs_Collector"
-| json "type", "connection", "description", "client_name"
-| where type != "slo"
-| count client_name, connection, description
-| top 10 client_name, connection, description by _count
-```
+```sumo title="Top User Agents"
+_sourceCategory={{Logsdatasource}} user_agent
+| json "data", "log_id", "detail.data", "detail.log_id" as data, log_id, data2, log_id2 nodrop
+| if (!isEmpty(data), data, data2) as data
+| if (!isEmpty(log_id), log_id, log_id2) as log_id
+| json field=data "type", "user_name", "user_agent" as type, user_name, user_agent nodrop
 
+// Global filter
+| where if("{{type}}" = "*", true, type matches "{{type}}")
+| where if("{{user_name}}" = "*", true, user_name matches "{{user_name}}")
+
+// Panel specific
+| where !isBlank(user_agent)
+| count by log_id, user_agent
+| count as frequency by user_agent
+| sort by frequency, user_agent asc
+```
 
 ## Installing the Auth0 App
 
@@ -145,40 +247,46 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing Auth0 Dashboards
+## Viewing the Auth0 dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-**Login Event by Location.** Performs a geo lookup operation and displays user logins based on IP address on a map of the world for the last 24 hours.
+The **Auth0 - Overview** dashboard provides insights into authentication activity, tracking login geo locations on a world map and visualizing login attempts per hour over the last seven days. It highlights the top users by successful and failed logins, as well as the most frequent source IPs for failed logins, helping to identify potential security threats.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Auth0/Auth0-Overview.png' alt="Auth0-Overview" />
 
-**Logins per Hour.** Displays a line chart on a timeline showing the number of failed and successful logins per hour, over the last seven days.
+### Security Analysis
 
-**Top 10 Users by Successful Login.** Shows a table chart with the top ten users with the most successful logins, including user name and count for the last 24 hours.
+The **Auth0 - Security Analysis** dashboard delivers security-focused analysis of Auth0 authentication events, including risk assessments, new device detection, impossible travel indicators, and login performance, to identify compromised accounts and suspicious access patterns.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Auth0/Auth0-Security-Analysis.png' alt="Auth0-Security-Analysis" />
 
-**Top 10 Users by Failed Login.** Provides a table chart with the top ten users with the most failed logins, including user name and count for the last 24 hours.
+### User Agent Analysis
 
-**Top 10 Source IPs by Failed Login.** Displays a table chart with a list of ten source IP addresses causing the most failed logins, including IP and count, for the last 24 hours.
+The **Auth0 - User Agent Analysis** dashboard analyzes user agents, categorizing traffic by browser, operating system, platform, and whether it is automated or human-generated. It tracks user-agent activity trends, surfaces the top agents associated with failed activities, and highlights HTTP errors encountered by different client types. Category trend analysis helps teams identify unusual or unauthorized client tooling over time. Use this dashboard to detect bot activity, investigate suspicious client behaviour, and ensure that only approved tools and platforms access your environment.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Auth0/Auth0-User-Agent-Analysis.png' alt="Auth0-User-Agent-Analysis" />
 
-**Top 10 User Agents.** Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
+## Create monitors for Auth0 app
 
-**Top 10 Operating Systems.** Shows the top ten most popular operating systems based on user agent in a pie chart for the last seven days.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-**Guardian MFA Activity.** Displays a line chart on a timeline showing the number of each Guardian MFA event per hour for the last seven days.
+<CreateMonitors/>
 
-<img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard.png')} alt="Auth0 app overview dashboard" />
+### Auth0 alerts
 
-### Connections and Clients
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Auth0 - Events from Embargoed Locations` | This alert is triggered when a login attempt or user action originates from an embargoed location, potentially indicating unauthorized access. Investigate the activity to verify its legitimacy and take appropriate action if malicious behavior is suspected. | Critical | Count > 0 |
+| `Auth0 - Multiple Failed Authentication From Single User` | This alert is triggered when multiple authentication failures are detected for a single user within a short time frame, which may indicate a brute-force attack, credential misuse, or user login issues. | Critical | Count > 3 | 
+| `Auth0 - Untrusted IP Detected` | This alert is triggered when activity is observed from an untrusted IP address that is present on the configured deny list, indicating a potentially malicious or unauthorized source. | Critical | Count > 0 |
 
-**Logins by Client and Country.** Displays a stacked bar chart showing the number of successful logins for the last 24 hours, grouped by both client and country name. This visualizes the relative popularity of each client overall, as well as in a given country.
+## Upgrading the Auth0 app (optional)
 
-**Logins by Client per Day.** Shows a stacked bar chart on a timeline showing the number of successful logins for the last seven days, grouped by client per day. This shows the popularity of each client over the past week, and the relative popularity among clients.
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-**Connection Types per Hour.** Provides a line chart on a timeline of the connection types used for the past seven days.
+<AppUpdate/>
 
-**Client Version Usage.** Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
+## Uninstalling the Auth0 app (Optional)
 
-**Top 10 Clients.** Shows a table chart that lists the ten most popular clients, including client name and count for the past 24 hours.
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
-**Top 10 Recent Errors.** Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
-
-<img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard-mapbox.png')} alt="Auth0 app-overview-dashboard-mapbox" />
+<AppUninstall/>

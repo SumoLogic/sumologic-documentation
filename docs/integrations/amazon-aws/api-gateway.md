@@ -1,12 +1,13 @@
 ---
 id: api-gateway
 title: AWS API Gateway
+sidebar_label: AWS API Gateway
 description: Amazon API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_API_Gateway.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_API_Gateway.png')} alt="AWS API Gateway icon" width="50"/>
 
 AWS API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
@@ -17,14 +18,14 @@ The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks whil
 The AWS API Gateway app uses the following logs and metrics:
 
 * Amazon API Gateway metrics:
-  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 * Amazon API Gateway access logs:
-  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 
 ### Sample log messages
 
@@ -134,7 +135,7 @@ The AWS API Gateway app uses the following logs and metrics:
 Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
 ```
 
-```sql title="Top Error Codes (CloudTrail Log-based)"
+```sumo title="Top Error Codes (CloudTrail Log-based)"
 "\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
 | json "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "sourceIPAddress", "errorCode", "errorMessage", "requestID" as event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, src_ip, errorCode, errorMessage, requestID nodrop
 | where event_source = "apigateway.amazonaws.com" and !isEmpty(errorCode)
@@ -148,7 +149,7 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 | top 10 errorCode by eventCount, errorCode asc
 ```
 
-```sql title="Distribution by User Agent (Access Log-based)"
+```sumo title="Distribution by User Agent (Access Log-based)"
 account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage domainname requestId identityUserAgent
 | json "requestId", "apiId", "authorizerError", "errorMessage", "errorResponseType", "status", "integrationLatency", "domainName", "identitySourceIp", "identityUserAgent", "stage", "integrationStatus" as requestId, apiId, authorizerError, errorMessage, errorResponseType, status, integrationLatency, domainName, identitySourceIp, identityUserAgent, stage, integrationStatus
 | json "wafLatency", "responseLatency", "responseLength", "path", "httpMethod", "protocol" as wafLatency, responseLatency, responseLength, path, httpMethod, protocol nodrop
@@ -160,87 +161,6 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 ```
 
 ## Collecting logs and metrics for AWS API Gateway
-
-### Fields in field schema
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for the below fields:
-    * `apiname`
-    * `account`
-    * `namespace`
-    * `region`
-    * `accountid`
-1. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields).
-
-### Field extraction rules
-
-To learn how to create field extraction rules, [Create a Field Extraction Rules](/docs/manage/field-extractions/create-field-extraction-rule).
-
-Create a field extraction rule for cloudTrail logs:
-
-```sql
-Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "apigateway.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "responseElements", "recipientAccountId" as eventSource, region, responseElements, accountid nodrop
-| where eventSource = "apigateway.amazonaws.com"
-| "aws/apigateway" as namespace
-| json field=responseElements "name" as ApiName nodrop
-| tolowercase(ApiName) as apiname
-| fields region, namespace, apiname, accountid
-```
-
-Create a field extraction rule for access logs:
-
-```sql
-Rule Name: AwsObservabilityApiGatewayAccessLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* apiId domainName stage requestId status
-Parse Expression:
-json "apiId", "domainName", "stage" as apiId, domainName, stage
-| "aws/apigateway" as namespace
-| apiId as apiName
-| fields apiName, namespace, apiId
-```
-
-Create/Update field extraction rule(s) for cloudwatch logs:
-
-```sql
-Rule Name: AwsObservabilityGenericCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
-Parse Expression:
-if (isEmpty(namespace),"unknown",namespace) as namespace
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname
-| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop
-| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop
-| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop
-| apiid as apiName
-| tolowercase(dbidentifier) as dbidentifier
-| fields namespace, functionname, dbidentifier, apiid, apiName
-```
-
-### Metrics rules
-
-Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
-
-```sql
-Rule name: AwsObservabilityApiGatewayApiNameMetricsEntityRule
-Metric match expression: Namespace=AWS/ApiGateway apiid=*
-Variable name: apiname
-Tag sequence: $apiid._1
-Save it
-```
 
 ### Configure Hosted Collector
 
@@ -541,7 +461,7 @@ To configure a CloudTrail Source, perform these steps:
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following field extraction rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 
-```sql
+```sumo
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -552,7 +472,7 @@ _sourceCategory=aws/observability/cloudtrail/logs
 
 Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
@@ -565,9 +485,30 @@ Enter a parse expression to create an `account` field that maps to the alias you
 
 Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS API Gateway Service is AWS/ApiGateway.
+- `apiname` API Gateway API name.
+- `apiid` API Gateway API id.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityAPIGatewayCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `apiname` from CloudTrail logs will be created as a part of app installation.
+
+The FER **AwsObservabilityAPIGatewayAccessLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from access logs will be created as a part of app installation.
+
+The FER **AwsObservabilityAPIGatewayCloudWatchLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from CloudWatch logs will be created as a part of app installation.
+
+### Metric Rule(s)
+
+The Metric Rule **AwsObservabilityAPIGatewayMetricsRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
 
 ## Viewing AWS API Gateway dashboards
 
@@ -640,7 +581,7 @@ Use these dashboards to:
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
-* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq)
+* Monitor requests coming in from known malicious IP addresses detected via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 
@@ -715,3 +656,35 @@ Use these dashboards to:
 #### AWS API Gateway - Enhanced Monitoring (WebSocket API)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/7.-AWS-API-Gateway-Enhanced-Monitoring-WebSocket-API.png' alt="Enhanced Monitoring (WebSocket API)" />
+
+## Create monitors for AWS API Gateway app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS API Gateway alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS API Gateway - High Server-Side Errors` | This alert fires where there are too many API requests (>5%) with server-side errors within 5 minutes. | Count > = 0.05 | Count < 0.05 |
+| `AWS API Gateway - High Client-Side Errors` | This alert fires where there are too many API requests (>5%) with client-side errors within 5 minutes. | Count > = 0.05 | Count < 0.05 |
+| `AWS API Gateway - High Integration Latency` | This alert fires when we detect the high integration latency for the API requests in a stage within 5 minutes. | Count > = 2000 | Count < 2000 |
+| `AWS API Gateway - High Latency` | This alert fires when we detect the high latency in a stage within 5 minutes for REST and HTTP API. | Count > = 2500 | Count < 2500 |
+| `AWS API Gateway - Low Traffic API` | This alert fires when there is low message traffic volume for the API within 5 minutes. | Count < = 1 | Count > 1 |
+| `AWS API Gateway - High Authorizer Errors` | This alert fires when there are too many API requests (>5%) with authorizer errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High Integration Errors` | This alert fires when there are too many API requests (>5%) with integration errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Errors` | This alert fires when there are too many API requests (>5%) with WAF errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Latency` | This alert fires when we detect the high WAF latency for the REST and WebSocket API requests in a stage within 5 minutes. | Count > 1000 | Count < = 1000 |
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

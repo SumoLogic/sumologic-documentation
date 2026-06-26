@@ -7,7 +7,7 @@ description: The Sumo Logic app for AWS EC2 allows you to collect your EC2 insta
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="AWS EC2 CW Metrics icon" width="50"/>
 
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
 
@@ -75,7 +75,7 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
 ```
 
-```sql title="Top 10 Error Codes (CloudTrail log-based)"
+```sumo title="Top 10 Error Codes (CloudTrail log-based)"
 account={{account}} region={{region}} namespace={{namespace}} eventname eventsource "ec2.amazonaws.com" errorCode
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as event_source, region, requestParameters, responseElements, accountid nodrop
 | json "userIdentity", "eventName", "sourceIPAddress", "userAgent", "eventType", "requestID", "errorCode", "errorMessage", "eventCategory", "managementEvent" as userIdentity, event_name, src_ip, user_agent, event_type, request_id, error_code, error_message, event_category, management_event nodrop
@@ -144,50 +144,13 @@ To configure a CloudTrail Source, perform these steps:
    :::
 5. **Source Category**. Enter `aws/observability/cloud trail/logs`.
 6. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried through the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
-7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 8. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
 9. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
 10. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
 11. **Timestamp Format.** Select **Automatically detect the format**.
 12. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 13. Click **Save**.
-
-### Field in Field Schema
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for the “**instanceid**” field.
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
-
-
-### CloudTrail Field Extraction Rule
-
-```sql
-Rule Name: AwsObservabilityEC2CloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
-```
-
-
-**Parse Expression**
-
-```sql
-| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
-| where eventSource = "ec2.amazonaws.com"
-| "aws/ec2" as namespace
-| json field=requestParameters "instanceType", "instancesSet", "instanceId", "DescribeInstanceCreditSpecificationsRequest.InstanceId.content" as req_instancetype, req_instancesSet, req_instanceid_1, req_instanceid_2 nodrop
-| json field=req_instancesSet "item", "items" as req_instancesSet_item, req_instancesSet_items nodrop
-| parse regex field=req_instancesSet_item "\"instanceId\":\s*\"(?<req_instanceid_3>.*?)\"" nodrop
-| parse regex field=req_instancesSet_items "\"instanceId\":\s*\"(?<req_instanceid_4>.*?)\"" nodrop
-| json field=responseElements "instancesSet.items" as res_responseElements_items nodrop
-| parse regex field=res_responseElements_items "\"instanceType\":\s*\"(?<res_instanceType>.*?)\"" nodrop
-| parse regex field=res_responseElements_items "\"instanceId\":\s*\"(?<res_instanceid>.*?)\"" nodrop
-| if (!isBlank(req_instanceid_1), req_instanceid_1,  if (!isBlank(req_instanceid_2), req_instanceid_2, if (!isBlank(req_instanceid_3), req_instanceid_3, if (!isBlank(req_instanceid_4), req_instanceid_4, "")))) as req_instanceid
-| if (!isBlank(req_instanceid), req_instanceid, res_instanceid) as instanceid
-| if (!isBlank(req_instancetype), req_instancetype, res_instancetype) as instanceType
-| tolowercase(instanceid) as instanceid
-| fields region, namespace, accountid, instanceid
-```
-
 
 ### Centralized AWS CloudTrail log collection
 
@@ -204,7 +167,7 @@ Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_crea
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
@@ -219,9 +182,21 @@ Enter a parse expression to create an “account” field that maps to the alias
 Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `account` Name/alias to the AWS account.
+- `accountid` AWS account ID.
+- `region` The region to which the resource name belongs.
+- `namespace` Namespace for EC2 CW Metrics Service.
+- `instanceid` EC2 Instance Id.
+
+### Field Extraction Rule(s)
+
+The FER **AwsObservabilityEC2CloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `instanceid` will be created as a part of app installation.
 
 ## Viewing AWS EC2 dashboards
 
@@ -237,8 +212,7 @@ Use this dashboard to:
 * Identify count of Status checks
 * Observe all relevant metrics for CPU, Internal Disk Store, Network utilization per instance type
 
-![EC2-CW-Overview](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Overview-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/1.1.-AWS-EC2-Overview-CloudWatch-Metrics.png' alt="AWS EC2 Overview (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Summary (CloudWatch Metrics)
 
@@ -251,8 +225,7 @@ Use this dashboard to:
 * Observe Instance Disk Store (Disk Read/Write - Bytes & ops) for EC2 instance.
 * Monitor Network usage metrics (Network in/out - Byes & packets) for EC2 instance
 
-![EC2-CW-Summary](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/1.1.-AWS-EC2-Summary-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/1.1.-AWS-EC2-Summary-CloudWatch-Metrics.png' alt="AWS EC2 Summary (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Events  
 
@@ -265,8 +238,7 @@ Use this dashboard to:
 * Monitor top IAM Users, Assumed Role Users, and User agents
 * Monitor distribution of Successful and failed events with the list of latest events.
 
-![EC2-CW-Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1-AWS-EC2-Events.png)
-
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/2.1-AWS-EC2-Events-CloudTrail.png' alt="AWS EC2 - Events (CloudTrail) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### CPU (CloudWatch Metrics)
 
@@ -277,7 +249,7 @@ Use this dashboard to:
 * Observe CPU Credits metrics (Usage and balance) over time.
 * Identify CPU Surplus Credits (Charged and Balance) over time.
 
-![EC2-CW-CPU](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/2.1.-AWS-EC2-CPU-CloudWatch-Metrics.png)
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/2.1.-AWS-EC2-CPU-CloudWatch-Metrics.png' alt="AWS EC2 CPU (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### EBS (CloudWatch Metrics)
 
@@ -288,8 +260,7 @@ Use this dashboard to:
 * Monitor EBS read and write ops over time
 * EBS IO balance and Byte Balance % metric over time for Ec2 instances.
 
-![EC2-CW-EBS](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/3.1.-AWS-EC2-EBS-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/3.1.-AWS-EC2-EBS-CloudWatch-Metrics.png' alt="AWS EC2 EBS (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Disk (CloudWatch Metrics)
 
@@ -300,8 +271,7 @@ Use this dashboard to:
 * Monitor instance store - Disk metrics like Disk read/write Bytes and Byte rate
 * Monitor instance store - Disk netrucs like Disk read/write Operations and Operation rate.
 
-![EC2-CW-Disc](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/4.1.-AWS-EC2-Disk-CloudWatch-Metrics.png)
-
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/4.1.-AWS-EC2-Disk-CloudWatch-Metrics.png' alt="AWS EC2 Disk (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Network (CloudWatch Metrics)
 
@@ -312,7 +282,7 @@ Use this dashboard to:
 * Monitor imported network metrics like - Byte rate for input and out put and Bytes going in and out of Ec2 instances
 * Observe network metrics for Ec2 for packet in/out and  rate of the packets.
 
-![EC2-CW-Network](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/5.1.-AWS-EC2-Network-CloudWatch-Metrics.png)
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/5.1.-AWS-EC2-Network-CloudWatch-Metrics.png' alt="AWS EC2 Network (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### Status Check (CloudWatch Metrics)
 
@@ -323,4 +293,35 @@ Use this dashboard to:
 * Monitor if the instance has passed the status check at last minute
 * Monitor if an instance has passed the system status check at last minute
 
-![EC2-CW-Status](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/6.1.-AWS-EC2-Status-Check-CloudWatch-Metrics.png)
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSEC2CWMetrics/6.1.-AWS-EC2-Status-Check-CloudWatch-Metrics.png' alt="AWS EC2 Status Check (CloudWatch Metrics) dashboard" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS EC2 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS EC2 alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS EC2 CW - High CPU Utilization` | This alert fires when the average CPU utilization based on cloud watch metrics, within a 5 minute interval for an EC2 instance is high (>=85%). | Count > 85 | Count &lt;= 85 |
+| `AWS EC2 CW - Status Check Failed` | This alert fires when there is a status check failures within a 5 minute interval for an EC2 instance. | Count > 0 | Count &lt;= 0 |
+| `AWS EC2 - High Disk Utilization` | This alert fires when the average disk utilization within a 5 minute time interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High System CPU Utilization` | This alert fires when the average system CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 - High Total CPU Utilization` | This alert fires when the average total CPU utilization within a 5 minute interval for an EC2 instance is high (>=85%). | Count &gt;= 85 | Count < 85 |
+| `AWS EC2 CW - Low EBS IO Credit Balance` | This alert fires when the average EBS IO Balance percentage within a 5 minute interval for an EC2 instance is low (&lt;=10%), indicating the instance is close to being throttled on EBS IOPS. | Count &lt;= 10 | Count > 10 |
+| `AWS EC2 CW - Low CPU Credit Balance` | This alert fires when the average CPU Credit Balance within a 30 minute interval for an EC2 instance is low (&lt;=5), indicating a burstable instance is close to losing burst capability and will be limited to baseline performance. | Count &lt;= 5 | Count > 5 |
+
+## Upgrade/Downgrade the AWS EC2 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS EC2 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alleantia.png')} alt="alienvault-otx" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alleantia.png')} alt="Alleanta icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jun 26, 2023***
+***Version: 1.3  
+Updated: April 13, 2026***
 
 Alleantia software is a reference vendor for factory automation, energy and utilities, transportation.
 
@@ -25,6 +25,30 @@ Alleantia software is a reference vendor for factory automation, energy and util
 * **Get History Alarms** (*Enrichment*) - Returns the historical list of the alarms in the IoT Server sorted by ascending time.
 * **Get Alarm Configuration** (*Enrichment*) - Returns the information on an alarm configured on the IoT Server.
 
+## Configure Alleantia in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **URL**. Enter the Alleantia server URL.
+
+* **Port**. Enter the Allentia server port.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alleantia/alleantia-configuration.png')} style={{border:'1px solid gray'}} alt="Alleantia configuration" width="400"/>
+
+For information about Alleantia, see [Alleantia documentation](https://kb.alleantia.com/).
+
 ## Change Log
 
 * December 17, 2020 - First upload
@@ -32,3 +56,4 @@ Alleantia software is a reference vendor for factory automation, energy and util
 * June 26, 2023 (v1.2)
 	+ Removed version tag from actions
 	+ Updated the integration with Environmental Variables
+* April 13, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

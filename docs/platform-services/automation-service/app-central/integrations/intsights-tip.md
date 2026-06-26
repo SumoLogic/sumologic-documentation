@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intsights-tip.png')} alt="intsights-tip" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intsights-tip.png')} alt="Intsights TIP icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 11, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Intsight Threat Intelligence Platform.
 
@@ -23,7 +23,33 @@ Intsight Threat Intelligence Platform.
 * **Get Alert List Daemon** (*Daemon*) - Get list of alerts ids by query.
 * **List Sources** (*Enrichment*) - Get ID, name and confidence level of each Ioc source, grouped by source type.
 
+## Configure Intsights TIP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Intsights URL.
+
+* **Account ID**. Enter your Intsights [account ID](https://docs.rapid7.com/threat-command/subscription-settings/).
+
+* **API Key**. Enter your Intsights [API key](https://docs.rapid7.com/insight/managing-platform-api-keys/).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/intsights-configuration.png')} style={{border:'1px solid gray'}} alt="Intsights TIP configuration" width="400"/>
+
+For information about Rapid7 Threat Command ([formerly Intsights TIP](https://www.msspalert.com/news/rapid7-acquires-intsights-cyber)), see [Rapid7 Threat Command documentation](https://docs.rapid7.com/).
+
 ## Change Log
 
 * January 15, 2020 - First upload
 * July 11, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

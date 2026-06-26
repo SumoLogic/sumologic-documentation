@@ -2,6 +2,7 @@
 id: save-classic
 title: save (Classic) Search Operator
 sidebar_label: save (Classic)
+description: Use the save (classic) operator to save query results to the Sumo Logic file system with the classic Lookup Tables feature.
 ---
 
 The `save` (classic) operator works with the classic Lookup Tables feature.
@@ -16,9 +17,7 @@ You will need to remember the path where you point the save operator to put the 
 
 ## Syntax
 
-```sql
-save [append] <myFolder/mySubFolder/myFileName>
-```
+`save [append] <myFolder/mySubFolder/myFileName>`
 
 ## Rules
 
@@ -29,7 +28,7 @@ save [append] <myFolder/mySubFolder/myFileName>
 
 Let's say you want to save data about new user accounts created each day. Your Save operator could look like:
 
-```sql
+```sumo
 | parse "name=*," as name
 | parse "action=*," as action
 | parse "date=*," as date
@@ -64,7 +63,7 @@ Files saved to a shared location can only be modified by the person who original
 
 To save a file to a shared location include the word **shared** at the beginning:
 
-```sql
+```sumo
 ...save /shared/myFolder/mySubFolder/fileName
 ```
 
@@ -78,7 +77,7 @@ If you do not use "append" the previously saved data will be overwritten.
 
 Let's say that you'd like to append to your **newDailyUsers** file each day by scheduling this search to run every 24 hours:
 
-```sql
+```sumo
 | parse "name=*," as name
 | parse "action=*," as action
 | parse "date=*," as date
@@ -91,13 +90,13 @@ Each day the query runs the above data is appended to the **newDailyUsers** file
 
 You can also append data to a saved file from different queries. For example, say we have two sources, "bill" that includes billing information, and "config" that contains account information, and we'd like to be able to search for some values from each source. These searches would create a table with information from both sources:
 
-```sql
+```sumo
 _source=bill | parse "user_id=*," as name
 | parse "user_email=*," as email
 | save myFolder/mySubFolder/NameEmailMapping
 ```
 
-```sql
+```sumo
 _source=config | parse "_user=[*]" as name
 | parse "contact_info=[*]" as email
 | save append myFolder/mySubFolder/NameEmailMapping

@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
-***Version: 1.13  
-Updated: July 03, 2024***
+***Version: 1.14  
+Updated: April 30, 2026***
 
 Perform threat intelligence evidence gathering with VirusTotal.
 
@@ -25,12 +25,41 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **Scan File** (*Enrichment*) - Scan the specific file.
 * **Scan URL** (*Enrichment*) - Scan on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
+  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="Playbook showing Virus Total actions" width="800"/>
 
 ## Category
 
 Threat Intelligence-Reputation
+
+## Configure VirusTotal in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your VirusTotal API URL, for example, `https://www.virustotal.com/`.
+
+* **API Key**. Enter your [VirusTotal API key](https://docs.virustotal.com/docs/please-give-me-an-api-key).
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/virustotal-configuration.png')} style={{border:'1px solid gray'}} alt="VirusTotal configuration" width="400"/>
+
+For information about VirusTotal, see [VirusTotal documentation](https://docs.virustotal.com/).
 
 ## Change Log
 
@@ -75,3 +104,4 @@ Threat Intelligence-Reputation
         - **Search VirusTotal** as **Search VirusTotal**
         - **File Scan V2** as **Scan File** but it just scans the specific file
         - **URL Scan V2** as **Scan URL** but it just scans on a specific URL
+* April 30, 2026 (v1.14) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

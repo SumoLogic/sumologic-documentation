@@ -2,32 +2,29 @@
 id: hextodec
 title: hexToDec Search Operator
 sidebar_label: hexToDec
+description: Use the hexToDec operator to convert hexadecimal strings of 16 or fewer characters to long integer values. Uses Two's Complement for negative values.
 ---
 
 The `hexToDec` operator converts a hexadecimal string of 16 or fewer characters to a long data type using Two's Complement for negative values.
 
 ## Syntax
 
-```sql
-hexToDec("<hexadecimal string>") as <field>
-```
+`hexToDec("<hexadecimal string>") as <field>`
 
-```sql
-hexToDec(<hexadecimal_field>) as <field>
-```
+`hexToDec(<hexadecimal_field>) as <field>`
 
 ## Examples
 
 The following returns `V` with a value of `4919`
 
-```sql
+```sumo
 | hexToDec("0000000000001337") as V
 ```
 
-```sql
+```sumo
 ... | count by _collector | decToHex(_count) as v | hexToDec(v) as h
 ```
 
-```sql
+```sumo
 ... | count by _collector | where _count = hexToDec("7AF")
 ```

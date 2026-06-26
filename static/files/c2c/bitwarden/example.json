@@ -1,0 +1,16 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name": "Bitwarden Source",
+        "base_url": "https://api.bitwarden.com",
+        "client_id": "********",
+        "client_secret": "********",
+        "polling_interval": "15m"
+      },
+      "schemaRef":{
+        "type":"Bitwarden"
+      },
+      "sourceType":"Universal"
+    }
+  }
