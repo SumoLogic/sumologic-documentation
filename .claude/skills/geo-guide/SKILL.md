@@ -99,7 +99,7 @@ Rewrite every H2 and H3 as a question a user would type into an AI tool.
 | `## Prerequisites` | `## What do I need before getting started?` |
 | `## Configuration` | `## How do I configure [feature] in Sumo Logic?` |
 | `## Log Collection` | `## How do I collect [source] logs in Sumo Logic?` |
-| `## Dashboards` | `## What [feature] does the dashboards include?` |
+| `## Dashboards` | `## What dashboards does [feature] include?` |
 | `## Limitations` | `## What are the limitations of [feature]?` |
 
 **Rules:**
