@@ -220,7 +220,7 @@ AWS Lambda provides Provisioned Concurrency for greater control over the start-u
 
 To collect the metrics in Sumo Logic, follow the steps below:
 
-1. Jump to the [Collect Amazon CloudWatch Metrics](#collect-amazon-cloudwatch-metrics) section and complete the steps as described.
+1. Jump to the [Collect Amazon CloudWatch Metrics](#collect-aws-lambda-cloudwatch-metrics) section and complete the steps as described.
 2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management Console, as shown in the following example.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Configure-Provisioned-Concurrency.png')} alt="Configure Provisioned Concurrency" />

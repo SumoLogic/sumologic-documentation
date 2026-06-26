@@ -195,7 +195,7 @@ Use these dashboards to:
 ### Access Logs
 
 Access logs contains information about who has accessed your API and how the caller accessed the API. 
-To populate the dashboards, you must explicitly [enable access logs](/docs/integrations/amazon-aws/api-gateway/#collect-access-logs-for-aws-api-gateway).
+To populate the dashboards, you must explicitly [enable access logs](/docs/integrations/amazon-aws/api-gateway/#collect-aws-api-gateway-access-logs).
 
 #### AWS API Gateway - Access Logs - Overview
 
