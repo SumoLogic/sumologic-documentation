@@ -16,6 +16,7 @@ The Sumo Logic app for AWS Application Load Balancing uses logs and metrics to g
 ## Log and metric types
 
 The Sumo Logic app for AWS Application Load Balancer uses the following logs and metrics:
+* [AWS Application Load Balancer CloudTrail Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/cloudtrail-logs.html)
 * The [Application Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) introduces two new fields in addition to the fields contained in the Classic ELB Access log:
    * `Type`. This is the type of request or connection (HTTP, HTTPS, H2, ws, wss).
    * `target_group_arn`. This is the Amazon Resource Name (ARN) of the target group.
@@ -29,7 +30,7 @@ The logs are stored in a .gzip format in the specified S3 bucket and contain the
    target_group_arn, trace_id
    ```
    The log format is described in [AWS Application Load Balancer Access Log Collection](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html).
-* [AWS Application Load Balancing metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
+* [AWS Application Load Balancer CloudWatch Metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
 The metrics are included in the AWS/Application ELB namespace. For more details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
 
 ### Sample log message
@@ -65,7 +66,7 @@ account="account" region="region" Namespace="AWS/ApplicationELB" loadbalancer="l
 
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect AWS Application Load Balancer metrics
+### Collect AWS Application Load Balancer CloudWatch metrics
 
 Sumo Logic supports collecting metrics using one of the following source types:
 
@@ -85,7 +86,7 @@ Follow the steps below to add custom metadata [fields](/docs/manage/fields) with
       * You will have the option to automatically add or enable the field.
       * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-### Collect AWS Application Load Balancer access logs
+### Collect AWS Application Load Balancer Access logs
 
 #### Prerequisites
 

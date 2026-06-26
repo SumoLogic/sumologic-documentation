@@ -174,7 +174,7 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect AWS API Gateway metrics
+### Collect AWS API Gateway CloudTrail metrics
 
 Sumo Logic supports collecting metrics using one of the following source types:
 
@@ -241,7 +241,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
    ```
 
-### Collect AWS API Gateway access logs
+### Collect AWS API Gateway Access logs
 
 1. Configure the [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource).
    1. **Name**. Enter a name to display the new Source.
