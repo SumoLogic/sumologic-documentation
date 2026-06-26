@@ -63,7 +63,7 @@ When generating GEO-optimized frontmatter, add # [GEO: Principle N] inline comme
 "Scheduled searches are a powerful feature of Sumo Logic that allow you to run searches automatically on a recurring schedule..."
 
 <!-- After -->
-Use Scheduled Searches to run a saved search automatically and alert your team when results meet a threshold you define.
+"Use Scheduled Searches to run a saved search automatically and alert your team when results meet a threshold you define."
 ```
 
 **Rules:**
