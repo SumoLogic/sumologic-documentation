@@ -15,7 +15,7 @@ The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks whil
 
 ## Log and metric types
 
-The AWS API Gateway app uses the following logs and metrics:
+The Sumo Logic app for AWS API Gateway uses the following logs and metrics:
 
 * [Amazon API Gateway CloudTrail Logs](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 * Amazon API Gateway access logs:

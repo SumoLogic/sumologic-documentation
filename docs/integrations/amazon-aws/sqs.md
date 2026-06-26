@@ -128,10 +128,10 @@ Follow the steps below to add custom metadata [fields](/docs/manage/fields) with
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 
   :::note
-  Namespace for **Amazon SNS** service is **AWS/SQS**.
+  Namespace for **Amazon SQS** service is **AWS/SQS**.
   :::
 
-Follow the steps below to collect logs for AWS Network Load Balancer (NLB):
+Follow the steps below to collect logs for Amazon SQS:
 1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
 1. Add custom metadata [fields](/docs/manage/fields) with your logs:
    1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.

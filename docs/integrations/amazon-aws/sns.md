@@ -115,7 +115,7 @@ Follow the steps below to add custom metadata [fields](/docs/manage/fields) with
   Namespace for **Amazon SNS** service is **AWS/SNS**.
   :::
 
-Follow the steps below to collect logs for AWS Network Load Balancer (NLB):
+Follow the steps below to collect logs for Amazon SNS:
 1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
 1. Add custom metadata [fields](/docs/manage/fields) with your logs:
    1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.

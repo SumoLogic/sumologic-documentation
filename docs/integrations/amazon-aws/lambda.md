@@ -16,7 +16,7 @@ The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Me
 
 This section describes the data sources for the AWS Lambda app and how the app leverages these data sources to provide insight into AWS Lambda.
 
-The AWS Lambda app uses the following logs and metrics:
+The Sumo Logic app for AWS Lambda uses the following logs and metrics:
 * [AWS Lambda CloudTrail Logs](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html#cloudtrail-data-events)
 * [AWS Lambda CloudWatch Logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html)
 * [AWS Lambda Metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html)

@@ -28,7 +28,7 @@ The Sumo Logic Amazon RDS Proxy dashboards provide visibility into the performan
 
 ## Log and metric types  
 
-The Amazon RDS app uses the following logs and metrics:
+The Sumo Logic app for Amazon RDS uses the following logs and metrics:
 * [Amazon RDS CloudTrail Logs](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-using-cloudtrail.html).
 * [Publishing RDS CloudWatch Logs, RDS Database logs for Aurora MySQL, RDS MySQL, MariaDB](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs.html).
 * [Publishing RDS CloudWatch logs, RDS Database logs for Aurora PostgreSQL, RDS PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html#USER_LogAccess.Concepts.PostgreSQL.PublishtoCloudWatchLogs)
@@ -371,7 +371,7 @@ Follow the steps below to add custom metadata [fields](/docs/manage/fields) with
   Namespace for **Amazon RDS** service is **AWS/RDS**.
   :::
 
-Follow the steps below to collect logs for AWS Network Load Balancer (NLB):
+Follow the steps below to collect logs for Amazon RDS:
 1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
 1. Add custom metadata [fields](/docs/manage/fields) with your logs:
    1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.

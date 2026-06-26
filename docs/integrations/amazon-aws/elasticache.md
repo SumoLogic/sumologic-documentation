@@ -15,7 +15,7 @@ The Amazon ElastiCache dashboards provide visibility into key event and performa
 
 ## Log and metric types  
 
-The Amazon ElastiCache app uses the following logs and metrics:
+The Sumo Logic app for Amazon ElastiCache uses the following logs and metrics:
 * [Amazon ElastiCache CloudTrail Logs](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 * [Amazon ElastiCache Host-Level Metrics for individual cache nodes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
 * [Amazon ElastiCache Cache Engine Metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.Redis.html)

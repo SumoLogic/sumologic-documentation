@@ -14,7 +14,7 @@ The Sumo Logic app for AWS Network Load Balancer is using metrics to provide ins
 
 ## Log and metric types  
 
-The AWS Network Load Balancer app uses the following logs and metrics:
+The Sumo Logic app for AWS Network Load Balancer uses the following logs and metrics:
 * [AWS Network Load Balancer CloudTrail Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/cloudtrail-logs.html)
 * [AWS Network Load Balancer CloudWatch Metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html)
 
