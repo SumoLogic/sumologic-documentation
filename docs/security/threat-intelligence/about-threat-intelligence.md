@@ -70,7 +70,7 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
    * [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source)  
    * [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source)
    * [ZeroFox Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source)
-* **Upload**. Manually upload files that add threat intelligence indicators. You can also download the template to get a sample file showing the expected schema before uploading. See [Add indicators in Threat Intelligence](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using this option or APIs.
+* **Upload**. Manually upload files that add threat intelligence indicators. See [Add indicators in Threat Intelligence](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using this option or APIs.
 * **The API**. See the following APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
