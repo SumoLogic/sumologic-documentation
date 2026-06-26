@@ -174,7 +174,7 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect AWS API Gateway CloudTrail metrics
+### Collect AWS API Gateway CloudWatch metrics
 
 Sumo Logic supports collecting metrics using one of the following source types:
 
