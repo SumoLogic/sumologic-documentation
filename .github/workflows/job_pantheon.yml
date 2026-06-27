@@ -94,14 +94,23 @@ jobs:
           echo "PANTHEON_ENV=helpdocs" >> $GITHUB_ENV
           echo "PANTHEON_BRANCH=$NORMLIZED_STAGING_ENV_NAME" >> $GITHUB_ENV
       - name: Commit build and deploy to Pantheon repo
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          HEAD_COMMIT_MSG: ${{ github.event.head_commit.message }}
+          DEFAULT_REASON: "${{ github.workflow }} run #${{ github.run_number }}"
+          PANTHEON_SITE_ID: ${{ inputs.PANTHEON_SITE_ID }}
+          SITE_PATH: ${{ inputs.SITE_PATH }}
         run: |
-          DEFAULT_REASON="${{ github.workflow }} run #${{ github.run_number }}"
-          REASON="DOCS@$(echo "${{ github.sha }}" | cut -c 1-7): ${{ github.event.pull_request.title || github.event.head_commit.message || '$DEFAULT_REASON' }}"
+          set -euo pipefail
+          SHA="$(echo "${{ github.sha }}" | cut -c 1-7)"
+          DETAILS="${PR_TITLE:-${HEAD_COMMIT_MSG:-$DEFAULT_REASON}}"
+          REASON="DOCS@${SHA}: $DETAILS"
+          COMMIT_MESSAGE="$(echo "$REASON" | head -n 1 | tr -d '"`$\\')"
           terminus local:clone --yes --branch="${{ env.PANTHEON_BRANCH }}" ${{ inputs.PANTHEON_SITE_ID }}
           rsync --archive --delete --exclude="cid.php" ./build/ "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}"
           chmod -R 755 $HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}/${{ inputs.SITE_PATH }}
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" add .
-          git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" commit -m "$REASON"
+          git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" commit -m "$COMMIT_MESSAGE"
           WATCH_COMMIT=$(git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" rev-parse --verify HEAD)
           git -C "$HOME/pantheon-local-copies/${{ inputs.PANTHEON_SITE_ID }}" push origin
           terminus workflow:wait --max 600 --commit $WATCH_COMMIT -- ${{ inputs.PANTHEON_SITE_ID }}.${{ env.PANTHEON_ENV }}
