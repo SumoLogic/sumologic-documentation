@@ -10,12 +10,69 @@ interface AskAiSidepanelProps {
   initialMessage?: { query: string } | null;
 }
 
+const FEEDBACK_FORM_FIELDS = [
+  'created_at',
+  'question',
+  'answer',
+  'details',
+  'page_url',
+  'client_timestamp',
+] as const;
+
+type FeedbackFormField = (typeof FEEDBACK_FORM_FIELDS)[number];
+
+function parseGoogleFormConfig(formUrl: string): {
+  actionUrl: string;
+  fields: FeedbackFormField[];
+  entryMap: Partial<Record<FeedbackFormField, string>>;
+} | null {
+  try {
+    const url = new URL(formUrl);
+    const entryKeys = Array.from(url.searchParams.keys()).filter((key) =>
+      key.startsWith('entry.')
+    );
+
+    if (
+      !url.hostname.includes('docs.google.com') ||
+      !url.pathname.endsWith('/viewform') ||
+      entryKeys.length < FEEDBACK_FORM_FIELDS.length
+    ) {
+      return null;
+    }
+
+    const entryMap = {} as Partial<Record<FeedbackFormField, string>>;
+    FEEDBACK_FORM_FIELDS.forEach((field, index) => {
+      entryMap[field] = entryKeys[index];
+    });
+
+    return {
+      actionUrl: `${url.origin}${url.pathname.replace(
+        /\/viewform$/,
+        '/formResponse'
+      )}`,
+      fields: [...FEEDBACK_FORM_FIELDS],
+      entryMap,
+    };
+  } catch {
+    return null;
+  }
+}
+
 export default function AskAiSidepanel({
   isOpen,
   onClose,
   initialMessage,
 }: AskAiSidepanelProps) {
   const { siteConfig } = useDocusaurusContext();
+  const algoliaConfig = (siteConfig.themeConfig as any)?.algolia;
+  const askAiConfig = {
+    ...(algoliaConfig?.askAi || {}),
+    ...(((siteConfig.customFields as any)?.askAi || {}) as Record<
+      string,
+      unknown
+    >),
+  };
+  const feedbackFormUrl = askAiConfig?.feedbackFormUrl || '';
   const [SidepanelComponent, setSidepanelComponent] = useState<any>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isHistoryOpen, setIsHistoryOpen] = useState(false);
@@ -23,7 +80,16 @@ export default function AskAiSidepanel({
   const [headerActionsEl, setHeaderActionsEl] = useState<HTMLElement | null>(
     null
   );
+  const [feedbackModal, setFeedbackModal] = useState<{
+    question: string;
+    answer: string;
+  } | null>(null);
+  const [feedbackDetails, setFeedbackDetails] = useState('');
+  const [isSubmittingFeedback, setIsSubmittingFeedback] = useState(false);
+  const [feedbackSubmitError, setFeedbackSubmitError] = useState('');
+  const [feedbackSubmittedNotice, setFeedbackSubmittedNotice] = useState('');
   const isResizingRef = useRef(false);
+  const feedbackTextareaRef = useRef<HTMLTextAreaElement | null>(null);
 
   // Lazy load the Algolia Sidepanel component
   useEffect(() => {
@@ -84,8 +150,45 @@ export default function AskAiSidepanel({
     if (!isOpen) {
       setIsExpanded(false);
       setIsHistoryOpen(false);
+      setFeedbackModal(null);
+      setFeedbackDetails('');
+      setIsSubmittingFeedback(false);
+      setFeedbackSubmitError('');
+      setFeedbackSubmittedNotice('');
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!feedbackSubmittedNotice) return;
+
+    const timer = window.setTimeout(() => {
+      setFeedbackSubmittedNotice('');
+    }, 3000);
+
+    return () => window.clearTimeout(timer);
+  }, [feedbackSubmittedNotice]);
+
+  useEffect(() => {
+    if (!feedbackModal) return;
+
+    const textarea = feedbackTextareaRef.current;
+    if (textarea) {
+      textarea.focus();
+      const length = textarea.value.length;
+      textarea.setSelectionRange(length, length);
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setFeedbackModal(null);
+        setFeedbackDetails('');
+        setFeedbackSubmitError('');
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [feedbackModal]);
 
   // Close on Escape key
   useEffect(() => {
@@ -366,6 +469,47 @@ export default function AskAiSidepanel({
     [copyTextToClipboard, getAssistantMessageText, showCopiedState]
   );
 
+  const getFeedbackContext = React.useCallback(
+    (btn: HTMLButtonElement) => {
+      const response = btn.closest('.DocSearch-AskAiScreen-Response');
+      const question =
+        response
+          ?.querySelector('.DocSearch-AskAiScreen-Query')
+          ?.textContent?.trim() ?? '';
+      const answer = getAssistantMessageText(btn);
+
+      return { question, answer };
+    },
+    [getAssistantMessageText]
+  );
+
+  const closeFeedbackModal = React.useCallback(() => {
+    setFeedbackModal(null);
+    setFeedbackDetails('');
+    setFeedbackSubmitError('');
+  }, []);
+
+  const handleFeedbackButtonClick = React.useCallback(
+    (btn: HTMLButtonElement) => {
+      const title = btn.getAttribute('title')?.toLowerCase() ?? '';
+      const isNegativeFeedback = title.includes('dislike');
+      if (!isNegativeFeedback) {
+        return false;
+      }
+
+      const { question, answer } = getFeedbackContext(btn);
+
+      setFeedbackDetails('');
+      setFeedbackSubmitError('');
+      setFeedbackModal({
+        question,
+        answer,
+      });
+      return true;
+    },
+    [getFeedbackContext]
+  );
+
   // Fix Algolia copy button bug: it can copy the first streamed text chunk
   // instead of the rendered answer. Native capture catches the click before
   // Algolia's own React handler writes stale content to the clipboard.
@@ -388,6 +532,25 @@ export default function AskAiSidepanel({
     };
   }, [copyAssistantMessage, isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleDocumentFeedbackClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      const btn = target.closest(
+        '.DocSearch-AskAiScreen-Actions button:not(.DocSearch-AskAiScreen-CopyButton)'
+      ) as HTMLButtonElement | null;
+      if (!btn) return;
+
+      handleFeedbackButtonClick(btn);
+    };
+
+    document.addEventListener('click', handleDocumentFeedbackClick, true);
+    return () => {
+      document.removeEventListener('click', handleDocumentFeedbackClick, true);
+    };
+  }, [handleFeedbackButtonClick, isOpen]);
+
   const handleCopyCapture = React.useCallback(
     (e: React.MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -400,6 +563,80 @@ export default function AskAiSidepanel({
     },
     [copyAssistantMessage]
   );
+
+  const submitFeedbackModal = React.useCallback(async () => {
+    if (!feedbackModal) return;
+    const trimmedDetails = feedbackDetails.trim();
+
+    if (!trimmedDetails) {
+      closeFeedbackModal();
+      return;
+    }
+
+    const payload = {
+      details: trimmedDetails,
+      question: feedbackModal.question,
+      answer: feedbackModal.answer,
+      timestamp: new Date().toISOString(),
+      url: window.location.href,
+    };
+
+    setIsSubmittingFeedback(true);
+    setFeedbackSubmitError('');
+
+    try {
+      if (feedbackFormUrl) {
+        const formConfig = parseGoogleFormConfig(feedbackFormUrl);
+        if (!formConfig) {
+          throw new Error('Invalid Google Form feedback URL');
+        }
+
+        const formValues: Record<FeedbackFormField, string> = {
+          created_at: new Date().toISOString(),
+          question: payload.question,
+          answer: payload.answer,
+          details: payload.details,
+          page_url: payload.url,
+          client_timestamp: payload.timestamp,
+        };
+
+        const formData = new URLSearchParams();
+        formConfig.fields.forEach((field) => {
+          const entryKey = formConfig.entryMap[field];
+          if (!entryKey) return;
+          formData.append(entryKey, formValues[field]);
+        });
+
+        await fetch(formConfig.actionUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData,
+        });
+      }
+
+      window.dispatchEvent(
+        new CustomEvent('ask-ai-feedback-submitted', {
+          detail: payload,
+        })
+      );
+
+      closeFeedbackModal();
+      setFeedbackSubmittedNotice('Additional feedback submitted.');
+    } catch (error) {
+      setFeedbackSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Failed to submit feedback details'
+      );
+    } finally {
+      setIsSubmittingFeedback(false);
+    }
+  }, [
+    closeFeedbackModal,
+    feedbackDetails,
+    feedbackFormUrl,
+    feedbackModal,
+  ]);
 
   // Handle submit button state based on textarea content
   useEffect(() => {
@@ -461,10 +698,6 @@ export default function AskAiSidepanel({
     return null;
   }
 
-  const algoliaConfig = (siteConfig.themeConfig as any)?.algolia;
-  const askAiConfig =
-    (siteConfig.customFields as any)?.askAi || algoliaConfig?.askAi;
-
   if (!askAiConfig) {
     console.error('Ask AI configuration not found in docusaurus.config.js');
     return null;
@@ -501,7 +734,7 @@ export default function AskAiSidepanel({
             placeholder: 'Ask a question about Sumo Logic...',
             greeting: 'How can I help you with Sumo Logic today?',
             introduction:
-              'I can help you find information about Sumo Logic features, integrations, troubleshooting guides, APIs, and best practices across our documentation.',
+              'I can help you find information about Sumo Logic features, integrations, troubleshooting, APIs, and best practices across our documentation.',
             poweredBy: 'Powered by Algolia',
           }}
           insights
@@ -558,6 +791,93 @@ export default function AskAiSidepanel({
             </button>
           </div>,
           headerActionsEl
+        )}
+      {feedbackModal &&
+        createPortal(
+          <div
+            className="ask-ai-feedback-modal-backdrop"
+            role="presentation"
+            onClick={closeFeedbackModal}
+          >
+            <div
+              className="ask-ai-feedback-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="ask-ai-feedback-title"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="ask-ai-feedback-modal-header">
+                <h2 id="ask-ai-feedback-title">Thanks for the feedback</h2>
+                <button
+                  type="button"
+                  className="ask-ai-feedback-close"
+                  aria-label="Close feedback dialog"
+                  onClick={closeFeedbackModal}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M6 6l12 12M18 6L6 18"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <p className="ask-ai-feedback-label">
+                Provide additional feedback (optional)
+              </p>
+              <textarea
+                ref={feedbackTextareaRef}
+                className="ask-ai-feedback-textarea"
+                placeholder="What could be improved about this response?"
+                value={feedbackDetails}
+                onChange={(e) => {
+                  setFeedbackDetails(e.target.value);
+                  if (feedbackSubmitError) {
+                    setFeedbackSubmitError('');
+                  }
+                }}
+              />
+              <p className="ask-ai-feedback-note">
+                Your feedback helps us improve AI-generated responses.
+              </p>
+              {feedbackSubmitError && (
+                <p className="ask-ai-feedback-error">{feedbackSubmitError}</p>
+              )}
+              <div className="ask-ai-feedback-actions">
+                <button
+                  type="button"
+                  className="ask-ai-feedback-button ask-ai-feedback-button-secondary"
+                  onClick={closeFeedbackModal}
+                  disabled={isSubmittingFeedback}
+                >
+                  Done
+                </button>
+                <button
+                  type="button"
+                  className="ask-ai-feedback-button ask-ai-feedback-button-primary"
+                  onClick={submitFeedbackModal}
+                  disabled={isSubmittingFeedback || !feedbackDetails.trim()}
+                >
+                  {isSubmittingFeedback ? 'Submitting...' : 'Submit'}
+                </button>
+              </div>
+            </div>,
+          </div>,
+          document.body
+        )}
+      {feedbackSubmittedNotice &&
+        createPortal(
+          <div
+            className="ask-ai-feedback-toast"
+            role="status"
+            aria-live="polite"
+          >
+            {feedbackSubmittedNotice}
+          </div>,
+          document.body
         )}
     </>
   );

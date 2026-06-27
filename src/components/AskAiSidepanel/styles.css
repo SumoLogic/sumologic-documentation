@@ -23,6 +23,16 @@
   max-width: 400px !important;
   z-index: 999 !important;
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  --docsearch-primary-color: #1d68e1;
+  --docsearch-highlight-color: #1d68e1;
+  --docsearch-focus-color: #1d68e1;
+  --docsearch-soft-primary-color: rgba(29, 104, 225, 0.12);
+  --docsearch-subtle-color: var(--ifm-color-emphasis-600);
+  --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-hit-color: var(--ifm-font-color-base);
+  --docsearch-secondary-text-color: var(--ifm-color-emphasis-700);
+  --docsearch-muted-color: var(--ifm-color-emphasis-700);
+  --docsearch-icon-color: var(--ifm-color-emphasis-700);
 }
 
 /* Expanded state - wider width */
@@ -90,10 +100,23 @@
     -8px 0 32px -4px rgba(0, 0, 0, 0.4), -16px 0 64px -8px rgba(0, 0, 0, 0.32) !important;
 }
 
+[data-theme='dark'] .ask-ai-sidepanel {
+  --docsearch-primary-color: #9cc0ff;
+  --docsearch-highlight-color: #9cc0ff;
+  --docsearch-focus-color: #9cc0ff;
+  --docsearch-soft-primary-color: rgba(156, 192, 255, 0.16);
+  --docsearch-subtle-color: rgba(255, 255, 255, 0.38);
+  --docsearch-text-color: #e3e3e3;
+  --docsearch-hit-color: #e3e3e3;
+  --docsearch-secondary-text-color: rgba(255, 255, 255, 0.76);
+  --docsearch-muted-color: rgba(255, 255, 255, 0.56);
+  --docsearch-icon-color: rgba(255, 255, 255, 0.82);
+}
+
 /* Main sidepanel - integrate with Docusaurus theme */
 .ask-ai-sidepanel .DocSearch-Sidepanel {
   background-color: var(--ifm-background-color) !important;
-  border-left: 1px solid var(--ifm-color-emphasis-200) !important;
+  border-left: 1px solid var(--docsearch-subtle-color) !important;
   width: 100% !important;
   min-width: 100% !important;
   flex-shrink: 0 !important;
@@ -101,8 +124,12 @@
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel {
-  border-left-color: var(--ifm-color-emphasis-300) !important;
+  border-left-color: var(--docsearch-subtle-color) !important;
   background-color: var(--ifm-navbar-background-color) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Header {
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 /* ===================================================================
@@ -220,7 +247,7 @@
 }
 
 [data-theme='dark'] .ask-ai-shortcut-button {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.02);
   box-shadow: none;
 }
@@ -259,11 +286,11 @@
   content: 'Answers are AI-generated from Sumo Docs and may contain errors. Please review and verify.' !important;
   display: block !important;
   padding: 0.75rem 1.5rem !important;
-  color: var(--ifm-color-emphasis-500) !important;
+  color: var(--ifm-color-emphasis-700) !important;
   font-size: 0.6rem !important;
   line-height: 1.3 !important;
   text-align: center !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   white-space: pre-line !important;
 }
 
@@ -281,12 +308,12 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Content::-webkit-scrollbar-thumb {
-  background: var(--ifm-color-emphasis-300);
+  background: var(--ifm-color-emphasis-500);
   border-radius: 4px;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Content::-webkit-scrollbar-thumb:hover {
-  background: var(--ifm-color-emphasis-400);
+  background: var(--ifm-color-emphasis-600);
 }
 
 /* ===================================================================
@@ -299,18 +326,13 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form {
-  border: 1px solid rgba(4, 102, 255, 0.18) !important;
+  border: 1px solid var(--ifm-color-emphasis-300) !important;
   border-radius: 16px !important;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(245, 248, 255, 1) 100%
-  ) !important;
-  box-shadow:
-    0 10px 24px rgba(15, 23, 42, 0.08),
-    0 3px 10px rgba(15, 23, 42, 0.06),
-    0 0 0 1px rgba(4, 102, 255, 0.04) !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  transition:
+    border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
   padding: 14px 16px !important;
   min-height: 60px !important;
   display: flex !important;
@@ -320,31 +342,28 @@
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form:focus-within {
   border-color: var(--ifm-color-primary) !important;
-  box-shadow:
-    0 16px 34px rgba(15, 23, 42, 0.14),
-    0 6px 14px rgba(15, 23, 42, 0.1),
-    0 0 0 4px rgba(4, 102, 255, 0.16) !important;
-  transform: translateY(-2px);
+  box-shadow: none !important;
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--form {
-  border-color: rgba(76, 134, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
   background: linear-gradient(
     180deg,
     rgba(24, 32, 48, 0.98) 0%,
     rgba(18, 24, 39, 0.98) 100%
   ) !important;
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, 0.28),
-    0 0 0 1px rgba(255, 255, 255, 0.06) !important;
+  box-shadow: none !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt {
+  border-top-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 [data-theme='dark']
   .ask-ai-sidepanel
   .DocSearch-Sidepanel-Prompt--form:focus-within {
-  box-shadow:
-    0 16px 34px rgba(0, 0, 0, 0.36),
-    0 0 0 3px rgba(76, 134, 255, 0.2) !important;
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: none !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea {
@@ -365,13 +384,13 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--textarea::placeholder {
-  color: var(--ifm-color-emphasis-500) !important;
+  color: var(--docsearch-muted-color) !important;
 }
 
 [data-theme='dark']
   .ask-ai-sidepanel
   .DocSearch-Sidepanel-Prompt--textarea::placeholder {
-  color: #7f8497 !important;
+  color: var(--docsearch-muted-color) !important;
 }
 
 /* Submit button wrapper — absolutely positioned inside the form at bottom-right */
@@ -388,10 +407,10 @@
 
 /* Submit button styling - Default to grey */
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit {
-  background: var(--ifm-color-emphasis-300) !important;
+  background: var(--ifm-color-emphasis-200) !important;
   border-radius: 10px !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   margin: 0 !important;
@@ -403,11 +422,13 @@
   max-height: 32px !important;
   padding: 0 !important;
   border: none !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
+  box-shadow: none !important;
+  line-height: 0 !important;
+  text-align: center !important;
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit {
-  background: var(--ifm-color-emphasis-400) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
 }
 
 /* Size the arrow icon to fit the button */
@@ -416,16 +437,21 @@
   height: 16px !important;
   display: block !important;
   margin: 0 !important;
-  position: relative !important;
+  position: static !important;
+  flex: 0 0 auto !important;
+  transform: translate(0, 0) !important;
+  color: var(--ifm-color-emphasis-500) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit svg {
+  color: rgba(255, 255, 255, 0.58) !important;
 }
 
 /* Enabled state - when user has typed text (blue) */
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit.has-text {
   background: var(--ifm-color-primary) !important;
   cursor: pointer !important;
-  box-shadow:
-    0 8px 18px rgba(4, 102, 255, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  box-shadow: none !important;
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit.has-text svg {
@@ -434,7 +460,7 @@
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-Prompt--submit.has-text:hover {
   background: var(--ifm-color-primary-dark) !important;
-  transform: scale(1.05);
+  transform: none !important;
 }
 
 /* ===================================================================
@@ -501,6 +527,14 @@
   color: var(--ifm-font-color-base) !important;
 }
 
+.ask-ai-sidepanel .DocSearch-Sidepanel a {
+  color: var(--docsearch-highlight-color) !important;
+}
+
+.ask-ai-sidepanel .DocSearch-Sidepanel a:hover {
+  color: var(--docsearch-primary-color) !important;
+}
+
 .ask-ai-sidepanel .DocSearch-AskAiScreen-MessageContent-Tool,
 .ask-ai-sidepanel .DocSearch-AskAiScreen-MessageContent-Tool-Query {
   display: none !important;
@@ -523,6 +557,223 @@
 }
 
 /* ===================================================================
+   Feedback Modal
+   =================================================================== */
+.ask-ai-feedback-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.38);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1200;
+}
+
+.ask-ai-feedback-modal {
+  width: min(720px, 100%);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--docsearch-subtle-color);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.18),
+    0 8px 24px rgba(15, 23, 42, 0.1);
+  padding: 1.6rem 1.75rem 1.25rem;
+}
+
+.ask-ai-feedback-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ask-ai-feedback-modal-header h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.ask-ai-feedback-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--docsearch-subtle-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+}
+
+.ask-ai-feedback-close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ask-ai-feedback-label {
+  margin: 0 0 0.7rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.98rem;
+}
+
+.ask-ai-feedback-textarea {
+  width: 100%;
+  min-height: 132px;
+  resize: vertical;
+  border: 1px solid var(--docsearch-subtle-color);
+  border-radius: 16px;
+  padding: 1rem 1.05rem;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  line-height: 1.5;
+  outline: none;
+}
+
+.ask-ai-feedback-textarea::placeholder {
+  color: var(--docsearch-muted-color);
+}
+
+.ask-ai-feedback-textarea:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 4px rgba(4, 102, 255, 0.14);
+}
+
+.ask-ai-feedback-note {
+  margin: 0.85rem 0 0;
+  color: var(--docsearch-muted-color);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.ask-ai-feedback-error {
+  margin: 0.6rem 0 0;
+  color: #c62828;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.ask-ai-feedback-toast {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1250;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  background: #111827;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.2),
+    0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.ask-ai-feedback-note code {
+  font-size: 0.78rem;
+}
+
+.ask-ai-feedback-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.ask-ai-feedback-button {
+  border-radius: 12px;
+  padding: 0.58rem 0.95rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.ask-ai-feedback-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ask-ai-feedback-button-secondary {
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  border-color: var(--docsearch-subtle-color);
+}
+
+.ask-ai-feedback-button-primary {
+  background: #111827;
+  color: #fff;
+}
+
+[data-theme='dark'] .ask-ai-feedback-modal {
+  background: #1b2230;
+  border-color: var(--docsearch-subtle-color);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.48),
+    0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme='dark'] .ask-ai-feedback-close {
+  border-color: var(--docsearch-subtle-color);
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-theme='dark'] .ask-ai-feedback-label {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+[data-theme='dark'] .ask-ai-feedback-textarea {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: var(--docsearch-subtle-color);
+}
+
+[data-theme='dark'] .ask-ai-feedback-textarea::placeholder {
+  color: var(--docsearch-muted-color);
+}
+
+[data-theme='dark'] .ask-ai-feedback-note {
+  color: var(--docsearch-muted-color);
+}
+
+[data-theme='dark'] .ask-ai-feedback-error {
+  color: #ff8a80;
+}
+
+[data-theme='dark'] .ask-ai-feedback-toast {
+  background: #0f172a;
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .ask-ai-feedback-button-secondary {
+  border-color: var(--docsearch-subtle-color);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 640px) {
+  .ask-ai-feedback-modal {
+    padding: 1.2rem 1rem 1rem;
+    border-radius: 18px;
+  }
+
+  .ask-ai-feedback-actions {
+    flex-direction: column-reverse;
+  }
+
+  .ask-ai-feedback-button {
+    width: 100%;
+  }
+}
+
+/* ===================================================================
    Suggested Questions
    =================================================================== */
 /* Container for suggested questions */
@@ -535,20 +786,20 @@
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion {
   background-color: rgba(255, 255, 255, 0.92) !important;
-  border: 1px solid var(--ifm-color-emphasis-300) !important;
-  color: var(--ifm-color-emphasis-800) !important;
+  border: 1px solid var(--docsearch-subtle-color) !important;
+  color: var(--ifm-color-emphasis-700) !important;
   border-radius: 999px !important;
   font-family: 'Lab Grotesque', sans-serif !important;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: left !important;
   align-self: flex-start !important;
-  font-size: 0.74rem !important;
-  font-weight: 500 !important;
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
-  padding-left: 0.85rem !important;
-  padding-right: 0.85rem !important;
-  line-height: 1.35 !important;
+  font-size: 0.68rem !important;
+  font-weight: 400 !important;
+  padding-top: 0.42rem !important;
+  padding-bottom: 0.42rem !important;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+  line-height: 1.25 !important;
   min-height: auto !important;
   height: auto !important;
   box-shadow: none !important;
@@ -560,26 +811,26 @@
 }
 
 .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion:hover {
-  border-color: rgba(4, 102, 255, 0.45) !important;
-  background-color: rgba(4, 102, 255, 0.06) !important;
-  color: var(--ifm-color-primary) !important;
+  border-color: rgba(15, 23, 42, 0.16) !important;
+  background-color: rgba(15, 23, 42, 0.03) !important;
+  color: var(--ifm-color-emphasis-800) !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
 [data-theme='dark'] .ask-ai-sidepanel .DocSearch-Sidepanel-SuggestedQuestion {
   background-color: rgba(255, 255, 255, 0.02) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: var(--docsearch-subtle-color) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
   box-shadow: none !important;
 }
 
 [data-theme='dark']
   .ask-ai-sidepanel
   .DocSearch-Sidepanel-SuggestedQuestion:hover {
-  border-color: rgba(76, 134, 255, 0.55) !important;
-  background-color: rgba(76, 134, 255, 0.1) !important;
-  color: #c0d6ff !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   box-shadow: none !important;
 }
 
@@ -608,7 +859,7 @@
   .DocSearch-Sidepanel-Screen--title::before {
   font-size: 1.18rem !important;
   line-height: 1.55rem !important;
-  font-weight: 625 !important;
+  font-weight: 600 !important;
   content: 'How can I help you today?';
   display: block;
 }
@@ -630,10 +881,10 @@
   .DocSearch-Sidepanel-Screen--introduction::before {
   font-size: 0.76rem !important;
   line-height: 1.2rem !important;
-  content: 'I can help you find information about Sumo Logic features, integrations, troubleshooting guides, APIs, and best practices across our documentation.';
+  content: 'I can help you find information about Sumo Logic features, integrations, troubleshooting, APIs, and best practices across our documentation.';
   display: block;
   max-width: 44ch;
-  color: var(--ifm-color-emphasis-600) !important;
+  color: var(--ifm-color-emphasis-700) !important;
   margin-bottom: 0.2rem !important;
 }
 
@@ -645,7 +896,7 @@
   font-size: 0.72rem !important;
   line-height: 1.1rem !important;
   font-weight: 500 !important;
-  color: var(--ifm-color-emphasis-500) !important;
+  color: #6b7280 !important;
   margin-top: 0.45rem !important;
 }
 
@@ -653,7 +904,7 @@
   .ask-ai-sidepanel
   .DocSearch-Sidepanel-NewConversationScreen
   .DocSearch-Sidepanel-Screen--introduction::after {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--docsearch-muted-color) !important;
 }
 
 .ask-ai-sidepanel
@@ -661,6 +912,71 @@
   .DocSearch-Sidepanel-List {
   gap: 0.5rem !important;
   margin-top: 0.1rem !important;
+}
+
+/* ===================================================================
+   Related Sources
+   =================================================================== */
+.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Title {
+  color: var(--docsearch-secondary-text-color) !important;
+}
+
+.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link {
+  background: rgba(15, 23, 42, 0.04) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-radius: 8px !important;
+  color: var(--ifm-color-emphasis-700) !important;
+  font-size: 0.68em !important;
+  gap: 5px !important;
+  padding: 9px 8px !important;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease !important;
+}
+
+.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link span {
+  color: inherit !important;
+  font-weight: 425 !important;
+}
+
+.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link svg {
+  color: var(--docsearch-muted-color) !important;
+  width: 16px !important;
+  height: 16px !important;
+  opacity: 0.82 !important;
+}
+
+.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link:hover {
+  background: rgba(4, 102, 255, 0.05) !important;
+  border-color: rgba(4, 102, 255, 0.16) !important;
+  color: var(--ifm-font-color-base) !important;
+}
+
+.ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link:hover svg {
+  color: var(--docsearch-secondary-text-color) !important;
+  opacity: 1 !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link svg {
+  color: rgba(255, 255, 255, 0.42) !important;
+  opacity: 1 !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(156, 192, 255, 0.18) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme='dark'] .ask-ai-sidepanel .DocSearch-AskAiScreen-RelatedSources-Item-Link:hover svg {
+  color: rgba(255, 255, 255, 0.58) !important;
 }
 
 /* ===================================================================
