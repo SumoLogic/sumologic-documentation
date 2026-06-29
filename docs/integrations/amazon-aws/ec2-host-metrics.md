@@ -16,7 +16,11 @@ The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instanc
 ## Log and metric types  
 
 The Sumo Logic app for AWS EC2 Host Metrics uses the following metrics:
-* [Host Metrics](https://www.sumologic.com/help/docs/send-data/installed-collectors/sources/host-metrics-source)
+* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#cpu-metrics)
+* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#memory-metrics)
+* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#tcp-metrics)
+* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
+* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
 
 ### Sample queries  
 
@@ -25,6 +29,8 @@ _sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namesp
 ```
 
 ## Collecting metrics for AWS EC2 Host Metrics
+
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics).
 
 The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. This section describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
 
@@ -99,16 +105,6 @@ You can also build your EC2 AMI machine image with these fields and settings. Fo
 #### AWS metadata
 
 Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
-
-#### Metrics types  
-
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics).
-
-* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#cpu-metrics)
-* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#memory-metrics)
-* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#tcp-metrics)
-* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
-* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
 
 ## Install the Host Metrics (EC2) App
 
