@@ -10,6 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 [Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
 The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
+
 ## Log and metrics types 
 
 The AWS API Gateway app uses the following logs and metrics:
