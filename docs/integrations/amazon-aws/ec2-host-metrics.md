@@ -13,17 +13,10 @@ Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity i
 
 The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, memory, disk, network, and TCP. Also, it provides detailed insights into all CloudTrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
+## Log and metric types  
 
-## Metrics Types  
-
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics).
-
-* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#cpu-metrics)
-* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#memory-metrics)
-* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#tcp-metrics)
-* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
-* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
-
+The Sumo Logic app for AWS EC2 Host Metrics uses the following metrics:
+* [Host Metrics](https://www.sumologic.com/help/docs/send-data/installed-collectors/sources/host-metrics-source)
 
 ### Sample queries  
 
@@ -31,20 +24,9 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 _sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
 ```
 
+## Collecting metrics for AWS EC2 Host Metrics
 
-## Collecting Metrics for the Host Metrics (EC2) App
-
-The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. This page describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
-
-
-### Field in Field Schema
-
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the `instanceid` field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
-
-<img src={useBaseUrl('img/integrations/amazon-aws/Fields_schema.png')} alt="Fields Schema" />
-
+The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. This section describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
 
 ### Configure Host Metrics sources  
 
@@ -59,7 +41,7 @@ Perform these steps for each EC2 host:
    * Add a field named **account**, and set it to your AWS account alias.
    * Add a field named **namespace** and set it to **aws/ec2**.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="Configure metadata" />
+<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="Configure metadata" style={{border: '1px solid gray'}} width="500" />
 
 3. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
 
@@ -67,6 +49,8 @@ A default Scan Interval of 1 minute is recommended. You can set it to a higher o
 
 You can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic). Here’s a sample sources.json file that you can include in your AMI.
 
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -110,12 +94,21 @@ You can also build your EC2 AMI machine image with these fields and settings. Fo
   }
 }
 ```
+</details>
 
-
-### AWS Metadata
+#### AWS metadata
 
 Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
 
+#### Metrics types  
+
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics).
+
+* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#cpu-metrics)
+* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#memory-metrics)
+* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#tcp-metrics)
+* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
+* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
 
 ## Install the Host Metrics (EC2) App
 
@@ -125,7 +118,13 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing EC2 Host Metrics Dashboards
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
+
+- `accountid` AWS account id.
+
+## Viewing EC2 Host Metrics dashboards
 
 ### AWS EC2 - Overview (Host OS Metrics)
 
