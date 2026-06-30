@@ -18,14 +18,12 @@ import TabItem from '@theme/TabItem';
 This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-The Sumo Logic MCP server lets MCP clients (external AI models) securely query logs, investigate Cloud SIEM insights, and manage alerts and dashboards using natural language from your IDE or chat platform.
+The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 
 <!-- when MCP goes GA: mention it can work with Dojo AI agents, add endpoints to API doc-->
 
 ## Prerequisites
 
-* **Sumo Logic Administrator role**. You'll need this to create OAuth clients. If you're unsure whether you have this role, check your [Preferences](/docs/get-started/onboarding-checklists/).
-* **Sumo Logic OAuth client credentials**. The MCP client uses [OAuth client credentials](/docs/manage/security/oauth) to authenticate with Sumo Logic. For Claude Code CLI, you'll create them during the setup steps below.
 * **MCP server URL for your deployment**. OAuth tokens are deployment-bound, so you must use the correct URL for your Sumo Logic deployment:
    | Deployment | MCP Server URL |
    | :--- | :--- |
@@ -39,13 +37,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) securely query l
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-* **An MCP-compatible client that supports OAuth 2.0 Authorization Code flow**. Any MCP client that supports OAuth 2.0 Authorization Code flow with a client ID and secret will work.
-   * We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
-
-## Known limitations
-
-* **Cursor**. Cursor requires redirect URLs starting with `cursor://`, which is not yet supported by the Sumo Logic authorization server.
-* **VS Code**. Recent VS Code releases do not work with the authorization code flow when an explicit client ID and secret are provided.
+* **An MCP-compatible client that supports OAuth 2.0**. The default setup uses dynamic client registration. We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
 
 :::note
 If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
@@ -55,35 +47,19 @@ If you have questions about client compatibility, [contact Sumo Logic Support](h
 
 ### Authentication
 
-Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Browser-based login handles token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with dynamic client registration. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
-1. In Sumo Logic, create an OAuth client for Claude Code:
-   1. Go to **Administration** > **Security** > **OAuth Clients**.
-   1. Click **+ Add Client**.
-   1. For **Type**, select **Authorization Code**.
-   1. Enter a **Name** and optional **Description**.
-   1. For **Redirect URI**, enter:
-      ```
-      http://localhost:8888/callback
-      ```
-   1. Click **Save**.
-   1. Copy the **Client ID** and **Client Secret**. You'll use these in the next step.
-   For more details about OAuth clients, see [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow).
-1. In a Terminal window, not in Claude Code, register the MCP server. Replace `<client-id>` with your value from Sumo Logic, and replace `<MCP-server-URL>` with your deployment's MCP server URL from the [Prerequisites table](#prerequisites) above. When you run the command, Claude Code prompts you to enter the client secret securely. Choose a scope:
+1. In a Terminal window, register the MCP server. Replace `<MCP-server-URL>` with your deployment's URL from the [Prerequisites table](#prerequisites). Choose a scope:
    * **User scope** (available in all directories, recommended).
      ```bash
-     claude mcp add --transport http \
-       --scope user \
-       --client-id "<client-id>" --client-secret --callback-port 8888 \
+     claude mcp add --scope user --transport http \
        sumo-logic "<MCP-server-URL>"
      ```
    * **Project scope** (available only in the current directory, writes to `.mcp.json`).
      ```bash
-     claude mcp add --transport http \
-       --scope project \
-       --client-id "<client-id>" --client-secret --callback-port 8888 \
+     claude mcp add --scope project --transport http \
        sumo-logic "<MCP-server-URL>"
      ```
 1. Launch Claude Code. With **user scope**, run `claude` from any directory. With **project scope**, run it from the directory where you registered the server.
@@ -92,9 +68,34 @@ Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Brows
    ```
 1. In Claude Code, run `/mcp`.
 1. Select **sumo-logic** and then **Authenticate**.
-1. Claude Code will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
+1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
+
+### Switching organizations
+
+To connect to a different Sumo Logic org:
+1. In Claude Code, run `/mcp`.
+1. Select **sumo-logic** > **Clear authentication**.
+1. Select **Authenticate** and log in to the new org.
+
+:::note
+If you previously granted consent for an org, you will not be prompted again. To revoke consent, go to your Sumo Logic user settings and remove the app under **Personal Authorized Apps** (next to Personal Access Tokens).
+:::
+
+### Manual OAuth setup
+
+Dynamic client registration is the recommended setup for most MCP server users. If your MCP client does not support dynamic client registration, you can connect with manually created OAuth credentials by providing a client ID and secret. See [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow) for instructions on creating an OAuth client, then register the MCP server with:
+
+```bash
+claude mcp add --scope user --transport http \
+  --client-id "<client-id>" --client-secret --callback-port 8888 \
+  sumo-logic "<MCP-server-URL>"
+```
+
+:::note
+Recent VS Code releases do not work with explicit client credentials. Use the default dynamic registration setup above for VS Code.
+:::
 
 ## Available MCP tools
 
@@ -215,7 +216,6 @@ Tool identifiers are subject to change during the preview period.
 
 * `List the users in my org and format as an ASCII table`
 * `Show users who have never logged in`
-* `Delete those users`
 * `List all users and their roles`
 
 ## Example workflows
@@ -351,7 +351,9 @@ Yes. MCP supports multi-tool calls within a single conversational interaction.
 
 ### How does this affect my Sumo Logic usage?
 
-This capability in closed beta requires an AI Addendum. Contact your account representative for pricing information.
+While in preview, this capability requires an AI Addendum. Contact your account representative for pricing information.
+
+MCP-triggered actions can consume Sumo Logic resources in the same way equivalent UI or API actions do. For example, if an AI client uses MCP to run a log search, that search may consume search resources.
 
 :::note
 For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) remains the preferred option.

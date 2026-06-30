@@ -55,6 +55,10 @@ The [Summary Agent](/docs/cse/get-started-with-cloud-siem/insight-summary/) auto
 
 The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), now in Public Preview, applies agentic reasoning to triage and investigate Cloud SIEM insights. It delivers automated verdicts (malicious, suspicious, or benign) using evidence-backed analysis, and supports hypothesis-driven investigation to map relationships, connect entities, and summarize findings.
 
+### MCP server
+
+The Sumo Logic MCP server is coming soon. It will let MCP-compatible AI tools, such as Claude Code CLI, connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more using natural language. Contact your Sumo Logic account representative for early access information.
+
 ## Observability
 
 Sumo Logic AI for Observability functionality equips developers and SREs with powerful tools to efficiently manage and optimize their technology stack.
