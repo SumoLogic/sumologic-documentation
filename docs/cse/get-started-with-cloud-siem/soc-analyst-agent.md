@@ -125,34 +125,27 @@ You can also ask Mobot to close the current insight. In the **Ask Something...**
 
 ## FAQs
 
-**What is the Sumo Logic SOC Analyst Agent?**
-
+### What is the Sumo Logic SOC Analyst Agent?
 The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, the same agent supports hypothesis-based investigation to map relationships, connect entities, and summarize findings.
 
-**What are the benefits of the agent?**
-
+### What are the benefits of the agent?
 Security teams spend too much time validating false positives and performing repetitive investigative steps. By embedding reasoning and context-awareness directly into Cloud SIEM, the SOC Analyst Agent eliminates noise, standardizes outcomes, and accelerates time to resolution.
 
-**Will the agent increase scanning or data-processing costs?**
-
+### Will the agent increase scanning or data-processing costs?
 No. The agent analyzes existing data already ingested into Cloud SIEM. It performs reasoning on metadata and contextual signals rather than initiating new scans.
 
-**How does the agent differ from Cloud SIEM correlation or automation rules?**
-
+### How does the agent differ from Cloud SIEM correlation or automation rules?
 Unlike traditional correlation logic, which is static, the SOC Analyst Agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
 
-**What data does the agent rely on to render verdicts?**
-
+### What data does the agent rely on to render verdicts?
 The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic’s integrated threat intelligence feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details).
 
-**Can analysts provide feedback or correct AI verdicts?**
-
+### Can analysts provide feedback or correct AI verdicts?
 Yes. Analysts can override verdicts and flag feedback within the UI. These actions are logged and reviewed to refine model behavior over time as part of the Dojo AI learning loop.
 
 ### FAQs for preview
 
-**How does investigation rate limiting work?**
-
+#### How does investigation rate limiting work?
 To ensure stable performance, the agent performs system-wide rate limiting, which imposes usage controls across the entire SOC Analyst Agent user base to manage capacity. As a result, automatic investigation may skip some insights if investigating them would exceed rate limits. The skipped insights show **Not Investigated** in the **AI Verdicts** column. However, in these instances, you can manually start an investigation of the insight by clicking the **Investigate** button.
 
 The rate limits for your organization are:
@@ -163,12 +156,10 @@ Be aware, though, that if you have reached your limit of the total number of ins
 
 If you have questions about the AI investigation rate limiting for your organization, ask your Sumo Logic representative.
 
-**Does the agent automatically investigate things that are not entities in Cloud SIEM?**
-
+#### Does the agent automatically investigate things that are not entities in Cloud SIEM?
 Traditional Cloud SIEM entities are items like users, IP addresses, hosts, and the like. In addition to these, the agent automatically investigates things that are not usually identified as entities in Cloud SIEM, such as related cloud resources, API endpoints, or service accounts relevant to the insight. This intelligent entity prioritization results in faster investigation and reduces time spent manually determining which entities to investigate.
 
-**Can I converse with the agent in the same way I am used to doing with other AI-enabled tools?**
-
+#### Can I converse with the agent in the same way I am used to doing with other AI-enabled tools?
 Yes, you can. In your investigation, you are not limited in how you proceed. You can engage the agent in a conversational flow to direct the investigation any way you want. However, the agent has many tools that can help should you need guidance. For example, the agent presents follow-up questions after each step that offer you multiple paths for investigation.
 
 ## Additional resources

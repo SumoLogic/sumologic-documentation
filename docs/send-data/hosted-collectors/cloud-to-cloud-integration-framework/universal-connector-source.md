@@ -593,16 +593,13 @@ These errors indicate that the endpoint configuration is not set up correctly. V
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
-**What if I want to query multiple HTTP endpoints?**
-
+### What if I want to query multiple HTTP endpoints?
 You will need to create a new source per endpoint for the data you wish to collect, even if the endpoint is within the same API.
 
-**Can I transform the data collected?**
-
+### Can I transform the data collected?
 No, this source only collects the data. You can use the Sumo Logic platform features to parse/transform the data further after collection.
 
-**What timestamp is used for the data?**
-
+### What timestamp is used for the data?
 If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.
 
 :::note

@@ -436,6 +436,10 @@ Use the Docusaurus [Details](https://docusaurus.io/docs/next/markdown-features#d
 Using `<details>` tags for FAQ and troubleshooting content violates **Generative Engine Optimization (GEO)** best practices and prevents AI tools from properly citing your documentation. Always keep FAQ and troubleshooting content visible.
 :::
 
+### Format FAQ questions as headings
+
+Write each FAQ question as a heading, not as bold text. Headings create discrete, retrievable units that answer engines and AI tools can chunk and cite individually, while bold is purely visual and carries no semantic weight. Use an `H3` for questions directly under an `H2` FAQ section (for example, `## FAQs` → `### How do I reset my password?`), and an `H4` for questions grouped under an `H3` sub-category (for example, `### Security and privacy` → `#### Is my data encrypted?`).
+
 #### How to use collapsible sections
 
 When using `<details>` tags for appropriate content (see table above), follow these guidelines:
