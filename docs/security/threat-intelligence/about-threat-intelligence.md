@@ -39,28 +39,30 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
 
 ## Threat intelligence sources
 
-In Sumo Logic, threat intelligence indicators are supplied by sources listed on the **Threat Intelligence** tab. 
-* [**New UI**](/docs/get-started/sumo-logic-ui/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
-* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Threat Intelligence** tab, in the main Sumo Logic menu, select **Manage Data > Logs > Threat Intelligence**. <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
+In Sumo Logic, threat intelligence indicators are supplied by sources listed on the **Sources** tab of the Threat Intelligence page, including Sumo Logic-managed sources and custom sources you configure.
 
-Cloud SIEM analysts can use all sources shown in the **Threat Intelligence** tab to find threats (see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the Sumo Logic threat intelligence sources to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
+To access Threat Intelligence in Sumo Logic,
+* [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. 
+* [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.<br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
+
+Cloud SIEM analysts can use all sources shown in the **Sources** tab of the **Threat Intelligence** page to find threats (see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). In addition, all Sumo Logic users can run queries against the indicators in the Sumo Logic threat intelligence sources to uncover threats (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
 
 <CloudSIEMThreatIntelNote/>
 
-The sources on the **Threat Intelligence** tab include:
-* **Sumo Logic sources**. Out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources. See [Sumo Logic threat intelligence sources](#sumo-logic-threat-intelligence-sources) below.
-* **Other sources**. The other sources on the tab are imported by Cloud SIEM administrators so that Cloud SIEM analysts can use them to find threats. See [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) to learn how to add other sources.
+The Threat Intelligence sources include:
+* **Sumo Logic sources**. Out-of-the-box default sources of threat indicators supplied by third-party intel vendors and maintained by Sumo Logic. You cannot edit these sources. See [Sumo Logic threat intelligence sources](#sumo-logic-threat-intelligence-sources) below.
+* **Other sources**. The other sources are imported by Cloud SIEM administrators so that Cloud SIEM analysts can use them to find threats. See [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) to learn how to add other sources.
 
 ### Sumo Logic threat intelligence sources
 
-Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
+Sumo Logic provides the following out-of-the-box default sources of threat indicators supplied by third-party intel vendors and maintained by Sumo Logic. You cannot edit these sources:
 * **SumoLogic_ThreatIntel**. This source incorporates threat indicators supplied by [Intel 471](https://intel471.com/). For more information, see [Sumo Logic Threat Intel Source](/docs/security/threat-intelligence/sumologic-threat-intel-source/).
 * **_sumo_global_feed_cs**. This is a source of threat indicators supplied by [CrowdStrike](https://www.crowdstrike.com/en-us/). For more information, see [Sumo Logic Global Feed from CrowdStrike](/docs/security/threat-intelligence/sumologic-global-feed-from-crowdstrike/).
 
 ### Ingest threat intelligence indicators
 
-A Cloud SIEM administrator must first ingest the indicators before they can be used to uncover threats. Indicators can be ingested using:
-* **A collector**. See:
+A Cloud SIEM administrator must first ingest the indicators before they can be used to uncover threats. Indicators can be ingested using one of the following methods:
+* **Add Source**. This flow lets you select from available threat intelligence sources given below, choose a collector, and complete configuration in a streamlined workflow.
    * [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source)
    * [Google Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source/)
    * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
@@ -68,12 +70,12 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
    * [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source)  
    * [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source)
    * [ZeroFox Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source)
+* **Upload**. Manually upload files that add threat intelligence indicators. See [Add indicators in Threat Intelligence](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using this option or APIs.
 * **The API**. See the following APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
-* **The Threat Intelligence tab**. Use this tab to upload your own indicators. See [Add indicators in the Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using this tab or APIs.
 
-After threat indicator sources are ingested, they appear on the **Threat Intelligence** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function).
+After threat indicator sources are ingested, they appear on the Threat Intelligence **Sources** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function).
 
 <CloudSIEMThreatIntelNote/>
 
@@ -87,9 +89,9 @@ After threat indicator sources are ingested, they appear on the **Threat Intelli
 
 ### Role capabilities
 
-To view and manage threat intelligence indicators on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab), a Cloud SIEM administrator must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
+To view and manage [threat intelligence indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/), a Cloud SIEM administrator must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Administration > Users and Roles**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Administration > Users and Roles**. 
 1. Click the **Roles** tab.
 1. Click **Add Role** to create a new role. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 Add the following capabilities:
@@ -107,7 +109,7 @@ Set firewall rules to allowlist the Sumo Logic IPs listed in [Static IP addresse
 
 Here is the typical workflow to set up and use threat intelligence indicators:
 
-1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up the collector to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the **Threat Intelligence** tab. You can manually add more indicators as needed, such as your own private indicators, using the **Threat Intelligence** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
+1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up the collector to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the Threat Intelligence **Sources** tab. You can manually add more indicators as needed, such as your own private indicators, using the Threat Intelligence **Sources** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
 1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 1. A system administrator occasionally checks to see why a connector is not ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
 
