@@ -292,7 +292,7 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 
 Yes. To revoke access for an OAuth client:
 
-1. Go to **Administration** > **Security** > **OAuth Clients**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
 1. Find the OAuth client you want to revoke.
 1. Click **Delete** or **Deactivate** (depending on UI options available).
 
