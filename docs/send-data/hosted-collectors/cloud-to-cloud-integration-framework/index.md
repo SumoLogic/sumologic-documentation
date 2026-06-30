@@ -24,6 +24,7 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 | CA         | 3.96.85.212, 3.97.51.58, 3.96.95.249                                               |
 | CH         | 16.62.108.141, 16.63.37.253, 16.63.8.54                                            |
 | DE         | 52.28.151.126, 18.193.176.46, 18.192.147.254                                       |
+| ESC        | 51.224.239.250, 51.225.127.189                                                     |
 | EU         | 54.74.133.34, 18.200.219.230, 54.216.109.182                                       |
 | JP         | 52.69.8.121, 54.248.157.127, 18.182.95.102                                         |
 | KR         | 13.209.100.246, 3.37.181.174, 3.38.126.107                                         |
@@ -198,6 +199,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source')}><img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="Citrix Cloud icon" width="100"/><h4>Citrix Cloud Source</h4></a>
   <p>Provides a secure endpoint to receive System Log data from the Citrix Cloud System Log API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source')}><img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="50"/><h4>Claude Compliance Source</h4></a>
+  <p>Collect Claude Compliance chat logs and metadata into Sumo Logic to support compliance, security, and audit workflows.</p>
   </div>
 </div>
 <div className="box smallbox card">
