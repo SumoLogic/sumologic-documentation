@@ -34,19 +34,19 @@ These apps have gone through code and functional review with the Sumo Logic app 
 ## Prerequisites
 
 | Account Type | Account Level |
-| :-- | :-- |
+|:--|:--|
 | Cloud Flex | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Certain apps have specific installation requirements. Be sure to check the instructions for your application for specific instructions.
+Certain apps have specific installation requirements. Be sure to check the application instructions for specific guidance.
 
 :::important
-Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
+Applications can be installed only by users with a Sumo Logic Professional or Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
 ## Next-Gen apps
 
-Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
 
 What makes Next-Gen different from Classic apps?
 
@@ -56,7 +56,7 @@ What makes Next-Gen different from Classic apps?
 * App uninstallation and removal can be completed directly in the App Catalog, making it easy to clean up apps you no longer use.  
 * Additional filter options make it easy to find your installed or upgradeable apps.
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
-* Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
+* Installed app content is immutable, which ensures that any app upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
 ### How to install Next-Gen apps
 
@@ -65,7 +65,7 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 <AppInstall/>
 
 :::info
-Installing an app automatically subscribes you to email notifications when an upgrade is available for that app. However, you can opt out of receiving these emails by unsubscribing from the app. For more information, see []().
+Installing an app automatically subscribes you to email notifications when an upgrade is available for that app. However, you can opt out of receiving these emails by unsubscribing from the app. For more information, see [Email notifications for app upgrade](#email-notifications-for-app-upgrade).
 :::
 
 ### Email notifications for app upgrade
