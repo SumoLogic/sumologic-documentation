@@ -141,7 +141,7 @@ Capture every change to an S3 bucket policy so you can correlate later S3 access
 }
 ```
 
-Configure the rule with the following **Log Query**:
+Configure the rule with the following log query:
 
 ```
 _sourceCategory=aws/cloudtrail
