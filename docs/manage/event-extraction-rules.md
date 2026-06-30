@@ -170,7 +170,7 @@ Flag when a production EC2 instance is terminated so you can connect infrastruct
 }
 ```
 
-Configure the rule with the following **Log Query**:
+Configure the rule with the following log query:
 
 ```
 _sourceCategory=aws/cloudtrail
