@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-intelligence.png')} alt="CrowdStrike Falcon Intelligence icon" width="100"/>
 
-***Version: 1.8  
-Updated: March 31, 2026***
+***Version: 1.9  
+Updated: June 30, 2026***
 
 CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service built on the CrowdStrike Falcon Platform. It automates incident investigations and streamlines breach response so you can make faster, more confident cyber security decisions. Organizations, regardless of size or sophistication, learn from the attacks in their environment applying that knowledge to proactively prevent future attacks. Falcon Intelligence provides insight into global threats, tracked by CrowdStrike’s elite team of intelligence experts.
 
@@ -29,6 +29,22 @@ CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service
 * **Submission Status Polling** (*Enrichment*) - Return the state of submission, this action will poll until the File/URL analysis are finished, Once this action is completed, you will be able to get a Report or Get Summary of the Submission.
 * **Submit File** (*Enrichment*) - Submit a file for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes, by using the **Submission Status Polling** action.
 * **Submit URL** (*Enrichment*) - Submit a URL for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes, by using the **Submission Status Polling** action.
+
+## Sandbox Environments
+
+The following sandbox environments are available for file and URL analysis:
+
+| ID | Environment | Status |
+|---|---|---|
+| 430 | macOS Tahoe ARM | Current |
+| 400 | macOS Catalina 10.15 | Deprecated → falls back to 430 |
+| 330 | Linux Ubuntu 24, 64-bit | Current |
+| 310 | Linux Ubuntu 20, 64-bit | Deprecated → falls back to 330 |
+| 200 | Android (static analysis) | Current |
+| 160 | Windows 10, 64-bit | Current |
+| 140 | Windows 11, 64-bit | Current |
+| 110 | Windows 7, 64-bit | Current |
+| 100 | Windows 7, 32-bit | Current |
 
 ## CrowdStrike Falcon Intelligence configuration
 
@@ -85,3 +101,4 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
 * June 30, 2023 (v1.5) - Updated the integration with Environmental Variables
 * March 4, 2024 (v1.7) - Updated code for compatibility with Python 3.12
 * March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+* June 30, 2026 (v1.9) - Added sandbox environments section with current and deprecated environment details.
