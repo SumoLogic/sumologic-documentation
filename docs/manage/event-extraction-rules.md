@@ -115,7 +115,7 @@ Track every time an IAM role is removed so you can correlate permission changes 
 }
 ```
 
-Configure the rule with the following **Log Query**:
+Configure the rule with the following log query:
 
 ```
 _sourceCategory=aws/cloudtrail
