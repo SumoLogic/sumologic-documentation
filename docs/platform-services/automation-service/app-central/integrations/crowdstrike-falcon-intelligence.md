@@ -41,8 +41,8 @@ The following sandbox environments are available for file and URL analysis:
 | 330 | Linux Ubuntu 24, 64-bit | Current |
 | 310 | Linux Ubuntu 20, 64-bit | Deprecated → falls back to 330 |
 | 200 | Android (static analysis) | Current |
-| 160 | Windows 10, 64-bit | Current |
 | 140 | Windows 11, 64-bit | Current |
+| 160 | Windows 10, 64-bit | Current |
 | 110 | Windows 7, 64-bit | Current |
 | 100 | Windows 7, 32-bit | Current |
 
@@ -101,4 +101,4 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
 * June 30, 2023 (v1.5) - Updated the integration with Environmental Variables
 * March 4, 2024 (v1.7) - Updated code for compatibility with Python 3.12
 * March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* June 30, 2026 (v1.9) - Added sandbox environments section with current and deprecated environment details.
+* June 30, 2026 (v1.9) - Updated the available sandbox environments to align with the latest platform support. Ubuntu 16.04 has been removed, Ubuntu 20 is now deprecated, and Ubuntu 24 has been added
