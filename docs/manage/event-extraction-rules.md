@@ -108,14 +108,24 @@ Track every time an IAM role is removed so you can correlate permission changes 
   "eventName": "DeleteRole",
   "eventSource": "iam.amazonaws.com",
   "userIdentity": {
-    "userName": "***.***"
+    "userName": "john.doe"
   },
   "awsRegion": "us-east-1",
   "eventTime": "2026-05-01T12:30:00Z"
 }
 ```
 
-The rule extracts an **IAM Role Deleted** event with the fields `user = ***.***`, `region = us-east-1`, `resource = IAM Role`, and `timestamp = 2026-05-01T12:30:00Z`.
+Configure the rule with the following **Log Query**:
+
+```
+_sourceCategory=aws/cloudtrail
+| json "eventName" as eventName
+| json "userIdentity.userName" as user
+| json "awsRegion" as region
+| where eventName = "DeleteRole"
+```
+
+The rule extracts an **IAM Role Deleted** event with the fields `user = john.doe`, `region = us-east-1`, `resource = IAM Role`, and `timestamp = 2026-05-01T12:30:00Z`.
 
 ### Track S3 bucket policy changes
 
@@ -124,8 +134,20 @@ Capture every change to an S3 bucket policy so you can correlate later S3 access
 ```json
 {
   "eventName": "PutBucketPolicy",
-  "bucketName": "customer-prod-data"
+  "eventSource": "s3.amazonaws.com",
+  "requestParameters": {
+    "bucketName": "customer-prod-data"
+  }
 }
+```
+
+Configure the rule with the following **Log Query**:
+
+```
+_sourceCategory=aws/cloudtrail
+| json "eventName" as eventName
+| json "requestParameters.bucketName" as bucketName
+| where eventName = "PutBucketPolicy"
 ```
 
 The rule extracts an **S3 Bucket Policy Modified** event for the `customer-prod-data` bucket.
@@ -137,8 +159,24 @@ Flag when a production EC2 instance is terminated so you can connect infrastruct
 ```json
 {
   "eventName": "TerminateInstances",
-  "instanceId": "i-123456"
+  "eventSource": "ec2.amazonaws.com",
+  "requestParameters": {
+    "instancesSet": {
+      "items": [
+        { "instanceId": "i-123456" }
+      ]
+    }
+  }
 }
+```
+
+Configure the rule with the following **Log Query**:
+
+```
+_sourceCategory=aws/cloudtrail
+| json "eventName" as eventName
+| json "requestParameters.instancesSet.items[0].instanceId" as instanceId
+| where eventName = "TerminateInstances"
 ```
 
 The rule extracts a **Production Instance Terminated** event for instance `i-123456`.
