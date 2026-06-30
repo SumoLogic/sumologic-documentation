@@ -7,7 +7,7 @@ description: Learn how to format upload files containing threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This documentation describes the format to use for upload files when you [manually upload indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload) or when you use the upload APIs in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource.
+This article describes the format to use for upload files when you add threat intelligence sources by [manually uploading them in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) or when you use the upload APIs in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource.
 
 Following are the formats for file upload:
 
@@ -183,7 +183,7 @@ Columns for the following attributes are required in the upload file:
 ## STIX 2.x JSON format
 
 :::note
-Use this format only with the [STIX 2.x JSON upload API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource. You cannot add indicators in [**Threat Intelligence**](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload) using this format.
+Use this format only with the [STIX 2.x JSON upload API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource. You cannot [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) using this format.
 :::
 
 STIX 2.x JSON format is a method to present JSON data according to the STIX 2.x specification.
