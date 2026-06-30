@@ -64,6 +64,19 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+:::info
+Installing an app automatically subscribes you to email notifications when an upgrade is available for that app. However, you can opt out of receiving these emails by unsubscribing from the app. For more information, see []().
+:::
+
+### Email notifications for app upgrade
+
+When you install a Next-Gen app, you are automatically subscribed to receive email notifications for app upgrades.
+
+The following applies to these notifications:
+- The email includes the app name, version, release notes for the new version, and a link to the app in the App Catalog.
+- To unsubscribe, use the unsubscribe link included in the notification email.
+- Users with Manage Apps capabilities can also subscribe or unsubscribe from apps installed by other users.
+
 ### How to upgrade Next-Gen apps
 
 :::info
@@ -79,6 +92,10 @@ import AppUpdate from '../reuse/apps/app-update.md';
 import AppUninstall from '../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::info
+Uninstalling a Next-Gen app automatically removes all email subscriptions for that app.
+:::
 
 ## Classic apps (Legacy)
 
