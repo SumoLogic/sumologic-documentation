@@ -46,9 +46,9 @@ This flow uses interactive browser-based authentication. Users authorize an exte
 ### Step 1: Create an OAuth client
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth Clients**.
-1. Click **+ Add Client**.
-1. For **Type**, select **Authorization Code**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+1. For **Client Type**, select **Authorization Code**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Set the **Redirect URI** to match your application's callback URL. This is where Sumo Logic will send the authorization code after the user approves access.
    :::note
@@ -72,7 +72,7 @@ Create a Sumo Logic service account to represent your application or service. Yo
 1. Log in to Sumo Logic as an Administrator.
 1. [Create a service account](/docs/manage/security/service-accounts/#create-a-service-account) with the appropriate roles for your use case.
 1. Get the service account ID. You'll use this ID in the next step.
-   * **Via UI**. Go to **Administration** > **Security** > **Service Accounts**, click on your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
+   * **Via UI**. Go to **Administration** > **Account Security Settings** > **Service Accounts**, click your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
    * **Via API**. Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
      <details>
      <summary>Example API request for listing service accounts</summary>
@@ -120,9 +120,9 @@ Create a Sumo Logic service account to represent your application or service. Yo
 Create an OAuth client under your service account. This generates the credentials your application will use to authenticate.
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth Clients**.
-1. Click **+ Add Client**.
-1. For **Type**, select **Client Credentials**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+1. For **Client Type**, select **Client Credentials**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Select the **Service Account** this OAuth client will run as (created in the previous step).
 1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions. [Learn how permissions work](#how-permissions-work).
