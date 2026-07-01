@@ -70,7 +70,7 @@ When you install a Next-Gen app, you will be subscribed to receive email notific
 
 ### Email notifications for app upgrade
 
-When you install a Next-Gen app, you are automatically subscribed to receive email notifications for app upgrades.
+When you install a Next-Gen app, you will be subscribed to receive email notifications whenever an upgrade is available.
 
 The following applies to these notifications:
 - The email includes the app name, version, release notes for the new version, and a link to the app in the App Catalog.
