@@ -17,7 +17,7 @@ To export a Dashboard follow these steps:
 1. Click the format you want to export the Dashboard as, either JSON, PDF, or PNG.<br/><img src={useBaseUrl('/img/dashboards/export-dashboard/export-dashboard.png')} alt="export dashboard sep 2021" style={{border: '1px solid gray'}} width="300" />
 1. For **PDF** and **PNG** exports, set the following options:
    * **Theme**. Select **Light** or **Dark** for the exported file. By default, the selected theme matches the dashboard's current theme.
-   * **Resolution**. Set the width of the exported file, in pixels, anywhere from 1,500 to 6,000. The default is 1,500. Increase the resolution for a sharper image on large displays, such as wall monitors or TV screens.<br/><img src={useBaseUrl('/img/dashboards/export-dashboard/export-pdf-or-png.png')} alt="Export as PDF or PNG" style={{border: '1px solid gray'}} width="400" />
+   * **Report Download Width**. Set the width of the exported file, in pixels, anywhere from 1,500 to 6,000. The default is 1,500. Increase the resolution for a sharper image on large displays, such as wall monitors or TV screens.<br/><img src={useBaseUrl('/img/dashboards/export-dashboard/export-pdf-or-png.png')} alt="Export as PDF or PNG" style={{border: '1px solid gray'}} width="400" />
    :::note
    The theme and resolution options apply to PDF and PNG exports only. JSON exports are not affected, because a JSON export reflects the dashboard definition.
    :::
