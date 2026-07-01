@@ -12,39 +12,43 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 
 The Sumo Logic app for Amazon SNS collects CloudTrail logs and CloudWatch metrics provides a unified logs and metrics app that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 
-## Log and Metrics types
+## Log and metric types
 
-The Sumo Logic app for Amazon SNS uses:
-* SNS CloudWatch Metrics. For details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html).
-* SNS operations using AWS CloudTrail. For details, see [here](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html).
+The Sumo Logic app for Amazon SNS uses the following logs and metrics:
+* [Amazon SNS CloudTrail Logs](https://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html).
+* [Amazon SNS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html).
 
 ### Sample log messages
 
-```
+<details>
+<summary>Sample CloudTrail Log Message</summary>
+
+```json
 {
-eventVersion:"1.08",
-userIdentity:
-{...},
-eventTime:"2022-07-14T23:06:43Z",
-eventSource:"sns.amazonaws.com",
-eventName:"ListTagsForResource",
-awsRegion:"us-east-1",
-sourceIPAddress:"config.amazonaws.com",
-userAgent:"config.amazonaws.com",
-requestParameters:
-{
-resourceArn:"arn:aws:sns:us-east-1:956882708938:testnull-SumoCWEmailSNSTopic-1NV3GQ8XZ4DFY"
-},
-responseElements:null,
-requestID:"d8eee5b8-a894-5db4-994c-bef20b57fc0b",
-eventID:"2156cf7f-f18d-47f4-b7ba-7b8a6907390a",
-readOnly:true,
-eventType:"AwsApiCall",
-managementEvent:true,
-recipientAccountId:"956882708938",
-eventCategory:"Management"
+  eventVersion:"1.08",
+  userIdentity:
+  {...},
+  eventTime:"2022-07-14T23:06:43Z",
+  eventSource:"sns.amazonaws.com",
+  eventName:"ListTagsForResource",
+  awsRegion:"us-east-1",
+  sourceIPAddress:"config.amazonaws.com",
+  userAgent:"config.amazonaws.com",
+  requestParameters:
+  {
+  resourceArn:"arn:aws:sns:us-east-1:956882708938:testnull-SumoCWEmailSNSTopic-1NV3GQ8XZ4DFY"
+  },
+  responseElements:null,
+  requestID:"d8eee5b8-a894-5db4-994c-bef20b57fc0b",
+  eventID:"2156cf7f-f18d-47f4-b7ba-7b8a6907390a",
+  readOnly:true,
+  eventType:"AwsApiCall",
+  managementEvent:true,
+  recipientAccountId:"956882708938",
+  eventCategory:"Management"
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -73,43 +77,65 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 
-## Collecting logs and metrics for the Amazon SNS app
+## Collecting logs and metrics for Amazon SNS
 
-### Collecting Metrics for Amazon SNS  
+### Configure Hosted Collector
 
-1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended).
-3. Namespaces. Select **aws/sns**.
-4. **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The **account** field allows you to query metrics.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Metadata%2Baccount.png')} alt="Metadata" />
-5. Click **Save**.
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collecting Amazon SNS Events using CloudTrail
+### Collect Amazon SNS CloudWatch metrics 
 
-1. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to your Hosted Collector.
-    * **Name**. Enter a name to display for the new Source.
-    * **Description**. Enter an optional description.
-    * **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
-    * **Bucket Name**. Enter the exact name of your SNS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
-      * DO NOT use a [leading forward slash](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
-      * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    * **Source Category**. Enter a source category. For example, enter `aws/observability/CloudTrail/logs`.
-    * **Fields**. Add an account field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried using the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SNS/Fields.png')} alt="Fields" />
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-    * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
-    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
-    * **Timestamp Format.** Select **Automatically detect the format**.
-    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
-2. Click **Save**.
+Sumo Logic supports collecting metrics using one of the following source types:
 
-## Centralized AWS CloudTrail Log Collection
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
+  :::note
+  Namespace for **Amazon SNS** service is **AWS/SNS**.
+  :::
+
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
+
+### Collect Amazon SNS CloudTrail logs
+
+#### Prerequisites
+
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
+1. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
+1. Confirm that logs are being delivered to the Amazon S3 bucket.
+
+  :::note
+  Namespace for **Amazon SNS** service is **AWS/SNS**.
+  :::
+
+Follow the steps below to collect logs for Amazon SNS:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
+
+## Centralized AWS CloudTrail log collection
 In case, you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present or update it as required.
 
 * **Rule Name**: AWS Accounts
 * **Applied at**: Ingest Time
 * **Scope (Specific Data)**: `_sourceCategory=aws/observability/cloudtrail/logs`
-* **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+
+### Parse Expression
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
 ```sumo
 | json "recipientAccountId"
@@ -128,7 +154,9 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-As part of the app installation process, the following fields will be created by default:
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
 
 - `account` Name / alias to the AWS account.
 - `accountid` AWS account id.
@@ -136,7 +164,7 @@ As part of the app installation process, the following fields will be created by
 - `namespace` Namespace for Amazon SNS service is aws/sns.
 - `topicname` Amazon SNS a Topic Name.
 
-## Field Extraction Rule(s)
+#### Field Extraction Rule(s)
 
 The FER **AwsObservabilitySNSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `topicname` will be created as a part of app installation.
 
