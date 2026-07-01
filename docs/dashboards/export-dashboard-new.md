@@ -29,6 +29,8 @@ To export a Dashboard follow these steps:
 
 When you export a dashboard, each panel is exported using the dashboard time range. If you have overridden the time range for an individual panel, that panel is exported using its own time range instead of the dashboard time range.
 
+<img src={useBaseUrl('/img/dashboards/export-dashboard/dashboard-timerange-override.png')} alt="dashboard-timerange-override" style={{border: '1px solid gray'}} width="800" />
+
 :::note
 Panel-level time range overrides apply to exported PDF and PNG files only. [Scheduled reports](/docs/dashboards/scheduled-report/) do not support panel-level time range overrides, so every panel in a scheduled report uses the dashboard time range.
 :::
