@@ -4019,7 +4019,6 @@
   "/07Sumo-Logic-Apps/24Web_Servers/Nginx_Ingress_ULM/Nginx_Ingress_Alerts": "/docs/integrations/web-servers/nginx-ingress",
   "/07Sumo-Logic-Apps/24Web_Servers/Nginx_Plus_Ingress/Install_the_Nginx_Plus_Ingress_App,_Alerts,_and_View_the_Dashboards": "/docs/integrations/web-servers/nginx-plus-ingress",
   "/07Sumo-Logic-Apps/24Web_Servers/Nginx_ULM": "/docs/integrations/web-servers/nginx",
-  "/07Sumo-Logic-Apps/24Web_Servers/Nginx_ULM/Collect_Logs_and_Metrics_for_Nginx_ULM": "/docs/integrations/web-servers/nginx",
   "/07Sumo-Logic-Apps/24Web_Servers/Nginx_ULM/Global_Intelligence_for_Nginx": "/docs/integrations/web-servers/nginx",
   "/07Sumo-Logic-Apps/24Web_Servers/Nginx_ULM/Install_the_Nginx_ULM_App_and_View_the_Dashboards": "/docs/integrations/web-servers/nginx",
   "/07Sumo-Logic-Apps/24Web_Servers/Nginx/Global_Intelligence_for_Nginx_App": "/docs/integrations/global-intelligence",
