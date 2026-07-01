@@ -14,6 +14,6 @@ We're excited to introduce more control over your dashboard exporting and schedu
 
 * Pick a **Light** or **Dark** theme for the output.
 * Set the resolution from 1,500 to 6,000 pixels for a sharper image on large displays.
-* Export with panel-level time range overrides (PDF and PNG only).
+* Export panels with their own time range. If you've overridden the time range for a panel, the exported file now uses that panel's time range instead of the dashboard time range (PDF and PNG only).
 
 [Learn more](/docs/dashboards/export-dashboard-new/).
