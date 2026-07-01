@@ -22,7 +22,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic’s AI capabilities span from classical machine learning to generative and agentic AI. At the center is Dojo AI, our multi-agent platform that brings specialized agents into security and observability workflows. This page covers all of these capabilities: what they do, how they work together, and how to get started.
 
-**What do these terms mean?**
+<details>
+<summary>What do these terms mean?</summary>
 
 **Artificial intelligence (AI)** encompasses machines that mimic human-like intelligence, leveraging algorithms to compute tasks efficiently. It includes machine learning, deep learning, generative AI, and agentic AI.
 
@@ -35,6 +36,8 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 **Agentic AI** takes generative AI further by enabling autonomous, multi-step reasoning and action. Agentic systems can plan, use tools, and coordinate specialized agents to complete complex tasks like triaging a security incident or translating a natural-language question into a log query, with a human in the loop.
 
 **Pattern learning** is fundamental to machine learning and deep learning, where algorithms discern patterns in data to make predictions or classifications.
+
+</details>
 
 ## Dojo AI
 

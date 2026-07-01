@@ -51,9 +51,9 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
    - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Configuration Sections**. Expand each section to learn more about the options available for configuration.
-**Authentication Configuration**
-
-<div>
+<details>
+  <summary>Authentication Configuration</summary>
+  <div>
     Choose the type of authentication based on the vendor API requirements and configure the details of that specific authentication type.
 
 #### Basic
@@ -93,10 +93,11 @@ Optionally, if the vendor API requires it, you can provide one or more `Scopes` 
 Select this authentication option if the vendor API does not require any form of authentication.
 
   </div>
+</details>
 
-**Request Configuration**
-
-<div>
+<details>
+  <summary>Request Configuration</summary>
+  <div>
   Configure how the HTTP requests are created for your source.
 
 :::danger protect your credentials
@@ -150,10 +151,10 @@ Examples URL encoded:
 This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [dynamic values](#dynamic-values-variables).
 
   </div>
-
-**Tracking Progression**
-
-<div>
+</details>
+<details>
+  <summary>Tracking Progression</summary>
+  <div>
   The source needs a way to keep track of its progress to prevent data loss and duplication. Select the type of progression used and configure the details.
 
 #### Time Window
@@ -171,10 +172,10 @@ The start time is inclusive and the end time is exclusive as that is the behavio
 | Max Lookback     | This will determine how far back the window is allowed and should be set based on the vendors data retention policy. If the source encounters a repetitive error causing the window to not move forward for a period of time, the window will not be allowed to stagnate past this configured time. The default is `31d` and we recommend leaving the default unless the vendor specifically states their data retention policy. You can configure this setting between the `window size` and `365d`.                                                                     |
 
   </div>
-
-**HTTP Response Log Ingest Configuration**
-
-<div>
+</details>
+<details>
+  <summary>HTTP Response Log Ingest Configuration</summary>
+  <div>
   Select the format of the data returned by the vendor and configure how the source should break down the response into individual logs with the correct timestamp.
 
 #### JSON with JPath
@@ -273,10 +274,10 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 | Time Value Regex | `Date(.*)`   |
 
   </div>
-
-**Pagination**
-
-<div>
+</details>
+<details>
+  <summary>Pagination</summary>
+  <div>
   Select how the source should handle pagination.
 
 #### RFC 8288 Link Headers
@@ -322,10 +323,10 @@ Here is an example of the pagination using values as parameters:
 Use this type of pagination if the vendor API does not implement any kind of pagination.
 
   </div>
-
-**HTTP Client Options**
-
-<div>
+</details>
+<details>
+  <summary>HTTP Client Options</summary>
+  <div>
   You can adjust some options specific to the HTTP client used to make calls to the vendor API. Follow the vendor's recommendations any of these settings.
 
 :::note
@@ -341,7 +342,7 @@ The client will automatically handle HTTP 429 response status codes that include
 | Rate Limit Burst    | The number of requests the source is allowed to burst. The default is `1000`. Set this value to `1` to disable bursting.                                                                                                                                                             |
 
   </div>
-
+</details>
 10. (Optional) **Polling Interval**. Set how frequently to poll for new data. It must be between 5 minutes and 48 hours
 1. When you are finished configuring the Source, click **Save**.
 

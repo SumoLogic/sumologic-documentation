@@ -98,7 +98,8 @@ All variables are case-insensitive.
 | `{{AlertResponseUrl}}` | When your Monitor is triggered, it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#10003; | &#10003; |
 
 
-**Legacy variables**
+<details>
+<summary>Legacy variables</summary>
 
 This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
 
@@ -124,6 +125,8 @@ We recommend using the new common variables instead of these legacy variables, w
 | `{{AlertID}}` | The ID of the triggered alert. | &#10003; |  |
 | `The ID of the triggered alert.` | Current status of the time series that triggered (for example, Critical or Warning). | &#10003; |  |
 | `{{AlertCondition}}` | The condition that triggered the alert. |  |  |
+
+</details>
 
 ### Example payloads
 

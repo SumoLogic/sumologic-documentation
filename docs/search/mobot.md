@@ -484,9 +484,6 @@ Yes, Mobot retains conversation and search history, allowing you to resume inves
 
 Mobot uses AI to interpret natural language queries and recommend search results or query refinements, streamlining log analysis.
 
-### How can I opt out of Mobot?
-If you prefer not to use Mobot, contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
-
 **Security and privacy**
 
 ### Do Mobot's agents access customer data?
