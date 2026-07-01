@@ -74,7 +74,7 @@ When you install a Next-Gen app, you are automatically subscribed to receive ema
 
 The following applies to these notifications:
 - The email includes the app name, version, release notes for the new version, and a link to the app in the App Catalog.
-- To unsubscribe, use the unsubscribe link included in the notification email.
+- You can unsubscribe from the email notifications by navigating to the app within the Sumo Logic App Catalog.
 - Users with Manage Apps capabilities can also subscribe or unsubscribe from apps installed by other users.
 
 ### How to upgrade Next-Gen apps
