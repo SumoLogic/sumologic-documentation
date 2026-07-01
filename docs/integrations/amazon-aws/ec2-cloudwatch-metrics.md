@@ -13,17 +13,18 @@ Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity i
 
 The Sumo Logic app for AWS EC2 allows you to collect your EC2 instance metrics and display them using predefined dashboards. The app provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, Health Status Check, and EC2 CloudTrail Events. Also, it provides detailed insights into all CloudTrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
-## Collecting CloudWatch Metrics and CloudTrail logs for AWS EC2
+## Log and metric types  
 
-This section describes the AWS EC2 app's data sources and instructions for setting up a metric collection.
-
-### Metrics types
-
-For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html).
+The Sumo Logic app for AWS EC2 CloudWatch Metrics uses the following metrics:
+* [Amazon CloudWatch Metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html)
+* [Amazon CloudTrail Logs](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
 
 ### Sample log messages
 
-```json title="Sample CloudTrail Log"
+<details>
+<summary>Sample CloudTrail Log</summary>
+
+```json
 {
 	"eventVersion":"1.08",
 	"userIdentity":{
@@ -68,6 +69,7 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 	}
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -101,56 +103,62 @@ account={{account}} region={{region}} namespace={{namespace}} eventname eventsou
 | count as count by error_code | sort by count, error_code asc | limit 10
 ```
 
+## Collecting logs and metrics for AWS EC2
 
-### AWS EC2 CloudWatch Metrics
+### Configure Hosted Collector
+
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+
+### Collect AWS EC2 CloudWatch metrics
+
+Sumo Logic supports collecting metrics using one of the following source types:
+
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
+   :::note
+   Namespace for **Amazon EC2** service is **AWS/EC2**.
+   :::
+
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
 AWS EC2 automatically monitors functions on your behalf, reporting [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html) through Amazon CloudWatch. These metrics are collected by our Hosted Collector by configuring the Amazon CloudWatch source.
 
 The Sumo Logic app for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The app provides dashboards to analyze EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check.
 
+### Collect AWS EC2 CloudTrail logs
 
-### CloudTrail EC2 Data Events
-
-[CloudTrail EC2 Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events) allow you to continuously monitor the execution activity of your EC2 instance and record details of all the related events.
-
-
-### Collect Amazon CloudWatch EC2 Metrics
-
-Sumo Logic supports collecting metrics using two source types:
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) **(recommended)** or
-* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 :::note
-Namespace for **Amazon EC2** Service is **AWS/EC2**.
+CloudTrail data events will be collected under this source.
 :::
 
-* **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. Metrics can be queried through the **account** field.
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Metadata+account.png')} alt="Metadata" />
-
-### Collect CloudTrail EC2 Data Events
-
-To configure a CloudTrail Source, perform these steps:
+#### Prerequisites
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
-2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/using-cloudtrail.html) in your AWS account.
+2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to Sumo Logic.
-   1. **Name**. Enter a name to display the new Source.
-   2. **Description**.  You may skip the description as it's optional.
-   3. **S3 Region**. Select the Amazon Region for your API Gateway S3 bucket.
-   4. **Bucket Name**. Enter the exact name of your API Gateway S3 bucket.
-   5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard `*` in this string.
-   :::note
-   DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions). The S3 bucket name is not part of the path. Don’t include the S3 bucket name when you are setting the Path Expression.
-   :::
-5. **Source Category**. Enter `aws/observability/cloud trail/logs`.
-6. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried through the **account** field. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-EC2-CW-Metrics/Fields.png')} alt="Fields" />
-7. **Access Key ID and Secret Access Key**. Enter your [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-8. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure Log File Discovery [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-9. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
-10. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
-11. **Timestamp Format.** Select **Automatically detect the format**.
-12. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
-13. Click **Save**.
+
+:::note
+Namespace for **Amazon EC2** service is **AWS/EC2**.
+:::
+
+Follow the steps below to collect logs for AWS API Gateway:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
 ### Centralized AWS CloudTrail log collection
 
@@ -162,8 +170,7 @@ Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_created_in_sumo>
 ```
 
-
-**Parse Expression**
+#### Parse Expression
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
@@ -176,17 +183,17 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-
 ## Installing the AWS EC2 app
 
 Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
-
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-As part of the app installation process, the following fields will be created by default:
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
 
 - `account` Name/alias to the AWS account.
 - `accountid` AWS account ID.
@@ -194,7 +201,7 @@ As part of the app installation process, the following fields will be created by
 - `namespace` Namespace for EC2 CW Metrics Service.
 - `instanceid` EC2 Instance Id.
 
-### Field Extraction Rule(s)
+#### Field Extraction Rule(s)
 
 The FER **AwsObservabilityEC2CloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `instanceid` will be created as a part of app installation.
 
