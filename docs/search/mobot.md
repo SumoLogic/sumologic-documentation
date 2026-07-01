@@ -569,7 +569,6 @@ Typical end-to-end response time remains under 2 seconds for most queries. Very 
 * The conversational experience is available for log-based searches only. Metrics and Metrics Searches are currently not supported.
 * Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
 
-
 ### How do I debug a failed Query Agent translation?
 
 If a translation fails, Mobot generates a contextual error message tailored to the situation. The message includes the generated query, explains why it failed, and suggests how to fix it (for example, `Try narrowing your time window` or `Simplify your filter expression`).
