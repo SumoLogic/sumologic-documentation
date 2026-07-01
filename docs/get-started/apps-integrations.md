@@ -65,7 +65,7 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 <AppInstall/>
 
 :::info
-Installing an app automatically subscribes you to email notifications when an upgrade is available for that app. However, you can opt out of receiving these emails by unsubscribing from the app. For more information, see [Email notifications for app upgrade](#email-notifications-for-app-upgrade).
+When you install a Next-Gen app, you will be subscribed to receive email notifications whenever an upgrade is available. However, you can opt out of receiving these emails by unsubscribing from the app. For more information, see [Email notifications for app upgrade](#email-notifications-for-app-upgrade).
 :::
 
 ### Email notifications for app upgrade
