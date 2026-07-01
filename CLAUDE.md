@@ -16,6 +16,24 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 - .claude/skills/pr-template-guide/SKILL.md — PR template structure, formatting examples, and best practices.
 - .claude/skills/geo-guide/SKILL.md — Reference guide of GEO principles and patterns loaded as context by `/geo-optimize` and `/seo-audit`. Not an invocable command.
 
+## Bulk Changes
+For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
+
+**Enter plan mode** (`/plan`) at the start of any bulk change. Present scope, file count, directory breakdown, and before/after samples — then wait for explicit approval before touching any files.
+
+1. **Define scope first, get sign-off.** State the exact pattern, included paths, excluded paths, and known edge cases before touching files.
+2. **Dry-run before writing.** Report total file count, per-directory breakdown, and ~10 before/after samples. Wait for confirmation.
+3. **Apply in batches by directory**, not all at once. Show `git diff --stat` and a few spot-checks after each batch.
+4. **One commit per batch/category** — never bundle multiple directories into one commit. Atomic commits stay revertable.
+5. **Never revert from memory.** If reverting, validate against actual file content — do not trust "the original had X."
+6. **Never commit helper/detection scripts** to the repo. Run them ephemerally.
+
+## Doc Reviews
+
+When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
+
+Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
+
 ## Pull Requests
 **CRITICAL REQUIREMENT**: Before creating ANY PR, MUST read `.github/PULL_REQUEST_TEMPLATE.md` and use EXACT checkbox labels from that file.
 
@@ -31,6 +49,8 @@ See `.claude/skills/pr-template-guide/SKILL.md` for examples and guidance.
 
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if "accept edits" is enabled. Always ask first.
+
+**Branch naming**: Branch names must always be the Jira ticket number only (e.g., `DOCS-1697`). No additional description.
 
 Before merging any PR, provide the user with the commit description and wait for explicit approval.
 
@@ -73,7 +93,7 @@ Primary commands for documentation work. Proactively suggest when context fits �
 
 **Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
-**Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
+**Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
 **Workflow:** `/jira`, `/review`
 
 **When to proactively suggest:**
@@ -82,9 +102,59 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 
-**Key distinctions:**
-- `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
-- `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
+### Slash commands
+
+**Creating docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/doc` | Create a new feature, how-to, concept, reference, or troubleshooting doc |
+| `/doc-from-jira` | Fetch a DOCS Jira ticket and scaffold a complete doc from it |
+| `/app-doc` | Create a new app integration doc |
+| `/c2c-source-doc` | Create a new Cloud-to-Cloud source integration doc |
+
+**Release notes**
+
+| Command | What it does |
+|---------|-------------|
+| `/release-note-service` | New service release note |
+| `/release-note-collector` | New Collector release note |
+| `/release-note-cse` | New Cloud SIEM release note |
+| `/release-note-csoar` | New Cloud SOAR release note |
+| `/release-note-developer` | New developer/API release note |
+
+**Editing and reviewing**
+
+| Command | What it does |
+|---------|-------------|
+| `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
+| `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
+| `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
+
+**Jira**
+
+| Command | What it does |
+|---------|-------------|
+| `/jira` | Create, update, search, or transition DOCS Jira tickets |
+| `/doc-from-jira` | Start a new doc from a Jira ticket (use this instead of `/jira` when the goal is to write a doc) |
+
+**Removing docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/remove-doc` | Safely deprecate or move a doc with redirects |
+
+### Which audit command to use
+
+Run both for a thorough pre-PR check — they cover different things:
+
+- **`/audit-doc`** — structure, required sections, broken links, frontmatter completeness, style guide
+- **`/seo-audit`** — SEO/AEO/GEO signals: title length, description quality, question headings, direct answers, GEO patterns
+
+### `/jira` vs `/doc-from-jira`
+
+- Use **`/jira`** to manage tickets: create, search, update fields, change status, view your queue
+- Use **`/doc-from-jira`** when you have a ticket and want to start writing the doc it describes — it fetches the ticket and scaffolds the file
 
 ## Commands
 
