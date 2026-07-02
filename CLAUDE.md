@@ -86,6 +86,9 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
 - `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
 
+## Code Review
+**Default to fast mode**: For routine PR reviews, do a single-pass read of the diff (e.g. via `gh pr diff`) and report findings directly — don't invoke the full multi-agent `/review` pipeline (parallel finder agents + verification pass) unless the user explicitly asks for a deep/thorough review, or the PR is unusually large or high-risk.
+
 ## Commands
 
 - **Start dev server**: `yarn start` — use this to preview changes locally
