@@ -32,7 +32,7 @@ When you configure the event hubs source or HTTP source, plan your source catego
 
 ### Configure metrics collection
 
-import MetricsSource from \'../../reuse/metrics-source.md\';
+import MetricsSource from '../../reuse/metrics-source.md';
 
 <MetricsSource/>
 
