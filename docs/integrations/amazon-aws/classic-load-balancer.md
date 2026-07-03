@@ -1,6 +1,7 @@
 ---
 id: classic-load-balancer
 title: AWS Classic Load Balancer
+sidebar_label: AWS Classic Load Balancer
 description: The Sumo Logic app for AWS Elastic Load Balancing Classic is a unified logs and metrics (ULM) app which helps you monitor the classic load balancer.
 ---
 
@@ -14,27 +15,27 @@ The Sumo Logic app for AWS Elastic Load Balancer Classic is a unified logs and m
 
 ## Log and metric types
 
-ELB logs are stored as *.log files in the buckets you specify when you enable logging. The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html).
+The Sumo Logic app for AWS Classic Load Balancer uses the following logs and metrics:
+* [AWS Classic Load Balancer CloudTrail Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/cloudtrail-logs.html)
+* [Classic Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html). ELB logs are stored as *.log files in the buckets you specify when you enable logging. The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html).
 
-The logs themselves contain these fields in this order:
-```bash
-datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
-```
+   The logs themselves contain these fields in this order:
+      ```bash
+      datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
+      ```
 
-The log format is described in [AWS ELB Access Log Collection](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
+   The log format is described in [AWS ELB Access Log Collection](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
+* [AWS Classic Load Balancer CloudWatch Metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-cloudwatch-metrics.html)
 
-For details on AWS Classic Load Balancer metrics, see [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-cloudwatch-metrics.html).
 
+### Sample log messages
 
-### Sample access log message
-
-```json
+```json title="Sample CloudTrail Log Message"
 2017-11-06T23:20:38 stag-www-lb 250.38.201.246:56658 10.168.203.134:23662 0.007731 0.214433 0.000261 404 200 3194 123279 \
 "GET https://stag-www.sumologic.net:443/json/v2/searchquery/3E7959EC4BA8AAC5/messages/raw?offset=29&length=15&highlight=true&_=1405591692470 HTTP/1.1" \
 "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:23.0) Gecko/20131011 Firefox/23.0" \
 ECDHE-RSA-CAMELLIA256-SHA384 TLSv1.2
 ```
-
 
 ### Sample queries
 
@@ -62,104 +63,121 @@ loadbalancername={{loadbalancername}} metric=HTTPCode_ELB_4XX \
 Statistic=Sum | sum by account, region, namespace, loadbalancername
 ```
 
-## Collecting logs and metrics for the AWS Classic Load Balancer
+## Collecting logs and metrics for AWS Classic Load Balancer
+
+### Configure Hosted Collector
 
 When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect metrics
+### Collect AWS Classic Load Balancer CloudWatch metrics
 
-1. Sumo Logic supports collecting metrics using two source types:
-   * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
-   * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. 
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
-    1. Keep in mind:
-       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+Sumo Logic supports collecting metrics using one of the following source types:
 
-### Collect access logs
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
+   :::note
+   Namespace for **AWS Classic Load Balancer** service is **AWS/ELB**.
+   :::
+
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
+
+### Collect AWS Classic Load Balancer Access logs
 
 #### Prerequisites
 
-Before you can begin to use the AWS Classic Load Balancing (ELB) App, complete the following steps:
-
+Before you begin to use the AWS Elastic Load Balancing (ELB) Application app, complete the following steps:
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Enable Application Load Balancer logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
-#### Collecting access logs for AWS Classic Load Balancer
+Follow the steps below to collect access logs for AWS Classic Load Balancer:
+1. Configure the [Access Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/#create-an-aws-source).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-1. Configure a Classic Load Balancing (CLB) [Access Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/#create-an-aws-source).
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. The following **Fields** are to be added in the source:
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
-    1. Add a **region** field and assign it the value of respective AWS region where the Load Balancer exists.
-    1. Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
-    1. Keep in mind:
-       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
-### Collect Cloudtrail logs
+### Collect AWS Classic Load Balancer CloudTrail logs
 
-1. Configure a Classic Load Balancing (CLB) [Cloudtrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
-    1. Keep in mind:
-       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
+2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
+3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 :::note
-Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
+Namespace for **AWS Classic Load Balancer** service is **AWS/ELB**.
 :::
 
-## Field in field schema
+Follow the steps below to collect logs for AWS Classic Load Balancer:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
-1. Search for the **loadbalancername** field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+### Centralized AWS CloudTrail log collection
 
-## Field Extraction Rule(s)
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following field extraction rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 
-Create a Field Extraction Rule for AWS Classic Load Balancer access logs and Cloudtrail logs. Learn how to create Field Extraction Rules [here](/docs/manage/field-extractions/create-field-extraction-rule).
-
-**AWS Classic Load Balancer access logs**
-
-```sql 
-Rule Name: AwsObservabilityElbAccessLogsFER
+```sumo
+Rule Name: AWS Accounts
 Applied at: Ingest Time
-Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
-```
-```sumo title="Parse Expression"
-| parse "* * * * * * * * * * * \"*\" \"*\" * *" as datetime, loadbalancername, client, backend, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol
-| parse regex field=datetime "(?<datetimevalue>\d{0,4}-\d{0,2}-\d{0,2}T\d{0,2}:\d{0,2}:\d{0,2}\.\d+Z)"
-| where !isBlank(loadbalancername) and !isBlank(datetimevalue)
-| "aws/elb" as namespace
-| tolowercase(loadbalancername) as loadbalancername
-| fields loadbalancername, namespace
+Scope (Specific Data):
+_sourceCategory=aws/observability/cloudtrail/logs
 ```
 
-**AWS Classic Load Balancer CloudTrail Logs**
+#### Parse Expression
 
-```sql
-Rule Name: AwsObservabilityCLBCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* eventSource eventName "elasticloadbalancing.amazonaws.com" "2012-06-01"
+Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like this:
+
+```sumo
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
 ```
 
-```sumo title="Parse Expression"
-json "eventSource", "awsRegion", "recipientAccountId", "requestParameters.loadBalancerName" as event_source, region, accountid, loadbalancername nodrop 
-| where event_source = "elasticloadbalancing.amazonaws.com"
-| toLowerCase(loadbalancername) as loadbalancername 
-| "aws/elb" as namespace 
-| fields region, namespace, loadbalancername, accountid
-```
-
-## Install the AWS Classic Load Balancer app
+## Installing the AWS Classic Load Balancer app
 
 Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS Classic Load Balancer Service is AWS/ELB.
+- `loadbalancername` Classic Load Balancer name.
+
+#### Field Extraction Rule(s)
+
+The FER **AwsObservabilityCLBAccessLogsFER** to extract fields `loadbalancername` and `namespace` from access logs will be created as a part of app installation.
+
+The FER **AwsObservabilityCLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `loadbalancername`, and `accountid` from CloudTrail logs will be created as a part of app installation.
 
 ## Viewing the AWS Classic Load Balancer dashboards
 
@@ -172,7 +190,7 @@ Use this dashboard to:
 * Monitor trends for load balancers errors, 4xx and 5xx errors, as well as healthy and unhealthy hosts.
 * Monitor the current state across all load balancers via active connections, new connections, backend connection errors, and rejected connections.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/1.-AWS-Classic-Load-Balancer-Overview.png' alt="AWS Classic Load Balancer - Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Response Analysis
@@ -183,7 +201,7 @@ Use this dashboard to:
 * Monitor incoming client locations for all 5XX, 4XX, and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/1.-AWS-Classic-Load-Balancer-Response-Analysis.png' alt="AWS Classic Load Balancer - Response Analysis" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Backend Response Analysis
@@ -194,7 +212,7 @@ Use this dashboard to:
 * Monitor trends of all response codes for your backend servers by LoadBalancer and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Backend-Response-Analysis.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/2.-AWS-Classic-Load-Balancer-Backend-Response-Analysis.png' alt="AWS Classic Load Balancer - Backend Response Analysis" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency Overview
 
@@ -204,7 +222,7 @@ Use this dashboard to:
 * Monitor response times by load balancer, and availability zone.
 * Monitor client latency and processing times for backend servers.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Overview.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/3.-AWS-Classic-Load-Balancer-Latency-Overview.png' alt="AWS Classic Load Balancer - Latency Overview" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Latency Details  
@@ -213,7 +231,7 @@ The **The AWS Classic Load Balancer - Latency Details** dashboard provides insig
 
 Use this dashboard to troubleshoot load balancer performance via detailed views across client, request processing, and response time latencies.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Latency-Details.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/4.-AWS-Classic-Load-Balancer-Latency-Details.png' alt="AWS Classic Load Balancer - Latency Details" style={{border: '1px solid gray'}} width="800" />
 
 ### Connection and Host Status
 
@@ -223,7 +241,7 @@ Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for load balancers.
 * Monitor healthy and unhealthy host counts by the load balancer and availability zone across your infrastructure.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Connection-and-Host-Status.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/5.-AWS-Classic-Load-Balancer-Connections-and-Host-Status.png' alt="AWS Classic Load Balancer - Connections and Host Status" style={{border: '1px solid gray'}} width="800" />
 
 ### Requests and Processed Bytes  
 
@@ -233,7 +251,7 @@ Use this dashboard to:
 * Monitor client request load, network traffic, and processed bytes to determine how to configure load balancers for optimal performance best.
 * Determine how to allocate best backend resources based on load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/6.-AWS-Classic-Load-Balancer-Requests-and-Processed-Bytes.png' alt="AWS Classic Load Balancer - Requests and Processed Bytes" style={{border: '1px solid gray'}} width="800" />
 
 ### Threat Intel
 
@@ -243,7 +261,7 @@ Use this dashboard to:
 * Identify known malicious IPs that are accessing your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward.
 * Monitor malicious confidence level for all incoming malicious IP addresses posing the threats.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-Threat-Intel.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/7.-AWS-Classic-Load-Balancer-Threat-Intel.png' alt="AWS Classic Load Balancer - Threat Intel" style={{border: '1px solid gray'}} width="800" />
 
 ### CloudTrail Audit
 
@@ -255,4 +273,35 @@ Use this dashboard to:
 * Investigate specific error events, including their details, frequency, and associated users, enabling faster troubleshooting and resolution of issues.
 * Identify the most common error types and the users experiencing highest failure rates, facilitating targeted improvements and user support.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Classic-Load-Balancer-CloudTrail-Audit.png')} alt="AWS Elastic Load Balancer Classic" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AWSClassicLoadBalancer/8.-AWS-Classic-Load-Balancer-CloudTrail-Audit.png' alt="AWS Classic Load Balancer - CloudTrail Audit" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS Classic Load Balancer app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS Classic Load Balancer alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS Classic Load Balancer - Access from Highly Malicious Sources` | This alert fires when the classic load balancer is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count < = 0 |
+| `AWS Classic Load Balancer - Deletion Alert` | This alert fires when we detect greater than or equal to 2 application load balancers are deleted over a 5 minute time-period. | Count > = 2 | Count < 2 |
+| `AWS Classic Load Balancer - High 4XX Errors` | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High 5XX Errors` | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx within an interval of 5 minutes. | Count > = 5 | Count < 5 |
+| `AWS Classic Load Balancer - High Latency` | This alert fires when we detect that the average latency for a given classic load balancer within a time interval of 5 minutes is greater than or equal to three seconds. | Count > = 3000 | Count < 3000 |
+| `AWS Classic Load Balancer - Targets Deregistered` | This alert fires when we detect greater than or equal to 1 target is de-registered over a 5 minute time-period. | Count > = 1 | Count < 1 |
+| `AWS Classic Load Balancer - Spillover Count` | This alert fires when a Classic load balancer spillover count is greater than 0 within a 5 minute interval, indicating that the surge queue is full and new connections are being rejected. | Count > 0 | Count < = 0 |
+| `AWS Classic Load Balancer - High Unhealthy Host Count` | This alert fires when the unhealthy host percentage for a Classic load balancer is greater than or equal to 50% within a 5 minute interval. | Count > = 50 | Count < 50 |
+
+## Upgrade/Downgrade the AWS Classic Load Balancer app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS Classic Load Balancer app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
