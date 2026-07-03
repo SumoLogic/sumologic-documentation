@@ -33,7 +33,7 @@ The **Indexes Scanned** dropdown in the Scan Estimates pop-up displays all index
 
 ### Dashboard-level scan estimates
 
-When you run a dashboard that includes [sections (collapsible panels)](/docs/dashboards/section/), you can view the projected scan size for the entire dashboard broken down by section state. Click the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" /> in the dashboard toolbar. A **Scan Estimates** popup appears showing:
+When you run a dashboard that includes [sections (collapsible panels)](/docs/dashboards/panels/section/#how-to-add-a-section), you can view the projected scan size for the entire dashboard broken down by section state. Click the meter icon <img src={useBaseUrl('/img/manage/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="Meter icon" width="25" /> in the dashboard toolbar. A **Scan Estimates** popup appears showing:
 
 - **Active Panels**. The estimated scan for all panels in currently active sections.
 - **Collapsed Panels**. The estimated scan for all panels in currently collapsed sections.
