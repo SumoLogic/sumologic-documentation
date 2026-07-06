@@ -87,7 +87,9 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
 
 ## Code Review
-**Default to fast mode**: For routine PR reviews, do a single-pass read of the diff (e.g. via `gh pr diff`) and report findings directly — don't invoke the full multi-agent `/review` pipeline (parallel finder agents + verification pass) unless the user explicitly asks for a deep/thorough review, or the PR is unusually large or high-risk.
+**Default to fast mode**: For PR reviews, read the diff once (e.g. via `gh pr diff`) and report findings directly in that same turn. Do not invoke the multi-agent `/review` pipeline, spawn background research/finder agents, or run a verification pass, unless the user has explicitly asked for a deep/thorough review.
+
+**File count and diff size are NOT valid reasons to escalate on your own.** A PR that repeats the same simple templated edit across many files (e.g. a doc migration touching 18 pages) is still routine, no matter how many lines it touches — judge by the complexity of the *change*, not the size of the diff. If a PR seems to genuinely warrant deeper review (security-sensitive files, logic/behavior changes, something you're not confident you can verify in one pass), say so and ask the user before escalating — never decide to run the deep pipeline unilaterally.
 
 ## Commands
 
