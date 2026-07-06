@@ -5,6 +5,7 @@ description: Learn about the Sumo Logic collection process for the Azure Stream 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MetricsSource from '../../reuse/metrics-source.md';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-stream-analytics.png')} alt="Azure Stream Analytics icon" width="50"/>
 
@@ -47,8 +48,6 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Use the Event hub namespace and Event hub name configured in the previous step in the destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ### Configure metrics collection
-
-import MetricsSource from '../../reuse/metrics-source.md';
 
 When you configure the Azure Metrics Source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/StreamAnalytics/Metrics`.
 

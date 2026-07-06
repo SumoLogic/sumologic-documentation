@@ -9,6 +9,7 @@ description: This document outlines what is Azure Network Interface, how to set 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MetricsSource from '../../reuse/metrics-source.md';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-network-interface.png')} alt="Azure Network Interface icon" width="50"/>
 
@@ -27,8 +28,6 @@ For Azure Network Interface, you can collect the following metrics:
 Create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) if not already configured. Make sure you create the required sources in this collector.
 
 ### Configure metrics collection
-
-import MetricsSource from '../../reuse/metrics-source.md';
 
 When you configure the Azure Metrics Source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/NetworkInterface/Metrics`.
 

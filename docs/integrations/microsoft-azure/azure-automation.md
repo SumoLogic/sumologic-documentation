@@ -5,6 +5,7 @@ description: Learn about the Sumo Logic collection process for the Azure Automat
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MetricsSource from '../../reuse/metrics-source.md';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-automation.png')} alt="Azure Automation icon" width="50"/>
 
@@ -42,8 +43,6 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ### Configure metrics collection
-
-import MetricsSource from '../../reuse/metrics-source.md';
 
 When you configure the Azure Metrics Source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/Automation/Metrics`.
 

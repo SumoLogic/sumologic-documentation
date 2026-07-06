@@ -5,6 +5,7 @@ description: Learn about the Sumo Logic collection process for the Azure SQL Ela
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MetricsSource from '../../reuse/metrics-source.md';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql-elastic-pool.png')} alt="Azure SQL Elastic Pool icon" width="50"/>
 
@@ -23,8 +24,6 @@ For Azure SQL Elastic pools, you can collect the following metrics:
 Create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) if not already configured. Make sure you create the required sources in this collector.
 
 ### Configure metrics collection
-
-import MetricsSource from '../../reuse/metrics-source.md';
 
 When you configure the Azure Metrics Source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/SQLElasticPool/Metrics`.
 
