@@ -5,6 +5,8 @@ sidebar_label: Alert Variables
 description: Alerts support variables allowing you to customize notifications with the information you need. You can use alert variables to customize your notification payload from monitors, Scheduled Searches, and metrics monitors.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Variables are used as parameters that allow you to customize the JSON payload object of your alert notifications. These variables dynamically populate specific values from the alert configuration in the notification payload. For example, the `{{TriggerType}}` variable provides the current monitor status in the notification. When a notification is sent, the variables are replaced with values from the alert. For instance, if you specify `{{Name}}` in your JSON payload, it will be replaced with the actual name of the alert in the delivered payload.
 
 ## Common variables for alerts
@@ -29,7 +31,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{DetectionMethod}}` | This is the type of Detection Method used to detect alerts. Values are based on static or outlier triggers and data type, either logs or metrics. The value will be either `LogsStaticCondition`, `MetricsStaticCondition`, `LogsOutlierCondition`, `MetricsOutlierCondition`,  `LogsMissingDataCondition`, `MetricsMissingDataCondition`, or `StaticCondition` (deprecated). | &#9989;| &#9989;|
 | `{{SloDashboardUrl}}` |	The URL to the SLO dashboard. | &#9989;| &#9989;|
 | `{{TriggerType}}` | The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`. | &#9989;| &#10060; |
-| `{{TriggerTimeRange}}` | The time range of the query that triggered the alert. For example, `07/13/2021 03:21:32 PM UTC to 07/13/2021 03:36:32 PM UTC` | &#9989;| &#9989;|
+| `{{TriggerTimeRange}}` | The time range of the query that triggered the alert. For example, `07/13/2021 03:21:32 PM UTC to 07/13/2021 03:36:32 PM UTC`.<br/><br/>The example above uses the Legacy format. The delivered format follows your organization's [notification timestamp format](#notification-timestamp-format) policy. | &#9989;| &#9989;|
 | `{{TriggerCondition}}` | The condition that triggered the alert. For example, `Greater than or equal to 1.0 in the last 15 minutes` | &#9989;| &#9989;|
 | `{{TriggerValue}}` | The value that triggered the alert. | &#9989;| &#9989;|
 | `{{TriggerTimeStart}}` | The start time of the time range that triggered the monitor in Unix format. For example, `1626189692042`. | &#9989;| &#9989;|
@@ -69,6 +71,21 @@ Here are legacy variables available for alert notifications from metrics monitor
 
 </details>
 :::
+
+## Notification timestamp format
+
+The date and time format used in your alert and recovery notification payloads is controlled by an organization-wide policy. An administrator sets it in the Sumo Logic UI under **Administration** > **Account Security Settings** > **Notification Settings Standards**.
+
+You can choose one of the following formats. The Legacy format is enabled by default.
+
+| Format | Example | Description |
+| :-- | :-- | :-- |
+| Legacy (default) | `06/23/2025 09:19:45 AM AEST` | 12-hour time with AM/PM, in `MM/DD/YYYY HH:mm:ss` order. |
+| ISO | `2025-06-23 09:19:45 AEST` | 24-hour time without AM/PM, in `YYYY-MM-DD HH:mm:ss` order. |
+
+The selected format applies to all timestamp fields in alert and recovery notifications, including **Created On Date**, **Trigger Time Range**, and **Recovery Time**. It applies consistently across Connections, Webhooks, Slack, and Microsoft Teams, for both Monitor alerts and Scheduled Search notifications.
+
+<img src={useBaseUrl('img/get-started/timestamp-policies.png')} alt="Notification Settings Standards policy showing Legacy and ISO date and time format options" style={{border: '1px solid gray'}} width="700"/>
 
 ## Examples
 
