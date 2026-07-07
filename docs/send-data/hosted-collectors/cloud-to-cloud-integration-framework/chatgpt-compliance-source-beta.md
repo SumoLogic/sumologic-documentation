@@ -10,7 +10,15 @@ description: Learn to collect the conversations from ChatGPT Compliance platform
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
 
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 <img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="ChatGPT Compliance icon" width="40" />
 
