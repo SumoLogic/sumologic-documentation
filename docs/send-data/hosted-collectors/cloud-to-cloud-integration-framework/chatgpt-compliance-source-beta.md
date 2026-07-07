@@ -1,5 +1,5 @@
 ---
-id: chatgpt-compliance-source
+id: chatgpt-compliance-source-beta
 title: ChatGPT Compliance Source
 sidebar_label: ChatGPT Compliance
 tags:
