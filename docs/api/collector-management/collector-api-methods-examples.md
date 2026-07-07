@@ -395,11 +395,11 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 <summary><span className="api get">GET</span><code>/collectors/overview</code></summary>
 <p/>
 
-Get an overview of Installed and Hosted collectors for your account. Returns collector and source counts, offline collector count, and health incident totals (errors and warnings).
+Get a list of Installed and Hosted collectors associated with your child orgs.
 
 #### Example 
 
-This example gets the list of Installed and Hosted collector count, offline or inactive collectors, and health check details associated with your account.
+This example gets the list of Installed and Hosted collector count, offline or inactive collectors, and health check details associated with your child orgs.
 
 ```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/overview
