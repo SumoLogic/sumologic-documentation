@@ -91,7 +91,7 @@ Click the **Add to Dashboard** button on the top right of the window to add th
 
 That's it, start using your Dashboard.  
 
-## Copy a Panel to another Dashboard
+## Copy a panel to another dashboard
 
 You can copy an existing panel from one dashboard to another, or to a new dashboard, without rebuilding the query. This is useful when you want to reuse the same visualization across multiple dashboards.
 
