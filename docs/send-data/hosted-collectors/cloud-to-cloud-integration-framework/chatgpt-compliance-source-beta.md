@@ -10,8 +10,10 @@ description: Learn to collect the conversations from ChatGPT Compliance platform
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="ChatGPT Compliance icon" width="40" />
+
 <head>
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex" />
 </head>
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
@@ -19,8 +21,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 :::info
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
-
-<img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="ChatGPT Compliance icon" width="40" />
 
 OpenAI provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities to improve the productivity while meeting organizational governance and regulatory needs.
 
@@ -69,17 +69,17 @@ You are required to provide the **Workspace ID** and **API Key** to configure th
 
 ### Source configuration
 
-When you create a ChatGPT Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a ChatGPT Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a ChatGPT Compliance Source, follow the steps below:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
-1. On the Collection page, click **Add Source** next to a Hosted Collector.
+1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **ChatGPT Compliance**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Workspace ID**. Name of the workspace ID collected from the [ChatGPT platform](#vendor-configuration).
 1. **API Key**. Enter the API Key generated from the [ChatGPT platform](#vendor-configuration).
 1. **Event Types**. Select one or more event types to collect. Available event types are:
@@ -91,7 +91,7 @@ To configure a ChatGPT Compliance Source, follow the steps below:
     - **Auth**. Authentication and authorization events.
     - **App Auth**. Application-level authorization and OAuth token events.
 1. **Polling Interval**. The polling interval is set for 1 hour by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
-1. When you are finished configuring the Source, click **Save**.
+1. When you are finished configuring the Source, click **Save**.
 
 :::info
 After configuring the ChatGPT Compliance source, consider installing the Sumo Logic app for [ChatGPT Compliance](/docs/integrations/saas-cloud/chatgpt-compliance/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
@@ -99,7 +99,7 @@ After configuring the ChatGPT Compliance source, consider installing the Sumo Lo
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
