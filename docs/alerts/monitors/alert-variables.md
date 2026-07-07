@@ -74,7 +74,7 @@ Here are legacy variables available for alert notifications from metrics monitor
 
 ## Notification timestamp format
 
-The date and time format used in your alert and recovery notification payloads is controlled by an organization-wide policy. An administrator sets it in the Sumo Logic UI under **Administration** > **Account Security Settings** > **Notification Settings Standards**.
+The date and time format used in your alert and recovery notification payloads is controlled by an organization-wide policy. An administrator sets it in the Sumo Logic UI under **Administration** > **Security** > **Policies** > **Notification Settings Standards**.
 
 You can choose one of the following formats. The Legacy format is enabled by default.
 
