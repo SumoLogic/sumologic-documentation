@@ -102,7 +102,7 @@ To copy a panel to another dashboard:
 1. In the **Add Panel to Dashboard** window, enter a **Panel Title** and select the **Dashboard** you want to copy the panel to. To copy it to a new dashboard, enter a name and select **Create New Dashboard** from the dropdown.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-dialog.png')} alt="Copy to Dashboard dialog" style={{border: '1px solid gray'}} width="400" />
 1. Choose how the copied panel handles its time range:
    * **Inherit time range from dashboard**. The panel uses the time range of the destination dashboard.
-   * **Use current time range as panel default** (default). The panel keeps its own time range, independent of the destination dashboard.
+   * **Use current time range as panel default**. The panel keeps its own time range, independent of the destination dashboard.
 1. Click **Submit**. The panel is copied to the dashboard you selected.
 
 ## Delete a Panel
