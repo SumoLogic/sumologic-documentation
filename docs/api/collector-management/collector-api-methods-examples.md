@@ -395,11 +395,11 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 <summary><span className="api get">GET</span><code>/collectors/overview</code></summary>
 <p/>
 
-Get a list of Installed, Hosted, and OpenTelemetry collectors associated with your child orgs.
+Get an overview of Installed and Hosted collectors for your account. Returns collector and source counts, offline collector count, and health incident totals (errors and warnings).
 
 #### Example 
 
-This example gets the list of Installed and Hosted collector count, offline or inactive collectors, and health check details associated with your child orgs.
+This example gets the list of Installed and Hosted collector count, offline or inactive collectors, and health check details associated with your account.
 
 ```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/overview
@@ -414,6 +414,36 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
     "offlineCollectorsCount": 770,
     "errors": 3845,
     "warnings": 0
+}
+```
+</details>
+
+### Get OT Collectors Overview
+
+<details>
+<summary><span className="api get">GET</span><code>/v1/otCollectors/overview</code></summary>
+<p/>
+
+Get an overview of OT Collectors and Source Templates for your account. Returns collector and source template counts, offline collector count, health incident totals, upgrade availability, and collectors with no linked source template.
+
+#### Example 
+
+This example gets an overview of OT Collectors and Source Templates.
+
+```bash title="Request"
+curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/otCollectors/overview
+```
+
+```json title="Response"
+{
+    "otCollectorsCount": 100,
+    "sourceTemplatesCount": 100,
+    "offlineCollectorsCount": 10,
+    "errors": 5,
+    "warnings": 3,
+    "upgradeAvailableCount": 10,
+    "collectorsWithNoSourceTemplateLinkedCount": 2,
+    "noDataCollectorsCount": 4
 }
 ```
 </details>
