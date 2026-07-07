@@ -1231,6 +1231,7 @@ module.exports = {
           items: [
             'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
+            'alerts/monitors/create-monitor-with-mobot',
             'alerts/monitors/settings',
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-variables',
