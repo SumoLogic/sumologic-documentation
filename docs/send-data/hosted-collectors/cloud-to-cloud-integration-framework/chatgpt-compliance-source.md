@@ -21,6 +21,12 @@ The ChatGPT Compliance API enables enterprise customers to access structured con
 | Source | Description | Polling interval |
 | :-- | :-- | :-- |
 | Conversations | Log of user interactions with ChatGPT, including exchanged messages and metadata, used for compliance review and auditing. | 1 hour |
+| Codex | Logs of Codex interactions, capturing code generation and AI-assisted development activity for compliance review. | 1 hour |
+| Codex Security | Security-related events from Codex, including flagged or sensitive code generation requests. | 1 hour |
+| Audit | Audit trail events capturing administrative and user actions within the ChatGPT Enterprise workspace. | 1 hour |
+| App | Events related to installed applications and integrations within the ChatGPT Enterprise environment. | 1 hour |
+| Auth | Authentication and authorization events, including sign-in activity and access control changes. | 1 hour |
+| App Auth | Authorization events specific to application-level access and OAuth token activity. | 1 hour |
 
 ## Setup
 
@@ -66,7 +72,14 @@ To configure a ChatGPT Compliance Source, follow the steps below:
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Workspace ID**. Name of the workspace ID collected from the [ChatGPT platform](#vendor-configuration).
 1. **API Key**. Enter the API Key generated from the [ChatGPT platform](#vendor-configuration).
-1. **Event Types**. Select the event types to collect. Currently, only **Conversation** is supported. Additional event types will be available in future releases.
+1. **Event Types**. Select one or more event types to collect. Available event types are:
+   - **Conversation**. Logs of user interactions with ChatGPT.
+   - **Codex**. Logs of Codex interactions for code generation activity.
+   - **Codex Security**. Security-related events from Codex.
+   - **Audit**. Audit trail events for administrative and user actions.
+   - **App**. Events related to installed applications and integrations.
+   - **Auth**. Authentication and authorization events.
+   - **App Auth**. Application-level authorization and OAuth token events.
 1. **Polling Interval**. The polling interval is set for 1 hour by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
@@ -94,7 +107,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
 | workspaceId | String | Yes | `null` | Name of your workspace ID. | ABCD-SAMPLE-WORKSPACE-ID |
 | apiKey | String | Yes | `null` | API Key of the account. | sk-proj-XXXXXXXXXXXXXXX |
-| enabledEventType | Array | Yes | `null` | List of event types to collect. Currently, only `CONVERSATION` is supported. Additional event types will be available in future releases. | `["CONVERSATION"]` |
+| enabledEventType | Array | Yes | `null` | List of event types to collect. Supported values: `CONVERSATION`, `CODEX`, `CODEX_SECURITY`, `AUDIT`, `APP`, `AUTH`, `APP_AUTH`. | `["CONVERSATION", "AUDIT"]` |
 | pollingIntervalHour | String | Yes | `1h` | Time interval (in hours) after which the source will check for new data. | `1h` |
 
 ### JSON example
