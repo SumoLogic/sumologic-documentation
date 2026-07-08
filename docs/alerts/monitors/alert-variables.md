@@ -32,7 +32,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{SloDashboardUrl}}` |	The URL to the SLO dashboard. | &#9989;| &#9989;|
 | `{{TriggerType}}` | The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`. | &#9989;| &#10060; |
 | `{{TriggerTimeRange}}` | The time range of the query that triggered the alert. For example, `07/13/2021 03:21:32 PM UTC to 07/13/2021 03:36:32 PM UTC`.<br/><br/>The example above uses the Legacy format. The delivered format follows your organization's [notification timestamp format](#notification-timestamp-format) policy. | &#9989;| &#9989;|
-| `{{TriggerCondition}}` | The condition that triggered the alert. For example, `Greater than or equal to 1.0 in the last 15 minutes` | &#9989;| &#9989;|
+| `{{TriggerCondition}}` | The condition that triggered the alert. For example, `Greater than or equal to 1.0 in the last 15 minutes`. | &#9989;| &#9989;|
 | `{{TriggerValue}}` | The value that triggered the alert. | &#9989;| &#9989;|
 | `{{TriggerTimeStart}}` | The start time of the time range that triggered the monitor in Unix format. For example, `1626189692042`. | &#9989;| &#9989;|
 | `{{TriggerTimeEnd}}` | The end time of the time range that triggered the monitor in Unix format. For example, `1626190592042`. | &#9989;| &#9989;|
