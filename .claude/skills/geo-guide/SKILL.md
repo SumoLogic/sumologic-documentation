@@ -34,7 +34,7 @@ Sumo Logic doc pages live under `/docs/` and follow this frontmatter pattern:
 ```yaml
 ---
 id: my-page-name
-title: How Do I [Task] with Sumo Logic?
+title: How to [Task] with Sumo Logic
 sidebar_label: Short Nav Label
 description: One sentence answering the page question for AI crawlers and search engines.
 keywords:
@@ -48,7 +48,7 @@ When generating GEO-optimized frontmatter, add # [GEO: Principle N] inline comme
 
 **Rules:**
 
-- `title` is phrased as a question and matches the H1 (generated from frontmatter).
+- `title` is phrased as a "How to" task statement (or a What/Why/Which question for concept pages) and matches the H1 (generated from frontmatter). Use "How to X", not "How do I X".
 - `description` is one sentence describing what the feature does and what problem it solves.
 - `keywords` include: the integrated product name, Sumo Logic, and 2–3 capability terms (for example: security, monitoring, logs).
 
@@ -92,18 +92,19 @@ Each page answers exactly one clearly scoped question. AI cannot follow cross-re
 
 ### Principle 3 — Question-style headings
 
-Rewrite every H2 and H3 as a question a user would type into an AI tool.
+Rewrite every H2 and H3 as the question a user would type into an AI tool, or as a "How to" task statement for procedural sections.
 
 | Before | After |
 |--------|-------|
-| `## Prerequisites` | `## What do I need before getting started?` |
-| `## Configuration` | `## How do I configure [feature] in Sumo Logic?` |
-| `## Log Collection` | `## How do I collect [source] logs in Sumo Logic?` |
+| `## Prerequisites` | `## What do you need before getting started?` |
+| `## Configuration` | `## How to configure [feature] in Sumo Logic` |
+| `## Log Collection` | `## How to collect [source] logs in Sumo Logic` |
 | `## Dashboards` | `## What dashboards does [feature] include?` |
 | `## Limitations` | `## What are the limitations of [feature]?` |
 
 **Rules:**
-- Start headings with How, What, Why, When, or Which.
+- Use "How to X" for procedural headings (not "How do I X"). Use What, Why, When, or Which for conceptual headings.
+- Write headings in the second person or as a neutral task statement, never the first person ("How do I", "What do I need").
 - Include "Sumo Logic" and the feature name where it reads naturally.
 - Apply to H2 and H3 only. H1 is generated from `title:` frontmatter.
 
@@ -117,7 +118,7 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 ### What is [feature name] in Sumo Logic?
 [One-sentence BLUF answer.]
 
-### How do I [primary task for this page]?
+### How do you [primary task for this page]?
 [Direct answer with inline code or steps if relevant.]
 
 ### What happens if [common error or edge case]?
@@ -129,6 +130,8 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 
 **Rules:**
 - Minimum 3 questions per FAQ but aim for 5 to 8.
+- Cover distinct intents (scope, capabilities, limitations, editing, prerequisites), not variations of one question.
+- Phrase questions and answers in the second person (you/your), never the first person (I/me/my). Use "How do you X?", "Can you X?", or "How to X", never "How do I X?".
 - Each answer must be fully self-contained. No "see above" or "refer to X".
 - Questions must match natural AI query language for the topic.
 - Answers must be concise with 1 to 3 sentences.
