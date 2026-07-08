@@ -11,7 +11,7 @@ import MetricsSource from '../../reuse/metrics-source.md';
 
 [Azure HDInsight](https://learn.microsoft.com/en-gb/azure/hdinsight/hdinsight-overview) is a full-spectrum, managed cluster platform that simplifies running big data frameworks in large volume and velocity using Apache Spark, Apache Hive, LLAP, Apache Kafka, Apache Hadoop, and more in your Azure environment. This integration helps in monitoring request throughput, message throughput, and concurrent connections in your clusters.
 
-## Log and metric types
+## Metric types
 
 For Azure HDInsight, you can collect the following metrics:
 
