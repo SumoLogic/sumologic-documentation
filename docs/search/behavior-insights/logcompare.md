@@ -11,6 +11,10 @@ LogCompare allows you to easily compare log data from different time periods to
 For example, you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
 
 
+:::note
+LogCompare truncates raw 256KB messages to 64KB before matching and grouping the logs into signatures, so content beyond 64KB is not compared. This can also affect response time when you run LogCompare against large messages.
+:::
+
 ## How LogCompare works
 
 LogCompare creates a baseline (historical) query and compares it to a target (current) query. Logs from each query are clustered into patterns, called signatures, then compared and ranked based on the significance of change.
