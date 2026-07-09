@@ -54,7 +54,7 @@ Now that you have created a new Dashboard, you can populate it with panels tha
 
 To add a panel to a new Dashboard, do the following:
 
-1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
+1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="800" />
 1. You are prompted to provide a query.
 
 See [Choosing a panel type](/docs/dashboards/panels) for details.
@@ -90,6 +90,20 @@ You can customize a chart on a dashboard panel in a variety of ways. To include�
 Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  <br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
 That's it, start using your Dashboard.  
+
+## Copy a panel to another dashboard
+
+You can copy an existing panel from one dashboard to another, or to a new dashboard, without rebuilding the query. This is useful when you want to reuse the same visualization across multiple dashboards.
+
+To copy a panel to another dashboard:
+
+1. Go to the dashboard that has the panel you want to copy.
+1. On the panel, click the three-dot kebab menu icon and select **Copy to Dashboard**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-menu.png')} alt="Copy to Dashboard menu option" style={{border: '1px solid gray'}} width="300" />
+1. In the **Add Panel to Dashboard** window, enter a **Panel Title** and select the **Dashboard** you want to copy the panel to. To copy it to a new dashboard, enter a name and select **Create New Dashboard** from the dropdown.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-dialog.png')} alt="Copy to Dashboard dialog" style={{border: '1px solid gray'}} width="400" />
+1. Choose how the copied panel handles its time range:
+   * **Inherit time range from dashboard**. The panel uses the time range of the destination dashboard.
+   * **Use current time range as panel default**. The panel keeps its own time range, independent of the destination dashboard.
+1. Click **Submit**. The panel is copied to the dashboard you selected.
 
 ## Delete a Panel
 

@@ -419,6 +419,15 @@ Collection delays may occur due to your environment and it takes a couple of min
 If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics), we recommend a setting of 900 seconds.
 :::
 
+### Timestamp
+
+You can switch the **Timestamp** mode to ** Message Time** or **Searchable Time** to view and evaluate logs based on different timestamp contexts. <img src={useBaseUrl('img/alerts/monitors/timestamp-dropdown.png')} alt="select timestamp" style={{border: '1px solid gray'}} width="500"/>
+
+- **Message Time**. Returns messages based on the timestamp specified in each message.
+- **Searchable Time**. Returns messages based on the time they are indexed or become searchable in Sumo Logic.
+
+This allows you to troubleshoot ingestion delays, correlate events accurately, and monitor data using the most relevant time reference.
+
 ## Step 3. Notifications (optional)
 
 Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services.
@@ -429,7 +438,9 @@ Notifications will be sent when the monitor is triggered as configured in the [A
 
 * **Preferred Notification Time Zone**. Set the time zone for your alert notifications. If you do not select anything, it will default to the time zone specified in your user preferences.
 * **Connection Type**. Choose the [connection](/docs/alerts/webhook-connections) notification method (e.g., email, Webhook, PagerDuty). Monitor notifications support [Alert Variables](/docs/alerts/monitors/alert-variables) to reference its configuration settings or your raw data.
-   * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body.
+   * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body. You can also include additional context in the email notification:
+      * **Include Query** (`includeQuery`). Adds the monitor's search query to the email notification. Supported for Logs, Metrics, and SLO monitors.
+      * **Include Results** (`includeResultSet`). Adds the search results to the email notification. Supported for Logs and Metrics monitors. SLO monitors do not support this option. Setting `includeResultSet` on an SLO monitor returns an error indicating that the flag is not applicable.
    * **Webhook**. By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 * **Trigger Type Notifications**. Set different notification channels for each trigger type (**Critical**, **Warning**, **Missing Data**). Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification. You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.
    * For the connection types listed [here](/docs/alerts/webhook-connections), you can use the **Recovery** checkbox to enable an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic.

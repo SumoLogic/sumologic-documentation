@@ -2,32 +2,35 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-description: Accelerate troubleshooting and platform learning with Mobot, Sumo Logic's AI-powered conversational assistant. Ask questions in plain English to analyze log data or get answers sourced from official documentation.
+description: Accelerate investigations and simplify security workflows with Mobot, Sumo Logic's AI assistant that turns plain-language questions into log queries and returns answers from Sumo Docs.
 keywords:
-  - copilot
   - mobot
-  - artificial intelligence
   - ai
-  - machine learning
   - ml
+  - agents
   - dojo ai
 ---
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Mobot (formerly *Copilot*) is Sumo Logic's AI-powered assistant that accelerates investigations and troubleshooting in logs. Ask questions in plain English and get contextual suggestions that help first responders reach answers faster.
+Mobot is Sumo Logic's AI assistant that turns plain-language questions into log queries. Ask what you want to investigate and get query results, visualizations, and guided refinements in one conversational experience—without writing queries from scratch. Mobot tracks your intent, maintains conversation context, and surfaces step-by-step suggestions to move you from question to insight faster.
 
-With fast response times and high translation accuracy, Mobot helps users of all skill levels work more efficiently across supported log sources. You interact with it like a chat assistant—ask a question, refine it with follow-ups, adjust filters or time ranges, and see updated queries and visualizations without starting over. Mobot tracks your intent, maintains conversation context, and surfaces helpful suggestions to guide your investigation.
-
-Mobot automatically generates log searches from natural language prompts and helps you investigate performance issues, anomalies, and security threats. It provides step-by-step refinements using AI-derived suggestions to help you reach faster and more accurate resolutions.
-
-It connects you to two specialized agents that handle different tasks:
+Mobot connects you to two specialized agents:
 
 * **Query Agent** translates your natural-language questions into log search queries and helps you refine them step by step.
-* **Knowledge Agent** answers how-to questions about Sumo Logic—anything from setup to troubleshooting, best practices, and more—sourced from our official documentation.
+* **Knowledge Agent** answers how-to questions about Sumo Logic, from setup to troubleshooting, best practices, and more.
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
+
+## At a glance
+
+- **What it is**: Sumo Logic's AI-powered assistant for log investigation and platform guidance.
+- **Two agents**: Query Agent (log search queries) and Knowledge Agent (how-to answers from official docs).
+- **How it works**: Ask questions in plain English; Mobot translates them into Sumo Logic queries or returns documentation-sourced answers.
+- **Response time**: Typically under 2 seconds for most queries.
+- **Compatible log types**: JSON, partial JSON, and unstructured logs with Field Extraction Rules.
+- **AI provider**: Amazon Bedrock (no customer data used for training).
 
 :::training Sumo Logic Academy
 
@@ -39,34 +42,37 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 * **Instructor-led virtual classes**: [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
 :::
 
-### Key capabilities
-
-* **Auto-visualization**. Generate charts automatically from search results and add them directly to dashboards.
-* **Broad log compatibility**. Works with structured and semi-structured logs. To analyze unstructured logs (like Palo Alto Firewall), you'll need to apply Field Extraction Rules.
-* **Automatic source detection**. Let Mobot choose a data source based on your question, or specify one yourself.
-* **Clarifications when needed**. If your request is ambiguous, Mobot asks follow-up questions to narrow intent.
-* **Smarter error handling**. Get clear messages and actionable suggestions instead of generic errors.
-* **Dashboard-aware translations (via RAG)**. Mobot learns from dashboards opened in your org in the last 90 days to better understand your intent and data structure.
-* **Integrated workflow**. See your prompts, refinements, queries, and results all in one interface, with the ability to branch or revisit past conversations.
-
-### Who benefits from Mobot?
-
-Mobot is ideal for users across your organization:
+Mobot is ideal for all users across your organization:
 
 * **On-call engineers and security teams**. Accelerate incident resolution by surfacing key troubleshooting and security insights rapidly.
 * **Early career professionals**. Troubleshoot without needing to learn query syntax, making incident investigations more accessible.
 * **Practitioners**. Speed up workflows with context-aware suggestions for frequent tasks.
 * **Experts**. Get IDE-style assistance for crafting complex queries efficiently.
 
-## Which agent should I use?
+## Key capabilities
 
-Not sure where to start? Choose based on what you need:
+* **Natural-language query generation**. Turn plain-language questions into log queries without writing Sumo Logic query language from scratch.
+* **Auto-visualization**. Generate charts automatically from search results and add them directly to dashboards.
+* **Broad log compatibility**. Works with structured and semi-structured logs. To analyze unstructured logs (like Palo Alto Firewall), you'll need to apply Field Extraction Rules.
+* **Automatic source detection**. Let Mobot choose a data source based on your question, or specify one yourself.
+* **Clarifications when needed**. If your request is ambiguous, Mobot asks follow-up questions to narrow intent.
+* **Smarter error handling**. Get clear messages and actionable suggestions instead of generic errors.
+* **Dashboard-aware translations (via RAG, Retrieval-Augmented Generation)**. Mobot learns from dashboards opened in your org in the last 90 days to better understand your intent and data structure.
+* **Integrated workflow**. See your prompts, refinements, queries, and results all in one interface, with the ability to branch or revisit past conversations.
+
+## Getting started
+
+There are two ways to open Mobot:
+- **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="650" />
+- **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="650" />
+
+Not sure where to start? Choose an agent based on what you need:
 
 |      | Query Agent | Knowledge Agent |
 |:-----|:------------|:----------------|
 | **Purpose** | Create and refine log queries | Learn platform features |
 | **Input** | Data questions and analysis requests | How-to and configuration questions |
-| **Output** | Executable queries with live results | Documentation-based answers with links |
+| **Output** | Executable queries with live results | Answers with guidance links |
 | **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts |
 | **Example** | "Show me 500 errors from the API service" | "How do I set up a CloudTrail collector?" |
 
@@ -94,11 +100,7 @@ This short video introduces Query Agent and how it can help you with log search 
 
 :::
 
-Query Agent builds on the query translation foundation of the previous *Copilot* experience with improved accuracy and a conversational workflow. Intent cards summarize your current goal, and suggested follow-up queries offer refinements you can apply with a click. The conversation pane shows your prompts and refinements, with queries rendered directly in the editor alongside live results.
-
-#### Getting started
-
-To open Mobot, click **Mobot** in the left nav.
+Intent cards summarize your current goal, and suggested follow-up queries offer refinements you can apply with a click. The conversation pane shows your prompts and refinements, with queries rendered directly in the editor alongside live results.
 
 :::training Micro Lesson
 
@@ -119,7 +121,7 @@ In this video, you'll learn how to turn natural language requests into queries, 
 :::
 
 
-### Example workflow: Observability
+### Example workflow: Observability investigation
 
 This example shows a typical investigation workflow that takes just a few minutes. You can apply the same patterns to different logs, events, or dimensions.
 
@@ -127,7 +129,7 @@ This example shows a typical investigation workflow that takes just a few minute
 
 Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values.
 
-If you don't select a source, Query Agent chooses one automatically based on your question. You can override it by typing the source name directly in your prompt or by choosing it from the **Auto Source Selection** dropdown.
+If you do not select a source, Query Agent chooses one automatically based on your question. You can override it by typing the source name directly in your prompt or by choosing it from the **Auto Source Selection** dropdown.
 
 For example, if you enter a broad question like "Show me AWS CloudTrail errors", your query will translate to Sumo Logic query language (something like `(_source="AWS CloudTrail") "error"`) and an intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggested follow-up queries with related refinements you can click. You'll also see an option to open your query in Log Search.
 
@@ -155,7 +157,7 @@ The steps below outline a typical conversational interaction pattern for investi
 
 #### Ask your initial question  
 
-Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you don't select a source, Query Agent chooses one automatically based on your question.
+Use natural language to ask what you're looking for. For better results, include the name of the data source you're querying and any related fields or values. If you do not select a source, Query Agent chooses one automatically based on your question.
 
 For example, if you enter "Show me recent user-service logs", Query Agent selects the correct source category and returns recent events. An intent card appears in the conversation pane summarizing your goal. Query Agent then surfaces suggested follow-up queries with related refinements you can click.
 
@@ -289,7 +291,7 @@ Get the most out of Query Agent by following these tips:
 * **Change units in your query**. For example, "Convert GB to bytes" or "show in milliseconds."
 * **Reuse queries from your conversation history**. Everything you ask is saved automatically. You can revisit, reuse, or continue where you left off in prior conversations to compare or branch analyses.
 * **Modify existing queries**. Add/remove fields, add `where`, `sort`, `avg()` clauses, and more.
-* **Guide Query Agent with feedback**. If the result isn't right, use natural language. For example, "Don't filter by namespace, instead group by error type" or "Use P90 instead of P50."
+* **Guide Query Agent with feedback**. If the result is not right, use natural language. For example, "Do not filter by namespace, instead group by error type" or "Use P90 instead of P50."
 * **Fix broken queries**. Paste a syntactically invalid query and Query Agent will correct it for you.
 
 #### Specifying time ranges
@@ -304,7 +306,7 @@ Query Agent understands relative rolling window time expressions. Use "last X" o
 * "last week", "last month", "last night" (as rolling ranges)
 
 
-### Example queries
+### Sample queries
 
 Below are examples of how you can phrase queries:
 
@@ -354,7 +356,7 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
 1. Switching to table view, you notice "Malicious" in the search results. So, you add in `Filter results by action contains Malicious` to the query: `Count logs by action. Sort the results. Filter results by action contains Malicious.`<br/>
    <img src={useBaseUrl('img/search/mobot/cloud-siem-3.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
    :::note
-   If `Malicious` doesn't work, try `Malicious*`. Sumo Logic is case sensitive.
+   If `Malicious` does not work, try `Malicious*`. Sumo Logic is case sensitive.
    :::
 1. Next, you look for URLs that pertain to the malicious action: `Count logs by action, url, user. Sort the results. Filter results by action contains Malicious.`
    <img src={useBaseUrl('img/search/mobot/cloud-siem-4.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
@@ -362,7 +364,7 @@ You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried abo
 
 To summarize, you conclude there is malicious activity originating from certain users who need to be investigated further.
 
-### Additional considerations
+### Requirements and limitations
 
 #### Compatible log formats
 
@@ -405,9 +407,11 @@ If you're on a [tiered pricing](/docs/manage/partitions/data-tiers/searching-dat
 
 ## Knowledge Agent
 
-Select **Knowledge Agent** to get help using Sumo Logic.
+Knowledge Agent is Sumo Logic's in-platform assistant for learning how to use the product. Ask how-to questions and get answers sourced directly from official Sumo Logic documentation.
 
 <img src={useBaseUrl('img/search/mobot/knowledge-agent-select.png')} alt="Knowledge Agent button selected in the Mobot UI" style={{border: '1px solid gray'}} width="700" />
+
+<br/><br/>
 
 :::training Micro Lesson
 
@@ -427,7 +431,9 @@ Learn more about Knowledge Agent's key features and capabilities.
 
 :::
 
-Knowledge Agent is your in-platform assistant for learning how to use Sumo Logic. Ask questions about Sumo Logic and get clear answers sourced directly from our official documentation without leaving your workflow. Here are some examples:
+### Sample queries
+
+Here are some examples:
 
 * "How do I add a collector for AWS CloudTrail?"
 * "What's the difference between a scheduled search and a real-time alert?"
@@ -445,7 +451,7 @@ To get the most accurate answers, try the following when asking questions:
 * **Follow up naturally**. If the initial answer is close but not quite right, ask follow-up questions like "What about for Azure instead of AWS?"
 * **Reference specific features**. Use proper names when you know them: "How do I use Field Extraction Rules?" works better than "How do I extract fields?"
 
-## Security and compliance
+## How does Mobot handle security and compliance?
 
 Sumo Logic Mobot leverages foundational models provided by Amazon Bedrock, inheriting their robust compliance and security posture. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
@@ -460,74 +466,49 @@ Additionally, all aspects of our service, including Mobot, adhere to the securit
 
 ## FAQ
 
-### General
+**General**
 
-<details>
-<summary>What is Sumo Logic Mobot?</summary>
+### What is Sumo Logic Mobot?
 
 Mobot is an AI assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language queries and contextual troubleshooting, helping users extract actionable insights from logs. Mobot does not process or share your log data with any third party.
-</details>
 
-<details>
-<summary>Can I use Mobot to analyze unstructured logs?</summary>
+### Can I use Mobot to analyze unstructured logs?
 
 Yes, Mobot can extract relevant insights from unstructured logs, provided Field Extraction Rules (FERs) are applied. It also supports semi-structured logs (JSON + unstructured payloads).
-</details>
 
-<details>
-<summary>Does Mobot save search history?</summary>
+### Does Mobot save search history?
 
 Yes, Mobot retains conversation and search history, allowing you to resume investigations with context and continuity.
-</details>
 
-<details>
-<summary>What role does AI play in Mobot?</summary>
+### What role does AI play in Mobot?
 
 Mobot uses AI to interpret natural language queries and recommend search results or query refinements, streamlining log analysis.
-</details>
 
-<details>
-<summary>How can I opt out of Mobot?</summary>
+**Security and privacy**
 
-If you prefer not to use Mobot, contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
-</details>
-
-### Security and privacy
-
-<details>
-<summary>Do Dojo AI agents access customer data?</summary>
+### Do Mobot's agents access customer data?
 
 Mobot (including Query Agent and Knowledge Agent) does not process or analyze customer log data. Schema and field samples are used to provide context to the AI, but your log content is not read or stored by the model.
-</details>
 
-<details>
-<summary>What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?</summary>
+### What specific types of customer data or PII does the AI process? Does it filter out PII/sensitive information?
 
 Mobot processes schema and field samples to provide context to the AI. While field values can contain PII or confidential data (for example, email addresses or IP addresses), these values are used solely to enable insights and are protected under strict compliance and security reviews.
-</details>
 
-<details>
-<summary>Is customer data/PII used to train AI models?</summary>
+### Is customer data/PII used to train AI models?
 
 No, customer data or PII is not used for training AI models. Mobot operates using a foundation model served via Amazon Bedrock, ensuring your data remains private and secure.
-</details>
 
-<details>
-<summary>How long does the AI store customer information or PII, and when and how is it deleted?</summary>
+### How long does the AI store customer information or PII, and when and how is it deleted?
 
 Certain features may rely on query history stored on a rolling basis for performance optimization. Data is systematically expired to maintain privacy.
 
 For example, our alerts feature log anomaly detection and build ML models from 60 days of logs. To accomplish this, we retrain the model once a week. In this example, each week, we add one week of new data while expiring the oldest week of data. Rolling data windows are done to avoid fetching 60 days of data for every training run.
-</details>
 
-<details>
-<summary>Is any user or org data sent outside our environment?</summary>
+### Is any user or org data sent outside our environment?
 
 No. All processing happens within your region's cluster. RAG context is scoped to dashboards in your own org—no cross-org data leakage.
-</details>
 
-<details>
-<summary>Does a fourth party have access to Mobot customer data?</summary>
+### Does a fourth party have access to Mobot customer data?
 
 No. Mobot uses foundation models securely hosted through Amazon Bedrock. When customer data is processed:
 
@@ -538,117 +519,99 @@ No. Mobot uses foundation models securely hosted through Amazon Bedrock. When cu
 * Customer inputs and outputs are not shared with model providers and are not used to train external models.
 
 Customer data processed through Mobot remains within Sumo Logic's secure environment and is used only to deliver results for that customer.
-</details>
 
-### Technical
+**Technical**
 
-<details>
-<summary>Does Mobot use any open-source library, GenAI providers, or cloud providers?</summary>
+### Does Mobot use any open-source library, GenAI providers, or cloud providers?
 
 For Generative AI, Mobot uses a foundation model served by Amazon Bedrock. Classical ML features leverage open-source Python libraries approved by Sumo Logic.
-</details>
 
-<details>
-<summary>What is the type of AI being used?</summary>
+### What is the type of AI being used?
 
 Mobot is an ensemble of Generative AI (GenAI) and classical machine learning (ML) techniques. For example, classical ML is used for anomaly detection in alerts.
-</details>
 
-<details>
-<summary>Is there a human in the loop for Mobot?</summary>
+### Is there a human in the loop for Mobot?
 
 Yes, the on-call developer or security engineer troubleshooting an incident is the expected user. They interact with Mobot using natural language questions or through contextual suggestions.
-</details>
 
-<details>
-<summary>Does Sumo Logic hold any AI-specific certifications or accreditations?</summary>
+### Does Sumo Logic hold any AI-specific certifications or accreditations?
 
 Sumo Logic is currently reviewing AI compliance within a rapidly evolving regulatory landscape, including ISO 42001, which is designed to help organizations implement AI responsibly.
 
 All Sumo Logic AI capabilities operate within our existing industry-recognized security and compliance framework, including FedRAMP Moderate, SOC 2 Type 2, HIPAA, PCI DSS 4.0.1, and ISO 27001:2022. These attestations govern the confidentiality, integrity, and protection of customer data across our platform, including AI features.
 
 Availability of specific AI capabilities may vary by deployment region based on compliance boundary requirements.
-</details>
 
-<details>
-<summary>How are reviews conducted on the Mobot model?</summary>
+### How are reviews conducted on the Mobot model?
 
 The generative AI model used by Mobot is licensed and securely hosted via Amazon Bedrock, meaning it is not directly accessible by Sumo Logic, customers, or third parties.
 
 Each major capability added to Mobot undergoes legal, compliance, and application security reviews. These reviews coincide with new releases that expand insights or process new types of data.
-</details>
 
-<details>
-<summary>Which Mobot capabilities are available in FED deployments?</summary>
+### Which Mobot capabilities are available in FED deployments?
 
 The current GA versions of Mobot, including Query Agent and Knowledge Agent, are available in the FED deployment.
-</details>
 
-### Query Agent
+**Query Agent**
 
-<details>
-<summary>What's the impact on Query Agent latency?</summary>
+### What's the impact on Query Agent latency?
 
-Typical end-to-end response time remains under 2 seconds for most queries. Very large result sets or percentile calculations over broad ranges may take up to 5 seconds. During Beta, full query generation may take 6 to 7 seconds, but Mobot streams the first token (intent interpretation) within 2 seconds.
-</details>
+Typical end-to-end response time remains under 2 seconds for most queries. Very large result sets or percentile calculations over broad ranges may take up to 5 seconds. Mobot streams the first token (intent interpretation) within 2 seconds.
 
-<details>
-<summary>What are the current Query Agent limitations?</summary>
+### What are the current Query Agent limitations?
 
-* For dashboard-aware translations via RAG, Mobot's source expression must share at least one common key-value pair with your dashboard queries. For example, `_sourcecategory=abcd "error"` will match a dashboard query like `_sourcecategory=abcd | count`, but won't match `_source=abcd | count` because there's no shared key-value pair.
+* For dashboard-aware translations via RAG, Mobot's source expression must share at least one common key-value pair with your dashboard queries. For example, `_sourcecategory=abcd "error"` will match a dashboard query like `_sourcecategory=abcd | count`, but will not match `_source=abcd | count` because there's no shared key-value pair.
 * RAG only considers dashboards that have been opened in the last 90 days when interpreting your query.
 * Very large or highly complex queries may time out or trigger structured fallback responses.
-* The conversational experience is available for log-based searches only. Metrics and Metric Searches are not supported in this Beta.
+* The conversational experience is available for log-based searches only. Metrics and Metrics Searches are currently not supported.
 * Mobot cannot currently refer to the output of a log search directly in subsequent queries. Each follow-up must be expressed in terms of query refinements rather than referencing previous results. This is an important limitation to be aware of when constructing multi-turn conversations.
-</details>
 
-<details>
-<summary>How do I debug a failed Query Agent translation?</summary>
+### How do I debug a failed Query Agent translation?
 
 If a translation fails, Mobot generates a contextual error message tailored to the situation. The message includes the generated query, explains why it failed, and suggests how to fix it (for example, `Try narrowing your time window` or `Simplify your filter expression`).
 
 Here are some common cases:
 
-* **No or delayed results**. Give Mobot a few seconds to process complex refinements.  
-* **Output too broad**. Add more context (for example, specify a client or namespace).  
-* **Unexpected numbers**. If results look off, be more explicit. For example, ask `show in milliseconds` or `convert to seconds` to adjust units, or say `show P90` / `switch back to P50 over 1 minute` to refine percentiles.  
-</details>
+* **No or delayed results**. Give Mobot a few seconds to process complex refinements.
+* **Output too broad**. Add more context (for example, specify a client or namespace).
+* **Unexpected numbers**. If results look off, be more explicit. For example, ask `show in milliseconds` or `convert to seconds` to adjust units, or say `show P90` / `switch back to P50 over 1 minute` to refine percentiles.
 
-### Knowledge Agent
+**Knowledge Agent**
 
-<details>
-<summary>Does Knowledge Agent use my data to train external models?</summary>
+### Does Knowledge Agent use my data to train external models?
 
 Mobot and Knowledge Agent run on Amazon Bedrock, an approved and secure subprocessor that complies with Sumo Logic's privacy, security, and data-handling standards.
 
 No customer data is ever used for model training. All processing happens within the secure boundaries of Sumo Logic's architecture, maintaining the same high level of data protection customers already trust.
-</details>
 
-<details>
-<summary>Is my data safe when I use Knowledge Agent?</summary>
+### Is my data safe when I use Knowledge Agent?
 
 Yes. Knowledge Agent only processes what you provide during your session, and this data remains inside Sumo Logic's secure environment. Nothing is sent to external LLM providers for training or storage.
-</details>
 
-<details>
-<summary>How does Knowledge Agent ensure accuracy?</summary>
+### How does Knowledge Agent ensure accuracy?
 
 Knowledge Agent pulls directly from Sumo Logic's official product documentation. Responses are always grounded in our published help content, making them accurate, citable, and aligned with the latest platform behavior.
 
 No information is generated from unreliable external sources.
-</details>
 
-<details>
-<summary>Can Knowledge Agent answer questions outside Sumo Logic's documentation?</summary>
+### Can Knowledge Agent answer questions outside Sumo Logic's documentation?
 
 No. Knowledge Agent is intentionally scoped to use Sumo Logic's internal documentation and resources only. This ensures answers remain trustworthy and consistent with product behavior.
-</details>
 
 ## Feedback
 
-We want your feedback! Let us know what you think by clicking the thumbs up icon to verify your query or the thumbs down icon to tell us how we can improve.
+Your feedback directly shapes Mobot. You can share feedback by:
 
-<img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Mobot feedback icons in Query Agent conversation" style={{border: '1px solid gray'}} width="800" />
+- Giving Mobot's responses a thumbs up or thumbs down in the conversation.<br/><img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Mobot feedback icons in Query Agent conversation" style={{border: '1px solid gray'}} width="400" />
+- Filling out the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLScaHwF9q8o3oSUsnAmpp9wssw-iWDnmbBiGY0WNZjIRS6tQlw/viewform).
+- Sharing directly with your account team.
+
+To report an issue, copy the conversation URL and share it with your Sumo Logic contact. When sharing feedback, it helps to note:
+
+- What you asked.
+- What you expected.
+- What Mobot returned instead.
+- Whether the issue was prompt comprehension, context understanding, answer accuracy, answer clarity, or something else.
 
 ## Opting out
 
@@ -656,6 +619,7 @@ To opt out of Mobot, contact our [Support team](https://support.sumologic.com/su
 
 ## Additional resources
 
+* [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
 * [Search Query Language](/docs/search/search-query-language)
 * [Dashboards](/docs/dashboards)
-* [Dojo AI overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the collective system of Sumo Logic agents and assistants, including Mobot’s agents (Query Agent and Knowledge Agent), Cloud SIEM security agent, platform agents, and more coming soon.
+* [Dojo AI overview](https://www.sumologic.com/solutions/dojo-ai)
