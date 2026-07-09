@@ -40,7 +40,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 * **An MCP-compatible client that supports OAuth 2.0**. The default setup uses client ID metadata documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
 
 :::note
-[Client ID Metadata Documents (CIMD)](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the MCP protocol recommmended authentication mechanism for MCP-clients. Read more about CIMD [here](https://client.dev/). If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
+[Client ID Metadata Documents (CIMD)](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
 :::
 
 ## Configure in Claude Code CLI
