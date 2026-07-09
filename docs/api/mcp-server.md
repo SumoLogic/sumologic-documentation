@@ -37,7 +37,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-* **An MCP-compatible client that supports OAuth 2.0**. The default setup uses dynamic client registration. We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
+* **An MCP-compatible client that supports OAuth 2.0**. The default setup uses client ID metadata documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
 
 :::note
 If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
@@ -47,7 +47,7 @@ If you have questions about client compatibility, [contact Sumo Logic Support](h
 
 ### Authentication
 
-Claude Code CLI uses OAuth 2.0 with dynamic client registration. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
@@ -85,7 +85,7 @@ If you previously granted consent for an org, you will not be prompted again. To
 
 ### Manual OAuth setup
 
-Dynamic client registration is the recommended setup for most MCP server users. If your MCP client does not support dynamic client registration, you can connect with manually created OAuth credentials by providing a client ID and secret. See [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow) for instructions on creating an OAuth client, then register the MCP server with:
+CIMD is the recommended setup for most MCP server users. If your MCP client does not support CIMD, you can connect with manually created OAuth credentials by providing a client ID and secret. See [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow) for instructions on creating an OAuth client, then register the MCP server with:
 
 ```bash
 claude mcp add --scope user --transport http \
@@ -94,7 +94,7 @@ claude mcp add --scope user --transport http \
 ```
 
 :::note
-Recent VS Code releases do not work with explicit client credentials. Use the default dynamic registration setup above for VS Code.
+Recent VS Code releases do not work with explicit client credentials. Use the default CIMD setup above for VS Code.
 :::
 
 ## Available MCP tools
@@ -115,19 +115,19 @@ Tool identifiers are subject to change during the preview period.
 
 ### Utility tools
 
-| Tool | Description |
-| :--- | :---------- |
-| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. | TBD |
 
 ### Alerts management
 
-| Tool | Description |
-| :--- | :---------- |
-| `alertsReadById`   | Get an alert or folder by ID. |
-| `alertsSearch`     | Search alerts by status, severity, monitor name, mute status, and more. |
-| `getHistory`       | Get alert history for a monitor over a time range. |
-| `getRelatedAlerts` | Get alerts related to a given alert by time proximity or shared entity. |
-| `resolve`          | Resolve an alert. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `alertsReadById`   | Get an alert or folder by ID. | View Alerts (`viewAlerts`) |
+| `alertsSearch`     | Search alerts by status, severity, monitor name, mute status, and more. | View Alerts (`viewAlerts`) |
+| `getHistory`       | Get alert history for a monitor over a time range. | TBD |
+| `getRelatedAlerts` | Get alerts related to a given alert by time proximity or shared entity. | TBD |
+| `resolve`          | Resolve an alert. | TBD |
 
 #### Sample prompts
 
@@ -138,13 +138,13 @@ Tool identifiers are subject to change during the preview period.
 
 ### Dashboard management
 
-| Tool | Description |
-| :--- | :---------- |
-| `createDashboard` | Create a new dashboard. |
-| `deleteDashboard` | Delete a dashboard by ID. |
-| `getDashboard`    | Get a dashboard by ID. |
-| `listDashboards`  | List all dashboards. |
-| `updateDashboard` | Update a dashboard by ID. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `createDashboard` | Create a new dashboard. | Manage Library (`manageLibrary`) |
+| `deleteDashboard` | Delete a dashboard by ID. | TBD |
+| `getDashboard`    | Get a dashboard by ID. | View Library (`viewLibrary`) |
+| `listDashboards`  | List all dashboards. | View Library (`viewLibrary`) |
+| `updateDashboard` | Update a dashboard by ID. | Manage Library (`manageLibrary`) |
 
 #### Sample prompts
 
@@ -155,27 +155,27 @@ Tool identifiers are subject to change during the preview period.
 
 #### Insights
 
-| Tool | Description |
-| :--- | :---------- |
-| `GetAllInsights`            | Get all insights (paginated via token). |
-| `GetInsight`                | Get a single insight by ID, including signals, artifacts, and entity details. |
-| `GetInsightComments`        | Get comments on an insight. |
-| `GetInsightHistory`         | Get history of an insight. |
-| `GetInsightRelatedEntities` | Get involved entities for an insight. |
-| `GetInsightTriage`          | Get triage info for an insight. |
-| `GetInsights`               | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. |
-| `UpdateInsightAssignee`     | Update the assignee of an insight. |
-| `UpdateInsightStatus`       | Update the status of an insight. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `GetAllInsights`            | Get all insights (paginated via token). | View Cloud SIEM Enterprise (`viewCse`) |
+| `GetInsight`                | Get a single insight by ID, including signals, artifacts, and entity details. | View Cloud SIEM Enterprise (`viewCse`) |
+| `GetInsightComments`        | Get comments on an insight. | TBD |
+| `GetInsightHistory`         | Get history of an insight. | TBD |
+| `GetInsightRelatedEntities` | Get involved entities for an insight. | TBD |
+| `GetInsightTriage`          | Get triage info for an insight. | TBD |
+| `GetInsights`               | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. | View Cloud SIEM Enterprise (`viewCse`) |
+| `UpdateInsightAssignee`     | Update the assignee of an insight. | View Cloud SIEM Enterprise, Manage Insight Assignee (`viewCse`, `cseManageInsightAssignee`) |
+| `UpdateInsightStatus`       | Update the status of an insight. | View Cloud SIEM Enterprise, Manage Insight Status (`viewCse`, `cseManageInsightStatus`) |
 
 #### Detection Rules
 
-| Tool | Description |
-| :--- | :---------- |
-| `CreateTemplatedMatchRule` | Create a new match rule. |
-| `CreateThresholdRule`      | Create a new threshold rule. |
-| `GetRule`                  | Get a single rule by ID with optional tuning expressions. |
-| `GetRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. |
-| `UpdateRuleEnabled`        | Enable or disable a detection rule. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `CreateTemplatedMatchRule` | Create a new match rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `CreateThresholdRule`      | Create a new threshold rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `GetRule`                  | Get a single rule by ID with optional tuning expressions. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
+| `GetRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
+| `UpdateRuleEnabled`        | Enable or disable a detection rule. | TBD |
 
 #### Sample prompts
 
@@ -193,13 +193,13 @@ Tool identifiers are subject to change during the preview period.
 
 ### Log search
 
-| Tool | Description |
-| :--- | :---------- |
-| `createSearchJob`               | Create a search job with a custom query and time range. |
-| `deleteSearchJob`               | Delete a search job. |
-| `getSearchJobPaginatedMessages` | Get paginated raw messages from a search job. |
-| `getSearchJobPaginatedRecords`  | Get paginated aggregated records from a search job. |
-| `getSearchJobStatus`            | Get the status of a search job. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `createSearchJob`               | Create a search job with a custom query and time range. | Run Log Search (`runLogSearch`) |
+| `deleteSearchJob`               | Delete a search job. | Run Log Search (`runLogSearch`) |
+| `getSearchJobPaginatedMessages` | Get paginated raw messages from a search job. | Run Log Search (`runLogSearch`) |
+| `getSearchJobPaginatedRecords`  | Get paginated aggregated records from a search job. | Run Log Search (`runLogSearch`) |
+| `getSearchJobStatus`            | Get the status of a search job. | Run Log Search (`runLogSearch`) |
 
 #### Sample prompts
 
@@ -208,9 +208,9 @@ Tool identifiers are subject to change during the preview period.
 
 ### User management
 
-| Tool | Description |
-| :--- | :---------- |
-| `listUsers` | List all users in the organization. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `listUsers` | List all users in the organization. | TBD |
 
 #### Sample prompts
 
