@@ -5298,8 +5298,6 @@
   "/01Start-Here/06Keyboard-Shortcuts": "/docs/get-started/keyboard-shortcuts",
   "/03Search/Query_Language": "/docs/search/search-query-language",
   "/03Search/Search-Dashboards-and-Visualizations/Import_and_Export_Dashboards": "/docs/dashboards",
-  "/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category": "/docs/send-data/best-practices",
-  "/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Local-and-Centralized-Data-Collection": "/docs/send-data/best-practices",
   "/03Send-Data/Data_Forwarding": "/docs/manage/data-forwarding",
   "/03Send-Data/Source-FAQs": "/docs/send-data/collector-faq",
   "/05Search/Alerts/Alerts_Overview": "/docs/alerts",
