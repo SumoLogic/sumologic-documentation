@@ -13,30 +13,27 @@ The AWS Application Load Balancer functions at the application layer, receives r
 
 The Sumo Logic app for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 
-## Log types
+## Log and metric types
 
-This app uses:
-* The metrics are included in the AWS/Application ELB namespace. For more details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
-* The [Application Load Balancer Access](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) Log introduces two new fields in addition to the fields contained in the Classic ELB Access log:
-    * `Type`. This is the type of request or connection (HTTP, HTTPS, H2, ws, wss).
-    * `target_group_arn`. This is the Amazon Resource Name (ARN) of the target group.
-* The logs are stored in a .gzip format in the specified S3 bucket and contain these fields in this order:
-```bash
-timestamp, elb, client:port, target:port, \
-request_processing_time, target_processing_time, \
-response_processing_time, elb_status_code, \
-target_status_code, received_bytes, sent_bytes, \
-request, user_agent, ssl_cipher, ssl_protocol, \
-target_group_arn, trace_id
-```
+The Sumo Logic app for AWS Application Load Balancer uses the following logs and metrics:
+* [AWS Application Load Balancer CloudTrail Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/cloudtrail-logs.html)
+* The [Application Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) introduces two new fields in addition to the fields contained in the Classic ELB Access log:
+   * `Type`. This is the type of request or connection (HTTP, HTTPS, H2, ws, wss).
+   * `target_group_arn`. This is the Amazon Resource Name (ARN) of the target group.
+The logs are stored in a .gzip format in the specified S3 bucket and contain these fields in this order:
+   ```bash
+   timestamp, elb, client:port, target:port, \
+   request_processing_time, target_processing_time, \
+   response_processing_time, elb_status_code, \
+   target_status_code, received_bytes, sent_bytes, \
+   request, user_agent, ssl_cipher, ssl_protocol, \
+   target_group_arn, trace_id
+   ```
+   The log format is described in [AWS Application Load Balancer Access Log Collection](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html).
+* [AWS Application Load Balancer CloudWatch Metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
+The metrics are included in the AWS/Application ELB namespace. For more details, see [here](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
 
-The log format is described in [AWS Application Load Balancer Access Log Collection](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html). For details on AWS Application Load Balancing metrics, see [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
-
-## Metrics Type
-
-For details on the metrics of AWS Application Load Balancing, see [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
-
-### Sample log message
+### Sample log messages
 
 ```json
 https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924 0.772005 500 200 262 455 "GET https://elmagek.no-ip.org:443/json/v1/collector/histogram/100105037?startTimestamp=1405571270000&endTimestamp=1405574870000&bucketCount=60&_=1405574870206 HTTP/1.1" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4" DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9 "Root=1-58337364-23a8c76965a2ef7629b185e134"
@@ -63,21 +60,33 @@ account="account" region="region" namespace="AWS/ApplicationELB"
 account="account" region="region" Namespace="AWS/ApplicationELB" loadbalancer="loadbalancer" AvailabilityZone=* TargetGroup=* metric=HTTPCode_Target_5XX_Count Statistic=Sum | parse field= TargetGroup */* as Unused, TargetGroup | sum by account, region, namespace, loadbalancer, TargetGroup, AvailabilityZone
 ```
 
-## Collecting logs and metrics for the AWS Application Load Balancer
-When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+## Collecting logs and metrics for AWS Application Load Balancer
 
-### Collect metrics
+### Configure Hosted Collector
 
-1. Sumo Logic supports collecting metrics using two source types:
-   * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
-   * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. 
-   1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
-   1. Keep in mind:
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect access logs
+### Collect AWS Application Load Balancer CloudWatch metrics
+
+Sumo Logic supports collecting metrics using one of the following source types:
+
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
+   :::note
+   Namespace for **AWS Application Load Balancer** service is **AWS/ApplicationELB**.
+   :::
+
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
+
+### Collect AWS Application Load Balancer Access logs
 
 #### Prerequisites
 
@@ -86,29 +95,63 @@ Before you begin to use the AWS Elastic Load Balancing (ELB) Application app, co
 2. [Enable Application Load Balancer logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
-#### Collecting access Logs for AWS Application Load Balancer
+Follow the steps below to collect access logs for AWS Application Load Balancer:
+1. Configure the [Access Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/#create-an-aws-source).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-1. Configure a Application Load Balancing (ALB) [Access Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-sources/#create-an-aws-source).
-1.  **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. The following **Fields** are to be added in the source:
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
-    1. Add a **region** field and assign it the value of respective AWS region where the Load Balancer exists.
-    1. Add an **accountId** field and assign it the value of the respective AWS account id which is being used.
-    1. Keep in mind:
-       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+### Collect AWS Application Load Balancer CloudTrail logs
 
-### Collect Cloudtrail logs
+#### Prerequisites
 
-1. Configure a Application Load Balancing (ALB) [Cloudtrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
-    1. Keep in mind:
-       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
+2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
+3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 :::note
-Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
+Namespace for **AWS Application Load Balancer** service is **AWS/ApplicationELB**.
 :::
+
+Follow the steps below to collect logs for AWS Application Load Balancer:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
+
+### Centralized AWS CloudTrail log collection
+
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following field extraction rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+
+```sumo
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=aws/observability/cloudtrail/logs
+```
+
+#### Parse Expression
+
+Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like this:
+
+```sumo
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
 
 ## Installing the AWS Application Load Balancer app
 
@@ -118,7 +161,9 @@ import AppInstall from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstall/>
 
-As part of the app installation process, the following fields will be created by default:
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
 
 - `account` Name / alias to the AWS account.
 - `accountid` AWS account id.
@@ -126,7 +171,7 @@ As part of the app installation process, the following fields will be created by
 - `namespace` Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
 - `loadbalancer` Application Load Balancer name.
 
-## Field Extraction Rule(s)
+#### Field Extraction Rule(s)
 
 The FER **AwsObservabilityALBAccessLogsFER** to extract fields `loadbalancer` and `namespace` from access logs will be created as a part of app installation.
 

@@ -37,17 +37,16 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-* **An MCP-compatible client that supports OAuth 2.0**. The default setup uses dynamic client registration. We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
-
-:::note
-If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
-:::
+* **An MCP-compatible client that supports OAuth 2.0**. The default setup uses Client ID Metadata Documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
+    :::note
+    [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
+    :::
 
 ## Configure in Claude Code CLI
 
 ### Authentication
 
-Claude Code CLI uses OAuth 2.0 with dynamic client registration. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
@@ -85,7 +84,7 @@ If you previously granted consent for an org, you will not be prompted again. To
 
 ### Manual OAuth setup
 
-Dynamic client registration is the recommended setup for most MCP server users. If your MCP client does not support dynamic client registration, you can connect with manually created OAuth credentials by providing a client ID and secret. See [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow) for instructions on creating an OAuth client, then register the MCP server with:
+CIMD is the recommended setup for most MCP server users. If your MCP client does not support CIMD, you can connect with manually created OAuth credentials by providing a client ID and secret. See [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow) for instructions on creating an OAuth client, then register the MCP server with:
 
 ```bash
 claude mcp add --scope user --transport http \
@@ -94,7 +93,7 @@ claude mcp add --scope user --transport http \
 ```
 
 :::note
-Recent VS Code releases do not work with explicit client credentials. Use the default dynamic registration setup above for VS Code.
+Recent VS Code releases do not work with explicit client credentials. Use the default CIMD setup above for VS Code.
 :::
 
 ## Available MCP tools
