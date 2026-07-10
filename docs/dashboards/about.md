@@ -49,7 +49,7 @@ The following table shows the availability of features for Dashboard.
 | Combined Metrics & Logs Panel | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series |  Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards/panels/modify-chart/). |
 | Colors by Value Range  | Supported |
-| Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
+| Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/), with a selectable theme and resolution for PDF and PNG exports. |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
 | Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
@@ -90,6 +90,8 @@ Live mode restrictions do not apply to Dashboard. 
 ## Dark Theme
 
 Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="400" />
+
+You can also select a Light or Dark theme when you [export a dashboard](/docs/dashboards/export-dashboard-new/) or create a [scheduled report](/docs/dashboards/scheduled-report/).
 
 ## Clickable Legend
 
