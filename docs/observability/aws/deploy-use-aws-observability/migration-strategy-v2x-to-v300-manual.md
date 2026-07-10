@@ -56,7 +56,7 @@ After the stack is deleted, verify that your collector and sources are still pre
 
 1. Go to **Manage Data > Collection > Collection**.
 2. Find the collector named `aws-observability-<alias>-<accountId>`.
-3. Confirm that all 5 sources are present:
+3. Confirm that all sources that were present in your v2.x stack are still listed. Depending on which sources you had enabled, you may see some or all of the following:
    - `alb-logs`
    - `classic-lb-logs`
    - `cloudtrail-logs`
@@ -84,7 +84,7 @@ The v3.0.0 deployment also creates 4 AWSO Metric Rules that may already exist fr
 
 ## Step 6: Deploy v3.0.0
 
-Deploy the v3.0.0 CloudFormation stack using the parameter mapping table below. Use the same account alias and Sumo Logic credentials as your v2.x stack. Set all source creation options to **Create new** — v3.0.0 will detect existing sources by name and reuse them.
+Deploy the v3.0.0 CloudFormation stack using the parameter mapping table below. Use the same account alias, Sumo Logic credentials, and source creation options as your v2.x stack. When v3.0.0 detects existing Sumo Logic sources with matching names on the collector, it reuses them — no data gap occurs and no duplicate sources are created.
 
 Template URL:
 ```
@@ -156,9 +156,16 @@ After v3.0.0 deploys successfully, update each existing Sumo Logic source with t
 3. In the `CreateCommonResources` stack, go to the **Resources** tab and search for `SumoLogicSourceRole`.
 4. Note the **Physical ID** — this is the role name. The full ARN is: `arn:aws:iam::<account_id>:role/<physical_id>`.
 
-:::note
-Images showing where to find the role ARN in the CloudFormation console and where to update it in Sumo Logic will be added here.
-:::
+<img src={useBaseUrl('img/observability/migration-arn-cfn-stack-resources.png')} alt="CloudFormation main stack Resources tab with CreateCommonResources highlighted" />
+
+3. In the `CreateCommonResources` stack, go to the **Resources** tab and search for `SumoLogicSourceRole`.
+4. Click the **Physical ID** link to open the IAM role.
+
+<img src={useBaseUrl('img/observability/migration-arn-common-resources-role.png')} alt="CreateCommonResources stack Resources tab with SumoLogicSourceRole highlighted" />
+
+5. On the IAM role page, copy the **ARN** shown in the Summary section.
+
+<img src={useBaseUrl('img/observability/migration-arn-iam-role-summary.png')} alt="IAM role summary page with ARN highlighted" />
 
 ### Update the role ARN in Sumo Logic
 

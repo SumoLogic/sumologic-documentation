@@ -12,7 +12,7 @@ This documentation walks you through migrating an existing [AWS Observability Cl
 The script automates the entire migration process and pauses at key points for your approval before making any destructive changes.
 
 :::note
-This documentation is for CloudFormation-based deployments only. If you deployed using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform/).
+This guide is for CloudFormation-based deployments only. If you deployed using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform/). If you prefer to migrate manually without the script, see [Manually Migrate AWS Observability from v2.x to v3.0.0](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-manual/).
 :::
 
 ## Overview
@@ -89,9 +89,10 @@ The migration permanently deletes 4 AWSO [Metric Rules](/docs/metrics/metric-rul
 
 ## Running the migration
 
-Download the migration script from the [sumologic-solution-templates repository](https://github.com/SumoLogic/sumologic-solution-templates) and make it executable:
+Download the migration script and make it executable:
 
 ```bash
+curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/main/cloudformation-sumologic-aws-observability/scripts/MigrateToV300.sh
 chmod +x MigrateToV300.sh
 ```
 
@@ -142,9 +143,12 @@ chmod +x MigrateToV300.sh
 |:--|:--|:--|
 | `-n NEW_STACK_NAME` | Name for the new v3.0.0 stack | Same as `-s` |
 | `-v VERSION` | Source version override: `2.12`, `2.13`, `2.14`, `2.15` | Auto-detected |
-| `--install-apps Yes\|No` | Install Sumo Logic observability apps | `Yes` |
+| `--install-apps` | Install Sumo Logic observability apps: `Yes` or `No` | `Yes` |
 | `-p AWS_PROFILE` | AWS CLI named profile | `default` |
 | `--dry-run` | Preview the mapped parameters without making any changes | Off |
+| `--resume` | Skip phases 2–6 and resume from phase 7 using a saved params file — use after a failed v3.0.0 deployment | Off |
+| `--params-file FILE` | Path to the saved params JSON file to use with `--resume` | — |
+| `--patch-roles-only` | Run only validate, role patching (phase 11), and report — use when sources need their IAM role ARN updated without re-running the full migration | Off |
 
 ## Confirmation screens
 
