@@ -177,6 +177,25 @@ The **Windows - Security Analytics - Default Accounts Usage** dashboard allows y
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Default-Accounts-Usage.png')} alt="Windows cloud Security Analytics dashboards" />
 
+## Create monitors for the Windows Cloud Security app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows Cloud Security Monitoring and Analytics alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows CSMA - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 15 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count < = 0 |
+| `Windows CSMA - User Account Locked Out` | This alert is triggered when a user account is locked out (EventID 4740). This may indicate a brute-force attack has triggered the account lockout policy, or a misconfigured service is repeatedly attempting authentication with stale credentials. | Count > 0 | Count < = 0 |
+| `Windows CSMA - User Added to Administrative Group` | This alert is triggered when a user is added to a privileged administrative group such as Administrators, Domain Admins, Schema Admins, or Enterprise Admins. This may indicate privilege escalation or unauthorized access. | Count > 0 | Count < = 0 |
+| `Windows CSMA - Audit Log Cleared` | This alert is triggered when the Windows Security or System audit log is cleared (EventIDs 104, 517, 1102). This is a high-severity indicator as attackers often clear audit logs to cover their tracks after compromising a system. | Count > 0 | Count < = 0 |
+| `Windows CSMA - Windows Defender Malware Detected` | This alert is triggered when Windows Defender detects malware or other potentially unwanted software. Immediate investigation is required to determine the scope of infection. | Count > 0 | Count < = 0 |
+| `Windows CSMA - Windows Defender Real-Time Protection Disabled` | This alert is triggered when Windows Defender Real-Time Protection is disabled (EventID 5001). Disabling real-time protection leaves the system vulnerable to malware and may indicate an attacker attempting to evade detection. | Count > 0 | Count < = 0 |
+| `Windows CSMA - Windows Firewall Disabled` | This alert is triggered when the Windows Firewall Service is stopped (EventID 5025). A disabled firewall significantly increases the attack surface and may indicate an attacker attempting to open network access. | Count > 0 | Count < = 0 |
+| `Windows CSMA - Default Account Activity` | This alert is triggered when activity is detected from default or built-in accounts (Administrator, Guest, Root, System). These accounts should not be used in a properly configured environment and activity may indicate unauthorized access or policy violation. | Count > 0 | Count < = 0 |
+
 ## Upgrade/Downgrade the Windows Cloud Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

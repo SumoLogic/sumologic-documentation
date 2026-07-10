@@ -157,6 +157,23 @@ See information about Window event messages that contain a keyword that indicate
 
 **Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce)).
 
+## Create monitors for the Windows Legacy app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows Legacy alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows Legacy - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 15 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count < = 0 |
+| `Windows Legacy - User Account Locked Out` | This alert is triggered when a user account is locked out. This may indicate a brute-force attack has triggered the account lockout policy, or a misconfigured service is repeatedly attempting authentication with stale credentials. | Count > 0 | Count < = 0 |
+| `Windows Legacy - User Added to Administrative Group` | This alert is triggered when a user is added to a privileged administrative group such as Administrators, Domain Admins, Schema Admins, Server Operators, Account Operators, or Backup Operators. This may indicate privilege escalation or unauthorized access. | Count > 0 | Count < = 0 |
+| `Windows Legacy - Audit Log Cleared` | This alert is triggered when the Windows Security audit log is cleared. This is a high-severity indicator as attackers often clear audit logs to cover their tracks after compromising a system. | Count > 0 | Count < = 0 |
+| `Windows Legacy - Firewall Rule Modified` | This alert is triggered when a Windows Firewall rule is added, modified, or deleted. Unauthorized firewall changes may indicate an attacker attempting to open access to the system or exfiltrate data. | Count > 0 | Count < = 0 |
+| `Windows Legacy - User Account Deleted` | This alert is triggered when a user account is deleted. This could indicate unauthorized administrative activity or an insider threat attempting to disrupt operations. | Count > 0 | Count < = 0 |
+
 ## Upgrade/Downgrade the Windows Legacy app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

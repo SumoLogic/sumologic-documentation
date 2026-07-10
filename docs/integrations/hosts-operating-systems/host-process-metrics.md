@@ -365,6 +365,25 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
 
+## Create monitors for the Host and Process Metrics app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Host and Process Metrics alerts
+
+| Alert Name | Alert Description and Conditions | Alert Condition (Warning) | Alert Condition (Critical) |
+|:--|:--|:--|:--|
+| `Host and Process Metrics - High CPU Usage` | This alert is triggered when CPU usage is high (idle drops below threshold). Sustained high CPU usage may indicate resource exhaustion, runaway processes, or the need for capacity scaling. | Idle < = 20% | Idle < = 5% |
+| `Host and Process Metrics - High Memory Usage` | This alert is triggered when memory utilization exceeds safe thresholds. High memory usage can lead to OOM kills, swap thrashing, and degraded application performance. | Used > 85% | Used > 95% |
+| `Host and Process Metrics - High Disk Usage` | This alert is triggered when disk space utilization is high. Running out of disk space can cause application crashes, data loss, and system instability. | Used > 85% | Used > 95% |
+| `Host and Process Metrics - High CPU IO Wait` | This alert is triggered when CPU I/O wait is high, indicating disk or network I/O bottlenecks causing the CPU to idle while waiting for operations to complete. | IOWait > 30% | IOWait > 50% |
+| `Host and Process Metrics - High Disk IO` | This alert is triggered when disk I/O operations in progress are high, indicating disk saturation that can lead to slow application response times and system degradation. | IOPS > 50 | IOPS > 100 |
+| `Host and Process Metrics - High Network Errors` | This alert is triggered when network interface errors are high. Network errors can indicate faulty hardware, driver issues, or network congestion affecting connectivity and throughput. | Error rate > 50/s | Error rate > 200/s |
+| `Host and Process Metrics - High Network Packet Drops` | This alert is triggered when network packet drops are high. Packet drops indicate network congestion or buffer overflow, leading to retransmissions and degraded application performance. | Drop rate > 50/s | Drop rate > 200/s |
+| `Host and Process Metrics - High Swap Usage` | This alert is triggered when swap space usage is high. Excessive swap usage indicates memory pressure and can severely degrade system performance due to disk-based memory operations. | Free < = 500MB | Free < = 100MB |
+
 ## Upgrade/Downgrade the Host and Process Metrics app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
@@ -376,37 +395,3 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-
-## Host and Process Metrics Alerts
-
-### For Host Metrics
-
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
-| Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
-|:-----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| Host Metrics - High CPU Utilization           | This alert fires when host CPU utilization is over 80%.                                                                                  | > 80 %          | `<=` 80 %           |
-| Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | `<=` 1%             |
-| Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | `<=` 100 MB/sec     |
-| Host Metrics - Unusual network throughput out | This alert fires when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval.   | > 100 MB/sec    | `<=` 100 MB/sec     |
-| Host Metrics - Host out of memory             | This alert fires when memory utilization is over 90%.                                                                                    | > 90 %          | `<=` 90 %           |
-| Host Metrics - Host out of inodes             | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used).                                      | > 90 %          | `<=` 90 %           |
-| Host Metrics - Host swap is filling up        | This alert fires when swap utilization is over 80%.                                                                                    | > 80 %          | `<=` 80 %           |
-| Host Metrics - Host out of disk space         | This alert fires when disk utilization is over 90%.                                                                                      | > 90 %          | `<=` 90 %           |
-| Host Metrics - Unusual disk read rate         | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Host Metrics - Unusual disk write rate        | This alert fires when the Disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | `<=` 50 MB/sec      |
-
-
-### For Process Metrics
-
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
-| Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
-|:----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| Process Metrics - High CPU Usage             | This alert fires when the CPU utilization of a process is over 80% of the system CPU.                                  | > 80 %          | `<=` 80 %           |
-| Process Metrics - High Read Rate             | This alert fires when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Process Metrics - High Write Rate            | This alert fires when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Process Metrics - High Page Faults           | This alert fires when the rate of page faults is high (> 1000).                                                        | > 1000          | `<=` 1000           |
-| Process Metrics - High Memory Usage          | This alert fires when the memory used by a process is over 80% of system memory.                                       | > 80 %          | `<=` 80 %           |
-| Process Metrics - High Open file descriptors | This alert fires when the number of file descriptors used by a process is more than 1000.                              | > 1000          | `<=` 1000           |
