@@ -431,6 +431,24 @@ To use the following searches, you will need to edit the search query to add the
 
 **Demo - Outlier**. Performs an outlier operation on an IP address that you specify.
 
+## Create monitors for the Microsoft Office 365 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Microsoft Office 365 alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Office 365 - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 15 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count < = 0 |
+| `Office 365 - Login from Risky Country` | This alert is triggered when a successful login is detected from a country identified as high-risk or embargoed. This helps identify potential unauthorized access from restricted geographic locations. | Count > 0 | Count < = 0 |
+| `Office 365 - User Account Deleted` | This alert is triggered when a user account is deleted in Azure Active Directory. This could indicate an insider threat, a compromised admin account, or unauthorized administrative activity. | Count > 0 | Count < = 0 |
+| `Office 365 - Exchange Configuration Change by External Entity` | This alert is triggered when Exchange admin configuration changes are made via external access. This is a high-risk indicator of unauthorized administrative activity from outside the organization. | Count > 0 | Count < = 0 |
+| `Office 365 - External Mailbox Access` | This alert is triggered when a mailbox is accessed externally by a non-owner. This may indicate unauthorized access to email content from outside the organization. | Count > 0 | Count < = 0 |
+| `Office 365 - Mass File Downloads` | This alert is triggered when a single user downloads more than 50 files within 15 minutes from SharePoint or OneDrive. This may indicate a data exfiltration attempt or unauthorized bulk data access. | Count > 0 | Count < = 0 |
+| `Office 365 - Anonymous or External Sharing Link Created` | This alert is triggered when an anonymous sharing link or external sharing invitation is created in SharePoint or OneDrive. This may indicate potential data exposure to unauthorized external parties. | Count > 0 | Count < = 0 |
+
 ## Upgrading the Microsoft Office 365 app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

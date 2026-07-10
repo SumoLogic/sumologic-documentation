@@ -124,6 +124,26 @@ Use this dashboard to see the details on events, resources, and users.
 
 **Operations by User.** Displays operations by user in a stacked column chart by name and count for the last seven days.
 
+## Create monitors for the Azure Audit app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Audit alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Azure Audit - Critical or Error Events Detected` | Alerts when Azure Activity Log events with Critical or Error severity level are detected. These events indicate significant operational failures, resource provisioning errors, or service-level problems that require immediate investigation. | Count > 0 | Count < = 0 |
+| `Azure Audit - Mass Resource Deletion` | Alerts when a high volume of resource deletion operations are detected within a short time window. Mass deletions may indicate a compromised account being used to destroy infrastructure, ransomware activity, or an accidental bulk deletion event that requires immediate response. | Count > 0 | Count < = 0 |
+| `Azure Audit - Service Health Incident` | Alerts when Azure Service Health reports a Critical or Error-level incident. These events indicate active Azure platform issues such as service outages, degraded performance, or planned maintenance that may impact your workloads and require attention or mitigation. | Count > 0 | Count < = 0 |
+| `Azure Audit - Network Security Group Rule Changed` | Alerts when Network Security Group (NSG) rules are created, modified, or deleted. Unauthorized NSG rule changes can expose resources to the internet, open sensitive ports, or weaken network segmentation, potentially leading to unauthorized access or data exfiltration. | Count > 0 | Count < = 0 |
+| `Azure Audit - Policy Assignment Deleted` | Alerts when an Azure Policy assignment is deleted. Policy assignments enforce compliance rules across resources. Deleting them may weaken the organization's security posture, allow non-compliant resource configurations, or indicate an attacker removing guardrails before making malicious changes. | Count > 0 | Count < = 0 |
+| `Azure Audit - Resource Lock Removed` | Alerts when a resource lock (CanNotDelete or ReadOnly) is removed from an Azure resource. Resource locks prevent accidental or malicious deletion of critical infrastructure. Their removal may be a precursor to unauthorized resource destruction or indicate a compromised privileged account. | Count > 0 | Count < = 0 |
+| `Azure Audit - Excessive Failed Operations` | Alerts when a high number of failed Azure operations are detected from a single user or IP address. A sudden spike in failures may indicate misconfigured automation, unauthorized access attempts, permission escalation probing, or a brute-force attack against Azure resource management APIs. | Count > 0 | Count < = 0 |
+| `Azure Audit - Excessive Resource Creation` | Alerts when a high volume of resource creation (WRITE) operations are detected from a single user or IP address. Excessive resource creation may indicate cryptomining deployment, unauthorized infrastructure provisioning, cost abuse, or a compromised service principal spinning up attacker-controlled resources. | Count > 0 | Count < = 0 |
+| `Azure Audit - Key Vault Access Policy Changed` | Alerts when Azure Key Vault access policies are modified. Key Vaults store secrets, certificates, and encryption keys. Unauthorized access policy changes can grant attackers access to sensitive credentials, enable data decryption, or facilitate lateral movement across the environment. | Count > 0 | Count < = 0 |
+
 ## Upgrade/Downgrade the Azure Audit app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
