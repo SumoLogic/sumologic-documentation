@@ -62,6 +62,18 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-cloudformation/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>Migrate AWS Observability from v2.x to v3.0.0 (CloudFormation)</h4></a>
+  <p>Learn how to migrate your existing AWS Observability CloudFormation stack from v2.x to v3.0.0 using the migration script.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-manual/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>Manually Migrate AWS Observability from v2.x to v3.0.0 (CloudFormation)</h4></a>
+  <p>Learn how to manually migrate your existing AWS Observability CloudFormation stack from v2.x to v3.0.0 step by step.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/view-dashboards/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>View AWS Observability Solution Dashboards</h4></a>
   <p>Learn how to navigate your AWS Observability infrastructure, as well as provide links to the app dashboards.</p>
   </div>

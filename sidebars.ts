@@ -2022,6 +2022,8 @@ module.exports = {
                 },
                 'observability/aws/deploy-use-aws-observability/deploy-with-terraform',
                 'observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform',
+                'observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-cloudformation',
+                'observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-manual',
                 'observability/aws/deploy-use-aws-observability/view-dashboards',
                 'observability/aws/deploy-use-aws-observability/configure-alerts',
                 'observability/aws/deploy-use-aws-observability/update-aws-observability-stack',
