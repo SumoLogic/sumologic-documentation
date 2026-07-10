@@ -22,7 +22,7 @@ This migration deletes your v2.x CloudFormation stack. Your Sumo Logic collector
 Before making any changes, create backups of the following resources:
 
 - **[Field Extraction Rules](/docs/manage/field-extractions/)**. Export from **Manage Data > Logs > Field Extraction Rules**.
-- **[Metric Rules](/docs/metrics/metric-rules-editor/)**. Record them from **Manage Data > Metrics > Metric Rules**
+- **[Metric Rules](/docs/metrics/metric-rules-editor/)**. Record them from **Manage Data > Metrics > Metric Rules**.
 
 You will also need:
 - Your Sumo Logic **Access ID** and **Access Key** with the Administrator role. For more information, see [Access Keys](/docs/manage/security/access-keys/).
@@ -31,7 +31,7 @@ You will also need:
 
 ## Step 1: Set RemoveOnDeleteStack to false
 
-Verifying the `RemoveOnDeleteStack` setting is the most critical step. Before deleting the v2.x stack, ensure that `RemoveOnDeleteStack` is set to `false`. If this parameter is `true` when the stack is deleted, the Sumo Logic Lambda helper permanently deletes the collector and all associated sources.
+This is the most critical step. Before deleting the v2.x stack, ensure that `RemoveOnDeleteStack` is set to `false`. If this parameter is `true` when the stack is deleted, the Sumo Logic Lambda helper permanently deletes the collector and all associated sources.
 
 1. Navigate to **AWS Console > CloudFormation > Stacks** and select your v2.x stack.
 2. Click **Update**.
