@@ -7,36 +7,36 @@ description: Learn how to migrate your existing AWS Observability CloudFormation
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document walks you through migrating an existing [AWS Observability CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) deployment from v2.x (v2.12, v2.13, v2.14, or v2.15) to v3.0.0 using the `MigrateToV300.sh` migration script.
+This documentation walks you through migrating an existing [AWS Observability CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) deployment from v2.x (v2.12, v2.13, v2.14, or v2.15) to v3.0.0 using the `MigrateToV300.sh` migration script.
 
 The script automates the entire migration process and pauses at key points for your approval before making any destructive changes.
 
 :::note
-This guide is for CloudFormation-based deployments only. If you deployed using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform/).
+This documentation is for CloudFormation-based deployments only. If you deployed using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-using-terraform/).
 :::
 
-## What the migration does
+## Overview
 
-The migration follows this sequence:
+The migration follows the following sequence:
 
 | Phase | Action |
-|-------|--------|
-| 1. Validate | Checks AWS and Sumo Logic credentials, confirms the stack exists and detects its version |
-| 2. Capture | Reads your existing collector, sources, and S3 bucket names from Sumo Logic |
-| 3. Map Parameters | Transforms v2.x parameters to v3.0.0 format and saves them to a local file |
-| 4. Confirm | Shows you a full summary — **no changes are made until you approve** |
-| 5. Protect | Sets `RemoveOnDeleteStack=false` to ensure Sumo Logic resources survive stack deletion |
-| 6. Delete | Deletes the v2.x CloudFormation stack (S3 buckets are preserved) |
-| 7. FER Cleanup | Renames and disables 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) to free quota for v3.0.0 |
-| 8. Metric Rules | Deletes 4 AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0 |
-| 9. Deploy | Deploys the v3.0.0 stack — **shows you the full parameter list before deploying** |
-| 10. Verify | Confirms all stack resources and Sumo Logic sources are healthy |
-| 11. Patch Roles | Updates source IAM role ARNs to point to the new v3.0.0 IAM role |
-| 12. Report | Prints a summary and saves a log file |
+|:--|:--|
+| 1. Validate | Checks AWS and Sumo Logic credentials, confirms the stack exists, and detects its version. |
+| 2. Capture | Reads your existing collector, sources, and S3 bucket names from Sumo Logic. |
+| 3. Map Parameters | Transforms v2.x parameters to v3.0.0 format and saves them to a local file. |
+| 4. Confirm | Displays a full summary — **no changes are made until you approve**. |
+| 5. Protect | Sets `RemoveOnDeleteStack=false` to ensure Sumo Logic resources survive stack deletion. |
+| 6. Delete | Deletes the v2.x CloudFormation stack, but preserves your S3 buckets. |
+| 7. FER Cleanup | Renames and disables 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) to free quota for v3.0.0. |
+| 8. Metric Rules | Deletes four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0. |
+| 9. Deploy | Deploys the v3.0.0 stack — **shows you the full parameter list before deploying**. |
+| 10. Verify | Confirms all stack resources and Sumo Logic sources are healthy. |
+| 11. Patch Roles | Updates the source IAM role ARNs to reference the new v3.0.0 IAM role. |
+| 12. Report | Prints a summary and saves a log file. |
 
-Expected duration: **15–20 minutes**.
+Expected duration: **15 to 20 minutes**.
 
-### What is preserved
+### What stays the same
 
 - Your Sumo Logic collector (same name and ID)
 - All Sumo Logic sources (reused by name — same IDs, no data gap)
@@ -44,10 +44,10 @@ Expected duration: **15–20 minutes**.
 
 ### What changes
 
-- The v2.x CloudFormation stack is deleted and replaced by a new v3.0.0 stack
-- 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) are renamed to `v215_backup_<name>` and disabled (not deleted)
-- 4 AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) are deleted and recreated by v3.0.0
-- Source IAM role ARNs are updated to the new v3.0.0 role
+- The v2.x CloudFormation stack is deleted and replaced by a new v3.0.0 stack.
+- 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) are renamed to `v215_backup_<name>` and disabled (not deleted).
+- Four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) are deleted and recreated by v3.0.0.
+- Source IAM role ARNs are updated to the new v3.0.0 role.
 
 :::warning
 This migration deletes your v2.x CloudFormation stack. This cannot be undone. If the v3.0.0 deployment fails after deletion, use [resume mode](#if-the-v300-deployment-fails) to retry without re-deleting.
@@ -60,7 +60,7 @@ Before running the migration, ensure the following are in place.
 ### Tools
 
 | Tool | How to install |
-|------|---------------|
+|:--|:--|
 | `bash` | Pre-installed on macOS and Linux |
 | `aws` CLI v2 | [AWS CLI installation guide](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) |
 | `jq` | `brew install jq` (macOS) or `apt install jq` (Linux) |
@@ -69,23 +69,23 @@ Before running the migration, ensure the following are in place.
 ### AWS permissions
 
 Your AWS credentials must have permissions to:
-- Read and update CloudFormation stacks (`cloudformation:DescribeStacks`, `cloudformation:UpdateStack`, `cloudformation:DeleteStack`, `cloudformation:CreateStack`)
-- Read S3 bucket metadata (`s3:HeadBucket`)
-- Read IAM roles (`iam:GetRole`)
+- Read and update CloudFormation stacks (`cloudformation:DescribeStacks`, `cloudformation:UpdateStack`, `cloudformation:DeleteStack`, `cloudformation:CreateStack`).
+- Read S3 bucket metadata (`s3:HeadBucket`).
+- Read IAM roles (`iam:GetRole`).
 
 ### Sumo Logic credentials
 
-You will need a Sumo Logic **Access ID** and **Access Key** with Administrator role. To generate them, go to **Administration > Security > Access Keys**. For more info, see [Access Keys](/docs/manage/security/access-keys/).
+You will need a Sumo Logic **Access ID** and **Access Key** with the Administrator role. To generate them, go to **Administration > Security > Access Keys**. For more information, see [Access Keys](/docs/manage/security/access-keys/).
 
 You will also need your **Sumo Logic Org ID**, found at **Administration > Account > Org ID**.
 
 ### Back up your Field Extraction Rules
 
-Before running the migration, export a backup of your [Field Extraction Rules](/docs/manage/field-extractions/) from **Manage Data > Logs > Field Extraction Rules**. The script renames them rather than deleting, but it is good practice to have a backup.
+Before running the migration, export a backup of your [Field Extraction Rules](/docs/manage/field-extractions/) from **Manage Data > Logs > Field Extraction Rules**. The script renames them rather than deleting them, but it is good practice to have a backup.
 
 ### Back up your Metric Rules
 
-The migration permanently deletes 4 AWSO [Metric Rules](/docs/metrics/metric-rules-editor/). Note them down before running the script by going to **Manage Data > Metrics > Metric Rules**. They will be recreated automatically by v3.0.0 during deployment, but having a record is useful if you need to verify them afterward.
+The migration permanently deletes 4 AWSO [Metric Rules](/docs/metrics/metric-rules-editor/). Record them before running the script by going to **Manage Data > Metrics > Metric Rules**. They will be recreated automatically by v3.0.0 during deployment, but having a record is useful if you need to verify them afterward.
 
 ## Running the migration
 
@@ -95,7 +95,7 @@ Download the migration script from the [sumologic-solution-templates repository]
 chmod +x MigrateToV300.sh
 ```
 
-Run the migration:
+**Run the migration**
 
 ```bash
 ./MigrateToV300.sh \
@@ -109,7 +109,7 @@ Run the migration:
   --install-apps Yes
 ```
 
-**Example:**
+**Example**
 
 ```bash
 ./MigrateToV300.sh \
@@ -128,7 +128,7 @@ Run the migration:
 #### Required
 
 | Flag | Description | Example |
-|------|-------------|---------|
+|:--|:--|:--|
 | `-d DEPLOYMENT` | Your Sumo Logic deployment | `us1`, `us2`, `kr`, `eu`, `de`, `au`, `jp`, `ca`, `ch`, `fed`, `esc` |
 | `-i ACCESS_ID` | Sumo Logic access ID | `suXXXXXXXXXXXX` |
 | `-k ACCESS_KEY` | Sumo Logic access key | (64-character key) |
@@ -139,7 +139,7 @@ Run the migration:
 #### Optional
 
 | Flag | Description | Default |
-|------|-------------|---------|
+|:--|:--|:--|
 | `-n NEW_STACK_NAME` | Name for the new v3.0.0 stack | Same as `-s` |
 | `-v VERSION` | Source version override: `2.12`, `2.13`, `2.14`, `2.15` | Auto-detected |
 | `--install-apps Yes\|No` | Install Sumo Logic observability apps | `Yes` |
@@ -150,7 +150,7 @@ Run the migration:
 
 The script pauses twice and asks for your approval before making any changes.
 
-### Phase 4 — Migration summary
+### Phase 4: migration summary
 
 Before touching any infrastructure, the script displays a full summary of what it found and what it will do:
 
@@ -187,7 +187,7 @@ Proceed with migration? Type 'yes' to continue:
 
 Type `yes` to proceed. Anything else aborts safely with no changes made.
 
-### Phase 9 — Deployment parameters
+### Phase 9: Deployment parameters
 
 Just before deploying v3.0.0, the script displays every parameter that will be used. Access credentials are masked:
 
@@ -220,7 +220,7 @@ To preview the parameters that would be used without making any changes, add `--
   --dry-run
 ```
 
-This runs through Phases 1–3, prints the mapped v3.0.0 parameters, and exits without modifying anything.
+This runs through the phases 1 to 3, prints the mapped v3.0.0 parameters, and exits without modifying anything.
 
 ## Log file
 
@@ -230,20 +230,20 @@ Every run writes a plain-text log file to the directory where the script is exec
 ./migration_<stack_name>_<YYYYMMDD_HHMMSS>.log
 ```
 
-The log file path is printed in the Phase 12 summary. Keep this file in case you need to contact Sumo Logic support.
+The log file path is printed in the phase 12 summary. Keep this file in case you need to contact Sumo Logic support.
 
 ## If the v3.0.0 deployment fails
 
-If Phase 9 (Deploy) fails and the stack ends up in `ROLLBACK_COMPLETE`, the v2.x stack has already been deleted and a fresh full migration is not possible. Use resume mode to retry the deployment without re-deleting.
+If phase 9 (Deploy) fails and the stack ends up in `ROLLBACK_COMPLETE`, the v2.x stack has already been deleted, and a fresh full migration is not possible. Use resume mode to retry the deployment without re-deleting.
 
-**Step 1** — Delete the failed stack:
+**Step 1**: Delete the failed stack:
 
 ```bash
 aws cloudformation delete-stack --stack-name <v300_stack_name> --region <region>
 aws cloudformation wait stack-delete-complete --stack-name <v300_stack_name> --region <region>
 ```
 
-**Step 2** — Resume using the params file saved during Phase 3. The script prints its exact path when a failure occurs:
+**Step 2**: Resume using the params file saved during phase 3. The script prints its exact path when a failure occurs:
 
 ```bash
 ./MigrateToV300.sh \
@@ -252,11 +252,11 @@ aws cloudformation wait stack-delete-complete --stack-name <v300_stack_name> --r
   --resume --params-file ./migration_params_<v300_stack_name>_<timestamp>.json
 ```
 
-Resume mode skips Phases 2–6 and goes straight to FER cleanup, metric rules cleanup, deploy, verify, patch, and report.
+Resumes mode skips phases 2 to 6 and goes straight to FER cleanup, metric rules cleanup, deploy, verify, patch, and report.
 
 ## Patching IAM role ARNs after migration
 
-If v3.0.0 is already deployed but your Sumo Logic sources are showing errors because they still reference the old IAM role ARN (for example, if the script was interrupted before Phase 11), you can run role patching on its own:
+If v3.0.0 is already deployed but your Sumo Logic sources are showing errors because they still reference the old IAM role ARN (for example, if the script was interrupted before phase 11), you can run role patching on its own:
 
 ```bash
 ./MigrateToV300.sh \
@@ -265,17 +265,17 @@ If v3.0.0 is already deployed but your Sumo Logic sources are showing errors bec
   --patch-roles-only
 ```
 
-This runs validate → patch roles → report without touching the stack or any Sumo configuration.
+This runs validate > patch roles > report without touching the stack or any Sumo Logic configuration.
 
 ## Troubleshooting
 
 | Error | Cause | Resolution |
-|-------|-------|------------|
-| `aws CLI not found in PATH` | AWS CLI not installed or not accessible from the shell | Install the AWS CLI and verify with `aws --version` |
-| `AWS credentials invalid` | AWS session has expired | Re-authenticate using `aws sso login` or export new session tokens |
-| `Sumo Logic credentials invalid (HTTP 401)` | Incorrect access ID or key | Verify the `-i` and `-k` values |
-| `Stack not found` | Wrong stack name or region | Verify `-s` and `-r` match your AWS Console |
-| `Stack update ended with status: TIMEOUT` | Phase 5 update timed out on a large stack with many nested stacks | Re-run the script — if the update already completed, Phase 5 will skip automatically |
-| `ROLLBACK_COMPLETE` on v3.0.0 deploy | Template or parameter error during deployment | Delete the rolled-back stack and follow the [resume steps](#if-the-v300-deployment-fails) |
-| `Failed to rename FER — already exists` | A previous partial run already renamed some FERs | Use `--resume` — the script detects already-renamed FERs and skips them |
-| Sources show `<empty>` bucket in report | Expected in resume mode — buckets are not re-captured | Does not affect the migration; buckets are correctly set in the params file |
+|:--|:--|:--|
+| `aws CLI not found in PATH` | AWS CLI not installed or not accessible from the shell | Install the AWS CLI and verify with `aws --version`. |
+| `AWS credentials invalid` | AWS session has expired | Re-authenticate using `aws sso login` or export new session tokens. |
+| `Sumo Logic credentials invalid (HTTP 401)` | Incorrect access ID or key | Verify the `-i` and `-k` values. |
+| `Stack not found` | Wrong stack name or region | Verify `-s` and `-r` match your AWS Console. |
+| `Stack update ended with status: TIMEOUT` | Phase 5 update timed out on a large stack with many nested stacks | Re-run the script. If the update is already complete, phase 5 will be skipped automatically. |
+| `ROLLBACK_COMPLETE` on v3.0.0 deploy | Template or parameter error during deployment | Delete the rolled-back stack and follow the [resume steps](#if-the-v300-deployment-fails). |
+| `Failed to rename FER — already exists` | A previous partial run already renamed some FERs | Use `--resume`. The script detects already-renamed FERs and skips them. |
+| Sources show `<empty>` bucket in report | Expected in resume mode — buckets are not re-captured | Does not affect the migration. The params file already has the correct bucket values. |
