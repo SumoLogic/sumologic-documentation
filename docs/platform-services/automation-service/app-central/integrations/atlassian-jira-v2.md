@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 2.11  
-Updated: March 23, 2026***
+***Version: 2.12  
+Updated: June 26, 2026***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
@@ -33,6 +33,7 @@ This integration uses the [Jira REST API v2](https://developer.atlassian.com/clo
 * **List Transitions** *(Enrichment)* - Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's .status.
 * **List Users** *(Enrichment)* - Returns a list of all users
 * **Search Into Issues** *(Enrichment)* - Search Jira Issues.
+* **Search User** *(Enrichment)* - Search for a user by display name, email address, or account ID.
 * **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
 * **Update Transition Issue** *(Notification)* - Update transition issue based on the issue's status.
 
@@ -121,3 +122,4 @@ Ticketing System
 * June 20, 2024 (v2.9) - New action: Download Attachment
 * September 2, 2024 (v2.10) -  Updated the Update Issue action
 * March 23, 2026 (v2.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+* June 26, 2026 (v2.12) - Added new Search User action to search for Jira users by display name, email address, or account ID.
