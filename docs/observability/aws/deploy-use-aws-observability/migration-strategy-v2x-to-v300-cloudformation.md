@@ -17,7 +17,7 @@ This documentation is for CloudFormation-based deployments only. If you deployed
 
 ## Overview
 
-The migration follows the following sequence:
+The migration runs through the following phases:
 
 | Phase | Action |
 |:--|:--|
