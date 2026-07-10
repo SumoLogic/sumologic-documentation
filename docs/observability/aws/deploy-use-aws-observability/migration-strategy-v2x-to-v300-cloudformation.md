@@ -50,7 +50,7 @@ Expected duration: **15 to 20 minutes**.
 - Source IAM role ARNs are updated to the new v3.0.0 role.
 
 :::warning
-This migration deletes your v2.x CloudFormation stack. This cannot be undone. If the v3.0.0 deployment fails after deletion, use [resume mode](#if-the-v300-deployment-fails) to retry without re-deleting.
+This migration permanently deletes your v2.x CloudFormation stack. If the v3.0.0 deployment fails after the stack is deleted, use [resume mode](#if-the-v300-deployment-fails) to retry the deployment without deleting the stack again.
 :::
 
 ## Prerequisites
@@ -152,7 +152,7 @@ The script pauses twice and asks for your approval before making any changes.
 
 ### Phase 4: migration summary
 
-Before touching any infrastructure, the script displays a full summary of what it found and what it will do:
+Before touching any infrastructure, the script displays a summary of what it found and what it will do:
 
 ```
   Stack to migrate:
@@ -206,12 +206,12 @@ Deploy v3.0.0 stack 'my-awso-production-v300'? Type 'yes' to continue:
 ```
 
 :::note
-If a source was not installed in your v2.x stack (for example, if the ALB source was set to `No`), its corresponding bucket parameter will be empty and the source will not be created in v3.0.0 either.
+If a source was not installed in your v2.x stack (for example, if the ALB source was set to `No`), its corresponding bucket parameter will be empty, and the source will not be created in v3.0.0 either.
 :::
 
 ## Dry run (preview only)
 
-To preview the parameters that would be used without making any changes, add `--dry-run`:
+To preview the mapped parameters without making any changes, add `--dry-run`:
 
 ```bash
 ./MigrateToV300.sh \
@@ -220,7 +220,7 @@ To preview the parameters that would be used without making any changes, add `--
   --dry-run
 ```
 
-This runs through the phases 1 to 3, prints the mapped v3.0.0 parameters, and exits without modifying anything.
+The script runs phases 1 to 3, prints the mapped v3.0.0 parameters, and exits without modifying anything.
 
 ## Log file
 
@@ -252,7 +252,8 @@ aws cloudformation wait stack-delete-complete --stack-name <v300_stack_name> --r
   --resume --params-file ./migration_params_<v300_stack_name>_<timestamp>.json
 ```
 
-Resumes mode skips phases 2 to 6 and goes straight to FER cleanup, metric rules cleanup, deploy, verify, patch, and report.
+The resume mode skips phases 2 to 6 and executes the following phases:
+FER Cleanup > Metric Rules Cleanup > Deploy > Verify > Patch Roles > Report.
 
 ## Patching IAM role ARNs after migration
 
@@ -265,7 +266,8 @@ If v3.0.0 is already deployed but your Sumo Logic sources are showing errors bec
   --patch-roles-only
 ```
 
-This runs validate > patch roles > report without touching the stack or any Sumo Logic configuration.
+The script runs the following phases without touching the stack or any Sumo Logic configuration:
+Validate > Patch Roles > Report
 
 ## Troubleshooting
 
