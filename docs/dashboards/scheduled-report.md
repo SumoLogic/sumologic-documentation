@@ -29,6 +29,8 @@ To schedule a dashboard email report, do the following:
   :::
 1. Enter your preferences in the **Scheduled Reports** popup.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/scheduled_report.png')} alt="scheduled_report" style={{border: '1px solid gray'}} width="600"/>
    * **Select report type**. Choose the format in which you would like to see the report (PDF or PNG).
+   * **Select report width**. Set the width of the report, in pixels, anywhere from 1,500 to 6,000. The default is 1,500. Increase the resolution for a sharper image on large displays, such as wall monitors or TV screens.
+   * **Select theme**. Choose **Light** or **Dark** theme for the report. By default, the selected theme matches the dashboard's current theme.
    * **Select variables**. If the dashboard supports template variables, select the values which you need for the scheduled report for the dashboard.
    * **Select Time Range**. Set the time range for the dashboard by selecting a predefined interval from a drop-down list or by choosing a recently used time range.
    * **Select a frequency**. Choose the frequency settings for the scheduled dashboard report: 

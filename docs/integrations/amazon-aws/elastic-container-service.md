@@ -15,9 +15,13 @@ We offer two different ECS versions, which have separate data collection steps:
 * **[Collect Logs and Metrics for ECS](/docs/integrations/amazon-aws/elastic-container-service)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/available-metrics.html) and [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail).
 * **[Collect Logs, Metrics (Container Insights+CloudWatch) and Traces for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both EC2 and Fargate based ECS deployments. For instructions on collecting this data, refer to the [Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch](/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch/).
 
-This page has instructions for collecting logs and metrics for the Amazon ECS without Container Insights and Traces app. It uses the following data:
-* CloudWatch Metrics
-* AWS CloudTrail Events
+This documentation has instructions for collecting logs and metrics for the Amazon ECS app without Container Insights and Traces.
+
+## Log and metric types  
+
+The Sumo Logic app for Amazon ECS without Container Insights and Traces uses the following logs and metrics:
+* Amazon CloudWatch Metrics
+* Amazon CloudTrail Logs
 
 ### Sample log messages
 
@@ -272,7 +276,6 @@ This page has instructions for collecting logs and metrics for the Amazon ECS wi
    "recipientAccountId":"435456556566"
 }
 ```
-
 </details>
 
 ### Sample queries
@@ -288,34 +291,74 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 | count by resource_type, _timeslice
 | transpose row _timeslice column resource_type
 ```
-## Collect Logs and Metrics for Amazon ECS
+## Collecting logs and metrics for Amazon ECS
 
-This section has instructions for collecting logs and metrics for the Amazon ECS app.
+### Configure Hosted Collector
 
-### Collect Metrics for Amazon ECS
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-1. Sumo Logic supports collecting metrics using two source types:
-   * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended) or
-   * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+### Collect Amazon ECS CloudWatch metrics
+
+Sumo Logic supports collecting metrics using one of the following source types:
+
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+
    :::note
-      Amazon ECS metrics use the AWS/ECS namespace
+   Namespace for **Amazon ECS** service is **AWS/ECS**.
    :::
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
-   1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
-   1. Keep in mind:
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-### Collect ECS events using CloudTrail
+### Collect Amazon ECS CloudTrail logs
 
-1. Configure a [AWS CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
-1. **Metadata**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
-    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
-    1. Keep in mind:
-       * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-       * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
+2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
+3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
+   :::note
+   Namespace for **Amazon ECS** service is **AWS/ECS**.
+   :::
+
+Follow the steps below to collect logs for Amazon ECS:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
+
+### Centralized AWS CloudTrail log collection
+
+In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+```sql
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=aws/observability/cloudtrail/logs
+```
+
+#### Parse Expression
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
+```sumo
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
 
 ## Installing the Amazon ECS app
 
@@ -325,7 +368,9 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-As part of the app installation process, the following fields will be created by default:
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
 
 - `account` Name / alias to the AWS account.
 - `accountid` AWS account id.
@@ -333,11 +378,9 @@ As part of the app installation process, the following fields will be created by
 - `namespace` Namespace for Amazon ECS Service is AWS/ECS.
 - `clustername` The name of the ECS cluster.
 
-## Field Extraction Rule(s)
+#### Field Extraction Rule(s)
 
 The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `namespace`, `clustername`, and `accountid` will be created as a part of app installation.
-
-The FER **AwsObservabilityECSCloudWatchLogsFER** to extract the `namespace` field will be created as a part of app installation.
 
 ## Viewing the Amazon ECS app dashboards
 

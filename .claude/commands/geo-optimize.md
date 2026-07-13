@@ -163,6 +163,8 @@ Place this immediately after the opening paragraph for docs over 600 words.
 
 Adapt the labels to fit the doc type. For reference docs, use "Key fields" or "Parameters at a glance." For how-to guides, use "Before you begin."
 
+**Prose variant (no heading).** For shorter docs, or when a bulleted block reads as boilerplate, fold the same at-a-glance facts into a short prose paragraph immediately after the opening paragraph, with no `## At a glance` heading. Use whichever form reads more naturally. The goal is a citable summary of what the feature is, what it supports, and what it does near the top of the page, not a specific layout.
+
 ### Pattern 3: Reframe headings as questions
 
 AI tools and featured snippet algorithms favor pages where headings signal the question being answered.
@@ -171,11 +173,14 @@ AI tools and featured snippet algorithms favor pages where headings signal the q
 |-----------------|----------------------------|
 | Overview | What is [feature]? |
 | How it works | How does [feature] work? |
+| Configuring the source | How to configure the source |
 | Prerequisites | What do you need before you start? |
 | Limitations | What are the limitations of [feature]? |
 | Troubleshooting | Why is [feature] not working? |
 
 Only reframe headings where the question form is natural and specific. Do not reframe step headings like "Step 1: Configure the source" — those are correct as-is.
+
+For procedural sections, use a "How to X" statement (for example, `How to configure the source`), not "How do I X". Keep every heading in the second person or neutral phrasing, never the first person ("How do I", "What do I need").
 
 ### Pattern 4: Make facts citation-ready
 
@@ -206,7 +211,7 @@ LLMs cannot infer definitions. If an acronym or domain term appears without defi
 Define on first use in body text:
 > Sumo Logic uses Field Extraction Rules (FERs) to parse key-value pairs from raw log messages at ingest time.
 
-After the first use, the abbreviation alone is fine.
+After the first use, the abbreviation alone is fine. Define the term once at its genuine first use (often the opening paragraph). Do not re-expand the same acronym in later tables or sections.
 
 ---
 
