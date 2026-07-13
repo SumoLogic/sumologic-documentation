@@ -5,7 +5,7 @@ sidebar_label: Claude Compliance
 tags:
   - cloud-to-cloud
   - claude-compliance
-description: Learn to collect the chats from the Claude Compliance platform.
+description: Learn to collect chat messages and activity logs from the Claude Compliance platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,11 +18,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-The Sumo Logic source for Claude Compliance enables you to collect chat messages from Claude into Sumo Logic.
+The Sumo Logic source for Claude Compliance enables you to collect chat messages and activity logs from Claude into Sumo Logic.
 
 Claude provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities to improve productivity while meeting organizational governance and regulatory needs.
 
-The Compliance API enables enterprise customers to access structured chat logs and metadata to support auditing, compliance, and security requirements.
+The Compliance API enables enterprise customers to access structured chat logs, activity events, and metadata to support auditing, compliance, and security requirements.
 
 ## Data collected
 
@@ -74,7 +74,7 @@ To configure a Claude Compliance Source, follow the steps below:
 1. **Polling Interval**. The polling interval is set for 5 minutes by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Data Collection**. Choose what types of data to collect. At least one must be selected.
    - **Collect Chat Messages**. Selected by default. Collects conversation messages from Claude chats.
-   - **Collect Activities**. Collects compliance activity events, including chat creation, file uploads, user sign-ins, and admin actions etc.
+   - **Collect Activities**. Collects compliance activity events covering authentication, chat, file, project, administrative, and platform actions. For the full list of activity types, see [Query the Activity Feed](https://platform.claude.com/docs/en/api/compliance/activities/list) in the Claude documentation.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
