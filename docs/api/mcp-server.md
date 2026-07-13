@@ -210,7 +210,7 @@ Tool identifiers are subject to change during the preview period.
 | `runLogSearch` | Run a log search query over a time range and return aggregated records or raw messages. | Run Log Search (`runLogSearch`) |
 
 :::note
-Before running an unscoped query, the model first calls the Discovery tools below to resolve a `_sourceCategory` (and `_collector`) to scope the search. Queries over 30 minutes without a `_sourceCategory`, `_collector`, `_index`, or `_view` filter are rejected.
+Before running an unscoped query, the model first calls the Discovery tools below to identify a relevant `_sourceCategory`, then runs a small scoped sample query to confirm the source and discover `_collector` values. Queries over 30 minutes without a `_sourceCategory`, `_collector`, `_index`, or `_view` filter are rejected.
 :::
 
 #### Sample prompts
@@ -228,7 +228,7 @@ Before running an unscoped query, the model first calls the Discovery tools belo
 
 #### Sample prompts
 
-* `What source categories and partitions are available for security logs?`
+* `What partitions and field extraction rules exist for security logs?`
 * `List all active partitions in the frequent tier`
 
 ## Example workflows
