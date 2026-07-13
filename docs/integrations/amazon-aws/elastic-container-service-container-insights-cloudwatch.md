@@ -453,159 +453,170 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Cluster Overview
 
-The **Amazon ECS - Cluster Overview** dashboard provides a high-level view of the cluster's health along with details on the utilized resources.
+The **Amazon ECS - Cluster Overview** dashboard provides an overview of CPU and memory utilization, CPU and memory reservation percentages, network I/O (incoming and outgoing bytes), storage read/write activity, EC2 instances registered, and task and service counts across all ECS clusters.
 
 Use this dashboard to:
 
-* Monitor the memory and CPU utilization of your cluster.
-* View abnormal read-write activity and network incoming-outgoing bytes.
+* Identify resource-intensive clusters and make informed decisions about your ECS deployment.
+* Monitor CPU and memory utilization and reservation percentages across clusters.
+* View network I/O, storage read/write activity, and registered EC2 instances.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Cluster-Overview.png' alt="Amazon ECS - Cluster Overview" style={{border: '1px solid gray'}} width="800" />
 
-### Cluster Performance Monitoring
+### Container Insights Cluster Overview
 
-The **Amazon ECS - Cluster Performance Monitoring** dashboard provides detailed information on the performance of your cluster, which you can use to fine-tune your cluster.
+The **Amazon ECS - Container Insights Cluster Overview** dashboard provides Container Insights metrics including task, service, and EC2 instance counts, network I/O (incoming and outgoing bytes), and storage read/write activity for ECS clusters.
 
 Use this dashboard to:
 
-* Identify patterns and outliers over time.
-* Monitor the performance of your cluster and use linked dashboards to drill down further into the root cause.
+* Monitor cluster-level operational metrics collected via the Container Insights agent.
+* Track task, service, and EC2 instance counts across clusters.
+* View network throughput and storage activity at the cluster level.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Cluster-Performance-Monitoring.png' alt="Amazon ECS - Cluster Performance Monitoring" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Container-Insights-Cluster-Overview.png' alt="Amazon ECS - Container Insights Cluster Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Cluster Resource Reservation
 
-The **Amazon ECS - Cluster Resource Reservation** dashboard provides information on resource reservations, which can be used to set the right resource limits.
+The **Amazon ECS - Cluster Resource Reservation** dashboard provides detailed insights into the average CPU, memory, and GPU reservation utilization for a given ECS cluster.
 
 Use this dashboard to:
 
-* Identify the right limits for CPU and memory reservations.
+* Track resource reservation trends and ensure clusters are appropriately provisioned.
+* Identify potential resource constraints or overprovisioning in your ECS environment.
+* Compare reservation patterns between different types of resources (CPU, memory, GPU) over time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Cluster-Resource-Reservation.png' alt="Amazon ECS - Cluster Resource Reservation" style={{border: '1px solid gray'}} width="800" />
 
-### Container Logs
-
-The **Amazon ECS - Container Logs** dashboard provides detailed information on what is happening (errors or recent events) in a container.
-
-Use this dashboard to:
-
-* View recent logs of your container.
-* Identify common errors and abnormal spikes in errors.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Container-Logs.png' alt="Amazon ECS - Container Logs" style={{border: '1px solid gray'}} width="800" />
-
-### Container Overview
-
-The **Amazon ECS - Container Overview** dashboard provides a high-level view of the health of the container, along with details on the utilized resources.
-
-Use this dashboard to:
-
-* Track the container status and identify the container details like its task definition, image, account, etc.
-* Monitor CPU, memory, disk, and network activity of your container.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Container-Overview.png' alt="Amazon ECS - Container Overview" style={{border: '1px solid gray'}} width="800" />
-
-### EC2 LaunchType
-
-The **Amazon ECS - EC2 LaunchType** dashboard provides a high-level view of the health of the cluster, along with details on the utilized resources for EC2 launch types.
-
-Use this dashboard to:
-
-* Monitor CPU and memory utilization of clusters with EC2 launch type.
-* View the number of clusters and tasks with EC2 launch type.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-EC2-LaunchType.png' alt="Amazon ECS - EC2 LaunchType" style={{border: '1px solid gray'}} width="800" />
-
 ### Service Overview
 
-The **Amazon ECS - Service Overview** dashboard provides a high-level view of the health of the services along with details on the utilized resources.
+The **Amazon ECS - Service Overview** dashboard provides an overview of ECS service-level standard CloudWatch metrics including total service count, average CPU and memory utilization percentages, and CPU/memory utilization trends by service.
 
 Use this dashboard to:
 
-* Monitor the number of running, desired, and pending tasks.
-* Identify services with abnormal CPU, network, memory, and disk activity.
+* Monitor service-level performance and identify services with high resource usage.
+* Track CPU and memory utilization trends across all services.
+* Quickly determine which services require scaling or optimization.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Service-Overview.png' alt="Amazon ECS - Service Overview" style={{border: '1px solid gray'}} width="800" />
 
-### Service Performance Monitoring
+### Container Insights Service Overview
 
-The **Amazon ECS - Service Performance Monitoring** dashboard provides detailed information on the performance of your services, which you can use to fine-tune your cluster.
+The **Amazon ECS - Container Insights Service Overview** dashboard provides Container Insights metrics including running, desired, and pending task counts, deployments, task sets, network I/O (incoming and outgoing bytes), and storage read/write activity for ECS services.
 
 Use this dashboard to:
 
-* Identify patterns and outliers over time for each of the resource metrics, like CPU, memory, network, and disk.
-* Track the running, pending, and desired tasks trend.
-* Monitor the performance of your services and use linked dashboards to drill down further into the root cause.
+* Monitor service-level operational metrics collected via the Container Insights agent.
+* Track running, pending, and desired task counts for each service.
+* View network throughput, storage activity, and deployment status at the service level.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Service-Performance-Monitoring.png' alt="Amazon ECS - Service Performance Monitoring" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Container-Insights-Service-Overview.png' alt="Amazon ECS - Container Insights Service Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Tasks Definition Family Overview
 
-The **Amazon ECS - Tasks Definition Family Overview** dashboard provides a high-level view of the health of the tasks belonging to a particular task definition family and details on the utilized resources.
+The **Amazon ECS - Tasks Definition Family Overview** dashboard provides an overview of ECS task definition families including total family count, task count by task definition family, CPU and memory utilization, and storage read/write activity.
 
 Use this dashboard to:
 
+* Monitor resource usage and task distribution across your ECS task definition families.
 * View the number of tasks running with a single task definition family.
-* Monitor CPU and memory usage by task definition family.
+* Track CPU and memory utilization by task definition family.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Overview.png' alt="Amazon ECS - Tasks Definition Family Overview" style={{border: '1px solid gray'}} width="800" />
 
-### Tasks Overview
-
-The **Amazon ECS - Tasks Overview** dashboard provides a high-level view of the health of the task, along with details on the utilized resources and where they are running.
-
-Use this dashboard to:
-
-* View details of all the task instances and their launch type.
-* Track Network Errors and Dropped Packets.
-* Monitor CPU, memory, disk, and network performance by task instances.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Tasks-Overview.png' alt="Amazon ECS - Tasks Overview" style={{border: '1px solid gray'}} width="800" />
-
 ### Tasks Definition Family Performance Monitoring
 
-The **Amazon ECS - Tasks Definition Family Performance Monitoring** dashboard provides detailed information on the performance of your tasks, which you can use to fine-tune your cluster.
+The **Amazon ECS - Tasks Definition Family Performance Monitoring** dashboard provides trends around CPU and memory utilization, network I/O (incoming and outgoing bytes), and storage read/write activity for ECS task definition families.
 
 Use this dashboard to:
 
+* Monitor performance over time and identify resource bottlenecks at the task definition family level.
 * Identify patterns and outliers over time for each of the resource metrics like CPU, memory, network, and disk.
-* Monitor the performance of your tasks and use linked dashboards to drill down further into the root cause.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Tasks-Definition-Family-Performance-Monitoring.png' alt="Amazon ECS - Tasks Definition Family Performance Monitoring" style={{border: '1px solid gray'}} width="800" />
 
 ### Task Definition Family Resource Reservation
 
-The **Amazon ECS - Task Definition Family Resource Reservation** dashboard provides information on resource reservations, which can be used to set the right resource limits at the task definition level.
+The **Amazon ECS - Task Definition Family Resource Reservation** dashboard provides detailed insights into the average CPU and memory reservation utilization across ECS task definition families.
 
 Use this dashboard to:
 
-* Identify the right limits for CPU and memory reservations.
+* Track resource reservation trends and ensure task definitions are appropriately sized.
+* Identify the right limits for CPU and memory reservations at the task definition level.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Task-Definition-Family-Resource-Reservation.png' alt="Amazon ECS - Task Definition Family Resource Reservation" style={{border: '1px solid gray'}} width="800" />
 
-### Fargate LaunchType
+### Tasks Overview
 
-The **Amazon ECS - Fargate LaunchType** dashboard provides a high-level view of the cluster's health along with details on the utilized resources for Fargate launch types.
+The **Amazon ECS - Tasks Overview** dashboard provides an overview of task-level CPU and memory utilization, network I/O (incoming and outgoing bytes), storage read/write activity, tasks with dropped packets, and tasks with network errors.
 
 Use this dashboard to:
 
-* Monitor network activity of your clusters with the Fargate launch type.
-* View the number of clusters and tasks with the Fargate launch type.
+* Monitor individual task health and quickly identify tasks with resource or connectivity issues.
+* View details of all the task instances and their launch type.
+* Track network errors and dropped packets by task.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Tasks-Overview.png' alt="Amazon ECS - Tasks Overview" style={{border: '1px solid gray'}} width="800" />
+
+### Container Overview
+
+The **Amazon ECS - Container Overview** dashboard provides an overview of container-level CPU and memory utilization, network I/O (incoming and outgoing bytes), storage read/write activity, container status trends, tasks with dropped packets, and tasks with network errors.
+
+Use this dashboard to:
+
+* Monitor container health and identify containers with performance or connectivity issues.
+* Track container status and identify container details like task definition, image, and account.
+* Monitor CPU, memory, disk, and network activity of your containers.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Container-Overview.png' alt="Amazon ECS - Container Overview" style={{border: '1px solid gray'}} width="800" />
+
+### Container Logs
+
+The **Amazon ECS - Container Logs** dashboard provides detailed information on container-level log activity including error trends by cluster and container, top 10 errors, recent errors, and recent container log events.
+
+Use this dashboard to:
+
+* Quickly diagnose issues and monitor what is happening inside your containers.
+* View recent logs of your container.
+* Identify common errors and abnormal spikes in errors.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Container-Logs.png' alt="Amazon ECS - Container Logs" style={{border: '1px solid gray'}} width="800" />
+
+### EC2 LaunchType
+
+The **Amazon ECS - EC2 LaunchType** dashboard provides an overview of CPU and memory utilization and reservation percentages, EC2 instances registered, and task and service counts for ECS workloads running on the EC2 launch type.
+
+Use this dashboard to:
+
+* Monitor the health and resource usage of your EC2-backed ECS clusters.
+* View CPU and memory utilization and reservation percentages for EC2 launch type.
+* Track the number of clusters, tasks, and registered EC2 instances.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-EC2-LaunchType.png' alt="Amazon ECS - EC2 LaunchType" style={{border: '1px solid gray'}} width="800" />
+
+### Fargate LaunchType
+
+The **Amazon ECS - Fargate LaunchType** dashboard provides an overview of running tasks, services, network throughput (incoming and outgoing bytes per second), and storage read/write activity for ECS workloads running on the Fargate launch type.
+
+Use this dashboard to:
+
+* Monitor the health and network performance of your Fargate-backed ECS clusters.
+* View the number of running tasks and services with Fargate launch type.
+* Track network throughput and storage activity for Fargate workloads.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Fargate-LaunchType.png' alt="Amazon ECS - Fargate LaunchType" style={{border: '1px solid gray'}} width="800" />
 
-### Audit Events
+### Container Insight Audit Events
 
-The **Amazon ECS - Audit Events** dashboard provides insights into changes to your ECS environment including top IAM users, locations of events. The dashboard also shows the created, updated, and deleted events with respect to time, along with the details for the top 10 AWS Identity and Access Management users, and the last 20 Container Registration and Deregistration Events.
+The **Amazon ECS - Container Insight Audit Events** dashboard provides insights into changes to your ECS environment including top IAM users, locations of events. The dashboard also shows the created, updated, and deleted events with respect to time, along with the details for the top 10 AWS Identity and Access Management users, and the last 20 Container Registration and Deregistration Events.
 
 Use this dashboard to:
 
 * Quickly identify all changes to your ECS environment.
 * Monitor locations from which changes are being made.
-* Examine details and trends for created, updated and deleted ECS resources.
+* Examine details and trends for created, updated, and deleted ECS resources.
 * Investigate specific container registration and deregistration events in different regions and clusters.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Events" style={{border: '1px solid gray'}} width="800" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-ECS-with-Container-Insights/Amazon-ECS-Container-Insight-Audit-Events.png' alt="Amazon ECS - Container Insight Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ## Create monitors for Amazon ECS app
 
@@ -617,8 +628,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:-----|:------------|:----------------|:--|
-| `Amazon ECS - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
-| `Amazon ECS - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
+| `Amazon ECS Container Insights - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count >= 85 | Count < 85 |
+| `Amazon ECS Container Insights - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count >= 85 | Count < 85 |
+| `Amazon ECS Container Insights - No Running Tasks in Service` | This alert fires when a service has no running tasks for 5 minutes, indicating the service is unavailable and not serving traffic. | Count < 1 | Count >= 1 |
+| `Amazon ECS Container Insights - High CPU Reservation` | This alert fires when the average CPU reservation within a 5 minute interval for a cluster is high (>=85%), indicating the cluster is running out of capacity to schedule new tasks. | Count >= 85 | Count < 85 |
 
 ## Upgrade/Downgrade the Amazon ECS (Container Insights and CloudWatch) app (Optional)
 
