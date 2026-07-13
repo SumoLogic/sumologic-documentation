@@ -319,7 +319,8 @@ Sumo Logic supports collecting metrics using one of the following source types:
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
    :::note
-   Namespace for **Amazon ECS** service is **AWS/ECS**.
+   Namespace for **Amazon ECS** service is **AWS/ECS**.<br />
+   Namespace for **Amazon ECS with container instance metrics** is **ECS/containerinstance**.
    :::
 
 Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
