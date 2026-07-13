@@ -144,7 +144,7 @@ Tool identifiers are subject to change during the preview period.
 
 | Tool | Description | Required scope |
 | :--- | :---------- | :-------------- |
-| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. | TBD |
+| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. | None (built into the AWS AgentCore gateway) |
 
 ### Alerts management
 
