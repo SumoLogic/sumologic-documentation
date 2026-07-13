@@ -37,20 +37,24 @@ The Compliance API enables enterprise customers to access structured chat logs, 
 
 You are required to provide the **Organization UUID** and **API Key** to configure the Claude Compliance source.
 
-#### Steps to Get Organization UUID:
-- After logging in to claude.ai, navigate to **Settings → Account**.
-- Your Organization UUID is displayed in the Account details section.
+#### Steps to get Organization UUID
 
-### Steps to Generate API Key:
+1. Log in to [claude.ai](https://claude.ai).
+1. Navigate to **Settings** > **Account**.
+1. Collect your **Organization UUID** from the Account details section.
 
-Keys are created in the **Compliance access keys** section of Data Management Settings.
+#### Steps to generate API Key
+
+Keys are created in the **Compliance access keys** section of **Data Management Settings**.
 1. Click **Create key** to name your key.
 2. Name the key and select its scopes based on the data you want to collect:
    - **read:compliance_user_data**. Required to collect chat messages.
    - **read:compliance_activities**. Required to collect activity logs.
 3. Receive a secret access key and store it securely.
 
-**Note**: If you do not see the Compliance access keys section, it means that either you are not a Primary Owner of the organization, or the Compliance API is not enabled for your organization. The Primary Owner needs to enable it in the Data and Privacy section of your organization's settings.
+:::note
+If you do not see the Compliance access keys section, it means that either you are not a Primary Owner of the organization, or the Compliance API is not enabled for your organization. The Primary Owner needs to enable it in the Data and Privacy section of your organization's settings.
+:::
 
 ### Source configuration
 
@@ -120,16 +124,19 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Limitations
 
-**Chat messages**
-- **Re-ingestion after 25 hours**: If a chat message is updated more than 25 hours after initial ingestion, the source will re-ingest all messages from that chat, which may result in duplicate logs in Sumo Logic.
-- **Historical data backfill**: If the source experiences downtime or is temporarily disabled, it will automatically backfill data when restarted. The maximum historical data retrieval period is 30 days from the current date.
-- **Message structure**: Each log entry in Sumo Logic contains a single chat message along with its complete metadata. To view all messages from a conversation, aggregate the logs using the chat ID field.
+### Chat messages
 
-**Activity logs**
-- **Activity event delay**: Activity events are collected with a 5-minute lag to account for indexing delay on Anthropic's side. Events will always appear at least 5 minutes after they occurred.
-- **Activity historical data**: If the source experiences downtime or is temporarily disabled, it will automatically backfill data when restarted. The maximum historical data retrieval period is 30 days from the current date.
+- **Re-ingestion after 25 hours**. If a chat message is updated more than 25 hours after initial ingestion, the source will re-ingest all messages from that chat, which may result in duplicate logs in Sumo Logic.
+- **Historical data backfill**. If the source experiences downtime or is temporarily disabled, it will automatically backfill data when restarted. The maximum historical data retrieval period is 30 days from the current date.
+- **Message structure**. Each log entry in Sumo Logic contains a single chat message along with its complete metadata. To view all messages from a conversation, aggregate the logs using the chat ID field.
 
-**General**
+### Activity logs
+
+- **Activity event delay**. Activity events are collected with a 5-minute lag to account for indexing delay on Anthropic's side. Events will always appear at least 5 minutes after they occurred.
+- **Activity historical data**. If the source experiences downtime or is temporarily disabled, it will automatically backfill data when restarted. The maximum historical data retrieval period is 30 days from the current date.
+
+### General
+
 - As the Claude Compliance API continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
 
 ## FAQ
