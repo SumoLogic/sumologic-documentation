@@ -22,12 +22,6 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 
 ## Prerequisites
 
-* **Sumo Logic Administrator role**. Required to create OAuth clients. If you are unsure of your permissions, verify them in your [Preferences](/docs/get-started/onboarding-checklists/).
-* **Sumo Logic OAuth credentials**. For the Sumo Logic MCP client, you'll need to set up [OAuth credentials](/docs/manage/security/oauth) to authenticate. For Claude Code CLI, you'll create them during the setup steps below.
-* **An MCP-compatible client that supports remote HTTP/SSE transport and OAuth 2.0 Authorization Code flow**. Any client with both, plus a client ID and client secret, will work.
-   :::note
-   The documentation below covers setup for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or an Anthropic Console account).
-   :::
 * **Deployment-specific MCP server URL**. Because OAuth tokens are deployment-bound, you'll need to use the exact URL assigned to your Sumo Logic deployment:
    | Deployment | MCP Server URL |
    | :--- | :--- |
@@ -41,22 +35,54 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-
-## Known limitations
-
-* **VS Code**. Recent VS Code releases do not work with the authorization code flow when an explicit client ID and secret are provided.
-
-:::note
-If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
-:::
+* **An MCP-compatible client that supports remote HTTP/SSE transport and OAuth 2.0**. The default setup uses Client ID Metadata Documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or an Anthropic Console account).
+   :::note
+   [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
+   :::
 
 ## Configure in Claude Code CLI
 
 ### Authentication
 
-Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Browser-based login handles token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
 
 ### Setup
+
+1. In a Terminal window, register the MCP server. Replace `<MCP-server-URL>` with your deployment's URL from the [Prerequisites table](#prerequisites). Choose a scope:
+   * **User scope** (available in all directories, recommended).
+     ```bash
+     claude mcp add --scope user --transport http \
+       sumo-logic "<MCP-server-URL>"
+     ```
+   * **Project scope** (available only in the current directory, writes to `.mcp.json`).
+     ```bash
+     claude mcp add --scope project --transport http \
+       sumo-logic "<MCP-server-URL>"
+     ```
+1. Launch Claude Code. With **user scope**, run `claude` from any directory. With **project scope**, run it from the directory where you registered the server.
+   ```bash
+   claude
+   ```
+1. In Claude Code, run `/mcp`.
+1. Select **sumo-logic** and then **Authenticate**.
+1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
+1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
+1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
+
+### Switching organizations
+
+To connect to a different Sumo Logic org:
+1. In Claude Code, run `/mcp`.
+1. Select **sumo-logic** > **Clear authentication**.
+1. Select **Authenticate** and log in to the new org.
+
+:::note
+If you previously granted consent for an org, you will not be prompted again. To revoke consent, go to your Sumo Logic user settings and remove the app under **Personal Authorized Apps** (next to Personal Access Tokens).
+:::
+
+### Manual OAuth setup
+
+CIMD is the recommended setup for most MCP server users. If your MCP client does not support CIMD, you can connect with manually created OAuth credentials instead. This requires the **Sumo Logic Administrator role** to create an OAuth client, and you'll set up [OAuth credentials](/docs/manage/security/oauth) (a client ID and client secret) to authenticate.
 
 #### Create an OAuth client
 
@@ -92,18 +118,11 @@ Claude Code CLI uses OAuth 2.0 Authorization Code flow for authentication. Brows
        sumo-logic "<mcp-server-url>"
      ```
 1. Run one of the above commands. Claude Code then prompts you to enter the client secret securely.
-1. Launch Claude Code. For **User scope**, run this from any directory. For **Project scope**, run it from the directory where you registered the server.
-   ```bash
-   claude
-   ```
-1. In Claude Code, run:
-    ```bash
-    /mcp
-    ```
-1. Select **sumo-logic** and then **Authenticate**.
-1. Claude Code will open a browser window to authenticate with Sumo Logic. Log in to complete the OAuth flow.
-1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
-1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
+1. Continue with the remaining steps in [Setup](#setup) above: launch Claude Code, run `/mcp`, and authenticate.
+
+:::note
+Recent VS Code releases do not work with explicit client credentials. Use the default CIMD setup above for VS Code.
+:::
 
 ## Available MCP tools
 
