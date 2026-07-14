@@ -6,7 +6,7 @@ description: Learn more about AWS Observability resources created and modified a
 ---
 
 
-The CloudFormation template creates a number of resources at deployment in AWS and Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) for prerequisites and instructions to configure.
+The CloudFormation template creates a number of resources at deployment in AWS and Sumo Logic. You will use the template when setting up the solution. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/v300/before-you-deploy) for prerequisites and instructions to configure.
 
 For more information on the solution and features, see [About Sumo Logic AWS Observability](/docs/observability/aws/about).
 
@@ -164,7 +164,7 @@ The metadata tags are applied to Sumo Logic Sources.
 
 ### Resources
 
-The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) and [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) template execution creates the following resources in Sumo Logic.
+The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v300/deploy-with-aws-cloudformation) and [Terraform](/docs/observability/aws/deploy-use-aws-observability/v300/deploy-with-terraform) template execution creates the following resources in Sumo Logic.
 
 <table>
   <tr>

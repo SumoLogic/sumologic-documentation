@@ -7,7 +7,7 @@ description: Step-by-step guide to manually migrate your AWS Observability Cloud
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This documentation walks you through manually migrating an existing [AWS Observability CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) deployment from v2.x (v2.12, v2.13, v2.14, or v2.15) to v3.0.0.
+This documentation walks you through manually migrating an existing [AWS Observability CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v300/deploy-with-aws-cloudformation/) deployment from v2.x (v2.12, v2.13, v2.14, or v2.15) to v3.0.0.
 
 :::note
 If you prefer an automated approach, see [Migrate AWS Observability from v2.x to v3.0.0 using the migration script](/docs/observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-cloudformation/).

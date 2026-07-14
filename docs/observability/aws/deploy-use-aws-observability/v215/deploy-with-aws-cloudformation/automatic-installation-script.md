@@ -7,10 +7,10 @@ description: Sumo Logic provides POSIX and PowerShell scripts to trigger the Clo
 
 Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh) and [PowerShell](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1) scripts to trigger the CloudFormation template for creating a stack to deploy AWS Observability Solution.
 
-This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#appendix-i)). For more advanced use cases, when any of the default needs to be adjusted, fall back to  [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) or [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) installation steps.
+This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#appendix-i)). For more advanced use cases, when any of the default needs to be adjusted, fall back to  [Terraform](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-terraform) or [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-aws-cloudformation) installation steps.
 
 :::tip Multi-account and region
-If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform).
+If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-terraform).
 :::
 
 ## Prerequisites
@@ -36,7 +36,7 @@ The script takes two inputs:
 
 ## CloudFormation parameters
 
-The script above will take only two inputs, the Sumo Logic access ID and Access Key. And internally it will trigger a CloudFormation template. This CloudFormation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values. Refer to the table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
+The script above will take only two inputs, the Sumo Logic access ID and Access Key. And internally it will trigger a CloudFormation template. This CloudFormation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values. Refer to the table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-aws-cloudformation).
 
 
 ### PowerShell script command execution
