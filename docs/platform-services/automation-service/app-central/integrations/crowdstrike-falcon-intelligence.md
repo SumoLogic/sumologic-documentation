@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-intelligence.png')} alt="CrowdStrike Falcon Intelligence icon" width="100"/>
 
-***Version: 1.9  
-Updated: June 30, 2026***
+***Version: 2.0  
+Updated: Jul 15, 2026***
 
 CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service built on the CrowdStrike Falcon Platform. It automates incident investigations and streamlines breach response so you can make faster, more confident cyber security decisions. Organizations, regardless of size or sophistication, learn from the attacks in their environment applying that knowledge to proactively prevent future attacks. Falcon Intelligence provides insight into global threats, tracked by CrowdStrike’s elite team of intelligence experts.
 
@@ -29,6 +29,7 @@ CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service
 * **Submission Status Polling** (*Enrichment*) - Return the state of submission, this action will poll until the File/URL analysis are finished, Once this action is completed, you will be able to get a Report or Get Summary of the Submission.
 * **Submit File** (*Enrichment*) - Submit a file for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes, by using the **Submission Status Polling** action.
 * **Submit URL** (*Enrichment*) - Submit a URL for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes, by using the **Submission Status Polling** action.
+* **Get Submission Report Scheduled** *(Scheduled)* - Periodically polls the submission status and retrieves the sandbox report once the analysis is complete. This action checks every 1 minute and expires after 30 minutes. Use the Resource ID from the **Submit URL** or **Submit File** actions.
 
 ## Sandbox Environments
 
@@ -102,3 +103,4 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
 * March 4, 2024 (v1.7) - Updated code for compatibility with Python 3.12
 * March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * June 30, 2026 (v1.9) - Updated the available sandbox environments to align with the latest platform support. Ubuntu 16.04 has been removed, Ubuntu 20 is now deprecated, and Ubuntu 24 has been added
+* July 15, 2026 (v2.0) - Improved the reliability of sandbox analysis by automatically monitoring submission progress and retrieving the final report as soon as it becomes available.
