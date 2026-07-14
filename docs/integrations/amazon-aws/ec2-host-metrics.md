@@ -120,9 +120,9 @@ As part of the app installation process, the following **content** will be creat
 
 - `accountid` AWS account id.
 
-:::note
-As a best practice, **do not delete or modify** any fields, Field Extraction Rules (FERs), or Metric Rules created during the app installation. If you need to make updates, please contact the **Sumo Logic Support** team.
-:::
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
 
 ## Viewing EC2 Host Metrics dashboards
 

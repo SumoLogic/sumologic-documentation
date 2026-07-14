@@ -511,9 +511,9 @@ The FER **AwsObservabilityRDSCloudWatchLogsFER** to extract fields `namespace`, 
 
 The Metric Rules **AwsObservabilityRDSClusterMetricsRule** and **AwsObservabilityRDSInstanceMetricsRule** for the aws/rds namespace will be created as a part of app installation.
 
-:::note
-As a best practice, **do not delete or modify** any fields, Field Extraction Rules (FERs), or Metric Rules created during the app installation. If you need to make updates, please contact the **Sumo Logic Support** team.
-:::
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
 
 ## Viewing the RDS dashboards  
 
