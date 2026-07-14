@@ -252,6 +252,7 @@ jobs:
               /^README\.md$/,
               /^\.clabot$/,
               /^CONTRIBUTING\.md$/,
+              /^sidebars\.ts$/,
             ];
 
             async function classifyPR(prNumber) {
