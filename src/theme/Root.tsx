@@ -1,14 +1,11 @@
 /**
  * Root component wrapper for Docusaurus
  *
- * Renders the Ask AI button into the navbar placeholder via a portal,
- * and renders AskAiSidepanel directly here — outside the navbar portal —
- * so the sidepanel is never unmounted by navbar re-renders on resize.
+ * Renders AskAiSidepanel directly here so it is never unmounted by
+ * navbar re-renders on resize.
  */
 
 import React, { useEffect, useState, Suspense } from 'react';
-import { createPortal } from 'react-dom';
-import AskAiButton from '@site/src/components/AskAiButton';
 
 const AskAiSidepanel = React.lazy(
   () => import('@site/src/components/AskAiSidepanel')
@@ -23,7 +20,6 @@ interface AskAiInitialMessage {
 }
 
 export default function Root({ children }: RootProps) {
-  const [placeholder, setPlaceholder] = useState<HTMLElement | null>(null);
   const [isAskAiOpen, setIsAskAiOpen] = useState(false);
   const [hasEverOpened, setHasEverOpened] = useState(false);
   const [initialAskAiMessage, setInitialAskAiMessage] =
@@ -34,24 +30,6 @@ export default function Root({ children }: RootProps) {
   }, [isAskAiOpen]);
 
   useEffect(() => {
-    const findPlaceholder = () => {
-      // Only update if our current placeholder has been removed from the DOM
-      if (placeholder && document.body.contains(placeholder)) {
-        return;
-      }
-      const el = document.getElementById('navbar-ask-ai-button');
-      if (el) {
-        setPlaceholder(el);
-      }
-    };
-
-    findPlaceholder();
-    const interval = setInterval(findPlaceholder, 500);
-
-    return () => clearInterval(interval);
-  }, [placeholder]);
-
-  useEffect(() => {
     const closeDocSearchModal = () => {
       const closeButton = document.querySelector<HTMLButtonElement>(
         [
@@ -60,6 +38,7 @@ export default function Root({ children }: RootProps) {
           '.DocSearch-Container .DocSearch-Cancel',
         ].join(',')
       );
+
       closeButton?.click();
 
       document.dispatchEvent(
@@ -76,6 +55,7 @@ export default function Root({ children }: RootProps) {
           modal.remove();
         });
         document.body.classList.remove('DocSearch--active');
+        document.documentElement.classList.remove('DocSearch--active');
       });
     };
 
@@ -98,14 +78,33 @@ export default function Root({ children }: RootProps) {
       );
     };
 
+    const getRecentConversationQuery = (element: Element | null) => {
+      if (!element) return '';
+
+      return (
+        element.querySelector('.DocSearch-Hit-title')?.textContent?.trim() || ''
+      );
+    };
+
     const isAskAiAssistantOption = (element: HTMLElement) => {
       const text = element.textContent?.replace(/\s+/g, ' ').trim() || '';
       return /^Ask AI(?: Assistant)?\b/i.test(text);
     };
 
+    const isRecentConversationOption = (element: HTMLElement) => {
+      const hit = element.closest<HTMLElement>('.DocSearch-Hit');
+      const listbox = element.closest<HTMLElement>('[role="listbox"]');
+
+      return Boolean(
+        hit?.id?.startsWith('docsearch-recentConversations-item-') ||
+          listbox?.id?.startsWith('docsearch-recentConversations-list')
+      );
+    };
+
     const routeAskAiOptionClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
       if (!target?.closest('.DocSearch-Container .DocSearch-Dropdown')) return;
+      if (target.closest('.DocSearch-Hit-action-button')) return;
 
       const option = target.closest<HTMLElement>(
         [
@@ -117,9 +116,14 @@ export default function Root({ children }: RootProps) {
           '[role="option"]',
         ].join(',')
       );
-      if (!option || !isAskAiAssistantOption(option)) return;
+      if (!option) return;
 
-      const query = getModalQuery();
+      const query = isRecentConversationOption(option)
+        ? getRecentConversationQuery(option)
+        : isAskAiAssistantOption(option)
+          ? getModalQuery()
+          : '';
+
       if (!query) return;
 
       event.preventDefault();
@@ -144,9 +148,14 @@ export default function Root({ children }: RootProps) {
               '.DocSearch-Dropdown .DocSearch-Hit[aria-current="true"]',
             ].join(',')
           );
-      if (!activeOption || !isAskAiAssistantOption(activeOption)) return;
+      if (!activeOption) return;
 
-      const query = getModalQuery();
+      const query = isRecentConversationOption(activeOption)
+        ? getRecentConversationQuery(activeOption)
+        : isAskAiAssistantOption(activeOption)
+          ? getModalQuery()
+          : '';
+
       if (!query) return;
 
       event.preventDefault();
@@ -167,13 +176,6 @@ export default function Root({ children }: RootProps) {
   return (
     <>
       {children}
-
-      {/* Button only — portaled into the navbar */}
-      {placeholder &&
-        createPortal(
-          <AskAiButton isOpen={isAskAiOpen} setIsOpen={setIsAskAiOpen} />,
-          placeholder
-        )}
 
       {/* Sidepanel lives here in Root, never inside the navbar portal.
           Kept mounted once first opened so conversation state survives resize. */}

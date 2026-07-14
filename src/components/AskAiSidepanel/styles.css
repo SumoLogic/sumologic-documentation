@@ -18,9 +18,10 @@
   right: 0 !important;
   bottom: 0 !important;
   left: auto !important;
-  width: 400px !important;
-  min-width: 400px !important;
-  max-width: 400px !important;
+  --ask-ai-sidepanel-width: 400px;
+  width: var(--ask-ai-sidepanel-width) !important;
+  min-width: var(--ask-ai-sidepanel-width) !important;
+  max-width: var(--ask-ai-sidepanel-width) !important;
   z-index: 999 !important;
   transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
   --docsearch-primary-color: #1d68e1;
@@ -37,9 +38,26 @@
 
 /* Expanded state - wider width */
 .ask-ai-sidepanel.is-expanded {
-  width: 540px !important;
-  min-width: 540px !important;
-  max-width: 540px !important;
+  --ask-ai-sidepanel-width: 540px;
+  width: var(--ask-ai-sidepanel-width) !important;
+  min-width: var(--ask-ai-sidepanel-width) !important;
+  max-width: var(--ask-ai-sidepanel-width) !important;
+}
+
+@media (min-width: 997px) {
+  body.ask-ai-layout-shifted {
+    overflow-x: hidden;
+  }
+
+  body.ask-ai-layout-shifted #__docusaurus {
+    padding-right: var(--ask-ai-layout-offset, 400px);
+    transition: padding-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  body.ask-ai-layout-shifted .navbar {
+    right: var(--ask-ai-layout-offset, 400px);
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 }
 
 @media (max-width: 768px) {

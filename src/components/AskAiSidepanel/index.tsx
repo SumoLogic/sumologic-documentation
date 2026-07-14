@@ -7,7 +7,11 @@ import './styles.css';
 interface AskAiSidepanelProps {
   isOpen: boolean;
   onClose: () => void;
-  initialMessage?: { query: string } | null;
+  initialMessage?: {
+    query: string;
+    suggestedQuestionId?: string;
+    messageId?: string;
+  } | null;
 }
 
 const FEEDBACK_FORM_FIELDS = [
@@ -157,6 +161,37 @@ export default function AskAiSidepanel({
       setFeedbackSubmittedNotice('');
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const root = document.documentElement;
+    const body = document.body;
+
+    const syncLayoutShift = () => {
+      const shouldShiftLayout = isOpen && window.innerWidth > 996;
+
+      if (shouldShiftLayout) {
+        root.style.setProperty(
+          '--ask-ai-layout-offset',
+          isExpanded ? '540px' : '400px'
+        );
+        body.classList.add('ask-ai-layout-shifted');
+      } else {
+        body.classList.remove('ask-ai-layout-shifted');
+        root.style.removeProperty('--ask-ai-layout-offset');
+      }
+    };
+
+    syncLayoutShift();
+    window.addEventListener('resize', syncLayoutShift);
+
+    return () => {
+      window.removeEventListener('resize', syncLayoutShift);
+      body.classList.remove('ask-ai-layout-shifted');
+      root.style.removeProperty('--ask-ai-layout-offset');
+    };
+  }, [isExpanded, isOpen]);
 
   useEffect(() => {
     if (!feedbackSubmittedNotice) return;
