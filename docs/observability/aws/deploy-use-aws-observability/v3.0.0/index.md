@@ -1,5 +1,5 @@
 ---
-slug: /observability/aws/deploy-use-aws-observability/v300
+slug: /observability/aws/deploy-use-aws-observability/v3.0.0
 title: Deploy and Use AWS Observability v3.0.0
 sidebar_label: v3.0.0 (latest)
 description: Learn about Sumo Logic's AWS Observability Solution, how to deploy it, and how to get started with it.

@@ -110,7 +110,7 @@ Before you run the Terraform script, perform the following actions on a server m
     :::note
     See the [variables.tf](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/variables.tf) file and [README](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform#readme) in that folder for configuration information with permissible values for these variables. 
     :::
-1. As part of configuring the AWS Observability solution, we need to [create fields and FERs](/docs/observability/aws/deploy-use-aws-observability/v215/resources/) in the Sumo Logic org. To import any fields and or FERs that are already present in the Sumo Logic org into our Terraform state, we need to run a script. To do so, navigate to the **sumologic-solution-templates/aws-observability-terraform** folder and do the following:
+1. As part of configuring the AWS Observability solution, we need to [create fields and FERs](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/resources/) in the Sumo Logic org. To import any fields and or FERs that are already present in the Sumo Logic org into our Terraform state, we need to run a script. To do so, navigate to the **sumologic-solution-templates/aws-observability-terraform** folder and do the following:
    1. Set the following environment variables using the commands below:
        ```bash
        export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
@@ -573,11 +573,11 @@ To uninstall the AWS Observability solution deployed using Terraform, navigate t
 terraform destroy
 ```
 
-This will destroy all [resources](/docs/observability/aws/deploy-use-aws-observability/v215/resources/) and configuration previously set up.
+This will destroy all [resources](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/resources/) and configuration previously set up.
 
 ## Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform
 
-To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v215/migration-strategy-using-terraform).
+To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
 
 ## Appendix
 
@@ -668,7 +668,7 @@ The following table provides a list of all source parameters and their default v
 ### Configure collection of CloudWatch metrics
 
 :::note
-To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v215/migration-strategy-using-terraform).
+To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudwatch_metrics
@@ -1058,7 +1058,7 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 ### Configure collection of CloudTrail logs
 
 :::note
-To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v215/migration-strategy-using-terraform).
+To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudtrail_logs
@@ -1560,7 +1560,7 @@ Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumolog
 "errors":[{"code":"fer:invalid_extraction_rule","message":"Invalid Field Extraction Rule","meta":{"reason":"A field extraction rule with name 'AwsObservabilityApiGatewayCloudTrailLogsFER' already exists"}}]
 ```
 #### Solution
-Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-terraform/#step-2-configure-the-terraform-script).
+Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/#step-2-configure-the-terraform-script).
 
 ### waiting for S3 Bucket Policy (bucket-name) delete
 #### Error Message
@@ -1614,7 +1614,7 @@ Invalid IAM role OR AccessDenied
 #### Solution
 
 - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. 
-- Refer to [Prerequisites](/docs/observability/aws/deploy-use-aws-observability/v215/before-you-deploy/#prerequisites) for permissions related issues.
+- Refer to [Prerequisites](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy/#prerequisites) for permissions related issues.
 
 
 ### Subscription filters are not applied to newly created log groups

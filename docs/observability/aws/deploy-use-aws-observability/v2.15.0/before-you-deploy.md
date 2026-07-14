@@ -15,7 +15,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 ## Prerequisites
 
-* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-aws-cloudformation) for CloudFormation Template.
+* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation) for CloudFormation Template.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * [**Role capabilities**](/docs/manage/users-roles/roles/role-capabilities/). Make sure you have a Sumo Logic role that have the following capabilities:
   * Manage Field Extraction Rules
@@ -37,7 +37,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
   For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
   :::
 * **[Disabled allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/) for login and APIs**. During the installation/upgrade of the AWSO solution, the allowlist for login and APIs must remain disabled because the solution creates Lambda functions that uses AWS-managed public network infrastructure. When this Lambda makes outbound calls (such as to Sumo Logic APIs), the traffic is routed through AWS public IP address ranges, which are dynamic and cannot be fixed or predicted.
-* The AWS Observability solution comes with [pre-packaged alerts](/docs/observability/aws/deploy-use-aws-observability/v215/configure-alerts/) in the form of Sumo Logic Monitors. To understand more about their capabilities, please visit the [Monitors page](/docs/alerts/monitors/).
+* The AWS Observability solution comes with [pre-packaged alerts](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/configure-alerts/) in the form of Sumo Logic Monitors. To understand more about their capabilities, please visit the [Monitors page](/docs/alerts/monitors/).
 * **AWS credentials**. To deploy the solution, you will need to log onto the AWS Console. For the CloudFormation template deployment option, your AWS role must have the permissions described by this [JSON file](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/AWSObservabilityCFTemplatePermissions.json). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). For Terraform deployment options, see the \*.tmpl files in this folder [aws-observability-terraform/source-module/templates/](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform/source-module/templates).
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and configure the AWS CLI as described in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) if you would like to use an AWS profile for Terraform script based deployment.
 * For AWS services exporting to CloudWatch Logs, make sure logs are exported to log groups:
@@ -52,11 +52,11 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 You can deploy AWS Observability to a single AWS account and region, or to all of your accounts in all regions. We provide instructions for both alternatives. 
 
-Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v215) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment. 
+Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v2.15.0) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment. 
 
 You have two options for deploying:
 
-* Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/v215/deploy-with-aws-cloudformation)
+* Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation)
 * Deploy using a [Terraform Script](deploy-with-terraform.md)
 
 The Sumo Logic AWS Observability solution supports the following AWS regions:
