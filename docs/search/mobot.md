@@ -2,14 +2,14 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-description: Ask questions in plain English to analyze logs or get platform guidance from Mobot, Sumo Logic's AI assistant with a single conversational interface.
+description: Troubleshoot logs without writing search queries, learn the platform, and take action, all using plain-language questions with Mobot, Sumo Logic's AI assistant.
 keywords:
   - mobot
-  - ai assistant
-  - artificial intelligence
-  - log analysis
-  - unstructured logs
   - dojo ai
+  - ai assistant
+  - log analysis
+  - log troubleshooting
+  - unstructured logs
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
