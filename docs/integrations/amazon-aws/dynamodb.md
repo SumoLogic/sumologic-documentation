@@ -170,6 +170,10 @@ As part of the app installation process, the following **content** will be creat
 
 The FER **AwsObservabilityDynamoDBCloudTrailLogsFER** to extract fields `region`, `namespace`, `tablename`, and `accountid` will be created as a part of app installation.
 
+:::note
+As a best practice, **do not delete or modify** any fields, Field Extraction Rules (FERs), or Metric Rules created during the app installation. If you need to make updates, please contact the **Sumo Logic Support** team.
+:::
+
 ## Viewing Amazon DynamoDB dashboards
 
 The Sumo Logic AWS Observability DynamoDB Dashboards for AWS DynamoDB provides operational insights into DynamoDB instances. Preconfigured dashboards allow you to monitor key metrics and view the throttle events, errors, and latency. They also help you plan DynamoDB instances' capacity in your environment.

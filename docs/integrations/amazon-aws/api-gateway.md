@@ -550,6 +550,10 @@ The FER **AwsObservabilityAPIGatewayCloudWatchLogsFER** to extract fields `names
 
 The Metric Rule **AwsObservabilityAPIGatewayMetricsRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
 
+:::note
+As a best practice, **do not delete or modify** any fields, Field Extraction Rules (FERs), or Metric Rules created during the app installation. If you need to make updates, please contact the **Sumo Logic Support** team.
+:::
+
 ## Viewing AWS API Gateway dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';
