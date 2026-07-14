@@ -133,7 +133,7 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 
 1. **Actions.** The [insight actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
 1. **Close Insight.** Use this option to close an insight. When you click this option, you’re prompted to select an insight resolution.
-1. **Comments.** Displays any comments that have been made on the insight, and a field for adding a comment.
+1. **Comments.** Shows any comments made on the insight, plus a rich text editor for adding new ones.
 1. **History.** Displays the insight's history, including status and assignment changes.
 1. **Delete Icon.** Use this option to delete an insight. You’ll be prompted to confirm your choice.
 1. **Severity.** Severity of the insight. Mouse over it to see an icon you can click to change the insight severity.
