@@ -153,17 +153,14 @@ After v3.0.0 deploys successfully, update each existing Sumo Logic source with t
 
 1. Go to **AWS Console > CloudFormation > Stacks** and select your new v3.0.0 stack.
 2. In the **Resources** tab, find the nested stack named `CreateCommonResources` and click on it.
-3. In the `CreateCommonResources` stack, go to the **Resources** tab and search for `SumoLogicSourceRole`.
-4. Note the **Physical ID** — this is the role name. The full ARN is: `arn:aws:iam::<account_id>:role/<physical_id>`.
 
 <img src={useBaseUrl('img/observability/migration-arn-cfn-stack-resources.png')} alt="CloudFormation main stack Resources tab with CreateCommonResources highlighted" />
 
-3. In the `CreateCommonResources` stack, go to the **Resources** tab and search for `SumoLogicSourceRole`.
-4. Click the **Physical ID** link to open the IAM role.
+3. In the `CreateCommonResources` stack, go to the **Resources** tab and search for `SumoLogicSourceRole`. Click the **Physical ID** link to open the IAM role.
 
 <img src={useBaseUrl('img/observability/migration-arn-common-resources-role.png')} alt="CreateCommonResources stack Resources tab with SumoLogicSourceRole highlighted" />
 
-5. On the IAM role page, copy the **ARN** shown in the Summary section.
+4. On the IAM role page, copy the **ARN** shown in the Summary section.
 
 <img src={useBaseUrl('img/observability/migration-arn-iam-role-summary.png')} alt="IAM role summary page with ARN highlighted" />
 
