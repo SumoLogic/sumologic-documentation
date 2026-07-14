@@ -315,8 +315,7 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 
 Sumo Logic supports collecting metrics using one of the following source types:
 
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
-* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
+* This app uses **aws/ecs** and **ecs/containerinstance** namespaces. Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) to collect metrics for both namespaces.
 
    :::note
    Namespace for **Amazon ECS** service is **AWS/ECS**.<br />
