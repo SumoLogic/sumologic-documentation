@@ -79,7 +79,7 @@ jobs:
           while IFS= read -r -d '' file; do
             FILES+=("$file")
           done < <(
-            git diff --name-only -z origin/main...HEAD |
+            git diff --name-only --diff-filter=d -z origin/main...HEAD |
             grep -zE '\.mdx?$' || true
           )
           if [ "${#FILES[@]}" -eq 0 ]; then
