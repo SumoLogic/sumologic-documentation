@@ -6,6 +6,9 @@ description: Compare the features of Cloud SOAR with the Automation Service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarEndOfSale from '../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 Cloud SOAR is a full-featured security orchestration, automation, and response (SOAR) application. The [Automation Service](/docs/platform-services/automation-service/about-automation-service/) is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. 
 
