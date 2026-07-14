@@ -74,11 +74,11 @@ and instructions. 
 
 ### How do you set up AWS services for monitoring?
 
-You set up your AWS services using a AWS CloudFormation template (CFN) that is run in your AWS account. When run, resources are generated in Sumo Logic to collect logs and metrics. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) for prerequisites, requirements, and instructions to use the CFN.
+You set up your AWS services using a AWS CloudFormation template (CFN) that is run in your AWS account. When run, resources are generated in Sumo Logic to collect logs and metrics. See [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/before-you-deploy) for prerequisites, requirements, and instructions to use the CFN.
 
 ### Can I deploy with CloudFormation?
 
-Yes, you can deploy with CloudFormation template. See [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) for information. 
+Yes, you can deploy with CloudFormation template. See [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/) for information. 
 
 If you have already set up the solution with Terraform and want to move
 to CloudFormation, we recommend that you:
@@ -89,7 +89,7 @@ to CloudFormation, we recommend that you:
 
 ### Can I deploy with Terraform?
 
-Yes, you can deploy using a Terraform script. See [Deploy with Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) for detailed instructions, options, and a GitHub repository of files to use in your deployment script.
+Yes, you can deploy using a Terraform script. See [Deploy with Terraform](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-terraform) for detailed instructions, options, and a GitHub repository of files to use in your deployment script.
 
 If you have already set up the solution with CloudFormation in the past
 and want to move to Terraform, we recommend that you:
@@ -100,7 +100,7 @@ and want to move to Terraform, we recommend that you:
 
 ### What resources are generated during set up?
 
-See [AWS Observability Resources](/docs/observability/aws/deploy-use-aws-observability/resources) for a complete list of resources the CloudFormation (CFN) template and Terraform Script creates at deployment in AWS and in Sumo Logic. 
+See [AWS Observability Resources](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/resources) for a complete list of resources the CloudFormation (CFN) template and Terraform Script creates at deployment in AWS and in Sumo Logic. 
 
 ### Why are Field Extraction Rules and Metrics Rules created as part of the installation scripts?
 
@@ -112,12 +112,12 @@ As of our current release, Fields and FERs will be imported into Terraform. You 
 
 Renaming an existing FER has no effect on FER usage.
 
-See [AWS Observability Resources](/docs/observability/aws/deploy-use-aws-observability/resources)
+See [AWS Observability Resources](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/resources)
 for the list of Field Extraction Rules in the resources.
 
 ### How do you keep track of changes and make feature updates?
 
-Sumo Logic provides updates to the AWS Observability Solution through CloudFormation and Terraform. See the [changelog](/docs/observability/aws/deploy-use-aws-observability/changelog) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](/docs/observability/aws/deploy-use-aws-observability/update-aws-observability-stack).
+Sumo Logic provides updates to the AWS Observability Solution through CloudFormation and Terraform. See the [changelog](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/changelog) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/update-aws-observability-stack).
 
 ### What are options to monitor EC2 Host Metrics?
 
@@ -159,7 +159,7 @@ Host metrics use a different format than CloudWatch. They can also refer to non-
 AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and
 only shows entities with metrics coming in. If you do not see expected
 entities, make sure configurations are correct to collect and receive
-metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation)
+metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation)
 for CloudFormation Template. You can configure metadata through
 deployment configuration or manually.
 
