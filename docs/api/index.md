@@ -32,7 +32,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box-wrapper" markdown="1">
 <div className="box boxwidetop card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/mcp-server')}><img src={useBaseUrl('img/search/mobot/mobot-head-ai.png')} alt="Mobot head icon" width="75"/><h4>Sumo Logic MCP Server ✨</h4></a>
+  <a href={useBaseUrl('docs/api/mcp-server')}><img src={useBaseUrl('img/search/mobot/mobot-welcome.png')} alt="Mobot head icon" width="75"/><h4>Sumo Logic MCP Server ✨</h4></a>
   <p>Connect AI tools to Sumo Logic via MCP to query logs, manage alerts and dashboards, and investigate security incidents using natural language.</p>
   </div>
 </div></div>
