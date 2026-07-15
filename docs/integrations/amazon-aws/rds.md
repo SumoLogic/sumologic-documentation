@@ -511,6 +511,10 @@ The FER **AwsObservabilityRDSCloudWatchLogsFER** to extract fields `namespace`, 
 
 The Metric Rules **AwsObservabilityRDSClusterMetricsRule** and **AwsObservabilityRDSInstanceMetricsRule** for the aws/rds namespace will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing the RDS dashboards  
 
 We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
