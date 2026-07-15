@@ -280,7 +280,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 See the overview of GuardDuty threats including the severity, threat purpose, resource type, threat name, account ID, and region.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_GuardDuty-Overview2.png')} alt="Amazon GuardDuty dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-GuardDuty-Overview.png')} alt="Amazon GuardDuty dashboards" />
 
 **GuardDuty Threat Map**. See the count of threats on a world map in the last 24 hours.
 
@@ -302,7 +302,7 @@ See the overview of GuardDuty threats including the severity, threat purpose, re
 
 See the details of GuardDuty CloudTrail threats including the count, title, the trend, and action type.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/CloudTrailDetails.png')} alt="Amazon GuardDuty dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-GuardDuty-CloudTrail-Details.png')} alt="Amazon GuardDuty dashboards" />
 
 **CloudTrail Threats.** See the count of CloudTrail threats in the last 24 hours.
 
@@ -318,7 +318,7 @@ See the details of GuardDuty CloudTrail threats including the count, title, the 
 
 See the GuardDuty threat details including the count, account-region trend, threat purpose, severity, resource type, and security group.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-GD-Details.png')} alt="Amazon GuardDuty dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-GuardDuty-Details.png')} alt="Amazon GuardDuty dashboards" />
 
 **Outliers - All Threats**. See the outliers in all threats in the last 24 hours on a line chart.
 
@@ -338,7 +338,7 @@ See the GuardDuty threat details including the count, account-region trend, thre
 
 See the details of GuardDuty threats by VPC, security group, and subnet ID.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/VPCsSubnetsSecurityGroupDetails.png')} alt="Amazon GuardDuty dashboards" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-GuardDuty-VPCs-Subnets-Security-Group-Details.png')} alt="Amazon GuardDuty dashboards" />
 
 **Threat Type by VPC**. See the count of threat type by VPC in the last 24 hours displayed on a bar chart.
 
@@ -347,3 +347,30 @@ See the details of GuardDuty threats by VPC, security group, and subnet ID.
 **Severity Count by SubnetID**. See the count of severity in the last 24 hours by Subnet ID on a bar chart.
 
 **VPC, Subnet, and Security Group Threat Table.**  See the details of severity in the last 24 hours including the account ID, severity, region, VPC ID, Subnet ID,  security group name and ID,  threat purpose, resource type, threat name, and count, displayed in a table.
+
+## Create monitors for Amazon GuardDuty app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Amazon GuardDuty alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Amazon GuardDuty - High Severity Threat Detected` | This alert is triggered when a high severity GuardDuty threat is detected. | Count > 0 | Count < = 0 |
+| `Amazon GuardDuty - CloudTrail Threat Detected` | This alert is triggered when a GuardDuty threat related to CloudTrail activity is detected. | Count > 0 | Count < = 0 |
+| `Amazon GuardDuty - IAMUser Threat Detected` | This alert is triggered when a GuardDuty threat targeting an IAM user resource is detected. | Count > 0 | Count < = 0 |
+| `Amazon GuardDuty - EC2 Instance Threat Burst` | This alert is triggered when a burst of GuardDuty threats targeting EC2 instances is detected. | Count > 5 | Count < = 5 |
+
+## Upgrade/Downgrade the Amazon GuardDuty app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon GuardDuty app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
