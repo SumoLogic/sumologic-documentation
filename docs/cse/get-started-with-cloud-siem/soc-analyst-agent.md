@@ -104,17 +104,6 @@ To generate dashboards based on the context of your investigation, simply ask Mo
 
 Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
-### Add a comment to an insight
-
-You can ask Mobot to add a comment to the insight you're working on. Comments are visible to all analysts with access to the insight and can be used to document findings, note investigation status, or flag items for follow-up.
-
-1. In the **Ask Something...** field, enter a prompt such as `Add a comment that I found a suspicious IP address` or `Add a comment saying I'm looking into this` and press **Enter**.
-1. Mobot posts the comment to the insight's **Comments** section.<br/><img src={useBaseUrl('img/cse/soc-analyst-comments-panel.png')} alt="Adding a comment to an insight via Mobot" style={{border: '1px solid gray'}} width="800" />
-
-### Close an insight
-
-You can also ask Mobot to close the current insight. In the **Ask Something...** field, enter a prompt such as `Close this insight` or `Mark this insight as resolved` and press **Enter**. Mobot closes the insight directly from the investigation area.
-
 ### Start a new investigation
 
 To start a new investigation, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**. To clear your current session instead, see [New conversation](/docs/search/mobot/#new-conversation).
@@ -141,7 +130,7 @@ Unlike traditional correlation logic, which is static, the SOC Analyst agent app
 
 ### What data does the agent rely on to render verdicts?
 
-The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic’s integrated threat intelligence feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details).
+The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic and customer-provided [threat intelligence](/docs/security/threat-intelligence) feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details).
 
 ### Can analysts provide feedback or correct AI verdicts?
 
