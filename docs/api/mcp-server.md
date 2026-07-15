@@ -237,7 +237,7 @@ A skill gives an AI agent standing instructions and workflow context that persis
 
 Claude Code can invoke a skill in two ways:
 * **Automatically**. Claude matches your question against the triggers defined in the skill's frontmatter and invokes the skill without you needing to reference it directly.
-* **Explicitly**. Type a slash command that matches the skill's folder name, for example, `/sumo-log-investigator`.
+* **Explicitly**. Type a slash command that matches the skill's folder name, for example, `/sumo-investigator`.
 
 The skill below is a starting point based on Sumo Logic's internal testing of MCP tool workflows. Treat it as a foundation you can customize for your environment, or use as a model for additional skills of your own.
 
@@ -247,12 +247,12 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
 ### Set up the skill in Claude Code
 
-1. Create a folder named `sumo-log-investigator` in your skills directory: `.claude/skills/sumo-log-investigator/` for a project-specific skill available only in the current directory, or `~/.claude/skills/sumo-log-investigator/` to make it available across all projects.
+1. Create a folder named `sumo-investigator` in your skills directory: `.claude/skills/sumo-investigator/` for a project-specific skill available only in the current directory, or `~/.claude/skills/sumo-investigator/` to make it available across all projects.
 1. In that folder, create a file named `SKILL.md` with the following content:
 
    ````markdown
    ---
-   name: sumo-log-investigator
+   name: sumo-investigator
    description: Senior Sumo Logic log investigation agent that answers natural language operational questions using log query evidence via the Sumo Logic MCP gateway tools
    allowed-tools: runLogSearch listPartitions listCustomFields listExtractionRules alertsSearch alertsReadById getDashboard listDashboards getInsights getInsight getAllInsights updateInsightAssignee updateInsightStatus getRules getRule createTemplatedMatchRule createThresholdRule createDashboard updateDashboard
    triggers:
@@ -513,7 +513,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    ````
 
 1. If this is the first skill you've added, restart Claude Code so it picks up the new skills directory. Otherwise, run `/mcp` to confirm the Sumo Logic MCP server is still connected.
-1. Invoke the skill automatically by asking an investigation question, or explicitly with `/sumo-log-investigator`.
+1. Invoke the skill automatically by asking an investigation question, or explicitly with `/sumo-investigator`.
 
 For more information about configuring, managing, and distributing skills, see [Extend Claude with skills](https://code.claude.com/docs/en/skills) in the Claude Code documentation.
 
