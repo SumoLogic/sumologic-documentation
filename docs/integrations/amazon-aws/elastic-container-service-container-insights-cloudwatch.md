@@ -445,6 +445,10 @@ The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `na
 
 The FER **AwsObservabilityECSPerformanceEventsFER**, which extracts fields from Container Insights Performance Event Logs for Tasks and Containers, will be created as part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing the Amazon ECS app dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
