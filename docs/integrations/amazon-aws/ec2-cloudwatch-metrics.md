@@ -205,6 +205,10 @@ As part of the app installation process, the following **content** will be creat
 
 The FER **AwsObservabilityEC2CloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `instanceid` will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing AWS EC2 dashboards
 
 ### Overview (CloudWatch Metrics)
