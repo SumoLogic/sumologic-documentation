@@ -51,6 +51,7 @@ Access requires a signed AI addendum, since Mobot uses AI to make inferences on 
 1. **Open Mobot**. Open Mobot from one of the following places:
    - **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="650" />
    - **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="650" />
+   - **Cloud SIEM insight** (requires Cloud SIEM). From an insight's **Details** page, click **Ask Mobot** to continue an AI-driven investigation in Mobot with that insight's context already loaded. See [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#investigate-the-insight-in-mobot).
 1. **Ask a question**. Type your question in the **Ask Something** field and press Enter or click the send button.<br/><img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="600" />
 
 You can ask something about your log data (for example, `Show me logs from last 15 minutes`) or a how-to question (for example, `How do I set up an OTel Collector?`). See [How Mobot responds](#how-mobot-responds) for what happens next, or jump to [Example workflows](#example-workflows) to see it in action.
@@ -424,6 +425,7 @@ Mobot continues to evolve. Current limitations include:
 **Access and actions**
 * Read-only. Mobot can query and analyze data but cannot modify, delete, or ingest data.
 * Cannot create or manage dashboards, monitors, or scheduled searches.
+<!-- TODO: monitor creation is on pause (see https://github.com/SumoLogic/sumologic-documentation/pull/6871). Once it's live, update this limitation and document the new functionality/agent here. -->
 * No access to external systems (for example, CRM, databases, APIs, PagerDuty, Jira, or Splunk).
 
 **Data and query constraints**
@@ -463,6 +465,13 @@ Mobot is an AI-powered conversational assistant integrated into the Sumo Logic L
 ### Do I need to select an agent or mode?
 
 No. Mobot determines whether your prompt is a log data question or a how-to question and responds accordingly. You interact with a single conversational interface.
+
+### What happened to Query Agent and Knowledge Agent?
+
+They're still here, working behind the scenes, but renamed and repositioned as their capabilities have evolved. As with the original agents, you don't select between them; Mobot routes your prompt to the right one automatically.
+
+* **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
+* **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
 
 ### Can Mobot detect what sources or integrations I don't have set up?
 
