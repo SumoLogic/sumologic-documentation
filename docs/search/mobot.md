@@ -244,9 +244,14 @@ To start a fresh session, click **New Conversation** in the top right. This clea
 
 ### Share conversation
 
-You can share a specific conversation by copying the conversation URL from the interface. This can be useful for reporting issues or sharing examples with your team.
+You can share a specific conversation with other users, which can be useful for reporting issues or sharing examples with your team.
 
-<img src={useBaseUrl('img/search/mobot/share-conversation.png')} alt="Share Conversation button in top right of Mobot interface" style={{border: '1px solid gray'}} width="300" />
+1. Click the **Share** icon.<br/><img src={useBaseUrl('img/search/mobot/share-conversation.png')} alt="Share Conversation button in top right of Mobot interface" style={{border: '1px solid gray'}} width="300" />
+1. In the **Share Conversation** dialog:<br/><img src={useBaseUrl('img/search/mobot/share-conversation-dialog.png')} alt="Share Conversation dialog" style={{border: '1px solid gray'}} width="800" />
+   * **Share with specific users and roles**. Enter names, roles, or your entire organization in **Add people or roles...** to grant them access to the conversation.
+   * **See who has access**. Expand to view a list of everyone who currently has access to the conversation.
+   * **Get sharable URL**. Copy a URL that opens the conversation for anyone with access.
+1. Click **Done**.
 
 ## Tips for better results
 
