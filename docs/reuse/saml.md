@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can create multiple SAML configurations in Sumo Logic. To create an additional SAML configuration, click the plus (**+**) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
+You can create multiple SAML configurations in Sumo Logic. To create an additional SAML configuration, click the plus (**+ Add Configuration**) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
 
 <img src={useBaseUrl('img/security/saml-config-list.png')} alt="Plus button on the Configuration List page" style={{border: '1px solid gray'}} width="500" />
 
