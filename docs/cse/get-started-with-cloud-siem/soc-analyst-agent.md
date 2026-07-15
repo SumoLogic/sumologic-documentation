@@ -88,6 +88,7 @@ Click **Search related insights?** when it appears as a suggested action in Mobo
 
 Select a dimension to proceed, or enter your own search criteria.
 
+<!-- TODO: once #6897 merges, replace this section with a link to Mobot's Example Prompts (Security analyst) section -->
 ### Example questions
 
 Following are example questions you could try in the **Ask Something...** field:
