@@ -262,7 +262,7 @@ In this step, you deploy the events processor. This will create the AWS resource
     * `SOURCE_NAME_OVERRIDE` (optional). Override `_sourceName` value configured for the HTTP source.
 
 
-## Installing the Amazon GuardDuty App
+## Installing the Amazon GuardDuty app
 
 Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
