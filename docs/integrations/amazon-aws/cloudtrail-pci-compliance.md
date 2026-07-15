@@ -10,6 +10,48 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Payment Card Industry (PCI) Compliance for AWS CloudTrail app offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for AWS CloudTrail app covers PCI requirements 02, 07, 08 and 10.
 
+## Sample log messages
+
+```json
+{
+   "eventVersion":"1.01",
+   "userIdentity":{
+      "type":"IAMUser",
+      "principalId":"AIDAJ6IGVQ4XQZQDAYEOA",
+      "arn":"arn:aws:iam::956882708938:user/Olaf",
+      "accountId":"956882708938",
+      "userName":"system"
+   },
+   "eventTime":"2017-09-27T20:00:10Z",
+   "eventSource":"signin.amazonaws.com",
+   "eventName":"ConsoleLogin",
+   "awsRegion":"us-east-1",
+   "sourceIPAddress":"65.98.119.36",
+   "userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36",
+   "requestParameters":null,
+   "responseElements":{
+      "ConsoleLogin":"Failure"
+   },
+   "additionalEventData":{
+      "MobileVersion":"No",
+      "LoginTo":"https://console.aws.amazon.com/console/home",
+      "MFAUsed":"No"
+   },
+   "eventID":"f36c1d07-73cf-4ab8-84b1-04c93ac2aaeb"
+}
+```
+
+## Sample queries
+
+```sumo title="Console Login Failures"
+_sourceCategory=AWS/CloudTrail ConsoleLogin AwsConsoleSignIn Failure
+| json field=_raw "userIdentity.accountId", "awsRegion", "eventName", "eventType", "sourceIPAddress", "responseElements.ConsoleLogin", "additionalEventData.MFAUsed" as accountId, aws_region, event_name, event_type, src_ip, loginResult, mfaUsed nodrop
+| parse regex "\"(?i)userName\":\"(?<user_name>.*?)\"" nodrop
+| parse "\"userId\":\"*\"" as user_id nodrop
+| if (user_name="", user_id, user_name) as user
+| where event_name="ConsoleLogin" and event_type="AwsConsoleSignIn" and loginResult="Failure"
+| count by user, accountId, src_ip
+```
 
 ## Collecting logs for the PCI Compliance for AWS CloudTrail app
 
@@ -113,3 +155,33 @@ See the successful and failed configuration changes, policy changes, and securit
 #### Policy Operations
 * **Failed Policy Changes**. See the details of failed policy changes, in the last 24 hours, including the event time, event name, event source, policy name, user, account ID, AWS region, source IP address, error code, and error message.
 * **Successful Policy Changes**. See the details of successful policy changes, in the last 24 hours, including the event time, event name, event source, policy name, user, account ID, AWS region, and source IP address.
+
+## Create monitors for PCI Compliance for AWS CloudTrail app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### PCI Compliance For AWS CloudTrail alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `PCI Compliance For AWS CloudTrail - Security Group Ingress or Egress Rule Modified` | This alert fires when a security group ingress or egress rule is modified (authorized or revoked). Unauthorized changes to security group rules can expose the cardholder data environment to untrusted networks. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - IAM Policy Changed` | This alert fires when an IAM policy is created, updated, or deleted. Policy changes can grant excessive permissions or remove access controls protecting the cardholder data environment. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - Console Login Without MFA` | This alert fires when a successful AWS Console login is detected without multi-factor authentication (MFA). MFA is required for all administrative access under PCI DSS requirement 8.3. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - Excessive Failed API Calls` | This alert fires when more than 5 failed API calls are detected in 5 minutes with error codes indicating authentication or authorization failures (AccessDenied, Client.UnauthorizedOperation). This pattern indicates privilege escalation attempts or compromised credentials probing permission boundaries. | Count > 5 | Count < = 5 |
+| `PCI Compliance For AWS CloudTrail - Console Login Failures` | This alert fires when more than 5 failed AWS Console login attempts are detected in 5 minutes. A burst of console login failures from a single IP indicates brute-force, while failures from multiple IPs indicate credential stuffing attacks. | Count > 5 | Count < = 5 |
+| `PCI Compliance For AWS CloudTrail - Root Account Login` | This alert fires when a successful AWS root account console login is detected. Root bypasses all IAM controls and should never be used in normal operations. Any successful root login requires immediate investigation. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - Root Account Login Failure` | This alert fires when a failed AWS root account console login attempt is detected. Any attempt to log in as root is extremely suspicious and warrants immediate investigation. | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the PCI Compliance for AWS CloudTrail app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the PCI Compliance for AWS CloudTrail app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
