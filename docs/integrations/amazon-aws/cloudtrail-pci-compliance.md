@@ -162,17 +162,17 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### PCI Compliance For AWS CloudTrail alerts
+### PCI Compliance for AWS CloudTrail alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `PCI Compliance For AWS CloudTrail - Security Group Ingress or Egress Rule Modified` | This alert fires when a security group ingress or egress rule is modified (authorized or revoked). Unauthorized changes to security group rules can expose the cardholder data environment to untrusted networks. | Count > 0 | Count < = 0 |
-| `PCI Compliance For AWS CloudTrail - IAM Policy Changed` | This alert fires when an IAM policy is created, updated, or deleted. Policy changes can grant excessive permissions or remove access controls protecting the cardholder data environment. | Count > 0 | Count < = 0 |
-| `PCI Compliance For AWS CloudTrail - Console Login Without MFA` | This alert fires when a successful AWS Console login is detected without multi-factor authentication (MFA). MFA is required for all administrative access under PCI DSS requirement 8.3. | Count > 0 | Count < = 0 |
-| `PCI Compliance For AWS CloudTrail - Excessive Failed API Calls` | This alert fires when more than 5 failed API calls are detected in 5 minutes with error codes indicating authentication or authorization failures (AccessDenied, Client.UnauthorizedOperation). This pattern indicates privilege escalation attempts or compromised credentials probing permission boundaries. | Count > 5 | Count < = 5 |
-| `PCI Compliance For AWS CloudTrail - Console Login Failures` | This alert fires when more than 5 failed AWS Console login attempts are detected in 5 minutes. A burst of console login failures from a single IP indicates brute-force, while failures from multiple IPs indicate credential stuffing attacks. | Count > 5 | Count < = 5 |
-| `PCI Compliance For AWS CloudTrail - Root Account Login` | This alert fires when a successful AWS root account console login is detected. Root bypasses all IAM controls and should never be used in normal operations. Any successful root login requires immediate investigation. | Count > 0 | Count < = 0 |
-| `PCI Compliance For AWS CloudTrail - Root Account Login Failure` | This alert fires when a failed AWS root account console login attempt is detected. Any attempt to log in as root is extremely suspicious and warrants immediate investigation. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - Security Group Ingress or Egress Rule Modified` | This alert is triggered when a security group ingress or egress rule is modified (authorized or revoked). Unauthorized changes to security group rules can expose the cardholder data environment to untrusted networks. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - IAM Policy Changed` | This alert is triggered when an IAM policy is created, updated, or deleted. Policy changes can grant excessive permissions or remove access controls protecting the cardholder data environment. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - Console Login Without MFA` | This alert is triggered when a successful AWS Console login is detected without multi-factor authentication (MFA). MFA is required for all administrative access under PCI DSS requirement 8.3. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - Excessive Failed API Calls` | This alert is triggered when more than 5 failed API calls are detected in 5 minutes with error codes indicating authentication or authorization failures (AccessDenied, Client.UnauthorizedOperation). This pattern indicates privilege escalation attempts or compromised credentials probing permission boundaries. | Count > 5 | Count < = 5 |
+| `PCI Compliance For AWS CloudTrail - Console Login Failures` | This alert is triggered when more than 5 failed AWS Console login attempts are detected in 5 minutes. A burst of console login failures from a single IP indicates brute-force, while failures from multiple IPs indicate credential stuffing attacks. | Count > 5 | Count < = 5 |
+| `PCI Compliance For AWS CloudTrail - Root Account Login` | This alert is triggered when a successful AWS root account console login is detected. Root bypasses all IAM controls and should never be used in normal operations. Any successful root login requires immediate investigation. | Count > 0 | Count < = 0 |
+| `PCI Compliance For AWS CloudTrail - Root Account Login Failure` | This alert is triggered when a failed AWS root account console login attempt is detected. Any attempt to log in as root is extremely suspicious and warrants immediate investigation. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the PCI Compliance for AWS CloudTrail app (Optional)
 
