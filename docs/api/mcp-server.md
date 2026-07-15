@@ -616,6 +616,10 @@ MCP endpoints are cost-amplifying by design. A single conversational request can
 
 MCP is designed for conversational, agent-level interaction where cost per request is understood and monitored. For raw data access or high-volume operations, standard APIs remain more efficient and cost-effective.
 
+:::note
+If you're on [Flex pricing](/docs/manage/partitions/flex), cost-amplifying patterns in log search tool calls — broad queries, multi-step investigations, retries — translate directly into scan costs. Monitor usage closely when connecting MCP clients to a Flex account.
+:::
+
 For detailed guidance on securing MCP against cost-based attacks, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
 
 ## Security and data governance
