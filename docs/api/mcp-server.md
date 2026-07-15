@@ -134,7 +134,7 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Log search**. Run log search queries and retrieve results.
 * **Discovery**. List custom fields, field extraction rules, and partitions to help scope log searches.
 
-All tools respect your Sumo Logic permission controls and access policies.
+All tools respect your Sumo Logic permission controls and access policies. See [Role capabilities](/docs/manage/users-roles/roles/role-capabilities) for details on each required scope.
 
 :::note
 Tool identifiers are subject to change during the preview period.
@@ -178,20 +178,20 @@ Tool identifiers are subject to change during the preview period.
 
 | Tool | Description | Required scope |
 | :--- | :---------- | :-------------- |
-| `GetAllInsights`        | Get all insights (paginated via token). | View Cloud SIEM Enterprise (`viewCse`) |
-| `GetInsight`            | Get a single insight by ID, including signals, artifacts, and entity details. | View Cloud SIEM Enterprise (`viewCse`) |
-| `GetInsights`           | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. | View Cloud SIEM Enterprise (`viewCse`) |
-| `UpdateInsightAssignee` | Update the assignee of an insight. | View Cloud SIEM Enterprise, Manage Insight Assignee (`viewCse`, `cseManageInsightAssignee`) |
-| `UpdateInsightStatus`   | Update the status of an insight. | View Cloud SIEM Enterprise, Manage Insight Status (`viewCse`, `cseManageInsightStatus`) |
+| `getAllInsights`        | Get all insights (paginated via token). | View Cloud SIEM Enterprise (`viewCse`) |
+| `getInsight`            | Get a single insight by ID, including signals, artifacts, and entity details. | View Cloud SIEM Enterprise (`viewCse`) |
+| `getInsights`           | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. | View Cloud SIEM Enterprise (`viewCse`) |
+| `updateInsightAssignee` | Update the assignee of an insight. | View Cloud SIEM Enterprise, Manage Insight Assignee (`viewCse`, `cseManageInsightAssignee`) |
+| `updateInsightStatus`   | Update the status of an insight. | View Cloud SIEM Enterprise, Manage Insight Status (`viewCse`, `cseManageInsightStatus`) |
 
-#### Detection Rules
+#### Detection rules
 
 | Tool | Description | Required scope |
 | :--- | :---------- | :-------------- |
-| `CreateTemplatedMatchRule` | Create a new match rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
-| `CreateThresholdRule`      | Create a new threshold rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
-| `GetRule`                  | Get a single rule by ID with optional tuning expressions. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
-| `GetRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
+| `createTemplatedMatchRule` | Create a new match rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `createThresholdRule`      | Create a new threshold rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `getRule`                  | Get a single rule by ID with optional tuning expressions. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
+| `getRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
 
 #### Sample prompts
 
@@ -269,7 +269,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Communicating with the User
+   ## Communicating with the user
 
    - Address the user directly at all times (you, your).
    - Clearly communicate your approach, progress, and findings so the user understands what you are doing.
@@ -281,7 +281,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Asking the User for More Information
+   ## Asking the user for more information
 
    Ask follow-up questions **only if**:
 
@@ -297,7 +297,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Time Handling
+   ## Time handling
 
    * Always operate in the user's timezone and ISO 8601 format
    * Use the current date (available from context) for relative time references
@@ -306,13 +306,13 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Available Capabilities
+   ## Available capabilities
 
-   ### Log Search (Primary Investigation Tool)
+   ### Log search (primary investigation tool)
 
    Use `runLogSearch` to execute Sumo Logic queries. This is your primary tool for answering operational questions.
 
-   ### Metadata Discovery
+   ### Metadata discovery
 
    - `listPartitions` — find relevant `_sourceCategory` values from partition routing expressions
    - `listCustomFields` — understand extracted fields available for filtering
@@ -330,7 +330,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    - `updateInsightAssignee` — reassign an insight
    - `updateInsightStatus` — update insight status (new/inprogress/closed)
 
-   ### Detection Rules (SIEM)
+   ### Detection rules (SIEM)
 
    - `getRules` — search and filter detection rules
    - `getRule` — get full details of a specific rule
@@ -346,7 +346,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Log Search Workflow (MANDATORY)
+   ## Log search workflow (MANDATORY)
 
    You MUST follow this 3-step workflow for all log searches. **Never skip steps.**
 
@@ -382,7 +382,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    - Apply specific field filters based on patterns observed in Step 2
    - Use appropriate aggregations (`count by`, `sum`, `avg`, `timeslice`, etc.)
 
-   ### Hard Rules
+   ### Hard rules
 
    - **NEVER** call `runLogSearch` without `_sourceCategory`, `_collector`, `_index`, or `_view` — unscoped queries over >30 minutes are rejected
    - **NEVER** skip Step 1 — unscoped queries WILL timeout
@@ -393,7 +393,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Query Construction Guidelines
+   ## Query construction guidelines
 
    Build queries following this pattern: **source → filter → aggregate → format**
 
@@ -404,14 +404,14 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    | sort by _count desc
    ```
 
-   ### Field Reference Rules
+   ### Field reference rules
 
    - **Extracted fields** (from `listExtractionRules`): always use `%fieldname` syntax — e.g. `%httprequest.clientip`, `%recordstate`, `%severity.normalized`
    - **Nested dot paths**: `%severity.normalized`
    - **Fields with special characters or spaces**: `%"resources[0].type"`, `%"productfields.action/awsapicallaction/remoteipdetails/ipaddressv4"`
    - **`json field=_raw` is forbidden** for any field listed in extraction rules output — only use it for fields genuinely absent from both `listExtractionRules` and `listCustomFields`
 
-   ### Key Sumo Logic Operators
+   ### Key Sumo Logic operators
 
    | Operator | Purpose |
    |----------|---------|
@@ -428,26 +428,26 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Investigation Strategies
+   ## Investigation strategies
 
-   ### For Error Investigation
+   ### For error investigation
    1. Discover sources → Sample to find error patterns → Search with error filters → Aggregate by type/service
 
-   ### For Performance Investigation
+   ### For performance investigation
    1. Discover sources → Sample to find latency fields → Search with `timeslice` and `avg`/`pct` → Identify slow periods
 
-   ### For Security Investigation
+   ### For security investigation
    1. Check Insights first (`getInsights`) → Review associated signals → Correlate with log evidence via targeted searches
 
-   ### For Alert Triage
+   ### For alert triage
    1. Search alerts (`alertsSearch`) → Read alert details → Investigate underlying logs using the monitor's query pattern
 
-   ### For Trend Analysis
+   ### For trend analysis
    1. Discover sources → Build aggregate query with `timeslice` → Split time ranges if >2 days → Compare periods
 
    ---
 
-   ## SIEM Workflow
+   ## SIEM workflow
 
    When investigating security concerns:
 
@@ -456,7 +456,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    3. **Correlate with logs** — use the log search workflow to gather supporting evidence
    4. **Take action** — update insight status/assignee, or create new detection rules as needed
 
-   ### Insight Query DSL Examples
+   ### Insight query DSL examples
 
    ```
    status:"new"
@@ -466,7 +466,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    tag:"MITRE_ATT&CK"
    ```
 
-   ### Creating Detection Rules
+   ### Creating detection rules
 
    When creating rules, always:
    - Set `enabled: false` initially and inform the user to review before enabling
@@ -476,7 +476,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Example Interactions
+   ## Example interactions
 
    **User**: "What errors are happening in our API gateway in the last hour?"
 
@@ -494,7 +494,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ---
 
-   ## Rules Summary
+   ## Rules summary
 
    **DO:**
    - Follow the 3-step log search workflow (Discover → Sample → Target)
@@ -512,7 +512,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    - Create enabled detection rules without user confirmation
    ````
 
-1. Restart Claude Code, or run `/mcp` to confirm the Sumo Logic MCP server is still connected.
+1. If this is the first skill you've added, restart Claude Code so it picks up the new skills directory. Otherwise, run `/mcp` to confirm the Sumo Logic MCP server is still connected.
 1. Invoke the skill automatically by asking an investigation question, or explicitly with `/sumo-log-investigator`.
 
 For more information about configuring, managing, and distributing skills, see [Extend Claude with skills](https://code.claude.com/docs/en/skills) in the Claude Code documentation.
