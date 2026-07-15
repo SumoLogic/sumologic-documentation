@@ -23,11 +23,11 @@ The SOC Analyst agent provides the following functionality:
 
 The SOC Analyst agent runs in the background against all insights that flow into Cloud SIEM. After analysis, it renders a verdict about whether the insight requires investigation.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen. 
 1. In the **Insights** page, note that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
 1. Click **Start typing here to create a filter** near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned:<br/><img src={useBaseUrl('img/cse/insight-ai-filter.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="600" />
    * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
-   * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team.
+   * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team. 
    * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
    * **In Progress**. AI analysis is in progress.
    * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
@@ -39,7 +39,7 @@ The SOC Analyst agent runs in the background against all insights that flow into
 
 The **AI Investigation** tab in the details page of a Cloud SIEM insight is an artificial intelligence-generated analysis of the insight. Use the information on this tab to guide your investigation.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen. 
 1. On the insights list page, click an insight's ID.
 1. The **AI Investigation** tab shows results of AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-investigation-tab.png')} alt="Insight AI Investigation tab" style={{border: '1px solid gray'}} width="700" />
    1. **Severity Verdict**. Details about the insight's severity analysis:
@@ -120,7 +120,9 @@ To start a new investigation, navigate back to Cloud SIEM, select another insigh
 
 ### Share the conversation
 
-To share the current investigation with other users, see [Share conversation](/docs/search/mobot/#share-conversation).
+To share the current investigation with other users, see [Share conversation](/docs/search/mobot).
+
+<!-- after Mobot GA, replace above link w/ /docs/search/mobot/#share-conversation)-->
 
 ## FAQ
 
@@ -166,11 +168,11 @@ Yes, you can. In your investigation, you are not limited in how you proceed. You
 
 ## Additional resources
 
-* Blogs:
+* Blogs: 
    * [The SOC Analyst Agent: Bring an Agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
    * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
    * [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp)
-* Demos:
+* Demos: 
    * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
    * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
 * Sumo Logic website: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)

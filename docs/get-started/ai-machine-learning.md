@@ -14,7 +14,6 @@ keywords:
    - mobot
    - query agent
    - knowledge agent
-   - summary agent
    - soc analyst agent
 ---
 
@@ -50,13 +49,9 @@ Dojo AI is Sumo Logic’s multi-agent AI platform, bringing specialized agents a
 * **Query Agent**. Translates natural-language questions into log search queries and helps you refine them step by step to speed data exploration and investigation.
 * **Knowledge Agent**. Answers how-to questions about Sumo Logic, from setup to troubleshooting and best practices, sourced directly from our official documentation.
 
-### Summary Agent
+### SOC Analyst agent
 
-The [Summary Agent](/docs/cse/get-started-with-cloud-siem/insight-summary/) automatically generates a concise summary of each Cloud SIEM insight, explaining the threat incidents that triggered it. Summaries help security teams quickly understand scope and prioritize response.
-
-### SOC Analyst Agent
-
-The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), now in Public Preview, applies agentic reasoning to triage and investigate Cloud SIEM insights. It delivers automated verdicts (malicious, suspicious, or benign) using evidence-backed analysis, and supports hypothesis-driven investigation to map relationships, connect entities, and summarize findings.
+The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) applies agentic reasoning to triage and investigate Cloud SIEM insights. It delivers automated verdicts (malicious, suspicious, or benign) using evidence-backed analysis, and supports hypothesis-driven investigation to map relationships, connect entities, and summarize findings.
 
 ### MCP server
 
@@ -107,13 +102,9 @@ Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hu
 
 ### Cloud SIEM
 
-#### Insight summary
-
-The [Summary Agent](/docs/cse/get-started-with-cloud-siem/insight-summary/) generates a synopsis of each insight that describes the threat incidents that triggered it, helping security teams understand incidents faster and accelerate response time.
-
 #### SOC Analyst Agent
 
-The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) triages and investigates Cloud SIEM insights using agentic AI reasoning. Available in Public Preview.
+Triage and investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), which applies agentic AI reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in [Mobot](/docs/search/mobot) using natural language to explore scope, impact, and supporting evidence.
 
 #### Rules
 
@@ -144,7 +135,7 @@ Yes. You can opt out of specific AI features at any time by submitting a support
 
 Agent interaction with customer data varies by capability.
 
-Mobot (including Query Agent and Knowledge Agent) and Summary Agent do **not** process or analyze customer data.
+Mobot (including Query Agent and Knowledge Agent) and SOC Analyst agent do **not** process or analyze customer data.
 
 The SOC Analyst Agent (currently in Public Preview) processes customer data to help review insight data, correlate activity, and assist in triage and investigation as directed by the user.
 
@@ -225,7 +216,7 @@ Availability of specific AI capabilities may vary by deployment region (includin
 <details>
 <summary>Which Dojo AI capabilities are available in FED?</summary>
 
-The current GA versions of Mobot (including Query Agent and Knowledge Agent) and Summary Agent are available in the FED deployment.
+The current GA versions of Mobot (including Query Agent and Knowledge Agent) and SOC Analyst agent are available in the FED deployment.
 
 The SOC Analyst Agent and certain newer Dojo AI capabilities are not currently available in FED. These capabilities depend on underlying model configurations that do not yet meet the requirements of our FED compliance boundary.
 
