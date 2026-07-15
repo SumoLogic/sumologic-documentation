@@ -6,7 +6,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "DOCUSAURUS_IGNORE_SSG_WARNINGS=true docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -153,6 +153,7 @@
     "react-iframe": "^1.8.0",
     "react-json-view-lite": "1.2.1",
     "react-live": "^4.1.5",
+    "redocusaurus": "^2.5.0",
     "regjsgen": "0.8.0",
     "remark-code-import": "^1.2.0",
     "remark-emoji": "^4.0.1",

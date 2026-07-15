@@ -1763,3 +1763,42 @@ article header h2[class*='title_'] {
 .language-sumo .token.time     { color: var(--sumo-number);   }
 .language-sumo .token.operator { color: var(--sumo-operator); }
 .language-sumo .token.regex    { color: var(--sumo-regex);    }
+
+/* Redoc centre panel code blocks */
+
+.redoc-markdown pre {
+  background-color: #1e1e1e !important;
+  border: none !important;
+  border-radius: 4px;
+  padding: 0 !important;
+  overflow-x: auto;
+}
+
+.redoc-markdown pre > code {
+  background-color: #1e1e1e !important;
+  color: #f8f8f2 !important;
+  display: block;
+  padding: 16px !important;
+  width: max-content;
+  min-width: 100%;
+  font-family: 'Source Code Pro', monospace !important;
+  font-size: 13px !important;
+}
+
+.redoc-markdown pre > code .token.operator {
+  color: #f92672 !important;
+}
+
+/* Scrollbar styling for Redoc code blocks */
+.redoc-markdown pre::-webkit-scrollbar {
+  height: 6px;
+}
+
+.redoc-markdown pre::-webkit-scrollbar-track {
+  background: #1e1e1e !important;
+}
+
+.redoc-markdown pre::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
