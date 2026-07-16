@@ -442,6 +442,9 @@ module.exports = {
                 'send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source',
                 'send-data/hosted-collectors/amazon-aws/collection-aws-govcloud',
                 'send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
               ],
             },
             {
