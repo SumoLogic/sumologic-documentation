@@ -292,12 +292,12 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Host and Process Metrics - High CPU Utilization` | This alert fires when host CPU utilization is over 80%. | > 95% (Critical) | <= 95% |
-| `Host and Process Metrics - Host Out of Memory` | This alert fires when memory utilization is over 90%. | > 90% (Critical) | <= 90% |
-| `Host and Process Metrics - Host Out of Disk Space` | This alert fires when disk utilization is over 90%. | > 90% (Critical) | <= 90% |
-| `Host and Process Metrics - Host Out of Inodes` | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used). | > 90% (Critical) | <= 90% |
-| `Host and Process Metrics - Host Swap is Filling Up` | This alert fires when swap utilization is over 80%. | > 80% (Critical) | <= 80% |
-| `Host and Process Metrics - Host Swap is Filling Up (Windows)` | This alert fires when swap utilization is over 80% for Windows machines. | > 80% (Critical) | <= 80% |
+| `Host and Process Metrics - High CPU Utilization` | This alert fires when host CPU utilization exceeds the threshold (Warning: 80%, Critical: 95%). | > 95% (Critical) | <= 95% |
+| `Host and Process Metrics - Host Out of Memory` | This alert fires when memory utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | <= 90% |
+| `Host and Process Metrics - Host Out of Disk Space` | This alert fires when disk utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | <= 90% |
+| `Host and Process Metrics - Host Out of Inodes` | This alert fires when a host's filesystem is close to running out of available iNodes (Warning: 80%, Critical: 90%). | > 90% (Critical) | <= 90% |
+| `Host and Process Metrics - Host Swap is Filling Up` | This alert fires when swap utilization exceeds the threshold (Warning: 60%, Critical: 80%). | > 80% (Critical) | <= 80% |
+| `Host and Process Metrics - Host Swap is Filling Up (Windows)` | This alert fires when swap utilization exceeds the threshold for Windows machines (Warning: 60%, Critical: 80%). | > 80% (Critical) | <= 80% |
 | `Host and Process Metrics - High Network Errors` | This alert fires when a host has encountered network errors in the last five minutes. | > 200 (Critical) | <= 200 |
 | `Host and Process Metrics - Unusual Disk Read Rate` | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval. | > 50 MB/s (Warning) | <= 50 MB/s |
 | `Host and Process Metrics - Unusual Disk Write Rate` | This alert fires when the disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval. | > 50 MB/s (Warning) | <= 50 MB/s |
@@ -311,10 +311,10 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Host and Process Metrics - Process High CPU Usage` | This alert fires when the CPU utilization of a process is over 80% of the system CPU. | > 80% (Critical) | <= 80% |
-| `Host and Process Metrics - Process High Memory Usage` | This alert fires when the memory used by a process is over 80% of system memory. | > 80% (Critical) | <= 80% |
-| `Host and Process Metrics - Process High Open File Descriptors` | This alert fires when the number of file descriptors used by a process is more than 1000. | > 1000 (Critical) | <= 1000 |
-| `Host and Process Metrics - Process High Page Faults` | This alert fires when the rate of page faults is high (> 1000). | > 1000 (Critical) | <= 1000 |
+| `Host and Process Metrics - Process High CPU Usage` | This alert fires when the CPU utilization of a process exceeds the threshold (Warning: 60%, Critical: 80%). | > 80% (Critical) | <= 80% |
+| `Host and Process Metrics - Process High Memory Usage` | This alert fires when the memory used by a process exceeds the threshold (Warning: 60%, Critical: 80%). | > 80% (Critical) | <= 80% |
+| `Host and Process Metrics - Process High Open File Descriptors` | This alert fires when the number of file descriptors used by a process exceeds the threshold (Warning: 800, Critical: 1000). | > 1000 (Critical) | <= 1000 |
+| `Host and Process Metrics - Process High Page Faults` | This alert fires when the rate of page faults exceeds the threshold (Warning: 800, Critical: 1000). | > 1000 (Critical) | <= 1000 |
 | `Host and Process Metrics - Process High Read Rate` | This alert fires when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 20 MB/s (Warning) | <= 20 MB/s |
 | `Host and Process Metrics - Process High Write Rate` | This alert fires when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 20 MB/s (Warning) | <= 20 MB/s |
 
