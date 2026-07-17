@@ -94,7 +94,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-See information about Windows update errors, fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
+The **Windows 7+ - 2008 (Legacy) - Overview** dashboard shows information about Windows update errors, fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/Overview.png')} alt="Overview" />
 
@@ -111,7 +111,7 @@ See information about Windows update errors, fatal or warning messages, policy c
 
 ### Default
 
-See information about the start and stop operations for Windows services; Windows events; operations events; and errors and warnings.
+The **Windows 7+ - 2008 (Legacy) - Default** dashboard shows information about the start and stop operations for Windows services; Windows events; operations events; and errors and warnings.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/Default.png')} alt="Default" />
 
@@ -126,7 +126,7 @@ See information about the start and stop operations for Windows services; Window
 
 ### Login Status
 
-See information about successful and failed logins, and successful RDP reconnects.
+The **Windows 7+ - 2008 (Legacy) - Login Status** dashboard shows information about successful and failed logins, and successful RDP reconnects.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/LoginStatus.png')} alt="Login Status" />
 
@@ -141,7 +141,7 @@ See information about successful and failed logins, and successful RDP reconnect
 
 ### Event Errors
 
-See information about Window event messages that contain a keyword that indicates a problem. (If a Windows event contains  "error", "timeout", "exception", or "fail", Sumo tags the message with "error_keyword", "timeout_keyword", "exception_keyword", or "fail_keyword" respectively.)
+The **Windows 7+ - 2008 (Legacy) - Event Errors** dashboard shows information about Window event messages that contain a keyword that indicates a problem. (If a Windows event contains "error", "timeout", "exception", or "fail", Sumo tags the message with "error_keyword", "timeout_keyword", "exception_keyword", or "fail_keyword" respectively.)
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/EventErrors.png')} alt="Event Errors" />
 
