@@ -292,7 +292,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Host and Process Metrics - High CPU Utilization` | This alert fires when host CPU utilization exceeds the threshold (Warning: 80%, Critical: 95%). | > 95% (Critical) | <= 95% |
+| `Host and Process Metrics - High CPU Utilization` | This alert fires when host CPU utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | <= 90% |
 | `Host and Process Metrics - Host Out of Memory` | This alert fires when memory utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | <= 90% |
 | `Host and Process Metrics - Host Out of Disk Space` | This alert fires when disk utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | <= 90% |
 | `Host and Process Metrics - Host Out of Inodes` | This alert fires when a host's filesystem is close to running out of available iNodes (Warning: 80%, Critical: 90%). | > 90% (Critical) | <= 90% |
