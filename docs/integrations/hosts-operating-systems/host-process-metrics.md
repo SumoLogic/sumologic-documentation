@@ -158,13 +158,13 @@ Example: For defining multiple patterns for multiple processes you can use the p
 
 ## Sample queries
 
-**CPU Utilization by Host** panel in **Host Metrics - CPU** Dashboard
+**CPU Utilization by Host** panel in **Host and Process Metrics - CPU** Dashboard
 
 ```sql
 host.name=*  cpu=cpu-total  metric=(host_cpu_usage_user OR host_cpu_usage_system OR host_cpu_usage_iowait OR host_cpu_usage_steal OR host_cpu_usage_softirq OR host_cpu_usage_irq OR host_cpu_usage_nice) | sum by host.name
 ```
 
-**CPU Usage** panel in **Process Metrics Details** Dashboard
+**CPU Usage** panel in **Host and Process Metrics - Process Details** Dashboard
 
 ```sql
 metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.name, process.executable.name | outlier
@@ -184,101 +184,101 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host and Process Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Overview.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Overview.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### CPU
 
-The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts and processes with high CPU utilization.
 * Examine CPU usage by type and identify anomalies over time.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### Disk
 
-The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts with high disk utilization and disk IO operations.
 * Monitor abnormal spikes in read/write rates.
 * Compare disk throughput across storage devices of a host.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### Memory
-The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts with high memory utilization.
 * Examine memory distribution (free, buffered-cache, used, total) for a given host.
 * Monitor abnormal spikes in memory and swap utilization.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### Network
 
-The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
+The **Host and Process Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
 * Determine top hosts with network errors and dropped packets.
 * Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 * Use dashboard filters to compare throughput across the interface of a host.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### TCP
-The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
+The **Host and Process Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:
 * Identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.png')} alt="Host and Process Metrics dashboards" />
 
 
-### Process Metrics - Overview
+### Process Overview
 
-The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Process Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations and thread count. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify top processes by CPU, memory usage, and open file descriptors.
 * Determine the longest running processes and users that have spawned the most number of processes.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Overview.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Overview.png')} alt="Host and Process Metrics dashboards" />
 
 
-### Process Metrics - Details
+### Process Details
 
-The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
+The **Host and Process Metrics - Process Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
 Use this dashboard to:
-* Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits,, it can cause IOException errors.
-* Identify anomalies in CPU usage, memory usage,  major/minor page faults and reads/writes over time.
+* Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits, it can cause IOException errors.
+* Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
 * Troubleshoot memory leaks using the resident set memory trend chart.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Details.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Details.png')} alt="Host and Process Metrics dashboards" />
 
 
-### Process Metrics - Trends
+### Process Trends
 
-The **Process Metrics - Trend** dashboard gives you insight into the state of your processes over time.
+The **Host and Process Metrics - Process Trends** dashboard gives you insight into the state of your processes over time.
 
 Use this dashboard to:
 * Analyze the current state of all the processes (sleeping, dead, idle, stopped, total, paging)
 * Identify anomalies over time in the number of threads, zombie processes, and total processes
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host and Process Metrics dashboards" />
 
 ## Create monitors for the Host and Process Metrics app
 
