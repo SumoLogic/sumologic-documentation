@@ -187,7 +187,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Windows (Classic) - Security Analytics - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 15 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count <= 0 |
+| `Windows (Classic) - Security Analytics - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 5 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count <= 0 |
 | `Windows (Classic) - Security Analytics - User Account Locked Out` | This alert is triggered when a user account is locked out (EventID 4740). This may indicate a brute-force attack has triggered the account lockout policy, or a misconfigured service is repeatedly attempting authentication with stale credentials. | Count > 0 | Count <= 0 |
 | `Windows (Classic) - Security Analytics - User Added to Administrative Group` | This alert is triggered when a user is added to a privileged administrative group such as Administrators, Domain Admins, Schema Admins, or Enterprise Admins. This may indicate privilege escalation or unauthorized access. | Count > 0 | Count <= 0 |
 | `Windows (Classic) - Security Analytics - Audit Log Cleared` | This alert is triggered when the Windows Security or System audit log is cleared (EventIDs 104, 517, 1102). This is a high-severity indicator as attackers often clear audit logs to cover their tracks after compromising a system. | Count > 0 | Count <= 0 |
