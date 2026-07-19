@@ -152,24 +152,24 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 
 ### Linux - Overview
 
-The **Linux - Overview** dashboard provides an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, successful and failed logins, sudo attempts, and the count of reporting hosts. This dashboard also gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - Overview** dashboard provides an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, successful and failed logins, sudo attempts, and the count of reporting hosts. This dashboard also gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Linux - CPU Metrics/Disk Metrics/Memory Metrics/Network Metrics/TCP Metrics dashboard by using the honeycombs or line charts in all the panels.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png' alt="Linux - Overview" />
 
-### Host Metrics - CPU
+### Linux - CPU Metrics
 
-The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - CPU Metrics** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
 - Identify hosts and processes with high CPU utilization.
 - Examine CPU usage by type and identify anomalies over time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-CPU.png' alt="Host Metrics - CPU" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-CPU-Metrics.png' alt="Linux - CPU Metrics" />
 
-### Host Metrics - Disk
+### Linux - Disk Metrics
 
-The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - Disk Metrics** dashboard provides detailed information about on disk utilization and disk IO operations. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -177,11 +177,11 @@ Use this dashboard to:
 - Monitor abnormal spikes in read/write rates.
 - Compare disk throughput across storage devices of a host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Disk.png' alt="Host Metrics - Disk" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Disk-Metrics.png' alt="Linux - Disk Metrics" />
 
-### Host Metrics - Memory
+### Linux - Memory Metrics
 
-The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - Memory Metrics** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -189,11 +189,11 @@ Use this dashboard to:
 - Examine memory distribution (free, buffered-cache, used, total) for a given host.
 - Monitor abnormal spikes in memory and swap utilization.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Memory.png' alt="Host Metrics - Memory" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Memory-Metrics.png' alt="Linux - Memory Metrics" />
 
-### Host Metrics - Network
+### Linux - Network Metrics
 
-The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
+The **Linux - Network Metrics** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
 
@@ -201,27 +201,27 @@ Use this dashboard to:
 - Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 - Use dashboard filters to compare throughput across the interface of a host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Network.png' alt="Host Metrics - Network" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Network-Metrics.png' alt="Linux - Network Metrics" />
 
-### Host Metrics - TCP
+### Linux - TCP Metrics
 
-The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections. Use this dashboard to identify abnormal spikes in inbound, outbound, open, or established connections.
+The **Linux - TCP Metrics** dashboard provides detailed information around inbound, outbound, open, and established TCP connections. Use this dashboard to identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-TCP-Metrics.png' alt="Linux - TCP Metrics" />
 
-### Process Metrics - Overview
+### Linux - Process Metrics Overview
 
-The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.
+The **Linux - Process Metrics Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations and thread count.
 
-User this dashboard to:
+Use this dashboard to:
 - Process wise distribution of CPU and memory usage.
 - Process wise read/write operations.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Process-Metrics-Overview.png' alt="Linux - Process Metrics Overview" />
 
-### Process Metrics - Details
+### Linux - Process Metrics Details
 
-The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
+The **Linux - Process Metrics Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
 Use this dashboard to:
 
@@ -229,7 +229,7 @@ Use this dashboard to:
 - Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
 - Troubleshoot memory leaks using the resident set memory trend chart.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Process-Metrics-Details.png' alt="Linux - Process Metrics Details" />
 
 ### Linux - Event Sources
 
