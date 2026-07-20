@@ -15,11 +15,11 @@ We do not guarantee 100% conversion from classic to dashboard, although we do pr
 
 This section explains to you the step-by-step process to migrate your dashboards.
 
-1. Navigate to any of your classic dashboards or create a new one. Click on **Migrate to dashboards**.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard1.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
-2. A dialog box appears. Click **Migrate to Dashboard** as shown below.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard2.png')} alt="dashboard" style={{border: '1px solid gray'}} width="600"/>
-3. Click **Open Dashboard** to view the migrated dashboard, given the migration is successful.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard3.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/> <br/>The following dialog can have 2 other states:
-    1. **Warning State.** Showing any warnings during migrations: warnings don’t fail the migration process, however, it might be something that you have to fix on your own or is a feature that is not yet supported on the dashboard.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard4.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
-    2. **Error State.** The process can sometimes run into an error state, this fails the migration and the dashboard is not created.<br/><img src={useBaseUrl('img/dashboards-new/migrate-dashboard5.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
+1. Navigate to any of your classic dashboards or create a new one. Click on **Migrate to dashboards**.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard1.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
+2. A dialog box appears. Click **Migrate to Dashboard** as shown below.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard2.png')} alt="dashboard" style={{border: '1px solid gray'}} width="600"/>
+3. Click **Open Dashboard** to view the migrated dashboard, given the migration is successful.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard3.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/> <br/>The following dialog can have 2 other states:
+    1. **Warning State.** Showing any warnings during migrations: warnings don’t fail the migration process, however, it might be something that you have to fix on your own or is a feature that is not yet supported on the dashboard.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard4.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
+    2. **Error State.** The process can sometimes run into an error state, this fails the migration and the dashboard is not created.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard5.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
 
 ### Bulk Migration
 

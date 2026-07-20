@@ -7,7 +7,7 @@ description: The Cisco ASA App gives you insight into website visitor patterns, 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="Cisco icon" width="75"/>
 
 The Cisco ASA App gives you insight into website visitor patterns, monitors infrastructure operations, and provides easy access to threat monitoring. The App uses a predefined parser, searches, and Dashboards which provide visibility into your environment for analysis of overall usage and threats. The Cisco ASA App consists of the following main categories:
 
@@ -46,7 +46,7 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 <details>
 <summary>Click to expand</summary>
 
-```
+```sumo
 | parse regex "(?<protocol>TCP|tcp|UDP|udp|ICMP|icmp)" nodrop
 | parse regex "%[\w-]+(?<log_level>\d)-(?<message_id>\d{6})" nodrop
 | parse regex "bytes\s(?<bytes_in>\d*)" nodrop
@@ -155,7 +155,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-ASA-Logs-Analytics.png')} alt="Cisco_ASA dashboards" />
 
-## Upgrading the Cisco ASA app (Optional)
+## Upgrade/Downgrade the Cisco ASA app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

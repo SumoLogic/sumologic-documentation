@@ -7,7 +7,7 @@ description: The Sumo Logic app for Twistlock provides comprehensive monitoring 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="thumbnail icon" width="135"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="Twistlock icon" width="135"/>
 
 [Twistlock](https://www.twistlock.com/) is a cloud native cybersecurity platform for hosts, containers, and serverless setups that ensures the protection of all your workloads across any environment.
 
@@ -88,7 +88,7 @@ compliance="0"
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
 
-```
+```sumo
 _sourceCategory=*Twistlock* type log_type *scan* vulnerability severity
 | parse regex "\s+(?<component>Twistlock-Console|Twistlock-Defender?)\s*.*\s*time=\"" nodrop
 | parse "type=\"*\"" as type nodrop | parse "log_type=\"*\"" as log_type nodrop | parse "severity=\"*\""
@@ -126,7 +126,7 @@ Use this dashboard to:
 * Understand which CVEs have fixes available and use that information to triage and remediate vulnerabilities.
 * Monitor trends for vulnerabilities and compliance issues detected.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Twistlock-overview.png')} alt="Twistlock Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-overview.png')} alt="Twistlock Dashboard" />
 
 ### Scans
 
@@ -285,7 +285,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-runtime.png')} alt="Twistlock Dashboard" />
 
 
-## Upgrading the Twistlock/Twistlock Classic app (Optional)
+## Upgrade/Downgrade the Twistlock/Twistlock Classic app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

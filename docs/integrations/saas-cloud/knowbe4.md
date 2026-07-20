@@ -7,7 +7,7 @@ description: The Sumo Logic App for KnowBe4 offers functionality for monitoring 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100" />
+<img src={useBaseUrl('img/send-data/knowbe4.png')} alt="KnowBe4 icon" width="100" />
 
 The KnowBe4 App for Sumo Logic allows you to easily integrate data from KnowBe4, a security awareness training and simulated phishing platform, into your Sumo Logic account. This App provides an overview of your organization's phishing security testing performance. It includes metrics on the total number of tests, active tests, recipient users, failed recipient users, and distribution of status.
 
@@ -21,7 +21,10 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
 
 ## Sample log messages
 
-```json title="Sample Phishing Security Tests Log"
+<details>
+<summary>Sample Phishing Security Tests Log</summary>
+
+```json 
 {
   "campaign_id": 1892087,
   "pst_id": 8805725,
@@ -65,8 +68,12 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
   "bounced_count": 0
 }
 ```
+</details>
 
-```json title="Sample Recipient Results Log"
+<details>
+<summary>Sample Recipient Results Log</summary>
+
+```json
 {
   "recipient_id": 1498372653,
   "pst_id": 8805725,
@@ -101,11 +108,11 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
   "os": "mac"
 }
 ```
-
+</details>
 
 ## Sample queries
 
-```sql title="Total Phishing Security Tests"
+```sumo title="Total Phishing Security Tests"
 _sourceCategory="knowbe4nfr" campaign_id
 | json "campaign_id", "pst_id", "status", "name", "phish_prone_percentage", "started_at", "duration", "template.name", "template.difficulty", "scheduled_count", "delivered_count", "opened_count", "clicked_count", "replied_count", "attachment_open_count", "macro_enabled_count", "data_entered_count", "qr_code_scanned_count", "reported_count", "bounced_count" as campaign_id, pst_id, status, name, phish_prone_percentage, started_at, duration, template_name, template_difficulty, scheduled_count, delivered_count, opened_count, clicked_count, replied_count, attachment_open_count, macro_enabled_count, data_entered_count, qr_code_scanned_count, reported_count, bounced_count nodrop
 | first(status) as status group by pst_id, name
@@ -114,7 +121,7 @@ _sourceCategory="knowbe4nfr" campaign_id
 ```
 
 
-```sql title="Total Recipient User"
+```sumo title="Total Recipient User"
 _sourceCategory="knowbe4nfr" recipient_id
 | json "recipient_id", "pst_id", "user.first_name", "user.last_name", "user.email", "scheduled_at", "delivered_at", "opened_at", "clicked_at", "replied_at", "attachment_opened_at", "macro_enabled_at", "data_entered_at", "qr_code_scanned", "reported_at", "bounced_at", "ip", "ip_location", "browser", "browser_version", "os" as recipient_id, pst_id, first_name, last_name,
 email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment_opened_at, macro_enabled_at, data_entered_at, qr_code_scanned, reported_at, bounced_at, ip, ip_location, browser, browser_version, os nodrop
@@ -122,15 +129,35 @@ email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment
 | count_distinct(recipient_id)
 ```
 
-## Installing the KnowBe4 App
+## Collection configuration and app installation
 
-Before you begin, collect logs from KnowBe4 and ingest them into Sumo Logic. Refer to the [KnowBe4 Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/) to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<CollectionConfiguration/>
 
-<AppInstall/>
+:::important
+Use the [Cloud-to-Cloud Integration for KnowBe4 KMSAT](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-kmsat-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your KnowBe4 app is properly integrated and configured to collect and analyze your KnowBe4 KMSAT data.
+:::
 
-## Viewing KnowBe4 Dashboards​
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
+
+## Viewing the KnowBe4 Dashboards​
 
 All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
@@ -138,8 +165,8 @@ You can use filters to drill down and examine the data on a granular level.
 
 Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### KnowBe4 - Overview
+### Overview
 
-**KnowBe4 - Overview** provides an overview of phishing security tests. It provides insights into the test results, including the total number of tests, active tests, and recipient users. Additionally, the dashboard displays the distribution of test status, the level of difficulty of the tests, and the phish-prone percentage. The dashboard also includes a summary of the phishing security tests and failures, as well as the top failed users and their geo-locations. These insights can help organizations identify areas that require further attention and improve their overall security posture against phishing attacks.
+The **KnowBe4 - Overview** dashboard provides an overview of phishing security tests. It provides insights into the test results, including the total number of tests, active tests, and recipient users. Additionally, the dashboard displays the distribution of test status, the level of difficulty of the tests, and the phish-prone percentage. The dashboard also includes a summary of the phishing security tests and failures, as well as the top failed users and their geo-locations. These insights can help organizations identify areas that require further attention and improve their overall security posture against phishing attacks.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/KnowBe4-Overview.png')} alt="KnowBe4-Overview.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/KnowBe4-Overview.png')} alt="KnowBe4 - Overview dashboard" width="600"/>

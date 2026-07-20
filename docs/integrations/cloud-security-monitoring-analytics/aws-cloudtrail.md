@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This set of CloudTrail monitoring and analytics dashboards provide one dashboard for the most critical analytics. Think of this bundle of dashboards as a good starting place to see trends and outliers on specific aspects of your CloudTrail data -- including access monitoring, login activity, system monitoring, privileged activity, and threat intelligence.
 
 
-## Collecting logs for the AWS CloudTrail PCI Compliance App
+## Collecting logs for the AWS CloudTrail app
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
@@ -64,7 +64,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 }
 ```
 
-```sql title="Field Extraction Template"
+```sumo title="Field Extraction Template"
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress
 | parse "\"eventName\":\"*\"" as event_name
 | parse "\"eventSource\":\"*\"" as event_source
@@ -74,7 +74,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 ### Sample queries
 
-```sql title="Created and Deleted Network and Security Events"
+```sumo title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | parse "\"userName\":\"*\"" as user
 | parse "\"eventName\":\"*\"" as event
@@ -87,25 +87,19 @@ _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
 
 
-## Installing the PCI Compliance AWS CloudTrail App
+## Installing the AWS CloudTrail app
 
 Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing AWS CloudTrail Dashboards
+## Viewing AWS CloudTrail dashboards
 
-The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashboards that you can modify for your specific security operational needs.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-* Access Monitoring
-* Login Activity
-* Account and System Monitoring
-* Overview
-* Privileged Activity
-* Threat Intelligence
-
+<ViewDashboards/>
 
 ### Security Analytics - Access Monitoring
 
@@ -157,3 +151,45 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 **Use Case:** Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Monitoring-Threat-Intelligence.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+### Security Analytics - Data Exfiltration and Exposure
+
+**Description:** Dashboard analyzing API-level data access, publicly exposed resource creation, and cross-account access patterns to detect data exfiltration attempts.
+
+**Use Case:** Provides analysis of data exposure risks including publicly exposed resources over time, secret accesses via Secrets Manager, KMS decrypt and SSM decryption activity, and sensitive access outliers to help identify potential data exfiltration.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Data-Exfiltration-and-Exposure.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+### Security Analytics - Suspicious Indicators
+
+**Description:** This dashboard tracks ransomware signals like KMS key deletions, backup/snapshot removals, and S3 data protection downgrades.
+
+**Use Case:** Provides visibility into ransomware and destructive activity indicators including KMS key deletions and disables over time, backup deletion events, S3 data protection configuration changes, and detailed tables of impacted resources.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Suspicious-Indicators.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+## Create monitors for the AWS CloudTrail app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS CloudTrail alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `CloudTrail Logging Stopped or Deleted` | This alert is triggered when CloudTrail logging is stopped or a trail is deleted. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+| `GuardDuty Disabled` | This alert is triggered when GuardDuty is disabled or a member account is disassociated from its master account. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+| `Root Account Used` | This alert is triggered when the AWS root account is used to perform an action. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the AWS CloudTrail app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS CloudTrail app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

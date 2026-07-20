@@ -9,7 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="SQL icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
+
+:::note logs only
+This is a logs-only app. For collecting metrics and enabling comprehensive monitoring on both Linux and Windows, use the [Microsoft SQL Server - OpenTelemetry App](/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry).
+:::
 
 The Sumo Logic app for Microsoft SQL Server is a logs-based app that provides insight into your SQL Server for Linux. The app consists of predefined dashboards, providing visibility into your environment for real-time or historical analysis on backup, restore mirroring, general health and operations of your system.
 
@@ -63,6 +67,10 @@ The Microsoft SQL Server app's queries and dashboards depend on logs from the SQ
 `/var/opt/mssql/log/errorlog`
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-linux-YAML.png' alt="YAML" style={{border: '1px solid gray'}} />
 
@@ -131,7 +139,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following is the query from **Error and warning count** panel from the **SQL Server app - Overview** dashboard:
 
-```sql
+```sumo
  %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "\s+(?<Logtype>Error|Warning):\s+(?<message>.*)$"
@@ -142,7 +150,7 @@ Following is the query from **Error and warning count** panel from the **SQL Ser
 
 ### Overview
 
-The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, memory, and disk utilization of your SQL Server(s) deployed in your cluster. This dashboard also provides login activities and methods by users.
+The **SQL Server Linux - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, memory, and disk utilization of your SQL Server(s) deployed in your cluster. This dashboard also provides login activities and methods by users.
 
 Use this dashboard to:
 -   Keep track of deadlocks, errors, backup failures, mirroring errors, and insufficient space issue counts.
@@ -152,7 +160,7 @@ Use this dashboard to:
 
 ### General Health
 
-The **SQL Server - General Health** dashboard provides you the overall health of SQL Server. Use this dashboard to analyze server events including stopped/up servers and its corresponding down/uptime, monitor disk space percentage utilization, wait time trend, and app-domain issues by SQL server.
+The **SQL Server Linux - General Health** dashboard provides you the overall health of SQL Server. Use this dashboard to analyze server events including stopped/up servers and its corresponding down/uptime, monitor disk space percentage utilization, wait time trend, and app-domain issues by SQL server.
 
 Use this dashboard to:
 
@@ -164,7 +172,7 @@ Use this dashboard to:
 
 ### Backup Restore Mirroring
 
-The **SQL Server - Backup Restore Mirroring** dashboard provides information about:
+The **SQL Server Linux - Backup Restore Mirroring** dashboard provides information about:
 
 -   Transaction log backup events
 -   Database backup events
@@ -176,7 +184,7 @@ The **SQL Server - Backup Restore Mirroring** dashboard provides information abo
 
 ### Operations
 
-The **SQL Server - Operations** dashboard displays recent server configuration changes, number and type of configuration updates, error and warnings, high severity error, and warning trends.
+The **SQL Server Linux - Operations** dashboard displays recent server configuration changes, number and type of configuration updates, error and warnings, high severity error, and warning trends.
 
 Use this dashboard to:
 
@@ -184,3 +192,21 @@ Use this dashboard to:
 -   Monitor any errors and warnings.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-Operations.png' alt="Operations" />
+
+## Create monitors for SQL Server Linux app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### SQL Server Linux alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `SQL Server Linux - AppDomain` | This alert is triggered when AppDomain-related issues are detected in your SQL Server instance. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server Linux - Backup Fail` | This alert is triggered when the SQL Server backup fails. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server Linux - Deadlock` | This alert is triggered when deadlocks are detected in a SQL Server instance. | Count `>` 5 | Count `<=` 5 |
+| `SQL Server Linux - Instance Down` | This alert is triggered when the SQL Server instance is down for 5 minutes. | Count `>` 0 | Count `<=` 0 |
+| `SQL Server Linux - Insufficient Space` | This alert is triggered when the SQL Server instance cannot allocate a new page for the database due to insufficient disk space in the filegroup. | Count `>` 0 | Count `<=` 0 |
+| `SQL Server Linux - Login Fail` | This alert is triggered when the user is unable to login to the SQL Server. | Count `>=` 1 | Count `<` 1 |
+| `SQL Server Linux - Mirroring Error` | This alert is triggered when an error occurs in SQL Server mirroring. | Count `>=` 1 | Count `<` 1 |

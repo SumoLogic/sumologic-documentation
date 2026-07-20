@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuseipdb.png')} alt="abuseipdb" width="100"/>
 
-***Version: 1.4  
-Updated: May 29, 2024***
+***Version: 1.5  
+Updated: March 31, 2026***
 
 Enrich IP addresses with reputation information gathered from AbuseIPDB.
 
@@ -29,19 +29,29 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 4. Click on **Create Key**. 
 5. Copy the **API key**.
 
-## Configure AbuseIPDB
+## Configure AbuseIPDB in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation). 
-2. After the list of the integrations appears, search for the integration and click on the row.
-3. The integration details will appear. Click on the **"+"** button to add new Resource.
-4. Populate all the required fields (\*):
-   * **Label**. Enter a name for the resource.
-   * **API URL**. Enter `https://api.abuseipdb.com`
-   * **API Key**. Enter the API key you copied earlier.
-5. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="400"/>
-6. To make sure the resource is working, hover over the resource and then click the *pencil icon* that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-3.png')} style={{border:'1px solid gray'}} alt="any.run-3" width="800"/>
-7. Click **TEST**
-8. You should receive a successful notification in the bottom right corner of the screen.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-2.png')} style={{border:'1px solid gray'}} alt="any.run-7" width="800"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **API URL**. Enter `https://api.abuseipdb.com`
+
+* **API Key**. Enter the [API key](https://www.abuseipdb.com/api.html) you copied [above](#create-an-api-key). 
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuseipdf/abuseipdf-1.png')} style={{border:'1px solid gray'}} alt="AbuseIPDB configuration dialog" width="400"/>
+
+For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuseipdb.com/api.html).
 
 ## Change Log
 
@@ -55,3 +65,4 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 	+ Fixed Typo
 * May 29, 2024 (v1.4)
 	+ Updated **IP Reputation** action which now supports saving reports as incident attachments and artifacts
+* March 31, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

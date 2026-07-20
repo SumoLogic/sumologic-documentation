@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phantombuster.png')} alt="phantombuster" width="100"/>
 
-***Version: 1.5  
-Updated: Jul 18, 2023***
+***Version: 1.6  
+Updated: April 30, 2026***
 
 Phantombuster is a platform that enables businesses to automate their web tasks without the need for extensive coding. It provides a range of pre-built automation workflows and customizable APIs, allowing users to scrape data, automate social media tasks, and send personalized emails to prospects. Phantombuster helps businesses save time and improve their productivity by streamlining their workflows.
 
@@ -24,20 +24,31 @@ Phantombuster is a platform that enables businesses to automate their web tasks 
 
 Follow the steps from the Phantombuster [guide](https://hub.phantombuster.com/docs/api#authentication-and-request-format) to create your authentication credentials.
 
-## Phantombuster in Automation Service and Cloud SOAR
+## Configure Phantombuster in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-3.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The name for the resource.
-   * **URL**. Phantombuster host URL.
-   * **API Key**. Your Phantombuster api key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-4.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-5.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-6.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/phantombuster/phantombuster-7.png')} style={{border:'1px solid gray'}} alt="phantombuster" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Phantombuster [host URL](https://hub.phantombuster.com/docs/api#versioning), for example, `https://phantombuster.com`.
+
+* **API Key**. Enter your Phantombuster [API key](https://hub.phantombuster.com/docs/api#how-to-find-my-api-key). 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/phantom-buster-configuration.png')} style={{border:'1px solid gray'}} alt="Phantombuster configuration" width="400"/>
+
+For information about Phantombuster, see [Phantombuster documentation](https://hub.phantombuster.com/docs/developer-quick-start).
 
 ## Change Log
 
 * April 3, 2023 - First upload
 * July 18, 2023 (v1.5) - Removed leading/trailing spaces
+* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

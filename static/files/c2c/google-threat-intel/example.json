@@ -1,0 +1,15 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+			"name": "Google Threat Intel",
+			"apiKey": "xxxx94429cexxxxxxc2e4ecc2e19xx190594935xxxxxx2316xxx",
+			"userSourceId": "GoogleThreatIntelligence",
+			"pollingIntervalHour": "1h"
+		},
+		"schemaRef": {
+			"type": "Google Threat Intel"
+		},
+		"sourceType": "Universal"
+	}
+}
