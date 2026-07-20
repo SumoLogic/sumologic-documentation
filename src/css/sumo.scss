@@ -231,6 +231,17 @@ html[data-theme='light'] {
   min-width: 100px;
 }
 
+@media (min-width: 997px) {
+  .navbar .DocSearch-Button {
+    max-width: 100%;
+    width: 340px;
+  }
+
+  .navbar .DocSearch-Button-Placeholder {
+    min-width: 0;
+  }
+}
+
 html[data-theme='dark'] .DocSearch-Button-Placeholder {
   color: #bdc1c6 !important;
 }
@@ -251,6 +262,58 @@ html[data-theme='dark'] .DocSearch-Search-Icon {
 /* Prevent search input text from overlapping the "Clear the query" button */
 .DocSearch-Input {
   padding-right: 65px !important;
+}
+
+.ask-ai-search-sidepanel-button {
+  align-items: center;
+  background: var(--docsearch-hit-background);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  color: var(--docsearch-hit-color);
+  cursor: pointer;
+  display: grid;
+  font: inherit;
+  gap: 0.25rem 0.75rem;
+  grid-template-columns: auto minmax(0, max-content) minmax(0, 1fr);
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  width: 100%;
+}
+
+.ask-ai-search-sidepanel-button:hover,
+.ask-ai-search-sidepanel-button:focus-visible {
+  background: var(--docsearch-hit-highlight-color);
+  border-color: var(--ifm-color-primary);
+  outline: none;
+}
+
+.ask-ai-search-sidepanel-button-icon {
+  color: var(--ifm-color-primary);
+  display: inline-flex;
+  grid-row: 1 / span 2;
+}
+
+.ask-ai-search-sidepanel-button-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.ask-ai-search-sidepanel-button-query {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html[data-theme='dark'] .ask-ai-search-sidepanel-button {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+.ask-ai-native-modal-option-hidden {
+  display: none !important;
 }
 
 //GitHub icon

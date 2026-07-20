@@ -131,6 +131,14 @@ module.exports = {
     require.resolve('./src/client-modules/trackTrialClick.js'),
     require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
+  customFields: {
+    askAi: {
+      // Keep Algolia Ask AI feedback targets out of source control.
+      // This Google Form is a shared public collection endpoint for Algolia Ask AI feedback.
+      feedbackFormUrl:
+        'https://docs.google.com/forms/d/e/1FAIpQLSdJOWBAXsM86C-buZm0N3a9vwBOxxjOfBe7jiEn6PkLqctv5A/viewform?usp=pp_url&entry.778922322=a&entry.898262107=a&entry.1217042173=a&entry.1416546939=a&entry.1571666595=a&entry.554631687=a',
+    },
+  },
   storage: {
     type: 'localStorage',
     namespace: true,
@@ -388,6 +396,13 @@ module.exports = {
       contextualSearch: false,
       searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
+      askAi: {
+        assistantId: 'T7pp7iENesuU',
+        indexName: 'crawler_sumodocs',
+        apiKey: 'fb2f4e1fb40f962900631121cb365549',
+        appId: '2SJPGMLW1Q',
+        suggestedQuestions: true,
+      },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
       },
@@ -548,6 +563,12 @@ module.exports = {
           {
             type: 'search',
             position: 'left',
+          },
+          {
+            type: 'html',
+            position: 'left',
+            className: 'navbar-ask-ai-item',
+            value: '<div id="navbar-ask-ai-button"></div>',
           },
         ],
       },
