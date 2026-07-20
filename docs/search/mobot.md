@@ -468,7 +468,11 @@ No. Mobot determines whether your prompt is a log data question or a how-to ques
 
 ### Is there a limit to how many prompts I can send?
 
-Yes. Each user can send up to 10 prompts to Mobot per day.
+Yes. Each user can send up to 10 prompts to Mobot per day. A prompt is any single message you type and send to Mobot; every message counts, including follow-up replies within a conversation.
+
+When you reach the limit, Mobot stops responding to new prompts and shows a "try again in X hours" message. Limits reset daily at midnight UTC. If you need a higher limit, contact your account team.
+
+<!-- TODO (DOCS-1548): "Ask Mobot" investigations launched from a Cloud SIEM insight are governed by SOC Analyst Agent licensing (reportedly up to 30 prompts/user/day), not standard Mobot limits. Confirm this figure is public before documenting it here and on the Cloud SIEM investigations capability. -->
 
 ### What happened to Query Agent and Knowledge Agent?
 
@@ -485,9 +489,13 @@ Mobot can detect missing sources or partitions reactively. When you ask a questi
 
 Yes. Mobot can extract relevant insights from unstructured logs, including those without Field Extraction Rules (FERs) applied, prioritizing sources already used in dashboards. It also supports semi-structured logs (JSON with unstructured payloads).
 
+### Can I use Mobot in a language other than English?
+
+Mobot's underlying model natively supports multiple languages, and many customers use it successfully in their preferred language. However, Sumo Logic does not actively develop or formally support non-English languages at this time.
+
 ### Does Mobot save search history?
 
-Yes. Mobot retains conversation and search history, allowing you to resume investigations with context and continuity.
+Yes. Mobot retains conversation and search history for 60 days, allowing you to resume investigations with context and continuity.
 
 ### What role does AI play in Mobot?
 
