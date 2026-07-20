@@ -37,21 +37,11 @@ Ask for the file path if not provided. Read the complete file including frontmat
 
 ### Step 2: Diagnose AEO and GEO gaps
 
-Before proposing changes, assess the doc against these signals and tell the user what you found:
+Before proposing changes, assess the doc against the **Five GEO Principles** defined in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md) — answer-first (BLUF), one page one question, question-style headings, FAQ sections, and structured metadata — and tell the user what you found.
 
-**AEO signals** (featured snippets, "People also ask", direct answer boxes)
-- Are any H2 or H3 headings phrased as questions (e.g., "What is X?", "How do I configure Y?")?
-- Does the first paragraph directly answer the implied question a user would search for?
-- Are there structured lists or tables that search engines can extract as direct answers?
-- Are key terms defined with explicit "X is..." or "X means..." sentences?
+Also check these AEO-specific signals, which the GEO skill does not cover:
 
-**Opening paragraph quality** (AEO + GEO)
-An LLM and a featured snippet algorithm both scan the first 1–3 sentences first. Check:
-- Does it directly answer "what is [subject]" or "what does [subject] do"?
-- Is it self-contained (understandable without reading anything else)?
-- Does it avoid filler openers like "This document covers..." or "Welcome to..."?
-
-**Factual density** (GEO)
+**Factual density**
 LLMs prefer pages where key facts are stated explicitly as short, standalone sentences.
 - Are definitions buried in subordinate clauses?
 - Are numbers and specifications stated directly?
@@ -61,18 +51,12 @@ LLMs prefer pages where key facts are stated explicitly as short, standalone sen
 Lists, tables, and short Q&A pairs are extracted by AI more reliably than prose paragraphs.
 - Does the doc have lists for things that are enumerable?
 - Does it have a table for comparisons, parameters, or options?
-- Are there H2 or H3 headings phrased as questions?
+- Are key terms defined with explicit "X is..." or "X means..." sentences?
 
 **Summary section**
 Pages with an "At a glance", "Key facts", or "Overview" section near the top get cited more often because the summary is the most citation-friendly portion.
 - Does the doc have such a section?
 - Is it near the top?
-
-**Self-containedness**
-AI tools cannot follow links. If the doc depends on the reader having read another page first, an AI cannot synthesize it correctly.
-- Does the doc explain its own prerequisites briefly?
-- Are acronyms defined on first use?
-- Would a reader with no context understand the key points?
 
 ### Step 3: Propose improvements
 
