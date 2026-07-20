@@ -7,6 +7,7 @@ import './styles.css';
 
 interface AskAiSidepanelProps {
   isOpen: boolean;
+  onOpen?: () => void;
   onClose: () => void;
   initialMessage?: {
     query: string;
@@ -65,6 +66,7 @@ function parseGoogleFormConfig(formUrl: string): {
 
 export default function AskAiSidepanel({
   isOpen,
+  onOpen,
   onClose,
   initialMessage,
 }: AskAiSidepanelProps) {
@@ -466,6 +468,48 @@ export default function AskAiSidepanel({
     triggerHeaderAction('Conversation history');
   }, [triggerHeaderAction]);
 
+  useEffect(() => {
+    const isEditableTarget = (target: EventTarget | null) => {
+      const element = target as HTMLElement | null;
+      if (!element) return false;
+
+      const tagName = element.tagName;
+      return (
+        element.isContentEditable ||
+        tagName === 'INPUT' ||
+        tagName === 'TEXTAREA' ||
+        tagName === 'SELECT'
+      );
+    };
+
+    const handleShortcut = (event: KeyboardEvent) => {
+      if (
+        event.key.toLowerCase() !== 'i' ||
+        (!event.metaKey && !event.ctrlKey) ||
+        isEditableTarget(event.target)
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (isOpen) {
+        handleNewConversation();
+        return;
+      }
+
+      onOpen?.();
+      window.setTimeout(() => {
+        handleNewConversation();
+      }, 50);
+    };
+
+    document.addEventListener('keydown', handleShortcut);
+    return () => {
+      document.removeEventListener('keydown', handleShortcut);
+    };
+  }, [handleNewConversation, isOpen, onOpen]);
+
   const copyTextWithTextarea = React.useCallback((text: string) => {
     const textarea = document.createElement('textarea');
     textarea.value = text;
@@ -826,10 +870,13 @@ export default function AskAiSidepanel({
           indexName={indexName}
           assistantId={assistantId}
           isOpen={isOpen}
-          onOpen={() => {}}
+          onOpen={onOpen ?? (() => {})}
           onClose={handleAlgoliaClose}
           initialMessage={initialMessage || undefined}
           suggestedQuestions={suggestedQuestions}
+          keyboardShortcuts={{
+            'Ctrl/Cmd+I': false,
+          }}
           translations={{
             title: 'Ask AI about Sumo Logic',
             placeholder: 'Ask a question about Sumo Logic...',
@@ -927,13 +974,12 @@ export default function AskAiSidepanel({
                 </button>
               </div>
               <p className="ask-ai-feedback-label">
-                Provide additional feedback about the response or
-                documentation (optional)
+                Provide additional feedback (optional)
               </p>
               <textarea
                 ref={feedbackTextareaRef}
                 className="ask-ai-feedback-textarea"
-                placeholder="What could be improved about this response or the documentation it relies on?"
+                placeholder="What could be improved about this response or the documentation?"
                 value={feedbackDetails}
                 onChange={(e) => {
                   setFeedbackDetails(e.target.value);
@@ -943,7 +989,7 @@ export default function AskAiSidepanel({
                 }}
               />
               <p className="ask-ai-feedback-note">
-                Your feedback helps us improve AI-generated responses and documentation.
+                Your feedback helps us improve Sumo Docs and AI-generated responses.
               </p>
               {feedbackSubmitError && (
                 <p className="ask-ai-feedback-error">{feedbackSubmitError}</p>

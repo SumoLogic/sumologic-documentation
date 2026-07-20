@@ -62,6 +62,7 @@ export default function Root({ children }: RootProps) {
         <Suspense fallback={null}>
           <AskAiSidepanel
             isOpen={isAskAiOpen}
+            onOpen={() => setIsAskAiOpen(true)}
             onClose={() => setIsAskAiOpen(false)}
             initialMessage={initialAskAiMessage}
           />
