@@ -51,12 +51,10 @@ CIMD uses the [Authorization Code flow](#authorization-code-flow) behind the sce
 An administrator needs to enable CIMD for your organization before clients can use it.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
-1. Turn on **CIMD Enabled**.
+1. Select the **Enable CIMD Clients** check box.
 1. Click **Save**.
 
 Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [Manual OAuth setup](/docs/api/mcp-server#manual-oauth-setup) for the MCP server.
-
-{/* VERIFY before publishing: confirm the exact toggle label ("CIMD Enabled") and its location on the Policies page with the OAuth/MCP engineering team. */}
 
 ## Authorization Code flow
 
