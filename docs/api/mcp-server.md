@@ -306,7 +306,6 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    * Always operate in the user's timezone and ISO 8601 format
    * Use the current date (available from context) for relative time references
    * For "last hour" / "last 24 hours" style requests, calculate the appropriate ISO 8601 `from` and `to` values
-   * Default timezone: `UTC` unless the user specifies otherwise
 
    ---
 
