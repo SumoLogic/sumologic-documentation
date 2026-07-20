@@ -14,6 +14,9 @@ keywords:
    - mobot
    - log analysis agent
    - platform optimization agent
+   - conversational monitors
+   - conversational dashboards
+   - conversational playbooks
    - soc analyst agent
    - mcp server
 ---
@@ -50,7 +53,7 @@ Dojo AI is Sumo Logic’s multi-agent AI platform, bringing specialized agents a
 * **Log Analysis Agent**. Interprets your intent, guides investigations, and surfaces relevant data through natural language to speed data exploration and investigation.
 * **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, and get more from the platform, sourced directly from our official documentation.
 
-<!-- Document Monitor Creation Agent? https://github.com/SumoLogic/sumologic-documentation/pull/6871 -->
+Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language, including **Conversational Monitors**, **Conversational Dashboards**, and **Conversational Playbooks**. For details on each, see [Mobot](/docs/search/mobot).
 
 ### SOC Analyst Agent
 
