@@ -30,11 +30,12 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | Asia Pacific (Tokyo) | `https://mcp.jp.sumologic.com/mcp` |
    | Canada (Central) | `https://mcp.ca.sumologic.com/mcp` |
    | Europe (Frankfurt) | `https://mcp.de.sumologic.com/mcp` |
-   | Europe (Ireland) | `https://mcp.eu.sumologic.com/mcp` |
-   | Europe (Zurich) | `https://mcp.ch.sumologic.com/mcp` |
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
+   :::note
+   The MCP server is not currently supported in the Europe (Ireland) and Europe (Zurich) deployments.
+   :::
 * **An MCP-compatible client that supports remote HTTP/SSE transport and OAuth 2.0**. The default setup uses Client ID Metadata Documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or an Anthropic Console account).
    :::note
    [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. An administrator needs to enable it for your organization first; see [Enable CIMD](/docs/manage/security/oauth#enable-cimd). You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
