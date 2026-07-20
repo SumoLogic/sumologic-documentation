@@ -122,7 +122,7 @@ We recommend the following Source Category naming convention:
 
 ## Installing the Microsoft Office 365 app
 
-Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and dashboards to analyze your data.
+Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to leverage preconfigured searches and dashboards for analyzing your data.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
@@ -136,36 +136,36 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-Shows details of Office 365 successful and failed activities, and SharePoint, Exchange, and Azure operations.
+Shows details of successful and failed Office 365 activities, as well as SharePoint, Exchange, and Azure operations.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365Overview.png')} alt="Microsoft Office 365 dashboards" />
 
-**Successful Activity by Workload.** Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
+**Successful Activity by Workload**. Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
 
-**Failed Activity by Workload.** See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
+**Failed Activity by Workload**. See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
 
-**SharePoint Operations.** See the number of all SharePoint operations by name  as a line chart for the last 24 hours.
+**SharePoint Operations**. See a line chart of all SharePoint operations by name for the last 24 hours.
 
-**Exchange Operations.** See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
+**Exchange Operations**. See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
 
-**Azure AD Operations Trends.** See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
+**Azure AD Operations Trends**. See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
 
 
 ### General
 
 #### Usage by Location
 
-Shows Office 365, Azure Active Directory, Exchange, Share Point and One Drive transactions by location.
+Shows Office 365, Azure Active Directory, Exchange, SharePoint, and OneDrive transactions by location.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-UsageByLocation.png')} alt="Microsoft Office 365 dashboards" />
 
-**Office 365 Transaction by Client Location**. Performs a geo lookup operation and displays Office 365 transactions by client location on a map of the world for the last 30 days.
+**Office 365 Transactions by Client Location**. Performs a geo lookup and displays Office 365 transactions by client location on a world map for the last 30 days.
 
-**Azure AD Transactions by Client Location**. Performs a geo lookup operation and provides Azure AD transactions by client location on a map of the world for the last 30 days.
+**Azure AD Transactions by Client Location**. Performs a geo lookup and provides Azure AD transactions by client location on a world map for the last 30 days.
 
-**SP and OD Transactions by Client Location**. Performs a geo lookup operation and shows SharePoint and OneDrive transactions by client location on a map of the world for the last 30 days.
+**SP and OD Transactions by Client Location**. Performs a geo lookup and displays SharePoint and OneDrive transactions by client location on a world map for the last 30 days.
 
-**Exchange Transactions by Client Location**. Performs a geo lookup operation and displays Exchange transactions by client location on a map of the world for the last 30 days.
+**Exchange Transactions by Client Location**. Performs a geo lookup and displays Exchange transactions by client location on a world map for the last 30 days.
 
 
 ### Azure Active Directory
@@ -177,49 +177,49 @@ Shows the failed and successful logins by location.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectory-LoginLocations.png')} alt="Microsoft Office 365 dashboards" />
 
-**Failed Logins from US.** See the map of US having the failed logins in the last 24 hours.
+**Failed Logins from the US**. See the US map showing failed logins in the last 24 hours.
 
-**Failed Logins Outside the US.** See the world map having the failed logins in the last 24 hours.
+**Failed Logins Outside the US**. See the world map showing failed logins in the last 24 hours.
 
-**Successful Logins from US.** See the map of US having the successful logins in the last 24 hours.
+**Successful Logins from the US**. See the US map showing successful logins in the last 24 hours.
 
-**Successful Logins Outside the US.** See the world map having the successful logins in the last 24 hours.
+**Successful Logins Outside the US**. See the world map showing successful logins in the last 24 hours.
 
 
 #### Active Directory - Login Monitoring
 
-Shows details such as count, client IP, and errors of the failed and successful logins.
+Shows details such as count, client IP, and errors for failed and successful logins.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectory-LoginMonitoringSuccessfulLogins.png')} alt="Microsoft Office 365 dashboards" />
 
-**Successful Logins.** See the count of successful logins in the last 6 hours.
+**Successful Logins**. See the count of successful logins in the last 6 hours.
 
-**Successful Logins**. See a table having the details of successful logins such as time, operation, object ID, User ID, Client IP and event count in the last 6 hours.
+**Successful Logins**. See a table with details of successful logins, including time, operation, object ID, User ID, Client IP, and event count for the last 6 hours.
 
-**Successful Logins by ClientIP**. See a bar chart with the successful logins by Client IP and count in the last 6 hours.
+**Successful Logins by ClientIP**. See a bar chart showing successful logins by Client IP and count over the last 6 hours.
 
 **Successful Logins by Operation**. See a pie chart with the operations that resulted in successful logins in the last 6 hours.
 
-**Logins Attempts from Multiple ClientIPs (within 15m)**. See a table with details of login attempts from multiple Client IPs within 15 minutes such as the object ID, user ID, time, and count of unique client IPs.
+**Logins Attempts from Multiple Client IPs (within 15m)**. See a table of login attempts from multiple Client IPs within 15 minutes, including object ID, user ID, time, and the count of unique client IPs.
 
 
 #### Failed Logins
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office-365-ActiveDirectory-LoginMonitoringFailedLogins.png')} alt="Microsoft Office 365 dashboards" />
 
-**Login Failures.** See the count of login failures in the last 24 hours.
+**Login Failures**. See the count of login failures in the last 24 hours.
 
-**Login Failures.** See a table having the details of login failures such as time, operation, object ID, User ID, Client IP and event count in the  last 24 hours.
+**Login Failures**. See a table of login failures, including time, operation, object ID, User ID, Client IP, and event count for the last 24 hours.
 
-**Login Failures by ClientIP.** See a bar chart with the login failures by Client IP and count in the last 24 hours.
+**Login Failures by Client IP**. See a bar chart showing login failures by Client IP and count over the last 24 hours.
 
-**Login Failures by User - Trend.** See a stacked bar chart with the count of login failures per user every hour over the last 24 hours.
+**Login Failures by User - Trend**. See a stacked bar chart with the count of login failures per user every hour over the last 24 hours.
 
-**Login Failures by Operation.** See a pie chart with the operations that caused login failures in the last 24 hours.
+**Login Failures by Operation**. See a pie chart with the operations that caused login failures in the last 24 hours.
 
-**Login Failures by Error.** See a bar chart with the errors for login failures in the last 24 hours with count.
+**Login Failures by Error**. See a bar chart of login failures over the last 24 hours, with counts.
 
-**Login Failure Outlier.** See a line chart with the login failure count for every hour over the last 7 days along with the threshold values.
+**Login Failure Outlier**. See a line chart of login failure counts by hour over the last 7 days, along with the threshold values.
 
 
 ### Active Directory - User, Account Monitoring
@@ -228,32 +228,32 @@ Shows details of Added and Deleted Users, Password Resets and Changes, and Added
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectory-User,AccountMonitoring.png')} alt="Microsoft Office 365 dashboards" />
 
-**Added and Deleted Users.** See a table with details of added and deleted users in the last 7 days such as time, operation, object ID, and status.
+**Added and Deleted Users**. See a table detailing added and deleted users in the last 7 days, including time, operation, object ID, and status.
 
-**Added and Deleted Users - Trend.** See a stacked column chart of the count of the delete and add user operations along with their success/failure statuses over the last 7 days.
+**Added and Deleted Users - Trend**. See a stacked column chart showing the counts of delete and add user operations, along with their success/failure statuses, over the last 7 days.
 
-**Password Resets and Changes**. See a table of the password change and password reset operations along with the time, object ID, and status, for the last 7 days.
+**Password Resets and Changes**. See a table of password change and reset operations, along with the time, object ID, and status, for the last 7 days.
 
-**Password Resets and Changes - Trend**. See a stacked column chart of the count of the password reset and change operations along with their success/failure statuses over the last 7 days.
+**Password Resets and Changes - Trend**. See a stacked column chart showing the counts of password reset and change operations, along with their success/failure statuses, over the last 7 days.
 
-**Added or Removed Members from Group**. See a table with the details of member addition and removal from a group such as the time, object ID, user ID, group name, status, and event count, for the last 7 days.
+**Added or Removed Members from Group**. See a table with the details of member addition and removal from a group, such as the time, object ID, user ID, group name, status, and event count, for the last 7 days.
 
 
 #### Active Directory Activity
 
-Shows details such as admin activity, transaction by client location, operations, client IPs, and failed activity over time.
+Shows details such as admin activity, transactions by client location, operations, client IPs, and failed activity over time.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectoryActivity.png')} alt="Microsoft Office 365 dashboards" />
 
-**Top Users by AAD Admin Activity**. See the top users by Azure AD administrator activity in a table chart including details on the user ID and the count for the last 24 hours.
+**Top Users by AAD Admin Activity**. See the top users by Azure AD administrator activity in a table chart, including user ID and count for the last 24 hours.
 
-**AD Transactions by Client Location**. Uses a geo lookup operation to display AD transactions by client location on a map of the world for the last 24 hours.
+**AD Transactions by Client Location**. Uses a geo lookup operation to display AD transactions by client location on a world map for the last 24 hours.
 
 **AD Operations**. See the AD operations activities by name and count as a line chart on a timeline for the last 24 hours.
 
 **Top Client IPs**. See the details on the top client IP address in a stacked column chart on a timeline for the last 24 hours.
 
-**Failed Activity Over Time**. See the failed activities in an area chart on a timeline for the last 24 hours.
+**Failed Activity Over Time**. See failed activities on an area chart over the last 24 hours.
 
 
 ### Exchange
@@ -264,28 +264,28 @@ Shows details of operations, user types, and configuration changes in Exchange.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-AdminAudit.png')} alt="Microsoft Office 365 dashboards" />
 
-**Top 10 Operations**. See the top 10 operations in a table chart including details on operation and frequency for the last 14 days.
+**Top 10 Operations**. See the top 10 operations in a table chart, including details on each operation and its frequency for the last 14 days.
 
-**Top 10 Active Users**. See the top 10 active users in a table chart including details on user ID and frequency for the last 14 days.
+**Top 10 Active Users**. See the top 10 active users in a table chart, including user ID and frequency for the last 14 days.
 
-**User Types**. See the information on user types in a table chart including details on user type and frequency for the last 14 days.
+**User Types**. See the user type information in a table chart, including details on each user type and its frequency for the last 14 days.
 
-**Users Making Configuration Changes**. See all users making configuration changes in a table chart including details on user ID and frequency for the last 14 days.
+**Users Making Configuration Changes**. See all users making configuration changes in a table chart, including user ID and frequency over the last 14 days.
 
-**Configuration Changes by External Access**. See a table with the details of the configuration changes that were made using external access such as the user ID, object ID, originating server, operation, name, value, and frequency for the last 14 days.
+**Configuration Changes by External Access**. See a table detailing the configuration changes made via external access, including user ID, object ID, originating server, operation, name, value, and frequency for the last 14 days.
 
-**Recent Parameter Changes**. See the details on recent parameter changes in a table chart including information on the name and frequency for the last 14 days.
+**Recent Parameter Changes**. See the details of recent parameter changes in a table, including the name and frequency for the last 14 days.
 
-**Configuration Changes (All)**. See the details on all configuration changes in a table chart, including information on user ID, object ID, originating server, operation, name, value, and frequency for the last 14 days.
+**Configuration Changes (All)**. See the details of all configuration changes in a table, including user ID, object ID, originating server, operation, name, value, and frequency for the last 14 days.
 
 
 #### Exchange - Group Audit
 
-Shows the active users, operations, folders and recent activities.
+Shows the active users, operations, folders, and recent activities.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-GroupAudit.png')} alt="Microsoft Office 365 dashboards" />
 
-**Top 10 Operations.** See the top 10 operations by name and frequency in a column chart for the last six hours.
+**Top 10 Operations**. See the top 10 operations by name and frequency in a column chart for the last six hours.
 
 **Top 10 Active Users**. See the top 10 active users by user ID and frequency in a column chart for the last six hours.
 
@@ -297,24 +297,24 @@ Shows the active users, operations, folders and recent activities.
 
 **Logon Types**. See information on logon types in a pie chart for the last six hours.
 
-**Recent Activities (External Access)**. See a table of details of recent activities through external access such as time, user ID, client IP, originating server, operation, client process name, client version, and logon type.
+**Recent Activities (External Access)**. See a table of details for recent activities via external access, including time, user ID, client IP, originating server, operation, client process name, client version, and logon type.
 
 
 ### Exchange - Mailbox Audit
 
-Shows the details of users, operations, IPs, client, logon types, and external access.
+Shows details on users, operations, IPs, clients, logon types, and external access.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-MailboxAudit.png')} alt="Microsoft Office 365 dashboards" />
 
-**Top 10 Operations.** See the top 10 operations by operation name and frequency in a bar chart for the last 24 hours.
+**Top 10 Operations**. See the top 10 operations by operation name and frequency in a bar chart for the last 24 hours.
 
 **Top 10 IPs**. See the top 10 IP addresses by IP and frequency in a bar chart for the last 24 hours.
 
 **Top 10 Users**. See the details on the top 10 users by user ID and frequency in a bar chart for the last 24 hours.
 
-**Top 10 Clients**. See the top 10 clients accessed in a table chart including details on the client process name, client version, and frequency for the last 24 hours.
+**Top 10 Clients**. See the top 10 clients accessed in a table, including details on the client process name, client version, and frequency over the last 24 hours.
 
-**Top 10 Email Client Used**. See information on the top 10 email clients used in a table chart including details on email client, version, and frequency for the last 24 hours.
+**Top 10 Email Clients Used**. See information on the top 10 email clients used in a table, including details on each client, version, and frequency for the last 24 hours.
 
 **Logon Types**. See logon types in a pie chart for the last 24 hours.
 
@@ -323,13 +323,13 @@ Shows the details of users, operations, IPs, client, logon types, and external a
 
 ### Exchange - Mailbox Audit - Client Locations
 
-Shows the clients by locations and over time.
+Shows the clients by location and over time.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/MicrosoftOffice365/Office365-Exchange-MailboxAudit-ClientLocations.png')} alt="Exchange - Mailbox Audit - Client Locations" />
 
-**Worldwide Clients**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
+**Worldwide Clients**. Performs a geo lookup to display worldwide client IP addresses on a world map for the last 24 hours.
 
-**United States Clients**. Performs a geo lookup operation to display United States client IP address locations on a map of the world for the last 24 hours.
+**United States Clients**. Performs a geo lookup to display United States client IP addresses on a world map for the last 24 hours.
 
 **Clients by Country Over Time**. See clients by country in a stacked column chart on a timeline for the last 24 hours.
 
@@ -344,75 +344,74 @@ Shows details of URLs accessed, downloaded, uploaded, viewed, checked in, and ch
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-ContentInsight.png')} alt="Microsoft Office 365 dashboards" />
 
-**Top 10 SiteUrl Accessed**. See the top 10 SiteUrls accessed in a table chart including details on siteurl and count for the last 24 hours.
+**Top 10 SiteUrls Accessed**. See the top 10 SiteUrls accessed in a table, including details on each SiteUrl and its count for the last 24 hours.
 
-**Top SharePoint Resources**. See the top SharePoint resources accessed in a table chart including details on the source relative URL, source file name, and count for the last 24 hours.
+**Top SharePoint Resources**. See the top SharePoint resources accessed in a table chart, including details on the source relative URL, source file name, and count for the last 24 hours.
 
-**File Type Accessed**. See details on the file type accessed in a table chart including details on the file type and count for the last 24 hours.
+**File Type Accessed**. See the file type breakdown in a table, including the file type and count for the last 24 hours.
 
-**Most Downloaded Contents**. See the most downloaded content in a table chart including details on the source relative URL, source file name, and frequency for the last 24 hours.  
+**Most Downloaded Contents**. See the most-downloaded content in a table, including details on the source relative URL, source file name, and frequency for the last 24 hours.
 
-**Recently Uploaded Contents**. See the recently uploaded content in a table chart including details on the source relative URL, source file name, user ID for the last 24 hours.
+**Recently Uploaded Contents**. See the recently uploaded content in a table chart, including details on the source relative URL, source file name, and user ID for the last 24 hours.
 
-**Top 10 Most Viewed Contents**. See the details on the top 10 most viewed content in a table chart including details on source relative URL, source file name, and frequency for the last 24 hours.
+**Top 10 Most-Viewed Content**. See the top 10 most-viewed content in a table chart, including source relative URL, source file name, and frequency for the last 24 hours.
 
-**Contents CheckedIn-CheckedOut Recently**. See the information on content that was checked in and checked out recently in a table chart, including details on source relative URL and source file name for the last 24 hours.
+**Contents CheckedIn-CheckedOut Recently**. See the information on content that was checked in and checked out recently in a table, including details on the source relative URL and source file name for the last 24 hours.
 
 
-#### SharePoint - Shared Content Non-Domains Activities
+#### SharePoint - Shared Content Non-Domain Activities
 
 Shows details of non-domain users' accesses, uploads, downloads, and views.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-SharedContentNon-DomainsActivities.png')} alt="Microsoft Office 365 dashboards" />
 
-To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#installing-the-microsoft-office-365-app).
+To see your data in this dashboard, open the queries for each panel and add your domain to them as mentioned [here](#installing-the-microsoft-office-365-app).
 
+**Top 10 Users Sharing Outside Domain**. See the top 10 users sharing content outside the domain in a table chart, including user ID and frequency for the last 7 days.
 
-**Top 10 Users Sharing Outside Domain**. See the top 10 users sharing content outside the domain in a table chart including details on user ID and frequency for the last seven days.
+**Top 10 Non-Domain Users With Access**. See the information on the top 10 non-domain users with access in a table chart, including details on the user shared with and frequency for the last seven days.
 
-**Top 10 Non-Domain Users With Access**. See the information on top 10 non-domain users with access in a table chart including details on user shared with and frequency for the last seven days.
+**Top 10 Non-Domain Users Downloading**. See information on the top 10 non-domain users downloading content in a table chart, including user ID and frequency for the last seven days.
 
-**Top 10 Non-Domain Users Downloading**. See information on the top 10 non-domain users downloading content in a table chart including user ID and frequency for the last seven days.
+**Top 10 Contents Downloaded by Non-Domain Users**. See the top 10 contents downloaded by non-domain users in a table, including details on the source relative URL, source file name, and frequency over the last 7 days.
 
-**Top 10 Contents Downloaded by Non-Domain Users**. See the top 10 contents downloaded by non-domain users in a table chart including details on the source relative URL, source file name, and frequency for the last seven days.
+**Top 10 Non-Domain Users Uploading**. See the top 10 non-domain users uploading content in a table chart, including user ID and frequency for the last seven days.
 
-**Top 10 Non-Domain Users Uploading**. See the top 10 non-domain users uploading content in a table chart including details on user ID and frequency for the last seven days.
+**Recent Uploads by Non-Domain Users**. See details on recent uploads by non-domain users in a table chart, including source relative URL and source file name for the last seven days.
 
-**Recent Uploads by Non-Domain Users**. See the details on recent uploads by non-domain users in a table chart including information on source relative URL and source file name for the last seven days.
+**Top 10 Non-Domain Users Viewing Content**. See the top 10 non-domain users who have viewed content in a table chart, including user ID and frequency for the last 7 days.
 
-**Top 10 Non-Domain Users Viewing Contents**. See the top 10 non-domain users who have viewed content in a table chart, including details on user ID and frequency for the last seven days.
-
-**Top 10 Contents Viewed by Non-Domain Users**. See the top 10 content items viewed by non-domain users in a table chart, including details on source relative URL, source file name, and frequency for the last seven days.
+**Top 10 Contents Viewed by Non-Domain Users**. See the top 10 content items viewed by non-domain users in a table chart, including details on the source relative URL, source file name, and frequency over the last 7 days.
 
 
 #### SharePoint - User Activity
 
-Shows details of active users, active IPs, and count of user sharing content.
+Shows details of active users, active IPs, and the count of users sharing content.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-UserActivity.png')} alt="Microsoft Office 365 dashboards" />
 
-**Top 10 Active Users**. See the top 10 active users in a table chart including details on user ID and count for the last 24 hours.
+**Top 10 Active Users**. See the top 10 active users in a table chart, including details on user ID and count for the last 24 hours.
 
-**Top 10 Active IPs**. See the top 10 active IP address in a table chart including details on the client IP and count for the last 24 hours.
+**Top 10 Active IPs**. See the top 10 active IP addresses in a table, including client IP addresses and counts for the last 24 hours.
 
-**Top Sharing Activities by User ID**. See the information on the top sharing activities by user ID in a table chart including details on user ID, count, and operation for the last 24 hours.
+**Top Sharing Activities by User ID**. See the top sharing activities by user ID in a table chart, including user ID, count, and operation for the last 24 hours.
 
-**Top 10 Users Involved in Sharing Operations**. See the top 10 users who have performed sharing operations in a table chart, including details on user ID and count for the last 24 hours.
+**Top 10 Users Involved in Sharing Operations**. See the top 10 users who have performed sharing operations in a table chart, including user ID and the count for the last 24 hours.
 
-**Top 10 Users Downloading Content**. See the top 10 users who have downloaded content in a table chart including details on user ID and frequency for the last 24 hours.
+**Top 10 Users by Content Downloads**. See the top 10 users who have downloaded content in a table chart, including user ID and download frequency for the last 24 hours.
 
-**Top 10 Users Uploading Content**. See the details on the top 10 users who have uploaded content in a table chart including details on user ID and frequency for the last 24 hours.
+**Top 10 Users Uploading Content**. See the top 10 users who have uploaded content in a table chart, including user ID and frequency for the last 24 hours.
 
 
 #### SharePoint - Visitor Locations
 
-Shows details of visitors to the SharePoint by location and over time.
+Shows visitor details for SharePoint by location and over time.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-VisitorLocations.png')} alt="Microsoft Office 365 dashboards" />
 
-**Worldwide Visitors**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
+**Worldwide Visitors**. Performs a geo lookup to display worldwide client IP addresses on a world map for the last 24 hours.
 
-**United States Visitors**. Performs a geo lookup operation to display United States client IP address locations on a map of the world for the last 24 hours.
+**United States Visitors**. Performs a geo lookup to display United States client IP addresses on a world map for the last 24 hours.
 
 **Visits by Country Over Time**. Displays visitors by country in a stacked column chart on a timeline for the last 24 hours.
 
@@ -430,6 +429,24 @@ To use the following searches, you will need to edit the search query to add the
 **Demo - LogReduce on Suspicious IP**. Performs a LogReduce operation on a suspicious IP address that you specify.
 
 **Demo - Outlier**. Performs an outlier operation on an IP address that you specify.
+
+## Create monitors for the Microsoft Office 365 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Microsoft Office 365 alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Office 365 - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 15 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count < = 0 |
+| `Office 365 - Login from Risky Country` | This alert is triggered when a successful login is detected from a country identified as high-risk or embargoed. This helps identify potential unauthorized access from restricted geographic locations. | Count > 0 | Count < = 0 |
+| `Office 365 - User Account Deleted` | This alert is triggered when a user account is deleted in Azure Active Directory. This could indicate an insider threat, a compromised admin account, or unauthorized administrative activity. | Count > 0 | Count < = 0 |
+| `Office 365 - Exchange Configuration Change by External Entity` | This alert is triggered when Exchange admin configuration changes are made via external access. This is a high-risk indicator of unauthorized administrative activity from outside the organization. | Count > 0 | Count < = 0 |
+| `Office 365 - External Mailbox Access` | This alert is triggered when a mailbox is accessed externally by a non-owner. This may indicate unauthorized access to email content from outside the organization. | Count > 0 | Count < = 0 |
+| `Office 365 - Mass File Downloads` | This alert is triggered when a single user downloads more than 50 files from SharePoint or OneDrive within 15 minutes. This may indicate a data exfiltration attempt or unauthorized bulk data access. | Count > 0 | Count < = 0 |
+| `Office 365 - Anonymous or External Sharing Link Created` | This alert is triggered when an anonymous sharing link or external sharing invitation is created in SharePoint or OneDrive. This may indicate potential data exposure to unauthorized external parties. | Count > 0 | Count < = 0 |
 
 ## Upgrading the Microsoft Office 365 app (Optional)
 

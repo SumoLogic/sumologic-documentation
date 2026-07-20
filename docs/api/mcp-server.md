@@ -20,11 +20,9 @@ This feature is in Extended Preview. For more information, contact your Sumo Log
 
 The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 
-<!-- when MCP goes GA: mention it can work with Dojo AI agents, add endpoints to API doc-->
-
 ## Prerequisites
 
-* **MCP server URL for your deployment**. OAuth tokens are deployment-bound, so you must use the correct URL for your Sumo Logic deployment:
+* **Deployment-specific MCP server URL**. Because OAuth tokens are deployment-bound, you'll need to use the exact URL assigned to your Sumo Logic deployment:
    | Deployment | MCP Server URL |
    | :--- | :--- |
    | Asia Pacific (Seoul) | `https://mcp.kr.sumologic.com/mcp` |
@@ -37,17 +35,16 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-* **An MCP-compatible client that supports OAuth 2.0**. The default setup uses dynamic client registration. We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or Anthropic Console account).
-
-:::note
-If you have questions about client compatibility, [contact Sumo Logic Support](https://support.sumologic.com/support/s).
-:::
+* **An MCP-compatible client that supports remote HTTP/SSE transport and OAuth 2.0**. The default setup uses Client ID Metadata Documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or an Anthropic Console account).
+   :::note
+   [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
+   :::
 
 ## Configure in Claude Code CLI
 
 ### Authentication
 
-Claude Code CLI uses OAuth 2.0 with dynamic client registration. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
@@ -85,29 +82,59 @@ If you previously granted consent for an org, you will not be prompted again. To
 
 ### Manual OAuth setup
 
-Dynamic client registration is the recommended setup for most MCP server users. If your MCP client does not support dynamic client registration, you can connect with manually created OAuth credentials by providing a client ID and secret. See [OAuth Client Setup](/docs/manage/security/oauth#authorization-code-flow) for instructions on creating an OAuth client, then register the MCP server with:
+CIMD is the recommended setup for most MCP server users. If your MCP client does not support CIMD, you can connect with manually created OAuth credentials instead. This requires the **Sumo Logic Administrator role** to create an OAuth client, and you'll set up [OAuth credentials](/docs/manage/security/oauth) (a client ID and client secret) to authenticate.
 
-```bash
-claude mcp add --scope user --transport http \
-  --client-id "<client-id>" --client-secret --callback-port 8888 \
-  sumo-logic "<MCP-server-URL>"
-```
+#### Create an OAuth client
+
+1. In Sumo Logic, go to **Administration** > **Security** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+   * Enter a **Name**.
+   * For **Client Type**, select **Authorization Code**.
+   * For **Redirect URI**, enter:
+      ```
+      http://localhost:8888/callback
+      ```
+   * Select your **Service Account** from the dropdown.
+   * Optionally, add a **Description**.
+   * Under **Scopes**, leave every checkbox unchecked to grant access to all scopes, or select specific scopes to restrict the client's access. See [Available MCP tools](#available-mcp-tools) for the scope each tool requires.
+   * Click **Save**.
+1. Copy the **Client ID** and **Client Secret**. You'll use these in the next step.
+
+#### Register the Sumo Logic MCP server
+
+1. Open a Terminal window (not inside the Claude Code CLI session) and copy one of the snippets below, replacing `<client-id>` with the Client ID from the [OAuth client you created above](#create-an-oauth-client), and replacing `<mcp-server-url>` with your [Sumo Logic deployment's MCP server URL](#prerequisites).
+   * **User scope** (available in all directories, recommended).
+     ```bash
+     claude mcp add --transport http \
+       --scope user \
+       --client-id "<client-id>" --client-secret --callback-port 8888 \
+       sumo-logic "<mcp-server-url>"
+     ```
+   * **Project scope** (available only in the current directory, writes to `.mcp.json`).
+     ```bash
+     claude mcp add --transport http \
+       --scope project \
+       --client-id "<client-id>" --client-secret --callback-port 8888 \
+       sumo-logic "<mcp-server-url>"
+     ```
+1. Run one of the above commands. Claude Code then prompts you to enter the client secret securely.
+1. Continue with the remaining steps in [Setup](#setup) above: launch Claude Code, run `/mcp`, and authenticate.
 
 :::note
-Recent VS Code releases do not work with explicit client credentials. Use the default dynamic registration setup above for VS Code.
+Recent VS Code releases do not work with explicit client credentials. Use the default CIMD setup above for VS Code.
 :::
 
 ## Available MCP tools
 
 Our MCP server provides access to Sumo Logic through these tool categories:
 * **Utility tools**. Discover relevant tools based on context.
-* **Alerts management**. Search, retrieve, and resolve alerts.
-* **Dashboard management**. Create, retrieve, update, and delete dashboards.
-* **Cloud SIEM**. Manage insights, detection rules, triage information, entities, and status updates.
-* **Log search**. Create and manage search jobs, retrieve paginated messages and records.
-* **User management**. List users in the organization.
+* **Alerts management**. Search and retrieve alerts.
+* **Dashboard management**. Create, retrieve, and update dashboards.
+* **Cloud SIEM**. Manage insights, detection rules, and status updates.
+* **Log search**. Run log search queries and retrieve results.
+* **Discovery**. List custom fields, field extraction rules, and partitions to help scope log searches.
 
-All tools respect your Sumo Logic permission controls and access policies.
+All tools respect your Sumo Logic permission controls and access policies. See [Role capabilities](/docs/manage/users-roles/roles/role-capabilities) for details on each required scope.
 
 :::note
 Tool identifiers are subject to change during the preview period.
@@ -115,36 +142,30 @@ Tool identifiers are subject to change during the preview period.
 
 ### Utility tools
 
-| Tool | Description |
-| :--- | :---------- |
-| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `x_amz_bedrock_agentcore_search` | Search/filter the available tools by context. | N/A |
 
 ### Alerts management
 
-| Tool | Description |
-| :--- | :---------- |
-| `alertsReadById`   | Get an alert or folder by ID. |
-| `alertsSearch`     | Search alerts by status, severity, monitor name, mute status, and more. |
-| `getHistory`       | Get alert history for a monitor over a time range. |
-| `getRelatedAlerts` | Get alerts related to a given alert by time proximity or shared entity. |
-| `resolve`          | Resolve an alert. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `alertsReadById` | Get an alert or folder by ID. | View Alerts (`viewAlerts`) |
+| `alertsSearch`   | Search alerts by status, severity, monitor name, mute status, and more. | View Alerts (`viewAlerts`) |
 
 #### Sample prompts
 
 * `Show me all active alerts from the last 24 hours`
-* `Get the history for alert ID <id>`
-* `Find alerts related to <id>`
-* `Resolve alert <id>`
+* `Find all alerts triggered by monitor <name> in the last 7 days`
 
 ### Dashboard management
 
-| Tool | Description |
-| :--- | :---------- |
-| `createDashboard` | Create a new dashboard. |
-| `deleteDashboard` | Delete a dashboard by ID. |
-| `getDashboard`    | Get a dashboard by ID. |
-| `listDashboards`  | List all dashboards. |
-| `updateDashboard` | Update a dashboard by ID. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `createDashboard` | Create a new dashboard. | Manage Library (`manageLibrary`) |
+| `getDashboard`    | Get a dashboard by ID. | View Library (`viewLibrary`) |
+| `listDashboards`  | List all dashboards. | View Library (`viewLibrary`) |
+| `updateDashboard` | Update a dashboard by ID. | Manage Library (`manageLibrary`) |
 
 #### Sample prompts
 
@@ -155,68 +176,332 @@ Tool identifiers are subject to change during the preview period.
 
 #### Insights
 
-| Tool | Description |
-| :--- | :---------- |
-| `GetAllInsights`            | Get all insights (paginated via token). |
-| `GetInsight`                | Get a single insight by ID, including signals, artifacts, and entity details. |
-| `GetInsightComments`        | Get comments on an insight. |
-| `GetInsightHistory`         | Get history of an insight. |
-| `GetInsightRelatedEntities` | Get involved entities for an insight. |
-| `GetInsightTriage`          | Get triage info for an insight. |
-| `GetInsights`               | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. |
-| `UpdateInsightAssignee`     | Update the assignee of an insight. |
-| `UpdateInsightStatus`       | Update the status of an insight. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `getAllInsights`        | Get all insights (paginated via token). | View Cloud SIEM Enterprise (`viewCse`) |
+| `getInsight`            | Get a single insight by ID, including signals, artifacts, and entity details. | View Cloud SIEM Enterprise (`viewCse`) |
+| `getInsights`           | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. | View Cloud SIEM Enterprise (`viewCse`) |
+| `updateInsightAssignee` | Update the assignee of an insight. | View Cloud SIEM Enterprise, Manage Insight Assignee (`viewCse`, `cseManageInsightAssignee`) |
+| `updateInsightStatus`   | Update the status of an insight. | View Cloud SIEM Enterprise, Manage Insight Status (`viewCse`, `cseManageInsightStatus`) |
 
-#### Detection Rules
+#### Detection rules
 
-| Tool | Description |
-| :--- | :---------- |
-| `CreateTemplatedMatchRule` | Create a new match rule. |
-| `CreateThresholdRule`      | Create a new threshold rule. |
-| `GetRule`                  | Get a single rule by ID with optional tuning expressions. |
-| `GetRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. |
-| `UpdateRuleEnabled`        | Enable or disable a detection rule. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `createTemplatedMatchRule` | Create a new match rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `createThresholdRule`      | Create a new threshold rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `getRule`                  | Get a single rule by ID with optional tuning expressions. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
+| `getRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
 
 #### Sample prompts
 
-* `Show triage details for INSIGHT-1234`
-* `Retrieve the triage details`
-* `What are all of the related entities?`
-* `Add a comment to this insight: "This warrants deeper investigation"`
-* `Show recommended next steps for INSIGHT-1234`
+* `Show me insight <id>, including its signals and involved entities`
+* `Find all critical insights that are still open`
 * `Update INSIGHT-1234 status to In Progress`
 * `Create a threshold rule that fires when more than 10 failed logins occur within 5 minutes`
-* `Show me all enabled rules in the authentication category`
+* `Show me all rules in the authentication category`
 * `Get details for rule ID <id>`
-* `Disable rule <id>`
 * `List all rules that have fired in the last 7 days`
 
 ### Log search
 
-| Tool | Description |
-| :--- | :---------- |
-| `createSearchJob`               | Create a search job with a custom query and time range. |
-| `deleteSearchJob`               | Delete a search job. |
-| `getSearchJobPaginatedMessages` | Get paginated raw messages from a search job. |
-| `getSearchJobPaginatedRecords`  | Get paginated aggregated records from a search job. |
-| `getSearchJobStatus`            | Get the status of a search job. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `runLogSearch` | Run a log search query over a time range and return aggregated records or raw messages. | Run Log Search (`runLogSearch`) |
+
+:::note
+Before running an unscoped query, the model first calls the Discovery tools below to identify a relevant `_sourceCategory`, then runs a small scoped sample query to confirm the source and discover `_collector` values. Queries over 30 minutes without a `_sourceCategory`, `_collector`, `_index`, or `_view` filter are rejected.
+:::
 
 #### Sample prompts
 
 * `Run a log search for the last 5 minutes across all of my data that counts the data by 1-minute buckets and plots the result as a line graph`
 * `Run a 2-day search on _sourcecategory=*proofpoint*, count by recipient and senderip`
 
-### User management
+### Discovery
 
-| Tool | Description |
-| :--- | :---------- |
-| `listUsers` | List all users in the organization. |
+| Tool | Description | Required scope |
+| :--- | :---------- | :-------------- |
+| `listCustomFields`    | List all custom fields configured in your account. | View Fields (`viewFields`) |
+| `listExtractionRules` | List field extraction rules. | View Field Extraction Rules (`viewFieldExtractionRules`) |
+| `listPartitions`      | List partitions in the organization, with filters for analytics tier and active status. | View Partitions (`viewPartitions`) |
 
 #### Sample prompts
 
-* `List the users in my org and format as an ASCII table`
-* `Show users who have never logged in`
-* `List all users and their roles`
+* `What partitions and field extraction rules exist for security logs?`
+* `List all active partitions in the frequent tier`
+
+## Improve investigations with a skill
+
+A skill gives an AI agent standing instructions and workflow context that persist across every conversation, so you do not need to repeat detailed prompting each time you ask a question. For Claude Code, a skill is a folder containing a `SKILL.md` file that documents how to approach a class of tasks, in this case, investigating Sumo Logic data through the MCP server's tools.
+
+Claude Code can invoke a skill in two ways:
+* **Automatically**. Claude matches your question against the `description` and `when_to_use` context defined in the skill's frontmatter and invokes the skill without you needing to reference it directly.
+* **Explicitly**. Type a slash command that matches the skill's folder name, for example, `/sumo-investigator`.
+
+The skill below is a starting point based on Sumo Logic's internal testing of MCP tool workflows. Treat it as a foundation you can customize for your environment, or use as a model for additional skills of your own.
+
+:::note
+As the Sumo Logic MCP server evolves, for example, as tools are added, removed, or renamed, you may need to update this skill to match.
+:::
+
+### Set up the skill in Claude Code
+
+1. Create a folder named `sumo-investigator` in your skills directory: `.claude/skills/sumo-investigator/` for a project-specific skill available only in the current directory, or `~/.claude/skills/sumo-investigator/` to make it available across all projects.
+1. In that folder, create a file named `SKILL.md` with the following content:
+
+   ````markdown
+   ---
+   name: sumo-investigator
+   description: Senior Sumo Logic investigation agent that answers natural language operational questions using log query evidence via the Sumo Logic MCP gateway tools
+   allowed-tools: runLogSearch listPartitions listCustomFields listExtractionRules alertsSearch alertsReadById getDashboard listDashboards getInsights getInsight getAllInsights updateInsightAssignee updateInsightStatus getRules getRule createTemplatedMatchRule createThresholdRule createDashboard updateDashboard
+   when_to_use: When the user asks to investigate logs, search Sumo Logic, analyze incidents, check alerts, review insights, create detection rules, or perform any Sumo Logic platform operation
+   ---
+
+   # Sumo Logic Investigation Agent
+
+   You are a **Senior Sumo Logic platform investigation agent** with deep experience analyzing large-scale production logs, security insights, detection rules, alerts, and dashboards. You think and operate like a seasoned Site Reliability Engineer who uses **Sumo Logic as the primary investigative tool** to answer real operational questions.
+
+   Your primary objective is to **answer the user's natural language question using data available in the Sumo Logic platform** — this includes logs, alerts, insights (SIEM), detection rules, and dashboards.
+
+   **Never refuse a question prematurely.** If a question might be answerable using log data, alerts, insights, or any other platform resource, you must explore available data sources first. Only decline after you have genuinely attempted to find the answer and confirmed the data does not exist in the platform.
+
+   ---
+
+   ## Communicating with the user
+
+   - Address the user directly at all times (you, your).
+   - Clearly communicate your approach, progress, and findings so the user understands what you are doing.
+   - Default to concise responses; add more detail when the user asks or when necessary for clarity.
+   - Do NOT add tangential or speculative information the user did not ask for.
+   - Do NOT add anything you cannot support with data retrieved from tools.
+   - Present query results clearly with context about what was searched and what was found.
+
+   ---
+
+   ## Asking the user for more information
+
+   Ask follow-up questions **only if**:
+
+   * No meaningful source expression can be inferred
+   * The question truly cannot be answered with available platform data
+   * It is taking too long to figure out the answer
+
+   When you ask:
+
+   * Ask **one concise, targeted question**
+   * Explain **why** it blocks progress
+   * Do not ask speculative or optional questions
+
+   ---
+
+   ## Time handling
+
+   * Always operate in the user's timezone and ISO 8601 format
+   * Use the current date (available from context) for relative time references
+   * For "last hour" / "last 24 hours" style requests, calculate the appropriate ISO 8601 `from` and `to` values
+
+   ---
+
+   ## Available capabilities
+
+   ### Log search (primary investigation tool)
+
+   Use `runLogSearch` to execute Sumo Logic queries. This is your primary tool for answering operational questions.
+
+   ### Metadata discovery
+
+   - `listPartitions` — find relevant `_sourceCategory` values from partition routing expressions
+   - `listCustomFields` — understand extracted fields available for filtering
+   - `listExtractionRules` — understand field extraction patterns and parsing rules
+
+   ### Alerts
+
+   - `alertsSearch` — search the alerts library by name, status, severity, monitor
+   - `alertsReadById` — get full details of a specific alert
+
+   ### Insights (SIEM)
+
+   - `getInsights` / `getAllInsights` — search and filter security insights
+   - `getInsight` — get full details of a specific insight
+   - `updateInsightAssignee` — reassign an insight
+   - `updateInsightStatus` — update insight status (new/inprogress/closed)
+
+   ### Detection rules (SIEM)
+
+   - `getRules` — search and filter detection rules
+   - `getRule` — get full details of a specific rule
+   - `createTemplatedMatchRule` — create a new Match Rule
+   - `createThresholdRule` — create a new Threshold Rule
+
+   ### Dashboards
+
+   - `listDashboards` — list available dashboards
+   - `getDashboard` — get dashboard details and panel definitions
+   - `createDashboard` — create a new dashboard
+   - `updateDashboard` — update an existing dashboard
+
+   ---
+
+   ## Log search workflow (MANDATORY)
+
+   You MUST follow this 3-step workflow for all log searches. **Never skip steps.**
+
+   ### Step 1 — DISCOVER (metadata only)
+
+   Call discovery tools to understand the data topology:
+
+   1. `listPartitions` — find relevant `_sourceCategory` values from partition routing expressions
+   2. `listCustomFields` — understand available extracted fields
+   3. `listExtractionRules` — understand field extraction patterns
+
+   **Call all three in parallel** to minimize latency. Identify target `_sourceCategory` values before proceeding.
+
+   ### Step 2 — SCOPED SAMPLE
+
+   Run a narrow sample search to confirm the correct data source:
+
+   - **Query**: `_sourceCategory=<value from Step 1>` with keywords related to the goal
+   - **Time range**: 5 minutes or less
+   - **Limit**: 5 or fewer results
+   - **Purpose**: confirm correct data source, discover `_collector` values, observe log format and available fields
+
+   ### Step 3 — TARGETED SEARCH
+
+   Construct the final query using scope identifiers from Steps 1-2:
+
+   - Include `_sourceCategory=<confirmed>` AND `_collector=<from Step 2>` (if found)
+   - Use the full time range needed
+   - Apply specific field filters based on patterns observed in Step 2
+   - Use appropriate aggregations (`count by`, `sum`, `avg`, `timeslice`, etc.)
+
+   ### Hard rules
+
+   - **NEVER** call `runLogSearch` without `_sourceCategory`, `_collector`, `_index`, or `_view` — unscoped queries over >30 minutes are rejected
+   - **NEVER** skip Step 1 — unscoped queries WILL timeout
+   - **NEVER** merge Steps 2 and 3 into a single call for complex investigations
+   - For aggregate queries spanning **more than 2 days**, split into parallel 1-day windows
+   - Prefer smaller limits to avoid overwhelming context
+   - Max runtime: 2 minutes per query; Max result size: 256MB
+
+   ---
+
+   ## Query construction guidelines
+
+   Build queries following this pattern: **source → filter → aggregate → format**
+
+   ```
+   _sourceCategory=prod/api/*
+   | where status_code >= 400
+   | count by service_name
+   | sort by _count desc
+   ```
+
+   ### Key Sumo Logic operators
+
+   | Operator | Purpose |
+   |----------|---------|
+   | `where` | Filter by field values |
+   | `count by` | Count occurrences grouped by field |
+   | `sum`, `avg`, `min`, `max` | Aggregation functions |
+   | `timeslice` | Time-bucket for trend analysis |
+   | `parse regex` | Extract fields from unstructured logs |
+   | `json` | Parse JSON-formatted logs |
+   | `if`, `matches` | Conditional logic |
+   | `outlier` | Detect anomalous values |
+   | `transaction` | Group related log events |
+   | `logreduce` | Pattern-based log summarization |
+
+   ---
+
+   ## Investigation strategies
+
+   ### For error investigation
+   1. Discover sources → Sample to find error patterns → Search with error filters → Aggregate by type/service
+
+   ### For performance investigation
+   1. Discover sources → Sample to find latency fields → Search with `timeslice` and `avg`/`pct` → Identify slow periods
+
+   ### For security investigation
+   1. Check Insights first (`getInsights`) → Review associated signals → Correlate with log evidence via targeted searches
+
+   ### For alert triage
+   1. Search alerts (`alertsSearch`) → Read alert details → Investigate underlying logs using the monitor's query pattern
+
+   ### For trend analysis
+   1. Discover sources → Build aggregate query with `timeslice` → Split time ranges if >2 days → Compare periods
+
+   ---
+
+   ## SIEM workflow
+
+   When investigating security concerns:
+
+   1. **Check Insights first** — use `getInsights` with relevant entity/severity filters
+   2. **Review Detection Rules** — use `getRules` to understand what's being monitored
+   3. **Correlate with logs** — use the log search workflow to gather supporting evidence
+   4. **Take action** — update insight status/assignee, or create new detection rules as needed
+
+   ### Insight query DSL examples
+
+   ```
+   status:"new"
+   severity:>7
+   entity.ip:"10.0.1.5"
+   timestamp:>2026-07-01T00:00:00+00:00
+   tag:"MITRE_ATT&CK"
+   ```
+
+   ### Creating detection rules
+
+   When creating rules, always:
+   - Set `enabled: false` initially and inform the user to review before enabling
+   - Provide a clear `descriptionExpression` explaining what the rule detects
+   - Use appropriate entity selectors (`_ip`, `_hostname`, `_username`)
+   - Set a reasonable `score` (1-10) based on severity
+
+   ---
+
+   ## Example interactions
+
+   **User**: "What errors are happening in our API gateway in the last hour?"
+
+   **Agent approach**:
+   1. DISCOVER: Call `listPartitions` + `listCustomFields` + `listExtractionRules` in parallel
+   2. SAMPLE: `_sourceCategory=*api*gateway* | where level="ERROR" | limit 5` (5-min window)
+   3. TARGETED: `_sourceCategory=prod/api/gateway AND _collector=<found> | where level="ERROR" | count by error_type, endpoint | sort by _count desc` (1-hour window)
+
+   **User**: "Are there any critical security insights from today?"
+
+   **Agent approach**:
+   1. Call `getInsights` with `q=severity:>7+timestamp:>2026-07-07T00:00:00+00:00`
+   2. For each insight, summarize: entity, signals, severity
+   3. Offer to drill into specific insights or correlate with logs
+
+   ---
+
+   ## Rules summary
+
+   **DO:**
+   - Follow the 3-step log search workflow (Discover → Sample → Target)
+   - Call discovery tools in parallel for efficiency
+   - Check SIEM insights for security questions before diving into logs
+   - Present findings clearly with supporting evidence
+   - State when data is insufficient or unavailable
+
+   **DON'T:**
+   - Skip the discovery step
+   - Run unscoped queries
+   - Speculate without data
+   - Expose tool names or implementation details
+   - Ask unnecessary clarifying questions when you can infer intent
+   - Create enabled detection rules without user confirmation
+   ````
+
+1. If this is the first skill you've added, restart Claude Code so it picks up the new skills directory. Otherwise, run `/mcp` to confirm the Sumo Logic MCP server is still connected.
+1. Invoke the skill automatically by asking an investigation question, or explicitly with `/sumo-investigator`.
+
+For more information about configuring, managing, and distributing skills, see [Extend Claude with skills](https://code.claude.com/docs/en/skills) in the Claude Code documentation.
 
 ## Example workflows
 
@@ -224,11 +509,11 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Triage and investigation
 
-* `Show me all critical insights from the last 7 days that are still open, then for each one get the related alerts and tell me which entities appear most frequently.`
+* `Show me all critical insights from the last 7 days that are still open, then tell me which involved entities appear most frequently.`
 
 * `Get insight <id>, show me its signals and involved entities, then run a log search for that IP address in the last 24 hours to find raw events.`
 
-* `Find all insights assigned to <username> that are in-progress, check the history on each to see how long they've been open, and list any that haven't been updated in over 3 days.`
+* `Find all insights assigned to <username> that are in-progress, and list any created more than 3 days ago.`
 
 ### Threat hunting
 
@@ -240,41 +525,39 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 ### Incident response
 
-* `Get insight <id>, pull its full signal list and all involved entities, search raw logs for each entity in the last 6 hours, then post a summary comment back to the insight.`
+* `Get insight <id>, pull its full signal list and all involved entities, then search raw logs for each entity in the last 6 hours.`
 
 * `Find all insights that were closed as 'False Positive' in the last 30 days, group them by rule ID, and search logs to see if those same patterns are still occurring today.`
 
-* `Get the history of insight <id> to reconstruct the timeline, then pull related alerts and search logs for the 30-minute window around when the insight was first created.`
+* `Get insight <id> and search logs for the 30-minute window around when it was first created.`
 
 ### Escalation and assignment
 
-* `Find all unassigned high-severity insights, look up the user <email> to get their ID, then assign all those insights to them.`
+* `Find all unassigned high-severity insights and assign them to <username>.`
 
-* `Close all resolved alerts from monitor <name> and mark any related open insights as closed with resolution 'False Positive'.`
-
-* `Find all insights that have been sitting in 'in progress' status for more than 7 days with no history updates, list them with assignee names, and reassign any unowned ones to <team>.`
+* `Find all insights that have been sitting in 'in progress' status for more than 7 days, list them with assignee names, and reassign any unowned ones to <team>.`
 
 ### Situational awareness
 
-* `List all triggered critical alerts right now, find related alerts for each, then search logs for the top affected source IP to see what it's been doing.`
+* `List all triggered critical alerts right now, then search logs for the top affected source IP to see what it's been doing.`
 
 * `Summarize all insights created in the last 24 hours: how many per severity, which entities are involved, and who they're assigned to.`
 
-* `Show me all triggered alerts that have related alerts fired within 30 minutes of them, then check if any of those correlated alert clusters have spawned an insight.`
+* `Show me all triggered critical alerts from the last hour, and check if their source entities also appear in open insights.`
 
 ### Entity-centric investigation
 
-* `Given IP address <x.x.x.x>, find all insights where it appears as an entity, pull all related alerts, search logs for its full activity in the last 24 hours, and check if it appears in any other insights as an involved entity.`
+* `Given IP address <x.x.x.x>, find all insights where it appears as an entity, then search logs for its full activity in the last 24 hours.`
 
 * `Find the most active entity by insight count in the last 14 days, get all its insights with full signal details, then build a timeline dashboard of its activity.`
 
-* `Look up insights for hostname <server-name>, get triage verdicts for each, then search logs for any privilege escalation events on that host in the same timeframe.`
+* `Look up insights for hostname <server-name>, then search logs for any privilege escalation events on that host in the same timeframe.`
 
 ### Alert and monitor deep dives
 
-* `Find all alerts from monitor <name>, get the full history to see how often it fires, then search logs during the last trigger window to determine if it's noisy or legitimate.`
+* `Find all alerts from monitor <name>, then search logs during the last trigger window to determine if it's noisy or legitimate.`
 
-* `Find all muted monitors with active Critical alerts, get their alert history for the past week, and search logs to see if the underlying condition has actually resolved.`
+* `Find all muted monitors with active Critical alerts, then search logs to see if the underlying condition has actually resolved.`
 
 ### Cross-tool correlation
 
@@ -282,11 +565,11 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 * `Compare insight volume week-over-week: pull insights from the last 7 days vs the 7 days before that, broken down by severity, and identify any rules that are newly firing this week.`
 
-* `Get all Critical and High insights from today, look up comments on each to see if anyone is already working them, and for any with no comments and no assignee, assign to <team> and add a triage comment.`
+* `Get all Critical and High insights from today, and for any with no assignee, assign them to <team>.`
 
 ### Team operations and reporting
 
-* `List all users on the security team, then for each one show how many open insights are assigned to them and what their oldest unresolved insight is.`
+* `Find all open insights assigned to the security team and show the oldest unresolved one.`
 
 * `Generate a weekly report: count insights by severity and status, show the top 5 most triggered monitors from alerts, and list the 3 most common entity types involved in new insights.`
 
@@ -300,11 +583,11 @@ These prompts demonstrate multi-step investigations that chain multiple tools to
 
 * `List all enabled threshold rules and show me which ones have the highest signal counts in the last 7 days.`
 
-* `Find all rules in the 'lateral-movement' category, check if any are disabled, and enable them.`
+* `Find all rules in the 'lateral-movement' category and check if any are disabled.`
 
 * `Create a new match rule that detects SSH brute force attempts by looking for more than 5 failed SSH authentication events from the same source IP within 10 minutes.`
 
-* `Get all rules tagged 'ransomware', check their signal counts, and if any haven't fired in 30 days, disable them and add a comment explaining why.`
+* `Get all rules tagged 'ransomware' and flag any that haven't fired in 30 days.`
 
 * `Find all custom rules (ruleSource = 'custom'), get their details including tuning expressions, and create a summary report of which ones are actively generating insights.`
 
@@ -332,6 +615,10 @@ MCP endpoints are cost-amplifying by design. A single conversational request can
 * Workflows continue executing after client disconnect.
 
 MCP is designed for conversational, agent-level interaction where cost per request is understood and monitored. For raw data access or high-volume operations, standard APIs remain more efficient and cost-effective.
+
+:::note
+If you're on [Flex pricing](/docs/manage/partitions/flex), cost-amplifying patterns in log search tool calls — broad queries, multi-step investigations, retries — translate directly into scan costs. Monitor usage closely when connecting MCP clients to a Flex account.
+:::
 
 For detailed guidance on securing MCP against cost-based attacks, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
 
