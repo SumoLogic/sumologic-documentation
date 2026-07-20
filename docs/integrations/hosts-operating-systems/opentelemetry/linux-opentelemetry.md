@@ -169,7 +169,7 @@ Use this dashboard to:
 
 ### Linux - Disk Metrics
 
-The **Linux - Disk Metrics** dashboard provides detailed information about on disk utilization and disk IO operations. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - Disk Metrics** dashboard provides detailed information about disk utilization and disk IO operations. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
