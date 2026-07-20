@@ -19,9 +19,14 @@ The SOC Analyst agent provides the following functionality:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
 
+## Availability
+
+The SOC Analyst agent requires a Cloud SIEM subscription and is opt-in. As a launch promotion, it is enabled by default for the first 90 days with a capacity of five investigated insights per day, and you can opt out at any time. Contact your Sumo Logic account team for details.
+
+{/* VERIFY before publishing (DOCS-1565): confirm the 90-day window start and the exact opt-out mechanism. Source: Dojo AI FAQ, SOC Analyst Agent section. */}
+
 <!-- TODO (DOCS-1565), from the Dojo AI FAQ (pp. 60-69), pending product/GA confirmation:
   - Third core capability: add "Incident report generation (via Mobot)" alongside Triage and Investigation (FAQ p.60/62), once GA-confirmed.
-  - Enablement note: contact your account team to add the SOC Analyst Agent to your Cloud SIEM subscription; once enabled it auto-investigates new insights with no extra configuration (FAQ p.12). Requires a Cloud SIEM subscription.
   - Agent limitations: AI reasoning is limited to normalized security data (records and signals); no external MCP/automation-service integrations yet (FAQ p.63).
   - Recommended Actions: verify the "Recommended Actions" / Execute Action playbook steps in the AI Investigation tab section are GA. The Dojo AI FAQ (p.63) says automated remediation is "still in testing and not currently available to customers." Remove or gate that content if not yet available.
   - No persistent learning: the Dojo AI FAQ (p.66) says the agent has "no persistent learning" and does not immediately retrain. Soften the "reviewed to refine model behavior over time as part of the Dojo AI learning loop" FAQ answer accordingly, and consider a dedicated "Does the agent learn from past investigations?" FAQ.

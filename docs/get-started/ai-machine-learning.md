@@ -51,7 +51,7 @@ Dojo AI is Sumo Logic’s multi-agent AI platform, bringing specialized agents a
 
 ### SOC Analyst agent
 
-The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) applies agentic reasoning to triage and investigate Cloud SIEM insights. It delivers automated verdicts (malicious, suspicious, or benign) using evidence-backed analysis, and supports hypothesis-driven investigation to map relationships, connect entities, and summarize findings.
+The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) applies agentic reasoning to triage and investigate Cloud SIEM insights. It delivers automated verdicts (malicious, suspicious, or benign) using evidence-backed analysis, and supports hypothesis-driven investigation to map relationships, connect entities, and summarize findings. It requires a Cloud SIEM subscription and is opt-in, with a launch promotion that enables it by default for the first 90 days at five investigated insights per day. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 
 ### MCP server
 
