@@ -16,18 +16,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Mobot is Sumo Logic's AI assistant that turns plain-language questions into log queries. Ask what you want to investigate and get query results, visualizations, and guided refinements in one conversational experience—without writing queries from scratch. Mobot tracks your intent, maintains conversation context, and surfaces step-by-step suggestions to move you from question to insight faster.
 
-Mobot connects you to two specialized agents:
+Mobot connects you to three specialized agents:
 
 * **Query Agent** translates your natural-language questions into log search queries and helps you refine them step by step.
 * **Knowledge Agent** answers how-to questions about Sumo Logic, from setup to troubleshooting, best practices, and more.
+* **Monitor Creation Agent** creates and updates logs monitors from plain-language prompts, so you do not have to fill out the monitor form manually.
 
 Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
 
 ## At a glance
 
 - **What it is**: Sumo Logic's AI-powered assistant for log investigation and platform guidance.
-- **Two agents**: Query Agent (log search queries) and Knowledge Agent (how-to answers from official docs).
-- **How it works**: Ask questions in plain English; Mobot translates them into Sumo Logic queries or returns documentation-sourced answers.
+- **Three agents**: Query Agent (log search queries), Knowledge Agent (how-to answers from official docs), and Monitor Creation Agent (create logs monitors from prompts).
+- **How it works**: Ask questions in plain English; Mobot translates them into Sumo Logic queries, returns documentation-sourced answers, or builds a monitor configuration for you.
 - **Response time**: Typically under 2 seconds for most queries.
 - **Compatible log types**: JSON, partial JSON, and unstructured logs with Field Extraction Rules.
 - **AI provider**: Amazon Bedrock (no customer data used for training).
@@ -68,13 +69,13 @@ There are two ways to open Mobot:
 
 Not sure where to start? Choose an agent based on what you need:
 
-|      | Query Agent | Knowledge Agent |
-|:-----|:------------|:----------------|
-| **Purpose** | Create and refine log queries | Learn platform features |
-| **Input** | Data questions and analysis requests | How-to and configuration questions |
-| **Output** | Executable queries with live results | Answers with guidance links |
-| **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts |
-| **Example** | "Show me 500 errors from the API service" | "How do I set up a CloudTrail collector?" |
+|      | Query Agent | Knowledge Agent | Monitor Creation Agent |
+|:-----|:------------|:----------------|:-----------------------|
+| **Purpose** | Create and refine log queries | Learn platform features | Create and update logs monitors |
+| **Input** | Data questions and analysis requests | How-to and configuration questions | A description of the monitor you want |
+| **Output** | Executable queries with live results | Answers with guidance links | A monitor configuration you confirm and create |
+| **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts | Setting up alerting without the monitor form |
+| **Example** | "Show me 500 errors from the API service" | "How do I set up a CloudTrail collector?" | "Alert me when the payment-service query has more than 20 errors in 5 minutes" |
 
 ## Query Agent
 
@@ -450,6 +451,16 @@ To get the most accurate answers, try the following when asking questions:
 * **Provide context for troubleshooting**. For example, "I'm getting a 403 error when setting up AWS integration—what could be wrong?"
 * **Follow up naturally**. If the initial answer is close but not quite right, ask follow-up questions like "What about for Azure instead of AWS?"
 * **Reference specific features**. Use proper names when you know them: "How do I use Field Extraction Rules?" works better than "How do I extract fields?"
+
+## Monitor Creation Agent
+
+Select **Monitor Creation Agent** to create monitors from plain-language prompts. Describe the monitor you want, and the agent validates your query and suggests a complete configuration, including name, description, monitor type, query, trigger, recovery, and notifications. You review the suggestions, make any changes, and confirm to create the monitor. You can also update a monitor within the same conversation.
+
+The agent supports logs monitors only (not metrics or SLO monitors), and can create static, anomaly, and outlier detection types.
+
+For example, you can prompt: `Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
+
+For the full walkthrough, including how to update a monitor in the conversation and more example prompts, see [Create Monitors with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
 ## How does Mobot handle security and compliance?
 
