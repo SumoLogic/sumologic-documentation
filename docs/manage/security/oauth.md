@@ -28,7 +28,6 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 | [Authorization Code](#authorization-code-flow) | User-facing applications with browser-based login | Simple (UI-based) | Automatic |
 | [Client Credentials](#client-credentials-flow) | Service-to-service authentication, automated workflows | Moderate (API-based) | Manual or automatic |
 
-For MCP clients, Sumo Logic also supports [Client ID Metadata Documents (CIMD)](#client-id-metadata-documents-cimd), which let a client authenticate without an administrator pre-registering an OAuth client.
 
 ## Prerequisites
 
