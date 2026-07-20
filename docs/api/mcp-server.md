@@ -646,7 +646,7 @@ Log search runs as a single request: you send a query and get the results back. 
 
 ### Handle rate limits
 
-When you exceed a limit, the server returns an `HTTP 429 (Too Many Requests)` response with a `Retry-After` header. You'll see these errors in your MCP client, measured as an average over a short window, when:
+When you exceed a limit, the server returns an `HTTP 429 (Too Many Requests)` response with a `Retry-After` header (for example, `Retry-After: 1`). You'll see these errors in your MCP client, measured as an average over a short window, when:
 * An agent sends more than 4 requests per second through your MCP connection without pausing between calls.
 * More than 10 of a user's requests are in progress at the same time.
 
