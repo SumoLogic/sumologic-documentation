@@ -231,6 +231,17 @@ html[data-theme='light'] {
   min-width: 100px;
 }
 
+@media (min-width: 997px) {
+  .navbar .DocSearch-Button {
+    max-width: 100%;
+    width: 340px;
+  }
+
+  .navbar .DocSearch-Button-Placeholder {
+    min-width: 0;
+  }
+}
+
 html[data-theme='dark'] .DocSearch-Button-Placeholder {
   color: #bdc1c6 !important;
 }

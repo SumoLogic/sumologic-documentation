@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useHistory } from '@docusaurus/router';
 import '@docsearch/css/dist/sidepanel.css';
 import './styles.css';
 
@@ -68,6 +69,7 @@ export default function AskAiSidepanel({
   initialMessage,
 }: AskAiSidepanelProps) {
   const { siteConfig } = useDocusaurusContext();
+  const history = useHistory();
   const algoliaConfig = (siteConfig.themeConfig as any)?.algolia;
   const askAiConfig = {
     ...(algoliaConfig?.askAi || {}),
@@ -238,6 +240,70 @@ export default function AskAiSidepanel({
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    if (!isOpen || typeof window === 'undefined') return;
+
+    const isModifiedEvent = (event: MouseEvent) =>
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      event.button !== 0;
+
+    const shouldHandleInPanel = (anchor: HTMLAnchorElement) => {
+      const href = anchor.getAttribute('href');
+      if (!href || href.startsWith('javascript:') || href.startsWith('mailto:')) {
+        return false;
+      }
+
+      if (anchor.target === '_blank' || anchor.hasAttribute('download')) {
+        return false;
+      }
+
+      try {
+        const url = new URL(anchor.href, window.location.href);
+        return url.origin === window.location.origin;
+      } catch {
+        return false;
+      }
+    };
+
+    const handleSidepanelLinkClick = (event: MouseEvent) => {
+      if (isModifiedEvent(event)) return;
+
+      const target = event.target as HTMLElement | null;
+      const anchor = target?.closest(
+        '.ask-ai-sidepanel a[href]'
+      ) as HTMLAnchorElement | null;
+
+      if (!anchor || !shouldHandleInPanel(anchor)) return;
+
+      const nextUrl = new URL(anchor.href, window.location.href);
+      const nextPath =
+        nextUrl.pathname + nextUrl.search + nextUrl.hash;
+      const currentPath =
+        window.location.pathname + window.location.search + window.location.hash;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (nextPath !== currentPath) {
+        history.push(nextPath);
+      } else if (nextUrl.hash) {
+        const id = decodeURIComponent(nextUrl.hash.slice(1));
+        const anchorEl = document.getElementById(id);
+        if (anchorEl) {
+          anchorEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleSidepanelLinkClick, true);
+    return () => {
+      document.removeEventListener('click', handleSidepanelLinkClick, true);
+    };
+  }, [history, isOpen]);
 
   // Prevent panel from disappearing on window resize
   useEffect(() => {
@@ -861,12 +927,13 @@ export default function AskAiSidepanel({
                 </button>
               </div>
               <p className="ask-ai-feedback-label">
-                Provide additional feedback (optional)
+                Provide additional feedback about the response or
+                documentation (optional)
               </p>
               <textarea
                 ref={feedbackTextareaRef}
                 className="ask-ai-feedback-textarea"
-                placeholder="What could be improved about this response?"
+                placeholder="What could be improved about this response or the documentation it relies on?"
                 value={feedbackDetails}
                 onChange={(e) => {
                   setFeedbackDetails(e.target.value);
@@ -876,7 +943,7 @@ export default function AskAiSidepanel({
                 }}
               />
               <p className="ask-ai-feedback-note">
-                Your feedback helps us improve AI-generated responses.
+                Your feedback helps us improve AI-generated responses and documentation.
               </p>
               {feedbackSubmitError && (
                 <p className="ask-ai-feedback-error">{feedbackSubmitError}</p>
