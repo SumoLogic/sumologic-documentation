@@ -295,7 +295,6 @@ For example, to retrieve the authorization server metadata:
 curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```
 
-{/* VERIFY before publishing: confirm the OpenID configuration path (/.well-known/openid-configuration) and the protected resource metadata host/path (served by the MCP server) with the OAuth/MCP engineering team. */}
 
 ## Security best practices
 
