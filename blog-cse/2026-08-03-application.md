@@ -16,6 +16,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We're excited to announce that Sumo Logic's SOC Analyst agent, a powerful agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations, is now generally available. The agent triages Cloud SIEM insights with evidence-backed verdicts, helping your team cut through false-positive noise and speed up threat resolution. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent).
 
+The agent requires a Cloud SIEM subscription and is opt-in. As a launch promotion, it is enabled by default for the first 90 days with a capacity of five investigated insights per day, and you can opt out at any time.
+
 The SOC Analyst agent provides the following new functionality:
 * AI Investigation tab in Cloud SIEM
 * Insight investigation in Mobot
