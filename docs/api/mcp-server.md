@@ -31,6 +31,13 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 
 <!-- Training/course link? -->   
 
+<!-- TODO (DOCS-1570): Add an "Enable or disable the MCP server" section once details are confirmed. Needs:
+  - Exact UI path for the on/off control, and whether it's admin (org-wide) or per-user.
+  - Default state at GA (on by default for AI-enabled orgs, or an admin must enable it).
+  - AI opt-out behavior: whether a separate org setting disables the MCP server, where it lives, and whether it's the same opt-out that governs Mobot and the other agents.
+  - Required permission/role to change it.
+  Source: the Dojo AI launch decks describe a self-service on/off toggle and note the MCP server is disabled for orgs that opted out of AI, but without UI specifics. -->
+
 ## Configure in Claude Code CLI
 
 ### Authentication
@@ -618,6 +625,41 @@ MCP endpoints are cost-amplifying by design. A single conversational request can
 MCP is designed for conversational, agent-level interaction where cost per request is understood and monitored. For raw data access or high-volume operations, standard APIs remain more efficient and cost-effective.
 
 For detailed guidance on securing MCP against cost-based attacks, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
+
+## Rate limits
+
+The Sumo Logic MCP server applies rate limits to keep the platform reliable and ensure fair access for all customers. Your use of the MCP server is subject to Sumo Logic's standard API rate limits: 4 requests per second and 10 concurrent in-flight requests.
+
+| Limit | Scope | Value |
+| :--- | :--- | :--- |
+| Requests per second | MCP usage | 4 requests per second |
+| Concurrent in-flight requests | MCP usage | 10 requests |
+| Log search timeout | Per search call (MCP only) | 2 minutes |
+
+### How the limits work
+
+Two controls do different things:
+* **Requests per second (4 per second)**. How many new requests you can start each second. When you exceed it, new requests are rejected until the rate drops.
+* **Concurrent in-flight requests (10)**. How many requests can be in progress at the same time. Even at a safe per-second rate, if requests stay open faster than they finish, you can reach this cap.
+
+Log search runs as a single request: you send a query and get the results back. Like every tool, it counts toward your overall request limits. A search can run for up to 2 minutes, which is the gateway timeout for the synchronous call. Most searches finish well within this, but searches over wide time ranges or broad data scopes can reach it. If a search times out, the tool returns an error stating that the time limit was exceeded, with guidance to retry using a smaller time range or more specific source categories, so an agent can adjust its query and try again.
+
+### Handle rate limits
+
+When you exceed a limit, the server returns an `HTTP 429 (Too Many Requests)` response with a `Retry-After` header. You'll see these errors in your MCP client, measured as an average over a short window, when:
+* An agent sends more than 4 requests per second through your MCP connection without pausing between calls.
+* More than 10 of a user's requests are in progress at the same time.
+
+A log search that runs longer than 2 minutes returns a separate timeout error, not a rate-limit error. Retry it with a narrower time range or tighter source scope.
+
+To stay within the limits, your MCP client should:
+* **Back off and retry**. Retry after a short delay, increasing the wait on repeated 429 responses (exponential backoff).
+* **Pace requests**. Space out or batch calls instead of sending them in a tight loop.
+* **Scope searches**. Narrow log searches by source category and time range to reduce both load and the chance of a timeout.
+
+:::note
+Rate limits may be increased for customers with higher needs. Contact your Sumo Logic account representative. Sumo Logic may adjust these rate limits over time.
+:::
 
 ## Security and data governance
 
