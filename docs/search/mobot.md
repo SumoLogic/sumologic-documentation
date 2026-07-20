@@ -2,7 +2,7 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-description: Troubleshoot logs without writing search queries, learn the platform, and take action, all using plain-language questions with Mobot, Sumo Logic's AI assistant.
+description: Troubleshoot logs, simplify security workflows, and learn the platform using plain-language questions with Mobot, Sumo Logic's AI assistant.
 keywords:
   - mobot
   - dojo ai
@@ -10,18 +10,15 @@ keywords:
   - log analysis
   - log troubleshooting
   - unstructured logs
+  - agent
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
-Mobot is Sumo Logic's AI-powered conversational assistant for security analysts, on-call engineers, administrators, and other Sumo Logic users. Ask questions in plain English to investigate log data or learn how to use the platform without selecting an agent or writing queries from scratch.
+Mobot is Sumo Logic's AI-powered conversational assistant for security analysts, on-call engineers, administrators, and other Sumo Logic users. Ask questions in plain language to investigate log data or learn how to use the platform without selecting an agent or writing queries from scratch.
 
 In a single conversation, Mobot determines whether you have a log data question or a how-to question and responds accordingly. For log data questions, it identifies relevant sources, correlates information across logs, and returns inline results with anomaly callouts and suggested next steps. For how-to questions, it provides structured answers and reference links from Sumo Logic documentation. Conversation context lets you refine, pivot, and dig deeper without starting over.
-
-:::info Participation requirement
-Access requires a signed AI addendum, since Mobot uses AI to make inferences on your log data. Contact your account team if you have not yet signed the addendum.
-:::
 
 ## At a glance
 
@@ -45,6 +42,9 @@ Access requires a signed AI addendum, since Mobot uses AI to make inferences on 
 * **Inline findings and visualizations**. Mobot returns structured results, highlights notable findings, recommends next steps, and generates charts that you can add to dashboards.
 * **Documentation-grounded answers**. How-to responses include information and reference links from official Sumo Logic documentation.
 * **Conversation history**. Saved conversations let you resume, revisit, or branch previous investigations.
+* **Cloud SIEM investigations**. On a Cloud SIEM insight, click **Ask Mobot** to continue a [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) investigation in Mobot with the insight's evidence-backed verdict and context loaded. You start this from the insight, not from Mobot directly.
+
+<!-- TODO: Monitor/alert creation is on pause (https://github.com/SumoLogic/sumologic-documentation/pull/6871). When it ships, add a capability bullet here, update the "Cannot create or manage dashboards, monitors, or scheduled searches" limitation, and re-add "create alerts" to the frontmatter description. -->
 
 ## Getting started
 
@@ -465,6 +465,10 @@ Mobot is an AI-powered conversational assistant integrated into the Sumo Logic L
 ### Do I need to select an agent or mode?
 
 No. Mobot determines whether your prompt is a log data question or a how-to question and responds accordingly. You interact with a single conversational interface.
+
+### Is there a limit to how many prompts I can send?
+
+Yes. Each user can send up to 10 prompts to Mobot per day.
 
 ### What happened to Query Agent and Knowledge Agent?
 
