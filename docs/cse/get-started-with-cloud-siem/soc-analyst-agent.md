@@ -19,6 +19,15 @@ The SOC Analyst agent provides the following functionality:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
 
+<!-- TODO (DOCS-1565), from the Dojo AI FAQ (pp. 60-69), pending product/GA confirmation:
+  - Third core capability: add "Incident report generation (via Mobot)" alongside Triage and Investigation (FAQ p.60/62), once GA-confirmed.
+  - Enablement note: contact your account team to add the SOC Analyst Agent to your Cloud SIEM subscription; once enabled it auto-investigates new insights with no extra configuration (FAQ p.12). Requires a Cloud SIEM subscription.
+  - Agent limitations: AI reasoning is limited to normalized security data (records and signals); no external MCP/automation-service integrations yet (FAQ p.63).
+  - Recommended Actions: verify the "Recommended Actions" / Execute Action playbook steps in the AI Investigation tab section are GA. The Dojo AI FAQ (p.63) says automated remediation is "still in testing and not currently available to customers." Remove or gate that content if not yet available.
+  - No persistent learning: the Dojo AI FAQ (p.66) says the agent has "no persistent learning" and does not immediately retrain. Soften the "reviewed to refine model behavior over time as part of the Dojo AI learning loop" FAQ answer accordingly, and consider a dedicated "Does the agent learn from past investigations?" FAQ.
+-->
+
+
 ## View AI verdicts on insights
 
 The SOC Analyst agent runs in the background against all insights that flow into Cloud SIEM. After analysis, it renders a verdict about whether the insight requires investigation.
@@ -197,17 +206,11 @@ Yes. Analysts can override verdicts and flag feedback within the UI. These actio
 
 ### How does investigation rate limiting work?
 
-To ensure stable performance, the agent performs system-wide rate limiting, which imposes usage controls across the entire SOC Analyst agent user base to manage capacity. As a result, automatic investigation may skip some insights if investigating them would exceed rate limits. The skipped insights show **Not Investigated** in the **AI Verdicts** column. However, in these instances, you can manually start an investigation of the insight by clicking the **Investigate** button.
+The SOC Analyst agent automatically investigates insights in priority order, up to your organization's committed investigation volume. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button.
 
-The rate limits for your organization are:
-* 5 automatic investigations per day.
-* 2 manually triggered investigations per day.
+To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Agent settings](#configure-soc-agent-settings). If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
 
-Be aware, though, that if you have reached your limit of the total number of insights that you can get AI verdicts for in a certain time period, a message will appear telling you when you can next click the **Investigate** button to manually initiate an AI investigation.
-
-To control which insights are auto-investigated within these limits, see [Configure SOC Agent settings](#configure-soc-agent-settings).
-
-If you have questions about the AI investigation rate limiting for your organization, ask your Sumo Logic representative.
+<!-- TODO (DOCS-1565): Rewritten to match the committed-volume/overage model in the Dojo AI FAQ and the Configure SOC Agent settings section. The previous "5 automatic / 2 manually triggered investigations per day" figures were the promo/POV cap, not a product rate limit, per the Dojo AI FAQ (pp. 69, 73). Also reconcile cadence: this doc says "committed MONTHLY volume" but the Dojo AI FAQ describes daily metering per Org ID with daily resets. Confirm monthly vs daily with the DOCS-1760/product owner. -->
 
 ### Does the agent automatically investigate things that are not entities in Cloud SIEM?
 
