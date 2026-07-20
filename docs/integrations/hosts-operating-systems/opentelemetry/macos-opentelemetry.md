@@ -102,21 +102,21 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 - You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
 - You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
-### Host Metrics - Overview
+### Mac - Overview
 
-The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU load, memory, network, and TCP connections of all your macOS hosts. Use this dashboard to identify hosts with high CPU load, memory utilization, and identify anomalies over time.
+The **Mac - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU load, memory, network, and TCP connections of all your macOS hosts. Use this dashboard to identify hosts with high CPU load, memory utilization, and identify anomalies over time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Overview.png' alt="Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Overview.png' alt="Mac - Overview" />
 
-### Host Metrics - CPU
+### Mac - CPU Metrics
 
-The **Host Metrics - CPU** dashboard provides the metric over time for CPU load. Use this dashboard to identify hosts and processes with high CPU utilization.
+The **Mac - CPU Metrics** dashboard provides the metric over time for CPU load. Use this dashboard to identify hosts and processes with high CPU utilization.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-CPU.png' alt="Host Metrics - CPU" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-CPU-Metrics.png' alt="Mac - CPU Metrics" />
 
-### Host Metrics - Disk
+### Mac - Disk Metrics
 
-The **Host Metrics - Disk** dashboard provides detailed information about file system metrics.
+The **Mac - Disk Metrics** dashboard provides detailed information about file system metrics.
 
 Use this dashboard to view:
 
@@ -124,11 +124,11 @@ Use this dashboard to view:
 - Devices by file system usage.
 - Disk used by host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Disk.png' alt="Host Metrics - Disk" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Disk-Metrics.png' alt="Mac - Disk Metrics" />
 
-### Host Metrics - Memory
+### Mac - Memory Metrics
 
-The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and used free and Inactive memory.
+The **Mac - Memory Metrics** dashboard provides detailed information on host memory usage, memory distribution, and used free and Inactive memory.
 
 Use this dashboard to:
 
@@ -136,11 +136,11 @@ Use this dashboard to:
 - Examine memory distribution (free, used) for a given host.
 - Total free used and inactive memory.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Network.png' alt="Host Metrics - Network" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Memory-Metrics.png' alt="Mac - Memory Metrics" />
 
-### Host Metrics - Network
+### Mac - Network Metrics
 
-The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
+The **Mac - Network Metrics** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
 
@@ -148,17 +148,17 @@ Use this dashboard to:
 - Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 - Use dashboard filters to compare throughput across the interface of a host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-Network.png' alt="Host Metrics - Network" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Network-Metrics.png' alt="Mac - Network Metrics" />
 
-### Host Metrics - TCP
+### Mac - TCP Metrics
 
-The **Host Metrics - TCP** dashboard provides detailed information about inbound, outbound, open, and established TCP connections.
+The **Mac - TCP Metrics** dashboard provides detailed information about inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:
 
 - Identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-TCP-Metrics.png' alt="Mac - TCP Metrics" />
 
 ## Create monitors for macOS app
 
@@ -170,5 +170,5 @@ import CreateMonitors from '../../../reuse/apps/create-monitors.md';
 
 | Alert Name  | Alert Description and conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
-| `Metrics Mac - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
+| `Mac - High FileSystem Utilization Alert` | This alert gets triggered when filesystem utilization exceeds threshold. | Count > 80 | Count < = 80 |
 | `Mac - High Memory Utilization Alert` | This alert gets triggered when memory utilization exceeds threshold. | Count > 80 | Count < = 80 |
