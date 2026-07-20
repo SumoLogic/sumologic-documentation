@@ -26,9 +26,9 @@ CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service
 * **Reports Falcon Intelligence Daemon***(Daemon)* - Daemon to pull sandbox reports.
 * **Search Intelligence Indicators** *(Enrichment)* - Get indicators that match provided FQL filter and query.
 * **Search Reports** *(Enrichment)* - Find sandbox reports by providing an FQL filter and paging details. Returns a set of a report that match your criteria.
-* **Submission Status Polling** (*Enrichment*) - Return the state of submission, this action will poll until the File/URL analysis are finished, Once this action is completed, you will be able to get a Report or Get Summary of the Submission.
-* **Submit File** (*Enrichment*) - Submit a file for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes, by using the **Submission Status Polling** action.
-* **Submit URL** (*Enrichment*) - Submit a URL for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes, by using the **Submission Status Polling** action.
+* **Check Submission Report** (*Enrichment*) - Monitors the submission status and retrieves the sandbox report once the analysis is complete. Use the Resource ID from the **Submit URL** or **Submit File** actions.
+* **Submit File** (*Enrichment*) - Submit a file for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes. Use the **Check Submission Report** action to monitor progress and retrieve the report.
+* **Submit URL** (*Enrichment*) - Submit a URL for sandbox analysis. The time required for analysis varies but is usually less than 15 minutes. Use the **Check Submission Report** action to monitor progress and retrieve the report.
 * **Get Submission Report Scheduled** *(Scheduled)* - Periodically polls the submission status and retrieves the sandbox report once the analysis is complete. This action checks every 1 minute and expires after 30 minutes. Use the Resource ID from the **Submit URL** or **Submit File** actions.
 
 ## Sandbox Environments
@@ -104,3 +104,7 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
 * March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * June 30, 2026 (v1.9) - Updated the available sandbox environments to align with the latest platform support. Ubuntu 16.04 has been removed, Ubuntu 20 is now deprecated, and Ubuntu 24 has been added
 * July 20, 2026 (v1.10) - Improved the reliability of sandbox analysis by automatically monitoring submission progress and retrieving the final report as soon as it becomes available.
+  * Deprecated Actions:
+    + Submission Status Polling
+  * Replacement Actions:
+    + Check Submission Report
