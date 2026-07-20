@@ -114,6 +114,65 @@ To share the current investigation with other users, see [Share conversation](/d
 
 <!-- after Mobot GA, replace above link w/ /docs/search/mobot/#share-conversation)-->
 
+## Configure SOC Agent settings
+
+The SOC Analyst agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed monthly investigation volume. The **SOC Agent Setting** tab in the Cloud SIEM workflow configuration lets you control which insights the agent auto-investigates, what happens when your committed volume is reached, and whether benign insights are resolved automatically.
+
+Access requires a SOC Agent settings permission and is not available to federated tenants. Viewing the settings is available to analysts and administrators; changing them is limited to administrators. With view-only access, the controls are visible but disabled.
+
+<!-- TODO (DOCS-1760): confirm the permission label and final UI copy, and add screenshots. Labels below are transcribed from the SOC Agent Setting UI. -->
+
+To open the settings:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM**. Under **Cloud SIEM Workflow**, select **SOC Agent Setting**.
+   <!-- TODO (DOCS-1760): add the Classic UI path. -->
+   <!-- <img src={useBaseUrl('img/cse/soc-agent-setting.png')} alt="SOC Agent Setting tab" style={{border: '1px solid gray'}} width="800" /> -->
+
+After changing any setting, click **Save Settings** to apply your changes, or **Cancel** to discard them.
+
+### Auto-Investigation Filter
+
+Insights that match the conditions you define are excluded from auto-investigation, keeping investigation capacity focused on higher-priority signals. Excluded insights receive a **Not Investigated** verdict and do not consume investigation capacity. Analysts can still investigate them manually, because manual investigation ignores the filter. If you do not define any conditions, all insights are eligible for auto-investigation up to your committed volume.
+
+Use the **Active** toggle to turn the filter on or off without losing your configuration.
+
+To build the conditions:
+
+1. In a condition row, select a type, an operator, and a value. The types are:
+   * **Insight Severity**. Select Critical, High, Medium, or Low.
+   * **Entity Type**. The type of entity in the insight, such as User, Host, IP Address, or Domain, including custom entity types.
+   * **Signal Name**. The name of a signal in the insight. Enter the value as text.
+   * **Signal Rule ID**. The rule ID of a signal in the insight. Enter the value as text.
+1. For the operator, select **equals** or **does not equal**.
+1. Combine conditions with **OR** and **AND**:
+   * Click **+ OR** to add a condition to a group. An insight matches the group when any condition in it is true.
+   * Click **+ AND** to add another group. An insight matches the filter only when every group is true.
+   
+   To remove a condition, click the **X** next to it.
+   <!-- <img src={useBaseUrl('img/cse/auto-investigation-filter.png')} alt="Auto-Investigation Filter builder" style={{border: '1px solid gray'}} width="700" /> -->
+
+### Volume & Overage Settings
+
+When your committed monthly investigation volume is reached, new insights receive a **Not Investigated** status, and analysts can still manually trigger investigation.
+
+* **Allow Overages**. This check box is cleared by default. Select it to continue auto-investigating past your committed volume. Overage investigations are billed separately.
+* **Overage ceiling**. When **Allow Overages** is selected, enter the maximum percentage above your committed volume that auto-investigation can consume. The default is 20%.
+   <!-- TODO (DOCS-1760): confirm the overage ceiling field label; it appears below the check box when Allow Overages is selected. -->
+
+When your investigation capacity is reached, a warning banner appears at the top of the **Insights** page.
+<!-- TODO (DOCS-1760): the capacity warning banner is from the UI RFC and is not yet verified against the shipped UI. Confirm before publishing. -->
+
+
+
+### Auto-Resolve Insights with Benign AI Verdict
+
+<!-- TODO (DOCS-1760): This setting appears on the SOC Agent Setting tab but was NOT covered in the DOCS-1760 requirements doc, RFCs, or prototype. Confirm scope (it may belong to a separate ticket) and requirements before publishing. Content is transcribed from the UI. -->
+
+Insights with a Benign verdict can be resolved automatically. Malicious and Suspicious verdicts always require analyst review. Use the **Active** toggle to turn this behavior on or off.
+
+* **Closing Insight**. Select the **Resolution** to apply when the agent auto-resolves a benign insight (required), and optionally enter **Additional comments** to record with the resolution. Insights that a playbook already auto-assigned are held for analyst review, even with a Benign verdict.
+* **Audit Log**. Click **View Auto-Resolve Activity Log** to review the verdict, resolution, and timestamp for each insight the agent auto-resolved.
+
 ## FAQ
 
 ### What is the Sumo Logic SOC Analyst agent?
@@ -145,6 +204,8 @@ The rate limits for your organization are:
 * 2 manually triggered investigations per day.
 
 Be aware, though, that if you have reached your limit of the total number of insights that you can get AI verdicts for in a certain time period, a message will appear telling you when you can next click the **Investigate** button to manually initiate an AI investigation.
+
+To control which insights are auto-investigated within these limits, see [Configure SOC Agent settings](#configure-soc-agent-settings).
 
 If you have questions about the AI investigation rate limiting for your organization, ask your Sumo Logic representative.
 
