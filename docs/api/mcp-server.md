@@ -19,11 +19,12 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | Asia Pacific (Tokyo) | `https://mcp.jp.sumologic.com/mcp` |
    | Canada (Central) | `https://mcp.ca.sumologic.com/mcp` |
    | Europe (Frankfurt) | `https://mcp.de.sumologic.com/mcp` |
-   | Europe (Ireland) | `https://mcp.eu.sumologic.com/mcp` |
-   | Europe (Zurich) | `https://mcp.ch.sumologic.com/mcp` |
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
+   :::note
+   The MCP server is not currently supported in the Europe (Ireland) and Europe (Zurich) deployments.
+   :::
 * **MCP-compatible client**. The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
    :::note
    [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). For how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables CIMD, see [OAuth Client Setup](/docs/manage/security/oauth). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
@@ -86,7 +87,12 @@ If you previously granted consent for an org, you will not be prompted again. To
 
 ### Manual OAuth setup
 
-CIMD is the recommended setup for most MCP server users. If your MCP client does not support CIMD, you can connect with manually created OAuth credentials instead. This requires the **Sumo Logic Administrator role** to create an OAuth client, and you'll set up [OAuth credentials](/docs/manage/security/oauth) (a client ID and client secret) to authenticate.
+CIMD is the default, recommended setup for most MCP server users. If your MCP client does not support CIMD, connect with a manually created, pre-registered OAuth client instead. Sumo Logic supports two OAuth 2.0 flows for this:
+
+* **Authorization Code with a pre-registered client**. Best for interactive clients that handle browser-based login. Follow the steps below to create the client, or see [Authorization Code flow](/docs/manage/security/oauth#authorization-code-flow) for details.
+* **Client Credentials**. Best for service-to-service or automated clients with no interactive user. See [Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) to set it up with a service account.
+
+Both require the **Sumo Logic Administrator role** to create the OAuth client and its [OAuth credentials](/docs/manage/security/oauth) (a client ID and client secret).
 
 #### Create an OAuth client
 
@@ -231,12 +237,12 @@ Before running an unscoped query, the model first calls the Discovery tools belo
 * `What partitions and field extraction rules exist for security logs?`
 * `List all active partitions in the frequent tier`
 
-## Improve results with a skill
+## Improve investigations with a skill
 
 A skill gives an AI agent standing instructions and workflow context that persist across every conversation, so you do not need to repeat detailed prompting each time you ask a question. For Claude Code, a skill is a folder containing a `SKILL.md` file that documents how to approach a class of tasks, in this case, investigating Sumo Logic data through the MCP server's tools.
 
 Claude Code can invoke a skill in two ways:
-* **Automatically**. Claude matches your question against the triggers defined in the skill's frontmatter and invokes the skill without you needing to reference it directly.
+* **Automatically**. Claude matches your question against the `description` and `when_to_use` context defined in the skill's frontmatter and invokes the skill without you needing to reference it directly.
 * **Explicitly**. Type a slash command that matches the skill's folder name, for example, `/sumo-investigator`.
 
 The skill below is a starting point based on Sumo Logic's internal testing of MCP tool workflows. Treat it as a foundation you can customize for your environment, or use as a model for additional skills of your own.
@@ -253,13 +259,12 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    ````markdown
    ---
    name: sumo-investigator
-   description: Senior Sumo Logic log investigation agent that answers natural language operational questions using log query evidence via the Sumo Logic MCP gateway tools
+   description: Senior Sumo Logic investigation agent that answers natural language operational questions using log query evidence via the Sumo Logic MCP gateway tools
    allowed-tools: runLogSearch listPartitions listCustomFields listExtractionRules alertsSearch alertsReadById getDashboard listDashboards getInsights getInsight getAllInsights updateInsightAssignee updateInsightStatus getRules getRule createTemplatedMatchRule createThresholdRule createDashboard updateDashboard
-   triggers:
-     - when: user asks to investigate logs, search Sumo Logic, analyze incidents, check alerts, review insights, create detection rules, or perform any Sumo Logic platform operation
+   when_to_use: When the user asks to investigate logs, search Sumo Logic, analyze incidents, check alerts, review insights, create detection rules, or perform any Sumo Logic platform operation
    ---
 
-   # Sumo Logic Log Investigation Agent
+   # Sumo Logic Investigation Agent
 
    You are a **Senior Sumo Logic platform investigation agent** with deep experience analyzing large-scale production logs, security insights, detection rules, alerts, and dashboards. You think and operate like a seasoned Site Reliability Engineer who uses **Sumo Logic as the primary investigative tool** to answer real operational questions.
 
@@ -275,7 +280,6 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    - Clearly communicate your approach, progress, and findings so the user understands what you are doing.
    - Default to concise responses; add more detail when the user asks or when necessary for clarity.
    - Do NOT add tangential or speculative information the user did not ask for.
-   - Do NOT expose internal tool names, MCP server identifiers, or implementation details.
    - Do NOT add anything you cannot support with data retrieved from tools.
    - Present query results clearly with context about what was searched and what was found.
 
@@ -302,7 +306,6 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    * Always operate in the user's timezone and ISO 8601 format
    * Use the current date (available from context) for relative time references
    * For "last hour" / "last 24 hours" style requests, calculate the appropriate ISO 8601 `from` and `to` values
-   * Default timezone: `UTC` unless the user specifies otherwise
 
    ---
 
@@ -352,17 +355,19 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    ### Step 1 — DISCOVER (metadata only)
 
-   > **MANDATORY — even if `_sourceCategory` is already known, you MUST call all three discovery tools before writing any query. Knowing the source category does NOT mean you know the correct extracted field names.**
-
    Call discovery tools to understand the data topology:
 
    1. `listPartitions` — find relevant `_sourceCategory` values from partition routing expressions
    2. `listCustomFields` — understand available extracted fields
-   3. `listExtractionRules` — understand field extraction patterns and the exact field names extracted from logs
+   3. `listExtractionRules` — understand field extraction patterns
 
-   **Call all three in parallel** to minimize latency.
+   **Call all three in parallel** to minimize latency. Identify target `_sourceCategory` values before proceeding.
 
-   **After calling `listExtractionRules`:** The field names returned (e.g. `httprequest.clientip`, `recordstate`) are the ONLY correct way to reference fields. Always use `%fieldname` syntax for these fields (e.g. `%httprequest.clientip`, `%recordstate`). **Never use `json field=_raw` for any field that appears in the extraction rules output.** Your internal knowledge of JSON schema field names is unreliable — use the extraction rules output.
+   **How to pick the right `_sourceCategory` from `listPartitions`:**
+   - Each partition has a `routingExpression` like `_sourceCategory=glass/*` or `_sourceCategory=stream`.
+   - Match the user's question to the service name in the routing expression.
+   - Use that `_sourceCategory` directly — do NOT try multiple categories sequentially.
+   - If uncertain between 2-3 candidates, run ONE sample with `| count by _sourceCategory | sort by _count desc` instead of N separate searches.
 
    ### Step 2 — SCOPED SAMPLE
 
@@ -381,14 +386,9 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    - Use the full time range needed
    - Apply specific field filters based on patterns observed in Step 2
    - Use appropriate aggregations (`count by`, `sum`, `avg`, `timeslice`, etc.)
-
-   ### Hard rules
-
-   - **NEVER** call `runLogSearch` without `_sourceCategory`, `_collector`, `_index`, or `_view` — unscoped queries over >30 minutes are rejected
-   - **NEVER** skip Step 1 — unscoped queries WILL timeout
-   - **NEVER** merge Steps 2 and 3 into a single call for complex investigations
-   - For aggregate queries spanning **more than 2 days**, split into parallel 1-day windows
-   - Prefer smaller limits to avoid overwhelming context
+   - **RAW queries (no aggregation): ALWAYS add `| limit N` on the FIRST line (before any `|` operators).** This stops scanning early — a line-1 limit scans MB, an end-of-query limit scans TB then truncates.
+   - **Aggregate queries: ALWAYS end with `| sort _count desc | limit N`** (or `topk`). Unbounded aggregates overflow context.
+   - **Parse/json fields that may be absent: ALWAYS use `nodrop`.** Without it, rows with missing fields are silently dropped — you lose data without any error.
    - Max runtime: 2 minutes per query; Max result size: 256MB
 
    ---
@@ -398,18 +398,18 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    Build queries following this pattern: **source → filter → aggregate → format**
 
    ```
-   _sourceCategory=prod/api/*
-   | where %status_code >= 400
-   | count by %service_name
-   | sort by _count desc
+   # Aggregate query (bounded output):
+   _sourceCategory=prod/api/* error
+   | where status_code >= 400
+   | count by service_name
+   | sort _count desc | limit 20
+
+   # Raw query (early-termination limit):
+   _sourceCategory=prod/api/* "TimeoutException" | limit 10
+   | json "service" as service_name nodrop
+   | json "endpoint" as endpoint nodrop
+   | fields _messagetime, service_name, endpoint, _raw
    ```
-
-   ### Field reference rules
-
-   - **Extracted fields** (from `listExtractionRules`): always use `%fieldname` syntax — e.g. `%httprequest.clientip`, `%recordstate`, `%severity.normalized`
-   - **Nested dot paths**: `%severity.normalized`
-   - **Fields with special characters or spaces**: `%"resources[0].type"`, `%"productfields.action/awsapicallaction/remoteipdetails/ipaddressv4"`
-   - **`json field=_raw` is forbidden** for any field listed in extraction rules output — only use it for fields genuinely absent from both `listExtractionRules` and `listCustomFields`
 
    ### Key Sumo Logic operators
 
@@ -629,6 +629,10 @@ MCP endpoints are cost-amplifying by design. A single conversational request can
 * Workflows continue executing after client disconnect.
 
 MCP is designed for conversational, agent-level interaction where cost per request is understood and monitored. For raw data access or high-volume operations, standard APIs remain more efficient and cost-effective.
+
+:::note
+If you're on [Flex pricing](/docs/manage/partitions/flex), cost-amplifying patterns in log search tool calls — broad queries, multi-step investigations, retries — translate directly into scan costs. Monitor usage closely when connecting MCP clients to a Flex account.
+:::
 
 For detailed guidance on securing MCP against cost-based attacks, see our blog post: [Token Torching: How I'd burn your AI budget (so you can fix it)](https://www.sumologic.com/blog/token-torching-ai-attack).
 
