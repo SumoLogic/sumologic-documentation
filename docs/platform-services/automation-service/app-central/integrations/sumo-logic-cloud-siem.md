@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
 ***Version: 1.18  
-Updated: July 15, 2026***
+Updated: July 22, 2026***
 
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights. This integration requires authentication. (Because the [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/) integration operates internally with Sumo Logic, no additional authentication is needed.)
@@ -155,7 +155,7 @@ SIEM
     - Get Signal
     - List Signals
 * April 30, 2026 (v1.17) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* July 15, 2026 (v1.18)
+* July 22, 2026 (v1.18)
     * Improved integration reliability and handling of API rate limits with better edge case support.
     * Enhanced error messages with more descriptive details for easier troubleshooting.
     * Deprecated the *Add Relation To Insight* action.
