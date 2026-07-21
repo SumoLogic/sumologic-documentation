@@ -78,6 +78,10 @@ Claude Code CLI uses OAuth 2.0 with CIMD, so you do not need to create OAuth cre
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [Available MCP Tools](#available-mcp-tools).
 
+:::tip
+For more consistent investigation results, set up the [sumo-investigator skill for Claude Code](#improve-investigations-with-the-sumo-investigator-skill).
+:::
+
 ### Switching organizations
 
 To connect to a different Sumo Logic org:
@@ -241,7 +245,7 @@ Before running an unscoped query, the model first calls the Discovery tools belo
 * `What partitions and field extraction rules exist for security logs?`
 * `List all active partitions in the frequent tier`
 
-## Improve investigations with a skill
+## Improve investigations with the sumo-investigator skill
 
 A skill gives an AI agent standing instructions and workflow context that persist across every conversation, so you do not need to repeat detailed prompting each time you ask a question. For Claude Code, a skill is a folder containing a `SKILL.md` file that documents how to approach a class of tasks, in this case, investigating Sumo Logic data through the MCP server's tools.
 
@@ -254,8 +258,6 @@ The skill below is a starting point based on Sumo Logic's internal testing of MC
 :::note
 As the Sumo Logic MCP server evolves, for example, as tools are added, removed, or renamed, you may need to update this skill to match.
 :::
-
-### Set up the skill in Claude Code
 
 1. Create a folder named `sumo-investigator` in your skills directory: `.claude/skills/sumo-investigator/` for a project-specific skill available only in the current directory, or `~/.claude/skills/sumo-investigator/` to make it available across all projects.
 1. In that folder, create a file named `SKILL.md` with the following content:
