@@ -68,7 +68,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Password Policy|Set the password policy for your Sumo Logic account. | `managePasswordPolicy` |
 |Allowlist IP Addresses | [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges. | `ipAllowlisting` |
 | Create Access Keys | Create your own [access keys](/docs/manage/security/access-keys/). | `createAccessKeys` |
-| Manage Access Keys | Create, activate, deactivate, or delete access keys for your organization. For an access key with a customized scope, make sure **Run Log Search** is added to the scope. | `manageAccessKeys` |
+| Manage Access Keys | Create, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
 | Manage Support Account Access |Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization. | `manageSupportAccountAccess` |
 | Manage Audit Data Feed|Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on internal events. | `manageAuditDataFeed` |
 | Manage SAML|Provision and manage [SAML](/docs/manage/security/saml) for single sign-on. | `manageSAML` |

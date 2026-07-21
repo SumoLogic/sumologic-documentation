@@ -38,6 +38,9 @@ The Search Job API is available to Enterprise accounts.
 * [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Manage Access Keys
 
+:::note
+For an access key with a customized scope, make sure **Run Log Search** is added to the scope.
+:::
 
 ## Endpoints for API access
 
