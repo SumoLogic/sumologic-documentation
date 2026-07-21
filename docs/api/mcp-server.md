@@ -11,7 +11,7 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 
 ## Prerequisites
 
-* **Deployment-specific MCP server URL**. Because OAuth tokens are deployment-bound, you'll need to use the exact URL assigned to your Sumo Logic deployment:
+* **MCP server URL for your deployment**. OAuth tokens are bound to a single deployment, so use the exact MCP server URL that matches yours:
    | Deployment | MCP Server URL |
    | :--- | :--- |
    | Asia Pacific (Seoul) | `https://mcp.kr.sumologic.com/mcp` |
@@ -24,19 +24,25 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-* **An MCP-compatible client that supports remote HTTP/SSE transport and OAuth 2.0**. The default setup uses Client ID Metadata Documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or an Anthropic Console account).
+* **MCP-compatible client**. The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
    :::note
-   [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
+   [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). For how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables CIMD, see [OAuth Client Setup](/docs/manage/security/oauth). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
    :::
 
 <!-- Training/course link? -->   
 
-<!-- TODO (DOCS-1570): Add an "Enable or disable the MCP server" section once details are confirmed. Needs:
-  - Exact UI path for the on/off control, and whether it's admin (org-wide) or per-user.
-  - Default state at GA (on by default for AI-enabled orgs, or an admin must enable it).
-  - AI opt-out behavior: whether a separate org setting disables the MCP server, where it lives, and whether it's the same opt-out that governs Mobot and the other agents.
-  - Required permission/role to change it.
-  Source: the Dojo AI launch decks describe a self-service on/off toggle and note the MCP server is disabled for orgs that opted out of AI, but without UI specifics. -->
+## Enable or disable the MCP server
+
+MCP server access is enabled by default. An administrator can turn it on or off for your entire organization from the **Feature Management** page.
+
+1. In the main Sumo Logic menu, select **Administration** > **Feature Management**. You can also click the **Go To...** menu at the top of the screen and select **Feature Management**.
+1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+
+Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
+
+:::note
+Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
+:::
 
 ## Configure in Claude Code CLI
 
