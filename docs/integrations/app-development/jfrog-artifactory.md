@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 JFrog Artifactory is a universal artifact repository manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The Sumo Logic app for Artifactory 7 provides insight into your JFrog Artifactory binary repository. Our preconfigured dashboards provide an overview of your system as well as Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
 :::info
-This app includes [built-in monitors](#jfrog-artifactory-classic-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-jfrog-artifactory-app).
+This app includes [built-in monitors](#jfrog-artifactory-classic-alerts). For details on creating custom monitors, see [Create monitors for JFrog Artifactory app](#create-monitors-for-jfrog-artifactory-app).
 :::
 
 If you _do not_ have a Sumo Logic account and want to get up and running quickly, the [JFrog Artifactory Sumo Logic integration](#if-you-do-not-have-a-sumo-logic-account) is the most convenient way to get started. It allows you to access Sumo Logic directly from Artifactory.
