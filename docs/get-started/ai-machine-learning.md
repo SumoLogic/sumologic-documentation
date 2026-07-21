@@ -95,7 +95,7 @@ With [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors), y
 
 Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hunters to effectively safeguard their technology stack against evolving threats. By integrating advanced tools for discovery, detection, investigation, response, and protection, we minimize dwell time, reduce false positives, accelerate incident resolution, and proactively prevent future incidents, ensuring robust security and resilience for your cloud, container, and on-prem resources.
 
-#### Cloud SIEM rules
+#### Cloud SIEM Rules
 
 Cloud SIEM rules leverage AI for the following:
 * [Insight Trainer](/docs/cse/rules/insight-trainer). Utilizes ML and AI to deliver outcome-based recommendations, reducing false positives without compromising detection value.
