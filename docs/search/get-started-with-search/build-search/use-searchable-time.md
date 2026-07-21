@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This resolves the inconsistent error messages due to variable ingestion latency and non-linear receipt time indexing issues by marking the time only when the data is truly searchable. This ensures running queries with non-overlapping but exhaustive time ranges will prevent any gaps or duplication in the data.
 
 :::info
-Currently, **Searchable Time** is only available for the Log Search UI page, Schedule Searches, Saved Searches, Dashboards, and Search Job API queries.
+Currently, **Searchable Time** is only available for the Log Search UI page, Scheduled Searches, Saved Searches, Dashboards, Monitors, and Search Job API queries.
 :::
 
 ## Via UI
@@ -48,6 +48,10 @@ Follow the below steps to run a search using the searchable time in the dashboar
 1. You are prompted to provide a log query.
 1. Navigate to **General** configuration.
 1. Go to **Logs Settings** section and select **Searchbale Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="500" />
+
+### Create a monitor using Searchable Time
+
+When you [create a monitor](/docs/alerts/monitors/create-monitor#timestamp), you can switch the **Timestamp** mode to **Searchable Time** to evaluate logs based on when they became searchable in Sumo Logic, instead of message time. This helps you troubleshoot ingestion delays, correlate events accurately, and reduce false positives or negatives caused by evaluating incomplete data.
 
 ## Via API
 
