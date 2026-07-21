@@ -133,135 +133,33 @@ _sourceCategory="{{Logsdatasource}}" "claude_chat_msg"
 | sort by _count, role
 ```
 
-## Collection configuration
+## Collection configuration and app installation
 
-This app uses the [Universal Connector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source) to collect **activity logs** from the Claude Compliance API and Sumo Logic's [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to collect **chat messages logs** from the Claude Compliance Messages API.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
+<CollectionConfiguration/>
 
-### Vendor configuration
-
-To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
-
-:::note
-Admin keys created through Console are limited to the Activity Feed and cannot access chat messages via c2c source
+:::important
+Use the [Cloud-to-Cloud Integration for Claude Compliance](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Claude Compliance app is properly integrated and configured to collect and analyze your Claude Compliance data.
 :::
 
-#### Console / API
+### Create a new collector and install the app
 
-Keys are created in the **Admin keys** section of Console Settings.
-1. Click **Create key** to name your key.
-2. Receive a secret access key and store it securely.
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-:::note
-If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Anthropic representative to request access.
-:::
+<AppCollectionOPtion1/>
 
-#### Claude.ai
+### Use an existing collector and install the app
 
-Keys are created in the **Compliance access keys** section of Data Management Settings.
-1. Click **Create key** to name your key.
-2. Name the key and select its scopes. For activities select `read:compliance_activities` and for chat messages select `read:compliance_user_data`
-3. Receive a secret access key and store it securely.
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-:::note
-If you do not see the Compliance access keys section, it means that either you are not a Primary Owner of the organization, or the Compliance API is not enabled for your organization. The Primary Owner needs to enable it in the Data and Privacy section of your organization's settings.
-:::
+<AppCollectionOPtion2/>
 
-### Source configuration
+### Use an existing source and install the app
 
-#### Universal Connector (for Activity Logs)
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-1. On the Data Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Universal Connector**.
-1. Configure the **General** settings:
-   - **Name**. Enter a name for the source.
-   - **Description**. (Optional) Enter a description.
-   - **Source Category**. Enter a value such as `claude_compliance`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
-   - **Parser Path**. (Optional) Set the value to `/Parsers/System/Anthropic/Claude Activity Logs`.
-   - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
-        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-source-configuration.png')} alt="Universal Connector - General settings" width="400" style={{border: '1px solid gray'}} />
-1. Configure the **Authentication Configuration**:
-   - **Authentication Type**. Select **API Key**.
-   - **How should we use your API key?** Select **In HTTP Request Header**.
-   - **Location Key**. Enter `x-api-key`.
-   - **API Key**. Enter the Claude API key you copied above.
-        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-authentication-configuration.png')} alt="Universal Connector - Authentication Configuration" width="400" style={{border: '1px solid gray'}} />
-1. Configure the **Request Configuration**:
-   - **HTTP Method**. Select `GET`
-   - **Endpoint URL**. Enter `https://api.anthropic.com/v1/compliance/activities`
-        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-request-configuration.png')} alt="Universal Connector - Request Configuration" width="400" style={{border: '1px solid gray'}} />
-1. Configure the **Tracking Progression**:
-   - **Type**. Select **Time Window**.
-   - **Window Size**. Enter `5m` (default recommended).
-   - **Initial Lookback**. Enter `24h`.
-   - **Progress Window Parameters**. Add the following parameters:
-     | Parameter Name | Parameter Value |
-     |:--|:--|
-     | `created_at.gte` | `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
-     | `created_at.lt` | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
-        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-tracking-configuration.png')} alt="Universal Connector - Tracking Progression" width="400" style={{border: '1px solid gray'}} />
-1. Configure the **HTTP Response Log Ingest Configuration**:
-   - **Format**. Select **JSON with JPath**.
-   - Configure the following log path settings:
-     | Field | Value |
-     |:--|:--|
-     | **Logs JPath** | `$.data[*]` |
-     | **Timestamp JPath** | `$.created_at` |
-     | **Timestamp Format** | `2006-01-02T15:04:05Z` |
-        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-response-configuration.png')} alt="Universal Connector - HTTP Response Log Ingest Configuration" width="400" style={{border: '1px solid gray'}} />
-1. Configure the **Pagination Configuration**:
-   - **Type**. Select **Continuation Token**.
-   - **Token Location**. Select **Body**.
-   - **Next Page Continuation Token JPath**. Enter `$.last_id`.
-   - **Send Token In**. Select **Parameters**.
-   - **Parameter Key**. Enter `after_id`.<br/>
-        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-pagination-configuration.png')} alt="Universal Connector - Pagination Configuration" width="400" style={{border: '1px solid gray'}} />
-1. (Optional) Configure the **HTTP Client Configuration**:
-   - **HTTP Timeout**. `5m` (default).
-   - **HTTP Client Retries**. `5` (default).
-   - **Rate Limit Requests**. `1000` (default).
-   - **Rate Limit Duration**. `1m` (default).
-   - **Rate Limit Burst**. `1000` (default).
-   - **Polling Interval**. Set how frequently to poll for new data, between 5 minutes and 48 hours.
-        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-client-configuration.png')} alt="Universal Connector - HTTP Client Configuration" width="400" style={{border: '1px solid gray'}} />
-1. Click **Save**.
-
-:::note
-Once the source is configured, you can verify successful log collection by running searches on the Search page in Sumo Logic using the source category. For example, `_sourceCategory=claude_compliance`.
-:::
-
-#### Claude Compliance C2C Source (for Chat Messages)
-
-To collect Claude chat messages logs, configure a dedicated Claude Compliance Cloud-to-Cloud source. For detailed step-by-step instructions, see the [Source configuration section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/#source-configuration) in the Claude Compliance Source documentation.
-
-:::info
-Use `claude_compliance` as the Source Category while configuring [Claude Compliance C2C Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/).
-:::
-
-## Installing the Claude Compliance app
-
-This section shows you how to install the Sumo Logic app for Claude Compliance.
-
-:::note
-Next-Gen App: To install or update the app, you must be an account administrator or a user with the Manage Apps, Manage Monitors, Manage Fields, Manage Metric Rules, and Manage Collectors capabilities, depending on the content types included in the app.
-:::
-
-1. Select **App Catalog**.
-1. In the 🔎 **Search Apps** field, run a search for your desired app, then select it.
-1. Click **Install App**.
-    :::note
-    Sometimes this button says **Add Integration**.
-    :::
-1. Click **Next** in the **Setup Data** section.
-1. In the **Configure** section of your respective app, complete the following fields.
-    1. **Field Name**. Use the source category or collector name configured in the [Source configuration](#source-configuration) section.
-1. Click **Next**. You will be redirected to the **Preview & Done** section.
-
-**Post-installation**
-
-Once your app is installed, it will appear in your **Installed Apps** folder, and dashboard panels will begin filling automatically.
-
-Each panel slowly fills with data that matches the time-range query received since the panel was created. Results will not immediately be available, but will be updated with full graphs and charts over time.
+<AppCollectionOPtion3/>
 
 ## Viewing the Claude Compliance dashboards​​
 
