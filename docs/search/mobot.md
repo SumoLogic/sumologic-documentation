@@ -338,26 +338,6 @@ You can share a specific conversation with other users, which can be useful for 
    * **Get sharable URL**. Copy a URL that opens the conversation for anyone with access.
 1. Click **Done**.
 
-### Memories
-
-Mobot can save durable facts about your environment as *memories* and use them to personalize future answers, so you do not have to re-explain stable context in every conversation. Unlike conversation history, memories persist across sessions.
-
-Nothing is saved to memory without your approval. Mobot proposes an entry, shows you a preview, and waits for your confirmation before saving it. You can add a memory in two ways:
-
-* **Ask Mobot directly**. Tell Mobot to remember something, for example `Remember that my main source category is prod/payments` or `Note that org 123 is our staging environment`.
-* **Approve a suggestion**. When Mobot verifies a durable fact during an investigation (such as a confirmed source expression or query pattern), it may propose saving it. You review the preview and approve before anything is written.
-
-Good candidates for memory include:
-
-* **Identity mappings**, such as org IDs and team names.
-* **Environment context**, such as which sources belong to which team or environment.
-* **Behavioral rules**, such as `Always exclude internal traffic` or `Never ask me for org IDs`.
-* **Stable constants**, such as source prefixes or index names you use regularly.
-
-Mobot does not save one-time investigation findings, query results, or anything that changes frequently.
-
-<!-- TODO (DOCS-1548): Confirm and document the "View memories" UI (how to view and delete saved memories), whether memory is user-level or org-level, and the RBAC/permissions that govern who can create, view, and delete memories. Detail above is from Mobot's self-description, not yet PM-confirmed. -->
-
 ## Tips for better results
 
 ### Start with a clear question
@@ -545,7 +525,7 @@ Mobot continues to evolve. Current limitations include:
 * Performance and latency vary depending on query complexity.
 * Responses may not always be fully accurate or complete.
 * Ambiguous questions may require clarification (for example, "search performance" could have multiple meanings).
-* Conversation history does not carry across sessions; each new conversation starts without prior chat context. Mobot can still apply approved [memories](#memories) you have saved to personalize answers.
+* No memory across sessions. Each conversation starts fresh.
 
 **Guardrails**
 * Responses are based only on available log data.
@@ -562,7 +542,6 @@ All aspects of the Sumo Logic service, including Mobot, adhere to the security a
 
 * **Customer data privacy**. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
 * **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
-* **Memory personalization**. Mobot saves [memories](#memories) only after you review and approve each one. Memories store the durable context you approve, such as team names or source prefixes, not raw log data or query results.
 * **AI provider**. Mobot uses a foundation model served by Amazon Bedrock. The provider has no access to your data.
 
 ## FAQ
