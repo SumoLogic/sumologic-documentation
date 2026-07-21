@@ -48,7 +48,7 @@ To parse a field from message text:
 
 ### Filter results from a column
 
-You can filter your search results directly from a column in the **Messages** tab instead of typing a filter clause into the query. When you apply a filter, Sumo Logic adds a `where` clause to your query and reruns the search.
+You can filter your search results directly from a column in the **Messages** tab instead of typing a filter clause into the query. When you apply a filter, Sumo Logic adds a `where` clause to your query, which you then run to see the narrowed results.
 
 To filter results from a column:
 
@@ -56,7 +56,8 @@ To filter results from a column:
 1. Choose an operator and provide a value.
    - **String fields**. Select an operator such as **Text contains**, **Text does not contain**, or **Text starts with**, then enter a value. You can also select a value from the **Top 10 values** list, which shows the most common values in the column with their approximate counts.
    - **Number fields**. Select an operator such as **Greater than**, **Less than**, or **Equal to**, then enter a value.
-1. Click **Apply**. Sumo Logic adds the filter to your query as a `where` clause (for example, `| where _size > 1000`) and refreshes the results.
+1. Click **Apply**. Sumo Logic adds the filter to your query as a `where` clause (for example, `| where _size > 1000`).
+1. Click the search button to run the updated query. The results do not refresh automatically.
 
 :::note
 - You can filter on one value at a time. Multi-select is not currently supported.
