@@ -2,7 +2,7 @@
 id: mobot
 title: Sumo Logic Mobot
 sidebar_label: Mobot ✨
-description: Troubleshoot logs, simplify security workflows, and learn the platform using plain-language questions with Mobot, Sumo Logic's AI assistant.
+description: Troubleshoot logs, create monitors and dashboards, and learn the platform using plain-language questions with Mobot, Sumo Logic's AI assistant.
 keywords:
   - mobot
   - dojo ai
@@ -11,6 +11,9 @@ keywords:
   - log troubleshooting
   - unstructured logs
   - agent
+  - conversational monitors
+  - conversational dashboards
+  - conversational playbooks
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -43,8 +46,7 @@ In a single conversation, Mobot determines whether you have a log data question 
 * **Documentation-grounded answers**. How-to responses include information and reference links from official Sumo Logic documentation.
 * **Conversation history**. Saved conversations let you resume, revisit, or branch previous investigations.
 * **Cloud SIEM investigations**. On a Cloud SIEM insight, click **Ask Mobot** to continue a [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) investigation in Mobot with the insight's evidence-backed verdict and context loaded. You start this from the insight, not from Mobot directly.
-
-<!-- TODO: Monitor/alert creation is on pause (https://github.com/SumoLogic/sumologic-documentation/pull/6871). When it ships, add a capability bullet here, update the "Cannot create or manage dashboards, monitors, or scheduled searches" limitation, and re-add "create alerts" to the frontmatter description. -->
+* **Content creation and management**. Create and manage monitors, dashboards, and playbooks through conversation, with a human in the loop before anything is deployed or activated. See [Create and manage content](#create-and-manage-content).
 
 ## Getting started
 
@@ -227,13 +229,81 @@ To view Mobot queries:
    ```
 1. Set your [time range](#time-range) to cover the period when queries were run (for example, last 24 hours).
 
+## Create and manage content
+
+Beyond analyzing logs, Mobot can create, edit, and summarize Sumo Logic content through natural language. Describe what you want and review Mobot's draft before you act on it. Mobot keeps a human in the loop: it does not deploy a monitor or activate a playbook without your explicit approval, and your existing [role-based access control](/docs/manage/users-roles/) permissions apply to everything it does.
+
+### Conversational Monitors
+
+Create log-based [monitors](/docs/alerts/monitors) by describing your alerting goal in plain language, instead of writing queries, calculating thresholds, and configuring notifications by hand.
+
+You can start from any of the following:
+
+- **A query**. Paste a log search query, and Mobot recommends threshold bounds, alert severities, and a name.
+- **An intent**. Describe what you want to watch (for example, `Watch my checkout latency`), and Mobot builds the underlying query and selects the monitor structure for you.
+- **Full parameters**. List every parameter explicitly, and Mobot validates the configuration for deployment.
+
+Mobot uses your historical data to recommend defaults, and you can change any of them inline before you confirm (for example, `Change the threshold to 10%`):
+
+- **Detection method**. Static or anomaly detection, based on how much your data varies.
+- **Time window and trigger**. A rolling time window with a trigger condition.
+- **Alert routing**. Webhook connections such as Slack or PagerDuty, or email notifications.
+- **Metadata**. A title, labels, folder location, and description.
+
+No monitor goes live until you confirm it. Reply `Yes` or `Proceed` to deploy.
+
+Known limitations:
+
+- You create monitors from the Mobot interface. Creating them from within the Monitors page is not supported.
+- Only log-based monitors are supported. Metric- and SLO-based monitors are not.
+- You can update a monitor within the same conversation where you created it. You cannot use Mobot to update monitors from other conversations or to disable or delete a monitor. Manage those from the **Monitors** tab.
+
+### Conversational Dashboards
+
+Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel.
+
+Mobot also helps you read a dashboard you already have open:
+
+- **Summarization**. Get a plain-language narrative of overall system health and the key takeaways across panels.
+- **Anomaly detection**. See deviations from baseline, unusual spikes, and unexpected drops flagged automatically.
+- **Time-range comparison**. Compare performance across periods (for example, today versus yesterday), with percentage changes and top contributors.
+- **Drilldown questions**. Ask questions about the open dashboard (for example, `Why did error rates spike at 2 PM?`) and get context-aware answers anchored to the underlying data.
+
+Known limitations:
+
+- Summaries evaluate the top 10 rows or data series per panel, ranked by variance or anomaly score. Lower-impact data is excluded from the narrative.
+- Analysis is scoped to the dashboard you have open. Mobot cannot correlate data across separate dashboards.
+- Follow-up context is kept only within the current session.
+- Mobot selects the panel type automatically. Fine-tuned visual adjustments are done manually.
+
+### Conversational Playbooks
+
+Create, edit, and summarize Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, without building node by node on the visual canvas:
+
+- **Create**. Describe a workflow in plain language, and Mobot drafts a playbook that reflects your organization's installed integrations and configured actions.
+- **Edit**. Request changes to an existing playbook conversationally.
+- **Summarize**. Ask Mobot what a playbook does and get a plain-language explanation.
+
+The visual canvas is unchanged and remains fully available. Mobot is an additional way to work with playbooks, not a replacement for the canvas, file-based export and import, or Terraform.
+
+Known limitations:
+
+- Mobot works only with playbooks installed in your organization. It cannot access App Central playbooks or templates from other organizations.
+- If a required integration is not installed, Mobot points you to App Central but cannot build nodes for it. Install the integration, then start again.
+- Mobot never selects an integration for you. It presents options and you choose.
+- Playbooks created through Mobot are saved as drafts. They are not published or activated automatically, so review each draft before you activate it.
+- Some node fields need manual configuration in the visual canvas after Mobot builds the playbook.
+- The visual canvas is read-only while Mobot is writing to a playbook. You cannot edit both at the same time.
+
 ## Managing conversations
 
 ### My conversations
 
-To resume a conversation, go to the **My Conversations** panel and click the one you want.
+Your past conversations live in the **My Conversations** panel. There is no button labeled **My Conversations**. To open (or hide) the panel, click the panel icon to the left of the conversation title at the top of Mobot.
 
-Mobot automatically titles conversations based on your first question. You can rename a conversation by hovering over it in the **My Conversations** panel and clicking the pencil icon.
+To resume a conversation, open the **My Conversations** panel and click the one you want.
+
+Mobot automatically titles conversations based on your first question. You can rename a conversation by hovering over it in the panel and clicking the pencil icon.
 
 Conversation history is useful when working on multiple incidents at the same time. Revisit earlier turns to compare or branch analyses without repeating prior steps.
 
@@ -242,6 +312,20 @@ Conversation history is useful when working on multiple incidents at the same ti
 To start a fresh session, click **New Conversation** in the top right. This clears the current session and starts with a clean slate.
 
 <img src={useBaseUrl('img/search/mobot/new-conversation.png')} alt="New Conversation button in top right of Mobot interface" style={{border: '1px solid gray'}} width="300" />
+
+Start a new conversation when you:
+
+- Switch to a completely different topic or use case.
+- Find the current thread has gone in the wrong direction or is based on incorrect assumptions.
+- Want to reset context so prior constraints do not influence new results.
+
+Continue the same conversation when you:
+
+- Refine or dig deeper into the same question.
+- Want Mobot to build on prior results or context.
+- Explore a problem through multiple follow-up questions.
+
+If you find yourself re-explaining the problem or correcting earlier assumptions, it's usually better to start fresh.
 
 ### Share conversation
 
@@ -253,6 +337,26 @@ You can share a specific conversation with other users, which can be useful for 
    * **See who has access**. Expand to view a list of everyone who currently has access to the conversation.
    * **Get sharable URL**. Copy a URL that opens the conversation for anyone with access.
 1. Click **Done**.
+
+### Memories
+
+Mobot can save durable facts about your environment as *memories* and use them to personalize future answers, so you do not have to re-explain stable context in every conversation. Unlike conversation history, memories persist across sessions.
+
+Nothing is saved to memory without your approval. Mobot proposes an entry, shows you a preview, and waits for your confirmation before saving it. You can add a memory in two ways:
+
+* **Ask Mobot directly**. Tell Mobot to remember something, for example `Remember that my main source category is prod/payments` or `Note that org 123 is our staging environment`.
+* **Approve a suggestion**. When Mobot verifies a durable fact during an investigation (such as a confirmed source expression or query pattern), it may propose saving it. You review the preview and approve before anything is written.
+
+Good candidates for memory include:
+
+* **Identity mappings**, such as org IDs and team names.
+* **Environment context**, such as which sources belong to which team or environment.
+* **Behavioral rules**, such as `Always exclude internal traffic` or `Never ask me for org IDs`.
+* **Stable constants**, such as source prefixes or index names you use regularly.
+
+Mobot does not save one-time investigation findings, query results, or anything that changes frequently.
+
+<!-- TODO (DOCS-1548): Confirm and document the "View memories" UI (how to view and delete saved memories), whether memory is user-level or org-level, and the RBAC/permissions that govern who can create, view, and delete memories. Detail above is from Mobot's self-description, not yet PM-confirmed. -->
 
 ## Tips for better results
 
@@ -337,9 +441,14 @@ Keyword searches are case-sensitive.
 ### Observability investigations
 
 * `Are there any error spikes in the last 15 minutes? Investigate the cause`.
+* `Show me services with the highest error rates in the last hour`.
 * `Analyze latency anomalies or slow requests in the last hour`.
+* `Find any services where latency has degraded more than 50% compared to last week`.
 * `Are there any timeouts or connection failures in the last hour?`
 * `Calculate 95th percentile latency by service and API`.
+* `Find any pods that have been restarting repeatedly in the last hour`.
+* `Which services have the highest request volume right now?`
+* `Show me upstream services that spiked in errors right before a downstream service degraded`.
 
 <!--
 **API and compute**
@@ -423,9 +532,8 @@ Mobot continues to evolve. Current limitations include:
 * Capabilities are constrained by available skills. Domain intelligence and planning capabilities are still evolving.
 
 **Access and actions**
-* Read-only. Mobot can query and analyze data but cannot modify, delete, or ingest data.
-* Cannot create or manage dashboards, monitors, or scheduled searches.
-<!-- TODO: monitor creation is on pause (see https://github.com/SumoLogic/sumologic-documentation/pull/6871). Once it's live, update this limitation and document the new functionality/agent here. -->
+* Read-only for your data. Mobot can query and analyze data but cannot modify, delete, or ingest it. It can create monitors, dashboards, and playbooks through conversation. See [Create and manage content](#create-and-manage-content).
+* Content creation is limited to log-based monitors, dashboards, and playbooks. Mobot cannot create scheduled searches, and it cannot create metric- or SLO-based monitors.
 * No access to external systems (for example, CRM, databases, APIs, PagerDuty, Jira, or Splunk).
 
 **Data and query constraints**
@@ -437,7 +545,7 @@ Mobot continues to evolve. Current limitations include:
 * Performance and latency vary depending on query complexity.
 * Responses may not always be fully accurate or complete.
 * Ambiguous questions may require clarification (for example, "search performance" could have multiple meanings).
-* No memory across sessions. Each conversation starts fresh.
+* Conversation history does not carry across sessions; each new conversation starts without prior chat context. Mobot can still apply approved [memories](#memories) you have saved to personalize answers.
 
 **Guardrails**
 * Responses are based only on available log data.
@@ -454,6 +562,7 @@ All aspects of the Sumo Logic service, including Mobot, adhere to the security a
 
 * **Customer data privacy**. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
 * **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
+* **Memory personalization**. Mobot saves [memories](#memories) only after you review and approve each one. Memories store the durable context you approve, such as team names or source prefixes, not raw log data or query results.
 * **AI provider**. Mobot uses a foundation model served by Amazon Bedrock. The provider has no access to your data.
 
 ## FAQ
@@ -468,18 +577,35 @@ No. Mobot determines whether your prompt is a log data question or a how-to ques
 
 ### Is there a limit to how many prompts I can send?
 
-Yes. Each user can send up to 10 prompts to Mobot per day. A prompt is any single message you type and send to Mobot; every message counts, including follow-up replies within a conversation.
+Yes. Each user can send up to 10 prompts to Mobot per day, per Sumo Logic Org ID. A prompt is any single message you type and send to Mobot; every message counts, including follow-up replies within a conversation.
 
-When you reach the limit, Mobot stops responding to new prompts and shows a "try again in X hours" message. Limits reset daily at midnight UTC. If you need a higher limit, contact your account team.
+As you approach the limit, Mobot shows a heads-up banner with the time remaining until your limit resets. When you reach the limit, Mobot stops responding to new prompts and shows a "try again in X hours" message.
+
+Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time shown is converted to your local time zone and may not fall at your local midnight. For example, someone in Pacific Time (UTC-8) who reaches the limit at 10 AM local time sees "try again in 6 hours," because midnight UTC is 4 PM their time.
+
+If you need a higher limit, contact your account team.
 
 <!-- TODO (DOCS-1548): "Ask Mobot" investigations launched from a Cloud SIEM insight are governed by SOC Analyst Agent licensing (reportedly up to 30 prompts/user/day), not standard Mobot limits. Confirm this figure is public before documenting it here and on the Cloud SIEM investigations capability. -->
 
+### Is there a cost to use Mobot?
+
+No. Mobot is included at no additional cost for any Sumo Logic customer on an active credit-based subscription ([Flex](/docs/manage/partitions/flex) or [tiered](/docs/manage/partitions/data-tiers/searching-data-tiers/)). There is no upfront consumption charge, and each account receives a fair-use capacity designed to cover the vast majority of use cases.
+
+When Mobot runs a log analysis, the underlying data scan is charged the same way as a user-initiated search. See [Search behavior and data tier access](#search-behavior-and-data-tier-access).
+
+If your organization previously turned off Sumo Logic AI or an earlier version of Mobot, an administrator needs to turn it back on before you can use it. See [Opting out](#opting-out).
+
+### Do I need to sign an AI addendum to use Mobot?
+
+No. You do not need to sign an AI addendum to activate Mobot or other Sumo Logic AI capabilities. If your organization wants a governing agreement for AI usage, contact your account team.
+
 ### What happened to Query Agent and Knowledge Agent?
 
-They're still here, working behind the scenes, but renamed and repositioned as their capabilities have evolved. As with the original agents, you don't select between them; Mobot routes your prompt to the right one automatically.
+They're still here, working behind the scenes, but renamed and repositioned as their capabilities have evolved. As with the original agents, you do not select between them; Mobot routes your prompt to the right one automatically.
 
 * **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
 * **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
+* **Summary Agent → part of SOC Analyst Agent**. The Summary Agent is no longer a separate agent. Its signal summarization is now a core part of how the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) contextualizes and presents its findings.
 
 ### Can Mobot detect what sources or integrations I don't have set up?
 
@@ -558,13 +684,17 @@ If a result is not what you expected, use natural language to correct it. Common
 * **Unexpected numbers**. Be more explicit. For example, "show in milliseconds" or "use P90 instead of P50."
 * **Wrong query logic**. Tell Mobot what to change. For example, "Do not filter by namespace, group by error type instead."
 
+### Why doesn't Mobot always give the same answer to a similar question?
+
+AI is not deterministic. Mobot generates responses based on probability, context, and intent rather than retrieving fixed answers, so phrasing may vary between similar questions. The core guidance and accuracy stay consistent, and Mobot grounds how-to answers in official Sumo Logic documentation to help ensure reliability. If an answer seems incorrect or unclear, use the [feedback](#feedback) buttons to help us improve quality.
+
 ### What are the RAG limitations for dashboard-aware translations?
 
 For dashboard-aware translations via RAG, Mobot's source expression needs to share at least one common key-value pair with your dashboard queries. For example, `_sourcecategory=abcd "error"` matches a dashboard query like `_sourcecategory=abcd | count`, but does not match `_source=abcd | count` because there is no shared key-value pair. RAG only considers dashboards that have been opened in the last 90 days.
 
 ### How do I opt out of Mobot?
 
-Contact our [support team](https://support.sumologic.com/support/s/). Your account will be updated accordingly.
+An administrator can turn Mobot off for your organization from the **Feature Management** page. See [Opting out](#opting-out).
 
 ## Feedback
 
@@ -574,7 +704,13 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 
 ## Opting out
 
-To opt out of Mobot, contact our [Support team](https://support.sumologic.com/support/s/).
+An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). Mobot is part of the **AI features** toggle, so turning it off also disables Parse Assist and the SOC Analyst Agent.
+
+<!-- TODO (DOCS-1548): Confirm the AI features toggle coupling with a PM. Is it one combined toggle that disables Mobot, Parse Assist, AND the SOC Analyst Agent together, or can Mobot be disabled independently? Not PM-confirmed; source PDF only says opt-out is via support ticket / "turn off in app." -->
+
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+
+For help, contact our [Support team](https://support.sumologic.com/support/s/).
 
 ## Additional resources
 
