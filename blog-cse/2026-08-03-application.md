@@ -21,7 +21,7 @@ The agent requires a Cloud SIEM subscription and is opt-in. As a launch promotio
 The SOC Analyst agent provides the following new functionality:
 * AI Investigation tab in Cloud SIEM
 * Insight investigation in Mobot
-* SOC Agent settings for auto-investigation controls
+* SOC Analyst Settings tab for auto-investigation controls
 
 #### AI Investigation tab
 
@@ -35,9 +35,9 @@ When you select the **Ask Mobot** button on the new **AI Investigation** tab in 
 
 <img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot Investigation Agent" style={{border: '1px solid gray'}} width="600" />
 
-#### SOC Agent settings
+#### SOC Analyst Settings
 
-The new **SOC Agent Setting** tab (**Cloud SIEM > Cloud SIEM Workflow**) lets administrators control how the agent consumes your committed monthly investigation volume. Define an **Auto-Investigation Filter** to exclude low-priority insights from automatic investigation, and use **Volume & Overage Settings** to choose whether investigation continues past your committed volume. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent#configure-soc-agent-settings).
+The new **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets administrators control how the agent consumes your committed monthly investigation volume. Define an **Auto-Investigation Filter** to exclude low-priority insights from automatic investigation, and use **Volume & Overage Settings** to choose whether investigation continues past your committed volume. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent#configure-soc-analyst-agent-settings).
 
-<!-- TODO (DOCS-1760): add a SOC Agent Setting screenshot. Also confirm whether the "Auto-Resolve Insights with Benign AI Verdict" setting is in scope for this release; if so, add it here. -->
+<img src={useBaseUrl('img/cse/auto-investigation-filter.png')} alt="Auto-Investigation Filter on the SOC Analyst Settings tab" style={{border: '1px solid gray'}} width="800" />
 
