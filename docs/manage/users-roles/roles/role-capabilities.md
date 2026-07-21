@@ -36,7 +36,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | View Account Overview| View the Account Overview page. | `viewAccountOverview` |
 | Manage Tokens | Manage [Installation Tokens](/docs/manage/security/installation-tokens). | `manageTokens` |
 | View Parsers | View [parsers](/docs/cse/schema/parser-editor). | `viewParsers` |
-| Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` |
+| Download Search Results | [Export log query results](/docs/search/get-started-with-search/search-basics/export-search-results) to a .csv file. | `downloadSearchResults` | 
 | Access Data Volume Index | Access the [`sumologic_volume` index](/docs/metrics/metrics-dpm/#query-the-sumologic_volume-index). | `dataVolumeIndex` |
 
 <!-- Beta features to be added to Data Management
@@ -68,7 +68,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Password Policy|Set the password policy for your Sumo Logic account. | `managePasswordPolicy` |
 |Allowlist IP Addresses | [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges. | `ipAllowlisting` |
 | Create Access Keys | Create your own [access keys](/docs/manage/security/access-keys/). | `createAccessKeys` |
-| Manage Access Keys | Create, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
+| Manage Access Keys | Set up, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
 | Manage Support Account Access |Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization. | `manageSupportAccountAccess` |
 | Manage Audit Data Feed|Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on internal events. | `manageAuditDataFeed` |
 | Manage SAML|Provision and manage [SAML](/docs/manage/security/saml) for single sign-on. | `manageSAML` |
