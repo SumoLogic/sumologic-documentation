@@ -28,6 +28,7 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 | [Authorization Code](#authorization-code-flow) | User-facing applications with browser-based login | Simple (UI-based) | Automatic |
 | [Client Credentials](#client-credentials-flow) | Service-to-service authentication, automated workflows | Moderate (API-based) | Manual or automatic |
 
+
 ## Prerequisites
 
 * **Sumo Logic Administrator role**. You'll need this to create OAuth clients and service accounts. If you're unsure whether you have this role, check your [Preferences](/docs/get-started/onboarding-checklists/).
@@ -38,6 +39,22 @@ Effective permissions are always the intersection of the OAuth client's configur
 
 * **Authorization Code flow**. Effective permissions are the intersection of the authenticated user's roles and the OAuth client's configured scopes. When specific scopes are requested during authorization, effective permissions are further limited to those requested scopes.
 * **Client Credentials flow**. Effective permissions are the intersection of the service account's roles, the OAuth client's configured scopes, and any scopes explicitly requested when obtaining a token.
+
+## Client ID Metadata Documents (CIMD)
+
+[Client ID Metadata Documents (CIMD)](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) let a client identify itself to Sumo Logic using a hosted metadata URL as its client ID, without an administrator pre-registering an OAuth client. CIMD is the default, recommended authentication mechanism for [MCP server](/docs/api/mcp-server) clients such as the Claude Code CLI, which handle browser-based login and token refresh automatically.
+
+CIMD uses the [Authorization Code flow](#authorization-code-flow) behind the scenes, so the same [permission rules](#how-permissions-work) apply.
+
+### Enable CIMD
+
+An administrator needs to enable CIMD for your organization before clients can use it.
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
+1. Select the **Enable CIMD Clients** check box.
+1. Click **Save**.
+
+Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [Manual OAuth setup](/docs/api/mcp-server#manual-oauth-setup) for the MCP server.
 
 ## Authorization Code flow
 
@@ -256,6 +273,27 @@ curl <api-endpoint>/api/v1/search/jobs \
 
 Access tokens generated with Client Credentials flow expire after 12 hours. When a token expires, generate a new one by repeating the [token request](#step-3-generate-an-access-token). Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
 
+## Metadata endpoints
+
+Sumo Logic publishes OAuth 2.0 and OpenID Connect discovery documents so clients can automatically discover endpoints and supported capabilities. Replace `[deployment-endpoint]` with your deployment's service endpoint (for example, `service.sumologic.com` for US1). See [How do I find the authorization or token endpoint for my deployment?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment) for the endpoint that matches your deployment.
+
+| Metadata document | URL |
+| :--- | :--- |
+| Authorization server metadata ([RFC 8414](https://datatracker.ietf.org/doc/html/rfc8414)) | `https://[deployment-endpoint]/.well-known/oauth-authorization-server` |
+| OpenID Connect configuration | `https://[deployment-endpoint]/.well-known/openid-configuration` |
+| Protected resource metadata ([RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728)) | `https://[mcp-server-endpoint]/.well-known/oauth-protected-resource` |
+
+* **Authorization server metadata** returns the `authorization_endpoint`, `token_endpoint`, and other supported OAuth 2.0 parameters, such as scopes, grant types, and response types.
+* **OpenID Connect configuration** returns the OpenID Provider configuration, including the `issuer`, endpoint URLs, and supported claims.
+* **Protected resource metadata** is served by the [Sumo Logic MCP server](/docs/api/mcp-server) to advertise which authorization server issues tokens for it. Replace `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/api/mcp-server#prerequisites).
+
+For example, to retrieve the authorization server metadata:
+
+```bash
+curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
+```
+
+
 ## Security best practices
 
 * **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
@@ -331,7 +369,7 @@ To find the `authorization_endpoint` for your deployment (used in [Authorization
 curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```
 
-The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters.
+The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters. For the OpenID Connect and protected resource discovery documents, see [Metadata endpoints](#metadata-endpoints).
 
 ### Can I use OAuth with the Sumo Logic APIs?
 
