@@ -97,7 +97,7 @@ Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hu
 
 #### Cloud SIEM Rules
 
-Cloud SIEM rules leverage AI for the following:
+Sumo Logic's Cloud SIEM rules leverage AI for the following:
 * [Insight Trainer](/docs/cse/rules/insight-trainer). Utilizes ML and AI to deliver outcome-based recommendations, reducing false positives without compromising detection value.
 * [First-seen rule](/docs/cse/rules/write-first-seen-rule). Identifies novel threats based on first occurrences.
 * [Outlier rule](/docs/cse/rules/write-outlier-rule/). Detects abnormal behavior indicating potential security breaches.
