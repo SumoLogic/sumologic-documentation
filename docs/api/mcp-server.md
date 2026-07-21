@@ -9,47 +9,51 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 
+<!-- Training/course link? -->   
+
 ## Prerequisites
 
-* **MCP server URL for your deployment**. OAuth tokens are bound to a single deployment, so use the exact MCP server URL that matches yours:
-   | Deployment | MCP Server URL |
-   | :--- | :--- |
-   | Asia Pacific (Seoul) | `https://mcp.kr.sumologic.com/mcp` |
-   | Asia Pacific (Sydney) | `https://mcp.au.sumologic.com/mcp` |
-   | Asia Pacific (Tokyo) | `https://mcp.jp.sumologic.com/mcp` |
-   | Canada (Central) | `https://mcp.ca.sumologic.com/mcp` |
-   | Europe (Frankfurt) | `https://mcp.de.sumologic.com/mcp` |
-   | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
-   | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
-   | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
-   :::note
-   The MCP server is not currently supported in the Europe (Ireland) and Europe (Zurich) deployments.
-   :::
-* **MCP-compatible client**. The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
-   :::note
-   [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). For how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables CIMD, see [OAuth Client Setup](/docs/manage/security/oauth). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
-   :::
+### MCP server URL for your deployment
 
-<!-- Training/course link? -->   
+Because OAuth tokens are bound to a single Sumo Logic deployment, you'll need to use the exact MCP server URL that matches yours:
+
+| Deployment | MCP Server URL |
+| :--- | :--- |
+| Asia Pacific (Seoul) | `https://mcp.kr.sumologic.com/mcp` |
+| Asia Pacific (Sydney) | `https://mcp.au.sumologic.com/mcp` |
+| Asia Pacific (Tokyo) | `https://mcp.jp.sumologic.com/mcp` |
+| Canada (Central) | `https://mcp.ca.sumologic.com/mcp` |
+| Europe (Frankfurt) | `https://mcp.de.sumologic.com/mcp` |
+| US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
+| US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
+| US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
+
+:::note
+The MCP server is not currently supported in the Europe (Ireland) and Europe (Zurich) deployments.
+:::
+
+### MCP-compatible client
+
+The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
+
+[CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth).
+
+For client compatibility questions, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
 
 ## Enable or disable the MCP server
 
-MCP server access is enabled by default. An administrator can turn it on or off for your entire organization from the **Feature Management** page.
+MCP server access is enabled by default. An administrator can turn it on or off for your entire organization.
 
-1. In the main Sumo Logic menu, select **Administration** > **Feature Management**. You can also click the **Go To...** menu at the top of the screen and select **Feature Management**.
+1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
 1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+
+Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
 
 Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
 
-:::note
-Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
-:::
-
 ## Configure in Claude Code CLI
 
-### Authentication
-
-Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD, so you do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
@@ -82,12 +86,12 @@ To connect to a different Sumo Logic org:
 1. Select **Authenticate** and log in to the new org.
 
 :::note
-If you previously granted consent for an org, you will not be prompted again. To revoke consent, go to your Sumo Logic user settings and remove the app under **Personal Authorized Apps** (next to Personal Access Tokens).
+If you previously granted consent for an org, you will not be prompted again. To revoke consent, go to your Sumo Logic user settings, then click **Personal Authorized Apps** and remove the app.
 :::
 
 ### Manual OAuth setup
 
-CIMD is the default, recommended setup for most MCP server users. If your MCP client does not support CIMD, connect with a manually created, pre-registered OAuth client instead. Sumo Logic supports two OAuth 2.0 flows for this:
+CIMD is the default, recommended setup for most MCP server users. If your MCP client does not support CIMD, you'll need to connect with a manually created, pre-registered OAuth client instead. Sumo Logic supports two OAuth 2.0 flows for this:
 
 * **Authorization Code with a pre-registered client**. Best for interactive clients that handle browser-based login. Follow the steps below to create the client, or see [Authorization Code flow](/docs/manage/security/oauth#authorization-code-flow) for details.
 * **Client Credentials**. Best for service-to-service or automated clients with no interactive user. See [Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) to set it up with a service account.
@@ -638,12 +642,12 @@ For detailed guidance on securing MCP against cost-based attacks, see our blog p
 
 ## Rate limits
 
-The Sumo Logic MCP server applies rate limits to keep the platform reliable and ensure fair access for all customers. Your use of the MCP server is subject to Sumo Logic's standard API rate limits: 4 requests per second and 10 concurrent in-flight requests.
+The Sumo Logic MCP server applies rate limits to keep the platform reliable and ensure fair access for all customers. Your use of the MCP server is subject to Sumo Logic's [standard API rate limits](/docs/api/about-apis/getting-started/#rate-limiting): 4 requests per second per user and 10 concurrent in-flight requests per access key. MCP requests count toward these account-wide limits, along with your other API usage.
 
 | Limit | Scope | Value |
 | :--- | :--- | :--- |
-| Requests per second | MCP usage | 4 requests per second |
-| Concurrent in-flight requests | MCP usage | 10 requests |
+| Requests per second | Per user | 4 requests per second |
+| Concurrent in-flight requests | Per access key | 10 requests |
 | Log search timeout | Per search call (MCP only) | 2 minutes |
 
 ### How the limits work
