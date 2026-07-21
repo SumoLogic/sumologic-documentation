@@ -57,7 +57,7 @@ To filter results from a column:
    - **String fields**. Select an operator such as **Text contains**, **Text does not contain**, or **Text starts with**, then enter a value. You can also select a value from the **Top 10 values** list, which shows the most common values in the column with their approximate counts.
    - **Number fields**. Select an operator such as **Greater than**, **Less than**, or **Equal to**, then enter a value.
 1. Click **Apply**. Sumo Logic adds the filter to your query as a `where` clause (for example, `| where _size > 1000`).
-1. Click the search button to run the updated query. The results do not refresh automatically.
+1. Click the search button to run the updated query.
 
 :::note
 - You can filter on one value at a time. Multi-select is not currently supported.
