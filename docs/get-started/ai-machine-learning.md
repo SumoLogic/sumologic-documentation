@@ -16,6 +16,7 @@ keywords:
    - knowledge agent
    - summary agent
    - soc analyst agent
+   - mcp server
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -62,31 +63,50 @@ The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/
 
 The Sumo Logic MCP server is coming soon. It will let MCP-compatible AI tools, such as Claude Code CLI, connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more using natural language. Contact your Sumo Logic account representative for early access information.
 
-## Observability
+## Classical machine learning
+
+Beyond Dojo AI, Sumo Logic applies classical machine learning across observability and security workflows to surface patterns, reduce noise, and accelerate detection and investigation.
+
+### Observability
 
 Sumo Logic AI for Observability functionality equips developers and SREs with powerful tools to efficiently manage and optimize their technology stack.
 
 Through comprehensive discovery, monitoring, diagnosis, recovery, and prevention capabilities, we ensure minimized downtime, reduced false positives, faster incident resolution, and proactive issue prevention, all aimed at enhancing the overall health and performance of your applications and services. These capabilities include discovering app, service, and infrastructure stack relationships; utilizing M.E.L.T. telemetry to minimize detection time and false positives; diagnosing incidents swiftly; accelerating recovery times; and preventing future incidents.
 
-### LogReduce
+#### LogReduce
 
 [LogReduce](/docs/search/behavior-insights/logreduce)&reg; utilizes AI-driven algorithms to cluster log messages based on string similarity and distill thousands of log lines into easy-to-understand patterns. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, teaching LogReduce for more specific outcomes.
 
-### LogCompare
+#### LogCompare
 
 [LogCompare](/docs/search/behavior-insights/logcompare) compares log data from different time periods to identify changes or anomalies, helping with troubleshooting and root cause analysis. It clusters logs into patterns using baseline and target queries, then highlights significant differences over time. You can refine results by promoting, demoting, or splitting signatures, and set up alerts for new or changed patterns.
 
-### AI in alerting
+#### AI in alerting
 
-#### Anomaly detection
+##### Anomaly detection
 
 [Anomaly Detection](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), powered by ML, efficiently flags suspicious activities by establishing baseline behavior and minimizing false positives. It also automatically fine-tunes anomaly detection with minimal user input, and you can associate it with a playbook to link anomaly responses with monitors, streamlining incident response.
 
-#### Automated playbooks
+##### Automated playbooks
 
 With [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors), you can set up a predefined set of actions and conditional statements that respond to an events like security incidents proactively by running an automated workflow without manual intervention. Configuration is easy - browse our 500+ existing playbooks in the Automation Service App Central, then choose and/or customize it. You can access playbooks when creating a monitor, viewing an alert, or directly from the Automation Service.
 
-### App integrations for AI platforms
+### Security
+
+Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hunters to effectively safeguard their technology stack against evolving threats. By integrating advanced tools for discovery, detection, investigation, response, and protection, we minimize dwell time, reduce false positives, accelerate incident resolution, and proactively prevent future incidents, ensuring robust security and resilience for your cloud, container, and on-prem resources.
+
+#### Cloud SIEM Rules
+
+Sumo Logic's Cloud SIEM rules leverage AI for the following:
+* [Insight Trainer](/docs/cse/rules/insight-trainer). Utilizes ML and AI to deliver outcome-based recommendations, reducing false positives without compromising detection value.
+* [First-seen rule](/docs/cse/rules/write-first-seen-rule). Identifies novel threats based on first occurrences.
+* [Outlier rule](/docs/cse/rules/write-outlier-rule/). Detects abnormal behavior indicating potential security breaches.
+
+#### Global Intelligence
+
+The [Global Intelligence Service](/docs/integrations/global-intelligence) apps provide security teams with real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
+
+## App integrations for AI platforms
 
 Sumo Logic offers integrations with AI platforms for monitoring, governance, and security analysis. The following are some popular examples that let you collect, analyze, and act on data from AI tools directly within Sumo Logic:
 
@@ -94,6 +114,7 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 * [Amazon Bedrock AgentCore](/docs/integrations/amazon-aws/amazon-bedrock-agentcore)
 * [Amazon SageMaker](/docs/integrations/amazon-aws/amazon-sagemaker)
 * [ChatGPT Compliance](/docs/integrations/saas-cloud/chatgpt-compliance)
+* [Claude Compliance](/docs/integrations/saas-cloud/claude-compliance)
 * [Databricks Audit](/docs/integrations/saas-cloud/databricks-audit)
 * [GitHub Copilot](/docs/integrations/saas-cloud/github-copilot)
 * [Google Cloud Vertex AI](/docs/integrations/google/cloud-vertex-ai)
@@ -101,46 +122,14 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 * [Microsoft Foundry](/docs/integrations/microsoft-azure/microsoft-foundry)
 * [OpenLLMetry](/docs/integrations/aiml/opentelemetry/openllmetry)
 
-## Security
-
-Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hunters to effectively safeguard their technology stack against evolving threats. By integrating advanced tools for discovery, detection, investigation, response, and protection, we minimize dwell time, reduce false positives, accelerate incident resolution, and proactively prevent future incidents, ensuring robust security and resilience for your cloud, container, and on-prem resources.
-
-### Cloud SIEM
-
-#### Insight summary
-
-The [Summary Agent](/docs/cse/get-started-with-cloud-siem/insight-summary/) generates a synopsis of each insight that describes the threat incidents that triggered it, helping security teams understand incidents faster and accelerate response time.
-
-#### SOC Analyst Agent
-
-The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) triages and investigates Cloud SIEM insights using agentic AI reasoning. Available in Public Preview.
-
-#### Rules
-
-Sumo Logic's Cloud SIEM rules leverage AI for the following:
-* [Insight Trainer](/docs/cse/rules/insight-trainer). Utilizes ML and AI to deliver outcome-based recommendations, reducing false positives without compromising detection value.
-* [First-seen rule](/docs/cse/rules/write-first-seen-rule). Identifies novel threats based on first occurrences.
-* [Outlier rule](/docs/cse/rules/write-outlier-rule/). Detects abnormal behavior indicating potential security breaches.
-
-### Global Intelligence
-
-The [Global Intelligence Service](/docs/integrations/global-intelligence) apps provide security teams with real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
-
 
 ## FAQ
 
-### General
-
-<details>
-<summary>Can I opt out of AI features?</summary>
+### Can I opt out of AI features?
 
 Yes. You can opt out of specific AI features at any time by submitting a support ticket.
-</details>
 
-### Security and privacy
-
-<details>
-<summary>Do Dojo AI agents access customer data?</summary>
+### Do Dojo AI agents access customer data?
 
 Agent interaction with customer data varies by capability.
 
@@ -153,10 +142,8 @@ Any AI capability that processes customer data:
 - Requires execution of the applicable AI addendum to the client agreement
 
 Customers retain control over whether these data-processing capabilities are enabled in their environment.
-</details>
 
-<details>
-<summary>What types of customer data or PII does the AI process? Does it filter sensitive information?</summary>
+### What types of customer data or PII does the AI process? Does it filter sensitive information?
 
 Sumo Logic AI capabilities follow strict legal, compliance, and security standards to ensure data minimization and fit-for-purpose processing.
 
@@ -165,10 +152,8 @@ Sumo Logic AI capabilities follow strict legal, compliance, and security standar
 - Sumo Logic applies strong safeguards and filtering to ensure sensitive data is handled securely and appropriately at all times.
 
 Capabilities that process customer data, including the SOC Analyst Agent (currently in Public Preview), are available only through explicit customer opt-in and require execution of the applicable AI addendum. These capabilities are never automatically provisioned.
-</details>
 
-<details>
-<summary>Is customer data or PII used to train AI models?</summary>
+### Is customer data or PII used to train AI models?
 
 No. Customer data is never used to train AI models.
 
@@ -177,10 +162,8 @@ All Sumo Logic AI capabilities are designed to serve customer-specific outcomes 
 Traditional ML features, such as AI-driven alerts, generate models specific to each customer's environment and are never shared or made public.
 
 For more information, see [Security and Compliance](/docs/manage/security).
-</details>
 
-<details>
-<summary>Does any third party have access to Dojo AI customer data?</summary>
+### Does any third party have access to Dojo AI customer data?
 
 Dojo AI leverages foundation models securely hosted through Amazon Bedrock. When customer data is processed using Amazon Bedrock:
 
@@ -191,10 +174,8 @@ Dojo AI leverages foundation models securely hosted through Amazon Bedrock. When
 - Customer inputs and outputs are not shared with model providers and are not used to train external models.
 
 Customer data processed through Dojo AI remains within Sumo Logic's secure environment and is used only to deliver results for that customer. It is not used to train foundation models or shared with model providers.
-</details>
 
-<details>
-<summary>How long does Dojo AI store customer data, and how is it deleted?</summary>
+### How long does Dojo AI store customer data, and how is it deleted?
 
 Dojo AI and classical ML features store data only temporarily to optimize performance:
 
@@ -202,45 +183,34 @@ Dojo AI and classical ML features store data only temporarily to optimize perfor
 - Mobot may temporarily retain query history in a rolling window to improve conversational context and response accuracy.
 
 All stored data follows Sumo Logic's data retention and deletion policies, ensuring customer information is never retained longer than necessary.
-</details>
 
-### Technical
-
-<details>
-<summary>Does Sumo Logic AI use open-source libraries, generative AI providers, or cloud services?</summary>
+### Does Sumo Logic AI use open-source libraries, generative AI providers, or cloud services?
 
 Yes. Dojo AI leverages foundation models securely hosted through Amazon Bedrock.
-</details>
 
-<details>
-<summary>Does Sumo Logic hold any AI-specific certifications or accreditations?</summary>
+### Does Sumo Logic hold any AI-specific certifications or accreditations?
 
 Sumo Logic is currently reviewing AI compliance within a rapidly evolving framework, in particular ISO 42001, designed to help organizations implement AI responsibly.
 
 Sumo Logic AI capabilities operate within our existing industry-recognized security and compliance framework, including FedRAMP Moderate, SOC 2 Type 2, HIPAA, PCI DSS 4.0.1, and ISO 27001:2022. These attestations govern the confidentiality, integrity, and protection of customer data.
 
 Availability of specific AI capabilities may vary by deployment region (including FED) based on compliance boundary requirements.
-</details>
 
-<details>
-<summary>Which Dojo AI capabilities are available in FED?</summary>
+### Which Dojo AI capabilities are available in FED?
 
 The current GA versions of Mobot (including Query Agent and Knowledge Agent) and Summary Agent are available in the FED deployment.
 
 The SOC Analyst Agent and certain newer Dojo AI capabilities are not currently available in FED. These capabilities depend on underlying model configurations that do not yet meet the requirements of our FED compliance boundary.
 
 Sumo Logic is actively evaluating future availability of these capabilities in FED as underlying model support and compliance requirements evolve.
-</details>
 
-<details>
-<summary>What types of model reviews are conducted?</summary>
+### What types of model reviews are conducted?
 
 The generative AI model is licensed and securely hosted via Amazon Bedrock, meaning it is not directly accessible by Sumo Logic, customers, or third parties.
 
 All new AI capabilities and features undergo comprehensive legal, compliance, and application security reviews before release to ensure data protection, privacy, and regulatory alignment.
 
 Recurring reviews are also conducted with every major update, particularly when a capability introduces new analytics or processes previously unused data types, to maintain ongoing trust and compliance.
-</details>
 
 ## Additional resources
 
