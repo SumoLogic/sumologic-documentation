@@ -227,6 +227,7 @@ To view Mobot queries:
    | where query_type in ("Query Agent")
    | count user_name, query
    ```
+   <!-- TODO (DOCS-1548): Confirm with engineering whether the query_type field value was updated to "Log Analysis Agent" for the rename, or still logs "Query Agent" on the backend. Update this filter value if it changed. -->
 1. Set your [time range](#time-range) to cover the period when queries were run (for example, last 24 hours).
 
 ## Create and manage content
@@ -564,7 +565,7 @@ Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time s
 
 If you need a higher limit, contact your account team.
 
-<!-- TODO (DOCS-1548): "Ask Mobot" investigations launched from a Cloud SIEM insight are governed by SOC Analyst Agent licensing (reportedly up to 30 prompts/user/day), not standard Mobot limits. Confirm this figure is public before documenting it here and on the Cloud SIEM investigations capability. -->
+<!-- TODO (DOCS-1548): "Ask Mobot" investigations launched from a Cloud SIEM insight are governed by SOC Analyst Agent licensing, not standard Mobot limits. The 30 prompts/user/day figure is corroborated — Twisa Pal found it in an internal FAQ doc (2026-07-20), and Oren Shevach confirmed it's a separate per-user/day limit from the standard Mobot limit (Slack thread: https://sumologic.slack.com/archives/C096F0M0ELU/p1784613292864269). Still sourced from an internal doc, not confirmed public-safe — get explicit sign-off before documenting it here and on the Cloud SIEM investigations capability. -->
 
 ### Is there a cost to use Mobot?
 
@@ -683,11 +684,15 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 
 ## Opting out
 
-An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). Mobot is part of the **AI features** toggle, so turning it off also disables Parse Assist and the SOC Analyst Agent.
+An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). This page is available to all paid customers (not free or trial accounts) to any user with the Administrator role or the **Manage Org Settings** permission.
 
-<!-- TODO (DOCS-1548): Confirm the AI features toggle coupling with a PM. Is it one combined toggle that disables Mobot, Parse Assist, AND the SOC Analyst Agent together, or can Mobot be disabled independently? Not PM-confirmed; source PDF only says opt-out is via support ticket / "turn off in app." -->
+At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+
+If you previously opted out of Mobot, you'll need to opt back in from this page to regain access at GA, or contact your account team. Trial accounts do not have Mobot enabled by default.
+
+<!-- TODO (DOCS-1548): PM notes say the AI addendum is no longer required and customers can self opt-out in agent settings, but the exact mechanism isn't confirmed yet ("how does this work?" in PM notes). Document once settled — may also belong in a Sales/Legal-facing doc rather than here. -->
 
 For help, contact our [Support team](https://support.sumologic.com/support/s/).
 
