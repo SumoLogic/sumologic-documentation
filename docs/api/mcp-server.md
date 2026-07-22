@@ -9,6 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 
+:::note
+Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](#improve-investigations-with-a-skill)), while [Mobot](/docs/search/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
+:::
+
 <!-- Training/course link? -->   
 
 ## Prerequisites
@@ -153,6 +157,10 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Discovery**. List custom fields, field extraction rules, and partitions to help scope log searches.
 
 All tools respect your Sumo Logic permission controls and access policies. See [Role capabilities](/docs/manage/users-roles/roles/role-capabilities) for details on each required scope.
+
+:::note
+The list of tools your MCP client reports as available is not currently filtered by your org's licensed capabilities or your role's permissions. For example, Cloud SIEM tools may appear available even if Cloud SIEM isn't licensed for your org, or if your role lacks the required scope. Calling a tool you don't have access to fails, even though the client showed it as available. If a prompt fails unexpectedly, confirm the underlying capability is licensed and your role has the required scope listed for that tool.
+:::
 
 ### Utility tools
 
