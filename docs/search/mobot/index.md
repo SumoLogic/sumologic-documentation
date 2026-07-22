@@ -303,6 +303,12 @@ Create and update log-based [monitors](/docs/alerts/monitors) from plain-languag
 
 For the full walkthrough, including example prompts, known limitations, and FAQ, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
+### Add Panel to Dashboard
+
+Create dashboard panels from plain-language prompts, instead of configuring them manually in the dashboard UI. Type a description of the panel you want directly into Mobot, and it finds a relevant data source, drafts the query, picks a visualization type, and adds the panel to a new or existing dashboard after you confirm. This works for logs panels only, not metrics panels, and creates new panels only — it cannot update an existing panel.
+
+For the full walkthrough, including supported visualization types and current limitations, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
+
 <!-- Uncomment once Conversational Dashboards GAs (https://github.com/SumoLogic/sumologic-documentation/pull/6937)
 ### Conversational Dashboards
 
