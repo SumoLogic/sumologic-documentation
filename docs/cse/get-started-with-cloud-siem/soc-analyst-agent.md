@@ -47,6 +47,8 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 
 The SOC Analyst agent requires a Cloud SIEM subscription and is opt-in. As a launch promotion starting August 5, 2026, it is enabled by default for the first 90 days with a capacity of five investigated insights per day, and you can opt out at any time. No signed AI addendum is required for this promotion. Contact your Sumo Logic account team for details.
 
+{/* TODO: The Aug 3 Town Hall slide deck (CEO/CTO/CFO announcement deck) describes eligibility differently — "SIEM customers who opt in to SOC Analyst Agent and agree to credit burn rate (via their AE)" — with no mention of the 90-day free promo or "no addendum required." Confirm with PM/AE whether the promo is a temporary on-ramp before the credit-burn-rate model applies, or whether this messaging has changed since drafting, before publish. */}
+
 To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
@@ -239,6 +241,30 @@ Traditional Cloud SIEM entities are items like users, IP addresses, hosts, and t
 ### Can I converse with the agent in the same way I am used to doing with other AI-enabled tools?
 
 Yes, you can. In your investigation, you are not limited in how you proceed. You can engage the agent in a conversational flow to direct the investigation any way you want. However, the agent has many tools that can help should you need guidance. For example, the agent presents follow-up questions after each step that offer you multiple paths for investigation.
+
+### How much time does the agent save my SOC team?
+
+By automatically triaging and investigating insights, the SOC Analyst agent can reduce mean time to resolution (MTTR) by up to 75%.
+
+{/* TODO: Stat sourced from the Aug 3 Town Hall slide deck (CEO/CTO/CFO announcement deck), not yet confirmed with product/eng. Verify methodology and phrasing before publish. */}
+
+### Is the agent's work quality checked?
+
+Yes. A sample of agent verdicts is regularly reviewed by senior analysts to catch drift or reasoning errors and inform future improvements.
+
+{/* TODO: Aug 3 Town Hall slide deck states "10% of agent verdicts are QA-sampled by senior analysts." Confirm the exact sampling rate and whether "senior analysts" refers to Sumo Logic's team, the customer's, or both, before publishing a specific number. */}
+
+### Can I audit what the agent did during an investigation?
+
+Yes. Every tool call the agent makes is logged to Cloud SIEM, so you can review exactly what data it queried and how it reached a verdict.
+
+{/* TODO: Aug 3 Town Hall slide deck adds that tool calls are "replayable end-to-end." Confirm whether a replay mechanism/UI exists at GA before adding that claim. */}
+
+### Can the agent take containment actions on its own?
+
+Today, containment and remediation actions require a human to click **Execute Action** on a recommended playbook; see [AI Investigation tab](#ai-investigation-tab).
+
+{/* TODO: Aug 3 Town Hall slide deck describes containment as "dual-control — the agent proposes, policy disposes," implying an org-level policy could let containment actions apply automatically without a per-action click. Confirm whether this ships at GA or is roadmap, and reconcile with the manual Execute Action flow above before publish. */}
 
 ## Additional resources
 
