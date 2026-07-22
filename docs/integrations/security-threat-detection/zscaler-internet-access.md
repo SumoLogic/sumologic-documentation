@@ -247,7 +247,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Threats.png')} alt="zscaler internet access Dashboard" />
 
-## Create monitors for the Zscaler Internet Access app
+## Create monitors for Zscaler Internet Access app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
