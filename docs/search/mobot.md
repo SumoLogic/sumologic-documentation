@@ -22,12 +22,17 @@ Mobot connects you to two specialized agents:
 * **Query Agent** translates your natural-language questions into log search queries and helps you refine them step by step.
 * **Knowledge Agent** answers how-to questions about Sumo Logic, from setup to troubleshooting, best practices, and more.
 
-Together, these agents help you troubleshoot faster, explore your data more intuitively, and learn the platform without friction.
+Mobot also includes the following skill:
+
+* Create dashboard panels from plain-language prompts you type directly into Mobot, without configuring panels manually.
+
+Together, these agents and skills help you troubleshoot faster, explore your data more intuitively, learn the platform, and build dashboards without friction.
 
 ## At a glance
 
 - **What it is**. Sumo Logic's AI-powered assistant for log investigation and platform guidance.
 - **Two agents**. Query Agent (log search queries) and Knowledge Agent (how-to answers from official docs).
+- **One skill**. Add panel to dashboard from prompts.
 - **How it works**. Ask questions in plain English; Mobot translates them into Sumo Logic queries or returns documentation-sourced answers.
 - **Response time**. Typically under 2 seconds for most queries.
 - **Compatible log types**. Structured, semi-structured, and unstructured logs. Unstructured logs already used in dashboards do not require Field Extraction Rules. See [Compatible log formats](#compatible-log-formats) for details.
@@ -65,15 +70,15 @@ Mobot is ideal for all users across your organization:
    - **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="650" />
    - **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="650" />
 
-Not sure where to start? Choose an agent based on what you need:
+Not sure where to start? Compare what each one does:
 
-|      | Query Agent | Knowledge Agent |
-|:-----|:------------|:----------------|
-| **Purpose** | Create and refine log queries | Learn platform features |
-| **Input** | Data questions and analysis requests | How-to and configuration questions |
-| **Output** | Executable queries with live results | Answers with guidance links |
-| **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts |
-| **Example** | "Show me 500 errors from the API service" | "How do I set up a CloudTrail collector?" |
+|      | Query Agent | Knowledge Agent | Add dashboard panels|
+|:-----|:------------|:----------------|:-----------------------|
+| **Purpose** | Create and refine log queries | Learn platform features | Create dashboard panels |
+| **Input** | Data questions and analysis requests | How-to and configuration questions | A description of the panel you want |
+| **Output** | Executable queries with live results | Answers with guidance links | A dashboard panel you confirm and create |
+| **Best for** | Troubleshooting, investigating, analyzing trends | Onboarding, setup guidance, learning concepts | Building dashboards without the panel form |
+| **Example** | "Show me 500 errors from the API service" | "How do I set up a CloudTrail collector?" | "Add a panel showing request count by geo location on a map" |
 
 ## Query Agent
 
@@ -427,6 +432,16 @@ To get the most accurate answers, try the following when asking questions:
 * **Follow up naturally**. If the initial answer is close but not quite right, ask follow-up questions like "What about for Azure instead of AWS?"
 * **Reference specific features**. Use proper names when you know them: "How do I use Field Extraction Rules?" works better than "How do I extract fields?"
 
+
+## Add Panel to Dashboard
+
+Type a description of the panel you want directly into Mobot, and it creates dashboard panels from your prompt. Mobot finds a relevant data source, drafts the query, picks a visualization type, and adds the panel to a new or existing dashboard after you confirm. You can also request multiple panels in a single prompt.
+
+This skill supports logs panels only (not metrics panels), and it creates new panels only; it cannot update an existing panel.
+
+For example, you can prompt: `Add a panel showing request count by geo location on a map.`
+
+For the full walkthrough, including supported visualization types and current limitations, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 
 ## Managing conversations
 
