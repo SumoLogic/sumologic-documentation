@@ -13,7 +13,29 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](#improve-investigations-with-a-skill)), while [Mobot](/docs/search/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
 :::
 
-<!-- Training/course link? -->   
+
+import Iframe from 'react-iframe';
+
+<!--
+:::training Micro Lesson
+
+Watch this micro lesson to learn how to connect an MCP-compatible AI client to Sumo Logic.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/ej2qcjc6l7?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: MCP Server"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+
+-->
 
 ## Prerequisites
 
