@@ -47,7 +47,7 @@ Follow the below steps to run a search using the searchable time in the dashboar
 1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to provide a log query.
 1. Navigate to **General** configuration.
-1. Go to **Logs Settings** section and select **Searchbale Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="500" />
+1. Go to **Logs Settings** section and select **Searchable Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="500" />
 
 ### Create a monitor using Searchable Time
 
