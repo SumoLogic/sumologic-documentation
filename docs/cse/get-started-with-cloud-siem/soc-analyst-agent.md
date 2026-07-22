@@ -23,13 +23,13 @@ The SOC Analyst agent provides the following functionality:
 
 The SOC Analyst agent requires a Cloud SIEM subscription and is opt-in. As a launch promotion, it is enabled by default for the first 90 days with a capacity of five investigated insights per day, and you can opt out at any time. Contact your Sumo Logic account team for details.
 
-To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). The SOC Analyst Agent is part of the **AI features** toggle, so turning it off also disables Mobot and Parse Assist.
+To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
-{/* VERIFY before publishing (DOCS-1565): confirm the 90-day window start and the exact opt-out mechanism. Source: Dojo AI FAQ, SOC Analyst Agent section. */}
+{/* TODO (DOCS-1565): Whether a parent org can manage this toggle for child orgs is still an open question (pending confirmation as of 2026-07-22). Mirrors the same open question in docs/search/mobot.md (Opting out). */}
 
-{/* TODO (DOCS-1565): Confirm the AI features toggle coupling with a PM. Is it one combined toggle that disables Mobot, Parse Assist, AND the SOC Analyst Agent together, or can the SOC Analyst Agent be disabled independently? Mirrors the same open question in docs/search/mobot.md (Opting out). Not PM-confirmed. */}
+{/* VERIFY before publishing (DOCS-1565): confirm the 90-day window start and the exact opt-out mechanism. Source: Dojo AI FAQ, SOC Analyst Agent section. */}
 
 <!-- TODO (DOCS-1565), from the Dojo AI FAQ (pp. 60-69), pending product/GA confirmation:
   - Third core capability: add "Incident report generation (via Mobot)" alongside Triage and Investigation (FAQ p.60/62), once GA-confirmed.
@@ -108,15 +108,15 @@ Click **Search related insights?** when it appears as a suggested action in Mobo
 
 Select a dimension to proceed, or enter your own search criteria.
 
-<!-- TODO: once #6897 merges, replace this section with a link to Mobot's Example Prompts (Security analyst) section -->
 ### Example questions
 
-Following are example questions you could try in the **Ask Something...** field:
+Following are example questions you could try in the **Ask Something...** field. Although these are general questions, they give you an idea of the wide variety of questions you can ask the agent. However, rather than ask general questions, we recommend you ask questions specific to the insight you're investigating in order to get the most useful responses.
+
 * `Give me an executive summary of the insight`
 * `What actions do you recommend for remediation`
 * `Tell me how to create a monitor that will fire if any changes occur on this insight`
 
-Although these are general questions, they give you an idea of the wide variety of questions you can ask the agent. However, rather than ask general questions, we recommend you ask questions specific to the insight you're investigating in order to get the most useful responses.
+For more example prompts, see [Security investigations](/docs/search/mobot/#security-investigations) in the Mobot documentation.
 
 ### Generate dashboards
 
@@ -130,23 +130,23 @@ To start a new investigation, navigate back to Cloud SIEM, select another insigh
 
 ### Share the conversation
 
-To share the current investigation with other users, see [Share conversation](/docs/search/mobot).
-
-<!-- after Mobot GA, replace above link w/ /docs/search/mobot/#share-conversation)-->
+To share the current investigation with other users, see [Share conversation](/docs/search/mobot/#share-conversation).
 
 ## Configure SOC Analyst Agent settings
 
 The SOC Analyst agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed monthly investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when your committed volume is reached.
 
-Access requires a SOC Agent settings permission and is not available to federated tenants. Viewing the settings is available to analysts and administrators; changing them is limited to administrators. With view-only access, the controls are visible but disabled.
+Access requires the **View SOC Analyst Settings** permission, and is not available to federated tenants. Viewing the settings is available to analysts and administrators; changing them requires the **Manage SOC Analyst Settings** permission, limited to administrators. With view-only access, the controls are visible but disabled. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
 
-<!-- TODO (DOCS-1760): confirm the permission label in the paragraph above. Tab name, section labels, UI copy, and the Auto-Investigation Filter and Volume & Overage Settings screenshots are verified against the shipped SOC Analyst Settings tab (2026-07-20). -->
+{/* TODO (DOCS-1760): Confirm whether these permissions are granted to analysts by default, or only to administrators by default with analyst access granted manually — ticket language suggests the latter ("enabled by admins by default, and can be manually enabled for analysts"), which may conflict with "Viewing the settings is available to analysts and administrators" above. */}
 
 To open the settings, select **Cloud SIEM** > **Cloud SIEM Workflow Configuration** > **SOC Analyst Settings**.
 
 ### Auto-Investigation Filter
 
 Insights that match the conditions you define are excluded from auto-investigation, keeping investigation capacity focused on higher-priority signals. Excluded insights receive a **Not Investigated** verdict and do not consume investigation capacity. Analysts can still investigate them manually, because manual investigation ignores the filter. If you do not define any conditions, all insights are eligible for auto-investigation up to your committed volume.
+
+At GA, you can define a single filter (with any combination of AND/OR condition groups) per org. Support for multiple, separately prioritized filter rules is planned for a future release.
 
 The filter has an **Active** / **Disabled** toggle in the top right of the section. When it is set to **Disabled**, no insights are excluded and the conditions are hidden ("Filter is currently disabled. Enable the toggle to configure filter criteria."). Set it to **Active** to define conditions.
 
@@ -171,9 +171,11 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 When your committed monthly investigation volume is reached, new insights receive a **Not Investigated** status, and analysts can still manually trigger investigation.
 
 * **Allow overages**. This check box is cleared by default. Select it to continue auto-investigating past your committed volume. Overage investigations are billed separately.
-* **Ceiling**. When **Allow overages** is selected, a **Ceiling** field appears. Enter the maximum percentage above your committed volume that auto-investigation can consume.
+* **Ceiling**. When **Allow overages** is selected, a **Ceiling** field appears, defaulted to 20%. Enter the maximum percentage above your committed volume that auto-investigation can consume.
 
 <img src={useBaseUrl('img/cse/volume-overage-settings.png')} alt="Volume and Overage Settings with Allow overages selected and the Ceiling field" style={{border: '1px solid gray'}} width="800" />
+
+{/* TODO (DOCS-1760): The ticket also lists an Active/Disabled toggle for Volume & Overage Settings, similar to the Auto-Investigation Filter's toggle. Not reflected here — confirm whether this exists in the shipped UI or was dropped before GA. */}
 
 After changing this setting, click **Save Settings** to apply your changes, or **Cancel** to discard them.
 
@@ -219,6 +221,7 @@ Yes, you can. In your investigation, you are not limited in how you proceed. You
 
 ## Additional resources
 
+* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
 * Blogs:
    * [The SOC Analyst Agent: Bring an Agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
    * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
@@ -226,5 +229,4 @@ Yes, you can. In your investigation, you are not limited in how you proceed. You
 * Demos:
    * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
    * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
-* Sumo Logic website: [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
 * AWS article: [Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)

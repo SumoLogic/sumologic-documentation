@@ -504,6 +504,8 @@ Mobot follows the same search behavior as standard log search and respects your 
    _dataTier=Infrequent
    ```
 
+<!-- TODO (DOCS-1548): Open question raised internally — Mobot may search partitions marked 'excluded' from default scope, as well as 'infrequent' partitions, when a user hasn't explicitly scoped their prompt. Unconfirmed whether this is intended behavior or whether customers can limit which partitions Mobot can scan. A teammate noted similar language already exists for MCP & Flex docs, but was unsure if an equivalent note exists for Mobot. Confirm with product and document here if it's a real behavior/limitation. -->
+
 ### Known limitations
 
 Mobot continues to evolve. Current limitations include:
@@ -565,7 +567,11 @@ Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time s
 
 If you need a higher limit, contact your account team.
 
-<!-- TODO (DOCS-1548): "Ask Mobot" investigations launched from a Cloud SIEM insight are governed by SOC Analyst Agent licensing, not standard Mobot limits. The 30 prompts/user/day figure is corroborated — Twisa Pal found it in an internal FAQ doc (2026-07-20), and Oren Shevach confirmed it's a separate per-user/day limit from the standard Mobot limit (Slack thread: https://sumologic.slack.com/archives/C096F0M0ELU/p1784613292864269). Still sourced from an internal doc, not confirmed public-safe — get explicit sign-off before documenting it here and on the Cloud SIEM investigations capability. -->
+### Does Mobot's licensing model and limits apply to SOC Analyst Agent workflows?
+
+No. When you click **Ask Mobot** from an Investigated Insight, those interactions are governed by [SOC Analyst Agent licensing](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability), not the standard Mobot limit above.
+
+<!-- TODO (DOCS-1548): The specific SOC Analyst Agent entry-point figure (30 prompts/user/day, separate from Mobot's limit) is corroborated by Twisa Pal (found in an internal FAQ doc, 2026-07-20) and confirmed by Oren Shevach in Slack (https://sumologic.slack.com/archives/C096F0M0ELU/p1784613292864269), but still not confirmed public-safe as an exact number. Add the figure here and on the Cloud SIEM investigations capability once cleared. -->
 
 ### Is there a cost to use Mobot?
 
@@ -688,11 +694,11 @@ An administrator can turn Mobot off for your entire organization from the **Feat
 
 At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
 
+<!-- TODO (DOCS-1548): Whether a parent org can manage this toggle for child orgs is still an open question — Twisa Pal confirmed the combined-toggle behavior above but said she'd check on parent/child org management separately (still pending as of 2026-07-22). Add once confirmed. -->
+
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
 If you previously opted out of Mobot, you'll need to opt back in from this page to regain access at GA, or contact your account team. Trial accounts do not have Mobot enabled by default.
-
-<!-- TODO (DOCS-1548): PM notes say the AI addendum is no longer required and customers can self opt-out in agent settings, but the exact mechanism isn't confirmed yet ("how does this work?" in PM notes). Document once settled — may also belong in a Sales/Legal-facing doc rather than here. -->
 
 For help, contact our [Support team](https://support.sumologic.com/support/s/).
 
@@ -701,4 +707,4 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
 * [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2).
-* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the collective system of Sumo Logic agents and assistants, including Mobot, SOC Analyst Agent, MCP Server, and more.
+* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.

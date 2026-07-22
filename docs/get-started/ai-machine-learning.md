@@ -53,14 +53,13 @@ Dojo AI is Sumo Logic’s multi-agent AI platform, bringing specialized agents a
 * **Log Analysis Agent**. Interprets your intent, guides investigations, and surfaces relevant data through natural language to speed data exploration and investigation.
 * **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, and get more from the platform, sourced directly from our official documentation.
 
-### SOC Analyst agent
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language, including **Conversational Monitors**, **Conversational Dashboards**, and **Conversational Playbooks**. For details on each, see [Mobot](/docs/search/mobot).
 
 ### SOC Analyst Agent
 
 Triage and investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in [Mobot](/docs/search/mobot) using natural language to explore scope, impact, and supporting evidence.
 
-The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) applies agentic reasoning to triage and investigate Cloud SIEM insights. It delivers automated verdicts (malicious, suspicious, or benign) using evidence-backed analysis, and supports hypothesis-driven investigation to map relationships, connect entities, and summarize findings. It requires a Cloud SIEM subscription and is opt-in, with a launch promotion that enables it by default for the first 90 days at five investigated insights per day. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
+The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in, with a launch promotion that enables it by default for the first 90 days at five investigated insights per day. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 
 ### MCP server
 
@@ -148,9 +147,7 @@ Sumo Logic's Cloud SIEM rules leverage AI for the following:
 
 ### Can I opt out of AI features?
 
-Yes. You can opt out of specific AI features at any time. For Mobot, opt out in agent settings. For the MCP server, use the self-service toggle in admin settings. For other AI features, contact [Support](https://support.sumologic.com/support/s).
-
-{/* TODO: Confirm the exact opt-out UI locations before publishing — could not find these settings in the UI. Mobot "agent settings" and MCP server "self-service toggle in admin settings" are per the 7/16 launch deck, not yet verified in-product. */}
+Yes. An administrator can opt out from the **Feature Management** page (**Administration** > **Feature Management**). Mobot, Parse Assist, and the SOC Analyst Agent share a single **AI features** toggle; the MCP server has its own separate **MCP Server access** toggle on the same page. For other AI features, contact [Support](https://support.sumologic.com/support/s).
 
 ### What happened to Query Agent, Knowledge Agent, and Summary Agent?
 
@@ -245,7 +242,7 @@ Recurring reviews are also conducted with every major update, particularly when 
 
 ## Additional resources
 
-* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai)
+* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about Dojo AI, Sumo Logic's multi-agent AI platform for security and observability, including Mobot, the SOC Analyst Agent, and the MCP server.
 * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
 * [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp)
 * [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
