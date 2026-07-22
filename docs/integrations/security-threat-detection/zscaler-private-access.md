@@ -181,7 +181,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />
 
-## Create monitors for the Zscaler Private Access app
+## Create monitors for Zscaler Private Access app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
