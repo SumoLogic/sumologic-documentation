@@ -187,7 +187,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### ZPA app alerts
+### ZPA alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
