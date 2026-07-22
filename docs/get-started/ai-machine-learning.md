@@ -145,7 +145,9 @@ They're still here, but renamed and repositioned as their capabilities have evol
 
 Agent interaction with customer data varies by capability.
 
-Mobot (including Log Analysis Agent and Platform Optimization Agent)  and SOC Analyst agent do **not** process or analyze customer data.
+Mobot (including Log Analysis Agent and Platform Optimization Agent) does **not** process or analyze customer data.
+
+The SOC Analyst Agent processes customer data to help review insight data, correlate activity, and assist in triage and investigation as directed by the user.
 
 The MCP server connects external AI clients to supported Sumo Logic capabilities via API tools only, respecting your existing permission controls and access policies.
 
@@ -224,10 +226,8 @@ Recurring reviews are also conducted with every major update, particularly when 
 
 ## Additional resources
 
-
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai)
 * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
 * [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp)
 * [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
 * [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats)
-* [Join operator and Query Agent for smarter log analysis](https://www.sumologic.com/blog/using-the-join-operator)
