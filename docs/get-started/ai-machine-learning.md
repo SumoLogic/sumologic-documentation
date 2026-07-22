@@ -135,7 +135,7 @@ Yes. You can opt out of specific AI features at any time by submitting a support
 
 Agent interaction with customer data varies by capability.
 
-Mobot (including Query Agent and Knowledge Agent) and SOC Analyst agent do **not** process or analyze customer data.
+Mobot (including Query Agent and Knowledge Agent) does **not** process or analyze customer data.
 
 The SOC Analyst Agent (currently in Public Preview) processes customer data to help review insight data, correlate activity, and assist in triage and investigation as directed by the user.
 
