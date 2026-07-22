@@ -31,16 +31,16 @@ The Search Job API is available to Enterprise accounts.
 
 <ApiIntro/>
 
-## Required role capabilities
+## Required role capability
 
 <ApiRoles/>
 
-* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
-    * Download Search Results
-    * View Collectors
 * [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Manage Access Keys
 
+:::note
+For an access key with a customized scope, make sure **Run Log Search** is added to the scope.
+:::
 
 ## Endpoints for API access
 
