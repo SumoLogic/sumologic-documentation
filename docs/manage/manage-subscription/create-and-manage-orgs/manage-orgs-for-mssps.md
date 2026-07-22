@@ -36,8 +36,6 @@ Features available for self-service management are controlled by Sumo Logic. Onl
 - **Opt-in**. You can explicitly enable them for one or more child organizations.
 - **Opt-out**. You can disable them for child organizations that do not require them.
 
-Some features include sub-features. You can expand a top-level feature to manage its sub-features individually.
-
 :::note
 You can apply changes to multiple child organizations in a single action.
 :::
@@ -48,7 +46,6 @@ You can apply changes to multiple child organizations in a single action.
 1. Click the child organization you want to manage. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll-down the details pane to the **Features** section and select **Manage Features**. <br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="Manage Features Button" style={{border: '1px solid gray'}} width="400"/>
 1. In the **Manage Features** panel, toggle next to the feature you want to enable.<br/><img src={useBaseUrl('img/manage/subscriptions/select-features.png')} alt="Select Features" style={{border: '1px solid gray'}} width="400"/>
-   - To manage sub-features, click the feature name to expand it and select the desired sub-features.
 1. Click **Save Changes** button to apply your changes.
 
 ### Opt out a child organization from a feature

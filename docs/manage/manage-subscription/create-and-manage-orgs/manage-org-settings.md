@@ -66,6 +66,31 @@ You can only delete an organization for Free and Trial accounts.
 1. In the prompt dialog, enter **DELETE** in the text field to confirm the action.
 1. Click **Delete**. <br/><img src={useBaseUrl('img/manage/subscriptions/Delete_Organization_prompt.png')} alt="Delete organization prompt" style={{border: '1px solid gray'}} width="300"/>
 
+## Manage features
+
+As an account owner or administrator, you can manage feature availability for your organization directly from the Organizations UI. This lets you opt in or opt out of specific Sumo Logic features without needing to contact Sumo Logic support.
+
+Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
+
+- **Opt-in**. You can explicitly enable them for your organization.
+- **Opt-out**. You can disable them if you do not require them.
+
+### Opt in to a feature
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
+1. Click your organization. A details pane opens on the right.
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll down the details pane to the **Features** section and select **Manage Features**.
+1. In the **Manage Features** panel, toggle next to the feature you want to enable.
+1. Click **Save Changes** to apply your changes.
+
+### Opt out of a feature
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
+1. Click your organization. A details pane opens on the right.
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll down the details pane to the **Features** section and select **Manage Features**.
+1. In the **Manage Features** panel, toggle next to the feature you want to disable.
+1. Click **Save Changes** to apply your changes.
+
 ## Set up a custom subdomain
 
 This section has instructions for setting up a custom subdomain for the URL you use to access Sumo Logic.

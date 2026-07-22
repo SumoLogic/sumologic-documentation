@@ -125,9 +125,9 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 
 ## FAQ
 
-### Can I opt out of AI features?
+### Can you opt out of AI features?
 
-Yes. You can opt out of specific AI features at any time by submitting a support ticket.
+Yes. For features available in [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features), you can opt in or opt out directly. For other AI features, contact Sumo Logic Support to opt out.
 
 ### Do Dojo AI agents access customer data?
 
