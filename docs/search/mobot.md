@@ -633,7 +633,7 @@ When sharing constructive feedback, it helps to note:
 
 ## Opting out
 
-To opt out of Mobot, contact our [Support team](https://support.sumologic.com/support/s/).
+If Mobot is available for self-service management in your organization, you can opt out directly using [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features). Otherwise, contact our [Support team](https://support.sumologic.com/support/s/) to opt out on your behalf.
 
 ## Additional resources
 
