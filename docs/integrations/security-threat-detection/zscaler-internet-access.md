@@ -253,7 +253,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### ZIA app alerts
+### ZIA alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
