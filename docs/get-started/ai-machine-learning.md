@@ -48,20 +48,20 @@ Dojo AI is Sumo Logic’s multi-agent AI platform, bringing specialized agents a
 
 ### Mobot
 
-[Mobot](/docs/search/mobot) is the conversational interface for Dojo AI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to two specialized agents:
+[Mobot](/docs/search/mobot) is the conversational interface for Dojo AI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
 
-* **Log Analysis Agent**. Interprets your intent, guides investigations, and surfaces relevant data through natural language to speed data exploration and investigation.
-* **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, and get more from the platform, sourced directly from our official documentation.
+* **Log Analysis Agent**. Guides you through analysis using natural language prompts, delivering structured findings and suggested next steps. It also allows you to create and edit dashboards and monitors without writing complex queries.
+* **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
 
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language, including **Conversational Monitors**, **Conversational Dashboards**, and **Conversational Playbooks**. For details on each, see [Mobot](/docs/search/mobot).
 
 ### SOC Analyst Agent
 
-Triage and investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in [Mobot](/docs/search/mobot) using natural language to explore scope, impact, and supporting evidence.
+Triage and investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in [Mobot](/docs/search/mobot) using natural language to explore scope, impact, and supporting evidence, then generate a structured incident report to document your findings.
 
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in, with a launch promotion that enables it by default for the first 90 days at five investigated insights per day. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 
-### MCP server
+### Sumo Logic MCP server
 
 The [Sumo Logic MCP server](/docs/api/mcp-server) connects MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data — no custom integrations required. Use natural language to run log searches, triage Cloud SIEM insights and detection rules, retrieve alerts, and manage dashboards, with the same governance and access controls you already rely on. Any paid customer can activate the MCP server through a self-service feature in admin settings.
 
@@ -138,6 +138,14 @@ They're still here, but renamed and repositioned as their capabilities have evol
 - **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
 - **Summary Agent → absorbed into SOC Analyst Agent**. Summary Agent's signal summarization capability is now a core part of how the SOC Analyst Agent contextualizes and presents its findings.
 
+### Can Dojo AI access be controlled at a user level?
+
+Not at this time. Dojo AI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions—users cannot access data or execute platform actions they aren't authorized to perform manually.
+
+### How can administrators audit or track Dojo AI usage?
+
+tk
+
 ### Do Dojo AI agents access customer data?
 
 Agent interaction with customer data varies by capability.
@@ -160,7 +168,7 @@ Sumo Logic AI capabilities follow strict legal, compliance, and security standar
 - Data remains within the customer's environment and is processed only to deliver results back to that customer.
 - Sumo Logic applies strong safeguards and filtering to ensure sensitive data is handled securely and appropriately at all times.
 
-Capabilities that process customer data, including the SOC Analyst Agent and the MCP server, are available only through explicit customer opt-in and are never automatically provisioned. An AI addendum is no longer required, though one remains available for customers who want it.
+Customers can opt out of capabilities that process customer data, including the SOC Analyst Agent and Mobot, at any time from agent admin settings or submitting a support ticket.
 
 ### Is customer data or PII used to train AI models?
 
@@ -170,7 +178,7 @@ All Sumo Logic AI capabilities are designed to serve customer-specific outcomes 
 
 Traditional ML features, such as AI-driven alerts, generate models specific to each customer's environment and are never shared or made public.
 
-For more information, see [Security and Compliance](/docs/manage/security).
+For more information, see [Security and Compliance](/docs/search/mobot/#security-and-compliance).
 
 ### Does any third party have access to Dojo AI customer data?
 
@@ -179,7 +187,7 @@ Dojo AI leverages foundation models securely hosted through Amazon Bedrock. When
 - Customer inputs and outputs are treated as Customer Content under AWS terms.
 - AWS does not use Customer Content to train models or improve Amazon Bedrock.
 - AWS may access Customer Content only as necessary to provide the service or comply with law.
-- Third-party model providers (such as Anthropic) do not have access to customer inputs or outputs.
+- Third-party model providers do not have access to customer inputs or outputs.
 - Customer inputs and outputs are not shared with model providers and are not used to train external models.
 
 Customer data processed through Dojo AI remains within Sumo Logic's secure environment and is used only to deliver results for that customer. It is not used to train foundation models or shared with model providers.
@@ -189,7 +197,7 @@ Customer data processed through Dojo AI remains within Sumo Logic's secure envir
 Dojo AI and classical ML features store data only temporarily to optimize performance:
 
 - AI-driven alerts use a rolling 60-day data window, retraining weekly and expiring the oldest data automatically.
-- Mobot may temporarily retain query history in a rolling window to improve conversational context and response accuracy.
+- Mobot may temporarily retain conversation history in a rolling window to improve conversational context and response accuracy.
 
 All stored data follows Sumo Logic's data retention and deletion policies, ensuring customer information is never retained longer than necessary.
 
@@ -207,11 +215,10 @@ Availability of specific AI capabilities may vary by deployment region (includin
 
 ### Which Dojo AI capabilities are available in FED?
 
-The current GA versions of Mobot (including Log Analysis Agent and Platform Optimization Agent) and the MCP server are available in the FED deployment.
-
-The SOC Analyst Agent and certain newer Dojo AI capabilities are not currently available in FED. These capabilities depend on underlying model configurations that do not yet meet the requirements of our FED compliance boundary.
+Most Dojo AI capabilities are not currently available in FED. These capabilities depend on underlying model configurations that do not yet meet the requirements of our FED compliance boundary.
 
 Sumo Logic is actively evaluating future availability of these capabilities in FED as underlying model support and compliance requirements evolve.
+
 
 ### What types of model reviews are conducted?
 
