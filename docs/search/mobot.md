@@ -569,9 +569,7 @@ If you need a higher limit, contact your account team.
 
 ### Does Mobot's licensing model and limits apply to SOC Analyst Agent workflows?
 
-No. When you click **Ask Mobot** from an Investigated Insight, those interactions are governed by [SOC Analyst Agent licensing](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability), not the standard Mobot limit above.
-
-<!-- TODO (DOCS-1548): The specific SOC Analyst Agent entry-point figure (30 prompts/user/day, separate from Mobot's limit) is corroborated by Twisa Pal (found in an internal FAQ doc, 2026-07-20) and confirmed by Oren Shevach in Slack (https://sumologic.slack.com/archives/C096F0M0ELU/p1784613292864269), but still not confirmed public-safe as an exact number. Add the figure here and on the Cloud SIEM investigations capability once cleared. -->
+No. When you click **Ask Mobot** from an Investigated Insight, those interactions are governed by [SOC Analyst Agent licensing](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability) — up to 30 prompts per user per day — not the standard Mobot limit above.
 
 ### Is there a cost to use Mobot?
 

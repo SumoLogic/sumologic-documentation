@@ -6,37 +6,52 @@ description: Use Sumo Logic's SOC Analyst agent to triage Cloud SIEM insights wi
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Sumo Logic's SOC Analyst agent is an agentic AI tool that embeds reasoning and context-awareness directly into Cloud SIEM, helping your Security Operations Center (SOC) team investigate alerts faster, reduce false-positive noise, and respond with confidence. Security teams spend too much time validating false positives and performing repetitive investigative steps — the agent eliminates that noise, standardizes outcomes, and accelerates time to resolution.
 
 Every verdict is evidence-backed and explainable. The agent shows the evidence it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith. It determines whether an insight is malicious, suspicious, or benign, provides a concise summary of the threat incident based on triggered signals, and presents key findings from the signals that fired, resulting in quicker, more detailed analysis.
 
-The SOC Analyst agent performs two distinct jobs that mirror an analyst’s daily responsibilities:
+The SOC Analyst agent performs three distinct jobs that mirror an analyst's daily responsibilities:
 * **Triage**. Delivers automated verdicts on insights using evidence-backed reasoning to determine whether the insights are malicious, suspicious, or benign.
 * **Investigation**. Supports analysts with a hypothesis-driven approach to assess the scope, context, and likely impact of an event.
+* **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken, for consistent documentation across analysts and teams.
 
 The SOC Analyst agent provides the following functionality:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
 
+The agent's AI reasoning is currently limited to normalized security data within the platform (for example, security records and signals); it does not yet integrate with external MCP connectors or automation services.
+
+<!--
+:::training Micro Lesson
+
+Watch this micro lesson to learn how the SOC Analyst Agent triages and investigates Cloud SIEM insights.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/3ppvthpmdd?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: SOC Analyst Agent"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
+-->
+
 ## Availability
 
-The SOC Analyst agent requires a Cloud SIEM subscription and is opt-in. As a launch promotion, it is enabled by default for the first 90 days with a capacity of five investigated insights per day, and you can opt out at any time. Contact your Sumo Logic account team for details.
+The SOC Analyst agent requires a Cloud SIEM subscription and is opt-in. As a launch promotion starting August 5, 2026, it is enabled by default for the first 90 days with a capacity of five investigated insights per day, and you can opt out at any time. No signed AI addendum is required for this promotion. Contact your Sumo Logic account team for details.
 
 To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
 {/* TODO (DOCS-1565): Whether a parent org can manage this toggle for child orgs is still an open question (pending confirmation as of 2026-07-22). Mirrors the same open question in docs/search/mobot.md (Opting out). */}
-
-{/* VERIFY before publishing (DOCS-1565): confirm the 90-day window start and the exact opt-out mechanism. Source: Dojo AI FAQ, SOC Analyst Agent section. */}
-
-<!-- TODO (DOCS-1565), from the Dojo AI FAQ (pp. 60-69), pending product/GA confirmation:
-  - Third core capability: add "Incident report generation (via Mobot)" alongside Triage and Investigation (FAQ p.60/62), once GA-confirmed.
-  - Agent limitations: AI reasoning is limited to normalized security data (records and signals); no external MCP/automation-service integrations yet (FAQ p.63).
-  - Recommended Actions: verify the "Recommended Actions" / Execute Action playbook steps in the AI Investigation tab section are GA. The Dojo AI FAQ (p.63) says automated remediation is "still in testing and not currently available to customers." Remove or gate that content if not yet available.
-  - No persistent learning: the Dojo AI FAQ (p.66) says the agent has "no persistent learning" and does not immediately retrain. Soften the "reviewed to refine model behavior over time as part of the Dojo AI learning loop" FAQ answer accordingly, and consider a dedicated "Does the agent learn from past investigations?" FAQ.
--->
 
 
 ## View AI verdicts on insights
@@ -134,7 +149,7 @@ To share the current investigation with other users, see [Share conversation](/d
 
 ## Configure SOC Analyst Agent settings
 
-The SOC Analyst agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed monthly investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when your committed volume is reached.
+The SOC Analyst agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed daily investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when your committed volume is reached.
 
 Access requires the **View SOC Analyst Settings** permission, and is not available to federated tenants. Viewing the settings is available to analysts and administrators; changing them requires the **Manage SOC Analyst Settings** permission, limited to administrators. With view-only access, the controls are visible but disabled. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
 
@@ -168,7 +183,7 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 ### Volume & Overage Settings
 
-When your committed monthly investigation volume is reached, new insights receive a **Not Investigated** status, and analysts can still manually trigger investigation.
+When your committed daily investigation volume is reached, new insights receive a **Not Investigated** status, and analysts can still manually trigger investigation.
 
 * **Allow overages**. This check box is cleared by default. Select it to continue auto-investigating past your committed volume. Overage investigations are billed separately.
 * **Ceiling**. When **Allow overages** is selected, a **Ceiling** field appears, defaulted to 20%. Enter the maximum percentage above your committed volume that auto-investigation can consume.
@@ -201,15 +216,21 @@ The agent draws from normalized security data (`sec_record*` indexes and signals
 
 ### Can analysts provide feedback or correct AI verdicts?
 
-Yes. Analysts can override verdicts and flag feedback within the UI. These actions are logged and reviewed to refine model behavior over time as part of the Dojo AI learning loop.
+Yes. Analysts can override verdicts and flag feedback within the UI. These actions are logged and may inform future improvements, but they do not immediately retrain or alter the model's behavior.
+
+### Does the agent learn from past investigations?
+
+No. The SOC Analyst Agent does not have persistent learning.
 
 ### How does investigation rate limiting work?
 
-The SOC Analyst agent automatically investigates insights in priority order, up to your organization's committed investigation volume. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button.
+The SOC Analyst agent automatically investigates insights in priority order, up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button.
 
 To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings). If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
 
-<!-- TODO (DOCS-1565): Rewritten to match the committed-volume/overage model in the Dojo AI FAQ and the Configure SOC Agent settings section. The previous "5 automatic / 2 manually triggered investigations per day" figures were the promo/POV cap, not a product rate limit, per the Dojo AI FAQ (pp. 69, 73). Also reconcile cadence: this doc says "committed MONTHLY volume" but the Dojo AI FAQ describes daily metering per Org ID with daily resets. Confirm monthly vs daily with the DOCS-1760/product owner. -->
+### Does continuing an investigation in Mobot count against Mobot's usage limits?
+
+No. Continuing an investigation in [Mobot](/docs/search/mobot) from an insight (via **Ask Mobot**) is metered under SOC Analyst agent licensing, not standard Mobot limits — up to 30 prompts per user per day, separate from your organization's standard Mobot limit.
 
 ### Does the agent automatically investigate things that are not entities in Cloud SIEM?
 
