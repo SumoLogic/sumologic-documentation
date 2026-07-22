@@ -60,7 +60,7 @@ The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/
 
 ### MCP server
 
-The [Sumo Logic MCP server](/docs/api/mcp-server) connects MCP-compatible AI tools, including Claude Code, to your Sumo Logic data. Use natural language to search logs, investigate security insights, and manage alerts and dashboards.
+The Sumo Logic MCP server is coming soon. It will let MCP-compatible AI tools, such as Claude Code CLI, connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more using natural language. Contact your Sumo Logic account representative for early access information.
 
 ## Observability
 
