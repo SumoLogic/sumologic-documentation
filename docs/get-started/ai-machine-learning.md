@@ -53,6 +53,7 @@ Dojo AI is Sumo Logic’s multi-agent AI platform, bringing specialized agents a
 * **Log Analysis Agent**. Interprets your intent, guides investigations, and surfaces relevant data through natural language to speed data exploration and investigation.
 * **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, and get more from the platform, sourced directly from our official documentation.
 
+### SOC Analyst agent
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language, including **Conversational Monitors**, **Conversational Dashboards**, and **Conversational Playbooks**. For details on each, see [Mobot](/docs/search/mobot).
 
 ### SOC Analyst Agent
@@ -124,6 +125,24 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 * [Microsoft Foundry](/docs/integrations/microsoft-azure/microsoft-foundry)
 * [OpenLLMetry](/docs/integrations/aiml/opentelemetry/openllmetry)
 
+## Security
+
+Our Sumo Logic AI for Security functionality empowers SOC analysts and threat hunters to effectively safeguard their technology stack against evolving threats. By integrating advanced tools for discovery, detection, investigation, response, and protection, we minimize dwell time, reduce false positives, accelerate incident resolution, and proactively prevent future incidents, ensuring robust security and resilience for your cloud, container, and on-prem resources.
+
+### Cloud SIEM
+
+#### SOC Analyst Agent
+
+Triage and investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/), which applies agentic AI reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in [Mobot](/docs/search/mobot) using natural language to explore scope, impact, and supporting evidence.
+
+#### Rules
+
+Sumo Logic's Cloud SIEM rules leverage AI for the following:
+* [Insight Trainer](/docs/cse/rules/insight-trainer). Utilizes ML and AI to deliver outcome-based recommendations, reducing false positives without compromising detection value.
+* [First-seen rule](/docs/cse/rules/write-first-seen-rule). Identifies novel threats based on first occurrences.
+* [Outlier rule](/docs/cse/rules/write-outlier-rule/). Detects abnormal behavior indicating potential security breaches.
+
+### Global Intelligence
 
 ## FAQ
 
