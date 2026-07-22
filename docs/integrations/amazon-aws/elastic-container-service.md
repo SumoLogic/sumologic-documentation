@@ -382,9 +382,9 @@ As part of the app installation process, the following **content** will be creat
 
 The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `namespace`, `clustername`, and `accountid` will be created as a part of app installation.
 
-:::note
-As a best practice, **do not delete or modify** any fields, Field Extraction Rules (FERs), or Metric Rules created during the app installation. If you need to make updates, please contact the **Sumo Logic Support** team.
-:::
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
 
 ## Viewing the Amazon ECS app dashboards
 
