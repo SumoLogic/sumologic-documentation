@@ -53,7 +53,7 @@ Disabling the MCP server prevents MCP clients from connecting, but does not dele
 
 ## Configure in Claude Code CLI
 
-Claude Code CLI uses OAuth 2.0 with CIMD, so you do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
