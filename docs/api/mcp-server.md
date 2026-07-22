@@ -30,14 +30,15 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
    | Asia Pacific (Tokyo) | `https://mcp.jp.sumologic.com/mcp` |
    | Canada (Central) | `https://mcp.ca.sumologic.com/mcp` |
    | Europe (Frankfurt) | `https://mcp.de.sumologic.com/mcp` |
-   | Europe (Ireland) | `https://mcp.eu.sumologic.com/mcp` |
-   | Europe (Zurich) | `https://mcp.ch.sumologic.com/mcp` |
    | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
    | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
    | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
+   :::note
+   The MCP server is not currently supported in the Europe (Ireland) and Europe (Zurich) deployments.
+   :::
 * **An MCP-compatible client that supports remote HTTP/SSE transport and OAuth 2.0**. The default setup uses Client ID Metadata Documents (CIMD). We've documented setup below for [Claude Code CLI](https://code.claude.com/docs/en/quickstart) (requires a paid Claude subscription or an Anthropic Console account).
    :::note
-   [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
+   [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. An administrator needs to enable it for your organization first; see [Enable CIMD](/docs/manage/security/oauth#enable-cimd). You can learn more about how CIMD works at [client.dev](https://client.dev/). If you have any questions about client compatibility, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
    :::
 
 ## Configure in Claude Code CLI
@@ -82,7 +83,12 @@ If you previously granted consent for an org, you will not be prompted again. To
 
 ### Manual OAuth setup
 
-CIMD is the recommended setup for most MCP server users. If your MCP client does not support CIMD, you can connect with manually created OAuth credentials instead. This requires the **Sumo Logic Administrator role** to create an OAuth client, and you'll set up [OAuth credentials](/docs/manage/security/oauth) (a client ID and client secret) to authenticate.
+CIMD is the default, recommended setup for most MCP server users. If your MCP client does not support CIMD, connect with a manually created, pre-registered OAuth client instead. Sumo Logic supports two OAuth 2.0 flows for this:
+
+* **Authorization Code with a pre-registered client**. Best for interactive clients that handle browser-based login. Follow the steps below to create the client, or see [Authorization Code flow](/docs/manage/security/oauth#authorization-code-flow) for details.
+* **Client Credentials**. Best for service-to-service or automated clients with no interactive user. See [Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) to set it up with a service account.
+
+Both require the **Sumo Logic Administrator role** to create the OAuth client and its [OAuth credentials](/docs/manage/security/oauth) (a client ID and client secret).
 
 #### Create an OAuth client
 
@@ -357,6 +363,12 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
 
    **Call all three in parallel** to minimize latency. Identify target `_sourceCategory` values before proceeding.
 
+   **How to pick the right `_sourceCategory` from `listPartitions`:**
+   - Each partition has a `routingExpression` like `_sourceCategory=glass/*` or `_sourceCategory=stream`.
+   - Match the user's question to the service name in the routing expression.
+   - Use that `_sourceCategory` directly — do NOT try multiple categories sequentially.
+   - If uncertain between 2-3 candidates, run ONE sample with `| count by _sourceCategory | sort by _count desc` instead of N separate searches.
+
    ### Step 2 — SCOPED SAMPLE
 
    Run a narrow sample search to confirm the correct data source:
@@ -374,6 +386,7 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    - Use the full time range needed
    - Apply specific field filters based on patterns observed in Step 2
    - Use appropriate aggregations (`count by`, `sum`, `avg`, `timeslice`, etc.)
+   - **Put discriminating keywords BEFORE the first `|` operator** — keywords on the scope line filter via bloom filter (10-100x faster than `| where` after parse)
 
    ### Hard rules
 
@@ -381,7 +394,9 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    - **NEVER** skip Step 1 — unscoped queries WILL timeout
    - **NEVER** merge Steps 2 and 3 into a single call for complex investigations
    - For aggregate queries spanning **more than 2 days**, split into parallel 1-day windows
-   - Prefer smaller limits to avoid overwhelming context
+   - **RAW queries (no aggregation): ALWAYS add `| limit N` on the FIRST line (before any `|` operators).** This stops scanning early — a line-1 limit scans MB, an end-of-query limit scans TB then truncates.
+   - **Aggregate queries: ALWAYS end with `| sort _count desc | limit N`** (or `topk`). Unbounded aggregates overflow context.
+   - **Parse/json fields that may be absent: ALWAYS use `nodrop`.** Without it, rows with missing fields are silently dropped — you lose data without any error.
    - Max runtime: 2 minutes per query; Max result size: 256MB
 
    ---
@@ -391,10 +406,17 @@ As the Sumo Logic MCP server evolves, for example, as tools are added, removed, 
    Build queries following this pattern: **source → filter → aggregate → format**
 
    ```
-   _sourceCategory=prod/api/*
+   # Aggregate query (bounded output):
+   _sourceCategory=prod/api/* error
    | where status_code >= 400
    | count by service_name
-   | sort by _count desc
+   | sort _count desc | limit 20
+
+   # Raw query (early-termination limit):
+   _sourceCategory=prod/api/* "TimeoutException" | limit 10
+   | json "service" as service_name nodrop
+   | json "endpoint" as endpoint nodrop
+   | fields _messagetime, service_name, endpoint, _raw
    ```
 
    ### Key Sumo Logic operators

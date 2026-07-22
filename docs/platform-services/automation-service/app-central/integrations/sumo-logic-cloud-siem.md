@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.17  
-Updated: April 30, 2026***
+***Version: 1.18  
+Updated: July 22, 2026***
 
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights. This integration requires authentication. (Because the [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/) integration operates internally with Sumo Logic, no additional authentication is needed.)
@@ -21,7 +21,7 @@ For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/ge
 * **Add Enrichment Entity** *(Notification)* - Add enrichments to Entity.
 * **Add Enrichment Insight** *(Notification)* - Add enrichments to Insights.
 * **Add Enrichment Signal** *(Notification)* - Add enrichments to Signal.
-* **Add Match List Item** (*Notification*) - Add item to Match List.
+* **Add Match List Item** *(Notification)* - Add item to Match List.
 * **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
 * **Add Tag To Insight** *(Notification)* - Add tags to the Insight.
 * **Assign User To Insight** *(Notification)* - Add specific user to an Insight.
@@ -45,14 +45,14 @@ For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/ge
 * **Update Insight** *(Notification)* - Update the insight Assignee, Status, Severity, and Tags.
 * **Update Insight Status** *(Enrichment)* - Update the insight status.
 * **Update Insight Tag Trigger** *(Trigger)* - Trigger action that is executed whenever an Incident is edited.
-* **Get Match List** (*Enrichment*) - Get a Match List.
-* **List Match List Items** (*Enrichment*) - Get a list of Match List Items.
-* **List Match List** (*Enrichment*) - Get the list of Match Lists.
+* **Get Match List** *(Enrichment)* - Get a Match List.
+* **List Match List Items** *(Enrichment)* - Get a list of Match List Items.
+* **List Match List** *(Enrichment)* - Get the list of Match Lists.
 * **Sumo Logic Match List Items Daemon** *(Daemon)* - Automatically pull a list of Match List Items.
 
 ## Sumo Logic Cloud SIEM configuration
 
-[Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporally) into a text editor.
+[Create an access key](/docs/manage/security/access-keys/#create-an-access-key) and copy the resulting **Access ID** and **Access Key**. Store the ID and access key (temporarily) into a text editor.
 
 :::note
 The ID and key won't be available again once you close the confirmation screen.
@@ -81,7 +81,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationCertificate/>
 * **Signals Daemon Query**. Enter the query to be executed in daemons.
 
-* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. More info at [Rate limiting](/docs/api/metrics/#rate-limiting).
+* **API Rate Limit Sleep (s)**. Enter the API rate limit in seconds. If the API rate limit is exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10. More info at [Rate limiting](/docs/api/metrics/#rate-limiting).
 
 * **Custom Field Interval Name (Close Insight Trigger)**. This field is only used within the Close Insight Trigger as a custom field for insight ID in Cloud SOAR, for example, `opt_1`.
 
@@ -155,3 +155,7 @@ SIEM
     - Get Signal
     - List Signals
 * April 30, 2026 (v1.17) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+* July 22, 2026 (v1.18)
+    * Improved integration reliability and handling of API rate limits with better edge case support.
+    * Enhanced error messages with more descriptive details for easier troubleshooting.
+    * Deprecated the *Add Relation To Insight* action.
