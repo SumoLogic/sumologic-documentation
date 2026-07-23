@@ -201,6 +201,10 @@ The FER **AwsObservabilityNLBCloudTrailLogsFER** to extract fields `region`, `na
 
 The Metric Rule **AwsObservabilityNLBMetricsRule** for the AWS/NetworkELB namespace will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing AWS Network Load Balancer dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';
