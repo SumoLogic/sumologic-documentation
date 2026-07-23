@@ -189,32 +189,42 @@ The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v3
   </tr>
   <tr>
    <td>Field Extraction Rule   </td>
-   <td>AwsObservabilityAlbAccessLogsFER<br/>
-AwsObservabilityApiGatewayAccessLogsFER<br/>
-AwsObservabilityApiGatewayCloudTrailLogsFER<br/>
+   <td>AwsObservabilityALBAccessLogsFER<br/>
+AwsObservabilityALBCloudTrailLogsFER<br/>
+AwsObservabilityAPIGatewayAccessLogsFER<br/>
+AwsObservabilityAPIGatewayCloudTrailLogsFER<br/>
+AwsObservabilityAPIGatewayCloudWatchLogsFER<br/>
+AwsObservabilityCLBAccessLogsFER<br/>
+AwsObservabilityCLBCloudTrailLogsFER<br/>
 AwsObservabilityDynamoDBCloudTrailLogsFER<br/>
 AwsObservabilityEC2CloudTrailLogsFER<br/>
 AwsObservabilityECSCloudTrailLogsFER<br/>
+AwsObservabilityECSWithContainerInsightsCloudWatchLogsFER<br/>
 AwsObservabilityElastiCacheCloudTrailLogsFER<br/>
-AwsObservabilityElbAccessLogsFER<br/>
-AwsObservabilityFieldExtractionRule<br/>
-AwsObservabilityGenericCloudWatchLogsFER<br/>
+AwsObservabilityLambdaCloudTrailLogsFER<br/>
 AwsObservabilityLambdaCloudWatchLogsFER<br/>
-AwsObservabilityRdsCloudTrailLogsFER<br/>
+AwsObservabilityNLBCloudTrailLogsFER<br/>
+AwsObservabilityRDSCloudTrailLogsFER<br/>
+AwsObservabilityRDSCloudWatchLogsFER<br/>
 AwsObservabilitySNSCloudTrailLogsFER<br/>
 AwsObservabilitySQSCloudTrailLogsFER </td>
-   <td>AwsObservabilityAlbAccessLogsFER<br/>
-AwsObservabilityApiGatewayAccessLogsFER<br/>
-AwsObservabilityApiGatewayCloudTrailLogsFER<br/>
+   <td>AwsObservabilityALBAccessLogsFER<br/>
+AwsObservabilityALBCloudTrailLogsFER<br/>
+AwsObservabilityAPIGatewayAccessLogsFER<br/>
+AwsObservabilityAPIGatewayCloudTrailLogsFER<br/>
+AwsObservabilityAPIGatewayCloudWatchLogsFER<br/>
+AwsObservabilityCLBAccessLogsFER<br/>
+AwsObservabilityCLBCloudTrailLogsFER<br/>
 AwsObservabilityDynamoDBCloudTrailLogsFER<br/>
 AwsObservabilityEC2CloudTrailLogsFER<br/>
 AwsObservabilityECSCloudTrailLogsFER<br/>
+AwsObservabilityECSWithContainerInsightsCloudWatchLogsFER<br/>
 AwsObservabilityElastiCacheCloudTrailLogsFER<br/>
-AwsObservabilityElbAccessLogsFER<br/>
-AwsObservabilityFieldExtractionRule<br/>
-AwsObservabilityGenericCloudWatchLogsFER<br/>
+AwsObservabilityLambdaCloudTrailLogsFER<br/>
 AwsObservabilityLambdaCloudWatchLogsFER<br/>
-AwsObservabilityRdsCloudTrailLogsFER<br/>
+AwsObservabilityNLBCloudTrailLogsFER<br/>
+AwsObservabilityRDSCloudTrailLogsFER<br/>
+AwsObservabilityRDSCloudWatchLogsFER<br/>
 AwsObservabilitySNSCloudTrailLogsFER<br/>
 AwsObservabilitySQSCloudTrailLogsFER </td>
   </tr>
@@ -225,14 +235,14 @@ AwsObservabilitySQSCloudTrailLogsFER </td>
   </tr>
   <tr>
    <td>Metric Rules </td>
-   <td>AwsObservabilityApiGatewayApiNameMetricsEntityRule<br/>
-AwsObservabilityRDSClusterMetricsEntityRule<br/>
-AwsObservabilityRDSInstanceMetricsEntityRule<br/>
-AwsObservabilityNLBMetricsEntityRule   </td>
-   <td>AwsObservabilityApiGatewayApiNameMetricsEntityRule<br/>
-AwsObservabilityRDSClusterMetricsEntityRule<br/>
-AwsObservabilityRDSInstanceMetricsEntityRule<br/>
-AwsObservabilityNLBMetricsEntityRule   </td>
+   <td>AwsObservabilityAPIGatewayMetricsRule<br/>
+AwsObservabilityNLBMetricsRule<br/>
+AwsObservabilityRDSClusterMetricsRule<br/>
+AwsObservabilityRDSInstanceMetricsRule   </td>
+   <td>AwsObservabilityAPIGatewayMetricsRule<br/>
+AwsObservabilityNLBMetricsRule<br/>
+AwsObservabilityRDSClusterMetricsRule<br/>
+AwsObservabilityRDSInstanceMetricsRule   </td>
   </tr>
   <tr>
    <td>CloudTrail source </td>
@@ -293,38 +303,42 @@ apiid<br/>
 apiname<br/>
 cacheclusterid<br/>
 clustername<br/>
-dbclusteridentifier<br/>
+dBClusterIdentifier<br/>
 dbidentifier<br/>
-dbinstanceidentifier<br/>
+dBInstanceIdentifier<br/>
 functionname<br/>
 instanceid<br/>
 loadbalancer<br/>
 loadbalancername<br/>
 namespace<br/>
 networkloadbalancer<br/>
+proxyname<br/>
+queuename<br/>
 region<br/>
+servicename<br/>
 tablename<br/>
-topicname<br/>
-queuename</td>
+topicname</td>
    <td>account<br/>
 accountid<br/>
 apiid<br/>
 apiname<br/>
 cacheclusterid<br/>
 clustername<br/>
-dbclusteridentifier<br/>
+dBClusterIdentifier<br/>
 dbidentifier<br/>
-dbinstanceidentifier<br/>
+dBInstanceIdentifier<br/>
 functionname<br/>
 instanceid<br/>
 loadbalancer<br/>
 loadbalancername<br/>
 namespace<br/>
 networkloadbalancer<br/>
+proxyname<br/>
+queuename<br/>
 region<br/>
+servicename<br/>
 tablename<br/>
-topicname<br/>
-queuename</td>
+topicname</td>
   </tr>
 </table>
 

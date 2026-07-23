@@ -61,6 +61,8 @@ You have two options for deploying:
 
 The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Asia Pacific (Hong Kong)
+* Asia Pacific (Melbourne)
+* Asia Pacific (New Zealand)
 * Asia Pacific (Tokyo)
 * Asia Pacific (Seoul)
 * Asia Pacific (Singapore)
@@ -71,6 +73,7 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Europe (Ireland)
 * Europe (London)
 * Europe (Paris)
+* Europe (Zurich)
 * Middle East (Bahrain)
 * South America (São Paulo)
 * US East (N. Virginia)
@@ -117,31 +120,33 @@ This integration is supported only via AWS CloudFormation.
 
 If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/scripts/DeployTemplate), as an example. 
 
-### Configure Host Metrics sources 
+### Configure Host Metrics sources  
 
-Follow the instructions in this section to configure an Sumo Logic Installed Collector and a Host Metrics Source on each of your AWS EC2 hosts. You will assign `account` and `Namespace` metadata fields to the sources so that incoming logs and metrics will be appropriately tagged.
+Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your **AWS EC2** hosts. You will assign **account** and **namespace** metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
 
 :::note
 This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
 :::
 
-Perform these steps for each EC2 host.
+Perform these steps for each EC2 host:
 
-1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors/).
-1. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/#manuallyconfigure-a-host-metrics-source). 
-1. In the **Fields** portion of the configuration:
-   1. Add a field named `account`, and set it to your AWS account alias.
-   1. Add a field `Namespace` named and set it to `AWS/EC2`. 
-   1. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute. 
-    :::note
-     A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
-     :::
+1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors).
+2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source). In the **Fields** portion of the configuration:
+   * Add a field named **account**, and set it to your AWS account alias.
+   * Add a field named **namespace** and set it to **aws/ec2**.
 
-To automate the above, see [Add Fields to Existing Host Metrics Sources](../../other-configurations-tools/add-fields-to-existing-host-metrics-sources.md). 
+<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="Configure metadata" style={{border: '1px solid gray'}} width="500" />
 
-Going forward, you can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic).
+3. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
 
-Here’s a sample `sources.json` file that you can include in your AMI.
+:::note
+A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
+:::
+
+You can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic). Here's a sample sources.json file that you can include in your AMI.
+
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -185,6 +190,12 @@ Here’s a sample `sources.json` file that you can include in your AMI.
   }
 }
 ```
+</details>
+
+#### AWS metadata
+
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
+
 
 ## Verify AWS and Sumo Logic Permissions
 
