@@ -175,7 +175,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Palo Alto Firewall 10 alerts
+### PAN Firewall 10 alerts
 
 | Name | Description | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
