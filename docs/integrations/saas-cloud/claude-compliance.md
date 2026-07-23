@@ -169,7 +169,7 @@ If you do not see the Compliance access keys section, either you are not a Prima
 
 ### Collection methods
 
-1. **[Cloud-to-Cloud (C2C) source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) (recommended)**. Collects both activity logs and chat message logs. Handles Anthropic's Compliance API ingestion delay automatically, ensuring no data is missed at polling boundaries.
+1. **[Cloud-to-Cloud (C2C) source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) (recommended)**. Supports collection of both activity logs and chat message logs. Handles Anthropic's Compliance API ingestion delay automatically, ensuring no data is missed at polling boundaries.
 
 2. **Universal Connector**. Collects activity logs only — chat message logs are not supported. Because the Universal Connector does not account for Anthropic's ~1-minute API propagation delay, events that arrive at the API boundary may be missed. For this reason, the dedicated C2C source is preferred.
 

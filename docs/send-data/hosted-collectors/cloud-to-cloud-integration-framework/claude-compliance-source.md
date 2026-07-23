@@ -53,7 +53,7 @@ If you do not see the Compliance access keys section, it means that either you a
 ### Source configuration
 
 :::note
-This source collects both chat messages and activity logs. You can enable or disable each data type independently using the **Data Collection** settings described in the configuration steps below.
+This source can collect both chat messages and activity logs. You can enable or disable each data type independently using the **Data Collection** settings described in the configuration steps below.
 :::
 
 When you create a Claude Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
@@ -102,7 +102,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | apiKey | String | Yes | `null` | API Key of the account. | sk-ant-XXXXXXXXXXXXXXX |
 | pollingIntervalMinutes | String | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. | 5m |
 | collectChatMessages | Boolean | No | `true` | Enable collection of chat conversation messages. At least one of `collectChatMessages` or `collectActivities` must be `true`. | `false` |
-| collectActivities | Boolean | No | `true` | Enable collection of compliance activity events. At least one of `collectChatMessages` or `collectActivities` must be `true`. | `true` |
+| collectActivities | Boolean | No | `false` | Enable collection of compliance activity events. At least one of `collectChatMessages` or `collectActivities` must be `true`. | `true` |
 
 ### JSON example
 
