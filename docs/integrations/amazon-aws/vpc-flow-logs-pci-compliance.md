@@ -40,20 +40,6 @@ You can use either of the following methods to collect Amazon VPC Flow Logs:
 * [Collect Amazon VPC Flow Logs using an Amazon S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)
 * [Collect Amazon VPC Flow Logs using a CloudFormation template](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 
-## Field Extraction Rule(s) for VPC Flow logs  
-Create Field Extraction Rule for VPC Flow Logs.
-
-```sql
-Rule Name: VPCFlowLogFER
-Applied at: Ingest Time
-Scope (Specific Data):
-_sourceCategory=<Source category for respective VPC flow log source>
-Parse Expression:
-json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg, direction nodrop
-| if (_raw matches "{*", msg, _raw) as msg
-| parse field=msg "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status nodrop
-```
-
 ## Installing the PCI Compliance for Amazon VPC Flow Logs app
 
 Now that you have set up collection, install the Sumo Logic app for PCI Compliance For Amazon VPC Flow to use the preconfigured searches and dashboards that provide insight into your data.
@@ -61,6 +47,37 @@ Now that you have set up collection, install the Sumo Logic app for PCI Complian
 import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstallV2/>
+
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
+
+- `logStream` CloudWatch log stream name (present when ingesting via CloudWatch).
+- `logGroup` CloudWatch log group name (present when ingesting via CloudWatch).
+- `msg` Normalized raw VPC flow log message used for field parsing.
+- `direction` Traffic direction (inbound, outbound, or internal).
+- `version` VPC Flow Logs version number.
+- `accountID` AWS account ID associated with the flow log.
+- `interfaceID` ID of the network interface for which traffic is recorded.
+- `src_ip` Source IP address of the traffic.
+- `dest_ip` Destination IP address of the traffic.
+- `src_port` Source port of the traffic.
+- `dest_port` Destination port of the traffic.
+- `Protocol` IANA protocol number of the traffic.
+- `Packets` Number of packets transferred during the flow.
+- `bytes` Number of bytes transferred during the flow.
+- `StartSample` Start time of the flow (Unix timestamp).
+- `EndSample` End time of the flow (Unix timestamp).
+- `Action` Whether traffic was ACCEPT or REJECT.
+- `status` Logging status (OK, NODATA, or SKIPDATA).
+
+#### Field Extraction Rule(s)
+
+The FER **PciComplianceForAmazonVpcFlowFER** to extract fields `logStream`, `logGroup`, `msg`, `direction`, `version`, `accountID`, `interfaceID`, `src_ip`, `dest_ip`, `src_port`, `dest_port`, `Protocol`, `Packets`, `bytes`, `StartSample`, `EndSample`, `Action`, and `status` will be created as a part of app installation.
+
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
 
 ## Viewing the PCI VPC dashboards
 
