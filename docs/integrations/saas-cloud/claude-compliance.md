@@ -89,7 +89,7 @@ This app uses Claude Compliance's activity logs and chat message logs.
 ### Sample queries
 
 ```sumo title="Compliance Activities"
-_sourceCategory="{{Logsdatasource}}" type actor
+_sourceCategory="claude_compliance" type actor
 
 | json "type","organization_uuid","id","actor.type" as event_type,org_uuid,id,actor_type nodrop
 
@@ -104,7 +104,7 @@ _sourceCategory="{{Logsdatasource}}" type actor
 ```
 
 ```sumo title="Activity Types"
-_sourceCategory="{{Logsdatasource}}" type actor
+_sourceCategory="claude_compliance" type actor
 
 | json "type","organization_uuid","id","actor.type" as event_type,org_uuid,id,actor_type nodrop
 
@@ -120,7 +120,7 @@ _sourceCategory="{{Logsdatasource}}" type actor
 ```
 
 ```sumo title="Messages by Role"
-_sourceCategory="{{Logsdatasource}}" "claude_chat_msg"
+_sourceCategory="claude_compliance" "claude_chat_msg"
 | json "id", "updated_at", "user.id", "user.email_address", "name", "organization_id", "message.role", "message.content[0].type", "message.content[0].text", "message.model", "message.id" as id, updated_at, user_id, user_email, name, organization_id, role, message_type, message_value, model, message_id nodrop
 | where user_email matches "{{user}}" or isBlank(user_email)
 | where role matches "{{role}}" or isBlank(role)
@@ -133,15 +133,120 @@ _sourceCategory="{{Logsdatasource}}" "claude_chat_msg"
 | sort by _count, role
 ```
 
-## Collection configuration and app installation
+## Collection configuration
+
+This app requires two types of logs: **activity logs** (compliance events across your Claude environment) and **chat message logs** (conversation-level data from the Claude Messages API). We recommend using the dedicated Cloud-to-Cloud (C2C) source, which supports collecting both log types and handles API-specific behaviors automatically.
+
+
+### Vendor configuration
+
+To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
+
+:::note
+Admin keys created through Console are limited to the Activity Feed and cannot access chat messages via C2C source.
+:::
+
+#### Console / API
+
+Keys are created in the **Admin keys** section of Console Settings.
+1. Click **Create key** to name your key.
+2. Receive a secret access key and store it securely.
+
+:::note
+If the Compliance API is enabled for your organization, Admin keys created here are automatically granted the `read:compliance_activities` scope. If the Compliance API is not yet enabled, contact your Anthropic representative to request access.
+:::
+
+#### Claude.ai
+
+Keys are created in the **Compliance access keys** section of Data Management Settings.
+1. Click **Create key** to name your key.
+2. Name the key and select its scopes. For activities select `read:compliance_activities` and for chat messages select `read:compliance_user_data`.
+3. Receive a secret access key and store it securely.
+
+:::note
+If you do not see the Compliance access keys section, either you are not a Primary Owner of the organization, or the Compliance API is not enabled for your organization. The Primary Owner needs to enable it in the Data and Privacy section of your organization's settings.
+:::
+
+### Collection methods
+
+1. **[Cloud-to-Cloud (C2C) source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) (recommended)**. Collects both activity logs and chat message logs. Handles Anthropic's Compliance API ingestion delay automatically, ensuring no data is missed at polling boundaries.
+
+2. **Universal Connector**. Collects activity logs only — chat message logs are not supported. Because the Universal Connector does not account for Anthropic's ~1-minute API propagation delay, events that arrive at the API boundary may be missed. For this reason, the dedicated C2C source is preferred.
+
+### Details for C2C source (recommended)
+
+Use the [Cloud-to-Cloud Integration for Claude Compliance](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to create the source. Ensure the `_sourceCategory` configured on your source matches the source category used when installing the app.
+
+
+### Details for Universal Connector
+
+:::warning
+The Universal Connector collects activity logs only. It does not support chat message logs and does not account for Anthropic's ~1-minute Compliance API propagation delay, which may cause data to be missed at polling window boundaries. Use the [C2C source](#details-for-c2c-source-recommended) instead.
+:::
+
+1. On the Data Collection page, click **Add Source** next to a Hosted Collector.
+1. Search for and select **Universal Connector**.
+1. Configure the **General** settings:
+   - **Name**. Enter a name for the source.
+   - **Description**. (Optional) Enter a description.
+   - **Source Category**. Enter a value such as `claude_compliance`. This value is stored in the `_sourceCategory` metadata field and must match the source category used when installing the app.
+   - **Fields**. (Optional) Click **+Add** to define any additional fields to associate with the source.
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-source-configuration.png')} alt="Universal Connector - General settings" width="400" style={{border: '1px solid gray'}} />
+1. Configure the **Authentication Configuration**:
+   - **Authentication Type**. Select **API Key**.
+   - **How should we use your API key?** Select **In HTTP Request Header**.
+   - **Location Key**. Enter `x-api-key`.
+   - **API Key**. Enter the Claude API key you copied above.
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-authentication-configuration.png')} alt="Universal Connector - Authentication Configuration" width="400" style={{border: '1px solid gray'}} />
+1. Configure the **Request Configuration**:
+   - **HTTP Method**. Select `GET`.
+   - **Endpoint URL**. Enter `https://api.anthropic.com/v1/compliance/activities`.
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-request-configuration.png')} alt="Universal Connector - Request Configuration" width="400" style={{border: '1px solid gray'}} />
+1. Configure the **Tracking Progression**:
+   - **Type**. Select **Time Window**.
+   - **Window Size**. Enter `5m` (default recommended).
+   - **Initial Lookback**. Enter `24h`.
+   - **Progress Window Parameters**. Add the following parameters:
+     | Parameter Name | Parameter Value |
+     |:--|:--|
+     | `created_at.gte` | `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
+     | `created_at.lt` | `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}` |
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-tracking-configuration.png')} alt="Universal Connector - Tracking Progression" width="400" style={{border: '1px solid gray'}} />
+1. Configure the **HTTP Response Log Ingest Configuration**:
+   - **Format**. Select **JSON with JPath**.
+   - Configure the following log path settings:
+     | Field | Value |
+     |:--|:--|
+     | **Logs JPath** | `$.data[*]` |
+     | **Timestamp JPath** | `$.created_at` |
+     | **Timestamp Format** | `2006-01-02T15:04:05.000000Z` |
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-response-configuration.png')} alt="Universal Connector - HTTP Response Log Ingest Configuration" width="400" style={{border: '1px solid gray'}} />
+1. Configure the **Pagination Configuration**:
+   - **Type**. Select **Continuation Token**.
+   - **Token Location**. Select **Body**.
+   - **Next Page Continuation Token JPath**. Enter `$.last_id`.
+   - **Send Token In**. Select **Parameters**.
+   - **Parameter Key**. Enter `after_id`.<br/>
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-pagination-configuration.png')} alt="Universal Connector - Pagination Configuration" width="400" style={{border: '1px solid gray'}} />
+1. (Optional) Configure the **HTTP Client Configuration**:
+   - **HTTP Timeout**. `5m` (default).
+   - **HTTP Client Retries**. `5` (default).
+   - **Rate Limit Requests**. `1000` (default).
+   - **Rate Limit Duration**. `1m` (default).
+   - **Rate Limit Burst**. `1000` (default).
+   - **Polling Interval**. Set how frequently to poll for new data, between 5 minutes and 48 hours.
+        <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance-client-configuration.png')} alt="Universal Connector - HTTP Client Configuration" width="400" style={{border: '1px solid gray'}} />
+1. Click **Save**.
+
+:::note
+Once the source is configured, you can verify successful log collection by running searches on the Search page in Sumo Logic using the source category. For example, `_sourceCategory=claude_compliance`.
+:::
+
+## App installation
 
 import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
 <CollectionConfiguration/>
-
-:::important
-Use the [Cloud-to-Cloud Integration for Claude Compliance](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Claude Compliance app is properly integrated and configured to collect and analyze your Claude Compliance data.
-:::
 
 ### Create a new collector and install the app
 
