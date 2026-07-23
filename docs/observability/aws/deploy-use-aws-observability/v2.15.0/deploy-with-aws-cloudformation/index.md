@@ -1,5 +1,5 @@
 ---
-slug: /observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation
+slug: /observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation
 title: Deploy with AWS CloudFormation
 description: Learn about the process of executing the AWS CloudFormation template to set up the AWS Observability Solution for a single AWS region and account combination.
 ---
@@ -116,7 +116,7 @@ The table below displays the response for each text box in this section.
 
 The table below displays the response for each text box in this section.
 
-If you are collecting AWS CloudTrail logs from multiple AWS accounts into a common S3 bucket, run the CloudFormation template in the account that has the S3 bucket and see [Centralized AWS CloudTrail Log Collection](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection/).
+If you are collecting AWS CloudTrail logs from multiple AWS accounts into a common S3 bucket, run the CloudFormation template in the account that has the S3 bucket and see [Centralized AWS CloudTrail Log Collection](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection/).
 
 | Prompt | Guideline |
 |:--|:--|
@@ -235,7 +235,7 @@ Below are some common errors that can occur while using the CloudFormation templ
 | The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | - Re-deploy the deployment stack without updating the stack in the template. Re-running will detect the drift and create remaining resources. <br/> - If the throttling problem persists, try to break down the multi-region deployment into parts and use distinct access IDs and access keys for each part. |
 | S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack that created it. | - Remove the S3 bucket from S3 or select “No” in the AWS CloudFormation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
 | The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
-| Invalid IAM role OR AccessDenied. | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions. | - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
+| Invalid IAM role OR AccessDenied. | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions. | - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/before-you-deploy/#prerequisites) for permissions related issues. |
 | Subscription filters are not applied to newly created log groups. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLogGroup` events. | CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail. |
 | Access logs are not enabled for the Load Balancer. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLoadBalancer` events. | CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail. |
 
