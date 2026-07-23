@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-ngfw.png')} alt="Palo Alto Networks NGFW icon" width="100"/>
 
-***Version: 1.4
-Updated: May 29, 2024***
+***Version: 1.5  
+Updated: Jul 23, 2026***
 
 Issue containment actions during incident investigation through Palo Alto NGFW.
 
@@ -56,3 +56,4 @@ For information about Palo Alto Networks NGFW, see [Palo Alto Networks Next-Gene
 	+ Updated the integration with Environmental Variables
 	+ Integration renamed from Palo Alto Networks NGFW OIF to Palo Alto Networks NGFW
 * May 29, 2024 (v1.4) - Docker updated
+* July 23, 2026 (v1.5) - Resolved an issue where the integration fails due to deprecated dependency warnings.
