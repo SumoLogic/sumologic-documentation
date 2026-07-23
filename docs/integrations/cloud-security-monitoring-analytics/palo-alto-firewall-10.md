@@ -169,6 +169,26 @@ The **Security Monitoring - TRAFFIC Log Overview** dashboard helps you to monito
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
+## Create monitors for Palo Alto Firewall 10 app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Palo Alto Firewall 10 alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Palo Alto Firewall 10 - Critical Severity Threat Detected` | This alert is triggered when a critical severity threat event is detected in Palo Alto Firewall logs. | Count > 0 | Count < = 0 |
+| `Palo Alto Firewall 10 - High Severity Threat Detected` | This alert is triggered when a high severity threat event is detected in Palo Alto Firewall logs. | Count > 0 | Count < = 0 |
+| `Palo Alto Firewall 10 - High-Risk URL Category Access Detected` | This alert is triggered when traffic to a high-risk URL category is detected in Palo Alto Firewall threat logs. | Count > 0 | Count < = 0 |
+| `Palo Alto Firewall 10 - Newly Registered Domain Access Detected` | This alert is triggered when traffic to a newly registered domain is detected in Palo Alto Firewall threat logs, indicating potential phishing or C2 activity. | Count > 0 | Count < = 0 |
+| `Palo Alto Firewall 10 - Traffic from Known Malicious Source IP` | This alert is triggered when inbound traffic is detected from a source IP matching threat intelligence feeds. | Count > 0 | Count < = 0 |
+| `Palo Alto Firewall 10 - Traffic to Known Malicious Destination IP` | This alert is triggered when outbound traffic is detected to a destination IP matching threat intelligence feeds, indicating potential C2 communication or data exfiltration. | Count > 0 | Count < = 0 |
+| `Palo Alto Firewall 10 - Outbound Traffic to OFAC Embargoed Countries` | This alert is triggered when outbound traffic to US OFAC embargoed countries is detected in Palo Alto Firewall logs. | Count > 0 | Count < = 0 |
+| `Palo Alto Firewall 10 - Vertical Port Scan Detected` | This alert is triggered when a single source IP scans multiple destination ports on one host, indicating vertical port scanning activity. | Count > 5 | Count < = 5 |
+| `Palo Alto Firewall 10 - Horizontal Port Scan Detected` | This alert is triggered when a single source IP contacts many destination hosts on the same port, indicating horizontal port scanning or worm-like lateral spread. | Count > 5 | Count < = 5 |
+
 ## Upgrade/Downgrade the PAN Firewall 10 Security app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
