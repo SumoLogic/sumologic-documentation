@@ -7,16 +7,6 @@ description: The Sumo Logic app for Netskope WebTx Streaming collects transactio
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope WebTx icon" width="50" />
 
 The Sumo Logic app for Netskope WebTx Streaming provides real-time visibility into web transaction data streamed from the Netskope platform, helping organizations monitor and secure their cloud and web traffic. The app includes five purpose-built dashboards covering transaction health, security posture, file activity, network insights, and user and application behavior. Security and IT teams can detect policy violations, track data movement, identify risky activity, and manage application governance from a single unified view.
