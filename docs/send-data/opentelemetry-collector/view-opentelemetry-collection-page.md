@@ -18,7 +18,6 @@ To view details about an OpenTelemetry Collector:
     - **Source Templates**. Shows the number of source templates linked with the selected collector.
     - **IP Address**. Displays the IP address where the collector is running.
     - **Log Messages (-1h)**. Displays the histogram of log messages ingested in the last hour.
-    - **Metrics (-1h)**. Displays the histogram of metrics ingested in the last hour.
     - **Traces (-1h)**. Displays the histogram of traces ingested in the last hour.
         :::info
         The dashed line indicates there was no data ingestion in the last hour.
@@ -32,7 +31,7 @@ To view details about an OpenTelemetry Collector:
         - **Health**. Displays the collector's health status.
         - **Time Zone**. Displays the selected time zone or the default timezone (`(UTC) Etc/UTC`).
         - **Collector Tags**. Displays the tags linked to the selected collector, which helps with searching for and managing the collector. To add or edit the tags, refer to the [Collector Tags](/docs/send-data/opentelemetry-collector/remote-management/source-templates/manage-source-templates/#collector-tags).
-        - **Data Ingested**. Displays the histogram showing data ingested (logs, metrics, and traces) in the last hour. This histogram timeline reflects the data ingestion timestamp as closely as possible, but minor variations may occur.
+        - **Data Ingested**. Displays the histogram showing data ingested (logs and traces) in the last hour. This histogram timeline reflects the data ingestion timestamp as closely as possible, but minor variations may occur.
             :::note
             If there is a mismatch between the log count in the histogram and the log search, switch the log search timestamp to *receiptTime* for accurate results. 
             :::
