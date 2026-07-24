@@ -13,6 +13,7 @@ keywords:
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 Mobot is Sumo Logic's AI assistant that turns plain-language questions into log queries. Ask what you want to investigate and get query results, visualizations, and guided refinements in one conversational experience—without writing queries from scratch. Mobot tracks your intent, maintains conversation context, and surfaces step-by-step suggestions to move you from question to insight faster.
 
@@ -25,21 +26,19 @@ Together, these agents help you troubleshoot faster, explore your data more intu
 
 ## At a glance
 
-- **What it is**: Sumo Logic's AI-powered assistant for log investigation and platform guidance.
-- **Two agents**: Query Agent (log search queries) and Knowledge Agent (how-to answers from official docs).
-- **How it works**: Ask questions in plain English; Mobot translates them into Sumo Logic queries or returns documentation-sourced answers.
-- **Response time**: Typically under 2 seconds for most queries.
-- **Compatible log types**: JSON, partial JSON, and unstructured logs with Field Extraction Rules.
-- **AI provider**: Amazon Bedrock (no customer data used for training).
+- **What it is**. Sumo Logic's AI-powered assistant for log investigation and platform guidance.
+- **Two agents**. Query Agent (log search queries) and Knowledge Agent (how-to answers from official docs).
+- **How it works**. Ask questions in plain English; Mobot translates them into Sumo Logic queries or returns documentation-sourced answers.
+- **Response time**. Typically under 2 seconds for most queries.
+- **Compatible log types**. Structured, semi-structured, and unstructured logs. Unstructured logs already used in dashboards do not require Field Extraction Rules. See [Compatible log formats](#compatible-log-formats) for details.
+- **AI provider**. Amazon Bedrock (no customer data used for training). See [Security and compliance](#security-and-compliance) for details.
 
 :::training Sumo Logic Academy
 
-import SumoAcademy from '../reuse/sumo-logic-academy.md';
-
 <SumoAcademy/>
 
-* **Self-paced**: [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
-* **Instructor-led virtual classes**: [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
+* **Self-paced**. [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
+* **Instructor-led virtual classes**. [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
 :::
 
 Mobot is ideal for all users across your organization:
@@ -62,9 +61,9 @@ Mobot is ideal for all users across your organization:
 
 ## Getting started
 
-There are two ways to open Mobot:
-- **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="650" />
-- **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="650" />
+1. **Open Mobot**. Open Mobot from one of the following places:
+   - **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="650" />
+   - **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="650" />
 
 Not sure where to start? Choose an agent based on what you need:
 
@@ -119,7 +118,6 @@ In this video, you'll learn how to turn natural language requests into queries, 
 />
 
 :::
-
 
 ### Example workflow: Observability investigation
 
@@ -223,39 +221,18 @@ The following rules are used to deduce chart type:
 
 #### Edit query code
 
-Optionally, you can manually edit your log search query code.
-
-:::tip
-New to Sumo Logic query language? [Learn more](/docs/search/search-query-language).
-:::
+Optionally, you can manually edit your log search query code. For more information on syntax, see [Sumo Logic search query language](/docs/search/search-query-language).
 
 1. Click in the code editor field and edit your query.<br/><img src={useBaseUrl('img/search/mobot/code-editor.png')} alt="Mobot time period" style={{border: '1px solid gray'}} width="500" />
 1. Click the search button.
 
 #### Open in Log Search
 
-Open your query in [Log Search](/docs/search) to access Sumo Logic's full search functionality. This allows you to continue investigating, refining your query, take action, or save the search for later.
+Open your query in [Log Search](/docs/search) to access full search functionality, take action, or save the search for later. There are two ways to do this:
 
-There are two ways to do this:
+* From your conversation, click on a results bubble.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search-view-results.png')} alt="Mobot conversation bubble showing clickable results to open in Log Search" style={{border: '1px solid gray'}} width="500" />
+* Or, from the query section, click **Open in Log Search**.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search.png')} alt="Open in Log Search icon button in Mobot query section" style={{border: '1px solid gray'}} width="500" />
 
-* From your conversation, click **View results**.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search-view-results.png')} alt="Mobot option to open your query in Log Search" style={{border: '1px solid gray'}} width="700" />
-* From the query section, click the **Open in Log Search** icon.<br/><img src={useBaseUrl('img/search/mobot/open-in-log-search.png')} alt="Open in Log Search button in Mobot" style={{border: '1px solid gray'}} width="500" />
-
-#### My Conversations
-
-To resume a conversation, go to the **My Conversations** list and click on the one you're looking for.
-
-This conversation history feature saves all previous queries and suggestions, allowing you to backtrack and refine your investigation. For example, if a status code analysis yields inconclusive results, you can revisit earlier queries to explore other possibilities. This functionality can also be useful when you're working on multiple incidents at the same time.
-
-#### Edit conversation title
-
-Query Agent automatically updates conversation titles based on your query. You can also set a custom title by hovering over your conversation in the **My Conversations** pane, then clicking the "Rename" pencil icon. This helps keep investigations organized and easier to revisit.
-
-#### New Conversation
-
-To start a fresh exploration, click **New Conversation**. This clears your current session and allows you to begin with a clean slate.
-
-<img src={useBaseUrl('img/search/mobot/new-conversation.png')} alt="Mobot new conversation" style={{border: '1px solid gray'}} width="600" />
 
 #### View Query Agent queries
 
@@ -304,7 +281,6 @@ Query Agent understands relative rolling window time expressions. Use "last X" o
 * "in the last 24 hours"
 * "last 48 hours", "last 90 days", "last 12 months"
 * "last week", "last month", "last night" (as rolling ranges)
-
 
 ### Sample queries
 
@@ -451,7 +427,51 @@ To get the most accurate answers, try the following when asking questions:
 * **Follow up naturally**. If the initial answer is close but not quite right, ask follow-up questions like "What about for Azure instead of AWS?"
 * **Reference specific features**. Use proper names when you know them: "How do I use Field Extraction Rules?" works better than "How do I extract fields?"
 
-## How does Mobot handle security and compliance?
+
+## Managing conversations
+
+### My conversations
+
+Your past conversations live in the **My Conversations** panel. There is no button labeled **My Conversations**. To open (or hide) the panel, click the panel icon to the left of the conversation title at the top of Mobot.
+
+To resume a conversation, open the **My Conversations** panel and click the one you want.
+
+Conversation history can be useful when working on multiple incidents at the same time. Revisit earlier turns to compare or branch analyses without repeating prior steps.
+
+#### Edit conversation title
+
+Query Agent automatically updates conversation titles based on your query. You can also set a custom title by hovering over your conversation in the **My Conversations** pane, then clicking the "Rename" pencil icon. This helps keep investigations organized and easier to revisit.
+
+### New conversation
+
+To start a fresh session, click **New Conversation** in the top right. This clears the current session and starts with a clean slate.
+
+<img src={useBaseUrl('img/search/mobot/new-conversation.png')} alt="New Conversation button in top right of Mobot interface" style={{border: '1px solid gray'}} width="300" />
+
+Start a new conversation when you:
+- Switch to a completely different topic or use case.
+- Find the current thread has gone in the wrong direction or is based on incorrect assumptions.
+- Want to reset context so prior constraints do not influence new results.
+
+Continue the same conversation when you:
+- Refine or dig deeper into the same question.
+- Want Mobot to build on prior results or context.
+- Explore a problem through multiple follow-up questions.
+
+If you find yourself re-explaining the problem or correcting earlier assumptions, it's usually better to start fresh.
+
+### Share conversation
+
+You can share a specific conversation with other users, which can be useful for reporting issues or sharing examples with your team.
+
+1. Click the **Share** icon.<br/><img src={useBaseUrl('img/search/mobot/share-conversation.png')} alt="Share Conversation button in top right of Mobot interface" style={{border: '1px solid gray'}} width="300" />
+1. In the **Share Conversation** dialog:<br/><img src={useBaseUrl('img/search/mobot/share-conversation-dialog.png')} alt="Share Conversation dialog" style={{border: '1px solid gray'}} width="800" />
+   * **Share with specific users and roles**. Enter names, roles, or your entire organization in **Add people or roles...** to grant them access to the conversation.
+   * **See who has access**. Expand to view a list of everyone who currently has access to the conversation.
+   * **Get sharable URL**. Copy a URL that opens the conversation for anyone with access.
+1. Click **Done**.
+
+## Security and compliance
 
 Sumo Logic Mobot leverages foundational models provided by Amazon Bedrock, inheriting their robust compliance and security posture. For detailed information, refer to the following Amazon Bedrock security and compliance resources:
 
@@ -600,13 +620,11 @@ No. Knowledge Agent is intentionally scoped to use Sumo Logic's internal documen
 
 ## Feedback
 
-Your feedback directly shapes Mobot. You can share feedback by:
+Your feedback directly shapes Mobot. Let us know what you think by clicking the thumbs up icon to confirm a useful result, or the thumbs down icon to tell us how to improve.
 
-- Giving Mobot's responses a thumbs up or thumbs down in the conversation.<br/><img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Mobot feedback icons in Query Agent conversation" style={{border: '1px solid gray'}} width="400" />
-- Filling out the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLScaHwF9q8o3oSUsnAmpp9wssw-iWDnmbBiGY0WNZjIRS6tQlw/viewform).
-- Sharing directly with your account team.
+<img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Thumbs up and thumbs down feedback buttons in Mobot interface" style={{border: '1px solid gray'}} width="400" />
 
-To report an issue, copy the conversation URL and share it with your Sumo Logic contact. When sharing feedback, it helps to note:
+When sharing constructive feedback, it helps to note:
 
 - What you asked.
 - What you expected.
@@ -620,6 +638,6 @@ To opt out of Mobot, contact our [Support team](https://support.sumologic.com/su
 ## Additional resources
 
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
-* [Search Query Language](/docs/search/search-query-language)
-* [Dashboards](/docs/dashboards)
-* [Dojo AI overview](https://www.sumologic.com/solutions/dojo-ai)
+* [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).
+* [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2).
+* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the collective system of Sumo Logic agents and assistants, including Mobot, SOC Analyst Agent, MCP Server, and more.

@@ -101,3 +101,12 @@ Follow the steps below to filter OpenTelemetry collectors that have a newer vers
 
 1. On the **OpenTelemetry Collection** page, click the **Click to add a filter** bar and then select **Upgrade Available**.<br/><img src={useBaseUrl('img/send-data/otel-upgrade-available-filter.png')} alt="otel-upgrade-available-filter" style={{border:'1px solid gray'}} width="400" />
 1. You can view a list of OpenTelemetry collectors that need or support an upgrade.
+
+## Enable data inactivity health events for OpenTelemetry Collectors
+
+Sumo Logic evaluates all alive OpenTelemetry Collectors and emits a dedicated health event whenever a collector has no data ingestion (logs, metrics, or traces) for a configured period.
+
+Follow the steps below to enable this feature:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration** > **Account Security Settings** > **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account Security Settings > Policies**. <br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/health-events-for-no-data.png')} alt="health-events-for-no-data" style={{border:'1px solid gray'}} />
+1. Check the **Enable OpenTelemetry Collector Health Events for No Data** box.
+1. Click the **Trigger health event in** dropdown to select an inactivity threshold. This detection is enabled by default with a 24-hour inactivity threshold. You can adjust the threshold from 1 to 24 hours.

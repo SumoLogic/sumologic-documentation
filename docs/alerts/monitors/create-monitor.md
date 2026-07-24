@@ -421,12 +421,12 @@ If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/s
 
 ### Timestamp
 
-You can switch the **Timestamp** mode to ** Message Time** or **Searchable Time** to view and evaluate logs based on different timestamp contexts. <img src={useBaseUrl('img/alerts/monitors/timestamp-dropdown.png')} alt="select timestamp" style={{border: '1px solid gray'}} width="500"/>
+You can switch the **Timestamp** mode to **Message Time** or **Searchable Time** to view and evaluate logs based on different timestamp contexts. <img src={useBaseUrl('img/alerts/monitors/timestamp-dropdown.png')} alt="select timestamp" style={{border: '1px solid gray'}} width="500"/>
 
 - **Message Time**. Returns messages based on the timestamp specified in each message.
 - **Searchable Time**. Returns messages based on the time they are indexed or become searchable in Sumo Logic.
 
-This allows you to troubleshoot ingestion delays, correlate events accurately, and monitor data using the most relevant time reference.
+This allows you to troubleshoot ingestion delays, correlate events accurately, and monitor data using the most relevant time reference. Learn more in [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/#create-a-monitor-using-searchable-time).
 
 ## Step 3. Notifications (optional)
 
