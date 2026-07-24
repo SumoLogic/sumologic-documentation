@@ -20,9 +20,9 @@ To view details about an OpenTelemetry Collector:
     - **Log Messages (-1h)**. Displays the histogram of log messages ingested in the last hour.
     - **Metrics (-1h)**. Displays the histogram of metrics ingested in the last hour.
     - **Traces (-1h)**. Displays the histogram of traces ingested in the last hour.
-    :::info
-    The dashed line indicates there was no data ingestion in the last hour.
-    :::
+        :::info
+        The dashed line indicates there was no data ingestion in the last hour.
+        :::
     - **Last Modified**. Timestamp when the collector was last modified.
 1. Click on the desired collector.<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-collector-details.png')} alt="OpenTelemetry collection details page" style={{border:'1px solid gray'}} width="400"/>
     - **Basic Info**
