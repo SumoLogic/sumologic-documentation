@@ -279,6 +279,10 @@ Known limitations:
 
 ### Conversational Playbooks
 
+:::note
+Conversational Playbooks is rolling out after Conversational Monitors and Conversational Dashboards. Contact your account team for availability.
+:::
+
 Create, edit, and summarize Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, without building node by node on the visual canvas:
 
 - **Create**. Describe a workflow in plain language, and Mobot drafts a playbook that reflects your organization's installed integrations and configured actions.
@@ -544,7 +548,7 @@ Mobot leverages foundational models provided by Amazon Bedrock, inheriting their
 All aspects of the Sumo Logic service, including Mobot, adhere to the security and compliance requirements outlined in our [service agreement](https://www.sumologic.com/service-agreement) or in individually negotiated contracts.
 
 * **Customer data privacy**. No customer data or PII is used to train the AI models. Context for AI processing is limited to schema and field samples, reviewed for legal and compliance purposes.
-* **Rolling data expiration**. Some features may store query history temporarily for performance, but data is expired on a rolling basis.
+* **Rolling data expiration**. Some features may store conversation history temporarily for performance, but data is expired on a rolling basis.
 * **AI provider**. Mobot uses a foundation model served by Amazon Bedrock. The provider has no access to your data.
 
 ## FAQ
@@ -625,7 +629,7 @@ No. Customer data and PII are not used to train AI models. Mobot operates using 
 
 ### How long does Mobot store customer data or PII?
 
-Certain features rely on query history stored on a rolling basis for performance optimization. Data is systematically expired to maintain privacy.
+Certain features rely on conversation history stored on a rolling basis for performance optimization. Data is systematically expired to maintain privacy.
 
 ### Is any user or org data sent outside our environment?
 

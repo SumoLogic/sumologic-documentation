@@ -144,7 +144,16 @@ Not at this time. Dojo AI is enabled at the platform level and cannot be toggled
 
 ### How can administrators audit or track Dojo AI usage?
 
-tk
+Administrators can review Dojo AI agent activity in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/):
+
+```sumo
+_index=sumologic_audit_events
+| where invocationdetails.agentname = "mobot"
+```
+
+Swap `"mobot"` for `"soc_analyst_agent"` to see system-driven (automatic) SOC Analyst Agent activity instead of user-initiated Mobot activity. Log searches Mobot runs on your behalf are also tracked in the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/); see [Audit Mobot queries](/docs/search/mobot/#audit-mobot-queries) in the Mobot doc.
+
+{/* TODO: This answer replaces a "tk" placeholder. The invocationdetails.agentname query comes from a Slack thread with the Mobot PM, not from docs/manage/security/audit-indexes/audit-event-index.md itself — that doc doesn't document this field or these agentname values yet. Confirm exact field name/syntax with eng, and confirm whether the audit-event-index doc needs a new row/section for Mobot and SOC Analyst Agent, before publish. */}
 
 ### Do Dojo AI agents access customer data?
 
@@ -215,7 +224,7 @@ Availability of specific AI capabilities may vary by deployment region (includin
 
 ### Which Dojo AI capabilities are available in FED?
 
-Most Dojo AI capabilities are not currently available in FED. These capabilities depend on underlying model configurations that do not yet meet the requirements of our FED compliance boundary.
+Current GA versions of Mobot are available in the FED deployment. The SOC Analyst Agent and certain newer Dojo AI capabilities are not currently available in FED, because they depend on underlying model configurations that do not yet meet the requirements of our FED compliance boundary.
 
 Sumo Logic is actively evaluating future availability of these capabilities in FED as underlying model support and compliance requirements evolve.
 
