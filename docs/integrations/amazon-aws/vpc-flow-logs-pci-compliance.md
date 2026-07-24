@@ -48,27 +48,6 @@ import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
 As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
 
-#### Fields
-
-- `logStream` CloudWatch log stream name (present when ingesting via CloudWatch).
-- `logGroup` CloudWatch log group name (present when ingesting via CloudWatch).
-- `msg` Normalized raw VPC flow log message used for field parsing.
-- `direction` Traffic direction (inbound, outbound, or internal).
-- `version` VPC Flow Logs version number.
-- `accountID` AWS account ID associated with the flow log.
-- `interfaceID` ID of the network interface for which traffic is recorded.
-- `src_ip` Source IP address of the traffic.
-- `dest_ip` Destination IP address of the traffic.
-- `src_port` Source port of the traffic.
-- `dest_port` Destination port of the traffic.
-- `Protocol` IANA protocol number of the traffic.
-- `Packets` Number of packets transferred during the flow.
-- `bytes` Number of bytes transferred during the flow.
-- `StartSample` Start time of the flow (Unix timestamp).
-- `EndSample` End time of the flow (Unix timestamp).
-- `Action` Whether traffic was ACCEPT or REJECT.
-- `status` Logging status (OK, NODATA, or SKIPDATA).
-
 #### Field Extraction Rule(s)
 
 The FER **PciComplianceForAmazonVpcFlowFER** to extract fields `logStream`, `logGroup`, `msg`, `direction`, `version`, `accountID`, `interfaceID`, `src_ip`, `dest_ip`, `src_port`, `dest_port`, `Protocol`, `Packets`, `bytes`, `StartSample`, `EndSample`, `Action`, and `status` will be created as a part of app installation.
