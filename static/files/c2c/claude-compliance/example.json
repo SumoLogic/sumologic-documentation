@@ -5,7 +5,9 @@
         "name": "Claude Compliance",
         "orgUUID": "ABCD-SAMPLE-ORG-UUID",
         "apiKey": "sk-ant-XXXXXXXXX",
-        "pollingIntervalMinutes": "60m"
+        "pollingIntervalMinutes": "60m",
+        "collectChatMessages": true,
+        "collectActivities": true
       },
       "schemaRef": {
         "type": "Claude Compliance"
