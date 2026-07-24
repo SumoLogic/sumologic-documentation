@@ -52,7 +52,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/search/mobot')}><img src={useBaseUrl('img/search/mobot/mobot-welcome.png')} alt="Mobot icon" width="40"/><h4>Mobot</h4></a>
-  <p>Accelerate log investigations and troubleshooting with Sumo Logic Mobot, our AI-powered assistant that enables you to ask natural language questions and get contextual suggestions, helping first responders get to answers faster.</p>
+  <p>Ask Mobot a question in plain language and get a guided, multi-step investigation across your logs, no query writing required.</p>
   </div>
 </div>
 <div className="box smallbox card">

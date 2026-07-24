@@ -4,6 +4,8 @@ title: Insight Summary
 description: The insight Summary pane uses AI to provide summaries of threat incidents.
 ---
 
+<!-- TODO Delete this file and fold content into soc-analyst-agent.md? Need Oren's guidance. -->
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe'; 
 
@@ -16,6 +18,8 @@ The summary is generated when an insight is created, and is regenerated whenever
 :::note
 Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
 :::
+
+<!-- replace with SOC Analyst agent microlesson
 
 :::training Micro Lesson
 
@@ -33,13 +37,21 @@ Watch this micro lesson to learn more about Sumo Logic's Dojo AI Summary Agent.
 />
 
 :::
+-->
 
-#### FAQs about the insight summary
+## FAQ about the insight summary
 
-* **How does the AI handle data privacy?**
-    * There is no data sharing across tenants.
-    * No customer data or personally identifiable information (PII) is used to train models.
-    * Processing is limited to schemas and sample fields, and is reviewed for compliance.
-    * The AI is powered by Amazon Bedrock, with rolling expiration for temporary query history.
-* **Can insight summaries be accessed by the API?**<br/>Yes. The summaries are included in output when you run the [insight APIs](https://api.sumologic.com/docs/sec/#operation/GetInsight) in the [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/).
-* **Is there an additional cost?**<br/>No. The insight summary is included as part of Cloud SIEM at no extra licensing fee.
+### How does the AI handle data privacy?
+
+* There is no data sharing across tenants.
+* No customer data or personally identifiable information (PII) is used to train models.
+* Processing is limited to schemas and sample fields, and is reviewed for compliance.
+* The AI is powered by Amazon Bedrock, with rolling expiration for temporary query history.
+
+### Can insight summaries be accessed by the API?
+
+Yes. The summaries are included in output when you run the [insight APIs](https://api.sumologic.com/docs/sec/#operation/GetInsight) in the [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/).
+
+### Is there an additional cost?
+
+No. The insight summary is included as part of Cloud SIEM at no extra licensing fee.
