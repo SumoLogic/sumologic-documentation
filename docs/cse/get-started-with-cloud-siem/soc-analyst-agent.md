@@ -255,6 +255,10 @@ _index=sumologic_audit_events
 
 {/* TODO: The invocationdetails.agentname query above comes from a Slack thread with the Mobot PM, not the audit-index doc itself — docs/manage/security/audit-indexes/audit-event-index.md doesn't document this field or an "agentname" value for soc_analyst_agent/mobot yet. Confirm exact field name/syntax with eng, and confirm whether this needs its own row in that doc's Audited events table, before publish. */}
 
+### Can I access the agent's verdict and findings through the API?
+
+Yes. An insight's **AI Verdict**, **Key Findings**, and **What Happened** summary are available programmatically through the [`GetInsightTriage`](https://api.sumologic.com/docs/sec/#operation/GetInsightTriage) operation in the [Cloud SIEM API](/docs/api/cloud-siem-enterprise/). Use the API endpoint for your deployment; see [Cloud SIEM APIs](/docs/cse/administration/cse-apis/) to find the correct base URL.
+
 ### Can the agent take containment actions on its own?
 
 Today, containment and remediation actions require a human to click **Execute Action** on a recommended playbook; see [AI Investigation tab](#ai-investigation-tab).
