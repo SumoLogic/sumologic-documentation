@@ -1,19 +1,19 @@
 ---
 slug: /cse/administration
-title: Cloud SIEM Administration
-sidebar_label: Cloud SIEM Administration
-description: Learn how to set up users accounts and roles, create Cloud SIEM Actions, configure Network Blocks, manage custom insight status and sub-resolutions, and more.
+title: SIEM Administration
+sidebar_label: SIEM Administration
+description: Learn how to set up users accounts and roles, create SIEM Actions, configure Network Blocks, manage custom insight status and sub-resolutions, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Learn about onboarding tasks and best practices for Cloud SIEM administrators. In this section, we'll introduce the following concepts:
+Learn about onboarding tasks and best practices for SIEM administrators. In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/administration/filter-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Magnifying glass icon" width="40"/><h4>Filter and Search</h4></a>
-  <p>Learn how to filter and search Cloud SIEM list pages.</p>
+  <p>Learn how to filter and search SIEM list pages.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -25,7 +25,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/administration/create-a-custom-tag-schema')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Tree diagram icon" width="40"/><h4>Create a Custom Tag Schema</h4></a>
-  <p>Learn how to create a custom tag schema in Cloud SIEM. </p>
+  <p>Learn how to create a custom tag schema in SIEM. </p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -36,50 +36,50 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/administration/create-cse-actions')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud with a shield icon" width="40"/><h4>Create Cloud SIEM Actions</h4></a>
-  <p>Learn how to issue a notification to another service when certain events occur in Cloud SIEM.</p>
+  <a href={useBaseUrl('docs/cse/administration/create-cse-actions')}><img src={useBaseUrl('img/icons/security/siem.png')} alt="Cloud with a shield icon" width="40"/><h4>Create SIEM Actions</h4></a>
+  <p>Learn how to issue a notification to another service when certain events occur in SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/administration/create-cse-context-actions')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Database symbol in a magnifying glass icon" width="40"/><h4>Create Cloud SIEM Context Actions</h4></a>
+  <a href={useBaseUrl('docs/cse/administration/create-cse-context-actions')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Database symbol in a magnifying glass icon" width="40"/><h4>Create SIEM Context Actions</h4></a>
   <p>Learn to query an external system for details about an entity, IOC, or data encountered in a record.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/administration/cse-apis')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="Code icon" width="40"/><h4>Cloud SIEM APIs</h4></a>
-  <p>Learn how to access Cloud SIEM APIs and API documentation.</p>
+  <a href={useBaseUrl('docs/cse/administration/cse-apis')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="Code icon" width="40"/><h4>SIEM APIs</h4></a>
+  <p>Learn how to access SIEM APIs and API documentation.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/administration/cse-data-retention')}><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Database icon" width="40"/><h4>Data Retention</h4></a>
-  <p>Learn about retention periods for different types of Cloud SIEM data.</p>
+  <p>Learn about retention periods for different types of SIEM data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/administration/cse-audit-logging')}><img src={useBaseUrl('img/icons/logs.png')} alt="Document icon" width="40"/><h4>Audit Logging</h4></a>
-  <p>Learn how to search the Audit Event Index for Cloud SIEM log events.</p>
+  <p>Learn how to search the Audit Event Index for SIEM log events.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/administration/cse-user-accounts-and-roles')}><img src={useBaseUrl('img/icons/business/regional-partner-sales.png')} alt="People with gears icon" width="40"/><h4>Cloud SIEM User Accounts and Roles</h4></a>
-  <p>Learn how to create and manage user accounts and roles for Cloud SIEM.</p>
+  <a href={useBaseUrl('docs/cse/administration/cse-user-accounts-and-roles')}><img src={useBaseUrl('img/icons/business/regional-partner-sales.png')} alt="People with gears icon" width="40"/><h4>SIEM User Accounts and Roles</h4></a>
+  <p>Learn how to create and manage user accounts and roles for SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/administration/custom-inventory-sources')}><img src={useBaseUrl('img/icons/operations/collect.png')} alt="Small boxes merging into a circle icon" width="40"/><h4>Custom Inventory Source</h4></a>
-  <p>Learn how to extract Inventory Data from logs in Sumo Logic and send it to Cloud SIEM.</p>
+  <p>Learn how to extract Inventory Data from logs in Sumo Logic and send it to SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/administration/save-inventory-data-lookup-table')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Check mark in an magnifhing glass icon" width="40"/><h4>Save Inventory Data to a Lookup Table</h4></a>
-  <p>Learn how to use a saved Sumo Logic search to populate a Lookup Table with Cloud SIEM inventory data.</p>
+  <p>Learn how to use a saved Sumo Logic search to populate a Lookup Table with SIEM inventory data.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -97,7 +97,7 @@ Learn about onboarding tasks and best practices for Cloud SIEM administrators. I
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/administration/using-sensor-zones')}><img src={useBaseUrl('img/icons/cloud/events.png')} alt="Squares icon" width="40"/><h4>Sensor Zones</h4></a>
-  <p>Learn how to use Sensor Zones to distinguish between Cloud SIEM entities that have the same IP address.</p>
+  <p>Learn how to use Sensor Zones to distinguish between SIEM entities that have the same IP address.</p>
   </div>
 </div>
 <div className="box smallbox card">

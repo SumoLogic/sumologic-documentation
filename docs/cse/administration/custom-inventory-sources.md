@@ -7,9 +7,9 @@ description: Learn how to extract inventory data from your data sources
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic explains how you can extract inventory data from logs in Sumo Logic and send it to Cloud SIEM. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
+This topic explains how you can extract inventory data from logs in Sumo Logic and send it to SIEM. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
 
-Cloud SIEM uses *inventory data* (information about hosts and users in your environment) to provide context to signals. Inventory data can also be used in entity groups to set attributes on entities (users, hosts, and so on). Those attributes can be later used in detection rule definitions, to adjust the severity of signals (using criticality), and for further context in signals.
+SIEM uses *inventory data* (information about hosts and users in your environment) to provide context to signals. Inventory data can also be used in entity groups to set attributes on entities (users, hosts, and so on). Those attributes can be later used in detection rule definitions, to adjust the severity of signals (using criticality), and for further context in signals.
 
 Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
@@ -21,7 +21,7 @@ In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/ale
 
 ## Before you start
 
-Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
+Identify your source of inventory data and review the [SIEM inventory schema](#siem-inventory-schema) below. The schema identifies the attributes supported for the two different SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
 ## Limitations
@@ -42,7 +42,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 7. **Description**. (Optional)
 8. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
 9. **Source Category**. Enter a string to tag the output collected from the source, for example, _cse/custom/inventory_. The string that you supply will be saved in a metadata field called `_sourceCategory`.
-10. **SIEM Processing**. Click the check box to configure the source to forward log messages to Cloud SIEM.
+10. **SIEM Processing**. Click the check box to configure the source to forward log messages to SIEM.
 11. **Fields**. Click **+Add Field**, and add a field whose name is `_siemdatatype` with value _inventory_.
 12. Click **Save**
 13. Copy the URL that appears. You will need this to create the Webook in the next step.
@@ -62,7 +62,7 @@ In this step, you create a webhook that points to the HTTP source.
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [SIEM inventory schema](#siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search
@@ -81,9 +81,9 @@ In this step, you schedule the search you created above to send results to the W
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check **Send a separate alert for each search result**.
     9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="Refreshed Save Item dialog" style={{border: '1px solid gray'}} width="450"/>
 
-## Cloud SIEM inventory schema
+## SIEM inventory schema
 
-This section defines the attributes in the Cloud SIEM inventory schema for hosts and users. Note that the same attributes can be used for either host or user inventory data.
+This section defines the attributes in the SIEM inventory schema for hosts and users. Note that the same attributes can be used for either host or user inventory data.
 
 
 ### Host inventory attributes

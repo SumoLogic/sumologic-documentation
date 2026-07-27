@@ -1,25 +1,25 @@
 ---
 id: cse-normalized-classification
-title: Cloud SIEM Normalized Classification
+title: SIEM Normalized Classification
 sidebar_label: Normalized Classification
-description: Learn about Cloud SIEM's normalized classification fields, schema fields that have an enforced output defined by Cloud SIEM.
+description: Learn about SIEM's normalized classification fields, schema fields that have an enforced output defined by SIEM.
 ---
 
 
 
-This topic describes how Cloud SIEM applies normalized classification to records. 
+This topic describes how SIEM applies normalized classification to records. 
 
-In Cloud SIEM records can be classified at two levels. First, all records are classified at a high level by record type. At a more detailed level, you can classify more specifically using normalized classification fields alongside the mapped attributes within a record.
+In SIEM records can be classified at two levels. First, all records are classified at a high level by record type. At a more detailed level, you can classify more specifically using normalized classification fields alongside the mapped attributes within a record.
 
 ## Record types
 
-Every Cloud SIEM record has a record type. A record type classifies the nature of the event that the record describes. Cloud SIEM record types include **Authentication,** **Endpoint**, **NetworkHTTP** and so on.
+Every SIEM record has a record type. A record type classifies the nature of the event that the record describes. SIEM record types include **Authentication,** **Endpoint**, **NetworkHTTP** and so on.
 
-A record’s type is set by the [log mapping](/docs/cse/schema/create-structured-log-mapping) that processes it. For more information, see [Cloud SIEM Record Types](/docs/cse/schema/cse-record-types).
+A record’s type is set by the [log mapping](/docs/cse/schema/create-structured-log-mapping) that processes it. For more information, see [SIEM Record Types](/docs/cse/schema/cse-record-types).
 
 ## Normalized classification fields
 
-For more granular classification of a record, Cloud SIEM uses *normalized classification fields*. These are special normalized schema fields that have an enforced output defined by Cloud SIEM. These fields provide a taxonomy that can be used to tie records from multiple vendors and products together in a standard way. Rather than holistically trying to describe a record as record type does, these fields exist alongside commonly used normalization schema fields which most often contain the what, where, and why of a particular record. This allows for far more dynamic and specific classification of a record than record type alone. 
+For more granular classification of a record, SIEM uses *normalized classification fields*. These are special normalized schema fields that have an enforced output defined by SIEM. These fields provide a taxonomy that can be used to tie records from multiple vendors and products together in a standard way. Rather than holistically trying to describe a record as record type does, these fields exist alongside commonly used normalization schema fields which most often contain the what, where, and why of a particular record. This allows for far more dynamic and specific classification of a record than record type alone. 
 
 Normalized classification fields are completely optional when creating a log mapping. When using normalized classification fields, it is best to consider whether a parallel normalized schema field exists for the record and whether there is an analogous enforced output available in the desired normalized classification field. These fields will most typically utilize the lookup unless the vendor log output exactly matches the enforced outputs or a constant value is assigned.
 

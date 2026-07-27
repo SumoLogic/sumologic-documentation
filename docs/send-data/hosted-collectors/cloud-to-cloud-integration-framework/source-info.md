@@ -25,10 +25,10 @@ Hover your mouse over the status icon to view a tooltip with a count of the dete
 
 ## Metadata fields
 
-**Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
+**Forward to SIEM**. Check the checkbox to forward your data to [SIEM](/docs/cse/).
 
 :::note
-The **Forward to SIEM** checkbox is only available if Cloud SIEM is installed and if the C2C already has Cloud SIEM content like parsers and rules.
+The **Forward to SIEM** checkbox is only available if SIEM is installed and if the C2C already has SIEM content like parsers and rules.
 :::
 
 | Field | Value | Description |

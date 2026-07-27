@@ -1,8 +1,8 @@
 ---
 slug: /cse/integrations
-title: Cloud SIEM Integrations
-sidebar_label: Cloud SIEM Integrations
-description: Learn about the integration of Cloud SIEM with the Sumo Logic platform, how to integrate threat intel sources, and leveraging the Cloud SIEM Insight Enrichment Server.
+title: SIEM Integrations
+sidebar_label: SIEM Integrations
+description: Learn about the integration of SIEM with the Sumo Logic platform, how to integrate threat intel sources, and leveraging the SIEM Insight Enrichment Server.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,7 +19,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/integrations/insight-enrichment-server')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>Insight Enrichment Server</h4></a>
-  <p>Learn how to automatically enrich Cloud SIEM insights.</p>
+  <p>Learn how to automatically enrich SIEM insights.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -31,13 +31,13 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/integrations/integrate-cse-with-taxii-feed')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>TAXII Feed</h4></a>
-  <p>Learn how to integrate Cloud SIEM with a TAXII threat intelligence feed.</p>
+  <p>Learn how to integrate SIEM with a TAXII threat intelligence feed.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/integrations/security-incident-response-integration')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Icon of two screens" width="40"/><h4>Security Incident Response (SIR)</h4></a>
-  <p>Learn to install and configure the integration between Sumo Logic Cloud SIEM and ServiceNow's SIR.</p>
+  <p>Learn to install and configure the integration between Sumo Logic SIEM and ServiceNow's SIR.</p>
   </div>
 </div>
 <div className="box smallbox card">

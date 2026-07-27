@@ -11,4 +11,4 @@ import Iframe from 'react-iframe'; 
 
 We're happy to announce that we have redesigned the Insight details page by moving the left-side panel to the top header and added comment enhancements, including a rich text editor, for a more streamlined experience. 
 <img src={useBaseUrl('img/cse/insight-comment.png')} alt="Insight comment page" style={{border: '1px solid gray'}} width="800"/>
-[Learn more](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#insight-details-page).
+[Learn more](/docs/cse/get-started-with-siem/about-cse-insight-ui/#insight-details-page).

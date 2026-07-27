@@ -77,7 +77,7 @@ The following table provides a summary list of key features by Flex package acco
 | Case Manager | |  | | &#10003; |
 | Cloud Infrastructure Security |  | &#10003; | | &#10003; |
 | Cloud Log Management | &#10003; | &#10003; | &#10003; | &#10003; |
-| Cloud SIEM |  |  | | Activation required* |
+| SIEM |  |  | | Activation required* |
 | Cloud Security Posture Monitoring |  | &#10003; | | &#10003; |
 | Cloud SOAR |  |  | | Activation required* |
 | Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; |
@@ -198,7 +198,7 @@ This panel provides analytics to monitor and compare usage against contract capa
    * **Flex Scan Metered**. Log search volume beyond reserved capacity.  
    * **Flex Storage**. Credits used for log storage.  
    * **Tracing Ingest**. Credits used for tracing.  
-   * **Cloud SIEM Ingest**. Credits used for logs in Cloud SIEM.  
+   * **SIEM Ingest**. Credits used for logs in SIEM.  
    * **Metrics Ingest**. Credits used for metrics.  
    * **Promotional Categories**. See [Promotional credits](#promotional-credits).  
 * **Usage % Change**. Highlights changes in usage over selected time intervals.  

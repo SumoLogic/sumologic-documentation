@@ -1,11 +1,11 @@
 ---
 id: cse-apis
-title: Cloud SIEM APIs
-sidebar_label: Cloud SIEM APIs
-description: Learn how to access Cloud SIEM APIs and API documentation.
+title: SIEM APIs
+sidebar_label: SIEM APIs
+description: Learn how to access SIEM APIs and API documentation.
 ---
 
-The Cloud SIEM APIs allow you to create and manage entities, custom insights, log mappings, match lists, network blocks and other Cloud SIEM features.
+The SIEM APIs allow you to create and manage entities, custom insights, log mappings, match lists, network blocks and other SIEM features.
 
 import ApiIntro from '../../reuse/api-intro.md';
 

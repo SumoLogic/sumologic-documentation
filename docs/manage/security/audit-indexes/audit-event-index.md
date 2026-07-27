@@ -47,7 +47,7 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 | [Access Keys](/docs/manage/security/access-keys/) | `accessKeys` |
 | [Alerts](/docs/alerts/monitors/alert-response) | `alerts` |
 | [Automation Service and Cloud SOAR](/docs/platform-services/automation-service/automation-service-audit-logging/) | `oar*` |
-| [Cloud SIEM](/docs/cse/administration/cse-audit-logging/) | `cse*` |
+| [SIEM](/docs/cse/administration/cse-audit-logging/) | `cse*` |
 | [Collection](/docs/send-data/collection) | `collection` |
 | [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |

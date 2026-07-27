@@ -35,8 +35,8 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/cse')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Cloud SIEM</h4></a>
-  <p>Gives visibility into what’s going on in your Cloud SIEM.</p>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/cse')}><img src={useBaseUrl('img/icons/security/siem.png')} alt="SIEM icon" width="40"/><h4>SIEM</h4></a>
+  <p>Gives visibility into what’s going on in your SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -52,7 +52,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 </div>
 <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Enterprise Audit (multiple apps)</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-audit')}><img src={useBaseUrl('img/icons/security/siem.png')} alt="SIEM icon" width="40"/><h4>Enterprise Audit (multiple apps)</h4></a>
       <p>A guide to the Sumo Logic app for Enterprise Audit.</p>
       </div>
 </div>
@@ -64,7 +64,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-search-audit')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40"/><h4>Enterprise Search Audit</h4></a>
+      <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-search-audit')}><img src={useBaseUrl('img/icons/security/siem.png')} alt="SIEM icon" width="40"/><h4>Enterprise Search Audit</h4></a>
       <p>A guide to our Enterprise Search Audit App.</p>
       </div>
     </div>

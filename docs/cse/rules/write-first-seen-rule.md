@@ -5,7 +5,7 @@ sidebar_label: First Seen Rule
 description: First seen rules allow you to generate a signal when behavior by an entity (user) is encountered that has not been seen before.
 keywords:
   - sumo logic
-  - cloud siem
+  - siem
   - first seen rule
   - behavioral analytics
 ---
@@ -14,9 +14,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
 import Iframe from 'react-iframe';
 
-This topic has information about first seen rules and how to create them in the Cloud SIEM UI.
+This topic has information about first seen rules and how to create them in the SIEM UI.
 :::info
-If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 import TerraformLink from '../../reuse/terraform-link.md';
@@ -43,7 +43,7 @@ Watch this micro lesson to learn more about first seen rules.
 <Iframe url="https://fast.wistia.net/embed/iframe/b7o3idjehp?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Cloud SIEM First Seen Rules Video"
+  title="Micro Lesson: SIEM First Seen Rules Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -56,7 +56,7 @@ Watch this micro lesson to learn more about first seen rules.
 
 ## Baselines for first seen rules
 
-A first seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is a filter condition that defines what incoming records the rule will apply to. For each first seen rule, Cloud SIEM automatically creates a baseline model of normal behavior for a defined time period (by default using data from the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
+A first seen rule is different from other SIEM rule types in that you don’t define the criteria for firing a signal. Instead, the rule expression in a first seen rule is a filter condition that defines what incoming records the rule will apply to. For each first seen rule, SIEM automatically creates a baseline model of normal behavior for a defined time period (by default using data from the last 90 days) evidenced by records that match the Rule Expression. The activity found during this period is considered normal behavior and will not be alerted on. 
 
 As soon as you save or update a first seen rule (or disable and re-enable it), the full baseline is built using existing data collected. A minimum of 7 days of baseline information needs to be available in order for a rule to be active and generating signals. (That is, events relevant to the baseline must be at least 7 days old before the baseline is considered complete.) If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. 
 
@@ -64,7 +64,7 @@ Once the baseline is created, when an incoming record includes matching activity
  
 <img src={useBaseUrl('img/cse/first-seen-signal-example.png')} alt="First seen signal example" style={{border: '1px solid gray'}} width="800"/>
 
-For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the entity (user). Because a minimum of 7 days of baseline information needs to be available, activities within 7 days of the first recorded login to a new location will not generate signals, but the first login to a new location on the 8th day will generate a signal. Once the baseline is created, Cloud SIEM will create a signal for every new geolocation detected and incrementally add to the baseline.
+For example, for the “First time a user logged in from a new geographic location” use case, SIEM will build a baseline model of all the geolocations from where a logon event is seen for the entity (user). Because a minimum of 7 days of baseline information needs to be available, activities within 7 days of the first recorded login to a new location will not generate signals, but the first login to a new location on the 8th day will generate a signal. Once the baseline is created, SIEM will create a signal for every new geolocation detected and incrementally add to the baseline.
 
 If the records gathered for a baseline exceed 50 million, the historical baseline capabilities to generate a baseline through a query become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
@@ -78,13 +78,13 @@ For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules
 
 ## Example rule
 
-The screenshot below shows a first seen rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create a first seen rule](#create-a-first-seen-rule), below.
+The screenshot below shows a first seen rule in the SIEM rules editor. For an explanation of the configuration options, see [Create a first seen rule](#create-a-first-seen-rule), below.
 
 <img src={useBaseUrl('img/cse/first-seen-rule.png')} alt="Example first seen rule definition" style={{border: '1px solid gray'}} width="700"/>
 
 ## Create a first seen rule
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **First Seen** card.
 1. In the rules editor:
@@ -96,7 +96,7 @@ The screenshot below shows a first seen rule in the Cloud SIEM rules editor. For
 The settings in the **If Triggered** section determine what records the rule will be applied to and baseline-related options.
 
 1.  **When a Record matching the expression**. Enter an expression that matches the records that you want to rule to apply to.
-1. Click **Test Rule Expression** to test it against existing records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. Click **Test Rule Expression** to test it against existing records in SIEM. The **If Triggered** section expands, and SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
 1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule. (If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.)
     :::note
     The [baseline for a first seen rule](#baselines-for-first-seen-rules) is recalculated if a rule tuning expression that applies to the selected rule is updated. However, the baseline is not recalculated if the rule tuning expression applies to all rules.
@@ -116,7 +116,7 @@ The settings in the **If Triggered** section determine what records the rule wil
 ### Configure "Then Create a Signal" settings
 
 1. Click **Show Advanced** if you want the rule to [override global signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
-1. **On Entity**. Select the entity field—for example, an IP address, MAC address, hostname, and so on—in the record that the resulting signal should be associated with. (In Cloud SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Select the entity field—for example, an IP address, MAC address, hostname, and so on—in the record that the resulting signal should be associated with. (In SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
 1. **with the name**. Define the name for signals fired by the rule. You can enter text, and include record fields from the custom token list. Including record field values in the signal name can make it more meaningful.
     :::note
     For extracted fields, you can specify a token for an extracted field using the format `{{fields["<field_name>"]}}`.

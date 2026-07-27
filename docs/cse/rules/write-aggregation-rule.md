@@ -10,10 +10,10 @@ import CseRule from '../../reuse/cse-rule-description-links.md';
 import CseDynamicSeverity from '../../reuse/cse-dynamic-severity.md';
 import Iframe from 'react-iframe';
 
-This topic has information about Cloud SIEM aggregation rules and how to write them.
+This topic has information about SIEM aggregation rules and how to write them.
 
 :::info
-If you are new to writing your own Cloud SIEM rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
+If you are new to writing your own SIEM rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
 :::
 
 
@@ -55,7 +55,7 @@ Watch this micro lesson to learn how to create an aggregation rule.
 <Iframe url="https://fast.wistia.net/embed/iframe/oxlwsxd0b7?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Create an Aggregation Rule in Cloud SIEM Video"
+  title="Micro Lesson: Create an Aggregation Rule in SIEM Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -68,7 +68,7 @@ Watch this micro lesson to learn how to create an aggregation rule.
 
 ## Create an aggregation rule
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 1. In the rules editor:
@@ -79,7 +79,7 @@ Watch this micro lesson to learn how to create an aggregation rule.
 
 On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the records to which the rule will be applied, and the conditions under which you want the rule to fire a signal. 
 1. **When Records matching the expression**. Enter one or more boolean expressions to filter the records you want to apply the rule to. For example: `!isNull(http_response_statusCode)`
-1. Click **Test Rule Expression** to test it against existing records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. Click **Test Rule Expression** to test it against existing records in SIEM. The **If Triggered** section expands, and SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
 1. **grouped by**. Specify the record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](#configure-then-create-a-signal-settings) below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
 1. **within...**. Select the length of time across which the rule is applied. The options range from 5 minutes to 5 days.
 1. **have aggregations**. To define an aggregation:
@@ -146,4 +146,4 @@ Click **Submit** to save the rule.
 
 If you determine that a threshold, chain, or aggregation rule is firing identical signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than match rules, because they support time duration conditions. For example, a threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time.
 
-To successfully apply a rule across a sliding time window, Cloud SIEM evaluates records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate signals. However, as long as you don’t run the rule as a prototype, duplicate signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).
+To successfully apply a rule across a sliding time window, SIEM evaluates records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate signals. However, as long as you don’t run the rule as a prototype, duplicate signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).

@@ -119,8 +119,8 @@ You can adjust the configuration of when and how AWS handles communication attem
      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
      :::note
-     If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM: 
-     * Click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM. 
+     If you have [SIEM](/docs/cse) installed and you want to forward log data to SIEM: 
+     * Click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to SIEM. 
      * Also add another field named `_parser` with value for the AWS parser you want to use for the forwarded data. For example, if you want to use the data for AWS Application Load Balancer enter `/Parsers/System/AWS/AWS ALB`, for AWS Network Firewall enter `/Parsers/System/AWS/AWS Network Firewall`, or for AWS VPC Flow enter `/Parsers/System/AWS/AWS VPC Flow`.
      :::
 

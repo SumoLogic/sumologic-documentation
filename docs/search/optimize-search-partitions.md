@@ -44,7 +44,7 @@ In contrast, it is recommended to opt for Sumo Logic's Flex account type to use 
 
 The creation of partitions is supported in Flex plans and it is a useful method for managing costs by controlling the amount of data scanned. Unlike data tier plans, partitions created in a Flex plan do not have different data tiers. Depending on the account type chosen within Flex,  you may access additional features such as data forwarding, dashboards, monitors, scheduled searches, and scheduled views. To learn more about creating partitions with the Flex plan, refer to the [Flex Partitions](/docs/manage/partitions/flex).
 
-*Customers licensed for [Enterprise Suite Flex](/docs/manage/manage-subscription/sumo-logic-flex-accounts/#enterprise-suite-flex) can also license [Cloud SIEM](/docs/cse/). With this, the subset of ingested log data forwarded to the Cloud SIEM solution is not categorized as Flex data. Instead of price being based on the volume of data scanned by queries, it is based on the volume of log data forwarded to Cloud SIEM.
+*Customers licensed for [Enterprise Suite Flex](/docs/manage/manage-subscription/sumo-logic-flex-accounts/#enterprise-suite-flex) can also license [SIEM](/docs/cse/). With this, the subset of ingested log data forwarded to the SIEM solution is not categorized as Flex data. Instead of price being based on the volume of data scanned by queries, it is based on the volume of log data forwarded to SIEM.
 
 ## What is Query Rewriting?
 

@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This section has instructions for changing the detection window and the threshold activity score for insight generation.
 
-By default, the detection window is 14 days, and the threshold activity score is 12. That means if an entity's activity score goes from 0 to 13 within a 14 day period, Cloud SIEM will generate an insight on that entity. For information about how that works, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic.
+By default, the detection window is 14 days, and the threshold activity score is 12. That means if an entity's activity score goes from 0 to 13 within a 14 day period, SIEM will generate an insight on that entity. For information about how that works, see [Understanding entity activity scores](/docs/cse/get-started-with-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic.
 
 To change the insight generation settings:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Insight Detection**. You can also click the **Go To...** menu at the top of the screen and select **Insight Detection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Detection**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **SIEM**, and then under **SIEM Workflow** select **Insight Detection**. You can also click the **Go To...** menu at the top of the screen and select **Insight Detection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top SIEM menu select **Configuration**, and then under **Workflow** select **Detection**.  
 <br/>Your current detection settings are displayed on the Insight Detection page.<br/><img src={useBaseUrl('img/cse/detection-threshold-popup.png')} alt="Detection threshold settings" style={{border: '1px solid gray'}} width="600"/>
 1. Enter values for **Detection Threshold** and **Signal Suppression**:
      *  **Standard Threshold**

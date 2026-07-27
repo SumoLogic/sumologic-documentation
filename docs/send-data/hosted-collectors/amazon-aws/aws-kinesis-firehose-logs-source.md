@@ -55,7 +55,7 @@ To create an AWS Kinesis Firehose for Logs Source:
 
 1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the Source. (Category metadata is stored in a searchable field called _sourceCategory.)    
 
-1. **SIEM Processing**. Check the checkbox to forward your data to Cloud SIEM.    
+1. **SIEM Processing**. Check the checkbox to forward your data to SIEM.    
 
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.

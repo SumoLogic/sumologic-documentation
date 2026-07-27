@@ -6,9 +6,9 @@ description: Learn how to add and manage indicators from threat intelligence sou
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import CloudSIEMThreatIntelNote from '../../reuse/cloud-siem-threat-intelligence-note.md';
+import CloudSIEMThreatIntelNote from '../../reuse/siem-threat-intelligence-note.md';
 
-The **Threat Intelligence** page displays the indicators added to your threat intelligence datastore. Use this documentation to add and manage your threat intelligence indicators. You can add indicators from several sources (see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators)). Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR.
+The **Threat Intelligence** page displays the indicators added to your threat intelligence datastore. Use this documentation to add and manage your threat intelligence indicators. You can add indicators from several sources (see [Ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators)). Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also SIEM and Cloud SOAR.
 
 ## Threat Intelligence overview
 

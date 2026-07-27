@@ -38,7 +38,7 @@ To configure an HTTP Logs and Metrics Source:
 1. Select **HTTP Logs & Metrics**. 
 1. Enter a **Name** to display for the Source in the Sumo web application. Description is optional.
 1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the source. (Category metadata is stored in a searchable field called _sourceCategory.)
-1. **Forward to SIEM**. This option is present if [Cloud SIEM](/docs/cse/) is enabled. Click the checkbox to send the logs collected by the source to Cloud SIEM.
+1. **Forward to SIEM**. This option is present if [SIEM](/docs/cse/) is enabled. Click the checkbox to send the logs collected by the source to SIEM.
 1. **Fields/Metadata.** Click the **+Add** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.

@@ -2,20 +2,20 @@
 id: inventory-sources-and-data
 title: Inventory Sources and Data
 sidebar_label: Inventory Sources and Data
-description: Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI.
+description: Inventory data is information about computers and users in your environment that SIEM uses to provide context to entities in the SIEM UI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about _inventory sources_ and the _inventory data_ they collect.
 
-Inventory data is information about computers and users in your environment that Cloud SIEM uses to provide context to entities in the Cloud SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
+Inventory data is information about computers and users in your environment that SIEM uses to provide context to entities in the SIEM UI. For example, when an analyst is investigating a user or system, it might be beneficial to know the department or manager to which they belong.
 
-In addition to providing context to Cloud SIEM insights and entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table).
+In addition to providing context to SIEM insights and entities, inventory data can be leveraged in other beneficial ways. For example, you can save computer and user information to a lookup table and use the data for search time enrichment. For more information, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table).
 
-## Inventory data in the Cloud SIEM UI
+## Inventory data in the SIEM UI
 
-The screenshots in this section show how Cloud SIEM presents inventory data in the UI.
+The screenshots in this section show how SIEM presents inventory data in the UI.
 
 This screenshot shows inventory data for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the entity:<br/><img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="Example inventory data on an insight" style={{border: '1px solid gray'}} width="400" />
 
@@ -38,7 +38,7 @@ The AWS Inventory source collects the inventory of AWS resources in your AWS acc
 | [Armis Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-source) | Cloud-to-Cloud | Computer |
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Cloud-to-Cloud | Computer |
 | [CrowdStrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Cloud-to-Cloud | Computer |
-| [Cloud SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
+| [SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
 | [Cylance](/docs/integrations/security-threat-detection/cylance) | Cloud-to-Cloud | Computer | <!-- The link goes to an app article. There is no Cylance source article in our docs. -->
 | [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source) | Cloud-to-Cloud | User |
 | [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source) | Cloud-to-Cloud | Computer and User |
@@ -69,7 +69,7 @@ _sourceCategory=AD_inventory
 ```
 
 :::tip
-Inventory logs do not appear in `_index=_sec_record*` partitions. You cannot search for them in those indexes like you can other types of Cloud SIEM data. See [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partitions-with-cloud-siem-data).
+Inventory logs do not appear in `_index=_sec_record*` partitions. You cannot search for them in those indexes like you can other types of SIEM data. See [Searching for SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partitions-with-siem-data).
 :::
 
 ## Inventory source mappings  
@@ -115,7 +115,7 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 | osVersion | os_version |  |
 
 
-### Cloud SIEM AWS (EC2) Inventory Source - Computer
+### SIEM AWS (EC2) Inventory Source - Computer
 
 | Inventory Attribute | Data source field | Note |  
 | :-- | :-- | :-- |

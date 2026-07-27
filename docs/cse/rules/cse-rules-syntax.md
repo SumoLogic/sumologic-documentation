@@ -1,15 +1,15 @@
 ---
 id: cse-rules-syntax
-title: Cloud SIEM Rules Syntax
+title: SIEM Rules Syntax
 sidebar_label: Rules Syntax
-description: Learn about the functions you can use when writing Cloud SIEM rules.
+description: Learn about the functions you can use when writing SIEM rules.
 ---
 
-This topic describes commonly used Cloud SIEM rules language functions. Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
+This topic describes commonly used SIEM rules language functions. Rules language functions are used in SIEM rule expressions. For information about rules and rule expressions, see [About SIEM Rules](/docs/cse/rules/about-cse-rules).
 
-## Sumo Logic core platform literals supported in Cloud SIEM
+## Sumo Logic core platform literals supported in SIEM
 
-The following Sumo Logic core platform literals are supported in Cloud SIEM rule expressions. For more information about these literals, see [Field Expressions](/docs/search/search-query-language/field-expressions/).
+The following Sumo Logic core platform literals are supported in SIEM rule expressions. For more information about these literals, see [Field Expressions](/docs/search/search-query-language/field-expressions/).
 
 * [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix) (millisecond-based, that is, 1s == 1000)
 
@@ -45,9 +45,9 @@ The following Sumo Logic core platform literals are supported in Cloud SIEM rule
 
 ## Referencing record fields
 
-Cloud SIEM records contain two types of fields that you can reference in rule expressions:
+SIEM records contain two types of fields that you can reference in rule expressions:
 
-* **Normalized fields**. These are schema fields that Cloud SIEM maps during log ingestion to provide a consistent structure across different log sources. Reference these fields directly by name.
+* **Normalized fields**. These are schema fields that SIEM maps during log ingestion to provide a consistent structure across different log sources. Reference these fields directly by name.
 * **Parsed fields**. These are the original fields from the log source that the parser extracts, typically following the vendor's schema. These fields are stored in a `fields` dictionary and require special syntax to access.
 
 ### Normalized fields
@@ -66,7 +66,7 @@ srcDevice_ip = "192.168.1.100"
 severity > 5
 ```
 
-For a complete list of normalized schema fields, see the [Cloud SIEM Schema](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md).
+For a complete list of normalized schema fields, see the [SIEM Schema](https://github.com/SumoLogic/siem-content-catalog/blob/master/schema/full_schema.md).
 
 ### Parsed fields (fields syntax)
 
@@ -101,12 +101,12 @@ This syntax allows you to access fields that were extracted by the parser but no
    ```
 
 :::tip
-To discover which parsed fields are available for a particular log source, examine sample records in Cloud SIEM or review the parser configuration for that source.
+To discover which parsed fields are available for a particular log source, examine sample records in SIEM or review the parser configuration for that source.
 :::
 
 ## Rules language functions
 
-Following are rules language functions commonly used in Cloud SIEM rule expressions. 
+Following are rules language functions commonly used in SIEM rule expressions. 
 
 Many of these functions are similar to those used in search queries. For more information, see [Search Query Language](/docs/search/search-query-language/). 
 
@@ -124,7 +124,7 @@ The following expression returns true if `A` matches `B` or `A` matches `C`:
 
 `where "A" matches "B" || where "A" matches "C"`
 
-In Cloud SIEM, both sides of the `||` must be boolean. Other values such as string are not supported when using a logical OR operator. 
+In SIEM, both sides of the `||` must be boolean. Other values such as string are not supported when using a logical OR operator. 
 
 ### !
 
@@ -168,7 +168,7 @@ The following expression divides `error_count` by `user_count`:
 
 The forward slash and asterisk characters (/*  */) comment out lines.
 
-For Cloud SIEM rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
+For SIEM rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
 
 **Syntax**
 
@@ -384,7 +384,7 @@ Checks if any HTTP header in the supplied map matches a given regex. 
  
 ### asciiToHex
 
-Casts an ASCII string to a hexadecimal string. This is equivalent to `toHex` in the Cloud SIEM rules syntax.
+Casts an ASCII string to a hexadecimal string. This is equivalent to `toHex` in the SIEM rules syntax.
 
 **Syntax**
 
@@ -437,7 +437,7 @@ The following expression returns "3.141592653589793" (pi):
 
 Returns “true” if a specified array contains a particular value. 
 
-Cloud SIEM rules use `array_contains` statements to look for a value in a record field. This is useful if you want to check a record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
+SIEM rules use `array_contains` statements to look for a value in a record field. This is useful if you want to check a record’s `listMatches field` for [Match Lists](/docs/cse/match-lists-suppressed-lists/create-match-list) or threat intel list matches. You can also check the contents of the `fieldTags` field to see if matches a keyword tag or schema key tag value.
 
 **Syntax for matching to lists**
 
@@ -478,13 +478,13 @@ where:
 
 **Example**
 
-This example checks to see if the `listMatches` field contains the value “vuln_scanners” (the name of a Cloud SIEM Match List). 
+This example checks to see if the `listMatches` field contains the value “vuln_scanners” (the name of a SIEM Match List). 
 
 `array_contains(listMatches, 'vuln_scanners')`
 
 ### base64Decode
 
-Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent to `fromBase64` in the Cloud SIEM rules syntax.
+Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent to `fromBase64` in the SIEM rules syntax.
 
 **Syntax**
 
@@ -494,7 +494,7 @@ Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent
 
 ### base64Encode 
 
-Takes an ASCII string and converts it to a base64 string. This is equivalent to `toBase64` in the Cloud SIEM rules syntax.
+Takes an ASCII string and converts it to a base64 string. This is equivalent to `toBase64` in the SIEM rules syntax.
 
 **Syntax**
 
@@ -597,7 +597,7 @@ Compares string values of two fields and returns a boolean result based on wheth
 `contains(<field1>, <field2>)`
 
 :::note
-Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here. 
+Sumo Logic core platform supports additional two forms of `contains` syntax. SIEM supports only the form shown here. 
 :::
 
 ### cos
@@ -672,7 +672,7 @@ The following expression returns "0.10517091807564763":
 
 ### floor
 
-Rounds down to the largest previous integer value. Returns the largest integer not greater than x. This is equivalent to `int` in the Cloud SIEM rules syntax.
+Rounds down to the largest previous integer value. Returns the largest integer not greater than x. This is equivalent to `int` in the SIEM rules syntax.
 
 **Syntax**
 
@@ -699,7 +699,7 @@ The following expression returns "10.10.1.0":
 
 ### hasThreatMatch
 
-Use the `hasThreatMatch` Cloud SIEM rules function to match incoming records in Cloud SIEM to [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/). The function uses all sources in the **Threat Intelligence** tab, unless you specify a specific source. `hasThreatMatch` can also match values in [custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/).
+Use the `hasThreatMatch` SIEM rules function to match incoming records in SIEM to [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/). The function uses all sources in the **Threat Intelligence** tab, unless you specify a specific source. `hasThreatMatch` can also match values in [custom threat intelligence sources in SIEM](/docs/cse/administration/create-custom-threat-intel-source/).
 
 When an entity is processed by a rule using the `hasThreatMatch` function and is a match, the entity is associated with a known indicator that has a threat type attribute. The entity can be associated with either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format).
 
@@ -708,7 +708,7 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 `hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
-* **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
+* **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
 * **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`. <br/>You can filter on the following indicator attributes:
    * `confidence`. Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
    * `indicator`. Value of the indicator, such as an IP address, file name, email address, and so on. 
@@ -741,7 +741,7 @@ For more information about indicator types, see [Upload Formats for Threat Intel
 **Examples**
 
 :::tip
-For standard rules that use the `hasThreatMatch` function, refer to the [Rules page in the Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) and search for rules with "Threat Intel" in the name. To see examples of how these rules use `hasThreatMatch`, open and view the rules in Cloud SIEM.
+For standard rules that use the `hasThreatMatch` function, refer to the [Rules page in the SIEM Content Catalog](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/README.md) and search for rules with "Threat Intel" in the name. To see examples of how these rules use `hasThreatMatch`, open and view the rules in SIEM.
 :::
 
 * `hasThreatMatch([srcDevice_ip], confidence > 1 AND (type='ipv4-addr' OR type='ipv6-addr'))`
@@ -776,7 +776,7 @@ The following expression returns "3512.71":
 
 ### hexToAscii 
 
-Converts a hexadecimal string to an ASCII string. This is equivalent to fromHex in the Cloud SIEM rules syntax.
+Converts a hexadecimal string to an ASCII string. This is equivalent to fromHex in the SIEM rules syntax.
 
 **Syntax**
 
@@ -980,7 +980,7 @@ The following expression returns "false":
 ### jsonArrayContains 
 
 Returns “true” if a specified field contains a particular value. This is
-equivalent to `array_contains` in the Cloud SIEM rules syntax.
+equivalent to `array_contains` in the SIEM rules syntax.
 
 **Syntax**
 
@@ -993,7 +993,7 @@ equivalent to `array_contains` in the Cloud SIEM rules syntax.
 ### jsonArraySize 
 
 Returns the length of a string. Returns -1 if null. This is equivalent
-to `size` in the Cloud SIEM rules syntax.
+to `size` in the SIEM rules syntax.
 
 **Syntax**
 
@@ -1014,8 +1014,8 @@ You can use the `json` operator allows to extract:
 * Nested keys
 * Keys in arrays
 
-The primary use case for the `json` operator in Cloud SIEM match expressions is
-to access unmapped message fields that are contained in the Cloud SIEM `fields`
+The primary use case for the `json` operator in SIEM match expressions is
+to access unmapped message fields that are contained in the SIEM `fields`
 attribute.
 
 **Syntax**
@@ -1034,13 +1034,13 @@ attribute.
 
 * In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
     :::note
-    Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
+    Currently, to use the `json` operator in SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in SIEM.
     :::
-* As part of the ingestion process, the `fields` field in Cloud SIEM is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, Cloud SIEM accepts `_raw` as an alias to `fields`.
+* As part of the ingestion process, the `fields` field in SIEM is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, SIEM accepts `_raw` as an alias to `fields`.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.
-* Cloud SIEM doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
+* SIEM doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
     * `| json field=fields "foo.bar['baz']" as nestedKey`
     * `| json field=fields "foo[0]" as indexKey`
     * `| json field=fields "foo[*]" as asteriskKey`. Works for arrays, not maps.
@@ -1060,7 +1060,7 @@ attribute.
 | where toInt(packets_sent) != toInt(packets_received)
 ```
 
-The second query shown above is equivalent to the following Cloud SIEM syntax. 
+The second query shown above is equivalent to the following SIEM syntax. 
 
 `int(fields['packetsSent']) != int(fields['packetsReceived'])`
 
@@ -1206,8 +1206,8 @@ Can be used to match a string to a wildcard pattern or an RE2 compliant regex. T
 
 **Examples**
 
-* `where foo matches "*bar*"` (This example is equivalent to `foo LIKE '%bar%'` in the Cloud SIEM rules syntax.)
-* `where foo matches /.*bar.*/` (This example is equivalent to `foo RLIKE '.*bar.*'` in the Cloud SIEM rules syntax.)
+* `where foo matches "*bar*"` (This example is equivalent to `foo LIKE '%bar%'` in the SIEM rules syntax.)
+* `where foo matches /.*bar.*/` (This example is equivalent to `foo RLIKE '.*bar.*'` in the SIEM rules syntax.)
 
 ### num
 
@@ -1410,7 +1410,7 @@ Casts string data to the double data type.
 ### toFloat 
 
 Casts a string to a floating point number. This is equivalent to `float`
-in the Cloud SIEM rules syntax.
+in the SIEM rules syntax.
 
 **Syntax**
 
@@ -1418,7 +1418,7 @@ in the Cloud SIEM rules syntax.
 
 ### toInt 
 
-Casts a string to an integer. This is equivalent to `int` in the Cloud SIEM
+Casts a string to an integer. This is equivalent to `int` in the SIEM
 rules syntax.
 
 **Syntax**
@@ -1436,7 +1436,7 @@ Casts string data to the long data type.
 ### toLowerCase 
 
 Converts a string to all lower case letters. This is equivalent to lower
-in the Cloud SIEM rules syntax.
+in the SIEM rules syntax.
 
 **Syntax**
 
@@ -1459,7 +1459,7 @@ The following expression returns "3.141592653589793" (pi):
 ### toUpperCase 
 
 Converts a string to all uppercase letters. This is equivalent to upper
-in the Cloud SIEM rules syntax.
+in the SIEM rules syntax.
 
 **Syntax**
 

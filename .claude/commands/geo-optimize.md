@@ -204,7 +204,7 @@ After the first use, the abbreviation alone is fine. Define the term once at its
 
 * **Code blocks** — never alter code, commands, or configuration values
 * **Step-by-step instructions** — do not reorder or reword steps; only improve surrounding prose
-* **Product names and proper nouns** — do not rephrase "Cloud SIEM" or "Hosted Collector"
+* **Product names and proper nouns** — do not rephrase "SIEM" or "Hosted Collector"
 * **Warnings, notes, and admonitions** — these are already structured for extraction; leave them
 * **Tables** — do not convert tables to prose; they are already GEO-friendly
 

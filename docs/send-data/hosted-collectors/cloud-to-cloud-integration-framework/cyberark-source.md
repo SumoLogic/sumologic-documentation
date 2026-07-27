@@ -48,7 +48,7 @@ To configure a CyberArk EPM Source, follow the steps below:
 1. **Name**. Enter a name to display for the Source in the Sumo Logic web application.
 1. **Description**. (Optional)
 1. **Source Category**. Enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
+1. **Forward to SIEM**. Check the checkbox to forward your data to [SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. Fields. (Optional) Click **+Add** to ad additional fields; each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.

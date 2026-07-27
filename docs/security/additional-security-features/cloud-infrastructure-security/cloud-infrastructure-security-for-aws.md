@@ -606,11 +606,11 @@ The  **Active Threats: AWS Storage** dashboard provides threat counts related to
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.png')} alt="Active Threats: AWS Storage dashboard" style={{border: '1px solid gray'}} width="600"/>
 
-### Cloud SIEM Insights Overview
+### SIEM Insights Overview
 
-The **Cloud SIEM Insights Overview** dashboard runs advanced threat detection (Cloud SIEM Insights) on your AWS data so that you can get early detection of  attacks and protect against evolving threats. This dashboard is only available if you use [Cloud SIEM](/docs/cse/). 
+The **SIEM Insights Overview** dashboard runs advanced threat detection (SIEM Insights) on your AWS data so that you can get early detection of  attacks and protect against evolving threats. This dashboard is only available if you use [SIEM](/docs/cse/). 
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloud-siem-insights.png')} alt="Cloud SIEM Insights dashboard" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-siem-insights.png')} alt="SIEM Insights dashboard" style={{border: '1px solid gray'}} width="600"/>
 
 ### Security Control Failures - AWS Security Hub
 

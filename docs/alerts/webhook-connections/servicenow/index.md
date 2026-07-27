@@ -45,5 +45,5 @@ In this section, we'll introduce the following concepts:
 
 :::tip
 * To import and maintain real-time information about AWS and VMware virtual machine assets into the ServiceNow CMDB, see the [Service Graph Installation and Configuration Guide](https://store.servicenow.com/appStoreAttachments.do?sys_id=d06467ab1bdab4d051a62132604bcb5e)
-* For the Sumo Logic Cloud SIEM integration with the ServiceNow Security Incident Response (SIR) module, see [Security Incident Response (SIR) Integration](../../../cse/integrations/security-incident-response-integration.md)
+* For the Sumo Logic SIEM integration with the ServiceNow Security Incident Response (SIR) module, see [Security Incident Response (SIR) Integration](../../../cse/integrations/security-incident-response-integration.md)
 :::

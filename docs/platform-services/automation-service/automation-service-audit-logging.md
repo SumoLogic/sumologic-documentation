@@ -37,7 +37,7 @@ To search for events:
 
 ## Audit Event Index events
 
-The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) has detailed JSON logs for the following Automation Service and Cloud SIEM features. 
+The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) has detailed JSON logs for the following Automation Service and SIEM features. 
 
 :::important
 For Audit Event Index documentation, see [Automation Service and Cloud SOAR audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#automation-service-and-cloud-soar-audit-log-definitions).
@@ -93,7 +93,7 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 
 ## System Event Index events
 
-The [System Event Index](/docs/manage/security/audit-indexes/system-event-index/) has detailed JSON logs for the following Automation Service and Cloud SIEM features. 
+The [System Event Index](/docs/manage/security/audit-indexes/system-event-index/) has detailed JSON logs for the following Automation Service and SIEM features. 
 
 :::important
 For System Event Index documentation, see [Automation Service and Cloud SOAR audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#automation-service-and-cloud-soar-audit-log-definitions). When you access the Cloud SOAR Audit Log Definition page, in the left margin scroll down to the **SUMOLOGIC_SYSTEM_EVENTS** section. 

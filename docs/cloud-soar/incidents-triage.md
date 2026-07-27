@@ -407,13 +407,13 @@ New types must be added from the incidents section of the **Custom Fields** page
 
 Note that to be able to filter events in the triage module based on the values of a field, **Use as filter** must be checked when adding or modifying a field. As fields are created, they will be assigned a number starting at `1`, which will be used to identify the field when adding events via the API. The first field added will be identified as `opt_1`, the second as `opt_2`, and so on. Regardless of the ordering of the fields on the screen, these numbers will remain the same. If a field is deleted, the number will not be reused. For example, if you have defined `opt_1` through `opt_8` and delete the field `opt_8`, the next field added will still become `opt_9`. It is important to remember these field numbers, as they will be used when the API is invoked.
 
-#### Attributes sent from Cloud SIEM
+#### Attributes sent from SIEM
 
-You can ingest Cloud SIEM Insights into Cloud SOAR for incident triage using the `GetInsight` Cloud SOAR API. The following Insight attributes are returned.
+You can ingest SIEM Insights into Cloud SOAR for incident triage using the `GetInsight` Cloud SOAR API. The following Insight attributes are returned.
 
 When you create an incident from an Insight, you can map the Insight attributes to fields in Cloud SOAR as follows:
 
-| Attribute in Cloud SIEM | Field in Cloud SOAR |
+| Attribute in SIEM | Field in Cloud SOAR |
 | :-- | :-- |
 | `assignee` | `Insight Assignee` (custom field) |
 | `created` | `Start time` |

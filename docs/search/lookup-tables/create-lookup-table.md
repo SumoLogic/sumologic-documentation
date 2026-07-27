@@ -10,8 +10,8 @@ This section has instructions for creating Lookup Tables using the Sumo Logic UI
 
 For additional articles about lookup tables, see the following:
 * To update, export, and share Lookup Tables, see [Manage and Update Lookup Tables](manage-update-lookup-tables.md). 
-* To configure a Lookup Table for use in Cloud SIEM, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/).
-* To populate a Lookup Table with Cloud SIEM inventory data, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table/).
+* To configure a Lookup Table for use in SIEM, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/).
+* To populate a Lookup Table with SIEM inventory data, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table/).
 
 :::tip
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to create and manage Lookup Tables. 
@@ -162,7 +162,7 @@ When you run search operators that work with Lookup Tables (described in the fol
 
 ### Find Lookup Tables content with search operators
 
-You can use the following operators with Lookup Tables in Sumo Logic log searches and in Cloud SIEM rules:
+You can use the following operators with Lookup Tables in Sumo Logic log searches and in SIEM rules:
 
 * `cat`. You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](/docs/search/search-query-language/search-operators/cat).
 * `lookup`. You can use the `lookup` operator to return one or more fields from a Lookup Table. For more information, see [lookup](/docs/search/search-query-language/search-operators/lookup).

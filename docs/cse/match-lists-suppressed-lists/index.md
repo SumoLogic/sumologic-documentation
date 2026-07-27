@@ -4,7 +4,7 @@ title: Match Lists and Suppressed Lists
 description: Learn about creating a match list and their usage in rules.
 ---
 
-This guide has information about Cloud SIEM match lists, including how they are used in Cloud SIEM and how to create them.
+This guide has information about SIEM match lists, including how they are used in SIEM and how to create them.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -32,7 +32,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/match-lists-suppressed-lists/standard-match-lists')}><img src={useBaseUrl('img/icons/operations/matching-list.png')} alt="List icon" width="40"/><h4>Entity Tags and Standard Match Lists</h4></a>
-  <p>Learn how to identify specific entities that should be treated differently during Cloud SIEM rule processing.</p>
+  <p>Learn how to identify specific entities that should be treated differently during SIEM rule processing.</p>
   </div>
 </div>
 <div className="box smallbox card">

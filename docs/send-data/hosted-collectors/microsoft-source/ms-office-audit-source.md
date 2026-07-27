@@ -154,7 +154,7 @@ During the configuration, you will need to authenticate to Microsoft using sta
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
    :::note
-   If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
+   If you have [SIEM](/docs/cse) installed and you want to forward log data to SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to SIEM.
    :::
 1. To allow Sumo Logic to access your Office 365 account, select one of the following:
    - (Recommended) **App Registration**. Enter the **Tenant Id**, **Client Id**, and **Client Secret** obtained in the [Vendor configuration](#vendor-configuration) section.

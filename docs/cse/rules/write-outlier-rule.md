@@ -4,7 +4,7 @@ title: Write an Outlier Rule
 sidebar_label: Outlier Rule
 description: Outlier rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that qualifies as an outlier from expected behavior.
 keywords:
-  - cloud siem
+  - siem
   - cse
   - outlier rule
   - behavioral analytics
@@ -14,10 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
 import Iframe from 'react-iframe';
 
-This topic has information about outlier rules and how to create them in the Cloud SIEM UI.
+This topic has information about outlier rules and how to create them in the SIEM UI.
 
 :::info
-If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 import TerraformLink from '../../reuse/terraform-link.md';
@@ -46,7 +46,7 @@ Watch this micro lesson to learn more about outlier rules.
 <Iframe url="https://fast.wistia.net/embed/iframe/7zx3nuvvo2?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Cloud SIEM Outlier Rules Video"
+  title="Micro Lesson: SIEM Outlier Rules Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -59,15 +59,15 @@ Watch this micro lesson to learn more about outlier rules.
 
 ## Baselines for outlier rules
 
-When you create the rule, you can set the amount of time Cloud SIEM analyzes data to create a baseline model of behavior, with the default period being for the last 90 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
+When you create the rule, you can set the amount of time SIEM analyzes data to create a baseline model of behavior, with the default period being for the last 90 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
 
 As soon as you save or update an outlier rule (or disable and re-enable it), the full baseline is built using existing data collected. So if your baseline retention period is for the last 90 days (the default), the system uses data from the last 90 days to build the baseline. A minimum of 7 days of baseline information needs to be available in order for a rule to be active and generating signals. (That is, the first relevant event or data point must be at least 7 days old before the baseline is considered complete). If data exists in the system to build the baseline, baseline creation typically takes only minutes to complete. 
 
-Once the baseline is created, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of record values, and creates a signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a signal when outlier behavior is detected:
+Once the baseline is created, SIEM tracks aggregates of count, sum, min, max, and averages of record values, and creates a signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a signal when outlier behavior is detected:
 
 <img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" style={{border: '1px solid gray'}} width="800"/>
 
-After your rule starts generating signals, evaluate them to determine if they truly represent outliers of concern, and adjust the rule settings as needed. For example, if too many signals are being generated, the baseline model is too sensitive, and you need to set the model sensitivity threshold higher on the rule; if too few signals are generated, set the threshold lower. Among other things, also evaluate if the signals from outliers are generating enough insights. To [generate an insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), by default the combined severity scores of signals need to exceed 12, or a custom insight can be used. Change the severity level in the outlier rule or create a custom insight to trigger insights based on this rule for investigation.
+After your rule starts generating signals, evaluate them to determine if they truly represent outliers of concern, and adjust the rule settings as needed. For example, if too many signals are being generated, the baseline model is too sensitive, and you need to set the model sensitivity threshold higher on the rule; if too few signals are generated, set the threshold lower. Among other things, also evaluate if the signals from outliers are generating enough insights. To [generate an insight](/docs/cse/get-started-with-siem/insight-generation-process/), by default the combined severity scores of signals need to exceed 12, or a custom insight can be used. Change the severity level in the outlier rule or create a custom insight to trigger insights based on this rule for investigation.
 
 If the records gathered for a baseline exceed 50 million, the historical baseline capabilities to generate a baseline via a query become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
@@ -81,14 +81,14 @@ For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules
 
 ## Example rule
 
-The screenshot below shows an outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Create an outlier rule](#create-an-outlier-rule), below.
+The screenshot below shows an outlier rule in the SIEM rules editor. For an explanation of the configuration options, see [Create an outlier rule](#create-an-outlier-rule), below.
 
 <img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example outlier rule definition" style={{border: '1px solid gray'}} width="600" />
 
 
 ## Create an outlier rule
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Outlier** card.
 1. In the rules editor:
@@ -101,7 +101,7 @@ The settings in the **If Triggered** section are divided into two subsections, o
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the records that you want to rule to apply to.
-1. Click **Test Rule Expression** to test it against existing records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. Click **Test Rule Expression** to test it against existing records in SIEM. The **If Triggered** section expands, and SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
 1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule. (If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.)
     :::note
     The [baseline for an outlier rule](#baselines-for-outlier-rules) is recalculated if a rule tuning expression that applies to the selected rule is updated. However, the baseline is not recalculated if the rule tuning expression applies to all rules.
@@ -116,14 +116,14 @@ The settings in the **If Triggered** section are divided into two subsections, o
 **Outlier Model Configuration**
 1. **Detect an outlier for the**. Select the aggregate function that applies to the field in the matched records to build a normal behavior baseline on.
 1. **of the record field**. Select one or more record fields to build a baseline on and detect an outlier signal.
-1. **Advanced Expression** (optional). When selected, disables the **of the record field** selector and allows defining record fields within the field window. For the expression, you can use the syntax described in [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/). <br/>For example, in the out-of-the-box **Spike in PowerShell Command Line Length From Host** outlier rule, the **Advanced Expression** field is set to `length(commandLine)` to calculate when you see very long command lines out of the ordinary. 
+1. **Advanced Expression** (optional). When selected, disables the **of the record field** selector and allows defining record fields within the field window. For the expression, you can use the syntax described in [SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/). <br/>For example, in the out-of-the-box **Spike in PowerShell Command Line Length From Host** outlier rule, the **Advanced Expression** field is set to `length(commandLine)` to calculate when you see very long command lines out of the ordinary. 
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a signal. Lower threshold corresponds to a more sensitive model resulting in more signals.
 1. **Minimum Count Value** (default value 1). Enter the absolute minimum value below which an outlier signal will not be generated.
 
 ### Configure "Then Create a Signal" settings
 
 1. Click **Show Advanced** if you want the rule to [override global signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
-1. **On Entity**. Select the entity field—for example, an IP address, MAC address, hostname, and so on—in the record that the resulting signal should be associated with. (In Cloud SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Select the entity field—for example, an IP address, MAC address, hostname, and so on—in the record that the resulting signal should be associated with. (In SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
 1. **with the name**. Define the name for signals fired by the rule. You can enter text, and include record fields from the custom token list. Including record field values in the signal name can make it more meaningful.
     :::note
     For extracted fields, you can specify a token for an extracted field using the format `{{fields["<field_name>"]}}`.

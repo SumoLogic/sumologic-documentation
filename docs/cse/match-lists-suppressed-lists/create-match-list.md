@@ -10,11 +10,11 @@ This topic has information about match lists, their purpose and usage, and how t
 
 ## About match lists
 
-Match lists are lists of important indicators and identifiers configured by a Cloud SIEM analyst. Match lists are typically used to define “allow lists” of items, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. 
+Match lists are lists of important indicators and identifiers configured by a SIEM analyst. Match lists are typically used to define “allow lists” of items, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. 
 
 Here’s a use case for using a match list to define an allow list:  Vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. You can create a match list called “vuln_scanners” that contains the IP addresses of your scanners.
 
-Here are some match lists in Cloud SIEM.  
+Here are some match lists in SIEM.  
 
 <img src={useBaseUrl('img/cse/example-match-lists.png')} alt="Example match list" style={{border: '1px solid gray'}} width="800"/>
 
@@ -30,9 +30,9 @@ You can use Terraform to manage match lists with the [`match_list`](https://regi
 
 ## Built-in rules refer to standard match list names
 
-Many of Cloud SIEM’s built-in rules assume the existence of one or more standard match lists. A standard match list is a list that you need to create and populate so that Cloud SIEM can leverage it. Cloud SIEM rules take advantage of about 20 standard match lists. One example of a standard match list is the “vuln_scanners” list mentioned in the previous section. There are analogous match lists for other entity types, such as “business_ips”, “verified_domains”, and so on.
+Many of SIEM’s built-in rules assume the existence of one or more standard match lists. A standard match list is a list that you need to create and populate so that SIEM can leverage it. SIEM rules take advantage of about 20 standard match lists. One example of a standard match list is the “vuln_scanners” list mentioned in the previous section. There are analogous match lists for other entity types, such as “business_ips”, “verified_domains”, and so on.
 
-When you create the standard match lists, it’s important to create them correctly: you need to use the exact name Cloud SIEM has defined for the list, and you must specify the correct target column. You can find that information in [Standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists), which also lists the built-in rules that refer to match list data.
+When you create the standard match lists, it’s important to create them correctly: you need to use the exact name SIEM has defined for the list, and you must specify the correct target column. You can find that information in [Standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists), which also lists the built-in rules that refer to match list data.
 
 If you don’t define one or more standard match lists, the rules that refer to the match list data will still function, but you’ll miss out on the benefit that match lists provide. A rule will have no way of knowing that a particular IP address, domain, or other entity in a message should not cause it to fire.
 
@@ -40,13 +40,13 @@ As necessary, you can also create custom match lists.
 
 ## How are match lists used?
 
-When Cloud SIEM processes an incoming message, it compares the entries in each match list that you’ve created to message fields that are of the same type as the target column of the match list. For example, given a match list whose target column is `Domain`,  Cloud SIEM will compare items on that list only to message fields that contain domains.
+When SIEM processes an incoming message, it compares the entries in each match list that you’ve created to message fields that are of the same type as the target column of the match list. For example, given a match list whose target column is `Domain`,  SIEM will compare items on that list only to message fields that contain domains.
 
 When a record contains a value that exactly matches one or more match lists (partial matches are not supported), two fields in the record get populated:
 
-* `listMatches`. Cloud SIEM adds the names of the match lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the `SourceIP` address in the “vuln_scanners” match list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`
+* `listMatches`. SIEM adds the names of the match lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the `SourceIP` address in the “vuln_scanners” match list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`
 
-* `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s `SourceIp` is also “5.6.7.8”, and assuming the `SourceIp` address in the “vuln_scanners” match list, the `matchedItems` field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
+* `matchedItems`. SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s `SourceIp` is also “5.6.7.8”, and assuming the `SourceIp` address in the “vuln_scanners” match list, the `matchedItems` field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within records, you can reference it downstream in both rules and search.   
 
@@ -56,7 +56,7 @@ In a rule, you look for matches by extending  a rule expression with an `array_
 
 If any of the IP addresses within the record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of `['vuln_scanners']`. Thus, the check above will effectively prevent signals from firing for those rules on the scanner IP addresses.
 
-For more information about referring to match list data in rules, see [Match lists](/docs/cse/rules/about-cse-rules#match-lists) in the *About Cloud SIEM Rules* topic.
+For more information about referring to match list data in rules, see [Match lists](/docs/cse/rules/about-cse-rules#match-lists) in the *About SIEM Rules* topic.
 
 ## Match list limitations
 
@@ -64,20 +64,20 @@ A match list can contain up to 100,000 items.
 
 ## Matching behavior
 
-When comparing a field value to items on a match list, Cloud SIEM generally requires an exact match (case insensitive). There are two exceptions to that rule.
+When comparing a field value to items on a match list, SIEM generally requires an exact match (case insensitive). There are two exceptions to that rule.
 
 *  Match lists that contain IP addresses can list either explicit IP addresses, CIDR blocks of IP addresses, (for example `1.2.3.4/24`), or both.
 * Match lists that contain domains can list, either complete internet domains or partial domain. Partial domains will match all the matching subdomains. For example, `google.com` in a list will match `mail.google.com` in a record. Note that the converse is not the case: `mail.google.com` in a list won’t match `google.com`.
 
 ## Create a match list
 
-Perform the steps below to create a match list in Cloud SIEM.
+Perform the steps below to create a match list in SIEM.
 
 :::tip
-You can also create and manage match lists with Cloud SIEM's REST [API](/docs/cse/administration/cse-apis).
+You can also create and manage match lists with SIEM's REST [API](/docs/cse/administration/cse-apis).
 :::
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Match Lists**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Match List**. You can also click the **Go To...** menu at the top of the screen and select **Match List**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Match Lists**. 
 1. Click **Add Match List**.
 1. On the **Add Match List** popup, enter the following:
     1. **Name**. Name of the match list. If you are creating a standard match list, make sure the name matches the standard match list name. For more information, see [Standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
@@ -137,7 +137,7 @@ Sumo Logic recommends the following conventions and best practices for using m
 
 ### Use match lists
 
-Use the match list feature early on to get the most value from Cloud SIEM. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue.
+Use the match list feature early on to get the most value from SIEM. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue.
 
 Match lists are not your only option for creating allowlists or denylists. For entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than match lists. And to suppress signals altogether, use [suppressed lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists).
 

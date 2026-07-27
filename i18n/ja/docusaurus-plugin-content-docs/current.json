@@ -499,9 +499,9 @@
     "message": "Set Up SDO Solution",
     "description": "The label for category Set Up SDO Solution in sidebar other"
   },
-  "sidebar.other.category.Cloud SIEM Enterprise": {
-    "message": "Cloud SIEM Enterprise",
-    "description": "The label for category Cloud SIEM Enterprise in sidebar other"
+  "sidebar.other.category.SIEM Enterprise": {
+    "message": "SIEM Enterprise",
+    "description": "The label for category SIEM Enterprise in sidebar other"
   },
   "sidebar.other.category.Administration": {
     "message": "Administration",

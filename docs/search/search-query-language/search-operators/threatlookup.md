@@ -30,7 +30,7 @@ Where:
 
    Note that `singleIndicator` returns the most recent, highest confidence entry from your sources. If there's a tie, the winning entry is whichever the backend storage returned first.
 * `source` is the [threat intelligence source](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `<indicator>` is the [field name](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. 
+* `<indicator>` is the [field name](https://github.com/SumoLogic/siem-content-catalog/blob/master/schema/full_schema.md) containing an [indicator](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) to look up. At least one field name is required. 
 
 ### Response fields
 

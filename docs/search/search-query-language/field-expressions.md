@@ -57,7 +57,7 @@ The list of supported suffixes, and the factor by which they multiply the numeri
 | T          | 1000000000000    | Ti         | 1099511627776    |
 | P          | 1000000000000000 | Pi         | 1125899906842624 |
 
-These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core platform literals supported in Cloud SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+These suffixes are also supported in SIEM rules. See [Sumo Logic core platform literals supported in SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-siem).
 
 ## Time suffix
 
@@ -84,7 +84,7 @@ The following time suffixes are supported:
 | d          | Day         |
 | w          | Week        |
 
-These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core platform literals supported in Cloud SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+These suffixes are also supported in SIEM rules. See [Sumo Logic core platform literals supported in SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-siem).
 
 ## Arithmetic Operators
 

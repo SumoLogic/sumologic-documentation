@@ -71,7 +71,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-cloud-monitor-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Cloud SIEM configuration" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-cloud-monitor-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic SIEM configuration" width="400"/>
 
 For detailed API documentation, see [Sumo Logic APIs](/docs/api/).
 

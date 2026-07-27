@@ -21,7 +21,7 @@ The Automation Service does not include any of Cloud SOAR’s case management or
 
 ### Daemon and trigger action types
 
-The Automation Service does not support [daemon](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#daemon-action-definitions) and [trigger](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#trigger-action-definitions) action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. So you cannot configure a playbook in the Automation Service to monitor an external process or file and fire a trigger in response like you can with Cloud SOAR. A trigger can only fire in the Automation Service for limited events, such as when an Insight is created in Cloud SIEM.
+The Automation Service does not support [daemon](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#daemon-action-definitions) and [trigger](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#trigger-action-definitions) action types. The Automation Service can only use triggers built into SIEM and the Log Analytics platform. So you cannot configure a playbook in the Automation Service to monitor an external process or file and fire a trigger in response like you can with Cloud SOAR. A trigger can only fire in the Automation Service for limited events, such as when an Insight is created in SIEM.
 
 ### Additional features
 
@@ -34,7 +34,7 @@ Cloud SOAR also offers many more features than the Automation Service, including
 | App Central <br/>- Integrations <br/>- Playbooks | &#10003; | &#10003; |
 | Automation (full features) | &#10003; | &#10003; | 
 |  Automation Bridge | &#10003; | &#10003; | 
-| Integration with Cloud SIEM and Log Analytics | &#10003; | &#10003; |
+| Integration with SIEM and Log Analytics | &#10003; | &#10003; |
 | Integrations management | &#10003; | &#10003; |
 | Open Integration Framework (OIF)<br/>- Custom docker images for action execution<br/>- Custom integration capabilities<br/>- Integration Builder (almost no-code) | &#10003; | &#10003; |
 | Playbooks<br/>- Execution in the cloud (without using an Automation Bridge)<br/>- Execution in local network with an Automation Bridge<br/>- Management<br/>- Slack integration for node activation | &#10003; | &#10003; |

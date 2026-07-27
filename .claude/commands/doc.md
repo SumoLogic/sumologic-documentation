@@ -428,7 +428,7 @@ Claude:
 * `/docs/api/` — API reference documentation.
 * `/docs/apm/` — Application Performance Monitoring and tracing.
 * `/docs/cloud-soar/` — Cloud SOAR documentation.
-* `/docs/cse/` — Cloud SIEM documentation.
+* `/docs/cse/` — SIEM documentation.
 * `/docs/dashboards/` — Dashboard and visualization docs.
 * `/docs/get-started/` — Getting started guides and onboarding.
 * `/docs/integrations/` — Third-party integrations (use specialized commands).

@@ -2,7 +2,7 @@
 id: terraform-with-sumo-logic
 title: Use Terraform with Sumo Logic
 sidebar_label: Terraform with Sumo Logic
-description: Use Terraform infrastructure-as-code to manage Sumo Logic resources including collectors, monitors, dashboards, Cloud SIEM rules, and field mappings.
+description: Use Terraform infrastructure-as-code to manage Sumo Logic resources including collectors, monitors, dashboards, SIEM rules, and field mappings.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -25,7 +25,7 @@ You can use Terraform resources to manage all sorts of Sumo Logic components. Fo
 * [Apps](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/app)
 * Automation service
    * [Playbooks](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook)
-* Cloud SIEM
+* SIEM
    * [Automation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation)
    * [Context actions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_context_action)
    * Entities
@@ -126,7 +126,7 @@ You can use Terraform data sources to retrieve Sumo Logic data from your Terrafo
 * [Apps](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/apps)
 * [Caller identity](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/caller_identity)
 * [Collectors](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/collector)
-* [Cloud SIEM log mapping](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/cse_log_mapping_vendor_product)
+* [SIEM log mapping](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/cse_log_mapping_vendor_product)
 * [Folders](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/folder)
 * [HTTP sources](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/http_source)
 * [Partitions](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/data-sources/partitions)
@@ -280,7 +280,7 @@ terraform {
 
 resource "sumologic_role" "cseAnalyst" {
  name = "CSE Analyst"
- description = "This role is used for Analysts in Cloud SIEM Enterprise"
+ description = "This role is used for Analysts in SIEM Enterprise"
  capabilities = [
  "cseManageRules", "cseViewCustomInsightStatuses", "cseCommentOnInsights", "cseManageInsightAssignee", "viewCse", "cseViewEntityCriticality", "cseViewEnrichments", "cseViewTagSchemas", "cseViewMatchLists", "cseManageCustomInsightStatuses", "cseManageEntityCriticality", "cseManageInsightTags","cseCreateInsights", "cseViewEntityConfiguration", "cseViewEntityGroups", "cseViewCustomEntityType", "cseManageInsightStatus", "cseManageMatchLists", "cseViewThreatIntelligence", "cseViewCustomInsights", "cseViewFileAnalysis", "cseViewMappings", "cseViewSuppressedEntities", "cseManageFavoriteFields","viewCollectors","cseViewNetworkBlocks", "cseInvokeInsights","cseViewRules","cseViewAutomations","cseViewEntity"
  ]
@@ -363,6 +363,6 @@ The state file is used by Terraform to track the current infrastructure state in
 * Blogs:
       * [How to Use the New Sumo Logic Terraform Provider for Hosted Collectors](https://www.sumologic.com/blog/terraform-provider-hosted)
       * [Terraform and Sumo Logic – Build Monitoring into your Cloud Infrastructure](https://www.sumologic.com/blog/terraform-sumo-logic)
-      * [Build a detection-as-code pipeline: Your guide to managing Sumo Logic Cloud SIEM rules in GitHub](https://www.sumologic.com/guides/detections-as-code-setup)
+      * [Build a detection-as-code pipeline: Your guide to managing Sumo Logic SIEM rules in GitHub](https://www.sumologic.com/guides/detections-as-code-setup)
 * Terraform resource: [Sumo Logic Provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs)
 * GitHub: [terraform-provider-sumologic](https://github.com/SumoLogic/terraform-provider-sumologic)

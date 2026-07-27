@@ -38,7 +38,7 @@ Use this list to select the correct Technical Area when creating or updating tic
 - APM (Traces, RUM)
 - Apps/Integrations
 - Automation
-- Cloud SIEM
+- SIEM
 - Cloud SOAR
 - Collectors/Sources
 - Dashboards
@@ -77,7 +77,7 @@ Use these keywords and file path patterns to suggest the most relevant Technical
 - **APM**: trace, span, RUM, real user monitoring, application performance
 - **Apps/Integrations**: app, integration, connector, third-party
 - **Automation**: automation, playbook, workflow, orchestration
-- **Cloud SIEM**: SIEM, security, threat, detection, rule
+- **SIEM**: SIEM, security, threat, detection, rule
 - **Cloud SOAR**: SOAR, incident response, security orchestration
 - **Collectors/Sources**: collector, source, ingestion, data collection
 - **Dashboards**: dashboard, panel, visualization, chart
@@ -101,7 +101,7 @@ Use these keywords and file path patterns to suggest the most relevant Technical
 - **/apm/**, **/traces/**, **/real-user-monitoring/** → APM (Traces, RUM)
 - **/integrations/**, **/apps/** → Apps/Integrations
 - **/automation-service/** → Automation
-- **/cse/**, **/cloud-siem/** → Cloud SIEM
+- **/cse/**, **/siem/** → SIEM
 - **/csoar/**, **/cloud-soar/** → Cloud SOAR
 - **/send-data/**, **/collectors/** → Collectors/Sources
 - **/dashboards/** → Dashboards

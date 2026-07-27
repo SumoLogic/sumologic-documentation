@@ -58,7 +58,7 @@ You'll land on the Sumo Logic **Home** page, which provides an at-a-glance view 
 
 ## Left navigation panel
 
-The left nav panel lets you access all Sumo Logic features, such as Logs, Observability, Cloud SIEM, and more.
+The left nav panel lets you access all Sumo Logic features, such as Logs, Observability, SIEM, and more.
 
 ### Dashboards and searches
 
@@ -210,13 +210,13 @@ This FAQ provides answers to common questions about the Sumo Logic UI redesign, 
 <details>
 <summary><strong>Q:</strong> What is being launched?</summary>
 
-We are excited to introduce the Sumo Logic Unified Experience, internally known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
+We are excited to introduce the Sumo Logic Unified Experience, internally known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
 </details>
 
 <details>
 <summary><strong>Q:</strong> What issues does the New UI resolve?</summary>
 
-The disparate user interface and varying navigation patterns among Log Analytics, Cloud SIEM, and Cloud SOAR have made it challenging for users to effectively utilize these tools together for monitoring and troubleshooting.
+The disparate user interface and varying navigation patterns among Log Analytics, SIEM, and Cloud SOAR have made it challenging for users to effectively utilize these tools together for monitoring and troubleshooting.
 
 The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
 
@@ -226,7 +226,7 @@ In-app tabs present performance and usability challenges since they all operate 
 <details>
 <summary><strong>Q:</strong> What changes have been implemented that enhance my Sumo Logic experience?</summary>
 
-* **Unified Navigation**. You'll now notice a uniform navigation system across Log Analytics, Cloud SIEM, and Cloud SOAR products, ensuring a consistent experience for Sumo Logic users engaged in both observability and security use cases.
+* **Unified Navigation**. You'll now notice a uniform navigation system across Log Analytics, SIEM, and Cloud SOAR products, ensuring a consistent experience for Sumo Logic users engaged in both observability and security use cases.
 * **Improved Product Discoverability**. The left nav panel now organizes product features in a solution-centric manner, emphasizing key use cases like infrastructure monitoring, application monitoring, log analysis, security monitoring, and analytics. This reorganization aims to facilitate easier access to Sumo Logic's product features.
 * **Enhanced Browsing Experience and Accelerated Performance**. In-app tabs will be replaced with native browser tabs, significantly improving _First Contentful Paint_ (FCP) and _Time to Interactive_ (TTI) metrics. With this change, you'll experience faster page load times and ability to organize tabs the way you are used to with other applications.
 * **Stateful URLs**. Most of the page URLs will now be stateful, allowing you to easily share content with your team members. Any changes made in the UI will be reflected in the URL parameters, making it simple for you to copy and share URLs. Additionally, this feature enables users to navigate back to previous states effortlessly by using the browser.

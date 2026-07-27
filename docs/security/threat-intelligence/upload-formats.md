@@ -74,27 +74,27 @@ The following attributes are required:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
        * **type** (string). Type of the indicator. Following are valid values:
-         * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
-         * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
-         * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+         * `domain-name`. Domain name. (Entity type in SIEM is `_domain`.)
+         * `email-addr`. Email address. (Entity type in SIEM is `_email`.)
+         * `file`. File name. (Entity type in SIEM is `_file`.)
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in SIEM is `_hash`.) Examples:
             * `file:hashes.MD5`
             * `file:hashes.'SHA-1'`
             * `file:hashes.'SHA-2'`
             * `file:hashes.'SHA-3'`
             * `file:hashes.'SHA-256'`
             <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
-         * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
-         * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
-         * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
-         * `user-account`. User ID. (Entity type in Cloud SIEM is `user_username`.)
+         * `ipv4-addr`. IPv4 IP address. (Entity type in SIEM is `_ip`.)
+         * `ipv6-addr`. IPv6 IP address. (Entity type in SIEM is `_ip`.)
+         * `mac-addr`. Mac address name. (Entity type in SIEM is `_mac`.)
+         * `process`. Process name. (Entity type in SIEM is `_process`.)
+         * `url`. URL. (Entity type in SIEM is `_url`.)
+         * `user-account`. User ID. (Entity type in SIEM is `user_username`.)
        * **source** (string). User-provided text to identify the source of the indicator. For example, `my_custom_source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the SIEM UI. See [View threat indicator labels in the SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-siem/#view-threat-indicator-labels-in-the-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -140,27 +140,27 @@ Columns for the following attributes are required in the upload file:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
        * **type** (string). Type of the indicator. Following are valid values:
-         * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
-         * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
-         * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+         * `domain-name`. Domain name. (Entity type in SIEM is `_domain`.)
+         * `email-addr`. Email address. (Entity type in SIEM is `_email`.)
+         * `file`. File name. (Entity type in SIEM is `_file`.)
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in SIEM is `_hash`.) Examples:
             * `file:hashes.MD5`
             * `file:hashes.'SHA-1'`
             * `file:hashes.'SHA-2'`
             * `file:hashes.'SHA-3'`
             * `file:hashes.'SHA-256'`
             <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
-         * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
-         * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
-         * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
-         * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
+         * `ipv4-addr`. IPv4 IP address. (Entity type in SIEM is `_ip`.)
+         * `ipv6-addr`. IPv6 IP address. (Entity type in SIEM is `_ip`.)
+         * `mac-addr`. Mac address name. (Entity type in SIEM is `_mac`.)
+         * `process`. Process name. (Entity type in SIEM is `_process`.)
+         * `url`. URL. (Entity type in SIEM is `_url`.)
+         * `user-account`. User ID. (Entity type in SIEM is `_username`.)
        * **source** (string). User-provided text to identify the source of the indicator. For example, `my_custom_source`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the SIEM UI. See [View threat indicator labels in the SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-siem/#view-threat-indicator-labels-in-the-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -279,21 +279,21 @@ The following attributes are required:
        * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.
        * **modified** (string [date-time]). When the object is modified. Timestamp in UTC in RFC3339 format. For example, `2023-05-01T06:13:14.000Z`. This property is only used by STIX Objects that support versioning and represents the time that this particular version of the object was last modified.
        * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). Following are valid values:
-         * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
-         * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
-         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in Cloud SIEM is `_hash`.) Examples:
+         * `domain-name`. Domain name. (Entity type in SIEM is `_domain`.)
+         * `email-addr`. Email address. (Entity type in SIEM is `_email`.)
+         * `file:hashes.'<HASH-TYPE>'`. File hash. (Entity type in SIEM is `_hash`.) Examples:
             * `file:hashes.MD5`
             * `file:hashes.'SHA-1'`
             * `file:hashes.'SHA-2'`
             * `file:hashes.'SHA-3'`
             * `file:hashes.'SHA-256'`
             <br/>If you want to add the hash algorithm, enter it with `=`. For example, `[file:hashes.MD5 = '5d41402abc4b2a76b9719d911017c592']` or `[file:hashes.'SHA-256' = '50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c']`.
-         * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
-         * `ipv4-addr`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `ipv6-addr`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
-         * `mac-addr`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
-         * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
-         * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
-         * `user-account`. User ID or login name. (Entity type in Cloud SIEM is `_username`.)      
+         * `file`. File name. (Entity type in SIEM is `_file`.)
+         * `ipv4-addr`. IPv4 IP address. (Entity type in SIEM is `_ip`.)
+         * `ipv6-addr`. IPv6 IP address. (Entity type in SIEM is `_ip`.)
+         * `mac-addr`. Mac address name. (Entity type in SIEM is `_mac`.)
+         * `process`. Process name. (Entity type in SIEM is `_process`.)
+         * `url`. URL. (Entity type in SIEM is `_url`.)
+         * `user-account`. User ID or login name. (Entity type in SIEM is `_username`.)      
        * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Enter `stix` to specify the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
        * **valid_from** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.

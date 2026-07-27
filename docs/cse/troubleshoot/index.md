@@ -1,12 +1,12 @@
 ---
 slug: /cse/troubleshoot
-title: Troubleshoot Cloud SIEM
-description: Learn how to troubleshoot problems with Cloud SIEM.
+title: Troubleshoot SIEM
+description: Learn how to troubleshoot problems with SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section contains articles to help you troubleshoot problems with Cloud SIEM.
+This section contains articles to help you troubleshoot problems with SIEM.
 
 <div className="box-wrapper" >
 <div className="box smallbox card">

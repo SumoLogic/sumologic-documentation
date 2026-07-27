@@ -1,9 +1,9 @@
 ---
 id: view-manage-entities
 title: View and Manage Entities
-description: The Entities page lists all of the entities in Cloud SIEM and their activity scores.
+description: The Entities page lists all of the entities in SIEM and their activity scores.
 keywords:
-    - Cloud SIEM
+    - SIEM
     - entity
     - entities
 ---
@@ -11,7 +11,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe'; 
 
-This topic has information about the **Entities** page in Cloud SIEM UI, which lists all of the entities in Cloud SIEM and their activity scores, and the **Entities > Details** page, which presents information about a particular entity, including signals and insights associated with the entity.
+This topic has information about the **Entities** page in SIEM UI, which lists all of the entities in SIEM and their activity scores, and the **Entities > Details** page, which presents information about a particular entity, including signals and insights associated with the entity.
 
 The **Entities** page is useful for monitoring entities that are close to having an insight created. On the **Entities > Details** page, you can view signals and insights for an entity, and, as desired, manually create an insight from signals associated with the entity.
 
@@ -24,7 +24,7 @@ Watch this micro lesson to learn more about entities.
 <Iframe url="https://fast.wistia.net/embed/iframe/jq0zuj302u?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Cloud SIEM Entities Video"
+  title="Micro Lesson: SIEM Entities Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -37,11 +37,11 @@ Watch this micro lesson to learn more about entities.
 
 ## About entities
 
-In Cloud SIEM, an entity is a unique actor that a signal fired upon, for example, IP address, hostname, or username.
+In SIEM, an entity is a unique actor that a signal fired upon, for example, IP address, hostname, or username.
 
-When a signal is fired, if an entity doesn’t already exist in Cloud SIEM for the item that the signal fired on, Cloud SIEM creates an entity for it. For more information about entities and signal and insight generation, see [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process).
+When a signal is fired, if an entity doesn’t already exist in SIEM for the item that the signal fired on, SIEM creates an entity for it. For more information about entities and signal and insight generation, see [Insight Generation Process](/docs/cse/get-started-with-siem/insight-generation-process).
 
-For a list of fields that Cloud SIEM considers entities and the entity types they map to, see [Schema: Entity Fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md) in the Cloud SIEM Content Catalog. To create custom entity types, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
+For a list of fields that SIEM considers entities and the entity types they map to, see [Schema: Entity Fields](https://github.com/SumoLogic/siem-content-catalog/blob/master/schema/entity_fields.md) in the SIEM Content Catalog. To create custom entity types, see [Create a Custom Entity Type](/docs/cse/records-signals-entities-insights/create-custom-entity-type/).
 
 :::note
 Entity names have a limit of 512 characters. If an entity's name value is 512 characters or longer, the system discards the log, and as a result, no signal is generated.
@@ -49,7 +49,7 @@ Entity names have a limit of 512 characters. If an entity's name value is 512 ch
 
 ## About the entities list page
 
-[**New UI**](/docs/get-started/sumo-logic-ui). To view entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+[**New UI**](/docs/get-started/sumo-logic-ui). To view entities, in the main Sumo Logic menu select **SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To view entities, click **Entities** at the top of the screen. 
 
@@ -62,7 +62,7 @@ Entity names have a limit of 512 characters. If an entity's name value is 512 ch
 | c | **Check boxes**. Select check boxes to [update multiple entities](#update-multiple-entities). 
 | d | **Entity**. Displays the entity name. |
 | e | **Entity Type**. Shows the entity type and its value.  |
-| f | **Activity Score**. The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
+| f | **Activity Score**. The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
 | g | **Signal Severity Total**. The total amount of signal severity for the entity. |
 | h | **Suppressed Lists**. If an entity is on a suppressed list, that means that signals will not be fired on the entity. |
 | i | **Criticality**. Shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality has not been assigned to an entity, the column contains "default". | 
@@ -77,24 +77,24 @@ the entity appears.
 | Letter | Description |
 |:--|:--|
 | a | **Suppression**. Shows whether or not the entity is currently [suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression). You can use the slider to suppress the entity so that it is excluded from the insight generation process.  |
-| b | **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#run-an-automation-manually-on-entities) available to be run on the entity. |
+| b | **Automations**. Click to view [automations](/docs/cse/automation/automations-in-siem/#run-an-automation-manually-on-entities) available to be run on the entity. |
 | c | **Tags**. Lists any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) assigned to the entity. You can add a new tag, select a tag to assign, or remove a tag from the entity. |
 | d | **Criticality**. An entity’s [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) is a setting that adjusts the severity of signals that fire on the entity, based on a risk factor or other consideration. You can reset the criticality here. |
 | e | **Signal Severity Total**.  The total amount of signal severity for the entity. |
 | f | **Indicators**.  The indicators on the entity, whether from enrichments or threat intelligence. |
 | g | **Metadata**. This section lists the contents of enrichment fields  that were added during record processing. |
 | h | **Network Blocks**.  [Network blocks](/docs/cse/administration/create-use-network-blocks/) for the entity.  |
-| i | **Inventory**. If the selected entity is standard entity type (as opposed to a custom entity type), this area provides selected information about the Inventory object associated with the entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. Cloud SIEM joins inventory data on demand with data from entities in insights data to provide context to signals. |
+| i | **Inventory**. If the selected entity is standard entity type (as opposed to a custom entity type), this area provides selected information about the Inventory object associated with the entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. SIEM joins inventory data on demand with data from entities in insights data to provide context to signals. |
 | j | **Notes**. Contains any notes added to the entity.|
 | k | **Audit Log**. This area will list any audit events that have been logged for the entity. An audit log is generated each time an entity is suppressed or unsuppressed.|
 | l | **Recent Activity**. Provides a count of how many signals or insights included the entity within the last 30 days. Click the plus sign (+) next to **Signals** or **Insights** to expand the list. |
 | m | **Activity**. This tab displays a visualization of signals on the entity over time.The x-axis is time, the y-axis is severity. The icons represent signals.
-| n | **Enrichments** tab. If you use Cloud SIEM’s automation as a service, entity enrichments obtained from Cloud SOAR may be available on this tab.   |
+| n | **Enrichments** tab. If you use SIEM’s automation as a service, entity enrichments obtained from Cloud SOAR may be available on this tab.   |
 | o | **Timeline**. A timeline appears for the entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | p | **Related Entities**. Entities related to the current entity. |
-| q | **Automations**. [Automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) that have been run on the entity. |
+| q | **Automations**. [Automations](/docs/cse/automation/automations-in-siem/#view-results-of-an-automation) that have been run on the entity. |
 | r | **Create Insight**. You can use this option to create an insight on the entity, as described below in [Create an insight](#create-an-insight). |
-| s | The **Current State** section lists signals that were generated for the entity during the current [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an insight. (The detection window is the period over which Cloud SIEM evaluates signals, which is 14 days, by default. The detection window is configured on the **Custom Insights** page in the Cloud SIEM UI.) |
+| s | The **Current State** section lists signals that were generated for the entity during the current [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) that are not already part of an insight. (The detection window is the period over which SIEM evaluates signals, which is 14 days, by default. The detection window is configured on the **Custom Insights** page in the SIEM UI.) |
 
 Below the **Current State** section there may be a **Prior Activity** section. This section lists signals that were generated for the entity prior to the current detection window, and all insights for the entity. 
 
@@ -128,7 +128,7 @@ or criticality for one or more entities.
 
 ### Update entities from the UI
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
 1. Note that there is a check box at the left of each entity row, and one above the entities list. Click the top check box to select all of the entities on the page, or click the check box next to each entity you want to update. 
 1. Note that once you select check boxes for multiple entities, a box slides out showing three options above the list of selected entities. See the instructions for each option below:
    * [Change Tags](#change-tags)
@@ -160,7 +160,7 @@ or criticality for one or more entities.
 
 ### Import entity updates from a CSV file
 
-You can update entities by uploading a .csv file to Cloud SIEM. 
+You can update entities by uploading a .csv file to SIEM. 
 
 #### CSV file format
 
@@ -192,8 +192,8 @@ Note that:
 | `type` | **This field is required for Format 2.**<br/>Identifies the type of entity, one of:<br/>`_command`<br/>`_deployment`<br/>`_domain`<br/>`_email`<br/>`_file`<br/>`_hash`<br/>`_hostname`<br/>`_ip`<br/>`_mac`<br/>`_pod`<br/>`_process`<br/>`_replicaset`<br/>`_resource`<br/>`_useragent`<br/>`_username`<br/>`_url`<br/>`<CustomEntityTypeId>` |
 | `value` | **This field is required for Format 2.**<br/>The value of the entity, for example, for an IP address:<br/>`1.2.3.4` |
 | `sensor_zone` | Identifies the sensor zone for the entity. <br/><br/>Don’t include this column if you are specifying entity sensor zones in the `id` column, as described above. |
-| `suppressed` | When *true*, Cloud SIEM suppresses the entity. |
-| `criticality` | Assigns a criticality to the entity. (An entity’s criticality is a setting that adjusts the severity of signals that fire on the entity, based on a risk factor or other consideration.) You can only specify a criticality that has already been configured in Cloud SIEM. Allowable values:<br/>`default`<br/>`<CustomCriticality>` |
+| `suppressed` | When *true*, SIEM suppresses the entity. |
+| `criticality` | Assigns a criticality to the entity. (An entity’s criticality is a setting that adjusts the severity of signals that fire on the entity, based on a risk factor or other consideration.) You can only specify a criticality that has already been configured in SIEM. Allowable values:<br/>`default`<br/>`<CustomCriticality>` |
 | `tags` | The tags to assign to the target. This column can’t be present if the file contains a `tags_to_add` or `tags_to_remove` column.<br/>Specify a schema key tag as `key:value`.<br/>To assign multiple tags, enclose them in double quotes. For example:<br/>`"<tag>,<tag>,<tag>"` or `"<key>:<value>,<key>:<value>"` |
 | `tags_to_add` | The tag to assign to the target entity. This column can’t be present if the file contains a tags column.<br/>Specify a schema key tag as `key:value`. |
 | `tags_to_remove` | The tag to remove from the target entity. This column can’t be present if the file contains a tags column.<br/>Specify a schema key tag as `key:value`. |

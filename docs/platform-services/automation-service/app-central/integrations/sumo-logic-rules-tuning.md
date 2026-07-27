@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: April 30, 2026***
 
-[Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are a powerful feature, allowing users to extend a Cloud SIEM rule’s match expression by appending additional match logic. This enables extending rules without having to duplicate an existing rule for customization and missing out on possible future improvements from the Sumo Logic Threat Labs team. This feature is a key tool in customizing Sumo Logic’s OOTB rules to individual organizations.
+[Rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/) are a powerful feature, allowing users to extend a SIEM rule’s match expression by appending additional match logic. This enables extending rules without having to duplicate an existing rule for customization and missing out on possible future improvements from the Sumo Logic Threat Labs team. This feature is a key tool in customizing Sumo Logic’s OOTB rules to individual organizations.
 
 ## Actions
 
@@ -52,7 +52,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-rules-tuning-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Cloud SIEM configuration" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-rules-tuning-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic SIEM configuration" width="400"/>
 
 For detailed API documentation, see [Sumo Logic APIs](/docs/api/).
 

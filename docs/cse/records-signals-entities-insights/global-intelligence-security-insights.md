@@ -7,7 +7,7 @@ description: Insight Confidence scores, predicted by Sumo Logic’s Global Intel
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This page describes Global Intelligence for security insights, implemented in Cloud SIEM as Global Confidence Scores. This feature helps security analysts triage and prioritize insights.
+This page describes Global Intelligence for security insights, implemented in SIEM as Global Confidence Scores. This feature helps security analysts triage and prioritize insights.
 
 :::training Micro Lesson
 
@@ -16,7 +16,7 @@ Watch this micro lesson to learn more about Global Intelligence for insights.
 <Iframe url="https://fast.wistia.net/embed/iframe/d5ue1hgvdw?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Cloud SIEM Global Intelligence for Security Insights Video"
+  title="Micro Lesson: SIEM Global Intelligence for Security Insights Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -32,7 +32,7 @@ An insight’s Global Confidence Score (GCS) represents a level of confidence, p
 
 <img src={useBaseUrl('img/cse/closeup.png')} alt="Global Confidence Score example" style={{border: '1px solid gray'}} width="800"/>
 
-The score is generated based on the underlying pattern of signals in an insight. The model compares this pattern to previously observed patterns from insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM customers—so it can generate a confidence score based on the patterns seen at one customer when encountered at another. In addition to leveraging the patterns discovered across the Cloud SIEM installed base, the model customizes scores for insights in your account based on your customized content, including tuned and custom rules.
+The score is generated based on the underlying pattern of signals in an insight. The model compares this pattern to previously observed patterns from insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of SIEM customers—so it can generate a confidence score based on the patterns seen at one customer when encountered at another. In addition to leveraging the patterns discovered across the SIEM installed base, the model customizes scores for insights in your account based on your customized content, including tuned and custom rules.
 
 :::tip Fear not
 All information used by the model is anonymized and no customer-confidential information is processed or retained.

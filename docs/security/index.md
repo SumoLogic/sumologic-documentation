@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Sumo Logic security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR: 
 * **[Logs for Security](/docs/security/additional-security-features/)**<br/>Provides enhanced insight into threat activity via logs. Collect security log and event data from your infrastructure and applications, on-premises and in-cloud. Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 * **Threat detection, investigation, and response**<br/>After you have collected logs for security, you can use them with the following solutions for threat detection, investigation, and response:
-   * **[Cloud SIEM](/docs/cse/)**<br/>Gives security operations center (SOC) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
+   * **[SIEM](/docs/cse/)**<br/>Gives security operations center (SOC) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
    * **[Cloud SOAR](/docs/cloud-soar/)**<br/>Fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
 :::training Sumo Logic Academy
@@ -21,17 +21,17 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 * **Self-paced**: [Security courses](https://learn.sumologic.com/path/sumo-security)
 * **Instructor-led virtual classes**:
-    * [Workshops: Essential Cloud SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-cloud-siem-skills-for-soc-analysts#section-2)
+    * [Workshops: Essential SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-siem-skills-for-soc-analysts#section-2)
     * [Workshops: Automation Workshop](https://www.sumologic.com/learn/training?_workshops=automation-workshop#section-2)
     * [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security#section-2)
-    * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem#section-2)
+    * [Certifications: SIEM](https://www.sumologic.com/learn/training?_certifications=siem#section-2)
 :::
 
 ## Security feature comparison
 
 Following are features available with our security solutions. If you have any questions on availability or a free trial, you can reach out to your Sumo Logic account team.
 
-| Feature | Logs for Security | Cloud SIEM | Cloud SOAR |
+| Feature | Logs for Security | SIEM | Cloud SOAR |
 | :-- | :-- | :-- | :-- |
 | Log collection | &#10003; | &#10003; | &#10003; |
 | App catalog (out-of-the-box analytics) | &#10003; | &#10003; | &#10003; |
@@ -69,10 +69,10 @@ Following are features available with our security solutions. If you have any qu
 
 * Blogs:
    * [Lessons from the 2025 Security Operations Insights report](https://www.sumologic.com/blog/lessons-from-2025-security-operations-insights-report)
-   * [Balancing act: Sumo Logic vs. Splunk in the high-wire world of modern security](https://www.sumologic.com/blog/sumo-logic-cloud-siem-vs-splunk-es)
+   * [Balancing act: Sumo Logic vs. Splunk in the high-wire world of modern security](https://www.sumologic.com/blog/sumo-logic-siem-vs-splunk-es)
 * Demos: 
-   * [Cloud SIEM: Complete threat detection, investigation and response demo](https://www.sumologic.com/demo/complete-threat-detection-investigation-and-response-demo)
-   * [Cloud SIEM: Heads up display (HUD)](https://www.sumologic.com/demo/heads-up-display-hud)
-   * [Cloud SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
-   * [Cloud SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)
-   * [Cloud SIEM: MITRE ATT&CK™ coverage explorer](https://www.sumologic.com/demo/mitre-attack-coverage-explorer)
+   * [SIEM: Complete threat detection, investigation and response demo](https://www.sumologic.com/demo/complete-threat-detection-investigation-and-response-demo)
+   * [SIEM: Heads up display (HUD)](https://www.sumologic.com/demo/heads-up-display-hud)
+   * [SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
+   * [SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)
+   * [SIEM: MITRE ATT&CK™ coverage explorer](https://www.sumologic.com/demo/mitre-attack-coverage-explorer)

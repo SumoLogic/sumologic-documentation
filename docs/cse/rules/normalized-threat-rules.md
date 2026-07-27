@@ -2,16 +2,16 @@
 id: normalized-threat-rules
 title: Normalized Threat Rules
 sidebar_label: Normalized Threat Rules
-description: Cloud SIEM's built-in threat rules pass alerts from a security product to the signal generation process, and are normalized work across multiple security products.
+description: SIEM's built-in threat rules pass alerts from a security product to the signal generation process, and are normalized work across multiple security products.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about Cloud SIEM’s built-in normalized threat rules.
+This topic has information about SIEM’s built-in normalized threat rules.
 
-To get a CSV of normalized threat rules, see [Rules - Useful CSVs](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md#useful-csvs) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md). The CSV includes information about the log mappers that participate in normalized threat rules and the data sources the rules support.
+To get a CSV of normalized threat rules, see [Rules - Useful CSVs](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/README.md#useful-csvs) in the [SIEM Content Catalog](https://github.com/SumoLogic/siem-content-catalog/blob/master/README.md). The CSV includes information about the log mappers that participate in normalized threat rules and the data sources the rules support.
 
-## Normalized threat rules pass alerts to Cloud SIEM
+## Normalized threat rules pass alerts to SIEM
 
 The first key fact about normalized threat rules is this: they exist to process messages that describe a security event that has already
 occurred. 
@@ -48,15 +48,15 @@ Log sources that issue intrusion-related messages include:
 * Symantec Endpoint Protection Exploit Prevention/HIPS
 * IPS/IDS Appliances
 
-Cloud SIEM provides the following normalized intrusion rules:
+SIEM provides the following normalized intrusion rules:
 
-* [Intrusion Scan - Targeted](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00514.md) - This rule looks for an intrusion product detecting an internal IP sending different exploits to another external IP in a short timeframe.
-* [Intrusion Sweep](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00515.md) - This rule looks for an intrusion product detecting an internal IP sending the same exploit to multiple internal IPs in a short timeframe.
-* [High Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00666.md) - This rule looks for an intrusion product detecting a high severity intrusion signature sourcing from an internal IP.
-* [Critical Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00513.md) - This rule looks for an intrusion product detecting a critical severity intrusion signature sourcing from an internal IP.
-* [Informational Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00669.md) - This rule looks for an intrusion product detecting an informational severity intrusion signature sourcing from an internal IP.
-* [Low Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00668.md) - This rule looks for an intrusion product detecting a low severity intrusion signature sourcing from an internal IP. 
-* [Medium Severity Intrusion Signature](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00667.md) - This rule looks for an intrusion product detecting a medium severity intrusion signature sourcing from an internal IP.
+* [Intrusion Scan - Targeted](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/THRESHOLD-S00514.md) - This rule looks for an intrusion product detecting an internal IP sending different exploits to another external IP in a short timeframe.
+* [Intrusion Sweep](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/THRESHOLD-S00515.md) - This rule looks for an intrusion product detecting an internal IP sending the same exploit to multiple internal IPs in a short timeframe.
+* [High Severity Intrusion Signature](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00666.md) - This rule looks for an intrusion product detecting a high severity intrusion signature sourcing from an internal IP.
+* [Critical Severity Intrusion Signature](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00513.md) - This rule looks for an intrusion product detecting a critical severity intrusion signature sourcing from an internal IP.
+* [Informational Severity Intrusion Signature](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00669.md) - This rule looks for an intrusion product detecting an informational severity intrusion signature sourcing from an internal IP.
+* [Low Severity Intrusion Signature](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00668.md) - This rule looks for an intrusion product detecting a low severity intrusion signature sourcing from an internal IP. 
+* [Medium Severity Intrusion Signature](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00667.md) - This rule looks for an intrusion product detecting a medium severity intrusion signature sourcing from an internal IP.
 
 **Requirements for Intrusion Signature rules:**
 
@@ -78,13 +78,13 @@ Log sources that issue malware-related messages include:
 * Trend Micro Antivirus
 * Symantec Endpoint Protection Scanning/Antivirus
 
-Cloud SIEM provides the following normalized malware rules:
+SIEM provides the following normalized malware rules:
 
-* [Malware Outbreak](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00517.md) - Same malware signature on multiple hosts in a short timeframe.
-* [Persistent Malware Infection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00520.md) - Single host with multiple malware infections with the same signature in a short timeframe.
-* [Malware Not Cleaned](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00518.md) - Malware the antivirus fails to clean.
-* [Malware Cleaned](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00519.md) - Malware the antivirus successfully cleans.
-* [Antivirus Ransomware Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00516.md) - Malware determined to be ransomware based on the signature/virus name.
+* [Malware Outbreak](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/THRESHOLD-S00517.md) - Same malware signature on multiple hosts in a short timeframe.
+* [Persistent Malware Infection](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/THRESHOLD-S00520.md) - Single host with multiple malware infections with the same signature in a short timeframe.
+* [Malware Not Cleaned](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00518.md) - Malware the antivirus fails to clean.
+* [Malware Cleaned](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00519.md) - Malware the antivirus successfully cleans.
+* [Antivirus Ransomware Detection](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00516.md) - Malware determined to be ransomware based on the signature/virus name.
 
 ### direct
 
@@ -99,6 +99,6 @@ Log sources that issue behavior-related messages include:
 * Varonis UBA
 * G Suite Alert Center    
 
-Cloud SIEM provides the following normalized direct rule:
+SIEM provides the following normalized direct rule:
 
-* [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) - Passes through an alert from an endpoint security product and adjusts the severity accordingly based on the severity provided in the log.
+* [Normalized Security Signal](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/MATCH-S00402.md) - Passes through an alert from an endpoint security product and adjusts the severity accordingly based on the severity provided in the log.

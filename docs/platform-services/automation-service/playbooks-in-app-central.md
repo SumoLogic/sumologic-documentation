@@ -101,7 +101,7 @@ Playbook to be executed when an antivirus repeat infection has been found.
 
 *Malware*
 
-Repeated infection detected by AV and notified into Cloud SIEM. Enrichment is done from various sources and appropriate containment is applied. 
+Repeated infection detected by AV and notified into SIEM. Enrichment is done from various sources and appropriate containment is applied. 
 
 <SamplePlaybooks/>
 
@@ -1045,7 +1045,7 @@ Use case for phishing analysis with VirusTotal.
 
 *Malicious Activity*
 
-Use case for investigation of a Malicious file with Sumo Logic Cloud SIEM. The playbook collects multiple pieces of information regarding the original file, in case this is malicious, and creates a task if the score is higher than a specific value to review the incident or escalate to L2. 
+Use case for investigation of a Malicious file with Sumo Logic SIEM. The playbook collects multiple pieces of information regarding the original file, in case this is malicious, and creates a task if the score is higher than a specific value to review the incident or escalate to L2. 
 
 <SamplePlaybooks/>
 
@@ -1053,7 +1053,7 @@ Use case for investigation of a Malicious file with Sumo Logic Cloud SIEM. The p
 
 *Malware*
 
-Use case for investigation of a brute force attack with Sumo Logic Cloud SIEM. Collecting multiple pieces of information like the username under attack, the attempts, and the source IP, using multiple conditions can determine the severity and create a final task for the SOC analyst including all the information collected. 
+Use case for investigation of a brute force attack with Sumo Logic SIEM. Collecting multiple pieces of information like the username under attack, the attempts, and the source IP, using multiple conditions can determine the severity and create a final task for the SOC analyst including all the information collected. 
 
 <SamplePlaybooks/>
 
@@ -1061,9 +1061,9 @@ Use case for investigation of a brute force attack with Sumo Logic Cloud SIEM. C
 
 *General*
 
-Sending O365 type insights from Cloud SIEM. Via Cloud SIEM daemon from SOAR, download the insights with at least one signal called "Impossible Travel - Successful" OR the name is "INSIGHT-245 - O365 - User Successful Logged In Outside Italy" from the field "Description" of the JSON returned by the daemon. 
+Sending O365 type insights from SIEM. Via SIEM daemon from SOAR, download the insights with at least one signal called "Impossible Travel - Successful" OR the name is "INSIGHT-245 - O365 - User Successful Logged In Outside Italy" from the field "Description" of the JSON returned by the daemon. 
 
-Distinguish from which Cloud SIEM based on the label custom field entity_id, severity, insight creation time, or insight signals. Relative incident creation, a custom field that tracks whether an incident or false positive based on the playbook results. Start playbook that enriches the IP and email entity. Via Libraesva, in success travel activity you have the entity as given. Send notification via email in the event of an incident based on the analyst's choice (soc@xecurity.it). Povides a condition for sending an email based on enrichment results.
+Distinguish from which SIEM based on the label custom field entity_id, severity, insight creation time, or insight signals. Relative incident creation, a custom field that tracks whether an incident or false positive based on the playbook results. Start playbook that enriches the IP and email entity. Via Libraesva, in success travel activity you have the entity as given. Send notification via email in the event of an incident based on the analyst's choice (soc@xecurity.it). Povides a condition for sending an email based on enrichment results.
 
 <SamplePlaybooks/>
 
@@ -1081,7 +1081,7 @@ This playbook is built to prevent a potentially compromised host. Searching the 
 
 *General*
 
-This playbook was built to prevent lateral movement attacks. Getting the insight details from Cloud SIEM, the playbook will be doing multiple checks filtering the results by IP, username, and hostname. Once the propriety queries are done, a final task will be created to review the incident details and a question will be created to ask the SOC analysts if any asset belongs to the SOC's critical asset list. 
+This playbook was built to prevent lateral movement attacks. Getting the insight details from SIEM, the playbook will be doing multiple checks filtering the results by IP, username, and hostname. Once the propriety queries are done, a final task will be created to review the incident details and a question will be created to ask the SOC analysts if any asset belongs to the SOC's critical asset list. 
 
 <SamplePlaybooks/>
 
@@ -1171,7 +1171,7 @@ This playbook is useful to conduct multiple threat hunting activities on various
 
 *Intrusion*
 
-This playbook remediates a possible SolarWinds exploitation leveraging the backdoors SUNBURST and SUPERNOVA. Playbook receives alerts from Sumo Logic Cloud SIEM monitoring the network traffic and all security events into SolarWinds.
+This playbook remediates a possible SolarWinds exploitation leveraging the backdoors SUNBURST and SUPERNOVA. Playbook receives alerts from Sumo Logic SIEM monitoring the network traffic and all security events into SolarWinds.
 
 If the traffic contains the known C&C server "avsvmcloud.com" or the Orion software is not updated, the incident is confirmed as a TRUE POSITIVE and the mitigation starts. It analyzes SolarWinds compromised hosts and powers down network interfaces, ending with a network block containment action.
 
@@ -1804,7 +1804,7 @@ This playbook enriches IP addresses with reputation information gathered from Ab
 
 *Intrusion*
 
-This playbook was built to prevent intrusion attempts. Getting the insight details from Cloud SIEM, the playbook performs multiple checks filtering the results by IP, user activity, and geolocation. Once the initial enrichment is done, the event can be processed with a logical condition for further investigation and user choice for containment activities or marked as a false positive alert.
+This playbook was built to prevent intrusion attempts. Getting the insight details from SIEM, the playbook performs multiple checks filtering the results by IP, user activity, and geolocation. Once the initial enrichment is done, the event can be processed with a logical condition for further investigation and user choice for containment activities or marked as a false positive alert.
 
 ### 237 - Suspicious User Connection
 
@@ -1812,7 +1812,7 @@ This playbook was built to prevent intrusion attempts. Getting the insight detai
 
 This playbook was built to prevent lateral movement in your network.
 
-Getting the insight details from Cloud SIEM, the playbook performs multiple checks for the source IP, from where the connection was established, and the system attributes of the host. After the initial phase, the playbook sets a logical condition that splits the process depending on whether user data is available or not. If user data is available for investigation, the user details will be collected for additional processing and confirmation of the established connection. If there is no data on the user, the playbook creates a ticket to forward the incident to the security operations team.
+Getting the insight details from SIEM, the playbook performs multiple checks for the source IP, from where the connection was established, and the system attributes of the host. After the initial phase, the playbook sets a logical condition that splits the process depending on whether user data is available or not. If user data is available for investigation, the user details will be collected for additional processing and confirmation of the established connection. If there is no data on the user, the playbook creates a ticket to forward the incident to the security operations team.
 
 It is worth noting that the playbook executes an extended query for the IP and sets user choice to determine the final stage of the incident response, update the ticket as a valid connection established by the user, and do an extensive manual investigation of the event. If user data is available in AWS IAM, the playbook performs additional enrichment and processes the containment through user choice if needed.
 
@@ -2304,7 +2304,7 @@ This is an essential playbook that enriches incidents with the Alpha Mountain te
 
 This playbook enriches suspicious events of possible unauthorized access in AWS. It activates when an external IP adds a user to a privileged group (domain admins or similar).
 
-Starting with a Sumo Logic Cloud SIEM insight, a high fidelity alert, the playbook begins by saving the access logs in AWS and the duplicated IPs from the events in a CSV file. Once all the IOCs contained within the alert from the original Cloud SIEM insight have been collected, the playbook carries out two different IP reputation checks using XForce and AbuseIPDB and obtains two different results using Whois and XForce. Next, the playbook automatically gets the user groups and attributes of the affected user from AWS IAM and automatically analyzes what is collected through a machine choice action.
+Starting with a Sumo Logic SIEM insight, a high fidelity alert, the playbook begins by saving the access logs in AWS and the duplicated IPs from the events in a CSV file. Once all the IOCs contained within the alert from the original SIEM insight have been collected, the playbook carries out two different IP reputation checks using XForce and AbuseIPDB and obtains two different results using Whois and XForce. Next, the playbook automatically gets the user groups and attributes of the affected user from AWS IAM and automatically analyzes what is collected through a machine choice action.
 
 If the IP reputation has a negative score, the analyst can immediately notify the SOC team and AWS IAM administrator about the compromised user, creating a personalized note with all the details about the user. Finally, through user choice, which is an analyst decision, you can perform automatic containment, orchestrating AWS IAM and Checkpoint Firewall. The first allows you to remove the user from the group and delete the login profile and the access key, while the second allows you to block the external IP. Alternatively, you can decide to apply manual containment, and an automatically assigned task will appear in the SecOps Dashboard of the analyst. If the IP was considered non-harmful, the SOC team would be notified, and the incident will be marked as a False Positive.
 
@@ -2444,7 +2444,7 @@ This playbook executes a port scan automatically using Kali. Once it completes t
 
 *CTI*
 
-This playbook allows you to harvest information from a Cloud SIEM insight and gather data about the entities involved in an incident from different sources. It also enables you to add IOCs information as enrichment to the Cloud SIEM insight if that information is available. 
+This playbook allows you to harvest information from a SIEM insight and gather data about the entities involved in an incident from different sources. It also enables you to add IOCs information as enrichment to the SIEM insight if that information is available. 
 
 <SamplePlaybooks/>
 
@@ -2654,7 +2654,7 @@ This playbook allows users to retrieve information about a specific SLUG (incide
 
 *Brute Force*
 
-This playbook investigates a suspected brute force attack with Sumo Logic Cloud SIEM. By obtaining an insight from Cloud SIEM, if the number of attempts surpasses the pre-selected threshold, the playbook prompts you with user choice that allows you to stop the EC2 instance and manually review the incident or send an email notification. 
+This playbook investigates a suspected brute force attack with Sumo Logic SIEM. By obtaining an insight from SIEM, if the number of attempts surpasses the pre-selected threshold, the playbook prompts you with user choice that allows you to stop the EC2 instance and manually review the incident or send an email notification. 
 
 <SamplePlaybooks/>
 
@@ -3361,7 +3361,7 @@ This playbook performs phishing analysis with VirusTotal. The first condition ch
 
 *Malicious Activity*
 
-This playbook helps investigate a malicious file with Sumo Logic Cloud SIEM. The playbook collects multiple pieces of information about the file. If the severity score exceeds a specified value, it proceeds with an incident review or escalates the incident to L2. If the conditions for generating insight are absent, the playbook won't execute.
+This playbook helps investigate a malicious file with Sumo Logic SIEM. The playbook collects multiple pieces of information about the file. If the severity score exceeds a specified value, it proceeds with an incident review or escalates the incident to L2. If the conditions for generating insight are absent, the playbook won't execute.
 
 <SamplePlaybooks/>
 
@@ -3369,7 +3369,7 @@ This playbook helps investigate a malicious file with Sumo Logic Cloud SIEM. The
 
 *Malware*
 
-This playbook works best for advanced investigation of a brute force attack with Sumo Logic Cloud SIEM. The playbook starts by validating Cloud SIEM insight details and notifying L1 analysts if manual intervention is needed. It then collects multiple pieces of information (such as the username under attack, the number of attempts, and the source IP) after which it determines the severity level using multiple conditions. Lastly, the playbook creates a final task for the SOC analysts, providing all the collected information.
+This playbook works best for advanced investigation of a brute force attack with Sumo Logic SIEM. The playbook starts by validating SIEM insight details and notifying L1 analysts if manual intervention is needed. It then collects multiple pieces of information (such as the username under attack, the number of attempts, and the source IP) after which it determines the severity level using multiple conditions. Lastly, the playbook creates a final task for the SOC analysts, providing all the collected information.
 
 <SamplePlaybooks/>
 
@@ -3377,7 +3377,7 @@ This playbook works best for advanced investigation of a brute force attack with
 
 *General*
 
-This playbook deals with O365-related insights generated in Sumo Logic Cloud SIEM Enterprise. It includes event information validation, IP and email-entity enrichment, and email notification in case of an incident (based on the analyst's decision).
+This playbook deals with O365-related insights generated in Sumo Logic SIEM Enterprise. It includes event information validation, IP and email-entity enrichment, and email notification in case of an incident (based on the analyst's decision).
 
 <SamplePlaybooks/>
 
@@ -3393,7 +3393,7 @@ This is an advanced version of the basic playbook for phishing use cases. Parsin
 
 *Malware*
 
-This playbook was built to prevent lateral movement attacks. When it receives insight details from Cloud SIEM, the playbook performs multiple checks filtering the results by IP, username, and hostname. Once it finishes with these queries, the playbook creates a final task, a review of the incident details. It then prompts the SOC analysts to determine whether any assets belong to the SOC's critical asset list. In this advanced version of the playbook, if no IOCs are found in the insight, the playbook skips all the actions.
+This playbook was built to prevent lateral movement attacks. When it receives insight details from SIEM, the playbook performs multiple checks filtering the results by IP, username, and hostname. Once it finishes with these queries, the playbook creates a final task, a review of the incident details. It then prompts the SOC analysts to determine whether any assets belong to the SOC's critical asset list. In this advanced version of the playbook, if no IOCs are found in the insight, the playbook skips all the actions.
 
 <SamplePlaybooks/>
 
@@ -3420,7 +3420,7 @@ This playbook allows you to submit a file for analysis and download the relevant
 This playbook is built to prevent host compromise more effectively and efficiently. After searching AWS events, the playbook presents users with three options:
 * If there are suspicious events, it performs an additional query to collect more information and gives SOC analysts the possibility to quarantine any infected hosts.
 * If the AWS events show multiple login attempts, the playbook runs a nested playbook to set a new password in Active Directory.
-* If, in a hybrid environment, it finds suspicious data (forwarded from Cloud SIEM) that looks like a lateral movement, the playbook activates another nested playbook
+* If, in a hybrid environment, it finds suspicious data (forwarded from SIEM) that looks like a lateral movement, the playbook activates another nested playbook
 
 <SamplePlaybooks/>
 
@@ -3436,7 +3436,7 @@ This is an essential playbook for the AWS Athena integration. It starts with the
 
 *Malware*
 
-This playbook helps you stop lateral movement attacks using Sumo Logic Cloud SIEM. The advanced version of the playbook improves the basic (essential) workflow. Getting insight details from Cloud SIEM, the playbook does multiple checks, filtering the results by IP, username, and hostname. Once it finishes the queries, it creates a final task to review incident details and asks the SOC analysts whether any of the involved assets belong to the SOC's critical asset list.
+This playbook helps you stop lateral movement attacks using Sumo Logic SIEM. The advanced version of the playbook improves the basic (essential) workflow. Getting insight details from SIEM, the playbook does multiple checks, filtering the results by IP, username, and hostname. Once it finishes the queries, it creates a final task to review incident details and asks the SOC analysts whether any of the involved assets belong to the SOC's critical asset list.
 
 <SamplePlaybooks/>
 
@@ -3608,208 +3608,208 @@ This playbook searches for a suspicious user inside the Active Directory server.
 
 ### 501 - Send Insight AWS SNS Notification
 
-*Cloud SIEM*
+*SIEM*
 
 Send AWS SNS notification when an insight is created.
 
 ### 502 - Send Insight Email Notification
 
-*Cloud SIEM*
+*SIEM*
 
-Sends an email when an insight is created, if the severity of the insight is high. Intended to be used with the insight creation trigger on Cloud SIEM. Update your Email Address in the Send Email Action.
+Sends an email when an insight is created, if the severity of the insight is high. Intended to be used with the insight creation trigger on SIEM. Update your Email Address in the Send Email Action.
 
 ### 503 - Enrich Entity with CrowdStrike Falcon Intelligence
 
-*Cloud SIEM*
+*SIEM*
 
-Run Search Intelligence Indicators on entity, and post results to Cloud SIEM.
+Run Search Intelligence Indicators on entity, and post results to SIEM.
 
 ### 504 - Enrich Entity with DomainTools
 
-*Cloud SIEM*
+*SIEM*
 
-Run Domain, Email, or IP Reputation (depending on Entity type) with DomainTools, and post results to Cloud SIEM.
+Run Domain, Email, or IP Reputation (depending on Entity type) with DomainTools, and post results to SIEM.
 
 ### 505 - Enrich IP with Geolocation from MaxMind
 
-*Cloud SIEM*
+*SIEM*
 
-Run Geolocate IP, and post results to Cloud SIEM.
+Run Geolocate IP, and post results to SIEM.
 
 ### 506 - Recommend Insight Response
 
-*Cloud SIEM*
+*SIEM*
 
-Send all tags from insight to ChatGPT and ask for recommended steps to respond to the issue, and post results to Cloud SIEM.
+Send all tags from insight to ChatGPT and ask for recommended steps to respond to the issue, and post results to SIEM.
 
 ### 507 - Create PagerDuty Incident for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 Create a PagerDuty incident when an insight is created.
 
 ### 508 - Enrich Entity with PowerShell GreyNoise
 
-*Cloud SIEM*
+*SIEM*
 
-Uses local Windows server Grey Noise script to enrich an entity, and posts results to Cloud SIEM.
+Uses local Windows server Grey Noise script to enrich an entity, and posts results to SIEM.
 
 ### 509 - Enrich Entity with PowerShell SentinelOne
 
-*Cloud SIEM*
+*SIEM*
 
-Uses local Windows server SentinelOne script to enrich an entity, and posts results to Cloud SIEM.
+Uses local Windows server SentinelOne script to enrich an entity, and posts results to SIEM.
 
 ### 510 - Enrich Entity with PowerShell User Query
 
-*Cloud SIEM*
+*SIEM*
 
-Uses local Windows server "query user" script to enrich an entity, and posts results to Cloud SIEM.
+Uses local Windows server "query user" script to enrich an entity, and posts results to SIEM.
 
 
 ### 511 - Enrich Entity with PowerShell CrowdStrike
 
-*Cloud SIEM*
+*SIEM*
 
-Uses local Windows server CrowdStrike script to enrich an entity, and posts results to Cloud SIEM.
+Uses local Windows server CrowdStrike script to enrich an entity, and posts results to SIEM.
 
 ### 512 - Enrich Entity with PowerShell CarbonBlack
 
-*Cloud SIEM*
+*SIEM*
 
-Uses local Windows server CarbonBlack script to enrich an entity, and posts results to Cloud SIEM.
+Uses local Windows server CarbonBlack script to enrich an entity, and posts results to SIEM.
 
 ### 513 - Enrich Entity with PowerShell Whois
 
-*Cloud SIEM*
+*SIEM*
 
-Uses local Windows server whois script to enrich an entity, and posts results to Cloud SIEM.
+Uses local Windows server whois script to enrich an entity, and posts results to SIEM.
 
 ### 514 - Enrich Entity with PowerShell nslookup
 
-*Cloud SIEM*
+*SIEM*
 
-Uses local Windows server nslookup script to enrich an entity, post results to Cloud SIEM.
+Uses local Windows server nslookup script to enrich an entity, post results to SIEM.
 
 ### 515 - Enrich Entity with Recorded Future
 
-*Cloud SIEM*
+*SIEM*
 
-Run Domain, file, IP, or URL reputation (depending on Entity type), and post results to Cloud SIEM.
+Run Domain, file, IP, or URL reputation (depending on Entity type), and post results to SIEM.
 
 ### 516 - Enrich Hash with SentinelOne
 
-*Cloud SIEM*
+*SIEM*
 
-Run hash reputation on entity, and post results to Cloud SIEM.
+Run hash reputation on entity, and post results to SIEM.
 
 ### 517 - Create ServiceNow Ticket for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 Create a ServiceNow Ticket when an insight is created.
 
 ### 518 - Update ServiceNow Ticket for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 When an insight is updated, please make sure to update the assignee of the ServiceNow Ticket.
 
 ### 519 - Send Insight Slack Notification
 
-*Cloud SIEM*
+*SIEM*
 
-Create a new Slack Channel when an insight is created and send a Slack message if the severity of the insight is HIGH. Intended to be used with the insight creation trigger on Cloud SIEM.
+Create a new Slack Channel when an insight is created and send a Slack message if the severity of the insight is HIGH. Intended to be used with the insight creation trigger on SIEM.
 
 ### 520 - Enrich Entity with Log Search
 
-*Cloud SIEM*
+*SIEM*
 
-Perform a log search for activity by the entity within the last 3 hours across all log sources, and post results to Cloud SIEM.
+Perform a log search for activity by the entity within the last 3 hours across all log sources, and post results to SIEM.
 
 ### 521 - Update Match List
 
-*Cloud SIEM*
+*SIEM*
 
 Add specified entity to the specified Match List.
 
 ### 522 - Create Jira Issue for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 Create a Jira issue when an insight is created.
 
 ### 523 - Update Jira Issue for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 Update Jira issue (Status, Priority) when an insight is updated.
 
 ### 524 - Enrich IP Address with GreyNoise
 
-*Cloud SIEM*
+*SIEM*
 
-Run Context IP Lookup on entity, and post results to Cloud SIEM.
+Run Context IP Lookup on entity, and post results to SIEM.
 
 ### 525 - Enrich Entity with Jamf
 
-*Cloud SIEM*
+*SIEM*
 
-Get Computer Details on entity, and post results to Cloud SIEM.
+Get Computer Details on entity, and post results to SIEM.
 
 ### 526 - Send Insight Teams Notification
 
-*Cloud SIEM*
+*SIEM*
 
 Send a Team notification when an insight is created.
 
 ### 527 - Enrich Entity with VirusTotal
 
-*Cloud SIEM*
+*SIEM*
 
-Run Domain, file, IP, or URL reputation (depending on Entity type), and post results to Cloud SIEM.
+Run Domain, file, IP, or URL reputation (depending on Entity type), and post results to SIEM.
 
 ### 528 - Create ZenDesk Ticket for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 Create a ZenDesk ticket when an insight is created.
 
 ### 529 - Update ZenDesk Ticket for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 Update Priority and Status of ZenDesk ticket when an insight is updated.
 
 ### 530 - Get Mitre Mitigations for Insight
 
-*Cloud SIEM*
+*SIEM*
 
 Retrieve list of mitigations recommended for the tactics an techniques tagged on the given insight.
 
 ### 531 - Example Insight full Enrichment
 
-*Cloud SIEM*
+*SIEM*
 
 Automatically chooses the best technology to enrich all entities of the insight. Based on the results, sends an email, a Slack message, or opens an incident in PagerDuty.
 
 ### 532 - Example Entity full Enrichment
 
-*Cloud SIEM*
+*SIEM*
 
 Automatically chooses the best technology to enrich an entity. Based on the results, sends an email, a Slack message, or opens an incident in PagerDuty.
 
 ### 533 - Example Involved Entities full Enrichment
 
-*Cloud SIEM*
+*SIEM*
 
 Automatically chooses the best technology to enrich an entity. Based on the results, sends an email, a Slack message, or opens an incident in PagerDuty.
 
 ### 534 - Enrich Entity with AlienVault OTX
 
-*Cloud SIEM*
+*SIEM*
 
-Run Domain, file, IP, or URL reputation and post results to Cloud SIEM.
+Run Domain, file, IP, or URL reputation and post results to SIEM.
 
 ### 535 - Application Latency Playbook
 
@@ -3868,14 +3868,14 @@ This playbook was created in order to find possible vulnerabilities and remediat
 *General*
 
 This playbook was created to find possible vulnerabilities and fix them, using Sysdig Secure.
-After receiving the Alert from Cloud SIEM, a condition verifies the information received. If there are some problematic parameters, the playbook proceeds to obtain the vulnerability result and, thanks to another condition, an automatic containment action will create a new alert. If nothing is found, an email will be sent to notify the management team, giving the user the option to manually resolve the alert.
+After receiving the Alert from SIEM, a condition verifies the information received. If there are some problematic parameters, the playbook proceeds to obtain the vulnerability result and, thanks to another condition, an automatic containment action will create a new alert. If nothing is found, an email will be sent to notify the management team, giving the user the option to manually resolve the alert.
 
 ### 545 - Resolution of Sysdig Alerts
 
 *General*
 
 This playbook was created to find possible vulnerabilities and fix them, using Sysdig Secure.
-After receiving the initial alert from Cloud SIEM, if the alert is related to AWS EKS the playbook will be executed. Otherwise an email will be sent notifying you that it is not an AWS EKS alert and a user choice allows to resolve the warning manually.
+After receiving the initial alert from SIEM, if the alert is related to AWS EKS the playbook will be executed. Otherwise an email will be sent notifying you that it is not an AWS EKS alert and a user choice allows to resolve the warning manually.
 
 ### 546 - Resolution of Sysdig Alerts - AWS EKS and AWS Nodes
 

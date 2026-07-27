@@ -10,8 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 When a playbook is run, a payload is passed from the initial object to the playbook (for example, from an alert, entity, or insight). The variables in the payload can be assigned to parameters and used as inputs for different actions in the playbook. 
 
 You select the initial object to use for the payload when you [create a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook). In the **Add one or more params as a playbook input** field, you select the kind of trigger that will execute the playbook: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
-    * **Insight**. An [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
-    * **Entity**. An [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
+    * **Insight**. An [insight](/docs/cse/get-started-with-siem/about-cse-insight-ui/) from an [automation in SIEM](/docs/cse/automation/automations-in-siem/).
+    * **Entity**. An [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in SIEM](/docs/cse/automation/automations-in-siem/).
     * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
     * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-playbook-node-to-a-playbook). You can also select this option if you want to pass a custom payload from an alert.
     * Leave blank if the trigger will be a Cloud SOAR [incident or triage](/docs/cloud-soar/incidents-triage). 
@@ -153,8 +153,8 @@ Following are examples of payloads from different trigger types:
 
 ### View an entity payload
 
-1. Open an [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
-1. Click the **Automations** button at the top of the entity details page to view the automations on the entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automation-on-entity-in-cloud-siem.png')} alt="Automation on an Entity in Cloud SIEM" style={{border: '1px solid gray'}} width="800"/>
+1. Open an [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-siem)).
+1. Click the **Automations** button at the top of the entity details page to view the automations on the entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automation-on-entity-in-siem.png')} alt="Automation on an Entity in SIEM" style={{border: '1px solid gray'}} width="800"/>
 1. Click **View Playbook** on an automation. The automation's playbook opens in the Automation Service. 
 1. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/entity-playbook.png')} alt="Open playbook payload" style={{border: '1px solid gray'}} width="800"/> <br/>The entity payload appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/entity-payload.png')} alt="Entity payload" style={{border: '1px solid gray'}} width="800"/>
 
@@ -176,8 +176,8 @@ Following are examples of payloads from different trigger types:
 | `sensorZone` ​| [Sensor zone](/docs/cse/administration/using-sensor-zones/) for the entity. ​|
 | `criticality` | The [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) of the entity. |
 | `isSuppressed` | Whether the [entity is suppressed](/docs/cse/records-signals-entities-insights/about-signal-suppression/#suppress-by-entity). |
-| `activityScore` | The entity’s [activity score](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#understanding-entity-activity-scores). |
-| `recentSignalSeverity` | The most recent [severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity) of the signal that the entity appeared on. |
+| `activityScore` | The entity’s [activity score](/docs/cse/get-started-with-siem/insight-generation-process/#understanding-entity-activity-scores). |
+| `recentSignalSeverity` | The most recent [severity](/docs/cse/get-started-with-siem/insight-generation-process/#about-insight-severity) of the signal that the entity appeared on. |
 
 ### Entity payload example
 
@@ -206,7 +206,7 @@ Following are examples of payloads from different trigger types:
 
 ### View an insight payload
 
-1. Open an [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
+1. Open an [insight](/docs/cse/get-started-with-siem/about-cse-insight-ui/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-siem)).
 1. Click the **Automations** button at the top of the insight details page to view the automations on the insight.  <br/><img src={useBaseUrl('img/platform-services/automation-service/insight-automation.png')} alt="Automations on an insight" style={{border: '1px solid gray'}} width="800"/>
 1. Click **View Playbook** on an automation. The automation's playbook opens in the Automation Service.  
 1. To view the playbook's payload, click **>** to the right of the playbook name. <br/><img src={useBaseUrl('img/platform-services/automation-service/insight-playbook.png')} alt="Insight playbook" style={{border: '1px solid gray'}} width="800"/> <br/>The insight payload appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/insight-payload.png')} alt="Insight payload" style={{border: '1px solid gray'}} width="800"/>
@@ -215,7 +215,7 @@ Following are examples of payloads from different trigger types:
 
 | Variable | Description |
 | :-- | :-- |
-| `​​id` | The unique ID of the [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#insight-details-page) whose information is provided in the payload.
+| `​​id` | The unique ID of the [insight](/docs/cse/get-started-with-siem/about-cse-insight-ui/#insight-details-page) whose information is provided in the payload.
 | `name` | The name of the insight. |
 | `tags` | [Tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) attached to the insight. |
 | `orgId` | The ID of the Sumo Logic organization where the insight originated. |
@@ -227,7 +227,7 @@ Following are examples of payloads from different trigger types:
 | `signals` |  The Signals in the insight. |
 | `assignee` | The analyst assigned to the incident. |
 | `closedBy` | The analyst who closed the insight (if it’s status is closed). | 
-| `severity` | The [severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity) of the insight. |
+| `severity` | The [severity](/docs/cse/get-started-with-siem/insight-generation-process/#about-insight-severity) of the insight. |
 | `timestamp` | The timestamp when the insight fired. |
 | `assignedTo` | The analyst assigned to the incident. |
 | `confidence` | If sufficient data is available, a [Global Confidence score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight is shown. |

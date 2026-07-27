@@ -60,7 +60,7 @@ With our self-service checkout, you can upgrade to an Essentials plan in just mi
 
 #### Enterprise plans
 
-If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
+If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
 
 ## Sign up through AWS Marketplace
 

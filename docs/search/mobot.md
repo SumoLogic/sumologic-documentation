@@ -320,22 +320,22 @@ Below are examples of how you can phrase queries:
    * `Identify top application categories accessed`
 
 
-#### Cloud SIEM investigation
+#### SIEM investigation
 
-You are a SecOps engineer who uses [Cloud SIEM](/docs/cse/). You are worried about a signal in Cloud SIEM regarding malicious network activity. You want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your Cloud SIEM records are in Sumo Logic.
+You are a SecOps engineer who uses [SIEM](/docs/cse/). You are worried about a signal in SIEM regarding malicious network activity. You want to investigate network records and be proactive. You are under pressure to complete your investigation quickly. While familiar with Sumo Logic, you do not write log queries every day and could use a little help. Fortunately, all your SIEM records are in Sumo Logic.
 
-1. In Mobot, you type the source for Cloud SIEM network records: `_index=sec_record_network`
+1. In Mobot, you type the source for SIEM network records: `_index=sec_record_network`
 1. You know what you are looking for. So, you ask: `Count logs by action. Sort the results.`<br/>
-   <img src={useBaseUrl('img/search/mobot/cloud-siem-1.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="500" />
-1. As soon as you do that, you can look at the suggested follow-up queries, which are curated based on their relevance to this Cloud SIEM source. In this example, we'll pick a suggested query to compare results to the last hour: `Count logs by action. Sort the results. versus the previous 1h`<br/>
-   Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/mobot/cloud-siem-2.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
+   <img src={useBaseUrl('img/search/mobot/siem-1.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="500" />
+1. As soon as you do that, you can look at the suggested follow-up queries, which are curated based on their relevance to this SIEM source. In this example, we'll pick a suggested query to compare results to the last hour: `Count logs by action. Sort the results. versus the previous 1h`<br/>
+   Notice the system translated the suggestion to a log query and rendered results as a bar graph with no user input. <br/><img src={useBaseUrl('img/search/mobot/siem-2.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
 1. Switching to table view, you notice "Malicious" in the search results. So, you add in `Filter results by action contains Malicious` to the query: `Count logs by action. Sort the results. Filter results by action contains Malicious.`<br/>
-   <img src={useBaseUrl('img/search/mobot/cloud-siem-3.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
+   <img src={useBaseUrl('img/search/mobot/siem-3.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
    :::note
    If `Malicious` does not work, try `Malicious*`. Sumo Logic is case sensitive.
    :::
 1. Next, you look for URLs that pertain to the malicious action: `Count logs by action, url, user. Sort the results. Filter results by action contains Malicious.`
-   <img src={useBaseUrl('img/search/mobot/cloud-siem-4.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
+   <img src={useBaseUrl('img/search/mobot/siem-4.png')} alt="Mobot tab" style={{border: '1px solid gray'}} width="800" />
 1. Even though the activity was blocked, you can investigate the affected users in the endpoint records next.
 
 To summarize, you conclude there is malicious activity originating from certain users who need to be investigated further.

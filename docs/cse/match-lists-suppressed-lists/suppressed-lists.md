@@ -6,9 +6,9 @@ description: Suppressed lists allow you to suppress signals that contain a parti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM supports several types of [signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression): suppression of redundant signals, suppression of signals on particular entities, suppression of signals on blocks of IP addresses, and finally the suppressed lists feature, which enables you to suppress signals that contain a particular indicator value in any of the signals’ records.  
+SIEM supports several types of [signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression): suppression of redundant signals, suppression of signals on particular entities, suppression of signals on blocks of IP addresses, and finally the suppressed lists feature, which enables you to suppress signals that contain a particular indicator value in any of the signals’ records.  
 
-You can create suppressed lists from the Cloud SIEM UI or using the Cloud SIEM API. A suppressed list can contain a set of indicators—IPs (CIDR blocks), hostnames, or any other type that you can use in a match list—and then any signal that has a record containing a listed indicator will be suppressed. 
+You can create suppressed lists from the SIEM UI or using the SIEM API. A suppressed list can contain a set of indicators—IPs (CIDR blocks), hostnames, or any other type that you can use in a match list—and then any signal that has a record containing a listed indicator will be suppressed. 
 
 Here are some sample suppressed lists:
 
@@ -46,7 +46,7 @@ Match lists are for when you want to use the existence or absence of an indicato
 
 ## How are suppressed lists used? 
 
-Cloud SIEM uses suppressed lists similar to how it uses [match lists](#suppressed-list-or-match-list). When Cloud SIEM processes an incoming record, it compares the entries in each suppressed list to record fields of the same type as the target column of the suppressed list. For example, given a suppressed list whose target column is **Domain**, Cloud SIEM will compare items on that list only to record fields that contain domains.
+SIEM uses suppressed lists similar to how it uses [match lists](#suppressed-list-or-match-list). When SIEM processes an incoming record, it compares the entries in each suppressed list to record fields of the same type as the target column of the suppressed list. For example, given a suppressed list whose target column is **Domain**, SIEM will compare items on that list only to record fields that contain domains.
 
 Keep in mind:
 * Suppression lists will suppress any signal where the suppressed indicator is present, regardless of the primary entity in the signal.
@@ -54,8 +54,8 @@ Keep in mind:
 * If any entities within the record match items listed in a suppressed list, suppressed signals will be generated for those entities across all rules. Consequently, these signals will not affect the entity's activity score or contribute to insight generation.
 
 When a record contains a value that matches one or more suppressed lists, two fields in the record get populated:
-* `listMatches`. Cloud SIEM adds the names of the suppressed lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the SourceIP address in the “vuln_scanners” suppressed list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
-* `matchedItems`. Cloud SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s SourceIp is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” suppressed list, the `matchedItems` field would look like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
+* `listMatches`. SIEM adds the names of the suppressed lists that the record matched, and the column values of those lists. For example, if an IP address in a record matches the SourceIP address in the “vuln_scanners” suppressed list, the `listMatches` field would look like this: `listMatches: ['vuln_scanners', 'column:SourceIp']`    
+* `matchedItems`. SIEM adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” match list contained an entry “5.6.7.8”, and the record’s SourceIp is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” suppressed list, the `matchedItems` field would look like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within records, you can reference it downstream in both rules and search.
 
@@ -68,9 +68,9 @@ A suppressed list can contain up to 50,000 items.
 
 ## Create a suppressed list from the UI
 
-Perform the steps below to create a suppressed list and add an indicator to it using the Cloud SIEM UI.
+Perform the steps below to create a suppressed list and add an indicator to it using the SIEM UI.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Suppressed Lists**. You can also click the **Go To...** menu at the top of the screen and select **Suppressed Lists**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Suppressed Lists**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Suppressed Lists**. You can also click the **Go To...** menu at the top of the screen and select **Suppressed Lists**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Suppressed Lists**. 
 1. Click **Add Suppressed List**. <br/><img src={useBaseUrl('img/cse/suppressed-lists.png')} alt="Create a suppressed list" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Add Suppressed List** popup, enter the following:
    1. **Name**. Name of the suppressed list.
@@ -128,9 +128,9 @@ specified:
    1. Drag your file onto the import popup, or click to navigate to the file, and then click Import.
    1. Optionally, you can enter an expiration for the indicators on the list. If you do, it will override any expirations that are defined in the file. Enter the expiration in any ISO date format. For example: `2022-12-31`
 
-## Manage suppressed lists with the Cloud SIEM API
+## Manage suppressed lists with the SIEM API
 
-You can use Cloud SIEM APIs to create and manage suppressed lists. For information about Cloud SIEM APIs and how to access the API documentation, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
+You can use SIEM APIs to create and manage suppressed lists. For information about SIEM APIs and how to access the API documentation, see [SIEM APIs](/docs/cse/administration/cse-apis).
 
 ## Best Practices for using suppressed lists
 

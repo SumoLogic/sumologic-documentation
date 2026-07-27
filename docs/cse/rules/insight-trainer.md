@@ -2,9 +2,9 @@
 id: insight-trainer
 title: Improve Rules with Insight Trainer
 sidebar_label: Improve Rules with Insight Trainer
-description: The Cloud SIEM Insight Trainer dashboard recommends adjustments to rules to improve insight generation.  
+description: The SIEM Insight Trainer dashboard recommends adjustments to rules to improve insight generation.  
 keywords:
-  - cloud siem
+  - siem
   - insight trainer
   - rule tuning
 ---
@@ -12,7 +12,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-[Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. 
+[SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#siem---insight-trainer) is a dashboard in the Enterprise Audit - SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. 
 
 :::training Micro Lesson
 
@@ -21,7 +21,7 @@ Watch this micro lesson to learn how to use the Insight Trainer dashboard.
 <Iframe url="https://fast.wistia.net/embed/iframe/9t416emj4w?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Cloud SIEM Insight Trainer Video"
+  title="Micro Lesson: SIEM Insight Trainer Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -51,9 +51,9 @@ You could use trial-and-error to tune rules, but the Insight Trainer dashboard p
 
 The dashboard makes two kinds of suggestions, either a “tunability” score to help you write tuning expressions for entities, or recommendations to change the severity level of rules. We recommend you first look at rules with the highest tunability score and assess the dominant entities (like users and IPs) to write tuning expressions for. Only after implementing tuning expressions do we recommend you adjust rule severities. This [suggested workflow](#suggested-workflow) will give you the best results over time.
 
-## Cloud SIEM - Insight Trainer page
+## SIEM - Insight Trainer page
 
-After installing the [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse), access the [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) dashboard by clicking the [Library](/docs/get-started/library) icon in the left nav bar.
+After installing the [Enterprise Audit - SIEM app](/docs/integrations/sumo-apps/cse), access the [SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#siem---insight-trainer) dashboard by clicking the [Library](/docs/get-started/library) icon in the left nav bar.
 
 The dashboard has the following sections:
 * [Filters](#filters)
@@ -64,7 +64,7 @@ The dashboard has the following sections:
 
 Use the fields at the top of the page to filter the kinds of recommendations you want to view.
 
-<img src={useBaseUrl('img/cse/cloud-siem-insight-trainer-filters.png')} alt="Insight Trainer filters" width="800"/>
+<img src={useBaseUrl('img/cse/siem-insight-trainer-filters.png')} alt="Insight Trainer filters" width="800"/>
 
 1. **minimize**. The types of [insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions) you want to minimize:
    * **False positive**. Display recommendations only for reducing False Positive resolutions.
@@ -87,7 +87,7 @@ The funnel depicts algorithmic insights that remain after filtering insights bas
 
 This panel summarizes the changes to insight resolutions if you implement the recommended rule changes. 
 
-<img src={useBaseUrl('img/cse/cloud-siem-insight-trainer-recommendations-summary.png')} alt="Insight Trainer Recommendations Summary" width="800"/>
+<img src={useBaseUrl('img/cse/siem-insight-trainer-recommendations-summary.png')} alt="Insight Trainer Recommendations Summary" width="800"/>
 
 1. **Total Eligible Insights (prior to optimization)**. The number of insights that could be reduced.
 1. **Optimized Labeled Insights (OLI)**. The number of insights remaining with a resolution label.
@@ -102,7 +102,7 @@ This panel summarizes the changes to insight resolutions if you implement the re
 
 This panel shows the rules recommended for severity changes. 
 
-<img src={useBaseUrl('img/cse/cloud-siem-trainer-recommended-rule-severities.png')} alt="Insight Trainer Recommend Rule Severities" width="800"/>
+<img src={useBaseUrl('img/cse/siem-trainer-recommended-rule-severities.png')} alt="Insight Trainer Recommend Rule Severities" width="800"/>
 
 1. **rule**. The rule recommended to change the severity level for.
 1. **current_severity**. The rule’s current severity level.
@@ -128,4 +128,4 @@ We suggest adjusting rule severities to the recommended levels only after you ha
 
 ## Additional resources
 
-Blog: [Fine-tuning Cloud SIEM detections through machine learning](https://www.sumologic.com/blog/tuning-cloud-siem-machine-learning)
+Blog: [Fine-tuning SIEM detections through machine learning](https://www.sumologic.com/blog/tuning-siem-machine-learning)

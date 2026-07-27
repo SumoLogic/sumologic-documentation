@@ -73,7 +73,7 @@ You can create a data masking rule of your own from scratch by following the ins
 | **Timestamp** | The following timestamp fields are not eligible for data masking: `_messageTime`, `_receiptTime`, and `_searchableTime`. |
 | **Metadata fields** | The following system metadata fields are not eligible for data masking: `_size`, `_collectorid`, `_orgid`, and `_sourceid`. |
 | **Lookup UI page** | Results displayed on the Lookup UI page are always shown unmasked. |
-| **Cloud SIEM (CSE) pages** | Data masking is not applied to any Cloud SIEM pages. |
+| **SIEM (CSE) pages** | Data masking is not applied to any SIEM pages. |
 | **Internal system queries** | Data masking is not applied to queries running under internal caller modules or system user contexts. |
 | **Query assist suggestions** | Masking is not applied to query-assist suggestions, regardless of the user's role or data access level. |
 

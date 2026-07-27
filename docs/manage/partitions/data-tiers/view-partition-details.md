@@ -12,7 +12,7 @@ To view details about a partition:
 1. Click the row for a partition to view its details.<br/><img src={useBaseUrl('img/manage/partitions-data-tiers/view-edit-partition-pane.png')} alt="View edit partition pane" style={{border:'1px solid gray'}} width="300"/>
 
     :::note
-    The information displayed for partitions that contain Cloud SIEM records varies from other partitions. You can tell if a partition contains Cloud SIEM records from its name: The names of the Sumo Logic partitions that contain Cloud SIEM records begin with the string `sec_record_`. The detailed view for security partitions does not display Data Tier or a routing expression. Note also that you can’t edit a security partition, or configure data forwarding for it. Cloud SIEM users can search security partitions, as described in [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo).
+    The information displayed for partitions that contain SIEM records varies from other partitions. You can tell if a partition contains SIEM records from its name: The names of the Sumo Logic partitions that contain SIEM records begin with the string `sec_record_`. The detailed view for security partitions does not display Data Tier or a routing expression. Note also that you can’t edit a security partition, or configure data forwarding for it. SIEM users can search security partitions, as described in [Searching for SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo).
     :::
 
  

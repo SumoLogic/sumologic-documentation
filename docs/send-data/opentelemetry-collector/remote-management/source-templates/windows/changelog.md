@@ -13,7 +13,7 @@ description: Changelog for Windows source template for OpenTelemetry.
 
 ## [9.1.0] - 2026-01-19
 ### Added
-- Default `_parser` tagging for logs forwarded to Cloud SIEM.
+- Default `_parser` tagging for logs forwarded to SIEM.
 
 ## [9.0.0] - 2025-11-07
 ### Added

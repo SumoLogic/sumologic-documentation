@@ -111,7 +111,7 @@ When creating a Scheduled Search, you can configure various alert types, includi
 * [Webhook](/docs/alerts/webhook-connections/schedule-searches-webhook-connections). Send Sumo Logic alerts to third-party applications that accept incoming webhooks. For example, once you set up a Webhook connection in Sumo Logic, and create a Scheduled Search, then you can send an alert from that Scheduled Search as a post to a Slack channel, or integrate with third-party systems.
 * [Save to Index](save-to-index.md). Save search results to an index for future retrieval. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.
 * [Save to Lookup](save-to-lookup.md). Save results to a [Lookup Table](../../search/lookup-tables/create-lookup-table.md) and use the [`lookup`](/docs/search/search-query-language/search-operators/lookup) operator for data enrichment.
-* [Cloud SIEM Signal](generate-cse-signals.md). Trigger the creation of a Cloud SIEM Signal, which are otherwise generated when the conditions of a Cloud SIEM rule are satisfied by a Record.
+* [SIEM Signal](generate-cse-signals.md). Trigger the creation of a SIEM Signal, which are otherwise generated when the conditions of a SIEM rule are satisfied by a Record.
 
 ## Troubleshooting
 
