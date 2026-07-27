@@ -153,7 +153,6 @@ _index=sumologic_audit_events
 
 Swap `"mobot"` for `"soc_analyst_agent"` to see system-driven (automatic) SOC Analyst Agent activity instead of user-initiated Mobot activity. Log searches Mobot runs on your behalf are also tracked in the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/); see [Audit Mobot queries](/docs/search/mobot/#audit-mobot-queries) in the Mobot doc.
 
-{/* TODO: This answer replaces a "tk" placeholder. The invocationdetails.agentname query comes from a Slack thread with the Mobot PM, not from docs/manage/security/audit-indexes/audit-event-index.md itself — that doc doesn't document this field or these agentname values yet. Confirm exact field name/syntax with eng, and confirm whether the audit-event-index doc needs a new row/section for Mobot and SOC Analyst Agent, before publish. */}
 
 ### Do Dojo AI agents access customer data?
 
