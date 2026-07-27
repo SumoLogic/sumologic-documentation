@@ -1,0 +1,785 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: "Version - v3.0.0. Note: Before deploying this template, please select the appropriate region. This CloudFormation template will automate the setup of the AWS Observability Solution. For more information on each parameter, please see the AWS Observability Setup Guide: https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/05_Deploy_AWS_Observability"
+
+Metadata:
+  cfn-lint:
+    config:
+      ignore_checks:
+        - W3011
+  'AWS::CloudFormation::Interface':
+    ParameterGroups:
+      - Label:
+          default: "1. Sumo Logic Access Configuration (Required)"
+        Parameters:
+          - Section1aSumoLogicDeployment
+          - Section1bSumoLogicAccessID
+          - Section1cSumoLogicAccessKey
+          - Section1dSumoLogicOrganizationId
+          - Section1eSumoLogicResourceRemoveOnDeleteStack
+          - Section1fSumoLogicSendTelemetry
+
+      - Label:
+          default: "2. AWS Account Alias"
+        Parameters:
+          - Section2aAccountAlias
+          - Section2bAccountAliasMappingS3URL
+
+      - Label:
+          default: "3. Sumo Logic AWS Observability Apps and Alerts"
+        Parameters:
+          - Section3aInstallObservabilityApps
+
+      - Label:
+          default: "4. Sumo Logic AWS CloudWatch Metrics Sources"
+        Parameters:
+          - Section4aCreateMetricsSourceOptions
+          - Section4bMetricsNameSpaces
+          - Section4cCloudWatchExistingSourceAPIUrl
+          - Section4dAWSMetricsTagFilters
+
+      - Label:
+          default: "5. Sumo Logic AWS ALB Log Source"
+        Parameters:
+          - Section5aAutoEnableS3LogsALBResourcesOptions
+          - Section5bALBCreateLogSource
+          - Section5cALBLogsSourceUrl
+          - Section5dALBS3LogsBucketName
+          - Section5eALBS3BucketPathExpression
+
+      - Label:
+          default: "6. Sumo Logic AWS CloudTrail Source"
+        Parameters:
+          - Section6aCreateCloudTrailLogSource
+          - Section6bCloudTrailLogsSourceUrl
+          - Section6cCloudTrailLogsBucketName
+          - Section6dCloudTrailBucketPathExpression
+
+      - Label:
+          default: "7. Sumo Logic CloudWatch Logs Source"
+        Parameters:
+          - Section7aCreateCloudWatchLogsSourceOptions
+          - Section7bCloudWatchLogsSourceUrl
+          - Section7cAutoSubscribeLogGroupsOptions
+          - Section7dAutoSubscribeLogGroupPattern
+          - Section7eAutoSubscribeLogGroupByTags
+
+      - Label:
+          default: "8. Sumo Logic AWS ELB classic Log Source"
+        Parameters:
+          - Section8aAutoEnableS3LogsELBResourcesOptions
+          - Section8bELBCreateLogSource
+          - Section8cELBLogsSourceUrl
+          - Section8dELBS3LogsBucketName
+          - Section8eELBS3BucketPathExpression
+
+    ParameterLabels:
+      Section1aSumoLogicDeployment:
+        default: "Sumo Logic Deployment Name"
+      Section1bSumoLogicAccessID:
+        default: "Sumo Logic Access ID"
+      Section1cSumoLogicAccessKey:
+        default: "Sumo Logic Access Key"
+      Section1dSumoLogicOrganizationId:
+        default: "Sumo Logic Organization Id"
+      Section1eSumoLogicResourceRemoveOnDeleteStack:
+        default: "Delete Sumo Logic Resources when stack is deleted"
+      Section1fSumoLogicSendTelemetry:
+        default: "Send telemetry to Sumo Logic"
+
+      Section2aAccountAlias:
+        default: "Alias for AWS Account Identification. Please leave this blank if you are using CloudFormation StackSets to deploy the solution in multiple AWS accounts."
+      Section2bAccountAliasMappingS3URL:
+        default: "S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias"
+
+      Section3aInstallObservabilityApps:
+        default: "Install AWS Observability Apps and Monitors"
+
+      Section4aCreateMetricsSourceOptions:
+        default: "Select the kind of Metrics Source to create"
+      Section4bMetricsNameSpaces:
+        default: "Sumo Logic AWS Metrics Namespaces"
+      Section4cCloudWatchExistingSourceAPIUrl:
+        default: "Existing Sumo Logic Metrics Source API URL"
+      Section4dAWSMetricsTagFilters:
+        default: "Sumo Logic AWS Metrics Tag Filters"
+
+      Section5aAutoEnableS3LogsALBResourcesOptions:
+        default: "Enable ALB Access logging"
+      Section5bALBCreateLogSource:
+        default: "Create Sumo Logic ALB Logs Source"
+      Section5cALBLogsSourceUrl:
+        default: "Existing Sumo Logic ALB Logs Source API URL"
+      Section5dALBS3LogsBucketName:
+        default: "Amazon S3 Bucket Name"
+      Section5eALBS3BucketPathExpression:
+        default: "Path Expression for existing ALB logs"
+
+      Section6aCreateCloudTrailLogSource:
+        default: "Create Sumo Logic CloudTrail Logs Source"
+      Section6bCloudTrailLogsSourceUrl:
+        default: "Existing Sumo Logic CloudTrail Logs Source API URL"
+      Section6cCloudTrailLogsBucketName:
+        default: "Amazon S3 Bucket Name"
+      Section6dCloudTrailBucketPathExpression:
+        default: "Path Expression for existing CloudTrail logs"
+
+      Section7aCreateCloudWatchLogsSourceOptions:
+        default: "Select the Sumo Logic CloudWatch Logs Source Type"
+      Section7bCloudWatchLogsSourceUrl:
+        default: "Existing Sumo Logic CloudWatch Logs Source API URL"
+      Section7cAutoSubscribeLogGroupsOptions:
+        default: "Subscribe log groups to Destination (Lambda or kinesis firehose delivery stream)"
+      Section7dAutoSubscribeLogGroupPattern:
+        default: "Regex for filtering CloudWatch Log Groups. If you want to collect from all CloudWatch Log Groups use .*"
+      Section7eAutoSubscribeLogGroupByTags:
+        default: "Tags for filtering CloudWatch Log Groups."
+
+      Section8aAutoEnableS3LogsELBResourcesOptions:
+        default: "Enable ELB Access logging"
+      Section8bELBCreateLogSource:
+        default: "Create Sumo Logic ELB Logs Source"
+      Section8cELBLogsSourceUrl:
+        default: "Existing Sumo Logic ELB Logs Source API URL"
+      Section8dELBS3LogsBucketName:
+        default: "Amazon S3 Bucket Name"
+      Section8eELBS3BucketPathExpression:
+        default: "Path Expression for existing ELB logs"
+
+Parameters:
+  Section1aSumoLogicDeployment:
+    Type: String
+    AllowedValues:
+      - au
+      - ca
+      - ch
+      - de
+      - eu
+      - esc
+      - fed
+      - jp
+      - kr
+      - us1
+      - us2
+    Description: "Enter au, ca, ch, de, eu, esc, fed, jp, kr, us1 or us2. Visit https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security"
+  Section1bSumoLogicAccessID:
+    Type: String
+    Description: "Sumo Logic Access ID. Visit https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key"
+    AllowedPattern: ".+"
+    ConstraintDescription: "Sumo Logic Access ID can not be empty."
+  Section1cSumoLogicAccessKey:
+    Type: String
+    Description: "Sumo Logic Access Key."
+    AllowedPattern: ".+"
+    ConstraintDescription: "Sumo Logic Access Key can not be empty."
+    NoEcho: true
+  Section1dSumoLogicOrganizationId:
+    Description: "Appears on the Account Overview page that displays information about your Sumo Logic organization. Used for IAM Role in Sumo Logic AWS Sources. Visit https://help.sumologic.com/docs/get-started/account-settings-preferences/"
+    Type: String
+    AllowedPattern: ".+"
+    ConstraintDescription: "Sumo Logic Organization Id can not be empty."
+  Section1eSumoLogicResourceRemoveOnDeleteStack:
+    AllowedValues:
+      - true
+      - false
+    Default: true
+    Description: "To delete collectors, sources and apps when the stack is deleted, set this parameter to True. Default is True.
+                  Deletes the resources created by the stack. Deletion of updated resources will be skipped."
+    Type: String
+  Section1fSumoLogicSendTelemetry:
+    AllowedValues:
+      - true
+      - false
+    Default: true
+    Description: "To send telemetry to Sumo Logic, set this parameter to True. Default is True."
+    Type: String
+
+  Section2aAccountAlias:
+    Type: String
+    Description: "Provide an Alias for AWS account for identification in Sumo Logic Explorer View, metrics and logs. Please do not include special characters."
+    AllowedPattern: "[a-z0-9]*"
+    ConstraintDescription: "Alias must only contain lowercase letters, number and length less than or equal to 30 characters."
+    MaxLength: 30
+
+  Section2bAccountAliasMappingS3URL:
+    Type: String
+    Description: "Required only if you are using CloudFormation StackSets to deploy the solution in multiple AWS accounts."
+    Default: ""
+
+  Section3aInstallObservabilityApps:
+    Type: String
+    Default: 'Yes'
+    Description: "Yes - Installs Apps (AWS Compute, AWS EC2, AWS ECS, AWS Lambda, AWS Application Load Balancer, AWS Network Load Balancer, AWS API Gateway, AWS SQS, AWS SNS, AWS DynamoDB, AWS RDS, AWS ElastiCache) and Monitors for the Sumo Logic AWS Observability Solution. All Apps are installed in the folder 'Installed Apps'.
+                  No - Skips the installation of Apps and Monitors."
+    AllowedValues:
+      - 'Yes'
+      - 'No'
+
+  Section4aCreateMetricsSourceOptions:
+    Type: String
+    Description: "CloudWatch Metrics Source - Creates Sumo Logic AWS CloudWatch Metrics Sources.
+                  Kinesis Firehose Metrics Source -  Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source."
+    Default: 'Kinesis Firehose Metrics Source'
+    AllowedValues:
+      - 'CloudWatch Metrics Source'
+      - 'Kinesis Firehose Metrics Source'
+      - 'None'
+  Section4bMetricsNameSpaces:
+    Default: "AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS, AWS/EC2"
+    Description: "Provide Comma delimited list of the namespaces which will be used for AWS CloudWatch Metrics. Default will be AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS, AWS/EC2. See the list of AWS services that publish CloudWatch metrics: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html"
+    Type: String
+  Section4cCloudWatchExistingSourceAPIUrl:
+    Type: String
+    Description: "Required when already collecting CloudWatch Metrics. Provide the existing Sumo Logic Metrics Source API URL. Account Field will be added to the Source. For Source API URL, visit https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration"
+    Default: ""
+  Section4dAWSMetricsTagFilters:
+    Type: String
+    AllowedPattern: '^\{.*\}$'
+    Description: "Provide JSON format of the namespaces with it's tags values to add filters to your metrics. Use semicolons to separate multiple values for the same tag key. AWS Tag Filters will be added to the Source. For JSON format sample, visit https://help.sumologic.com/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/#step-5-sumo-logic-aws-cloudwatch-metrics-sources"
+    Default: "{}"
+
+  Section5aAutoEnableS3LogsALBResourcesOptions:
+    Type: String
+    Description: "New - Automatically enables S3 logging for newly created ALB resources to collect logs for ALB resources. This does not affect ALB resources already collecting logs.
+                  Existing - Automatically enables S3 logging for existing ALB resources to collect logs for ALB resources.
+                  Both - Automatically enables S3 logging for new and existing ALB resources.
+                  None - Skips Automatic S3 Logging enable for ALB resources."
+    Default: 'Both'
+    AllowedValues:
+      - 'New'
+      - 'Existing'
+      - 'Both'
+      - 'None'
+  Section5bALBCreateLogSource:
+    Type: String
+    Description: "Yes - Creates a Sumo Logic ALB Log Source that collects ALB logs from an existing bucket or a new bucket.
+                  No - If you already have an ALB source collecting ALB logs into Sumo Logic."
+    Default: 'Yes'
+    AllowedValues:
+      - 'Yes'
+      - 'No'
+  Section5cALBLogsSourceUrl:
+    Type: String
+    Description: "Required when already collecting ALB logs in Sumo Logic. Provide the existing Sumo Logic ALB Source API URL. Account, region and namespace Fields will be added to the Source. For Source API URL, visit https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration"
+    Default: ""
+  Section5dALBS3LogsBucketName:
+    Type: String
+    Description: "If you selected 'No' to creating a new source above, skip this step. Provide a name of existing S3 bucket name where you would like to store ALB logs. If this is empty, a new bucket will be created in the region."
+    Default: ""
+  Section5eALBS3BucketPathExpression:
+    Type: String
+    Description: "This is required in case the above existing bucket is already configured to receive ALB access logs. If this is blank, Sumo Logic will store logs in the path expression: *AWSLogs/*/elasticloadbalancing/*"
+    Default: "*AWSLogs/*/elasticloadbalancing/*"
+
+  Section6aCreateCloudTrailLogSource:
+    Type: String
+    Description: "Yes - Creates a Sumo Logic CloudTrail Log Source that collects CloudTrail logs from an existing bucket or a new bucket.
+                  No - If you already have a CloudTrail Log source collecting CloudTrail logs into Sumo Logic."
+    Default: 'Yes'
+    AllowedValues:
+      - 'Yes'
+      - 'No'
+  Section6bCloudTrailLogsSourceUrl:
+    Type: String
+    Description: "Required when already collecting CloudTrail logs in Sumo Logic. Provide the existing Sumo Logic CloudTrail Source API URL. Account Field will be added to the Source. For Source API URL, visit https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration"
+    Default: ""
+  Section6cCloudTrailLogsBucketName:
+    Type: String
+    Description: "If you selected 'No' to creating a new source above, skip this step. Provide a name of existing S3 bucket name where you would like to store CloudTrail logs. If this is empty, a new bucket will be created in the region."
+    Default: ""
+  Section6dCloudTrailBucketPathExpression:
+    Type: String
+    Description: "This is required in case the above existing bucket is already configured to receive CloudTrail logs. If this is blank, Sumo Logic will store logs in the path expression: AWSLogs/*/CloudTrail/*"
+    Default: "AWSLogs/*/CloudTrail/*"
+
+  Section7aCreateCloudWatchLogsSourceOptions:
+    Type: String
+    Description: "Lambda Log Forwarder - Creates a Sumo Logic CloudWatch Log Source that collects CloudWatch logs via a Lambda function.
+                  Kinesis Firehose Log Source - Creates a Sumo Logic Kinesis Firehose Source to collect CloudWatch logs."
+    Default: 'Kinesis Firehose Log Source'
+    AllowedValues:
+      - 'Lambda Log Forwarder'
+      - 'Kinesis Firehose Log Source'
+      - 'Both (Switch from Lambda Log Forwarder to Kinesis Firehose Log Source)'
+      - 'None'
+  Section7bCloudWatchLogsSourceUrl:
+    Type: String
+    Description: "Required when already collecting Lambda CloudWatch logs in Sumo Logic. Provide the existing Sumo Logic Lambda CloudWatch Source API URL. Account, region and namespace Fields will be added to the Source. For Source API URL, visit https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration"
+    Default: ""
+  Section7cAutoSubscribeLogGroupsOptions:
+    Type: String
+    Description: "New - Automatically subscribes new log groups to send logs to Sumo Logic.
+                  Existing - Automatically subscribes existing log groups to send logs to Sumo Logic.
+                  Both - Automatically subscribes new and existing log groups.
+                  None - Skips Automatic subscription."
+    Default: 'Both'
+    AllowedValues:
+      - 'New'
+      - 'Existing'
+      - 'Both'
+      - 'None'
+  Section7dAutoSubscribeLogGroupPattern:
+    Type: String
+    Default: '\/aws\/(lambda|apigateway|rds)'
+    Description: "Enter regex for matching CloudWatch Log groups name. Regex will check for the Log group name. Visit https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function#Configuring_parameters"
+  Section7eAutoSubscribeLogGroupByTags:
+    Type: String
+    Default: ""
+    Description: "Enter comma separated key value pairs for filtering logGroups using tags. Ex KeyName1=string,KeyName2=string. This is optional leave it blank if tag based filtering is not needed. Visit https://help.sumologic.com/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters"
+
+  Section8aAutoEnableS3LogsELBResourcesOptions:
+    Type: String
+    Description: "New - Automatically enables S3 logging for newly created ELB resources to collect logs for ELB resources. This does not affect ELB resources already collecting logs.
+                  Existing - Automatically enables S3 logging for existing ELB resources to collect logs for ELB resources.
+                  Both - Automatically enables S3 logging for new and existing ELB resources.
+                  None - Skips Automatic S3 Logging enable for ELB resources."
+    Default: 'Both'
+    AllowedValues:
+      - 'New'
+      - 'Existing'
+      - 'Both'
+      - 'None'
+  Section8bELBCreateLogSource:
+    Type: String
+    Description: "Yes - Creates a Sumo Logic ELB Log Source that collects ELB logs from an existing bucket or a new bucket.
+                  No - If you already have an ELB source collecting ELB logs into Sumo Logic."
+    Default: 'Yes'
+    AllowedValues:
+      - 'Yes'
+      - 'No'
+  Section8cELBLogsSourceUrl:
+    Type: String
+    Description: "Required when already collecting ELB logs in Sumo Logic. Provide the existing Sumo Logic ELB Source API URL. Account, region and namespace Fields will be added to the Source. For Source API URL, visit https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration"
+    Default: ""
+  Section8dELBS3LogsBucketName:
+    Type: String
+    Description: "If you selected 'No' to creating a new source above, skip this step. Provide a name of existing S3 bucket name where you would like to store ELB logs. If this is empty, a new bucket will be created in the region."
+    Default: ""
+  Section8eELBS3BucketPathExpression:
+    Type: String
+    Description: "This is required in case the above existing bucket is already configured to receive ELB access logs. If this is blank, Sumo Logic will store logs in the path expression: *AWSLogs/*/elasticloadbalancing/*"
+    Default: "classicloadbalancing/AWSLogs/*/elasticloadbalancing/*"
+
+Conditions:
+  # Conditions for Bucket
+  create_alb_bucket: !And
+    - !Equals [ !Ref Section5bALBCreateLogSource, 'Yes' ]
+    - !Equals [ !Ref Section5dALBS3LogsBucketName, '' ]
+
+  create_cloudtrail_bucket: !And
+    - !Equals [ !Ref Section6aCreateCloudTrailLogSource, 'Yes' ]
+    - !Equals [ !Ref Section6cCloudTrailLogsBucketName, '' ]
+
+  #condition for ELB classic bucket
+  create_elb_bucket: !And
+    - !Equals [ !Ref Section8bELBCreateLogSource, 'Yes' ]
+    - !Equals [ !Ref Section8dELBS3LogsBucketName, '' ]
+
+  # Sources Create Condition
+  create_alb_logs_source: !Equals [ !Ref Section5bALBCreateLogSource, 'Yes' ]
+  create_elb_logs_source: !Equals [ !Ref Section8bELBCreateLogSource, 'Yes' ]
+  create_cloudtrail_logs_source: !Equals [ !Ref Section6aCreateCloudTrailLogSource, 'Yes' ]
+  create_kf_metrics_source: !Equals [ !Ref Section4aCreateMetricsSourceOptions, 'Kinesis Firehose Metrics Source' ]
+  create_cw_metrics_source: !Equals [ !Ref Section4aCreateMetricsSourceOptions, 'CloudWatch Metrics Source' ]
+  create_metrics_source: !Or
+    - !Condition create_kf_metrics_source
+    - !Condition create_cw_metrics_source
+  create_kf_logs_source: !Or
+    - !Equals [ !Ref Section7aCreateCloudWatchLogsSourceOptions, 'Kinesis Firehose Log Source' ]
+    - !Equals [ !Ref Section7aCreateCloudWatchLogsSourceOptions, 'Both (Switch from Lambda Log Forwarder to Kinesis Firehose Log Source)' ]
+  create_cw_logs_source: !Or
+    - !Equals [ !Ref Section7aCreateCloudWatchLogsSourceOptions, 'Lambda Log Forwarder' ]
+    - !Equals [ !Ref Section7aCreateCloudWatchLogsSourceOptions, 'Both (Switch from Lambda Log Forwarder to Kinesis Firehose Log Source)' ]
+
+  # Sources Update Condition
+  create_cloudwatch_logs_source: !Or
+    - !Condition create_kf_logs_source
+    - !Condition create_cw_logs_source
+
+  # Condition for S3 Logging enable
+  is_bucket_available: !Or
+    - !Condition create_alb_bucket
+    - !Not [!Equals [ !Ref Section5dALBS3LogsBucketName, '' ]]
+  
+  is_elb_bucket_available: !Or
+    - !Condition create_elb_bucket
+    - !Not [!Equals [ !Ref Section8dELBS3LogsBucketName, '' ]]
+
+  auto_enable_s3_logs: !And
+    - !Not [!Equals [ !Ref Section5aAutoEnableS3LogsALBResourcesOptions, 'None' ]]
+    - !Condition is_bucket_available
+  
+  auto_enable_s3_logs_elb: !And
+    - !Not [!Equals [ !Ref Section8aAutoEnableS3LogsELBResourcesOptions, 'None' ]]
+    - !Condition is_elb_bucket_available
+
+  # Condition for Auto Subscribe Lambda
+  auto_subscribe_new_log_groups: !Or
+    - !Equals [ !Ref Section7cAutoSubscribeLogGroupsOptions, 'New' ]
+    - !Equals [ !Ref Section7cAutoSubscribeLogGroupsOptions, 'Both' ]
+  auto_subscribe_log_groups: !And
+    - !Condition create_cloudwatch_logs_source
+    - !Condition auto_subscribe_new_log_groups
+
+  call_auto_enable: !Or
+    - !Condition auto_enable_s3_logs
+    - !Condition auto_subscribe_log_groups
+    - !Condition auto_enable_s3_logs_elb
+
+  elb_bucket_path_expression_provided: !Not [!Equals [ !Ref Section8eELBS3BucketPathExpression, 'classicloadbalancing/AWSLogs/*/elasticloadbalancing/*' ]]
+
+  # Condition for Stacks creation. Calling Nested Stack EveryTime to create FER and Metric Rule. If already present, marked as duplicate in Resource.
+  install_observability_apps: !Equals [ !Ref Section3aInstallObservabilityApps, 'Yes' ]
+
+  # Condition for sending solution telemetry to sumo logic.
+  send_telemetry_to_sumo: !Equals [ !Ref Section1fSumoLogicSendTelemetry, 'true' ]
+
+Mappings:
+  SumoAWSAccountIDs:
+    aws:
+      SumoAWSAccountID: "926226587429"
+    aws-us-gov:
+      SumoAWSAccountID: "926226587429"
+    aws-cn:
+      SumoAWSAccountID: "926226587429"
+    aws-eusc:
+      SumoAWSAccountID: "052162193518"
+  CommonData:
+    NestedTemplate:
+      MPS3BucketName: "sumologic-appdev-aws-sam-apps"
+      MPS3BucketRegion: "us-east-1"
+      MPS3KeyPrefix: "aws-observability-versions/v3.0.0/templates/"
+    CollectorDetails:
+      CollectorNamePrefix: "aws-observability"
+      CloudWatchMetricSourceCategory: "aws/observability/cloudwatch/metrics"
+      ALBLogsSourceCategory: "aws/observability/alb/logs"
+      CloudTrailLogsSourceCategory: "aws/observability/cloudtrail/logs"
+      CloudWatchLogsSourceCategory: "aws/observability/cloudwatch/logs"
+      ELBLogsSourceCategory: "aws/observability/clb/logs"
+  RegionMap:
+    us-east-1:
+      bucketname: appdevzipfiles-us-east-1
+    us-east-2:
+      bucketname: appdevzipfiles-us-east-2
+    us-west-1:
+      bucketname: appdevzipfiles-us-west-1
+    us-west-2:
+      bucketname: appdevzipfiles-us-west-2
+    ap-south-1:
+      bucketname: appdevzipfiles-ap-south-1
+    ap-northeast-2:
+      bucketname: appdevzipfiles-ap-northeast-2
+    ap-southeast-1:
+      bucketname: appdevzipfiles-ap-southeast-1
+    ap-southeast-2:
+      bucketname: appdevzipfiles-ap-southeast-2
+    ap-southeast-4:
+      bucketname: appdevzipfiles-ap-southeast-4s
+    ap-southeast-6:
+      bucketname: appdevzipfiles-ap-southeast-6ss
+    ap-northeast-1:
+      bucketname: appdevzipfiles-ap-northeast-1
+    ca-central-1:
+      bucketname: appdevzipfiles-ca-central-1
+    eu-central-1:
+      bucketname: appdevzipfiles-eu-central-1
+    eu-west-1:
+      bucketname: appdevzipfiles-eu-west-1
+    eu-west-2:
+      bucketname: appdevzipfiles-eu-west-2
+    eu-west-3:
+      bucketname: appdevzipfiles-eu-west-3
+    eu-north-1:
+      bucketname: appdevzipfiles-eu-north-1s
+    sa-east-1:
+      bucketname: appdevzipfiles-sa-east-1
+    ap-east-1:
+      bucketname: appdevzipfiles-ap-east-1s
+    af-south-1:
+      bucketname: appdevzipfiles-af-south-1s
+    eu-south-1:
+      bucketname: appdevzipfiles-eu-south-1
+    me-south-1:
+      bucketname: appdevzipfiles-me-south-1s
+    me-central-1:
+      bucketname: appdevzipfiles-me-central-1
+    eu-central-2:
+        bucketname: appdevzipfiles-eu-central-2ss
+    ap-northeast-3:
+        bucketname: appdevzipfiles-ap-northeast-3s
+    ap-southeast-3:
+        bucketname: appdevzipfiles-ap-southeast-3
+
+Resources:
+  LambdaRole:
+    Condition: send_telemetry_to_sumo
+    Type: AWS::IAM::Role
+    DeletionPolicy: Retain
+    Metadata:
+      cfn_nag:
+        rules_to_suppress:
+          - id: W11
+            reason: "Operations are performed across resources."
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Path: /
+      Policies:
+        - PolicyName: LambdaExecutePolicies
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - lambda:InvokeFunction
+                  - lambda:DeleteFunction
+                Resource: !Sub 'arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:*TelemetryLambda*'
+        - PolicyName: BasicLambdaPolicies
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: "*"
+        - PolicyName: CloudFormationRead
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - cloudformation:Describe*
+                Resource: !Sub '${AWS::StackId}'
+
+  TelemetryLambda:
+    Condition: send_telemetry_to_sumo
+    Type: AWS::Lambda::Function
+    DeletionPolicy: Retain
+    Metadata:
+      cfn_nag:
+        rules_to_suppress:
+          - id: W89
+            reason: "Lambda function does not require VPC deployment."
+          - id: W92
+            reason: "Lambda function does not require reserved concurrency."
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.14
+      Code:
+        S3Bucket: !FindInMap [ RegionMap, !Ref 'AWS::Region', bucketname ]
+        S3Key: "sumologic-aws-observability/functions/telemetry/v1.1.0/telemetry.zip"
+      MemorySize: 128
+      Timeout: 900
+      Role: !GetAtt LambdaRole.Arn
+
+  LambdaPermission:
+    Condition: send_telemetry_to_sumo
+    Type: 'AWS::Lambda::Permission'
+    # DeletionPolicy: Retain
+    Properties:
+      FunctionName: !GetAtt TelemetryLambda.Arn
+      Action: 'lambda:InvokeFunction'
+      Principal: 'cloudformation.amazonaws.com'
+  
+  PrimerInvoke:
+    Condition: send_telemetry_to_sumo
+    Type: AWS::CloudFormation::CustomResource
+    Version: "1.0"
+    Properties:
+      ServiceToken: !GetAtt TelemetryLambda.Arn
+      Handler: lambda_function.lambda_handler
+      stackID:
+          Ref: "AWS::StackId"
+      sumoDeployment:
+          !Ref Section1aSumoLogicDeployment
+      sumoOrgId:
+          !Ref Section1dSumoLogicOrganizationId
+      solutionName: 'AWSO'
+      solutionVersion: 'v3.0.0'
+      deploymentSource: 'cloudFormation'
+      TelemetryEndpoint: "https://endpoint1.collection.us2.sumologic.com/receiver/v1/http/ZaVnC4dhaV1S68eao6UYB3LFtqQ7ur1xYlT1EHCfXdhvi6uPNc0aUXIpvq5i_aHewOp5xxxwnGZ5MmSWDR6qV5td4exMM4pZE4Tk6rqKvgextLx7I6IRpg=="
+      scanInterval: 60
+      ToUpdate: 
+        Fn::Base64: !Sub
+          - "${a}-${b}-${c}-${d}-${e}-${f}-${g}-${h}-${i}-${j}-${k}-${l}-${m}-${n}-${o}-${p}-${q}-${r}-${s}-${t}-${u}-${v}-${w}"
+          - a: !Ref Section2aAccountAlias
+            b: !Ref Section3aInstallObservabilityApps
+            c: !Ref Section4aCreateMetricsSourceOptions
+            d: !Ref Section4bMetricsNameSpaces
+            e: !Ref Section4cCloudWatchExistingSourceAPIUrl
+            f: !Ref Section4dAWSMetricsTagFilters
+            g: !Ref Section5aAutoEnableS3LogsALBResourcesOptions
+            h: !Ref Section5bALBCreateLogSource
+            i: !Ref Section5cALBLogsSourceUrl
+            j: !Ref Section5dALBS3LogsBucketName
+            k: !Ref Section6aCreateCloudTrailLogSource
+            l: !Ref Section6bCloudTrailLogsSourceUrl
+            m: !Ref Section6cCloudTrailLogsBucketName
+            n: !Ref Section7aCreateCloudWatchLogsSourceOptions
+            o: !Ref Section7bCloudWatchLogsSourceUrl
+            p: !Ref Section7cAutoSubscribeLogGroupsOptions
+            q: !Ref Section7dAutoSubscribeLogGroupPattern
+            r: !Ref Section7eAutoSubscribeLogGroupByTags
+            s: !Ref Section8aAutoEnableS3LogsELBResourcesOptions
+            t: !Ref Section8bELBCreateLogSource
+            u: !Ref Section8cELBLogsSourceUrl
+            v: !Ref Section8dELBS3LogsBucketName
+            w: !FindInMap [CommonData, NestedTemplate, MPS3KeyPrefix]
+
+  CreateCommonResources:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub
+        - "https://${MPS3BucketName}.s3.${MPS3BucketRegion}.${AWS::URLSuffix}/${MPS3KeyPrefix}resources.template.yaml"
+        - MPS3BucketName: !FindInMap [CommonData, NestedTemplate, MPS3BucketName]
+          MPS3BucketRegion: !FindInMap [CommonData, NestedTemplate, MPS3BucketRegion]
+          MPS3KeyPrefix: !FindInMap [CommonData, NestedTemplate, MPS3KeyPrefix]
+      Parameters:
+        SumoLogicDeployment: !Ref Section1aSumoLogicDeployment
+        SumoLogicAccessID: !Ref Section1bSumoLogicAccessID
+        SumoLogicAccessKey: !Ref Section1cSumoLogicAccessKey
+        SumoLogicOrganizationId: !Ref Section1dSumoLogicOrganizationId
+        RemoveSumoLogicResourcesOnDeleteStack: !Ref Section1eSumoLogicResourceRemoveOnDeleteStack
+        AccountAlias: !Ref Section2aAccountAlias
+        AccountAliasMappingS3URL: !Ref Section2bAccountAliasMappingS3URL
+        SumoLogicAccountID: !FindInMap [SumoAWSAccountIDs, !Ref "AWS::Partition", SumoAWSAccountID]
+        CreateMetaDataSource: "No"
+        CreateCloudWatchMetricsSource: !If [ create_cw_metrics_source, "Yes", "No" ]
+        CloudWatchMetricsSourceName: !Sub "cloudwatch-metrics-${AWS::Region}"
+        CloudWatchMetricsNameSpaces: !Ref Section4bMetricsNameSpaces
+        CloudWatchMetricSourceCategory: !FindInMap [CommonData, CollectorDetails, CloudWatchMetricSourceCategory]
+        MetricsSourceAWSTagFilters: !Ref Section4dAWSMetricsTagFilters
+        ScanInterval: 300000
+        CreateKinesisFirehoseMetricsSource: !If [ create_kf_metrics_source, "Yes", "No" ]
+        KinesisFirehoseMetricsSourceName: !Sub "cloudwatch-metrics-${AWS::Region}"
+        KinesisFirehoseMetricSourceCategory: !FindInMap [ CommonData, CollectorDetails, CloudWatchMetricSourceCategory ]
+        CreateALBLogSource: !Ref Section5bALBCreateLogSource
+        CreateALBS3Bucket: !If [create_alb_bucket, "Yes", "No"]
+        ALBS3LogsBucketName: !Ref Section5dALBS3LogsBucketName
+        ALBS3BucketPathExpression: !If [auto_enable_s3_logs, !Sub "*AWSLogs/${AWS::AccountId}/elasticloadbalancing/${AWS::Region}/*.log.gz", !Ref Section5eALBS3BucketPathExpression]
+        ALBLogsSourceName: !Sub "alb-logs-${AWS::Region}"
+        ALBLogsSourceCategory: !FindInMap [CommonData, CollectorDetails, ALBLogsSourceCategory]
+        CreateCloudTrailLogSource: !Ref Section6aCreateCloudTrailLogSource
+        CreateCloudTrailBucket: !If [create_cloudtrail_bucket, "Yes", "No"]
+        CloudTrailLogsBucketName: !Ref Section6cCloudTrailLogsBucketName
+        CloudTrailBucketPathExpression: !If [create_cloudtrail_bucket, !Sub "AWSLogs/${AWS::AccountId}/CloudTrail/${AWS::Region}/*", !Ref Section6dCloudTrailBucketPathExpression]
+        CloudTrailLogsSourceName: !Sub "cloudtrail-logs-${AWS::Region}"
+        CloudTrailLogsSourceCategory: !FindInMap [CommonData, CollectorDetails, CloudTrailLogsSourceCategory]
+        CreateCloudWatchLogSource: !If [ create_cw_logs_source, "Yes", "No" ]
+        CloudWatchLogsSourceName: !Sub "cloudwatch-logs-${AWS::Region}"
+        CloudWatchLogsSourceCategory: !FindInMap [CommonData, CollectorDetails, CloudWatchLogsSourceCategory]
+        CreateKinesisFirehoseLogSource: !If [ create_kf_logs_source, "Yes", "No" ]
+        KinesisFirehoseLogsSourceName: !Sub "kinesis-firehose-cloudwatch-logs-${AWS::Region}"
+        KinesisFirehoseLogsSourceCategory: !FindInMap [ CommonData, CollectorDetails, CloudWatchLogsSourceCategory ]
+        MPS3BucketName: !FindInMap [CommonData, NestedTemplate, MPS3BucketName]
+        MPS3BucketRegion: !FindInMap [CommonData, NestedTemplate, MPS3BucketRegion]
+        MPS3KeyPrefix: !FindInMap [CommonData, NestedTemplate, MPS3KeyPrefix]
+        ALBLogsSourceApiUrl: !If [ create_alb_logs_source, "", !Ref Section5cALBLogsSourceUrl ]
+        ELBLogsSourceApiUrl: !If [ create_elb_logs_source, "", !Ref Section8cELBLogsSourceUrl ]
+        CloudTrailLogsSourceApiUrl: !If [ create_cloudtrail_logs_source, "", !Ref Section6bCloudTrailLogsSourceUrl ]
+        CloudWatchLogsSourceApiUrl: !If [ create_cloudwatch_logs_source, "", !Ref Section7bCloudWatchLogsSourceUrl ]
+        MetricsSourceApiUrl: !If [ create_metrics_source, "", !Ref Section4cCloudWatchExistingSourceAPIUrl ]
+        CreateELBLogSource: !Ref Section8bELBCreateLogSource
+        CreateELBS3Bucket: !If [create_elb_bucket, "Yes", "No"]
+        ELBS3LogsBucketName: !Ref Section8dELBS3LogsBucketName
+        ELBS3BucketPathExpression: !Join
+          - ""
+          - - !If [elb_bucket_path_expression_provided,!Ref Section8eELBS3BucketPathExpression, "classicloadbalancing"]
+            - "/AWSLogs/"
+            - !Ref AWS::AccountId
+            - "/elasticloadbalancing/"
+            - !Ref AWS::Region
+            - "/*.log"
+        ELBLogsSourceName: !Sub "classic-lb-logs-${AWS::Region}"
+        ELBLogsSourceCategory: !FindInMap [CommonData, CollectorDetails, ELBLogsSourceCategory]
+
+  AutoEnableOptions:
+    Type: AWS::CloudFormation::Stack
+    Condition: call_auto_enable
+    Properties:
+      TemplateURL: !Sub
+        - "https://${MPS3BucketName}.s3.${MPS3BucketRegion}.${AWS::URLSuffix}/${MPS3KeyPrefix}auto_enable.template.yaml"
+        - MPS3BucketName: !FindInMap [CommonData, NestedTemplate, MPS3BucketName]
+          MPS3BucketRegion: !FindInMap [CommonData, NestedTemplate, MPS3BucketRegion]
+          MPS3KeyPrefix: !FindInMap [CommonData, NestedTemplate, MPS3KeyPrefix]
+      Parameters:
+        SumoLogicResourceRemoveOnDeleteStack: !Ref Section1eSumoLogicResourceRemoveOnDeleteStack
+        ALBAutoEnableS3Logs: !If [auto_enable_s3_logs, "Yes", "No"]
+        ALBAutoEnableS3LogsOptions: !Ref Section5aAutoEnableS3LogsALBResourcesOptions
+        ALBS3LogsBucketName: !If [create_alb_bucket, !GetAtt CreateCommonResources.Outputs.BucketName, !Ref Section5dALBS3LogsBucketName]
+        AutoSubscribeLogGroups: !If [create_kf_logs_source, "Yes", !If [ create_cw_logs_source, "Yes", "No" ] ]
+        AutoSubscribeLogGroupsLambdaOptions: !Ref Section7cAutoSubscribeLogGroupsOptions
+        AutoSubscribeDestinationARNType: !If [create_kf_logs_source, "Kinesis",  "Lambda" ]
+        AutoSubscribeDestinationARN: !If [create_kf_logs_source, !GetAtt CreateCommonResources.Outputs.KinesisLogsDeliveryStreamARN, !If [ create_cw_logs_source, !GetAtt CreateCommonResources.Outputs.CloudWatchLambdaARN, "" ] ]
+        AutoSubscribeLambdaLogGroupPattern: !Ref Section7dAutoSubscribeLogGroupPattern
+        AutoSubscribeLogGroupByTags: !Ref Section7eAutoSubscribeLogGroupByTags
+        AutoSubscribeRoleArn: !If [create_kf_logs_source, !GetAtt CreateCommonResources.Outputs.KinesisLogsRoleARN,  "" ]
+        ELBAutoEnableS3Logs: !If [auto_enable_s3_logs_elb, "Yes", "No"]
+        ELBAutoEnableS3LogsOptions: !Ref Section8aAutoEnableS3LogsELBResourcesOptions
+        ELBS3LogsBucketName: !If [create_elb_bucket, !GetAtt CreateCommonResources.Outputs.BucketName, !Ref Section8dELBS3LogsBucketName]
+        ELBS3LogsBucketPrefix: !If [elb_bucket_path_expression_provided, !Ref Section8eELBS3BucketPathExpression, "classicloadbalancing"]
+        MPS3BucketName: !FindInMap [CommonData, NestedTemplate, MPS3BucketName]
+        MPS3BucketRegion: !FindInMap [CommonData, NestedTemplate, MPS3BucketRegion]
+        MPS3KeyPrefix: !FindInMap [CommonData, NestedTemplate, MPS3KeyPrefix]
+
+  sumoAppStacks:
+    Type: AWS::CloudFormation::Stack
+    Condition: install_observability_apps
+    Properties:
+      TemplateURL: !Sub
+        - "https://${MPS3BucketName}.s3.${MPS3BucketRegion}.${AWS::URLSuffix}/${MPS3KeyPrefix}apps.template.yaml"
+        - MPS3BucketName: !FindInMap [CommonData, NestedTemplate, MPS3BucketName]
+          MPS3BucketRegion: !FindInMap [CommonData, NestedTemplate, MPS3BucketRegion]
+          MPS3KeyPrefix: !FindInMap [CommonData, NestedTemplate, MPS3KeyPrefix]
+      Parameters:
+        # -------------------------
+        # Sumo Deployment
+        # -------------------------
+        Section1aSumoDeployment: !Ref Section1aSumoLogicDeployment
+        Section1bSumoAccessID: !Ref Section1bSumoLogicAccessID
+        Section1cSumoAccessKey: !Ref Section1cSumoLogicAccessKey
+        Section1dRemoveSumoResourcesOnDeleteStack: !Ref Section1eSumoLogicResourceRemoveOnDeleteStack
+        # -------------------------
+        # App Installation
+        # -------------------------
+        Section2aInstallApp: !GetAtt CreateCommonResources.Outputs.PaidAccountCheck
+        # -------------------------
+        # Parent Stack Details
+        # -------------------------
+        Section3aParentStackLambdaARN:
+          !GetAtt CreateCommonResources.Outputs.LambdaHelperARN
+        # -------------------------
+        # UPDATE TRIGGER HASH (Recommended)
+        # -------------------------
+        Section4aToUpdate:
+          Fn::Base64: !Sub
+            - "${a}-${b}-${c}-${d}-${e}-${f}-${g}-${h}-${i}-${j}-${k}-${l}-${m}-${n}-${o}-${p}-${q}-${r}-${s}-${t}-${u}-${v}-${w}"
+            - a: !Ref Section2aAccountAlias
+              b: !Ref Section3aInstallObservabilityApps
+              c: !Ref Section4aCreateMetricsSourceOptions
+              d: !Ref Section4bMetricsNameSpaces
+              e: !Ref Section4cCloudWatchExistingSourceAPIUrl
+              f: !Ref Section4dAWSMetricsTagFilters
+              g: !Ref Section5aAutoEnableS3LogsALBResourcesOptions
+              h: !Ref Section5bALBCreateLogSource
+              i: !Ref Section5cALBLogsSourceUrl
+              j: !Ref Section5dALBS3LogsBucketName
+              k: !Ref Section6aCreateCloudTrailLogSource
+              l: !Ref Section6bCloudTrailLogsSourceUrl
+              m: !Ref Section6cCloudTrailLogsBucketName
+              n: !Ref Section7aCreateCloudWatchLogsSourceOptions
+              o: !Ref Section7bCloudWatchLogsSourceUrl
+              p: !Ref Section7cAutoSubscribeLogGroupsOptions
+              q: !Ref Section7dAutoSubscribeLogGroupPattern
+              r: !Ref Section7eAutoSubscribeLogGroupByTags
+              s: !Ref Section8aAutoEnableS3LogsELBResourcesOptions
+              t: !Ref Section8bELBCreateLogSource
+              u: !Ref Section8cELBLogsSourceUrl
+              v: !Ref Section8dELBS3LogsBucketName
+              w: !FindInMap [CommonData, NestedTemplate, MPS3KeyPrefix]

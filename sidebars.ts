@@ -2042,9 +2042,9 @@ module.exports = {
                     'observability/aws/deploy-use-aws-observability/v3.0.0/configure-alerts',
                     'observability/aws/deploy-use-aws-observability/v3.0.0/update-aws-observability-stack',
                     'observability/aws/deploy-use-aws-observability/v3.0.0/resources',
-                    'observability/aws/deploy-use-aws-observability/v3.0.0/changelog',
                   ],
                 },
+                'observability/aws/deploy-use-aws-observability/v3.0.0/changelog',
                 {
                   type: 'category',
                   label: 'v2.15.0',
