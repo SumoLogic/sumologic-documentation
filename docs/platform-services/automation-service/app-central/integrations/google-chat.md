@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-***Version: 2.2  
-Updated: Sept 25, 2025***
+***Version: 2.3  
+Updated: Jul 23, 2026***
 
 Google Chat is an intelligent and secure communication and collaboration tool, built for teams.
 
@@ -125,3 +125,4 @@ Use Google Chat to receive notifications, ensuring you promptly get important up
 * October 29, 2024 (v2.0) - Updated the docs 
 * December 06, 2024 (v2.1) - Added the Rich Text Message support in the Create Message action
 * September 25, 2025 (v2.2) - Updated the WIF configuration steps
+* July 23, 2026 (v2.3) - Resolved an issue where the integration fails due to deprecated dependency warnings.
