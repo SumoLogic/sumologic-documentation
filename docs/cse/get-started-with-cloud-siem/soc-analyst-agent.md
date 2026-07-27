@@ -49,9 +49,9 @@ The SOC Analyst agent requires a Cloud SIEM subscription and is opt-in. As a lau
 
 To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
 
-<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
-{/* TODO (DOCS-1565): Whether a parent org can manage this toggle for child orgs is still an open question (pending confirmation as of 2026-07-22). Mirrors the same open question in docs/search/mobot.md (Opting out). */}
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
 
 ## View AI verdicts on insights
