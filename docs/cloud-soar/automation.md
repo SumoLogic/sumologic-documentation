@@ -7,6 +7,9 @@ description: Configuration tools for Cloud SOAR automation and orchestration fea
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarEndOfSale from '../reuse/cloud-soar-end-of-sale.md';
+
+<CloudSoarEndOfSale/>
 
 The **Automation** section contains configuration tools for Cloud SOAR's automation and orchestration features.
 
