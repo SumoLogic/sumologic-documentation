@@ -10,6 +10,9 @@ import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
 import GoogleTranslateNavbarItem from '../theme/NavbarItem/GoogleTranslateNavbarItem';
+import RecentlyCreatedArticles from '../components/RecentlyCreatedArticles';
+import RecentlyUpdatedArticles from '../components/RecentlyUpdatedArticles';
+import MostViewedArticles from '../components/MostViewedArticles';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -282,7 +285,26 @@ export const Home = () => {
               ))}
             </TabContext>
           </Stack>
-
+          <Box
+            sx={{
+              borderTop: '1px solid',
+              borderColor: 'grey.200',
+              mt: 2,
+              pb: 8,
+              pt: 5,
+            }}>
+            <Grid container spacing={4}>
+              <Grid item xs={12} md={4}>
+                <RecentlyCreatedArticles />
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <MostViewedArticles />
+              </Grid>
+              <Grid item xs={12} md={4}>
+                <RecentlyUpdatedArticles />
+              </Grid>
+            </Grid>
+          </Box>
         </Container>
       </Layout>
     </ErrorBoundary>
