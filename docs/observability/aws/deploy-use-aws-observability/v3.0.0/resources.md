@@ -178,7 +178,7 @@ The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v3
    <td>AWS Observability Apps  </td>
   </tr>
   <tr>
-   <td>Alerts   </td>
+   <td>Monitors/Alerts   </td>
    <td>AWS Observability &#60;Version&#62; &#60;Date and Time of Installation&#62;   </td>
    <td>AWS Observability Monitors   </td>
   </tr>

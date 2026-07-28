@@ -77,9 +77,9 @@ The table below displays the response for each text box in this section.
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
 
 
-## Step 4: Sumo Logic AWS Observability apps and alerts
+## Step 4: Sumo Logic AWS Observability apps and Monitors/Alerts
 
-You should only install the AWS Observability apps and alerts the first time you run the template.<br/> The table below displays the response for each text box in this section.
+You should only install the AWS Observability apps and Monitors/Alerts the first time you run the template.<br/> The table below displays the response for each text box in this section.
 
 | Prompt | Guideline  |
 |:--|:--|
