@@ -1,11 +1,15 @@
 ---
 id: mcp-server
 title: Sumo Logic MCP Server
-sidebar_label: MCP Server ✨
+sidebar_label: Sumo Logic MCP Server ✨
 description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents using Claude Code CLI.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+import Iframe from 'react-iframe';
+
+<img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="45"/>
 
 The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 
@@ -13,29 +17,12 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](#improve-investigations-with-the-sumo-investigator-skill)), while [Mobot](/docs/search/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
 :::
 
+:::training Sumo Logic Academy
 
-import Iframe from 'react-iframe';
+<SumoAcademy/>
 
-<!--
-:::training Micro Lesson
-
-Watch this micro lesson to learn how to connect an MCP-compatible AI client to Sumo Logic.
-
-<Iframe url="https://fast.wistia.net/embed/iframe/ej2qcjc6l7?web_component=true&seo=true&videoFoam=false"
-  width="854px"
-  height="480px"
-  title="Micro Lesson: MCP Server"
-  id="wistiaVideo"
-  className="video-container"
-  display="initial"
-  position="relative"
-  allow="autoplay; fullscreen"
-  allowfullscreen
-/>
-
+* **Self-paced**. [Extending Sumo Logic with MCP, API and Terraform](https://learn.sumologic.com/extending-sumo-logic-with-mcp-api-terraform).
 :::
-
--->
 
 ## Prerequisites
 
@@ -76,6 +63,24 @@ MCP server access is enabled by default. An administrator can turn it on or off 
 Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
 
 Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
+
+:::training Micro Lesson
+
+Watch this micro lesson to learn how to connect an MCP-compatible AI client, such as Claude Code or GitHub Copilot, to Sumo Logic — bringing Sumo Logic data and functionality into your AI-driven tools to support agentic AI workflows for your organization.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/ej2qcjc6l7?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Using the Sumo Logic MCP Server"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## Configure in Claude Code CLI
 
@@ -197,7 +202,7 @@ The list of tools your MCP client reports as available is not currently filtered
 | `alertsReadById` | Get an alert or folder by ID. | View Alerts (`viewAlerts`) |
 | `alertsSearch`   | Search alerts by status, severity, monitor name, mute status, and more. | View Alerts (`viewAlerts`) |
 
-#### Sample prompts
+#### Example prompts
 
 * `Show me all active alerts from the last 24 hours`
 * `Find all alerts triggered by monitor <name> in the last 7 days`
@@ -211,7 +216,7 @@ The list of tools your MCP client reports as available is not currently filtered
 | `listDashboards`  | List all dashboards. | View Library (`viewLibrary`) |
 | `updateDashboard` | Update a dashboard by ID. | Manage Library (`manageLibrary`) |
 
-#### Sample prompts
+#### Example prompts
 
 * `Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
 * `Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
@@ -237,7 +242,7 @@ The list of tools your MCP client reports as available is not currently filtered
 | `getRule`                  | Get a single rule by ID with optional tuning expressions. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
 | `getRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
 
-#### Sample prompts
+#### Example prompts
 
 * `Show me insight <id>, including its signals and involved entities`
 * `Find all critical insights that are still open`
@@ -257,7 +262,7 @@ The list of tools your MCP client reports as available is not currently filtered
 Before running an unscoped query, the model first calls the Discovery tools below to identify a relevant `_sourceCategory`, then runs a small scoped sample query to confirm the source and discover `_collector` values. Queries over 30 minutes without a `_sourceCategory`, `_collector`, `_index`, or `_view` filter are rejected.
 :::
 
-#### Sample prompts
+#### Example prompts
 
 * `Run a log search for the last 5 minutes across all of my data that counts the data by 1-minute buckets and plots the result as a line graph`
 * `Run a 2-day search on _sourcecategory=*proofpoint*, count by recipient and senderip`
@@ -270,7 +275,7 @@ Before running an unscoped query, the model first calls the Discovery tools belo
 | `listExtractionRules` | List field extraction rules. | View Field Extraction Rules (`viewFieldExtractionRules`) |
 | `listPartitions`      | List partitions in the organization, with filters for analytics tier and active status. | View Partitions (`viewPartitions`) |
 
-#### Sample prompts
+#### Example prompts
 
 * `What partitions and field extraction rules exist for security logs?`
 * `List all active partitions in the frequent tier`
