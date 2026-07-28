@@ -77,13 +77,13 @@ The table below displays the response for each text box in this section.
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
 
 
-## Step 4: Sumo Logic AWS Observability apps and monitors
+## Step 4: Sumo Logic AWS Observability apps and alerts
 
-You should only install the AWS Observability apps and monitors the first time you run the template.<br/> The table below displays the response for each text box in this section.
+You should only install the AWS Observability apps and alerts the first time you run the template.<br/> The table below displays the response for each text box in this section.
 
 | Prompt | Guideline  |
 |:--|:--|
-| Install AWS Observability apps and monitors | <ul><li>**Yes** - This installs the following:<br/><ul><li>Amazon Overview, Amazon ElastiCache, AWS Lambda, AWS Network Load Balancer, Amazon RDS, Amazon SNS, Amazon SQS, AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, Host Metrics (EC2), Amazon ECS (Without Container Insights and Traces), and Amazon ECS (With Container Insights and Traces).</li> <li>Monitors for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the monitors will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
+| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>Amazon Overview, Amazon ElastiCache, AWS Lambda, AWS Network Load Balancer, Amazon RDS, Amazon SNS, Amazon SQS, AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, Host Metrics (EC2), Amazon ECS (Without Container Insights and Traces), and Amazon ECS (With Container Insights and Traces).</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
 ## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
 

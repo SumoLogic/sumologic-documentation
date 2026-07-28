@@ -73,8 +73,11 @@ chmod +x DeployAWSOPosix.sh
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | empty  |
 | Install AWS Observability apps and alerts  | Yes  |
 | Select the kind of Metrics Source to create | Kinesis Firehose Metrics Source   |
-| Sumo Logic AWS Metrics Namespaces  | AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS. |
+| Sumo Logic AWS Metrics Namespaces  | AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS, AWS/EC2, ECS/ContainerInsights. |
 | Existing Sumo Logic Metrics Source API URL  | empty   |
+| Sumo Logic AWS Metrics Tag Filters  | {}   |
+| Send telemetry to Sumo Logic  | true   |
+| Tags for filtering CloudWatch Log Groups  | empty   |
 | Enable ALB Access logging  | Both |
 | Create Sumo Logic ALB Logs Source  | Yes |
 | Existing Sumo Logic ALB Logs Source API URL  | empty  |
@@ -87,11 +90,9 @@ chmod +x DeployAWSOPosix.sh
 | Select the Sumo Logic CloudWatch Logs Sources  | Kinesis Firehose Log Source   |
 | Existing Sumo Logic Lambda CloudWatch Logs Source API URL | empty  |
 | Subscribe log groups to Sumo Logic Lambda Forwarder | Both  |
-| Regex for AWS Lambda Log Groups  | lambda  |
+| Regex for AWS Lambda Log Groups  | `\/aws\/(lambda\|apigateway\|rds)`  |
 | Enable ELB Classic Access logging   | Both  |
 | Create Sumo Logic ELB Logs Source | Yes  |
 | Existing Sumo Logic ELB Classic Logs Source API URL  | empty  |
 | AWS S3 Bucket Name   | empty   |
 | Path Expression for the Existing ELB Classic logs  | `classicloadbalancing/AWSLogs/*/elasticloadbalancing/*`   |
-| Location where you want the App to be Installed  | Personal Folder  |
-| Do you want to share App with whole organization   | True  |
