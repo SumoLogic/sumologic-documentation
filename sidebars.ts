@@ -1157,6 +1157,7 @@ module.exports = {
         'manage/security/data-access-level-shared-dashboards',
         'manage/security/enable-support-account',
         'manage/security/installation-tokens',
+        'manage/security/oauth',
         {
           type: 'category',
           label: 'SAML',
