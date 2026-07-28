@@ -51,7 +51,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/mobot')}><img src={useBaseUrl('img/search/mobot/mobot-welcome.png')} alt="Mobot icon" width="40"/><h4>Mobot</h4></a>
+  <a href={useBaseUrl('docs/search/mobot')}><img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="40"/><h4>Mobot</h4></a>
   <p>Ask Mobot a question in plain language and get a guided, multi-step investigation across your logs, no query writing required.</p>
   </div>
 </div>

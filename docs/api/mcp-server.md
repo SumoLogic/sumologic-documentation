@@ -660,8 +660,6 @@ Yes. MCP supports multi-tool calls within a single conversational interaction.
 
 ### How does this affect my Sumo Logic usage?
 
-While in preview, this capability requires an AI Addendum. Contact your account representative for pricing information.
-
 MCP-triggered actions can consume Sumo Logic resources in the same way equivalent UI or API actions do. For example, if an AI client uses MCP to run a log search, that search may consume search resources.
 
 :::note

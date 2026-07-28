@@ -3154,6 +3154,7 @@
   "/Cloud_SIEM_Enterprise/Match_Lists_and_Suppressed_Lists/Standard_Match_Lists": "/docs/cse/match-lists-suppressed-lists/standard-match-lists",
   "/Cloud_SIEM_Enterprise/Match_Lists_and_Suppressed_Lists/Suppressed_Lists": "/docs/cse/match-lists-suppressed-lists/suppressed-lists",
   "/docs/cse/onboard/log-mappings": "/docs/cse/get-started-with-cloud-siem",
+  "/docs/cse/get-started-with-cloud-siem/insight-summary": "/docs/cse/get-started-with-cloud-siem/soc-analyst-agent",
   "/docs/cse/parsers/parser-overview": "/docs/api/parsers-library-management",
   "/Cloud_SIEM_Enterprise/Records,_Signals,_Entities,_and_Insights": "/docs/cse/records-signals-entities-insights",
   "/Cloud_SIEM_Enterprise/Records,_Signals,_Entities,_and_Insights/About_the_CSE_Insight_UI": "/docs/cse/records-signals-entities-insights",
