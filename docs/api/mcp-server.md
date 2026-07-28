@@ -64,6 +64,7 @@ Enabling MCP Server access makes the server available for connection. Clients st
 
 Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
 
+<!--
 :::training Micro Lesson
 
 Watch this micro lesson to learn how to connect an MCP-compatible AI client, such as Claude Code or GitHub Copilot, to Sumo Logic — bringing Sumo Logic data and functionality into your AI-driven tools to support agentic AI workflows for your organization.
@@ -81,6 +82,7 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 />
 
 :::
+-->
 
 ## Configure in Claude Code CLI
 
