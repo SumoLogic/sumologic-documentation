@@ -64,6 +64,7 @@ Enabling MCP Server access makes the server available for connection. Clients st
 
 Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
 
+<!--
 :::training Micro Lesson
 
 Watch this micro lesson to learn how to connect an MCP-compatible AI client, such as Claude Code or GitHub Copilot, to Sumo Logic — bringing Sumo Logic data and functionality into your AI-driven tools to support agentic AI workflows for your organization.
@@ -81,6 +82,7 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 />
 
 :::
+-->
 
 ## Configure in Claude Code CLI
 
@@ -294,8 +296,8 @@ The skill linked below is a starting point based on Sumo Logic's internal testin
 As the Sumo Logic MCP server evolves, for example, as tools are added, removed, or renamed, you may need to update this skill to match.
 :::
 
-1. Download <a href={useBaseUrl('files/sumo-investigator.zip')} target="_blank">sumo-investigator.zip</a> and unzip it.
-1. Move the unzipped `sumo-investigator` folder into your skills directory: `.claude/skills/` for a project-specific skill available only in the current directory, or `~/.claude/skills/` to make it available across all projects. The result should be a `SKILL.md` file at `.claude/skills/sumo-investigator/SKILL.md` (or the equivalent path under `~/.claude/skills/`).
+1. Download <a href={useBaseUrl('files/sumo-investigator/SKILL.md')} target="_blank">SKILL.md</a>.
+1. Create a `sumo-investigator` folder in your skills directory: `.claude/skills/` for a project-specific skill available only in the current directory, or `~/.claude/skills/` to make it available across all projects. Move the downloaded file into that folder. The result should be a `SKILL.md` file at `.claude/skills/sumo-investigator/SKILL.md` (or the equivalent path under `~/.claude/skills/`).
 1. If this is the first skill you've added, restart Claude Code so it picks up the new skills directory. Otherwise, run `/mcp` to confirm the Sumo Logic MCP server is still connected.
 1. Invoke the skill automatically by asking an investigation question, or explicitly with `/sumo-investigator`.
 
