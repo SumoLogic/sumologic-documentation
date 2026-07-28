@@ -81,6 +81,10 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 1. To test the connection, click **Test Alert**. If successful, you'll see a `200 OK` response message.  
 1. Click **Save**.
 
+## Known limitations
+
+The Jira Cloud issue description field has a hard limit of 32,767 characters, enforced at the database level. If a payload variable such as `{{ResultsJson}}` pushes the **Issue Description** past this limit, Jira Cloud returns a `400 Bad Request` error and the issue is not created. To avoid this, reference individual result fields (for example, `{{ResultsJson.fieldname}}`) instead of the full `{{ResultsJson}}` object, or otherwise keep the payload within the limit.
+
 ## Create a Scheduled Search
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
