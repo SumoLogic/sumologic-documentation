@@ -3226,6 +3226,7 @@ integrations: [
             'api/about-apis/troubleshooting',
           ],
         },
+        'api/mcp-server',
         'api/access-keys',
         'api/account-management',
         'api/app-management',
