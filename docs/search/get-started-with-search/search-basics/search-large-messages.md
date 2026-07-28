@@ -14,6 +14,8 @@ See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-mu
 
 For additional information on collecting large messages review the relevant [Source's documentation](/docs/send-data/choose-collector-source).
 
+Some Sumo Logic platform features handle messages larger than 64KB differently, and alert notifications sent to downstream tools like Slack and Jira Cloud can hit character limits of their own. See [Known limitations](#known-limitations) for details.
+
 ## Query to Identify Truncated Logs 
 
 We have a [metadata](built-in-metadata.md) tag called `_size`. The `_size` metadata tag provides the size of the log message in bytes. A log is truncated at the size of 256K or 262144 bytes.
@@ -24,11 +26,20 @@ To find truncated logs you can reference the `_size` metadata tag, an example wo
 
 ## Known limitations
 
-Keep the following limitations in mind when you work with messages larger than 64KB:
+Keep the following limitations in mind when you work with messages larger than 64KB.
+
+### Sumo Logic platform limitations
+
+These features process large messages differently within Sumo Logic itself:
 
 - **LogCompare and LogReduce**. These operators truncate raw 256KB messages to 64KB before matching and grouping the logs into signatures, so content beyond 64KB is not considered. This can also affect response time when you run them against large messages. Learn more in [LogReduce](/docs/search/behavior-insights/logreduce/) and [LogCompare](/docs/search/behavior-insights/logcompare/).
 - **Log Search messages table**. The messages table displays up to 64KB of a message, even after you expand it. To view a complete message larger than 64KB, use the [Log Message Inspector](/docs/search/get-started-with-search/search-page/log-message-inspector).
 - **Cloud SIEM**. Parsing and mapping might not process messages larger than 64KB correctly.
 - **Field Extraction Rules**. The cumulative size of all fields extracted by a rule for a message is limited to 64KB, regardless of the message size. Learn more in [Field Extraction Rule limitations](/docs/manage/field-extractions/create-field-extraction-rule/#limitations).
-- **Slack webhook connections**. Slack truncates long message content, such as `{{ResultsJson}}`, with "…" in the notification. Larger messages make this truncation more likely. Learn more in [Known limitations](/docs/alerts/webhook-connections/slack/#known-limitations).
-- **Jira Cloud webhook connections**. The Jira Cloud issue description field has a hard limit of 32,767 characters. Larger messages make it more likely that a payload variable such as `{{ResultsJson}}` will exceed this limit and return a `400 Bad Request` error. Learn more in [Known limitations](/docs/alerts/webhook-connections/jira-cloud/#known-limitations).
+
+### Downstream webhook connection limitations
+
+Alert notifications sent to these tools can also be affected by character limits that are fixed by the tool itself, independent of Sumo Logic's message size. Larger messages make these limits more likely to be reached:
+
+- **Slack webhook connections**. Slack has a hard limit of 40,000 characters per message. Content beyond this limit, such as a large `{{ResultsJson}}` value, is truncated with "…" in the notification. Learn more in [Known limitations](/docs/alerts/webhook-connections/slack/#known-limitations).
+- **Jira Cloud webhook connections**. The Jira Cloud issue description field has a hard limit of 32,767 characters. A payload variable such as `{{ResultsJson}}` that exceeds this limit returns a `400 Bad Request` error. Learn more in [Known limitations](/docs/alerts/webhook-connections/jira-cloud/#known-limitations).
