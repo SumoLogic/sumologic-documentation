@@ -296,8 +296,8 @@ The skill linked below is a starting point based on Sumo Logic's internal testin
 As the Sumo Logic MCP server evolves, for example, as tools are added, removed, or renamed, you may need to update this skill to match.
 :::
 
-1. Download <a href={useBaseUrl('files/sumo-investigator/SKILL.md')} target="_blank">SKILL.md</a>.
-1. Create a `sumo-investigator` folder in your skills directory: `.claude/skills/` for a project-specific skill available only in the current directory, or `~/.claude/skills/` to make it available across all projects. Move the downloaded file into that folder. The result should be a `SKILL.md` file at `.claude/skills/sumo-investigator/SKILL.md` (or the equivalent path under `~/.claude/skills/`).
+1. Download <a href={useBaseUrl('files/sumo-investigator/SKILL.md')} download="SKILL.md" target="_blank">SKILL.md</a>.
+1. In Claude Code, create a `sumo-investigator` folder in your skills directory: `.claude/skills/` for a project-specific skill available only in the current directory, or `~/.claude/skills/` to make it available across all projects. Move the downloaded file into that folder. The result should be a `SKILL.md` file at `.claude/skills/sumo-investigator/SKILL.md` (or the equivalent path under `~/.claude/skills/`).
 1. If this is the first skill you've added, restart Claude Code so it picks up the new skills directory. Otherwise, run `/mcp` to confirm the Sumo Logic MCP server is still connected.
 1. Invoke the skill automatically by asking an investigation question, or explicitly with `/sumo-investigator`.
 
