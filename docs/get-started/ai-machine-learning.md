@@ -60,6 +60,10 @@ Beyond analysis and platform guidance, Mobot also lets you create, edit, and sum
 
 See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
+### Summary Agent
+
+The [Summary Agent](/docs/cse/get-started-with-cloud-siem/insight-summary/) automatically generates a concise summary of each Cloud SIEM insight, explaining the threat incidents that triggered it. Summaries help security teams quickly understand scope and prioritize response.
+
 ### SOC Analyst Agent
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="45"/>
@@ -142,13 +146,12 @@ Yes. We offer two methods for opting out of AI features.
 1. **Via your account team or support**. You can opt out of specific AI features or all AI features by contacting your Sumo Logic account team or opening a support ticket. If you choose to opt out of all AI features, your tenant is automatically exempted from future AI feature releases.
 2. **In-product self opt-out**. Beginning August 2026, platform administrators can opt out of all AI features directly within the product settings under **Feature Management** (**Administration** > **Feature Management**). Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot, Parse Assist, and the SOC Analyst Agent share a single **AI features** toggle; the MCP server has its own separate **MCP Server access** toggle on the same page.
 
-### What happened to Query Agent, Knowledge Agent, and Summary Agent?
+### What happened to Query Agent and Knowledge Agent?
 
 They're still here, but renamed and repositioned as their capabilities have evolved.
 
 - **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
 - **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
-- **Summary Agent → absorbed into SOC Analyst Agent**. Summary Agent's signal summarization capability is now a core part of how the SOC Analyst Agent contextualizes and presents its findings.
 
 ### Can Dojo AI access be controlled at a user level?
 
