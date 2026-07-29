@@ -16,6 +16,10 @@ Our webhook connections send Sumo Logic alerts to third-party applications.
 See also: [Webhook Integrations](/docs/integrations/webhooks).
 :::
 
+:::note
+The date and time format used for timestamp fields in your webhook payloads is set by an organization-wide policy. Learn more in [Notification timestamp format](/docs/alerts/monitors/alert-variables/#notification-timestamp-format).
+:::
+
 In this section, we'll introduce the following concepts and more:
 
 <div className="box-wrapper" >

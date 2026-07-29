@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/elasticsearch-v2.png')} alt="elasticsearch" width="100"/>
 
-***Version: 1.3  
-Updated: Nov 03, 2023***
+***Version: 1.4  
+Updated: Jul 23, 2026***
 
 Query Elasticsearch
 
@@ -68,3 +68,4 @@ For information about Elasticsearch, see [Elasticsearch documentation](https://w
 	+ Updated the integration with Environmental Variables
 	+ Improved error handling
 	+ Removed leading/trailing spaces
+* July 23, 2026 (v1.4) - Resolved an issue where the integration fails due to deprecated dependency warnings.

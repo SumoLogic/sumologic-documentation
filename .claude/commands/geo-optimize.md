@@ -37,21 +37,11 @@ Ask for the file path if not provided. Read the complete file including frontmat
 
 ### Step 2: Diagnose AEO and GEO gaps
 
-Before proposing changes, assess the doc against these signals and tell the user what you found:
+Before proposing changes, assess the doc against the **Five GEO Principles** defined in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md) — answer-first (BLUF), one page one question, question-style headings, FAQ sections, and structured metadata — and tell the user what you found.
 
-**AEO signals** (featured snippets, "People also ask", direct answer boxes)
-- Are any H2 or H3 headings phrased as questions (e.g., "What is X?", "How do I configure Y?")?
-- Does the first paragraph directly answer the implied question a user would search for?
-- Are there structured lists or tables that search engines can extract as direct answers?
-- Are key terms defined with explicit "X is..." or "X means..." sentences?
+Also check these AEO-specific signals, which the GEO skill does not cover:
 
-**Opening paragraph quality** (AEO + GEO)
-An LLM and a featured snippet algorithm both scan the first 1–3 sentences first. Check:
-- Does it directly answer "what is [subject]" or "what does [subject] do"?
-- Is it self-contained (understandable without reading anything else)?
-- Does it avoid filler openers like "This document covers..." or "Welcome to..."?
-
-**Factual density** (GEO)
+**Factual density**
 LLMs prefer pages where key facts are stated explicitly as short, standalone sentences.
 - Are definitions buried in subordinate clauses?
 - Are numbers and specifications stated directly?
@@ -61,18 +51,12 @@ LLMs prefer pages where key facts are stated explicitly as short, standalone sen
 Lists, tables, and short Q&A pairs are extracted by AI more reliably than prose paragraphs.
 - Does the doc have lists for things that are enumerable?
 - Does it have a table for comparisons, parameters, or options?
-- Are there H2 or H3 headings phrased as questions?
+- Are key terms defined with explicit "X is..." or "X means..." sentences?
 
 **Summary section**
 Pages with an "At a glance", "Key facts", or "Overview" section near the top get cited more often because the summary is the most citation-friendly portion.
 - Does the doc have such a section?
 - Is it near the top?
-
-**Self-containedness**
-AI tools cannot follow links. If the doc depends on the reader having read another page first, an AI cannot synthesize it correctly.
-- Does the doc explain its own prerequisites briefly?
-- Are acronyms defined on first use?
-- Would a reader with no context understand the key points?
 
 ### Step 3: Propose improvements
 
@@ -164,6 +148,8 @@ Place this immediately after the opening paragraph for docs over 600 words.
 
 Adapt the labels to fit the doc type. For reference docs, use "Key fields" or "Parameters at a glance." For how-to guides, use "Before you begin."
 
+**Prose variant (no heading).** For shorter docs, or when a bulleted block reads as boilerplate, fold the same at-a-glance facts into a short prose paragraph immediately after the opening paragraph, with no `## At a glance` heading. Use whichever form reads more naturally. The goal is a citable summary of what the feature is, what it supports, and what it does near the top of the page, not a specific layout.
+
 ### Pattern 3: Reframe headings as questions
 
 AI tools and featured snippet algorithms favor pages where headings signal the question being answered.
@@ -172,11 +158,14 @@ AI tools and featured snippet algorithms favor pages where headings signal the q
 |-----------------|----------------------------|
 | Overview | What is [feature]? |
 | How it works | How does [feature] work? |
+| Configuring the source | How to configure the source |
 | Prerequisites | What do you need before you start? |
 | Limitations | What are the limitations of [feature]? |
 | Troubleshooting | Why is [feature] not working? |
 
 Only reframe headings where the question form is natural and specific. Do not reframe step headings like "Step 1: Configure the source" — those are correct as-is.
+
+For procedural sections, use a "How to X" statement (for example, `How to configure the source`), not "How do I X". Keep every heading in the second person or neutral phrasing, never the first person ("How do I", "What do I need").
 
 ### Pattern 4: Make facts citation-ready
 
@@ -207,7 +196,7 @@ LLMs cannot infer definitions. If an acronym or domain term appears without defi
 Define on first use in body text:
 > Sumo Logic uses Field Extraction Rules (FERs) to parse key-value pairs from raw log messages at ingest time.
 
-After the first use, the abbreviation alone is fine.
+After the first use, the abbreviation alone is fine. Define the term once at its genuine first use (often the opening paragraph). Do not re-expand the same acronym in later tables or sections.
 
 ---
 

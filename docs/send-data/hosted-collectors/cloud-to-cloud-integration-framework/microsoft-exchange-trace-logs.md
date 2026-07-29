@@ -15,8 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Microsoft Exchange Trace Logs source collects the [Message Trace](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) logs via the Microsoft Graph API.
 
 :::note
-We recommend migrating to version 2.x.x only if your tenant is on the [Microsoft Graph Global Service](https://learn.microsoft.com/en-us/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-1.0&tabs=http) and has the **`/admin/exchange/tracing/messageTraces`** endpoint enabled. 
-If your tenant does not meet these requirements or the endpoint is not yet available in your environment, please continue using version 1.x.x to ensure uninterrupted data collection. Please refer to this [Microsoft doc](https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587#:~:text=Migration%20guidance%20and%20deprecation%20timeline) for  more details.
+The MS Exchange TraceLogs Source is supported only for **Commercial / Multi-Tenant** environments. **GCC, GCC-High, DoD, and other sovereign cloud regions are not supported.** because Microsoft has not enabled the Graph API for them, so SumoLogic is currently unable to support MS Exchange trace log collection in these Microsoft regions. Please refer to this [Microsoft doc](https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587#:~:text=Migration%20guidance%20and%20deprecation%20timeline) for  more details.
 :::
 
 ## Data collected

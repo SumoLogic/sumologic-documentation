@@ -95,6 +95,10 @@ Under **Send Notification**, select the condition for when you want an alert to 
       * **Fewer than.** Choose if you want to be notified only if the search results include fewer than the number of messages or groups you set in the text box.
       * **Fewer than or equal to.** Choose if you want to be notified only if the search results include fewer than or equal to the number of messages or groups you set in the text box.
 
+:::note
+The date and time format used for timestamps in your notification payloads is set by an organization-wide policy. Learn more in [Notification timestamp format](/docs/alerts/monitors/alert-variables/#notification-timestamp-format).
+:::
+
 In the next section, we'll walk you through the available Scheduled Search alert types.
 
 ### Step 6. Choose a Scheduled Search alert type
