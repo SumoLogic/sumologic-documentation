@@ -1482,7 +1482,16 @@ module.exports = {
         },
       ],
     },
-    'search/mobot',
+    {
+      type: 'category',
+      label: 'Mobot ✨',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/mobot/index'},
+      items: [
+          'search/mobot/example-prompts',
+      ],
+    },
     {
       type: 'category',
       label: 'Search Query Language',
