@@ -24,7 +24,7 @@ Mobot is Sumo Logic's AI-powered conversational assistant for security analysts,
 
 <img src={useBaseUrl('img/search/mobot/general-tab.png')} alt="Mobot welcome screen with example prompts grouped by General, Security, Observability, and Administration" style={{border: '1px solid gray'}} width="700" />
 
-In a single conversation, Mobot determines whether you have a log data question or a how-to question and responds accordingly. For log data questions, it identifies relevant sources, correlates information across logs, and returns inline results with anomaly callouts and suggested next steps. For how-to questions, it provides structured answers and reference links from Sumo Logic documentation. Conversation context lets you refine, pivot, and dig deeper without starting over.
+In a single conversation, Mobot determines whether you have a log data or a how-to question and responds accordingly. For log data questions, it identifies relevant sources, correlates information across logs, and returns inline results with anomaly callouts and suggested next steps. For how-to questions, it provides structured answers and reference links from Sumo Logic documentation. Conversation context lets you refine, pivot, and dig deeper without starting over.
 
 ## Use cases
 
@@ -54,15 +54,17 @@ In a single conversation, Mobot determines whether you have a log data question 
 
 <SumoAcademy/>
 
-* **Self-paced**. [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101).
-* **Instructor-led virtual classes**. [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2).
+<!--
+* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+-->
+* **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 :::
 
 :::training Micro Lesson
 
 Watch this micro lesson to learn what Mobot is, its key capabilities, and how its AI-powered, unified conversational interface accelerates your investigations.
 
-<Iframe url="https://fast.wistia.net/embed/iframe/t187881hs5op2qi?web_component=true&seo=true&videoFoam=false"
+<Iframe url="https://fast.wistia.net/embed/iframe/8jgl5h69np?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
   title="Micro Lesson: Introduction to Mobot"
@@ -467,7 +469,7 @@ Mobot follows the same search behavior as standard log search and respects your 
    ```sumo
    _dataTier=Infrequent
    ```
-   
+
 ### Known limitations
 
 Mobot continues to evolve. Current limitations include:
@@ -529,9 +531,11 @@ Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time s
 
 If you need a higher limit, contact your account team.
 
+<!-- uncomment at GA after Aug 3
 ### Does Mobot's licensing model and limits apply to SOC Analyst Agent investigations?
 
 No. When you click **Ask Mobot** from an Investigated Insight, those interactions are governed by [SOC Analyst Agent licensing](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability) — up to 30 prompts per user per day — not the standard Mobot limit above.
+-->
 
 ### Is there a cost to use Mobot?
 
@@ -591,7 +595,7 @@ No. All processing happens within your region's cluster. RAG context is scoped t
 
 ### Does a fourth party have access to Mobot customer data?
 
-No. Mobot uses foundation models securely hosted through Amazon Bedrock. Customer inputs and outputs are treated as Customer Content under AWS terms and are not used to train models or shared with third-party model providers (such as Anthropic). Customer data processed through Mobot remains within Sumo Logic's secure environment and is used only to deliver results for that customer.
+No. Mobot uses foundation models securely hosted through Amazon Bedrock. See our [AI and Machine Learning FAQ](/docs/get-started/ai-machine-learning/#does-any-third-party-have-access-to-dojo-ai-customer-data) for more information.
 
 ### Does Mobot use any open-source libraries, GenAI providers, or cloud providers?
 
@@ -603,11 +607,7 @@ Yes. The on-call developer or security engineer troubleshooting an incident is t
 
 ### Does Sumo Logic hold any AI-specific certifications or accreditations?
 
-Sumo Logic is currently reviewing AI compliance within a rapidly evolving regulatory landscape, including ISO 42001, which is designed to help organizations implement AI responsibly.
-
-All Sumo Logic AI capabilities operate within our existing industry-recognized security and compliance framework, including FedRAMP Moderate, SOC 2 Type 2, HIPAA, PCI DSS 4.0.1, and ISO 27001:2022. These attestations govern the confidentiality, integrity, and protection of customer data across our platform, including AI features.
-
-Availability of specific AI capabilities may vary by deployment region based on compliance boundary requirements.
+See our [AI and Machine Learning FAQ](/docs/get-started/ai-machine-learning/#does-sumo-logic-hold-any-ai-specific-certifications-or-accreditations) for more information.
 
 ### Which Mobot capabilities are available in FED deployments?
 
@@ -664,3 +664,8 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 * [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2).
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.
+
+<!-- uncomment Aug 3 and remove '* [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).' above
+
+* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+-->

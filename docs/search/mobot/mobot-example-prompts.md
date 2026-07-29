@@ -15,6 +15,15 @@ Use these prompts as starting points. After Mobot responds, refine the result th
 Keyword searches are case-sensitive.
 :::
 
+## Sumo Logic how-to questions
+
+* `What is Mobot?`
+* `How do I configure OpenTelemetry for my service?`
+* `How do I add a Collector for AWS CloudTrail?`
+* `What's the difference between a scheduled search and a real-time alert?`
+* `Why isn't my Collector sending data?`
+* `What are the API endpoints for Sumo Logic?`
+
 ## Security investigations
 
 * `Look into any unusual login attempts from yesterday.`
@@ -95,12 +104,3 @@ Keyword searches are case-sensitive.
 * `What data sources are available?`
 * `Have any Collectors gone silent in the last few hours?`
 * `Show me the users who scanned the most data last week.`
-
-## Sumo Logic how-to questions
-
-* `What is Mobot?`
-* `How do I configure OpenTelemetry for my service?`
-* `How do I add a Collector for AWS CloudTrail?`
-* `What's the difference between a scheduled search and a real-time alert?`
-* `Why isn't my Collector sending data?`
-* `What are the API endpoints for Sumo Logic?`
