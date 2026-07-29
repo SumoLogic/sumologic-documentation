@@ -467,9 +467,7 @@ Mobot follows the same search behavior as standard log search and respects your 
    ```sumo
    _dataTier=Infrequent
    ```
-
-<!-- TODO (DOCS-1548): Open question raised internally — Mobot may search partitions marked 'excluded' from default scope, as well as 'infrequent' partitions, when a user hasn't explicitly scoped their prompt. Unconfirmed whether this is intended behavior or whether customers can limit which partitions Mobot can scan. A teammate noted similar language already exists for MCP & Flex docs, but was unsure if an equivalent note exists for Mobot. Confirm with product and document here if it's a real behavior/limitation. -->
-
+   
 ### Known limitations
 
 Mobot continues to evolve. Current limitations include:
