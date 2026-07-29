@@ -9,6 +9,9 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 ## Repository
 https://github.com/SumoLogic/sumologic-documentation
 
+## Key Folders
+https://github.com/SumoLogic/sumologic-documentation/tree/main/docs
+
 ## Directory Conventions
 
 | What | Where |
@@ -40,8 +43,10 @@ Every doc requires at minimum: `id`, `title`, `description`. New docs also need 
 2. **Use exact text** - Copy checkbox labels verbatim from the template file. Example current labels: "Minor Changes", "Update Content", "New Content", "Site and Tools" — but always read the file, these may be outdated.
 3. **Keep all checkboxes** - Pre-check one box, leave all four in the list
 4. **PR title format**: `TICKET - Description` (e.g., `DOCS-1234 - Add PostgreSQL app`)
-5. **Ask for ticket number** - Always ask for a Jira ticket before creating a PR, and offer to create one if the user doesn't have one. Exception: this ticket requirement is optional for quick typo fixes.
+5. **Ask for ticket number** - Always ask for a Jira ticket before creating a PR, and offer to create one if the user doesn't have one (Claude Code: use the Atlassian Jira MCP). Exception: this ticket requirement is optional for quick typo fixes.
 6. **Full Jira URL** - Use `https://sumologic.atlassian.net/browse/DOCS-1234` not ticket number alone
+
+(Claude Code: see `.claude/skills/pr-template-guide/SKILL.md` for examples and guidance.)
 
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if auto-accept is enabled. Always ask first.
