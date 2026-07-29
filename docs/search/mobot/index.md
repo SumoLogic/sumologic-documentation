@@ -662,7 +662,7 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
 * [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).
-* [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2).
+* [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.
 
 <!-- uncomment Aug 3 and remove '* [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).' above
