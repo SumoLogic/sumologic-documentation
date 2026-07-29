@@ -236,9 +236,11 @@ Sumo Logic AI capabilities operate within our existing industry-recognized secur
 
 Availability of specific AI capabilities may vary by deployment region (including FED) based on compliance boundary requirements.
 
+<!-- Uncomment once SOC Analyst Agent GAs (target: August 3, 2026)
 ### Can I get Dojo AI capabilities if I'm on FedRAMP?
 
 The SOC Analyst Agent, Mobot, and the Sumo Logic MCP server are available for these deployments. However, because the Automation Service (playbooks) has not yet been introduced to FED, Conversational Playbooks via Mobot are excluded from the launch for these deployments.
+-->
 
 ### What types of model reviews are conducted?
 
