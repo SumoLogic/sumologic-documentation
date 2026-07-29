@@ -10,9 +10,9 @@ import Iframe from 'react-iframe';
 
 This article has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers.
 
-For a complete list of standard parsers, see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
+For a complete list of standard parsers, see [Parsers](https://github.com/SumoLogic/siem-content-catalog/blob/master/parsers/README.md) in the [SIEM Content Catalog](https://github.com/SumoLogic/siem-content-catalog/blob/master/README.md).
 
-See additional articles for more information about the Sumo Logic Cloud SIEM parsers:
+See additional articles for more information about the Sumo Logic SIEM parsers:
 * [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide)
 * [Parsing Patterns](/docs/cse/schema/parsing-patterns)
 * [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers)
@@ -23,12 +23,12 @@ The instructions that follow assume that you have already written your parser co
 
 :::training Micro Lesson
 
-Watch the following micro lesson to learn how to apply parsers to Cloud SIEM data sets.
+Watch the following micro lesson to learn how to apply parsers to SIEM data sets.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/xqe7k7h2e4?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Tutorial: Applying Parsers to Cloud SIEM Data Sets Video"
+  title="Tutorial: Applying Parsers to SIEM Data Sets Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -41,7 +41,7 @@ Watch the following micro lesson to learn how to apply parsers to Cloud SIEM dat
 
 ## Check parser code for mapping hints
 
-Your parser code must contain statements that tell Cloud SIEM what log mapping to use when creating records from the field dictionary the parser creates for log messages. 
+Your parser code must contain statements that tell SIEM what log mapping to use when creating records from the field dictionary the parser creates for log messages. 
 
 Make sure your parser code includes `MAPPER` statements that specify the vendor, product, and the event ID that the log messages to be parsed contain, and a `FORMAT` statement that defines the message format.
 
@@ -134,7 +134,7 @@ following categories:
 
 ## Create a local configuration for a system parser
 
-You can customize any of the system parsers that are built into Cloud SIEM. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations — that's the part of the page labeled **Local Configuration**. The [parsing language statements](/docs/cse/schema/parsing-language-reference-guide#attributes-used-in-all-stanza-types) you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
+You can customize any of the system parsers that are built into SIEM. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations — that's the part of the page labeled **Local Configuration**. The [parsing language statements](/docs/cse/schema/parsing-language-reference-guide#attributes-used-in-all-stanza-types) you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
 
 `START_TIME_FIELD = eventTime`
 
@@ -182,13 +182,13 @@ You can export a parser as JSON, and import it to another Sumo Logic org.
 1. Choose **Import** from the three-dot kebab menu.
 1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.<br/><img src={useBaseUrl('img/cse/import.png')} alt="Import dialog" width="600"/>
 
-## Setting Cloud SIEM log mapping information
+## Setting SIEM log mapping information
 
 In this step you configure one or more Log Mappings. If all of the messages your parser will process contain the same fields, and you want to create records of the same type, a single Log Mapping will suffice. For some data sources, you will likely need to create more than one Log Mapping. For example:
 
 With some CloudTrail logs messages, you might want to create a different [record type](/docs/cse/schema/cse-record-types), depending on the event ID in a message. In some cases, an authorization record is appropriate, while in others, an audit or audit change record would be a better fit. 
 
-In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a Cloud SIEM record) will vary, depending on the Event ID in the message. For example, you may want to map data into the Cloud SIEM schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
+In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a SIEM record) will vary, depending on the Event ID in the message. For example, you may want to map data into the SIEM schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
 
 To create your mapping, see [Creating a Structured Log Mapping](/docs/cse/schema/create-structured-log-mapping). After setting up the mapping or mappings, complete the steps in [Configuring a source to use a parser](#configuring-a-source-to-use-a-parser), below.
 
@@ -207,7 +207,7 @@ This section explains how to configure a Sumo Logic core platform source to send
 
 ## Parser templates
 
-We provide a number of parsers to extract data for normalization (see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md)). However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers.
+We provide a number of parsers to extract data for normalization (see [Parsers](https://github.com/SumoLogic/siem-content-catalog/blob/master/parsers/README.md) in the [SIEM Content Catalog](https://github.com/SumoLogic/siem-content-catalog/blob/master/README.md)). However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers.
 
 ### Access parser templates
 

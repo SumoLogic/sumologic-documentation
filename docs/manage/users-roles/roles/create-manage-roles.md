@@ -39,7 +39,7 @@ To create a role:
 1. **Search Filter**. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. Only one is allowed for each. (For general guidance on creating search filters, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).)
    * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
    * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, `sumologic_volume`, to name a few.
-   * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partition-for-cloud-siem-signals).
+   * **Security data filter**. This filter applies on all logs in [SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partition-for-siem-signals).
 1. **Index Access**. Allows or denies access to [search indexes](/docs/manage/partitions/data-tiers/). Select one of the following and choose the indexes in the **Select Indexes** box that appears:
    * **All indexes**. Allow access to all indexes.
    * **Allow few indexes**. Allow access to only the selected indexes. 

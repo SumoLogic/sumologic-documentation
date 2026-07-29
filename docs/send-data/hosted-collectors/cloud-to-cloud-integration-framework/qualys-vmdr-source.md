@@ -4,7 +4,7 @@ title: Qualys VMDR Source
 sidebar_label: Qualys VMDR
 tags:
     - qualys-vmdr
-    - cloud-SIEM-enterprise
+    - siem-enterprise
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.
 ---
 
@@ -46,8 +46,8 @@ To configure a Qualys VMDR Source:
 1. The next section covers the type of data to collect and how often.
 1. **Collect vulnerability data**. This option will fetch the list of hosts with the host's latest vulnerability data based on the host-based scan data available in the user’s account. We recommend leaving the polling interval at the default 1 hour.
 1. (Optional) **Collect KnowledgeBase Information**. This option is only available if you choose to collect vulnerability data. If selected, it will automatically download the vulnerability details from the Qualys KnowledgeBase for vulnerabilities detected within your environment.
-1. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in Cloud SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
-   * To forward Qualys VMDR assetInventory to Cloud SIEM, it is recommended to create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/) with the following criteria:
+1. **Collect asset inventory**. This option consumes asset data from Qualys Global IT Asset Inventory API. The inventory data collected here will also be used in SIEM as inventory data. We recommend leaving the polling interval at the default 24 hours.
+   * To forward Qualys VMDR assetInventory to SIEM, it is recommended to create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/) with the following criteria:
    * Scope: `_sourceCategory="<enter your source category here from Step 5>" "assetInventory"`
    * Parse Expression: `"true" as _siemForward`
 1. When you are finished configuring the Source, click **Submit**.
@@ -87,7 +87,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
   <tr>
    <td>Computer Inventory</td>
    <td><code>/rest/2.0/search/am/asset/</code></td>
-   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as [inventory data](/docs/cse/administration/inventory-sources-and-data).<br />
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by SIEM as [inventory data](/docs/cse/administration/inventory-sources-and-data).<br />
    Permissions - User must have the <code>GAV/CSAM</code> module and the <code>App API Enabled</code> option enabled for that role. Additionally, the user must have the <code>Allow user view access to all objects</code> checkbox enabled under <strong>Roles And Scopes</strong> within the user settings.<br/>
    API details are on page 27 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.</td>
   </tr>

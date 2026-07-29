@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 | <img src={useBaseUrl('img/content-sharing/icon-favorites.png')} alt="Favorites icon" width="15%" /> | Favorites | Content you’ve marked as favorite. |
 | <img src={useBaseUrl('img/content-sharing/icon-library.png')} alt="Library icon" width="15%" /> | Library | List of all accessible content, including your creations and the content shared with you. |
 | <img src={useBaseUrl('img/content-sharing/classic-icon-more-actions-kebab-three-dot.png')} alt="More actions kebab" width="15%" /> | More Actions / Three-Dot Kebab | Click to reveal a menu with additional options. |
-| <img src={useBaseUrl('img/content-sharing/left-nav.png')} alt="Sumo Logic left nav menu" width="80%" /> | Left Nav | Access all Sumo Logic features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, and Cloud SIEM, as well as your dashboards library. |
+| <img src={useBaseUrl('img/content-sharing/left-nav.png')} alt="Sumo Logic left nav menu" width="80%" /> | Left Nav | Access all Sumo Logic features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, and SIEM, as well as your dashboards library. |
 
 [**Classic UI (Legacy)**](/docs/get-started/sumo-logic-ui-classic)
 

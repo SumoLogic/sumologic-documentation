@@ -80,9 +80,9 @@ When you create a Scheduled Search, you can save the results to a [Lookup Table]
 
 For instructions, see [Save to Lookup](save-to-lookup.md).
 
-### Cloud SIEM Signal
+### SIEM Signal
 
-You can trigger the creation of a Cloud SIEM Signal with a scheduled search. Signals are otherwise generated when the conditions of a Cloud SIEM rule are satisfied by a Record. Signals are correlated with other Signals to create a [Cloud SIEM Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/).
+You can trigger the creation of a SIEM Signal with a scheduled search. Signals are otherwise generated when the conditions of a SIEM rule are satisfied by a Record. Signals are correlated with other Signals to create a [SIEM Insight](/docs/cse/get-started-with-siem/insight-generation-process/).
  
 
-For instructions, see [Generate Cloud SIEM Signals With a Scheduled Search](generate-cse-signals.md).
+For instructions, see [Generate SIEM Signals With a Scheduled Search](generate-cse-signals.md).

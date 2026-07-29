@@ -4,7 +4,7 @@ title: Google Workspace AlertCenter Source
 sidebar_label: Google Workspace AlertCenter
 keywords:
     - google-workspace-alertcenter
-    - cloud-SIEM-enterprise
+    - siem-enterprise
 description: Configure Google Workspace AlertCenter Cloud-to-Cloud connector.
 ---
 
@@ -58,7 +58,7 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 1. **Name.** Enter a name for the Source.
 1. **Description.** (Optional). Enter the description of the Source.
 1. **Source Category.** Enter a string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Click if you want the Source to forward the logs it ingests to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
+1. **Forward to SIEM**. Click if you want the Source to forward the logs it ingests to [SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Fields.** (Optional) Click **+Add Field** to define the fields you want to associate, each field needs a name (key) and value. For more information, see [Fields](/docs/manage/fields).
     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.

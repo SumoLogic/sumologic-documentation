@@ -1,7 +1,7 @@
 ---
 slug: /release-notes
 title: Sumo Logic Release Notes
-description: Stay current with Sumo Logic release notes covering new features and bug fixes for Service, Cloud SIEM, Cloud SOAR, Collector, and Developer releases.
+description: Stay current with Sumo Logic release notes covering new features and bug fixes for Service, SIEM, Cloud SOAR, Collector, and Developer releases.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,10 +23,10 @@ Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Ex
 <div className="box smallbox card">
   <div className="container">
     <a href={useBaseUrl('release-notes-cse')}>
-      <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="40" />
-      <h4>Cloud SIEM</h4>
+      <img src={useBaseUrl('img/icons/security/siem.png')} alt="SIEM icon" width="40" />
+      <h4>SIEM</h4>
     </a>
-    <p>Learn about new features, updated content (rules, log mappers, parsers), bug fixes, and announcements for Cloud SIEM.</p>
+    <p>Learn about new features, updated content (rules, log mappers, parsers), bug fixes, and announcements for SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -75,7 +75,7 @@ Get release notes updates delivered to your RSS reader:
 
 * [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Service Release Notes](https://www.sumologic.com/help/release-notes-service/rss.xml)
 * [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Collector Release Notes](https://www.sumologic.com/help/release-notes-collector/rss.xml)
-* [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Cloud SIEM Release Notes](https://www.sumologic.com/help/release-notes-cse/rss.xml)
+* [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />SIEM Release Notes](https://www.sumologic.com/help/release-notes-cse/rss.xml)
 * [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Cloud SOAR Release Notes](https://www.sumologic.com/help/release-notes-csoar/rss.xml)
 * [<img src={useBaseUrl('img/release-notes/rss.png')} alt="RSS" width="32" style={{verticalAlign: 'text-bottom', marginRight: '10px'}} />Developer Release Notes](https://www.sumologic.com/help/release-notes-developer/rss.xml)
 

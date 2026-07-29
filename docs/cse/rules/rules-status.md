@@ -2,15 +2,15 @@
 id: rules-status
 title: Rules Status
 sidebar_label: Rules Status
-description: Learn about Cloud SIEM rules statuses and how to address rules in a degraded or failed state.
+description: Learn about SIEM rules statuses and how to address rules in a degraded or failed state.
 keywords:
-  - cloud siem
+  - siem
   - rules
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes the status of Cloud SIEM rules and how to address rules that are in a degraded or failed state.
+This article describes the status of SIEM rules and how to address rules that are in a degraded or failed state.
 
 ## View a rule's status
 
@@ -20,7 +20,7 @@ You can see a rule's status while viewing the rule:
 
 ## Search for rules by status
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.
 1. Click **Filters** at the top of the **Rules** screen.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Select the **Status** field.<br/><img src={useBaseUrl('img/cse/filter-on-rule-status-1.png')} alt="Filter on rule status" style={{border: '1px solid gray'}} width="300"/>
 1. For **Operator** select **is**.
@@ -53,18 +53,18 @@ If you write a [custom rule](/docs/cse/rules/before-writing-custom-rule/) that b
 Following are some situations when a rule can be become degraded:
 * When a rule cannot be parsed, a message like this can appear when you click the information button on the "Degraded" rule status:
    <br/>`Failure to parse rule: Line 1:2 mismatched input 'Unknown' expecting {<EOF>, '[', '.', AND, BETWEEN, IN, IS, LIKE, MATCHES, NOT, OR, RLIKE, EQ, '<=>', '<>', '!=', '<', LTE, '>', GTE, '+', '-', '*', '/', '%', WS}` 
-* Rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, Cloud SIEM might display a message like this when you click the information button on the "Degraded" rule status:
+* Rules have a limit on the number of records per second they can evaluate.  If there is a value used in the "group by" field that causes the rule to exceed that threshold, SIEM might display a message like this when you click the information button on the "Degraded" rule status:
    <br/>`The aggregation on the group key 'admin@company.com' has a record volume exceeding the supported limit, and has been disabled. Consider tuning the rule to exclude records producing this group key.`
 
 ### Troubleshoot baseline problems
 
 Sometimes there may be a problem creating a baseline for a [first seen rule](/docs/cse/rules/write-first-seen-rule/#baselines-for-first-seen-rules) or [outlier rule](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules). In these cases, the rule might enter a Degraded, Failed, or Pending Baseline state. Clicking the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the status label in most cases will provide enough information to resolve the problem. But if not, you can do additional troubleshooting:
 *  Check the [Sumo Logic status](https://status.sumologic.com/) page to see if there’s an outage in your deployment. If the system is down, it cannot generate the baseline.
-* If the rule has a Degraded status because it failed to parse, fix the rule so that it parses correctly. A baseline cannot be built if the rule does not successfully parse. One thing you can do is ensure that a matching expression for the rule parses correctly is to use the compatible [core platform literals](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+* If the rule has a Degraded status because it failed to parse, fix the rule so that it parses correctly. A baseline cannot be built if the rule does not successfully parse. One thing you can do is ensure that a matching expression for the rule parses correctly is to use the compatible [core platform literals](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-siem).
 * If the rule has a Failed status, clicking the information button might show that the amount of data requested is too large to return (see [Rule limits](#rule-limits)). In this case, create a more filtered baseline focusing on the exact activity you want to capture.
 * If the rule has a persistent Pending Baseline status, there might not be enough data in the system to build the baseline:
-   *  Check the ingest configuration of your Cloud SIEM data sources and confirm the appropriate records are being added to the system.
-   * The matching expression may not be using the right fields. Cloud SIEM records are normalized to a defined [schema](/docs/cse/schema/schema-attributes/). The matching expression and all other fields should use that schema and not the raw log field names.
+   *  Check the ingest configuration of your SIEM data sources and confirm the appropriate records are being added to the system.
+   * The matching expression may not be using the right fields. SIEM records are normalized to a defined [schema](/docs/cse/schema/schema-attributes/). The matching expression and all other fields should use that schema and not the raw log field names.
    * There may not be enough activity to build a baseline. Expand the baseline retention period to gather more activity.
    * Make sure that the Sumo Logic system has been active and ingesting data for the full baseline retention period. For example, if the rule has a default baseline retention period of 90 days, but your company only started using Sumo Logic a few days ago, then the rule will remain in the Pending Baseline state until 90 days have passed. To resolve the issue, change the baseline retention period window.
   
@@ -102,7 +102,7 @@ Rule limits can be higher if you are in a higher tenant tier level. If you have 
 
 ## Query for rule status changes
 
-You can query audit logs for rule status changes. For more information about querying audit logs, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/) and [Cloud SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#cloud-siem-audit-log-definitions).
+You can query audit logs for rule status changes. For more information about querying audit logs, see [SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/) and [SIEM audit log definitions](/docs/manage/security/audit-indexes/documentation-audit-log-definitions/#siem-audit-log-definitions).
 
 ### Query for disabled rules
 

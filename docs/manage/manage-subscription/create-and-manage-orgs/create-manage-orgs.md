@@ -79,9 +79,9 @@ After you create a new org, you can’t delete it.
       * **Infrequent Log Ingest.** Enter estimated daily ingestion to the Infrequent Tier.
       * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
       * **Tracing**. Enter estimated daily ingestion of traces.<br/> <img src={useBaseUrl('img/manage/subscriptions/credits-calculator.png')} alt="calculator" style={{border:'1px solid gray'}} width="450" />
-1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
+1. **SIEM Enterprise**. Click the checkbox to enable SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
           :::note
-          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
+          Provisioning SIEM can take up to 24 hours. See [Monitor SIEM Provisioning](#monitor-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
@@ -140,9 +140,9 @@ To change an org's credits allocation:
       1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="Baseline view details" width="450" />
 1. Click **Save** once you finish editing the credit values.
 
-## Monitor Cloud SIEM provisioning
+## Monitor SIEM provisioning
 
-You can also enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+You can also enable and provision SIEM for a child org. Note that the process of provisioning SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} style={{border:'1px solid gray'}} alt="status" />
 
@@ -165,7 +165,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Tracing Ingest**. Credits used for traces ingested.
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
-* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
+* **SIEM Ingest**. Credits used for logs ingested into SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
 * **Promotional categories**. For more information, see [Promotional credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#promotional-credits).
 
@@ -196,7 +196,7 @@ By clicking any of the selected child orgs, a side panel opens up in which you c
 * **Tracing Ingest**. Credits used for traces ingested for the selected child org.
 * **Metrics Ingest**. Credits used for metrics ingested for the selected child org.
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers for the selected child org.
-* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM for the selected child org.
+* **SIEM Ingest**. Credits used for logs ingested into SIEM for the selected child org.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier for the selected child org.
 
 By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.

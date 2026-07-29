@@ -10,7 +10,7 @@ import ActionsLimit from '../../../reuse/actions-limit.md';
 
 Playbooks can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
-To run a playbook, add it to an automation. You can run playbooks in [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), and [Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar). Sumo Logic provides a number of out-of-the-box playbooks that you can use install to use your automations. See [Out-of-the-Box Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
+To run a playbook, add it to an automation. You can run playbooks in [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [SIEM](/docs/cse/automation/automations-in-siem/), and [Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar). Sumo Logic provides a number of out-of-the-box playbooks that you can use install to use your automations. See [Out-of-the-Box Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
 
 :::note
 <ActionsLimit/>

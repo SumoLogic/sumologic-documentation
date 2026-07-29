@@ -1,18 +1,18 @@
 ---
 id: standard-match-lists
 title: Entity Tags and Standard Match Lists
-description: Learn about entity tags and standard match lists in Cloud SIEM.
+description: Learn about entity tags and standard match lists in SIEM.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about how you can identify specific entities or indicators that should be treated differently during Cloud SIEM rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a signal if a user entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
+This topic has information about how you can identify specific entities or indicators that should be treated differently during SIEM rule processing. For example, you might want to prevent a rule from firing for records that contain one of a certain set of IP addresses. Conversely, you might want to only fire a signal if a user entity belongs to a certain group, such as domain admins. There are currently two methods of achieving this sort of allowlist/denylist behavior:
 
-* Schema key tags for entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) to new entities once they come into Cloud SIEM. Then in a rule, you look for matches by extending  a rule expression with the [`array_contains`](/docs/cse/rules/cse-rules-syntax/#array_contains) function, for example: `array_contains(fieldTags["user_username"], "schema-key:schema-value")`. See [Schema tag keys for entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different entities.  
+* Schema key tags for entities. This is the recommended approach. You simply apply predefined [schema key tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) to new entities once they come into SIEM. Then in a rule, you look for matches by extending  a rule expression with the [`array_contains`](/docs/cse/rules/cse-rules-syntax/#array_contains) function, for example: `array_contains(fieldTags["user_username"], "schema-key:schema-value")`. See [Schema tag keys for entities](#schema-tag-keys-for-entities) for information about which tag:value pairs to use for different entities.  
    :::tip
-   The most efficient way to assign tags to entities is to configure [entity groups](/docs/cse/records-signals-entities-insights/create-an-entity-group), and allow Cloud SIEM to automatically apply tags based on group membership.
+   The most efficient way to assign tags to entities is to configure [entity groups](/docs/cse/records-signals-entities-insights/create-an-entity-group), and allow SIEM to automatically apply tags based on group membership.
    :::
-* Standard match lists. This is the original approach for excluding entities from rule processing. It involves adding entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list). Then in a rule, you look for matches by extending a rule expression with the [`array_contains`](/docs/cse/rules/cse-rules-syntax/#array_contains) function, for example: `array_contains(listMatches, 'match_list_name')`. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [Cloud SIEM REST API](/docs/api/cloud-siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
+* Standard match lists. This is the original approach for excluding entities from rule processing. It involves adding entities to standard match lists, as described in [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list). Then in a rule, you look for matches by extending a rule expression with the [`array_contains`](/docs/cse/rules/cse-rules-syntax/#array_contains) function, for example: `array_contains(listMatches, 'match_list_name')`. Standard match lists are described in [Standard match lists](#standard-match-lists) below. When creating Standard match lists using the [SIEM REST API](/docs/api/siem-enterprise/), the expected `target_column` value is indicated in the entries below using parentheses, as in: "**Target column:** Source IP Address (`SrcIp`)."
 
 ## Schema tag keys for entities
 
@@ -91,7 +91,7 @@ Assign the _userGroup tag to users accounts  known to be involved with specific 
 
 **Description:** Accounts that are known to be involved with specific administrative or privileged activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Windows - Excessive User Interactive Logons Across Multiple Hosts
 
 ### admin_ips
@@ -100,7 +100,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity on the network. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * PowerShell Remote Administration
 * PsExec Admin Tool Detection
 * SMB write to admin hidden share
@@ -111,7 +111,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Lateral Movement Using the Windows Hidden Admin Share
 * Outlier in Data Outbound Per Day by Admin or Sensitive Device
 * Outlier in Data Outbound Per Hour by Admin or Sensitive Device
@@ -122,7 +122,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** IPs that are known to be involved with specific administrative or privileged activity on the network.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Alibaba ActionTrail KMS Activity
 
 ### Alibaba_admin_users
@@ -131,7 +131,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity on the network.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Alibaba ActionTrail KMS Activity
 
 ### auth_servers
@@ -140,7 +140,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Network authentication servers, including Active Directory, LDAP, Kerberos, RADIUS/TACACS, and NIS servers. May be used in analytics designed to detect [DCSync](https://attack.mitre.org/techniques/T1003/006/) attacks.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * DNS Lookup of High Entropy Domain
 
 ### authorized_third_party_domains
@@ -149,7 +149,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Authorized third party domains.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 * Salesforce LoginAs Event
 
@@ -159,7 +159,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * AWS Cloud Storage Deletion
 * AWS CloudTrail - Aggressive Reconnaissance
 * AWS CloudTrail - Database Snapshot Created
@@ -201,7 +201,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in AWS. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * AWS Cloud Storage Deletion
 * AWS CloudTrail - Aggressive Reconnaissance
 * AWS CloudTrail - Database Snapshot Created
@@ -243,7 +243,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Remote ASNs supporting business processes.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Domain Resolution in Non-Standard TLD
 * Executable Downloaded - Content-Type Mismatch
 * HTTP Request to Domain in Non-Standard TLD
@@ -257,7 +257,7 @@ The following Cloud SIEM rules refer to this match list:
 
 *Domain* matches against the `domain` field, not the FQDN (i.e. hostname or query), so *example.com* is a valid entry is but *www.example.com* is not.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Bitsadmin to Uncommon TLD
 * Connection to High Entropy Domain
 * DNS DGA Lookup Behavior - NXDOMAIN Responses
@@ -281,7 +281,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** DNS hostnames that are known to be business-related FQDNs.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Bitsadmin to Uncommon TLD
 * Connection to High Entropy Domain
 * DNS DGA Lookup Behavior - NXDOMAIN Responses
@@ -310,7 +310,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Remote IP addresses supporting business processes. Can be used for things like SSH servers for SFTP file exchanges (similarly, FTP servers).
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Bitsadmin to Uncommon TLD
 * Connection to High Entropy Domain
 * Domain Resolution in Non-Standard TLD
@@ -334,7 +334,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** DNS caching resolvers/authoritative content servers in customer environments.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Direct Outbound DNS Traffic
 * Possible DNS over TLS (DoT) Activity
 * Too many empty/refused DNS queries
@@ -345,7 +345,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Domain controller IPs.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Brute Force Attempt
 * Domain Brute Force Attempt
 * Domain Password Attack
@@ -363,7 +363,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Domain controller hostnames.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Interactive Logon to Domain Controller
 * Suspicious DC Logon
 
@@ -373,7 +373,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Known account names that utilize downgraded encryption types with multiple SPNs. This is an exception match list that should be populated with a list of Kerberos principal names (for example,  jdoe@EXAMPLE.COM) matched in endpoint username that are known to trigger content around legacy downgraded encryption types. This is directly related to the detection of [*Kerberoasting*](https://attack.mitre.org/techniques/T1208/) attacks.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * First Seen Kerberoasting Attempt from User - Global
 * First Seen Kerberoasting Attempt from User - Host
 * Too Many Kerberos Encryption Downgrade SPNs (Kerberoasting)
@@ -386,7 +386,7 @@ The following Cloud SIEM rules refer to this match list:
 
 This should be populated with list of account names confirmed in `event_data['SubjectUserName']` for regularly occurring 4662 baseline events. This may be used in analytics designed to detect [DCsync](https://attack.mitre.org/techniques/T1003/006/) attacks.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -396,7 +396,7 @@ none
 
 **Description:** Authorized domains.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Connection to High Entropy Domain
 * HTTP request for single character file name
 * Possible DNS Data Exfiltration
@@ -407,7 +407,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Authorized hostnames.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Connection to High Entropy Domain
 * HTTP request for single character file name
 * Possible DNS Data Exfiltration
@@ -418,7 +418,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Known FTP servers.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -428,7 +428,7 @@ none
 
 **Description:** Users or hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users or hosts that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * GCP Audit Cloud SQL Database Modified
 * GCP Audit GCE Firewall Rule Modified
 * GCP Audit GCE Network Route Created or Modified
@@ -451,7 +451,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * GCP Image Creation
 * GCP Image Deletion
 * GCP Image Discovery
@@ -467,7 +467,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in GCP. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * GCP Image Creation
 * GCP Image Deletion
 * GCP Image Discovery
@@ -483,7 +483,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rule refers to this match list:
+The following SIEM rule refers to this match list:
 * G Suite - Admin Activity
 
 ### Google_Workspace_admin_users
@@ -492,7 +492,7 @@ The following Cloud SIEM rule refers to this match list:
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Google Workspace. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rule refers to this match list:
+The following SIEM rule refers to this match list:
 * G Suite - Admin Activity
 
 ### guest_networks
@@ -501,7 +501,7 @@ The following Cloud SIEM rule refers to this match list:
 
 **Description:** Known guest WLAN and other guests/BYOD network addresses.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Base32 in DNS Query
 * Bitsadmin to Uncommon TLD
 * Connection to High Entropy Domain
@@ -532,7 +532,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** List of IPs for Honeypots.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Traffic to Honeypot IP
 
 ### http_servers
@@ -541,7 +541,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Web servers in your environment.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Spike in URL Length from IP Address
 
 ### known_docker_images
@@ -550,7 +550,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:**  Known approved Docker images that act as an allowlist. If an image is identified that is not on this list, further investigation is warranted. If approved images are identified they should be added to this list. 
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Unrecognized Container Image
 
 ### lan_scanner_exception_ips
@@ -563,7 +563,7 @@ Examples of hosts that are suited for this match list:
 * Telephony server that pushes content to deployed softphones over SMB/CIFS
 * Data security audit software that connects to SMB shares
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Amazon VPC - Network Scan
 * Amazon VPC - Port Scan
 * Excessive Outbound Firewall Blocks
@@ -585,7 +585,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Source NAT addresses. Can be used as an exception match list to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts. Note that this can also be applied using [proxy_servers](#proxy_servers) as an example of a specific case.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * DNS DGA Lookup Behavior - NXDOMAIN Responses
 
 ### nms_ips
@@ -598,7 +598,7 @@ Hosts known to be Network Management System (NMS) nodes.
 
 Can be used as an exception match list for systems that connect to other hosts in environment for purposes of management, monitoring, and so on.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Amazon VPC - Network Scan
 * Amazon VPC - Port Scan
 * GCP Port Scan
@@ -615,7 +615,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Okta Admin App Accessed
 * Okta - First Seen user Accessing Admin Application
 
@@ -625,7 +625,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Locations that are known to be untrusted.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * OneLogin - API Credentials - Key Used from Untrusted Location
 
 ### palo_alto_sinkhole_ips
@@ -636,7 +636,7 @@ The following Cloud SIEM rules refer to this match list:
 
 Should contain the default IPv4 sinkhole address from PANW (72.5.65.111) and should include additionally any other sinkhole IP you have configured.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 None
 
@@ -646,7 +646,7 @@ None
 
 **Description:** Forward proxy servers, including HTTP and SOCKS proxies.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Amazon VPC - Network Scan
 * Amazon VPC - Port Scan
 * DNS DGA Lookup Behavior - NXDOMAIN Responses
@@ -665,7 +665,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Copy of the [proxy_servers](#proxy_servers) match list for directional matches.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Bitsadmin to Uncommon TLD
 * Excessive Outbound Firewall Blocks
 * Executable Downloaded - Content-Type Mismatch
@@ -697,7 +697,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Copy of the [proxy_server](#proxy_servers) match list for directional matches.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -707,7 +707,7 @@ none
 
 **Description:** Public Ip Addresses.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Doublepulsar scan - likely not infected
 * Likely doublepulsar Infected
 
@@ -717,7 +717,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Hosts that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking hosts that are operated by admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Salesforce Custom Permission Creation
 * Salesforce Excessive Documents Downloaded
 * Salesforce LoginAs Event
@@ -738,7 +738,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Users that are known to be involved with specific administrative or privileged activity in Salesforce. Can be used for tracking users that are admins and other privileged users, or are often the source of restricted, privileged or suspicious authorized actions, and so on. This sort of tracking is useful for baselining activity and as a result, surfacing more suspicious activity.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Salesforce Custom Permission Creation
 * Salesforce Excessive Documents Downloaded
 * Salesforce LoginAs Event
@@ -759,7 +759,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Malware sandboxes or security devices interacting with malicious infrastructure.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
@@ -771,7 +771,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Destination networks that are authorized/standard targets of vulnerability scans in customer environment.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -781,7 +781,7 @@ none
 
 **Description:** SMTP sending/receiving hosts in customer environment.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -791,7 +791,7 @@ none
 
 **Description:** Database servers in customer environment.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -801,7 +801,7 @@ none
 
 **Description:** Known SSH servers.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -811,7 +811,7 @@ none
 
 **Description:** SSL exception IPs.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * SSL Certificate Expired
 * SSL Certificate Expires Soon
 * SSL Certificate Not Valid Yet
@@ -823,7 +823,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Telnet servers in your environment.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -833,7 +833,7 @@ none
 
 **Description:** A record flagged an IP address from a threat intelligence match list.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -843,7 +843,7 @@ none
 
 **Description:** A list of devices that should not have external media installed on them.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Unauthorized External Device Installation
 
 ### verified_applications
@@ -852,7 +852,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Reviewed and validated legitimate or non-threat applications.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Lateral Movement Using the Windows Hidden Admin Share
 
 ### verified_domains
@@ -861,7 +861,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Reviewed and validated legitimate or non-threat domains.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Base32 in DNS Query
 * Bitsadmin to Uncommon TLD
 * Connection to High Entropy Domain
@@ -885,7 +885,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Reviewed and validated legitimate or non-threat hostnames.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Bitsadmin to Uncommon TLD
 * Connection to High Entropy Domain
 * DNS Lookup of High Entropy Domain
@@ -911,7 +911,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Reviewed and validated legitimate or non-threat ips.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Domain Resolution in Non-Standard TLD
 * HTTP Request to Domain in Non-Standard TLD
 * Threat Intel - Destination IP Address (Low Confidence)
@@ -930,7 +930,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Reviewed and validated legitimate or non-threat IP addresses.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Executable Downloaded - Content-Type Mismatch
 
 ### verified_uri_paths
@@ -943,7 +943,7 @@ This is a shared match list that should be imported into target environments.
 
 Match list items have a TTL specified that will result in the items having an expiration date set in the future.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Executable Downloaded - Content-Type Mismatch
 * HTTP Request to Domain in Non-Standard TLD
 
@@ -953,7 +953,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** VPN/remote access user address pools and DHCP scopes.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -963,7 +963,7 @@ none
 
 **Description:** VPN/remote access servers, including IKE/IPsec/SSL VPN concentrators, OpenVPN endpoints, and so on.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 
 none
 
@@ -973,7 +973,7 @@ none
 
 **Description:** Vulnerability scanner and network mapping hosts.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Amazon VPC - Network Scan
 * Amazon VPC - Port Scan
 * Base32 in DNS Query
@@ -1037,7 +1037,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** List of webserver hostnames or IPs.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Web Servers Executing Suspicious Processes
 
 ### zoom_admins
@@ -1046,7 +1046,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** Known admin users of Zoom.
 
-The following Cloud SIEM rules refer to this match list:
+The following SIEM rules refer to this match list:
 * Zoom - Account Created
 * Zoom - Account Deleted
 * Zoom - Group Admin Added

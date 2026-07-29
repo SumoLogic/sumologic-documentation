@@ -34,7 +34,7 @@ The cybersecurity cycle is an iterative, scientific process, much like troublesh
 
 While Security Information and Event Management (SIEM) tools help automate the threat hunting and investigation process, Security Orchestration, Automation, and Response (SOAR) tools are typically used in response to an active or potential threat. Both these tools work together as part of the security pipeline in your security operations center (SOC).
 
-All of Sumo Logic’s security solutions can help with every step of this process. However, broadly speaking, [Cloud SIEM](/docs/cse/) focuses on the investigation phase, and Cloud SOAR focuses on the response phase. All our solutions can be used on their own, or together. For example, you can investigate an insight in Cloud SIEM, then use the **Actions** button inside the insight to send the information to Cloud SOAR, where you can orchestrate the response to the incident.
+All of Sumo Logic’s security solutions can help with every step of this process. However, broadly speaking, [SIEM](/docs/cse/) focuses on the investigation phase, and Cloud SOAR focuses on the response phase. All our solutions can be used on their own, or together. For example, you can investigate an insight in SIEM, then use the **Actions** button inside the insight to send the information to Cloud SOAR, where you can orchestrate the response to the incident.
 
 In this introduction, we'll focus on learning how to use Sumo Logic's Cloud SOAR to automate many parts of incident response and streamline your SOC.
 
@@ -48,16 +48,16 @@ Your company's apps and services generate logs, metrics, and tracing data.
 
 When you ingest that data into Sumo Logic, you have one centralized location to query and visualize all that data. Sumo Logic’s Log Analytics Platform uses [threat intelligence](/docs/security/threat-intelligence/), so you can start getting security alerts and hunt threats.
 
-You can take your security one step further with [Cloud SIEM](/docs/cse/). When you forward your log messages to Cloud SIEM, they are parsed, mapped, and enriched into Cloud SIEM records. These records are compared to security rules. If a rule is triggered, an entity is extracted, a severity score is assigned, and a signal is created. If enough signals with the same entity cluster together, they become an insight. Insights are likely risks that need your attention. 
+You can take your security one step further with [SIEM](/docs/cse/). When you forward your log messages to SIEM, they are parsed, mapped, and enriched into SIEM records. These records are compared to security rules. If a rule is triggered, an entity is extracted, a severity score is assigned, and a signal is created. If enough signals with the same entity cluster together, they become an insight. Insights are likely risks that need your attention. 
 
-Finally, you can take the insights from Cloud SIEM and automatically respond to them with Cloud SOAR. Cloud SOAR helps orchestrate and automate the incident response cycle. 
+Finally, you can take the insights from SIEM and automatically respond to them with Cloud SOAR. Cloud SOAR helps orchestrate and automate the incident response cycle. 
 
 ##### Why use Cloud SOAR?
 
 * **Faster responses**. Cloud SOAR can automate parts of your SOC, leading to faster response time.
 * **Close the skills gap**. Analysts of all skill levels can deploy playbooks. Veteran analysts can spend more time on threat hunting.
 * **Consolidate tools**. Orchestrate all your security tools in one location with integrations and custom APIs.
-* **Part of a security suite**. Cloud SOAR integrates with Sumo Logic's Log Analytics Platform and Cloud SIEM for a complete, end-to-end security solution.
+* **Part of a security suite**. Cloud SOAR integrates with Sumo Logic's Log Analytics Platform and SIEM for a complete, end-to-end security solution.
 
 #### Inside Sumo Logic Cloud SOAR
 
@@ -131,7 +131,7 @@ Before you can respond to an incident, you must investigate it to determine who 
 
 Remember, threat investigation is reactive while threat hunting is proactive. Typically, threat investigation happens in reaction to an alert. Once you’ve investigated a threat, you can proactively hunt for similar threats and take precautionary steps to prevent attacks from happening again. 
 
-You can do both threat investigation and threat hunting using Cloud SOAR. You may have gotten an alert from Sumo Logic, Cloud SIEM, or directly from Cloud SOAR. Armed with this information, you can log in to Cloud SOAR. You can click the **Incidents** page to learn more about what happened, or click the **Entities** page to learn more about who the potential threat actors are. 
+You can do both threat investigation and threat hunting using Cloud SOAR. You may have gotten an alert from Sumo Logic, SIEM, or directly from Cloud SOAR. Armed with this information, you can log in to Cloud SOAR. You can click the **Incidents** page to learn more about what happened, or click the **Entities** page to learn more about who the potential threat actors are. 
 
 Only after you’ve gathered enough information about the incident can you decide how to respond to the incident.
 
@@ -166,7 +166,7 @@ In this section, you’ll investigate an incident, gather information, and decid
 1. Make sure **Short Description** is under the **Active** column. If it isn’t, click the **+** next to **Short Description** in the **Available** column. Do the same with the **Type** and **Category** fields. Then click **Apply**. You’ll now see a short description based on the [MITRE ATT&CK framework](https://attack.mitre.org/matrices/enterprise/) of each incident.
 1. Click any incident with a status of **Open**.
 1. As you click the incident, you'll see a popup asking if you want to make yourself the investigator for this incident. Select the role to assign yourself (for example, **Analyst**), then click **Yes** to add yourself as an investigator.<br/><img src={useBaseUrl('img/cloud-soar/add-investigator-example.png')} alt="Add investigator example" style={{border: '1px solid gray'}} width="400" />
-1. Click the **Overview** tab. Here you’ll see basic information about the incident, like the entities involved in the incident and the time the incident was opened. If the incident was imported from Sumo Logic Cloud SIEM, it contains the Cloud SIEM incident ID as well as a short description based on the MITRE ATT&CK framework.
+1. Click the **Overview** tab. Here you’ll see basic information about the incident, like the entities involved in the incident and the time the incident was opened. If the incident was imported from Sumo Logic SIEM, it contains the SIEM incident ID as well as a short description based on the MITRE ATT&CK framework.
 1. On the right side of the **Overview** tab you can open up a sidebar with various widgets showing the list of investigators, ownership history, relationships, incident status history, and/or incident description.<br/><img src={useBaseUrl('img/cloud-soar/sidebar-example.png')} alt="Sidebar example" style={{border: '1px solid gray'}} width="400" />
 1. Click the **Operations** tab, and click the **War Room** tab underneath it.<br/><img src={useBaseUrl('img/cloud-soar/war-room-example-2.png')} alt="War Room example" style={{border: '1px solid gray'}} width="800" /><br/>The War Room contains a history of the incident, including any tasks and investigators that have been assigned, playbooks that have been executed, entities that are being tracked, and any other notes or attachments.   
 1. Under the **Operations** tab, click **Notes**.
@@ -210,7 +210,7 @@ Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly 
 
 #### App Central, custom integrations, and other automations
 
-Cloud SOAR has hundreds of [pre-built playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
+Cloud SOAR has hundreds of [pre-built playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the SIEM Administration class. 
 
 Both pre-built and custom playbooks are simply combinations of various integrations and automations. These integrations can also be used stand-alone rather than as part of a playbook. Typically, an integration in Cloud SOAR contains one or more of these actions:
 * **Enrichment**. Adds information, metadata, or context, such as from a threat intelligence database.
@@ -409,7 +409,7 @@ Within Automation, you’ll see subsections for:
 
 #### Fields
 
-Fields are used to map data that is imported into Cloud SOAR to various attributes used by Cloud SOAR. Fields are often pre-populated as data is imported into Cloud SOAR. However, there are some times you may wish to customize fields. For example, you can use a custom field to make sure the data you’re importing from Cloud SIEM, such as an entity, gets mapped properly to the equivalent entity field in Cloud SOAR. Or, you might want to create a custom field called "Time to Manage" that calculates the difference between incident "Open Time" and "Close Time". You could then track "Time to Manage" across different incident types or different analysts to find pain points in your SOC. 
+Fields are used to map data that is imported into Cloud SOAR to various attributes used by Cloud SOAR. Fields are often pre-populated as data is imported into Cloud SOAR. However, there are some times you may wish to customize fields. For example, you can use a custom field to make sure the data you’re importing from SIEM, such as an entity, gets mapped properly to the equivalent entity field in Cloud SOAR. Or, you might want to create a custom field called "Time to Manage" that calculates the difference between incident "Open Time" and "Close Time". You could then track "Time to Manage" across different incident types or different analysts to find pain points in your SOC. 
 
 Administrators can edit existing fields, delete fields, and add new fields for almost every section of Cloud SOAR. Fields can be customized one by one manually, or an administrator can import a CSV file to customize them in bulk. Any existing field can have its name or value edited, but its type cannot be changed. Field types include date, text, numeric, timezone, email address, IP address, and many others. 
 
@@ -462,9 +462,9 @@ In this section, we’ll create a custom incident label. This new label will mak
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Incident Labels**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. 
 1. Click the **+** icon to create a new incident label. 
-1. For **Name**, enter a name that designates what the incident is for. For example, to create a label for incidents originating in Cloud SIEM, you could enter **Cloud SIEM Alert**.
+1. For **Name**, enter a name that designates what the incident is for. For example, to create a label for incidents originating in SIEM, you could enter **SIEM Alert**.
 1. Optionally, you can include a short **Description**.
-1. For **Value**, type the label as you want it to appear in the UI. For example, type **Cloud SIEM Alert -**. 
+1. For **Value**, type the label as you want it to appear in the UI. For example, type **SIEM Alert -**. 
 7. Double-click entries you want to add to the value. For example, double-click **Counter**. The fields inside the brackets will be replaced by the appropriate variable when this incident label is used. For example, if the incident is created in October, the `[=MONTH]` field will be replaced by 10. 
 1. Click **Save**.
 
@@ -563,19 +563,19 @@ Custom actions can also include trigger actions, which run based on an event typ
 
 Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Central to see if an out-of-the-box playbook that does what you want already exists, or if you can modify a existing playbook that’s similar to what you have in mind. 
 
-#### Create a custom playbook for Cloud SIEM insights
+#### Create a custom playbook for SIEM insights
 
-Cloud SOAR allows us to create automations that will run whenever Cloud SIEM insights are created or closed.  These automations are powered through playbooks, predefined actions run in an automated workflow to respond to an incident.  
+Cloud SOAR allows us to create automations that will run whenever SIEM insights are created or closed.  These automations are powered through playbooks, predefined actions run in an automated workflow to respond to an incident.  
 
-Let’s create a playbook for use in Cloud SIEM.
+Let’s create a playbook for use in SIEM.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
 1. To explore an existing playbook, click it to open the playbook diagram in the right sidebar. Here, you can view the individual nodes and sequences, providing insight into the types of actions and structures you can create with custom playbooks. Playbooks can include multiple actions and branching conditions to handle different action sequences based on specific criteria. Click any playbook component to see detailed information about each node.
 1. Click the **+** icon near the top to create a new playbook.   
-   1. Enter a name, for example, **Test Playbook**. You can optionally enter a description.  Select **Cloud SIEM** as the **Type** for the playbook.
+   1. Enter a name, for example, **Test Playbook**. You can optionally enter a description.  Select **SIEM** as the **Type** for the playbook.
    1. Click **Create** when finished.<br/>On the following screen you will see the starting template for your new (empty) playbook, with "Start" and "End" nodes.  
 1. Switch to edit mode by clicking the **Edit** (pencil) icon in the bottom toolbar.
-1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the Cloud SIEM insight.  
+1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the SIEM insight.  
    1. Mouse over the Start node, and click the Edit (pencil) icon.  
    1. In the Edit Node popup, select **Insight** from the playbook input parameters dropdown. Choosing **Insight** will automatically populate the popup with input parameters that will be added to the playbook from the corresponding insight.
    1. Click **Update** to save and close the input parameters.
@@ -583,7 +583,7 @@ Let’s create a playbook for use in Cloud SIEM.
    1. Click the **+** button on the Start node.
    1. Select **Action** from the node type options. 
    1. Fill in a node name, for example, “Get Insight Details”.
-   1. From the **Integration** options, select **Sumo Logic Cloud SIEM**.
+   1. From the **Integration** options, select **Sumo Logic SIEM**.
    1. For **Type**, ensure **Enrichment** is selected.
    1. As the **Action**, select **Get Insight V2**.
    1. As the **Insight ID**, select **Insight ID**.
@@ -597,7 +597,7 @@ Let’s create a playbook for use in Cloud SIEM.
     1. Click **Create** to save the new action.
 1. Add another action to the playbook by clicking the **+** icon on the **Get VirusTotal Info** node you just created and selecting **Action**. Use the parameters outlined below:
     1. **Name**: "Add Entity Enrichment".
-    1. **Integration**: **Sumo Logic Cloud SIEM Internal**.
+    1. **Integration**: **Sumo Logic SIEM Internal**.
     1. **Type**: **Notification**.
     1. **Action**: **Add Entity Enrichment**.
     1. **Entity ID**: Click the cog icon on the right, and select the **Get Insight Details** action. Then find the **output.entity.id** field and select it.
@@ -649,9 +649,9 @@ In this section, we’ll create a custom incident template. This template will a
 
 Automation rules define what happens when data is received from a source. These rules allow specific data to be parsed from the incoming data sources and then acted upon automatically. For more information, see [Automation rules](/docs/cloud-soar/automation/#automation-rules).
 
-Automation rules can automatically pull information from sources. They can also execute playbooks based on certain criteria. For example, you might want to pull insights from Cloud SIEM once an hour and create incidents from them. Then, you could configure a rule that runs a playbook based on the tags in the incident. This way, the entire incident response cycle is automated: Cloud SIEM identifies a threat, and playbooks in Cloud SOAR are automatically deployed to contain and eradicate the threats, restore systems, and email a final report for an analyst to review.  
+Automation rules can automatically pull information from sources. They can also execute playbooks based on certain criteria. For example, you might want to pull insights from SIEM once an hour and create incidents from them. Then, you could configure a rule that runs a playbook based on the tags in the incident. This way, the entire incident response cycle is automated: SIEM identifies a threat, and playbooks in Cloud SOAR are automatically deployed to contain and eradicate the threats, restore systems, and email a final report for an analyst to review.  
 
-Let's create a custom automation rule. This rule will pull information from Cloud SIEM every 5 hours.
+Let's create a custom automation rule. This rule will pull information from SIEM every 5 hours.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. 
 1. Near the top, click the **+** icon to create a new rule.

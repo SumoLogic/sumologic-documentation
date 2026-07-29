@@ -2,9 +2,9 @@
 id: about-signal-suppression
 title: About Signal Suppression
 sidebar_label: Signal Suppression
-description: Learn about the ways that Cloud SIEM signals can be suppressed, and so excluded from the insight generation process.
+description: Learn about the ways that SIEM signals can be suppressed, and so excluded from the insight generation process.
 keywords:
-    - Cloud SIEM
+    - SIEM
     - entity
     - entities
 ---
@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic describes the various ways that signals can get suppressed.
 
-In Cloud SIEM, a *suppressed signal* is a signal that Cloud SIEM's insight algorithm will exclude from the insight generation process. In other words, a suppressed signal does not contribute to or become a part of an insight. By default, signals are automatically suppressed for 72 hours. 
+In SIEM, a *suppressed signal* is a signal that SIEM's insight algorithm will exclude from the insight generation process. In other words, a suppressed signal does not contribute to or become a part of an insight. By default, signals are automatically suppressed for 72 hours. 
 
 Signal suppression can occur for a variety of reasons, including [entity suppression](#suppress-by-entity), [network blocks](#suppress-by-network-block), [suppression lists](#suppress-by-indicator), and identifying [redundant signals](#automatic-suppression-of-redundant-signals) by our rules correlation engine. In all cases, signals will still be generated in the suppressed state. Depending on the reason, the field `suppressedReasons` will be populated in the `sec_signal` index. For example, this may include the signal ID of an identical signal that caused subsequent redundant signals to be suppressed, or it may contain the name of the network block with suppression enabled.
 
@@ -37,15 +37,15 @@ For certain rule types (Threshold, Chain, or Aggregation), the minimum valid val
 
 ## Suppress by entity
 
-You can suppress an entity on its [details page](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) in the Cloud SIEM UI using the suppression slider. 
+You can suppress an entity on its [details page](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) in the SIEM UI using the suppression slider. 
 
 <img src={useBaseUrl('img/cse/suppression-slider.png')} alt="Entity suppression slider" style={{border: '1px solid gray'}} width="300"/>
 
-You can suppress multiple entities at once on the [entities list page](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-list-page) in the Cloud SIEM UI. Note that in the screenshot below, the row for an Entity that is currently suppressed contains a **Suppressed** indicator.
+You can suppress multiple entities at once on the [entities list page](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-list-page) in the SIEM UI. Note that in the screenshot below, the row for an Entity that is currently suppressed contains a **Suppressed** indicator.
 
 <img src={useBaseUrl('img/cse/entity-page.png')} alt="Suppression on the entities page" style={{border: '1px solid gray'}} width="800"/>
 
-When you checkmark one or more entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to Cloud SIEM. For details, see the [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities) topic. 
+When you checkmark one or more entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to SIEM. For details, see the [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities) topic. 
 
 You can see what entities are currently suppressed on the **Entities** page by filtering the list by **Suppressed**. <br/><img src={useBaseUrl('img/cse/suppressed-entities-page.png')} alt="Suppressed entities" style={{border: '1px solid gray'}} width="300"/>
 
@@ -63,5 +63,5 @@ You can suppress signals on all of the IP addresses in a network block. You can 
 
 ## Automatic suppression of redundant signals
 
-Cloud SIEM suppresses redundant signals to prevent the generation of multiple, virtually identical insights. For information about how this works, see [Redundant signal suppression](/docs/cse/get-started-with-cloud-siem/insight-generation-process#redundant-signal-suppression).  
+SIEM suppresses redundant signals to prevent the generation of multiple, virtually identical insights. For information about how this works, see [Redundant signal suppression](/docs/cse/get-started-with-siem/insight-generation-process#redundant-signal-suppression).  
  

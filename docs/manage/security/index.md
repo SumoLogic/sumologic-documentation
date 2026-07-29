@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/icons/security/security.png')} alt="Security icon" width="50"/>
 
 :::tip
-Looking for our security features like Cloud SIEM and Cloud SOAR? Head to [Sumo Logic Security Solutions](/docs/security).
+Looking for our security features like SIEM and Cloud SOAR? Head to [Sumo Logic Security Solutions](/docs/security).
 :::
 
 The security options are available only to administrators.

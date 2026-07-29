@@ -221,7 +221,7 @@ Whenever you have a question, there are a number of ways in which you can get 
 * Check out our Release Notes:
    * [Service](/release-notes-service)
    * [Developer](/release-notes-developer)
-   * [Cloud SIEM](/release-notes-cse)
+   * [SIEM](/release-notes-cse)
    * [Collector](/release-notes-collector)
 * Search documentation
 * Visit the **Learn Page** in the Sumo Logic UI

@@ -7,21 +7,21 @@ description: Learn how to troubleshoot problems with log mappers.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides guidance for administrators to diagnose, troubleshoot, and escalate issues with Sumo Logic Cloud SIEM log mappers.
+This article provides guidance for administrators to diagnose, troubleshoot, and escalate issues with Sumo Logic SIEM log mappers.
 
-Mappers are a critical component in the Cloud SIEM data ingestion pipeline. They serve as the second step in transforming raw log messages into structured records that can be used for threat detection and security analysis. Specifically, mappers:
-* Take key-value pairs created during parsing and map them into the Cloud SIEM normalization schema.
-* Assign classification to each log coming into Cloud SIEM.
+Mappers are a critical component in the SIEM data ingestion pipeline. They serve as the second step in transforming raw log messages into structured records that can be used for threat detection and security analysis. Specifically, mappers:
+* Take key-value pairs created during parsing and map them into the SIEM normalization schema.
+* Assign classification to each log coming into SIEM.
 * Determine the entities present in the record.
 * Support the creation of high-fidelity detection rules.
 
-For information about creating log mappers, see [Create a Structured Log Mapping](/docs/cse/schema/create-structured-log-mapping/). For more general information about log mapping, and how it fits into the record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
+For information about creating log mappers, see [Create a Structured Log Mapping](/docs/cse/schema/create-structured-log-mapping/). For more general information about log mapping, and how it fits into the record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/siem-content-catalog/blob/master/mappings/README.md) in the [SIEM Content Catalog](https://github.com/SumoLogic/siem-content-catalog/blob/master/README.md).
 
 ## Interpreting record failures and issues
 
 ### Failed Records dashboard
 
-The [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse/) provides dashboards and queries for greater visibility into Cloud SIEM activity. Troubleshooting parser failures is aided by the [Cloud SIEM - Record Analysis - Failed Records](/docs/integrations/sumo-apps/cse/#cloud-siem---record-analysis---failed-records) dashboard and query found within the app. (The Enterprise Audit - Cloud SIEM app must be installed).
+The [Enterprise Audit - SIEM app](/docs/integrations/sumo-apps/cse/) provides dashboards and queries for greater visibility into SIEM activity. Troubleshooting parser failures is aided by the [SIEM - Record Analysis - Failed Records](/docs/integrations/sumo-apps/cse/#siem---record-analysis---failed-records) dashboard and query found within the app. (The Enterprise Audit - SIEM app must be installed).
 
 Common failure types:
 * **Parser failures**. Include parser path and specific parsing error.
@@ -57,7 +57,7 @@ Incomplete records result when a record is created, but key information is not m
 * The parsed log is not parsed correctly. The parser is not providing key value pairs that are expected by the mapper due to a flaw in the parser.
 * Fields parsed are not mapped.
     * Only a catch-all or default mapper is present and doesn’t comprehensively normalize the log. Mappers using the _default_ pattern exist where possible to ensure some minimal normalization and classification occurs.
-    * There is no appropriate schema field to normalize to. The Cloud SIEM records schema is limited, for fields which there is no corresponding normalized field, the original key value pairs extracted during parser which can be referenced in rules and records searches.
+    * There is no appropriate schema field to normalize to. The SIEM records schema is limited, for fields which there is no corresponding normalized field, the original key value pairs extracted during parser which can be referenced in rules and records searches.
 
 ## Investigating and resolving mapper failures
 
@@ -87,7 +87,7 @@ For this example, let's assume no mapping matched `logType=json`, `vendor=micros
           messageId=<value of metadata_sourceMessageId from step 1>
           ```
        1. Parse messages. Use the parsed [field dictionary](/docs/cse/schema/parsing-language-reference-guide/) to determine what the input values of any mapper creation or change will be.
-1. Examine existing mappers from the [Log Mappings](/docs/cse/schema/create-structured-log-mapping/) page in Cloud SIEM:
+1. Examine existing mappers from the [Log Mappings](/docs/cse/schema/create-structured-log-mapping/) page in SIEM:
    1. Filter for the output vendor and product gathered in step 1.
    1. Note the event ID patterns present. 
    1. You can do one of the following:
@@ -118,9 +118,9 @@ A search for records using the modified/new mapper can be initiated from the log
 
 ## Escalate mapper issues
 
-Sumo Logic Threat Labs Detection Engineering maintains all out-of-the-box Cloud SIEM content. Content includes parsers, mappers, rules, and normalization schema. For details about this content, see the [Cloud SIEM Content Catalog](/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog/).
+Sumo Logic Threat Labs Detection Engineering maintains all out-of-the-box SIEM content. Content includes parsers, mappers, rules, and normalization schema. For details about this content, see the [SIEM Content Catalog](/docs/cse/get-started-with-siem/siem-content-catalog/).
 
-Upon identifying an issue with a Cloud SIEM out-of-the-box parser using this article, it may be necessary to [contact Support](https://support.sumologic.com/support/s/) to escalate the issue to the Threat Labs team.
+Upon identifying an issue with a SIEM out-of-the-box parser using this article, it may be necessary to [contact Support](https://support.sumologic.com/support/s/) to escalate the issue to the Threat Labs team.
 
 ### Escalation requirements
 
@@ -131,7 +131,7 @@ Provide the following:
 * A representative raw log sample.
    * Include logs which represent the issue.
    * For new support or extension of an already supported source, include logs which represent the types of (possibly new) events.
-* A security use case if it is not immediately obvious. Not all logs necessarily will be useful in Cloud SIEM
+* A security use case if it is not immediately obvious. Not all logs necessarily will be useful in SIEM
 * Supporting documentation. Esoteric or poorly labelled values may require documentation which is not always publicly available.
 * Configuration information.
    * Many data sources will have options for configuring logging.

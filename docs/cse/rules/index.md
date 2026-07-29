@@ -1,26 +1,26 @@
 ---
 slug: /cse/rules
-title: Cloud SIEM Rules
-description: Learn about Cloud SIEM rules, including how to write rules, rules syntax, and Cloud SIEM built-in rules.
+title: SIEM Rules
+description: Learn about SIEM rules, including how to write rules, rules syntax, and SIEM built-in rules.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide has information about Cloud SIEM rules, including how to write rules, rules syntax, and Cloud SIEM built-in rules.
+This guide has information about SIEM rules, including how to write rules, rules syntax, and SIEM built-in rules.
 
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/rules/about-cse-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>About Cloud SIEM Rules</h4></a>
-  <p>Learn about Cloud SIEM rules, rules syntax, and how to write rules.</p>
+  <a href={useBaseUrl('docs/cse/rules/about-cse-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>About SIEM Rules</h4></a>
+  <p>Learn about SIEM rules, rules syntax, and how to write rules.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/rules/rules-status')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Rules Status</h4></a>
-  <p>Learn about Cloud SIEM rules statuses and how to address rules in a degraded or failed state.</p>
+  <p>Learn about SIEM rules statuses and how to address rules in a degraded or failed state.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -32,7 +32,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/rules/cse-rules-syntax')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Rules Syntax</h4></a>
-  <p>Learn about the functions you can use when writing Cloud SIEM rules.</p>
+  <p>Learn about the functions you can use when writing SIEM rules.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -74,7 +74,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/rules/cse-built-in-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Built-In Rules</h4></a>
-  <p>Look at the various page lists and Cloud SIEM's built-in rules.</p>
+  <p>Look at the various page lists and SIEM's built-in rules.</p>
 </div>
 </div>
 <div className="box smallbox card">
@@ -86,7 +86,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/rules/normalized-threat-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Normalized Threat Rules</h4></a>
-  <p>Learn about Cloud SIEM’s built-in normalized threat rules.</p>
+  <p>Learn about SIEM’s built-in normalized threat rules.</p>
   </div>  
 </div>
 <div className="box smallbox card">
@@ -98,7 +98,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/rules/tailor-global-rule')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Tailor a Global Rule</h4></a>
-  <p>Learn how to tailor global (built-in) rules in Cloud SIEM.</p>
+  <p>Learn how to tailor global (built-in) rules in SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">

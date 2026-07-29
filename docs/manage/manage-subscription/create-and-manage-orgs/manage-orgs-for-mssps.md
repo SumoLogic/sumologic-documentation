@@ -2,11 +2,11 @@
 id: manage-orgs-for-mssps
 title: Manage Organizations for MSSPs
 sidebar_label: Manage Orgs for MSSPs
-description: Learn how to manage features, Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs).
+description: Learn how to manage features, SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs).
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to manage features, Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
+This article describes how to manage features, SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [SIEM](/docs/cse/).
 
 ## Considerations
 
@@ -19,13 +19,13 @@ You must have the following [organization role capabilities](/docs/manage/users-
    * Create Organizations
    * Manage Organizations
 
-### Multi-insights list page in Cloud SIEM
+### Multi-insights list page in SIEM
 
-If you are logged in to a parent organization with child organizations that also use Cloud SIEM, the insights list page in Cloud SIEM allows you to [view insights in child organizations](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#view-insights-in-child-organizations). 
+If you are logged in to a parent organization with child organizations that also use SIEM, the insights list page in SIEM allows you to [view insights in child organizations](/docs/cse/get-started-with-siem/about-cse-insight-ui/#view-insights-in-child-organizations). 
 
 This multi-insights list page (also known as a "federated" page) shows insights just as in a normal insights list page. When you click an insight on the page, you are automatically signed in to the child organization (if SSO is enabled for the child organization), and the insight's details open in the child organization's UI. You can also use the board view on the multi-insights page to move insights to different statuses.
 
-To be able to see insights in child organizations, add child organizations that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
+To be able to see insights in child organizations, add child organizations that use SIEM. Then when the parent organization user goes to their SIEM insights list page, all the child organizations' insights appear in the list.
 
 ## Manage features
 
@@ -64,8 +64,8 @@ You can apply changes to multiple child organizations in a single action.
 To ensure that content is consistent across child organizations, use the **Manage Content** tab to push content in target organizations with content from a source organization.
 
 You can push the following:
-* Cloud SIEM [rules](/docs/cse/rules/)
-* Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
+* SIEM [rules](/docs/cse/rules/)
+* SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 * [Library](/docs/get-started/library)
 * [Monitors](/docs/alerts/monitors/)
 * [Source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
@@ -74,8 +74,8 @@ You can push the following:
 1. Select the **Manage Content** tab.
 1. In the **Source Org** field, select the organization that will provide the source data to be pushed in other organizations.
 1. In the **Content** bar, select the content to be pushed:
-   * **Cloud SIEM Rules**. For more information about Cloud SIEM rules, refer to [Cloud SIEM Rules](/docs/cse/rules/).
-   * **Cloud SIEM Rule Tuning**. For more information about Cloud SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
+   * **SIEM Rules**. For more information about SIEM rules, refer to [SIEM Rules](/docs/cse/rules/).
+   * **SIEM Rule Tuning**. For more information about SIEM rule tuning expressions, refer to [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/).
    * **Library**. For more information about Library items, refer to [Managing Your Sumo Logic Library](/docs/get-started/library). You can manage saved searches, scheuled searched, dashboards, and lookup tables items under Library.
    * **Monitors**. For more information about Monitors, refer to [Monitors](/docs/alerts/monitors/).
    * **Source Template**. For more information about source templates, refer to [OpenTelemetry Remote Management Source Templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/).
@@ -90,7 +90,7 @@ You can push the following:
 ### Tips
 
 * If you select **All Child Organizations**, you can then select organizations to exclude, allowing you to push to all organizations except those you select:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-selected-organizations.png')} alt="Selected organizations" style={{border: '1px solid gray'}} width="300"/>
-* When you push rule tuning expressions, select **Include Associated Cloud SIEM Rules** to push all the Cloud SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated Cloud SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
+* When you push rule tuning expressions, select **Include Associated SIEM Rules** to push all the SIEM rules that the expressions are used on:<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-orgs-sync-associated-rules.png')} alt="Include Associated SIEM Rules checkbox" style={{border: '1px solid gray'}} width="200"/>
 * Selected Library items are added to the [Admin Recommended](/docs/manage/content-sharing/admin-mode/#move-important-content-to-admin-recommended) folder. Additionally, you can only select the Library contents in Source Organization under the Admin Recommended folder.
 * **Scheduled Searches Connection**. Select **Include Connection** to create the scheduled searches in the target organizations if they don't already exist there. Select **Ignore Connection** only if you want to turn the added scheduled searches into saved searches.
 * **Scheduled Reports**. Select **Include Scheduled Reports** to create the scheduled reports in the target organizations if they don't already exist there. Select **Ignore Scheduled Reports** only if you want to turn the added scheduled reports into saved reports. 
@@ -109,7 +109,7 @@ You can push the following:
 - If errors occur during the push, administrators must manually re-attempt the failed push. To see failed pushes, use [View History](#view-history).
 - Push operations may take longer based on the volume of content being pushed.
 - Rule tuning expressions must be pushed separately from rules.
-- *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
+- *SIEM Legacy Rule Type* is not supported for sync or push.
 - For library content, breaching 15,000 cap (Items selected in one job X Child orgs targeted in one job) would fail the sync job.
 - The maximum runtime for jobs below 1200 requests (Items selected in one job X Child orgs targeted in one job) is less than or equal to 2 mins. Linear increase beyond 1200 request would take more runtime, for example, 15,201 would nearly take 30 mins.
 - For CSIEM rules and tuning expression (Rule or Tuning Exp × child-orgs):
@@ -178,11 +178,11 @@ _index=sumologic_audit_events
 * **How can I view push history?**<br/>Click **View History** in the upper-right corner of the page. A query for push history will display, showing the email of the individual who performed the push and the pushed items.
 * **Who can I contact for additional questions or support?**<br/>Reach out to your Sumo Logic representative with any questions, issues, or feedback.
 
-#### Pushing Cloud SIEM Rules
+#### Pushing SIEM Rules
 
 **Are rule tuning expressions included?**<br/>No, they are not included, but can be pushed separately.
 
-#### Pushing Cloud SIEM Rule tuning expressions
+#### Pushing SIEM Rule tuning expressions
 
-* **What happens if the source tuning expression contains Cloud SIEM rules?**<br/>If the **Include Linked Cloud SIEM Rules** option is selected, existing rules with the same name in the destination organization will be linked to match the source tuning expression.
-* **What if no matching Cloud SIEM rules are found in the destination organization?**<br/>Push will complete with a warning, and missing rules will be logged in the audit log. You can push those rules separately and re-run the tuning expression push.
+* **What happens if the source tuning expression contains SIEM rules?**<br/>If the **Include Linked SIEM Rules** option is selected, existing rules with the same name in the destination organization will be linked to match the source tuning expression.
+* **What if no matching SIEM rules are found in the destination organization?**<br/>Push will complete with a warning, and missing rules will be logged in the audit log. You can push those rules separately and re-run the tuning expression push.

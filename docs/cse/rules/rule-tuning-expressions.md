@@ -12,7 +12,7 @@ This topic has instructions for creating and using tuning expressions for rules.
 
 ## What’s a rule tuning expression?
 
-Every Cloud SIEM rule has a rule expression, to which incoming records are compared. When a record matches a rule expression, and other rule criteria are satisfied, the rule generates a signal. A rule tuning expression allows you to extend a rule expression. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a signal if a record matches the combined expression.  
+Every SIEM rule has a rule expression, to which incoming records are compared. When a record matches a rule expression, and other rule criteria are satisfied, the rule generates a signal. A rule tuning expression allows you to extend a rule expression. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a signal if a record matches the combined expression.  
 
 As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
 
@@ -24,17 +24,17 @@ If you don’t want the rule to generate a signal if the person performing the a
 
 `user_userId = "jdoe"`
 
-Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when Cloud SIEM updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
+Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when SIEM updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
 :::tip
-There is another benefit of using tuning built-in rules instead of writing custom rules: you get the benefit of Cloud SIEM's [Global Confidence](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights) model. This feature leverages crowd-sourced learning to help security analysts triage and prioritize insights. 
+There is another benefit of using tuning built-in rules instead of writing custom rules: you get the benefit of SIEM's [Global Confidence](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights) model. This feature leverages crowd-sourced learning to help security analysts triage and prioritize insights. 
 :::
 
 You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules.
 
 ### Example tuning expression
 
-Here’s what the example tuning expression looks like in the Cloud SIEM UI.
+Here’s what the example tuning expression looks like in the SIEM UI.
 
 <img src={useBaseUrl('img/cse/example-expression.png')} alt="Example expression" style={{border: '1px solid gray'}} width="700"/>
 
@@ -50,7 +50,7 @@ You can use Terraform to manage rule tuning expressions with the [`rule_tuning_e
 
 ## Writing a tuning expression
 
-Writing a tuning expression is like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
+Writing a tuning expression is like writing a rule expression. A tuning expression can use metadata, record fields, and SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
 
 :::training Micro Lesson
 
@@ -59,7 +59,7 @@ Watch this micro lesson to learn how to create a rule tuning expression.
 <Iframe url="https://fast.wistia.net/embed/iframe/ds88r31lqp?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Rule Tuning in Cloud SIEM Video"
+  title="Micro Lesson: Rule Tuning in SIEM Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -72,7 +72,7 @@ Watch this micro lesson to learn how to create a rule tuning expression.
 
 ## Create a tuning expression
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**. Then in the top menu select **Content > Rule Tuning**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **SIEM**. Then in the top menu select **Content > Rule Tuning**. 
 1. On the **Rule Tuning** page, click **Add Rule Tuning Expression**.
 1. The **New Rule Tuning Expression** page appears.
     <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Empty screen to create a rule tuning expression" style={{border: '1px solid gray'}} width="800"/>
@@ -115,4 +115,4 @@ When you test a [rule expression](/docs/cse/rules/about-cse-rules#about-rule-exp
 
 ## Additional resources
 
-Blog: [Rule tuning – supercharge Cloud SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-cloud-siem-alert-fatigue)
+Blog: [Rule tuning – supercharge SIEM for better alerts](https://www.sumologic.com/blog/rule-tuning-siem-alert-fatigue)

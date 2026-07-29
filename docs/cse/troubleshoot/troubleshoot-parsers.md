@@ -2,16 +2,16 @@
 id: troubleshoot-parsers
 title: Troubleshoot Parsers
 sidebar_label: Parsers
-description: Get troubleshooting tips for resolving issues with Sumo Logic log parsers used in Cloud SIEM signal and record processing.
+description: Get troubleshooting tips for resolving issues with Sumo Logic log parsers used in SIEM signal and record processing.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides guidance for administrators to diagnose, troubleshoot, and escalate issues with Sumo Logic Cloud SIEM log parsers. For general information on the parsing engine and syntax, see [Parser Editor](/docs/cse/schema/parser-editor) and [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide).
+This article provides guidance for administrators to diagnose, troubleshoot, and escalate issues with Sumo Logic SIEM log parsers. For general information on the parsing engine and syntax, see [Parser Editor](/docs/cse/schema/parser-editor) and [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide).
 
-Parsers are a critical component in the Cloud SIEM data ingestion pipeline. They serve as the first step in transforming raw log messages into structured records that can be used for threat detection and security analysis. Specifically, parsers:
+Parsers are a critical component in the SIEM data ingestion pipeline. They serve as the first step in transforming raw log messages into structured records that can be used for threat detection and security analysis. Specifically, parsers:
 * Extract key-value pairs from raw log messages.
-* Enable proper log mapping to Cloud SIEM schema attributes by:
+* Enable proper log mapping to SIEM schema attributes by:
    * Applying mapping metadata to properly route parsed logs to mappers.
    * Transforming any variety of log data into a structured form.
 * Support the creation of high-fidelity detection rules.
@@ -22,18 +22,18 @@ Parsing issues can manifest in several ways:
 * **Parsing failures**. All or part of a parser is not handling logs as intended.
 * **Incorrect parsing**. Specific fields or metadata being parsed incorrectly (wrong key value pairs or `event_id` metadata).
 
-## About forwarding logs to Cloud SIEM with parsers
+## About forwarding logs to SIEM with parsers
 
 ### Forwarding methods
 
 #### _siemForward and parser (recommended)
 
 The recommended method is to set `_siemForward = true` and `_parser = <path/to/parser>`. This can be set several ways:
-* At the [source](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/). Logs from an entire source will be forwarded to Cloud SIEM and the specified parser.
-* At the [collector](/docs/send-data/installed-collectors/). Logs from the collector and its child sources will be forwarded to Cloud SIEM and the specified parser
+* At the [source](/docs/cse/ingestion/ingestion-sources-for-siem/). Logs from an entire source will be forwarded to SIEM and the specified parser.
+* At the [collector](/docs/send-data/installed-collectors/). Logs from the collector and its child sources will be forwarded to SIEM and the specified parser
 * Using a [Field Extraction Rule (FER)](/docs/manage/field-extractions/create-field-extraction-rule/). 
-   * Often used to specify SIEM forwarding and the parser path by `_sourceCategory`, but can also be used to filter specific subsets of logs for forwarding to Cloud SIEM (or not forwarded).
-   * Sending subsets of logs to Cloud SIEM is useful as not all log data is useful from a security context.
+   * Often used to specify SIEM forwarding and the parser path by `_sourceCategory`, but can also be used to filter specific subsets of logs for forwarding to SIEM (or not forwarded).
+   * Sending subsets of logs to SIEM is useful as not all log data is useful from a security context.
 
 Many [Cloud-To-Cloud (C2C)](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) sources set the `_parser` and `_siemForward` metadata within the parser, bypassing the need to manually specify for these sources.
 
@@ -65,7 +65,7 @@ Following these fundamentals will help prevent common parsing issues and simplif
 
 ### Failed Records dashboard
 
-The [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse/) provides dashboards and queries for greater visibility into Cloud SIEM activity. Troubleshooting parser failures is aided by the [Cloud SIEM - Record Analysis - Failed Records](/docs/integrations/sumo-apps/cse/#cloud-siem---record-analysis---failed-records) dashboard and query found within the app. (The Enterprise Audit - Cloud SIEM app must be installed).
+The [Enterprise Audit - SIEM app](/docs/integrations/sumo-apps/cse/) provides dashboards and queries for greater visibility into SIEM activity. Troubleshooting parser failures is aided by the [SIEM - Record Analysis - Failed Records](/docs/integrations/sumo-apps/cse/#siem---record-analysis---failed-records) dashboard and query found within the app. (The Enterprise Audit - SIEM app must be installed).
 
 Common failure types:
 * **Parser failures**. Include parser path and specific parsing error.
@@ -101,7 +101,7 @@ Common errors:
 For log sources which were previously parsed successfully:
 * Vendors will occasionally make modifications to the log format or field names within the logs which cannot be handled by existing parsers.
 * Source configuration changes to logging on the appliance, service, or application sending logs may result in parsing issues or failures.
-* Sumo Logic is continuously making updates to our parser catalog. While these changes undergo regression testing, there can be unforeseen cases not caught in testing. [Cloud SIEM content release notes](/release-notes-cse/) will note any modifications to out-of-the-box parsers by date with a brief summary of the changes.
+* Sumo Logic is continuously making updates to our parser catalog. While these changes undergo regression testing, there can be unforeseen cases not caught in testing. [SIEM content release notes](/release-notes-cse/) will note any modifications to out-of-the-box parsers by date with a brief summary of the changes.
 
 #### Other considerations
 
@@ -110,7 +110,7 @@ Parsing failures can occur when there is no issue with the parser for a variety 
    * A new parser may be needed to accommodate these logs. Clues this may be the case can be found by examining the parser name to see if it includes a format specifically such as JSON, LEEF, CEF, XML, CSV, and so on.
    * If the parser name does not specify the format, the parser itself often will within the `FORMAT` stanza.
    * Some parsers will include sample logs in comments which follow the format the parser was designed to accommodate.
-* The logs failing to parse are not security relevant. While some parsers can be designed to explicitly define what logs are supported or not, there are circumstances where this is not practical, most commonly in unstructured log formats, and logs fail to parse solely because they are not useful in Cloud SIEM.
+* The logs failing to parse are not security relevant. While some parsers can be designed to explicitly define what logs are supported or not, there are circumstances where this is not practical, most commonly in unstructured log formats, and logs fail to parse solely because they are not useful in SIEM.
    * They do not contain an entity and therefore cannot be used to correlate any activity or generate signals.
    * The activity captured in the log does not have any clear security use case.
       * There are niche use cases which can be accounted for by customizing a parser that aren’t always practical to support globally.
@@ -195,9 +195,9 @@ Were this a useful log from a security context (it’s not) the failure could be
 
 ## Escalate parsing issues
 
-Sumo Logic Threat Labs Detection Engineering maintains all out-of-the-box Cloud SIEM content. Content includes parsers, mappers, rules, and normalization schema. For details about this content, see the [Cloud SIEM Content Catalog](/docs/cse/get-started-with-cloud-siem/cloud-siem-content-catalog/).
+Sumo Logic Threat Labs Detection Engineering maintains all out-of-the-box SIEM content. Content includes parsers, mappers, rules, and normalization schema. For details about this content, see the [SIEM Content Catalog](/docs/cse/get-started-with-siem/siem-content-catalog/).
 
-Upon identifying an issue with a Cloud SIEM out-of-the-box parser using this article, it may be necessary to [contact Support](https://support.sumologic.com/support/s/) to escalate the issue to the Threat Labs team.
+Upon identifying an issue with a SIEM out-of-the-box parser using this article, it may be necessary to [contact Support](https://support.sumologic.com/support/s/) to escalate the issue to the Threat Labs team.
 
 ### Escalation requirements
 
@@ -206,7 +206,7 @@ Provide the following:
 * A representative raw log sample.
    * Include logs which represent the issue. 
    * For new support or extension of an already supported source, include logs which represent the types of (possibly new) events.
-* Security use case if it is not immediately obvious. Not all logs necessarily will be useful in Cloud SIEM.
+* Security use case if it is not immediately obvious. Not all logs necessarily will be useful in SIEM.
 * Supporting documentation. Esoteric or poorly labelled values may require documentation which is not always publicly available.
 * Configuration information. Many data sources will have options for configuring logging. It is important to understand what those settings are to develop new global support for a data source or offer advice for a custom solution if a global one is not appropriate.
 

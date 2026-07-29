@@ -17,7 +17,7 @@ To use the Automation Service, execute playbooks to run actions in a workflow. A
 
 You can use the Automation Service to run automations for the following:
 * **Monitors**. Use [automated playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors) to run workflows in response to alerts. 
-* **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to respond to security incidents.
+* **SIEM**. Use the [Automation Service with SIEM](/docs/cse/automation/about-automation-service-and-siem) to respond to security incidents.
 * **Cloud SOAR**. Use [automation](/docs/cloud-soar/automation/) for incident management and triage. 
 
 ## Differences compared to Cloud SOAR
@@ -26,7 +26,7 @@ The Automation Service is a subset of automation capabilities adapted from [Clou
 
 The Automation Service differs from Cloud SOAR in the following ways:
 * The Automation Service does not include the incident and case management features from Cloud SOAR.
-* The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. 
+* The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into SIEM and the Log Analytics platform. 
 * Playbooks, integrations, and actions in the Automation Service may differ from those in Cloud SOAR automation. 
 
 For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
@@ -56,9 +56,9 @@ Before you can access the Automation Service, you must first [configure role cap
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**.   
 1. The **Playbook** screen is displayed. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
 
-### From Cloud SIEM
+### From SIEM
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the Cloud SIEM top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM**, and then under **SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the SIEM top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
 1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="300"/>
 1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
 

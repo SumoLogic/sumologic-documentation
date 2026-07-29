@@ -2,7 +2,7 @@
 id: create-playbooks
 title: Create Playbooks
 sidebar_label: Create Playbooks
-description: Create and configure Automation Service playbooks to run automated actions for monitors, Cloud SIEM insights, entities, and Cloud SOAR incidents.
+description: Create and configure Automation Service playbooks to run automated actions for monitors, SIEM insights, entities, and Cloud SOAR incidents.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,23 +19,23 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [SIEM](/docs/cse/automation/automations-in-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
 
 :::tip
-The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
+The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [SIEM automation examples](/docs/cse/automation/siem-automation-examples/).
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>Previously-created playbooks display.
 1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="400"/>
 1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
+1. Select the incident **Type**. (For example, for SIEM automations, select **SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
 1. Enter a **Description** of the playbook to help others understand how to use it.
 1. Click **Create**. The new playbook appears in the list of available playbooks.
 1. To configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/>
 1. The **Start** node displays a **+** icon and an **Edit** icon. Click the **Edit** icon.  <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/> <br/>The **Edit node** dialog appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/>
 1. Click the dropdown arrow on **Add one or more params as a playbook input** and select the kind of trigger that will execute the playbook:
-    * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
-    * **Entity**. An [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
+    * **Insight**. An [Insight](/docs/cse/get-started-with-siem/about-cse-insight-ui/) from an [automation in SIEM](/docs/cse/automation/automations-in-siem/).
+    * **Entity**. An [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) from an [automation in SIEM](/docs/cse/automation/automations-in-siem/).
     * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
     * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.)
     * Leave blank if the trigger will run by a Cloud SOAR incident. See [Run playbooks in Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar). <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
@@ -63,7 +63,7 @@ See the following sections to learn how to add the following node types:
 An action node in a playbook runs an operation. You can string actions together in the playbook to perform a workflow.  
 
 :::tip
-For examples of adding actions to playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
+For examples of adding actions to playbooks, see the [SIEM automation examples](/docs/cse/automation/siem-automation-examples/).
 :::
 
 :::info
@@ -103,7 +103,7 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 Define a conditional statement to be met before the next node can be executed.
 
 :::tip
-For examples of adding conditions to playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
+For examples of adding conditions to playbooks, see the [SIEM automation examples](/docs/cse/automation/siem-automation-examples/).
 :::
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
@@ -260,7 +260,7 @@ Every [automation integration](/docs/platform-services/automation-service/app-ce
 * [**Notification**](#notification). Sends a notification, for example, an email or a post in a messaging service.
 * [**Scheduled**](#scheduled). Runs an action on a schedule once the playbook starts.
 
-Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
+Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic SIEM integration:
 * **Get Entity** *(Enrichment)* - Get Entity details.
 * **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
 * **Add Comment To Insight** *(Notification)* - Add a comment to an existing Insight.
@@ -276,9 +276,9 @@ When you [add an action node to a playbook](#add-an-action-node-to-a-playbook), 
 1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
 1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
 1. Select **Action**.
-1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
-1. Click the **Type** field to select the type of action you want to perform. The drop-down menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
-1. Click the **Action** field to select the action to run in the playbook. Only actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-cloud-siem.png')} alt="Enrichment actions on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
+1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-siem-integration-selected.png')} alt="Sumo Logic SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
+1. Click the **Type** field to select the type of action you want to perform. The drop-down menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-siem-integration.png')} alt="Action types on Sumo Logic SIEM integration" style={{border:'1px solid gray'}} width="400"/>
+1. Click the **Action** field to select the action to run in the playbook. Only actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-siem.png')} alt="Enrichment actions on Sumo Logic SIEM integration" style={{border:'1px solid gray'}} width="400"/>
 1. Proceed with the rest of the steps to [add an action node to a playbook](#add-an-action-node-to-a-playbook).
 
 ### Containment
@@ -306,7 +306,7 @@ Many integrations offer containment actions. Here are just a few:
 
 ### Custom
 
-Custom actions perform an activity defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+Custom actions perform an activity defined in a custom action YAML file. For an example of a custom action created for SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/siem-automation-examples/#advanced-example-configure-a-custom-integration).
 
 A few [integrations](/docs/platform-services/automation-service/app-central/integrations/) also offer actions labelled as custom types:
 * [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp)
@@ -327,7 +327,7 @@ Many integrations offer enrichment actions. Here are just a few:
 * [IP Quality Score](/docs/platform-services/automation-service/app-central/integrations/ip-quality-score/)
 * [Salesforce](/docs/platform-services/automation-service/app-central/integrations/salesforce/)
 * [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [Sumo Logic SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-siem/)
 * [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
 
 ### Notification
@@ -339,7 +339,7 @@ Many integrations offer notification actions. Here are just a few:
 * [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
 * [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
 * [SMTP V3](/docs/platform-services/automation-service/app-central/integrations/smtp-v3/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [Sumo Logic SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-siem/)
 
 ### Scheduled
 
@@ -349,7 +349,7 @@ Many integrations offer scheduled actions. Here are just a few:
 * [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
 * [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
 * [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [Sumo Logic SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-siem/)
 * [Sumo Logic Notifications by Microsoft](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-microsoft/)
 * [Sumo Logic Notifications](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/)
 * [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)

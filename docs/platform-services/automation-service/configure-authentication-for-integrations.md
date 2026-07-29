@@ -36,7 +36,7 @@ The following outlines the authentication requirements for commonly used integra
 * **[Incident Tools](/docs/platform-services/automation-service/app-central/integrations/incident-tools/)** / **[Mail Tools](/docs/platform-services/automation-service/app-central/integrations/mail-tools/)** / **[Triage Tools](/docs/platform-services/automation-service/app-central/integrations/triage-tools/)** / **[Zip Tools](/docs/platform-services/automation-service/app-central/integrations/zip-tools/)**:
    * Set the **Cloud SOAR API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Provide the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
-* **[Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)**:
+* **[Sumo Logic SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-siem/)**:
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
 * **[Sumo Logic Log Analytics](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/)**: 
@@ -63,7 +63,7 @@ The following outlines the authentication requirements for commonly used integra
 These integrations execute without additional authentication:
 * [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
 * [Sumo Logic Automation Tools](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-automation-tools/)
-* [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/)
+* [Sumo Logic SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-siem-internal/)
 * [Sumo Logic Log Analytics Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics-internal/)
 
 ## Troubleshooting general issues

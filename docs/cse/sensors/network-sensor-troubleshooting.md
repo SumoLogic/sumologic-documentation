@@ -1,17 +1,17 @@
 ---
 id: network-sensor-troubleshooting
 title: Network Sensor Troubleshooting
-description: Learn how to troubleshoot problems with the Cloud SIEM Network Sensor.
+description: Learn how to troubleshoot problems with the SIEM Network Sensor.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import SensorEOL from '../../reuse/cloud-siem-network-sensor-eol.md';
+import SensorEOL from '../../reuse/siem-network-sensor-eol.md';
 
 :::warning end-of-life
 <SensorEOL/>
 :::
 
-The Cloud SIEM Network Sensor is a flexible network security monitor that monitors IP networks and collects flow and protocol session data, building audit records of network communications. As with all Network Sensors, performance is a key consideration for proper operation and comprehensive data collection. The installation of the Cloud SIEM Network Sensor configures the sensor with reasonable defaults for many environments. For other environments, such as high throughput deployments, Sumo Logic advises the use of a supported 3rd party Bro/Zeek sensor offering or a custom Zeek cluster deployment.
+The SIEM Network Sensor is a flexible network security monitor that monitors IP networks and collects flow and protocol session data, building audit records of network communications. As with all Network Sensors, performance is a key consideration for proper operation and comprehensive data collection. The installation of the SIEM Network Sensor configures the sensor with reasonable defaults for many environments. For other environments, such as high throughput deployments, Sumo Logic advises the use of a supported 3rd party Bro/Zeek sensor offering or a custom Zeek cluster deployment.
 
 ## General Troubleshooting
 
@@ -45,7 +45,7 @@ A number of statistics named with “errors” are available. All of them ideall
 
 ### PF_RING
 
-PF_RING enables accelerated network packet capture under Linux and is included in the default Cloud SIEM Network Sensor installation.
+PF_RING enables accelerated network packet capture under Linux and is included in the default SIEM Network Sensor installation.
 
 PF_RING configuration information is available in `/proc/net/pf_ring/info`. Information on interfaces may be found in `/proc/net/pf_ring/dev/<interface>/info`.
 
@@ -106,7 +106,7 @@ Having verified performance of the data delivery path, the next focus area is Br
 
 ## CaptureLoss
 
-An important metric Zeek log that is collected from the Cloud SIEM Network Sensor is the notice `CaptureLoss::Too_Much_Loss`. Zeek internally tracks loss rates by observing when streams arrive with gaps indicating missing segments in the stream. Because this metric relates directly to traffic monitored by Zeek, it may either indicate packet loss in Zeek itself, or a loss condition happening elsewhere upstream from Zeek (anywhere along the line). This notice is logged on a periodic basis when a configured threshold is exceeded and is the topic of a key FAQ. https://www.zeek.org/documentation/faq.html#how-can-i-reduce-the-amount-of-captureloss-or-dropped-packets-notice It is possible to analyze occurrences of CaptureLoss notices in Cloud SIEM using the following query in an Sumo Logic log search tab.
+An important metric Zeek log that is collected from the SIEM Network Sensor is the notice `CaptureLoss::Too_Much_Loss`. Zeek internally tracks loss rates by observing when streams arrive with gaps indicating missing segments in the stream. Because this metric relates directly to traffic monitored by Zeek, it may either indicate packet loss in Zeek itself, or a loss condition happening elsewhere upstream from Zeek (anywhere along the line). This notice is logged on a periodic basis when a configured threshold is exceeded and is the topic of a key FAQ. https://www.zeek.org/documentation/faq.html#how-can-i-reduce-the-amount-of-captureloss-or-dropped-packets-notice It is possible to analyze occurrences of CaptureLoss notices in SIEM using the following query in an Sumo Logic log search tab.
 
 `_sourceCategory = "cse/network/notice" | where note = "CaptureLoss::Too_Much_Loss"`
 

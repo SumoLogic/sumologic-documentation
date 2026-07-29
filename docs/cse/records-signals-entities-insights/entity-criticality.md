@@ -7,7 +7,7 @@ description: You can use entity criticality to adjust the severity of signals fo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes Cloud SIEM’s entity criticality feature and how to use it.
+This page describes SIEM’s entity criticality feature and how to use it.
 
 You can use entity criticality to adjust the severity of signals for specific entities based on some risk factor or other consideration. For example, an executive’s laptop is likely to contain important data, so signals related to that entity should have a higher severity. To allow for this, you define a criticality, which is a single arithmetic expression that will be used to adjust the severity of signals on entities the criticality is assigned to. For example: `severity+3`
 
@@ -27,16 +27,16 @@ You can use Terraform to manage entity criticality with the [`sumologic_cse_enti
 
 ## About criticality and insight generation
 
-The maximum severity that can be assigned to a Cloud SIEM rule is 10, so normally, signal severity is also limited to 10. Note however that Cloud SIEM doesn’t impose a maximum value on the severity that results from a criticality, although the minimum value will always be 0. 
+The maximum severity that can be assigned to a SIEM rule is 10, so normally, signal severity is also limited to 10. Note however that SIEM doesn’t impose a maximum value on the severity that results from a criticality, although the minimum value will always be 0. 
 
-As described in the [insight generation](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, an insight is generated on an entity based on the cumulative severity of the unique signals that have fired on it over the previous two weeks, unless a different period is configured. The cumulative
+As described in the [insight generation](/docs/cse/get-started-with-siem/insight-generation-process/) topic, an insight is generated on an entity based on the cumulative severity of the unique signals that have fired on it over the previous two weeks, unless a different period is configured. The cumulative
 severity is referred to as the entity’s activity score. Keep in mind that higher signal severities will increase an entity’s activity score and result in insight’s being generated sooner. 
 
 You can configure both the detection window and the threshold activity score for insight generation, as described in the [Set Insight Generation Window and Threshold](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) topic.
 
 ## Define a criticality
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Criticality**. You can also click the **Go To...** menu at the top of the screen and select **Criticality**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Criticality**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM**, and then under **SIEM Entities** select **Criticality**. You can also click the **Go To...** menu at the top of the screen and select **Criticality**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top SIEM menu select **Configuration**, and then under **Entities** select **Criticality**. 
 1. On the **Criticality** tab, click **+ Add Criticality**. 
 1. The **Add Criticality** popup appears.<br/><img src={useBaseUrl('img/cse/criticality-popup.png')} alt="Create entity criticality dialog" style={{border: '1px solid gray'}} width="400"/>
 2. **Name**. Enter a name. 
@@ -47,7 +47,7 @@ You can configure both the detection window and the threshold activity score for
 
 You can associate a criticality with one or more entities. 
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
 1. Navigate to the entity you want to assign a criticality and click it to display the **Entity Details** page. 
 2. On the **Entity Details** page, click the **Criticality** field to display a list of Criticalities. <br/><img src={useBaseUrl('img/cse/entity-details-criticality.png')} alt="Entity criticality details" style={{border: '1px solid gray'}} width="300"/>
 3. Click a criticality to apply it to the entity.

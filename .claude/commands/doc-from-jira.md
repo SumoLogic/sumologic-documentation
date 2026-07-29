@@ -81,7 +81,7 @@ Use the technical area and doc type to suggest the most likely file path.
 | APM | `docs/apm/` |
 | Apps/Integrations | `docs/integrations/` |
 | Automation | `docs/platform-services/automation-service/` |
-| Cloud SIEM | `docs/cse/` |
+| SIEM | `docs/cse/` |
 | Cloud SOAR | `docs/cloud-soar/` |
 | Collectors/Sources | `docs/send-data/` |
 | Dashboards | `docs/dashboards/` |

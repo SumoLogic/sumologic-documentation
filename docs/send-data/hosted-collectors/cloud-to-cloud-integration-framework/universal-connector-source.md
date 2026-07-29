@@ -45,8 +45,8 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
 1. Search for and select **Universal Connector**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
-1. (Optional) **Parser path**. If **Forward to SIEM** option is selected, provide a [parser path](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md).
+1. **Forward to SIEM**. Check the checkbox to forward your data to [SIEM](/docs/cse/). <br/><ForwardToSiem/>
+1. (Optional) **Parser path**. If **Forward to SIEM** option is selected, provide a [parser path](https://github.com/SumoLogic/siem-content-catalog/blob/master/parsers/README.md).
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.

@@ -1,12 +1,12 @@
 ---
 id: save-inventory-data-lookup-table
 title: Save Inventory Data to a Lookup Table
-description: Learn how to use a saved Sumo Logic search to populate a lookup table with Cloud SIEM inventory data.
+description: Learn how to use a saved Sumo Logic search to populate a lookup table with SIEM inventory data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for using a saved Sumo Logic search to populate a lookup table with Cloud SIEM inventory data. Once you’ve created an inventory lookup table, you can leverage it in log searches, and also use it to normalize hostnames and usernames. 
+This topic has instructions for using a saved Sumo Logic search to populate a lookup table with SIEM inventory data. Once you’ve created an inventory lookup table, you can leverage it in log searches, and also use it to normalize hostnames and usernames. 
 
 The instructions below are for saving inventory data to a lookup table using the save search operator. In this procedure, you’ll:
 
@@ -102,6 +102,6 @@ To save and schedule the search:
    * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.  <br/><img src={useBaseUrl('img/cse/save-item-2.png')} alt="Save item dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Save.**
 
-## Step 4: Configure the lookup table in Cloud SIEM
+## Step 4: Configure the lookup table in SIEM
 
-If you’re going to use the lookup table to normalize entities in Cloud SIEM, follow the instructions in [Configure an entity lookup table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table).
+If you’re going to use the lookup table to normalize entities in SIEM, follow the instructions in [Configure an entity lookup table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table).

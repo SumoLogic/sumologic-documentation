@@ -5,14 +5,14 @@ sidebar_label: Custom Insights
 description: Learn how to set up custom insight configurations, which you can use to automatically generate insights on some basis other than entity activity scores.
 keywords:
   - custom insight
-  - cloud siem
+  - siem
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-As described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, Cloud SIEM automatically generates an insight based on an entity’s activity score, which is the cumulative severity of the unique signals that have fired on an entity during a period of time. In some cases, you may want Cloud SIEM to generate an insight on some basis other than entity activity scores. For example, you might want an insight generated whenever a particular set of signals are fired in a particular order. 
+As described in the [Insight Generation Process](/docs/cse/get-started-with-siem/insight-generation-process/) topic, SIEM automatically generates an insight based on an entity’s activity score, which is the cumulative severity of the unique signals that have fired on an entity during a period of time. In some cases, you may want SIEM to generate an insight on some basis other than entity activity scores. For example, you might want an insight generated whenever a particular set of signals are fired in a particular order. 
 
-This topic has instructions for defining a custom insight, which is a configuration you set up that causes Cloud SIEM to generate insights based purely on one or more signals being fired. 
+This topic has instructions for defining a custom insight, which is a configuration you set up that causes SIEM to generate insights based purely on one or more signals being fired. 
 
 import TerraformLink from '../../reuse/terraform-link.md';
 
@@ -35,7 +35,7 @@ This lets you choose how you want to define a custom insight. You can specify th
 
 Which method should you use? The difference is whether you’re going to create an insight based on the name of the signal that was fired, or based on the name of the rule that fired the signal. 
 
-Typically, signals that a rule generates have the same name as the rule. That is not the case with Cloud SIEM’s normalized rules. That’s because normalized rules, for example [normalized threat rules](/docs/cse/rules/normalized-threat-rules/), are written to work with multiple data sources. The names of the signals that a normalized rule fires vary by data source. So, if you want your custom insight configuration to generate insights for signals fired by normalized rules, you should base it on signal names, rather than rule names.
+Typically, signals that a rule generates have the same name as the rule. That is not the case with SIEM’s normalized rules. That’s because normalized rules, for example [normalized threat rules](/docs/cse/rules/normalized-threat-rules/), are written to work with multiple data sources. The names of the signals that a normalized rule fires vary by data source. So, if you want your custom insight configuration to generate insights for signals fired by normalized rules, you should base it on signal names, rather than rule names.
 
 ## When are custom insights generated?
 
@@ -55,7 +55,7 @@ In that case, under **Strict Signal Configuration**, select **Only include the s
 
 To create a custom insight:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu, select **Content > Custom Insights**. 
 1. Click **Add Custom Insight** on the **Custom Insights** page.
 1. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an insight" style={{border: '1px solid gray'}} width="600"/>
 1. In the **Name** field, enter a name for the custom insight.

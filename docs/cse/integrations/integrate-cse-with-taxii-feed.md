@@ -1,18 +1,18 @@
 ---
 id: integrate-cse-with-taxii-feed
-title: Integrate Cloud SIEM with a TAXII Feed
+title: Integrate SIEM with a TAXII Feed
 sidebar_label: TAXII Feed
-description: Learn how to integrate Cloud SIEM with a TAXII feed.
+description: Learn how to integrate SIEM with a TAXII feed.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article has instructions for integrating Cloud SIEM with a TAXII threat intelligence feed. 
+This article has instructions for integrating SIEM with a TAXII threat intelligence feed. 
 
 :::note
 To integrate with a TAXII feed, first consult the documentation for the feed. For example:
-* If you are integrating Cloud SIEM with the Cybersecurity and Information Security Agency (CISA) TAXII feed, see the [CISA AIS TAXII Server Connection Guide](https://www.cisa.gov/resources-tools/resources/cisa-ais-taxii-server-connection-guide-v20) and [Automated Indicator Sharing](https://www.cisa.gov/topics/cyber-threats-and-advisories/information-sharing/automated-indicator-sharing-ais).
-* If you are integrating Cloud SIEM with Anomali Threatstream, see [Generating Your Own Threat Intelligence Feeds in ThreatStream](https://www.anomali.com/blog/generating-your-own-threat-intelligence-feeds-in-threatstream) on the Anomali blog.
+* If you are integrating SIEM with the Cybersecurity and Information Security Agency (CISA) TAXII feed, see the [CISA AIS TAXII Server Connection Guide](https://www.cisa.gov/resources-tools/resources/cisa-ais-taxii-server-connection-guide-v20) and [Automated Indicator Sharing](https://www.cisa.gov/topics/cyber-threats-and-advisories/information-sharing/automated-indicator-sharing-ais).
+* If you are integrating SIEM with Anomali Threatstream, see [Generating Your Own Threat Intelligence Feeds in ThreatStream](https://www.anomali.com/blog/generating-your-own-threat-intelligence-feeds-in-threatstream) on the Anomali blog.
 :::
 
 ## About the integration
@@ -21,7 +21,7 @@ To ingest a TAXII feed, you configure the URL of the TAXII provider’s discover
 
 ## Requirements
 
-Cloud SIEM supports TAXII 1.x and TAXII 2.x. 
+SIEM supports TAXII 1.x and TAXII 2.x. 
 
 ## Configure the integration
 
@@ -29,12 +29,12 @@ Cloud SIEM supports TAXII 1.x and TAXII 2.x. 
 1. The [ingested threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) appear on the [Threat Intelligence page](/docs/security/threat-intelligence/threat-intelligence-indicators/). To access the Threat Intelligence tab: 
    * [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Data Management**, and then select **Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.
    * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**. 
-1. Use the [`hasThreatMatch`](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) Cloud SIEM rules language function to search incoming records for matches to threat intelligence indicators. When matches are found, they appear on records in Cloud SIEM.
+1. Use the [`hasThreatMatch`](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch) SIEM rules language function to search incoming records for matches to threat intelligence indicators. When matches are found, they appear on records in SIEM.
 
 ## Leveraging indicators in rules
 
-Threat intelligence indicators allow you to enrich incoming records with threat intel information. Cloud SIEM uses the `hasThreatMatch` rules function to compare incoming records with information from the threat feed. When there is a “match”, for instance, when an IP address in a record matches an IP address that the feed says is malicious, Cloud SIEM adds relevant information to that record. 
+Threat intelligence indicators allow you to enrich incoming records with threat intel information. SIEM uses the `hasThreatMatch` rules function to compare incoming records with information from the threat feed. When there is a “match”, for instance, when an IP address in a record matches an IP address that the feed says is malicious, SIEM adds relevant information to that record. 
 
-Because the threat intel information is persisted within records, you can reference it downstream in both rules and search. The built-in rules that come with Cloud SIEM will also automatically create a signal for any record with a match from your threat feed. 
+Because the threat intel information is persisted within records, you can reference it downstream in both rules and search. The built-in rules that come with SIEM will also automatically create a signal for any record with a match from your threat feed. 
 
-For more information, see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+For more information, see [Find Threats with SIEM](/docs/security/threat-intelligence/threat-indicators-in-siem/).

@@ -75,7 +75,7 @@ You can make some changes to an existing partition:  
   :::
 * You can change the data forwarding configuration.
 * You cannot change the name of partition, reuse a partition name, or change the target data tier.  
-* Security partitions can’t be edited. Sumo Logic stores Cloud SIEM records in seven partitions, one for each [Cloud SIEM record type](/docs/cse/schema/cse-record-types). The names of the Sumo Logic partitions that contain Cloud SIEM records begin with the string `sec_record_`. If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note, however, that no user can edit or remove a security partition.
+* Security partitions can’t be edited. Sumo Logic stores SIEM records in seven partitions, one for each [SIEM record type](/docs/cse/schema/cse-record-types). The names of the Sumo Logic partitions that contain SIEM records begin with the string `sec_record_`. If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note, however, that no user can edit or remove a security partition.
 
 ### Changing a partition's routing expression
 

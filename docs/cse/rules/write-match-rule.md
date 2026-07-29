@@ -10,10 +10,10 @@ import CseRule from '../../reuse/cse-rule-description-links.md';
 import CseDynamicSeverity from '../../reuse/cse-dynamic-severity.md';
 import Iframe from 'react-iframe'; 
 
-This topic has information about match rules and how to create them in the Cloud SIEM UI.
+This topic has information about match rules and how to create them in the SIEM UI.
 
 :::info
-If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 import TerraformLink from '../../reuse/terraform-link.md';
@@ -26,7 +26,7 @@ You can use Terraform to manage match rules with the [`sumologic_cse_match_rule`
 
 ## About match rules
 
-A match rule is the simplest type of Cloud SIEM rule. Each time a single record matches the rule expression, a signal is fired. 
+A match rule is the simplest type of SIEM rule. Each time a single record matches the rule expression, a signal is fired. 
 
 A match rule doesn’t allow you to define other conditions for signal, like requiring multiple records to match the rule expression, or looking for events of the different types within a timespan.
 
@@ -45,7 +45,7 @@ Watch this micro lesson to learn how to create a match rule.
 <Iframe url="https://fast.wistia.net/embed/iframe/3phxuh3pta?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Create a Cloud SIEM Match Rule Video"
+  title="Micro Lesson: Create a SIEM Match Rule Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -58,7 +58,7 @@ Watch this micro lesson to learn how to create a match rule.
 
 ## Create a match rule
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic, menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic, menu select **SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Match** card.
 1. In the rules editor:
@@ -68,7 +68,7 @@ Watch this micro lesson to learn how to create a match rule.
 ### Configure "If Triggered" settings
 
 1.  **When a Record matches the expression.** Enter a rule expression that the rule must match before generating a signal. 
-1. Click **Test Rule Expression** to test it against existing records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. Click **Test Rule Expression** to test it against existing records in SIEM. The **If Triggered** section expands, and SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
 1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
     :::note
     If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
@@ -77,7 +77,7 @@ Watch this micro lesson to learn how to create a match rule.
 ### Configure "Then Create a Signal" settings
 
 1. Click **Show Advanced** if you want the rule to [override global signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
-1. **On Entity**. Select the entity field—for example, an IP address, MAC address, hostname, and so on—in the record that the resulting signal should be associated with. (In Cloud SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Select the entity field—for example, an IP address, MAC address, hostname, and so on—in the record that the resulting signal should be associated with. (In SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
 1. **using the name**. Define the name for signals fired by the rule. You can enter text, and include record fields from the custom token list. Including record field values in the signal name can make it more meaningful.
     :::note
     * When you're configuring a threshold or chain rule, you do not supply a signal name; a signal fired by those rule types has the same name as the rule that fired it.

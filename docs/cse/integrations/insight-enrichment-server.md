@@ -1,17 +1,17 @@
 ---
 id: insight-enrichment-server
 title: Insight Enrichment Server
-description: You can use the Cloud SIEM Insight Enrichment Server to automatically enrich Cloud SIEM insights.
+description: You can use the SIEM Insight Enrichment Server to automatically enrich SIEM insights.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Cloud SIEM Insight Enrichment Server is a component that automatically enriches Cloud SIEM insights.  
+The SIEM Insight Enrichment Server is a component that automatically enriches SIEM insights.  
 
 :::tip
-The Automation Service is a newer way to perform enrichment. For more information about how to use the Automation Service instead of the Cloud SIEM Insight Enrichment Server, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+The Automation Service is a newer way to perform enrichment. For more information about how to use the Automation Service instead of the SIEM Insight Enrichment Server, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 
 :::note
@@ -24,7 +24,7 @@ The Insight Enrichment Server performs an external query on the [entity](/docs/
 
 You configure enrichments in the server’s configuration file. The key settings are the entity type to run the enrichment on, and the command and command arguments to run. 
 
-The Insight Enrichment Server periodically polls Cloud SIEM for new insights. If an insight’s entity is of the same type as the `entity_type` specified for an enrichment configured in the server’s configuration file, the server runs the enrichment for the entity instance in the insight. You can see an enrichment that has been added to an insight on the **Enrichments** tab for an insight.  
+The Insight Enrichment Server periodically polls SIEM for new insights. If an insight’s entity is of the same type as the `entity_type` specified for an enrichment configured in the server’s configuration file, the server runs the enrichment for the entity instance in the insight. You can see an enrichment that has been added to an insight on the **Enrichments** tab for an insight.  
 
 <img src={useBaseUrl('img/cse/enrichment-1a.png')} alt="Example enrichment" width="800"/>
 
@@ -50,7 +50,7 @@ If you're not installing the Insight Enrichment Server on the FED deployment, fo
 
 ### Prerequisites
 
-The Cloud SIEM Insight Enrichment Server can be installed on any Windows system with a Vista+ or Server 2008 or newer operating system. It does not have significant RAM or CPU requirements, so it should be fine running on almost any hardware.   
+The SIEM Insight Enrichment Server can be installed on any Windows system with a Vista+ or Server 2008 or newer operating system. It does not have significant RAM or CPU requirements, so it should be fine running on almost any hardware.   
 
 You must have local administrative privileges to install the Insight Enrichment Server. By default, the server runs under the LocalService account on the machine. If the Insight Enrichment Server needs privileges to perform actions as a different user, see [Run the server under a service account](#run-the-server-under-a-service-account), below.
 

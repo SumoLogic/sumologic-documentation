@@ -25,7 +25,7 @@ You can use Sumo Logic logs for:
 * [Cloud infrastructure security](/docs/security/additional-security-features/cloud-infrastructure-security/). Monitor the health of your cloud infrastructure via a unified security and compliance audit view.
 
 :::note
-After you have collected logs for security, you can use them with [Cloud SIEM](/docs/cse/) and [Cloud SOAR](/docs/cloud-soar/), our solutions for threat detection, investigation, and response.
+After you have collected logs for security, you can use them with [SIEM](/docs/cse/) and [Cloud SOAR](/docs/cloud-soar/), our solutions for threat detection, investigation, and response.
 :::
 
 ## The Sumo Logic data pipeline

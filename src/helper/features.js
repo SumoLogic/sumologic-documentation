@@ -7,10 +7,10 @@ export const features1 = [
   {
     title: translate({
       id: 'landing.feature.cse.title',
-      message: 'Cloud SIEM',
+      message: 'SIEM',
       description: 'Title for CSE',
     }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
+    imageUrl: 'img/icons/security/siem.png',
     description: (<Translate
       id='landing.feature.cse.desc'
       description='CSE description'>
@@ -38,7 +38,7 @@ export const features1 = [
       message: 'Threat Intelligence',
       description: 'Title for Threat Intelligence',
     }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
+    imageUrl: 'img/icons/security/siem.png',
     description: (<Translate
       id='landing.feature.threat-intel.desc'
       description='Threat Intelligence description'>
@@ -144,7 +144,7 @@ export const features3 = [
   },
 ];
 
-// After it goes GA: docs/cse/get-started-with-cloud-siem/soc-analyst-agent
+// After it goes GA: docs/cse/get-started-with-siem/soc-analyst-agent
 // After it goes GA: mcp-server
 
 // Tab 4: Observability

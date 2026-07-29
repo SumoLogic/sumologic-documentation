@@ -57,7 +57,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/cloud-siem-enterprise')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="50"/><h4>Cloud SIEM</h4></a>
+  <a href={useBaseUrl('docs/api/siem-enterprise')}><img src={useBaseUrl('img/icons/security/siem.png')} alt="SIEM icon" width="50"/><h4>SIEM</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -272,7 +272,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/threat-intel-ingest')}><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="50"/><h4>Threat Intel Ingest</h4></a>
+  <a href={useBaseUrl('docs/api/threat-intel-ingest')}><img src={useBaseUrl('img/icons/security/siem.png')} alt="SIEM icon" width="50"/><h4>Threat Intel Ingest</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

@@ -181,7 +181,7 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 * **Utility tools**. Discover relevant tools based on context.
 * **Alerts management**. Search and retrieve alerts.
 * **Dashboard management**. Create, retrieve, and update dashboards.
-* **Cloud SIEM**. Manage insights, detection rules, and status updates.
+* **SIEM**. Manage insights, detection rules, and status updates.
 * **Log search**. Run log search queries and retrieve results.
 * **Discovery**. List custom fields, field extraction rules, and partitions to help scope log searches.
 
@@ -223,26 +223,26 @@ The list of tools your MCP client reports as available is not currently filtered
 * `Create a new dashboard called "System Overview" that uses the previous query to power a dashboard panel called "Total Log Count Per Minute"`
 * `Add a second panel called "Error Logs Count Per Minute" that is a similar query but only has logs in it that contain the keyword "error" in them`
 
-### Cloud SIEM
+### SIEM
 
 #### Insights
 
 | Tool | Description | Required scope |
 | :--- | :---------- | :-------------- |
-| `getAllInsights`        | Get all insights (paginated via token). | View Cloud SIEM Enterprise (`viewCse`) |
-| `getInsight`            | Get a single insight by ID, including signals, artifacts, and entity details. | View Cloud SIEM Enterprise (`viewCse`) |
-| `getInsights`           | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. | View Cloud SIEM Enterprise (`viewCse`) |
-| `updateInsightAssignee` | Update the assignee of an insight. | View Cloud SIEM Enterprise, Manage Insight Assignee (`viewCse`, `cseManageInsightAssignee`) |
-| `updateInsightStatus`   | Update the status of an insight. | View Cloud SIEM Enterprise, Manage Insight Status (`viewCse`, `cseManageInsightStatus`) |
+| `getAllInsights`        | Get all insights (paginated via token). | View SIEM Enterprise (`viewCse`) |
+| `getInsight`            | Get a single insight by ID, including signals, artifacts, and entity details. | View SIEM Enterprise (`viewCse`) |
+| `getInsights`           | Get insights with filtering by severity, status, assignee, entity, confidence, tags, and more. | View SIEM Enterprise (`viewCse`) |
+| `updateInsightAssignee` | Update the assignee of an insight. | View SIEM Enterprise, Manage Insight Assignee (`viewCse`, `cseManageInsightAssignee`) |
+| `updateInsightStatus`   | Update the status of an insight. | View SIEM Enterprise, Manage Insight Status (`viewCse`, `cseManageInsightStatus`) |
 
 #### Detection rules
 
 | Tool | Description | Required scope |
 | :--- | :---------- | :-------------- |
-| `createTemplatedMatchRule` | Create a new match rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
-| `createThresholdRule`      | Create a new threshold rule. | View Cloud SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
-| `getRule`                  | Get a single rule by ID with optional tuning expressions. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
-| `getRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. | View Cloud SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
+| `createTemplatedMatchRule` | Create a new match rule. | View SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `createThresholdRule`      | Create a new threshold rule. | View SIEM Enterprise, Manage Rules (`viewCse`, `cseManageRules`) |
+| `getRule`                  | Get a single rule by ID with optional tuning expressions. | View SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
+| `getRules`                 | Get rules with filtering by category, enabled status, rule source, score, severity, stream, tags, and more. | View SIEM Enterprise, View Rules (`viewCse`, `cseViewRules`) |
 
 #### Example prompts
 

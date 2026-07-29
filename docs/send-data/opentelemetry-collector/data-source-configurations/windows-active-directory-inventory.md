@@ -2,18 +2,18 @@
 id: windows-active-directory-inventory
 title: Windows Active Directory Inventory Receiver
 sidebar_label: Windows Active Directory Inventory Receiver
-description: Collect Windows Active Directory inventory data using the Sumo Logic OpenTelemetry Collector to enrich Cloud SIEM log data and build network profiles.
+description: Collect Windows Active Directory inventory data using the Sumo Logic OpenTelemetry Collector to enrich SIEM log data and build network profiles.
 keywords:
     - windows-active-directory-inventory
     - opentelemetry
-    - cloud-siem
+    - siem
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Windows Active Directory Inventory receiver for the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) collects inventory data from [Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) using Windows ADSI (Active Directory Service Interfaces) COM APIs. This includes information such as computer names, usernames, email addresses, and location information.
 
-[Sumo Logic Cloud SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data, providing additional context and building a more complete profile of your network. For example, linking a location to the servers, workstations, and users in that location.
+[Sumo Logic SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data, providing additional context and building a more complete profile of your network. For example, linking a location to the servers, workstations, and users in that location.
 
 The following information is collected by default:
 
@@ -105,9 +105,9 @@ receivers:
     poll_interval: 12h
 ```
 
-### Cloud SIEM enrichment fields
+### SIEM enrichment fields
 
-To use the inventory data for Cloud SIEM enrichment, add the required SIEM fields to the pipeline:
+To use the inventory data for SIEM enrichment, add the required SIEM fields to the pipeline:
 
 ```yaml
 processors:

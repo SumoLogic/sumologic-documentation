@@ -11,7 +11,7 @@ This topic has information about custom insight resolutions and how to create an
 
 ## About insight resolutions
 
-When you close an insight, Cloud SIEM prompts you to select a resolution that indicates why you closed it. There are four built-in resolutions:
+When you close an insight, SIEM prompts you to select a resolution that indicates why you closed it. There are four built-in resolutions:
 
 * Duplicate. The insight has triggered before on the same entity and is a duplicate.
 * False Positive. An insight triggered and it is legitimate activity.
@@ -30,7 +30,7 @@ You can use Terraform to manage custom insight resolutions with the [`sumologic_
 
 ## Create a custom sub-resolution
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Insight Resolutions**. You can also click the **Go To...** menu at the top of the screen and select **Insight Resolutions**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Resolutions**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM**, and then under **SIEM Workflow** select **Insight Resolutions**. You can also click the **Go To...** menu at the top of the screen and select **Insight Resolutions**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top SIEM menu select **Configuration**, and then under **Workflow** select **Resolutions**. 
 1. On the **Insight Resolutions** tab, click **+ Add Resolution**. 
 1. The **Add Insight Resolution** popup appears.
     1. **Name**. Enter a meaningful name for the new resolution.

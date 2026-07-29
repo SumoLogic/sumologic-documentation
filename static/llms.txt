@@ -1,12 +1,12 @@
 # Sumo Logic Documentation
 
-> Sumo Logic is a cloud-native platform for log analytics, metrics, distributed tracing, security (Cloud SIEM), and observability. It is used by DevOps, SecOps, and platform engineering teams to monitor infrastructure, investigate incidents, detect threats, and meet SLO targets, all without managing on-premise infrastructure. Use this file as the canonical entry point for discovering Sumo Logic documentation. Pages are listed by product area in priority order. Start here, then follow links into deeper content.
+> Sumo Logic is a cloud-native platform for log analytics, metrics, distributed tracing, security (SIEM), and observability. It is used by DevOps, SecOps, and platform engineering teams to monitor infrastructure, investigate incidents, detect threats, and meet SLO targets, all without managing on-premise infrastructure. Use this file as the canonical entry point for discovering Sumo Logic documentation. Pages are listed by product area in priority order. Start here, then follow links into deeper content.
 
 ## What makes Sumo Logic distinctive
 
 - **Multi-tenant SaaS:** no infrastructure to deploy, patch, or manage
-- **Unified platform:** logs, metrics, traces, and Cloud SIEM in a single product — no stitching together separate tools
-- **Cloud SIEM with automated threat detection:** raw logs are normalized into records, correlated into signals, and surfaced as insights without manual triage
+- **Unified platform:** logs, metrics, traces, and SIEM in a single product — no stitching together separate tools
+- **SIEM with automated threat detection:** raw logs are normalized into records, correlated into signals, and surfaced as insights without manual triage
 - **Native OpenTelemetry support:** ingest OTel-formatted logs, metrics, and traces directly via the OpenTelemetry Collector
 - **Built-in SOAR:** the Automation Service provides playbook-driven response without a separate SOAR product
 - **Petabyte-scale ingest:** designed for high-volume, multi-cloud environments with no capacity planning required
@@ -14,7 +14,7 @@
 ## Primary audiences
 
 - **Platform and DevOps engineers**: log collection, OpenTelemetry, Kubernetes monitoring, dashboards, and alerting
-- **Security analysts (SecOps)**: Cloud SIEM, detection rules, signals, entities, insights, and automation playbooks
+- **Security analysts (SecOps)**: SIEM, detection rules, signals, entities, insights, and automation playbooks
 - **SREs**: SLOs, distributed traces, Real User Monitoring (RUM), monitors, and incident investigation
 
 ## Site information
@@ -77,11 +77,11 @@
 - [Traces](https://www.sumologic.com/help/docs/apm/traces/): Distributed tracing and trace analytics
 - [Real User Monitoring (RUM)](https://www.sumologic.com/help/docs/apm/real-user-monitoring/): Browser and mobile performance monitoring
 
-### Security and Cloud SIEM
+### Security and SIEM
 - [Security solutions overview](https://www.sumologic.com/help/docs/security/): Sumo Logic security product overview
-- [Cloud SIEM overview](https://www.sumologic.com/help/docs/cse/): Introduction to Cloud SIEM capabilities
-- [Cloud SIEM rules](https://www.sumologic.com/help/docs/cse/rules/): Detection rule types and configuration
-- [Records, signals, entities, and insights](https://www.sumologic.com/help/docs/cse/records-signals-entities-insights/): Core Cloud SIEM data model
+- [SIEM overview](https://www.sumologic.com/help/docs/cse/): Introduction to SIEM capabilities
+- [SIEM rules](https://www.sumologic.com/help/docs/cse/rules/): Detection rule types and configuration
+- [Records, signals, entities, and insights](https://www.sumologic.com/help/docs/cse/records-signals-entities-insights/): Core SIEM data model
 
 ### Automation
 - [Automation Service](https://www.sumologic.com/help/docs/platform-services/automation-service/): SOAR capabilities and playbook automation

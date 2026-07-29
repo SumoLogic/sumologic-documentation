@@ -34,7 +34,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
-**[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur.
+**[Automation Service](/docs/cse/automation/about-automation-service-and-siem)**. In SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur.
 
 
 ## B
@@ -54,7 +54,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new Collector that will use a name that is already in use by another Collector. Clobber deletes (clobbers) the existing collector with the same name.
 
-[**Cloud SIEM**](/docs/cse). A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
+[**SIEM**](/docs/cse). A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. SIEM surfaces insights that help security analysts detect and investigate threats faster.
 
 [**Cloud SOAR**](/docs/cloud-soar). A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
 
@@ -108,9 +108,9 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
-**[Enrichment](/docs/cse/integrations/enrichments-and-indicators)**. In Cloud SIEM, addition of data to records that provides more information for analysis of security incidents.
+**[Enrichment](/docs/cse/integrations/enrichments-and-indicators)**. In SIEM, addition of data to records that provides more information for analysis of security incidents.
 
-**[Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)**. In Cloud SIEM, a unique actor encountered in incoming messages, such as a user, IP address, or host.
+**[Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)**. In SIEM, a unique actor encountered in incoming messages, such as a user, IP address, or host.
 
 **[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you do not want to send to Sumo Logic, think of it as an "allowlist" filter.
 
@@ -156,7 +156,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets)**. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
 
-**[Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a group of signals clustered around a single entity that are generated when an entity’s Activity Score exceeds a threshold.
+**[Insight](/docs/cse/get-started-with-siem/about-cse-insight-ui)**. In SIEM, a group of signals clustered around a single entity that are generated when an entity’s Activity Score exceeds a threshold.
 
 **[Installed Collector](/docs/send-data/installed-collectors)**. Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
@@ -189,7 +189,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 ## M
 
-**[Mapper](/docs/cse/schema/create-structured-log-mapping)**. In Cloud SIEM, a script that maps message fields to record attributes.
+**[Mapper](/docs/cse/schema/create-structured-log-mapping)**. In SIEM, a script that maps message fields to record attributes.
 
 **[Markdown](/docs/dashboards/panels/markdown-syntax)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting. See Help for details.
 
@@ -237,7 +237,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Parse operator](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor)**. The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent functions in the query such as sorting, grouping, or other functions. Parse options include "parse anchor" or "parse regex" for using regular expressions to form more complex parse queries. It is acceptable to use "parse" for "parse anchor", or "extract" for "parse regex".
 
-**[Parser](/docs/cse/schema/parser-editor)**. In Cloud SIEM, a script that parses logs and normalizes them into structured records.
+**[Parser](/docs/cse/schema/parser-editor)**. In SIEM, a script that parses logs and normalizes them into structured records.
 
 **[Partition](/docs/manage/partitions)**. Sumo Logic allows you to filter a subset of the messages in an Index into a Partition. Partitioning messages in an Index improves search query performance, as the total number of messages that need to be searched is reduced. Once messages are routed to a Partition, you can limit your search to those messages using the Partition name in a search query.
 
@@ -263,7 +263,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[RBAC](/docs/manage/users-roles/roles/role-based-access-control/)**. Sumo Logic supports Role-Based Access Control (RBAC) to allow Administrators to customize system access. With RBAC, Administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
 
-**[Record](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, a collection of normalized data created from a message.
+**[Record](/docs/cse/records-signals-entities-insights/view-records-signal)**. In SIEM, a collection of normalized data created from a message.
 
 **[Relative expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions)**. Used in time range expressions, when setting the non-absolute time limits of a search. For example, -1d, -1d -12h, -12h -60m.
 
@@ -273,7 +273,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Rollup tables](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage)**. Metric data is stored in Sumo Logic as raw data points, and aggregated over one minute and one hour resolutions. The one minute and one hour aggregated metrics are referred to as rollup tables. Raw data is retained for 7 days, one-minute rollups for 30 days and one-hour rollups for 13 months.
 
-**[Rule](/docs/cse/rules/about-cse-rules)**. In Cloud SIEM, set of logic that creates signals based on information in incoming records.
+**[Rule](/docs/cse/rules/about-cse-rules)**. In SIEM, set of logic that creates signals based on information in incoming records.
 
 
 
@@ -293,7 +293,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations.
 
-**[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met.
+**[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In SIEM, an indicator of an event of interest that fires when rule conditions are met.
 
 **[Single Value Chart](/docs/dashboards/panels/single-value-charts)**. A Single Value chart is useful for displaying the results of a query that returns only a single value or record, in order to make that value stand out at a glance. If the query returns more than one value in the Aggregation tab, only the first value is displayed in the Single Value chart.
 

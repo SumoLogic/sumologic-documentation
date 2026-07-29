@@ -7,7 +7,7 @@
 [![Node.js >=20](https://img.shields.io/static/v1?label=Node.js&message=%3E%3D20&color=339933&style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![Yarn v1](https://img.shields.io/static/v1?label=Yarn&message=v1&color=2C8EBB&style=flat&logo=yarn&logoColor=white)](https://yarnpkg.com)
 
-Sumo Logic Docs is the open-source documentation site for Sumo Logic, an AI-powered security operations platform providing Cloud SIEM and security analytics to help teams automate, detect, and investigate threats. Sumo Logic empowers users to monitor, troubleshoot, and defend their environments using AI insights powered by log analytics. Learn more at [sumologic.com](https://www.sumologic.com).
+Sumo Logic Docs is the open-source documentation site for Sumo Logic, an AI-powered security operations platform providing SIEM and security analytics to help teams automate, detect, and investigate threats. Sumo Logic empowers users to monitor, troubleshoot, and defend their environments using AI insights powered by log analytics. Learn more at [sumologic.com](https://www.sumologic.com).
 
 Our site is built with [Docusaurus 3](https://docusaurus.io/) and supports React, Rehype, and Remark plugins.
 
@@ -62,7 +62,7 @@ Any broken links or images will be listed in the output. Fix them, rebuild, and 
 | `/docs` | Documentation source files |
 | `/blog-service` | Service release notes |
 | `/blog-collector` | Collector release notes |
-| `/blog-cse` | Cloud SIEM release notes |
+| `/blog-cse` | SIEM release notes |
 | `/blog-csoar` | Cloud SOAR release notes |
 | `/static/img` | Images and media assets |
 | `sidebars.ts` | Left-nav sidebar configuration |

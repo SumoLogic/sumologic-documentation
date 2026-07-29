@@ -243,11 +243,11 @@ module.exports = {
          routeBasePath: 'release-notes-cse',
          path: './blog-cse',
          archiveBasePath: 'archive',
-         blogTitle: 'Sumo Logic Cloud SIEM Release Notes',
+         blogTitle: 'Sumo Logic SIEM Release Notes',
          blogSidebarTitle: 'All posts',
          blogSidebarCount: 'ALL',
          postsPerPage: 'ALL',
-         blogDescription: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+         blogDescription: 'New and enhanced SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
          showReadingTime: false,
          onUntruncatedBlogPosts: 'ignore',
          onInlineTags: 'ignore',
@@ -255,8 +255,8 @@ module.exports = {
          feedOptions: {
            type: 'rss',
            xslt: true,
-           title: 'Sumo Logic Cloud SIEM Release Notes',
-           description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+           title: 'Sumo Logic SIEM Release Notes',
+           description: 'New and enhanced SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
          },
       },
@@ -352,7 +352,7 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [
-      { name: 'keywords', content: 'sumo logic, documentation, log management, observability, cloud siem, monitoring, API, tutorials' },
+      { name: 'keywords', content: 'sumo logic, documentation, log management, observability, siem, monitoring, API, tutorials' },
       { name: 'msvalidate.01', content: 'BA6FBE48309F6E1CFFD055E769857586' },
       { name: 'description', content: 'Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.' },
       { property: 'og:site_name', content: 'Sumo Logic Docs' },

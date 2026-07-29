@@ -2,7 +2,7 @@
 id: create-use-network-blocks
 title: Create and Use Network Blocks
 sidebar_label: Network Blocks
-description: A network block is a CIDR block of IP addresses from your infrastructure that you label to provide context that can be leveraged in rules and is helpful in investigating Cloud SIEM insights.
+description: A network block is a CIDR block of IP addresses from your infrastructure that you label to provide context that can be leveraged in rules and is helpful in investigating SIEM insights.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,21 +10,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic describes *network blocks* and their purpose, and provides instructions for setting them up and using them.
 
 :::note
-If all you need to know is what enrichment fields Cloud SIEM adds to Records that contain IP addresses in network blocks, you can jump to [Network blocks and enrichment fields](#network-blocks-and-enrichment-fields) below.
+If all you need to know is what enrichment fields SIEM adds to Records that contain IP addresses in network blocks, you can jump to [Network blocks and enrichment fields](#network-blocks-and-enrichment-fields) below.
 :::
 
-In Cloud SIEM, a network block is a CIDR block of IP addresses from your infrastructure that you label to provide context that can be leveraged in rules and is helpful in investigating insights. For example, you could label one network block “Server Network” and another one “Workstations”.
+In SIEM, a network block is a CIDR block of IP addresses from your infrastructure that you label to provide context that can be leveraged in rules and is helpful in investigating insights. For example, you could label one network block “Server Network” and another one “Workstations”.
 
 In addition to labeling a network block, you can optionally mark a network block as “Internal”.
 
 :::note
-There is another way that IP addresses get marked as “Internal”. Cloud SIEM automatically marks RFC 1918 IP addresses, which aren’t routable on the Internet, as “Internal”.
+There is another way that IP addresses get marked as “Internal”. SIEM automatically marks RFC 1918 IP addresses, which aren’t routable on the Internet, as “Internal”.
 :::
 
 When you configure a network block, there is an option to suppress signals on the IP addresses within the block. When signals are suppressed due to a network block, only signals with the primary entity as an IP address within the block are suppressed.
 
 :::note
-IP addresses in a network block for which signals are suppressed will not appear on the **Suppressed Entities** page in the Cloud SIEM UI. (You can’t manually unsuppress signals for an IP address that are suppressed due to its network block configuration.)
+IP addresses in a network block for which signals are suppressed will not appear on the **Suppressed Entities** page in the SIEM UI. (You can’t manually unsuppress signals for an IP address that are suppressed due to its network block configuration.)
 :::
 
 import TerraformLink from '../../reuse/terraform-link.md';
@@ -47,18 +47,18 @@ Keep the labels you assign to network blocks short and sweet. Don’t include th
 
 ## Overlapping network blocks
 
-In the case that the two or more network blocks overlap, Cloud SIEM uses the smallest, most-specific block that matches the IP address that's being looked up. For example, given these two network blocks:
+In the case that the two or more network blocks overlap, SIEM uses the smallest, most-specific block that matches the IP address that's being looked up. For example, given these two network blocks:
 
 * `10.0.0.0/8` with label "EC2 Internal"
 * `10.128.0.0/24` with label "WebServer IPs"
 
-When Cloud SIEM looks for the network block address `10.128.0.1`, it will return the more-specific block, "WebServer IPs".
+When SIEM looks for the network block address `10.128.0.1`, it will return the more-specific block, "WebServer IPs".
 
 ## Create a network block manually
 
-Follow these instructions to create a network block using the Cloud SIEM UI. For information about creating multiple network blocks by file upload, see [Upload a CSV file of network blocks](#upload-a-csv-file-of-network-blocks).
+Follow these instructions to create a network block using the SIEM UI. For information about creating multiple network blocks by file upload, see [Upload a CSV file of network blocks](#upload-a-csv-file-of-network-blocks).
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Network Blocks**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Network Blocks**.  
 1. Click **Add Network Block**.
 1. On the **Add Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
@@ -69,7 +69,7 @@ Follow these instructions to create a network block using the Cloud SIEM UI. For
 
 ## Upload a CSV file of network blocks
 
-You can define multiple network blocks in a .csv file and upload the file to Cloud SIEM.
+You can define multiple network blocks in a .csv file and upload the file to SIEM.
 
 The table below defines the fields you can import for a network block.
 
@@ -96,7 +96,7 @@ address_block
 
 ## Network blocks and enrichment fields
 
-The label you assign to a network block is stored in an enrichment field that Cloud SIEM adds to each record that contains an IP address in that block. Similarly, an enrichment field is added to each record that contains an IP address in a network block that is marked internal. 
+The label you assign to a network block is stored in an enrichment field that SIEM adds to each record that contains an IP address in that block. Similarly, an enrichment field is added to each record that contains an IP address in a network block that is marked internal. 
 
 In the table below, the left column contains schema fields that contain IP addresses. The middle column contains the enrichment fields that are added to records based on network block configuration. The enrichment fields in the middle column, which end in `_location`, are populated with the label from a network block. Those in the rightmost column, which end in `_isInternal`, are populated with “yes”, indicating that the IP address is in a network block marked internal. 
 

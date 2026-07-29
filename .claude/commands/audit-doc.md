@@ -132,7 +132,7 @@ Apply Sumo Logic style guide rules:
 
 **Terminology:**
 * [ ] "Sumo Logic" (not "SumoLogic" or "Sumo")
-* [ ] Consistent product names (Cloud SIEM, Cloud SOAR)
+* [ ] Consistent product names (SIEM, Cloud SOAR)
 * [ ] Proper capitalization for features and products
 * [ ] No contractions in formal documentation
 
@@ -259,7 +259,7 @@ After presenting the audit report, ask the user if they would like Claude to:
 
 **By type:**
 
-**Cloud SIEM (CSE):**
+**SIEM (CSE):**
 * Date format with ordinal suffix (12th, 3rd)
 * Rule IDs follow pattern (MATCH-SXXXX, etc.)
 * Parser paths use full hierarchy

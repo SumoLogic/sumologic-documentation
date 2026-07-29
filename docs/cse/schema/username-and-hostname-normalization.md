@@ -2,18 +2,18 @@
 id: username-and-hostname-normalization
 title: Username and Hostname Normalization
 sidebar_label: Username and Hostname Normalization
-description: Learn about how Cloud SIEM normalizes usernames and hostnames during mapping and parsing.
+description: Learn about how SIEM normalizes usernames and hostnames during mapping and parsing.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM normalizes usernames and hostnames in records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
+SIEM normalizes usernames and hostnames in records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
 
-## Getting data into Cloud SIEM for normalization
+## Getting data into SIEM for normalization
 
-Data that is normalized comes into Cloud SIEM from several sources:
-* **Active Directory**. Configure the [Windows Active Directory Inventory Source](/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source/). The username, hostname, and domain information is pulled in directly from Active Directory to Cloud SIEM for normalization. For information on the computer and user data that is obtained, see the [Windows Active Directory Inventory Source](/docs/cse/administration/inventory-sources-and-data/#windows-active-directory-inventory-source) section in [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
-* **AWS**. Configure AWS sources and ensure that the **Forward to SIEM** option is set to true. For more information, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/) and [Ingestion Sources for Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/).
+Data that is normalized comes into SIEM from several sources:
+* **Active Directory**. Configure the [Windows Active Directory Inventory Source](/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source/). The username, hostname, and domain information is pulled in directly from Active Directory to SIEM for normalization. For information on the computer and user data that is obtained, see the [Windows Active Directory Inventory Source](/docs/cse/administration/inventory-sources-and-data/#windows-active-directory-inventory-source) section in [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
+* **AWS**. Configure AWS sources and ensure that the **Forward to SIEM** option is set to true. For more information, see [SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/) and [Ingestion Sources for SIEM](/docs/cse/ingestion/ingestion-sources-for-siem/).
 * **Other sources**. See [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
 ## Normalization process
@@ -54,7 +54,7 @@ If no name normalization configuration exists, the name attribute will consist o
 
 ## Configure entity normalization
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Normalization**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM**, and then under **SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top SIEM menu select **Configuration**, and then under **Entities** select **Normalization**. 
 1. Select the **Domain** tab. (For information about the **Lookup Tables** tab, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/)). 
 1. You can configure just **Username Normalization**, just **Hostname Normalization**, or both. We recommend you enable both. 
 1. Under **Normalization Formats** there are configuration options to normalize names from:
@@ -189,4 +189,4 @@ Following is an example configuration for a case where you have a domain name `t
 
 ## Additional resources
 
-Blog: [What’s going on? The power of normalization in Cloud SIEM](https://www.sumologic.com/blog/whats-going-on-normalization-cloud-siem)
+Blog: [What’s going on? The power of normalization in SIEM](https://www.sumologic.com/blog/whats-going-on-normalization-siem)

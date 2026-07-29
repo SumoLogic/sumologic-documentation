@@ -18,7 +18,7 @@ The MITRE ATT&CK Threat Coverage Explorer shows the [MITRE ATT&CK](https://attac
 Coverage data is updated on the page once a day. To determine your coverage, the MITRE ATT&CK Threat Coverage Explorer collects data from rules that have fired in the last 180 days. 
 
 :::note
-* To view the MITRE ATT&CK Threat Coverage Explorer, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem). 
+* To view the MITRE ATT&CK Threat Coverage Explorer, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#siem). 
 * To run APIs to get information on coverage, see [MITRE ATT&CK coverage APIs](#mitre-attck-coverage-apis).
 :::
 
@@ -29,7 +29,7 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
 <Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Cloud SIEM MITRE ATT&amp;CK® Threat Coverage Explorer Video"
+  title="Micro Lesson: SIEM MITRE ATT&amp;CK® Threat Coverage Explorer Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -42,19 +42,19 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
 
 ## User interface 
 
-[**New UI**](/docs/get-started/sumo-logic-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**.
+[**New UI**](/docs/get-started/sumo-logic-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the MITRE ATT&CK Threat Coverage Explorer, in the top Cloud SIEM menu select **Content > MITRE ATT&CK Coverage**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To open the MITRE ATT&CK Threat Coverage Explorer, in the top SIEM menu select **Content > MITRE ATT&CK Coverage**.
  
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" style={{border: '1px solid gray'}} width="900"/>
 
 1. **Recent Activity**. Shows coverage for your organization based on signals received over the last 180 days. Coverage data is updated on the page once a day.
-1. **All Community Activity**. Shows coverage for all customers that use the same Cloud SIEM sources as you based on all signals received by all instances over the last 180 days. (Customer data is anonymized.) Comparing this coverage to **Recent Activity** can help you determine what other potential techniques are covered by your data sources, but not evidenced yet in your environment.
+1. **All Community Activity**. Shows coverage for all customers that use the same SIEM sources as you based on all signals received by all instances over the last 180 days. (Customer data is anonymized.) Comparing this coverage to **Recent Activity** can help you determine what other potential techniques are covered by your data sources, but not evidenced yet in your environment.
 1. **Theoretical Coverage**. Shows coverage for your organization if all data ingest worked perfectly and all enabled rules generated at least one signal. This view can help you determine what custom rules would be most valuable to implement. If this is selected, the **Vendor/Product** filter is disabled.
 1. **Export**. Export the filtered coverage to a JSON file. The file is in the format used by MITRE, and can be used with other exported files of MITRE data to aggregate and analyze MITRE ATT&CK coverage data. The file includes a score from 0 to 3 for each technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules).
 1. [**MITRE TTP**](#mitre-ttp). Click to filter on MITRE tactics, techniques, and sub-techniques.
 1. [**Vendor/Product**](#vendorproduct). Click to filter on vendors and products that provide data sources. Select particular vendors to help you evaluate their coverage.
-1. [**Cloud SIEM Rules**](#cloud-siem-rules). Click to filter on standard Cloud SIEM rules. 
+1. [**SIEM Rules**](#siem-rules). Click to filter on standard SIEM rules. 
 1. [**User Rules**](#user-rules). Click to filter on rules created by your organization.
 1. [**Coverage**](#coverage). Click to filter on coverage provided (high to none).
 1. [**Visual Settings**](#visual-settings). Determine how tiles look on the page.
@@ -71,12 +71,12 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
 
 ## Benefits
 
-* Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions.
+* Use **Theoretical Coverage** to understand the content that SIEM includes out-of-the-box, and compare this with other SIEM solutions.
 * Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
 * Use **Theoretical Coverage** to prioritize which custom rules to write, and use **Recent Activity** to support this as well as your rule tuning efforts.
 * Compare **Recent Activity** to **Theoretical Coverage** to see if rules that provide coverage are actually creating signals in your environment. If they are not creating signals, you'll need to investigate why not.
-* Use the data in **Recent Activity** to help justify the value of Cloud SIEM. Anywhere a cell is lit up, Cloud SIEM has detected potential malicious activity that matches that technique. In addition, by deselecting and selecting **Vendor/Product** log sources, you can see the contribution (and therefore the value) of any particular log source to that coverage.
-* Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage.
+* Use the data in **Recent Activity** to help justify the value of SIEM. Anywhere a cell is lit up, SIEM has detected potential malicious activity that matches that technique. In addition, by deselecting and selecting **Vendor/Product** log sources, you can see the contribution (and therefore the value) of any particular log source to that coverage.
+* Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into SIEM. This could help justify additional data ingest into SIEM, or justify a better balance of data sources to get optimal coverage.
 * Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment.
 
 ## Technique details
@@ -86,7 +86,7 @@ When you click a square in the matrix, details about coverage for that MITRE tec
 <img src={useBaseUrl('img/cse/mitre-details.png')} alt="MITRE TTP filter" style={{border: '1px solid gray'}} width="300"/>
 
 Select the following for details:
-* **View Generated Signals**. See the current signals in Cloud SIEM that have been tagged with that MITRE technique.
+* **View Generated Signals**. See the current signals in SIEM that have been tagged with that MITRE technique.
 * **Sub-Techniques**. See the sub-techniques for that technique.
 * **Rules**. See a list of all the rules that contribute to coverage for the technique. Click a rule in the list to open the rule.
 
@@ -112,7 +112,7 @@ Use the following to configure visual settings:
 Select filters to narrow your search:
 * [**MITRE TTP**](#mitre-ttp)
 * [**Vendor/Product**](#vendorproduct)
-* [**Cloud SIEM Rules**](#cloud-siem-rules)
+* [**SIEM Rules**](#siem-rules)
 * [**User Rules**](#user-rules)
 * [**Coverage**](#coverage)
 
@@ -144,13 +144,13 @@ To add a new vendor and product to log mapping:
 
 Once the vendor and product appear in the log mapping list, custom rules can refer to them, and the system can successfully generate signals from the logs. Then the vendor and product will display in the **Vendor/Product** filter.
 
-### Cloud SIEM rules
+### SIEM rules
 
-Use the **Cloud SIEM Rules** filter to filter on standard Cloud SIEM rules. For details about standard Cloud SIEM rules, see our [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md). 
+Use the **SIEM Rules** filter to filter on standard SIEM rules. For details about standard SIEM rules, see our [SIEM Content Catalog](https://github.com/SumoLogic/siem-content-catalog/blob/master/rules/README.md). 
 
-<img src={useBaseUrl('img/cse/mitre-cloud-siem-rules.png')} alt="Cloud SIEM rules filter" style={{border: '1px solid gray'}} width="350"/>
+<img src={useBaseUrl('img/cse/mitre-siem-rules.png')} alt="SIEM rules filter" style={{border: '1px solid gray'}} width="350"/>
 
-Use the following settings to filter Cloud SIEM rules:
+Use the following settings to filter SIEM rules:
 * **Search**. Search for rules by name.
 * **Enabled** / **Disabled**. Every rule has a toggle that lets you enable or disable it: <br/><img src={useBaseUrl('img/cse/mitre-enabled-rule-toggle.png')} alt="Enabled rule toggle" style={{border: '1px solid gray'}} width="100"/>   <img src={useBaseUrl('img/cse/mitre-disabled-rule-toggle.png')} alt="Disabled rule filter" style={{border: '1px solid gray'}} width="100"/> <br/>Use this filter to see only those rules that are enabled, disabled, or both.
 * **Production**. See rules actively used in production.
@@ -189,21 +189,21 @@ MITRE ATT&CK coverage events are recorded in the System Event Index. To query fo
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage
 ```
 
-For more information about how to query for audit log events, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/)
+For more information about how to query for audit log events, see [SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/)
 
 ## MITRE ATT&CK coverage APIs
 
-You can use the following Cloud SIEM APIs to obtain information about your MITRE ATT&CK coverage:
+You can use the following SIEM APIs to obtain information about your MITRE ATT&CK coverage:
 * [MitreTaggedRules](https://api.sumologic.com/docs/sec/#operation/MitreTaggedRules). Get a list of Mitre ATT&CK tagged rules.
 * [MitreAttackCoverageExportJson](https://api.sumologic.com/docs/sec/#operation/MitreAttackCoverageExportJson). Get a JSON representation of the Mitre ATT&CK coverage.
 
-To find the Cloud SIEM API documentation for your endpoint, see [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/).
+To find the SIEM API documentation for your endpoint, see [SIEM APIs](/docs/api/siem-enterprise/).
 
 ## Additional resources
 
 * Blogs: 
-   * [Enhance your cloud security with MITRE ATT&CK and Sumo Logic Cloud SIEM](https://www.sumologic.com/blog/cloud-siem-mitre-attack/)
+   * [Enhance your cloud security with MITRE ATT&CK and Sumo Logic SIEM](https://www.sumologic.com/blog/siem-mitre-attack/)
    * [Unique approaches to MITRE ATT&CK—make the most of its potential](https://www.sumologic.com/blog/mitre-attack-how-sumo-logic-makes-it-work-for-you)
 * Glossary: [MITRE ATT&CK - definition & overview](https://www.sumologic.com/glossary/mitre-attack/)
-* Demo: [MITRE ATT&CK Coverage Explorer](https://www.sumologic.com/demo/cloud-siem-mitre-attack-coverage-explorer/)
-* Cloud SIEM Content Catalog: [Vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md)
+* Demo: [MITRE ATT&CK Coverage Explorer](https://www.sumologic.com/demo/siem-mitre-attack-coverage-explorer/)
+* SIEM Content Catalog: [Vendors](https://github.com/SumoLogic/siem-content-catalog/blob/master/vendors/README.md)

@@ -25,7 +25,7 @@ You can also share this new action and use it to extend the functionality of the
 
 ## Integration framework file formats
 
-Both the integration definition file and the action definition file are YAML files. The following sections highlight the formats for each file type. [Example files](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/) contains samples of completed integration definition and action definition files as a reference. To see YAML files used in a working integration, see an example for Cloud SIEM in [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+Both the integration definition file and the action definition file are YAML files. The following sections highlight the formats for each file type. [Example files](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/) contains samples of completed integration definition and action definition files as a reference. To see YAML files used in a working integration, see an example for SIEM in [Advanced example: Configure a custom integration](/docs/cse/automation/siem-automation-examples/#advanced-example-configure-a-custom-integration).
 
 ### Integration definition file format
 

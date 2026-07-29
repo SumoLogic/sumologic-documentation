@@ -42,7 +42,7 @@ POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will b
 * 5 GB Infrequent Tier ingest
 * 5,000 metric data points per minute (DPM) 
 * 5 GB traces ingestion
-* 5 GB Cloud SIEM ingest
+* 5 GB SIEM ingest
 
 :::note
 The credits associated with the trial org allocations don’t impact the parent org’s credits allocation.
@@ -88,7 +88,7 @@ After you create a child org, you can’t delete it.
       * **Infrequent Log Ingest.** Estimated daily ingestion to the Infrequent Tier.
       * **Metrics**. Estimated daily metric data points per minute (DPM) ingestion.
       * **Tracing**. Estimated daily ingestion of traces.
-      * **CSE Log Ingest**. Estimated daily Cloud SIEM ingestion.
+      * **CSE Log Ingest**. Estimated daily SIEM ingestion.
 1. Click **Done** to go back.
 
 ### Basic details
@@ -113,9 +113,9 @@ After you create a child org, you can’t delete it.
    * **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent Tier.
    * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
    * **Tracing**. Enter estimated daily ingestion of traces.
-1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
+1. **SIEM Enterprise**. Click the checkbox to enable SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
           :::note
-          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM provisioning](#monitor-cloud-siem-provisioning), below.
+          Provisioning SIEM can take up to 24 hours. See [Monitor SIEM provisioning](#monitor-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
@@ -136,9 +136,9 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
    * **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent Tier.
    * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
    * **Tracing**. Enter estimated daily ingestion of traces.
-1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
+1. **SIEM Enterprise**. Click the checkbox to enable SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
           :::note
-          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM provisioning](#monitor-cloud-siem-provisioning), below.
+          Provisioning SIEM can take up to 24 hours. See [Monitor SIEM provisioning](#monitor-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
@@ -196,9 +196,9 @@ To deactivate a POV Trial org
 1. Click the row for the trial org you want to deactivate.
 1. Click the three-dot kebab menu and choose **Deactivate**.<img src={useBaseUrl('/img/manage/subscriptions/deactivate.png')} alt="deactivate" style={{border:'1px solid gray'}} />
 
-## Monitor Cloud SIEM provisioning
+## Monitor SIEM provisioning
 
-You can also enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+You can also enable and provision SIEM for a child org. Note that the process of provisioning SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" style={{border:'1px solid gray'}} />
 
@@ -221,7 +221,7 @@ You can view the aggregate usage for all child orgs across usage category in the
 * **Tracing Ingest**. Credits used for traces ingested.
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
-* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
+* **SIEM Ingest**. Credits used for logs ingested into SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
 * **Promotional categories**. For more information, see [Promotional credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#promotional-credits).
 
@@ -252,7 +252,7 @@ By clicking any of the selected child orgs, a side panel opens up in which you c
 * **Tracing Ingest**. Credits used for traces ingested for the selected child org.
 * **Metrics Ingest**. Credits used for metrics ingested for the selected child org.
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers for the selected child org.
-* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM for the selected child org.
+* **SIEM Ingest**. Credits used for logs ingested into SIEM for the selected child org.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier for the selected child org.
 
 By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.

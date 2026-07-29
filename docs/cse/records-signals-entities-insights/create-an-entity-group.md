@@ -54,7 +54,7 @@ It’s possible to define entity groups that overlap, in terms of the entities t
 
 Follow these instructions to create an entity group based on entity name or whether the entity is within a specified range of IP addresses.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM**, and then under **SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top SIEM menu select **Configuration**, and then under **Entities** select **Groups**. 
 1. On the **Entity Groups** page, click **+ Add Entity Group**.
 1. The **Add Entity Group** popup appears. (In the screenshot below, values are already entered.)<br/><img src={useBaseUrl('/img/cse/create-entity-group-values.png')} alt="Create an entity group based on attributes" style={{border: '1px solid gray'}} width="400" />
 1. **Name**. Enter a name for the entity group.
@@ -89,7 +89,7 @@ Follow these instructions to create an entity group based on entity name or whet
 
 Follow these instructions to create an entity group that corresponds to a group in an inventory service in your infrastructure.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Groups**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **SIEM**, and then under **SIEM Entities** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top SIEM menu select **Configuration**, and then under **Entities** select **Groups**. 
 1. On the **Entity Groups** page, click **+ Add Entity Group**.
 1. The **Add Entity Group** popup appears. (In the screenshot below, values are already entered.) <br/><img src={useBaseUrl('/img/cse/create-entity-group-inventory.png')} alt="Create an entity group based on inventory" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the entity group.
@@ -115,7 +115,7 @@ Follow these instructions to create an entity group that corresponds to a group 
 The [screenshot above](#create-an-entity-group-based-on-inventory-group-membership) where we create an "ADFS server" entity group corresponds to the following example:
 
 1. Let's say you want to create an entity group for ADFS servers. The Active Directory inventory data for your ADFS servers adheres to the following pattern. Notice the computer name, and how it appears in the `distinguishedName` field:  <br/><img src={useBaseUrl('/img/cse/entity-group-inventory-example-1.png')} alt="Active Directory inventory data" style={{border: '1px solid gray'}} width="800"/>
-2. The corresponding Cloud SIEM entity inventory enrichment for the data is as follows. Notice how the `distinguishedName` field is defined: <br/><img src={useBaseUrl('/img/cse/entity-group-inventory-example-2.png')} alt="Entity enrichment data" style={{border: '1px solid gray'}} width="600"/>
+2. The corresponding SIEM entity inventory enrichment for the data is as follows. Notice how the `distinguishedName` field is defined: <br/><img src={useBaseUrl('/img/cse/entity-group-inventory-example-2.png')} alt="Entity enrichment data" style={{border: '1px solid gray'}} width="600"/>
 3. Now, to ensure that we add the data for these entities to an "ADFS Servers" entity group, we create the entity group as shown in the [screenshot above](#create-an-entity-group-based-on-inventory-group-membership). We set the inventory key as `fields.distinguishedname`, the value as `.*OU\=ADFS.*`, and the tag to be applied as `adfs_server`. 
 4. Then when the entity group is processed, the tag we specified is applied to each entity in the group, like in this example from the entities details page: <br/><img src={useBaseUrl('/img/cse/entity-group-inventory-example-3.png')} alt="Tag applied to entity" style={{border: '1px solid gray'}} width="300"/>
 
@@ -129,8 +129,8 @@ array_contains(fieldTags["srcDevice_ip"], "DB Server")
 
 ## API support
 
-You can use the `/entity-group-configuration` API to create, read, update, and delete entity groups. For more information, see [Cloud SIEM APIs](/docs/cse/administration/cse-apis).
+You can use the `/entity-group-configuration` API to create, read, update, and delete entity groups. For more information, see [SIEM APIs](/docs/cse/administration/cse-apis).
 
 ## Additional resources
 
-Blog: [Use new Cloud SIEM Entity Groups to make threat response more efficient](https://www.sumologic.com/blog/cloud-siem-entity-groups)
+Blog: [Use new SIEM Entity Groups to make threat response more efficient](https://www.sumologic.com/blog/siem-entity-groups)

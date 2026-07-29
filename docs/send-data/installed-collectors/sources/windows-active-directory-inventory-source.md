@@ -2,17 +2,17 @@
 id: windows-active-directory-inventory-source
 title: Windows Active Directory Inventory Source
 sidebar_label: Windows Active Directory Inventory Source
-description: Collect Windows Active Directory inventory data including computer names, usernames, and locations to enrich Cloud SIEM log data and build network profiles.
+description: Collect Windows Active Directory inventory data including computer names, usernames, and locations to enrich SIEM log data and build network profiles.
 keywords:
     - windows-active-directory-inventory
-    - cloud-SIEM-enterprise
+    - siem-enterprise
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our Windows Active Directory Inventory Source collects inventory data from [Active Directory Database](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/). This includes information such as computer names, user names, email addresses, and location information.
 
-[Sumo Logic Cloud SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data to help provide additional context and build a more complete profile of your network, for example, by connecting the dots between a location, and the servers, workstations, and users in that location.
+[Sumo Logic SIEM](/docs/cse) uses information from Windows Active Directory Inventory to enrich log data to help provide additional context and build a more complete profile of your network, for example, by connecting the dots between a location, and the servers, workstations, and users in that location.
 
 :::note
 The Installed Collector with the Windows Active Directory Inventory Source can be installed on a Domain Controller or a server that is a member of the domain.  
@@ -26,7 +26,7 @@ The following information is collected:
 * Email address
 * Departments to which employee belongs
 * Employee’s manager
-* Security groups to which the employee is assigned, which allows Cloud SIEM to determine the privileges the user has on the company network
+* Security groups to which the employee is assigned, which allows SIEM to determine the privileges the user has on the company network
 
 ## Setup
 

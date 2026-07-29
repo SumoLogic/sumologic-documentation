@@ -1,7 +1,7 @@
 ---
 slug: /alerts/scheduled-searches
 title: Scheduled Searches
-description: Schedule log searches in Sumo Logic to run continuously and send alerts, save results to an index or lookup table, or generate Cloud SIEM signals.
+description: Schedule log searches in Sumo Logic to run continuously and send alerts, save results to an index or lookup table, or generate SIEM signals.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -41,8 +41,8 @@ A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/alerts/scheduled-searches/generate-cse-signals')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Generate Cloud SIEM Signals with a Scheduled Search</h4></a>
-  <p>Learn how to create a Scheduled Search that will trigger a Cloud SIEM Signal.</p>
+  <a href={useBaseUrl('docs/alerts/scheduled-searches/generate-cse-signals')}><img src={useBaseUrl('img/icons/general/calendar.png')} alt="Calendar icon" width="40"/><h4>Generate SIEM Signals with a Scheduled Search</h4></a>
+  <p>Learn how to create a Scheduled Search that will trigger a SIEM Signal.</p>
   </div>
 </div>
 <div className="box smallbox card">

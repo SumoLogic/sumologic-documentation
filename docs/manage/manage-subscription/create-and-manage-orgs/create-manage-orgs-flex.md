@@ -59,9 +59,9 @@ You cannot delete a new child org once it is created.
             - Set the value between 1500-2000 if your analytic usage profile is **High**.
       * **Traces Ingest**. Enter estimated daily ingestion of traces.
       * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.<br/> <img src={useBaseUrl('img/manage/subscriptions/credits-calculator-flex.png')} alt="calculator" style={{border:'1px solid gray'}} width="450" />
-1. **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
+1. **SIEM Enterprise**. Click the checkbox to enable SIEM. When the **Cloud Log Ingest** field appears, enter a value in GB.
           :::note
-          Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM provisioning](#monitor-cloud-siem-provisioning), below.
+          Provisioning SIEM can take up to 24 hours. See [Monitor SIEM provisioning](#monitor-siem-provisioning), below.
           :::
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
@@ -103,9 +103,9 @@ To change an org's credits allocation:
       1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="Baseline view details" width="450" />
 1. Click **Save** once you finish editing the credit values.
 
-## Monitor Cloud SIEM provisioning
+## Monitor SIEM provisioning
 
-You can also enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+You can also enable and provision SIEM for a child org. Note that the process of provisioning SIEM can take up to 24 hours. You can determine provisioning status on the **Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} style={{border:'1px solid gray'}} alt="status" />
 

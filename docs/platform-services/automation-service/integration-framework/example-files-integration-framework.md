@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ##  Example files for the Automation Service
 
-Following are example definition and action files for integrations. To see an explanation of the file contents, see [Integration framework file formats](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#integration-framework-file-formats). To see integration definition and action files used in a working integration for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+Following are example definition and action files for integrations. To see an explanation of the file contents, see [Integration framework file formats](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#integration-framework-file-formats). To see integration definition and action files used in a working integration for SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/siem-automation-examples/#advanced-example-configure-a-custom-integration).
 
 ### Integration definition file (VirusTotal)
 

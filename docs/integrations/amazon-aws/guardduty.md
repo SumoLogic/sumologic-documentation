@@ -233,7 +233,7 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 
 1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. In Sumo Logic, configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). When you configure the source:
-    * Select **Forward to SIEM** if you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM. If you select **Forward to SIEM**, also click the **+Add** link and add a field whose name is `_parser` with value */Parsers/System/AWS/GuardDuty*.
+    * Select **Forward to SIEM** if you have [SIEM](/docs/cse) installed and you want to forward log data to SIEM. If you select **Forward to SIEM**, also click the **+Add** link and add a field whose name is `_parser` with value */Parsers/System/AWS/GuardDuty*.
     * In the **Advanced Options for Logs** section of the page:
        * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
        * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".*`

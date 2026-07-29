@@ -24,7 +24,7 @@ All automation integrations require authentication to communicate between the ve
 The following procedure describes how to view integrations already installed to your environment. You can also [install new integrations using App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central).
 
 :::tip
-You can also create a custom integration. For an example for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+You can also create a custom integration. For an example for SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/siem-automation-examples/#advanced-example-configure-a-custom-integration).
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
@@ -62,7 +62,7 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ### In the Automation Service
 
-To create a new integration in the Automation Service, you must supply an integration definition YAML file, as well as an action definition YAML file for each of the actions contained in the integration. For an example of creating a new integration by supplying YAML files, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration). For sample YAML files, see [example files](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/). To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#integration-framework-file-formats).
+To create a new integration in the Automation Service, you must supply an integration definition YAML file, as well as an action definition YAML file for each of the actions contained in the integration. For an example of creating a new integration by supplying YAML files, see [Advanced example: Configure a custom integration](/docs/cse/automation/siem-automation-examples/#advanced-example-configure-a-custom-integration). For sample YAML files, see [example files](/docs/platform-services/automation-service/integration-framework/example-files-integration-framework/). To learn how to build your own YAML files, see [Integration framework file formats](/docs/platform-services/automation-service/integration-framework/about-integration-framework/#integration-framework-file-formats).
 
 To create a new integration:
 1. Create an integration definition YAML file, as well as an action definition YAML file for each action in the integration. 

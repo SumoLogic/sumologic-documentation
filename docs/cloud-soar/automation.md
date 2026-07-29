@@ -33,7 +33,7 @@ In Cloud SOAR, playbooks are run from [incidents](/docs/cloud-soar/incidents-tri
 When you [create a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook) to use in incident response, do the following:
 1. Click the **Edit** icon on the **Start** node:<br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/>
 1. Ensure that the **Add one or more params as a playbook input** field is left blank: <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node-input.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/><br/>Do *not* click the field to show the dropdown menu: <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/><br/>The other values in the field are used for automation outside of Cloud SOAR:
-   * **Insight** and **Entity** are for launching a playbook from a Cloud SIEM automation.
+   * **Insight** and **Entity** are for launching a playbook from a SIEM automation.
    * **Alert** is for launching a playbook from a monitor. 
    * **Parse from JSON** is for launching a playbook from another playbook.
 1. Proceed to create the playbook as needed.

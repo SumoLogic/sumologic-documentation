@@ -17,7 +17,7 @@ In this article, you'll learn how to:
 
 * Create a Sumo Logic access ID/key.
 * Access Sumo Logic APIs.
-* Use APIs with Sumo Logic's Cloud SIEM.
+* Use APIs with Sumo Logic's SIEM.
 
 ## Create an access key
 
@@ -105,8 +105,8 @@ Optionally, you can download the OpenAPI Specification for the Sumo Logic API an
 1. Click the **Download** button at the top of the page. <br/><img src={useBaseUrl('img/api/openapi-spec-download-button.png')} alt="Button to download Sumo Logic OpenAPI Specification" style={{border: '1px solid gray'}} width="600" />
 1. Import the downloaded file to your API test application. For example, to [import the file to Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/), select **File > Import**.
 1. The imported specification appears. Select any API to run it.<br/><img src={useBaseUrl('img/api/imported-api.png')} alt="Imported API specification" style={{border: '1px solid gray'}} width="500" />
-1. You can also download the API specification for Cloud SIEM or Cloud SOAR from the following locations. Simply select the API documentation URL for your deployment and click the **Download** button at the top of the page:
-     * [Cloud SIEM API documentation](/docs/api/cloud-siem-enterprise/#documentation)
+1. You can also download the API specification for SIEM or Cloud SOAR from the following locations. Simply select the API documentation URL for your deployment and click the **Download** button at the top of the page:
+     * [SIEM API documentation](/docs/api/siem-enterprise/#documentation)
      * [Cloud SOAR API documentation](/docs/api/cloud-soar/#documentation)
 
 ## Basic API GET commands
@@ -336,15 +336,15 @@ Alternately, you can specify a different user to inherit the created content aft
 
 `[DELETE] https://api.sumologic.com/api/v1/users/[userID]?transferTo=[transferUserID]`
 
-## Using the Sumo Logic APIs with Cloud SIEM
+## Using the Sumo Logic APIs with SIEM
 
-Sumo Logic's Cloud SIEM has a supported API that works similarly to the regular Sumo Logic service APIs. Users with an active access ID and key can send commands to Cloud SIEM with the same GET/PUT/POST/DELETE functionality.
+Sumo Logic's SIEM has a supported API that works similarly to the regular Sumo Logic service APIs. Users with an active access ID and key can send commands to SIEM with the same GET/PUT/POST/DELETE functionality.
 
-The [Cloud SIEM API](/docs/api/cloud-siem-enterprise/) documentation can be found [here](https://api.sumologic.com/docs/sec). The biggest difference to remember is that the base API URL has an `sec` included before the version for all Cloud SIEM API commands:
+The [SIEM API](/docs/api/siem-enterprise/) documentation can be found [here](https://api.sumologic.com/docs/sec). The biggest difference to remember is that the base API URL has an `sec` included before the version for all SIEM API commands:
 
 `https://api.sumologic.com/api/sec/[version]/[commandName]`
 
-For instance, you can query the list of current Cloud SIEM insights using the following URL:
+For instance, you can query the list of current SIEM insights using the following URL:
 
 `[GET] https://api.sumologic.com/api/sec/v1/insights/all`
 
@@ -366,4 +366,4 @@ Or add a new comment to an existing insight by creating comment text in the requ
 
 <img src={useBaseUrl('img/api/insight-comment.png')} alt="Insight comment" style={{border: '1px solid gray'}} width="800" />
 
-All elements of Cloud SIEM functionality are available through the API, including rules, match lists, automations, tags, and custom actions. Users can even use the API to generate their own insights based on a custom selection of signals.
+All elements of SIEM functionality are available through the API, including rules, match lists, automations, tags, and custom actions. Users can even use the API to generate their own insights based on a custom selection of signals.

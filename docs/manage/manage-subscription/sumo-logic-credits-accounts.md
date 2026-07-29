@@ -74,7 +74,7 @@ The following table provides a summary list of key features by credits package a
 |:-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | Audit Index | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
 | Audit Event Index |  | &#10003; |  | &#10003; | &#10003; | &#10003; |
-| Cloud SIEM | | | | | Activation required* | Activation required* |
+| SIEM | | | | | Activation required* | Activation required* |
 | Cloud SOAR | | | | | | Activation required* |
 | Threat Intel |  | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
 | Collector Management API | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |
@@ -164,7 +164,7 @@ This panel provides detailed analytics and comparisons for credit usage:
    * **Frequent Ingest**. Credits used for logs in the Frequent Tier.  
    * **Infrequent Ingest**. Credits used for logs in the Infrequent Tier.  
    * **Infrequent Scan**. Credits used for searches in the Infrequent Tier.  
-   * **Cloud SIEM Ingest**. Credits used for logs in Cloud SIEM.  
+   * **SIEM Ingest**. Credits used for logs in SIEM.  
    * **Metrics Ingest**. Credits used for metrics.  
    * **Storage**. Credits for log storage in Continuous and Frequent Tiers.  
    * **Infrequent Storage**. Credits for log storage in the Infrequent Tier.  

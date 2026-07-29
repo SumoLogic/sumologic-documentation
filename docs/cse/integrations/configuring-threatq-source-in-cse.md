@@ -1,6 +1,6 @@
 ---
 id: configuring-threatq-source-in-cse
-title: Configuring a ThreatQ Source in Cloud SIEM
+title: Configuring a ThreatQ Source in SIEM
 sidebar_label: ThreatQ Source
 description: Learn how to set up a ThreatQ source.
 ---
@@ -13,17 +13,17 @@ ThreatQ is a threat intelligence platform that centrally manages and correlates 
 
 To do so, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) from your ThreatQ source.
 
-## Looking for ThreatQ indicators using Cloud SIEM rules
+## Looking for ThreatQ indicators using SIEM rules
 
-Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, Cloud SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
+Threat Intelligence sources are used at the time of record ingestion. When a record is ingested, SIEM determines whether any of the fields in the record exist in any of your Threat Intelligence sources. When a record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` SIEM rules function searches incoming records in SIEM for matches to threat intelligence indicators. For more information, see [Find Threats with SIEM](/docs/security/threat-intelligence/threat-indicators-in-siem/).
 -->
 
 
-ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. If you have a ThreatQ subscription, Cloud SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. To do so, you configure a ThreatQ source in Cloud SIEM. You supply the information Cloud SIEM needs to connect to ThreatQ and fetch feed updates on a periodic basis.
+ThreatQ is a threat intelligence platform that centrally manages and correlates external sources of threat intel information. If you have a ThreatQ subscription, SIEM’s ThreatQ integration allows you to leverage ThreatQ threat intel feeds. To do so, you configure a ThreatQ source in SIEM. You supply the information SIEM needs to connect to ThreatQ and fetch feed updates on a periodic basis.
 
 ## Configure a ThreatQ source
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Threat Intelligence**. 
 1. On the **Threat Intelligence** page, click **Add Source**. 
 1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/><img src={useBaseUrl('img/cse/threatq-create-icon.png')} alt="ThreatQ create icon" style={{border: '1px solid gray'}} width="600"/>
 1. The **Add New Source** page updates. <br/><img src={useBaseUrl('img/cse/threatq-add-source.png')} alt="ThreatQ Add New Source" style={{border: '1px solid gray'}} width="800"/>
@@ -33,19 +33,19 @@ ThreatQ is a threat intelligence platform that centrally manages and correlates 
 1. **Base URL**. Enter the address you use to access the ThreatQ portal.
 1. **Client ID**. Enter your ThreatQ Client ID.
 1. **Client Secret**. Enter your ThreatQ Client Secret.
-1. **Poll Interval**. Enter how frequently, in minutes, that you want Cloud SIEM to collect indicators from ThreatQ.
+1. **Poll Interval**. Enter how frequently, in minutes, that you want SIEM to collect indicators from ThreatQ.
 1. **Use Expiration Dates from ThreatQ**. Use the indicators expiration dates set in ThreatQ.
 1. **Custom Filters JSON**. (Optional) If you want, you can enter a JSON filter to specify the indicators you want to collect from ThreatQ. The example shown in the screenshot above, `[{“score”:{“+gte”:3}}]`, will select indicators whose score is greater than or equal to 3.
 1. **Extra Headers**. Provide additional headers you want to add to each request in "Key: Value" format.
 1. **Certificate**. (Optional) A PKCS format certificate is required to authenticate to your environment if you have an SSL API gateway in front of your on-premise ThreatQ service.
 
-## ThreatQ sources in the Cloud SIEM UI
+## ThreatQ sources in the SIEM UI
 
-After you set up your ThreatQ source, it will appear on the Threat Intel page in the Cloud SIEM UI. Its Type field will be “ThreatQ”.
+After you set up your ThreatQ source, it will appear on the Threat Intel page in the SIEM UI. Its Type field will be “ThreatQ”.
 
-## Looking for ThreatQ indicators using Cloud SIEM rules
+## Looking for ThreatQ indicators using SIEM rules
 
-As with other threat intel sources, Cloud SIEM compares each incoming record to the indicators provided by your ThreatQ source. 
+As with other threat intel sources, SIEM compares each incoming record to the indicators provided by your ThreatQ source. 
 
 When a record contains a value that matches an entry in one or more threat intel lists, two fields in the record get populated: a `listMatches` field that contains the names of threat intel lists that the record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
 
@@ -65,4 +65,4 @@ where
 If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
 :::
 
-For more information, see [Rules and other content](/docs/cse/rules/about-cse-rules#rules-and-other-content) in the *About Cloud SIEM Rules* topic.  
+For more information, see [Rules and other content](/docs/cse/rules/about-cse-rules#rules-and-other-content) in the *About SIEM Rules* topic.  

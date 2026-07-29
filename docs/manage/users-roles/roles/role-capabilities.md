@@ -244,19 +244,19 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 |Dashboard|Access All|Access all dashboards.|`cloudSoarDashboardAll`|
 |Widgets|Use All|Use all widgets.|`cloudSoarWidgetsAll`|
 
-## Cloud SIEM
+## SIEM
 
-[Cloud SIEM](/docs/cse/) features only show if enabled.
+[SIEM](/docs/cse/) features only show if enabled.
 
 | Capability| Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-|View Cloud SIEM|Show “Cloud SIEM” link in nav.|`viewCse`|
+|View SIEM|Show “SIEM” link in nav.|`viewCse`|
 
 ### Insights
 
 | Capability| Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-|Comment on Insights|Add comments to [insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui).|`cseCommentOnInsights`|
+|Comment on Insights|Add comments to [insights](/docs/cse/get-started-with-siem/about-cse-insight-ui).|`cseCommentOnInsights`|
 |Create Insights|Create new insights.|`cseCreateInsights`|
 |Delete Insights|Delete existing insights.|`cseDeleteInsights`|
 |Invoke Insights Actions|Run an [action](/docs/cse/administration/create-cse-actions) on an insight.|`cseInvokeInsights`|
@@ -309,6 +309,6 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 |Manage Favorite Fields|Add/remove favorite fields in records UI.|`cseManageFavoriteFields`|
 |View Entity Groups|View [entity groups](/docs/cse/records-signals-entities-insights/create-an-entity-group).|`cseViewEntityGroups`|
 |Manage Entity Groups|Create, edit, delete entity groups.|`cseManageEntityGroups`|
-|View Automations|View [automations](/docs/cse/automation/automations-in-cloud-siem/).|`cseViewAutomations`|
+|View Automations|View [automations](/docs/cse/automation/automations-in-siem/).|`cseViewAutomations`|
 |Manage Automations|Create, edit, delete automations.|`cseManageAutomations`|
 |Execute Automations|Run automations.|`cseExecuteAutomations`|

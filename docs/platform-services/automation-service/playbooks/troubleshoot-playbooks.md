@@ -7,7 +7,7 @@ description: Learn how to test playbooks and troubleshoot playbook problems.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has a problem when it runs in an automation, an error message often displays in the playbook providing information about the problem.
+You can run playbooks in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [SIEM](/docs/cse/automation/automations-in-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). If a playbook has a problem when it runs in an automation, an error message often displays in the playbook providing information about the problem.
 
 :::tip
 To test a playbook before using it in an automation, see [Test a playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook).
@@ -65,11 +65,11 @@ You can test a playbook to verify that it works properly. The test results show 
 
 Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
 
-### Open a playbook from Cloud SIEM
+### Open a playbook from SIEM
 
-1. Open an [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
-1. Click the **Automations** button at the top of the page to view the automations on the insight or entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
-1. Click **View Playbook** for a playbook you want to investigate. In the example above, the playbook we want to investigate completed with errors. The playbook opens in the Automation Service, and the issues display in the results section.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
+1. Open an [insight](/docs/cse/get-started-with-siem/about-cse-insight-ui/) or [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-siem)).
+1. Click the **Automations** button at the top of the page to view the automations on the insight or entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-siem.png')} alt="SIEM automations" style={{border: '1px solid gray'}} width="800"/>
+1. Click **View Playbook** for a playbook you want to investigate. In the example above, the playbook we want to investigate completed with errors. The playbook opens in the Automation Service, and the issues display in the results section.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-siem.png')} alt="A SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
 
 Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
 

@@ -2,14 +2,14 @@
 id: troubleshoot-rules
 title: Troubleshoot Rules
 sidebar_label: Rules
-description: Learn how to troubleshoot problems with Cloud SIEM rules.
+description: Learn how to troubleshoot problems with SIEM rules.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides guidance for administrators to diagnose, troubleshoot, and escalate issues with Sumo Logic Cloud SIEM detection rules.
+This article provides guidance for administrators to diagnose, troubleshoot, and escalate issues with Sumo Logic SIEM detection rules.
 
-Rules in Cloud SIEM serve to provide security detection signals from log data that has previously been ingested, parsed, normalized, and enriched into Cloud SIEM records. Signals produced by rules form the core alerting capability in Cloud SIEM and are themselves correlated into insights by the entities elevated from the records that generate them.
+Rules in SIEM serve to provide security detection signals from log data that has previously been ingested, parsed, normalized, and enriched into SIEM records. Signals produced by rules form the core alerting capability in SIEM and are themselves correlated into insights by the entities elevated from the records that generate them.
 
 Rule issues can manifest in several ways:
 * [No signals](#no-signals-being-generated)
@@ -23,11 +23,11 @@ Rule issues can manifest in several ways:
 
 ## Common rule components
 
-To troubleshoot rules, you must first have an understanding of how rule components impact signal generation criteria. There are several [rule types](/docs/cse/rules/about-cse-rules/#rule-types) in Cloud SIEM:  match, threshold, chain, aggregation, outlier, and first seen. Each rule type has particular components, but each has a common set of components critical to signal generation.
+To troubleshoot rules, you must first have an understanding of how rule components impact signal generation criteria. There are several [rule types](/docs/cse/rules/about-cse-rules/#rule-types) in SIEM:  match, threshold, chain, aggregation, outlier, and first seen. Each rule type has particular components, but each has a common set of components critical to signal generation.
 
 ### Rule expression
 
-The [expression on a rule](/docs/cse/rules/about-cse-rules/#about-rule-expressions) is the core of most rules’ logic. It provides matching criteria that is used to match against records flowing into Cloud SIEM. Records that contain the expression criteria will be evaluated for signal generation. A signal will not fire if records do not match against the expression. 
+The [expression on a rule](/docs/cse/rules/about-cse-rules/#about-rule-expressions) is the core of most rules’ logic. It provides matching criteria that is used to match against records flowing into SIEM. Records that contain the expression criteria will be evaluated for signal generation. A signal will not fire if records do not match against the expression. 
 
 <img src={useBaseUrl('img/cse/troubleshoot-tuning-expression.png')} alt="Example match expression on a rule" style={{border: '1px solid gray'}} width="500" />
 
@@ -127,13 +127,13 @@ Rules that require a baseline are dependent on the baseline criteria being met b
 ### Limitations
 
 Each rule expression text box (chain rules have two or more expressions) has a corresponding **Test Rule Expression** button that lets you verify whether the expression logic matches records. While helpful during rule validation, this feature has limitations:
-* It only tests the criteria contained in the expression using a Sumo Logic log search against Cloud SIEM records.
+* It only tests the criteria contained in the expression using a Sumo Logic log search against SIEM records.
 * It does not validate other rule criteria required for signal generation, such as entity, groupings, or baselines.
 
 As a result, records returned when running an expression test, even for simple match rules, are not a reliable indicator that the rule will trigger signals when active.
 
 :::note
-In limited cases, testing a rule expression can return misleading results due to minor differences in Cloud SIEM expression syntax and log search syntax. See [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/) for more information.
+In limited cases, testing a rule expression can return misleading results due to minor differences in SIEM expression syntax and log search syntax. See [SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/) for more information.
 :::
 
 ### Using the Test Rule Expression feature in rule troubleshooting
@@ -220,7 +220,7 @@ Time issues can be introduced at several places in the processing pipeline:
 
 ## Escalate rule issues
 
-If all steps outlined in this article have been exhausted, it may be necessary to [escalate the issue to the Cloud SIEM engineering team](https://support.sumologic.com/support/s/).
+If all steps outlined in this article have been exhausted, it may be necessary to [escalate the issue to the SIEM engineering team](https://support.sumologic.com/support/s/).
 
 ### Escalation requirements
 
@@ -235,16 +235,16 @@ Provide the following:
 
 ## Useful dashboards and search queries
 
-The [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/) app includes useful dashboards for monitoring Cloud SIEM components including rules:
+The [Enterprise Audit - SIEM](/docs/integrations/sumo-apps/cse/) app includes useful dashboards for monitoring SIEM components including rules:
 * Signal analysis:
-    * Cloud SIEM - Signal Analysis
-    * Cloud SIEM - Signal Analysis - Rules
-    * Cloud SIEM - Signal Monitoring
-    * Cloud SIEM - Signals by Product
-    * Cloud SIEM - Signals Overview
+    * SIEM - Signal Analysis
+    * SIEM - Signal Analysis - Rules
+    * SIEM - Signal Monitoring
+    * SIEM - Signals by Product
+    * SIEM - Signals Overview
     * Signal Analysis - Suppression
-* Health monitoring: Cloud SIEM - Rule Overview
-* Other: Cloud SIEM - Rules and Mapping Changes
+* Health monitoring: SIEM - Rule Overview
+* Other: SIEM - Rules and Mapping Changes
 
 ## Useful queries and strategies
 
@@ -281,4 +281,4 @@ Use this search query to return the top entities creating signals to identify pa
 
 Using the records index `_index=sec_record*` is much more flexible than using **Test Rule Expression** button within the rules editor, as you can quickly enter search terms and get records that can match the desired rule criteria to preemptively identify patterns in records that could be useful in a rule or tuning expression.
 
-For more information about searching using the records index, see [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/).
+For more information about searching using the records index, see [Searching for SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/).

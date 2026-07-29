@@ -209,7 +209,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source')}><img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="AWS EC2 icon" width="50"/><h4>Cloud SIEM AWS EC2 Inventory</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source')}><img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="AWS EC2 icon" width="50"/><h4>SIEM AWS EC2 Inventory</h4></a>
   <p>Provides a secure endpoint to receive event data from the EC2 describe instances API.</p>
   </div>
 </div>

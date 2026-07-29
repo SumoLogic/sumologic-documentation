@@ -196,7 +196,7 @@ Improvements include:
 * *Sumo Logic Certified Search Mastery User*
 * *Sumo Logic Certified Admin*
 * *Sumo Logic Certified Logs for Security Analyst*
-* *Sumo Logic Certified Cloud SIEM Practitioner*
+* *Sumo Logic Certified SIEM Practitioner*
 * *Sumo Logic Certified Metrics Analyst*
 
 More information [here](https://www.sumologic.com/learn/training#certified).

@@ -10,10 +10,10 @@ import CseRule from '../../reuse/cse-rule-description-links.md';
 import Iframe from 'react-iframe'; 
 
 
-This topic has information about chain rules and how to create them in the Cloud SIEM UI.
+This topic has information about chain rules and how to create them in the SIEM UI.
 
 :::note
-If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 import TerraformLink from '../../reuse/terraform-link.md';
@@ -35,7 +35,7 @@ Watch this micro lesson to learn how to create a chain rule.
 <Iframe url="https://fast.wistia.net/embed/iframe/tuf8pb4hc8?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Create a Chain Rule in Cloud SIEM Video"
+  title="Micro Lesson: Create a Chain Rule in SIEM Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -49,7 +49,7 @@ Watch this micro lesson to learn how to create a chain rule.
 
 ## Create a chain rule
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
 1. Click **+ Add Rule**.
 1. On the **Create a Rule** page, click **Create** in the **Chain** card. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Content > Rules**. 
 1. In the rules editor:
@@ -59,7 +59,7 @@ Watch this micro lesson to learn how to create a chain rule.
 ### Configure “If Triggered” settings
 
 1. **When at least ... Record matches expression**. Enter two or more rule expressions. For each, select the number of matches that are required.
-1. For each rule expression, click **Test Rule Expression** to test it against existing records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. For each rule expression, click **Test Rule Expression** to test it against existing records in SIEM. The **If Triggered** section expands, and SIEM searches for records that match the rule expression. If there are no matching records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
 1. **grouped by**.  By default, a chain rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the matches grouped by option, so that a signal is only created if the count for the group is above the threshold count specified above. 
 1. **in ... order.** Choose either:
       * **any** if matches can occur in any order.
@@ -73,7 +73,7 @@ Watch this micro lesson to learn how to create a chain rule.
 ### Configure “Then Create a Signal” settings
 
 1. Click **Show Advanced** if you want the rule to [override global signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
-1. **On Entity**. Define the entity field — for example, an IP address, hostname, and so on — in the record that the resulting signal should be associated with. (In Cloud SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Define the entity field — for example, an IP address, hostname, and so on — in the record that the resulting signal should be associated with. (In SIEM, an insight is a set of signals with the same entity field.) Select a value from the pull-down list. 
 1. **with the summary.** Enter a brief summary describing what causes the rule to create a signal.
 1. **with the description**. Enter a description for the signal. The signal description should be a good indication of what the rule looks for.
    :::note
@@ -90,4 +90,4 @@ To make the rule a prototype, click the box next to **Save this rule as a protot
 ### Duplicate signals?
 If you determine that a threshold, chain, or aggregation rule is firing identical signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than match rules, because they support time duration conditions. For example, a threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time.
 
-To successfully apply a rule across a sliding time window, Cloud SIEM evaluates records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate signals. However, as long as you don’t run the rule as a prototype, duplicate signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).
+To successfully apply a rule across a sliding time window, SIEM evaluates records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate signals. However, as long as you don’t run the rule as a prototype, duplicate signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).

@@ -69,7 +69,7 @@ To configure the CrowdStrike FDR Host Inventory API:
 3. Select **CrowdStrike FDR Host Inventory** icon.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/) as inventory. <br/><ForwardToSiem/>
+6. **Forward to SIEM**. Check the checkbox to forward your data to [SIEM](/docs/cse/) as inventory. <br/><ForwardToSiem/>
 7. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.

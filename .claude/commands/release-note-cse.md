@@ -1,6 +1,6 @@
-# Create New Cloud SIEM Release Note
+# Create New SIEM Release Note
 
-Automates the creation of Cloud SIEM (CSE) release notes with proper formatting, frontmatter, and structure.
+Automates the creation of SIEM (CSE) release notes with proper formatting, frontmatter, and structure.
 
 ## What this command does
 
@@ -14,16 +14,16 @@ When you invoke `release-note-cse`, Claude will guide you through:
 
 ## When to use this command
 
-* Publishing Cloud SIEM content updates (rules, log mappers, parsers).
-* Announcing new Cloud SIEM features or bug fixes.
+* Publishing SIEM content updates (rules, log mappers, parsers).
+* Announcing new SIEM features or bug fixes.
 * Creating regular bi-weekly or monthly CSE release notes.
-* Documenting Cloud SIEM application updates.
+* Documenting SIEM application updates.
 
 ## Release types
 
 ### Content Release (`-content.md`)
 
-For updates to Cloud SIEM detection content:
+For updates to SIEM detection content:
 * **Rules**: New or updated detection rules
 * **Log Mappers**: New or updated log mapping configurations
 * **Parsers**: Parser updates and enhancements
@@ -33,7 +33,7 @@ For updates to Cloud SIEM detection content:
 
 ### Application Release (`-application.md`)
 
-For Cloud SIEM product features and updates:
+For SIEM product features and updates:
 * **New features**: UI improvements, new capabilities
 * **Bug fixes**: Issue resolutions
 * **Performance improvements**: Optimizations
@@ -117,7 +117,7 @@ hide_table_of_contents: true
 * **Always ask user to confirm keywords before creating file**
 * Suggested defaults:
   * Content releases: `rules`, `log mappers`, `parsers`
-  * Application releases: Feature-specific keywords (e.g., `insights`, `entities`, `signals`, `cloud siem`)
+  * Application releases: Feature-specific keywords (e.g., `insights`, `entities`, `signals`, `siem`)
 * User may want to add or modify keywords based on specific content
 
 **Date formatting:**
@@ -303,14 +303,14 @@ Use standard vendor names:
 **Archive structure:**
 ```markdown
 ---
-title: {Year} Release Notes Archive - Cloud SIEM
-keywords: [rules, signals, schema, log mappers, parsers, cloud siem]
+title: {Year} Release Notes Archive - SIEM
+keywords: [rules, signals, schema, log mappers, parsers, siem]
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This is an archive of {Year} Cloud SIEM release notes. [View the full archive](/release-notes-cse/archive).
+This is an archive of {Year} SIEM release notes. [View the full archive](/release-notes-cse/archive).
 
 <!--truncate-->
 
@@ -339,7 +339,7 @@ This is an archive of {Year} Cloud SIEM release notes. [View the full archive](/
 After successfully creating the release note, tell the user:
 
 ```
-✅ Cloud SIEM release note created successfully!
+✅ SIEM release note created successfully!
 
 File created:
 * 📄 blog-cse/{date}-{type}.md.
@@ -365,7 +365,7 @@ Checklist:
 * [ ] Links tested and working.
 * [ ] No placeholder text remaining.
 
-The release note will appear on the Cloud SIEM release notes page in reverse chronological order (newest first).
+The release note will appear on the SIEM release notes page in reverse chronological order (newest first).
 
 Would you like me to help fill in any additional details?
 ```
@@ -414,6 +414,6 @@ Would you like me to help fill in any additional details?
 
 ## References
 
-* [Cloud SIEM Release Notes](https://sumologic.com/help/release-notes-cse)
+* [SIEM Release Notes](https://sumologic.com/help/release-notes-cse)
 * [Release Notes Index](/docs/release-notes).
 * [Style Guide](/docs/contributing/style-guide).

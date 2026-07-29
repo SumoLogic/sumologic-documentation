@@ -28,7 +28,7 @@ To see documentation for system events, when you click one of the links below, i
 | US1 | https://service.sumologic.com/audit/docs |
 | US2 | https://service.us2.sumologic.com/audit/docs |
 
-### Cloud SIEM audit log definitions
+### SIEM audit log definitions
 
 | Deployment | Location | Documentation URL |
 |:--|:--|:--|
@@ -38,7 +38,7 @@ To see documentation for system events, when you click one of the links below, i
 | US2 | United States |https://service.us2.sumologic.com/audit/docs/sec |
 
 :::note
-For more information about audit logging for Cloud SIEM, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/).
+For more information about audit logging for SIEM, see [SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/).
 :::
 
 ### Automation Service and Cloud SOAR audit log definitions

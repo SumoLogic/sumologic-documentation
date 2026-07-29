@@ -1,11 +1,11 @@
 ---
 id: cse-aws-ec-inventory-source
-title: Cloud SIEM AWS EC2 Inventory Source
-sidebar_label: Cloud SIEM AWS EC2 Inventory
+title: SIEM AWS EC2 Inventory Source
+sidebar_label: SIEM AWS EC2 Inventory
 tags:
   - cloud-to-cloud
   - cse-aws-ec-inventory
-description: The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the EC2 describe instances API.
+description: The SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the EC2 describe instances API.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -13,9 +13,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="AWS EC2 icon" width="50"/>
 
-The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
+The SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the [EC2 describe instances API](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html). It securely stores the required authentication, scheduling, and state tracking information.
 
-For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
+For information on how inventory data is used in SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
 
 :::note
 Upgrade the CSE AWS EC2 Inventory source to the latest version 3.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
@@ -41,9 +41,9 @@ You can use Terraform to provide an AWS inventory source with the [`sumologic_aw
 
 #### Inventory data mapped
 
-The table below shows the AWS source fields that Cloud SIEM maps to Cloud SIEM schema attributes.
+The table below shows the AWS source fields that SIEM maps to SIEM schema attributes.
 
-| Cloud SIEM schema attribute | AWS source field |
+| SIEM schema attribute | AWS source field |
 | :-- | :-- |
 |`ip` |`PublicIpAddress`. If null, then `PrivateIpAddress`|
 |`hostname` |`PublicDnsName`. If null, then `PrivateDnsName`|
@@ -55,16 +55,16 @@ The [IAM policy](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-polici
 
 ### Source configuration
 
-When you create a Cloud SIEM AWS EC2 Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a SIEM AWS EC2 Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Cloud SIEM AWS EC2 Inventory Source:
+To configure a SIEM AWS EC2 Inventory Source:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Select **AWS EC2 Inventory**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
+1. **Forward to SIEM**. Check the checkbox to forward your data to [SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.

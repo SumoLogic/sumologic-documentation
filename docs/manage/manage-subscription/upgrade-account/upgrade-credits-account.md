@@ -62,7 +62,7 @@ To modify your payment details, see [Manage Billing Information](/docs/manage/ma
 
 ## Enterprise plans
 
-If your needs exceed Essentials plan capabilities, contact [Sales](https://www.sumologic.com/contact-us/) to explore Enterprise plan features like Cloud SIEM and advanced tiered analytics. Our team is here to help you find the best fit for your organization.
+If your needs exceed Essentials plan capabilities, contact [Sales](https://www.sumologic.com/contact-us/) to explore Enterprise plan features like SIEM and advanced tiered analytics. Our team is here to help you find the best fit for your organization.
 
 ## Cancel your account
 
