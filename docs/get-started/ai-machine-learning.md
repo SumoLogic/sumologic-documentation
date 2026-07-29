@@ -15,7 +15,6 @@ keywords:
    - log analysis agent
    - platform optimization agent
    - conversational monitors
-   - conversational dashboards
    - conversational playbooks
    - soc analyst agent
    - mcp server
@@ -243,6 +242,7 @@ Recurring reviews are also conducted with every major update, particularly when 
 
 ## Additional resources
 
+* [Mobot](/docs/search/mobot). The conversational interface for Dojo AI — ask questions in plain language to analyze log data, investigate incidents, and get answers sourced from official documentation.
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about Dojo AI, Sumo Logic's multi-agent AI platform for security and observability, including Mobot, the SOC Analyst Agent, and the MCP server.
 * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
 * [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp)

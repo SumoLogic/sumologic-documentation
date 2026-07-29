@@ -47,7 +47,7 @@ This guide helps you get started using Cloud SIEM for threat hunting.
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/get-started-with-cloud-siem/soc-analyst-agent')}><img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="35"/><h4>SOC Analyst Agent</h4></a>
-  <p>Triage insights faster with evidence-backed verdicts from the SOC Analyst agent.</p>
+  <p>Investigate insights faster with evidence-backed verdicts from the SOC Analyst Agent.</p>
   </div>
 </div>
 <div className="box smallbox card">

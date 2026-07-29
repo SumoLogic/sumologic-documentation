@@ -2,7 +2,7 @@
 id: soc-analyst-agent
 title: SOC Analyst Agent
 sidebar_label: SOC Analyst Agent ✨
-description: Use Sumo Logic's SOC Analyst agent to triage Cloud SIEM insights with AI verdicts, investigate threats faster, and reduce false-positive noise for your team.
+description: Use Sumo Logic's SOC Analyst Agent to investigate Cloud SIEM insights with AI verdicts, speed up threat resolution, and reduce false-positive noise for your team.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,16 +11,16 @@ import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="Search icon" width="35"/>
 
-Sumo Logic's SOC Analyst agent is an agentic AI tool that embeds reasoning and context-awareness directly into Cloud SIEM, helping your Security Operations Center (SOC) team investigate alerts faster, reduce false-positive noise, and respond with confidence. Security teams spend too much time validating false positives and performing repetitive investigative steps — the agent eliminates that noise, standardizes outcomes, and accelerates time to resolution.
+Sumo Logic's SOC Analyst Agent is an agentic AI tool that embeds reasoning and context-awareness directly into Cloud SIEM, helping your Security Operations Center (SOC) team investigate alerts faster, reduce false-positive noise, and respond with confidence. Security teams spend too much time validating false positives and performing repetitive investigative steps — the agent eliminates that noise, standardizes outcomes, and accelerates time to resolution.
 
 Every verdict is evidence-backed and explainable. The agent shows the evidence it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith. It determines whether an insight is malicious, suspicious, or benign, provides a concise summary of the threat incident based on triggered signals, and presents key findings from the signals that fired, resulting in quicker, more detailed analysis.
 
-The SOC Analyst agent performs three distinct jobs that mirror an analyst's daily responsibilities:
+The SOC Analyst Agent performs three distinct jobs that mirror an analyst's daily responsibilities:
 * **Triage**. Delivers automated verdicts on insights using evidence-backed reasoning to determine whether the insights are malicious, suspicious, or benign.
 * **Investigation**. Supports analysts with a hypothesis-driven approach to assess the scope, context, and likely impact of an event.
 * **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken, for consistent documentation across analysts and teams.
 
-The SOC Analyst agent provides the following functionality:
+The SOC Analyst Agent provides the following functionality:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
 
@@ -53,9 +53,9 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 
 ## Availability
 
-The SOC Analyst agent requires a Cloud SIEM subscription and is opt-in. As a launch promotion starting August 5, 2026, it is enabled by default for the first 90 days with a capacity of five investigated insights per day, and you can opt out at any time. After the promotion, continued access is available through a paid capacity tier. Contact your Sumo Logic account team for details.
+The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [How does investigation rate limiting work?](#how-does-investigation-rate-limiting-work) for information about your organization's investigation capacity.
 
-To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
+To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs. MSSP parent orgs do not see this toggle for their own org.
 
@@ -64,7 +64,7 @@ Parent and child orgs have AI features enabled by default. A parent org administ
 
 ## View AI verdicts on insights
 
-The SOC Analyst agent runs in the background against all insights that flow into Cloud SIEM. After analysis, it renders a verdict about whether the insight requires investigation.
+The SOC Analyst Agent runs in the background against all insights that flow into Cloud SIEM. After analysis, it renders a verdict about whether the insight requires investigation.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
 1. In the **Insights** page, note that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
@@ -85,12 +85,11 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
 1. On the insights list page, click an insight's ID.
 1. The **AI Investigation** tab shows results of AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-investigation-tab.png')} alt="Insight AI Investigation tab" style={{border: '1px solid gray'}} width="700" />
-   1. **Severity Verdict**. Details about the insight's severity analysis:
+   1. **AI Verdict**. The AI system's qualitative assessment of the insight (**Malicious**, **Suspicious**, or **Benign**), followed by a brief explanation of the reasoning behind the verdict.
       * **Current Severity**. The severity of the insight as set by the cumulative activity score for the insight. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity).
-      * **Global Confidence Score**. A level of confidence that the insight is actionable, predicted by Sumo Logic’s Global Intelligence machine learning model. See [What is a Global Confidence score?](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/#what-is-a-global-confidence-score).
-      * **AI Verdict**. The AI system's qualitative assessment of the insight.
-      * **Recommends security level of ___**. AI analysis recommends a new severity level be assigned to this insight. If you agree with the assessment, click **Accept**. The **Current Severity** field changes to the new value.
-   1. **What Happened**. A concise summary of threat incidents based on triggered signals in the insight, generated by the SOC Analyst agent. The summary consolidates key details to facilitate quick understanding and response by security teams. The summary is generated when an insight is created, and is regenerated whenever the insight is modified, keeping it current with added or removed signals. Summaries are generated for insights created by the system, as well as custom insights you create manually.
+      * **Global Confidence Score**. A level of confidence that the insight is actionable, predicted by Sumo Logic's Global Intelligence machine learning model. See [What is a Global Confidence score?](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/#what-is-a-global-confidence-score).
+      * **Recommends severity level of ___**. AI analysis recommends a new severity level be assigned to this insight. If you agree with the assessment, click **Accept**. The **Current Severity** field changes to the new value.
+   1. **What Happened**. A concise summary of threat incidents based on triggered signals in the insight, generated by the SOC Analyst Agent. The summary consolidates key details to facilitate quick understanding and response by security teams. The summary is generated when an insight is created, and is regenerated whenever the insight is modified, keeping it current with added or removed signals. Summaries are generated for insights created by the system, as well as custom insights you create manually.
       :::tip
       Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
       :::
@@ -157,7 +156,7 @@ To share the current investigation with other users, see [Share conversation](/d
 
 ## Configure SOC Analyst Agent settings
 
-The SOC Analyst agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed daily investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when your committed volume is reached.
+The SOC Analyst Agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed daily investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when your committed volume is reached.
 
 Access requires the **View SOC Analyst Settings** permission, and is not available to federated tenants. Viewing the settings is available to analysts and administrators; changing them requires the **Manage SOC Analyst Settings** permission, limited to administrators. With view-only access, the controls are visible but disabled. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
 
@@ -206,9 +205,9 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 ## FAQ
 
-### What is the Sumo Logic SOC Analyst agent?
+### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), Dojo AI's chat interface, to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), Dojo AI's chat interface, to map relationships, connect entities, and summarize findings.
 
 ### Will the agent increase scanning or data-processing costs?
 
@@ -216,7 +215,7 @@ No. The agent analyzes existing data already ingested into Cloud SIEM. It perfor
 
 ### How does the agent differ from Cloud SIEM correlation or automation rules?
 
-Unlike traditional correlation logic, which is static, the SOC Analyst agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
+Unlike traditional correlation logic, which is static, the SOC Analyst Agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
 
 ### What data does the agent rely on to render verdicts?
 
@@ -232,13 +231,13 @@ No. The SOC Analyst Agent does not have persistent learning.
 
 ### How does investigation rate limiting work?
 
-The SOC Analyst agent automatically investigates insights in priority order, up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button.
+The SOC Analyst Agent automatically investigates insights in priority order, up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button.
 
 To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings). If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
 
 ### Does continuing an investigation in Mobot count against Mobot's usage limits?
 
-No. Continuing an investigation in [Mobot](/docs/search/mobot) from an insight (via **Ask Mobot**) is metered under SOC Analyst agent licensing, not standard Mobot limits — up to 30 prompts per user per day, separate from your organization's standard Mobot limit.
+No. Continuing an investigation in [Mobot](/docs/search/mobot) from an insight (via **Ask Mobot**) is metered under SOC Analyst Agent licensing, not standard Mobot limits — up to 30 prompts per user per day, separate from your organization's standard Mobot limit.
 
 ### Does the agent automatically investigate things that are not entities in Cloud SIEM?
 

@@ -22,7 +22,27 @@ import Iframe from 'react-iframe';
 
 Mobot is Sumo Logic's AI-powered conversational assistant for security analysts, on-call engineers, administrators, and other Sumo Logic users. Ask questions in plain language to investigate log data or learn how to use the platform without selecting an agent or writing queries from scratch.
 
+<img src={useBaseUrl('img/search/mobot/general-tab.png')} alt="Mobot welcome screen with example prompts grouped by General, Security, Observability, and Administration" style={{border: '1px solid gray'}} width="700" />
+
 In a single conversation, Mobot determines whether you have a log data question or a how-to question and responds accordingly. For log data questions, it identifies relevant sources, correlates information across logs, and returns inline results with anomaly callouts and suggested next steps. For how-to questions, it provides structured answers and reference links from Sumo Logic documentation. Conversation context lets you refine, pivot, and dig deeper without starting over.
+
+## Use cases
+
+* **Security**. Investigate login attempts, data exfiltration, and threat intelligence matches. For example, `Have any IPs or domains in my logs been flagged by threat intelligence?` See [Security investigations](/docs/search/mobot/example-prompts#security-investigations) for more examples.
+* **Observability**. Spot error spikes, latency anomalies, and timeouts. For example, `Are there any error spikes happening in the last 15 minutes?` See [Observability investigations](/docs/search/mobot/example-prompts#observability-investigations) for more examples.
+* **Platform administration**. Check on Collectors, data sources, and data usage. For example, `Any collectors that have gone silent in the last few hours?` See [Platform administration](/docs/search/mobot/example-prompts#platform-administration) for more examples.
+* **How-to questions**. Get setup guidance and answers about the platform, sourced from official Sumo Logic documentation. For example, `How do I configure OpenTelemetry for my service?` See [Sumo Logic how-to questions](/docs/search/mobot/example-prompts#sumo-logic-how-to-questions) for more examples.
+
+## Key capabilities
+
+* **Unified conversation**. Investigate logs and ask how-to questions without switching tools or losing context.
+* **Guided analysis**. Mobot asks targeted questions when your intent is ambiguous and identifies missing sources or partitions when required data is not configured.
+* **Context-aware analysis**. Mobot plans multi-step analyses and considers relevant data sources, schemas, lookup tables, historical queries, and time ranges. It also uses queries from dashboards opened in your organization in the last 90 days through retrieval-augmented generation (RAG) to better understand your intent and data structure.
+* **Documentation-grounded answers**. How-to responses include information and reference links from official Sumo Logic documentation.
+* **Inline findings and visualizations**. Mobot returns structured results, highlights notable findings, recommends next steps, and generates charts that you can add to dashboards.
+* **Content creation and management**. Create and manage monitors, dashboards, and playbooks through conversation, with a human in the loop before anything is deployed or activated. See [Create and manage content](#create-and-manage-content).
+* **Cloud SIEM investigations**. On a Cloud SIEM insight, click **Ask Mobot** to continue a [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) investigation in Mobot with the insight's evidence-backed verdict and context loaded. You start this from the insight, not from Mobot directly.
+* **Conversation history**. Saved conversations let you resume, revisit, or branch previous investigations.
 
 ## At a glance
 
@@ -41,7 +61,7 @@ In a single conversation, Mobot determines whether you have a log data question 
 <!-- Uncomment once microlesson has been published
 :::training Micro Lesson
 
-Watch this micro lesson to learn what Mobot is, its key capabilities, and how its AI-powered, unified conversational interface accelerates your investigative workflows.
+Watch this micro lesson to learn what Mobot is, its key capabilities, and how its AI-powered, unified conversational interface accelerates your investigations.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/t187881hs5op2qi?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -58,27 +78,15 @@ Watch this micro lesson to learn what Mobot is, its key capabilities, and how it
 :::
 -->
 
+## Get started
 
-## Key capabilities
+1. **Open Mobot**. Click the **Mobot** tile on your **Home** tab or left nav.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on home page" width="650" />
+   :::note
+   If you have Cloud SIEM, you can also open Mobot from an Insight's **Details** page with the **Ask Mobot** button to continue an investigation with the insight's context already loaded. See [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#investigate-the-insight-in-mobot).
+   :::
+1. Type a question in the text field and press Enter or click the send button.<br/><img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="600" />
 
-* **Unified conversation**. Investigate logs and ask how-to questions without switching tools or losing context.
-* **Guided investigations**. Mobot asks targeted questions when your intent is ambiguous and identifies missing sources or partitions when required data is not configured.
-* **Context-aware analysis**. Mobot plans multi-step analyses and considers relevant data sources, schemas, lookup tables, historical queries, and time ranges. It also uses queries from dashboards opened in your organization in the last 90 days through retrieval-augmented generation (RAG) to better understand your intent and data structure.
-* **Inline findings and visualizations**. Mobot returns structured results, highlights notable findings, recommends next steps, and generates charts that you can add to dashboards.
-* **Documentation-grounded answers**. How-to responses include information and reference links from official Sumo Logic documentation.
-* **Conversation history**. Saved conversations let you resume, revisit, or branch previous investigations.
-* **Cloud SIEM investigations**. On a Cloud SIEM insight, click **Ask Mobot** to continue a [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) investigation in Mobot with the insight's evidence-backed verdict and context loaded. You start this from the insight, not from Mobot directly.
-* **Content creation and management**. Create and manage monitors, dashboards, and playbooks through conversation, with a human in the loop before anything is deployed or activated. See [Create and manage content](#create-and-manage-content).
-
-## Getting started
-
-1. **Open Mobot**. Open Mobot from one of the following places:
-   - **Left nav**. Click **Mobot** in the left navigation menu.<br/><img src={useBaseUrl('img/search/mobot/left-nav.png')} alt="Mobot in the left navigation menu" width="650" />
-   - **Home page**. Go to **Home**, select the **Home** tab, then click the **Mobot** tile.<br/><img src={useBaseUrl('img/search/mobot/home-nav.png')} alt="Mobot tile on the Home page" width="650" />
-   - **Cloud SIEM insight** (requires Cloud SIEM). From an insight's **Details** page, click **Ask Mobot** to continue an AI-driven investigation in Mobot with that insight's context already loaded. See [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#investigate-the-insight-in-mobot).
-1. **Ask a question**. Type your question in the **Ask Something** field and press Enter or click the send button.<br/><img src={useBaseUrl('img/search/mobot/ask-something-mobotv2.png')} alt="Mobot interface showing unified prompt input" style={{border: '1px solid gray'}} width="600" />
-
-You can ask something about your log data (for example, `Show me logs from last 15 minutes`) or a how-to question (for example, `How do I set up an OTel Collector?`). See [How Mobot responds](#how-mobot-responds) for what happens next, or jump to [Example workflows](#example-workflows) to see it in action.
+You can ask something about your log data (for example, `Show me logs from last 15 minutes`) or a how-to question (for example, `How do I set up an OTel Collector?`). See [How Mobot responds](#how-mobot-responds) for what happens next, or jump to [Example end-to-end conversation](#example-end-to-end-conversation) to see it in action.
 
 ## How Mobot responds
 
@@ -110,9 +118,9 @@ After returning results, Mobot summarizes anything that stands out at the bottom
 
 Mobot suggests follow-up questions to guide you through the next steps of your investigation. These suggestions appear in the interface and help you explore the data without needing to formulate queries from scratch. You can click a suggestion or type your own question to continue the conversation.
 
-## Example workflows
+## Example end-to-end conversation
 
-The following workflows show how you can investigate a problem through multiple conversational turns. For quick starting points grouped by task, see [Mobot Example Prompts](/docs/search/mobot/example-prompts).
+The following conversations show how you can investigate a problem through multiple conversational turns. For quick starting points grouped by task, see [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
 ### Log analysis
 
@@ -162,7 +170,7 @@ In three conversational turns, you went from a general alert to:
 
 Even if the activity was blocked, investigate the affected users in Cloud SIEM's endpoint records to check for lateral movement or other indicators of compromise.
 
-### How-to workflow
+### How-to answers
 
 For how-to questions, Mobot returns a structured answer sourced from our official Sumo Logic documentation.
 
@@ -292,6 +300,7 @@ Known limitations:
 - Only log-based monitors are supported. Metric- and SLO-based monitors are not.
 - You can update a monitor within the same conversation where you created it. You cannot use Mobot to update monitors from other conversations or to disable or delete a monitor. Manage those from the **Monitors** tab.
 
+<!-- Uncomment once Conversational Dashboards GAs
 ### Conversational Dashboards
 
 Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel.
@@ -309,11 +318,12 @@ Known limitations:
 - Analysis is scoped to the dashboard you have open. Mobot cannot correlate data across separate dashboards.
 - Follow-up context is kept only within the current session.
 - Mobot selects the panel type automatically. Fine-tuned visual adjustments are done manually.
+-->
 
 ### Conversational Playbooks
 
 :::note
-Conversational Playbooks is rolling out after Conversational Monitors and Conversational Dashboards. Contact your account team for availability.
+Conversational Playbooks is rolling out after Conversational Monitors. Contact your account team for availability.
 :::
 
 Create, edit, and summarize Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, without building node by node on the visual canvas:
@@ -482,7 +492,7 @@ All aspects of the Sumo Logic service, including Mobot, adhere to the security a
 
 ### What is Sumo Logic Mobot?
 
-Mobot is an AI-powered conversational assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language log analysis and how-to answers, helping you extract actionable insights from logs and learn the platform without leaving your workflow. Mobot does not process or share your log data with any third party.
+Mobot is an AI-powered conversational assistant integrated into the Sumo Logic Log Analytics Platform. It enables natural language log analysis and how-to answers, helping you extract actionable insights from logs and learn the platform without switching tools. Mobot does not process or share your log data with any third party.
 
 ### Do I need to select an agent or mode?
 
@@ -498,7 +508,7 @@ Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time s
 
 If you need a higher limit, contact your account team.
 
-### Does Mobot's licensing model and limits apply to SOC Analyst Agent workflows?
+### Does Mobot's licensing model and limits apply to SOC Analyst Agent investigations?
 
 No. When you click **Ask Mobot** from an Investigated Insight, those interactions are governed by [SOC Analyst Agent licensing](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability) — up to 30 prompts per user per day — not the standard Mobot limit above.
 
@@ -617,7 +627,7 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 
 An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). This page is available to all paid customers (not free or trial accounts) to any user with the Administrator role or the **Manage Org Settings** permission.
 
-At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for early Q3.
+At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs. MSSP parent orgs do not see this toggle for their own org.
 
