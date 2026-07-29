@@ -12,15 +12,13 @@ const darkCodeTheme = prismThemes.dracula;
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
-const baseUrl = process.env.BASE_URL || "/";
-
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: 'Documentation, guides, and API references for Sumo Logic',
   url: process.env.HOSTNAME || "http://localhost:3000",
   trailingSlash: true,
-  baseUrl: baseUrl,
+  baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenAnchors: 'throw',
   onDuplicateRoutes: 'throw',
@@ -367,7 +365,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'mobot-banner-v3',
-      content: `<img src="${baseUrl}img/search/mobot/mobot-welcome.png" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
+      content: `<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
       backgroundColor: '#0055B7',
       textColor: '#fff',
     },
