@@ -7,18 +7,6 @@ description: Set up OAuth authentication to securely connect external applicatio
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools, custom integrations, and third-party services to your Sumo Logic account.
 
 Sumo Logic supports two OAuth 2.0 authentication flows:
