@@ -5,7 +5,7 @@ sidebar_label: ChatGPT Compliance
 tags:
   - cloud-to-cloud
   - chatgpt-compliance
-description: Learn to collect the conversations from ChatGPT Compliance platform.
+description: Learn to collect conversations, Codex, audit, app, and auth events from the ChatGPT Compliance platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
