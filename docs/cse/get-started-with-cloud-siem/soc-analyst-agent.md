@@ -75,8 +75,8 @@ The SOC Analyst Agent runs in the background against all insights that flow into
    * **In Progress**. AI analysis is in progress.
    * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
    * **Not Investigated**. No AI analysis was performed on the insight due to rate limiting. Click the **Investigate** button at the top of the insight's details page to manually initiate an AI investigation. See [How does investigation rate limiting work?](#how-does-investigation-rate-limiting-work) for details.
-1. Clicking anywhere on the row of an insight that has an AI verdict shows a side panel with results of the verdict. This allows you to browse quickly for insights needing more investigation:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-side-panel.png')} alt="Insight AI side panel" style={{border: '1px solid gray'}} width="800" />
-1. To investigate an insight further, click the insight's ID. Insights with an AI verdict display an **AI Investigation** tab in the insight details page. Use the information on this tab to dive deeper into the insight.
+1. Clicking anywhere on the row of an insight that has an AI verdict opens a side panel with results of the verdict. It's collapsible, allowing you to browse quickly for insights needing more investigation while staying in your insights list:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-side-panel.png')} alt="Insight AI side panel" style={{border: '1px solid gray'}} width="700" />
+1. To investigate an insight further, click the insight's ID (blue link):<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-trigger-full.png')} alt="Insight ID link highlighted in the Insights list" style={{border: '1px solid gray'}} width="700" /><br/>Insights with an AI verdict display an **AI Investigation** tab on the insight's details page. Use the information on this tab to dive deeper into the insight.
 
 ## AI Investigation tab
 
@@ -267,12 +267,8 @@ Today, containment and remediation actions require a human to click **Execute Ac
 
 ## Additional resources
 
-* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
-* Blogs:
-   * [The SOC Analyst Agent: Bring an Agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
-   * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
-   * [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp)
-* Demos:
-   * [SOC Analyst Agent](https://www.sumologic.com/demo/soc-analyst-agent)
-   * [Mobot walkthrough](https://www.sumologic.com/demo/mobot-walkthrough)
-* AWS article: [Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/)
+* [Sumo Logic | Dojo AI](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
+* [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). See how the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
+* [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
+* [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats)
+* [AWS Case Studies | Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/). Learn how security solutions provider Sumo Logic built an AI assistant by using Amazon Nova 2 Lite and Amazon Bedrock.
