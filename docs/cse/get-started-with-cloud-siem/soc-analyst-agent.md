@@ -158,9 +158,7 @@ To share the current investigation with other users, see [Share conversation](/d
 
 The SOC Analyst Agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed daily investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when your committed volume is reached.
 
-Access requires the **View SOC Analyst Settings** permission, and is not available to federated tenants. Viewing the settings is available to analysts and administrators; changing them requires the **Manage SOC Analyst Settings** permission, limited to administrators. With view-only access, the controls are visible but disabled. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
-
-{/* TODO (DOCS-1760): Confirm whether these permissions are granted to analysts by default, or only to administrators by default with analyst access granted manually — ticket language suggests the latter ("enabled by admins by default, and can be manually enabled for analysts"), which may conflict with "Viewing the settings is available to analysts and administrators" above. */}
+By default, only administrators can view or manage SOC Analyst Settings, and access is not available to federated tenants. An administrator can grant analysts the **View SOC Analyst Settings** permission to view the settings; with view-only access, the controls are visible but disabled. Changing settings always requires the **Manage SOC Analyst Settings** permission, limited to administrators. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
 
 To open the settings, select **Cloud SIEM** > **Cloud SIEM Workflow Configuration** > **SOC Analyst Settings**.
 
@@ -192,16 +190,14 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 When your committed daily investigation volume is reached, new insights receive a **Not Investigated** status, and analysts can still manually trigger investigation.
 
+The section has an **Active** / **Disabled** toggle in the top right, similar to the Auto-Investigation Filter's toggle.
+
 * **Allow overages**. This check box is cleared by default. Select it to continue auto-investigating past your committed volume. Overage investigations are billed separately.
 * **Ceiling**. When **Allow overages** is selected, a **Ceiling** field appears, defaulted to 20%. Enter the maximum percentage above your committed volume that auto-investigation can consume.
 
 <img src={useBaseUrl('img/cse/volume-overage-settings.png')} alt="Volume and Overage Settings with Allow overages selected and the Ceiling field" style={{border: '1px solid gray'}} width="800" />
 
-{/* TODO (DOCS-1760): The ticket also lists an Active/Disabled toggle for Volume & Overage Settings, similar to the Auto-Investigation Filter's toggle. Not reflected here — confirm whether this exists in the shipped UI or was dropped before GA. */}
-
 After changing this setting, click **Save Settings** to apply your changes, or **Cancel** to discard them.
-
-<!-- TODO (DOCS-1760): confirm whether a capacity warning banner appears on the Insights page when investigation capacity is reached (from the UI RFC, not yet verified against the shipped UI). -->
 
 ## FAQ
 
@@ -231,7 +227,7 @@ No. The SOC Analyst Agent does not have persistent learning.
 
 ### How does investigation rate limiting work?
 
-The SOC Analyst Agent automatically investigates insights in priority order, up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button.
+The SOC Analyst Agent automatically investigates insights in priority order, up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button. A banner also appears on the **Insights** page when your investigation capacity is reached.
 
 To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings). If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
 
@@ -256,11 +252,10 @@ Yes. A sample of agent verdicts is regularly reviewed by senior analysts to catc
 Yes. Every tool call the agent makes is logged to Cloud SIEM, so you can review exactly what data it queried and how it reached a verdict. You can also review agent activity in the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/):
 
 ```sumo
-_index=sumologic_audit_events
-| where invocationdetails.agentname = "soc_analyst_agent"
+_index=sumologic_audit_events _sourceCategory=dojo
+| where eventName = "AgentRun"
+| where invocationDetails.agentName == "soc_analyst_agent"
 ```
-
-{/* TODO: The invocationdetails.agentname query above comes from a Slack thread with the Mobot PM, not the audit-index doc itself — docs/manage/security/audit-indexes/audit-event-index.md doesn't document this field or an "agentname" value for soc_analyst_agent/mobot yet. Confirm exact field name/syntax with eng, and confirm whether this needs its own row in that doc's Audited events table, before publish. */}
 
 ### Can I access the agent's verdict and findings through the API?
 

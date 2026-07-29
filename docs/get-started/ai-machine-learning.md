@@ -64,10 +64,10 @@ See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="45"/>
 
-Triage and investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in Mobot using natural language to explore scope, impact, and supporting evidence, then generate a structured incident report to document your findings.
+Investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in Mobot using natural language to explore scope, impact, and supporting evidence, then generate a structured incident report to document your findings.
 
 :::note
-The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in, with a launch promotion that enables it by default for the first 90 days at five investigated insights per day. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
+The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 :::
 
 ### Sumo Logic MCP server
@@ -158,6 +158,11 @@ Not at this time. Dojo AI is enabled at the platform level and cannot be toggled
 
 Administrators can track and audit all Dojo AI activity directly within the platform using the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/). Running a targeted audit query gives administrators full visibility into both user activity and the actions agents perform in their environment.
 
+```sumo
+_index=sumologic_audit_events
+| where invocationdetails.agentname in ("mobot", "soc_analyst_agent")
+```
+
 What gets audited:
 
 - **User activity**. Individual user prompts, queries, and shared Mobot conversation threads.
@@ -241,6 +246,10 @@ All new AI capabilities and features undergo comprehensive legal, compliance, an
 Recurring reviews are also conducted with every major update, particularly when a capability introduces new analytics or processes previously unused data types, to maintain ongoing trust and compliance.
 
 ## Additional resources
+
+<!-- uncomment when it's ready
+* [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai). Self-paced training course covering Mobot and the Dojo AI agents.
+-->
 
 * [Mobot](/docs/search/mobot). The conversational interface for Dojo AI — ask questions in plain language to analyze log data, investigate incidents, and get answers sourced from official documentation.
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about Dojo AI, Sumo Logic's multi-agent AI platform for security and observability, including Mobot, the SOC Analyst Agent, and the MCP server.
