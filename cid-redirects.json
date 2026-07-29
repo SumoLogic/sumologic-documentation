@@ -4708,6 +4708,7 @@
   "/docs/search/copilot-unstructured-logs-beta": "/docs/search/mobot",
   "/docs/search/mobot-unstructured-logs-beta": "/docs/search/mobot",
   "/docs/search/mobot-unstructured-logs": "/docs/search/mobot",
+  "/docs/search/mobot-preview": "/docs/search/mobot",
   "/docs/manage/data-forwarding/amazon-s3-bucket": "/docs/manage/data-forwarding/forward-data-from-sumologic",
   "/docs/cse/signals": "/docs/cse/records-signals-entities-insights",
   "/docs/query/query-operators/aggregation-functions": "/docs/search/search-query-language/group-aggregate-operators",
