@@ -1,0 +1,18 @@
+{
+  "api.version": "v1",
+  "source": {
+    "config": {
+      "name": "OpenAI Organization Costs",
+      "description": "Collects organization cost data from OpenAI Admin API",
+      "category": "openai/costs",
+      "fields": {},
+      "adminApiKey": "sk-admin-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "projectIds": ["proj_abc123", "proj_def456"],
+      "apiKeyIds": ["key_abc123"]
+    },
+    "schemaRef": {
+      "type": "OpenAI"
+    },
+    "sourceType": "Universal"
+  }
+}
