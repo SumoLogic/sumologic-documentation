@@ -11,6 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The ChatGPT Compliance App empowers organizations to maintain security, transparency, and accountability in their use of AI-powered conversations across teams and departments. By centralizing compliance and audit data from ChatGPT Workspace environments, the app enables administrators and compliance officers to monitor usage, review conversation activity, and ensure adherence to corporate governance and data protection standards. The app spans ten purpose-built dashboards covering admin and security event governance, app authentication lifecycle tracking, workspace configuration monitoring, authentication and threat detection, Codex development intelligence and security operations, conversation content governance, compliance API data access, and executive-level compliance summaries — providing a complete audit-ready view of your organization's ChatGPT Enterprise posture.
 
+This app includes [built-in monitors](#create-monitors-for-chatgpt-compliance-app). For details on creating custom monitors, refer to [Create monitors for ChatGPT Compliance app](#create-monitors-for-chatgpt-compliance-app).
+
 ## Log types
 
 This app uses Sumo Logic's [ChatGPT Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source/) to collect compliance and audit logs from the ChatGPT Enterprise Compliance API. The following log types are supported:
@@ -400,6 +402,29 @@ The **ChatGPT Compliance – Conversation Intelligence and Content Governance** 
 ### User Activity and Data Access
 
 The **ChatGPT Compliance – User Activity and Data Access** dashboard tracks user-level data access and management activities including compliance API operations, conversation deletions and sharing, skill lifecycle events, memory access and deletion, and invitation activity patterns. Use this dashboard to detect data exfiltration risks, enforce data retention policies, and maintain a complete record of user-driven data operations within your ChatGPT Enterprise environment.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT-Compliance-User-Activity-and-Data-Access.png' alt="ChatGPT Compliance - User Activity and Data Access dashboard" />
+
+## Create monitors for ChatGPT Compliance app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ChatGPT Compliance monitors
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+|:--|:--|:--|:--|
+| `ChatGPT Compliance - App Auth Link and Unlink Events` | Tracks when users connect or disconnect external apps. Unlinks in particular may signal account cleanup before a user's departure or credential revocation. | Critical | Count > 0 in 30m |
+| `ChatGPT Compliance - Authentication Failures` | Detects failed login attempts including invalid passwords, Sentinel-blocked logins, Sentinel challenges, and password reset errors. | Critical | Count > 10 in 15m |
+| `ChatGPT Compliance - Blocked or Errored Admin Actions` | Detects denied or failed privileged operations, which may indicate unauthorized access attempts or misconfigured admin roles. | Critical | Count > 0 in 15m |
+| `ChatGPT Compliance - Brute Force Detection by IP` | Identifies a single IP address generating five or more login failures — a classic credential stuffing or brute force pattern. | Critical | Count > 0 in 10m |
+| `ChatGPT Compliance - Codex Prompt Activity by User` | Tracks Codex prompt volume per user and client. Helps identify unexpected usage from CI pipelines or automation clients exceeding normal thresholds. | Critical | Count > 200 in 1h |
+| `ChatGPT Compliance - Codex Security High or Critical Finding` | Fires when high or critical severity vulnerabilities are detected or updated in Codex security scans, requiring immediate remediation attention. | Critical | Count > 0 in 15m |
+| `ChatGPT Compliance - Conversation Message Volume` | Detects an abnormal spike in conversation messages across the workspace, useful for identifying data exfiltration attempts or bulk usage anomalies. | Critical | Count > 1000 in 15m |
+| `ChatGPT Compliance - Critical Admin Operations` | Fires on the highest-risk admin actions including IP allowlist changes, workspace feature toggles, user deletion, SAML connection creation, and SCIM configuration changes. | Critical | Count > 0 in 15m |
+| `ChatGPT Compliance - External and MCP App Invocations` | Monitors MCP and OpenAPI-backed app calls that route to external services, tracking volume anomalies and first-time-seen app names. | Critical | Count > 100 in 1h |
+| `ChatGPT Compliance - Temporary Chat Usage Spike` | Temporary chats bypass normal retention policies. A spike may indicate deliberate policy evasion or users attempting to avoid audit trails. | Critical | Count > 50 in 1h |
+| `ChatGPT Compliance - Token Revocations and Mass Logouts` | Monitors for token revocation events and admin-forced logouts, which may indicate a security incident response or an account compromise in progress. | Critical | Count > 10 in 15m |
+| `ChatGPT Compliance - User Invitations and Bulk User Changes` | Tracks mass user operations including bulk invites, auto-accept toggles, and external domain access grants that could rapidly expand workspace membership. | Critical | Count > 5 in 30m |
 
 ## Upgrading/Downgrading the ChatGPT Compliance app (Optional)
 
