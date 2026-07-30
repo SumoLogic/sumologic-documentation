@@ -18,6 +18,10 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
+<!--
+Add new/updated micro lesson(s), self-paced training, live training https://sumologic.atlassian.net/wiki/spaces/FT/pages/3223027777/Dojo+AI+August+2026+Launch+Materials
+-->
+
 * **Self-paced**:
     * [Query Language Basics Self-Paced](https://learn.sumologic.com/query-language-basics)
     * [Search Mastery Self-Paced](https://learn.sumologic.com/search-mastery-self-paced-course)

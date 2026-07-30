@@ -55,6 +55,8 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 <SumoAcademy/>
 
 <!--
+Add new/updated micro lesson(s), self-paced training, live training https://sumologic.atlassian.net/wiki/spaces/FT/pages/3223027777/Dojo+AI+August+2026+Launch+Materials
+
 * **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
 -->
 * **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).

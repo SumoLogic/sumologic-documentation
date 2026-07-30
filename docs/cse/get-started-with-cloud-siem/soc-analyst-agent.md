@@ -4,6 +4,11 @@ title: SOC Analyst Agent
 sidebar_label: SOC Analyst Agent
 description: Learn how to use Sumo Logic's SOC Analyst Agent to perform investigations of Cloud SIEM insights.
 ---
+
+<!--
+Add new/updated micro lesson(s), self-paced training, live training https://sumologic.atlassian.net/wiki/spaces/FT/pages/3223027777/Dojo+AI+August+2026+Launch+Materials
+-->
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <head>

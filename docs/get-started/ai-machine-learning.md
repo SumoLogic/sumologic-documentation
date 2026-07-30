@@ -254,7 +254,9 @@ Recurring reviews are also conducted with every major update, particularly when 
 
 ## Additional resources
 
-<!-- uncomment when it's ready
+<!-- 
+Add new/updated micro lesson(s), self-paced training, live training https://sumologic.atlassian.net/wiki/spaces/FT/pages/3223027777/Dojo+AI+August+2026+Launch+Materials
+
 * [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai). Self-paced training course covering Mobot and the Dojo AI agents.
 -->
 
