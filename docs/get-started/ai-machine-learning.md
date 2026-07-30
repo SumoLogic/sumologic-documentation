@@ -1,7 +1,7 @@
 ---
 id: ai-machine-learning
 title: AI and Machine Learning with Sumo Logic
-sidebar_label: AI and Machine Learning
+sidebar_label: AI Capabilities ✨
 description: Learn about Dojo AI, Sumo Logic's multi-agent AI platform, and classical ML capabilities that accelerate threat detection, investigation, and response across security and observability workflows.
 keywords:
    - dojo ai
@@ -203,7 +203,7 @@ All Sumo Logic AI capabilities are designed to serve customer-specific outcomes 
 
 Traditional ML features, such as AI-driven alerts, generate models specific to each customer's environment and are never shared or made public.
 
-For more information, see [trust.sumologic.com](https://trust.sumologic.com).
+For more information, see [Security and Compliance](/docs/search/mobot/#security-and-compliance).
 
 ### Does any third party have access to Dojo AI customer data?
 
@@ -259,8 +259,11 @@ Recurring reviews are also conducted with every major update, particularly when 
 -->
 
 * [Mobot](/docs/search/mobot). The conversational interface for Dojo AI — ask questions in plain language to analyze log data, investigate incidents, and get answers sourced from official documentation.
+* [Mobot Example Prompts](/docs/search/mobot/example-prompts). A library of example prompts covering security and observability investigations, platform administration, and how-to questions.
+* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). Investigate Cloud SIEM insights faster with evidence-backed AI verdicts, correlated entities, and recommended actions.
+* [Sumo Logic MCP server](/docs/api/mcp-server). Connect MCP-compatible AI clients, such as Claude Code, to your Sumo Logic data using natural language.
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about Dojo AI, Sumo Logic's multi-agent AI platform for security and observability, including Mobot, the SOC Analyst Agent, and the MCP server.
-* [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc)
-* [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp)
-* [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
-* [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats)
+* [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc). Introducing Dojo AI and its role across Sumo Logic's security and observability workflows.
+* [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp). An overview of the SOC Analyst Agent and the Sumo Logic MCP server joining the Dojo AI platform.
+* [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team). How the SOC Analyst Agent applies agentic reasoning to Cloud SIEM insight triage and investigation.
+* [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats). A look at how AI-driven agents are reshaping the modern security operations center.
