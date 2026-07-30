@@ -30,7 +30,7 @@ The OpenAI Administration API provides organization-level management and monitor
 The data will be collected from the OpenAI database using the following log:
 
 | Polling Interval | Data |
-| :--- | :--- |
+|:--|:--|
 | 5 minutes | [Organization Costs](https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/usage/methods/costs) |
 
 ## Setup
@@ -42,7 +42,7 @@ The OpenAI source requires you to provide the **Admin API Key** to set up the in
 #### Prerequisites
 
 - Requires an OpenAI API account with usage-based billing. New accounts receive a limited free credit grant.
-- Admin API keys require Organization Owner or Admin role. See [Rate limits](https://platform.openai.com/docs/guides/rate-limits) for tier details.
+- Admin API keys require an Organization Owner or Admin role. See [Rate limits](https://platform.openai.com/docs/guides/rate-limits) for tier details.
 
 Follow the steps below to obtain the Admin API Keys:
 1. [Sign in](https://platform.openai.com) to the OpenAI Platform.
@@ -51,17 +51,17 @@ Follow the steps below to obtain the Admin API Keys:
 
 ### Source configuration
 
-When you create a OpenAI source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an OpenAI source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a OpenAI source:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+To configure an OpenAI source:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **OpenAI**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **Admin API Key**. The OpenAI [Admin API key](#vendor-configuration). For example, `sk-admin-`.
 1. (Optional) **Project IDs**. Enter your list of [Project IDs](#vendor-configuration) to filter costs. Leave empty for all projects.
 1. (Optional) **API Key IDs**. Enter your [API key IDs](#vendor-configuration) to filter costs. Leave empty for all API keys.
