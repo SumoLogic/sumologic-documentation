@@ -22,7 +22,7 @@ You can use Terraform to manage monitors with the [`sumologic_monitor`](https://
 :::
 
 :::tip
-You can also create logs monitors from plain-language prompts with the Monitor Creation Agent in Mobot. For details, see [Create Monitors with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
+You can also create logs monitors from plain-language prompts with Mobot. For details, see [Create Monitors with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 :::
 
 ## Open the New Monitor window

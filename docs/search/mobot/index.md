@@ -310,7 +310,7 @@ You can start from any of the following:
 
 Mobot uses your historical data to recommend defaults, and you can change any of them inline before you confirm (for example, `Change the threshold to 10%`):
 
-- **Detection method**. Static or anomaly detection, based on how much your data varies.
+- **Detection method**. Static, anomaly, or outlier detection, based on how much your data varies.
 - **Time window and trigger**. A rolling time window with a trigger condition.
 - **Alert routing**. Webhook connections such as Slack or PagerDuty, or email notifications.
 - **Metadata**. A title, labels, folder location, and description.
@@ -322,6 +322,8 @@ Known limitations:
 - You create monitors from the Mobot interface. Creating them from within the Monitors page is not supported.
 - Only log-based monitors are supported. Metric- and SLO-based monitors are not.
 - You can update a monitor within the same conversation where you created it. You cannot use Mobot to update monitors from other conversations or to disable or delete a monitor. Manage those from the **Monitors** tab.
+
+For the full walkthrough, including example prompts and FAQ, see [Create Monitors with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
 <!-- Uncomment once Conversational Dashboards GAs
 ### Conversational Dashboards

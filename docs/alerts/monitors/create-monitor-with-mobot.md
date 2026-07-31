@@ -2,24 +2,23 @@
 id: create-monitor-with-mobot
 title: Create Monitors with Mobot
 sidebar_label: Create Monitors with Mobot
-description: Use the Monitor Creation Agent in Mobot to create and update logs monitors from plain-language prompts, without filling out the monitor form manually.
+description: Use Mobot to create and update logs monitors from plain-language prompts, without filling out the monitor form manually.
 keywords:
   - mobot
   - monitor
   - dojo ai
-  - agent
-  - monitor creation agent
+  - conversational monitors
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **Monitor Creation Agent** lets you create monitors from plain-language prompts in [Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant. Describe the monitor you want in everyday language, and the agent validates your query, suggests a complete configuration, and creates the monitor after you confirm. You can also update a monitor within the same conversation.
+You can create monitors from plain-language prompts in [Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant. Describe the monitor you want in everyday language, and Mobot validates your query, suggests a complete configuration, and creates the monitor after you confirm. You can also update a monitor within the same conversation.
 
-The agent supports logs monitors only, not metrics or SLO (Service Level Objective) monitors, and can create static, anomaly, and outlier detection types. From a single prompt, it populates the monitor name, description, query, trigger conditions, recovery conditions, and notifications, and you can accept or adjust each suggestion before the monitor is created.
+Mobot supports logs monitors only, not metrics or SLO (Service Level Objective) monitors, and can create static, anomaly, and outlier detection types. From a single prompt, it populates the monitor name, description, query, trigger conditions, recovery conditions, and notifications, and you can accept or adjust each suggestion before the monitor is created.
 
-## Which monitor types does the agent support?
+## Which monitor types can Mobot create?
 
-The Monitor Creation Agent supports logs monitors only.
+Mobot supports logs monitors only.
 
 | Monitor type | Supported |
 | :-- | :-- |
@@ -27,15 +26,15 @@ The Monitor Creation Agent supports logs monitors only.
 | Metrics | No |
 | SLO | No |
 
-For logs monitors, the agent can create the following detection types:
+For logs monitors, Mobot can create the following detection types:
 
 - **Static**. Trigger when results cross a threshold you define.
 - **Anomaly**. Trigger on deviations from a machine learning baseline.
 - **Outlier**. Trigger when values fall outside the expected range for your logs.
 
-## What the agent can configure
+## What Mobot can configure
 
-From your prompt, the agent suggests values for the following, and you can accept each suggestion or provide your own:
+From your prompt, Mobot suggests values for the following, and you can accept each suggestion or provide your own:
 
 - **Name** and **description**.
 - **Query** (validated before the configuration is suggested).
@@ -45,23 +44,22 @@ From your prompt, the agent suggests values for the following, and you can accep
 
 ## How to create a monitor with Mobot
 
-1. Open [Mobot](/docs/search/mobot) and select the **Monitor Creation Agent**.<br/>{/* TODO: add screenshot of Monitor Creation Agent selected in Mobot */}
-1. Describe the monitor you want in plain language. For example:<br/>`Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
-1. The agent validates your query and suggests a configuration, including name, description, monitor type, query, trigger, recovery, and notifications.<br/>{/* TODO: add screenshot of the suggested configuration card */}
-1. Review each suggestion. To change a value, tell the agent what you want. For example, ask it to rename the monitor or adjust the trigger threshold.
+1. Open [Mobot](/docs/search/mobot) and describe the monitor you want in plain language. For example:<br/>`Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
+1. Mobot validates your query and suggests a configuration, including name, description, monitor type, query, trigger, recovery, and notifications.<br/>{/* TODO: add screenshot of the suggested configuration card */}
+1. Review each suggestion. To change a value, tell Mobot what you want. For example, ask it to rename the monitor or adjust the trigger threshold.
 1. (Optional) Add a notification. You can be notified by email or through a connection, such as Slack.
-   - If your organization has one connection, the agent adds it automatically.
-   - If your organization has more than one connection, the agent lists them and asks which to use.
-1. When the configuration looks right, the agent shows a confirmation card. Confirm to create the monitor.<br/>{/* TODO: add screenshot of the confirmation card */}
-1. The agent creates the monitor and returns its ID along with the configured conditions. Mobot also displays a chip for the new monitor. Click the chip to open the created monitor.
+   - If your organization has one connection, Mobot adds it automatically.
+   - If your organization has more than one connection, Mobot lists them and asks which to use.
+1. When the configuration looks right, Mobot shows a confirmation card. Confirm to create the monitor.<br/>{/* TODO: add screenshot of the confirmation card */}
+1. Mobot creates the monitor and returns its ID along with the configured conditions. Mobot also displays a chip for the new monitor. Click the chip to open the created monitor.
 
 The new monitor appears on the **Monitors** tab, the same as a monitor created through the form.
 
 ## How to update a monitor in a conversation
 
-You can update a monitor you created earlier in the same conversation. Tell the agent what to change, and it shows a confirmation card summarizing the update before applying it.
+You can update a monitor you created earlier in the same conversation. Tell Mobot what to change, and it shows a confirmation card summarizing the update before applying it.
 
-The agent can only update the following fields:
+Mobot can only update the following fields:
 
 - Name
 - Description
@@ -70,10 +68,10 @@ The agent can only update the following fields:
 - Notifications
 - Query time range
 
-For example, ask the agent to change the trigger threshold from 20 to 15 and the time window to 7 minutes. The agent confirms that the threshold will change from 20 to 15 and the window will change to 7 minutes, and applies the update after you confirm.
+For example, ask Mobot to change the trigger threshold from 20 to 15 and the time window to 7 minutes. Mobot confirms that the threshold will change from 20 to 15 and the window will change to 7 minutes, and applies the update after you confirm.
 
 :::note
-The agent cannot disable or delete a monitor. To disable or delete a monitor, use the **Monitors** tab.
+Mobot cannot disable or delete a monitor. To disable or delete a monitor, use the **Monitors** tab.
 :::
 
 ## Example prompts
@@ -84,25 +82,25 @@ The agent cannot disable or delete a monitor. To disable or delete a monitor, us
 
 ## Frequently asked questions
 
-### Can the Monitor Creation Agent create metrics or SLO monitors?
+### Can Mobot create metrics or SLO monitors?
 
-No. The agent creates logs monitors only. Use the monitor form to create metrics or SLO monitors.
+No. Mobot creates logs monitors only. Use the monitor form to create metrics or SLO monitors.
 
-### What detection types can the agent create?
+### What detection types can Mobot create?
 
-The agent can create static, anomaly, and outlier detection types for logs monitors.
+Mobot can create static, anomaly, and outlier detection types for logs monitors.
 
-### Can you edit a monitor after the agent creates it?
+### Can you edit a monitor after Mobot creates it?
 
 Yes. You can update a monitor within the same conversation, or edit it later from the **Monitors** tab like any other monitor.
 
-### Does the agent validate your query before creating the monitor?
+### Does Mobot validate your query before creating the monitor?
 
-Yes. The agent validates your query first, and then suggests the rest of the configuration, including name, description, trigger, recovery, and notifications.
+Yes. Mobot validates your query first, and then suggests the rest of the configuration, including name, description, trigger, recovery, and notifications.
 
-### How does the agent set up notifications?
+### How does Mobot set up notifications?
 
-You can be notified by email or through a connection, such as Slack. If your organization has one connection, the agent adds it automatically. If you have more than one, the agent lists them and asks which to use.
+You can be notified by email or through a connection, such as Slack. If your organization has one connection, Mobot adds it automatically. If you have more than one, Mobot lists them and asks which to use.
 
 ## Related resources
 
