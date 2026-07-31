@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 width="100"/>
 
 ***Version: 1.5  
-Updated: July 28, 2026***
+Updated: July 31, 2026***
 
 Perform threat intelligence evidence gathering with [VirusTotal V3 API](https://docs.virustotal.com/reference/overview).
 
@@ -78,6 +78,6 @@ For information about VirusTotal v3, see [VirusTotal v3 documentation](https://d
     + Implemented polling mechanism (poll_analysis) in *Scan URL* action to wait until VirusTotal scan status becomes completed.
 * April 8, 2026 
     + Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* July 28, 2026 (v1.5)
+* July 31, 2026 (v1.5)
     + Added new actions: *Get Domain Resolutions*, *Get File Behaviour*, *Get IP Resolutions*, and *Rescan File*.
     + Improved reliability and consistency across all actions with standardized request handling and enhanced error messages.
