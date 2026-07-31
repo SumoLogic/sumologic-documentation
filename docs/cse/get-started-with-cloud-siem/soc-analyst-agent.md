@@ -5,11 +5,8 @@ sidebar_label: SOC Analyst Agent
 description: Learn how to use Sumo Logic's SOC Analyst Agent to perform investigations of Cloud SIEM insights.
 ---
 
-<!--
-Add new/updated micro lesson(s), self-paced training, live training https://sumologic.atlassian.net/wiki/spaces/FT/pages/3223027777/Dojo+AI+August+2026+Launch+Materials
--->
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 <head>
  <meta name="robots" content="noindex" />
@@ -32,6 +29,24 @@ The SOC Analyst Agent performs two distinct jobs that mirror an analyst’s dail
 The SOC Analyst Agent provides the following functionality:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
+
+:::training Micro Lesson
+
+Watch this micro lesson to learn how the Dojo AI SOC Analyst Agent automates insight triage and investigation in Cloud SIEM.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/3ppvthpmdd?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Dojo AI SOC Analyst Agent"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 ## Filter for AI verdicts
 
