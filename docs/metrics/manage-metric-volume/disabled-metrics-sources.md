@@ -43,7 +43,7 @@ Following is an example of the message written to the system event index:
 
 ### Sources are disabled when you reach the global limits
 
-When you reach the global limits, Sumo Logic starts disabling your metric sources based on cardinality growth. Rather than targeting the sources with the highest current cardinality, Sumo Logic compares each source's cardinality over the most recent 7-day period against the prior 7-day period, and pauses sources in descending order of cardinality increase. Sources that have recently grown and contributed to the breach are paused first, while stable high-volume sources are left unaffected.
+When you reach the global limits, Sumo Logic starts disabling your metric sources based on cardinality growth. Rather than targeting the sources with the highest current cardinality, Sumo Logic compares each source's cardinality over the most recent 7-day period against the prior 7-day period, and pauses sources in descending order of delta cardinality increase. Sources that have recently grown and contributed to the breach are paused first, while stable high-volume sources are left unaffected.
 
 Sumo Logic continues disabling metric sources until your metric ingestion drops below the global limit.
 
