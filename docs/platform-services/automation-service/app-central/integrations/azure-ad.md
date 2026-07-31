@@ -6,25 +6,30 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
 
-***Version: 1.14  
-Updated: May 8, 2026***
+***Version: 1.15  
+Updated: Jul 31, 2026***
 
 Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access management service, which helps your employees sign in and access resources.
 
 ## Actions
 
 * **Add Member To Group** *(Enrichment)* - Add a user to a specific group.
+* **Confirm User Compromised** *(Containment)* - Confirm a user as compromised in Azure AD Identity Protection.
 * **Create Group** *(Enrichment)* - Create a group.
 * **Create User** *(Enrichment)* - Create a new user.
 * **Delete Group** *(Containment)* -Delete a specific group.
 * **Delete User** *(Containment)* - Delete a specific user.
 * **Disable User** *(Containment)* - Block user account.
+* **Dismiss Risky User** *(Containment)* - Dismiss the risk for a specific risky user.
+* **Enable User** *(Containment)* - Enable a specific user account.
 * **Get Manager** (*Enrichment*) - Get user manager.
 * **Get Member Groups** *(Enrichment)* - Retrieve a Group memberships for the user.
+* **Get Risky User** *(Enrichment)* - Retrieve risk details for a specific user.
 * **Get User** (Enrichment) - Get details for a specific user.
 * **List Devices** *(Enrichment)* - Retrieve a list of device objects registered in the organization.
 * **List Groups** (*Enrichment*) - List all the groups available in an organization.
 * **List Of Group Members** *(Enrichment)* - Retrieve a list of members in a specific group.
+* **List Risky Users** *(Enrichment)* - Retrieve a list of risky users detected by Azure AD Identity Protection.
 * **List Users** *(Enrichment)* - List all users.
 * **Remove Member From Group** *(Containment)* - Remove a user from a specific group.
 * **Reset User Password** *(Containment)* - Reset user password.
@@ -111,3 +116,11 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
 * April 27, 2026 (v1.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * May 7, 2026 (v1.12) - Added New Action: Reset User MFA
 * May 7, 2026 (v1.14) - Fixed an issue in the Reset User Password and Remove Member From Group actions that caused errors when processing the response.
+* July 31, 2026 (v1.15)
+    + Added New Actions:
+      + Confirm User Compromised
+      + Dismiss Risky User
+      + Enable User
+      + Get Risky User
+      + List Risky Users
+    + Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.
