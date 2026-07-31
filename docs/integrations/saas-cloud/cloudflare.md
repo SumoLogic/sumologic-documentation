@@ -207,6 +207,24 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Performance_Static.png')} alt="Cloudflare dashboards" />
 
+## Create monitors for Cloudflare app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cloudflare alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+|:--|:--|:--|:--|
+| `Cloudflare - Bad Bot Spike Detected` | This alert is triggered when the number of bad bots (CAPTCHA challenges not solved) spikes, indicating malicious automated traffic targeting your site. | Critical | Count > 0 |
+| `Cloudflare - High Rate of 5xx Edge Errors` | This alert is triggered when the edge returns a high volume of 5xx responses, indicating server-side failures or an overloaded origin reaching end users. | Critical | Count ≥ 50 |
+| `Cloudflare - High Rate of Origin 5xx Errors` | This alert is triggered when the origin server returns a high volume of 5xx errors (excluding Cloudflare-cached responses), indicating backend instability. | Critical | Count ≥ 20 |
+| `Cloudflare - IP or Country Block Rule Triggered` | This alert is triggered when Cloudflare firewall rules block requests by IP address or country, indicating active enforcement of access control policies. | Critical | Count ≥ 100 |
+| `Cloudflare - L7 DDoS Attack Detected` | This alert is triggered when Cloudflare's DDoS protection activates L7 mitigations, indicating a layer 7 distributed denial of service attack against your origin. | Critical | Count > 0 |
+| `Cloudflare - Rate Limiting Rules Triggered` | This alert is triggered when Cloudflare rate limiting blocks requests, indicating a client is sending excessive requests due to possible abuse, credential stuffing, or scraping. | Critical | Count > 0 |
+| `Cloudflare - WAF High Rule Trigger Rate` | This alert is triggered when a large number of WAF rule hits are detected, indicating a web application attack such as SQL injection, XSS, or path traversal attempts. | Critical | Count ≥ 50 |
+
 ## Upgrade/Downgrade the Cloudflare app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

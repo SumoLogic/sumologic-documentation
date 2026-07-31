@@ -550,6 +550,10 @@ The FER **AwsObservabilityAPIGatewayCloudWatchLogsFER** to extract fields `names
 
 The Metric Rule **AwsObservabilityAPIGatewayMetricsRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing AWS API Gateway dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';

@@ -382,6 +382,10 @@ As part of the app installation process, the following **content** will be creat
 
 The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `namespace`, `clustername`, and `accountid` will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing the Amazon ECS app dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

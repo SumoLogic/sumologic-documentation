@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 2.12  
-Updated: June 26, 2026***
+***Version: 2.13  
+Updated: July 13, 2026***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
@@ -123,3 +123,4 @@ Ticketing System
 * September 2, 2024 (v2.10) -  Updated the Update Issue action
 * March 23, 2026 (v2.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * June 26, 2026 (v2.12) - Added new Search User action to search for Jira users by display name, email address, or account ID.
+* July 13, 2026 (v2.13) - Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.
