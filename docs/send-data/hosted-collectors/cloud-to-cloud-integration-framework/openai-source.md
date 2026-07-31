@@ -75,7 +75,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{“type”: “OpenAI”}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{"type": "OpenAI"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
@@ -90,7 +90,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | adminApiKey | String | Yes | `null` | OpenAI Admin API Key required for organization-level endpoints. | `sk-admin-` |
 | projectIds | Array of String | No | `null` | Filter costs to specific project IDs. If empty, costs for all projects are returned. |  |
 | apiKeyIds | Array of String | No | `null` | Filter costs to specific API key IDs. If empty, costs for all API keys are returned. |  |
-| pollingInterval | Integer | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. |  |
+| pollingInterval | Integer | No | `5` | Time interval (in minutes) after which the source will check for new data. |  |
 
 ### JSON example
 

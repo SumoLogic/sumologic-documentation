@@ -10,7 +10,8 @@ resource "sumologic_cloud_to_cloud_source" "openai-source" {
                         "fields": {},
                         "adminApiKey": "sk-admin-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                         "projectIds": ["proj_abc123", "proj_def456"],
-                        "apiKeyIds": ["key_abc123"]
+                        "apiKeyIds": ["key_abc123"],
+                        "pollingInterval": 5
   })
 }
 resource "sumologic_collector" "collector" {
