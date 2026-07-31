@@ -409,7 +409,7 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### ChatGPT Compliance monitors
+### ChatGPT Compliance alerts
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
 |:--|:--|:--|:--|
