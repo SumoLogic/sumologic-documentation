@@ -285,6 +285,10 @@ The FER **AwsObservabilityLambdaCloudTrailLogsFER** to extract fields `region`, 
 
 The FER **AwsObservabilityLambdaCloudWatchLogsFER** to extract fields `functionname` and `namespace` will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing AWS Lambda dashboards
 
 The following measurements and calculations drive the information shown in the dashboard panels:

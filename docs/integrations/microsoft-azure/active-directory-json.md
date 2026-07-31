@@ -13,6 +13,10 @@ The Sumo Logic app for Active Directory JSON (2012+) helps you monitor your Wind
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 
+:::info
+This app includes [built-in monitors](#active-directory-json-alerts). For details on creating custom monitors, refer to [Create monitors for the Active Directory JSON app](#create-monitors-for-the-active-directory-json-app).
+:::
+
 ## Log types
 
 Standard Windows event channels include:
@@ -130,6 +134,23 @@ Use this dashboard to:
 * Track IP addresses associated with failed activities.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Service-Failures.png')} alt="Active Directory JSON dashboards" />
+
+## Create monitors for the Active Directory JSON app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Active Directory JSON alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Active Directory JSON - Account Lockout Spike` | This alert is triggered when 5 or more account lockouts are detected in a 15-minute window, indicating a potential brute force or password spray attack. | Count > = 5 | Count < 5 |
+| `Active Directory JSON - Audit Policy Change` | This alert is triggered when the system audit policy is modified (EventID 4719). Attackers tamper with audit policy to disable logging and conceal malicious activity. | Count > 0 | Count < = 0 |
+| `Active Directory JSON - Brute Force Login Detection` | This alert is triggered when 10 or more authentication failures originate from a single IP address in 15 minutes. | Count > = 10 | Count < 10 |
+| `Active Directory JSON - Login Attempts to Disabled Accounts` | This alert is triggered when login attempts are made against disabled accounts (EventID 4625, sub-status 0xC0000072), indicating credential scanning or an attacker reusing stale credentials. | Count > 0 | Count < = 0 |
+| `Active Directory JSON - Mass User Account Deletions` | This alert is triggered when more than 5 user accounts are deleted in a 30-minute window. This may indicate insider sabotage, a compromised admin account, or ransomware pre-staging. | Count > 5 | Count < = 5 |
+| `Active Directory JSON - Password Policy Change` | This alert is triggered when the domain password policy is modified (EventID 4739). Unauthorized weakening of password requirements indicates a potentially compromised administrator. | Count > 0 | Count < = 0 |
 
 ## Upgrade/Downgrade the Active Directory JSON app (Optional)
 

@@ -185,6 +185,10 @@ As part of the app installation process, the following **content** will be creat
 
 The FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `queuename` will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing Amazon SQS dashboards
 
 Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications.
