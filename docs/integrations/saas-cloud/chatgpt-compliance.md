@@ -18,7 +18,7 @@ This app includes [built-in monitors](#create-monitors-for-chatgpt-compliance-ap
 This app uses Sumo Logic's [ChatGPT Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source/) to collect compliance and audit logs from the ChatGPT Enterprise Compliance API. The following log types are supported:
 
 | Log Type | Description |
-|---|---|
+|:--|:--|
 | `AUDIT_LOG` | Administrative and workspace configuration events including user management, GPT governance, SAML/SSO configuration, and role-based access control changes. |
 | `AUTH_LOG` | Authentication events covering login success and failure, password resets, MFA usage, Sentinel challenges and blocks, and suspicious access patterns. |
 | `APP_AUTH_LOG` | Application OAuth lifecycle events including link and unlink operations for third-party app and connector integrations. |
@@ -401,7 +401,7 @@ The **ChatGPT Compliance – Conversation Intelligence and Content Governance** 
 
 ### User Activity and Data Access
 
-The **ChatGPT Compliance – User Activity and Data Access** dashboard tracks user-level data access and management activities including compliance API operations, conversation deletions and sharing, skill lifecycle events, memory access and deletion, and invitation activity patterns. Use this dashboard to detect data exfiltration risks, enforce data retention policies, and maintain a complete record of user-driven data operations within your ChatGPT Enterprise environment.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT-Compliance-User-Activity-and-Data-Access.png' alt="ChatGPT Compliance - User Activity and Data Access dashboard" />
+The **ChatGPT Compliance – User Activity and Data Access** dashboard tracks user-level data access and management activities, including compliance API operations, conversation deletions and sharing, skill lifecycle events, memory access and deletion, and invitation activity patterns. Use this dashboard to detect data exfiltration risks, enforce data retention policies, and maintain a complete record of user-driven data operations within your ChatGPT Enterprise environment.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/chatgpt-compliance/ChatGPT-Compliance-User-Activity-and-Data-Access.png' alt="ChatGPT Compliance - User Activity and Data Access dashboard" />
 
 ## Create monitors for ChatGPT Compliance app
 
