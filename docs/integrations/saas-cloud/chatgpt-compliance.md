@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The ChatGPT Compliance App empowers organizations to maintain security, transparency, and accountability in their use of AI-powered conversations across teams and departments. By centralizing compliance and audit data from ChatGPT Workspace environments, the app enables administrators and compliance officers to monitor usage, review conversation activity, and ensure adherence to corporate governance and data protection standards. The app spans ten purpose-built dashboards covering admin and security event governance, app authentication lifecycle tracking, workspace configuration monitoring, authentication and threat detection, Codex development intelligence and security operations, conversation content governance, compliance API data access, and executive-level compliance summaries — providing a complete audit-ready view of your organization's ChatGPT Enterprise posture.
 
-This app includes [built-in monitors](#create-monitors-for-chatgpt-compliance-app). For details on creating custom monitors, refer to [Create monitors for ChatGPT Compliance app](#create-monitors-for-chatgpt-compliance-app).
+This app includes [built-in monitors](#create-monitors-for-chatgpt-compliance-app).
 
 ## Log types
 
