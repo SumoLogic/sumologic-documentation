@@ -14,7 +14,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* **Self-paced**: [Sumo Logic APIs + Terraform Self-Paced](https://learn.sumologic.com/sumo-logic-apis-terraform-self-paced/)
+* **Self-paced**. [Extending Sumo Logic with MCP, API and Terraform](https://learn.sumologic.com/extending-sumo-logic-with-mcp-api-terraform).
 :::
 
 :::sumo Get Help
