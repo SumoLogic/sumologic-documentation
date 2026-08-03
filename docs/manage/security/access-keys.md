@@ -87,7 +87,11 @@ All personal access keys created in the organization are displayed in the **Acce
 
 ### From the Access Keys tab
 
-The **Access Keys** tab shows all access keys in the system. It provides a central place for administrators to manage access keys.
+The **Access Keys** tab shows all access keys in the system, across all users and service accounts, providing a central place for administrators to manage access keys.
+
+:::note
+This tab is visible only to Administrators (or users with the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security)). Other users only see their own keys under [Personal Access Keys](#from-the-personal-access-keys-tab).
+:::
 
 Administrators can create access keys under **Access Keys** as an alternative to doing it [from the Personal Access Keys tab](#from-the-personal-access-keys-tab) or [from a service account](#from-a-service-account).
 

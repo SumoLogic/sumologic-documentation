@@ -9,13 +9,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User Permissions icon" width="50"/>
 
-You can review and update your personal account settings and login credentials at any time. The **Preferences** page contains settings that apply only to your account and do not affect other users in your organization.
+You can review and update your personal account settings and login credentials at any time from your user menu, which has three tabs: **Preferences**, **Personal Access Keys**, and **Personal Authorized Apps**. Settings on all three tabs apply only to your account and do not affect other users in your organization.
 
-## Accessing preferences
+## Accessing your account settings
 
-[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon and then **Preferences**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. 
+[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username.
 
 <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
+
+From here, select one of the following tabs:
+
+* **Preferences**. Your profile, security settings, and personal preferences. Covered below.
+* **Personal Access Keys**. Create and manage access keys for your own use. See [Access Keys](/docs/manage/security/access-keys#from-the-personal-access-keys-tab).
+* **Personal Authorized Apps**. View and revoke third-party apps you've authorized to access Sumo Logic on your behalf. See [Personal Authorized Apps](#personal-authorized-apps) below.
 
 ## My Profile
 
@@ -34,13 +40,13 @@ If you're an Administrator, you can [manage users](/docs/manage/users-roles/user
 
 ### Change email address
 
-1. Access your [Preferences](#accessing-preferences).
+1. Access your [account settings](#accessing-your-account-settings) and select the **Preferences** tab.
 1. Under **My Profile**, click **Change Email**.
 1. In the dialog that appears, enter your new email address and follow the verification steps.
 
 ### Change password
 
-1. Access your [Preferences](#accessing-preferences).
+1. Access your [account settings](#accessing-your-account-settings) and select the **Preferences** tab.
 1. Under **My Profile**, click **Change Password**.
 1. Enter your current password, and then enter the new password twice to verify it.
 1. Click **OK** to finalize the change.
@@ -111,20 +117,19 @@ Receive an email when [content is shared with you in Sumo Logic](/docs/manage/co
 Keyboard shortcuts are disabled when typing in the [search text box](/docs/search/get-started-with-search/search-page/).
 :::
 
-### Web Session Timeout
+#### Web Session Timeout
 
 Choose how long your Sumo Logic session remains active before timing out. Options range from 5 minutes to 7 days.
 
 For details on web session timeouts and multi-account access, see [Multi-Account Access](/docs/manage/users-roles/users/multi-account-access).
 
-
 ### Navigation
 
 #### Open all navigation menu items in new browser tabs by default
 
-By default, selecting a menu link in the left navigation pane opens it in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="125" />
+This preference is disabled by default, so selecting a menu link in the left navigation pane opens it in the same tab. To open a specific link in a new tab instead, hover over it and click the **Open in New Tab** button that appears next to it.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="125" />
 
-Enabling this preference hides the **Open in New Tab** button on navigation menu links.
+Enabling this preference makes every menu link open in a new tab automatically, and hides the **Open in New Tab** button since it's no longer needed.
 
 However, even when this preference is enabled, the **Open in New Tab** button remains visible for menu items with subfolders, allowing you to click the menu item to view its subfolders and open them in a new tab.<br/><img src={useBaseUrl('img/get-started/open-in-new-tab-button-on-folder.png')} alt="Open in New Tab button" style={{border: '1px solid gray'}} width="250" />
 
@@ -155,7 +160,7 @@ After making any changes, click **Save**.
 
 On the Search page, enable this option if you want to be prompted with a confirmation dialog before you can close a search tab.
 
-#### Enable autocomplete
+#### Show search autocomplete suggestions while typing
 
 Keep this option selected to automatically open the search autocomplete dialog when editing a query.
 
@@ -176,6 +181,14 @@ To use this feature, open a new tab directly within Log Search and run a new or 
 
 Click any of the following checkboxes to enable your desired preferences:<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
 
+#### Enable ingestion throttling notifications
+
+:::note
+Only users with Administrator access can enable this option.
+:::
+
+Select this option to be notified when your organization's logs, metrics, or traces ingestion is throttled. See [Ingestion - Throttling Limits](/docs/manage/manage-subscription/organization-usage-limits/#ingestion---throttling-limits) for details on baseline and throttling limits.<br/><img src={useBaseUrl('img/get-started/enable-ingestion-throttling-notifications.png')} alt="Enable ingestion throttling notifications checkbox" style={{border: '1px solid gray'}} width="500" />
+
 #### Display alert badge when my subscribed monitors are triggered
 
 Select this option to display a badge icon in the UI when you receive an alert for a monitor you're subscribed to.
@@ -191,3 +204,19 @@ By default, your alerts list only displays alerts with an active status. Alerts 
 #### Enable "My subscriptions" as default filter
 
 By default, alerts you are subscribed to will appear in your alerts list.<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
+
+## Personal Authorized Apps
+
+The **Personal Authorized Apps** tab lists third-party apps and OAuth clients you've personally authorized to access Sumo Logic on your behalf, such as AI clients connecting through [OAuth 2.0](/docs/manage/security/oauth). Revoking an app here does not affect other users who have separately authorized it.
+
+{/* TODO: add screenshot of the Personal Authorized Apps list view */}
+
+The list shows each app's name, when you authorized it, and when it was last used. Click an app to see its details:
+
+* **Scopes**. The permissions granted to the app, grouped by category (for example, Alerting, Dashboards, Log Search), with a count of permissions in each category. Expand a category to see its individual scopes.
+* **Last Used**. The most recent time the app used its authorization to access Sumo Logic.
+* **Authorized By** and **Authorized At**. Who authorized the app, and when.
+
+{/* TODO: add screenshot of the app detail pane with Scopes and Revoke button */}
+
+To revoke an app's access, select it from the list and click **Revoke**. This immediately invalidates the app's ability to act on your behalf; you can re-authorize it later if needed.
