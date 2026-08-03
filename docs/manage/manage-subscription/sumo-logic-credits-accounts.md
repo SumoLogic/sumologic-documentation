@@ -184,7 +184,7 @@ To analyze usage trends:
 * Use the pan feature (magnifying glass icon) to scroll through data.  
 * Hover over chart sections for detailed insights.  
 
-If your account has more than one credit block, a **Viewing** dropdown appears in this panel. Use it to switch between combined usage (all blocks combined) and an individual credit block, to see usage broken out by product variable for that block. Downloaded usage reports also include a separate line per product variable for each credit block. <br/><img src={useBaseUrl('img/manage/account/viewing-dropdown.png')} alt="Viewing dropdown for individual credit blocks" style={{border: '1px solid gray'}} width="500" />
+If your account has more than one credit block, a **Viewing** dropdown appears in this panel. Use it to switch between combined usage (all blocks combined) and an individual credit block, to see usage broken out by product variable for that block. Downloaded usage reports also include a separate line per product variable for each credit block. <br/><img src={useBaseUrl('img/manage/account/viewing-dropdown.png')} alt="Viewing dropdown for individual credit blocks" style={{border: '1px solid gray'}} width="300" />
 
 :::info
 If your account has a single credit block, the **Viewing** dropdown does not appear, and downloaded usage reports are unchanged.
