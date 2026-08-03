@@ -60,10 +60,6 @@ Beyond analysis and platform guidance, Mobot also lets you create, edit, and sum
 
 See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
-### Summary Agent
-
-The [Summary Agent](/docs/cse/get-started-with-cloud-siem/insight-summary/) automatically generates a concise summary of each Cloud SIEM insight, explaining the threat incidents that triggered it. Summaries help security teams quickly understand scope and prioritize response.
-
 ### SOC Analyst Agent
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="45"/>
@@ -71,14 +67,8 @@ The [Summary Agent](/docs/cse/get-started-with-cloud-siem/insight-summary/) auto
 Investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in Mobot using natural language to explore scope, impact, and supporting evidence, then generate a structured incident report to document your findings.
 
 :::note
-The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in.
-:::
-
-<!-- uncomment at GA after Aug 3
-:::note
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Availability](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#availability).
 :::
--->
 
 ### Sumo Logic MCP server
 
@@ -152,12 +142,13 @@ AI features are on by default. We offer two methods for opting out:
 * **Via your account team or support**. You can opt out of specific AI features or all AI features by contacting your Sumo Logic account team or opening a support ticket. If you choose to opt out of all AI features, your tenant is automatically exempted from future AI feature releases.
 * **In-product self opt-out**. Beginning August 2026, platform administrators can opt out of all AI features directly within the product settings under **Feature Management** (**Administration** > **Feature Management**). Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot, Parse Assist, and the SOC Analyst Agent share a single **AI features** toggle; the MCP server has its own separate **MCP Server access** toggle on the same page.
 
-### What happened to Query Agent and Knowledge Agent?
+### What happened to Query Agent, Knowledge Agent, and Summary Agent?
 
 They're still here, but renamed and repositioned as their capabilities have evolved.
 
 - **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
 - **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
+- **Summary Agent → absorbed into SOC Analyst Agent**. Summary Agent's signal summarization capability is now a core part of how the SOC Analyst Agent contextualizes and presents its findings.
 
 ### Can Dojo AI access be controlled at a user level?
 
@@ -238,11 +229,9 @@ Sumo Logic AI capabilities operate within our existing industry-recognized secur
 
 Availability of specific AI capabilities may vary by deployment region (including FED) based on compliance boundary requirements.
 
-<!-- Uncomment once SOC Analyst Agent GAs (target: August 3, 2026)
 ### Can I get Dojo AI capabilities if I'm on FedRAMP?
 
 The SOC Analyst Agent, Mobot, and the Sumo Logic MCP server are available for these deployments. However, because the Automation Service (playbooks) has not yet been introduced to FED, Conversational Playbooks via Mobot are excluded from the launch for these deployments.
--->
 
 ### What types of model reviews are conducted?
 
@@ -259,7 +248,7 @@ Recurring reviews are also conducted with every major update, particularly when 
 * [Mobot](/docs/search/mobot). The conversational interface for Dojo AI — ask questions in plain language to analyze log data, investigate incidents, and get answers sourced from official documentation.
 * [Mobot Example Prompts](/docs/search/mobot/example-prompts). A library of example prompts covering security and observability investigations, platform administration, and how-to questions.
 * [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). Investigate Cloud SIEM insights faster with evidence-backed AI verdicts, correlated entities, and recommended actions.
-* [Sumo Logic MCP server](/docs/api/mcp-server). Connect MCP-compatible AI clients, such as Claude Code, to your Sumo Logic data using natural language.
+* [Sumo Logic MCP server](/docs/api/mcp-server). Connect MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data using natural language.
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about Dojo AI, Sumo Logic's multi-agent AI platform for security and observability, including Mobot, the SOC Analyst Agent, and the MCP server.
 * [Welcome to Dojo AI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc). Introducing Dojo AI and its role across Sumo Logic's security and observability workflows.
 * [New agents in the Dojo: Expanded Sumo Logic Dojo AI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp). An overview of the SOC Analyst Agent and the Sumo Logic MCP server joining the Dojo AI platform.

@@ -17,12 +17,14 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](#improve-investigations-with-the-sumo-investigator-skill)), while [Mobot](/docs/search/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
 :::
 
+<!-- Uncomment Aug 3
 :::training Sumo Logic Academy
 
 <SumoAcademy/>
 
 * **Self-paced**. [Extending Sumo Logic with MCP, API and Terraform](https://learn.sumologic.com/extending-sumo-logic-with-mcp-api-terraform).
 :::
+-->
 
 ## Prerequisites
 
@@ -37,12 +39,13 @@ Because OAuth tokens are bound to a single Sumo Logic deployment, you'll need to
 | Asia Pacific (Tokyo) | `https://mcp.jp.sumologic.com/mcp` |
 | Canada (Central) | `https://mcp.ca.sumologic.com/mcp` |
 | Europe (Frankfurt) | `https://mcp.de.sumologic.com/mcp` |
+| Europe (Ireland) | `https://mcp.eu.sumologic.com/mcp` |
 | US East (N. Virginia) | `https://mcp.sumologic.com/mcp` |
 | US East (N. Virginia) - FedRAMP | `https://mcp.fed.sumologic.com/mcp` |
 | US West (Oregon) | `https://mcp.us2.sumologic.com/mcp` |
 
 :::note
-The MCP server is not currently supported in the Europe (Ireland) and Europe (Zurich) deployments.
+The MCP server is not currently supported in our Zurich or AWS European Sovereign Cloud deployments.
 :::
 
 ### MCP-compatible client

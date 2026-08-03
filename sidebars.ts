@@ -1157,6 +1157,7 @@ module.exports = {
         'manage/security/data-access-level-shared-dashboards',
         'manage/security/enable-support-account',
         'manage/security/installation-tokens',
+        'manage/security/oauth',
         {
           type: 'category',
           label: 'SAML',
@@ -1240,6 +1241,7 @@ module.exports = {
           items: [
             'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
+            'alerts/monitors/create-monitor-with-mobot',
             'alerts/monitors/settings',
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-variables',
@@ -2963,7 +2965,7 @@ integrations: [
             'cse/get-started-with-cloud-siem/cse-heads-up-display',
             'cse/get-started-with-cloud-siem/insight-generation-process',
             'cse/get-started-with-cloud-siem/about-cse-insight-ui',
-            'cse/get-started-with-cloud-siem/insight-summary',
+            'cse/get-started-with-cloud-siem/soc-analyst-agent',
             'cse/get-started-with-cloud-siem/cloud-siem-content-catalog',
             'cse/get-started-with-cloud-siem/onboarding-checklist-cse',
           ],
