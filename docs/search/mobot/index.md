@@ -54,9 +54,7 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 
 <SumoAcademy/>
 
-<!--
 * **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
--->
 * **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 :::
 
@@ -665,11 +663,6 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 ## Additional resources
 
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
-* [Hands on with Mobot and Dojo AI - Self Paced Training](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.
-
-<!-- uncomment Aug 3 and remove '* [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).' above
-
-* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
--->

@@ -243,9 +243,7 @@ Recurring reviews are also conducted with every major update, particularly when 
 
 ## Additional resources
 
-<!-- uncomment when it's ready
 * [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai). Self-paced training course covering Mobot and the Dojo AI agents.
--->
 
 * [Mobot](/docs/search/mobot). The conversational interface for Dojo AI — ask questions in plain language to analyze log data, investigate incidents, and get answers sourced from official documentation.
 * [Mobot Example Prompts](/docs/search/mobot/example-prompts). A library of example prompts covering security and observability investigations, platform administration, and how-to questions.
