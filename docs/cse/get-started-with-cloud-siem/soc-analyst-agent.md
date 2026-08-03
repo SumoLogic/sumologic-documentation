@@ -93,13 +93,14 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
       :::tip
       Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
       :::
-   1. **Recommended Actions**. Actions you can take to remediate the incident.
-      1. Click **Execute Action** to run a [playbook](/docs/platform-services/automation-service/playbooks/) to take the recommended action:<br/><img src={useBaseUrl('img/cse/recommended-actions.png')} alt="Recommended actions" style={{border: '1px solid gray'}} width="700" />
-      1. Click **View Details** on the confirmation to see details about the playbook automation, and then you should see a confirmation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
-      1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
-         :::note
-         To be able to run playbooks from **Recommended Actions**, the integrations that the playbooks use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
-         :::
+      <!-- 1. **Recommended Actions**. Actions you can take to remediate the incident.
+       1. Click **Execute Action** to run a [playbook](/docs/platform-services/automation-service/playbooks/) to take the recommended action:<br/><img src={useBaseUrl('img/cse/recommended-actions.png')} alt="Recommended actions" style={{border: '1px solid gray'}} width="700" />
+       1. Click **View Details** on the confirmation to see details about the playbook automation, and then you should see a confirmation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
+       1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
+          :::note
+          To be able to run playbooks from **Recommended Actions**, the integrations that the playbooks use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+          :::
+          -->
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
 1. Click **Ask Mobot** to continue the investigation conversationally in [Mobot](#investigate-the-insight-in-mobot), with the full context of the AI analysis already loaded.
 
@@ -129,6 +130,18 @@ Click **Search related insights?** when it appears as a suggested action in Mobo
 * **Concurrent insights**. Insights that were active during the same time window.
 
 Select a dimension to proceed, or enter your own search criteria.
+
+### Check indicators against threat intelligence
+
+Auto-investigation and Mobot-led investigations automatically check indicators in an insight, such as IP addresses, domains, and file hashes, against Sumo Logic's [global threat intelligence feeds](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources), any custom threat intel feeds you've added, and your connected inventory sources. When a match is found, the verdict includes match context so you can see why an indicator was flagged rather than take the result on faith.
+
+This is on by default. If you already have threat intel feeds or inventory sources connected, the agent uses them automatically. If you don't, you can [add a feed](/docs/security/threat-intelligence/) at any time.
+
+To check a specific indicator, ask Mobot directly. For example:
+
+* `Does this IP address match any threat intelligence feeds?`
+* `Check this file hash against threat intel`
+* `Is this domain a known indicator of compromise?`
 
 ### Example questions
 
@@ -263,7 +276,7 @@ Yes. An insight's **AI Verdict**, **Key Findings**, and **What Happened** summar
 
 ### Can the agent take containment actions on its own?
 
-Today, containment and remediation actions require a human to click **Execute Action** on a recommended playbook; see [AI Investigation tab](#ai-investigation-tab).
+No. The agent renders verdicts and findings to guide your investigation; it does not take remediation or containment actions itself.
 
 ## Additional resources
 
