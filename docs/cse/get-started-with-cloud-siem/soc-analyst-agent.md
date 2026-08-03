@@ -16,7 +16,7 @@ Sumo Logic's SOC Analyst Agent is an agentic AI tool that embeds reasoning and c
 Every verdict is evidence-backed and explainable. The agent shows the evidence it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith. It determines whether an insight is malicious, suspicious, or benign, provides a concise summary of the threat incident based on triggered signals, and presents key findings from the signals that fired, resulting in quicker, more detailed analysis.
 
 The SOC Analyst Agent performs three distinct jobs that mirror an analyst's daily responsibilities:
-* **Triage (auto-investigation)**. Automatically delivers evidence-backed verdicts on every insight as it comes in, determining whether it's malicious, suspicious, or benign, without requiring analyst action.
+* **Auto-investigation**. Automatically delivers evidence-backed verdicts on every insight as it comes in, determining whether it's malicious, suspicious, or benign, without requiring analyst action.
 * **Investigation (user-led)**. Supports analysts, in Mobot, with a hypothesis-driven approach to assess the scope, context, and likely impact of an event.
 * **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken, for consistent documentation across analysts and teams.
 
