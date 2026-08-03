@@ -1157,6 +1157,7 @@ module.exports = {
         'manage/security/data-access-level-shared-dashboards',
         'manage/security/enable-support-account',
         'manage/security/installation-tokens',
+        'manage/security/oauth',
         {
           type: 'category',
           label: 'SAML',
@@ -1240,6 +1241,7 @@ module.exports = {
           items: [
             'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
+            'alerts/monitors/create-monitor-with-mobot',
             'alerts/monitors/settings',
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-variables',
@@ -1482,7 +1484,16 @@ module.exports = {
         },
       ],
     },
-    'search/mobot',
+    {
+      type: 'category',
+      label: 'Mobot ✨',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'search/mobot/index'},
+      items: [
+          'search/mobot/example-prompts',
+      ],
+    },
     {
       type: 'category',
       label: 'Search Query Language',
