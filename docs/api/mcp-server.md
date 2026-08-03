@@ -178,6 +178,58 @@ Both require the **Sumo Logic Administrator role** to create the OAuth client an
 Recent VS Code releases do not work with explicit client credentials. Use the default CIMD setup above for VS Code.
 :::
 
+#### Connect through an AWS Bedrock AgentCore Gateway
+
+AWS Bedrock AgentCore Gateway lets you aggregate multiple MCP servers behind a single gateway endpoint. To add the Sumo Logic MCP server as a gateway target, use the [Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow) with a service account, rather than the Authorization Code flow used above for interactive clients.
+
+1. [Create a service account and Client Credentials OAuth client](/docs/manage/security/oauth#client-credentials-flow) for the gateway to authenticate with.
+1. Create an OAuth2 credential provider for the gateway, using your Sumo Logic OAuth client ID and secret:
+   ```bash
+   aws bedrock-agentcore-control create-oauth2-credential-provider \
+     --name "sumologic-oauth-provider" \
+     --credential-provider-vendor CustomOauth2 \
+     --oauth2-provider-config-input '{
+       "customOauth2ProviderConfig": {
+         "oauthDiscovery": {
+           "authorizationServerMetadata": {
+             "issuer": "<mcp-server-url>",
+             "tokenEndpoint": "<mcp-server-url>/oauth2/token"
+           }
+         },
+         "clientId": "<client-id>",
+         "clientSecret": "<client-secret>"
+       }
+     }'
+   ```
+   Replace `<mcp-server-url>` with your [Sumo Logic deployment's MCP server URL](#prerequisites) — the base deployment domain works, a customer-specific subdomain is not required. This flow doesn't use an authorization endpoint, so it's left out of the config above. Instead of specifying `tokenEndpoint` directly, you can point `oauthDiscovery` at your deployment's [OpenID Connect metadata endpoint](/docs/manage/security/oauth#metadata-endpoints); see the AWS `create-oauth2-credential-provider` reference for the exact discovery field name.
+1. Create the gateway target, pointing at the Sumo Logic MCP server and specifying the OAuth2 credential provider:
+   ```bash
+   aws bedrock-agentcore-control create-gateway-target \
+     --gateway-identifier "<your-gateway-id>" \
+     --name "SumoLogicMcpTarget" \
+     --target-configuration '{
+       "mcp": {
+         "mcpServer": {
+           "endpoint": "<mcp-server-url>/mcp"
+         }
+       }
+     }' \
+     --credential-provider-configurations '[{
+       "credentialProviderType": "OAUTH",
+       "credentialProvider": {
+         "oauthCredentialProvider": {
+           "providerArn": "<your-oauth2-credential-provider-arn>",
+           "scopes": [],
+           "grantType": "CLIENT_CREDENTIALS"
+         }
+       }
+     }]'
+   ```
+   :::note
+   The `grantType` field is required. Omitting it fails gateway target creation with an error resembling `Error parsing ClientCredentials response`.
+   :::
+1. Once the target status shows **Ready**, connect your MCP client to the gateway's endpoint instead of connecting directly to Sumo Logic.
+
 ## Available MCP tools
 
 Our MCP server provides access to Sumo Logic through these tool categories:
