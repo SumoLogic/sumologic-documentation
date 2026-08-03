@@ -31,6 +31,8 @@ To be able to see insights in child organizations, add child organizations that 
 
 As an MSSP administrator, you can manage feature availability for your child organizations directly from the Organizations UI. This allows you to opt in or opt out individual child organizations from specific Sumo Logic features without needing to contact Sumo Logic support.
 
+This includes the **AI features** toggle (Mobot, Parse Assist, and the SOC Analyst Agent) and the **MCP Server access** toggle — see [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning/#can-i-opt-out-of-ai-features). Unlike standalone orgs, MSSP parent orgs don't see these toggles on their own **Feature Management** page; manage them per child org here instead.
+
 Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
 
 - **Opt-in**. You can explicitly enable them for one or more child organizations.

@@ -55,9 +55,11 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [How does investigation rate limiting work?](#how-does-investigation-rate-limiting-work) for information about your organization's investigation capacity.
 
-To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
+To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**), available to any user with the Administrator role or the **Manage Organization Settings** permission. At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
 
-Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs. MSSP parent orgs do not see this toggle for their own org.
+Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
+
+MSSP parent orgs do not see this toggle on their own **Feature Management** page. Instead, MSSP parent admins manage AI features per child org from **Administration > Organizations > Manage Account** > select the child org > **Manage Features**, which requires the **Manage Organizations** permission. See [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#manage-features) for details. Support account users cannot manage child-org AI features from an MSSP parent org, even with the Administrator role.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
