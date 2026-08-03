@@ -45,7 +45,7 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 <Iframe url="https://fast.wistia.net/embed/iframe/3ppvthpmdd?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: SOC Analyst Agent"
+  title="Micro Lesson: Dojo AI SOC Analyst Agent"
   id="wistiaVideo"
   className="video-container"
   display="initial"
