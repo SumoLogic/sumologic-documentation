@@ -22,11 +22,11 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
     * [Query Language Basics Self-Paced](https://learn.sumologic.com/query-language-basics)
     * [Search Mastery Self-Paced](https://learn.sumologic.com/search-mastery-self-paced-course)
     * [Best Practices for Query Efficiency Workshop](https://learn.sumologic.com/path/sumo-onboarding/best-practices-for-query-efficiency)
-    * [Mobot Essentials Self Paced](https://learn.sumologic.com/mobot-101)
+    * [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai)
 * **Instructor-led virtual classes**:
     * [Certifications: Search Mastery](https://www.sumologic.com/learn/training?_certifications=search-mastery#section-2)
     * [Workshops: Best Practices for Query Efficiency](https://www.sumologic.com/learn/training?_workshops=best-practices-for-query-efficiency#section-2)
-    * [Workshops: Mobot Essentials](https://www.sumologic.com/learn/training?_workshops=mobot-essentials#section-2)
+    * [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2)
 :::
 
 :::tip
