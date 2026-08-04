@@ -62,7 +62,7 @@ Follow the steps below to create playbooks via Mobot:
 1. Review and approve the plan Mobot proposes, including the playbook name, trigger, steps, and flow between them.
 1. Once every step is confirmed, Mobot saves the playbook as a draft and posts a summary table of what was built (Step / Action / Details).
 1. To make changes, send a follow-up request describing the edit.<br/><img src={useBaseUrl('img/cse/edit-playbook.png')} style={{border:'1px solid gray'}} alt="edit-playbook" width="200"/><br/>Mobot returns an updated plan reflecting the new flow.
-1. Reply **yes it looks good** to approve, and Mobot rebuilds and resaves the playbook.
+1. Reply `Yes` (or similar) to approve, and Mobot rebuilds and resaves the playbook.
 1. Click any node on the canvas to verify the details Mobot filled in, such as the integration, resource, and field mappings pulled from the trigger payload.<br/><img src={useBaseUrl('img/cse/playbook-flow.png')} style={{border:'1px solid gray'}} alt="playbook-flow"/>
 1. Click **Publish** at the bottom of the editor to make the playbook available for use in automations.
 
