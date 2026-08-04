@@ -57,7 +57,7 @@ Follow the steps below to create playbooks via Mobot:
 1. Click the untitled playbook and rename it.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" />
 1. Enter a **Description** of the playbook to help others understand how to use it.
 1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
-1. In the chat box, describe the automation you want in plain language. For example, Create a playbook that creates tickets and sends notifications.<br/><img src={useBaseUrl('img/cse/prompt-for-mobot.png')} style={{border:'1px solid gray'}} alt="Mobot chatbox" />
+1. In the chat box, describe the automation you want in plain language. For example, `Create a playbook that creates tickets and sends notifications`.<br/><img src={useBaseUrl('img/cse/prompt-for-mobot.png')} style={{border:'1px solid gray'}} alt="Mobot chatbox" />
 1. Answer Mobot's clarifying questions. Mobot checks your org's available integrations, asks which ones you'd like to use, then walks through each action node one at a time to gather the configuration details it needs.
 1. Review and approve the plan Mobot proposes, including the playbook name, trigger, steps, and flow between them.
 1. Once every step is confirmed, Mobot saves the playbook as a draft and posts a summary table of what was built (Step / Action / Details).
