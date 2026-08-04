@@ -149,7 +149,11 @@ The dropdown only displays the time-interval which is greater than or equal to t
 
 ### Auto-refresh guardrails
 
-Two guardrails reduce unnecessary compute when a dashboard isn't actively being used or has a panel with a persistent query error. Both guardrails apply to private and public dashboards.
+Auto-refresh helps dashboards stay up to date by automatically rerunning panel queries at the interval you configure. However, continuously refreshing a dashboard that no one is viewing, or repeatedly retrying a query that keeps failing, consumes unnecessary compute resources without adding value.
+
+Sumo Logic's auto-refresh guardrails solve this by automatically pausing refresh activity when it is unlikely to help, while keeping dashboards quick to resume when needed.
+
+Two guardrails apply to both private and public dashboards:
 
 #### Hidden tab pause
 
