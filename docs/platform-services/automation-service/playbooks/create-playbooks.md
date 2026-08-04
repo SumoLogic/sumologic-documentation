@@ -26,12 +26,10 @@ The following procedure provides a brief introduction to how to create a playboo
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>Previously-created playbooks display.
-1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="400"/>
-1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
+1. Click the **+ Create Playbook** button.
+1. Click the untitled playbook and rename it.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" />
 1. Enter a **Description** of the playbook to help others understand how to use it.
-1. Click **Create**. The new playbook appears in the list of available playbooks.
-1. To configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/>
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
 1. The **Start** node displays a **+** icon and an **Edit** icon. Click the **Edit** icon.  <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/> <br/>The **Edit node** dialog appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/>
 1. Click the dropdown arrow on **Add one or more params as a playbook input** and select the kind of trigger that will execute the playbook:
     * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
@@ -45,6 +43,28 @@ The following procedure provides a brief introduction to how to create a playboo
 
 See [Add nodes to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-nodes-to-a-playbook) for next steps.
 
+### Create, edit, and modify playbooks using Mobot
+
+Mobot is the AI Playbook Assistant built into the Playbooks editor. Instead of manually wiring up nodes, you describe what you want in plain language, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you.
+
+#### Prerequisites
+
+Playbooks automate response actions for monitors, Cloud SIEM insights, entities, and Cloud SOAR incidents. Before building a new one, check whether an existing playbook (or one from App Central) already does what you need.
+
+Follow the steps below to create playbooks via Mobot:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>Previously-created playbooks display.
+1. Click the **+ Create Playbook** button.
+1. Click the untitled playbook and rename it.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" />
+1. Enter a **Description** of the playbook to help others understand how to use it.
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
+1. In the chat box, describe the automation you want in plain language. For example, Create a playbook that creates tickets and sends notifications.<br/><img src={useBaseUrl('img/cse/prompt-for-mobot.png')} style={{border:'1px solid gray'}} alt="Mobot chatbox" />
+1. Answer Mobot's clarifying questions. Mobot checks your org's available integrations, asks which ones you'd like to use, then walks through each action node one at a time to gather the configuration details it needs.
+1. Review and approve the plan Mobot proposes, including the playbook name, trigger, steps, and flow between them.
+1. Once every step is confirmed, Mobot saves the playbook as a draft and posts a summary table of what was built (Step / Action / Details).
+1. To make changes, send a follow-up request describing the edit.<br/><img src={useBaseUrl('img/cse/edit-playbook.png')} style={{border:'1px solid gray'}} alt="edit-playbook" width="200"/><br/>Mobot returns an updated plan reflecting the new flow.
+1. Reply **yes it looks good** to approve, and Mobot rebuilds and resaves the playbook.
+1. Click any node on the canvas to verify the details Mobot filled in, such as the integration, resource, and field mappings pulled from the trigger payload.<br/><img src={useBaseUrl('img/cse/playbook-flow.png')} style={{border:'1px solid gray'}} alt="playbook-flow"/>
+1. Click **Publish** at the bottom of the editor to make the playbook available for use in automations.
 
 ## Add nodes to a playbook
 
