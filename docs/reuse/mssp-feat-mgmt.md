@@ -1,0 +1,1 @@
+MSSP parent orgs don't see this toggle on their own **Feature Management** page. Manage it per child org instead. See [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#manage-features) for details.

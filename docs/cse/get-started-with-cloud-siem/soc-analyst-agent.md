@@ -8,6 +8,7 @@ description: Use Sumo Logic's SOC Analyst Agent to investigate Cloud SIEM insigh
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
+import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="Search icon" width="35"/>
 
@@ -64,7 +65,7 @@ To disable the SOC Analyst Agent for your entire organization, an administrator 
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
-MSSP parent orgs do not see this toggle on their own **Feature Management** page. Instead, MSSP parent admins manage AI features per child org from **Administration > Organizations > Manage Account** > select the child org > **Manage Features**, which requires the **Manage Organizations** permission. See [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#manage-features) for details. Support account users cannot manage child-org AI features from an MSSP parent org, even with the Administrator role.
+<MSSPfeatureMgmt/>
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
