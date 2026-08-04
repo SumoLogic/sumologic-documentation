@@ -63,24 +63,31 @@ After the stack is deleted, verify that your collector and sources are still pre
    - `cloudwatch-metrics`
    - `kinesis-firehose-cloudwatch-logs`
 
+:::warning
+For each S3-based source (`alb-logs`, `classic-lb-logs`, `cloudtrail-logs`), note the **S3 bucket name** configured on the source and verify it matches the bucket name shown in your v2.x CloudFormation stack parameters. If they differ, the source may be referencing a stale or incorrect bucket — deploying v3.0.0 with the wrong bucket name means no log data will be ingested.
+:::
+
 ## Step 4: Clean up Field Extraction Rules
 
-The v3.0.0 deployment creates the same 17 AWSO Field Extraction Rules as v2.x. If they already exist in your v2.x installation, the v3.0.0 deployment will fail due to a quota conflict. You must rename or delete them before deploying.
+The v3.0.0 deployment creates 17 new AWSO Field Extraction Rules. If they already exist from your v2.x installation, the v3.0.0 deployment will fail due to a quota conflict. You must rename or delete them before deploying.
+
+Additionally, v3.0.0 needs **17 free slots** in your FER quota. Check the quota indicator at the top of the Field Extraction Rules page before proceeding. If fewer than 17 slots are free, delete or consolidate unused rules.
 
 1. Navigate to **Manage Data > Logs > Field Extraction Rules**.
-2. Find all 17 AWSO rules (names beginning with `AwsObservability`).
-3. Rename each one (for example, prefix with `v2_backup_`) or delete them.
+2. Confirm you have at least 17 free quota slots available.
+3. Find all AWSO rules (names beginning with `AwsObservability`).
+4. Rename each one (for example, prefix with `v2_backup_`) or delete them.
 
 ## Step 5: Clean up Metric Rules
 
-The v3.0.0 deployment also creates 4 AWSO Metric Rules that may already exist from your v2.x install. Delete them before deploying:
+The v3.0.0 deployment creates 4 AWSO Metric Rules that may already exist from your v2.x install. Delete them before deploying:
 
 1. Go to **Manage Data > Metrics > Metric Rules**.
-2. Delete the following rules:
-   - `AwsObservabilityRDSClusterMetricsEntityRule`
-   - `AwsObservabilityRDSInstanceMetricsEntityRule`
-   - `AwsObservabilityNLBMetricsEntityRule`
-   - `AwsObservabilityApiGatewayApiNameMetricsEntityRule`
+2. Delete any of the following rules that exist (v2.x and v3.0.0 may use different names):
+   - `AwsObservabilityRDSClusterMetricsRule` or `AwsObservabilityRDSClusterMetricsEntityRule`
+   - `AwsObservabilityRDSInstanceMetricsRule` or `AwsObservabilityRDSInstanceMetricsEntityRule`
+   - `AwsObservabilityNLBMetricsRule` or `AwsObservabilityNLBMetricsEntityRule`
+   - `AwsObservabilityAPIGatewayMetricsRule` or `AwsObservabilityApiGatewayApiNameMetricsEntityRule`
 
 ## Step 6: Deploy v3.0.0
 
@@ -175,17 +182,32 @@ For each S3-based source on your collector (`alb-logs`, `classic-lb-logs`, `clou
 
 ## Step 8: Verify the migration
 
-1. Go to **Manage Data > Collection > Collection** and confirm all 5 sources show a green status.
+1. Go to **Manage Data > Collection > Collection** and confirm all sources show a green status.
 2. Check that logs and metrics are flowing into Sumo Logic by running a search:
    - `_sourceCategory=aws/observability/cloudtrail/logs`
    - `_sourceCategory=aws/observability/cloudwatch/metrics`
+
+### Additional checks
+
+**S3 bucket policies** — verify each log bucket grants the required service principals:
+- CloudTrail bucket must allow `cloudtrail.amazonaws.com` to write.
+- ALB and ELB buckets must allow `delivery.logs.amazonaws.com` to write.
+
+The v3.0.0 stack only creates a bucket policy when it creates a new bucket. Since migration reuses existing buckets, the policy must already exist. If log delivery is silently failing, check the bucket policy in **AWS Console > S3 > your bucket > Permissions > Bucket policy**.
+
+**CloudTrail trail** — the `Aws-Observability-*` trail created by v2.x is deleted with the old stack. v3.0.0 does not recreate a trail when reusing an existing bucket. If no active trail is writing to your CloudTrail bucket, create one manually from **AWS Console > CloudTrail > Trails**.
+
+**S3 bucket notifications** — the SNS topic that notifies Sumo Logic of new S3 objects is also deleted with the v2.x stack. If your S3 sources stop receiving new events, check the bucket notification configuration in **AWS Console > S3 > your bucket > Properties > Event notifications** and verify the SNS topic exists. If the topic was deleted, you will need to create a new one, subscribe the Sumo Logic source endpoint to it, and update the bucket notification configuration.
 
 ## Troubleshooting
 
 | Issue | Cause | Resolution |
 |:--|:--|:--|
-| Stack deletion stuck in `DELETE_FAILED` | S3 bucket is non-empty and cannot be deleted by CloudFormation | Use **Force delete** on the stack — the bucket will be preserved. |
+| Stack deletion stuck in `DELETE_FAILED` | S3 bucket is non-empty and cannot be deleted by CloudFormation | Use **Force delete** on the stack — the bucket will be preserved. This is expected when the bucket contains existing log data. |
 | v3.0.0 deploy fails with `fer:invalid_extraction_rule` | AWSO Field Extraction Rules from v2.x still exist | Complete [Step 4](#step-4-clean-up-field-extraction-rules) and retry. |
-| v3.0.0 deploy fails with `metrics:rule_already_exists` | AWSO Metric Rules from v2.x still exist | Complete [Step 5](#step-5-clean-up-metric-rules) and retry. |
+| v3.0.0 deploy fails due to FER quota limit | Fewer than 17 free FER slots available | Delete or consolidate unused Field Extraction Rules until 17 slots are free, then retry. |
+| v3.0.0 deploy fails with `metrics:rule_already_exists` | AWSO Metric Rules from v2.x still exist | Complete [Step 5](#step-5-clean-up-metric-rules) and retry. Note that v2.x metric rule names differ from v3.0.0 — check both name variants listed in Step 5. |
 | Sources show errors after migration | Sources still reference the old deleted IAM role ARN | Complete [Step 7](#step-7-update-source-iam-role-arns). |
 | Collector or sources not found after stack deletion | `RemoveOnDeleteStack` was `true` when the stack was deleted | Resources cannot be recovered — redeploy v3.0.0 with fresh sources. |
+| S3 sources not receiving new log data | Bucket policy missing required service principal, or SNS notification topic was deleted with the v2.x stack | Check the bucket policy and S3 event notification configuration as described in [Step 8](#step-8-verify-the-migration). |
+| No CloudTrail data after migration | The v2.x `Aws-Observability-*` trail was deleted with the old stack | Create a new CloudTrail trail pointing at the same S3 bucket from **AWS Console > CloudTrail > Trails**. |
