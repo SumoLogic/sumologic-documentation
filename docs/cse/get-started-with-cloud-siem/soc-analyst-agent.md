@@ -8,6 +8,7 @@ description: Use Sumo Logic's SOC Analyst Agent to investigate Cloud SIEM insigh
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
+import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="Search icon" width="35"/>
 
@@ -60,9 +61,11 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [How does investigation rate limiting work?](#how-does-investigation-rate-limiting-work) for information about your organization's investigation capacity.
 
-To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
+To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**), available to any user with the Administrator role or the **Manage Organization Settings** permission. At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
 
-Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs. MSSP parent orgs do not see this toggle for their own org.
+Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
+
+<MSSPfeatureMgmt/>
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
