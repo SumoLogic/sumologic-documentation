@@ -144,9 +144,8 @@ If the source returns the following error:
 ```
 
 This error can occur due to the following reasons:
-
-1. **Invalid or incorrect API key**. Verify that the API key configured for the source is correct and valid.
-2. **Valid API key, error persists**. If the API key is confirmed valid but the error still occurs, past investigations have traced this to an issue on the Anthropic endpoint side. In this case:
+- **Invalid or incorrect API key**. Verify that the API key configured for the source is correct and valid.
+- **Valid API key, error persists**. If the API key is confirmed valid but the error still occurs, past investigations have traced this to an issue on the Anthropic endpoint side. In this case:
    - Restart the source and confirm whether it resumes working as expected.
    - If the error still persists after restarting, contact the Anthropic support team regarding this issue.
 
