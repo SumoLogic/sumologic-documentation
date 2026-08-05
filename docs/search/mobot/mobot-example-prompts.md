@@ -29,6 +29,7 @@ Keyword searches are case-sensitive.
 * `Look into any unusual login attempts from yesterday.`
 * `Are there any signs of data exfiltration in our environment today?`
 * `Have any IP addresses or domains in my logs been flagged by threat intelligence?`
+* `Check this file hash against threat intel`
 * `Count logs by action and sort the results.`
    * Follow up with `Filter results where action contains Malicious.`
 * `Count logs by action, URL, and user.`

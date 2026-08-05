@@ -17,14 +17,12 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](#improve-investigations-with-the-sumo-investigator-skill)), while [Mobot](/docs/search/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
 :::
 
-<!-- Uncomment Aug 3
 :::training Sumo Logic Academy
 
 <SumoAcademy/>
 
 * **Self-paced**. [Extending Sumo Logic with MCP, API and Terraform](https://learn.sumologic.com/extending-sumo-logic-with-mcp-api-terraform).
 :::
--->
 
 ## Prerequisites
 
@@ -54,20 +52,10 @@ The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps
 
 [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth).
 
+The MCP server also works behind gateway aggregators, such as AWS Bedrock AgentCore Gateway, that connect to multiple MCP servers through a single endpoint. Configure the gateway's OAuth client using the [Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow). If the gateway target fails with an error resembling `Error parsing ClientCredentials response`, check that its credential provider config explicitly sets `grantType: CLIENT_CREDENTIALS`.
+
 For client compatibility questions, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
 
-## Enable or disable the MCP server
-
-MCP server access is enabled by default. An administrator can turn it on or off for your entire organization.
-
-1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
-1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
-
-Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
-
-Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
-
-<!--
 :::training Micro Lesson
 
 Watch this micro lesson to learn how to connect an MCP-compatible AI client, such as Claude Code or GitHub Copilot, to Sumo Logic — bringing Sumo Logic data and functionality into your AI-driven tools to support agentic AI workflows for your organization.
@@ -85,7 +73,17 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 />
 
 :::
--->
+
+## Enable or disable the MCP server
+
+MCP server access is enabled by default. An administrator can turn it on or off for your entire organization.
+
+1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
+1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+
+Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
+
+Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
 
 ## Configure in Claude Code CLI
 

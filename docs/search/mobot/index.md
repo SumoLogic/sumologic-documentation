@@ -54,9 +54,7 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 
 <SumoAcademy/>
 
-<!--
 * **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
--->
 * **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 :::
 
@@ -300,28 +298,9 @@ Beyond analyzing logs, Mobot can create, edit, and summarize Sumo Logic content 
 
 ### Conversational Monitors
 
-Create log-based [monitors](/docs/alerts/monitors) by describing your alerting goal in plain language, instead of writing queries, calculating thresholds, and configuring notifications by hand.
+Create and update log-based [monitors](/docs/alerts/monitors) from plain-language prompts, instead of writing queries and configuring thresholds by hand. Mobot supports static, anomaly, and outlier detection for logs monitors only — not metrics or SLO monitors — and keeps a human in the loop: no monitor goes live until you confirm it.
 
-You can start from any of the following:
-
-- **A query**. Paste a log search query, and Mobot recommends threshold bounds, alert severities, and a name.
-- **An intent**. Describe what you want to watch (for example, `Watch my checkout latency`), and Mobot builds the underlying query and selects the monitor structure for you.
-- **Full parameters**. List every parameter explicitly, and Mobot validates the configuration for deployment.
-
-Mobot uses your historical data to recommend defaults, and you can change any of them inline before you confirm (for example, `Change the threshold to 10%`):
-
-- **Detection method**. Static or anomaly detection, based on how much your data varies.
-- **Time window and trigger**. A rolling time window with a trigger condition.
-- **Alert routing**. Webhook connections such as Slack or PagerDuty, or email notifications.
-- **Metadata**. A title, labels, folder location, and description.
-
-No monitor goes live until you confirm it. Reply `Yes` or `Proceed` to deploy.
-
-Known limitations:
-
-- You create monitors from the Mobot interface. Creating them from within the Monitors page is not supported.
-- Only log-based monitors are supported. Metric- and SLO-based monitors are not.
-- You can update a monitor within the same conversation where you created it. You cannot use Mobot to update monitors from other conversations or to disable or delete a monitor. Manage those from the **Monitors** tab.
+For the full walkthrough, including example prompts, known limitations, and FAQ, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
 <!-- Uncomment once Conversational Dashboards GAs
 ### Conversational Dashboards
@@ -661,11 +640,6 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 ## Additional resources
 
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
-* [Hands on with Mobot and Dojo AI - Self Paced Training](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 * [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.
-
-<!-- uncomment Aug 3 and remove '* [Mobot Essentials Self Paced Course](https://learn.sumologic.com/mobot-101).' above
-
-* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
--->

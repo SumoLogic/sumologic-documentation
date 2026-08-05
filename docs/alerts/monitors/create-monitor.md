@@ -21,6 +21,10 @@ You can use Terraform to manage monitors with the [`sumologic_monitor`](https://
 <TerraformLink/>
 :::
 
+:::tip
+You can also create logs monitors from plain-language prompts with Mobot. For details, see [Create Monitors with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
+:::
+
 ## Open the New Monitor window
 
 There are several ways to create a new monitor, depending on where you are in Sumo Logic.
@@ -476,3 +480,7 @@ Optionally, you can add [**Tags**](/docs/alerts/monitors/settings#tags) to organ
 ### Using Terraform
 
 You can configure Sumo Logic monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+
+### Using Mobot
+
+You can also create and update logs monitors from plain-language prompts using [Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
