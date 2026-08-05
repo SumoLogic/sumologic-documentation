@@ -52,6 +52,8 @@ The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps
 
 [CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth).
 
+The MCP server also works behind gateway aggregators, such as AWS Bedrock AgentCore Gateway, that connect to multiple MCP servers through a single endpoint. Configure the gateway's OAuth client using the [Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow). If the gateway target fails with an error resembling `Error parsing ClientCredentials response`, check that its credential provider config explicitly sets `grantType: CLIENT_CREDENTIALS`.
+
 For client compatibility questions, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
 
 :::training Micro Lesson
