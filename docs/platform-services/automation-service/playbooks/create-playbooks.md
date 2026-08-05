@@ -373,11 +373,7 @@ Many integrations offer scheduled actions. Here are just a few:
 
 ### Autosave
 
-Every time you edit a playbook draft, the draft is automatically saved, and the following notification briefly appears in the lower right corner of the playbook screen:<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} width="200"/>
-
-When the automatic save is complete, the following notification lets you know.<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-2.png')} alt="Playbook autosave complete" style={{border:'1px solid gray'}} width="200"/>
-
-Autosave is always on for all playbooks and cannot be disabled.
+Every time you create or edit a playbook, the changes in the playbook are saved automatically and the following notification appears on the playbook screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} />
 
 ### Versions
 
