@@ -15,7 +15,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 ## Prerequisites
 
-* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) for CloudFormation Template.
+* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation) for CloudFormation Template.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * [**Role capabilities**](/docs/manage/users-roles/roles/role-capabilities/). Make sure you have a Sumo Logic role that have the following capabilities:
   * Manage Field Extraction Rules
@@ -37,7 +37,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
   For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
   :::
 * **[Disabled allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/) for login and APIs**. During the installation/upgrade of the AWSO solution, the allowlist for login and APIs must remain disabled because the solution creates Lambda functions that uses AWS-managed public network infrastructure. When this Lambda makes outbound calls (such as to Sumo Logic APIs), the traffic is routed through AWS public IP address ranges, which are dynamic and cannot be fixed or predicted.
-* The AWS Observability solution comes with [pre-packaged alerts](/docs/observability/aws/deploy-use-aws-observability/configure-alerts/) in the form of Sumo Logic Monitors. To understand more about their capabilities, please visit the [Monitors page](/docs/alerts/monitors/).
+* The AWS Observability solution comes with [pre-packaged alerts](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/configure-alerts/) in the form of Sumo Logic Monitors. To understand more about their capabilities, please visit the [Monitors page](/docs/alerts/monitors/).
 * **AWS credentials**. To deploy the solution, you will need to log onto the AWS Console. For the CloudFormation template deployment option, your AWS role must have the permissions described by this [JSON file](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/AWSObservabilityCFTemplatePermissions.json). As necessary, you may add JSON text to an existing or a new policy associated with an AWS IAM role as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html). For Terraform deployment options, see the \*.tmpl files in this folder [aws-observability-terraform/source-module/templates/](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform/source-module/templates).
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and configure the AWS CLI as described in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) if you would like to use an AWS profile for Terraform script based deployment.
 * For AWS services exporting to CloudWatch Logs, make sure logs are exported to log groups:
@@ -52,15 +52,17 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 You can deploy AWS Observability to a single AWS account and region, or to all of your accounts in all regions. We provide instructions for both alternatives. 
 
-Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment. 
+Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v3.0.0) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment. 
 
 You have two options for deploying:
 
-* Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation)
+* Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation)
 * Deploy using a [Terraform Script](deploy-with-terraform.md)
 
 The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Asia Pacific (Hong Kong)
+* Asia Pacific (Melbourne)
+* Asia Pacific (New Zealand)
 * Asia Pacific (Tokyo)
 * Asia Pacific (Seoul)
 * Asia Pacific (Singapore)
@@ -71,6 +73,7 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Europe (Ireland)
 * Europe (London)
 * Europe (Paris)
+* Europe (Zurich)
 * Middle East (Bahrain)
 * South America (São Paulo)
 * US East (N. Virginia)
@@ -117,31 +120,33 @@ This integration is supported only via AWS CloudFormation.
 
 If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/scripts/DeployTemplate), as an example. 
 
-### Configure Host Metrics sources 
+### Configure Host Metrics sources  
 
-Follow the instructions in this section to configure an Sumo Logic Installed Collector and a Host Metrics Source on each of your AWS EC2 hosts. You will assign `account` and `Namespace` metadata fields to the sources so that incoming logs and metrics will be appropriately tagged.
+Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your **AWS EC2** hosts. You will assign **account** and **namespace** metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
 
 :::note
 This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
 :::
 
-Perform these steps for each EC2 host.
+Perform these steps for each EC2 host:
 
-1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors/).
-1. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/#manuallyconfigure-a-host-metrics-source). 
-1. In the **Fields** portion of the configuration:
-   1. Add a field named `account`, and set it to your AWS account alias.
-   1. Add a field `Namespace` named and set it to `AWS/EC2`. 
-   1. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute. 
-    :::note
-     A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
-     :::
+1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors).
+2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source). In the **Fields** portion of the configuration:
+   * Add a field named **account**, and set it to your AWS account alias.
+   * Add a field named **namespace** and set it to **aws/ec2**.
 
-To automate the above, see [Add Fields to Existing Host Metrics Sources](../other-configurations-tools/add-fields-to-existing-host-metrics-sources.md). 
+<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="Configure metadata" style={{border: '1px solid gray'}} width="500" />
 
-Going forward, you can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic).
+3. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
 
-Here’s a sample `sources.json` file that you can include in your AMI.
+:::note
+A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
+:::
+
+You can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic). Here's a sample sources.json file that you can include in your AMI.
+
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -185,6 +190,12 @@ Here’s a sample `sources.json` file that you can include in your AMI.
   }
 }
 ```
+</details>
+
+#### AWS metadata
+
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
+
 
 ## Verify AWS and Sumo Logic Permissions
 

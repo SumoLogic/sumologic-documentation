@@ -47,7 +47,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Amazon Web Services | [AWS Elastic Load Balancing](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source/) | &#10003; | &#10003; |
 | Collection - Amazon Web Services | [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) | &#10003; | &#10003; |
 | Collection - Amazon Web Services | [AWS Kinesis Firehose for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) | &#10003; | &#10003; |
-| Collection - Amazon Web Services | [AWS Inventory](/docs/observability/aws/deploy-use-aws-observability/resources/) | &#10003; | |
+| Collection - Amazon Web Services | [AWS Inventory](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/resources/) | &#10003; | |
 | Collection - Amazon Web Services | [AWS Metadata](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/) | &#10003; | &#10003; |
 | Collection - Amazon Web Services | [CSE AWS EC2 Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source/) | &#10003; | |
 | Collection - Archive | [AWS S3 archive](/docs/manage/data-archiving/archive) | &#10003; | &#10003; |
