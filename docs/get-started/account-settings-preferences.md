@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User Permissions icon" width="50"/>
 
-You can review and update your personal account settings and login credentials at any time from your user menu, which includes **Notifications** and three settings tabs: **Preferences**, **Personal Access Keys**, and **Personal Authorized Apps**. Settings on all three tabs apply only to your account and do not affect other users in your organization.
+You can review and update your personal account settings and login credentials at any time from your user menu's three settings tabs: **Preferences**, **Personal Access Keys**, and **Personal Authorized Apps**. Settings on all three tabs apply only to your account and do not affect other users in your organization.
 
 ## Accessing your account settings
 
@@ -126,7 +126,7 @@ After making any changes, click **Save**.
 
 Click any of the following checkboxes to enable your desired preferences:
 
-* **Enable ingestion throttling notifications (Admin only)**. Only users with Administrator access can enable this option. Select this to be notified when your organization's logs, metrics, or traces ingestion is throttled. See [Ingestion - Throttling Limits](/docs/manage/manage-subscription/organization-usage-limits/#ingestion---throttling-limits) for details on baseline and throttling limits.
+* **Enable ingestion throttling notifications**. Only users with Administrator access can enable this option. Select this to be notified when your organization's logs, metrics, or traces ingestion is throttled. See [Ingestion - Throttling Limits](/docs/manage/manage-subscription/organization-usage-limits/#ingestion---throttling-limits) for details on baseline and throttling limits.
 * **Display alert badge when my subscribed monitors are triggered**. Select this option to display a badge icon in the UI when you receive an alert for a monitor you're subscribed to.
 * **Notify about only subscribed monitors**. Select this option to receive notifications only for monitors you're subscribed to.
 * **Enable "Active alerts only" as default filter**. By default, your alerts list only displays alerts with an active status. Alerts with a resolved status are excluded.<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="Alert preferences" style={{border: '1px solid gray'}} width="500" />
