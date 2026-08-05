@@ -30,7 +30,7 @@ For example, a normalized threat rule that looks for intrusions would work with 
 * IPS/IDS Appliances
 * Microsoft Graph Security API
 
-Ordinarily, rules define the log messages they’ll be applied to by specifying `metadata_vendor` and `metadata_product `in the rule expression. A normalized rule doesn’t specify these attributes. Instead, it looks at another attribute that is set during the log mapping process: `threat_ruleType`. In the log mapping process for a message type, the value of `threat_ruleType` is set  to a value that corresponds to a threat type, for example “intrusion”. Then, normalized threat rules can look for messages whose `threat_ruleType` field is “intrusion”, regardless of vendor or product. For information about mapping requirements for messages that describe security events, see [Field Mapping for Security Event Sources](/docs/cse/schema/field-mapping-security-event-sources).
+Ordinarily, rules define the log messages they’ll be applied to by specifying `metadata_vendor` and `metadata_product `in the rule expression. A normalized rule doesn’t specify these attributes. Instead, it looks at another attribute that is set during the log mapping process: `threat_ruleType`. In the log mapping process for a message type, the value of `threat_ruleType` is set  to a value that corresponds to a threat type, for example “intrusion”. Then, normalized threat rules can look for messages whose `threat_ruleType` field is “intrusion”, regardless of vendor or product. For the full list of values, see [Types of normalized threat rules](#types-of-normalized-threat-rules). For information about mapping requirements for messages that describe security events, see [Field Mapping for Security Event Sources](/docs/cse/schema/field-mapping-security-event-sources).
 
 
 ## Types of normalized threat rules 
@@ -99,6 +99,44 @@ Log sources that issue behavior-related messages include:
 * Varonis UBA
 * G Suite Alert Center    
 
+Out-of-the-box log mappings for behavior-based detections are being migrated to six more granular classes. See [Behavioral detection classes](#behavioral-detection-classes). After migration, `direct` is retained for out-of-the-box mappings from generic sources that can't be assigned to a single class, such as the Microsoft Graph Security API catch-all mappings.
+
 Cloud SIEM provides the following normalized direct rule:
 
-* [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) - Passes through an alert from an endpoint security product and adjusts the severity accordingly based on the severity provided in the log.
+* [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) - Passes through an alert from a security product and adjusts the severity accordingly based on the severity provided in the log.
+
+### Behavioral detection classes
+
+Cloud SIEM divides behavior-based detections into six classes, each with its own normalized rule, class-specific entity selectors, and summary expression. These classes give you more granular categories for tuning and more context from the underlying alert than the single [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) passthrough rule provides. All six rules pass through the [normalizedSeverity](/docs/cse/schema/schema-attributes) value from the log.
+
+| `threat_ruleType` | Rule | Primary asset field | Out-of-the-box mapping migration |
+|---|---|---|---|
+| `runtime` | [Normalized Runtime Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01159.md) | `device_hostname` | Completed August 4, 2026 |
+| `identity` | [Normalized Identity Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01161.md) | `user_username` | Completed August 4, 2026 |
+| `network` | [Normalized Network Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01162.md) | `srcDevice_hostname` | Target: August 13, 2026 |
+| `data_protection` | [Normalized Data Protection Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01163.md) | `resource` | Target: August 13, 2026 |
+| `cloud` | [Normalized Cloud Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01160.md) | `resource` | Target: August 27, 2026 |
+| `endpoint` | [Normalized Endpoint Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01158.md) | `device_hostname` | Target: August 27, 2026 |
+
+:::note
+All six rules are available now, but out-of-the-box log mappings are migrating in phases. The `runtime` and `identity` mappings have migrated. The remaining dates in the table are targets and may shift. For the actual dates that out-of-the-box mappings migrate, monitor the [Cloud SIEM content release notes](/release-notes-cse/). Until a source's out-of-the-box mappings are migrated, its records keep a `threat_ruleType` of `direct` and continue to fire [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md).
+
+This migration changes only out-of-the-box log mappings. Your own log mappings aren't affected, and they keep whatever `threat_ruleType` value you set. To send records from your own mappings to one of the new rules, set `threat_ruleType` to that class.
+:::
+
+Classes are assigned per log mapping, not per vendor, so a single security product can contribute to several classes. For example, out-of-the-box CrowdStrike log mappings are assigned to `endpoint`, `identity`, `network`, and `data_protection`.
+
+* **runtime**. Container and cloud-native runtime detections from workload security agents: Falco, Sysdig Secure, Twistlock (Prisma Cloud Compute), and Aqua Security.
+* **identity**. Identity and access anomaly detections, such as risky sign-ins, impossible travel, and compromised credentials: Azure AD Identity Protection, Microsoft ATA, Microsoft Graph Identity API, MCAS/Defender for Cloud Apps, Google Workspace Alert Center, Slack Enterprise, Okta, DocuSign Monitor, Exabeam, Salesforce, Box, and CrowdStrike Identity Protection.
+* **network**. Network-layer, NDR, and WAF detections, such as IDS/IPS alerts, command-and-control callbacks, and lateral movement indicators: Kemp LoadMaster WAF, Palo Alto Firewall, FortiGate, FireEye NX/CMS, Vectra AI, Claroty xDome, Darktrace, AlphaSOC, CrowdStrike FDR, Bitdefender, and Trend Micro.
+* **data_protection**. DLP, email security, deception, and application security detections: Egnyte DLP, Varonis, Netskope, Akamai CPC, Noname API Security, Check Point Avanan, Proofpoint TRAP, Mimecast, Thinkst Canary, Contrast ADR, Qualys, IBM Guardium, Office 365 DLP, CrowdStrike DataProtection, Fortinet, and Google Workspace.
+* **cloud**. Cloud posture, cloud threat, and cloud infrastructure detections: AWS GuardDuty, AWS Security Hub, Google Cloud SCC, GCP IDS, Orca Security, Wiz, Palo Alto Prisma Cloud, and Azure.
+* **endpoint**. EDR and EPP behavioral detections from host-based security agents: CrowdStrike Falcon, SentinelOne, Carbon Black, Cylance, Cisco AMP, Cybereason, Endgame, Jamf Protect, Malwarebytes, McAfee, Palo Alto Cortex XDR, Sophos, Tanium, Trend Micro, Windows Defender, FireEye HX, Azure Defender for Endpoint, Google Workspace, and Bitdefender.
+
+#### Migrate custom content
+
+Custom content that depends on [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) won't apply to records once their out-of-the-box mappings are migrated. For sources that haven't migrated yet, make these updates before their target date:
+
+* Re-scope any [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions) on `MATCH-S00402` to the new rule IDs for those sources.
+* Update any [custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight) that reference `MATCH-S00402`.
+* Update saved searches, dashboards, or automations that filter on `threat_ruleType = 'direct'`.
