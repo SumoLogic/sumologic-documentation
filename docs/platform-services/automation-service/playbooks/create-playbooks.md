@@ -400,7 +400,7 @@ When enabling or disabling playbooks, keep in mind:
 
 ### How to enable or disable a playbook
 
-You can enable or disable a playbook in the playbook details page.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} />
+You can enable or disable a playbook in the playbook details page<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} />
 or while editing the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/disable-playbook.png')} alt="Playbook disable" style={{border:'1px solid gray'}} width="400" />
 
 The **Status** column shows whether a playbook is Published or in draft.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-status.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} /> 
