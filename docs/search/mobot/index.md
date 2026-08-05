@@ -629,9 +629,11 @@ An administrator can turn Mobot off for your entire organization from the **Feat
 
 At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
 
-Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs. MSSP parent orgs do not see this toggle for their own org.
+Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs. MSSP parent orgs do not see this toggle for their own org; manage it per child org from [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-orgs-for-mssps/#manage-features) instead.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+
+You can also opt out of Mobot for your own organization from **Administration > Organizations > Manage Account**; see [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features).
 
 If you previously opted out of Mobot, you'll need to opt back in from this page to regain access at GA, or contact your account team. Trial accounts do not have Mobot enabled by default.
 
