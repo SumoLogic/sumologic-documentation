@@ -8,6 +8,7 @@ description: Connect your AI tools to Sumo Logic via MCP to query logs, manage i
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SumoAcademy from '../reuse/sumo-logic-academy.md';
 import Iframe from 'react-iframe';
+import MSSPfeatureMgmt from '../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="45"/>
 
@@ -80,6 +81,8 @@ MCP server access is enabled by default. An administrator can turn it on or off 
 
 1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
 1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+
+<MSSPfeatureMgmt/>
 
 Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
 
