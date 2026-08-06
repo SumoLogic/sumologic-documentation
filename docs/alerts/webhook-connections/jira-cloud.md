@@ -83,7 +83,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 ## Known limitations
 
-The Jira Cloud issue description field has a hard limit of 32,767 characters, enforced at the database level. If a payload variable such as `{{ResultsJson}}` pushes the **Issue Description** past this limit, Jira Cloud returns a `400 Bad Request` error and the issue is not created. To avoid this, reference individual result fields (for example, `{{ResultsJson.fieldname}}`) instead of the full `{{ResultsJson}}` object, or otherwise keep the payload within the limit.
+The Jira Cloud issue description field has a hard limit of 32,767 characters. If a payload variable such as `{{ResultsJson}}` pushes the **Issue Description** past this limit, Jira Cloud truncates the description with "…" and creates the issue with the truncated content. To retain the full data, reference individual result fields (for example, `{{ResultsJson.fieldname}}`) instead of the full `{{ResultsJson}}` object, or otherwise keep the payload within the limit.
 
 ## Create a Scheduled Search
 

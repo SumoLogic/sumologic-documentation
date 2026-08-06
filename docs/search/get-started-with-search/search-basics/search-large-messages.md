@@ -33,7 +33,7 @@ Keep the following limitations in mind when you work with messages larger than 6
 These features process large messages differently within Sumo Logic itself:
 
 - **LogCompare and LogReduce**. These operators truncate raw 256KB messages to 64KB before matching and grouping the logs into signatures, so content beyond 64KB is not considered. This can also affect response time when you run them against large messages. Learn more in [LogReduce](/docs/search/behavior-insights/logreduce/) and [LogCompare](/docs/search/behavior-insights/logcompare/).
-- **Log Search messages table**. The messages table displays up to 64KB of a message, even after you expand it. To view a complete message larger than 64KB, use the [Log Message Inspector](/docs/search/get-started-with-search/search-page/log-message-inspector).
+- **Log Search messages table**. The messages table displays up to 25,000 characters of a message, even after you expand it. If a message larger than 25,000 characters contains JSON values as strings, those values are not rendered as JSON fields by default in the table. To view a complete message, or to view large JSON values as structured JSON, use the [Log Message Inspector](/docs/search/get-started-with-search/search-page/log-message-inspector).
 - **Cloud SIEM**. Parsing and mapping might not process messages larger than 64KB correctly.
 - **Field Extraction Rules**. The cumulative size of all fields extracted by a rule for a message is limited to 64KB, regardless of the message size. Learn more in [Field Extraction Rule limitations](/docs/manage/field-extractions/create-field-extraction-rule/#limitations).
 
@@ -42,4 +42,4 @@ These features process large messages differently within Sumo Logic itself:
 Alert notifications sent to these tools can also be affected by character limits that are fixed by the tool itself, independent of Sumo Logic's message size. Larger messages make these limits more likely to be reached:
 
 - **Slack webhook connections**. Slack has a hard limit of 40,000 characters per message. Content beyond this limit, such as a large `{{ResultsJson}}` value, is truncated with "…" in the notification. Learn more in [Known limitations](/docs/alerts/webhook-connections/slack/#known-limitations).
-- **Jira Cloud webhook connections**. The Jira Cloud issue description field has a hard limit of 32,767 characters. A payload variable such as `{{ResultsJson}}` that exceeds this limit returns a `400 Bad Request` error. Learn more in [Known limitations](/docs/alerts/webhook-connections/jira-cloud/#known-limitations).
+- **Jira Cloud webhook connections**. The Jira Cloud issue description field has a hard limit of 32,767 characters. Content beyond this limit, such as a large `{{ResultsJson}}` value, is truncated with "…" and the issue is still created. Learn more in [Known limitations](/docs/alerts/webhook-connections/jira-cloud/#known-limitations).
