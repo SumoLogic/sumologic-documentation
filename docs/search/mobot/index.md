@@ -303,10 +303,9 @@ Create and update log-based [monitors](/docs/alerts/monitors) from plain-languag
 
 For the full walkthrough, including example prompts, known limitations, and FAQ, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
-<!-- Uncomment once Conversational Dashboards GAs
 ### Conversational Dashboards
 
-Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel.
+Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel. For the full walkthrough, including supported visualization types and current limitations, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 
 Mobot also helps you read a dashboard you already have open:
 
@@ -321,7 +320,6 @@ Known limitations:
 - Analysis is scoped to the dashboard you have open. Mobot cannot correlate data across separate dashboards.
 - Follow-up context is kept only within the current session.
 - Mobot selects the panel type automatically. Fine-tuned visual adjustments are done manually.
--->
 
 <!-- Uncomment once Conversational Playbooks GAs
 ### Conversational Playbooks
