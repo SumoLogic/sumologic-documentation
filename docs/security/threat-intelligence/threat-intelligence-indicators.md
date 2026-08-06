@@ -28,7 +28,7 @@ To access Threat Intelligence in Sumo Logic,
 :::note
 * The `SumoLogic_ThreatIntel` and `_sumo_global_feed_cs` sources are default sources and cannot be changed or deleted.
 * The default storage limit is 10 million total indicators (not including any indicators provided by Sumo Logic such as in the `SumoLogic_ThreatIntel` and `_sumo_global_feed_cs` sources).
-* By default the page only displays active indicators. Expired ones are hidden unless you explicitly request them.
+* By default the page only displays active indicators.
 :::
 
 ## Add a source
