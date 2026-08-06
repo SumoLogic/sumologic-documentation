@@ -14,7 +14,7 @@ Threat intelligence, often abbreviated as *threat intel*, is information that he
 Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
 
 :::note
-Only active indicators are available for search and enrichment. Expired ones are hidden unless you explicitly request them.
+Only active indicators are available for search and enrichment.
 :::
 
 :::tip
