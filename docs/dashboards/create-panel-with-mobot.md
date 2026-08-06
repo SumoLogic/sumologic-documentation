@@ -10,8 +10,6 @@ keywords:
   - dojo ai
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 You can create dashboard panels directly from plain-language prompts in [Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant, instead of configuring panels manually. Type a description of the panel you want into Mobot, and it finds a relevant data source, drafts the query, picks a visualization type, and adds the panel to a new or existing dashboard after you confirm.
 
 Mobot supports logs panels only, not metrics panels, and can create multiple panels from a single prompt. It creates new panels only; it cannot update an existing panel.
