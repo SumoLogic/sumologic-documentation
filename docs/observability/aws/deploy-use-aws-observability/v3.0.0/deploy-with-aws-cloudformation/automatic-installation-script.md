@@ -7,10 +7,10 @@ description: Sumo Logic provides POSIX and PowerShell scripts to trigger the Clo
 
 Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh) and [PowerShell](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1) scripts to trigger the CloudFormation template for creating a stack to deploy AWS Observability Solution.
 
-This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#appendix-i)). For more advanced use cases, when any of the default needs to be adjusted, fall back to  [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) or [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) installation steps.
+This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#appendix-i)). For more advanced use cases, when any of the default needs to be adjusted, fall back to  [Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform) or [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation) installation steps.
 
 :::tip Multi-account and region
-If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform).
+If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform).
 :::
 
 ## Prerequisites
@@ -36,7 +36,7 @@ The script takes two inputs:
 
 ## CloudFormation parameters
 
-The script above will take only two inputs, the Sumo Logic access ID and Access Key. And internally it will trigger a CloudFormation template. This CloudFormation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values. Refer to the table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
+The script above will take only two inputs, the Sumo Logic access ID and Access Key. And internally it will trigger a CloudFormation template. This CloudFormation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values. Refer to the table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation).
 
 
 ### PowerShell script command execution
@@ -73,8 +73,11 @@ chmod +x DeployAWSOPosix.sh
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | empty  |
 | Install AWS Observability apps and alerts  | Yes  |
 | Select the kind of Metrics Source to create | Kinesis Firehose Metrics Source   |
-| Sumo Logic AWS Metrics Namespaces  | AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS. |
+| Sumo Logic AWS Metrics Namespaces  | AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS, AWS/EC2, ECS/ContainerInsights. |
 | Existing Sumo Logic Metrics Source API URL  | empty   |
+| Sumo Logic AWS Metrics Tag Filters  | {}   |
+| Send telemetry to Sumo Logic  | true   |
+| Tags for filtering CloudWatch Log Groups  | empty   |
 | Enable ALB Access logging  | Both |
 | Create Sumo Logic ALB Logs Source  | Yes |
 | Existing Sumo Logic ALB Logs Source API URL  | empty  |
@@ -87,11 +90,9 @@ chmod +x DeployAWSOPosix.sh
 | Select the Sumo Logic CloudWatch Logs Sources  | Kinesis Firehose Log Source   |
 | Existing Sumo Logic Lambda CloudWatch Logs Source API URL | empty  |
 | Subscribe log groups to Sumo Logic Lambda Forwarder | Both  |
-| Regex for AWS Lambda Log Groups  | lambda  |
+| Regex for AWS Lambda Log Groups  | `\/aws\/(lambda\|apigateway\|rds)`  |
 | Enable ELB Classic Access logging   | Both  |
 | Create Sumo Logic ELB Logs Source | Yes  |
 | Existing Sumo Logic ELB Classic Logs Source API URL  | empty  |
 | AWS S3 Bucket Name   | empty   |
 | Path Expression for the Existing ELB Classic logs  | `classicloadbalancing/AWSLogs/*/elasticloadbalancing/*`   |
-| Location where you want the App to be Installed  | Personal Folder  |
-| Do you want to share App with whole organization   | True  |

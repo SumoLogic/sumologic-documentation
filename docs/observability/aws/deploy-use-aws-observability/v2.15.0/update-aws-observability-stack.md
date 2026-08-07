@@ -11,7 +11,7 @@ You can update an existing observability stack using Terraform or an AWS CloudFo
 
 ## Update with Terraform
 
-The AWS Observability Terraform scripts reside in GitHub and updates will be posted on the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).
+The AWS Observability Terraform scripts reside in GitHub and updates will be posted on the [Changelog](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/changelog/).
 
 To update the deployed solution:
 
@@ -19,7 +19,7 @@ To update the deployed solution:
     ```bash
     $ git pull 
     ```
-1. Review the changelog and configure any new parameters as needed. See [Deploy with Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform/) on how to configure parameters and to override default values.
+1. Review the changelog and configure any new parameters as needed. See [Deploy with Terraform](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-terraform/) on how to configure parameters and to override default values.
 1. Run the Terraform commands to update the solution:
     ```bash
     $ terraform init
@@ -41,7 +41,7 @@ To update an existing stack to the latest version:
 1. Locate the **Main Stack** created using the AWS CloudFormation template and click **Update**. <br/><img src={useBaseUrl('img/observability/Stack_Step1.png')} alt="Stack step 1" style={{border: '1px solid gray'}} width="800" />
 1. Select **Replace Current Template**, paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml` in the Amazon S3 URL option, and then select **Next**.
     :::note
-    If you would like to download or inspect this or other versions of this template, visit the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/) page.
+    If you would like to download or inspect this or other versions of this template, visit the [Changelog](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/changelog/) page.
     :::
     <img src={useBaseUrl('img/observability/aws-create-stack.png')} alt="AWS create stack" style={{border: '1px solid gray'}} width="800" />
 1. Keep parameters that you selected before when you created the stack and click **Next**.
