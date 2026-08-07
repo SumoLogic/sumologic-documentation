@@ -15,7 +15,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 ## Prerequisites
 
-* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation) for CloudFormation Template.
+* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation#step-5-sumo-logic-aws-cloudwatch-metrics-sources) for CloudFormation Template.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * [**Role capabilities**](/docs/manage/users-roles/roles/role-capabilities/). Make sure you have a Sumo Logic role that have the following capabilities:
   * Manage Field Extraction Rules
@@ -82,8 +82,10 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * US West (Oregon)
 
 :::note
-The region(s) must be enabled and active before deploying the solution.
+The region(s) must be enabled and active before deploying the solution. <br/>
+Middle East (Bahrain) - currently affected by the Middle East conflicts.
 :::
+
 
 ## Deployment considerations  
 
