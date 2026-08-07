@@ -7,9 +7,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/launchdarkly.png')} alt="launchdarkly" width="80"/>
 
 ***Version: 1.0  
-Updated: Aug 10, 2026***
+Updated: August 10, 2026***
 
-LaunchDarkly is a feature management platform that enables teams to control feature flag rollouts, targeting rules, and environments. This integration supports the Autonomous RCA Agent use case by enabling Sumo Logic to correlate feature flag changes with production incidents, inspect flag state, and execute remediation actions such as toggling flags or reverting targeting rules.
+LaunchDarkly is a feature management platform that enables teams to control feature flag rollouts, targeting rules, and environments. This integration correlates feature flag changes with production incidents, inspects flag and environment state across projects, and executes remediation actions such as toggling flags or updating targeting rules.
 
 ## Actions
 
