@@ -492,6 +492,10 @@ Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time s
 
 If you need a higher limit, contact your account team.
 
+### Is there a character limit for a Mobot prompt?
+
+Yes. A single prompt can be up to 40,000 characters.
+
 <!-- uncomment at GA after Aug 3
 ### Does Mobot's licensing model and limits apply to SOC Analyst Agent investigations?
 
