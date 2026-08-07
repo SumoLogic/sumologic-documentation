@@ -119,7 +119,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Limitations
 
-There is a limitation to send ~5M events/hour to sumo for this integration. If API is returning more than this limitation data, then latency could be see on platform side which will eventually covered up when data ingestion rate is lower tha the ~5M events/hour.
+This integration is limited to sending ~5M events/hour to Sumo Logic. If the API returns data above this limit, you may see latency on the platform side, which resolves once the ingestion rate drops back below ~5M events/hour.
 
 ## FAQ
 
