@@ -13,9 +13,9 @@ Interact with AWS Lambda functions, including listing, inspecting, and invoking 
 
 ## Actions
 
-* **Get Function** *(Enrichment)* - Retrieves configuration and code details for a specific Lambda function, including runtime, handler, memory, and state.
-* **Invoke Function** *(Custom)* - Invokes a Lambda function synchronously or asynchronously with an optional JSON payload and returns the status code and response.
-* **List Functions** *(Enrichment)* - Lists Lambda functions in the configured region with optional pagination and Lambda@Edge filtering.
+* **Get Function** *(Enrichment)*. Retrieves configuration and code details for a specific Lambda function, including runtime, handler, memory, and state.
+* **Invoke Function** *(Custom)*. Invokes a Lambda function synchronously or asynchronously with an optional JSON payload and returns the status code and response.
+* **List Functions** *(Enrichment)*. Lists Lambda functions in the configured region with optional pagination and Lambda@Edge filtering.
 
 ## External Libraries
 
