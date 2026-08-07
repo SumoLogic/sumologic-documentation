@@ -22,19 +22,19 @@ The migration runs through the following phases:
 | Phase | Action |
 |:--|:--|
 | 1. Validate | Checks AWS and Sumo Logic credentials, confirms the stack exists, and detects its version. |
-| 2. Capture | Reads your existing collector, sources, and S3 bucket names from Sumo Logic. |
-| 3. Map Parameters | Transforms v2.x parameters to v3.0.0 format and saves them to a local file. |
+| 2. Capture | Reads your existing collector, sources, and S3 bucket names from Sumo Logic. Cross-checks the collector ID against the CF stack and bucket names against CF stack parameters. |
+| 3. Map Parameters | Transforms v2.x parameters to v3.0.0 format and saves them to a local params file. |
 | 4. Confirm | Displays a full summary — **no changes are made until you approve**. |
 | 5. Protect | Sets `RemoveOnDeleteStack=false` to ensure Sumo Logic resources survive stack deletion. |
 | 6. Delete | Deletes the v2.x CloudFormation stack, but preserves your S3 buckets. |
-| 7. FER Cleanup | Renames and disables 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) to free quota for v3.0.0. |
+| 7. FER Cleanup | Renames and disables AWSO [Field Extraction Rules](/docs/manage/field-extractions/) to free quota for v3.0.0. |
 | 8. Metric Rules | Deletes four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0. |
 | 9. Deploy | Deploys the v3.0.0 stack — **shows you the full parameter list before deploying**. |
-| 10. Verify | Confirms all stack resources and Sumo Logic sources are healthy. |
+| 10. Verify | Confirms all stack resources and Sumo Logic sources are healthy. Checks S3 bucket policies, CloudTrail trails, and S3 bucket notifications. |
 | 11. Patch Roles | Updates the source IAM role ARNs to reference the new v3.0.0 IAM role. |
 | 12. Report | Prints a summary and saves a log file. |
 
-Expected duration: **15 to 20 minutes**.
+Expected duration: **30 to 45 minutes**. Phase 5 (stack update) and Phase 6 (stack deletion) each take 5–10 minutes depending on stack size, and Phase 9 (deploy) takes a further 10–15 minutes.
 
 ### What stays the same
 
@@ -45,7 +45,7 @@ Expected duration: **15 to 20 minutes**.
 ### What changes
 
 - The v2.x CloudFormation stack is deleted and replaced by a new v3.0.0 stack.
-- 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) are renamed to `v215_backup_<name>` and disabled (not deleted).
+- AWSO [Field Extraction Rules](/docs/manage/field-extractions/) are renamed to `v215_backup_<name>` and disabled (not deleted).
 - Four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) are deleted and recreated by v3.0.0.
 - Source IAM role ARNs are updated to the new v3.0.0 role.
 
@@ -70,8 +70,10 @@ Before running the migration, ensure the following are in place.
 
 Your AWS credentials must have permissions to:
 - Read and update CloudFormation stacks (`cloudformation:DescribeStacks`, `cloudformation:UpdateStack`, `cloudformation:DeleteStack`, `cloudformation:CreateStack`).
-- Read S3 bucket metadata (`s3:HeadBucket`).
+- Read S3 bucket metadata (`s3:HeadBucket`, `s3api:GetBucketPolicy`, `s3api:GetBucketNotificationConfiguration`).
 - Read IAM roles (`iam:GetRole`).
+- Read CloudTrail trails (`cloudtrail:DescribeTrails`, `cloudtrail:GetTrailStatus`).
+- Read SNS topic attributes (`sns:GetTopicAttributes`).
 
 ### Sumo Logic credentials
 
@@ -82,6 +84,14 @@ You will also need your **Sumo Logic Org ID**, found at **Administration > Accou
 ### Back up your Field Extraction Rules
 
 Before running the migration, export a backup of your [Field Extraction Rules](/docs/manage/field-extractions/) from **Manage Data > Logs > Field Extraction Rules**. The script renames them rather than deleting them, but it is good practice to have a backup.
+
+### Verify FER quota
+
+Phase 7 renames your existing AWSO Field Extraction Rules and v3.0.0 then creates 17 new ones. You need at least **17 free slots** in your FER quota before running the migration.
+
+To check your current usage, go to **Manage Data > Logs > Field Extraction Rules** and review the quota indicator at the top of the page. If fewer than 17 slots are free, delete or consolidate unused Field Extraction Rules until sufficient quota is available.
+
+If you run the migration without enough quota, phase 7 will pause and list the specific FERs that need to be removed before the script can continue.
 
 ### Back up your Metric Rules
 
@@ -141,7 +151,7 @@ chmod +x MigrateToV300.sh
 
 | Flag | Description | Default |
 |:--|:--|:--|
-| `-n NEW_STACK_NAME` | Name for the new v3.0.0 stack | Same as `-s` |
+| `-n NEW_STACK_NAME` | Name for the new v3.0.0 stack. **Required when using `--resume`.** | Same as `-s` |
 | `-v VERSION` | Source version override: `2.12`, `2.13`, `2.14`, `2.15` | Auto-detected |
 | `--install-apps` | Install Sumo Logic observability apps: `Yes` or `No` | `Yes` |
 | `-p AWS_PROFILE` | AWS CLI named profile | `default` |
@@ -175,7 +185,7 @@ Before touching any infrastructure, the script displays a summary of what it fou
     [100653041] classic-lb-logs (Polling)
     [100653042] kinesis-firehose-cloudwatch-logs (HTTP)
 
-  S3 Buckets:
+  S3 Buckets (read from Sumo source configs):
     ALB bucket:        aws-observability-logs-4bc184f0
     CloudTrail bucket: aws-observability-logs-4bc184f0
     ELB bucket:        aws-observability-logs-4bc184f0
@@ -183,11 +193,24 @@ Before touching any infrastructure, the script displays a summary of what it fou
   The following PERMANENT changes will be made:
     1. UPDATE stack to set RemoveOnDeleteStack=false
     2. DELETE stack my-awso-production
-    3. RENAME 17 AWSO Field Extraction Rules
+    3. RENAME AWSO Field Extraction Rules
     4. DELETE 4 AWSO Metric Rules
 
 Proceed with migration? Type 'yes' to continue:
 ```
+
+:::warning
+The S3 bucket names shown above come from your **Sumo Logic source configurations**, not from the AWS CloudFormation stack. If your Sumo sources reference a stale or incorrect bucket, v3.0.0 will be deployed with the wrong bucket names and no log data will be ingested.
+
+Before typing `yes`, verify the bucket names match your actual S3 buckets:
+```bash
+aws s3 ls s3://<bucket-shown-above> --region <your-region>
+```
+
+If there is a mismatch, the script will warn you. Investigate before proceeding.
+:::
+
+The script also cross-checks the collector ID found in Sumo Logic against the `SumoLogicHostedCollector` resource recorded in your CF stack. If they differ — which can happen if the wrong credentials were provided or the collector was recreated outside CloudFormation — the script will display both IDs and prompt you to confirm before continuing.
 
 Type `yes` to proceed. Anything else aborts safely with no changes made.
 
@@ -213,6 +236,18 @@ Deploy v3.0.0 stack 'my-awso-production-v300'? Type 'yes' to continue:
 If a source was not installed in your v2.x stack (for example, if the ALB source was set to `No`), its corresponding bucket parameter will be empty, and the source will not be created in v3.0.0 either.
 :::
 
+## Post-migration verifications (Phase 10)
+
+After deploying v3.0.0, the script automatically checks the following. Warnings from this phase are advisory — they do not stop the migration, but you should review and act on any that apply.
+
+| Check | What is verified |
+|:--|:--|
+| Stack resources | All CloudFormation resources reached `CREATE_COMPLETE`. |
+| Sumo collector and sources | The AWSO collector is found and all sources are alive. |
+| S3 bucket policies | Each log bucket has the required service principals (`cloudtrail.amazonaws.com` for the CloudTrail bucket; `delivery.logs.amazonaws.com` for ALB/ELB buckets). A missing policy silently blocks log delivery. |
+| CloudTrail trails | At least one trail writing to your CloudTrail bucket is active and `IsLogging=true`. The v2.x `Aws-Observability-*` trail is deleted with the old stack and is not recreated by v3.0.0 unless it also creates a new bucket. |
+| S3 bucket notifications | The SNS topic configured on your log bucket exists and has not been deleted. A stale or deleted topic means S3 sources stop receiving new object events. |
+
 ## Dry run (preview only)
 
 To preview the mapped parameters without making any changes, add `--dry-run`:
@@ -226,15 +261,24 @@ To preview the mapped parameters without making any changes, add `--dry-run`:
 
 The script runs phases 1 to 3, prints the mapped v3.0.0 parameters, and exits without modifying anything.
 
-## Log file
+## Log and params files
 
-Every run writes a plain-text log file to the directory where the script is executed:
+Every run writes two files to the directory where the script is executed:
 
+| File | Purpose |
+|:--|:--|
+| `./migration_<stack>_<YYYYMMDD_HHMMSS>.log` | Full plain-text log of the run. Keep this file in case you need to contact Sumo Logic support. |
+| `./migration_params_<stack>_<YYYYMMDD_HHMMSS>.json` | v3.0.0 CloudFormation parameters captured in phase 3. Used automatically if you need to resume. |
+
+## If phase 6 times out
+
+If the script exits with a timeout message during phase 6 (Delete), stack deletion is still in progress in AWS. Once deletion finishes, **re-run the exact same command you used originally** — no extra flags needed:
+
+```bash
+./MigrateToV300.sh -d us2 -i <...> -s my-awso-production -r us-east-1 -n my-awso-production-v300 ...
 ```
-./migration_<stack_name>_<YYYYMMDD_HHMMSS>.log
-```
 
-The log file path is printed in the phase 12 summary. Keep this file in case you need to contact Sumo Logic support.
+The script detects that the stack is already deleted, locates the params file saved during phase 3, and automatically continues from phase 7 (FER cleanup + deploy). If more than one params file exists for the same stack name, you will be prompted to choose which one to use.
 
 ## If the v3.0.0 deployment fails
 
@@ -247,7 +291,7 @@ aws cloudformation delete-stack --stack-name <v300_stack_name> --region <region>
 aws cloudformation wait stack-delete-complete --stack-name <v300_stack_name> --region <region>
 ```
 
-**Step 2**: Resume using the params file saved during phase 3. The script prints its exact path when a failure occurs:
+**Step 2**: Resume using the params file saved during phase 3. The script prints its exact path in the log:
 
 ```bash
 ./MigrateToV300.sh \
@@ -275,13 +319,20 @@ Validate > Patch Roles > Report
 
 ## Troubleshooting
 
-| Error | Cause | Resolution |
+| Error or warning | Cause | Resolution |
 |:--|:--|:--|
 | `aws CLI not found in PATH` | AWS CLI not installed or not accessible from the shell | Install the AWS CLI and verify with `aws --version`. |
 | `AWS credentials invalid` | AWS session has expired | Re-authenticate using `aws sso login` or export new session tokens. |
 | `Sumo Logic credentials invalid (HTTP 401)` | Incorrect access ID or key | Verify the `-i` and `-k` values. |
-| `Stack not found` | Wrong stack name or region | Verify `-s` and `-r` match your AWS Console. |
+| `Stack not found` | Wrong stack name or region — or stack was already deleted by a previous run | Verify `-s` and `-r` match your AWS Console. If the stack was already deleted by a previous run, re-run the same command and the script will auto-resume from phase 7. |
 | `Stack update ended with status: TIMEOUT` | Phase 5 update timed out on a large stack with many nested stacks | Re-run the script. If the update is already complete, phase 5 will be skipped automatically. |
 | `ROLLBACK_COMPLETE` on v3.0.0 deploy | Template or parameter error during deployment | Delete the rolled-back stack and follow the [resume steps](#if-the-v300-deployment-fails). |
 | `Failed to rename FER — already exists` | A previous partial run already renamed some FERs | Use `--resume`. The script detects already-renamed FERs and skips them. |
 | Sources show `<empty>` bucket in report | Expected in resume mode — buckets are not re-captured | Does not affect the migration. The params file already has the correct bucket values. |
+| `[WARN] Bucket name mismatch` | Sumo source config references a different bucket than the CF stack parameter | Investigate before proceeding — wrong bucket name means no data ingested after migration. Check your Sumo source configuration and your S3 bucket names in the AWS Console. |
+| `[WARN] Collector ID mismatch` | The collector found via Sumo API does not match the one recorded in the CF stack | Verify you are using the correct Sumo Logic credentials for this stack. The script will prompt you to confirm before continuing. |
+| `[WARN] policy missing cloudtrail.amazonaws.com` | S3 bucket policy does not grant CloudTrail write access | Check the bucket policy with `aws s3api get-bucket-policy --bucket <bucket> --region <region> --query Policy --output text \| jq .` and add a statement granting `s3:PutObject` to `cloudtrail.amazonaws.com`. |
+| `[WARN] policy missing delivery.logs.amazonaws.com` | S3 bucket policy does not grant ALB/ELB log delivery access | Add a statement granting `s3:PutObject` to `delivery.logs.amazonaws.com` in the bucket policy. |
+| `[WARN] No active CloudTrail trail found` | The v2.x `Aws-Observability-*` trail was deleted with the old stack and no replacement exists | Create a new trail: `aws cloudtrail create-trail --name <name> --s3-bucket-name <bucket> --region <region>` then `aws cloudtrail start-logging --name <name> --region <region>`. |
+| `Stack DELETE_FAILED — BucketNotEmpty` | Phase 6 stack deletion failed because the `CommonS3Bucket` resource is not empty. The script automatically retries using force delete, which retains the bucket and continues the migration. No action needed — this is expected behaviour when the bucket contains existing log data. |  Automatic recovery — the script handles this without intervention. |
+| `[WARN] SNS topic deleted or inaccessible` | The SNS topic wiring your S3 bucket to the Sumo source was deleted with the v2.x stack | Recreate the SNS topic, set its resource policy to allow S3 to publish to it, subscribe the Sumo source endpoint URL, and update the bucket notification configuration to point at the new topic ARN. The source endpoint URL is visible in **Manage Data > Collection > your source > Show URL**. |
