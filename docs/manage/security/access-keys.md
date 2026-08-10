@@ -90,7 +90,7 @@ All personal access keys created in the organization are displayed in the **Acce
 Unlike the [Personal Access Keys tab](#from-the-personal-access-keys-tab) (your own keys) or a [service account](#from-a-service-account) (a specific service account's keys), the **Access Keys** tab spans your entire organization: every personal and service account key created by anyone in your org. It's the central place to view and manage every key in the org, and administrators can also create new keys directly from here.
 
 :::note
-This tab is visible only to Administrators, or Analysts (non-admins) with the [Manage Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities#security). Other users only see their own keys under [Personal Access Keys](#from-the-personal-access-keys-tab).
+This tab is visible only to Administrators, or users with the [Manage Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities#security). Other users only see their own keys under [Personal Access Keys](#from-the-personal-access-keys-tab).
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**.
@@ -142,21 +142,21 @@ an Access-Control-Allow-Origin header.
 
 ### Organization access keys
 
-If you're an Administrator, or an Analyst with the [Manage Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can edit, deactivate, and delete any access keys created by other users in your organization.
+If you're an Administrator, or have the [Manage Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can edit, deactivate, and delete any access keys created by other users in your organization.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Access Keys**. You can also click the **Go To...** menu at the top of the screen and select **Access Keys**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Access Keys**.
 1. Hover your mouse over an access key and click the three-dot kebab icon. This reveals the same modification options that appear in [Personal Access Keys](#personal-access-keys).
 
 ## Access key policies
 
-Administrators can configure org-wide defaults for when access keys are automatically deactivated or expire.
+Administrators, or users with the **Manage Organization Settings** role capability, can configure org-wide defaults for when access keys are automatically deactivated or expire.
 
 ### Access keys deactivation policy
 
 By default, Sumo Logic automatically deactivates access keys that haven’t been used for 30 days or more. However, you can adjust the number of days before deactivation. This extra security measure ensures forgotten keys can't be used later to access your account.
 
 :::note
-This section is visible only to Administrators, or Analysts (non-admins) with the **Manage Organization Settings** role capability.
+This section is visible only to Administrators, or users with the **Manage Organization Settings** role capability.
 :::
 
 To configure the access keys deactivation policy:
@@ -168,7 +168,7 @@ To configure the access keys deactivation policy:
 By default, access keys are set to never expire. However, you can use the **Access Keys Expiration** policy to set access keys to expire after a set time period. Automatically expiring keys ensures they don't remain in use past your company's access key rotation rules.
 
 :::note
-This section is visible only to Administrators, or Analysts (non-admins) with the **Manage Organization Settings** role capability.
+This section is visible only to Administrators, or users with the **Manage Organization Settings** role capability.
 :::
 
 An access key's expiration date appears in the **Expires At** column on the **Access Keys** tab. You can sort by this column to see when you must rotate keys. To rotate a key, hover your mouse over an access key, click the three-dot kebab icon, and select **Rotate**. (The old key is still usable for 5 minutes after rotation.) Rotating an access key resets its expiration date according to the number of days in the policy.

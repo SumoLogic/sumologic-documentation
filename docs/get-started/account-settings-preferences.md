@@ -134,7 +134,7 @@ Click any of the following checkboxes to enable your desired preferences:
 
 ## Personal Access Keys
 
-The **Personal Access Keys** tab lets you create and manage access keys for your own use — to register Collectors, authenticate API requests, or authorize scripts and automation. Keys you create here use your own permissions, and are visible only to you; an administrator (or an Analyst with the Manage Access Keys role capability) can see keys created by everyone in your org from the separate, org-wide **Access Keys** tab under **Administration**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys tab" style={{border: '1px solid gray'}} width="800"/>
+The **Personal Access Keys** tab lets you create and manage access keys for your own use: to register Collectors, authenticate API requests, or authorize scripts and automation. Keys you create here use your own permissions, and are visible only to you; an administrator (or a user with the Manage Access Keys role capability) can see keys created by everyone in your org from the separate, org-wide **Access Keys** tab under **Administration**.<br/><img src={useBaseUrl('/img/security/access-key-preferences-page.png')} alt="Personal Access Keys tab" style={{border: '1px solid gray'}} width="800"/>
 
 For the full walkthrough, including CORS domain restrictions, scopes, and how to edit, rotate, or delete a key, see [Access Keys](/docs/manage/security/access-keys/#from-the-personal-access-keys-tab).
 
