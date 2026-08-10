@@ -36,7 +36,7 @@ To add a panel with a Cluster or Heatmap:
 
 Missile map is used to geographically depict any data that has an origin and destination. This map helps you to visualize the relationships between the source and destination by providing insights into the pathways that may follow.
 
-To create Connection map, your query must include:
+To create a Missile map, your query must include:
 
 - `sourcelat` - Source latittude
 - `sourcelon` - Source longitude 
@@ -51,4 +51,11 @@ To add a panel with a missile map:
 1. Type a supported query in the Search box, including all of the required field names and press **Enter** for it to run.
 1. Once the search results appear, select **Missile** from the **Map Type** dropdown. <br/><img src={useBaseUrl('img/dashboards/panels/map-charts/missile-map.png')} alt="Missile map" style={{border: '1px solid gray'}} width="800" /> 
 1. [Modify the chart](/docs/dashboards/panels/modify-chart) as desired.
+
+## Drill down from a map chart
+
+Hover over a point on a Cluster or Heatmap chart to see a tooltip with drill-down instructions. On a Missile map, hover over the line between the source and destination.
+
+* **Click** to zoom in or out on the map.
+* **Shift+click** to drill down into the data for that location. Sumo Logic redirects you to the Log Search page with the query already updated with the corresponding latitude and longitude values. Run the query to see the details.
 
