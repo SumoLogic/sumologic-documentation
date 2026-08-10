@@ -303,7 +303,7 @@ Create and update log-based [monitors](/docs/alerts/monitors) from plain-languag
 
 For the full walkthrough, including example prompts, known limitations, and FAQ, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
-<!-- Uncomment once Conversational Dashboards GAs
+<!-- Uncomment once Conversational Dashboards GAs (https://github.com/SumoLogic/sumologic-documentation/pull/6937)
 ### Conversational Dashboards
 
 Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel.
@@ -323,30 +323,11 @@ Known limitations:
 - Mobot selects the panel type automatically. Fine-tuned visual adjustments are done manually.
 -->
 
-<!-- Uncomment once Conversational Playbooks GAs
 ### Conversational Playbooks
 
-:::note
-Conversational Playbooks is rolling out after Conversational Monitors. Contact your account team for availability.
-:::
+Create and edit Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, using the Mobot chat box built into the Playbooks editor, instead of building node by node on the visual canvas. Describe the automation you want, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you. The visual canvas is unchanged and remains fully available for manual edits.
 
-Create, edit, and summarize Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, without building node by node on the visual canvas:
-
-- **Create**. Describe a workflow in plain language, and Mobot drafts a playbook that reflects your organization's installed integrations and configured actions.
-- **Edit**. Request changes to an existing playbook conversationally.
-- **Summarize**. Ask Mobot what a playbook does and get a plain-language explanation.
-
-The visual canvas is unchanged and remains fully available. Mobot is an additional way to work with playbooks, not a replacement for the canvas, file-based export and import, or Terraform.
-
-Known limitations:
-
-- Mobot works only with playbooks installed in your organization. It cannot access App Central playbooks or templates from other organizations.
-- If a required integration is not installed, Mobot points you to App Central but cannot build nodes for it. Install the integration, then start again.
-- Mobot never selects an integration for you. It presents options and you choose.
-- Playbooks created through Mobot are saved as drafts. They are not published or activated automatically, so review each draft before you activate it.
-- Some node fields need manual configuration in the visual canvas after Mobot builds the playbook.
-- The visual canvas is read-only while Mobot is writing to a playbook. You cannot edit both at the same time.
--->
+For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
 
 ## Managing conversations
 
@@ -632,7 +613,7 @@ At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SO
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
-<MSSPfeatureMgmt/>
+<MSSPfeatureMgmt/> 
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
