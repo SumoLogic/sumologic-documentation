@@ -9,4 +9,4 @@ keywords:
   - security
 ---
 
-The [Sumo Logic MCP Server](/docs/api/mcp-server) now publishes `scopes_supported` in its OAuth Protected Resource Metadata. A properly implemented CIMD client uses this list to request only MCP-relevant scopes during authorization, instead of every scope available in your org, limiting the resulting access token to that smaller set.
+The [Sumo Logic MCP Server](/docs/api/mcp-server) now publishes `scopes_supported` in its OAuth Protected Resource Metadata. A properly implemented client uses this list to request only MCP-relevant scopes during authorization, instead of every scope available in your org, limiting the resulting access token to that smaller set.
