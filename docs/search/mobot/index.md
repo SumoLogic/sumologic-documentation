@@ -329,6 +329,8 @@ Create and edit Automation Service [playbooks](/docs/platform-services/automatio
 
 For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
 
+Conversational Playbook prompts have their own daily limit, separate from the standard Mobot prompt limit: up to 50 prompts per user, per Sumo Logic Org ID, per day.
+
 ## Managing conversations
 
 ### My conversations
@@ -488,7 +490,7 @@ Yes. Each user can send up to 10 prompts to Mobot per day, per Sumo Logic Org ID
 
 As you approach the limit, Mobot shows a heads-up banner with the time remaining until your limit resets. When you reach the limit, Mobot stops responding to new prompts and shows a "try again in X hours" message.
 
-Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time shown is converted to your local time zone and may not fall at your local midnight. For example, someone in Pacific Time (UTC-8) who reaches the limit at 10 AM local time sees "try again in 6 hours," because midnight UTC is 4 PM their time.
+Limits reset daily at midnight US Pacific Time. The "try again in X hours" message is calculated from this reset time, converted to your local time zone.
 
 If you need a higher limit, contact your account team.
 
