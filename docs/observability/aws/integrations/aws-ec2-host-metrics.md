@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Metrics types 
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Collected metrics](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics).
 
 * [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#cpu-metrics)
 * [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#memory-metrics)
@@ -28,7 +28,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS metadata
 
-Collectors running on Host Metrics (EC2) instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/).
+Collectors running on Host Metrics (EC2) instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AAWS Metadata (Tag) Source](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/).
 
 ### Sample queries 
 
@@ -55,7 +55,7 @@ Use this dashboard to:
 * Identify resource usage patterns and deviations across instance types to determine which instance types should be resized.
 * Monitor average CPU utilization by instance type.
 
-<img src={useBaseUrl('img/observability/1.2.-AWS-EC2-Overview-Host-OS-metrics.png')} alt="AWS_EC2_Overview"/>
+<img src={useBaseUrl('img/observability/1.2.-AWS-EC2-Overview-Host-OS-metrics.png')} alt="AWS_EC2_Overview" width="800"/>
 
 ### 1.2. AWS EC2 Summary (Host OS metrics)
 
@@ -67,7 +67,7 @@ Use this dashboard to:
 * Determine if an instance needs to be resized based on utilization.
 * Identify potential infrastructure issues by identifying deviations in trends and monitoring.
 
-<img src={useBaseUrl('img/observability/1.2.-AWS-EC2-Summary-Host-OS-metrics.png')} alt="AWS_EC2_Summary"/>
+<img src={useBaseUrl('img/observability/1.2.-AWS-EC2-Summary-Host-OS-metrics.png')} alt="AWS_EC2_Summary" width="800"/>
 
 ### 2.2. AWS EC2 CPU (Host OS metrics)
 
@@ -78,7 +78,7 @@ Use this dashboard to:
 * Quickly identify if high CPU utilization for an EC2 instance is potentially causing a production issue.
 * Determine how CPU cycles are being spent across CPU user time, system time, and IO wait time.
 
-<img src={useBaseUrl('img/observability/2.2.-AWS-EC2-CPU-Host-OS-metrics.png')} alt="AWS_EC2_CPU"/>
+<img src={useBaseUrl('img/observability/2.2.-AWS-EC2-CPU-Host-OS-metrics.png')} alt="AWS_EC2_CPU" width="800"/>
 
 ### 3.2. AWS EC2 Memory (Host OS metrics)
 
@@ -89,7 +89,7 @@ Use this dashboard to:
 * Quickly identify if high memory utilization for an EC2 instance is potentially causing a production issue.
 * Determine how memory is being used across buffers and cache memory.
 
-<img src={useBaseUrl('img/observability/3.2.-AWS-EC2-Memory-Host-OS-metrics.png')} alt="AWS_EC2_Memory"/>
+<img src={useBaseUrl('img/observability/3.2.-AWS-EC2-Memory-Host-OS-metrics.png')} alt="AWS_EC2_Memory" width="800"/>
 
 ### 4.2. AWS EC2 Disk (Host OS metrics)
 
@@ -101,7 +101,7 @@ Use this dashboard to:
 * Determine which directories have the most disk usage. 
 * Determine the performance of your storage by monitoring disk read/write rates.
 
-<img src={useBaseUrl('img/observability/4.2.-AWS-EC2-Disk-Host-OS-metrics.png')} alt="AWS_EC2_Disk"/>
+<img src={useBaseUrl('img/observability/4.2.-AWS-EC2-Disk-Host-OS-metrics.png')} alt="AWS_EC2_Disk" width="800"/>
 
 ### 5.2. AWS EC2 Network (Host OS metrics)
 
@@ -112,7 +112,7 @@ Use this dashboard to:
 * Quickly identify if traffic sent and received rates for an EC2 instance are potentially causing a production issue.
 * Determine if any improvements need to be made to your AWS networking infrastructure for optimal performance.
 
-<img src={useBaseUrl('img/observability/5.2.-AWS-EC2-Network-Host-OS-metrics.png')} alt="AWS_EC2_Network"/>
+<img src={useBaseUrl('img/observability/5.2.-AWS-EC2-Network-Host-OS-metrics.png')} alt="AWS_EC2_Network" width="800"/>
 
 ### 6.2. AWS EC2 TCP (Host OS metrics)
 
@@ -123,4 +123,4 @@ Use this dashboard to:
 * Quickly identify if TCP traffic for an EC2 instance is potentially causing a production issue.
 * Identify if any improvements need to be made to optimize TCP traffic by analyzing various TCP connection states.
 
-<img src={useBaseUrl('img/observability/6.2.-AWS-EC2-TCP-Host-OS-metrics.png')} alt="AWS_EC2_TCP"/>
+<img src={useBaseUrl('img/observability/6.2.-AWS-EC2-TCP-Host-OS-metrics.png')} alt="AWS_EC2_TCP" width="800"/>

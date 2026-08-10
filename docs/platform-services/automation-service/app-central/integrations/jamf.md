@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/jamf.png')} alt="jamf" width="70"/>
 
-***Version: 1.3  
-Updated: Jun 28, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 The Jamf platform creates IT software that manages Apple devices.
 
@@ -21,21 +21,46 @@ The Jamf platform creates IT software that manages Apple devices.
 * **Remove Computer** *(Containment)* - Remove specified Computer record.
 * **Send macOs Managed Software Updates** *(Containment)* - Apply major update to macOs managed software updates.
 
-## Jamf in Automation Service and Cloud SOAR
+## Configure Jamf in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf/jamf-3.png')} style={{border:'1px solid gray'}} alt="jamf" width="600"/>
-1. Populate all the required fields (\*) and then click **Save**.
-   * **URL**: jamf url.
-   * **Username**
-   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf/jamf-4.png')} style={{border:'1px solid gray'}} alt="jamf" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf/jamf-5.png')} style={{border:'1px solid gray'}} alt="jamf" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf/jamf-6.png')} style={{border:'1px solid gray'}} alt="jamf" width="400"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/jamf/jamf-7.png')} style={{border:'1px solid gray'}} alt="jamf" width="400"/> 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your [Jamf URL](https://learn.jamf.com/en-US/bundle/jamf-pro-documentation-current/page/Jamf_Pro_URL.html).
+
+* **Username**. Enter the username of a Jamf admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/jamf-configuration.png')} style={{border:'1px solid gray'}} alt="Jamf configuration" width="400"/>
+
+For information about Jamf, see [Jamf documentation](https://www.jamf.com/resources/product-documentation/jamf-pro-administrators-guide/).
+
+## Minimum permissions required
+
+The following permissions are required for the integration:
+* **Read Computers**. Allows reading details of computers in the Jamf inventory. 
+* **Read Smart Computer Groups**. Grants access to view smart computer groups. 
+* **Read Static Computer Groups**. Grants access to view static computer groups. 
+* **Read Jamf Connect Deployments**. Provides access to view Jamf Connect deployments.
+
+#### Jamf Pro Server URL:
+Example: [https://yourServer.jamfcloud.com](https://yourServer.jamfcloud.com)
+
 
 ## Change Log
 
 * November 23, 2022 - First upload
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
 * June 28, 2023 (v1.3) - Updated **List Computers** Action
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

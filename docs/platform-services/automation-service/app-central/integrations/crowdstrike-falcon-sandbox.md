@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-sandbox.png')} alt="crowdstrike-falcon-sandbox" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-sandbox.png')} alt="CrowdStrike Falcon Sandbox icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 14, 2023***
+***Version: 1.4  
+Updated: March 31, 2026***
 
 Malware Analysis Tool providing threat intelligence.
 
@@ -25,9 +25,35 @@ Malware Analysis Tool providing threat intelligence.
 * **Get Hash Analysis Overview** (*Enrichment*) - Return overview for the hash  related information [report, parent, children, scanners].
 * **List Environments** (*Enrichment*) - List system environments.
 
+## Configure CrowdStrike Falcon Sandbox in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter the URL of your CrowdStrike instance, for example, `https://your-host-falcon-sandbox.com`. The default value is `https://api.crowdstrike.com`
+
+* **API ID**. Enter an API key for the CrowdStrike Falcon Sandbox. 
+
+* **User Agent**. Enter a user agent for your instance of CrowdStrike Falcon Sandbox.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/crowdstrike/crowdstrike-falcon-sandbox-configuration.png')} style={{border:'1px solid gray'}} alt="CrowdStrike Falcon Sandbox configuration" width="400"/>
+
+For information about CrowdStrike Falcon Sandbox, see [CrowdStrike documentation](https://www.crowdstrike.com/en-us/resources/guides/?lang=1).
+
 ## Change Log
 
 * October 26, 2020 - First upload
 * March 21, 2023 (v1.1) - Logo updated
 * June 27, 2023 (v1.2) - Updated the integration with Environmental Variables
 * July 14, 2023 (v1.3) - Changed fields visibility
+* March 31, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

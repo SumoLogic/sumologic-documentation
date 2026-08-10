@@ -1,10 +1,26 @@
 # Algolia-Crawler-Verif: 4E25C3C253AC39D1
+# Sumo Logic Help Docs
+# AI/LLM crawlers are welcome - see /llms.txt for guidance
 
 User-agent: *
-Disallow: /docs/reuse/
-Disallow: /docs/tags/
-Disallow: /ja/docs/
-Disallow: /cid-redirects.json/
-Disallow: /files/
+Disallow: /docs/reuse/*
+Disallow: /docs/preview/*
+Disallow: /tags/*
+Disallow: /*?tags=
+Disallow: /ja/*
+Disallow: /files/*
+Disallow: /cid-redirects.json
+Disallow: /release-notes-*/archive
+Disallow: /release-notes-*/2021/
+Disallow: /release-notes-*/rss.xml
+Disallow: /adler32/
+Disallow: /deki/
+Disallow: /crc32/
+Disallow: /zlib/
+Disallow: /inffast/
 
-Sitemap: https://help.sumologic.com/sitemap.xml
+# Algolia should not index the raw markdown mirror — it's for AI crawlers, not search indexing
+User-agent: Algolia Crawler
+Disallow: /llm/
+
+Sitemap: https://www.sumologic.com/help/sitemap.xml

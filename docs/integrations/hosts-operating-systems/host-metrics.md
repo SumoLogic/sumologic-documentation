@@ -7,7 +7,7 @@ description: The Sumo Logic app for Host Metrics allows you to collect your loca
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/HostMetrics.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/HostMetrics.png')} alt="Host Metrics icon" width="75"/>
 
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.
 
@@ -325,7 +325,30 @@ The supported filters are:
 * `_source`
 * `_collector`
 
-## Upgrading the Host Metrics app (Optional)
+## Create monitors for Host Metrics app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Host Metrics alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+|:--|:--|:--|:--|
+| `Host Metrics - Excessive Disk IO` | This alert is triggered when disk read throughput is unusually high, indicating potential disk I/O saturation. | Critical, Warning | Critical: Disk read rate > 500 MB/s; Warning: Disk read rate > 200 MB/s |
+| `Host Metrics - High CPU IO Wait` | This alert is triggered when CPU IO wait time is high, indicating I/O bottlenecks that are stalling CPU execution. | Critical, Warning | Critical: CPU IO wait > 50%; Warning: CPU IO wait > 30% |
+| `Host Metrics - High CPU Usage` | This alert is triggered when CPU idle time drops below safe thresholds, indicating high CPU utilization. | Critical, Warning | Critical: CPU idle ≤ 5%; Warning: CPU idle ≤ 20% |
+| `Host Metrics - High Disk Queue` | This alert is triggered when the disk queue depth is high, indicating disk I/O saturation. | Critical, Warning | Critical: Disk queue > 10; Warning: Disk queue > 5 |
+| `Host Metrics - High Disk Usage` | This alert is triggered when disk space utilization exceeds safe levels, indicating the filesystem is running low on space. | Critical, Warning | Critical: Disk used > 95%; Warning: Disk used > 85% |
+| `Host Metrics - High Memory Usage` | This alert is triggered when memory utilization exceeds safe levels, indicating the host may be under memory pressure. | Critical, Warning | Critical: Memory used > 95%; Warning: Memory used > 85% |
+| `Host Metrics - High Network Inbound` | This alert is triggered when inbound network traffic is unusually high, indicating potential network saturation or an inbound traffic spike. | Critical, Warning | Critical: Inbound > 125 MB/s; Warning: Inbound > 62.5 MB/s |
+| `Host Metrics - High Network Outbound` | This alert is triggered when outbound network traffic is unusually high, indicating potential network saturation or an outbound traffic spike. | Critical, Warning | Critical: Outbound > 125 MB/s; Warning: Outbound > 62.5 MB/s |
+| `Host Metrics - Low Free Memory` | This alert is triggered when actual free memory (including buffers and cached) is critically low, indicating the host is nearly out of usable memory. | Critical, Warning | Critical: Free memory < 256 MB; Warning: Free memory < 512 MB |
+| `Host Metrics - TCP Close_Wait Accumulation` | This alert is triggered when a high number of TCP connections are stuck in CLOSE_WAIT state, indicating the application is not closing sockets properly. | Critical, Warning | Critical: CloseWait connections > 500; Warning: CloseWait connections > 200 |
+| `Host Metrics - TCP Time_Wait Saturation` | This alert is triggered when there are too many TCP connections in TIME_WAIT state, indicating potential port exhaustion from rapidly cycling connections. | Critical, Warning | Critical: TimeWait connections > 10,000; Warning: TimeWait connections > 5,000 |
+| `Host Metrics - Unusual Connection Count` | This alert is triggered when the number of established TCP connections spikes abnormally, indicating unusual traffic patterns or a potential attack. | Critical, Warning | Critical: Established connections > 5,000; Warning: Established connections > 2,000 |
+
+## Upgrade/Downgrade the Host Metrics app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

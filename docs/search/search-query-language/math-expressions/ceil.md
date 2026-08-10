@@ -8,16 +8,14 @@ The **ceil** operator rounds up a field value to the nearest integer value.
 
 ## Syntax
 
-```sql
-ceil(<x>) as <field>
-```
+`ceil(<x>) as <field>`
 
 ## Example
 
-```sql
-ceil(1.5) as v // v = 2
+```sumo
+* | ceil(1.5) as v
 ```
 
-```sql
-ceil(-1.5) as v // v = -1
+```sumo
+ * | ceil(-1.5) as v
 ```

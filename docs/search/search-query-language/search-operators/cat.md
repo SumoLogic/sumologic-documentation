@@ -2,31 +2,36 @@
 id: cat
 title: cat Search Operator
 sidebar_label: cat
+description: Use the cat operator to view the contents of a lookup table stored in the Sumo Logic Library.
 ---
 
-You can use the `cat` operator to view the contents of a lookup table. Not supported in auto refresh dashboards or scheduled searches.
+You can use the `cat` operator to view the contents of a lookup table. Not supported in auto refresh dashboards or scheduled searches.
 
 ## Syntax
 
-```sql
-cat path://”<path-to-table>”
-```
+`cat path://"<path-to-table>"`
 
 Where:
 
-* `path-to-table` is the path to the lookup table in the Sumo Logic Library.
+* `path-to-table` is the path to the lookup table in the Sumo Logic Library.
 
 
-## Example
+## Examples
 
-For example: 
+### View a lookup table in your personal Library
 
-```sql
+```sumo
 cat path://"/Library/Users/myusername@sumologic.com/Suspicious Users"
 ```
 
-To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot kebab menu for the table.   
- 
+### View a shared lookup table
+
+```sumo
+cat path://"/Library/Admin Recommended/Approved IP Ranges"
+```
+
+To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot kebab menu for the table.
+
 If your lookup table is very large, it may take a few minutes to display.
 
-You can export query results in the **Messages** tab of the search results. Click the gear icon and select an export option.
+You can export query results in the **Messages** tab of the search results. Click the gear icon and select an export option.

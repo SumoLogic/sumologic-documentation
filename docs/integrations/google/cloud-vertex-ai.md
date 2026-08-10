@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudVertexAI.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudVertexAI.png')} alt="Google Cloud Vertex AI icon" width="50"/>
 
 Vertex AI is a machine learning (ML) platform that lets you train and deploy ML models and AI applications, and customize large language models (LLMs). For more details, refer to the [GCP documentation](https://cloud.google.com/vertex-ai/docs/start/introduction-unified-platform).
 

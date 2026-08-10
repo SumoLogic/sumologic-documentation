@@ -7,9 +7,13 @@ description: The Sumo Logic app for Cisco Meraki provides a single-pane-of-glass
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/ciscomeraki.png')} alt="Cisco Meraki icon" width="75"/>
 
-The Cisco Meraki app provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
+The Cisco Meraki app provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.
+
+:::info
+This app includes [built-in monitors](#cisco-meraki-alerts). For details on creating custom monitors, refer to [Create monitors for the Cisco Meraki app](#create-monitors-for-the-cisco-meraki-app).
+:::
 
 ## Log types  
 
@@ -85,7 +89,7 @@ into slot 1
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
 
-```sql
+```sumo
 _sourceCategory=*meraki* "security_event"
 | parse regex " (?<name>\S*?)\s(?<msg_type>urls|flows|events|ids-alerts|security_event|airmarshal_events?)\s+"
 | parse "security_event * signature=* priority=* timestamp=* dhost=* direction=* protocol=* src=*:* dst=*:* message: *" as type, signature, priority, timestamp, dhost, direction, protocol, src_ip, src_port, dest_ip, dest_port, msg nodrop
@@ -233,7 +237,25 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco-Meraki-Events.png')} alt="Cisco Meraki dashboards" />
 
-## Upgrading the Cisco Meraki app (Optional)
+## Create monitors for the Cisco Meraki app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cisco Meraki alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Cisco Meraki - AMP Malware File Blocked` | This alert is triggered when Cisco AMP blocks a file in real time due to a malicious disposition. Any malware detection on the network warrants immediate investigation. | Count > 0 | Count < = 0 |
+| `Cisco Meraki - Firewall Denial Spike` | This alert is triggered when a single source IP generates 100 or more firewall denials in 5 minutes, indicating a possible network scan, DDoS attempt, or misconfigured host aggressively probing restricted resources. | Count > = 100 | Count < 100 |
+| `Cisco Meraki - High Severity IDS Alert` | This alert is triggered when a high-priority (priority=1) IDS signature is matched, indicating a critical intrusion attempt or active exploit targeting a network asset. | Count > 0 | Count < = 0 |
+| `Cisco Meraki - Possible Port Scan Attack` | This alert is triggered when a single source IP probes more than 15 unique destination ports across the network, indicating an active horizontal port scan aimed at discovering open services. | Count > 0 | Count < = 0 |
+| `Cisco Meraki - Retrospective Malicious File Detected` | This alert is triggered when a file previously allowed through the network is retrospectively flagged as malicious by AMP. This indicates a file that evaded initial detection is now confirmed as a threat. | Count > 0 | Count < = 0 |
+| `Cisco Meraki - Rogue SSID or SSID Spoofing Detected` | This alert is triggered when Air Marshal detects a rogue SSID or SSID spoofing attempt. These indicate a potential evil-twin attack or unauthorized access point attempting to intercept wireless traffic. | Count > 0 | Count < = 0 |
+| `Cisco Meraki - VPN Connectivity Down` | This alert is triggered when a VPN tunnel is disconnected. Loss of VPN connectivity can indicate a network failure, configuration issue, or a tunnel being torn down by an unauthorized actor. | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the Cisco Meraki app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

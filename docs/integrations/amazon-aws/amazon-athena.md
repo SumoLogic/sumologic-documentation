@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon Athena service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-athena-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-athena-logo.png')} alt="Amazon Athena icon" width="50"/>
 
 Amazon Athena is an interactive query service that makes it easy to analyze data directly in Amazon Simple Storage Service (Amazon S3) using standard SQL. With a few actions in the AWS Management Console, you can point Athena at your data stored in Amazon S3 and begin using standard SQL to run ad hoc queries and get results in seconds. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/athena/latest/ug/what-is.html).
 

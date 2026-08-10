@@ -44,6 +44,33 @@ Launch and manage scans and utilize Qualys scan data to enrich incident artifact
 
 * [xmltodict](https://github.com/martinblech/xmltodict/blob/master/LICENSE)
 
+## Configure Qualys in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Qualys API Server**. Enter your [Qualys API server URL](https://docs.qualys.com/en/edr/api/#t=getting_started%2Fapi_conventions.htm), for example, `https://qualysapi.qg2.apps.qualys.eu/`.
+
+* **Username**. Enter the username of a Qualys admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **API X-Requested-With**. Enter the "X-Requested-With" header to use with [authentication](https://docs.qualys.com/en/vm/api/scanauth/get_started/authentication.htm).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/qualys-configuration.png')} style={{border:'1px solid gray'}} alt="Qualys configuration" width="400"/>
+
+For information about Qualys, see [Qualys documentation](https://www.qualys.com/documentation/).
+
 ## Change Log
 
 * February 21, 2020 - First upload

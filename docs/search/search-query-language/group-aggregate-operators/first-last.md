@@ -4,12 +4,13 @@ title: first, last Grouping Operators
 sidebar_label: first, last
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `first` and `last` operators return the first or last result relative to the sort order. By default, searches return results in descending chronological order (most recent descending to oldest).
 
 For example, the following image shows a few results in the default sort order. The `#` column starts at one, and the `Time` values start with the most recent.
 
-![new_to_old_default_result_order.png](/img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png')} alt="New to old default result order" style={{border: '1px solid gray'}} width="200" />
 
 * The `first` result is indicated with the `#` value of 1. This `first` result has the most recent `Time`.
 * The `last` result is indicated with the `#` value of 5. This `last` result has the oldest `Time`.
@@ -30,9 +31,7 @@ If there is no sort order specified for returned results (for example, when usin
 
 ### Syntax
 
-```sql
-first(<field>) [as <field>] [by <field>]
-```
+`first(<field>) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -40,13 +39,13 @@ first(<field>) [as <field>] [by <field>]
 
 ### Example
 
-```sql
+```sumo
 ... | first(error_message) group by hostname
 ```
 
 Note that when you find the first occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_first` fields. See this example:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | first(url) as first_url, first(status_code) as first_statuscode
 ```
@@ -57,9 +56,7 @@ Finds the last value of the field being evaluated within the time range and acco
 
 ### Syntax
 
-```sql
-last(<field>) [as <field>] [by <field>]
-```
+`last(<field>) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -67,19 +64,17 @@ last(<field>) [as <field>] [by <field>]
 
 ### Example
 
-```sql
+```sumo
 ... | last(status_code) group by hostname
 ```
 
 Sample log message:
 
-```json
-Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.
-```
+`Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.`
 
 Example based on sample log message:
 
-```sql
+```sumo
 disk*
 | parse "diskutilization=*" as disk
 | disk>0.8?1:0 as overcapacity
@@ -91,7 +86,7 @@ This query finds all messages that contain the term `disk\*` and parses out al
 
 Note that when you find the last occurrence of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `_last` fields. See this example:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | last(url) as last_url, last(status_code) as last_statuscode
 ```

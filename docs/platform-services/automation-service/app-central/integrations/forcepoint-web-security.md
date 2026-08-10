@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forcepoint-web-security.png')} alt="forcepoint-web-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forcepoint-web-security.png')} alt="Forcepoint Web Security" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 18, 2023***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Forcepoint Web Security is a flexible web protection solution that provides fine-tuned control over your users’ web access, while providing comprehensive protection against web threats such as viruses, malware, data loss, and phishing attacks. 
 
@@ -24,8 +24,34 @@ Forcepoint Web Security is a flexible web protection solution that provides fine
 * **List Block URL** *(Enrichment)* - List URLs in an API-managed category.
 * **List Managed Categories***(Enrichment)* - Lists all API-managed categories.
 
+## Configure Forcepoint Web Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your Forcepoint server URL. 
+
+* **API Username**. Enter the username of a Forcepoint admin user authorized to authenticate the integration.
+
+* **API Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/forcepoint-web-security-configuration.png')} style={{border:'1px solid gray'}} alt="Forcepoint configuration" width="400"/>
+
+For information about Forcepoint Web Security, see [Forcepoint documentation](https://support.forcepoint.com/s/article/Web-Security-Documentation).
+
 ## Change Log
 
 * April 22, 2021 - First upload
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
 * July 18, 2023 (v1.2) - Code refactoring
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

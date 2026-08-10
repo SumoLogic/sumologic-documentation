@@ -7,7 +7,7 @@ description: The Sumo Logic app for Jira provides insight into Jira user access,
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Jira icon" width="50"/>
 
 The Sumo Logic app for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
 
@@ -30,7 +30,7 @@ For more information, see [Webhooks](https://developer.atlassian.com/server/jira
 
 ### Sample queries
 
-```sql title="Users created"
+```sumo title="Users created"
 _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 | json  "webhookEvent", "user.emailAddress", "user.displayName", "user.name", "timestamp" as event_name, user_email, user_name, user, timestamp nodrop
 | where event_name ="user_created"
@@ -550,7 +550,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/jira-user-events.png')} alt="Jira" />
 
-## Upgrading the Jira app (Optional)
+## Upgrade/Downgrade the Jira app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

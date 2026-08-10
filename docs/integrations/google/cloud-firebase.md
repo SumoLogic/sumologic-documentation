@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudFirebase.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudFirebase.png')} alt="Google Cloud Firebase icon" width="50"/>
 
 Firebase is Google's mobile development platform. For more details, refer to the [GCP documentation](https://firebase.google.com/docs)
 

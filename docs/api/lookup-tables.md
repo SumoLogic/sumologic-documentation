@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/logs.png')} alt="Logs icon" width="50"/>
 
 The Lookup Management API allows you to manage [Lookup Tables](/docs/search/lookup-tables) from HTTP endpoints.
 
@@ -17,26 +17,25 @@ The Lookup Management API allows you to manage [Lookup Tables](/docs/search/look
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                        |
-|:------------|:----------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/lookupManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/lookupManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/lookupManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/lookupManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/lookupManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/lookupManagement  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/lookupManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/lookupManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/lookupManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/lookupManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/lookupManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/lookupManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/lookupManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/lookupManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/lookupManagement  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/lookupManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/lookupManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/lookupManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/lookupManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/lookupManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/lookupManagement  |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
-* Data Management
+* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
     * Download Search Results
     * Manage Content
     * View Collectors
-
--->

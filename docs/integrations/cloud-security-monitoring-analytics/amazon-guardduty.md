@@ -7,7 +7,7 @@ description: Guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon_GuardDuty_Benchmark.png')} alt="Thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon_GuardDuty_Benchmark.png')} alt="Amazon GuardDuty Benchmark icon" width="70"/>
 
 The focus of GuardDuty is on protecting AWS accounts, workloads, and data with intelligent threat detection. The corresponding Sumo Logic dashboards are designed to surface the most relevant security insights from that data to yield actionable processes to tackle specific security concerns within your AWS infrastructure. Utilizing this app allows you to stay ahead of changing attack surfaces in a repeatable way via cloud security monitoring and analytics dashboards that provide operational security awareness for Amazon GuardDuty data sources.
 
@@ -19,13 +19,15 @@ See [Collecting Logs for the Amazon GuardDuty App](/docs/integrations/amazon-aws
 
 Now that you have set up the collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
-## Viewing the Amazon GuardDuty Dashboards
+## Viewing the Amazon GuardDuty dashboards
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview - Security Monitoring
 

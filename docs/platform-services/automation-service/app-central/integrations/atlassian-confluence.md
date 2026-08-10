@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-confluence.png')} alt="atlassian-confluence" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-confluence.png')} alt="Atlassian Confluence icon" width="80"/>
 
-***Version: 1.0  
-Updated: Oct 13, 2023***
+***Version: 1.1  
+Updated: April 13, 2026***
 
 Atlassian Confluence is a collaborative workspace tool for teams to create, share, and manage content, enhancing communication and project organization.
 
@@ -19,10 +19,36 @@ Atlassian Confluence is a collaborative workspace tool for teams to create, shar
 * **List Pages** *(Enrichment)* - Returns all pages.
 * **List Spaces** *(Enrichment)* - Returns all spaces.
 
-## Atlassian Confluence configuration
+## Configure Atlassian Confluence configuration
 
-To retrieve the API token, please refer to the following [guide](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+To retrieve the API token, see the [Atlassian documentation](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+
+## Configure Atlassian Confluence in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL of your Atlassian Confluence instance.
+
+* **Username**. Enter the username of the user authorized to provide authentication for the Atlassian Confluence integration.
+
+* **Token**. Enter the API token you created [above](#configure-atlassian-confluence-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian/atlassian-confluence-configuration.png')} style={{border:'1px solid gray'}} alt="Atlassian Confluence Logger configuration" width="400"/>
+
+For information about Atlassian Confluence, see [Confluence documentation](https://confluence.atlassian.com/alldoc/confluence-documentation-directory-12877996.html).
 
 ## Change Log
 
 * October 13, 2023 - First upload
+* April 13, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alphamountain.png')} alt="alienvault-otx" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alphamountain.png')} alt="alphaMountain icon" width="100"/>
 
-***Version: 1.1  
-Updated: Sep 28, 2023***
+***Version: 1.2  
+Updated: April 13, 2026***
 
 alphaMountain provides up-to-date domain and IP intelligence for cybersecurity investigational and protection platforms.
 
@@ -23,18 +23,29 @@ alphaMountain provides up-to-date domain and IP intelligence for cybersecurity i
 
 In order to get a free trial please visit [https://www.alphamountain.ai/contact/](https://www.alphamountain.ai/contact/) to get your license key.
 
-## alphaMountain in Automation Service and Cloud SOAR
+## Configure alphaMountain in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alphamountain/alphamountain-3.png')} style={{border:'1px solid gray'}} alt="alphamountain-3" width="400"/>
-1. Populate all the required fields (\*):
-   * **URL**. alphaMountain API URL. Default: 'https://api.alphamountain.ai'
-   * **License Key**. Your License Key for alphaMountain.
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alphamountain/alphamountain-4.png')} style={{border:'1px solid gray'}} alt="alphamountain-4" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alphamountain/alphamountain-5.png')} style={{border:'1px solid gray'}} alt="alphamountain-5" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alphamountain/alphamountain-6.png')} style={{border:'1px solid gray'}} alt="alphamountain-6" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alphamountain/alphamountain-7.png')} style={{border:'1px solid gray'}} alt="alphamountain-7" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **URL**. Enter the alphaMountain API URL. The default value is `https://api.alphamountain.ai`
+
+* **License Key**. Enter your License Key for alphaMountain.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/alphamountain-configuration.png')} style={{border:'1px solid gray'}} alt="alphaMountain configuration" width="400"/>
+
+For information about alphaMountain, see [alphaMountain documentation](https://www.alphamountain.ai/api/).
 
 ## Category
 
@@ -49,3 +60,4 @@ Threat Intelligence-Reputation
 	+ Changed action name: Get Likely Impersonations -> Get Possible Impersonations
 	+ Updated tableview for Get Categories and Get Threat Score
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 13, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

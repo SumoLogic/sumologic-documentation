@@ -5,14 +5,14 @@ sidebar_label: Migration Strategy using Terraform
 description: Learn how to migrate CloudWatch Source to Kinesis Firehose Source using Terraform.
 ---
 
-This document will help you to migrate CloudWatch Source to Kinesis Firehose Source using Terraform. There are two approaches which you can follow for the migration. Refer to [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) and [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#kinesis-firehose-source-or-cloudwatch-source) to know about the migration benefits.
+This document will help you to migrate CloudWatch Source to Kinesis Firehose Source using Terraform. There are two approaches which you can follow for the migration. Refer to [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) and [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/) to learn about the migration benefits.
 
 ## Approach 1: Enable forwarding of data to Sumo Logic using Kinesis Firehose for the Log and Metrics source
 
 1. Add a **new-collection-module** where only logs and metrics collection is enabled. 
 1. Disable all other collections in this block. 
 1. Run `terraform init` and `terraform apply`.
-    ```sql
+    ```sumo
     module "new-collection-module" {
     source = "./source-module"
 
@@ -31,7 +31,6 @@ This document will help you to migrate CloudWatch Source to Kinesis Firehose Sou
     collect_cloudtrail_logs = "false"
     collect_classic_lb_logs = "false"
     collect_elb_logs = "false"
-    collect_root_cause_data = "None"
     }
     ```
 1. Verify the following:
@@ -39,7 +38,7 @@ This document will help you to migrate CloudWatch Source to Kinesis Firehose Sou
     1. Logs and metrics ingested into Sumo Logic via Kinesis Firehose sources.
 1. Once verified, delete the old CloudWatch log sources (HTTP) and metrics sources with other associated resources like Lambdas, subscription, and more.
     1. Disable logs and metrics collection in the original collection block and run `terraform apply` again to clean up the redundant resources.
-    ```sql
+    ```sumo
     module "old-collection-module" {
     source = "./source-module"
 
@@ -69,7 +68,7 @@ This approach will create an additional collector with Kinesis logs and metrics 
 
 1. Update `collect_cloudwatch_logs` from **Lambda Log Forwarder** to **Kinesis Firehose Log Source**.
 1. Update `collect_cloudwatch_metrics` from **CloudWatch Metrics Source** to **Kinesis Firehose Metrics Source**.
-    ```sql
+    ```sumo
     collect_cloudwatch_logs = "Kinesis Firehose Log Source"
     collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
     ```

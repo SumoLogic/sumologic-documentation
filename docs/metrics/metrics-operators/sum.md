@@ -2,10 +2,11 @@
 id: sum
 title: sum Metrics Operator
 sidebar_label: sum
+description: Use the sum metrics operator to calculate the sum of metric values that match the query. When grouping is specified, it calculates the sum for each group.
 ---
 
 
-The sum operator calculates the sum of the metrics values that match the query. If grouping is specified, it calculates the sum for each group.
+The `sum` operator calculates the sum of the metrics values that match the query. If grouping is specified, it calculates the sum for each group.
 
 ## Syntax
 

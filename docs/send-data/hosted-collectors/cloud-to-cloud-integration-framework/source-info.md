@@ -19,7 +19,7 @@ If the Source has any issues during any one of these states, it is placed in an 
 
 When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
 
-On the [Collection page](/docs/manage/health-events#collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events.md) to investigate issues with collection.
+On the [Collection page](/docs/manage/health-events#view-health-events-in-collection-page), the Health and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.
 
@@ -28,12 +28,16 @@ Hover your mouse over the status icon to view a tooltip with a count of the dete
 **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
 
 :::note
-The checkbox only shows up if you have Cloud SIEM and if the C2C already has Cloud SIEM content like parsers and rules.
+The **Forward to SIEM** checkbox is only available if Cloud SIEM is installed and if the C2C already has Cloud SIEM content like parsers and rules.
 :::
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
 | `_siemForward` | <code>(true \| false)</code> | Set to `true` when **Forward To SIEM** is checked. |
+
+:::note
+- For C2C sources where the checkbox is already provided, there's no need to manually add `_siemForward=true` (case-sensitive), since the checkbox alone handles forwarding to SIEM.
+:::
 
 ## Error Types
 
@@ -41,9 +45,9 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |:--|:--|:--|:--|:--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry indefinitely. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | FirstPartyGenericError |
+| VendorConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | VendorConfigError  |
+| VendorGeneric | Normally due to an error communicating with the vendor generic APIs. | Yes | The Source will retry indefinitely. | VendorGenericError |
+| SumoLogicGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry indefinitely. | SumoLogicGenericError |
 
 ## Restarting your Source
 

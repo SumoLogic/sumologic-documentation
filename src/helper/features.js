@@ -1,21 +1,154 @@
 import React from 'react';
 import Translate, { translate } from '@docusaurus/Translate';
 
+
+// Tab 1: Security
 export const features1 = [
   {
     title: translate({
+      id: 'landing.feature.cse.title',
+      message: 'Cloud SIEM',
+      description: 'Title for CSE',
+    }),
+    imageUrl: 'img/icons/security/cloud-siem.png',
+    description: (<Translate
+      id='landing.feature.cse.desc'
+      description='CSE description'>
+      Detect threats faster and gain insight into security events.
+    </Translate>),
+    link: 'docs/cse',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.soar.title',
+      message: 'Cloud SOAR',
+      description: 'Title for SOAR',
+    }),
+    imageUrl: 'img/icons/security/soar-2-color-icon.png',
+    description: (<Translate
+      id='landing.feature.soar.desc'
+      description='SOAR description'>
+      Modernize and automate your SOC for faster response times.
+    </Translate>),
+    link: 'docs/cloud-soar',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.threat-intel.title',
+      message: 'Threat Intelligence',
+      description: 'Title for Threat Intelligence',
+    }),
+    imageUrl: 'img/icons/security/cloud-siem.png',
+    description: (<Translate
+      id='landing.feature.threat-intel.desc'
+      description='Threat Intelligence description'>
+      Enrich your security operations with curated threat intelligence data.
+    </Translate>),
+    link: 'docs/security/threat-intelligence',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.platform-services.title',
+      message: 'Platform Services',
+      description: 'Title for Platform Services',
+    }),
+    imageUrl: 'img/icons/security/siem-challenges.png',
+    description: (<Translate
+      id='landing.feature.platform-services.desc'
+      description='Platform Services description'>
+      Core platform capabilities powering search, automation, and data management across Sumo Logic.
+    </Translate>),
+    link: 'docs/platform-services',
+  },
+];
+
+
+// Tab 2: Log Search
+export const features2 = [
+  {
+    title: translate({
       id: 'landing.feature.searches-logs.title',
-      message: 'Searches and Logs',
-      description: 'Title for searches & logs',
+      message: 'Log Search',
+      description: 'Title for Log Search',
     }),
     imageUrl: 'img/icons/search.png',
     description: (<Translate
       id='landing.feature.searches-logs.desc'
-      description='Searches and logs description'>
+      description='Log Search description'>
       Search, query and analyze your log data sent to Sumo Logic.
     </Translate>),
     link: 'docs/search',
   },
+  {
+    title: translate({
+      id: 'landing.feature.search-query-language.title',
+      message: 'Search Query Language',
+      description: 'Title for Search Query Language',
+    }),
+    imageUrl: 'img/icons/search.png',
+    description: (<Translate
+      id='landing.feature.search-query-language.desc'
+      description='Search Query Language description'>
+      Learn the operators, syntax, and keywords used to build powerful log queries.
+    </Translate>),
+    link: 'docs/search/search-query-language',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.cheat-sheets.title',
+      message: 'Log Search Cheat Sheets',
+      description: 'Title for Log Search Cheat Sheets',
+    }),
+    imageUrl: 'img/icons/search.png',
+    description: (<Translate
+      id='landing.feature.cheat-sheets.desc'
+      description='Log Search Cheat Sheets description'>
+      Quick-reference guides for common search patterns and operators.
+    </Translate>),
+    link: 'docs/search/search-cheat-sheets',
+  },
+];
+
+
+// Tab 3: Dojo AI
+export const features3 = [
+  {
+    title: translate({
+      id: 'landing.feature.mobot.title',
+      message: 'Mobot (Dojo AI)',
+      description: 'Title for Dojo AI / Mobot',
+    }),
+    imageUrl: 'img/icons/operations/human-to-machine.png',
+    description: (<Translate
+      id='landing.feature.mobot.desc'
+      description='Mobot description'>
+      Our AI-powered log assistant allows you to ask questions in plain English and get accurate log queries without writing code.
+    </Translate>),
+    link: 'docs/search/mobot',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.dojo-ai.title',
+      message: 'Dojo AI Platform',
+      description: 'Title for Dojo AI platform overview',
+    }),
+    imageUrl: 'img/icons/operations/human-to-machine.png',
+    description: (
+      <Translate
+        id='landing.feature.dojo-ai.desc'
+        description='Dojo AI platform teaser description'>
+        Explore our evolving AI capabilities built to accelerate investigation, automate workflows, and surface insights across your observability and security data.
+      </Translate>
+    ),
+    link: 'https://www.sumologic.com/solutions/dojo-ai',
+  },
+];
+
+// After it goes GA: docs/cse/get-started-with-cloud-siem/soc-analyst-agent
+// After it goes GA: mcp-server
+
+// Tab 4: Observability
+export const features4 = [
   {
     title: translate({
       id: 'landing.feature.metrics.title',
@@ -30,24 +163,6 @@ export const features1 = [
     </Translate>),
     link: 'docs/metrics',
   },
-  {
-    title: translate({
-      id: 'landing.feature.traces.title',
-      message: 'Traces',
-      description: 'Title for Traces',
-    }),
-    imageUrl: 'img/icons/apm.png',
-    description: (<Translate
-      id='landing.feature.traces.desc'
-      description='Traces description'>
-      Observe apps and microservices at the level of individual requests to pinpoint issues.
-    </Translate>),
-    link: 'docs/apm/traces',
-  },
-];
-
-
-export const features2 = [
   {
     title: translate({
       id: 'landing.feature.observability.title',
@@ -76,56 +191,29 @@ export const features2 = [
     </Translate>),
     link: 'docs/observability/aws',
   },
-  {
-    title: translate({
-      id: 'landing.feature.k8s.title',
-      message: 'Kubernetes Observability',
-      description: 'Title for Kubernetes Observability',
-    }),
-    imageUrl: 'img/icons/operations/kubernetes.png',
-    description: (<Translate
-      id='landing.feature.k8s.desc'
-      description='AWS Observability description'>
-      Deploy and monitor Kubernetes.
-    </Translate>),
-    link: 'docs/observability/kubernetes',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.rce.title',
-      message: 'Root Cause Explorer',
-      description: 'Title for Root Cause Explorer',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id='landing.feature.rce.desc'
-      description='Root Cause Explorer description'>
-      Accelerate app troubleshooting and root cause isolation.
-    </Translate>),
-    link: 'docs/observability/root-cause-explorer',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.sensu.title',
-      message: 'Sensu',
-      description: 'Title for Sensu',
-    }),
-    imageUrl: 'img/icons/observe.png',
-    description: (<Translate
-      id='landing.feature.sensu.desc'
-      description='Root Cause Explorer description'>
-      Visibility into apps, containers, traditional servers, and more.
-    </Translate>),
-    link: 'https://docs.sensu.io/sensu-go/latest',
-  },
 ];
 
 
-export const features3 = [
+// Tab 5: Alerts, Dashboards, and Apps
+export const features5 = [
+  {
+    title: translate({
+      id: 'landing.feature.alerts.title',
+      message: 'Alerts',
+      description: 'Title for alerts',
+    }),
+    imageUrl: 'img/icons/alerts.png',
+    description: (<Translate
+      id='landing.feature.alerts.desc'
+      description='Alerts description'>
+      Visualize your data and set alerts to monitor activity.
+    </Translate>),
+    link: 'docs/alerts',
+  },
   {
     title: translate({
       id: 'landing.feature.integrations.title',
-      message: 'Apps and Integrations',
+      message: 'Apps & Integrations',
       description: 'Title for Apps',
     }),
     imageUrl: 'img/icons/integrations.png',
@@ -138,71 +226,8 @@ export const features3 = [
   },
   {
     title: translate({
-      id: 'landing.feature.apm.title',
-      message: 'App performance monitoring',
-      description: 'Title for APM',
-    }),
-    imageUrl: 'img/icons/apm.png',
-    description: (<Translate
-      id='landing.feature.apm.desc'
-      description='APM description'>
-      Monitor and analyze infrastructure health and app performance metrics.
-    </Translate>),
-    link: 'docs/apm',
-  },
-];
-
-export const features4 = [
-  {
-    title: translate({
-      id: 'landing.feature.cse.title',
-      message: 'Cloud SIEM',
-      description: 'Title for CSE',
-    }),
-    imageUrl: 'img/icons/security/cloud-siem.png',
-    description: (<Translate
-      id='landing.feature.cse.desc'
-      description='CSE description'>
-      Security event management and insight into key issues.
-    </Translate>),
-    link: 'docs/cse',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.soar.title',
-      message: 'Cloud SOAR',
-      description: 'Title for SOAR',
-    }),
-    imageUrl: 'img/icons/security/soar-2-color-icon.png',
-    description: (<Translate
-      id='landing.feature.soar.desc'
-      description='SOAR description'>
-      Modernize and automate your SOC for faster response times.
-    </Translate>),
-    link: 'docs/cloud-soar',
-  },
-];
-
-
-export const features5 = [
-  {
-    title: translate({
-      id: 'landing.feature.alerts.title',
-      message: 'Alerts',
-      description: 'Title for alerts',
-    }),
-    imageUrl: 'img/icons/alerts.png',
-    description: (<Translate
-      id='landing.feature.alerts.desc'
-      description='alerts description'>
-      Visualize your data and set alerts to monitor activity.
-    </Translate>),
-    link: 'docs/alerts',
-  },
-  {
-    title: translate({
       id: 'landing.feature.dashboards.title',
-      message: 'Dashboards and Visuals',
+      message: 'Dashboards & Visuals',
       description: 'Title for dashboards',
     }),
     imageUrl: 'img/icons/dashboards.png',
@@ -213,73 +238,13 @@ export const features5 = [
     </Translate>),
     link: 'docs/dashboards',
   },
-  {
-    title: translate({
-      id: 'landing.feature.manage.title',
-      message: 'Manage Sumo',
-      description: 'Title for manage',
-    }),
-    imageUrl: 'img/icons/manage.png',
-    description: (<Translate
-      id='landing.feature.manage.desc'
-      description='Manage description'>
-      Manage Sumo admin settings and advanced features.
-    </Translate>),
-    link: 'docs/manage',
-  },
 ];
 
-
-export const features6 = [
-  {
-    title: translate({
-      id: 'landing.feature.sdo.title',
-      message: 'Software Dev Optimization',
-      description: 'Title for SDO',
-    }),
-    imageUrl: 'img/icons/sdo.png',
-    description: (<Translate
-      id='landing.feature.sdo.desc'
-      description='SDO description'>
-      Monitor your CI/CD pipelines and accelerate release velocity.
-    </Translate>),
-    link: 'docs/observability/sdo',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.rum.title',
-      message: 'Real User Monitoring',
-      description: 'Title for rum',
-    }),
-    imageUrl: 'img/icons/business/customer-retention.png',
-    description: (<Translate
-      id='landing.feature.rum.desc'
-      description='rum description'>
-      Gain visibility into how users interact with your web apps.
-    </Translate>),
-    link: 'docs/apm/real-user-monitoring',
-  },
-  {
-    title: translate({
-      id: 'landing.feature.gi.title',
-      message: 'Global Intelligence',
-      description: 'Title for Global Intelligence',
-    }),
-    imageUrl: 'img/icons/cloud/global-intelligence.png',
-    description: (<Translate
-      id='landing.feature.gi.desc'
-      description='Global Intelligence description'>
-      Leverage machine learning to uncover global key performance and risk indicators.
-    </Translate>),
-    link: 'docs/global-intelligence',
-  },
-];
 
 export const features = [
-  features1,
-  features2,
-  features3,
-  features4,
-  features5,
-  features6,
+  features1, // Security
+  features2, // Log Search
+  features3, // Dojo AI
+  features4, // Observability
+  features5, // Alerts, Dashboards, and Apps
 ];

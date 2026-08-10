@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/downdetector.png')} alt="downdetector" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 **Downdetector** offers realtime overview of issues and outages with all kinds of services.
 
@@ -24,24 +24,37 @@ Updated: Jul 06, 2023***
 
 ## Downdetector configuration
 
-1. Log in to Downdetector with your username and password. On the left menu click on API.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-1.png')} style={{border:'1px solid gray'}} alt="downdetector" width="200"/>
+1. [Log in to Downdetector](https://enterprise.downdetector.com/login/) with your username and password. On the left menu click on API.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-1.png')} style={{border:'1px solid gray'}} alt="downdetector" width="200"/>
 1. Under + sign create your token (Client Secret). 
-1. Make sure to cope the Client ID and the Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-2.png')} style={{border:'1px solid gray'}} alt="downdetector" width="600"/>
+1. Make sure to [copy the Client ID and the Client Secret](https://cookbooks.downdetectorapi.com/cookbooks/Generating-tokens-and-credentials.html).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-2.png')} style={{border:'1px solid gray'}} alt="downdetector" width="600"/>
 
-## Downdetector in Automation Service and Cloud SOAR
+## Configure Downdetector in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-5.png')} style={{border:'1px solid gray'}} alt="downdetector" width="700"/>
-1. Populate all the required fields (\*) and then click **Save**.
-   * **URL**. Default value for API URL is 'https://downdetectorapi.com'.
-   * **Username**. The client ID that you copied as username.
-   * **Password**. The Client Secret that you copied as password. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-6.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-7.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-8.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-9.png')} style={{border:'1px solid gray'}} alt="downdetector" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Downdetector API URL. The default value is `https://downdetectorapi.com`
+
+* **Username**. Enter the client ID that you [copied earlier](#downdetector-configuration).
+
+* **Password**. Enter the client secret that you copied earlier. 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/downdetector-configuration.png')} style={{border:'1px solid gray'}} alt="Downdetector configuration" width="400"/> gray'}} alt="downdetector" width="400"/>
+
+For information about Downdetector, see [Downdetector documentation](https://downdetectorapi.com/v2/docs/).
   
 ## Change Log
 
 * November 22, 2022 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

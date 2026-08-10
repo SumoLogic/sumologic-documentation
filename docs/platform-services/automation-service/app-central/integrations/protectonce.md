@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/protectonce.png')} alt="protectonce" width="100"/>
 
-***Version: 1.3  
-Updated: Mar 4, 2024***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 The ProtectOnce provides SaaS companies with a radically simplified agentless solution that secures API-driven applications in a matter of minutes, providing deep visibility into all APIs and helping to prevent complex attacks.
 
@@ -17,23 +17,42 @@ The ProtectOnce provides SaaS companies with a radically simplified agentless so
 * **Get Incidents** *(Enrichment)* - Returns all Incidents.
 * **Netskope Get Incidents Daemon ProtectOnce** *(Daemon)* - Automatically gather Incidents from ProtectOnce.
 
-## ProtectOnce in Automation Service and Cloud SOAR
+## Configure ProtectOnce in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-3.png')} style={{border:'1px solid gray'}} alt="protectonce" width="800"/>
-1. Populate all the required fields (\*) and then click **SAVE**.
-    * **Server URL**. URL for API.
-    * **Email**. Email you use to log in into the system.
-    * **Password**. The password of your email.
-    * **Application ID**. The id of the application.
-1. Additionally, if need you can populate the query daemons.
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-4.png')} style={{border:'1px solid gray'}} alt="protectonce" width="400"/>
-1. Click **Test**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-5.png')} style={{border:'1px solid gray'}} alt="protectonce" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/protectonce/protectonce-6.png')} style={{border:'1px solid gray'}} alt="protectonce" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your ProtectOnce API URL.
+
+* **Email**. Enter the email that an admin user uses to log in into the system.
+
+* **Password**. Enter the admin user's password.
+
+* **Application ID**. Enter the ID of the application. 
+
+* **Query**. Populate the query daemons.
+
+* **Start Date**. Enter the start date of the query. (Required for daemon action format `%Y-%m-%dT%H:%M:%S.%f`.)
+
+* **End Date**. Enter the end date of the query. (Required for daemon action format `%Y-%m-%dT%H:%M:%S.%f`.)
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/protectonce-configuration.png')} style={{border:'1px solid gray'}} alt="ProtectOnce configuration" width="400"/>
+
+For information about ProtectOnce, see the [ProtectOnce website](https://app.protectonce.com/).
 
 ## Change Log
 
 * December 26, 2022 - First upload
 * July 18, 2023 (v1.2) - Removed leading/trailing spaces
 * March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

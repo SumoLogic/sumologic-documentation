@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-x-force-exchange.png')} alt="ibm-x-force-exchange" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-x-force-exchange.png')} alt="IBM X-Force Exchange icon" width="100"/>
 
-***Version: 1.5  
-Updated: June 26, 2024***
+***Version: 1.6  
+Updated: April 29, 2026***
 
 IBM X-Force Exchange is a cloud-based threat intelligence platform that allows you to consume, share and act on threat intelligence. It enables you to rapidly research the latest global security threats, aggregate actionable intelligence, consult with experts and collaborate with peers.
 
@@ -20,6 +20,37 @@ IBM X-Force Exchange is a cloud-based threat intelligence platform that allows y
 * **Whois Lookup** (*Enrichment*) - Issue a Whois lookup on a specific IP or Domain.
 * **Passive DNS** (*Enrichment*) - Search passive DNS records for a specific IP or Domain.
 * **URL Reputation V2** (*Enrichment*) - Accepted multiple URLs separated by comma as Input and do URL reputation.
+
+## Configure IBM X-Force Exchange in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your IBM X-Force [API URL](https://api.xforce.ibmcloud.com/doc/), for example, `https://api.xforce.ibmcloud.com`
+
+* **API Key**. Enter an IBM X-Force [API key](https://www.ibm.com/docs/en/qradar-common?topic=dashboard-configuring-advanced-threat-protection-feed-licensing#taskt_Qapps_XForceapp_configure_atpf__steps__1).
+
+* **Secret Key**. Enter the secret for the IBM X-Force API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-xforce-configuration.png')} style={{border:'1px solid gray'}} alt="IBM X-Force Exchange configuration" width="400"/>
+
+For information about IBM X-Force Exchange, see [IBM X-Force Exchange documentation](https://sdk.xforce.ibmcloud.com/).
 
 ## Category
 
@@ -44,3 +75,4 @@ Threat Intelligence-Reputation
 		- Whois Lookup V2
 * June 26, 2024 (v1.5)
 	+ Updated Whois Lookup and Passive DNS actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.
+* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

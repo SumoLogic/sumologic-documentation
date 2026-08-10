@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/okta.png')} alt="okta" width="50"/>
 
-***Version: 1.4  
-Updated: April 24, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 Interact with Okta users, groups, and system logging information.
 
@@ -38,6 +38,31 @@ Interact with Okta users, groups, and system logging information.
 * **Update Network Zone** _(Containment)_ - Updates a network zone.
 * **Update User** _(Containment)_ - Updates a user’s account.
 
+## Configure Okta in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Domain**. Enter your [Okta domain](https://developer.okta.com/docs/guides/find-your-domain/main/).
+
+* **Token**. Enter an [Okta token](https://support.okta.com/help/s/article/How-to-create-an-API-token?language=en_US).
+
+* **API Version**. Enter your [Okta API version](https://developer.okta.com/docs/api/#api-versions).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/okta-configuration.png')} style={{border:'1px solid gray'}} alt="Okta configuration" width="400"/>
+
+For information about Okta, see [Okta documentation](https://help.okta.com/en-us/content/index.htm).
+
 ## Change Log
 
 * March 20, 2020 - First upload
@@ -54,3 +79,4 @@ Interact with Okta users, groups, and system logging information.
     * Get Network Zone
     * List Network Zones
     * Update Network Zone
+* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

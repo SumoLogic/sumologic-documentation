@@ -23,7 +23,7 @@ This search returns the most critical log messages in the Apache error log.
 * Suggested Time Range: -10m; Set to run every 15 minutes with an
     alert for 1 or more results found.
 
-```sql
+```sumo
 _sourceName=*error_log* AND _sourceCategory=*apache* AND ("emerg" OR "alert" OR "crit")
 | parse using public/apache/error
 ```
@@ -34,7 +34,7 @@ Returns a count of all messages by log level (error, warn etc.) to give administ
 
 * Suggested Time Rang: -15m
 
-```sql
+```sumo
 _sourceName=*error_log* AND _sourceCategory=*apache*
 | parse using public/apache/error
 | where log_level !=""
@@ -48,7 +48,7 @@ Returns trend data of how many server start and stop events took place over a pe
 
 * Suggested Time Range: -6h
 
-```sql
+```sumo
 _sourceName=*error_log* AND _sourceCategory=*apache*
 | parse using public/apache/error
 | if(reason matches "caught SIGTERM, shutting down", 1, 0) as server_stop
@@ -65,7 +65,7 @@ This search returns the top Apache error log reasons.
 
 * Suggested Time Range: -6h
 
-```sql
+```sumo
 _sourceName=*error_log* AND _sourceCategory=*apache*
 | parse using public/apache/error
 | count by reason
@@ -78,7 +78,7 @@ Returns the top source IP addresses that cause errors, which should correlate wi
 
 * Suggested Time Range: -6h
 
-```sql
+```sumo
 _sourceName=*error_log* AND _sourceCategory=*apache*
 | parse using public/apache/error
 | count_frequent src_ip

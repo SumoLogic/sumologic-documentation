@@ -5,6 +5,8 @@ sidebar_label: Collect Logs using CloudFormation with Secured Endpoint
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template with secured Sumo Logic endPoint.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::note
 We strongly recommend the alternative collection process described on [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/), which is more robust and reliable, where you do not need to manage resources. Lambda based collection methods are limited by time out, concurrency, and memory limits.
 :::
@@ -48,7 +50,7 @@ If you're using the AWS Console, do the following:
    * **Type**. Select SecureString.
    * **KMS Key Source**. Select the KMS Key ID or use the default KMS key.
    * **Value**. Paste the value of the SUMO_ENDPOINT_URL copied while creating the HTTP source.
-1. Click **Create Parameter**.<br/> ![Create_SecureString_Parameter.png](/img/send-data/Create_SecureString_Parameter.png)
+1. Click **Create Parameter**.<br/><img src={useBaseUrl('img/send-data/Create_SecureString_Parameter.png')} alt="Create Parameter" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 You can verify whether the parameter is created successfully by going to https://console.aws.amazon.com/systems-manager/parameters/?region=us-east-1&tab=Table and looking for parameter `SUMO_ENDPOINT`.
@@ -71,16 +73,12 @@ For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-source
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Under **Management Tools**, select **CloudFormation**.
-1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard).** <br/> ![Create_Stack_on_AWS_1.gif](/img/send-data/Create_Stack_on_AWS_1.gif)
+1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard).** <br/><img src={useBaseUrl('img/send-data/Create_Stack_on_AWS_1.gif')} alt="Create stack on AWS" style={{border: '1px solid gray'}} width="600" />
 1. On the **Specify Template** window, do one of the following:
 
-   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormationWithSecuredEndpoint.json` file, and then click **Next**.
+   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormationWithSecuredEndpoint.json` file, and then click **Next**.<br/><img src={useBaseUrl('img/send-data/Create_Stack_on_AWS_2.png')} alt="Upload a template file" style={{border: '1px solid gray'}} width="500" />
 
-    ![Create_Stack_on_AWS_2.png](/img/send-data/Create_Stack_on_AWS_2.png)
-
-   * Otherwise, if you did not modify the CloudFormation template, select **Specify an Amazon S3 template URL** and enter: `https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json`        
-
-    ![Create_Stack_on_AWS_3.png](/img/send-data/Create_Stack_on_AWS_3.png)
+   * Otherwise, if you did not modify the CloudFormation template, select **Specify an Amazon S3 template URL** and enter: `https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json`<br/><img src={useBaseUrl('img/send-data/Create_Stack_on_AWS_3.png')} alt="Specify an Amazon S3 template URL" style={{border: '1px solid gray'}} width="500" />
 
 1. Select **Next** and the **Specify Stack Details** window appears. Enter the following:
    * **Stack Name**.
@@ -94,9 +92,7 @@ For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-source
     :::
 
    * **NumOfWorkers.** (Optional) Increase this value to speed up the dead letter queue (DLQ) processing.
-   * **SumoURLDecryptKeyID.** (Required) Enter the Key ID copied from “Get the KMS Key ID” step.
-
-    ![Create_Stack_on_AWS_4.png](/img/send-data/Create_Stack_on_AWS_4.png)
+   * **SumoURLDecryptKeyID.** (Required) Enter the Key ID copied from “Get the KMS Key ID” step.<br/><img src={useBaseUrl('img/send-data/Create_Stack_on_AWS_4.png')} alt="Specify stack details" style={{border: '1px solid gray'}} width="800" />
 
 1. Click **Next**. The **Configure Stack Options** screen will appear. You can optionally add AWS tags to tag the resources created by this Cloudformation stack. Click **Next** to get to the final **Review** window.
 

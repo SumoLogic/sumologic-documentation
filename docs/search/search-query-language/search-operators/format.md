@@ -2,7 +2,10 @@
 id: format
 title: format Search Operator
 sidebar_label: format
+description: Use the format operator to format and combine data from parsed fields into user-defined strings.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `format` operator allows you to format and combine data from parsed fields. Numbers, strings, and dates can be formatted into a user-defined string. This allows data in logs, such as dates or currency amounts, to be formatted as human readable, when otherwise it would be hard to decipher.
 
@@ -10,9 +13,7 @@ The [`concat`](concat.md) operator is a simpler version of the Format operator
 
 ## Syntax
 
-```sql
-format(<formatSpecifier>, <field1>[, <field2>, <field3>, ...]) as <field>
-```
+`format(<formatSpecifier>, <field1>[, <field2>, <field3>, ...]) as <field>`
 
 The Sumo Logic Format operator supports all Java String.format syntax, as defined in [Oracle's Formatter](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax).
 
@@ -32,7 +33,7 @@ The Sumo Logic Format operator supports all Java String.format syntax, as define
 
 In this query, we search for errors, then parse the field “fiveMinuteRate” as “rate”, then combine the text “Five Minute Rate is :” and the rate together as “formattedVal”.
 
-```sql
+```sumo
 error
 | parse "fiveMinuteRate=*," as rate
 | format("%s : %s","Five Minute Rate is :" , rate) as formattedVal
@@ -40,26 +41,26 @@ error
 
 which results in:
 
-![Format](/img/search/searchquerylanguage/search-operators/Format.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Format.png')} alt="Format" style={{border: '1px solid gray'}} width="800" />
 
 ### Format numbers
 
 You can format big decimals, this one sets up to 20.
 
-```sql
+```sumo
 | format( "%.20f",number) as bigDecimal
 ```
 
 This query allows you to format number fields from a message log into a
 properly formatted, human-readable currency amount.
 
-```sql
+```sumo
 | format( "$%.2f",number) as currency
 ```
 
 This query does the same but also places thousands separators.
 
-```sql
+```sumo
 | format("$%,.2f",number)  as currency
 ```
 
@@ -67,7 +68,7 @@ This query does the same but also places thousands separators.
 
 Use the following query to format fields in a message log into a readable date.
 
-```sql
+```sumo
 | parse “*-*-*” “as year, month, day | format (“%d/%d/%d”, month, day, year) as date
 ```
 
@@ -75,7 +76,7 @@ Use the following query to format fields in a message log into a readable date.
 
 Use this format specifier to convert strings to uppercase:
 
-```sql
+```sumo
 | format("%S: %d", name, age) as personAge
 ```
 
@@ -83,7 +84,7 @@ Use this format specifier to convert strings to uppercase:
 
 For example, to convert a field, collectorId, to 16 character uppercase hexadecimal:
 
-```sql
+```sumo
 | parse “*-*-*” “as year, month, day
 | format (“%d/%d/%d”, month, day, year) as date
 ```
@@ -92,7 +93,7 @@ For example, to convert a field, collectorId, to 16 character uppercase hexadec
 
 In this query, we have a single value, like the average cache miss percentage, and we add a "%" to the end.
 
-```sql
+```sumo
 | format("%.3f %s", avg_cache_miss_pct,"%") as avg_cache_miss_pct
 ```
 

@@ -6,7 +6,7 @@ description: Allows you to monitor your AWS resources for potential security ris
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Inspector Classic icon" width="50"/>
 
 :::warning Newer version available
 You're viewing legacy documentation. For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector.md).
@@ -17,7 +17,7 @@ Amazon Inspector allows you to monitor your AWS resources for potential security
 The App uses a Lambda function to collect assessment run events (notifications) directly from the Amazon Inspector service, which then retrieves further details via the Inspector API, and finally sends them over to a Sumo Logic HTTP Source endpoint.
 
 For more information on Amazon Inspector notifications, see:
-[Amazon Inspector Classic assessment templates and assessment runs](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html).
+[Amazon Inspector Classic assessment templates and assessment runs](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html).
 
 ## Sample log
 
@@ -222,7 +222,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Persistent Findings.** Displays persistent findings in a table chart, including details on the finding title, template, finding severity, and number of runs for the last seven days.
 
-## Upgrading the Amazon Inspector Classic app (Optional)
+## Upgrade/Downgrade the Amazon Inspector Classic app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

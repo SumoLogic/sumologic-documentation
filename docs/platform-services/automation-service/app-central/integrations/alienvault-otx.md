@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-otx.png')} alt="alienvault-otx" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-otx.png')} alt="Alienvault OTX icon" width="90"/>
 
 ***Version: 1.12  
 Updated: Sep 04, 2023***
@@ -33,6 +33,28 @@ Enrich incident evidence with threat intelligence data from AlienVault OTX.
 ## Category
 
 Threat Intelligence-Reputation
+
+## Configure AlienVault in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **API URL**. Enter your AlienVault OTX API URL. The default value is `https://otx.alienvault.com`
+
+* **API Key**. Enter your [AlienVault OTX API key](https://cybersecurity.att.com/documentation/usm-anywhere/user-guide/otx/otx-key.htm).
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alienvault/alienvault-otx-configuration.png')} style={{border:'1px solid gray'}} alt="Alienvault OTX configuration" width="400"/>
+
+For information about AlienVault, see [AlienVault documentation](https://cybersecurity.att.com/documentation/).
 
 ## Change Log
 

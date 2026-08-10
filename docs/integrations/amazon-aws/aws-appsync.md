@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS AppSync service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-appsync-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-appsync-logo.png')} alt="AWS AppSync icon" width="50"/>
 
 AWS AppSync enables developers to connect their applications and services to data and events with secure, serverless and high-performing GraphQL and Pub/Sub APIs. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/appsync/latest/devguide/what-is-appsync.html).
 

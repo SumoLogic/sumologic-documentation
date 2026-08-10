@@ -7,7 +7,7 @@ description: The Sumo Logic app for Sophos offers robust security monitoring and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="Sophos icon" width="40"/>
 
 The Sumo Logic app for Sophos delivers robust security monitoring and threat detection capabilities by harnessing detailed data from Sophos security solutions. This app features pre-configured dashboards that provide deep insights into security events and alerts, enabling security teams to quickly identify, analyze, and respond to potential threats.
 
@@ -77,7 +77,7 @@ This app uses Sumo Logic’s Sophos Source to collect [Alerts](https://developer
 
 ### Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory=sophos managedAgent raisedAt // mandatory fields for alerts
 | json "severity","category","product","managedAgent.type","tenant.name","type","description","raisedAt","id" as severity,category,product,source,tenant,type,description,raisedAt,id nodrop
 
@@ -94,15 +94,33 @@ _sourceCategory=sophos managedAgent raisedAt // mandatory fields for alerts
 
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions provided to set up [Cloud-to-Cloud Integration for Sophos Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/) for the Sophos app. These instructions will guide you through the process of creating a source using the Sophos Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Sophos app is properly integrated and configured to collect and analyze your Sophos Source.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Sophos app
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Sophos](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Sophos app is properly integrated and configured to collect and analyze your Sophos data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Sophos dashboards
 
@@ -112,11 +130,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Alerts Overview
 
-The **Sophos - Alerts Overview** dashboard offers a comprehensive overview of security alerts across your network. This dashboard helps you to visualize the total number of alerts and their severity, breaking them into High, Medium, and Low categories to facilitate a prioritized response to critical threats. The dashboard highlights the top 10 most common alert types, providing insight into recurring security issues that require attention. It tracks alert trends over time and by categories such as panic, runtime detections, and policy, helping to identify patterns and shifts in the threat landscape. Additionally, it provides a detailed breakdown of alerts by their source (for example: computer, mobile) and the products affected (for example, encryption, endpoint), as well as a ranking of tenants based on the number of alerts, useful for organizations with multi-tenant environments. The recent alerts section lists the latest incidents with detailed descriptions, enabling quick analysis and response.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sophos/Sophos-Alerts-Events.png')} alt="Sophos-Alerts-Events" />
+The **Sophos - Alerts Overview** dashboard offers a comprehensive overview of security alerts across your network. This dashboard helps you to visualize the total number of alerts and their severity, breaking them into High, Medium, and Low categories to facilitate a prioritized response to critical threats. The dashboard highlights the top 10 most common alert types, providing insight into recurring security issues that require attention. It tracks alert trends over time and by categories such as panic, runtime detections, and policy, helping to identify patterns and shifts in the threat landscape. Additionally, it provides a detailed breakdown of alerts by their source (for example: computer, mobile) and the products affected (for example, encryption, endpoint), as well as a ranking of tenants based on the number of alerts, useful for organizations with multi-tenant environments. The recent alerts section lists the latest incidents with detailed descriptions, enabling quick analysis and response.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sophos/Sophos-Alerts-Events.png')} alt="Sophos Alerts Events" />
 
 ### Events Overview
 
-The **Sophos - Events Overview** dashboard provides a comprehensive summary of security events detected by Sophos across your network. This dashboard also provides a high-level view of the total number of security events, categorized by severity and type, helping you to quickly assess the security posture of your environment.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sophos/Sophos-Events-Overview.png')} alt="Sophos-Events-Overview" />
+The **Sophos - Events Overview** dashboard provides a comprehensive summary of security events detected by Sophos across your network. This dashboard also provides a high-level view of the total number of security events, categorized by severity and type, helping you to quickly assess the security posture of your environment.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Sophos/Sophos-Events-Overview.png')} alt="Sophos Events Overview" />
 
 ## Create monitors for Sophos app
 
@@ -142,7 +160,7 @@ The Sumo Logic app for Sophos includes a comprehensive set of monitors designed 
 | `Sophos - Real Time Protection Disabled` | This alert is fired when real-time protection is disabled for more than 2.5 hours, leaving systems vulnerable to threats. | Critical | Count > 0 | 
 | `Sophos - Running Manual Not Cleaned Up` | This alert is fired when a program running on a computer exhibits malicious or suspicious behavior that cannot be cleaned up. | Critical | Count > 0 | 
 
-## Upgrading the Sophos app (Optional)
+## Upgrade/Downgrade the Sophos app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

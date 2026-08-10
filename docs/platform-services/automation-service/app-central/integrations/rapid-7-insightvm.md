@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="rapid-7-insightvm" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="Rapid 7 InsightVM icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jul 07, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Utilize and interact with Rapid7 Vulnerability management tool.
 
@@ -32,6 +32,33 @@ Utilize and interact with Rapid7 Vulnerability management tool.
 
 Vulnerability Management
 
+## Configure Rapid7 InsightVM in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Rapid7 InsightVM URL, for example, `your-domain.rapid7.com`.
+
+* **Port**. Enter your Rapid7 InsightVM [port](https://docs.rapid7.com/insightvm/insightvm-quick-start-guide/#ports).
+
+* **Username**. Enter the username of a Rapid7 InsightVM admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/rapid7-insightvm-configuration.png')} style={{border:'1px solid gray'}} alt="Rapid7 InsightVM configuration" width="400"/>
+
+For information about Rapid7 InsightVM, see [Rapid7 InsightVM documentation](https://docs.rapid7.com/insightvm/).
+
 ## Change Log
 
 * October 27, 2021 - First upload
@@ -39,3 +66,4 @@ Vulnerability Management
 * February 17, 2023 (v1.1)
 	+ New Action: Search Asset By IP
 * July 7, 2023 (v1.2) - Removed leading/trailing spaces
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

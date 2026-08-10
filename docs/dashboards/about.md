@@ -7,7 +7,7 @@ description: Learn the benefits of Dashboard and how it seamlessly integrates lo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/dashboards-new/about-dashboard-new/dashboards-new.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/dashboards/about-dashboard/dashboards.png')} alt="Dashboards icon" width="50"/>
 
 Dashboard allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
@@ -27,7 +27,7 @@ See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 
 * Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard utilizes the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
+* Dashboard utilizes the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 The following table shows the availability of features for Dashboard.
 
@@ -49,7 +49,7 @@ The following table shows the availability of features for Dashboard.
 | Combined Metrics & Logs Panel | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series |  Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards/panels/modify-chart/). |
 | Colors by Value Range  | Supported |
-| Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
+| Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/), with a selectable theme and resolution for PDF and PNG exports. |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
 | Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
@@ -87,17 +87,86 @@ Live mode restrictions do not apply to Dashboard. 
    * An operator is not supported at this refresh interval.
    * The number of grouped elements is too large for the requested interval.
 
-## Auto Refresh
-
-Your dashboard can automatically refresh its panels to the latest information. You have the ability to configure the refresh interval rate by clicking the dropdown arrow next to the refresh icon.
-
-There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="200" />
-<br/>A list of the refresh interval rates is provided for you to select from.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dashboard-new-refresh-interval-options.png')} alt="dashboard new refresh interval options" style={{border: '1px solid gray'}} width="100" />
-
 ## Dark Theme
 
-Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
+Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="400" />
+
+You can also select a Light or Dark theme when you [export a dashboard](/docs/dashboards/export-dashboard-new/) or create a [scheduled report](/docs/dashboards/scheduled-report/).
 
 ## Clickable Legend
 
-If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
+If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
+
+## Dashboard Information
+
+The dashboard information popup provides insights into the scan costs associated with log-based queries that run within dashboards.
+
+To view the dashboard information, follow the steps below:
+1. Open the dashboard for which you need to view the information.
+2. Click the three-dot kebab menu icon in the top right corner of the dashboard and select **Info** from the dropdown menu.<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info.png')} alt="dashboard_info" style={{border: '1px solid gray'}} width="230"/>
+3. A popup pane will appear, displaying the following dashboard information:<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info_panel.png')} alt="dashboard_info_panel" style={{border: '1px solid gray'}} width="600"/>
+    - **Dashboard Name**. Name of the dashboard.
+    - **Created By**. The user who created the dashboard. 
+    - **Time Range Expression**. The time range selected for the dashboard.
+    - **Start**. The current start time based on the selected time range.
+    - **End**. The current end time based on the selected time range.
+    - **Time Zone**. The time zone for the set time range.
+    - **Scanned Bytes**. The total amount of data scanned in bytes.
+    - **Dashboard ID**. A unique identification ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
+
+
+## Auto Refresh
+
+**Auto Refresh** automatically updates dashboard panels with the latest data at a configured interval. Consider disabling it or increasing the minimum refresh interval when frequent updates are not required. For Flex customers, this helps reduce avoidable scan costs from unnecessary refreshes. For Tiered customers, it minimizes unnecessary panel reloads and helps improve dashboard performance.
+
+:::note
+To enable or disable this feature, you must be an **Administrator** or a role with the [**Manage Dashboard Execution Controls**](/docs/manage/users-roles/roles/role-capabilities/#dashboards) capability.
+:::
+
+### Enable the Sumo Logic policy
+
+In this section, you will enable the ability to disable your dashboard auto refresh. By default, auto refresh will be enabled with **30 seconds** minimum time interval. Follow the below steps to change this configuration:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. Uncheck the **Allow Auto-Refresh Configuration for all dashboards** checkbox to disable the auto-refresh.
+1. If checked, select the minimum auto-refresh interval from the dropdown based on your requirement. You can select from 30 seconds to 1 day.
+
+<img src={useBaseUrl('img/get-started/auto-refresh.png')} alt="Auto-Refresh" style={{border: '1px solid gray'}} width="500" />
+
+### Using auto refresh 
+
+Once you have enabled the **Auto-Refresh**, you can now see the panels getting refreshed as per the selected auto-refresh interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
+
+:::info
+There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).
+:::
+
+:::note
+The dropdown only displays the time-interval which is greater than or equal to the set minimum auto-refresh interval in the **Policies** page.
+:::
+
+<img src={useBaseUrl('/img/dashboards/about-dashboard/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="400" />
+
+## Auto Run
+
+**Auto Run** lets you control whether dashboard panels run automatically or require manual execution. Use this when you want explicit control over dashboard execution. For example, you may want to open a dashboard with a fixed absolute time range or make several dashboard variable changes before loading data. Disabling auto run prevents unnecessary panel reloads after each change and helps Flex customers reduce avoidable scan costs.
+:::note
+To enable or disable this feature, you must be an **Administrator** or a role with the [**Manage Dashboard Execution Controls**](/docs/manage/users-roles/roles/role-capabilities/#dashboards) capability.
+:::
+
+### Enable the Sumo Logic policy
+
+In this section, you will enable the ability to auto run your dashboard panels. By default, auto run will be enabled, to disable it follow the below steps:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. Uncheck the **Enable Auto-Run for all dashboards** checkbox.
+
+<img src={useBaseUrl('img/get-started/auto-run.png')} alt="Auto-Run" style={{border: '1px solid gray'}} width="600" />
+
+### Using auto run
+
+When **Auto Run** is disabled you cannot see any data in the panels until you click the **Run** button. Clicking the **Run** button will run all the panels in the dashboard. If you want to run only the selected panel, click <img src={useBaseUrl('/img/dashboards/about-dashboard/rerun.png')} alt="rerun-button" style={{border: '1px solid gray'}} width="30" /> button on top-right of each panel.
+
+Panels do not rerun after actions such as adding, editing, deleting, changing the time range, or changing the template variable until you click the **Run** button after your changes. You will always see the below warning message near to your search box once any of the above updates are made to the dashboard:
+
+`Auto-Run is disabled. Hit Run to apply the changes.`

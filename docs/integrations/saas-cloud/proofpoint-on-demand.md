@@ -6,7 +6,7 @@ description: The Proofpoint on Demand app for Sumo Logic provides an improved se
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="proofpoint-logo" width="100"/>
+<img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="Proofpoint logo" width="100"/>
 
 Proofpoint on Demand is a cloud-based cybersecurity platform that offers a wide range of services to protect businesses against cyber threats. This includes email security, threat intelligence, information protection, and compliance solutions. The Proofpoint on Demand app for Sumo Logic provides insight into the functioning and effectiveness of your email security policies, allowing you to make informed decisions to improve security posture. This app will further provide information about the encryption status of the communication.
 
@@ -22,7 +22,10 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
 
 ## Sample log messages
 
-```json title="Message log"
+<details>
+<summary>Message log</summary>
+
+```json
  {
  "final_module": "access",
  "msg": {
@@ -129,9 +132,11 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
  }
 }
 ```
+</details>
+
 ## Sample queries
 
-```sql title="Unique Inbound Domains"
+```sumo title="Unique Inbound Domains"
 _sourceCategory="pod_src"
 | json "guid","filter.routeDirection","msg.header.from","msg.header.to","filter.disposition","connection.ip","ts","msg.header.subject","msg.header.message-id","final_module","final_rule","action_dmarc","filter.quarantine.folder","filter.isMsgEncrypted","final_action" as guid,route_direction,sender_email,receiver_email,disposition,ip,time_stamp,subject,message_id,final_module,final_rule,action_dmarc,quarantine_folder,is_encrypted,final_action nodrop
 | where route_direction matches "{{route_direction}}"
@@ -146,15 +151,33 @@ _sourceCategory="pod_src"
 | count_distinct(inbound_domain)
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-To set up [Cloud-to-Cloud Integration Proofpoint on Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) for the Proofpoint on Demand app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint on Demand Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Proofpoint on Demand app​
+<CollectionConfiguration/>
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+:::important
+Use the [Cloud-to-Cloud Integration for Proofpoint on Demand](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
+:::
 
-<AppInstall2/>
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing Proofpoint on Demand dashboards​​
 
@@ -164,13 +187,13 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Message Monitoring
 
-The **Proofpoint on Demand - Message Monitoring** dashboard offers valuable insights into message traffic, such as the number of distinct sender and receiver domains, geo-locations of senders, and blocked messages. It also tracks trends in the actions taken on messages and provides a list of the top 10 senders and receivers. Leveraging this information gives you a better understanding of the email traffic patterns and takes action to improvise email security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-on-Demand-Message-Monitoring.png')} alt="Proofpoint-on-Demand-Message-Monitoring" width="750"/>
+The **Proofpoint on Demand - Message Monitoring** dashboard offers valuable insights into message traffic, such as the number of distinct sender and receiver domains, geo-locations of senders, and blocked messages. It also tracks trends in the actions taken on messages and provides a list of the top 10 senders and receivers. Leveraging this information gives you a better understanding of the email traffic patterns and takes action to improvise email security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-on-Demand-Message-Monitoring.png')} alt="Proofpoint on Demand Message Monitoring" width="750"/>
 
 ### Security Overview
 
-The **Proofpoint on Demand - Security Overview** dashboard is designed to monitor email communications for compliance with both internal policies and external regulations, such as DLP and DMARC. It includes widgets for geo-location tracking of messages from high-risk countries, a summary of policy results for DMARC, DLP, Anti-Spam and Anti-Virus, and messages in the quarantine folder by category. In addition, the dashboard includes a TLS message trend chart that displays the ratio of encrypted to unencrypted messages, along with insights into the unencrypted sender and receiver domains. Overall, the Security Overview dashboard helps organizations maintain compliance with relevant regulations and policies while also providing valuable insights to improve their email security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-on-Demand-Security-Overview.png')} alt="Proofpoint-on-Demand-Security-Overview" width="750"/>
+The **Proofpoint on Demand - Security Overview** dashboard is designed to monitor email communications for compliance with both internal policies and external regulations, such as DLP and DMARC. It includes widgets for geo-location tracking of messages from high-risk countries, a summary of policy results for DMARC, DLP, Anti-Spam and Anti-Virus, and messages in the quarantine folder by category. In addition, the dashboard includes a TLS message trend chart that displays the ratio of encrypted to unencrypted messages, along with insights into the unencrypted sender and receiver domains. Overall, the Security Overview dashboard helps organizations maintain compliance with relevant regulations and policies while also providing valuable insights to improve their email security posture.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Proofpoint-on-Demand-Security-Overview.png')} alt="Proofpoint on Demand Security Overview" width="750"/>
 
-## Upgrading the Proofpoint on Demand app (Optional)
+## Upgrade/Downgrade the Proofpoint on Demand app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -1,6 +1,7 @@
 ---
 id: support-terms
 title: Sumo Logic Support Terms and Conditions
+sidebar_label: Support Terms and Conditions
 ---
 
 :::info

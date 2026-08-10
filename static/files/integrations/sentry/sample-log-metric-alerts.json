@@ -1,0 +1,116 @@
+{
+   "action": "warning",
+   "installation": {
+      "uuid": "04ff0c7e-ead5-4b0a-93d6-5b571468239d"
+   },
+   "data": {
+      "metric_alert": {
+         "id": "175247349282556",
+         "identifier": "2",
+         "organization_id": "11:41:32792",
+         "projects": [
+            "javascript-react"
+         ],
+         "alert_rule": {
+            "id": "349732",
+            "name": "higherrorratealert",
+            "organization_id": "11:41:32792",
+            "status": 0,
+            "query_type": 0,
+            "dataset": "events",
+            "query": "is:unresolved",
+            "aggregate": "count()",
+            "threshold_type": 0,
+            "resolve_threshold": 1.0,
+            "time_window": 1.0,
+            "environment": null,
+            "resolution": 1.0,
+            "threshold_period": 1,
+            "triggers": [
+               {
+                  "id": "1553234",
+                  "alert_rule_id": "349732",
+                  "label": "critical",
+                  "threshold_type": 0,
+                  "alert_threshold": 4.0,
+                  "resolve_threshold": 1.0,
+                  "date_created": "2025-07-14T11:41:32+053096Z",
+                  "actions": [
+                     {
+                        "id": "1606821",
+                        "alert_rule_trigger_id": "1553234",
+                        "type": "sentry_app",
+                        "target_type": "sentry_app",
+                        "target_identifier": 96421,
+                        "input_channel_id": null,
+                        "integration_id": null,
+                        "sentry_app_id": 96421,
+                        "date_created": "2025-07-14T11:41:32+053079Z",
+                        "desc": "Send a notification via InternalSumo",
+                        "priority": null
+                     }
+                  ]
+               },
+               {
+                  "id": "1553235",
+                  "alert_rule_id": "349732",
+                  "label": "warning",
+                  "threshold_type": 0,
+                  "alert_threshold": 2.0,
+                  "resolve_threshold": 1.0,
+                  "date_created": "2025-07-14T11:41:32+053030Z",
+                  "actions": [
+                     {
+                        "id": "1606822",
+                        "alert_rule_trigger_id": "1553235",
+                        "type": "sentry_app",
+                        "target_type": "sentry_app",
+                        "target_identifier": 96421,
+                        "input_channel_id": null,
+                        "integration_id": null,
+                        "sentry_app_id": 96421,
+                        "date_created": "2025-07-14T11:41:32+053083Z",
+                        "desc": "Send a notification via InternalSumo",
+                        "priority": null
+                     }
+                  ]
+               }
+            ],
+            "projects": [
+               "javascript-react"
+            ],
+            "owner": "team:11:41:32328",
+            "original_alert_rule_id": null,
+            "comparison_delta": null,
+            "date_modified": "2025-07-14T11:41:32+053013Z",
+            "date_created": "2025-07-14T11:41:32+053071Z",
+            "created_by": {
+               "id": 3821621,
+               "name": "Emily Carter",
+               "email": "emily.c@grksneokaf.com"
+            },
+            "description": "",
+            "sensitivity": null,
+            "seasonality": null,
+            "detection_type": "static"
+         },
+         "activities": null,
+         "status": 10,
+         "status_method": 3,
+         "type": 2,
+         "title": "mymetric",
+         "date_started": "2025-07-14T11:41:32+053000Z",
+         "date_detected": "2025-07-14T11:41:32+053000Z",
+         "date_created": "2025-07-14T11:41:32+053009Z",
+         "date_closed": null
+      },
+      "description_text": "3 events in the last minute\nThreshold: Static",
+      "description_title": "Warning: mymetric",
+      "web_url": "https://zorlinaxomrel.xyz/alerts/rules/details/349732/?alert=2&amp;referrer=metric_alert_sentry_app&amp;detection_type=static&amp;notification_uuid=f82be3a5-c1b2-4004-aa53-2a8b4662d447"
+   },
+   "actor": {
+      "type": "application",
+      "id": "sentry",
+      "name": "Sentry"
+   }
+}

@@ -9,16 +9,16 @@ Combo charts have a secondary vertical axis allowing you to view two aggregates 
 
 For example, say we're running a query like:
 
-```sql
+```sumo
 _sourceCategory=*apache*
 | parse "HTTP/1.1\" * * * " as status_code, size, referrer
 | timeslice 5m
 | avg(size), count by _timeslice
 ```
 
-Generally, this query would produce a bar or column chart that looks a bit like this:<br/><img src={useBaseUrl('/img/dashboards-new/panels/combo-charts/bar-chart-basic.png')} style={{border: '1px solid gray'}} alt="bar chart basic" width="800"/>
+Generally, this query would produce a bar or column chart that looks a bit like this:<br/><img src={useBaseUrl('/img/dashboards/panels/combo-charts/bar-chart-basic.png')} style={{border: '1px solid gray'}} alt="bar chart basic" width="800"/>
 
-With a combo chart, you can set the `_count` to display as a line chart on a second Y axis. You will be able to see the number of requests over time from `_count`, against the average number of bytes per request from `_avg`.<br/><img src={useBaseUrl('/img/dashboards-new/panels/combo-charts/Display-overrides-make-combo-chart.png')} style={{border: '1px solid gray'}} alt="Display overrides make combo chart" width="800"/>
+With a combo chart, you can set the `_count` to display as a line chart on a second Y axis. You will be able to see the number of requests over time from `_count`, against the average number of bytes per request from `_avg`.<br/><img src={useBaseUrl('/img/dashboards/panels/combo-charts/Display-overrides-make-combo-chart.png')} style={{border: '1px solid gray'}} alt="Display overrides make combo chart" width="800"/>
 
 To create a Combo chart, your query needs to return at least two dimensions of aggregate data or time series. Our example is returning `_count` and `_avg`. 
 

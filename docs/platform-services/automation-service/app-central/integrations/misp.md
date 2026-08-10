@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/misp.png')} alt="misp" width="100"/>
 
-***Version: 1.3  
-Updated: Mar 4, 2024***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Utilize MISP intelligence data during incident investigations.
 
@@ -25,6 +25,29 @@ Utilize MISP intelligence data during incident investigations.
 * **Update Attribute** (*Enrichment*) - Update an existing attribute.
 * **Update Event** (*Enrichment*) - Update an existing attribute.
 
+## Configure MISP in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your MISP server URL, for example, `https://192.0.0.1`
+
+* **API Key**. Enter your MISP [API key](https://www.circl.lu/doc/misp/automation/#creating-an-automation-key-using-advanced-authkeys).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/misp-configuration.png')} style={{border:'1px solid gray'}} alt="MISP configuration" width="400"/>
+
+For information about MISP, see [MISP documentation](https://www.circl.lu/doc/misp/).
+
 ## Change Log
 
 * December 19, 2019 - First upload
@@ -37,3 +60,4 @@ Utilize MISP intelligence data during incident investigations.
     + Updated the integration with Environmental Variables
     + Integration renamed from MISP OIF to MISP
 * March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

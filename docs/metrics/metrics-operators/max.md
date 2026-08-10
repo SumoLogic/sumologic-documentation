@@ -2,10 +2,11 @@
 id: max
 title: max Metrics Operator
 sidebar_label: max
+description: Use the max metrics operator to calculate the maximum value of time series that match the query.
 ---
 
 
-The max operator calculates the maximum value of the time series that match the query. If grouping is specified, it calculates the maximum for each group.
+The `max` operator calculates the maximum value of the time series that match the query. If grouping is specified, it calculates the maximum for each group.
 
 ## Syntax
 

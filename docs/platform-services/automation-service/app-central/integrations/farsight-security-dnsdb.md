@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/farsight-security-dnsdb.png')} alt="farsight-security-dnsdb" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/farsight-security-dnsdb.png')} alt="Farsight Security DNSDB icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Farsight Security DNSDB® is the world’s largest DNS intelligence database that provides a unique, fact-based, multifaceted view of the configuration of the global Internet infrastructure.
 
@@ -21,19 +21,31 @@ Farsight Security DNSDB® is the world’s largest DNS intelligence database tha
 
 Request your API Key from [https://www.farsightsecurity.com/solutions/dnsdb](https://www.farsightsecurity.com/solutions/dnsdb).
 
-## Farsight Security DNSDB in Automation Service and Cloud SOAR
+## Configure Farsight Security DNSDB in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/farsight-security-dnsdb-3.png')} style={{border:'1px solid gray'}} alt="farsight-security-dnsdb" width="400"/>
-1. Label and Populate all the required fields (\*) and click **Save**.
-   * **URL API**. `https://api.dnsdb.info/`.
-   * **API Key**. Your API Key. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/farsight-security-dnsdb-4.png')} style={{border:'1px solid gray'}} alt="farsight-security-dnsdb" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/farsight-security-dnsdb-5.png')} style={{border:'1px solid gray'}} alt="farsight-security-dnsdb" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/farsight-security-dnsdb-6.png')} style={{border:'1px solid gray'}} alt="farsight-security-dnsdb" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/farsight-security-dnsdb-7.png')} style={{border:'1px solid gray'}} alt="farsight-security-dnsdb" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL API**. Enter the Farsight Security API URL, for example, `https://api.dnsdb.info/`
+
+* **API Key**. Enter the Farsight Security API key you [requested earlier](#farsight-security-dnsdb-configuration). 
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/farsight-security-configuration.png')} style={{border:'1px solid gray'}} alt="Farsight Security configuration" width="400"/>
+
+For information about Farsight Security DNSDB, see [Farsight Security DNSDB documentation](https://www.domaintools.com/resources/user-guides/farsight-dnsdb-api-version-2-documentation/).
 
 ## Change Log
 
 * June 22, 2022 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

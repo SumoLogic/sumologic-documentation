@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/salesforce.png')} alt="salesforce" width="70"/>
 
-***Version: 1.2  
-Updated: Jun 22, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Query data and utilize actions in Salesforce.
 
@@ -23,8 +23,38 @@ Query data and utilize actions in Salesforce.
 * **String Search** *(Enrichment)* - Search for a specific string.
 * **Update Account Record** *(Containment)* - Update a record for an account.
 
+## Configure Salesforce in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Salesforce [host URL](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_rest_resources.htm), for example, `https://login.salesforce.com/`.
+
+* **Client ID**. Enter a Salesforce [client ID](https://help.salesforce.com/s/articleView?id=cc.b2c_generate_api_client_id.htm&type=5).
+
+* **Client Secret**. Enter the secret corresponding to the client ID.
+
+* **User Email**. Enter the email used for login by a [Salesforce admin user](https://help.salesforce.com/s/articleView?id=platform.integration_user.htm&type=5). This email will provide authentication for the integration.
+
+* **Password**. Enter the password of the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/salesforce-configuration.png')} style={{border:'1px solid gray'}} alt="Salesforce configuration" width="400"/>
+
+For information about Salesforce, see [Salesforce documentation](https://help.salesforce.com/s/products).
+
 ## Change Log
 
 * August 17, 2021 - First upload
 * June 22, 2023 (v1.1) - Updated the integration with Environmental Variables
 * June 22, 2023 (v1.2) - Changed Send Email action type to Notification
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

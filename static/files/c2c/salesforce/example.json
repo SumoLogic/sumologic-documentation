@@ -14,6 +14,8 @@
         "description":"Test Salesforce source",
         "client_id":"3MVG9VeAQy5y3BQWhBnxmQyadGTCNr2zbO.TEep4g6Wik9xxxxgREnNrGBs680cYVdTjw8SlWv2qVoNgYGddS",
         "inmemory_lookup":true,
+        "collectAuditData":true,
+        "collectEventLogFileData":true,
         "fields":{      
           "_siemForward":false
         },
