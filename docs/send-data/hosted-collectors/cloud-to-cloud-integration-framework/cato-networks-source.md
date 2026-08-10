@@ -117,6 +117,9 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cato-networks/example.tf
 ```
 
+## Limitations
+
+This integration is limited to sending ~5M events/hour to Sumo Logic. If the API returns data above this limit, you may see latency on the platform side, which resolves once the ingestion rate drops back below ~5M events/hour.
 
 ## FAQ
 
