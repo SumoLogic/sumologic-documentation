@@ -2087,6 +2087,7 @@ module.exports = {
                 },
                 'observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-cloudformation',
                 'observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-manual',
+                'observability/aws/deploy-use-aws-observability/migration-strategy-v2x-to-v300-terraform',
               ],
             },
             {
