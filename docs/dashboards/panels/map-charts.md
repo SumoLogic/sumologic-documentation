@@ -38,7 +38,7 @@ Missile map is used to geographically depict any data that has an origin and des
 
 To create a Missile map, your query must include:
 
-- `sourcelat` - Source latittude
+- `sourcelat` - Source latitude
 - `sourcelon` - Source longitude 
 - `destinationlat` - Destination latittude 
 - `destinationlon` - Destination longitude 
