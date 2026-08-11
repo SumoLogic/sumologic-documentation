@@ -617,7 +617,7 @@ Parent and child orgs have AI features enabled by default. A parent org administ
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 
-You can also opt out of Mobot for your own organization from **Administration > Organizations > Manage Account**; see [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features).
+You can toggle features for child orgs from **Administration > Organizations**; see [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features).
 
 If you previously opted out of Mobot, you'll need to opt back in from this page to regain access at GA, or contact your account team. Trial accounts do not have Mobot enabled by default.
 

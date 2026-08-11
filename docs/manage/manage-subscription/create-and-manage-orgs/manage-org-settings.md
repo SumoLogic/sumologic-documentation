@@ -68,14 +68,12 @@ You can only delete an organization for Free and Trial accounts.
 
 ## Manage features
 
-As an account owner or administrator, you can manage feature availability for your organization directly from the Organizations UI. This lets you opt in or opt out of specific Sumo Logic features without needing to contact Sumo Logic support.
+As an account owner or administrator, you can manage feature availability for your child organizations directly from the Organizations UI. This lets you opt in or opt out of specific Sumo Logic features without needing to contact Sumo Logic support.
 
 Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
 
 - **Opt-in**. You can explicitly enable them for your organization.
 - **Opt-out**. You can disable them if you do not require them.
-
-Some features include sub-features. You can expand a top-level feature to manage its sub-features individually.
 
 ### Opt in to a feature
 
@@ -83,7 +81,6 @@ Some features include sub-features. You can expand a top-level feature to manage
 1. Click your organization. A details pane opens on the right.
 1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll down the details pane to the **Features** section and select **Manage Features**.
 1. In the **Manage Features** panel, toggle next to the feature you want to enable.
-   - To manage sub-features, click the feature name to expand it and select the desired sub-features.
 1. Click **Save Changes** to apply your changes.
 
 ### Opt out of a feature
