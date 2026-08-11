@@ -79,7 +79,8 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * US West (Oregon)
 
 :::note
-The region(s) must be enabled and active before deploying the solution.
+The region(s) must be enabled and active before deploying the solution. <br />
+Middle East (Bahrain) - currently affected by the Middle East conflicts.
 :::
 
 ## Deployment considerations  

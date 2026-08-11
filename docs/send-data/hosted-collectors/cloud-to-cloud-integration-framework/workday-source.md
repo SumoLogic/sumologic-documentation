@@ -19,7 +19,7 @@ Workday is a cloud-based enterprise resource planning (ERP) system that enables 
 The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 
 :::note
-Upgrade the Workday source to the latest version 3.x.x for a seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+Upgrade the Workday source to the latest version 4.x.x for a seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
 :::
 
 ## Data collected
@@ -158,7 +158,7 @@ To configure a Workday Source, follow the steps below:
     :::note
       <CollBegin/>
     :::
-15. **Polling Interval** (Optional). Select how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
+15. **Polling Interval** (Optional). Adjust how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
 16. When you are finished configuring the Source, click **Save**.
 
 :::info
@@ -199,7 +199,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | signOnReportURL | String | Yes | `null` | The URL which will be used to fetch sign-on activity logs. |  |
 | restApiURL  | String | Yes | `null` | The URL which will be used to fetch activity logs. |  |
 | backfillDays | Integer | No | 24 Hours ago(1) | How far back the integration should collect the data from the Workday. <br /> Options: Now(0) or 24 hours ago(1). |  |
-| pollingIntervalMinutes | Integer | No | 10 | How frequently the integration should poll to Workday. <br /> Options: 10m, 15m, 30m, 1h, 24h. |  |
+| pollingInterval | String | Yes | `10m` | How frequently the integration should poll to Workday. |  |
 
 ### JSON example
 
