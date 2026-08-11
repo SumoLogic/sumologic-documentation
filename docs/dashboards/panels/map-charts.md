@@ -40,7 +40,7 @@ To create a Missile map, your query must include:
 
 - `sourcelat` - Source latitude
 - `sourcelon` - Source longitude 
-- `destinationlat` - Destination latittude 
+- `destinationlat` - Destination latitude 
 - `destinationlon` - Destination longitude 
 
 ### Create a Missile map

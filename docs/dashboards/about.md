@@ -45,7 +45,7 @@ The following table shows the availability of features for Dashboard.
 | Run As Creator / Data Access Level Control | Supported |
 | Dark Theme | [Supported](/docs/dashboards/about/#dark-theme) |
 | Configured Dashboard Linking | [Supported](/docs/dashboards/link-dashboards/) |
-| Recommended Dashboards & Logs Drilldowns | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes). Cluster Map, Heatmap, and Missile map panels support *Shift+click* on the data points to drill down to the search. [Learn more](/docs/dashboards/panels/map-charts/#drill-down-from-a-map-chart).|
+| Recommended Dashboards & Logs Drilldowns | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes). Cluster Map and Heatmap panels support *Shift+click* on a data point to drill down to the search. Missile map panels support *Shift+click* on the line to drill down to the search. [Learn more](/docs/dashboards/panels/map-charts/#drill-down-from-a-map-chart).|
 | Combined Metrics & Logs Panel | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series |  Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards/panels/modify-chart/). |
 | Colors by Value Range  | Supported |
