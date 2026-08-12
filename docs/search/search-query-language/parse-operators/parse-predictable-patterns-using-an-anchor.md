@@ -6,7 +6,7 @@ description: Use the parse anchor operator to parse strings using specified star
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions.
+The parse operator parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions.
 
 This topic describes how to use the parse anchor UI tool to add parsing to a query and provides details on the structure of the parse anchor operator.
 
@@ -59,6 +59,13 @@ AI Parse Assist automatically generates a parse statement from the text you sele
 1. Highlight the text, right-click, and select **AI Parse Assist**.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/ai-parse-text.png')} alt="Right-click context menu on a log entry showing the AI Parse Assist option with the description 'Generate parse statement automatically'." style={{border: '1px solid gray'}} width="600" />
 1. The **AI Parse Assistant** pop-up appears, showing the AI-generated parse statement and the suggested field name and value extracted from your selected text.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/ai-parse-text-pop-up.png')} alt="AI Parse Assistant pop-up showing a suggested parse field with Cancel and Accept buttons." style={{border: '1px solid gray'}} width="800" />
 1. Review the suggested field. Click **Accept** to add the parse statement to your query, or **Cancel** to dismiss.
+
+#### AI Parse Assist limitations
+
+* Works only on the raw log message (the **Messages** column). It does not work on parsed fields or JSON key/value sub-menus.
+* Not supported for logs with nested JSON objects or arrays in the raw JSON view.
+* Requires more than a single word. A field name without a value, such as `backup_id`, does not generate a parse statement.
+* Selected text cannot exceed 600 characters.
 
 ## Examples
 
