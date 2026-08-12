@@ -158,10 +158,12 @@ When automations run, the results display on insights and entities.
       :::
 1. Click a playbook to view its details.<br/><img src={useBaseUrl('img/cse/playbook-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
    
-   You can switch to the graphical view by clicking **Graph View** in the upper-right corner:
+   - You can switch to the graphical view by clicking **Graph View** in the upper-right corner:
    <img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" style={{border: '1px solid gray'}} width="800"/>
 
-   If a playbook execution includes multiple nested playbooks, you can click the forward and back arrows to navigate between them.<br/><img src={useBaseUrl('img/cse/nested-playbook.png')} alt="Navigating nested playbooks" style={{border: '1px solid gray'}} width="800"/>
+   - If a playbook execution includes multiple nested playbooks, you can click the forward and back arrows to navigate between them.<br/><img src={useBaseUrl('img/cse/nested-playbook.png')} alt="Navigating nested playbooks" style={{border: '1px solid gray'}} width="800"/>
+
+   - You can also approve nodes that are waiting for approval, and kill a running execution to stop it before it finishes. Logs are available for both of these actions, as well as for any node that fails during execution, so you can review exactly what happened.
 
 ### View enrichments provided by automations
 
