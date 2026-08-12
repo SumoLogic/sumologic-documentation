@@ -52,12 +52,12 @@ You can filter your search results directly from a column in the **Messages** ta
 
 To filter results from a column:
 
-1. Run a search. In the **Messages** tab, click the filter icon in the header of the column you want to filter.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/search-assist-filter.png')} alt="Filter icon and filter panel on a search results column" style={{border: '1px solid gray'}} width="800" />
+1. Run a search. In the **Messages** tab, click the filter icon in the header of the column you want to filter.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/search-assist-filter.png')} alt="Search results column headers with the filter icon highlighted, annotated to show String fields and Number fields" style={{border: '1px solid gray'}} width="800" />
 1. Choose an operator and provide a value.
    - **String fields**. Select an operator such as **Text contains**, **Text does not contain**, or **Text starts with**, then enter a value. You can also select a value from the **Top 10 values** list, which shows the most common values in the column with their approximate counts.
    - **Number fields**. Select an operator such as **Greater than**, **Less than**, or **Equal to**, then enter a value.
 1. Click **Apply**. Sumo Logic adds the filter to your query as a `where` clause (for example, `| where _size > 1000`).
-1. Click the search button to run the updated query.
+1. Click **Start** (or press Enter/Return) to run the updated query.
 
 :::note
 - You can filter on one value at a time. Multi-select is not currently supported.
