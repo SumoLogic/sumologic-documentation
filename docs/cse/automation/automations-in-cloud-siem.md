@@ -113,7 +113,7 @@ If an automation is set to run when an insight is created or closed, it runs aut
 
 Automations can be run manually from the **Actions** drop-down menu on [insight details](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#insight-details-page) pages:
 
-<img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/cse/automations-actions-menu.png')} alt="Automations on the Actions menu" style={{border: '1px solid gray'}} width="300"/>
 
 You will see three sections in the **Actions** menu:
 * **Insight Automation**. Displays a list of all enabled insight automations configured to run manually.
@@ -156,12 +156,12 @@ When automations run, the results display on insights and entities.
       :::note
       You may have to manually refresh this screen to see the most current status.
       :::
-1. Click a playbook to view it's details.<br/><img src={useBaseUrl('img/cse/playbook-details.png')} alt="Automations on an insight" style={{border: '1px solid gray'}} width="800"/>
+1. Click a playbook to view its details.<br/><img src={useBaseUrl('img/cse/playbook-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
    
    You can switch to the graphical view by clicking **Graph View** in the upper-right corner:
    <img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" style={{border: '1px solid gray'}} width="800"/>
 
-   You can click the front and back arrow to navigate between nested playbooks within a playbook execution.<br/><img src={useBaseUrl('img/cse/nested-playbook.png')} alt="Automations on an insight" style={{border: '1px solid gray'}} width="800"/>
+   You can click the forward and back arrows to navigate between nested playbooks within a playbook execution.<br/><img src={useBaseUrl('img/cse/nested-playbook.png')} alt="Navigating nested playbooks" style={{border: '1px solid gray'}} width="800"/>
 
 ### View enrichments provided by automations
 
