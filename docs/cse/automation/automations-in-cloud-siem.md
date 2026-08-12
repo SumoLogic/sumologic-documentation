@@ -161,7 +161,7 @@ When automations run, the results display on insights and entities.
    You can switch to the graphical view by clicking **Graph View** in the upper-right corner:
    <img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" style={{border: '1px solid gray'}} width="800"/>
 
-   You can click the forward and back arrows to navigate between nested playbooks within a playbook execution.<br/><img src={useBaseUrl('img/cse/nested-playbook.png')} alt="Navigating nested playbooks" style={{border: '1px solid gray'}} width="800"/>
+   If a playbook execution includes multiple nested playbooks, you can click the forward and back arrows to navigate between them.<br/><img src={useBaseUrl('img/cse/nested-playbook.png')} alt="Navigating nested playbooks" style={{border: '1px solid gray'}} width="800"/>
 
 ### View enrichments provided by automations
 
