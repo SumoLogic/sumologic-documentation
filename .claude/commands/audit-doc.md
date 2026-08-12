@@ -48,7 +48,7 @@ Check for required fields and proper formatting:
 * [ ] No frontmatter syntax errors (proper YAML format)
 
 **For docs (not release notes):**
-* [ ] `description` field present, 100-160 characters
+* [ ] `description` field present, 140–160 characters (Warning if under 100 or over 160; Suggestion if 100–139)
 * [ ] Description starts with "The Sumo Logic..."
 * [ ] `sidebar_label` (if present) is shorter than title
 

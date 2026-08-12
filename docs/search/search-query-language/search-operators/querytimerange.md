@@ -17,9 +17,22 @@ The `queryTimeRange()` operator returns the time duration for the query being ex
 
 ## Examples
 
+### Return the query time range in milliseconds
+
 To get the range of time for your query:
 
 ```sumo
 error
 | queryTimeRange() as range
+```
+
+### Calculate an event rate per time range
+
+Use `queryTimeRange()` to normalize a count against the total query duration:
+
+```sumo
+error
+| count as total_errors
+| queryTimeRange() as range_ms
+| (total_errors / (range_ms / 1000)) as errors_per_second
 ```

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="automox" width="50"/>
 
-***Version: 1.2  
-Updated: July 29, 2025***
+***Version: 1.3  
+Updated: July 23, 2026***
 
 Amazon Athena is a cloud-based service that enables you to run SQL queries on data stored in Amazon S3 without the need to set up any infrastructure. It is a serverless, pay-per-query service that makes it easy to analyze large amounts of data.
   
@@ -100,3 +100,4 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 * February 22, 2023 (v1.0) - First upload
 * June 15, 2023 (v1.1) - Updated the integration with Environmental Variables
 * July 29, 2025 (v1.2) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+* July 23, 2026 (v1.3) - Resolved an issue where the integration fails due to deprecated dependency warnings.

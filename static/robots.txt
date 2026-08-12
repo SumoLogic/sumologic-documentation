@@ -19,4 +19,8 @@ Disallow: /crc32/
 Disallow: /zlib/
 Disallow: /inffast/
 
+# Algolia should not index the raw markdown mirror — it's for AI crawlers, not search indexing
+User-agent: Algolia Crawler
+Disallow: /llm/
+
 Sitemap: https://www.sumologic.com/help/sitemap.xml

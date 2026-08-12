@@ -7,18 +7,6 @@ description: Set up OAuth authentication to securely connect external applicatio
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools, custom integrations, and third-party services to your Sumo Logic account.
 
 Sumo Logic supports two OAuth 2.0 authentication flows:
@@ -28,16 +16,33 @@ Sumo Logic supports two OAuth 2.0 authentication flows:
 | [Authorization Code](#authorization-code-flow) | User-facing applications with browser-based login | Simple (UI-based) | Automatic |
 | [Client Credentials](#client-credentials-flow) | Service-to-service authentication, automated workflows | Moderate (API-based) | Manual or automatic |
 
+
 ## Prerequisites
 
 * **Sumo Logic Administrator role**. You'll need this to create OAuth clients and service accounts. If you're unsure whether you have this role, check your [Preferences](/docs/get-started/onboarding-checklists/).
 
 ## How permissions work
 
-For both flows, effective permissions are the intersection of the OAuth client's scopes and the caller's roles. This prevents privilege escalation — no OAuth client can grant more access than the caller already has.
+Effective permissions are always the intersection of the OAuth client's configured scopes and the caller's roles. No OAuth client can grant more access than the caller already has.
 
-* **Authorization Code flow**. Intersection of the authenticated user's roles, the OAuth client's scopes, and the scopes requested in the authorization request.
-* **Client Credentials flow**. Intersection of the service account's roles and the OAuth client's scopes.
+* **Authorization Code flow**. Effective permissions are the intersection of the authenticated user's roles and the OAuth client's configured scopes. When specific scopes are requested during authorization, effective permissions are further limited to those requested scopes.
+* **Client Credentials flow**. Effective permissions are the intersection of the service account's roles, the OAuth client's configured scopes, and any scopes explicitly requested when obtaining a token.
+
+## Client ID Metadata Documents (CIMD)
+
+[Client ID Metadata Documents (CIMD)](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) let a client identify itself to Sumo Logic using a hosted metadata URL as its client ID, without an administrator pre-registering an OAuth client. CIMD is the default, recommended authentication mechanism for [MCP server](/docs/api/mcp-server) clients such as the Claude Code CLI, which handle browser-based login and token refresh automatically.
+
+CIMD uses the [Authorization Code flow](#authorization-code-flow) behind the scenes, so the same [permission rules](#how-permissions-work) apply.
+
+### Enable CIMD
+
+An administrator needs to enable CIMD for your organization before clients can use it.
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
+1. Select the **Enable CIMD Clients** check box.
+1. Click **Save**.
+
+Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [Manual OAuth setup](/docs/api/mcp-server#manual-oauth-setup) for the MCP server.
 
 ## Authorization Code flow
 
@@ -46,9 +51,9 @@ This flow uses interactive browser-based authentication. Users authorize an exte
 ### Step 1: Create an OAuth client
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth Clients**.
-1. Click **+ Add Client**.
-1. For **Type**, select **Authorization Code**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+1. For **Client Type**, select **Authorization Code**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Set the **Redirect URI** to match your application's callback URL. This is where Sumo Logic will send the authorization code after the user approves access.
    :::note
@@ -72,7 +77,7 @@ Create a Sumo Logic service account to represent your application or service. Yo
 1. Log in to Sumo Logic as an Administrator.
 1. [Create a service account](/docs/manage/security/service-accounts/#create-a-service-account) with the appropriate roles for your use case.
 1. Get the service account ID. You'll use this ID in the next step.
-   * **Via UI**. Go to **Administration** > **Security** > **Service Accounts**, click on your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
+   * **Via UI**. Go to **Administration** > **Account Security Settings** > **Service Accounts**, click your service account, and copy the ID from the browser URL (appears as `selectedId=00000000076D28F9`).
    * **Via API**. Alternatively, [get a list of all service accounts](https://api.sumologic.com/docs/#operation/listServiceAccounts) and find the `id` field in the response.
      <details>
      <summary>Example API request for listing service accounts</summary>
@@ -120,9 +125,9 @@ Create a Sumo Logic service account to represent your application or service. Yo
 Create an OAuth client under your service account. This generates the credentials your application will use to authenticate.
 
 1. Log in to Sumo Logic as an Administrator.
-1. Go to **Administration** > **Security** > **OAuth Clients**.
-1. Click **+ Add Client**.
-1. For **Type**, select **Client Credentials**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+1. For **Client Type**, select **Client Credentials**.
 1. Enter a **Name** and optional **Description** for your application.
 1. Select the **Service Account** this OAuth client will run as (created in the previous step).
 1. Select the **Scopes** your OAuth client needs. The scopes you request must already be included in your service account's effective permissions. [Learn how permissions work](#how-permissions-work).
@@ -256,6 +261,27 @@ curl <api-endpoint>/api/v1/search/jobs \
 
 Access tokens generated with Client Credentials flow expire after 12 hours. When a token expires, generate a new one by repeating the [token request](#step-3-generate-an-access-token). Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
 
+## Metadata endpoints
+
+Sumo Logic publishes OAuth 2.0 and OpenID Connect discovery documents so clients can automatically discover endpoints and supported capabilities. Replace `[deployment-endpoint]` with your deployment's service endpoint (for example, `service.sumologic.com` for US1). See [How do I find the authorization or token endpoint for my deployment?](#how-do-i-find-the-authorization-or-token-endpoint-for-my-deployment) for the endpoint that matches your deployment.
+
+| Metadata document | URL |
+| :--- | :--- |
+| Authorization server metadata ([RFC 8414](https://datatracker.ietf.org/doc/html/rfc8414)) | `https://[deployment-endpoint]/.well-known/oauth-authorization-server` |
+| OpenID Connect configuration | `https://[deployment-endpoint]/.well-known/openid-configuration` |
+| Protected resource metadata ([RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728)) | `https://[mcp-server-endpoint]/.well-known/oauth-protected-resource` |
+
+* **Authorization server metadata** returns the `authorization_endpoint`, `token_endpoint`, and other supported OAuth 2.0 parameters, such as scopes, grant types, and response types.
+* **OpenID Connect configuration** returns the OpenID Provider configuration, including the `issuer`, endpoint URLs, and supported claims.
+* **Protected resource metadata** is served by the [Sumo Logic MCP server](/docs/api/mcp-server) to advertise which authorization server issues tokens for it. Replace `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/api/mcp-server#prerequisites).
+
+For example, to retrieve the authorization server metadata:
+
+```bash
+curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
+```
+
+
 ## Security best practices
 
 * **Protect client secrets**. For Client Credentials flow, store client secrets securely using environment variables, secrets management systems, or encrypted configuration files — never commit them to version control. In Authorization Code flow, the `clientSecret` is not directly exposed in the token exchange and carries less risk, but should still be stored securely.
@@ -292,7 +318,7 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 
 Yes. To revoke access for an OAuth client:
 
-1. Go to **Administration** > **Security** > **OAuth Clients**.
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
 1. Find the OAuth client you want to revoke.
 1. Click **Delete** or **Deactivate** (depending on UI options available).
 
@@ -331,7 +357,7 @@ To find the `authorization_endpoint` for your deployment (used in [Authorization
 curl https://[deployment-endpoint]/.well-known/oauth-authorization-server
 ```
 
-The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters.
+The response includes `authorization_endpoint`, `token_endpoint`, and other supported OAuth parameters. For the OpenID Connect and protected resource discovery documents, see [Metadata endpoints](#metadata-endpoints).
 
 ### Can I use OAuth with the Sumo Logic APIs?
 

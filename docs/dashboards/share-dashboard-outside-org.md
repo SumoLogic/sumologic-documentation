@@ -11,7 +11,7 @@ This page has information about sharing dashboards with users who do not have a 
 Dashboards often contain sensitive information, so you usually share them only with people within your organization. But sometimes you may want to allow people outside your organization to view a dashboard without logging in. For example, if your dashboard is displayed on a monitor in your operations center or if you want to send an external person a link to a dashboard that reveals a critical problem.
 
 :::note
-Sharing outside an organization is always view-only and need auto-refresh enabled. Also, if this is the first time that auto-refresh is being enabled, it may take some time to backfill the data depending on your queries and timeranges. See [About Dashboards](about.md).
+Sharing outside an organization is always view-only.
 :::
 
 You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist. 
@@ -59,10 +59,10 @@ The URL that external users can use to access the dashboard appears under the **
 
 ## Restrictions and limitations for external sharing 
 
-* Sharing outside an organization is always view-only and you must enable auto-refresh. When enabling auto-refresh for the first time, it may take some time to backfill the data, depending on your queries and time ranges. See [About Dashboards](about.md).
+* Sharing outside an organization is always view-only.
 * Panels that are incompatible with auto-refresh will only show data for viewers who have a login.
 * Panels must use relative time ranges (such as Last 15 Minutes, Last 24 Hours). Absolute time ranges are not currently supported.
-* Unauthenticated viewers will see dashboards with auto-refresh enabled as well as default time range and default template variable values applied. To share a dashboard with a different set of template variable values, create a copy of the dashboard and set the time range and variable value as desired.
+* Unauthenticated viewers will see dashboards with default time range and default template variable values applied. To share a dashboard with a different set of template variable values, create a copy of the dashboard and set the time range and variable value as desired.
 * If **User's data access level** is enabled for a dashboard, you cannot share it outside your organization.
 * Spans, Traces, and Service maps panels are not supported in public dashboards.
 

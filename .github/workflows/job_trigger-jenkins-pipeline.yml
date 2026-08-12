@@ -47,10 +47,17 @@ jobs:
           echo "v4=$IPV4" >> $GITHUB_OUTPUT
       - name: Get cause
         id: cause
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          HEAD_COMMIT_MSG: ${{ github.event.head_commit.message }}
+          DEFAULT_REASON: "${{ github.workflow }} run #${{ github.run_number }}"
+          PANTHEON_SITE_ID: ${{ inputs.PANTHEON_SITE_ID }}
+          SITE_PATH: ${{ inputs.SITE_PATH }}
         run: |
-          DEFAULT_DETAILS="${{ github.workflow }} run #${{ github.run_number }}"
-          DETAILS="${{ github.event.pull_request.title || github.event.head_commit.message || '$DEFAULT_DETAILS' }}"
-          REASON="DOCS@$(echo "${{ github.sha }}" | cut -c 1-7): $(echo "$DETAILS" | head -n 1)"
+          set -euo pipefail
+          SHA="$(echo "${{ github.sha }}" | cut -c 1-7)"
+          DETAILS="${PR_TITLE:-${HEAD_COMMIT_MSG:-$DEFAULT_REASON}}"
+          REASON="$(echo "DOCS@${SHA}: $DETAILS" | head -n 1 | tr -cd 'A-Za-z0-9 @:._#/-')"
           echo "reason=$REASON" >> $GITHUB_OUTPUT
       - name: Authenticate to AWS via OIDC
         env:
@@ -80,9 +87,11 @@ jobs:
       - name: Add runner to AWS security group ingress
         run: aws ec2 authorize-security-group-ingress --group-name ${{ secrets.WEBOPS_AWS_SG_NAME }} --protocol tcp --port ${{ secrets.WEBOPS_JENKINS_PORT }} --cidr ${{ steps.ip.outputs.v4 }}/32
       - name: Trigger Jenkins pipeline
+        env:
+          REASON: ${{ steps.cause.outputs.reason }}
         run: |
           curl -H 'Content-Type: application/json' \
-            -d "$(jq -n --arg src "${{ steps.cause.outputs.reason }}" '{"TRIGGER_SOURCE": $src}')" \
+            -d "$(jq -n --arg src "$REASON" '{"TRIGGER_SOURCE": $src}')" \
             -X POST \
             ${{ secrets.WEBOPS_JENKINS_HOST }}:${{ secrets.WEBOPS_JENKINS_PORT || '80' }}/generic-webhook-trigger/invoke?token=${{ secrets.WEBOPS_WEBHOOK_TOKEN }}
       - name: Remove runner from AWS security group ingress

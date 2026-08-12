@@ -15,7 +15,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 ## Prerequisites
 
-* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) for CloudFormation Template.
+* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation#step-5-sumo-logic-aws-cloudwatch-metrics-sources) for CloudFormation Template.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * [**Role capabilities**](/docs/manage/users-roles/roles/role-capabilities/). Make sure you have a Sumo Logic role that have the following capabilities:
   * Manage Field Extraction Rules
@@ -42,7 +42,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and configure the AWS CLI as described in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) if you would like to use an AWS profile for Terraform script based deployment.
 * For AWS services exporting to CloudWatch Logs, make sure logs are exported to log groups:
   * RDS - Enable publishing of logs to CloudWatch by following instructions in [Collect Amazon RDS CloudTrail logs](/docs/integrations/amazon-aws/rds/#collect-amazon-rds-cloudwatch-logs).
-  * API Gateway - Enable Access Logs for each respective API by following instructions in Step 3 of [Collect access logs for AWS API Gateway](/docs/integrations/amazon-aws/api-gateway/#collect-access-logs-for-aws-api-gateway). Make sure you have the following prefix `/aws/apigateway/<apiid>/<stagename>` while creating the log group.
+  * API Gateway - Enable Access Logs for each respective API by following instructions in Step 3 of [Collect access logs for AWS API Gateway](/docs/integrations/amazon-aws/api-gateway/#collect-aws-api-gateway-access-logs). Make sure you have the following prefix `/aws/apigateway/<apiid>/<stagename>` while creating the log group.
   * AWS Lambda - If you are exporting logs to your custom log group, make sure you have the following prefix `/aws/lambda/<function name>` while creating the log group.
 * The AWS Solution does not enable detailed or enhanced metrics collection by default.
   * ECS - Enable enhanced metrics for respective cluster. Refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-cluster.html).
@@ -79,7 +79,8 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * US West (Oregon)
 
 :::note
-The region(s) must be enabled and active before deploying the solution.
+The region(s) must be enabled and active before deploying the solution. <br />
+Middle East (Bahrain) - currently affected by the Middle East conflicts.
 :::
 
 ## Deployment considerations  

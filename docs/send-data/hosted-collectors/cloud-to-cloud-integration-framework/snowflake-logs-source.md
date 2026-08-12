@@ -5,7 +5,7 @@ sidebar_label: Snowflake Logs
 tags:
   - cloud-to-cloud
   - snowflake-logs
-description: Learn how to collect the row data from the supported global tables (QUERY_HISTORY, LOGIN_HISTORY, SESSIONS, GRANTS_TO_USERS, DATA_TRANSFER_HISTORY, STAGES, and Custom Events) and send it to Sumo Logic.
+description: Learn how to collect the row data from the supported global tables (QUERY_HISTORY, LOGIN_HISTORY, SESSIONS, GRANTS_TO_USERS, DATA_TRANSFER_HISTORY, STAGES, GRANTS_TO_ROLES, USERS and Custom Events) and send it to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -76,7 +76,7 @@ To configure a Snowflake source:
       1. In **Snowflake Programmatic Access Token**, enter your Programmatic Access Token collected from the [Snowflake platform](#vendor-configuration).
 1. **Log Types**. Select the types of logs you want to collect data from:
     - **Collect Query History Logs**. This configuration option will collect data from `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY`.
-    - **Collect Security Logs**. This configuration option will collect data from `SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`, `SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`, `SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`, `SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`, and `SNOWFLAKE.ACCOUNT_USAGE.STAGES` tables.
+    - **Collect Security Logs**. This configuration option will collect data from `SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`, `SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`, `SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`, `SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`, `SNOWFLAKE.ACCOUNT_USAGE.STAGES`,`SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_ROLES`, and `SNOWFLAKE.ACCOUNT_USAGE.USERS` tables.
     - **Collect Custom Event Logs (Format: DATABASE.SCHEMA.TABLE)**. Your custom event tables. The custom event tables should have the table schema as mentioned [here](https://docs.snowflake.com/en/developer-guide/logging-tracing/event-table-columns#label-event-table-schema). For example, `SNOWFLAKE_LEARNING_DATABASE.MY_DATABASE_SCHEMA.MY_CUSTOM_EVENT_TABLE`.
         :::note
         * The Snowflake Custom Events feature does not support timestamps with time zones when storing generated data in custom tables. Consequently, data is stored according to the Snowflake account's current time zone. Changing the account's time zone after a source has been configured to collect custom events can lead to data duplication or loss. Therefore, it is recommended not to change the time zone setting once the source has been configured to collect custom events.
@@ -113,7 +113,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | patToken | String | Yes | `null` | Your Snowflake programmatic access token. | |
 | accountIdentifier | String | Yes | `null` | Snowflake account name. | `qabbxxr-hj65789` |
 | collectQueryHistory | Boolean | No | `false` | The boolean value to collect the query history tables. | `SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY` |
-| collectSecurity | Boolean | No | `false` | The boolean value to collect the security tables. | - `SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`<br/>- `SNOWFLAKE.ACCOUNT_USAGE.STAGES` |
+| collectSecurity | Boolean | No | `false` | The boolean value to collect the security tables. | <ul><li>`SNOWFLAKE.ACCOUNT_USAGE.LOGIN_HISTORY`</li><li>`SNOWFLAKE.ACCOUNT_USAGE.SESSIONS`</li><li>`SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_USERS`</li><li>`SNOWFLAKE.ACCOUNT_USAGE.DATA_TRANSFER_HISTORY`</li><li>`SNOWFLAKE.ACCOUNT_USAGE.STAGES`</li><li>`SNOWFLAKE.ACCOUNT_USAGE.USERS`</li><li>`SNOWFLAKE.ACCOUNT_USAGE.GRANTS_TO_ROLES`</li></ul> |
 | collectEventTable | Boolean | No | `false` | The boolean value to collect the custom event tables. | `DATABASE.SCHEMA.TABLE` |
 | customEventTables | String | No | `null` | List of custom table names from which the data should be collected. |  |
 | pollingInterval | Integer | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. |  |

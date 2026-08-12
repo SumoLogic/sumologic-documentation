@@ -17,7 +17,7 @@ Sumo Logic OTel Python Lambda layer supports:
 
 ## Sumo Logic Distribution for OpenTelemetry Lambda Layer
 
-[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.32.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.32.0) provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.40.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.40.0) provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
 
 ### Lambda function requirements
 
@@ -38,8 +38,8 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
    :::
 1. Navigate to the **Configuration** > **Environment variables** section and set up the following environment variables:
    * `AWS_LAMBDA_EXEC_WRAPPER= /opt/otel-instrument` - Enables auto-instrumentation.
-   * `OTEL_TRACES_SAMPLER = always_on` - Enables traces sampling.
-   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Sets the tracing service name in Sumo Logic. Make sure to define it as a string value that represents the function name and its business logic such as "Check SQS Lambda".
+   * `OTEL_TRACES_SAMPLER = always_on` - Enables traces sampling. This is required and not set by the wrapper automatically.
+   * `OTEL_SERVICE_NAME = YOUR_SERVICE_NAME` - Sets the tracing service name in Sumo Logic. Make sure to define it as a string value that represents the function name and its business logic such as "Check SQS Lambda". If not set, defaults to `AWS_LAMBDA_FUNCTION_NAME`.
    * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Add Services Panel to Dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
      * `application=YOUR_APPLICATION_NAME` - The string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - Set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.
@@ -53,10 +53,18 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 
 1. Make sure you have **X-Ray Tracing** disabled in Lambda API Stage. Navigate to [AWS API Gateway console](https://console.aws.amazon.com/apigateway/main/apis), find your API and go to Stages. In the **Logs/Tracing** tab uncheck **Enable X-Ray Tracing** option.
    :::note
-   If for whatever reason you cannot disable this, configure X-Ray context propagation by setting `OTEL_PROPAGATORS=xray` environment variable on your client side.
+   If for whatever reason you cannot disable this, configure X-Ray context propagation by setting `OTEL_PROPAGATORS=tracecontext,baggage,xray` environment variable on your client side.
    :::
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
+
+:::note Default behaviors
+The Lambda layer automatically sets the following defaults:
+* `OTEL_SERVICE_NAME` defaults to `AWS_LAMBDA_FUNCTION_NAME` if not explicitly set.
+* `OTEL_TRACES_EXPORTER` defaults to `otlp`.
+* `OTEL_METRICS_EXPORTER` defaults to `none` (metrics are disabled by default).
+* The following resource attributes are automatically added: `cloud.region` (from `AWS_REGION`), `cloud.provider=aws`, `faas.name` (from `AWS_LAMBDA_FUNCTION_NAME`), and `faas.version` (from `AWS_LAMBDA_FUNCTION_VERSION`).
+:::
 
 ### Sumo Logic Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
 
@@ -64,26 +72,27 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                            |
 |:----------------|:------------------------------------------------------------------------------------------------|
-| af-south-1     | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1     |
-| ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1 |
-| ap-northeast-2 | arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1 |
-| ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1 |
-| ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1 |
-| ap-southeast-2 | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1 |
-| ca-central-1   | arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1   |
-| eu-central-1   | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1   |
-| eu-north-1     | arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1     |
-| eu-south-1     | arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1     |
-| eu-west-1      | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| eu-west-2      | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| eu-west-3      | arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| me-south-1     | arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1     |
-| sa-east-1      | arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| us-east-1      | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| us-east-2      | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| us-west-1      | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
-| us-west-2      | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-32-0:1      |
+| af-south-1     | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1     |
+| ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1 |
+| ap-northeast-2 | arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1 |
+| ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1 |
+| ap-south-1     | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1     |
+| ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1 |
+| ap-southeast-2 | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1 |
+| ca-central-1   | arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1   |
+| eu-central-1   | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1   |
+| eu-north-1     | arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1     |
+| eu-south-1     | arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1     |
+| eu-west-1      | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| eu-west-2      | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| eu-west-3      | arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| me-south-1     | arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1     |
+| sa-east-1      | arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| us-east-1      | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| us-east-2      | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| us-west-1      | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
+| us-west-2      | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-python-x86_64-v1-40-0:1      |
 
 ### Sumo Logic Distro Lambda layers for AWS Region - arm64 (arm) architecture
 
@@ -91,20 +100,21 @@ Go back to Step 3 (_In the Choose a layer menu_...).
 
 | Region         | ARN                                                                                           |
 |:----------------|:-----------------------------------------------------------------------------------------------|
-| ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1 |
-| ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1 |
-| ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1 |
-| ap-southeast-2 | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1 |
-| eu-central-1   | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1   |
-| eu-west-1      | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1      |
-| eu-west-2      | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1      |
-| us-east-1      | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1      |
-| us-east-2      | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1      |
-| us-west-2      | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-32-0:1      |
+| ap-northeast-1 | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1 |
+| ap-northeast-3 | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1 |
+| ap-south-1     | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1     |
+| ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1 |
+| ap-southeast-2 | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1 |
+| eu-central-1   | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1   |
+| eu-west-1      | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1      |
+| eu-west-2      | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1      |
+| us-east-1      | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1      |
+| us-east-2      | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1      |
+| us-west-2      | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-python-arm64-v1-40-0:1      |
 
 ## Sumo Logic OTel Lambda container instrumentation
 
-[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.32.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.32.0) also provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries for container based Lambda functions.
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.40.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.40.0) also provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries for container based Lambda functions.
 
 :::note
 The instructions below support only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
@@ -120,22 +130,22 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 ### Lambda function image changes
 
-1. Download and extract Sumo Logic Distribution for OpenTelemetry Java Lambda Layer archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.32.0/opentelemetry-python-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.32.0/opentelemetry-python-arm64.zip).
+1. Download and extract Sumo Logic Distribution for OpenTelemetry Python Lambda Layer archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.40.0/opentelemetry-python-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.40.0/opentelemetry-python-arm64.zip).
 1. Extracted instrumentation libraries have to be added to the image in /opt directory. Please see Dockerfile example:
 
     ```dockerfile
-    FROM public.ecr.aws/lambda/python:3.9-arm64
+    FROM public.ecr.aws/lambda/python:3.12-arm64
 
     # Lambda Function Code  
     COPY lambda_function.py ${LAMBDA_TASK_ROOT}  
     COPY requirements.txt  .  
     RUN  pip3 install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
 
-    **# Copy OT Instrumentation  
+    # Copy OT Instrumentation  
     COPY collector-config/ /opt/collector-config/  
     COPY extensions/ /opt/extensions/  
     COPY python/ /opt/python/  
-    COPY otel-instrument /opt/**
+    COPY otel-instrument /opt/
 
     CMD \[ "lambda_function.lambda_handler" \]
     ```
@@ -167,4 +177,4 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 In case of an external request to the Lambda function, it is important to propagate the context. Enabling [AWS X-Ray context propagation](https://docs.aws.amazon.com/xray/latest/devguide/xray-services-s3.html) on the client side will help to visualize the complex flow of the trace.
 
-For applications instrumented by OpenTelemetry SDK, it is enough to install AWS X-Ray propagator dependency specific for an instrumentation and configure the [`OTEL_PROPAGATORS` environment variable](https://opentelemetry.io/docs/concepts/sdk-configuration/general-sdk-configuration/#otel_propagators) (for example: `export OTEL_PROPAGATORS= tracecontext,baggage,xray`).
+For applications instrumented by OpenTelemetry SDK, it is enough to install AWS X-Ray propagator dependency specific for an instrumentation and configure the [`OTEL_PROPAGATORS` environment variable](https://opentelemetry.io/docs/concepts/sdk-configuration/general-sdk-configuration/#otel_propagators) (for example: `export OTEL_PROPAGATORS=tracecontext,baggage,xray`).

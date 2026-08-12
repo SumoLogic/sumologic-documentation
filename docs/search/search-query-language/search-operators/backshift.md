@@ -27,6 +27,8 @@ It is important to note that `backshift` does not automatically add timeslices, 
 
 ## Examples
 
+### Compare count to 10 time points prior
+
 Use `backshift` to see the difference of fields between time points.
 
 Running a query like this:
@@ -46,3 +48,15 @@ produces results like:
 Then you can visualize the results as an area chart.
 
 <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/area-chart-backshift-1.png')} alt="Backshift new graph" style={{border: '1px solid gray'}} width="800" />
+
+### Compare consecutive time points using default shift_length
+
+Omit `shift_length` to use the default value of 1, comparing each timeslice to the immediately previous one:
+
+```sumo
+_sourceCategory=Labs/Apache/Access
+| timeslice by 1m
+| count by _timeslice
+| sort + _timeslice
+| backshift _count as previous_count
+```
