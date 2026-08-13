@@ -21,8 +21,8 @@ Every archived log message is tagged with the metadata fields specified by the
 ## Create an AWS archive destination
 
 :::note
-- You can also create and manage AWS archive destinations using the [Data Archiving Management API](https://api.sumologic.com/docs/#tag/archiveDestinationManagement), enabling automated destination setup at scale.
-- Creating an AWS archive destination, whether through the UI or the [Data Archiving Management API](https://api.sumologic.com/docs/#tag/archiveDestinationManagement), requires the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability.
+- You can also create and manage AWS archive destinations using the [Data Archiving Management API](https://api.sumologic.com/docs/#tag/dataArchivingManagement), enabling automated destination setup at scale.
+- Creating an AWS archive destination, whether through the UI or the [Data Archiving Management API](https://api.sumologic.com/docs/#tag/dataArchivingManagement), requires the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability.
 :::
 
 To create an AWS archive destination using the UI, follow the steps below:
