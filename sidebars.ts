@@ -3260,6 +3260,7 @@ integrations: [
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
+        'api/data-archiving',
         'api/data-deletion-rules',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
