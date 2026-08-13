@@ -305,8 +305,9 @@ For the full walkthrough, including example prompts, known limitations, and FAQ,
 
 ### Conversational Dashboards
 
-Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel. For the full walkthrough, including supported visualization types and current limitations, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
+Create dashboard panels through conversation instead of writing queries and configuring panels by hand. Describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel. For the full walkthrough, including supported visualization types and current limitations, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 
+<!-- Uncomment once Mobot can also read a dashboard you have open (https://github.com/SumoLogic/sumologic-documentation/pull/6937)
 Mobot also helps you read a dashboard you already have open:
 
 - **Summarization**. Get a plain-language narrative of overall system health and the key takeaways across panels.
@@ -319,7 +320,7 @@ Known limitations:
 - Summaries evaluate the top 10 rows or data series per panel, ranked by variance or anomaly score. Lower-impact data is excluded from the narrative.
 - Analysis is scoped to the dashboard you have open. Mobot cannot correlate data across separate dashboards.
 - Follow-up context is kept only within the current session.
-- Mobot selects the panel type automatically. Fine-tuned visual adjustments are done manually.
+-->
 
 ### Conversational Playbooks
 
