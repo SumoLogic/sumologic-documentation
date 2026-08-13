@@ -136,12 +136,12 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 
 ## FAQ
 
-### Can I opt out of AI features?
+### Can you opt out of AI features?
 
 AI features are on by default. We offer two methods for opting out:
 
 * **Via your account team or support**. You can opt out of specific AI features or all AI features by contacting your Sumo Logic account team or opening a support ticket. If you choose to opt out of all AI features, your tenant is automatically exempted from future AI feature releases.
-* **In-product self opt-out**. Beginning August 2026, platform administrators can opt out of all AI features directly within the product settings under **Feature Management** (**Administration** > **Feature Management**). Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot, Parse Assist, and the SOC Analyst Agent share a single **AI features** toggle; the MCP server has its own separate **MCP Server access** toggle on the same page.
+* **In-product self opt-out**. Beginning August 2026, platform administrators can opt out of all AI features directly within the product settings under **Feature Management** (**Administration** > **Feature Management**). Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot, Parse Assist, and the SOC Analyst Agent share a single **AI features** toggle; the MCP server has its own separate **MCP Server access** toggle on the same page. You can also manage this toggle for your own organization (or, if you administer child organizations, for each of them individually) from **Administration > Organizations > Manage Account**; see [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features).
 
 <MSSPfeatureMgmt/>
 
