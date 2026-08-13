@@ -102,7 +102,7 @@ The migration permanently deletes 4 AWSO [Metric Rules](/docs/metrics/metric-rul
 Download the migration script and make it executable:
 
 ```bash
-curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/main/cloudformation-sumologic-aws-observability/scripts/MigrateToV300.sh
+curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master-v3x/cloudformation-sumologic-aws-observability/scripts/MigrateToV300.sh
 chmod +x MigrateToV300.sh
 ```
 
@@ -156,7 +156,7 @@ chmod +x MigrateToV300.sh
 | `--install-apps` | Install Sumo Logic observability apps: `Yes` or `No` | `Yes` |
 | `-p AWS_PROFILE` | AWS CLI named profile | `default` |
 | `--dry-run` | Preview the mapped parameters without making any changes | Off |
-| `--resume` | Skip phases 2–6 and resume from phase 7 using a saved params file — use after a failed v3.0.0 deployment | Off |
+| `--resume` | Skip phases 2–5; automatically run Phase 6 if the old stack still needs deletion; resume from Phase 7 using a saved params file | Off |
 | `--params-file FILE` | Path to the saved params JSON file to use with `--resume` | — |
 | `--patch-roles-only` | Run only validate, role patching (phase 11), and report — use when sources need their IAM role ARN updated without re-running the full migration | Off |
 
@@ -210,7 +210,10 @@ aws s3 ls s3://<bucket-shown-above> --region <your-region>
 If there is a mismatch, the script will warn you. Investigate before proceeding.
 :::
 
-The script also cross-checks the collector ID found in Sumo Logic against the `SumoLogicHostedCollector` resource recorded in your CF stack. If they differ — which can happen if the wrong credentials were provided or the collector was recreated outside CloudFormation — the script will display both IDs and prompt you to confirm before continuing.
+The script also cross-checks the collector ID found in Sumo Logic against the `SumoLogicHostedCollector` resource recorded in your CF stack. If they differ — which can happen if the wrong credentials were provided or the collector was recreated outside CloudFormation — the script will display both IDs and offer three options:
+1. **Use the Sumo API collector** — proceed with the name-matched collector.
+2. **Enter the correct collector ID manually** — for cases where you know the exact collector ID to use.
+3. **Abort** — stop the migration for manual investigation.
 
 Type `yes` to proceed. Anything else aborts safely with no changes made.
 
@@ -296,11 +299,19 @@ aws cloudformation wait stack-delete-complete --stack-name <v300_stack_name> --r
 ```bash
 ./MigrateToV300.sh \
   -d us2 -i <access_id> -k <access_key> -o <org_id> \
+  -s <v2x_stack_name> \
   -r <region> -n <v300_stack_name> \
   --resume --params-file ./migration_params_<v300_stack_name>_<timestamp>.json
 ```
 
-The resume mode skips phases 2 to 6 and executes the following phases:
+:::tip
+Include `-s <v2x_stack_name>` with `--resume` if the old stack may still exist or be in a failed state. The script automatically detects the old stack's status and handles it:
+- **Already deleted**: Skips Phase 6, checks for orphaned nested stacks.
+- **DELETE_FAILED**: Retains the blocked resources and deletes everything else, then cleans up nested stacks.
+- **Still exists**: Runs the full Phase 6 deletion before continuing.
+:::
+
+The resume mode skips phases 2 to 5. If `-s` is provided and the old stack still needs deletion, Phase 6 runs automatically. Then the script executes:
 FER Cleanup > Metric Rules Cleanup > Deploy > Verify > Patch Roles > Report.
 
 ## Patching IAM role ARNs after migration
@@ -334,5 +345,5 @@ Validate > Patch Roles > Report
 | `[WARN] policy missing cloudtrail.amazonaws.com` | S3 bucket policy does not grant CloudTrail write access | Check the bucket policy with `aws s3api get-bucket-policy --bucket <bucket> --region <region> --query Policy --output text \| jq .` and add a statement granting `s3:PutObject` to `cloudtrail.amazonaws.com`. |
 | `[WARN] policy missing delivery.logs.amazonaws.com` | S3 bucket policy does not grant ALB/ELB log delivery access | Add a statement granting `s3:PutObject` to `delivery.logs.amazonaws.com` in the bucket policy. |
 | `[WARN] No active CloudTrail trail found` | The v2.x `Aws-Observability-*` trail was deleted with the old stack and no replacement exists | Create a new trail: `aws cloudtrail create-trail --name <name> --s3-bucket-name <bucket> --region <region>` then `aws cloudtrail start-logging --name <name> --region <region>`. |
-| `Stack DELETE_FAILED — BucketNotEmpty` | Phase 6 stack deletion failed because the `CommonS3Bucket` resource is not empty. The script automatically retries using force delete, which retains the bucket and continues the migration. No action needed — this is expected behaviour when the bucket contains existing log data. |  Automatic recovery — the script handles this without intervention. |
+| `Stack DELETE_FAILED — BucketNotEmpty` | Phase 6 stack deletion failed because the `CommonS3Bucket` resource is not empty. The script automatically retries using `--retain-resources` — it retains only the blocked resources (the S3 bucket), deletes everything else including nested stacks, and continues the migration. | Automatic recovery — the script handles this without intervention. If the old stack or nested stacks remain after a previous interrupted run, re-run with `--resume -s <old_stack_name>` to clean them up. |
 | `[WARN] SNS topic deleted or inaccessible` | The SNS topic wiring your S3 bucket to the Sumo source was deleted with the v2.x stack | Recreate the SNS topic, set its resource policy to allow S3 to publish to it, subscribe the Sumo source endpoint URL, and update the bucket notification configuration to point at the new topic ARN. The source endpoint URL is visible in **Manage Data > Collection > your source > Show URL**. |
