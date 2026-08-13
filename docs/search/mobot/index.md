@@ -18,6 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 import Iframe from 'react-iframe';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
+import ConvPlaybookLimits from '../../reuse/conv-playbook-limits.md';
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Search icon" width="35"/>
 
@@ -328,7 +329,7 @@ Create and edit Automation Service [playbooks](/docs/platform-services/automatio
 
 For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
 
-Conversational Playbook prompts have their own daily limit, separate from the standard Mobot prompt limit: up to 50 prompts per user, per Sumo Logic Org ID, per day.
+<ConvPlaybookLimits/>
 
 ## Managing conversations
 
@@ -618,7 +619,7 @@ At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SO
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
-<MSSPfeatureMgmt/> 
+<MSSPfeatureMgmt/>
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
 

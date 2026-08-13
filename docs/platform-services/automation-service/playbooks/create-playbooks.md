@@ -8,6 +8,7 @@ description: Create and configure Automation Service playbooks to run automated 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CartesianProduct from '../../../reuse/cartesian-product.md';
 import TerraformLink from '../../../reuse/terraform-link.md';
+import ConvPlaybookLimits from '../../../reuse/conv-playbook-limits.md';
 
 ## View playbooks
 
@@ -19,7 +20,7 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/).
 
 :::tip
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
@@ -47,9 +48,7 @@ See [Add nodes to a playbook](/docs/platform-services/automation-service/playboo
 
 Mobot is the AI Playbook Assistant built into the Playbooks editor. Instead of manually wiring up nodes, you describe what you want in plain language, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you.
 
-:::note
-Conversational Playbook prompts have their own daily limit, separate from the standard Mobot prompt limit: up to 50 prompts per user, per Sumo Logic Org ID, per day.
-:::
+<ConvPlaybookLimits/>
 
 #### Prerequisites
 
@@ -147,7 +146,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 1. The selected output type will be displayed under **Condition 1**. Select which condition you would like for the output results to meet from the inequality operators below and click **Select a value** to define the condition.
 1. Now that **Condition 1** is defined, you can choose to filter your results further by selecting an **AND/OR** operator to define another condition.
     :::warning
-    If you define multiple conditions, all the conditions must be filtered with either **AND** or **OR**. If some are filtered with **AND** and some with **OR**, then the condition evaluation will fail. 
+    If you define multiple conditions, all the conditions must be filtered with either **AND** or **OR**. If some are filtered with **AND** and some with **OR**, then the condition evaluation will fail.
     :::
 1. Click **Update**.
 1. When you create a new condition, you need to define what happens when the results meet one of your criteria. Draw lines to nodes to define the flow for success, failure, or other condition options.
@@ -236,7 +235,7 @@ Perform the following steps to use the user choice responder variables in nodes 
 
 #### User choice nodes in out-of-the-box playbooks
 
-Here are just a few of the [out-of-the-box playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
+Here are just a few of the [out-of-the-box playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them:
 * 18 - DDoS
 * 21 - DLP Alert
 * 24 - DoS with Decision Tree
@@ -388,7 +387,7 @@ Click on a version to edit it, and if you want, publish it. In this way, you mai
 
 ## Enable or disable playbooks
 
-You can enable playbooks for use in automations, or disable them to prevent them from being used. This gives you greater control over when a playbook can be run. If for example a playbook is causing a problem, such as exceeding your actions limit or sending too many emails, you could temporarily disable the playbook until you remedy the issue. 
+You can enable playbooks for use in automations, or disable them to prevent them from being used. This gives you greater control over when a playbook can be run. If for example a playbook is causing a problem, such as exceeding your actions limit or sending too many emails, you could temporarily disable the playbook until you remedy the issue.
 
 When enabling or disabling playbooks, keep in mind:
 * By default, draft playbooks are disabled.
@@ -396,21 +395,21 @@ When enabling or disabling playbooks, keep in mind:
 * Disabled playbooks cannot be triggered automatically.
 * Deleted playbooks are set to disabled and remain so after restoration.
 * Cloned or imported playbooks are enabled by default, irrespective of the original playbook's status.
-* [Audit logs](/docs/platform-services/automation-service/automation-service-audit-logging/) are generated whenever playbooks are enabled or disabled manually. 
+* [Audit logs](/docs/platform-services/automation-service/automation-service-audit-logging/) are generated whenever playbooks are enabled or disabled manually.
 
 ### How to enable or disable a playbook
 
 You can enable or disable a playbook in the playbook details page<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} />
 or while editing the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/disable-playbook.png')} alt="Playbook disable" style={{border:'1px solid gray'}} width="400" />
 
-The **Status** column shows whether a playbook is Published or in draft.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-status.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} /> 
+The **Status** column shows whether a playbook is Published or in draft.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-status.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} />
 
 ### Enable on publish
 
 To publish a playbook, click the **Publish** button at the top right corner of the playbook window.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
 
 When you publish a playbook:
-* Playbooks without any published versions are automatically enabled. 
+* Playbooks without any published versions are automatically enabled.
 * Playbooks that have previously published versions will display an **Enable playbook on publish** option if they are in a disabled state:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enable-on-publish-toggle.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/>
 
 ## Export and import playbooks
@@ -424,6 +423,5 @@ With the mechanism to export and import playbooks, you can move a playbook, alon
        1. Select the desired file and click **Import**. <br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="300"/>
 
        It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
-   * **Export as JSON**. Exports a JSON file that you can use to manage the playbook with Terraform using the [sumologic_csoar_playbook](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook) resource. 
+   * **Export as JSON**. Exports a JSON file that you can use to manage the playbook with Terraform using the [sumologic_csoar_playbook](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/csoar_playbook) resource.
         <TerraformLink/>
-
