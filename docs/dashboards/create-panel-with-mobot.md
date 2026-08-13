@@ -38,7 +38,7 @@ For logs panels, Mobot can create the following visualization types:
 
 The new panel appears on the dashboard, the same as a panel created through the dashboard UI.
 
-For more prompts to try, see [Dashboard panel creation](/docs/search/mobot/mobot-example-prompts#dashboard-panel-creation) in the Mobot Example Prompts library.
+For more prompts to try, see [Dashboard panel creation](/docs/search/mobot/example-prompts#dashboard-panel-creation) in the Mobot Example Prompts library.
 
 ## How to create multiple panels in one request
 
@@ -86,5 +86,5 @@ Yes. After the panel is created, you can modify it using the standard dashboard 
 ## Related resources
 
 - [Mobot](/docs/search/mobot)
-- [Mobot Example Prompts](/docs/search/mobot/mobot-example-prompts)
+- [Mobot Example Prompts](/docs/search/mobot/example-prompts)
 - [Create a New Dashboard](/docs/dashboards/create-dashboard-new)
