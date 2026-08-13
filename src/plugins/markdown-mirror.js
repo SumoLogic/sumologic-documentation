@@ -26,6 +26,32 @@ function walkDocs(dir, base = dir, files = []) {
   return files;
 }
 
+// Mirrors of a subset of Docusaurus's real addBaseUrl() behavior (see
+// @docusaurus/core/lib/client/exports/useBaseUrl.js): URLs with a protocol
+// (http:, https:, mailto:, //, etc.) or a local anchor (#...) pass through
+// unchanged; everything else gets baseUrl prepended, without doubling it up
+// if it's already there.
+function hasProtocolOrAnchor(url) {
+  return url.startsWith('#') || /^(?:[A-Za-z][A-Za-z\d+.-]*:|\/\/)/.test(url);
+}
+
+function addBaseUrl(url, baseUrl) {
+  if (!url || hasProtocolOrAnchor(url) || url.startsWith(baseUrl)) return url;
+  return baseUrl + url.replace(/^\//, '');
+}
+
+// The raw .md/.mdx source is copied verbatim into the mirror, so JSX like
+// <img src={useBaseUrl('img/x.png')} /> never gets evaluated — it's left in
+// as literal, unresolved text, which downstream crawlers then mangle into
+// broken hrefs. Resolve every useBaseUrl(...) call to its static path before
+// writing the mirrored file.
+function resolveUseBaseUrl(content, baseUrl) {
+  return content.replace(
+    /\{?\s*useBaseUrl\(\s*(['"])(.*?)\1\s*\)\s*\}?/g,
+    (_match, _quote, url) => addBaseUrl(url, baseUrl)
+  );
+}
+
 // Extract the slug field from frontmatter if present.
 function parseFrontmatterSlug(content) {
   if (!content.startsWith('---')) return null;
@@ -95,7 +121,8 @@ module.exports = function markdownMirrorPlugin(context) {
 
         const source = fs.readFileSync(src, 'utf8');
         const { canonical, slug, hasExistingSlug } = deriveCanonical(rel, source, siteUrl, baseUrl);
-        const mirrored = injectCanonicalFields(source, canonical, slug, hasExistingSlug);
+        const resolved = resolveUseBaseUrl(source, baseUrl);
+        const mirrored = injectCanonicalFields(resolved, canonical, slug, hasExistingSlug);
         fs.writeFileSync(dest, mirrored);
 
         index.push(`/llm/docs/${rel.replace(/\\/g, '/')}`);
