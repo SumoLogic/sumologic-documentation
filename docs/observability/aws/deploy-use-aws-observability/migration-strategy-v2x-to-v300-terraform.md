@@ -33,7 +33,7 @@ cd <v2.x-terraform-directory>
 terraform destroy
 ```
 
-Review the destroy plan and confirm. This removes all AWS infrastructure (S3 buckets, IAM roles, Lambda functions, SNS topics) and Sumo Logic resources (collector, sources, apps, monitors, FERs) created by v2.x.
+Review the destroy plan and confirm. This removes all AWS infrastructure (S3 buckets, IAM roles, Lambda functions, SNS topics) and Sumo Logic resources (collector, sources, apps, monitors, FERs, Fields) created by v2.x.
 
 After the destroy completes, you can optionally remove the state file:
 
