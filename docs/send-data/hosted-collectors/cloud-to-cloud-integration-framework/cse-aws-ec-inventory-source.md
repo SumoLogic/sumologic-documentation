@@ -18,7 +18,7 @@ The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive ev
 For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
 
 :::note
-Upgrade the CSE AWS EC2 Inventory source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+Upgrade the CSE AWS EC2 Inventory source to the latest version 3.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
 :::
 
 import TerraformLink from '../../../reuse/terraform-link.md';

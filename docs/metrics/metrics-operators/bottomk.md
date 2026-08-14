@@ -2,6 +2,7 @@
 id: bottomk
 title: bottomk Metrics Operator
 sidebar_label: bottomk
+description: Use the bottomk metrics operator to apply an aggregation function to matching time series and return the N time series with the lowest evaluated values over the query time range.
 ---
 
 

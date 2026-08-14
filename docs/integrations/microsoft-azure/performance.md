@@ -234,6 +234,22 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Average Output Queue Length.** Displays the average length of the output queue as a line chart on a timeline using timeslices of one minute for the last 15 minutes.
 
+## Create monitors for the Windows Performance app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows Performance alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows Performance - High CPU Utilization` | This alert is triggered when average processor utilization exceeds 80% on a host within a 5-minute window. This may indicate a runaway process or resource contention. | Count > 0 | Count &lt;= 0 |
+| `Windows Performance - Low Available Memory` | This alert is triggered when average available memory falls below 100MB on a host within a 5-minute window. This may indicate memory pressure or a memory leak. | Count > 0 | Count &lt;= 0 |
+| `Windows Performance - High Disk Queue Length` | This alert is triggered when the average current disk queue length exceeds 5 on a host. This may indicate a disk I/O bottleneck affecting system performance. | Count > 0 | Count &lt;= 0 |
+| `Windows Performance - High Network Errors` | This alert is triggered when combined outbound and inbound packet errors exceed 100 per host within a 5-minute window. This may indicate a network adapter issue or network degradation. | Count > 0 | Count &lt;= 0 |
+| `Windows Performance - High Disk Utilization` | This alert is triggered when average disk idle time falls below 20% on a host (meaning 80%+ disk utilization). This may indicate disk saturation affecting system performance. | Count > 0 | Count &lt;= 0 |
+
 ## Upgrade/Downgrade the Windows Performance app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

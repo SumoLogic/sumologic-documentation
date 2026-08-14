@@ -16,7 +16,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
 
 :::note
-Upgrade the Microsoft Graph Security API source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+* Upgrade the Microsoft Graph Security API source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+* This source does not support Microsoft GCC High environments. For GCC High-compatible log collection, see the [MS Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/).
 :::
 
 ## Data collected

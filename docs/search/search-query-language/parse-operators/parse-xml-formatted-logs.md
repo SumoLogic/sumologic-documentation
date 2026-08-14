@@ -1,6 +1,7 @@
 ---
 id: parse-xml-formatted-logs
 title: Parse XML Formatted Logs
+description: Use the XML operator to parse fields from XML logs using a subset of XPath 1.0 specification.
 ---
 
 

@@ -2,6 +2,7 @@
 id: diff
 title: diff Search Operator
 sidebar_label: diff
+description: Use the diff operator to calculate the rate of change in a numeric field between consecutive rows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -16,16 +16,11 @@ sidebar_label: {{Vendor Name}} #example: Druva
 tags:
   - cloud-to-cloud
   - {{vendor-name}} #example: druva
-description: Short description. #example: Learn how to configure the Druva Cloud-to-Cloud Source in your Sumo Logic environment.
+description: Short description. #aim for 140–160 characters. Example: Learn how to configure the Druva Cloud-to-Cloud Source to collect backup and recovery activity logs from Druva into your Sumo Logic environment.
 ---
 
-
-import CodeBlock from '@theme/CodeBlock';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 `<img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>`
 
@@ -100,7 +95,7 @@ To configure a Dropbox source:
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **App Key**, **App Secret**, and **Access Code**. Provide your Dropbox [authentication](#vendor-configuration) credentials.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-1. When you are finished configuring the Source, click **Submit**.
+1. When you are finished configuring the Source, click **Save**.
 -->
 
 ## Metadata fields
@@ -135,15 +130,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-\Create and add the JSON config in the dropbox and import it here.\
-
-<CodeBlock language="json">component-name</CodeBlock>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/{{vendor-name}}/example.json
+```
 
 ### Terraform example
 
-\Create and add the Terraform config in the dropbox and import it here.\
-
-<CodeBlock language="json">component-name}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/{{vendor-name}}/example.tf
+```
 
 ## Troubleshooting
 

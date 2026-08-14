@@ -248,6 +248,12 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/proofpoint-tap/example.tf
 ```
 
+## Troubleshooting
+
+### Missing or delayed events
+
+If you experience issues such as missing events, delayed data ingestion, or inconsistent data across sources, contact the Proofpoint TAP support team first and raise the issue with them. Based on multiple support investigations, Sumo Logic has found that these issues are typically caused by instability in the Proofpoint `/v2/siem/all` endpoint rather than the Sumo Logic integration. Once Proofpoint confirms that the issue does not originate from their side, contact the Sumo Logic support team for further investigation.
+
 ## FAQ
 
 :::info

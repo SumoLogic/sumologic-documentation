@@ -18,6 +18,10 @@ Search always retrieves and displays messages in reverse chronological order. Re
 
 You can resume a paused search; just click **Resume** under the **Start** button.
 
+:::note
+The maximum time you can pause a search is 30 minutes. If you do not resume the search within that time, it is automatically cancelled.
+:::
+
 ### Cancel a Search
 
 When you cancel a search, you are stopping all progress on the current search and removing all results. Your query remains in the search query field.

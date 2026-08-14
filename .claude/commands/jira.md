@@ -17,7 +17,7 @@ Never suggest `brew install jira`, `npm install jira-cli`, or any other CLI tool
 
 * **Jira project:** DOCS
 * **Base URL:** https://sumologic.atlassian.net/browse/DOCS
-* **Cloud ID:** 247075db-3b0b-4f1b-92db-51683ab743a6
+* **Cloud ID:** 247075db-3b0b-4f1b-92cb-51683ab743a6
 
 ## Ticket intake
 
@@ -27,51 +27,44 @@ https://sumologic.atlassian.net/servicedesk/customer/portal/26/group/75/create/3
 Tickets created via this command are created directly in the DOCS project and
 are distinct from portal-submitted requests.
 
-## Team members
+## Technical Area values
 
-| ID | Role | Atlassian Account ID |
-|---|---|---|
-| Writer 1 | Lead Technical Writer | 628bc65bc65b720069610ad1 |
-| Writer 2 | Contractor Technical Writer | 712020:f4a4da3b-21a9-427c-8811-1b0a9f2e34f8 |
-| Writer 3 | Contractor Technical Writer | 641adfd7407493675d473e16 |
-| Writer 4 | Senior Technical Writer | 640862967655a3223a24ec90 |
-| Writer 5 | Manager | 712020:250078b7-52c4-45fd-ac76-327e888c6768 |
+**Assignee and due date are set automatically by Jira Automation** based on Technical Area and Priority — do not set these manually.
 
-## Technical Area → Writer assignments
+Use this list to select the correct Technical Area when creating or updating tickets:
 
-Use this to set the default assignee when creating tickets, and to filter issues by owner.
-
-| Technical Area | Writer |
-|---|---|
-| Alerts (Monitors, Sched. Search, Webhooks) | Writer 2 |
-| APIs | Writer 1 |
-| APM (Traces, RUM) | Writer 1 |
-| Apps/Integrations | Writer 2 |
-| Automation | Writer 4 |
-| Cloud Infrastructure Security | Writer 4 |
-| Cloud SIEM | Writer 4 |
-| Cloud SOAR | Writer 4 |
-| Collectors/Sources | Writer 2 |
-| Dashboards | Writer 3 |
-| Getting Started (Product/Observability) | Writer 1 |
-| Getting Started (Security) | Writer 4 |
-| Log Search | Writer 3 |
-| Manage (Administrator) | Writer 3 |
-| Manage (Analyst) | Writer 3 |
-| Manage (Data Forwarding) | Writer 3 |
-| Manage (Fields, FERs, Partitions, Data Tiers, Ingestion, Sched Views, Billing, Sharing) | Writer 3 |
-| Manage (Security, Users, Roles) | Writer 3 |
-| Metrics | Writer 4 |
-| Mobot | Writer 1 |
-| Observability (AWSO) | Writer 2 |
-| Observability (Azure) | Writer 3 |
-| Observability (Kubernetes) | Writer 4 |
-| Observability (SLO) | Writer 4 |
-| Observability (Tracing) | Writer 1 |
-| Other | unassigned |
-| Platform Services | Writer 4 |
-| Sensu | Writer 4 |
-| Threat Intelligence | Writer 4 |
+- Alerts (Monitors, Sched. Search, Webhooks)
+- APIs
+- APM (Traces, RUM)
+- Apps/Integrations
+- Automation
+- Cloud SIEM
+- Cloud SOAR
+- Collectors/Sources
+- Dashboards
+- Dojo AI
+- Getting Started (Product/Observability)
+- Getting Started (Security)
+- Log Search
+- Logs for Security
+- Manage (Administrator)
+- Manage (Analyst)
+- Manage (Data Forwarding)
+- Manage (Fields, FERs, Partitions, Data Tiers, Ingestion, Sched Views, Billing, Sharing)
+- Manage (Security, Users, Roles)
+- Metrics
+- Observability (AWSO)
+- Observability (Azure)
+- Observability (Kubernetes)
+- Observability (SLO)
+- Observability (Tracing)
+- Other
+- Other (Analytics)
+- Other (Optimization - GEO/SEO)
+- Other (Site Development & AI)
+- Platform Services
+- Sensu
+- Threat Intelligence
 
 ## Technical area keyword hints
 
@@ -84,17 +77,20 @@ Use these keywords and file path patterns to suggest the most relevant Technical
 - **APM**: trace, span, RUM, real user monitoring, application performance
 - **Apps/Integrations**: app, integration, connector, third-party
 - **Automation**: automation, playbook, workflow, orchestration
-- **Cloud Infrastructure Security**: CIEM, cloud security, infrastructure security
 - **Cloud SIEM**: SIEM, security, threat, detection, rule
 - **Cloud SOAR**: SOAR, incident response, security orchestration
 - **Collectors/Sources**: collector, source, ingestion, data collection
 - **Dashboards**: dashboard, panel, visualization, chart
+- **Dojo AI**: Dojo, AI assistant, AI features
 - **Getting Started**: onboarding, quick start, tutorial, getting started
 - **Log Search**: search, query, log query, LogReduce
+- **Logs for Security**: security logs, log analytics for security, security data lake, infrastructure security
 - **Manage**: admin, user management, role, permission, account, billing, partition, field extraction
 - **Metrics**: metric, time series, prometheus, graphite
-- **Mobot**: mobot, chatbot, assistant
 - **Observability**: AWS Observability, Azure, Kubernetes, SLO, service level, tracing
+- **Other (Analytics)**: analytics, data analysis
+- **Other (Optimization - GEO/SEO)**: SEO, GEO, AEO, search optimization, discoverability
+- **Other (Site Development & AI)**: site development, AI tooling, Claude, documentation tooling
 - **Platform Services**: platform, infrastructure, service
 - **Sensu**: sensu, monitoring
 - **Threat Intelligence**: threat intel, IOC, indicator
@@ -128,10 +124,10 @@ When invoked, ask the user what they want to do:
 
   **Approach C - User provides file paths**: User provides specific file paths. Read the files to understand content and context. Analyze to determine Technical Area. Generate both title and description. Present all three for user approval.
 
-  For all approaches: Type defaults to Task unless user specifies Bug, Story, or Epic. Auto-assign based on the Technical Area → Writer assignments table. Use the Atlassian Account ID from the Team members table to set the assignee.
+  For all approaches: Type defaults to Task unless user specifies Bug, Story, or Epic. Do not set assignee or due date — Jira Automation sets both based on Technical Area and Priority.
 * **Look up a ticket**. Search by issue key (e.g. DOCS-1234) or keyword.
 * **Update a ticket**. Ask which field to update (Description, Assignee, Priority, or Technical Area).
-* **Change ticket status**. Move through workflow states: To Do → In Progress → In Review → Done.
+* **Change ticket status**. Move through workflow states: Backlog → To Do → In Progress → Blocked → In Review → On Hold → Published → Closed.
 * **View my tickets**. Fetch issues in DOCS assigned to the current user. Default to open issues; ask if they want to filter by status.
 * **View all tickets**. Fetch all open issues in the DOCS project, sorted by created date descending.
 
@@ -171,6 +167,51 @@ When analyzing git changes or file content (Approaches B and C):
 
 After any action, confirm what was done and provide a direct link:
 https://sumologic.atlassian.net/browse/DOCS-[issue number]
+
+---
+
+## DOCS Project Fields
+
+When creating or updating tickets, these fields are available:
+
+### Required Fields
+- **Summary** (`summary`) - Ticket title
+- **Technical Area** (`customfield_10748`) - Must be set from the allowed values (see Technical Area list above)
+- **Preview Doc Requirement** (`customfield_10796`) - Defaults to "N/A (General Availability)"
+  - Options: "N/A (General Availability)", "Public Preview", "Extended Preview", "Private Preview"
+- **Release Note Requirement** (`customfield_14728`) - No default; must be explicitly set
+  - Options: "Yes", "No"
+- **Priority** (`priority`) - Defaults to " Medium" (Jira Automation also sets due date based on this)
+  - Use IDs to avoid API issues with leading spaces in names: High (id: 12023), Medium (id: 12024), Low (id: 12025)
+
+### Optional Fields (set at creation)
+- **Description** (`description`) - Always use markdown format
+- **Existing Tech Docs Link** (`customfield_10750`) - URL to related existing docs
+  - **IMPORTANT:** Required when transitioning to Published status
+  - Always populate when creating/updating tickets that touch existing articles
+  - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
+- **Parent** (`parent`) - Link to parent Epic/Story
+
+### Post-creation fields (cannot be set at ticket creation — update after creating)
+- **Assignee** - Set automatically by Jira Automation based on Technical Area; do not set manually
+- **Due Date** (`customfield_10643`) - Set automatically by Jira Automation based on Priority; do not set manually
+- **Github Pull Request** (`customfield_10466`) - URL field; auto-populate after PR creation
+- **Product UI Link** (`customfield_14729`) - URL to product feature/UI in staging
+- **Labels** (`labels`) - Array of strings
+
+### When creating tickets with context:
+
+**From git changes or file analysis:**
+- Always set Technical Area based on file paths and content
+- Default Preview Doc Requirement to "N/A (General Availability)" unless context suggests otherwise
+- Set Priority by ID: use 12024 (Medium) unless urgent/critical
+- Ask about Release Note Requirement if not obvious from context
+- Populate Description with benefit-driven summary of changes
+- **If creating/updating a ticket for an existing article:** Always set "Existing Tech Docs Link" (`customfield_10750`) with the full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
+  - This field is required before tickets can be transitioned to Published status
+
+**After PR creation:**
+- Always update the Github Pull Request field with the PR URL using `customfield_10466`
 
 ---
 

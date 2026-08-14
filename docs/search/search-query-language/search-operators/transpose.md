@@ -2,6 +2,7 @@
 id: transpose
 title: transpose Search Operator
 sidebar_label: transpose
+description: Use the transpose operator to transform list data into table format in the Aggregates tab, similar to Excel pivot tables.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

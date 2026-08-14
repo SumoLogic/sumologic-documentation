@@ -2,6 +2,7 @@
 id: urlencode
 title: urlencode Search Operator
 sidebar_label: urlencode
+description: Use the urlencode operator to encode URLs into ASCII character set format, the standard format for sending URLs over the internet.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,7 +27,9 @@ http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJ
 
 `urlencode("<url string>") as <field>`
 
-## Example
+## Examples
+
+### Encode URLs from PagerDuty logs
 
 To encode a URL in your PagerDuty logs, you can run this query:
 
@@ -39,3 +42,11 @@ _sourceCategory=pagerduty
 The query returns the field `url` encoded:
 
 <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/urlencode.png')} alt="URL encode" style={{border: '1px solid gray'}} width="800" />
+
+### Encode a literal URL string
+
+To encode a known URL string directly in a query:
+
+```sumo
+| urlencode("http://example.com/path?query=hello world") as encoded_url
+```

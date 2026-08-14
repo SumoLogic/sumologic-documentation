@@ -2,6 +2,7 @@
 id: manually-cast-data-string-number
 title: Casting Data to a Number or String
 sidebar_label: Manually cast data to string or number
+description: Use casting operators (num, toLong, toDouble, toInt, toString) to explicitly convert string data to numeric types or vice versa.
 ---
 
 Most data in Sumo Logic is stored as a string data type. Metadata fields are stored as string data and parsed fields are by default parsed as string type data. Sumo Logic will implicitly cast string data to a number type assuming it is clear that you need a number to perform an action, such as a math calculation or when using a function like sum or avg. However, if there is any ambiguity about whether a number is required, the data remains string data.

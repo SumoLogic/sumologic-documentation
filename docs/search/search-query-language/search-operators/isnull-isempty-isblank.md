@@ -2,6 +2,7 @@
 id: isnull-isempty-isblank
 title: isNull, isEmpty, isBlank Search Operators
 sidebar_label: isNull, isEmpty, isBlank
+description: Use the isNull, isEmpty, and isBlank operators to check string field values for null or empty states.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

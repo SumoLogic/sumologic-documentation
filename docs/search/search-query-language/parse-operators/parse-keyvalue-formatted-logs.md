@@ -1,6 +1,7 @@
 ---
 id: parse-keyvalue-formatted-logs
 title: Parse Keyvalue Formatted Logs
+description: Use the keyvalue operator to extract values from logs that follow a key-value pair structure by specifying the key paired with each value.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

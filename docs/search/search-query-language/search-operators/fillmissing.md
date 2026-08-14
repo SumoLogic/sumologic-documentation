@@ -2,6 +2,7 @@
 id: fillmissing
 title: fillmissing Search Operator
 sidebar_label: fillmissing
+description: Use the fillmissing operator to ensure specific groups appear in query output even when they contain no data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

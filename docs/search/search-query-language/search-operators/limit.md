@@ -2,6 +2,7 @@
 id: limit
 title: limit Search Operator
 sidebar_label: limit
+description: Use the limit operator to reduce the number of raw messages or aggregate results returned in your query.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

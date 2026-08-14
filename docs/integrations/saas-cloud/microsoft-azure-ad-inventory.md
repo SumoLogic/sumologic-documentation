@@ -120,16 +120,13 @@ This app uses Sumo Logic’s Microsoft Azure AD Inventory Source to collect [Use
 ### Sample queries
 
 ```sumo title="Total Devices"
-_sourceCategory="Azure_AD_Inventory" deviceId
-| json "deviceId", "isCompliant", "isManaged", "isRooted", "manufacturer", "deviceOwnership", "managementType", "profileType", "operatingSystem", "enrollmentType", "complianceExpirationDateTime", "deviceCategory", "trustType", "registrationDateTime", "onPremisesSyncEnabled", "onPremisesLastSyncDateTime", "approximateLastSignInDateTime" as device_id, is_compliant, is_managed, is_rooted, manufacturer, device_ownership, management_type, profile_type, operating_system, enrollment_type, compliance_expiration_date_time, device_category, trust_type, registration_date_time, on_premises_sync_enabled, on_premises_last_sync_date_time, approximate_last_sign_in_date_time nodrop
+_sourceCategory={{Logsdatasource}}  deviceId
+| json "deviceId", "manufacturer", "deviceOwnership", "managementType", "profileType", "operatingSystem", "enrollmentType", "trustType" as device_id, manufacturer, device_ownership, management_type, profile_type, operating_system, enrollment_type, trust_type nodrop
 
-// Global filters
-| where manufacturer matches "{{manufacturer}}"
-| where device_ownership matches "{{device_ownership}}"
-| where management_type matches "{{management_type}}"
-| where profile_type matches "{{profile_type}}"
-| where operating_system matches "{{operating_system}}"
+// global filters
+| where manufacturer matches "{{manufacturer}}" and device_ownership matches "{{device_ownership}}" and management_type matches "{{management_type}}" and profile_type matches "{{profile_type}}" and operating_system matches "{{operating_system}}" and trust_type matches "{{trust_type}}" and enrollment_type matches "{{enrollment_type}}"
 
+// panel specific
 | count by device_id
 | count
 ```
@@ -168,13 +165,18 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Devices Overview
-
-The **Microsoft Azure AD Inventory - Devices Overview** dashboard is designed to provide security monitoring and management. It enables security teams to track device compliance, identify non-compliant devices, and monitor the distribution of devices based on critical security-related attributes like operating systems, management types, and ownership. By highlighting non-compliant devices and recent sign-in activities, the dashboard supports proactive threat detection, helping you to identify potential vulnerabilities, and ensures that only secure and compliant devices access organizational resources.<br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Azure-AD-Inventory/Microsoft-Azure-AD-Inventory-Devices-Overview.png')} alt="Microsoft Azure AD Inventory Devices Overview" />
-
 ### Users Overview
 
-The **Microsoft Azure AD Inventory - Users Overview** dashboard provides a comprehensive security-focused view of user activities and demographics within your Azure AD environment. It tracks metrics such as office locations, job titles, preferred languages, and recent sign-in activity. By highlighting inactive users and displaying recent successful and unsuccessful sign-in attempts, the dashboard helps security teams identify potential unauthorized access, monitor user behavior, and enforce compliance with security policies. This tool is essential for maintaining a secure and well-governed Azure AD environment. <br/> <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Azure-AD-Inventory/Microsoft-Azure-AD-Inventory-Users-Overview.png')} alt="Microsoft Azure AD Inventory Users Overview" />
+The **Microsoft Azure AD Inventory - Users Overview** dashboard provides a comprehensive security-focused view of user activities and demographics within your Azure AD environment. It tracks metrics such as office locations, job titles, preferred languages, and recent sign-in activity. By highlighting inactive users and displaying recent successful and unsuccessful sign-in attempts, the dashboard helps security teams identify potential unauthorized access, monitor user behavior, and enforce compliance with security policies. This tool is essential for maintaining a secure and well-governed Azure AD environment. <br/> <img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Azure-AD-Inventory-User-Overview.png')} alt="Microsoft Azure AD Inventory - Users Overview" />
+
+### Devices Overview
+
+The **Microsoft Azure AD Inventory - Devices Overview** dashboard offers a detailed analysis of your organization's device landscape, providing insights into total devices and categorizes devices by manufacturer, ownership, management type and many more. The dashboard highlights the top enrollment types and groups type and operating systems, enabling effective management and security monitoring devices by Profile of your device fleet. <br/> <img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Azure-AD-Inventory-Devices-Overview.png')} alt="Microsoft Azure AD Inventory - Devices Overview" />
+
+### Device Risk and Compliance
+
+The **Microsoft Azure AD Inventory - Device Risk and Compliance** dashboard offers a detailed analysis of your organization's device risks, providing insights into non-compliant devices, and managed devices to monitor compliance and management status. It identifies rooted devices for security risks and then shows the trend of non-compliant and rooted devices over the time period to help enhance security and device management.<br/> <img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Azure-AD-Inventory-Device-Risk-And-Compliance.png')} alt="Microsoft Azure AD Inventory - Device Risk and Compliance" />
+
 
 ## Create monitors for Microsoft Azure AD Inventory app
 
@@ -188,7 +190,7 @@ The Sumo Logic app for Microsoft Azure AD Inventory includes a comprehensive set
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
-| `Microsoft Azure AD Inventory - Failed Sign-Ins` | This alert is fired when multiple failed sign-in attempts are detected without a subsequent successful login, indicating potential unauthorized access attempts. | Critical | Count > 2 |
+| `Microsoft Azure AD Inventory - Failed Sign-Ins` | This alert is fired when multiple failed sign-in attempts are detected without a subsequent successful login, indicating potential unauthorized access attempts. | Critical | Count > 3 |
 | `Microsoft Azure AD Inventory - Device Not Compliant` | This alert is fired when a device fails to meet security compliance standards, ensuring devices adhere to organizational policies. | Critical | Count > 0 | 
 | `Microsoft Azure AD Inventory - Device Not Managed` | This alert is fired if a device is not managed, flagging potential risks from unmonitored devices.|Critical | Count > 0 | 
 | `Microsoft Azure AD Inventory - Device Not Rooted` | This alert is fired if a device is not rooted, ensuring that all devices maintain security controls. | Critical | Count > 0 | 

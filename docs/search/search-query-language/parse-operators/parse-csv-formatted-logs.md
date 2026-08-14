@@ -1,6 +1,7 @@
 ---
 id: parse-csv-formatted-logs
 title: Parse CSV Formatted Logs
+description: Use the CSV operator to parse comma-separated value formatted log entries with comma as the default delimiter.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
