@@ -13,10 +13,6 @@ import ApiRoles from '../reuse/api-roles.md';
 
 The Data Archiving Management API allows you to create and manage AWS S3 archive destinations for Installed Collectors.
 
-:::info
-You need the [Manage or View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) to create an AWS archive destination. For more information, see [Archive](/docs/manage/data-archiving/archive).
-:::
-
 ## Documentation
 
 <ApiIntro/>
