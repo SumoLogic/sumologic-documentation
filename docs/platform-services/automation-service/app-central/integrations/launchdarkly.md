@@ -7,17 +7,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/launchdarkly.png')} alt="launchdarkly" width="80"/>
 
 ***Version: 1.0  
-Updated: August 10, 2026***
+Updated: August 14, 2026***
 
-LaunchDarkly is a feature management platform that enables teams to control feature flag rollouts, targeting rules, and environments. This integration correlates feature flag changes with production incidents, inspects flag and environment state across projects, and executes remediation actions such as toggling flags or updating targeting rules.
+[LaunchDarkly](https://launchdarkly.com/) is a feature management platform that enables teams to control feature flag rollouts, targeting rules, and environments. This integration correlates feature flag changes with production incidents, inspects flag and environment state across projects, and executes remediation actions such as toggling flags or updating targeting rules.
 
 ## Actions
 
 * **Get Audit Log Entry** *(Enrichment)* - Retrieve details of a specific audit log entry, including who made a change, what was changed, and when.
+* **Get Environment** *(Enrichment)* - Retrieve configuration details for a specific environment within a project to determine which environment is impacted during an incident.
 * **Get Feature Flag** *(Enrichment)* - Retrieve the targeting configuration and variations for a specific feature flag.
 * **Get Flag Status** *(Enrichment)* - Retrieve the current status of a feature flag (active, launched, or inactive) for quick triage.
 * **List Audit Log Entries** *(Enrichment)* - Retrieve a list of audit log entries to correlate feature flag changes with incident timelines.
 * **List Environments** *(Enrichment)* - Retrieve a list of environments for a project to map environment names to Sumo Logic source categories.
+* **List Feature Flags** *(Enrichment)* - Retrieve all feature flags for a project to identify how many flags exist and which ones changed within an incident window.
+* **List Flag Changes** *(Enrichment)* - Retrieve the audit log filtered by a specific flag key to surface all changes made to that flag during an incident window.
 * **List Projects** *(Enrichment)* - Retrieve a list of LaunchDarkly projects to discover and map services.
 * **Toggle Feature Flag** *(Containment)* - Disable or enable a feature flag as a kill switch to stop an offending flag from affecting production.
 * **Update Feature Flag Targeting** *(Containment)* - Revert targeting rules for a feature flag, such as rolling back percentage rollouts or segment targeting.
@@ -62,4 +65,4 @@ For information about LaunchDarkly, see [LaunchDarkly documentation](https://lau
 
 ## Change Log
 
-* August 10, 2026 (v1.0) - First upload
+* August 14, 2026 (v1.0) - First upload
