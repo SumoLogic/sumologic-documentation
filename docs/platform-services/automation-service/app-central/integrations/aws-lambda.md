@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: Aug 14, 2026***
 
-Interact with AWS Lambda functions, including listing, inspecting, and invoking them directly from automation playbooks.
+Interact with [AWS Lambda](https://docs.aws.amazon.com/lambda/) functions, including listing, inspecting, and invoking them directly from automation playbooks.
 
 ## Actions
 
