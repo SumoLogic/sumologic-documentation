@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
 ***Version: 1.0  
-Updated: Aug 13, 2026***
+Updated: Aug 14, 2026***
 
 Interact with AWS Lambda functions, including listing, inspecting, and invoking them directly from automation playbooks.
 
@@ -68,4 +68,4 @@ lambda:InvokeFunction
 
 ## Change Log
 
-* August 13, 2026 (v1.0) - First upload
+* August 14, 2026 (v1.0) - First upload
