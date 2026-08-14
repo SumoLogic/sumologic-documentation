@@ -7,6 +7,8 @@ Deploy a PR branch to the shared Pantheon staging environment for external revie
 - You need an external reviewer to preview a doc change in a live environment before merge.
 - A PR author or reviewer asks for a staging link.
 
+For quick, temporary article-level review, consider `/review-deploy` instead — it targets the separate `docs-review` environment and keeps this slot free for larger feature work.
+
 ## Usage
 
 ```
