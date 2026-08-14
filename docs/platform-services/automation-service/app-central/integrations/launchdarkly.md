@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/launchdarkly.png')} alt="launchdarkly" width="80"/>
 
-***Version: 1.0  
+***Version: 1.2  
 Updated: August 14, 2026***
 
 [LaunchDarkly](https://launchdarkly.com/) is a feature management platform that enables teams to control feature flag rollouts, targeting rules, and environments. This integration correlates feature flag changes with production incidents, inspects flag and environment state across projects, and executes remediation actions such as toggling flags or updating targeting rules.
@@ -65,4 +65,4 @@ For information about LaunchDarkly, see [LaunchDarkly documentation](https://lau
 
 ## Change Log
 
-* August 14, 2026 (v1.0) - First upload
+* August 14, 2026 (v1.2) - First upload
