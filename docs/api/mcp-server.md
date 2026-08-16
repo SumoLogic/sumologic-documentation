@@ -51,7 +51,7 @@ The MCP server is not currently supported in our Zurich or AWS European Sovereig
 
 The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
 
-[CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth).
+[CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
 
 The MCP server publishes `scopes_supported` in its OAuth Protected Resource Metadata (for example, `https://mcp.sumologic.com/.well-known/oauth-protected-resource` for the US1 deployment). A properly implemented client uses this list to request only MCP-relevant scopes during authorization, instead of every scope available in your org, so the resulting access token is limited to that smaller set.
 
@@ -92,7 +92,7 @@ Disabling the MCP server prevents MCP clients from connecting, but does not dele
 
 ## Configure in Claude Code CLI
 
-Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an administrator has [enabled CIMD](/docs/manage/security/oauth#enable-cimd) on the Policies page — CIMD is disabled by default. You do not need to create OAuth credentials; browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
