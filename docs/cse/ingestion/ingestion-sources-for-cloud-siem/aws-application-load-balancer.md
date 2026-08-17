@@ -1,6 +1,6 @@
 ---
 id: aws-application-load-balancer
-title: Ingest AWS App Load Balancer Data into Cloud SIEM
+title: Ingest AWS ALB Data into Cloud SIEM
 sidebar_label: AWS Application Load Balancer
 description: Configure collection and ingestion of AWS Application Load Balancer (ALB) log messages from an S3 bucket to be parsed by Cloud SIEM's AWS ALB system parser.
 ---
