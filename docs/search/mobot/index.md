@@ -18,6 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 import Iframe from 'react-iframe';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
+import ConvPlaybookLimits from '../../reuse/conv-playbook-limits.md';
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Search icon" width="35"/>
 
@@ -303,11 +304,11 @@ Create and update log-based [monitors](/docs/alerts/monitors) from plain-languag
 
 For the full walkthrough, including example prompts, known limitations, and FAQ, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
-<!-- Uncomment once Conversational Dashboards GAs (https://github.com/SumoLogic/sumologic-documentation/pull/6937)
 ### Conversational Dashboards
 
-Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel.
+Create dashboard panels through conversation instead of writing queries and configuring panels by hand. Describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel. For the full walkthrough, including supported visualization types and current limitations, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 
+<!-- Uncomment once Mobot can also read a dashboard you have open (https://github.com/SumoLogic/sumologic-documentation/pull/6937)
 Mobot also helps you read a dashboard you already have open:
 
 - **Summarization**. Get a plain-language narrative of overall system health and the key takeaways across panels.
@@ -320,7 +321,6 @@ Known limitations:
 - Summaries evaluate the top 10 rows or data series per panel, ranked by variance or anomaly score. Lower-impact data is excluded from the narrative.
 - Analysis is scoped to the dashboard you have open. Mobot cannot correlate data across separate dashboards.
 - Follow-up context is kept only within the current session.
-- Mobot selects the panel type automatically. Fine-tuned visual adjustments are done manually.
 -->
 
 ### Conversational Playbooks
@@ -328,6 +328,8 @@ Known limitations:
 Create and edit Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, using the Mobot chat box built into the Playbooks editor, instead of building node by node on the visual canvas. Describe the automation you want, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you. The visual canvas is unchanged and remains fully available for manual edits.
 
 For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
+
+<ConvPlaybookLimits/>
 
 ## Managing conversations
 
@@ -488,9 +490,13 @@ Yes. Each user can send up to 10 prompts to Mobot per day, per Sumo Logic Org ID
 
 As you approach the limit, Mobot shows a heads-up banner with the time remaining until your limit resets. When you reach the limit, Mobot stops responding to new prompts and shows a "try again in X hours" message.
 
-Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time shown is converted to your local time zone and may not fall at your local midnight. For example, someone in Pacific Time (UTC-8) who reaches the limit at 10 AM local time sees "try again in 6 hours," because midnight UTC is 4 PM their time.
+Limits reset daily at midnight US Pacific Time. The "try again in X hours" message is calculated from this reset time, converted to your local time zone.
 
 If you need a higher limit, contact your account team.
+
+### Is there a character limit for a Mobot prompt?
+
+Yes. A single prompt can be up to 40,000 characters.
 
 <!-- uncomment at GA after Aug 3
 ### Does Mobot's licensing model and limits apply to SOC Analyst Agent investigations?
