@@ -6,25 +6,30 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
 
-***Version: 1.14  
-Updated: May 8, 2026***
+***Version: 1.15  
+Updated: Jul 31, 2026***
 
 Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access management service, which helps your employees sign in and access resources.
 
 ## Actions
 
 * **Add Member To Group** *(Enrichment)* - Add a user to a specific group.
+* **Confirm User Compromised** *(Containment)* - Confirm a user as compromised in Azure AD Identity Protection.
 * **Create Group** *(Enrichment)* - Create a group.
 * **Create User** *(Enrichment)* - Create a new user.
 * **Delete Group** *(Containment)* -Delete a specific group.
 * **Delete User** *(Containment)* - Delete a specific user.
 * **Disable User** *(Containment)* - Block user account.
+* **Dismiss Risky User** *(Containment)* - Dismiss the risk for a specific risky user.
+* **Enable User** *(Containment)* - Enable a specific user account.
 * **Get Manager** (*Enrichment*) - Get user manager.
 * **Get Member Groups** *(Enrichment)* - Retrieve a Group memberships for the user.
+* **Get Risky User** *(Enrichment)* - Retrieve risk details for a specific user.
 * **Get User** (Enrichment) - Get details for a specific user.
 * **List Devices** *(Enrichment)* - Retrieve a list of device objects registered in the organization.
 * **List Groups** (*Enrichment*) - List all the groups available in an organization.
 * **List Of Group Members** *(Enrichment)* - Retrieve a list of members in a specific group.
+* **List Risky Users** *(Enrichment)* - Retrieve a list of risky users detected by Azure AD Identity Protection.
 * **List Users** *(Enrichment)* - List all users.
 * **Remove Member From Group** *(Containment)* - Remove a user from a specific group.
 * **Reset User Password** *(Containment)* - Reset user password.
@@ -41,14 +46,8 @@ The following steps show how to create an Azure AD Application in order to work 
 1. Write down the Application ID and Directory ID. You will need them later for the integration configuration.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-3.png')} style={{border:'1px solid gray'}} alt="Azure ad 3" width="600"/>
 1. To configure Azure AD Application permissions, on the left, choose **API permissions**. 
 6. Click the **Add a permission** button.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-4.png')} style={{border:'1px solid gray'}} alt="Azure AD add a permission" width="600"/>
-7. Select your application in App registrations in the Azure portal. 
-   * Delegated permissions are selected by default. 
-   * Delegated permissions are appropriate for client apps that access an API as the signed-in user, and whose access should be restricted to the permissions you select in the next step. 
-   * Application permissions are for service or daemon-type applications that need to access the API as themselves, without user interaction for sign-in or consent.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-5.png')} style={{border:'1px solid gray'}} alt="Azure AD permissions" width="700"/>
-1. Select the following permissions to add:
-   * **Delegated (work or school account)**. `User.Read`, `User.ReadWrite`, `User.ReadBasic.All`, `User.Read.All`, `User.ReadWrite.All`, `Directory.Read.All`, `Directory.ReadWrite.All`, `Directory.AccessAsUser.All`.
-   * **Delegated (personal Microsoft account)**. `User.Read`, `User.ReadWrite`.
-   * **Application**. `User.Read.All`, `User.ReadWrite.All`, `Directory.Read.All`, `Directory.ReadWrite.All`, `UserAuthenticationMethod.ReadWrite.All`. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-6.png')} style={{border:'1px solid gray'}} alt="Azure AD application permissions" width="600"/>
+7. Select your application in App registrations in the Azure portal. Application permissions are for service or daemon-type applications that need to access the API as themselves, without user interaction for sign-in or consent.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-5.png')} style={{border:'1px solid gray'}} alt="Azure AD permissions" width="700"/>
+1. Select the following **Application** permissions to add: `Device.ReadWrite.All`, `Directory.Read.All`, `Directory.ReadWrite.All`, `Group.ReadWrite.All`, `GroupMember.ReadWrite.All`, `IdentityRiskyUser.ReadWrite.All`, `User-PasswordProfile.ReadWrite.All`, `User.EnableDisableAccount.All`, `User.Read.All`, `User.ReadWrite.All`, `User.RevokeSessions.All`, `UserAuthenticationMethod.ReadWrite.All`.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-6.png')} style={{border:'1px solid gray'}} alt="Azure AD application permissions" width="600"/>
 1. Once API permissions are added, then Admin must consent to grant these permissions ([Learn more about permissions and consent](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent?WT.mc_id=Portal-Microsoft_AAD_RegisteredApps).) <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-7.png')} style={{border:'1px solid gray'}} alt="Azure AD admin consent" width="600"/>
 1. Once Admin Consent is granted, API permissions configuration has been completed. Then we have to add a Client secret for authentication, along with the Client ID and Directory ID. To add a client secret, go to Certificates and secrets, and click **New client secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-8.png')} style={{border:'1px solid gray'}} alt="Azure AD new client secret" width="600"/>
 1. Select the description and expiry period for the created secret and create it. 
@@ -111,3 +110,11 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
 * April 27, 2026 (v1.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * May 7, 2026 (v1.12) - Added New Action: Reset User MFA
 * May 7, 2026 (v1.14) - Fixed an issue in the Reset User Password and Remove Member From Group actions that caused errors when processing the response.
+* July 31, 2026 (v1.15)
+    + Added New Actions:
+      + Confirm User Compromised
+      + Dismiss Risky User
+      + Enable User
+      + Get Risky User
+      + List Risky Users
+    + Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.

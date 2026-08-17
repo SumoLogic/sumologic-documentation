@@ -26,12 +26,10 @@ The following procedure provides a brief introduction to how to create a playboo
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>Previously-created playbooks display.
-1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="400"/>
-1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
+1. Click the **+ Create Playbook** button.
+1. Click the untitled playbook and rename it.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" />
 1. Enter a **Description** of the playbook to help others understand how to use it.
-1. Click **Create**. The new playbook appears in the list of available playbooks.
-1. To configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/>
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
 1. The **Start** node displays a **+** icon and an **Edit** icon. Click the **Edit** icon.  <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/> <br/>The **Edit node** dialog appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/>
 1. Click the dropdown arrow on **Add one or more params as a playbook input** and select the kind of trigger that will execute the playbook:
     * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
@@ -45,6 +43,23 @@ The following procedure provides a brief introduction to how to create a playboo
 
 See [Add nodes to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-nodes-to-a-playbook) for next steps.
 
+### Create, edit, and modify playbooks using Mobot
+
+Mobot is the AI Playbook Assistant built into the Playbooks editor. Instead of manually wiring up nodes, you describe what you want in plain language, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you.
+
+#### Prerequisites
+
+Playbooks automate response actions for monitors, Cloud SIEM insights, entities, and Cloud SOAR incidents. Before building a new one, check whether an existing playbook (or one from App Central) already does what you need.
+
+Follow steps 1–5 above to open the Playbooks page, create, name, and describe your playbook. Then:
+1. In the chat box, describe the automation you want in plain language. For example, `Create a playbook that creates tickets and sends notifications`.<br/><img src={useBaseUrl('img/cse/prompt-for-mobot.png')} style={{border:'1px solid gray'}} alt="Mobot chatbox" />
+1. Answer Mobot's clarifying questions. Mobot checks your org's available integrations, asks which ones you'd like to use, then walks through each action node one at a time to gather the configuration details it needs.
+1. Review and approve the plan Mobot proposes, including the trigger, steps, and flow between them.
+1. Once every step is confirmed, Mobot saves the playbook as a draft and posts a summary table of what was built (Step / Action / Details).
+1. To make changes, send a follow-up request describing the edit.<br/><img src={useBaseUrl('img/cse/edit-playbook.png')} style={{border:'1px solid gray'}} alt="edit-playbook" width="200"/><br/>Mobot returns an updated plan reflecting the new flow.
+1. Reply `Yes` (or similar) to approve, and Mobot rebuilds and resaves the playbook.
+1. Click any node on the canvas to verify the details Mobot filled in, such as the integration, resource, and field mappings pulled from the trigger payload.<br/><img src={useBaseUrl('img/cse/playbook-flow.png')} style={{border:'1px solid gray'}} alt="playbook-flow"/>
+1. Click **Publish** to make the playbook available for use in automations.
 
 ## Add nodes to a playbook
 
@@ -358,19 +373,14 @@ Many integrations offer scheduled actions. Here are just a few:
 
 ### Autosave
 
-Every time you edit a playbook draft, the draft is automatically saved, and the following notification briefly appears in the lower right corner of the playbook screen:<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} width="200"/>
-
-When the automatic save is complete, the following notification lets you know.<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-2.png')} alt="Playbook autosave complete" style={{border:'1px solid gray'}} width="200"/>
-
-To enable or disable autosave, use [playbook preferences](#playbook-preferences).
+Every time you create or edit a playbook, the changes in the playbook are saved automatically and the following notification appears on the playbook screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} />
 
 ### Versions
 
-To publish a playbook so that others may use it, click the publish button at the bottom of the playbook screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-publish-button.png')} alt="Playbook publish button" style={{border:'1px solid gray'}} width="300"/>
+To publish a playbook so that others may use it, click the publish button at the top right corner of the playbook window.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
 
-Every time you publish a playbook, a new version of the playbook is retained. In the screen image below, notice how all the versions of the playbook are listed (#4 being the published version as indicated by the publish icon). Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
-
-<img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
+Every time you publish a playbook, a new version of the playbook is retained. You can also click the dropdown to view all the versions of the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-versions-dropdown.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/><br/>
+Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
 
 ## Enable or disable playbooks
 
@@ -386,28 +396,18 @@ When enabling or disabling playbooks, keep in mind:
 
 ### How to enable or disable a playbook
 
-To enable or disable a playbook, open the playbook and click the toggle.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} width="400"/><br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-toggle.png')} alt="Playbook disabled toggle" style={{border:'1px solid gray'}} width="400"/>
+You can enable or disable a playbook in the playbook details page<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} />
+or while editing the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/disable-playbook.png')} alt="Playbook disable" style={{border:'1px solid gray'}} width="400" />
 
-The **Status** column shows whether a playbook is enabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-symbol.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} width="30"/> or disabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-symbol.png')} alt="Playbook disabled symbol" style={{border:'1px solid gray'}} width="30"/>.  
-
-<img src={useBaseUrl('img/platform-services/automation-service/playbook-status-enabled-disabled.png')} alt="Playbook status column" style={{border:'1px solid gray'}} width="800"/>
+The **Status** column shows whether a playbook is Published or in draft.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-status.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} /> 
 
 ### Enable on publish
 
-To publish a playbook, click the **Publish** button at the bottom of the playbook window:<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
+To publish a playbook, click the **Publish** button at the top right corner of the playbook window.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
 
 When you publish a playbook:
 * Playbooks without any published versions are automatically enabled. 
 * Playbooks that have previously published versions will display an **Enable playbook on publish** option if they are in a disabled state:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enable-on-publish-toggle.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/>
-
-## Playbook preferences
-
-1. Click the preferences button in the upper-right corner of the screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-preferences.png')} alt="Playbook preferences button" style={{border:'1px solid gray'}} width="200"/>
-2. Configure preferences in the **Playbooks Preferences** screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-preferences-screen.png')} alt="Playbook preferences screen" style={{border:'1px solid gray'}} width="400"/>
-
-### Autosave preference
-
-Select **Enable Autosave for all playbooks** to ensure that while editing a playbook, all changes will be automatically saved to the draft. For more information, see [Autosave](#autosave).
 
 ## Export and import playbooks
 
