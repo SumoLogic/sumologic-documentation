@@ -1,6 +1,6 @@
 ---
 slug: /send-data/hosted-collectors/http-source
-title: Configure an HTTP Source for Logs, Metrics, Traces
+title: Configure an HTTP Source for Logs, Metrics, OTLP
 description: Configure HTTP Sources on Sumo Logic hosted collectors to receive logs, metrics, traces, and OTLP data uploaded via a unique, securely encoded URL.
 ---
 

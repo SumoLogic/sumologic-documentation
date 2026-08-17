@@ -1,6 +1,6 @@
 ---
 id: collect-forwarded-events-windows-event-collector
-title: Collect Forwarded Windows Events (WEC)
+title: Collect Forwarded Events (Windows Event Collector)
 description: Use a Windows Event Source to collect forwarded events from a Windows Event Collector.
 ---
 

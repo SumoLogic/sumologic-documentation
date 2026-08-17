@@ -1,6 +1,6 @@
 ---
 id: preconfigure-machine-collect-remote-windows-performance-monitoring-logs
-title: Preconfigure a Machine for Windows Performance Logs
+title: Preconfigure a Machine for Remote Windows Perf Logs
 description: You can configure a system for remote access by a Remote Windows Performance Monitoring Log Source.
 ---
 

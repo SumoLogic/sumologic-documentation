@@ -1,6 +1,6 @@
 ---
 id: st-with-secrets
-title: Set Secret Values as Environment Variables
+title: Set Secret Env Variables for Source Templates
 sidebar_label: Setting Environment Variables
 description: Steps for setting environment variable with secret value which can be used by source template at runtime in a remotely managed OpenTelemetry collector.
 ---

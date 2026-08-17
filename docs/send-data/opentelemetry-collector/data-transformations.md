@@ -1,6 +1,6 @@
 ---
 id: data-transformations
-title: String Hashing and Masking with OTTL
+title: OpenTelemetry String Hashing and Masking with OTTL
 sidebar_label: String Hashing and Masking
 description: Learn how to perform string hashing and masking operations using the Transform Processor and OTTL in OpenTelemetry.
 ---

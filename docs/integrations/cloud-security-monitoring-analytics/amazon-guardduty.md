@@ -1,6 +1,6 @@
 ---
 id: amazon-guardduty
-title: Amazon GuardDuty Security Monitoring
+title: Amazon GuardDuty Cloud Security Monitoring
 sidebar_label: Amazon GuardDuty
 description: Guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.
 ---
