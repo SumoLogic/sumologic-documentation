@@ -5654,7 +5654,6 @@
   "/docs/cse/automation/insight-variables-automations": "/docs/cse/automation/automations-in-cloud-siem",
   "/docs/cse/records-signals-entities-insights/insight-trainer": "/docs/cse/rules/insight-trainer",
   "/docs/cse/records-signals-entities-insights/tags": "/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules",
-  "/docs/dashboards/create-panel-with-mobot": "/docs/search/mobot",
   "/docs/dashboards/panels/change-series-color": "/docs/dashboards/panels/modify-chart",
   "/docs/platform-services/automation-service/playbooks/add-nodes-to-playbook": "/docs/platform-services/automation-service/playbooks/create-playbooks#add-nodes-to-a-playbook",
   "/docs/platform-services/automation-service/playbooks/cloud-siem-automation-examples": "/docs/cse/automation/cloud-siem-automation-examples",
