@@ -1,6 +1,6 @@
 ---
 id: palo-alto-firewall-10
-title: Palo Alto Firewall 10 Cloud Security Monitoring and Analytics
+title: Palo Alto Firewall 10 Security Monitoring
 sidebar_label: Palo Alto Firewall 10
 description: Introduction to the Cloud Security Monitoring and Analytics app for Palo Alto Firewall 10.
 ---

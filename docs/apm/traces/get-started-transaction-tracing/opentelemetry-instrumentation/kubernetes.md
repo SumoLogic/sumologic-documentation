@@ -1,6 +1,6 @@
 ---
 id: kubernetes
-title: Kubernetes Tracing OpenTelemetry auto-instrumentation
+title: Kubernetes Tracing with OpenTelemetry
 sidebar_label: Kubernetes
 ---
 

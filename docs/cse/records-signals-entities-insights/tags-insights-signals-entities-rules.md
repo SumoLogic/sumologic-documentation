@@ -1,6 +1,6 @@
 ---
 id: tags-insights-signals-entities-rules
-title: Using Tags with Insights, Signals, Entities, and Rules
+title: Using Tags with Insights, Signals, and Entities
 sidebar_label: Using Tags
 description: Tags are metadata you can attach to insights, signals, entities, and rules. Tags are useful for adding context to these Cloud SIEM items. You can also search for and filter items by tag.
 ---

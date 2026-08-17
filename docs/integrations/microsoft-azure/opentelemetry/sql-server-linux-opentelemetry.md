@@ -1,6 +1,6 @@
 ---
 id: sql-server-linux-opentelemetry
-title: Microsoft SQL Server for Linux - OpenTelemetry Collector
+title: SQL Server for Linux - OpenTelemetry Collector
 sidebar_label: Microsoft SQL Server for Linux - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Linux.
 ---
