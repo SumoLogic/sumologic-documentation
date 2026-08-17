@@ -17,6 +17,12 @@ The CyberArk Endpoint Privilege Manager (EPM) is a security solution that helps 
 
 The integration with CyberArk EPM's API allows for retrieving administrative, detailed raw, policy audit, policy audit raw events, and aggregated events from every set in the environment. The [API documentation](https://docs.cyberark.com/Product-Doc/OnlineHelp/EPM/Latest/en/Content/LandingPages/LPDeveloper.htm) provides guidance on accessing and utilizing this information. This integration facilitates retrieving various audit events, including administrative actions, policy violations, and application usage, to generate alerts, reports, and remediation actions that enhance the organization's security posture.
 
+:::important Upgrade to version 2.0.0
+CyberArk has scheduled the deprecation of the standalone Endpoint Privilege Manager (EPM) console and its legacy authentication methods (the EPM Logon API) for **December 31, 2026**. After this date, username/password-based authentication via the legacy EPM dispatch server will no longer be supported.
+
+To ensure uninterrupted data collection, we have released **version 2.0.0** of the CyberArk EPM source, which exclusively uses CyberArk Identity Security Platform Shared Services (ISPSS) OAuth2 authentication. If you are currently using an older version of this source with legacy EPM credentials, you must migrate to version 2.0.0 by configuring ISPSS authentication as described in the [Vendor configuration](#vendor-configuration) section below.
+:::
+
 ## Data collected
 
 | Polling Interval | Data |
