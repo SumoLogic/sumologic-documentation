@@ -52,7 +52,7 @@ Use the Read tool to read the complete file content including frontmatter.
 * [ ] `title` is under 60 characters — **Critical** if missing or over 60
 * [ ] `title` includes the primary keyword or product/feature name
 * [ ] `description` present — **Critical** if missing
-* [ ] `description` is 140–160 characters — **Warning** if shorter than 100 or longer than 160
+* [ ] `description` is 140–160 characters — **Warning** if under 100 or over 160; **Suggestion** if 100–139 (functional but below target)
 * [ ] `description` leads with an action verb or product name (not "This page" or "This doc")
 * [ ] `keywords` field present with 3–5 relevant terms — **Suggestion** if missing
 * [ ] No `slug` on a regular content page (breaks sidebar linking) — **Critical** if present
@@ -89,13 +89,18 @@ AEO focuses on getting content surfaced as direct answers in search results.
 
 ### Step 5: Run GEO checks
 
-GEO focuses on getting content cited accurately by AI tools.
+GEO focuses on getting content cited accurately by AI tools. Check the doc against the **Five GEO Principles** defined in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md) — question-style headings and `keywords` are already covered by Step 4 (AEO checks) and Step 3 (Frontmatter). Step 4 also checks whether the page's opening states the answer directly, but BLUF applies at every section level, so check the remaining ground here:
 
-* [ ] Opening paragraph provides a direct, factual, self-contained answer to "what is [subject]" or "how to [task]" — **Warning** if the opening is vague or purely navigational
+* [ ] Each major H2 and H3 section leads with a direct answer to what it covers, not just the page's opening (answer-first / BLUF) — **Warning** if sections bury the answer in setup or context first
+* [ ] Page answers one clearly scoped question — **Suggestion** if it covers multiple distinct questions that should be split into separate pages
+* [ ] Page is self-contained without requiring another page for required context (one page, one question) — **Suggestion** if heavy pronoun or implicit cross-reference dependency found
+* [ ] Page has an FAQ section — **Suggestion** if absent
+
+Also check these signals, which the GEO skill does not cover:
+
 * [ ] Key facts are stated explicitly as standalone sentences (not buried in subordinate clauses) — **Suggestion** to restructure if found
 * [ ] Numbers, version references, and dates are stated directly — **Warning** if "latest" or "current" is used without a specific value that an AI could cite
 * [ ] The page has an "At a glance" or "Key facts" or comparable summary section — **Suggestion** if absent for pages over 800 words
-* [ ] The doc is self-contained enough to be understood without following links — **Suggestion** if heavy pronoun or implicit cross-reference dependency found
 * [ ] Key terms are defined on first use — **Suggestion** if acronyms or jargon appear without explanation
 
 ### Step 6: Generate report
@@ -171,15 +176,20 @@ Do not modify files without explicit user approval.
 | `description` starts with "This page" | Wastes the most-crawled part of the snippet on filler |
 | No internal links | Reduces topical authority; orphaned pages rank lower |
 | Vague opening paragraph | AI tools and featured snippet algorithms skip to the first clear answer |
+| Sections bury the answer in setup or context first | BLUF applies at every section level, not just the page's opening |
 | "latest" or "current" without a version | AI tools reproduce stale references; be specific |
 
 ### Suggestions
 
 | Issue | Why it matters |
 |-------|---------------|
+| `description` is 100–139 chars | Functional but below the 140–160 target; AI crawlers get less to cite |
 | No `keywords` field | Missed opportunity to guide indexing |
 | No question-format headings | Featured snippets and "People also ask" prefer question/answer structure |
 | No "At a glance" section | LLMs prefer pages with scannable summaries they can cite verbatim |
+| No FAQ section | FAQ blocks are the highest-value content for AI citation; see `geo-guide/SKILL.md` |
+| Heavy cross-reference dependency | AI tools cannot follow links; a page that isn't self-contained won't be cited accurately |
+| Page covers multiple distinct questions | AI cannot follow cross-references; only a single-question page gets cited — split it |
 | No structured lists | Lists are extracted preferentially for featured snippets |
 | Unexplained acronyms | AI tools may generate incorrect expansions; define them |
 
