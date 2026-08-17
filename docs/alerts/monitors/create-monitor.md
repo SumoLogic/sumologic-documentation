@@ -480,3 +480,7 @@ Optionally, you can add [**Tags**](/docs/alerts/monitors/settings#tags) to organ
 ### Using Terraform
 
 You can configure Sumo Logic monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+
+### Using Mobot
+
+You can also create and update logs monitors from plain-language prompts using [Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
