@@ -1,13 +1,13 @@
 # Stage Deploy — Deploy PR to Shared Staging
 
-Deploy a PR branch to the shared Pantheon staging environment for external review (legal, compliance, product).
+Deploy a PR branch to the shared Pantheon staging environment for previewing UX/UI changes or other site-wide feature work before merge.
 
 ## When to use this command
 
-- You need an external reviewer to preview a doc change in a live environment before merge.
-- A PR author or reviewer asks for a staging link.
+- You're shipping a UX/UI change, new Docusaurus feature, or other site-wide update and need a live environment to validate it before merge.
+- A reviewer needs to see the change in context (navigation, theming, layout) rather than as a single article.
 
-For quick, temporary article-level review, consider `/review-deploy` instead — it targets the separate `docs-review` environment and keeps this slot free for larger feature work.
+For quick, temporary article-level review, use `/review-deploy` instead — it targets the separate `docs-review` environment and keeps this slot free for feature work.
 
 ## Usage
 
@@ -50,7 +50,7 @@ Currently staged: PR #{n} — "{title}" (author: @{handle})
 Branch: staging/pr-{n}
 Preview: https://helpdocs-sumo-logic.pantheonsite.io/help/
 
-1. Continue and overwrite (notifies #web-ops if Slack is configured)
+1. Continue and overwrite (posts a heads-up comment on PR #{n})
 2. Cancel and coordinate with @{handle} first
 ```
 
@@ -67,36 +67,7 @@ Convert changed doc paths to preview URLs:
 - Multiple docs changed: link to the first `.md` file under `docs/`, or omit.
 - No doc files changed: omit article preview link entirely.
 
-### Step 4: Send Slack notification (optional)
-
-Slack notifications require `$WEBOPS_SLACK_URL` to be exported in the local environment. Check first:
-
-```bash
-if [ -z "$WEBOPS_SLACK_URL" ]; then
-  echo "⚠️ WEBOPS_SLACK_URL not set — skipping Slack notification. To enable, export the webhook URL: export WEBOPS_SLACK_URL=https://hooks.slack.com/..."
-fi
-```
-
-If set, post to #web-ops:
-
-```bash
-curl -X POST "$WEBOPS_SLACK_URL" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "text": "🚀 Staging deployment started for PR #{number}",
-    "blocks": [{
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": "*Staging deployment started*\n• PR: <{pr-url}|#{number} - {title}>\n• Author: {author}\n• Staging: <https://helpdocs-sumo-logic.pantheonsite.io/help/|helpdocs>\n• Preview: <https://helpdocs-sumo-logic.pantheonsite.io/help{article-path}|{article-name}>\n• Monitor: <{actions-url}|GitHub Actions>"
-      }
-    }]
-  }'
-```
-
-If not set, skip silently and continue.
-
-### Step 5: Push staging branch
+### Step 4: Push staging branch
 
 ```bash
 git fetch origin {pr-branch}
@@ -105,14 +76,11 @@ git push origin origin/{pr-branch}:refs/heads/staging/pr-{number}
 
 This pushes directly from the remote-tracking ref without touching local branch state.
 
-### Step 6: Workflow triggers automatically
+### Step 5: Workflow triggers automatically
 
-Pushing to `staging/**` triggers `workflow_deploy-to-pantheon-staging.yml`, which:
-1. Builds the Docusaurus site from the staging branch.
-2. Deploys to the `helpdocs` multidev environment.
-3. Posts its own success/failure notification to Slack.
+Pushing to `staging/**` triggers `workflow_deploy-to-pantheon-staging.yml`, which builds the Docusaurus site from the staging branch, deploys it to the `helpdocs` multidev environment, and posts its own success/failure notification to Slack.
 
-### Step 7: Post PR comment
+### Step 6: Post PR comment
 
 Post a comment on the PR with:
 - Staging URL
@@ -124,5 +92,5 @@ Post a comment on the PR with:
 
 - **Single staging slot**: Only one PR deployed at a time.
 - **No automatic cleanup**: Staging branches persist until explicitly deleted with `/stage-teardown`.
-- **Slack optional**: Notifications only fire if `WEBOPS_SLACK_URL` is set locally.
+- **No Slack notifications from this command**: out of scope. Claude Code running locally can't read the `WEBOPS_SLACK_URL` webhook, or any Slack bot token, from GitHub Actions secrets — secrets are write-only once set, with no CLI or API path to retrieve them. The PR comment in Step 6 covers coordination instead. (The workflow's own build success/failure ping to Slack, noted in Step 5, is separate, existing infrastructure and unaffected by this.)
 - **Shared URL**: All reviewers see whatever was deployed last.

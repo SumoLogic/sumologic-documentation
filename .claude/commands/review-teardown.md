@@ -32,39 +32,16 @@ git ls-remote --heads origin refs/heads/review/pr-{number}
 
 If the branch is not found, inform the user and exit — nothing to delete.
 
-### Step 3: Send Slack notification (optional)
-
-Slack notifications require `$WEBOPS_SLACK_URL` to be exported in the local environment. Check first:
-
-```bash
-if [ -z "$WEBOPS_SLACK_URL" ]; then
-  echo "⚠️ WEBOPS_SLACK_URL not set — skipping Slack notification."
-fi
-```
-
-If set, post to #web-ops:
-
-```bash
-curl -X POST "$WEBOPS_SLACK_URL" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "text": "🗑️ Review environment torn down",
-    "blocks": [{
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": "*Review environment removed*\n• Branch: review/pr-{number}\n• Note: previous deployment remains live at the review URL until the next deployment overwrites it"
-      }
-    }]
-  }'
-```
-
-### Step 4: Delete the review branch
+### Step 3: Delete the review branch
 
 ```bash
 git push origin --delete review/pr-{number}
 ```
 
-### Step 5: Post PR comment
+### Step 4: Post PR comment
 
 Post a comment on the PR confirming the review branch was deleted and noting that the review URL may still serve the old build until the next deployment.
+
+## Limitations
+
+- **No Slack notifications from this command**: out of scope. Claude Code running locally can't read the `WEBOPS_SLACK_URL` webhook, or any Slack bot token, from GitHub Actions secrets — secrets are write-only once set. The PR comment in Step 4 covers coordination instead.

@@ -50,7 +50,7 @@ Currently in review: PR #{n} — "{title}" (author: @{handle})
 Branch: review/pr-{n}
 Preview: https://docs-review-sumo-logic.pantheonsite.io/help/
 
-1. Continue and overwrite (notifies #web-ops if Slack is configured)
+1. Continue and overwrite (posts a heads-up comment on PR #{n})
 2. Cancel and coordinate with @{handle} first
 ```
 
@@ -67,36 +67,7 @@ Convert changed doc paths to preview URLs:
 - Multiple docs changed: link to the first `.md` file under `docs/`, or omit.
 - No doc files changed: omit article preview link entirely.
 
-### Step 4: Send Slack notification (optional)
-
-Slack notifications require `$WEBOPS_SLACK_URL` to be exported in the local environment. Check first:
-
-```bash
-if [ -z "$WEBOPS_SLACK_URL" ]; then
-  echo "⚠️ WEBOPS_SLACK_URL not set — skipping Slack notification. To enable, export the webhook URL: export WEBOPS_SLACK_URL=https://hooks.slack.com/..."
-fi
-```
-
-If set, post to #web-ops:
-
-```bash
-curl -X POST "$WEBOPS_SLACK_URL" \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "text": "🚀 Review deployment started for PR #{number}",
-    "blocks": [{
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": "*Review deployment started*\n• PR: <{pr-url}|#{number} - {title}>\n• Author: {author}\n• Review site: <https://docs-review-sumo-logic.pantheonsite.io/help/|docs-review>\n• Preview: <https://docs-review-sumo-logic.pantheonsite.io/help{article-path}|{article-name}>\n• Monitor: <{actions-url}|GitHub Actions>"
-      }
-    }]
-  }'
-```
-
-If not set, skip silently and continue.
-
-### Step 5: Push review branch
+### Step 4: Push review branch
 
 ```bash
 git fetch origin {pr-branch}
@@ -105,14 +76,11 @@ git push origin origin/{pr-branch}:refs/heads/review/pr-{number}
 
 This pushes directly from the remote-tracking ref without touching local branch state.
 
-### Step 6: Workflow triggers automatically
+### Step 5: Workflow triggers automatically
 
-Pushing to `review/**` triggers `workflow_deploy-to-pantheon-review.yml`, which:
-1. Builds the Docusaurus site from the review branch.
-2. Deploys to the `docs-review` multidev environment.
-3. Posts its own success/failure notification to Slack.
+Pushing to `review/**` triggers `workflow_deploy-to-pantheon-review.yml`, which builds the Docusaurus site from the review branch, deploys it to the `docs-review` multidev environment, and posts its own success/failure notification to Slack.
 
-### Step 7: Post PR comment
+### Step 6: Post PR comment
 
 Post a comment on the PR with:
 - Review URL
@@ -124,6 +92,6 @@ Post a comment on the PR with:
 
 - **Single review slot**: Only one PR deployed at a time.
 - **No automatic cleanup**: Review branches persist until explicitly deleted with `/review-teardown`.
-- **Slack optional**: Notifications only fire if `WEBOPS_SLACK_URL` is set locally.
+- **No Slack notifications from this command**: out of scope. Claude Code running locally can't read the `WEBOPS_SLACK_URL` webhook, or any Slack bot token, from GitHub Actions secrets — secrets are write-only once set, with no CLI or API path to retrieve them. The PR comment in Step 6 covers coordination instead. (The workflow's own build success/failure ping to Slack, noted in Step 5, is separate, existing infrastructure and unaffected by this.)
 - **Shared URL**: All reviewers see whatever was deployed last.
 - **Separate from `/stage-deploy`**: This environment is for quick article-level review. UX/UI and site-wide feature work should use `/stage-deploy`, which targets the dedicated `helpdocs` environment.
