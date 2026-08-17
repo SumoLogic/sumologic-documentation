@@ -2,11 +2,12 @@
 	"api.version": "v1",
 	"source": {
 		"config": {
-			"name": "CyberArk Test",
-			"username": "user@sumologic.com",
-			"password": "Sumo@123",
-			"application_id": "sumologic-c2c",
-			"epm_server": "https://in.epm.cyberark.com",
+			"name": "CyberArk EPM",
+			"identity_id": "abr1336",
+			"service_user": "svc-epm@mycompany.com",
+			"service_user_password": "********",
+			"app_id": "reportsapp",
+			"epm_manager_url": "https://na101.epm.cyberark.com",
 			"detailed_raw_events": false,
 			"aggregated_policy_audits": false,
 			"policy_audit_raw_events": false,
