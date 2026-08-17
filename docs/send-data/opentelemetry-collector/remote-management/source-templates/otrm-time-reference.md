@@ -1,6 +1,6 @@
 ---
 id: otrm-time-reference
-title: Timestamps, Zones, and Formats for OTel Remote Mgmt
+title: Timestamps, Time Zones, and Date Formats for OTRM
 description: Learn how Sumo Logic manages timestamps, time zones, and dates, and the configuration options that are available with OTRM source templates.
 keywords:
   - time

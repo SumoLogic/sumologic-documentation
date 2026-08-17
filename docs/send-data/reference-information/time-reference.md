@@ -1,6 +1,6 @@
 ---
 id: time-reference
-title: Timestamps, Time Zones, Time Ranges, and Formats
+title: Timestamps, Time Zones, Time Ranges, Date Formats
 description: Learn how Sumo Logic manages timestamps, time zones, time ranges, and dates, and the configuration options that are available.
 keywords:
   - time
