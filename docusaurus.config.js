@@ -549,6 +549,25 @@ module.exports = {
             type: 'search',
             position: 'left',
           },
+          {
+            type: 'html',
+            position: 'right',
+            value: 'google_translate',
+            className: 'navbar-translate-item',
+          },
+          {
+            label: 'Log In',
+            to: 'https://service.sumologic.com/',
+            position: 'right',
+            className: 'header-login',
+          },
+          {
+            label: 'Try for Free',
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
+            alt: 'Sign up for a Sumo Logic free trial',
+          },
         ],
       },
       footer: {
