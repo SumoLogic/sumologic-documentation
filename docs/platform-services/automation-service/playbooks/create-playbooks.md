@@ -8,6 +8,7 @@ description: Create and configure Automation Service playbooks to run automated 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CartesianProduct from '../../../reuse/cartesian-product.md';
 import TerraformLink from '../../../reuse/terraform-link.md';
+import ConvPlaybookLimits from '../../../reuse/conv-playbook-limits.md';
 
 ## View playbooks
 
@@ -46,6 +47,8 @@ See [Add nodes to a playbook](/docs/platform-services/automation-service/playboo
 ### Create, edit, and modify playbooks using Mobot
 
 Mobot is the AI Playbook Assistant built into the Playbooks editor. Instead of manually wiring up nodes, you describe what you want in plain language, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you.
+
+<ConvPlaybookLimits/>
 
 #### Prerequisites
 
