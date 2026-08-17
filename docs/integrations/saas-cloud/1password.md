@@ -174,7 +174,8 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for 1Password](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your 1Password app is properly integrated and configured to collect and analyze your 1Password data.
+- Use the [Cloud-to-Cloud Integration for 1Password](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your 1Password app is properly integrated and configured to collect and analyze your 1Password data.
+- Use the [1Password Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/1password/) to automate response actions, such as suspending or reactivating compromised users, directly from Cloud SIEM or Cloud SOAR playbooks, using the data collected by this app.
 :::
 
 ### Create a new collector and install the app
