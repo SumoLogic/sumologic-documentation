@@ -95,6 +95,15 @@
   font-size: .85rem;
 }
 
+// Bold left-side nav labels (Guides, API, Release Notes, Support)
+// Descendant selector (not a direct-child one) because the swizzled
+// DropdownNavbarItem wraps its .navbar__item.navbar__link one level
+// deeper inside a .dropdown div — .navbar__link never appears on
+// submenu items (those get .dropdown__link instead), so this stays scoped.
+.navbar__items:not(.navbar__items--right) .navbar__link {
+  font-weight: 700;
+}
+
 @media (min-width: 1440px) {
   .container {
       max-width: 97%;
