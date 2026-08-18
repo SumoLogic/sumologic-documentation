@@ -276,17 +276,26 @@ Or, from the query section, click **Open in Log Search**.<br/><img src={useBaseU
 * The [search audit index](/docs/manage/security/audit-indexes/search-audit-index) needs to be enabled for your organization.
 :::
 
-Administrators can audit Mobot's actions using the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/), and the queries it generates using the search audit index.
+Administrators can audit Mobot's actions using the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/), and the queries it generates using the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/).
 
-To audit Mobot's actions:
-```sumo
-_index=sumologic_audit_events
-| where invocationdetails.agentname in ("mobot")
-```
-
-To view Mobot queries:
+To audit Mobot's actions and user prompts:
 1. Open **Log Search**.
 1. Use the following query:
+   ```sumo
+   _index=sumologic_audit_events
+   | where invocationdetails.agentname in ("mobot")
+   ```
+1. Set your [time range](#time-range) to cover the period when prompts were executed (for example, last 24 hours).
+
+To view queries ran by Mobot:
+1. Open **Log Search**.
+1. Use the following query for Mobot Log Search:
+   ```sumo
+   _index="sumologic_search_usage_per_query"
+   | where query_type contains "Mobot"
+   | count user_name, query
+   ```
+1. Use the following query for Mobot SOC Analyst Agent:
    ```sumo
    _index="sumologic_search_usage_per_query"
    | where query_type contains "Agent"
