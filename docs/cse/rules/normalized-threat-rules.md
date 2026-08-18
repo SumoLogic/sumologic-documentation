@@ -90,50 +90,174 @@ Cloud SIEM provides the following normalized malware rules:
 
 For messages that indicate suspicious or malicious activity based on behavior, rather than a signature. These messages don’t usually include a signature, instead might contain the command line arguments and other actions taken by the adversary.
 
-Log sources that issue behavior-related messages include:
+Behavior-based detections are divided among the six more specific types described below. The `direct` type is retained for out-of-the-box mappings from generic sources that can't be assigned to a single type, such as the Microsoft Graph Security API catch-all mappings, and for your own log mappings that set `threat_ruleType` to `direct`.
 
-* CrowdStrike Falcon
+Log sources that remain mapped to `direct` include:
+
 * Symantec Endpoint Protection EDR
-* Carbon Black Response
-* AWS GuardDuty
-* Varonis UBA
-* G Suite Alert Center    
+* Microsoft Graph Security API
 
-Out-of-the-box log mappings for behavior-based detections are being migrated to six more granular classes. See [Behavioral detection classes](#behavioral-detection-classes). After migration, `direct` is retained for out-of-the-box mappings from generic sources that can't be assigned to a single class, such as the Microsoft Graph Security API catch-all mappings.
-
-Cloud SIEM provides the following normalized direct rule:
+Cloud SIEM provides the following normalized direct rule:
 
 * [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) - Passes through an alert from a security product and adjusts the severity accordingly based on the severity provided in the log.
 
-### Behavioral detection classes
+### endpoint
 
-Cloud SIEM divides behavior-based detections into six classes, each with its own normalized rule, class-specific entity selectors, and summary expression. These classes give you more granular categories for tuning and more context from the underlying alert than the single [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) passthrough rule provides. All six rules pass through the [normalizedSeverity](/docs/cse/schema/schema-attributes) value from the log.
+For messages from host-based security agents that detect suspicious or malicious behavior on an endpoint, such as EDR and EPP detections.
 
-| `threat_ruleType` | Rule | Primary asset field | Out-of-the-box mapping migration |
-|---|---|---|---|
-| `runtime` | [Normalized Runtime Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01159.md) | `device_hostname` | Completed August 4, 2026 |
-| `identity` | [Normalized Identity Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01161.md) | `user_username` | Completed August 4, 2026 |
-| `network` | [Normalized Network Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01162.md) | `srcDevice_hostname` | Target: August 13, 2026 |
-| `data_protection` | [Normalized Data Protection Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01163.md) | `resource` | Target: August 13, 2026 |
-| `cloud` | [Normalized Cloud Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01160.md) | `resource` | Target: August 27, 2026 |
-| `endpoint` | [Normalized Endpoint Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01158.md) | `device_hostname` | Target: August 27, 2026 |
+Log sources that issue endpoint-related messages include:
+
+* CrowdStrike Falcon
+* SentinelOne
+* Carbon Black
+* Palo Alto Cortex XDR
+* Windows Defender and Azure Defender for Endpoint
+* Sophos
+* Trend Micro
+* McAfee
+* Cylance
+* Cisco AMP
+* Cybereason
+* Endgame
+* Jamf Protect
+* Malwarebytes
+* Tanium
+* FireEye HX
+* Bitdefender
+* Google Workspace
+
+Cloud SIEM provides the following normalized endpoint rule:
+
+* [Normalized Endpoint Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01158.md) - Passes through an alert from a host-based security agent and adjusts the severity accordingly based on the severity provided in the log.
+
+### runtime
+
+For messages from workload security agents that detect suspicious or malicious behavior in containers and other cloud-native runtimes.
+
+Log sources that issue runtime-related messages include:
+
+* Falco
+* Sysdig Secure
+* Twistlock (Prisma Cloud Compute)
+* Aqua Security
+
+Cloud SIEM provides the following normalized runtime rule:
+
+* [Normalized Runtime Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01159.md) - Passes through an alert from a workload security agent and adjusts the severity accordingly based on the severity provided in the log.
+
+### cloud
+
+For messages that indicate a cloud posture, cloud threat, or cloud infrastructure finding.
+
+Log sources that issue cloud-related messages include:
+
+* AWS GuardDuty
+* AWS Security Hub
+* Google Cloud SCC
+* GCP IDS
+* Orca Security
+* Wiz
+* Palo Alto Prisma Cloud
+* Azure
+
+Cloud SIEM provides the following normalized cloud rule:
+
+* [Normalized Cloud Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01160.md) - Passes through an alert from a cloud security product and adjusts the severity accordingly based on the severity provided in the log.
+
+### identity
+
+For messages that indicate an identity or access anomaly, such as a risky sign-in, impossible travel, or compromised credentials.
+
+Log sources that issue identity-related messages include:
+
+* Azure AD Identity Protection
+* Microsoft ATA
+* Microsoft Graph Identity API
+* MCAS/Defender for Cloud Apps
+* Google Workspace Alert Center
+* Okta
+* Slack Enterprise
+* DocuSign Monitor
+* Exabeam
+* Salesforce
+* Box
+* CrowdStrike Identity Protection
+
+Cloud SIEM provides the following normalized identity rule:
+
+* [Normalized Identity Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01161.md) - Passes through an alert from an identity or access product and adjusts the severity accordingly based on the severity provided in the log.
+
+### network
+
+For messages that indicate a network-layer detection, such as an IDS/IPS alert, a command-and-control callback, or a lateral movement indicator. These include NDR and WAF detections.
+
+Log sources that issue network-related messages include:
+
+* Palo Alto Firewall
+* FortiGate
+* Kemp LoadMaster WAF
+* FireEye NX/CMS
+* Vectra AI
+* Claroty xDome
+* Darktrace
+* AlphaSOC
+* CrowdStrike FDR
+* Bitdefender
+* Trend Micro
+
+Cloud SIEM provides the following normalized network rule:
+
+* [Normalized Network Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01162.md) - Passes through an alert from a network security product and adjusts the severity accordingly based on the severity provided in the log.
+
+### data_protection
+
+For messages that indicate a data protection detection, such as a DLP violation, an email security detection, a deception alert, or an application security finding.
+
+Log sources that issue data protection-related messages include:
+
+* Netskope
+* Varonis
+* Egnyte DLP
+* Office 365 DLP
+* Proofpoint TRAP
+* Mimecast
+* Check Point Avanan
+* Akamai CPC
+* Noname API Security
+* Thinkst Canary
+* Contrast ADR
+* Qualys
+* IBM Guardium
+* CrowdStrike DataProtection
+* Fortinet
+* Google Workspace
+
+Cloud SIEM provides the following normalized data protection rule:
+
+* [Normalized Data Protection Detection](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S01163.md) - Passes through an alert from a data protection product and adjusts the severity accordingly based on the severity provided in the log.
+
+## Behavior-based log mapping migration
+
+The `endpoint`, `runtime`, `cloud`, `identity`, `network`, and `data_protection` types are new. Out-of-the-box log mappings that previously set `threat_ruleType` to `direct` are being reassigned to these types in phases, so that behavior-based detections are easier to tune and carry more context than the single [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) passthrough rule provides.
+
+| `threat_ruleType` | Out-of-the-box mapping migration |
+|---|---|
+| `runtime` | Completed August 4, 2026 |
+| `identity` | Completed August 4, 2026 |
+| `network` | Completed August 17, 2026 |
+| `data_protection` | Completed August 17, 2026 |
+| `cloud` | Target: August 27, 2026 |
+| `endpoint` | Target: August 27, 2026 |
 
 :::note
-All six rules are available now, but out-of-the-box log mappings are migrating in phases. The `runtime` and `identity` mappings have migrated. The remaining dates in the table are targets and may shift. For the actual dates that out-of-the-box mappings migrate, monitor the [Cloud SIEM content release notes](/release-notes-cse/). Until a source's out-of-the-box mappings are migrated, its records keep a `threat_ruleType` of `direct` and continue to fire [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md).
+All six rules are available now, but out-of-the-box log mappings are migrating in phases. The remaining dates in the table are targets and may shift. For the actual dates that out-of-the-box mappings migrate, monitor the [Cloud SIEM content release notes](/release-notes-cse/). Until a source's out-of-the-box mappings are migrated, its records keep a `threat_ruleType` of `direct` and continue to fire [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md).
 
-This migration changes only out-of-the-box log mappings. Your own log mappings aren't affected, and they keep whatever `threat_ruleType` value you set. To send records from your own mappings to one of the new rules, set `threat_ruleType` to that class.
+This migration changes only out-of-the-box log mappings. Your own log mappings aren't affected, and they keep whatever `threat_ruleType` value you set. To send records from your own mappings to one of the new rules, set `threat_ruleType` to that type.
 :::
 
-Classes are assigned per log mapping, not per vendor, so a single security product can contribute to several classes. For example, out-of-the-box CrowdStrike log mappings are assigned to `endpoint`, `identity`, `network`, and `data_protection`.
+Types are assigned per log mapping, not per vendor, so a single security product can contribute to several types. For example, out-of-the-box CrowdStrike log mappings are assigned to `endpoint`, `identity`, `network`, and `data_protection`.
 
-* **runtime**. Container and cloud-native runtime detections from workload security agents: Falco, Sysdig Secure, Twistlock (Prisma Cloud Compute), and Aqua Security.
-* **identity**. Identity and access anomaly detections, such as risky sign-ins, impossible travel, and compromised credentials: Azure AD Identity Protection, Microsoft ATA, Microsoft Graph Identity API, MCAS/Defender for Cloud Apps, Google Workspace Alert Center, Slack Enterprise, Okta, DocuSign Monitor, Exabeam, Salesforce, Box, and CrowdStrike Identity Protection.
-* **network**. Network-layer, NDR, and WAF detections, such as IDS/IPS alerts, command-and-control callbacks, and lateral movement indicators: Kemp LoadMaster WAF, Palo Alto Firewall, FortiGate, FireEye NX/CMS, Vectra AI, Claroty xDome, Darktrace, AlphaSOC, CrowdStrike FDR, Bitdefender, and Trend Micro.
-* **data_protection**. DLP, email security, deception, and application security detections: Egnyte DLP, Varonis, Netskope, Akamai CPC, Noname API Security, Check Point Avanan, Proofpoint TRAP, Mimecast, Thinkst Canary, Contrast ADR, Qualys, IBM Guardium, Office 365 DLP, CrowdStrike DataProtection, Fortinet, and Google Workspace.
-* **cloud**. Cloud posture, cloud threat, and cloud infrastructure detections: AWS GuardDuty, AWS Security Hub, Google Cloud SCC, GCP IDS, Orca Security, Wiz, Palo Alto Prisma Cloud, and Azure.
-* **endpoint**. EDR and EPP behavioral detections from host-based security agents: CrowdStrike Falcon, SentinelOne, Carbon Black, Cylance, Cisco AMP, Cybereason, Endgame, Jamf Protect, Malwarebytes, McAfee, Palo Alto Cortex XDR, Sophos, Tanium, Trend Micro, Windows Defender, FireEye HX, Azure Defender for Endpoint, Google Workspace, and Bitdefender.
-
-#### Migrate custom content
+### Migrate custom content
 
 Custom content that depends on [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) won't apply to records once their out-of-the-box mappings are migrated. For sources that haven't migrated yet, make these updates before their target date:
 
