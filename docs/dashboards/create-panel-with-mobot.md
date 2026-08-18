@@ -1,7 +1,7 @@
 ---
 id: create-panel-with-mobot
 title: Create Dashboard Panels with Mobot
-sidebar_label: Create Panels with Mobot
+sidebar_label: Create Panels with Mobot ✨
 description: Create dashboard panels in Mobot from plain-language prompts, without configuring panels manually.
 keywords:
   - mobot
