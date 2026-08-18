@@ -243,7 +243,7 @@ html[data-theme='light'] {
 @media (min-width: 997px) {
   .navbar .DocSearch-Button {
     max-width: 100%;
-    width: 340px;
+    width: 280px;
   }
 
   .navbar .DocSearch-Button-Placeholder {
@@ -582,6 +582,48 @@ html[data-theme='dark'] .DocSearch-Search-Icon {
 [data-theme='dark'] .navbar .header-login,
 [data-theme='dark'] .navbar .header-login * {
   color: #d5d9e0 !important;
+}
+
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-navbar-sidebar-width: min(83vw, 380px);
+  }
+
+  .navbar__items--right > .navbar-translate-item,
+  .navbar__items--right > .header-login,
+  .navbar__items--right > .header-trial {
+    display: none;
+  }
+
+  .navbar-sidebar .navbar-translate-item {
+    display: none;
+  }
+
+  .navbar-sidebar .header-login,
+  .navbar-sidebar .header-trial {
+    justify-content: center;
+    margin: 0;
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .navbar-sidebar .menu__list-item:has(> .header-login),
+  .navbar-sidebar .menu__list-item:has(> .header-trial) {
+    display: inline-block;
+    margin-top: 0.5rem;
+    vertical-align: top;
+    width: calc(50% - 0.5rem);
+  }
+
+  .navbar-sidebar .menu__list-item:has(> .header-login) {
+    margin-left: 0.25rem;
+    margin-right: 0.5rem;
+  }
+
+  .navbar-sidebar .menu__list-item:has(> .header-trial) {
+    margin-right: 0.25rem;
+  }
+
 }
 
 [data-theme='dark'] .header-login:hover {
