@@ -848,8 +848,15 @@ export default function AskAiSidepanel({
     return null;
   }
 
-  const { assistantId, indexName, appId, apiKey, suggestedQuestions } =
-    askAiConfig;
+  const {
+    assistantId,
+    indexName,
+    appId,
+    apiKey,
+    suggestedQuestions,
+    agentStudio,
+    searchParameters,
+  } = askAiConfig;
 
   const handleAlgoliaClose = () => {
     if (!isResizingRef.current) onClose();
@@ -869,10 +876,12 @@ export default function AskAiSidepanel({
           apiKey={apiKey}
           indexName={indexName}
           assistantId={assistantId}
+          agentStudio={agentStudio}
           isOpen={isOpen}
           onOpen={onOpen ?? (() => {})}
           onClose={handleAlgoliaClose}
           initialMessage={initialMessage || undefined}
+          searchParameters={searchParameters}
           suggestedQuestions={suggestedQuestions}
           keyboardShortcuts={{
             'Ctrl/Cmd+I': false,

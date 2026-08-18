@@ -397,7 +397,8 @@ module.exports = {
       searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
       askAi: {
-        assistantId: 'T7pp7iENesuU',
+        assistantId: 'cc341a82-e224-4bb2-906e-4d9c94f9ae9a',
+        agentStudio: true,
         indexName: 'crawler_sumodocs',
         apiKey: 'fb2f4e1fb40f962900631121cb365549',
         appId: '2SJPGMLW1Q',
