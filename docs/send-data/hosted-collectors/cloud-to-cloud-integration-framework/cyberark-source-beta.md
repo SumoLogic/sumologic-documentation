@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/>
 
 <head>
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex" />
 </head>
 
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
