@@ -287,7 +287,7 @@ To audit Mobot's actions and user prompts:
    ```
 1. Set your [time range](#time-range) to cover the period when prompts were executed (for example, last 24 hours).
 
-To view queries ran by Mobot:
+To view queries run by Mobot:
 1. Open **Log Search**.
 1. Use the following query for Mobot Log Search:
    ```sumo
