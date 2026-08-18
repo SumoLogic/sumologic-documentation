@@ -41,18 +41,30 @@ You need both the branch name (for the push) and the PR number (for the staging 
 git ls-remote --heads origin 'refs/heads/staging/pr-*'
 ```
 
-If staging branches exist, identify who owns each one (`gh pr view {n}`) and ask the user:
+If one or more staging branches exist, identify who owns each one (`gh pr view {n}` for every match) and list all of them for the user:
 
 ```
 ⚠️ Staging conflict detected!
 
-Currently staged: PR #{n} — "{title}" (author: @{handle})
-Branch: staging/pr-{n}
+Currently staged:
+• PR #{n1} — "{title1}" (author: @{handle1})
+• PR #{n2} — "{title2}" (author: @{handle2})
+  (one line per staging/pr-* branch found — there can be more than one if an earlier deployment was never torn down)
 Preview: https://helpdocs-sumo-logic.pantheonsite.io/help/
 
-1. Continue and overwrite (posts a heads-up comment on PR #{n})
-2. Cancel and coordinate with @{handle} first
+1. Continue and overwrite (posts a heads-up comment on every PR listed above)
+2. Cancel and coordinate with the author(s) first
 ```
+
+Only the branch from the most recent push is actually live on the shared URL. Older entries are stale leftovers from deployments that were never torn down with `/stage-teardown` — flag this to the user and suggest cleaning them up.
+
+If the user chooses to continue and overwrite, post a heads-up comment on each displaced PR listed above (not the PR you're about to deploy):
+
+```
+⚠️ This staging deployment was overwritten by PR #{new-number} ({new-title}). The helpdocs environment now serves that PR's build instead of this one.
+```
+
+This comment is separate from the Step 6 comment, which goes on the PR you're deploying.
 
 ### Step 3: Detect article URL from PR files
 
@@ -71,10 +83,10 @@ Convert changed doc paths to preview URLs:
 
 ```bash
 git fetch origin {pr-branch}
-git push origin origin/{pr-branch}:refs/heads/staging/pr-{number}
+git push --force origin origin/{pr-branch}:refs/heads/staging/pr-{number}
 ```
 
-This pushes directly from the remote-tracking ref without touching local branch state.
+This pushes directly from the remote-tracking ref without touching local branch state. `--force` is required: the target ref already exists from a previous deploy, and the PR branch may have been amended, rebased, or force-pushed since then (routine when addressing review feedback), so the update isn't guaranteed to be a fast-forward.
 
 ### Step 5: Workflow triggers automatically
 
