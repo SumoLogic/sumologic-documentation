@@ -69,8 +69,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/configure-alerts/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>Configure AWS Observability Monitors/Alerts</h4></a>
-  <p>Sumo Logic has provided out-of-the-box Monitors/Alerts to help you quickly determine if a particular AWS service is available and performing as expected.</p>
+  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/configure-alerts/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>Configure AWS Observability Alerts/Monitors</h4></a>
+  <p>Sumo Logic has provided out-of-the-box Alerts/Monitors to help you quickly determine if a particular AWS service is available and performing as expected.</p>
   </div>
 </div>
 <div className="box smallbox card">

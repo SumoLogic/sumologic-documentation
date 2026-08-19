@@ -15,12 +15,12 @@ The AWS Observability Terraform scripts reside in GitHub and updates will be pos
 
 To update the deployed solution:
 
-1. Navigate to the directory where you have cloned the Sumo Logic Solution template repo and pull to get the latest version of AWS Observability Terraform configuration: 
+1. Navigate to the directory where you have cloned the Sumo Logic Solution template repo and pull to get the latest version of AWS Observability Terraform configuration: 
     ```bash
-    $ git pull 
+    $ git pull 
     ```
 1. Review the changelog and configure any new parameters as needed. See [Deploy with Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/) on how to configure parameters and to override default values.
-1. Run the Terraform commands to update the solution:
+1. Run the Terraform commands to update the solution:
     ```bash
     $ terraform init
     $ terraform apply
@@ -33,13 +33,16 @@ Use a new version or the same version of AWS CloudFormation template to update a
 Before starting with stack update, make sure no resource has been deleted manually as it can lead to failures in the stack update procedure.
 
 :::note
-Updating the apps will create a backup of the old apps in a folder named **“BackUpOldApps''** in the **“Sumo Logic AWS Observability Apps”** folder. Delete the backed up apps after moving any customizations in old dashboards to the new dashboard folder. **Keeping multiple copies of dashboards will result in multiple dashboards in the explore dropdown hierarchy.**
+Updating the apps will create a backup of the old apps in a folder named **"BackUpOldApps''** in the **"Sumo Logic AWS Observability Apps"** folder. Delete the backed up apps after moving any customizations in old dashboards to the new dashboard folder. **Keeping multiple copies of dashboards will result in multiple dashboards in the explore dropdown hierarchy.**
 :::
 
 To update an existing stack to the latest version:
 
 1. Locate the **Main Stack** created using the AWS CloudFormation template and click **Update**. <br/><img src={useBaseUrl('img/observability/Stack_Step1.png')} alt="Stack step 1" style={{border: '1px solid gray'}} width="800" />
-1. Select **Replace Current Template**, paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml` in the Amazon S3 URL option, and then select **Next**.
+1. Select **Replace Current Template**, paste the following URL in the Amazon S3 URL option, and then select **Next**.
+   ```text
+   https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml
+   ```
     :::note
     If you would like to download or inspect this or other versions of this template, visit the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/) page.
     :::

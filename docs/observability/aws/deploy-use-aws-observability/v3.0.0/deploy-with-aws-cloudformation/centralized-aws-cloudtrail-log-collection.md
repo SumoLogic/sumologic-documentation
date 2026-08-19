@@ -10,7 +10,7 @@ If you are collecting AWS CloudTrail logs from multiple AWS accounts into a sing
 
 To do so:
 
-1. First, run the CloudFormation template in the Central Master Log account to collect all CloudTrail Logs and install apps and Monitors/Alerts.
+1. First, run the CloudFormation template in the Central Master Log account to collect all CloudTrail Logs and install apps and Alerts/Monitors.
 1. Use StackSets to deploy the solution in multiple accounts. While doing so, answer the questions as follows:
    1. Install AWS Observability Apps as No. <br/><img src={useBaseUrl('img/observability/cloudtrail1.png')} alt="Observability apps and alerts" style={{border: '1px solid gray'}} width="800" />
    1. Create Sumo Logic CloudTrail Logs Source as ‘No’.<br/> <img src={useBaseUrl('img/observability/Multiaccount_4.png')} alt="AWS CloudTrail source" style={{border: '1px solid gray'}} width="800" />

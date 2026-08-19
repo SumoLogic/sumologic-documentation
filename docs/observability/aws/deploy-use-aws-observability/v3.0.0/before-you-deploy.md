@@ -75,7 +75,7 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Europe (London)
 * Europe (Paris)
 * Europe (Zurich)
-* Middle East (Bahrain)
+* Middle East (Bahrain) - Affected by the Middle East conflicts
 * South America (São Paulo)
 * US East (N. Virginia)
 * US East (Ohio)
@@ -83,8 +83,7 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * US West (Oregon)
 
 :::note
-The region(s) must be enabled and active before deploying the solution. <br/>
-Middle East (Bahrain) - currently affected by the Middle East conflicts.
+The region(s) must be enabled and active before deploying the solution.
 :::
 
 
@@ -121,7 +120,7 @@ This integration is supported only via AWS CloudFormation.
 
 ### Running the CloudFormation template from the command line
 
-If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/scripts/DeployTemplate), as an example. 
+If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master-v3x/aws-observability/scripts/DeployTemplate), as an example. 
 
 ### Configure Host Metrics sources  
 

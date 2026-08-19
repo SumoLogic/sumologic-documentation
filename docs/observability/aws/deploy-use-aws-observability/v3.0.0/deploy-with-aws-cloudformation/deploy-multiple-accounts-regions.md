@@ -27,7 +27,8 @@ Given that we use an account alias, we recommend you use StackSets to automati
     :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::danger
-    This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
+    * This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
+    * The solution recommends deploying across regions **sequentially rather than in parallel**. If parallel deployment is required, the maximum recommended limit is **3 regions at a time**. Exceeding this limit may result in **SumoLogic API rate-limiting errors**.
     :::
 1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.
 
@@ -37,7 +38,7 @@ The below table displays the response to each prompt during Step 2.
 
 | Prompt | Guideline |
 |:--|:--|
-| Sumo Logic Deployment Name | Enter au, ca, ch, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
+| Sumo Logic Deployment Name | Enter au, ca, ch, de, eu, jp, s2, fed, kr, or us1, us2. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
 | Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys/#create-an-access-key) for more information.  |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls.  |
 | Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-your-account-settings) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.  |
@@ -81,7 +82,11 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 
 1. Go to [StackSets](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacksets) in your AWS account.
 1. Click **Create StackSet**.<br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_1.png')} alt="Create Stackset" style={{border: '1px solid gray'}} width="800" />
-1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml` in the Amazon S3 URL option and click **Next**. If you'd like to download or inspect this or other versions of this template, see the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).<br/><img src={useBaseUrl('img/observability/multi-create-stack.png')} alt="Mlti-create stack" style={{border: '1px solid gray'}} width="800" />
+1. Paste the following URL in the Amazon S3 URL option and click **Next**. If you'd like to download or inspect this or other versions of this template, see the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).
+   ```text
+   https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml
+   ```
+   <img src={useBaseUrl('img/observability/multi-create-stack.png')} alt="Create stack with S3 URL" style={{border: '1px solid gray'}} width="800" />
 1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v3.0.0) section with the following exception:
     1. Leave the field “Alias for AWS Account Identification” blank.  <br/><img src={useBaseUrl('img/observability/aws-field.png')} alt="AWS field" style={{border: '1px solid gray'}} width="800" />
     1. Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”.  <br/><img src={useBaseUrl('img/observability/aws-url.png')} alt="AWS URL" style={{border: '1px solid gray'}} width="600" />

@@ -33,9 +33,9 @@ The sections below describe the configuration prompts in the CloudFormation temp
 
 AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
 
-`AWS Observability Apps-\<Version\> \<Date of installation\>` folder of dashboards by default will be created in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
+These apps will be installed in the Sumo Logic Library **Installed Apps** folder.
 
-## Step 1: Open the CloudFormation template
+## Step 0: Open the CloudFormation template
 
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
@@ -45,29 +45,29 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
      Download this or other versions of this template from [Changelog](../../changelog.md). 
      :::
      :::note
-      - To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.12.0 or greater and follow the instructions in the [Modify the source categories](#modify-the-source-categories) section.
+      - To change the Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.12.0 or greater and follow the instructions in the [Modify the source categories](#modify-the-source-categories) section.
       - The Global Intelligence for AWS CloudTrail DevOps app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.     
      :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::danger
     This step is critical: if you do not select the correct region, you will deploy the solution in the wrong region.
     :::
-1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration), below.
+1. Proceed to [Step 1](#step-1-sumo-logic-access-configuration), below.
 
-## Step 2: Sumo Logic access configuration 
+## Step 1: Sumo Logic access configuration 
 
 The table below displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Sumo Logic Deployment Name | Enter au, ca, ch, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
+| Sumo Logic Deployment Name | Enter au, ca, ch, de, eu, jp, fed, kr, or us1, us2. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
 | Sumo Logic Access ID | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for more information. |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
 | Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-your-account-settings) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources, and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
 | Send telemetry to Sumo Logic | To send solution telemetry to Sumo Logic. This will help to troubleshoot the issues occurring during solution installation. To opt-out, change this to `false`. The default value is `true`. |
 
-## Step 3: AWS account alias 
+## Step 2: AWS account alias 
 
 The table below displays the response for each text box in this section.
 
@@ -77,26 +77,26 @@ The table below displays the response for each text box in this section.
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
 
 
-## Step 4: Sumo Logic AWS Observability apps and Monitors/Alerts
+## Step 3: Sumo Logic AWS Observability apps and Alerts/Monitors
 
-You should only install the AWS Observability apps and Monitors/Alerts the first time you run the template.<br/> The table below displays the response for each text box in this section.
+You should only install the AWS Observability apps and Alerts/Monitors the first time you run the template.<br/> The table below displays the response for each text box in this section.
 
 | Prompt | Guideline  |
 |:--|:--|
-| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>Amazon Overview, Amazon ElastiCache, AWS Lambda, AWS Network Load Balancer, Amazon RDS, Amazon SNS, Amazon SQS, AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, Host Metrics (EC2), Amazon ECS (Without Container Insights and Traces), and Amazon ECS (With Container Insights and Traces).</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
+| Install AWS Observability apps and alerts/monitors | <ul><li>**Yes** - This installs the following:<br/><ul><li>Amazon Overview, Amazon ElastiCache, AWS Lambda, AWS Network Load Balancer, Amazon RDS, Amazon SNS, Amazon SQS, AWS Application Load Balancer, AWS API Gateway, AWS Classic Load Balancer, AWS DynamoDB, AWS EC2, Host Metrics (EC2), Amazon ECS (Without Container Insights and Traces), and Amazon ECS (With Container Insights and Traces).</li> <li>Alerts/ for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic Library **Installed Apps** folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
-## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
+## Step 4: Sumo Logic AWS CloudWatch Metrics Sources
 
 The table below displays the response for each text box in this section.
 
 | Prompt | Guideline|
 | :-- |:--|
-| Select the kind of CloudWatch Metrics Source to create | <ul><li>**CloudWatch Metrics Source** - Creates Sumo Logic AWS CloudWatch Metrics Sources.</li><li>**Kinesis Firehose Metrics Source (Recommended)** -  Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source.<br/>**Note:** This new source has cost and performance benefits over the CloudWatch Metrics Source is therefore recommended.</li><li>**None** - Skips the Installation of both the Sumo Logic Sources.</li></ul> |
-| Sumo Logic AWS Metrics Namespaces | Enter a comma-delimited list of the namespaces which will be used for AWS CloudWatch Metrics.<br/>The default will be AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS, and AWS/EC2. You can provide both AWS as well as custom namespaces. <br/> Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source.md) and the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for details on which namespaces they support. |
-| Existing Sumo Logic Metrics Source API URL | You must supply this URL if you are already collecting CloudWatch Metrics. Provide the existing Sumo Logic Metrics Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).|
+| Select the kind of CloudWatch Metrics Source to create | <ul><li>**Kinesis Firehose Metrics Source (Recommended)** -  Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source.<br/>**Note:** This new source has cost and performance benefits over the CloudWatch Metrics Source is therefore recommended.</li><li>**CloudWatch Metrics Source** - Creates Sumo Logic AWS CloudWatch Metrics Sources.</li><li>**None** - Skips the Installation of both the Sumo Logic Sources.</li></ul> |
+| Sumo Logic AWS Metrics Namespaces | Enter a comma-delimited list of the namespaces which will be used for AWS CloudWatch Metrics.<br/>The default will be AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS, and AWS/EC2, ECS/ContainerInsights. You can provide both AWS as well as custom namespaces. <br/> Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source.md) and the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics.md) for details on which namespaces they support. |
+| Existing Sumo Logic Metrics Source API URL | You must supply this URL if you are already collecting CloudWatch Metrics. Provide the existing Sumo Logic Metrics Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).<br/> Select 'None' for 'Select the kind of Metrics Source to create'.|
 | Sumo Logic AWS Metrics Tag Filters | Provide JSON format of the namespaces with its tags values to add filters to your metrics. Use semicolons to separate multiple values for the same tag key. AWS Tag Filters will be added to the Source. See JSON format example: ```json {"AWS/ELB":{"tags":["env=prod;dev"]},"AWS/EC2":{"tags":["env=dev","creator=john"]},"AWS/RDS":{"tags":["env=prod;dev","creator=himan"]},"All":{"tags":["env=dev"]}}``` .<br/> Filters are not supported for custom metrics.|
 
-## Step 6: Sumo Logic AWS ALB Log Source
+## Step 5: Sumo Logic AWS ALB Log Source
 
 The table below displays the response for each text box in this section.
 
@@ -112,7 +112,7 @@ The table below displays the response for each text box in this section.
  CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
  :::
 
-## Step 7: Sumo Logic AWS CloudTrail Source
+## Step 6: Sumo Logic AWS CloudTrail Source
 
 The table below displays the response for each text box in this section.
 
@@ -125,7 +125,7 @@ If you are collecting AWS CloudTrail logs from multiple AWS accounts into a comm
 | AWS S3 Bucket Name | If you selected "No" to creating a new source above, skip this step. Provide a name of an existing S3 bucket where you would like to store CloudTrail logs. If this is empty, a new bucket will be created in the region. |
 | Path Expression to the Existing CloudTrail logs | This is required in case the above existing bucket is already configured to receive CloudTrail logs. If this is blank, Sumo Logic will store logs in the path expression: `AWSLogs/*/CloudTrail/*` |
 
-## Step 8: Sumo Logic AWS CloudWatch logs
+## Step 7: Sumo Logic AWS CloudWatch logs
 
 :::note
 The default CloudWatch Logs source type is **Kinesis Firehose Log Source**. This is the recommended option for new deployments due to better performance and lower cost compared to the Lambda Log Forwarder.
@@ -136,7 +136,7 @@ The table below displays the response for each text box in this section.
 | Prompt | Guideline |
 |:--|:--|
 | Select the Sumo Logic CloudWatch Logs Sources | <ul><li>**Lambda Log Forwarder** - Creates a Sumo Logic CloudWatch Log Source that collects CloudWatch logs via a Lambda function.</li><li>**Kinesis Firehose Log Source** - Creates a Sumo Logic Kinesis Firehose Source to collect CloudWatch logs.</li><li>**Both** (Switch from Lambda Log Forwarder to Kinesis Firehose Log Source) - Use this option if you would like to switch from using the Lambda Log Forwarder to the new Kinesis Firehose Log Source. If you select this option, the template will subscribe all existing log groups to the new Kinesis Firehose logs Source. To remove the old source please rerun the template by selecting the Kinesis Firehose Log Source in this option. (Check the CloudWatch Logs for Lambda Log groups subscriber which should have a message “All Log Groups are subscribed to Destination Type”.)</li><li>**None** - Skips installation of both sources.</li></ul> |
-| Existing Sumo Logic Lambda CloudWatch Logs Source API URL | Required you already collect AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
+| Existing Sumo Logic Lambda CloudWatch Logs Source API URL | Required you already collect AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). <br/> Select 'None' for 'Select the kind of Metrics Source to create'. |
 | Subscribe log groups to destination (lambda or kinesis firehose delivery stream) | <ul><li>**New** - Automatically subscribes new AWS Lambda log groups to Lambda, to send logs to Sumo Logic.</li><li>**Existing** - Automatically subscribes existing log groups to Lambda, to send logs to Sumo Logic.</li><li>**Both** - Automatically subscribes new and existing log groups.</li><li>**None** - Skips automatic subscription of log groups.</li></ul>|
 | Regex for AWS Log Groups | Default Value: **\/aws\/(lambda\|apigateway\|rds)** <br/> With default value, log group names matching with lambda, apigateway, or rds will be subscribed and ingesting cloudwatch logs into Sumo Logic.<br/> Enter a regex for matching log group names. For more information, see [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters) in the *Auto-Subscribe ARN (Amazon Resource Name) Destination* topic.
 | Tags for filtering CloudWatch Log Groups | Enter comma separated key value pairs for filtering logGroups using tags. Ex KeyName1=string,KeyName2=string. This is optional leave it blank if tag based filtering is not needed. Visit [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters). |
@@ -147,7 +147,7 @@ The table below displays the response for each text box in this section.
   * CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail.
  :::
 
-## Step 9: Sumo Logic AWS ELB Classic Log Source
+## Step 8: Sumo Logic AWS ELB Classic Log Source
 
 The table below displays the response for each text box in this section.
 
@@ -155,7 +155,7 @@ The table below displays the response for each text box in this section.
 |:--|:--|
 | Enable ELB Classic Access logging | <ul><li>**New** - Automatically enables collection of logs via Amazon S3 when new Classic Load Balancers are created. This does not affect ELB classic resources already collecting logs.</li><li>**Existing** - Enables collection of logs via Amazon S3 for existing Classic Load Balancers only.</li><li>**Both** - Enables collection of logs for new and existing Classic Load Balancers</li><li>**None** - Does not enable collection of logs for Classic Load Balancers</li></ul> |
 | Create Sumo Logic ELB Logs Source | <ul><li>**Yes** - Creates a Sumo Logic ELB classic Log Source that collects ELB Classic logs from an existing bucket or a new bucket.</li><li>**No** - Select this if you already have an ELB Classic source configured in Sumo Logic.</li></ul> |
-| Existing Sumo Logic ELB Classic Logs Source API URL | You must supply this URL if you are already collecting ELB Classic logs. Enter the existing Sumo Logic ELB Classic Source API URL. The account, and region fields will be added to the Source. For information on how to determine the URL, see View or Download Source JSON Configuration. |
+| Existing Sumo Logic ELB Classic Logs Source API URL | You must supply this URL if you are already collecting ELB Classic logs. Enter the existing Sumo Logic ELB Classic Source API URL. The account, and region fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
 | AWS S3 Bucket Name | If you selected "No" to create a new source above, skip this step. Provide a name of an existing S3 bucket name where you would like to store ELB Classic logs. If this is empty, a new bucket will be created in the region. |
 | Path Expression for the Existing  ELB Classic logs | This is required in case the above existing bucket is already configured to receive ELB Classic access logs. If this is blank, Sumo Logic will store logs in the path expression: `classicloadbalancing/AWSLogs/*/elasticloadbalancing/*` |
 
@@ -163,7 +163,7 @@ The table below displays the response for each text box in this section.
  CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
  :::
 
-## Step 10: Create stack
+## Step 9: Create stack
 
 1. Under **Capabilities and transforms**, click each checkbox.<br/><img src={useBaseUrl('img/observability/CFT_Capabilities_Transforms.png')} style={{border: '1px solid gray'}} alt="CFT_Capabilities_Transforms" width="800"/>
 1. Click **Create Stack**.
@@ -180,7 +180,7 @@ Do not update the source names as created by the CloudFormation template in Sumo
 
 Follow the steps below to change the default source categories
 
-1. Download the template version 2.1.0 or later from the [changelog](../../changelog.md) page.
+1. Download the template version 2.12.0 or later from the [changelog](../../changelog.md) page.
 1. Modify the source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
 
@@ -217,8 +217,8 @@ For instructions, see [Create a Processing Rule](/docs/send-data/collection/proc
 .*\"eventSource\":\"apigateway\.amazonaws\.com\".*
 .*\"eventSource\":\"ecs\.amazonaws\.com\".*
 .*\"eventSource\":\"elasticache\.amazonaws\.com\".*
-.*\"eventsource\":\"sns\.amazonaws\.com\".*
-.*\"eventsource\":\"sqs\.amazonaws\.com\".*
+.*\"eventSource\":\"sns\.amazonaws\.com\".*
+.*\"eventSource\":\"sqs\.amazonaws\.com\".*
 ```
 
 ### Common errors
@@ -266,4 +266,23 @@ AWS Observability hierarchy is auto-populated based on the metrics ingested into
 
 ### Redeploying the AWS Observability CloudFormation template with existing Sumo Logic resources from a previous deployment
 
-**Ensure that you delete the Sumo Logic resources completely prior to redeployment.** If you have **Delete Sumo Logic Resources when stack is deleted** set to "True", then the Sumo Logic resources will automatically be removed while deleting the AWS Observability CloudFormation template. If you have **Delete Sumo Logic Resources when stack is deleted** set to "False", then the Sumo Logic resources **will not** be removed while deleting the AWS Observability CloudFormation template. If you do not delete the Sumo Logic resources prior to redeployment (that is, collectors and sources), then subsequent deployments may attempt to use the existing resources, which can result in collection issues. This is not recommended.
+:::warning
+You must delete the Sumo Logic resources completely prior to redeployment. If you do not delete existing collectors and sources before redeploying, subsequent deployments may attempt to use the existing resources, which can result in collection issues.
+:::
+
+Follow the steps below to redeploy the AWS Observability CloudFormation template:
+
+- Determine how your previous stack was configured for the **Delete Sumo Logic Resources when stack is deleted** parameter.
+   - If set to **True**, Sumo Logic resources (collectors, sources, and apps) are automatically removed when you delete the CloudFormation stack. Skip to deleting the stack.
+   - If set to **False**, Sumo Logic resources are **not** removed when the stack is deleted. You must manually delete them before redeploying.
+- Delete the existing AWS Observability CloudFormation stack from the AWS console.
+   - Navigate to the **CloudFormation** service in the AWS Management Console.
+   - Select the AWS Observability stack.
+   - Click **Delete** and confirm the deletion.
+   - Wait for the stack status to show `DELETE_COMPLETE`.<br/><img src={useBaseUrl('img/observability/aws-observability-redeploy-delete-stack.png')} style={{border: '1px solid gray'}} alt="Delete the existing CloudFormation stack" width="800"/>
+- If your previous stack had **Delete Sumo Logic Resources when stack is deleted** set to **False**, manually delete the following resources from Sumo Logic:
+   - Navigate to **Manage Data > Collection** in the Sumo Logic UI.
+   - Locate and delete the collectors and sources created by the previous deployment.<br/><img src={useBaseUrl('img/observability/aws-observability-redeploy-delete-sources.png')} style={{border: '1px solid gray'}} alt="Delete collectors and sources in Sumo Logic" width="800"/>
+   - Navigate to **App Catalog > Installed Apps** and uninstall the previously installed AWS Observability apps.<br/><img src={useBaseUrl('img/observability/aws-observability-redeploy-uninstall-apps.png')} style={{border: '1px solid gray'}} alt="Delete installed AWS Observability apps" width="800"/>
+- Verify that all previous Sumo Logic resources have been removed before proceeding.
+- Redeploy the AWS Observability CloudFormation template by following the steps in [Step 0: Open the CloudFormation template](#step-0-open-the-cloudformation-template).
