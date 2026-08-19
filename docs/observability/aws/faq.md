@@ -117,7 +117,7 @@ for the list of Field Extraction Rules in the resources.
 
 ### How do you keep track of changes and make feature updates?
 
-Sumo Logic provides updates to the AWS Observability Solution through CloudFormation and Terraform. See the [changelog](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/changelog) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/update-aws-observability-stack).
+Sumo Logic provides updates to the AWS Observability Solution through CloudFormation and Terraform. See the [changelog](/docs/observability/aws/deploy-use-aws-observability/changelog) to review all the changes and pointers to the CloudFormation templates associated with each version. AWS provides the ability to update a CloudFormation stack. To learn more about how to update your stack, see [Update the AWS Observability Stack](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/update-aws-observability-stack).
 
 ### What are options to monitor EC2 Host Metrics?
 

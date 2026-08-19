@@ -42,7 +42,7 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
      :::note
-     Download this or other versions of this template from [Changelog](../changelog.md). 
+     Download this or other versions of this template from [Changelog](../../changelog.md). 
      :::
      :::note
       - To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.12.0 or greater and follow the instructions in the [Modify the source categories](#modify-the-source-categories) section.
@@ -180,7 +180,7 @@ Do not update the source names as created by the CloudFormation template in Sumo
 
 Follow the steps below to change the default source categories
 
-1. Download the template version 2.1.0 or later from the [changelog](../changelog.md) page.
+1. Download the template version 2.1.0 or later from the [changelog](../../changelog.md) page.
 1. Modify the source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
 
