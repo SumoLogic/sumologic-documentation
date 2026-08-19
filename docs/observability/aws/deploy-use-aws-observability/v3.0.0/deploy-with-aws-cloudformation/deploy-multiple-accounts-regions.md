@@ -40,7 +40,7 @@ The below table displays the response to each prompt during Step 2.
 | Sumo Logic Deployment Name | Enter au, ca, ch, de, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
 | Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys/#create-an-access-key) for more information.  |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls.  |
-| Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-preferences) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.  |
+| Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-your-account-settings) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.  |
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
 
 ## Step 3: AWS account alias 
