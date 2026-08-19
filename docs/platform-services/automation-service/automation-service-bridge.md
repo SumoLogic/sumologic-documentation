@@ -11,7 +11,7 @@ You can only run custom actions or integrations outside of the Sumo Logic cloud 
 
 ## Version
 
-The current version of the Automation Bridge is 3.3.0.
+The current version of the Automation Bridge is 4.0.0.
 
 :::warning
 Versions 2.1.1 and earlier are obsolete, no longer supported, and no longer visible in the UI. Customers must upgrade to a supported version to ensure proper functionality and continued support.
@@ -24,7 +24,7 @@ Versions 2.1.1 and earlier are obsolete, no longer supported, and no longer visi
 * OS:
    * Ubuntu 18.04, 20.04, or 24.04
    * CentOS 7 or 8
-   * RedHat 8
+   * RedHat 8 or 9
 * RAM: 8GB
 * CPU: 4 Core
 * DISK: 160GB

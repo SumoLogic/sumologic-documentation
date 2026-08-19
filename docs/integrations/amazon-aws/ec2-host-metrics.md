@@ -120,6 +120,10 @@ As part of the app installation process, the following **content** will be creat
 
 - `accountid` AWS account id.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing EC2 Host Metrics dashboards
 
 ### AWS EC2 - Overview (Host OS Metrics)

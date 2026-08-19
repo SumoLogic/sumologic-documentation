@@ -38,7 +38,8 @@ Source templates are useful for managing data collection in scenarios like:
 ## Create a new source template
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Manage Data > Collection > Source Template**. 
-1. Click **Create Source Template** > **Add Source Template** and fill in the required details, such as name and configuration settings. When you're done, click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="Local file Apache" style={{border:'1px solid gray'}} width="500"/>
+1. Click **+ Add Source Template** and then select a source.
+1. Configure the source by entering the required details, such as name and configuration settings. When you're done, click **Next**.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="Local file Apache" style={{border:'1px solid gray'}} width="500"/>
 1. On the **Link Collectors** page, you will have the option to link the collectors using the **Collector Name** or by adding **Collector Tags** to find the group of collectors.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="Link collectors" style={{border: '1px solid gray'}} width="800" />
 1. Navigate to **Preview Collector(s**) to view collector compatibility details and see which collectors will be linked to the newly created source template.
 If collectors are mapped using both **Collector Name** and **Collector Tags**, separate preview sections will be shown for each mapping type.<br/><img src={useBaseUrl('img/send-data/preview-collectors1.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" /><br/><img src={useBaseUrl('img/send-data/preview-collectors2.png')} alt="Screenshot showing the linked collectors preview" style={{border: '1px solid gray'}} width="800" />
@@ -124,7 +125,7 @@ You can enable or disable a source template to optimize your data flow managemen
 - **Agility in response.** Quickly address misconfigurations or anomalies in your data sources without disrupting other crucial workflows.
 
 Follow the below steps to enable or disable a source template:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.<br/><img src={useBaseUrl('img/send-data/st-landing-page.png')} alt="Source template landing page" style={{border:'1px solid gray'}} width="800"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). Go to the main Sumo Logic menu and select **Data Management**, and under **Data Collection** select **Source Template**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Source Template**.
 1. Select the source template that you need to enable or disable. Click **More Actions** > **Enable** or **Disable** the source template. Or, click the kebab menu against the selected source template and click **Enable** or **Disable** from the dropdown.<br/><img src={useBaseUrl('img/send-data/enable-st.png')} alt="Enable source template" style={{border:'1px solid gray'}} width="800"/>
 1. Enter **CONFIRM** and click the **Confirm** button to complete the action.<br/><img src={useBaseUrl('img/send-data/enable-confirm-st.png')} alt="Confirm enable source template" style={{border:'1px solid gray'}} width="600"/>
 

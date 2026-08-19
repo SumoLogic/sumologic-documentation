@@ -294,6 +294,23 @@ _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "term
 | where process_name !=""
 ```
 
+## Create monitors for the Linux app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Linux alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Linux (Classic) - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed authentication attempts within 5 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - Root Login Detected` | This alert is triggered when a root login session is opened. This may indicate unauthorized privileged access to the system. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - Sudo Attempt by Non-Root User` | This alert is triggered when a non-root user executes a sudo command. Unusual sudo activity from unexpected users may indicate privilege escalation attempts. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - System Shutdown or Restart` | This alert is triggered when a Linux system shutdown or restart event is detected. This may indicate unscheduled downtime or malicious activity. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - User Added to Privileged Group` | This alert is triggered when a user is added to a privileged group (root, wheel, or adm). This may indicate privilege escalation or unauthorized access. | Count > 0 | Count &lt;= 0 |
+| `Linux (Classic) - User Account Created` | This alert is triggered when a new user account is created on a Linux host. This should be reviewed to ensure it is an authorized change. | Count > 0 | Count &lt;= 0 |
+
 ## Upgrade/Downgrade the Linux app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
