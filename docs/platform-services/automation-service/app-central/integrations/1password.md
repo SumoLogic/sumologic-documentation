@@ -11,10 +11,6 @@ Updated: June 18, 2026***
 
 1Password's User Management API using OAuth2 authentication. It supports user management operations including listing, retrieving, suspending, and reactivating users.
 
-:::info
-Set up the [1Password source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) and the [1Password app](/docs/integrations/saas-cloud/1password/) to collect and visualize 1Password data, then use this integration to automate response actions based on what data you find.
-:::
-
 ## Actions
 
 * **List Users** *(Enrichment)* - Retrieves a list of all users in the 1Password account.
@@ -71,3 +67,7 @@ Identity and Access Management
 * **Mar 17, 2026** - First Upload.
 * **April 8, 2026** (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * **June 18, 2026** (v1.3) - Updated the integration to allow 1Password to identify API calls from the Sumo Logic integration in their logs for easier tracking and troubleshooting.
+
+:::info
+Sumo Logic also supports the [1Password source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) and the [1Password app](/docs/integrations/saas-cloud/1password/) to collect and visualize 1Password data.
+:::
