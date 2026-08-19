@@ -1322,6 +1322,7 @@ module.exports = {
       items: [
         'dashboards/about',
         'dashboards/create-dashboard-new',
+        'dashboards/create-panel-with-mobot',
         'dashboards/dashboard-child-orgs',
         'dashboards/explore-view',
         'dashboards/drill-down-to-discover-root-causes',
@@ -3260,6 +3261,7 @@ integrations: [
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
+        'api/data-archiving',
         'api/data-deletion-rules',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
