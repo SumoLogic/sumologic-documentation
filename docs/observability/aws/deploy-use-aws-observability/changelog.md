@@ -323,7 +323,7 @@ Removals:
 CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.1.0/sumologic_observability.master.template.yaml
 
 Updates:
-* Out-of-the-box Alerts.
+* Out-of-the-box Alerts/Monitors.
 * Support for AWS NLB, Amazon ECS, and ElastiCache.
 * CloudFormation template versioning.
 * Support for AWS/SQS and AWS/SNS CloudWatch Metrics namespaces.
