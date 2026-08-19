@@ -2833,6 +2833,7 @@ integrations: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
           'integrations/webhooks/configcat',
+          'integrations/webhooks/druva-platform-events',
           'integrations/webhooks/emnify',
           'integrations/webhooks/extrahop-revealx-360',
           'integrations/webhooks/firefly',
