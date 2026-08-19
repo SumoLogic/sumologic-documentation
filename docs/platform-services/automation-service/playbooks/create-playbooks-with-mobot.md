@@ -40,5 +40,4 @@ Follow the steps below to create a playbook using Mobot:
 ## Related resources
 
 - [Mobot](/docs/search/mobot)
-- [Mobot Example Prompts](/docs/search/mobot/mobot-example-prompts)
 - [Create Playbooks](/docs/platform-services/automation-service/playbooks/create-playbooks)
