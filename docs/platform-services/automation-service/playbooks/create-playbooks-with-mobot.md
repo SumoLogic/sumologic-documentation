@@ -36,3 +36,9 @@ Follow the steps below to create a playbook using Mobot:
 1. Reply `Yes` (or similar) to approve, and Mobot rebuilds and resaves the playbook.
 1. Click any node on the canvas to verify the details Mobot filled in, such as the integration, resource, and field mappings pulled from the trigger payload.<br/><img src={useBaseUrl('img/cse/playbook-flow.png')} style={{border:'1px solid gray'}} alt="playbook-flow"/>
 1. Click **Publish** to make the playbook available for use in automations.
+
+## Related resources
+
+- [Mobot](/docs/search/mobot)
+- [Mobot Example Prompts](/docs/search/mobot/mobot-example-prompts)
+- [Create Playbooks](/docs/platform-services/automation-service/playbooks/create-playbooks)
