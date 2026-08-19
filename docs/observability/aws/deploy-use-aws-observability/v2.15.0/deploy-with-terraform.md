@@ -1613,7 +1613,7 @@ Invalid IAM role OR AccessDenied
 ```
 #### Solution
 
-- Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. 
+- Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivateactivate-rotate-or-delete-access-keys) for access keys activation. 
 - Refer to [Prerequisites](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/before-you-deploy/#prerequisites) for permissions related issues.
 
 

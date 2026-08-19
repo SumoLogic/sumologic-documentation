@@ -85,10 +85,4 @@ In this section, we'll introduce the following concepts:
   <p>Learn more about AWS Observability resources created and modified at deployment using Terraform and CloudFormation.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/v2.15.0/changelog/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>AWS Observability Terraform script and CloudFormation Changelog</h4></a>
-  <p>This section provides details on the available versions of the AWS Observability CloudFormation template.</p>
-  </div>
-</div>
 </div>
