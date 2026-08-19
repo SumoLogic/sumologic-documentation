@@ -10,7 +10,7 @@
       "epm_manager_url": "https://na101.epm.cyberark.com",
       "detailed_raw_events": false,
       "aggregated_policy_audits": false,
-      "policy_audit_raw_events": false,
+      "policy_audit_raw_events": false
     },
     "sourceType": "Universal"
   }
