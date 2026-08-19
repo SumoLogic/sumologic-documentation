@@ -353,7 +353,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | Parameter  | Type        | Value                                         | Required | Description                      |
 | :--------- | :---------- | :-------------------------------------------- | :------- | :------------------------------- |
 | schemaRef  | JSON Object | `{"type":"Universal Connector"}`                     | Yes      | Define the specific schema type. |
-| sourceType | String      | `"Universal"`                                        | Yes      | Type of source. All Cloud-to-Cloud sources use `"Universal"` here; the connector is selected by `schemaRef`. Using `"Universal Connector"` fails with `Missing required field: 'properties'`. |
+| sourceType | String      | `"Universal"`                                        | Yes      | Type of source. All Cloud-to-Cloud sources use `"Universal"` here |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
 ### Configuration object
