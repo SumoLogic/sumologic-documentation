@@ -137,13 +137,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 ### JSON example
 
 ```json reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark/example.json
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark/example-private.json
 ```
 
 ### Terraform example
 
 ```sh reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark/example.tf
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/cyberark/example-private.tf
 ```
 
 ## API Limitations
