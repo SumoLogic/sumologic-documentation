@@ -18,20 +18,21 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 * **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation#step-5-sumo-logic-aws-cloudwatch-metrics-sources) for CloudFormation Template.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * [**Role capabilities**](/docs/manage/users-roles/roles/role-capabilities/). Make sure you have a Sumo Logic role that have the following capabilities:
-  * Manage Field Extraction Rules
-  * Manage Connections
-  * View Account Overview
-  * View Fields
-  * View Field Extraction Rules
-  * Manage Content
   * Manage Collectors
   * View Collectors
   * Manage Fields
+  * View Fields
+  * Manage Field Extraction Rules
+  * View Field Extraction Rules
+  * Manage Content
+  * Manage Connections
+  * Manage Metrics Rules  
   * Manage Monitors
-  * Manage Metrics Rules
   * View Monitors
-  * Manage Entity Type Configs
-  * Create access keys
+  * Create access keys  
+  * Manage Entity Type Configs  
+  * Manage Apps
+  * Run Log Search
   * [**Sumo Logic Access ID and Key**](/docs/manage/security/access-keys/#create-an-access-key). When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope and have the role capabilities listed above before generating the Access ID and Key. <br/><img src={useBaseUrl('img/observability/Default-Scope.png')} alt="Default scope" style={{border: '1px solid gray'}} width="500" />
   :::note
   For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
