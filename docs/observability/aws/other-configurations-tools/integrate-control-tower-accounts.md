@@ -1,6 +1,6 @@
 ---
 id: integrate-control-tower-accounts
-title: Integrate Control Tower Accounts with AWS Observability
+title: Integrate Control Tower with AWS Observability
 description: Learn how to use the AWS Observability solution  with AWS Control Tower-managed accounts
 ---
 
