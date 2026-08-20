@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/dfir-iris.png')} alt="dfir-iris" width="80"/>
 
 ***Version: 1.0  
-Updated: August 14, 2026***
+Updated: August 21, 2026***
 
 DFIR-IRIS is an open-source collaborative incident response platform that enables security teams to manage cases, track indicators of compromise (IOCs), document assets, and maintain detailed incident timelines.
 
@@ -61,4 +61,4 @@ Incident Management
 
 ## Change Log
 
-* August 14, 2026 (v1.0) - First upload
+* August 21, 2026 (v1.0) - First upload
