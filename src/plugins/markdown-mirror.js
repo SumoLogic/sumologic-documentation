@@ -14,10 +14,16 @@
 const fs = require('fs');
 const path = require('path');
 
+// Matches the docs plugin's own `exclude: ['**/reuse/**', '**/ja/**']` in
+// docusaurus.config.js — those files never become real pages, so mirroring
+// them would advertise a canonical URL for a page that 404s.
+const EXCLUDED_DIR_NAMES = new Set(['reuse', 'ja']);
+
 function walkDocs(dir, base = dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
+      if (EXCLUDED_DIR_NAMES.has(entry.name)) continue;
       walkDocs(full, base, files);
     } else if (entry.name.endsWith('.md') || entry.name.endsWith('.mdx')) {
       files.push(path.relative(base, full));

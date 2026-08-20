@@ -1,6 +1,7 @@
 ---
 id: create-monitor-with-mobot
 title: Create a Monitor with Mobot
+sidebar_label: Create a Monitor with Mobot ✨
 description: Use Mobot to create and update logs monitors from plain-language prompts, without filling out the monitor form manually.
 keywords:
   - mobot
