@@ -16,7 +16,7 @@ Given that we use an account alias, we recommend you use StackSets to automati
 * If this is the first time you've deployed our AWS Observability solution, read the [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy/) topic for more information.
 * Complete the prerequisites for StackSets as described in the [AWS documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html).
 
-## Step 1: Open the CloudFormation template
+## Step 0: Open the CloudFormation template
 
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
@@ -32,7 +32,9 @@ Given that we use an account alias, we recommend you use StackSets to automati
     :::
 1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.
 
-## Step 2: Sumo Logic access configuration 
+## Apps Setup
+
+### Step 0: Sumo Logic access configuration 
 
 The below table displays the response to each prompt during Step 2.
 
@@ -44,7 +46,7 @@ The below table displays the response to each prompt during Step 2.
 | Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-your-account-settings) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.  |
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
 
-## Step 3: AWS account alias 
+### Step 3: AWS account alias 
 
 The below table displays the response to each prompt during Step 3.
 
@@ -53,20 +55,40 @@ The below table displays the response to each prompt during Step 3.
 | Alias for your AWS account | Enter an account alias for the AWS environment from which you are collecting data. This alias should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). This name will appear in the metrics and logs and can be queried via the “account field”.<br/>**Important:** Account Aliases should be alphanumeric and cannot include special characters such as “-, $, _” etc.<br/> Leave this blank If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts. |
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
 
-## Step 4: Install Apps
+### Step 3: Install Apps
 
 Perform the following steps to install apps.
+* Install the apps by running the AWS CloudFormation Stack once in any given account and region. Use the configuration below to set up only app dashboards.
+* Install AWS Observability Apps and Monitors templates **Yes**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_1.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
 
-1. Complete the prerequisites for StackSets as described in the [AWS documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html).
-1. Install the apps by running the AWS CloudFormation Stack once in any given account and region. Use the configuration below to set up only app dashboards.
-1. Install AWS Observability Apps as **Yes**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_1.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
-1. Select the Sumo Logic Metrics Sources to create as **None**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_2.png')} alt="Select the Sumo Logic Metrics Sources to create" style={{border: '1px solid gray'}} width="800" />
+### Step 4: Sumo Logic AWS CloudWatch Metrics Sources
+
+1. Select the Sumo Logic AWS CloudWatch Metrics Source as **None**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_2.png')} alt="Select the Sumo Logic Metrics Sources to create" style={{border: '1px solid gray'}} width="800" />
+
+### Step 5: Sumo Logic AWS ALB Log Source
+
 1. Enable ALB Access logging as **None** and Create Sumo Logic ALB Logs Source as **No**. <br/><img src={useBaseUrl('img/observability/Multiaccount_3.png')} alt=" Enable ALB Access logging" style={{border: '1px solid gray'}} width="800" />
+
+### Step 6: Sumo Logic AWS CloudTrail Source
+
 1. Create Sumo Logic CloudTrail Logs Source as **No**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_4.png')} alt="Create Sumo Logic CloudTrail Logs Source" style={{border: '1px solid gray'}} width="800" />
+
+### Step 7: Sumo Logic CloudWatch Logs Source
+
 1. Select Sumo Logic CloudWatch Logs Source as **None**.<br/><img src={useBaseUrl('img/observability/Multiaccount_5.png')} alt="Select Sumo Logic CloudWatch Logs Source" style={{border: '1px solid gray'}} width="800" />
+
+### Step 8: Sumo Logic AWS ELB classic Log Source
+
 1. Enable ELB Classic Access logging as **None** and Create Sumo Logic ELB Classic Logs Source as **No**. <br/><img src={useBaseUrl('img/observability/Multiaccount6.png')} alt="Enable ELB Classic Access logging" style={{border: '1px solid gray'}} width="800" />
 
-## Step 5: Determine account aliases
+### Step 9: Create Stack
+<img src={useBaseUrl('img/observability/multiaccount-cf-installapps-submit.png')} alt="Create Stack" style={{border: '1px solid gray'}} width="800" />
+
+
+## Collection Setup
+
+### Determine account aliases
+
 
 If you are going to deploy the solution in multiple AWS accounts, we highly recommend that you prepare a CSV file that maps your AWS account IDs to account aliases. These aliases should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). These names will appear in the Sumo Logic Explorer View, metrics, and logs and can be queried using the “account field”.
 
@@ -90,12 +112,22 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v3.0.0) section with the following exception:
     1. Leave the field “Alias for AWS Account Identification” blank.  <br/><img src={useBaseUrl('img/observability/aws-field.png')} alt="AWS field" style={{border: '1px solid gray'}} width="800" />
     1. Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”.  <br/><img src={useBaseUrl('img/observability/aws-url.png')} alt="AWS URL" style={{border: '1px solid gray'}} width="600" />
-    1. Answer **No** in Section 3 of the template "Install AWS Observability Apps". <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_3.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
+    1. Answer **No** in Section 3 of the template "Sumo Logic AWS Observability Apps and Alerts". <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_3.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
+      :::note
+      The remaining parameters will use the default values. You can update them based on your requirements. [Parameters details](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/#step-1-sumo-logic-access-configuration)
+      :::
     1. Click **Next**.
 1. Add Tags, select the Administrator role defined in the prerequisites above, and click **Next**.<br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_4.png')} alt="Add Tags" style={{border: '1px solid gray'}} width="800" />
 1. Provide a single AWS account number only and select a list of regions in the account where you would like to deploy the AWS CloudFormation template as shown in the screenshot below. You will need to select all the regions in the current account where you would like to deploy the template.<br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_5.png')} alt=" Select all the regions" style={{border: '1px solid gray'}} width="800" />
-1. Increasing the **Maximum concurrent actions** to be more than 1 is not recommended and can cause your StackSet deployment to fail. Stack sets should be deployed one at a time, sequentially. Click **Next**.  <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_6.png')} alt="Maximum concurrent actions" style={{border: '1px solid gray'}} width="800" />
+
 1. Review the details, select the capabilities and click **Submit**. <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_7.png')} alt="Select the capabilities" style={{border: '1px solid gray'}} width="800" />
+
+1. Increasing the **Maximum concurrent actions** to be more than 3 is not recommended and can cause your StackSet deployment to fail. Stack sets should be deployed one at a time, sequentially. Click **Next**.  <br/>
+   :::danger
+   The solution recommends deploying across regions **sequentially rather than in parallel**. If parallel deployment is required, the maximum recommended limit is **3 regions at a time**. Exceeding this limit may result in **SumoLogic API rate-limiting errors**.
+   :::
+   <img src={useBaseUrl('img/observability/ClodFormation_Stackset_6.png')} alt="Maximum concurrent actions" style={{border: '1px solid gray'}} width="800" />
+
 1. Once you hit submit, the AWS CloudFormation template will execute in the provided account and regions sequentially.
 
 ## Add more accounts to the same StackSet

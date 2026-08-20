@@ -135,10 +135,19 @@ terraform apply
 
 **Confirm no pending changes:**
 
+
 ```bash
 terraform plan
-# Must show: No changes. Infrastructure is up-to-date.
 ```
+
+Output
+```text
+Plan: 0 to add, 15 to change, 0 to destroy.
+```
+
+:::note
+The 15 changes are expected because the Sumo Logic provider resolves to the `latest` version instead of a specific numerical version.
+:::
 
 **Confirm sources are collecting in Sumo Logic:**
 

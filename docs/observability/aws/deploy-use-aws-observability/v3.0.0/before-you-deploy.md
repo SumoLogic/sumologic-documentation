@@ -120,7 +120,7 @@ This integration is supported only via AWS CloudFormation.
 
 ### Running the CloudFormation template from the command line
 
-If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master-v3x/aws-observability/scripts/DeployTemplate), as an example. 
+If desired, you can run the AWS CloudFormation template from the AWS CLI, using the [deploy](https://docs.aws.amazon.com/cli/latest/reference/cloudformation/deploy.html) command.  You can use this [script](https://github.com/SumoLogic/sumologic-solution-templates/tree/master-v3x/cloudformation-sumologic-aws-observability/scripts/DeployTemplate), as an example. 
 
 ### Configure Host Metrics sources  
 
