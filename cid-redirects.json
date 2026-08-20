@@ -1,4 +1,5 @@
 {
+  "/docs/observability/aws/deploy-use-aws-observability/migration/terraform/migration-strategy-v2x-to-v300-terraform": "/docs/observability/aws/deploy-use-aws-observability/migration/terraform",
   "/docs/observability/aws/deploy-use-aws-observability/before-you-deploy": "/docs/observability/aws/deploy-use-aws-observability/v2.15.0/before-you-deploy",
   "/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation": "/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation",
   "/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions": "/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions",

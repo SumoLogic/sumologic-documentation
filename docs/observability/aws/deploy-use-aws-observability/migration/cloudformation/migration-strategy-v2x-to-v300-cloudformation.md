@@ -1,7 +1,7 @@
 ---
 id: migration-strategy-v2x-to-v300-cloudformation
 title: Migrate AWS Observability from v2.x to v3.0.0 using CloudFormation
-sidebar_label: Migrate v2.x to v3.0.0
+sidebar_label: Automate v2.x to v3.0.0
 description: Learn how to migrate your existing AWS Observability CloudFormation stack from v2.x to v3.0.0 using the provided migration script.
 ---
 

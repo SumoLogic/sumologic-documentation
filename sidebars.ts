@@ -2102,16 +2102,7 @@ module.exports = {
                         'observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-manual',
                       ],
                     },
-                    {
-                      type: 'category',
-                      label: 'Terraform',
-                      collapsible: true,
-                      collapsed: true,
-                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/migration/terraform/index'},
-                      items: [
-                        'observability/aws/deploy-use-aws-observability/migration/terraform/migration-strategy-v2x-to-v300-terraform',
-                      ],
-                    }
+                    'observability/aws/deploy-use-aws-observability/migration/terraform',
                   ],
                 },
                 'observability/aws/deploy-use-aws-observability/changelog',

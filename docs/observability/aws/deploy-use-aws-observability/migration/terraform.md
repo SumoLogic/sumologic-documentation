@@ -1,7 +1,7 @@
 ---
-id: migration-strategy-v2x-to-v300-terraform
+slug: /observability/aws/deploy-use-aws-observability/migration/terraform
 title: Migrate AWS Observability from v2.x to v3.0.0 using Terraform
-sidebar_label: Migrate v2.x to v3.0.0
+sidebar_label: Terraform
 description: Step-by-step guide to migrate your AWS Observability Terraform deployment from v2.x to v3.0.0.
 ---
 
