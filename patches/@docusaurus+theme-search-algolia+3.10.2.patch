@@ -1,0 +1,28 @@
+diff --git a/node_modules/@docusaurus/theme-search-algolia/lib/validateThemeConfig.js b/node_modules/@docusaurus/theme-search-algolia/lib/validateThemeConfig.js
+index b9452c9..8c0c7ad 100644
+--- a/node_modules/@docusaurus/theme-search-algolia/lib/validateThemeConfig.js
++++ b/node_modules/@docusaurus/theme-search-algolia/lib/validateThemeConfig.js
+@@ -67,6 +67,9 @@ exports.Schema = utils_validation_1.Joi.object({
+                 facetFilters: FacetFiltersSchema.optional(),
+             }).optional(),
+             suggestedQuestions: utils_validation_1.Joi.boolean().optional(),
++            // Ask AI / Agent Studio migration (see https://www.algolia.com/doc/guides/algolia-ai/askai/guides/migrate-to-agent-studio)
++            // Not yet supported by @docusaurus/theme-search-algolia's schema; patched via patch-package.
++            agentStudio: utils_validation_1.Joi.boolean().optional(),
+         }))
+             .custom((askAiInput, helpers) => {
+             if (!askAiInput) {
+diff --git a/node_modules/@docusaurus/theme-search-algolia/src/validateThemeConfig.ts b/node_modules/@docusaurus/theme-search-algolia/src/validateThemeConfig.ts
+index 2df1266..e254d1e 100644
+--- a/node_modules/@docusaurus/theme-search-algolia/src/validateThemeConfig.ts
++++ b/node_modules/@docusaurus/theme-search-algolia/src/validateThemeConfig.ts
+@@ -76,6 +76,9 @@ export const Schema = Joi.object<ThemeConfig>({
+             facetFilters: FacetFiltersSchema.optional(),
+           }).optional(),
+           suggestedQuestions: Joi.boolean().optional(),
++          // Ask AI / Agent Studio migration (see https://www.algolia.com/doc/guides/algolia-ai/askai/guides/migrate-to-agent-studio)
++          // Not yet supported by @docusaurus/theme-search-algolia's schema; patched via patch-package.
++          agentStudio: Joi.boolean().optional(),
+         }),
+       )
+       .custom(

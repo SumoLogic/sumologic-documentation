@@ -4,6 +4,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "postinstall": "patch-package",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -199,6 +200,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": ">=6",
     "lint-staged": ">=10",
+    "patch-package": "^8.0.1",
     "prettier": "^2.4.1",
     "typescript": "^5.2.2"
   },
