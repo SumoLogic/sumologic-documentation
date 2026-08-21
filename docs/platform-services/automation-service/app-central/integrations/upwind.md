@@ -48,3 +48,7 @@ For information about Upwind, see [Upwind documentation](https://docs.upwind.io/
 
 * April 1, 2026 - First upload
 
+:::info
+Sumo Logic also supports the [Upwind app](/docs/integrations/webhooks/upwind/) to visualize Upwind data.
+:::
+

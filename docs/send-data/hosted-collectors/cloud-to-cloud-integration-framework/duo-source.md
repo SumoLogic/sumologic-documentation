@@ -58,7 +58,9 @@ To configure a Duo Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Duo source, consider installing the Sumo Logic app for [Duo Security](/docs/integrations/security-threat-detection/duo-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Duo source, consider:
+- Installing the Sumo Logic app for [Duo Security](/docs/integrations/security-threat-detection/duo-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+- Using the [Duo Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/duo/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
 :::
 
 ## Metadata fields

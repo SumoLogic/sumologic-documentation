@@ -52,7 +52,9 @@ To configure an Okta Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Okta source, consider installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Okta source, consider:
+- Installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+- Using the [Okta Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/okta/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
 :::
 
 ## Metadata fields

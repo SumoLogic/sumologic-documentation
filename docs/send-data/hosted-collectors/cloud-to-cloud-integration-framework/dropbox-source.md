@@ -57,7 +57,9 @@ To configure a Dropbox source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Dropbox source, consider installing the Sumo Logic app for [Dropbox](/docs/integrations/saas-cloud/dropbox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Dropbox source, consider:
+- Installing the Sumo Logic app for [Dropbox](/docs/integrations/saas-cloud/dropbox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+- Using the [Dropbox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/dropbox/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
 :::
 
 ## Metadata fields

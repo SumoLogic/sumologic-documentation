@@ -54,7 +54,9 @@ To configure an Abnormal Security Source, follow the steps below:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Abnormal Security source, consider installing the Sumo Logic app for [Abnormal Security](/docs/integrations/saas-cloud/abnormal-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Abnormal Security source, consider:
+- Installing the Sumo Logic app for [Abnormal Security](/docs/integrations/saas-cloud/abnormal-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+- Using the [Abnormal Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
 :::
 
 ## JSON schema

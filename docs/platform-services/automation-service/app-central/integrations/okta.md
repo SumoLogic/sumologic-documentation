@@ -80,3 +80,7 @@ For information about Okta, see [Okta documentation](https://help.okta.com/en-us
     * List Network Zones
     * Update Network Zone
 * April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Okta source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/) and the [Okta app](/docs/integrations/saml/okta/) to collect and visualize Okta data.
+:::

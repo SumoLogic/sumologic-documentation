@@ -62,3 +62,7 @@ For information about Mimecast, see [Mimecast documentation](https://integration
 * July 14, 2023 (v1.3) - Code refactoring
 * February 28, 2024 (v1.4) - Updated code for compatibility with Python 3.12
 * April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Mimecast source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/) and the [Mimecast app](/docs/integrations/saas-cloud/mimecast/) to collect and visualize Mimecast data.
+:::

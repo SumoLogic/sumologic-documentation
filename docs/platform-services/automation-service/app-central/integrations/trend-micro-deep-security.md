@@ -64,3 +64,7 @@ For information about Trend Micro Deep Security, see [Trend Micro Deep Security 
 	+ New Action: Search Systems By IP
 * June 22, 2023 (v1.1) - Removed unnecessary empty lines
 * April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Trend Micro Deep Security app](/docs/integrations/security-threat-detection/trend-micro-deep-security/) to visualize Trend Micro Deep Security data.
+:::

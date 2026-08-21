@@ -85,3 +85,7 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 * May 12, 2023 (v1.1) - Integration refactored
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
 * August 19, 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+
+:::info
+Sumo Logic also supports the [AWS CloudTrail app](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/) to visualize AWS CloudTrail data.
+:::

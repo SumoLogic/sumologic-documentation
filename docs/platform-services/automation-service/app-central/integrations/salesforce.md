@@ -58,3 +58,7 @@ For information about Salesforce, see [Salesforce documentation](https://help.sa
 * June 22, 2023 (v1.1) - Updated the integration with Environmental Variables
 * June 22, 2023 (v1.2) - Changed Send Email action type to Notification
 * April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Salesforce source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source/) and the [Salesforce app](/docs/integrations/saas-cloud/salesforce/) to collect and visualize Salesforce data.
+:::

@@ -108,3 +108,7 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
     + Submission Status Polling
   * Replacement Actions:
     + Check Submission Report
+
+:::info
+Sumo Logic also supports the [CrowdStrike Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source/) to collect CrowdStrike Threat Intel data.
+:::

@@ -59,7 +59,9 @@ To configure a OneLogin source:
 1. When you are finished configuring the source, click **Save**.
 
 :::info
-After configuring the OneLogin source, consider installing the Sumo Logic app for [OneLogin](/docs/integrations/saml/onelogin/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the OneLogin source, consider:
+- Installing the Sumo Logic app for [OneLogin](/docs/integrations/saml/onelogin/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+- Using the [OneLogin Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/onelogin/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
 :::
 
 ## JSON schema
