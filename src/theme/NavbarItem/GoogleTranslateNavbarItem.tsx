@@ -58,7 +58,7 @@ const GoogleTranslateNavbarItem = () => {
       </button>
       <div
         aria-hidden={!isOpen}
-        className={`navbar-translate__menu${isOpen ? ' navbar-translate__menu--open' : ''}`}
+        className="navbar-translate__menu"
         hidden={!isOpen}
       >
         <div id="google_translate_element"></div>

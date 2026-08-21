@@ -560,7 +560,6 @@ module.exports = {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
             className: 'header-trial',
-            alt: 'Sign up for a Sumo Logic free trial',
           },
         ],
       },

@@ -648,16 +648,6 @@ div[class*="announcementBar_"] a {
   text-decoration: underline;
 }
 
-.header-trial::after {
-    display: none !important;
-    content: none !important;
-}
-
-.header-login::after {
-  content: none !important;
-  display: none !important;
-}
-
 .markdown {
   h1 {
     font-size: 2rem !important;
