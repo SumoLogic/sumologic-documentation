@@ -5665,5 +5665,13 @@
   "/docs/send-data/installed-collectors/collector-management/mcp-agent": "/docs/api/mcp-server",
   "/docs/send-data/installed-collectors/install-a-collector-on-linux": "/docs/send-data/installed-collectors/linux",
   "/docs/send-data/kubernetes/collecting-application-logs-otel": "/docs/send-data/kubernetes/collecting-logs",
-  "/Send_Data/Sources/HTTP_Source/Upload_Data_to_an_HTTP_Source": "/docs/send-data/hosted-collectors/http-source"
+  "/Send_Data/Sources/HTTP_Source/Upload_Data_to_an_HTTP_Source": "/docs/send-data/hosted-collectors/http-source",
+  "/docs/alerts/monitors/monitor-permissions": "/docs/alerts/monitors/settings#monitor-folder-permissions",
+  "/docs/get-started/library/manage-content-move-copy-delete": "/docs/get-started/library#move-content-in-personal-folders",
+  "/docs/integrations/security-threat-detection/fortigate": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/fortigate-firewall",
+  "/docs/manage/content-sharing/share-a-dashboard": "/docs/dashboards/share-dashboard-new",
+  "/docs/search/get-started-with-search/build-search/share-search-url": "/docs/search/get-started-with-search/build-search/use-url-to-run-search",
+  "/docs/search/get-started-with-search/search-basics/built-in-metadata-fields": "/docs/search/get-started-with-search/search-basics/built-in-metadata",
+  "/docs/search/get-started-with-search/search-basics/message-time-vs-receipt-time": "/docs/search/get-started-with-search/build-search/use-receipt-time",
+  "/docs/search/get-started-with-search/search-basics/search-time-range": "/docs/search/get-started-with-search/build-search/set-time-range"
 }
