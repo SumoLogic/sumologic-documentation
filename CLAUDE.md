@@ -71,7 +71,7 @@ Before transitioning any ticket to Published:
 ## Slash Commands
 Primary commands for documentation work. Proactively suggest when context fits — don't wait for the user to ask.
 
-**Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
+**Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`, `/edit-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
 **Workflow:** `/jira`, `/review`, `/docs-pr-reviewer`
@@ -82,6 +82,9 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 - An SME/stakeholder without a local dev environment wants to apply their own edit to an existing PR (not just view or approve it — those happen directly on the PR's staging link and GitHub page) → suggest `/docs-pr-reviewer`
+- An SME/stakeholder wants to submit a small, self-contained fix to an *existing published doc* themselves, with no PR open yet → suggest `/edit-doc`
+
+**`/docs-pr-reviewer` vs. `/edit-doc`:** `/docs-pr-reviewer` acts on a PR that already exists; `/edit-doc` creates a new one. Once `/edit-doc` opens a PR, further self-serve edits to it go through `/docs-pr-reviewer`.
 
 **Key distinctions:**
 - `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
