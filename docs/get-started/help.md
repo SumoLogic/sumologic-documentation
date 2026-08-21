@@ -8,7 +8,7 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/icons/business/support.png')} alt="Support icon" width="40"/>
 
-Our in-product left-nav **Help** menu provides quick access to Sumo Logic Support, community, and more.
+Our in-product left-nav **Help** menu provides quick acess to Sumo Logic Support, community, and more.
 
 You can access docs directly in Sumo Logic under **Help** > **Documentation**. The **Help** is context-sensitive. When you are on a page in the web UI, the help system will open to the appropriate topic when you select **Help** > **Documentation**.
 
