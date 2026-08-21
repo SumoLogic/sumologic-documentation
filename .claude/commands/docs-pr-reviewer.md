@@ -1,27 +1,46 @@
+# Docs PR Reviewer — Guided PR Review and Preview
+
+Lets a PM, engineer, or other Sumo Logic stakeholder review a `sumologic-documentation` pull request as rendered output (not raw markdown) and, if they want to poke around it themselves, a real live staging site — without installing anything. Claude does the git, build, and GitHub work; the reviewer just looks at output and says what to change.
+
+This command assumes you're running in a Claude Code **cloud/remote session** (desktop's cloud mode, or Claude Code on the web) — that's the point of it. The container already has Git, Node, Yarn, and a headless Chromium preinstalled, and it authenticates to GitHub as the reviewer's own connected account, so there's no SSH key, Homebrew, or Node/Yarn setup to walk anyone through. If you're ever running this in a plain local CLI session instead, the same steps still work against whatever clone is already on disk — you just can't assume a fresh, pre-provisioned container.
+
+## What this command does
+
+When you invoke `/docs-pr-reviewer <PR URL or Jira ticket key>`, Claude will:
+
+1. **Confirm GitHub access**. Make sure the reviewer's own GitHub account can reach the repo
+2. **Resolve the target**. Turn a PR URL or a Jira ticket key (e.g. `DOCS-1234`) into the right branch
+3. **Show what changed**. Build the site and hand back rendered screenshots of every changed page — no local dev server, no port-forwarding
+4. **Offer a real live preview, on request**. Push to a `review/**` branch to trigger the existing Pantheon staging deploy, for a reviewer who wants to click around themselves
+5. **Take feedback or approval**. Apply requested edits directly (held to the same style-guide and placement review as any other docs PR change), or submit the reviewer's GitHub approval once they're satisfied
+6. **Push back a single, clean commit** to the PR's branch
+
+## When to use this command
+
+* A PM, engineer, or other stakeholder needs to review an *existing* `sumologic-documentation` PR and has no local dev environment
+* The reviewer wants to see rendered pages, not a markdown diff
+* The reviewer may want to request edits and have them applied and pushed on their behalf
+* The reviewer wants to submit their approval without leaving the conversation
+
+## When NOT to use this command
+
+* **Starting brand-new work with no existing PR** — this command resolves an *existing* PR or ticket; it doesn't create one from scratch
+* **A full editorial audit** — use `/audit-doc` or `/seo-audit` instead; this command is about previewing and taking review feedback, not a standalone quality pass
+
 ---
-name: docs-pr-reviewer
-description: Provides a guided, end-to-end review experience for a sumologic-documentation pull request for a subject matter expert (PM, engineer, or other stakeholder) who doesn't have git experience and may have no local dev environment at all. Resolves a PR URL or Jira ticket to the right branch, shows the reviewer what changed as rendered screenshots (and, on request, a real clickable staging preview), applies any requested edits directly, holding them to the same style-guide and placement review as any other docs PR change, pushes them back to the branch, and submits the reviewer's GitHub approval when they're satisfied.
-disable-model-invocation: true
-allowed-tools: Bash Read Edit Write Glob Grep WebFetch mcp__github__pull_request_read mcp__github__search_pull_requests mcp__github__search_issues mcp__github__pull_request_review_write
-argument-hint: [PR URL or Jira ticket key, e.g. DOCS-1234]
----
-
-# Docs PR Preview
-
-Lets a PM, engineer, or other Sumo Logic stakeholder review a `sumologic-documentation` pull request as rendered output (not raw markdown) and, if they want to poke around it themselves, a real live staging site — without installing anything. You do the git, build, and GitHub work; they just look at output and tell you what to change.
-
-This skill assumes you're running in a Claude Code **cloud/remote session** (desktop's cloud mode, or Claude Code on the web) — that's the point of it. The container already has Git, Node, Yarn, and a headless Chromium preinstalled, and it authenticates to GitHub as the reviewer's own connected account, so there's no SSH key, Homebrew, or Node/Yarn setup to walk anyone through. If you're ever running this in a plain local CLI session instead, the same steps still work against whatever clone is already on disk — you just can't assume a fresh, pre-provisioned container.
 
 ## Guardrails (read before doing anything)
 
-- **This has to be running as the reviewer's own GitHub identity, not a shared one.** Every push, comment, and approval below is attributed to whoever this session is authenticated as. If you're not sure whose account this cloud session is connected to, ask before doing anything that writes to GitHub.
+- **This has to be running as the reviewer's own GitHub identity, not a shared one.** Every push, comment, and approval below is attributed to whoever this session is authenticated as. If you're not sure whose account this session is connected to, ask before doing anything that writes to GitHub.
 - **Never commit or push directly to `main`.** Always confirm you're on the PR's own branch first.
 - **Never force-push without showing the user what's changing and getting an explicit go-ahead.** Pushing to someone else's PR branch is not reversible for them.
 - **Assume zero git literacy.** Narrate what you're doing ("I'm pulling down the latest version of this PR now") rather than showing raw command output as the primary communication.
 - **`docs-review` is a single shared staging slot, not one per PR.** If the reviewer asks for the live clickable preview (Step 4's second tier), warn them upfront that pushing to it may overwrite whatever anyone else currently has staged there.
 - **Submitting an approval via the API is still the reviewer approving, not you.** Only call the GitHub review-write tool after the reviewer has explicitly said, in their own words, that they're approving — never infer it from "looks fine" or silence.
 
-## Step 1: Confirm GitHub account access
+## Workflow
+
+### Step 1: Confirm GitHub account access
 
 This is a one-time, mostly manual identity step that has nothing to do with which environment you're running in. Ask the user to confirm they've done this (most reviewers who've been at Sumo Logic a while already have), and only walk them through it if they haven't:
 
@@ -34,7 +53,7 @@ This is a one-time, mostly manual identity step that has nothing to do with whic
 
 None of this is scriptable — it's identity verification and a human granting access — so just confirm it's done and move on.
 
-## Step 2: Confirm the workspace
+### Step 2: Confirm the workspace
 
 In a cloud session this should already be true, but don't assume:
 
@@ -64,13 +83,13 @@ node -v && yarn -v
 npx playwright --version 2>&1 || echo "playwright CLI not found — will fall back to installing it in Step 4"
 ```
 
-## Step 3: Resolve what the user wants to review
+### Step 3: Resolve what the user wants to review
 
 Ask for, or accept, one of:
 - **A GitHub PR URL** (e.g. `https://github.com/SumoLogic/sumologic-documentation/pull/1234`), or
 - **A Jira ticket key** (e.g. `DOCS-1234`)
 
-### If given a PR URL
+#### If given a PR URL
 
 Pull the PR number out of the URL — the number right after `/pull/`, not just "the last path segment" (a URL copied from the **Files changed** tab ends in `/pull/1234/files`, where the last segment is `files`, not the number).
 
@@ -96,7 +115,7 @@ git checkout <branch-name>
 
 If that also fails, the user needs repo access — point them back to Step 1.
 
-### If given a Jira ticket key instead of a PR URL
+#### If given a Jira ticket key instead of a PR URL
 
 Per team convention, branches are often named after their Jira ticket (e.g. ticket `DOCS-1234` → branch `DOCS-1234`). Try that directly first:
 
@@ -119,7 +138,7 @@ git checkout DOCS-1234
 
 If the search returns nothing, tell the user plainly: there's no open PR for that ticket yet, and confirm whether they meant a different ticket or want to start new work instead (a different flow than this one).
 
-## Step 4: Show the reviewer what changed
+### Step 4: Show the reviewer what changed
 
 Get the list of changed files:
 
@@ -129,7 +148,7 @@ mcp__github__pull_request_read (method: "getFiles", owner: "SumoLogic", repo: "s
 
 For each changed content file, check its frontmatter for a `slug:` override (Docusaurus otherwise derives the route from the file's path relative to the docs root), so you know the real route to render.
 
-### Tier 1 — rendered screenshots (default, ~1-2 minutes, always available)
+#### Tier 1 — rendered screenshots (default, ~1-2 minutes, always available)
 
 Build the site and serve it locally *inside the container* (this never needs to reach the reviewer's own browser, since Claude is the one looking at it):
 
@@ -146,7 +165,7 @@ npx playwright install chromium
 
 This is the fast path and should be the default — don't make the reviewer wait for Step 4's second tier unless they specifically want to click around themselves.
 
-### Tier 2 — real clickable staging site (opt-in, ~15-20 minutes, shared resource)
+#### Tier 2 — real clickable staging site (opt-in, ~15-20 minutes, shared resource)
 
 If the reviewer wants to actually click around the live site in their own browser rather than look at screenshots, explain the tradeoff first: it's slower, and it uses the single shared `docs-review` staging environment, so it may overwrite whatever anyone else currently has staged there. Only proceed on explicit request.
 
@@ -158,7 +177,7 @@ git push origin HEAD:review/<ticket-or-PR-number>
 
 Tell the reviewer the deploy is running (GitHub Actions → the `docs-review` workflow, or the team's Slack channel posts a link when it finishes) and that it typically takes 15-20 minutes. The URL follows the pattern `https://docs-review-<PANTHEON_SITE_ID>.pantheonsite.io/help/` — if you don't already know this team's `PANTHEON_SITE_ID` value from a prior run, ask the user once rather than guessing, since it's a GitHub Actions repo variable, not something in the code.
 
-## Step 5: Take the reviewer's requested changes, or their approval
+### Step 5: Take the reviewer's requested changes, or their approval
 
 As soon as Step 4 has shown them something, ask directly: does this need changes, or does it look good to approve? Don't wait for an edit loop to ask, and don't assume — some reviewers will just say "looks good."
 
@@ -190,7 +209,7 @@ If this is empty, go to Step 7. If it isn't, stop and figure out where the chang
 
 Repeat for as many rounds as the reviewer wants. Don't touch files they didn't ask about. When they confirm they're done, ask once more whether it's good now or needs another pass, then move to Step 6.
 
-## Step 6: Consolidate and push
+### Step 6: Consolidate and push
 
 Only reach this step once every edit from Step 5 has cleared the style-guide and placement check. Confirm you're still on the PR's own branch, not `main` or anything else:
 
@@ -249,9 +268,9 @@ git fetch origin <remote-branch-name>
 git push --force-with-lease=<remote-branch-name> origin HEAD:<remote-branch-name>
 ```
 
-## Step 7: Wrap up
+### Step 7: Wrap up
 
-**If they approved with no changes:** confirm the review shows as submitted on the PR. Merging still follows the repo's normal requirements (other reviewers, checks, the merge-window rules in `pr.yml`) — this skill only handled the preview and the approval itself.
+**If they approved with no changes:** confirm the review shows as submitted on the PR. Merging still follows the repo's normal requirements (other reviewers, checks, the merge-window rules in `pr.yml`) — this command only handled the preview and the approval itself.
 
 **If changes were made and pushed:** link them straight to the PR (`https://github.com/SumoLogic/sumologic-documentation/pull/<PR-number>`) so they can see the update reflected there. Remind them it still needs the normal peer review and merge.
 

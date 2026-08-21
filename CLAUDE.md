@@ -74,13 +74,14 @@ Primary commands for documentation work. Proactively suggest when context fits �
 **Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
-**Workflow:** `/jira`, `/review`
+**Workflow:** `/jira`, `/review`, `/docs-pr-reviewer`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket → suggest `/doc-from-jira`
 - User is about to create a PR → suggest `/seo-audit` first
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
+- User (especially a PM, engineer, or other stakeholder without a local dev environment) wants to review or preview an existing PR → suggest `/docs-pr-reviewer`
 
 **Key distinctions:**
 - `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
