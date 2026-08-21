@@ -58,3 +58,7 @@ For information about Netskope, see [Netskope documentation](https://docs.netsko
     + Changed Daemon compatibility (Netskope Get Event List Daemon)
 * March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
 * April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Netskope source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) and the [Netskope app](/docs/integrations/security-threat-detection/netskope/) to collect and visualize Netskope data.
+:::

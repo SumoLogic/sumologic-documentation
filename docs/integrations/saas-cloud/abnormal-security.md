@@ -198,3 +198,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::info
+Sumo Logic also supports [Abnormal Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::

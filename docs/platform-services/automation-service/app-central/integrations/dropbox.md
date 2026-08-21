@@ -48,3 +48,7 @@ For information about Dropbox, see [Dropbox documentation](https://www.dropbox.c
 
 * January 30, 2023 - First upload
 * April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Dropbox source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/) and the [Dropbox app](/docs/integrations/saas-cloud/dropbox/) to collect and visualize Dropbox data.
+:::

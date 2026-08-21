@@ -205,3 +205,7 @@ Use this dashboard to:
 * Identify the Modified, Added, and Removed files by commit id in chronological order. You can use filters to drill down to a more detailed view.
 
 <img src={useBaseUrl('img/integrations/app-development/Gitlab-Commits.png')} alt="GitLab" />
+
+:::info
+Sumo Logic also supports [GitLab Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/gitlab/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::

@@ -275,3 +275,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::info
+Sumo Logic also supports [Trend Micro Deep Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/trend-micro-deep-security/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::

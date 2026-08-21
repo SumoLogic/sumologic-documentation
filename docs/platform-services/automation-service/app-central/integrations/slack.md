@@ -154,3 +154,7 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 * April 30, 2026 (v1.14) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * June 17, 2026 (v1.15)
     * Updated action: Send Message (Added **Disable Link Previews** option to control whether Slack displays link previews in messages).
+
+:::info
+Sumo Logic also supports the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize Slack data.
+:::

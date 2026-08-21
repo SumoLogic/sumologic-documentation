@@ -64,3 +64,7 @@ Example: [https://yourServer.jamfcloud.com](https://yourServer.jamfcloud.com)
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
 * June 28, 2023 (v1.3) - Updated **List Computers** Action
 * April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Jamf source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source/) and the [Jamf app](/docs/integrations/saas-cloud/jamf/) to collect and visualize Jamf data.
+:::

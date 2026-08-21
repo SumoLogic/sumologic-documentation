@@ -93,3 +93,7 @@ For information about Cloudflare, see [Cloudflare documentation](https://develop
 * July 3. 2025 (v1.3) -  Updated the endpoint used in the resource test file to one that does not require any additional permissions on the token.
 * March 23, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * April 29, 2026 (v1.5) - Fixed urllib3 issue
+
+:::info
+Sumo Logic also supports the [Cloudflare app](/docs/integrations/saas-cloud/cloudflare/) to visualize Cloudflare data.
+:::

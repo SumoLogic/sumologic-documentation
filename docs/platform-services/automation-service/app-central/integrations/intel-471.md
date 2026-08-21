@@ -58,3 +58,7 @@ Threat Intelligence-Reputation
 * May 23, 2022 - First Upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
 * April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+:::info
+Sumo Logic also supports the [Intel 471 Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel-471-threat-intel-source/) to collect Intel 471 data.
+:::
