@@ -527,7 +527,12 @@ module "app-module" {
 
 ## Step 5: Override default parameter values
 
-By default, all other parameters are set up to automatically collect logs, metrics, install apps and monitors. If you need to override parameters, you can configure or override additional parameters in the [terraform-sumologic-aws-observability/main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) file for Collection and app parameters. To perform overrides, see [Override collection parameters](#override-source-parameters) and [Override app content parameters](#override-app-content-parameters).
+By default, all parameters are set up to automatically collect logs, metrics, install apps, and monitors. If you need to override parameters, you have two options:
+
+* **Simple URL overrides** (for existing sources). If you are already collecting data in Sumo Logic and want to reuse existing sources, set the corresponding `_source_url` variables (for example, `cloudwatch_metrics_source_url`, `cloudtrail_source_url`) in the **main.auto.tfvars** file.
+* **Detailed source configuration overrides**. To override source details (such as bucket names, path expressions, or log format settings), add the override parameters directly to the `module "collection-module"` block in the [terraform-sumologic-aws-observability/main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) file.
+
+To perform overrides, see [Override collection parameters](#override-source-parameters) and [Override app content parameters](#override-app-content-parameters).
 
 ## Step 6: Deploy the AWS Observability Solution
 
@@ -561,7 +566,7 @@ To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer t
 
 ## Appendix
 
-### Override source parameters
+### Override collection parameters
 
 :::info
 If you are already collecting AWS metrics, logs, and/or events, we recommend that you override the default settings. Overriding the configuration sources prevents them from being re-created in the AWS infrastructure or Sumo Logic.
@@ -578,13 +583,25 @@ The following examples demonstrate parameter overrides:
 
 ```hcl
 module "collection-module" {
- source = "./modules/collections"
- aws_account_alias         = var.aws_account_alias
- sumologic_organization_id = var.sumologic_organization_id
- sumologic_access_id    = var.sumologic_access_id
- sumologic_access_key   = var.sumologic_access_key
- sumologic_environment  = var.sumologic_environment
- aws_resource_tags  = var.aws_resource_tags
+  source = "./modules/collections"
+
+  providers = {
+    aws       = aws
+    sumologic = sumologic
+  }
+
+  aws_account_alias         = var.aws_account_alias
+  sumologic_organization_id = var.sumologic_organization_id
+  sumologic_access_id       = var.sumologic_access_id
+  sumologic_access_key      = var.sumologic_access_key
+  sumologic_environment     = var.sumologic_environment
+  aws_resource_tags         = var.aws_resource_tags
+
+  cloudwatch_metrics_source_url = var.cloudwatch_metrics_source_url
+  cloudwatch_logs_source_url    = var.cloudwatch_logs_source_url
+  cloudtrail_source_url         = var.cloudtrail_source_url
+  elb_log_source_url            = var.elb_log_source_url
+  classic_lb_log_source_url     = var.classic_lb_log_source_url
 }
 ```
 
@@ -594,32 +611,44 @@ Override the `cloudtrail_source_details` parameter to collect CloudTrail logs fr
 
 ```hcl
 module "collection-module" {
- source = "./modules/collections"
- aws_account_alias         = var.aws_account_alias
- sumologic_organization_id = var.sumologic_organization_id
- sumologic_access_id    = var.sumologic_access_id
- sumologic_access_key   = var.sumologic_access_key
- sumologic_environment  = var.sumologic_environment
- # Enable Collection of CloudTrail logs
- collect_cloudtrail_logs   = true
- # Collect CloudTrail logs, from user provided s3 bucket
- # Don't create a s3 bucket, use bucket details provided by the user. Don't force destroy bucket
- cloudtrail_source_details = {
-   source_name     = "CloudTrail Logs us-east-1"
-   source_category = "aws/observability/cloudtrail/logs"
-   description     = "This source is created using Sumo Logic terraform AWS Observability module to collect AWS cloudtrail logs."
-   bucket_details = {
-       create_bucket        = false
-       bucket_name          = "aws-observability-logs"
-       path_expression      = "AWSLogs/*/CloudTrail/*/*"
-       force_destroy_bucket = false
-   }
-   fields = {}
- }
- aws_resource_tags = {
-   env = "prod"
-   author = "sumologic"
- }
+  source = "./modules/collections"
+
+  providers = {
+    aws       = aws
+    sumologic = sumologic
+  }
+
+  aws_account_alias         = var.aws_account_alias
+  sumologic_organization_id = var.sumologic_organization_id
+  sumologic_access_id       = var.sumologic_access_id
+  sumologic_access_key      = var.sumologic_access_key
+  sumologic_environment     = var.sumologic_environment
+  aws_resource_tags = {
+    env    = "prod"
+    author = "sumologic"
+  }
+
+  cloudwatch_metrics_source_url = var.cloudwatch_metrics_source_url
+  cloudwatch_logs_source_url    = var.cloudwatch_logs_source_url
+  cloudtrail_source_url         = var.cloudtrail_source_url
+  elb_log_source_url            = var.elb_log_source_url
+  classic_lb_log_source_url     = var.classic_lb_log_source_url
+
+  # Enable Collection of CloudTrail logs
+  collect_cloudtrail_logs   = true
+  # Collect CloudTrail logs from user-provided S3 bucket
+  cloudtrail_source_details = {
+    source_name     = "CloudTrail Logs us-east-1"
+    source_category = "aws/observability/cloudtrail/logs"
+    description     = "This source is created using Sumo Logic terraform AWS Observability module to collect AWS cloudtrail logs."
+    bucket_details = {
+      create_bucket        = false
+      bucket_name          = "aws-observability-logs"
+      path_expression      = "AWSLogs/*/CloudTrail/*/*"
+      force_destroy_bucket = false
+    }
+    fields = {}
+  }
 }
 ```
 :::note
@@ -632,14 +661,27 @@ Override the **auto_enable_access_logs** parameter (set to None) to automaticall
 
 ```hcl
 module "collection-module" {
- source = "./modules/collections"
- aws_account_alias         = var.aws_account_alias
- sumologic_organization_id = var.sumologic_organization_id
- sumologic_access_id    = var.sumologic_access_id
- sumologic_access_key   = var.sumologic_access_key
- sumologic_environment  = var.sumologic_environment
- auto_enable_access_logs = None
- aws_resource_tags  = var.aws_resource_tags
+  source = "./modules/collections"
+
+  providers = {
+    aws       = aws
+    sumologic = sumologic
+  }
+
+  aws_account_alias         = var.aws_account_alias
+  sumologic_organization_id = var.sumologic_organization_id
+  sumologic_access_id       = var.sumologic_access_id
+  sumologic_access_key      = var.sumologic_access_key
+  sumologic_environment     = var.sumologic_environment
+  aws_resource_tags         = var.aws_resource_tags
+
+  cloudwatch_metrics_source_url = var.cloudwatch_metrics_source_url
+  cloudwatch_logs_source_url    = var.cloudwatch_logs_source_url
+  cloudtrail_source_url         = var.cloudtrail_source_url
+  elb_log_source_url            = var.elb_log_source_url
+  classic_lb_log_source_url     = var.classic_lb_log_source_url
+
+  auto_enable_access_logs = "None"
 }
 ```
 
