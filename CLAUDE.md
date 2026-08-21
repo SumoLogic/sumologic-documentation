@@ -16,6 +16,11 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 - .claude/skills/pr-template-guide/SKILL.md — PR template structure, formatting examples, and best practices.
 - .claude/skills/geo-guide/SKILL.md — Reference guide of GEO principles and patterns loaded as context by `/geo-optimize` and `/seo-audit`. Not an invocable command.
 
+## Doc Reviews
+When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
+
+Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
+
 ## Pull Requests
 **CRITICAL REQUIREMENT**: Before creating ANY PR, MUST read `.github/PULL_REQUEST_TEMPLATE.md` and use EXACT checkbox labels from that file.
 
@@ -47,7 +52,7 @@ Before pushing any commit that changes docs content:
 ### Field Requirements
 - **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
 - **Technical Area**: REQUIRED field. Must be set from allowed values. Use file paths and content keywords to determine the correct area (see `.claude/commands/jira.md` for mappings).
-- **Existing Tech Docs Link** (`customfield_10750`): 
+- **Existing Tech Docs Link** (`customfield_10750`):
   - REQUIRED when transitioning to Published status
   - MUST be populated when creating or updating tickets that touch existing articles
   - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
