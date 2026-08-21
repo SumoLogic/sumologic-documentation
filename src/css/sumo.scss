@@ -95,6 +95,15 @@
   font-size: .85rem;
 }
 
+// Bold left-side nav labels (Guides, API, Release Notes, Support)
+// Descendant selector (not a direct-child one) because the swizzled
+// DropdownNavbarItem wraps its .navbar__item.navbar__link one level
+// deeper inside a .dropdown div — .navbar__link never appears on
+// submenu items (those get .dropdown__link instead), so this stays scoped.
+.navbar__items:not(.navbar__items--right) .navbar__link {
+  font-weight: 700;
+}
+
 @media (min-width: 1440px) {
   .container {
       max-width: 97%;
@@ -234,7 +243,7 @@ html[data-theme='light'] {
 @media (min-width: 997px) {
   .navbar .DocSearch-Button {
     max-width: 100%;
-    width: 340px;
+    width: 280px;
   }
 
   .navbar .DocSearch-Button-Placeholder {
@@ -431,23 +440,248 @@ html[data-theme='dark'] .ask-ai-search-sidepanel-button {
 
 
 
-//Free Trial nav button
-.header-trial:hover {
-  opacity: 0.85;
+// Navbar account and trial buttons
+.navbar__items--right {
+  gap: 0.5rem;
 }
 
-.header-trial::before {
-  content: 'Start free trial';
-  border: .5px solid #0466FF;
-  color: #FFF;
-  border-radius: 3px;
-  padding: 5px 15px;
-  font-size: 13px;
-  font-weight: 600;
+.navbar-translate-item {
+  align-items: center;
+  display: flex;
+  padding: 0;
+}
+
+.navbar__items--right > .navbar__item:not(.header-login):not(.header-trial):not(.navbar-translate-item) {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-translate {
+  position: relative;
+}
+
+.navbar-translate__button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--ifm-navbar-link-color);
+  cursor: pointer;
   display: inline-flex;
-  background: linear-gradient(35deg,#0466FF 0%,#0800FF 100%);
-  margin-left: -10px;
-  margin-right: -10px;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  width: 40px;
+
+  svg {
+    fill: none;
+    height: 24px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.4;
+    width: 24px;
+  }
+
+  &:hover {
+    background-color: rgba(4, 102, 255, 0.08);
+    color: #0466ff;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #06bcee;
+    outline-offset: 2px;
+  }
+}
+
+.navbar-translate__menu {
+  background: var(--ifm-dropdown-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  box-shadow: var(--ifm-global-shadow-lw);
+  padding: 0.75rem;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  z-index: var(--ifm-z-index-dropdown);
+
+  &[hidden] {
+    display: none !important;
+  }
+
+  .goog-te-gadget,
+  .goog-te-combo {
+    font-family: "Lab Grotesque", sans-serif;
+  }
+
+  .goog-te-combo {
+    margin: 0;
+    min-width: 10rem;
+  }
+
+  .goog-te-gadget {
+    color: var(--ifm-font-color-secondary);
+    line-height: 1.4;
+  }
+
+  .goog-logo-link {
+    color: var(--ifm-link-color) !important;
+  }
+}
+
+.header-login,
+.header-trial {
+  align-items: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-family: "Lab Grotesque", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  height: 34px;
+  justify-content: center;
+  line-height: 1;
+  min-height: 34px;
+  padding: 0 13px;
+  transition: none;
+}
+
+.header-login {
+  --ifm-navbar-link-color: #1d2b45;
+  --ifm-navbar-link-hover-color: #1d2b45;
+  background-color: #eef0f2;
+  border: 1px solid #e2e5e8;
+  border-radius: 10px;
+  color: #1d2b45;
+}
+
+.navbar .header-login,
+.navbar .header-login *,
+.navbar .header-login:hover,
+.navbar .header-login:hover *,
+.navbar .header-login:focus,
+.navbar .header-login:focus *,
+.navbar .header-login:active,
+.navbar .header-login:active *,
+.navbar .header-login:visited,
+.navbar .header-login:visited * {
+  color: #1d2b45 !important;
+}
+
+.header-login:hover {
+  background-color: #e4e7ea;
+  border-color: #d9dde1;
+  color: #1d2b45;
+  text-decoration: none;
+}
+
+.header-trial {
+  --ifm-navbar-link-color: #fff;
+  --ifm-navbar-link-hover-color: #fff;
+  background: #0466ff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #fff !important;
+  letter-spacing: 0.01em;
+  margin-left: 0;
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.navbar .header-trial,
+.navbar .header-trial *,
+.navbar .header-trial:hover,
+.navbar .header-trial:hover *,
+.navbar .header-trial:focus,
+.navbar .header-trial:active,
+.navbar .header-trial:visited {
+  color: #fff !important;
+}
+
+[data-theme='light'] .navbar .header-trial,
+[data-theme='light'] .navbar .header-trial * {
+  color: #fff !important;
+}
+
+.header-trial:hover {
+  background: #0055d6;
+  border-color: transparent;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.header-trial:active {
+  background: #0045be;
+  border-color: transparent;
+}
+
+.header-login:focus-visible,
+.header-trial:focus-visible {
+  outline: 2px solid #06bcee;
+  outline-offset: 2px;
+}
+
+[data-theme='dark'] .header-login {
+  --ifm-navbar-link-color: #d5d9e0;
+  --ifm-navbar-link-hover-color: #d5d9e0;
+  background-color: #1a253b;
+  border-color: #2b3952;
+  color: #d5d9e0;
+}
+
+[data-theme='dark'] .navbar .header-login,
+[data-theme='dark'] .navbar .header-login * {
+  color: #d5d9e0 !important;
+}
+
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-navbar-sidebar-width: min(83vw, 380px);
+  }
+
+  .navbar__items--right > .navbar-translate-item,
+  .navbar__items--right > .header-login,
+  .navbar__items--right > .header-trial {
+    display: none;
+  }
+
+  .navbar-sidebar .navbar-translate-item {
+    display: none;
+  }
+
+  .navbar-sidebar .header-login,
+  .navbar-sidebar .header-trial {
+    justify-content: center;
+    margin: 0;
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .navbar-sidebar .menu__list-item:has(> .header-login),
+  .navbar-sidebar .menu__list-item:has(> .header-trial) {
+    display: inline-block;
+    margin-top: 0.5rem;
+    vertical-align: top;
+    width: calc(50% - 0.5rem);
+  }
+
+  .navbar-sidebar .menu__list-item:has(> .header-login) {
+    margin-left: 0.25rem;
+    margin-right: 0.5rem;
+  }
+
+  .navbar-sidebar .menu__list-item:has(> .header-trial) {
+    margin-right: 0.25rem;
+  }
+
+}
+
+[data-theme='dark'] .header-login:hover {
+  background-color: #24324a;
+  border-color: #34445f;
+  color: #d5d9e0;
 }
 
 div[class*="announcementBar_"] {
@@ -466,28 +700,6 @@ div[class*="announcementBar_"] a {
   text-decoration: underline;
 }
 
-.header-trial::after {
-    display: none !important;
-    content: none !important;
-}
-
-[data-theme='dark'] .header-trial::before {
-  background: transparent;
-  border: .5px solid #0466FF;
-  color: #FFF;
-  border-radius: 3px;
-  padding: 5px 15px;
-  font-size: 13px;
-  font-weight: 600;
-  display: inline-flex;
-  margin-left: -10px;
-  margin-right: -10px;
-  background: linear-gradient(35deg, #0466FF 0%, #0800FF 30%, #000099 100%);
-}
-
-[data-theme='light'] .header-trial::before {
-  border: .5px solid #0466FF;
-}
 .markdown {
   h1 {
     font-size: 2rem !important;
