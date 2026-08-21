@@ -157,7 +157,13 @@ yarn build
 npx serve build -l 5000 &
 ```
 
-Then use a headless browser to screenshot each changed page's route and share the images inline in chat. If `npx playwright --version` failed in Step 2, install the browser once before using it:
+Then screenshot each changed page's route using Playwright's own CLI, not a `require('playwright')` script — the `playwright` npm package isn't a dependency of this repo, so requiring it from a standalone script fails with `MODULE_NOT_FOUND` even though the CLI itself resolves fine:
+
+```bash
+npx playwright screenshot --viewport-size=1280,900 --wait-for-timeout=1500 http://localhost:5000/<route> <output-path>.png
+```
+
+Share the resulting images inline in chat. If `npx playwright --version` failed in Step 2, install the browser once before using the CLI above:
 
 ```bash
 npx playwright install chromium
@@ -244,6 +250,8 @@ git add -A
 git commit --amend --no-edit
 ```
 
+If this fails with "doing so would make it empty," the edit exactly reversed the branch's existing diff against `main` — the reviewer's fix brought the content back to identical with `main`, so there's nothing left to review. Don't force an empty commit. Tell the reviewer plainly: with this change applied, the PR no longer differs from `main` — confirm whether they meant something else, or whether the PR should just be closed instead of pushed to.
+
 If it isn't (different author, or reads like a prior reviewer's edit), don't amend — commit normally instead, same as the empty-log case:
 
 ```bash
@@ -282,6 +290,9 @@ git push --force-with-lease=<remote-branch-name> origin HEAD:<remote-branch-name
 | `mcp__github__*` tool calls fail or aren't found | GitHub MCP server isn't connected in this session | Fall back to the manual browser steps noted in Step 5; retry the MCP tool later |
 | `yarn build` fails | Usually a real content/config error introduced by an edit in Step 5 | Read the actual build error, don't assume it's environmental — cloud containers come pre-provisioned, so version mismatches are rare here |
 | Playwright screenshot fails with a missing browser error | Chromium wasn't preinstalled in this particular environment | `npx playwright install chromium`, then retry |
+| `require('playwright')` fails with `MODULE_NOT_FOUND` | The `playwright` npm package isn't a dependency of this repo, even though the CLI resolves | Use `npx playwright screenshot`, not a script that requires the module |
+| Approval fails with "Can not approve your own pull request" | The reviewer's connected GitHub identity is the same as the PR's author | This is a real GitHub restriction, not a bug — someone else needs to review, or the author should just merge normally without a formal review |
+| Amending fails with "doing so would make it empty" | The reviewer's edit exactly reverses the branch's existing diff against `main` | Don't force an empty commit — tell the reviewer the PR no longer differs from `main` and confirm whether they meant something else, or whether to close the PR instead |
 | Push rejected after amend | History was rewritten locally | Use `git push --force-with-lease`, never plain `--force` |
 | Push lands on a branch that doesn't match the PR, or creates a new one | Local branch was a Jira-ticket alias, not the PR's real remote branch name | Look up the real remote branch name via `mcp__github__pull_request_read` and push to that name |
 | Reviewer wants the Tier 2 staging link but doesn't know if `docs-review` is already in use | It's a single shared slot with no built-in "is this free" check | Ask in the team's Slack channel before pushing, or just accept it may get overwritten |
