@@ -622,6 +622,8 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 
 ## Opting out
 
+### Feature Management
+
 An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). This page is available to all paid customers (not free or trial accounts) to any user with the Administrator role or the **Manage Organization Settings** permission.
 
 Mobot shares a single **AI features** toggle with Parse Assist — turning it off disables both together. The SOC Analyst Agent has its own independent **SOC Analyst Agent** toggle and is not affected by the **AI features** toggle.

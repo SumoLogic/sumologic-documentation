@@ -61,6 +61,8 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [How does investigation rate limiting work?](#how-does-investigation-rate-limiting-work) for information about your organization's investigation capacity.
 
+### Feature Management
+
 To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**), available to any user with the Administrator role or the **Manage Organization Settings** permission. The SOC Analyst Agent has its own **SOC Analyst Agent** toggle, independent of the **AI features** toggle that governs Mobot and Parse Assist, and the **MCP Server access** toggle.
 
 Parent and child orgs have the SOC Analyst Agent enabled by default. A parent org administrator can toggle it for the parent org and for its child orgs. Child org administrators cannot toggle it for their own org or for other child orgs.
