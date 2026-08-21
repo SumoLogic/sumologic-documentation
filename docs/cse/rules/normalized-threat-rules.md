@@ -94,8 +94,11 @@ Behavior-based detections are divided among the six more specific types describe
 
 Log sources that remain mapped to `direct` include:
 
-* Symantec Endpoint Protection EDR
-* Microsoft Graph Security API
+* Microsoft Graph Security API catch-all mappings
+* Microsoft 365 Defender
+* Microsoft Azure Advanced Threat Protection (standalone mapping)
+* Exabeam
+* Qualys
 
 Cloud SIEM provides the following normalized direct rule:
 
@@ -103,7 +106,7 @@ Cloud SIEM provides the following normalized direct rule:
 
 ### endpoint
 
-For messages from host-based security agents that detect suspicious or malicious behavior on an endpoint, such as EDR and EPP detections.
+For messages from host-based security agents that detect suspicious or malicious behavior on an endpoint, such as EDR and EPP detections. Out-of-the-box mappings for these sources haven't migrated yet. Until they do, these sources set `threat_ruleType` to `direct`. See [Behavior-based log mapping migration](#behavior-based-log-mapping-migration).
 
 Log sources that issue endpoint-related messages include:
 
@@ -140,6 +143,7 @@ Log sources that issue runtime-related messages include:
 * Sysdig Secure
 * Twistlock (Prisma Cloud Compute)
 * Aqua Security
+* Contrast ADR
 
 Cloud SIEM provides the following normalized runtime rule:
 
@@ -147,7 +151,7 @@ Cloud SIEM provides the following normalized runtime rule:
 
 ### cloud
 
-For messages that indicate a cloud posture, cloud threat, or cloud infrastructure finding.
+For messages that indicate a cloud posture, cloud threat, or cloud infrastructure finding. Out-of-the-box mappings for these sources haven't migrated yet. Until they do, these sources set `threat_ruleType` to `direct`. See [Behavior-based log mapping migration](#behavior-based-log-mapping-migration).
 
 Log sources that issue cloud-related messages include:
 
@@ -170,18 +174,17 @@ For messages that indicate an identity or access anomaly, such as a risky sign-i
 
 Log sources that issue identity-related messages include:
 
-* Azure AD Identity Protection
-* Microsoft ATA
-* Microsoft Graph Identity API
-* MCAS/Defender for Cloud Apps
+* Microsoft Azure AD Identity Protection
+* Microsoft Azure Advanced Threat Protection
+* Microsoft Defender for Cloud Apps (MCAS)
+* Microsoft Graph Identity Protection API
 * Google Workspace Alert Center
 * Okta
-* Slack Enterprise
-* DocuSign Monitor
-* Exabeam
-* Salesforce
+* Slack
 * Box
-* CrowdStrike Identity Protection
+* DocuSign Monitor
+* Salesforce
+* CrowdStrike Falcon Identity Protection
 
 Cloud SIEM provides the following normalized identity rule:
 
@@ -194,16 +197,16 @@ For messages that indicate a network-layer detection, such as an IDS/IPS alert, 
 Log sources that issue network-related messages include:
 
 * Palo Alto Firewall
-* FortiGate
-* Kemp LoadMaster WAF
-* FireEye NX/CMS
-* Vectra AI
+* Fortinet
+* Kemp LoadMaster
+* FireEye CMS
+* Vectra AI and Vectra Cognito
 * Claroty xDome
 * Darktrace
 * AlphaSOC
 * CrowdStrike FDR
-* Bitdefender
-* Trend Micro
+* Bitdefender GravityZone
+* Trend Micro Control Manager
 
 Cloud SIEM provides the following normalized network rule:
 
@@ -216,21 +219,20 @@ For messages that indicate a data protection detection, such as a DLP violation,
 Log sources that issue data protection-related messages include:
 
 * Netskope
-* Varonis
+* Varonis (DatAlert and DatAdvantage)
 * Egnyte DLP
-* Office 365 DLP
+* Microsoft Office 365 (DLP and compliance)
+* Microsoft Graph Security API (Microsoft IPC and Office 365 Security and Compliance)
 * Proofpoint TRAP
 * Mimecast
 * Check Point Avanan
 * Akamai CPC
-* Noname API Security
+* Akamai Noname API Security
 * Thinkst Canary
-* Contrast ADR
-* Qualys
 * IBM Guardium
-* CrowdStrike DataProtection
-* Fortinet
-* Google Workspace
+* CrowdStrike Falcon data protection detections
+* Fortinet DLP
+* Google Workspace Alert Center (DLP)
 
 Cloud SIEM provides the following normalized data protection rule:
 
@@ -246,8 +248,8 @@ The `endpoint`, `runtime`, `cloud`, `identity`, `network`, and `data_protection`
 | `identity` | Completed August 4, 2026 |
 | `network` | Completed August 17, 2026 |
 | `data_protection` | Completed August 17, 2026 |
-| `cloud` | Target: August 27, 2026 |
-| `endpoint` | Target: August 27, 2026 |
+| `cloud` | Target: On Hold |
+| `endpoint` | Target: On Hold |
 
 :::note
 All six rules are available now, but out-of-the-box log mappings are migrating in phases. The remaining dates in the table are targets and may shift. For the actual dates that out-of-the-box mappings migrate, monitor the [Cloud SIEM content release notes](/release-notes-cse/). Until a source's out-of-the-box mappings are migrated, its records keep a `threat_ruleType` of `direct` and continue to fire [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md).
@@ -262,5 +264,6 @@ Types are assigned per log mapping, not per vendor, so a single security product
 Custom content that depends on [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) won't apply to records once their out-of-the-box mappings are migrated. For sources that haven't migrated yet, make these updates before their target date:
 
 * Re-scope any [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions) on `MATCH-S00402` to the new rule IDs for those sources.
+* If there are custom rules based on `MATCH-S00402` or utilizing `threat_ruleType = 'direct'`, migrate expression logic to the new detection category rules as tuning expressions or modify those rules to use the new `threat_ruleType` values. For example, if you have a custom rule that looks for `threat_ruleType = 'direct'` and a specific signature, you can change it to look for `threat_ruleType = 'endpoint'` and the same signature once the source's out-of-the-box mappings are migrated.
 * Update any [custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight) that reference `MATCH-S00402`.
 * Update saved searches, dashboards, or automations that filter on `threat_ruleType = 'direct'`.
