@@ -16,6 +16,23 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 - .claude/skills/pr-template-guide/SKILL.md — PR template structure, formatting examples, and best practices.
 - .claude/skills/geo-guide/SKILL.md — Reference guide of GEO principles and patterns loaded as context by `/geo-optimize` and `/seo-audit`. Not an invocable command.
 
+## Bulk Changes
+For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
+
+**Enter plan mode** (`/plan`) at the start of any bulk change. Present scope, file count, directory breakdown, and before/after samples — then wait for explicit approval before touching any files.
+
+1. **Define scope first, get sign-off.** State the exact pattern, included paths, excluded paths, and known edge cases before touching files.
+2. **Dry-run before writing.** Report total file count, per-directory breakdown, and ~10 before/after samples. Wait for confirmation.
+3. **Apply in batches by directory**, not all at once. Show `git diff --stat` and a few spot-checks after each batch.
+4. **One commit per batch/category** — never bundle multiple directories into one commit. Atomic commits stay revertable.
+5. **Never revert from memory.** If reverting, validate against actual file content — do not trust "the original had X."
+6. **Never commit helper/detection scripts** to the repo. Run them ephemerally.
+
+## Doc Reviews
+When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
+
+Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
+
 ## Pull Requests
 **CRITICAL REQUIREMENT**: Before creating ANY PR, MUST read `.github/PULL_REQUEST_TEMPLATE.md` and use EXACT checkbox labels from that file.
 
@@ -45,7 +62,7 @@ Before pushing any commit that changes docs content:
 ### Field Requirements
 - **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
 - **Technical Area**: REQUIRED field. Must be set from allowed values. Use file paths and content keywords to determine the correct area (see `.claude/commands/jira.md` for mappings).
-- **Existing Tech Docs Link** (`customfield_10750`): 
+- **Existing Tech Docs Link** (`customfield_10750`):
   - REQUIRED when transitioning to Published status
   - MUST be populated when creating or updating tickets that touch existing articles
   - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
