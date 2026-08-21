@@ -36,7 +36,7 @@ When you invoke `/edit-doc <description of the change>`, Claude will:
 - **Never commit or push to `main`.** Always work on a new branch.
 - **Assume zero git literacy.** Narrate what you're doing rather than showing raw command output as the primary communication.
 - **Don't touch anything the SME didn't ask about.** One page, one change, unless they explicitly ask for more.
-- **Never create the PR without a Jira ticket number**, per this repo's PR rules — offer to create one on the spot for a quick fix if the SME doesn't have one (see Step 5).
+- **The Jira ticket requirement (Step 6) is currently paused** — pending a decision on whether it's actually needed for this flow. Don't ask for or offer to create a ticket until it's re-enabled; see Step 6's note for what to do instead.
 - **The live staging preview is a single shared slot across the whole team (`docs-review`), not one per PR.** If the SME opts into it, warn them that pushing to it may overwrite whatever anyone else currently has staged there.
 
 ## Workflow
@@ -128,21 +128,37 @@ Share the screenshot and confirm: "Is this the page you meant?"
 4. Re-run Step 4's screenshot for the changed page and show the SME what actually changed, not just "done."
 5. Ask if this needs another round, or if it's ready to submit. Repeat as needed.
 
-### Step 6: Get a Jira ticket
+### Step 6: Get a Jira ticket — PAUSED, pending a decision on whether it's actually required
+
+<!--
+Disabled 2026-08-21: smoke-testing this command surfaced that Jira/Atlassian
+isn't reachable from every Claude Code account (e.g. a personal account can't
+connect the org's Atlassian connector), and CLAUDE.md's own rule reads as
+ticket creation being optional for quick fixes, not the ticket itself being
+mandatory ("Ask for ticket number - Always ask for a Jira ticket before
+creating a PR. If the user doesn't have one, offer to create it using the
+Atlassian Jira MCP (optional for quick typo fixes)."). Kim is checking with
+her manager on whether a ticket should actually be required here before this
+gets re-enabled. Original step, for reference:
 
 Per this repo's PR rules, every PR needs a ticket number before it's created.
 
 - If the SME already has one (e.g. from a Documentation Support request), use it.
-- If not, offer to create one on the spot — this is explicitly fine for a quick typo/small fix per `CLAUDE.md`. Use the `jira` skill's ticket-creation pattern: sentence-case title, action verb, under 10 words; benefit-driven description under 150 words; set **Technical Area** from the file path/content; populate **Existing Tech Docs Link** with the page's production URL, since this touches an existing article.
+- If not, offer to create one on the spot — this is explicitly fine for a quick typo/small fix per CLAUDE.md. Use the jira skill's ticket-creation pattern: sentence-case title, action verb, under 10 words; benefit-driven description under 150 words; set Technical Area from the file path/content; populate Existing Tech Docs Link with the page's production URL, since this touches an existing article.
 
-Hold onto the ticket key (`DOCS-xxxx`) — it's needed for both the branch name and the PR title.
+Hold onto the ticket key (DOCS-xxxx) — it's needed for both the branch name and the PR title.
+-->
+
+**While this is paused**: skip straight to Step 7. Don't ask the SME for a ticket, don't offer to create one. Use a short, descriptive branch name (e.g. `edit-doc-help-clarify-wording`) instead of a ticket key, and a plain descriptive PR title instead of `TICKET - Description`.
 
 ### Step 7: Ask about a live staging preview
 
 Ask directly: does this need a second set of eyes on a real, clickable preview before merging, or is it obvious enough to just submit?
 
-- **No** → branch name is the plain ticket key: `DOCS-xxxx`
-- **Yes** → branch name is `review/DOCS-xxxx`, which automatically triggers `.github/workflows/workflow_deploy-to-pantheon-review.yml` on push. Remind them this shares one staging slot (`docs-review`) across the whole team, and can overwrite someone else's active review.
+- **No** → use the descriptive branch name from Step 6's paused note above (or `review/<same-descriptive-name>` for the yes case below)
+- **Yes** → prefix that branch name with `review/`, which automatically triggers `.github/workflows/workflow_deploy-to-pantheon-review.yml` on push. Remind them this shares one staging slot (`docs-review`) across the whole team, and can overwrite someone else's active review.
+
+<!-- Once Step 6 is re-enabled, restore the DOCS-xxxx / review/DOCS-xxxx branch-naming logic here. -->
 
 ### Step 8: Commit and push
 
@@ -168,14 +184,21 @@ git push -u origin <branch-name>
 Read `.github/PULL_REQUEST_TEMPLATE.md` fresh — don't reuse a remembered version, its checkbox labels can change. Fill it in and create the PR:
 
 ```
-mcp__github__create_pull_request (owner: "SumoLogic", repo: "sumologic-documentation", title: "DOCS-xxxx - <short description>", head: "<branch-name>", base: "main", body: "<template filled in>")
+mcp__github__create_pull_request (owner: "SumoLogic", repo: "sumologic-documentation", title: "<short description>", head: "<branch-name>", base: "main", body: "<template filled in>")
 ```
 
-- Title format: `TICKET - Description`, per this repo's PR rules.
-- Body: copy the template's exact checkbox labels, pre-check the one that applies (almost always "Minor Changes" for this kind of edit), leave all four listed.
-- Assign the PR to the SME.
+<!-- While Step 6 is paused: title format: "TICKET - Description" per this repo's PR rules. -->
+- Title format: a plain, short description — no ticket prefix while Step 6 is paused.
+- Body: copy the template's exact checkbox labels, pre-check the one that applies (almost always "Minor Changes" for this kind of edit), leave all four listed. Note in the "Ticket (if applicable)" section that none was filed.
 
-If the Jira MCP is available, update the ticket's **GitHub Pull Request** field with the new PR URL. If it isn't authorized in this session, tell the SME to paste the link in themselves — don't block on it.
+`create_pull_request` has no `assignees` parameter, and neither does `update_pull_request` — assign the PR with a separate call instead. Get the SME's actual username first (don't assume it), then assign:
+
+```
+mcp__github__get_me ()
+mcp__github__issue_write (method: "update", owner: "SumoLogic", repo: "sumologic-documentation", issue_number: <PR-number>, assignees: ["<login-from-get_me>"])
+```
+
+If the Jira MCP is available and Step 6 produced a ticket, update its **GitHub Pull Request** field with the new PR URL. If it isn't authorized in this session, tell the SME to paste the link in themselves — don't block on it.
 
 ### Step 10: Wrap up
 
