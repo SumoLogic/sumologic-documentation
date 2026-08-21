@@ -79,16 +79,18 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 
 ## Enable or disable the MCP server
 
+### Feature Management
+
 MCP server access is enabled by default. An administrator can turn it on or off for your entire organization.
 
 1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
-1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 <MSSPfeatureMgmt/>
 
 Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [Enable CIMD](#enable-cimd).
 
-Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
+Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot and Parse Assist, and from the **SOC Analyst Agent** toggle, so you can enable or disable the MCP server independently of those capabilities.
 
 ## Enable CIMD
 

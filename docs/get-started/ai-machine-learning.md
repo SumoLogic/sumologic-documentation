@@ -141,9 +141,15 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 AI features are on by default. We offer two methods for opting out:
 
 * **Via your account team or support**. You can opt out of specific AI features or all AI features by contacting your Sumo Logic account team or opening a support ticket. If you choose to opt out of all AI features, your tenant is automatically exempted from future AI feature releases.
-* **In-product self opt-out**. Beginning August 2026, platform administrators can opt out of all AI features directly within the product settings under **Feature Management** (**Administration** > **Feature Management**). Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot, Parse Assist, and the SOC Analyst Agent share a single **AI features** toggle; the MCP server has its own separate **MCP Server access** toggle on the same page.
+* **In-product self opt-out**. Platform administrators can opt out of all AI features under **Administration** > **Feature Management**. Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot and Parse Assist share a single **AI features** toggle; the SOC Analyst Agent and the MCP server each have their own independent toggle (**SOC Analyst Agent** and **MCP Server access**) on the same page.
 
 <MSSPfeatureMgmt/>
+
+### What is the Feature Management page?
+
+**Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
+
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 ### What happened to Query Agent, Knowledge Agent, and Summary Agent?
 
