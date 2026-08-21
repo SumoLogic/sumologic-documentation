@@ -81,7 +81,7 @@ Primary commands for documentation work. Proactively suggest when context fits â
 **Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
-**Workflow:** `/jira`, `/review`
+**Workflow:** `/jira`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket â†’ suggest `/doc-from-jira`
