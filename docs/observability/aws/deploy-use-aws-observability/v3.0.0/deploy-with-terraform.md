@@ -47,9 +47,7 @@ For this setup, complete the following:
 
 ## AWS Observability Solution
 
-The AWS Observability Solution is organized into the following groups of files and folders:
-
-The Resource Creation file [main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) internally invokes two modules: 
+The AWS Observability Solution is organized into the following groups of files and folders. The Resource Creation file [main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) invokes two modules:
    * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
    * **collection-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo Logic sources as required for the solution.
 
@@ -147,28 +145,12 @@ Starting with v3.0.0, the AWS Observability Terraform module has moved to a new 
     :::note
     See the [variables.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/variables.tf) file and [README](https://github.com/SumoLogic/terraform-sumologic-aws-observability/tree/master#readme) in that folder for configuration information with permissible values for these variables. 
     :::
-1. As part of configuring the AWS Observability Solution, you need to [create fields and FERs](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/resources/) in the Sumo Logic org. To import any fields or FERs that are already present in the Sumo Logic org into the Terraform state, run a script. Navigate to the **terraform-sumologic-aws-observability** folder and do the following:
-   1. Set the following environment variables using the commands below:
-       ```bash
-       export SUMOLOGIC_ENV="YOUR_SUMOLOGIC_DEPLOYMENT"
-       export SUMOLOGIC_ACCESSID="YOUR_SUMOLOGIC_ACCESS_ID"
-       export SUMOLOGIC_ACCESSKEY="YOUR_SUMOLOGIC_ACCESS_KEY"
-       ```
-       Provide your Sumo Logic deployment for the `SUMOLOGIC_ENV` variable. For example: `au`, `ca`, `ch`, `de`, `eu`, `jp`, `fed`, `kr`, `us1`, or `us2`. For more information on Sumo Logic deployments, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). 
-   1. Run fields.sh using this command:
-      ```bash
-      sh fields.sh
-      ```
 1. Configure the AWS region in **providers.tf**:
     ```hcl
     provider "aws" {
       region = "us-east-1"
     }
     ```
-
-:::important
-Going forward, do not modify these fields outside of Terraform.
-:::
 
 ## Step 3: Determine which AWS Account/Regions to Deploy
 
