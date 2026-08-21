@@ -75,6 +75,7 @@ Primary commands for documentation work. Proactively suggest when context fits â
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
 **Workflow:** `/jira`, `/review`
+**Staging:** `/stage-deploy`, `/stage-teardown`, `/review-deploy`, `/review-teardown`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket â†’ suggest `/doc-from-jira`
@@ -85,6 +86,8 @@ Primary commands for documentation work. Proactively suggest when context fits â
 **Key distinctions:**
 - `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
 - `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
+- `/stage-deploy` = push a PR to the `helpdocs` staging site (UX/UI and feature previews) | `/stage-teardown` = free that slot when done
+- `/review-deploy` = push a PR to the `docs-review` site (quick article-level review) | `/review-teardown` = free that slot when done
 
 ## Commands
 
