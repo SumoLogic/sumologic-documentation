@@ -1,6 +1,6 @@
 ---
 id: include-and-exclude-rules
-title: OpenTelemetry Remote Management Include and Exclude Rules
+title: OTel Remote Management Include and Exclude Rules
 sidebar_label: Include and Exclude Rules
 description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry remote management.
 ---
