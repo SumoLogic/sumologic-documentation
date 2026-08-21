@@ -23,6 +23,11 @@ To update the deployed solution:
 1. Run the Terraform commands to update the solution:
     ```bash
     $ terraform init
+    ```
+    ```bash
+    $ terraform plan
+    ```
+    ```bash
     $ terraform apply
     ```
 
@@ -41,7 +46,7 @@ To update an existing stack to the latest version:
 1. Locate the **Main Stack** created using the AWS CloudFormation template and click **Update**. <br/><img src={useBaseUrl('img/observability/Stack_Step1.png')} alt="Stack step 1" style={{border: '1px solid gray'}} width="800" />
 1. Select **Replace Current Template**, paste the following URL in the Amazon S3 URL option, and then select **Next**.
    ```text
-   https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml
+   https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml
    ```
     :::note
     If you would like to download or inspect this or other versions of this template, visit the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/) page.
