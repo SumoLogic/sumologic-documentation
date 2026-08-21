@@ -145,6 +145,12 @@ AI features are on by default. We offer two methods for opting out:
 
 <MSSPfeatureMgmt/>
 
+### What is the Feature Management page?
+
+**Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
+
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
+
 ### What happened to Query Agent, Knowledge Agent, and Summary Agent?
 
 They're still here, but renamed and repositioned as their capabilities have evolved.
