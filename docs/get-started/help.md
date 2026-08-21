@@ -12,7 +12,7 @@ Our in-product left-nav **Help** menu provides quick access to Sumo Logic Supp
 
 You can access docs directly in Sumo Logic under **Help** > **Documentation**. The **Help** is context-sensitive. When you are on a page in the web UI, the help system will open to the appropriate topic when you select **Help** > **Documentation**.
 
-Docs cover all product features and should be your first resource when you have any questions. For questions or issues concerning Sumo Logic Help, [contact our documentation team](mailto:documentation@sumologic.com).
+Docs cover all Sumo Logic product features and should be your first resource when you have any questions. For questions or issues concerning Sumo Logic Help, [contact our documentation team](mailto:documentation@sumologic.com).
 
 ## Support
 
