@@ -79,6 +79,8 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 
 ## Enable or disable the MCP server
 
+### Feature Management
+
 MCP server access is enabled by default. An administrator can turn it on or off for your entire organization.
 
 1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
