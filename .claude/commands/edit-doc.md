@@ -87,14 +87,14 @@ npx playwright --version 2>&1 || echo "playwright CLI not found — will fall ba
 
 ### Step 3: Locate the page
 
-The SME may give you a description ("the Help page"), a live URL (`https://www.sumologic.com/help/docs/get-started/help`), or a Jira ticket that already describes the request.
+The SME may give you a description ("the Mobot page"), a live URL (`https://www.sumologic.com/help/search/mobot`), or a Jira ticket that already describes the request.
 
 - **From a description**: search `docs/` for a matching title or filename:
   ```bash
   grep -ril "<keyword>" docs/ --include="*.md" --include="*.mdx"
   ```
   If more than one file plausibly matches, show the SME the candidates (title + path) and ask which one.
-- **From a live URL**: strip the domain and `/help` prefix to get the route (e.g. `/docs/get-started/help`), then check whether any file's frontmatter `slug` matches that route exactly. Most pages don't set `slug`, so absent a match, the route usually maps directly to `docs/<same path>.md` or `.mdx`.
+- **From a live URL**: strip the domain and `/help` prefix to get the route (e.g. `/search/mobot`), then check whether any file's frontmatter `slug` matches that route exactly — don't assume the route mirrors the file path. `docs/search/mobot/index.md` is a real example of why: its `slug: /search/mobot` frontmatter overrides what the path alone would suggest (`/docs/search/mobot`), dropping the `/docs` segment entirely. Most pages don't set `slug`, so absent a match, the route usually does map directly to `docs/<same path>.md` or `.mdx` — but check first rather than assume.
 - **From a Jira ticket key** (e.g. `DOCS-1234`): fetch the ticket for its description and any **Existing Tech Docs Link** field, then resolve that link the same way as the live-URL case above.
 
 If nothing matches confidently, don't guess — ask the SME to paste the exact page URL or file path.
