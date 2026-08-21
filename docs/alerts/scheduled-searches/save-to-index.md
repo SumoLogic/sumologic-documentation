@@ -33,7 +33,7 @@ In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views)�
 * When you use Save to Index, metadata fields from the Collector (for example, _collector) will be dropped. 
 * Role filters may not work. If the filter depends on any field that doesn't exist in the Index (or has been altered like _collector), then it won't work.
 * No more than 512 results can be saved each time the Scheduled Search completes.
-* For aggregate queries (for example, `... | timeslice 1m | count by batch, parsedfield`) saved via Save to Index, the Message (`_raw`) field will now be empty. No data is lost and all values remain fully available in their named fields (`_count`, `batch`, `parsedfield`, etc.). If your queries currently parse or search against the `_raw`/Message field for data saved through Save to Index, update them to reference the named fields instead.
+* For [aggregate queries](/docs/search/search-query-language/group-aggregate-operators) (for example, `... | timeslice 1m | count by batch, parsedfield`) saved via Save to Index, the Message (`_raw`) field will now be empty. No data is lost and all values remain fully available in their named fields (`_count`, `batch`, `parsedfield`, etc.). If your queries currently parse or search against the `_raw`/Message field for data saved through Save to Index, update them to reference the named fields instead.
 
 ## Save the results of a scheduled search as an Index
 
