@@ -81,7 +81,7 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - User is about to create a PR → suggest `/seo-audit` first
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
-- User (especially a PM, engineer, or other stakeholder without a local dev environment) wants to review or preview an existing PR → suggest `/docs-pr-reviewer`
+- An SME/stakeholder without a local dev environment wants to apply their own edit to an existing PR (not just view or approve it — those happen directly on the PR's staging link and GitHub page) → suggest `/docs-pr-reviewer`
 
 **Key distinctions:**
 - `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
