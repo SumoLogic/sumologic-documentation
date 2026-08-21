@@ -24,9 +24,11 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 If you've previously set up our AWS Observability Solution with CloudFormation and want to move to Terraform, we recommend following these instructions (click to expand).
 </summary>
 
-1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
-1. Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
-1. By default, the **AWS Observability Apps** folder will be available in the personal library and will be shared with the Sumo Logic org of the user that the Sumo Logic access keys belong to.
+1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then onboard the account-region combination using Terraform with the same aws_account_alias to ensure the Sumo Logic collector retains a consistent naming convention and the Explorer hierarchy remains aligned.
+1. Once you confirm that the solution has been deployed successfully, verify that the apps are installed, the **Installed Apps** folder is available in the Library, and the apps are shared with the user's Sumo Logic organization.
+1. Ensure that all configured sources are successfully ingesting logs.
+1. You can then repeat the process for additional AWS accounts and regions.
+
 </details>
 
 :::
@@ -47,7 +49,7 @@ For this setup, complete the following:
 
 The AWS Observability Solution is organized into the following groups of files and folders:
 
-* The Resource Creation file [main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) internally invokes two modules: 
+The Resource Creation file [main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) internally invokes two modules: 
    * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
    * **collection-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo Logic sources as required for the solution.
 
@@ -64,7 +66,7 @@ System files:
   
 ## Step 1: Set up the Terraform environment
 
-Before you run the Terraform script, perform the following actions on a server machine of your choice:
+Before you run the Terraform, perform the following actions on a server machine of your choice:
 
 1. Install [Terraform](https://www.terraform.io/) version [1.6.0](https://releases.hashicorp.com/terraform/) or later. To check the installed Terraform version, run the following command:
     ```bash
@@ -84,7 +86,7 @@ Before you run the Terraform script, perform the following actions on a server m
     pip install sumologic-sdk
     ```
 
-## Step 2: Configure the Terraform script
+## Step 2: Configure the Terraform
 
 Choose one of the following installation methods:
 
@@ -184,7 +186,7 @@ To deploy the AWS Observability Solution for one AWS account and region combinat
 
 #### Configure providers in providers.tf
 
-The Terraform script uses "us-east-1" and the active AWS CLI profile by default. If you want to use a different region or another AWS CLI profile, update the `provider "aws"` block. Provide an `alias` that Terraform uses to identify this account-region combination.
+The Terraform uses "us-east-1" and the active AWS CLI profile by default. If you want to use a different region or another AWS CLI profile, update the `provider "aws"` block. Provide an `alias` that Terraform uses to identify this account-region combination.
 
 **Example:** Configuration for the us-east-2 region using the production AWS account profile.
 
@@ -547,7 +549,7 @@ By default, all other parameters are set up to automatically collect logs, metri
 
 ## Step 6: Deploy the AWS Observability Solution
 
-Deploy the AWS Observability Solution using the Sumo Logic Terraform Script.
+Deploy the AWS Observability Solution using the Sumo Logic Terraform.
 
 Navigate to the directory **terraform-sumologic-aws-observability** and execute the following commands.
 
@@ -1666,7 +1668,7 @@ on.terraform/modules/sumo-module.overview_app.overview_module/sumologic/sumologi
 67: config = file(each.value.content_json)
 ```
 #### Solution
-Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom terraform script accordingly.
+Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom Terraform accordingly.
 
 ### Error creating Serverless Application Repository CloudFormation Stack
 
