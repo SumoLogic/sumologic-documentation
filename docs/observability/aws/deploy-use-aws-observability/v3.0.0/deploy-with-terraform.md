@@ -538,17 +538,8 @@ To perform overrides, see [Override collection parameters](#override-source-para
 
 Deploy the AWS Observability Solution using the Sumo Logic Terraform.
 
-Navigate to the directory **terraform-sumologic-aws-observability** and execute the following commands.
-
-:::note
-Before you run these commands, make sure you have configured your AWS profiles on your system as mentioned in the [Prerequisites](#prerequisites).
-:::
-
-```terminal
-terraform validate
-terraform plan
-terraform apply
-```
+* ##### Option A: Install as a Terraform module (from registry) - [View registry installation instructions](/docs/observability/aws/deploy-use-aws-observability/migration/terraform/#option-a-install-as-a-terraform-module-from-registry)
+* ##### Option B: Install from the Repository - [View repository installation instructions](/docs/observability/aws/deploy-use-aws-observability/migration/terraform/#option-b-install-from-the-repository)
 
 ## Uninstalling the Solution
 

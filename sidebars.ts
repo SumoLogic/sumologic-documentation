@@ -2047,6 +2047,7 @@ module.exports = {
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/automatic-installation-script',
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/update-aws-observability-stack-cloudformation',
+                        'observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources',
                       ],
                     },
                     {
@@ -2083,6 +2084,7 @@ module.exports = {
                         'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
                         'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/automatic-installation-script',
                         'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
+                        'observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources',
                       ],
                     },
                     'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-terraform',
@@ -2124,8 +2126,6 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'observability/aws/other-configurations-tools/index'},
               items: [
-                'observability/aws/other-configurations-tools/add-new-aws-service',
-                'observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources',
                 'observability/aws/other-configurations-tools/integrate-control-tower-accounts',
               ],
             },

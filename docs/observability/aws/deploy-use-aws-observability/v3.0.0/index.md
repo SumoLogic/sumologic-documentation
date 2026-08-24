@@ -87,7 +87,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/changelog/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>AWS Observability Terraform script and CloudFormation Changelog</h4></a>
+  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/changelog/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>AWS Observability Terraform Solution and CloudFormation Changelog</h4></a>
   <p>This section provides details on the available versions of the AWS Observability CloudFormation template.</p>
   </div>
 </div>
