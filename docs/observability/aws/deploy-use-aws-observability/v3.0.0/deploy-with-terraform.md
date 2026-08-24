@@ -552,7 +552,7 @@ terraform apply
 
 ## Uninstalling the Solution
 
-To uninstall the AWS Observability Solution deployed using Terraform, navigate to the directory **terraform-sumologic-aws-observability** and execute the command:
+To uninstall the AWS Observability Solution deployed using Terraform, navigate to the local working directory and execute the command:
 
 ```terminal
 terraform destroy
@@ -596,12 +596,8 @@ module "collection-module" {
   sumologic_access_key      = var.sumologic_access_key
   sumologic_environment     = var.sumologic_environment
   aws_resource_tags         = var.aws_resource_tags
+  aws_cli_profile           = "default"
 
-  cloudwatch_metrics_source_url = var.cloudwatch_metrics_source_url
-  cloudwatch_logs_source_url    = var.cloudwatch_logs_source_url
-  cloudtrail_source_url         = var.cloudtrail_source_url
-  elb_log_source_url            = var.elb_log_source_url
-  classic_lb_log_source_url     = var.classic_lb_log_source_url
 }
 ```
 
@@ -627,12 +623,6 @@ module "collection-module" {
     env    = "prod"
     author = "sumologic"
   }
-
-  cloudwatch_metrics_source_url = var.cloudwatch_metrics_source_url
-  cloudwatch_logs_source_url    = var.cloudwatch_logs_source_url
-  cloudtrail_source_url         = var.cloudtrail_source_url
-  elb_log_source_url            = var.elb_log_source_url
-  classic_lb_log_source_url     = var.classic_lb_log_source_url
 
   # Enable Collection of CloudTrail logs
   collect_cloudtrail_logs   = true
@@ -674,12 +664,6 @@ module "collection-module" {
   sumologic_access_key      = var.sumologic_access_key
   sumologic_environment     = var.sumologic_environment
   aws_resource_tags         = var.aws_resource_tags
-
-  cloudwatch_metrics_source_url = var.cloudwatch_metrics_source_url
-  cloudwatch_logs_source_url    = var.cloudwatch_logs_source_url
-  cloudtrail_source_url         = var.cloudtrail_source_url
-  elb_log_source_url            = var.elb_log_source_url
-  classic_lb_log_source_url     = var.classic_lb_log_source_url
 
   auto_enable_access_logs = "None"
 }

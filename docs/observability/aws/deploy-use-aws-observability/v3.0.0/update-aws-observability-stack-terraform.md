@@ -5,13 +5,13 @@ sidebar_label: Update Observability Stack
 description: Learn how to update the AWS Observability stack using Terraform.
 ---
 
-The AWS Observability Terraform scripts reside in GitHub and updates will be posted on the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).
+The Sumo Logic AWS Observability Terraform Solution reside in GitHub and updates will be posted on the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).
 
 To update the deployed solution, choose one of the following methods depending on how you originally installed the solution.
 
 ## Option A: Update as a Terraform module (from registry)
 
-If you installed the solution using the Terraform registry module, update the module version in your `main.tf`:
+If you installed the solution using the Terraform registry module, update the latest module version in your `main.tf` from registry page:
 
 **`main.tf`**
 
@@ -75,5 +75,13 @@ terraform apply
 After the update completes:
 
 1. Run `terraform plan` and confirm there are no unexpected pending changes.
+    ```bash
+    terraform plan
+    ```
+
+    Output
+    ```text
+    Plan: 0 to add, 15 to change, 0 to destroy.
+    ```
 1. Go to **Manage Data > Collection > Collection** in Sumo Logic and confirm all sources show a recent **Last Message Received** timestamp.
 1. Go to **App Catalog > Installed Apps** and confirm all AWS Observability apps reflect the updated version.

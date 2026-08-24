@@ -11,10 +11,6 @@ Use a new version or the same version of the AWS CloudFormation template to upda
 
 Before starting with the stack update, make sure no resource has been deleted manually as it can lead to failures in the stack update procedure.
 
-:::note
-Updating the apps will create a backup of the old apps in a folder named **"BackUpOldApps''** in the **"Sumo Logic AWS Observability Apps"** folder. Delete the backed up apps after moving any customizations in old dashboards to the new dashboard folder. **Keeping multiple copies of dashboards will result in multiple dashboards in the explore dropdown hierarchy.**
-:::
-
 To update an existing stack to the latest version:
 
 1. Locate the **Main Stack** created using the AWS CloudFormation template and click **Update**. <br/><img src={useBaseUrl('img/observability/Stack_Step1.png')} alt="Stack step 1" style={{border: '1px solid gray'}} width="800" />
