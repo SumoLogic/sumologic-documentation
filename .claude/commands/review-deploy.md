@@ -28,12 +28,12 @@ For staging larger UX/UI or site-wide feature work, use `/stage-deploy` instead 
 
 ## Workflow
 
-### Step 1: Resolve input to PR branch
+### Step 1: Resolve input to PR number
 
-- If input is numeric: run `gh pr view {number} --json headRefName --jq '.headRefName'` to get the branch name. Validate the PR exists and is open.
-- If input is a branch name: use it directly. Look up the PR number with `gh pr list --head {branch} --json number --jq '.[0].number'`.
+- If input is numeric: validate the PR exists and is open with `gh pr view {number} --json state --jq '.state'`.
+- If input is a branch name: look up the PR number with `gh pr list --head {branch} --json number --jq '.[0].number'`.
 
-You need both the branch name (for the push) and the PR number (for the review branch name and PR comment).
+You need the PR number for the review branch name, the PR comment, and to fetch the PR's head commit in Step 4. The branch name itself isn't needed for the push — see Step 4 for why.
 
 ### Step 2: Check for conflicts
 
@@ -41,7 +41,9 @@ You need both the branch name (for the push) and the PR number (for the review b
 git ls-remote --heads origin 'refs/heads/review/pr-*'
 ```
 
-If one or more review branches exist, identify who owns each one (`gh pr view {n}` for every match) and list all of them for the user:
+Exclude `review/pr-{number}` for the PR you're currently deploying from the results — redeploying the same PR after new commits isn't a conflict with itself, and shouldn't trigger the overwrite comment below on the PR's own thread.
+
+If one or more *other* review branches remain, identify who owns each one (`gh pr view {n}` for every match) and list all of them for the user:
 
 ```
 ⚠️ Review environment conflict detected!
@@ -69,24 +71,26 @@ This comment is separate from the Step 6 comment, which goes on the PR you're de
 ### Step 3: Detect article URL from PR files
 
 ```bash
-gh pr view {pr-number} --json files --jq '.files[].path'
+gh pr view {pr-number} --json files --jq '.files[] | select(.changeType != "REMOVED") | .path'
 ```
 
-Convert changed doc paths to preview URLs:
+Excluding removed files matters: a deleted doc's path won't exist on the deployed branch, and would otherwise turn into a preview link that 404s.
+
+Convert the remaining changed doc paths to preview URLs:
 - `docs/integrations/jira.md` → `/docs/integrations/jira/`
 
 - Single doc changed: include direct article preview link.
 - Multiple docs changed: link to the first `.md` file under `docs/`, or omit.
-- No doc files changed: omit article preview link entirely.
+- No doc files changed (or only removed ones): omit article preview link entirely.
 
 ### Step 4: Push review branch
 
 ```bash
-git fetch origin {pr-branch}
-git push --force origin origin/{pr-branch}:refs/heads/review/pr-{number}
+git fetch origin "refs/pull/{number}/head"
+git push --force origin FETCH_HEAD:refs/heads/review/pr-{number}
 ```
 
-This pushes directly from the remote-tracking ref without touching local branch state. `--force` is required: the target ref already exists from a previous deploy, and the PR branch may have been amended, rebased, or force-pushed since then (routine when addressing review feedback), so the update isn't guaranteed to be a fast-forward.
+Fetching `refs/pull/{number}/head` instead of a branch name works for every PR, including fork-based contributions — this is an open-source repo, and a fork's branch lives on the fork's remote, not `origin`, so `git fetch origin {pr-branch}` fails with "couldn't find remote ref" for those PRs. GitHub maintains `refs/pull/{number}/head` on `origin` automatically for every open PR regardless of where its branch actually lives. `--force` is required on the push: the target ref already exists from a previous deploy, and the PR branch may have been amended, rebased, or force-pushed since then (routine when addressing review feedback), so the update isn't guaranteed to be a fast-forward.
 
 ### Step 5: Workflow triggers automatically
 
