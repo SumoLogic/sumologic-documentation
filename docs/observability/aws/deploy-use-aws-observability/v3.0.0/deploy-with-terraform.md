@@ -48,7 +48,7 @@ For this setup, complete the following:
 ## AWS Observability Solution
 
 The AWS Observability Solution is organized into the following groups of files and folders. The Resource Creation file [main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) invokes two modules:
-   * **app-module**: This module provides a mechanism to set up all the AWS Observability apps and associated content like Fields, Field Extraction Rules, Metric Rules, apps, monitors and the explore hierarchy in your Sumo Logic account.
+   * **app-module**: This module installs all the AWS Observability apps into the **Installed Apps** catalog, sets up the Explorer hierarchy, and deploys monitors, Field Extraction Rules (FER), and fields in your Sumo Logic account.
    * **collection-module**: This module sets up the hosted collector, sources (for logs and metrics) and associated tags to Sumo Logic sources as required for the solution.
 
 :::note
@@ -509,7 +509,7 @@ output "Collection" {
 
 ## Step 4: Configure the app module in main.tf
 
-The app module installs AWS Observability apps, monitors, Field Extraction Rules, Fields, and the Explorer hierarchy in your Sumo Logic account. It should be configured once per Sumo Logic organization.
+The app module installs AWS Observability apps into the **Installed Apps** catalog and sets up the Explorer hierarchy in your Sumo Logic account. It also deploys monitors, Field Extraction Rules (FER), and fields required for AWS Observability. It should be configured once per Sumo Logic organization.
 
 :::note
 Do not change the **module "app-module"** section unless you want to override app parameters. See [Override app content parameters](#override-app-content-parameters) for available overrides.
@@ -1419,113 +1419,74 @@ wait_for_seconds = 180
 
 ### Override app content parameters
 
-As needed, override the app content parameters to configure how the AWS Observability app dashboards and alerts are installed in your Sumo Logic account. Enter the overrides in the `terraform-sumologic-aws-observability/main.tf` file. 
+In v3.0.0, AWS Observability apps are installed directly into the **Installed Apps** catalog in Sumo Logic using the `sumologic_app` Terraform resource. 
+:::note
+In v3.0.0, All AWSO apps are now part of Next-Gen Apps in Sumo Logic. As a result, the Personal, Admin Recommended, and Monitors folders have been removed, and per-app monitor enable/disable configuration is no longer available.
+:::
+The following apps are installed by default:
 
-The following is an example of the default value and override for app parameters:
+* Amazon Overview
+* Amazon ECS (Without Container Insights and Traces)
+* Amazon ECS (With Container Insights and Traces)
+* Amazon ElastiCache
+* Amazon RDS
+* Amazon SNS
+* Amazon SQS
+* AWS API Gateway
+* AWS Application Load Balancer
+* AWS Classic Load Balancer
+* AWS DynamoDB
+* AWS EC2
+* AWS Lambda
+* AWS Network Load Balancer
+* Host Metrics (EC2)
 
 **Default Example:**
 
-Parameters will take default values as defined under the default column.
-
-This installs the following:
-
-* Apps: AWS EC2, Host Metrics EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, AWS NLB, Amazon SNS, and Amazon SQS.
-  * Default location: "AWS Observability Apps" Personal folder in Sumo Logic
-* Alerts for the AWS Observability Solution
-  * Default location: "AWS Observability Monitors" folder of the Monitors folder
-
 ```hcl
 module "app-module" {
- source                         = "./modules/apps"
- sumologic_access_id            = var.sumologic_access_id
- sumologic_access_key           = var.sumologic_access_key
- sumologic_environment          = var.sumologic_environment
- sumologic_environment_base_url = var.sumologic_environment_base_url
- json_file_directory_path = dirname(path.cwd)
- folder_installation_location = var.sumologic_folder_installation_location
- folder_share_with_org    = var.sumologic_folder_share_with_org
- sumologic_organization_id = var.sumologic_organization_id
+  source                         = "./modules/apps"
+  sumologic_access_id            = var.sumologic_access_id
+  sumologic_access_key           = var.sumologic_access_key
+  sumologic_environment          = var.sumologic_environment
+  sumologic_environment_base_url = var.sumologic_environment_base_url
 }
 ```
 
-**Override Example:**
+**Override Example: Install additional apps**
 
-For this example, overriding the name of App folder, name of Monitor folder, enabling alerts for ALB, EC2 and send notification as email.
+Use `installation_apps_list` to install apps beyond the defaults. Each entry requires a `uuid`, `name`, `version` (`"latest"` or semantic version such as `"1.0.0"`), and an optional `parameters` map.
 
-```hcl
-module "app-module" {
- source                         = "./modules/apps"
- sumologic_access_id            = var.sumologic_access_id
- sumologic_access_key           = var.sumologic_access_key
- sumologic_environment          = var.sumologic_environment
- sumologic_environment_base_url = var.sumologic_environment_base_url
- json_file_directory_path = dirname(path.cwd)
-
- folder_installation_location = var.sumologic_folder_installation_location
- folder_share_with_org    = var.sumologic_folder_share_with_org
- sumologic_organization_id = var.sumologic_organization_id
- apps_folder_name         = "AWS Observability Apps myCustom"
- monitors_folder_name     = "AWS Observability Monitors myCustom"
- apigateway_monitors_disabled  = false
- ec2metrics_monitors_disabled  = false
- email_notifications = [
-   {
-     connection_type       = "Email",
-     recipients            = ["abc@example.com"],
-     subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-     time_zone             = "PST",
-     message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-     run_for_trigger_types = ["Critical", "ResolvedCritical"]
-   }
- ]
-}
-```
-
-**Override Example:**
-
-For this example, overriding the default folder installation location to `"Admin Recommended Folder"` and disabling folder sharing.
+For a full list of available apps and their UUIDs, see [local.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/modules/apps/local.tf).
 
 ```hcl
 module "app-module" {
- source                         = "./modules/apps"
- sumologic_access_id            = var.sumologic_access_id
- sumologic_access_key           = var.sumologic_access_key
- sumologic_environment          = var.sumologic_environment
- sumologic_environment_base_url = var.sumologic_environment_base_url
- JSON_file_directory_path = dirname(path.cwd)
- folder_installation_location = "Admin Recommended Folder"
- folder_share_with_org    = false
- sumologic_organization_id = var.sumologic_organization_id
+  source                         = "./modules/apps"
+  sumologic_access_id            = var.sumologic_access_id
+  sumologic_access_key           = var.sumologic_access_key
+  sumologic_environment          = var.sumologic_environment
+  sumologic_environment_base_url = var.sumologic_environment_base_url
+
+  installation_apps_list = [
+    {
+      uuid       = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      name       = "My Custom App"
+      version    = "latest"
+      parameters = {}
+    }
+  ]
 }
 ```
 
-The following table provides a list of all source parameters and their default values. See the [terraform-sumologic-aws-observability/modules/apps/variables.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/modules/apps/variables.tf) file for complete code.
+The following table lists all available app module parameters. See the [terraform-sumologic-aws-observability/modules/apps/variables.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/modules/apps/variables.tf) file for complete code.
 
 | Parameter | Description | Default |
 |:--|:--|:--|
-| `sumologic_access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.	                                                                                                                           | Ignore if already configured in **main.auto.tfvars** file. |
-| `sumologic_access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. Ignore this setting if you entered it in Source Parameters.                                                                                                                           | Ignore if already configured in main.auto.tfvars file. |
-| `sumologic_environment` | Enter au, ca, ch, de, esc, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for information. Ignore this setting if you entered it in Source Parameters.  | Ignore if already configured in main.auto.tfvars file. |
-| `sumologic_organization_id` | You can find your org on the Preferences page in the Sumo Logic UI. For more information, see the Preferences Page topic. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources." See Preferences Page.                                                    | Ignore if already configured in main.auto.tfvars file. |
-| `apps_folder_name` | Provide a folder name where all the apps will be installed under your Personal folder. Default value is "AWS Observability Apps".                                                                                                                                                  | `"AWS Observability Apps"`  |
-| `monitors_folder_name` | Provide a folder name where all the monitors will be installed under the Personal folder of the user whose access keys you have entered. Default value will be "AWS Observability Monitors".                                                                                       | `"AWS Observability Monitors"` |
-| `folder_installation_location` | Indicates where to install the app folder. Enter "Personal Folder" for installing in the "Personal" folder and "Admin Recommended Folder" for installing in "Admin Recommended" folder.                                                                                            | `"Personal Folder"` |
-| `folder_share_with_org` | Indicates if "AWS Observability App" folder should be shared with the entire organization. true to enable sharing; false to disable sharing.                                                                                                                                       | `true` |
-| `alb_monitors_disabled` | Indicates if the ALB Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
-| `apigateway_monitors_disabled` | Indicates if the API Gateway Apps monitors should be enabled or disabled.                                                                                                                                                                                                          | `true` |
-| `sns_monitors_disabled` | Indicates if the SNS Apps monitors should be enabled                                                                                                                                                                                                                               | `true` |
-| `sqs_monitors_disabled` | Indicates if the SQS Apps monitors should be enabled                                                                                                                                                                                                                               | `true` |
-| `dynamodb_monitors_disabled` | Indicates if the DynamoDB Apps monitors should be enabled or disabled.                                                                                                                                                                                                             | `true` |
-| `ec2metrics_monitors_disabled` | Indicates if the EC2 Metrics Apps monitors should be enabled or disabled.                                                                                                                                                                                                          | `true` |
-| `ecs_monitors_disabled` | Indicates if the ECS Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
-| `elasticache_monitors_disabled` | Indicates if the ElastiCache Apps monitors should be enabled or disabled.                                                                                                                                                                                                          | `true` |
-| `lambda_monitors_disabled` | Indicates if the Lambda Apps monitors should be enabled or disabled.                                                                                                                                                                                                               | `true` |
-| `nlb_monitors_disabled` | Indicates if the NLB Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
-| `rds_monitors_disabled` | Indicates if the RDS Apps monitors should be enabled or disabled.                                                                                                                                                                                                                  | `true` |
-| `group_notifications` | Indicates if individual items that meet trigger conditions should be grouped. Defaults to `true`.	                                                                                                                                                                                 | `true` |
-| `email_notifications` | Email Notifications to be sent by the alert. | `[ ]`                                                                                                                                                                                                                                                                              |
-| `connection_notifications` | Connection Notifications to be sent by the alert.                                                                                                                                                                                                                                  | `[ ]` |
-| `parent_folder_id` | The folder ID is automatically generated. Do not enter a value for this parameter. This is the folder ID to install the apps into. A folder using the provided name will be added in "apps_folder_name". If the folder ID is empty, apps will be installed in the Personal folder. | Ignore this parameter. |
+| `sumologic_access_id` | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for information. | Configured in **main.auto.tfvars**. |
+| `sumologic_access_key` | Sumo Logic Access Key. See [Access Keys](/docs/manage/security/access-keys) for information. | Configured in **main.auto.tfvars**. |
+| `sumologic_environment` | Sumo Logic deployment. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for valid values. | Configured in **main.auto.tfvars**. |
+| `sumologic_environment_base_url` | Base URL for custom Sumo Logic environments (for example, `https://api.ch.sumologic.com/api/`). If provided, takes precedence over `sumologic_environment`. Leave empty for standard deployments. | `null` |
+| `installation_apps_list` | List of additional Sumo Logic apps to install beyond the defaults. Each entry requires `uuid`, `name`, `version` (`"latest"` or `"x.y.z"`), and optional `parameters` map. | `[]` |
 
 ## Troubleshooting
 
@@ -1656,7 +1617,7 @@ on .terraform/modules/account.sumo_observability/provider.tf line 5, in provider
 admin_mode = var.sumologic_folder_installation_location == "Personal folder" ? false:true
 ```
 #### Solution
-Sumologic provider [version 2.10.0](https://github.com/SumoLogic/terraform-provider-sumologic/blob/master/CHANGELOG.md#2100-september-22-2021) onwards supports `admin_mode`. Refer to the [`admin_mode` module](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs#authentication).
+Sumologic provider [version 3.3.0](https://github.com/SumoLogic/terraform-provider-sumologic/blob/master/CHANGELOG.md#330-aug-11-2026) onwards supports `admin_mode`. Refer to the [`admin_mode` module](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs#authentication).
 
 ### Invalid function argument
 #### Error Message
@@ -1668,72 +1629,3 @@ on.terraform/modules/sumo-module.overview_app.overview_module/sumologic/sumologi
 ```
 #### Solution
 Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom Terraform accordingly.
-
-### Error creating Serverless Application Repository CloudFormation Stack
-
-#### Error Message
-
-While upgrading AWS Observability Solution (Terraform), upgrade failed with the following error.
-
-`Error: error creating Serverless Application Repository CloudFormation Stack (arn:aws:cloudformation:us-east-1:XXXXXXXXX:stack/serverlessrepo-serverless-hello-world-test/7a6ef230-35a6-11zb-98ff-0ab512dce13f) change set: unexpected state 'FAILED', wanted target 'CREATE_COMPLETE'. last error: %!s()`
-
-Resource `aws_serverlessapplicationrepository_cloudformation_stack` is not able to store values of `var.auto_enable_access_logs` (as specified in our code). On each subsequent terraform apply resource detects it as change and creates a new stack-set. When the AWS API is called with a new stack-set it fails abruptly which causes the whole solution to fail while upgrading.
-
-#### Solution
-
-:::info
-For time being, consider the procedure listed below to rectify the error. This error has already [reported](https://github.com/hashicorp/terraform-provider-aws/issues/23874) to AWS.
-:::
-
-Navigate to the location where you have installed the AWS Observability Terraform solution and replace the existing code with the new code given below.
-
-1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
-2. Replace the code with the code give below.
-  ```hcl
-  resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
-    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
-
-    name             = "Auto-Enable-Access-Logs-${var.auto_enable_access_logs_options.auto_enable_logging}-${random_string.aws_random.id}"
-    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
-    semantic_version = var.app_semantic_version
-    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
-    parameters = {
-      BucketName                = local.bucket_name
-      BucketPrefix              = var.auto_enable_access_logs_options.bucket_prefix
-      AutoEnableLogging         = var.auto_enable_access_logs_options.auto_enable_logging
-      AutoEnableResourceOptions = var.auto_enable_access_logs
-      FilterExpression          = var.auto_enable_access_logs_options.filter
-      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
-    }
-    lifecycle {
-      ignore_changes = [
-        parameters,tags
-      ]
-    }
-  }
-  ```
-3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
-4. Replace the code with the code provided below.
-  ```hcl
-  resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
-    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
-
-    name             = "Auto-Enable-Access-Logs-Elb-${random_string.aws_random.id}"
-    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
-    semantic_version = "1.0.2"
-    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
-    parameters = {
-      BucketName                = local.bucket_name
-      BucketPrefix              = "elasticloadbalancing"
-      AutoEnableLogging         = "ALB"
-      AutoEnableResourceOptions = var.auto_enable_access_logs
-      FilterExpression          = var.auto_enable_access_logs_options.filter
-      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
-    }
-    lifecycle {
-      ignore_changes = [
-        parameters,tags
-      ]
-    }
-  }
-```
