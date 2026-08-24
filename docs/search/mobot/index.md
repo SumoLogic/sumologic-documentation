@@ -276,17 +276,26 @@ Or, from the query section, click **Open in Log Search**.<br/><img src={useBaseU
 * The [search audit index](/docs/manage/security/audit-indexes/search-audit-index) needs to be enabled for your organization.
 :::
 
-Administrators can audit Mobot's actions using the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/), and the queries it generates using the search audit index.
+Administrators can audit Mobot's actions using the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/), and the queries it generates using the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/).
 
-To audit Mobot's actions:
-```sumo
-_index=sumologic_audit_events
-| where invocationdetails.agentname in ("mobot")
-```
-
-To view Mobot queries:
+To audit Mobot's actions and user prompts:
 1. Open **Log Search**.
 1. Use the following query:
+   ```sumo
+   _index=sumologic_audit_events
+   | where invocationdetails.agentname in ("mobot")
+   ```
+1. Set your [time range](#time-range) to cover the period when prompts were executed (for example, last 24 hours).
+
+To view queries run by Mobot:
+1. Open **Log Search**.
+1. Use the following query for Mobot Log Search:
+   ```sumo
+   _index="sumologic_search_usage_per_query"
+   | where query_type contains "Mobot"
+   | count user_name, query
+   ```
+1. Use the following query for Mobot SOC Analyst Agent:
    ```sumo
    _index="sumologic_search_usage_per_query"
    | where query_type contains "Agent"
@@ -327,7 +336,7 @@ Known limitations:
 
 Create and edit Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, using the Mobot chat box built into the Playbooks editor, instead of building node by node on the visual canvas. Describe the automation you want, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you. The visual canvas is unchanged and remains fully available for manual edits.
 
-For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
+For the full walkthrough, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).
 
 <ConvPlaybookLimits/>
 
@@ -613,15 +622,17 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 
 ## Opting out
 
+### Feature Management
+
 An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). This page is available to all paid customers (not free or trial accounts) to any user with the Administrator role or the **Manage Organization Settings** permission.
 
-At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
+Mobot shares a single **AI features** toggle with Parse Assist — turning it off disables both together. The SOC Analyst Agent has its own independent **SOC Analyst Agent** toggle and is not affected by the **AI features** toggle.
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
 <MSSPfeatureMgmt/> 
 
-<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 If you previously opted out of Mobot, you'll need to opt back in from this page to regain access at GA, or contact your account team. Trial accounts do not have Mobot enabled by default.
 

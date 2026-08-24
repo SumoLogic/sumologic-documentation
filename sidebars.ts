@@ -2833,6 +2833,7 @@ integrations: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
           'integrations/webhooks/configcat',
+          'integrations/webhooks/druva-platform-events',
           'integrations/webhooks/emnify',
           'integrations/webhooks/extrahop-revealx-360',
           'integrations/webhooks/firefly',
@@ -3355,6 +3356,7 @@ integrations: [
               link: {type: 'doc', id: 'platform-services/automation-service/playbooks/index'},
               items: [
                 'platform-services/automation-service/playbooks/create-playbooks',
+                'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
                 'platform-services/automation-service/playbooks/playbook-payloads',
                 'platform-services/automation-service/playbooks/arrays-in-playbooks',
                 'platform-services/automation-service/playbooks/troubleshoot-playbooks',
