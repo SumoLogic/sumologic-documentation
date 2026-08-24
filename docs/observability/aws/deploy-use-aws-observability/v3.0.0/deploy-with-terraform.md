@@ -1444,8 +1444,10 @@ wait_for_seconds = 180
 
 ### Override app content parameters
 
-In v3.0.0, AWS Observability apps are installed directly into the **Installed Apps** catalog in Sumo Logic using the `sumologic_app` Terraform resource. There is no longer a Personal folder, Admin Recommended folder, monitors folder, or per-app monitor enable/disable configuration.
-
+In v3.0.0, AWS Observability apps are installed directly into the **Installed Apps** catalog in Sumo Logic using the `sumologic_app` Terraform resource. 
+:::note
+In v3.0.0, All AWSO apps are now part of Next-Gen Apps in Sumo Logic. As a result, the Personal, Admin Recommended, and Monitors folders have been removed, and per-app monitor enable/disable configuration is no longer available.
+:::
 The following apps are installed by default:
 
 * Amazon Overview
@@ -1640,7 +1642,7 @@ on .terraform/modules/account.sumo_observability/provider.tf line 5, in provider
 admin_mode = var.sumologic_folder_installation_location == "Personal folder" ? false:true
 ```
 #### Solution
-Sumologic provider [version 2.10.0](https://github.com/SumoLogic/terraform-provider-sumologic/blob/master/CHANGELOG.md#2100-september-22-2021) onwards supports `admin_mode`. Refer to the [`admin_mode` module](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs#authentication).
+Sumologic provider [version 3.3.0](https://github.com/SumoLogic/terraform-provider-sumologic/blob/master/CHANGELOG.md#330-aug-11-2026) onwards supports `admin_mode`. Refer to the [`admin_mode` module](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs#authentication).
 
 ### Invalid function argument
 #### Error Message
@@ -1652,72 +1654,3 @@ on.terraform/modules/sumo-module.overview_app.overview_module/sumologic/sumologi
 ```
 #### Solution
 Verify app [JSON location](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability/json) and align your custom Terraform accordingly.
-
-### Error creating Serverless Application Repository CloudFormation Stack
-
-#### Error Message
-
-While upgrading AWS Observability Solution (Terraform), upgrade failed with the following error.
-
-`Error: error creating Serverless Application Repository CloudFormation Stack (arn:aws:cloudformation:us-east-1:XXXXXXXXX:stack/serverlessrepo-serverless-hello-world-test/7a6ef230-35a6-11zb-98ff-0ab512dce13f) change set: unexpected state 'FAILED', wanted target 'CREATE_COMPLETE'. last error: %!s()`
-
-Resource `aws_serverlessapplicationrepository_cloudformation_stack` is not able to store values of `var.auto_enable_access_logs` (as specified in our code). On each subsequent terraform apply resource detects it as change and creates a new stack-set. When the AWS API is called with a new stack-set it fails abruptly which causes the whole solution to fail while upgrading.
-
-#### Solution
-
-:::info
-For time being, consider the procedure listed below to rectify the error. This error has already [reported](https://github.com/hashicorp/terraform-provider-aws/issues/23874) to AWS.
-:::
-
-Navigate to the location where you have installed the AWS Observability Terraform solution and replace the existing code with the new code given below.
-
-1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
-2. Replace the code with the code give below.
-  ```hcl
-  resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
-    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
-
-    name             = "Auto-Enable-Access-Logs-${var.auto_enable_access_logs_options.auto_enable_logging}-${random_string.aws_random.id}"
-    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
-    semantic_version = var.app_semantic_version
-    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
-    parameters = {
-      BucketName                = local.bucket_name
-      BucketPrefix              = var.auto_enable_access_logs_options.bucket_prefix
-      AutoEnableLogging         = var.auto_enable_access_logs_options.auto_enable_logging
-      AutoEnableResourceOptions = var.auto_enable_access_logs
-      FilterExpression          = var.auto_enable_access_logs_options.filter
-      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
-    }
-    lifecycle {
-      ignore_changes = [
-        parameters,tags
-      ]
-    }
-  }
-  ```
-3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
-4. Replace the code with the code provided below.
-  ```hcl
-  resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
-    for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
-
-    name             = "Auto-Enable-Access-Logs-Elb-${random_string.aws_random.id}"
-    application_id   = "arn:aws:serverlessrepo:us-east-1:956882708938:applications/sumologic-s3-logging-auto-enable"
-    semantic_version = "1.0.2"
-    capabilities     = data.aws_serverlessapplicationrepository_application.app.required_capabilities
-    parameters = {
-      BucketName                = local.bucket_name
-      BucketPrefix              = "elasticloadbalancing"
-      AutoEnableLogging         = "ALB"
-      AutoEnableResourceOptions = var.auto_enable_access_logs
-      FilterExpression          = var.auto_enable_access_logs_options.filter
-      RemoveOnDeleteStack       = var.auto_enable_access_logs_options.remove_on_delete_stack
-    }
-    lifecycle {
-      ignore_changes = [
-        parameters,tags
-      ]
-    }
-  }
-```
