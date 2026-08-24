@@ -31,6 +31,12 @@ To be able to see insights in child organizations, add child organizations that 
 
 As an MSSP administrator, you can manage feature availability for your child organizations directly from the Organizations UI. This allows you to opt in or opt out individual child organizations from specific Sumo Logic features without needing to contact Sumo Logic support.
 
+This includes the **AI features** toggle (Mobot and Parse Assist), the **SOC Analyst Agent** toggle, and the **MCP Server access** toggle. See [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning/#can-i-opt-out-of-ai-features) for details. It also includes the **App Catalog** toggle, which controls whether the child org can browse and install pre-built integrations and applications. Unlike standalone orgs, MSSP parent orgs don't see these toggles on their own **Feature Management** page; manage them per child org here instead.
+
+:::note
+Support account users cannot manage child-org features from an MSSP parent org, even with the Administrator role.
+:::
+
 Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
 
 - **Opt-in**. You can explicitly enable them for one or more child organizations.
@@ -46,8 +52,8 @@ You can apply changes to multiple child organizations in a single action.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
 1. Click the child organization you want to manage. A details pane opens on the right.
-1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll-down the details pane to the **Features** section and select **Manage Features**. <br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="Manage Features Button" style={{border: '1px solid gray'}} width="400"/>
-1. In the **Manage Features** panel, toggle next to the feature you want to enable.<br/><img src={useBaseUrl('img/manage/subscriptions/select-features.png')} alt="Select Features" style={{border: '1px solid gray'}} width="400"/>
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="More Actions dropdown with Manage Features option highlighted" style={{border: '1px solid gray'}} width="400"/><br/>Alternatively, you can scroll down the details pane to the **Features** section and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button-bottom.png')} alt="Features section with Manage Features link highlighted" style={{border: '1px solid gray'}} width="400"/> 
+1. In the **Manage Features** panel, toggle next to the feature you want to enable.<br/><img src={useBaseUrl('img/manage/subscriptions/select-features.png')} alt="Select Features" style={{border: '1px solid gray'}} width="800"/>
    - To manage sub-features, click the feature name to expand it and select the desired sub-features.
 1. Click **Save Changes** button to apply your changes.
 
@@ -55,7 +61,7 @@ You can apply changes to multiple child organizations in a single action.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
 1. Click the child organization you want to manage. A details pane opens on the right.
-1. In the details pane, click the **More Actions** dropdown and select **Manage Features**. Or, scroll-down the details pane to the **Features** section and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="Manage Features Button" style={{border: '1px solid gray'}} width="400"/>
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="More Actions dropdown with Manage Features option highlighted" style={{border: '1px solid gray'}} width="400"/><br/>Alternatively, you can scroll down the details pane to the **Features** section and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button-bottom.png')} alt="Features section with Manage Features link highlighted" style={{border: '1px solid gray'}} width="400"/>
 1. In the **Manage Features** panel, toggle next to the feature you want to disable.<br/><img src={useBaseUrl('img/manage/subscriptions/de-select-features.png')} alt="De-select Features Button" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Save Changes** button to apply your changes.
 

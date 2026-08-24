@@ -21,9 +21,11 @@ Every archived log message is tagged with the metadata fields specified by the
 ## Create an AWS archive destination
 
 :::note
-You need the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability to create an AWS archive destination.
+- You can also create and manage AWS archive destinations using the [Data Archiving Management API](/docs/api/data-archiving/), enabling automated destination setup at scale.
+- Creating an AWS archive destination, whether through the UI or the [Data Archiving Management API](/docs/api/data-archiving/), requires the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability.
 :::
 
+To create an AWS archive destination using the UI, follow the steps below:
 1. Follow the instructions in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to grant Sumo Logic permission to send data to the destination S3 bucket.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. 
 1. Click **+** to add a new destination.

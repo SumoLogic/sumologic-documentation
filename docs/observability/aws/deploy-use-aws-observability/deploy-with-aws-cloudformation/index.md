@@ -45,7 +45,7 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
      Download this or other versions of this template from [Changelog](../changelog.md). 
      :::
      :::note
-      - To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the [Modify the source categories](#modify-the-source-categories) section.
+      - To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.12.0 or greater and follow the instructions in the [Modify the source categories](#modify-the-source-categories) section.
       - The Global Intelligence for AWS CloudTrail DevOps app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.     
      :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
@@ -63,7 +63,7 @@ The table below displays the response for each text box in this section.
 | Sumo Logic Deployment Name | Enter au, ca, ch, de, esc, eu, jp, us2, fed, kr, or us1. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
 | Sumo Logic Access ID | Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys) for more information. |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
-| Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-preferences) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
+| Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-your-account-settings) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources, and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
 | Send telemetry to Sumo Logic | To send solution telemetry to Sumo Logic. This will help to troubleshoot the issues occurring during solution installation. To opt-out, change this to `false`. The default value is `true`. |
 
@@ -177,7 +177,7 @@ The table below displays the response for each text box in this section.
 
 ## Modify the source categories
 
-The AWS Observability CloudFormation template creates collectors and sources with pre-configured names and source categories. The capability to update the source categories has been added from version v2.1.0 and above.
+The AWS Observability CloudFormation template creates collectors and sources with pre-configured names and source categories. The capability to update the source categories has been added from version v2.12.0 and above.
 
 :::note
 Do not update the source names as created by the CloudFormation template in Sumo Logic. Updating the source name will break the FERs and impact the AWS Observability dashboards.
@@ -185,7 +185,7 @@ Do not update the source names as created by the CloudFormation template in Sumo
 
 Follow the steps below to change the default source categories
 
-1. Download the template version 2.1.0 or later from the [changelog](../changelog.md) page.
+1. Download the template version 2.12.0 or later from the [changelog](../changelog.md) page.
 1. Modify the source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
 
@@ -235,7 +235,7 @@ Below are some common errors that can occur while using the CloudFormation templ
 | The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | - Re-deploy the deployment stack without updating the stack in the template. Re-running will detect the drift and create remaining resources. <br/> - If the throttling problem persists, try to break down the multi-region deployment into parts and use distinct access IDs and access keys for each part. |
 | S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack that created it. | - Remove the S3 bucket from S3 or select “No” in the AWS CloudFormation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
 | The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
-| Invalid IAM role OR AccessDenied. | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions. | - Refer to [Edit, activate/deactivate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-activatedeactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
+| Invalid IAM role OR AccessDenied. | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions. | - Refer to [Edit, deactivate/activate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivateactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
 | Subscription filters are not applied to newly created log groups. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLogGroup` events. | CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail. |
 | Access logs are not enabled for the Load Balancer. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLoadBalancer` events. | CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail. |
 

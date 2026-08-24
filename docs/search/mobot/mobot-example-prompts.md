@@ -29,6 +29,7 @@ Keyword searches are case-sensitive.
 * `Look into any unusual login attempts from yesterday.`
 * `Are there any signs of data exfiltration in our environment today?`
 * `Have any IP addresses or domains in my logs been flagged by threat intelligence?`
+* `Check this file hash against threat intel`
 * `Count logs by action and sort the results.`
    * Follow up with `Filter results where action contains Malicious.`
 * `Count logs by action, URL, and user.`
@@ -104,3 +105,13 @@ Keyword searches are case-sensitive.
 * `What data sources are available?`
 * `Have any Collectors gone silent in the last few hours?`
 * `Show me the users who scanned the most data last week.`
+
+## Dashboard panel creation
+
+* `Add a panel showing request count by geo location on a map.`
+* `Create a line chart showing API latency spikes for the checkout service over the last 3 hours.`
+* `Add a panel showing error rate by service as a bar chart.`
+* `Create a single value panel showing total failed logins today.`
+* `Add a heatmap panel showing response time distribution by endpoint.`
+* `Add a panel showing top 10 source IPs by request count to the Network Overview dashboard.`
+* `Create a dashboard with a panel for error rate, a panel for request latency, and a panel for top status codes.`

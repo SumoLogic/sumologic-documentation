@@ -14,7 +14,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* **Self-paced**: [Sumo Logic APIs + Terraform Self-Paced](https://learn.sumologic.com/sumo-logic-apis-terraform-self-paced/)
+* **Self-paced**. [Extending Sumo Logic with MCP, API and Terraform](https://learn.sumologic.com/extending-sumo-logic-with-mcp-api-terraform).
 :::
 
 :::sumo Get Help
@@ -88,6 +88,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/api/dashboard')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="50"/><h4>Dashboards</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/api/data-archiving')}><img src={useBaseUrl('img/icons/archive.png')} alt="Archive icon" width="50"/><h4>Data Archiving</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

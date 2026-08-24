@@ -12,6 +12,11 @@ https://github.com/SumoLogic/sumologic-documentation
 ## Key Folders
 https://github.com/SumoLogic/sumologic-documentation/tree/main/docs
 
+## Doc Reviews
+When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
+
+Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
+
 ## Directory Conventions
 
 | What | Where |
@@ -50,6 +55,8 @@ Every doc requires at minimum: `id`, `title`, `description`. New docs also need 
 
 ## Git Rules
 **CRITICAL**: Never commit, merge, or push changes without explicit user approval — even if auto-accept is enabled. Always ask first.
+
+**Branch naming**: Branch names must always be the Jira ticket number only (e.g., `DOCS-1697`). No additional description.
 
 Before merging any PR, provide the user with the commit description and wait for explicit approval.
 
@@ -130,3 +137,55 @@ Primary commands for documentation work. Proactively suggest when context fits �
 **Key distinctions:**
 - `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
 - `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
+
+**Creating docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/doc` | Create a new feature, how-to, concept, reference, or troubleshooting doc |
+| `/doc-from-jira` | Fetch a DOCS Jira ticket and scaffold a complete doc from it |
+| `/app-doc` | Create a new app integration doc |
+| `/c2c-source-doc` | Create a new Cloud-to-Cloud source integration doc |
+
+**Release notes**
+
+| Command | What it does |
+|---------|-------------|
+| `/release-note-service` | New service release note |
+| `/release-note-collector` | New Collector release note |
+| `/release-note-cse` | New Cloud SIEM release note |
+| `/release-note-csoar` | New Cloud SOAR release note |
+| `/release-note-developer` | New developer/API release note |
+
+**Editing and reviewing**
+
+| Command | What it does |
+|---------|-------------|
+| `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
+| `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
+| `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
+
+**Jira**
+
+| Command | What it does |
+|---------|-------------|
+| `/jira` | Create, update, search, or transition DOCS Jira tickets |
+| `/doc-from-jira` | Start a new doc from a Jira ticket (use this instead of `/jira` when the goal is to write a doc) |
+
+**Removing docs**
+
+| Command | What it does |
+|---------|-------------|
+| `/remove-doc` | Safely deprecate or move a doc with redirects |
+
+### Which audit command to use
+
+Run both for a thorough pre-PR check — they cover different things:
+
+- **`/audit-doc`** — structure, required sections, broken links, frontmatter completeness, style guide
+- **`/seo-audit`** — SEO/AEO/GEO signals: title length, description quality, question headings, direct answers, GEO patterns
+
+### `/jira` vs `/doc-from-jira`
+
+- Use **`/jira`** to manage tickets: create, search, update fields, change status, view your queue
+- Use **`/doc-from-jira`** when you have a ticket and want to start writing the doc it describes — it fetches the ticket and scaffolds the file
