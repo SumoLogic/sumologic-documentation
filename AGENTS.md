@@ -7,10 +7,16 @@ Open-source Sumo Logic documentation site built with Docusaurus 3.
 Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic style guide.
 
 ## Repository
-https://github.com/SumoLogic/sumologic-documentation
+@https://github.com/SumoLogic/sumologic-documentation
 
 ## Key Folders
-https://github.com/SumoLogic/sumologic-documentation/tree/main/docs
+@https://github.com/SumoLogic/sumologic-documentation/tree/main/docs
+
+## Skills
+- `.claude/skills/sumo-style/SKILL.md` — Sumo Logic writing conventions. Claude fetches the live style guide and applies it automatically when writing or editing docs.
+- `.claude/skills/docusaurus/SKILL.md` — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.
+- `.claude/skills/pr-template-guide/SKILL.md` — PR template structure, formatting examples, and best practices.
+- `.claude/skills/geo-guide/SKILL.md` — Reference guide of GEO principles and patterns loaded as context by `/geo-optimize` and `/seo-audit`. Not an invocable command.
 
 ## Doc Reviews
 When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
@@ -48,7 +54,7 @@ Every doc requires at minimum: `id`, `title`, `description`. New docs also need 
 2. **Use exact text** - Copy checkbox labels verbatim from the template file. Example current labels: "Minor Changes", "Update Content", "New Content", "Site and Tools" — but always read the file, these may be outdated.
 3. **Keep all checkboxes** - Pre-check one box, leave all four in the list
 4. **PR title format**: `TICKET - Description` (e.g., `DOCS-1234 - Add PostgreSQL app`)
-5. **Ask for ticket number** - Always ask for a Jira ticket before creating a PR, and offer to create one if the user doesn't have one (Claude Code: use the Atlassian Jira MCP). Exception: this ticket requirement is optional for quick typo fixes.
+5. **Ask for ticket number** - Always ask for a Jira ticket before creating a PR, and offer to create one if the user doesn't have one (Claude Code: use the Atlassian Jira MCP). Exception: this ticket requirement is optional for quick typo fixes and externally-submitted PRs.
 6. **Full Jira URL** - Use `https://sumologic.atlassian.net/browse/DOCS-1234` not ticket number alone
 
 (Claude Code: see `.claude/skills/pr-template-guide/SKILL.md` for examples and guidance.)
@@ -66,6 +72,7 @@ Before pushing any commit that changes docs content:
 3. Wait for explicit approval before pushing
 
 ## Jira Rules
+**CRITICAL**: All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`.
 
 ### Field Requirements
 - **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
@@ -111,12 +118,6 @@ If you change the `/help/llm/` URL structure or add new machine-readable mirror 
 
 The sections below apply only to Claude Code. Other agents can ignore them.
 
-### Skills
-- `.claude/skills/sumo-style/SKILL.md` — Sumo Logic writing conventions. Claude fetches the live style guide and applies it automatically when writing or editing docs.
-- `.claude/skills/docusaurus/SKILL.md` — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.
-- `.claude/skills/pr-template-guide/SKILL.md` — PR template structure, formatting examples, and best practices.
-- `.claude/skills/geo-guide/SKILL.md` — Reference guide of GEO principles and patterns loaded as context by `/geo-optimize` and `/seo-audit`. Not an invocable command.
-
 ### Jira Commands
 All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`, including the three-approach ticket-creation pattern and Technical Area mappings.
 
@@ -125,18 +126,14 @@ Primary commands for documentation work. Proactively suggest when context fits �
 
 **Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
-**Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
-**Workflow:** `/jira`, `/review`
+**Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
+**Workflow:** `/jira`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket → suggest `/doc-from-jira`
 - User is about to create a PR → suggest `/seo-audit` first
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
-
-**Key distinctions:**
-- `/jira` = manage tickets | `/doc-from-jira` = scaffold doc from ticket
-- `/audit-doc` = structure/style/links | `/seo-audit` = discoverability signals (run both before PRs)
 
 **Creating docs**
 
