@@ -336,7 +336,7 @@ Known limitations:
 
 Create and edit Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, using the Mobot chat box built into the Playbooks editor, instead of building node by node on the visual canvas. Describe the automation you want, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you. The visual canvas is unchanged and remains fully available for manual edits.
 
-For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
+For the full walkthrough, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).
 
 <ConvPlaybookLimits/>
 
@@ -621,6 +621,8 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 <img src={useBaseUrl('img/search/mobot/feedback-thumbs.png')} alt="Thumbs up and thumbs down feedback buttons in Mobot interface" style={{border: '1px solid gray'}} width="400" />
 
 ## Opting out
+
+### Feature Management
 
 An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). This page is available to all paid customers (not free or trial accounts) to any user with the Administrator role or the **Manage Organization Settings** permission.
 
