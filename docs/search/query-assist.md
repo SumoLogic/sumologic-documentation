@@ -69,10 +69,9 @@ Suggestions are ranked based on your organization’s common queries, making que
 
 Suggestions are predictive in nature and may not be comprehensive or completely accurate in every circumstance.
 
-<!-- hold off
-### Need more help?
-Try [Sumo Logic Mobot](/docs/search/mobot), our AI-powered assistant that helps you write and execute natural language log search queries.
-Copilot with Query Assist video: https://docs.google.com/presentation/d/1HCaXROM6zrnapLaLo3gDm-S1uQPGAS0p9AquuLwiFXA/edit#slide=id.g3145b7936cd_0_8 -->
+:::tip
+Ask [Mobot](/docs/search/mobot), Sumo Logic's AI-powered conversational assistant, to build log search queries for you in plain language, no search query language expertise required.
+:::
 
 ## Turn off autocomplete
 
