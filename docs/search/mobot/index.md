@@ -18,6 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 import Iframe from 'react-iframe';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
+import ConvPlaybookLimits from '../../reuse/conv-playbook-limits.md';
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Search icon" width="35"/>
 
@@ -275,17 +276,26 @@ Or, from the query section, click **Open in Log Search**.<br/><img src={useBaseU
 * The [search audit index](/docs/manage/security/audit-indexes/search-audit-index) needs to be enabled for your organization.
 :::
 
-Administrators can audit Mobot's actions using the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/), and the queries it generates using the search audit index.
+Administrators can audit Mobot's actions using the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/), and the queries it generates using the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/).
 
-To audit Mobot's actions:
-```sumo
-_index=sumologic_audit_events
-| where invocationdetails.agentname in ("mobot")
-```
-
-To view Mobot queries:
+To audit Mobot's actions and user prompts:
 1. Open **Log Search**.
 1. Use the following query:
+   ```sumo
+   _index=sumologic_audit_events
+   | where invocationdetails.agentname in ("mobot")
+   ```
+1. Set your [time range](#time-range) to cover the period when prompts were executed (for example, last 24 hours).
+
+To view queries run by Mobot:
+1. Open **Log Search**.
+1. Use the following query for Mobot Log Search:
+   ```sumo
+   _index="sumologic_search_usage_per_query"
+   | where query_type contains "Mobot"
+   | count user_name, query
+   ```
+1. Use the following query for Mobot SOC Analyst Agent:
    ```sumo
    _index="sumologic_search_usage_per_query"
    | where query_type contains "Agent"
@@ -303,11 +313,11 @@ Create and update log-based [monitors](/docs/alerts/monitors) from plain-languag
 
 For the full walkthrough, including example prompts, known limitations, and FAQ, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 
-<!-- Uncomment once Conversational Dashboards GAs (https://github.com/SumoLogic/sumologic-documentation/pull/6937)
 ### Conversational Dashboards
 
-Build and summarize [dashboards](/docs/dashboards) through conversation. Instead of writing queries and configuring panels by hand, describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel.
+Create dashboard panels through conversation instead of writing queries and configuring panels by hand. Describe what you want to see (for example, `Create a line chart showing API latency spikes for the checkout service over the last 3 hours`), and Mobot writes the query, selects the panel type, and builds the panel. For the full walkthrough, including supported visualization types and current limitations, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 
+<!-- Uncomment once Mobot can also read a dashboard you have open (https://github.com/SumoLogic/sumologic-documentation/pull/6937)
 Mobot also helps you read a dashboard you already have open:
 
 - **Summarization**. Get a plain-language narrative of overall system health and the key takeaways across panels.
@@ -320,14 +330,15 @@ Known limitations:
 - Summaries evaluate the top 10 rows or data series per panel, ranked by variance or anomaly score. Lower-impact data is excluded from the narrative.
 - Analysis is scoped to the dashboard you have open. Mobot cannot correlate data across separate dashboards.
 - Follow-up context is kept only within the current session.
-- Mobot selects the panel type automatically. Fine-tuned visual adjustments are done manually.
 -->
 
 ### Conversational Playbooks
 
 Create and edit Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, using the Mobot chat box built into the Playbooks editor, instead of building node by node on the visual canvas. Describe the automation you want, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you. The visual canvas is unchanged and remains fully available for manual edits.
 
-For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
+For the full walkthrough, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).
+
+<ConvPlaybookLimits/>
 
 ## Managing conversations
 
@@ -488,9 +499,13 @@ Yes. Each user can send up to 10 prompts to Mobot per day, per Sumo Logic Org ID
 
 As you approach the limit, Mobot shows a heads-up banner with the time remaining until your limit resets. When you reach the limit, Mobot stops responding to new prompts and shows a "try again in X hours" message.
 
-Limits reset daily at midnight UTC. Because the reset is tied to UTC, the time shown is converted to your local time zone and may not fall at your local midnight. For example, someone in Pacific Time (UTC-8) who reaches the limit at 10 AM local time sees "try again in 6 hours," because midnight UTC is 4 PM their time.
+Limits reset daily at midnight US Pacific Time. The "try again in X hours" message is calculated from this reset time, converted to your local time zone.
 
 If you need a higher limit, contact your account team.
+
+### Is there a character limit for a Mobot prompt?
+
+Yes. A single prompt can be up to 40,000 characters.
 
 <!-- uncomment at GA after Aug 3
 ### Does Mobot's licensing model and limits apply to SOC Analyst Agent investigations?
@@ -607,15 +622,17 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 
 ## Opting out
 
+### Feature Management
+
 An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). This page is available to all paid customers (not free or trial accounts) to any user with the Administrator role or the **Manage Organization Settings** permission.
 
-At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
+Mobot shares a single **AI features** toggle with Parse Assist — turning it off disables both together. The SOC Analyst Agent has its own independent **SOC Analyst Agent** toggle and is not affected by the **AI features** toggle.
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
 <MSSPfeatureMgmt/>
 
-<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 You can toggle features for child orgs from **Administration > Organizations**; see [Manage features](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#manage-features).
 
