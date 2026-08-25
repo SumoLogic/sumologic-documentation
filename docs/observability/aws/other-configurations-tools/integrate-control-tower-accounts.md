@@ -166,6 +166,6 @@ You must have a role that grants you the Manage Field Extractions capability to 
 
     <img src={useBaseUrl('img/observability/Field-Extraction-rule.png')} alt="Field Extraction rule" style={{border: '1px solid gray'}} width="400" />
 
-## Step 4: View the AWS Observability dashboards
+## Step 4: View the AWS Observability dashboards
 
 Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/).
