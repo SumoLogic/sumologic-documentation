@@ -23,6 +23,18 @@ When reviewing any PR or doc, always check existing docs of the same type in the
 
 Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
 
+## Bulk Changes
+For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
+
+**Enter plan mode** at the start of any bulk change. Present scope, file count, directory breakdown, and before/after samples — then wait for explicit approval before touching any files.
+
+1. **Define scope first, get sign-off.** State the exact pattern, included paths, excluded paths, and known edge cases before touching files.
+2. **Dry-run before writing.** Report total file count, per-directory breakdown, and ~10 before/after samples. Wait for confirmation.
+3. **Apply in batches by directory**, not all at once. Show `git diff --stat` and a few spot-checks after each batch.
+4. **One commit per batch/category** — never bundle multiple directories into one commit. Atomic commits stay revertable.
+5. **Never revert from memory.** If reverting, validate against actual file content — do not trust "the original had X."
+6. **Never commit helper/detection scripts** to the repo. Run them ephemerally.
+
 ## Directory Conventions
 
 | What | Where |
