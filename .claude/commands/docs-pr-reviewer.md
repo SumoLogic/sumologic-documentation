@@ -175,8 +175,9 @@ npx playwright install chromium
 2. Open the actual file(s) in question and make the edit directly.
 3. Before treating the edit as finished, hold it to the same bar any other docs PR change gets: check it against the Sumo Logic style guide (the `sumo-style` skill covers voice, terminology, formatting) and confirm placement is still correct (right directory, frontmatter fields, sidebar entry). An SME-requested edit doesn't skip this just because it happened outside a normal PR-writing flow.
 4. Re-run Step 4's screenshot for the affected page and report back what changed, rather than just saying "done."
+5. Ask directly: "Anything else you'd like changed, or are you done?" Don't assume a single round was the last one, and don't move on until the SME actually says so.
 
-Repeat for as many rounds as the SME wants. Don't touch files they didn't ask about. When they confirm they're done, move to Step 6.
+Repeat for as many rounds as the SME wants. Don't touch files they didn't ask about. Nothing gets committed until they confirm they're done — every edit in the session lands in one consolidated commit at the end (Step 6), not one per round. Once they confirm, move to Step 6.
 
 ### Step 6: Consolidate and push
 

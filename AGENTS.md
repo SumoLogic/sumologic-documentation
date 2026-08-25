@@ -124,10 +124,10 @@ All Jira operations MUST follow the patterns defined in `.claude/commands/jira.m
 ### Slash Commands
 Primary commands for documentation work. Proactively suggest when context fits — don't wait for the user to ask.
 
-**Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`, `/edit-doc`
+**Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
-**Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`, `/tone-check`, `/rewrite-intro`, `/simplify`
-**Workflow:** `/jira`, `/review`, `/docs-pr-reviewer`
+**Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
+**Workflow:** `/jira`, `/docs-pr-reviewer`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket → suggest `/doc-from-jira`
@@ -135,9 +135,6 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 - An SME/stakeholder without a local dev environment wants to apply their own edit to an existing PR (not just view or approve it — those happen directly on the PR's staging link and GitHub page) → suggest `/docs-pr-reviewer`
-- An SME/stakeholder wants to submit a small, self-contained fix to an *existing published doc* themselves, with no PR open yet → suggest `/edit-doc`
-
-**`/docs-pr-reviewer` vs. `/edit-doc`:** `/docs-pr-reviewer` acts on a PR that already exists; `/edit-doc` creates a new one. Once `/edit-doc` opens a PR, further self-serve edits to it go through `/docs-pr-reviewer`.
 
 **Creating docs**
 
@@ -162,7 +159,6 @@ Primary commands for documentation work. Proactively suggest when context fits �
 
 | Command | What it does |
 |---------|-------------|
-| `/edit-doc` | Submit a small, self-contained fix to an existing published doc (no local env needed) |
 | `/audit-doc` | Full quality audit: structure, style, links, frontmatter, completeness |
 | `/seo-audit` | Discoverability audit: SEO, AEO, and GEO signals — run this before a PR |
 | `/geo-optimize` | Rewrite a doc to improve AI citation and generative engine visibility |
