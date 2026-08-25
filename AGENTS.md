@@ -139,13 +139,14 @@ Primary commands for documentation work. Proactively suggest when context fits �
 **Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
-**Workflow:** `/jira`
+**Workflow:** `/jira`, `/docs-pr-reviewer`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket → suggest `/doc-from-jira`
 - User is about to create a PR → suggest `/seo-audit` first
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
+- An SME/stakeholder without a local dev environment wants to apply their own edit to an existing PR (not just view or approve it — those happen directly on the PR's staging link and GitHub page) → suggest `/docs-pr-reviewer`
 
 **Creating docs**
 
@@ -186,6 +187,12 @@ Primary commands for documentation work. Proactively suggest when context fits �
 | Command | What it does |
 |---------|-------------|
 | `/remove-doc` | Safely deprecate or move a doc with redirects |
+
+**PR review**
+
+| Command | What it does |
+|---------|-------------|
+| `/docs-pr-reviewer` | Apply an SME's self-serve edit to an already-open PR (no local env needed) |
 
 ### Which audit command to use
 
