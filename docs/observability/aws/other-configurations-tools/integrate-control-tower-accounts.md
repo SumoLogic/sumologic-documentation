@@ -16,15 +16,15 @@ For more information on AWS Control Tower, see [AWS Control Tower](https://aws.a
 
 The AWS Observability solution can be used with Control Tower-managed accounts to: 
 
-* **Quickly identify and resolve issues in and across multiple accounts and services**. Enable teams to seamlessly navigate and search logs and metrics data from across their AWS accounts, regions, and services. Unified service and account visibility greatly speeds troubleshooting and minimizes downtime to improve overall system availability.
-* **Eliminate data silos**. Unify logs and metrics data across AWS accounts and services to eliminate data silos and make it easier for teams to quickly identify root causes. 
+* **Quickly identify and resolve issues in and across multiple accounts and services**. Enable teams to seamlessly navigate and search logs and metrics data across their AWS accounts, regions, and services. Unified service and account visibility greatly speeds up troubleshooting and minimizes downtime, improving overall system availability.
+* **Eliminate data silos**. Unify logs and metrics across AWS accounts and services to eliminate data silos and help teams quickly identify root causes. 
 * **Accelerate time-to-value**. Streamline setup and pre-built dashboards for instant insights into AWS accounts and services, enabling visibility into the most important data out-of-the-box.  
 
 For more information on the AWS Observability solution, see [About Sumo Logic AWS Observability](/docs/observability/aws/about/).
 
 ## Prerequisites
 
-To integrate the AWS Observability solution with Control Tower, you collect CloudTrail audit logs from each AWS account that is managed by AWS Control Tower, and store the audit logs in an S3 bucket in a Log Archive AWS account.
+To integrate the AWS Observability solution with Control Tower, you collect CloudTrail audit logs from each AWS account that is managed by AWS Control Tower and store the audit logs in an S3 bucket in a Log Archive AWS account.
 
 We recommend you familiarize yourself with the AWS Observability Solution. For more information, see:
 
@@ -33,7 +33,7 @@ We recommend you familiarize yourself with the AWS Observability Solution. For m
 * [View the AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/)
 
  :::note
- CloudTrail must be enabled for EventBridge to capture `CreateManagedAccount`, `UpdateManagedAccount` events, since these events are recorded and delivered through CloudTrail.
+ CloudTrail must be enabled for EventBridge to capture `CreateManagedAccount` and `UpdateManagedAccount` events, since these events are recorded and delivered through CloudTrail.
  :::
 
 ## Integrate AWS Control Tower-managed accounts with the AWS Observability solution
@@ -50,7 +50,7 @@ Integrating with AWS Control Tower takes several steps: 
 
 ## Step 1: Set up collection of logs and metrics data from your AWS accounts 
 
-In this step, you configure the collection of logs and metrics for all AWS accounts managed by Control Tower, and install the apps in the solution. Follow these steps for each AWS account managed by AWS Control Tower, either manually for existing accounts, or automatically for accounts created going forward.
+In this step, you configure the collection of logs and metrics for all AWS accounts managed by Control Tower and install the apps in the solution. Follow these steps for each AWS account managed by AWS Control Tower, either manually for existing accounts or automatically for accounts created going forward.
 
 ### Set up collection manually for AWS accounts
 1. Log in to the AWS Management Console as the AWS account user.
@@ -103,7 +103,7 @@ To deploy the lifecycle events template:
 ## Step 2: Collect from the Log Archive account
 
 :::note
-In the instructions below, we assume the Log Archive AWS account is being used only for centralizing logs across AWS Control Tower-managed accounts. If this is not the case and you want  to monitor AWS services in these accounts, follow the instructions in [AWS Observability Solution](/docs/observability/aws/) to set up the relevant services.
+In the instructions below, we assume the Log Archive AWS account is used only to centralize logs across AWS Control Tower-managed accounts. If this is not the case and you want to monitor AWS services in these accounts, follow the instructions in [AWS Observability Solution](/docs/observability/aws/) to set up the relevant services.
 :::
 
 1. Log in to the AWS Management Console as the Log Archive AWS account user.
@@ -128,7 +128,7 @@ In the instructions below, we assume the Log Archive AWS account is being used o
       1. Enter the name of the CloudTrail Bucket in **Amazon S3 Bucket Name**.
       1. Provide a path expression for the Logs in “**Path Expression for existing CloudTrail logs**. <br/><img src={useBaseUrl('img/observability/integrate-tower6.png')} alt="Any Existing Bucket Path Expression for the CloudTrail logs" style={{border: '1px solid gray'}} width="800" />
 
-    Case 2 : Already collecting CloudTrail Data in Sumo Logic
+    Case 2: Already collecting CloudTrail Data in Sumo Logic
 
       1. Select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all the other options.
 
@@ -151,18 +151,18 @@ You must have a role that grants you the Manage Field Extractions capability to 
     * **Scope**. Specific Data
     * **Metadata**. _sourceCategory 
     * **Value**.  aws/observability/cloudtrail/logs
-    * **Parse Expression**. Enter  a parse expression to create an “account” field that maps to the alias you set for each child account in the previous step. For example, if you used the “dev” alias for an AWS account with ID  "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:   
+    * **Parse Expression**. Enter a parse expression to create an “account” field that maps to the alias you set for each child account in the previous step. For example, if you used the “dev” alias for an AWS account with ID  "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:   
 
         ```sumo
         | json "recipientAccountId"
-        // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+        // Manually map your AWS account ID with the AWS account alias you set up earlier for the individual child account
         | "" as account
         | if (recipientAccountId = "528560886094", "dev", account) as account
         | if (recipientAccountId = "567680881046", "prod", account) as account
         | fields account
         ```
 
-    This screenshot shows what this would look in Sumo Logic:
+    The screenshot below shows what this would look like in Sumo Logic:
 
     <img src={useBaseUrl('img/observability/Field-Extraction-rule.png')} alt="Field Extraction rule" style={{border: '1px solid gray'}} width="400" />
 
