@@ -630,7 +630,7 @@ Mobot shares a single **AI features** toggle with Parse Assist — turning it of
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
-<MSSPfeatureMgmt/>
+<MSSPfeatureMgmt/> 
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
