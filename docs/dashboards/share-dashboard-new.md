@@ -38,7 +38,7 @@ When you share a dashboard, you specify the dashboard access rights for the use
 You can grant the same access right to everyone with whom you share the dashboard. Or, you can give some users View access, other users Edit access, and other users Manage access. If you are going to grant different access rights to different users, be prepared with lists of users and the access level you want to grant to each.
 
 :::note
-If a user with Edit or Manage access deletes a panel from a shared dashboard, a confirmation dialog warns them that the change may impact other users who use the dashboard.
+If a user with Edit or Manage access deletes a panel from a shared dashboard, a confirmation dialog warns them that the change may impact other users. Learn more in [Delete a Panel](/docs/dashboards/panels/#delete-a-panel).
 :::
 
 ## Dashboard sharing options
