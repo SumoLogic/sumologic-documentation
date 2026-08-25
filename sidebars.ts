@@ -1322,6 +1322,7 @@ module.exports = {
       items: [
         'dashboards/about',
         'dashboards/create-dashboard-new',
+        'dashboards/create-panel-with-mobot',
         'dashboards/dashboard-child-orgs',
         'dashboards/explore-view',
         'dashboards/drill-down-to-discover-root-causes',
@@ -2832,6 +2833,7 @@ integrations: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
           'integrations/webhooks/configcat',
+          'integrations/webhooks/druva-platform-events',
           'integrations/webhooks/emnify',
           'integrations/webhooks/extrahop-revealx-360',
           'integrations/webhooks/firefly',
@@ -3260,6 +3262,7 @@ integrations: [
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
+        'api/data-archiving',
         'api/data-deletion-rules',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
@@ -3353,6 +3356,7 @@ integrations: [
               link: {type: 'doc', id: 'platform-services/automation-service/playbooks/index'},
               items: [
                 'platform-services/automation-service/playbooks/create-playbooks',
+                'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
                 'platform-services/automation-service/playbooks/playbook-payloads',
                 'platform-services/automation-service/playbooks/arrays-in-playbooks',
                 'platform-services/automation-service/playbooks/troubleshoot-playbooks',

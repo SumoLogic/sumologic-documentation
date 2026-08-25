@@ -1,6 +1,6 @@
 ---
 id: traceid-spanid-injection-into-logs-configuration
-title: Java TraceId and SpanId Injection into Logs Configuration
+title: Java TraceId and SpanId Injection into Logs
 sidebar_label: TraceId and SpanId Injection into Logs Configuration
 description: Correlate traces with logs by injecting trace IDs and span IDs into Java applications using OpenTelemetry instrumentation in Sumo Logic.
 ---
