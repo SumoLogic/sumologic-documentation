@@ -39,53 +39,54 @@ We recommend you familiarize yourself with the AWS Observability Solution. For m
 ## Integrate AWS Control Tower-managed accounts with the AWS Observability solution
 
 Integrating with AWS Control Tower takes several steps: 
-
-* Step 1
-  * [To set up collection manually for AWS accounts created and managed via AWS Control Tower](#set-up-collection-manually-for-aws-accounts-created-and-managed-via-aws-control-tower): Set up collection for non-CloudTrail logs and all metrics by creating a CloudFormation stack in individual AWS accounts managed by Control Tower. In this step, you also install the apps in the Sumo Logic Observability app.
-  * [To automatically set up collection for AWS accounts created via Control Tower](#deploy-the-lifecycle-events-template): For any new accounts created via Control Tower Account Factory going forward, deploy a single CloudFormation template to your management account to have the AWS Observability solution installed automatically.
+* [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts):
+  * [Set up collection manually](#set-up-collection-manually-for-aws-accounts): Create a CloudFormation stack in each AWS account managed by Control Tower.
+  * [Set up collection automatically for new AWS accounts](#set-up-collection-automatically-for-new-aws-accounts): Deploy a single CloudFormation template to your management account so accounts created via Control Tower Account Factory are set up automatically going forward.
 * [Step 2](#step-2-collect-from-the-log-archive-account): Set up collection of AWS CloudTrail logs that are aggregated from all Control Tower-managed accounts in a centralized log archive account.
 * [Step 3](#step-3-create-field-extraction-rule): Create a Field Extraction Rule (FER) that will tag logs with the account aliases you set up for each child account in the previous step.
+* [Step 4](#step-4-view-the-aws-observability-dashboards): View the AWS Observability dashboards for your Control Tower-managed accounts.
 
 <img src={useBaseUrl('img/observability/Control-Architecture.png')} alt="<Control Architecture" style={{border: '1px solid gray'}} width="800" />
 
 ## Step 1: Set up collection of logs and metrics data from your AWS accounts 
 
-  In this step, you configure the collection of logs and metrics for all AWS accounts managed by Control Tower, and install the apps in the solution. To do so, follow these steps for each AWS account that is managed by AWS Control Tower.
-1. To set up collection manually for AWS accounts created and managed via AWS Control Tower
-    1. Log in to the AWS Management Console as the AWS account user.
-    1. Follow steps 1 through 10 of the instructions in [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
-    1. In the **Sumo Logic AWS CloudTrail Source Details** section of the template, select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all other options. <br/><img src={useBaseUrl('img/observability/integrate-tower1.png')} alt="Create Sumo Logic CloudTrail Logs Source " style={{border: '1px solid gray'}} width="800" />
+In this step, you configure the collection of logs and metrics for all AWS accounts managed by Control Tower, and install the apps in the solution. Follow these steps for each AWS account managed by AWS Control Tower, either manually for existing accounts, or automatically for accounts created going forward.
 
-1. To automatically set up collection for AWS accounts created via Control Tower
+### Set up collection manually for AWS accounts
+1. Log in to the AWS Management Console as the AWS account user.
+1. Follow steps 1 through 10 of the instructions in [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+1. In the **Sumo Logic AWS CloudTrail Source Details** section of the template, select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all other options. <br/><img src={useBaseUrl('img/observability/integrate-tower1.png')} alt="Create Sumo Logic CloudTrail Logs Source " style={{border: '1px solid gray'}} width="800" />
 
-   For new AWS accounts created using Control Tower Account Factory, you can configure the AWS Observability solution to deploy automatically using Control Tower lifecycle events. This eliminates the need to manually run [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts) for each new account going forward. 
-   
-   <img src={useBaseUrl('img/observability/integrate-tower8.png')} alt="Sumo Logic AWS ALB Log Source Details" style={{border: '1px solid gray'}} width="800" />
+### Set up collection automatically for new AWS accounts
 
-   When an account creation or update succeeds in Control Tower, the solution captures the `CreateManagedAccount` or `UpdateManagedAccount` lifecycle event and triggers an AWS Lambda function. The Lambda function deploys the AWS Observability CloudFormation stack to the new account across all configured regions, with CloudTrail log source creation and app installation disabled. (The centralized Log Archive account handles CloudTrail logs, and apps are already installed from Step 1.)
-   
-   The Lambda function derives the account alias from the account name (lowercase alphanumeric characters only, truncated to 30 characters) and passes it automatically to the stack.
-   
-   Deploying this template to your AWS management account creates the following resources:
+For new AWS accounts created using Control Tower Account Factory, you can configure the AWS Observability solution to deploy automatically using Control Tower lifecycle events. This eliminates the need to manually run [Set up collection manually for AWS accounts](#set-up-collection-manually-for-aws-accounts) for each new account going forward.
 
-   - An Amazon EventBridge rule that captures `CreateManagedAccount` and `UpdateManagedAccount` events from AWS Control Tower.
-   - An AWS Lambda function that deploys the AWS Observability CloudFormation stack to each new account.
-   - An AWS Secrets Manager secret, encrypted with an AWS KMS key, that stores your Sumo Logic Access ID and Access Key for use by the Lambda function.
-   - AWS IAM roles with the permissions required to create CloudFormation StackSets across accounts.
+<img src={useBaseUrl('img/observability/integrate-tower8.png')} alt="Sumo Logic AWS ALB Log Source Details" style={{border: '1px solid gray'}} width="800" />
 
-   ### Deploy the lifecycle events template
+When an account creation or update succeeds in Control Tower, the solution captures the `CreateManagedAccount` or `UpdateManagedAccount` lifecycle event and triggers an AWS Lambda function. The Lambda function deploys the AWS Observability CloudFormation stack to the new account across all configured regions, with CloudTrail log source creation and app installation disabled. (The centralized Log Archive account handles CloudTrail logs, and apps are already installed from the manual setup above.)
 
-   1. Log in to the AWS Management Console as the **AWS Control Tower Master Account**.
-   1. Download and Launch the Sumo Logic Control Tower CloudFormation template in the region where your Control Tower is deployed. Use the link that matches your AWS Observability version:
-      - **AWSO v2.15.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master/aws-observability/apps/controltower/controltower.template.yaml)
-   1. In the **Sumo Logic Access Configuration** section, fill in the following required fields:
+The Lambda function derives the account alias from the account name (lowercase alphanumeric characters only, truncated to 30 characters) and passes it automatically to the stack.
 
-      | Parameter                      | Description                                                                                                                                                                                                                          |
-      |--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-      | **Sumo Logic Deployment Name** | Your Sumo Logic deployment. Enter one of: `au`, `ca`, `ch`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`, or `us2`. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-and-firewall-security). |
-      | **Sumo Logic Access ID**       | Your Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys/) to create one.                                                                                                                                      |
-      | **Sumo Logic Access Key**      | Your Sumo Logic Access Key.                                                                                                                                                                                                          |
-      | **Sumo Logic Organization ID** | Found on the **Account Overview** page in the Sumo Logic UI. Used for IAM role configuration in Sumo Logic AWS Sources. See [Account Settings and Preferences](/docs/get-started/account-settings-preferences/).                     |
+Deploying this template to your AWS management account creates the following resources:
+
+- An Amazon EventBridge rule that captures `CreateManagedAccount` and `UpdateManagedAccount` events from AWS Control Tower.
+- An AWS Lambda function that deploys the AWS Observability CloudFormation stack to each new account.
+- An AWS Secrets Manager secret, encrypted with an AWS KMS key, that stores your Sumo Logic Access ID and Access Key for use by the Lambda function.
+- AWS IAM roles with the permissions required to create CloudFormation StackSets across accounts.
+
+To deploy the lifecycle events template:
+
+1. Log in to the AWS Management Console as the **AWS Control Tower Master Account**.
+1. Download and launch the Sumo Logic Control Tower CloudFormation template in the region where your Control Tower is deployed. Use the link that matches your AWS Observability version:
+   - **AWSO v2.15.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master/aws-observability/apps/controltower/controltower.template.yaml)
+1. In the **Sumo Logic Access Configuration** section, fill in the following required fields:
+
+   | Parameter | Description |
+   |:--|:--|
+   | **Sumo Logic Deployment Name** | Your Sumo Logic deployment. Enter one of: `au`, `ca`, `ch`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`, or `us2`. See [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). |
+   | **Sumo Logic Access ID** | Your Sumo Logic Access ID. See [Access Keys](/docs/manage/security/access-keys/) to create one. |
+   | **Sumo Logic Access Key** | Your Sumo Logic Access Key. |
+   | **Sumo Logic Organization ID** | Found on the **Account Overview** page in the Sumo Logic UI. Used for IAM role configuration in Sumo Logic AWS Sources. See [Account Settings and Preferences](/docs/get-started/account-settings-preferences/). |
 
    1. In the **Regions to Monitor** section, enter a comma-separated list of AWS regions where you want the AWS Observability solution deployed when a new account is created. The default value is:
       ```
