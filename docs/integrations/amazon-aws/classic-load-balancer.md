@@ -179,6 +179,10 @@ The FER **AwsObservabilityCLBAccessLogsFER** to extract fields `loadbalancername
 
 The FER **AwsObservabilityCLBCloudTrailLogsFER** to extract fields `region`, `namespace`, `loadbalancername`, and `accountid` from CloudTrail logs will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing the AWS Classic Load Balancer dashboards
 
 ### Overview

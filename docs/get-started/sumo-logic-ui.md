@@ -83,7 +83,7 @@ The global toolbar (top nav bar) provides access to critical functions and setti
 
 ### Go To... menu options
 
-Use the **Go To...** menu for quick access to settings and features. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="600"/>
+Use the **Go To...** menu for quick access to settings, features, library content, monitors, and SLOs. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="600"/>
 
 ### Preferences
 

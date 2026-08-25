@@ -461,7 +461,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="Miro icon" width="50"/><h4>Miro</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source')}><img src={useBaseUrl('img/send-data/miro-logo.png')} alt="Miro icon" width="50"/><h4>Miro</h4></a>
   <p>Ingests audit logs obtained from the Audit log API.</p>
   </div>
 </div>

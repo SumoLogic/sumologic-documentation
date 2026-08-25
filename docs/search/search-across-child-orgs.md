@@ -18,7 +18,11 @@ Follow the steps below to perform a child org-level search:
 1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="Child org select button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. You can either select one child org or multiple child orgs.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="Child org dropdown" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the required query and click the search button to obtain the search results.
     :::note
-    Make sure you use an aggregator and `_orgID` for multi-child org queries. For example, `* | count by _orgId` or `* | count by _orgId | sum (_count)`.
+    Make sure you use an aggregator and `_orgId` for multi-child org queries. For example, `* | count by _orgId` or `* | count by _orgId | sum (_count)`.
+    :::
+    
+    :::info
+    Search results also include the `_orgName` field, which shows the organization name for each child org alongside its `_orgId`. When you manage many child orgs, `_orgName` helps you identify an org by name without remembering its `_orgId`. The `_orgId` field is still required for multi-child org queries. The `_orgName` field is an additional field to make results easier to read, and you can reference it in your queries. For example, `* | count by _orgId, _orgName`.
     :::
 
 There can be two possible errors while running the multi-child org queries:

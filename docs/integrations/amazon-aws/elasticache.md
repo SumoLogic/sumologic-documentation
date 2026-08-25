@@ -203,6 +203,10 @@ As part of the app installation process, the following **content** will be creat
 
 The FER **AwsObservabilityElastiCacheCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `cacheclusterid` will be created as a part of app installation.
 
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
 ## Viewing Amazon ElastiCache dashboards  
 
 ### Host Performance Overview
