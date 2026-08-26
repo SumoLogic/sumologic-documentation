@@ -23,6 +23,18 @@ When reviewing any PR or doc, always check existing docs of the same type in the
 
 Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
 
+## Bulk Changes
+For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
+
+**Enter plan mode** at the start of any bulk change. Present scope, file count, directory breakdown, and before/after samples — then wait for explicit approval before touching any files.
+
+1. **Define scope first, get sign-off.** State the exact pattern, included paths, excluded paths, and known edge cases before touching files.
+2. **Dry-run before writing.** Report total file count, per-directory breakdown, and ~10 before/after samples. Wait for confirmation.
+3. **Apply in batches by directory**, not all at once. Show `git diff --stat` and a few spot-checks after each batch.
+4. **One commit per batch/category** — never bundle multiple directories into one commit. Atomic commits stay revertable.
+5. **Never revert from memory.** If reverting, validate against actual file content — do not trust "the original had X."
+6. **Never commit helper/detection scripts** to the repo. Run them ephemerally.
+
 ## Directory Conventions
 
 | What | Where |
@@ -127,13 +139,14 @@ Primary commands for documentation work. Proactively suggest when context fits �
 **Content:** `/doc`, `/doc-from-jira`, `/app-doc`, `/c2c-source-doc`, `/remove-doc`
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
-**Workflow:** `/jira`
+**Workflow:** `/jira`, `/docs-pr-reviewer`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket → suggest `/doc-from-jira`
 - User is about to create a PR → suggest `/seo-audit` first
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
+- An SME/stakeholder without a local dev environment wants to apply their own edit to an existing PR (not just view or approve it — those happen directly on the PR's staging link and GitHub page) → suggest `/docs-pr-reviewer`
 
 **Creating docs**
 
@@ -174,6 +187,12 @@ Primary commands for documentation work. Proactively suggest when context fits �
 | Command | What it does |
 |---------|-------------|
 | `/remove-doc` | Safely deprecate or move a doc with redirects |
+
+**PR review**
+
+| Command | What it does |
+|---------|-------------|
+| `/docs-pr-reviewer` | Apply an SME's self-serve edit to an already-open PR (no local env needed) |
 
 ### Which audit command to use
 
