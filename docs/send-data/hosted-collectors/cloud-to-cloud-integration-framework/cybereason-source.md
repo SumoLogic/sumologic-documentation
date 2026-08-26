@@ -75,7 +75,7 @@ To configure a Cybereason Source:
     ```
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
+:::tip
 After configuring the Cybereason source, consider installing the Sumo Logic app for [Cybereason](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cybereason) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -130,3 +130,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Cybereason Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/cybereason/) to automate response actions directly from Cloud SOAR playbooks.
