@@ -42,6 +42,10 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * [Partner app template](/docs/contributing/templates/partner-app-doc)
 :::
 
+:::tip Using Claude Code (optional)
+If you have [Claude Code](https://claude.ai/code) installed, this repo's `sumo-style` skill automatically applies the conventions on this page when you draft or edit docs — you don't need to invoke it manually. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for details.
+:::
+
 ## Voice and tone
 
 * **Clarity and professionalism**. We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.

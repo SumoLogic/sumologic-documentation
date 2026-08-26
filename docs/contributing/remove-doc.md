@@ -16,6 +16,10 @@ import DocPrereq from '../reuse/doc-prerequisites.md';
 
 <DocPrereq/>
 
+:::tip Using Claude Code (optional)
+This repository includes a [Claude Code](https://claude.ai/code) `/remove-doc` slash command (in `.claude/commands/`) that automates the steps below — creating the redirect, updating internal links, and removing the doc from navigation. If you have Claude Code installed, it works the same way against your fork. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for details.
+:::
+
 ## Step 1: Create a 301 redirect
 
 As an example, let's say there are two docs called **Nginx App** and **Nginx (Legacy) App**, and we need to deprecate the latter.

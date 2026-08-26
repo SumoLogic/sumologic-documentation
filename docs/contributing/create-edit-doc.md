@@ -15,6 +15,11 @@ import DocPrereq from '../reuse/doc-prerequisites.md';
 
 <DocPrereq/>
 
+:::tip Using Claude Code (optional)
+This repository includes [Claude Code](https://claude.ai/code) slash commands (in `.claude/commands/`) that can help you draft and review docs locally — for example, `/doc` to scaffold a new doc, or `/audit-doc` and `/seo-audit` to review one before opening a PR. If you have Claude Code installed, these work the same way against your fork. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for the full list.
+
+A few commands (`/jira`, `/doc-from-jira`) require internal Sumo Logic Jira access and aren't available to external contributors — follow the steps below instead.
+:::
 
 ## Quickstart
 
