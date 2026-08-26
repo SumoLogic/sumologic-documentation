@@ -1,12 +1,13 @@
 ---
 slug: /search/get-started-with-search/build-search
-title: Build Searches
+title: How to Write and Run a Sumo Logic Search Query
+sidebar_label: Build Searches
 description: Details on building a search - best practices, syntax, time range, and efficient searches. These simple queries will help you discover what data you have in your Sumo Logic environment. An efficient search query returns targeted results as quickly as possible, with as little "noise" as possible.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide provides information on building searches.
+How do you actually write and run a log search query? This guide covers the UI mechanics of building a search: autocomplete, search modes, time ranges, and best practices for efficient queries.
 
 In this section, we'll introduce the following concepts:
 
@@ -25,14 +26,20 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/keyword-search-expressions')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Keyword Search Expressions</h4></a>
-  <p>Learn how to define the scope of data for the query.</p>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/quick-search-collectors-sources')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Launch a Search from the Collection Page</h4></a>
+  <p>Quickly start a search for a Collector, Source, or Source Category from the Manage Collection page.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/search-syntax-overview')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Search Syntax Overview</h4></a>
-  <p>Learn about query syntax and how to construct a search.</p>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/search-autocomplete')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Search Autocomplete</h4></a>
+  <p>The search autocomplete dropdown dialog offers suggestions to make query writing easier.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/search-modes')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Search Modes</h4></a>
+  <p>Learn about the new search modes of our Log Search page.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -55,7 +62,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/use-searchable-time')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Use Searchbale Time</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/build-search/use-searchable-time')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Use Searchable Time</h4></a>
   <p>Learn how to display search results in the order when the logs become available for search.</p>
   </div>
 </div>
@@ -67,11 +74,11 @@ In this section, we'll introduce the following concepts:
 </div>
 </div>
 
-## What Data Do I Have?
+## What data do I have?
 
-It can be hard to create a search query if you do not know what data you have in your Sumo Logic environment. 
+It can be hard to create a search query if you do not know what data you have in your Sumo Logic environment.
 
-You can use the following simple queries to identify possible values for your existing Source Categories, Source Names, and Source Hosts. You can also approximate data volume for each of the possible values using these queries.
+You can use the following simple queries to identify possible values for your existing Source Categories, Source Names, and Source Hosts. You can also approximate data volume for each of the possible values using these queries.
 
 We discourage the use of `*`, as it does not provide much value, but in this exception, it is an easy way to identify all messages received in the last 5 minutes, and provide an approximate volume for each.
 
@@ -81,7 +88,7 @@ For Source Hosts: `* | count_frequent(_sourceHost)`
 
 For Source Names: `* | count_frequent(_sourceName)`
 
-## Write Efficient Search Queries
+## Write efficient search queries
 
 ### Make the search as selective as possible
 
@@ -90,7 +97,7 @@ The more specific the query, the more efficiently it will run, as unnecessary me
 * `* | parse regex "uid=(?<userId>\d+)"`
 * `"uid=" | parse regex "uid=(?<userId>\d+)"`
 
-The second query will return the results more efficiently because the first query includes `"*"`, which prompts Sumo Logic to comb through all messages for the given time range.
+The second query will return the results more efficiently because the first query includes `"*"`, which prompts Sumo Logic to comb through all messages for the given time range.
 
 ### Use Field Extraction Rules
 
@@ -106,4 +113,4 @@ For example, look at the following queries:
 
 `* | parse "queryTime=* " as queryTime | where queryTime\> 10000 | parse "uid=* " as ``uid`
 
-Because most log lines have a `uid`, but only a small fraction have `queryTime > 10000`, the second query is more efficient.
+Because most log lines have a `uid`, but only a small fraction have `queryTime > 10000`, the second query is more efficient.
