@@ -71,6 +71,6 @@ For information about Zendesk, see [Zendesk documentation](https://www.zendesk.c
     + Changed "Comment" field type to textarea in "Update Ticket" action
 * April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
-:::info
-Sumo Logic also supports the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize Zendesk data.
-:::
+## Additional resources
+
+- For Zendesk, Sumo Logic offers the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize your Zendesk data.

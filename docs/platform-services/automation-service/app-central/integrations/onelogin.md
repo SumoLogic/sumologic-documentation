@@ -64,6 +64,6 @@ For information about OneLogin, see [OneLogin documentation](https://developers.
     * Other minor improvements and fixes
 * April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
-:::info
-Sumo Logic also supports the [OneLogin source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) and the [OneLogin app](/docs/integrations/saml/onelogin/) to collect and visualize OneLogin data.
-:::
+## Additional resources
+
+- For OneLogin, Sumo Logic offers the [OneLogin source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) and the [OneLogin app](/docs/integrations/saml/onelogin/) to collect and visualize your OneLogin data.

@@ -54,6 +54,6 @@ For information about Snyk, see [Snyk documentation](https://docs.snyk.io/).
 * July 7, 2023 (v1.1) - Removed leading/trailing spaces
 * April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
-:::info
-Sumo Logic also supports the [Snyk app](/docs/integrations/webhooks/snyk/) to visualize Snyk data.
-:::
+## Additional resources
+
+- For Snyk, Sumo Logic offers the [Snyk app](/docs/integrations/webhooks/snyk/) to visualize your Snyk data.

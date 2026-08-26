@@ -61,6 +61,6 @@ Email Security
 * June 21, 2023 (v1.2) - Removed trailing spaces from integration
 * April 13, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
-:::info
-Sumo Logic also supports the [Abnormal Security source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) and the [Abnormal Security app](/docs/integrations/saas-cloud/abnormal-security/) to collect and visualize Abnormal Security data.
-:::
+## Additional resources
+
+- For Abnormal Security, Sumo Logic offers the [Abnormal Security source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) and the [Abnormal Security app](/docs/integrations/saas-cloud/abnormal-security/) to collect and visualize your Abnormal Security data.

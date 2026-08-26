@@ -170,7 +170,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 <CollectionConfiguration/>
 
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for Proofpoint TAP](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
 :::
 
@@ -218,6 +218,6 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
-:::info
-Sumo Logic also supports [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
-:::
+## Additional resources
+
+- Use the [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

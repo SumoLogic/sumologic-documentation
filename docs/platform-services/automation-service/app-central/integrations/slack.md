@@ -155,6 +155,6 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 * June 17, 2026 (v1.15)
     * Updated action: Send Message (Added **Disable Link Previews** option to control whether Slack displays link previews in messages).
 
-:::info
-Sumo Logic also supports the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize Slack data.
-:::
+## Additional resources
+
+- For Slack, Sumo Logic offers the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize your Slack data.

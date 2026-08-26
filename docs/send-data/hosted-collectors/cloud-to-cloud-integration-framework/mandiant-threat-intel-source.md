@@ -93,6 +93,6 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
-:::info
-Sumo Logic also supports the [Mandiant Advantage Threat Intelligence Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
-:::
+## Additional resources
+
+- Use the [Mandiant Advantage Threat Intelligence Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

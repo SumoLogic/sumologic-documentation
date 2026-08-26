@@ -302,6 +302,6 @@ The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of th
 
 <img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Dependabot-Alerts.png" />
 
-:::info
-Sumo Logic also supports [GitHub Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/github/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
-:::
+## Additional resources
+
+- Use the [GitHub Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/github/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

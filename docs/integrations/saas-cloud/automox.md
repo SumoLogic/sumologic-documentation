@@ -153,7 +153,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 <CollectionConfiguration/>
 
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for Automox](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Automox app is properly integrated and configured to collect and analyze your Automox data.
 :::
 
@@ -214,6 +214,6 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
-:::info
-Sumo Logic also supports [Automox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/automox/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
-:::
+## Additional resources
+
+- Use the [Automox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/automox/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

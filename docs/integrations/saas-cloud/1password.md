@@ -268,4 +268,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [1Password Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/1password/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [1Password Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/1password/) to automate response actions directly from Cloud SOAR playbooks.

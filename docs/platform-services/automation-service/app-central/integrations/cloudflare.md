@@ -94,6 +94,6 @@ For information about Cloudflare, see [Cloudflare documentation](https://develop
 * March 23, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 * April 29, 2026 (v1.5) - Fixed urllib3 issue
 
-:::info
-Sumo Logic also supports the [Cloudflare app](/docs/integrations/saas-cloud/cloudflare/) to visualize Cloudflare data.
-:::
+## Additional resources
+
+- For Cloudflare, Sumo Logic offers the [Cloudflare app](/docs/integrations/saas-cloud/cloudflare/) to visualize your Cloudflare data.

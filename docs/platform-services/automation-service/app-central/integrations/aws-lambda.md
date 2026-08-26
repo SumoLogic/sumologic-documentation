@@ -70,6 +70,6 @@ lambda:InvokeFunction
 
 * August 14, 2026 (v1.0) - First upload
 
-:::info
-Sumo Logic also supports the [AWS Lambda app](/docs/integrations/amazon-aws/lambda/) to visualize AWS Lambda data.
-:::
+## Additional resources
+
+- For AWS Lambda, Sumo Logic offers the [AWS Lambda app](/docs/integrations/amazon-aws/lambda/) to visualize your AWS Lambda data.

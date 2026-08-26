@@ -123,6 +123,6 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
-:::info
-Sumo Logic also supports the [CrowdStrike Falcon Intelligence Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
-:::
+## Additional resources
+
+- Use the [CrowdStrike Falcon Intelligence Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

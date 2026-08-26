@@ -68,6 +68,6 @@ For information about Cisco Meraki, see [Cisco Meraki documentation](https://dev
 * June 26, 2023 (v1.1) - Removed unnecessary empty lines and other little changes
 * October 24, 2025 (v1.3) - The Cisco Meraki integration has been fully upgraded to align with the latest Meraki Dashboard API (v1) and SDK (v2.0.3)
 
-:::info
-Sumo Logic also supports the [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source/) and the [Cisco Meraki app](/docs/integrations/saas-cloud/cisco-meraki-c2c/) to collect and visualize Cisco Meraki data.
-:::
+## Additional resources
+
+- For Cisco Meraki, Sumo Logic offers the [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source/) and the [Cisco Meraki app](/docs/integrations/saas-cloud/cisco-meraki-c2c/) to collect and visualize your Cisco Meraki data.

@@ -262,6 +262,6 @@ If the IP isn’t formatted correctly (for example, missing the CIDR suffix), AW
 ### Deprecation notices
 * NA
 
-:::info
-Sumo Logic also supports the [AWS WAF app](/docs/integrations/cloud-security-monitoring-analytics/aws-waf/) to visualize AWS WAF data.
-:::
+## Additional resources
+
+- For AWS WAF, Sumo Logic offers the [AWS WAF app](/docs/integrations/cloud-security-monitoring-analytics/aws-waf/) to visualize your AWS WAF data.

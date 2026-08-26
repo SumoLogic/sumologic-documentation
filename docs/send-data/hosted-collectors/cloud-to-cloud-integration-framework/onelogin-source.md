@@ -58,10 +58,8 @@ To configure a OneLogin source:
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the source, click **Save**.
 
-:::info
-After configuring the OneLogin source, consider:
-- Installing the Sumo Logic app for [OneLogin](/docs/integrations/saml/onelogin/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
-- Using the [OneLogin Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/onelogin/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::tip
+After configuring the OneLogin source, consider installing the Sumo Logic app for [OneLogin](/docs/integrations/saml/onelogin/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -104,3 +102,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [OneLogin Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/onelogin/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

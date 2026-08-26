@@ -84,6 +84,6 @@ For information about OpenAI, see [OpenAI documentation](https://platform.openai
 * June 26, 2023 (v1.3) - Changed multiline hints to single line
 * April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
-:::info
-Sumo Logic also supports the [OpenAI source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source/) to collect OpenAI data.
-:::
+## Additional resources
+
+- For OpenAI, Sumo Logic offers the [OpenAI source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source/) to collect your OpenAI data.

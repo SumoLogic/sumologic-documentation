@@ -74,10 +74,8 @@ To configure a Druva Source:
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
-After configuring the Druva source, consider:
-- Installing the Sumo Logic app for [Druva](/docs/integrations/saas-cloud/druva/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
-- Using the [Druva Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/druva/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::tip
+After configuring the Druva source, consider installing the Sumo Logic app for [Druva](/docs/integrations/saas-cloud/druva/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata Fields
@@ -123,3 +121,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Druva Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/druva/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

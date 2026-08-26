@@ -61,10 +61,8 @@ To configure a Mimecast Source:
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
-After configuring the Mimecast source, consider:
-- Installing the Sumo Logic app for [Mimecast](/docs/integrations/saas-cloud/mimecast/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
-- Using the [Mimecast Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mimecast/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::tip
+After configuring the Mimecast source, consider installing the Sumo Logic app for [Mimecast](/docs/integrations/saas-cloud/mimecast/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -130,3 +128,7 @@ To resolve these errors:
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Mimecast Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mimecast/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

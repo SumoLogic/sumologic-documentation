@@ -52,6 +52,6 @@ For information about Cisco ASA, see [Cisco ASA documentation](https://www.cisco
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
 * April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
-:::info
-Sumo Logic also supports the [Cisco ASA app](/docs/integrations/security-threat-detection/cisco-asa/) to visualize Cisco ASA data.
-:::
+## Additional resources
+
+- For Cisco ASA, Sumo Logic offers the [Cisco ASA app](/docs/integrations/security-threat-detection/cisco-asa/) to visualize your Cisco ASA data.

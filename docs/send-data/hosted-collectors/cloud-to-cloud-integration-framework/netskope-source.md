@@ -136,10 +136,8 @@ To configure a Netskope Source:
     :::
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
-After configuring the Netskope source, consider:
-- Installing the Sumo Logic app for [Netskope](/docs/integrations/security-threat-detection/netskope/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
-- Using the [Netskope Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/netskope/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::tip
+After configuring the Netskope source, consider installing the Sumo Logic app for [Netskope](/docs/integrations/security-threat-detection/netskope/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -190,3 +188,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Netskope Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/netskope/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

@@ -51,10 +51,8 @@ To configure an Okta Source:
 1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
-After configuring the Okta source, consider:
-- Installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
-- Using the [Okta Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/okta/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::tip
+After configuring the Okta source, consider installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -110,3 +108,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 ## Limitation
 
 During a polling interval, an Okta Source will make a request for every 1,000 logs available. The Okta API uses paging and only 1,000 logs are returned at a time.
+
+## Additional resources
+
+- Use the [Okta Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/okta/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

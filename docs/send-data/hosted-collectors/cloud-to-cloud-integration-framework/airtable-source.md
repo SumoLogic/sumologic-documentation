@@ -58,10 +58,8 @@ To configure an Airtable Source:
 1. In **Personal Access Token**, enter the access token that you have generated in the [Vendor configuration](#vendor-configuration) section.
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
-After configuring the Airtable source, consider:
-- Installing the Sumo Logic app for [Airtable](/docs/integrations/saas-cloud/airtable/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
-- Using the [Airtable Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/airtable/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::tip
+After configuring the Airtable source, consider installing the Sumo Logic app for [Airtable](/docs/integrations/saas-cloud/airtable/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -102,3 +100,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Airtable Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/airtable/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

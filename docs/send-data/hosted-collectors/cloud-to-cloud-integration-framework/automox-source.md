@@ -57,10 +57,8 @@ To configure a Automox Source:
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
-After configuring the Automox source, consider:
-- Installing the Sumo Logic app for [Automox](/docs/integrations/saas-cloud/automox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
-- Using the [Automox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/automox/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+:::tip
+After configuring the Automox source, consider installing the Sumo Logic app for [Automox](/docs/integrations/saas-cloud/automox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -108,3 +106,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Automox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/automox/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.

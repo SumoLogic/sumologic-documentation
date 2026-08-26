@@ -56,6 +56,6 @@ For information about Airtable, see [Airtable documentation](https://support.air
 * July 18, 2023 (v1.1) - Updated the integration with Environmental Variables
 * March 31, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
-:::info
-Sumo Logic also supports the [Airtable source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) and the [Airtable app](/docs/integrations/saas-cloud/airtable/) to collect and visualize Airtable data.
-:::
+## Additional resources
+
+- For Airtable, Sumo Logic offers the [Airtable source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) and the [Airtable app](/docs/integrations/saas-cloud/airtable/) to collect and visualize your Airtable data.
