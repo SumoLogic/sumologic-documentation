@@ -9,6 +9,13 @@ resource "sumologic_cloud_to_cloud_source" "duo_source" {
       "domain":"api-********.duosecurity.com",
       "integration_key":"********",
       "secret_key":"********",
+      "supported_apis": [
+        "administrator",
+        "authentication",
+        "telephony",
+        "activity",
+      ],
+      "collectUserInventory": true,
       "fields":{
         "_siemForward":false
       },

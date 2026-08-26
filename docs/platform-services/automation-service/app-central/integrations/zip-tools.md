@@ -20,6 +20,33 @@ ZIP Tools is used to work with archives, in particular to extract and save the C
 
 * **Unzip File** (*Custom*) - Extract from archive and save all CSV files as incident attachments.
 
+## Configure Zip Tools in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* **Password**. Enter the Zip file password. 
+
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zip-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Zip Tools configuration" width="400"/>
+
 ## Change Log
 
 * December 23, 2020 - First upload

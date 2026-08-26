@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudDataprocMetastore.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudDataprocMetastore.png')} alt="Google Cloud Dataproc Metastore icon" width="50"/>
 
 Dataproc Metastore is a fully managed, highly available, autohealing, serverless, and Apache Hive metastore (HMS) that runs on Google Cloud. For more details, refer to the [GCP documentation](https://cloud.google.com/dataproc-metastore/docs/overview)
 

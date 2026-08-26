@@ -10,10 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Version: 1.7  
 Updated: May 21, 2024**
 
-Chronicle SIEM is a cloud service, built as a specialized layer on top of core Google infrastructure, designed for
-enterprises to privately retain, analyze, and search the massive amounts of security and network telemetry they
-generate. Chronicle normalizes, indexes, correlates, and analyzes the data to provide instant analysis and context on
-risky activity.
+Chronicle SIEM is a cloud service, built as a specialized layer on top of core Google infrastructure, designed for enterprises to privately retain, analyze, and search the massive amounts of security and network telemetry they generate. Chronicle normalizes, indexes, correlates, and analyzes the data to provide instant analysis and context on risky activity.
 
 ## Actions
 
@@ -32,6 +29,27 @@ risky activity.
 
 * [Chronicle (Google Auth)](https://github.com/googleapis/google-auth-library-python/blob/master/LICENSE)
 * [Chronicle (Google API)](https://github.com/googleapis/google-api-python-client/blob/master/LICENSE)
+
+## Configure Chronicle in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the [Chronicle API URL](https://cloud.google.com/chronicle/docs/reference/rest).
+
+* **Service Account Credentials JSON**. Enter the [service account credentials](https://cloud.google.com/chronicle/docs/reference/ingestion-api#getting_api_authentication_credentials) in JSON format.
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/chronicle/chronicle-configuration.png')} style={{border:'1px solid gray'}} alt="Chronicle configuration" width="400"/>
+
+For information about Google Security Operations (formerly Chronicle), see [Google Security Operations documentation](https://cloud.google.com/chronicle/docs).
 
 ## Change Log
 

@@ -1,0 +1,1 @@
+**Access ID**. Enter the access ID for your Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.

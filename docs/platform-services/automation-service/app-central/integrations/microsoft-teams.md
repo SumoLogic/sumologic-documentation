@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-teams.png')} alt="microsoft-teamsg" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-teams.png')} alt="Microsoft Teams icon" width="100"/>
 
-***Version: 1.9  
-Updated: Mar 4, 2024***
+***Version: 1.10  
+Updated: April 30, 2026***
 
 Microsoft Teams is the ultimate hub for teamwork and intelligent communications. Built on the strength and scale of Microsoft 365 with over 120 million users, Microsoft Teams is a chat-based workspace in Microsoft 365. Microsoft Graph makes it easy to create large numbers of teams and populate them with users and channels, by automating the creation and management of teams, and channels. also send a messages to chats or channels.
 
@@ -39,28 +39,28 @@ Microsoft Teams is the ultimate hub for teamwork and intelligent communications.
 
 Each application you want the Microsoft identity platform to perform identity and access management (IAM) needs to be registered. Registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform.
 
-**Register an Application**
+**Register an application**
 
-Registering your application establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
+[Registering your application](https://learn.microsoft.com/en-us/graph/auth-register-app-v2#register-an-application) establishes a trust relationship between your app and the Microsoft identity platform. The trust is unidirectional: your app trusts the Microsoft identity platform, and not the other way around.
 
 Follow these steps to create the app registration:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
-1. If you have access to multiple tenants, use the **Directory + subscription** filter <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="30"/> in the top menu to select the tenant in which you want to register an application.
+1. If you have access to multiple tenants, use the **Directory + subscription** filter <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png')} style={{border:'1px solid gray'}} alt="Microsoft teams" width="30"/> in the top menu to select the tenant in which you want to register an application.
 1. Search for and select the **Azure Active Directory.**
 1. Under Manage, select **App registrations** > **New registration**.
 1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
-1. Select **Register** to complete the initial app registration. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
+1. Select **Register** to complete the initial app registration. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png')} style={{border:'1px solid gray'}} alt="Register" width="800"/>
 1. Don't enter anything for **Redirect URI (optional)**.
 1. When registration completes, the Azure portal displays the app registration's Overview pane, which includes its **Application (client) ID**. Also referred to as just *client ID*, this value uniquely identifies your application in the Microsoft identity platform.
 
-The client ID as one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-3.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
+The client ID as one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-3.png')} style={{border:'1px solid gray'}} alt="Client ID" width="800"/>
 
 **Add Credentials**
 
 Credentials are used by confidential client applications that access an API. Examples of confidential clients are web apps, or service- and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.
 
-You can add client secrets (a string) as credentials to your confidential client app registration.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-4.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
+You can add client secrets (a string) as credentials to your confidential client app registration.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-4.png')} style={{border:'1px solid gray'}} alt="Client secrets" width="800"/>
 
 **Add a Client Secret**
 
@@ -371,30 +371,45 @@ Once API permission are added then **Admin** must consent to a grant these permi
 
 For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0**](https://docs.microsoft.com/en-us/graph/api/resources/teams-api-overview?view=graph-rest-1.0)
 
-## Microsoft Teams in Automation Service and Cloud SOAR
+## Configure Microsoft Teams in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for Microsoft Teams integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Add two different resources for Application and Delegated context.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
-1. Populate the resource fields as indicated.
-    * **Label**. The resource name.
-    * **API URL**. The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'.
-    * **Tenant ID**. Directory (Tenant) ID (You can check from you app registration page).
-    * **Authentication Grant Type**. You can choose any value from the following according to the permissions you add to your App:
-        * Password (Delegated Context)
-        * Client Credentials (Application Context)
-    * **Client ID**. Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page).
-    * **Client Secret**. Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier).
-    * **Username**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
-    * **Password**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
-    * **Cloud SOAR URL**. Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers).
-    * **Cloud SOAR JWT Token**. Provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers).
-    * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.
-1. Click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-9.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
-1. Click **TEST** to test the integration connector. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-10.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="300"/>
-1. You should receive a successful notification in the bottom right corner if resource was tested successfully.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-11.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+:::note
+Use the information you set up [above](#microsoft-teams-configuration).
+:::
+
+* <IntegrationLabel/>
+* **API URL**. Enter your Microsoft Teams API URL. The default URL is `https://graph.microsoft.com/v1.0`
+
+* **Tenant ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)).
+  
+* **Authentication Grant Type**. Choose one of the following according to the permissions you add to your app:
+   * **Password (Delegated Context)**
+   * **Client Credentials (Application Context)**
+
+* **Client ID**. Enter your application ID. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)). This is required for both authentication grant types.
+
+* **Client Secret**. Enter your client secret. This is required for both authentication grant types.
+
+* **Username**. Enter the username of an admin user authorized to authenticate the integration. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+
+* **Password**. Enter the password for the admin user. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+    
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-teams-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft Teams configuration" width="400"/>
+
+For information about Microsoft Teams, see [Microsoft Teams documentation](https://learn.microsoft.com/en-us/microsoftteams/).
 
 ## Change Log
 
@@ -414,3 +429,4 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
 * July 5, 2023 (v1.8)
     + Updated Actions - List Users & Create Channel
 * March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.10) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

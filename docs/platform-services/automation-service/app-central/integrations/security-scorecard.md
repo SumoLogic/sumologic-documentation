@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/security-scorecard.png')} alt="security-scorecard" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/security-scorecard.png')} alt="Security Scorecard icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 13, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Create, update, and delete portfolios as well as gather enrichment data on all current portfolios.
 
@@ -50,6 +50,31 @@ Create, update, and delete portfolios as well as gather enrichment data on all c
 * **Send Feedback** (*Containment*) - Send new feedback on findings from a specific issue type.
 * **Get Notifications** (*Daemon*) - Get all notifications.
 
+## Configure Security Scorecard in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Security Scorecard [API URL](https://securityscorecard.readme.io/docs/getting-started), for example, `https://api.securityscorecard.io`.
+
+* **API Key**. Enter your Security Scorecard [API key](https://securityscorecard.readme.io/docs/getting-started).
+
+* **Username**. Enter the username of a Security Scorecard admin user authorized to authenticate the integration.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/security-scorecard-configuration.png')} style={{border:'1px solid gray'}} alt="Security Scorecard configuration" width="400"/>
+
+For information about Security Scorecard, see [Security Scorecard documentation](https://securityscorecard.readme.io/reference/introduction).
+
 ## Change Log
 
 * January 31, 2020 - First upload
@@ -58,3 +83,4 @@ Create, update, and delete portfolios as well as gather enrichment data on all c
 * July 13, 2023 (v1.3)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -2,14 +2,14 @@
 id: box
 title: Box
 sidebar_label: Box
-description: Provides insight into user behavior patterns, monitors resources, and even tracks administrative activities.
+description: The Sumo Logic app for Box provides insight into user behavior patterns, monitors resources, tracks administrative activities, and detects security threats.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="Box icon" width="50"/>
 
-The Sumo Logic App for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
+The Sumo Logic app for Box provides insight into user behavior patterns, monitors resources, tracks administrative activities, and detects security threats. The app consists of six predefined dashboards covering admin compliance, collaboration, resource monitoring, security anomalies, user authentication, and an operational overview, providing comprehensive visibility into your Box environment.
 
 ## Log types
 
@@ -67,7 +67,7 @@ The Sumo Logic app for Box collects Box events, which are described in detail [h
 
 ### Sample queries
 
-```sql title="Top 10 Failed Logins"
+```sumo title="Top 10 Failed Logins"
 _sourceCategory=box  type "event_type" login
 | json "created_at","ip_address","event_type","created_by.name","created_by.login" as messagetime,src_ip,event_type, src_user,src_login nodrop
 | json "source.name","source.login","source.type"  as dest_user,dest_login, item_type nodrop
@@ -75,243 +75,33 @@ _sourceCategory=box  type "event_type" login
 | count as EventCount by src_user,src_login,src_ip | top 10 src_user,src_login,src_ip by EventCount
 ```
 
-## Collecting Events for Box
+## Collection configuration and app installation
 
-This section provides instructions for setting up event collection from Box for analysis in Sumo Logic. Before you begin setting up log collection, review the required prerequisites and process overview described in the following sections.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
+<CollectionConfiguration/>
 
-### Authentication
+:::important
+Use the [Cloud-to-Cloud Integration Box Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Box app is properly integrated and configured to collect and analyze your Box data.
+:::
 
-You'll need a Box App Key, App Secret, and Access Code to provide to Sumo Logic.
+### Create a new collector and install the app
 
-Complete the following steps to get the credentials:
-1. Login into the [Box Account](https://app.box.com/login).
-1. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT)** as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
-1. Generate `public private key pair` as described in the following steps [Key Pair](https://developer.box.com/guides/authentication/jwt/jwt-setup/#public-and-private-key-pair) and download the JSON file.
-1. Go to the `Configuration` and change `App Access Level` to `App + Enterprise Access` and enable `Manage Enterprise properties` in `Application Scopes` and save changes as shown below.<br/><img src={useBaseUrl('img/send-data/box-source4.png')} alt="Box" style={{border: '1px solid gray'}} width="800" /> <br/><img src={useBaseUrl('img/send-data/box-source5.png')} alt="Box" style={{border: '1px solid gray'}} width="800" /> <br/><img src={useBaseUrl('img/send-data/box-source6.png')} alt="Box" style={{border: '1px solid gray'}} width="800" />
-1. Authorize your app by following the steps in [Authorize](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-authorization).
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
+<AppCollectionOPtion1/>
 
-### States
+### Use an existing collector and install the app
 
-A Box Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-A Box Source goes through the following states when created:
-1. **Pending**. Once the Source is submitted, it is validated, stored, and placed in a **Pending** state.
-1. **Started**. A collection task is created on the Hosted Collector.
-1. **Initialized**. The task configuration is complete in Sumo Logic.
-1. **Authenticated**. The Source successfully authenticated with Box.
-1. **Collecting**. The Source is actively collecting data from Box.
+<AppCollectionOPtion2/>
 
-If the Source has any issues during any one of these states, it is placed in an **Error** state.
+### Use an existing source and install the app
 
-When you delete the Source, it is placed in a **Stopping** state. When it has successfully stopped, it is deleted from your Hosted Collector.
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-On the Collection page, the [Health](/docs/manage/health-events#collection-page) and Status for Sources is displayed. Use [Health Events](/docs/manage/health-events) to investigate issues with collection.<br/><img src={useBaseUrl('img/send-data/box-source3.png')} alt="Box" />
-
-You can click the text in the Health column, such as **Error**, to open the issue in Health Events to investigate.<br/><img src={useBaseUrl('img/send-data/hover-c2c-error.png')} alt="Box" />
-
-Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/><img src={useBaseUrl('img/send-data/health-error-generic.png')} alt="Box" />
-
-### Create a Box source
-
-When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-
-To configure a Box Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
-1. On the Collectors page, click **Add Source** next to a Hosted Collector.
-1. Select **Box**.<br/><img src={useBaseUrl('img/send-data/box-source2.png')} alt="Box" width="100" />
-1. Enter a **Name** for the Source. The **description** is optional. <br/><img src={useBaseUrl('img/send-data/box-source1.png')} alt="Box" width="400" />
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).<br/>When configured with the **Forward to SIEM** option, the following metadata fields are set:
-<table>
-  <tr>
-   <td>Field Name   </td>
-   <td>Value   </td>
-  </tr>
-  <tr>
-   <td><code>_siemVendor</code>   </td>
-   <td>Box   </td>
-  </tr>
-  <tr>
-   <td><code>_siemProduct</code>   </td>
-   <td>Enterprise Events   </td>
-  </tr>
-  <tr>
-   <td><code>_siemFormat</code>   </td>
-   <td>JSON   </td>
-  </tr>
-  <tr>
-   <td><code>_siemEventID</code>   </td>
-   <td>&#123;event_type&#125;   </td>
-  </tr>
-</table>
-1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
-    * Define the fields you want to associate, each field needs a name (key) and value.
-        * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
-        * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-1. Upload the JSON file.
-1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-1. When you are finished configuring the Source, click **Submit**.
-
-## Error types
-
-When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/health-events). The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
-
-<table>
-  <tr>
-   <td>Type   </td>
-   <td>Reason   </td>
-   <td>Retries   </td>
-   <td>Retry Behavior   </td>
-   <td>Health Event Name   </td>
-  </tr>
-  <tr>
-   <td>ThirdPartyConfig   </td>
-   <td>Normally due to an invalid configuration. You'll need to review your Source configuration and make an update.   </td>
-   <td>No retries are attempted until the Source is updated.   </td>
-   <td>Not applicable   </td>
-   <td>ThirdPartyConfigError </td>
-  </tr>
-  <tr>
-   <td>ThirdPartyGeneric   </td>
-   <td>Normally due to an error communicating with the third party service APIs.   </td>
-   <td>Yes   </td>
-   <td>The Source will retry for up to 90 minutes, after which it quits.   </td>
-   <td>ThirdPartyGenericError   </td>
-  </tr>
-  <tr>
-   <td>FirstPartyGeneric </td>
-   <td>Normally due to an error communicating with the internal Sumo Logic APIs.   </td>
-   <td>Yes   </td>
-   <td>The Source will retry for up to 90 minutes, after which it quits.   </td>
-   <td>FirstPartyGenericError   </td>
-  </tr>
-</table>
-
-#### JSON configuration
-
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/collector-management). See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details.
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong>   </td>
-   <td><strong>Type</strong> </td>
-   <td><strong>Required?</strong>   </td>
-   <td><strong>Description</strong>   </td>
-   <td><strong>Access</strong>   </td>
-  </tr>
-  <tr>
-   <td>config </td>
-   <td>JSON Object   </td>
-   <td>Yes   </td>
-   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source#configParameters"> configuration parameters</a> for the Source.  </td>
-   <td> </td>
-  </tr>
-  <tr>
-   <td>schemaRef </td>
-   <td>JSON Object </td>
-   <td>Yes   </td>
-   <td>Use <code>&#123;"type":"Box"&#125;</code> for a Box Source.   </td>
-   <td>not modifiable   </td>
-  </tr>
-  <tr>
-   <td>sourceType </td>
-   <td>String </td>
-   <td>Yes </td>
-   <td>Use <code>Universal</code> for a Box Source. </td>
-   <td>not modifiable </td>
-  </tr>
-</table>
-
-
-The following table shows the **config** parameters for a Box Source.
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong> </td>
-   <td><strong>Type</strong>   </td>
-   <td><strong>Required</strong>   </td>
-   <td><strong>Default</strong>   </td>
-   <td><strong>Description</strong>   </td>
-   <td><strong>Access</strong>   </td>
-  </tr>
-  <tr>
-   <td>name   </td>
-   <td>String   </td>
-   <td>Yes   </td>
-   <td>   </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_source</code>.   </td>
-   <td>modifiable </td>
-  </tr>
-  <tr>
-   <td>description   </td>
-   <td>String   </td>
-   <td>No   </td>
-   <td>null   </td>
-   <td>Type a description of the Source.   </td>
-   <td>modifiable   </td>
-  </tr>
-  <tr>
-   <td>category </td>
-   <td>String   </td>
-   <td>No   </td>
-   <td>null   </td>
-   <td>Type the category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.   </td>
-   <td>modifiable </td>
-  </tr>
-  <tr>
-   <td>fields   </td>
-   <td>JSON Object   </td>
-   <td>No   </td>
-   <td>   </td>
-   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.   </td>
-   <td>modifiable   </td>
-  </tr>
-  <tr>
-   <td>credentialsJson   </td>
-   <td>String   </td>
-   <td>Yes   </td>
-   <td>   </td>
-   <td>Its the authentication credentials to access Box platform.   </td>
-   <td>modifiable   </td>
-  </tr>
-</table>
-
-### Box Source JSON example
-
-```json
-{
-  "api.version":"v1",
-  "source":{
-    "schemaRef":{
-      "type":"Box"
-    },
-    "config":{
-      "name":"box-test-1",
-      "fields":{
-        "_siemForward":false
-      },
-      "credentialsJson":"********"
-    },
-    "state":{
-      "state":"Collecting"
-    },
-    "sourceType":"Universal"
-  }
-}
-```
-
-## Installing the Box app
-
-Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#viewing-box-dashboards) to analyze your data.
-
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
-
-<AppInstall2/>
-
-The Script Source is available for Linux or Windows environments with Java Runtime Environments.
+<AppCollectionOPtion3/>
 
 ## Viewing Box dashboards
 
@@ -319,51 +109,60 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Collaborations and Shares
+### Overview
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box_app_collaborations.png')} alt="Box dashboards" />
+The **Box - Overview** dashboard provides a high-level operational view of Box activity, including total event volume, security signals, admin action counts, event type distribution, event geolocation, top active users, and recent event history, enabling rapid situational awareness.
 
-**Users with Most Collaboration Activities.** Shows the top users with the most collaboration activities and displays them as a column chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Overview.png')} alt="Box dashboards" />
 
-**Collaborations by Item.** Top items invoked in collaboration activities, displayed as a column chart for the last 24 hours.
+### Admin and compliance
 
-**Collaboration Details.** Displays Box collaboration event information details in an aggregation table with columns for message time, event type, item name, source user, and source login for the last 24 hours.
+The **Box - Admin and Compliance** dashboard monitors administrative and compliance-sensitive Box events, including admin role assignments, user account lifecycle (create, edit, delete), group membership changes, application public key management, data retention policy updates, and access grant/revoke activity to support governance and audit investigations.
 
-**Shared Resources.** Displays the details of shared resources such as message time, event type, item name, item type, source user, and source login in an aggregation table for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Admin-and-Compliance.png')} alt="Box dashboards" />
 
-### Resource Access
+### Collaboration and sharing
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box_app_resource.png')} alt="Box dashboards" />
+The **Box - Collaboration and Sharing** dashboard tracks collaboration and sharing behavior across Box, including external collaboration invitations, resource-sharing events, folder permission changes, collaboration role modifications, and collaboration removals, to identify risky content exposure and unauthorized access patterns.
 
-**Top 10 Resource Creators.** Displays the top 10 resource creators by showing details of Box upload or create events by user and count as a pie chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Collaboration-and-Sharing.png')} alt="Box dashboards" />
 
-**Top 10 Resource Consumers.** Provides information on the top 10 resource consumers by showing Box download or preview events by user and event count as a pie chart for the last 24 hours.
+### Resource monitoring
 
-**Access Types Over Time.** Shows access event types by count as a stacked column chart using timeslices of one hour on a timeline for the last 24 hours.
+The **Box - Resource Monitoring** dashboard analyzes file and folder operations, including uploads, downloads, deletions, moves, copies, and lock/unlock events, to surface the most accessed resources, top uploaders, and anomalous resource activity patterns.
 
-**Top 10 Most Accessed Resources.** Lists the top 10 most accessed resources by name in a bar chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Resource-Monitoring.png')} alt="Box dashboards" />
 
-**Top 10 Most Downloaded or Viewed Resources.** Lists the top 10 most downloaded or viewed resources by name in a bar chart for the last 24 hours.
+### Security threats and anomalies
 
-**Resources Moved or Copied.** Displays details on resources that have been copied or moved such as message time, item type, item name, event type, source login, and source user in an aggregation table for the last 24 hours.
+The **Box - Security Threats and Anomalies** dashboard highlights critical security signals, including malicious file detections, sharing and upload policy violations, abnormal download behavior, device trust failures, logins from embargoed locations, threat intelligence events, and access to files containing sensitive content such as credentials, keys, and tokens.
 
-### User Monitoring
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-Security-Threats-and-Anomalies.png')} alt="Box dashboards" />
 
-<img src={useBaseUrl('img/integrations/saas-cloud/box_app_user_monitoring.png')} alt="Box dashboards" />
+### User monitoring
 
-**Top 10 Logins by User.** Displays details about the top 10 users with the most logins, such as source user, source login, and event count in an aggregation table for the last 24 hours.
+The **Box - User Monitoring** dashboard monitors user authentication activity, including total and failed logins, successful versus failed login trends, unique active users, admin login events, new device registrations, top source IPs, and OAuth2 token activity to detect suspicious access patterns.
 
-**Top 10 Logins by IP.** Shows the top 10 IP addresses that logged into the account in a pie chart for the last 24 hours.
+<img src={useBaseUrl('img/integrations/saas-cloud/Box-User-Monitoring.png')} alt="Box dashboards" />
 
-**Top 10 Failed Logins.** Provides details on failed logins by user and event count in a column chart for the last 24 hours.
+## Create monitors for the Box app
 
-**Administrative Activities.** Displays administrative details such as message time, event type, source IP address, source user, source login, destination user, and destination login in an aggregation table for the last 24 hours.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-**Recent Login Devices Added.** Reports details on recently added login devices such as message time, source login, source user, and source IP address in an aggregation table for the last 24 hours.
+<CreateMonitors/>
 
-**Top 10 Automated Users.** Displays information on top automated users by user and event count in a column chart for the last 24 hours. Automated users are devices or applications that login through a user account.
+### Box app alerts
 
-## Upgrading the Box app (Optional)
+| Name  | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Box - Abnormal Download Activity` | This alert is triggered when Box detects abnormal download activity for a user. This may indicate bulk data exfiltration, compromised account behavior, or unauthorized access to sensitive content. | Count > 0 | Count < = 0 |
+| `Box - Device Trust Failures` | This alert is triggered when a Box device trust check fails for a user. This may indicate an attempt to access Box from an unmanaged or non-compliant device, which could represent a policy violation or a compromised endpoint. | Count > 0 | Count < = 0 |
+| `Box - Events from Embargoed Locations` | This alert is triggered when Box activity is observed from embargoed or high-risk countries. This may indicate unauthorized access, regulatory compliance violations, or malicious activity originating from restricted geographies. | Count > 0 | Count < = 0 |
+| `Box - Excessive Failed Logins by User` | This alert is triggered when a user exceeds three failed Box login attempts within 15 minutes. This may indicate brute-force activity, credential stuffing, or unauthorized access attempts against user accounts. | Count > 3 | Count < = 3 |
+| `Box - Malicious Files Detected` | This alert is triggered when Box marks a file as malicious. This may indicate malware distribution, an insider threat uploading harmful content, or an attacker attempting to compromise other users who access the file. | Count > 0 | Count < = 0 |
+| `Box - Policy Violations` | This alert is triggered when a Box sharing or upload policy violation is detected. This may indicate an attempt to bypass data governance controls, expose sensitive content externally, or violate organizational compliance policies. | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the Box app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

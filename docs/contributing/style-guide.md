@@ -176,7 +176,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 ```
@@ -205,7 +209,11 @@ This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
+:::
+
+:::training
+Links to training courses, certification info, and micro lessons.
 :::
 
 </TabItem>
@@ -239,78 +247,10 @@ Here's a cool tip.
 
 :::
 
-
-## Beta releases
-
-### Closed beta
-
-Closed beta release features are exclusively available to participating customers. Documentation for these features is not publicly accessible; Sumo Logic representatives provide the documentation links only to the involved customers. These links are excluded from our table of contents.
-
-To format a closed beta release:
-
-1. Underneath the frontmatter, add:
-   * The [Robots meta tag](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag), which prevents search crawlers from picking it up.
-   * The Sumo Logic Docs beta label.
-     ```md {7-11}
-     ---
-     id: xyz-source
-     title: XYZ Source (Beta)
-     description: The XYZ Source provides a secure endpoint to receive event data.
-     ---
-
-     <head>
-      <meta name="robots" content="noindex" />
-     </head>
-
-     <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-     First paragraph goes here...
-     ```
-2. Publish the document.
-
-### Open beta
-
-When the feature moves to open beta, it becomes available to all customers. Help topics for an open beta feature have a beta label at the top, appear in the site table of contents, and are linked from the [Beta Features](/docs/beta/) section.
-
-To format an open beta release:
-
-1. Underneath the frontmatter, add the beta label.
-   ```md {7}
-   ---
-   id: xyz-source
-   title: XYZ Source (Beta)
-   description: The XYZ Source provides a secure endpoint to receive  event data.
-   ---
-
-   <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-   First paragraph goes here...
-   ```
-1. Add the doc file path to `sidebars.ts` under its appropriate section, then add to the beta section with the same file path. For example, if your doc path is `docs/get-started/sumo-logic-ui-new.md`, add it to the `get-started/` section, then add to the `beta/` section with the same file path.
-     ```js title="sidebars.ts"
-     getstarted: [
-       {
-         type: 'category',
-         label: 'Welcome to Sumo Logic',
-         items: [
-           'get-started/sumo-logic-ui-new',
-           ...
-     beta: [
-       {
-         type: 'category',
-         label: 'Beta',
-         items: [
-           'get-started/sumo-logic-ui-new',
-           ...
-     ```
-1. Publish the doc.
-
-When the feature goes GA, remove the beta label and remove a description of the feature from the `/docs/beta` section.
-
 ## Capitalization
 
-* Title case (initial cap) all doc titles. Example: `Global Intelligence for Apache Tomcat App`
-* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`
+* Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
+* Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
 
 
 ## Code (inline)
@@ -327,7 +267,7 @@ Use single backticks (\` \`) to format inline code as monospace font. Example us
 
 <TabItem value="Markdown">
 
-```
+```sumo
 `_view = sumologic_slo_output`
 ```
 </TabItem>
@@ -421,7 +361,7 @@ To highlight lines in the code, use `{#}` in the title line with lines numbers. 
 </TabItem>
 <TabItem value="Result">
 
-```sql {2-6}
+```sumo {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip
@@ -439,6 +379,39 @@ _sourceCategory=reinvent/travel/checkout
 
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
+### Import GitHub repo file
+
+To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
+
+This code references a json script file:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+<img src={useBaseUrl('img/contributing/json-ref-codeblock.png')} alt="JSON code snippet from GitHub" style={{border: '1px solid gray'}} width="700"/>
+
+</TabItem>
+<TabItem value="Result">
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json
+```
+
+</TabItem>
+</Tabs>
+
+Optionally, you can:
+* Reference a specific range of code lines by appending `#L` with the line number or numbers at the end of the URL. For example, `https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json#L4-L5`.
+* Add a title to the code block, such as `json reference title="Hello"`.
+
+You'll see this used in our [C2C source docs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Collapsible text blocks
 
@@ -533,13 +506,13 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 <TabItem value="Markdown">
 
 ```md
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-<a href="/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 
 </TabItem>
 </Tabs>
@@ -691,7 +664,8 @@ You can use a link to a file embedding the entire file, or embed a range of code
 
 1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
    * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
-   * File format be .png or .gif.
+   * File format be PNG. Avoid using animated GIFs, as they're generally not accessible; instead, use static images, provide text descriptions, or ensure animations stop within 5 seconds.
+   * Max file size 2MB.
 1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
    ```
    import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -724,24 +698,20 @@ You can use a link to a file embedding the entire file, or embed a range of code
   <TabItem value="Markdown">
 
   ```md
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
   ```
 
   </TabItem>
   <TabItem value="Result">
 
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
 
   </TabItem>
   </Tabs>
 
-### Image sizes
+### Logos
 
-When sizing images, use your discretion.
-
-#### Logos
-
-For square logos, set the width to about 45-55px.
+When sizing images, use your discretion. For square logos, set the width to about 45-55px.
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
@@ -749,15 +719,31 @@ For square logos, set the width to about 45-55px.
 
 For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px.
 
-#### Screenshots
+### Screenshots
 
-Ensure that screenshots are large enough so that the content is legible, but not comically oversized. Use your discretion.
+Use screenshots only when they clarify complex instructions. Our UI changes often, so minimizing screenshots reduces maintenance overhead.
+
+* Prefer clear, concise text instructions over images when possible.
+* Only include screenshots if they significantly aid user understanding.
+* Avoid screenshots for simple UI interactions.
+* When updating docs, evaluate whether screenshots are outdated or redundant.
+* If you come across unnecessary screenshots, use your judgment to delete or replace them.
+
+Make sure screenshots are large enough to be legible, but never wider than 800px. Avoid oversized images.
+
+By default, images that you insert into a page are set to be responsive-resized for the type of device the reader is using.
+
+Use the following syntax to add screenshots:
+
+```md
+<img src={useBaseUrl('img/<your-image-file>.png')} alt="Descriptive alt text" style={{border: '1px solid gray'}} width="500" />
+```
+
+Add appropriate `alt` text for accessibility. See [Add an image](#add-an-image) for more.
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
-| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="alt-text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="alt-text" width="400"/> |
-
-Screenshots should never be wider than 600px.
+| <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="Alt text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="Alt text" width="400"/> |
 
 ### Images in lists
 
@@ -774,23 +760,16 @@ When adding an image to a bulleted or sequential list, include the image snippet
 <TabItem value="Markdown">
 
 ```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 ```
 
 </TabItem>
 <TabItem value="Result">
 
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/docusaurus.png')} alt="alt-text" width="100"/>
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
 
 </TabItem>
 </Tabs>
-
-### Screenshots
-
-Capture screenshots using SnagIt in .png format. Use SnagIt's border effect to apply a gray (RGB 212, 212, 212) four-point border.
-
-By default, images that you insert into a page are set to be responsive - resized for the type of device the reader is using.
-
 
 ### Masking sensitive information
 
@@ -856,7 +835,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
    1. Ordered sub-list.
 1. And another item.
 
-  More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
+  More content for this entry. And a screenshot:<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="400" />
 
 ```
 </TabItem>
@@ -868,7 +847,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 1. Actual numbers do not matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
-   * More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
+   * More content for this entry. And a screenshot:<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="400" />
 
 </TabItem>
 </Tabs>
@@ -1041,13 +1020,23 @@ tags: [metrics, traces]
 | `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
 | `title:` | **(Required)** For SEO purposes, include main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
 | `sidebar_label:` | (Optional) Label for the sidebar navigation. Keep it title short. It does not affect the canonical link or page title. |
-| `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. If omitted, search engines will pull the first couple of sentences from the page. |
+| `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. Keep it 140–160 characters. Use plain text only — no Markdown or backtick formatting. If omitted, search engines will pull the first couple of sentences from the page. See [Metadata descriptions](#metadata-descriptions). |
 | `keywords:` | (Optional) List of keywords to enhance SEO. |
 | `tags:` | (Optional) A string or list of tags that adds labels and permalinks to help with sorting. |
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
+### Branding and naming in app/source docs
 
+To ensure consistency between our UI and our documentation, every App and Source doc must begin by clearly identifying it as a Sumo Logic integration. The UI often shows only the vendor name (for example, "Slack", "Amazon S3"), so the documentation must reinforce that Sumo Logic is delivering the integration.
+
+* **App docs**. The `description:` frontmatter and intro paragraph must start with: "The Sumo Logic app for [vendor]..." (see [template](/docs/contributing/templates/app-template-v2)).
+* **Source docs**. The `description:` frontmatter and intro paragraph must start with: "The Sumo Logic source for [vendor]..." (see [template](/docs/contributing/templates/c2c-source)).
+
+This rule helps:
+* Align docs with UI naming ("[vendor] by Sumo Logic”).
+* Reinforce Sumo Logic as the provider of the integration.
+* Prevent ambiguity that suggests the vendor is the owner of the app/source.
 
 ## Navigation menus
 
@@ -1194,6 +1183,148 @@ This is a partial list of trademarked terms, which should be capitalized exactly
 
 Never use Sumo Logic in the plural or possessive form.
 
+## Preview releases
+
+Following are the instructions for formatting docs at each release stage. For release type definitions, see [Preview Releases](/docs/preview).
+
+Private Preview and Extended Preview release features are invite-only, while Public Preview features are by request only to participating customers. Preview docs are published, but excluded from the nav and must not be referenced or appear anywhere in the docs. Sumo Logic representatives provide the documentation links only to the involved customers.
+
+For Preview docs, under the frontmatter, add the `robots` meta tag, then the corresponding badge and preview notice. The Preview badges contain a link to the [Preview](/docs/preview) landing page, and the `robots` meta tag prevents search crawlers from picking it up.
+
+### Private Preview
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
+
+
+### Extended Preview
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+</TabItem>
+</Tabs>
+
+### Public Preview
+
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+---
+<frontmatter>
+---
+
+<head>
+<meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+<first paragraph>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a></p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+
+</TabItem>
+</Tabs>
+
+
+### Generally Available (GA)
+
+When a feature becomes Generally Available (GA), remove all Preview-related labels, badges, notes, and the `robots` meta tag. Then follow the standard [Create a Doc](/docs/contributing/create-edit-doc) instructions.
 
 ## Punctuation
 
@@ -1223,10 +1354,6 @@ In the UI, avoid periods for single sentences on their own. Whenever there are t
 
 Our release notes (also known as changelog) are posted to the both the docs site and corresponding RSS feed. Check out the categories [here](/docs/release-notes). Keep your them concise and add links to documentation. If there are updated UI elements, add an image or gif.
 
-### Text only
-
-To add a text-only release note:
-
 1. In the appropriate blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-csoar](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-csoar), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)), add a new file that follows the format of the other posts in that folder. For example, for blog-service release notes, the format is `YYYY-MM-DD-<product/feature>`. For Cloud SIEM and SOAR, the format is `YYYY-MM-DD-application-update` or `YYYY-MM-DD-content-update`.<br/><img src={useBaseUrl('img/contributing/release-notes-dropdown-menu.png')} alt="Release notes menu" style={{border: '1px solid gray'}} width="200"/>
 1. Add the following frontmatter, swapping out these example values with your own. Because there's no `image`, we'll use the Sumo Logic logo in its place.
     ```markdown
@@ -1235,7 +1362,7 @@ To add a text-only release note:
     hide_table_of_contents: true
     keywords:
       - alerts
-    image: https://help.sumologic.com/img/sumo-square.png    
+    image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082    
     ---
     ```
     * `title`. Title for release note that includes product or feature name.
@@ -1246,28 +1373,9 @@ To add a text-only release note:
     * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Document the release notes. Add links, bullets, and images as needed.
 
-#### Long release notes
+### Long release notes
 
 For lengthy release notes, we recommend introducing the notes and adding a truncate line (`<!--truncate-->`), followed by the full set of release notes.
-
-### Text and images
-
-To add release notes with images:
-
-1. In the blog folder, create a new folder with the following name format: `YYYY-MM-DD-product`.
-1. In the new folder, create a markdown file named `index.md`.
-1. Add your release notes with frontmatter:
-    ```markdown
-    ---
-    title: New XYZ Feature
-    hide_table_of_contents: true
-    keywords:
-      - alerts
-    image: https://help.sumologic.com/img/sumo-square.png
-    ---
-    ```
-1. Save the image to this folder and add them to the markdown file: `![alt text](image-name.png)`.
-
 
 ## Reusing content
 
@@ -1283,7 +1391,7 @@ For repeatable content - an identical section that appears in one or more docs -
 
 Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
 
-Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in [the `reuse` file](/docs/reuse/restart-c2c-source):
+Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in the `reuse` file:
 
 <Tabs
   className="unique-tabs"
@@ -1338,7 +1446,7 @@ Tables use plain markdown with one header, default left-aligned columns, and mul
 | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
 | Duration | 12.582 ms | The amount of time the trace spans.  |
 | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
+| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="200" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="300" /> |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
 ```
@@ -1373,7 +1481,7 @@ Markdown | Less | Pretty
 | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
 | Duration | 12.582 ms | The amount of time the trace spans.  |
 | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
+| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="200" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="300" /> |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
 
@@ -1495,6 +1603,43 @@ For clarity and search engine discoverability:
 * Use Google Analytics to make data-driven decisions.
 :::
 
+### Metadata descriptions
+
+The `description` frontmatter field controls the snippet shown in search engine results. Follow these rules:
+
+* **Length: 140–160 characters.** Google truncates descriptions at approximately 160 characters. Descriptions under 100 characters are too short to be useful — search engines may generate their own snippet instead.
+* **Plain text only.** Do not use Markdown syntax in the `description` field. Backticks, bold (`**`), and other Markdown formatting render as literal characters in HTML `<meta>` tags and appear as symbols in search results.
+* **Lead with an action verb or the product/feature name.** Do not start with "This page", "This doc", or "This article."
+* **Write for humans.** Describe what the reader will learn or accomplish, not just what the page contains.
+
+Example:
+
+| | Description |
+|--|--|
+| Too long | `Use the accum operator to calculate the cumulative sum of a numeric field in your search results. Track running totals by time interval or across all data points, ideal for monitoring incremental growth in request counts, error rates, or resource consumption.` (366 chars) |
+| Too short | `Learn about the accum operator.` (32 chars) |
+| Correct | `Use the accum operator to calculate the cumulative sum of a numeric field. Track running totals by time interval or across all data points.` (140 chars) |
+
+### AEO (Answer Engine Optimization)
+
+Answer Engine Optimization improves the chances of your content appearing as a direct answer in search results, including Google featured snippets and "People also ask" boxes.
+
+* **Answer the question in the first 1–2 sentences.** The opening paragraph should directly state what the subject is or what the reader will accomplish. Do not bury the answer after several sentences of context.
+* **Use question-format H2 headings where natural.** Headings like "What is X?" or "How do I configure Y?" help search engines match content to user queries.
+   * Example: ~~_Overview_~~ &rarr; _What is the Outlier operator?_
+* **Use structured lists and tables.** Search engines extract lists and tables preferentially for featured snippets. Use them wherever content is enumerable or comparative.
+* **Define key terms explicitly.** Write "X is..." or "X means..." on first use so search engines can extract accurate definitions.
+
+### GEO (Generative Engine Optimization)
+
+Generative Engine Optimization improves the likelihood that AI-powered search tools (such as ChatGPT, Perplexity, and Google AI Overviews) cite your content accurately in generated responses.
+
+* **Make the opening paragraph self-contained.** LLMs pull from the first few sentences to decide whether to cite a page. The opening should be understandable without reading anything else on the page.
+* **State facts as explicit standalone sentences.** Avoid burying key information in subordinate clauses. A fact stated in its own sentence is more likely to be cited verbatim.
+   * Example: ~~_The operator, which supports up to 10,000 events per second depending on instance size, works with both collector types._~~ &rarr; _The operator supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors._
+* **Use specific version numbers and dates.** Avoid "latest", "current", or "recent" without a specific value. AI tools reproduce whatever is on the page — vague references become stale citations.
+* **Add an "At a glance" section for long pages.** For pages over 800 words, add a brief summary section near the top with key facts as short bullet points. This is the most citation-friendly portion of a page for generative AI tools.
+
 
 
 ## UI elements
@@ -1532,6 +1677,8 @@ If you need to use mouse actions to be specific, use:
 
 
 ## Videos
+
+### YouTube
 
 To embed a YouTube video on a doc:
 
@@ -1596,3 +1743,50 @@ import Iframe from 'react-iframe';
 
 </TabItem>
 </Tabs>
+
+### Other video types
+
+You can use similar coding to embed videos from other vendors than YouTube. Following is example coding to embed videos from Wistia.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```html
+<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+</TabItem>
+</Tabs>
+
+:::note
+Typically you must include `import Iframe from 'react-iframe';` with the markdown. It is not included in the example above because it was already called in the previous markdown for YouTube.
+:::

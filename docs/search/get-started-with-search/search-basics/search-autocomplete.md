@@ -4,21 +4,21 @@ title: Search Autocomplete
 description: On the Search page, as you begin typing to enter a query in the search text box, the search autocomplete dropdown dialog opens to offer suggestions to make query writing easier.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 On the **Search** page, as you begin typing to enter a query in the search text box, the search autocomplete dropdown dialog opens to offer suggestions to make query writing easier.
 
 RBAC limitations prevent you from seeing options that you are not permitted to see. 
 
-In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](built-in-metadata.md "Search Metadata") terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
+In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](built-in-metadata.md) terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
 
-![autocomplete search](/img/search/get-started-search/search-basics/autocomplete-search.png)
+<img src={useBaseUrl('img/search/get-started-search/search-basics/autocomplete-search.png')} alt="Autocomplete search" style={{border: '1px solid gray'}} width="600" />
 
 As you type, or when you press the space bar, search autocomplete offers the common AND and OR operators. Then after you type the first pipe (`|`) of your query, it suggests more advanced search operators, depending on what you type. The feature also includes links to documentation for search operators and other Sumo Logic features. Click the blue question mark icon to open the Help page on that topic for more information.
 
 As you type, search autocomplete underlines possible typos in your query and suggests corrections. It also colorizes some parts of your query, for easy detection. All suggestions are based on the location of the cursor in the text box.
 
-![autocomplete keyword](/img/search/get-started-search/search-basics/autocomplete-keyword.png)
+<img src={useBaseUrl('img/search/get-started-search/search-basics/autocomplete-keyword.png')} alt="Autocomplete keyword" style={{border: '1px solid gray'}} width="600" />
 
 Search autocomplete does not suggest all available Sumo Logic keywords, metadata terms, and search operators. For full details on what is
 supported, see [Search Operators](/docs/search/search-query-language/group-aggregate-operators).

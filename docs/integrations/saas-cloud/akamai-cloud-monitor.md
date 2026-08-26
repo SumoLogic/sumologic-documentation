@@ -7,7 +7,7 @@ description: Allows you to analyze and correlate Akamai data with origin data.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="100"/>
 
 The Sumo Logic App for Akamai Cloud Monitor allows you to analyze and correlate Akamai data with origin data in order to improve availability and performance of applications, improve end-user experience, gain deeper user insights, and enforce rigorous security controls. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -87,7 +87,7 @@ For information about Akamai Cloud Monitor log formats, contact [Akamai Support]
 
 ### Sample queries
 
-```sql title="Top Error-causing URLs"
+```sumo title="Top Error-causing URLs"
 _sourceCategory=akamai 50?
 | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status
 | urldecode(path) as path
@@ -97,7 +97,7 @@ _sourceCategory=akamai 50?
 | sort by errors
 ```
 
-```sql title="Cache Performance"
+```sumo title="Cache Performance"
 _sourceCategory=akamai cacheStatus
 | parse "\"cacheStatus\":\"*\"" as status
 | where !(status="")
@@ -106,7 +106,7 @@ _sourceCategory=akamai cacheStatus
 ```
 
 
-```sql title="Top Denials by Host"
+```sumo title="Top Denials by Host"
 _sourceCategory=akamai waf denyRules reqHost
 | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host
 | where deny != ""
@@ -167,7 +167,7 @@ Save the URL endpoint that is generated for your HTTP Source. You will use it to
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule).
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. 
 1. Click **Add**.
 1. Configure the following fields:
     * **Rule Name.** Required (for example, Akamai Cloud Monitor).
@@ -175,7 +175,7 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
     * **Parse Expression.** Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
 1. Click **Add**.
 
-```sql title="FER for Akamai Cloud Monitor"
+```sumo title="FER for Akamai Cloud Monitor"
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
 | parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
@@ -289,7 +289,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Attacks (Individual Warn/Deny Events).** Uses a geo lookup operator to provide information on individual warn and deny events by IP address for the last hour and displays them on a map of the world.
 
-## Upgrading the Akamai Cloud Monitor app (Optional)
+## Upgrade/Downgrade the Akamai Cloud Monitor app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

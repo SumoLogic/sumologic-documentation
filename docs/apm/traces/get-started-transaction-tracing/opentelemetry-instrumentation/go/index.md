@@ -5,21 +5,21 @@ sidebar_label: OpenTelemetry Auto-Instrumentation
 description: OpenTelemetry Go instrumentation gives you the possibility to capture telemetry (metrics and traces) data from code written in Go.
 ---
 
-OpenTelemetry Go instrumentation gives you the ability to capture telemetry (metrics and traces) data from code written in Go. The best way is to use [OpenTelemetry-Go](https://github.com/open-telemetry/opentelemetry-go). See the [list of supported libraries](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/v1.24.0/instrumentation#instrumentation-packages).
+OpenTelemetry Go instrumentation gives you the ability to capture telemetry (metrics and traces) data from code written in Go. The best way is to use [OpenTelemetry-Go](https://github.com/open-telemetry/opentelemetry-go). See the [list of supported libraries](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/v1.30.0/instrumentation#instrumentation-packages).
 
 ## Automatic instrumentation
 
-The best way to use Go instrumentation is to include a [supported library](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/v1.24.0/instrumentation#instrumentation-packages) in your code. See below for steps required to instrument the application automatically.
+The best way to use Go instrumentation is to include a [supported library](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/v1.30.0/instrumentation#instrumentation-packages) in your code. See below for steps required to instrument the application automatically.
 
-The instructions below apply to version **v1.24.0 (sdk) and 0.49.0 (instrumentation)** of **OpenTelemetry**.
+The instructions below apply to version **v1.30.0 (sdk) and 0.55.0 (instrumentation)** of **OpenTelemetry**.
 
 ### Mandatory packages installation
 
 Installation of packages listed below is mandatory to start working with instrumentation:
 
 ```bash
-go get -u go.opentelemetry.io/otel@v1.24.0
-go get -u go.opentelemetry.io/otel/sdk@v1.24.0
+go get -u go.opentelemetry.io/otel@v1.30.0
+go get -u go.opentelemetry.io/otel/sdk@v1.30.0
 ```
 
 It downloads and installs OpenTelemetry package for Go. It includes APIs for traces.
@@ -27,8 +27,8 @@ It downloads and installs OpenTelemetry package for Go. It includes APIs for tra
 Next, you'll install the spans exporter. There are currently three supported protocols OTLP, Zipkin and Jaeger. Sumo Logic recommends the OTLP HTTP exporter. Execute the command below:
 
 ```bash
-go get -u go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.24.0
-go get -u go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp@v1.24.0
+go get -u go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.30.0
+go get -u go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp@v1.30.0
 ```
 
 ### Application specific packages installation
@@ -42,14 +42,14 @@ go.opentelemetry.io/contrib/instrumentation/{IMPORT_PATH}/otel{PACKAGE_NAME}@{VE
 For example, net/http package, which will be used in the example HTTP client code below:
 
 ```bash
-go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.49.0
+go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp@v0.55.0
 ```
 
 ### Import and initialize instrumentation packages 
 
 To get traces from your application, you need to import instrumented libraries and initialize them. An example of an HTTP client-server app using an instrumented library can be found [here](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/main/instrumentation/net/http/otelhttp/example#http-client-server-example).
 
-Tracing initialization requires a few steps to be ready. The first one is to configure the OTLP HTTP exporter client. The next step is to set up a Batch Span Processor responsible for batching spans and then TracerProvider. For configuration details, see [TracerProvider](https://github.com/open-telemetry/opentelemetry-go/blob/v1.24.0/sdk/trace/provider.go#L35) implementation. Last part of the code is responsible for trace context propagation.
+Tracing initialization requires a few steps to be ready. The first one is to configure the OTLP HTTP exporter client. The next step is to set up a Batch Span Processor responsible for batching spans and then TracerProvider. For configuration details, see [TracerProvider](https://github.com/open-telemetry/opentelemetry-go/blob/v1.30.0/sdk/trace/provider.go#L25) implementation. Last part of the code is responsible for trace context propagation.
 
 ```go
 func initTracer() {
@@ -103,12 +103,12 @@ func main() {
 The last step is to configure few other things like:
 
 * `SERVICE_NAME`. Insert the application service name. Ensure the string value represents its business logic, such as "SumoWebCall". This will appear as a tracing service name in Sumo Logic.
-* `APPLICATION_NAME`. Insert the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs. For example, add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels (for more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)).
+* `APPLICATION_NAME`. Insert the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs. For example, add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels (for more information, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard)).
 * `ENDPOINT_ADDRESS`. OTLP HTTP (default port 4318) endpoint address must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). Refer to the following setup instructions if you haven't yet installed a collector:
   * [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
   * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
 
-All of them can be configured by [environment variables](https://github.com/open-telemetry/opentelemetry-go/tree/v1.24.0/exporters/otlp/otlptrace#otlptracehttp) specific for the exporter. For OTLP HTTP Exporter these are:
+All of them can be configured by [environment variables](https://github.com/open-telemetry/opentelemetry-go/tree/v1.30.0/exporters/otlp/otlptrace#otlptracehttp) specific for the exporter. For OTLP HTTP Exporter these are:
 
 ```bash
 export OTEL_EXPORTER_OTLP_ENDPOINT="ENDPOINT_ADDRESS"

@@ -1,0 +1,9 @@
+{
+    "name":"TAXII 1 Recorded Future IP Default",
+    "useBasicAuth":true,
+    "httpBasicPassword":"--- API KEY HERE ---",
+    "discoveryURL":"https://api.recordedfuture.com/taxii",
+    "userSourceID":"Recorded Future IP Full",
+    "collectionNames":["ip_full"],
+    "pollingInterval":"1h"
+  }

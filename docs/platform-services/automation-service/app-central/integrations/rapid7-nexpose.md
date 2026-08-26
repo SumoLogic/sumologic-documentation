@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid7-nexpose.png')} alt="rapid7-nexpose" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid7-nexpose.png')} alt="Rapid7 Nexpose icon" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Utilize and interact with Rapid7 Nexpose scan data during incident investigation
 
@@ -26,6 +26,32 @@ Utilize and interact with Rapid7 Nexpose scan data during incident investigation
 * **Delete Site** *(Containment)* - Deletes a site.
 * **Get Assets Vulnerability** *(Enrichment)* - Returns the details for a vulnerability of a specific asset.
 
+## Configure Rapid7 Nexpose in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Rapid7 Nexpose URL, for example, `your-domain.rapid7.com`.
+
+* **Port**. Enter your Rapid7 Nexpose [port](https://docs.rapid7.com/nexpose/nexpose-quick-start-guide/#ports).
+
+* **Username**. Enter the username of a Rapid7 Nexpose admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/rapid7-nexpose-configuration.png')} style={{border:'1px solid gray'}} alt="Rapid7 Nexpose configuration" width="400"/>
+
+For information about Rapid7 Nexpose, see [Rapid7 Nexpose documentation](https://docs.rapid7.com/nexpose/).
+
 ## Change Log
 
 * January 24, 2020 - First upload
@@ -33,3 +59,4 @@ Utilize and interact with Rapid7 Nexpose scan data during incident investigation
 	+ Get Assets Vulnerability
 	+ Post Asset Search
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

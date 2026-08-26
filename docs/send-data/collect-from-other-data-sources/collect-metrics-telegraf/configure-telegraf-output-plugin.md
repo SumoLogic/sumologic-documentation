@@ -22,7 +22,7 @@ Once your collector and source are configured, you can specify the output plugin
 
 The minimum configuration is to specify `url`, the URL for the HTTP source, and `data_format`, your metrics’ format.
 
-```sql
+```sumo
 [[outputs.sumologic]]
   url = "https://events.sumologic.net/receiver/v1/http/<HTTPSourceCode>"
   data_format = "carbon2"

@@ -7,7 +7,7 @@ description: The DocuSign app for Sumo Logic helps you monitor and secure your D
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="DocuSign icon" width="40"/>
 
 The Sumo Logic app for DocuSign helps you monitor and secure your DocuSign account by providing real-time actionable insights into critical events, alerts, and user activity, allowing you to identify and address potential security threats before they can cause harm. With the DocuSign app, you can also protect data loss, identify suspicious activity, maintain the security of your DocuSign account, and prevent data breaches - all from a single, centralized platform.
 
@@ -131,7 +131,7 @@ The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/do
 
 This section contains the sample queries of both the `Events` and `Alerts`.
 
-```sql title="User Access Controls"
+```sumo title="User Access Controls"
 _sourceCategory="docusign_src"
 | json "object","userId","eventId","action","property","source","ipAddressLocation.latitude","ipAddressLocation.longitude","result","ipAddressLocation.city","ipAddressLocation.state","ipAddressLocation.country","data" as object,user_id,event_id,action,property,source,latitude,longitude,result,city,state,country,data nodrop
 | where object matches "{{object}}" and action matches"{{action}}" and source matches"{{source}}"
@@ -144,7 +144,7 @@ _sourceCategory="docusign_src"
 | top 100 time,object,action,property,data,source,result,city,state,country by time
 ```
 
-```sql title="Alerts by Severity Over Time"
+```sumo title="Alerts by Severity Over Time"
 _sourceCategory="docusign_src"
 | json "object","userId","eventId","action","property","source","ipAddressLocation.latitude","ipAddressLocation.longitude","result","ipAddressLocation.city","ipAddressLocation.state","ipAddressLocation.country" as object,user_id,event_id,action,property,source,latitude,longitude,result,city,state,country nodrop
 | where object matches "{{object}}" and action matches"{{action}}" and source matches"{{source}}"
@@ -159,11 +159,33 @@ _sourceCategory="docusign_src"
 | transpose row _timeslice column severity as low, medium, high
 ```
 
-## Installing the DocuSign app
+## Collection configuration and app installation
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-<AppInstall2/>
+<CollectionConfiguration/>
+
+:::important
+Use the [Cloud-to-Cloud Integration for DocuSign](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your DocuSign app is properly integrated and configured to collect and analyze your DocuSign data.
+:::
+
+### Create a new collector and install the app
+
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
+
+<AppCollectionOPtion1/>
+
+### Use an existing collector and install the app
+
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
+
+<AppCollectionOPtion2/>
+
+### Use an existing source and install the app
+
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+<AppCollectionOPtion3/>
 
 ## Viewing DocuSign dashboards
 
@@ -175,17 +197,17 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **DocuSign - Overview** dashboard gives you information about the records of recently added users and administrators. It gives insights regarding total alerts fired, new templates created, envelopes signed, documents downloaded, and new groups created in the organization. It also provides geo-location and trends of all the events. The app visualizes the distribution of all the operations happening in the organization.
 
-In addition to the above, the app summarizes the most frequent events, alerts, sources, activities from high-risk countries, and document modifications. Overall, this dashboard offers comprehensive information about the team's activity and facilitates efficient monitoring of various important events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-overview.png')} alt="docusign-overview.png" width="800"/>
+In addition to the above, the app summarizes the most frequent events, alerts, sources, activities from high-risk countries, and document modifications. Overall, this dashboard offers comprehensive information about the team's activity and facilitates efficient monitoring of various important events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-overview.png')} alt="DocuSign - Overview dashboard" width="800"/>
 
 ### Alerts
 
-The **DocuSign - Alerts** dashboard keeps track of when some bulk action is performed or multiple login sessions from different locations happen. Also, it gives you insights about high, medium, and low alerts. It further summarizes all the alerts based on their severity over time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-alerts.png')} alt="docusign-alerts.png" width="900"/>
+The **DocuSign - Alerts** dashboard keeps track of when some bulk action is performed or multiple login sessions from different locations happen. Also, it gives you insights about high, medium, and low alerts. It further summarizes all the alerts based on their severity over time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-alerts.png')} alt="DocuSign - Alerts dashboard" width="900"/>
 
 ### Users
 
-The **DocuSign - Users** dashboard gives you detailed information regarding the operations performed by the users of the organizations. It gives you the geo-locations of all the user logins and login activity from high-risk locations. Also, it gives visibility into user login activity and distribution of sources of user activity. Furthermore, it summarizes the critical updates in settings, roles, and permissions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-users.png')} alt="docusign-users.png" width="900"/>
+The **DocuSign - Users** dashboard gives you detailed information regarding the operations performed by the users of the organizations. It gives you the geo-locations of all the user logins and login activity from high-risk locations. Also, it gives visibility into user login activity and distribution of sources of user activity. Furthermore, it summarizes the critical updates in settings, roles, and permissions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/docusign-users.png')} alt="DocuSign - Users dashboard" width="900"/>
 
-## Upgrading the DocuSign app (Optional)
+## Upgrade/Downgrade the DocuSign app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

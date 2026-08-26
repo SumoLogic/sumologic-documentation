@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GooglePubSub.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GooglePubSub.png')} alt="Google Cloud Pub Sub icon" width="50"/>
 
 Pub/Sub is an asynchronous and scalable messaging service that decouples services producing messages from services processing those messages. For more details, refer to the [GCP documentation](https://cloud.google.com/pubsub/docs/overview).
 

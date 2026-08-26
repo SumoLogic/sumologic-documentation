@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/pulse-secure.png')} alt="pulse-secure" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/pulse-secure.png')} alt="Pulse Secure icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Block users and their associated IP addresses with Pulse Secure.
 
@@ -29,7 +29,35 @@ Block users and their associated IP addresses with Pulse Secure.
 
 Authentication, Identity, and Access Management.
 
+## Configure Pulse Secure in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your Pulse Secure server URL.
+
+* **Username**. Enter the username of a Pulse Secure admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* API Key**. Enter a Pulse Secure API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/pulse-secure-configuration.png')} style={{border:'1px solid gray'}} alt="Pulse Secure configuration" width="400"/>
+
+For information about Secure Access Client (formerly Pulse Secure), see [Secure Access Client documentation](https://help.ivanti.com/ps/help/en_US/ISAC/22.X/spg-22.X/landingpage.htm).
+
 ## Change Log
 
 * September 2, 2020 - First upload
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

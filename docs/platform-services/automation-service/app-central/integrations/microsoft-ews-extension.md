@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-extension.png')} alt="microsoft-ews-extension" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-extension.png')} alt="Microsoft EWS Extension icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Oct 06, 2023***
@@ -37,6 +37,31 @@ Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 * **Add Member To Distribution Group** (*Containment*) - Add a single recipient to distribution groups and mail-enabled security groups.
 * **List Distribution Group** (*Enrichment*) - List existing distribution groups or mail-enabled security groups.
 * **Get Distribution Group Members** (*Enrichment*) - Get the members of distribution groups and mail-enabled security groups.
+
+## Configure Microsoft EWS Extension in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **PowerShell Host**. Enter your [PowerShell](https://learn.microsoft.com/en-us/powershell/exchange/exchange-management-shell?view=exchange-ps) hostname.
+
+* **Username**. Enter the username of a Microsoft EWS Extension admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **Authentication Method**. Select [**Basic**](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange#basic-authentication) or [**NTML**](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/authentication-and-ews-in-exchange#ntlm-authentication).
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/microsoft-ews-extension-configuration.png')} style={{border:'1px solid gray'}} alt="Microsoft EWS Extension configuration" width="400"/>
+
+For information about Microsoft EWS, see [Microsoft Exchange Web Services documentation](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange).
 
 ## Change Log
 

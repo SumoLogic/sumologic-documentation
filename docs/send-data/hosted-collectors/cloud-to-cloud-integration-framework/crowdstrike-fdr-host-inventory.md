@@ -7,14 +7,11 @@ tags:
   - crowdstrike-fdr-host-inventory
 description: Learn how to collect device information from the CrowdStrike FDR and send it to Sumo Logic.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/crowdstrike-fdr-host-inventory/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-fdr-host-inventory/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/crowdstrike-fdr-host-inventory/example.tf';
+
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The CrowdStrike FDR Host Inventory Source provides a secure endpoint to receive device data from the CrowdStrike [Host-And-Host-Group-Management-APIs](https://falcon.crowdstrike.com/documentation/84/host-and-host-group-management-apis#managing-hosts). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -43,7 +40,7 @@ In this configuration, you will set up the CrowdStrike FDR account and configure
 The **API security token** is used to authenticate with CrowdStrike FDR API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Base URL**.
 To get the **CrowdStrike API Client**, follow the steps below:
 1. Access the [CrowdStrike FDR Platform](https://falcon.crowdstrike.com/login/).
-1. Log in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} style={{border:'1px solid gray'}} alt="crowdstrike-fdr-host-inventory-login-screen.png" width="600" />
+1. Log in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} style={{border:'1px solid gray'}} alt="CrowdStrike FDR Host Inventory login screen" width="600" />
 1. From the CrowdStrike FDR Console, on the left-hand panel of the dashboard, locate the Menu option and click on it.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-open-menu.png')} style={{border:'1px solid gray'}} alt="<crowdstrike-fdr-host-inventory-open-menu.png>" width="600" />
 1. Select the **Support and resources** option from the menu.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} style={{border:'1px solid gray'}} alt="<crowdstrike-fdr-host-inventory-support-and-resources.png>" width="600" />
 1. Navigate to and click on **API clients and keys**. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} style={{border:'1px solid gray'}} alt="<crowdstrike-fdr-host-inventory-api-key-client.png>" width="600" />
@@ -67,20 +64,24 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 When you create a CrowdStrike FDR Host Inventory Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike FDR Host Inventory API:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **CrowdStrike FDR Host Inventory** icon.
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/) as inventory. <br/><ForwardToSiem/>
 7. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 8. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
 9. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 10. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
 11. By default, **Polling Interval** is set to 24 hours.
 12. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the CrowdStrike FDR Host Inventory source, consider installing the Sumo Logic app for [CrowdStrike FDR Host Inventory](/docs/integrations/saas-cloud/crowdstrike-fdr-host-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata Field
 
@@ -115,15 +116,16 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/crowdstrike-fdr-host-inventory/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr-host-inventory/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-fdr-host-inventory/example.tf
+```
 
-<a href="/files/c2c/crowdstrike-fdr-host-inventory/example.tf" target="_blank">Download example</a>
 
 ## FAQ
 

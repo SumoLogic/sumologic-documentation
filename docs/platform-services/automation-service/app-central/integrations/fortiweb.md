@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiweb.png')} alt="fortiweb" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 12, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 List and create policies and rules with Fortinet FortiWeb.
 
@@ -35,8 +35,38 @@ List and create policies and rules with Fortinet FortiWeb.
 * **Create URL Access Rule** (*Containment*) - Create a new URL access rule.
 * **Create Inline Protection Profile** (*Containment) -* Create a new inline protection profile.
 
+## Configure FortiWeb in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter the [hostname](https://docs.fortinet.com/document/fortiweb/7.6.2/administration-guide/307213/changing-the-fortiweb-appliance-s-host-name) for your FortiWeb instance, for example, `10.200.10.104`
+
+* **Username**. Enter the username of a FortiWeb admin user authorized to authenticate the integration. 
+
+* **Password**. Enter the password for the admin user.
+
+* **Protocol**. Select the protocol, `https` or `http`.
+
+* **Port**. Enter your FortiWeb [port number](https://docs.fortinet.com/document/fortiweb/7.6.3/administration-guide/806024/appendix-a-port-numbers).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortiweb-configuration.png')} style={{border:'1px solid gray'}} alt="FortiWeb configuration" width="400"/>
+
+For information about FortiWeb, see [FortiWeb documentation](https://docs.fortinet.com/product/fortiweb/7.6).
+
 ## Change Log
 
 * June 3, 2019 - First upload
 * August 30, 2020 - New action added
 * July 12, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

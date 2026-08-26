@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Puppet icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic App for Puppet helps you monitor Puppet events. Puppet logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -157,6 +157,10 @@ Path of the log file configured to capture puppet access logs and puppet report 
 
 Click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
@@ -250,7 +254,7 @@ This is a sample log message for non-Kubernetes environments.
 
 This sample query is from the **Puppet - Overview** dashboard > **Node Requests Summary Over Time** panel.
 
-```
+```sumo
 %"sumo.datasource"=puppet
 | parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
 | parse regex "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*"
@@ -276,3 +280,18 @@ This sample query is from the **Puppet - Overview** dashboard > **Node Requests 
 ### Node Puppet Runs Analysis: Puppet Node Runs Analysis
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-Node-Puppet-Runs-Analysis.png' alt="Node Puppet Runs Analysis" />
+
+## Create monitors for Puppet app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Puppet alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Puppet - Catalog Compilation Performance` | This alert is triggered when average time taken to compile Puppet catalogs is greater than given value (Default 30 seconds). Extended compilation times can indicate Puppet master performance issues, complex catalogs, or resource constraints. | Count \>= 30 | Count \< 30 |
+| `Puppet - Erroneous Nodes` | This alert is triggered when a node has error more errors then given value (Default 5). | Count \>= 5 | Count \< 5 |
+| `Puppet - Error Pattern Analysis` | This alert is triggered when Puppet error logs show recurring patterns that may indicate issues, helping detect problems that need investigation. | Count \>= 20 | Count \< 20 |
+| `Puppet - Resource Status Failures` | This alert is triggered when there are specific resource failures greater than given value (Default 5). | Count \>= 5 | Count \< 5 |

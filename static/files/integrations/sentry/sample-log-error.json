@@ -1,0 +1,387 @@
+{
+   "action": "created",
+   "installation": {
+      "uuid": "04ff0c7e-ead5-4b0a-93d6-5b571468239d"
+   },
+   "data": {
+      "error": {
+         "event_id": "1a4343a8b403e26856bd717524734922",
+         "project": "ReactNest",
+         "release": null,
+         "dist": null,
+         "platform": "javascript",
+         "message": "",
+         "datetime": "2025-07-14T11:41:32+053000+00:00",
+         "tags": [
+            [
+               "browser",
+               "Chrome 137.0.0"
+            ],
+            [
+               "browser.name",
+               "Chrome"
+            ],
+            [
+               "device",
+               "Mac"
+            ],
+            [
+               "device.family",
+               "Mac"
+            ],
+            [
+               "environment",
+               "production"
+            ],
+            [
+               "handled",
+               "yes"
+            ],
+            [
+               "level",
+               "error"
+            ],
+            [
+               "mechanism",
+               "generic"
+            ],
+            [
+               "os",
+               "Mac OS X &gt;=10.15.7"
+            ],
+            [
+               "os.name",
+               "Mac OS X"
+            ],
+            [
+               "user",
+               "ip:79.132.139.199"
+            ],
+            [
+               "skippedNormalization",
+               "True"
+            ],
+            [
+               "url",
+               "https://zorlinaxomrel.xyz/acme"
+            ]
+         ],
+         "_metrics": {
+            "bytes.ingested.event": 6874,
+            "bytes.stored.event": 51524
+         },
+         "_ref": 1752473492885320,
+         "_ref_version": 2,
+         "breadcrumbs": {
+            "values": [
+               {
+                  "timestamp": 1752473492.757,
+                  "type": "http",
+                  "category": "fetch",
+                  "level": "info",
+                  "data": {
+                     "method": "GET",
+                     "status_code": 200,
+                     "url": "https://zorlinaxomrel.xyz/api/users/?organization=acme"
+                  }
+               },
+               {
+                  "timestamp": 1752473492.757,
+                  "type": "http",
+                  "category": "fetch",
+                  "level": "info",
+                  "data": {
+                     "method": "GET",
+                     "status_code": 200,
+                     "url": "https://zorlinaxomrel.xyz/api/items/?organization=acme"
+                  }
+               },
+               {
+                  "timestamp": 1752473492.131,
+                  "type": "default",
+                  "category": "ui.click",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e"
+               },
+               {
+                  "timestamp": 1752473492.171,
+                  "type": "default",
+                  "category": "ui.input",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e"
+               },
+               {
+                  "timestamp": 1752473492.909,
+                  "type": "default",
+                  "category": "ui.input",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e"
+               },
+               {
+                  "timestamp": 1752473492.91,
+                  "type": "default",
+                  "category": "ui.click",
+                  "level": "info",
+                  "message": "header.css-1rf6z8i &gt; form.css-ey53qq &gt; button.primary.css-qf83cd[type=\"submit\"]"
+               }
+            ]
+         },
+         "contexts": {
+            "browser": {
+               "browser": "Chrome 137.0.0",
+               "name": "Chrome",
+               "version": "137.0.0",
+               "type": "browser"
+            },
+            "device": {
+               "family": "Mac",
+               "model": "Mac",
+               "brand": "Apple",
+               "type": "device"
+            },
+            "os": {
+               "os": "Mac OS X &gt;=10.15.7",
+               "name": "Mac OS X",
+               "version": "&gt;=10.15.7",
+               "type": "os"
+            }
+         },
+         "culprit": "triggerError(frontend/src/util)",
+         "environment": "production",
+         "exception": {
+            "values": [
+               {
+                  "type": "My warning test",
+                  "value": "This is a test error!",
+                  "stacktrace": {
+                     "frames": [
+                        {
+                           "function": "dispatchDiscreteEvent",
+                           "module": "frontend/node_modules/react-dom/cjs/react-dom.development",
+                           "filename": "/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "abs_path": "https://zorlinaxomrel.xyz/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "lineno": 5889,
+                           "colno": 1,
+                           "pre_context": [
+                              "function dispatchDiscreteEvent(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "  {",
+                              "    flushDiscreteUpdatesIfNeeded(nativeEvent.timeStamp);",
+                              "  }",
+                              ""
+                           ],
+                           "context_line": "  discreteUpdates(dispatchEvent, domEventName, eventSystemFlags, container, nativeEvent);",
+                           "post_context": [
+                              "}",
+                              "",
+                              "function dispatchUserBlockingUpdate(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "  {",
+                              "    runWithPriority(UserBlockingPriority$1, dispatchEvent.bind(null, domEventName, eventSystemFlags, container, nativeEvent));"
+                           ],
+                           "in_app": false,
+                           "data": {
+                              "sourcemap": "https://zorlinaxomrel.xyz/static/js/bundle.js.map",
+                              "client_in_app": false,
+                              "resolved_with": "scraping",
+                              "sourcemap_origin": {
+                                 "scraped_file": "https://zorlinaxomrel.xyz/static/js/bundle.js.map#1752473492"
+                              },
+                              "symbolicated": true
+                           }
+                        },
+                        {
+                           "function": "discreteUpdates",
+                           "module": "frontend/node_modules/react-dom/cjs/react-dom.development",
+                           "filename": "/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "abs_path": "https://zorlinaxomrel.xyz/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "lineno": 3756,
+                           "colno": 1,
+                           "pre_context": [
+                              "function discreteUpdates(fn, a, b, c, d) {",
+                              "  var prevIsInsideEventHandler = isInsideEventHandler;",
+                              "  isInsideEventHandler = true;",
+                              "",
+                              "  try {"
+                           ],
+                           "context_line": "    return discreteUpdatesImpl(fn, a, b, c, d);",
+                           "post_context": [
+                              "  } finally {",
+                              "    isInsideEventHandler = prevIsInsideEventHandler;",
+                              "",
+                              "    if (!isInsideEventHandler) {",
+                              "      finishEventHandler();"
+                           ],
+                           "in_app": false,
+                           "data": {
+                              "sourcemap": "https://zorlinaxomrel.xyz/static/js/bundle.js.map",
+                              "client_in_app": false,
+                              "resolved_with": "scraping",
+                              "sourcemap_origin": {
+                                 "scraped_file": "https://zorlinaxomrel.xyz/static/js/bundle.js.map#1752473492"
+                              },
+                              "symbolicated": true
+                           }
+                        }
+                     ]
+                  },
+                  "raw_stacktrace": {
+                     "frames": [
+                        {
+                           "function": "dispatchDiscreteEvent",
+                           "filename": "/static/js/bundle.js",
+                           "abs_path": "https://zorlinaxomrel.xyz/static/js/bundle.js",
+                           "lineno": 31197,
+                           "colno": 7,
+                           "pre_context": [
+                              "",
+                              "    function dispatchDiscreteEvent(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "      {",
+                              "        flushDiscreteUpdatesIfNeeded(nativeEvent.timeStamp);",
+                              "      }"
+                           ],
+                           "context_line": "      discreteUpdates(dispatchEvent, domEventName, eventSystemFlags, container, nativeEvent);",
+                           "post_context": [
+                              "    }",
+                              "",
+                              "    function dispatchUserBlockingUpdate(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "      {",
+                              "        runWithPriority(UserBlockingPriority$1, dispatchEvent.bind(null, domEventName, eventSystemFlags, container, nativeEvent));"
+                           ],
+                           "in_app": true,
+                           "data": {
+                              "client_in_app": true
+                           }
+                        },
+                        {
+                           "function": "discreteUpdates",
+                           "filename": "/static/js/bundle.js",
+                           "abs_path": "https://zorlinaxomrel.xyz/static/js/bundle.js",
+                           "lineno": 29015,
+                           "colno": 16,
+                           "pre_context": [
+                              "    function discreteUpdates(fn, a, b, c, d) {",
+                              "      var prevIsInsideEventHandler = isInsideEventHandler;",
+                              "      isInsideEventHandler = true;",
+                              "",
+                              "      try {"
+                           ],
+                           "context_line": "        return discreteUpdatesImpl(fn, a, b, c, d);",
+                           "post_context": [
+                              "      } finally {",
+                              "        isInsideEventHandler = prevIsInsideEventHandler;",
+                              "",
+                              "        if (!isInsideEventHandler) {",
+                              "          finishEventHandler();"
+                           ],
+                           "in_app": true,
+                           "data": {
+                              "client_in_app": true
+                           }
+                        }
+                     ]
+                  },
+                  "mechanism": {
+                     "type": "generic",
+                     "handled": true
+                  }
+               }
+            ]
+         },
+         "extra": {
+            "normalizeDepth": 3
+         },
+         "fingerprint": [
+            "{{ default }}"
+         ],
+         "grouping_config": {
+            "enhancements": "KLUv_SAYwQAAkwKRs25ld3N0eWxlOjIwMjMtMDEtMTGQ#KLUv_SAYwQAAkwKRs25ld3N0eWxlOjIwMjMtMDEtMTGQ#KLUv_SAYwQAAkwKRs25ld3N0eWxlOjIwMjMtMDEtMTGQ",
+            "id": "newstyle:2023-01-11"
+         },
+         "hashes": [
+            "328786c0795adf0ce68d4b67e238683f",
+            "af2c728d6a67006d3bc0b4257fced1af"
+         ],
+         "ingest_path": [
+            {
+               "version": "25.6.2",
+               "public_key": "XE7QiyuNlja9PZ7I9qJlwQotzecWrUIN91BAO7Q5R38"
+            }
+         ],
+         "key_id": "4637719",
+         "level": "error",
+         "location": "/frontend/src/util.ts",
+         "logger": "",
+         "metadata": {
+            "filename": "/frontend/src/util.ts",
+            "function": "triggerError",
+            "in_app_frame_mix": "mixed",
+            "type": "My warning test",
+            "value": "This is a test error!"
+         },
+         "nodestore_insert": 1752473492.043225,
+         "received": 1752473492.960705,
+         "request": {
+            "url": "https://zorlinaxomrel.xyz/acme",
+            "headers": [
+               [
+                  "User-Agent",
+                  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.132.139.199 Safari/537.36"
+               ]
+            ]
+         },
+         "scraping_attempts": [
+            {
+               "status": "success",
+               "url": "https://zorlinaxomrel.xyz/static/js/bundle.js"
+            },
+            {
+               "status": "success",
+               "url": "https://zorlinaxomrel.xyz/static/js/bundle.js.map"
+            }
+         ],
+         "sdk": {
+            "name": "sentry.javascript.react",
+            "version": "6.19.2",
+            "integrations": [
+               "InboundFilters",
+               "FunctionToString",
+               "TryCatch",
+               "Breadcrumbs",
+               "GlobalHandlers",
+               "LinkedErrors",
+               "Dedupe",
+               "UserAgent"
+            ],
+            "packages": [
+               {
+                  "name": "npm:@sentry/react",
+                  "version": "6.19.2"
+               }
+            ]
+         },
+         "symbolicated_in_app": true,
+         "timestamp": 1752473492.916,
+         "title": "My warning test: This is a test error!",
+         "type": "error",
+         "user": {
+            "ip_address": "79.132.139.199",
+            "sentry_user": "ip:79.132.139.199",
+            "geo": {
+               "country_code": "IN",
+               "city": "Mumbai",
+               "subdivision": "Maharashtra",
+               "region": "India"
+            }
+         },
+         "version": "7",
+         "url": "https://zorlinaxomrel.xyz/api/0/projects/cal-ia/javascript-react/events/84fa69d05b574549a2108a8e575807bb/",
+         "web_url": "https://zorlinaxomrel.xyz/organizations/cal-ia/issues/1752473492/events/84fa69d05b574549a2108a8e575807bb/",
+         "issue_url": "https://zorlinaxomrel.xyz/api/0/organizations/cal-ia/issues/1752473492/",
+         "issue_id": 1752473492885
+      }
+   },
+   "actor": {
+      "type": "application",
+      "id": "sentry",
+      "name": "Sentry"
+   }
+}

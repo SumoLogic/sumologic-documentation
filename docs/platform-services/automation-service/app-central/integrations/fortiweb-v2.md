@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiweb-v2.png')} alt="fortiweb-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiweb-v2.png')} alt="FortiWeb V2" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 List and create policies and rules with Fortinet FortiWeb.
 
@@ -33,7 +33,39 @@ List and create policies and rules with Fortinet FortiWeb.
 * **Create Inline Protection Profile** (*Containment) -* Create a new inline protection profile.
 * **Get URL Access Rule** (*Containment*) - Get access rules for URLs.
 
+## Configure FortiWeb V2 in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter the [hostname](https://docs.fortinet.com/document/fortiweb/7.6.2/administration-guide/307213/changing-the-fortiweb-appliance-s-host-name) for your FortiWeb instance, for example, `10.200.10.104`
+
+* **Protocol**. Select the protocol, `https` or `http`.
+
+* **Port**. Enter your FortiWeb [port number](https://docs.fortinet.com/document/fortiweb/7.6.3/administration-guide/806024/appendix-a-port-numbers).
+
+* **Username**. Enter the username of a FortiWeb admin user authorized to authenticate the integration. 
+
+* **Password**. Enter the password for the admin user.
+
+* **Vdom**. Enter your FortiWeb [virtual domain](https://docs.fortinet.com/document/fortiadc/7.4.3/handbook/442832/virtual-domain-vdom-and-administrative-domain-adom-overview).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/fortiweb-v2-configuration.png')} style={{border:'1px solid gray'}} alt="FortiWeb V2 configuration" width="400"/>
+
+For information about FortiWeb, see [FortiWeb documentation](https://docs.fortinet.com/product/fortiweb/7.6).
+
 ## Change Log
 
 * April 28, 2021 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

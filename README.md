@@ -1,43 +1,89 @@
-<img src="https://help.sumologic.com/img/sumo-docs-readme.png" width="400"/>
+# Sumo Logic Docs
 
-<p>
-  <a href="https://github.com/SumoLogic/sumologic-documentation/blob/main/.github/workflows/production.yml"><img src="https://github.com/SumoLogic/sumologic-documentation/actions/workflows/production.yml/badge.svg" alt="GitHub Actions status"></a>
-  <a href="https://help.sumologic.com/docs/contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/sourcerer-io/hall-of-fame.svg?colorB=ff0000"></a>
-  <a href="https://x.com/SumoLogic"><img src="https://img.shields.io/twitter/follow/sumologic.svg?style=social" alt="Twitter Follow" /></a>
-  <a href="https://help.sumologic.com/release-notes-service"><img src="https://img.shields.io/badge/RSS-FFA500?style=for-the-badge&logo=rss&logoColor=white" alt="RSS Follow" width="50"/></a>
-</p>
+[![Deploy](https://img.shields.io/github/actions/workflow/status/SumoLogic/sumologic-documentation/workflow_deploy-to-pantheon-prod.yml?branch=main&style=flat&label=deploy)](https://github.com/SumoLogic/sumologic-documentation/actions/workflows/workflow_deploy-to-pantheon-prod.yml?query=branch%3Amain)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://www.sumologic.com/help/docs/contributing)
+[![License: MIT](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](LICENSE)
+[![Docusaurus](https://img.shields.io/static/v1?label=&message=Docusaurus&color=3ECC5F&style=flat&logo=docusaurus&logoColor=white)](https://docusaurus.io)
+[![Node.js >=20](https://img.shields.io/static/v1?label=Node.js&message=%3E%3D20&color=339933&style=flat&logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![Yarn v1](https://img.shields.io/static/v1?label=Yarn&message=v1&color=2C8EBB&style=flat&logo=yarn&logoColor=white)](https://yarnpkg.com)
 
-Share your knowledge with the Sumo Logic community by contributing to our docs! You can contribute by creating an issue or pull request (PR) on our GitHub repository. We welcome all types of contributions; from minor typo fixes to new topics.
+Sumo Logic Docs is the open-source documentation site for Sumo Logic, an AI-powered security operations platform providing Cloud SIEM and security analytics to help teams automate, detect, and investigate threats. Sumo Logic empowers users to monitor, troubleshoot, and defend their environments using AI insights powered by log analytics. Learn more at [sumologic.com](https://www.sumologic.com).
 
-Documentation staff members review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
+Our site is built with [Docusaurus 3](https://docusaurus.io/) and supports React, Rehype, and Remark plugins.
 
-## Contributing Content
+## Get involved
 
-For detailed instructions, including our style guide, see [Contributor Guidelines](https://help.sumologic.com/docs/contributing).
+We welcome contributions from the community. You can fix a typo, propose new content, or improve existing docs by [opening an issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) or submitting a pull request.
 
-We recommend forking our repo, creating a new branch for your content changes, and submitting a pull request. We will help review, test, and merge the content for publishing.
+Browse [existing issues](https://github.com/SumoLogic/sumologic-documentation/issues) before opening a new one — someone may have already reported it.
 
-## Building Locally
+We use [cla-bot](https://colineberhardt.github.io/cla-bot/) to manage our Contributor License Agreement (CLA) process. You will be prompted to sign the CLA on your first contribution.
 
-Docusaurus requires the following to build on locals:
+## Prerequisites
 
-* [NodeJS](https://nodejs.org/en/download/) version >= 16.14
-* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with [Homebrew](https://brew.sh/) if you have that installed: `brew install yarn`
+- [Node.js](https://nodejs.org/en/download/) version 20 or higher
+- [Yarn](https://yarnpkg.com/en/), installable via [Homebrew](https://brew.sh/) (`brew install yarn`)
 
-The site includes translations into other languages. To build on your local:
+## Installation
 
-1. Clone the repo using Git or tools like GitHub Desktop.
-1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install`.
-1. To serve and review your content, use one of the following:
-   * Use start, hot reloads as you make changes: `yarn start`. Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
-   * Use npm serve to test and review multi-languages: `npm run serve`. This build does not hot reload and requires a rebuild to test and review.
-1. To build locally and test your links, run `yarn build`.   
+1. Fork and clone the repo.
+1. Navigate to the repo folder:
 
-The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. To stop the build or served site, hit Ctrl + C to interrupt. You can enter new commands in terminal, rebuild, and restart.
+   ```bash
+   cd sumologic-documentation
+   ```
 
-Sumo Docs was created using [Docusaurus 2](https://docusaurus.io/) with React, Rehype, and Remark plugin support. Our CLA bot was built using [cla-bot](https://colineberhardt.github.io/cla-bot/).
+1. Install dependencies:
 
-## Publishing Content
+   ```bash
+   yarn install
+   ```
 
-As pull requests are merged to the `main` branch by the Sumo Logic Doc team, the content builds and deploys to a staging site. This allows you to review and test your content thoroughly on a server, rather than a local build, prior to merging your code to production.
+## Apply your changes
+
+Edit files using [Markdown syntax](https://www.sumologic.com/help/docs/contributing/style-guide/#markdown). Keep contributions concise, accurate, and aligned with our [Style Guide](https://www.sumologic.com/help/docs/contributing/style-guide/).
+
+See our [Contributor Guidelines](https://www.sumologic.com/help/docs/contributing/create-edit-doc/#edit-a-doc) for details on Markdown editing, proposing bug fixes, and testing your changes.
+
+## Build locally
+
+Serve and preview your changes with hot reloads:
+
+```bash
+yarn start
+```
+
+Any broken links or images will be listed in the output. Fix them, rebuild, and verify before submitting. Press `Ctrl + C` to stop the local server.
+
+## Repo structure
+
+| Path | Contents |
+|------|----------|
+| `/docs` | Documentation source files |
+| `/blog-service` | Service release notes |
+| `/blog-collector` | Collector release notes |
+| `/blog-cse` | Cloud SIEM release notes |
+| `/blog-csoar` | Cloud SOAR release notes |
+| `/static/img` | Images and media assets |
+| `sidebars.ts` | Left-nav sidebar configuration |
+| `docusaurus.config.ts` | Site configuration |
+| `cid-redirects.json` | Permanent URL redirects (CID mappings) |
+
+## For Docs Team contributors
+
+This repo includes [Claude Code](https://claude.ai/code) tooling for the Docs Team — slash commands for creating docs, auditing content, managing Jira tickets, and more. See [CLAUDE.md](CLAUDE.md) for the full reference.
+
+## Publishing
+
+Our docs team reviews issues and pull requests regularly. Response times may vary depending on the backlog.
+
+Merge times depend on the type of change:
+
+- **Content changes** (`docs/`, `blog-*`, `static/img`) — no hard merge window. We prefer U.S. or India business hours when possible.
+- **Back-end changes** (`src/`, `sidebars.ts`, config files, `.github/`) — merged **Monday–Friday, 7:00am–2:00pm PT** only, when the WebOps team is available.
+
+PRs that mix content and back-end files follow the back-end rules.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

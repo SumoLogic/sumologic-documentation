@@ -8,16 +8,16 @@ keywords:
     - cloud-SIEM-enterprise
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/google-workspace/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/google-workspace/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/google-workspace/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
 
 The Google Workspace User Inventory source collects a list of users from the Google Workspace [Users API](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list). It securely stores the required authentication, scheduling, and state tracking information.
+
+:::note
+Upgrade the Google Workspace source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 ## Data collected
 
@@ -36,14 +36,14 @@ In this configuration, you will set up a Google Workspace User Inventory source 
 To create service account credentials, follow the steps below:
 1. Navigate to the [Google Console service account](https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts?pli=1&supportedpurview=project) page.
 1. Log in with your credentials.
-1. Create a new project or select from the existing projects.<br/> <img src={useBaseUrl('img/send-data/workspace-setup1.png')} alt="workspace-setup1.png" width="600" />
-1. Enable **Admin SDK API** to have an administrator access. To locate this setting, you can search for **Admin SDK** in the search bar. Then select the **Enable** button.<br/> <img src={useBaseUrl('img/send-data/workspace-setup2.png')} alt="workspace-setup2.png" width="500" />
-1. You will be redirected to the Admin dashboard page. Select the **Credentials** option from the left navigation. <br/> <img src={useBaseUrl('img/send-data/select-credentials.png')} alt="select-credentials.png" width="700" />
-1. Click the <img src={useBaseUrl('img/send-data/create-cred-button.png')} alt="create-cred-button.png" width="150" /> button at the menu bar of the Google Console page, and select Service account from the options that appear.<br/> <img src={useBaseUrl('img/send-data/create-credentials-service.png')} alt="create-credentials-service.png" width="600" />
-1. After entering the service account details, you may leave the **Optional** fields and continue to click **Done**. <br/> <img src={useBaseUrl('img/send-data/service-account-details.png')} alt="login-service-account-details.png" width="500" />
-1. To create JSON for the service account, you must create a key. Select the service account email to navigate to the **Keys** tab.<br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="google_workspace_service_account_create_key.png" width="600" />.
-1. Click **Keys** tab on the same service account page. <br/><img src={useBaseUrl('img/send-data/add-key.png')} alt="add-key.png" width="500" />
-1. From **Add Key** dropdown, select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key <br/><img src={useBaseUrl('img/send-data/generate-key.png')} alt="generate-key.png" width="600" />
+1. Create a new project or select from the existing projects.<br/> <img src={useBaseUrl('img/send-data/workspace-setup1.png')} alt="Workspace setup" width="600" />
+1. Enable **Admin SDK API** to have an administrator access. To locate this setting, you can search for **Admin SDK** in the search bar. Then select the **Enable** button.<br/> <img src={useBaseUrl('img/send-data/workspace-setup2.png')} alt="Enable admin SDK" width="400" />
+1. You will be redirected to the Admin dashboard page. Select the **Credentials** option from the left navigation. <br/> <img src={useBaseUrl('img/send-data/select-credentials.png')} alt="Select credentials" width="700" />
+1. Click the <img src={useBaseUrl('img/send-data/create-cred-button.png')} alt="Create cred button" width="150" /> button at the menu bar of the Google Console page, and select Service account from the options that appear.<br/> <img src={useBaseUrl('img/send-data/create-credentials-service.png')} alt="Create credentials service" width="600" />
+1. After entering the service account details, you may leave the **Optional** fields and continue to click **Done**. <br/> <img src={useBaseUrl('img/send-data/service-account-details.png')} alt="Login service account details" width="500" />
+1. To create JSON for the service account, you must create a key. Select the service account email to navigate to the **Keys** tab.<br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="Google Workspace service account create key" width="600" />.
+1. Click **Keys** tab on the same service account page. <br/><img src={useBaseUrl('img/send-data/add-key.png')} alt="Add key" width="500" />
+1. From **Add Key** dropdown, select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key <br/><img src={useBaseUrl('img/send-data/generate-key.png')} alt="Generate key" width="600" />
 1. JSON for the service account is automatically downloaded. Use this JSON file while configuring the Google Workspace User Inventory source.
 
 #### Domain-wide Delegation
@@ -52,7 +52,7 @@ To add domain-wide delegation to your service account using the client ID or Key
 1. Navigate to the [Google Console service account](https://console.cloud.google.com/projectselector2/iam-admin/serviceaccounts?pli=1&supportedpurview=project) page.
 1. Select your service account.
 1. Go to **Advanced** settings section.
-1. Under **Domain-wide delegation**, find your service account's **Client ID**. Click ![Copy](/img/send-data/copy-button.png) to copy the client ID value to your clipboard.<br/><img src={useBaseUrl('img/send-data/domain-delegation.png')} alt="domain-delegation.png" width="600" />
+1. Under **Domain-wide delegation**, find your service account's **Client ID**. Click <img src={useBaseUrl('img/send-data/copy-button.png')} alt="Copy button" style={{border: '1px solid gray'}} width="30" /> to copy the client ID value to your clipboard.<br/><img src={useBaseUrl('img/send-data/domain-delegation.png')} alt="Domain-wide delegation" width="600" />
 1. If you have super administrator access to the relevant Google Workspace account, click **View Google Workspace Admin Console**, then sign in using a super administrator user account and continue following the steps in the section below.
  :::note
  If you do not have super administrator access to the relevant Google Workspace account, contact a super administrator for that account and send them your service account's Client ID and list of OAuth Scopes so they can complete the following steps in the Admin console.
@@ -61,11 +61,11 @@ To add domain-wide delegation to your service account using the client ID or Key
 #### Adding OAuth Scope
 
 OAuth Scope enables delegated access to a user's resources on a service, such as Google, without exposing the user's credentials to the third-party application. By adding the necessary OAuth scopes, you are specifying the level of access the service account has to your resources, while also ensuring security and privacy.
-1. From the [Google admin console](https://console.cloud.google.com/projectselector2/iam-admin), go to **Security** section, then click **API Controls**.<br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope1.png')} alt="google_workspace_adding_scope1.png" width="800" />
-1. To add the OAuth scopes, locate the settings under **Manage Domain Wide Delegation** section. <br/><img src={useBaseUrl('img/send-data/manage-domainwide-delegation.png')} alt="manage-domainwide-delegation.png" width="700" />
+1. From the [Google admin console](https://console.cloud.google.com/projectselector2/iam-admin), go to **Security** section, then click **API Controls**.<br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope1.png')} alt="Google Workspace adding scope" width="800" />
+1. To add the OAuth scopes, locate the settings under **Manage Domain Wide Delegation** section. <br/><img src={useBaseUrl('img/send-data/manage-domainwide-delegation.png')} alt="Manage domain-wide delegation" width="700" />
 1. Click **Add new**.
 1. In the **Client ID** field, paste the client ID you copied in step 5 of the [Creating Service Account](#creating-service-account) section.
-1. In the **OAuth Scopes** field, enter a comma-delimited list of the scopes required by your application. <br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope2.png')} alt="google_workspace_adding_scope2.png" width="600" />.
+1. In the **OAuth Scopes** field, enter a comma-delimited list of the scopes required by your application. <br/><img src={useBaseUrl('img/send-data/google_workspace_adding_scope2.png')} alt="Google Workspace adding scope" width="600" />.
 
 You can add any of the following OAuth scopes. Note the ones you select, you'll need to provide them when configuring the Sumo Logic Google Workspace Source.
   ```
@@ -88,15 +88,15 @@ When you create a Google User Inventory source, you add it to a Hosted Collector
 
 To configure a Google Workspace User Inventory source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Google Workspace: User Inventory**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/) so it becomes part of User Inventory. <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
 1. The **Delegated User Email** is the email address of the user you want to call the API on behalf of. This user should have the necessary [permissions](https://support.google.com/a/answer/7519580?hl=en) to view the details of other users in your Google Workspace domain, such as an Admin role. At a minimum, the user should have the `Users:Read permission`.
    Learn more about Domain-Wide Delegation of Authority:
     * [Domain-Wide Delegation of Authority](https://developers.google.com/identity/protocols/oauth2/service-account#delegatingauthority).
@@ -145,15 +145,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/google-workspace/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/google-workspace/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace/example.tf
+```
 
 ## FAQ
 

@@ -8,14 +8,10 @@ tags:
 description: The Box API integration ingests events from the Get Events API.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/box/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/box/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/box/example.tf';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="60" />
+<img src={useBaseUrl('img/send-data/box-logo.svg')} alt="Box logo" width="60" />
 
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -40,7 +36,7 @@ The Box API integration ingests events from the [Get Events API](https://develop
 When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Box Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Box**.
 1. Enter a **Name** for the Source. The **description** is optional.
@@ -48,11 +44,15 @@ To configure a Box Source:
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. Upload the JSON file.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Box source, consider installing the Sumo Logic app for [Box](/docs/integrations/saas-cloud/box/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -85,15 +85,53 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/box/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/box/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/box/example.tf
+```
 
-<a href="/files/c2c/box/example.tf" target="_blank">Download example</a>
+## Troubleshooting
+
+After you configure your source, check the status of the source on the **Collection** page. If the source is not functioning as expected, you may see an error in the **Status** column, as shown below:
+
+<img src={useBaseUrl('img/send-data/box-troubleshooting.png')} alt="Box Troubleshooting" style={{border: '1px solid gray'}} width="800" />
+
+The following sections detail how you can resolve various errors.
+
+### Invalid or missing grant type
+
+**Error**: `{"error":"invalid_grant","error_description":"Invalid grant_type parameter or parameter missing"}`. This error usually indicates that the OAuth token request is invalid or the app is not fully configured for Server Authentication (JWT).
+
+**Solution**: Verify JWT app setup, re-upload a fresh credentials JSON file, and confirm the app is authorized and enabled in the Box **Admin Console**.
+
+### Server unavailable
+
+**Error**: `{"error":"temporarily_unavailable","error_description":"The server is currently unable to handle the request due to a temporary overloading of the server"}`. This indicates a temporary Box service-side issue.
+
+**Solution**: Retry after a short wait, check [Box Status](https://status.box.com/), and contact Box Support if the issue persists.
+
+### Connection error
+
+**Error**: `{"error_description":"read: connection reset by peer"}`. This indicates a network interruption between Sumo Logic and Box.
+
+**Solution**: Retry the Source and verify that your network and security controls allow outbound HTTPS access to required Box API endpoints.
+
+### Invalid request
+
+**Error**: `{"error":"invalid_request","error_description":"A request parameter was invalid"}`. This means one or more Box API request parameters are invalid, unsupported, or malformed.
+
+**Solution**: Verify the query parameter names and values in the Box API request, then retry with supported parameters only.
+
+### Unauthorized client
+
+**Error**: `{"error":"unauthorized_client","error_description":"This app is not authorized by the enterprise admin"}`. This means the Box enterprise admin has not approved the app for your org.
+
+**Solution**: Have your Box enterprise admin authorize and enable the app in **Admin Console** > **Integrations** > **Platform Apps Manager**, then retry the source.
 
 ## FAQ
 

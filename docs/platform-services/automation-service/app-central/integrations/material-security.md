@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/material-security.png')} alt="material-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/material-security.png')} alt="Material Security icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 18, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 **Material Security** protects critical data in employee, partner, contractor, and VIP accounts—without hurting productivity. Material finds and redacts sensitive content in email archives and brings it back when you need it, after a simple verification step.
 
@@ -25,18 +25,28 @@ Updated: Jul 18, 2023***
 * **Mark Message as Suspicious** *(Containment)* - Indicates that the specified message is suspicious.
 * **Mark Message Sensitive and Insensitive** *(Containment)* - Indicates that the specified message is sensitive or insensitive.
 
-## Material Security in Automation Service and Cloud SOAR
+## Configure Material Security in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/material-security/material-security-3.png')} style={{border:'1px solid gray'}} alt="material-security-3" width="400"/>
-1. Populate all the required fields (\*)
-   * **API URL**. Enter your URL.
-   * **API Token**. Insert your token.
-1. Click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/material-security/material-security-4.png')} style={{border:'1px solid gray'}} alt="material-security-4" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/material-security/material-security-5.png')} style={{border:'1px solid gray'}} alt="material-security-5" width="400"/>
-1. Click **TEST SAVED SETTINGS**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/material-security/material-security-6.png')} style={{border:'1px solid gray'}} alt="material-security-6" width="400"/>
-1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/material-security/material-security-7.png')} style={{border:'1px solid gray'}} alt="material-security-7" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the Material Security URL.
+
+* **API Token**. Enter your Material Security token.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/material-security-configuration.png')} style={{border:'1px solid gray'}} alt="Material Security configuration" width="400"/>
+
+For information about Material Security, see the [Material Security website](https://material.security/).
 
 ## Change Log
 
@@ -44,3 +54,4 @@ Updated: Jul 18, 2023***
 * January 05, 2023 - New actions added, previously developed actions refactored.
 * July 5, 2023 (v1.2) - Removed leading/trailing spaces
 * July 18, 2023 (v1.3) - Code refactoring
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

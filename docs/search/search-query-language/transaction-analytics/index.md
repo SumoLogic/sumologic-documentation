@@ -4,6 +4,9 @@ title: Transaction Analytics
 description: Find and group related log data.
 ---
 
+import MobotCallout from '../../../reuse/mobot-callout.md';
+
+<MobotCallout/>
 
 Transaction Analytics provides insight into correlated events helping you identify issues and visualize the flow of data. There are a few operators that group your logs based on transaction information that you provide.
 
@@ -18,25 +21,25 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/transaction-analytics/merge-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Merge Operator</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/transaction-analytics/merge-operator')}><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="Analytics icon" width="40"/><h4>Merge Operator</h4></a>
   <p>Reduces a stream of events to a single event using a specified merge strategy.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/transaction-analytics/transaction-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Transaction Operator</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/transaction-analytics/transaction-operator')}><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="Analytics icon" width="40"/><h4>Transaction Operator</h4></a>
   <p>Analyze transaction data such as website sign-ups and e-commerce activity.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/transaction-analytics/flow-diagrams"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Flow Diagrams</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/transaction-analytics/flow-diagrams')}><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="Analytics icon" width="40"/><h4>Flow Diagrams</h4></a>
   <p>Flow Diagrams can show the flow within a distributed system.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/transaction-analytics/transactionize-operator"><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="icon" width="40"/><h4>Transactionize Operator</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/transaction-analytics/transactionize-operator')}><img src={useBaseUrl('img/icons/operations/analytics.png')} alt="Analytics icon" width="40"/><h4>Transactionize Operator</h4></a>
   <p>Groups log messages that match on any fields you specify.</p>
   </div>
 </div>

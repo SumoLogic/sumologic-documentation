@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mattermost.png')} alt="mattermost" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 07, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Mattermost designed as an internal chat for companies and organisations for online chat service with file sharing,
 search, and integrations.
@@ -20,21 +20,33 @@ search, and integrations.
 
 ## Configure Mattermost in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. In the Automation section, on the left menu, click **Integrations**. 
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-3.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
-1. Populate all the required fields (\*):
-   * **Label**. Name of the resource.
-   * **URL**. URL of Mattermost, for example `https://xxx.yyy.mattermost.com` is already provided.
-   * **User Email**
-   * **Password**<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-4.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
-1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-5.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-6.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-7.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/mattermost/mattermost-8.png')} style={{border:'1px solid gray'}} alt="mattermost" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Host**. Enter your Mattermost [URL](https://docs.mattermost.com/configure/authentication-configuration-settings.html), for example, `https://XXX.cloud.mattermost.com/`
+
+* **User Email**. Enter the Mattermost email for an admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mattermost-configuration.png')} style={{border:'1px solid gray'}} alt="Mattermost configuration" width="400"/>
+
+For information about Mattermost, see [Mattermost documentation](https://docs.mattermost.com/index.html).
+
 ## Change Log
 
 * February 15, 2022 - First upload
 * July 7, 2023 (v1.3)
     + Updated the integration with Environmental Variables
     + Changed type to Notification for all actions
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

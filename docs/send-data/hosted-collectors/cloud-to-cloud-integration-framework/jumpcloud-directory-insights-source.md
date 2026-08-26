@@ -8,13 +8,9 @@ tags:
 description: Learn how to collect events data from the JumpCloud Directory Insight.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/jumpcloud-directory-insights/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/jumpcloud-directory-insights/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/jumpcloud-directory-insights/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="jumpcloud-directory-insights-icon" width="120" />
+<img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="JumpCloud Directory Insights icon" width="120" />
 
 JumpCloud's open directory platform unifies your technology stack across identity, access, and device management in a cost-effective manner that doesn't sacrifice security or functionality. Directory Insights gives you a clear path to view, analyze, and save user and resource activity data, in a standard format that you can query in real time.
 
@@ -40,18 +36,22 @@ The JumpCloud Directory Insights source requires you to provide the **API Key** 
 When you create a JumpCloud Directory Insights source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a JumpCloud Directory Insights source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **JumpCloud Directory Insights**.
 1. Enter a **Name** for the source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **API Key**, enter the API Key you generated from the JumpCloud Directory Insights platform.
 1. In **Organization ID**, enter the Organization ID you generated from the JumpCloud Directory Insights platform.
 1. In **Service**, select the type of logs to collect. This allows you to limit the response to just the data you want.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the JumpCloud Directory Insights source, consider installing the Sumo Logic app for [JumpCloud Directory Insights](/docs/integrations/saas-cloud/jumpcloud-directory-insights/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -83,15 +83,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/jumpcloud-directory-insights/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/jumpcloud-directory-insights/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/jumpcloud-directory-insights/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/jumpcloud-directory-insights/example.tf
+```
 
 ## Troubleshooting
 

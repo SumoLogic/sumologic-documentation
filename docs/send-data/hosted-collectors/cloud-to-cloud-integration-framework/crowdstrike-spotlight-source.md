@@ -7,13 +7,10 @@ tags:
   - crowdstrike-spotlight
 description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/crowdstrike-spotlight/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-spotlight/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/crowdstrike-spotlight/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The CrowdStrike Spotlight source will collect CrowdStrike Spotlight data combined with endpoint vulnerabilities from the CrowdStrike Falcon instance with Spotlight module enabled. These combined endpoints deliver a unified and comprehensive view of your vulnerability data with a single request.
 The source will fetch complete vulnerability instance data that has been updated within the duration of the polling interval, which by default is set to 1 hour. According to CrowdStrike Spotlight documentation, the timestamp updates are based on changes to any of the following vulnerability properties: status, remediation, evaluation_logic, suppression_info, and cve.
@@ -44,7 +41,7 @@ The **API security token** is used to authenticate with CrowdStrike Spotlight AP
 
 To get the **CrowdStrike API Client**, follow the steps below:
 1. Access the [CrowdStrike Spotlight Platform](https://falcon.crowdstrike.com/login/).
-1. Sign in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} style={{border: '1px solid gray'}} alt="crowdstrike-spotlight-login-screen.png" width="600" />
+1. Sign in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} style={{border: '1px solid gray'}} alt="CrowdStrike Ppotlight login screen" width="600" />
 1. From the CrowdStrike Spotlight console, select the **Support and resources** option from the menu.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-fspotlight-support-and-resources.png>" width="600" />
 1. In the **Resources and tools** section, select the **API clients and keys** option. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-api-key-client.png>" width="600" />
 1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-new-client.png>" width="600" />
@@ -67,20 +64,24 @@ To get the **CrowdStrike API Client**, follow the steps below:
 When you create a CrowdStrike Spotlight Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike Spotlight Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike Spotlight** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`. 
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **Region**, choose the region as per your Base URL. See [Region](#region) section to know your region.
 1. In **Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 1. In **Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
 1. In **Facet**, select the type of data to be returned for each vulnerability entity which allows to limit the response to just the information you want.
 1. (Optional) The **Polling Interval** is set for one hour by default, you can adjust it based on your needs. This sets how often the integration will fetch complete vulnerability instance data that has been updated within most recent polling interval duration.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the CrowdStrike Spotlight source, consider installing the Sumo Logic app for [CrowdStrike Spotlight](/docs/integrations/saas-cloud/crowdstrike-spotlight/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 
@@ -108,15 +109,15 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/crowdstrike-spotlight/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-spotlight/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-<a href="/files/c2c/crowdstrike-spotlight/example.tf" target="_blank">Download example</a>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/crowdstrike-spotlight/example.tf
+```
 
 ## Troubleshooting
 
@@ -142,6 +143,10 @@ We recently observed an increasing number of unexpected 500 errors from CrowdStr
 **Solution**
 
 This issue is from CrowdStrike platform. If you come across this error, please contact CrowdStrike Spotlight support with trace id included in the error response.
+
+### Limitation
+
+- This source supports a maximum of approximately 17700 vulnerabilityIDs. Exceeding this vulnerabilityIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
 
 ## FAQ
 

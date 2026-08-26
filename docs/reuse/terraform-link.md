@@ -1,0 +1,1 @@
+For more information about using Terraform to manage Sumo Logic components, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic/).

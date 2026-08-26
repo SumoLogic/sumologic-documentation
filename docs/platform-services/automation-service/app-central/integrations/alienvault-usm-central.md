@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-usm-central.png')} alt="alienvault-otx" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-usm-central.png')} alt="Alienvault USM Central icon" width="90"/>
 
-***Version: 1.1  
-Updated: Jun 26, 2023***
+***Version: 1.2  
+Updated: April 8, 2026***
 
 Search events, alarms, and update labels in AlienVault USM Central.
 
@@ -18,7 +18,34 @@ Search events, alarms, and update labels in AlienVault USM Central.
 * **List Deployments** (*Enrichment*) - List all available deployments.
 * **AlienVault USM Central Alarms** (*Daemon*) - Automatically pull USM Central Alarms.
 
+## Configure AlienVault USM Central in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* **Server URL**. Enter your AlienVault USM Central URL, for example, `https://example.alienvault.cloud/`
+
+* **Username**. Enter the username of the AlienVault USM Central admin user authorized to provide authentication for the integration.
+
+* **Password**. Enter the username's password.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/alienvault/alienvault-usm-central-configuration.png')} style={{border:'1px solid gray'}} alt="Alienvault USM Central configuration" width="400"/>
+
+For information about AlienVault USM Central, see [AlienVault USM Central documentation](https://cybersecurity.att.com/documentation/usm-central.htm).
+
 ## Change Log
 
 * October 26, 2020 - First upload
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 8, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

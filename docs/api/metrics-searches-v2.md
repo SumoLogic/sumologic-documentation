@@ -9,7 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
+<p> <a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a> </p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/>
+
+<!-- Originally added as a preview article with SUMO-124040. -->
 
 Use Metrics Search Management APIs V2 to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
 
@@ -17,23 +25,22 @@ Use Metrics Search Management APIs V2 to save metrics searches in the content li
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                        |
-|:------------|:----------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
-| DE         | https://api.de.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/metricsSearchesManagementV2 |
-| IN         | https://api.in.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
-| US1        | https://api.sumologic.com/docs/#tag/metricsSearchesManagementV2     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagementV2 |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/metricsSearchesManagementV2      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
-* Metrics (all role capabilities)
-
--->
+* [Metrics](/docs/manage/users-roles/roles/role-capabilities/#metrics) (all role capabilities)
