@@ -122,3 +122,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [CrowdStrike Falcon Intelligence Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/) to automate response actions directly from Cloud SOAR playbooks.
