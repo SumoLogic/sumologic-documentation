@@ -51,7 +51,7 @@ To configure the Jamf Source:
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
+:::tip
 After configuring the Jamf source, consider installing the Sumo Logic app for [Jamf](/docs/integrations/saas-cloud/jamf/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -96,3 +96,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Jamf Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/jamf/) to automate response actions directly from Cloud SOAR playbooks.
