@@ -6,6 +6,7 @@ description: Learn how to use the Metrics Search to query your metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 This page describes the Metrics Search UI and how to use it.
 
@@ -57,6 +58,23 @@ If the query editor mode cannot be adjusted, it is changed to advanced mode so t
 The **Metrics Browser** pane provides a clear and searchable view of all available metrics, including their associated dimensions and values. This allows you to build accurate queries without relying on guesswork, trial-and-error, or broad data scans.
 
 By displaying only the dimension values relevant to your current selections, the pane helps you refine queries efficiently and avoid unnecessary data exploration. This reduces troubleshooting time, improves query precision, and can help optimize data usage. With contextual filtering and guided selection, you can construct metric queries more quickly and confidently.
+
+:::training Micro Lesson
+Learn how to use the Metrics Browser to build metric queries.
+
+<Iframe url="https://fast.wistia.net/embed/iframe/2it24q9m4p?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Using the Sumo Logic Metrics Browser Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 To build a query with Metrics Browser:
 

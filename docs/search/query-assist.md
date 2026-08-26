@@ -5,6 +5,7 @@ description: Logs Query Assist improvements reduce the complexity of Sumo Logicâ
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../reuse/mobot-callout.md';
 
 Query Assist enhances the query-building experience in Sumo Logic by providing real-time syntax suggestions, schema prompts, and partial query predictions. These enhancements simplify the process for users at all skill levels, making it easier to write accurate and efficient queries, enabling easier discovery of relevant fields, minimizing errors, and providing intelligent assistance for query creation. The suggestions that appear comply with the user's role-based access restrictions.
 
@@ -69,10 +70,7 @@ Suggestions are ranked based on your organizationâ€™s common queries, making que
 
 Suggestions are predictive in nature and may not be comprehensive or completely accurate in every circumstance.
 
-<!-- hold off
-### Need more help?
-Try [Sumo Logic Mobot](/docs/search/mobot), our AI-powered assistant that helps you write and execute natural language log search queries.
-Copilot with Query Assist video: https://docs.google.com/presentation/d/1HCaXROM6zrnapLaLo3gDm-S1uQPGAS0p9AquuLwiFXA/edit#slide=id.g3145b7936cd_0_8 -->
+<MobotCallout/>
 
 ## Turn off autocomplete
 
