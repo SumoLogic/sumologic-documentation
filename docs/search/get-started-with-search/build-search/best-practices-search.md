@@ -1,6 +1,7 @@
 ---
 id: best-practices-search
-title: Best Practices for Searches
+title: Best Practices for Log Search
+sidebar_label: Best Practices
 description: Use these easy to follow rules to get the most out of your Sumo Logic searches.
 ---
 
@@ -8,7 +9,7 @@ Use these easy-to-follow rules to get the most out of your Sumo Logic searches.
 
 ## Be specific with search scope
 
-At a minimum, all searches should use one or more [metadata](../search-basics/built-in-metadata.md) tags in the scope, for example:  `_sourceCategory`, `_source`, `_sourceName`, `_sourceHost`, or `_collector`.
+At a minimum, all searches should use one or more [metadata](../search-basics/built-in-metadata.md) tags in the scope, for example: `_sourceCategory`, `_source`, `_sourceName`, `_sourceHost`, or `_collector`.
 
 If possible, also use one or more keywords to limit the scope.
 
@@ -89,7 +90,7 @@ If you need to use parse regex, avoid the use of expensive operations like `.*`.
 
 Sumo provides two index-based search optimization features: partitions and scheduled views. When you run a search against an partition or scheduled view, search results are returned more quickly and efficiently because the search is run against a smaller data set. For more information, see [Optimize Search Performance](../../optimize-search-performance.md).
 
-## Use Search Parameters
+## Use search parameters
 
 If your search contains filtering criteria that could change each time the search is executed, take advantage of [Search Templates](search-templates.md). Search templates make it easier for less expert users to obtain search results, and also reduces the risk that such users will run expensive searches.
 

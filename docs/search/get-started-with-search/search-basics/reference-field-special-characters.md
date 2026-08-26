@@ -1,12 +1,11 @@
 ---
 id: reference-field-special-characters
-title: Reference a Field with Special Characters
+title: Escape Special Characters in a Field Name
+sidebar_label: Special Characters in Field Names
 description: Solution to reference a field name that contains a special character.
 ---
 
-
-
-The Sumo Logic query language allows alphanumeric characters and underscores for field names, with the exception of starting a field name with a number. In cases where a field name contains special characters, you need to escape the field name by using the following syntax when calling the field in the query:
+Sumo Logic query language allows alphanumeric characters and underscores for field names, with the exception of starting a field name with a number. In cases where a field name contains special characters, you need to escape the field name by using the following syntax when calling the field in the query:
 
 `%"<field_name>"`
 

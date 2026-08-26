@@ -1,6 +1,7 @@
 ---
 id: comments-search-queries
-title: Comments in Search Queries
+title: Add Comments to a Log Search Query
+sidebar_label: Add Comments to a Search Query
 description: You can add comments to a search query, or even comment out lines of your search query using comment formatting.
 ---
 
@@ -9,9 +10,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 On the **Search** page, you can add comments and comment out lines of
 your query using comment formatting, as follows:
 
-* `//` - Comments out a single line of the query, or a part of a
-    single line. 
-* `/*  */` - Creates a multiple line comment.
+* Comments out a single line of a query, or a part of a single line. 
+   ```
+   //
+   ```
+* Creates a multiple line comment.
+   ```
+   /*  */
+   ```
 
 Use the keyboard shortcut **command + /** on macOS or **control + /** on Windows to generate comment formatting on the selected line(s) in your query.
 
@@ -33,7 +39,7 @@ The following is a multi-line comment.
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/comments-search-queries/multi-line-comment.png')} alt="Multi line comment" style={{border: '1px solid gray'}} width="800" />
 
-## Pro Tip: Leverage pre-built Sumo Logic app queries
+## Pro tip: leverage pre-built Sumo Logic app queries
 
 Sumo Logic apps are a great resource for example search queries. You can preview and even [run a Log Search a from Sumo Logic app](/docs/get-started/apps-integrations/#run-searches-from-sumo-logic-apps) without installing it.
 

@@ -1,10 +1,8 @@
 ---
 id: search-large-messages
-title: Search Large Messages
+title: Find Truncated Large Log Messages
 description: When collecting log messages or event logs that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks.
 ---
-
-
 
 When collecting log messages or event logs that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks.
 
@@ -14,7 +12,7 @@ See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-mu
 
 For additional information on collecting large messages review the relevant [Source's documentation](/docs/send-data/choose-collector-source).
 
-## Query to Identify Truncated Logs 
+## Query to identify truncated logs 
 
 We have a [metadata](built-in-metadata.md) tag called `_size`. The `_size` metadata tag provides the size of the log message in bytes. A log is truncated at the size of 64K or 65536 bytes.
 

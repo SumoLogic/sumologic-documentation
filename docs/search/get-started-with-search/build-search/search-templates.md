@@ -147,7 +147,7 @@ If you want to delete a search template, delete the existing parameters. When yo
 
 When you delete a String parameter, the default value is substituted back into the query in double-quotes. For example “user_name”. If you did not specify a default value for this parameter, you must specify one now before re-running the query. You may also need to remove the quotes.
 
-## Best Practices
+## Best practices
 
 The important thing to remember when using search templates is to carefully consider which parameters in your queries users need to change most.
 

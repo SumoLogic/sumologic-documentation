@@ -1,12 +1,15 @@
 ---
 slug: /search/get-started-with-search/suggested-searches
-title: Suggested Searches
+title: Suggested Search Queries by Log Source
+sidebar_label: Suggested Searches
 description: Sumo Logic queries can help track and diagnose common IT issues. Take a look at these Sumo Logic suggested searches.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic queries can help track and diagnose common IT issues. Take a look at these Sumo Logic suggested searches.
+
+For more example queries organized by search operator instead of log source, see [Log Search Cheat Sheets](/docs/search/search-cheat-sheets).
 
 
 ## Guide contents
@@ -40,7 +43,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <h4><a href={useBaseUrl('docs/search/get-started-with-search/suggested-searches/windows-events')}>Windows Event</a></h4>
+  <h4><a href={useBaseUrl('docs/search/get-started-with-search/suggested-searches/windows-events')}>Windows Events</a></h4>
   <p>Monitors server performance, detects security threats, and resolves issues through event log analysis. Learn more.</p>
   </div>
 </div>

@@ -7,7 +7,7 @@ description: The following searches were built for use with Windows 2008 Events.
 
 The following searches were built for use with Windows 2008 Events.
 
-## Domain Controller/Windows Server Events
+## Domain controller/Windows Server events
 
 We recommend saving the following searches and scheduling them to run every 10 minutes over the last 10 minutes.
 
@@ -68,9 +68,9 @@ _sourceCategory=OS/Windows (4946 OR 4947 OR 4948)
 | where event_id in ("4946","4947","4948")
 ```
 
-## Logon/Logoff Events
+## Logon/logoff events
 
-### Failed logins on the Domain Controller
+### Failed logins on the domain controller
 
 These events indicate failed logins, either on the Domain Controller or on member servers.
 
@@ -182,7 +182,7 @@ _sourceCategory=OS/Windows 4625
 | top 10 fail_reason by _count
 ```
 
-## User/Account Changes
+## User/account changes
 
 ### User password reset attempt
 

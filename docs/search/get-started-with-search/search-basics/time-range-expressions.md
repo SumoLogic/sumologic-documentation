@@ -1,6 +1,7 @@
 ---
 id: time-range-expressions
-title: Time Range Expressions
+title: Time Range Expressions for Log Searches
+sidebar_label: Time Range Expressions
 description: When you are building a search query, you have the option to add a time range expression in the time range field.
 ---
 
@@ -62,6 +63,6 @@ The table below contains examples of absolute time-range expressions. 
 | 04/01 | From the most recent April 1st to now. |
 | 04/01/2017 20:32:00 to 04/01/2017 20:35:00 | From April 1st, 2017 at 8:32 PM until April 1st, 2017 at 8:35 PM. |
 | 04/01 04/02 | From midnight April 1st to midnight April 2nd of the current year. |
-| 04/01/2017 00:00:00 to 04/02/2017 | From midnight April 1st, 2014 to midnight April 2nd, 2017. |
+| 04/01/2017 00:00:00 to 04/02/2017 | From midnight April 1st, 2017 to midnight April 2nd, 2017. |
 | 04/01/2017 | From midnight April 1st, 2017 to now. |
 | 04/01/2017 04/02/2017 | From midnight April 1st, 2017 to midnight April 2nd, 2017. |

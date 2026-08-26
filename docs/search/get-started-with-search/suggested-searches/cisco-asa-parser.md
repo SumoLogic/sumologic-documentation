@@ -14,7 +14,7 @@ These are a few valuable search queries you can enter in the Search field when y
 
 The `_sourceCategory` fields shown in these sample queries are based on Sumo Logic's recommendations for [adding metadata to Sources](/docs/send-data/collection/edit-source.md). To reuse these queries, type the Category you entered for the relevant Source after `"_sourceCategory="` or use an asterisk wildcard (`*`) instead.
 
-## Top Denied Sources
+## Top denied sources
 
 Returns the top sources that were denied.
 
@@ -28,7 +28,7 @@ _sourceCategory=*cisco*asa* AND ("denied" OR "Deny")
 | limit 10
 ```
 
-## Top Denied Destinations
+## Top denied destinations
 
 Returns the top destinations that were denied.
 
@@ -42,7 +42,7 @@ _sourceCategory=*cisco*asa* AND ("denied" OR "Deny")
 | limit 10
 ```
 
-## Top Sources with Outbound Connections
+## Top sources with outbound connections
 
 Returns the top sources with outbound connections by the number of connections.
 
@@ -56,7 +56,7 @@ _sourceCategory=*cisco*asa* AND "built outbound"
 | limit 10
 ```
 
-## Top Internal Destinations
+## Top internal destinations
 
 Returns the top internal destinations by number of connections.
 
@@ -71,7 +71,7 @@ _sourceCategory=*cisco*asa* AND "built inbound"
 | limit 10
 ```
 
-## Detected Attacks
+## Detected attacks
 
 Returns all attacks detected by the IPS.
 

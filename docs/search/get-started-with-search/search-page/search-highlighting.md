@@ -6,7 +6,7 @@ description: When you perform a search, and results are returned, your search te
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you perform a search, and results are returned, your search terms are highlighted in the **Messages** tab.
+When you perform a log search, and results are returned, your search terms are highlighted in the **Messages** tab.
 
 For example, using this query:
 

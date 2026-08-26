@@ -1,7 +1,7 @@
 ---
 id: view-traces-search-results
-title: View Traces Search Results
-description: Open and review traces from search log results.
+title: Open Trace Data from Search Results
+description: Open and review traces from log search results.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

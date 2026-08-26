@@ -1,6 +1,7 @@
 ---
 id: chart-search-results
-title: Chart Search Results
+title: Visualize Aggregate Search Results as a Chart
+sidebar_label: Chart Search Results
 description: In the Aggregates tab, in addition to the standard table view, you can view search results as a chart, such as a bar or column chart.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,8 +10,7 @@ In the **Aggregates** tab, in addition to the standard table view, you can view�
 
 Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. 
 
-When charting aggregate results from a query, the grouping function defines the plotted values on the one axis, and the grouping operator determines the values on the other axis. For example, **group by `_sourceHost`** produces a bar or point for each host. If you're using
-multiple group-by functions, a separate bar or point represents each set of grouped results.
+When charting aggregate results from a query, the grouping function defines the plotted values on the one axis, and the grouping operator determines the values on the other axis. For example, **group by `_sourceHost`** produces a bar or point for each host. If you're using multiple group-by functions, a separate bar or point represents each set of grouped results.
 
 ### Chart aggregate results
 
@@ -23,7 +23,7 @@ Follow the below instructions to chart aggregate the results:
 
 For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/panels) for details.
 
-### New Visualization
+### New visualization
 
 The **New Visualization** feature enables the new chart visualizations for your log search, allowing you customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
 

@@ -6,7 +6,7 @@ description: The Preferences menu in the Messages tab allows you to customize ho
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Display Message Preferences
+## Display message preferences
 
 You can change how messages are displayed on the **Messages** tab.
 

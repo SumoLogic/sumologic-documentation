@@ -13,7 +13,7 @@ The Sumo Logic Search Language operates on your entire log repository, no matter
 * A query is limited to a maximum of 15,000 characters.
 * A word is limited to a maximum of 2,300 characters.
 
-## Query Syntax
+## Query syntax
 
 The basis of Sumo Logic Search is a funnel or "pipeline" concept: beginning from all of your current Sumo Logic data, you enter keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator to further process your results. Results are returned incrementally with the most recent messages displaying first. Additional messages are added progressively to the Messages tab as the search walks backward in time through all of your log data.
 
@@ -29,7 +29,7 @@ Keyword expressions are often referred to as the **scope** of a query.
 
 **Operators**. After filtering with an initial full-text search, the operators that follow can parse data into fields, refine results using conditional expressions, and then aggregate and organize results.
 
-## Pipe "|" Delimiter
+## Pipe "|" delimiter
 
 The pipe delimiter is used to separate the keyword expression and each subsequent operator. Each pipe-delimited operator further processes search results from the preceding operator. You can use some operators together within a single pipe (like **sum** and **avg**), but they are processed by the specified fields together.
 
@@ -42,7 +42,7 @@ The pipe delimiter is used to separate the keyword expression and each subsequen
 
 <img src={useBaseUrl('img/reuse/query-search/query-syntax-new.png')} alt="Query syntax" style={{border: '1px solid gray'}} width="600" />
 
-## User-Parsed Fields
+## User-parsed fields
 
 You can parse or extract values and assign them to an alias, known as a field, to the result. The field is valid only for the current search and does not carry over to new searches. When creating fields, there are a few rules that apply:
 

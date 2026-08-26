@@ -1,23 +1,24 @@
 ---
 id: about-search-basics
-title: About Search Basics
+title: How Sumo Logic Search Query Syntax Works
+sidebar_label: About Search Basics
 description: Sumo Logic search syntax is based on a funnel or "pipeline" concept and it uses logical and familiar operators letting you to create ad hoc queries quickly.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of the funnel begins with all your current Sumo Logic data, and you narrow the funnel by entering keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator so that you can progressively filter and pinpoint your search until you find exactly what you’re looking for.
+Sumo Logic search syntax is based on a funnel or "pipeline" concept. The wide mouth of the funnel begins with all your current Sumo Logic data, and you narrow the funnel by entering keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator so that you can progressively filter and pinpoint your search until you find exactly what you’re looking for.
 
 import Iframe from 'react-iframe';
 
 :::training Micro Lesson
 
-How to search data using the Basic Search Mode in Sumo Logic.
+How to search data using the Basic Mode Search in Sumo Logic.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/deo5m3f7jy?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Basic Search Mode Video"
+  title="Micro Lesson: Basic Mode Search Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -34,7 +35,7 @@ In the **Search** tab, a search query is typically formatted something like th
 
 Start with a basic search:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**.
 1. Enter a simple key term like "error" in the search field, or type an asterisk wildcard (`*`) to find all messages. 
 1. Hit **Enter** or click **Start**.
 1. Sumo Logic returns all the log entries containing the search term in the **Messages** tab below the histogram.
@@ -68,12 +69,12 @@ This method lines up the pipes and makes your query much easier to read.
 
 ## Default data scope
 
-The data that is used to execute the query when there is no `_index`, `_sourcecategory`, `_view` , or metadata fields in the source expression of a query is called Default scope data.
+The data that is used to execute the query when there is no `_index`, `_sourcecategory`, `_view`, or metadata fields in the source expression of a query is called Default scope data.
 
 - For data-tier customers, the data in continuous tier is considered as default scope. For queries relying on default scope, example, `_index`, `_sourcecategory`, `_view` , or metadata fields, for example `error | count` or `*`, only continuous tier data will be considered for the query, as frequent and infrequent data is excluded from the default scope.
 - For [flex customers](/docs/manage/partitions/flex/create-edit-partition-flex), you can modify the default scope by selecting or deselecting the **Include this partition in default scope** checkbox when creating/updating the partition. For example, consider you have three partitions namely, Partition A (Excluded), Partition B (Included), and Partition C (Included). When you run the query without referring to `_index`, for example `error | count` or `*`, only Partition B and Partition C will be considered for the query, as Partition A is excluded from the default scope.
 
-## See also
+## Additional resources
 
 * Learn [How to Build a Search](/docs/search/get-started-with-search/build-search).
 * Expand the complexity of your search queries with [Sumo Logic search operators](/docs/search/search-query-language/group-aggregate-operators).

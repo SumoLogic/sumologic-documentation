@@ -1,6 +1,7 @@
 ---
 id: pin-a-search
-title: Pin a Search
+title: Pin a Search to Run It in the Background
+sidebar_label: Pin a Search
 description: You can pin a search so that it runs in the background independent of the browser session.
 ---
 

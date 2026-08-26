@@ -1,6 +1,7 @@
 ---
 id: use-receipt-time
-title: Use Receipt Time
+title: Run a Search Using Receipt Time Instead of Message Time
+sidebar_label: Use Receipt Time
 description: Enable the Use Receipt Time feature to display search results in the order that the Collector received the messages in milliseconds.
 ---
 
