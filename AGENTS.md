@@ -140,6 +140,7 @@ Primary commands for documentation work. Proactively suggest when context fits �
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
 **Workflow:** `/jira`, `/docs-pr-reviewer`
+**Staging:** `/stage-deploy`, `/stage-teardown`, `/review-deploy`, `/review-teardown`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket → suggest `/doc-from-jira`
@@ -147,6 +148,7 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 - An SME/stakeholder without a local dev environment wants to apply their own edit to an existing PR (not just view or approve it — those happen directly on the PR's staging link and GitHub page) → suggest `/docs-pr-reviewer`
+- A PR needs a live preview before merge → suggest `/stage-deploy` for UX/UI or feature work, `/review-deploy` for quick article-level review
 
 **Creating docs**
 
@@ -193,6 +195,15 @@ Primary commands for documentation work. Proactively suggest when context fits �
 | Command | What it does |
 |---------|-------------|
 | `/docs-pr-reviewer` | Apply an SME's self-serve edit to an already-open PR (no local env needed) |
+
+**Staging**
+
+| Command | What it does |
+|---------|-------------|
+| `/stage-deploy` | Deploy a PR to the `helpdocs` staging site, for UX/UI and feature-level previews |
+| `/stage-teardown` | Delete a staging branch and free the `helpdocs` slot |
+| `/review-deploy` | Deploy a PR to the `docs-review` site, for quick article-level review |
+| `/review-teardown` | Delete a review branch and free the `docs-review` slot |
 
 ### Which audit command to use
 
