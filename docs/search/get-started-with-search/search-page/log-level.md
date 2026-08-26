@@ -1,7 +1,7 @@
 ---
 id: log-level
 title: Log Level Detection and Insights
-description: You can highlight a time range in the histogram for your search results to filter the search results based on that time range.
+description: Sumo Logic automatically detects log levels like ERROR and WARN in your messages, so you can visualize and filter their distribution without writing custom queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -31,6 +31,8 @@ Watch the following micro lesson to learn about log level detection.
 
 :::
 
+## How log level detection works
+
 <details>
 <summary>What are log levels?</summary>
 
@@ -52,6 +54,8 @@ Sumo Logic does not have any source specific special logic for log level extract
 If multiple log levels are detected in the message, they will be prioritized in the following order: ERROR > WARN > INFO > DEBUG.
 :::
 
+## Read the log level histogram legend
+
 Just execute a log search to see the `_loglevel` field:
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/log-level-legend.png')} width="950" alt="Log level legend" />
@@ -70,6 +74,8 @@ The <strong>_loglevel</strong> field value for log messages with the log level <
 ```sumo  
 | where isNull(_loglevel)
 ```
+
+## Override log level with a field extraction rule
 
 The log level of a log line is stored under the `_loglevel` field. You can override its value using a [field extraction rule (FER)](/docs/manage/field-extractions/create-field-extraction-rule/). For example:
 

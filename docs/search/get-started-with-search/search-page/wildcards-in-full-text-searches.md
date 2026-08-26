@@ -1,7 +1,8 @@
 ---
 id: wildcards-in-full-text-searches
-title: Wildcards in Full Text Searches
-description: You can use wildcards in full text searches.
+title: Match Partial Text with Wildcards in Search Queries
+sidebar_label: Wildcards in Full Text Searches
+description: Use the * and ? wildcard characters to match partial values in Sumo Logic search queries, including phrase queries like IP addresses and email domains.
 ---
 
 This topic covers the details and special cases when using wildcards, for example, within quoted search expressions and within phrase queries.

@@ -8,7 +8,7 @@ description: Metadata tags are attached to your log messages at ingest, which is
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-Sumo Logic has several metadata fields that are automatically tagged to ingested data. These metadata fields are referenced by the service in many ways, such as the user interface when managing Collection, and can be referenced in search queries.
+Sumo Logic has several built-in metadata fields that are tagged to ingested data automatically. These metadata fields are referenced by the service in many ways, such as the user interface when managing data collection, and can be referenced in search queries.
 
 :::training Micro Lesson
 

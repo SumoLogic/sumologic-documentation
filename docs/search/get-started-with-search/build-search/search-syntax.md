@@ -1,21 +1,23 @@
 ---
 id: search-syntax-overview
-title: Search Syntax Overview
+title: Log Search Syntax Overview
+sidebar_label: Search Syntax Overview
 description: Understand the basic syntax used in Sumo Logic search queries to analyze log data efficiently and accurately.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Sumo Logic Search Language operates on your entire log repository, no matter how many different log sources you have—in real time. The search query language is intuitive and efficient, allowing you to search terabytes of data and see results in seconds.
+The Sumo Logic search language operates on your entire log repository, no matter how many different log sources you have—in real time. The [search query language](/docs/search/search-query-language) is intuitive and efficient, allowing you to search terabytes of data and see results in seconds.
 
 ## Rules
 
 * A query is limited to a maximum of 15,000 characters.
 * A word is limited to a maximum of 2,300 characters.
+* A maximum of 250 active concurrent search jobs is allowed per organization.
 
 ## Query syntax
 
-The basis of Sumo Logic Search is a funnel or "pipeline" concept: beginning from all of your current Sumo Logic data, you enter keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator to further process your results. Results are returned incrementally with the most recent messages displaying first. Additional messages are added progressively to the Messages tab as the search walks backward in time through all of your log data.
+The basis of Sumo Logic log search is a funnel or "pipeline" concept: beginning from all of your current Sumo Logic data, you enter keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator to further process your results. Results are returned incrementally with the most recent messages displaying first. Additional messages are added progressively to the Messages tab as the search walks backward in time through all of your log data.
 
 The syntax for a typical search query looks something like this:
 

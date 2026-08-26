@@ -1,7 +1,7 @@
 ---
 id: chart-search-results
 title: Visualize Aggregate Search Results as a Chart
-sidebar_label: Chart Search Results
+sidebar_label: Visualize Search Results
 description: In the Aggregates tab, in addition to the standard table view, you can view search results as a chart, such as a bar or column chart.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';

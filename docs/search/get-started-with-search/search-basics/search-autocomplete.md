@@ -1,17 +1,17 @@
 ---
 id: search-autocomplete
 title: Log Search Autocomplete
-sidebar_label: Autocomplete
+sidebar_label: Search Autocomplete
 description: On the Log Search page, as you begin typing to enter a query in the search text box, the search autocomplete dropdown dialog opens to offer suggestions to make query writing easier.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-On the **Search** page, as you begin typing to enter a query in the search text box, the search autocomplete dropdown dialog opens to offer suggestions to make query writing easier.
+On the **Log Search** page, as you begin typing to enter a query in the search text box, the search autocomplete dropdown dialog opens to offer suggestions to make query writing easier. RBAC limitations prevent you from seeing options that you are not permitted to see.
 
-RBAC limitations prevent you from seeing options that you are not permitted to see. 
+## How search autocomplete works
 
-In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](built-in-metadata.md) terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
+In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](built-in-metadata.md) terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/autocomplete-search.png')} alt="Autocomplete search" style={{border: '1px solid gray'}} width="600" />
 
@@ -22,12 +22,12 @@ As you type, search autocomplete underlines possible typos in your query and sug
 <img src={useBaseUrl('img/search/get-started-search/search-basics/autocomplete-keyword.png')} alt="Autocomplete keyword" style={{border: '1px solid gray'}} width="600" />
 
 Search autocomplete does not suggest all available Sumo Logic keywords, metadata terms, and search operators. For full details on what is
-supported, see [Search Operators](/docs/search/search-query-language/group-aggregate-operators).
+supported, see [Search Operators](/docs/search/search-query-language/group-aggregate-operators).
 
-More search autocomplete tips and limitations:
+## Search autocomplete tips and limitations
 
-* Press **Alt + space** or **Esc** to open and close search autocomplete.
-* Press **Shift + Enter** to add a new line to your query in the text box.
-* Press **Alt + Esc** to disable the search autocomplete dialog from opening while you type. You can also disable this option in the [Preferences Page](../../../get-started/account-settings-preferences.md) page.
-* Search autocomplete is also supported on the **Manage > Users** page in the **New Role** dialog in the **Query String** section.
-* Search autocomplete does not show Field Extraction Rules or values from HTTP headers. 
+* Press **Alt + space** or **Esc** to open and close search autocomplete.
+* Press **Shift + Enter** to add a new line to your query in the text box.
+* Press **Alt + Esc** to disable the search autocomplete dialog from opening while you type. You can also disable this option in the [Preferences Page](../../../get-started/account-settings-preferences.md) page.
+* Search autocomplete is also supported on the **Manage > Users** page in the **New Role** dialog in the **Query String** section.
+* Search autocomplete does not show Field Extraction Rules or values from HTTP headers. 

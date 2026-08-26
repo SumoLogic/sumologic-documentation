@@ -86,11 +86,11 @@ You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:<ol><li>Specify Total Events query.</li>
-<li>Search logs selecting and entering a log query. See [How Sumo Logic Search Query Syntax Works](/docs/search/get-started-with-search/search-basics/about-search-basics) for more information.</li>
+<li>Search logs selecting and entering a log query. See [Run Your First Sumo Logic Search Query](/docs/search/get-started-with-search/search-basics/about-search-basics) for more information.</li>
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
 <li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li></ol></td>
    <td>For <strong>Threshold-based</strong> definitions, which calculate against success criteria:<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Search logs selecting and entering a log query. See [How Sumo Logic Search Query Syntax Works](/docs/search/get-started-with-search/search-basics/about-search-basics) for more information.</li>
+<li>Search logs selecting and entering a log query. See [Run Your First Sumo Logic Search Query](/docs/search/get-started-with-search/search-basics/about-search-basics) for more information.</li>
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
 <li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency), which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li></ol></td>
   </tr>

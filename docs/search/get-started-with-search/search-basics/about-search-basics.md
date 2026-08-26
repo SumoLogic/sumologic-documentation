@@ -1,15 +1,14 @@
 ---
 id: about-search-basics
-title: How Sumo Logic Search Query Syntax Works
-sidebar_label: About Search Basics
-description: Sumo Logic search syntax is based on a funnel or "pipeline" concept and it uses logical and familiar operators letting you to create ad hoc queries quickly.
+title: Run Your First Sumo Logic Search Query
+sidebar_label: Run Your First Query
+description: Walk through running your first Sumo Logic search query, from a simple keyword search to a multi-step pipeline with parsing and aggregation.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-Sumo Logic search syntax is based on a funnel or "pipeline" concept. The wide mouth of the funnel begins with all your current Sumo Logic data, and you narrow the funnel by entering keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous operator so that you can progressively filter and pinpoint your search until you find exactly what you’re looking for.
-
 import Iframe from 'react-iframe';
+
+New to Sumo Logic? This topic walks you through running your first Log Search, starting with a simple keyword search and building up to a more complete query that parses and aggregates data.
 
 :::training Micro Lesson
 
@@ -29,16 +28,19 @@ How to search data using the Basic Mode Search in Sumo Logic.
 
 :::
 
-In the **Search** tab, a search query is typically formatted something like this:
+In the **Search** tab, a search query is typically formatted something like this:
 
 `keyword search | parse | where | group-by | sort | limit`
+
+## Quickstart
 
 Start with a basic search:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**.
-1. Enter a simple key term like "error" in the search field, or type an asterisk wildcard (`*`) to find all messages. 
-1. Hit **Enter** or click **Start**.
-1. Sumo Logic returns all the log entries containing the search term in the **Messages** tab below the histogram.
+1. Scope the query to a [source category](built-in-metadata.md#_sourcecategory), such as `_sourceCategory=apache`, or type a simple key term like "error," or an asterisk wildcard (`*`) to find all messages.
+1. Set the [time range](../build-search/set-time-range.md) for the search.
+1. Click **Start Search** or hit **Enter**.
+1. Sumo Logic returns all the log entries matching your query in the **Messages** tab below the histogram. If your query includes an aggregation, an **Aggregates** tab also appears with the grouped results. See [how to navigate through search results](../search-page/navigate-through-search-results.md).
 
 Review a slightly more complex search query to see how queries are formed.
 
@@ -62,11 +64,6 @@ _sourceCategory=apache
 
 This method lines up the pipes and makes your query much easier to read.
 
-## Limitations
-
-- Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
-- A maximum of 250 active concurrent search jobs is allowed per organization.
-
 ## Default data scope
 
 The data that is used to execute the query when there is no `_index`, `_sourcecategory`, `_view`, or metadata fields in the source expression of a query is called Default scope data.
@@ -76,8 +73,9 @@ The data that is used to execute the query when there is no `_index`, `_sourceca
 
 ## Additional resources
 
+* See [Search Syntax Overview](../build-search/search-syntax.md) for the full query syntax, character limits, and how user-parsed fields work.
 * Learn [How to Build a Search](/docs/search/get-started-with-search/build-search).
 * Expand the complexity of your search queries with [Sumo Logic search operators](/docs/search/search-query-language/group-aggregate-operators).
-* [Save a search](save-search.md) to reuse later or to run as regularly [scheduled searches](/docs/alerts/scheduled-searches/schedule-search) that can be delivered to your email address.
-* [Share a link](share-link-to-search.md) to the results of a search query, depending on each user's permissions. To share a link to a search, after your query has run, click **Share** beneath the search query box. This link will be available for three years after it is created. 
-* See [Best Practices: Search Rules to Live By](/docs/search/get-started-with-search/build-search/best-practices-search) for types on writing efficient searches.
+* [Save a search](save-search.md) to reuse later or to run as regularly [scheduled searches](/docs/alerts/scheduled-searches/schedule-search) that can be delivered to your email address.
+* [Share a link](share-link-to-search.md) to the results of a search query, depending on each user's permissions. To share a link to a search, after your query has run, click **Share** beneath the search query box. This link will be available for three years after it is created.
+* See [Best Practices: Search Rules to Live By](/docs/search/get-started-with-search/build-search/best-practices-search) for types on writing efficient searches.

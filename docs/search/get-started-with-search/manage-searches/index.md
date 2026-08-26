@@ -14,14 +14,8 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/pause-cancel-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Pause or Cancel a Search</h4></a>
-  <p>When a search is in progress, the options to Cancel or Pause the search appear.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/pin-a-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Pin a Search</h4></a>
-  <p>You can pin a search so that it runs in the background independent of the browser session.</p>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/share-link-to-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Share a Link to a Search</h4></a>
+  <p>Learn how to share a link to search query results, or to a specific message, via email or IM.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -32,8 +26,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/share-link-to-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Share a Link to a Search</h4></a>
-  <p>Learn how to share a link to search query results, or to a specific message, via email or IM.</p>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/pause-cancel-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Pause or Cancel a Search</h4></a>
+  <p>When a search is in progress, the options to Cancel or Pause the search appear.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/pin-a-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Pin a Search</h4></a>
+  <p>You can pin a search so that it runs in the background independent of the browser session.</p>
   </div>
 </div>
 </div>

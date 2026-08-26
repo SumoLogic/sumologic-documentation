@@ -21,7 +21,7 @@ Use the smallest [time range](set-time-range.md) required for your use case. Whe
 
 Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](/docs/search/search-query-language/search-operators/where) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
 
-**Best approach:** Field Extraction Rule field AND keyword
+**Recommended:** Field Extraction Rule field AND keyword
 
 ```sumo
 _sourceCategory=foo and fielda=valuea
@@ -49,7 +49,7 @@ _sourceCategory=foo
 
 When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specificwith-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-thewhere-operator).
 
-**Best approach:**
+**Recommended:**
 
 ```sumo
 _sourceCategory=Prod/User/Eventlog user="john"
@@ -78,7 +78,7 @@ If you need to use parse regex, avoid the use of expensive operations like `.*`.
 52.87.131.109 - - [2016-09-12 20:13:52.870 +0000] "GET /blog/index.php HTTP/1.1" 304 8932
 ```
 
-```sumo title="Best approach"
+```sumo title="Recommended"
 | parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s"
 ```
 
@@ -98,7 +98,7 @@ If your search contains filtering criteria that could change each time the sear
 
 Whenever possible, you should aggregate data prior to doing a [lookup](/docs/search/search-query-language/search-operators/lookup-classic). In some cases, this will significantly reduce the amount of data the lookup is referencing.
 
-**Best approach:**
+**Recommended:**
 
 ```sumo
 | count by client_ip
@@ -117,7 +117,7 @@ Whenever possible, you should aggregate data prior to doing a [lookup](/docs/sea
 For readability, use a soft return in the query field to put each new
 pipe-delimited operation on a separate line.
 
-**Best approach:**
+**Recommended:**
 
 ```sumo
 _sourceCategory=Apache/Access and GET

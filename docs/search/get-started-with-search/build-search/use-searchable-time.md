@@ -13,6 +13,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This resolves the inconsistent error messages due to variable ingestion latency and non-linear receipt time indexing issues by marking the time only when the data is truly searchable. This ensures running queries with non-overlapping but exhaustive time ranges will prevent any gaps or duplication in the data.
 
+:::note
+This setting controls which timestamp field a search's time range is measured against, not the time range itself. To set the time range, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). Searchable time is one of three timestamp fields you can search by, along with message time (the default) and [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time), the time a message hit the Sumo Logic receivers.
+:::
+
 ## Via UI
 
 ### Run a search using Searchable Time
@@ -43,7 +47,7 @@ Follow the below steps to run a search using the searchable time in the dashboar
 1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to provide a log query.
 1. Navigate to **General** configuration.
-1. Go to **Logs Settings** section and select **Searchable Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="500" />
+1. Go to **Logs Settings** section and select **Searchable Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="400" />
 
 ### Create a monitor using Searchable Time
 
@@ -60,7 +64,7 @@ To create a search, refer to the [Search Job API Documentation](/docs/api/search
 | `intervalTimeType` | String | Yes | This parameter defines whether you want to run the search by messageTime, receiptTime, or searchableTime. By default, the search will run by messageTime. |
 
 :::note
-If both `runByReceiptTime` and `intervalTimeType` parameters are present then the preference will be given to the `intervalTimeType`.
+If both `runByReceiptTime` and `intervalTimeType` parameters are present, preference will be given to the `intervalTimeType`.
 :::
 
 ### Create a dashboard with Searchable Time

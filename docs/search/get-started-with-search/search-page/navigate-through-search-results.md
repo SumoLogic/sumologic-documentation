@@ -44,7 +44,7 @@ The **Messages** tab allows you to right-click a table cell to copy the raw mess
 
 Click anywhere on the table in the **Messages** or **Aggregates** tab and you can use the up and down keyboard keys to navigate your results.
 
-## Pages
+## Navigate between pages of results
 
 If you have many pages of results, you have several options for navigation:
 * Scroll down to see more results. The header is static.

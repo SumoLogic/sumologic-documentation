@@ -1,6 +1,7 @@
 ---
 id: search-modes
-title: Search Modes
+title: Switch Between Basic and Advanced Search Modes
+sidebar_label: Search Modes
 description: Learn about the new search modes of our Log Search page.
 ---
 
