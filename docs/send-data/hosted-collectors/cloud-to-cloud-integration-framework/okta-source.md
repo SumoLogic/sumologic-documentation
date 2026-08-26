@@ -111,4 +111,4 @@ During a polling interval, an Okta Source will make a request for every 1,000 
 
 ## Additional resources
 
-- Use the [Okta Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/okta/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [Okta Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/okta/) to automate response actions directly from Cloud SOAR playbooks.

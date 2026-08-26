@@ -171,4 +171,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Airtable Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/airtable/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [Airtable Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/airtable/) to automate response actions directly from Cloud SOAR playbooks.

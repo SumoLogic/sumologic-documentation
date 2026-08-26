@@ -208,4 +208,4 @@ Use this dashboard to:
 
 ## Additional resources
 
-- Use the [GitLab Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/gitlab/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [GitLab Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/gitlab/) to automate response actions directly from Cloud SOAR playbooks.

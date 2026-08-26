@@ -262,4 +262,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.

@@ -178,4 +178,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Dropbox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/dropbox/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [Dropbox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/dropbox/) to automate response actions directly from Cloud SOAR playbooks.

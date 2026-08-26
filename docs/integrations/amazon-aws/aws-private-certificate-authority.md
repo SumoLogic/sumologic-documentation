@@ -37,4 +37,4 @@ You can collect the logs and metrics for Sumo Logic's AWS Private Certificate Au
 
 ## Additional resources
 
-- Use the [AWS Private Certificate Authority Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/aws-private-certificate-authority/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [AWS Private Certificate Authority Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/aws-private-certificate-authority/) to automate response actions directly from Cloud SOAR playbooks.

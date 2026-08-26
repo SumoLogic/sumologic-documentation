@@ -191,4 +191,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Netskope Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/netskope/) to automate response actions directly from Cloud SIEM or Cloud SOAR playbooks.
+- Use the [Netskope Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/netskope/) to automate response actions directly from Cloud SOAR playbooks.
