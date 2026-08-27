@@ -132,11 +132,11 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
 |:--|:--|:--|:--|
-| `Miro - Excessive Failed Sign-ins Detected` | This alert is fired when failed sign-in attempts for a single user exceed 5 within a 15-minute window, indicating a potential brute force or credential stuffing attack. | Critical | Count > 5 |
-| `Miro - Account Deleted` | This alert is fired when a Miro account is deleted. Account deletion is irreversible and may indicate unauthorized insider activity or a compromised administrator account. | Critical | Count > 0 |
-| `Miro - User Deactivated` | This alert is fired when one or more users are deactivated in Miro. Unexpected deactivations may indicate unauthorized administrative activity or an insider threat. | Critical | Count > 0 |
-| `Miro - Excessive Board Exports Detected` | This alert is fired when a single user performs more than 10 board exports within a 30-minute window, which may indicate unauthorized data exfiltration. | Critical | Count > 10 |
-| `Miro - Sign-in from Risky Geo-Location` | This alert is fired when a sign-in event originates from an embargoed or geographically restricted location, indicating potential unauthorized access or policy violations. | Critical | Count > 0 |
+| `Miro - Excessive Failed Sign-ins Detected` | This alert is triggered when failed sign-in attempts for a single user exceed 5 within a 15-minute window, indicating a potential brute force or credential stuffing attack. | Critical | Count > 5 |
+| `Miro - Account Deleted` | This alert is triggered when a Miro account is deleted. Account deletion is irreversible and may indicate unauthorized insider activity or a compromised administrator account. | Critical | Count > 0 |
+| `Miro - User Deactivated` | This alert is triggered when one or more users are deactivated in Miro. Unexpected deactivations may indicate unauthorized administrative activity or an insider threat. | Critical | Count > 0 |
+| `Miro - Excessive Board Exports Detected` | This alert is triggered when a single user performs more than 10 board exports within a 30-minute window, which may indicate unauthorized data exfiltration. | Critical | Count > 10 |
+| `Miro - Sign-in from Risky Geo-Location` | This alert is triggered when a sign-in event originates from an embargoed or geographically restricted location, indicating potential unauthorized access or policy violations. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the Miro app (Optional)
 
