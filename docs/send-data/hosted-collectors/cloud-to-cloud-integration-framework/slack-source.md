@@ -129,7 +129,7 @@ To configure a Slack Source:
 1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
+:::tip
 After configuring the Slack source, consider installing the Sumo Logic app for [Slack](/docs/integrations/saas-cloud/slack/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -164,3 +164,7 @@ Each page adds to the overall number of API calls needed and adds time due to th
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Slack Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/slack/) to automate response actions directly from Cloud SOAR playbooks.
