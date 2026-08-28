@@ -101,6 +101,12 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-alertcenter/example.tf
 ```
 
+## Notes
+
+* The source collects activity events for the following Google Workspace applications: `access_transparency`, `admin`, `calendar`, `chat`, `drive`, `gcp`, `gmail`, `gplus`, `groups`, `groups_enterprise`, `jamboard`, `login`, `meet`, `mobile`, `rules`, `saml`, `token`, `user_accounts`, `context_aware_access`, `chrome`, `data_studio`, `keep`, `gemini_in_workspace_apps`, `classroom`, `assignments`, `cloud_search`, `tasks`, `data_migration`, `meet_hardware`, `directory_sync`, `ldap`, `profile`, `access_evaluation`, `admin_data_action`, `contacts`, `takeout`, and `graduation`.
+
+* Google may deliver activity data with a delay for `calendar`, `groups`, `token`, and `cloud_search`. 10 minute delay is already configured in the source, but that buffer may not be sufficient for these applications. For details, see Google's [document](https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times).
+
 ## FAQ
 
 :::info
