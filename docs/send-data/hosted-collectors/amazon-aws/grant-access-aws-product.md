@@ -62,7 +62,7 @@ This procedure applies to the **AWS Access** method part of the source configura
 
 Before generating the template, the source’s configuration must have the AWS-specific fields filled out (for example, Bucket Name, Path Expression, and so on). 
 
-1. Leave the **Access Method** option set to the default option **Role-based access (recommended)**.<br/><img src={useBaseUrl('img/send-data/access-method.png')} alt="AWS Access configuration form showing options for 'Role-based access' and 'Key access'" style={{border: '1px solid gray'}} width="600" />
+1. Leave the **Access Method** option set to the default option **Role-based access (recommended)**.<br/><img src={useBaseUrl('img/cse/role-arn.png')} alt="AWS Access configuration form showing options for 'Role-based access' and 'Key access'" style={{border: '1px solid gray'}} width="600" />
 1. Click **Generate role-based access template**.
 1. A CloudFormation template for the role is displayed in YAML format.<br/><img src={useBaseUrl('img/send-data/generated-template.png')} alt="CloudFormation template for IAM role-based access" style={{border: '1px solid gray'}} width="500" />
 1. Click **Download** to save the template.
