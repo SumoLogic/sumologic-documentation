@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-***Version: 1.0  
+***Version: 1.1  
 Updated: Aug 28, 2026***
 
 [Google Cloud Functions](https://cloud.google.com/functions) is a serverless execution environment for building and connecting cloud services. This integration supports 2nd-generation functions backed by Cloud Run v2 service APIs. Use this integration to inventory deployed functions, trigger executions, monitor logs, and manage access controls as part of automated response workflows.
@@ -166,4 +166,4 @@ If the issue persists, confirm the integration configuration JSON matches the se
 
 ## Change Log
 
-* August 28, 2026 (v1.0) - First upload
+* August 28, 2026 (v1.1) - First upload
