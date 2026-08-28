@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: Aug 28, 2026***
 
-Google Cloud Functions is a serverless execution environment for building and connecting cloud services. This integration supports 2nd-generation functions backed by Cloud Run v2 service APIs. Use this integration to inventory deployed functions, trigger executions, monitor logs, and manage access controls as part of automated response workflows.
+[Google Cloud Functions](https://cloud.google.com/functions) is a serverless execution environment for building and connecting cloud services. This integration supports 2nd-generation functions backed by Cloud Run v2 service APIs. Use this integration to inventory deployed functions, trigger executions, monitor logs, and manage access controls as part of automated response workflows.
 
 ## Actions
 
