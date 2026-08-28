@@ -31,6 +31,10 @@ This topic has information about the Google Workspace Activities Cloud-to-Cloud 
 |:--|:--|
 | 5 minutes | [Activities data](https://developers.google.com/workspace/admin/reports/reference/rest/v1/activities/list) |
 
+:::note
+Google may deliver activity data with a delay for `calendar`, `groups`, `token`, and `cloud_search`. A 10 minute delay is already configured in the source, but that buffer may not be sufficient for these applications. For details, see Google's [document](https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times).
+:::
+
 ## Setup
 
 ### Vendor configuration
@@ -71,7 +75,7 @@ Follow the below steps to create Google Workspace Activities service account cre
 1. **Google Workspace Activities Credentials**. You can authenticate your service account credentials directly by uploading a JSON file credentials instead of breaking down the file into different sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#vendor-configuration).
 1. **Exclude Application Names**. (Optional) Enter the application names and scope that you do not want to send to Sumo Logic.
    :::note
-   All application names are selected by default unless you exclude some of the application names in the config JSON schema.
+   All application names are selected by default unless you exclude some of the application names in the config JSON schema. The source collects activity events for the following Google Workspace applications: `access_transparency`, `admin`, `calendar`, `chat`, `drive`, `gcp`, `gmail`, `gplus`, `groups`, `groups_enterprise`, `jamboard`, `login`, `meet`, `mobile`, `rules`, `saml`, `token`, `user_accounts`, `context_aware_access`, `chrome`, `data_studio`, `keep`, `gemini_in_workspace_apps`, `classroom`, `assignments`, `cloud_search`, `tasks`, `data_migration`, `meet_hardware`, `directory_sync`, `ldap`, `profile`, `access_evaluation`, `admin_data_action`, `contacts`, `takeout`, and `graduation`.
    :::
 1. **Processing Rules for Logs**. (Optional) Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
@@ -110,12 +114,6 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-alertcenter/example.tf
 ```
-
-## Notes
-
-* The source collects activity events for the following Google Workspace applications: `access_transparency`, `admin`, `calendar`, `chat`, `drive`, `gcp`, `gmail`, `gplus`, `groups`, `groups_enterprise`, `jamboard`, `login`, `meet`, `mobile`, `rules`, `saml`, `token`, `user_accounts`, `context_aware_access`, `chrome`, `data_studio`, `keep`, `gemini_in_workspace_apps`, `classroom`, `assignments`, `cloud_search`, `tasks`, `data_migration`, `meet_hardware`, `directory_sync`, `ldap`, `profile`, `access_evaluation`, `admin_data_action`, `contacts`, `takeout`, and `graduation`.
-
-* Google may deliver activity data with a delay for `calendar`, `groups`, `token`, and `cloud_search`. 10 minute delay is already configured in the source, but that buffer may not be sufficient for these applications. For details, see Google's [document](https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times).
 
 ## FAQ
 
