@@ -13,12 +13,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 This topic has information about the Google Workspace Activities Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Data collected
 
 | Polling Interval | Data |
-| :--- | :--- |
+|:--|:--|
 | 5 minutes | [Activities data](https://developers.google.com/workspace/admin/reports/reference/rest/v1/activities/list) |
 
 ## Setup
