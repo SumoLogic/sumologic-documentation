@@ -125,7 +125,7 @@ If you are collecting AWS CloudTrail logs from multiple AWS accounts into a comm
 | AWS S3 Bucket Name | If you selected "No" to creating a new source above, skip this step. Provide a name of an existing S3 bucket where you would like to store CloudTrail logs. If this is empty, a new bucket will be created in the region. |
 | Path Expression to the Existing CloudTrail logs | This is required in case the above existing bucket is already configured to receive CloudTrail logs. If this is blank, Sumo Logic will store logs in the path expression: `AWSLogs/*/CloudTrail/*/*` |
 
-:::important
+:::tip
 - If you provide the name of an existing S3 bucket for CloudTrail logs, this template creates the SNS topic and the Sumo Logic CloudTrail Source, but it does **not** automatically add an S3 Event Notification to that existing bucket. Without this notification, Sumo Logic can only discover new files by periodically scanning the bucket, which can delay CloudTrail log ingestion.
 - To enable low-latency ingestion, manually create an S3 Event Notification on the existing bucket that points to the SNS topic created by this deployment. For instructions, see [Set up SNS in AWS](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#set-up-sns-in-aws-highly-recommended).
 - This step is only required when you supply an existing bucket. If you leave the bucket name blank and let the template create a new one, the event notification is configured automatically.
