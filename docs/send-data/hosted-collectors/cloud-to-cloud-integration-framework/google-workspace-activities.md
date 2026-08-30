@@ -1,0 +1,122 @@
+---
+id: google-workspace-activities
+title: Google Workspace Activities Source
+sidebar_label: Google Workspace Activities
+keywords:
+    - google-workspace-activities
+    - cloud-SIEM-enterprise
+description: Configure the Google Workspace Activities Cloud-to-Cloud connector.
+---
+
+import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+This topic has information about the Google Workspace Activities Cloud-to-Cloud Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+
+## Data collected
+
+| Polling Interval | Data |
+|:--|:--|
+| 5 minutes | [Activities data](https://developers.google.com/workspace/admin/reports/reference/rest/v1/activities/list) |
+
+:::note
+Google may deliver activity data with a delay for `calendar`, `groups`, `token`, and `cloud_search`. A 10 minute delay is already configured in the source, but that buffer may not be sufficient for these applications. For details, see Google's [document](https://knowledge.workspace.google.com/admin/reports/data-retention-and-lag-times).
+:::
+
+## Setup
+
+### Vendor configuration
+
+Follow the steps below to create Google Workspace Activities service account credentials:
+
+1. From [Google Cloud console](https://console.cloud.google.com), select your project or create a new one.
+1. Enable **Admin SDK API** for the Activities API. To locate this setting, you can search for "Admin SDK API" in the search bar. Then select the **Enable** button. <br/><img src={useBaseUrl('img/send-data/google_workspace_activities_API_sdk.png')} alt="API SDK" width="450"/>
+1. You will be redirected to the dashboard page. Select the **Credentials** tab in the left panel. <br/><img src={useBaseUrl('img/send-data/google_workspace_credentials.PNG')} alt="credentials" width="200"/>
+1. Click **Create Credentials**, and select **Service Account** to create service account credentials. Later, you'll supply the account details and click **Done** to create a service account. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account.PNG')} alt="<service-account>" width="400"/>
+1. To create JSON for the service account, you must create a key. Click the service account email to navigate to the Keys tab.<br/> <img src={useBaseUrl('img/send-data/google_workspace_service_account_create_key.png')} alt="Service account create key" width="800"/>
+1. Click **Add key** and select **Create new key**. At the prompt, select **JSON** and click **Create** to create a key. <br/><img src={useBaseUrl('img/send-data/google_workspace_service_account_key.PNG')} alt="<service-account-key>" width="600"/>
+1. JSON for the service account is automatically downloaded. To see what the JSON looks like and how the JSON fields map to the fields you'll configure, see the [service account JSON example](#json-example) below.
+1. Add domain-wide delegation to your service account using the client ID generated in step 5.
+1. From the Google Admin console, add your OAuth scope to the service account using the instructions [here](https://developers.google.com/workspace/guides/create-credentials#optional_set_up_domain-wide_delegation_for_a_service_account) and select it in the input form. The OAuth scope for the Activity API is:
+   ```
+   https://www.googleapis.com/auth/admin.reports.audit.readonly
+   ```
+   :::note
+   If you do not add an OAuth scope to your Google Workspace service account, you won't be authorized to fetch activity details. Learn more about OAuth scopes:
+   * [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
+   * [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
+   :::
+1. For delegated user email, you need to add the email of the user whom you want to delegate for API calls.
+
+### Source configuration
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. On the **Collectors page**, click **Add Source** next to a Hosted Collector.
+1. Search for and select **Google Workspace Activities**.
+1. **Name.** Enter a name for the Source.
+1. **Description.** (Optional). Enter the description of the Source.
+1. **Source Category.** Enter a string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. **Fields.** (Optional) Click **+Add Field** to define the fields you want to associate. Each field needs a name (key) and value. For more information, see [Fields](/docs/manage/fields).
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+1. **Delegated User Email.** Enter the admin email address for the domain. This email should be the address that is configured for the specific service account in the Google Cloud console.
+1. **Google Workspace Activities Credentials**. You can authenticate your service account credentials directly by uploading a JSON file, rather than breaking it into separate sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#vendor-configuration).
+1. **Exclude Application Names**. (Optional) Enter the application names and scopes that you do not want to send to Sumo Logic.
+   :::note
+   All application names are selected by default unless you exclude some in the config JSON schema. The source collects activity events for the following Google Workspace applications: `access_transparency`, `admin`, `calendar`, `chat`, `drive`, `gcp`, `gmail`, `gplus`, `groups`, `groups_enterprise`, `jamboard`, `login`, `meet`, `mobile`, `rules`, `saml`, `token`, `user_accounts`, `context_aware_access`, `chrome`, `data_studio`, `keep`, `gemini_in_workspace_apps`, `classroom`, `assignments`, `cloud_search`, `tasks`, `data_migration`, `meet_hardware`, `directory_sync`, `ldap`, `profile`, `access_evaluation`, `admin_data_action`, `contacts`, `takeout`, and `graduation`.
+   :::
+1. **Processing Rules for Logs**. (Optional) Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+1. When you are finished configuring the Source, click **Submit**.
+
+## JSON schema
+
+Sources can be configured using UTF-8-encoded JSON files via the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+
+| Parameter | Type | Value | Required | Description |
+|:--|:--|:--|:--|:--|
+| schemaRef | JSON Object  | `{"type":"Google Workspace Activities"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+
+### Configuration Object
+
+| Parameter | Type | Required | Default | Description | Example |
+|:--|:--|:--|:--|:--|:--|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| delegatedUserEmail | String | Yes | `null` | Provide the super-administrator email address for the domain that granted access to the service account you created. | `xyz@domain.com` |
+| credentialsJson | String | Yes | `null` | Authentication service account's credentials to access Google Workspace Platform. |  |
+| excludedApplicationNames | Array of Strings | No |  | Defines the application names that the user wants to exclude. | `["admin", "login"` |
+| pollingInterval | String | Yes | `5m` | Time interval after which the source will check for new data. | `5m` |
+
+### JSON example
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-activities/example.json
+```
+
+### Terraform example
+
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-alertcenter/example.tf
+```
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::
