@@ -81,7 +81,7 @@ The table below contains examples of absolute time-range expressions. 
 | 04/01/2017 | From midnight April 1st, 2017 to now. |
 | 04/01/2017 04/02/2017 | From midnight April 1st, 2017 to midnight April 2nd, 2017. |
 
-## See also
+## Additional resources
 
 - [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). Use the Relative, Custom, and Recent time range picker in the Search UI instead of typing an expression.
 - [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) or [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time). Change which timestamp field a search's time range applies to, instead of the default message time.
