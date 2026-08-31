@@ -125,6 +125,12 @@ If you are collecting AWS CloudTrail logs from multiple AWS accounts into a comm
 | AWS S3 Bucket Name | If you selected "No" to creating a new source above, skip this step. Provide a name of an existing S3 bucket where you would like to store CloudTrail logs. If this is empty, a new bucket will be created in the region. |
 | Path Expression to the Existing CloudTrail logs | This is required in case the above existing bucket is already configured to receive CloudTrail logs. If this is blank, Sumo Logic will store logs in the path expression: `AWSLogs/*/CloudTrail/*/*` |
 
+:::tip
+- If you provide the name of an existing S3 bucket for CloudTrail logs, this template creates the SNS topic and the Sumo Logic CloudTrail Source, but it does **not** automatically add an S3 Event Notification to that existing bucket. Without this notification, Sumo Logic can only discover new files by periodically scanning the bucket, which can delay CloudTrail log ingestion.
+- To enable low-latency ingestion, manually create an S3 Event Notification on the existing bucket that points to the SNS topic created by this deployment. For instructions, see [Set up SNS in AWS](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#set-up-sns-in-aws-highly-recommended).
+- This step is only required when you supply an existing bucket. If you leave the bucket name blank and let the template create a new one, the event notification is configured automatically.
+:::
+
 ## Step 8: Sumo Logic AWS CloudWatch logs
 
 The table below displays the response for each text box in this section.
@@ -238,6 +244,7 @@ Below are some common errors that can occur while using the CloudFormation templ
 | Invalid IAM role OR AccessDenied. | This error can occur when Sumo Logic access keys are disabled or do not have the required permissions. | - Refer to [Edit, deactivate/activate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivateactivate-rotate-or-delete-access-keys) for access keys activation. <br/>- Refer to [Role capabilities](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues. |
 | Subscription filters are not applied to newly created log groups. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLogGroup` events. | CloudTrail must be enabled for EventBridge to capture `CreateLogGroup` events, since these events are recorded and delivered through CloudTrail. |
 | Access logs are not enabled for the Load Balancer. | This error can occur when CloudTrail is not enabled for EventBridge to capture `CreateLoadBalancer` events. | CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail. |
+| CloudTrail log ingestion is delayed after using an existing S3 bucket. | The CloudFormation template doesn't create an S3 Event Notification on an existing CloudTrail bucket. Sumo Logic falls back to periodic scanning, which can delay ingestion. This is expected behavior. | Manually add an S3 Event Notification on the bucket, pointing to the SNS topic created by the deployment. See [Set up SNS in AWS](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#set-up-sns-in-aws-highly-recommended). |
 
 ### Rolling back the AWS Observability Solution
 
