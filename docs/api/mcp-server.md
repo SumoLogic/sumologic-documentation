@@ -8,6 +8,7 @@ description: Connect your AI tools to Sumo Logic via MCP to query logs, manage i
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SumoAcademy from '../reuse/sumo-logic-academy.md';
 import Iframe from 'react-iframe';
+import MSSPfeatureMgmt from '../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="45"/>
 
@@ -50,7 +51,11 @@ The MCP server is not currently supported in our Zurich or AWS European Sovereig
 
 The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
 
-[CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth).
+[CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients. To learn how CIMD works, see [client.dev](https://client.dev/); for how Sumo Logic implements OAuth 2.0 and CIMD, including how an administrator enables it, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
+
+The MCP server publishes `scopes_supported` in its OAuth Protected Resource Metadata (for example, `https://mcp.sumologic.com/.well-known/oauth-protected-resource` for the US1 deployment). A properly implemented client uses this list to request only MCP-relevant scopes during authorization, instead of every scope available in your org, so the resulting access token is limited to that smaller set.
+
+The MCP server also works behind gateway aggregators, such as AWS Bedrock AgentCore Gateway, that connect to multiple MCP servers through a single endpoint. Configure the gateway's OAuth client using the [Client Credentials flow](/docs/manage/security/oauth#client-credentials-flow). If the gateway target fails with an error resembling `Error parsing ClientCredentials response`, check that its credential provider config explicitly sets `grantType: CLIENT_CREDENTIALS`.
 
 For client compatibility questions, contact [Sumo Logic Support](https://support.sumologic.com/support/s).
 
@@ -74,18 +79,31 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 
 ## Enable or disable the MCP server
 
+### Feature Management
+
 MCP server access is enabled by default. An administrator can turn it on or off for your entire organization.
 
 1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
-1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
-Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [OAuth Client Setup](/docs/manage/security/oauth).
+<MSSPfeatureMgmt/>
 
-Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot, Parse Assist, and the SOC Analyst Agent, so you can enable or disable the MCP server independently of those capabilities.
+Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [Prerequisites](#prerequisites) and [Enable CIMD](#enable-cimd).
+
+Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot and Parse Assist, and from the **SOC Analyst Agent** toggle, so you can enable or disable the MCP server independently of those capabilities.
+
+## Enable CIMD
+
+[CIMD](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) is the recommended authentication mechanism for MCP clients and is disabled by default. An administrator needs to enable it for your organization before clients can authenticate.
+
+1. In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
+1. Select the **Enable CIMD Clients** check box.<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients check box selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
+
+For how Sumo Logic implements OAuth 2.0 and CIMD in more detail, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
 
 ## Configure in Claude Code CLI
 
-Claude Code CLI uses OAuth 2.0 with CIMD. You do not need to create OAuth credentials before setup. Browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an administrator has [enabled CIMD](#enable-cimd) on the Policies page. You do not need to create OAuth credentials; browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 

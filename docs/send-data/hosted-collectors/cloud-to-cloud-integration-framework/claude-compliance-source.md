@@ -133,6 +133,22 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 - As the Claude Compliance API continues to evolve, updates may alter conversation data or API behavior, potentially impacting integration consistency.
 
+## Troubleshooting
+
+### Anthropic API returns 404 status code
+
+If the source returns the following error:
+
+```
+{"type":"error","error":{"type":"not_found_error","message":"Not found","details":{"error_visibility":"user_facing"}},"request_id":"req_XXXX"}
+```
+
+This error can occur due to the following reasons:
+- **Invalid or incorrect API key**. Verify that the API key configured for the source is correct and valid.
+- **Valid API key, error persists**. If the API key is confirmed valid but the error still occurs, past investigations have traced this to an issue on the Anthropic endpoint side. In this case:
+   - Restart the source and confirm whether it resumes working as expected.
+   - If the error still persists after restarting, contact the Anthropic support team regarding this issue.
+
 ## FAQ
 
 :::info

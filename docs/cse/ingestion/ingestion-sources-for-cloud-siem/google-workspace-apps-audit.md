@@ -1,6 +1,6 @@
 ---
 id: google-workspace-apps-audit
-title: Ingest Google Workspace Apps Audit Data into Cloud SIEM
+title: Ingest Google Workspace Audit Data into Cloud SIEM
 sidebar_label: Google Workspace Apps Audit
 description: Configure an Workspace Apps Audit Source to collect Google Workspace log messages to be parsed by Cloud SIEM's system parser for Google Workspace Audit.
 ---

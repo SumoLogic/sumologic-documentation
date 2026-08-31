@@ -8,6 +8,7 @@ description: Use Sumo Logic's SOC Analyst Agent to investigate Cloud SIEM insigh
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
+import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="Search icon" width="35"/>
 
@@ -60,11 +61,15 @@ Watch this micro lesson to learn how the SOC Analyst Agent triages and investiga
 
 The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [How does investigation rate limiting work?](#how-does-investigation-rate-limiting-work) for information about your organization's investigation capacity.
 
-To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**). At GA, the SOC Analyst Agent shares a single **AI features** toggle with Mobot and Parse Assist — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
+### Feature Management
 
-Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs. MSSP parent orgs do not see this toggle for their own org.
+To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**), available to any user with the Administrator role or the **Manage Organization Settings** permission. The SOC Analyst Agent has its own **SOC Analyst Agent** toggle, independent of the **AI features** toggle that governs Mobot and Parse Assist, and the **MCP Server access** toggle.
 
-<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+Parent and child orgs have the SOC Analyst Agent enabled by default. A parent org administrator can toggle it for the parent org and for its child orgs. Child org administrators cannot toggle it for their own org or for other child orgs.
+
+<MSSPfeatureMgmt/>
+
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 
 ## View AI verdicts on insights
@@ -247,7 +252,9 @@ No. The SOC Analyst Agent does not have persistent learning.
 
 The SOC Analyst Agent automatically investigates insights in priority order, up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button. A banner also appears on the **Insights** page when your investigation capacity is reached.
 
-To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings). If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
+To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings). Parent org administrators can also set a child org's investigation volume when [creating or editing a child org](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs/#allocate-credits).
+
+If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
 
 ### Does continuing an investigation in Mobot count against Mobot's usage limits?
 
