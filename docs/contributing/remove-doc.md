@@ -10,15 +10,15 @@ When you move a doc or remove it altogether, that deletes its URL. Visiting the 
 
 To prevent this, create a 301 redirect. Follow these steps to ensure a smooth transition and maintain the health of our docs site.
 
+:::tip Recommended: Use Claude Code
+If you have [Claude Code](https://claude.ai/code) installed, this repo's `/remove-doc` slash command automates the steps below, including creating the redirect, updating internal links, and removing the doc from navigation. See the [README](https://github.com/SumoLogic/sumologic-documentation#claude-code-tooling) for the full command list and which ones require internal access.
+:::
+
 ## Prerequisites
 
-import DocPrereq from '../reuse/doc-prerequisites.md';
+import DocPrereq from '../reuse/contributing/doc-prerequisites.md';
 
 <DocPrereq/>
-
-:::tip Using Claude Code (optional)
-This repository includes a [Claude Code](https://claude.ai/code) `/remove-doc` slash command (in `.claude/commands/`) that automates the steps below — creating the redirect, updating internal links, and removing the doc from navigation. If you have Claude Code installed, it works the same way against your fork. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for details.
-:::
 
 ## Step 1: Create a 301 redirect
 
@@ -36,7 +36,7 @@ Ensure any internal links pointing to the deleted doc are updated to the new URL
 
 1. In your GitHub authoring tool, run a search for the URL you're removing. For example, if the legacy URL appears in other documents, replace all instances with the new URL.<br/><img src={useBaseUrl('img/contributing/old-url.png')} alt="Screenshot of a 'Find All' search for the URL to be removed" />
    :::warning
-   Never do a Find All > Replace All, as this can break unrelated items like image paths. Replace each URL on a one-by-one basis.
+   Never do a Find All > Replace All, as this can break unrelated items like image paths. Replace each URL one at a time.
    :::
 1. If applicable:
    * Remove from its parent index.md hub page.
@@ -44,7 +44,7 @@ Ensure any internal links pointing to the deleted doc are updated to the new URL
 
 ## Step 3: Delete the doc file
 
-Delete the actual .md doc file from the repository (in this example, it'd be `docs/integrations/web-servers/nginx-legacy.md`).
+Delete the actual .md doc file from the repository (in this example, it would be `docs/integrations/web-servers/nginx-legacy.md`).
 
 ## Step 4: Remove doc from navigation
 
@@ -70,7 +70,7 @@ You can prevent content from being indexed by excluding it from compilation enti
 
 To exclude docs, add their paths to the `docs.exclude` setting in `docusaurus.config.js`:
 
-```json title="docusaurus.config.js"
+```js title="docusaurus.config.js"
 presets: [
   [
     '@docusaurus/preset-classic',
@@ -86,8 +86,8 @@ presets: [
 ];
 ```
 
-Any markdown files in the listed directories are excluded from the build and won't be served or indexed. Note that `reuse` files are still embedded where referenced — they just won't compile as standalone pages.
+Any Markdown files in the listed directories are excluded from the build and won't be served or indexed. Note that `reuse` files are still embedded where referenced; they just won't compile as standalone pages.
 
-For finer-grained control — for example, keeping a page compiled but hidden from search — use `robots.txt` or `noindex` meta tags instead. If content should never be published at all, excluding it from compilation is the most reliable approach.
+For finer-grained control, such as keeping a page compiled but hidden from search, use `robots.txt` or `noindex` meta tags instead. If content should never be published at all, excluding it from compilation is the most reliable approach.
 
 If a document has already been indexed and needs to be urgently removed from Google search results, follow [Google's removal instructions](https://support.google.com/webmasters/answer/9689846?sjid=11985967130976965420-NC).

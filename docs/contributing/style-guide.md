@@ -42,7 +42,7 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * [Partner app template](/docs/contributing/templates/partner-app-doc)
 :::
 
-:::tip Using Claude Code (optional)
+:::tip Recommended: Use Claude Code
 If you have [Claude Code](https://claude.ai/code) installed, this repo's `sumo-style` skill automatically applies the conventions on this page when you draft or edit docs — you don't need to invoke it manually. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for details.
 :::
 

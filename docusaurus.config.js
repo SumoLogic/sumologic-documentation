@@ -485,6 +485,11 @@ module.exports = {
                 label: 'Traces, RUM, APM',
                 icon: 'account_tree',
               },
+              {
+                label: 'Contribute to Docs',
+                to: 'docs/contributing',
+                icon: 'edit_note',
+              },
             ]
           },
           {

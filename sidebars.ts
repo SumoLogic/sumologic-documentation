@@ -67,6 +67,7 @@ module.exports = {
           label: 'Docs Templates',
           collapsible: true,
           collapsed: true,
+          link: {type: 'doc', id: 'contributing/templates/index'},
           items: [
             'contributing/templates/app-template-v2',
             'contributing/templates/c2c-source',
