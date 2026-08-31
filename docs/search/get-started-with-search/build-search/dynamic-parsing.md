@@ -6,7 +6,7 @@ description: Dynamic Parsing (Auto Parse Mode) allows you to configure automatic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Dynamic Parsing (Auto Parse Mode) allows automatic field extraction from your JSON log messages when you run a search. This allows you to view fields from JSON logs without having to manually specify parsing logic.
+Dynamic Parsing (Auto Parse Mode) allows automatic field extraction from your JSON log messages when you run a search. This allows you to view fields from JSON logs without having to manually specify parsing logic. Dynamic Parsing and Auto Parse are the same feature; the terms are used interchangeably throughout Sumo Logic documentation and the UI.
 
 ## How Dynamic Parsing works
 
@@ -14,7 +14,7 @@ Dynamic Parsing extracts JSON fields when you run a query, at search time (run
 
 <img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/default-runtime-FER.png')} alt="Default Run Time FER" style={{border: '1px solid gray'}} width="800" />
 
-With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**.
+With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing and **Auto Parse Mode** refer to the same feature: you enable Dynamic Parsing by turning on Auto Parse Mode for a search.
 
 <img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="Auto parse mode option" style={{border: '1px solid gray'}} width="300"/>
 
