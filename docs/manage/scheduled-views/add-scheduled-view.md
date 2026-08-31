@@ -23,7 +23,7 @@ For Scheduled View query requirements, see [Scheduled Views Best Practices and E
 1. Click **+ Add Scheduled View**.<br/><img src={useBaseUrl('/img/scheduled-views/add-view.png')} alt="Add view" style={{border:'1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the view. You'll use this name in queries to search the view, so use a name that's descriptive and easy to remember. Names can contain alphanumeric characters; underscores (`_`) and hyphens (`-`) are the only special characters allowed. View names can only have (A-Z, a-z, 0-9), $, -, and _ after the first letter.
 1. **Query.** Enter the full query that encompasses the data you'd like indexed in the view. Parse operators and most search operators are supported in views.
-1. **Search Mode**. Set to **Auto Parse Mode** for [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) of JSON data. Manual Mode is the default search behavior.
+1. **Search Mode**. Set to **Auto Parse Mode** to [dynamically parse](/docs/search/get-started-with-search/build-search/dynamic-parsing) JSON data. Manual Mode is the default search behavior.
 1. **Start Date.** Click the date that you'd like to use as the start time of the index. All data from that point forward will be indexed in the scheduled view. The oldest selectable date represents the end of the retention period of your Sumo Logic account.
     :::note limitation
     You cannot select a start date older than 365 days.
