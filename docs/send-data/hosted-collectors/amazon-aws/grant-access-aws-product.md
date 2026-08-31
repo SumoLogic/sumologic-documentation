@@ -6,7 +6,7 @@ description: Before configuring an AWS Source, give Sumo Logic access to your AW
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic requires access to the services in your AWS account(s) in order to collect data. This section has instructions for granting a Sumo Logic source access to AWS services. 
+Sumo Logic requires access to the services in your AWS account(s) in order to collect data. This section provides instructions for granting Sumo Logic source access to AWS services. 
 
 You can follow the instructions on this page to grant Sumo Logic access to the following AWS services:
 
@@ -25,7 +25,7 @@ Access to AWS services is managed through [AWS Identity and Access Management (I
 
 ### Role-based access (recommended)
 
-**Both Sumo Logic and AWS recommend using IAM Role-based access for increased security.** An IAM role is similar to a user, in that it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS; however, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it. Also, a role does not have standard long-term credentials (that is, a password or access keys) associated with it. Instead, if a user assumes a role, [temporary security credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) are created dynamically and provided to the user through an Amazon Resource Name (ARN). 
+**Both Sumo Logic and AWS recommend using IAM Role-based access for increased security.** An IAM role is similar to a user, in that it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS; however, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it. Also, a role does not have standard long-term credentials (that is, a password or access keys) associated with it. Instead, if a user assumes a role, [temporary security credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) are dynamically created and provided to the user via an Amazon Resource Name (ARN). 
 
 :::note
 IAM role-based access is not supported in GovCloud or China regions.
@@ -40,11 +40,11 @@ If you want to use an existing role, you can simply update the role with the app
 
 To grant an IAM role access to an AWS service, you’ll need to create the role in AWS and copy the ARN. You’ll need the ARN to complete the configuration of your Sumo Logic source.
 
-The subsection below have instructions for creating a new IAM role automatically using a CloudFormation template or manually using the Amazon console. You can also create IAM roles using the AWS CLI or API. For more information, see [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html) in AWS help. 
+The subsection below has instructions for creating a new IAM role automatically using a CloudFormation template or manually using the Amazon console. You can also create IAM roles using the AWS CLI or API. For more information, see [Creating a role to delegate permissions to an IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html) in AWS help. 
 
 #### Create a role automatically using a CloudFormation template
 
-This section has instructions for creating an S3 source and using the option Generate Role-Based Access Template to create a CloudFormation template that can be used to generate the IAM role. Sumo Logic can automatically generate this template when you create the following Sumo Logic source types:
+This section provides instructions for creating an S3 source and using the Generate Role-Based Access Template option to create a CloudFormation template that generates the IAM role. Sumo Logic can automatically generate this template when you create the following Sumo Logic source types:
 
 * Amazon CloudFront 
 * AWS CloudTrail 
@@ -66,7 +66,7 @@ Before generating the template, the source’s configuration must have the AWS-s
 1. Click **Generate role-based access template**.
 1. A CloudFormation template for the role is displayed in YAML format.<br/><img src={useBaseUrl('img/send-data/generated-template.png')} alt="CloudFormation template for IAM role-based access" style={{border: '1px solid gray'}} width="500" />
 1. Click **Download** to save the template.
-1. Navigate to AWS CloudFormation, or click **AWS CloudFormation Console**. The button will take you to open https://console.aws.amazon.com/cloudformation, and will not run the template. You will still need to generate and download the template to proceed.
+1. Navigate to AWS CloudFormation, or click **AWS CloudFormation Console**. The button will take you to https://console.aws.amazon.com/cloudformation and will not run the template. You will still need to generate and download the template to proceed.
 1. Click **Create Stack**.<br/><img src={useBaseUrl('img/send-data/create-stack-option.png')} alt="AWS CloudFormation interface" style={{border: '1px solid gray'}} width="800" />
 1. On the **Create Stack** page:
    1. Choose **Template is ready.**
@@ -75,7 +75,7 @@ Before generating the template, the source’s configuration must have the AWS-s
    1. Click **Next**. <br/><img src={useBaseUrl('img/send-data/save-stack.png')} alt="AWS CloudFormation 'Create stack' interface" style={{border: '1px solid gray'}} width="800" />
 1. On the **Specify details** page, enter a name for the stack (for example, *sumo-S3-role-access*), and click **Next**.
 1. On the **Configure stack options** page, enter tags, if desired, and click **Next**.
-1. On the **Review *stack-title-name*** page, scroll to the bottom and read the acknowledgement from AWS that this CloudFormation template might create IAM resources. Then, check the acknowledgement box, and click **Create stack**.
+1. On the **Review *stack-title-name*** page, scroll to the bottom and read the acknowledgment from AWS that this CloudFormation template might create IAM resources. Then, check the acknowledgment box and click **Create stack**.
 1. Once the stack is created, the ARN for the role is displayed in the Outputs section. Copy the value provided for the ARN Key. The ARN should look something like `arn:aws:iam::123456789:role/....`
 1. Return to the source configuration page in the Sumo Logic UI and enter the ARN you copied into the **Role ARN** field.
 
@@ -87,8 +87,8 @@ Before generating the template, the source’s configuration must have the AWS-s
    1. Click **Another AWS account** as the type of trusted entity.
    1. **Account ID**. Enter the following Sumo Logic ID: `926226587429`.
    1. In the **Options** section, checkmark the **Require external ID for better security**. 
-   1. **External ID**. The External ID is formed from your Sumo Logic region identifier and your Sumo Logic account identifier in this format: *SumoDeployment:SumoAccountId* where:
-      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, ch, de, esc, eu, fed, jp, kr, us1, or us2. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
+   1. **External ID**. The External ID is formed from your Sumo Logic region identifier and your Sumo Logic account identifier in this format: *SumoDeployment:SumoAccountId*, where:
+      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase, such as au, ca, ch, de, esc, eu, fed, jp, kr, us1, or us2. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
       * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) page.
    1. **Require MFA**. Don’t select this option; it is not supported.
    1. Click **Next: Permissions**.<br/><img src={useBaseUrl('img/send-data/create-role.png')} alt="AWS IAM 'Create role' interface specifying trusted entities and accounts, highlighting fields for Account ID and External ID" style={{border: '1px solid gray'}} width="800" />
@@ -195,7 +195,7 @@ Replace the `your_bucketname` placeholders in the `Resource` section of the JSON
 
 :::important
 * All of the Action parameters shown above are required. Make sure to include both of the Amazon Resource Name (ARN) statements in the **Resource** section of the policy. Both statements are required to allow full access to the bucket contents and the bucket itself.
-* If your S3 bucket is versioned, configure the S3 source to use the versioned APIs as well, and make sure  your policy has `GetObjectVersion` and `ListBucketVersions` permissions. If the S3 bucket is not versioned, you do not need these permissions and you should configure the S3 source to not use versioned APIs.  
+* If your S3 bucket is versioned, configure the S3 source to use the versioned APIs as well, and make sure your policy has `GetObjectVersion` and `ListBucketVersions` permissions. If the S3 bucket is not versioned, you do not need these permissions, and you should configure the S3 source to not use versioned APIs.  
 :::
 
 #### AWS CloudWatch Source Policy 
