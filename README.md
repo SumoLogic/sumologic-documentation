@@ -80,7 +80,7 @@ Our docs team reviews issues and pull requests regularly. Response times may var
 Merge times depend on the type of change:
 
 - **Content changes** (`docs/`, `blog-*`, `static/img`) — no hard merge window. We prefer U.S. or India business hours when possible.
-- **Back-end changes** (`src/`, `sidebars.ts`, config files, `.github/`) — merged **Monday–Friday, 7:00am–2:00pm PT** only, when the WebOps team is available.
+- **Back-end changes** (`src/`, `sidebars.ts`, config files, `.github/`) — merged **Monday–Friday, 6:00am–2:00pm PT** only, when the WebOps team is available.
 
 PRs that mix content and back-end files follow the back-end rules.
 
