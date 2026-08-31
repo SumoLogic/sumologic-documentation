@@ -71,7 +71,7 @@ Any broken links or images will be listed in the output. Fix them, rebuild, and 
 
 ## Claude Code tooling
 
-This repo includes [Claude Code](https://claude.ai/code) slash commands for creating docs, auditing content, and more. Most commands work for anyone with the repo cloned, including external contributors — the exception is Jira-related commands, which require internal Sumo Logic Atlassian access and are for the Docs Team only. See [AGENTS.md](AGENTS.md) for the full reference.
+This repo includes [Claude Code](https://claude.ai/code) slash commands for creating docs, auditing content, and more. Most commands work for anyone with the repo cloned, including external contributors — the exception is Jira-related commands, which require internal Sumo Logic Atlassian access and are for Sumo Logic employees only. See [AGENTS.md](AGENTS.md) for the full reference.
 
 ## Publishing
 
