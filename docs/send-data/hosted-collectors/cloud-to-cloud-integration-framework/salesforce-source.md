@@ -88,7 +88,7 @@ To configure a Salesforce Source:
     :::
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
+:::tip
 After configuring the Salesforce source, consider installing the Sumo Logic app for [Salesforce](/docs/integrations/saas-cloud/salesforce/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -257,3 +257,7 @@ You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Salesforce Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/salesforce/) to automate response actions directly from Cloud SOAR playbooks.
