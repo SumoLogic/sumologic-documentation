@@ -251,6 +251,9 @@ Here's a cool tip.
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
 * Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
+* In body text, don't capitalize a term unless it's a proper noun or a literal UI label. Generic product terms are lowercase: collector, source, dashboard, panel, index, partition, role, scheduled view, alert, search.
+* **UI label vs. concept.** When you name a UI element or page as it appears on screen, match its on-screen capitalization and bold the label: the **Search** page, the **Scheduled Views** page, the **Aggregates** tab. When you mean the same thing as a general feature or concept, use lowercase and no bold: "scheduled views let you pre-aggregate data", "run a search". The generic word (`page`, `tab`, `button`) is always lowercase. See [Bold](#bold).
+* Always capitalized: proper nouns and product names (Sumo Logic, Cloud SIEM, Cloud SOAR, Kubernetes, Markdown, RBAC), and named UI areas when used as labels (the **Library**, the **Search** page, **Admin mode**).
 
 
 ## Code (inline)
@@ -525,7 +528,13 @@ If your file is available in another public Sumo Logic repo, provide the standar
 
 ### Bold
 
-Use **bold** for UI elements you interact with, such as a button or tab.
+Use **bold** for the name of a UI element the reader interacts with or navigates to: a button, tab, menu item, field label, checkbox, or page name. Examples: Select **Save**. Go to the **Scheduled Views** page. On the **Aggregates** tab, select **Add to Dashboard**.
+
+Bold only the label itself. The generic word that follows it (`button`, `tab`, `menu`, `dialog`, `field`, `page`, `pane`) stays outside the bold and lowercase: the **Search** page, not **Search page** or the **Search Page**.
+
+**UI label vs. concept.** Bold and match the on-screen capitalization only when you're pointing to the UI control. When you're describing the feature or concept, don't bold it, and lowercase it. Write "A scheduled view is a pre-aggregated index of your data" (concept), but "Open the **Scheduled Views** page" (UI label). Capitalization follows the same split (see [Capitalization](#capitalization)).
+
+Don't use bold to emphasize ordinary words.
 
 ### Italics
 
@@ -1643,6 +1652,8 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
 
 
 ## UI elements
+
+For how to format and capitalize a UI element's name (bold the label, match on-screen capitalization, and lowercase it when you mean the concept rather than the control), see [Bold](#bold) and [Capitalization](#capitalization).
 
 Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
 
