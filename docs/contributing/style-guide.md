@@ -1174,7 +1174,8 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 
 ## Numbers
 
-* Use numerals, rather than spelling the number out. For example, “2” instead of “two”.
+* Spell out zero through nine in ordinary prose; use numerals for 10 and greater. This matches AP, Microsoft, and Google.
+* Always use numerals for measurements and units, version numbers, percentages, code, dates, times, UI text that shows a numeral, and any range where either value is 10 or greater.
 * Use commas for numbers that are 4 or 5 digits in length, for example, 1,000 or 99,999.
 * For numbers 100,000 and higher, use “K”, “M”, and “B” to indicate thousands, millions, or billions.
 * Use an en-dash without a space on either side for number ranges.
