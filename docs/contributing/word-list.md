@@ -17,7 +17,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Anomaly Detection**. Always capitalize.
 
-**Apps**. When referring to a Sumo Logic App, capitalize. Otherwise, capitalization is not necessary. No need to spell out application.
+**Apps**. When referring to a Sumo Logic app, do not capitalize. No need to spell out application.
 
 **Autocomplete**. One word, not two. The Sumo Logic feature is called Search Autocomplete.
 
@@ -35,15 +35,15 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
-**Column**. When referring to a column in a Dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box "Column" is capitalized). The word "column" doesn't appear in the main Dashboard UI.
+**Column**. When referring to a column in a dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box "Column" is capitalized). The word "column" doesn't appear in the main dashboard UI.
 
 
 
 ## D
 
-**Dashboard**. When referring to a user-created dashboard, do not capitalize.
+**Dashboard**. Lowercase when you mean a dashboard as a concept or a user-created dashboard. Bold and match the on-screen capitalization only when you name an on-screen label, such as the **Dashboards** page. See **UI labels**, below.
 
-**Dashboard Theme**. Choose between light or dark themes for Dashboards. Only capitalize Theme when you're referring to the UI element in the Dashboard Properties menu.
+**Dashboard Theme**. Choose between light or dark themes for dashboards. Only capitalize Theme when you're referring to the UI element in the Dashboard Properties menu.
 
 **Data**. Data is plural. Use "data are", not "data is".
 
@@ -87,16 +87,16 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Home Page**. Persistent tab, which services the Jiro and Hibachi projects by helping users get started and discover content more easily.
 
-**Hosted Collectors**. Hosted Collectors do not require installation or activation, nor do they have physical requirements, since they're hosted in HTTP Source, an endpoint for receiving a file (or a batch of files) uploaded via a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Sources as you'd like to a single Hosted Collector.
+**Hosted Collectors**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 
 
 ## I
 
 **If operator**. A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
 
-**Include rule**. Include rules are used to send only the data you'd like in your Sumo Logic account (a "whitelist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
+**Include rule**. Include rules are a type of processing rule used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
-**Installed Collector**. Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+**Installed Collector**. Installed collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
 
 ## J
 
@@ -111,7 +111,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## M
 
-**Markdown**. Used in Text Panels. Capitalize Markdown.
+**Markdown**. Used in dashboard text panels. Capitalize Markdown.
 
 **MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
@@ -124,7 +124,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## N
 
-**Numbers**. Spell numbers out up to nine, then use numerals. (Example: There are nine Collectors and 10 Sources.)
+**Numbers**. Spell numbers out up to nine, then use numerals. (Example: There are nine collectors and 10 sources.)
 
 
 ## O
@@ -135,7 +135,9 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## P
 
-**Page**. When referring to a page in the UI, such as the Search page, use page. Don't use pane or tab. A tab appears inside a page. (Example: The Messages tab appears on the Search page.)
+**Page**. When you name a page in the UI, bold the page name, match its on-screen capitalization, and keep the word "page" lowercase and outside the bold: the **Search** page. Don't use "pane" or "tab" for a page. A tab appears inside a page. (Example: The **Messages** tab appears on the **Search** page.) See **UI labels**, below.
+
+**Panel**. When referring to a [dashboard panel](/docs/dashboards/panels) category (for example, text panel, area chart panel, pie chart panel), prefix `panel` with `dashboard` (for example, `area chart dashboard panel`). See also Markdown.
 
 **Please**. Avoid using please. You're making recommendations on how to use software and services; it's not an inconvenience to the user.
 
@@ -162,7 +164,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Search Autocomplete**. One word, not two. The Sumo Logic feature is called Search Autocomplete.
 
-**Setup vs Set up**. Setup as one word is a _noun_ or an _adjective_. Set up as two words is a _verb_. For example, "You can set up your Collector using the setup procedure."
+**Setup vs Set up**. Setup as one word is a _noun_ or an _adjective_. Set up as two words is a _verb_. For example, "You can set up your collector using the setup procedure."
 
 **Source**. When referring to a Sumo Logic Source, the term is capitalized.
 
@@ -187,13 +189,11 @@ Hosted Collectors can use:
 
 ## T
 
-**Tabs**. When referring to tabs in Sumo Logic, be sure to capitalize each tab's name, but not tab. (Examples: Welcome tab, Search tab, Status tab, Collectors, Users, Account).
+**Tabs**. When you name a tab in Sumo Logic, bold the tab's name, match its on-screen capitalization, and keep the word "tab" lowercase and outside the bold. (Examples: **Welcome** tab, **Search** tab, **Status** tab.) See **UI labels**, below.
 
 **Text box**. Use text box, not field. A field is a special part of a query.
 
-**Text Panel**. Used in dashboards, capitalize Panel. See also Markdown.
-
-**Third Party**. Hyphenate as an adjective, not as a noun. For example, "We use third-party scripts" is hyphenated. But "Scripts are written by a third party" is not hyphenated.
+**Third party**. Hyphenate as an adjective, not as a noun. For example, "We use third-party scripts" is hyphenated. But "Scripts are written by a third party" is not hyphenated.
 
 **Timeline**. Timeline is one word, not two.
 
@@ -206,6 +206,11 @@ Hosted Collectors can use:
 **Timestamp**. Timestamp is one word.
 
 **Time zone**. Time zone is two words, not one.
+
+
+## U
+
+**UI labels**. When you name a UI element or page as it appears on screen, bold the label and match its on-screen capitalization: the **Search** page, the **Scheduled Views** page, on the **Aggregates** tab, select **Add to Dashboard**. Bold only the label; the generic word after it ("page", "tab", "button", "menu", "dialog", "field") stays lowercase and outside the bold. When you mean the underlying feature or concept rather than the on-screen control, use lowercase and no bold: "a scheduled view is a pre-aggregated index of your data", "run a search". See the style guide's [Bold](/docs/contributing/style-guide/#bold) and [Capitalization](/docs/contributing/style-guide/#capitalization) sections.
 
 
 ## W
