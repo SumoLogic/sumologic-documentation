@@ -48,7 +48,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Capability](/docs/manage/users-roles/roles/role-capabilities)**. In Sumo Logic role-based access control (RBAC), you grant the users with a role the right to perform a particular function by assigning the corresponding capability to the role. For example, the “Manage Collectors” capability allows a user to install and manage installed and hosted collectors and sources.
 
-**[Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20)**. A plaintext metric format in which metrics are identified by key-value pairs. In Carbon 2.0, the actual thing being measured is identified by intrinsic tags; additional metadata is provided in meta tags. Sumo’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Carbon 2.0 metrics.
+**[Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20)**. A plaintext metric format in which metrics are identified by key-value pairs. In Carbon 2.0, the actual thing being measured is identified by intrinsic tags; additional metadata is provided in meta tags. Sumo Logic’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Carbon 2.0 metrics.
 
 **[Cardinality](/docs/metrics/logs-to-metrics/#manage-metric-cardinality)**. Refers to the uniqueness of values in a database column or metric dimension. High cardinality metrics are metrics with dimensions that have many different values, which can result in a high volume of unique time series. In Sumo Logic, you can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time.
 
@@ -126,7 +126,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Geo lookup](/docs/search/search-query-language/search-operators/geo-lookup-map)**. Using the `lookup` search operator with a `geo://` table to match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to a physical location for mapping. Written as two words; there is no separate `geolookup` keyword.
 
-**[Graphite](/docs/metrics/introduction/metric-formats#graphite)**. A plaintext metric format where the thing you’re measuring is identified by a dot-separated string, referred to as a metric path. Sumo’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Graphite metrics.
+**[Graphite](/docs/metrics/introduction/metric-formats#graphite)**. A plaintext metric format where the thing you’re measuring is identified by a dot-separated string, referred to as a metric path. Sumo Logic’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Graphite metrics.
 
 **[Group](/docs/search/search-query-language/group-aggregate-operators)**. A search operator keyword that groups aggregation results by one or more fields. `group`, `by`, and `group by` are interchangeable, so `count by user` and `count group by user` are the same. Each aggregation function returns a field prefixed with an underscore, such as `_count`.
 
@@ -239,7 +239,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Processing rules](/docs/send-data/collection/processing-rules)**. A Sumo Logic feature you can use to filter or forward log data ingested by Sumo Logic from a Sumo Logic source. You can use processing rules to include or exclude messages, and to mask or hash sensitive information in logs. You can also forward matching messages to external destinations, including AWS S3.
 
-**[Prometheus](/docs/send-data/collect-from-other-data-sources/collect-prometheus-metrics/)**. A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Prometheus metrics. Sumo’s [Kubernetes solution](/docs/observability/kubernetes) also collects Prometheus metrics.
+**[Prometheus](/docs/send-data/collect-from-other-data-sources/collect-prometheus-metrics/)**. A metric format in which a time series is uniquely identified by its metric name and a set of labels in key-value pairs format. Sumo Logic’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Prometheus metrics. Sumo Logic’s [Kubernetes solution](/docs/observability/kubernetes) also collects Prometheus metrics.
 
 
 ## Q

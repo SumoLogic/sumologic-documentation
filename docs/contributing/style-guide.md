@@ -289,7 +289,7 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
 Code blocks are intended only for code snippets that users can copy, paste, and run in their own terminal. Do not use code block formatting for error messages (see [Code (Inline)](#code-inline)), as this isn't something you'd run in a terminal.
 :::
 
-If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo queries and `json` for Sumo logs.
+If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo Logic queries and `json` for Sumo Logic logs.
 
 <Tabs
   className="unique-tabs"
@@ -672,7 +672,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
 ### Add an image
 
 1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
-   * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
+   * When updating existing images (like if there's a Sumo Logic UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
    * File format be PNG. Avoid using animated GIFs, as they're generally not accessible; instead, use static images, provide text descriptions, or ensure animations stop within 5 seconds.
    * Max file size 2MB.
 1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
@@ -1581,7 +1581,7 @@ Deploy the Cloudformation Template to Create a Kinesis Firehose Delivery Stream:
 1. Download the Cloudformation template.
 1. Open CloudFormation in AWS.
 1. Create a new stack using the CloudFormation template you downloaded.
-1. Provide the URL you created from your Sumo source.
+1. Provide the URL you created from your Sumo Logic source.
 1. Select an S3 bucket to deliver failed logs, or create a new one.
 1. Click **Next**.
 
