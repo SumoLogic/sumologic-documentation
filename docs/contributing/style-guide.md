@@ -1603,7 +1603,7 @@ For clarity and search engine discoverability:
    * Example: _System architecture and monitoring_.
 
 :::sumo For internal contributors
-* If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-1-create-a-301-redirect) so that users don’t get a 404 page.
+* If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-2-create-a-301-redirect) so that users don’t get a 404 page.
 * Use Google Analytics to make data-driven decisions.
 :::
 

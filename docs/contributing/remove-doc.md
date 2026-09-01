@@ -20,7 +20,13 @@ import DocPrereq from '../reuse/contributing/doc-prerequisites.md';
 
 <DocPrereq/>
 
-## Step 1: Create a 301 redirect
+## Step 1: Fork the Sumo Docs repository
+
+import ForkRepo from '../reuse/contributing/fork-repo.md';
+
+<ForkRepo/>
+
+## Step 2: Create a 301 redirect
 
 As an example, let's say there are two docs called **Nginx App** and **Nginx (Legacy) App**, and we need to deprecate the latter.
 
@@ -30,7 +36,7 @@ As an example, let's say there are two docs called **Nginx App** and **Nginx (Le
    "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
    ```
 
-## Step 2: Update internal links
+## Step 3: Update internal links
 
 Ensure any internal links pointing to the deleted doc are updated to the new URL.
 
@@ -42,17 +48,33 @@ Ensure any internal links pointing to the deleted doc are updated to the new URL
    * Remove from its parent index.md hub page.
    * Remove from [Product List](/docs/integrations/product-list/).
 
-## Step 3: Delete the doc file
+## Step 4: Delete the doc file
 
 Delete the actual .md doc file from the repository (in this example, it would be `docs/integrations/web-servers/nginx-legacy.md`).
 
-## Step 4: Remove doc from navigation
+## Step 5: Remove doc from navigation
 
 Remove the doc from the navigation menu ([sidebars.ts](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts) file).
 
-## Step 5: Publish and test the redirect
+## Step 6: Preview your changes
 
-Verify that the redirect works correctly and leads to the intended destination.
+import Preview from '../reuse/contributing/preview.md';
+
+<Preview/>
+
+## Step 7: Submit your request
+
+import Submit from '../reuse/contributing/submit.md';
+
+<Submit/>
+
+## Step 8: Test the redirect
+
+After your pull request is merged and deployed, visit the old URL and verify that it performs a 301 redirect to the intended destination.
+
+## What happens next?
+
+The Docs Team will review your pull request, provide feedback, and merge approved changes to staging. They'll handle production updates separately.
 
 ## Optional steps
 
