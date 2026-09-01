@@ -16,7 +16,7 @@ import ApiRoles from '../reuse/api-roles.md';
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication. It's available in two versions:
 
 * **[Search Job Management API](#search-job-management-api)**. Built with OpenAPI specifications. Each request is addressed by the search job's `jobId` alone, so it doesn't require session cookies to keep a search job alive between requests. We recommend this version for new integrations.
-* **[Legacy Search Job API](#legacy-search-job-api)**. The previous/old version. Requires session cookies to keep a search job alive between requests, and is less performant than the OpenAPI-based version.
+* **[Legacy Search Job API](#legacy-search-job-api)**. The earlier version. Requires session cookies to keep a search job alive between requests, and is slower than the OpenAPI-based version.
 
 ## Prerequisites
 
@@ -62,7 +62,7 @@ import RateLimit from '../reuse/api-rate-limit.md';
 
 Search Job APIs have additional limits. A limit of 200 active concurrent search jobs applies to your organization. Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit. 
 
-This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
+This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. For the [Legacy Search Job API](#legacy-search-job-api), if the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
 You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches and helps keep you from reaching the Search Job API throttling limit. See [Deleting a search job](#delete-a-search-job) for details.
 
@@ -74,7 +74,7 @@ The following figure shows the process flow for search jobs.
 
 1. **Request.** You request a search job, giving the query and time range.
 2. **Response.** Sumo Logic responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
-3. **Request.** Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
+3. **Request.** Use the job ID to request search status. For the [Legacy Search Job API](#legacy-search-job-api), this needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
 4. **Response.** Sumo Logic responds with job status. An error code (404) is returned if the request could not be completed. The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
 5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return 100K messages per search.
 6. **Response.** Sumo Logic delivers JSON-formatted search results as requested. The API can deliver partial results that the user can start paging through, even as new results continue to come in. If there’s a problem with the results, an error code is provided (see the list of error codes following the figure).
@@ -256,7 +256,7 @@ The following figure shows the process flow for search jobs.
 
 ## Legacy Search Job API
 
-The legacy Search Job API requires session cookies to keep a search job alive between requests, and is less performant than the [Search Job Management API](#search-job-management-api).
+The legacy Search Job API requires session cookies to keep a search job alive between requests, and is slower than the [Search Job Management API](#search-job-management-api).
 
 ### Endpoints for API access
 
@@ -952,9 +952,9 @@ Ensure that you send ACCESSID/ACCESSKEY pair even if cookies are sent for the Se
 #!/bin/bash
 
 # Variables.
-PROTOCOL=$1    # HTTPS is the only acceptable PROTOCOL
-HOST=$2        # Use your Sumo endpoint as the HOST
-ACCESSID=$3    # Authenticate with an access id and key
+PROTOCOL=$1    # HTTPS is the only acceptable PROTOCOL
+HOST=$2        # Use your Sumo endpoint as the HOST
+ACCESSID=$3    # Authenticate with an access id and key
 ACCESSKEY=$4
 OPTIONS="--silent -b cookies.txt -c cookies.txt"
 OPTIONS="-v -b cookies.txt -c cookies.txt"
@@ -962,12 +962,12 @@ OPTIONS="-v --trace-ascii -b cookies.txt -c cookies.txt"
 
 Create a search job from a JSON file.
 #
-RESULT=$(curl $OPTIONS  \
-          -H "Content-type: application/json"   \
-          -H "Accept: application/json"   \
-          -d @createSearchJob.json   \
-          --user $ACCESSID:$ACCESSKEY    \
-          "$PROTOCOL://$HOST/api/v1/search/jobs")
+RESULT=$(curl $OPTIONS  \
+          -H "Content-type: application/json"   \
+          -H "Accept: application/json"   \
+          -d @createSearchJob.json   \
+          --user $ACCESSID:$ACCESSKEY    \
+          "$PROTOCOL://$HOST/api/v1/search/jobs")
 JOB_ID=$(echo $RESULT | perl -pe 's|.*"id":"(.*?)"[,}].*|\1|')
 echo Search job created, id: $JOB_ID
 
@@ -975,45 +975,45 @@ echo Search job created, id: $JOB_ID
 
 STATE=""
 until [ "$STATE" = "DONE GATHERING RESULTS" ]; do
-  sleep 5
-  RESULT=$(curl $OPTIONS  \
-            -H "Accept: application/json"  \
-            --user $ACCESSID:$ACCESSKEY \
-            "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID")
-  STATE=$(echo $RESULT | sed 's/.*"state":"\(.*\)"[,}].*/\1/')
-  MESSAGES=$(echo $RESULT | perl -pe 's|.*"messageCount":(.*?)[,}].*|\1|')
-  RECORDS=$(echo $RESULT | perl -pe 's|.*"recordCount":(.*?)[,}].*|\1|')
-  echo Search job state: $STATE, message count: $MESSAGES, record count: $RECORDS
+  sleep 5
+  RESULT=$(curl $OPTIONS  \
+            -H "Accept: application/json"  \
+            --user $ACCESSID:$ACCESSKEY \
+            "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID")
+  STATE=$(echo $RESULT | sed 's/.*"state":"\(.*\)"[,}].*/\1/')
+  MESSAGES=$(echo $RESULT | perl -pe 's|.*"messageCount":(.*?)[,}].*|\1|')
+  RECORDS=$(echo $RESULT | perl -pe 's|.*"recordCount":(.*?)[,}].*|\1|')
+  echo Search job state: $STATE, message count: $MESSAGES, record count: $RECORDS
 done
 
 
 # Get the first ten messages.
 
-RESULT=$(curl $OPTIONS  \
-          -H "Accept: application/json"   \
-          --user $ACCESSID:$ACCESSKEY  \
-          "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID/messages?offset=0&limit=10")
+RESULT=$(curl $OPTIONS  \
+          -H "Accept: application/json"   \
+          --user $ACCESSID:$ACCESSKEY  \
+          "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID/messages?offset=0&limit=10")
 echo Messages:
 echo $RESULT
 
 
 # Get the first 2 records.
 
-RESULT=$(curl $OPTIONS  \
-          -H "Accept: application/json"  \
-          --user $ACCESSID:$ACCESSKEY   \
-          "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID/records?offset=0&limit=1")
+RESULT=$(curl $OPTIONS  \
+          -H "Accept: application/json"  \
+          --user $ACCESSID:$ACCESSKEY   \
+          "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID/records?offset=0&limit=1")
 echo Records:
 echo $RESULT
 
 
 # Delete the search job.
 
-RESULT=$(curl $OPTIONS    \
-          -X DELETE  \
-          -H "Accept: application/json"  \
-          --user $ACCESSID:$ACCESSKEY  \
-          "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID")
+RESULT=$(curl $OPTIONS    \
+          -X DELETE  \
+          -H "Accept: application/json"  \
+          --user $ACCESSID:$ACCESSKEY  \
+          "$PROTOCOL://$HOST/api/v1/search/jobs/$JOB_ID")
 JOB_ID=$(echo $RESULT | sed 's/^.*"id":"\(.*\)".*$/\1/')
 echo Search job deleted, id: $JOB_ID
 ```
@@ -1024,6 +1024,11 @@ The Search Job Management API is built with OpenAPI specifications. Each request
 
 :::tip MSSP multi-org searches
 If you manage child organizations, you can run a search job across one, several, or all of them by setting `childOrgIds` or `includeAllChildOrgs` when you create the search job. This is the API equivalent of the multi-org search available in the Search UI. [Learn more](/docs/search/search-across-child-orgs/).
+
+| Parameter | Type | Description |
+|:--|:--|:--|
+| `childOrgIds` | Array of strings | List of child org IDs to run the search on. |
+| `includeAllChildOrgs` | Boolean | When `true`, runs the search across all child orgs of the authenticated parent org. Takes precedence over `childOrgIds` if both are set. Default is `false`. |
 :::
 
 ### Documentation
