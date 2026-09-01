@@ -256,6 +256,7 @@ Here's a cool tip.
 * **UI label vs. concept.** When you name a UI element or page as it appears on screen, match its on-screen capitalization and bold the label: the **Search** page, the **Scheduled Views** page, the **Aggregates** tab. When you mean the same thing as a general feature or concept, use lowercase and no bold: "scheduled views let you pre-aggregate data", "run a search". The generic word (`page`, `tab`, `button`) is always lowercase. See [Bold](#bold).
 * Always capitalized: proper nouns and product names (Sumo Logic, Cloud SIEM, Cloud SOAR, Kubernetes, Markdown, RBAC), and named UI areas when used as labels (the **Library**, the **Search** page, **Admin mode**).
 * **Feature names vs. use cases.** Coined or proper feature names stay capitalized (LogReduce, LogCompare, Cloud SIEM, Cloud SOAR, Automation Service). Generic capabilities and use cases are lowercase: security data lake, threat detection and investigation, audit and compliance, application security, observability, continuous intelligence. Marketing keeps a [product and feature name matrix](https://docs.google.com/spreadsheets/d/1U2yPSasgHHzQYXvCzfvEXfIM2t6ofBfW8DYEZLrtj2s/) for edge cases.
+* **Does it need a name at all?** Before you capitalize a new feature name, ask whether it needs a branded name (see [Fighting Feature Names](https://kubie.co/blog/fighting-feature-names/)). Default to plain descriptive language; reserve a proper name for features that are genuinely distinct and that users will refer to by name.
 
 
 ## Code (inline)
