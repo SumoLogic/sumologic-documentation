@@ -245,7 +245,7 @@ The response includes an access token:
 {
   "access_token": "eyJhbGc...",
   "token_type": "Bearer",
-  "expires_in": 43200,
+  "expires_in": 1800,
   "scope": "runLogSearch viewLibrary"
 }
 ```
@@ -259,7 +259,7 @@ curl <api-endpoint>/api/v1/search/jobs \
 
 ### Token expiration
 
-Access tokens generated with Client Credentials flow expire after 12 hours. When a token expires, generate a new one by repeating the [token request](#step-3-generate-an-access-token). Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
+Access tokens generated with Client Credentials flow expire after 30 minutes. When a token expires, generate a new one by repeating the [token request](#step-3-generate-an-access-token). Unlike Authorization Code flow, Client Credentials flow does not provide refresh tokens.
 
 ## Metadata endpoints
 
@@ -312,7 +312,7 @@ Use **Client Credentials flow** for server-to-server authentication, automated w
 ### How long do access tokens last?
 
 * **Authorization Code flow**. Access tokens expire after 5 minutes, but are automatically renewed by your OAuth client — this is transparent to users.
-* **Client Credentials flow**. Access tokens expire after 12 hours. Generate a new token when the current one expires.
+* **Client Credentials flow**. Access tokens expire after 30 minutes. Generate a new token when the current one expires.
 
 ### Can I revoke OAuth access?
 
