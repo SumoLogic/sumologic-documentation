@@ -40,6 +40,38 @@ In this video, we'll walk through learning and certification offerings to help y
 
 :::
 
+## Role-based learning paths
+
+Sumo Logic Academy offers 8 role-based learning paths, one for each of the most common roles working in Sumo Logic. Instead of learning through a generic list of courses, each path gives you the exact course sequence built for your role, broken into milestones so there's always a next step to come back for as you grow into the platform. Every path is available two ways: as a guided, click-through path in the [Learning Portal](#how-do-i-access-the-learning-portal), and as a downloadable PDF handout you can save or share with your team.
+
+Follow the learning path built for your role, self-paced or in a free live session with an instructor, and work toward certification along the way.
+
+:::training Pick Your Path
+**Recommended:** Browse and start any of the 8 guided paths on the [Sumo Logic Learning Portal home page](https://learn.sumologic.com). You'll need to **[sign in to the learning portal first](#how-do-i-access-the-learning-portal)**.
+:::
+
+### Security paths
+
+Pick the path closest to your role and finish able to detect threats, investigate incidents, and respond with confidence.
+
+| Role | Learning Portal | Download |
+|---|---|---|
+| SOC/Security Analyst | <a href="https://learn.sumologic.com/path/soc-security-analyst-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/soc-security-analyst-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+| Cloud Security Architect | <a href="https://learn.sumologic.com/path/cloud-security-architect-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/cloud-security-architect-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+| SOC Administrator | <a href="https://learn.sumologic.com/path/soc-administrator-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/soc-administrator-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+
+### Observability paths
+
+Pick the path closest to your role and finish able to monitor, troubleshoot, and keep systems reliable at scale.
+
+| Role | Learning Portal | Download |
+|---|---|---|
+| DevOps/IT Contributor | <a href="https://learn.sumologic.com/path/dev-ops-it-contributor-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/dev-ops-it-contributor-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+| Log Analyst/SRE | <a href="https://learn.sumologic.com/path/log-analyst-sre-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/log-analyst-sre-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+| IT Ops Leader | <a href="https://learn.sumologic.com/path/it-ops-leader-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/it-ops-leader-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+| System Administrator | <a href="https://learn.sumologic.com/path/system-administrator-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/system-administrator-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+| DevOps Leader | <a href="https://learn.sumologic.com/path/dev-ops-leader-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/dev-ops-leader-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
+
 ## Getting started
 
 ### How do I access the learning portal?
@@ -63,7 +95,7 @@ Self‑paced training is available in our [learning portal](#how-do-i-access-the
 
 ### What content is available for self‑paced learning?
 
-* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Logic Expert**).
+* **[Role-based Learning Paths](#role-based-learning-paths)** for Security and Observability roles ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Logic Expert**).
 * **Micro Lessons** ([Learning Hub](#how-do-i-access-the-learning-portal) > **Learn a New Skill**).
 * **Recorded Live Training** sessions with lab guides and slides ([Learning Hub](#how-do-i-access-the-learning-portal) > **Recorded Live Training**).
 
