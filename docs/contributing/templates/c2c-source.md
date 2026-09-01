@@ -4,14 +4,23 @@ title: Cloud-to-Cloud Source Template
 description: Use this template to create a Cloud-to-Cloud source doc (/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/...).
 ---
 
-Use this template to create a [Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) doc. Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+Use this template to create a [Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework) doc.
+
+:::tip Recommended: Use Claude Code
+Skip copying this template by hand. If you have [Claude Code](https://claude.ai/code) installed, use the `/c2c-source-doc` slash command to scaffold a new C2C doc for you. See the [README](https://github.com/SumoLogic/sumologic-documentation#claude-code-tooling) for the full command list.
+:::
+
+Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
 
 ```md
 
 ---
 id: {{vendor-name}}-source #example: druva-source
 title: {{Vendor Name}} Source #example: Druva Source
-image: 'https://app_icons.s3.amazonaws.com/dropbox.svg' #replace with your app logo
 sidebar_label: {{Vendor Name}} #example: Druva
 tags:
   - cloud-to-cloud
