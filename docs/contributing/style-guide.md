@@ -56,7 +56,7 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * **Brand guidelines**. Our brand guideline is to always refer to “Sumo Logic”, rather than Sumo. To be more conversational, it is also fine to say “we”.
 * **Gentle Language**. Use “need to” instead of “have to” or “must”. “Have to” and “must” can sound harsh and unfriendly.
 * **Judicious use of absolutes**. Be judicious in use of “always” and “never”. Sometimes it’s appropriate to say “always” or “never”. Keep in mind though that “always” can imply a result that is not guaranteed, and “never” may very well not be the case — the exception makes the rule.
-* **Error messaging**. When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you recommend to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
+* **Error messaging**. When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you recommend to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Use a different email, or contact Sumo Logic for assistance."
 * **Humor**. We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
 
 ### Active voice
@@ -476,7 +476,7 @@ Add a title for the expander between the `<summary>` tags. Then, add all content
 
 Using contractions contributes to our goals of striking a conversational, friendly tone.
 
-It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "cannot"), as they can be easily mistaken for the opposite meaning.
+It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "can't"), as they can be easily mistaken for the opposite meaning.
 
 Avoid less common contractions, like “should’ve”, or “it’ll”.
 
