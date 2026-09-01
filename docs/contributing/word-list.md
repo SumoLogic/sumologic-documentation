@@ -124,7 +124,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## N
 
-**Numbers**. Spell numbers out up to nine, then use numerals. (Example: There are nine collectors and 10 sources.)
+**Numbers**. Use numerals, not spelled-out words ("2", not "two"). See the style guide's [Numbers](/docs/contributing/style-guide/#numbers) section for commas, "K"/"M"/"B", and ranges.
 
 
 ## O
