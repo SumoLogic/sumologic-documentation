@@ -35,7 +35,9 @@ You can enable Auto Parse mode in three ways:
 
 ## Manual mode
 
-To disable Auto Parse, set your search mode to **Manual**. This mode is best suited for advanced users who want full control over parsing. Fields won't be parsed automatically unless defined by an Ingest Time FER, and you'll need to add parsing logic manually.
+To disable Auto Parse, set your search mode to **Manual**.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/manual-parse.png')} alt="Manual mode option" style={{border: '1px solid gray'}} width="250"/>
+
+This mode is best suited for advanced users who want full control over parsing. Fields won't be parsed automatically unless defined by an Ingest Time FER, and you'll need to add parsing logic manually.
 
 ## Set up a Custom Run Time FER (optional)
 
@@ -68,7 +70,7 @@ The [field browser](/docs/search/get-started-with-search/search-page/field-brows
 ### Search results table
 
 * You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](/docs/search/get-started-with-search/search-page/modify-search-from-messages-tab) for details on the other provided options. <br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png')} alt="JSON right click copy options" style={{border: '1px solid gray'}} width="400" />
-   * Copying a field name using this option will automatically format [field names that have special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters). For example, the field name shown in the screenshot is **total time-series** would be automatically formatted to **%"total time-series"** to work properly in a search query.      
+   * Copying a field name using this option will automatically format [field names that have special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters). For example, the field name shown in the screenshot, **total time-series**, is automatically formatted to **%"total time-series"** to work properly in a search query.      
 * Click the copy button to the right of each column (field) name to copy its name.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png')} alt="Copy button messages table" style={{border: '1px solid gray'}} width="500" />
 
 ## Rules and behavior
