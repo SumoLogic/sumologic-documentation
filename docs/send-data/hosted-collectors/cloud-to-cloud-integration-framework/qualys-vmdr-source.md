@@ -95,7 +95,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ### Is anything changed with data for computer inventory?
 
-Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 64KB](/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
+Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 256KB](/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
 
 - The `openPortListData` key only contains information about ports open since the last time computer asset was ingested instead of listing all open port history from all time.
 - The `softwareListData` is reduced down from the full details to simply a list/array of software names using the full name.

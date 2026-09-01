@@ -23,7 +23,7 @@ Key features:
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
 :::info
-If a certificate of destruction is required, this feature cannot be used. Instead, you must create a Sumo Logic support ticket to request data deletion.
+This feature does not provide a certificate of destruction. If you require a certificate confirming complete destruction of all account data at the end of your subscription, create a Sumo Logic support ticket instead.
 :::
 
 ## Prerequisites
