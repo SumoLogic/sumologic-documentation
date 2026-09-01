@@ -50,7 +50,7 @@ Pattern for each compressed section: one-line link to the Docusaurus page + a sh
 > and accept full Markdown.
 >
 > Two are Sumo-specific:
-> - `:::sumo Best Practice` - SME guidance, best practices, Sumo Logic-specific notes.
+> - `:::sumo Best Practice` - subject matter expert guidance, best practices, Sumo Logic-specific notes.
 >   Retitle as needed.
 > - `:::training` - links to training courses, certifications, and micro-lessons.
 >
