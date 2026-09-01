@@ -1,10 +1,10 @@
 ---
 id: word-list
 title: Word List
-description: An alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization.
+description: Preferred spelling, capitalization, and punctuation for Sumo Logic product names, UI terms, and common words.
 ---
 
-This word list provides an alphabetized list of commonly used terms at Sumo Logic, including components and features of Sumo Logic, and other usage issues, such as punctuation and capitalization. This is not a glossary. Here is the [Glossary](/docs/contributing/glossary).
+This word list gives the preferred spelling, capitalization, and punctuation for commonly used Sumo Logic terms, including product components and features, along with usage conventions. It's a usage reference, not a glossary. For definitions of Sumo Logic terms, see the [Glossary](/docs/contributing/glossary).
 
 
 ## A
@@ -19,7 +19,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Apps**. When referring to a Sumo Logic app, do not capitalize. No need to spell out application.
 
-**Autocomplete**. One word, not two. The Sumo Logic feature is called Search Autocomplete.
+**Autocomplete**. One word, not two. The Sumo Logic feature is called Search autocomplete.
 
 
 
@@ -31,7 +31,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Click**. You click a UI element. Do not use "click on".
 
-**Collector**. When referring to a Collector or Collectors, the term is capitalized. When referring to "collecting events" or "data collection", the terms are not capitalized.
+**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button.
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
@@ -87,16 +87,16 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Home Page**. Persistent tab, which services the Jiro and Hibachi projects by helping users get started and discover content more easily.
 
-**Hosted Collectors**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
+**Hosted collectors**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 
 
 ## I
 
-**If operator**. A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
+**`if` operator**. A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
 
 **Include rule**. Include rules are a type of processing rule used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
-**Installed Collector**. Installed collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
+**Installed collector**. Installed collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
 
 ## J
 
@@ -129,7 +129,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## O
 
-**Operators**. When referring to a search operator, capitalize the operator's name only if it begins a sentence.
+**Operators**. When referring to a search operator in prose, capitalize the operator's name only if it begins a sentence. When the operator name is the subject of a heading or an entry (such as in the Glossary), write it lowercase in backticks: `` `where` operator ``, `` `parse` operator ``.
 
 **Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
@@ -162,25 +162,23 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Search**. Search is not capitalized, unless you are referring to the Search page.
 
-**Search Autocomplete**. One word, not two. The Sumo Logic feature is called Search Autocomplete.
+**Search autocomplete**. One word, not two. The Sumo Logic feature is called Search autocomplete.
 
 **Setup vs Set up**. Setup as one word is a _noun_ or an _adjective_. Set up as two words is a _verb_. For example, "You can set up your collector using the setup procedure."
 
-**Source**. When referring to a Sumo Logic Source, the term is capitalized.
+**Source** / **Sources**. Lowercase `source` — it's the generic word for the category, not part of a source's name. Capitalize the service or type name in front of it, matching the **Add Source** list, and leave `source` lowercase:
 
-**Sources**. When referring to more than one Source, the term Sources is capitalized. The following Sources are available and should be capitalized as shown below:
+* Local File source
+* Remote File source
+* Syslog source
+* Local Windows Event Log source
+* Remote Windows Event Log source
+* Script source
+* Amazon S3 source
+* Amazon S3 Audit source
+* HTTP source
 
-* Local File Source
-* Remote File Source
-* Syslog Source
-* Local Windows Event Log Source
-* Remote Windows Event Log Source
-* Script Source
-* Script Action
-
-Hosted Collectors can use:
-* Amazon S3 Source
-* HTTP Source
+Capitalize "Source" only where it's the literal UI text, such as the **Add Source** button or the **Source Templates** tab. See **UI labels**, below.
 
 **Space bar**. Two words, not one.
 
@@ -219,6 +217,6 @@ Hosted Collectors can use:
 
 **Website**. Website or websites is one word.
 
-**Where operator**. A conditional operator that can precede or follow another operator. Example combinations include `where x matches y`, `where x in (a, b, c)`, `where x not in (a, b, c)` and `where a > 1 and b / 4 < sqrt(x)`.
+**`where` operator**. A conditional operator that can precede or follow another operator. Example combinations include `where x matches y`, `where x in (a, b, c)`, `where x not in (a, b, c)` and `where a > 1 and b / 4 < sqrt(x)`.
 
 **Wildcard**. Wildcard is one word.

@@ -1,15 +1,15 @@
 ---
 id: glossary
 title: Glossary
-description: This glossary provides an alphabetized list of technical term definitions used in Sumo Logic.
+description: Definitions of Sumo Logic terms and features you'll encounter in the documentation.
 ---
 
-This glossary defines Sumo Logic terms that you are likely to encounter when you read our documentation. It does not provide common industry terms unless those terms also represent Sumo Logic features.
+This glossary defines Sumo Logic terms you're likely to encounter in our documentation. It doesn't cover general industry terms unless they're also Sumo Logic features.
 
-If you're looking for usage guidance, see [Word List](/docs/contributing/word-list).
+For usage and style guidance, see the [Word List](/docs/contributing/word-list).
 
 :::tip
-We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glossary).
+For general DevOps and security industry terms, see our [DevOps and Security Glossary](https://www.sumologic.com/glossary).
 :::
 
 ## A
@@ -26,9 +26,9 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Alert](/docs/alerts)**. A notification you can configure for a scheduled search. There are multiple alert types, such as Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
 
-**[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. Sumo Logic’s Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
+**[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. A list of IP addresses or CIDR ranges that are explicitly granted access to logins, APIs, and dashboards. Configured on the **Service Allowlist Settings** tab in Account Security Settings.
 
-**[Amazon S3 Audit Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source)**. The Amazon S3 Audit Source, also called Server Access Logging, tracks and collects your Amazon S3 bucket's activity logs.
+**[Amazon S3 Audit source](/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source)**. The Amazon S3 Audit source, also called Server Access Logging, tracks and collects your Amazon S3 bucket's activity logs.
 
 **[Apps](/docs/integrations)**. Sumo Logic apps (short for applications) deliver out-of-the-box dashboards, reports, saved searches, and field extraction for popular data sources, such as AWS, Windows, Apache, and many more. When a customer installs an app in Sumo Logic, preconfigured searches and dashboards are customized with the customer's source configurations and populated in a folder. Customers then can monitor their system's behavior visually using the dashboards.
 
@@ -79,8 +79,6 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Data Forwarding](/docs/manage/data-forwarding)**. When enabled, the Data Forwarding feature allows Sumo Logic to upload data to an Amazon S3 bucket that belongs to your organization. Log messages are saved as CSV files in compressed gzip files. They are accumulated and returned right after being ingested by Sumo Logic.
 
-**[Data panel](/docs/dashboards/panels)**. Panels are placed on dashboards and provide a graphical representation of your organization's data. Data panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once panels are created, they are saved to a dashboard. See also, text panel.
-
 **[Data type](/docs/get-started/faq)**. A data type is a specific type of log used with a Sumo Logic source or app, such as Apache, MySQL, or Windows IIS. You can also use a custom data type for a custom application.
 
 **[Data volume index](/docs/manage/ingestion-volume/data-volume-index)**. The data volume index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The data volume index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
@@ -126,11 +124,11 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 ## G
 
-**[Geo lookup](/docs/search/search-query-language/search-operators/geo-lookup-map)**. Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated.
+**[Geo lookup](/docs/search/search-query-language/search-operators/geo-lookup-map)**. Using the `lookup` search operator with a `geo://` table to match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to a physical location for mapping. Written as two words; there is no separate `geolookup` keyword.
 
 **[Graphite](/docs/metrics/introduction/metric-formats#graphite)**. A plaintext metric format where the thing you’re measuring is identified by a dot-separated string, referred to as a metric path. Sumo’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Graphite metrics.
 
-**[Group](/docs/search/search-query-language/group-aggregate-operators)**. Group-by functions include `count`, `count_distinct`, `sum`, `avg`, `stddev`, `max`, `min`, `last`, and `first`. You can use "group" or "by" instead of "group by", so `"count (*) group by user"` is equivalent to `"count by user"`. All group-by functions create a corresponding field preceded by an underscore, for example, `_count`.
+**[Group](/docs/search/search-query-language/group-aggregate-operators)**. A search operator keyword that groups aggregation results by one or more fields. `group`, `by`, and `group by` are interchangeable, so `count by user` and `count group by user` are the same. Each aggregation function returns a field prefixed with an underscore, such as `_count`.
 
 
 
@@ -146,7 +144,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 ## I
 
-**[`If` operator](/docs/search/search-query-language/search-operators/if)**. A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
+**[`if` operator](/docs/search/search-query-language/search-operators/if)**. A search operator that returns one of two values depending on whether a condition is true or false (a ternary `if`/else).
 
 **[Include rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Include rules are a type of processing rule that is used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
@@ -172,7 +170,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Live Tail](/docs/search/live-tail)**. Sumo Logic Live Tail allows you to see a real-time live feed of log events associated with a source or collector. The live feeds can help you with development and troubleshooting. You can see all log messages as they come in, but they are not sorted as they are with search.
 
-**[Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local Configuration File Management allows you to set up and manage sources on an installed collector using one or more JSON files.
+**[Local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local configuration file management allows you to set up and manage sources on an installed collector using one or more JSON files.
 
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
@@ -222,16 +220,16 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Organization](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings)**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
 
-**Outlier**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo Logic has a [metrics outlier](/docs/metrics/metrics-operators/outlier/) operator that identifies metric data points that are outside the range of expected values.
+**Outlier**. A value in a sequence that deviates from the expected range and may signal an operational or performance issue. Identify outliers in logs with the [`outlier` search operator](/docs/search/search-query-language/search-operators/outlier), and in metrics with the [`outlier` metrics operator](/docs/metrics/metrics-operators/outlier/).
 
 
 
 
 ## P
 
-**[Panel](/docs/dashboards/panels)**. Formerly Monitors. Real-time panels provide a graphical representation of your organization's data. Data panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once panels are created, they are saved to a dashboard.
+**[Panel](/docs/dashboards/panels)**. A component of a dashboard. Every panel is either a data panel, driven by a search query and rendered as one of several chart types, or a text panel, containing static Markdown. Data panels are built from the Search page's Aggregates tab and saved to a dashboard.
 
-**[Parse operator](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor)**. The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent functions in the query such as sorting, grouping, or other functions. Parse options include "parse anchor" or "parse regex" for using regular expressions to form more complex parse queries. It is acceptable to use "parse" for "parse anchor", or "extract" for "parse regex".
+**[`parse` operator](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor)**. A search operator that extracts fields from strings. `parse` (also called `parse anchor`) uses literal start and stop anchors; `parse regex` (also called `extract`) uses a regular expression.
 
 **[Parser](/docs/cse/schema/parser-editor)**. In Cloud SIEM, a script that parses logs and normalizes them into structured records.
 
@@ -246,9 +244,9 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 ## Q
 
-**[quantization](/docs/metrics/introduction/metric-quantization)**. The process by which Sumo Logic aggregates raw metric data points over a particular time bucket. Similar to “timeslice” in logs, Sumo Logic will automatically bucket your datapoints into quantization intervals based on the timerange of your search. For example, 5 second quantization intervals for a 15-minute search and 15 seconds for a 60-minute search.
+**[Quantization](/docs/metrics/introduction/metric-quantization)**. The process by which Sumo Logic aggregates raw metric data points over a particular time bucket. Similar to “timeslice” in logs, Sumo Logic will automatically bucket your datapoints into quantization intervals based on the timerange of your search. For example, 5 second quantization intervals for a 15-minute search and 15 seconds for a 60-minute search.
 
-**[quantize operator](/docs/metrics/metrics-operators/quantize/)**. An operator you can use is metric queries to specify the size of the time buckets over which Sumo Logic will aggregate metrics, and the aggregation method Sumo Logic will use to quantize the data.
+**[`quantize` operator](/docs/metrics/metrics-operators/quantize/)**. A metrics operator that sets the size of the time buckets Sumo Logic aggregates metrics into, and the aggregation method for each bucket. It is the metrics-query counterpart of the `timeslice` search operator.
 
 
 
@@ -281,17 +279,13 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Scheduled view](/docs/manage/scheduled-views)**. A scheduled view is a pre-aggregated index of a subset of data. After building a scheduled view, you'll be able to run queries against that data set. Because the data is pre-aggregated, meaning that query you'll use to create a scheduled view contains an aggregate function, search results return much quicker. Additionally, queries run against a scheduled view cannot time out. Queries that run against views can be used in scheduled searches, dashboards, and in ad hoc searches.
 
-**[Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. See Autocomplete.
+**[Search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. See Autocomplete.
 
 **[Searchable time](/docs/search/get-started-with-search/build-search/use-searchable-time)**. You can display search results in the order in which logs become available for search after being received by the Sumo Logic system.
 
 **[Search templates](/docs/search/get-started-with-search/build-search/search-templates)**. Search templates simplify searches for users by providing easy to select input choices. You can have search templates replace any text in a query, including fields, keywords, and arguments to operators.
 
-**[Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations.
-
 **[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met.
-
-**[Single Value Chart](/docs/dashboards/panels/single-value-charts)**. A Single Value chart is useful for displaying the results of a query that returns only a single value or record, in order to make that value stand out at a glance. If the query returns more than one value in the Aggregation tab, only the first value is displayed in the Single Value chart.
 
 **[Sources](/docs/send-data)**. Sources are configured on Sumo Logic collectors and collect customer data.
 
@@ -304,19 +298,17 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 ## T
 
-**[Text panel](/docs/dashboards/panels/#text-panel)**. Used in dashboards, you can add text panels to include titles or text descriptions. See also Markdown.
-
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all collectors in an account to not exceed the allowable rate.
 
 **[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
 **[Time series](/docs/dashboards/panels#time-series-panel)**. A set of timestamped values of a specific measurement.
 
-**[Timeslice operator](/docs/search/search-query-language/search-operators/timeslice)**. Timeslice segregates search results by a time period, or by a number of buckets over a search's time range.
+**[`timeslice` operator](/docs/search/search-query-language/search-operators/timeslice)**. A search operator that groups log results into fixed time buckets, either by duration or by a bucket count. It is the log-search counterpart of the `quantize` metrics operator.
 
-**[Transaction operator](/docs/search/search-query-language/transaction-analytics/transaction-operator)**. Groups logs in a sequence by referencing a unique identifier in your logs and parsing out meaningful states of the transaction. Results can be returned by the transactions themselves, states, or flow (latency). A flow chart is available when returned by flow.
+**[`transaction` operator](/docs/search/search-query-language/transaction-analytics/transaction-operator)**. A search operator that groups logs into sequences keyed by a shared identifier and tracks each sequence's states. Not to be confused with `transactionize`, which groups on any matching field and does not model ordered states.
 
-**[Transactionize operator](/docs/search/search-query-language/transaction-analytics/transactionize-operator)**. Groups logs that match on any fields you specify. Unlike other **group by** operators, where the logs in a group must match on all defined fields, transactionize just needs one field to match in order to assign logs to the same group.
+**[`transactionize` operator](/docs/search/search-query-language/transaction-analytics/transactionize-operator)**. A search operator that groups logs sharing any one of the fields you specify, where other group-by operators require all fields to match. Unlike `transaction`, it does not model ordered states.
 
 
 ## U
@@ -327,4 +319,4 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 ## W
 
 
-**[`where` operator](/docs/search/search-query-language/search-operators/where)**. A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".
+**[`where` operator](/docs/search/search-query-language/search-operators/where)**. A search operator that filters results by a boolean condition. Similar to SQL `WHERE`, but it can appear anywhere in the query pipeline, before or after other operators.
