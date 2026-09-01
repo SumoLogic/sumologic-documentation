@@ -111,7 +111,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## M
 
-**Markdown**. Used in dashboard text panels. Capitalize Markdown.
+**Markdown**. Always capitalize. It's a proper noun (the name of the markup language).
 
 **MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
@@ -124,7 +124,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 ## N
 
-**Numbers**. Use numerals, not spelled-out words ("2", not "two"). See the style guide's [Numbers](/docs/contributing/style-guide/#numbers) section for commas, "K"/"M"/"B", and ranges.
+**Numbers**. Spell out zero through nine in prose; use numerals for 10 and up. Always use numerals for measurements, versions, percentages, and UI or code. See the style guide's [Numbers](/docs/contributing/style-guide/#numbers) section.
 
 
 ## O
@@ -137,7 +137,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Page**. When you name a page in the UI, bold the page name, match its on-screen capitalization, and keep the word "page" lowercase and outside the bold: the **Search** page. Don't use "pane" or "tab" for a page. A tab appears inside a page. (Example: The **Messages** tab appears on the **Search** page.) See **UI labels**, below.
 
-**Panel**. Lowercase. A panel is a component of a [dashboard](/docs/dashboards/panels): either a data panel (driven by a query) or a text panel (static Markdown). Write "dashboard panel" on first mention or outside a dashboard context; once context is clear, "panel" alone is fine. Name the type before "panel": text panel, area chart panel, pie chart panel. See also Markdown.
+**Panel**. Lowercase. Put the type right before "panel": "area chart panel", "text panel". Write "dashboard panel" only when the dashboard context isn't already clear.
 
 **Please**. Avoid using please. You're making recommendations on how to use software and services; it's not an inconvenience to the user.
 
@@ -178,7 +178,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 * Amazon S3 Audit source
 * HTTP source
 
-Capitalize "Source" only where it's the literal UI text, such as the **Add Source** button or the **Source Templates** tab. See **UI labels**, below.
+Capitalize "Source" only where it's the literal UI text, such as the **Add Source** button or the **Source Templates** tab. See **UI labels** below.
 
 **Space bar**. Two words, not one.
 

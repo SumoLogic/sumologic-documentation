@@ -32,8 +32,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Apps](/docs/integrations)**. Sumo Logic apps (short for applications) deliver out-of-the-box dashboards, reports, saved searches, and field extraction for popular data sources, such as AWS, Windows, Apache, and many more. When a customer installs an app in Sumo Logic, preconfigured searches and dashboards are customized with the customer's source configurations and populated in a folder. Customers then can monitor their system's behavior visually using the dashboards.
 
-**[Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
-
 **[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur.
 
 
@@ -185,7 +183,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Mapper](/docs/cse/schema/create-structured-log-mapping)**. In Cloud SIEM, a script that maps message fields to record attributes.
 
-**[Markdown](/docs/dashboards/panels/markdown-syntax)**. Used in dashboards, you can add text panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting. See Help for details.
+**[Markdown](/docs/dashboards/panels/markdown-syntax)**. Used in dashboards, you can add text panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting.
 
 **[Mask rule](/docs/send-data/collection/processing-rules/mask-rules)**. Mask rules are a type of processing rule that replaces an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
 
@@ -279,7 +277,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Scheduled view](/docs/manage/scheduled-views)**. A scheduled view is a pre-aggregated index of a subset of data. After building a scheduled view, you'll be able to run queries against that data set. Because the data is pre-aggregated, meaning that query you'll use to create a scheduled view contains an aggregate function, search results return much quicker. Additionally, queries run against a scheduled view cannot time out. Queries that run against views can be used in scheduled searches, dashboards, and in ad hoc searches.
 
-**[Search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. See Autocomplete.
+**[Search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
 **[Searchable time](/docs/search/get-started-with-search/build-search/use-searchable-time)**. You can display search results in the order in which logs become available for search after being received by the Sumo Logic system.
 
