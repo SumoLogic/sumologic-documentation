@@ -42,7 +42,7 @@ You can also explore more Sumo Logic open-source projects on our [GitHub site](h
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/contributing/word-list')}><img src={useBaseUrl('img/icons/documentation.png')} alt="Documentation icon" width="35"/><h4>Word List</h4></a>
-  <p>Commonly used terms, punctuation, and capitalization rules.</p>
+  <p>Preferred spelling, capitalization, and punctuation for Sumo Logic terms.</p>
   </div>
 </div>
 <div className="box smallbox card">
