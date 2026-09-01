@@ -86,7 +86,7 @@ For scheduled view query requirements, see [Scheduled Views Best Practices and E
         :::note
         You cannot select a start date older than 365 days.
         :::
-    1. **Search Mode**. Set to **Auto Parse Mode** to [dynamically parse](/docs/search/get-started-with-search/build-search/dynamic-parsing) JSON data. Manual Mode is the default search behavior.
+    1. **Search Mode**. Set to **Auto Parse Mode** for [dynamic parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing) of JSON data.
     1. **Timezone**.
     1. **Enable AutoParse**.
     1. **Retention Period**. Either enter a retention period for the data in the index, in days, or click **Apply the retention period of sumologic_default**. For more information, see [Manage Indexes with Variable Retention](/docs/manage/partitions/manage-indexes-variable-retention).
