@@ -47,6 +47,12 @@ You can also explore more Sumo Logic open-source projects on our [GitHub site](h
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/contributing/templates')}><img src={useBaseUrl('img/icons/documentation.png')} alt="Documentation icon" width="35"/><h4>Docs Templates</h4></a>
+  <p>Copy-paste templates for starting a new doc, App Catalog doc, or Cloud-to-Cloud source doc.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/contributing/code-of-conduct')}><img src={useBaseUrl('img/icons/documentation.png')} alt="Documentation icon" width="35"/><h4>Code of Conduct</h4></a>
   <p>Our community standards for contributors.</p>
   </div>

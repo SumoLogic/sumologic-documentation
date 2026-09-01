@@ -537,11 +537,6 @@ module.exports = {
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
                 icon: 'thumbs_up_down',
               },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
-              },
             ],
           },
           {

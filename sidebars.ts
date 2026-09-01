@@ -60,7 +60,6 @@ module.exports = {
         'contributing/style-guide',
         'contributing/glossary',
         'contributing/word-list',
-        'contributing/code-of-conduct',
     //  'contributing/translations',
         {
           type: 'category',
@@ -74,7 +73,8 @@ module.exports = {
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
           ]
-        }
+        },
+        'contributing/code-of-conduct',
       ],
     },
   ],
