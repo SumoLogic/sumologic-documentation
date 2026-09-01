@@ -137,7 +137,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Page**. When you name a page in the UI, bold the page name, match its on-screen capitalization, and keep the word "page" lowercase and outside the bold: the **Search** page. Don't use "pane" or "tab" for a page. A tab appears inside a page. (Example: The **Messages** tab appears on the **Search** page.) See **UI labels**, below.
 
-**Panel**. When referring to a [dashboard panel](/docs/dashboards/panels) category (for example, text panel, area chart panel, pie chart panel), prefix `panel` with `dashboard` (for example, `area chart dashboard panel`). See also Markdown.
+**Panel**. Lowercase. A panel is a component of a [dashboard](/docs/dashboards/panels): either a data panel (driven by a query) or a text panel (static Markdown). Write "dashboard panel" on first mention or outside a dashboard context; once context is clear, "panel" alone is fine. Name the type before "panel": text panel, area chart panel, pie chart panel. See also Markdown.
 
 **Please**. Avoid using please. You're making recommendations on how to use software and services; it's not an inconvenience to the user.
 
