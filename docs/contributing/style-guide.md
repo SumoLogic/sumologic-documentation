@@ -7,11 +7,9 @@ description: A guide to styling and formatting Sumo Logic Docs.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes how to author Sumo Docs, which are written in GitHub-flavored markdown.
+This is the editorial style guide for Sumo Logic documentation, written in GitHub-flavored Markdown. It's for anyone who contributes docs — Docs Team or outside contributor.
 
-The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can speak as one company with a unified voice, and know what we mean when we talk about our product. The Style Guide began as a document used by the Documentation team to make decisions about tone, voice, and word usage. We thought it would be useful to share with everyone in our community.
-
-This is a living document. If you're looking for a style rule or UI component usage that's not defined here, let us know. The Documentation team will look it up and add usage guidance.
+Use it to keep our docs consistent in voice, tone, terminology, and formatting. It's a living document: if a rule or UI term you need isn't here, let us know and we'll add it.
 
 ## Style references
 
@@ -37,7 +35,7 @@ Helpful blogs on tech writing:
 * [Feathers](https://ffeathers.wordpress.com/). Blog for technical and fiction writing.
 * [I'd rather be writing](https://idratherbewriting.com/). Guides and thoughts on tech writing process and content.
 
-The Documentation team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
+The Docs Team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
 :::tip
 To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
@@ -254,6 +252,9 @@ Here's a cool tip.
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
 * Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
+* In body text, don't capitalize a term unless it's a proper noun or a literal UI label. Generic product terms are lowercase: collector, source, dashboard, panel, index, partition, role, scheduled view, alert, search.
+* **UI label vs. concept.** When you name a UI element or page as it appears on screen, match its on-screen capitalization and bold the label: the **Search** page, the **Scheduled Views** page, the **Aggregates** tab. When you mean the same thing as a general feature or concept, use lowercase and no bold: "scheduled views let you pre-aggregate data", "run a search". The generic word (`page`, `tab`, `button`) is always lowercase. See [Bold](#bold).
+* Always capitalized: proper nouns and product names (Sumo Logic, Cloud SIEM, Cloud SOAR, Kubernetes, Markdown, RBAC), and named UI areas when used as labels (the **Library**, the **Search** page, **Admin mode**).
 
 
 ## Code (inline)
@@ -289,7 +290,7 @@ Use code blocks to format scripts, such as the JSON example below. This is impor
 Code blocks are intended only for code snippets that users can copy, paste, and run in their own terminal. Do not use code block formatting for error messages (see [Code (Inline)](#code-inline)), as this isn't something you'd run in a terminal.
 :::
 
-If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo queries and `json` for Sumo logs.
+If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo Logic queries and `json` for Sumo Logic logs.
 
 <Tabs
   className="unique-tabs"
@@ -528,7 +529,13 @@ If your file is available in another public Sumo Logic repo, provide the standar
 
 ### Bold
 
-Use **bold** for UI elements you interact with, such as a button or tab.
+Use **bold** for the name of a UI element the reader interacts with or navigates to: a button, tab, menu item, field label, checkbox, or page name. Examples: Select **Save**. Go to the **Scheduled Views** page. On the **Aggregates** tab, select **Add to Dashboard**.
+
+Bold only the label itself. The generic word that follows it (`button`, `tab`, `menu`, `dialog`, `field`, `page`, `pane`) stays outside the bold and lowercase: the **Search** page, not **Search page** or the **Search Page**.
+
+**UI label vs. concept.** Bold and match the on-screen capitalization only when you're pointing to the UI control. When you're describing the feature or concept, don't bold it, and lowercase it. Write "A scheduled view is a pre-aggregated index of your data" (concept), but "Open the **Scheduled Views** page" (UI label). Capitalization follows the same split (see [Capitalization](#capitalization)).
+
+Don't use bold to emphasize ordinary words.
 
 ### Italics
 
@@ -666,7 +673,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
 ### Add an image
 
 1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
-   * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
+   * When updating existing images (like if there's a Sumo Logic UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
    * File format be PNG. Avoid using animated GIFs, as they're generally not accessible; instead, use static images, provide text descriptions, or ensure animations stop within 5 seconds.
    * Max file size 2MB.
 1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
@@ -1575,7 +1582,7 @@ Deploy the Cloudformation Template to Create a Kinesis Firehose Delivery Stream:
 1. Download the Cloudformation template.
 1. Open CloudFormation in AWS.
 1. Create a new stack using the CloudFormation template you downloaded.
-1. Provide the URL you created from your Sumo source.
+1. Provide the URL you created from your Sumo Logic source.
 1. Select an S3 bucket to deliver failed logs, or create a new one.
 1. Click **Next**.
 
@@ -1646,6 +1653,8 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
 
 
 ## UI elements
+
+For how to format and capitalize a UI element's name (bold the label, match on-screen capitalization, and lowercase it when you mean the concept rather than the control), see [Bold](#bold) and [Capitalization](#capitalization).
 
 Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
 
