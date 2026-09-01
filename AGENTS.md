@@ -6,6 +6,8 @@ This file is the canonical source of context and guardrails for AI coding agents
 Open-source Sumo Logic documentation site built with Docusaurus 3.
 Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic style guide.
 
+This repo takes contributions from both Sumo Logic employees and external community contributors (see [docs/contributing](https://www.sumologic.com/help/docs/contributing) for the fork-and-PR workflow external contributors follow). Most of this file — the skills, directory conventions, frontmatter rules, and slash commands below — works the same for anyone with the repo cloned and Claude Code installed. The exception is anything under **Jira Rules** and the Jira-specific steps in **Pull Requests**: those require internal Sumo Logic Atlassian access, so external contributors should skip them and follow the plain PR steps in docs/contributing instead.
+
 ## Repository
 @https://github.com/SumoLogic/sumologic-documentation
 
@@ -83,8 +85,8 @@ Before pushing any commit that changes docs content:
 2. Tell the user to confirm the changes appear correctly on the site
 3. Wait for explicit approval before pushing
 
-## Jira Rules
-**CRITICAL**: All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`.
+## Jira Rules (Sumo Logic internal — requires Atlassian access)
+**CRITICAL**: All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`. This section applies to Sumo Logic employees only — external contributors don't have access to the internal Jira instance and should skip it.
 
 ### Field Requirements
 - **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
@@ -130,8 +132,8 @@ If you change the `/help/llm/` URL structure or add new machine-readable mirror 
 
 The sections below apply only to Claude Code. Other agents can ignore them.
 
-### Jira Commands
-All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`, including the three-approach ticket-creation pattern and Technical Area mappings.
+### Jira Commands (Sumo Logic internal)
+All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`, including the three-approach ticket-creation pattern and Technical Area mappings. Requires internal Atlassian access — not available to external contributors.
 
 ### Slash Commands
 Primary commands for documentation work. Proactively suggest when context fits — don't wait for the user to ask.

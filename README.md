@@ -13,9 +13,9 @@ Our site is built with [Docusaurus 3](https://docusaurus.io/) and supports React
 
 ## Get involved
 
-We welcome contributions from the community. You can fix a typo, propose new content, or improve existing docs by [opening an issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) or submitting a pull request.
+We welcome contributions from the community. You can fix a typo, propose new content, or improve existing docs by [opening an issue](https://github.com/SumoLogic/sumologic-documentation/issues/new/choose) or submitting a Pull Request (PR).
 
-Browse [existing issues](https://github.com/SumoLogic/sumologic-documentation/issues) before opening a new one — someone may have already reported it.
+Browse [existing issues](https://github.com/SumoLogic/sumologic-documentation/issues) before opening a new one. Someone may have already reported it.
 
 We use [cla-bot](https://colineberhardt.github.io/cla-bot/) to manage our Contributor License Agreement (CLA) process. You will be prompted to sign the CLA on your first contribution.
 
@@ -43,7 +43,7 @@ We use [cla-bot](https://colineberhardt.github.io/cla-bot/) to manage our Contri
 
 Edit files using [Markdown syntax](https://www.sumologic.com/help/docs/contributing/style-guide/#markdown). Keep contributions concise, accurate, and aligned with our [Style Guide](https://www.sumologic.com/help/docs/contributing/style-guide/).
 
-See our [Contributor Guidelines](https://www.sumologic.com/help/docs/contributing/create-edit-doc/#edit-a-doc) for details on Markdown editing, proposing bug fixes, and testing your changes.
+See our [Contributor Guidelines](https://www.sumologic.com/help/docs/contributing/create-edit-doc/#edit-a-doc) for details on Markdown editing, proposing content fixes, and testing your changes.
 
 ## Build locally
 
@@ -54,6 +54,8 @@ yarn start
 ```
 
 Any broken links or images will be listed in the output. Fix them, rebuild, and verify before submitting. Press `Ctrl + C` to stop the local server.
+
+We exclusively use [Yarn](https://classic.yarnpkg.com/en/) for all installations and builds. Avoid using NPM commands for package installations or updates.
 
 ## Repo structure
 
@@ -66,21 +68,21 @@ Any broken links or images will be listed in the output. Fix them, rebuild, and 
 | `/blog-csoar` | Cloud SOAR release notes |
 | `/static/img` | Images and media assets |
 | `sidebars.ts` | Left-nav sidebar configuration |
-| `docusaurus.config.ts` | Site configuration |
-| `cid-redirects.json` | Permanent URL redirects (CID mappings) |
+| `docusaurus.config.js` | Site configuration |
+| `cid-redirects.json` | URL redirects and CID mappings |
 
-## For Docs Team contributors
+## Claude Code tooling
 
-This repo includes [Claude Code](https://claude.ai/code) tooling for the Docs Team — slash commands for creating docs, auditing content, managing Jira tickets, and more. See [CLAUDE.md](CLAUDE.md) for the full reference.
+This repo includes [Claude Code](https://claude.ai/code) slash commands for creating docs, auditing content, and more. Most commands work for anyone with the repo cloned, including external contributors. The exception is Jira-related commands, which require internal Sumo Logic Atlassian access and are for Sumo Logic employees only. See [AGENTS.md](AGENTS.md) for the full reference.
 
 ## Publishing
 
-Our docs team reviews issues and pull requests regularly. Response times may vary depending on the backlog.
+Our docs team reviews issues and PRs regularly. Response times may vary depending on the backlog.
 
 Merge times depend on the type of change:
 
-- **Content changes** (`docs/`, `blog-*`, `static/img`) — no hard merge window. We prefer U.S. or India business hours when possible.
-- **Back-end changes** (`src/`, `sidebars.ts`, config files, `.github/`) — merged **Monday–Friday, 6:00am–2:00pm PT** only, when the WebOps team is available.
+- **Content changes** (`docs/`, `blog-*`, `static/img`): no hard merge window. We prefer U.S. or India business hours when possible.
+- **Back-end changes** (`src/`, `sidebars.ts`, config files, `.github/`): merged **Monday–Friday, 6:00am–2:00pm PT** only, when the WebOps team is available.
 
 PRs that mix content and back-end files follow the back-end rules.
 
