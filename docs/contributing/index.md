@@ -36,7 +36,7 @@ You can also explore more Sumo Logic open-source projects on our [GitHub site](h
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/contributing/glossary')}><img src={useBaseUrl('img/icons/documentation.png')} alt="Documentation icon" width="35"/><h4>Glossary</h4></a>
-  <p>Definitions for technical terms used in Sumo Logic.</p>
+  <p>Definitions of Sumo Logic terms and features you'll encounter in the docs. </p>
   </div>
 </div>
 <div className="box smallbox card">
