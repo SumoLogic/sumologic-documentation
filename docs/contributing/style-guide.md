@@ -13,16 +13,19 @@ The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can 
 
 This is a living document. If you're looking for a style rule or UI component usage that's not defined here, let us know. The Documentation team will look it up and add usage guidance.
 
-## Writing resources
+## Style references
 
-If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow:
+This guide comes first. When it doesn't cover something, defer to these, in order of precedence:
 
-* [Merriam-Webster Dictionary](https://www.merriam-webster.com/)
-* *[The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html)*
-* [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
-  * [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions)
+1. Sumo Logic Brand Guidelines: Brand Voice and Writing Style Guide. Voice, tone, and brand terms.
+1. [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/). UI, procedures, and technical formatting. See also [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions).
+1. [AP Stylebook](https://www.apstylebook.com/). General usage.
+1. *[The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html)*. Anything the above don't settle.
+1. [Merriam-Webster Dictionary](https://www.merriam-webster.com/). Spelling and hyphenation.
 
 For terminology usage guidance, see our [Word List](/docs/contributing/word-list).
+
+## Learning resources
 
 If you're new to writing tech content or would like to learn more, check out these resources:
 * [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/). Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
