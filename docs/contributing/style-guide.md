@@ -684,11 +684,11 @@ You can use a link to a file embedding the entire file, or embed a range of code
    * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
    :::
 1. Add alt text, which provides a brief description of an image, ensuring accessibility for users who rely on screen readers or have slow internet connections. It also complies with US Government GSA Section 508 regulations. Here are some best practices:
-   - **Be concise and specific**. Describe the core purpose of the image (e.g., `alt="Screenshot showing the image properties dialog box"` or `alt="Sumo Logic logo"`).
+   - **Be concise and specific**. Describe the core purpose of the image (for example, `alt="Screenshot showing the image properties dialog box"` or `alt="Sumo Logic logo"`).
    - **Focus on function**. Convey the image's key message without unnecessary details.
    - **Skip decorative images**. Use an empty alt attribute (`alt=""`) for images that are purely decorative.
    - **Check for missing alt text**. Always ensure that every image has appropriate alt text. If you encounter an image without it, add it.
-1. Use the `width` to resize oversized and/or pixelated images, if needed.
+1. Use the `width` to resize oversized or pixelated images, if needed.
 
   <Tabs
     className="unique-tabs"
