@@ -13,9 +13,13 @@ App Central provides apps to help you be more productive in the Automation Servi
 
 ## View App Central
 
-[**New UI**](/docs/get-started/sumo-logic-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  
+:::note
+As of Aug 28, 2026, App Central has merged into the Sumo Logic App Catalog. Automation Service integrations and playbooks are now discovered, viewed, and installed from the App Catalog, the same place you install any platform app.
+:::
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access App Central, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
+[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **App Catalog** or navigate to **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **App Catalog** or **Automation > App Central** in the left navigation bar. 
 
 Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
 
@@ -38,7 +42,7 @@ Integrations are connectors to applications from industry-leading network and se
 
 ### Install an integration from App Central
 
-1. Use the **INSTALL** in the lower left corner of the integration box. After installation is complete, **INSTALLED** replaces the **INSTALL** link in the corner of the integration box.
+1. From the App Catalog, open the **Integrations** tab and click **INSTALL**. After installation is complete, **INSTALLED** replaces the **INSTALL** link in the corner of the integration box.
 1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
