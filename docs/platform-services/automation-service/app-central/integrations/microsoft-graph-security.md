@@ -54,6 +54,12 @@ For information about Microsoft Graph Security, see [Microsoft Graph Security do
 * March 10, 2022 - Logo
 * June 21, 2023 (v1.1) - Removed unnecessary empty lines
 * April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+<<<<<<< HEAD
 * September 1, 2026 (v1.3)
     + Migrated **Get Alert**, **Search Alerts**, and **Update Alert** actions to the new Microsoft Graph Security [alerts_v2 API](https://learn.microsoft.com/en-us/graph/alertsv1-alertsv2-migration). The legacy `/security/alerts` endpoint is deprecated and will be retired on October 15, 2026.
     + Legacy actions **Search Into Alerts** and **Update Security Alert** are retained for backward compatibility, as the alerts_v2 API is not a one-to-one replacement for the legacy API and some alerts may be unavailable through the new endpoint.
+=======
+* August 31, 2026 (v1.3)
+    - Migrated **Get Alert**, **Search Alerts**, and **Update Alert** actions to the new Microsoft Graph Security [alerts_v2 API](https://learn.microsoft.com/en-us/graph/alertsv1-alertsv2-migration). The legacy `/security/alerts` endpoint is deprecated and will be retired on October 15, 2026.
+    - Legacy actions **Search Into Alerts** and **Update Security Alert** are retained for backward compatibility, as the alerts_v2 API is not a one-to-one replacement for the legacy API and some alerts may be unavailable through the new endpoint.
+>>>>>>> 1f4e9580c3c43e9b3ada7532be08b147a74f5e73
