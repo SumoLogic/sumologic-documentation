@@ -98,6 +98,9 @@ keywords:
   * rules
   * log mappers
   * parsers
+tags:
+  - cloud-siem
+  - rules
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 ---
 ```
@@ -109,6 +112,8 @@ title: {Month} {Day}, {Year} - Application Update
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
   * {relevant-keyword}
+tags:
+  - cloud-siem
 hide_table_of_contents: true
 ---
 ```
@@ -119,6 +124,11 @@ hide_table_of_contents: true
   * Content releases: `rules`, `log mappers`, `parsers`
   * Application releases: Feature-specific keywords (e.g., `insights`, `entities`, `signals`, `cloud siem`)
 * User may want to add or modify keywords based on specific content
+
+**Tags:**
+* Content releases: always `cloud-siem` + `rules` (add `log-mappers` or `parsers` if those are the primary focus)
+* Application releases: always `cloud-siem`
+* Tags generate filterable index pages at `/release-notes-cse/tags/{tag}/`
 
 **Date formatting:**
 * Use ordinal suffixes: "March 12th", "February 3rd", "January 21st"
@@ -177,7 +187,7 @@ Additional changes are enumerated below.
 
 **Application Release Guidelines:**
 * Use H3 (`###`) for each feature.
-* Start with clear, concise description.
+* Open with a direct statement of what the feature does — not an announcement phrase ("We're excited to announce", "We're happy to introduce"). Example: "Field X now supports Y." or "Feature Z is now available."
 * Include "Learn more" link to relevant docs.
 * Keep it brief (2-3 sentences per feature).
 * Add screenshots using: `<img src={useBaseUrl('img/path')} alt="description" />`

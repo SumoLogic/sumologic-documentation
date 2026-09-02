@@ -141,6 +141,9 @@ keywords:
   - automation service
   - cloud soar
   - soar
+tags:
+  - cloud-soar
+  - integrations
 ---
 ```
 
@@ -153,8 +156,16 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 keywords:
   - automation service
   - cloud soar
+tags:
+  - cloud-soar
 ---
 ```
+
+**Tags:**
+* Content releases: always `cloud-soar` + `integrations` (add `playbooks` if playbooks are included)
+* Application updates: always `cloud-soar`
+* Automation Service features: add `automation-service`
+* Tags generate filterable index pages at `/release-notes-csoar/tags/{tag}/`
 
 **Title formatting:**
 * Start with full date: "Month DD, YYYY" (e.g., "June 05, 2024" or "March 06, 2026")
@@ -252,6 +263,8 @@ Fixed an issue where [description of bug and fix].
 ```
 
 ### Step 7: Content formatting guidelines
+
+Open with a direct statement of what the release contains. Do not use excitement or announcement phrases ("We're excited to introduce", "We're happy to announce", "We've added"). State what changed factually.
 
 ## Content Release Formatting
 
