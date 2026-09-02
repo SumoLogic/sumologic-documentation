@@ -102,7 +102,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/dynamic-parsing')}><img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Parsing Data icon" width="50"/><h4>Dynamic Parsing</h4></a>
+  <a href={useBaseUrl('docs/api/dynamic-parsing')}><img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Parsing Data icon" width="50"/><h4>Dynamic Parsing (Auto Parse)</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

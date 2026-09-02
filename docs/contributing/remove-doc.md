@@ -1,7 +1,12 @@
 ---
 id: remove-doc
 title: Move or Remove a Doc
-description: Learn how to properly move or remove a Sumo Logic doc.
+description: How to move or remove a Sumo Logic doc without breaking URLs by creating a 301 redirect, updating inbound links, and removing it from the sidebar.
+keywords:
+  - remove a doc
+  - move a doc
+  - 301 redirect
+  - deprecate documentation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
