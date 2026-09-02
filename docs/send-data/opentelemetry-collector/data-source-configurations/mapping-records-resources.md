@@ -14,7 +14,7 @@ OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentele
 * **Instrumentation Scope**. Additional information about the scope of data. For example, instrumentation library name.
 * **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric.
 :::note
-For logs, this is usually called a _Record_; for traces, it's usually called a _Span_; and for metrics, a _Datapoint_ (or _sample_, if Prometheus is used). In this documentation, we'll use _Record_ for all of these.
+For logs, this is usually called a Record; for traces, it's usually called a Span; and for metrics, a Datapoint (or sample, if Prometheus is used). In this documentation, we'll use Record for all of these.
 :::
 Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Logs, in particular, can also include attributes in the body of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/semantic-conventions), [metrics](https://github.com/open-telemetry/semantic-conventions), or [logs](https://github.com/open-telemetry/semantic-conventions).
 
@@ -27,7 +27,7 @@ Looking from the OpenTelemetry standpoint, [Fields](/docs/manage/fields) are a g
 All **Resource-level** attributes are stored as fields, and any attributes that do not match a defined field will be skipped. You can check the list of ignored fields using the [dropped fields view](/docs/manage/fields/#view-dropped-fields). When a log contains attributes at the **Record-level**, they are stored as JSON, and if there is a body, it will be stored under the `log` key.
 
 :::info
-If your log record has any **Record-level** attributes, Sumo will interpret this as a _structured log_, and display it in JSON. If the log does not have any **Record-level** attributes, Sumo will treat it as _unstructured_ and display the body. **Resource-level** attributes are interpreted as fields.
+If your log record has any **Record-level** attributes, Sumo will interpret this as a structured log, and display it in JSON. If the log does not have any **Record-level** attributes, Sumo will treat it as unstructured and display the body. **Resource-level** attributes are interpreted as fields.
 :::
 
 ## Example: Log with both Resource-level and Record-level attributes

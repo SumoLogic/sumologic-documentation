@@ -29,7 +29,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Aggregate](/docs/search/search-query-language/group-aggregate-operators)**. A group of data returned by a search, displayed in a simple table in the Aggregates tab of the Search page.
 
-**[Alert](/docs/alerts)**. A notification you can configure for a scheduled search. There are multiple alert types, such as Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
+**[Alert](/docs/alerts)**. A notification triggered when a monitoring condition is met. In [monitors](/docs/alerts/monitors/overview), an alert is created when trigger conditions — critical, warning, or missing data — are satisfied, and it includes contextual information to help investigate the issue. In [scheduled searches](/docs/alerts/scheduled-searches/schedule-search), alert types include Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
 
 **[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. A list of IP addresses or CIDR ranges that are explicitly granted access to logins, APIs, and dashboards. Configured on the **Service Allowlist Settings** tab in Account Security Settings.
 
@@ -54,6 +54,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20)**. A plaintext metric format in which metrics are identified by key-value pairs. In Carbon 2.0, the actual thing being measured is identified by intrinsic tags; additional metadata is provided in meta tags. Sumo Logic’s [HTTP source](/docs/send-data/hosted-collectors/http-source) and [Streaming Metric Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source) support Carbon 2.0 metrics.
 
 **[Cardinality](/docs/metrics/logs-to-metrics/#manage-metric-cardinality)**. Refers to the uniqueness of values in a database column or metric dimension. High cardinality metrics are metrics with dimensions that have many different values, which can result in a high volume of unique time series. In Sumo Logic, you can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time.
+
+**[Credit](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. A unit of measure that tracks account usage, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose.
 
 **[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new collector that will use a name that is already in use by another collector. Clobber deletes (clobbers) the existing collector with the same name.
 
@@ -87,6 +89,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Data volume index](/docs/manage/ingestion-volume/data-volume-index)**. The data volume index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The data volume index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
 **[Deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
+
+**[Detected relationship](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a relationship detected between entities that appear together in a record — for example, an IP and hostname in the same log message — even if they are not part of the insight currently being viewed. Displayed as solid lines in the entity graph.
 
 <!--
 **Dimension**. In [Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20) and [Prometheus](/docs/metrics/introduction/metric-formats#prometheus) metrics, dimensions are the one or more space-separated key-value pairs that uniquely identify what is being measured. Dimensions are also referred to as intrinsic tags and labels.
@@ -164,6 +168,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 ## K
 
+**[Keyword Search Expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions)**. The portion of a log search query that precedes the first pipe symbol. Defines the scope of data for the query using Boolean logic, wildcards, and metadata fields such as `_sourceCategory` and `_collector`.
+
 **[Kubernetes Views](/docs/observability/kubernetes/monitoring)**. Allows you to intuitively filter on four hierarchical components of your Kubernetes system to focus your search on nodes, deployments, services, or namespaces. Kubernetes Views make it easier to traverse your Kubernetes hierarchy to monitor specific components, identify problems, discover root problems, and take progressive action.
 
 
@@ -174,6 +180,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Live Tail](/docs/search/live-tail)**. Sumo Logic Live Tail allows you to see a real-time live feed of log events associated with a source or collector. The live feeds can help you with development and troubleshooting. You can see all log messages as they come in, but they are not sorted as they are with search.
 
 **[Local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local configuration file management allows you to set up and manage sources on an installed collector using one or more JSON files.
+
+**[Logs for Security](/docs/security/additional-security-features)**. Sumo Logic's full set of features that leverage logs for security use cases, including pre-built dashboards, out-of-the-box security apps, and robust query capabilities for analyzing security log and event data.
 
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
@@ -214,7 +222,14 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. It uses a suite of specialized agents to help you search, analyze, and learn about your data using natural language.
 
+**[Monitor](/docs/alerts/monitors/overview)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
+
 **[Multiline](/docs/send-data/reference-information/collect-multiline-logs)**. Log messages that span multiple lines are called multiline messages.
+
+
+## N
+
+**[Node](/docs/platform-services/automation-service/playbooks/create-playbooks)**. In Automation Service playbooks, a step that performs a specific action within a playbook. Nodes run in the order they are placed; when all nodes complete without error, the playbook is considered to have executed successfully.
 
 
 ## O
@@ -262,6 +277,10 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Record](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, a collection of normalized data created from a message.
 
+**[Related insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, an insight that a related signal is attached to.
+
+**[Related signal](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a signal that isn't part of the current insight (not attached), but fired on the same entity as the current insight's attached signals within 7 days of those signals.
+
 **[Relative expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions)**. Used in time range expressions, when setting the non-absolute time limits of a search. For example, -1d, -1d -12h, -12h -60m.
 
 **[Role](/docs/manage/users-roles/roles/)**. In Sumo Logic role-based access control (RBAC), you grant users access to data and to Sumo Logic functions using roles. You assign role capabilities and a role search filter to a role, and assign one or more roles to a user.
@@ -278,6 +297,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[SAML](/docs/manage/security/saml)**. Sumo Logic supports self-provisioning of Security Assertion Markup Language (SAML) to enable Single Sign-On (SSO). In addition to basic SAML configuration, you can choose optional on-demand user creation (via SAML 2.0 assertions), and designate custom log in and/or log out portals.
 
+**[Scheduled action](/docs/platform-services/automation-service/integration-framework/about-integration-framework)**. In the Automation Service integration framework, an action type whose execution repeats until a specific exit condition is met, enabling loops within a playbook.
+
 **[Scheduled search](/docs/alerts/scheduled-searches/schedule-search)**. When you save a log search, you can schedule it to run it on a periodic basis, and configure an alert that will issue a notification every time the search runs, or when a condition you specify is met.
 
 **[Scheduled view](/docs/manage/scheduled-views)**. A scheduled view is a pre-aggregated index of a subset of data. After building a scheduled view, you'll be able to run queries against that data set. Because the data is pre-aggregated, meaning that query you'll use to create a scheduled view contains an aggregate function, search results return much quicker. Additionally, queries run against a scheduled view cannot time out. Queries that run against views can be used in scheduled searches, dashboards, and in ad hoc searches.
@@ -291,6 +312,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met.
 
 **[Sources](/docs/send-data)**. Sources are configured on Sumo Logic collectors and collect customer data.
+
+**[Suppressed signal](/docs/cse/records-signals-entities-insights/about-signal-suppression)**. In Cloud SIEM, a signal that the insight algorithm excludes from the insight generation process. A suppressed signal does not contribute to or become part of an insight. By default, signals are automatically suppressed for 72 hours.
 
 **[Subqueries](/docs/search/subqueries)**. Subqueries allow you to filter and evaluate conditions for a log query when you may not be sure of the exact filter or condition criteria but you can write a short query to set them for you. Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query.
 

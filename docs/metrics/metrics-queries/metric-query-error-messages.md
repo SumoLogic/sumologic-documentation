@@ -46,7 +46,7 @@ Sumo Logic imposes limits on the input data for a query and the data output by t
 
 #### Input data limit
 
-*Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
+Input data is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
 For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
 
