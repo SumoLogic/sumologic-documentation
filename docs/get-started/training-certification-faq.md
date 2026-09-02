@@ -62,7 +62,7 @@ Pick the path closest to your role and learn to detect threats, investigate inci
 
 ### Observability paths
 
-Pick the path closest to your role and finish able to monitor, troubleshoot, and keep systems reliable at scale.
+Pick the path closest to your role and learn to monitor, troubleshoot, and keep systems reliable at scale.
 
 | Role | Learning Portal | Download |
 |---|---|---|
