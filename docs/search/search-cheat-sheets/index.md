@@ -5,8 +5,11 @@ description: Use these quick-reference cheat sheets to master Sumo Logic search 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../../reuse/mobot-callout.md';
 
 Use cheat sheets as a quick reference guide or get up to speed quickly with our Log Search functionality. You'll find lists all Sumo Logic search operators, along with corresponding query examples and use cases.
+
+<MobotCallout/>
 
 <div className="box-wrapper">
 <div className="box smallbox card">

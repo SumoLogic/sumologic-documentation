@@ -172,7 +172,7 @@ jobs:
           script: |
             // Two-tier merge window policy:
             //   Backend site changes (workflows, config, src, etc.): hard block outside
-            //     7:00 am–2:00 pm PT, Mon–Fri, non-holidays. US-only window; India is not
+            //     6:00 am–2:00 pm PT, Mon–Fri, non-holidays. US-only window; India is not
             //     staffed for outage response.
             //   Docs and release notes (docs/, blog-*, images): soft warning only — should
             //     generally merge during India or US business hours, but not hard-blocked.
@@ -229,10 +229,10 @@ jobs:
               return;
             }
 
-            // Backend site change window: 7:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
+            // Backend site change window: 6:00 am–2:00 pm PT, Mon–Fri, no US/global holidays.
             let siteBlockedReason = null;
             if      (!WEEKDAYS.has(pt.weekday)) siteBlockedReason = 'weekend';
-            else if (pt.hour < 7)              siteBlockedReason = 'before 7:00 am PT';
+            else if (pt.hour < 6)              siteBlockedReason = 'before 6:00 am PT';
             else if (pt.hour >= 14)            siteBlockedReason = 'after 2:00 pm PT';
             else if (PT_HOLIDAYS.has(pt.date)) siteBlockedReason = `Sumo holiday (${pt.date} PT)`;
 
@@ -305,7 +305,7 @@ jobs:
               if (hasSiteChange) {
                 core.setFailed(
                   `Merge blocked: ${siteBlockedReason}. ` +
-                  'Merge queue validation requires the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays.'
+                  'Merge queue validation requires the merge window: Mon–Fri, 6:00 am–2:00 pm PT, non-holidays.'
                 );
                 return;
               }
@@ -325,7 +325,7 @@ jobs:
             if (hasSiteChange) {
               core.setFailed(
                 `Merge blocked: ${siteBlockedReason}. ` +
-                'Backend site changes require the merge window: Mon–Fri, 7:00 am–2:00 pm PT, non-holidays. ' +
+                'Backend site changes require the merge window: Mon–Fri, 6:00 am–2:00 pm PT, non-holidays. ' +
                 'Active service incident? Apply the active-incident label and re-run this check.'
               );
               return;

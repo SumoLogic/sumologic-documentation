@@ -60,3 +60,7 @@ For information about Automox, see [Automox documentation](https://docs.automox.
 * July 7, 2022 - First upload
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
 * April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+## Additional resources
+
+- For Automox, Sumo Logic offers the [Automox source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source/) and the [Automox app](/docs/integrations/saas-cloud/automox/) to collect and visualize your Automox data.

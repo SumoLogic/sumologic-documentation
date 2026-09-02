@@ -173,7 +173,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 <CollectionConfiguration/>
 
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for 1Password](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your 1Password app is properly integrated and configured to collect and analyze your 1Password data.
 :::
 
@@ -265,3 +265,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [1Password Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/1password/) to automate response actions directly from Cloud SOAR playbooks.

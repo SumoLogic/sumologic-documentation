@@ -501,6 +501,11 @@ module.exports = {
                 label: 'Traces, RUM, APM',
                 icon: 'account_tree',
               },
+              {
+                label: 'Contribute to Docs',
+                to: 'docs/contributing',
+                icon: 'edit_note',
+              },
             ]
           },
           {
@@ -547,11 +552,6 @@ module.exports = {
                 label: 'Submit Feedback',
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
                 icon: 'thumbs_up_down',
-              },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
               },
             ],
           },

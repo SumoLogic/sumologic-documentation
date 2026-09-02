@@ -125,6 +125,10 @@ Here is an example JSON payload using Slack's **attachments** parameter:
 }
 ```
 
+## Known limitations
+
+Slack has a hard limit of 40,000 characters per message. Content beyond this limit, such as a large `{{ResultsJson}}` value, is truncated with "…" in the notification. This is a limitation of Slack's own message rendering, not of Sumo Logic. The full data remains intact at the source. Learn more in Slack's [changelog on truncating long messages](https://docs.slack.dev/changelog/2018-truncating-really-long-messages/).
+
 ## Create an alert
 
 Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).

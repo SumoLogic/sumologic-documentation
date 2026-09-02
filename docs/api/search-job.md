@@ -2,7 +2,8 @@
 id: search-job
 title: Search Job APIs
 sidebar_label: Search Job
-description: Search Job APIs provides access to resources and log data from third-party scripts and applications.
+description: Search Job APIs provide access to resources and log data from third-party scripts and applications, available as a legacy API or through the newer OpenAPI-based Search Job Management API.
+toc_max_heading_level: 4
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,11 +13,10 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="55"/>
 
-The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
+The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication. It's available in two versions:
 
-:::warning
-Search Job APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs). Instead, refer to the below documentation.
-:::
+* **[Search Job Management API](#search-job-management-api)**. Built with OpenAPI specifications. Each request is addressed by the search job's `jobId` alone, so it doesn't require session cookies to keep a search job alive between requests. We recommend this version for new integrations.
+* **[Legacy Search Job API](#legacy-search-job-api)**. The earlier version. Requires session cookies to keep a search job alive between requests, and is slower than the OpenAPI-based version.
 
 ## Prerequisites
 
@@ -27,43 +27,28 @@ The Search Job API is available to Enterprise accounts.
 | Cloud Flex Legacy | Enterprise |
 | Sumo Logic Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-## Documentation
-
-<ApiIntro/>
-
 ## Required role capabilities
 
 <ApiRoles/>
 
-* [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management)
-    * Download Search Results
-    * View Collectors
 * [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Manage Access Keys
 
-
-## Endpoints for API access
-
-Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
-
-See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
-
-An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
+:::note
+For an access key with a customized scope, make sure **Run Log Search** is added to the scope.
+:::
 
 ## Session timeout
 
 While the search job is running you need to request the job status based on the search job ID. The API keeps the search job alive by either polling for status every 20 to 30 seconds or gathering results. If the search job is not kept alive by API requests, it is canceled. When a search job is canceled for inactivity, you will get a 404 status.
 
-You must enable cookies for subsequent requests to the search job. A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request.
-
 There's a query timeout after eight hours, even if the API is polling and making requests. If you are running very few queries, you may be able to go a little longer, but you can expect most of your queries to end after eight hours.
 
-So, a 404 status is generated in these two situations:
-
-* When cookies are disabled.
-* When a query session is canceled.
-
 You can start requesting results asynchronously while the job is running and page through partial results while the job is in progress.
+
+:::note
+For the [Legacy Search Job API](#legacy-search-job-api), a 404 status can also result from a missing session cookie, since that version requires cookies to keep a search job alive.
+:::
 
 ## Search job result limits
 
@@ -281,10 +266,54 @@ The following figure shows the process flow for search jobs.
   </tr>
 </table>
 
+## Search Job Management API
 
-## GET Methods
+The Search Job Management API is built with OpenAPI specifications. Each request is addressed by the search job's `jobId` alone, so it doesn't require session cookies to keep a search job alive between requests.
 
-### Get the current Search Job status
+:::tip MSSP multi-org searches
+If you manage child organizations, you can run a search job across one, several, or all of them by setting `childOrgIds` or `includeAllChildOrgs` when you create the search job. This is the API equivalent of the multi-org search available in the Search UI. [Learn more](/docs/search/search-across-child-orgs/).
+
+| Parameter | Type | Description |
+|:--|:--|:--|
+| `childOrgIds` | Array of strings | List of child org IDs to run the search on. |
+| `includeAllChildOrgs` | Boolean | When `true`, runs the search across all child orgs of the authenticated parent org. Takes precedence over `childOrgIds` if both are set. Default is `false`. |
+:::
+
+### Documentation
+
+<ApiIntro/>
+
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/searchJobManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/searchJobManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/searchJobManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/searchJobManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/searchJobManagement  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/searchJobManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/searchJobManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/searchJobManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/searchJobManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/searchJobManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/searchJobManagement  |
+
+## Legacy Search Job API
+
+The legacy Search Job API requires session cookies to keep a search job alive between requests, and is slower than the [Search Job Management API](#search-job-management-api).
+
+You must enable cookies for subsequent requests to the search job. A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request.
+
+### Endpoints for API access
+
+Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
+
+See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+
+An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
+
+### GET Methods
+
+#### Get the current Search Job status
 
 <details>
 <summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;</code></summary>
@@ -299,7 +328,7 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
 
 </details>
 
-#### Request parameters
+##### Request parameters
 
 <table>
   <tr>
@@ -316,11 +345,11 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
   </tr>
 </table>
 
-#### Result
+##### Result
 
 The result is a JSON document containing the search job state, the number of messages found so far, the number of records produced so far, any pending warnings and errors, and any histogram buckets so far.
 
-#### Sample session
+##### Sample session
 
 ```bash
 curl -v --trace-ascii - -b cookies.txt -c cookies.txt -H 'Accept: application/json'
@@ -381,7 +410,7 @@ Notice that the state of the sample search job is DONE GATHERING RESULTS. The fo
 | DONE GATHERING HISTOGRAM | Search job is done gathering results needed to build a histogram; the entire specified time range needed to build the histogram has been covered. |
 | CANCELLED	| The search job has been canceled. Note the spelling has two L letters.|
 
-#### More about results
+##### More about results
 
 The **warnings** value contains the detailed information about the warning while obtaining the current status of a search job.
 
@@ -404,7 +433,7 @@ Fields are not returned in the specified order and are all lowercase.
 </details>
 
 ---
-### Paging through the messages found by a search job
+#### Paging through the messages found by a search job
 
 <details>
 <summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/messages?offset=&#123;OFFSET&#125;&limit=&#123;LIMIT&#125;</code></summary>
@@ -420,7 +449,7 @@ The search job status informs the user about the number of found messages. The m
 
 </details>
 
-#### Request parameters
+##### Request parameters
 
 <table>
   <tr>
@@ -451,7 +480,7 @@ The search job status informs the user about the number of found messages. The m
 
 
 
-#### Sample session
+##### Sample session
 
 ```bash
 curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
@@ -594,7 +623,7 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 
 </details>
 
-#### More about results
+##### More about results
 
 The result contains two lists, **fields** and **messages**.
 
@@ -613,7 +642,7 @@ The metadata fields `_sourceHost`, `_sourceName`, and `_sourceCategory`, which a
 </details>
 
 ---
-### Page through the records found by a Search Job
+#### Page through the records found by a Search Job
 
 <details>
 <summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET&#125;&limit=&#123;LIMIT&#125;</code></summary>
@@ -628,7 +657,7 @@ The search job status informs the user as to the number of produced records, if 
 
 </details>
 
-#### Request parameters
+##### Request parameters
 
 <table>
   <tr>
@@ -657,7 +686,7 @@ The search job status informs the user as to the number of produced records, if 
   </tr>
 </table>
 
-#### Sample session
+##### Sample session
 
 ```bash
 curl -b cookies.txt -c cookies.txt -H
@@ -700,9 +729,9 @@ The ***warnings** contains the detailed information about the warning while pagi
 
 </details>
 
-## POST Methods
+### POST Methods
 
-### Create a search job
+#### Create a search job
 
 <details>
 <summary><span className="api post">POST</span><code>/v1/search/jobs</code></summary>
@@ -717,7 +746,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 </details>
 
-#### Headers
+##### Headers
 
 <table>
   <tr>
@@ -735,7 +764,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 </table>
 
 
-#### Request parameters
+##### Request parameters
 
 <table>
   <tr>
@@ -797,7 +826,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 
 
-#### Status codes
+##### Status codes
 
 <table>
   <tr>
@@ -824,7 +853,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 
 
-#### Response headers
+##### Response headers
 
 <table>
   <tr>
@@ -839,7 +868,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 
 
-#### Result
+##### Result
 
 A JSON document containing the ID of the newly created search job. The ID is a string to use for all API interactions relating to the search job.
 
@@ -856,7 +885,7 @@ Example error response:
 }
 ```
 
-#### Sample session
+##### Sample session
 
 The following sample session uses cURL. The Search Job API requires cookies to be honored by the client. Use `curl -b cookies.txt -c cookies.txt` options to receive, store, and send back the cookies set by the API.
 
@@ -890,9 +919,9 @@ The response from Sumo Logic returns the Search Job ID as the “Location” hea
 </details>
 
 
-## DELETE Methods
+### DELETE Methods
 
-### Delete a search job
+#### Delete a search job
 
 <details>
 <summary><span className="api delete">DELETE</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;</code></summary>
@@ -907,7 +936,7 @@ Although search jobs ultimately time out in the Sumo Logic backend, it's a good 
 
 </details>
 
-#### Request parameters
+##### Request parameters
 
 <table>
   <tr>
@@ -924,7 +953,7 @@ Although search jobs ultimately time out in the Sumo Logic backend, it's a good 
   </tr>
 </table>
 
-#### Sample session
+##### Sample session
 
 ```bash
 curl -b cookies.txt -c cookies.txt -X DELETE
@@ -941,7 +970,7 @@ https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 
 </details>
 
-## Bash this Search Job
+### Bash this Search Job
 
 You can use the following script to exercise the API. 
 
@@ -1018,5 +1047,3 @@ RESULT=$(curl $OPTIONS    \
 JOB_ID=$(echo $RESULT | sed 's/^.*"id":"\(.*\)".*$/\1/')
 echo Search job deleted, id: $JOB_ID
 ```
-
-
