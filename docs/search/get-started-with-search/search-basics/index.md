@@ -1,8 +1,8 @@
 ---
 slug: /search/get-started-with-search/search-basics
-title: Log Search Basics
+title: Search Basics
 sidebar_label: Search Basics
-description: Sumo Logic search syntax and concepts use logical, familiar operators for writing accurate queries quickly.
+description: Learn the core concepts and syntax behind Sumo Logic search, from keyword expressions and metadata to the pipe-delimited query pipeline.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

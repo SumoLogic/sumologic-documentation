@@ -2,7 +2,7 @@
 id: apache-errors-parser
 title: Suggested Searches for the Apache Errors Parser
 sidebar_label: Apache Errors Parser
-description: The following searches were built for use with the Apache Access Parser. Copy and paste these searches into the search query field and save them for later use.
+description: Prebuilt Sumo Logic search queries for the Apache error log parser, covering critical errors, log levels, and server restarts.
 ---
 
 The following searches were built for use with the Apache Errors Parser. Copy and paste these searches into the search query field and save them for use later.

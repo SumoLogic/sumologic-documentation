@@ -2,7 +2,7 @@
 id: pin-a-search
 title: Pin a Search to Run It in the Background
 sidebar_label: Pin a Search
-description: You can pin a search so that it runs in the background independent of the browser session.
+description: Pin a search to keep it running in the background, independent of your browser session, so you can leave the page and return to its results later.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

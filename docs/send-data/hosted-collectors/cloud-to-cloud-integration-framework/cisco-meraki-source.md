@@ -73,7 +73,7 @@ To configure Cisco Meraki Source:
 12. (Optional) The **Infra Polling Interval** is set to 24 hours by default. You can adjust this value as needed.
 13. When you are finished configuring the Source, click **Save**.
 
-:::info
+:::tip
 After configuring the Cisco Meraki source, consider installing the Sumo Logic app for [Cisco Meraki](/docs/integrations/saas-cloud/cisco-meraki-c2c/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -165,3 +165,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Cisco Meraki Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/cisco-meraki/) to automate response actions directly from Cloud SOAR playbooks.

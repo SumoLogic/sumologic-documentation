@@ -1,8 +1,8 @@
 ---
 slug: /search/get-started-with-search/suggested-searches
-title: Suggested Search Queries by Log Source
+title: Suggested Searches by Source
 sidebar_label: Suggested Searches
-description: Sumo Logic queries can help track and diagnose common IT issues. Take a look at these Sumo Logic suggested searches.
+description: Prebuilt Sumo Logic search queries for common log sources like Apache, Cisco ASA, Microsoft IIS, and Windows events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

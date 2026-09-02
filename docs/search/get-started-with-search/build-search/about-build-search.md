@@ -1,6 +1,6 @@
 ---
 id: about-build-search
-title: Discover What Data You Have in Sumo Logic
+title: Discover What Data You Can Search
 sidebar_label: Discover Your Data
 description: Identify what source categories, source hosts, and source names exist in your Sumo Logic environment before you write a search query.
 ---

@@ -1,6 +1,6 @@
 ---
 slug: /search/get-started-with-search/search-page
-title: Navigate and Interact with Sumo Logic Search Results
+title: Working with Search Results
 sidebar_label: Search Results
 description: Navigate, chart, and export your Sumo Logic search results, and interact with them to investigate issues faster.
 ---

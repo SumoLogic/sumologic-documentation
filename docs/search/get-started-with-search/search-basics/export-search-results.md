@@ -1,7 +1,7 @@
 ---
 id: export-search-results
 title: Export Search Results as a CSV File
-sidebar_label: Exporting Search Results
+sidebar_label: Export Search Results
 description: Export your search results in Sumo Logic to CSV or other formats to share insights, report findings, or use log data outside the platform.
 ---
 

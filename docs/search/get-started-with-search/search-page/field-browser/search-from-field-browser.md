@@ -1,7 +1,7 @@
 ---
 id: search-from-field-browser
 title: Search from the Field Browser
-description: Drilling down into a field from the Field Browser is seamless for non-aggregate queries.
+description: Click a field value in the Field Browser to add it to your query and drill down into non-aggregate search results without editing the query by hand.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

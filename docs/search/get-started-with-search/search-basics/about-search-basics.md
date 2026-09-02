@@ -1,6 +1,6 @@
 ---
 id: about-search-basics
-title: Run Your First Sumo Logic Search Query
+title: Run Your First Search Query
 sidebar_label: Run Your First Query
 description: Walk through running your first Sumo Logic search query, from a simple keyword search to a multi-step pipeline with parsing and aggregation.
 ---

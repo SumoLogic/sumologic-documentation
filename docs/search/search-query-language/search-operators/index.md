@@ -6,8 +6,11 @@ description: Process data in meaningful ways and provide logic to queries with s
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../../../reuse/mobot-callout.md';
 
 Search operators process data in meaningful ways and provide logic to queries. This page lists the available search operators in the Sumo Logic search query language.
+
+<MobotCallout/>
 
 In this section, we'll introduce the following concepts:
 

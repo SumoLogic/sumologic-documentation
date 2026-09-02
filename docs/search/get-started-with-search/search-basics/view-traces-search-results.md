@@ -1,7 +1,7 @@
 ---
 id: view-traces-search-results
 title: Open Trace Data from Search Results
-description: Open and review traces from log search results.
+description: Open and inspect distributed traces linked to your log search results to connect logs with the requests they belong to.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

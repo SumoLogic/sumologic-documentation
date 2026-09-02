@@ -1,8 +1,8 @@
 ---
 id: best-practices-search
-title: Best Practices for Log Search
+title: Best Practices for Searches
 sidebar_label: Best Practices
-description: Use these easy to follow rules to get the most out of your Sumo Logic searches.
+description: Follow these practices for scoping, time ranges, parsing, and operator order to write faster, more accurate Sumo Logic search queries.
 ---
 
 Use these easy-to-follow rules to get the most out of your Sumo Logic searches.

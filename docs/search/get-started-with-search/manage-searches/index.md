@@ -1,6 +1,6 @@
 ---
 slug: /search/get-started-with-search/manage-searches
-title: Managing Log Searches
+title: Managing Searches
 sidebar_label: Manage Searches
 description: Save, share, pin, favorite, pause, or cancel your Sumo Logic searches so you can reuse and revisit them later.
 ---

@@ -1,8 +1,7 @@
 ---
 id: built-in-metadata
-title: Built-in Metadata for Logs
-sidebar_label: Built-in Metadata
-description: Metadata tags are attached to your log messages at ingest, which is very useful when you're searching log data.
+title: Built-in Metadata
+description: Sumo Logic attaches built-in metadata fields like _sourceCategory and _sourceHost to every log message at ingest, so you can scope searches without parsing.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

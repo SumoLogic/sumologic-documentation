@@ -1,8 +1,7 @@
 ---
 id: comments-search-queries
-title: Add Comments to a Log Search Query
-sidebar_label: Add Comments to a Search Query
-description: You can add comments to a search query, or even comment out lines of your search query using comment formatting.
+title: Add Comments to a Search Query
+description: Add inline comments to a search query to document what each step does, or comment out lines to disable them without deleting them.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

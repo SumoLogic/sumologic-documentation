@@ -1,8 +1,7 @@
 ---
 id: use-url-to-run-search
-title: Use a URL to Run a Log Search
-sidebar_label: Use a URL to Run a Search
-description: You can create a custom URL to launch a log search in Sumo Logic.
+title: Use a URL to Run a Search
+description: Build a URL that opens the Log Search page with a query, time range, and run state already set, so you can share or bookmark a specific search.
 ---
 
 You can create a custom URL to launch a log search in Sumo Logic.

@@ -1,7 +1,7 @@
 ---
 id: pause-cancel-search
 title: Pause or Cancel a Search
-description: When a log search is in progress, the options to Cancel or Pause the search appear.
+description: Pause a running search to hold its progress, or cancel it to stop and free resources, using the controls that appear while a search is in progress.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

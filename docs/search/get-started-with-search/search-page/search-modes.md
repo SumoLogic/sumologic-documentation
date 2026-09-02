@@ -2,7 +2,7 @@
 id: search-modes
 title: Switch Between Basic and Advanced Search Modes
 sidebar_label: Search Modes
-description: Learn about the new search modes of our Log Search page.
+description: Switch between Basic and Advanced search modes on the Log Search page to build queries with guided controls or with full query syntax.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

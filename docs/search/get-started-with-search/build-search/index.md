@@ -1,8 +1,8 @@
 ---
 slug: /search/get-started-with-search/build-search
-title: How to Write and Run a Sumo Logic Search Query
+title: Building Searches
 sidebar_label: Build Searches
-description: Learn the UI mechanics of building a Sumo Logic search, including autocomplete, search modes, time ranges, and best practices for writing efficient queries.
+description: Build a Sumo Logic search using autocomplete, search modes, time ranges, and best practices for writing efficient, accurate queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

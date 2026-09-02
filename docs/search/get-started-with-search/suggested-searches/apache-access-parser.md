@@ -2,7 +2,7 @@
 id: apache-access-parser
 title: Suggested Searches for the Apache Access Parser
 sidebar_label: Apache Access Parser
-description: The following searches were built for use with the Apache Errors Parser.
+description: Prebuilt Sumo Logic search queries for the Apache access log parser, covering request volume, response codes, traffic, and client errors.
 ---
 
 

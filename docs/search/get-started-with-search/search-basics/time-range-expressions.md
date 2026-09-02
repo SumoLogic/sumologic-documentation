@@ -1,8 +1,7 @@
 ---
 id: time-range-expressions
-title: Time Range Expressions for Log Searches
-sidebar_label: Time Range Expressions
-description: When you are building a search query, you have the option to add a time range expression in the time range field.
+title: Time Range Expressions
+description: Type time range expressions like -15m, -1h, or absolute dates directly into the time range field to set a search window precisely.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

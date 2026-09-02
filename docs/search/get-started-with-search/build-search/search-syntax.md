@@ -1,7 +1,6 @@
 ---
 id: search-syntax-overview
-title: Log Search Syntax Overview
-sidebar_label: Search Syntax Overview
+title: Search Syntax Overview
 description: Understand the basic syntax used in Sumo Logic search queries to analyze log data efficiently and accurately.
 ---
 

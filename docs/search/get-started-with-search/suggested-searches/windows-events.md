@@ -2,7 +2,7 @@
 id: windows-events
 title: Suggested Searches for Windows Events
 sidebar_label: Windows Events
-description: The following searches were built for use with Windows 2008 Events.
+description: Prebuilt Sumo Logic search queries for Windows event logs, covering logins, account changes, and system errors.
 ---
 
 The following searches were built for use with Windows 2008 Events.

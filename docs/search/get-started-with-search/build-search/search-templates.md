@@ -1,8 +1,7 @@
 ---
 id: search-templates
-title: Log Search Templates
-sidebar_label: Search Templates
-description: Log search templates narrow down your queries into a few parameters that other users can edit to find the data they need.
+title: Search Templates
+description: Search templates narrow a query down to a few parameters that other users can edit to find the data they need, without rewriting the query.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

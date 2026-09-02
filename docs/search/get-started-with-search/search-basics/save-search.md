@@ -1,7 +1,7 @@
 ---
 id: save-search
 title: Save a Search
-sidebar_label: Save a Log Search
+sidebar_label: Save a Search
 description: Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run later.
 ---
 

@@ -2,7 +2,7 @@
 id: search-surrounding-messages
 title: View Messages Surrounding a Specific Log Entry
 sidebar_label: Search Surrounding Messages
-description: Surrounding messages allow you to investigate events surrounding a message.
+description: View the log messages recorded just before and after a specific entry to see the full context around an event.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

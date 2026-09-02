@@ -2,7 +2,7 @@
 id: use-searchable-time
 title: Run a Search Using Searchable Time to Avoid Ingestion Gaps
 sidebar_label: Use Searchable Time
-description: You can display search results in the order when the logs become available for search.
+description: Run a search by searchable time to order results by when each log became available to query, which helps you spot ingestion delays.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

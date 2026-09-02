@@ -2,11 +2,11 @@
 id: cisco-asa-parser
 title: Suggested Searches for the Cisco ASA Parser
 sidebar_label: Cisco ASA Parser
-description: These suggested searches cover some of the most common scenarios for monitoring issues on a Linux server.
+description: Prebuilt Sumo Logic search queries for the Cisco ASA parser, covering denied connections, outbound traffic, and detected attacks.
 ---
 
 
-These suggested searches cover some of the most common scenarios for monitoring Security, Audit, and Performance issues on a Linux server. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.
+These suggested searches cover some of the most common scenarios for monitoring security, audit, and performance issues on your Cisco ASA firewalls. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.
 
 Be sure to [save your search](../search-basics/save-search.md) queries if you plan to run them often.
 
