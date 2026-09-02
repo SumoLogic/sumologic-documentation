@@ -7,9 +7,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
 
 ***Version: 1.16  
-Updated: Aug 21, 2026***
+Updated: Sep 2, 2026***
 
-Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access management service, which helps your employees sign in and access resources.
+[Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id), formerly known as Azure Active Directory (Azure AD), is an identity and access management solution from Microsoft that helps organizations secure and manage identities in cloud and on-premises environments.
 
 ## Authentication modes
 
@@ -44,7 +44,6 @@ Use **Application** for most automation. Use **Delegated** only when Microsoft r
 * **List Of Group Members** *(Enrichment)* - Retrieve a list of members in a specific group.
 * **List Risky Users** *(Enrichment)* - Retrieve a list of risky users detected by Azure AD Identity Protection.
 * **List Users** *(Enrichment)* - List all users.
-* **Refresh Access Token** *(Enrichment)* - Exchanges a stored refresh token for a fresh access token without user interaction. (Delegated auth only).
 * **Remove Member From Group** *(Containment)* - Remove a user from a specific group.
 * **Reset User MFA** *(Containment)* - Reset the MFA authentication methods for a user, with an option to require re-enrollment at next sign-in.
 * **Reset User Password** *(Containment)* - Reset user password.
@@ -91,7 +90,7 @@ The integration is now ready for automated use. Re-authentication is only needed
 
 | Token | Lifetime | Notes |
 |-------|----------|-------|
-| `access_token` | 60–90 minutes | Refresh at the start of each playbook run |
+| `access_token` | 60–90 minutes | Short-lived; obtained during the Exchange Device Code step |
 | `refresh_token` | 90-day sliding window | Resets on each use; survives multiple access token exchanges |
 
 ## Configure Azure AD in Automation Service and Cloud SOAR
@@ -115,27 +114,16 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 * **Authentication Type**. Select `Application` (default) for client credential auth, or `Delegated` to enable Device Code Flow actions.
 
-* **Delegated Refresh Token**. Paste the refresh token obtained during the [delegated auth setup](#delegated-auth-setup-one-time). Used by **Refresh Access Token** when no token is mapped directly in the playbook.
+* **Delegated Refresh Token**. Paste the refresh token obtained during the [delegated auth setup](#delegated-auth-setup-one-time).
 
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-configuration.png')} style={{border:'1px solid gray'}} alt="Azure AD configuration" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/azure-ad/azure-ad-configuration.png')} style={{border:'1px solid gray', marginLeft: '1.5rem'}} alt="Azure AD configuration" width="400"/>
 
 For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID documentation](https://learn.microsoft.com/en-us/entra/identity/).
-
-## Playbook usage with delegated auth
-
-All 26 actions support both authentication types. For delegated playbooks, add **Refresh Access Token** as the first action and map its `access_token` output to the **Delegated Access Token** input of every subsequent action that requires it. This ensures a fresh token at the start of every run regardless of when the playbook executes.
-
-```
-[Start]
-  └─ Refresh Access Token
-       └─ access_token ──► Reset User Password With Writeback (Delegated Access Token)
-       └─ access_token ──► [other delegated actions]
-```
 
 ## Change Log
 
@@ -171,11 +159,10 @@ All 26 actions support both authentication types. For delegated playbooks, add *
       + Get Risky User
       + List Risky Users
     + Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.
-* August 21, 2026 (v1.16)
+* September 2, 2026 (v1.16)
     + Added Delegated (Device Code Flow) authentication support alongside existing Application (Client Credentials) auth.
     + Added New Actions (Delegated auth only):
       + Initiate Delegated Auth
       + Exchange Device Code
-      + Refresh Access Token
       + Reset User Password With Writeback
     + Added new integration resource fields: Authentication Type, Delegated Refresh Token.
