@@ -1,17 +1,23 @@
 ---
 id: style-guide
-title: Sumo Docs Style Guide
+title: Documentation Style Guide
 sidebar_label: Style Guide
-description: A guide to styling and formatting Sumo Logic Docs.
+description: The editorial style guide for Sumo Logic docs. Covers voice and tone, formatting, UI terminology, and Markdown and Docusaurus conventions for contributors.
+keywords:
+  - style guide
+  - documentation style guide
+  - voice and tone
+  - technical writing
+  - editorial conventions
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This is the editorial style guide for Sumo Logic documentation. Our docs are built with [Docusaurus](https://docusaurus.io/), a static site generator, and written in GitHub-flavored Markdown. It's for anyone who contributes docs — Docs Team or outside contributor.
+This is the editorial style guide for Sumo Logic documentation. Use it to keep docs consistent in voice, tone, terminology, and formatting, whether you're on the Docs Team or contributing from outside.
 
-Use it to keep our docs consistent in voice, tone, terminology, and formatting. It's a living document: if a rule or UI term you need isn't here, let us know and we'll add it.
+Our docs are built with [Docusaurus](https://docusaurus.io/), a static site generator, and written in GitHub-flavored Markdown. This is a living document: if a rule or UI term you need isn't here, let us know and we'll add it.
 
 :::tip
 To create a new doc quickly, use a [template](/docs/contributing/templates). Copy the file, add your content, and submit a PR. The Docs Team reviews submissions, suggests edits, adds new content to the navigation, and answers your questions.

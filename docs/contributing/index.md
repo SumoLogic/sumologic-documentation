@@ -1,18 +1,19 @@
 ---
 slug: /contributing
 title: Contribute to Sumo Docs
-description: Learn how to provide feedback and contribute to Sumo Logic Docs, an open-source project.
+description: Contribute to Sumo Logic's open-source documentation. Fix errors, clarify sections, add new docs, or share feedback through the GitHub fork-and-PR workflow.
+keywords:
+  - contribute to documentation
+  - open source docs
+  - documentation contribution
+  - GitHub docs
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Welcome to the Sumo Logic open source docs!
+This is the open-source home for Sumo Logic's documentation. Whether you're fixing a typo, clarifying a confusing section, adding a new doc, or sharing feedback, every contribution helps other users get more out of Sumo Logic, and we welcome contributors of every experience level.
 
-This [repository](https://github.com/SumoLogic/sumologic-documentation) is the open-source home for Sumo Logic's documentation. Whether you're fixing a typo, clarifying a confusing section, adding a new doc, or sharing feedback, every contribution helps other users get more out of Sumo Logic. We welcome contributors of every experience level.
-
-Our GitHub repo includes guidelines on creating files, writing in Markdown, using templates, and submitting Pull Requests (PRs). Ready to contribute? Explore the guides below.
-
-You can also explore more Sumo Logic open-source projects on our [GitHub site](https://github.com/SumoLogic).
+The [GitHub repository](https://github.com/SumoLogic/sumologic-documentation) includes guidelines on creating files, writing in Markdown, using templates, and submitting pull requests (PRs). Ready to contribute? Explore the guides below. You can also browse more Sumo Logic open-source projects on our [GitHub site](https://github.com/SumoLogic).
 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">

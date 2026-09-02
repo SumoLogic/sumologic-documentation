@@ -1,13 +1,19 @@
 ---
 id: create-edit-doc
 title: Create or Edit a Doc
-description: Learn how to create or edit a doc, write content in Markdown, and submit your changes to our GitHub repository.
+description: How to create or edit a Sumo Logic doc by forking the repo, writing in Markdown with Docusaurus components, previewing locally, and opening a pull request.
+keywords:
+  - create a doc
+  - edit documentation
+  - markdown
+  - contribute docs
+  - pull request
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-Discovered an error in a document? Learn how to submit a fix, along with a comprehensive guide on creating or editing a Sumo Logic document.
+This guide walks you through creating or editing a Sumo Logic doc: forking the repository, writing content in Markdown, previewing your changes locally, and submitting a pull request. Whether you're fixing a small error or adding a new page, the steps are the same.
 
 :::tip Recommended: Use Claude Code
 If you have [Claude Code](https://claude.ai/code) installed, this repo's `/doc`, `/audit-doc`, and `/seo-audit` slash commands can help you draft and review docs locally against your fork. See the [README](https://github.com/SumoLogic/sumologic-documentation#claude-code-tooling) for the full command list and which ones require internal access.
