@@ -52,7 +52,7 @@ Follow the learning path built for your role, self-paced or in a free live sessi
 
 ### Security paths
 
-Pick the path closest to your role and finish able to detect threats, investigate incidents, and respond with confidence.
+Pick the path closest to your role and learn to detect threats, investigate incidents, and respond with confidence.
 
 | Role | Learning Portal | Download |
 |---|---|---|
