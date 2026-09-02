@@ -128,8 +128,6 @@ We recommend using the new common variables instead of these legacy variables, w
 
 </details>
 
-
-
 ### Example payloads
 
 #### Slack payload
