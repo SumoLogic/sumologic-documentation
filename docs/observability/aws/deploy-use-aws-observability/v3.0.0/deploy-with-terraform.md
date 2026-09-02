@@ -88,7 +88,7 @@ Before you run the Terraform, perform the following actions on a server machine 
 
 Choose one of the following installation methods:
 
-### Option A: Install as a Terraform module (from registry)
+### Option A: Install as a Terraform module (from [registry](https://registry.terraform.io/modules/SumoLogic/aws-observability/sumologic/latest))
 
 Create a new working directory and configure the following files:
 
@@ -538,7 +538,7 @@ To perform overrides, see [Override collection parameters](#override-source-para
 
 Deploy the AWS Observability Solution using the Sumo Logic Terraform.
 
-* ##### Option A: Install as a Terraform module (from registry) - [View registry installation instructions](/docs/observability/aws/deploy-use-aws-observability/migration/terraform/#option-a-install-as-a-terraform-module-from-registry)
+* ##### Option A: Install as a Terraform module (from [registry](https://registry.terraform.io/modules/SumoLogic/aws-observability/sumologic/latest)) - [View registry installation instructions](/docs/observability/aws/deploy-use-aws-observability/migration/terraform/#option-a-install-as-a-terraform-module-from-registry)
 * ##### Option B: Install from the Repository - [View repository installation instructions](/docs/observability/aws/deploy-use-aws-observability/migration/terraform/#option-b-install-from-the-repository)
 
 ## Uninstalling the Solution

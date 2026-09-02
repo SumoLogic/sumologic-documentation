@@ -9,7 +9,7 @@ The Sumo Logic AWS Observability Terraform Solution reside in GitHub and updates
 
 To update the deployed solution, choose one of the following methods depending on how you originally installed the solution.
 
-## Option A: Update as a Terraform module (from registry)
+## Option A: Update as a Terraform module (from [registry](https://registry.terraform.io/modules/SumoLogic/aws-observability/sumologic/latest))
 
 If you installed the solution using the Terraform registry module, update the latest module version in your `main.tf` from registry page:
 

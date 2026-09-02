@@ -1,7 +1,7 @@
 ---
-slug: /observability/aws/deploy-use-aws-observability/migration/terraform
+id: migration-strategy-v2x-to-v300-terraform
 title: Migrate AWS Observability from v2.x to v3.0.0 using Terraform
-sidebar_label: Terraform
+sidebar_label: Migrate v2.x to v3.0.0
 description: Step-by-step guide to migrate your AWS Observability Terraform deployment from v2.x to v3.0.0.
 ---
 
@@ -45,7 +45,7 @@ rm -f terraform.tfstate terraform.tfstate.backup
 
 Choose one of the following installation methods:
 
-### Option A: Install as a Terraform module (from registry)
+### Option A: Install as a Terraform module (from [registry](https://registry.terraform.io/modules/SumoLogic/aws-observability/sumologic/latest))
 
 Create a new working directory and configure the following files:
 
@@ -135,19 +135,10 @@ terraform apply
 
 **Confirm no pending changes:**
 
-
 ```bash
 terraform plan
+# Must show: No changes. Infrastructure is up-to-date.
 ```
-
-Output
-```text
-Plan: 0 to add, 15 to change, 0 to destroy.
-```
-
-:::note
-The 15 changes are expected because the Sumo Logic provider resolves to the `latest` version instead of a specific numerical version.
-:::
 
 **Confirm sources are collecting in Sumo Logic:**
 

@@ -2113,7 +2113,7 @@ module.exports = {
                         'observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-manual',
                       ],
                     },
-                    'observability/aws/deploy-use-aws-observability/migration/terraform',
+                    'observability/aws/deploy-use-aws-observability/migration/terraform/migration-strategy-v2x-to-v300-terraform',
                   ],
                 },
                 'observability/aws/deploy-use-aws-observability/changelog',
@@ -2127,6 +2127,7 @@ module.exports = {
               link: {type: 'doc', id: 'observability/aws/other-configurations-tools/index'},
               items: [
                 'observability/aws/other-configurations-tools/integrate-control-tower-accounts',
+                'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/backfill-aws-account-alias',
               ],
             },
             {

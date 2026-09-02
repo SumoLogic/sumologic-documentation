@@ -18,16 +18,14 @@ Given that we use an account alias, we recommend you use StackSets to automati
 
 ## Step 1: Open the CloudFormation template
 
-1. Sign in to the AWS Management console.
-1. Choose an option to invoke AWS CloudFormation Template:
-    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-    * Download the AWS Observability Solution template (S3 link for CloudFormation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
+1. Sign in to the [AWS Management Console](https://console.aws.amazon.com/).
+1. Copy the S3 URL for the AWS Observability Solution CloudFormation template, or download it directly:
+    ```
+    https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml
+    ```
+    You will use this template when creating your StackSet.
     :::note
     If you would like to download or inspect this or other versions of this template, see the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).
-    :::
-1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
-    :::danger
-    This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
 1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.
 
