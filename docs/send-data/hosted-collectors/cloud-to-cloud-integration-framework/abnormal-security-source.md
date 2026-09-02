@@ -53,7 +53,7 @@ To configure an Abnormal Security Source, follow the steps below:
 1. Additionally, if you like to collect the case data, enter **cases** in the **Supported APIs to collect** section. Threat data will be collected by default. But, if you like to collect only case data, you can unselect **threats** from the **Supported APIs to collect** section.
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
+:::tip
 After configuring the Abnormal Security source, consider installing the Sumo Logic app for [Abnormal Security](/docs/integrations/saas-cloud/abnormal-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -95,3 +95,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Abnormal Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/) to automate response actions directly from Cloud SOAR playbooks.

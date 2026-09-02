@@ -23,11 +23,13 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Logs Search Recommendation helps you discover and reuse existing [macros](/docs/manage/macro) directly from the Log Search query editor. As you type, a <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button appears near the editor and surfaces macros whose names or definitions match the expression you are building, so you can insert existing query logic without leaving the editor or remembering exact macro names.
+Logs Search Recommendation helps you discover and reuse existing [macros](/docs/manage/macro) directly from the Log Search query editor. As you type, a <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button appears near the editor with a numbered badge showing how many macro suggestions are available, and a **Recommendations Available** tooltip appears when you hover over it. The feature surfaces macros whose names or definitions match the expression you are building, so you can insert existing query logic without leaving the editor or remembering exact macro names.
 
 ## How it works
 
-When you begin typing a query in Log Search, the recommendation engine compares your partial expression against the macros defined in your organization. If a match is found, the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button activates near the query editor. Clicking it opens a suggestion panel listing the matching macros, each with an **Accept** and a **Remove** button.
+When you begin typing a query in Log Search, the recommendation engine compares your partial expression against the macros defined in your organization. If a match is found, the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button activates near the query editor, with a badge showing the number of available suggestions. The portion of your query that could be replaced is highlighted in red directly in the editor, with a preview of the macro reference that would replace it highlighted in green underneath.
+
+Clicking the button opens a **Recommendations** panel listing the matching macros. Each entry is titled **Use Macro: `<macro_name>`** with the description "Replace the portion highlighted in red to use the existing macro like this," along with an **Accept** and a **Remove** button.
 
 - **Accept**. Inserts the macro reference into your query at the current cursor position using backtick syntax (`` `macro_name` ``). After a macro is accepted, the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button changes to the <img src={useBaseUrl('img/search/log-search-eye-icon.png')} alt="Eye button" width="25" /> button.
 - **Remove**. Dismisses that specific suggestion from the list without inserting it.
@@ -53,7 +55,7 @@ Suggestions are scoped to your organization's macros and respect your role-based
 1. Run your query as usual.
 
 :::tip
-To learn more about creating and managing macros, see [Macros](/docs/manage/macro). For general query autocompletion and syntax suggestions, see [Logs Query Assist](/docs/search/query-assist).
+To learn more about creating and managing macros, see [Macros](/docs/manage/macro). For general query autocompletion and syntax suggestions, see [Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete).
 :::
 
 ## Limitations
@@ -80,9 +82,9 @@ Each macro in the recommendation panel has an <img src={useBaseUrl('img/search/l
 
 The <img src={useBaseUrl('img/search/log-search-eye-icon.png')} alt="Eye button" width="25" /> button appears in place of the <img src={useBaseUrl('img/search/log-search-recommendations.png')} alt="Macro recommendations button" width="25" /> button after you accept a macro suggestion. Clicking it displays the definition of the accepted macro.
 
-### How is Logs Search Recommendation different from Logs Query Assist?
+### How is Logs Search Recommendation different from Search Autocomplete?
 
-[Logs Query Assist](/docs/search/query-assist) provides real-time syntax suggestions, operator completions, and schema-based field hints as you type. Logs Search Recommendation focuses specifically on surfacing your organization's saved [macros](/docs/manage/macro) when your expression partially matches one, helping you reuse complex, predefined query logic.
+[Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) provides real-time syntax suggestions, operator completions, and schema-based field hints as you type. Logs Search Recommendation focuses specifically on surfacing your organization's saved [macros](/docs/manage/macro) when your expression partially matches one, helping you reuse complex, predefined query logic.
 
 ### Do you need special permissions to see macro suggestions?
 

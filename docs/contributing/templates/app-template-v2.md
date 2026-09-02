@@ -4,14 +4,23 @@ title: Apps Template
 description: Use this template to create an App Catalog doc (/docs/integrations/...).
 ---
 
-Use this template to create an [App Catalog](/docs/integrations) doc. Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+Use this template to create an [App Catalog](/docs/integrations) doc.
+
+:::tip Recommended: Use Claude Code
+Skip copying this template by hand. If you have [Claude Code](https://claude.ai/code) installed, use the `/app-doc` slash command to scaffold a new app doc for you. See the [README](https://github.com/SumoLogic/sumologic-documentation#claude-code-tooling) for the full command list.
+:::
+
+Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
 
 ```md
 
 ---
-id: vendor-name #example: acme
-title: Vendor Name #example: Acme
-image: 'https://app_icons.s3.amazonaws.com/dropbox.svg' #replace with your app logo
+id: {{vendor-name}} #example: acme
+title: {{Vendor Name}} #example: Acme
 tags:
   - apps
   - vendor-name #example: acme
@@ -20,7 +29,7 @@ description: 'The Sumo Logic app for {{vendor name}} analyzes...' #Aim for 140â€
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-\Introduction: The Sumo Logic app for `{{vendor name}}`, which `{{vendor description}}` enables you to `{{verb}}` `{{data type}}` from `{{vendor name}}`. This integration helps you `{{business value, security, performance outcome}}`, providing visibility into `{{specific activities, events, or metrics}}`. With this data in Sumo Logic, you can `{{key use cases}}`.\
+\Introduction: The Sumo Logic app for `{{vendor name}}`, which `{{vendor description}}`, enables you to `{{verb}}` `{{data type}}` from `{{vendor name}}`. This integration helps you `{{business value, security, performance outcome}}`, providing visibility into `{{specific activities, events, or metrics}}`. With this data in Sumo Logic, you can `{{key use cases}}`.\
 
 <!-- Example: The Sumo Logic app for Acme, a solution that provides visibility into web transactions, helps you to monitor and analyze web traffic through Acme's security cloud services in real-time or over a specified period. By aggregating data on transactions, user behavior, operating systems, locations, and more, our app offers insights to detect security threats, manage traffic, optimize response times, and ensure compliance. With customizable dashboards and reports, it supports you in maintaining a strong security posture while using cloud applications and services.-->
 

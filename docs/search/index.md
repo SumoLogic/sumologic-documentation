@@ -93,8 +93,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/query-assist')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="35"/><h4>Logs Query Assist</h4></a>
-  <p>Learn how Logs Query Assist makes it easier to discover relevant fields and minimize errors.</p>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-basics/search-autocomplete')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="35"/><h4>Search Autocomplete</h4></a>
+  <p>Learn how search autocomplete makes it easier to discover relevant fields and minimize errors.</p>
   </div>
 </div>
 <div className="box smallbox card">
