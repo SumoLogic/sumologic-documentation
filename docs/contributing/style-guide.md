@@ -973,6 +973,12 @@ Use exclamation points to express excitement or encourage the user. Don't use th
 
 Use ellipses for truncation. Don’t use ellipses for placeholders or trailing off a sentence unless it is getting cut off. When truncating, think about which part of the string is most essential for the user. This may require truncating in the beginning, middle, or end of a string.
 
+### Dashes
+
+**Em dash (—)**. Use sparingly. Insert the em dash symbol (—) directly — do not use a double hyphen (--) as a substitute.
+
+**En dash (–)**. Use for date and time ranges: "June 1–15", "9:00–5:00 pm". Insert the en dash symbol (–) directly.
+
 ### Periods
 
 In the UI, avoid periods for single sentences on their own. Whenever there are two or more sentences, use periods at the end of each sentence. Separate sentences by one space, not two.

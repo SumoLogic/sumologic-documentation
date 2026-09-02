@@ -35,7 +35,13 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Amazon S3 Audit source](/docs/send-data/hosted-collectors/amazon-aws/amazon-s3-audit-source)**. The Amazon S3 Audit source, also called Server Access Logging, tracks and collects your Amazon S3 bucket's activity logs.
 
+**[Analyst](/docs/get-started/onboarding-checklists#onboarding-checklist-for-analysts)**. A Sumo Logic user role for non-administrators who primarily search logs, build dashboards, investigate data, and monitor their environment. Analyst capabilities are determined by the roles and permissions assigned to them.
+
+**[Audit Index](/docs/manage/security/audit-indexes/audit-index)**. A Sumo Logic index that stores event logs about internal account activities such as account management, throttling, and scheduled searches. Administrators must enable the Audit Index before it can be queried using `_index=sumologic_audit`.
+
 **[Apps](/docs/integrations)**. Sumo Logic apps (short for applications) deliver out-of-the-box dashboards, reports, saved searches, and field extraction for popular data sources, such as AWS, Windows, Apache, and many more. When a customer installs an app in Sumo Logic, preconfigured searches and dashboards are customized with the customer's source configurations and populated in a folder. Customers then can monitor their system's behavior visually using the dashboards.
+
+**[Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge)**. A component of the Automation Service that you install in your on-premises environment to run custom actions and integrations outside the Sumo Logic cloud.
 
 **[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur.
 
@@ -63,6 +69,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 [**Cloud SOAR**](/docs/cloud-soar). A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
 
+**[Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. A fully-managed collection system that collects logs and events directly from SaaS and cloud platforms such as Salesforce, Microsoft 365, and Okta. The framework handles authentication, scheduling, and state tracking automatically. Also referred to as C2C.
+
 <!--
 **[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
 -->
@@ -84,6 +92,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Data Forwarding](/docs/manage/data-forwarding)**. When enabled, the Data Forwarding feature allows Sumo Logic to upload data to an Amazon S3 bucket that belongs to your organization. Log messages are saved as CSV files in compressed gzip files. They are accumulated and returned right after being ingested by Sumo Logic.
 
+**[Data Tiers](/docs/manage/partitions/data-tiers)**. A Sumo Logic feature that lets you allocate log data to one of three storage tiers — Continuous, Frequent, or Infrequent — based on how often you need to access it. All data defaults to the Continuous tier; only data stored in partitions can be assigned to the Frequent or Infrequent tier.
+
 **[Data type](/docs/get-started/faq)**. A data type is a specific type of log used with a Sumo Logic source or app, such as Apache, MySQL, or Windows IIS. You can also use a custom data type for a custom application.
 
 **[Data volume index](/docs/manage/ingestion-volume/data-volume-index)**. The data volume index automatically provides data that allows you to understand your account’s data ingest volume in bytes and number of log messages processed overall. The data volume index gives you better visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
@@ -99,6 +109,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Disabled metric source](/docs/metrics/manage-metric-volume/disabled-metrics-sources)**. A metric source that Sumo Logic has disabled because it has received too many unique time series. A disabled metric source will stop receiving data, and that data cannot be recovered.
 
 **[DPM](/docs/metrics/manage-metric-volume/data-limits-for-metrics)**. Stands for data points per minute. Metric data volume is measured in DPM. For example, a CPU metric reported on a single host every 15 seconds produces 4 DPM.
+
+**[Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing)**. A Sumo Logic feature that automatically extracts fields from JSON log messages at search time, without requiring manual parse rules. Also called Auto Parse — "Dynamic Parsing" is used in documentation and the API, while "Auto Parse" appears in the UI.
 
 
 
@@ -122,11 +134,17 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Fields](/docs/manage/fields)**. Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as log metadata fields.
 
+**[`fields` operator](/docs/search/search-query-language/search-operators/fields)**. A search operator that selects which fields to include or exclude from query results. Use allowlist mode to keep only specified fields, or denylist mode to drop specified fields and return the rest.
+
 **[Field extraction rule](/docs/manage/field-extractions)**. Field extraction can be set up as rules that parse out fields as log messages are ingested. This means that instead of running a query to parse out fields, that work is done automatically so when it's time to run a search the fields are already available in results.
 
 **[Fingerprint](/docs/send-data/installed-collectors/configuration/#fingerprint)**. A fingerprint consists of the first 2048 bytes of a file and is used by installed collectors to track what data has been collected.
 
+**[Flex Account](/docs/manage/manage-subscription/sumo-logic-flex-accounts)**. Sumo Logic's credit-based account packaging, available as Free, Trial, Essentials, or Enterprise Suite Flex. All Flex account types use [credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) as the unit of measure for data ingested, stored, and scanned.
+
 **[Flow graph](/docs/integrations/amazon-aws/guardduty-benchmark)**. A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](/docs/integrations/amazon-aws/guardduty-benchmark) dashboard.
+
+**[`formatDate` operator](/docs/search/search-query-language/search-operators/formatdate)**. A search operator that converts a timestamp in milliseconds to a human-readable date string in the format you specify, such as `yyyy-MM-dd` or `MM/dd/yyyy HH:mm:ss`.
 
 
 ## G
@@ -141,6 +159,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 
 ## H
+
+**[Health Events](/docs/manage/health-events)**. System events that Sumo Logic generates automatically when it detects an issue with a Collector or Source, or when a usage threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules. Health Events give administrators visibility into collection health and help investigate data ingestion errors and warnings.
 
 **[Hash rules](/docs/send-data/collection/processing-rules/hash-rules)**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
@@ -183,11 +203,15 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Logs for Security](/docs/security/additional-security-features)**. Sumo Logic's full set of features that leverage logs for security use cases, including pre-built dashboards, out-of-the-box security apps, and robust query capabilities for analyzing security log and event data.
 
+**[Log Analysis Agent](/docs/search/mobot)**. One of the specialized agents that powers [Mobot](/docs/search/mobot). The Log Analysis Agent interprets intent, guides investigations, and surfaces relevant data from your logs through natural language. Formerly called the Query Agent.
+
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
 **[LogReduce](/docs/search/behavior-insights/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.
+
+**[Lookup Table](/docs/search/lookup-tables)**. A table of reference data hosted in Sumo Logic that you can join to log search results to enrich them with additional context — for example, mapping a user ID in a log to an email address, department, or other attribute stored in the table.
 
 
 
@@ -199,6 +223,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Markdown](/docs/dashboards/panels/markdown-syntax)**. Used in dashboards, you can add text panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting.
 
 **[Mask rule](/docs/send-data/collection/processing-rules/mask-rules)**. Mask rules are a type of processing rule that replaces an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
+
+**[MCP Server, Sumo Logic](/docs/api/mcp-server)**. A Sumo Logic service that lets MCP-compatible AI clients — such as Claude Code, developer IDEs, and enterprise AI platforms — connect to Sumo Logic using natural language to query logs, investigate Cloud SIEM insights, manage alerts, and more.
 
 **[Messages tab](/docs/search/get-started-with-search/search-page/set-messages-tab-preferences)**. When you run a search query, messages display in the Messages tab in the lower half of the browser window of the Search page.
 
@@ -220,7 +246,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Microservices](/docs/integrations/app-development)**. The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 -->
 
-**[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. It uses a suite of specialized agents to help you search, analyze, and learn about your data using natural language.
+**[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. Ask questions in natural language to search logs, investigate security insights, get platform guidance, and more. Mobot automatically routes questions to specialized agents based on your intent.
 
 **[Monitor](/docs/alerts/monitors/overview)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
 
@@ -249,11 +275,23 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[`parse` operator](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor)**. A search operator that extracts fields from strings. `parse` (also called `parse anchor`) uses literal start and stop anchors; `parse regex` (also called `extract`) uses a regular expression.
 
+**[`parse json` operator](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs)**. A search operator that extracts values from JSON-formatted log messages using JSONPath expressions. Supports single fields, multiple fields, nested keys, and array elements.
+
+**[`parse keyvalue` operator](/docs/search/search-query-language/parse-operators/parse-keyvalue-formatted-logs)**. A search operator that extracts values from key-value pair formatted log messages by specifying the key you want to retrieve. Also written as `keyvalue`.
+
+**[`parse nodrop` option](/docs/search/search-query-language/parse-operators/parse-nodrop-option)**. A parse option that forces results to include messages that do not match the parse expression. Without `nodrop`, non-matching messages are dropped from results.
+
+**[`parse regex` operator](/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex)**. A search operator that uses regular expressions with named capturing groups to extract complex or nested fields from log messages. Also written as `extract`.
+
 **[Parser](/docs/cse/schema/parser-editor)**. In Cloud SIEM, a script that parses logs and normalizes them into structured records.
 
 **[Partition](/docs/manage/partitions)**. Sumo Logic allows you to filter a subset of the messages in an index into a partition. Partitioning messages in an index improves search query performance, as the total number of messages that need to be searched is reduced. Once messages are routed to a partition, you can limit your search to those messages using the partition name in a search query.
 
 **[Pinned searches](/docs/get-started/library)**. The pinned search feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the Library on the Recent tab in a folder named Pinned Searches.
+
+**[Platform Optimization Agent](/docs/search/mobot)**. One of the specialized agents that powers [Mobot](/docs/search/mobot). The Platform Optimization Agent answers how-to questions about Sumo Logic, helps troubleshoot issues, and helps users get more from the platform, drawing on official Sumo Logic documentation. Formerly called the Knowledge Agent.
+
+**[Playbook](/docs/platform-services/automation-service/playbooks)**. In the Automation Service, a predefined set of actions and conditional statements that run as an automated workflow in response to a security event or incident. Playbooks can run automatically without user intervention or in interactive mode, where a user must authorize specific actions.
 
 **[Processing rules](/docs/send-data/collection/processing-rules)**. A Sumo Logic feature you can use to filter or forward log data ingested by Sumo Logic from a Sumo Logic source. You can use processing rules to include or exclude messages, and to mask or hash sensitive information in logs. You can also forward matching messages to external destinations, including AWS S3.
 
@@ -262,7 +300,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 ## Q
 
-**[Quantization](/docs/metrics/introduction/metric-quantization)**. The process by which Sumo Logic aggregates raw metric data points over a particular time bucket. Similar to “timeslice” in logs, Sumo Logic will automatically bucket your datapoints into quantization intervals based on the timerange of your search. For example, 5 second quantization intervals for a 15-minute search and 15 seconds for a 60-minute search.
+**[Quantization](/docs/metrics/introduction/metric-quantization)**. The process by which Sumo Logic aggregates raw metric data points over a particular time bucket. Similar to “timeslice” in logs, Sumo Logic will automatically bucket your datapoints into quantization intervals based on the time range of your search. For example, 5 second quantization intervals for a 15-minute search and 15 seconds for a 60-minute search.
 
 **[`quantize` operator](/docs/metrics/metrics-operators/quantize/)**. A metrics operator that sets the size of the time buckets Sumo Logic aggregates metrics into, and the aggregation method for each bucket. It is the metrics-query counterpart of the `timeslice` search operator.
 
@@ -274,6 +312,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time)**. You can display search results in the order that the collector received the messages in milliseconds.
 
 **[RBAC](/docs/manage/users-roles/roles/role-based-access-control/)**. Sumo Logic supports Role-Based Access Control (RBAC) to allow administrators to customize system access. With RBAC, administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
+
+**[Real User Monitoring (RUM)](/docs/apm/real-user-monitoring)**. A Sumo Logic APM capability that captures end-to-end user transactions directly in the browser using OpenTelemetry instrumentation. RUM records performance timings, rendering events, errors, and user cohort data so you can understand the quality of your web application experience.
 
 **[Record](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, a collection of normalized data created from a message.
 
@@ -289,7 +329,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Rollup tables](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage)**. Metric data is stored in Sumo Logic as raw data points, and aggregated over one minute and one hour resolutions. The one minute and one hour aggregated metrics are referred to as rollup tables. Raw data is retained for 7 days, one-minute rollups for 30 days and one-hour rollups for 13 months.
 
-**[Rule](/docs/cse/rules/about-cse-rules)**. In Cloud SIEM, set of logic that creates signals based on information in incoming records.
+**[Rule](/docs/cse/rules/about-cse-rules)**. In Cloud SIEM, a set of logic that fires on incoming records and creates signals when its conditions are met. Cloud SIEM includes six rule types: **Match** (fires on a single record match), **Threshold** (fires when a record matches a minimum number of times in a time window), **Chain** (fires on combinations of event types over a time window), **Aggregation** (fires when aggregation conditions are met), **First Seen** (fires when an entity exhibits a behavior for the first time), and **Outlier** (fires when entity behavior deviates from its established baseline).
 
 
 
@@ -311,6 +351,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met.
 
+**[SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent)**. An AI-powered Cloud SIEM feature that automatically investigates security insights, delivers evidence-backed verdicts (malicious, suspicious, or benign), and surfaces key findings from triggered signals to help security analysts triage faster and reduce false-positive noise.
+
 **[Sources](/docs/send-data)**. Sources are configured on Sumo Logic collectors and collect customer data.
 
 **[Suppressed signal](/docs/cse/records-signals-entities-insights/about-signal-suppression)**. In Cloud SIEM, a signal that the insight algorithm excludes from the insight generation process. A suppressed signal does not contribute to or become part of an insight. By default, signals are automatically suppressed for 72 hours.
@@ -325,6 +367,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 ## T
 
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all collectors in an account to not exceed the allowable rate.
+
+**[Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence)**. A Sumo Logic feature that lets you ingest and query threat indicators — data points about known threats such as malicious IP addresses, file hashes, and hostnames — to enrich log searches and Cloud SIEM detections. Indicators come from Sumo Logic-managed sources or custom sources you configure.
 
 **[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
