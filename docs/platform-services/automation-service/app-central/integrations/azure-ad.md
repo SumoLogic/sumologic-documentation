@@ -16,7 +16,7 @@ Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access
 The integration supports two authentication types, configured via the **Authentication Type** field in the integration resource:
 
 | Mode | When to use                                                                                                                                                                                                      |
-|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:------|:----------|
 | **Application (Client Credentials)** | Uses `client_id` + `client_secret`. Works for all standard actions except **Reset User Password With Writeback**.                                                                                               |
 | **Delegated (Device Code Flow)** | Actions that require a signed-in user's context, such as **Reset User Password With Writeback**, which requires the Privileged Auth Admin role. Tokens are scoped to the user who completes the browser sign-in. |
 
