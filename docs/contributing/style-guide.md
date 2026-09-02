@@ -42,6 +42,10 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * [Partner app template](/docs/contributing/templates/partner-app-doc)
 :::
 
+:::tip Recommended: Use Claude Code
+If you have [Claude Code](https://claude.ai/code) installed, this repo's `sumo-style` skill automatically applies the conventions on this page when you draft or edit docs — you don't need to invoke it manually. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for details.
+:::
+
 ## Voice and tone
 
 * **Clarity and professionalism**. We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
@@ -1608,7 +1612,7 @@ For clarity and search engine discoverability:
    * Example: _System architecture and monitoring_.
 
 :::sumo For internal contributors
-* If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-1-create-a-301-redirect) so that users don’t get a 404 page.
+* If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-2-create-a-301-redirect) so that users don’t get a 404 page.
 * Use Google Analytics to make data-driven decisions.
 :::
 
