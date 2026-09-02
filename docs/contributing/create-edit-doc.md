@@ -1,13 +1,19 @@
 ---
 id: create-edit-doc
 title: Create or Edit a Doc
-description: Learn how to create or edit a doc, write content in Markdown, and submit your changes to our GitHub repository.
+description: How to create or edit a Sumo Logic doc by forking the repo, writing in Markdown with Docusaurus components, previewing locally, and opening a pull request.
+keywords:
+  - create a doc
+  - edit documentation
+  - markdown
+  - contribute docs
+  - pull request
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-Discovered an error in a document? Learn how to submit a fix, along with a comprehensive guide on creating or editing a Sumo Logic document.
+This guide walks you through creating or editing a Sumo Logic doc: forking the repository, writing content in Markdown, previewing your changes locally, and submitting a pull request. Whether you're fixing a small error or adding a new page, the steps are the same.
 
 :::tip Recommended: Use Claude Code
 If you have [Claude Code](https://claude.ai/code) installed, this repo's `/doc`, `/audit-doc`, and `/seo-audit` slash commands can help you draft and review docs locally against your fork. See the [README](https://github.com/SumoLogic/sumologic-documentation#claude-code-tooling) for the full command list and which ones require internal access.
@@ -112,11 +118,9 @@ The Docs Team can help you add your doc to the sidebar and top navigation. If yo
 
 ### Step 5: Add doc to the hub page
 
-Hub pages are `/index` pages that display all docs in that section in card view. Some cards are sorted by alphabetical order, and some are sorted by importance and/or ranking.
+Hub pages are section `/index` pages that display the docs in that section as a grid of cards. Some sections order cards alphabetically; others lead with the most important docs.
 
-As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="Hub Card Style icon" />
-
-Once you decide on placement, use the card HTML code in that doc to create a new entry.
+Open the section's `index.md` and add a card for your doc: copy an existing `<div className="box smallbox card">` block inside the page's `<div className="box-wrapper">`, then update the link, icon, title, and description. Match the existing card order.<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="Hub card style" /><br/>See [Hub pages](/docs/contributing/style-guide/#hub-pages) in the style guide for the full card markup.
 
 ### Step 6: Create CID URL
 

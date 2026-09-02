@@ -1,7 +1,12 @@
 ---
 id: glossary
 title: Glossary
-description: Definitions of Sumo Logic terms and features you'll encounter in the documentation.
+description: Definitions of Sumo Logic terms, features, and product components you'll encounter across the documentation.
+keywords:
+  - glossary
+  - definitions
+  - Sumo Logic terms
+  - terminology
 ---
 
 This glossary defines Sumo Logic terms you're likely to encounter in our documentation. It doesn't cover general industry terms unless they're also Sumo Logic features.
