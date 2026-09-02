@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-sandbox.png')} alt="CrowdStrike Falcon Sandbox icon" width="100"/>
 
-***Version: 1.5  
+***Version: 1.6  
 Updated: September 2, 2026***
 
 [CrowdStrike Falcon® Sandbox](https://www.crowdstrike.com/en-gb/resources/data-sheets/falcon-sandbox/) defeats even the most evasive malware by running in the kernel and using sophisticated sandbox techniques that make it nearly undetectable. It exposes the most advanced targeted attacks, going beyond common static and dynamic file analysis to monitor all malicious behavior and system interaction. This allows Falcon Sandbox to deliver the most extensive set of indicators of compromise (IOCs) in the industry.
@@ -63,4 +63,4 @@ For information about CrowdStrike Falcon Sandbox, see [CrowdStrike documentation
 * June 27, 2023 (v1.2) - Updated the integration with Environmental Variables
 * July 14, 2023 (v1.3) - Changed fields visibility
 * March 31, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* September 2, 2026 (v1.5) - Added OAuth 2.0 (Client Credentials) authentication support and new Check Submission Status action.
+* September 2, 2026 (v1.6) - Added OAuth 2.0 (Client Credentials) authentication support and new Check Submission Status action.
