@@ -55,7 +55,7 @@ Follow the learning path built for your role, self-paced or in a free live sessi
 Pick the path closest to your role and learn to detect threats, investigate incidents, and respond with confidence.
 
 | Role | Learning Portal | Download |
-|---|---|---|
+|:---|:---:|:---:|
 | SOC/Security Analyst | <a href="https://learn.sumologic.com/path/soc-security-analyst-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/soc-security-analyst-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
 | Cloud Security Architect | <a href="https://learn.sumologic.com/path/cloud-security-architect-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/cloud-security-architect-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
 | SOC Administrator | <a href="https://learn.sumologic.com/path/soc-administrator-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/soc-administrator-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
