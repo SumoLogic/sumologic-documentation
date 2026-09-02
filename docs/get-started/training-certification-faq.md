@@ -65,7 +65,7 @@ Pick the path closest to your role and learn to detect threats, investigate inci
 Pick the path closest to your role and learn to monitor, troubleshoot, and keep systems reliable at scale.
 
 | Role | Learning Portal | Download |
-|---|---|---|
+|:---|:---:|:---:|
 | DevOps/IT Contributor | <a href="https://learn.sumologic.com/path/dev-ops-it-contributor-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/dev-ops-it-contributor-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
 | Log Analyst/SRE | <a href="https://learn.sumologic.com/path/log-analyst-sre-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/log-analyst-sre-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
 | IT Ops Leader | <a href="https://learn.sumologic.com/path/it-ops-leader-learning-path" target="_blank" className="button button--secondary button--sm">Start path</a> | <a href={useBaseUrl('files/learning-paths/it-ops-leader-learning-path.pdf')} target="_blank" className="button button--secondary button--outline button--sm">Download PDF</a> |
