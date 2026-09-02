@@ -637,19 +637,14 @@ export default function AskAiSidepanel({
   const handleFeedbackButtonClick = React.useCallback(
     (btn: HTMLButtonElement) => {
       const title = btn.getAttribute('title')?.toLowerCase() ?? '';
-      const isNegativeFeedback = title.includes('dislike');
-      if (!isNegativeFeedback) {
+      if (!title.includes('dislike')) {
         return false;
       }
 
       const { question, answer } = getFeedbackContext(btn);
-
       setFeedbackDetails('');
       setFeedbackSubmitError('');
-      setFeedbackModal({
-        question,
-        answer,
-      });
+      setFeedbackModal({ question, answer });
       return true;
     },
     [getFeedbackContext]
@@ -730,41 +725,35 @@ export default function AskAiSidepanel({
     setFeedbackSubmitError('');
 
     try {
-      if (feedbackFormUrl) {
-        const formConfig = parseGoogleFormConfig(feedbackFormUrl);
-        if (!formConfig) {
-          throw new Error('Invalid Google Form feedback URL');
-        }
-
-        const formValues: Record<FeedbackFormField, string> = {
-          created_at: new Date().toISOString(),
-          question: payload.question,
-          answer: payload.answer,
-          details: payload.details,
-          page_url: payload.url,
-          client_timestamp: payload.timestamp,
-        };
-
-        const formData = new URLSearchParams();
-        formConfig.fields.forEach((field) => {
-          const entryKey = formConfig.entryMap[field];
-          if (!entryKey) return;
-          formData.append(entryKey, formValues[field]);
-        });
-
-        await fetch(formConfig.actionUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: formData,
-        });
+      const formConfig = parseGoogleFormConfig(feedbackFormUrl);
+      if (!formConfig) {
+        throw new Error('Invalid Google Form feedback URL');
       }
 
-      window.dispatchEvent(
-        new CustomEvent('ask-ai-feedback-submitted', {
-          detail: payload,
-        })
-      );
+      const formValues: Record<FeedbackFormField, string> = {
+        created_at: new Date().toISOString(),
+        question: payload.question,
+        answer: payload.answer,
+        details: payload.details,
+        page_url: payload.url,
+        client_timestamp: payload.timestamp,
+      };
 
+      const formData = new URLSearchParams();
+      formConfig.fields.forEach((field) => {
+        const entryKey = formConfig.entryMap[field];
+        if (entryKey) formData.append(entryKey, formValues[field]);
+      });
+
+      await fetch(formConfig.actionUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData,
+      });
+
+      window.dispatchEvent(
+        new CustomEvent('ask-ai-feedback-submitted', { detail: payload })
+      );
       closeFeedbackModal();
       setFeedbackSubmittedNotice('Additional feedback submitted.');
     } catch (error) {
@@ -776,12 +765,7 @@ export default function AskAiSidepanel({
     } finally {
       setIsSubmittingFeedback(false);
     }
-  }, [
-    closeFeedbackModal,
-    feedbackDetails,
-    feedbackFormUrl,
-    feedbackModal,
-  ]);
+  }, [closeFeedbackModal, feedbackDetails, feedbackFormUrl, feedbackModal]);
 
   // Handle submit button state based on textarea content
   useEffect(() => {
@@ -992,9 +976,7 @@ export default function AskAiSidepanel({
                 value={feedbackDetails}
                 onChange={(e) => {
                   setFeedbackDetails(e.target.value);
-                  if (feedbackSubmitError) {
-                    setFeedbackSubmitError('');
-                  }
+                  if (feedbackSubmitError) setFeedbackSubmitError('');
                 }}
               />
               <p className="ask-ai-feedback-note">
@@ -1021,7 +1003,7 @@ export default function AskAiSidepanel({
                   {isSubmittingFeedback ? 'Submitting...' : 'Submit'}
                 </button>
               </div>
-            </div>,
+            </div>
           </div>,
           document.body
         )}

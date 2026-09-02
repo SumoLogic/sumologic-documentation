@@ -133,10 +133,8 @@ module.exports = {
   ],
   customFields: {
     askAi: {
-      // Keep Algolia Ask AI feedback targets out of source control.
-      // This Google Form is a shared public collection endpoint for Algolia Ask AI feedback.
       feedbackFormUrl:
-        'https://docs.google.com/forms/d/e/1FAIpQLSdJOWBAXsM86C-buZm0N3a9vwBOxxjOfBe7jiEn6PkLqctv5A/viewform?usp=pp_url&entry.778922322=a&entry.898262107=a&entry.1217042173=a&entry.1416546939=a&entry.1571666595=a&entry.554631687=a',
+        'https://docs.google.com/forms/d/e/1FAIpQLSdyW-HkogFCxi_oSuAV3XqH5gStgA2ifRFzBq5XzoPvCVYVzA/viewform?usp=pp_url&entry.778922322=a&entry.898262107=a&entry.1217042173=a&entry.1416546939=a&entry.1571666595=a&entry.554631687=a',
     },
   },
   storage: {
