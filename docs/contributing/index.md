@@ -60,9 +60,3 @@ You can also explore more Sumo Logic open-source projects on our [GitHub site](h
 </div>
 
 <br/>
-
-:::info Submit a Feature Request
-You can submit a Sumo Docs feature request [here](https://github.com/SumoLogic/sumologic-documentation/issues/new?assignees=&labels=type%3Afeature&template=feature_request.md&title=).
-
-To submit a general Sumo Logic feature request, go to our [Community](/docs/get-started/help#community) page.
-:::
