@@ -826,7 +826,19 @@ html[data-theme='light'] .table-of-contents__left-border {
 }
 
 .navbar__logo img {
-  height: 70%;
+  height: 24px;
+  width: auto;
+}
+
+.navbar__title {
+  margin-left: 0.65rem;
+  padding-left: 0.65rem;
+  border-left: 1px solid currentColor;
+  font-family: "Lab Grotesque", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 24px;
+  opacity: 0.78;
 }
 
 .navbar-grid-menu:after {
