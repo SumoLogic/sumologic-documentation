@@ -1,14 +1,11 @@
 ---
 id: ic-vs-ot-collector-performance-benchmarks
-title: Installed Collectors vs OpenTelemetry Collectors Performance Benchmarks
-sidebar_label: Installed Collectors vs OpenTelemetry Collectors Performance Benchmarks
+title: Installed Collector vs OpenTelemetry Collector Performance Benchmarks
+sidebar_label: IC vs OTel Performance Benchmarks
 description: Compare Installed Collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Iframe from 'react-iframe';
-
-This documentation compares the Installed Collector and the Sumo Logic Distribution for OpenTelemetry Collector for log collection, highlighting throughput, CPU usage, and scalability across various workloads to help you choose the right option.
+The Installed Collector and the Sumo Logic Distribution for OpenTelemetry Collector differ significantly in throughput, CPU usage, and scalability for log collection. This page compares both across various workloads to help you choose the right option.
 
 As with any benchmark, results depend on hardware, network conditions, and configuration, and will shift as new Collector versions are released. Use these numbers as directional guidance, not a guarantee of performance in your environment.
 
@@ -50,8 +47,6 @@ The table below shows the maximum Events Per Second (EPS) each collector sustain
 - In the 512B–5KB range, OpenTelemetry Collectors are markedly more CPU-efficient at 20%–50% CPU usage, sustaining 2–4x the throughput of Installed Collectors at the same CPU level.
 - For very small messages (100B), Installed Collectors hold a slight edge at low CPU usage (5%–20%).
 - Installed Collectors' efficiency improves with payload size — at 5% CPU, an Installed Collector processing 10KB logs at 100 EPS (1000 KB/sec) is more efficient than processing 1KB logs at 500 EPS (500 KB/sec).
-
-[Chart placeholder: staircase throughput plots for Installed Collectors and OpenTelemetry Collectors, plus per-message-size EPS-vs-CPU line charts, to be built from the table data above rather than reused from internal dashboards.]
 
 ## Performance as a function of number of sources
 
