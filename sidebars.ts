@@ -1750,7 +1750,6 @@ module.exports = {
         'search/lookup-tables/manage-update-lookup-tables',
       ],
     },
-    'search/query-assist',
     'search/search-across-child-orgs',
     'search/optimize-search-performance',
     'search/optimize-search-partitions',
