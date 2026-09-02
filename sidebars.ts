@@ -60,6 +60,7 @@ module.exports = {
         'contributing/style-guide',
         'contributing/glossary',
         'contributing/word-list',
+        'contributing/accessibility',
     //  'contributing/translations',
         {
           type: 'category',
