@@ -208,7 +208,6 @@ Fetch the full list at https://www.sumologic.com/help/docs/contributing/word-lis
 
 These are Sumo Logic- and repo-specific facts that override general assumptions.
 
-- **No em dashes, ever.** Do not use "--" as a substitution for an em dash either. Rewrite the sentence instead.
 - **Site URL is `sumologic.com/help`**, not `help.sumologic.com`. Always use the former in docs and links.
 - **`:::training` is a custom Sumo Logic admonition** (purple, graduation cap icon). It is not a standard Docusaurus admonition -- do not treat it like one or omit it.
 - **`:::sumo` is also custom.** Standard Docusaurus will not recognize it outside this repo.

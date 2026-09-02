@@ -65,7 +65,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
-**Em dash** and **en dash**. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
+**Em dash**. We do not use this often, but if you need to use it, insert the em dash symbol (—), do not use a double hyphen (–).
 
 **Exclamation points !**. Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
 
