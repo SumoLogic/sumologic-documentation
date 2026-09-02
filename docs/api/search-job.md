@@ -38,6 +38,18 @@ The Search Job API is available to Enterprise accounts.
 For an access key with a customized scope, make sure **Run Log Search** is added to the scope.
 :::
 
+## Session timeout
+
+While the search job is running you need to request the job status based on the search job ID. The API keeps the search job alive by either polling for status every 20 to 30 seconds or gathering results. If the search job is not kept alive by API requests, it is canceled. When a search job is canceled for inactivity, you will get a 404 status.
+
+There's a query timeout after eight hours, even if the API is polling and making requests. If you are running very few queries, you may be able to go a little longer, but you can expect most of your queries to end after eight hours.
+
+You can start requesting results asynchronously while the job is running and page through partial results while the job is in progress.
+
+:::note
+For the [Legacy Search Job API](#legacy-search-job-api), a 404 status can also result from a missing session cookie, since that version requires cookies to keep a search job alive.
+:::
+
 ## Search job result limits
 
 | Data Tier | Non-aggregate Search |
@@ -62,7 +74,7 @@ import RateLimit from '../reuse/api-rate-limit.md';
 
 Search Job APIs have additional limits. A limit of 200 active concurrent search jobs applies to your organization. Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit. 
 
-This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. For the [Legacy Search Job API](#legacy-search-job-api), if the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
+This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
 You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches and helps keep you from reaching the Search Job API throttling limit. See [Deleting a search job](#delete-a-search-job) for details.
 
@@ -74,7 +86,7 @@ The following figure shows the process flow for search jobs.
 
 1. **Request.** You request a search job, giving the query and time range.
 2. **Response.** Sumo Logic responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
-3. **Request.** Use the job ID to request search status. For the [Legacy Search Job API](#legacy-search-job-api), this needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
+3. **Request.** Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
 4. **Response.** Sumo Logic responds with job status. An error code (404) is returned if the request could not be completed. The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
 5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return 100K messages per search.
 6. **Response.** Sumo Logic delivers JSON-formatted search results as requested. The API can deliver partial results that the user can start paging through, even as new results continue to come in. If there’s a problem with the results, an error code is provided (see the list of error codes following the figure).
@@ -254,9 +266,42 @@ The following figure shows the process flow for search jobs.
   </tr>
 </table>
 
+## Search Job Management API
+
+The Search Job Management API is built with OpenAPI specifications. Each request is addressed by the search job's `jobId` alone, so it doesn't require session cookies to keep a search job alive between requests.
+
+:::tip MSSP multi-org searches
+If you manage child organizations, you can run a search job across one, several, or all of them by setting `childOrgIds` or `includeAllChildOrgs` when you create the search job. This is the API equivalent of the multi-org search available in the Search UI. [Learn more](/docs/search/search-across-child-orgs/).
+
+| Parameter | Type | Description |
+|:--|:--|:--|
+| `childOrgIds` | Array of strings | List of child org IDs to run the search on. |
+| `includeAllChildOrgs` | Boolean | When `true`, runs the search across all child orgs of the authenticated parent org. Takes precedence over `childOrgIds` if both are set. Default is `false`. |
+:::
+
+### Documentation
+
+<ApiIntro/>
+
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/searchJobManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/searchJobManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/searchJobManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/searchJobManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/searchJobManagement  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/searchJobManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/searchJobManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/searchJobManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/searchJobManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/searchJobManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/searchJobManagement  |
+
 ## Legacy Search Job API
 
 The legacy Search Job API requires session cookies to keep a search job alive between requests, and is slower than the [Search Job Management API](#search-job-management-api).
+
+You must enable cookies for subsequent requests to the search job. A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request.
 
 ### Endpoints for API access
 
@@ -265,21 +310,6 @@ Sumo Logic has deployments that are assigned depending on the geographic locatio
 See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
-
-### Session timeout
-
-While the search job is running you need to request the job status based on the search job ID. The API keeps the search job alive by either polling for status every 20 to 30 seconds or gathering results. If the search job is not kept alive by API requests, it is canceled. When a search job is canceled for inactivity, you will get a 404 status.
-
-You must enable cookies for subsequent requests to the search job. A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request.
-
-There's a query timeout after eight hours, even if the API is polling and making requests. If you are running very few queries, you may be able to go a little longer, but you can expect most of your queries to end after eight hours.
-
-So, a 404 status is generated in these two situations:
-
-* When cookies are disabled.
-* When a query session is canceled.
-
-You can start requesting results asynchronously while the job is running and page through partial results while the job is in progress.
 
 ### GET Methods
 
@@ -1017,34 +1047,3 @@ RESULT=$(curl $OPTIONS    \
 JOB_ID=$(echo $RESULT | sed 's/^.*"id":"\(.*\)".*$/\1/')
 echo Search job deleted, id: $JOB_ID
 ```
-
-## Search Job Management API
-
-The Search Job Management API is built with OpenAPI specifications. Each request is addressed by the search job's `jobId` alone, so it doesn't require session cookies to keep a search job alive between requests.
-
-:::tip MSSP multi-org searches
-If you manage child organizations, you can run a search job across one, several, or all of them by setting `childOrgIds` or `includeAllChildOrgs` when you create the search job. This is the API equivalent of the multi-org search available in the Search UI. [Learn more](/docs/search/search-across-child-orgs/).
-
-| Parameter | Type | Description |
-|:--|:--|:--|
-| `childOrgIds` | Array of strings | List of child org IDs to run the search on. |
-| `includeAllChildOrgs` | Boolean | When `true`, runs the search across all child orgs of the authenticated parent org. Takes precedence over `childOrgIds` if both are set. Default is `false`. |
-:::
-
-### Documentation
-
-<ApiIntro/>
-
-| Region code | Region name | AWS region | API endpoint |
-|:----|:----|:---|:-----|
-| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/searchJobManagement   |
-| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/searchJobManagement   |
-| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/searchJobManagement  |
-| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/searchJobManagement   |
-| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/searchJobManagement  |
-| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/searchJobManagement   |
-| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/searchJobManagement  |
-| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/searchJobManagement   |
-| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/searchJobManagement   |
-| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/searchJobManagement      |
-| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/searchJobManagement  |
