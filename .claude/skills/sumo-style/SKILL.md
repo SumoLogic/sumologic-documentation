@@ -219,3 +219,4 @@ These are Sumo Logic- and repo-specific facts that override general assumptions.
 - **Numbered list items always use `1.`** (not `1.`, `2.`, `3.`). Docusaurus handles rendering.
 - **Capitalized product terms.** Collector, Source, Hosted Collector, Library. User-created objects (dashboards, folders) are lowercase.
 - **C2C sources and apps have distinct openers.** Do not use the app opener for a source doc or vice versa.
+- **No marketing openers in release notes.** Do not open with "We're excited to introduce/announce", "We're happy to announce", "We're thrilled to share", or similar phrases. Use a direct statement instead: "[Feature] is now available." or "[Feature] now supports [X]." Example — ❌ "We're excited to announce that multi-child-org search results now include an `_orgName` field..." → ✅ "Multi-child-org search results now include an `_orgName` field..."

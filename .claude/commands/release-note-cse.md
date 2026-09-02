@@ -177,7 +177,7 @@ Additional changes are enumerated below.
 
 **Application Release Guidelines:**
 * Use H3 (`###`) for each feature.
-* Start with clear, concise description.
+* Open with a direct statement of what the feature does — not an announcement phrase ("We're excited to announce", "We're happy to introduce"). Example: "Field X now supports Y." or "Feature Z is now available."
 * Include "Learn more" link to relevant docs.
 * Keep it brief (2-3 sentences per feature).
 * Add screenshots using: `<img src={useBaseUrl('img/path')} alt="description" />`

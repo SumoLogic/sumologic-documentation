@@ -197,7 +197,11 @@ This enhancement streamlines your workflow by providing quick access to frequent
 ### Step 6: Content formatting guidelines
 
 **Write for clarity:**
-* Start with a clear statement of what the feature is
+* Open with a direct statement of what the feature is — never an announcement phrase ("We're excited to introduce", "We're happy to announce")
+  * ❌ "We're excited to announce that multi-child-org search results now include an `_orgName` field..."
+  * ✅ "Multi-child-org search results now include an `_orgName` field alongside `_orgId`, so MSSP users can identify which child org a result came from."
+  * ❌ "We are excited to announce the addition of a native Sumo Logic HTTP Source webhook integration for LiteLLM."
+  * ✅ "A native Sumo Logic HTTP Source webhook integration for LiteLLM is now available, enabling you to collect LiteLLM usage and proxy log data."
 * Explain the benefit or business value in 2-3 sentences
 * Use "What's new:" section for bulleted specifics (optional)
 * End with a "Learn more" link to relevant docs
@@ -443,6 +447,8 @@ Would you like me to help refine the content or add additional details?
 ## Tips and best practices
 
 **For all Service releases:**
+* Open with a direct statement of what changed: "[Feature] is now available." or "[Feature] now supports [X]."
+* Do not open with announcement phrases: "We're excited to introduce", "We're happy to announce", and similar
 * Lead with user benefit, not technical implementation
 * Explain "what" and "why", not "how"
 * Keep descriptions concise (2-3 sentences)
