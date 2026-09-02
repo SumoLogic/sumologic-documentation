@@ -122,7 +122,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 #### Installed Collector Release Structure
 
 ```markdown
-In this release, we've enhanced the security and stability of the Collector with added support for security patches.
+This release includes security and stability fixes.
 
 #### Security fix
 
@@ -136,7 +136,7 @@ In this release, we've enhanced the security and stability of the Collector with
 ```
 
 **Installed Collector Guidelines:**
-* Start with standard intro: "In this release, we've enhanced the security and stability of the Collector with added support for {security patches/bug fixes/features}."
+* Start with a direct intro: "This release includes {security patches/bug fixes/features}."
 * Use H4 (`####`) for section headings: Security fix, Bug fix, Feature
 * List items use bullet points with dashes.
 * Include specific version numbers for dependencies.
@@ -146,7 +146,7 @@ In this release, we've enhanced the security and stability of the Collector with
 
 **Example:**
 ```markdown
-In this release, we've enhanced the security and stability of the Collector with added support for security patches.
+This release includes security and stability fixes.
 
 #### Security fix
 
@@ -161,7 +161,7 @@ In this release, we've enhanced the security and stability of the Collector with
 #### OpenTelemetry Release Structure
 
 ```markdown
-We're excited to {announce/introduce} {feature description}. {What it does and benefits}. [Learn more](/docs/path/to/doc).
+{Feature name} {is now available / now supports X / now includes Y}. {What it does and benefits}. [Learn more](/docs/path/to/doc).
 
 {Optional: Additional paragraphs with more details}
 
@@ -171,7 +171,7 @@ We're excited to {announce/introduce} {feature description}. {What it does and b
 ```
 
 **OpenTelemetry Guidelines:**
-* Start with "We're excited to announce..." or "We're excited to introduce...".
+* Open with a direct statement: "[Feature] is now available." or "[Feature] now supports [X]."
 * Write 2-3 sentences in first paragraph.
 * Focus on user benefits and business value.
 * End first paragraph with "Learn more" link.
@@ -183,14 +183,14 @@ We're excited to {announce/introduce} {feature description}. {What it does and b
 ```markdown
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're excited to announce that you can now convert Installed Collector (IC) local file sources to OpenTelemetry (OTel) source templates for a more modern, scalable, and consistent data collection experience. This conversion helps future-proof your setup, making it easier to manage collectors at scale while benefiting from ongoing OTel improvements and support. [Learn more](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st/).
+You can now convert Installed Collector (IC) local file sources to OpenTelemetry (OTel) source templates for a more modern, scalable, and consistent data collection experience. This conversion makes it easier to manage collectors at scale while benefiting from ongoing OTel improvements and support. [Learn more](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st/).
 ```
 
 **Example (Infrastructure change):**
 ```markdown
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're excited to announce that the OpenTelemetry collector installation files can now be downloaded from a CDN for Chef, Puppet, and Ansible. This change improves download reliability, performance, and availability while maintaining the same installation experience.
+OpenTelemetry collector installation files can now be downloaded from a CDN for Chef, Puppet, and Ansible. This change improves download reliability, performance, and availability while maintaining the same installation experience.
 
 Refer to the following documentation to view the updated URLs in the UI.
 * [Ansible](/docs/send-data/opentelemetry-collector/install-collector/ansible/).

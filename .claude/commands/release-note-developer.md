@@ -156,6 +156,8 @@ hide_table_of_contents: true
 
 ### Step 6: Content formatting guidelines
 
+Open with a direct statement of what changed. Do not use announcement or excitement phrases ("We're excited to announce", "We've released", "We've made improvements to"). State the change factually: "[Feature] is now available." or "[Feature] now supports [X]."
+
 #### API Changes
 
 For API announcements, include:
@@ -172,7 +174,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 hide_table_of_contents: true
 ---
 
-We're excited to announce new API endpoints for managing Field Extraction Rules (FERs) programmatically. These endpoints enable you to create, update, delete, and list FERs via the REST API, making it easier to automate and scale your field extraction configurations.
+New API endpoints for managing Field Extraction Rules (FERs) are now available. These endpoints enable you to create, update, delete, and list FERs via the REST API, making it easier to automate and scale your field extraction configurations.
 
 #### New endpoints
 
@@ -203,7 +205,7 @@ keywords:
   - python
 ---
 
-We've released version 2.0 of the Sumo Logic Python SDK with support for the latest APIs and improved error handling.
+Sumo Logic Python SDK version 2.0 is now available, with support for the latest APIs and improved error handling.
 
 #### What's new
 
@@ -286,7 +288,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 hide_table_of_contents: true
 ---
 
-We've made the following improvements to our APIs:
+The following API improvements are now available:
 
 * **Audit logging**: When performing create, update, and delete requests through Sumo Logic APIs, the API accessID is now included within the operator field of your related [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) messages.
 * **Search Job API**: Now returns query execution statistics in response headers for better monitoring and debugging.

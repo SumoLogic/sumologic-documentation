@@ -992,6 +992,16 @@ Release notes (our changelog) publish to both the [docs site](/docs/release-note
 
 For lengthy release notes, write a 1-2 paragraph introduction, then add a truncate line (`<!--truncate-->`), followed by the full set of release notes.
 
+**Release note language**
+
+Open with a direct statement of what changed. Do not use excitement or announcement phrases.
+
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| "Multi-child-org search results now include an `_orgName` field alongside `_orgId`, so MSSP users can identify which child org a result came from." | "We're excited to announce that multi-child-org search results now include an `_orgName` field..." |
+| "A native Sumo Logic HTTP Source webhook integration for LiteLLM is now available, enabling you to collect LiteLLM usage and proxy log data." | "We are excited to announce the addition of a native Sumo Logic HTTP Source webhook integration for LiteLLM." |
+| "This release includes security and stability fixes." | "We've enhanced the security and stability of the Collector." |
+
 ## Reusing content
 
 When the same passage appears in more than one doc, put it once in the [`/docs/reuse`](https://github.com/SumoLogic/sumologic-documentation/tree/main/docs/reuse) folder and import it where you need it. Add the import at the top of the file, then place the component where the content should appear:

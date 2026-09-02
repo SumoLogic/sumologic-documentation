@@ -253,6 +253,8 @@ Fixed an issue where [description of bug and fix].
 
 ### Step 7: Content formatting guidelines
 
+Open with a direct statement of what the release contains. Do not use excitement or announcement phrases ("We're excited to introduce", "We're happy to announce", "We've added"). State what changed factually.
+
 ## Content Release Formatting
 
 #### Intro Paragraph
