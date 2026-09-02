@@ -1,6 +1,6 @@
 # Create New Developer Release Note
 
-Automates the creation of Developer release notes for APIs, SDKs, integrations, and platform changes relevant to developers.
+Automates the creation of Developer release notes for APIs, integrations, and platform changes relevant to developers.
 
 ## What this command does
 
@@ -15,7 +15,6 @@ When you invoke `release-note-developer`, Claude will guide you through:
 
 * Announcing new API endpoints or features
 * Documenting API changes, deprecations, or breaking changes
-* Publishing SDK updates or new SDK versions
 * Releasing developer tools or CLI updates
 * Announcing platform changes affecting developers
 * Documenting authentication or integration changes
@@ -26,7 +25,6 @@ When you invoke `release-note-developer`, Claude will guide you through:
 Developer release notes typically cover:
 
 * **APIs**. New endpoints, changes, deprecations
-* **SDKs**. New SDKs, version updates, improvements
 * **CLI**. Command-line tool updates
 * **Integrations**. New integrations or integration changes
 * **Platform**. Platform changes affecting developers
@@ -84,6 +82,8 @@ Examples:
 title: {Month Day, YYYY} - {Topic}
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 hide_table_of_contents: true
+tags:
+  - {content-type-tag}
 ---
 ```
 
@@ -106,7 +106,6 @@ hide_table_of_contents: true
 * **Always ask user if they want to include keywords**
 * Suggest keywords based on content type:
   * API changes: `api`, `endpoints`, `rest-api`
-  * SDK updates: `sdk`, `python`, `java`, etc.
   * Deprecations: `deprecation`, `end-of-life`
   * Breaking changes: `breaking-change`
   * Platform updates: `platform`, `datacenter`
@@ -117,6 +116,13 @@ hide_table_of_contents: true
     - deprecation
   ```
 * User can choose to omit keywords or customize the list
+
+**Tags:**
+* Set based on content type:
+  * API changes or new endpoints: `api`
+  * Deprecation notices: `deprecation`
+  * CLI updates: `cli`
+* Tags generate filterable index pages at `/release-notes-developer/tags/{tag}/`
 
 ### Step 4: Add optional import
 
@@ -130,8 +136,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Title guidelines:**
 * Keep concise (2-5 words)
 * Use title case
-* Common patterns: "APIs", "SDKs", "CLI Tools", "Platform Updates"
-* Can be more specific: "Python SDK", "REST API", "Management APIs"
+* Common patterns: "APIs", "CLI Tools", "Platform Updates"
+* Can be more specific: "REST API", "Management APIs"
 
 ### Step 5: Write content
 
@@ -184,42 +190,6 @@ New API endpoints for managing Field Extraction Rules (FERs) are now available. 
 #### Breaking changes
 
 **Monitors API**: The `notificationGroupFields` parameter is now required when creating monitors. Update your integrations before June 1, 2026. See the [Monitors API documentation](/docs/api/monitors) for details.
-```
-
-#### SDK Updates
-
-For SDK releases:
-* Version number
-* What's new or changed
-* Installation instructions
-* Link to SDK docs or GitHub
-
-**Example:**
-```markdown
----
-title: March 23, 2026 - Python SDK Version 2.0
-image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
-hide_table_of_contents: true
-keywords:
-  - sdk
-  - python
----
-
-Sumo Logic Python SDK version 2.0 is now available, with support for the latest APIs and improved error handling.
-
-#### What's new
-
-* Support for Field Extraction Rules API
-* Async client support for better performance
-* Improved error messages and debugging
-
-#### Installation
-
-```python
-pip install sumologic-sdk==2.0.0
-```
-
-Learn more in the [Python SDK documentation](/docs/api/python-client).
 ```
 
 #### Deprecations
@@ -307,7 +277,7 @@ Before finishing, verify:
 * [ ] Content is clear and includes relevant links
 * [ ] Breaking changes are clearly marked (use bold or H4 sections)
 * [ ] Documentation links use relative paths (start with `/docs/`)
-* [ ] Keywords added if applicable (deprecation, api, sdk, etc.)
+* [ ] Keywords added if applicable (deprecation, api, etc.)
 * [ ] No trailing whitespace
 
 ## Example usage

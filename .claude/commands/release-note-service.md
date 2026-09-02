@@ -83,6 +83,8 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 keywords:
   - {keyword1}
   - {keyword2}
+tags:
+  - {category-tag}
 hide_table_of_contents: true
 ---
 ```
@@ -121,6 +123,17 @@ hide_table_of_contents: true
     - keyword2
   ```
 * User can customize the list
+
+**Tags:**
+* Set one tag based on category:
+  * apps → `apps`
+  * manage → `manage`
+  * search → `search`
+  * ui or platform → `ui`
+  * alerts → `alerts`
+  * security → `security`
+  * ai-related features → `ai`
+* Tags generate filterable index pages at `/release-notes-service/tags/{tag}/`
 
 ### Step 4: Add optional import
 

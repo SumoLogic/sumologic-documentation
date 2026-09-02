@@ -85,6 +85,8 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 hide_table_of_contents: true
 keywords:
   - installed-collector
+tags:
+  - installed-collector
 ---
 ```
 
@@ -95,6 +97,8 @@ title: {Feature Name}
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 hide_table_of_contents: true
 keywords:
+  - opentelemetry-collector
+tags:
   - opentelemetry-collector
 ---
 ```
@@ -107,6 +111,11 @@ keywords:
 * Installed Collector: Always use `installed-collector`
 * OpenTelemetry: Always use `opentelemetry-collector`
 * These keywords are standard and do not need user confirmation
+
+**Tags:**
+* Installed Collector releases: always `installed-collector`
+* OpenTelemetry releases: always `opentelemetry-collector`
+* Tags generate filterable index pages at `/release-notes-collector/tags/{tag}/`
 
 ### Step 4: Add required import
 
