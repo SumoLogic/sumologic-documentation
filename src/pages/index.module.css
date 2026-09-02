@@ -1,0 +1,292 @@
+.hero {
+  --hero-blue: #000099;
+  --hero-blue-light: #0045be;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(1, 4, 47, 0.58), rgba(0, 0, 56, 0.42)),
+    url('/img/homepage/hero-data-wave.webp') center / cover no-repeat,
+    linear-gradient(135deg, #05054f 0%, var(--hero-blue) 46%, var(--hero-blue-light) 100%);
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+.hero::before {
+  top: -28rem;
+  right: -14rem;
+  width: 52rem;
+  height: 52rem;
+}
+
+.hero::after {
+  bottom: -35rem;
+  left: -16rem;
+  width: 52rem;
+  height: 52rem;
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 1;
+  padding-top: 1.75rem;
+  padding-bottom: 2.5rem;
+}
+
+.heroContent {
+  max-width: 1180px;
+  margin: 3.5rem auto 4rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 1.25rem !important;
+  color: #aeefff;
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  max-width: 1100px;
+  margin: 0 0 1.5rem !important;
+  color: #fff;
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: clamp(3rem, 5vw, 4.75rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1.04 !important;
+}
+
+.heroDescription {
+  max-width: 980px;
+  margin: 0 0 2rem !important;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem) !important;
+  line-height: 1.55 !important;
+}
+
+@media (min-width: 1200px) {
+  .heroTitle,
+  .heroDescription {
+    white-space: nowrap;
+  }
+}
+
+.heroActions {
+  gap: 1rem;
+  margin: 0 !important;
+}
+
+.primaryAction {
+  min-height: 54px;
+  padding: 0.75rem 1.75rem !important;
+  border-radius: 10px !important;
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  text-transform: none !important;
+  color: #fff !important;
+  background: #0466ff !important;
+  box-shadow: 0 12px 30px rgba(0, 42, 153, 0.34) !important;
+}
+
+.primaryAction:hover {
+  background: #0055d6 !important;
+}
+
+.primaryAction:active {
+  background: #0045be !important;
+}
+
+.primaryAction:focus-visible {
+  outline: 2px solid #06bcee;
+  outline-offset: 3px;
+}
+
+.quickLinks {
+  margin-top: 0 !important;
+}
+
+.quickLink {
+  display: flex;
+  min-height: 96px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 1.25rem;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(4, 6, 40, 0.76);
+  backdrop-filter: blur(12px);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.quickLink:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.42);
+  background: rgba(10, 14, 65, 0.88);
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+.quickLink strong,
+.quickLink small {
+  display: block;
+  font-family: 'Lab Grotesque', sans-serif;
+}
+
+.quickLink strong {
+  margin-bottom: 0.28rem;
+  font-size: 1.05rem;
+}
+
+.quickLink small {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.arrow {
+  margin-left: 0.75rem;
+  font-size: 1.35rem;
+  transition: transform 160ms ease;
+}
+
+.quickLink:hover .arrow {
+  transform: translateX(3px);
+}
+
+.dojoCallout {
+  display: grid;
+  width: min(100%, 1120px);
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  padding: 2rem 2.25rem;
+  border: 1px solid rgba(40, 73, 226, 0.16);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 12% 100%, rgba(38, 204, 220, 0.16), transparent 17rem),
+    linear-gradient(110deg, #f7f8ff, #fff 62%);
+  box-shadow: 0 16px 44px rgba(0, 0, 80, 0.08);
+  text-align: left;
+}
+
+.dojoIcon {
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+}
+
+.dojoEyebrow {
+  margin: 0 0 0.35rem !important;
+  color: #005cc8;
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+}
+
+.dojoTitle {
+  margin: 0 0 0.45rem !important;
+  color: #101044;
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+}
+
+.dojoDescription {
+  max-width: 640px;
+  margin: 0 !important;
+  color: #4d4d66;
+  font-family: 'Lab Grotesque', sans-serif !important;
+  line-height: 1.5 !important;
+}
+
+.dojoAction {
+  min-height: 46px;
+  padding: 0.6rem 1.35rem !important;
+  border-radius: 8px !important;
+  background: #000099 !important;
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+
+.dojoAction:hover {
+  background: #0045be !important;
+}
+
+@media (max-width: 599px) {
+  .heroContainer {
+    padding: 1.25rem 1.25rem 2rem;
+  }
+
+  .heroContent {
+    margin: 2.75rem auto 3rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.75rem, 14vw, 4rem) !important;
+  }
+
+  .heroActions,
+  .primaryAction {
+    width: 100%;
+  }
+
+  .quickLink {
+    min-height: 82px;
+  }
+
+  .dojoCallout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+  }
+
+  .dojoIcon {
+    width: 88px;
+    height: 88px;
+  }
+
+  .dojoAction {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .dojoCallout {
+    grid-template-columns: auto 1fr;
+  }
+
+  .dojoAction {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quickLink,
+  .arrow {
+    transition: none;
+  }
+}
