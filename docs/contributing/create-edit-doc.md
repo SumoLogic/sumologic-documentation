@@ -112,11 +112,9 @@ The Docs Team can help you add your doc to the sidebar and top navigation. If yo
 
 ### Step 5: Add doc to the hub page
 
-Hub pages are `/index` pages that display all docs in that section in card view. Some cards are sorted by alphabetical order, and some are sorted by importance and/or ranking.
+Hub pages are section `/index` pages that display the docs in that section as a grid of cards. Some sections order cards alphabetically; others lead with the most important docs.
 
-As an example, let's say you needed to add a Best Practices doc to the [**Send Data** hub page](/docs/send-data).<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="Hub Card Style icon" />
-
-Once you decide on placement, use the card HTML code in that doc to create a new entry.
+Open the section's `index.md` and add a card for your doc: copy an existing `<div className="box smallbox card">` block inside the page's `<div className="box-wrapper">`, then update the link, icon, title, and description. Match the existing card order.<br/><img src={useBaseUrl('img/contributing/hub-card-style.png')} alt="Hub card style" /><br/>See [Hub pages](/docs/contributing/style-guide/#hub-pages) in the style guide for the full card markup.
 
 ### Step 6: Create CID URL
 
