@@ -60,20 +60,21 @@ module.exports = {
         'contributing/style-guide',
         'contributing/glossary',
         'contributing/word-list',
-        'contributing/code-of-conduct',
     //  'contributing/translations',
         {
           type: 'category',
           label: 'Docs Templates',
           collapsible: true,
           collapsed: true,
+          link: {type: 'doc', id: 'contributing/templates/index'},
           items: [
             'contributing/templates/app-template-v2',
             'contributing/templates/c2c-source',
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
           ]
-        }
+        },
+        'contributing/code-of-conduct',
       ],
     },
   ],

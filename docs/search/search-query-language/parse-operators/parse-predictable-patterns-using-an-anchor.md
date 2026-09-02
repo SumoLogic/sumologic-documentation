@@ -61,7 +61,7 @@ AI Parse Assist automatically generates a parse statement from the text you sele
 1. Review the suggested field. Click **Accept** to add the parse statement to your query, or **Cancel** to dismiss.
 
 :::note
-AI Parse Assist is a right-click action for turning selected log text into a `parse` statement. Don't confuse it with [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete), which suggests syntax and fields as you type a query, or with [Mobot](/docs/search/mobot), which writes and runs entire queries from a plain-language question.
+AI Parse Assist is one of several AI-assisted search capabilities. For how it differs from search autocomplete and Mobot, see [Related AI-assisted search features](/docs/search/get-started-with-search/search-basics/search-autocomplete#related-ai-assisted-search-features).
 :::
 
 #### AI Parse Assist limitations

@@ -1,14 +1,17 @@
 ---
 id: search-autocomplete
 title: Search Autocomplete
-description: Search autocomplete offers real-time syntax suggestions, schema-based field prompts, and predictive completions to reduce the complexity of Sumo Logic's query language as you type.
+description: Search autocomplete offers real-time syntax suggestions, schema-based field prompts, and predictive completions as you type on the Sumo Logic Search page.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../../../reuse/mobot-callout.md';
 
 Search autocomplete enhances the query-building experience in Sumo Logic by providing real-time syntax suggestions, schema prompts, and partial query predictions on the **Search** page. These suggestions simplify query writing for users at all skill levels, making it easier to discover relevant fields, minimize errors, and write accurate, efficient queries. Suggestions comply with your [role-based access control](/docs/manage/users-roles/) restrictions.
 
 Search autocomplete is also supported in [Dashboards](/docs/dashboards), [Scheduled Searches](/docs/alerts/scheduled-searches), and on the **Manage > Users** page in the **New Role** dialog's **Query String** section.
+
+<MobotCallout/>
 
 ## How to get started
 
@@ -51,7 +54,7 @@ Suggestions are ranked based on your organization's common queries, making query
 
 ### Typo detection and links
 
-As you type, search autocomplete underlines possible typos in your query and suggests corrections, and colorizes parts of your query for easier detection. Suggestions also link to documentation for search operators and other Sumo Logic features — click the info icon tooltip to open the page for that topic.
+As you type, search autocomplete underlines possible typos in your query and suggests corrections, and colorizes parts of your query for easier detection. Suggestions also link to documentation for search operators and other Sumo Logic features. Click the info icon tooltip to open the page for that topic.
 
 ## Settings
 
@@ -62,6 +65,15 @@ By default, search autocomplete is enabled.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" style={{border: '1px solid gray'}} width="25"/> and then **Preferences**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**.
 1. Access your [Preferences](/docs/get-started/account-settings-preferences/#my-preferences).
 1. Under **My Preferences**, go to the **Log Search** section and check or uncheck **Show search autocomplete suggestions while typing** to turn suggestions on or off.<br/><img src={useBaseUrl('img/get-started/search-autocomplete.png')} alt="Log Search preferences with the Show search autocomplete suggestions while typing checkbox"style={{border: '1px solid gray'}} width="700"/>
+
+### Keyboard shortcuts
+
+On a Mac, use `Option` in place of `Alt`.
+
+* `Alt + Space` or `Esc`. Open or close the suggestions dropdown.
+* `Alt + Esc`. Stop the dropdown from opening while you type, for the current session. To turn suggestions off permanently, use the **Show search autocomplete suggestions while typing** preference above.
+
+For how `Return` and `Shift + Return` behave in the query box, see [Typeahead suggestions](#typeahead-suggestions) below.
 
 ### Typeahead suggestions
 
@@ -77,11 +89,11 @@ Under **My Preferences** > **Query Editing**, you can control how `Return` and `
 
 ## Related AI-assisted search features
 
-Search autocomplete is a passive, built-in part of the query text box; it isn't presented as a standalone named feature in the UI. Don't confuse it with:
+Search autocomplete is a passive, built-in part of the query text box; it isn't presented as a standalone named feature in the UI. Do not confuse it with:
 
 * [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist). A UI action you trigger from the right-click menu on selected log text to generate a `parse` statement.
 * [Mobot](/docs/search/mobot). A conversational assistant that writes and runs entire queries from a plain-language question, rather than suggesting completions as you type.
 
 :::note
-This capability shipped in release notes as **Logs Query Assist** (Preview, November 2024) and **Query Assist** (GA, July 2025). It's documented here as Search Autocomplete to match the terminology used in the product UI.
+This capability shipped in release notes as **Logs Query Assist** (Preview, November 2024) and **Query Assist** (full release, July 2025). It's documented here as Search Autocomplete to match the terminology used in the product UI.
 :::
