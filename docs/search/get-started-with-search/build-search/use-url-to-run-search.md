@@ -1,7 +1,7 @@
 ---
 id: use-url-to-run-search
 title: Use a URL to Run a Search
-description: You can create a custom URL to launch a log search in Sumo Logic.
+description: Build a URL that opens the Log Search page with a query, time range, and run state already set, so you can share or bookmark a specific search.
 ---
 
 You can create a custom URL to launch a log search in Sumo Logic.
@@ -30,7 +30,7 @@ https://<endpoint>/log-search/create?query=<urlEncodedQuery>&parameters=<param1:
 
 ### Standard query URL
 
-Create a URL for the following log query, using a relative time range expression of `-10w` to `-1w`.:
+Create a URL for the following log query, using a relative time range expression of `-10w` to `-1w`:
 
 ```sumo
 test query | count by _source
@@ -43,7 +43,7 @@ https://service.sumologic.com/log-search/create?query=test%20query%20%7C%20count
 ```
 ### Templatized query URL
 
-Create a URL for the following log query, using a relative time range expression of `-60m` to `-30m`.:
+Create a URL for the following log query, using a relative time range expression of `-60m` to `-30m`:
 
 ```sumo
 {{app_name}} error | count

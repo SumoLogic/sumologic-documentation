@@ -1,7 +1,8 @@
 ---
 id: search-surrounding-messages
-title: Search Surrounding Messages
-description: Surrounding messages allow you to investigate events surrounding a message.
+title: View Messages Surrounding a Specific Log Entry
+sidebar_label: Search Surrounding Messages
+description: View the log messages recorded just before and after a specific entry to see the full context around an event.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -24,7 +25,7 @@ To search surrounding messages:
     <img src={useBaseUrl('img/search/get-started-search/search-basics/search-surrounding-messages/message.png')} alt="Messages tab" style={{border: '1px solid gray'}} width="800" />
      
 
-1. Select the time range to search before and after the selected message. Choose one minute, five minutes, or ten minutes. In this     example, search will return messages for a ten minute time range (five minutes before, and five minutes after) from the same host and    file path as the selected message.<br/><img src={useBaseUrl('img/search/get-started-search/search-basics/search-surrounding-messages/time-range.png')} alt="Time range" style={{border: '1px solid gray'}} width="300" />
+1. Select the time range to search before and after the selected message. Choose one minute, five minutes, or ten minutes. In this example, search will return messages for a ten minute time range (five minutes before, and five minutes after) from the same host and file path as the selected message.<br/><img src={useBaseUrl('img/search/get-started-search/search-basics/search-surrounding-messages/time-range.png')} alt="Time range" style={{border: '1px solid gray'}} width="300" />
 
 A new search tab opens displaying the surrounding messages. Your position in the log file is highlighted:<br/><img src={useBaseUrl('img/search/get-started-search/search-basics/search-surrounding-messages/show-original.png')} alt="Show Original Message" style={{border: '1px solid gray'}} width="800" />
 

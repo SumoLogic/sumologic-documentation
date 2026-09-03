@@ -1,7 +1,8 @@
 ---
 id: wildcards-in-full-text-searches
-title: Wildcards in Full Text Searches
-description: You can use wildcards in full text searches.
+title: Match Partial Text with Wildcards in Search Queries
+sidebar_label: Wildcards in Full Text Searches
+description: Use the * and ? wildcard characters to match partial values in Sumo Logic search queries, including phrase queries like IP addresses and email domains.
 ---
 
 This topic covers the details and special cases when using wildcards, for example, within quoted search expressions and within phrase queries.
@@ -19,7 +20,7 @@ This topic covers the details and special cases when using wildcards, for exampl
 * `error OR fail error AND fail*`
 * `(error OR fail) and debug error* OR (fail and debug) error? NOT fail`
 
-## Phrase Queries
+## Phrase queries
 
 A full-text search expression such as `jsmith@somewhere.com` is called a "phrase query" because it operates on multiple search terms: `jsmith`, `@`, `somewhere`, `.` , `com` as opposed to a single term query such as `"fail"`. In a phrase query, the Sumo Logic search language looks for the five terms in the email address adjacent to each other. So, you can search for things such as IP addresses or segments of IP addresses like `10.1.1.123`, or email domains like `@sumologic.com`.
 

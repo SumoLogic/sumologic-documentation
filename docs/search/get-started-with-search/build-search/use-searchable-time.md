@@ -1,8 +1,8 @@
 ---
 id: use-searchable-time
-title: Use Searchable Time
+title: Run a Search Using Searchable Time to Avoid Ingestion Gaps
 sidebar_label: Use Searchable Time
-description: You can display search results in the order when the logs become available for search.
+description: Run a search by searchable time to order results by when each log became available to query, which helps you spot ingestion delays.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,8 +13,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This resolves the inconsistent error messages due to variable ingestion latency and non-linear receipt time indexing issues by marking the time only when the data is truly searchable. This ensures running queries with non-overlapping but exhaustive time ranges will prevent any gaps or duplication in the data.
 
-:::info
-Currently, **Searchable Time** is only available for the Log Search UI page, Scheduled Searches, Saved Searches, Dashboards, Monitors, and Search Job API queries.
+:::note
+This setting controls which timestamp field a search's time range is measured against, not the time range itself. To set the time range, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). Searchable time is one of three timestamp fields you can search by, along with message time (the default) and [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time), the time a message hit the Sumo Logic receivers.
 :::
 
 ## Via UI
@@ -35,19 +35,19 @@ Follow the below steps to run a scheduled search by searchable time:
 1. Enter your query in the search text box and click **Save As..**.
 1. In the **Save Item** pop-up, select **Searchable Time** from the timestamp dropdown.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-scheduled-search.png')} alt="Searchable time scheduled search" style={{border:'1px solid gray'}} width="500" />
 
-### Create a dashboard using Searchable Time 
+### Create a dashboard using Searchable Time
 
 :::note
-**Searchbale Time** will not be available for *Metrics* or *Spans* query.
+**Searchable Time** will not be available for *Metrics* or *Spans* query.
 :::
 
 Follow the below steps to run a search using the searchable time in the dashboard:
 
-1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. 
+1.  [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**.
 1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to provide a log query.
 1. Navigate to **General** configuration.
-1. Go to **Logs Settings** section and select **Searchable Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="500" />
+1. Go to **Logs Settings** section and select **Searchable Time** as the timestamp.<br/><img src={useBaseUrl('/img/search/get-started-search/build-search/searchable-time-dashboard.png')} alt="Searchable time dashboard" style={{border:'1px solid gray'}} width="400" />
 
 ### Create a monitor using Searchable Time
 
@@ -58,13 +58,13 @@ When you [create a monitor](/docs/alerts/monitors/create-monitor#timestamp), you
 ### Run a search by Searchable Time using Search Job API
 
 To create a search, refer to the [Search Job API Documentation](/docs/api/search-job/#create-a-search-job). Below mentioned parameter has been updated due to addition of searchable time feature:
- 
+
 | Parameter | Type | Required | Description |
-| :-- | :-- | :-- | :-- | 
+| :-- | :-- | :-- | :-- |
 | `intervalTimeType` | String | Yes | This parameter defines whether you want to run the search by messageTime, receiptTime, or searchableTime. By default, the search will run by messageTime. |
 
 :::note
-If both `runByReceiptTime` and `intervalTimeType` parameters are present then the preference will be given to the `intervalTimeType`.
+If both `runByReceiptTime` and `intervalTimeType` parameters are present, preference will be given to the `intervalTimeType`.
 :::
 
 ### Create a dashboard with Searchable Time
@@ -72,7 +72,7 @@ If both `runByReceiptTime` and `intervalTimeType` parameters are present then th
 To create a dashboard, refer to the [Search Job API Documentation](/docs/api/dashboard/). Below mentioned parameter has been updated due to addition of searchable time feature:
 
 | Parameter | Type | Required | Description |
-| :-- | :-- | :-- | :-- | 
+| :-- | :-- | :-- | :-- |
 | `timeSource` | String | Yes | This parameter defines the time source of the query. Possible values are `Message`, `Receipt`, or `Searchable`. By default, `Message` will be used as the time source. <br/>**Message**. Uses the timestamp on the message.<br/>**Receipt**. Timestamp when the logs were received by Sumo Logic.<br/>**Searchable**. Timestamp when the logs are available for search.  |
 
 :::info
@@ -81,4 +81,6 @@ To create a dashboard, refer to the [Search Job API Documentation](/docs/api/das
 
 ## Limitations
 
-- Subqueries are not supported for Searchable Time.
+Currently, **Searchable Time** is only available for the Log Search UI page, Scheduled Searches, Saved Searches, Dashboards, Monitors, and Search Job API queries.
+
+Subqueries are not supported for Searchable Time.

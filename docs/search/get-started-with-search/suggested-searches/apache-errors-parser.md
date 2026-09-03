@@ -2,7 +2,7 @@
 id: apache-errors-parser
 title: Suggested Searches for the Apache Errors Parser
 sidebar_label: Apache Errors Parser
-description: The following searches were built for use with the Apache Access Parser. Copy and paste these searches into the search query field and save them for later use.
+description: Prebuilt Sumo Logic search queries for the Apache error log parser, covering critical errors, log levels, and server restarts.
 ---
 
 The following searches were built for use with the Apache Errors Parser. Copy and paste these searches into the search query field and save them for use later.
@@ -14,9 +14,9 @@ To obtain the best results possible, be sure to make the following modifications
 * Use a specific keyword expression or metadata search to limit the initial results to Apache logs. (Replace _the metadata search expression `"sourceName=*error_log* AND _sourceCategory=*apache*"` in the examples.)
 * Change the time range and the timeslice values to tailor the results to your needs.
 
-## Identify Critical Operations Errors
+## Identify critical operations errors
 
-### Critical Log Messages
+### Critical log messages
 
 This search returns the most critical log messages in the Apache error log.
 
@@ -28,7 +28,7 @@ _sourceName=*error_log* AND _sourceCategory=*apache* AND ("emerg" OR "alert" OR 
 | parse using public/apache/error
 ```
 
-### Log Level Counts
+### Log level counts
 
 Returns a count of all messages by log level (error, warn etc.) to give administrators quick insight into whether they need to investigate further.
 
@@ -42,7 +42,7 @@ _sourceName=*error_log* AND _sourceCategory=*apache*
 | sort by _count
 ```
 
-### Server Stops and Starts Over Time
+### Server stops and starts over time
 
 Returns trend data of how many server start and stop events took place over a period of time.
 
@@ -57,9 +57,9 @@ _sourceName=*error_log* AND _sourceCategory=*apache*
 | sum(server_stop) as server_stops, sum(server_start) as server_starts by _timeslice
 ```
 
-## Identify Top Error Characteristics
+## Identify top error characteristics
 
-### Top Error Reasons
+### Top error reasons
 
 This search returns the top Apache error log reasons.
 
@@ -72,7 +72,7 @@ _sourceName=*error_log* AND _sourceCategory=*apache*
 | top 100 reason by _count
 ```
 
-### Top Clients Causing Errors
+### Top clients causing errors
 
 Returns the top source IP addresses that cause errors, which should correlate with the corresponding [access log searches](apache-access-parser.md) to determine the most malicious clients.
 

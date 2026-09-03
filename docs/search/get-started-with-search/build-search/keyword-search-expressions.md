@@ -1,7 +1,8 @@
 ---
 id: keyword-search-expressions
-title: Keyword Search Expressions
-description: The text that comes before the first pipe symbol in a query is called the keyword expression or scope.
+title: Define the Scope of a Query with Keyword Search Expressions
+sidebar_label: Keyword Search Expressions
+description: The keyword expression is the text before the first pipe in a query. It scopes which messages the rest of the query runs against.
 ---
 
 A _Keyword Search Expression_ defines the scope of data for the query.

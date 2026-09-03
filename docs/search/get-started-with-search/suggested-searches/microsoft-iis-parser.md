@@ -2,14 +2,14 @@
 id: microsoft-iis-parser
 title: Suggested Searches for the Microsoft IIS Parser
 sidebar_label: Microsoft IIS Parser
-description: The following searches were built for use with the Microsoft IIS Parser. Copy and paste these searches into the search query field and save them for use later.
+description: Prebuilt Sumo Logic search queries for the Microsoft IIS log parser, covering errors, response codes, and request patterns.
 ---
 
 These suggested searches cover some of the most common scenarios for monitoring Security, Audit, and Performance issues on a Linux server. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.
 
 These are written assuming the messages are parsed by our out-of-the-box IIS W3C access log parser (for example, parse using public/iis).
 
-## HTTP Status Code Summary Over Time
+## HTTP status code summary over time
 
 Returns the number of client errors, server errors, redirects, and successful responses observed each day over the last seven days. This search can be used to understand the distribution of errors vs successful responses and redirects.
 
@@ -39,7 +39,7 @@ _sourceCategory=*IIS* "404"
 | count_frequent cs_uri_stem | limit 100
 ```
 
-## Traffic Volume Served Per Day
+## Traffic volume served per day
 
 Returns the number of hits on a website each day over the past 24 hours. If this search is run over a longer period of time (such as two weeks or a month) it may give you a good idea of which days of the week are busier.
 
@@ -52,7 +52,7 @@ _sourceCategory=*IIS*
 | count as hits by _timeslice
 ```
 
-## Top Browsers
+## Top browsers
 
 Returns the top 10 browsers accessing the website.
 
@@ -65,7 +65,7 @@ _sourceCategory=*IIS*
 | limit 10f
 ```
 
-## Slowest URLs by Average Time
+## Slowest URLs by average time
 
 * Suggested Time Range: -1d
 

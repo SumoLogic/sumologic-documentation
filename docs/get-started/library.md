@@ -123,7 +123,7 @@ In the future, any apps that you install in this published folder will be automa
 
 Keep track of content you use regularly with Favorites, or content that you want to keep handy. Just click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to **Favorites** in the left nav for easy access.
 
-You can also [favorite saved searches](/docs/search/get-started-with-search/search-page/add-saved-search-to-favorites) from the **Search** page, and favorite dashboards from the **Dashboards** page.
+You can also [favorite saved searches](/docs/search/get-started-with-search/search-basics/save-search#add-a-saved-search-to-favorites) from the **Search** page, and favorite dashboards from the **Dashboards** page.
 
 There is a limit of 20 favorite items per user.
 

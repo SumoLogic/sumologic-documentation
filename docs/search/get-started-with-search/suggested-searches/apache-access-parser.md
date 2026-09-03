@@ -2,7 +2,7 @@
 id: apache-access-parser
 title: Suggested Searches for the Apache Access Parser
 sidebar_label: Apache Access Parser
-description: The following searches were built for use with the Apache Errors Parser.
+description: Prebuilt Sumo Logic search queries for the Apache access log parser, covering request volume, response codes, traffic, and client errors.
 ---
 
 
@@ -13,11 +13,11 @@ To obtain the best results, be sure to make the following modifications to the e
 * Use a specific keyword expression or metadata search to limit the initial results to Apache logs. (Replace the metadata search expression `"sourceName=*error_log* AND _sourceCategory=*apache*"` in the examples.)
 * Change the time range and the timeslice values to tailor the results to your needs.
 
-## Understanding Incoming Requests
+## Understanding incoming requests
 
 Use these searches for troubleshooting and performance monitoring.
 
-### All HTTP Response codes with their count
+### All HTTP response codes with their count
 
 This search returns the number of requests observed per HTTP status code.
 
@@ -30,7 +30,7 @@ _sourceName=*access_log* AND _sourceCategory=*apache*
 | sort by _count
 ```
 
-### Client Errors (4xx response codes) per day
+### Client errors (4xx response codes) per day
 
 Returns the number of errors caused by web clients over the past seven days. This search can be used to detect if these errors are increasing or decreasing over time. These kinds of errors can either indicate whether the number of attacks to the website are increasing (for example, 403 Forbidden responses) or whether website changes are causing more errors.
 
@@ -44,7 +44,7 @@ _sourceName=*access_log* AND _sourceCategory=*apache*
 | count by _timeslice
 ```
 
-### Server Response Summary Over Time
+### Server response summary over time
 
 Returns the number of client errors, server errors, redirects and successful responses observed each day over the last seven days. This search can be used to understand the distribution of errors vs. successful responses and redirects.
 
@@ -74,7 +74,7 @@ Returns the top 100 URLS that refer to a resource that does not exist on the web
 | limit 100
 ```
 
-### Top Clients Causing Errors
+### Top clients causing errors
 
 Returns the top source IP addresses that are responsible for client errors on the website, which can help in blocking certain IP addresses or IP address ranges from accessing the website.
 
@@ -88,7 +88,7 @@ _sourceName=*access_log* AND _sourceCategory=*apache*
 | limit 100
 ```
 
-## Understand Incoming Traffic
+## Understand incoming traffic
 
 The following searches can help you get information about the volume of traffic and the amount of bytes served by your website over a period of time. In addition, the searches can help you learn more about the browsers and devices accessing your site.
 
@@ -144,7 +144,7 @@ This search returns a list of all robots that are accessing the website, assumin
 | count_frequent user_agent
 ```
 
-## Understand Page-Served Time
+## Understand page-served time
 
 ### Time taken to serve requests
 
@@ -163,7 +163,7 @@ _sourceName=*access_log* AND _sourceCategory=*apache*
 | toLong(microseconds/(1000000*60)) as minutes
 ```
 
-## URLs and Bytes Served Statistics
+## URLs and bytes served statistics
 
 ### Malicious URL requests
 

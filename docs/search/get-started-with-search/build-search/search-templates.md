@@ -1,15 +1,15 @@
 ---
 id: search-templates
 title: Search Templates
-description: Search templates narrow down your queries into a few parameters that other users can edit to find the data they need.
+description: Search templates narrow a query down to a few parameters that other users can edit to find the data they need, without rewriting the query.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-Search templates can help you simplify searches for your users by giving them a few easy input choices. You can have search templates  replace any text in a query, including fields, keywords, and arguments to operators. You can also determine what type of information is valid such as text, strings, and keywords.
+Search templates can help you simplify searches for your users by giving them a few easy input choices. You can have search templates replace any text in a query, including fields, keywords, and arguments to operators. You can also determine what type of information is valid such as text, strings, and keywords.
 
-Behind the scenes, selecting the parts of your query to use in the template is also pretty easy.  You can select which parts of your search should be available and click **Create Parameter**.
+Behind the scenes, selecting the parts of your query to use in the template is also pretty easy. You can select which parts of your search should be available and click **Create Parameter**.
 
 Search templates work with [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
 
@@ -31,7 +31,7 @@ Watch this micro lesson to learn how to use search template parameters.
 
 :::
 
-## Create a general Search Template
+## Create a general search template
 
 From any query you create, or an existing one you manage, you can create a search template and specify parameters.
 
@@ -147,7 +147,7 @@ If you want to delete a search template, delete the existing parameters. When yo
 
 When you delete a String parameter, the default value is substituted back into the query in double-quotes. For example “user_name”. If you did not specify a default value for this parameter, you must specify one now before re-running the query. You may also need to remove the quotes.
 
-## Best Practices
+## Best practices
 
 The important thing to remember when using search templates is to carefully consider which parameters in your queries users need to change most.
 

@@ -1,14 +1,13 @@
 ---
 id: log-level
 title: Log Level Detection and Insights
-sidebar: Log Level
-description: You can highlight a time range in the histogram for your search results to filter the search results based on that time range.
+description: Sumo Logic automatically detects log levels like ERROR and WARN in your messages, so you can visualize and filter their distribution without writing custom queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-When performing **Log Search** queries, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
+When performing Log Search queries, you can visualize and filter log-level distribution in your **Histogram** results and **Messages** table view, helping you to:
 
 * Quickly identify anomalies
 * Drill down quickly into high severity logs
@@ -32,6 +31,8 @@ Watch the following micro lesson to learn about log level detection.
 
 :::
 
+## How log level detection works
+
 <details>
 <summary>What are log levels?</summary>
 
@@ -39,11 +40,11 @@ Sumo Logic detects five log levels out of the box: FATAL, ERROR, WARN, INFO, and
 
 </details>
 
-Log-Level pattern detection is automatic, meaning you do not need to parse log levels manually or write specific queries to see your distribution of error logs. 
+Log-Level pattern detection is automatic, meaning you do not need to parse log levels manually or write specific queries to see your distribution of error logs.
 
 If the log message is in JSON format, the log level detection method searches for the presence of keys such as "level", "Level", "loglevel", "logLevel", "Loglevel", "LogLevel", "log_level", "log-level", "Log_Level", "Log_level", "severity", or "_loglevel". If any of these keys are identified in the log message, their corresponding values will be considered and displayed in the results. If any of these specified log level keys are not found in JSON log messages, the log level detection method falls back to a plain text search for terms like "debug", "info/information", "warn/warning", and "error." But this fallback mechanism can result in false positives, especially when these terms appear in other contexts like encoded data fields.
 
-And if the log message is in a non-JSON format, the log level detection method looks for keywords such as "debug", "info/information", "warn/warning", and "error". If any of these keywords are found in the log message, their corresponding values will be considered and displayed in the results. 
+And if the log message is in a non-JSON format, the log level detection method looks for keywords such as "debug", "info/information", "warn/warning", and "error". If any of these keywords are found in the log message, their corresponding values will be considered and displayed in the results.
 
 :::note
 Sumo Logic does not have any source specific special logic for log level extraction except for OTEL. For OTEL sources, `severityTextField` is used with `severityNumber` as fallback, if `severityTextField` is not populated. For more details, refer to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/).
@@ -52,6 +53,8 @@ Sumo Logic does not have any source specific special logic for log level extract
 :::info
 If multiple log levels are detected in the message, they will be prioritized in the following order: ERROR > WARN > INFO > DEBUG.
 :::
+
+## Read the log level histogram legend
 
 Just execute a log search to see the `_loglevel` field:
 
@@ -71,6 +74,8 @@ The <strong>_loglevel</strong> field value for log messages with the log level <
 ```sumo  
 | where isNull(_loglevel)
 ```
+
+## Override log level with a field extraction rule
 
 The log level of a log line is stored under the `_loglevel` field. You can override its value using a [field extraction rule (FER)](/docs/manage/field-extractions/create-field-extraction-rule/). For example:
 
