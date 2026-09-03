@@ -9,15 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This documentation walks you through migrating an existing [AWS Observability CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/) deployment from v2.x to v3.0.0.
 :::danger
-Migration script supports only active versions listed [here](/docs/observability/aws/deploy-use-aws-observability/changelog/#awso-lifecycle)
+* Migration script supports only active versions listed [here](/docs/observability/aws/deploy-use-aws-observability/changelog/#awso-lifecycle)
+* Migration script generates a state file. Please do not delete or lose this file until the migration is complete.
+
 :::
 
 Two migration scripts are available depending on your deployment type:
 
 | Deployment type | Script                                                                                         |
 |:--|:-----------------------------------------------------------------------------------------------|
-| Single CloudFormation stack (one account, one region) | `MigrateAWSOStackToV300.sh` — [covered here](#single-stack-migrationsingle-account-and-region) |
-| CloudFormation StackSet (multiple accounts and/or regions, including AWS Control Tower deployments) | `MigrateAWSOStackSetToV300.sh` — [covered here](#stackset-migrationmulti-regions-and-accounts) |
+| Single CloudFormation stack (one account, one region) | `MigrateAWSOStackToV300.sh` — [here](#single-stack-migrationsingle-account-and-region) |
+| CloudFormation StackSet (multiple accounts and/or regions, including AWS Control Tower deployments) | `MigrateAWSOStackSetToV300.sh` — [here](#stackset-migrationmulti-regions-and-accounts) |
 
 Both scripts automate the entire migration process and pause at key points for your approval before making any destructive changes.
 
@@ -373,7 +375,8 @@ Validate > Patch Roles > Report
 Use this script [`MigrateAWSOStackSetToV300.sh`](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/scripts/MigrateAWSOStackSetToV300.sh) when AWSO was deployed via a CloudFormation StackSet — typically through AWS Control Tower or manual StackSet management — spanning multiple AWS accounts and/or regions.
 
 :::note
-Multi-region and multi-account migrations can take a significant amount of time, so it would be better to set up a pipeline to automate the process.
+* Multi-region and multi-account migrations can take a significant amount of time, so it would be better to set up a pipeline to automate the process.
+* It is recommended to use **Select mode** when there are more than three stack instances in a StackSet.
 :::
 
 :::danger
@@ -385,7 +388,7 @@ The script:
 - Lets you optionally select a subset of instances to migrate
 - Captures per-region S3 bucket names and account aliases from each deployed stack
 - Runs FER and Metric Rule cleanup once at the Sumo Logic org level (not once per account)
-- Updates the StackSet in-place (no delete and recreate) then creates new v3.0.0 stack instances one per account/region with the correct per-region overrides
+- Updates the existing StackSet in-place or creates a new one depending on the migration mode and the `-n` flag, then creates new v3.0.0 stack instances one per account/region with the correct per-region overrides
 - Patches Sumo Logic source IAM role ARNs by assuming the execution role in each member account
 
 ### What stays the same
@@ -393,14 +396,15 @@ The script:
 - Your Sumo Logic collectors (same names and IDs — one per account)
 - All Sumo Logic sources (reused by name — same IDs, no data gap)
 - Your S3 log buckets and all existing log data
-- The StackSet itself (updated in-place, not recreated)
+- The existing StackSet — updated in-place when using `all` mode without `-n`. In all other modes, a new StackSet is created and the original is left untouched at v2.x.
 
 ### What changes
 
-- All v2.x stack instances are deleted and replaced by new v3.0.0 stack instances.
+- All selected v2.x stack instances are deleted and replaced by new v3.0.0 stack instances.
 - AWSO [Field Extraction Rules](/docs/manage/field-extractions/) are renamed to `v215_backup_<name>` and disabled (not deleted).
 - Four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) are deleted and recreated by v3.0.0.
 - Source IAM role ARNs in Sumo Logic are updated to the new v3.0.0 roles.
+- A new StackSet is created when `-n` is provided or `select` mode is chosen (the original StackSet is preserved).
 
 ### Phase overview
 
@@ -414,7 +418,7 @@ The script:
 | 6. Delete Instances | Deletes all v2.x stack instances with automatic FAILED and CANCELLED recovery. |
 | 8. FER Cleanup | Renames and disables 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) (org-level, runs once). |
 | 9. Metric Rules | Deletes four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0 (org-level, runs once). |
-| 10. Update StackSet | Updates the StackSet definition in-place with the v3.0.0 template and mapped base parameters. |
+| 10. Create or Update StackSet | Creates a new v3.0.0 StackSet when `-n` is provided or `select` mode is chosen. Updates the existing StackSet definition in-place when `all` mode is used without `-n`. |
 | 11. Create Instances | Creates one v3.0.0 stack instance per (account, region) with the correct alias and bucket overrides. |
 | 12. Verify | Confirms all stack instances reached `CURRENT` or `SUCCEEDED` status. |
 | 13. Patch Roles | Assumes the execution role in each member account and updates Sumo Logic source IAM role ARNs to reference the new v3.0.0 roles. |
@@ -483,7 +487,7 @@ The script will prompt you interactively for your access key (input is hidden an
 
 If your StackSet is not named `SUMO-LOGIC-AWS-OBSERVABILITY`, add `-s YOUR_STACKSET_NAME`.
 
-**Example**
+**Example — update existing StackSet in-place (all mode, no `-n`)**
 
 ```bash
 ./MigrateAWSOStackSetToV300.sh \
@@ -491,6 +495,17 @@ If your StackSet is not named `SUMO-LOGIC-AWS-OBSERVABILITY`, add `-s YOUR_STACK
   -i suXXXXXXXXXXXX \
   -o 00000000XXXXXXXX \
   -r us-east-1
+```
+
+**Example — create a new v3.0.0 StackSet**
+
+```bash
+./MigrateAWSOStackSetToV300.sh \
+  -d us2 \
+  -i suXXXXXXXXXXXX \
+  -o 00000000XXXXXXXX \
+  -r us-east-1 \
+  -n MY-AWSO-V300
 ```
 
 #### Script parameters
@@ -510,6 +525,7 @@ If your StackSet is not named `SUMO-LOGIC-AWS-OBSERVABILITY`, add `-s YOUR_STACK
 |:--|:--|:--|
 | `-k ACCESS_KEY` | Sumo Logic access key | **Prompted interactively** (hidden input) if omitted |
 | `-s, --stackset-name NAME` | Name of the existing v2.x StackSet | `SUMO-LOGIC-AWS-OBSERVABILITY` |
+| `-n, --new-stackset-name NAME` | Name for the new v3.0.0 StackSet. When provided (or in `select` mode), a new StackSet is created instead of updating the existing one in-place. In `select` mode without `-n`, defaults to `sumologic-awso-v300`. | — |
 | `--admin-role-arn ARN` | StackSet administration role ARN | Auto-detected from existing StackSet |
 | `--execution-role NAME` | StackSet execution role name | Auto-detected from existing StackSet |
 | `-p AWS_PROFILE` | AWS CLI named profile | `default` |
@@ -530,42 +546,79 @@ At the start of Phase 2, after all instances are enumerated, the script asks:
   Migrate all instances or select specific ones? (all/select) [all]:
 ```
 
-- **`all`** (or press Enter): all instances are migrated.
+- **`all`** (or press Enter): all eligible instances are migrated.
 - **`select`**: the script presents a numbered table — one row per account/region — and you type `y` or `n` for each row.
 
 If you select 0 instances, the script exits cleanly without making any changes.
 
 On `--resume`, the selection is loaded from the saved state file and this prompt is skipped.
 
+#### Migration mode matrix
+
+The combination of migration mode (`all`/`select`) and whether `-n` is provided determines how Phase 10 handles the StackSet:
+
+| Mode | `-n` passed | Phase 10 action | Target StackSet |
+|:--|:--|:--|:--|
+| `all` | No | Update existing StackSet in-place | Original StackSet (unchanged name) |
+| `all` | Yes | Create new StackSet | Name supplied via `-n` |
+| `select` | Yes | Create new StackSet | Name supplied via `-n` |
+| `select` | No | Create new StackSet | `sumologic-awso-v300` (default) |
+
+When a new StackSet is created, the original StackSet is left untouched — any non-selected instances remain there at v2.x. On a second run with the same target StackSet name, the script detects the existing StackSet and adds instances to it directly without recreating it.
+
 ### Confirmation screen (Phase 4)
 
-Before touching any infrastructure, the script displays a full summary:
+Before touching any infrastructure, the script displays a full summary and requires you to type `yes` to proceed. Confirmation is skipped when resuming.
+
+**`all` mode without `-n` — update in-place:**
 
 ```
-  StackSet to migrate:
-    Name:        SUMO-LOGIC-AWS-OBSERVABILITY
-    Home Region: us-east-1
+════ MIGRATION SUMMARY ════
 
-  Instances:
-    Account         Region       Alias
-    285573938264    us-east-1    prod
-    285573938264    us-east-2    prod
-    537124934508    us-east-1    staging
+  Mode           : all (update existing StackSet in-place)
+  StackSet       : SUMO-LOGIC-AWS-OBSERVABILITY
+  Source version : v2.15
+  Target version : v3.0.0
 
-  Per-account/region bucket map:
-    285573938264 / us-east-1  ALB: aws-observability-logs-abc123  CloudTrail: aws-observability-logs-abc123
-    285573938264 / us-east-2  ALB: aws-observability-logs-def456  CloudTrail: aws-observability-logs-def456
-    537124934508 / us-east-1  ALB: aws-observability-logs-ghi789  CloudTrail: aws-observability-logs-ghi789
+  Instances to migrate:
+    285573938264 / us-east-1  (alias: prod)
+    285573938264 / us-east-2  (alias: prod)
+    537124934508 / us-east-1  (alias: staging)
 
-  Mapped v3.0.0 base parameters:
+  Shared base parameters (same for all accounts):
     Section1aSumoLogicDeployment = us2
     Section3aInstallObservabilityApps = No
     ...
 
-Proceed with migration? Type 'yes' to continue:
+  Per-account parameter overrides (alias + S3 buckets captured from deployed stacks):
+    285573938264 / us-east-1  alias=prod  ALB=aws-observability-logs-abc123  ...
+    ...
+
+WARNING: This will DELETE all stack instances, update the StackSet to v3.0.0, then recreate.
+
+Type 'yes' to proceed:
 ```
 
-Type `yes` to proceed. Anything else aborts safely with no changes made. Confirmation is skipped when resuming.
+**`select` mode or `-n` provided — create new StackSet:**
+
+```
+════ MIGRATION SUMMARY ════
+
+  Mode           : select (create new StackSet)
+  Old StackSet   : SUMO-LOGIC-AWS-OBSERVABILITY
+  New StackSet   : sumologic-awso-v300
+  Source version : v2.15
+  Target version : v3.0.0
+
+  Instances to migrate:
+    285573938264 / us-east-1  (alias: prod)
+
+  ...
+
+WARNING: Instances will be DELETED from 'SUMO-LOGIC-AWS-OBSERVABILITY' and recreated in new StackSet 'sumologic-awso-v300'.
+
+Type 'yes' to proceed:
+```
 
 ### State file and resume support
 
@@ -628,6 +681,7 @@ This runs Phase 13 and Phase 14 only, without touching any CloudFormation resour
 | `Sumo Logic credentials invalid (HTTP 401)` | Incorrect access ID or key | Verify the `-i` and `-k` values. |
 | `Regions list cannot have duplicate entries` | Should not occur in current version — fixed by per-account region grouping | If seen, re-run with `--from-phase delete_instances` to retry the delete phase. |
 | `StackSetNotEmptyException` on Phase 10 | Phase 6 (delete instances) did not complete — instances still exist | Resume from Phase 6: `--from-phase delete_instances`. |
+| `StackSet already exists` on Phase 10 | A previous run already created the target StackSet (when using `-n` or `select` mode) | The script detects this automatically and reuses the existing StackSet — no action needed. |
 | `[WARN] Retrying CANCELLED instances` | Some instances were not reached due to failure tolerance being exceeded | Automatic — the script retries cancelled instances per account. If it persists, increase `--failure-tolerance`. |
 | `[WARN] Failed to patch '<source>' — HTTP 400` | A source was patched with a role ARN from the wrong region | Should not occur in current version — fixed by region-scoped source filtering. If seen, run `--patch-roles-only` to retry. |
 | `[WARN] Collector ID mismatch` | The collector found via the Sumo API does not match the one recorded in the CF stack | The script prompts you to choose between the CF value, the API value, or a manual entry. Verify you are using the correct Sumo Logic credentials. |

@@ -212,3 +212,99 @@ The v3.0.0 stack only creates a bucket policy when it creates a new bucket. Sinc
 | Collector or sources not found after stack deletion | `RemoveOnDeleteStack` was `true` when the stack was deleted | Resources cannot be recovered — redeploy v3.0.0 with fresh sources. |
 | S3 sources not receiving new log data | Bucket policy missing required service principal, or SNS notification topic was deleted with the v2.x stack | Check the bucket policy and S3 event notification configuration as described in [Step 8](#step-8-verify-the-migration). |
 | No CloudTrail data after migration | The v2.x `Aws-Observability-*` trail was deleted with the old stack | Create a new CloudTrail trail pointing at the same S3 bucket from **AWS Console > CloudTrail > Trails**. |
+
+---
+
+## StackSet migration (manual)
+
+Use this section if AWSO is deployed via a CloudFormation StackSet across multiple accounts and/or regions and you prefer not to use the automation script.
+
+:::note
+For the automated approach, see the [StackSet migration section in the automation guide](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-cloudformation/#stackset-migrationmulti-regions-and-accounts).
+:::
+
+### Step 1: Set RemoveOnDeleteStack to false on all instances
+
+Before deleting any instances, ensure `RemoveOnDeleteStack=false` is set on every stack instance. If `true` at deletion time, the Sumo Logic Lambda helper will permanently delete the collector and all sources.
+
+From the **StackSet management account**, update all instances in the affected accounts and regions:
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your v2.x StackSet.
+2. Click **Actions > Edit StackSet details**.
+3. On the **Parameters** screen, set **Delete Sumo Logic Resources when stack is deleted** to **false**.
+4. On the **Deployment options** screen, scope the update to the specific accounts and regions you intend to migrate.
+5. Submit the update and wait for all instances to reach `CURRENT`.
+
+### Step 2: Delete stack instances
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your StackSet.
+2. Click **Actions > Delete stacks from StackSet**.
+3. Enter the account IDs and regions to migrate.
+4. Under **Retain stacks**, select **No** to fully delete the CloudFormation stacks in each account/region (your Sumo Logic resources are preserved because `RemoveOnDeleteStack=false`).
+5. Submit and wait for the operation to reach `SUCCEEDED`.
+
+If the operation ends in `FAILED` for any account/region (commonly caused by a non-empty S3 bucket), go to the affected account/region, use **Force delete** on the stuck stack, then remove the instance from the StackSet using **Delete stacks from StackSet** with **Retain stacks = Yes** for that specific account/region.
+
+### Step 3: Verify Sumo Logic resources are intact
+
+For each migrated account, follow [Step 3 of the single-stack guide](#step-3-verify-your-sumo-logic-resources-are-intact) to confirm the collector and sources are still present.
+
+### Step 4: Clean up Field Extraction Rules
+
+Follow [Step 4 of the single-stack guide](#step-4-clean-up-field-extraction-rules). This is an org-level operation — do it once, not once per account.
+
+### Step 5: Clean up Metric Rules
+
+Follow [Step 5 of the single-stack guide](#step-5-clean-up-metric-rules). This is also org-level — do it once.
+
+### Step 6: Update the StackSet to v3.0.0
+
+You have two options depending on whether you want to reuse the existing StackSet name or create a new one.
+
+**Option A — Update the existing StackSet in-place**
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your StackSet.
+2. Click **Actions > Edit StackSet details**.
+3. On the **Template** screen, select **Replace current template** and enter:
+   ```
+   https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml
+   ```
+4. Apply the v3.0.0 parameter mapping from the [single-stack parameter table](#parameter-mapping). Set `Section1eSumoLogicResourceRemoveOnDeleteStack` to `false`.
+5. On the deployment options screen, choose **No overrides** — there are no instances yet, so the update is definition-only.
+6. Submit and wait for `SUCCEEDED`.
+
+**Option B — Create a new StackSet**
+
+1. Go to **AWS Console > CloudFormation > StackSets** and click **Create StackSet**.
+2. Enter the v3.0.0 template URL above.
+3. Provide a new StackSet name (for example, `SUMO-LOGIC-AWS-OBSERVABILITY-V300`).
+4. Apply the v3.0.0 base parameters from the parameter mapping table above.
+5. Do not add any deployment targets yet — you will add instances in the next step.
+
+### Step 7: Create new stack instances
+
+For each account/region pair, create a new stack instance with the correct per-account alias and S3 bucket names.
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your v3.0.0 StackSet.
+2. Click **Actions > Add stacks to StackSet**.
+3. Enter the target account IDs and regions.
+4. Under **Parameter overrides**, set at minimum:
+   - `Section2aAccountAlias` — the account alias (for example, `prod`)
+   - `Section5dALBS3LogsBucketName` — ALB log bucket for this region (if used)
+   - `Section6cCloudTrailLogsBucketName` — CloudTrail log bucket for this region (if used)
+   - `Section8dELBS3LogsBucketName` — ELB log bucket for this region (if used)
+5. Submit and wait for `SUCCEEDED`.
+
+Repeat for each unique account/region combination. Each region requires its own instance because S3 bucket names differ per region.
+
+### Step 8: Update source IAM role ARNs
+
+For each account/region, follow [Step 7 of the single-stack guide](#step-7-update-source-iam-role-arns) to find the new `SumoLogicSourceRole` ARN from the v3.0.0 nested stack and update it on each Sumo Logic source.
+
+:::note
+The `CreateCommonResources` nested stack and `SumoLogicSourceRole` exist inside each member account's deployed CloudFormation stack. Assume the appropriate IAM role in each member account to access them.
+:::
+
+### Step 9: Verify the migration
+
+For each account/region, follow [Step 8 of the single-stack guide](#step-8-verify-the-migration) to confirm sources are healthy and data is flowing.
