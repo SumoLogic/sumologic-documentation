@@ -159,7 +159,7 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
       + Get Risky User
       + List Risky Users
     + Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.
-* September 3, 2026 (v1.16)
+* September 3, 2026 (v1.17)
     + Added Delegated (Device Code Flow) authentication support alongside existing Application (Client Credentials) auth.
     + Added New Actions (Delegated auth only):
       + Initiate Delegated Auth
