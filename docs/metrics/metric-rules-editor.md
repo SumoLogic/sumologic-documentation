@@ -50,11 +50,11 @@ The subsections that follow describe the information shown in the columns on the
 
 A metric match expression defines the scope of the rule. Put another way, the match expression specifies the metrics to which the tags (defined by variable extraction) will be applied. 
 
-### Dot- and colon-delimited match expressions
+### Dot-delimited or colon-delimited match expressions
 
 A match expression can be one or more dot-delimited or colon-delimited string. For example, `collectd.*.*.*.*` matches all Graphite metrics that have five segments in the string, where the value of the first segment is `collectd`. Colon-delimited match expressions work the same way, and are useful for colon-separated identifiers such as AWS ARNs, for example: `arn:aws:bedrock-agentcore:*:*:*`.
 
-Given a dot- or colon-delimited match expression, Sumo Logic applies the match expression to the `_rawName` field, which is present for Graphite metrics and contains the metric path for a metric.
+Given a dot-delimited or colon-delimited match expression, Sumo Logic applies the match expression to the `_rawName` field, which is present for Graphite metrics and contains the metric path for a metric.
 
 :::note
 If a colon-delimited match expression doesn't match any time series even though the metric names use colons, colon-delimited matching may not be enabled for your account yet. Contact [Sumo Logic Support](https://support.sumologic.com/support/s) to have it enabled.
@@ -76,7 +76,7 @@ You can define multiple match expressions for the same rule. If you do, tags wil
 
 ### Greedy match expressions 
 
-You can use greedy matching in a metric match expression. This is useful when your match expression is a dot- or colon-delimited string if the values in `_rawName` vary in terms of the number of segments. In this metric example, the portion in green is a class name: `prod.prod-lru-7.katta-svc.com.svc.soa.service.InstResponder.KattaProtocol.countPerShard_v3.m5_rate`.
+You can use greedy matching in a metric match expression. This is useful when your match expression is a dot-delimited or colon-delimited string if the values in `_rawName` vary in terms of the number of segments. In this metric example, the portion in green is a class name: `prod.prod-lru-7.katta-svc.com.svc.soa.service.InstResponder.KattaProtocol.countPerShard_v3.m5_rate`.
 
 Different classes have dot-delimited names of various lengths, so a match expression for this metric should use greedy matching for the class name segment. For example: `prod.*.*.**.*.*.*`.
 
@@ -94,7 +94,7 @@ Here's how to create a metrics rule using the metrics rules editor in the Sumo L
     :::
     The **Time Series** section of the page lists metrics that match the expression you entered. If no metrics are listed, edit your match expression until matching metrics appear.<br/><img src={useBaseUrl('img/metrics/add-metric-rule-with-expression.png')} alt="Add metrics rule with expression" style={{border: '1px solid gray'}} width="600" />
 1. In the **Define variables** section of the page, for each tag you want to apply to matching metrics, enter a meaningful tag name in the **Variable name** field on the left. In the **Tag sequence** field, assign a variable to the tag. There are two different formats for specifying the Tag Sequence.
-   * To pull a tag from a dot- or colon-delimited string in the metric's `_rawName` field, use `$_1` to extract the first segment of the string, `$_2` to extract the second segment of the string, and so on.  For more information, see [Extracting variables from a dot- or colon-delimited match expression](#extract-variables-from-a-dot--or-colon-delimited-match-expression).
+   * To pull a tag from a dot-delimited or colon-delimited string in the metric's `_rawName` field, use `$_1` to extract the first segment of the string, `$_2` to extract the second segment of the string, and so on.  For more information, see [Extracting variables from a dot-delimited or colon-delimited match expression](#extract-variables-from-a-dot-delimited-or-colon-delimited-match-expression).
    * To pull a tag from a dot-delimited string in metric field other than `_rawName` field, use `$FieldName._1` to extract the first segment of the string, `$FieldName._2` to extract the second segment of the string, and so on. For more information, see [Extracting variables from a key-value pair match expression](#extract-variables-from-a-key-value-pair-match-expression).
 1. Select a metric in the **Time Series** section to see the values that would be assigned to each extracted tag for the selected metric. The entries in the columns show what values would be assigned to the selected metric given the specified Tag Sequences. <br/><img src={useBaseUrl('img/metrics/variable-extracton.png')} alt="Variables in time series" style={{border: '1px solid gray'}} width="600" />   
 1. Click **Save** to save your rule. The tags will be applied to incoming metrics. Sumo Logic will not re-index your historical data.
@@ -105,9 +105,9 @@ Variable extractions define the tags you want to attach to metrics that match a 
 
 When you define a variable you give it a name and define its Tag Sequence, which maps the variable to a specific segment of a delimited string. The format for the Tag Sequence depends on whether the corresponding match expression is a Graphite string or is one or more key-value pairs. 
 
-### Extract variables from a dot- or colon-delimited match expression
+### Extract variables from a dot-delimited or colon-delimited match expression
 
-For this dot-delimited match expression: `collectd.*.*.*.*` you can define four variables: one for each of the segments represented by an asterisk. As described in [Dot- and colon-delimited match expressions](#dot--and-colon-delimited-match-expressions), if no key is specified, Sumo Logic will match the expression against metrics’ `_rawName` field. When matching against ` _rawName`, specify the Tag Sequence for a variable in this form: `$_sequence`, where `sequence` indicates the placement of the segment in the match expression. For example, enter `$_2` to extract the second component of the metric match expression.
+For this dot-delimited match expression: `collectd.*.*.*.*` you can define four variables: one for each of the segments represented by an asterisk. As described in [Dot-delimited or colon-delimited match expressions](#dot-delimited-or-colon-delimited-match-expressions), if no key is specified, Sumo Logic will match the expression against metrics’ `_rawName` field. When matching against ` _rawName`, specify the Tag Sequence for a variable in this form: `$_sequence`, where `sequence` indicates the placement of the segment in the match expression. For example, enter `$_2` to extract the second component of the metric match expression.
 
 The same syntax applies to a colon-delimited match expression. For example, given the match expression `arn:aws:bedrock-agentcore:*:*:*`, enter `$_4` to extract the region segment of the ARN.
 
