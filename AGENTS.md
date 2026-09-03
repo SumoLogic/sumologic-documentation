@@ -25,6 +25,16 @@ When reviewing any PR or doc, always check existing docs of the same type in the
 
 Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
 
+## Output tone (docs and messages to people)
+
+This section governs only the prose Claude produces for people to read: published documentation (all of `/docs`), and comments or messages Claude posts through a connector (GitHub PR and issue comments, Jira and Asana comments, Slack messages). Everything else in the repo keeps its existing conventions and is out of scope, for example build and CI config, `.github/` workflows, `AGENTS.md`, `CLAUDE.md`, `.claude/`, source code, and commit messages.
+
+- **No em dashes.** Rewrite with a period, semicolon, colon, commas, or parentheses. A fixed attribution marker appended by tooling is the one exception.
+- **Be concise.** Lead with the point. No throat-clearing preambles, no filler ("simply", "just", "of course", "it's worth noting"), no sentences that restate what was just said.
+- **Plain language.** Short sentences, one idea each. When two phrasings say the same thing, use the shorter one.
+
+For docs, the full editorial rules live in [the style guide](https://www.sumologic.com/help/docs/contributing/style-guide) and are applied by the `sumo-style` skill. This section restates the essentials and extends them to human-facing comments, where that skill does not load.
+
 ## Bulk Changes
 For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
 
