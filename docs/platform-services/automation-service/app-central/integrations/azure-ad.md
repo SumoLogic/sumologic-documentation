@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
 
-***Version: 1.16  
-Updated: Sep 2, 2026***
+***Version: 1.17  
+Updated: Sep 3, 2026***
 
 [Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id), formerly known as Azure Active Directory (Azure AD), is an identity and access management solution from Microsoft that helps organizations secure and manage identities in cloud and on-premises environments.
 
@@ -159,7 +159,7 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
       + Get Risky User
       + List Risky Users
     + Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.
-* September 2, 2026 (v1.16)
+* September 3, 2026 (v1.16)
     + Added Delegated (Device Code Flow) authentication support alongside existing Application (Client Credentials) auth.
     + Added New Actions (Delegated auth only):
       + Initiate Delegated Auth
