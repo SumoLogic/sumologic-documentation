@@ -485,7 +485,16 @@ chmod +x MigrateAWSOStackSetToV300.sh
 
 The script will prompt you interactively for your access key (input is hidden and not saved to shell history).
 
-If your StackSet is not named `SUMO-LOGIC-AWS-OBSERVABILITY`, add `-s YOUR_STACKSET_NAME`.
+If your StackSet is not named `SUMO-LOGIC-AWS-OBSERVABILITY`, add `-s YOUR_STACKSET_NAME`. **It is recommended to always pass `-s` explicitly to avoid any ambiguity**:
+
+```bash
+./MigrateAWSOStackSetToV300.sh \
+  -d us2 \
+  -i suXXXXXXXXXXXX \
+  -o 00000000XXXXXXXX \
+  -r us-east-1 \
+  -s MY-CUSTOM-STACKSET-NAME   # recommended: always specify your StackSet name
+```
 
 **Example — update existing StackSet in-place (all mode, no `-n`)**
 
