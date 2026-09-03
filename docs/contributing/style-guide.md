@@ -64,6 +64,16 @@ Helpful blogs on tech writing:
 * **Error messaging**. When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you recommend to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Use a different email, or contact Sumo Logic for assistance."
 * **Humor**. We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
 
+### Concise, human phrasing
+
+Write the way a knowledgeable colleague would explain something in person. Cut anything that does not carry information. This also keeps our docs from reading like generic AI output.
+
+* **No throat-clearing.** Start with the point. Drop preambles like "It's worth noting that", "It's important to understand", and "In this section, we will".
+* **No filler.** Cut "simply", "just", "of course", "as you can see", "needless to say", and intensifiers like "very", "really", and "quite".
+* **Do not restate.** Skip summary sentences that repeat what the paragraph, list, or procedure just said.
+* **One idea per sentence.** Prefer short sentences over long ones stitched together with "and", "which", or semicolons.
+* **Say it once.** When two sentences make the same point, keep the clearer one and delete the other.
+
 ### Active voice
 
 When writing instructions, use the active voice whenever possible. This example below gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
@@ -964,6 +974,14 @@ Colons are used to introduce lists or to separate titles from subtitles. Only in
 ### Commas
 
 We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "[I had eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
+
+### Dashes
+
+Do not use em dashes (the long dash). They read as generic AI output, and we keep them out of every doc. Rewrite instead: use a period or semicolon to split two independent clauses, a colon to introduce something, or commas or parentheses for a brief aside.
+
+Use the en dash (–) only for numeric and date ranges, with no space on either side: `9–17`, `2023–2024`. See [Numbers](#numbers) and [Dates](#dates).
+
+Use the hyphen (-) for compound modifiers, such as `drop-down menu` or `read-only field`.
 
 ### Exclamation points
 
