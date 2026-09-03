@@ -14,6 +14,7 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 
 :::tip Designing your Deployment
 * [How to choose a Collector and Source](/docs/send-data/choose-collector-source)
+* [Installed Collector vs OpenTelemetry Collector Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks)
 * [How to use the Collection UI](/docs/send-data/collection)
 :::
 
