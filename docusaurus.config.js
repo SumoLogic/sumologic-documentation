@@ -131,6 +131,12 @@ module.exports = {
     require.resolve('./src/client-modules/trackTrialClick.js'),
     require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
+  customFields: {
+    askAi: {
+      feedbackFormUrl:
+        'https://docs.google.com/forms/d/e/1FAIpQLSdyW-HkogFCxi_oSuAV3XqH5gStgA2ifRFzBq5XzoPvCVYVzA/viewform?usp=pp_url&entry.778922322=a&entry.898262107=a&entry.1217042173=a&entry.1416546939=a&entry.1571666595=a&entry.554631687=a',
+    },
+  },
   storage: {
     type: 'localStorage',
     namespace: true,
@@ -388,6 +394,14 @@ module.exports = {
       contextualSearch: false,
       searchPagePath: 'docs-search', // Default value is 'search'; renamed to 'docs-search' so it doesn't conflict with '/Search' redirect
       insights: true,
+      askAi: {
+        assistantId: 'cc341a82-e224-4bb2-906e-4d9c94f9ae9a',
+        agentStudio: true,
+        indexName: 'crawler_sumodocs',
+        apiKey: 'fb2f4e1fb40f962900631121cb365549',
+        appId: '2SJPGMLW1Q',
+        suggestedQuestions: true,
+      },
       insightsConfig: {
         useCookie: true, // alt to useCookie: true,
       },
