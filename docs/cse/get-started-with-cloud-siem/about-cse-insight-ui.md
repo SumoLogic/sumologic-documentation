@@ -176,8 +176,8 @@ At the top of the insight details page, you’ll see a signal timeline that visu
    * **Anomaly**. Signals that were triggered by User and Entity Behavior Analytics (UEBA) rules.
    * **Threat intelligence**. Signals that were fired by threat intel rules.
 1. **Show Related**. Click this link to show related signals in addition to attached signals. If you click the **Show Related** check box, the page updates and also displays any related signals or related insights.
-    * A *related signal* is a signal that isn’t part of the current insight (it’s not attached), but fired on the same entity as the current insight’s attached signals within 7 days of the current insight’s attached signals. 
-    * A *related insight* is an insight that a related signal is attached to.
+    * A related signal is a signal that isn’t part of the current insight (it’s not attached), but fired on the same entity as the current insight’s attached signals within 7 days of the current insight’s attached signals.
+    * A related insight is an insight that a related signal is attached to.
 1. **Sort options**. You can sort the signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
 1. **Add Signals**. Click this option if you want to add a signal to the insight. You’ll be prompted with a list of signals that have the same entity as the current insight (if there are any), and are not already attached to another insight. A signal that you add to an insight manually is considered an attached signal.
 
@@ -280,7 +280,7 @@ By default, this view shows the same entities that are displayed on the list vie
    * A **time frame** control, which controls what time frame to use when searching for and viewing relationships outside of the insight.
 
 In addition, the following can appear in the graph:
-* **Detected entities**. Entities with a *detected* relationship will be connected with solid lines. A *detected relationship* is when a relationship is detected between entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
+* **Detected entities**. Entities with a detected relationship will be connected with solid lines. A detected relationship is when a relationship is detected between entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
 * **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly. For more information about threat indicators, see [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 

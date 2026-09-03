@@ -115,7 +115,7 @@ You can push the following:
 - If errors occur during the push, administrators must manually re-attempt the failed push. To see failed pushes, use [View History](#view-history).
 - Push operations may take longer based on the volume of content being pushed.
 - Rule tuning expressions must be pushed separately from rules.
-- *Cloud SIEM Legacy Rule Type* is not supported for sync or push.
+- Cloud SIEM Legacy Rule Type is not supported for sync or push.
 - For library content, breaching 15,000 cap (Items selected in one job X Child orgs targeted in one job) would fail the sync job.
 - The maximum runtime for jobs below 1200 requests (Items selected in one job X Child orgs targeted in one job) is less than or equal to 2 mins. Linear increase beyond 1200 request would take more runtime, for example, 15,201 would nearly take 30 mins.
 - For CSIEM rules and tuning expression (Rule or Tuning Exp × child-orgs):

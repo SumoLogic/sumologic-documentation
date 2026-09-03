@@ -4,7 +4,7 @@ title: Keyword Search Expressions
 description: The text that comes before the first pipe symbol in a query is called the keyword expression or scope.
 ---
 
-A _Keyword Search Expression_ defines the scope of data for the query.
+A Keyword Search Expression defines the scope of data for the query.
 
 Boolean logic and wildcards enable you to search for multiple terms, express logic about term distribution within messages, and specify partial terms with wildcards. The keyword expression can include [built-in metadata fields](../search-basics/built-in-metadata.md) such as `_collector`, `_sourceCategory`, `_sourceName`, and `_sourceHost` as well as custom log metadata fields.
 

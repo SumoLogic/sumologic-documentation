@@ -13,6 +13,8 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Aggregates tab**. When referring to the Aggregates tab (where aggregate search results are displayed) the term Aggregates is capitalized.
 
+**Aka**. Don't use. Write out "also known as" instead.
+
 **Ampersand (&)**. Don't use for "and". Spell out.
 
 **Anomaly Detection**. Always capitalize.
@@ -23,19 +25,23 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 
 
+## B
+
+**Backend**. One word. Don't use "back-end" (hyphenated) or "back end" (two words).
+
 ## C
 
-**Check box**. Check box is two words. Don't use checkbox.
+**Checkbox**. One word. Don't use "check box" (two words).
 
 **Classic UI**. Use this term to clarify that you're talking about the legacy UI.
 
 **Click**. You click a UI element. Do not use "click on".
 
-**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button.
+**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name — always capitalize it.
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
-**Column**. When referring to a column in a dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box "Column" is capitalized). The word "column" doesn't appear in the main dashboard UI.
+**Column**. When referring to a column in a dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box, "Column" is capitalized). The word "column" doesn't appear in the main dashboard UI.
 
 
 
@@ -51,17 +57,11 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Drill down**. Drill down, as in a menu, or other filtering feature is two words, not one.
 
-**Dropdown**.
-   * Use drop-down (Adjective). Example: Choose your favorite model from a *drop-down* menu.
-   * Use dropdown (Noun). Example: Select a source category from the *dropdown*. Do not use drop down (two words).
-
-:::info
-If we are not clear on its usage, the term shouldn’t be used at all: Don't use 'drop-down'; use menu or list. We should keep our target audience in mind, that is, developers or engineers. For example, "Select a source from the list". Developers or Engineers already know they have to select the source from the dropdown only.
-:::
+**Dropdown**. Use "dropdown" (one word, no hyphen) as an adjective before a noun: "dropdown list," "dropdown menu." Don’t use it as a standalone noun. When possible, describe the action instead: "Select X from the list." Do not use "drop-down" (hyphenated) or "drop down" (two words).
 
 ## E
 
-**E.g., i.e., and etc.,** These abbreviations are parenthetical, which means they take a comma after. [Avoid using these abbreviations](/docs/contributing/style-guide/#abbreviations).
+**E.g., i.e., and etc.** Don't use these abbreviations. Use "for example" instead of "e.g.", "that is" instead of "i.e.", and avoid "etc." by listing items explicitly or using "such as." See [Abbreviations](/docs/contributing/style-guide/#abbreviations) in the style guide.
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
@@ -106,6 +106,8 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Library**. The Sumo Logic Library (formerly the Content Library) is now just the Library. Capitalize.
 
+**Lifecycle**. One word. Don't use "life cycle" (two words) or "life-cycle" (hyphenated).
+
 **Login vs Log In**. Login as one word is a _noun_ or an _adjective_. Log in as two words is a _verb_. For example, "You can log in on the login page."
 
 
@@ -118,6 +120,8 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 **Menu**. When referring to a menu in the UI, use the word menu alone. Don't use dropdown menu, list, or selector.
 
 **Messages tab**. When referring to the Messages tab (where non-aggregate search results are displayed) the term Messages is capitalized.
+
+**Manipulate**. Avoid. Use "work with," "handle," or "use" instead.
 
 **Multiline**. Should be one word, not two, or hyphenated.
 
@@ -150,6 +154,8 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 
 ## R
+
+**Real time / real-time**. Two words as a noun: "Data updates in real time." Hyphenate as an adjective before a noun: "real-time alerts," "real-time dashboard."
 
 **Repo**. Short for repository. No need to spell out repository as our audience is technical enough for this to be clear.
 
@@ -200,6 +206,8 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 **Time series.** Time series is two words, not one.
 
 **Time slice**. Time slice is two words, not one.
+
+**Timeout**. One word, no hyphen, whether used as a noun or adjective. Don't use "time-out" or "time out."
 
 **Timestamp**. Timestamp is one word.
 

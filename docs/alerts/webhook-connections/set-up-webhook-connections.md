@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 To create a webhook connection, you need the View Connections and Manage Connections [role capabilities](/docs/manage/users-roles/roles/role-capabilities). Contact your org administrator for assistance.
 :::
 
-A _webhook_ is an HTTP callback, which is an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
+Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks.
 
 For example, once you set up a webhook connection in Sumo Logic and create a scheduled search, you can send an alert from that scheduled search as a post to a Slack channel, or integrate with third-party systems. In addition to an alert, you can include a link directly to a search and even a few search results (depending on the third party tool you're connecting to). There is no limit to the number of webhooks you can send from Sumo Logic, but your third party might impose restrictions. In addition, the payload of a webhook may be restricted by Sumo Logic or the third party.
 

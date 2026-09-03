@@ -42,11 +42,11 @@ To work with SLOs, you need the following Sumo Logic [role capabilities](/docs/m
 
 Reliability is essentially the uptime of systems and services. This includes the following concepts:
 
-**Service-Level Objective (SLO)**. The software provider's performance promise made to end users. This goal defined by the _SLI_ for a _compliance period_.
+**Service-Level Objective (SLO)**. The software provider's performance promise made to end users. This goal defined by the SLI for a compliance period.
 
-**Service-Level Indicator (SLI)**. Quantitative measurements of a system/service availability within a specific time period. These performance figures are used to determine that the _SLO_  &#8212; the quality promised to end users &#8212; is being met.
+**Service-Level Indicator (SLI)**. Quantitative measurements of a system/service availability within a specific time period. These performance figures are used to determine that the SLO &#8212; the quality promised to end users &#8212; is being met.
 
-**Error Budget**. The tolerable amount/level of system unavailability in the _compliance period_.
+**Error Budget**. The tolerable amount/level of system unavailability in the compliance period.
 
 **Compliance period**. The duration of time used to monitor and score your system/service availability. Breaking down your organization's quantitative success rate over consistent time periods is useful internally and can be communicated to customers that you're meeting your goals. See the following information for the max compliance period:
 
@@ -70,7 +70,7 @@ Reliability is essentially the uptime of systems and services. This includes the
 
 As an example, let's say an ecommerce app considers its checkout service transactions to be successful (good) when completed in less than 500ms. A successful five-minute (5m) time window may be one in which the p99 of latency is less than 500ms.
 
-The _SLI_ can be defined as the percentage of successful 5m windows in a _compliance period_ of 30 days (30d) or equal to 99.9% for any month. The number of unsuccessful (bad) transactions we allow as an _error budget_ is 0.1% of these 5m windows in 30d.
+The SLI can be defined as the percentage of successful 5m windows in a compliance period of 30 days (30d) or equal to 99.9% for any month. The number of unsuccessful (bad) transactions we allow as an error budget is 0.1% of these 5m windows in 30d.
 
 The following chart shows our calculations and an example 5m window for the month of January where a number of requests were unsuccessful due to completions that were greater than 500ms:
 

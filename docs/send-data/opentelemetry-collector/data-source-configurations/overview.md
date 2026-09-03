@@ -13,7 +13,7 @@ After you complete source configuration on the Sumo Logic OpenTelemetry (OTel) C
 
 ## Data Sources
 
-_Data sources_ (or _Source_ in Sumo Logic) refers to a specific application/infrastructure component from which the collector can collect telemetry (i.e., logs, metrics, and traces). The sources include all configuration components, including protocols, receivers, processors, and exporters required to collect telemetry data from a given source. MySQL, Nginx, Kafka, Cassandra, and JMX are all examples of sources from where Sumo Logic collector can collect and send data.
+Data sources (or Source in Sumo Logic) refers to a specific application/infrastructure component from which the collector can collect telemetry (i.e., logs, metrics, and traces). The sources include all configuration components, including protocols, receivers, processors, and exporters required to collect telemetry data from a given source. MySQL, Nginx, Kafka, Cassandra, and JMX are all examples of sources from where Sumo Logic collector can collect and send data.
 
 Sources are components that generate data that is then collected by receivers. A source can be thought of as the originating point for data that is being ingested into the Sumo Logic OTel collector. Sources are responsible for collecting and formatting data, and then passing it along to the appropriate receiver.
 

@@ -5,7 +5,7 @@ title: Transactionize Operator
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The _Transactionize_ operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
+The Transactionize operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
 
 Unlike other "group by" operators, where the logs in a group must match on all defined fields, `transactionize` just needs one field to match in order to assign logs to the same group.
 
