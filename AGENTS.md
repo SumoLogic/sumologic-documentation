@@ -102,7 +102,7 @@ Before pushing any commit that changes docs content:
 - **Creating tickets**: Use one of three approaches — a user-provided description, analysis of the code changes being made, or the file paths touched. (Claude Code: see `.claude/commands/jira.md` for the concrete pattern and Technical Area mappings.)
 - **Titles**: Sentence case, action verb, specific, under 10 words
 - **Descriptions**: Benefit-driven, active voice, under 150 words unless complex, markdown format
-- **Comment attribution**: Always append `— via Claude Code` to any comment posted to a Jira ticket
+- **Comment attribution**: End every comment posted to a Jira ticket with `— via Claude Code`. This is enforced by a PreToolUse hook (see [GitHub Rules](#github-rules) for details); it applies to GitHub PR and issue comments too.
 - **Status transitions**: Use workflow states: Backlog → To Do → In Progress → Blocked → In Review → On Hold → Published → Closed
 
 ### Publishing Checklist
@@ -113,6 +113,7 @@ Before transitioning any ticket to Published:
 
 ## GitHub Rules
 - **Assignee**: Assign any new PR to the current user unless otherwise specified
+- **Comment attribution**: End every comment Claude posts to a GitHub PR or issue with `— via Claude Code`. This covers `gh pr comment`, `gh issue comment`, `gh pr review`, and `gh api` comment calls. A PreToolUse hook (`.claude/hooks/require-claude-attribution.sh`, wired up in `.claude/settings.json`) blocks any comment that is missing this marker, so it does not depend on remembering the rule. The same requirement applies to Jira comments (see [Jira Rules](#jira-rules-sumo-logic-internal--requires-atlassian-access)).
 
 ## Search, crawlers, and LLM-facing files
 Three pieces work together and should be kept in sync when touching any of them:
