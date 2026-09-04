@@ -19,17 +19,17 @@ Cloud SIEM uses *inventory data* (information about hosts and users in your envi
 Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
 
-## How it works
+## How does a custom inventory source work?
 
 In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
 
 
 ## Before you start
 
-Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
+Identify your source of inventory data and review the [Cloud SIEM inventory schema](#what-is-the-cloud-siem-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
-## Limitations
+## What are the limitations of this method?
 
 This approach uses Scheduled Searches, which are limited to 100 unique rows of data each time they trigger. This means that if you have more than 100 inventory items, only the first 100 will be sent using this method.
 
@@ -67,7 +67,7 @@ In this step, you create a webhook that points to the HTTP source.
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#what-is-the-cloud-siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search
@@ -86,7 +86,7 @@ In this step, you schedule the search you created above to send results to the W
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check **Send a separate alert for each search result**.
     9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="Refreshed Save Item dialog" style={{border: '1px solid gray'}} width="450"/>
 
-## Cloud SIEM inventory schema
+## What is the Cloud SIEM inventory schema?
 
 This section defines the attributes in the Cloud SIEM inventory schema for hosts and users. Note that the same attributes can be used for either host or user inventory data.
 
@@ -286,3 +286,11 @@ Scheduled searches are limited to 100 unique rows of data each time they trigger
 ### What inventory types does Cloud SIEM support?
 
 Cloud SIEM supports two inventory types: user and computer (host). Each has its own set of supported attributes that you map from your inventory source's fields.
+
+### Do you need to modify existing metadata to use a custom inventory source?
+
+No. Setting up a custom inventory source only requires an HTTP Source, a webhook connection, and a scheduled search — you don't need to change the metadata or source categories on your existing sources.
+
+### Can you use a custom inventory source to set entity criticality?
+
+Yes. Attributes ingested through a custom inventory source can be used in entity groups to set attributes on entities, which you can then use in detection rule definitions and to adjust signal severity through criticality.

@@ -67,9 +67,9 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
    * None (no rules)
    * Not detectable (by a SIEM)
    * Filter not applied
-1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#technique-details) showing your coverage for that technique.
+1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#what-technique-details-does-the-explorer-show) showing your coverage for that technique.
 
-## Benefits
+## What are the benefits of the MITRE ATT&CK Threat Coverage Explorer?
 
 * Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions.
 * Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
@@ -79,7 +79,7 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
 * Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage.
 * Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment.
 
-## Technique details
+## What technique details does the Explorer show?
 
 When you click a square in the matrix, details about coverage for that MITRE technique display in a panel. The description displayed is pulled directly from the MITRE Enterprise matrix. The panel includes an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
 
@@ -221,3 +221,11 @@ Recent Activity shows coverage based on signals your organization actually gener
 ### Can you export MITRE ATT&CK coverage data?
 
 Yes. You can export the filtered coverage to a JSON file in the standard MITRE format, which you can combine with exports from other security tools to calculate total coverage across your environment.
+
+### How is MITRE ATT&CK coverage scored?
+
+Each technique gets a score from 0 to 3 based on the number of rules covering it: 0 (None, 10 or fewer rules), 1 (Low, 11–13 rules), 2 (Medium, 14–16 rules), and 3 (High, 17 or more rules).
+
+### Can you use APIs to get MITRE ATT&CK coverage data?
+
+Yes. The `MitreTaggedRules` API returns a list of MITRE ATT&CK tagged rules, and the `MitreAttackCoverageExportJson` API returns a JSON representation of your MITRE ATT&CK coverage.

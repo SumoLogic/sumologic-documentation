@@ -132,7 +132,7 @@ Your answer to all these questions may vary. Make sure you feel confident naviga
 * Depending on your monitor size and the zoom settings of your browser, you may only see the icons, and not the words, in the top navigation bar. Try resizing your browser and adjusting your zoom settings to suit your needs.
 :::
 
-## Introduction to threat investigation
+## What is threat investigation in Cloud SIEM?
 
 ### Different threats but one platform
 
@@ -145,7 +145,7 @@ Sumo Logic can help all of these companies meet their different security and com
 
 Think about it: What security and compliance issues are you most concerned about in your company today? How has that changed over the years? How were security concerns different at other companies you've worked for in the past?
 
-### Using the MITRE ATT&CK matrix
+### How is the MITRE ATT&CK matrix used in Cloud SIEM?
 
 The [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/) is published by MITRE, a non-profit research organization. ATT&CK stands for Adversarial Tactics, Techniques, and Common Knowledge. 
 
@@ -451,6 +451,14 @@ A record is a parsed, mapped, and enriched log message. A signal is created when
 ### How do you start investigating a Cloud SIEM insight?
 
 Open the insight to see its entities, signals, and timeline, then try to answer who, what, where, when, why, and how the event occurred. You can also pivot to Sumo Logic search using the Sumo Logic Search context action for deeper investigation.
+
+### What's the best software to support Tier 1 and Tier 2 SOC analysts?
+
+Cloud SIEM supports Tier 1 and Tier 2 SOC analysts with prioritized insights, automatic entity correlation, and a low false-positive rate, so analysts spend less time triaging and more time on actual investigation. Cloud SOAR then adds playbook automation so Tier 1 analysts can respond consistently, freeing Tier 2 analysts for deeper threat hunting.
+
+### What is the MITRE ATT&CK matrix used for in Cloud SIEM?
+
+Cloud SIEM uses the MITRE ATT&CK framework's tactic names for the stages of signals and the names of insights, helping you understand how or why an event occurred and prioritize which techniques matter most to your organization.
 
 ## Additional resources
 

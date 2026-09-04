@@ -20,7 +20,7 @@ While this section provides an introduction to Cloud SIEM for administrators, it
 
 ## Build your SOC
 
-### The Cloud SIEM data pipeline
+### How does the Cloud SIEM data pipeline work?
 
 Cloud SIEM is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. 
 
@@ -58,7 +58,7 @@ Once you've answered these questions, you can assess what is and is not working 
 * All data must be ingested into Sumo Logic before it can be forwarded to Cloud SIEM. See [Cloud SIEM Ingestion](/docs/cse/ingestion/) to learn more details about data ingestion, setting up collectors, partitioning your data, and designing good metadata. 
 * If you only want to forward some, but not all of your data to Cloud SIEM you can use data tiers and partitions. For more information, see [Partitions](/docs/manage/partitions/).
 
-### Which UI should I use?
+### Which UI should you use?
 
 As a Cloud SIEM admin, you'll use both the Sumo Logic UI and the Cloud SIEM UI. Even if you're primarily focused on Cloud SIEM, you need to be comfortable using both interfaces.
 
@@ -155,7 +155,7 @@ In this section, we'll send a simple JSON log message to the HTTP source we crea
     * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>`. Replace `source-category` with the source category you created. 
 * If you still do not see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors.
 
-### Logs into records
+### How do logs become records in Cloud SIEM?
 
 <img src={useBaseUrl('img/cse/intro-logs-into-records.png')} alt="Logs into records"  width="500"/>
 
@@ -527,6 +527,14 @@ You enable data forwarding on a collector or source in Sumo Logic (using the `_s
 ### Does Cloud SIEM process historic data?
 
 No. Cloud SIEM only processes new data ingested after you enable data forwarding. Older data already in Sumo Logic will not be forwarded or processed retroactively.
+
+### Do you need to write Cloud SIEM rules from scratch?
+
+No. Sumo Logic maintains hundreds of out-of-the-box rules that are updated frequently. You only need to write a custom rule if you have a specific threat or unique data source that isn't already covered.
+
+### What customizations can a Cloud SIEM administrator make beyond rules?
+
+You can customize the Actions button on insights, create and update match lists and suppression lists, adjust insight generation thresholds or create custom insights, and define custom workflows for insight statuses.
 
 ## Additional resources
 

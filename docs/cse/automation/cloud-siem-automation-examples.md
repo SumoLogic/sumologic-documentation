@@ -394,3 +394,11 @@ No. Most automations, including enrichments and notifications, can be built usin
 ### Can Cloud SIEM automations run outside the Sumo Logic cloud?
 
 Yes. Actions can run from the Sumo Logic cloud, or from other environments using the [Automation Service Bridge](/docs/platform-services/automation-service/automation-service-bridge/), which is required for custom integrations.
+
+### What's the difference between the simple, intermediate, and advanced examples on this page?
+
+The simple example configures an enrichment using an out-of-the-box integration (VirusTotal). The intermediate example adds a notification action, sending an email, after an enrichment. The advanced examples build a custom integration from YAML files, or combine enrichment, search, and notification into one complex playbook.
+
+### Can you add enrichment to entities instead of insights?
+
+Yes. Use the same custom integration steps as for insight enrichment, but select **Entity** instead of **Insight** as the playbook input, and use the **Add Entity Enrichment** action instead of **Add Insight Enrichment**.

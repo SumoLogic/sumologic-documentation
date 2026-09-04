@@ -114,3 +114,11 @@ You can forward log and event data already ingested into Sumo Logic, from on-pre
 ### How is Cloud SIEM different from Cloud SOAR?
 
 Cloud SIEM focuses on the investigation phase of security operations, while [Cloud SOAR](/docs/cloud-soar/) focuses on automated response. You can use them together or independently.
+
+### What are records, signals, entities, and insights in Cloud SIEM?
+
+Records are parsed and enriched log messages. Signals are created when a record matches a rule. Entities are the unique identifiers, like IP addresses or usernames, extracted from signals. Insights are groups of related signals for the same entity that cross a severity threshold.
+
+### Can you write custom rules in Cloud SIEM?
+
+Yes. In addition to hundreds of built-in rules, you can write custom match, threshold, chain, aggregation, first seen, and outlier rules to cover threats or data sources specific to your environment.

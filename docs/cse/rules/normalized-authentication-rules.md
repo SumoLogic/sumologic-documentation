@@ -96,3 +96,11 @@ Any data source with a log mapping that correctly sets the `objectType`, `normal
 ### Do you need to write custom rules for a new authentication data source?
 
 No. Once you create or update a log mapping that meets the normalization requirements, the existing normalized authentication rules automatically apply to the new data source without customization.
+
+### What happens if MFA isn't required for a login?
+
+The Authentication Without MFA rule detects a successful login where the account didn't use multi-factor authentication. If you don't require MFA for a particular data source, disable the rule or use a rule tuning expression to exclude that data source.
+
+### Can normalized authentication rules detect impossible travel?
+
+Yes. The Impossible Travel - Successful and Impossible Travel - Unsuccessful rules detect two logins from the same user with different country codes, which can indicate credential theft. Add filtering criteria, such as known VPN addresses, to reduce false positives.
