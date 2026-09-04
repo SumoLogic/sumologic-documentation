@@ -218,6 +218,6 @@ It shows which MITRE ATT&CK tactics, techniques, and procedures are covered by r
 
 Recent Activity shows coverage based on signals your organization actually generated in the last 180 days. Theoretical Coverage shows the coverage you'd have if all enabled rules generated at least one signal, which helps you identify valuable custom rules to write.
 
-### Can I export MITRE ATT&CK coverage data?
+### Can you export MITRE ATT&CK coverage data?
 
 Yes. You can export the filtered coverage to a JSON file in the standard MITRE format, which you can combine with exports from other security tools to calculate total coverage across your environment.

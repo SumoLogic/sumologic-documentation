@@ -93,6 +93,6 @@ Normalized authentication rules are built-in Cloud SIEM rules that detect accoun
 
 Any data source with a log mapping that correctly sets the `objectType`, `normalizedAction`, `success`, and related fields, including cloud services like AWS CloudTrail, VPN services like Cisco ASA, and OS-based authentication like Windows and Linux.
 
-### Do I need to write custom rules for a new authentication data source?
+### Do you need to write custom rules for a new authentication data source?
 
 No. Once you create or update a log mapping that meets the normalization requirements, the existing normalized authentication rules automatically apply to the new data source without customization.

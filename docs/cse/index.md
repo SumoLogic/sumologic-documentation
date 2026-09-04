@@ -107,7 +107,7 @@ This section contains the following topics:
 
 Cloud SIEM is a cloud-based security information and event management system that collects and correlates log and event data from your infrastructure and applications into prioritized security insights.
 
-### What data can I send to Cloud SIEM?
+### What data can you send to Cloud SIEM?
 
 You can forward log and event data already ingested into Sumo Logic, from on-premises or cloud sources, to Cloud SIEM for parsing, mapping, and enrichment into records.
 

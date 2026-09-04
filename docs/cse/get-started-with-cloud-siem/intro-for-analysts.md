@@ -448,7 +448,7 @@ An insight is a group of signals clustered around a single entity, created when 
 
 A record is a parsed, mapped, and enriched log message. A signal is created when a record matches a rule. An insight is created when enough signals for the same entity accumulate enough severity to cross the activity score threshold.
 
-### How do I start investigating a Cloud SIEM insight?
+### How do you start investigating a Cloud SIEM insight?
 
 Open the insight to see its entities, signals, and timeline, then try to answer who, what, where, when, why, and how the event occurred. You can also pivot to Sumo Logic search using the Sumo Logic Search context action for deeper investigation.
 

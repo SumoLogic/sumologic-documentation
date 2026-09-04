@@ -387,7 +387,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
 
 Start with the simple enrichment example on this page, which adds an IP reputation lookup to an insight using an out-of-the-box VirusTotal integration and requires no custom code.
 
-### Do I need a custom integration to automate Cloud SIEM tasks?
+### Do you need a custom integration to automate Cloud SIEM tasks?
 
 No. Most automations, including enrichments and notifications, can be built using out-of-the-box integrations like VirusTotal, Sumo Logic, and Basic Tools. Custom integrations are only needed for services without a built-in integration.
 

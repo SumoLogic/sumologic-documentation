@@ -92,6 +92,6 @@ Sumo Logic offers three security solutions that work together: Logs for Security
 
 Cloud SIEM focuses on the investigation phase, giving SOC analysts prioritized, contextualized threats with automated detection. Cloud SOAR focuses on the response phase, automating triage, investigation, and remediation through playbooks. You can use either solution independently or together.
 
-### Do I need Logs for Security before I can use Cloud SIEM or Cloud SOAR?
+### Do you need Logs for Security before you can use Cloud SIEM or Cloud SOAR?
 
 Yes. You collect logs for security first, then use that data with Cloud SIEM and Cloud SOAR for threat detection, investigation, and response.

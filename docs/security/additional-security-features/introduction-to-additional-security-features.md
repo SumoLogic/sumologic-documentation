@@ -84,7 +84,7 @@ Queries are the core of Sumo Logic's data processing platform. With queries, you
 
 Logs for Security is Sumo Logic's set of features that use logs for security use cases, including threat detection and investigation, security data lake storage, audit and compliance, application security, and cloud infrastructure security.
 
-### What can I do with Logs for Security?
+### What can you do with Logs for Security?
 
 You can write queries to search security logs in real time, build dashboards to visualize findings, and create alerts based on thresholds. You can also use integrations for common applications and threat intelligence from sources like CrowdStrike and AWS GuardDuty.
 

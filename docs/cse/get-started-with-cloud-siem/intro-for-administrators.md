@@ -520,7 +520,7 @@ You now have a custom automation that can be manually run or attached to an insi
 
 A Cloud SIEM administrator configures the data pipeline: deciding what data to ingest, forwarding it to Cloud SIEM, setting up log and ingest mappings, tuning rules and match lists, and configuring automations and role-based access for the SOC team.
 
-### How do I get data into Cloud SIEM?
+### How do you get data into Cloud SIEM?
 
 You enable data forwarding on a collector or source in Sumo Logic (using the `_siemForward = True` field or the **Forward to SIEM** check box), then configure log and ingest mappings so Cloud SIEM can parse the data into records.
 

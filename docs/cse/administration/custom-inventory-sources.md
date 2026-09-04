@@ -275,11 +275,11 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 ## FAQ
 
-### Why would I create a custom inventory source?
+### Why would you create a custom inventory source?
 
 Create a custom inventory source when you want to use inventory data (information about hosts and users) from a system or service that isn't already supported by a Sumo Logic inventory source, so Cloud SIEM can use it for context in signals and entity groups.
 
-### How much inventory data can I send with this method?
+### How much inventory data can you send with this method?
 
 Scheduled searches are limited to 100 unique rows of data each time they trigger. If you have more than 100 inventory items, only the first 100 are sent using this method.
 

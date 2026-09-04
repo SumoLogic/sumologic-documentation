@@ -18,7 +18,7 @@ You can use threat intelligence indicators in Cloud SIEM to find possible threat
 **You can no longer add custom threat intelligence sources in Cloud SIEM**. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework.
 :::
 
-## How do I use the hasThreatMatch function to detect threat indicators?
+## How to use the hasThreatMatch function to detect threat indicators
 
 Use the `hasThreatMatch` function in Cloud SIEM rules to analyze incoming records for matches to threat intelligence indicators. 
 
@@ -30,7 +30,7 @@ hasThreatMatch([srcDevice_ip], confidence > 50)
 
 For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
 
-## How do I view threat indicator labels in the Cloud SIEM UI?
+## How to view threat indicator labels in the Cloud SIEM UI
 
 Entities are automatically enriched with indicator data from all [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) and the legacy [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/). (However, after initial enrichment, any subsequent changes to indicators in the default [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) will not be reflected in the already-enriched entities.)
 
@@ -82,7 +82,7 @@ Following is the mapping of threat type fields in indicators to reputation label
 If the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.
 :::
 
-## How do I add verified indicators to match lists?
+## How to add verified indicators to match lists
 
 To prevent entities that are verified as safe from resulting in signals being fired from threat intelligence indicators, add the verified entities to the appropriate [standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists):
 * [`verified_applications`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_applications)
@@ -107,7 +107,7 @@ For example, if you have a list of allowed IP addresses, add them to the [`verif
 
 A threat intelligence indicator is a known indicator of compromise, such as an IP address, domain, or hash, sourced from threat intelligence feeds. Cloud SIEM automatically enriches signals with matching indicators and displays a reputation label, such as Malicious, Suspicious, or Not Flagged.
 
-### Can I still add custom threat intelligence sources in Cloud SIEM?
+### Can you still add custom threat intelligence sources in Cloud SIEM?
 
 No. You can no longer add custom threat intelligence sources. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework instead.
 

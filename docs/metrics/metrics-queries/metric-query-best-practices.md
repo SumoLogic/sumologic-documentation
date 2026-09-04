@@ -496,7 +496,7 @@ A common use case is reducing scape interval so 1m or 2m in Kubernetes collectio
 
 Most unexpected metric query results come down to quantization and rollup type. Every metric series stores multiple rollups (`min`, `max`, `latest`, `avg`, `sum`, `count`), and the default `avg` rollup can produce very different totals than `max` or `sum` for the same data, especially when summing across series.
 
-### How do I fix "too many timeseries in the output"?
+### How do you fix "too many timeseries in the output"?
 
 Reduce the number of result groups below 1000 by aggregating on a lower-cardinality dimension (for example, `| sum by namespace` instead of `| sum by pod`), using the `topk` operator, or filtering out series with the `filter` or `where` operators.
 

@@ -258,6 +258,6 @@ Sumo Logic offers four Flex account types: Free, Trial, Essentials, and Enterpri
 
 For Flex accounts, credits are consumed based on log data volume scanned, along with storage, metrics, and tracing usage, rather than data ingested.
 
-### Where can I monitor my Flex credit usage?
+### Where can you monitor your Flex credit usage?
 
 Use the **Account Overview** tab (**Administration > Account > Account Overview**) to review credit usage by category, track consumption against your plan baseline, and set up usage alerts at 70% and 90% credit thresholds.

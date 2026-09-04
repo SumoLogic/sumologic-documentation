@@ -461,6 +461,6 @@ It monitors worker node and application health across your Kubernetes cluster, i
 
 It uses application logs plus Node-exporter and kube-state-metrics metrics, collected using Prometheus with the Sumo Logic Distribution for OpenTelemetry Collector for metadata enrichment.
 
-### Do I need a separate app for the Kubernetes control plane?
+### Do you need a separate app for the Kubernetes control plane?
 
 Yes. The Kubernetes app covers worker nodes. For visibility into the control plane, API server, scheduler, and controller manager, use the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane app alongside it.

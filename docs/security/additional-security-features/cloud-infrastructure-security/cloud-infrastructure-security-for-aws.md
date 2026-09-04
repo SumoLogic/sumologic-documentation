@@ -663,7 +663,7 @@ Cloud Infrastructure Security for AWS gives you a unified view of risks, misconf
 
 It uses Amazon CloudTrail, Amazon GuardDuty, AWS Network Firewall, AWS Security Hub, and AWS Web Application Firewall (WAF) log data.
 
-### Can I deploy Cloud Infrastructure Security for AWS across multiple AWS accounts?
+### Can you deploy Cloud Infrastructure Security for AWS across multiple AWS accounts?
 
 Yes. You can deploy the solution to a single AWS account and region, or to all accounts and multiple regions in your AWS organization.
 
