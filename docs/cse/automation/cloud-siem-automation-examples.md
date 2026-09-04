@@ -3,12 +3,17 @@ id: cloud-siem-automation-examples
 title: Cloud SIEM Automation Examples
 sidebar_label: Automation Examples
 description: Learn to create Cloud SIEM automations using the Automation Service, with examples ranging from simple enrichments to advanced custom integration workflows.
+keywords:
+  - Cloud SIEM automation
+  - Automation Service
+  - playbooks
+  - enrichment
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimit from '../../reuse/actions-limit.md';
 
-Following are examples that show you how to create Cloud SIEM automations using the [Automation Service](/docs/platform-services/automation-service/). The examples, which are listed in order from simple (performing a basic automation using an out-of-the-box integration) to advanced (creating a custom integration), illustrate many of the tasks you’ll perform on a regular basis when you create your own automations.
+This article walks through four examples of creating Cloud SIEM automations using the [Automation Service](/docs/platform-services/automation-service/), ranging from a simple enrichment using an out-of-the-box integration to an advanced custom integration. The examples illustrate many of the tasks you’ll perform on a regular basis when you create your own automations.
 
 :::note
 <ActionsLimit/>
@@ -375,3 +380,17 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. View the **Status** field to find out if the playbook has a status of Success or another status such as **Completed with errors**.
    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**.
    1. Click a node to download results of that node’s run.
+
+## FAQ
+
+### What's the easiest way to start automating Cloud SIEM tasks?
+
+Start with the simple enrichment example on this page, which adds an IP reputation lookup to an insight using an out-of-the-box VirusTotal integration and requires no custom code.
+
+### Do I need a custom integration to automate Cloud SIEM tasks?
+
+No. Most automations, including enrichments and notifications, can be built using out-of-the-box integrations like VirusTotal, Sumo Logic, and Basic Tools. Custom integrations are only needed for services without a built-in integration.
+
+### Can Cloud SIEM automations run outside the Sumo Logic cloud?
+
+Yes. Actions can run from the Sumo Logic cloud, or from other environments using the [Automation Service Bridge](/docs/platform-services/automation-service/automation-service-bridge/), which is required for custom integrations.

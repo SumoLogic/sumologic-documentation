@@ -3,11 +3,16 @@ id: custom-inventory-sources
 title: Configure a Custom Inventory Source
 sidebar_label: Custom Inventory Source
 description: Learn how to extract inventory data from your data sources
+keywords:
+  - Cloud SIEM inventory
+  - inventory data
+  - custom inventory source
+  - webhook
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic explains how you can extract inventory data from logs in Sumo Logic and send it to Cloud SIEM. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
+You can extract inventory data from logs already ingested in Sumo Logic and send it to Cloud SIEM using a scheduled search and a webhook, even if the source isn't a supported Sumo Logic inventory source. This topic explains how, and assumes that you already ingest log data that contains inventory data.
 
 Cloud SIEM uses *inventory data* (information about hosts and users in your environment) to provide context to signals. Inventory data can also be used in entity groups to set attributes on entities (users, hosts, and so on). Those attributes can be later used in detection rule definitions, to adjust the severity of signals (using criticality), and for further context in signals.
 
@@ -267,3 +272,17 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 * The `customInventory` key identifies the payload as custom inventory data. You must include this in your webhook payload.
 * The `type` key specifies what type of inventory data the webhook sends. Set the value to _user_ or _computer_. You must include this in your webhook payload.
 :::
+
+## FAQ
+
+### Why would I create a custom inventory source?
+
+Create a custom inventory source when you want to use inventory data (information about hosts and users) from a system or service that isn't already supported by a Sumo Logic inventory source, so Cloud SIEM can use it for context in signals and entity groups.
+
+### How much inventory data can I send with this method?
+
+Scheduled searches are limited to 100 unique rows of data each time they trigger. If you have more than 100 inventory items, only the first 100 are sent using this method.
+
+### What inventory types does Cloud SIEM support?
+
+Cloud SIEM supports two inventory types: user and computer (host). Each has its own set of supported attributes that you map from your inventory source's fields.

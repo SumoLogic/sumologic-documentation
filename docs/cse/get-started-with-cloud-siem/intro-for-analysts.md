@@ -3,11 +3,16 @@ id: intro-for-analysts
 title: Introduction to Cloud SIEM for Analysts
 sidebar_label: Introduction for Analysts
 description: Learn basic concepts about Cloud SIEM for security analysts.
+keywords:
+  - Cloud SIEM
+  - CSE
+  - SOC analyst
+  - threat investigation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides an introduction to Cloud SIEM for analysts.
+As a Cloud SIEM analyst, you investigate insights, which are groups of correlated signals generated from your log data, to identify and respond to potential security threats. This article provides an introduction to Cloud SIEM for analysts.
 
 If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)). To use Cloud SIEM as an analyst, you must be assigned [Cloud SIEM role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem) that allow you to view Cloud SIEM elements and perform analyst tasks.
 
@@ -432,6 +437,20 @@ Rule tuning, custom rules, and custom insights are a taste of what you can custo
 * [Match lists](/docs/cse/match-lists-suppressed-lists/)
 * [APIs](/docs/cse/administration/cse-apis/) and other [plugins](/docs/cse/integrations/)
 * How much data Cloud SIEM [ingests](/docs/cse/ingestion/)
+
+## FAQ
+
+### What is an insight in Cloud SIEM?
+
+An insight is a group of signals clustered around a single entity, created when the sum of their severity scores crosses an activity score threshold, 12 by default, within a certain timeframe, 14 days by default.
+
+### What's the difference between a record, a signal, and an insight?
+
+A record is a parsed, mapped, and enriched log message. A signal is created when a record matches a rule. An insight is created when enough signals for the same entity accumulate enough severity to cross the activity score threshold.
+
+### How do I start investigating a Cloud SIEM insight?
+
+Open the insight to see its entities, signals, and timeline, then try to answer who, what, where, when, why, and how the event occurred. You can also pivot to Sumo Logic search using the Sumo Logic Search context action for deeper investigation.
 
 ## Additional resources
 

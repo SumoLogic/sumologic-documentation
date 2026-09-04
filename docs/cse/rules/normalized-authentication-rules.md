@@ -3,6 +3,11 @@ id: normalized-authentication-rules
 title: Normalized Authentication Rules
 sidebar_label: Normalized Authentication Rules
 description: Cloud SIEM's normalized authentication rules detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support.
+keywords:
+  - normalized authentication rules
+  - Cloud SIEM
+  - brute force detection
+  - authentication logs
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -47,7 +52,7 @@ This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requiremen
 * [Impossible Travel - Successful](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00097.md) - Detects two successful logins from the same user with different country codes, indicating possible credential theft. We recommend you add filtering criteria to the rule expression to reduce false positives, for example, known VPN addresses.
 * [Impossible Travel - Unsuccessful](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/THRESHOLD-S00098.md) - Detects two failed logins from the same user with different country codes, indicating a possible credential theft attempt. We recommend you use a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to add filtering criteria to the rule to reduce false positives, for example, known VPN addresses.
 
-## About logon and domainLogon
+## What's the difference between logon and domainLogon?
 
 There are two `normalizedAction` values that relate to user logins: *domainLogon* and *logon*. This enables Cloud SIEM to distinguish between Windows authentication events that represent access to a domain resource (*domainLogon*) and events that represent a user accessing a specific machine (*logon*). Currently, only Windows domain (meaning an Active Directory authentication setup regardless of client OS) authentication events will have a ` normalizedAction` value of *domainLogon*.
 
@@ -77,3 +82,17 @@ Cloud SIEM determines which value of of `normalizedAction` is appropriate for a 
 | 11 | CachedInteractive   | A user logged on to this computer with network credentials that were stored locally on the computer. The domain controller was not contacted to verify the credentials. | *logon* |
 | 12 | CachedRemoteInteractive | Same as RemoteInteractive. This is used for internal auditing. | *logon* |
 | 13 | CachedUnlock | Workstation logon. | \<none\> |
+
+## FAQ
+
+### What are normalized authentication rules?
+
+Normalized authentication rules are built-in Cloud SIEM rules that detect account-compromise activity, such as brute force attempts and impossible travel, using authentication logs from any data source whose log mapping meets Cloud SIEM's normalization requirements.
+
+### What data sources do normalized authentication rules support?
+
+Any data source with a log mapping that correctly sets the `objectType`, `normalizedAction`, `success`, and related fields, including cloud services like AWS CloudTrail, VPN services like Cisco ASA, and OS-based authentication like Windows and Linux.
+
+### Do I need to write custom rules for a new authentication data source?
+
+No. Once you create or update a log mapping that meets the normalization requirements, the existing normalized authentication rules automatically apply to the new data source without customization.

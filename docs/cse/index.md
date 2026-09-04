@@ -8,7 +8,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Cloud SIEM is a cloud-based security information and event management (SIEM) system that provides the following functionality: 
+Cloud SIEM is Sumo Logic's cloud-based security information and event management (SIEM) system, which collects, correlates, and prioritizes security data into actionable insights. It provides the following functionality: 
 
 * Collection of log and event data from your infrastructure and applications, on-premise and in-cloud.
 * Correlation of the collected data to reduce the volume of info you need to sift through to investigate issues.
@@ -100,3 +100,17 @@ This section contains the following topics:
   </div>
 </div>
 </div>
+
+## FAQ
+
+### What is Cloud SIEM?
+
+Cloud SIEM is a cloud-based security information and event management system that collects and correlates log and event data from your infrastructure and applications into prioritized security insights.
+
+### What data can I send to Cloud SIEM?
+
+You can forward log and event data already ingested into Sumo Logic, from on-premises or cloud sources, to Cloud SIEM for parsing, mapping, and enrichment into records.
+
+### How is Cloud SIEM different from Cloud SOAR?
+
+Cloud SIEM focuses on the investigation phase of security operations, while [Cloud SOAR](/docs/cloud-soar/) focuses on automated response. You can use them together or independently.
