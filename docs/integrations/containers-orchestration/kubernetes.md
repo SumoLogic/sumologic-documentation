@@ -3,13 +3,18 @@ id: kubernetes
 title: Kubernetes
 sidebar_label: Kubernetes
 description: The Sumo Logic Kubernetes app provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
+keywords:
+  - Kubernetes
+  - Kubernetes app
+  - Kubernetes monitoring
+  - k8s
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
-The Sumo Logic Kubernetes app provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The app is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
+The Sumo Logic Kubernetes app is a single-pane-of-glass dashboard suite that gives you visibility into the worker nodes that comprise a Kubernetes cluster, as well as their application logs, so you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
 
 In conjunction with the Kubernetes app, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane apps provide visibility into the control plane, including the API server, scheduler, and controller manager.
 
@@ -427,7 +432,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_HPA.png')} alt="Kubernetes dashboards" />
 
 
-### New Fields in Hosted Kubernetes Collectors after v5.0.0
+### What new fields appear in Hosted Kubernetes Collectors after v5.0.0?
 
 Users would see the following new fields in the Hosted Kubernetes Collectors after upgrading or installing v5.0.0 of the Sumo Logic Kubernetes Collection.
 
@@ -445,3 +450,25 @@ impact the user's storage/ingest budget. Since the new fields are static, they a
 :::note 
 These fields are required to support the new Kubernetes Collection page. If users decide to remove these fields, they will not be able to view the content on the new Kubernetes Collection page (upcoming feature).
 :::
+
+## FAQ
+
+### What does the Sumo Logic Kubernetes app monitor?
+
+It monitors worker node and application health across your Kubernetes cluster, including container health, replication, load balancing, pod state, and hardware resource allocation, plus anomalous activity detected by Falco.
+
+### What data sources does the Kubernetes app use?
+
+It uses application logs plus Node-exporter and kube-state-metrics metrics, collected using Prometheus with the Sumo Logic Distribution for OpenTelemetry Collector for metadata enrichment.
+
+### Do you need a separate app for the Kubernetes control plane?
+
+Yes. The Kubernetes app covers worker nodes. For visibility into the control plane, API server, scheduler, and controller manager, use the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane app alongside it.
+
+### Which Helm chart version does the Kubernetes app require?
+
+The app is compatible with the latest version of the Sumo Logic Kubernetes Collection Helm Chart. Check the [support matrix](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix) in the GitHub repository for the exact supported platforms and versions.
+
+### Can the Kubernetes app detect security issues?
+
+Yes. The Security Overview and Security Rules Triggered dashboards rely on Falco to show anomalous container, application, host, and network activity, and which out-of-the-box Falco rules were triggered.
