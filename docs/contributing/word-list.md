@@ -184,6 +184,8 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 **Sumo Logic**. For all references, always use "Sumo Logic," never "Sumo" alone, including in the possessive. This helps our SEO, which is essential for a SaaS offering. To be more conversational, "we" is also fine.
 
+**Suspended hyphens**. Avoid these in body text — spell out both compound modifiers in full: "dot-delimited or colon-delimited," not "dot- or colon-delimited."
+
 
 ## T
 
