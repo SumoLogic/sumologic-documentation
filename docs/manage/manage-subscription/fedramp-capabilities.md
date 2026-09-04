@@ -124,3 +124,11 @@ Most core capabilities, including Logs for Security, Cloud SIEM, data collection
 ### Who should use Sumo Logic's FedRAMP offering?
 
 Federal agencies and commercial entities that must meet FedRAMP Moderate compliance requirements should use the FedRAMP-authorized environment rather than the standard product.
+
+### Is Cloud SIEM available in Sumo Logic's FedRAMP environment?
+
+Yes. Cloud SIEM is available in the FedRAMP Moderate environment, along with Logs for Security. Cloud SOAR and the Automation Service, however, aren't included in FedRAMP.
+
+### Are all AWS collection sources available in Sumo Logic's FedRAMP environment?
+
+Most are, but a few, including AWS Inventory and CSE AWS EC2 Inventory, aren't available in the FedRAMP environment. Several cloud API sources are available only upon request, typically within five business days.

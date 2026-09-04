@@ -33,7 +33,7 @@ You can use Sumo Logic logs for:
 After you have collected logs for security, you can use them with [Cloud SIEM](/docs/cse/) and [Cloud SOAR](/docs/cloud-soar/), our solutions for threat detection, investigation, and response.
 :::
 
-## The Sumo Logic data pipeline
+## How does the Sumo Logic data pipeline work?
 
 The Sumo Logic data pipeline makes collected data available for security analysis. At a high level, it follows four steps:
 
@@ -91,3 +91,11 @@ You can write queries to search security logs in real time, build dashboards to 
 ### How does Logs for Security relate to Cloud SIEM and Cloud SOAR?
 
 After you've collected logs for security, you can use that data with [Cloud SIEM](/docs/cse/) for threat detection and investigation, and [Cloud SOAR](/docs/cloud-soar/) for automated incident response.
+
+### What tools does Sumo Logic provide for security analysis?
+
+Sumo Logic provides queries, dashboards, and alerts as the core building blocks for security analysis, along with lookup tables to enrich log data and integrations for common applications like AWS, Office 365, and Salesforce.
+
+### Does Logs for Security support compliance reporting?
+
+Yes. Sumo Logic maintains major compliance certifications, including PCI DSS, ISO 27001, and FedRAMP, so you can use Logs for Security for audit and compliance reporting alongside threat detection.

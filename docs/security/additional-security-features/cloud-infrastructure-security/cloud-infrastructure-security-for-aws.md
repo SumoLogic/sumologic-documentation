@@ -667,3 +667,11 @@ It uses Amazon CloudTrail, Amazon GuardDuty, AWS Network Firewall, AWS Security 
 
 Yes. You can deploy the solution to a single AWS account and region, or to all accounts and multiple regions in your AWS organization.
 
+### Does Cloud Infrastructure Security for AWS come with pre-built alerts?
+
+Yes. The solution ships with pre-packaged alerts as Sumo Logic Monitors, covering findings like Admin Privileges Granted, Amazon GuardDuty BruteForce, Root Account Login, and CloudTrail Changes.
+
+### Can Cloud Infrastructure Security for AWS monitor multiple AWS regions?
+
+Yes. You can enable multi-region collection for GuardDuty, Security Hub, CloudTrail, AWS Firewall Manager, and AWS WAF, as long as you configure each service to deliver logs to a single S3 bucket or Kinesis stream per account.
+

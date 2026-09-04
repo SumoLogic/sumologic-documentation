@@ -114,3 +114,11 @@ No. You can no longer add custom threat intelligence sources. To add new sources
 ### Does Cloud SIEM enrich records or only signals with threat indicators?
 
 Cloud SIEM automatically enriches signals with threat intelligence information. Unlike custom intelligence sources, it does not enrich records directly, even when a match occurs based on the rule expression.
+
+### What reputation labels can Cloud SIEM assign to entities?
+
+Cloud SIEM can label entities as Malicious, Suspicious, or Not Flagged based on matching threat intelligence indicators. Not Flagged isn't the default value; Cloud SIEM only assigns it when an enrichment explicitly defines it.
+
+### How does Cloud SIEM map threat types to reputation labels?
+
+Cloud SIEM maps threat type values from indicators to reputation labels: `malicious-activity` and `compromised` map to Malicious, `anomalous-activity` and `anonymization` map to Suspicious, `benign` maps to Not Flagged, and unknown or unset values default to Suspicious.

@@ -14,11 +14,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A security data lake is a centralized repository for all your security log and event data, and you can use your Sumo Logic environment as one. With all your security data in one place, it is optimized for quick access and analysis. 
 
-## About data lakes
+## What is a data lake?
 
 A data lake is a centralized repository to store data. Data in the lake can then be used for analytics. A data lake can store both structured and unstructured data, unlike a data warehouse, which typically only stores structured data. Data lakes are more flexible than data warehouses in that you can retrieve data in any format used by your consuming services.
 
-### Database versus data lake
+### What's the difference between a database and a data lake?
 
 “Database” and “data lake” are sometimes used in similar contexts, but they aren’t interchangeable terms. Databases require structured or semi-structured data for real-time data processing and record keeping, whereas data lakes use both structured and unstructured data for analytical workloads. 
 
@@ -50,7 +50,7 @@ A security data lake allows you to store and access various data types and forma
 * **User access**. Tracking a user’s Windows authentication, single sign-on, and Active Directory are great sources to tie one user to the event in the system, even if they change IP addresses in the middle of their activity.
 * **Threat intelligence**. Accessing logs and data from recent threats at other organizations can help you recognize similar patterns or behaviors faster.
 
-### Best practices guide to building a security data lake
+### What are the best practices for building a security data lake?
 
 Following are the basic steps involved in building a security data lake. 
 
@@ -107,3 +107,11 @@ Databases require structured or semi-structured data for real-time processing an
 ### Why use Sumo Logic as a security data lake?
 
 Sumo Logic manages large volumes of security data efficiently, supports data tiering for cost-effective storage without sacrificing accessibility, and holds certifications such as FedRAMP, HIPAA, ISO 27001, FISMA, and CSA Star, so your data lake also meets compliance requirements.
+
+### What data can you store in a security data lake?
+
+You can store structured, semi-structured, and unstructured security data, including firewall logs, proxy and web filtering logs, endpoint security data, network security logs, user access logs, and threat intelligence data.
+
+### Does a security data lake support real-time threat detection?
+
+Yes. Once your data sources are connected, Sumo Logic analyzes security data with real-time threat detection, compliance reporting, and dashboards, unifying security events and investigations across multiple cloud platforms.
