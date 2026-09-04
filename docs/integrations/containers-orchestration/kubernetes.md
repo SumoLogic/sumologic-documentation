@@ -432,7 +432,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_HPA.png')} alt="Kubernetes dashboards" />
 
 
-### New Fields in Hosted Kubernetes Collectors after v5.0.0
+### What new fields appear in Hosted Kubernetes Collectors after v5.0.0?
 
 Users would see the following new fields in the Hosted Kubernetes Collectors after upgrading or installing v5.0.0 of the Sumo Logic Kubernetes Collection.
 
@@ -464,3 +464,11 @@ It uses application logs plus Node-exporter and kube-state-metrics metrics, coll
 ### Do you need a separate app for the Kubernetes control plane?
 
 Yes. The Kubernetes app covers worker nodes. For visibility into the control plane, API server, scheduler, and controller manager, use the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane app alongside it.
+
+### Which Helm chart version does the Kubernetes app require?
+
+The app is compatible with the latest version of the Sumo Logic Kubernetes Collection Helm Chart. Check the [support matrix](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix) in the GitHub repository for the exact supported platforms and versions.
+
+### Can the Kubernetes app detect security issues?
+
+Yes. The Security Overview and Security Rules Triggered dashboards rely on Falco to show anomalous container, application, host, and network activity, and which out-of-the-box Falco rules were triggered.

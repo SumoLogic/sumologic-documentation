@@ -59,7 +59,7 @@ Enterprise Suite Flex accounts are optimized to address the most advanced data i
 
 [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets), which are only available for Enterprise Suite Flex accounts, control the capacity of daily log ingestion volume sent to Sumo Logic from collectors. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
 
-## Features by plan type​
+## How do features compare by plan type?​
 
 The following table provides a summary list of key features by Flex package accounts.
 
@@ -176,7 +176,7 @@ To access the **Account Overview** tab:
 * **Organization**. Displays your organization’s name and hexadecimal ID.  
 * **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite Flex).  
 * **Contract period**. Lists the start and end dates of your contract.  
-* **Credit blocks in Contract**. If your account has more than one active credit block, shows the number of blocks. See [Credit blocks](#credit-blocks) for details. Accounts with a single credit block do not show this field.
+* **Credit blocks in Contract**. If your account has more than one active credit block, shows the number of blocks. See [What are credit blocks?](#what-are-credit-blocks) for details. Accounts with a single credit block do not show this field.
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays the count of live dashboards and real-time alerts.
 * **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
 
@@ -208,7 +208,7 @@ This panel provides analytics to monitor and compare usage against contract capa
    * **Tracing Ingest**. Credits used for tracing.  
    * **Cloud SIEM Ingest**. Credits used for logs in Cloud SIEM.  
    * **Metrics Ingest**. Credits used for metrics.  
-   * **Promotional Categories**. See [Promotional credits](#promotional-credits).  
+   * **Promotional Categories**. See [What are promotional credits?](#what-are-promotional-credits).  
 * **Usage % Change**. Highlights changes in usage over selected time intervals.  
 * Track credit consumption against the plan’s baseline usage.  
 * Drill into specific time intervals (day, week, or month) for granular insights.  
@@ -222,7 +222,7 @@ If your account has more than one credit block, a **Viewing** dropdown appears i
 If your account has a single credit block, the **Viewing** dropdown does not appear, and downloaded usage reports are unchanged.
 :::
 
-#### Promotional credits  
+#### What are promotional credits?
 
 There are times when Sumo Logic promotes services and consumables through the provision of promotional credits. Promotional credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the promotional credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional credit consumption is calculated separately from the credits you paid for in your contract period. Promotional credits are utilized as the priority credit for the specified credit variable.
 
@@ -232,7 +232,7 @@ To filter and focus on promotional credits:
 * Deselect all other usage categories.  
 * Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
 
-#### Credit blocks
+#### What are credit blocks?
 
 If you purchase additional credits mid-subscription at a different burn rate, Sumo Logic creates a separate credit block for the new credits so your existing credits keep burning at their original rate instead of being repriced. Older credit blocks are consumed before newer ones.
 
@@ -261,3 +261,11 @@ For Flex accounts, credits are consumed based on log data volume scanned, along 
 ### Where can you monitor your Flex credit usage?
 
 Use the **Account Overview** tab (**Administration > Account > Account Overview**) to review credit usage by category, track consumption against your plan baseline, and set up usage alerts at 70% and 90% credit thresholds.
+
+### Can you upgrade a Free or Trial Flex account?
+
+Yes. Essentials accounts can upgrade to Enterprise Suite Flex at any time, and you can request an upgrade from any account type through [Upgrade a Sumo Logic Flex Account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account).
+
+### Do promotional credits carry over if you don't use them?
+
+No. Promotional credits are non-transferable and auto-expire at the end of the promotion period. If you don't use them within that period, they don't carry over to the next one.

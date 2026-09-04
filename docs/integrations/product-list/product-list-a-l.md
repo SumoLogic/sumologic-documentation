@@ -354,3 +354,25 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/logpoint.png')} alt="Logpoint icon" width="100"/> | [LogPoint](https://www.logpoint.com/en/) | Automation integration: [LogPoint](/docs/platform-services/automation-service/app-central/integrations/logpoint/) |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/logrhythm.png')} alt="Logrhythm icon" width="100"/> | [LogRhythm](https://logrhythm.com/) | Automation integration: [LogRhythm](/docs/platform-services/automation-service/app-central/integrations/logrhythm/) |
 |  <img src={useBaseUrl('img/integrations/misc/lucidum-logo.png')} alt="Lucidum icon" width="50"/>   |  [Lucidum](https://lucidum.io/) | Partner integration: [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)	 |
+
+## FAQ
+
+### How many vendors and products does Sumo Logic integrate with?
+
+Sumo Logic integrates with hundreds of vendors and products, split alphabetically across two articles: this page covers A-L, and [Product List M-Z](/docs/integrations/product-list/product-list-m-z/) covers the rest.
+
+### What types of integrations does Sumo Logic offer?
+
+Depending on the vendor, Sumo Logic offers apps (pre-built dashboards), automation integrations (App Central playbooks and actions), Cloud SIEM integrations (parsers and rules), and collectors (sources for ingesting data), as described in [Product List](/docs/integrations/product-list/).
+
+### Is your vendor or product supported by Sumo Logic?
+
+Search this page or [Product List M-Z](/docs/integrations/product-list/product-list-m-z/) for the vendor's name. If it isn't listed, check with your Sumo Logic account team, since new integrations are added regularly.
+
+### Can a single vendor have multiple types of Sumo Logic integrations?
+
+Yes. Many vendors, such as AWS and Atlassian, have several integration types at once, including apps, automation integrations, Cloud SIEM integrations, and collectors, each linked separately in this list.
+
+### Are community-built integrations included in this list?
+
+Yes. Some entries link to community apps built and maintained outside of Sumo Logic's official app catalog, in addition to the officially supported apps, automation integrations, and collectors.

@@ -175,7 +175,7 @@ The wrong approach is to average the rollup and count of metric series:
 
 <img src={useBaseUrl('img/metrics/metrics-count-pods-wrong.png')} alt="Wrong query for pod count" style={{border: '1px solid gray'}} width="800" />
 
-### Changing statistic type on a chart changes results
+### How does changing statistic type affect chart results?
 
 Changing the **Statistic Type** on a chart (if that option is present) changes the output of the query that is displayed. Always consider if the default of **Average** is correct:
 
@@ -233,7 +233,7 @@ Unlike log searches, you often don't need to format the query output to make dif
 
 For metrics, the UI has a very large impact on the resulting chart (compared to log search charting). The same query can produce many types of charts even when not aggregated (unlike in logs).
 
-### Aggregate in metrics
+### Why aggregate in metrics?
 
 Good reasons to aggregate in metrics:
 * Better control over resulting time series from query.
@@ -264,7 +264,7 @@ Try the following fixes:
     <br/>or 
     <br/>`| where max > 0`
 
-###  Metric charting options that change output
+### Which metric charting options change output?
 
 Pay special attention to these UI options as they can impact your metrics chart output much more than log search does:
 * Rounding
@@ -430,7 +430,7 @@ Following is an incorrect way to query for pod restarts. It uses `sum` over time
 
 ## Managing DPM and high cardinality
 
-### Understanding DPM drivers
+### What drives DPM?
 
 Metrics are billed in data points per minute (DPM), typically at a rate of 3 credits per 1000 DPM averaged over each 24 hour period. `DPM = metrics * entities * total cardinality` of all tag names/values, so sending more metric/tag combinations increases cost. 
 
@@ -439,7 +439,7 @@ We have three tools in Sumo Logic to track DPM usage and drill down into drivers
 * The **Metrics** dashboard in the [Data Volume app](/docs/integrations/sumo-apps/data-volume/) can track high DPM consumption per metadata fields such as `collector`, `source`, and `sourcecategory`:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2.png')} alt="Choosing the Metrics dashboard" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2a.png')} alt="Metrics dashboard showing DPM per metadata field" style={{border: '1px solid gray'}} width="800" />
 * [Metrics Data Ingestion](/docs/metrics/metrics-dpm/) is a filterable admin UI to show detailed DPM and cardinality per metric name or tag. Advanced users can make custom log searches versus the underlying audit indexes for this source.<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3.png')} alt="Ingestion per metric" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3a.png')} alt="Ingest per dimension" style={{border: '1px solid gray'}} width="450" />
 
-### Metric DPM versus credits
+### How does DPM affect credits?
 
 More data points require more credits, and therefore, more cost.
 
@@ -503,3 +503,11 @@ Reduce the number of result groups below 1000 by aggregating on a lower-cardinal
 ### What increases metric ingest cost (DPM)?
 
 DPM (data points per minute) increases with more metrics, more entities or hosts, higher tag cardinality, and more frequent data points. High-cardinality tags, such as timestamps or user IDs, are the most common cause of runaway DPM costs.
+
+### Should you use logs or metrics for high-cardinality data?
+
+Use logs. Metrics have strict cardinality limits and metrics or tags may be disabled if limits are exceeded, while the log search engine is much more flexible and can handle very high cardinality by design.
+
+### Do logs and metrics use the same query language?
+
+No. Although they share a dashboard chart UI, logs and metrics use different query languages. Metrics have limited operators built for high-performance aggregate charting of lower-cardinality data, while logs support over 100 operators for complex query types like transactions and log reduce.
