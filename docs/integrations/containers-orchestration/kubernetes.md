@@ -3,13 +3,18 @@ id: kubernetes
 title: Kubernetes
 sidebar_label: Kubernetes
 description: The Sumo Logic Kubernetes app provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
+keywords:
+  - Kubernetes
+  - Kubernetes app
+  - Kubernetes monitoring
+  - k8s
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
-The Sumo Logic Kubernetes app provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The app is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
+The Sumo Logic Kubernetes app is a single-pane-of-glass dashboard suite that gives you visibility into the worker nodes that comprise a Kubernetes cluster, as well as their application logs, so you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
 
 In conjunction with the Kubernetes app, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane apps provide visibility into the control plane, including the API server, scheduler, and controller manager.
 
@@ -445,3 +450,17 @@ impact the user's storage/ingest budget. Since the new fields are static, they a
 :::note 
 These fields are required to support the new Kubernetes Collection page. If users decide to remove these fields, they will not be able to view the content on the new Kubernetes Collection page (upcoming feature).
 :::
+
+## FAQ
+
+### What does the Sumo Logic Kubernetes app monitor?
+
+It monitors worker node and application health across your Kubernetes cluster, including container health, replication, load balancing, pod state, and hardware resource allocation, plus anomalous activity detected by Falco.
+
+### What data sources does the Kubernetes app use?
+
+It uses application logs plus Node-exporter and kube-state-metrics metrics, collected using Prometheus with the Sumo Logic Distribution for OpenTelemetry Collector for metadata enrichment.
+
+### Do I need a separate app for the Kubernetes control plane?
+
+Yes. The Kubernetes app covers worker nodes. For visibility into the control plane, API server, scheduler, and controller manager, use the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane app alongside it.

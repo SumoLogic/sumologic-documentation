@@ -3,11 +3,16 @@ id: metric-query-best-practices
 title: Metric Query Best Practices
 sidebar_label: Metric Query Best Practices
 description: Learn the secrets for getting the most out of your metric queries.
+keywords:
+  - metric queries
+  - quantization
+  - metric query best practices
+  - DPM
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl'
 
-There are some common stumbling blocks for creating and charting metric queries in Sumo Logic. In this article we'll cover key metric query best practices, patterns, and tips such as:
+Getting accurate metric queries in Sumo Logic means picking the right quantization, rollup, and aggregation for your use case, since metrics and logs use very different query languages even though they share a dashboard UI. This article covers key metric query best practices, patterns, and tips such as:
 * [Logs vs metric queries](#logs-vs-metrics)
 * [Metrics query language tips and techniques](#key-tips-for-metric-query)
 * [Quantization and rollups](#quantization)
@@ -484,3 +489,17 @@ If you see an increase in the number of metric series, look for new metric sourc
 Sending one data point per minute will make one DPM per entity x tag cardinality. But sending four data points per minute (every 15s) will make four DPM per entity x tag cardinality. Check the default frequency of metric sources and reduce the frequency to reduce DPM.
 
 A common use case is reducing scape interval so 1m or 2m in Kubernetes collection. Steps for Kubernetes collection v4 (OpenTelemetry) and v3 (Prometheus) can be found [here](/docs/send-data/kubernetes/best-practices/#changing-scrape-interval-for-opentelemetry-metrics-collection).
+
+## FAQ
+
+### Why does my metric query show different results than expected?
+
+Most unexpected metric query results come down to quantization and rollup type. Every metric series stores multiple rollups (`min`, `max`, `latest`, `avg`, `sum`, `count`), and the default `avg` rollup can produce very different totals than `max` or `sum` for the same data, especially when summing across series.
+
+### How do I fix "too many timeseries in the output"?
+
+Reduce the number of result groups below 1000 by aggregating on a lower-cardinality dimension (for example, `| sum by namespace` instead of `| sum by pod`), using the `topk` operator, or filtering out series with the `filter` or `where` operators.
+
+### What increases metric ingest cost (DPM)?
+
+DPM (data points per minute) increases with more metrics, more entities or hosts, higher tag cardinality, and more frequent data points. High-cardinality tags, such as timestamps or user IDs, are the most common cause of runaway DPM costs.

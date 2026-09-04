@@ -3,12 +3,17 @@ id: sumo-logic-flex-accounts
 title: Sumo Logic Flex Accounts
 sidebar_label: Flex Accounts
 description: View information on Sumo Logic Flex Accounts and intuitively monitor usage and manage account costs.
+keywords:
+  - Flex account
+  - Flex credits
+  - account overview
+  - subscription
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AccountCredit from '../../reuse/account-credit.md';
 
-Sumo Logic provides flexible account types within its Flex packaging for any size organization with a credit-based capacity measurement. A credit is a unit of measure that tracks use, whether data ingested (GB) and scanned, storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
+Sumo Logic Flex accounts are credit-based subscription plans, Free, Trial, Essentials, and Enterprise Suite Flex, that let any size organization track and manage usage with a single, flexible unit of measure. A credit tracks use, whether data ingested (GB) and scanned, storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose, so you can carefully manage your account.
 
 :::note
 For Flex accounts, credits will be consumed on the basis of log data volume scanned.
@@ -242,3 +247,17 @@ If you purchase additional credits mid-subscription at a different burn rate, Su
 <img src={useBaseUrl('/img/manage/account/account-overview-flex.png')} alt="Account overview Flex" style={{border:'1px solid gray'}} width="800"/>  
 
 <img src={useBaseUrl('/img/manage/subscriptions/flex-usage-categories.png')} alt="Flex usage categories" style={{border:'1px solid gray'}} width="800"/>
+
+## FAQ
+
+### What are the Sumo Logic Flex account types?
+
+Sumo Logic offers four Flex account types: Free, Trial, Essentials, and Enterprise Suite Flex. Each provides a different credit allocation, feature set, and retention period.
+
+### How are Flex credits consumed?
+
+For Flex accounts, credits are consumed based on log data volume scanned, along with storage, metrics, and tracing usage, rather than data ingested.
+
+### Where can I monitor my Flex credit usage?
+
+Use the **Account Overview** tab (**Administration > Account > Account Overview**) to review credit usage by category, track consumption against your plan baseline, and set up usage alerts at 70% and 90% credit thresholds.

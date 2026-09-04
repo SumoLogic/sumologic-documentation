@@ -3,11 +3,16 @@ id: faq
 title: Flex Pricing FAQ
 sidebar_label: FAQ
 description: Answers to frequently asked questions about Sumo Logic Flex Pricing.
+keywords:
+  - Flex Pricing
+  - Flex FAQ
+  - partitions
+  - search cost
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page answers frequently asked questions about Flex pricing.
+This page answers frequently asked questions about Flex pricing, Sumo Logic's default plan for new customers where you pay for analytics and search rather than data ingestion.
 
 ## What is Flex Pricing?
 

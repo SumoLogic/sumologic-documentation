@@ -2,11 +2,16 @@
 id: product-list-a-l
 title: Product List A-L
 description: This article lists all the products A-L that Sumo Logic integrates with.
+keywords:
+  - Sumo Logic integrations
+  - product list
+  - vendors
+  - apps
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Following are the vendors and products that Sumo Logic integrates with, listed A-L. We've divided the list into two articles to make the list easier to navigate. For the remainder, see [Product List M-Z](/docs/integrations/product-list/product-list-m-z/).
+This article lists every vendor and product, A through L, that Sumo Logic integrates with, along with links to the app, automation, Cloud SIEM, and collector integrations available for each. We've divided the list into two articles to make the list easier to navigate. For the remainder, see [Product List M-Z](/docs/integrations/product-list/product-list-m-z/).
 
 For descriptions of the different types of integrations Sumo Logic offers, see [Product List](/docs/integrations/product-list/).
 
