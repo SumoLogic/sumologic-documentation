@@ -1,6 +1,11 @@
 ---
 slug: /security
 title: Sumo Logic Security Solutions
+keywords:
+  - security
+  - SIEM
+  - SOAR
+  - threat detection
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -76,3 +81,17 @@ Following are features available with our security solutions. If you have any qu
    * [Cloud SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
    * [Cloud SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)
    * [Cloud SIEM: MITRE ATT&CK™ coverage explorer](https://www.sumologic.com/demo/mitre-attack-coverage-explorer)
+
+## FAQ
+
+### What security solutions does Sumo Logic offer?
+
+Sumo Logic offers three security solutions that work together: Logs for Security for security analytics and log-based threat detection, Cloud SIEM for prioritized and contextualized threat investigation, and Cloud SOAR for automated incident triage, investigation, and remediation.
+
+### What's the difference between Cloud SIEM and Cloud SOAR?
+
+Cloud SIEM focuses on the investigation phase, giving SOC analysts prioritized, contextualized threats with automated detection. Cloud SOAR focuses on the response phase, automating triage, investigation, and remediation through playbooks. You can use either solution independently or together.
+
+### Do I need Logs for Security before I can use Cloud SIEM or Cloud SOAR?
+
+Yes. You collect logs for security first, then use that data with Cloud SIEM and Cloud SOAR for threat detection, investigation, and response.

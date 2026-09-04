@@ -2,6 +2,11 @@
 id: cloud-infrastructure-security-for-aws
 title: Cloud Infrastructure Security for AWS
 description: Cloud Infrastructure Security for AWS provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity.
+keywords:
+  - AWS security
+  - cloud infrastructure security
+  - AWS CloudTrail
+  - AWS GuardDuty
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +14,7 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
-The Cloud Infrastructure Security for AWS app provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
+Cloud Infrastructure Security for AWS is a Sumo Logic app that provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure, spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
 Key features of the solution include:
 * **Risk overview**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
@@ -647,4 +652,18 @@ To see all events a particular user has been involved with, click a user on a pa
 The **Suspicious Web Activity** dashboard shows suspicious activity on the Web. It shows suspicious blocked requests, including by trend and geo location.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-suspicious-web-activity.png')} alt="Suspicious Web Activity dashboard" style={{border: '1px solid gray'}} width="600"/>
+
+## FAQ
+
+### What does Cloud Infrastructure Security for AWS do?
+
+Cloud Infrastructure Security for AWS gives you a unified view of risks, misconfigurations, and active threats across your AWS accounts and regions, using data from AWS CloudTrail, GuardDuty, Network Firewall, Security Hub, and WAF.
+
+### What AWS log sources does Cloud Infrastructure Security for AWS use?
+
+It uses Amazon CloudTrail, Amazon GuardDuty, AWS Network Firewall, AWS Security Hub, and AWS Web Application Firewall (WAF) log data.
+
+### Can I deploy Cloud Infrastructure Security for AWS across multiple AWS accounts?
+
+Yes. You can deploy the solution to a single AWS account and region, or to all accounts and multiple regions in your AWS organization.
 

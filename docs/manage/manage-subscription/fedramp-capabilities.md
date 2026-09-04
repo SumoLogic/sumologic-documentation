@@ -3,13 +3,18 @@ id: fedramp-capabilities
 title: Sumo Logic FedRAMP Solution Capabilities
 sidebar_label: FedRAMP Capabilities
 description: Learn the capabilities included with Sumo Logic’s FedRAMP solution.
+keywords:
+  - FedRAMP
+  - compliance
+  - federal
+  - security
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic is FedRAMP® Moderate Authorized, providing the observability and security that federal agencies and commercial entities require to ensure their applications are reliable and secure. For more information, see the [FedRAMP Authorization](https://www.sumologic.com/fedramp/) page on our Sumo Logic site.
+Sumo Logic is FedRAMP® Moderate Authorized (package ID FR1918740338), offering federal agencies and commercial entities the same core observability and security platform as the standard product, with a small set of capability differences. For more information, see the [FedRAMP Authorization](https://www.sumologic.com/fedramp/) page on our Sumo Logic site, or [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338).
 
-For information about the FedRAMP certification of Sumo Logic’s solution, see [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338) (package ID FR1918740338).
+## What capabilities does Sumo Logic's FedRAMP offering include?
 
 The following table shows the capabilities included with Sumo Logic’s FedRAMP solution compared to Sumo Logic's standard product offering.
 
@@ -105,3 +110,17 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Manage Data - Monitoring | [Health events](/docs/manage/health-events/) | &#10003; | &#10003; |
 | Manage Data - Monitoring | [Monitors](/docs/alerts/monitors/) | &#10003; | &#10003; |
 | Manage Data - Monitoring | [SLOs](/docs/observability/reliability-management-slo/) | &#10003; | &#10003; |
+
+## FAQ
+
+### What is Sumo Logic's FedRAMP authorization level?
+
+Sumo Logic is FedRAMP Moderate Authorized under package ID FR1918740338. You can verify this listing in the [FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338).
+
+### What's different between the FedRAMP and standard Sumo Logic product?
+
+Most core capabilities, including Logs for Security, Cloud SIEM, data collection, and administration features, are available in both offerings. A few solutions and sources aren't available in the FedRAMP environment, including Application Observability, AWS Observability, Software Development Optimization, Cloud SOAR/Automation Service, AWS Inventory, and CSE AWS EC2 Inventory. Several cloud API sources are available in FedRAMP only upon request, typically within five business days.
+
+### Who should use Sumo Logic's FedRAMP offering?
+
+Federal agencies and commercial entities that must meet FedRAMP Moderate compliance requirements should use the FedRAMP-authorized environment rather than the standard product.

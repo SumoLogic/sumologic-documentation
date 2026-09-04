@@ -2,11 +2,16 @@
 id: introduction
 title: Introduction to Cloud SOAR
 sidebar_label: Introduction
+keywords:
+  - Cloud SOAR
+  - SOAR
+  - incident response
+  - security automation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides an introduction to Cloud SOAR for analysts and administrators. 
+Cloud SOAR is Sumo Logic's Security Orchestration, Automation, and Response solution, which helps SOC analysts and administrators orchestrate and automate incident response using playbooks, dashboards, and case management. This article provides an introduction to Cloud SOAR for analysts and administrators. 
 
 If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
 
@@ -661,6 +666,20 @@ Let's create a custom automation rule. This rule will pull information from Clou
 1. For **Search performed every**, type **5** then select **Hours**. 
 1. Leave the other fields as their defaults, then click **Save**. 
 1. As a best practice, you can enable and test the new rule, but then disable it, since it can disrupt your environment. Continue testing your rule until their behavior is expected before deciding to enable it.
+
+## FAQ
+
+### What is Cloud SOAR?
+
+Cloud SOAR is Sumo Logic's Security Orchestration, Automation, and Response solution. It helps SOC analysts orchestrate and automate incident response with playbooks, and gives administrators role-based access controls, dashboards, and automation settings to configure it for their organization.
+
+### How is Cloud SOAR different from Cloud SIEM?
+
+Cloud SIEM focuses on the investigation phase of the security pipeline, while Cloud SOAR focuses on the response phase. You can use them together: investigate an insight in Cloud SIEM, then use the Actions button to send the information to Cloud SOAR to orchestrate the response.
+
+### What are playbooks in Cloud SOAR?
+
+Playbooks are automated or partially automated workflows made up of nodes, such as actions, conditions, and notifications, that respond to an incident. Cloud SOAR includes hundreds of prebuilt playbooks in App Central, and you can also build custom playbooks.
 
 ## Additional resources
 

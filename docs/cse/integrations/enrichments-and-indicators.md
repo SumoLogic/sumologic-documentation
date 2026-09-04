@@ -22,7 +22,7 @@ Keep in mind that:
 * The list can be filtered.
 * Empty fields (fields with a null or empty value) can be optionally hidden.
 * Links, if set by the enrichment, will be displayed and open in a new tab if clicked.
-* [Threat indicator labels](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui), if set by the enrichment, will be displayed.
+* [Threat indicator labels](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-do-i-view-threat-indicator-labels-in-the-cloud-siem-ui), if set by the enrichment, will be displayed.
 
 ## Enrichment attributes
 

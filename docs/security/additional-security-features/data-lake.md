@@ -3,11 +3,16 @@ id: data-lake
 title: Security Data Lake
 sidebar_label: Security Data Lake
 description: Learn about using Sumo Logic as your security data lake. 
+keywords:
+  - security data lake
+  - data lake
+  - security analytics
+  - compliance
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use your Sumo Logic environment as a security data lake, a single repository to store all your security log and event data. With all your security data in one place, it is optimized for quick access and analysis. 
+A security data lake is a centralized repository for all your security log and event data, and you can use your Sumo Logic environment as one. With all your security data in one place, it is optimized for quick access and analysis. 
 
 ## About data lakes
 
@@ -88,3 +93,17 @@ You can collect logs from external data lakes and use that data in Sumo Logic. S
 * [Collect Logs from Palo Alto Networks Cortex Data Lake](/docs/send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex)
 
 If you want to collect logs from other data lakes, ask your Sumo Logic account representative to engage the Professional Services team to guide you through the process.
+
+## FAQ
+
+### What is a security data lake?
+
+A security data lake is a centralized repository that collects and analyzes large amounts of security data, structured and unstructured, from various sources. It gives security teams a complete view of an organization's security posture so they can identify potential threats, investigate incidents, and respond proactively.
+
+### How is a security data lake different from a security database?
+
+Databases require structured or semi-structured data for real-time processing and record keeping. Data lakes, including security data lakes, store structured, semi-structured, and unstructured data without requiring you to define a schema upfront, which makes them better suited to analytical workloads like threat hunting.
+
+### Why use Sumo Logic as a security data lake?
+
+Sumo Logic manages large volumes of security data efficiently, supports data tiering for cost-effective storage without sacrificing accessibility, and holds certifications such as FedRAMP, HIPAA, ISO 27001, FISMA, and CSA Star, so your data lake also meets compliance requirements.

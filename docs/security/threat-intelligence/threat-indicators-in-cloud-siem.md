@@ -3,17 +3,22 @@ slug: /security/threat-intelligence/threat-indicators-in-cloud-siem
 title: Find Threats with Cloud SIEM
 sidebar_label: Find Threats with Cloud SIEM
 description: Learn how to use threat intelligence indicators in Cloud SIEM.
+keywords:
+  - threat intelligence
+  - Cloud SIEM
+  - hasThreatMatch
+  - threat indicators
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Threat intelligence indicators can be used in Cloud SIEM to find possible threat activity.
+You can use threat intelligence indicators in Cloud SIEM to find possible threat activity, either by matching them against records with the `hasThreatMatch` rule function or by viewing indicator labels directly in the Cloud SIEM UI.
 
 :::note
 **You can no longer add custom threat intelligence sources in Cloud SIEM**. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework.
 :::
 
-## hasThreatMatch Cloud SIEM rules language function
+## How do I use the hasThreatMatch function to detect threat indicators?
 
 Use the `hasThreatMatch` function in Cloud SIEM rules to analyze incoming records for matches to threat intelligence indicators. 
 
@@ -25,7 +30,7 @@ hasThreatMatch([srcDevice_ip], confidence > 50)
 
 For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
 
-## View threat indicator labels in the Cloud SIEM UI
+## How do I view threat indicator labels in the Cloud SIEM UI?
 
 Entities are automatically enriched with indicator data from all [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) and the legacy [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/). (However, after initial enrichment, any subsequent changes to indicators in the default [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) will not be reflected in the already-enriched entities.)
 
@@ -77,7 +82,7 @@ Following is the mapping of threat type fields in indicators to reputation label
 If the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.
 :::
 
-## Add verified indicators to match lists
+## How do I add verified indicators to match lists?
 
 To prevent entities that are verified as safe from resulting in signals being fired from threat intelligence indicators, add the verified entities to the appropriate [standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists):
 * [`verified_applications`](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#verified_applications)
@@ -95,3 +100,17 @@ For example, if you have a list of allowed IP addresses, add them to the [`verif
 * `Threat Intel - Inbound Traffic from Threat Feed IP (Medium Confidence)`
 * `Threat Intel Match - IP Address`
 * `Threat Intel - Successful Authentication from Threat Feed IP`
+
+## FAQ
+
+### What is a threat intelligence indicator in Cloud SIEM?
+
+A threat intelligence indicator is a known indicator of compromise, such as an IP address, domain, or hash, sourced from threat intelligence feeds. Cloud SIEM automatically enriches signals with matching indicators and displays a reputation label, such as Malicious, Suspicious, or Not Flagged.
+
+### Can I still add custom threat intelligence sources in Cloud SIEM?
+
+No. You can no longer add custom threat intelligence sources. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework instead.
+
+### Does Cloud SIEM enrich records or only signals with threat indicators?
+
+Cloud SIEM automatically enriches signals with threat intelligence information. Unlike custom intelligence sources, it does not enrich records directly, even when a match occurs based on the rule expression.
