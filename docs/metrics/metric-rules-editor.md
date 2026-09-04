@@ -52,7 +52,7 @@ A metric match expression defines the scope of the rule. Put another way, the ma
 
 ### Dot-delimited or colon-delimited match expressions
 
-A match expression can be one or more dot-delimited or colon-delimited string. For example, `collectd.*.*.*.*` matches all Graphite metrics that have five segments in the string, where the value of the first segment is `collectd`. Colon-delimited match expressions work the same way, and are useful for colon-separated identifiers such as AWS ARNs, for example: `arn:aws:bedrock-agentcore:*:*:*`.
+A match expression can be a dot-delimited or colon-delimited string. For example, `collectd.*.*.*.*` matches all Graphite metrics that have five segments in the string, where the value of the first segment is `collectd`. Colon-delimited match expressions work the same way, and are useful for colon-separated identifiers such as AWS ARNs, for example: `arn:aws:bedrock-agentcore:*:*:*`.
 
 Given a dot-delimited or colon-delimited match expression, Sumo Logic applies the match expression to the `_rawName` field, which is present for Graphite metrics and contains the metric path for a metric.
 
