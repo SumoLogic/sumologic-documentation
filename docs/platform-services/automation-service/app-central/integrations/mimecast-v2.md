@@ -8,12 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mimecast.png')} alt="mimecast" width="100"/>
 
 ***Version: 1.0  
-Updated: August 25, 2026***
+Updated: Sep 7, 2026***
 
-Mimecast V2 protects an enterprise's email infrastructure from viruses, malware, phishing, and the rise of deep-fake attacks. It does this by deploying a layered cyber resilience solution that prevents email-borne infections and reduces data loss by archiving emails. This integration uses the Mimecast API v2.0.
+[Mimecast V2](https://www.mimecast.com/) protects an enterprise's email infrastructure from viruses, malware, phishing, and the rise of deep-fake attacks. It does this by deploying a layered cyber resilience solution that prevents email-borne infections and reduces data loss by archiving emails. 
 
 ## Actions
 
+* **Get Account** *(Enrichment)* - Get the details about the used Mimecast account.
 * **Create Remediation Incident** *(Containment)* - Create a new remediation incident to trigger email purge/removal from user mailboxes.
 * **Get TTP URL Click Logs** *(Enrichment)* - Retrieve click tracking and URL events, including who clicked a URL, which URL was clicked, and when.
 * **Get Remediation Incident** *(Enrichment)* - Get the details of a remediation incident, including containment and audit logs confirming whether a domain was blocked and emails were removed from user mailboxes.
@@ -48,8 +49,10 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mimecast-v2-configuration.png')} style={{border:'1px solid gray', marginLeft: '1.5rem'}} alt="Mimecast configuration" width="400"/>
+
 For information about Mimecast, see [Mimecast documentation](https://developer.services.mimecast.com/).
 
 ## Change Log
 
-* August 25, 2026 (v1.0) - First upload
+* Sep 7, 2026 (v1.0) - First upload
