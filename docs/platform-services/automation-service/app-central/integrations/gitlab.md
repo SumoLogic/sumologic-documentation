@@ -46,3 +46,7 @@ For information about GitLab, see [GitLab documentation](https://docs.gitlab.com
 * September 24, 2021 - New action added
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
 * April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+## Additional resources
+
+- For GitLab, Sumo Logic offers the [GitLab app](/docs/integrations/app-development/gitlab/) to visualize your GitLab data.

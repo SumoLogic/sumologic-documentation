@@ -197,7 +197,7 @@ To configure a Proofpoint TAP Source:
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
+:::tip
 After configuring the Proofpoint TAP source, consider installing the Sumo Logic app for [Proofpoint TAP](/docs/integrations/saas-cloud/proofpoint-tap/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -259,3 +259,7 @@ If you experience issues such as missing events, delayed data ingestion, or inco
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.

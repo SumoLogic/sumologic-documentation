@@ -1,28 +1,43 @@
 ---
 id: style-guide
-title: Sumo Docs Style Guide
+title: Documentation Style Guide
 sidebar_label: Style Guide
-description: A guide to styling and formatting Sumo Logic Docs.
+description: The editorial style guide for Sumo Logic docs. Covers voice and tone, formatting, UI terminology, and Markdown and Docusaurus conventions for contributors.
+keywords:
+  - style guide
+  - documentation style guide
+  - voice and tone
+  - technical writing
+  - editorial conventions
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-This page describes how to author Sumo Docs, which are written in GitHub-flavored markdown.
+This is the editorial style guide for Sumo Logic documentation. Use it to keep docs consistent in voice, tone, terminology, and formatting, whether you're on the Docs Team or contributing from outside.
 
-The Sumo Logic Style Guide is a guide to language at Sumo Logic, so that we can speak as one company with a unified voice, and know what we mean when we talk about our product. The Style Guide began as a document used by the Documentation team to make decisions about tone, voice, and word usage. We thought it would be useful to share with everyone in our community.
+Our docs are built with [Docusaurus](https://docusaurus.io/), a static site generator, and written in GitHub-flavored Markdown. This is a living document: if a rule or UI term you need isn't here, let us know and we'll add it.
 
-This is a living document. If you're looking for a style rule or UI component usage that's not defined here, let us know. The Documentation team will look it up and add usage guidance.
+:::tip
+To create a new doc quickly, use a [template](/docs/contributing/templates). Copy the file, add your content, and submit a PR. The Docs Team reviews submissions, suggests edits, adds new content to the navigation, and answers your questions.
 
-## Writing resources
+If you have Claude Code installed, this repo's `sumo-style` skill applies these conventions automatically when you draft or edit docs, so you don't need to invoke it manually. See AGENTS.md for details.
+:::
 
-If you need help with a convention, word to use, or format to follow, we will keep a cheatsheet of styles here. We also follow:
+## Style references
 
-* [Merriam-Webster Dictionary](https://www.merriam-webster.com/)
-* *[The Chicago Manual of Style](https://www.chicagomanualofstyle.org/home.html)*
-* [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
-  * [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions)
+This guide comes first. When it doesn't cover something, defer to these, in order of precedence:
+
+1. _Sumo Logic Brand Guidelines_. Brand Voice and Writing Style Guide. Voice, tone, and brand terms.
+1. [_Microsoft Manual of Style_](https://docs.microsoft.com/en-us/style-guide/welcome/). UI, procedures, and technical formatting. See also [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions).
+1. [_AP Stylebook_](https://www.apstylebook.com/). General usage.
+1. [_The Chicago Manual of Style_](https://www.chicagomanualofstyle.org/home.html). Anything the above don't settle.
+1. [_Merriam-Webster Dictionary_](https://www.merriam-webster.com/). Spelling and hyphenation.
 
 For terminology usage guidance, see our [Word List](/docs/contributing/word-list).
+
+## Learning resources
 
 If you're new to writing tech content or would like to learn more, check out these resources:
 * [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/). Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
@@ -34,14 +49,6 @@ Helpful blogs on tech writing:
 * [Feathers](https://ffeathers.wordpress.com/). Blog for technical and fiction writing.
 * [I'd rather be writing](https://idratherbewriting.com/). Guides and thoughts on tech writing process and content.
 
-The Documentation team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
-
-:::tip
-To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
-* [Doc template](/docs/contributing/templates/generic-doc)
-* [Partner app template](/docs/contributing/templates/partner-app-doc)
-:::
-
 ## Voice and tone
 
 * **Clarity and professionalism**. We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
@@ -50,10 +57,11 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * **Conversational tone**. Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone, using the sort of words that you would use in a face-to-face conversation. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
 * **Reader address**. Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
 * **Readability and SEO**. Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
+* **First paragraph**. Open every page by telling the reader what it covers, why it matters, and who it's for. In a tutorial, also say which step or stage the page is. See [AEO](#aeo-answer-engine-optimization) for how this helps search and AI answers.
 * **Brand guidelines**. Our brand guideline is to always refer to “Sumo Logic”, rather than Sumo. To be more conversational, it is also fine to say “we”.
 * **Gentle Language**. Use “need to” instead of “have to” or “must”. “Have to” and “must” can sound harsh and unfriendly.
 * **Judicious use of absolutes**. Be judicious in use of “always” and “never”. Sometimes it’s appropriate to say “always” or “never”. Keep in mind though that “always” can imply a result that is not guaranteed, and “never” may very well not be the case — the exception makes the rule.
-* **Error messaging**. When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you recommend to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
+* **Error messaging**. When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you recommend to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Use a different email, or contact Sumo Logic for assistance."
 * **Humor**. We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
 
 ### Active voice
@@ -107,16 +115,6 @@ By writing inclusively and using culturally neutral language, our words resonate
 |:---------------|:-------------------|
 | "allowlist"<br/>"denylist"<br/>"placeholder data"<br/>"primary" or "main"<br/>"press" or "click" | "whitelist"<br/>"blacklist"<br/>"dummy data"<br/>"master"<br/>"hit" |
 
-## Doc structure summary
-
-* [**Frontmatter**](#metadata-frontmatter). Metadata formatted in YAML that goes at the top.
-* **Introduction**. Tell the user in the doc introduction (first paragraph) what the page teaches, why they should read it, and who should read it.
-* **Contextual guidance**. Let the user know what step/place they are in for a tutorial in the introduction/at top. The layout automatically provides a previous/next at the bottom of the page.
-* **Linking**. Link out to important concepts and overviews for additional reading. This is helpful for instruction pages or tutorials.
-* **Conciseness**. Keep instructions concise, easy to follow, and with not too many screenshots.
-* [**Admonitions**](#admonitions). Include any notes, warnings, tips, or other admonitions.
-
-
 ## Abbreviations
 
 Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”. Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
@@ -131,126 +129,70 @@ Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”. Alth
 
 ## Acronyms
 
-An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. For example: Secure Shell (SSH).
+An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. 
+
+For example, if you're writing a doc about AWS Application Load Balancer, say `AWS Application Load Balancer (ALB)` on first reference, and for the rest of the doc, use `ALB`.
 
 All companies have numerous acronyms for products, features, solutions, and more. Our documentation includes acronyms for Sumo Logic and third-party software. Always fully spell out the first instance of the acronym on the page, then you can use it throughout. Do not spell out in a heading, but in paragraphs or bullets.
 
-For example, the first time you use AWS Application Load Balancer (ALB), you introduce or use it like that the first time on the page. Through the rest of the page, you can use ALB.
-
 ## Admonitions
 
-We refer to callout elements like Tip, Note, Warning, and Caution as admonitions.
+We call Docusaurus's callout blocks *admonitions*. The standard types (`:::note`, `:::tip`, `:::info`, `:::important`, `:::warning`, `:::danger`) work as [documented by Docusaurus](https://docusaurus.io/docs/markdown-features/admonitions) and accept full Markdown, including code blocks, links, lists, images, and videos.
 
-Docusaurus has a special syntax to create admonitions and callouts, including note, tip, important, caution, warning, and sumo. You can use markdown content in the admonitions, code blocks, links, bullets, images, videos, and much more.
+Two admonition types are Sumo Logic-specific:
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
+* `:::sumo`. Subject matter expert guidance, best practices, and Sumo Logic-specific notes. Defaults to the title "Best Practice"; retitle as needed (for example, `:::sumo Good to know`).
+* `:::training`. Links to training courses, certifications, and micro lessons.
 
-<TabItem value="Markdown">
+Pick a type by intent:
 
-```md
+| Type | Use for |
+|:--|:--|
+| `:::note` | A neutral aside. |
+| `:::tip` | An optional shortcut or a better way to do something. |
+| `:::info` / `:::important` | Something the reader must not miss. |
+| `:::warning` | Risk of a confusing or incorrect result. |
+| `:::danger` | Risk of data loss or an unrecoverable action. |
+
+Rendered, each type looks like this:
 
 :::note
-This is a note.
+A neutral aside.
 :::
 
 :::tip
-This is a tip about a cool feature option.
+An optional shortcut or a better way to do something.
 :::
 
-:::important
-This is some vital information.
+:::info
+Something the reader must not miss.
 :::
 
 :::warning
-This could note important and problematic information.
+Risk of a confusing or incorrect result.
 :::
 
 :::danger
-This action is dangerous and could result in data loss.
+Risk of data loss or an unrecoverable action.
 :::
 
 :::sumo Best Practice
-Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
+Subject matter expert guidance, best practices, and Sumo Logic-specific notes. Retitle as needed.
 :::
 
 :::training
-Links to training courses, certification info, and micro lessons.
-:::
-
-```
-
-</TabItem>
-<TabItem value="Result">
-
-:::note
-This is a note.
-:::
-
-:::tip
-This is a tip about a cool feature option.
-:::
-
-:::important
-This is some vital information.
-:::
-
-:::warning
-This could note important and problematic information.
-:::
-
-:::danger
-This action is dangerous and could result in data loss.
-:::
-
-:::sumo Best Practice
-Highlight Sumo Logic-specific info, best practices, links, and other information from Sumo Logic subject matter experts. You can change the title based on the content.
-:::
-
-:::training
-Links to training courses, certification info, and micro lessons.
-:::
-
-</TabItem>
-</Tabs>
-
-You can use [code blocks](#code-blocks) in admonitions. Here's an example:
-
-:::tip
-Here's a cool tip.
-
-```json title="You can highlight lines in code blocks" {11-16}
-"overrides": [
-    {
-    "series": [],
-    "queries": [
-        "A"
-        ],
-    "userProvidedChartType": false,
-    "properties": {
-        "type": "column"
-        },
-    "unsafeCanvasJSProperties": {
-        "bevelEnabled": true,
-        "indexLabelPlacement": "inside",
-        "indexLabel": "{y}",
-        "indexLabelOrientation": "vertical"
-        }
-    }
-]
-```
-
+Links to training courses, certifications, and micro lessons.
 :::
 
 ## Capitalization
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
 * Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
+* In body text, don't capitalize a term unless it's a proper noun or a literal UI label. Generic product terms are lowercase: collector, source, dashboard, panel, index, partition, role, scheduled view, alert, search.
+* **UI label vs. concept.** When you name a UI element or page as it appears on screen, match its on-screen capitalization and bold the label: the **Search** page, the **Scheduled Views** page, the **Aggregates** tab. When you mean the same thing as a general feature or concept, use lowercase and no bold: "scheduled views let you pre-aggregate data", "run a search". The generic word (`page`, `tab`, `button`) is always lowercase. See [Bold](#bold).
+* Always capitalized: proper nouns and product names (Sumo Logic, Cloud SIEM, Cloud SOAR, Kubernetes, Markdown, RBAC), and named UI areas when used as labels (the **Library**, the **Search** page, **Admin mode**).
+* **Feature names vs. use cases.** Coined or proper feature names stay capitalized (LogReduce, LogCompare, Cloud SIEM, Cloud SOAR, Automation Service). Generic capabilities and use cases are lowercase: security data lake, threat detection and investigation, audit and compliance, application security, observability, continuous intelligence. Marketing keeps a [product and feature name matrix](https://docs.google.com/spreadsheets/d/1U2yPSasgHHzQYXvCzfvEXfIM2t6ofBfW8DYEZLrtj2s/) for edge cases.
+* **Does it need a name at all?** Before you capitalize a new feature name, ask whether it needs a branded name (see [Fighting Feature Names](https://kubie.co/blog/fighting-feature-names/)). Default to plain descriptive language; reserve a proper name for features that are genuinely distinct and that users will refer to by name.
 
 
 ## Code (inline)
@@ -258,7 +200,6 @@ Here's a cool tip.
 Use single backticks (\` \`) to format inline code as monospace font. Example use cases include commands, operators, API method names, and error messages. For information on code blocks (scripts), see [Code Blocks](#code-blocks).
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -280,149 +221,28 @@ Use single backticks (\` \`) to format inline code as monospace font. Example us
 
 ## Code (blocks)
 
-Use code blocks to format scripts, such as the JSON example below. This is important for scripts and CLI. Format blocks of code by placing triple backticks before and after the code.
+Use fenced code blocks (triple backticks) for scripts and multi-line commands a reader copies and runs. Add a language on the opening fence for syntax highlighting; see [Docusaurus code blocks](https://docusaurus.io/docs/markdown-features/code-blocks) for titles, line highlighting, and line numbers.
 
-:::note
-Code blocks are intended only for code snippets that users can copy, paste, and run in their own terminal. Do not use code block formatting for error messages (see [Code (Inline)](#code-inline)), as this isn't something you'd run in a terminal.
-:::
+* Use `sql` for Sumo Logic queries and `json` for Sumo Logic logs. For the full language list, see [Prism's supported languages](https://prismjs.com/#supported-languages).
+* Code blocks are for things a reader runs. Format error messages and single identifiers as [inline code](#code-inline), not blocks.
 
-If you know the code language, include that in the first set of backticks to activate syntax highlighting. See [this list](https://prismjs.com/#supported-languages) of supported languages. Use `sql` to format Sumo queries and `json` for Sumo logs.
+### Embed a file from a GitHub repo
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-<img src={useBaseUrl('img/contributing/json-codeblock.png')} alt="JSON code block example" />
-
-</TabItem>
-<TabItem value="Result">
-
-```json
-{
-  "employee": {
-    "name": "Jane Smith",   
-    "team": "Operations",   
-    "manager": true  
-  }  
-}  
-```
-
-</TabItem>
-</Tabs>
-
-Here's how to add a title to your code block.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-<img src={useBaseUrl('img/contributing/title-codeblock.png')} alt="JSX snippet with title" />
-
-</TabItem>
-<TabItem value="Result">
-
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return (
-    <h1>Hello, Docusaurus!</h1>
-  )
-}
-```
-
-</TabItem>
-</Tabs>
-
-To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-<img src={useBaseUrl('img/contributing/highlight-codeblock.png')} alt="SQL code snippet with highlighted lines" />
-
-</TabItem>
-<TabItem value="Result">
-
-```sumo {2-6}
-_sourceCategory=reinvent/travel/checkout
-[subquery:_sourceCategory=reinvent/travel/nginx
-     | count by src_ip
-     | topk(1,_count)
-     | compose src_ip keywords
-]
-| json field=_raw "funcName"
-| where funcname in ("process_cart","charge")
-| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
-| count by funcname
-```
-
-</TabItem>
-</Tabs>
-
-For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
-
-### Import GitHub repo file
-
-To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
-
-This code references a json script file:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-<img src={useBaseUrl('img/contributing/json-ref-codeblock.png')} alt="JSON code snippet from GitHub" style={{border: '1px solid gray'}} width="700"/>
-
-</TabItem>
-<TabItem value="Result">
+Add `reference` after the language on the opening fence, then put the file's GitHub URL on the next line. Docusaurus fetches the file at build time and renders it as a highlighted code block with a link back to the source:
 
 ```json reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json
 ```
 
-</TabItem>
-</Tabs>
-
-Optionally, you can:
-* Reference a specific range of code lines by appending `#L` with the line number or numbers at the end of the URL. For example, `https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/1password/example.json#L4-L5`.
-* Add a title to the code block, such as `json reference title="Hello"`.
-
-You'll see this used in our [C2C source docs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+Append `#L4-L5` to the URL to embed only those lines, and add a title with `json reference title="example.json"`. We use this heavily in the [C2C source docs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Collapsible text blocks
 
-Use the Docusaurus [Details](https://docusaurus.io/docs/next/markdown-features#details) feature to collapse long, additional content and long code samples. When collapsed, the content can be searched, but not displayed, when loading a page. Place long lists or lots of content in this section. The reader can expand/collapse as needed. Important content like required steps and instructions should not be placed in an expander.
+Use a [Docusaurus `<details>` block](https://docusaurus.io/docs/markdown-features#details) to fold away long optional content: verbose examples, long code samples, or big reference lists. Put the title between the `<summary>` tags and the content after them. Collapsed content is still indexed for search.
 
-You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
-
-Add a title for the expander between the `<summary>` tags. Then, add all content after `<summary>` tags and before the closing `<details>` tags.
+Never put required steps or instructions in a collapsible block.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -431,49 +251,33 @@ Add a title for the expander between the `<summary>` tags. Then, add all content
 
 <TabItem value="Markdown">
 
-<img src={useBaseUrl('img/contributing/collapsible-text.png')} alt="SQL code snippet with highlighted lines" />
+```
+<details>
+<summary>Toggle me</summary>
+
+This is the detailed content.
+
+</details>
+```
 
 </TabItem>
 <TabItem value="Result">
 
 <details>
-
 <summary>Toggle me</summary>
 
-```json title="Code in a tip with line highlight" {11-16}
-"overrides": [
-    {
-    "series": [],
-    "queries": [
-        "A"
-        ],
-    "userProvidedChartType": false,
-    "properties": {
-        "type": "column"
-        },
-    "unsafeCanvasJSProperties": {
-        "bevelEnabled": true,
-        "indexLabelPlacement": "inside",
-        "indexLabel": "{y}",
-        "indexLabelOrientation": "vertical"
-        }
-    }
-]
-```
+This is the detailed content.
 
 </details>
 
 </TabItem>
 </Tabs>
 
-
-
-
 ## Contractions
 
 Using contractions contributes to our goals of striking a conversational, friendly tone.
 
-It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "cannot"), as they can be easily mistaken for the opposite meaning.
+It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "can't"), as they can be easily mistaken for the opposite meaning.
 
 Avoid less common contractions, like “should’ve”, or “it’ll”.
 
@@ -490,42 +294,25 @@ The notation used in the UI time range editor is an exception to some of these r
 
 ## Downloadable files
 
-To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
-
-1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="static/files folder" width="250"/>
-1. Go to your doc in progress and use the following syntax to link the file:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
+Put the asset in `static/files/`, then link it like this:
 
 ```md
 <a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
 ```
 
-</TabItem>
-<TabItem value="Result">
-
-<a href={useBaseUrl('files/domainCollector.ps1')} target="_blank">domainCollector.ps1</a>
-
-</TabItem>
-</Tabs>
-
-Nearly all file formats are supported. For more information, see [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets).
-
-If your file is available in another public Sumo Logic repo, provide the standard URL link. [Here's an example](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/fargate/install-metrics.sh).
+Nearly all formats are supported (see [Docusaurus static assets](https://docusaurus.io/docs/static-assets)). If the file already lives in another public Sumo Logic repo, link its URL directly instead of copying it in.
 
 ## Emphasis
 
 ### Bold
 
-Use **bold** for UI elements you interact with, such as a button or tab.
+Use **bold** for the name of a UI element the reader interacts with or navigates to: a button, tab, menu item, field label, checkbox, or page name. Examples: Select **Save**. Go to the **Scheduled Views** page. On the **Aggregates** tab, select **Add to Dashboard**.
+
+Bold only the label itself. The generic word that follows it (`button`, `tab`, `menu`, `dialog`, `field`, `page`, `pane`) stays outside the bold and lowercase: the **Search** page, not **Search page** or the **Search Page**.
+
+**UI label vs. concept.** Bold and match the on-screen capitalization only when you're pointing to the UI control. When you're describing the feature or concept, don't bold it, and lowercase it. Write "A scheduled view is a pre-aggregated index of your data" (concept), but "Open the **Scheduled Views** page" (UI label). Capitalization follows the same split (see [Capitalization](#capitalization)).
+
+Don't use bold to emphasize ordinary words.
 
 ### Italics
 
@@ -538,7 +325,6 @@ Use _italics_ for:
 Never underline text.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -587,7 +373,6 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 * Be careful of using special characters. Dashes are ok, but try to avoid other punctuation.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -618,96 +403,86 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 
 Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Docusaurus carefully formats generated pages to ensure strong search and SEO, and malformed structures can reduce that strength.
 
-### Documenting procedures
+### Step headings
 
-When a topic provides instructions for a significant multi-step process, organize the content in sections with headings that signpost the nature of the information. Include "Step" in the heading to make it clear that the section is part of a larger configuration process. For example:
+When a topic documents a long, multi-step process, break it into sections whose headings signpost each stage, and start each heading with "Step" so it's clear the section is one part of a larger configuration. For example:
 
 <img src={useBaseUrl('img/contributing/style-steps-headings.png')} alt="headers with steps" width="300"/>
 
 
 ## Hub pages
 
-To generate a full list of docs within a folder, add this code to the file:
+A hub page is a section's `index.md`. It opens with a short intro, then lists the section's child docs as a grid of cards. Build the grid by hand so you control the order, titles, icons, and descriptions:
 
 ```
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-## Guide contents
-
 In this section, we'll introduce the following concepts:
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<div className="box-wrapper">
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/<section>/<child-doc>')}><img src={useBaseUrl('img/icons/<icon>.png')} alt="<icon> icon" width="40"/><h4>Card title</h4></a>
+  <p>One sentence on what the child doc covers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/<section>/<child-doc-2>')}><img src={useBaseUrl('img/icons/<icon>.png')} alt="<icon> icon" width="40"/><h4>Card title</h4></a>
+  <p>One sentence on what the child doc covers.</p>
+  </div>
+</div>
+</div>
 ```
 
-This is best used in an index file. Include a list of all files and folders in that folder to the file. See any category file for a section in the site for how this looks.
-
-
-<!--
-## Import GitHub Repo Files
-
-To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
-
-This code references a script file: ` ```bash reference`, for example:
-
-```bash reference
-https://github.com/ccaum/sumologic-solution-templates/blob/github_getting_started_guide/software-development-optimization-terraform/scripts/getting-started
-```
-
-You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
--->
-
+* Wrap every card in one `<div className="box-wrapper">`. Each card is `<div className="box smallbox card">` containing a `<div className="container">`.
+* An invisible overlay makes the whole card clickable, so keep the icon and the `<h4>` title inside the `<a>`.
+* Keep each description to one sentence. Pull icons from `static/img/icons/`.
+* Order cards to match the section's order in `sidebars.ts`, unless the section deliberately leads with its most important docs.
+* The page needs a `slug:` in its frontmatter (see [Navigation menus](#navigation-menus)).
 
 ## Images
 
 ### Add an image
 
-1. Save your image to the `/static/img` folder. This folder structure mirrors the doc section folders.
-   * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
-   * File format be PNG. Avoid using animated GIFs, as they're generally not accessible; instead, use static images, provide text descriptions, or ensure animations stop within 5 seconds.
-   * Max file size 2MB.
-1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
-   ```
-   import useBaseUrl from '@docusaurus/useBaseUrl';
-   ```
-1. Copy the below code snippet and paste it where you want your image to appear.
-   ```
-   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
-   ```
-1. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
-   :::info
-   For web-hosted images, do not use the `useBaseUrl` syntax.
-   * &#9989; Do: `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Catalina" />`
-   * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
-   :::
-1. Add alt text, which provides a brief description of an image, ensuring accessibility for users who rely on screen readers or have slow internet connections. It also complies with US Government GSA Section 508 regulations. Here are some best practices:
-   - **Be concise and specific**. Describe the core purpose of the image (e.g., `alt="Screenshot showing the image properties dialog box"` or `alt="Sumo Logic logo"`).
-   - **Focus on function**. Convey the image's key message without unnecessary details.
-   - **Skip decorative images**. Use an empty alt attribute (`alt=""`) for images that are purely decorative.
-   - **Check for missing alt text**. Always ensure that every image has appropriate alt text. If you encounter an image without it, add it.
-1. Use the `width` to resize oversized and/or pixelated images, if needed.
+Save images to `/static/img/`, which mirrors the doc folder structure. Import `useBaseUrl` once near the top of the doc (`import useBaseUrl from '@docusaurus/useBaseUrl';`), then reference the image with a path that starts with `img`, not `/static`:
 
-  <Tabs
-    className="unique-tabs"
-    defaultValue="Markdown"
-    values={[
-      {label: 'Markdown', value: 'Markdown'},
-      {label: 'Result', value: 'Result'},
-    ]}>
+```md
+<img src={useBaseUrl('img/<path>.png')} alt="<description>" style={{border: '1px solid gray'}} width="<pixels>" />
+```
 
-  <TabItem value="Markdown">
+* **Format.** Use PNG. Don't use animated GIFs — readers can't pause the motion (an accessibility barrier), and screen readers can't convey them.
+* **Size.** Keep files under 2MB. Use `width` to scale down oversized or pixelated images.
+* **Replace, don't version.** When a UI change dates an image, overwrite the existing file rather than adding a second copy. Image files are large and slow the build.
+* **Web-hosted images.** Pass the full URL and drop `useBaseUrl`:
+   * &#9989; `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Jira Catalina" />`
+   * &#10060; `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Jira Catalina" />`
+* **Alt text.** Every image needs it (screen readers, slow connections, US Government GSA Section 508). Describe the image's purpose, not its pixels (`alt="Screenshot of the image properties dialog"`, `alt="Sumo Logic logo"`). Use `alt=""` only for purely decorative images, and add alt text to any image you find without it.
 
-  ```md
-  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
-  ```
 
-  </TabItem>
-  <TabItem value="Result">
+### Images in lists
 
-  <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
+When adding an image to a bulleted or sequential list, include the image snippet in-line with the list item, with a `<br/>` element in between, like this:
 
-  </TabItem>
-  </Tabs>
+<Tabs
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
+```
+
+</TabItem>
+<TabItem value="Result">
+
+1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
+
+</TabItem>
+</Tabs>
+
 
 ### Logos
 
@@ -745,32 +520,6 @@ Add appropriate `alt` text for accessibility. See [Add an image](#add-an-image) 
 |:---------------|:-------------------|
 | <img src={useBaseUrl('img/contributing/screenshot-yes.png')} alt="Alt text" width="400"/> | <img src={useBaseUrl('img/contributing/screenshot-no.png')} alt="Alt text" width="400"/> |
 
-### Images in lists
-
-When adding an image to a bulleted or sequential list, include the image snippet in-line with the list item, with a `<br/>` element in between, like this:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-```md
-1. Here is a dinosaur.<br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
-```
-
-</TabItem>
-<TabItem value="Result">
-
-1. Here is a dinosaur. <br/><img src={useBaseUrl('img/reuse/docusaurus.png')} alt="Alt text" width="100"/>
-
-</TabItem>
-</Tabs>
-
 ### Masking sensitive information
 
 We mask sensitive information like usernames, email addresses, and IP addresses. In Snagit or a similar program, use the shape tool to mask the text using solid gray, (RGB 212, 212, 212).
@@ -787,7 +536,6 @@ You can mix ordered (or numbered) and unordered (or bulleted) lists together. Us
 In a list item made up of an introductory word or phrase and an explanatory sentence or paragraph, separate the introductory text and the explanation with a period (`.`) rather than a dash (`-`). For example:
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -818,7 +566,6 @@ Use numbered lists when providing a set of instructions or steps.
 Always start with `1.`. Markdown automatically numbers sequentially when building the site. This can be helpful when you need to add or change the order of instructions (no need to edit every number).
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -857,7 +604,6 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 Use bulleted lists when the items do not need to be presented in sequential order. End each bullet in a terminal period. Use asterisks `*` for unordered, bulleted lists.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -997,7 +743,7 @@ For storage and memory sizes (MB, GB), the unit of measurement should be upperca
 
 ## Metadata (frontmatter)
 
-Markdown documents contain a YAML block of metadata at the top called [frontmatter](https://jekyllrb.com/docs/front-matter/). This block includes elements such as the title, description, and search keywords. Every page should have an `id` for sidebar navigation.
+Markdown documents contain a YAML block of metadata at the top called [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter). This block includes elements such as the title, description, and search keywords. Every page should have an `id` for sidebar navigation.
 
 Here is an example of a frontmatter block with sample text:
 
@@ -1040,131 +786,16 @@ This rule helps:
 
 ## Navigation menus
 
-Top-level navigation content is controlled in our [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config) file.
+The top navigation bar is configured in [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config). The left sidebar for the whole site is configured in [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts), which holds one sidebar per Guide. Read the comments at the top of that file for how our sections map to the top nav and where new content belongs.
 
-Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/main/sidebars.ts) file controls the sidebar navigation for the entire site. It consists of multiple sidebars and sections based on the Guides top navigation, drilling down per guide. A list of sections and advice on content is at the top of the sidebars file, with comments throughout.
-
-* To add a specific page, you include the directory path and topic id from the frontmatter. For example, this page is `contributing/style-guide`.
-* To add a section within a section, use a category section with page links in it (see below example).
-* To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contributing/index'},`.
-* To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-edit-doc`.
-   <details>
-   <summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
-
-   ```js title="sidebars.ts"
-   //Contribution guide for documentation
-     contributing: [
-       {
-         type: 'category',
-         label: 'Contribution Guide',
-         collapsible: true,
-         collapsed: false,
-         link: {type: 'doc', id: 'contributing/index'},
-         items: [
-           'contributing/create-edit-doc',
-           'contributing/build-deploy',
-           'contributing/translations',
-           {
-             type: 'category',
-             label: 'Templates',
-             collapsible: true,
-             collapsed: false,
-             items: [
-               'contributing/templates/partner-app-doc'
-             ]
-           }
-         ],
-       },
-     ],
-   ```
-   </details>
-* To add a category, or dropdown list of documentation, use the following format:
-   <details>
-   <summary>Example: add sidebar category example with additional section</summary>
-
-   ```js title="sidebars.ts"
-       {
-         type: 'category',
-         label: 'Name of Guide',
-         collapsible: true,
-         collapsed: false,
-         link: {type: 'doc', id: 'foldername/id-first-page'},
-         items: [
-           'foldername/doc-id1',
-           'foldername/doc-id2',
-           {
-             type: 'category',
-             label: 'Section in Guide',
-             collapsible: true,
-             collapsed: false,
-             link: {type: 'doc', id: 'foldername/id-section'},
-             items: [
-               'foldername/doc-id3',
-               'foldername/doc-id4',
-             ]
-           }
-         ],
-       },
-   ```
-   </details>
-* To add a dedicated sidebar, use the following format:
-   <details>
-   <summary>Example: adding a dedicated sidebar for a guide</summary>
-
-   ```js title="sidebars.ts"
-   module.exports = {
-     sectionName: [
-       {
-         type: 'category',
-         label: 'Name of Guide',
-         collapsible: true,
-         collapsed: false,
-         link: {type: 'doc', id: 'foldername/id-first-page'},
-         items: [
-           'foldername/doc-id1',
-           'foldername/doc-id2',
-           {
-             type: 'category',
-             label: 'Section in Guide',
-             collapsible: true,
-             collapsed: false,
-             link: {type: 'doc', id: 'foldername/id-section'},
-             items: [
-               'foldername/doc-id3',
-               'foldername/doc-id4',
-             ]
-           }
-         ],
-       },
-       {
-         type: 'category',
-         label: 'Name of Another Guide',
-         collapsible: true,
-         collapsed: false,
-         link: {type: 'doc', id: 'otherfoldername/id-first-page'},
-         items: [
-           'otherfoldername/doc-id1',
-           'otherfoldername/doc-id2',
-           {
-             type: 'category',
-             label: 'Section in Another Guide',
-             collapsible: true,
-             collapsed: false,
-             link: {type: 'doc', id: 'otherfoldername/id-section'},
-             items: [
-               'otherfoldername/doc-id3',
-               'otherfoldername/doc-id4',
-             ]
-           }
-         ],
-       },
-     ]
-   ```
-   </details>
+* **Add a page.** Reference it by folder path and frontmatter `id`, for example `contributing/style-guide`. Add that `id` to the `items` array of the right category.
+* **Add a section.** Nest a `type: 'category'` object inside a category's `items`. See [Docusaurus sidebar syntax](https://docusaurus.io/docs/sidebar) for the category, `link`, and dedicated-sidebar options.
+* **Add a section index page.** Create an `index.md` in the folder with `slug: <name>`, then point the category at it with `link: {type: 'doc', id: '<folder>/index'}`.
 
 ## Numbers
 
-* Use numerals, rather than spelling the number out. For example, “2” instead of “two”.
+* Spell out zero through nine in ordinary prose; use numerals for 10 and greater. This matches AP, Microsoft, and Google.
+* Always use numerals for measurements and units, version numbers, percentages, code, dates, times, UI text that shows a numeral, and any range where either value is 10 or greater.
 * Use commas for numbers that are 4 or 5 digits in length, for example, 1,000 or 99,999.
 * For numbers 100,000 and higher, use “K”, “M”, and “B” to indicate thousands, millions, or billions.
 * Use an en-dash without a space on either side for number ranges.
@@ -1194,7 +825,6 @@ For Preview docs, under the frontmatter, add the `robots` meta tag, then the cor
 ### Private Preview
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -1237,7 +867,6 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 ### Extended Preview
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -1281,7 +910,6 @@ This feature is in Extended Preview. For more information, contact your Sumo Log
 
 
 <Tabs
-  className="unique-tabs"
   defaultValue="Markdown"
   values={[
     {label: 'Markdown', value: 'Markdown'},
@@ -1352,239 +980,51 @@ In the UI, avoid periods for single sentences on their own. Whenever there are t
 
 ## Release notes
 
-Our release notes (also known as changelog) are posted to the both the docs site and corresponding RSS feed. Check out the categories [here](/docs/release-notes). Keep your them concise and add links to documentation. If there are updated UI elements, add an image or gif.
+Release notes (our changelog) publish to both the [docs site](/docs/release-notes) and an RSS feed. Keep them concise and link to the relevant documentation.
 
-1. In the appropriate blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-csoar](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-csoar), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)), add a new file that follows the format of the other posts in that folder. For example, for blog-service release notes, the format is `YYYY-MM-DD-<product/feature>`. For Cloud SIEM and SOAR, the format is `YYYY-MM-DD-application-update` or `YYYY-MM-DD-content-update`.<br/><img src={useBaseUrl('img/contributing/release-notes-dropdown-menu.png')} alt="Release notes menu" style={{border: '1px solid gray'}} width="200"/>
-1. Add the following frontmatter, swapping out these example values with your own. Because there's no `image`, we'll use the Sumo Logic logo in its place.
-    ```markdown
-    ---
-    title: New XYZ Feature
-    hide_table_of_contents: true
-    keywords:
-      - alerts
-    image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082    
-    ---
-    ```
-    * `title`. Title for release note that includes product or feature name.
-       :::note
-       For service release notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous service release notes for category names.
-       :::
-    * `keywords`. Add a brief bulleted list of major keywords.
-    * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
-1. Document the release notes. Add links, bullets, and images as needed.
+1. In the matching blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-csoar](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-csoar), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)), add a file named like the other posts in that folder. For blog-service it's `YYYY-MM-DD-<product-or-feature>`; for Cloud SIEM and SOAR it's `YYYY-MM-DD-application-update` or `YYYY-MM-DD-content-update`.
+1. Copy the frontmatter from a recent post in the same folder and update the values. Two fields are specific to release notes:
+    * `hide_table_of_contents: true`. Hides the TOC so the notes render clean and full-width.
+    * `image`. Used by the RSS feed and social card. If the note has no screenshot to feature, point it at the Sumo Logic logo: `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg`.
 
-### Long release notes
+   For service release notes, append the category in parentheses to the `title` (for example, `Automatic Log Level Detection (Search)`). Check recent service notes for category names.
+1. Write the note. Add links, bullets, and images as needed.
 
-For lengthy release notes, we recommend introducing the notes and adding a truncate line (`<!--truncate-->`), followed by the full set of release notes.
+For lengthy release notes, write a 1-2 paragraph introduction, then add a truncate line (`<!--truncate-->`), followed by the full set of release notes.
 
 ## Reusing content
 
-For repeatable content - an identical section that appears in one or more docs - you can save a lot of time by creating one instance of that content in the `/docs/reuse` folder and then importing that snippet to other docs.
-
-1. Create a new markdown file and save it to the [`/docs/reuse`](https://github.com/SumoLogic/sumologic-documentation/tree/main/docs/reuse) folder.
-1. Import that content to another doc by adding this snippet (substitute the file path and object name with your own).
-   ```bash
-   import RestartC2C from '../reuse/restart-c2c-source.md';
-
-   <RestartC2C/>
-   ```
-
-Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
-
-Example: the content under the Cloud-to-Cloud source docs > Restarting Your Source section ([example](/docs/c2c/info/#restarting-your-source)) lives in the `reuse` folder. The H3 headers live in the actual docs, and H4 headers live in the `reuse` file:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
+When the same passage appears in more than one doc, put it once in the [`/docs/reuse`](https://github.com/SumoLogic/sumologic-documentation/tree/main/docs/reuse) folder and import it where you need it. Add the import at the top of the file, then place the component where the content should appear:
 
 ```md
-### Restarting your source
+import ApiRoles from '../reuse/api-roles.md';
 
-import RestartC2C from '../reuse/restart-c2c-source.md';
-
-<RestartC2C/>
-
+<ApiRoles/>
 ```
-</TabItem>
-<TabItem value="Result">
 
-### Restarting your source
+For example, `reuse/api-roles.md` is one sentence about required role capabilities. Around 50 API reference docs import it under their own `## Required role capabilities` heading, then follow it with the capabilities specific to that API.
 
-import RestartC2C from '../reuse/restart-c2c-source.md';
-
-<RestartC2C/>
-
-</TabItem>
-</Tabs>
+Headings inside a reuse file don't show up in the right-side nav of the docs that import it. So keep any H2 or H3 heading in the importing doc, and put only the body (and any H4 or lower headings) in the reuse file.
 
 ## Tables
-Simple tables can help format content. For example, lists of attributes with descriptions. Adding the style below the table helps with formatting.
 
-Tables use plain markdown with one header, default left-aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-```
-| Column Name | Example Value | Description |
-| :-- | :-- | :-- |
-| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
-| Root Service | api | The service that started the trace. |
-| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
-| Duration | 12.582 ms | The amount of time the trace spans.  |
-| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="200" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="300" /> |
-| Number of errors | 0 | The number of errors in the trace. |
-| Status | 200 | The HTTP status code of the trace. |
-```
-
-
-```
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| :------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you do not need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | :--- | :---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-```
-
-</TabItem>
-<TabItem value="Result">
-
-| Column Name | Example Value | Description |
-| :-- | :-- | :-- |
-| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
-| Root Service | api | The service that started the trace. |
-| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
-| Duration | 12.582 ms | The amount of time the trace spans.  |
-| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-| Duration Breakdown | <img src={useBaseUrl('img/apm/traces/breakdown.png')} alt="Breakdown" style={{border: '1px solid gray'}} width="200" /> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('img/apm/span-hover-view.png')} alt="Span hover" style={{border: '1px solid gray'}} width="300" /> |
-| Number of errors | 0 | The number of errors in the trace. |
-| Status | 200 | The HTTP status code of the trace. |
-
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| :------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you do not need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | :--- | :---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-</TabItem>
-</Tabs>
-
-Docusaurus also supports HTML tables.
+Use standard Markdown tables. Columns left-align by default; put `:--:` in a column's divider cell to center it, `--:` to right-align. Cells take inline Markdown, links, images, and `<br/>` for line breaks. The site theme adds zebra striping automatically. Fall back to a raw HTML table only for layouts Markdown can't express, such as row or column spans.
 
 
 ## Tabs
 
-Use the following code to create tabbed content. You can use Markdown in these tabs, including text, code content, images, and more.
+Use [Docusaurus tabs](https://docusaurus.io/docs/markdown-features/tabs) for mutually exclusive paths: environment (Kubernetes vs. non-Kubernetes), operating system, or collection method. Add the imports once near the top of the file:
 
-At the bottom of the Markdown file, add the following code:
-
-```md title="Copy and paste once into markdown file"
+```md
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-For each set of tabs, use the following code:
+Sumo conventions:
 
-```md title="Copy and paste into markdown for each tab set"
-<Tabs
-  className="unique-tabs"
-  defaultValue="tab1"
-  values={[
-    {label: 'Tab 1', value: 'tab1'},
-    {label: 'Tab 2', value: 'tab2'},
-  ]}>
-
-<TabItem value="tab1">
-
-Add content here for first tab.
-
-</TabItem>
-<TabItem value="tab2">
-
-Add content here for second tab.
-
-</TabItem>
-</Tabs>
-```
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-See the following tabbed code examples:
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="kinesis"
-  values={[
-    {label: 'Kinsesis Firehose', value: 'kinesis'},
-    {label: 'Lambda', value: 'lambda'},
-  ]}>
-
-<TabItem value="kinesis">
-
-Set up a Source in Sumo Logic:
-
-1. Navigate to Collection management.
-1. Use an existing Hosted Collector, or create a new one.
-1. Next to the collector, select **Add Source**.
-1. Select **AWS Kinesis Firehose for Logs**.
-1. Enter a **Name** to identify the source.
-1. Enter a **Source Category** following the best practices found in “Good Source Category, Bad Source Category”.
-
-Deploy the Cloudformation Template to Create a Kinesis Firehose Delivery Stream:
-
-1. Download the Cloudformation template.
-1. Open CloudFormation in AWS.
-1. Create a new stack using the CloudFormation template you downloaded.
-1. Provide the URL you created from your Sumo source.
-1. Select an S3 bucket to deliver failed logs, or create a new one.
-1. Click **Next**.
-
-Accept the IAM permissions, and create the stack.
-
-  </TabItem>
-  <TabItem value="lambda">
-
-Info for the second tab would go here! Content can include markdown, code blocks, notes, and more.
-
-  </TabItem>
-</Tabs>
+* **Use `groupId`** when the same choice appears more than once on a page, or across pages, so the reader's selection syncs and sticks (for example, `groupId="k8s-nonk8s"`).
+* **Make each tab self-contained.** A reader who picks one tab and ignores the rest should still get every step for that path. Don't split a procedure so that step 3 is under one tab and step 4 under another.
+* `className="unique-tabs"` appears in many existing docs but has no effect, since no stylesheet targets it. Leave it off new tab sets.
 
 
 ## SEO
@@ -1599,7 +1039,7 @@ For clarity and search engine discoverability:
    * Example: _System architecture and monitoring_.
 
 :::sumo For internal contributors
-* If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-1-create-a-301-redirect) so that users don’t get a 404 page.
+* If you change a URL, set up a [redirect](/docs/contributing/remove-doc#step-2-create-a-301-redirect) so that users don’t get a 404 page.
 * Use Google Analytics to make data-driven decisions.
 :::
 
@@ -1644,6 +1084,8 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
 
 ## UI elements
 
+For how to format and capitalize a UI element's name (bold the label, match on-screen capitalization, and lowercase it when you mean the concept rather than the control), see [Bold](#bold) and [Capitalization](#capitalization).
+
 Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
 
 import UiElements from '../reuse/ui-elements.md';
@@ -1678,91 +1120,31 @@ If you need to use mouse actions to be specific, use:
 
 ## Videos
 
-### YouTube
+Throughout the docs, we embed tutorial videos on pages where they're relevant to the topic. The Training Team produces these videos. When you embed one they've provided — usually inside a `:::training` admonition — add the import once near the top of the file:
 
-To embed a YouTube video on a doc:
-
-1. Copy and paste the following code into your page (including the `import Iframe` line).
-   ```html
-   <Iframe url="https://www.youtube.com/embed/abcde12345?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-   import Iframe from 'react-iframe';
-   ```
-1. Remove the URL ID from the snippet (`abcde12345`) and replace it with your own video ID, which you can find in the YouTube link URL.
-1. Ensure that `?rel=0` is appended to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
-  values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
-  ]}>
-
-<TabItem value="Markdown">
-
-```html
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
+```md
 import Iframe from 'react-iframe';
 ```
 
-</TabItem>
-<TabItem value="Result">
+Most Sumo Logic videos are hosted on Wistia. Don't make watching a video required to complete a task; the written steps must stand on their own.
 
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-
-</TabItem>
-</Tabs>
-
-### Other video types
-
-You can use similar coding to embed videos from other vendors than YouTube. Following is example coding to embed videos from Wistia.
+Paste the matching snippet into the body:
 
 <Tabs
-  className="unique-tabs"
-  defaultValue="Markdown"
+  defaultValue="wistia"
   values={[
-    {label: 'Markdown', value: 'Markdown'},
-    {label: 'Result', value: 'Result'},
+    {label: 'Wistia', value: 'wistia'},
+    {label: 'YouTube', value: 'youtube'},
   ]}>
 
-<TabItem value="Markdown">
+<TabItem value="wistia">
+
+Use the `fast.wistia.net/embed/iframe/` URL with `?web_component=true&seo=true&videoFoam=false`.
 
 ```html
-<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+<Iframe url="https://fast.wistia.net/embed/iframe/VIDEO_ID?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  id="wistiaVideo"
   className="video-container"
   display="initial"
   position="relative"
@@ -1772,21 +1154,21 @@ You can use similar coding to embed videos from other vendors than YouTube. Foll
 ```
 
 </TabItem>
-<TabItem value="Result">
+<TabItem value="youtube">
 
-<Iframe url="https://fast.wistia.net/embed/iframe/yebz0v90tx?web_component=true&seo=true&videoFoam=false"
+Append `?rel=0` to the embed URL so only same-channel videos are suggested after the video finishes.
+
+```html
+<Iframe url="https://www.youtube.com/embed/VIDEO_ID?rel=0"
   width="854px"
   height="480px"
-  id="wistiaVideo"
   className="video-container"
   display="initial"
   position="relative"
-  allow="autoplay; fullscreen"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen
 />
+```
+
 </TabItem>
 </Tabs>
-
-:::note
-Typically you must include `import Iframe from 'react-iframe';` with the markdown. It is not included in the example above because it was already called in the previous markdown for YouTube.
-:::
