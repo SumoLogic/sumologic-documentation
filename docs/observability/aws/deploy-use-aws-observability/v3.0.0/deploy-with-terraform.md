@@ -101,7 +101,7 @@ provider "aws" {
 
 module "aws_observability" {
   source                    = "SumoLogic/aws-observability/sumologic"
-  version                   = "1.0.0"
+  version                   = "3.0.0"
   sumologic_environment     = "us1"
   sumologic_access_id       = "<YOUR SUMO ACCESS ID>"
   sumologic_access_key      = "<YOUR SUMO ACCESS KEY>"
