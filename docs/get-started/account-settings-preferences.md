@@ -13,7 +13,7 @@ You can review and update your personal account settings and login credentials a
 
 ## Accessing your account settings
 
-* [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="20"/>.
+* [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select the person silhouette icon <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="25"/>.
 * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username at the bottom.
 
 From here, select one of the following tabs:

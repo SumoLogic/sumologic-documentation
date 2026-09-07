@@ -301,3 +301,7 @@ The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of th
 * New alerts by repo
 
 <img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Dependabot-Alerts.png" />
+
+## Additional resources
+
+- Use the [GitHub Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/github/) to automate response actions directly from Cloud SOAR playbooks.

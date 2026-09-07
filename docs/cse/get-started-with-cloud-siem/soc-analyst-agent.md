@@ -252,7 +252,9 @@ No. The SOC Analyst Agent does not have persistent learning.
 
 The SOC Analyst Agent automatically investigates insights in priority order, up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID. When that volume is reached, additional insights receive a **Not Investigated** verdict, and analysts can manually trigger an investigation on any of them by clicking the **Investigate** button. A banner also appears on the **Insights** page when your investigation capacity is reached.
 
-To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings). If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
+To control how that capacity is used, including whether investigation continues past your committed volume, see [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings). Parent org administrators can also set a child org's investigation volume when [creating or editing a child org](/docs/manage/manage-subscription/create-and-manage-orgs/create-manage-orgs/#allocate-credits).
+
+If you have questions about your organization's investigation volume, ask your Sumo Logic representative.
 
 ### Does continuing an investigation in Mobot count against Mobot's usage limits?
 
