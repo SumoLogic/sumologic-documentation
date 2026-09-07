@@ -53,3 +53,7 @@ For information about Proofpoint, see the [Proofpoint website](https://www.proof
 * February 4, 2022 - First upload
 * March 31, 2023 (v1.1 and v1.2) - Integration refined.
 * April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+## Additional resources
+
+- For Proofpoint TAP, Sumo Logic offers the [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) and the [Proofpoint TAP app](/docs/integrations/saas-cloud/proofpoint-tap/) to collect and visualize your Proofpoint TAP data.

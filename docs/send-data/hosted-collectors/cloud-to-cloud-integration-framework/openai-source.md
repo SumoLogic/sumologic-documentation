@@ -125,3 +125,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [OpenAI ChatGPT Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/openai-chatgpt/) to automate response actions directly from Cloud SOAR playbooks.

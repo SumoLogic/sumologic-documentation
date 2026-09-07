@@ -147,6 +147,34 @@ The dropdown only displays the time-interval which is greater than or equal to t
 
 <img src={useBaseUrl('/img/dashboards/about-dashboard/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="400" />
 
+### Auto-refresh guardrails
+
+Auto-refresh helps dashboards stay up to date by automatically rerunning panel queries at the interval you configure. However, continuously refreshing a dashboard that no one is viewing, or repeatedly retrying a query that keeps failing, consumes unnecessary compute resources without adding value.
+
+Sumo Logic's auto-refresh guardrails solve this by automatically pausing refresh activity when it is unlikely to help, while keeping dashboards quick to resume when needed.
+
+Two guardrails apply to both private and public dashboards:
+
+#### Hidden tab pause
+
+When you switch away from a dashboard tab (browser tab or Bento tab) for longer than **10 minutes**, auto-refresh pauses automatically. Panels retain their last loaded state, so no data is lost. When you return to the tab, auto-refresh resumes automatically and no action is required.
+
+#### Panel failure exclusion
+
+If a panel's query fails **5 consecutive times** during auto-refresh cycles, that panel is excluded from future auto-refresh cycles. Other healthy panels continue refreshing normally.
+
+When a panel is excluded, you see:
+
+* An error overlay on the affected panel with the original error message.
+* A toast notification when the panel is first excluded.
+
+<img src={useBaseUrl('/img/dashboards/about-dashboard/panel-failure-exclusion.png')} alt="Panel error overlay with Retry Panel button" style={{border: '1px solid gray'}} width="500" />
+
+To resume the panel:
+
+* Click **Retry Panel** on the affected panel to resume that panel only.
+* Click the dashboard **Run** button to resume all excluded panels.
+
 ## Auto Run
 
 **Auto Run** lets you control whether dashboard panels run automatically or require manual execution. Use this when you want explicit control over dashboard execution. For example, you may want to open a dashboard with a fixed absolute time range or make several dashboard variable changes before loading data. Disabling auto run prevents unnecessary panel reloads after each change and helps Flex customers reduce avoidable scan costs.
