@@ -239,7 +239,7 @@ Create `variables.tf`:
 ```hcl title="variables.tf"
 variable "sumologic_environment" {
   type        = string
-  description = "Sumo Logic deployment: au, ca, ch, de, eu, esc, fed, jp, kr, us1, us2"
+  description = "Sumo Logic deployment: au, ca, ch, de, eu, fed, jp, kr, us1, us2"
 }
 
 variable "sumologic_access_id" {
@@ -261,7 +261,7 @@ variable "sumologic_organization_id" {
 variable "sumologic_environment_base_url" {
   type        = string
   description = "Base URL for custom Sumo Logic environments. Leave empty for standard deployments."
-  default     = ""
+  default     = null
 }
 
 variable "aws_resource_tags" {
@@ -558,7 +558,7 @@ Create `variables.tf`:
 ```hcl title="variables.tf"
 variable "sumologic_environment" {
   type        = string
-  description = "Sumo Logic deployment: au, ca, ch, de, eu, esc, fed, jp, kr, us1, us2"
+  description = "Sumo Logic deployment: au, ca, ch, de, eu, fed, jp, kr, us1, us2"
 }
 
 variable "sumologic_access_id" {
@@ -580,7 +580,7 @@ variable "sumologic_organization_id" {
 variable "sumologic_environment_base_url" {
   type        = string
   description = "Base URL for custom Sumo Logic environments. Leave empty for standard deployments."
-  default     = ""
+  default     = null
 }
 
 variable "aws_resource_tags" {
