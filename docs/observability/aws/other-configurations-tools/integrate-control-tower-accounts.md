@@ -170,5 +170,5 @@ You must have a role that grants you the Manage Field Extractions capability to 
 To backfill your collection source `account` tags with an AWS account alias, see [Backfill AWS Account Alias](/docs/observability/aws/other-configurations-tools/backfill-aws-account-alias/).
 :::
 
-## Step 4: View the AWS Observability dashboards
+## Step 4: View the AWS Observability dashboards
 Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards/).

@@ -17,7 +17,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 * **Sumo Logic Metrics**. The AWS Observability Solution uses both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative.
   * AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in.
-  * If you do not see expected entities, make sure configurations are correct to collect and receive metrics, including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation#step-5-sumo-logic-aws-cloudwatch-metrics-sources) for the CloudFormation template.
+  * If you do not see expected entities, make sure configurations are correct to collect and receive metrics, including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation#step-4-sumo-logic-aws-cloudwatch-metrics-sources) for the CloudFormation template.
 * Make sure you have access to the Sumo Logic console as a user associated with a Sumo Logic role that has the required role capabilities.
 * [**Role capabilities**](/docs/manage/users-roles/roles/role-capabilities/). Make sure you have a Sumo Logic role that has the following capabilities:
   * Manage Collectors

@@ -9,7 +9,7 @@ These instructions help you deploy the AWS Observability Solution using Terrafor
 
 To set up the AWS Observability Solution using Terraform, complete the following steps.
 
-Additional parameter overrides are available in an appendix section for [Source](#override-source-parameters) and [App Content](#override-app-content-parameters).
+Additional parameter overrides are available in an appendix section for [Source](#override-collection-parameters) and [App Content](#override-app-content-parameters).
 
 ## Prerequisites
 
@@ -532,7 +532,7 @@ By default, all parameters are set up to automatically collect logs, metrics, in
 * **Simple URL overrides** (for existing sources). If you are already collecting data in Sumo Logic and want to reuse existing sources, set the corresponding `_source_url` variables (for example, `cloudwatch_metrics_source_url`, `cloudtrail_source_url`) in the **main.auto.tfvars** file.
 * **Detailed source configuration overrides**. To override source details (such as bucket names, path expressions, or log format settings), add the override parameters directly to the `module "collection-module"` block in the [terraform-sumologic-aws-observability/main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) file.
 
-To perform overrides, see [Override collection parameters](#override-source-parameters) and [Override app content parameters](#override-app-content-parameters).
+To perform overrides, see [Override collection parameters](#override-collection-parameters) and [Override app content parameters](#override-app-content-parameters).
 
 ## Step 6: Deploy the AWS Observability Solution
 
