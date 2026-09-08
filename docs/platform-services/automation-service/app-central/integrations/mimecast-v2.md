@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mimecast.png')} alt="mimecast" width="100"/>
 
-***Version: 1.0  
-Updated: Sep 7, 2026***
+***Version: 1.2  
+Updated: Sep 8, 2026***
 
 [Mimecast V2](https://www.mimecast.com/) is a cloud-based cybersecurity and risk management platform designed to protect enterprise email infrastructure from viruses, malware, phishing, and emerging deepfake attacks. It employs a layered cyber resilience solution to prevent email-borne threats and minimise data loss through secure email archiving.
 
@@ -55,4 +55,4 @@ For information about Mimecast, see [Mimecast documentation](https://developer.s
 
 ## Change Log
 
-* Sep 7, 2026 (v1.0) - Initial release of the Mimecast V2 integration
+* Sep 8, 2026 (v1.2) - Initial release of the Mimecast V2 integration
