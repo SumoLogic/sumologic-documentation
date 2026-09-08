@@ -2048,7 +2048,7 @@ module.exports = {
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/automatic-installation-script',
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
                         'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/update-aws-observability-stack-cloudformation',
-                        'observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources',
                       ],
                     },
                     {
@@ -2056,10 +2056,10 @@ module.exports = {
                       label: 'Deploy with Terraform',
                       collapsible: true,
                       collapsed: true,
-                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform'},
+                      link: {type: 'doc', id: 'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/index'},
                       items: [
-                        'observability/aws/deploy-use-aws-observability/v3.0.0/update-aws-observability-stack-terraform',
-                        'observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/update-aws-observability-stack-terraform',
+                        'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform',
                       ],
                     },
                     'observability/aws/deploy-use-aws-observability/v3.0.0/view-dashboards',
@@ -2085,7 +2085,7 @@ module.exports = {
                         'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
                         'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/automatic-installation-script',
                         'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
-                        'observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources',
+                        'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources',
                       ],
                     },
                     'observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-terraform',
@@ -2128,7 +2128,7 @@ module.exports = {
               link: {type: 'doc', id: 'observability/aws/other-configurations-tools/index'},
               items: [
                 'observability/aws/other-configurations-tools/integrate-control-tower-accounts',
-                'observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/backfill-aws-account-alias',
+                'observability/aws/other-configurations-tools/backfill-aws-account-alias',
               ],
             },
             {

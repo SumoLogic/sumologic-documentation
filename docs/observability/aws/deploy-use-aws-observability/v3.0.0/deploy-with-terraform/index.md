@@ -1,5 +1,5 @@
 ---
-id: deploy-with-terraform
+slug: /observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform
 title: Deploy with Terraform
 sidebar_label: Deploy with Terraform
 description: The Sumo Logic AWS Observability Solution can be deployed using Terraform for single or multi-account and multi-region AWS environments.
@@ -562,7 +562,7 @@ This will destroy all [resources](/docs/observability/aws/deploy-use-aws-observa
 
 ## Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform
 
-To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
+To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform).
 
 ## Appendix
 
@@ -674,7 +674,7 @@ The following table provides a list of all source parameters and their default v
 ### Configure collection of CloudWatch metrics
 
 :::note
-To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
+To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudwatch_metrics
@@ -1064,7 +1064,7 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 ### Configure collection of CloudTrail logs
 
 :::note
-To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
+To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudtrail_logs

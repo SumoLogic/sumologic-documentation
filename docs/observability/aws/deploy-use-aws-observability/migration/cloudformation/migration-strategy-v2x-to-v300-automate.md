@@ -37,7 +37,7 @@ Two migration scripts are available depending on your deployment type:
 Both scripts automate the entire migration process and pause at key points for your approval before making any destructive changes.
 
 :::note
-This guide is for CloudFormation-based deployments only. If you deployed using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform/). If you prefer to migrate manually without the script, see [Manually Migrate AWS Observability from v2.x to v3.0.0](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-manual/).
+This guide is for CloudFormation-based deployments only. If you deployed using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform/). If you prefer to migrate manually without the script, see [Manually Migrate AWS Observability from v2.x to v3.0.0](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-manual/).
 :::
 
 ---

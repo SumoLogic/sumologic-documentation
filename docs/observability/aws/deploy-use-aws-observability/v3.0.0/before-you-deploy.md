@@ -60,7 +60,7 @@ Typically you would first deploy the solution to a single AWS account and region
 You have two options for deploying:
 
 * Deploy using an [AWS CloudFormation template](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation)
-* Deploy using a [Terraform Script](deploy-with-terraform.md)
+* Deploy using a [Terraform Script](deploy-with-terraform/index.md)
 
 The Sumo Logic AWS Observability Solution supports the following AWS regions:
 * Asia Pacific (Hong Kong)

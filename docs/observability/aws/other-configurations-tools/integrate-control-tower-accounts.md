@@ -167,7 +167,7 @@ You must have a role that grants you the Manage Field Extractions capability to 
     <img src={useBaseUrl('img/observability/Field-Extraction-rule.png')} alt="Field Extraction rule" style={{border: '1px solid gray'}} width="400" />
 
 :::note
-To backfill your collection source `account` tags with an AWS account alias, see [Backfill AWS Account Alias](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/backfill-aws-account-alias/).
+To backfill your collection source `account` tags with an AWS account alias, see [Backfill AWS Account Alias](/docs/observability/aws/other-configurations-tools/backfill-aws-account-alias/).
 :::
 
 ## Step 4: View the AWS Observability dashboards
