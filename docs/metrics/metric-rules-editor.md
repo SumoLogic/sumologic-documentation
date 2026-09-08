@@ -56,10 +56,6 @@ A match expression can be a dot-delimited or colon-delimited string. For example
 
 Given a dot-delimited or colon-delimited match expression, Sumo Logic applies the match expression to the `_rawName` field, which is present for Graphite metrics and contains the metric path for a metric.
 
-:::note
-If a colon-delimited match expression doesn't match any time series even though the metric names use colons, colon-delimited matching may not be enabled for your account yet. Contact [Sumo Logic Support](https://support.sumologic.com/support/s) to have it enabled.
-:::
-
 ### Key-value pair(s) match expressions
 
 A match expression can be one or more key-value pairs, each of which specify a field available for the metric and a field value, like this: `_sourceCategory=training/shipping/metrics type=payment`, which matches all metrics with the source category `training/shipping/metrics`, whose `type` field is `payment`.
