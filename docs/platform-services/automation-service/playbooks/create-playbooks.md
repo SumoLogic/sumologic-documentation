@@ -44,26 +44,6 @@ The following procedure provides a brief introduction to how to create a playboo
 
 See [Add nodes to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-nodes-to-a-playbook) for next steps.
 
-### Create, edit, and modify playbooks using Mobot
-
-Mobot is the AI Playbook Assistant built into the Playbooks editor. Instead of manually wiring up nodes, you describe what you want in plain language, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you.
-
-<ConvPlaybookLimits/>
-
-#### Prerequisites
-
-Playbooks automate response actions for monitors, Cloud SIEM insights, entities, and Cloud SOAR incidents. Before building a new one, check whether an existing playbook (or one from App Central) already does what you need.
-
-Follow steps 1–5 above to open the Playbooks page, create, name, and describe your playbook. Then:
-1. In the chat box, describe the automation you want in plain language. For example, `Create a playbook that creates tickets and sends notifications`.<br/><img src={useBaseUrl('img/cse/prompt-for-mobot.png')} style={{border:'1px solid gray'}} alt="Mobot chatbox" />
-1. Answer Mobot's clarifying questions. Mobot checks your org's available integrations, asks which ones you'd like to use, then walks through each action node one at a time to gather the configuration details it needs.
-1. Review and approve the plan Mobot proposes, including the trigger, steps, and flow between them.
-1. Once every step is confirmed, Mobot saves the playbook as a draft and posts a summary table of what was built (Step / Action / Details).
-1. To make changes, send a follow-up request describing the edit.<br/><img src={useBaseUrl('img/cse/edit-playbook.png')} style={{border:'1px solid gray'}} alt="edit-playbook" width="200"/><br/>Mobot returns an updated plan reflecting the new flow.
-1. Reply `Yes` (or similar) to approve, and Mobot rebuilds and resaves the playbook.
-1. Click any node on the canvas to verify the details Mobot filled in, such as the integration, resource, and field mappings pulled from the trigger payload.<br/><img src={useBaseUrl('img/cse/playbook-flow.png')} style={{border:'1px solid gray'}} alt="playbook-flow"/>
-1. Click **Publish** to make the playbook available for use in automations.
-
 ## Add nodes to a playbook
 
 You can add nodes to a playbook when you either create a new playbook, or edit an existing playbook. To add a node to a playbook, hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears on the node. A *node* is a step in a playbook. Nodes run in the order they are placed in a playbook. When all nodes run without error, the playbook is considered to have executed successfully.

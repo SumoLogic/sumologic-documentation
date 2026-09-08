@@ -49,3 +49,7 @@ For information about GitHub, see [GitHub documentation](https://docs.github.com
 * May 22, 2023 (v1.4) - Action Get Commit by URL refactored
 * July 6, 2023 (v1.5) - Removed leading/trailing spaces
 * April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+## Additional resources
+
+- For GitHub, Sumo Logic offers the [GitHub app](/docs/integrations/app-development/github/) to visualize your GitHub data.

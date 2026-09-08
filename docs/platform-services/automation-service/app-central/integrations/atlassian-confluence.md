@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-confluence.png')} alt="Atlassian Confluence icon" width="80"/>
 
-***Version: 1.1  
-Updated: April 13, 2026***
+***Version: 1.2  
+Updated: August 19, 2026***
 
 Atlassian Confluence is a collaborative workspace tool for teams to create, share, and manage content, enhancing communication and project organization.
 
@@ -52,3 +52,6 @@ For information about Atlassian Confluence, see [Confluence documentation](https
 
 * October 13, 2023 - First upload
 * April 13, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+* August 19, 2026 (v1.2):
+  * Fixed an issue where leaving optional fields blank in Confluence actions could cause unexpected failures.
+  *  Error messages for Confluence actions and test connections now show the request URL and failure reason for easier troubleshooting.

@@ -485,6 +485,11 @@ module.exports = {
                 label: 'Traces, RUM, APM',
                 icon: 'account_tree',
               },
+              {
+                label: 'Contribute to Docs',
+                to: 'docs/contributing',
+                icon: 'edit_note',
+              },
             ]
           },
           {
@@ -532,22 +537,29 @@ module.exports = {
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
                 icon: 'thumbs_up_down',
               },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
-              },
             ],
           },
-        //{
-          //className: 'header-github-link',
-          //to: 'https://github.com/SumoLogic/sumologic-documentation',
-          //position: 'right',
-          //alt: 'Link to Sumo Logic Docs GitHub repository',
-        //},
           {
             type: 'search',
             position: 'left',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: 'google_translate',
+            className: 'navbar-translate-item',
+          },
+          {
+            label: 'Log In',
+            to: 'https://service.sumologic.com/',
+            position: 'right',
+            className: 'header-login',
+          },
+          {
+            label: 'Try for Free',
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
           },
         ],
       },

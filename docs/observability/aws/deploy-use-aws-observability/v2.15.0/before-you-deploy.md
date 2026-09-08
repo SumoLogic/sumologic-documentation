@@ -104,7 +104,7 @@ The Terraform script gives you the option to install the solution apps using app
 
 ### Bucket considerations
 
-In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don’t supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. 
+In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don't supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. If you use an existing bucket for CloudTrail logs, you'll need to manually create an S3 Event Notification afterward. For more information, see [Sumo Logic AWS CloudTrail Source](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/#step-7sumo-logic-aws-cloudtrail-source). 
 
 ### Do you use AWS Control Tower?
 

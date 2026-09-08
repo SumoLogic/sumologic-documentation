@@ -60,20 +60,21 @@ module.exports = {
         'contributing/style-guide',
         'contributing/glossary',
         'contributing/word-list',
-        'contributing/code-of-conduct',
     //  'contributing/translations',
         {
           type: 'category',
           label: 'Docs Templates',
           collapsible: true,
           collapsed: true,
+          link: {type: 'doc', id: 'contributing/templates/index'},
           items: [
             'contributing/templates/app-template-v2',
             'contributing/templates/c2c-source',
             'contributing/templates/generic-doc',
             'contributing/templates/partner-app-doc',
           ]
-        }
+        },
+        'contributing/code-of-conduct',
       ],
     },
   ],
@@ -87,6 +88,7 @@ module.exports = {
       link: {type: 'doc', id: 'send-data/index'},
       items: [
         'send-data/choose-collector-source',
+        'send-data/ic-vs-ot-collector-performance-benchmarks',
         'send-data/setup-wizard',
         {
           type: 'category',
@@ -1749,7 +1751,6 @@ module.exports = {
         'search/lookup-tables/manage-update-lookup-tables',
       ],
     },
-    'search/query-assist',
     'search/search-across-child-orgs',
     'search/optimize-search-performance',
     'search/optimize-search-partitions',
@@ -2901,6 +2902,7 @@ integrations: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
           'integrations/webhooks/configcat',
+          'integrations/webhooks/druva-platform-events',
           'integrations/webhooks/emnify',
           'integrations/webhooks/extrahop-revealx-360',
           'integrations/webhooks/firefly',
@@ -3423,6 +3425,7 @@ integrations: [
               link: {type: 'doc', id: 'platform-services/automation-service/playbooks/index'},
               items: [
                 'platform-services/automation-service/playbooks/create-playbooks',
+                'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
                 'platform-services/automation-service/playbooks/playbook-payloads',
                 'platform-services/automation-service/playbooks/arrays-in-playbooks',
                 'platform-services/automation-service/playbooks/troubleshoot-playbooks',

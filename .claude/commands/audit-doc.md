@@ -1,18 +1,12 @@
 # Audit Doc — Documentation Quality Check
 
-Performs comprehensive quality checks on documentation files to ensure adherence to Sumo Logic style guidelines, proper structure, and completeness.
+Use this command to audit a doc for Sumo Logic style, structure, links, and frontmatter compliance — run it before submitting any PR, after creating a new doc, or when reviewing community contributions.
 
-## What this command does
+## Gotchas
 
-When you invoke `/audit-doc`, Claude will:
-
-1. **Read and analyze the specified doc file**
-2. **Check frontmatter**. Validate required fields and format
-3. **Review content structure**. Check headings, sections, and organization
-4. **Validate links and images**. Check paths, alt text, and references
-5. **Check style adherence**. Apply Sumo Logic style guide rules
-6. **Report findings**. Provide detailed feedback with specific line numbers
-7. **Suggest fixes**. Offer actionable recommendations
+- H1 headings and the `title` frontmatter field use **Title Case**. H2, H3, H4 use **sentence case** (only first word and proper nouns capitalized).
+- Skip warnings for legacy docs with an established style, docs tagged `noindex` (temporary drafts), or third-party content not meant to be modified.
+- `/audit-doc` does not check SEO/AEO/GEO signals — run `/seo-audit` separately for discoverability.
 
 ## When to use this command
 
@@ -20,7 +14,6 @@ When you invoke `/audit-doc`, Claude will:
 * After creating a new doc to validate structure
 * When updating existing docs to ensure consistency
 * To identify broken links or missing images
-* To verify adherence to Sumo Logic style guidelines
 * When reviewing community contributions
 
 ## Workflow
@@ -67,7 +60,7 @@ Check for required fields and proper formatting:
 * [ ] Only one H1 heading (the title in frontmatter)
 * [ ] H2 sections used for main sections
 * [ ] No skipped heading levels (H2 → H4 without H3)
-* [ ] Headings use Title Case
+* [ ] H1 uses Title Case; H2, H3, H4 use sentence case (only first word and proper nouns capitalized)
 
 **Required sections (by doc type):**
 
@@ -301,53 +294,6 @@ After presenting the audit report, ask the user if they would like Claude to:
 * Unclear instructions
 * Not linked from parent page
 
-## Example usage
-
-### Basic audit
-
-```
-User: "/audit-doc docs/integrations/databases/postgresql.md"
-
-Claude:
-1. Reads the file
-2. Checks frontmatter (id, title, description, tags)
-3. Validates structure (headings, sections)
-4. Checks links and images
-5. Applies style guide rules
-6. Generates report with:
-   - 2 critical issues (missing image, broken link)
-   - 3 warnings (description too long, inconsistent formatting)
-   - 5 suggestions (add example, improve heading)
-7. Asks if user wants fixes applied
-```
-
-### Audit with doc type
-
-```
-User: "/audit-doc docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md --type c2c-source"
-
-Claude:
-1. Reads the file
-2. Applies C2C source-specific checks
-3. Validates vendor configuration section
-4. Checks authentication setup steps
-5. Verifies required sections present
-6. Reports findings specific to C2C sources
-```
-
-### Audit directory
-
-```
-User: "/audit-doc docs/integrations/security-threat-detection/"
-
-Claude:
-1. Finds all .md files in directory
-2. Runs audit on each file
-3. Generates summary report for all files
-4. Highlights files needing attention
-5. Provides batch fix option
-```
-
 ## Audit checklist summary
 
 Use this checklist template for the report:
@@ -420,63 +366,9 @@ Track common issues across multiple audits to identify systemic problems.
 * Validate CID URL mapping
 * Confirm cross-references
 
-## Tips and best practices
-
-**For effective audits:**
-* Run audit before requesting PR review
-* Fix critical issues first, then warnings
-* Use audit reports in PR descriptions
-* Re-run audit after making fixes
-* Consider doc type context (release notes vs feature docs)
-
-**Common quick fixes:**
-* Add missing frontmatter fields
-* Update relative link paths
-* Add language tags to code blocks
-* Fix heading capitalization
-* Remove trailing whitespace
-
-**When to skip warnings:**
-* Legacy docs with established style
-* Marketing pages with intentional tone
-* Third-party content that shouldn't be modified
-* Temporary draft content (with noindex tag)
-
-## Error handling
-
-**If file not found:**
-* Show error message
-* Suggest using Tab completion for path
-* Check if file was recently moved or renamed
-
-**If file is not markdown:**
-* Show error: "Audit only works with .md files"
-* Suggest appropriate file type
-
-**If doc type cannot be determined:**
-* Ask user to specify doc type
-* Provide list of supported types
-* Offer generic audit without type-specific checks
-
-**If many issues found (>20):**
-* Suggest focusing on critical issues first
-* Offer to generate summary instead of full report
-* Recommend gradual fixes in multiple PRs
-
-## References
-
-* [Sumo Logic Style Guide](/docs/contributing/style-guide)
-* [Contributing Guide](/docs/contributing)
-* [Doc Templates](/docs/contributing/templates)
-* [Docusaurus Documentation](https://docusaurus.io/docs)
-
----
-
 ## Related commands
 
-`/audit-doc` covers structure, style, links, frontmatter, and required sections. It does not
-check SEO/AEO/GEO signals. For discoverability, run both:
+`/audit-doc` covers structure, style, links, frontmatter, and required sections. It does not check SEO/AEO/GEO signals. For discoverability, run both:
 
 * **`/seo-audit`** — checks title length, description quality, question headings, GEO patterns
 * **`/geo-optimize`** — rewrites content to improve AI citation and search visibility
-* **`/tone-check`** — checks voice and tone against Sumo Logic style rules (standalone voice check)

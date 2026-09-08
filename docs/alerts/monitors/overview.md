@@ -15,6 +15,10 @@ Monitors track your metrics and logs data in real time and send notifications wh
 Learn how [monitors differ from Scheduled Searches](/docs/alerts/difference-from-scheduled-searches).
 :::
 
+:::tip
+Instead of configuring a monitor manually, describe what you want to track in [Mobot](/docs/alerts/monitors/create-monitor-with-mobot), Sumo Logic's AI-powered conversational assistant. Mobot suggests the query, trigger conditions, and notifications from your prompt, and creates the monitor once you confirm.
+:::
+
 ## Prerequisites
 
 To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#monitor-folder-permissions) about controlling permissions at the monitor or folder level.

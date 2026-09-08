@@ -109,8 +109,7 @@ After the user confirms which changes to make:
 
 After applying changes, tell the user:
 - Which checks in `/seo-audit` this resolves
-- Whether any remaining GEO suggestions need a larger rewrite (offer `/rewrite-intro` if the opening paragraph needed major work)
-- Whether the doc would benefit from a `/tone-check` pass afterward
+- Whether any remaining GEO suggestions need a larger rewrite (offer to rewrite the opening paragraph if it needed major work)
 
 ---
 
@@ -216,4 +215,4 @@ After the first use, the abbreviation alone is fine. Define the term once at its
 * Preserve technical accuracy above all else — if a rewrite would require fact-checking, flag it and ask the user to verify
 * Do not alter frontmatter except `description` if explicitly requested
 * Keep the Sumo Logic voice — do not make the doc sound like a Wikipedia article
-* If a section is very long and difficult to restructure safely, recommend `/rewrite-intro` or `/simplify` instead of attempting a full rewrite here
+* If a section is very long and difficult to restructure safely, flag it and ask the user how they'd like to proceed instead of attempting a full rewrite here

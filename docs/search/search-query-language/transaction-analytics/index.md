@@ -4,6 +4,9 @@ title: Transaction Analytics
 description: Find and group related log data.
 ---
 
+import MobotCallout from '../../../reuse/mobot-callout.md';
+
+<MobotCallout/>
 
 Transaction Analytics provides insight into correlated events helping you identify issues and visualize the flow of data. There are a few operators that group your logs based on transaction information that you provide.
 

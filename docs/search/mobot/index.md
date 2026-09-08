@@ -336,7 +336,7 @@ Known limitations:
 
 Create and edit Automation Service [playbooks](/docs/platform-services/automation-service/playbooks) through natural language, using the Mobot chat box built into the Playbooks editor, instead of building node by node on the visual canvas. Describe the automation you want, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you. The visual canvas is unchanged and remains fully available for manual edits.
 
-For the full walkthrough, see [Create, edit, and modify playbooks using Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-edit-and-modify-playbooks-using-mobot).
+For the full walkthrough, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).
 
 <ConvPlaybookLimits/>
 
@@ -529,6 +529,8 @@ They're still here, working behind the scenes, but renamed and repositioned as t
 * **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
 * **Summary Agent → part of SOC Analyst Agent**. The Summary Agent is no longer a separate agent. Its signal summarization is now a core part of how the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) contextualizes and presents its findings.
 
+Log Analysis Agent and Platform Optimization Agent aren't names you'll see anywhere in the UI; you always interact with them through Mobot's single chat interface. Don't confuse the Log Analysis Agent with [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) or [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist), which are UI features you use directly on the Search page rather than through a conversation.
+
 ### Can Mobot detect what sources or integrations I don't have set up?
 
 Mobot can detect missing sources or partitions reactively. When you ask a question that requires a specific data source, Mobot attempts the query and detects if the partition or data doesn't exist, then lets you know. Mobot cannot proactively scan your environment and generate a list of all unconfigured integrations.
@@ -622,15 +624,17 @@ Let us know what you think by clicking the thumbs up icon to confirm a useful re
 
 ## Opting out
 
+### Feature Management
+
 An administrator can turn Mobot off for your entire organization from the **Feature Management** page (**Administration** > **Feature Management**). This page is available to all paid customers (not free or trial accounts) to any user with the Administrator role or the **Manage Organization Settings** permission.
 
-At GA, Mobot shares a single **AI features** toggle with Parse Assist and the SOC Analyst Agent — turning it off disables all three together. Independent per-feature toggles, starting with the SOC Analyst Agent, are planned for a future release.
+Mobot shares a single **AI features** toggle with Parse Assist — turning it off disables both together. The SOC Analyst Agent has its own independent **SOC Analyst Agent** toggle and is not affected by the **AI features** toggle.
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
 <MSSPfeatureMgmt/> 
 
-<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features and MCP Server access toggles" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 If you previously opted out of Mobot, you'll need to opt back in from this page to regain access at GA, or contact your account team. Trial accounts do not have Mobot enabled by default.
 
