@@ -13,6 +13,10 @@ The migration approach is:
 
 Using the same `aws_account_alias` ensures Sumo Logic collectors retain the same naming convention and the Explorer hierarchy remains consistent.
 
+:::danger
+Ensure that the account aliases used in your v2.x.x deployment are carried over during migration. The same aliases will be reused in v3.0.0.
+:::
+
 :::note
 During the migration window (between destroy and apply), log collection will be paused. Plan for a brief gap in data ingestion. For a standard single-account deployment this is typically 5–20 minutes; multi-account/multi-region deployments may take longer depending on the number of resources.
 :::

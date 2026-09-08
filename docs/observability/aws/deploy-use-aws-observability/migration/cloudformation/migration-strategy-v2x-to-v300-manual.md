@@ -10,12 +10,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This documentation walks you through manually migrating an existing [AWS Observability CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/) deployment from v2.x to v3.0.0.
 
 :::danger
-- This guide supports only active AWSO versions listed [here](/docs/observability/aws/deploy-use-aws-observability/changelog/#awso-lifecycle). If your current version is inactive, contact the support team. <br/>
-- If you prefer an automated approach, see [Migrate AWS Observability from v2.x to v3.0.0 using the migration script](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-cloudformation/).
+- This guide supports only active AWSO versions listed [here](/docs/observability/aws/deploy-use-aws-observability/changelog#awso-lifecycle). If your current version is inactive, contact the support team. <br/>
+
+- Ensure that the account aliases used in your v2.x.x deployment are carried over during migration. The same aliases will be reused in v3.0.0.
+
+- During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Please refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
 :::
 
 :::warning
 This migration deletes your v2.x CloudFormation stack. Your Sumo Logic collector, sources, and S3 buckets are preserved, but the stack deletion cannot be undone.
+:::
+
+:::note
+- If you prefer an automated approach, see [Migrate AWS Observability from v2.x to v3.0.0 using the migration script](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-cloudformation/).
+- Verify that Sumo Logic IPs are allowlisted in your AWS environment.
 :::
 
 ## Prerequisites
