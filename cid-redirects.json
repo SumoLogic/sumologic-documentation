@@ -3677,7 +3677,6 @@
   "/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/16AWS_Observability_-_Change_Log": "/docs/observability/aws/deploy-use-aws-observability/changelog",
   "/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/AWS_Observability_-_Change_Log": "/docs/observability/aws/deploy-use-aws-observability/changelog",
   "/Observability_Solution/AWS_Observability_Solution/03_Other_Configurations_and_Tools": "/docs/observability/aws/other-configurations-tools",
-  "/Observability_Solution/AWS_Observability_Solution/03_Other_Configurations_and_Tools/Add_a_New_AWS_Service_to_the_AWS_Observability_Explore_Hierarchy": "/docs/observability/aws/other-configurations-tools/add-new-aws-service",
   "/Observability_Solution/AWS_Observability_Solution/03_Other_Configurations_and_Tools/Add_Fields_to_Existing_Host_Metrics_Sources": "/docs/observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources",
   "/Observability_Solution/AWS_Observability_Solution/Add_Fields_to_Existing_Host_Metrics_Sources": "/docs/observability/aws/other-configurations-tools/add-fields-to-existing-host-metrics-sources",
   "/Observability_Solution/AWS_Observability_Solution/03_Other_Configurations_and_Tools/Integrate_Control_Tower_Accounts_with_AWS_Observability": "/docs/observability/aws/other-configurations-tools/integrate-control-tower-accounts",

@@ -57,8 +57,6 @@ Adding a service requires:
 * Collect metrics for your service using a [Sumo Logic AWS CloudWatch metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability Solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
-See [Add a New AWS Service to the AWS Observability View Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service) to add a new service to the AWS Observability hierarchy. 
-
 ### Does AWS Observability require logs and metrics?
 
 For full functionality of the out-of-the-box dashboards, the solution requires CloudWatch logs and metrics, EC2 Host Metrics (via installed collectors), CloudTrail logs and Access logs. You may be sending real-time data from AWS, primarily used for logs. These features expand monitoring to provide advanced analytics for large-scale AWS operations from the same dataset.

@@ -538,8 +538,17 @@ To perform overrides, see [Override collection parameters](#override-source-para
 
 Deploy the AWS Observability Solution using the Sumo Logic Terraform.
 
-* ##### Option A: Install as a Terraform module (from [registry](https://registry.terraform.io/modules/SumoLogic/aws-observability/sumologic/latest)) - [View registry installation instructions](/docs/observability/aws/deploy-use-aws-observability/migration/terraform/#option-a-install-as-a-terraform-module-from-registry)
-* ##### Option B: Install from the Repository - [View repository installation instructions](/docs/observability/aws/deploy-use-aws-observability/migration/terraform/#option-b-install-from-the-repository)
+Navigate to the working directory you configured in [Step 2](#step-2-configure-the-terraform) and execute the following commands.
+
+:::note
+Before you run these commands, make sure you have configured your AWS profiles on your system as mentioned in the [Prerequisites](#prerequisites).
+:::
+
+```bash
+terraform validate
+terraform plan
+terraform apply
+```
 
 ## Uninstalling the Solution
 
@@ -1521,7 +1530,7 @@ Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/terrafo
 "errors":[{"code":"fer:invalid_extraction_rule","message":"Invalid Field Extraction Rule","meta":{"reason":"A field extraction rule with name 'AwsObservabilityApiGatewayCloudTrailLogsFER' already exists"}}]
 ```
 #### Solution
-Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/#step-2-configure-the-terraform-script).
+Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/#step-2-configure-the-terraform).
 
 ### waiting for S3 Bucket Policy (bucket-name) delete
 #### Error Message

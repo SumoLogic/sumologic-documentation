@@ -68,7 +68,7 @@ The table below displays the response for each text box in this section.
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources, and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
 | Send telemetry to Sumo Logic | To send solution telemetry to Sumo Logic. This will help to troubleshoot the issues occurring during solution installation. To opt-out, change this to `false`. The default value is `true`. |
 
-## Step 2: AWS account alias 
+## Step 2: AWS account alias
 
 The table below displays the response for each text box in this section.
 

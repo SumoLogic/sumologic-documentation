@@ -22,7 +22,7 @@ This migration deletes your v2.x CloudFormation stack. Your Sumo Logic collector
 :::
 
 :::note
-- If you prefer an manual approach, see [Manually Migrate AWS Observability from v2.x to v3.0.0 using CloudFormation](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-manual/).
+- If you prefer a manual approach, see [Manually Migrate AWS Observability from v2.x to v3.0.0 using CloudFormation](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-manual/).
 - Verify that Sumo Logic IPs are allowlisted in your AWS environment.
 :::
 
@@ -44,7 +44,7 @@ This guide is for CloudFormation-based deployments only. If you deployed using T
 
 ## Single-stack migration—single account and region
 
-Use this script [MigrateAWSOStackToV300.sh](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/scripts/MigrateAWSOStackToV300.sh) when AWSO was deployed via a CloudFormation Stack 
+Use this script [MigrateAWSOStackToV300.sh](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master-v3x/cloudformation-sumologic-aws-observability/scripts/MigrateAWSOStackToV300.sh) when AWSO was deployed via a CloudFormation Stack 
 
 
 ### What stays the same
@@ -385,7 +385,7 @@ Validate > Patch Roles > Report
 
 ## StackSet migration—Multi Regions and Accounts
 
-Use this script [`MigrateAWSOStackSetToV300.sh`](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/scripts/MigrateAWSOStackSetToV300.sh) when AWSO was deployed via a CloudFormation StackSet — typically through AWS Control Tower or manual StackSet management — spanning multiple AWS accounts and/or regions.
+Use this script [`MigrateAWSOStackSetToV300.sh`](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master-v3x/cloudformation-sumologic-aws-observability/scripts/MigrateAWSOStackSetToV300.sh) when AWSO was deployed via a CloudFormation StackSet — typically through AWS Control Tower or manual StackSet management — spanning multiple AWS accounts and/or regions.
 
 :::note
 * Multi-region and multi-account migrations can take a significant amount of time, so it would be better to set up a pipeline to automate the process.
@@ -409,7 +409,7 @@ The script:
 - Your Sumo Logic collectors (same names and IDs — one per account)
 - All Sumo Logic sources (reused by name — same IDs, no data gap)
 - Your S3 log buckets and all existing log data
-- The existing StackSet — updated in-place when using `all` mode without `-n`. In all other modes, a new StackSet is created and the original is left untouched at v2.x.
+- The existing StackSet, when using `all` mode without `-n` (updated in-place).
 
 ### What changes
 
@@ -429,15 +429,15 @@ The script:
 | 4. Confirm | Displays all accounts, regions, aliases, bucket names, and mapped parameters — **no changes are made until you approve**. |
 | 5. Protect | Sets `RemoveOnDeleteStack=false` on all instances (per account) so Sumo Logic resources survive stack deletion. |
 | 6. Delete Instances | Deletes all v2.x stack instances with automatic FAILED and CANCELLED recovery. |
-| 8. FER Cleanup | Renames and disables 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) (org-level, runs once). |
-| 9. Metric Rules | Deletes four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0 (org-level, runs once). |
-| 10. Create or Update StackSet | Creates a new v3.0.0 StackSet when `-n` is provided or `select` mode is chosen. Updates the existing StackSet definition in-place when `all` mode is used without `-n`. |
-| 11. Create Instances | Creates one v3.0.0 stack instance per (account, region) with the correct alias and bucket overrides. |
-| 12. Verify | Confirms all stack instances reached `CURRENT` or `SUCCEEDED` status. |
-| 13. Patch Roles | Assumes the execution role in each member account and updates Sumo Logic source IAM role ARNs to reference the new v3.0.0 roles. |
-| 14. Report | Prints a summary of accounts, regions, FERs renamed, and sources patched. Saves a full log file. |
+| 7. FER Cleanup | Renames and disables 17 AWSO [Field Extraction Rules](/docs/manage/field-extractions/) (org-level, runs once). |
+| 8. Metric Rules | Deletes four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0 (org-level, runs once). |
+| 9. Create or Update StackSet | Creates a new v3.0.0 StackSet when `-n` is provided or `select` mode is chosen. Updates the existing StackSet definition in-place when `all` mode is used without `-n`. |
+| 10. Create Instances | Creates one v3.0.0 stack instance per (account, region) with the correct alias and bucket overrides. |
+| 11. Verify | Confirms all stack instances reached `CURRENT` or `SUCCEEDED` status. |
+| 12. Patch Roles | Assumes the execution role in each member account and updates Sumo Logic source IAM role ARNs to reference the new v3.0.0 roles. |
+| 13. Report | Prints a summary of accounts, regions, FERs renamed, and sources patched. Saves a full log file. |
 
-Expected duration: **1 to 3 hours** depending on the number of accounts and regions. Phase 5, 6, and 11 each involve async StackSet operations that poll until completion.
+Expected duration: **1 to 3 hours** depending on the number of accounts and regions. Phase 5, 6, and 10 each involve async StackSet operations that poll until completion.
 
 ### Prerequisites
 
@@ -473,7 +473,7 @@ Before running the migration, export a backup of your [Field Extraction Rules](/
 
 #### Verify FER quota
 
-Phase 8 renames your existing AWSO Field Extraction Rules and v3.0.0 then creates 17 new ones. You need at least **17 free slots** in your FER quota before running the migration.
+Phase 7 renames your existing AWSO Field Extraction Rules and v3.0.0 then creates 17 new ones. You need at least **17 free slots** in your FER quota before running the migration.
 
 To check your current usage, go to **Manage Data > Logs > Field Extraction Rules** and review the quota indicator at the top of the page.
 
@@ -558,7 +558,7 @@ If your StackSet is not named `SUMO-LOGIC-AWS-OBSERVABILITY`, add `-s YOUR_STACK
 | `--resume` | Resume from a saved state file | Off (auto-enabled if state file exists) |
 | `--state-file PATH` | Path to the state JSON file | Auto-generated timestamped filename |
 | `--from-phase PHASE` | Reset progress and re-run from this phase; implies `--resume` | — |
-| `--patch-roles-only` | Skip directly to Phase 13 (patch IAM role ARNs); implies `--resume` | Off |
+| `--patch-roles-only` | Skip directly to Phase 12 (patch IAM role ARNs); implies `--resume` | Off |
 
 ### Instance selection
 
@@ -577,9 +577,9 @@ On `--resume`, the selection is loaded from the saved state file and this prompt
 
 #### Migration mode matrix
 
-The combination of migration mode (`all`/`select`) and whether `-n` is provided determines how Phase 10 handles the StackSet:
+The combination of migration mode (`all`/`select`) and whether `-n` is provided determines how Phase 9 handles the StackSet:
 
-| Mode | `-n` passed | Phase 10 action | Target StackSet |
+| Mode | `-n` passed | Phase 9 action | Target StackSet |
 |:--|:--|:--|:--|
 | `all` | No | Update existing StackSet in-place | Original StackSet (unchanged name) |
 | `all` | Yes | Create new StackSet | Name supplied via `-n` |
@@ -675,7 +675,7 @@ To force a phase to re-run (for example, after manually resolving a partial fail
 
 ### Patching IAM role ARNs after migration
 
-If Phase 13 was interrupted and some sources still reference the old IAM role ARN, run role patching on its own:
+If Phase 12 was interrupted and some sources still reference the old IAM role ARN, run role patching on its own:
 
 ```bash
 ./MigrateAWSOStackSetToV300.sh \
@@ -684,7 +684,7 @@ If Phase 13 was interrupted and some sources still reference the old IAM role AR
   --patch-roles-only
 ```
 
-This runs Phase 13 and Phase 14 only, without touching any CloudFormation resources.
+This runs Phase 12 and Phase 13 only, without touching any CloudFormation resources.
 
 ### Log and state files
 
@@ -702,12 +702,12 @@ This runs Phase 13 and Phase 14 only, without touching any CloudFormation resour
 | `AWS credentials invalid` | AWS session has expired or wrong account | Re-authenticate and ensure you are running from the **management account** (the account that owns the StackSet). |
 | `Sumo Logic credentials invalid (HTTP 401)` | Incorrect access ID or key | Verify the `-i` and `-k` values. |
 | `Regions list cannot have duplicate entries` | Should not occur in current version — fixed by per-account region grouping | If seen, re-run with `--from-phase delete_instances` to retry the delete phase. |
-| `StackSetNotEmptyException` on Phase 10 | Phase 6 (delete instances) did not complete — instances still exist | Resume from Phase 6: `--from-phase delete_instances`. |
-| `StackSet already exists` on Phase 10 | A previous run already created the target StackSet (when using `-n` or `select` mode) | The script detects this automatically and reuses the existing StackSet — no action needed. |
+| `StackSetNotEmptyException` on Phase 9 | Phase 6 (delete instances) did not complete — instances still exist | Resume from Phase 6: `--from-phase delete_instances`. |
+| `StackSet already exists` on Phase 9 | A previous run already created the target StackSet (when using `-n` or `select` mode) | The script detects this automatically and reuses the existing StackSet — no action needed. |
 | `[WARN] Retrying CANCELLED instances` | Some instances were not reached due to failure tolerance being exceeded | Automatic — the script retries cancelled instances per account. If it persists, increase `--failure-tolerance`. |
 | `[WARN] Failed to patch '<source>' — HTTP 400` | A source was patched with a role ARN from the wrong region | Should not occur in current version — fixed by region-scoped source filtering. If seen, run `--patch-roles-only` to retry. |
 | `[WARN] Collector ID mismatch` | The collector found via the Sumo API does not match the one recorded in the CF stack | The script prompts you to choose between the CF value, the API value, or a manual entry. Verify you are using the correct Sumo Logic credentials. |
 | `[ERROR] Cannot assume execution role` | The execution role trust policy does not allow the management account to assume it | Verify the trust relationship on the execution role in the member account allows `sts:AssumeRole` from the management account. |
 | `[WARN] FER quota too low` | Fewer than 17 free FER slots available | Delete or consolidate unused Field Extraction Rules until at least 17 slots are free, then re-run with `--from-phase fer_cleanup`. |
 | `Failed to rename FER — already exists` | A previous partial run already renamed some FERs | Use `--resume` or `--from-phase fer_cleanup`. The script detects already-renamed FERs and skips them. |
-| Phase 11 instance stuck in `FAILED` | Stack creation failed for an account/region | Check the CloudFormation events in that account/region. Resolve the issue and re-run with `--from-phase create_instances`. |
+| Phase 10 instance stuck in `FAILED` | Stack creation failed for an account/region | Check the CloudFormation events in that account/region. Resolve the issue and re-run with `--from-phase create_instances`. |
