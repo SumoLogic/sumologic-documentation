@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: Sep 7, 2026***
 
-[Mimecast V2](https://www.mimecast.com/) protects an enterprise's email infrastructure from viruses, malware, phishing, and the rise of deep-fake attacks. It does this by deploying a layered cyber resilience solution that prevents email-borne infections and reduces data loss by archiving emails. 
+[Mimecast V2](https://www.mimecast.com/) is a cloud-based cybersecurity and risk management platform designed to protect enterprise email infrastructure from viruses, malware, phishing, and emerging deepfake attacks. It employs a layered cyber resilience solution to prevent email-borne threats and minimise data loss through secure email archiving.
 
 ## Actions
 
@@ -55,4 +55,4 @@ For information about Mimecast, see [Mimecast documentation](https://developer.s
 
 ## Change Log
 
-* Sep 7, 2026 (v1.0) - First upload
+* Sep 7, 2026 (v1.0) - Initial release of the Mimecast V2 integration
