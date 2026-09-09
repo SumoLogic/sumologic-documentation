@@ -2,12 +2,12 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Bash|mcp__atlassian__addCommentToJiraIssue",
+        "matcher": "Bash|mcp__atlassian__addCommentToJiraIssue|slack_send_message|slack_send_message_draft|slack_schedule_message|slack_create_canvas|slack_update_canvas",
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/require-claude-attribution.sh\"",
-            "statusMessage": "Checking comment attribution"
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/forbid-claude-attribution.sh\"",
+            "statusMessage": "Checking for forbidden attribution"
           }
         ]
       }
