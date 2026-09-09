@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-threat-grid.png')} alt="Cisco Threat Grid icon" width="70"/>
 
-***Version: 1.2  
-Updated: Jul 11, 2023***
+***Version: 1.3  
+Updated: April 27, 2026***
 
 Utilize the Cisco AMP Threat Grid to retrieve information about incident elements such as IP, domain, or file hash.
 
@@ -52,3 +52,4 @@ For information about Cisco Secure Malware Analytics (formerly Threat Grid), see
 	+ Updated the integration with Environmental Variables
 	+ Integration renamed from CISCO Threat Grid OIF to CISCO Threat Grid
 	+ Changed fields visibility
+* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

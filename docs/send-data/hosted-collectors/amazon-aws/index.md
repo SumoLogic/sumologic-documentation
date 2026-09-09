@@ -19,20 +19,26 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-sources')}><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Amazon Web Services icon" width="50"/><h4>AWS Source Config</h4></a>
-  <p>Get started configuring AWS Sources for Sumo Logic ingestion.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/amazon-cloudfront-source')}><img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="CloudFront icon" width="40"/><h4>Amazon CloudFront</h4></a>
+  <p>Distribute content to end-users with low latency and high data transfer speeds.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product')}><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Amazon Web Services icon" width="50"/><h4>Grant Access to an AWS Product</h4></a>
-  <p>Before configuring your Source, enable access to your AWS product.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics')}><img src={useBaseUrl('img/send-data/cloudwatch-icon.png')} alt="CloudWatch icon" width="40"/><h4>Amazon CloudWatch Metrics</h4></a>
+  <p>Gather metrics data from an Amazon resource.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions')}><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Amazon Web Services icon" width="50"/><h4>Amazon Path Expressions</h4></a>
   <p>Sample path expressions you can use to collect data from Amazon Sources.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-s3-source')}><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="Amazon S3 Audit icon" width="40"/><h4>Amazon S3</h4></a>
+  <p>Add an Amazon S3 Source to upload messages to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -49,20 +55,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-s3-source')}><img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="Amazon S3 Audit icon" width="40"/><h4>Amazon S3</h4></a>
-  <p>Add an Amazon S3 Source to upload messages to Sumo Logic.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/amazon-security-lake-source')}><img src={useBaseUrl('img/integrations/amazon-aws/amazon-security-lake-logo.png')} alt="Amazon Security Lake icon" width="40"/><h4>Amazon Security Lake</h4></a>
+  <p>Collect security data from Amazon Security Lake into Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/amazon-cloudfront-source')}><img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="CloudFront icon" width="40"/><h4>Amazon CloudFront</h4></a>
-  <p>Distribute content to end-users with low latency and high data transfer speeds.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics')}><img src={useBaseUrl('img/send-data/cloudwatch-icon.png')} alt="CloudWatch icon" width="40"/><h4>Amazon CloudWatch Metrics</h4></a>
-  <p>Gather metrics data from an Amazon resource.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation')}><img src={useBaseUrl('img/send-data/aws-cloudformation.svg')} alt="AWS CloudFormation icon" width="30"/><h4>AWS CloudFormation Configuration</h4></a>
+  <p>Use CloudFormation to set up AWS products.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -73,14 +73,26 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source')}><img src={useBaseUrl('img/send-data/aws-cost-explorer-icon.png')} alt="AWS Cost Explorer icon" width="40"/><h4>AWS Cost Explorer</h4></a>
+  <p>Retrieve cost and usage reports from AWS Cost Explorer.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source')}><img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="AWS Elastic Load Balancing icon" width="40"/><h4>AWS Elastic Load Balancing</h4></a>
   <p>Add the AWS ELB Source to upload messages to Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source')}><img src={useBaseUrl('img/send-data/aws-metadata-tag.png')} alt="AWS Metadata Tag icon" width="40"/><h4>AWS Metadata (Tag)</h4></a>
-  <p>Collect tags from EC2 instances running on AWS.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/collection-aws-govcloud')}><img src={useBaseUrl('img/send-data/AWSGovCloudUS-Logo.jpeg')} alt="AWS GovCloud icon" width="90"/><h4>AWS GovCloud</h4></a>
+  <p>AWS GovCloud are specific regions authorized to a FedRAMP-High baseline.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/aws-iam-users-source')}><img src={useBaseUrl('img/integrations/misc/aws-iam-logo.png')} alt="AWS IAM Users icon" width="40"/><h4>AWS IAM Users</h4></a>
+  <p>Collect IAM user inventory logs from the AWS SDK.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -97,14 +109,26 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/collection-aws-govcloud')}><img src={useBaseUrl('img/send-data/AWSGovCloudUS-Logo.jpeg')} alt="AWS GovCloud icon" width="90"/><h4>AWS GovCloud</h4></a>
-  <p>AWS GovCloud are specific regions authorized to a FedRAMP-High baseline.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source')}><img src={useBaseUrl('img/send-data/aws-metadata-tag.png')} alt="AWS Metadata Tag icon" width="40"/><h4>AWS Metadata (Tag)</h4></a>
+  <p>Collect tags from EC2 instances running on AWS.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation')}><img src={useBaseUrl('img/send-data/aws-cloudformation.svg')} alt="AWS CloudFormation icon" width="30"/><h4>AWS CloudFormation Configuration</h4></a>
-  <p>Use CloudFormation to set up AWS products.</p>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/aws-sources')}><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Amazon Web Services icon" width="50"/><h4>AWS Source Config</h4></a>
+  <p>Get started configuring AWS Sources for Sumo Logic ingestion.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source')}><img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="Cloud SIEM AWS EC2 Inventory icon" width="40"/><h4>Cloud SIEM AWS EC2 Inventory</h4></a>
+  <p>Receive EC2 instance inventory data from the EC2 describe instances API.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product')}><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Amazon Web Services icon" width="50"/><h4>Grant Access to an AWS Product</h4></a>
+  <p>Before configuring your Source, enable access to your AWS product.</p>
   </div>
 </div>
 </div>

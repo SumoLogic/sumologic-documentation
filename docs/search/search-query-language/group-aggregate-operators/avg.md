@@ -10,9 +10,7 @@ The averaging function (`avg`) calculates the average value of the numerical fie
 
 ## Syntax
 
-```sumo
-avg(<numerical_field>) [as <field>] [by <field>]
-```
+`avg(<numerical_field>) [as <field>] [by <field>]`
 
 ## Rules
 

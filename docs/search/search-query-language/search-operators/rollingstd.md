@@ -2,6 +2,7 @@
 id: rollingstd
 title: rollingstd Search Operator
 sidebar_label: rollingstd
+description: Use the rollingstd operator to calculate the rolling standard deviation of a numeric field over time, identifying changes and variations in your data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,9 +17,7 @@ If you specify a window length of 5, but only 4 data points are available, the `
 
 ## Syntax
 
-```sumo
-rollingstd <field> [, window_length] [as <field>]
-```
+`rollingstd <field> [, window_length] [as <field>]`
 
 ## Rules
 

@@ -2,6 +2,7 @@
 id: dectohex
 title: decToHex Search Operator
 sidebar_label: decToHex
+description: Use the decToHex operator to convert a long integer value of 16 or fewer digits to a hexadecimal string.
 ---
 
 The `decToHex` operator converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.
@@ -12,13 +13,9 @@ Hexadecimal string is always returned in upper-case.
 
 ## Syntax
 
-```sumo
-decToHex(<long_field>) as <field>
-```
+`decToHex(<long_field>) as <field>`
 
-```sumo
-decToHex("<long_string>") as <field>
-```
+`decToHex("<long_string>") as <field>`
 
 ## Examples
 

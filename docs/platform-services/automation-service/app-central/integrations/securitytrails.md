@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/securitytrails.png')} alt="securitytrails" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 SecurityTrails is a total inventory that curates comprehensive domain and IP address data for users and applications that demand clarity. By combining current and historic data of all Internet assets, SecurityTrails is the proven solution for 3rd-party risk assessment, attack surface reduction and threat hunting.
 
@@ -43,3 +43,4 @@ For information about SecurityTrails, see [SecurityTrails documentation](https:/
 * November 28, 2022 - First upload
 * December 13, 2022 - Refactoring
 * July 18, 2023 (v1.1) - Removed leading/trailing spaces
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

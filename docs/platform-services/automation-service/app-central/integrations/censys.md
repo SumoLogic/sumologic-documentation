@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 31, 2025***
+***Version: 1.3  
+Updated: April 27, 2026***
 
 Search Censys for enrichment data during active investigation.
 
@@ -50,3 +50,4 @@ For information about Censys, see [Censys documentation](https://docs.censys.com
 * January 31, 2020 - First upload
 * July 11, 2023 (v1.1) - Updated the integration with Environmental Variables
 * July 31, 2025 (v1.2) - Updated the integration logo.
+* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

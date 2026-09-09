@@ -197,7 +197,7 @@ To configure a Proofpoint TAP Source:
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
+:::tip
 After configuring the Proofpoint TAP source, consider installing the Sumo Logic app for [Proofpoint TAP](/docs/integrations/saas-cloud/proofpoint-tap/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -248,8 +248,18 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/proofpoint-tap/example.tf
 ```
 
+## Troubleshooting
+
+### Missing or delayed events
+
+If you experience issues such as missing events, delayed data ingestion, or inconsistent data across sources, contact the Proofpoint TAP support team first and raise the issue with them. Based on multiple support investigations, Sumo Logic has found that these issues are typically caused by instability in the Proofpoint `/v2/siem/all` endpoint rather than the Sumo Logic integration. Once Proofpoint confirms that the issue does not originate from their side, contact the Sumo Logic support team for further investigation.
+
 ## FAQ
 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.

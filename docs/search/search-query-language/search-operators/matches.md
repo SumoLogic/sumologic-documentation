@@ -2,6 +2,7 @@
 id: matches
 title: matches Search Operator
 sidebar_label: matches
+description: Use the matches operator to match a string against a wildcard pattern or RE2-compliant regex and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,29 +17,17 @@ You can use `matches` in Dashboard Panels and in conjunction with other operator
 The string expression is case-sensitive and can be provided as a field.
 :::
 
-```sumo
-<string expression> matches <pattern> as <field>
-```
+`<string expression> matches <pattern> as <field>`
 
-```sumo
-if(<string expression> matches <pattern>, <value_if_true>, <value_if_false>) as <field>
-```
+`if(<string expression> matches <pattern>, <value_if_true>, <value_if_false>) as <field>`
 
-```sumo
-if(<string expression> matches /<regex>/, <value_if_true>, <value_if_false>) as <field>
-```
+`if(<string expression> matches /<regex>/, <value_if_true>, <value_if_false>) as <field>`
 
-```sumo
-where <string expression> matches <pattern>
-```
+`where <string expression> matches <pattern>`
 
-```sumo
-where <string expression> matches /<regex>/
-```
+`where <string expression> matches /<regex>/`
 
-```sumo
-where !(<string expression> matches <pattern>)
-```
+`where !(<string expression> matches <pattern>)`
 
 ## Rules
 

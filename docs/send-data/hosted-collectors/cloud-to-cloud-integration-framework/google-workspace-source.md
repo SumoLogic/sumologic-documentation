@@ -15,6 +15,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Google Workspace User Inventory source collects a list of users from the Google Workspace [Users API](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list). It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+Upgrade the Google Workspace source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
+
 ## Data collected
 
 | Polling Interval | Data |

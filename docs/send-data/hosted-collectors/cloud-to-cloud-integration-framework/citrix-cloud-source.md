@@ -55,17 +55,16 @@ The **Base URL** is the URL where your **Citrix Cloud** account is located. To g
 
 #### API client
 
-The **API security token** is used to authenticate with the Citrix Cloud API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Customer Id**.
-To get the **Citrix Cloud API token**, follow the steps below:
-1. From the Citrix Cloud Console, navigate to the <img src={useBaseUrl('img/send-data/navigation-button.png')} alt="<navigation-button.png>" width="30" /> menu icon.
-1. Select the **Identity and Access Management** option from the menu.<br/><img src={useBaseUrl('img/send-data/access-management.png')} alt="<access-management.png>" width="650" />
-    :::note
-    If this option does not appear, you may not have adequate permissions to create an API client. Contact your administrator to get the required permissions.
-    :::
-1. Select the **API Access** tab.<br/><img src={useBaseUrl('img/send-data/api-access.png')} alt="<api-access.png>" width="650" />
-1. Give a name to your Secure Client, and click **Create Client**.<br/><img src={useBaseUrl('img/send-data/create-client.png')} alt="<create-client.png>" width="650" />
-1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#source-configuration). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />
-1. After closing the previous dialogue box, copy and paste the **Customer Id**, which is written straight above the **Create Client** button, into a folder. Look at the red highlighted box.<br/><img src={useBaseUrl('img/send-data/customer-id.png')} alt="<customer-id.png>" width="650" />
+Follow the instructions in the [Citrix documentation](https://developer-docs.citrix.com/en-us/secure-private-access/access-security/getting-started.html#creating-an-api-client) to register the API client and generate the **Client ID** and **Client Secret**.
+
+:::note
+- You can save the **Client ID** and **Client Secret** in secure vault.
+- If the Identity and Access Management option does not appear, you may not have sufficient permissions to manage service principals. Contact your administrator to get the required full access permission.
+:::
+
+#### Customer ID
+
+Follow the instructions in the [Citrix documentation](https://developer-docs.citrix.com/en-us/secure-private-access/access-security/getting-started.html#getting-the-citrix-customer-id) to get your **Customer ID**.
 
 ### Source configuration
 

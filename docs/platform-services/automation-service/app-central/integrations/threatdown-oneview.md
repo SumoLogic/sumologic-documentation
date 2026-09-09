@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatdown-oneview.png')} alt="ThreatDown OneView icon" width="100"/>
 
-***Version: 1.0  
-Updated: Mar 7, 2025***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 Malwarebytes ThreatDown OneView (MBOV) provides your business with a powerful and affordable security management platform that gives security teams maximum control. OneView streamlines endpoint security management by providing out-of-the-box security policies, scans, and remediation.
 
@@ -85,3 +85,4 @@ For information about ThreatDown OneView, see [ThreatDown OneView documentation]
 ## Change Log
 
 * March 7, 2025 - First upload
+* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

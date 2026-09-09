@@ -2,6 +2,7 @@
 id: max
 title: max Metrics Operator
 sidebar_label: max
+description: Use the max metrics operator to calculate the maximum value of time series that match the query.
 ---
 
 

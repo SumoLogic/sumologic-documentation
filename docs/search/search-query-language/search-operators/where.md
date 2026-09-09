@@ -33,9 +33,7 @@ Instead, separate the `where` operator from the preceding `parse` operator l
 ```
 ## Syntax
 
-```sumo
-... | where <boolean expression> | ...
-```
+`... | where <boolean expression> | ...`
 
 ## Rules
 

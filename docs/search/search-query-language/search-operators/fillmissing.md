@@ -2,6 +2,7 @@
 id: fillmissing
 title: fillmissing Search Operator
 sidebar_label: fillmissing
+description: Use the fillmissing operator to ensure specific groups appear in query output even when they contain no data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -76,9 +77,7 @@ The fillmissing operator allows generators to enumerate up to 10,000 combination
 
 This section describes the syntax for the `fillmissing` operator.
 
-```sumo
-fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpecs> ] [ takeLast ]
-```
+`fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpecs> ] [ takeLast ]`
 
 * The `keyFieldGenerator` generates key fields that the operator then references to ensure all specified combinations of values are present. Any missing values are filled based on the specified `nonKeyFieldSpecs`, one for each key field. Two generators are supported:
 

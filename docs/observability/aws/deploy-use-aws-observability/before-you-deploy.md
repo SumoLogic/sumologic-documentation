@@ -15,23 +15,24 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 
 ## Prerequisites
 
-* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) for CloudFormation Template.
+* **Sumo Logic Metrics**. The AWS Observability Solution leverages both logs and metrics to provide comprehensive monitoring and troubleshooting of your AWS cloud infrastructure. If you do not already have Metrics, contact your Sumo Logic account representative. AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics including the [CloudWatch Namespace](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation#step-5-sumo-logic-aws-cloudwatch-metrics-sources) for CloudFormation Template.
 * Make sure you have access to the Sumo Logic console and as a user that is associated with Sumo Logic role and required role capabilities.
 * [**Role capabilities**](/docs/manage/users-roles/roles/role-capabilities/). Make sure you have a Sumo Logic role that have the following capabilities:
-  * Manage Field Extraction Rules
-  * Manage Connections
-  * View Account Overview
-  * View Fields
-  * View Field Extraction Rules
-  * Manage Content
   * Manage Collectors
   * View Collectors
   * Manage Fields
+  * View Fields
+  * Manage Field Extraction Rules
+  * View Field Extraction Rules
+  * Manage Content
+  * Manage Connections
+  * Manage Metrics Rules  
   * Manage Monitors
-  * Manage Metrics Rules
   * View Monitors
-  * Manage Entity Type Configs
-  * Create access keys
+  * Create access keys  
+  * Manage Entity Type Configs  
+  * Manage Apps
+  * Run Log Search
   * [**Sumo Logic Access ID and Key**](/docs/manage/security/access-keys/#create-an-access-key). When you deploy the solution, you’ll need to supply a Sumo Logic Access ID and Access Key, which enable you to use Sumo Logic APIs. Make sure you select default scope and have the role capabilities listed above before generating the Access ID and Key. <br/><img src={useBaseUrl('img/observability/Default-Scope.png')} alt="Default scope" style={{border: '1px solid gray'}} width="500" />
   :::note
   For the AWS Observability Solution, you must use the default scope when generating the Access ID and Key; custom scopes are not supported.
@@ -42,7 +43,7 @@ If you are already collecting AWS metrics, logs, and/or events, we recommend tha
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) and configure the AWS CLI as described in the [AWS documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) if you would like to use an AWS profile for Terraform script based deployment.
 * For AWS services exporting to CloudWatch Logs, make sure logs are exported to log groups:
   * RDS - Enable publishing of logs to CloudWatch by following instructions in [Collect Amazon RDS CloudTrail logs](/docs/integrations/amazon-aws/rds/#collect-amazon-rds-cloudwatch-logs).
-  * API Gateway - Enable Access Logs for each respective API by following instructions in Step 3 of [Collect access logs for AWS API Gateway](/docs/integrations/amazon-aws/api-gateway/#collect-access-logs-for-aws-api-gateway). Make sure you have the following prefix `/aws/apigateway/<apiid>/<stagename>` while creating the log group.
+  * API Gateway - Enable Access Logs for each respective API by following instructions in Step 3 of [Collect access logs for AWS API Gateway](/docs/integrations/amazon-aws/api-gateway/#collect-aws-api-gateway-access-logs). Make sure you have the following prefix `/aws/apigateway/<apiid>/<stagename>` while creating the log group.
   * AWS Lambda - If you are exporting logs to your custom log group, make sure you have the following prefix `/aws/lambda/<function name>` while creating the log group.
 * The AWS Solution does not enable detailed or enhanced metrics collection by default.
   * ECS - Enable enhanced metrics for respective cluster. Refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-cluster.html).
@@ -63,7 +64,6 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * Asia Pacific (Hong Kong)
 * Asia Pacific (Tokyo)
 * Asia Pacific (Seoul)
-* Asia Pacific (Mumbai)
 * Asia Pacific (Singapore)
 * Asia Pacific (Sydney)
 * Canada (Central)
@@ -80,7 +80,8 @@ The Sumo Logic AWS Observability solution supports the following AWS regions:
 * US West (Oregon)
 
 :::note
-The region(s) must be enabled and active before deploying the solution.
+The region(s) must be enabled and active before deploying the solution. <br />
+Middle East (Bahrain) - currently affected by the Middle East conflicts.
 :::
 
 ## Deployment considerations  
@@ -103,7 +104,7 @@ The Terraform script gives you the option to install the solution apps using app
 
 ### Bucket considerations
 
-In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don’t supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. 
+In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don't supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. If you use an existing bucket for CloudTrail logs, you'll need to manually create an S3 Event Notification afterward. For more information, see [Sumo Logic AWS CloudTrail Source](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/#step-7sumo-logic-aws-cloudtrail-source). 
 
 ### Do you use AWS Control Tower?
 
@@ -191,7 +192,7 @@ Here’s a sample `sources.json` file that you can include in your AMI.
 
 Before setting up the AWS Observability solution we recommend testing permissions for both AWS and Sumo Logic by using a test AWS CloudFormation template. To execute this template:
 
-1. Invoke the AWS CloudFormation template at this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.13.0/permissionchecker/permissioncheck.template.yaml).
+1. Invoke the AWS CloudFormation template at this [URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/permissionchecker/permissioncheck.template.yaml).
 1. Select the desired AWS region to test.
 1. Enter a Stack Name, Sumo Logic Deployment, and Sumo Logic Access ID and Access Key.<br/><img src={useBaseUrl('img/observability/Testing_sumo_Permission_1.png')} alt="Stack details" style={{border: '1px solid gray'}} width="800" />
 1. Click **Create Stack.**

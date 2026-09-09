@@ -9,9 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
+<p> <a href={useBaseUrl('docs/preview')}><span className="preview-public">Public Preview</span></a> </p>
+
+:::info
+This feature is in Public Preview. To participate, contact your Sumo Logic account representative.
+:::
+
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/>
 
-<!-- Originally added as a beta article with SUMO-124040. -->
+<!-- Originally added as a preview article with SUMO-124040. -->
 
 Use Metrics Search Management APIs V2 to save metrics searches in the content library, organize them in a folder hierarchy, and list metrics searches under your personal folder.
 
@@ -25,6 +31,7 @@ Use Metrics Search Management APIs V2 to save metrics searches in the content li
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/metricsSearchesManagementV2   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/metricsSearchesManagementV2  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/metricsSearchesManagementV2   |

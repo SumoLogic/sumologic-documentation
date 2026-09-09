@@ -2,6 +2,7 @@
 id: isvalidip
 title: isValidIP, isValidIPv4, isValidIPv6 Search Operators
 sidebar_label: isValidIP, isValidIPv4, isValidIPv6
+description: Use the isValidIP, isValidIPv4, and isValidIPv6 operators to validate IP address formats.
 ---
 
 The `isValidIP` operator checks if the value is a valid IP address. The `isValidIPv4` and `isValidIPv6` operators check if the value is a valid IPv4 or IPv6 address respectively. 
@@ -10,33 +11,21 @@ The `isValidIP` operator checks if the value is a valid IP address. The `isVa
 
 ### isValidIP
 
-```sumo
-isValidIP("<IP_string>") as <field>
-```
+`isValidIP("<IP_string>") as <field>`
 
-```sumo
-isValidIP(<IP_string_field>) [as <field>]
-```
+`isValidIP(<IP_string_field>) [as <field>]`
 
 ### isValidIPv4
 
-```sumo
-isValidIPv4("<IP_string>") as <field>
-```
+`isValidIPv4("<IP_string>") as <field>`
 
-```sumo
-isValidIPv4(<IP_string_field>) [as <field>]
-```
+`isValidIPv4(<IP_string_field>) [as <field>]`
 
 ### isValidIPv6
 
-```sumo
-isValidIPv6("<IP_string>") as <field>
-```
+`isValidIPv6("<IP_string>") as <field>`
 
-```sumo
-isValidIPv6(<IP_string_field>) [as <field>]
-```
+`isValidIPv6(<IP_string_field>) [as <field>]`
 
 ## Rules
 

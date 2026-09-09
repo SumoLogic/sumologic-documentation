@@ -29,10 +29,11 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 | K | [Aggregate](/docs/search/search-query-language/group-aggregate-operators) search results. |
 | L | Download and export search results (up to 100,000 records) as a CSV file. |
 | M | [Chart](/docs/dashboards/panels) options for search results. |
-| N | Click the gear icon to open a menu with the options to edit Display Message Preferences, Save as Default View, and Edit Settings JSON. |
+| N | Click the display button to open a menu with the options to edit Display Message Preferences, Save as Default View, and Edit Settings JSON. |
 | O | Add to Dashboard allows you to create a panel on a Dashboard from your search. If a Dashboard exists for the Search, you will have another option to Update Dashboard to update it based on changes made here. |
 | P | Expands the results table and hides the histogram and search text area. |
 | Q | Hides the histogram. |
+| R | In-app search tabs. Refer to [Account preferences](/docs/get-started/account-settings-preferences/#log-search) to enable or disable this feature. |
 
 ## Query colors explained
 

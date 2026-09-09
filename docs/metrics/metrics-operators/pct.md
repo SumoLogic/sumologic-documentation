@@ -2,6 +2,7 @@
 id: pct
 title: pct Metrics Operator
 sidebar_label: pct
+description: Use the pct metrics operator to calculate the nth percentile of input series values at each timestamp for each time interval.
 ---
 
 

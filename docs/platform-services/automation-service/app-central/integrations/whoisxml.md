@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/whoisxml.png')} alt="whoisxml" width="100"/>
 
-***Version: 1.5  
-Updated: Jul 07, 2023***
+***Version: 1.6  
+Updated: April 30, 2026***
 
 WHOIS API service provides the registration details, also known as the WHOIS record data, of a domain name, an IP address, or an email address.
 
@@ -54,3 +54,4 @@ For information about WhoisXML, see [WhoisXML documentation](https://whois.whois
 * February 28, 2023 (v1.4)
 	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
 * July 7, 2023 (v1.5) - Removed leading/trailing spaces
+* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

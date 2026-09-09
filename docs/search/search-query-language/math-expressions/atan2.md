@@ -9,9 +9,7 @@ Returns the four-quadrant inverse tangent of the two arguments b and c.
 
 ## Syntax
 
-```sumo
-atan2(<b>, <c>) as <field>
-```
+`atan2(<b>, <c>) as <field>`
 
 ## Example
 

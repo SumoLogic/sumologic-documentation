@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/misp.png')} alt="misp" width="100"/>
 
-***Version: 1.3  
-Updated: Mar 4, 2024***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Utilize MISP intelligence data during incident investigations.
 
@@ -60,3 +60,4 @@ For information about MISP, see [MISP documentation](https://www.circl.lu/doc/mi
     + Updated the integration with Environmental Variables
     + Integration renamed from MISP OIF to MISP
 * March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rsa-netwitness.png')} alt="RSA NetWitness icon" width="60"/>
 
-***Version: 1.19  
-Updated: Feb 28, 2024***
+***Version: 1.20  
+Updated: April 30, 2026***
 
 Query RSA NetWitness Incidents, Events.
 
@@ -56,3 +56,4 @@ For information about Netwitness, see the [NetWitness documentation](https://com
     + Changed fields visibility
     + Updated Daemon compatibility
 * February 28, 2023 (v1.19) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.20) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

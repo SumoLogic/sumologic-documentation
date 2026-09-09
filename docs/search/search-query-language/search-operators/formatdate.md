@@ -2,6 +2,7 @@
 id: formatdate
 title: formatDate Search Operator
 sidebar_label: formatDate
+description: Use the formatDate operator to format dates in log files as strings in your required format, such as U.S.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,9 +15,7 @@ If you're looking to convert a date to a timestamp, use [`parseDate`](/docs/sear
 
 ## Syntax
 
-```sumo
-formatDate(<date> [, <format> [, <timeZone>]]) as <field>
-```
+`formatDate(<date> [, <format> [, <timeZone>]]) as <field>`
 
 ### Returns
 

@@ -129,3 +129,30 @@ See details of threats allowed and blocked by AWS WAF.
 
 See details of allowed and blocked AWS WAF traffic by location, rules and outliers.
 <img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-traffic.png')} alt="AWS WAF" />
+
+## Create monitors for AWS WAF app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS WAF alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS WAF - Known Malicious IP Allowed` | This alert is triggered when AWS WAF allows a request from a known malicious IP address detected via threat intelligence. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+| `AWS WAF - Block Burst from Single IP` | This alert is triggered when a single IP address is blocked by AWS WAF more than 5 times within 5 minutes, indicating active scanning, brute-force, or exploit probing. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+| `AWS WAF - Known Malicious IP Blocked` | This alert is triggered when AWS WAF blocks a request from a known malicious IP address detected via threat intelligence. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+| `AWS WAF - URI Scanning Burst from Single IP` | This alert is triggered when a single IP address accesses more than 5 distinct URIs within 5 minutes, indicating web scanning or directory enumeration activity. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the AWS WAF app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS WAF app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

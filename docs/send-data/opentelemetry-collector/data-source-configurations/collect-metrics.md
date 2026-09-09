@@ -67,7 +67,6 @@ service:
         - memory_limiter
         - resource/linux_resource_attributes/localhost
         - resourcedetection/system
-        - batch
       exporters:
         - sumologic
 ```

@@ -17,6 +17,10 @@ The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive ev
 
 For information on how inventory data is used in Cloud SIEM, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data.md).
 
+:::note
+Upgrade the CSE AWS EC2 Inventory source to the latest version 3.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
+
 import TerraformLink from '../../../reuse/terraform-link.md';
 
 :::tip
@@ -69,7 +73,7 @@ To configure a Cloud SIEM AWS EC2 Inventory Source:
     - **Key Access**. Enter the IAM user access key ID and secret key you want to use to authenticate collection requests.<br/><img src={useBaseUrl('/img/send-data/key-based.png')} alt="Key based" style={{border: '1px solid gray'}} width="400"/>
 1. **Regions**. Provide a list of AWS regions to query EC2 instances, such as `us-east-2`. Make sure that the selected region is enabled in your AWS account.
    :::note Supported AWS Regions
-   `eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, and `us-west-2`.
+   `eu-north-1`, `eu-central-1`, `eu-central-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-northeast-1`, `ap-northeast-2`, `ap-southeast-1`, `ap-southeast-2`, `sa-east-1`, `ca-central-1`, `us-east-1`, `us-east-2`, `us-west-1`, and `us-west-2`.
    :::
 1. (Optional) The **Polling Interval** is set for 600 minutes by default, you can adjust it based on your needs.
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule/).

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/prisma-cloud.png')} alt="Prisma Cloud icon" width="100"/>
 
-***Version: 1.2  
-Updated: Nov 09, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Receive alerts from Prisma Cloud CSPM and perform configuration searches to retrieve resource information, identify misconfigurations, gain operational insights and uncover policy and compliance violations.
 
@@ -54,3 +54,4 @@ Cloud Security Posture Management
 ## Change Log
 
 * November 9, 2023 - First upload
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

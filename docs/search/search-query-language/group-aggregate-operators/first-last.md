@@ -31,9 +31,7 @@ If there is no sort order specified for returned results (for example, when usin
 
 ### Syntax
 
-```sumo
-first(<field>) [as <field>] [by <field>]
-```
+`first(<field>) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -58,9 +56,7 @@ Finds the last value of the field being evaluated within the time range and acco
 
 ### Syntax
 
-```sumo
-last(<field>) [as <field>] [by <field>]
-```
+`last(<field>) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -74,9 +70,7 @@ last(<field>) [as <field>] [by <field>]
 
 Sample log message:
 
-```json
-Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.
-```
+`Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.`
 
 Example based on sample log message:
 

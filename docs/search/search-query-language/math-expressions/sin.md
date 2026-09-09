@@ -9,9 +9,7 @@ Sine of argument in radians.
 
 ## Syntax
 
-```sumo
-sin(<x>) as <field>
-```
+`sin(<x>) as <field>`
 
 ## Example
 

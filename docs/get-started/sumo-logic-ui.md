@@ -83,7 +83,7 @@ The global toolbar (top nav bar) provides access to critical functions and setti
 
 ### Go To... menu options
 
-Use the **Go To...** menu for quick access to settings and features. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="600"/>
+Use the **Go To...** menu for quick access to settings, features, library content, monitors, and SLOs. <img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="600"/>
 
 ### Preferences
 
@@ -91,7 +91,7 @@ You can manage your personal account settings from the **Preferences** page. T
 
 To manage your personal Sumo Logic account preferences:
 
-1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
+1. From the top nav bar, click the person icon <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="25"/>, and then from the dropdown, select **Preferences**.
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
     * **My Preferences**. Your account session settings.

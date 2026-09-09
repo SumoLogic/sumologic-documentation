@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/any.run.png')} alt="any.run" width="80"/>
 
-***Version: 1.4  
-Updated: Feb 04, 2025***
+***Version: 1.5  
+Updated: April 13, 2026***
 
 Gather detonation data for files and URL using `ANY.RUN`.
 
@@ -51,3 +51,4 @@ For information about ANY.RUN, see [ANY.RUN documentation](https://any.run/cyber
 * February 13, 2023 - Integration refactored
 * June 15, 2023 (v1.3) - Updated the integration with Environmental Variables
 * February 04, 2025 (v1.4) - Updated the action Get Report with Environmental Variables
+* April 13, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

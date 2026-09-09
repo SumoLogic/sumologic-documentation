@@ -2,6 +2,7 @@
 id: cidr
 title: cidr Search Operator
 sidebar_label: CIDR
+description: Use the three CIDR operators (getCIDRPrefix, compareCIDRPrefix, maskFromCIDR) to analyze IPv4 networks using Classless Inter-Domain Routing notation and narrow analysis to specific subnets.
 ---
 
 Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses. Input data will be trimmed, making these operators more flexible, which allows you to set your expectations accordingly.
@@ -24,9 +25,7 @@ Extracts the network prefix from an IPv4 address. 
 
 ### Syntax
 
-```sumo
-getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>
-```
+`getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>`
 
 Where:
 
@@ -59,9 +58,7 @@ Compares two IPv4 addresses and returns true if the network prefixes match.
 
 ### Syntax
 
-```sumo
-compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
-```
+`compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>`
 
 `ip_add1` and `ip_addr2` are string representations (such as "10.10.1.35")
 
@@ -119,9 +116,7 @@ A utility function that returns a subnet mask for boolean operations with IPv4 a
 
 ### Syntax
 
-```sumo
-maskFromCIDR("<prefix_length>") as <field>
-```
+`maskFromCIDR("<prefix_length>") as <field>`
 
 Where:
 

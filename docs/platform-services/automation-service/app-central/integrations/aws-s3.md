@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.3  
-Updated: August 19, 2025***
+***Version: 1.4  
+Updated: May 08, 2026***
 
 Interact with AWS S3 buckets, objects, and policies.
 
@@ -88,3 +88,8 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 * August 19, 2025 (v1.3) - 
   * Added IAM Role Support - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
   * Added input validation in the *Download File* action.
+* May 08, 2026 (v1.4) -
+  * Fixed inverted `ConfirmRemoveSelfBucketAccess` logic in *Put Bucket Policy* action.
+  * Made Location Constraint optional in *Create Bucket* — defaults to the configured integration region.
+  * Added proper JSON output for *Create Bucket*, *Delete Bucket*, *Delete Bucket Policy*, *Delete Object From Bucket*, *Put Bucket Policy*, and *Upload File To S3 Object* actions.
+  * Updated region list — removed legacy `EU` alias and added missing regions.

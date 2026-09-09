@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-helix.png')} alt="FireEye Helix icon" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 13, 2023***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Query FireEye Helix to gather enrichment data during an incident investigation.
 
@@ -62,3 +62,4 @@ For information about Trellix Helix (formerly FireEye Helix), see [Trellix Helix
 * July 13, 2023 (v1.1)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

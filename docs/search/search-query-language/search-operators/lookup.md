@@ -2,6 +2,7 @@
 id: lookup
 title: lookup Search Operator
 sidebar_label: lookup
+description: Use the lookup operator to enrich log messages with additional fields from lookup tables hosted by Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -73,9 +74,7 @@ your lookup query scope must include:
 
 ## Syntax 
 
-```sumo
-lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from path://"<filePath>" on <joinColumn-1> [,<joinColumn-2>]
-```
+`lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from path://"<filePath>" on <joinColumn-1> [,<joinColumn-2>]`
 
 Where:
 

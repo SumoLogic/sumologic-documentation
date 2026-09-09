@@ -15,7 +15,8 @@ From April 30, 2025, Sumo Logic will no longer support adding a source using thi
 :::
 
 :::note
-Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method supports a throughput limit of 1MB/s (86GB/day) per named Event Hub egress rate. If you require higher throughput, we recommend using [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source).
+* Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method supports a throughput limit of 1MB/s (86GB/day) per named Event Hub egress rate. If you require higher throughput, we recommend using [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source).
+* This source does not support Microsoft GCC High environments. For GCC High-compatible log collection, see the [MS Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/).
 :::
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="Azure Event Hub icon" width="40"/>

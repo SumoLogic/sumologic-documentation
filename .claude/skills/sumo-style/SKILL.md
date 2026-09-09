@@ -78,7 +78,7 @@ Every doc should include:
 id: page-slug          # required for content pages; kebab-case, short
 title: Page Title      # required; Title Case; max 60 chars for SEO; include keywords
 sidebar_label: Label   # optional; what appears in sidebar nav
-description: One or two sentences for search engines.
+description: One or two sentences for search engines. 140–160 characters. Plain text only — no backticks or Markdown. Do not start with "This page" or "This doc."
 keywords:              # optional but recommended
   - keyword1
   - keyword2

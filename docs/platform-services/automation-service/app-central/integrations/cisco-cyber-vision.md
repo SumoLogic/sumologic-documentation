@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-cyber-vision.png')} alt="Cisco Cyber Vision icon" width="70"/>
 
-***Version: 1.2  
-Updated: Jul 13, 2023***
+***Version: 1.3  
+Updated: April 27, 2026***
 
 Cisco Cyber Vision can delete, set and retrieve allowing ICS with dynamic monitoring on hosts.
 
@@ -54,3 +54,4 @@ For information about Cisco Cyber Vision, see [Cisco Cyber Vision documentation]
 * July 13, 2023 (v1.2)
 	+ Updated the integration with Environmental Variables
 	+ Changed fields visibility
+* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

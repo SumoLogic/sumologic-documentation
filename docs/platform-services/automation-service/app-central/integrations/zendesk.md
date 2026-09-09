@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zendesk.png')} alt="axonius" width="100"/>
 
-***Version: 1.4  
-Updated: March 21, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 Zendesk enhances customer service security with advanced encryption and access controls to safeguard interactions.
 This integration streamlines ticket lifecycle management, from creation to restoration, and enriches user engagement with comprehensive data retrieval.
@@ -69,3 +69,8 @@ For information about Zendesk, see [Zendesk documentation](https://www.zendesk.c
 * March 21, 2024 (v1.4)
     + Changed "Description" field type to textarea in "Create Ticket" action
     + Changed "Comment" field type to textarea in "Update Ticket" action
+* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+## Additional resources
+
+- For Zendesk, Sumo Logic offers the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize your Zendesk data.

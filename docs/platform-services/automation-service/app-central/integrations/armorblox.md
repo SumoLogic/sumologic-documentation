@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/armorblox.png')} alt="armorblox" width="70"/>
 
-***Version: 1.1  
-Updated: Sep 04, 2023***
+***Version: 1.2  
+Updated: April 13, 2026***
 
 Armorblox secures enterprise communications over email and other cloud office applications with the power of Natural Language Understanding. The Armorblox platform connects over APIs and analyzes thousands of signals to understand the context of communications and protect people and data from compromise. Armorblox connects over APIs with Office 365, G Suite, and Exchange to secure your human layer without affecting MX records or mail flow. Tens of thousands of organizations use Armorblox to stop BEC and targeted phishing attacks, protect sensitive PII and PCI, and automate remediation of user-reported email threats.
 
@@ -48,3 +48,4 @@ For information about Armorblox, see [Armorblox documentation](https://armorblox
 ## Change Log
 
 * September 4, 2023 (v1.0) - First upload
+* April 13, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

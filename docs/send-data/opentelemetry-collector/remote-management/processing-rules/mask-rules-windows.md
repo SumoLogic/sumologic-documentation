@@ -6,7 +6,7 @@ description: Create an OpenTelemetry remote management Windows source template m
 ---
 
 :::note
-This document supports masking logs specifically for our [Windows source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows). For other source templates, refer to [Mask Rules](mask-rules.md).
+This document supports masking logs specifically for our [Windows source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/windows). For other source templates, refer to [Hash and Mask Rules](hash-and-mask-rules.md).
 :::
 
 A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before they are ingested. When you create a mask rule:

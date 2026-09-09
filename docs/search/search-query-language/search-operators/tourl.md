@@ -2,6 +2,7 @@
 id: tourl
 title: tourl Search Operator
 sidebar_label: tourl
+description: Use the tourl operator to assign short descriptive names to URLs, similar to creating href links with readable labels.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,13 +12,9 @@ The `tourl` operator provides you the ability to assign a short name that descri
 
 ## Syntax
 
-```sumo
-tourl(<url_column_name>, <url_short_name_column>) as <field>
-```
+`tourl(<url_column_name>, <url_short_name_column>) as <field>`
 
-```sumo
-tourl(<url_column_name>, <url_short_name_column>, <url_short_name_prefix>, <url_short_name_suffix>) as <field>
-```
+`tourl(<url_column_name>, <url_short_name_column>, <url_short_name_prefix>, <url_short_name_suffix>) as <field>`
 
 Where:
 

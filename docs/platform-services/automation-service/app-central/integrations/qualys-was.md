@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/qualys-was.png')} alt="Qualys WAS icon" width="100"/>
 
-***Version: 1.2  
-Updated: Sep 28, 2023***
+***Version: 1.3  
+Updated: Jul 23, 2026***
 
 Qualys WAS is a cloud-based service that provides automated crawling and testing of custom web applications to identify vulnerabilities Enables organizations to assess, track and remediate web application vulnerabilities.
 
@@ -48,3 +48,4 @@ For information about Qualys WAS, see[ Qualys Web Application Scanning documenta
 * September 7, 2021 - First upload
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
 * September 28, 2023 (v1.2) - Versioning
+* July 23, 2026 (v1.3) - Resolved an issue where the integration fails due to deprecated dependency warnings.

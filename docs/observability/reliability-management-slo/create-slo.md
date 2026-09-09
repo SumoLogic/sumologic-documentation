@@ -45,7 +45,7 @@ You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry
       1. Click **Add** > **Import**.
       1. Enter a Name for the SLO.
       1. Copy and paste the JSON in the text editor.
-      1. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" />
+      1. Click **Import**.<br/><img src={useBaseUrl('img/observability/slo-import.png')} alt="Reliability Management SLO SLI" width="800" />
 3. Select the **Signal Type**:
     * **Latency**. Select to calculate the speed of services, lag time.
     * **Error**. Select to monitor for errors that occur in your services.
@@ -148,8 +148,8 @@ Your monitor must be in an **active** state.
 1. Click on any active monitor to open its panel.
 1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" />   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" /><br/>
 This will open the **New SLO** window.
-1. **Define your SLI**. Your monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" />
-1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" />
+1. **Define your SLI**. Your monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" width="800" />
+1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" width="500" />
 1. When you're done, click **Save**, which will save the SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
 To edit SLO parameters:
@@ -158,7 +158,7 @@ To edit SLO parameters:
 
 To edit SLO parameters from a monitor:
 1. Go to the **Monitors** tab and click on any monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
-1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" />
+1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" width="800" />
 
 :::important
 Any monitor update that changes the monitor definition will lead to a change in the version of related SLOs. This means that the SLO history or SLI will get reset for the SLO. Example include trigger condition changes and evaluation delay changes. Changes unrelated to the definition like **Name**, **Description** will not affect the related SLOs.

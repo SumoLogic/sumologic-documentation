@@ -10,9 +10,7 @@ Finds the standard deviation value for a distribution of numerical values within
 
 ## Syntax
 
-```sumo
-stddev(<numerical_field>) [as <field>] [by <field>]
-```
+`stddev(<numerical_field>) [as <field>] [by <field>]`
 
 ## Rules
 

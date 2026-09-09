@@ -2,6 +2,7 @@
 id: ipv4tonumber
 title: ipv4ToNumber Search Operator
 sidebar_label: ipv4ToNumber
+description: Use the ipv4ToNumber operator to convert IPv4 addresses from octet dot-decimal format (like 192.168.1.1) to decimal format.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,9 +15,7 @@ The [CIDR operator](cidr.md) allows you to leverage _Classless Inter-Domain Rout
 
 ## Syntax
 
-```sumo
-ipv4ToNumber(<ip_addr>) [as <field>]
-```
+`ipv4ToNumber(<ip_addr>) [as <field>]`
 
 ## Rules
 

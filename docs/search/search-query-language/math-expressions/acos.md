@@ -8,9 +8,7 @@ Returns the inverse cosine of the argument.
 
 ## Syntax
 
-```sumo
-acos(<x>) as <field>
-```
+`acos(<x>) as <field>`
 
 ## Example
 

@@ -8,9 +8,7 @@ Cosine of argument in radians.
 
 ## Syntax
 
-```sumo
-cos(<x>) as <field>
-```
+`cos(<x>) as <field>`
 
 ## Example
 

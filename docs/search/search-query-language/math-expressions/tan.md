@@ -10,9 +10,7 @@ Tangent of argument in radians.
 
 ## Syntax
 
-```sumo
-tan(<x>) as <field>
-```
+`tan(<x>) as <field>`
 
 ## Example
 

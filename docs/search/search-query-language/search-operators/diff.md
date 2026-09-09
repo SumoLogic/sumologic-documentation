@@ -2,6 +2,7 @@
 id: diff
 title: diff Search Operator
 sidebar_label: diff
+description: Use the diff operator to calculate the rate of change in a numeric field between consecutive rows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,7 +17,7 @@ Adding a group by function to a diff operator query calculates the difference 
 
 ## Syntax
 
-* `diff <field> [as <field>] [by <field1>, <field2>, ...]`
+`diff <field> [as <field>] [by <field1>, <field2>, ...]`
 
 ## Rules
 

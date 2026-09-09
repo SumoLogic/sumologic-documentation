@@ -2,6 +2,7 @@
 id: tolowercase-touppercase
 title: toLowerCase, toUpperCase Search Operators
 sidebar_label: toLowerCase, toUpperCase
+description: Use the toLowerCase and toUpperCase operators to convert strings to all lowercase or uppercase letters.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,13 +17,9 @@ These operators can be useful for normalizing source logs with inconsistent capi
 
 ## Syntax
 
-```sumo
-toLowerCase(<string>) [as <field>]
-```
+`toLowerCase(<string>) [as <field>]`
 
-```sumo
-toUpperCase(<string>) [as <field>]
-```
+`toUpperCase(<string>) [as <field>]`
 
 ## Rules
 

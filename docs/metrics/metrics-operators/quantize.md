@@ -2,6 +2,7 @@
 id: quantize
 title: quantize Metrics Operator
 sidebar_label: quantize
+description: Use the quantize metrics operator to control quantization behavior by specifying time bucket size and rollup type for aggregating data points.
 ---
 
 

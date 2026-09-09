@@ -28,12 +28,16 @@ Hover your mouse over the status icon to view a tooltip with a count of the dete
 **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/).
 
 :::note
-The checkbox only shows up if you have Cloud SIEM and if the C2C already has Cloud SIEM content like parsers and rules.
+The **Forward to SIEM** checkbox is only available if Cloud SIEM is installed and if the C2C already has Cloud SIEM content like parsers and rules.
 :::
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
 | `_siemForward` | <code>(true \| false)</code> | Set to `true` when **Forward To SIEM** is checked. |
+
+:::note
+- For C2C sources where the checkbox is already provided, there's no need to manually add `_siemForward=true` (case-sensitive), since the checkbox alone handles forwarding to SIEM.
+:::
 
 ## Error Types
 

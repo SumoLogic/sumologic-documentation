@@ -64,47 +64,18 @@ Ask the user for:
 
 ### Step 2: Create the markdown file
 
-1. Generate proper frontmatter:
-   ```yaml
-   ---
-   id: vendor-slug
-   title: Vendor Name
-   image: 'https://app_icons.s3.amazonaws.com/vendor.svg'
-   tags:
-     - apps
-     - vendor-slug
-   description: The Sumo Logic app for Vendor analyzes...
-   ---
-   ```
+Read `docs/contributing/templates/app-template-v2.md` and use it as the exact structure for the new file. Substitute all `{{placeholder}}` values with the vendor information gathered in Step 1.
 
-2. Add required imports:
-   ```javascript
-   import useBaseUrl from '@docusaurus/useBaseUrl';
-   ```
+**Required substitutions and rules:**
+- **`id`**: lowercase, hyphenated slug (e.g., `acme`)
+- **`image`**: S3 icon URL (e.g., `https://app_icons.s3.amazonaws.com/acme.svg`) or placeholder if unavailable
+- **`tags`**: must include both `apps` and the vendor slug
+- **`description`**: must start with `"The Sumo Logic app for {Vendor} analyzes..."`
+- **Intro paragraph**: must start with `"The Sumo Logic app for {Vendor Name}..."`
+- **Install section**: the template uses `<AppInstall2/>` — never replace this with manually written steps
+- **Dashboard sections**: follow the comment example in the template exactly — `width="800"`, `style={{border: '1px solid gray'}}`, and `Use this dashboard to:` with `*` bullet points
 
-3. Add noindex meta tag for new docs (remove after publishing):
-   ```html
-   <head>
-     <meta name="robots" content="noindex" />
-   </head>
-   ```
-
-4. Add introduction following Sumo Logic branding:
-   - **Must start with**. "The Sumo Logic app for {Vendor Name}...".
-   - Include business value and key use cases.
-   - Keep to 2-3 sentences.
-
-5. Add template sections:
-   - Log and metric types.
-   - Sample log messages.
-   - Sample queries.
-   - Installing the app (with reusable snippet).
-   - Viewing dashboards (with reusable snippet).
-   - Dashboard sections (placeholders).
-   - Optional: Create monitors section.
-   - Optional: Alerts table.
-   - Upgrade/Downgrade section.
-   - Uninstalling section.
+**Path adjustment for imports**: The template uses `../../reuse/...` which is correct for files two levels deep (`docs/integrations/{category}/`). Use `../../..` for three levels.
 
 ### Step 3: Add to sidebar navigation
 
@@ -178,30 +149,58 @@ Guide the user to fill in:
 * Reference vendor documentation where appropriate.
 
 **Dashboard sections:**
-* Each dashboard needs:
-  * Name as H3 heading.
-  * Description of what it shows.
-  * "Use this dashboard to:" bulleted list.
-  * Screenshot with proper sizing: `width="800"` and border style.
+
+Each dashboard should follow this structure — use the template's comment example as the guide:
+
+```mdx
+### Dashboard Name
+
+The **{Vendor} - Dashboard Name** dashboard provides [what it shows and why it matters].
+
+Use this dashboard to:
+* [Action-oriented use case 1.]
+* [Action-oriented use case 2.]
+* [Action-oriented use case 3.]
+
+<img src={useBaseUrl('img/integrations/{category}/{Vendor}-Dashboard-Name.png')} alt="{Vendor} - Dashboard Name dashboard" style={{border: '1px solid gray'}} width="800" />
+```
+
+Key rules:
+* `width="800"` and `style={{border: '1px solid gray'}}` should be included on every dashboard screenshot.
+* "Use this dashboard to:" is plain text (not bold), followed by `*` bullet points — not a prose sentence.
+* Dashboard image filenames use Title-Case-With-Hyphens (e.g., `Acme-Overview.png`).
 
 **Optional sections:**
 * Monitors/Alerts: Only include if app has pre-configured monitors.
-* Prerequisites: Only if special setup required.
+* Prerequisites: Only if special setup is needed.
 
 ### Step 7: Validation checklist
 
 Before finishing, verify:
-* [ ] Frontmatter complete with all required fields.
-* [ ] Title is Title Case, under 60 characters.
-* [ ] Description starts with "The Sumo Logic app for {Vendor}...".
-* [ ] Tags include "apps" and vendor slug.
-* [ ] Added to `sidebars.ts` in correct category.
-* [ ] Card added to hub page with proper HTML structure.
-* [ ] CID mapping added to `cid-redirects.json`.
-* [ ] All reusable imports use correct relative paths.
-* [ ] noindex meta tag present for unpublished docs.
-* [ ] JSON files valid (no syntax errors).
+
+**Frontmatter**
+* [ ] `id` present (lowercase, hyphenated vendor slug).
+* [ ] `title` present, Title Case, under 60 characters.
+* [ ] `image` present (S3 URL or placeholder).
+* [ ] `tags` present and includes both `apps` and the vendor slug.
+* [ ] `description` starts with `"The Sumo Logic app for {Vendor}..."`.
+
+**Content**
+* [ ] Opening paragraph starts with `"The Sumo Logic app for {Vendor Name}..."`.
+* [ ] `noindex` meta tag present (remove only when ready to publish).
+* [ ] All five reusable imports present (`AppInstall2`, `ViewDashboards`, `CreateMonitors`, `AppUpdate`, `AppUninstall`) — placed inline before each component, matching the template pattern.
+* [ ] Install section uses `<AppInstall2/>` — not manually written steps.
+* [ ] Dashboard viewing section uses `<ViewDashboards/>`.
+* [ ] Every dashboard has `width="800"` on its screenshot.
+* [ ] Every dashboard has a `Use this dashboard to:` bulleted list using `*` (not bold, not prose).
+* [ ] Upgrade section uses `<AppUpdate/>`.
+* [ ] Uninstall section uses `<AppUninstall/>`.
 * [ ] All placeholder text replaced or removed.
+
+**Navigation and config**
+* [ ] Added to `sidebars.ts` in correct category, alphabetical order.
+* [ ] Card added to hub page `index.md` with proper HTML structure.
+* [ ] CID mapping added to `cid-redirects.json` (validate JSON syntax).
 
 ## App Template Structure
 

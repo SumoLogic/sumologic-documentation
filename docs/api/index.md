@@ -14,7 +14,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 <SumoAcademy/>
 
-* **Self-paced**: [Sumo Logic APIs + Terraform Self-Paced](https://learn.sumologic.com/sumo-logic-apis-terraform-self-paced/)
+* **Self-paced**. [Extending Sumo Logic with MCP, API and Terraform](https://learn.sumologic.com/extending-sumo-logic-with-mcp-api-terraform).
 :::
 
 :::sumo Get Help
@@ -29,6 +29,14 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
 </div></div>
 
+<div className="box-wrapper" markdown="1">
+<div className="box boxwidetop card">
+  <div className="container">
+  <a href={useBaseUrl('docs/api/mcp-server')}><img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="75"/><h4>Sumo Logic MCP Server ✨</h4></a>
+  <p>Connect AI tools to Sumo Logic via MCP to query logs, manage alerts and dashboards, and investigate security incidents using natural language.</p>
+  </div>
+</div></div>
+
 <br/>
 
 <div className="box-wrapper" markdown="1">
@@ -40,11 +48,6 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/api/account-management')}><img src={useBaseUrl('img/icons/manage.png')} alt="Manage icon" width="50"/><h4>Accounts</h4></a>  
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">  
-  <a href={useBaseUrl('docs/api/app-management')}><img src={useBaseUrl('img/integrations/integrations.png')} alt="Integrations icon" width="55"/><h4>Apps (Beta)</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -89,12 +92,17 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/api/data-archiving')}><img src={useBaseUrl('img/icons/archive.png')} alt="Archive icon" width="50"/><h4>Data Archiving</h4></a>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/api/data-deletion-rules')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User Permissions icon" width="50"/><h4>Data Deletion Rules</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/api/dynamic-parsing')}><img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Parsing Data icon" width="50"/><h4>Dynamic Parsing</h4></a>
+  <a href={useBaseUrl('docs/api/dynamic-parsing')}><img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Parsing Data icon" width="50"/><h4>Dynamic Parsing (Auto Parse)</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -155,11 +163,6 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 <div className="box smallbox card">
   <div className="container">
     <a href={useBaseUrl('docs/api/metrics-searches-v2')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="50"/><h4>Metrics Searches V2</h4></a>      
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-    <a href={useBaseUrl('docs/api/metrics-searches')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="50"/><h4>Metrics Searches (Beta)</h4></a>      
   </div>
 </div>
 <div className="box smallbox card">
@@ -293,4 +296,3 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
   </div>
 </div>
 </div>
-

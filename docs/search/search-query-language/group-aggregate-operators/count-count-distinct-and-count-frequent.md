@@ -16,9 +16,7 @@ Counts the total number of logs that match the keyword search within the time ra
 
 ### Syntax
 
-```sumo
-count[(<field>)] [as <field>] [by <field>, ...]
-```
+`count[(<field>)] [as <field>] [by <field>, ...]`
 
 ### Rules
 
@@ -62,9 +60,7 @@ An empty value still counts as a unique value and will be counted.
 
 ### Syntax
 
-```sumo
-count_distinct(<field>) [as <field>] [by <field>, ...]
-```
+`count_distinct(<field>) [as <field>] [by <field>, ...]`
 
 ### Rules
 
@@ -113,9 +109,7 @@ You can use the `count_frequent` operator in Dashboard queries, but the number
 
 ### Syntax
 
-```sumo
-count_frequent <field>[, <field2>, field3, ...]
-```
+`count_frequent <field>[, <field2>, field3, ...]`
 
 ### Rules
 

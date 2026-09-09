@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-webex.png')} alt="Cisco Webex icon" width="70"/>
 
-***Version: 1.3  
-Updated: Jun 27, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 Cisco Webex is a solution for video conferencing, online meetings, screen share, and webinars.
 
@@ -72,3 +72,4 @@ Messaging
 		- Send Message
 		- Update Room
 * June 27, 2023 (v1.3) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

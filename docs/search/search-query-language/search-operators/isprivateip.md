@@ -2,6 +2,7 @@
 id: isprivateip
 title: isPrivateIP Search Operator
 sidebar_label: isPrivateIP
+description: Use the isPrivateIP operator to check if an IPv4 address is a private address and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,13 +11,9 @@ The `isPrivateIP` operator checks if an IPv4 address is private and returns a 
 
 ## Syntax
 
-```sumo
-isPrivateIP("<IPv4_string>") as <field>
-```
+`isPrivateIP("<IPv4_string>") as <field>`
 
-```sumo
-isPrivateIP(<IPv4_string_field>) [as <field>]
-```
+`isPrivateIP(<IPv4_string_field>) [as <field>]`
 
 ## Rules
 

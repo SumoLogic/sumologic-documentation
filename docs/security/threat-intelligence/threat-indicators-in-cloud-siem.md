@@ -29,6 +29,10 @@ For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#has
 
 Entities are automatically enriched with indicator data from all [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources) and the legacy [custom intelligence sources](/docs/cse/administration/create-custom-threat-intel-source/). (However, after initial enrichment, any subsequent changes to indicators in the default [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) will not be reflected in the already-enriched entities.)
 
+:::note
+Enrichment only considers active (non-expired) indicators. Expired ones are never used to enrich entities.
+:::
+
 When a match to a threat indicator in sources is found, labels showing the entity's "reputation" will be displayed throughout the Cloud SIEM UI:
 
 | Reputation value | Label | Icon |

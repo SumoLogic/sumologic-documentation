@@ -2,6 +2,7 @@
 id: querystarttime
 title: queryStartTime Search Operator
 sidebar_label: queryStartTime()
+description: Use the queryStartTime operator to return the start time of the search time range in milliseconds.
 ---
 
 The `queryStartTime()` operator returns the start time of the search [time range](/docs/search/get-started-with-search/build-search/set-time-range) in milliseconds. You can use it in combination with [`queryEndTime()`](queryendtime.md) to establish times and ranges for your non-continuous queries.
@@ -12,9 +13,7 @@ For dashboards in live mode, `queryTimeRange()` is a more suitable option. In mo
 
 ## Syntax
 
-```sumo
-queryStartTime() as <field>
-```
+`queryStartTime() as <field>`
 
 ## Rules
 

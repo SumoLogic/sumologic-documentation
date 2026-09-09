@@ -2,6 +2,7 @@
 id: bin
 title: bin Search Operator
 sidebar_label: bin
+description: Use the bin operator to assign numeric values to user-defined bins for histogram visualization and distribution analysis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,9 +11,7 @@ The `bin` operator assigns output results to user defined bins. A bin is configu
 
 ## Syntax
 
-```sumo
-bin <numeric field> width=<#>[, min=<#>][, max=<#>]
-```
+`bin <numeric field> width=<#>[, min=<#>][, max=<#>]`
 
 Where:
 

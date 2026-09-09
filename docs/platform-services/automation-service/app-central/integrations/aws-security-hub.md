@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.4
-Updated: Aug 28, 2025***
+***Version: 1.5  
+Updated: April 27, 2026***
 
 Interact with AWS Security Hub through Insights and Findings.
 
@@ -65,3 +65,4 @@ For information about AWS Security Hub, see [AWS Security Hub documentation](htt
   * Renamed action `Batch Import Finding` to `Import Single Finding`.
   * Renamed action `List Enable Products` to `List Enabled Products`.
   * Updated hints for all actions.
+* April 27, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

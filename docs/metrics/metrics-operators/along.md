@@ -6,6 +6,7 @@ keywords:
     - metrics
     - along
     - join
+description: Use the along metrics statement to control what results are joined when combining multiple metrics queries based on the value of one or more result fields.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

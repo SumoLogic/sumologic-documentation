@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mattermost.png')} alt="mattermost" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 07, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Mattermost designed as an internal chat for companies and organisations for online chat service with file sharing,
 search, and integrations.
@@ -49,3 +49,4 @@ For information about Mattermost, see [Mattermost documentation](https://docs.ma
 * July 7, 2023 (v1.3)
     + Updated the integration with Environmental Variables
     + Changed type to Notification for all actions
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

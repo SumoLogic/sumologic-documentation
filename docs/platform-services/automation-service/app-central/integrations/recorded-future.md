@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/recorded-future.png')} alt="Recorded Future icon" width="100"/>
 
-Version: 1.11  
-Updated: March 4, 2024
+Version: 1.12  
+Updated: April 30, 2026
 
 Utilize Recorded Future threat intelligence feeds during incident investigation.
 
@@ -83,3 +83,4 @@ Search Domain, Search URL, Search IP, Search Hash
 * February 26, 2024 (v1.10)
     + Enabled Incident Artifacts feature flag for Get Alert Details action
 * March 4, 2024 (v1.11) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.12) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

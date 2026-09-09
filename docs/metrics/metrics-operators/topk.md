@@ -2,6 +2,7 @@
 id: topk
 title: topk Metrics Operator
 sidebar_label: topk
+description: Use the topk metrics operator to apply an aggregation function to matching time series and return the N time series with the highest evaluated values over the query time range.
 ---
 
 The `topk` operator applies a specified aggregation function to the time series that match the query selector, and returns the *n* time series that have the highest evaluated value over the query time range.  

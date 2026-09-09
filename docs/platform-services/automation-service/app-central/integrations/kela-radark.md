@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kela-radark.png')} alt="Kela Radark icon" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 KELA's RADARK delivers automated threat intelligence, cultivating the targeted and contextualized insights that you need to stay ahead of attackers. Automatically monitor your environment and ensure that targeted threats are mitigated immediately to consistently maintain a strong security posture.
 
@@ -52,3 +52,4 @@ For information about KELA RaDark, see [KELA documentation](https://docs.ke-la.c
 ## Change Log
 
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

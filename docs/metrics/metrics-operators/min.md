@@ -2,6 +2,7 @@
 id: min
 title: min Metrics Operator
 sidebar_label: min
+description: Use the min metrics operator to calculate the minimum value of time series that match the query.
 ---
 
 

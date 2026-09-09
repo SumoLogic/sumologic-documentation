@@ -2,6 +2,7 @@
 id: replace
 title: replace Search Operator
 sidebar_label: replace
+description: Use the replace operator to replace all instances of a specified string with another string using matching regex or literal text.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,13 +12,9 @@ The `replace` operator allows you to replace all instances of a specified string
 
 ## Syntax
 
-```sumo
-replace(<sourceString>, <searchString>, <replaceString>) as <field>
-```
+`replace(<sourceString>, <searchString>, <replaceString>) as <field>`
 
-```sumo
-replace(<sourceString>, /<regex>/, <replaceString>) as <field>
-```
+`replace(<sourceString>, /<regex>/, <replaceString>) as <field>`
 
 ## Rules
 

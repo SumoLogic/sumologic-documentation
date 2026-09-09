@@ -2,6 +2,7 @@
 id: accum
 title: accum Search Operator
 sidebar_label: accum
+description: Use the accum operator to calculate the cumulative sum of a numeric field in your search results.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,9 +11,7 @@ The `accum` operator calculates the cumulative sum of a field. It can be used to
 
 ## Syntax
 
-```sumo
-accum <field> [as <field>] [by <field1>, <field2>, ...]
-```
+`accum <field> [as <field>] [by <field1>, <field2>, ...]`
 
 ## Rules
 

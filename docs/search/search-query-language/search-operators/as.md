@@ -2,6 +2,7 @@
 id: as
 title: as Search Operator
 sidebar_label: as
+description: Use the as operator to rename existing fields or create new constant fields in your search results.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,13 +11,9 @@ The `as` operator is typically used in conjunction with other operators, but it 
 
 ## Syntax
 
-```sumo
-<ExistingFieldName> as <field>
-```
+`<ExistingFieldName> as <field>`
 
-```sumo
-<literal> as <field>
-```
+`<literal> as <field>`
 
 ## Rules
 

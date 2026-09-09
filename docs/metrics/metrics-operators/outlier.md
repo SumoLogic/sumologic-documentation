@@ -2,6 +2,7 @@
 id: outlier
 title: outlier Metrics Operator
 sidebar_label: outlier
+description: Use the outlier metrics operator to identify data points outside the range of expected values by tracking moving average and standard deviation over a specified time window.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

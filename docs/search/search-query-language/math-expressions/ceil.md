@@ -8,9 +8,7 @@ The **ceil** operator rounds up a field value to the nearest integer value.
 
 ## Syntax
 
-```sumo
-ceil(<x>) as <field>
-```
+`ceil(<x>) as <field>`
 
 ## Example
 

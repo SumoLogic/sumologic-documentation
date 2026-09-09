@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/screenshot-machine.png')} alt="Screenshot Machine icon" width="100"/>
 
-Version: 1.3  
-Updated: February 16, 2024
+Version: 1.4  
+Updated: April 30, 2026
 
 Utilize Screenshot Machine to create screenshots of suspicious webpages as evidence during an investigation. 
 
@@ -58,3 +58,4 @@ For information about Screenshot Machine, see [Screenshot Machine documentation]
 	+ added new action Screenshot Webpage V2
 * February 16, 2024 (v1.3)
     + Screenshot Webpage Action: Updated with new Cloud SOAR API
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

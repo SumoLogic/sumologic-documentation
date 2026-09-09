@@ -15,13 +15,9 @@ To find the percentile, the function uses a sample of 1,000 messages. This may c
 
 ## Syntax
 
-```sumo
-| pct_sampling(<field> [, percentile]) [as <field>] [by <field>]
-```
+`| pct_sampling(<field> [, percentile]) [as <field>] [by <field>]`
 
-```sumo
-| pct_sampling(<field> [, percentile, percentile, percentile]) [as <field>] [by <field>]
-```
+`| pct_sampling(<field> [, percentile, percentile, percentile]) [as <field>] [by <field>]`
 
 ## Rules
 
@@ -37,9 +33,7 @@ To find the percentile, the function uses a sample of 1,000 messages. This may c
 
 Sample log message:
 
-```sumo
-Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.
-```
+`Aug 2 04:06:08 : host=10.1.1.124: local/ssl2 notice mcpd[3772]: filesize=20454: diskutilization=0.4 : 01070638:5: Pool member 172.31.51.22:0 monitor status down.`
 
 Example based on sample log message:
 
@@ -52,7 +46,7 @@ file*
 Running this query creates fields named `_filesize_pct_75` and `_filesize_pct_95`.
 
 A query can also take more multiple percent arguments, such as:
-```
+```sumo
 | pct_sampling(q1_delay, 10, 20, 30, 40, 50, 60, 70, 80, 90)
 ```
 

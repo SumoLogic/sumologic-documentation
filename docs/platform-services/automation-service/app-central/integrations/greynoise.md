@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/greynoise.png')} alt="greynoise" width="100"/>
 
-***Version: 1.6  
-Updated: May 20, 2024***
+***Version: 1.7  
+Updated: April 29, 2026***
 
 GreyNoise tells security analysts what not to worry about. They do this by curating data on IPs that saturate security tools with noise. This unique perspective helps analysts confidently ignore irrelevant or harmless activity, creating more time to uncover and investigate true threats. Includes Actions to allow IP enrichments and GNQL queries via the GreyNoise API.
 
@@ -60,3 +60,4 @@ For information about GreyNoise, see [GreyNoise documentation](https://docs.grey
     * Fixed Typo
     * Other minor fixes
 * May 20, 2024 (v1.6) - Fixed syntax Error with API URL
+* April 29, 2026 (v1.7) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

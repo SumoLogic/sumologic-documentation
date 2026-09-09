@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/neurons-itsm.png')} alt="Neurons ITSM icon" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Ivanti Neurons ITSMis IT service management solution that transforms help desks and support teams into strategic business.
 
@@ -58,3 +58,4 @@ For information about Neurons for ITSM, see [Neurons or ITSM documentation](http
 		- Create Change
 		- Create Incident Neurons
 		- Create Problem
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -10,14 +10,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 <!-- Originally added as a beta article with SUMO-175343. -->
 
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
-
-This document explains how to initiate a request to restart an Installed
-Collector from the Collection page. The other option is to [start or stop a Collector using our provided scripts](start-stop-collector-using-scripts.md).
+This document explains how to initiate a request to restart an Installed Collector from the Collection page. The other option is to [start or stop a Collector using our provided scripts](start-stop-collector-using-scripts.md).
 
 ## Limitations
 

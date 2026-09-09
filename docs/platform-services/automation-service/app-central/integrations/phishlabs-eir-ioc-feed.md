@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phishlabs-eir-ioc-feed.png')} alt="PhishLabs EIR IOC Feed icon" width="80"/>
 
-***Version: 1.1  
-Updated: Jun 26, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 PhishLabs by Fortra is a cyber threat intelligence company that delivers Digital Risk Protection through curated threat intelligence and complete mitigation. PhishLabs provides brand impersonation, account takeover, data leakage and social media threat protection.
 
@@ -45,3 +45,4 @@ For information about PhishLabs, see the [PhishLabs website](https://www.phishla
 
 * March 14, 2023 - First upload
 * June 26, 2023 (v1.1) - Removed unnecessary empty lines and other little changes
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

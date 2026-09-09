@@ -2,6 +2,7 @@
 id: lookup-classic
 title: lookup (Classic) Search Operator
 sidebar_label: lookup (Classic)
+description: Use the lookup (classic) operator to enrich log messages with data from the classic Lookup Tables feature.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,9 +22,7 @@ In either case, you will point the operator to one of the following:
 
 ## Syntax
 
-```sumo
-lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from <filePath> on <joinColumn-1> [,<joinColumn-2>]
-```
+`lookup <outputColumn-1> [as <field>] [,<outputColumn-2> [as <field>]] from <filePath> on <joinColumn-1> [,<joinColumn-2>]`
 
 Where:
 

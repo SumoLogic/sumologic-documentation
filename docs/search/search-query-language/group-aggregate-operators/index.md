@@ -5,6 +5,9 @@ description: Understand and use group and aggregate operators in Sumo Logic to s
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../../../reuse/mobot-callout.md';
+
+<MobotCallout/>
 
 In this section, we'll introduce the following concepts:
 

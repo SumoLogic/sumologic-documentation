@@ -277,9 +277,9 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/azure-openai.png')} alt="Azure OpenAI icon" width="60"/>
-  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/azure-open-ai')}>Azure OpenAI</a></h4>
-  <p>A guide to the Sumo Logic integration for Azure OpenAI.</p>
+  <img src={useBaseUrl('img/integrations/microsoft-foundry-icon.png')} alt="Azure OpenAI icon" width="60"/>
+  <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/microsoft-foundry')}>Microsoft Foundry</a></h4>
+  <p>A guide to the Sumo Logic integration for Microsoft Foundry.</p>
   </div>
 </div>
 <div className="box smallbox card">

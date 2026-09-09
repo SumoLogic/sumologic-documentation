@@ -2,6 +2,7 @@
 id: hash
 title: hash Search Operator
 sidebar_label: hash
+description: Use the hash operator to obscure sensitive data using cryptographic hash algorithms including MD5, SHA1, SHA2, and MurmurHash3.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,9 +15,7 @@ This is helpful when working with sensitive data such as email addresses, usern
 
 As a Search operator, hash processes the provided field against the specified algorithm to change the current values into random unique values.
 
-```sumo
-hash(<field>[<algorithm]) [as <field>]
-```
+`hash(<field>[<algorithm>]) [as <field>]`
 
 Where:
 

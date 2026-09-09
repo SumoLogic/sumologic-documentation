@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hatching-triage.png')} alt="Hatching triage icon" width="100"/>
 
-***Version: 1.4  
-Updated: August 13, 2025***
+***Version: 1.5  
+Updated: April 29, 2026***
 
 Detonate files with Hatching Triage Malware Sandbox.
 
@@ -54,3 +54,4 @@ For information about Recorded Future Triage ([formerly Hatching Triage](https:/
   + Get Summary Report
 + August 13, 2025 (v1.4) - Updated endpoint in action
   + Get Summary Report 
+* April 29, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

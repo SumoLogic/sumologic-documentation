@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/spiderfoot-hx.png')} alt="spiderfoot" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 SpiderFoot is an open source intelligence automation tool. SpiderFoot can be used offensively (e.g. in a red team exercise or penetration test) for reconnaissance of your target or defensively to gather information about what you or your organisation might have exposed over the Internet. You can target the following entities in a SpiderFoot scan: IP address, domain/sub-domain name, hostname, network subnet (CIDR), ASN, e-mail address, phone number, username, person's name, bitcoin address.
 
@@ -86,3 +86,4 @@ Threat Intelligence-Reputation
 
 * October 21, 2022 - First upload
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

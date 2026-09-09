@@ -1,7 +1,8 @@
 ---
 id: ansible
-title: Install OpenTelemetry Collector on Ansible
+title: Install OpenTelemetry Collector Using Ansible
 sidebar_label: Ansible
+description: Learn how to install the Sumo Logic OpenTelemetry Collector using Ansible.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: isreservedip
 title: isReservedIP Search Operator
 sidebar_label: isReservedIP
+description: Use the isReservedIP operator to check if an IPv4 address is reserved as defined by RFC 5735 and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,12 +11,9 @@ The `isReservedIP` operator checks if an IPv4 address is reserved as defined by 
 
 ## Syntax
 
-```sumo
-isReservedIP("<IPv4_string>") as <field>
-```
-```sumo
-isReservedIP(<IPv4_string_field>) [as <field>]
-```
+`isReservedIP("<IPv4_string>") as <field>`
+
+`isReservedIP(<IPv4_string_field>) [as <field>]`
 
 ## Rules
 

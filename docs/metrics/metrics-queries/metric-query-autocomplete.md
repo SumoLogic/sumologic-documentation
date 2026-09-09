@@ -28,5 +28,5 @@ If you enter a partial value in the query area, autocomplete presents only those
 
 ## About autocomplete retention
 
-Autocomplete presents dimensions from your ingested metrics to help you scope your queries and get the most precise results. To make autocomplete fast and reliable, we only show dimensions for metrics ingested during the previous 60 days. If your query time range is beyond this range, autocomplete will serve the suggestions based on the last available day within the 60 days.  
+Autocomplete presents dimensions from your ingested metrics to help you scope your queries and get the most precise results. To make autocomplete fast and reliable, we only show dimensions for metrics ingested during the previous 7 days. If your query time range is beyond this range, autocomplete will serve the suggestions based on the last available day within the 7 days.  
  

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/socradar.png')} alt="socradar" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 11, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 SOCRadar provides an early warning system with an extended threat intelligence platform.
 
@@ -46,3 +46,4 @@ For information about SOCRadar, see the [SOCRadar website](https://socradar.io/)
 
 * October 27, 2021 - First upload
 * July 11, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

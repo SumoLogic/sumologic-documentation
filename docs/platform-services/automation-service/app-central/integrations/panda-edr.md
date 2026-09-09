@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/panda-edr.png')} alt="Panda EDR icon" width="100"/>
 
-***Version: 1.3  
-Updated: Nov 24, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Remotely monitor and manage devices that run these Panda Aether platform endpoint security products:
 
@@ -76,3 +76,4 @@ For information about Panda EDR, see [Panda EDR documentation](https://www.watch
 	+ Changed Logo
 * November 24, 2023 (v1.3)
 	+ Fixed Token Issue
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

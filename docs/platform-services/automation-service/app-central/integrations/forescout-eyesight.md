@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forescout-eyesight.png')} alt="Forescout eyeSight icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jul 18, 2023***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Discovers every IP-connected device, auto-classifies it, and assesses its compliance posture and risk the instant a device connects to the network.
 
@@ -52,3 +52,4 @@ For information about Forescout eyeSight, see [Forescout documentation](https://
 * October 17, 2022 - First upload
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
 * July 18, 2023 (v1.2) - Code refactoring
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

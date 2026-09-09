@@ -2,6 +2,7 @@
 id: transpose
 title: transpose Search Operator
 sidebar_label: transpose
+description: Use the transpose operator to transform list data into table format in the Aggregates tab, similar to Excel pivot tables.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -43,13 +44,9 @@ With transpose, the results display in an easy-to-read manner status codes by ti
 
 ## Syntax
 
-```sumo
-transpose row [<row fields>] column [<column fields>] as [<output fields>]
-```
+`transpose row [<row fields>] column [<column fields>] as [<output fields>]`
 
-```sumo
-transpose row [<row fields>] column [<column fields>]
-```
+`transpose row [<row fields>] column [<column fields>]`
 
 Results can be influenced in three ways:
 

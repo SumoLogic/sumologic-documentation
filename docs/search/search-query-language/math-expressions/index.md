@@ -4,14 +4,16 @@ title: Math Expressions
 description: Use general mathematical expressions on numerical data extracted from log lines.
 ---
 
+import MobotCallout from '../../../reuse/mobot-callout.md';
+
+<MobotCallout/>
+
 You can use general mathematical expressions on numerical data extracted
 from log lines. 
 
 ## Syntax
 
-```sumo
-| expression [as <field>]
-```
+`| expression [as <field>]`
 
 ## Rules
 

@@ -87,9 +87,9 @@ Configuring the scheduled search for the selected health event will help you wit
 
 Use the below scheduled search query to get an alert when 90% threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules (FERs).
 
-``` sql
-_index=sumologic_system_events "0000000007063B25" 
-| json "eventType", "resourceIdentity.id" as eventType , resourceId 
+```sumo
+_index=sumologic_system_events "0000000007063B25"
+| json "eventType", "resourceIdentity.id" as eventType , resourceId
 | where eventType = "Health-Change" AND resourceId = "0000000007063B25"
 ```
 

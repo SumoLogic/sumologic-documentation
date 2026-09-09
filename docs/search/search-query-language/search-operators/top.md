@@ -2,6 +2,7 @@
 id: top
 title: top Search Operator
 sidebar_label: top
+description: Use the top operator with the sort operator to reduce the number of sorted results returned.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -14,9 +15,7 @@ We recommend you use the [`topk`](/docs/search/search-query-language/search-ope
 
 ## Syntax
 
-```sumo
-top <#> <field> [by <group_by_operator>]
-```
+`top <#> <field> [by <group_by_operator>]`
 
 ## Examples
 

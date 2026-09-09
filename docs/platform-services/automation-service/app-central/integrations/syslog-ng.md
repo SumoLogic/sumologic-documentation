@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/syslog-ng.png')} alt="Syslog NG icon" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Syslog-ng is a free and open-source implementation of the syslog protocol for Unix and Unix-like systems.
 
@@ -49,3 +49,4 @@ For information about Syslog-NG, see [Syslog-NG documentation](https://syslog-ng
 
 * June 17, 2021 - First upload
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

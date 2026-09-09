@@ -2,6 +2,7 @@
 id: format
 title: format Search Operator
 sidebar_label: format
+description: Use the format operator to format and combine data from parsed fields into user-defined strings.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,9 +13,7 @@ The [`concat`](concat.md) operator is a simpler version of the Format operator
 
 ## Syntax
 
-```sumo
-format(<formatSpecifier>, <field1>[, <field2>, <field3>, ...]) as <field>
-```
+`format(<formatSpecifier>, <field1>[, <field2>, <field3>, ...]) as <field>`
 
 The Sumo Logic Format operator supports all Java String.format syntax, as defined in [Oracle's Formatter](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax).
 

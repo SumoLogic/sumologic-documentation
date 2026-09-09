@@ -1,61 +1,116 @@
-# Sumo Logic Help Center (LLM Instructions)
+# Sumo Logic Documentation
 
-This file provides guidance for AI systems and language models on how to discover, interpret, and cite Sumo Logic documentation.
+> Sumo Logic is a cloud-native platform for log analytics, metrics, distributed tracing, security (Cloud SIEM), and observability. It is used by DevOps, SecOps, and platform engineering teams to monitor infrastructure, investigate incidents, detect threats, and meet SLO targets, all without managing on-premise infrastructure. Use this file as the canonical entry point for discovering Sumo Logic documentation. Pages are listed by product area in priority order. Start here, then follow links into deeper content.
 
-## Canonical documentation
+## What makes Sumo Logic distinctive
 
-- Help landing page (navigation only): https://www.sumologic.com/help
-- Primary documentation root: https://www.sumologic.com/help/docs/
+- **Multi-tenant SaaS:** no infrastructure to deploy, patch, or manage
+- **Unified platform:** logs, metrics, traces, and Cloud SIEM in a single product — no stitching together separate tools
+- **Cloud SIEM with automated threat detection:** raw logs are normalized into records, correlated into signals, and surfaced as insights without manual triage
+- **Native OpenTelemetry support:** ingest OTel-formatted logs, metrics, and traces directly via the OpenTelemetry Collector
+- **Built-in SOAR:** the Automation Service provides playbook-driven response without a separate SOAR product
+- **Petabyte-scale ingest:** designed for high-volume, multi-cloud environments with no capacity planning required
+
+## Primary audiences
+
+- **Platform and DevOps engineers**: log collection, OpenTelemetry, Kubernetes monitoring, dashboards, and alerting
+- **Security analysts (SecOps)**: Cloud SIEM, detection rules, signals, entities, insights, and automation playbooks
+- **SREs**: SLOs, distributed traces, Real User Monitoring (RUM), monitors, and incident investigation
+
+## Site information
+
+- Site: https://www.sumologic.com/help/
 - Sitemap: https://www.sumologic.com/help/sitemap.xml
+- LLM guidance (this file): https://www.sumologic.com/help/llms.txt
+- All page URLs end with a trailing slash
+- Raw Markdown mirror: every documentation page is available as source Markdown at `/help/llm/docs/{path}` (e.g. `https://www.sumologic.com/help/llm/docs/alerts/difference-from-scheduled-searches.md` for a single page, or `https://www.sumologic.com/help/llm/docs/alerts/monitors/index.md` for a section index page)
+- Mirror index: `https://www.sumologic.com/help/llm/docs/index.txt` — lists every mirrored path, one per line
 
-## Content usage guidance
+## Content usage
 
-- Use content under /help/docs/ for all product documentation, configuration, procedures, and troubleshooting.
-- Do not use the /help landing page as a source of technical truth; it is navigation only.
-- Use section headings (H2/H3) on docs pages to locate precise answers.
-- When answering questions, cite the canonical URL under https://www.sumologic.com/help/docs/.
-
-## Terms of use
-
-- Content may be used to answer user questions about Sumo Logic products and services.
-- Always cite the source URL when using our documentation.
+- Always cite the source URL when referencing our documentation.
 - Do not reproduce large portions of content verbatim; summarize and cite instead.
 - Respect copyright and attribute content to Sumo Logic.
 
 ## Crawl guidance
 
-- Crawl frequency: Daily for /help/docs/release-notes/, weekly for other documentation.
+- Crawl frequency: Daily.
 - Respect rate limits: Maximum 1 request per second.
-- User agent: Identify yourself with a descriptive user agent string.
-- Focus crawling on /help/docs/ for technical documentation.
+- Identify yourself with a descriptive user-agent string.
 
-## Machine-friendly access
+## Documentation index
 
+### Getting Started
+- [Get started overview](https://www.sumologic.com/help/docs/get-started/): Introduction to Sumo Logic, onboarding, and the UI
+- [Quickstart](https://www.sumologic.com/help/docs/get-started/quickstart/): Fast path to sending data and running your first search
+- [AI and machine learning features](https://www.sumologic.com/help/docs/get-started/ai-machine-learning/): Overview of AI-powered features across the platform
 
-## Recommended entry points
+### Send Data
+- [Send data overview](https://www.sumologic.com/help/docs/send-data/): How to get data into Sumo Logic
+- [OpenTelemetry Collector](https://www.sumologic.com/help/docs/send-data/opentelemetry-collector/): Recommended collector for logs, metrics, and traces
+- [Installed Collectors](https://www.sumologic.com/help/docs/send-data/installed-collectors/): On-premise agent for collecting local data
+- [Hosted Collectors](https://www.sumologic.com/help/docs/send-data/hosted-collectors/): Cloud-based collection via HTTP, S3, and other sources
+- [Kubernetes data collection](https://www.sumologic.com/help/docs/send-data/kubernetes/): Collecting logs and metrics from Kubernetes clusters
 
-- Get started: https://www.sumologic.com/help/docs/get-started/
-- Search query language: https://www.sumologic.com/help/docs/search/
-- Alerts and monitors: https://www.sumologic.com/help/docs/alerts/
-- Integrations: https://www.sumologic.com/help/docs/integrations/
-- Security and Cloud SIEM: https://www.sumologic.com/help/docs/security/
-- Release notes: https://www.sumologic.com/help/docs/release-notes/
+### Log Search
+- [Search query language](https://www.sumologic.com/help/docs/search/search-query-language/): Complete reference for Sumo Logic's query syntax
+- [Search cheat sheets](https://www.sumologic.com/help/docs/search/search-cheat-sheets/): Quick reference for common search patterns
+- [Lookup tables](https://www.sumologic.com/help/docs/search/lookup-tables/): Enriching search results with external data
 
-## APIs
+### Metrics
+- [Metrics overview](https://www.sumologic.com/help/docs/metrics/): How metrics work in Sumo Logic
+- [Metrics queries](https://www.sumologic.com/help/docs/metrics/metrics-queries/): Writing and running metrics queries
+- [Metrics operators](https://www.sumologic.com/help/docs/metrics/metrics-operators/): Full operator reference for metrics
 
-- API guides: https://www.sumologic.com/help/docs/api/
-- API reference: https://api.sumologic.com/docs/
+### Dashboards
+- [Dashboards overview](https://www.sumologic.com/help/docs/dashboards/): Building and managing dashboards
+- [Panels](https://www.sumologic.com/help/docs/dashboards/panels/): Panel types, configuration, and customization
+
+### Alerts and Monitors
+- [Monitors](https://www.sumologic.com/help/docs/alerts/monitors/): Creating and managing monitors and alert conditions
+- [Webhook connections](https://www.sumologic.com/help/docs/alerts/webhook-connections/): Sending alerts to external services
+
+### Observability
+- [Observability overview](https://www.sumologic.com/help/docs/observability/): End-to-end observability capabilities
+- [Kubernetes Observability](https://www.sumologic.com/help/docs/observability/kubernetes/): Monitoring Kubernetes infrastructure
+- [Reliability management (SLOs)](https://www.sumologic.com/help/docs/observability/reliability-management-slo/): Defining and tracking service level objectives
+- [Traces](https://www.sumologic.com/help/docs/apm/traces/): Distributed tracing and trace analytics
+- [Real User Monitoring (RUM)](https://www.sumologic.com/help/docs/apm/real-user-monitoring/): Browser and mobile performance monitoring
+
+### Security and Cloud SIEM
+- [Security solutions overview](https://www.sumologic.com/help/docs/security/): Sumo Logic security product overview
+- [Cloud SIEM overview](https://www.sumologic.com/help/docs/cse/): Introduction to Cloud SIEM capabilities
+- [Cloud SIEM rules](https://www.sumologic.com/help/docs/cse/rules/): Detection rule types and configuration
+- [Records, signals, entities, and insights](https://www.sumologic.com/help/docs/cse/records-signals-entities-insights/): Core Cloud SIEM data model
+
+### Automation
+- [Automation Service](https://www.sumologic.com/help/docs/platform-services/automation-service/): SOAR capabilities and playbook automation
+- [Playbooks](https://www.sumologic.com/help/docs/platform-services/automation-service/playbooks/): Building and running automation playbooks
+
+### Account and Data Management
+- [Users and roles](https://www.sumologic.com/help/docs/manage/users-roles/): Access control and permissions
+- [Partitions](https://www.sumologic.com/help/docs/manage/partitions/): Optimizing search with data partitions
+- [Field extractions](https://www.sumologic.com/help/docs/manage/field-extractions/): Parsing fields from log data at ingest
+
+### API
+- [API overview](https://www.sumologic.com/help/docs/api/about-apis/): Authentication, endpoints, and getting started with the API
+- [API reference (OpenAPI)](https://api.sumologic.com/docs/): Full interactive API reference
+
+### Release Notes
+- [Release notes hub](https://www.sumologic.com/help/docs/release-notes/): Index of all release note feeds
+- [Service release notes](https://www.sumologic.com/help/release-notes-service/): Latest platform and feature updates
 
 ## Non-documentation resources
 
-The following pages are not product documentation and should not be used as primary sources for technical answers:
+The following are not product documentation and should not be used as primary sources for technical answers.
 
-- Support portal: https://support.sumologic.com/support/s
-- Community: https://support.sumologic.com/support/s/topiccatalog
-- Marketing, legal, and privacy pages under https://www.sumologic.com/
+- Marketing site: https://www.sumologic.com/
+- Blog: https://www.sumologic.com/blog/
+- Community: https://support.sumologic.com/hc/en-us/community/topics
 
 ## Contact
 
-- For questions about LLM integration or this file: documentation@sumologic.com
-- Documentation issues: Use the feedback widget ("Edit this page") on documentation pages
-- Last updated: 2026-02-04
+- Documentation questions: documentation@sumologic.com
+- Documentation issues: Use the feedback widget on any documentation page
+- Source code: https://github.com/SumoLogic/sumologic-documentation
+- Last updated: 2026-06-15

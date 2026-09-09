@@ -2,6 +2,7 @@
 id: timeshift
 title: timeshift Metrics Operator
 sidebar_label: timeshift
+description: Use the timeshift metrics operator to shift time series from your query by a specified period of time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -82,10 +82,6 @@ processors:
         value: "myapp"        # replace with a logical source name
         action: insert
 
-  batch:
-    timeout: 600s
-    send_batch_size: 8192
-
 exporters:
   awss3/my-sumo-archive:
     marshaler: "sumo_ic"
@@ -98,11 +94,17 @@ exporters:
       s3_partition_timezone: 'UTC'
       compression: gzip
 
+    sending_queue:
+      queue_size: 8192000
+      batch:
+        flush_timeout: 600s
+        min_size: 8192
+
 service:
   pipelines:
     logs:
       receivers: [filelog/myapps]
-      processors: [resource/add_sumo_fields, batch]
+      processors: [resource/add_sumo_fields]
       exporters: [awss3/my-sumo-archive]
 ```
 
@@ -120,7 +122,7 @@ If differentiation is not required, you can use dummy 16-digit hexadecimal value
 
 ## Batching
 
-The size and time window of archived files is controlled using the OpenTelemetry batch processor. For example, a batching timeout of 15 minutes produces one S3 file approximately every 15 minutes.
+The size and time window of archived files is controlled using the OpenTelemetry Exporter Batching. For example, a batching timeout of 15 minutes produces one S3 file approximately every 15 minutes.
 
 If the ingestion job window does not exactly align with the batching boundaries, the Hosted Collector behaves conservatively and may ingest slightly more data rather than risk data loss. This ensures no data loss around interval boundaries.
 

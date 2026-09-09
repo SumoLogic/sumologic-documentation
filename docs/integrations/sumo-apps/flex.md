@@ -169,8 +169,8 @@ By default, [Flex Index](/docs/manage/ingestion-volume/data-volume-index/log-tra
 
 ### Sample queries
 
-``` sql title="Ingest Volume - GB/Day"
-_index=sumologic_volume 
+```sumo title="Ingest Volume - GB/Day"
+_index=sumologic_volume
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcecategory, dataTier, bytes, count
 | where _sourceCategory matches "sourcecategory_and_tier_volume" and dataTier matches "Flex"

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/triage-tools.png')} alt="urlscan.io" width="100"/>
 
-***Version: 1.3  
-Updated: Dec 18, 2025***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -84,3 +84,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 	+ Added new action: List Users
 * December 18, 2025 (v1.3)
     + Added new action: Get Full Triage Event Details
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

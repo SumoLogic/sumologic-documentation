@@ -9,7 +9,6 @@ import SumoLogicDocsLogo from '../../static/img/reuse/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
-import GoogleTranslateNavbarItem from '../theme/NavbarItem/GoogleTranslateNavbarItem';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -62,7 +61,6 @@ export const Home = () => {
             }}
             width='100%'
           />
-        <GoogleTranslateNavbarItem/>
         </Typography>
 
         {/* Hero */}
@@ -130,11 +128,6 @@ export const Home = () => {
                   </Typography>
                   {[
                     {
-                      children: 'Start a free trial',
-                      description: 'Sign up for a Sumo Logic free trial',
-                      to: 'https://www.sumologic.com/sign-up',
-                    },
-                    {
                       children: '1. Set up collector and source',
                       description: 'Set up a Sumo Logic collector and source',
                       to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo',
@@ -149,8 +142,8 @@ export const Home = () => {
                       description: 'Monitor, troubleshoot, and secure your environment',
                       to: '/docs/get-started/quickstart#step-3-monitor-and-troubleshoot-your-environment',
                     },
-                  ].map(({ children, to }) => (
-                    <Link key={to} to={to} style={{ textDecoration: 'none' }}>
+                  ].map(({ children, to, href }) => (
+                    <Link key={to || href} to={to} href={href} style={{ textDecoration: 'none' }}>
                       <Button
                         sx={{
                           bgcolor: 'transparent',

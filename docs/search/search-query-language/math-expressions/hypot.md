@@ -9,9 +9,7 @@ Returns the square root of the sum of an array of squares.
 
 ## Syntax
 
-```sumo
-hypot(<a>, <b>) as <field>
-```
+`hypot(<a>, <b>) as <field>`
 
 ## Example
 

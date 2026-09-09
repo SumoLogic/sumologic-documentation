@@ -16,21 +16,13 @@ Null, empty, or blank strings will not return a result.
 
 ## Syntax
 
-```sumo
-isNaN("<string>") as <field>
-```
+`isNaN("<string>") as <field>`
 
-```sumo
-isNaN(<string_field>) [as <field>]
-```
+`isNaN(<string_field>) [as <field>]`
 
-```sumo
-isInfinity("<string>") as <field>
-```
+`isInfinity("<string>") as <field>`
 
-```sumo
-isInfinity(<string_field>) [as <field>]
-```
+`isInfinity(<string_field>) [as <field>]`
 
 ## Examples
 

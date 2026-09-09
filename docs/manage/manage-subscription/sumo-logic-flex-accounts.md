@@ -171,6 +171,7 @@ To access the **Account Overview** tab:
 * **Organization**. Displays your organization’s name and hexadecimal ID.  
 * **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite Flex).  
 * **Contract period**. Lists the start and end dates of your contract.  
+* **Credit blocks in Contract**. If your account has more than one active credit block, shows the number of blocks. See [Credit blocks](#credit-blocks) for details. Accounts with a single credit block do not show this field.
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays the count of live dashboards and real-time alerts.
 * **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
 
@@ -180,6 +181,8 @@ To access the **Account Overview** tab:
 * **Credits Used**. Shows total and percentage used since the start of the contract.  
 * **Credits Remaining**. Displays remaining credits and percentage consumed.  
 * **Total Credits Usage breakdown**. Includes consumed contract and promotional credits.
+
+If your account has a single credit block, this panel shows the total and percentage of credits consumed for that block. If your account has more than one credit block, such as Promotional Credit Block - 1, Paid Credit Block - 1, and Paid Credit Block - 2, this panel shows the combined total and percentage across all blocks. Hover over the bar to see the amount of credits consumed by each individual credit block.
 
 ### Usage Forecast panel
 
@@ -208,6 +211,12 @@ This panel provides analytics to monitor and compare usage against contract capa
 * Hover over charts for detailed information.  
 * Download usage reports or credit usage data as CSV files.  
 
+If your account has more than one credit block, a **Viewing** dropdown appears in this panel. Use it to switch between combined usage (all blocks combined) and an individual credit block, to see usage broken out by product variable for that block. Downloaded usage reports also include a separate line per product variable for each credit block. <br/><img src={useBaseUrl('img/manage/account/viewing-dropdown.png')} alt="Viewing dropdown for individual credit blocks" style={{border: '1px solid gray'}} width="300" />
+
+:::info
+If your account has a single credit block, the **Viewing** dropdown does not appear, and downloaded usage reports are unchanged.
+:::
+
 #### Promotional credits  
 
 There are times when Sumo Logic promotes services and consumables through the provision of promotional credits. Promotional credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the promotional credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional credit consumption is calculated separately from the credits you paid for in your contract period. Promotional credits are utilized as the priority credit for the specified credit variable.
@@ -217,6 +226,10 @@ For example: If you have 10,000 promotional credits for "Metrics" in a 100,000-c
 To filter and focus on promotional credits:  
 * Deselect all other usage categories.  
 * Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
+
+#### Credit blocks
+
+If you purchase additional credits mid-subscription at a different burn rate, Sumo Logic creates a separate credit block for the new credits so your existing credits keep burning at their original rate instead of being repriced. Older credit blocks are consumed before newer ones.
 
 #### Drilling into usage data  
 

@@ -51,7 +51,7 @@ To get the event logs, follow the steps to enable the **Export Events**:
 
 Druva supports OAuth 2.0-based authentication for incoming requests. Every use of Druva APIs requires authentication to ensure that only authorized users can interact with Druva APIs.
 
-All requests to Druva APIs are authenticated using OAuth 2.0 access tokens which you receive in exchange of every authorization grant request you make. The OAuth token will expire after 30 minutes for [Data Governance Cloud](https://apis.druva.com/) and 15 minutes for [Data Governance GovCloud](https://govcloudapis.druva.com/).
+All requests to Druva APIs are authenticated using OAuth 2.0 access tokens obtained through an authorization grant request. Tokens expire after 30 minutes for `https://apis.druva.com/` (Data Governance Cloud) and 15 minutes for `https://govcloudapis.druva.com/` (Data Governance GovCloud).
 
 The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **API Endpoint URL**. To get these, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 
@@ -74,7 +74,7 @@ To configure a Druva Source:
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
+:::tip
 After configuring the Druva source, consider installing the Sumo Logic app for [Druva](/docs/integrations/saas-cloud/druva/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -121,3 +121,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Druva Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/druva/) to automate response actions directly from Cloud SOAR playbooks.

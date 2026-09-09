@@ -33,11 +33,7 @@ The enrichment schema includes support for the following optional attributes:
 
 ## Enrichment size
 
-There is a 1 MB limit on the size of enrichments attached to an entity. If too much data is contained in the enrichment, you may get an error that includes text like the following: 
-
-```
-"Cloud execution", "error": "API Error: An unknown error occurred. MSG_SIZE_TOO_LARGE,val=10,str="Unable to produce message: Broker: Message size too large"} [INTERNAL_SERVER_ERROR]
-```
+There is a 1 MB limit on the size of enrichments attached to an entity. If too much data is contained in the enrichment, you may get an error.
 
 To resolve the problem, reduce the enrichment content to a smaller payload:
 * If the playbook generating the enrichment is attaching full objects (for example, full alert context in JSON), try selecting only the key fields needed for investigation. 

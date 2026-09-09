@@ -2,43 +2,37 @@
 id: join
 title: join Search Operator
 sidebar_label: join
+description: Use the join operator to combine records from two or more data streams based on common field values.
 ---
 
 The `join` operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The `join` operator in Sumo Logic works much like an [inner SQL join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join).
 
 ## Syntax
 
-```sumo
-... | join
+`... | join
+(parse "starting stream from *" AS a) as t1,
+(parse "starting search * from parent stream *" AS b, c) as t2,
+(parse "starting save * from parent stream *" AS d, e) as t3
+on t1.a = t2.c
+and t1.a = t3.e`
+
+A `timewindow` can be added to constrain how far apart in time records are allowed to join, using the following syntax:
+
+`... | join
 (parse "starting stream from *" AS a) as t1,
 (parse "starting search * from parent stream *" AS b, c) as t2,
 (parse "starting save * from parent stream *" AS d, e) as t3
 on t1.a = t2.c
 and t1.a = t3.e
-```
-
-A `timewindow` can be added to constrain how far apart in time records
-are allowed to join, using the following syntax:
-
-```sumo
-... | join
-(parse "starting stream from *" AS a) as t1,
-(parse "starting search * from parent stream *" AS b, c) as t2,
-(parse "starting save * from parent stream *" AS d, e) as t3
-on t1.a = t2.c
-and t1.a = t3.e
-[timewindow 10m]
-```
+[timewindow 10m]`
 
 To operate on fields in each table after the ON clause, use this syntax:
 
-```sumo
-... | join
+`... | join
 (parse "starting stream from *" AS a) AS t1,
 (parse "starting search * from parent stream *" AS b, c) AS t2
 on t1.a = t2.c
-| fields t1_a, t2_b
-```
+| fields t1_a, t2_b`
 
 ## Rules
 

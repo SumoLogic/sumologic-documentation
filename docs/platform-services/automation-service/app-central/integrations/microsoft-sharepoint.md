@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-sharepoint.png')} alt="Microsoft SharePoint icon" width="100"/>
 
-***Version: 1.5  
-Updated: Sep 19, 2023***
+***Version: 1.6  
+Updated: April 30, 2026***
 
 Utilize Microsoft SharePoint lists, files, and folders during incident investigations.
 
@@ -60,3 +60,4 @@ For information about Microsoft SharePoint, see [SharePoint documentation](https
 * August 17, 2023 (v1.3) - Updated the integration with Environmental Variables
 * September 4, 2023 (v1.4) - Fixed a bug where if the timeout was not specified, an error would occur
 * September 19, 2023 (v1.5) - Versioning
+* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

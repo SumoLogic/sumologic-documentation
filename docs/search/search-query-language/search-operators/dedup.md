@@ -2,6 +2,7 @@
 id: dedup
 title: dedup Search Operator
 sidebar_label: dedup
+description: Use the dedup operator to remove duplicate results from your search output.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -21,9 +22,7 @@ The `dedup` operator is supported for the following features:
 
 ## Syntax
 
-```sumo
-dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]
-```
+`dedup [consecutive] [<int>] [by <field>[, <field2>, ...]]`
 
 <table>
   <tr>

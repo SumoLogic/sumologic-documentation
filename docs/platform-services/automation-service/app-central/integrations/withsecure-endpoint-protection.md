@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-endpoint-protection.png')} alt="WithSecure Endpoint Protection icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 WithSecure™ (formerly F-Secure) Elements Endpoint Protection is cloud-native, AI-powered endpoint protection that you can deploy instantly from your browser and manage easily from a single console. It integrates across all your endpoints, keeping your organization fenced in from attacks.
 
@@ -66,3 +66,4 @@ Threat Intelligence-Reputation
 
 * March 27, 2023 - First upload
 * July 18, 2023 (v1.1) - Removed leading/trailing spaces
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
