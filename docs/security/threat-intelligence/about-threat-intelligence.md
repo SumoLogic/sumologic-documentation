@@ -68,16 +68,22 @@ Sumo Logic provides the following out-of-the-box default sources of threat indic
 A Cloud SIEM administrator must first ingest the indicators before they can be used to uncover threats. Indicators can be ingested using one of the following methods:
 * **Add Source**. This flow lets you select from available threat intelligence sources given below, choose a collector, and complete configuration in a streamlined workflow.
    * [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source)
-   * CISA TAXII Client
-   * Dragos TAXII Client
    * [Google Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source/)
    * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
    * [Mandiant Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source)
-   * Nozomi TAXII Client
-   * Recorded Future TAXII Client
    * [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source)  
-   * [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source)
-   * Unit42 TAXII Client
+   * [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source)<br/>
+      :::info
+      Sumo Logic provides the following vendor-specific sources, built on the underlying code of the STIX/TAXII 2 Client Source, to simplify setup:
+      * CISA TAXII Client
+      * Dragos TAXII Client
+      * Nozomi TAXII Client
+      * Recorded Future TAXII Client
+      * SOCRadar TAXII Client
+      * Unit42 TAXII Client<br/>
+      
+      [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/#taxii-2-sources)
+      :::
    * [ZeroFox Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source)
 * **Upload**. Manually upload files that add threat intelligence indicators. See [Add indicators in Threat Intelligence](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload). See [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use when uploading indicators using this option or APIs.
 * **The API**. See the following APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
