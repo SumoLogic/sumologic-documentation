@@ -72,14 +72,14 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
    * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
    * [Mandiant Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source)
    * [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source)  
-   * [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source)<br/>
+   * [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source)
       :::info
-      Sumo Logic provides the following vendor-specific sources, built on the underlying code of the STIX/TAXII 2 Client Source, to simplify setup:
+      Sumo Logic provides the following vendor-specific sources, based on the STIX/TAXII 2 Client Source, to simplify setup:
       * CISA TAXII Client
       * Dragos TAXII Client
       * Nozomi TAXII Client
       * Recorded Future TAXII Client
-      * Unit42 TAXII Client<br/>
+      * Unit42 TAXII Client
       
       [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/#taxii-2-sources)
       :::
