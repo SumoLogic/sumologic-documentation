@@ -191,7 +191,7 @@ Do not update the source names as created by the CloudFormation template in Sumo
 
 Follow the steps below to change the default source categories
 
-1. Download the template version 2.12.0 or later from the [changelog](../changelog.md) page.
+1. Download the template version 2.12.0 or later from the [changelog](../../changelog.md) page.
 deploy-with-aws-cloudformation/index.md
 1. Modify the source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
