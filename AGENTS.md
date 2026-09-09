@@ -37,6 +37,8 @@ The following hold whether or not the skill runs:
 - **Be concise.** Lead with the point. No throat-clearing preambles, no filler ("simply", "just", "of course", "it's worth noting"), no sentences that restate what was just said.
 - **Plain language.** Short sentences, one idea each. When two phrasings say the same thing, use the shorter one.
 
+**On a PR, use inline comments whenever possible.** Attach each point to the line or file it refers to instead of collecting everything in one top-level comment. Reserve a single summary comment for feedback that is not tied to a specific line, such as overall scope or a concern that spans several files.
+
 ## Bulk Changes
 For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
 
