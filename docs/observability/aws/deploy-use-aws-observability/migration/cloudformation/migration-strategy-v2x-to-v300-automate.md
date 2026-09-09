@@ -103,7 +103,7 @@ Before running the migration, ensure the following are in place.
 
 Your AWS credentials must have permissions to:
 - Read and update CloudFormation stacks (`cloudformation:DescribeStacks`, `cloudformation:UpdateStack`, `cloudformation:DeleteStack`, `cloudformation:CreateStack`).
-- Read S3 bucket metadata (`s3:HeadBucket`, `s3api:GetBucketPolicy`, `s3api:GetBucketNotificationConfiguration`).
+- Read S3 bucket metadata (`s3:HeadBucket`, `s3:GetBucketPolicy`, `s3:GetBucketNotificationConfiguration`).
 - Read IAM roles (`iam:GetRole`).
 - Read CloudTrail trails (`cloudtrail:DescribeTrails`, `cloudtrail:GetTrailStatus`).
 - Read SNS topic attributes (`sns:GetTopicAttributes`).
