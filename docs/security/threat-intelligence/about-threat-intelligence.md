@@ -79,7 +79,6 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
       * Dragos TAXII Client
       * Nozomi TAXII Client
       * Recorded Future TAXII Client
-      * SOCRadar TAXII Client
       * Unit42 TAXII Client<br/>
       
       [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/#taxii-2-sources)
