@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.4  
 Updated: Sep 11, 2026***
 
-Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retention Policies.
+Interact with [AWS CloudWatch](https://docs.aws.amazon.com/cloudwatch/) through Groups, Streams, Metric Filters, and Retention Policies.
 
 ## Actions
 
