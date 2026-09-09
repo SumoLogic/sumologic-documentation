@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.3  
-Updated: Nov 03, 2025***
+***Version: 1.4  
+Updated: Sep 11, 2026***
 
 Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retention Policies.
 
@@ -25,6 +25,9 @@ Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retent
 * **Delete Log Group** (*Containment*) - Deletes the specified log group and permanently deletes all the archived log events associated with the log group.
 * **Delete Log Stream** (*Containment*) - Deletes the specified log stream and permanently deletes all the archived log events associated with the log stream.
 * **Delete Metric Filter** (*Containment*) - Deletes the specified metric filter.
+* **Get Metric Data** (*Enrichment*) - Retrieves CloudWatch metric data for specified metrics within a time range.
+* **List Metrics** (*Enrichment*) - Lists the metrics for the specified namespace, metric name, and dimensions.
+* **Get Metric Statistics** (*Enrichment*) - Gets statistics for the specified metric for a specified time period.
 
 ## External Libraries
 
@@ -67,3 +70,7 @@ For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](h
 * November 03, 2025 (v1.3) - Updated timestamp parsing to support both legacy and ISO 8601 formats.
     + Filter Log Events
     + Put Log Events
+* September 11, 2026 (v1.4) - Added new metric actions.
+    + Get Metric Data
+    + List Metrics
+    + Get Metric Statistics
