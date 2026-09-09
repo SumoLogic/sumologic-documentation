@@ -65,4 +65,6 @@ For information about LaunchDarkly, see [LaunchDarkly documentation](https://lau
 
 ## Change Log
 
-* August 14, 2026 (v1.2) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | August 14, 2026 | First upload |

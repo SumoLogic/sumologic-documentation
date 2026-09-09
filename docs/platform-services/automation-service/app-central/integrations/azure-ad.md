@@ -127,42 +127,21 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
 
 ## Change Log
 
-* October 7, 2021 - First upload
-* March 11, 2022 - Logo
-* November 10, 2022 (v1.2) - New Action: Get Manager
-* April 28, 2023 (v1.3)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
-	+ Remove action (**Filter Users**) as we already have a similar **List Users** Action
-	+ Changed a few action types from Containment to Enrichment
-	+ Added New Action **List Groups**
-* June 26, 2023 (v1.4) - Changed multiline hints to single line
-* August 25, 2023 (v1.5)
-	+ Added New Action **Revoke Sign In Sessions**
-* August 31, 2023 (v1.6) - Added new actions: List Devices, Disable User
-* September 19, 2023 (v1.7) - Versioning
-* January 16, 2024 (v1.8)
-	+ Added New Action: Get Member Groups
-* November 12, 2024 (v1.9)
-    + Added New Action: Reset User Password
-+ January 3, 2025 (v1.10)
-    + Added New Action:
-      + List Of Group Members
-      + Remove Member From Group
-* April 27, 2026 (v1.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* May 7, 2026 (v1.12) - Added New Action: Reset User MFA
-* May 7, 2026 (v1.14) - Fixed an issue in the Reset User Password and Remove Member From Group actions that caused errors when processing the response.
-* July 31, 2026 (v1.15)
-    + Added New Actions:
-      + Confirm User Compromised
-      + Dismiss Risky User
-      + Enable User
-      + Get Risky User
-      + List Risky Users
-    + Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.
-* September 3, 2026 (v1.17)
-    + Added Delegated (Device Code Flow) authentication support alongside existing Application (Client Credentials) auth.
-    + Added New Actions (Delegated auth only):
-      + Initiate Delegated Auth
-      + Exchange Device Code
-      + Reset User Password With Writeback
-    + Added new integration resource fields: Authentication Type, Delegated Refresh Token.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.17 | September 3, 2026 | <ul><li>Added Delegated (Device Code Flow) authentication support alongside existing Application (Client Credentials) auth.</li><li>Added New Actions (Delegated auth only): Initiate Delegated Auth, Exchange Device Code, Reset User Password With Writeback.</li><li>Added new integration resource fields: Authentication Type, Delegated Refresh Token.</li></ul> |
+| v1.15 | July 31, 2026 | <ul><li>Added New Actions: Confirm User Compromised, Dismiss Risky User, Enable User, Get Risky User, List Risky Users.</li><li>Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.</li></ul> |
+| v1.14 | May 7, 2026 | Fixed an issue in the Reset User Password and Remove Member From Group actions that caused errors when processing the response. |
+| v1.12 | May 7, 2026 | Added New Action: Reset User MFA |
+| v1.11 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.10 | January 3, 2025 | Added New Action: List Of Group Members, Remove Member From Group |
+| v1.9 | November 12, 2024 | Added New Action: Reset User Password |
+| v1.8 | January 16, 2024 | Added New Action: Get Member Groups |
+| v1.7 | September 19, 2023 | Versioning |
+| v1.6 | August 31, 2023 | Added new actions: List Devices, Disable User |
+| v1.5 | August 25, 2023 | Added New Action **Revoke Sign In Sessions** |
+| v1.4 | June 26, 2023 | Changed multiline hints to single line |
+| v1.3 | April 28, 2023 | <ul><li>Updated integration (updated the integration fields with environmental variables and improved error handling).</li><li>Removed action **Filter Users** as we already have a similar **List Users** action.</li><li>Changed a few action types from Containment to Enrichment.</li><li>Added New Action **List Groups**.</li></ul> |
+| v1.2 | November 10, 2022 | New Action: Get Manager |
+| — | March 11, 2022 | Logo |
+| — | October 7, 2021 | First upload |

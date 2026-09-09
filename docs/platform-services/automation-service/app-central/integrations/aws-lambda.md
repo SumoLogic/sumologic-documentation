@@ -68,7 +68,9 @@ lambda:InvokeFunction
 
 ## Change Log
 
-* August 14, 2026 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | August 14, 2026 | First upload |
 
 ## Additional resources
 
