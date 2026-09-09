@@ -2,7 +2,10 @@
 id: fillmissing
 title: fillmissing Search Operator
 sidebar_label: fillmissing
+description: Use the fillmissing operator to ensure specific groups appear in query output even when they contain no data.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -22,7 +25,7 @@ The `fillmissing` operator allows you to define generators over the fields in th
 
 You can define multiple generators, which enumerate tuples for every combination of the values enumerated by each of the generators (such as the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product)). For example, if you used the following query:
 
-```sql
+```sumo
 | fillmissing values("a1", "a2") in A,
               values("b1") in B,
               values("c1", "c2", "c3") in C
@@ -74,9 +77,7 @@ The fillmissing operator allows generators to enumerate up to 10,000 combination
 
 This section describes the syntax for the `fillmissing` operator.
 
-```sql
-fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpecs> ] [ takeLast ]
-```
+`fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpecs> ] [ takeLast ]`
 
 * The `keyFieldGenerator` generates key fields that the operator then references to ensure all specified combinations of values are present. Any missing values are filled based on the specified `nonKeyFieldSpecs`, one for each key field. Two generators are supported:
 
@@ -116,19 +117,19 @@ Notice also that for the timeslice generator, the key field name is optional
 
 <TabItem value="tab1">
 
-```sql
+```sumo
 login
 | timeslice 15m
 | count by _timeslice
 | sort by _timeslice
 ```
 
-![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example-1-without.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example-1-without.png')} alt="Fillmissing example 1 without" style={{border: '1px solid gray'}} width="300" />
 
 </TabItem>
 <TabItem value="tab2">
 
-```sql
+```sumo
 login
 | timeslice 15m
 | count by _timeslice
@@ -136,7 +137,7 @@ login
 | sort by _timeslice
 ```
 
-![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example1-with.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example1-with.png')} alt="Fillmissing example1 with" style={{border: '1px solid gray'}} width="300" />
 
 </TabItem>
 </Tabs>
@@ -158,24 +159,24 @@ Notice also how we changed the default value of `_count` from 0 to -1.
 
 <TabItem value="tab3">
 
-```sql
+```sumo
 login
 | count by type
 ```
 
-![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example2-without.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example2-without.png')} alt="Fillmissing example 1 without" style={{border: '1px solid gray'}} width="200" />
 
 </TabItem>
 <TabItem value="tab4">
 
-```sql
+```sumo
 	login
 | count by type
 | fillmissing values("web", "api", "internal") in type
   with -1 for _count
 ```
 
-![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example2-with.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example2-with.png')} alt="Fillmissing example 1 with" style={{border: '1px solid gray'}} width="200" />
 
 </TabItem>
 </Tabs>
@@ -184,7 +185,7 @@ login
 
 The all option uses all the distinct values for the field from the query results without requiring you to enumerate the values of the field manually.
 
-```sql
+```sumo
 _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 | timeslice 1m
 | count by _timeslice, sweets
@@ -194,7 +195,7 @@ _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 
 This query provides the following results:
 
-![all option with transpose.png](/img/search/searchquerylanguage/search-operators/all-option-with-transpose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/all-option-with-transpose.png')} alt="All option with transpose" style={{border: '1px solid gray'}} width="400" />
 
 ### Multiple generators and transpose
 
@@ -211,7 +212,7 @@ This example shows how multiple generators can be used to enumerate every combin
 
 <TabItem value="tab1">
 
-```sql
+```sumo
 login
 | parse "Completed in * ms." as latency
 | timeslice 15m
@@ -219,12 +220,12 @@ login
 | transpose row _timeslice column type
 ```
 
-![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example3-none.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example3-none.png')} alt="Fillmissing example 1 without" style={{border: '1px solid gray'}} width="400" />
 
 </TabItem>
 <TabItem value="tab2">
 
-```sql
+```sumo
 login
 | parse "Completed in * ms." as latency
 | timeslice 15m
@@ -234,14 +235,14 @@ login
 | transpose row _timeslice column type
 ```
 
-![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example3-before.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/fillmissing-example3-before.png')} alt="Fillmissing example 1 with" style={{border: '1px solid gray'}} width="400" />
 
 </TabItem>
 </Tabs>
 
 Note that in this simple example, you can achieve a similar effect without the need to specify all the expected values for the `type` field, by applying the `fillmissing` operator after the `transpose`, like this:
 
-```sql
+```sumo
 login
 | parse "Completed in * ms." as latency
 | timeslice 15m
@@ -254,7 +255,7 @@ However, the filled-in fields will always be null (instead of 0 like in the prev
 
 ### Takelast option
 
-```sql
+```sumo
 _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 | timeslice 1m
 | count by _timeslice, sweets
@@ -264,4 +265,4 @@ _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 
 This query provides the following results:
 
-![takeLast with transpose.png](/img/search/searchquerylanguage/search-operators/takeLast-with-transpose.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/takeLast-with-transpose.png')} alt="Takelast option with transpose" style={{border: '1px solid gray'}} width="400" />

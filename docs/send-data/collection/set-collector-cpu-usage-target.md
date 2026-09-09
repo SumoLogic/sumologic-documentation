@@ -4,6 +4,8 @@ title: Set a Collector CPU Usage Target
 description: Set a CPU Target to limit the amount of CPU processing a Collector uses, if required.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 An installed collector uses all CPU processing resources available on a machine. Most of the time CPU processing issues don’t arise, but if a lot of log data is being generated, or if you need to protect other processes running on the machine where the collector is installed, you can choose to set a CPU target to limit the amount of CPU processing a collector uses. This option is applied only to local or remote file sources.
 
 Once you have set a CPU target, if a collector hits the target, collection is slowed. Logs are still collected, but there may be delays in ingesting new data. You may notice a delay in search results.
@@ -14,7 +16,7 @@ To set a CPU target:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Click the collector name, or click the **Edit** link to the right of the collector name.
 1. Click **Advanced**.
-1. Choose an option from the **CPU Target** menu, then click **Save**.<br/> ![cpu target option](/img/collector/cpu-target-options.png)
+1. Choose an option from the **CPU Target** menu, then click **Save**.<br/><img src={useBaseUrl('img/collector/cpu-target-options.png')} alt="CPU target option" style={{border: '1px solid gray'}} width="600" />
 
 ## When should I choose a lower target?
 

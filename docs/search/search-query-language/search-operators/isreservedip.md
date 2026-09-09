@@ -2,18 +2,18 @@
 id: isreservedip
 title: isReservedIP Search Operator
 sidebar_label: isReservedIP
+description: Use the isReservedIP operator to check if an IPv4 address is reserved as defined by RFC 5735 and return a boolean result.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `isReservedIP` operator checks if an IPv4 address is reserved as defined by [RFC 5735](https://tools.ietf.org/html/rfc5735) and returns a boolean.
 
 ## Syntax
 
-```sql
-isReservedIP("<IPv4_string>") as <field>
-```
-```sql
-isReservedIP(<IPv4_string_field>) [as <field>]
-```
+`isReservedIP("<IPv4_string>") as <field>`
+
+`isReservedIP(<IPv4_string_field>) [as <field>]`
 
 ## Rules
 
@@ -21,29 +21,29 @@ isReservedIP(<IPv4_string_field>) [as <field>]
 * Invalid IPv4 addresses are dropped from the results.
 
 The following warning is shown when results are dropped or an IPv6 address is detected:  
-    
-![isprivateip operator warning for dropped invalid ip addresses.png](/img/search/searchquerylanguage/search-operators/isprivateip-dropped-warning.png)
+
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/isprivateip-dropped-warning.png')} alt="isprivateip operator warning for dropped invalid ip addresses" style={{border: '1px solid gray'}} width="200" />
 
 ## Examples
 
-```sql
+```sumo
 | isReservedIP(dest_host)
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isReservedIP("127.0.0.0") as isReserved
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isReservedIP("169.254.0.0") as isReserved
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isReservedIP("192.0.0.0") as isReserved
 ```

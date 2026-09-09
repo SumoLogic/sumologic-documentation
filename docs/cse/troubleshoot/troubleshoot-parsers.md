@@ -42,7 +42,7 @@ Many [Cloud-To-Cloud (C2C)](/docs/send-data/hosted-collectors/cloud-to-cloud-int
 Other methods depend upon legacy methods which bypass parsers and are generally not recommended. These include:
 
 * Setting `_siemForward` without a parser.
-   * For structured logs, this will use a Sumo Logic [ingest mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping/) and has limited options for specific parsing or relies on setting mapping metadata in fields or via a a field extraction rule.
+   * For structured logs, this will use a Sumo Logic [ingest mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping/) and has limited options for specific parsing or relies on setting mapping metadata in fields or via a field extraction rule.
    * For unstructured logs, this will utilize legacy Grok parsers which are approaching end-of-life and are not maintained outside of critical bug fixes.
 * Older cloud-to-cloud sources set `_siemForward` and mapper metadata fields within the cloud-to-cloud source.
 
@@ -70,7 +70,7 @@ The [Enterprise Audit - Cloud SIEM app](/docs/integrations/sumo-apps/cse/) provi
 Common failure types:
 * **Parser failures**. Include parser path and specific parsing error.
 * **Mapper failures**. Usually mention mapper or mapping issues.
-* **Mixed failures**. May indicate parser output doesn't match mapper expectations.
+* **Mixed failures**. May indicate parser output does not match mapper expectations.
 
 ### Investigate failed records
  
@@ -128,7 +128,7 @@ With the error(s) identified, pivot to the raw message(s) for further troublesho
 
 If you have identified a log message that should be parsed by an existing parser (the format is right, there is a clear security use case, and so on) then it helps to understand the structure of the parser first to begin troubleshooting.
 
-Some parsers are very simple (most often structured log formats):
+Some parsers are simple (most often structured log formats):
 * A format is defined.
 * Parser expects mapping metadata and where they come from to be static or come from the same templated key value pair in the log.
 * Parser expects time parsing to be formulated using a single attribute and for time to be in a single format.
@@ -221,7 +221,7 @@ Following are some ways to gather samples.
 #### Search for message IDs
 
 Gather a sample by searching for the logs that are failing to parse using the identified `_messageId`(s):
-```
+```sumo
 _sourceCategory=<your/source/category>
 | where _messageId in (<messageId1>,<messageId2>,<etc.>)
 ```
@@ -229,7 +229,7 @@ _sourceCategory=<your/source/category>
 #### Identify an event ID
 
 If an entire source is failing to parse because it is not presently supported out-of-the-box, gather a sample by first identifying a likely event ID:
-```
+```sumo
 _sourceCategory=<your/source/category> 
 | fields eventID
 | first(_raw) by eventID
@@ -241,7 +241,7 @@ Utilizing the first operator lets you cut down on extraneous samples. It may be 
 #### Gather failing event IDs
 
 If a particular event ID or IDs as set in the parser using `MAPPER:event_id` are failing, gather the failing event IDs. Construct a search query using the failing event IDs and gather unique examples of each `_raw` per event ID:
-```
+```sumo
 _sourceCategory=<your/source/category>
 | fields eventID
 | where eventID in ("list","of","eventIDs")

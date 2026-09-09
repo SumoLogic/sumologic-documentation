@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic Pusher integr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/pusher-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/pusher-logo.png')} alt="Pusher icon" width="50"/>
 
 Pusher is a real-time messaging and communication platform that simplifies adding live features to web and mobile applications, enabling instant updates, notifications, and interactive functionalities through WebSocket connections. You can use a webhook in the Pusher platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor channel existence, presence status, client events, deferred actions, cache channels, and subscription counts in Sumo Logic. For more details, refer to the [Pusher Documentation](https://pusher.com/docs/).
 
@@ -47,7 +47,7 @@ Follow the below steps to configure the Pusher webhook.
     - **Event type**. Select specific event type you want the webhook to trigger for.
 6. Click **Save**.
 7. Verify Pusher events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/pusher
   ```
 

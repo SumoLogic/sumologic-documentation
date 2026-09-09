@@ -22,7 +22,7 @@ Coverage data is updated on the page once a day. To determine your coverage, the
 * To run APIs to get information on coverage, see [MITRE ATT&CK coverage APIs](#mitre-attck-coverage-apis).
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer.
 
@@ -185,7 +185,7 @@ Select the values to filter:
 
 MITRE ATT&CK coverage events are recorded in the System Event Index. To query for MITRE ATT&CK events, run this query:
 
-```
+```sumo
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage
 ```
 

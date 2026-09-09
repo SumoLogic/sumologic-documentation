@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudTPU.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudTPU.png')} alt="Google Cloud TPU icon" width="50"/>
 
 Tensor Processing Units (TPUs) are Google's custom developed Application Specific Integrated Circuits (ASICs) used to accelerate machine learning workloads. For more details, refer to the [GCP documentation](https://cloud.google.com/tpu/docs/intro-to-tpu).
 

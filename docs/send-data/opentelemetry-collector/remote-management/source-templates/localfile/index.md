@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/>
 
 The Local File source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure your logs are collected and sent to Sumo Logic.
 
@@ -54,6 +54,10 @@ In this step, you will configure the yaml required for Local File collection. Be
 - **DenyList**. Provide path expression describing the files to be excluded.
 - **Collection should begin from**. Defines where will the collection of the logs start from. Possible values are "End of File" and "Beginning of File".
 - **Detect messages spanning multiple lines**. You can enable this option when dealing with logs which span over multiple lines. On enabling this option you will need to specify **Boundary regex location** where you can specify if the expression defines end or start of the log line and **Expression to match message boundary** where you will define the expression.
+
+:::note
+Property `fingerprint_size` (the number of bytes with which to identify a file) is set to 2KB. Details about this property can be found [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver#configuration).
+:::
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

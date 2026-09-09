@@ -25,19 +25,19 @@ Additional labels for pre-release and build metadata are available as extensions
 
 There is an **Upgrade Sources** link on the Collection page that shows a table of major upgrades available.
 
-![upgrade collectors button.png](/img/send-data/upgrade-collectors-button.png)
+<img src={useBaseUrl('img/send-data/upgrade-collectors-button.png')} alt="Upgrade collectors button" style={{border: '1px solid gray'}} width="800" />
 
 A table with Sources available to upgrade is displayed when you click **Upgrade Sources** on the Collection page.
 
-![versions table.png](/img/send-data/versions-table.png)
+<img src={useBaseUrl('img/send-data/versions-table.png')} alt="Sources available" style={{border: '1px solid gray'}} width="800" />
 
 Since these are major versions they do require you to take some action. You can hover and select the upgrade icon to open the Source in edit mode and provide the required information for the upgrade.
 
-![upgrade button.png](/img/send-data/upgrade-button.png)
+<img src={useBaseUrl('img/send-data/upgrade-button.png')} alt="Upgrade button" style={{border: '1px solid gray'}} width="400" />
 
 The Source will show the required upgrade instructions at the top of the panel. The following screenshot shows that the Source requires you to fill out a new field called **format**.
 
-![major version upgrade requirements.png](/img/send-data/major-version-upgrade-requirements.png)
+<img src={useBaseUrl('img/send-data/major-version-upgrade-requirements.png')} alt="Major version upgrade requirements" style={{border: '1px solid gray'}} width="400" />
 
 Once you complete the upgrade instructions you can select the **Upgrade** button to initiate the version upgrade.
 
@@ -81,7 +81,7 @@ The Audit Event Index provides event logs in JSON on activities from your accou
 
 This query parses the versions from update events and only returns ones that changed. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](/docs/search/get-started-with-search/search-basics/comments-search-queries) `//` from the scope of the query.
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=collection _sourceName=SourceUpdated //"<Name of Source>"
 | json "to.schemaRef.version" as to_version
 | json "from.schemaRef.version" as from_version
@@ -171,7 +171,7 @@ Returns the following
 
 This query parses the versions and states from update events and only returns ones that have a value of `upgrading` as the `from state`. Minor upgrade events show a state change from `upgrading` to `pending`. The version changes are not tracked in one event log so the to and from versions will be the same. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](/docs/search/get-started-with-search/search-basics/comments-search-queries) `//` from the scope of the query.
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceName=SourceUpdated //"<Name of Source>"
 | json "from.state.state" as from_state
 | where from_state="Upgrading"

@@ -26,7 +26,7 @@ Any inventory source–or any log source, for that matter–can be used to popul
 
 In this step, you create the lookup table schema.
 
-As an example, assume that you are creating a table that will be used to normalize usernames in email format (jdoe@acme.com) to an login name format (john.doe), to be populated by data from Active Directory.  
+As an example, assume that you are creating a table that will be used to normalize usernames in email format (`jdoe@acme.com`) to a login name format (john.doe), to be populated by data from Active Directory.  
 
 In this case we create a table with two fields: `mail` (email address) and `samaccountname` (login name).   
 
@@ -46,11 +46,11 @@ To create the lookup table schema:
 1. **Set a TTL (Time to Live) for table entries**? Click **No**.
 1. **Choose a size limit handling option**. This option controls how additions to the Lookup table will be handled when it reaches its size limit (100 MB). Click **Delete Old Data.**
 1. **Create Lookup Table** Click **Create Schema only**.
-1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.) <br/><img src={useBaseUrl('img/cse/schema.png')} alt="Schema settings" style={{border: '1px solid gray'}} width="600"/>
+1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.) <br/><img src={useBaseUrl('img/cse/schema.png')} alt="Schema settings" style={{border: '1px solid gray'}} width="800"/>
 1. For the first column, enter:
    * **Fields**. Enter *mail*.
    * **Value Type**. Leave the default, *string*, selected.
-   * **Primary Key Field(s)**. Click the **Yes** checkbox.
+   * **Primary Key Field(s)**. Click the **Yes** check box.
 1. For the second column, enter:
    * **Fields**. Enter *samaccountname*.
    * **Value Type**. Leave the default, *string,* selected.
@@ -62,7 +62,7 @@ In this step you create an aggregate search that returns the fields required for
 
 For our use case, the query is:
 
-```sql
+```sumo
 _sourceCategory="/windows/inventory" and _collector="ad-collector"
 | where !isBlank(mail) and !isBlank(samaccountname)
 | count by mail, samaccountname
@@ -85,7 +85,7 @@ Be sure to choose “Email” as the **Alert type**. (*Don’t* select **Save to
 
 To save and schedule the search:
 
-1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot kebab menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as on dropdown list" style={{border: '1px solid gray'}} width="600"/>
+1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot kebab menu in the query area. <br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as on dropdown list" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Save Item** popup:
    * **Name**. Enter a name for the query.
    * **Time range**. Select a time range for the query.

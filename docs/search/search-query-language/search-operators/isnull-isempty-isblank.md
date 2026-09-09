@@ -2,7 +2,10 @@
 id: isnull-isempty-isblank
 title: isNull, isEmpty, isBlank Search Operators
 sidebar_label: isNull, isEmpty, isBlank
+description: Use the isNull, isEmpty, and isBlank operators to check string field values for null or empty states.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 * The `isNull` operator checks a string and returns a boolean value: true if the string is null, or false if the string is not null.
 * The `isEmpty` operator checks if a string contains no characters and is only whitespace.
@@ -63,7 +66,7 @@ In this situation, no `country_code` will be associated with the IP address and 
 
 Running a query like:
 
-```sql
+```sumo
 | parse "remote_ip=*]" as remote_ip
 | lookup country_code from geo://location on ip = remote_ip
 | if (isNull(country_code), "unknown", country_code) as country_code
@@ -71,13 +74,13 @@ Running a query like:
 
 uses the `isNull` operator to check the field value of `country_code` and if it returns `true`, has the [`if` operator](/docs/search/search-query-language/search-operators/if) replace the value with the string `unknown`:
 
-![Screenshot of Sumo Logic log search results with columns for time, country code, remote IP, and message](/img/search/searchquerylanguage/search-operators/isNull.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/isNull.png')} alt="Screenshot of Sumo Logic log search results with columns for time, country code, remote IP, and message" style={{border: '1px solid gray'}} width="500" />
 
 ### Use the where operator to check for null values
 
 To check for null values from a lookup operation, use a query with [`where`](where.md), like:
 
-```sql
+```sumo
 | parse "example_ip=*]" as ip
 | lookup country_name, city from geo://location on ip = ip
 | where isNull(country_name)

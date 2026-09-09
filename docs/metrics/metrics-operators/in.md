@@ -2,6 +2,7 @@
 id: in
 title: in Metrics Operator
 sidebar_label: in
+description: Use the in metrics operator in query selectors as shorthand for multiple OR conditions, simplifying queries that check if a field matches any value in a list.
 ---
 
 

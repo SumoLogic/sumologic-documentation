@@ -1,0 +1,17 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+        "name": "Databricks Audit Logs",
+        "baseURL": "https://<workspace-name>.databricks.com",
+        "warehouseId": "bf7gs36gfr54392c",
+      "clientId": "bf7gs36gfs-r54392c-lkdsdas",
+        "clientSecret": "wdwxxxxxqwedwedxxxxxqewdxxxxxxqwedxxxx",
+        "pollingInterval": "5m"
+      },
+      "schemaRef": {
+        "type": "Databricks Audit Logs"
+      },
+      "sourceType": "Universal"
+   }
+}  

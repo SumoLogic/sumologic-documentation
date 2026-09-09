@@ -1,7 +1,7 @@
 ---
 id: share-dashboard-outside-org
-title: Share a dashboard outside your organization
-sidebar_label: Share a dashboard outside your org
+title: Share a Dashboard Outside Your Organization
+sidebar_label: Share a Dashboard Outside Your Organization
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ This page has information about sharing dashboards with users who do not have a 
 Dashboards often contain sensitive information, so you usually share them only with people within your organization. But sometimes you may want to allow people outside your organization to view a dashboard without logging in. For example, if your dashboard is displayed on a monitor in your operations center or if you want to send an external person a link to a dashboard that reveals a critical problem.
 
 :::note
-Sharing outside an organization is always view-only and need auto-refresh enabled. Also, if this is the first time that auto-refresh is being enabled, it may take some time to backfill the data depending on your queries and timeranges. See [About Dashboards](about.md).
+Sharing outside an organization is always view-only.
 :::
 
 You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist. 
@@ -47,9 +47,9 @@ Administrator privileges are required to enable the service allowlist.
 
 1. Go to your **Library** and search for the dashboard you want to share.
 1. Right-click the dashboard name in the resulting list.
-1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="share-option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click on the share icon next to the dashboard title.  <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="share-option_2" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="Share option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click on the share icon next to the dashboard title.  <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="Share option 2" style={{border: '1px solid gray'}} width="400"/>
 1.  The Share Dashboard dialog appears.
-1.  Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="share-outside" width="800"/>
+1.  Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="Share outside" width="800"/>
 1.  If you want viewers to see the current time range in the URL, toggle the **Include current time range in the URL** option.
 1.  If you want viewers to see the current variable values in the URL, toggle the **Include current variable values in the URL** option.
 1.  Toggle the **Public Dashboard** on.
@@ -59,10 +59,10 @@ The URL that external users can use to access the dashboard appears under the **
 
 ## Restrictions and limitations for external sharing 
 
-* Sharing outside an organization is always view-only and you must enable auto-refresh. When enabling auto-refresh for the first time, it may take some time to backfill the data, depending on your queries and time ranges. See [About Dashboards](about.md).
+* Sharing outside an organization is always view-only.
 * Panels that are incompatible with auto-refresh will only show data for viewers who have a login.
 * Panels must use relative time ranges (such as Last 15 Minutes, Last 24 Hours). Absolute time ranges are not currently supported.
-* Unauthenticated viewers will see dashboards with auto-refresh enabled as well as default time range and default template variable values applied. To share a dashboard with a different set of template variable values, create a copy of the dashboard and set the time range and variable value as desired.
+* Unauthenticated viewers will see dashboards with default time range and default template variable values applied. To share a dashboard with a different set of template variable values, create a copy of the dashboard and set the time range and variable value as desired.
 * If **User's data access level** is enabled for a dashboard, you cannot share it outside your organization.
 * Spans, Traces, and Service maps panels are not supported in public dashboards.
 
@@ -89,14 +89,14 @@ When someone views a dashboard without signing in, Sumo Logic logs the following
 
 You can use [Scheduled Searches](/docs/alerts/scheduled-searches) to create alerts and reports on sharing dashboards outside your organization.
 
-```sql title="Scheduled search report of dashboard views"
+```sumo title="Scheduled search report of dashboard views"
 _index=sumologic_audit and _sourceName=REPORT "Viewed Report"
 | parse "Name=*, Id=Some(*)," as dashboardName,dashboardId
 | parse "URL=*, ViewerIP=*" as url,viewerip
 | count
 ```
 
-```sql title="Visualization of dashboard views by geography"
+```sumo title="Visualization of dashboard views by geography"
 _index=sumologic_audit and _sourceName=REPORT "Viewed Report"
 | parse "Name=*, Id=Some(*)," as dashboardName,dashboardId
 | parse "URL=*, ViewerIP=*" as url,viewerip

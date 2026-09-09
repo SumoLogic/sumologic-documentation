@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatq.png')} alt="threatq" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 The ThreatQ threat intelligence platform, automates the aggregation, operationalisation and use of threat intelligence across the entire security infrastructure, supporting multiple use cases, increasing security effectiveness, and accelerating security operations. Threat detection and response.
 
@@ -64,3 +64,4 @@ For information about ThreatQ, see [ThreatQ documentation](https://docs.threatq.
 
 * March 4, 2022 - First upload
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

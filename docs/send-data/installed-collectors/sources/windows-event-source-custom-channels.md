@@ -1,9 +1,10 @@
 ---
 id: windows-event-source-custom-channels
 title: Windows Event Source Custom Channels
-description: Find Windows event channels to collect with a Local Windows Event Source.
+description: Find and configure Windows event channels for a Local or Remote Windows Event Source using PowerShell to list available channels and record counts.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To configure a Local or Remote Windows Event Source, you must identify the channels to collect from. This section explains how to obtain this list of channel names from your systems, and describes channels which the Sumo Logic collector cannot process.
 
@@ -11,11 +12,11 @@ To configure a Local or Remote Windows Event Source, you must identify the chan
 
 To find the available event channels for collection, execute the following PowerShell commands from an administrator PowerShell prompt. Then copy and paste the channel names into Source's Custom Events Channels text box.
 
-![img](/img/send-data/window-custom-channels.png)
+<img src={useBaseUrl('img/send-data/window-custom-channels.png')} alt=" Custom Events Channels text box" style={{border: '1px solid gray'}} width="500" />
 
 Enter the following command into PowerShell:
 
-```
+```sumo
 # to see channels listed in the standard order
 Get-WinEvent -ListLog *
 

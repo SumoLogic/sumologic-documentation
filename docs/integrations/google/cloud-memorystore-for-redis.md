@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudMemorystoreforRedis.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudMemorystoreforRedis.png')} alt="Google Cloud Memorystore for Redis icon" width="50"/>
 
 Memorystore for Redis is a fully managed service that is powered by the Redis in-memory data store, to build application caches that provide sub-millisecond data access. For more details, refer to the [GCP documentation](https://cloud.google.com/memorystore/docs/redis/redis-overview).
 

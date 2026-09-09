@@ -7,7 +7,7 @@ description: Allows you to analyze and correlate Akamai data with origin data.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="100"/>
 
 The Sumo Logic App for Akamai Cloud Monitor allows you to analyze and correlate Akamai data with origin data in order to improve availability and performance of applications, improve end-user experience, gain deeper user insights, and enforce rigorous security controls. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -87,7 +87,7 @@ For information about Akamai Cloud Monitor log formats, contact [Akamai Support]
 
 ### Sample queries
 
-```sql title="Top Error-causing URLs"
+```sumo title="Top Error-causing URLs"
 _sourceCategory=akamai 50?
 | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status
 | urldecode(path) as path
@@ -97,7 +97,7 @@ _sourceCategory=akamai 50?
 | sort by errors
 ```
 
-```sql title="Cache Performance"
+```sumo title="Cache Performance"
 _sourceCategory=akamai cacheStatus
 | parse "\"cacheStatus\":\"*\"" as status
 | where !(status="")
@@ -106,7 +106,7 @@ _sourceCategory=akamai cacheStatus
 ```
 
 
-```sql title="Top Denials by Host"
+```sumo title="Top Denials by Host"
 _sourceCategory=akamai waf denyRules reqHost
 | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host
 | where deny != ""
@@ -175,7 +175,7 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
     * **Parse Expression.** Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
 1. Click **Add**.
 
-```sql title="FER for Akamai Cloud Monitor"
+```sumo title="FER for Akamai Cloud Monitor"
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
 | parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```

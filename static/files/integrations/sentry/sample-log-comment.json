@@ -1,0 +1,18 @@
+{
+   "action": "created",
+   "installation": {
+      "uuid": "04ff0c7e-ead5-4b0a-93d6-5b571468239d"
+   },
+   "data": {
+      "comment_id": 17524883061,
+      "issue_id": 1752488306794,
+      "project_slug": "ReactNest",
+      "timestamp": "2025-07-14T15:48:26+053078+00:00",
+      "comment": "Seems related to state updates outside render cycle"
+   },
+   "actor": {
+      "type": "user",
+      "id": 3821621,
+      "name": "Emily Carter"
+   }
+}

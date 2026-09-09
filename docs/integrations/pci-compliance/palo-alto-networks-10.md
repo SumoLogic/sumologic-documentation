@@ -6,7 +6,7 @@ description: The Sumo Logic app for PCI Compliance for Palo Alto Networks 10 off
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
 
 The Sumo Logic app for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
@@ -107,7 +107,7 @@ This example query is from the **Allowed Network Activity by Direction** panel o
 <details>
 <summary>Click to expand</summary>
 
-```sql
+```sumo
 _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, \
 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, \

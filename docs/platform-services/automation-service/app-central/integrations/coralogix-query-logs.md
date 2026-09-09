@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/coralogix-query-logs.png')} alt="coralogix-query-logs" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/coralogix-query-logs.png')} alt="Coralogix Query Logs icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Coralogix is rebuilding the path to observability using a real-time streaming analytics pipeline that provides monitoring, visualisation, and alerting capabilities without the burden of indexing.
 
@@ -21,7 +21,7 @@ Generate and then copy the [API Key](https://coralogix.com/docs/user-guides/acco
 
     `https://<teamname>.coralogix.com/#/integration/apikey` 
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-1.png')} style={{border:'1px solid gray'}} alt="coralogix-query-logs" width="800"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-query-logs/coralogix-query-logs-1.png')} style={{border:'1px solid gray'}} alt="Coralogix Query Logs send log confirmation" width="800"/>
 
 ## Configure Coralogix - Query Logs in Automation Service and Cloud SOAR
 
@@ -57,3 +57,4 @@ For information about Coralogix - Query Logs, see [Coralogix documentation](http
 
 * Aug 15, 2022 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

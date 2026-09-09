@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/urlhaus-abuse.png')} alt="urlscan.io" width="80"/>
 
-***Version: 1.0  
-Updated: Feb 20, 2023***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 Query domains, URLs, and hash values with URLhaus.
 
@@ -44,3 +44,4 @@ For information about URLhaus, see [URLhaus documentation](https://urlhaus.abuse
 * April 1, 2019 - First upload
 * February 20, 2023 (v1.1)
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
+* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

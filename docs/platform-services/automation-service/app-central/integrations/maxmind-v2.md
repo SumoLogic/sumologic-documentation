@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/maxmind-v2.png')} alt="maxmind-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/maxmind-v2.png')} alt="MaxMind V2 icon" width="100"/>
 
-***Version: 2.0  
-Updated: Mar 29, 2023***
+***Version: 2.1  
+Updated: April 30, 2026***
 
 MaxMind provides IP intelligence through the GeoIP brand. Over 5,000 companies use GeoIP data to locate their Internet visitors and show them relevant content and ads, perform analytics, enforce digital rights, and efficiently route Internet traffic.
 
@@ -43,3 +43,4 @@ For information about MaxMind, see [MaxMind documentation](https://support.maxmi
 ## Change Log
 
 * March 29, 2023 - First upload
+* April 30, 2026 (v2.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

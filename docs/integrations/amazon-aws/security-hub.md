@@ -6,7 +6,7 @@ description: The Sumo Logic app for AWS Security Hub CSPM leverages findings dat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="Security QS icon" width="50"/>
 
 :::sumo Coming soon: New integration with AWS Security Hub CSPM public preview
 In order to give our shared clients even more context-rich and prioritized security discoveries, Sumo Logic is expanding its integration as a launch partner for the new AWS Security Hub CSPM. This new feature will enable security teams to concentrate on the most important threats to their cloud environments by enabling Sumo Logic to immediately ingest prioritized security results from AWS Security Hub CSPM.
@@ -71,7 +71,7 @@ The AWS Security Hub CSPM utilizes the [Amazon findings](https://docs.aws.amazon
 
 ### Sample queries
 
-```sql title="Findings by resource type and severity query"
+```sumo title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
 | json  "AwsAccountId", "Id", "GeneratorId", "ProductArn", "CreatedAt", "UpdatedAt", "Resources",
  "Severity.Normalized", "SourceUrl",
@@ -152,7 +152,7 @@ Each search result translates to one finding—only one resource per finding is 
 
 In the following example, the query generates a finding that there is direct external traffic to a secured port which violates one of the PCI requirement checks.
 
-```sql
+```sumo
 _sourceCategory=Labs/AWS/VPC ACCEPT (3306 or 5439 or 5432 or 1433 or 2638 or 5984)
 | json "message" as _rawvpc nodrop | if (_raw matches "{*", _rawvpc,_raw) as message
 | parse field=message "* * * * * * * * * * * * * *" as version,aws_account_id,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status

@@ -7,7 +7,7 @@ description: The ExtraHop RevealX 360 app for Sumo Logic provides security analy
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/extrahop-revealx-360-icon.png')} alt="extrahop-revealx-360-icon" width="150"/>
+<img src={useBaseUrl('img/send-data/extrahop-revealx-360-icon.png')} alt="Extrahop RevealX 360 icon" width="150"/>
 
 The ExtraHop RevealX 360 app offers powerful network detection and response capabilities, providing organisations with in-depth visibility into security threats throughout their environment. By centralizing detection data such as total detections, average risk scores, MITRE attack techniques, and destination device activity, this app allows security teams to quickly identify, prioritize, and investigate suspicious activities.
 
@@ -93,7 +93,7 @@ The Sumo Logic app for ExtraHop RevealX 360 ingests [detection events](https://d
 
 ## Sample queries
 
-```sql title="Total Detections"
+```sumo title="Total Detections"
 _sourceCategory=Labs/extraHop
 | json "id", "time", "url", "src.username", "risk_score", "mitre_techniques[*].name", "dst.device.name", "dst.device.macaddr", "dst.device.ipaddrs.[*]", "dst.ipaddr", "type", "title", "description", "recommended_factors", "categories_ids", "dst.hostname", "dst.role" as id, time, url, src_username, risk_score, mitre_techniques, dst_device_name, dst_device_mac_address, dst_device_ip_list, dst_device_ip_2, type, title, description, recommended_factors, categories_ids, dst_hostname, dst_role nodrop
 
@@ -107,23 +107,23 @@ _sourceCategory=Labs/extraHop
 | count
 ```
 
-## Setup
+## Setting up the collection
 
 ### Source configuration
 
 Follow the below steps to configure the Hosted Collector to receive ExtraHop RevealX 360 events:
 
 1. In the Sumo Logic portal, create a new [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) or use an existing one. Then add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
-2. Configure **Source Category** in the HTTP source - for example, `webhook/extrahop-revealx` - for the ExtraHop RevealX 360 integration.
-3. Copy and save the endpoint URL of the source.
+2. Configure **Source Category** in the HTTP source. Make a note of the Source Category and use the same while installing the app.
+3. When you are finished configuring the Source, copy and save the endpoint URL of the source.
 
 ### Vendor configuration
 
-Configure the webhook integration in ExtraHop RevealX 360 to send events to the Sumo Logic HTTP source. Once configured, it will be triggered each time the events occur within your Extrahop RevealX 360 account.
+Configure the webhook integration by [creating a notification rule](https://docs.extrahop.com/current/detections-create-notification-rule/) in the ExtraHop platform to send events to the Sumo Logic HTTP source.
 
-To configure the ExtraHop RevealX 360 webhook, refer to the [ExtraHop RevealX 360 Documentation](https://docs.extrahop.com/current/detections-create-notification-rule/).
+Make sure you use the endpoint URL of the HTTP source copied form the source configuration.
 
-### Installing the ExtraHop RevealX 360 app
+## Installing the ExtraHop RevealX 360 app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
@@ -141,7 +141,7 @@ The **ExtraHop RevealX 360 - Security** dashboard provides a comprehensive overv
 
 This dashboard helps security teams monitor detection trends, track changes in risk levels, and gain insights into the most frequently observed MITRE techniques, top destination devices, and key targets on the network. It also highlights detections linked to high-risk or embargoed geolocations, offering valuable context for prioritizing investigations.
 
-By consolidating these insights into a unified view, the dashboard enhances threat detection, supports more informed response actions, and strengthens defenses against evolving network-based attacks.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Extrahop+RevealX+360/Extrahop-RevealX-360-Security.png' alt="Extrahop-RevealX-360-Security" style={{border:'1px solid gray'}} />
+By consolidating these insights into a unified view, the dashboard enhances threat detection, supports more informed response actions, and strengthens defenses against evolving network-based attacks.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Extrahop+RevealX+360/Extrahop-RevealX-360-Security.png' alt="Extrahop RevealX 360 Security" style={{border:'1px solid gray'}} />
 
 ## Create monitors for ExtraHop RevealX 360 app
 

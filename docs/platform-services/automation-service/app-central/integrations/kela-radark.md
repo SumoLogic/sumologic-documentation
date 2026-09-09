@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kela-radark.png')} alt="kela-radark" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/kela-radark.png')} alt="Kela Radark icon" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 KELA's RADARK delivers automated threat intelligence, cultivating the targeted and contextualized insights that you need to stay ahead of attackers. Automatically monitor your environment and ensure that targeted threats are mitigated immediately to consistently maintain a strong security posture.
 
@@ -22,7 +22,7 @@ KELA's RADARK delivers automated threat intelligence, cultivating the targeted a
 
 1. Sign in **KELA RaDark** using your username and password.
 2. The API token can be generated through the RADARK UI, under the user menu - Generate Api Key.
-3. Make sure you copy and save the api token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-1.png')} style={{border:'1px solid gray'}} alt="kela-radark" width="600"/>
+3. Make sure you copy and save the api token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/kela-radark/kela-radark-1.png')} style={{border:'1px solid gray'}} alt="API token" width="600"/>
 
 ## Configure KELA RaDark in Automation Service and Cloud SOAR
 
@@ -52,3 +52,4 @@ For information about KELA RaDark, see [KELA documentation](https://docs.ke-la.c
 ## Change Log
 
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -83,14 +83,14 @@ Instead of relying on the `where` operator, filter the data using fields that ar
 
 **Not recommended approach:**
 
-```
+```sumo
 _sourceCategory=foo
 | where field_a="value_a"
 ```
 
 **Recommended approach:**
 
-```
+```sumo
 sourceCategory=foo and field_a=value_a
 ```
 
@@ -100,7 +100,7 @@ Adding the parsing terms in the source expression will help you enhance the sear
 
 **Not recommended approach:**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse "completed * action" as actionName
 | count by actionName
@@ -108,7 +108,7 @@ _sourceCategory=Prod/User/Eventlog
 
 **Recommended approach:**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog completed action
 | parse "completed * action" as actionName
 | count by actionName
@@ -120,7 +120,7 @@ While filtering the date, reduce the result set to the smallest possible size be
 
 **Not recommended approach:**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse "userName: *, " as user
 | count by user
@@ -129,7 +129,7 @@ _sourceCategory=Prod/User/Eventlog
 
 **Recommended approach:**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog userName
 | parse "userName: *, " as user
 | where user="john"
@@ -144,7 +144,7 @@ For example, let’s say you have a `sort` operator before an aggregation, but t
 
 **Not recommended approach:**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse "userName: *, " as user
 | parse "evenName: *, " as event
@@ -153,7 +153,7 @@ _sourceCategory=Prod/User/Eventlog
 
 **Recommended approach:**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse "userName: *, " as user
 | count by user
@@ -167,7 +167,7 @@ If the same operators are used multiple times in different levels of query, if p
 
     **Not recommended approach:**
 
-    ```
+    ```sumo
     _sourceCategory=Prod/User/Eventlog
     | parse "completed * action" as actionName
     | parse "action in * ms" as duration
@@ -176,7 +176,7 @@ If the same operators are used multiple times in different levels of query, if p
 
     **Recommended approach:**
 
-    ```
+    ```sumo
     _sourceCategory=Prod/User/Eventlog
     | parse "completed * action in * ms" as actionName, duration
     | pct(duration, 95) by actionName
@@ -186,7 +186,7 @@ If the same operators are used multiple times in different levels of query, if p
 
     **Not recommended approach:**
 
-    ```
+    ```sumo
     _sourceCategory=Prod/User/Eventlog
     | parse "completed * action" as actionName
     | where toLowerCase(actionName) = "logIn” or toLowerCase(actionName) matches "abc*” or toLowerCase(actionName) contains "xyz"
@@ -194,7 +194,7 @@ If the same operators are used multiple times in different levels of query, if p
 
     **Recommended approach:**
 
-    ```
+    ```sumo
     _sourceCategory=Prod/User/Eventlog
     | parse "completed * action" as actionName
     | toLowerCase(actionName) as actionNameLowered
@@ -210,7 +210,7 @@ Minimize the data processed by the `lookup` operator in the query, as lookup is 
 
 **Not recommended approach:**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse "completed * action in * ms" as actionName, duration
 | lookup actionType from path://"/Library/Users/myusername@sumologic.com/actionTypes" on actionName
@@ -220,7 +220,7 @@ _sourceCategory=Prod/User/Eventlog
 
 **Recommended approach (Option 1):**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse "completed * action in * ms" as actionName, duration
 | where actionName in ("login”, "logout”)
@@ -230,7 +230,7 @@ _sourceCategory=Prod/User/Eventlog
 
 **Recommended approach (Option 2):**
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse "completed * action in * ms" as actionName, duration
 | where actionName in ("login”, "logout”)
@@ -244,7 +244,7 @@ A parse `multi` statement causes a single log to produce multiple logs in the re
 
 For example, consider the below query where the assumption is that a single log line contains multiple users and multiple event names.
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse regex "userName: (?<user>[a-z-A-Z]+), " multi
 | parse regex "eventName: (?<event>[a-z-A-Z]+), " multi
@@ -252,7 +252,7 @@ _sourceCategory=Prod/User/Eventlog
 
 But if you write the query like that, it will generate a result for every combination of `userName` and `eventName` values. Now suppose you want to count by `eventName`, it will not give you the desired result, since a single `eventName` has been duplicated for every `userName` in the same log. So, the better query would be:
 
-```
+```sumo
 _sourceCategory=Prod/User/Eventlog
 | parse regex "userName: (?<user>[a-z-A-Z]+), eventName: (?<event>[a-z-A-Z]+), " multi
 ```

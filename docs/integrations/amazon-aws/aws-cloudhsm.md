@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS CloudHSM service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-cloudhsm-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-cloudhsm-logo.png')} alt="AWS CloudHSM icon" width="50"/>
 
 AWS CloudHSM provides customers with hardware security modules (HSMs) in the AWS Cloud. A hardware security module is a computing device that processes cryptographic operations and provides secure storage for cryptographic keys. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html).
 

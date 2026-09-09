@@ -3,7 +3,7 @@ id: transaction-operator
 title: Transaction Operator
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 No matter what type of data you are analyzing, from tracking website sign ups, to e-commerce data, to watching system activity across a distributed system, the transaction operator can be used in a variety of use cases. Ultimately, data is always ordered, at least by timestamp. But during analysis, the transaction operator can process otherwise unordered data and produce results using ordered data (data that has an ordered flow).
 
@@ -16,7 +16,7 @@ The transaction operator requires:
 
 ## Syntax
 
-```sql
+```sumo
 transaction on <field1> [, <field2>]... [fringe=<timespec>] with <states> results by [transactions | states | flow]
 ```
 
@@ -28,7 +28,7 @@ States act as matching statements, searching your log for that specific state. T
 
 you'd specify the state as a matching statement on the `sessionId` like this:
 
-```sql
+```sumo
 | transaction on sessionid with "* Starting session *" as init
 ```
 
@@ -49,13 +49,13 @@ Think of states as a way of using log events and fields in your logs to plot the
 
 Syntax:
 
-```sql
+```sumo
 "<match string>" [in <fieldName>] as <stateName>
 ```
 
 Example:
 
-```sql
+```sumo
 with "*LinkAccountAction category=Google*" as linkGoogle,
 with "*LinkAccountAction category=Facebook*" as linkFacebook,
 with "*LinkAccountAction category=LinkedIn*" as linkLinkedIn,
@@ -67,13 +67,13 @@ with "*LinkAccountAction category=Other*" as linkOther
 
 Syntax:
 
-```sql
+```sumo
 states <state1> [as <alias1>] [,<state2> [as <alias2>]]... [in <fieldName>]
 ```
 
 Example:
 
-```sql
+```sumo
 with states login, cart, checkout, shipping, shipping_method, billing, %"Labs/Apache/Access"
 ```
 
@@ -107,7 +107,7 @@ Below you will see two nearly identical queries. On the left, unordered data is 
 
 <TabItem value="tab1">
 
-```sql
+```sumo
 _sourceCategory=oursite
 | where !(user_agent matches "*Pingdom*")
 | where status_code = "200"
@@ -118,12 +118,12 @@ _sourceCategory=oursite
 | transaction on ip with states aboutus, company, blog, shopping, api in urlprefix
 ```
 
-![unordered transactiontable.png](/img/search/searchquerylanguage/transaction-analytics/unordered-transaction-table.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/unordered-transaction-table.png')} alt="Unordered transaction table" style={{border: '1px solid gray'}} width="800>" />
 
 </TabItem>
 <TabItem value="tab2">
 
-```sql
+```sumo
 _sourceCategory=oursite
 | where !(user_agent matches "*Pingdom*")
 | where status_code = "200"
@@ -135,7 +135,7 @@ _sourceCategory=oursite
 | count, max(latency) by fromstate, tostate
 ```
 
-![ordered flow diagram.png](/img/search/searchquerylanguage/transaction-analytics/ordered-flow-diagram.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/ordered-flow-diagram.png')} alt="Ordered flow diagram" style={{border: '1px solid gray'}} width="800" />
 
 </TabItem>
 </Tabs>
@@ -144,7 +144,7 @@ _sourceCategory=oursite
 
 **Loop backs** in the flow (order) of states are tracked and displayed as red lines looping over the respective states in the flow diagram. You can hover over the loops to view the number of occurrences respective states had returned to a previous state.
 
-![hover loop back.png](/img/search/searchquerylanguage/transaction-analytics/hover-loop-back.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/hover-loop-back.png')} alt="Hover loop back" style={{border: '1px solid gray'}} width="700" />
 
 ## Specifying a fringe cut-off
 
@@ -157,7 +157,7 @@ If `tw` is the time window for a query, then transactions that satisfy the fol
 
 **For example:**
 
-```sql
+```sumo
 ... | transaction on sessionid fringe=10m
 with "Starting session *" as init,
 with "Initiating countdown *" as countdown_start,
@@ -186,7 +186,7 @@ When you use the transaction operator, it requires one or more transaction IDs t
 
 In this example, using the browser sessionID as the transaction ID, we could define states for `countdown_start` and `countdown_done`:
 
-```sql
+```sumo
 ... | transaction on sessionid
 with "Starting session *" as init,
 with "Initiating countdown *" as countdown_start,
@@ -206,7 +206,7 @@ The fields are assigned a timestamp in milliseconds.
 
 For example, in the query:
 
-```sql
+```sumo
 _source=Syslog (New session) OR (Session deleted)
 | transaction on sessionid with "*New session*" as started, with "*Session deleted*" as ended
 | where started > 0
@@ -215,7 +215,7 @@ _source=Syslog (New session) OR (Session deleted)
 
 You reference the `_end_time` and `_start_time` fields to calculate the duration of the `sessionid`.
 
-![fields created by transaction.png](/img/search/searchquerylanguage/transaction-analytics/fields-created-by-transaction.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/fields-created-by-transaction.png')} alt="Fields created by transaction" style={{border: '1px solid gray'}} width="800" />
 
 ### Detecting a potential e-commerce failure
 
@@ -223,7 +223,7 @@ In this example, you'd track the states of your e-commerce site to see if there 
 
 Running a query similar to:
 
-```sql
+```sumo
 _sourceCategory=[sourceCategoryName]
 | parse regex "(?<ip>[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})" nodrop
 | transaction on ip
@@ -239,8 +239,8 @@ results by flow
 
 could produce a Flow Diagram with normal drop-off rates at the different states: `cart`, `shipping`, `billing`, `billingVerification`, `confirmation`, and `ordershipped`.
 
-![ecommerce flowchart.png](/img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart.png')} alt="E-commerce flowchart" style={{border: '1px solid gray'}} width="800" />
 
 Now, if you ran this query and saw results as shown below, where there is a big drop-off at the verification state, you'd determine that there is likely a problem with the verification service and start an investigation.
 
-![ecommerce flowchart missing states.png](/img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart-missing-states.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart-missing-states.png')} alt="E-commerce flowchart missing states" style={{border: '1px solid gray'}} width="800" />

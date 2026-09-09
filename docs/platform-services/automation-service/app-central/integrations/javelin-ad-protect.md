@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/javelin-ad-protect.png')} alt="javelin-ad-protect" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/javelin-ad-protect.png')} alt="Javelin AD Protect icon" width="100"/>
 
 ***Version: 1.2  
 Updated: Nov 10, 2023***

@@ -7,7 +7,7 @@ description: The Sumo Logic App for Jira Cloud provides insights into project ma
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Jira icon" width="50"/>
 
 The Sumo Logic App for Jira Cloud provides insights into how your Jira projects and issues are being managed so as to enable you to be more effective and manage work across multiple teams. This guide provides instructions for installing and configuring the Jira Cloud App, as well as offering examples and descriptions of the app pre-configured dashboards.
 
@@ -39,7 +39,7 @@ This section provides a sample query from the **Unassigned Issues** panel on the
 * Issue:*
 * Issue_Summary:*
 
-```sql title="Query String"
+```sumo title="Query String"
 _sourceCategory="jira_cloud" *issue*
 | json field=_raw "webhookEvent", "issue_event_type_name", "changelog", "issue.fields.creator.displayName", "issue.self",  "issue.key", "timestamp", "issue.fields.issuetype.name", "issue.fields.status.name", "issue.fields.resolution.name", "issue.fields.project.name", "issue.fields.status.statusCategory.name", "user.active",  "issue.fields.assignee.displayName", "issue.fields.summary", "issue.fields.priority.name", "issue.fields.components", "issue.fields.labels" as  event_name, event_type, change_log, issue_creator, jira_self, issue_key, timestamp, type, status, resolution, project_name, status_category, is_active, issue_assignee, issue_summary, priority, components, labels  nodrop
 | where   project_name matches "*" AND issue_key matches "*" AND type matches "*" AND priority matches "*" AND status_category matches "*" AND status matches "*"

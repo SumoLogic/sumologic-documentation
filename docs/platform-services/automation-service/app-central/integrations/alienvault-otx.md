@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-otx.png')} alt="alienvault-otx" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-otx.png')} alt="Alienvault OTX icon" width="90"/>
 
 ***Version: 1.12  
 Updated: Sep 04, 2023***

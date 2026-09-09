@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS Backup service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-backup-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-backup-logo.png')} alt="AWS Backup icon" width="50"/>
 
 AWS Backup is a fully-managed service that makes it easy to centralize and automate data protection across AWS services, in the cloud, and on premises. Using this service, you can configure backup policies and monitor activity for your AWS resources in one place. It allows you to automate and consolidate backup tasks that were previously performed service-by-service, and removes the need to create custom scripts and manual processes. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html).
 

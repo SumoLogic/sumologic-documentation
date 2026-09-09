@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="rapid-7-insightvm" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="Rapid 7 InsightVM icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jul 07, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Utilize and interact with Rapid7 Vulnerability management tool.
 
@@ -66,3 +66,4 @@ For information about Rapid7 InsightVM, see [Rapid7 InsightVM documentation](htt
 * February 17, 2023 (v1.1)
 	+ New Action: Search Asset By IP
 * July 7, 2023 (v1.2) - Removed leading/trailing spaces
+* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

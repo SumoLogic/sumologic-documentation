@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortimail.png')} alt="fortimail" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Work with Access Rules, Domains, IP Policies and Recipient Policies in Fortinet FortiMail.
 
@@ -52,3 +52,4 @@ For information about FortiMail, see [FortiMail documentation](https://docs.fort
 * January 24, 2019 - First upload
 * August 30, 2019 - New actions added
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

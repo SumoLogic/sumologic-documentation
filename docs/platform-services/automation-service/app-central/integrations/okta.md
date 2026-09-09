@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/okta.png')} alt="okta" width="50"/>
 
-***Version: 1.4  
-Updated: April 24, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 Interact with Okta users, groups, and system logging information.
 
@@ -79,3 +79,8 @@ For information about Okta, see [Okta documentation](https://help.okta.com/en-us
     * Get Network Zone
     * List Network Zones
     * Update Network Zone
+* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+
+## Additional resources
+
+- For Okta, Sumo Logic offers the [Okta source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/) and the [Okta app](/docs/integrations/saml/okta/) to collect and visualize your Okta data.

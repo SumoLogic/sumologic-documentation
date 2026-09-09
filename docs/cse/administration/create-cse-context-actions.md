@@ -19,12 +19,20 @@ An authorized user can configure context actions and assign them to particular e
 * **Context actions on record fields**. You can assign a context action to selected record fields, or all record fields. In the Cloud SIEM UI, the action will be available on the context action menu for selected fields.     
 * **Context actions on IOC types**. You can assign a context action to one or more of the following IOC data types:
     * Domain
-    * IP Address
-    * URL
     * Hash
+    * IP address
     * MAC Address
+    * URL
 
 The context actions menu will be available for any of these types, wherever they appear in the Cloud SIEM UI.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage context actions with the [`sumologic_cse_context_action`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_context_action) resource.
+
+<TerraformLink/>
+:::
 
 ## How a user accesses context actions
 
@@ -36,7 +44,7 @@ In the screenshot below, context actions are listed below the built-in **Add to 
 
 If an action name is shown in red font, that indicates that the action depends on a record field that doesn’t exist.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn more about how to use context actions.
 
@@ -87,6 +95,8 @@ When you save the action, the URL template will be populated with your Sumo Logi
 
 `{{sumobaseurl}}/ui/#/search/@{{timestamp[ms]-30m}}@_index=sec_record* AND user_username = {{value}}`
 
+The `{{sumobaseurl}}` parameter applies to context actions that run a Sumo Logic log search. Assuming your Cloud SIEM instance is configured to communicate with the Sumo Logic platform, when you create an action that runs a Sumo Logic search, Cloud SIEM will automatically insert this placeholder in your URL template—you don’t need to explicitly insert `{{sumobaseurl}}` placeholder yourself.
+
 ### Create an URL to an external service
 
 To create a URL to be sent to an external service, enter the URL in the format required by the external service, and use the `{{value}}` parameter placeholder for the target entity, record field, or IOC. 
@@ -113,19 +123,13 @@ The table below defines the parameters you can use in the URL template for a con
 
 ### Value
 
-(Required) The `{{value}}` parameter inserts the target of the context action, for instance an IP Address to be inserted into the URL to a threat intel service. For example:
+(Required) The `{{value}}` parameter inserts the target of the context action, for instance an IP address to be inserted into the URL to a threat intel service. For example:
 
 `https://www.abuseipdb.com/whois/{{value}}`
 
 ### Record value
 
 You can insert any field from the target of a context action into the action URL with the `{{field_name}}` placeholder. For example, you could include `device_ip` in the URL with `{{device_ip}}`.  
-
-### Sumo Logic Base URL
-
-The `{{sumobaseurl}}` parameter applies to context actions that run a Sumo Logic log search.
-
-Assuming your Cloud SIEM instance is configured to communicate with the Sumo Logic platform, when you create an action that runs a Sumo Logic search, Cloud SIEM will automatically insert this placeholder in your URL template—you don’t need to explicitly insert `{{sumobaseurl}} `placeholder yourself.
 
 ### Timestamp
 

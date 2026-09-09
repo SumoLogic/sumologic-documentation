@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapidapi.png')} alt="rapidapi" width="90"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 RapidAPI is an API Hub that enables developers and enterprises to find, connect to, and manage thousands of APIs.
 
@@ -50,3 +50,4 @@ For information about RapidAPI, see [RapidAPI documentation](https://docs.rapida
 * October 29, 2021 - First upload
 * March 11, 2022 - Description
 * July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

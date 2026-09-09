@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem-internal" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.17  
-Updated: July 4, 2025***
+***Version: 1.18  
+Updated: September 7, 2026***
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights through Sumo Logic system calls. Because this integration operates internally with Sumo Logic, no additional authentication is needed. (The [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) automation integration requires additional authentication.) 
 
@@ -53,4 +53,6 @@ No configuration is needed. Sumo Logic Cloud SIEM Internal executes without addi
     + Tested out the Insight Output Mapping action for beta change
 + July 4, 2025 (v1.17)
     + Fixed the beta change behavior and modified the hint for Insight Output Mapping action for clarity
++ September 7, 2026 (v1.18)
+    + Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 

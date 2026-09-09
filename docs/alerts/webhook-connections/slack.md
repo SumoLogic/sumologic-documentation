@@ -7,7 +7,7 @@ description: Webhook Connections allow you to send alerts as a post to a Slack c
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Slack icon" width="50"/>
 
 You can send an alert from Sumo Logic as an HTTP POST request to a Slack channel. Learn more about Slack requirements for Webhooks in their [API Help](https://api.slack.com/incoming-webhooks).
 
@@ -20,14 +20,17 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
-1. On the **Connections** page click **Add**.
-1. Click **Slack**.
-1. In the **Create Connection** dialog, enter the **Name** of the Connection.
-1. (Optional) Enter a **Description** for the Connection.
-1. Enter the **URL** for the endpoint. See [Slack API Help](https://api.slack.com/incoming-webhooks) for more information.
-1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. Under **Alert Payload**, which allows you to customize how the alert notification look in Slack, enter a JSON object in the format required by Slack. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
+1. On the **Connections** page, click **+ Add**.
+1. For **Connection Type**, select **Slack** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/slack-dropdown.png')} alt="Slack dropdown menu" style={{border: '1px solid gray'}} width="500" />
+1. In the **Connection Settings** dialog, enter:
+    * **Name**. Enter a name for the connection.
+    * (Optional) **Description**. Enter a description for the connection.
+    * **URL**. Enter the URL for the endpoint. See [Slack API help](https://api.slack.com/incoming-webhooks) for more information.
+    * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-slack.png')} alt="Create New Connection Slack" style={{border: '1px solid gray'}} width="500" />
+1. Under **Alert Payload**, which allows you to customize how the alert notification look in Slack, enter a JSON object in the format required by Slack. For details on variables that can be used as parameters within your JSON object, see [Configure Webhook payload variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables). 
 1. Under **Recovery Payload**, which allows you to customize how the recovery notification look in Slack, enter a JSON object in the format required by Slack. 
+1. Click **Test Alert** or **Test Recovery** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
 
 Details on how to format your payload message are available in Slack's documentation, [Basic message formatting](https://api.slack.com/docs/message-formatting).
@@ -121,6 +124,10 @@ Here is an example JSON payload using Slack's **attachments** parameter:
   ]
 }
 ```
+
+## Known limitations
+
+Slack has a hard limit of 40,000 characters per message. Content beyond this limit, such as a large `{{ResultsJson}}` value, is truncated with "…" in the notification. This is a limitation of Slack's own message rendering, not of Sumo Logic. The full data remains intact at the source. Learn more in Slack's [changelog on truncating long messages](https://docs.slack.dev/changelog/2018-truncating-really-long-messages/).
 
 ## Create an alert
 

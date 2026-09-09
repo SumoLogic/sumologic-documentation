@@ -8,12 +8,10 @@ Converts angles from degrees to radians.
 
 ## Syntax
 
-```sql
-toRadians(<x>) as <field>
-```
+`toRadians(<x>) as <field>`
 
 ## Example
 
-```sql
+```sumo
 * | toRadians(180) as v
 ```

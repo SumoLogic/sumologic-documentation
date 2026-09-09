@@ -6,8 +6,19 @@ description: Learn how to restart a Collector from the Collection page.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document explains how to initiate a request to restart an Installed
-Collector from the Collection page. The other option is to [start or stop a Collector using our provided scripts](start-stop-collector-using-scripts.md).
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<!-- Originally added as a beta article with SUMO-175343. -->
+
+This document explains how to initiate a request to restart an Installed Collector from the Collection page. The other option is to [start or stop a Collector using our provided scripts](start-stop-collector-using-scripts.md).
 
 ## Limitations
 
@@ -35,9 +46,9 @@ To restart your Installed Collector in the Sumo Logic platform:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the Installed Collector and click the information icon on the right of the row.
-1. The **API usage information** popup is displayed. Click the **Restart Collector** button on the bottom left.<br/>   ![restart collector button.png](/img/collector/restart-collector-button.png) 
-1. Click **Confirm **to send the restart request.<br/>   ![restart confirmation.png](/img/collector/restart-confirmation.png)
-1. The bottom left of the platform will provide a notification informing you the request was successful.<br/>   ![restart initiated.png](/img/collector/restart-initiated.png)
+1. The **API usage information** popup is displayed. Click the **Restart Collector** button on the bottom left.<br/><img src={useBaseUrl('img/collector/restart-collector-button.png')} alt="Restart collector button" style={{border: '1px solid gray'}} width="500" />
+1. Click **Confirm** to send the restart request.<br/><img src={useBaseUrl('img/collector/restart-confirmation.png')} alt="Restart confirmation" style={{border: '1px solid gray'}} width="400" />
+1. The bottom left of the platform will provide a notification informing you the request was successful.<br/><img src={useBaseUrl('img/collector/restart-initiated.png')} alt="Restart initiated" style={{border: '1px solid gray'}} width="400" />
 1. A few minutes later another notification is provided, either **restarted successfully** or **restart request timeout**. Do not refresh the web page, see the [limitations](#limitations) section above for details.
 
 ## Audit restarts
@@ -45,7 +56,7 @@ To restart your Installed Collector in the Sumo Logic platform:
 The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md) keeps
 records of restart requests with the `getCollectorRestartRequested` event and restart completions with the `getCollectorRestartCompleted` event. The following is a simple [Search](/docs/search) query that returns these event logs:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=collection
 | where eventName matches /^CollectorRestart/
 ```

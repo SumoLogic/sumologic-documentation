@@ -6,7 +6,7 @@ description: In the View Details dialog, lag time is represented in hours, minut
 
 When you view the details of a Scheduled View, you can see who created it, creation date, lag time, query, and any error messages that may have been generated.
 
-Scheduled Views are updated frequently.  Based on the start time chosen during Scheduled View Creation, the pre-computed data for the duration is backfilled. The successful data backfill is reflected in green on the Progress bar. As the data is being back-filled,  If the progress bar is not completely full, the gap on the rightmost end is proportional to the lag time.
+Scheduled Views are updated frequently. Based on the start time chosen during Scheduled View creation, the pre-computed data for the duration is backfilled. The successful data backfill is reflected in green on the progress bar. As the data is being back-filled,  If the progress bar is not completely full, the gap on the rightmost end is proportional to the lag time.
 
 In the **View Details** dialog, lag time is also represented in hours, minutes, and seconds.
 

@@ -1,0 +1,480 @@
+{
+   "action": "triggered",
+   "installation": {
+      "uuid": "04ff0c7e-ead5-4b0a-93d6-5b571468239d"
+   },
+   "data": {
+      "event": {
+         "event_id": "78542fbfbd314ac2bdcf17524734922",
+         "project": "ReactNest",
+         "release": null,
+         "dist": null,
+         "platform": "javascript",
+         "message": "",
+         "datetime": "2025-07-14T11:41:32+053000+00:00",
+         "tags": [
+            [
+               "browser",
+               "Chrome 137.0.0"
+            ],
+            [
+               "browser.name",
+               "Chrome"
+            ],
+            [
+               "device",
+               "Mac"
+            ],
+            [
+               "device.family",
+               "Mac"
+            ],
+            [
+               "environment",
+               "production"
+            ],
+            [
+               "handled",
+               "yes"
+            ],
+            [
+               "level",
+               "error"
+            ],
+            [
+               "mechanism",
+               "generic"
+            ],
+            [
+               "os",
+               "Mac OS X &gt;=10.15.7"
+            ],
+            [
+               "os.name",
+               "Mac OS X"
+            ],
+            [
+               "user",
+               "ip:54.173.59.51"
+            ],
+            [
+               "skippedNormalization",
+               "True"
+            ],
+            [
+               "url",
+               "https://acquireconseguir.gotdns.ch/acme"
+            ]
+         ],
+         "_metrics": {
+            "bytes.ingested.event": 7376,
+            "bytes.stored.event": 52018
+         },
+         "_ref": 1752473492868320,
+         "_ref_version": 2,
+         "breadcrumbs": {
+            "values": [
+               {
+                  "category": "ui.click",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e",
+                  "timestamp": 1752473492.627,
+                  "type": "default"
+               },
+               {
+                  "category": "fetch",
+                  "data": {
+                     "method": "GET",
+                     "status_code": 200,
+                     "url": "https://acquireconseguir.gotdns.ch/api/users/?organization=acme"
+                  },
+                  "level": "info",
+                  "timestamp": 1752473492.825,
+                  "type": "http"
+               },
+               {
+                  "category": "fetch",
+                  "data": {
+                     "method": "GET",
+                     "status_code": 200,
+                     "url": "https://acquireconseguir.gotdns.ch/api/items/?organization=acme"
+                  },
+                  "level": "info",
+                  "timestamp": 1752473492.931,
+                  "type": "http"
+               },
+               {
+                  "category": "ui.input",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e",
+                  "timestamp": 1752473492.741,
+                  "type": "default"
+               },
+               {
+                  "category": "ui.input",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e",
+                  "timestamp": 1752473492.321,
+                  "type": "default"
+               },
+               {
+                  "category": "ui.input",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e",
+                  "timestamp": 1752473492.262,
+                  "type": "default"
+               },
+               {
+                  "category": "ui.input",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e",
+                  "timestamp": 1752473492.873,
+                  "type": "default"
+               },
+               {
+                  "category": "ui.input",
+                  "level": "info",
+                  "message": "div.css-yp9swi &gt; header.css-1rf6z8i &gt; form.css-ey53qq &gt; input.css-1jg5i3e",
+                  "timestamp": 1752473492.306,
+                  "type": "default"
+               },
+               {
+                  "category": "ui.click",
+                  "level": "info",
+                  "message": "header.css-1rf6z8i &gt; form.css-ey53qq &gt; button.primary.css-qf83cd[type=\"submit\"]",
+                  "timestamp": 1752473492.12,
+                  "type": "default"
+               }
+            ]
+         },
+         "contexts": {
+            "browser": {
+               "browser": "Chrome 137.0.0",
+               "name": "Chrome",
+               "type": "browser",
+               "version": "137.0.0"
+            },
+            "device": {
+               "brand": "Apple",
+               "family": "Mac",
+               "model": "Mac",
+               "type": "device"
+            },
+            "os": {
+               "name": "Mac OS X",
+               "os": "Mac OS X &gt;=10.15.7",
+               "type": "os",
+               "version": "&gt;=10.15.7"
+            }
+         },
+         "culprit": "triggerError(frontend/src/util)",
+         "environment": "production",
+         "exception": {
+            "values": [
+               {
+                  "mechanism": {
+                     "data": null,
+                     "description": null,
+                     "exception_id": null,
+                     "handled": true,
+                     "help_link": null,
+                     "is_exception_group": null,
+                     "meta": null,
+                     "parent_id": null,
+                     "source": null,
+                     "synthetic": null,
+                     "type": "generic"
+                  },
+                  "raw_stacktrace": {
+                     "frames": [
+                        {
+                           "abs_path": "https://acquireconseguir.gotdns.ch/static/js/bundle.js",
+                           "addr_mode": null,
+                           "colno": 7,
+                           "context_line": "      discreteUpdates(dispatchEvent, domEventName, eventSystemFlags, container, nativeEvent);",
+                           "data": {
+                              "client_in_app": true
+                           },
+                           "errors": null,
+                           "filename": "/static/js/bundle.js",
+                           "function": "dispatchDiscreteEvent",
+                           "image_addr": null,
+                           "in_app": true,
+                           "instruction_addr": null,
+                           "lineno": 31197,
+                           "lock": null,
+                           "module": null,
+                           "package": null,
+                           "platform": null,
+                           "post_context": [
+                              "    }",
+                              "",
+                              "    function dispatchUserBlockingUpdate(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "      {",
+                              "        runWithPriority(UserBlockingPriority$1, dispatchEvent.bind(null, domEventName, eventSystemFlags, container, nativeEvent));"
+                           ],
+                           "pre_context": [
+                              "",
+                              "    function dispatchDiscreteEvent(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "      {",
+                              "        flushDiscreteUpdatesIfNeeded(nativeEvent.timeStamp);",
+                              "      }"
+                           ],
+                           "raw_function": null,
+                           "source_link": null,
+                           "symbol": null,
+                           "symbol_addr": null,
+                           "trust": null,
+                           "vars": null
+                        },
+                        {
+                           "abs_path": "https://acquireconseguir.gotdns.ch/static/js/bundle.js",
+                           "addr_mode": null,
+                           "colno": 16,
+                           "context_line": "        return discreteUpdatesImpl(fn, a, b, c, d);",
+                           "data": {
+                              "client_in_app": true
+                           },
+                           "errors": null,
+                           "filename": "/static/js/bundle.js",
+                           "function": "discreteUpdates",
+                           "image_addr": null,
+                           "in_app": true,
+                           "instruction_addr": null,
+                           "lineno": 29015,
+                           "lock": null,
+                           "module": null,
+                           "package": null,
+                           "platform": null,
+                           "post_context": [
+                              "      } finally {",
+                              "        isInsideEventHandler = prevIsInsideEventHandler;",
+                              "",
+                              "        if (!isInsideEventHandler) {",
+                              "          finishEventHandler();"
+                           ],
+                           "pre_context": [
+                              "    function discreteUpdates(fn, a, b, c, d) {",
+                              "      var prevIsInsideEventHandler = isInsideEventHandler;",
+                              "      isInsideEventHandler = true;",
+                              "",
+                              "      try {"
+                           ],
+                           "raw_function": null,
+                           "source_link": null,
+                           "symbol": null,
+                           "symbol_addr": null,
+                           "trust": null,
+                           "vars": null
+                        }
+                     ]
+                  },
+                  "stacktrace": {
+                     "frames": [
+                        {
+                           "abs_path": "https://acquireconseguir.gotdns.ch/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "addr_mode": null,
+                           "colno": 1,
+                           "context_line": "  discreteUpdates(dispatchEvent, domEventName, eventSystemFlags, container, nativeEvent);",
+                           "data": {
+                              "client_in_app": false,
+                              "resolved_with": "scraping",
+                              "sourcemap": "https://acquireconseguir.gotdns.ch/static/js/bundle.js.map",
+                              "sourcemap_origin": {
+                                 "scraped_file": "https://acquireconseguir.gotdns.ch/static/js/bundle.js.map#1752473492"
+                              },
+                              "symbolicated": true
+                           },
+                           "errors": null,
+                           "filename": "/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "function": "dispatchDiscreteEvent",
+                           "image_addr": null,
+                           "in_app": false,
+                           "instruction_addr": null,
+                           "lineno": 5889,
+                           "lock": null,
+                           "module": "frontend/node_modules/react-dom/cjs/react-dom.development",
+                           "package": null,
+                           "platform": null,
+                           "post_context": [
+                              "}",
+                              "",
+                              "function dispatchUserBlockingUpdate(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "  {",
+                              "    runWithPriority(UserBlockingPriority$1, dispatchEvent.bind(null, domEventName, eventSystemFlags, container, nativeEvent));"
+                           ],
+                           "pre_context": [
+                              "function dispatchDiscreteEvent(domEventName, eventSystemFlags, container, nativeEvent) {",
+                              "  {",
+                              "    flushDiscreteUpdatesIfNeeded(nativeEvent.timeStamp);",
+                              "  }",
+                              ""
+                           ],
+                           "raw_function": null,
+                           "source_link": null,
+                           "symbol": null,
+                           "symbol_addr": null,
+                           "trust": null,
+                           "vars": null
+                        },
+                        {
+                           "abs_path": "https://acquireconseguir.gotdns.ch/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "addr_mode": null,
+                           "colno": 1,
+                           "context_line": "    return discreteUpdatesImpl(fn, a, b, c, d);",
+                           "data": {
+                              "client_in_app": false,
+                              "resolved_with": "scraping",
+                              "sourcemap": "https://acquireconseguir.gotdns.ch/static/js/bundle.js.map",
+                              "sourcemap_origin": {
+                                 "scraped_file": "https://acquireconseguir.gotdns.ch/static/js/bundle.js.map#1752473492"
+                              },
+                              "symbolicated": true
+                           },
+                           "errors": null,
+                           "filename": "/frontend/node_modules/react-dom/cjs/react-dom.development.js",
+                           "function": "discreteUpdates",
+                           "image_addr": null,
+                           "in_app": false,
+                           "instruction_addr": null,
+                           "lineno": 3756,
+                           "lock": null,
+                           "module": "frontend/node_modules/react-dom/cjs/react-dom.development",
+                           "package": null,
+                           "platform": null,
+                           "post_context": [
+                              "  } finally {",
+                              "    isInsideEventHandler = prevIsInsideEventHandler;",
+                              "",
+                              "    if (!isInsideEventHandler) {",
+                              "      finishEventHandler();"
+                           ],
+                           "pre_context": [
+                              "function discreteUpdates(fn, a, b, c, d) {",
+                              "  var prevIsInsideEventHandler = isInsideEventHandler;",
+                              "  isInsideEventHandler = true;",
+                              "",
+                              "  try {"
+                           ],
+                           "raw_function": null,
+                           "source_link": null,
+                           "symbol": null,
+                           "symbol_addr": null,
+                           "trust": null,
+                           "vars": null
+                        }
+                     ]
+                  },
+                  "type": "Issue alert ",
+                  "value": "This is a test error!"
+               }
+            ]
+         },
+         "extra": {
+            "normalizeDepth": 3
+         },
+         "fingerprint": [
+            "{{ default }}"
+         ],
+         "grouping_config": {
+            "enhancements": "KLUv_SAYwQAAkwKRs25ld3N0eWxlOjIwMjMtMDEtMTGQ#KLUv_SAYwQAAkwKRs25ld3N0eWxlOjIwMjMtMDEtMTGQ#KLUv_SAYwQAAkwKRs25ld3N0eWxlOjIwMjMtMDEtMTGQ",
+            "id": "newstyle:2023-01-11"
+         },
+         "hashes": [
+            "c3633989f87eac6b9f92d6d0c0b4aff9",
+            "c6b246e01fe46423fe77348e5144d3de"
+         ],
+         "ingest_path": [
+            {
+               "public_key": "XE7QiyuNlja9PZ7I9qJlwQotzecWrUIN91BAO7Q5R38",
+               "version": "25.6.2"
+            }
+         ],
+         "key_id": "4637719",
+         "level": "error",
+         "location": "/frontend/src/util.ts",
+         "logger": "",
+         "metadata": {
+            "filename": "/frontend/src/util.ts",
+            "function": "triggerError",
+            "in_app_frame_mix": "mixed",
+            "type": "Issue alert ",
+            "value": "This is a test error!"
+         },
+         "nodestore_insert": 1752473492.048797,
+         "received": 1752473492.276518,
+         "request": {
+            "api_target": null,
+            "cookies": null,
+            "data": null,
+            "env": null,
+            "fragment": null,
+            "headers": [
+               [
+                  "User-Agent",
+                  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.173.59.51 Safari/537.36"
+               ]
+            ],
+            "inferred_content_type": null,
+            "method": null,
+            "query_string": [],
+            "url": "https://acquireconseguir.gotdns.ch/acme"
+         },
+         "scraping_attempts": [
+            {
+               "status": "success",
+               "url": "https://acquireconseguir.gotdns.ch/static/js/bundle.js"
+            },
+            {
+               "status": "success",
+               "url": "https://acquireconseguir.gotdns.ch/static/js/bundle.js.map"
+            }
+         ],
+         "sdk": {
+            "integrations": [
+               "InboundFilters",
+               "FunctionToString",
+               "TryCatch",
+               "Breadcrumbs",
+               "GlobalHandlers",
+               "LinkedErrors",
+               "Dedupe",
+               "UserAgent"
+            ],
+            "name": "sentry.javascript.react",
+            "packages": [
+               {
+                  "name": "npm:@sentry/react",
+                  "version": "6.19.2"
+               }
+            ],
+            "version": "6.19.2"
+         },
+         "symbolicated_in_app": true,
+         "timestamp": 1752473492.123,
+         "title": "Issue alert : This is a test error!",
+         "type": "error",
+         "user": {
+            "geo": {
+               "city": "Pune",
+               "country_code": "IN",
+               "region": "India",
+               "subdivision": "Maharashtra"
+            },
+            "ip_address": "54.173.59.51",
+            "sentry_user": "ip:54.173.59.51"
+         },
+         "version": "7",
+         "url": "https://acquireconseguir.gotdns.ch/api/0/projects/cal-ia/javascript-react/events/92af401fa09647e8b947d3f091c13e92/",
+         "web_url": "https://acquireconseguir.gotdns.ch/organizations/cal-ia/issues/1752473492/events/92af401fa09647e8b947d3f091c13e92/",
+         "issue_url": "https://acquireconseguir.gotdns.ch/api/0/organizations/cal-ia/issues/1752473492/",
+         "issue_id": 1752473492868
+      },
+      "triggered_rule": "myJavascriptAlert"
+   },
+   "actor": {
+      "type": "application",
+      "id": "sentry",
+      "name": "Sentry"
+   }
+}

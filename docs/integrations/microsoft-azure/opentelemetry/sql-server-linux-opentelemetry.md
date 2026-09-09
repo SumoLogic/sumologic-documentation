@@ -1,6 +1,6 @@
 ---
 id: sql-server-linux-opentelemetry
-title: Microsoft SQL Server for Linux - OpenTelemetry Collector
+title: MS SQL Server for Linux - OTel Collector
 sidebar_label: Microsoft SQL Server for Linux - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Linux.
 ---
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="SQL icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 :::note logs only
 This is a logs-only app. For collecting metrics and enabling comprehensive monitoring on both Linux and Windows, use the [Microsoft SQL Server - OpenTelemetry App](/docs/integrations/microsoft-azure/opentelemetry/sql-server-opentelemetry).
@@ -67,6 +67,10 @@ The Microsoft SQL Server app's queries and dashboards depend on logs from the SQ
 `/var/opt/mssql/log/errorlog`
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-linux-YAML.png' alt="YAML" style={{border: '1px solid gray'}} />
 
@@ -135,7 +139,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following is the query from **Error and warning count** panel from the **SQL Server app - Overview** dashboard:
 
-```sql
+```sumo
  %"db.cluster.name"=* %"deployment.environment"=*  %"sumo.datasource"=sqlserver ("Error:" or "Warning:") | json "log" as _rawlog nodrop
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | parse regex "\s+(?<Logtype>Error|Warning):\s+(?<message>.*)$"

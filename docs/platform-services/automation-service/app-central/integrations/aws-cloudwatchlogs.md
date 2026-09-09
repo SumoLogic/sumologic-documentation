@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: Nov 03, 2025***
 
 Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retention Policies.
 
@@ -64,3 +64,6 @@ For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](h
 * October 16, 2019 - First upload
 * March 10, 2022 - Logo
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* November 03, 2025 (v1.3) - Updated timestamp parsing to support both legacy and ISO 8601 formats.
+    + Filter Log Events
+    + Put Log Events

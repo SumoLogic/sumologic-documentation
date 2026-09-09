@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/protectonce.png')} alt="protectonce" width="100"/>
 
-***Version: 1.3  
-Updated: Mar 4, 2024***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 The ProtectOnce provides SaaS companies with a radically simplified agentless solution that secures API-driven applications in a matter of minutes, providing deep visibility into all APIs and helping to prevent complex attacks.
 
@@ -55,3 +55,4 @@ For information about ProtectOnce, see the [ProtectOnce website](https://app.pro
 * December 26, 2022 - First upload
 * July 18, 2023 (v1.2) - Removed leading/trailing spaces
 * March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

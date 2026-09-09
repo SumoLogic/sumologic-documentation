@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Synapse
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-synapse-analytics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-synapse-analytics.png')} alt="Azure Synapse Analytics icon" width="50"/>
 
 [Azure Synapse Analytics](https://learn.microsoft.com/en-gb/azure/synapse-analytics/overview-what-is) is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems. It gives you the freedom to query data on your terms, using either serverless or dedicated resources—at scale. This integration helps in monitoring integrations in your Synapse workspaces, tracking resource utilization (memory, CPU, connections etc) and query load across Spark pools and dedicated SQL pools.
 

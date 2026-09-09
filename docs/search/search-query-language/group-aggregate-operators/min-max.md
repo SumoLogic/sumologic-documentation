@@ -13,9 +13,7 @@ Extracts the maximum value of the numerical field being evaluated within the tim
 
 ### Syntax
 
-```sql
-max(<numerical_field>) [as <field>] [by <field>]
-```
+`max(<numerical_field>) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -23,11 +21,11 @@ max(<numerical_field>) [as <field>] [by <field>]
 
 ### Example
 
-```sql
+```sumo
 ... | max(request_received) group by hour
 ```
 
-```sql
+```sumo
 ... | max(request_received) as max_request_received, max(request_sent) as max_request_sent
 ```
 
@@ -35,7 +33,7 @@ When you calculate the maximum value of more than one field, you must create an
 
 See this example:
 
-```sql
+```sumo
 _sourceCategory="OS/Windows"
 | kv "HandleCount", "ThreadCount"
 | max(HandleCount) as maxHandleCount, max(ThreadCount) as maxThreadCount
@@ -47,9 +45,7 @@ Extracts the minimum value of the numerical field being evaluated within the tim
 
 ### Syntax
 
-```sql
-min(numerical_field) [as <field>] [by <field>]
-```
+`min(numerical_field) [as <field>] [by <field>]`
 
 ### Rules
 
@@ -57,11 +53,11 @@ min(numerical_field) [as <field>] [by <field>]
 
 ### Example
 
-```sql
+```sumo
 ... | min(request_received) group by hour
 ```
 
-```sql
+```sumo
 ​... | min(request_received) as min_request_received, max(request_sent) as max_request_sent
 ```
 
@@ -69,7 +65,7 @@ When you calculate the minimum value of more than one field, you must create a
 
 See this example:
 
-```sql
+```sumo
 _sourceCategory="OS/Windows"
 | kv "HandleCount", "ThreadCount"
 | min(HandleCount) as minHandleCount, min(ThreadCount) as minThreadCount

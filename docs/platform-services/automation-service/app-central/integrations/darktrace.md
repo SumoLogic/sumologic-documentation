@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/darktrace.png')} alt="darktrace" width="100"/>
 
-***Version: 1.7  
-Updated: Jan 10, 2025***
+***Version: 1.8  
+Updated: April 29, 2026***
 
 Perform threat intelligence evidence gathering with Darktrace.
 
@@ -73,3 +73,4 @@ For information about Darktrace, see the [Darktrace website](https://www.darktra
 * February 28, 2024 (v1.5) - Updated code for compatibility with Python 3.12
 * March 4, 2024 (v1.5) - Updated code for compatibility with Python 3.12
 * January 10, 2025 (v1.7) - Fixed timedelta related error in all actions
+* April 29, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

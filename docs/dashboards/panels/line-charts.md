@@ -12,7 +12,7 @@ change.
 
 For example, you'd use the following query to create a Line chart:
 
-```sql
+```sumo
 error | timeslice 1m | count by _timeslice
 ```
 

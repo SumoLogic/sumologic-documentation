@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/servicenow-v2.png')} alt="servicenow" width="100"/>
 
-***Version: 2.6  
-Updated: Jan 13, 2025***
+***Version: 2.7  
+Updated: April 30, 2026***
 
 ServiceNow V2 SaaS is for technical management support - create, update, and gather ServiceNow ticket information.
 
@@ -106,3 +106,4 @@ Ticketing System
 * April 5, 2024 (v2.4) - Fixed an issue that prevents the resource testing to work correctly.
 * May 31, 2024 (v2.5) - Fixed an issue in actions **Create Ticket** and **Update Ticket** in which the JSON Query field was not visible.
 * Jan 13, 2025 (v2.6) - Modified hint of the **query** field as it was misleading.
+* April 30, 2026 (v2.7) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

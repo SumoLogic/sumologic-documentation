@@ -15,7 +15,7 @@ To test a playbook before using it in an automation, see [Test a playbook](/docs
 
 ## Test nodes in a playbook
 
-The playbook **Test Node** toggle lets you test individual nodes of a playbook without needing to complete the entire flow. Testing individual nodes helps you improve your playbooks' reliability and shorten configuration time. You can provide mock values for variables used in the node, and run the results to see the output and any errors. The results provide informative messages to help you troubleshoot problems. 
+The playbook **Test Mode** toggle lets you test individual nodes of a playbook without needing to complete the entire flow. Testing individual nodes helps you improve your playbooks' reliability and shorten configuration time. You can provide mock values for variables used in the node, and run the results to see the output and any errors. The results provide informative messages to help you troubleshoot problems. 
 
 When you test nodes, keep in mind:
 * You can test action, condition, user choice, and task nodes. You cannot test filter or nested playbook nodes.
@@ -28,17 +28,17 @@ To test a node:
 1. Select a playbook.
 1. Click the **Edit** button at the bottom of the screen to make a draft of the playbook.
 1. Click the **Edit** button on a node.
-1. Click the **Test Node** toggle at the top of the **Edit Node** dialog. An **Input** panel appears to the left, and an **Output** panel appears to the right. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-toggle.png')} alt="Playbook Test Node toggle" style={{border:'1px solid gray'}} width="800"/>
+1. Click the **Test Mode** toggle at the top of the **Edit Node** dialog. An **Input** panel appears to the left, and an **Output** panel appears to the right. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-toggle.png')} alt="Playbook Test Mode toggle" style={{border:'1px solid gray'}} width="800"/>
 1. In the **Input** panel, enter variables to test the node. When you click **SAVE & RUN TEST**, results of the test appear in the **Output** panel.<br/>Ensure that you enter valid variables for the kind of inputs you need to test. Following are examples with different node types:
    * **Action**<br/>In the following example that uses input from insights, we provide an insight ID. The output shows the result of the action.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-variables.png')} alt="Action node test variables" style={{border:'1px solid gray'}} width="800"/>
    * **Condition**<br/>In the following example that uses input from reputation vendors, we provide reputation scores. The output shows the result of the condition.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-condition.png')} alt="Condition node test variables" style={{border:'1px solid gray'}} width="800"/>
    * **User choice**<br/>In the following example that uses user input data, we provide an email address. The output provides the resulting user choice. Click the user choice options to test whether they work as expected.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-user-choice.png')} alt="User choice node test variables" style={{border:'1px solid gray'}} width="800"/>
    * **Task**<br/>In the following example that uses incident input data, we provide a mock template name. The output provides the resulting task. Click the task options to test whether they work as expected.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-task.png')} alt="Task node test variables" style={{border:'1px solid gray'}} width="800"/>
 1. Examine the results in the **Output** panel and take any action needed to troubleshoot node operation:
-    * Click the information button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-icon.png')} alt="Playbook Test Node JSON info button" style={{border:'1px solid gray'}} width="30"/> to see information on the test run:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-button.png')} alt="Playbook Test Node info" style={{border:'1px solid gray'}} width="300"/>
-    * Click the **JSON details** button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details-icon.png')} alt="Playbook Test Node JSON details button" style={{border:'1px solid gray'}} width="30"/> to see the JSON output:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details.png')} alt="Playbook Test Node JSON details" style={{border:'1px solid gray'}} width="300"/>
+    * Click the information button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-icon.png')} alt="Playbook test mode JSON info button" style={{border:'1px solid gray'}} width="30"/> to see information on the test run:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-info-button.png')} alt="Playbook test mode info" style={{border:'1px solid gray'}} width="300"/>
+    * Click the **JSON details** button <img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details-icon.png')} alt="Playbook test mode JSON details button" style={{border:'1px solid gray'}} width="30"/> to see the JSON output:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-test-node-json-details.png')} alt="Playbook test mode JSON details" style={{border:'1px solid gray'}} width="300"/>
 1. Continue testing the node and making changes as needed in the node's configuration. When done, click **Save**. 
-1. Test each node in your playbook that has the **Test Node** button (action, condition, user choice, and task). In each node, enter variables in the **Input** panel and examine the results in the **Output** panel to ensure the node works correctly.
+1. Test each node in your playbook that has the **Test Mode** button (action, condition, user choice, and task). In each node, enter variables in the **Input** panel and examine the results in the **Output** panel to ensure the node works correctly.
 
 After you're done testing individual nodes,  test the entire playbook to ensure it runs end-to-end (see [Test a playbook](#test-a-playbook)).
 
@@ -67,15 +67,15 @@ Proceed to [Investigate playbook problems](#investigate-playbook-problems) below
 
 ### Open a playbook from Cloud SIEM
 
-1. Open an [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
-1. Click the **Automations** button at the top of the page to view the automations on the Insight or Entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
+1. Open an [insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) or [entity](/docs/cse/records-signals-entities-insights/view-manage-entities/) that uses playbooks (that is, that has [automations](/docs/cse/automation/automations-in-cloud-siem)).
+1. Click the **Automations** button at the top of the page to view the automations on the insight or entity.  <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-in-cloud-siem.png')} alt="Cloud SIEM automations" style={{border: '1px solid gray'}} width="800"/>
 1. Click **View Playbook** for a playbook you want to investigate. In the example above, the playbook we want to investigate completed with errors. The playbook opens in the Automation Service, and the issues display in the results section.  <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-in-cloud-siem.png')} alt="A Cloud SIEM automation playbook with errors" style={{border: '1px solid gray'}} width="800"/>
 
 Proceed to [Investigate playbook problems](#investigate-playbook-problems) below to look into playbook problems.
 
 ### Open a playbook from Cloud SOAR
 
-1. Open an [Incident](/docs/cloud-soar/incidents-triage/#incidents).
+1. Open an [incident](/docs/cloud-soar/incidents-triage/#incidents).
 1. On the [incident details](/docs/cloud-soar/incidents-triage/#incident-details) page, select **Operations > Playbooks**. Playbooks appear that have run for the incident. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbooks-in-cloud-soar.png')} alt="Playbooks on an incident in Cloud SOAR" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Graph View** in the upper-right and click **>** to page through the playbooks. <br/><img src={useBaseUrl('img/platform-services/automation-service/cloud-soar-playbooks-graph-view.png')} alt="Playbook in graph view in Cloud SOAR" style={{border: '1px solid gray'}} width="800"/>
 1. Click a node on the playbook that displays an error.
@@ -105,3 +105,45 @@ Following are some common problems that can occur with playbooks:
     * There are alert surges. <br/>
     * The playbook is not optimized properly and actions are stuck in a loop.
     * There are Cartesian flag issues (too many nested elements to process as part of the returned API result).
+
+## Playbook executions
+
+When playbooks run, you can view the outcome for either a single playbook or for all playbooks:
+* [View executions of a single playbook](#view-executions-of-a-single-playbook)
+* [View executions of all playbooks](#view-executions-of-all-playbooks)
+
+### View executions of a single playbook
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
+1. Select a playbook.
+1. Click the kebab button in the upper-right corner of the UI.
+1. Select **View Executions**. <br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-view-executions.png')} alt="View Executions menu option" style={{border:'1px solid gray'}} width="800"/>
+1. The executions of the playbook are displayed in the **Playbook Executions** screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-all.png')} alt="View a playbook's executions" style={{border:'1px solid gray'}} width="800"/>
+      :::tip
+      Notice that the playbook's ID appears in the search bar at the top of the screen. Viewing executions of a playbook is one way to find the ID for a playbook.
+      :::
+1. To see information about a specific execution:
+   1. Click an entry. Information about the execution displays.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
+   1. To view the information in a separate tab, click **View Execution Details**.
+1. To perform additional actions on executions in the screen, hover your mouse over an entry and select icons that display:
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-go-to-playbook-icon.png')} alt="Go to Playbook button" style={{border: '1px solid gray'}} width="25"/> **Go to Playbook**. Opens the playbook. 
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-kill-playbook-icon.png')} alt="Kill Playbook button" style={{border: '1px solid gray'}} width="25"/> **Kill Playbook**. Stops a running playbook.
+
+### View executions of all playbooks
+
+You can view executions of all playbooks on the **Playbook Executions** screen. The page shows the playbook names, run status, and start time and end time.
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbook Executions**. You can also click the **Go To...** menu at the top of the screen and select **Playbook Execution**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbook Executions**.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-executions.png')} alt="Playbook executions screen" style={{border: '1px solid gray'}} width="800"/>
+1. To find playbook executions:
+   1. Enter commands like the following in the search bar at the top of the screen:
+      * Type a word from the name of a playbook (for example, `VirusTotal`). Executions of all playbooks with that word in their name are displayed.
+      * Enter `Name:"<name of playbook>"` (for example, `Name: "527 - Enrich Entity with VirusTotal"`)
+      * Enter `Playbook ID:"<ID of playbook>"` (for example, `Playbook ID: "6618edc1043a590011932926"`). To get a playbook's ID, [view executions of a single playbook](#view-executions-of-a-single-playbook), or use the [playbook_list_retreive](https://api.sumologic.com/docs/csoar/#operation/playbook_list_retrieve) API.
+   1. When you enter a query, click **Save New Query** <img src={useBaseUrl('img/platform-services/automation-service/save-new-query-icon.png')} alt="Save New Query button" style={{border: '1px solid gray'}} width="25"/> in the search bar and click **Add to bookmarks** to save the query for later use.
+1. To see information about a playbook's execution:
+   1. Click an entry in the list of playbook executions. Information about the execution displays.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-execution-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
+   1. To view the information in a separate tab, click **View Execution Details**.
+1. To perform additional actions on executions in the screen, hover your mouse over an entry and select icons that display:
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-go-to-playbook-icon.png')} alt="Go to Playbook button" style={{border: '1px solid gray'}} width="25"/> **Go to Playbook**. Opens the playbook. 
+   * <img src={useBaseUrl('img/platform-services/automation-service/playbook-executions-kill-playbook-icon.png')} alt="Kill Playbook button" style={{border: '1px solid gray'}} width="25"/> **Kill Playbook**. Stops a running playbook.
+ 

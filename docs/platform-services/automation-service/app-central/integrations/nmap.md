@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/nmap.png')} alt="nmap" width="60"/>
 
-***Version: 1.3  
-Updated: Jun 26, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Nmap is a free and open-source network scanner. Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses.
 
@@ -47,3 +47,4 @@ For information about Nmap, see [Nmap documentation](https://nmap.org/book/man.h
 * August 09, 2022 - First upload
 * April 28, 2023 (v1.2) - Integration refactored
 * June 26, 2023 (v1.3) - Removed unnecessary empty lines and other little changes
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

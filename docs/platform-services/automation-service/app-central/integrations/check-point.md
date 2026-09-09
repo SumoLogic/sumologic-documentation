@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/check-point.png')} alt="check-point" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/check-point.png')} alt="Check Point icon" width="100"/>
 
-***Version: 1.4  
-Updated: Jun 26, 2023***
+***Version: 1.5  
+Updated: April 27, 2026***
 
 Utilize Check Point to gather enrichment data and issue containment actions during incident investigations.
 
@@ -86,3 +86,4 @@ For information about Check Point, see [Check Point documentation](https://sc1.c
 * June 23, 2023 (v1.4)
 	+ Updated the integration with Environmental Variables
 	+ Renamed from Check Point OIF to Check Point
+* April 27, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

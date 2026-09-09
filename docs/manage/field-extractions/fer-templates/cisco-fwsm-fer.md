@@ -20,13 +20,13 @@ The first rule is generic and matches all messages:
 
 **Scope:**
 
-```sql
+```sumo
 _sourceCategory=networking/cisco/fwsm
 ```
 
 **Extraction Rule:**
 
-```sql
+```sumo
 parse "FWSM-*-*:" as log_level,msg_code | parse regex " (?<host>.+)-(?:FWSM|fwsm)" | if(log_level=0,"emergency",if(log_level=1,"alert",if(log_level=2,"critical",if(log_level=3,"error",if(log_level=4,"warning",if(log_level=5,"notification",if(log_level=6,"informational",if(log_level=7,"debug","Other")))))))) as log_level_desc
 ```
 
@@ -44,13 +44,13 @@ parse "FWSM-*-*:" as log_level,msg_code | parse regex " (?<host>.+)-(?:FWSM|fwsm
 
 **Scope:**
 
-```sql
+```sumo
 _sourceCategory=networking/cisco/fwsm Built AND (outbound OR inbound)
 ```
 
 **Extraction Rule:**
 
-```sql
+```sumo
 parse "Teardown * connection" as protocol nodrop | parse regex "for\s(?<src_dom>\S+):(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<src_port>\d+)\s" nodrop | parse regex "to\s(?<dest_dom>\S+):(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<dest_port>\d+)\s" nodrop | "firewall-teardown" as eventtype | "cisco-firewall" as event
 ``` 
 
@@ -68,13 +68,13 @@ parse "Teardown * connection" as protocol nodrop | parse regex "for\s(?<src_dom>
 
 **Scope:**
 
-```sql
+```sumo
 _sourceCategory=networking/cisco/asa Teardown !local-host !dynamic !ICMP
 ```
 
 **Extraction Rule:**
 
-```sql
+```sumo
 parse "Teardown * connection" as protocol nodrop | parse regex "for\s(?<src_dom>\S+):(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<src_port>\d+)\s" nodrop | parse regex "to\s(?<dest_dom>\S+):(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<dest_port>\d+)\s" nodrop | "firewall-teardown" as eventtype | "cisco-firewall" as event
 ```
 
@@ -92,13 +92,13 @@ parse "Teardown * connection" as protocol nodrop | parse regex "for\s(?<src_dom>
 
 **Scope:**
 
-```sql
+```sumo
 _sourceCategory=networking/cisco/fwsm deny src dst !"Deny inbound" !"Deny protocol" !"Deny IP"
 ```
 
 **Extraction Rule:**
 
-```sql
+```sumo
 parse "Deny * " as protocol nodrop | parse regex "src\s(?<src_dom>\S+):(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop | parse regex "/(?<src_port>\d+)\s" nodrop | parse regex "dst\s(?<dest_dom>\S+):(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop | parse regex "/(?<dest_port>\d+)\s" nodrop | "firewall-deny" as eventtype | "cisco-firewall" as event
 ```
 
@@ -116,13 +116,13 @@ parse "Deny * " as protocol nodrop | parse regex "src\s(?<src_dom>\S+):(?<src_ip
 
 **Scope:**
 
-```sql
+```sumo
 _sourceCategory=networking/cisco/fwsm deny from to !"Deny inbound" !"Deny protocol" !"Deny IP"
 ```
 
 **Extraction Rule:**
 
-```sql
+```sumo
 parse "Deny * " as protocol nodrop | parse regex "from\s(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<src_port>\d+)\s" nodrop | parse regex "to\s(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<dest_port>\d+)\s" nodrop | "firewall-deny" as eventtype | "cisco-firewall" as event
 ```
 
@@ -140,13 +140,13 @@ parse "Deny * " as protocol nodrop | parse regex "from\s(?<src_ip>\d{1,3}\.\d{1,
 
 **Scope:**
 
-```sql
+```sumo
 _sourceCategory=networking/cisco/fwsm src dst ("Deny inbound" OR "Deny protocol")
 ```
 
 **Extraction Rule:**
 
-```sql
+```sumo
 | parse "Deny protocol * " as protocol nodrop | parse ") * " as protocol nodrop 
 | parse regex "%[A-Z]{4}-(?<severity>\d)-(?<msg_code>\d{6}):\s" nodrop 
 | parse regex "src\s(?<src_dom>\S+):(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop 

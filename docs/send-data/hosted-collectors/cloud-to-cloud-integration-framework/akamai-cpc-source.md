@@ -10,7 +10,7 @@ description: Learn how to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="90"/>
 
 Akamai Client-Side Protection and Compliance (CPC) is a security solution designed to monitor and protect against client-side threats such as JavaScript-based data skimming and formjacking. It provides visibility into third-party script behavior and enforces security policies to ensure compliance with data protection standards.
 
@@ -41,8 +41,8 @@ To configure an Akamai CPC Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (that is, dropped).
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark is shown when the field exists in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (that is, dropped).
 1. **Client Token**. Enter the Client token value collected from the Akamai platform.
 1. **Client Secret**. Enter the Client secret value collected from the Akamai platform.
 1. **Access Token**. Enter the Access token value collected from the Akamai platform.
@@ -55,6 +55,10 @@ To configure an Akamai CPC Source:
 1. The **CPC Configs Polling Interval** is set to 12 hours by default, you can adjust it based on your needs.
 1. (Optional) **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Akamai CPC source, consider installing the Sumo Logic app for [Akamai CPC](/docs/integrations/saas-cloud/akamai-cpc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON configuration
 

@@ -9,6 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page has information about creating and managing custom insight statuses.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom insight statuses with the [`sumologic_cse_insights_status`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_status) resource.
+
+<TerraformLink/>
+:::
+
 ## View insight statuses
 
 To view insight statuses:

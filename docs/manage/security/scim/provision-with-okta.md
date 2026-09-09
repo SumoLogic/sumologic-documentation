@@ -31,7 +31,7 @@ If it is not already set up, [set up SAML for single sign-on with Okta](/docs/ma
 
 ### Step 1: Create the app
 
-1. [Login to Okta](https://login.okta.com/) as an administrator.
+1. [Log in to Okta](https://login.okta.com/) as an administrator.
 1. Navigate to **Applications > Applications** and click **Create App Integration**.<br/><img src={useBaseUrl('img/security/provision-okta-create-app.png')} alt="Create app integration" style={{border: '1px solid gray'}} width="700" />
 1. Select **SAML 2.0** and click **Next**.<br/><img src={useBaseUrl('img/security/provision-okta-select-saml-20.png')} alt="Select SAML 2.0" style={{border: '1px solid gray'}} width="550" />
 1. Provide a name in the **App Name** field and click **Next**.<br/><img src={useBaseUrl('img/security/provision-okta-app-name.png')} alt="App Name field" style={{border: '1px solid gray'}} width="500" />
@@ -152,7 +152,7 @@ As soon as users are assigned to the app, they are provisioned into Sumo Logic.
    1. Navigate to **Reports > System Log** to see the log. 
    1. The log should show that users you added to the app are pushed to Sumo Logic with an event info message like **Push new user to external application SUCCESS**.
 1. Verify in Sumo Logic:
-   1. Log in to the Sumo Logic instance that you linked to the provisioning app in Step 2 when you provided the Assertion Consumer URL and entity ID.
+   1. Log in to the Sumo Logic instance that you linked to the provisioning app in [Step 2](#step-2-set-up-provisioning) when you provided the Assertion Consumer URL and entity ID.
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. 
    1. Search for the users provisioned from Okta. 
    1. You should see the users listed, and with the role given to when you assigned them to the app in Okta.

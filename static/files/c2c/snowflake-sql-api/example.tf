@@ -5,6 +5,7 @@ resource "sumologic_cloud_to_cloud_source" "snowflake_metrics_source" {
   }
   config = jsonencode({
       "name": "Snowflake C2C",
+      "authType": "basic",
       "username": "sumosnowflake",
       "password": "*************",
       "accountIdentifier": "wp71650.us-east-2.aws",

@@ -7,7 +7,7 @@ sidebar_label: Overview
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import StaticIpAddresses from '../reuse/static-ips-automation-service.md';
 
-Cloud SOAR fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
+Cloud SOAR automates triage, investigation, and remediation of threats for security professionals. Its open integrations framework allows you to connect to many third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
 ## Why Cloud SOAR?
 
@@ -20,7 +20,7 @@ Cloud SOAR is a security operations technology platform that empowers MSSPs, SOC
 * **Better collaboration**
 <br/>Cloud SOAR’s native orchestration capabilities boost the collaboration within the SOC team, ensuring efficient synergy during each phase of incident response. Automation of the full incident lifecycle eases the burden on security analysts, while helping to successfully pinpoint real threats and coordinate an effective response across tools and team members.
 * **Customizable reports**
-<br/>Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IOC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
+<br/>Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IoC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
 * **Speed incident response**
 <br/>Cloud SOAR improves incident response time with flexible workflow automation across tools and teams. Machine learning distinguishes real threats from false positives to reduce alert fatigue.
 * **Connect disparate tools**
@@ -38,7 +38,7 @@ For more information about these features, see [Cloud SOAR Incident Management a
 
 ### Triage
 
-Cloud SOAR provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases.
+Cloud SOAR provides automated investigation of indicators of compromise (IoC) for cyber and non-cyber use cases.
 
 <img src={useBaseUrl('img/cloud-soar/overview-advanced-triage.png')} alt="Advanced triage" style={{border: '1px solid gray'}} width="800" />
 
@@ -82,23 +82,17 @@ import Theme from '../reuse/dark-light-theme.md';
 
 ## Architecture
 
-Sumo Logic Cloud SOAR provides Security Operations and Automation Incident Response Platform to facilitate and expedite timely management of Incident Response with a rich library of customizable playbooks for different threats and use cases of incident response scenarios expediting and automating response time to incident response events.
+Sumo Logic Cloud SOAR facilitates timely management of incident response with a library of customizable playbooks for different threats.
 
-This solution additionally provides capabilities to support incident
-responders during the process of assessment, Investigation, data collection and correlation to help inference additional information and metrics analytics to see repetitive patterns when doing analysis. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
+This solution additionally provides capabilities to support incident responders during the process of assessment, investigation, and data collection to help uncover additional information and metrics analytics. It facilitates documentation and knowledge transfer of information across the critical teams working on incident response and SOC operations team members.
 
-Cloud SOAR Automation and Orchestration features help organizations from all sectors of the industry to manage measure and orchestrate security
-operations tasks including incident qualification, triage and
-escalation, threat hunting, analysis, threat containment and
-remediation. The gathering of information from different data sources
-and correlating this information expedites the capabilities and augments
-human analyst available resources.
+Cloud SOAR automation and orchestration features help organizations from all sectors of the industry to manage measure and orchestrate security operations tasks including incident qualification, triage and escalation, threat hunting, analysis, threat containment, and remediation. The gathering of information from different data sources and correlating this information expedites the capabilities and augments human analyst available resources.
 
-The Cloud SOAR tool offers standard management of Incident response events across different teams in the organization with the help of the R3 Rapid response playbook engine. R3 Playbooks are created using a Visual editor supporting granular, stateful and conditional workflows to orchestrate, automate and standardize best practices on a case by case incident response events activities like incident triage, stakeholder notification, data and context enrichment, remediation and threat containment.
+The Cloud SOAR tool offers standard management of incident response events across different teams in the organization with the help of the R3 Rapid response playbook engine. R3 Playbooks are created using a Visual editor supporting granular, stateful and conditional workflows to orchestrate, automate and standardize best practices on a case by case incident response events activities like incident triage, stakeholder notification, data and context enrichment, remediation and threat containment.
 
-Cloud SOAR has been designed with Interoperability for Cybersecurity Industry standards regulatory frameworks to be able to receive data from a wide assortment of Cybersecurity industry vendors to enrich the available data gathered and correlated to offer better forensic analytics. Just to name a few of our quickly growing list of supported vendors: Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics.
+Cloud SOAR has been designed with interoperability for cybersecurity industry standards regulatory frameworks to be able to receive data from a wide assortment of cybersecurity industry vendors to enrich the available data gathered and correlated to offer better forensic analytics. Just to name a few of our quickly growing list of supported vendors: Palo Alto Networks, Cisco ThreatGrid and Umbrella, IBM Qradar, Splunk, McAfee, Encase Forensics.
 
-Cloud SOAR design and architecture follows Cybersecurity Industry standards and regulatory frameworks, and adheres to best Industry practices to meet best Cybersecurity practices followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
+Cloud SOAR design and architecture follows cybersecurity industry standards and regulatory frameworks, and adheres to best industry practices to meet best cybersecurity standards followed by ISO, GDPR, OASIS, NIST, Sec Regulations, and more.
 
 Cloud SOAR provides static egress for Cloud executions. IP addresses can be entered into the allowlist. For a list of Cloud SOAR addresses by region, contact [Support](https://support.sumologic.com/support/s/).
 
@@ -108,4 +102,4 @@ Cloud SOAR provides static egress for Cloud executions. IP addresses can be ente
 
 Cloud SOAR interacts with the platforms in your environment using a module called Automation Bridge.
 
-Automation Bridge is a process running on a Linux-based VM (deployed inside the your environment) that interacts with your Cloud SOAR Instance and allows you to execute playbook actions on all the systems that Cloud SOAR is orchestrating in that specific environment. For more information, see [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge).
+Automation Bridge is a process running on a Linux-based virtual machine (VM) deployed inside your environment that interacts with your Cloud SOAR Instance and allows you to execute playbook actions on all the systems that Cloud SOAR is orchestrating in that specific environment. For more information, see [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge).

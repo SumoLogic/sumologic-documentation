@@ -7,7 +7,7 @@ description: Partner Ecosystem Apps are third-party Sumo Logic apps for partners
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Partner ecosystem icon" width="60"/>
 
 Sumo Logic Partner Ecosystem Apps are provided and supported by our partner network. The following links provide collection, installation, and dashboard information on working with these apps.
 * [Aqua Security](https://github.com/aquasecurity/Sumo-Logic-App/)  
@@ -37,6 +37,6 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
 * [Votiro](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Votiro)
-* <a href="/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a> ([blog](https://www.zerofox.com/blog/sumo-logic-and-zerofox-join-forces-to-protect-your-public-attack-surface/))
+* <a href={useBaseUrl('files/zerofox-integrations.pdf')} target="_blank">ZeroFox</a> ([blog](https://www.zerofox.com/blog/sumo-logic-and-zerofox-join-forces-to-protect-your-public-attack-surface/))
 
 For any questions on these applications, contact our partners.

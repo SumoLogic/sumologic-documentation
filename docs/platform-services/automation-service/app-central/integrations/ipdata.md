@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ipdata.png')} alt="ipdata" width="80"/>
 
-***Version: 1.0  
-Updated: Nov 21, 2023***
+***Version: 1.1  
+Updated: April 29, 2026***
 
 ipdata provides Geolocation and Threat Intelligence API to look up the location and threat profile of any IP Address.
 
@@ -45,3 +45,4 @@ For information about ipdata, see [ipdata documentation](https://docs.ipdata.co/
 ## Change Log
 
 * November 21, 2023 - First upload
+* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

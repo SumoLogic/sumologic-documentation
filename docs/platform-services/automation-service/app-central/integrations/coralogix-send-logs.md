@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/coralogix-send-logs.png')} alt="coralogix-send-logs" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/coralogix-send-logs.png')} alt="Coralogix Send Logs icon" width="100"/>
 
-***Version: 1.2  
-Updated: Mar 4, 2024***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Coralogix is rebuilding the path to observability using a real-time streaming analytics pipeline that provides monitoring, visualisation, and alerting capabilities without the burden of indexing.
 
@@ -22,7 +22,7 @@ Generate and then copy the [API Key](https://coralogix.com/docs/user-guides/acco
 
 `https://<teamname>.coralogix.com/#/integration/apikey`
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-1.png')} style={{border:'1px solid gray'}} alt="coralogix-send-logs" width="800"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-1.png')} style={{border:'1px solid gray'}} alt="Coralogix send logs" width="800"/>
 
 ## Configure Coralogix - Send Logs in Automation Service and Cloud SOAR
 
@@ -61,3 +61,4 @@ For information about Coralogix - Send Logs, see [Coralogix documentation](https
 * July 07, 2022 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
 * March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
+* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

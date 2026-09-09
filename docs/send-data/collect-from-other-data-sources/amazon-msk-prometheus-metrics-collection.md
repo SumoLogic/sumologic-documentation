@@ -5,6 +5,7 @@ sidebar_label: Amazon MSK Prometheus
 description: The Amazon Managed Streaming for Apache Kafka (Amazon MSK) open monitoring feature exposes Kafka metrics that Sumo Logic can collect. This page provides instructions for configuring metrics collection for Amazon MSK.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Amazon Managed Streaming for Apache Kafka (Amazon MSK)** Open Monitoring, exposes Kafka metrics to third-party sources to monitor and troubleshoot MSK clusters. This section provides instructions for configuring metrics collection for Amazon MSK.
 
@@ -87,7 +88,7 @@ To install and configure Telegraf, do the following:
     * `<MSK_NODE>:11002/metrics` is the [Node Exportermetrics](https://github.com/prometheus/node_exporter)
     :::
 
-```sql
+```sumo
 [agent]
 # The interval property in the agent tells telegraf how often to scrape the metrics.
     interval = "60s"
@@ -120,6 +121,6 @@ To start Telegraf and query new metrics, do the following:
 
 1. Query for these new metrics in Sumo Logic by writing Metrics queries, as shown in the following example.
 
-![AmazonMSK_Metric_Query.png](/img/send-data/AmazonMSK_Metric_Query.png)
+<img src={useBaseUrl('img/send-data/AmazonMSK_Metric_Query.png')} alt="Amazon metric query" style={{border: '1px solid gray'}} width="800" />
 
 For more information on using Telegraf to get data into Sumo Logic, see this page on [collecting metrics with Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf). 

@@ -5,21 +5,25 @@ sidebar_label: Duo
 tags:
   - cloud-to-cloud
   - duo
-description: The Duo Source provides a secure endpoint to receive authentication logs from the Duo Authentication Logs API.
+description: The Duo Source provides a secure endpoint to receive logs from multiple API endpoints.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="Duo icon" width="55"/>
 
-The Duo Source provides a secure endpoint to receive authentication logs from the Duo [Authentication Logs API](https://duo.com/docs/adminapi#logs). It securely stores the required authentication, scheduling, and state tracking information.
+The Duo Source collects logs from multiple Duo API endpoints. It securely stores the required authentication, scheduling, and state tracking information.
 
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Authentication Logs](https://duo.com/docs/adminapi#logs) |
+| 5m  | [Authentication Logs](https://duo.com/docs/adminapi#logs)   |
+| 5m  | [Administrator Logs](https://duo.com/docs/adminapi#administrator-logs)|
+| 5m  | [Telephony Logs](https://duo.com/docs/adminapi#telephony-logs)|
+| 5m  | [Activity Logs](https://duo.com/docs/adminapi#activity-logs)|
+| 24h | [User Inventory Logs](https://duo.com/docs/adminapi#users) |
 
 ## Setup
 
@@ -40,16 +44,22 @@ To configure a Duo Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
    :::note
    If you are using the Duo Federal edition service when connecting APIs, it's recommended to use `duofederal.com` instead of the default `duosecurity.com` domain. Our Duo C2C lets you allow to configure the API domain as it contains the specific customer ID information. For example, you can use `api-xxxx-duosecurity.com` or `api-xxxx-duofederal.com` if the Duo Federal edition service has been opted in. For more information, refer to the [Duo Federal Edition Guide](https://duo.com/docs/duo-federal-guide#duo-service-connectivity).
    :::
 1. **Duo Domain**. Provide your **API hostname**, such as `api-********.duosecurity.com`.
 1. **Integration Key**. Provide the Duo Integration Key you want to use to authenticate collection requests.
 1. **Secret Key**. Provide the Duo Secret Key you want to use to authenticate collection requests. 
+1. **Supported APIs to Collect**. Choose the API endpoints you wish to collect logs from.
+1. **Collect User Inventory Every 24h**. Check this box if you want to collect user inventory every 24 hours.
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Submit**.
+
+:::tip
+After configuring the Duo source, consider installing the Sumo Logic app for [Duo Security](/docs/integrations/security-threat-detection/duo-security/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -81,6 +91,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | domain | String | Yes | `null`  | Provide your API hostname, such as api-********.duosecurity.com.| |
 | integration_key | String | Yes | `null` | Provide the Duo Integration Key you want to use to authenticate collection requests. |  |
 | secret_key | String | Yes | `null` | Provide the Duo Secret Key you want to use to authenticate collection requests. |  |
+| supported_apis| String Array| Yes | All APIs|Add an element for each of the APIs the integration should collect from.|`["authentication", "administrator", "telephony", "activity"]`|
+| collectUserInventory | Boolean | No | True| Set to true if the integration should collect user inventory logs. |`True`|
 | polling_interval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
 ### JSON example
@@ -100,3 +112,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Duo Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/duo/) to automate response actions directly from Cloud SOAR playbooks.

@@ -6,7 +6,6 @@
 function addListener(btn) {
   if (btn.__trialHooked) return;
   btn.__trialHooked = true;
-
   btn.addEventListener('click', () => {
     /* Generic conversion event – *no* search context required   */
     fetch('https://insights.algolia.io/1/events', {
@@ -30,27 +29,26 @@ function addListener(btn) {
     .then(b => console.log('✅ Algolia Insights', b))
     .catch(e => console.error('❌ Algolia error', e));
   });
-
   console.log('▶ trackTrialClick: wired');
 }
-
 /* ---------- retry helper ---------- */
-function waitForButton(retries = 20) {
-  const btn = document.querySelector('a.header-trial');   // <a class="header-trial">
-  if (btn) return addListener(btn);
-
-  if (retries > 0) {
-    return setTimeout(() => waitForButton(retries - 1), 300);
+function waitForButtons(retries = 20) {
+  // Look for any link going to sign-up page
+  const buttons = document.querySelectorAll('a[href*="sumologic.com/sign-up"]');
+  if (buttons.length > 0) {
+    buttons.forEach(btn => addListener(btn));
+    return;
   }
-  console.warn('trackTrialClick: free-trial button not found');
+  if (retries > 0) {
+    return setTimeout(() => waitForButtons(retries - 1), 300);
+  }
+  console.warn('trackTrialClick: sign-up buttons not found');
 }
-
 /* run after the first page load */
 export function onClientEntry() {
-  waitForButton();
+  waitForButtons();
 }
-
 /* run after every client-side navigation (e.g., clicking a doc link) */
 export function onRouteDidUpdate() {
-  waitForButton();
+  waitForButtons();
 }

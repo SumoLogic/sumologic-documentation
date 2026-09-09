@@ -10,7 +10,7 @@ description: The Qualys VMDR Source tracks errors, reports its health, and star
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="120" />
+<img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="Qualys icon" width="120" />
 
 The Qualys VMDR ingests vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), knowledgeBase data from [KnowledgeBase API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf), and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
 
@@ -39,8 +39,8 @@ To configure a Qualys VMDR Source:
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Qualys API Server URL** and **Qualys API Gateway URL**. Provide the Qualys API server URLs. Use the [Qualys Platform Identification](https://www.qualys.com/platform-identification) page and scroll down to **API URLs** to for a reference to your Qualys deployment location.
 1. **Username** and **Password**. Use your Qualys account username and password for API authentication.
 1. The next section covers the type of data to collect and how often.
@@ -52,6 +52,9 @@ To configure a Qualys VMDR Source:
    * Parse Expression: `"true" as _siemForward`
 1. When you are finished configuring the Source, click **Submit**.
 
+:::info
+After configuring the Qualys VMDR source, consider installing the Sumo Logic app for [Qualys VMDR](/docs/integrations/saas-cloud/qualys-vmdr/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## FAQ
 
@@ -84,7 +87,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
   <tr>
    <td>Computer Inventory</td>
    <td><code>/rest/2.0/search/am/asset/</code></td>
-   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as <a href="/docs/cse/administration/inventory-sources-and-data">inventory data</a>.<br />
+   <td>This collects the details for each asset/computer from Qualys. This data source is supported by Cloud SIEM as [inventory data](/docs/cse/administration/inventory-sources-and-data).<br />
    Permissions - User must have the <code>GAV/CSAM</code> module and the <code>App API Enabled</code> option enabled for that role. Additionally, the user must have the <code>Allow user view access to all objects</code> checkbox enabled under <strong>Roles And Scopes</strong> within the user settings.<br/>
    API details are on page 27 in the <a href="https://www.qualys.com/docs/qualys-gav-csam-api-v2-user-guide.pdf">this Qualys PDF</a>.</td>
   </tr>
@@ -92,7 +95,7 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ### Is anything changed with data for computer inventory?
 
-Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 64KB](/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
+Sometimes the asset information from the computer inventory data can exceed the [Sumo Logic maximum log size of 256KB](/docs/search/get-started-with-search/search-basics/search-large-messages/). Sumo Logic will automatically split log messages exceeding the size limit into smaller chunks. This C2C makes the following changes to the computer inventory asset data collected in order to keep most logs under the size limit and prevent splitting:
 
 - The `openPortListData` key only contains information about ports open since the last time computer asset was ingested instead of listing all open port history from all time.
 - The `softwareListData` is reduced down from the full details to simply a list/array of software names using the full name.

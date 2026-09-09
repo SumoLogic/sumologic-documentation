@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/http-tools.png')} alt="http-tools" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/http-tools.png')} alt="HTTP tools icon" width="80"/>
 
-***Version: 1.5  
-Updated: January 09, 2024***
+***Version: 1.6  
+Updated: April 29, 2026***
 
 Set of scripts to perform simple HTTP requests.
 
@@ -59,3 +59,4 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
     + HTTP PUT
 * January 09, 2024 (v1.5) - Updated Action: 
   * HTTP POST Action - Fix the issue with the "output.raw JSON" field.
+* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

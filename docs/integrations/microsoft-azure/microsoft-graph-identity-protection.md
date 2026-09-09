@@ -7,7 +7,7 @@ description: The Sumo Logic App for Microsoft Graph Identity Protection provides
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="dropbox-icon.png" width="50"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="Dropbox icon" width="50"/>
 
 The Microsoft Graph Identity Protection App for Sumo Logic provides organizations with advanced security monitoring and analytics capabilities for their Microsoft Graph Identity Protection data. The app leverages Sumo Logic's [cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-identity-protection-source) to collect and analyze data from the Microsoft Graph Identity Protection Source, allowing organizations to proactively identify potential security risks and take action to mitigate them.
 
@@ -82,7 +82,7 @@ This section contains log messages for both `Risky Users` and `Risk detections` 
 
 This section contains the sample queries of both the `Risky Users` and `Risk detections`.
 
-```sql title="Risky Users by Status"
+```sumo title="Risky Users by Status"
 _sourceCategory=msgip-app-src !riskEventType
 | json "id", "userPrincipalName", "isDeleted", "isProcessing", "riskLevel", "riskState", "riskDetail", "riskLastUpdatedDateTime" as user_id, user, is_deleted, is_processing, risk_level, risk_state, risk_action, risk_last_updated_date_time nodrop
 | topk(1, risk_last_updated_date_time) by user_id
@@ -104,7 +104,7 @@ _sourceCategory=msgip-app-src !riskEventType
 | sort by _count
 ```
 
-```sql title="Risk by Level"
+```sumo title="Risk by Level"
 _sourceCategory=msgip-app-src riskEventType
 | json "activity", "activityDateTime", "detectedDateTime", "detectionTimingType", "id", "ipAddress", "lastUpdatedDateTime", "location", "location.geoCoordinates.latitude", "location.geoCoordinates.longitude", "riskDetail", "riskEventType", "riskLevel", "riskState", "source", "tokenIssuerType", "userPrincipalName", "userId" as activity, activity_date_time, detected_date_time, detection_timing_type, risk_id, ip_address, last_updated_date_time, location, latitude, longitude, risk_action, risk_event_type, risk_level, risk_state, source, token_issuer_type, user, user_id nodrop
 | concat(location.city, ", ", location.state, ", ", location.countryOrRegion) as location

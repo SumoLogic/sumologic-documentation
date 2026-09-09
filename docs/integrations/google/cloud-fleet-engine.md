@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudFleetEngine.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudFleetEngine.png')} alt="Google Cloud Fleet Engine icon" width="50"/>
 
 The Fleet Engine On-demand Rides and Deliveries API lets you manage trips and vehicle state for your trip and order progress applications. For more details, refer to the [GCP documentation](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/trip-order-progress/fleet-engine).
 

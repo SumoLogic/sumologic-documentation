@@ -11,15 +11,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Salesforce icon" width="75"/>
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
+
+:::note
+Upgrade the Salesforce source to the latest version 4.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 1 hour |  [Event data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+| 60 minutes |  [Audit data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
+| 60 minutes |  [Event Log File data](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm) |
 
 ### Polling Interval and Salesforce API Rate Limits
 
@@ -70,17 +75,22 @@ To configure a Salesforce Source:
 1. For **Source Category (Optional)**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **SignOn URL.** Enter your Sign on URL. For example, `https://<MyDomainName>.my.salesforce.com/services/oauth2/token`.
 1. **Client ID.** Enter the Consumer Key of the ConnectedApp. 
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
+1. **API Collection.** Select the checkbox depending on the type of data that you wish to collect.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
     :::note
     <CollBegin/>
     :::
 1. When you are finished configuring the Source, click **Submit**.
+
+:::tip
+After configuring the Salesforce source, consider installing the Sumo Logic app for [Salesforce](/docs/integrations/saas-cloud/salesforce/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -112,6 +122,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | client_id | String | True |`null` | Type in Consumer Key of the Connected App. |  |
 | client_secret | String | True | `null` | Type in Consumer Secret of the Connected App. |  |
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
+| collectAuditData | Boolean | No | True | Set to true to collect the audit events data.|  |
+| collectEventLogFileData | Boolean | No | True | Set to true to collect the event log files data.|  |
 
 ### JSON example
 
@@ -129,7 +141,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 After you configure your Source, you should check the status of the source in the Collectors page. In case the Source is not functioning as expected, you may see an error next to the Source Category column as shown below: 
 
-![salesforce-troubleshooting](/img/send-data/salesforce-troubleshooting.jpg)
+<img src={useBaseUrl('img/send-data/salesforce-troubleshooting.jpg')} alt="<Salesforce Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 
 The following section details how you can resolve various errors: 
 
@@ -245,3 +257,7 @@ You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Salesforce Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/salesforce/) to automate response actions directly from Cloud SOAR playbooks.

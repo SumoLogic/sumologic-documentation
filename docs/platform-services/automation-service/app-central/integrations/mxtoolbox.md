@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mxtoolbox.png')} alt="mxtoolbox" width="60"/>
 
-***Version: 1.3  
-Updated: Jun 23, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Utilize MXToolbox to gather MX records for enrichment data during incident investigation.
 
@@ -42,3 +42,4 @@ For information about MxToolbox, see [MxToolbox documentation](https://mxtoolbox
 * February 14, 2020 - First upload
 * January 13 ,2023 - General improvements
 * June 23, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

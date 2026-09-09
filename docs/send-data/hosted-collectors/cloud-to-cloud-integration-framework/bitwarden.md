@@ -10,7 +10,7 @@ description: Learn how to collect event logs from the Bitwarden API.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/bitwarden.png')} alt="Bitwarden icon" width="100"/>
 
 The Bitwarden source collects event logs from their API. Many fields in the event log contain unique IDs, making it difficult to interpret the logs without contextual names. To enhance readability, this integration queries the group, member, and policy API endpoints before each poll cycle, ensuring up-to-date lookup information for event log IDs. The event log is then enriched with additional fields, such as group names, member names, member emails, and policy types.
 
@@ -46,8 +46,8 @@ To configure the Bitwarden Source:
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **Bitwarden API Server Base URL**, enter the API Base URL for your Bitwarden installation.
 1. (Optional) In **Self Hosted API Base URL**, enter the API Base URL for your Self-Hosted Bitwarden installation. This field is only available if you select `Self-Hosted` for the server base URL.
 1. (Optional) In **OAuth 2.0 Token Url**, enter the OAuth 2.0 Token URL for your Self-Hosted Bitwarden installation. This field is only available if you select `Self-Hosted` for the server base URL.
@@ -55,6 +55,10 @@ To configure the Bitwarden Source:
 1. In **OAuth 2.0 Client Secret**, enter your Bitwarden OAuth 2.0 Client Secret.
 1. (Optional) The **Polling Interval** is set for 15 minutes default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the Bitwarden source, consider installing the Sumo Logic app for [Bitwarden](/docs/integrations/saas-cloud/bitwarden/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 

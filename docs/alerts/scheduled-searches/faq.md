@@ -5,6 +5,8 @@ sidebar_label: FAQ
 description: You can edit or cancel a Scheduled Search at any time.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The following topics include frequently asked questions about scheduled
 searches and provide troubleshooting tips. 
 
@@ -51,7 +53,7 @@ To create a Scheduled Search:
     | fields collector, gbytes, collector_pct_of_todaysvolume, todays_volume, plan_size, todaysvolume_against_plan
     ```
 1. For the search **Time Range**, select **Today**.
-1. Click **Save As**. <br/>![DataUsageBreached.png](/img/alerts/DataUsageBreached.png)
+1. Click **Save As**. <br/><img src={useBaseUrl('img/alerts/DataUsageBreached.png')} alt="Data usage breached" style={{border: '1px solid gray'}} width="500" />
 1. In the **Save Search As** dialog, enter a name for this Scheduled Search, such as **90% Data Usage Limit Reached**.
 1. Set the **Run frequency** to **Every 4 hours**.
 1. Click **Schedule this search**. 
@@ -80,7 +82,7 @@ Failures could be related to the Scheduled Search query. Check the following:
 
 Failures can be seen across many Scheduled Searches due to back-end infrastructure issues at Sumo Logic. In this case, wait until Sumo Logic service is restored and test your query for normal performance.
 
-* Check http://status.sumologic.com for outages impacting multiple customers and specific functionalities.
+* Check https://status.sumologic.com for outages impacting multiple customers and specific functionalities.
 * Sumo Logic reports Scheduled Search failures in the [Audit Index](/docs/manage/security/audit-indexes/audit-index). Determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to infrastructure issues and will address them promptly. 
 
 ### Other issues
@@ -135,6 +137,11 @@ Sumo Logic has an email quota allowing 100 emails to be sent per day per schedul
 
 The quota assumes that no more than 5 alert emails will be triggered per hour or an alert every 12 minutes on average. Alerts are used as an exception and it is unlikely to find email Alerts being sent at a rate higher than 5 emails per hour.
 
+## Why is the Message (_raw) field empty in my Save to Index results?
+
+For aggregate queries (for example, `... | timeslice 1m | count by batch, parsedfield`) saved via Save to Index, the **Message (`_raw`)** field is no longer populated. It previously held a synthesized, comma-separated string of the row's values (for example, `Count=1,batch=3,parsedfield=testlog_HwMoOdtQ00`) and that behavior has been removed.
+
+No data is lost and all values remain available in their named fields (`_count`, `batch`, `parsedfield`, etc.). If your queries parse or search `_raw`/Message for this data, update them to reference the named fields directly. See [Save to Index Limitations](/docs/alerts/scheduled-searches/save-to-index/#limitations) for details.
 
 ## What happens when a Scheduled Search is suspended?
 
@@ -160,21 +167,21 @@ A maximum of 6000 Scheduled Searches are allowed per account.
 
 The following is an example of a temporary suspension email:
 
-![suspension email.png](/img/alerts/suspension-email.png)
+<img src={useBaseUrl('img/alerts/suspension-email.png')} alt="Suspension email" style={{border: '1px solid gray'}} width="700" />
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events. The following is an example of a temporary suspension log:   
 
-![temp sus.png](/img/alerts/temp-sus.png)
+<img src={useBaseUrl('img/alerts/temp-sus.png')} alt="Temporary suspension" style={{border: '1px solid gray'}} width="800" />
 
 #### Permanent suspension
 
 The following is an example of a permanent suspension email:  
 
-![permanent sus.png](/img/alerts/permanentsus.png)
+<img src={useBaseUrl('img/alerts/permanentsus.png')} alt="Permanent suspension" style={{border: '1px solid gray'}} width="700" />
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) stores events on your scheduled search events. The following is an example of a permanent suspension log:
 
-![perm sus.png](/img/alerts/perm-sus.png)
+<img src={useBaseUrl('img/alerts/perm-sus.png')} alt="Permanent suspension" style={{border: '1px solid gray'}} width="800" />
 
 #### How long will the Scheduled Search be suspended?  
 

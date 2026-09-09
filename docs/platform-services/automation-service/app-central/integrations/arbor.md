@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arbor.png')} alt="apivoid" width="90"/>
 
-***Version: 1.3  
-Updated: Mar 4, 2024***
+***Version: 1.4  
+Updated: April 13, 2026***
 
 Gather detail-rich data from Netscout Arbor alerts.
 
@@ -50,3 +50,4 @@ For information about Arbor, see [Netscout](https://www.netscout.com/arbor).
     + Updated the integration with Environmental Variables
     + Changed fields visibility
 * March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+* April 13, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

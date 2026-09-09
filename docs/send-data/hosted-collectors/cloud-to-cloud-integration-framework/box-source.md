@@ -11,7 +11,7 @@ description: The Box API integration ingests events from the Get Events API.
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/box-logo.svg')} alt="box-logo.svg" width="60" />
+<img src={useBaseUrl('img/send-data/box-logo.svg')} alt="Box logo" width="60" />
 
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -44,11 +44,15 @@ To configure a Box Source:
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
    * Define the fields you want to associate, each field needs a name (key) and value.
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. Upload the JSON file.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Box source, consider installing the Sumo Logic app for [Box](/docs/integrations/saas-cloud/box/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -90,6 +94,44 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```sh reference
 https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/box/example.tf
 ```
+
+## Troubleshooting
+
+After you configure your source, check the status of the source on the **Collection** page. If the source is not functioning as expected, you may see an error in the **Status** column, as shown below:
+
+<img src={useBaseUrl('img/send-data/box-troubleshooting.png')} alt="Box Troubleshooting" style={{border: '1px solid gray'}} width="800" />
+
+The following sections detail how you can resolve various errors.
+
+### Invalid or missing grant type
+
+**Error**: `{"error":"invalid_grant","error_description":"Invalid grant_type parameter or parameter missing"}`. This error usually indicates that the OAuth token request is invalid or the app is not fully configured for Server Authentication (JWT).
+
+**Solution**: Verify JWT app setup, re-upload a fresh credentials JSON file, and confirm the app is authorized and enabled in the Box **Admin Console**.
+
+### Server unavailable
+
+**Error**: `{"error":"temporarily_unavailable","error_description":"The server is currently unable to handle the request due to a temporary overloading of the server"}`. This indicates a temporary Box service-side issue.
+
+**Solution**: Retry after a short wait, check [Box Status](https://status.box.com/), and contact Box Support if the issue persists.
+
+### Connection error
+
+**Error**: `{"error_description":"read: connection reset by peer"}`. This indicates a network interruption between Sumo Logic and Box.
+
+**Solution**: Retry the Source and verify that your network and security controls allow outbound HTTPS access to required Box API endpoints.
+
+### Invalid request
+
+**Error**: `{"error":"invalid_request","error_description":"A request parameter was invalid"}`. This means one or more Box API request parameters are invalid, unsupported, or malformed.
+
+**Solution**: Verify the query parameter names and values in the Box API request, then retry with supported parameters only.
+
+### Unauthorized client
+
+**Error**: `{"error":"unauthorized_client","error_description":"This app is not authorized by the enterprise admin"}`. This means the Box enterprise admin has not approved the app for your org.
+
+**Solution**: Have your Box enterprise admin authorize and enable the app in **Admin Console** > **Integrations** > **Platform Apps Manager**, then retry the source.
 
 ## FAQ
 

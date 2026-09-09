@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-as3.png')} alt="f5-as3" width="60"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-as3.png')} alt="F5 AS3 icon" width="60"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Manipulate F5 AS3 configurations during an active investigation.
 
@@ -42,3 +42,4 @@ For information about F5 AS3, see [F5 AS3 documentation](https://clouddocs.f5.co
 
 * September 4, 2019 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

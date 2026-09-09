@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory.png')} alt="active-directory" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory.png')} alt="Active directory icon" width="100"/>
 
 **Version: 1.3  
 Updated: Dec 19, 2023**

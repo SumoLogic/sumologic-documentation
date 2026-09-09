@@ -6,7 +6,15 @@ description: Create, edit, and view user accounts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for creating and editing users in Sumo Logic. For information about deleting a user, see [Delete a User](delete-user.md).
+This section has instructions for creating and editing users in Sumo Logic. For information about deleting a user, see [Delete a User](/docs/manage/users-roles/users/delete-user/).
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a user with the [`sumologic_user`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/user) resource.
+
+<TerraformLink/>
+:::
 
 ## Create a user
 
@@ -18,7 +26,7 @@ To create a user:
 1. **First Name**. Enter the user’s first name.
 1. **Last Name**. Enter the user’s last name.
 1. **Email**. Enter the user’s email address. We recommend that the email match one of your corporate domains of your Sumo Logic account and not be sent to a personal account. For new users, Sumo Logic automatically sends a temporary password to the user at the email address you've entered. A user who logs in to Sumo Logic for the first time is prompted to change the temporary password.
-1. **Assigned Roles**. Click in this field to display a list of Sumo Logic roles. Click a role to assign it to the user. For more information about roles, see [Role-Based Access Control](../roles/role-based-access-control.md). If you select multiple roles, the user is given highest level of access of all the assigned roles.
+1. **Assigned Roles**. Click in this field to display a list of Sumo Logic roles. Click a role to assign it to the user. For more information about roles, see [Role-Based Access Control](/docs/manage/users-roles/roles/role-based-access-control/). If you select multiple roles, the user is given highest level of access of all the assigned roles.
 1. Repeat the previous step to assign additional roles to the user.
 1. Click **Save** when you are done assigning roles to the user.
 

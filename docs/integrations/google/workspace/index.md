@@ -7,7 +7,7 @@ description: The Google Workspace App allows you to monitor and analyze activiti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
 
 The Google Workspace App allows you to monitor and analyze activities across all Google Workspace applications from a single location. Comprehensive dashboards display information on administrative and user activities, Google Drive usage, and logins.
 
@@ -15,6 +15,11 @@ Dashboards also provide full visibility into alerts from Google Workspace Alert 
 
 
 ## Log and Alert Types
+
+This app uses the following log types:
+
+* **Audit logs**. Collected from [Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source).
+* **Alert logs**. Collected from [Google Workspace AlertCenter](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
 
 Each Google Workspace app has its own log that tracks actions in JSON format. The logs are all structurally similar. The differences are in the events section of the JSON where the actions are recorded.
 

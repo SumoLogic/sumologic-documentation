@@ -5,20 +5,16 @@ sidebar_label: Set the Time Range
 description: You can adjust the time range for searches and metrics to get the information that will be of most use.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 To set the time range for searches or metrics visualizations, click the time area.
 
-![time range cropped](/img/reuse/query-search/time-range-cropped.png)
+<img src={useBaseUrl('img/reuse/query-search/time-range-cropped.png')} alt="Time range cropped" style={{border: '1px solid gray'}} width="300" />
 
 The current time range is displayed, along with the following options to set the time:
 
-* **Relative**. Select an interval relative to the current time. The display is updated as soon as you make a selection. You can enter absolute time and dates.  
-
-    ![absolute timerange.png](/img/search/get-started-search/build-search/absolutetimerange.png)
-
-* **Custom**. Click a date to select it as the start date, then move your cursor to the desired end date and click to select it. The date settings shown below the calendar are updated. You can scroll to navigate between months or click to go to a specific month. To specify the time, highlight the portion of the time value you want to change, and modify the entry.  
-
-    ![time range custom.png](/img/reuse/query-search/time-range-custom.png)
-
+* **Relative**. Select an interval relative to the current time. The display is updated as soon as you make a selection. You can enter absolute time and dates.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/absolutetimerange.png')} alt="Absolute timerange" style={{border: '1px solid gray'}} width="400" />
+* **Custom**. Click a date to select it as the start date, then move your cursor to the desired end date and click to select it. The date settings shown below the calendar are updated. You can scroll to navigate between months or click to go to a specific month. To specify the time, highlight the portion of the time value you want to change, and modify the entry.<br/><img src={useBaseUrl('img/reuse/query-search/time-range-custom.png')} alt="Time range custom" style={{border: '1px solid gray'}} width="200" />
 * **Recent**. If you have specified any relative or custom time ranges during your current login session, they are available for selection under **Recent**.
 
 #### Rules

@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudLogging.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudLogging.png')} alt="Google Cloud Logging icon" width="50"/>
 
 Cloud Logging is a real-time log management system with storage, search, analysis, and monitoring support. Cloud Logging automatically collects logs from Google Cloud resources. For more details, refer to the [GCP documentation](https://cloud.google.com/logging/docs/overview).
 

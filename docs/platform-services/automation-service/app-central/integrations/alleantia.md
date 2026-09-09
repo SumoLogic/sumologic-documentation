@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alleantia.png')} alt="alienvault-otx" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alleantia.png')} alt="Alleanta icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jun 26, 2023***
+***Version: 1.3  
+Updated: April 13, 2026***
 
 Alleantia software is a reference vendor for factory automation, energy and utilities, transportation.
 
@@ -56,3 +56,4 @@ For information about Alleantia, see [Alleantia documentation](https://kb.allean
 * June 26, 2023 (v1.2)
 	+ Removed version tag from actions
 	+ Updated the integration with Environmental Variables
+* April 13, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

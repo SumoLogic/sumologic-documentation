@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 2.10  
-Updated: September 2 , 2024***
+***Version: 2.13  
+Updated: July 13, 2026***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
@@ -33,6 +33,7 @@ This integration uses the [Jira REST API v2](https://developer.atlassian.com/clo
 * **List Transitions** *(Enrichment)* - Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's .status.
 * **List Users** *(Enrichment)* - Returns a list of all users
 * **Search Into Issues** *(Enrichment)* - Search Jira Issues.
+* **Search User** *(Enrichment)* - Search for a user by display name, email address, or account ID.
 * **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
 * **Update Transition Issue** *(Notification)* - Update transition issue based on the issue's status.
 
@@ -40,7 +41,7 @@ This integration uses the [Jira REST API v2](https://developer.atlassian.com/clo
 
 Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-2" width="300"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="Atlassian jira V2 sign in" width="300"/>
 
 ### Create an API token
 
@@ -48,7 +49,7 @@ Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Click **Create API token**.
 1. From the dialog that appears, enter a memorable and concise **Label** for your token and click **Create**.
-1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-3" width="300"/>
+1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira V2 Copy to clipboard" width="300"/>
 
 ### Revoke an API token
 
@@ -90,9 +91,9 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * Populate **Cloud SOAR API URL** and **Cloud SOAR JWT (token)** when using the **Add Issue Attachment To Incident** action.
 :::
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-5" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira V2 configuration dialog" width="400"/>
 
-For information about Atlassian Jira, see [Jira documentation]( https://confluence.atlassian.com/jira). For the REST API v2, see the [REST API v2 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/).
+For information about Atlassian Jira, see [Jira documentation](https://confluence.atlassian.com/jira). For the REST API v2, see the [REST API v2 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/).
 
 ## Category
 
@@ -120,3 +121,6 @@ Ticketing System
 * May 23, 2024 (v2.8) - Updated the Add Issue Attachments To Incident action
 * June 20, 2024 (v2.9) - New action: Download Attachment
 * September 2, 2024 (v2.10) -  Updated the Update Issue action
+* March 23, 2026 (v2.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+* June 26, 2026 (v2.12) - Added new Search User action to search for Jira users by display name, email address, or account ID.
+* July 13, 2026 (v2.13) - Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.

@@ -15,7 +15,7 @@ Returns the number of client errors, server errors, redirects, and successful re
 
 * Suggested Time Range: -7d
 
-```sql
+```sumo
 _sourceCategory=*IIS*
 | parse using public/iis
 | if(sc_status matches "2*", 1, 0) as successes
@@ -32,7 +32,7 @@ Returns the top 100 URLs that refer to a resource (that does not exist on the we
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceCategory=*IIS* "404"
 | parse using public/iis
 | where sc_status matches "404" 
@@ -45,7 +45,7 @@ Returns the number of hits on a website each day over the past 24 hours. If this
 
 * Suggested Time Range: -7d
 
-```sql
+```sumo
 _sourceCategory=*IIS*
 | parse using public/iis
 | timeslice by 1d
@@ -58,7 +58,7 @@ Returns the top 10 browsers accessing the website.
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceCategory=*IIS*
 | parse using public/iis
 | count_frequent cs_user_agent
@@ -69,7 +69,7 @@ _sourceCategory=*IIS*
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceCategory=*IIS*
 | parse using public/iis
 | (time_taken/1000) as seconds

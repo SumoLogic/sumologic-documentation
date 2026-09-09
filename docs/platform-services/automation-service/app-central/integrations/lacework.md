@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/lacework.png')} alt="lacework" width="100"/>
 
-***Version: 1.5  
-Updated: May 2, 2024***
+***Version: 1.6  
+Updated: April 29, 2026***
 
 Lacework provides end-to-end cloud security automation for AWS, Azure, and GCP with a comprehensive view of risks across cloud workloads and containers.
 
@@ -68,3 +68,4 @@ For information about Lacework, see [Lacework documentation](https://docs.lacewo
     + Fixed endpoint in Close Alert action
 * May 2, 2024 (v1.5)
     + New action: Execute Query
+* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

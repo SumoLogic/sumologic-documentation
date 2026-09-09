@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/stellar-cyber-starlight.png')} alt="stellar-cyber-starlight" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/stellar-cyber-starlight.png')} alt="Stellar Cyber Starlight icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Query Starlight events during active incident investigations with Cloud SOAR tegration with Stellar Cyber Starlight.
 
@@ -47,3 +47,4 @@ For information about Stellar Cyber, see [Stellar Cyber documentation](https://d
 
 * September 3, 2020 - First upload
 * July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

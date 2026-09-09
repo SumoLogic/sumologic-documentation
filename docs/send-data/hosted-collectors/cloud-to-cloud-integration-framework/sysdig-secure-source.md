@@ -11,7 +11,7 @@ description: The Sysdig Secure Source aims to collect the scan results from the 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="icon" width="125"/>
+<img src={useBaseUrl('img/integrations/misc/sysdig-logo.png')} alt="Sysdig icon" width="125"/>
 
 Sysdig Secure is a comprehensive security platform that provides continuous security and compliance monitoring for cloud-native environments. This is designed specifically to address the security needs of modern containerised and Kubernetes infrastructures. Sysdig Secure enables organisations to detect, prevent, and respond to security threats and ensure compliance in real-time.
 
@@ -25,7 +25,7 @@ Sysdig Secure is a comprehensive security platform that provides continuous secu
 :::note Access the API documents
 1. Sign in to your Sysdig platform.
 1. On the bottom left of the page, click **Secure Operations**.
-1. Click **Next Gen API Docs** under the **Help** menu. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig/Sysdig+API+docs.png')} alt="Next-Gen-API-Docs" width="500" />
+1. Click **Next Gen API Docs** under the **Help** menu. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sysdig/Sysdig+API+docs.png')} alt="Next Gen API Docs" width="500" />
 :::
 
 ## Setup
@@ -62,8 +62,8 @@ To configure a Sysdig Secure Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema is ignored, known as dropped.
 1. **Base URL**. Enter the [Sysdig Secure platform](#base-url) Base URL. For example, `https://api.us2.sysdig.com`.
 1. **Bearer Token**. Enter the Sysdig Secure API token collected from the [Sysdig Secure](#bearer-token) platform. For example, `t3fPdsbxxxxxxxxxp4D6hbi4`.
 1. (Optional) **Filters**. Click the **+Add** button to define the filters you want to associate. Each filter needs a **Field Name** (key) and **Field Value** (value). For key-value pairs, the length is set to 256 characters and the API accepts a maximum length of 1024 characters for the filter.
@@ -75,6 +75,10 @@ To configure a Sysdig Secure Source:
 Each detailed log will be broken down into two logs, one for packages and one for vulnerabilities based on the size of the messages. These broken down packages and vulnerabilities logs will be tied with `resultId`, `resourceId`, `assetType`, `metadata`, and `stage` separately and this newly created object will be sent to Sumo Logic.
 - `resultId` and `resourceId` will be collected from the **Runtime Result API**.
 - `assetType`, `metadata`, and `stage` will be collected from the **Result API**.
+:::
+
+:::info
+After configuring the Sysdig Secure source, consider installing the Sumo Logic app for [Sysdig Secure](/docs/integrations/saas-cloud/sysdig-secure/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

@@ -14,6 +14,14 @@ As described in the [Insight Generation Process](/docs/cse/get-started-with-clou
 
 This topic has instructions for defining a custom insight, which is a configuration you set up that causes Cloud SIEM to generate insights based purely on one or more signals being fired. 
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage insights with the [`sumologic_cse_insights_configuration`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_configuration) and [`sumologic_cse_custom_insight`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_insight) resources.
+
+<TerraformLink/>
+:::
+
 ## Ways to define a custom insight
 
 When you create a custom insight, the following field appears on the creation dialog: 
@@ -41,7 +49,7 @@ The default way of generating an insight for each entity may result in custom in
 
 In that case, under **Strict Signal Configuration**, select **Only include the signals defined in this custom insight**. This generates insights only on those signals defined in your custom insight. Any additional signals related to the applicable entity are excluded. 
 
-<img src={useBaseUrl('img/cse/strict-signal-configuration-checkbox.png')} alt="Strict Signal Configuration checkbox" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/strict-signal-configuration-checkbox.png')} alt="Strict Signal Configuration check box" style={{border: '1px solid gray'}} width="400"/>
  
 ## Create a custom insight
 

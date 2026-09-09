@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-network-security-platform-manager-nsm.png')} alt="mcafee-network-security-platform-manager-nsm.png" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mcafee-network-security-platform-manager-nsm.png')} alt="McAfee Network Security Platform Manager logo" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 McAfee Network Security Platform is a purpose-built and intelligent next-generation intrusion prevent system (IPS) solution that inspects all network traffic to accurately and effectively block the advanced, targeted attacks that evade traditional IPS solutions.
 
@@ -47,3 +47,4 @@ For information about McAfee Network Security Platform Manager, see [McAfee Netw
 
 * October 31, 2022 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

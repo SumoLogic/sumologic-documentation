@@ -11,7 +11,7 @@ Schema from vendor-supplied threat intelligence indicators are mapped to [normal
 
 ## CrowdStrike
 
-You can ingest threat indicators from CrowdStrike using the [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source). In addition, Sumo Logic provides an out-of-the-box `_sumo_global_feed_cs` source whose indicators are supplied by CrowdStrike. The same normalization applies to schema in both sources.
+You can ingest threat indicators from CrowdStrike using the [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source). In addition, Sumo Logic provides an out-of-the-box [`_sumo_global_feed_cs` source](/docs/security/threat-intelligence/sumologic-global-feed-from-crowdstrike/) whose indicators are supplied by CrowdStrike. The same normalization applies to schema in both sources.
 
 Following are the normalized values for CrowdStrike:
 

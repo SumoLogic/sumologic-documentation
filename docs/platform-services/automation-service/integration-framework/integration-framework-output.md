@@ -1,6 +1,6 @@
 ---
 id: integration-framework-output
-title: Integration Framework Output
+title: Open Integration Framework Output
 sidebar_label: Output
 description: Learn how to work with output from the integration framework. 
 ---
@@ -219,7 +219,7 @@ With the same action used in [Use mult-select in output](#use-multi-select-in-ou
 
 Pipe function `join('separator')`:
 
-```
+```sumo
 output:
   - path : '[].guid | join(,)'
 ```

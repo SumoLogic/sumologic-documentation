@@ -4,7 +4,7 @@ title: LogReduce Values
 description: Group by the values of specific keys in JSON logs.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the [LogReduce Keys operator](/docs/search/behavior-insights/logreduce/logreduce-keys), you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
 
@@ -26,7 +26,7 @@ With the provided results you can:
 
 ## Syntax
 
-```sql
+```sumo
 | logreduce values on <keys>[,<keys>, ...] [output_threshold <output_threshold>]
 ```
 
@@ -42,13 +42,13 @@ There are two methods you have to use the details option:
 
 * Click on the `_count` field value from the LogReduce Values search results.  
 
-    ![details option by link.png](/img/search/behavior-insights/details-option-by-link.png)  
+    <img src={useBaseUrl('img/search/behavior-insights/details-option-by-link.png')} alt="Details option by link" style={{border: '1px solid gray'}} width="400" />
 
     A new search is created with the necessary identifiers from your initial LogReduce Values search. The search contains all of the raw logs from the selected data cluster.  
      
 * Manually provide the necessary identifiers. You can provide identifiers from previously run LogReduce Values searches. However, the only way to get the search identifier, given with the `shortcodeID` parameter, is to click the `_count` link from the interface. The query of the created search has the identifier that you can save for later use, up to 1,095 days. For example, the following query was created by clicking the `_count` link:  
 
-    ```sql
+    ```sumo
     | logreduce values details on %"region", %"partition" pCV6qgaOvASgi1j9KhcGaE6mts6jfOEk "C049BE180425642A"
     ```  
 
@@ -56,7 +56,7 @@ There are two methods you have to use the details option:
 
 ### Details Syntax
 
-```sql
+```sumo
 | logreduce values details on <keys>[, <keys>, ...] <shortcodeID> <cluster_id>,<cluster_id>, ...]
 ```
 
@@ -68,13 +68,13 @@ There are two methods you have to use the details option:
 
 For example, to see details from a particular LogReduce Values search and data clusters, you'd use the following syntax: 
 
-```sql
+```sumo
 | logreduce values details on <keys>[, <keys>, ...] <shortcodeID> <cluster_id>,<cluster_id>, ...]
 ```
 
 To see all the logs by cluster identifiers for further processing, you'd use the following syntax:
 
-```sql
+```sumo
 | logreduce values details on <keys>[, <keys>, ...] <shortcodeID>
 ```
 
@@ -97,7 +97,7 @@ To see all the logs by cluster identifiers for further processing, you'd use
 
 In this example, the user wants to cluster AWS CloudTrail logs to understand errorCodes, like "AccessDenied", eventSource, like Ec2 or S3, and eventName. This can reveal patterns such as certain eventSources contributing more errors than others.
 
-```sql
+```sumo
 _sourceCategory= *cloudtrail* errorCode
 | json field=_raw "eventSource" as eventSource
 | json field=_raw "eventName" as eventName
@@ -109,7 +109,7 @@ _sourceCategory= *cloudtrail* errorCode
 
 After using [LogReduce Keys to scan your logs for schemas](logreduce-keys.md) you can use LogReduce Values to explore them further based on specific keys.
 
-```sql
+```sumo
 _sourceCategory="primary-eks/events"
 | where _raw contains "forge"
 | json auto "object.reason", "object.involvedObject.name", "object.message", "object.involvedobject.kind", "object.source.component", "object.metadata.namespace" as reason, objectName, message, kind, component, namespace
@@ -122,7 +122,7 @@ Next, use [LogExplain to determine how frequently your `reason` is](../logexpl
 
 The following query helps you see which groups of users, IP addresses, AWS regions, and S3 event names are prevalent in your AWS CloudTrail logs that reference `AccessDenied` errors for AWS. Knowing these clusters can help plan remediation efforts.
 
-```sql
+```sumo
 _sourceCategory=*cloudtrail* *AccessDenied*
 | json field=_raw "userIdentity.userName" as userName nodrop
 | json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
@@ -142,7 +142,7 @@ _sourceCategory=*cloudtrail* *AccessDenied*
 
 Results show each unique signature:
 
-![CloudTrail example LogReduce Values.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Values.png)
+<img src={useBaseUrl('img/search/behavior-insights/CloudTrail-example-LogReduce-Values.png')} alt="CloudTrail example LogReduce Values" style={{border: '1px solid gray'}} width="800" />
 
 Next, use [LogExplain](../logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
@@ -150,7 +150,7 @@ Next, use [LogExplain](../logexplain.md) to analyze which users, IP addresses, 
 
 If the user wants to drill down on a particular logreduce values query id and cluster id, we provide a link that leads to the following query. 
 
-```sql
+```sumo
 _sourceCategory="aws/cloudtrail/production" and _collector="AWS"
 | json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly"
 | logreduce values-details <shortcodeID> [clusterId<cluster id>]
@@ -158,7 +158,7 @@ _sourceCategory="aws/cloudtrail/production" and _collector="AWS"
 
 If the user wants to label the raw logs by their cluster ids for further processing, they can use the following query:
 
-```sql
+```sumo
 _sourceCategory="aws/cloudtrail/production" and _collector="AWS"
 | json "eventName", "eventSource", "awsRegion", "userAgent", "userIdentity.type", "managementEvent", "readOnly"
 | logreduce values-details <shortcodeID>

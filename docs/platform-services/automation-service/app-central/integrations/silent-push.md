@@ -6,10 +6,10 @@ description: ''
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/silent-push.png')} alt="
-crowdstrike-falcon" width="100"/>
+Silent Push icon" width="100"/>
 
-***Version: 1.0  
-Updated: July 15, 2024***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 The Silent Push integration identifies emerging threats before they launch by deploying Indicators of Future Attack.
 
@@ -50,3 +50,4 @@ For information about Silent Push, see [Silent Push documentation](https://help.
 ## Change Log
 
 * July 15, 2024 - First upload
+* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

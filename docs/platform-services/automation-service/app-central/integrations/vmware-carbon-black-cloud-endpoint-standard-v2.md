@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-endpoint-standard-v2.png')} alt="vmware-carbon-black-cloud-endpoint-standard-v2" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-endpoint-standard-v2.png')} alt="VMware Carbon Black Cloud Endpoint Standard V2 icon" width="70"/>
 
-***Version: 2.2  
-Updated: Mar 4, 2024***
+***Version: 2.3  
+Updated: April 30, 2026***
 
 VMware Carbon Black Cloud Endpoint Standard Integration allows security operators to collect information and take action on remote endpoints in real-time using API V6.
 
@@ -57,3 +57,4 @@ For information about Carbon Black Cloud Endpoint Standard V2, see [Carbon Black
 * February 3, 2022 - First upload
 * July 11, 2023 (v2.1) - Updated the integration with Environmental Variables
 * March 4, 2024 (v2.2) - Updated code for compatibility with Python 3.12
+* April 30, 2026 (v2.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -11,7 +11,7 @@ import Iframe from 'react-iframe';
 
 To collect [traces](/docs/apm/traces) and RUM metrics from a browser, you'll first need to create a RUM HTTP Traces Source. The source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. Alternatively, you can also use an intermediary OTel collector, if you require data to flow over your infrastructure rather than directly to Sumo Logic. Note however this will disable automatic geo-location recognition capabilities.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Using the RUM HTTP Traces App for Manual Testing.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/qmxk5wxqu5?web_component=true&seo=true&videoFoam=false"
@@ -32,6 +32,14 @@ Using the RUM HTTP Traces App for Manual Testing.
 To utilize XHR and navigation/route changes, and errors collection, you must use RUM script version 4 or higher (`https://rum.sumologic.com/sumologic-rum-v4.js`). Make sure you're using the correct version in your pages. For automatic updates, use the script `https://rum.sumologic.com/sumologic-rum.js`. You can find more details about versioning control [later in this document](#step-2-add-rum-script-to-your-page-header).
 
 For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with the appropriate [back-end tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a RUM source with the [`sumologic_rum_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/rum_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Step 1: Create a RUM HTTP Traces Source
 
@@ -94,7 +102,7 @@ This can be also replaced with an internal OpenTelemetry collector if you wish t
 Use the copied script in your page head inside the `<head>` `</head>` tags. The script sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. 
 
 :::tip
-You can view and copy a script anytime by clicking **Show script** for the source.<br/> ![show-script.png](/img/rum/show-script.png)
+You can view and copy a script anytime by clicking **Show script** for the source.<br/><img src={useBaseUrl('img/rum/show-script.png')} alt="Show script" style={{border: '1px solid gray'}} width="200" />
 :::
 
 The following are base script examples, populated when you create and configure a source in the above instructions.

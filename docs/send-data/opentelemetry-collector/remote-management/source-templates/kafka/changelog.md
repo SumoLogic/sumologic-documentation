@@ -5,6 +5,17 @@ sidebar_label: Changelog
 description: Changelog for Kafka source template for OpenTelemetry.
 ---
 
+## [4.0.0] - 2026-06-18
+### Added
+- Hashing functionality
+- Validation for field table
+### Removed
+- Removed batch processor in favour of batching through sumologic exporter
+
+## [3.0.0] - 2025-11-07
+### Added
+- Validation for regular expression
+
 ## [2.1.2] - 2025-04-23
 ### Added
 - FAQ for source template

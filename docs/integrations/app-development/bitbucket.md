@@ -7,7 +7,7 @@ description: The Sumo Logic App for Bitbucket provides insights into project man
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/bitbucket.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/bitbucket.png')} alt="Bitbucket icon" width="50"/>
 
 The Sumo Logic App for Bitbucket provides insights to development teams into how their software delivery pipeline components are performing. The pre-configured dashboards organize issues, builds, and deployments that require the most attention.
 
@@ -83,7 +83,7 @@ Parameters:
 * Source_Branch:*
 * Deploy_Result:*
 
-```sql title="Query String"
+```sumo title="Query String"
 _sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link deploy_status commit_link
 | json field=_raw "buildNumber", "deploymentEnvironment", "branch", "repoFullName", "pipe_result_link", "deploy_status", "pr_id", "commit", "tag", "projectKey", "repoOwner", "commit_link" , "event_date"
 | repoFullName as repo_name

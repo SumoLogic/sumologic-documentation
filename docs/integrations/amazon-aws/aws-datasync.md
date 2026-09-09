@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS DataSync service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-datasync-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-datasync-logo.png')} alt="AWS DataSync icon" width="50"/>
 
 AWS DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly, easily, and securely transfer your file or object data to, from, and between AWS storage services. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html).
 

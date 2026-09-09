@@ -11,7 +11,7 @@ This page demonstrates how to create a Dashboard, add a query, and then add the
 
 Dashboard allows you to view logs and metrics data on the same dashboard in an integrated and seamless view. This gives you the same control over how your metrics and log data are visualized. Dashboard template capabilities provide for easier data scoping and intuitive chart creation.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Rather watch a short micro lesson video?
 
@@ -29,6 +29,10 @@ Rather watch a short micro lesson video?
 
 :::
 
+:::tip
+You can also create dashboard panels by typing a description of the panel you want directly into Mobot, instead of configuring panels manually. For details, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
+:::
+
 ## Dashboard AutoSave
 
 When you rename or add a panel to a dashboard it is automatically saved in your Sumo Logic Personal folder. Likewise, ongoing changes and additions to the dashboard are saved. This ensures the integrity of your work and prevents any loss due to unforeseen interruptions or outages.
@@ -38,7 +42,15 @@ When you rename or add a panel to a dashboard it is automatically saved in your
 There are two ways to create a **Dashboard**, either by using the following method, or by creating it directly from the [Log Search page](#log-search-page) or [Metrics page](#metrics-page). Panels and customized charts will be added in later steps.
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
-1. Select the Dashboard text field at the top of the window and enter a unique name for your new dashboard.<br/>
+1. Select the Dashboard text field at the top of the window and enter a unique name for your new dashboard.
+
+import TerraformLink from '../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a dashboard with the [`sumologic_dashboard`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/dashboard) resource.
+
+<TerraformLink/>
+:::
 
 ## Add a panel  
 
@@ -46,7 +58,7 @@ Now that you have created a new Dashboard, you can populate it with panels tha
 
 To add a panel to a new Dashboard, do the following:
 
-1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
+1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="800" />
 1. You are prompted to provide a query.
 
 See [Choosing a panel type](/docs/dashboards/panels) for details.
@@ -82,6 +94,20 @@ You can customize a chart on a dashboard panel in a variety of ways. To include�
 Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  <br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
 That's it, start using your Dashboard.  
+
+## Copy a panel to another dashboard
+
+You can copy an existing panel from one dashboard to another, or to a new dashboard, without rebuilding the query. This is useful when you want to reuse the same visualization across multiple dashboards.
+
+To copy a panel to another dashboard:
+
+1. Go to the dashboard that has the panel you want to copy.
+1. On the panel, click the three-dot kebab menu icon and select **Copy to Dashboard**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-menu.png')} alt="Copy to Dashboard menu option" style={{border: '1px solid gray'}} width="300" />
+1. In the **Add Panel to Dashboard** window, enter a **Panel Title** and select the **Dashboard** you want to copy the panel to. To copy it to a new dashboard, enter a name and select **Create New Dashboard** from the dropdown.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-dialog.png')} alt="Copy to Dashboard dialog" style={{border: '1px solid gray'}} width="400" />
+1. Choose how the copied panel handles its time range:
+   * **Inherit time range from dashboard**. The panel uses the time range of the destination dashboard.
+   * **Use current time range as panel default**. The panel keeps its own time range, independent of the destination dashboard.
+1. Click **Submit**. The panel is copied to the dashboard you selected.
 
 ## Delete a Panel
 

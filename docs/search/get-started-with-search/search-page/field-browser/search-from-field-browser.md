@@ -4,7 +4,7 @@ title: Search from the Field Browser
 description: Drilling down into a field from the Field Browser is seamless for non-aggregate queries.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Depending on the type of field you want to drill down into, you can run searches in two ways:
 
@@ -19,13 +19,13 @@ The histogram shows the top ten values (by percentage) of a field. If there are 
 
 When you click a numerical field the average, minimum, maximum, and standard deviation values are displayed in addition to the top ten values by percentage. Click one of the **DRILLDOWN** search options at the bottom of the pane to start a new search.
 
-![field browser number.png](/img/search/get-started-search/search-page/field-browser-number.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/field-browser-number.png')} alt="field browser number" style={{border: '1px solid gray'}} width="700" />
 
 ### Searches for fields containing strings
 
 The histogram shows the top ten values by percentage. Click one of the **DRILLDOWN** search options at the bottom of the pane to start a new search.
 
-![String values in Field Browser.png](/img/search/get-started-search/search-page/String-values-in-Field-Browser.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/String-values-in-Field-Browser.png')} alt="String values in Field Browser" style={{border: '1px solid gray'}} width="700" />
 
 ### Launching a search from the Field Browser
 

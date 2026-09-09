@@ -7,7 +7,7 @@ description: The Microsoft Teams app provides out-of-the-box dashboards to monit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="Microsoft Teams icon" width="75"/>
 
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels, and permission changes.
 
@@ -41,7 +41,7 @@ For more information, see Microsoft’s [list of Teams Activities](https://docs.
 ```
 
 ### Sample queries
-```sql
+```sumo
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"

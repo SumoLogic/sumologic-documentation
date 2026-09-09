@@ -2,14 +2,15 @@
 id: isnumeric
 title: isNumeric Search Operator
 sidebar_label: isNumeric
+description: Use the isNumeric operator to check whether a string is a valid Java number.
 ---
 
 The `isNumeric` operator checks whether a string is a valid Java number. Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like 123L.
 
 ## Syntax
 
-* <code>isNumeric(&quot;&lt;string&gt;&quot;) as &lt;field&gt;</code>
-* <code>isNumeric(&lt;string_field&gt;) [as &lt;field&gt;]</code>
+* `isNumeric("<string>") as <field>`
+* `isNumeric(<string_field>) [as <field>]`
 
 ## Rules
 
@@ -19,18 +20,18 @@ The `isNumeric` operator checks whether a string is a valid Java number. Valid 
 
 ## Examples
 
-```sql
+```sumo
 | isNumeric(num)
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isNumeric("1.56") as isNum
 ```
 
 The following returns `true`:
 
-```sql
+```sumo
 | isNumeric("1e5") as isNum
 ```

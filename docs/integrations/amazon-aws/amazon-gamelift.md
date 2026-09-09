@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon GameLift service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-gamelift-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-gamelift-logo.png')} alt="Amazon GameLift icon" width="50"/>
 
 You can use Amazon GameLift to deploy, operate, and scale dedicated, low-cost servers in the cloud for session-based multiplayer games. Built on AWS global computing infrastructure, Amazon GameLift helps deliver high-performance, high-reliability game servers while dynamically scaling your resource usage to meet worldwide player demand. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-intro.html).
 

@@ -10,7 +10,7 @@ description: Learn how to collect customer event data from the DocuSign and send
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="Thumbnail icon" width="40"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/docusign-icon.svg')} alt="DocuSign icon" width="40"/>
 
 DocuSign pioneered the development of e-signature technology, and today DocuSign helps organizations connect and automate how they prepare, sign, act on, and manage agreements. As part of the DocuSign Agreement Cloud, DocuSign offers eSignature, allowing you to sign documents electronically from most devices.
 
@@ -90,13 +90,17 @@ To configure the DocuSign source:
 4. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 5. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 6. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 7. In **DocuSign Environment**, choose the environment of your DocuSign account.
 8. In **User ID**, enter the User ID of your account. See [User ID](#user-id) section to help find your User ID.
 9. In **Integration Key**, enter the integration key you generated. See step 5 of [App](#app) section.
 10. In **RSA Private Key**, enter the rsa private key you generated. See step 8 of [App](#app) section.
 11. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the DocuSign source, consider installing the Sumo Logic app for [DocuSign](/docs/integrations/saas-cloud/docusign/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 

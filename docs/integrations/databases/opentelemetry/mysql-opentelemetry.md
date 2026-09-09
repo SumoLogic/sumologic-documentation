@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="Thumbnail icon" width="90" /> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="MySQL icon" width="90" /> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic app for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins, and error logs.
 
@@ -104,117 +104,37 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import MysqlConfigureSourceTemplate from '../../../reuse/send-data/mysql-configure-source-template.md';
 
-In this step, you will configure the yaml required for MySQL collection.
+<MysqlConfigureSourceTemplate/>
 
-Below are the required inputs:
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-- **Endpoint**. enter the url of the server which needs to be monitored
-- **User Name**. enter the MySQL username.
-- **Error File log Path**. enter the path to the error log file for your mysql instance.
-- **Slow Transaction file log path**. enter the path to the slow log file for your mysql instance.
-- **Tags**. `db.cluster.name`.
+<TimestampParsing/>
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo.
+import ProcessingRules from '../../../reuse/opentelemetry/processing-rules.md';
 
-Click on the **Download YAML File** button to get the yaml file.
+<ProcessingRules/>
 
-import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+### Step 3: Push the source template to the desired remotely managed collectors
 
-<EnvVar/>
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
-
-### Step 3: Send logs and metrics to Sumo Logic
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'},
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySQL instance which needs to be monitored.
-2. Place Env file in the following directory:
-  ```sh
-  /etc/otelcol-sumo/env/
-  ```
-3. restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-<TabItem value="Windows">
-
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-<TabItem value="macOS">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the MySQL instance which needs to be monitored.
-2. Restart the otelcol-sumo process using: 
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-  ```
-
-</TabItem>
-<TabItem value="Chef">
-
-import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
-
-<ChefEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
-
-<AnsEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
-
-<PuppetEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 
@@ -235,7 +155,7 @@ log:"2022-10-14T09:16:02.430542Z 63707 [Note] [MY-010926] [Server] Access denied
 
 This sample query is from the **Top 10 Slow Queries by Average Execution Time** panel.
 
-```sql
+```sumo
 db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 | parse regex "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
 | parse regex field=query_block "# User@Host: \S+?\[(?<user>\S*?)\] @ (?<host_name>\S+)\s\[(?<ip_addr>\S*?)\]" nodrop

@@ -8,7 +8,7 @@ description: Learn how to deploy Sumo Logic Collectors on AWS OpsWorks.
 
 AWS OpsWorks provides a simple platform that allows you to easily create and manage stacks and applications. It supports standard components such as application servers, database servers, and load balancers, which you use to assemble a stack. These components all come with a standard configuration, but AWS OpsWorks also provides tools to help you create custom components and configuration. AWS OpsWorks also lets you manage related AWS resources, such as Elastic IP addresses and Amazon EBS volumes.
 
-For more information, see [Getting Started](http://docs.aws.amazon.com/opsworks/latest/userguide/gettingstarted-opscm.html) for AWS OpsWorks.
+For more information, see [Getting Started](https://docs.aws.amazon.com/opsworks/latest/userguide/gettingstarted-opscm.html) for AWS OpsWorks.
 
 1. Add https://github.com/SumoLogic/sumologic-collector-chef-cookbook.git to your layer.
 1. Enter sumologic-collector as the recipe for Setup.

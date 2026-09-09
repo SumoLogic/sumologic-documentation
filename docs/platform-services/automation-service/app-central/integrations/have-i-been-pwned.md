@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/have-i-been-pwned.png')} alt="have-i-been-pwned" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/have-i-been-pwned.png')} alt="Have I Been Pwned icon" width="100"/>
 
-***Version: 1.3  
-Updated: Dec 12, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 Have I Been Pwned (HIBP) allows you to check if your personal data has been compromised in a data breach.
 
@@ -53,3 +53,4 @@ For information about Have I Been Pwned, see [Have I Been Pwned documentation](h
 * April 14, 2023 (v1.1) - Refactored
 * April 17, 2023 (v1.2) - Improved error handling
 * December 12, 2023 (v1.3) - Added new action: Get Latest Breach
+* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

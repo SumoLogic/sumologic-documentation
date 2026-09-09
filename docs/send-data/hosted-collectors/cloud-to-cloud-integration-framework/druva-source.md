@@ -10,7 +10,7 @@ description: Learn how to configure the Druva Cloud-to-Cloud source setup in you
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/send-data/druva-logo.svg')} alt="Druva icon" width="85"/>
 
 The Druva source provides the ability to analyze and fetch event logs from the **Druva inSync** API and sends it to Sumo Logic. The **Druva inSync** backs up endpoint data and cloud applications, such as Microsoft Office 365 and Salesforce. It also provides archiving, data compliance monitoring, legal hold management, monitoring, and detection tools to discover ransomware and eDiscovery.
 
@@ -39,9 +39,9 @@ You must be a Druva inSync Cloud administrator to enable the option to export ev
 
 To get the event logs, follow the steps to enable the **Export Events**:
 1. Sign in to the Druva inSync Management Console with [inSync Cloud](https://login.druva.com/) account or [inSync GovCloud](https://loginfederal.druva.com/) account.
-2. On the [inSync Management Console](https://docs.druva.com/Endpoints/030_Set_up_inSync_for_Endpoints/010_Initial_Configuration/010_Sign_in_to_inSync_Management_Console/Sign_in_to_inSync_Management_Console) menu bar, click <img src={useBaseUrl('/img/send-data/druva-wheel-icon.png')} alt="druva-wheel-icon.png" width="20"/> icon > **Settings**. The Settings page appears.
+2. On the [inSync Management Console](https://docs.druva.com/Endpoints/030_Set_up_inSync_for_Endpoints/010_Initial_Configuration/010_Sign_in_to_inSync_Management_Console/Sign_in_to_inSync_Management_Console) menu bar, click <img src={useBaseUrl('/img/send-data/druva-wheel-icon.png')} alt="Druva wheel icon" width="20"/> icon > **Settings**. The Settings page appears.
 3. Click the **inSync APIs** tab.
-4. In the Events API settings area, click **Edit**. The Edit Events API Settings window appears.<br/><img src={useBaseUrl('/img/send-data/druva-events-api-settings.png')} alt="druva-events-api-settings.png" width="450"/>
+4. In the Events API settings area, click **Edit**. The Edit Events API Settings window appears.<br/><img src={useBaseUrl('/img/send-data/druva-events-api-settings.png')} alt="Druva events API settings" width="450"/>
 5. Select the **Export Events** checkbox.
 6. Click in the **Categories to export** box and select the events that you want to export from inSync.
 7. In the **Syslog facility** field, type a value between 1 and 23 to assign a Syslog facility ID for inSync events. The default value is 23.
@@ -51,7 +51,7 @@ To get the event logs, follow the steps to enable the **Export Events**:
 
 Druva supports OAuth 2.0-based authentication for incoming requests. Every use of Druva APIs requires authentication to ensure that only authorized users can interact with Druva APIs.
 
-All requests to Druva APIs are authenticated using OAuth 2.0 access tokens which you receive in exchange of every authorization grant request you make. The OAuth token will expire after 30 minutes for [Data Governance Cloud](https://apis.druva.com/) and 15 minutes for [Data Governance GovCloud](https://govcloudapis.druva.com/).
+All requests to Druva APIs are authenticated using OAuth 2.0 access tokens obtained through an authorization grant request. Tokens expire after 30 minutes for `https://apis.druva.com/` (Data Governance Cloud) and 15 minutes for `https://govcloudapis.druva.com/` (Data Governance GovCloud).
 
 The Druva Source requires you to provide a **Client ID**, **Client Secret Key**, **API Endpoint URL**. To get these, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 
@@ -67,12 +67,16 @@ To configure a Druva Source:
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **API Endpoint URL**. Enter your API Endpoint URL. To get API Endpoint URL, follow the instructions from [Create and Manage Druva API Credentials](https://developer.druva.com/docs/migration-process).
 1. **Client ID**. Enter your Client ID. To get Client ID, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials).
 1. When you are finished configuring the Source, click **Save**.
+
+:::tip
+After configuring the Druva source, consider installing the Sumo Logic app for [Druva](/docs/integrations/saas-cloud/druva/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata Fields
 
@@ -117,3 +121,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Druva Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/druva/) to automate response actions directly from Cloud SOAR playbooks.

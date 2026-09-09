@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
-***Version: 1.13  
-Updated: July 03, 2024***
+***Version: 1.14  
+Updated: April 30, 2026***
 
 Perform threat intelligence evidence gathering with VirusTotal.
 
@@ -25,8 +25,7 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **Scan File** (*Enrichment*) - Scan the specific file.
 * **Scan URL** (*Enrichment*) - Scan on a specific URL.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
-  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-2.png')} style={{border:'1px solid gray'}} alt="virus-total" width="800"/>
+  <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/virus-total/virus-total-1.png')} style={{border:'1px solid gray'}} alt="Playbook showing Virus Total actions" width="800"/>
 
 ## Category
 
@@ -105,3 +104,4 @@ For information about VirusTotal, see [VirusTotal documentation](https://docs.vi
         - **Search VirusTotal** as **Search VirusTotal**
         - **File Scan V2** as **Scan File** but it just scans the specific file
         - **URL Scan V2** as **Scan URL** but it just scans on a specific URL
+* April 30, 2026 (v1.14) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

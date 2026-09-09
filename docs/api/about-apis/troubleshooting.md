@@ -8,7 +8,7 @@ description: This guide provides information to help you troubleshoot errors you
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiEndpoints from '../../reuse/api-endpoints.md';
 
-<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Troubleshoot icon" width="50"/>
 
 This guide provides information to help you troubleshoot errors you may find when using the Sumo Logic APIs.
 
@@ -128,7 +128,7 @@ Using an open source Python tool called mjson that comes with the standard Pytho
 
 When running your command to get the results, simply add the following. Note the **> results.txt** which is saving the results to a file named **results.txt**.
 
-```sql
+```bash
 | grep "\"_raw\":" | sed 's/^[ \t]*"_raw": "//g' | sed 's/",[ \t]*$//g' > results.txt
 ```
 
