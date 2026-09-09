@@ -104,7 +104,7 @@ The Terraform script gives you the option to install the solution apps using app
 
 ### Bucket considerations
 
-In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don't supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. If you use an existing bucket for CloudTrail logs, you'll need to manually create an S3 Event Notification afterward. For more information, see [Sumo Logic AWS CloudTrail Source](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/#step-7sumo-logic-aws-cloudtrail-source). 
+In the sections of the Terraform scripts or CloudFormation template that relate to creating Sumo Logic sources, you can specify an existing S3 bucket to store the logs that the source collects. If you don't supply a bucket name, the template will create a new one. We recommend you use an existing bucket if possible. If you use an existing bucket for CloudTrail logs, you'll need to manually create an S3 Event Notification afterward. For more information, see [Sumo Logic AWS CloudTrail Source](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/#step-7sumo-logic-aws-cloudtrail-source). 
 
 ### Do you use AWS Control Tower?
 
@@ -139,7 +139,7 @@ Perform these steps for each EC2 host.
      A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
      :::
 
-To automate the above, see [Add Fields to Existing Host Metrics Sources](../../other-configurations-tools/add-fields-to-existing-host-metrics-sources.md). 
+To automate the above, see [Add Fields to Existing Host Metrics Sources](deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources.md). 
 
 Going forward, you can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic).
 

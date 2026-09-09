@@ -30,7 +30,7 @@ Given that we use an account alias, we recommend you use StackSets to automati
     * This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     * The solution recommends deploying across regions **sequentially rather than in parallel**. If parallel deployment is required, the maximum recommended limit is **3 regions at a time**. Exceeding this limit may result in **SumoLogic API rate-limiting errors**.
     :::
-1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.
+1. Proceed to [Step 0](#step-0-sumo-logic-access-configuration) below.
 
 ## Apps Setup
 

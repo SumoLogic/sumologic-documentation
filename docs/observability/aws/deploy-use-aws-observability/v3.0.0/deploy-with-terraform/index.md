@@ -1,5 +1,5 @@
 ---
-id: deploy-with-terraform
+slug: /observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform
 title: Deploy with Terraform
 sidebar_label: Deploy with Terraform
 description: The Sumo Logic AWS Observability Solution can be deployed using Terraform for single or multi-account and multi-region AWS environments.
@@ -9,7 +9,7 @@ These instructions help you deploy the AWS Observability Solution using Terrafor
 
 To set up the AWS Observability Solution using Terraform, complete the following steps.
 
-Additional parameter overrides are available in an appendix section for [Source](#override-source-parameters) and [App Content](#override-app-content-parameters).
+Additional parameter overrides are available in an appendix section for [Source](#override-collection-parameters) and [App Content](#override-app-content-parameters).
 
 ## Prerequisites
 
@@ -532,7 +532,7 @@ By default, all parameters are set up to automatically collect logs, metrics, in
 * **Simple URL overrides** (for existing sources). If you are already collecting data in Sumo Logic and want to reuse existing sources, set the corresponding `_source_url` variables (for example, `cloudwatch_metrics_source_url`, `cloudtrail_source_url`) in the **main.auto.tfvars** file.
 * **Detailed source configuration overrides**. To override source details (such as bucket names, path expressions, or log format settings), add the override parameters directly to the `module "collection-module"` block in the [terraform-sumologic-aws-observability/main.tf](https://github.com/SumoLogic/terraform-sumologic-aws-observability/blob/master/main.tf) file.
 
-To perform overrides, see [Override collection parameters](#override-source-parameters) and [Override app content parameters](#override-app-content-parameters).
+To perform overrides, see [Override collection parameters](#override-collection-parameters) and [Override app content parameters](#override-app-content-parameters).
 
 ## Step 6: Deploy the AWS Observability Solution
 
@@ -562,7 +562,7 @@ This will destroy all [resources](/docs/observability/aws/deploy-use-aws-observa
 
 ## Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform
 
-To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
+To migrate CloudWatch Source to Kinesis Firehose Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform).
 
 ## Appendix
 
@@ -674,7 +674,7 @@ The following table provides a list of all source parameters and their default v
 ### Configure collection of CloudWatch metrics
 
 :::note
-To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
+To migrate from legacy CloudWatch Metrics Source to Kinesis Firehose Metrics Source using Terraform, refer to [Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudwatch_metrics
@@ -1064,7 +1064,7 @@ classic_lb_log_source_url="https://api.sumologic.com/api/v1/collectors/1234/sour
 ### Configure collection of CloudTrail logs
 
 :::note
-To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/migration-strategy-using-terraform).
+To migrate CloudWatch Logs Source to Kinesis Firehose Logs Source using Terraform, refer to [Migration Strategy using Terraform](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform).
 :::
 
 #### collect_cloudtrail_logs
