@@ -8,7 +8,6 @@ keywords:
 description: Configure the Google Workspace Activities Cloud-to-Cloud connector.
 ---
 
-import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="150"/>
@@ -100,7 +99,7 @@ Sources can be configured using UTF-8-encoded JSON files via the Collector Man
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | delegatedUserEmail | String | Yes | `null` | Provide the super-administrator email address for the domain that granted access to the service account you created. | `xyz@domain.com` |
 | credentialsJson | String | Yes | `null` | Authentication service account's credentials to access Google Workspace Platform. |  |
-| excludedApplicationNames | Array of Strings | No |  | Defines the application names that the user wants to exclude. | `["admin", "login"` |
+| excludedApplicationNames | Array of Strings | No |  | Defines the application names that the user wants to exclude. | `["admin", "login"]` |
 | pollingInterval | String | Yes | `5m` | Time interval after which the source will check for new data. | `5m` |
 
 ### JSON example
@@ -112,7 +111,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ### Terraform example
 
 ```sh reference
-https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-alertcenter/example.tf
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/google-workspace-activities/example.tf
 ```
 
 ## FAQ
