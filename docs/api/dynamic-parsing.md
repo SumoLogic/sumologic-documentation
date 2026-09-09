@@ -11,7 +11,7 @@ import ApiRoles from '../reuse/api-roles.md';
 
 <img src={useBaseUrl('img/icons/operations/parsing-data.png')} alt="Parsing Data icon" width="50"/>
 
-The Dynamic Parsing Management API allows you to configure Run Time Field Extraction Rules from HTTP endpoints. Dynamic Parsing allows automatic field extraction from your log messages when you run a search. This allows you to view fields from logs without having to manually specify parsing logic. For more information, see [Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing).
+The Dynamic Parsing Management API allows you to configure Run Time Field Extraction Rules from HTTP endpoints. Dynamic Parsing allows automatic field extraction from your log messages when you run a search. This allows you to view fields from logs without having to manually specify parsing logic. Dynamic Parsing and Auto Parse refer to the same feature. Dynamic Parsing is the term used in documentation and the API; Auto Parse is what you'll see in the UI. For more information, see [Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing).
 
 ## Documentation
 
