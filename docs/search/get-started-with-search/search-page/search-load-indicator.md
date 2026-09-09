@@ -20,7 +20,7 @@ Look for the load indicator in the bar below the bar chart in the search result
 * Medium (orange, two dots)
 * High (red, three dots)
 
-<img src={useBaseUrl('img/search/get-started-search/search-page/search-load.png')} alt="Search load" style={{border: '1px solid gray'}} width="800>" />
+<img src={useBaseUrl('img/search/get-started-search/search-page/search-load.png')} alt="Search load" style={{border: '1px solid gray'}} width="800" />
 
 Click the dotted icon to get more information:
 

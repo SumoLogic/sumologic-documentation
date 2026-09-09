@@ -98,7 +98,7 @@ Before generating the template, the source’s configuration must have the AWS-s
 1. Click **Next: Tags**.
 1. Enter tags, as desired. Click **Next: Review**.
 1. **Name**. Enter a name for your policy. Policy names must be unique within your AWS account. Policy names are case-insensitive, and can’t be changed once created.
-1. **Description**. (Optional)<br/><img src={useBaseUrl('img/send-data/create-policy-2.png')} alt="AWS IAM 'Create policy' interface showing a summary of the policy named 's3-doc-access', with allowed actions on S3 service" style={{border: '1px solid gray'}} width="800>" />
+1. **Description**. (Optional)<br/><img src={useBaseUrl('img/send-data/create-policy-2.png')} alt="AWS IAM 'Create policy' interface showing a summary of the policy named 's3-doc-access', with allowed actions on S3 service" style={{border: '1px solid gray'}} width="800" />
 1. Click **Create policy**. 
 1. Return to the previous tab for the **Create role** page, and click the refresh button in the console.
 1. Filter by the name of the policy you created, and select the checkbox next to it.
