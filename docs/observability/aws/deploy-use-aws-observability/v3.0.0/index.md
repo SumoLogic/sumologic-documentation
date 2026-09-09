@@ -57,7 +57,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/migration/terraform/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform</h4></a>
+  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-terraform/migration-strategy-using-terraform/')}><img src={useBaseUrl('img/icons/observe.png')} alt="Observe icon" width="40"/><h4>Migration Strategy from CloudWatch Source to Kinesis Firehose Source using Terraform</h4></a>
   <p>Learn how to migrate CloudWatch Source to Kinesis Firehose Source using Terraform.</p>
   </div>
 </div>
