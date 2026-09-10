@@ -5767,7 +5767,6 @@
   "/docs/security/threat-intelligence/about-threat-forecasting-engine": "/docs/security/threat-intelligence/about-threat-intelligence",
   "/docs/security/threat-intelligence/threat-forecasting": "/docs/security/threat-intelligence/about-threat-intelligence",
   "/docs/security/threat-intelligence/threat-forecasting-engine": "/docs/security/threat-intelligence/about-threat-intelligence",
-
   "/docs/manage/data-management/data-retention": "/docs/manage/partitions/data-tiers",
   "/07Sumo_Logic_Apps/06Google/Google_Cloud_Firewall/Collect_Logs_for_Google_Cloud_Firewall": "/docs/integrations/google/cloud-firewall",
   "/docs/api/cloud-siem/threat-intelligence/threat-forecasting": "/docs/security/threat-intelligence/about-threat-intelligence",
