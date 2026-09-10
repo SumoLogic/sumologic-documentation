@@ -2,6 +2,8 @@
 
 Automates the creation of Developer release notes for APIs, SDKs, integrations, and platform changes relevant to developers.
 
+<!-- awaiting SME guidance --> 
+
 ## What this command does
 
 When you invoke `release-note-developer`, Claude will guide you through:
