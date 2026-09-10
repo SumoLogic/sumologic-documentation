@@ -110,7 +110,7 @@ Before pushing any commit that changes docs content:
   - MUST be populated when creating or updating tickets that touch existing articles
   - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
 - **GitHub PR link** (`customfield_10466`): After creating a PR, automatically update this field with the PR URL
-- **Description**: Always use `contentFormat: markdown`
+- **Description**: Use `contentFormat: markdown` for text-only fields. Switch to `contentFormat: adf` when the field contains, or should keep, anything markdown cannot represent: attached images and other media nodes, panels, expand/collapse blocks, status lozenges, `@` mentions, date nodes, or column layouts. Jira Cloud stores rich text as ADF, and markdown is a lossy conversion layer over it, so **rewriting a description as markdown silently deletes those nodes**. On read, a media node comes back as a `![](blob:https://media.staging.atl-paas.net/...)` placeholder that is not a usable image source; writing that back destroys the attachment. Fetch the field as ADF first when you are unsure what it contains.
 
 ### Workflow Requirements
 - **Creating tickets**: Use one of three approaches — a user-provided description, analysis of the code changes being made, or the file paths touched. (Claude Code: see `.claude/commands/jira.md` for the concrete pattern and Technical Area mappings.)
