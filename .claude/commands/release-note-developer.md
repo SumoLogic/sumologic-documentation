@@ -190,35 +190,7 @@ For SDK releases:
 * Version number
 * What's new or changed
 * Installation instructions
-* Link to SDK docs or GitHub
-
-**Example:**
-```markdown
----
-title: March 23, 2026 - Python SDK Version 2.0
-image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
-hide_table_of_contents: true
-keywords:
-  - sdk
-  - python
----
-
-We've released version 2.0 of the Sumo Logic Python SDK with support for the latest APIs and improved error handling.
-
-#### What's new
-
-* Support for Field Extraction Rules API
-* Async client support for better performance
-* Improved error messages and debugging
-
-#### Installation
-
-```python
-pip install sumologic-sdk==2.0.0
-```
-
-Learn more in the [Python SDK documentation](/docs/api/python-client).
-```
+* Link to the SDK's own GitHub releases or changelog
 
 #### Deprecations
 
