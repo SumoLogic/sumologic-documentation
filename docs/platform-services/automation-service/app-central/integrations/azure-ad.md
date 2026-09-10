@@ -143,5 +143,5 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
 | v1.4 | June 26, 2023 | Changed multiline hints to single line |
 | v1.3 | April 28, 2023 | <ul><li>Updated integration (updated the integration fields with environmental variables and improved error handling).</li><li>Removed action **Filter Users** as we already have a similar **List Users** action.</li><li>Changed a few action types from Containment to Enrichment.</li><li>Added New Action **List Groups**.</li></ul> |
 | v1.2 | November 10, 2022 | New Action: Get Manager |
-| — | March 11, 2022 | Logo |
-| — | October 7, 2021 | First upload |
+| v1.1 | March 11, 2022 | Logo |
+| v1.0 | October 7, 2021 | First upload |
