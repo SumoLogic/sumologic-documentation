@@ -78,7 +78,9 @@ To deploy the lifecycle events template:
 
 1. Log in to the AWS Management Console as the **AWS Control Tower Master Account**.
 1. Download and launch the Sumo Logic Control Tower CloudFormation template in the region where your Control Tower is deployed. Use the link that matches your AWS Observability version:
+   - **AWSO v3.0.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/templates/extensions/controltower/controltower.template.yaml)  
    - **AWSO v2.15.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master/aws-observability/apps/controltower/controltower.template.yaml)
+   
 1. In the **Sumo Logic Access Configuration** section, fill in the following required fields:
 
    | Parameter | Description |

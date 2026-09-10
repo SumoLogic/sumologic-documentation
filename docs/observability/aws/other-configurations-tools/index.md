@@ -13,12 +13,6 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/add-fields-to-existing-host-metrics-sources')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Add Fields to Existing Host Metrics Sources</h4></a>
-  <p>Learn how to update the AWS Observability view hierarchy and existing host metrics.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/observability/aws/other-configurations-tools/integrate-control-tower-accounts')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Integrate Control Tower Accounts with AWS Observability</h4></a>
   <p>Learn how to update the AWS Observability solution with AWS Control Tower-managed Accounts.</p>
   </div>

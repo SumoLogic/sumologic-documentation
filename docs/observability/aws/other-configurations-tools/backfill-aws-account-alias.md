@@ -16,7 +16,7 @@ Use this script when:
 * You have multiple AWS accounts and want to apply distinct aliases to each account's sources for easier identification in dashboards.
 
 :::note
-This script only updates existing sources. New sources created by subsequent CloudFormation deployments will use the alias configured in the [AWS Account Alias](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation#step-2-aws-account-alias) parameter.
+This script only updates existing sources. New sources created by subsequent CloudFormation or Terraform deployments will use the alias configured in the deployment parameters.
 :::
 
 ## How it works
@@ -35,37 +35,41 @@ After you review and edit the CSV, the script reads it back and updates the `acc
 
 ## Prerequisites
 
-* **Python 3.6 or later**
+* **Python 3.13 or later**
 * **requests library** — Install with:
   ```bash
   pip install requests
   ```
 * **Sumo Logic Access Key** — An access ID and access key with permissions to read and modify collectors and sources. See [Access Keys](/docs/manage/security/access-keys) for more information.
-* **Deployment environment identifier** — The Sumo Logic deployment where your account resides (for example, `us`, `us2`, `eu`, `au`, `de`, `jp`, `ca`, `in`, `kr`, or `fed`).
+* **Deployment environment identifier** — The Sumo Logic deployment where your account resides (for example, `au`, `ca`, `ch`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`, or `us2`).
 
 ## Input parameters
 
-| Parameter | Description |
-|:--|:--|
-| `--access-id` | Your Sumo Logic Access ID. |
-| `--access-key` | Your Sumo Logic Access Key. |
-| `--deploy-env` | The Sumo Logic deployment environment (for example, `us`, `us2`, `eu`, `au`). |
-| `--filename` | (Step 2 only) Path to the edited CSV file to apply. |
+| Parameter      | Required | Description |
+|:---------------|:--|:--|
+| `--access-id` | Yes | Your Sumo Logic Access ID. |
+| `--deploy-env` | Yes | The Sumo Logic deployment environment (for example, `au`, `ca`, `ch`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`, or `us2`). |
+| `--filename` | Step 2 only | Path to the edited CSV file to apply. |
+| `--dry-run` | Step 2 only | Validate and show what would be updated without making API calls. |
+| `--log-dir` | No | Directory for the log file. Created if it does not exist. Defaults to the current directory. |
 
 ## Run the script
 
 ### Step 1: Generate the CSV
 
-Run the script without the `--filename` parameter to generate a CSV file listing all sources eligible for alias backfill:
+Run the script without the `--filename` parameter to generate a CSV file listing all sources eligible for alias backfill. The script prompts for your access key interactively:
 
 ```bash
-python3 backfill_aws_account_alias.py \
+python backfill_aws_account_alias.py \
   --access-id <SUMO_ACCESS_ID> \
-  --access-key <SUMO_ACCESS_KEY> \
   --deploy-env <DEPLOYMENT>
 ```
 
 This creates a file named `backfill_aws_account_alias.csv` in the current directory.
+
+:::tip CI/automation
+For automation or CI pipelines, set the `SUMO_ACCESS_KEY` environment variable instead of using the interactive prompt.
+:::
 
 ### Review and edit the CSV
 
@@ -95,17 +99,27 @@ The alias must follow AWS account alias naming conventions:
 
 ### Step 2: Apply the changes
 
-Run the script with the `--filename` parameter pointing to your edited CSV:
+Before applying, you can preview what would change without making any API calls:
 
 ```bash
-python3 backfill_aws_account_alias.py \
+python backfill_aws_account_alias.py \
   --access-id <SUMO_ACCESS_ID> \
-  --access-key <SUMO_ACCESS_KEY> \
+  --deploy-env <DEPLOYMENT> \
+  --filename backfill_aws_account_alias.csv \
+  --dry-run
+```
+
+When you are ready, run the script with the `--filename` parameter pointing to your edited CSV:
+
+```bash
+python backfill_aws_account_alias.py \
+  --access-id <SUMO_ACCESS_ID> \
   --deploy-env <DEPLOYMENT> \
   --filename backfill_aws_account_alias.csv
 ```
 
 The script validates each alias, skips invalid entries with a warning, and updates the `account` field on all valid sources marked with `override_account_field_with_alias=Yes`.
+
 
 ## Error handling
 
@@ -123,19 +137,25 @@ The script handles the following scenarios:
 
 1. Generate the CSV:
    ```bash
-   python3 backfill_aws_account_alias.py \
+   python backfill_aws_account_alias.py \
      --access-id suXXXXXX \
-     --access-key XXXXXXXXXXXXXXXX \
      --deploy-env us2
    ```
 2. Open `backfill_aws_account_alias.csv` in a spreadsheet editor.
 3. For account `123456789012`, enter `prod` in the `alias` column and set `override_account_field_with_alias` to `Yes`.
-4. Apply changes:
+4. Preview the changes:
    ```bash
-   python3 backfill_aws_account_alias.py \
+   python backfill_aws_account_alias.py \
      --access-id suXXXXXX \
-     --access-key XXXXXXXXXXXXXXXX \
+     --deploy-env us2 \
+     --filename backfill_aws_account_alias.csv \
+     --dry-run
+   ```
+5. Apply changes:
+   ```bash
+   python backfill_aws_account_alias.py \
+     --access-id suXXXXXX \
      --deploy-env us2 \
      --filename backfill_aws_account_alias.csv
    ```
-5. Verify the updated alias appears in your [AWS Observability hierarchy](/docs/dashboards/explore-view/#aws-observability).
+6. Verify the updated alias appears in your [AWS Observability hierarchy](/docs/dashboards/explore-view/#aws-observability).
