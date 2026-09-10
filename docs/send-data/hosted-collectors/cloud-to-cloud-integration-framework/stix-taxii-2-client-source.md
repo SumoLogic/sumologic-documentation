@@ -77,7 +77,6 @@ Sumo Logic provides the following sources based on the underlying code of our ST
 * Dragos TAXII Client
 * Nozomi TAXII Client
 * Recorded Future TAXII Client
-* SOCRadar TAXII Client
 * Unit42 TAXII Client
 
 When you set up a source, search for "taxii" and select the tile for the source you want to install:<br/><img src={useBaseUrl('img/security/taxii-sources.png')} alt="TAXII sources" style={{border: '1px solid gray'}} width="800" />
