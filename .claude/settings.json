@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Bash|mcp__atlassian__addCommentToJiraIssue|slack_send_message|slack_send_message_draft|slack_schedule_message|slack_create_canvas|slack_update_canvas",
+        "matcher": "Bash|addCommentToJiraIssue|slack_send_message|slack_send_message_draft|slack_schedule_message|slack_create_canvas|slack_update_canvas",
         "hooks": [
           {
             "type": "command",

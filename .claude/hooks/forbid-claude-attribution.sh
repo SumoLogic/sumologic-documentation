@@ -9,7 +9,8 @@
 #   - gh pr comment / gh issue comment
 #   - gh pr review   (when it includes a --body or --comment)
 #   - gh api ... /comments|/reviews ...
-#   - Jira:  mcp__atlassian__addCommentToJiraIssue
+#   - Jira:  *addCommentToJiraIssue (matched by suffix, so any MCP server
+#            prefix works: mcp__atlassian__, mcp__claude_ai_Atlassian_Rovo__)
 #   - Slack: slack_send_message, slack_send_message_draft,
 #            slack_schedule_message, slack_create_canvas, slack_update_canvas
 #
@@ -137,7 +138,7 @@ $(body_file_paths "$cmd")
 EOF
     ;;
 
-  mcp__atlassian__addCommentToJiraIssue)
+  *addCommentToJiraIssue)
     if has_marker "$(all_input_strings)"; then
       deny 'Remove the Claude attribution line. AGENTS.md forbids "via Claude Code" in Jira comments. Re-add the comment without it.'
     fi

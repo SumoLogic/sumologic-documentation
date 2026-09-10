@@ -86,6 +86,7 @@ bash_case DENY "-F body=@file"           "gh api repos/o/r/issues/1/comments -F 
 
 echo "deny: MCP comment tools"
 tool_case DENY "jira comment"            mcp__atlassian__addCommentToJiraIssue "{\"commentBody\":\"x $M\"}"
+tool_case DENY "jira comment prefixed"   mcp__claude_ai_Atlassian_Rovo__addCommentToJiraIssue "{\"commentBody\":\"x $M\"}"
 tool_case DENY "slack message"           mcp__claude_ai_Slack__slack_send_message "{\"text\":\"x $M\"}"
 tool_case DENY "slack canvas"            mcp__claude_ai_Slack__slack_update_canvas "{\"markdown\":\"x $M\"}"
 
@@ -94,6 +95,7 @@ bash_case allow "pr comment clean"       "gh pr comment 1 --body \"looks good\""
 bash_case allow "--body-file clean"      "gh pr comment 1 --body-file $fixtures/clean.md"
 bash_case allow "api reviews clean"      "gh api repos/o/r/pulls/1/reviews --method POST --input $fixtures/clean.json"
 tool_case allow "jira clean"             mcp__atlassian__addCommentToJiraIssue '{"commentBody":"looks good"}'
+tool_case allow "jira clean prefixed"    mcp__claude_ai_Atlassian_Rovo__addCommentToJiraIssue '{"commentBody":"looks good"}'
 tool_case allow "slack clean"            mcp__claude_ai_Slack__slack_send_message '{"text":"looks good"}'
 
 echo "allow: out of scope by design"
