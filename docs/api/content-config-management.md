@@ -35,5 +35,4 @@ With the Content and Configuration Management (C3M) APIs, a Managed Security Ser
 
 <ApiRoles/>
 
-
 * [Manage Organizations](/docs/manage/users-roles/roles/role-capabilities/#organizations)
