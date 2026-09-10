@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intel-471.png')} alt="intel" width="80"/>
 
-***Version: 1.2  
-Updated: April 29, 2026***
+***Version: 1.3  
+Updated: September 11, 2026***
 
 Intel 471 provides comprehensive coverage of the criminal underground, SaaS platform which exposes locally sourced human-driven, automation-enabled insights to gain broad coverage and monitor the threats.
 
@@ -55,9 +55,12 @@ Threat Intelligence-Reputation
 
 ## Change log
 
-* May 23, 2022 - First Upload
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
-* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date               | Description |
+|:--------|:-------------------|:--|
+| v1.3    | September 11, 2026 | Migrated the Intel 471 integration to the new Verity API, updating the Stream Malware Intelligence Indicators, Search IOC, and List Alerts actions to use the latest API endpoints. |
+| v1.2    | April 29, 2026     | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1    | July 6, 2023       | Updated the integration with Environmental Variables. |
+| v1.0    | May 23, 2022       | First upload. |
 
 ## Additional resources
 
