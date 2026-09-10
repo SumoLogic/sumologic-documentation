@@ -25,6 +25,20 @@ When reviewing any PR or doc, always check existing docs of the same type in the
 
 Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
 
+## Output tone (comments)
+
+A comment Claude posts should read as though a person wrote it. This section governs the prose in GitHub PR comments, GitHub issue comments, and Jira ticket comments.
+
+**Run the `humanizer` skill on the draft of every comment before posting it.** Use the skill's embedded mode, which returns only the final text. It rewrites the patterns that mark prose as machine-written, keeps the meaning, and leaves code, commands, paths, and link targets alone. This is not a manual step to be requested; it applies to every comment.
+
+The following hold whether or not the skill runs:
+
+- **No em dashes.** Rewrite with a period, semicolon, colon, commas, or parentheses.
+- **Be concise.** Lead with the point. No throat-clearing preambles, no filler ("simply", "just", "of course", "it's worth noting"), no sentences that restate what was just said.
+- **Plain language.** Short sentences, one idea each. When two phrasings say the same thing, use the shorter one.
+
+**On a PR, use inline comments whenever possible.** Attach each point to the line or file it refers to instead of collecting everything in one top-level comment. Reserve a single summary comment for feedback that is not tied to a specific line, such as overall scope or a concern that spans several files.
+
 ## Bulk Changes
 For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
 
