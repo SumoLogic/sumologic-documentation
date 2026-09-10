@@ -25,6 +25,20 @@ When reviewing any PR or doc, always check existing docs of the same type in the
 
 Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
 
+## Output tone (comments)
+
+A comment Claude posts should read as though a person wrote it. This section governs the prose in GitHub PR comments, GitHub issue comments, and Jira ticket comments.
+
+**Run the `humanizer` skill on the draft of every comment before posting it.** Use the skill's embedded mode, which returns only the final text. It rewrites the patterns that mark prose as machine-written, keeps the meaning, and leaves code, commands, paths, and link targets alone. This is not a manual step to be requested; it applies to every comment.
+
+The following hold whether or not the skill runs:
+
+- **No em dashes.** Rewrite with a period, semicolon, colon, commas, or parentheses.
+- **Be concise.** Lead with the point. No throat-clearing preambles, no filler ("simply", "just", "of course", "it's worth noting"), no sentences that restate what was just said.
+- **Plain language.** Short sentences, one idea each. When two phrasings say the same thing, use the shorter one.
+
+**On a PR, use inline comments whenever possible.** Attach each point to the line or file it refers to instead of collecting everything in one top-level comment. Reserve a single summary comment for feedback that is not tied to a specific line, such as overall scope or a concern that spans several files.
+
 ## Bulk Changes
 For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
 
@@ -96,7 +110,7 @@ Before pushing any commit that changes docs content:
   - MUST be populated when creating or updating tickets that touch existing articles
   - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
 - **GitHub PR link** (`customfield_10466`): After creating a PR, automatically update this field with the PR URL
-- **Description**: Always use `contentFormat: markdown`
+- **Description**: Use `contentFormat: markdown` for text-only fields. Switch to `contentFormat: adf` when the field contains, or should keep, anything markdown cannot represent: attached images and other media nodes, panels, expand/collapse blocks, status lozenges, `@` mentions, date nodes, or column layouts. Jira Cloud stores rich text as ADF, and markdown is a lossy conversion layer over it, so **rewriting a description as markdown silently deletes those nodes**. On read, a media node comes back as a `![](blob:https://media.staging.atl-paas.net/...)` placeholder that is not a usable image source; writing that back destroys the attachment. Fetch the field as ADF first when you are unsure what it contains.
 
 ### Workflow Requirements
 - **Creating tickets**: Use one of three approaches — a user-provided description, analysis of the code changes being made, or the file paths touched. (Claude Code: see `.claude/commands/jira.md` for the concrete pattern and Technical Area mappings.)

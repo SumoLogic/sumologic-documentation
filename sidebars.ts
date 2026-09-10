@@ -3260,6 +3260,7 @@ integrations: [
           ],
         },
         'api/connections-management',
+        'api/content-config-management',
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
