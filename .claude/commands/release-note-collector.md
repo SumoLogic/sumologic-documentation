@@ -141,8 +141,8 @@ This release includes security and stability fixes.
 * List items use bullet points with dashes.
 * Include specific version numbers for dependencies.
 * Reference CVE numbers when applicable (format: CVE-YYYY-NNNNN or GHSA-XXXX-XXXX-XXXX)
-* Keep descriptions concise (one sentence per item).
 * Order: Security fixes first, then bug fixes, then features
+* For everything else (voice, conciseness), follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide.
 
 **Example:**
 ```markdown
@@ -171,12 +171,8 @@ This release includes security and stability fixes.
 ```
 
 **OpenTelemetry Guidelines:**
-* Open with a direct statement: "[Feature] is now available." or "[Feature] now supports [X]."
-* Write 2-3 sentences in first paragraph.
-* Focus on user benefits and business value.
-* End first paragraph with "Learn more" link.
+* Follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide for voice, conciseness, and "Learn more" links.
 * Can include additional paragraphs for context.
-* Use relative paths for documentation links (start with `/docs/`).
 * Add admonitions for important notes or breaking changes.
 
 **Example (Feature announcement):**
@@ -215,7 +211,7 @@ Before finishing, verify:
 * [ ] For installed: Sections use H4 (`####`), proper order (Security → Bug → Feature)
 * [ ] For installed: Version numbers in **bold** format
 * [ ] For installed: CVE/GHSA references included where applicable
-* [ ] For OTel: Starts with "We're excited to..."
+* [ ] For OTel: Opens with a direct statement, not an announcement phrase (see the [style guide](/docs/contributing/style-guide/#release-notes))
 * [ ] For OTel: "Learn more" link included with relative path
 * [ ] No trailing whitespace.
 

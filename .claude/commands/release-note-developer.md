@@ -94,9 +94,7 @@ hide_table_of_contents: true
 * Keep topic concise but descriptive
 
 **Date formatting:**
-* Use full month name (January, February, March, etc.)
-* Use day without ordinal suffix (1, 9, 23, not 1st, 9th, 23rd)
-* Format: "Month Day, YYYY"
+* `Month D, YYYY`, per the [style guide](/docs/contributing/style-guide/#release-notes): full month name, no ordinal, no leading zero.
 
 **Image:**
 * Always use the standard Sumo Logic preview image
@@ -156,7 +154,7 @@ hide_table_of_contents: true
 
 ### Step 6: Content formatting guidelines
 
-Open with a direct statement of what changed. Do not use announcement or excitement phrases ("We're excited to announce", "We've released", "We've made improvements to"). State the change factually: "[Feature] is now available." or "[Feature] now supports [X]."
+Follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide for voice, conciseness, and "Learn more" links. The guidance below is only what is specific to developer release notes.
 
 #### API Changes
 
@@ -354,19 +352,13 @@ Claude:
 
 ## Date formatting rules
 
-**Format: "Month Day, YYYY"**
-
-Month names (full):
-* January, February, March, April, May, June
-* July, August, September, October, November, December
-
-Day: No ordinal suffix (use 1, 2, 3... not 1st, 2nd, 3rd)
+Titles use the [style guide](/docs/contributing/style-guide/#release-notes) date format: `Month D, YYYY`, full month name, no ordinal, no leading zero.
 
 **Examples:**
 * ✅ March 23, 2026
 * ✅ January 1, 2026
 * ✅ December 31, 2025
-* ❌ March 23rd, 2026 (no ordinal)
+* ❌ March 23rd, 2026 (ordinal)
 * ❌ Mar 23, 2026 (abbreviated month)
 * ❌ 2026-03-23 (wrong format)
 
@@ -503,4 +495,4 @@ Would you like me to help refine the content or add additional details?
 * [Developer Release Notes](https://sumologic.com/help/release-notes-developer)
 * [Release Notes Index](/docs/release-notes)
 * [API Documentation](/docs/api)
-* [Style Guide](/docs/contributing/style-guide)
+* [Style Guide: Release notes](/docs/contributing/style-guide/#release-notes)

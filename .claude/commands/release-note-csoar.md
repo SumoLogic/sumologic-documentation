@@ -134,7 +134,7 @@ Examples:
 **For Content Release:**
 ```yaml
 ---
-title: {Month DD, YYYY} - Content Release
+title: {Month D, YYYY} - Content Release
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -147,7 +147,7 @@ keywords:
 **For Application Update:**
 ```yaml
 ---
-title: {Month DD, YYYY} - Application Update
+title: {Month D, YYYY} - Application Update
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -157,12 +157,8 @@ keywords:
 ```
 
 **Title formatting:**
-* Start with full date: "Month DD, YYYY" (e.g., "June 05, 2024" or "March 06, 2026")
-* Follow with " - Content Release" or " - Application Update"
-
-**Date formatting:**
-* Use full month name (January, February, March, etc.)
-* Use zero-padded day (01, 05, 06, 08, not 1, 5, 6, 8)
+* Start with the date, then " - Content Release" or " - Application Update" (e.g., "June 5, 2024 - Content Release")
+* Dates follow the [style guide](/docs/contributing/style-guide/#release-notes): full month name, no ordinal, no leading zero
 
 **Keywords:**
 * **Always ask user to confirm keywords before creating file**
@@ -187,7 +183,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Content Release template:**
 ```markdown
 ---
-title: June 05, 2024 - Content Release
+title: June 5, 2024 - Content Release
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -214,7 +210,7 @@ This release introduces new integrations, new playbooks, and several updates.
 **Application Update template:**
 ```markdown
 ---
-title: March 06, 2026 - Application Update
+title: March 6, 2026 - Application Update
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -253,7 +249,7 @@ Fixed an issue where [description of bug and fix].
 
 ### Step 7: Content formatting guidelines
 
-Open with a direct statement of what the release contains. Do not use excitement or announcement phrases ("We're excited to introduce", "We're happy to announce", "We've added"). State what changed factually.
+Voice and wording follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide. The formatting below is specific to Cloud SOAR release notes.
 
 ## Content Release Formatting
 
@@ -374,8 +370,8 @@ Fixed issues while selecting variables containing the period character in textar
 **For Content Release:**
 * [ ] File created in `/blog-csoar/` directory
 * [ ] Filename is `YYYY-MM-DD-content-release.md`
-* [ ] Title is "Month DD, YYYY - Content Release" (zero-padded day)
-* [ ] Date uses full month name with zero-padded day (e.g., "June 05")
+* [ ] Title is "Month D, YYYY - Content Release" (no ordinal, no leading zero)
+* [ ] Date uses full month name, no leading zero (e.g., "June 5")
 * [ ] Image URL: Standard Sumo Logic preview image
 * [ ] Keywords: automation service, cloud soar, soar (three keywords)
 * [ ] `hide_table_of_contents: true` is present
@@ -389,8 +385,8 @@ Fixed issues while selecting variables containing the period character in textar
 **For Application Update:**
 * [ ] File created in `/blog-csoar/` directory
 * [ ] Filename is `YYYY-MM-DD-application-update.md`
-* [ ] Title is "Month DD, YYYY - Application Update" (zero-padded day)
-* [ ] Date uses full month name with zero-padded day (e.g., "March 06")
+* [ ] Title is "Month D, YYYY - Application Update" (no ordinal, no leading zero)
+* [ ] Date uses full month name, no leading zero (e.g., "March 6")
 * [ ] Image URL: Standard Sumo Logic preview image
 * [ ] Keywords: automation service, cloud soar (two keywords)
 * [ ] `hide_table_of_contents: true` is present
@@ -414,7 +410,7 @@ Claude:
 2. Confirms date: June 5, 2024
 3. Creates: blog-csoar/2024-06-05-content-release.md
 4. Generates frontmatter:
-   - title: "June 05, 2024 - Content Release"
+   - title: "June 5, 2024 - Content Release"
    - image: Standard Sumo Logic preview image
    - keywords: automation service, cloud soar, soar
 5. Writes content with:
@@ -435,7 +431,7 @@ Claude:
 3. Confirms release month: February
 4. Creates: blog-csoar/2026-03-06-application-update.md
 5. Generates frontmatter:
-   - title: "March 06, 2026 - Application Update"
+   - title: "March 6, 2026 - Application Update"
    - keywords: automation service, cloud soar
 6. Writes content with:
    - H2: "## February release"
@@ -468,22 +464,15 @@ Cloud SOAR API docs:
 
 ## Date formatting rules
 
-**Format: "Month DD, YYYY"**
-
-Month names (full):
-* January, February, March, April, May, June
-* July, August, September, October, November, December
-
-Day: Zero-padded two digits (use 01, 06, 08, 15... not 1, 6, 8)
+Titles use the [style guide](/docs/contributing/style-guide/#release-notes) date format: `Month D, YYYY`, full month name, no ordinal, no leading zero.
 
 **Examples:**
-* ✅ March 06, 2026
-* ✅ January 08, 2026
+* ✅ March 6, 2026
+* ✅ January 8, 2026
 * ✅ December 31, 2025
-* ✅ June 05, 2024
-* ❌ March 6, 2026 (not zero-padded)
-* ❌ March 6th, 2026 (has ordinal)
-* ❌ Mar 06, 2026 (abbreviated month)
+* ❌ March 06, 2026 (leading zero)
+* ❌ March 6th, 2026 (ordinal)
+* ❌ Mar 6, 2026 (abbreviated month)
 * ❌ 2026-03-06 (wrong format)
 
 ## Release timing

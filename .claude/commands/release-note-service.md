@@ -196,15 +196,9 @@ This enhancement streamlines your workflow by providing quick access to frequent
 
 ### Step 6: Content formatting guidelines
 
-**Write for clarity:**
-* Open with a direct statement of what the feature is — never an announcement phrase ("We're excited to introduce", "We're happy to announce")
-  * ❌ "We're excited to announce that multi-child-org search results now include an `_orgName` field..."
-  * ✅ "Multi-child-org search results now include an `_orgName` field alongside `_orgId`, so MSSP users can identify which child org a result came from."
-  * ❌ "We are excited to announce the addition of a native Sumo Logic HTTP Source webhook integration for LiteLLM."
-  * ✅ "A native Sumo Logic HTTP Source webhook integration for LiteLLM is now available, enabling you to collect LiteLLM usage and proxy log data."
-* Explain the benefit or business value in 2-3 sentences
-* Use "What's new:" section for bulleted specifics (optional)
-* End with a "Learn more" link to relevant docs
+**Voice and wording:** follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide (direct-statement openers, no announcement framing, conciseness, "Learn more" links). Service-specific structure is below.
+
+* Use a "What's new:" section for bulleted specifics (optional).
 
 **Use formatting for readability:**
 * Use **bold** for section labels like "What's new:"
@@ -447,13 +441,8 @@ Would you like me to help refine the content or add additional details?
 ## Tips and best practices
 
 **For all Service releases:**
-* Open with a direct statement of what changed: "[Feature] is now available." or "[Feature] now supports [X]."
-* Do not open with announcement phrases: "We're excited to introduce", "We're happy to announce", and similar
-* Lead with user benefit, not technical implementation
-* Explain "what" and "why", not "how"
-* Keep descriptions concise (2-3 sentences)
-* Link to comprehensive documentation for details
-* Use "What's new" bullets for multiple specific changes
+* Voice, openers, conciseness, and "Learn more" links follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide.
+* Use "What's new" bullets for multiple specific changes.
 
 **Title guidelines:**
 * Be specific about the feature (not "New Collection Feature")
@@ -477,4 +466,4 @@ Would you like me to help refine the content or add additional details?
 
 * [Service Release Notes](https://sumologic.com/help/release-notes-service)
 * [Release Notes Index](/docs/release-notes)
-* [Style Guide](/docs/contributing/style-guide)
+* [Style Guide: Release notes](/docs/contributing/style-guide/#release-notes)
