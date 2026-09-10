@@ -13,7 +13,7 @@ Depending on your use case, you'd also use the [join](join.md) operator, which 
 
 For example, let's say we have the value of a userRequestId, which entered a distributed system; the request goes through systems named Service, Stream, and Config:
 
-<img src={useBaseUrl('img/reuse/query-search/Sessionize_layout.png')} alt="Sessionize layout" width="600>" />
+<img src={useBaseUrl('img/reuse/query-search/Sessionize_layout.png')} alt="Sessionize layout" width="600" />
 
 Each system generated log messages, so we know that at some point a failure occurred. We know the userRequestID value from the log files from the Service machine, and we know the serviceSessionId, streamRequestId, and configSessionId. Using **sessionize**, we can weave together these disparate logs to identify where the failure occurred.
 
