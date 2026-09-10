@@ -37,7 +37,7 @@ Following are features available with our security solutions. If you have any qu
 | App catalog (out-of-the-box analytics) | &#10003; | &#10003; | &#10003; |
 | Dashboard | &#10003; | &#10003; | &#10003; |
 | Deep search (Sumo Logic Search Query Language) | &#10003; | &#10003; | &#10003; |
-| Advanced analytics with machine learning (Global Intelligence Service for GuardDuty and CloudTrail) | &#10003; | &#10003; | &#10003; |
+| Advanced analytics with machine learning (Global Intelligence Service) | &#10003; | &#10003; | &#10003; |
 | Monitoring | &#10003; | &#10003; | &#10003; |
 | Alerts | &#10003; | &#10003; | &#10003; |
 | Threat Intelligence (threat intel feed and threat analysis app) | &#10003; | &#10003; | &#10003; |

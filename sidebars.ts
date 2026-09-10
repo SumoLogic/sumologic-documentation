@@ -2255,9 +2255,6 @@ integrations: [
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
         'security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
-        'integrations/amazon-aws/global-intelligence-guardduty',
-        'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
-        'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
         'integrations/amazon-aws/vpc-flow-logs-pci-compliance',
         'integrations/amazon-aws/cloudtrail-pci-compliance'
       ],
@@ -2602,9 +2599,6 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/global-intelligence/index'},
         items: [
-          'integrations/amazon-aws/global-intelligence-guardduty',
-          'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
-          'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
         ],
       },
