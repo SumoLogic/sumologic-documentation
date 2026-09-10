@@ -35,5 +35,5 @@ With the Content and Configuration Management (C3M) APIs, a Managed Security Ser
 
 <ApiRoles/>
 
-{/* REVIEW: "(all role capabilities)" was copied from api/organizations-management.md and is not confirmed by the OpenAPI spec (the spec carries no capability metadata). The parallel Manage Content UI feature requires only View Organizations, Create Organizations, and Manage Organizations. Confirm with the C3M API owner which #organizations entitlements the /v1/multi-account-management/content/sync endpoints actually enforce, then replace this line with the exact sublist. */}
-* [Organizations](/docs/manage/users-roles/roles/role-capabilities/#organizations) (all role capabilities)
+
+* [Manage Organizations](/docs/manage/users-roles/roles/role-capabilities/#organizations)
