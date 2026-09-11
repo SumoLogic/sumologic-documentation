@@ -323,11 +323,11 @@ This may happen if:
 	+ renamed action Get Incident Comments to List Incident Comments
 	+ renamed action Get Incidents to List Incidents
 	+ renamed action Incidents Daemon Sentinel to Microsoft Sentinel Incidents Daemon
-	+ added new action List Incident Alerts
+	+ Added a new action: **List Incident Alerts**.
 * October 14, 2024 (v1.4)
 	+ Updated the integration by adding two new fields (**API Root** and **Login Endpoint**) to the configuration
 + October 22, 2024 (v1.5)
-	+ Added new action **List Incident Entities V2**
+	+ Added a new action: **List Incident Entities V2**.
     + Updated the integration by adding new fields (**Cloud SOAR URL API URL**, **Access ID** , **Access Key**) to the configuration
 + October 29, 2024 (v1.6)
 	+ Updated **List Incident Entities V2** action in the output field.

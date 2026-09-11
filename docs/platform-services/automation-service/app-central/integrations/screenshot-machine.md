@@ -55,7 +55,7 @@ For information about Screenshot Machine, see [Screenshot Machine documentation]
 	+ Integration renamed form Screenshot Machine OIF to Screenshot Machine
 * September 4, 2023 (v1.2)
 	+ integration refactored
-	+ added new action Screenshot Webpage V2
+	+ Added a new action: **Screenshot Webpage V2**.
 * February 16, 2024 (v1.3)
     + Screenshot Webpage Action: Updated with new Cloud SOAR API
 * April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

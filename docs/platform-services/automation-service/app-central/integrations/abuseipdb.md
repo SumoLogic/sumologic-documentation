@@ -60,7 +60,7 @@ For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuse
 * February 20, 2023 (v1.2)
 	+ Updated integration: (Updated the integration Fields with Environmental Variables)
 * October 6, 2023 (v1.3)
-	+ Added new action: IP Reputation V2
+	+ Added a new action: **IP Reputation V2**.
 	+ Changed fields visibility
 	+ Fixed Typo
 * May 29, 2024 (v1.4)

@@ -257,11 +257,11 @@ If the IP isn’t formatted correctly (for example, missing the CIDR suffix), AW
 
 ### Version history
 * April 19, 2024 (v1.0)- First upload
-* March 26, 2025 (v1.1) - Added Update IP Set action. This new action allows users to add or remove IPs from an existing IP Set.
+* March 26, 2025 (v1.1) - Added a new action: **Update IP Set**, which allows users to add or remove IPs from an existing IP Set.
 
 ### Deprecation notices
 * NA
 
 ## Additional resources
 
-- For AWS WAF, Sumo Logic offers the [AWS WAF app](/docs/integrations/cloud-security-monitoring-analytics/aws-waf/) to visualize your AWS WAF data.
+For AWS WAF, Sumo Logic offers the [AWS WAF app](/docs/integrations/cloud-security-monitoring-analytics/aws-waf/) to visualize your AWS WAF data.

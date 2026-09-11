@@ -64,10 +64,8 @@ For information about Recorded Future, see [Recorded Future documentation](https
 * September 16, 2019 - First upload
 * February 19, 2021 - Updated actions:   
 Get Alerts Details, Alerts Daemon, Vulnerability Search Daemon
-* October 27, 2021 - New action added:   
-File Reputation V2
-* March 23, 2022 - New action added:   
-Search Domain, Search URL, Search IP, Search Hash
+* October 27, 2021 - Added a new action: **File Reputation V2**.
+* March 23, 2022 - Added new actions: **Search Domain**, **Search URL**, **Search IP**, and **Search Hash**.
 * January 10, 2023 - Refactoring
 * February 8, 2023 (v1.5) - Updated Actions (Changed the 'Fields' field as required field and improved error handling):
 	+ File Reputation
