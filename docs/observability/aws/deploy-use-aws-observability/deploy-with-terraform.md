@@ -31,7 +31,6 @@ If you've previously set up our AWS Observability Solution with CloudFormation a
 
 :::
 
-
 For this setup, complete the following:
 
 1. Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
