@@ -81,7 +81,11 @@ Updates:
    - sumologic-s3-logging-auto-enable → 1.0.18
 
 Deprecation:
-* The Global Intelligence for AWS CloudTrail DevOps app is scheduled for deprecation in the near future and, as a result, has been removed from the AWS Observability Solution.
+* The following Global Intelligence Service apps are scheduled for deprecation in the near future:
+  * Global Intelligence for Amazon GuardDuty.
+  * Global Intelligence for AWS CloudTrail DevOps.
+  * Global Intelligence for AWS CloudTrail SecOps.
+* The Global Intelligence for AWS CloudTrail DevOps app has been removed from the AWS Observability Solution.
 * AWS Observability Solution versions that rely on deprecated AWS Lambda runtimes are also considered deprecated. Since Nodejs18.x was deprecated on September 1st, 2025, all AWS Observability versions up to and including 2.8.0 are now deprecated.
 
 ## v2.12.0, 01-Apr-2025
