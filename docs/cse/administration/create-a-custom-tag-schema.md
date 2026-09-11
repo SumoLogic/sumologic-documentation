@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic has instructions for creating a custom tag schema in Cloud SIEM. 
 
 ## About tags in Cloud SIEM
-
+test
 Tags are metadata you can attach to insights, signals, entities, and rules. Tags are useful for adding context to these Cloud SIEM items. You can also search for and filter items by tag. There are two types of tags: *keyword tags*, which are arbitrary, freeform strings; and *schema keys*, which are predefined key-value pairs. Cloud SIEM provides built-in schemas keys that display in the Cloud SIEM UI with a Sumo Logic label, as shown in the example below. You can’t edit the built-in schemas.
 
 <img src={useBaseUrl('img/cse/built-in-tags.png')} alt="Built-in schema keys" style={{border: '1px solid gray'}} width="800"/>
@@ -30,7 +30,7 @@ You can use Terraform to manage custom tag schemas with the [`sumologic_cse_tag_
 ## Define a custom tag schema
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Tag Schemas**. You can also click the **Go To...** menu at the top of the screen and select **Tag Schemas**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Tag Schemas**.
-1. On the **Tag Schemas** page, click **+Add Tag Schema**. 
+1. On the **Tag Schemas** page, click **+Add Tag Schema**.
 1. The **Add Tag Schemas** popup appears. <br/><img src={useBaseUrl('img/cse/tag-schema-empty.png')} alt="Create tag schema" style={{border: '1px solid gray'}} width="400"/>
     1. **Key**. Enter an identifier for the tag you’re defining. It won’t appear in the UI for assigning tags to a content item, unless you leave the **Label** field blank.
     1. **Label**. Enter a label for the tag. If you supply a label, that’s what will appear in the UI for assigning tags to a content item.
@@ -44,4 +44,3 @@ You can use Terraform to manage custom tag schemas with the [`sumologic_cse_tag_
         * **Enter Value**. Enter an allowable value for the tag.
         * **Enter Label**. Enter a label for the value.
         * **Enter Link** (optional). Enter a URL for it to appear in the Actions menu of the tag in any content items to which it’s been applied. Cloud SIEM’s built-in schema tags are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site. <br/><img src={useBaseUrl('img/cse/mitre-link.png')} alt="Example MITRE link" style={{border: '1px solid gray'}} width="400"/>
-
