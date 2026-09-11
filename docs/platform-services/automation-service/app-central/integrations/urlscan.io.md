@@ -53,18 +53,15 @@ For information about URLScan.io, see [URLScan.io documentation](https://urlscan
 
 ## Change Log
 
-* June 12, 2019 - First upload
-* May 18, 2020 - Verdicts output added to "Scan URL" action
-* September 3, 2020 - New actions added
-* March 8, 2022 - Description
-* January 24, 2023
-	+ solved issue for which the integration test will throw an error if no value for timeout is provided
-	+ add env var class
-	+ remove version attribute in the actions
-* June 26, 2023 (v1.3) - Removed unnecessary empty lines
-* August 2, 2023 (v1.4 & v1.5) - Integration refactored
-* June 26, 2024 (v1.6) - New actions added
-	+ Check Scan Status
-        + Get URL Report
-* June 26, 2024 (v1.7) - Updated the name of the action "Get URl Report" to "Get URL Report"
-* March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.8 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.7 | June 26, 2024 | Updated the name of the **Get URl Report** action to **Get URL Report**. |
+| v1.6 | June 26, 2024 | Added new actions: **Check Scan Status** and **Get URL Report**. |
+| v1.4, v1.5 | August 2, 2023 | Refactored the integration. |
+| v1.3 | June 26, 2023 | Removed unnecessary empty lines. |
+| v1.2 | January 24, 2023 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Added an environment variable class.</li><li>Removed the version attribute from the actions.</li></ul> |
+| v1.1 | March 8, 2022 | Updated the integration description. |
+| v1.0 | September 3, 2020 | Added new actions. |
+| v1.0 | May 18, 2020 | Added verdicts output to the **Scan URL** action. |
+| v1.0 | June 12, 2019 | Initial release of the URLScan.io integration. |

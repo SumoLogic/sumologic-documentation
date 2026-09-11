@@ -74,40 +74,16 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 ## Change Log
 
-* June 1, 2023 - First upload
-* July 7, 2023 (v1.2)
-    + Updated action: Create Entity
-    + Removed leading/trailing spaces
-* November 24, 2023 (v1.3)
-    + Updated action: Add User Details
-        - Enabled incident artifacts feature flag for User Details field (formerly, Users)
-        - Added a checkbox to allow the conversion of user details to lower case
-    + Changed API endpoint for resource testing
-    + Improved error handling
-* December 14, 2023 (v1.4) - Added new action: Get Incident
-* February 13, 2024 (v1.5) - Fixed typo in the following actions
-    + Update Incident Date And Time Field
-    + Update Incident Description
-    + Update Incident Field
-    + Update Incident Fields
-* March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12
-* June 4, 2024 (v1.7) 
-  * New actions:
-    * Add Entity Threat Indicator
-    * Add External Alert to Incident
-    * Get Entity
-    * Get Incident Owner
-    * Get War Room Timeline
-    * Incident Daemon
-    * List Entity Incidents
-    * List External Alerts
-    * List Incident Columns
-    * Search Entities
-    * Search Incidents
-    * Update Entity
-* June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
-* December 5, 2025 (v1.9) - Added `closing_note` in output field of Get Incident action.
-* March 16, 2026 (v1.10) -  Updated action: Create Incident From Template
-  * Added auto-assignment of current timestamp to Start Time field when not provided.
-  * Enhanced hint text for Incident Label ID and Custom Incident Label fields.
-* April 29, 2026 (v1.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.11 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.10 | March 16, 2026 | <ul><li>Updated the **Create Incident From Template** action.</li><li>Added auto-assignment of the current timestamp to the Start Time field when not provided.</li><li>Enhanced hint text for the Incident Label ID and Custom Incident Label fields.</li></ul> |
+| v1.9 | December 5, 2025 | Added `closing_note` to the output field of the **Get Incident** action. |
+| v1.8 | June 24, 2024 | The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action. |
+| v1.7 | June 4, 2024 | Added new actions: **Add Entity Threat Indicator**, **Add External Alert to Incident**, **Get Entity**, **Get Incident Owner**, **Get War Room Timeline**, **Incident Daemon**, **List Entity Incidents**, **List External Alerts**, **List Incident Columns**, **Search Entities**, **Search Incidents**, and **Update Entity**. |
+| v1.6 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.5 | February 13, 2024 | Fixed a typo in the following actions: **Update Incident Date And Time Field**, **Update Incident Description**, **Update Incident Field**, and **Update Incident Fields**. |
+| v1.4 | December 14, 2023 | Added a new action: **Get Incident**. |
+| v1.3 | November 24, 2023 | <ul><li>Updated the **Add User Details** action: enabled the incident artifacts feature flag for the User Details field (formerly Users) and added a checkbox to allow converting user details to lowercase.</li><li>Changed the API endpoint for resource testing.</li><li>Improved error handling.</li></ul> |
+| v1.2 | July 7, 2023 | <ul><li>Updated the **Create Entity** action.</li><li>Removed leading/trailing spaces.</li></ul> |
+| v1.1 | June 1, 2023 | Initial release of the Incident Tools integration. |

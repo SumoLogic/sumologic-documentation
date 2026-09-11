@@ -55,14 +55,11 @@ For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuse
 
 ## Change Log
 
-* June 19, 2020 - First upload
-* August 26, 2021 - Action updated: IP Reputation
-* February 20, 2023 (v1.2)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables)
-* October 6, 2023 (v1.3)
-	+ Added new action: IP Reputation V2
-	+ Changed fields visibility
-	+ Fixed Typo
-* May 29, 2024 (v1.4)
-	+ Updated **IP Reputation** action which now supports saving reports as incident attachments and artifacts
-* March 31, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | May 29, 2024 | Updated the **IP Reputation** action, which now supports saving reports as incident attachments and artifacts. |
+| v1.3 | October 6, 2023 | <ul><li>Added a new action: **IP Reputation V2**.</li><li>Changed fields visibility.</li><li>Fixed a typo.</li></ul> |
+| v1.2 | February 20, 2023 | Updated the integration fields with environmental variables. |
+| v1.1 | August 26, 2021 | Updated the **IP Reputation** action. |
+| v1.0 | June 19, 2020 | Initial release of the AbuseIPDB integration. |

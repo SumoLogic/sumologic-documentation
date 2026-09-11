@@ -49,7 +49,9 @@ For information about Libraesva Email Security V4, see [Libraesva Email Security
 
 ## Change Log
 
-* May 11, 2021 - First upload
-* September 12, 2022 - Changed integration name and logo
-* July 11, 2023 (v4.1) - Updated the integration with Environmental Variables
-* April 29, 2026 (v4.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v4.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v4.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
+| v4.0 | September 12, 2022 | Changed the integration name and logo. |
+| v4.0 | May 11, 2021 | Initial release of the Libraesva Email Security V4 integration. |

@@ -313,27 +313,17 @@ This may happen if:
 
 ## Change Log
 
-* September 2, 2020 - First upload
-* June 8, 2022 - Updated actions: added "Scope" field
-* July 11, 2023 (v1.2) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.3)
-	+ integration refactored
-	+ removed Alerts Daemon Sentinel (replaced by Microsoft Graph Security Alerts Daemon, in Graph Security integration)
-	+ renamed action Get Entities to List Incident Entities
-	+ renamed action Get Incident Comments to List Incident Comments
-	+ renamed action Get Incidents to List Incidents
-	+ renamed action Incidents Daemon Sentinel to Microsoft Sentinel Incidents Daemon
-	+ added new action List Incident Alerts
-* October 14, 2024 (v1.4)
-	+ Updated the integration by adding two new fields (**API Root** and **Login Endpoint**) to the configuration
-+ October 22, 2024 (v1.5)
-	+ Added new action **List Incident Entities V2**
-    + Updated the integration by adding new fields (**Cloud SOAR URL API URL**, **Access ID** , **Access Key**) to the configuration
-+ October 29, 2024 (v1.6)
-	+ Updated **List Incident Entities V2** action in the output field.
-+ April 26, 2025 (v1.7)
-	+ Enhanced **Microsoft Sentinel Incidents Daemon** Added support to seamlessly fetch subsequent paginated data.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.8 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.7 | April 26, 2025 | Enhanced the **Microsoft Sentinel Incidents Daemon** action to seamlessly fetch subsequent paginated data. |
+| v1.6 | October 29, 2024 | Updated the **List Incident Entities V2** action in the output field. |
+| v1.5 | October 22, 2024 | <ul><li>Added a new action: **List Incident Entities V2**.</li><li>Updated the integration by adding new fields (**Cloud SOAR API URL**, **Access ID**, **Access Key**) to the configuration.</li></ul> |
+| v1.4 | October 14, 2024 | Updated the integration by adding two new fields (**API Root** and **Login Endpoint**) to the configuration. |
+| v1.3 | September 4, 2023 | <ul><li>Refactored the integration.</li><li>Removed the Alerts Daemon Sentinel action (replaced by the Microsoft Graph Security Alerts Daemon in the Graph Security integration).</li><li>Renamed the **Get Entities** action to **List Incident Entities**.</li><li>Renamed the **Get Incident Comments** action to **List Incident Comments**.</li><li>Renamed the **Get Incidents** action to **List Incidents**.</li><li>Renamed the **Incidents Daemon Sentinel** action to **Microsoft Sentinel Incidents Daemon**.</li><li>Added a new action: **List Incident Alerts**.</li></ul> |
+| v1.2 | July 11, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | June 8, 2022 | Updated actions to add a **Scope** field. |
+| v1.0 | September 2, 2020 | Initial release of the Microsoft Sentinel integration. |
 
 ### Deprecation notices
 * NA
-* April 30, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

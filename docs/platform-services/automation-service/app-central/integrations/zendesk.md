@@ -61,16 +61,15 @@ For information about Zendesk, see [Zendesk documentation](https://www.zendesk.c
 
 ## Change Log
 
-* June 17, 2021 - First upload
-* June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
-* June 21, 2023 (v1.2) - Changed Ticket and Update Ticket actions type to Notification
-* July 6, 2023 (v1.3)
-    + Updated Actions - Create Ticket & Update Ticket
-* March 21, 2024 (v1.4)
-    + Changed "Description" field type to textarea in "Create Ticket" action
-    + Changed "Comment" field type to textarea in "Update Ticket" action
-* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | March 21, 2024 | <ul><li>Changed the "Description" field type to textarea in the **Create Ticket** action.</li><li>Changed the "Comment" field type to textarea in the **Update Ticket** action.</li></ul> |
+| v1.3 | July 6, 2023 | Updated the **Create Ticket** and **Update Ticket** actions. |
+| v1.2 | June 21, 2023 | Changed the **Ticket** and **Update Ticket** actions type to Notification. |
+| v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | June 17, 2021 | Initial release of the Zendesk integration. |
 
 ## Additional resources
 
-- For Zendesk, Sumo Logic offers the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize your Zendesk data.
+For Zendesk, Sumo Logic offers the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize your Zendesk data.

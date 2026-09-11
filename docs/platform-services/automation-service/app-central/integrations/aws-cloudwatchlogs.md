@@ -61,9 +61,9 @@ For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](h
 
 ## Change Log
 
-* October 16, 2019 - First upload
-* March 10, 2022 - Logo
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* November 03, 2025 (v1.3) - Updated timestamp parsing to support both legacy and ISO 8601 formats.
-    + Filter Log Events
-    + Put Log Events
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | November 03, 2025 | Updated timestamp parsing to support both legacy and ISO 8601 formats in the **Filter Log Events** and **Put Log Events** actions. |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 10, 2022 | Updated the logo in AWS CloudWatchLogs integration. |
+| v1.0 | October 16, 2019 | Initial release of the AWS CloudWatchLogs integration. |

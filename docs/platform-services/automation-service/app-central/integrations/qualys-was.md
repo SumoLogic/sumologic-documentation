@@ -45,7 +45,9 @@ For information about Qualys WAS, see[ Qualys Web Application Scanning documenta
 
 ## Change Log
 
-* September 7, 2021 - First upload
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* September 28, 2023 (v1.2) - Versioning
-* July 23, 2026 (v1.3) - Resolved an issue where the integration fails due to deprecated dependency warnings.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | July 23, 2026 | Resolved an issue where the integration failed due to deprecated dependency warnings. |
+| v1.2 | September 28, 2023 | Versioned the integration. |
+| v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | September 7, 2021 | Initial release of the Qualys WAS integration. |

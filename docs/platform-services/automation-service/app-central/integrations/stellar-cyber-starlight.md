@@ -45,6 +45,8 @@ For information about Stellar Cyber, see [Stellar Cyber documentation](https://d
 
 ## Change Log
 
-* September 3, 2020 - First upload
-* July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
-* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 3, 2023 | Updated the integration with environmental variables. |
+| v1.0 | September 3, 2020 | Initial release of the Stellar Cyber Starlight integration. |
