@@ -42,17 +42,13 @@ No configuration is needed. Sumo Logic Cloud SIEM Internal executes without addi
 
 ## Change Log
 
-* September 20, 2023 - First Upload
-* October 13, 2023 (v1.13)
-    + Added a new action: **Insight Output Mapping**.
-* November 24, 2023 (v1.14)
-    + Extended output mapping for Get Signal action
-* April 5, 2024 (v1.15)
-    + The integration formerly known as "CSE Tools" has been renamed to "Sumo Logic Cloud SIEM Internal"
-+ July 3, 2025 (v1.16)
-    + Tested out the Insight Output Mapping action for beta change
-+ July 4, 2025 (v1.17)
-    + Fixed the beta change behavior and modified the hint for Insight Output Mapping action for clarity
-+ September 7, 2026 (v1.18)
-    + Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.18 | September 7, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.17 | July 4, 2025 | Fixed the beta change behavior and modified the hint for the **Insight Output Mapping** action for clarity. |
+| v1.16 | July 3, 2025 | Tested the **Insight Output Mapping** action for a beta change. |
+| v1.15 | April 5, 2024 | Renamed the integration from "CSE Tools" to "Sumo Logic Cloud SIEM Internal." |
+| v1.14 | November 24, 2023 | Extended output mapping for the **Get Signal** action. |
+| v1.13 | October 13, 2023 | Added a new action: **Insight Output Mapping**. |
+| v1.12 | September 20, 2023 | Initial release of the Sumo Logic Cloud SIEM Internal integration. |
 
