@@ -71,7 +71,7 @@ For information about Splunk, see [Splunk documentation](https://docs.splunk.com
 | v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3 | September 18, 2025 | <ul><li>Improved timezone handling in alert queries.</li><li>Improved URL encoding to handle reserved characters.</li></ul> |
 | v1.2 | July 13, 2023 | <ul><li>Updated the integration with environmental variables.</li><li>Renamed the integration from Splunk OIF to Splunk.</li><li>Changed fields visibility.</li><li>Changed Daemon compatibility (Splunk Alerts Daemon).</li></ul> |
-| v1.1 | March 25, 2021 | Updated authentication, adding support for Authentication Token and Basic Authentication. |
+| | March 25, 2021 | Updated authentication, adding support for Authentication Token and Basic Authentication. |
 | | March 9, 2021 | Added a new action. |
 | | February 21, 2020 | Updated the Splunk Events Daemon. |
 | | December 19, 2019 | Added the Splunk Alerts Daemon. |

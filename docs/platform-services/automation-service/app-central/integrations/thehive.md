@@ -121,4 +121,4 @@ For issues, questions, or improvements:
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | May 22, 2025 | <ul><li>Fixed parsing issues for date-related inputs with inconsistent formatting.</li><li>Fixed SSL-related warning issues.</li><li>Added an organization name field to the resource, which is included in the headers.</li><li>Enhanced error handling and made the integration more resilient to malformed inputs.</li></ul> |
 | v1.1 | July 3, 2023 | Updated the integration with environmental variables. |
-| v1.0 | January 29, 2019 | Initial release of the TheHive integration. |
+| | January 29, 2019 | Initial release of the TheHive integration. |

@@ -48,7 +48,7 @@ For information about Upwind, see [Upwind documentation](https://docs.upwind.io/
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0 | April 1, 2026 | Initial release of the Upwind integration. |
+| | April 1, 2026 | Initial release of the Upwind integration. |
 
 ## Additional resources
 

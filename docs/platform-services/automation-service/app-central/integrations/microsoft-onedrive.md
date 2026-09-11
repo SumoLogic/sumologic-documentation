@@ -73,5 +73,5 @@ For information about Microsoft OneDrive, see [OneDrive documentation](https://l
 | v1.4 | September 19, 2023 | Updated the integration's versioning. |
 | v1.3 | September 4, 2023 | Fixed a bug where if the timeout was not specified, an error would occur. |
 | v1.2 | August 17, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | March 10, 2022 | Updated the logo in Microsoft OneDrive integration. |
-| v1.0 | August 5, 2019 | Initial release of the Microsoft OneDrive integration. |
+| | March 10, 2022 | Updated the logo in Microsoft OneDrive integration. |
+| | August 5, 2019 | Initial release of the Microsoft OneDrive integration. |

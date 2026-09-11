@@ -46,5 +46,5 @@ For information about Google Safe Browsing, see [Google Safe Browsing documentat
 | v1.5 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.4 | July 25, 2023 | Refactored the integration. |
 | v1.2 | June 23, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | March 10, 2022 | Updated the logo. |
-| v1.0 | May 31, 2021 | Initial release of the Google Safe Browsing integration. |
+| | March 10, 2022 | Updated the logo. |
+| | May 31, 2021 | Initial release of the Google Safe Browsing integration. |

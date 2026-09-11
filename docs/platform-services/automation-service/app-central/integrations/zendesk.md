@@ -68,7 +68,7 @@ For information about Zendesk, see [Zendesk documentation](https://www.zendesk.c
 | v1.3 | July 6, 2023 | Updated the **Create Ticket** and **Update Ticket** actions. |
 | v1.2 | June 21, 2023 | Changed the **Ticket** and **Update Ticket** actions type to Notification. |
 | v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | June 17, 2021 | Initial release of the Zendesk integration. |
+| | June 17, 2021 | Initial release of the Zendesk integration. |
 
 ## Additional resources
 

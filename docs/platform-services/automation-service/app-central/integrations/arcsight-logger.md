@@ -44,4 +44,4 @@ For information about ArcSight Logger, see [ArcSight Logger documentation](https
 |:--|:--|:--|
 | v1.2 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 26, 2023 | Updated the integration with environmental variables. |
-| v1.0 | January 31, 2019 | Initial release of the ArcSight Logger integration. |
+| | January 31, 2019 | Initial release of the ArcSight Logger integration. |

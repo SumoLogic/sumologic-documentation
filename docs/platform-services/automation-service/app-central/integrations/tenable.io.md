@@ -59,8 +59,8 @@ For information about Tenable Vulnerability Management (formerly Tenable.io), se
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.3 | August 18, 2023 | Refactored the integration. |
-| v1.2 | December 21, 2020 | Updated action descriptions. |
-| v1.1 | October 20, 2020 | Added a User-Agent header to all actions. |
+| | December 21, 2020 | Updated action descriptions. |
+| | October 20, 2020 | Added a User-Agent header to all actions. |
 | | September 3, 2020 | Added new actions. |
 | | August 5, 2019 | Updated the supported version. |
 | | December 18, 2018 | Added target information actions. |

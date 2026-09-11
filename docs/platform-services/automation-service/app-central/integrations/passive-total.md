@@ -46,4 +46,4 @@ For information about PassiveTotal, see [PassiveTotal documentation](https://pas
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | June 12, 2019 | Initial release of the PassiveTotal integration. |
+| | June 12, 2019 | Initial release of the PassiveTotal integration. |

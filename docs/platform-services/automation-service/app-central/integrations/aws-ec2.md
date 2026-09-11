@@ -121,5 +121,5 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 | v1.4 | July 04, 2024 | Updated the **Describe Instances** action to resolve a bug related to the Instance ID field. |
 | v1.3 | January 16, 2024 | Updated the **Stop Instance** action to resolve a bug related to checkbox fields. |
 | v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | March 10, 2022 | Updated the logo in AWS EC2 integration. |
-| v1.0 | October 9, 2019 | Initial release of the AWS EC2 integration. |
+| | March 10, 2022 | Updated the logo in AWS EC2 integration. |
+| | October 9, 2019 | Initial release of the AWS EC2 integration. |

@@ -68,7 +68,7 @@ For information about Active Directory, see [Active Directory documentation](htt
 |:--|:--|:--|
 | v1.3 | December 19, 2023 | Updated the **User Attributes V2** action so users can now be filtered based on their distinguishedName (DN). |
 | v1.2 | July 7, 2023 | <ul><li>Renamed the integration from Active Directory OIF to Active Directory.</li><li>Updated the integration with environmental variables.</li></ul> |
-| v1.1 | June 07, 2022 | Updated the **User Attributes V2** action to update the output. |
+| | June 07, 2022 | Updated the **User Attributes V2** action to update the output. |
 | | October 27, 2021 | Added new actions. |
 | | November 9, 2020 | Added new actions. |
 | | December 19, 2019 | Initial release of the Active Directory integration. |

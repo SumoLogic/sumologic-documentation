@@ -126,5 +126,5 @@ Use Google Chat to receive notifications, ensuring you promptly get important up
 | v2.3 | July 23, 2026 | Resolved an issue where the integration failed due to deprecated dependency warnings. |
 | v2.2 | September 25, 2025 | Updated the WIF configuration steps. |
 | v2.1 | December 06, 2024 | Added Rich Text Message support to the **Create Message** action. |
-| | October 29, 2024 | Updated the docs. |
-| | August 27, 2024 | First upload. |
+| v2.0 | October 29, 2024 | Updated the docs. |
+| v2.0 | August 27, 2024 | First upload. |

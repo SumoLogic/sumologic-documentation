@@ -68,7 +68,7 @@ For information about Cortex XDR, see [Cortex XDR documentation](https://docs-co
 | v1.5 | October 15, 2024 | Fixed the timeout error. |
 | v1.4 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.3 | July 11, 2023 | Removed leading and trailing spaces. |
-| v1.2 | January 30, 2023 | <ul><li>Refactored the **Incidents Cortex XDR Daemon** action.</li><li>Refactored the **Alerts Cortex XDR Daemon** action.</li></ul> |
-| v1.1 | January 27, 2023 | Refactored the integration. |
+| | January 30, 2023 | <ul><li>Refactored the **Incidents Cortex XDR Daemon** action.</li><li>Refactored the **Alerts Cortex XDR Daemon** action.</li></ul> |
+| | January 27, 2023 | Refactored the integration. |
 | | July 19, 2022 | Added the **Incidents Cortex XDR Daemon** action. |
 | | July 20, 2021 | Initial release of the Cortex XDR integration. |

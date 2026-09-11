@@ -77,7 +77,7 @@ For information about Tenable Security Center (formerly Tenable.sc), see [Tenabl
 |:--|:--|:--|
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | July 13, 2023 | <ul><li>Updated the integration with environmental variables.</li><li>Changed fields visibility.</li></ul> |
-| v1.1 | December 21, 2020 | Updated action descriptions. |
+| | December 21, 2020 | Updated action descriptions. |
 | | October 26, 2020 | Added a new action. |
 | | August 5, 2019 | Updated the supported version. |
 | | June 26, 2019 | Fixed a bug in SSL verification. |

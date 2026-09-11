@@ -71,8 +71,8 @@ For information about Recorded Future, see [Recorded Future documentation](https
 | v1.7 | June 22, 2023 | Renamed the integration from Recorded Future OIF to Recorded Future. |
 | v1.6 | June 22, 2023 | Removed unnecessary empty lines. |
 | v1.5 | February 8, 2023 | Updated actions to change the 'Fields' field to a required field and improve error handling: **File Reputation**, **Domain Reputation**, **URL Reputation**, and **IP Reputation**. |
-| v1.4 | January 10, 2023 | Refactored the integration. |
-| v1.3 | March 23, 2022 | Added new actions: **Search Domain**, **Search URL**, **Search IP**, and **Search Hash**. |
-| v1.2 | October 27, 2021 | Added a new action: **File Reputation V2**. |
-| v1.1 | February 19, 2021 | Updated actions: **Get Alert Details**, **Recorded Future Alerts Daemon**, and **Vulnerability Search Daemon**. |
-| v1.0 | September 16, 2019 | Initial release of the Recorded Future integration. |
+| | January 10, 2023 | Refactored the integration. |
+| | March 23, 2022 | Added new actions: **Search Domain**, **Search URL**, **Search IP**, and **Search Hash**. |
+| | October 27, 2021 | Added a new action: **File Reputation V2**. |
+| | February 19, 2021 | Updated actions: **Get Alert Details**, **Recorded Future Alerts Daemon**, and **Vulnerability Search Daemon**. |
+| | September 16, 2019 | Initial release of the Recorded Future integration. |

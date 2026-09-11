@@ -78,4 +78,4 @@ For information about the Gmail API, see [Gmail API documentation](https://devel
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.1 | August 18, 2023 | Refactored the integration. |
-| v1.0 | June 19, 2020 | First upload. |
+| | June 19, 2020 | First upload. |

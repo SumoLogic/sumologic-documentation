@@ -63,5 +63,5 @@ For information about AWS Security Hub, see [AWS Security Hub documentation](htt
 | v1.4 | August 28, 2025 | <ul><li>Renamed the `Batch Import Finding` action to **Import Single Finding**.</li><li>Renamed the `List Enable Products` action to **List Enabled Products**.</li><li>Updated hints for all actions.</li></ul> |
 | v1.2 | June 19, 2023 | Updated the integration with Environmental Variables. |
 | v1.3 | February 28, 2023 | Updated code for compatibility with Python 3.12. |
-| v1.1 | March 10, 2022 | Updated the logo in AWS Security Hub integration. |
-| v1.0 | February 28, 2019 | Initial release of the AWS Security Hub integration. |
+| | March 10, 2022 | Updated the logo in AWS Security Hub integration. |
+| | February 28, 2019 | Initial release of the AWS Security Hub integration. |

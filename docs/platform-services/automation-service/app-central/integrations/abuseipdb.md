@@ -61,5 +61,5 @@ For information about AbuseIPDB, see [AbuseIPDB documentation](https://www.abuse
 | v1.4 | May 29, 2024 | Updated the **IP Reputation** action, which now supports saving reports as incident attachments and artifacts. |
 | v1.3 | October 6, 2023 | <ul><li>Added a new action: **IP Reputation V2**.</li><li>Changed fields visibility.</li><li>Fixed a typo.</li></ul> |
 | v1.2 | February 20, 2023 | Updated the integration fields with environmental variables. |
-| v1.1 | August 26, 2021 | Updated the **IP Reputation** action. |
-| v1.0 | June 19, 2020 | Initial release of the AbuseIPDB integration. |
+| | August 26, 2021 | Updated the **IP Reputation** action. |
+| | June 19, 2020 | Initial release of the AbuseIPDB integration. |

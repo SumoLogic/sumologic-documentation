@@ -60,8 +60,8 @@ For information about URLScan.io, see [URLScan.io documentation](https://urlscan
 | v1.6 | June 26, 2024 | Added new actions: **Check Scan Status** and **Get URL Report**. |
 | v1.4, v1.5 | August 2, 2023 | Refactored the integration. |
 | v1.3 | June 26, 2023 | Removed unnecessary empty lines. |
-| v1.2 | January 24, 2023 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Added an environment variable class.</li><li>Removed the version attribute from the actions.</li></ul> |
-| v1.1 | March 8, 2022 | Updated the integration description. |
+| | January 24, 2023 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Added an environment variable class.</li><li>Removed the version attribute from the actions.</li></ul> |
+| | March 8, 2022 | Updated the integration description. |
 | | September 3, 2020 | Added new actions. |
 | | May 18, 2020 | Added verdicts output to the **Scan URL** action. |
 | | June 12, 2019 | Initial release of the URLScan.io integration. |

@@ -201,7 +201,7 @@ Email Gateway
 | v2.4 | November 12, 2024 | <ul><li>Updated the `exchange_lib` library to 5.4.2.</li><li>Updated the **Get Contacts** action to return the message "No contacts found" if contacts are not found, rather than returning an exception.</li></ul> |
 | v2.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v2.2 | October 6, 2023 | Updated the integration. |
-| v2.1 | November 29, 2022 | Added new actions: **Send Email** and **Reply To Email**. |
+| | November 29, 2022 | Added new actions: **Send Email** and **Reply To Email**. |
 | | October 26, 2022 | Added configuration documentation. |
 | | March 10, 2022 | Updated the logo in Microsoft EWS integration. |
 | | December 21, 2020 | <ul><li>Added new actions.</li><li>The **Search Emails Extended** action replaced the **Search Email** action.</li><li>Added the OAuth 2.0 authentication method to all actions.</li></ul> |

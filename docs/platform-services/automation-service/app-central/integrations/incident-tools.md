@@ -86,4 +86,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 | v1.4 | December 14, 2023 | Added a new action: **Get Incident**. |
 | v1.3 | November 24, 2023 | <ul><li>Updated the **Add User Details** action: enabled the incident artifacts feature flag for the User Details field (formerly Users) and added a checkbox to allow converting user details to lowercase.</li><li>Changed the API endpoint for resource testing.</li><li>Improved error handling.</li></ul> |
 | v1.2 | July 7, 2023 | <ul><li>Updated the **Create Entity** action.</li><li>Removed leading/trailing spaces.</li></ul> |
-| v1.1 | June 1, 2023 | Initial release of the Incident Tools integration. |
+| | June 1, 2023 | Initial release of the Incident Tools integration. |

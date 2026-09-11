@@ -70,5 +70,5 @@ For information about Cisco Secure Endpoint (formerly AMP for Endpoints), see [S
 |:--|:--|:--|
 | v1.3 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | June 21, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | May 22, 2020 | Added additional actions. |
-| v1.0 | January 29, 2019 | Initial release of the Cisco AMP for Endpoints integration. |
+| | May 22, 2020 | Added additional actions. |
+| | January 29, 2019 | Initial release of the Cisco AMP for Endpoints integration. |

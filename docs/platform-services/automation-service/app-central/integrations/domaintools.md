@@ -54,4 +54,4 @@ For information about DomainTools, see [DomainTools documentation](https://docs.
 |:--|:--|:--|
 | v1.2 | June 14, 2023 | Updated the integration with Environmental Variables. |
 | v1.1 | March 15, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
-| v1.0 | December 19, 2018 | Initial release of the DomainTools integration. |
+| | December 19, 2018 | Initial release of the DomainTools integration. |

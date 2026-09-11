@@ -74,7 +74,7 @@ For information about Elastic Security, see [Elastic Security documentation](htt
 | v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.2 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed the visibility of fields.</li><li>Updated compatibility for the **Fetch Items Elastic Security** daemon.</li></ul> |
-| v1.1 | January 21, 2022 | Updated a new action. |
+| | January 21, 2022 | Updated a new action. |
 | | September 24, 2021 | Updated a new action. |
 | | August 5, 2021 | Updated a new action. |
 | | April 9, 2021 | Initial release of the Elastic Security integration. |

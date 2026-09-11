@@ -27,4 +27,4 @@ No configuration is needed. Basic Tools executes without additional authenticati
 | v1.12 | July 20, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.11 | April 17, 2024 | <ul><li>Added a new **Cc Recipients** field to the **Send Email** action.</li><li>Removed the **Plain Text Content** field from the **Send Email** action.</li></ul> |
 | v1.5 | October 24, 2023 | Added a new action: **Payload Regex**. |
-| v1.4 | September 21, 2023 | Initial release of the Basic Tools integration. |
+| | September 21, 2023 | Initial release of the Basic Tools integration. |

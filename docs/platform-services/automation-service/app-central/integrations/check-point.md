@@ -70,8 +70,8 @@ For information about Check Point, see [Check Point documentation](https://sc1.c
 |:--|:--|:--|
 | v1.5 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.4 | June 23, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed from Check Point OIF to Check Point.</li></ul> |
-| v1.3 | November 30, 2022 | Added a new action: **Show Access Rule**. |
-| v1.2 | November 22, 2022 | <ul><li>Changed `arg.url` to `arg.server` in the integration file and actions.</li><li>Added `verify`, `timeout`, and `proxy_url`.</li><li>Added REQUIRED as help where needed.</li><li>Changed the type of list to text, where `incident_artifacts` is true.</li></ul> |
-| v1.1 | September 7, 2021 | Added new actions: **Add Host To Specific Group**, **Assign Global**, and **Install Policy**. |
+| | November 30, 2022 | Added a new action: **Show Access Rule**. |
+| | November 22, 2022 | <ul><li>Changed `arg.url` to `arg.server` in the integration file and actions.</li><li>Added `verify`, `timeout`, and `proxy_url`.</li><li>Added REQUIRED as help where needed.</li><li>Changed the type of list to text, where `incident_artifacts` is true.</li></ul> |
+| | September 7, 2021 | Added new actions: **Add Host To Specific Group**, **Assign Global**, and **Install Policy**. |
 | | May 15, 2020 | Added new actions: **Block Port**, **Add Rule**, **Delete Rule**, **Add Threat Rule**, and **Delete Threat Rule**. |
 | | February 10, 2020 | Initial release of the Check Point integration. |

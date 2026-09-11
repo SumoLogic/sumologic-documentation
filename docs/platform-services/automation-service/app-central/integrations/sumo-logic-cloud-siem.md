@@ -119,8 +119,8 @@ SIEM
 | v1.5 | September 26, 2023 | Updated the **Sumo Logic Signals Daemon**. |
 | v1.4 | September 19, 2023 | Updated the integration with environmental variables. |
 | v1.3 | February 17, 2023 | Updated the **Sumo Logic Insights Daemon Extended**. |
-| v1.2 | March 17, 2022 | Added a new action: **Update Insight**. |
-| v1.1 | October 27, 2021 | Added new actions. |
+| | March 17, 2022 | Added a new action: **Update Insight**. |
+| | October 27, 2021 | Added new actions. |
 | | October 18, 2021 | Added new actions. |
 | | October 1, 2021 | Added new actions. |
 | | April 6, 2021 | Added new actions. |

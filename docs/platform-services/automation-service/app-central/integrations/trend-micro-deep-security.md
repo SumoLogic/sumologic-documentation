@@ -61,8 +61,8 @@ For information about Trend Micro Deep Security, see [Trend Micro Deep Security 
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| | June 22, 2023 | Removed unnecessary empty lines. |
-| | February 17, 2023 | Added a new action: **Search Systems By IP**. |
+| v1.1 | June 22, 2023 | Removed unnecessary empty lines. |
+| v1.1 | February 17, 2023 | Added a new action: **Search Systems By IP**. |
 | | October 27, 2022 | Added a new action: **Search Systems By Hostname**. |
 | | March 6, 2020 | Initial release of the Trend Micro Deep Security integration. |
 

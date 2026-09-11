@@ -52,4 +52,4 @@ For information about Silent Push, see [Silent Push documentation](https://help.
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.0 | July 15, 2024 | Initial release of the Silent Push integration. |
+| | July 15, 2024 | Initial release of the Silent Push integration. |

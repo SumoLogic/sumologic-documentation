@@ -62,10 +62,10 @@ SANDBOX
 | v1.7 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.6 | June 14, 2023 | Improved the integration. |
 | v1.5 | April 4, 2023 | <ul><li>Updated the integration fields with Environmental Variables and improved error handling.</li><li>Added a new action: **Get File Analysis Overview**.</li><li>Updated the **Domain Reputation**, **File Reputation**, **Get Report Summary**, **IP Reputation**, **Scan File**, **Scan URL**, and **URL Reputation** actions.</li></ul> |
-| v1.4 | November 22, 2022 | <ul><li>Added a default URL.</li><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li></ul> |
-| v1.3 | May 23, 2022 | Updated the integration documentation. |
-| v1.2 | May 20, 2022 | Updated the integration. Added new actions: **Domain Reputation**, **IP Reputation**, and **URL Reputation**. |
-| v1.1 | June 26, 2020 | Updated the **Get Report Summary** action. |
+| | November 22, 2022 | <ul><li>Added a default URL.</li><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li></ul> |
+| | May 23, 2022 | Updated the integration documentation. |
+| | May 20, 2022 | Updated the integration. Added new actions: **Domain Reputation**, **IP Reputation**, and **URL Reputation**. |
+| | June 26, 2020 | Updated the **Get Report Summary** action. |
 | | January 31, 2020 | Updated the **Get Report Summary** action. |
 | | July 24, 2019 | Fixed an SSL verification issue. |
 | | June 4, 2019 | Updated the **Scan URL** action. |

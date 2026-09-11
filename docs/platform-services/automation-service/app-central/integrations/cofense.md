@@ -45,4 +45,4 @@ For information about Cofense, see the [Cofense website](https://cofense.com/).
 | v1.3 | October 9, 2023 | Removed unnecessary parameters. |
 | v1.2 | October 6, 2023 | Changed fields visibility. |
 | v1.1 | July 19, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | January 10, 2019 | Initial release of the Cofense integration. |
+| | January 10, 2019 | Initial release of the Cofense integration. |

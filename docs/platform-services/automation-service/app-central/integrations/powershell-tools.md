@@ -211,5 +211,5 @@ For information about PowerShell, see [PowerShell documentation](https://learn.m
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.5 | November 23, 2023 | <ul><li>Updated the integration to address hostname resolution in Docker.</li><li>Updated the configuration documentation for the Window Server Domain Controller.</li></ul> |
-| v1.4 | January 12, 2023 | Added new actions: **VMware Carbon Black Enrichment**, **CrowdStrike Falcon Enrichment**, **GreyNoise Enrichment**, and **SentinelOne Enrichment**. |
-| v1.3 | December 30, 2022 | Initial release of the PowerShell Tools integration. |
+| | January 12, 2023 | Added new actions: **VMware Carbon Black Enrichment**, **CrowdStrike Falcon Enrichment**, **GreyNoise Enrichment**, and **SentinelOne Enrichment**. |
+| | December 30, 2022 | Initial release of the PowerShell Tools integration. |

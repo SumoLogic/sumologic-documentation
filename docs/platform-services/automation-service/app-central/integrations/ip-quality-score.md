@@ -48,4 +48,4 @@ For information about IPQualityScore, see [IPQualityScore documentation](https:/
 | v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | January 29, 2024 | <ul><li>Added new actions: **Email Reputation** and **URL Reputation**.</li><li>Renamed the **Get Credit Usage API** action to **Get Credit Usage**.</li><li>Refactored the code.</li><li>Refined labels and hints.</li><li>Extended output mapping with examples.</li><li>Added a link to the API doc in the source code.</li><li>Resized the logo.</li></ul> |
 | v1.1 | July 5, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | September 18, 2020 | Initial release of the IP Quality Score integration. |
+| | September 18, 2020 | Initial release of the IP Quality Score integration. |

@@ -85,8 +85,8 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
 | v1.5 | March 21, 2023 | Updated the logo. |
 | v1.4 | March 7, 2023 | Updated the field hints for the **List Endpoints** action. |
 | v1.3 | February 23, 2023 | <ul><li>Updated the **List Endpoints** action's API endpoint.</li><li>Removed a duplicate in the **Incidents CrowdStrike Falcon Daemon** action.</li></ul> |
-| v1.2 | February 17, 2023 | Refactored the integration. |
-| v1.1 | December 30, 2022 | Updated the **Detections CrowdStrike Falcon Daemon** action to add an FQL-based filter and pagination. |
+| | February 17, 2023 | Refactored the integration. |
+| | December 30, 2022 | Updated the **Detections CrowdStrike Falcon Daemon** action to add an FQL-based filter and pagination. |
 | | November 10, 2022 | Added a new action: **Get Browser History**. |
 | | July 8, 2022 | Added a new action: **Device Actions**. |
 | | June 3, 2021 | Initial release of the CrowdStrike Falcon integration. |

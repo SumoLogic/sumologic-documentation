@@ -77,9 +77,9 @@ For information about Atlassian Jira, see [Jira documentation](https://confluenc
 | v1.6 | February 14, 2024 | Enhanced the **Create Issue** and **Update Issue** actions to support Jira custom fields. |
 | v1.5 | January 9, 2024 | <ul><li>Updated the logo.</li><li>Renamed the following actions: **Add Comment To Issue** to **Add Comment**, **Add Issue Attachments To Incident** to **Get Attachments**, **Get Issue Comments** to **List Comments**, **List Issue Fields** to **List Fields**, **List Issue Status** to **List Statuses**, **List Project** to **List Projects**, **Search Into Issues Jira** to **Search**, and **Set Issue Status** to **Update Issue Status**.</li><li>Introduced breaking changes: both the output mapping and some input fields were revised and updated.</li></ul> |
 | v1.4 | July 18, 2023 | Updated the integration with environmental variables. |
-| v1.3 | January 24, 2023 | <ul><li>Added a hint for Host.</li><li>Solved an issue where the integration test would throw an error if no value for timeout was provided.</li><li>Set the timeout field as not required.</li></ul> |
-| v1.2 | August 02, 2022 | Added a new action: **Get Issue Comments**. |
-| v1.1 | August 02, 2022 | Updated the **Create Issue** action to update the description field to support new lines. |
+| | January 24, 2023 | <ul><li>Added a hint for Host.</li><li>Solved an issue where the integration test would throw an error if no value for timeout was provided.</li><li>Set the timeout field as not required.</li></ul> |
+| | August 02, 2022 | Added a new action: **Get Issue Comments**. |
+| | August 02, 2022 | Updated the **Create Issue** action to update the description field to support new lines. |
 | | June 24, 2022 | Added new actions: **Get Issue** and **Monitor Issue Status**. |
 | | June 3, 2021 | Added a new action. |
 | | April 5, 2021 | Added new actions. |

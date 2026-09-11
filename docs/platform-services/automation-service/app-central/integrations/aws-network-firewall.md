@@ -58,4 +58,4 @@ For information about AWS Network Firewall, see [AWS Network Firewall documentat
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0 | January 24, 2024 | Initial release of the AWS Network Firewall integration. |
+| | January 24, 2024 | Initial release of the AWS Network Firewall integration. |

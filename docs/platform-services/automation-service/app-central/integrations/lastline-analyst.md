@@ -47,4 +47,4 @@ For information about Lastline Analyst, see [Lastline Analyst documentation](htt
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.2 | November 10, 2023 | <ul><li>Removed the Docker dependency.</li><li>Switched the integration to use the REST API, since the library used in Docker was not available through pip.</li><li>Updated integration resource fields by removing unused fields in the code.</li><li>Updated the integration with Environmental Variables.</li><li>Added proxy options, server certificate verification, and connection timeout configuration.</li><li>Improved error handling.</li><li>Removed trailing/leading spaces.</li><li>Updated output mappings.</li><li>Renamed the **Detonation Report** action to **Get Analysis Results**, and the **Detonate File** action to **Submit File**.</li></ul> |
-| v1.1 | June 12, 2019 | Initial release of the Lastline Analyst integration. |
+| | June 12, 2019 | Initial release of the Lastline Analyst integration. |

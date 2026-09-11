@@ -45,4 +45,4 @@ For information about MaxMind, see [MaxMind documentation](https://support.maxmi
 | Version | Date | Description |
 |:--|:--|:--|
 | v2.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v2.0 | March 29, 2023 | Initial release of the MaxMind V2 integration. |
+| | March 29, 2023 | Initial release of the MaxMind V2 integration. |

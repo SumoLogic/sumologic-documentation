@@ -55,6 +55,6 @@ For information about GreyNoise, see [GreyNoise documentation](https://docs.grey
 | v1.6 | May 20, 2024 | Fixed a syntax error with the API URL. |
 | v1.5 | February 26, 2024 | <ul><li>Added a new action: **Context IP Lookup Community**.</li><li>Refactored the code.</li><li>Fixed a typo.</li><li>Made other minor fixes.</li></ul> |
 | v1.4 | June 28, 2023 | Changed the visibility of the resource fields and improved error handling. |
-| v1.3 | February 8, 2023 | Updated the **Context IP Lookup** action to improve error handling. |
-| v1.2 | March 10, 2022 | Updated the logo. |
-| v1.1 | March 31, 2021 | Initial release of the GreyNoise integration. |
+| | February 8, 2023 | Updated the **Context IP Lookup** action to improve error handling. |
+| | March 10, 2022 | Updated the logo. |
+| | March 31, 2021 | Initial release of the GreyNoise integration. |

@@ -88,4 +88,4 @@ Threat Intelligence-Reputation
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 7, 2023 | Updated the integration with environmental variables. |
-| v1.0 | October 21, 2022 | Initial release of the SpiderFoot HX integration. |
+| | October 21, 2022 | Initial release of the SpiderFoot HX integration. |
