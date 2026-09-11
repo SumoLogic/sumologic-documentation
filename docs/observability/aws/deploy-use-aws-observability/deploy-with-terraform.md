@@ -1633,7 +1633,7 @@ This error can occur when cloudtrail is not enabled for EventBridge to capture `
 #### Solution
 CloudTrail must be enabled for EventBridge to capture `CreateLoadBalancer` events, since these events are recorded and delivered through CloudTrail.
 
-### Argument named *managed_apps* is not expected
+### Argument named `managed_apps` is not expected
 #### Error Message
 
 ```
@@ -1645,7 +1645,7 @@ managed_apps = {
 #### Solution
 Refer to [this module in GitHub](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-integrations/tree/master/sumologic).
 
-### Argument named *admin_mode* is not expected
+### Argument named `admin_mode` is not expected
 #### Error Message
 
 ```

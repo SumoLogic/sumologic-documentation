@@ -63,7 +63,7 @@ Incomplete records result when a record is created, but key information is not m
 
 ### A mapper does not exist for parsed events
 
-Another common mapping issue occurs when a log successfully parses, is assigned mapping metadata (`vendor`, `product`, `event_id`), but there is no corresponding mapper for the `event_id`. In many cases a _default_ pattern mapper exists which serves as a catch-all, but if this is not present, any logs which do not match a pattern defined in the mapper input will not create a record.
+Another common mapping issue occurs when a log successfully parses, is assigned mapping metadata (`vendor`, `product`, `event_id`), but there is no corresponding mapper for the `event_id`. In many cases a default pattern mapper exists which serves as a catch-all, but if this is not present, any logs which do not match a pattern defined in the mapper input will not create a record.
 
 This assumes the data source for which the mapping is failing has a parser and mappers in place already. This applies to net-new data sources and parsers.
 

@@ -6,7 +6,7 @@ description: Schedule log searches in Sumo Logic to run continuously and send al
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and execute to run on a schedule. Once configured, Scheduled Searches run continuously, making them a great tool for continuously monitoring your stack.
+A [Scheduled Search](/docs/alerts/scheduled-searches/schedule-search) is a standard [Log Search](/docs/search) that you save and execute to run on a schedule. Once configured, Scheduled Searches run continuously, making them a great tool for continuously monitoring your stack.
 
 <div className="box-wrapper">
 <div className="box smallbox card">
