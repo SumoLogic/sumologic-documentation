@@ -2,7 +2,7 @@
 id: onelogin-source
 title: OneLogin Source
 sidebar_label: OneLogin
-tags:
+keywords:
   - cloud-to-cloud
   - onelogin-source
 description: Learn how to collect the users list from the OneLogin API and send it to Sumo Logic.

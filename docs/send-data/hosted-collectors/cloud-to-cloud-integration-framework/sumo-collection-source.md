@@ -2,7 +2,7 @@
 id: sumo-collection-source
 title: Sumo Collection Source
 sidebar_label: Sumo Collection
-tags:
+keywords:
   - cloud-to-cloud
   - sumo-collection
 description: The Sumo Collection Source aims to collect the list of the collectors and their sources and send them to Sumo Logic.

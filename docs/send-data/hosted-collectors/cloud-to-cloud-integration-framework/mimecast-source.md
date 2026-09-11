@@ -2,7 +2,7 @@
 id: mimecast-source
 title: Mimecast Source
 sidebar_label: Mimecast
-tags:
+keywords:
   - cloud-to-cloud
   - mimecast
 description: The Mimecast source collects SIEM, DLP, Audit, and Hold Message List data from the Mimecast API.

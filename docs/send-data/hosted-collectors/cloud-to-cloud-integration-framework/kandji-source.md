@@ -2,7 +2,7 @@
 id: kandji-source
 title: Kandji Source
 sidebar_label: Kandji
-tags:
+keywords:
   - cloud-to-cloud
   - kandji-edr
 description: The Kandji Source provides a secure endpoint to receive threat details, devices list, device activities, device details, and device app information from the Kandji platform.

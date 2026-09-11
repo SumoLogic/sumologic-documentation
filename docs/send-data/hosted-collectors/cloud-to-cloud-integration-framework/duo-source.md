@@ -2,7 +2,7 @@
 id: duo-source
 title: Duo Source
 sidebar_label: Duo
-tags:
+keywords:
   - cloud-to-cloud
   - duo
 description: The Duo Source provides a secure endpoint to receive logs from multiple API endpoints.

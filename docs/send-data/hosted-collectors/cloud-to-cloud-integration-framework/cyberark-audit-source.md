@@ -2,7 +2,7 @@
 id: cyberark-audit-source
 title: CyberArk Audit Source
 sidebar_label: CyberArk Audit
-tags:
+keywords:
   - cloud-to-cloud
   - cyberark-audit
 description: This integration accesses CyberArk SIEM integration API to retrieve audit events.

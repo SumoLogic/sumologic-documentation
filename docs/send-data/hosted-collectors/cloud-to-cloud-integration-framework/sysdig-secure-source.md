@@ -2,7 +2,7 @@
 id: sysdig-secure-source
 title: Sysdig Secure Source
 sidebar_label: Sysdig Secure
-tags:
+keywords:
   - cloud-to-cloud
   - sysdig-secure
 description: The Sysdig Secure Source aims to collect the scan results from the scanner using Sysdig API and send them to Sumo Logic.

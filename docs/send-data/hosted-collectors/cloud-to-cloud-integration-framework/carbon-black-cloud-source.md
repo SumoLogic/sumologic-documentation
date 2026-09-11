@@ -2,7 +2,7 @@
 id: carbon-black-cloud-source
 title: Carbon Black Cloud Source
 sidebar_label: Carbon Black Cloud
-tags:
+keywords:
     - carbon-black-cloud
     - cloud-to-cloud
 description: The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs.

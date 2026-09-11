@@ -2,7 +2,7 @@
 id: snowflake-logs-source
 title: Snowflake Logs Source
 sidebar_label: Snowflake Logs
-tags:
+keywords:
   - cloud-to-cloud
   - snowflake-logs
 description: Learn how to collect the row data from the supported global tables (QUERY_HISTORY, LOGIN_HISTORY, SESSIONS, GRANTS_TO_USERS, DATA_TRANSFER_HISTORY, STAGES, GRANTS_TO_ROLES, USERS and Custom Events) and send it to Sumo Logic.

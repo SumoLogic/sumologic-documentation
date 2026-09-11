@@ -1,7 +1,7 @@
 ---
 id: azure-event-hubs-source
 title: Azure Event Hubs Source
-tags:
+keywords:
   - cloud-to-cloud
   - azure-event-hubs
 sidebar_label: Azure Event Hubs
