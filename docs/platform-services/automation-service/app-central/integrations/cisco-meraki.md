@@ -63,10 +63,12 @@ For information about Cisco Meraki, see [Cisco Meraki documentation](https://dev
 
 ## Change Log
 
-* February 28, 2019 - First upload
-* May 5, 2023 (v1.1) - Integration refactored
-* June 26, 2023 (v1.1) - Removed unnecessary empty lines and other little changes
-* October 24, 2025 (v1.3) - The Cisco Meraki integration has been fully upgraded to align with the latest Meraki Dashboard API (v1) and SDK (v2.0.3)
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | October 24, 2025 | Fully upgraded the Cisco Meraki integration to align with the latest Meraki Dashboard API (v1) and SDK (v2.0.3). |
+| v1.1 | June 26, 2023 | Removed unnecessary empty lines and made other minor changes. |
+| v1.1 | May 5, 2023 | Refactored the integration. |
+| v1.0 | February 28, 2019 | Initial release of the Cisco Meraki integration. |
 
 ## Additional resources
 

@@ -50,5 +50,7 @@ For information about Criminal IP, see the [Criminal IP website](https://www.cri
 
 ## Change Log
 
-* March 1, 2024 - First upload
-* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.0 | March 1, 2024 | Initial release of the Criminal IP integration. |
