@@ -1,7 +1,7 @@
 ---
 id: pin-a-search
 title: Pin a Search
-description: You can pin a search so that it runs in the background independent of the browser session.
+description: You can pin a search, or let Sumo Logic prompt you automatically, so it runs in the background independent of the browser session, and get an email notification when it completes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,7 +17,7 @@ Limitations:
 * Queries that use the [save operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
 * There is a known issue that may cause pinned searches to be lost when Sumo Logic performs an upgrade. For information on scheduled maintenance for your deployment, see [Sumo Logic status](https://status.sumologic.com). 
 
-#### Pin and unpin a search
+## Pin and unpin a search
 
 1. Enter a query in the search box and click **Start Search**.
 1. Click the three-dot kebab icon and click **Pin** from the provided options. <br/> <img src={useBaseUrl('img/get-started/library/pin-search-option.png')} alt="Pin menu option" style={{border: '1px solid gray'}} width="250"/>
@@ -26,7 +26,20 @@ Limitations:
 1. To preserve the pinned search, follow the steps in [Save a pinned search](#save-a-pinned-search).
 1. To unpin the search, click **Unpin** in the menu bar. The search is removed from the **Pinned searches** list. (Removing an instance of a saved search from the **Pinned searches** list does not delete the saved search from your **Personal** folder.)<br/><img src={useBaseUrl('img/get-started/library/unpin-search-option.png')} alt="Unpin menu option" style={{border: '1px solid gray'}} width="200"/>
 
-#### Save a pinned search
+## Run a slow search in the background automatically
+
+If a log search's elapsed time exceeds about one minute, a banner appears above the search results with the message "This search is taking longer than expected" and a **Run in Background** link.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/run-search-in-background-banner.png')} alt="Banner suggesting you run a slow search in the background" style={{border: '1px solid gray'}} width="800" />
+
+Click **Run in Background** to pin the search, the same as [pinning a search manually](#pin-andunpin-a-search). A message confirms where you can find the search later.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/background-search-pinned-message.png')} alt="Message confirming your background search is available as a pinned search" style={{border: '1px solid gray'}} width="800" />
+
+Once pinned, the search appears in your **Pinned searches** list, and when it completes, you receive an email notification with a link to the results, so you don't need to keep the **Search** page open while you wait.
+
+**Limitations:**
+* This automatic prompt only applies to log searches. It does not appear for metrics searches.
+* The banner does not appear if you have already reached the limit of ten pinned searches for your user.
+* The banner does not appear while you're using [Emulate log search](/docs/manage/users-roles/roles/create-manage-roles/#test-a-roles-log-access-rights) to test a role's or user's log access rights, since emulated searches use a different permission flow.
+
+## Save a pinned search
 
 When you save a pinned search, it appears in your **Pinned searches** list.
 
@@ -38,7 +51,7 @@ When you save a pinned search, it appears in your **Pinned searches** list.
 
 The search is saved to your **Personal** folder.
 
-#### Manage pinned searches
+## Manage pinned searches
 
 To open a previously pinned search:
 
