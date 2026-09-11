@@ -49,15 +49,12 @@ For information about GreyNoise, see [GreyNoise documentation](https://docs.grey
 
 ## Change Log
 
-* March 31, 2021 - First upload
-* March 10, 2022 - Logo
-* February 8, 2023 - Updated Action:
-    + Context IP Lookup (Improved error handling)
-* June 28, 2023 (v1.4) - Visibility of the Resource fields changed and improved error handling
-* February 26, 2024 (v1.5)
-    * Added a new action: **Context IP Lookup Community**.
-    * Code refactoring
-    * Fixed Typo
-    * Other minor fixes
-* May 20, 2024 (v1.6) - Fixed syntax Error with API URL
-* April 29, 2026 (v1.7) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.7 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.6 | May 20, 2024 | Fixed a syntax error with the API URL. |
+| v1.5 | February 26, 2024 | <ul><li>Added a new action: **Context IP Lookup Community**.</li><li>Refactored the code.</li><li>Fixed a typo.</li><li>Made other minor fixes.</li></ul> |
+| v1.4 | June 28, 2023 | Changed the visibility of the resource fields and improved error handling. |
+| v1.3 | February 8, 2023 | Updated the **Context IP Lookup** action to improve error handling. |
+| v1.2 | March 10, 2022 | Updated the logo. |
+| v1.1 | March 31, 2021 | Initial release of the GreyNoise integration. |

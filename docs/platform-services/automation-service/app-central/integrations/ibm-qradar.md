@@ -60,20 +60,16 @@ For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm
 
 ## Change Log
 
-* May 5, 2019 - First upload
-* January 31, 2020 - Added a new action: **Get Offense**.
-* April 3, 2020 - Added a new action: **Add Offense Note**.
-* May 29, 2020 - Improvements
-* March 22, 2021 - New Actions added
-* June 3, 2021 - New Actions added
-* March 8, 2022 - Description
-* April 11, 2022 - updated Action:
-	+ Get Offenses Daemon V2 (New endpoint added to fetch offense Destination IPs)
-* June 07, 2022 - Updated action:
-	+ Get Offenses Daemon V2
-* July 11, 2023 (v1.3)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from IBM QRadar OIF to IBM QRadar
-	+ Changed field visibility
-	+ Added new actions: **Search Into Events QRadar V3** and **Search Into Events QRadar V4**.
-* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from IBM QRadar OIF to IBM QRadar.</li><li>Changed field visibility.</li><li>Added new actions: **Search Into Events QRadar V3** and **Search Into Events QRadar V4**.</li></ul> |
+| v1.2 | June 07, 2022 | Updated the **Get Offenses Daemon V2** action. |
+| v1.1 | April 11, 2022 | Updated the **Get Offenses Daemon V2** action to add a new endpoint for fetching offense destination IPs. |
+| v1.0 | March 8, 2022 | Updated the description. |
+| v1.0 | June 3, 2021 | Added new actions. |
+| v1.0 | March 22, 2021 | Added new actions. |
+| v1.0 | May 29, 2020 | Made improvements to the integration. |
+| v1.0 | April 3, 2020 | Added a new action: **Add Offense Note**. |
+| v1.0 | January 31, 2020 | Added a new action: **Get Offense**. |
+| v1.0 | May 5, 2019 | Initial release of the IBM QRadar integration. |
