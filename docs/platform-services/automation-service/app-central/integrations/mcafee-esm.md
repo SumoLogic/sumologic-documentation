@@ -59,6 +59,6 @@ For information about McAfee ESM, see [McAfee Enterprise Security Manager docume
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | December 2, 2021 | Added a logout session to each action. |
-| v1.0 | August 5, 2019 | Updated the supported version. |
-| v1.0 | July 4, 2019 | Initial release of the McAfee ESM integration. |
+| | December 2, 2021 | Added a logout session to each action. |
+| | August 5, 2019 | Updated the supported version. |
+| | July 4, 2019 | Initial release of the McAfee ESM integration. |

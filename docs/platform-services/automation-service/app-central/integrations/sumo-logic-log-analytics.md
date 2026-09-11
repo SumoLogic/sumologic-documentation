@@ -80,7 +80,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 | v1.6 | June 28, 2023 | <ul><li>Changed the visibility of the resource fields.</li><li>Updated the **Records Sumo Logic Daemon** and **Search Sumo Logic Daemon**.</li></ul> |
 | v1.5 | March 22, 2023 | Updated the integration fields with environmental variables. |
 | v1.4 | November 10, 2022 | <ul><li>Updated the **Search Sumo Logic** action, fixing a timezone issue and adding one more endpoint to get Aggregate/Records.</li><li>Added a new action: **Records Sumo Logic Daemon**.</li></ul> |
-| v1.3 | July 13, 2022 | Updated the **Search Sumo Logic** action, updating the output and Field Last Period values. |
-| v1.2 | June 07, 2022 | Updated the **Search Sumo Logic** action. |
-| v1.1 | May 3, 2022 | Updated the integration and added a new daemon. |
-| v1.0 | April 6, 2021 | Initial release of the Sumo Logic Log Analytics integration. |
+| | July 13, 2022 | Updated the **Search Sumo Logic** action, updating the output and Field Last Period values. |
+| | June 07, 2022 | Updated the **Search Sumo Logic** action. |
+| | May 3, 2022 | Updated the integration and added a new daemon. |
+| | April 6, 2021 | Initial release of the Sumo Logic Log Analytics integration. |

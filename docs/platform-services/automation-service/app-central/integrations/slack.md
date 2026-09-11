@@ -141,10 +141,10 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 | v1.7 | August 21, 2023 | Updated the **Send Message** action. |
 | v1.6 | June 30, 2023 | Removed unnecessary spaces. |
 | v1.5 | March 3, 2023 | Updated the integration field labels. |
-| v1.4 | January 10, 2023 | Refactored the integration. |
-| v1.3 | December 30, 2022 | Added new actions: **Ask Question** and **Ask For User Email**. |
-| v1.2 | November 18, 2022 | Updated the **Get User** action field hints. |
-| v1.1 | March 4, 2021 | Initial release of the Slack integration. |
+| | January 10, 2023 | Refactored the integration. |
+| | December 30, 2022 | Added new actions: **Ask Question** and **Ask For User Email**. |
+| | November 18, 2022 | Updated the **Get User** action field hints. |
+| | March 4, 2021 | Initial release of the Slack integration. |
 
 ## Additional resources
 

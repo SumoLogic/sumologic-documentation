@@ -49,6 +49,6 @@ For information about McAfee Web Gateway, see [McAfee Web Gateway documentation]
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 6, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from McAfee Web Gateway OIF to McAfee Web Gateway.</li></ul> |
-| v1.0 | January 31, 2020 | Enhanced URL and IP validation. |
-| v1.0 | January 29, 2020 | Fixed IP and URL formatting issues. |
-| v1.0 | September 11, 2019 | Initial release of the McAfee Web Gateway integration. |
+| | January 31, 2020 | Enhanced URL and IP validation. |
+| | January 29, 2020 | Fixed IP and URL formatting issues. |
+| | September 11, 2019 | Initial release of the McAfee Web Gateway integration. |

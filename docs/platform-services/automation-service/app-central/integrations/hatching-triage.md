@@ -51,5 +51,5 @@ For information about Recorded Future Triage ([formerly Hatching Triage](https:/
 | v1.4 | August 13, 2025 | Updated the endpoint in the **Get Summary Report** action. |
 | v1.3 | June 2, 2024 | Updated API calls for the **Get Static Report**, **Get Triage Report**, and **Get Summary Report** actions. |
 | v1.2 | July 6, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | August 30, 2020 | Added new actions. |
-| v1.0 | June 19, 2020 | Initial release of the Hatching Triage integration. |
+| | August 30, 2020 | Added new actions. |
+| | June 19, 2020 | Initial release of the Hatching Triage integration. |

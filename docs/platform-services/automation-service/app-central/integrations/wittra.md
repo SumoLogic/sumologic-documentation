@@ -51,5 +51,5 @@ For information about Wittra, see [Wittra documentation](https://docs.wittra.io/
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 18, 2023 | Removed leading/trailing spaces. |
-| v1.0 | February 13, 2023 | Added a new logo. |
-| v1.0 | February 8, 2023 | Initial release of the Wittra integration. |
+| | February 13, 2023 | Added a new logo. |
+| | February 8, 2023 | Initial release of the Wittra integration. |

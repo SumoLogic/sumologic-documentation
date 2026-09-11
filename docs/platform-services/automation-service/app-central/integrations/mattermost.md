@@ -49,4 +49,4 @@ For information about Mattermost, see [Mattermost documentation](https://docs.ma
 |:--|:--|:--|
 | v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3 | July 7, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed the type to Notification for all actions.</li></ul> |
-| v1.2 | February 15, 2022 | Initial release of the Mattermost integration. |
+| | February 15, 2022 | Initial release of the Mattermost integration. |

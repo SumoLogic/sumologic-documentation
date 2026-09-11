@@ -62,4 +62,4 @@ For information about Google Security Operations (formerly Chronicle), see [Goog
 | v1.2 | January 26, 2024 | <ul><li>Refactored the integration.</li><li>Added new actions: **Get Event**, **Get Log**, **List Alerts**, and **UDM Search**.</li></ul> |
 | v1.1 | July 18, 2023 | Updated the integration with Environmental Variables. |
 | v1.3 | February 16, 2023 | Fixed a bug in the **List Alerts** action related to the PageSize field. |
-| v1.0 | July 30, 2021 | Initial release of the Chronicle integration. |
+| | July 30, 2021 | Initial release of the Chronicle integration. |

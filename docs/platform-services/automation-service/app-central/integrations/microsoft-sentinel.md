@@ -322,8 +322,8 @@ This may happen if:
 | v1.4 | October 14, 2024 | Updated the integration by adding two new fields (**API Root** and **Login Endpoint**) to the configuration. |
 | v1.3 | September 4, 2023 | <ul><li>Refactored the integration.</li><li>Removed the Alerts Daemon Sentinel action (replaced by the Microsoft Graph Security Alerts Daemon in the Graph Security integration).</li><li>Renamed the **Get Entities** action to **List Incident Entities**.</li><li>Renamed the **Get Incident Comments** action to **List Incident Comments**.</li><li>Renamed the **Get Incidents** action to **List Incidents**.</li><li>Renamed the **Incidents Daemon Sentinel** action to **Microsoft Sentinel Incidents Daemon**.</li><li>Added a new action: **List Incident Alerts**.</li></ul> |
 | v1.2 | July 11, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | June 8, 2022 | Updated actions to add a **Scope** field. |
-| v1.0 | September 2, 2020 | Initial release of the Microsoft Sentinel integration. |
+| | June 8, 2022 | Updated actions to add a **Scope** field. |
+| | September 2, 2020 | Initial release of the Microsoft Sentinel integration. |
 
 ### Deprecation notices
 * NA

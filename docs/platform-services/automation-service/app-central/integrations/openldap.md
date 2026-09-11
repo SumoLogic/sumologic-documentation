@@ -55,4 +55,4 @@ For information about OpenLDAP, see [OpenLDAP documentation](https://www.openlda
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.1 | July 18, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | October 05, 2022 | Initial release of the OpenLDAP integration. |
+| | October 05, 2022 | Initial release of the OpenLDAP integration. |

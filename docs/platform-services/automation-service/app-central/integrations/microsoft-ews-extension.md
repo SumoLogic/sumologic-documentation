@@ -70,7 +70,7 @@ For information about Microsoft EWS, see [Microsoft Exchange Web Services docume
 | v1.3 | October 6, 2023 | Updated the integration. |
 | v1.2 | July 19, 2023 | Removed leading/trailing spaces. |
 | v1.1 | October 17, 2022 | Added new actions: **Delete User**, **Add New User**, **List Users**, **Remove Member From Distribution Group**, **Add Member To Distribution Group**, **List Distribution Group**, and **Get Distribution Group Members**. |
-| v1.0 | March 10, 2022 | Updated the logo in Microsoft EWS Extension integration. |
-| v1.0 | September 24, 2019 | Added additional optional parameters to the **Update Client Access** action. |
-| v1.0 | September 4, 2019 | Added new actions. |
-| v1.0 | April 12, 2019 | Initial release of the Microsoft EWS Extension integration. |
+| | March 10, 2022 | Updated the logo in Microsoft EWS Extension integration. |
+| | September 24, 2019 | Added additional optional parameters to the **Update Client Access** action. |
+| | September 4, 2019 | Added new actions. |
+| | April 12, 2019 | Initial release of the Microsoft EWS Extension integration. |

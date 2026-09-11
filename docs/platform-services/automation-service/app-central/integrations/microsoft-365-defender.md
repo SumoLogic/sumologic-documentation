@@ -60,6 +60,6 @@ For information about Microsoft 365 Defender, see [Microsoft 365 Defender docume
 | v1.5 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.4 | June 28, 2023 | Removed leading/trailing spaces. |
 | v1.3 | May 23, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
-| v1.2 | January 30, 2023 | Updated the Microsoft 365 Defender Incidents Daemon to remove duplicate results. |
-| v1.1 | May 4, 2021 | Updated actions to accept multiple DateTime formats. |
-| v1.0 | April 8, 2021 | Initial release of the Microsoft 365 Defender integration. |
+| | January 30, 2023 | Updated the Microsoft 365 Defender Incidents Daemon to remove duplicate results. |
+| | May 4, 2021 | Updated actions to accept multiple DateTime formats. |
+| | April 8, 2021 | Initial release of the Microsoft 365 Defender integration. |

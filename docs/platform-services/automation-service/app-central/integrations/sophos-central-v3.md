@@ -64,5 +64,5 @@ For information about Sophos Central, see [Sophos Central documentation](https:/
 | v3.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v3.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v3.2 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Sophos Central 3.0 to Sophos Central V3.</li></ul> |
-| v3.1 | January 24, 2022 | Added new actions. |
-| v3.0 | December 28, 2021 | Initial release of the Sophos Central V3 integration. |
+| | January 24, 2022 | Added new actions. |
+| | December 28, 2021 | Initial release of the Sophos Central V3 integration. |

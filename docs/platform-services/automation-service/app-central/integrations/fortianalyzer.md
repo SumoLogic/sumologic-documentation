@@ -61,5 +61,5 @@ For information about FortiAnalyzer, see [FortiAnalyzer documentation](https://d
 | v1.4 | September 19, 2023 | Updated versioning. |
 | v1.3 | September 4, 2023 | Fixed a bug where an error would occur if the timeout was not specified. |
 | v1.2 | July 21, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | May 29, 2020 | Added a new action. |
-| v1.0 | June 19, 2019 | First upload. |
+| | May 29, 2020 | Added a new action. |
+| | June 19, 2019 | First upload. |

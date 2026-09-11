@@ -67,4 +67,4 @@ For information about Elasticsearch, see [Elasticsearch documentation](https://w
 | v1.4 | July 23, 2026 | Resolved an issue where the integration fails due to deprecated dependency warnings. |
 | v1.3 | November 3, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Improved error handling.</li><li>Removed leading and trailing spaces.</li></ul> |
 | v1.2 | November 10, 2022 | Added a new action: **Query Extended**. |
-| v1.1 | November 17, 2020 | Initial release of the Elasticsearch V2 integration. |
+| | November 17, 2020 | Initial release of the Elasticsearch V2 integration. |

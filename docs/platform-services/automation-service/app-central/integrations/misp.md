@@ -55,6 +55,6 @@ For information about MISP, see [MISP documentation](https://www.circl.lu/doc/mi
 | v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.2 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from MISP OIF to MISP.</li></ul> |
-| v1.1 | August 02, 2022 | <ul><li>Updated the **Search MISP Intelligence** action to remove duplicate data from the Daemon.</li><li>Updated the **Search MISP Attribute** action to remove duplicate data from the Daemon.</li><li>Updated the **Search Intelligence** action to add a new field, Search All.</li></ul> |
-| v1.0 | July 1, 2020 | Added new actions. |
-| v1.0 | December 19, 2019 | Initial release of the MISP integration. |
+| | August 02, 2022 | <ul><li>Updated the **Search MISP Intelligence** action to remove duplicate data from the Daemon.</li><li>Updated the **Search MISP Attribute** action to remove duplicate data from the Daemon.</li><li>Updated the **Search Intelligence** action to add a new field, Search All.</li></ul> |
+| | July 1, 2020 | Added new actions. |
+| | December 19, 2019 | Initial release of the MISP integration. |

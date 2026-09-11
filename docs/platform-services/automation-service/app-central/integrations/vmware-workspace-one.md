@@ -64,7 +64,7 @@ For information about VMware Workspace ONE, see [Workspace ONE documentation](ht
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | May 17, 2022 | Initial release of the VMware Workspace ONE integration. |
+| | May 17, 2022 | Initial release of the VMware Workspace ONE integration. |
 
 ## Additional resources
 

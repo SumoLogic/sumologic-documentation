@@ -54,4 +54,4 @@ For information about KnowBe4 PhishER, see [KnowBe4 PhishER documentation](https
 | v1.5 | September 26, 2023 | Updated the **Get Message** action. |
 | v1.4 | August 24, 2023 | Added a new daemon: **PhishER Messages Daemon**. |
 | v1.3 | June 26, 2023 | Removed unnecessary empty lines and made other minor changes. |
-| v1.2 | April 26, 2023 | Initial release of the KnowBe4 PhishER integration. |
+| | April 26, 2023 | Initial release of the KnowBe4 PhishER integration. |

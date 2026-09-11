@@ -70,5 +70,5 @@ For information about Zscaler, see [Zscaler documentation](https://help.zscaler.
 | v1.6 | March 20, 2024 | Added a new field to the **Add URL To Category** and **Remove URL From Category** actions for use with custom URL categories. |
 | v1.3 | February 20, 2024 | Fixed an issue that prevented some actions from being executed. |
 | v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | July 18, 2022 | <ul><li>The base URL in the connector is now visible as plain text.</li><li>Added a new logo.</li><li>Added missing incident artifacts.</li></ul> |
-| v1.0 | October 16, 2019 | Initial release of the Zscaler integration. |
+| | July 18, 2022 | <ul><li>The base URL in the connector is now visible as plain text.</li><li>Added a new logo.</li><li>Added missing incident artifacts.</li></ul> |
+| | October 16, 2019 | Initial release of the Zscaler integration. |

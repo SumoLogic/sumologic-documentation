@@ -51,4 +51,4 @@ For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.c
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0 | April 24, 2026 | Initial release of the ZeroFox V2 integration. |
+| | April 24, 2026 | Initial release of the ZeroFox V2 integration. |

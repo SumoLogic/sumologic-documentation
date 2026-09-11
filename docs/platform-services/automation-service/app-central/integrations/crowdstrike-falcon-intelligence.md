@@ -101,9 +101,9 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
 | v1.8 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.7 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.5 | June 30, 2023 | Updated the integration with Environmental Variables. |
-| v1.4 | March 21, 2023 | Updated the logo. |
-| v1.3 | February 23, 2023 | <ul><li>Renamed the integration from **CrowdStrike Falcon X** to **CrowdStrike Falcon Intelligence**.</li><li>Updated the integration fields with Environmental Variables.</li></ul> |
-| v1.2 | July 26, 2022 | Initial release of the CrowdStrike Falcon Intelligence integration. |
+| | March 21, 2023 | Updated the logo. |
+| | February 23, 2023 | <ul><li>Renamed the integration from **CrowdStrike Falcon X** to **CrowdStrike Falcon Intelligence**.</li><li>Updated the integration fields with Environmental Variables.</li></ul> |
+| | July 26, 2022 | Initial release of the CrowdStrike Falcon Intelligence integration. |
 
 ## Additional resources
 

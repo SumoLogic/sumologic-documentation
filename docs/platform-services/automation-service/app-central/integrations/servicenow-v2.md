@@ -107,5 +107,5 @@ Ticketing System
 | v2.5 | May 31, 2024 | Fixed an issue in the **Create Ticket** and **Update Ticket** actions in which the JSON Query field was not visible. |
 | v2.4 | April 5, 2024 | Fixed an issue that prevented resource testing from working correctly. |
 | v2.3 | June 30, 2023 | Improved the integration code. |
-| v2.2 | April 5, 2023 | Added the **Close Ticket** action. |
-| v2.1 | September 21, 2022 | Initial release of the ServiceNow V2 integration. |
+| | April 5, 2023 | Added the **Close Ticket** action. |
+| | September 21, 2022 | Initial release of the ServiceNow V2 integration. |

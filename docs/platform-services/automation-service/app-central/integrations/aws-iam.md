@@ -76,4 +76,4 @@ For information about AWS IAM, see [IAM documentation](https://docs.aws.amazon.c
 | v1.3 | January 24, 2024 | Added a new action: **Update Access Key**. |
 | v1.2 | January 16, 2024 | <ul><li>Changed the field type of the Access Key to password.</li><li>Updated the **Get User** action to fix a Table View issue.</li></ul> |
 | v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | October 1, 2019 | Initial release of the AWS IAM integration. |
+| | October 1, 2019 | Initial release of the AWS IAM integration. |

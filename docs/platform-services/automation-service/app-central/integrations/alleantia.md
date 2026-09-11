@@ -55,5 +55,5 @@ For information about Alleantia, see [Alleantia documentation](https://kb.allean
 |:--|:--|:--|
 | v1.3 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | June 26, 2023 | <ul><li>Removed the version tag from actions.</li><li>Updated the integration with environmental variables.</li></ul> |
-| v1.1 | February 16, 2021 | Updated the **Get Alarm Configuration** action. |
-| v1.0 | December 17, 2020 | Initial release of the Alleantia integration. |
+| | February 16, 2021 | Updated the **Get Alarm Configuration** action. |
+| | December 17, 2020 | Initial release of the Alleantia integration. |

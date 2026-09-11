@@ -75,6 +75,6 @@ Providing an invalid or unauthorized Workspace ID may result in a 400 Bad Reques
 | v1.6 | Sept 11, 2024 | Updated the **Update Ticket** action. |
 | v1.5 | July 11, 2023 | Removed leading/trailing spaces. |
 | v1.4 | March 22, 2023 | Updated the integration fields with Environmental Variables. |
-| v1.3 | June 29, 2022 | <ul><li>Added a new action: **Freshservice Tickets Daemon**.</li><li>Updated the **Get Tickets** action.</li></ul> |
-| v1.2 | June 24, 2022 | Added a daemon action. |
-| v1.1 | April 4, 2022 | First upload. |
+| | June 29, 2022 | <ul><li>Added a new action: **Freshservice Tickets Daemon**.</li><li>Updated the **Get Tickets** action.</li></ul> |
+| | June 24, 2022 | Added a daemon action. |
+| | April 4, 2022 | First upload. |

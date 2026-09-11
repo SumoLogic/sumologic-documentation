@@ -48,6 +48,6 @@ For information about ThreatConnect, see [ThreatConnect documentation](https://d
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.3 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.2 | February 19, 2026 | <ul><li>Added an observations parameter to the **Update Intelligence** action to enable recording observation counts for indicators.</li><li>Added output field definitions, which help with playbook data mapping.</li></ul> |
-| v1.1 | February 11, 2026 | <ul><li>Improved API error handling.</li><li>Updated **Search Intelligence** handling to avoid errors on empty or missing results.</li></ul> |
-| v1.0 | October 17, 2025 | Initial release of the ThreatConnect V3 integration. |
+| | February 19, 2026 | <ul><li>Added an observations parameter to the **Update Intelligence** action to enable recording observation counts for indicators.</li><li>Added output field definitions, which help with playbook data mapping.</li></ul> |
+| | February 11, 2026 | <ul><li>Improved API error handling.</li><li>Updated **Search Intelligence** handling to avoid errors on empty or missing results.</li></ul> |
+| | October 17, 2025 | Initial release of the ThreatConnect V3 integration. |

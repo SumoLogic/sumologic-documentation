@@ -77,5 +77,5 @@ For information about AWS GuardDuty, see [GuardDuty documentation](https://docs.
 |:--|:--|:--|
 | v1.3 | July 23, 2026 | Resolved an issue where the integration fails due to deprecated dependency warnings. |
 | v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | March 10, 2022 | Updated the logo in AWS GuardDuty integration. |
-| v1.0 | January 24, 2020 | Initial release of the AWS GuardDuty integration. |
+| | March 10, 2022 | Updated the logo in AWS GuardDuty integration. |
+| | January 24, 2020 | Initial release of the AWS GuardDuty integration. |

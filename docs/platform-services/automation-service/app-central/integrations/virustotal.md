@@ -72,11 +72,11 @@ For information about VirusTotal, see [VirusTotal documentation](https://docs.vi
 | v1.10 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.8 | July 25, 2023 | Updated the integration resource fields. |
 | v1.7 | June 27, 2023 | <ul><li>Renamed **VirusTotal OIF** to **VirusTotal**.</li><li>Changed the visibility of the resource field.</li><li>Added new actions: **URL Scan V2** and **File Scan V2**.</li><li>Removed leading/trailing spaces.</li></ul> |
-| v1.6 | March 20, 2023 | <ul><li>Merged **IP Reputation V2** into the **IP Reputation V3** action (IP Reputation V3 uses API V3).</li><li>Merged **URL Reputation V2** into the **URL Reputation** action.</li></ul> |
-| v1.5 | November 22, 2022 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Set the timeout field as not required.</li></ul> |
-| v1.4 | June 14, 2022 | Updated the **File Reputation** action to allow selecting a FileHash artifact as input. |
-| v1.3 | July 1, 2021 | Added a new action: **IP Reputation V3 - API v3**. |
-| v1.2 | June 3, 2021 | Added detected URLs information as output to the **IP Reputation** action. |
-| v1.1 | December 21, 2020 | Updated the descriptions. |
-| v1.0 | April 10, 2020 | Added WHOIS information to the **IP and Domain Reputation** action's output. |
-| v1.0 | July 17, 2019 | Initial release of the VirusTotal integration. |
+| | March 20, 2023 | <ul><li>Merged **IP Reputation V2** into the **IP Reputation V3** action (IP Reputation V3 uses API V3).</li><li>Merged **URL Reputation V2** into the **URL Reputation** action.</li></ul> |
+| | November 22, 2022 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Set the timeout field as not required.</li></ul> |
+| | June 14, 2022 | Updated the **File Reputation** action to allow selecting a FileHash artifact as input. |
+| | July 1, 2021 | Added a new action: **IP Reputation V3 - API v3**. |
+| | June 3, 2021 | Added detected URLs information as output to the **IP Reputation** action. |
+| | December 21, 2020 | Updated the descriptions. |
+| | April 10, 2020 | Added WHOIS information to the **IP and Domain Reputation** action's output. |
+| | July 17, 2019 | Initial release of the VirusTotal integration. |

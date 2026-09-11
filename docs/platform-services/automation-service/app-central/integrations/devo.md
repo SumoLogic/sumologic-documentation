@@ -48,4 +48,4 @@ For information about Devo, see [Devo documentation](https://docs.devo.com/).
 | v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | February 12, 2021 | Initial release of the Devo integration. |
+| | February 12, 2021 | Initial release of the Devo integration. |

@@ -56,4 +56,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 |:--|:--|:--|
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | October 27, 2023 | <ul><li>Updated the integration to use the new Cloud SOAR API.</li><li>Updated the integration with Environmental Variables.</li></ul> |
-| v1.1 | August 19, 2021 | Initial release of the POP3 integration. |
+| | August 19, 2021 | Initial release of the POP3 integration. |

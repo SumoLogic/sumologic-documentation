@@ -78,5 +78,5 @@ For information about Cisco ISE, see [Cisco ISE documentation](https://www.cisco
 | v1.4 | August 17, 2023 | Updated the integration with Environmental Variables. |
 | v1.3 | July 14, 2023 | Removed leading and trailing spaces. |
 | v1.1 | July 3, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | January 5, 2021 | Updated actions. |
-| v1.0 | September 3, 2019 | Initial release of the Cisco ISE integration. |
+| | January 5, 2021 | Updated actions. |
+| | September 3, 2019 | Initial release of the Cisco ISE integration. |

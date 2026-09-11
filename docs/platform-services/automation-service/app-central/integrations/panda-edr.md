@@ -67,4 +67,4 @@ For information about Panda EDR, see [Panda EDR documentation](https://www.watch
 | v1.3 | November 24, 2023 | Fixed a token issue. |
 | v1.2 | November 23, 2023 | <ul><li>Fixed bugs that prevented the following actions from working properly: **Stop Device Isolation**, **Start Action On Specified Device**, **Scan Device**, and **Isolate Specific Devices**.</li><li>Extended output mappings.</li><li>Refined labels and hints.</li><li>Improved error handling.</li><li>Refactored and optimized the code.</li><li>Updated the logo.</li></ul> |
 | v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | March 1, 2022 | Initial release of the Panda EDR integration. |
+| | March 1, 2022 | Initial release of the Panda EDR integration. |
