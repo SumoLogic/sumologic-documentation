@@ -55,9 +55,11 @@ For information about Microsoft SharePoint, see [SharePoint documentation](https
 
 ## Change Log
 
-* August 14, 2019 - First upload
-* March 10, 2022 - Logo
-* August 17, 2023 (v1.3) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.4) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v1.5) - Versioning
-* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | September 19, 2023 | Updated the integration's versioning. |
+| v1.4 | September 4, 2023 | Fixed a bug where if the timeout was not specified, an error would occur. |
+| v1.3 | August 17, 2023 | Updated the integration with Environmental Variables. |
+| v1.2 | March 10, 2022 | Updated the logo in Microsoft SharePoint integration. |
+| v1.1 | August 14, 2019 | Initial release of the Microsoft SharePoint integration. |

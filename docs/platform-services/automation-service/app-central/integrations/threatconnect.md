@@ -45,8 +45,8 @@ For information about ThreatConnect, see [ThreatConnect documentation](https://d
 
 ## Change Log
 
-* December 19, 2019 - First upload
-* July 3, 2023 (v1.1)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from ThreatConnect OIF to ThreatConnect
-* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 3, 2023 | <ul><li>Updated the integration with environmental variables.</li><li>Renamed the integration from ThreatConnect OIF to ThreatConnect.</li></ul> |
+| v1.0 | December 19, 2019 | Initial release of the ThreatConnect integration. |

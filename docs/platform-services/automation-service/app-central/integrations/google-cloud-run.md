@@ -100,4 +100,6 @@ For information about Google Cloud Run, see [Google Cloud Run documentation](htt
 
 ## Change Log
 
-* June 3, 2026 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | June 3, 2026 | Initial release of the Google Cloud Run integration. |

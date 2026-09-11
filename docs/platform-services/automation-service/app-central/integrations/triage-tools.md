@@ -63,25 +63,10 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 ## Change Log
 
-* November 30, 2021 - First upload
-* December 7, 2022 - Added new action: Update Triage Fields
-* November 7, 2023
-	+ Updated the integration with Environmental Variables
-	+ Compatibility with new Cloud SOAR API
-	+ Changed docker to python3\_generic
-	+ Added Proxy options, Server certificate verification and Connection timeout config
-	+ Refined labels and hints
-	+ Improved error handling
-	+ Added table view for List Triage Events
-	+ Refined table view for List Triage Columns
-	+ Added default values for Update Triage Fields
-	+ Refined output mappings with some examples
-	+ Removed trailing/leading spaces
-	+ Renamed actions:
-		- Add Attachment To Triage renamed to Add Attachment to Triage
-		- Convert Triage To Incident renamed to Convert Triage to Incident
-		- Grab Or Reassign Triage Event renamed to Grab or Reassign Triage Event
-	+ Added new action: List Users
-* December 18, 2025 (v1.3)
-    + Added new action: Get Full Triage Event Details
-* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | December 18, 2025 | Added a new action: **Get Full Triage Event Details**. |
+| v1.2 | November 7, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Added compatibility with the new Cloud SOAR API.</li><li>Changed docker to `python3_generic`.</li><li>Added Proxy options, Server certificate verification, and Connection timeout config.</li><li>Refined labels and hints.</li><li>Improved error handling.</li><li>Added table view for List Triage Events.</li><li>Refined table view for List Triage Columns.</li><li>Added default values for Update Triage Fields.</li><li>Refined output mappings with some examples.</li><li>Removed trailing/leading spaces.</li><li>Renamed actions: **Add Attachment To Triage** to **Add Attachment to Triage**, **Convert Triage To Incident** to **Convert Triage to Incident**, and **Grab Or Reassign Triage Event** to **Grab or Reassign Triage Event**.</li><li>Added a new action: **List Users**.</li></ul> |
+| v1.1 | December 7, 2022 | Added a new action: **Update Triage Fields**. |
+| v1.0 | November 30, 2021 | Initial release of the Triage Tools integration. |

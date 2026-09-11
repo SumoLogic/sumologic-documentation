@@ -136,10 +136,10 @@ Email Gateway
 
 ## Change Log
 
-* September 10, 2025 - First upload
-* October 31, 2025 (v1.1) - Fixed issue in the **Download Mail As EML** action.
-* November 21, 2025 (v1.2)
-  + Fixed issue in the **Search Emails Extended** action.
-  + Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.
-* December 10, 2025 (v1.3) - Added a dynamic Mailbox override option to all actions, enabling multi-user execution without requiring resource updates.
-* December 30, 2025 (v1.4) - Removed the default values for the `has_attachments` and `un_read` fields in the **Search Emails Extended** action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | December 30, 2025 | Removed the default values for the `has_attachments` and `un_read` fields in the **Search Emails Extended** action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status. |
+| v1.3 | December 10, 2025 | Added a dynamic Mailbox override option to all actions, enabling multi-user execution without requiring resource updates. |
+| v1.2 | November 21, 2025 | <ul><li>Fixed issue in the **Search Emails Extended** action.</li><li>Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.</li></ul> |
+| v1.1 | October 31, 2025 | Fixed issue in the **Download Mail As EML** action. |
+| v1.0 | September 10, 2025 | Initial release of the Microsoft EWS (Graph) integration. |

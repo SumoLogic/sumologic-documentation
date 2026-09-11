@@ -45,7 +45,9 @@ For information about Certego, see the [Certego website](https://www.certego.net
 
 ## Change Log
 
-* October 25, 2022 - First upload
-* March 29, 2023 - Integration refactored.
-* July 11, 2023 (v1.2) - Removed leading/trailing spaces
-* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | July 11, 2023 | Removed leading and trailing spaces. |
+| v1.1 | March 29, 2023 | Refactored the integration. |
+| v1.0 | October 25, 2022 | Initial release of the Certego integration. |

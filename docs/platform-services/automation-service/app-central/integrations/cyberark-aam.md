@@ -45,7 +45,9 @@ For information about CyberArk, see [CyberArk documentation](https://docs.cybera
 
 ## Change Log
 
-* October 5, 2020 - First upload
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 18, 2023 (v1.2) - Code refactoring
-* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | July 18, 2023 | Refactored the integration. |
+| v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | October 5, 2020 | Initial release of the CyberArk AAM integration. |

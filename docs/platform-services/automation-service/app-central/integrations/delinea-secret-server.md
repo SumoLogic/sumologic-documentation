@@ -50,4 +50,6 @@ For information about Delinea, see [Delinea documentation](https://updates.thyco
 
 ## Change Log
 
-* May 18, 2026 - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | May 18, 2026 | Initial release of the Delinea Secret Server integration. |

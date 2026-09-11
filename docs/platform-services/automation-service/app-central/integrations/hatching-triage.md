@@ -45,13 +45,11 @@ For information about Recorded Future Triage ([formerly Hatching Triage](https:/
 
 ## Change Log
 
-* June 19, 2020 - First upload
-* August 30, 2020 - New actions added
-* July 6, 2023 (v1.2) - Updated the integration with Environmental Variables
-* June 2, 2024 (v1.3) - Updated API calls for the following actions:
-  + Get Static Report
-  + Get Triage Report
-  + Get Summary Report
-+ August 13, 2025 (v1.4) - Updated endpoint in action
-  + Get Summary Report 
-* April 29, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | August 13, 2025 | Updated the endpoint in the **Get Summary Report** action. |
+| v1.3 | June 2, 2024 | Updated API calls for the **Get Static Report**, **Get Triage Report**, and **Get Summary Report** actions. |
+| v1.2 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | August 30, 2020 | Added new actions. |
+| v1.0 | June 19, 2020 | Initial release of the Hatching Triage integration. |

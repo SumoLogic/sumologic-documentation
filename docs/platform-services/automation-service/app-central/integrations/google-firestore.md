@@ -97,4 +97,6 @@ For information about Google Firestore, see [Google Firestore documentation](htt
 
 ## Change Log
 
-* October 17, 2025 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | October 17, 2025 | Initial release of the Google Firestore integration. |

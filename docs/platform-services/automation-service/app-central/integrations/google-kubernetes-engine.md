@@ -135,4 +135,6 @@ For more information on Google Kubernetes Engine, see [Google Kubernetes Engine 
 
 ## Change Log
 
-* June 18, 2026 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | June 18, 2026 | Initial release of the Google Kubernetes Engine integration. |

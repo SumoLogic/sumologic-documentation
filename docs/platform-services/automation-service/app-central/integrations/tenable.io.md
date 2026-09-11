@@ -56,11 +56,13 @@ For information about Tenable Vulnerability Management (formerly Tenable.io), se
 
 ## Change Log
 
-* November 21, 2018 - First upload
-* December 4, 2018 - Updated actions split in to JSON and CSV reports
-* December 18, 2018 - Target information actions added
-* August 5, 2019 - Supported Version Updated
-* September 3, 2020 - New actions added
-* October 20, 2020 - Added User-Agent to all actions
-* December 21, 2020 - Updated descriptions
-* August 18, 2023 (v1.3) - Integration refactored
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | August 18, 2023 | Refactored the integration. |
+| v1.2 | December 21, 2020 | Updated action descriptions. |
+| v1.1 | October 20, 2020 | Added a User-Agent header to all actions. |
+| v1.0 | September 3, 2020 | Added new actions. |
+| v1.0 | August 5, 2019 | Updated the supported version. |
+| v1.0 | December 18, 2018 | Added target information actions. |
+| v1.0 | December 4, 2018 | Split actions into JSON and CSV reports. |
+| v1.0 | November 21, 2018 | Initial release of the Tenable.io integration. |

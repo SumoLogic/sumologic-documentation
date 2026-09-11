@@ -45,11 +45,13 @@ For information about GitHub, see [GitHub documentation](https://docs.github.com
 
 ## Change Log
 
-* May 16, 2023 (v1.2) - First upload
-* May 22, 2023 (v1.4) - Action Get Commit by URL refactored
-* July 6, 2023 (v1.5) - Removed leading/trailing spaces
-* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | July 6, 2023 | Removed leading/trailing spaces. |
+| v1.4 | May 22, 2023 | Refactored the **Get Commit By URL** action. |
+| v1.2 | May 16, 2023 | First upload. |
 
 ## Additional resources
 
-- For GitHub, Sumo Logic offers the [GitHub app](/docs/integrations/app-development/github/) to visualize your GitHub data.
+For GitHub, Sumo Logic offers the [GitHub app](/docs/integrations/app-development/github/) to visualize your GitHub data.
