@@ -75,6 +75,6 @@ For information about Elastic Security, see [Elastic Security documentation](htt
 | v1.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.2 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed the visibility of fields.</li><li>Updated compatibility for the **Fetch Items Elastic Security** daemon.</li></ul> |
 | v1.1 | January 21, 2022 | Updated a new action. |
-| v1.0 | September 24, 2021 | Updated a new action. |
-| v1.0 | August 5, 2021 | Updated a new action. |
-| v1.0 | April 9, 2021 | Initial release of the Elastic Security integration. |
+| | September 24, 2021 | Updated a new action. |
+| | August 5, 2021 | Updated a new action. |
+| | April 9, 2021 | Initial release of the Elastic Security integration. |

@@ -66,10 +66,10 @@ For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm
 | v1.3 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from IBM QRadar OIF to IBM QRadar.</li><li>Changed field visibility.</li><li>Added new actions: **Search Into Events QRadar V3** and **Search Into Events QRadar V4**.</li></ul> |
 | v1.2 | June 07, 2022 | Updated the **Get Offenses Daemon V2** action. |
 | v1.1 | April 11, 2022 | Updated the **Get Offenses Daemon V2** action to add a new endpoint for fetching offense destination IPs. |
-| v1.0 | March 8, 2022 | Updated the description. |
-| v1.0 | June 3, 2021 | Added new actions. |
-| v1.0 | March 22, 2021 | Added new actions. |
-| v1.0 | May 29, 2020 | Made improvements to the integration. |
-| v1.0 | April 3, 2020 | Added a new action: **Add Offense Note**. |
-| v1.0 | January 31, 2020 | Added a new action: **Get Offense**. |
-| v1.0 | May 5, 2019 | Initial release of the IBM QRadar integration. |
+| | March 8, 2022 | Updated the description. |
+| | June 3, 2021 | Added new actions. |
+| | March 22, 2021 | Added new actions. |
+| | May 29, 2020 | Made improvements to the integration. |
+| | April 3, 2020 | Added a new action: **Add Offense Note**. |
+| | January 31, 2020 | Added a new action: **Get Offense**. |
+| | May 5, 2019 | Initial release of the IBM QRadar integration. |

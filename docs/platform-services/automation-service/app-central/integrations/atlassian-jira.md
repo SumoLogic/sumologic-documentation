@@ -80,7 +80,7 @@ For information about Atlassian Jira, see [Jira documentation](https://confluenc
 | v1.3 | January 24, 2023 | <ul><li>Added a hint for Host.</li><li>Solved an issue where the integration test would throw an error if no value for timeout was provided.</li><li>Set the timeout field as not required.</li></ul> |
 | v1.2 | August 02, 2022 | Added a new action: **Get Issue Comments**. |
 | v1.1 | August 02, 2022 | Updated the **Create Issue** action to update the description field to support new lines. |
-| v1.0 | June 24, 2022 | Added new actions: **Get Issue** and **Monitor Issue Status**. |
-| v1.0 | June 3, 2021 | Added a new action. |
-| v1.0 | April 5, 2021 | Added new actions. |
-| v1.0 | June 3, 2019 | Initial release of the Atlassian Jira integration. |
+| | June 24, 2022 | Added new actions: **Get Issue** and **Monitor Issue Status**. |
+| | June 3, 2021 | Added a new action. |
+| | April 5, 2021 | Added new actions. |
+| | June 3, 2019 | Initial release of the Atlassian Jira integration. |

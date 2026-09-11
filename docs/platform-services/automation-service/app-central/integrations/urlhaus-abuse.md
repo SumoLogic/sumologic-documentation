@@ -43,6 +43,6 @@ For information about URLhaus, see [URLhaus documentation](https://urlhaus.abuse
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.1 | February 20, 2023 | Updated the integration fields with Environmental Variables. |
+| | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | February 20, 2023 | Updated the integration fields with Environmental Variables. |
 | v1.0 | April 1, 2019 | Initial release of the URLhaus Abuse integration. |

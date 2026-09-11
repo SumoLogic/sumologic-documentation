@@ -66,7 +66,7 @@ SANDBOX
 | v1.3 | May 23, 2022 | Updated the integration documentation. |
 | v1.2 | May 20, 2022 | Updated the integration. Added new actions: **Domain Reputation**, **IP Reputation**, and **URL Reputation**. |
 | v1.1 | June 26, 2020 | Updated the **Get Report Summary** action. |
-| v1.0 | January 31, 2020 | Updated the **Get Report Summary** action. |
-| v1.0 | July 24, 2019 | Fixed an SSL verification issue. |
-| v1.0 | June 4, 2019 | Updated the **Scan URL** action. |
-| v1.0 | May 7, 2019 | Initial release of the Hybrid Analysis integration. |
+| | January 31, 2020 | Updated the **Get Report Summary** action. |
+| | July 24, 2019 | Fixed an SSL verification issue. |
+| | June 4, 2019 | Updated the **Scan URL** action. |
+| | May 7, 2019 | Initial release of the Hybrid Analysis integration. |

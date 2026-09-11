@@ -78,5 +78,5 @@ For information about VirusTotal, see [VirusTotal documentation](https://docs.vi
 | v1.3 | July 1, 2021 | Added a new action: **IP Reputation V3 - API v3**. |
 | v1.2 | June 3, 2021 | Added detected URLs information as output to the **IP Reputation** action. |
 | v1.1 | December 21, 2020 | Updated the descriptions. |
-| v1.0 | April 10, 2020 | Added WHOIS information to the **IP and Domain Reputation** action's output. |
-| v1.0 | July 17, 2019 | Initial release of the VirusTotal integration. |
+| | April 10, 2020 | Added WHOIS information to the **IP and Domain Reputation** action's output. |
+| | July 17, 2019 | Initial release of the VirusTotal integration. |

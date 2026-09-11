@@ -121,7 +121,7 @@ SIEM
 | v1.3 | February 17, 2023 | Updated the **Sumo Logic Insights Daemon Extended**. |
 | v1.2 | March 17, 2022 | Added a new action: **Update Insight**. |
 | v1.1 | October 27, 2021 | Added new actions. |
-| v1.0 | October 18, 2021 | Added new actions. |
-| v1.0 | October 1, 2021 | Added new actions. |
-| v1.0 | April 6, 2021 | Added new actions. |
-| v1.0 | March 26, 2021 | Initial release of the Sumo Logic Cloud SIEM integration. |
+| | October 18, 2021 | Added new actions. |
+| | October 1, 2021 | Added new actions. |
+| | April 6, 2021 | Added new actions. |
+| | March 26, 2021 | Initial release of the Sumo Logic Cloud SIEM integration. |

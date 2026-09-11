@@ -81,5 +81,5 @@ For information about Microsoft Defender for Endpoint (formerly Defender ATP), s
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | July 12, 2023 | Changed field visibility. |
 | v1.1 | January 4, 2023 | <ul><li>Added new actions: **Fetch Investigation Package URI**, **List Machines**, **Start Automated Investigation**, **Run Advanced Hunting Query**, and **Collect Investigation Package**.</li><li>Modified actions: **Get Machine Action Details**, **List Indicators**, **List Machine Actions**, **Delete Indicator**, **Isolate Machine**, **Release Machine From Isolation**, **Run Antivirus Scan**, **Stop And Quarantine File**, and **Submit Indicator**.</li></ul> |
-| v1.0 | December 15, 2022 | Initial release of the Microsoft Defender ATP integration. |
-| v1.0 | May 4, 2021 | Updated actions to accept MD5 hash values. |
+| | December 15, 2022 | Initial release of the Microsoft Defender ATP integration. |
+| | May 4, 2021 | Updated actions to accept MD5 hash values. |

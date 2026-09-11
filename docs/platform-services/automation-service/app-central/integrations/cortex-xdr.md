@@ -70,5 +70,5 @@ For information about Cortex XDR, see [Cortex XDR documentation](https://docs-co
 | v1.3 | July 11, 2023 | Removed leading and trailing spaces. |
 | v1.2 | January 30, 2023 | <ul><li>Refactored the **Incidents Cortex XDR Daemon** action.</li><li>Refactored the **Alerts Cortex XDR Daemon** action.</li></ul> |
 | v1.1 | January 27, 2023 | Refactored the integration. |
-| v1.0 | July 19, 2022 | Added the **Incidents Cortex XDR Daemon** action. |
-| v1.0 | July 20, 2021 | Initial release of the Cortex XDR integration. |
+| | July 19, 2022 | Added the **Incidents Cortex XDR Daemon** action. |
+| | July 20, 2021 | Initial release of the Cortex XDR integration. |

@@ -72,9 +72,9 @@ For information about Splunk, see [Splunk documentation](https://docs.splunk.com
 | v1.3 | September 18, 2025 | <ul><li>Improved timezone handling in alert queries.</li><li>Improved URL encoding to handle reserved characters.</li></ul> |
 | v1.2 | July 13, 2023 | <ul><li>Updated the integration with environmental variables.</li><li>Renamed the integration from Splunk OIF to Splunk.</li><li>Changed fields visibility.</li><li>Changed Daemon compatibility (Splunk Alerts Daemon).</li></ul> |
 | v1.1 | March 25, 2021 | Updated authentication, adding support for Authentication Token and Basic Authentication. |
-| v1.0 | March 9, 2021 | Added a new action. |
-| v1.0 | February 21, 2020 | Updated the Splunk Events Daemon. |
-| v1.0 | December 19, 2019 | Added the Splunk Alerts Daemon. |
-| v1.0 | June 19, 2019 | Updated the Search Into Events Daemon. |
-| v1.0 | June 4, 2019 | Updated the Search Into Events Daemon. |
-| v1.0 | May 5, 2019 | Initial release of the Splunk integration. |
+| | March 9, 2021 | Added a new action. |
+| | February 21, 2020 | Updated the Splunk Events Daemon. |
+| | December 19, 2019 | Added the Splunk Alerts Daemon. |
+| | June 19, 2019 | Updated the Search Into Events Daemon. |
+| | June 4, 2019 | Updated the Search Into Events Daemon. |
+| | May 5, 2019 | Initial release of the Splunk integration. |

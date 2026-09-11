@@ -202,7 +202,7 @@ Email Gateway
 | v2.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v2.2 | October 6, 2023 | Updated the integration. |
 | v2.1 | November 29, 2022 | Added new actions: **Send Email** and **Reply To Email**. |
-| v2.0 | October 26, 2022 | Added configuration documentation. |
-| v2.0 | March 10, 2022 | Updated the logo in Microsoft EWS integration. |
-| v2.0 | December 21, 2020 | <ul><li>Added new actions.</li><li>The **Search Emails Extended** action replaced the **Search Email** action.</li><li>Added the OAuth 2.0 authentication method to all actions.</li></ul> |
-| v2.0 | April 12, 2019 | Initial release of the Microsoft EWS integration. |
+| | October 26, 2022 | Added configuration documentation. |
+| | March 10, 2022 | Updated the logo in Microsoft EWS integration. |
+| | December 21, 2020 | <ul><li>Added new actions.</li><li>The **Search Emails Extended** action replaced the **Search Email** action.</li><li>Added the OAuth 2.0 authentication method to all actions.</li></ul> |
+| | April 12, 2019 | Initial release of the Microsoft EWS integration. |

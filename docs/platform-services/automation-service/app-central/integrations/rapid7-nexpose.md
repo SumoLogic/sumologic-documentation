@@ -58,5 +58,5 @@ For information about Rapid7 Nexpose, see [Rapid7 Nexpose documentation](https:/
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | February 5, 2021 | Updated actions: **Get Assets Vulnerability** and **Post Asset Search**. |
-| v1.0 | January 24, 2020 | Initial release of the Rapid7 Nexpose integration. |
+| | February 5, 2021 | Updated actions: **Get Assets Vulnerability** and **Post Asset Search**. |
+| | January 24, 2020 | Initial release of the Rapid7 Nexpose integration. |

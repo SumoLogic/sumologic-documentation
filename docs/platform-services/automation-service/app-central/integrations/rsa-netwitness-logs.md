@@ -50,5 +50,5 @@ For information about NetWitness, see the [NetWitness documentation](https://com
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | July 7, 2023 | Updated the integration with Environmental Variables. |
 | v1.1 | September 7, 2021 | Updated actions. |
-| v1.0 | July 23, 2021 | Added a new action. |
-| v1.0 | November 21, 2018 | Initial release of the RSA NetWitness Logs integration. |
+| | July 23, 2021 | Added a new action. |
+| | November 21, 2018 | Initial release of the RSA NetWitness Logs integration. |

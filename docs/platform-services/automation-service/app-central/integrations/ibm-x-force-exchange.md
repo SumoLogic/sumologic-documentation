@@ -66,5 +66,5 @@ Threat Intelligence-Reputation
 | v1.3 | February 23, 2023 | Updated the integration fields with Environmental Variables. |
 | v1.2 | August 22, 2022 | Made general improvements to the integration. |
 | v1.1 | June 07, 2022 | Added a new action: **URL Reputation V2**. |
-| v1.0 | June 19, 2020 | <ul><li>Whois Lookup and Passive DNS results can now be saved as a CSV file.</li><li>Added a new action.</li></ul> |
-| v1.0 | December 19, 2019 | Initial release of the IBM X-Force Exchange integration. |
+| | June 19, 2020 | <ul><li>Whois Lookup and Passive DNS results can now be saved as a CSV file.</li><li>Added a new action.</li></ul> |
+| | December 19, 2019 | Initial release of the IBM X-Force Exchange integration. |
