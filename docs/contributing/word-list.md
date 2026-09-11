@@ -113,6 +113,8 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## M
 
+**Manipulate**. Avoid. Use "work with," "handle," or "use" instead.
+
 **Markdown**. Always capitalize. It's a proper noun (the name of the markup language).
 
 **MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
@@ -120,8 +122,6 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 **Menu**. When referring to a menu in the UI, use "menu" or "dropdown menu." Don't use "list" or "selector."
 
 **Messages tab**. When referring to the Messages tab (where non-aggregate search results are displayed) the term Messages is capitalized.
-
-**Manipulate**. Avoid. Use "work with," "handle," or "use" instead.
 
 **Multiline**. Should be one word, not two, or hyphenated.
 

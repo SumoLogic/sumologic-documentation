@@ -37,9 +37,9 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Analyst](/docs/get-started/onboarding-checklists#onboarding-checklist-for-analysts)**. A Sumo Logic user role for non-administrators who primarily search logs, build dashboards, investigate data, and monitor their environment. Analyst capabilities are determined by the roles and permissions assigned to them.
 
-**[Audit Index](/docs/manage/security/audit-indexes/audit-index)**. A Sumo Logic index that stores event logs about internal account activities such as account management, throttling, and scheduled searches. Administrators must enable the Audit Index before it can be queried using `_index=sumologic_audit`.
-
 **[Apps](/docs/integrations)**. Sumo Logic apps (short for applications) deliver out-of-the-box dashboards, reports, saved searches, and field extraction for popular data sources, such as AWS, Windows, Apache, and many more. When a customer installs an app in Sumo Logic, preconfigured searches and dashboards are customized with the customer's source configurations and populated in a folder. Customers then can monitor their system's behavior visually using the dashboards.
+
+**[Audit Index](/docs/manage/security/audit-indexes/audit-index)**. A Sumo Logic index that stores event logs about internal account activities such as account management, throttling, and scheduled searches. Administrators must enable the Audit Index before it can be queried using `_index=sumologic_audit`.
 
 **[Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge)**. A component of the Automation Service that you install in your on-premises environment to run custom actions and integrations outside the Sumo Logic cloud.
 
@@ -61,8 +61,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Cardinality](/docs/metrics/logs-to-metrics/#manage-metric-cardinality)**. Refers to the uniqueness of values in a database column or metric dimension. High cardinality metrics are metrics with dimensions that have many different values, which can result in a high volume of unique time series. In Sumo Logic, you can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time.
 
-**[Credit](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. A unit of measure that tracks account usage, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose.
-
 **[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new collector that will use a name that is already in use by another collector. Clobber deletes (clobbers) the existing collector with the same name.
 
 [**Cloud SIEM**](/docs/cse). A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
@@ -70,6 +68,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 [**Cloud SOAR**](/docs/cloud-soar). A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
 
 **[Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. A fully-managed collection system that collects logs and events directly from SaaS and cloud platforms such as Salesforce, Microsoft 365, and Okta. The framework handles authentication, scheduling, and state tracking automatically. Also referred to as C2C.
+
+**[Credit](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. A unit of measure that tracks account usage, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose.
 
 <!--
 **[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
@@ -160,9 +160,9 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 ## H
 
-**[Health Events](/docs/manage/health-events)**. System events that Sumo Logic generates automatically when it detects an issue with a Collector or Source, or when a usage threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules. Health Events give administrators visibility into collection health and help investigate data ingestion errors and warnings.
-
 **[Hash rules](/docs/send-data/collection/processing-rules/hash-rules)**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
+
+**[Health Events](/docs/manage/health-events)**. System events that Sumo Logic generates automatically when it detects an issue with a Collector or Source, or when a usage threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules. Health Events give administrators visibility into collection health and help investigate data ingestion errors and warnings.
 
 **[Host Metrics](/docs/integrations/hosts-operating-systems/host-metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
@@ -201,13 +201,13 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local configuration file management allows you to set up and manage sources on an installed collector using one or more JSON files.
 
-**[Logs for Security](/docs/security/additional-security-features)**. Sumo Logic's full set of features that leverage logs for security use cases, including pre-built dashboards, out-of-the-box security apps, and robust query capabilities for analyzing security log and event data.
-
 **[Log Analysis Agent](/docs/search/mobot)**. One of the specialized agents that powers [Mobot](/docs/search/mobot). The Log Analysis Agent interprets intent, guides investigations, and surfaces relevant data from your logs through natural language. Formerly called the Query Agent.
 
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
 **[LogReduce](/docs/search/behavior-insights/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
+
+**[Logs for Security](/docs/security/additional-security-features)**. Sumo Logic's full set of features that leverage logs for security use cases, including pre-built dashboards, out-of-the-box security apps, and robust query capabilities for analyzing security log and event data.
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.
 
