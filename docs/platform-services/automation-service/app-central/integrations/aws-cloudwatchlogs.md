@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.4.0  
+***Version: 1.4.1  
 Updated: Sep 11, 2026***
 
 [AWS CloudWatch](https://docs.aws.amazon.com/cloudwatch/) provides a reliable, scalable, and flexible monitoring solution that you can start using within minutes. You no longer need to set up, manage, and scale your own monitoring systems and infrastructure.
@@ -66,7 +66,7 @@ For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](h
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.4.0 | September 11, 2026 | Added new metric actions: **Get Metric Data**, **List Metrics**, and **Get Metric Statistics**. |
+| v1.4.1 | September 11, 2026 | Added new metric actions: **Get Metric Data**, **List Metrics**, and **Get Metric Statistics**. |
 | v1.3.0 | November 03, 2025 | Updated timestamp parsing to support both legacy and ISO 8601 formats in the **Filter Log Events** and **Put Log Events** actions. |
 | v1.2.0 | June 15, 2023 | Updated the integration with Environmental Variables. |
 | v1.1.0 | March 10, 2022 | Updated the logo in AWS CloudWatchLogs integration. |
