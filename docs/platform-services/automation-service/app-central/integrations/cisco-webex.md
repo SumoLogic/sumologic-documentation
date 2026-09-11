@@ -57,10 +57,7 @@ Messaging
 
 * May 12, 2021 - First upload
 * November 30, 2022
-	+ New Actions
-		- Create User
-		- Delete User
-		- List Users
+	+ Added new actions: **Create User**, **Delete User**, and **List Users**.
 	+ Modified Actions
 		- Add Member
 		- Create Room

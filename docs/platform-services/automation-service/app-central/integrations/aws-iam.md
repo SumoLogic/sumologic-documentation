@@ -75,9 +75,9 @@ For information about AWS IAM, see [IAM documentation](https://docs.aws.amazon.c
     + Changed the field type of the Access key to password
     + Updated action: Get User (Table View issue fixed)
 * January 24, 2024 (v1.3)
-    + Added New Action: Update Access Key
+    + Added a new action: **Update Access Key**.
 * February 5, 2024 (v1.4)
-    + Added New Action: Get Access Key Last Used
+    + Added a new action: **Get Access Key Last Used**.
 * February 8, 2024 (v1.5)
     * A bug has been addressed in the actions listed below:
         * Detach Policy

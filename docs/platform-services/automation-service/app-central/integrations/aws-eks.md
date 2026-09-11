@@ -78,20 +78,8 @@ For information about AWS EKS, see [EKS documentation](https://docs.aws.amazon.c
 
 * April 18, 2024 (v1.0) - First upload
 * July 13, 2024 (v1.1)
-    + Docker has been updated for AWS EKS
-    + Added New Actions:
-        - Cordon Node
-        - Create Network Policy to Isolate Pod
-        - Delete Pod
-        - Get Insight
-        - Get Network Policy
-        - Get Node
-        - Get Pod
-        - Identify Pods with Vulnerable Image
-        - List Deployment
-        - List Namespaces
-        - List Network Policy
-        - UnCordon Node
+    + Docker has been updated for AWS EKS.
+    + Added new actions: **Cordon Node**, **Create Network Policy to Isolate Pod**, **Delete Pod**, **Get Insight**, **Get Network Policy**, **Get Node**, **Get Pod**, **Identify Pods with Vulnerable Image**, **List Deployment**, **List Namespaces**, **List Network Policy**, and **UnCordon Node**.
     + List of changes grouped by Actions:
         - List Insights
             * Added new Filter Field

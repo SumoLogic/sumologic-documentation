@@ -67,22 +67,14 @@ For information about Check Point, see [Check Point documentation](https://sc1.c
 ## Change Log
 
 * February 10, 2020 - First upload
-* May 15, 2020 - New Actions added:
-	+ Block Port
-	+ Add Rule
-	+ Delete Rule
-	+ Add Threat Rule
-	+ Delete Threat Rule
-* September 7, 2021- New actions added
-	+ Add Host To Specific Group
-	+ Assign Global
-	+ Install Policy
+* May 15, 2020 - Added new actions: **Block Port**, **Add Rule**, **Delete Rule**, **Add Threat Rule**, and **Delete Threat Rule**.
+* September 7, 2021 - Added new actions: **Add Host To Specific Group**, **Assign Global**, and **Install Policy**.
 * November 22, 2022 - Integration refactored
 	+ Arg.url changed to arg.server in integration file and actions
 	+ Added verify, timeout and proxy\_url
 	+ Added REQUIRED as help where needed
 	+ Changed type of list to text, where incident\_artifacts: true
-* November 30, 2022 - new action Show Access Rule added
+* November 30, 2022 - Added a new action: **Show Access Rule**.
 * June 23, 2023 (v1.4)
 	+ Updated the integration with Environmental Variables
 	+ Renamed from Check Point OIF to Check Point

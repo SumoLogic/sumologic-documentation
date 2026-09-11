@@ -73,12 +73,9 @@ For information about Atlassian Jira, see [Jira documentation](https://confluenc
 * June 3, 2019 - First upload
 * April 5, 2021 - New actions added
 * June 3, 2021 - New action added
-* June 24, 2022 - New actions added:
-    + Get Issue
-    + Monitor Issue Status
+* June 24, 2022 - Added new actions: **Get Issue** and **Monitor Issue Status**.
 * August 02, 2022 - Updated action: Create Issue (update the description field to support the new line)
-* August 02, 2022 - New action added:
-    + Get Issue Comments
+* August 02, 2022 - Added a new action: **Get Issue Comments**.
 * January 24, 2023
     + added hint for Host
     + solved issue for which the integration test will throw an error if no value for timeout is provided

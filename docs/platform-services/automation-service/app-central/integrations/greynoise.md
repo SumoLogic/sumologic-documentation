@@ -55,7 +55,7 @@ For information about GreyNoise, see [GreyNoise documentation](https://docs.grey
     + Context IP Lookup (Improved error handling)
 * June 28, 2023 (v1.4) - Visibility of the Resource fields changed and improved error handling
 * February 26, 2024 (v1.5)
-    * New action: Context IP Lookup Community
+    * Added a new action: **Context IP Lookup Community**.
     * Code refactoring
     * Fixed Typo
     * Other minor fixes

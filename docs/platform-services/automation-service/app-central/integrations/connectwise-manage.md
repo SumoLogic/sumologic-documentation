@@ -57,7 +57,7 @@ For information about ConnectWise Manage, see the [ConnectWise website](https://
 * September 4, 2023 (v1.2)
 	+ integration refactored
 	+ renamed Get Tickets action to List Tickets
-	+ added new actions: Add Notes To Ticket, List Ticket Notes
+	+ Added new actions: **Add Notes To Ticket** and **List Ticket Notes**.
 	+ removed Get Tickets Daemon
 * October 29, 2024 (v1.3) Beta Release
     + Added the "Priority" field to the Create Ticket and Update Ticket actions.

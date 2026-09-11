@@ -62,11 +62,9 @@ For information about Darktrace, see the [Darktrace website](https://www.darktra
     + Get Models
     + Search Device
     + List Tags
-* June 07, 2022 - New Actions:
-    + Search Breach
-    + Darktrace Breach Daemon
+* June 07, 2022 - Added new actions: **Search Breach** and **Darktrace Breach Daemon**.
 * February 17, 2023 (v1.2)
-    + New Daemon: Darktrace Incident Events Daemon
+    + Added a new action: **Darktrace Incident Events Daemon**.
 * July 12, 2023 (v1.3) - Updated the integration with Environmental Variables
 * January 29, 2024 (v1.4)
     + Updated resource: Resolved bug related to integration resource

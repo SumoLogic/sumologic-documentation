@@ -24,7 +24,7 @@ No configuration is needed. Basic Tools executes without additional authenticati
 
 * September 21, 2023 - First upload
 * October 24, 2023 (v1.5)
-    + Added new action: Payload Regex
+    + Added a new action: **Payload Regex**.
 * April 17, 2024 (v1.11)
     + Added new Field *Cc Recipients* to Send Email Action 
     + Removed the *Plain Text Content* Field from Send Email Action

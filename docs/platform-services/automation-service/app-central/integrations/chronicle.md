@@ -56,18 +56,14 @@ For information about Google Security Operations (formerly Chronicle), see [Goog
 * July 30, 2021 - First upload
 * July 18, 2023 (v1.1) - Updated the integration with Environmental Variables
 * January 26, 2024 (v1.2)
-    * Integration refactored
-    * The following new actions are added:
-        * Get Event
-        * Get Log
-        * List Alerts
-        * UDM Search
+    * Integration refactored.
+    * Added new actions: **Get Event**, **Get Log**, **List Alerts**, and **UDM Search**.
 * February 16, 2023 (v1.3)
     * List Alerts Action: Fix bug related to the PageSize field
 * February 19, 2024 (v1.4)
     * Alerts Daemon Chronicle: Fix bug related to Last execution time
 * February 19, 2024 (v1.5)
-    * Added new Action: Get Events
+    * Added a new action: **Get Events**.
     * Alerts Daemon Chronicle: Updated Output mappings
 * March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12
 * May 21, 2024 (v1.7) - Updated code for compatibility with Python 3.12

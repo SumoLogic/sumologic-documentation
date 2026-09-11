@@ -63,7 +63,7 @@ For information about Elasticsearch, see [Elasticsearch documentation](https://w
 ## Change Log
 
 * November 17, 2020 - First upload
-* November 10, 2022 (v1.2) - New Action: Query Extended
+* November 10, 2022 (v1.2) - Added a new action: **Query Extended**.
 * November 3, 2023 (v1.3)
 	+ Updated the integration with Environmental Variables
 	+ Improved error handling
