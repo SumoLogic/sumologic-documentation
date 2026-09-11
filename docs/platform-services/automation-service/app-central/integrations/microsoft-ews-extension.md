@@ -69,13 +69,6 @@ For information about Microsoft EWS, see [Microsoft Exchange Web Services docume
 * September 4, 2019 - New actions added
 * September 24, 2019 - Additional optional parameters added to Update Client Access action
 * March 10, 2022 - Logo
-* October 17, 2022 (v1.1) - New Actions:
-	+ Delete User
-	+ Add New User
-	+ List Users
-	+ Remove Member From Distribution Group
-	+ Add Member To Distribution Group
-	+ List Distribution Group
-	+ Get Distribution Group Members
+* October 17, 2022 (v1.1) - Added new actions: **Delete User**, **Add New User**, **List Users**, **Remove Member From Distribution Group**, **Add Member To Distribution Group**, **List Distribution Group**, and **Get Distribution Group Members**.
 * July 19, 2023 (v1.2) - Removed leading/trailing spaces
 * October 6, 2023 (v1.3) - Integration Updated

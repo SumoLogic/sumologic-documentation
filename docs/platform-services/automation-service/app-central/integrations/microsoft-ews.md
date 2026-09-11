@@ -203,7 +203,7 @@ Email Gateway
     + Added new Authentication Method OAuth 2.0 to all actions
 * March 10, 2022 - Logo
 * October 26, 2022 - added config doc
-* November 29, 2022 - Added new actions (Send Email and Reply To Email)
+* November 29, 2022 - Added new actions: **Send Email** and **Reply To Email**.
 * October 6, 2023 (v2.2) - Integration Updated
 * March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
 * November 12, 2024 (v2.4) 

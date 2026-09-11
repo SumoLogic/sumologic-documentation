@@ -56,14 +56,11 @@ For information about OneLogin, see [OneLogin documentation](https://developers.
 * March 1, 2021 - First upload
 * June 15, 2023 (v1.2)- Updated the integration with Environmental Variables
 * March 7, 2024 (v1.4)
-    * New actions:
-        * List Enrolled Authentication Factors
-        * Remove a Factor
-        * Update User
+    * Added new actions: **List Enrolled Authentication Factors**, **Remove a Factor**, and **Update User**.
     * Renamed action List Groups
     * Other minor improvements and fixes
 * April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
 ## Additional resources
 
-- For OneLogin, Sumo Logic offers the [OneLogin source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) and the [OneLogin app](/docs/integrations/saml/onelogin/) to collect and visualize your OneLogin data.
+For OneLogin, Sumo Logic offers the [OneLogin source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source/) and the [OneLogin app](/docs/integrations/saml/onelogin/) to collect and visualize your OneLogin data.

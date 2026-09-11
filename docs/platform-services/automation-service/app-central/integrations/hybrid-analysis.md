@@ -62,14 +62,14 @@ SANDBOX
 * July 24, 2019 - SSL verification issue fixed
 * January 31, 2020 - Action updated: Get Report Summary
 * June 26, 2020 - Action updated: Get Report Summary
-* May 20, 2022 - Integration updated and new actions added (Domain/IP/URL Reputation)
+* May 20, 2022 - Integration updated. Added new actions: **Domain Reputation**, **IP Reputation**, and **URL Reputation**.
 * May 23, 2022 - integration doc updated
 * November 22, 2022
 	+ added default URL
 	+ solved issue for which the integration test will throw an error if no value for timeout is provided
 * April 4, 2023 (v1.5)
 	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
-	+ New Action: Get File Analysis Overview
+	+ Added a new action: **Get File Analysis Overview**.
 	+ Update Actions: (Domain Reputation, File Reputation, Get Report Summary, IP Reputation, Scan File, Scan URL, URL Reputation)
 * June 14, 2023 (v1.6) - Integration improvement
 * April 29, 2026 (v1.7) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -52,11 +52,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 	+ HTTP POST: (Added new field for From-Data to be send in the body of the Request)
 * June 14, 2023 (v1.2) - Updated the integration with Environmental Variables
 * September 25, 2023 (v1.3) - Updated Action: HTTP POST Action
-* June 12, 2024 (v1.4) - New Actions:
-    + HTTP DELETE
-    + HTTP HEAD
-    + HTTP PATCH
-    + HTTP PUT
+* June 12, 2024 (v1.4) - Added new actions: **HTTP DELETE**, **HTTP HEAD**, **HTTP PATCH**, and **HTTP PUT**.
 * January 09, 2024 (v1.5) - Updated Action: 
   * HTTP POST Action - Fix the issue with the "output.raw JSON" field.
 * April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

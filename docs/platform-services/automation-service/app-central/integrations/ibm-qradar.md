@@ -61,8 +61,8 @@ For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm
 ## Change Log
 
 * May 5, 2019 - First upload
-* January 31, 2020 - New action added: Get Offense
-* April 3, 2020 - New action added: Add Offense Note
+* January 31, 2020 - Added a new action: **Get Offense**.
+* April 3, 2020 - Added a new action: **Add Offense Note**.
 * May 29, 2020 - Improvements
 * March 22, 2021 - New Actions added
 * June 3, 2021 - New Actions added
@@ -75,7 +75,5 @@ For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm
 	+ Updated the integration with Environmental Variables
 	+ Integration renamed from IBM QRadar OIF to IBM QRadar
 	+ Changed field visibility
-	+ Added new actions:
-		- Search Into Events QRadar V3
-		- Search Into Events QRadar V4
+	+ Added new actions: **Search Into Events QRadar V3** and **Search Into Events QRadar V4**.
 * April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

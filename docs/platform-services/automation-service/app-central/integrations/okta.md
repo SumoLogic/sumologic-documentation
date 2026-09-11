@@ -71,16 +71,9 @@ For information about Okta, see [Okta documentation](https://help.okta.com/en-us
     + Added missing incident Artifacts
 * June 21, 2023 (v1.2) - Updated the integration with Environmental Variables
 * July 18, 2023 (v1.3) - Code refactoring
-* April 24, 2024 (v1.4) - New actions
-    * Activate Network Zone
-    * Create Network Zone
-    * Deactivate Network Zone
-    * Delete Network Zone
-    * Get Network Zone
-    * List Network Zones
-    * Update Network Zone
+* April 24, 2024 (v1.4) - Added new actions: **Activate Network Zone**, **Create Network Zone**, **Deactivate Network Zone**, **Delete Network Zone**, **Get Network Zone**, **List Network Zones**, and **Update Network Zone**.
 * April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
 ## Additional resources
 
-- For Okta, Sumo Logic offers the [Okta source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/) and the [Okta app](/docs/integrations/saml/okta/) to collect and visualize your Okta data.
+For Okta, Sumo Logic offers the [Okta source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/) and the [Okta app](/docs/integrations/saml/okta/) to collect and visualize your Okta data.

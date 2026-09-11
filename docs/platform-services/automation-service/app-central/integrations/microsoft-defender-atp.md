@@ -78,12 +78,7 @@ For information about Microsoft Defender for Endpoint (formerly Defender ATP), s
 * December 15, 2022 - First upload
 * May 4, 2021 - Actions updated: actions accept md5 hash
 * January 4, 2023
-	+ New Actions
-		- Fetch Investigation Package URI
-		- List Machines
-		- Start Automated Investigation
-		- Run Advanced Hunting Query
-		- Collect Investigation Package
+	+ Added new actions: **Fetch Investigation Package URI**, **List Machines**, **Start Automated Investigation**, **Run Advanced Hunting Query**, and **Collect Investigation Package**.
 	+ Modified Actions
 		- Get Machine Action Details
 		- List Indicators

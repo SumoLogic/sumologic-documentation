@@ -56,16 +56,16 @@ For information about Lacework, see [Lacework documentation](https://docs.lacewo
 * July 29, 2021 - New action added
 * July 5, 2023 (v1.1) - Updated the integration with Environmental Variables
 * October 5, 2023 (v1.2)
-    + New logo
-    + Code refactoring
-    + Added new action: Search Events
+    + New logo.
+    + Code refactoring.
+    + Added a new action: **Search Events**.
     + Changed action type for:
         - Search Cloud Activities
         - Search Reports Rules
-* December 14, 2023 (v1.3) - added new action: Close Alert
+* December 14, 2023 (v1.3) - Added a new action: **Close Alert**.
 * January 26, 2024 (v1.4)
-    + Added 2 new actions: Get Alert Details, Search Alerts
-    + Fixed endpoint in Close Alert action
+    + Added new actions: **Get Alert Details** and **Search Alerts**.
+    + Fixed endpoint in Close Alert action.
 * May 2, 2024 (v1.5)
-    + New action: Execute Query
+    + Added a new action: **Execute Query**.
 * April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

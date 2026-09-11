@@ -84,7 +84,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
         - Added a checkbox to allow the conversion of user details to lower case
     + Changed API endpoint for resource testing
     + Improved error handling
-* December 14, 2023 (v1.4) - Added new action: Get Incident
+* December 14, 2023 (v1.4) - Added a new action: **Get Incident**.
 * February 13, 2024 (v1.5) - Fixed typo in the following actions
     + Update Incident Date And Time Field
     + Update Incident Description
@@ -92,19 +92,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
     + Update Incident Fields
 * March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12
 * June 4, 2024 (v1.7) 
-  * New actions:
-    * Add Entity Threat Indicator
-    * Add External Alert to Incident
-    * Get Entity
-    * Get Incident Owner
-    * Get War Room Timeline
-    * Incident Daemon
-    * List Entity Incidents
-    * List External Alerts
-    * List Incident Columns
-    * Search Entities
-    * Search Incidents
-    * Update Entity
+  * Added new actions: **Add Entity Threat Indicator**, **Add External Alert to Incident**, **Get Entity**, **Get Incident Owner**, **Get War Room Timeline**, **Incident Daemon**, **List Entity Incidents**, **List External Alerts**, **List Incident Columns**, **Search Entities**, **Search Incidents**, and **Update Entity**.
 * June 24, 2024 (v1.8) - The **Field ID** and **Field Value** fields are now optional in the **Update Incident Fields** action.
 * December 5, 2025 (v1.9) - Added `closing_note` in output field of Get Incident action.
 * March 16, 2026 (v1.10) -  Updated action: Create Incident From Template

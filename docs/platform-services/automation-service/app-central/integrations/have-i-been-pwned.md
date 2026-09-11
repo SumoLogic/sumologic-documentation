@@ -52,5 +52,5 @@ For information about Have I Been Pwned, see [Have I Been Pwned documentation](h
 * August 26, 2021 (v1.0) - First upload
 * April 14, 2023 (v1.1) - Refactored
 * April 17, 2023 (v1.2) - Improved error handling
-* December 12, 2023 (v1.3) - Added new action: Get Latest Breach
+* December 12, 2023 (v1.3) - Added a new action: **Get Latest Breach**.
 * April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

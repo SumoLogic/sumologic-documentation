@@ -62,7 +62,7 @@ For information about Joe Sandbox, see [Joe Sandbox documentation](https://www.j
 * January 25, 2023 - Added Connection Timeout field
 * July 18, 2023 (v1.4) - Updated the integration with Environmental Variables
 * March 6, 2024 (v1.5)
-    * Added new action: Check Submission Status
+    * Added a new action: **Check Submission Status**.
     * Action renamed from Download Resource Analysis to Download Analysis Report
     * Action renamed from Print Report to Get Report
     * Updated with new Cloud SOAR API
