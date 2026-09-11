@@ -101,26 +101,19 @@ Ticketing System
 
 ## Change Log
 
-* June 22, 2022 - First upload
-* December 19, 2022
-    + Solved an issue for which the Search Into Issues action could not work correctly searching by JQL
-    + Added hint for Host
-* March 27, 2023 (v2.2)
-    + Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
-    + Deprecated Endpoint updated
-    + Changed action type from Containment to Notification
-* June 27, 2023 (v2.3) - Removed leading/trailing spaces
-* June 28, 2023 (v2.4) - Visibility of the Resource fields changed
-* July 4, 2023 (v2.5)
-    + Updated Actions:
-        - Create Issue
-        - Update Issue
-        - Update Issue Status
-* May 2, 2024 (v2.6) - A new scheduled action has been added for Jira integration to wait for/check the status update of a Jira ticket
-* May 13, 2024 (v2.7) - A new JSON Custom field has been added to update the issue status Action
-* May 23, 2024 (v2.8) - Updated the Add Issue Attachments To Incident action
-* June 20, 2024 (v2.9) - Added a new action: **Download Attachment**.
-* September 2, 2024 (v2.10) -  Updated the Update Issue action
-* March 23, 2026 (v2.11) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* June 26, 2026 (v2.12) - Added a new action: **Search User**, to search for Jira users by display name, email address, or account ID.
-* July 13, 2026 (v2.13) - Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.13 | July 13, 2026 | Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages. |
+| v2.12 | June 26, 2026 | Added a new action: **Search User**, to search for Jira users by display name, email address, or account ID. |
+| v2.11 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v2.10 | September 2, 2024 | Updated the **Update Issue** action. |
+| v2.9 | June 20, 2024 | Added a new action: **Download Attachment**. |
+| v2.8 | May 23, 2024 | Updated the **Add Issue Attachments To Incident** action. |
+| v2.7 | May 13, 2024 | Added a new JSON custom field to the **Update Issue Status** action. |
+| v2.6 | May 2, 2024 | Added a new scheduled action for the Jira integration to wait for or check the status update of a Jira ticket. |
+| v2.5 | July 4, 2023 | Updated actions: **Create Issue**, **Update Issue**, and **Update Issue Status**. |
+| v2.4 | June 28, 2023 | Changed the visibility of the resource fields. |
+| v2.3 | June 27, 2023 | Removed leading and trailing spaces from the integration. |
+| v2.2 | March 27, 2023 | <ul><li>Updated the integration fields with environmental variables and improved error handling.</li><li>Updated the deprecated endpoint.</li><li>Changed the action type from Containment to Notification.</li></ul> |
+| v2.1 | December 19, 2022 | <ul><li>Solved an issue where the **Search Into Issues** action could not search correctly by JQL.</li><li>Added a hint for Host.</li></ul> |
+| v2.0 | June 22, 2022 | Initial release of the Atlassian Jira V2 integration. |
