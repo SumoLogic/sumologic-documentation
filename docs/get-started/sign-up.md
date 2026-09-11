@@ -1,70 +1,42 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-description: Sign up for a free 30-day Sumo Logic trial via the website or AWS Marketplace using Google SSO or email to start ingesting and analyzing your data.
+description: Sign up for the Sumo Logic Agentic Free Trial, a 14-day sandbox trial built on example data, or start a 30-day AWS Marketplace trial to ingest and analyze your own data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data without the hassle of managing or scaling hardware or storage. Start your 30-day trial and explore the full capabilities of our Sumo Logic Log Analytics Platform, including elastic scalability and powerful analytics. Sign up through the [Sumo Logic website](#sign-up-through-sumo-logic) or the [AWS Marketplace](#sign-up-through-aws-marketplace) and start using Sumo Logic in minutes.
+Sumo Logic offers two ways to try the platform. The **Agentic Free Trial**, available through the Sumo Logic website, is a 14-day sandbox trial built on preloaded example data so you can explore AI-powered security and observability features right away, with no setup or data ingestion required. A separate **AWS Marketplace trial** runs for 30 days and lets you ingest and analyze your own data. Sign up through the [Sumo Logic website](#sign-up-through-sumo-logic) or the [AWS Marketplace](#sign-up-through-aws-marketplace) to get started.
 
 ## Sign up through Sumo Logic
 
-To start your free trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/). You can register for an account using either Google single sign-on (SSO) or your email address.
+To start your Agentic Free Trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/) and fill out the sign-up form with your business email, first and last name, and country, then click **Send**. No credit card is required.
 
-### Register using Google SSO
+<!-- TODO(DOCS-1853): Confirm the exact post-submission activation flow with Adam White. The live form (email/name/country) differs from the Google SSO / email-activation steps this section previously documented, and it's not yet confirmed what happens after a user clicks Send. -->
 
-1. Click **Continue with Google** and select a Google account to use.
-1. Fill out the **Complete Your Account** form, then click **Activate**.
-1. Follow the setup guide to install a data collector, apps, and start ingesting data. [Learn more](#what-to-expect-after-activation).
+### What's included in your trial
 
-### Register using your email address
+The Agentic Free Trial runs for 14 days entirely on preloaded example data, so there's nothing to instrument and no data to wait on. During your trial, you get:
 
-1. Click **Continue with email** and enter your business email address.
-1. Check your inbox for an activation email and click **Activate Now**.
-   :::note
-   The activation link expires after 3 days. If it expires, you’ll need to complete the sign-up process again.
-   :::
-1. Open the activation email and click **Activate Now**. (If you do not see it, check your spam and trash folders.)
-1. Fill out the **Activate Your Account** form, then click **Activate**.
-1. Follow the setup guide to install a data collector, apps, and start ingesting data. [Learn more](#what-to-expect-after-activation).
+* **Full access to security and observability scenarios**, including Cloud SIEM.
+* **AI-powered agents**, including the SOC Analyst Agent, which triages Tier-1 alerts end to end, and Mobot, which answers questions about your data in plain language.
+* **Additional prebuilt dashboards**, with some limits on the actions you can take.
 
-### Upgrade your account
+<!-- TODO(DOCS-1853): Confirm the exact list of additional prebuilt dashboards and which user actions are limited, with Adam White. -->
 
-During your trial, you’ll have full access to our Enterprise plan, giving you the opportunity to explore the full range of Sumo Logic's powerful features.
+:::note
+The Agentic Free Trial runs entirely on example data. You can't ingest your own data during this trial. To try Sumo Logic with your own data, sign up through the [AWS Marketplace](#sign-up-through-aws-marketplace) instead.
+:::
 
-| Feature                         | Trial account       |
-|:--------------------------------|:--------------------|
-| **Data volume daily**           | 1GB             |
-| **Users**                       | Up to 20       |
-| **Data retention** <sup>1</sup> | 30 days   |
-| **Metrics** <sup>2</sup>        | &#9989;   |
-| **Data forwarding** <sup>3</sup> | &#9989; |
-| **Real-time alerts** <sup>4</sup> | &#9989; |
+### After your trial ends
 
-<sup>1</sup> Data uploaded to the Sumo Logic Cloud.<br/>
-<sup>2</sup> Search through and visualize your data in near real-time, with up to 1000 data points per minute.<br/>
-<sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
-<sup>4</sup> Notifies you in real-time when errors occur on your systems.
+The Agentic Free Trial doesn't convert directly to a paid plan. To continue using Sumo Logic with your own data, [contact Sales](https://www.sumologic.com/contact-us/) or see [Sumo Logic Pricing](https://www.sumologic.com/pricing) for plan options.
 
-Once your trial ends, you'll need to upgrade to a paid plan to continue using premium features. Below is an overview of the available options. For detailed pricing and plan information, see [Sumo Logic Pricing](https://www.sumologic.com/pricing) and [Manage Subscription](/docs/manage/manage-subscription).
-
-#### Essentials plans
-
-With our self-service checkout, you can upgrade to an Essentials plan in just minutes using a credit card—no need to contact Sales.
-
-- [Upgrade a Flex account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account)
-- [Upgrade a Credits account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account)
-
-<img src={useBaseUrl('img/manage/subscriptions/essentials-landing-page.jpg')} alt="Essentials landing page checkout" style={{border: '1px solid gray'}} width="600" />
-
-#### Enterprise plans
-
-If the Essentials plan doesn’t fully meet your needs and you’re interested in exploring further options like Cloud SIEM, contact [Sales](https://www.sumologic.com/contact-us/) to upgrade to an Enterprise plan. Our team is here to help you find the best fit for your organization.
+<!-- TODO(DOCS-1853): Confirm the recommended next step for a user whose Agentic Free Trial ends (contact Sales, start the AWS Marketplace trial, etc.) with Adam White. -->
 
 ## Sign up through AWS Marketplace
 
-Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. This option is not available for customers with existing Sumo Logic accounts.
+Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account with a 30-day trial that includes full access to ingest and analyze your own data. This is separate from the Agentic Free Trial described above, and it's not available for customers with existing Sumo Logic accounts.
 
 To sign up through AWS Marketplace:
 
@@ -112,7 +84,21 @@ To cancel an auto-renewal subscription, you can do this through the AWS Marketpl
 
 ## What to expect after activation
 
-Once your account is activated—whether you signed up via the Sumo Logic website or AWS Marketplace—you’ll be guided through our personalized onboarding experience. Head to the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey.
+What happens after activation depends on which trial you signed up for.
+
+### Agentic Free Trial
+
+Once your account is activated, you'll land in a guided onboarding experience built entirely on preloaded example data, with no setup or data ingestion required. You can:
+
+* Explore the SOC Analyst Agent and Mobot.
+* Perform log searches, and visualize data through the additional prebuilt dashboards.
+* Invite teammates and collaborate.
+
+Because the trial runs on example data, there's no data collector to set up, and you can't ingest your own data during the 14-day trial.
+
+### AWS Marketplace trial
+
+Once your account is activated, you'll be guided through our personalized onboarding experience. Head to the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey.
 
 You’ll walk through step-by-step instructions to:
 
@@ -124,15 +110,13 @@ You’ll walk through step-by-step instructions to:
 
 Whether you’re evaluating the platform or just getting started, this hands-on experience is designed to help you quickly understand the value of Sumo Logic and get up and running with confidence.
 
-Once your account is activated, check out the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey. You'll walk through a step-by-step onboarding experience where you can explore preloaded Kickstart Data, try out log search and alerts, visualize data through sample dashboards, install apps, and prepare to ingest your own data—all without any setup required. Whether you're new to Sumo Logic or evaluating its features, this hands-on guide will help you quickly understand the platform's value.
-
 ### Sign in to Sumo Logic
 
 Once you're registered for an account, you can sign in using Google SSO, your email address and password, or—if configured by your organization—an [identity provider](/docs/manage/security/saml).
 
 ### Set up data collection
 
-When you're ready to collect your own data:
+If you're on the AWS Marketplace trial or have upgraded to a paid plan, you can start collecting your own data. When you're ready to collect your own data:
 
 1. Choose your platform: AWS, Kubernetes, Linux, Windows, or macOS. This installs the OpenTelemetry collector and relevant dashboards.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 2. For AWS, deploy a single account using a CloudFormation Template, CLI, or Terraform. For Kubernetes, Linux, Windows, or macOS, run the provided install command in your Terminal or PowerShell.
