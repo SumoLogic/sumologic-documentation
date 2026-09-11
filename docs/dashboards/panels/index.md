@@ -232,3 +232,8 @@ You can delete a panel that you no longer need.
 1. Go to the Dashboard in Sumo Logic that has the panel you want to delete.
 1. Hover the cursor over the **Details** icon to display the pop-up menu. <br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/details-option.png')} style={{border: '1px solid gray'}} alt="details option" width="800"/>
 1. Select **Delete**. <br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/delete-a-panel.png')} style={{border: '1px solid gray'}} alt="delete a panel" width="800"/>
+1. In the confirmation dialog, click **Delete Panel** to remove the panel, or **Cancel** to keep it.
+
+:::note
+If the panel is part of a shared dashboard, the confirmation dialog warns you that deleting it may impact other users who use the dashboard.
+:::

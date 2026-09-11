@@ -124,7 +124,8 @@ This task shows you how you can easily delete a template variable from Dashboard
 To delete a template variable, do the following:
 
 1. Hover the cursor over the end of the template variable field to display the options icon.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/options-menu-for-variable.png')} style={{border:'1px solid gray'}} alt="Options menu for variable" width="800"/>
-1. Click the options icon and select **Delete** from the dropdown menu. The variable along with the resulting data transformations are automatically removed from the dashboard.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/delete-variable.png')} style={{border:'1px solid gray'}} alt="Delete variable" width="800"/>
+1. Click the options icon and select **Delete** from the dropdown menu.<br/><img src={useBaseUrl('img/dashboards/filter-template-variables/delete-variable.png')} style={{border:'1px solid gray'}} alt="Delete variable" width="800"/>
+1. In the confirmation dialog, click **Delete Filter** to remove the variable, or **Cancel** to keep it. The dialog calls the variable a filter, reflecting its role in filtering dashboard data. When you confirm, the variable and the resulting data transformations are automatically removed from the dashboard.
 
 ## Use variables in queries
 
