@@ -66,8 +66,15 @@ For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](h
 
 | Version | Date | Description |
 |:--|:--|:--|
+<<<<<<< HEAD
 | v1.4.0 | September 11, 2026 | Added new metric actions: **Get Metric Data**, **List Metrics**, and **Get Metric Statistics**. |
 | v1.3.0 | November 03, 2025 | Updated timestamp parsing to support both legacy and ISO 8601 formats in the **Filter Log Events** and **Put Log Events** actions. |
 | v1.2.0 | June 15, 2023 | Updated the integration with Environmental Variables. |
 | v1.1.0 | March 10, 2022 | Updated the logo in AWS CloudWatchLogs integration. |
 | v1.0.0 | October 16, 2019 | Initial release of the AWS CloudWatchLogs integration. |
+=======
+| v1.3 | November 03, 2025 | Updated timestamp parsing to support both legacy and ISO 8601 formats in the **Filter Log Events** and **Put Log Events** actions. |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 10, 2022 | Updated the logo in AWS CloudWatchLogs integration. |
+| v1.0 | October 16, 2019 | Initial release of the AWS CloudWatchLogs integration. |
+>>>>>>> f8dbe97b3af4357fcf76fc98e8165094a193db47

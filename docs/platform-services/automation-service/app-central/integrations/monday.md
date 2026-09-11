@@ -56,8 +56,10 @@ For information about Monday, see [Monday documentation](https://developer.monda
 
 ## Change Log
 
-* Oct 06, 2025 - First upload
-* Oct 15, 2025 (v1.2) - Refactored the code
-* Nov 10, 2025 (v1.3) - Changed the GraphQL schema for one action to test
-* Nov 12, 2025 (v1.4) - Updated the integration and all actions as per supported GraphQL schema
-* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | Nov 12, 2025 | Updated the integration and all actions to align with the supported GraphQL schema. |
+| v1.3 | Nov 10, 2025 | Changed the GraphQL schema for one action for testing purposes. |
+| v1.2 | Oct 15, 2025 | Refactored the code. |
+| v1.1 | Oct 06, 2025 | Initial release of the Monday integration. |

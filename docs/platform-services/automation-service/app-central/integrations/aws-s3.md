@@ -82,14 +82,10 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Change Log
 
-* October 3, 2019 - First upload
-* June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
-* June 28, 2023 (v1.2) - Visibility of the Resource fields changed
-* August 19, 2025 (v1.3) - 
-  * Added IAM Role Support - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
-  * Added input validation in the *Download File* action.
-* May 08, 2026 (v1.4) -
-  * Fixed inverted `ConfirmRemoveSelfBucketAccess` logic in *Put Bucket Policy* action.
-  * Made Location Constraint optional in *Create Bucket* — defaults to the configured integration region.
-  * Added proper JSON output for *Create Bucket*, *Delete Bucket*, *Delete Bucket Policy*, *Delete Object From Bucket*, *Put Bucket Policy*, and *Upload File To S3 Object* actions.
-  * Updated region list — removed legacy `EU` alias and added missing regions.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | May 08, 2026 | <ul><li>Fixed inverted `ConfirmRemoveSelfBucketAccess` logic in the **Put Bucket Policy** action.</li><li>Made Location Constraint optional in the **Create Bucket** action, defaulting to the configured integration region.</li><li>Added proper JSON output for the **Create Bucket**, **Delete Bucket**, **Delete Bucket Policy**, **Delete Object From Bucket**, **Put Bucket Policy**, and **Upload File To S3 Object** actions.</li><li>Updated the region list, removing the legacy `EU` alias and adding missing regions.</li></ul> |
+| v1.3 | August 19, 2025 | <ul><li>Added IAM Role Support. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.</li><li>Added input validation in the **Download File** action.</li></ul> |
+| v1.2 | June 28, 2023 | Changed the visibility of the Resource fields. |
+| v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | October 3, 2019 | Initial release of the AWS S3 integration. |

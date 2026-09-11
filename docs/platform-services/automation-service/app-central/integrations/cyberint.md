@@ -91,6 +91,8 @@ The execution result displays a message **Alerts is closed successfully**. This 
 
 ## Change Log
 
-* May 16, 2024 - First upload
-* June 17, 2024 - Improve documentation
-* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | June 17, 2024 | Improved documentation. |
+| v1.0 | May 16, 2024 | Initial release of the Cyberint integration. |

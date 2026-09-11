@@ -65,6 +65,8 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Change Log
 
-* December 24, 2019 - First upload
-* June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
-* August 19, 2025 (v1.2) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | August 19, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
+| v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | December 24, 2019 | Initial release of the AWS Route 53 integration. |

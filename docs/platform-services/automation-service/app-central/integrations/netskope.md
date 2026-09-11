@@ -51,14 +51,13 @@ For information about Netskope, see [Netskope documentation](https://docs.netsko
 
 ## Change Log
 
-* July 20, 2021 - First upload
-* July 13, 2023 (v1.1)
-    + Updated the integration with Environmental Variables
-    + Changed fields visibility
-    + Changed Daemon compatibility (Netskope Get Event List Daemon)
-* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
-* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.1 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li><li>Changed Daemon compatibility (Netskope Get Event List Daemon).</li></ul> |
+| v1.0 | July 20, 2021 | Initial release of the Netskope integration. |
 
 ## Additional resources
 
-- For Netskope, Sumo Logic offers the [Netskope source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) and the [Netskope app](/docs/integrations/security-threat-detection/netskope/) to collect and visualize your Netskope data.
+For Netskope, Sumo Logic offers the [Netskope source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) and the [Netskope app](/docs/integrations/security-threat-detection/netskope/) to collect and visualize your Netskope data.

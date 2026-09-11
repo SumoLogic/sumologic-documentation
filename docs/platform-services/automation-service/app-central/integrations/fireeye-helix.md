@@ -58,8 +58,8 @@ For information about Trellix Helix (formerly FireEye Helix), see [Trellix Helix
 
 ## Change Log
 
-* January 23, 2020 - First upload
-* July 13, 2023 (v1.1)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
-* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li></ul> |
+| v1.0 | January 23, 2020 | First upload. |

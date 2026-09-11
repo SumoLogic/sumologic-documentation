@@ -101,4 +101,6 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 ## Change Log
 
-* Aug 13, 2024 - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | Aug 13, 2024 | Initial release of the Sumo Logic Notifications By Gmail integration. |

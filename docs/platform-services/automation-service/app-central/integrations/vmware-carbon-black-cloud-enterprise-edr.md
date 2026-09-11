@@ -71,6 +71,8 @@ For information about Carbon Black Cloud, see [Carbon Black Cloud documentation]
 
 ## Change Log
 
-* May 11, 2022 - Refactored all actions with CBC SDK
-* June 8, 2022 - Updated Integration doc
-* October 5, 2023 (v2.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.1 | October 5, 2023 | Updated the integration with Environmental Variables. |
+| v2.0 | June 8, 2022 | Updated the integration documentation. |
+| v1.9 | May 11, 2022 | Refactored all actions with the CBC SDK. |

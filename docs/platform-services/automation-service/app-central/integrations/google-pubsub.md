@@ -101,4 +101,6 @@ For information about Google PubSub, see [Google PubSub documentation](https://d
 
 ## Change Log
 
-* December 3, 2025 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | December 3, 2025 | Initial release of the Google PubSub integration. |
