@@ -10,9 +10,9 @@ Sumo Logic offers two ways to try the platform. The **Agentic Free Trial**, avai
 
 ## Sign up through Sumo Logic
 
-To start your Agentic Free Trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/) and fill out the sign-up form with your business email, first and last name, and country, then click **Send**. No credit card is required.
+To start your Agentic Free Trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/) and fill out the sign-up form with your business email, first and last name, and country, then click **Send**. No credit card is required. Your account is provisioned automatically, so you can start exploring the trial right away.
 
-<!-- TODO(DOCS-1853): Confirm the exact post-submission activation flow with Adam White. The live form (email/name/country) differs from the Google SSO / email-activation steps this section previously documented, and it's not yet confirmed what happens after a user clicks Send. -->
+<!-- TODO(DOCS-1853): Confirm this activation wording with Adam White before publishing. Internal enablement material describes signup as self-service with instant auto-provisioning (no activation email step, unlike the old Google SSO / email-activation flow this section previously documented), but that hasn't been confirmed directly by Adam. -->
 
 ### What's included in your trial
 
