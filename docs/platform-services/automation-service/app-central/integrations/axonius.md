@@ -71,4 +71,6 @@ For information about Axonius, see [Axonius documentation](https://docs.axonius.
 
 ## Change Log
 
-* January 3, 2024 - First Upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | January 3, 2024 | Initial release of the Axonius integration. |

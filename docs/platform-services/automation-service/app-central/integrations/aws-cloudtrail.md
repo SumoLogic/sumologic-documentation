@@ -80,11 +80,13 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Change Log
 
-* October 1, 2019 - First upload
-* March 10, 2022 - Logo
-* May 12, 2023 (v1.1) - Integration refactored
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* August 19, 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | August 19, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | May 12, 2023 | Refactored the integration. |
+| v1.0 | March 10, 2022 | Updated the logo in AWS CloudTrail integration. |
+| v1.0 | October 1, 2019 | Initial release of the AWS CloudTrail integration. |
 
 ## Additional resources
 

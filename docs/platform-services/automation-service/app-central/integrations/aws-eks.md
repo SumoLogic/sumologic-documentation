@@ -76,25 +76,7 @@ For information about AWS EKS, see [EKS documentation](https://docs.aws.amazon.c
 
 ## Change Log
 
-* April 18, 2024 (v1.0) - First upload
-* July 13, 2024 (v1.1)
-    + Docker has been updated for AWS EKS.
-    + Added new actions: **Cordon Node**, **Create Network Policy to Isolate Pod**, **Delete Pod**, **Get Insight**, **Get Network Policy**, **Get Node**, **Get Pod**, **Identify Pods with Vulnerable Image**, **List Deployment**, **List Namespaces**, **List Network Policy**, and **UnCordon Node**.
-    + List of changes grouped by Actions:
-        - List Insights
-            * Added new Filter Field
-            * Updated output
-        - List Nodes
-            * Added new Limit Field
-            * Updated output
-        - List Pods
-            * Added selector to restrict the list of returned objects by their field
-            * Added new Limit Field
-            * Updated output
-        - Read Namespaced Pod Status
-            * Updated output
-        - Read Node Status
-            * Updated output
-        - Update Cluster Config
-            * Updated resources VPC Config text field to a textarea field
-            * Added output
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | July 13, 2024 | <ul><li>Updated the Docker image for AWS EKS.</li><li>Added new actions: **Cordon Node**, **Create Network Policy to Isolate Pod**, **Delete Pod**, **Get Insight**, **Get Network Policy**, **Get Node**, **Get Pod**, **Identify Pods with Vulnerable Image**, **List Deployment**, **List Namespaces**, **List Network Policy**, and **UnCordon Node**.</li><li>Updated the **List Insights** action with a new Filter field and updated output.</li><li>Updated the **List Nodes** action with a new Limit field and updated output.</li><li>Updated the **List Pods** action to add a selector to restrict the list of returned objects by their field, added a new Limit field, and updated output.</li><li>Updated output for the **Read Namespaced Pod Status** action.</li><li>Updated output for the **Read Node Status** action.</li><li>Updated the **Update Cluster Config** action to change the resources VPC Config text field to a textarea field and added output.</li></ul> |
+| v1.0 | April 18, 2024 | Initial release of the AWS EKS integration. |

@@ -61,8 +61,10 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Change Log
 
-* March 2, 2022 - First upload
-* March 10, 2022 - Logo
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* July 29, 2025 (v1.3) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | July 29, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 10, 2022 | Updated the logo in AWS Inspector integration. |
+| v1.0 | March 2, 2022 | Initial release of the AWS Inspector integration. |
 
