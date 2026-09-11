@@ -46,7 +46,9 @@ For information about Upwind, see [Upwind documentation](https://docs.upwind.io/
 
 ## Change Log
 
-* April 1, 2026 - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | April 1, 2026 | Initial release of the Upwind integration. |
 
 ## Additional resources
 
