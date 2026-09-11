@@ -61,24 +61,18 @@ For information about Recorded Future, see [Recorded Future documentation](https
 
 ## Change Log
 
-* September 16, 2019 - First upload
-* February 19, 2021 - Updated actions:   
-Get Alerts Details, Alerts Daemon, Vulnerability Search Daemon
-* October 27, 2021 - Added a new action: **File Reputation V2**.
-* March 23, 2022 - Added new actions: **Search Domain**, **Search URL**, **Search IP**, and **Search Hash**.
-* January 10, 2023 - Refactoring
-* February 8, 2023 (v1.5) - Updated Actions (Changed the 'Fields' field as required field and improved error handling):
-	+ File Reputation
-	+ Domain Reputation
-	+ URL Reputation
-	+ IP Reputation
-* June 22, 2023 (v1.6) - Removed unnecessary empty lines
-* June 22, 2023 (v1.7) - Renamed integration from Recorded Future OIF to Recorded Future
-* February 16, 2024 (v1.8)
-    + Refactored Recorded Future Alerts Daemon
-* February 23, 2024 (v1.9)
-    + Refactored Vulnerability Search Daemon
-* February 26, 2024 (v1.10)
-    + Enabled Incident Artifacts feature flag for Get Alert Details action
-* March 4, 2024 (v1.11) - Updated code for compatibility with Python 3.12
-* April 30, 2026 (v1.12) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.12 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.11 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.10 | February 26, 2024 | Enabled the Incident Artifacts feature flag for the **Get Alert Details** action. |
+| v1.9 | February 23, 2024 | Refactored the **Vulnerability Search Daemon**. |
+| v1.8 | February 16, 2024 | Refactored the **Recorded Future Alerts Daemon**. |
+| v1.7 | June 22, 2023 | Renamed the integration from Recorded Future OIF to Recorded Future. |
+| v1.6 | June 22, 2023 | Removed unnecessary empty lines. |
+| v1.5 | February 8, 2023 | Updated actions to change the 'Fields' field to a required field and improve error handling: **File Reputation**, **Domain Reputation**, **URL Reputation**, and **IP Reputation**. |
+| v1.4 | January 10, 2023 | Refactored the integration. |
+| v1.3 | March 23, 2022 | Added new actions: **Search Domain**, **Search URL**, **Search IP**, and **Search Hash**. |
+| v1.2 | October 27, 2021 | Added a new action: **File Reputation V2**. |
+| v1.1 | February 19, 2021 | Updated actions: **Get Alert Details**, **Recorded Future Alerts Daemon**, and **Vulnerability Search Daemon**. |
+| v1.0 | September 16, 2019 | Initial release of the Recorded Future integration. |

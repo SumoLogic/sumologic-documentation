@@ -60,19 +60,16 @@ For information about SentinelOne, see [SentinelOne documentation](https://www.s
 
 ## Change Log
 
-* March 26, 2021 - First upload
-* July 19, 2022
-    + added default URL in the connector
-    + changed some labels in the connector
-* August 30, 2022 - Added new actions: **Connect to Network**, **Disconnect from Network**, **Get Alerts**, **Update Alert SentinelOne**, **Monitor Threat Status**, **Update Threat**, and **SentinelOne Threats Daemon**.
-* October 28, 2022 - Action Get Agents renamed to List Agents and refactored
-* January 16, 2023 - Integration refactored
-* January 30, 2023 - Updated Daemon
-    + SentinelOne Threats Daemon: refactored
-* February 8, 2023 (v1.6)
-    + Updated Action: List Agents (Added IP field for filtering and Improved error handling)
-* February 17, 2023 (v1.7)
-    + Updated Action: List Agents (Added Query field for Filtering)
-* June 22, 2023 (v1.8) - Removed unnecessary spaces
-* March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
-* April 30, 2026 (v1.10) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.10 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.9 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.8 | June 22, 2023 | Removed unnecessary spaces. |
+| v1.7 | February 17, 2023 | Updated the **List Agents** action to add a Query field for filtering. |
+| v1.6 | February 8, 2023 | Updated the **List Agents** action to add an IP field for filtering and improve error handling. |
+| v1.5 | January 30, 2023 | Refactored the **SentinelOne Threats Daemon**. |
+| v1.4 | January 16, 2023 | Refactored the integration. |
+| v1.3 | October 28, 2022 | Renamed the **Get Agents** action to **List Agents** and refactored it. |
+| v1.2 | August 30, 2022 | Added new actions: **Connect to Network**, **Disconnect from Network**, **Get Alerts**, **Update Alert SentinelOne**, **Monitor Threat Status**, **Update Threat**, and **SentinelOne Threats Daemon**. |
+| v1.1 | July 19, 2022 | <ul><li>Added a default URL in the connector.</li><li>Changed some labels in the connector.</li></ul> |
+| v1.0 | March 26, 2021 | Initial release of the SentinelOne integration. |

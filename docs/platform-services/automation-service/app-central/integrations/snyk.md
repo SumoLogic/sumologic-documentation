@@ -50,9 +50,11 @@ For information about Snyk, see [Snyk documentation](https://docs.snyk.io/).
 
 ## Change Log
 
-* May 25, 2023 (v1.0) - First upload
-* July 7, 2023 (v1.1) - Removed leading/trailing spaces
-* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 7, 2023 | Removed leading and trailing spaces. |
+| v1.0 | May 25, 2023 | Initial release of the Snyk integration. |
 
 ## Additional resources
 

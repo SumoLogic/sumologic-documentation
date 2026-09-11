@@ -100,10 +100,12 @@ Ticketing System
 
 ## Change Log
 
-* September 21, 2022 - First upload
-* April 5, 2023 - Action Close Ticket added.
-* June 30, 2023 (v2.3) - Integration code improved.
-* April 5, 2024 (v2.4) - Fixed an issue that prevents the resource testing to work correctly.
-* May 31, 2024 (v2.5) - Fixed an issue in actions **Create Ticket** and **Update Ticket** in which the JSON Query field was not visible.
-* Jan 13, 2025 (v2.6) - Modified hint of the **query** field as it was misleading.
-* April 30, 2026 (v2.7) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.7 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v2.6 | Jan 13, 2025 | Modified the hint for the **query** field because it was misleading. |
+| v2.5 | May 31, 2024 | Fixed an issue in the **Create Ticket** and **Update Ticket** actions in which the JSON Query field was not visible. |
+| v2.4 | April 5, 2024 | Fixed an issue that prevented resource testing from working correctly. |
+| v2.3 | June 30, 2023 | Improved the integration code. |
+| v2.2 | April 5, 2023 | Added the **Close Ticket** action. |
+| v2.1 | September 21, 2022 | Initial release of the ServiceNow V2 integration. |
