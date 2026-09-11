@@ -129,9 +129,7 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 
 * March 4, 2021 - First upload
 * November 18, 2022 - Get User action fields hints updated
-* December 30, 2022 - Added new actions:
-    + Ask Question
-    + Ask For User Email
+* December 30, 2022 - Added new actions: **Ask Question** and **Ask For User Email**.
 * January 10, 2023 - Refactoring
 * March 3, 2023 (v1.5)
     + Updated integration Fields Label
@@ -139,7 +137,7 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 * August 21, 2023 (v1.7) - Updated **Send Message** Action
 * January 16, 2024 (v1.8)
     + Updated action: Ask Question (Resolved issue related to newline characters)
-* March 22, 2024 (v1.9) - New action: Rename Channel
+* March 22, 2024 (v1.9) - Added a new action: **Rename Channel**.
 * Sept 17, 2024 (v1.10)
     * Updated action: Ask Question (Added Allow Custom Text feature)
 * Oct 1, 2024 (v1.10)
@@ -157,4 +155,4 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 
 ## Additional resources
 
-- For Slack, Sumo Logic offers the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize your Slack data.
+For Slack, Sumo Logic offers the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize your Slack data.

@@ -209,11 +209,7 @@ For information about PowerShell, see [PowerShell documentation](https://learn.m
 ## Change Log
 
 * December 30, 2022 - First upload
-* January 12, 2023 - Added new actions:
-    + VMware Carbon Black Enrichment
-    + CrowdStrike Falcon Enrichment
-    + GreyNoise Enrichment
-    + SentinelOne Enrichment
+* January 12, 2023 - Added new actions: **VMware Carbon Black Enrichment**, **CrowdStrike Falcon Enrichment**, **GreyNoise Enrichment**, and **SentinelOne Enrichment**.
 * November 23, 2023 (v1.5)
     + Updated the integration to address hostname resolution in Docker
     + Updated the configuration documentation for the Window Server Domain Controller

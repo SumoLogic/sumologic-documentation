@@ -69,8 +69,7 @@ For information about VirusTotal, see [VirusTotal documentation](https://docs.vi
 * December 21, 2020 - Updated descriptions
 * June 3, 2021 - Action Updated:
     + IP Reputation: Detected URLs information has been added as output
-* July 1, 2021 - New action added:
-    + IP Reputation V3 - API v3
+* July 1, 2021 - Added a new action: **IP Reputation V3 - API v3**.
 * June 14, 2022 - Updated action
     + File Reputation: now it's possible to select a FileHash artifact as an input for this action
 * November 22, 2022
@@ -82,20 +81,16 @@ For information about VirusTotal, see [VirusTotal documentation](https://docs.vi
 * June 27, 2023 (v1.7)
     + The name of **VirusTotal OIF** modified to **VirusTotal**
     + The visibility of the resource field changed
-    + Two new actions added (**URL Scan V2** and **File Scan V2**)
+    + Added new actions: **URL Scan V2** and **File Scan V2**.
     + Removed leading/trailing spaces
 * July 25, 2023 (v1.8) - Updated Integration Resource Fields
 * March 4, 2024 (v1.10) - Updated code for compatibility with Python 3.12
-* April 4, 2024 (v1.11) New action added:
-    + Search VirusTotal
+* April 4, 2024 (v1.11) - Added a new action: **Search VirusTotal**.
 * June 20, 2024 (v1.12)
     + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
 * July 03, 2024 (v1.13)
     * A new version is available: ***VirusTotal V3***
-    + Added new actions:
-        - **Check Scanned Status**
-        - **Download Report**
-        - **Get Report**
+    + Added new actions: **Check Scanned Status**, **Download Report**, and **Get Report**.
     + Updated actions:
         - **Scan File** - Just Scan the specific file
         - **Scan URL** - Just Scan on a specific URL

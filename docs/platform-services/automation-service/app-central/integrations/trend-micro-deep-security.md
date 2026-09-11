@@ -59,12 +59,12 @@ For information about Trend Micro Deep Security, see [Trend Micro Deep Security 
 ## Change Log
 
 * March 6, 2020 - First upload
-* October 27, 2022 - Action **Search Systems By Hostname** added.
+* October 27, 2022 - Added a new action: **Search Systems By Hostname**.
 * February 17, 2023 (v1.1)
-	+ New Action: Search Systems By IP
+	+ Added a new action: **Search Systems By IP**.
 * June 22, 2023 (v1.1) - Removed unnecessary empty lines
 * April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
 
 ## Additional resources
 
-- For Trend Micro Deep Security, Sumo Logic offers the [Trend Micro Deep Security app](/docs/integrations/security-threat-detection/trend-micro-deep-security/) to visualize your Trend Micro Deep Security data.
+For Trend Micro Deep Security, Sumo Logic offers the [Trend Micro Deep Security app](/docs/integrations/security-threat-detection/trend-micro-deep-security/) to visualize your Trend Micro Deep Security data.

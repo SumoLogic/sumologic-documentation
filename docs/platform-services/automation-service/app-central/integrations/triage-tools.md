@@ -64,7 +64,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 ## Change Log
 
 * November 30, 2021 - First upload
-* December 7, 2022 - Added new action: Update Triage Fields
+* December 7, 2022 - Added a new action: **Update Triage Fields**.
 * November 7, 2023
 	+ Updated the integration with Environmental Variables
 	+ Compatibility with new Cloud SOAR API
@@ -81,7 +81,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 		- Add Attachment To Triage renamed to Add Attachment to Triage
 		- Convert Triage To Incident renamed to Convert Triage to Incident
 		- Grab Or Reassign Triage Event renamed to Grab or Reassign Triage Event
-	+ Added new action: List Users
+	+ Added a new action: **List Users**.
 * December 18, 2025 (v1.3)
-    + Added new action: Get Full Triage Event Details
+    + Added a new action: **Get Full Triage Event Details**.
 * April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

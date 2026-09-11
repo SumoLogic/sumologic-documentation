@@ -44,7 +44,7 @@ No configuration is needed. Sumo Logic Cloud SIEM Internal executes without addi
 
 * September 20, 2023 - First Upload
 * October 13, 2023 (v1.13)
-    + Added new action: Insight Output Mapping
+    + Added a new action: **Insight Output Mapping**.
 * November 24, 2023 (v1.14)
     + Extended output mapping for Get Signal action
 * April 5, 2024 (v1.15)

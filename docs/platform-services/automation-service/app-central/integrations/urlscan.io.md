@@ -63,8 +63,6 @@ For information about URLScan.io, see [URLScan.io documentation](https://urlscan
 	+ remove version attribute in the actions
 * June 26, 2023 (v1.3) - Removed unnecessary empty lines
 * August 2, 2023 (v1.4 & v1.5) - Integration refactored
-* June 26, 2024 (v1.6) - New actions added
-	+ Check Scan Status
-        + Get URL Report
+* June 26, 2024 (v1.6) - Added new actions: **Check Scan Status** and **Get URL Report**.
 * June 26, 2024 (v1.7) - Updated the name of the action "Get URl Report" to "Get URL Report"
 * March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

@@ -68,7 +68,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
     + Search Sumo Logic (updated output and Field Last Period values)
 * November 10, 2022 (v1.4)
     + Updated action: Search Sumo Logic (Timezone issue fixed and added one more endpoint to get Aggregate/Records)
-    + New Daemon: Records Sumo Logic Daemon
+    + Added a new action: **Records Sumo Logic Daemon**.
 * March 22, 2023 (v1.5)
     + Updated integration: (Updated the integration Fields with Environmental Variables)
 * June 28, 2023 (v1.6)
@@ -83,10 +83,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * September 21, 2023 (v1.13)
     + Integration has been renamed from "**Sumo Logic CIP**" to "**Sumo Logic**"
     + Added Dynamic Table View for **Search Sumo Logic** Action
-    + New Actions:
-        - Search Metrics
-        - Search Output Mapping
-        - Resolve Alert
+    + Added new actions: **Search Metrics**, **Search Output Mapping**, and **Resolve Alert**.
 * September 22, 2023 (v1.14) - Updated **Search Metrics** Action
 * September 27, 2023 (v1.15) - Updated **Search Sumo Logic** Action (Added Limit Field)
 * September 28, 2023 (v1.16) - Updated **Search Sumo Logic** Action (Updated the default value for the Limit Field)

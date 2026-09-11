@@ -64,14 +64,7 @@ For information about SentinelOne, see [SentinelOne documentation](https://www.s
 * July 19, 2022
     + added default URL in the connector
     + changed some labels in the connector
-* August 30, 2022 - Added new actions:
-    + Connect to Network
-    + Disconnect from Network
-    + Get Alerts
-    + Update Alert SentinelOne
-    + Monitor Threat Status
-    + Update Threat
-    + SentinelOne Threats Daemon
+* August 30, 2022 - Added new actions: **Connect to Network**, **Disconnect from Network**, **Get Alerts**, **Update Alert SentinelOne**, **Monitor Threat Status**, **Update Threat**, and **SentinelOne Threats Daemon**.
 * October 28, 2022 - Action Get Agents renamed to List Agents and refactored
 * January 16, 2023 - Integration refactored
 * January 30, 2023 - Updated Daemon

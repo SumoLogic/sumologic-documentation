@@ -45,11 +45,7 @@ For information about WhoisXML, see [WhoisXML documentation](https://whois.whois
 ## Change Log
 
 * November 25, 2022 - First upload
-* February 9, 2023 - Added new actions:
-	+ DNS Lookup
-	+ Domain Reputation
-	+ List Subdomains
-	+ Geolocate IP Address
+* February 9, 2023 - Added new actions: **DNS Lookup**, **Domain Reputation**, **List Subdomains**, and **Geolocate IP Address**.
 * February 15, 2023 - New logo
 * February 28, 2023 (v1.4)
 	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)

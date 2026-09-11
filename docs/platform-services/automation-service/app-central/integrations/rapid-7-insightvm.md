@@ -62,8 +62,8 @@ For information about Rapid7 InsightVM, see [Rapid7 InsightVM documentation](htt
 ## Change Log
 
 * October 27, 2021 - First upload
-* October 28, 2022 - Added new action: Search Asset By Hostname added
+* October 28, 2022 - Added a new action: **Search Asset By Hostname**.
 * February 17, 2023 (v1.1)
-	+ New Action: Search Asset By IP
+	+ Added a new action: **Search Asset By IP**.
 * July 7, 2023 (v1.2) - Removed leading/trailing spaces
 * April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

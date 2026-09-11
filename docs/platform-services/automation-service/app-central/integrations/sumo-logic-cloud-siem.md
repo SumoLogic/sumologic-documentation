@@ -106,7 +106,7 @@ SIEM
 * October 1, 2021 - New actions uploaded
 * October 18, 2021 - New actions uploaded
 * October 27, 2021 - New actions uploaded
-* March 17, 2022 - New action: Update Insight
+* March 17, 2022 - Added a new action: **Update Insight**.
 * February 17, 2023 (v1.3)
     * Updated Daemon: Sumo Logic Insights Daemon Extended
 * September 19, 2023 (v1.4) - Updated the integration with Environmental Variables
@@ -122,7 +122,7 @@ SIEM
         - Sumo Logic Insights Daemon
         - Sumo Logic Insights Daemon Extended
 * December 12, 2023 (v1.9)
-    * Added new Action - *Create Insight From Signals*
+    * Added a new action: **Create Insight From Signals**.
     * Updated *Add Enrichment Insight*, *Add Enrichment Entity*, and *Add Enrichment Signal* actions based on the following points:
         - Now text information can be included as enrichment
         - Updated the enrichment field to accept either the output.raw or any other JSON format
@@ -134,11 +134,7 @@ SIEM
 * April 5, 2024 (v1.12)
     + The integration formerly known as "Sumo Logic CSE" has been renamed to "Sumo Logic Cloud SIEM"
     + Added a new field *API Rate Limit Sleep* to the Integration resource (If API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10)
-    * New Actions added:
-        - Get Match List
-        - List Match List Items
-        - List Match List
-        - Sumo Logic Match List Items Daemon
+    * Added new actions: **Get Match List**, **List Match List Items**, **List Match List**, and **Sumo Logic Match List Items Daemon**.
     * For *Close Insight Trigger* added three fields in Integration resource:
         - Custom Field Internal Name (This field is only used within the Close Insight Trigger as a custom Field for Insight ID in Cloud SOAR, for Example: opt_1)
         - Resolution Status (This field is only used within the Close Insight Trigger as a resolution reason for closing the Insight, for Example: Resolved)
@@ -148,8 +144,7 @@ SIEM
 * July 3, 2024 (v1.14)
   * Update `check_not_null_field` in Close Insight Trigger
 * January 6, 2025 (v1.15)
-  * New Action added:
-    - Add Match List Item
+  * Added a new action: **Add Match List Item**.
 * April 3, 2026 (v1.16)
   * Fixed output field mapping for nested fields with dots in field names in the following actions:
     - Get Signal
