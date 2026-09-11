@@ -58,4 +58,4 @@ For information about Airtable, see [Airtable documentation](https://support.air
 
 ## Additional resources
 
-- For Airtable, Sumo Logic offers the [Airtable source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) and the [Airtable app](/docs/integrations/saas-cloud/airtable/) to collect and visualize your Airtable data.
+For Airtable, Sumo Logic offers the [Airtable source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) and the [Airtable app](/docs/integrations/saas-cloud/airtable/) to collect and visualize your Airtable data.

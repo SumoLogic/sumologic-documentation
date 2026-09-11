@@ -52,4 +52,4 @@ For information about GitHub, see [GitHub documentation](https://docs.github.com
 
 ## Additional resources
 
-- For GitHub, Sumo Logic offers the [GitHub app](/docs/integrations/app-development/github/) to visualize your GitHub data.
+For GitHub, Sumo Logic offers the [GitHub app](/docs/integrations/app-development/github/) to visualize your GitHub data.

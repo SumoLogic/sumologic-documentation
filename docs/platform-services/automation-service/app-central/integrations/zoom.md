@@ -103,4 +103,4 @@ Messaging
 
 ## Additional resources
 
-- For Zoom, Sumo Logic offers the [Zoom app](/docs/integrations/saas-cloud/zoom/) to visualize your Zoom data.
+For Zoom, Sumo Logic offers the [Zoom app](/docs/integrations/saas-cloud/zoom/) to visualize your Zoom data.

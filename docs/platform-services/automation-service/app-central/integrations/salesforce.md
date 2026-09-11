@@ -61,4 +61,4 @@ For information about Salesforce, see [Salesforce documentation](https://help.sa
 
 ## Additional resources
 
-- For Salesforce, Sumo Logic offers the [Salesforce source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source/) and the [Salesforce app](/docs/integrations/saas-cloud/salesforce/) to collect and visualize your Salesforce data.
+For Salesforce, Sumo Logic offers the [Salesforce source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source/) and the [Salesforce app](/docs/integrations/saas-cloud/salesforce/) to collect and visualize your Salesforce data.

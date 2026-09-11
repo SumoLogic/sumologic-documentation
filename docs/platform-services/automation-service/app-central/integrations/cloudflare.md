@@ -96,4 +96,4 @@ For information about Cloudflare, see [Cloudflare documentation](https://develop
 
 ## Additional resources
 
-- For Cloudflare, Sumo Logic offers the [Cloudflare app](/docs/integrations/saas-cloud/cloudflare/) to visualize your Cloudflare data.
+For Cloudflare, Sumo Logic offers the [Cloudflare app](/docs/integrations/saas-cloud/cloudflare/) to visualize your Cloudflare data.

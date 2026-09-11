@@ -74,4 +74,4 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Additional resources
 
-- For AWS Private Certificate Authority, Sumo Logic offers the [AWS Private Certificate Authority app](/docs/integrations/amazon-aws/aws-private-certificate-authority/) to visualize your AWS Private Certificate Authority data.
+For AWS Private Certificate Authority, Sumo Logic offers the [AWS Private Certificate Authority app](/docs/integrations/amazon-aws/aws-private-certificate-authority/) to visualize your AWS Private Certificate Authority data.

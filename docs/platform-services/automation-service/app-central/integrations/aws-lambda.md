@@ -70,8 +70,8 @@ lambda:InvokeFunction
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0 | August 14, 2026 | First upload |
+| v1.0 | August 14, 2026 | Initial release of the AWS Lambda integration. |
 
 ## Additional resources
 
-- For AWS Lambda, Sumo Logic offers the [AWS Lambda app](/docs/integrations/amazon-aws/lambda/) to visualize your AWS Lambda data.
+For AWS Lambda, Sumo Logic offers the [AWS Lambda app](/docs/integrations/amazon-aws/lambda/) to visualize your AWS Lambda data.

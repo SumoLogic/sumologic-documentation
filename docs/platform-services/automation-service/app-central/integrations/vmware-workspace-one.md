@@ -66,4 +66,4 @@ For information about VMware Workspace ONE, see [Workspace ONE documentation](ht
 
 ## Additional resources
 
-- For VMware Workspace ONE, Sumo Logic offers the [VMware Workspace ONE source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source/) and the [VMware Workspace ONE app](/docs/integrations/saas-cloud/vmware-workspace-one/) to collect and visualize your VMware Workspace ONE data.
+For VMware Workspace ONE, Sumo Logic offers the [VMware Workspace ONE source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vmware-workspace-one-source/) and the [VMware Workspace ONE app](/docs/integrations/saas-cloud/vmware-workspace-one/) to collect and visualize your VMware Workspace ONE data.

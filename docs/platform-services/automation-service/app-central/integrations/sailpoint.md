@@ -69,4 +69,4 @@ For information about SailPoint, see [SailPoint documentation](https://documenta
 
 ## Additional resources
 
-- For SailPoint, Sumo Logic offers the [SailPoint source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source/) and the [SailPoint app](/docs/integrations/security-threat-detection/sailpoint/) to collect and visualize your SailPoint data.
+For SailPoint, Sumo Logic offers the [SailPoint source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source/) and the [SailPoint app](/docs/integrations/security-threat-detection/sailpoint/) to collect and visualize your SailPoint data.

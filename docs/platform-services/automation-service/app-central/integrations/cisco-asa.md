@@ -54,4 +54,4 @@ For information about Cisco ASA, see [Cisco ASA documentation](https://www.cisco
 
 ## Additional resources
 
-- For Cisco ASA, Sumo Logic offers the [Cisco ASA app](/docs/integrations/security-threat-detection/cisco-asa/) to visualize your Cisco ASA data.
+For Cisco ASA, Sumo Logic offers the [Cisco ASA app](/docs/integrations/security-threat-detection/cisco-asa/) to visualize your Cisco ASA data.

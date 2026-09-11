@@ -63,4 +63,4 @@ Incident Management
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0 | August 21, 2026 | First upload |
+| v1.0 | August 21, 2026 | Initial release of the DFIR-IRIS integration. |

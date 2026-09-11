@@ -67,4 +67,4 @@ For information about LaunchDarkly, see [LaunchDarkly documentation](https://lau
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.2 | August 14, 2026 | First upload |
+| v1.2 | August 14, 2026 | Initial release of the LaunchDarkly integration. |

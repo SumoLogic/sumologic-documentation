@@ -86,4 +86,4 @@ For information about OpenAI, see [OpenAI documentation](https://platform.openai
 
 ## Additional resources
 
-- For OpenAI, Sumo Logic offers the [OpenAI source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source/) to collect your OpenAI data.
+For OpenAI, Sumo Logic offers the [OpenAI source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source/) to collect your OpenAI data.

@@ -51,4 +51,4 @@ For information about Cybereason, see the [Cybereason website](https://www.cyber
 
 ## Additional resources
 
-- For Cybereason, Sumo Logic offers the [Cybereason source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source/) to collect your Cybereason data.
+For Cybereason, Sumo Logic offers the [Cybereason source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source/) to collect your Cybereason data.

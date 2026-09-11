@@ -56,4 +56,4 @@ For information about Druva, see [Druva documentation](https://help.druva.com/en
 
 ## Additional resources
 
-- For Druva, Sumo Logic offers the [Druva source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) and the [Druva app](/docs/integrations/saas-cloud/druva/) to collect and visualize your Druva data.
+For Druva, Sumo Logic offers the [Druva source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) and the [Druva app](/docs/integrations/saas-cloud/druva/) to collect and visualize your Druva data.

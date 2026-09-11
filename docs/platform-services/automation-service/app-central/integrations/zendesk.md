@@ -73,4 +73,4 @@ For information about Zendesk, see [Zendesk documentation](https://www.zendesk.c
 
 ## Additional resources
 
-- For Zendesk, Sumo Logic offers the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize your Zendesk data.
+For Zendesk, Sumo Logic offers the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize your Zendesk data.

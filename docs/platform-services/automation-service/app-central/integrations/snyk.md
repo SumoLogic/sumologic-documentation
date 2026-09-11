@@ -56,4 +56,4 @@ For information about Snyk, see [Snyk documentation](https://docs.snyk.io/).
 
 ## Additional resources
 
-- For Snyk, Sumo Logic offers the [Snyk app](/docs/integrations/webhooks/snyk/) to visualize your Snyk data.
+For Snyk, Sumo Logic offers the [Snyk app](/docs/integrations/webhooks/snyk/) to visualize your Snyk data.

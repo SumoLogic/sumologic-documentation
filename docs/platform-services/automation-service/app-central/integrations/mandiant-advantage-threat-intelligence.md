@@ -59,4 +59,4 @@ Threat Intelligence-Reputation
 
 ## Additional resources
 
-- For Mandiant, Sumo Logic offers the [Mandiant Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/) to collect your Mandiant data.
+For Mandiant, Sumo Logic offers the [Mandiant Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/) to collect your Mandiant data.

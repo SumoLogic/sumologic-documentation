@@ -49,4 +49,4 @@ For information about GitLab, see [GitLab documentation](https://docs.gitlab.com
 
 ## Additional resources
 
-- For GitLab, Sumo Logic offers the [GitLab app](/docs/integrations/app-development/gitlab/) to visualize your GitLab data.
+For GitLab, Sumo Logic offers the [GitLab app](/docs/integrations/app-development/gitlab/) to visualize your GitLab data.

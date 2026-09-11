@@ -56,4 +56,4 @@ For information about Proofpoint, see the [Proofpoint website](https://www.proof
 
 ## Additional resources
 
-- For Proofpoint TAP, Sumo Logic offers the [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) and the [Proofpoint TAP app](/docs/integrations/saas-cloud/proofpoint-tap/) to collect and visualize your Proofpoint TAP data.
+For Proofpoint TAP, Sumo Logic offers the [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) and the [Proofpoint TAP app](/docs/integrations/saas-cloud/proofpoint-tap/) to collect and visualize your Proofpoint TAP data.

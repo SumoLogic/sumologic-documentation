@@ -53,4 +53,4 @@ For information about Imperva Cloud Application Security ([formerly Incapsula](h
 
 ## Additional resources
 
-- For Imperva Incapsula, Sumo Logic offers the [Imperva Incapsula app](/docs/integrations/security-threat-detection/imperva-incapsula/) to visualize your Imperva Incapsula data.
+For Imperva Incapsula, Sumo Logic offers the [Imperva Incapsula app](/docs/integrations/security-threat-detection/imperva-incapsula/) to visualize your Imperva Incapsula data.

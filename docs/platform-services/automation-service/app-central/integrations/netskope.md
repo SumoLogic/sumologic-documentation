@@ -61,4 +61,4 @@ For information about Netskope, see [Netskope documentation](https://docs.netsko
 
 ## Additional resources
 
-- For Netskope, Sumo Logic offers the [Netskope source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) and the [Netskope app](/docs/integrations/security-threat-detection/netskope/) to collect and visualize your Netskope data.
+For Netskope, Sumo Logic offers the [Netskope source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) and the [Netskope app](/docs/integrations/security-threat-detection/netskope/) to collect and visualize your Netskope data.

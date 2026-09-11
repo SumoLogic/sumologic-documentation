@@ -70,4 +70,4 @@ Identity and Access Management
 
 ## Additional resources
 
-- For 1Password, Sumo Logic offers the [1Password source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) and the [1Password app](/docs/integrations/saas-cloud/1password/) to collect and visualize your 1Password data.
+For 1Password, Sumo Logic offers the [1Password source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) and the [1Password app](/docs/integrations/saas-cloud/1password/) to collect and visualize your 1Password data.

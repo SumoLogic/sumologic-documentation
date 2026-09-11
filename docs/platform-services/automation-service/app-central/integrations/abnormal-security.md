@@ -63,4 +63,4 @@ Email Security
 
 ## Additional resources
 
-- For Abnormal Security, Sumo Logic offers the [Abnormal Security source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) and the [Abnormal Security app](/docs/integrations/saas-cloud/abnormal-security/) to collect and visualize your Abnormal Security data.
+For Abnormal Security, Sumo Logic offers the [Abnormal Security source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) and the [Abnormal Security app](/docs/integrations/saas-cloud/abnormal-security/) to collect and visualize your Abnormal Security data.

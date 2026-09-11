@@ -70,4 +70,4 @@ For information about Cisco Meraki, see [Cisco Meraki documentation](https://dev
 
 ## Additional resources
 
-- For Cisco Meraki, Sumo Logic offers the [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source/) and the [Cisco Meraki app](/docs/integrations/saas-cloud/cisco-meraki-c2c/) to collect and visualize your Cisco Meraki data.
+For Cisco Meraki, Sumo Logic offers the [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source/) and the [Cisco Meraki app](/docs/integrations/saas-cloud/cisco-meraki-c2c/) to collect and visualize your Cisco Meraki data.

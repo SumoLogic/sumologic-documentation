@@ -67,4 +67,4 @@ Example: [https://yourServer.jamfcloud.com](https://yourServer.jamfcloud.com)
 
 ## Additional resources
 
-- For Jamf, Sumo Logic offers the [Jamf source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source/) and the [Jamf app](/docs/integrations/saas-cloud/jamf/) to collect and visualize your Jamf data.
+For Jamf, Sumo Logic offers the [Jamf source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source/) and the [Jamf app](/docs/integrations/saas-cloud/jamf/) to collect and visualize your Jamf data.

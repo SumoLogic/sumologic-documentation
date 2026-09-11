@@ -88,4 +88,4 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Additional resources
 
-- For AWS CloudTrail, Sumo Logic offers the [AWS CloudTrail app](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/) to visualize your AWS CloudTrail data.
+For AWS CloudTrail, Sumo Logic offers the [AWS CloudTrail app](/docs/integrations/cloud-security-monitoring-analytics/aws-cloudtrail/) to visualize your AWS CloudTrail data.

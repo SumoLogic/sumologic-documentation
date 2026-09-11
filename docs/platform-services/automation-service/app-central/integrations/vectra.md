@@ -61,4 +61,4 @@ For information about Vectra, see [Vectra documentation.](https://support.vectra
 
 ## Additional resources
 
-- For Vectra, Sumo Logic offers the [Vectra source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source/) and the [Vectra app](/docs/integrations/saas-cloud/vectra/) to collect and visualize your Vectra data.
+For Vectra, Sumo Logic offers the [Vectra source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source/) and the [Vectra app](/docs/integrations/saas-cloud/vectra/) to collect and visualize your Vectra data.

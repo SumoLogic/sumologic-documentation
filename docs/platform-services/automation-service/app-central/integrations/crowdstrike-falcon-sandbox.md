@@ -62,7 +62,7 @@ For information about CrowdStrike Falcon Sandbox, see [CrowdStrike documentation
 |:--|:--|:--|
 | v1.6 | September 2, 2026 | Added OAuth 2.0 (Client Credentials) authentication support and new Check Submission Status action. |
 | v1.4 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.3 | July 14, 2023 | Changed fields visibility |
-| v1.2 | June 27, 2023 | Updated the integration with Environmental Variables |
-| v1.1 | March 21, 2023 | Updated the logo in CrowdStrike Falcon Sandbox integration |
-| v1.0 | October 26, 2020 | Initial release of the CrowdStrike Falcon Sandbox integration |
+| v1.3 | July 14, 2023 | Changed fields visibility. |
+| v1.2 | June 27, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 21, 2023 | Updated the logo in CrowdStrike Falcon Sandbox integration. |
+| v1.0 | October 26, 2020 | Initial release of the CrowdStrike Falcon Sandbox integration. |

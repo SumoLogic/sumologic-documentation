@@ -63,4 +63,4 @@ For information about Automox, see [Automox documentation](https://docs.automox.
 
 ## Additional resources
 
-- For Automox, Sumo Logic offers the [Automox source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source/) and the [Automox app](/docs/integrations/saas-cloud/automox/) to collect and visualize your Automox data.
+For Automox, Sumo Logic offers the [Automox source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source/) and the [Automox app](/docs/integrations/saas-cloud/automox/) to collect and visualize your Automox data.

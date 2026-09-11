@@ -54,4 +54,4 @@ For information about Sophos Central, see [Sophos Central documentation](https:/
 
 ## Additional resources
 
-- For Sophos Central, Sumo Logic offers the [Sophos Central source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/) and the [Sophos app](/docs/integrations/saas-cloud/sophos/) to collect and visualize your Sophos Central data.
+For Sophos Central, Sumo Logic offers the [Sophos Central source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/) and the [Sophos app](/docs/integrations/saas-cloud/sophos/) to collect and visualize your Sophos Central data.

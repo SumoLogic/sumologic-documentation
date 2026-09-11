@@ -168,4 +168,4 @@ If the issue persists, confirm the integration configuration JSON matches the se
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.1 | August 28, 2026 | First upload |
+| v1.1 | August 28, 2026 | Initial release of the Google Cloud Functions integration. |

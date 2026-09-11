@@ -51,4 +51,4 @@ For information about Dropbox, see [Dropbox documentation](https://www.dropbox.c
 
 ## Additional resources
 
-- For Dropbox, Sumo Logic offers the [Dropbox source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/) and the [Dropbox app](/docs/integrations/saas-cloud/dropbox/) to collect and visualize your Dropbox data.
+For Dropbox, Sumo Logic offers the [Dropbox source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/) and the [Dropbox app](/docs/integrations/saas-cloud/dropbox/) to collect and visualize your Dropbox data.

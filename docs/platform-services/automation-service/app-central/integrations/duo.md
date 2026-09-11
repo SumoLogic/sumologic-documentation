@@ -58,4 +58,4 @@ For information about Duo, see [Duo documentation](https://duo.com/docs).
 
 ## Additional resources
 
-- For Duo, Sumo Logic offers the [Duo source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source/) and the [Duo Security app](/docs/integrations/security-threat-detection/duo-security/) to collect and visualize your Duo data.
+For Duo, Sumo Logic offers the [Duo source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source/) and the [Duo Security app](/docs/integrations/security-threat-detection/duo-security/) to collect and visualize your Duo data.
