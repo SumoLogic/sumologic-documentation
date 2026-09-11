@@ -60,8 +60,6 @@ For details, see [Drill Down to Discover Root Causes](/docs/dashboards/drill-dow
 
 All of the apps are installed in a folder named **Sumo Logic AWS Observability Apps** that is located in your personal folder.
 
-To add a new dashboard to your hierarchy, refer to the instructions in [Add a New AWS Service to the AWS Observability View Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service).
-
 To view the app dashboards:
 
 1. Navigate to your Sumo Logic personal folder. 

@@ -13,21 +13,19 @@ Given that we use an account alias, we recommend you use StackSets to automati
 
 ## Before you start
 
-* If this is the first time you've deployed our AWS Observability solution, read the [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/) topic for more information.
+* If this is the first time you've deployed our AWS Observability solution, read the [Before You Deploy](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/before-you-deploy/) topic for more information.
 * Complete the prerequisites for StackSets as described in the [AWS documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html).
 
 ## Step 1: Open the CloudFormation template
 
-1. Sign in to the AWS Management console.
-1. Choose an option to invoke AWS CloudFormation Template:
-    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-    * Download the AWS Observability Solution template (S3 link for CloudFormation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.
+1. Sign in to the [AWS Management Console](https://console.aws.amazon.com/).
+1. Copy the S3 URL for the AWS Observability Solution CloudFormation template, or download it directly:
+    ```
+    https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml
+    ```
+    You will use this template when creating your StackSet.
     :::note
     If you would like to download or inspect this or other versions of this template, see the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).
-    :::
-1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
-    :::danger
-    This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
 1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.
 
@@ -83,7 +81,7 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 1. Go to [StackSets](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacksets) in your AWS account.
 1. Click **Create StackSet**.<br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_1.png')} alt="Create Stackset" style={{border: '1px solid gray'}} width="800" />
 1. Paste the URL `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.15.0/sumologic_observability.master.template.yaml` in the Amazon S3 URL option and click **Next**. If you'd like to download or inspect this or other versions of this template, see the [Changelog](/docs/observability/aws/deploy-use-aws-observability/changelog/).<br/><img src={useBaseUrl('img/observability/multi-create-stack.png')} alt="Mlti-create stack" style={{border: '1px solid gray'}} width="800" />
-1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability) section with the following exception:
+1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v2.15.0) section with the following exception:
     1. Leave the field “Alias for AWS Account Identification” blank.  <br/><img src={useBaseUrl('img/observability/aws-field.png')} alt="AWS field" style={{border: '1px solid gray'}} width="800" />
     1. Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”.  <br/><img src={useBaseUrl('img/observability/aws-url.png')} alt="AWS URL" style={{border: '1px solid gray'}} width="600" />
     1. Answer **No** in Section 3 of the template "Install AWS Observability Apps". <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_3.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
