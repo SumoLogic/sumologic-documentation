@@ -29,7 +29,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Aggregate](/docs/search/search-query-language/group-aggregate-operators)**. A group of data returned by a search, displayed in a simple table in the Aggregates tab of the Search page.
 
-**[Alert](/docs/alerts)**. A notification triggered when a monitoring condition is met. In [monitors](/docs/alerts/monitors/overview), an alert is created when trigger conditions — critical, warning, or missing data — are satisfied, and it includes contextual information to help investigate the issue. In [scheduled searches](/docs/alerts/scheduled-searches/schedule-search), alert types include Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
+**[Alert](/docs/alerts)**. A notification triggered when a monitoring condition is met. In [monitors](/docs/alerts/monitors/overview), an alert is created when critical, warning, or missing data trigger conditions are satisfied. It includes contextual information to help investigate the issue. In [scheduled searches](/docs/alerts/scheduled-searches/schedule-search), alert types include Email, Script Action, ServiceNow Connection, Webhook, and Save to Index.
 
 **[Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. A list of IP addresses or CIDR ranges that are explicitly granted access to logins, APIs, and dashboards. Configured on the **Service Allowlist Settings** tab in Account Security Settings.
 
@@ -92,7 +92,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Data Forwarding](/docs/manage/data-forwarding)**. When enabled, the Data Forwarding feature allows Sumo Logic to upload data to an Amazon S3 bucket that belongs to your organization. Log messages are saved as CSV files in compressed gzip files. They are accumulated and returned right after being ingested by Sumo Logic.
 
-**[Data Tiers](/docs/manage/partitions/data-tiers)**. A Sumo Logic feature that lets you allocate log data to one of three storage tiers — Continuous, Frequent, or Infrequent — based on how often you need to access it. All data defaults to the Continuous tier; only data stored in partitions can be assigned to the Frequent or Infrequent tier.
+**[Data Tiers](/docs/manage/partitions/data-tiers)**. A Sumo Logic feature that lets you allocate log data to one of three storage tiers (Continuous, Frequent, or Infrequent) based on how often you need to access it. All data defaults to the Continuous tier; only data stored in partitions can be assigned to the Frequent or Infrequent tier.
 
 **[Data type](/docs/get-started/faq)**. A data type is a specific type of log used with a Sumo Logic source or app, such as Apache, MySQL, or Windows IIS. You can also use a custom data type for a custom application.
 
@@ -100,7 +100,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Deployment](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
-**[Detected relationship](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a relationship detected between entities that appear together in a record — for example, an IP and hostname in the same log message — even if they are not part of the insight currently being viewed. Displayed as solid lines in the entity graph.
+**[Detected relationship](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a relationship detected between entities that appear together in a record, such as an IP address and hostname in the same log message, even if they are not part of the insight currently being viewed. Displayed as solid lines in the entity graph.
 
 <!--
 **Dimension**. In [Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20) and [Prometheus](/docs/metrics/introduction/metric-formats#prometheus) metrics, dimensions are the one or more space-separated key-value pairs that uniquely identify what is being measured. Dimensions are also referred to as intrinsic tags and labels.
@@ -110,14 +110,14 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[DPM](/docs/metrics/manage-metric-volume/data-limits-for-metrics)**. Stands for data points per minute. Metric data volume is measured in DPM. For example, a CPU metric reported on a single host every 15 seconds produces 4 DPM.
 
-**[Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing)**. A Sumo Logic feature that automatically extracts fields from JSON log messages at search time, without requiring manual parse rules. Also called Auto Parse — "Dynamic Parsing" is used in documentation and the API, while "Auto Parse" appears in the UI.
+**[Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing)**. A Sumo Logic feature that automatically extracts fields from JSON log messages at search time, without requiring manual parse rules. Also called Auto Parse. "Dynamic Parsing" is used in documentation and the API, while "Auto Parse" appears in the UI.
 
 
 
 
 ## E
 
-**[Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral—Sumo Logic deletes an ephemeral collector automatically after it has been offline for 12 hours.
+**[Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral. Sumo Logic deletes an ephemeral collector automatically after it has been offline for 12 hours.
 
 **[Endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
@@ -211,7 +211,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.
 
-**[Lookup Table](/docs/search/lookup-tables)**. A table of reference data hosted in Sumo Logic that you can join to log search results to enrich them with additional context — for example, mapping a user ID in a log to an email address, department, or other attribute stored in the table.
+**[Lookup Table](/docs/search/lookup-tables)**. A table of reference data hosted in Sumo Logic that you can join to log search results to enrich them with additional context. For example, you can map a user ID in a log to an email address, department, or other attribute stored in the table.
 
 
 
@@ -222,9 +222,9 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Markdown](/docs/dashboards/panels/markdown-syntax)**. Used in dashboards, you can add text panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting.
 
-**[Mask rule](/docs/send-data/collection/processing-rules/mask-rules)**. Mask rules are a type of processing rule that replaces an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
+**[Mask rule](/docs/send-data/collection/processing-rules/mask-rules)**. Mask rules are a type of processing rule that replaces an expression with a mask string that you can customize. This is another option to protect data, such as passwords, that you wouldn't normally track.
 
-**[MCP Server, Sumo Logic](/docs/api/mcp-server)**. A Sumo Logic service that lets MCP-compatible AI clients — such as Claude Code, developer IDEs, and enterprise AI platforms — connect to Sumo Logic using natural language to query logs, investigate Cloud SIEM insights, manage alerts, and more.
+**[MCP Server, Sumo Logic](/docs/api/mcp-server)**. A Sumo Logic service that lets AI clients compatible with the Model Context Protocol (MCP), such as Claude Code, developer IDEs, and enterprise AI platforms, connect to Sumo Logic using natural language to query logs, investigate Cloud SIEM insights, manage alerts, and more.
 
 **[Messages tab](/docs/search/get-started-with-search/search-page/set-messages-tab-preferences)**. When you run a search query, messages display in the Messages tab in the lower half of the browser window of the Search page.
 
@@ -368,7 +368,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all collectors in an account to not exceed the allowable rate.
 
-**[Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence)**. A Sumo Logic feature that lets you ingest and query threat indicators — data points about known threats such as malicious IP addresses, file hashes, and hostnames — to enrich log searches and Cloud SIEM detections. Indicators come from Sumo Logic-managed sources or custom sources you configure.
+**[Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence)**. A Sumo Logic feature that lets you ingest and query threat indicators to enrich log searches and Cloud SIEM detections. Threat indicators are data points about known threats, such as malicious IP addresses, file hashes, and hostnames. Indicators come from Sumo Logic-managed sources or custom sources you configure.
 
 **[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 

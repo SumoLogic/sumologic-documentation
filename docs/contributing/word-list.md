@@ -27,7 +27,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## B
 
-**Backend**. One word. Don't use "back-end" (hyphenated) or "back end" (two words).
+**Backend**. One word in Sumo Logic documentation. Don't use "back-end" or "back end."
 
 ## C
 
@@ -37,7 +37,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Click**. You click a UI element. Do not use "click on".
 
-**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name — always capitalize it.
+**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name. Always capitalize it.
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
@@ -117,7 +117,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
-**Menu**. When referring to a menu in the UI, use the word menu alone. Don't use dropdown menu, list, or selector.
+**Menu**. When referring to a menu in the UI, use "menu" or "dropdown menu." Don't use "list" or "selector."
 
 **Messages tab**. When referring to the Messages tab (where non-aggregate search results are displayed) the term Messages is capitalized.
 
@@ -172,7 +172,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Setup vs Set up**. Setup as one word is a _noun_ or an _adjective_. Set up as two words is a _verb_. For example, "You can set up your collector using the setup procedure."
 
-**Source** / **Sources**. Lowercase `source` — it's the generic word for the category, not part of a source's name. Capitalize the service or type name in front of it, matching the **Add Source** list, and leave `source` lowercase:
+**Source** / **Sources**. Lowercase `source` because it's the generic word for the category, not part of a source's name. Capitalize the service or type name in front of it, matching the **Add Source** list, and leave `source` lowercase:
 
 * Local File source
 * Remote File source
@@ -207,7 +207,7 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 **Time slice**. Time slice is two words, not one.
 
-**Timeout**. One word, no hyphen, whether used as a noun or adjective. Don't use "time-out" or "time out."
+**Timeout / time out**. Use "timeout" as a noun or adjective in computing contexts. Use "time out" as a verb. Don't use "time-out."
 
 **Timestamp**. Timestamp is one word.
 
