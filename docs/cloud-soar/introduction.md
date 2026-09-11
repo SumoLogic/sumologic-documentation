@@ -2,11 +2,16 @@
 id: introduction
 title: Introduction to Cloud SOAR
 sidebar_label: Introduction
+keywords:
+  - Cloud SOAR
+  - SOAR
+  - incident response
+  - security automation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides an introduction to Cloud SOAR for analysts and administrators. 
+Cloud SOAR is Sumo Logic's Security Orchestration, Automation, and Response solution, which helps SOC analysts and administrators orchestrate and automate incident response using playbooks, dashboards, and case management. This article provides an introduction to Cloud SOAR for analysts and administrators. 
 
 If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
 
@@ -97,7 +102,7 @@ In this section, you’ll get to know the different parts of the Cloud SOAR UI.
 
 ### Case management
 
-#### Cloud SOAR case management
+#### What is Cloud SOAR case management?
 
 Case management is like project management, but the project you’re working on is a cybersecurity threat. Case management helps set priorities, assign tasks, and communicate information across different teams.
 
@@ -113,7 +118,7 @@ When you log in to Cloud SOAR, you can use these main pages to get a sense of wh
 
 Since Cloud SOAR integrates with hundreds of technologies, you can also interact with multiple ticketing and case management systems. The API-based communication between technologies is bidirectional, meaning Cloud SOAR can both receive and send information, at any time.
 
-#### Threat Investigation with Cloud SOAR
+#### What is threat investigation in Cloud SOAR?
 
 One major component of case management is threat investigation.
 
@@ -295,7 +300,7 @@ You can use KPI reports to aggregate incidents that satisfy certain conditions. 
 
 You can get creative with filters and create any kind of report you like.
 
-#### Best practices for dashboards and reports
+#### What are the best practices for dashboards and reports?
 
 There are several considerations when designing a dashboard or report. Here are a few best practices:
 * **Above the fold**. In print newspapers, the most important articles are placed "above the fold," which means the top half of the front page. When designing a dashboard or report, place the most important information at the top, so people will see it right away without needing to scroll.
@@ -324,7 +329,7 @@ Broadly speaking, Security Orchestration, Automation, and Response (SOAR) is a c
 
 Administrators configure these and other settings to help SOC analysts automate and orchestrate many processes that are a routine part of responding to security incidents. Playbook automation offloads many tedious and repetitive tasks from the SOC team, reducing response time and allowing SOC analysts to focus on other mission-critical tasks. Dashboards and reports help distribute knowledge to different teams to work together to orchestrate their response in a timely, synchronized manner. RBAC ensures that only authorized members of your SOC team can perform certain actions.
 
-#### The incident response cycle
+#### What is the incident response cycle?
 
 As a Cloud SOAR administrator, your task is to set up RBAC controls, configure settings, create templates, and use APIs. Your ultimate goal is to enable Cloud SOAR to automate and orchestrate many parts of the incident response cycle. The more tasks you can automate with Cloud SOAR, the more time the SOC analysts on your team can devote to other activities like threat hunting.
 
@@ -344,7 +349,7 @@ Let’s say one of the employees at your company accidentally downloaded some ma
 
 Many of these tasks, from identifying malware to restoring the system, can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called “Malware Detected” in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can click “Execute” on the playbook, and all the tasks will be done automatically. We can even use Cloud SOAR to export a report after the incident is closed, and use that report to jumpstart the lessons learned discussion.
 
-#### Exploring Cloud SOAR settings for administrators
+#### What settings can Cloud SOAR administrators configure?
 
 Cloud SOAR administrators have privileged access to the Settings and Automation sections of the Cloud SOAR UI.
 
@@ -387,7 +392,7 @@ See:
 * [Incident labels](/docs/cloud-soar/settings/#incident-labels)
 * [Triage](/docs/cloud-soar/settings/#triage)
 
-#### Exploring Cloud SOAR Automations
+#### What automation features are available to Cloud SOAR administrators?
 
 In addition to settings, Cloud SOAR administrators have privileged access to the Automation section of the platform. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/). 
 
@@ -661,6 +666,48 @@ Let's create a custom automation rule. This rule will pull information from Clou
 1. For **Search performed every**, type **5** then select **Hours**. 
 1. Leave the other fields as their defaults, then click **Save**. 
 1. As a best practice, you can enable and test the new rule, but then disable it, since it can disrupt your environment. Continue testing your rule until their behavior is expected before deciding to enable it.
+
+## FAQ
+
+### What is Cloud SOAR?
+
+Cloud SOAR is Sumo Logic's Security Orchestration, Automation, and Response solution. It helps SOC analysts orchestrate and automate incident response with playbooks, and gives administrators role-based access controls, dashboards, and automation settings to configure it for their organization.
+
+### How is Cloud SOAR different from Cloud SIEM?
+
+Cloud SIEM focuses on the investigation phase of the security pipeline, while Cloud SOAR focuses on the response phase. You can use them together: investigate an insight in Cloud SIEM, then use the Actions button to send the information to Cloud SOAR to orchestrate the response.
+
+### What are playbooks in Cloud SOAR?
+
+Playbooks are automated or partially automated workflows made up of nodes, such as actions, conditions, and notifications, that respond to an incident. Cloud SOAR includes hundreds of prebuilt playbooks in App Central, and you can also build custom playbooks.
+
+### What cloud logging strategy should you use?
+
+Centralize logs from all your cloud, hybrid, and on-premises sources into one platform so you can query and visualize them together. Sumo Logic's security pipeline takes it further: ingested logs feed threat intelligence and Cloud SIEM, and Cloud SOAR then automates your response to the insights that pipeline surfaces.
+
+### How do you secure your cloud infrastructure?
+
+Combine centralized log collection, threat intelligence, and automated response. Sumo Logic's Log Analytics Platform ingests and correlates your cloud infrastructure logs, Cloud SIEM investigates the resulting insights, and Cloud SOAR automates the response with playbooks so your SOC team can contain, eradicate, and recover from incidents faster.
+
+### What should you monitor in your cloud environment?
+
+At minimum, monitor authentication events, network traffic, and infrastructure configuration changes, since this data is what Cloud SIEM's rules and Cloud SOAR's playbooks most commonly act on to generate and respond to insights.
+
+### What's the difference between CloudOps, DevOps, and SRE?
+
+CloudOps focuses on the day-to-day operation and monitoring of cloud infrastructure. DevOps focuses on collaboration between development and operations teams to ship software faster. SRE (Site Reliability Engineering) applies software engineering practices to keep systems reliable at scale. Sumo Logic's platform, including Cloud SIEM and Cloud SOAR, supports all three by centralizing the logs, metrics, and security events each of these teams needs.
+
+### How do you find trusted log analytics solutions for cloud-native infrastructure?
+
+Look for a log analytics platform that ingests data from cloud-native sources, like Kubernetes and container orchestration platforms, correlates it with threat intelligence, and integrates with a response tool. Sumo Logic's Log Analytics Platform, paired with Cloud SIEM and Cloud SOAR, provides that full pipeline for cloud-native environments.
+
+### What cloud native logging solutions are available for developers and DevOps teams?
+
+Sumo Logic offers cloud-native logging through hosted collectors, Kubernetes and container observability integrations, and OpenTelemetry support, giving developers and DevOps teams a single platform to collect, search, and visualize logs without managing their own logging infrastructure.
+
+### What's the difference between SIEM, EDR, XDR, and SOAR?
+
+SIEM (Security Information and Event Management) collects and correlates security data into insights. EDR (Endpoint Detection and Response) and XDR (Extended Detection and Response) focus on detecting threats on endpoints or across multiple security layers. SOAR (Security Orchestration, Automation, and Response) automates the response once a threat is detected. In a modern SOC workflow, Sumo Logic's Cloud SIEM handles the SIEM-style investigation, while Cloud SOAR handles the SOAR automation layer.
 
 ## Additional resources
 

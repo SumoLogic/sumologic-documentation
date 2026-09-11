@@ -3,11 +3,16 @@ id: intro-for-administrators
 title: Introduction to Cloud SIEM for Administrators
 sidebar_label: Introduction for Administrators
 description: Learn basic concepts about Cloud SIEM for administrators.
+keywords:
+  - Cloud SIEM
+  - CSE
+  - SIEM administration
+  - security data pipeline
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides an introduction to Cloud SIEM for administrators.
+As a Cloud SIEM administrator, your job is to configure data ingestion, log and ingest mappings, rules, and automations so your SOC analysts get accurate, actionable insights. This article provides an introduction to Cloud SIEM for administrators.
 
 If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)). To use Cloud SIEM as an administrator, you must be assigned [Cloud SIEM role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem) that allow you to view and manage Cloud SIEM elements as well as perform administration tasks.
 
@@ -15,7 +20,7 @@ While this section provides an introduction to Cloud SIEM for administrators, it
 
 ## Build your SOC
 
-### The Cloud SIEM data pipeline
+### How does the Cloud SIEM data pipeline work?
 
 Cloud SIEM is a cloud-based, enterprise-grade security information and event management (SIEM) system. Cloud SIEM leverages Sumo Logic's core functionality, including data collection, ingestion, storage, and threat intelligence. 
 
@@ -53,7 +58,7 @@ Once you've answered these questions, you can assess what is and is not working 
 * All data must be ingested into Sumo Logic before it can be forwarded to Cloud SIEM. See [Cloud SIEM Ingestion](/docs/cse/ingestion/) to learn more details about data ingestion, setting up collectors, partitioning your data, and designing good metadata. 
 * If you only want to forward some, but not all of your data to Cloud SIEM you can use data tiers and partitions. For more information, see [Partitions](/docs/manage/partitions/).
 
-### Which UI should I use?
+### Which UI should you use?
 
 As a Cloud SIEM admin, you'll use both the Sumo Logic UI and the Cloud SIEM UI. Even if you're primarily focused on Cloud SIEM, you need to be comfortable using both interfaces.
 
@@ -150,7 +155,7 @@ In this section, we'll send a simple JSON log message to the HTTP source we crea
     * searching for the log in Sumo Logic with this query: `_index=sec_record_* metadata_sourceCategory=<source-category>`. Replace `source-category` with the source category you created. 
 * If you still do not see your custom JSON record after these troubleshooting steps, try sending another log message from your terminal window. Make sure the command completes without any errors.
 
-### Logs into records
+### How do logs become records in Cloud SIEM?
 
 <img src={useBaseUrl('img/cse/intro-logs-into-records.png')} alt="Logs into records"  width="500"/>
 
@@ -508,6 +513,28 @@ In this section, you'll create a custom automation using the playbook you create
 1. If errors occur, you can click the **View Playbook** link on the right side to see the Playbook view, along with any execution errors that occurred. For help, see [Troubleshoot playbooks](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/).
 
 You now have a custom automation that can be manually run or attached to an insight upton creation or closing.
+
+## FAQ
+
+### What does a Cloud SIEM administrator do?
+
+A Cloud SIEM administrator configures the data pipeline: deciding what data to ingest, forwarding it to Cloud SIEM, setting up log and ingest mappings, tuning rules and match lists, and configuring automations and role-based access for the SOC team.
+
+### How do you get data into Cloud SIEM?
+
+You enable data forwarding on a collector or source in Sumo Logic (using the `_siemForward = True` field or the **Forward to SIEM** check box), then configure log and ingest mappings so Cloud SIEM can parse the data into records.
+
+### Does Cloud SIEM process historic data?
+
+No. Cloud SIEM only processes new data ingested after you enable data forwarding. Older data already in Sumo Logic will not be forwarded or processed retroactively.
+
+### Do you need to write Cloud SIEM rules from scratch?
+
+No. Sumo Logic maintains hundreds of out-of-the-box rules that are updated frequently. You only need to write a custom rule if you have a specific threat or unique data source that isn't already covered.
+
+### What customizations can a Cloud SIEM administrator make beyond rules?
+
+You can customize the Actions button on insights, create and update match lists and suppression lists, adjust insight generation thresholds or create custom insights, and define custom workflows for insight statuses.
 
 ## Additional resources
 

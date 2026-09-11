@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import Iframe from 'react-iframe';
 
-The MITRE ATT&CK Threat Coverage Explorer shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
+The MITRE ATT&CK Threat Coverage Explorer is a Cloud SIEM page that shows which [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
 
 Coverage data is updated on the page once a day. To determine your coverage, the MITRE ATT&CK Threat Coverage Explorer collects data from rules that have fired in the last 180 days. 
 
@@ -67,9 +67,9 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
    * None (no rules)
    * Not detectable (by a SIEM)
    * Filter not applied
-1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#technique-details) showing your coverage for that technique.
+1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#what-technique-details-does-the-explorer-show) showing your coverage for that technique.
 
-## Benefits
+## What are the benefits of the MITRE ATT&CK Threat Coverage Explorer?
 
 * Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions.
 * Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
@@ -79,7 +79,7 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
 * Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage.
 * Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment.
 
-## Technique details
+## What technique details does the Explorer show?
 
 When you click a square in the matrix, details about coverage for that MITRE technique display in a panel. The description displayed is pulled directly from the MITRE Enterprise matrix. The panel includes an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
 
@@ -207,3 +207,25 @@ To find the Cloud SIEM API documentation for your endpoint, see [Cloud SIEM APIs
 * Glossary: [MITRE ATT&CK - definition & overview](https://www.sumologic.com/glossary/mitre-attack/)
 * Demo: [MITRE ATT&CK Coverage Explorer](https://www.sumologic.com/demo/cloud-siem-mitre-attack-coverage-explorer/)
 * Cloud SIEM Content Catalog: [Vendors](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/README.md)
+
+## FAQ
+
+### What does the MITRE ATT&CK Threat Coverage Explorer show?
+
+It shows which MITRE ATT&CK tactics, techniques, and procedures are covered by rules in your Cloud SIEM instance, based on your actual data sources, filterable by vendor, product, and coverage level.
+
+### What's the difference between Recent Activity and Theoretical Coverage?
+
+Recent Activity shows coverage based on signals your organization actually generated in the last 180 days. Theoretical Coverage shows the coverage you'd have if all enabled rules generated at least one signal, which helps you identify valuable custom rules to write.
+
+### Can you export MITRE ATT&CK coverage data?
+
+Yes. You can export the filtered coverage to a JSON file in the standard MITRE format, which you can combine with exports from other security tools to calculate total coverage across your environment.
+
+### How is MITRE ATT&CK coverage scored?
+
+Each technique gets a score from 0 to 3 based on the number of rules covering it: 0 (None, 10 or fewer rules), 1 (Low, 11–13 rules), 2 (Medium, 14–16 rules), and 3 (High, 17 or more rules).
+
+### Can you use APIs to get MITRE ATT&CK coverage data?
+
+Yes. The `MitreTaggedRules` API returns a list of MITRE ATT&CK tagged rules, and the `MitreAttackCoverageExportJson` API returns a JSON representation of your MITRE ATT&CK coverage.
