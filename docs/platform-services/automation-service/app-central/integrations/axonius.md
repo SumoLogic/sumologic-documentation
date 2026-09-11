@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: Jan 03, 2024***
 
-Axonius is a cybersecurity asset management platform that provides comprehensive visibility and control over Assests in an organization's network.
+Axonius is a cybersecurity asset management platform that provides comprehensive visibility and control over assets in an organization's network.
 
 ## Actions
 
