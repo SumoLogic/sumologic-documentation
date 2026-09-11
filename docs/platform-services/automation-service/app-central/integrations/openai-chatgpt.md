@@ -80,9 +80,11 @@ For information about OpenAI, see [OpenAI documentation](https://platform.openai
 
 ## Change Log
 
-* May 12, 2023 - First upload
-* June 26, 2023 (v1.3) - Changed multiline hints to single line
-* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | June 26, 2023 | Changed multiline hints to single line. |
+| v1.2 | May 12, 2023 | Initial release of the OpenAI ChatGPT integration. |
 
 ## Additional resources
 

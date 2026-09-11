@@ -53,13 +53,12 @@ For information about OneLogin, see [OneLogin documentation](https://developers.
 
 ## Change Log
 
-* March 1, 2021 - First upload
-* June 15, 2023 (v1.2)- Updated the integration with Environmental Variables
-* March 7, 2024 (v1.4)
-    * Added new actions: **List Enrolled Authentication Factors**, **Remove a Factor**, and **Update User**.
-    * Renamed action List Groups
-    * Other minor improvements and fixes
-* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | March 7, 2024 | <ul><li>Added new actions: **List Enrolled Authentication Factors**, **Remove a Factor**, and **Update User**.</li><li>Renamed the **List Groups** action.</li><li>Made other minor improvements and fixes.</li></ul> |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 1, 2021 | Initial release of the OneLogin integration. |
 
 ## Additional resources
 
