@@ -399,8 +399,9 @@ module.exports = {
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`],
     },
       navbar: {
+        title: 'Docs',
         logo: {
-          alt: 'Sumo Logic logo',
+          alt: 'Sumo Logic',
           srcDark: 'img/reuse/sumo-logo.svg',
           src: 'img/reuse/sumo-logo-dark.svg',
         },
