@@ -69,9 +69,11 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Change Log
  
-* March 8, 2024 - First upload
-* July 29, 2025 (v1.1) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | July 29, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
+| v1.0 | March 8, 2024 | Initial release of the AWS Private Certificate Authority integration. |
 
 ## Additional resources
 
-- For AWS Private Certificate Authority, Sumo Logic offers the [AWS Private Certificate Authority app](/docs/integrations/amazon-aws/aws-private-certificate-authority/) to visualize your AWS Private Certificate Authority data.
+For AWS Private Certificate Authority, Sumo Logic offers the [AWS Private Certificate Authority app](/docs/integrations/amazon-aws/aws-private-certificate-authority/) to visualize your AWS Private Certificate Authority data.

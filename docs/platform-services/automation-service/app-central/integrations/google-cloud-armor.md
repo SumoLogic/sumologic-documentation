@@ -114,4 +114,6 @@ For information about Google Cloud Armor, see [Google Cloud Armor documentation]
 
 ## Change Log
 
-* June 11, 2026 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | June 11, 2026 | Initial release of the Google Cloud Armor integration. |

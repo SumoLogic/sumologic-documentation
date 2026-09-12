@@ -50,12 +50,14 @@ For information about Duo, see [Duo documentation](https://duo.com/docs).
 
 ## Change Log
 
-* February 16, 2021 - First upload
-* June 23, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 21, 2023 (v1.3) - Integration refactored
-* September 4, 2023 (v1.4) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v1.5) - Versioning
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | September 19, 2023 | Updated the version number. |
+| v1.4 | September 4, 2023 | Fixed a bug where an error occurred if the timeout was not specified. |
+| v1.3 | July 21, 2023 | Refactored the integration. |
+| v1.1 | June 23, 2023 | Updated the integration with Environmental Variables. |
+| | February 16, 2021 | Initial release of the Duo integration. |
 
 ## Additional resources
 
-- For Duo, Sumo Logic offers the [Duo source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source/) and the [Duo Security app](/docs/integrations/security-threat-detection/duo-security/) to collect and visualize your Duo data.
+For Duo, Sumo Logic offers the [Duo source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source/) and the [Duo Security app](/docs/integrations/security-threat-detection/duo-security/) to collect and visualize your Duo data.

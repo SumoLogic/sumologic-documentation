@@ -124,4 +124,6 @@ For information about Google Cloud Service Mesh, see [Google Cloud Service Mesh 
 
 ## Change Log
 
-* June 25, 2026 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | June 25, 2026 | Initial release of the Google Cloud Service Mesh integration. |

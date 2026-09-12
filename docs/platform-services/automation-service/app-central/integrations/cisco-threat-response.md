@@ -50,6 +50,8 @@ For information about Cisco Threat Response, see [Cisco Threat Response document
 
 ## Change Log
 
-* February 21, 2020 - First upload
-* May 22, 2020 - New actions added
-* July 21, 2023 (v1.2) - Integration refactored
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | July 21, 2023 | Refactored the integration. |
+| | May 22, 2020 | Added new actions. |
+| | February 21, 2020 | Initial release of the Cisco Threat Response integration. |

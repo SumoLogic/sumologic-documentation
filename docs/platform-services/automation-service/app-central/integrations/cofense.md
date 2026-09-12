@@ -39,8 +39,10 @@ For information about Cofense, see the [Cofense website](https://cofense.com/).
 
 ## Change Log
 
-* January 10, 2019 - First upload
-* July 19, 2023 (v1.1) - Updated the integration with Environmental Variables
-* October 6, 2023 (v1.2) - Changed fields visibility
-* October 9, 2023 (v1.3) - Removed unnecessary params
-* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | October 9, 2023 | Removed unnecessary parameters. |
+| v1.2 | October 6, 2023 | Changed fields visibility. |
+| v1.1 | July 19, 2023 | Updated the integration with Environmental Variables. |
+| | January 10, 2019 | Initial release of the Cofense integration. |
