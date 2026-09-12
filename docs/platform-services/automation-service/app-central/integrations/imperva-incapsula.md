@@ -46,11 +46,13 @@ For information about Imperva Cloud Application Security ([formerly Incapsula](h
 
 ## Change Log
 
-* July 29, 2019 - First upload
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 18, 2023 (v1.2) - Code refactoring
-* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | July 18, 2023 | Refactored the code. |
+| v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| | July 29, 2019 | Initial release of the Imperva Incapsula integration. |
 
 ## Additional resources
 
-- For Imperva Incapsula, Sumo Logic offers the [Imperva Incapsula app](/docs/integrations/security-threat-detection/imperva-incapsula/) to visualize your Imperva Incapsula data.
+For Imperva Incapsula, Sumo Logic offers the [Imperva Incapsula app](/docs/integrations/security-threat-detection/imperva-incapsula/) to visualize your Imperva Incapsula data.

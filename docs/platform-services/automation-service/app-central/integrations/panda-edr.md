@@ -61,19 +61,10 @@ For information about Panda EDR, see [Panda EDR documentation](https://www.watch
 
 ## Change Log
 
-* March 1, 2022 - First upload
-* July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
-* November 23, 2023 (v1.2)
-	+ Fixed bugs that prevented these actions from working properly
-		- Stop Device Isolation
-		- Start Action On Specified Device
-		- Scan Device
-		- Isolate Specific Devices
-	+ Extended output mappings
-	+ Refined labels and hints
-	+ Improved error handling
-	+ Code refactoring and optimisation
-	+ Changed Logo
-* November 24, 2023 (v1.3)
-	+ Fixed Token Issue
-* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | November 24, 2023 | Fixed a token issue. |
+| v1.2 | November 23, 2023 | <ul><li>Fixed bugs that prevented the following actions from working properly: **Stop Device Isolation**, **Start Action On Specified Device**, **Scan Device**, and **Isolate Specific Devices**.</li><li>Extended output mappings.</li><li>Refined labels and hints.</li><li>Improved error handling.</li><li>Refactored and optimized the code.</li><li>Updated the logo.</li></ul> |
+| v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
+| | March 1, 2022 | Initial release of the Panda EDR integration. |

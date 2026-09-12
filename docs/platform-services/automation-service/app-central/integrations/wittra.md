@@ -47,7 +47,9 @@ For information about Wittra, see [Wittra documentation](https://docs.wittra.io/
 
 ## Change Log
 
-* February 8, 2023 - First upload
-* February 13, 2023 - New Logo
-* July 18, 2023 (v1.1) - Removed leading/trailing spaces
-* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 18, 2023 | Removed leading/trailing spaces. |
+| | February 13, 2023 | Added a new logo. |
+| | February 8, 2023 | Initial release of the Wittra integration. |

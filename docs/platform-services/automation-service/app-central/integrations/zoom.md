@@ -85,22 +85,13 @@ Messaging
 
 ## Change Log
 
-* May 15, 2020 - First upload
-* September 30, 2022
-	+ Modified authentication method to OAuth 2.0
-	+ Modified Actions:
-		- Delete Meeting
-		- Get Meeting Invitation
-		- Get User
-		- Get User Settings
-		- List Meetings
-		- List Users
-		- Update Meeting
-		- Update User
-		- Update User Settings
-* June 22, 2023 (v1.1) - Updated the integration with Environmental Variables
-* April 30, 2026 (v2.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | June 22, 2023 | Updated the integration with Environmental Variables. |
+| | September 30, 2022 | <ul><li>Modified the authentication method to OAuth 2.0.</li><li>Modified actions: **Delete Meeting**, **Get Meeting Invitation**, **Get User**, **Get User Settings**, **List Meetings**, **List Users**, **Update Meeting**, **Update User**, and **Update User Settings**.</li></ul> |
+| | May 15, 2020 | Initial release of the Zoom integration. |
 
 ## Additional resources
 
-- For Zoom, Sumo Logic offers the [Zoom app](/docs/integrations/saas-cloud/zoom/) to visualize your Zoom data.
+For Zoom, Sumo Logic offers the [Zoom app](/docs/integrations/saas-cloud/zoom/) to visualize your Zoom data.

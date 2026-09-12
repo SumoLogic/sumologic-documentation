@@ -70,8 +70,10 @@ For information about VMware vSphere, see [VMware vSphere documentation](https:/
 
 ## Change Log
 
-* August 30, 2019 - First upload
-* September 6, 2019 - Added link to VMWare vSphere external library
-* August 17, 2023 (v1.2) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.3) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v1.4) - Versioning
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | September 19, 2023 | Updated the integration's versioning. |
+| v1.3 | September 4, 2023 | Fixed a bug where an error would occur if the timeout was not specified. |
+| v1.2 | August 17, 2023 | Updated the integration with Environmental Variables. |
+| | September 6, 2019 | Added a link to the VMWare vSphere external library. |
+| | August 30, 2019 | Initial release of the VMWare vSphere integration. |

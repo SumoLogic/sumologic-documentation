@@ -52,10 +52,12 @@ For information about ArcSight ESM, see [ArcSight ESM documentation](https://www
 
 ## Change Log
 
-* February 7, 2019 - First upload
-* July 16, 2019 - New actions added
-* July 1, 2021 - New action added
-* August 17, 2021 - New actions added
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
-* April 13, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | March 4, 2024 | Updated the code for compatibility with Python 3.12. |
+| v1.1 | June 26, 2023 | Updated the integration with environmental variables. |
+| | August 17, 2021 | Added new actions. |
+| | July 1, 2021 | Added a new action. |
+| | July 16, 2019 | Added new actions. |
+| | February 7, 2019 | Initial release of the ArcSight ESM integration. |

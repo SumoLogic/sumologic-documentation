@@ -88,6 +88,7 @@ module.exports = {
       link: {type: 'doc', id: 'send-data/index'},
       items: [
         'send-data/choose-collector-source',
+        'send-data/ic-vs-ot-collector-performance-benchmarks',
         'send-data/setup-wizard',
         {
           type: 'category',
@@ -3259,6 +3260,7 @@ integrations: [
           ],
         },
         'api/connections-management',
+        'api/content-config-management',
         'api/content-management',
         'api/content-permissions',
         'api/dashboard',
