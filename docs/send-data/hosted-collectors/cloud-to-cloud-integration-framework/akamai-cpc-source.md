@@ -2,7 +2,7 @@
 id: akamai-cpc-source
 title: Akamai CPC Source
 sidebar_label: Akamai CPC
-tags:
+keywords:
   - cloud-to-cloud
   - akamai-cpc
 description: Learn how to fetch CPC-Configs, CPC-Alerts, and CPC-Alert Details from the Akamai platform and send it to Sumo Logic.

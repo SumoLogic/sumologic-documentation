@@ -2,7 +2,7 @@
 id: mandiant-threat-intel-source
 title: Mandiant Threat Intel Source
 sidebar_label: Mandiant Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - mandiant-threat-intel
 description: Learn how to collect indicators list from Mandiant Threat Intel platform.

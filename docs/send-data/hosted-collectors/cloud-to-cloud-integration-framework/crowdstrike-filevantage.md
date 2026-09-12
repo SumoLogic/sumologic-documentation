@@ -2,7 +2,7 @@
 id: crowdstrike-filevantage-source
 title: CrowdStrike FileVantage Source
 sidebar_label: CrowdStrike FileVantage
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-filevantage
 description: Learn how to collect file integrity monitoring logs from the CrowdStrike FileVantage platform.

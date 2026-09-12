@@ -5,8 +5,6 @@
 User-agent: *
 Disallow: /docs/reuse/*
 Disallow: /docs/preview/*
-Disallow: /tags/*
-Disallow: /*?tags=
 Disallow: /ja/*
 Disallow: /files/*
 Disallow: /cid-redirects.json

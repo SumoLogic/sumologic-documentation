@@ -2,7 +2,7 @@
 id: varonis-source
 title: Varonis Alerts Source
 sidebar_label: Varonis Alerts
-tags:
+keywords:
   - cloud-to-cloud
   - varonis-alerts
 description: Learn how to collect Varonis Alerts with their detailed information and send them to Sumo Logic.

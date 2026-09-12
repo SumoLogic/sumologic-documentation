@@ -2,7 +2,7 @@
 id: openai-source
 title: OpenAI Source
 sidebar_label: OpenAI
-tags:
+keywords:
   - cloud-to-cloud
   - openai-source
 description: Learn how to collect organization usage costs and audit logs from the OpenAI Administration API.

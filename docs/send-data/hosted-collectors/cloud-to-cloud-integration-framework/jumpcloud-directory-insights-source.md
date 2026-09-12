@@ -2,7 +2,7 @@
 id: jumpcloud-directory-insights-source
 title: JumpCloud Directory Insights Source
 sidebar_label: JumpCloud Directory Insights
-tags:
+keywords:
   - cloud-to-cloud
   - jumpcloud-directory-insights
 description: Learn how to collect events data from the JumpCloud Directory Insight.

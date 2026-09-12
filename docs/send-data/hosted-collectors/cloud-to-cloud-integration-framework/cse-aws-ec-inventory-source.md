@@ -2,7 +2,7 @@
 id: cse-aws-ec-inventory-source
 title: Cloud SIEM AWS EC2 Inventory Source
 sidebar_label: Cloud SIEM AWS EC2 Inventory
-tags:
+keywords:
   - cloud-to-cloud
   - cse-aws-ec-inventory
 description: The Cloud SIEM AWS EC2 Inventory Source provides a secure endpoint to receive event data from the EC2 describe instances API.

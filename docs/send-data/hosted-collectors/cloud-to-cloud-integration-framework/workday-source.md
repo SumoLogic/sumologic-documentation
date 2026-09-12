@@ -2,7 +2,7 @@
 id: workday-source
 title: Workday Source
 sidebar_label: Workday
-tags:
+keywords:
   - cloud-to-cloud
   - workday
 description: The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.

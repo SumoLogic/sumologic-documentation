@@ -2,7 +2,7 @@
 id: zero-networks-segment-source
 title: Zero Networks Segment Source
 sidebar_label: Zero Networks Segment
-tags:
+keywords:
   - cloud-to-cloud
   - zero-networks-segment
 description: Learn how to collect audit logs and network activity data from Zero Networks Segment.

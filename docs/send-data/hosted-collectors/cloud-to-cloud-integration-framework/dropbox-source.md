@@ -2,7 +2,7 @@
 id: dropbox-source
 title: Dropbox Source
 sidebar_label: Dropbox
-tags:
+keywords:
   - cloud-to-cloud
   - dropbox
 description: The Dropbox Source provides a secure endpoint to receive team events from the Get Events API.
