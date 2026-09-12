@@ -143,7 +143,7 @@ You can use Terraform data sources to retrieve Sumo Logic data from your Terrafo
 To use Terraform with Sumo Logic, you need the following:
 * A Sumo Logic [account](/docs/get-started/sign-up/)
 * A Sumo Logic [access key](/docs/manage/security/access-keys/)
-* [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) 
+* [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
 ## Using Sumo Logic's AWS Terraform template
 
@@ -162,6 +162,9 @@ Perform the following steps to use the template:
      1. [Install Python](https://www.python.org/downloads/) (version 3.11 or later).
      1. [Install the latest version of the "jq" JSON parser](https://github.com/jqlang/jq/wiki/Installation), necessary to run the `.sh` batch files in the template.
      1. [Install the Sumo Logic Python SDK](https://pypi.org/project/sumologic-sdk/).
+
+<!-- awaiting SME guidance --> 
+
      1. [Install the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 1. Next, navigate to the `sumologic-solution-templates` folder where you cloned the repository, and go to the `aws-observability-terraform` subdirectory. Set this directory to be the Terraform working directory by executing the following command: `terraform init`
 1. Using the solution template starts with [the main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.auto.tfvars) which contains variable settings for your Sumo Logic organization, access ID and key, and other configuration information that will be referenced by the other template files. Open this file and fill in each field with the requested information.<br/><img src={useBaseUrl('img/api/tfvars-file.png')} alt="tfvars file" style={{border: '1px solid gray'}} width="800" /><br/>Check the [Sumo Logic API endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) if you need help finding the proper deployment value to use.
@@ -181,7 +184,7 @@ Perform the following steps to use the template:
      module "<ALIAS>" {
      source = "./source-module"
      providers = { aws = aws.<ALIAS> }
-     
+
      aws_account_alias = <var.aws_account_alias OR "account alias">
      sumologic_organization_id = var.sumologic_organization_id
      access_id    = var.sumologic_access_id
@@ -201,7 +204,7 @@ Perform the following steps to use the template:
 
 ## Understanding the Terraform format
 
-Terraform scripts are text files, typically with a `.tf` extension, that use names and values in a hierarchal format, defined by curly braces `{ }`. Terraform scripts can be edited with any text editor, and although they are intended to be run automatically by a computer system, the script elements are generally human-readable and not difficult to parse and understand. 
+Terraform scripts are text files, typically with a `.tf` extension, that use names and values in a hierarchal format, defined by curly braces `{ }`. Terraform scripts can be edited with any text editor, and although they are intended to be run automatically by a computer system, the script elements are generally human-readable and not difficult to parse and understand.
 
 Let's look at some examples:
 * [Terraform providers](#terraform-providers)
@@ -325,7 +328,7 @@ data "httpclient_request" "enable_audit_policy" {
  provider = http-client
  username = "${var.sumologic_access_id}"
  password = "${var.sumologic_access_key}"
- url = "${var.sumologic_deployment}v1/policies/audit" 
+ url = "${var.sumologic_deployment}v1/policies/audit"
  request_method = "PUT"
  request_headers = {
  Content-Type: "application/json",
@@ -339,7 +342,7 @@ data "httpclient_request" "enable_searchaudit_policy" {
  provider = http-client
  username = "${var.sumologic_access_id}"
  password = "${var.sumologic_access_key}"
- url = "${var.sumologic_deployment}v1/policies/searchAudit" 
+ url = "${var.sumologic_deployment}v1/policies/searchAudit"
  request_method = "PUT"
  request_headers = {
  Content-Type: "application/json",
@@ -356,7 +359,7 @@ After running Terraform, there is another file type you should be aware of. A *s
 
 The state file is used by Terraform to track the current infrastructure state in order to properly process updates or deletes. The state file should be kept safe and secure (since it may contain sensitive data such as access keys and secrets) and is not meant to be edited directly, even though it is a simple human-readable JSON text file. An example state file might look like the screenshot below:
 
-<img src={useBaseUrl('img/api/terraform-state-file.png')} alt="Terraform state file" style={{border: '1px solid gray'}} width="600" /> 
+<img src={useBaseUrl('img/api/terraform-state-file.png')} alt="Terraform state file" style={{border: '1px solid gray'}} width="600" />
 
 ## Additional resources
 
