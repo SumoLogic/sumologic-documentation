@@ -3,84 +3,140 @@
   --hero-blue-light: #0045be;
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: #e3e3e3;
   background:
-    linear-gradient(90deg, rgba(1, 4, 47, 0.58), rgba(0, 0, 56, 0.42)),
-    url('/img/homepage/hero-data-wave.webp') center / cover no-repeat,
+    linear-gradient(90deg, rgba(1, 4, 47, 0.92) 0%, rgba(1, 4, 47, 0.78) 48%, rgba(0, 0, 56, 0.34) 100%),
+    url('/img/reuse/landing-hero.jpg') center / cover no-repeat,
     linear-gradient(135deg, #05054f 0%, var(--hero-blue) 46%, var(--hero-blue-light) 100%);
-}
-
-.hero::before,
-.hero::after {
-  position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  content: '';
-  pointer-events: none;
-}
-
-.hero::before {
-  top: -28rem;
-  right: -14rem;
-  width: 52rem;
-  height: 52rem;
-}
-
-.hero::after {
-  bottom: -35rem;
-  left: -16rem;
-  width: 52rem;
-  height: 52rem;
 }
 
 .heroContainer {
   position: relative;
   z-index: 1;
-  padding-top: 1.75rem;
-  padding-bottom: 2.5rem;
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
 }
 
 .heroContent {
-  max-width: 1180px;
-  margin: 3.5rem auto 4rem;
+  max-width: 760px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.eyebrow {
-  margin: 0 0 1.25rem !important;
-  color: #aeefff;
+.heroTitle {
+  margin: 0 0 0.85rem !important;
+  color: #e3e3e3;
   font-family: 'Lab Grotesque', sans-serif !important;
-  font-size: 0.78rem !important;
+  font-size: clamp(2.25rem, 4vw, 3.25rem) !important;
   font-weight: 700 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase;
+  letter-spacing: normal !important;
+  line-height: 1.1 !important;
 }
 
-.heroTitle {
-  max-width: 1100px;
-  margin: 0 0 1.5rem !important;
-  color: #fff;
+.heroTagline {
+  margin: 0 0 0.5rem !important;
+  color: #e3e3e3;
   font-family: 'Lab Grotesque', sans-serif !important;
-  font-size: clamp(3rem, 5vw, 4.75rem) !important;
+  font-size: clamp(1.25rem, 2vw, 1.6rem) !important;
   font-weight: 400 !important;
-  letter-spacing: -0.045em !important;
-  line-height: 1.04 !important;
+  line-height: 1.3 !important;
 }
 
 .heroDescription {
-  max-width: 980px;
-  margin: 0 0 2rem !important;
-  color: rgba(255, 255, 255, 0.82);
+  max-width: 720px;
+  margin: 0 !important;
+  color: #e3e3e3;
   font-family: 'Lab Grotesque', sans-serif !important;
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem) !important;
-  line-height: 1.55 !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
 }
 
-@media (min-width: 1200px) {
-  .heroTitle,
-  .heroDescription {
-    white-space: nowrap;
-  }
+.heroSearch {
+  width: min(100%, 760px);
+  min-width: 0;
+  margin-top: 1.5rem;
+}
+
+.heroSearch :global(.DocSearch) {
+  width: 100%;
+  min-width: 0;
+}
+
+.heroSearch :global(.DocSearch-Button) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: 58px;
+  margin: 0;
+  padding: 0 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 40, 0.2);
+}
+
+.heroSearch :global(.DocSearch-Button-Container) {
+  flex: 1;
+}
+
+.heroSearch :global(.DocSearch-Button-Placeholder) {
+  color: #3d4556 !important;
+  font-family: 'Lab Grotesque', sans-serif;
+  font-size: 1.05rem;
+}
+
+.heroSearch :global(.DocSearch-Search-Icon) {
+  color: #2849e2 !important;
+}
+
+.heroSearch :global(.DocSearch-Button-Keys) {
+  display: none;
+}
+
+:global(html[data-theme='dark']) .heroSearch :global(.DocSearch-Button-Placeholder) {
+  color: #3d4556 !important;
+}
+
+:global(html[data-theme='dark']) .heroSearch :global(.DocSearch-Search-Icon) {
+  color: #2849e2 !important;
+}
+
+.heroSearch :global(.DocSearch-Button:hover) {
+  border-color: #8fa4ff;
+  box-shadow: 0 10px 28px rgba(0, 0, 40, 0.28);
+}
+
+.heroSearch :global(.DocSearch-Button:focus-visible) {
+  outline: 3px solid #06bcee;
+  outline-offset: 3px;
+}
+
+.taskSection {
+  padding: 2.5rem 0 3rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-surface-color);
+}
+
+.taskIntro {
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.taskTitle {
+  margin: 0 0 0.35rem !important;
+  color: var(--ifm-heading-color);
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: 1.65rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+.taskDescription {
+  margin: 0 !important;
+  color: var(--ifm-color-emphasis-700);
+  font-family: 'Lab Grotesque', sans-serif !important;
+  font-size: 1rem !important;
 }
 
 .heroActions {
@@ -97,7 +153,7 @@
   font-weight: 500 !important;
   letter-spacing: 0.01em !important;
   text-transform: none !important;
-  color: #fff !important;
+  color: #e3e3e3 !important;
   background: #0466ff !important;
   box-shadow: 0 12px 30px rgba(0, 42, 153, 0.34) !important;
 }
@@ -120,23 +176,25 @@
 }
 
 .quickLink {
+  position: relative;
   display: flex;
   min-height: 96px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1.2rem 1.25rem;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--ifm-font-color-base);
+  border: 1px solid #8f959d;
   border-radius: 12px;
-  background: rgba(4, 6, 40, 0.76);
-  backdrop-filter: blur(12px);
-  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  background: var(--ifm-background-color);
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  text-align: center;
 }
 
 .quickLink:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.42);
-  background: rgba(10, 14, 65, 0.88);
+  color: var(--ifm-link-color);
+  border-color: var(--ifm-link-color);
+  box-shadow: 0 9px 24px rgba(15, 23, 42, 0.11);
   text-decoration: none;
   transform: translateY(-3px);
 }
@@ -153,14 +211,15 @@
 }
 
 .quickLink small {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-color-emphasis-700);
   font-size: 0.8rem;
   line-height: 1.35;
   white-space: nowrap;
 }
 
 .arrow {
-  margin-left: 0.75rem;
+  position: absolute;
+  right: 1.25rem;
   font-size: 1.35rem;
   transition: transform 160ms ease;
 }
@@ -169,11 +228,25 @@
   transform: translateX(3px);
 }
 
+.quickLink:focus-visible {
+  outline: 3px solid #2849e2;
+  outline-offset: 3px;
+}
+
+:global(html[data-theme='dark']) .quickLink {
+  border-color: #606770;
+}
+
+:global(html[data-theme='dark']) .quickLink:focus-visible {
+  outline-color: #8fdff5;
+}
+
 .dojoCallout {
   display: grid;
   width: min(100%, 1120px);
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr;
   align-items: center;
+  justify-items: center;
   gap: 1.5rem;
   margin-top: 3.5rem;
   padding: 2rem 2.25rem;
@@ -183,7 +256,7 @@
     radial-gradient(circle at 12% 100%, rgba(38, 204, 220, 0.16), transparent 17rem),
     linear-gradient(110deg, #f7f8ff, #fff 62%);
   box-shadow: 0 16px 44px rgba(0, 0, 80, 0.08);
-  text-align: left;
+  text-align: center;
 }
 
 .dojoIcon {
@@ -213,7 +286,7 @@
 
 .dojoDescription {
   max-width: 640px;
-  margin: 0 !important;
+  margin: 0 auto !important;
   color: #4d4d66;
   font-family: 'Lab Grotesque', sans-serif !important;
   line-height: 1.5 !important;
@@ -223,6 +296,7 @@
   min-height: 46px;
   padding: 0.6rem 1.35rem !important;
   border-radius: 8px !important;
+  color: #e3e3e3 !important;
   background: #000099 !important;
   font-family: 'Lab Grotesque', sans-serif !important;
   font-weight: 700 !important;
@@ -234,17 +308,68 @@
   background: #0045be !important;
 }
 
+.dojoAction:focus-visible {
+  outline: 3px solid #2849e2;
+  outline-offset: 3px;
+}
+
+:global(html[data-theme='dark']) .dojoCallout {
+  border-color: rgba(143, 164, 255, 0.42);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(38, 204, 220, 0.14), transparent 18rem),
+    linear-gradient(135deg, #101628, #15153f 68%);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.28);
+}
+
+:global(html[data-theme='dark']) .dojoEyebrow {
+  color: #8fdff5;
+}
+
+:global(html[data-theme='dark']) .dojoTitle {
+  color: #e3e3e3;
+}
+
+:global(html[data-theme='dark']) .dojoDescription {
+  color: #c9cbd4;
+}
+
+:global(html[data-theme='dark']) .dojoAction:focus-visible {
+  outline-color: #8fdff5;
+}
+
 @media (max-width: 599px) {
   .heroContainer {
-    padding: 1.25rem 1.25rem 2rem;
+    padding: 2rem 1.25rem;
   }
 
   .heroContent {
-    margin: 2.75rem auto 3rem;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .heroTitle {
-    font-size: clamp(2.75rem, 14vw, 4rem) !important;
+    max-width: 22rem;
+    font-size: clamp(2rem, 9vw, 2.6rem) !important;
+    line-height: 1.08 !important;
+  }
+
+  .heroTagline {
+    font-size: 1.2rem !important;
+  }
+
+  .heroDescription {
+    max-width: 22rem;
+    font-size: 0.95rem !important;
+  }
+
+  .heroSearch {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .heroSearch :global(.DocSearch-Button) {
+    height: 54px;
+    padding: 0 1rem;
   }
 
   .heroActions,
@@ -254,6 +379,10 @@
 
   .quickLink {
     min-height: 82px;
+  }
+
+  .quickLink small {
+    white-space: normal;
   }
 
   .dojoCallout {
@@ -270,17 +399,6 @@
 
   .dojoAction {
     width: 100%;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 899px) {
-  .dojoCallout {
-    grid-template-columns: auto 1fr;
-  }
-
-  .dojoAction {
-    grid-column: 2;
-    justify-self: start;
   }
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
+import SearchBar from '@theme/SearchBar';
 import Link from '@docusaurus/Link';
 import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
@@ -22,55 +23,58 @@ export const Home = () => {
         <Box component='header' className={styles.hero}>
           <Container maxWidth='lg' className={styles.heroContainer}>
             <Stack alignItems='center' className={styles.heroContent} spacing={0}>
-              <Typography component='p' className={styles.eyebrow}>
-                Documentation for builders, operators, and defenders
-              </Typography>
               <Typography component='h1' className={styles.heroTitle}>
+                Sumo Logic Documentation
+              </Typography>
+              <Typography component='p' className={styles.heroTagline}>
                 Turn your data into action.
               </Typography>
               <Typography component='p' className={styles.heroDescription}>
-                Find clear guidance for AI-powered log analytics, observability, and security with Sumo Logic.
+                Find clear guidance for AI-powered log analytics, observability, and security with Sumo Logic. Search setup instructions, how-to guides, and API references.
               </Typography>
-              <Stack
-                className={styles.heroActions}
-                direction={{ sm: 'row', xs: 'column' }}
-                spacing={0}
-              >
-                <Button
-                  className={styles.primaryAction}
-                  component={Link}
-                  to='/docs/get-started/quickstart'
-                  variant='contained'
-                >
-                  Get started with Sumo Logic
-                </Button>
-              </Stack>
+              <Box className={styles.heroSearch}>
+                <SearchBar />
+              </Box>
+            </Stack>
+          </Container>
+        </Box>
+
+        {/* Task-based entry points */}
+        <Box component='section' className={styles.taskSection}>
+          <Container maxWidth='lg'>
+            <Stack
+              alignItems='center'
+              className={styles.taskIntro}
+            >
+              <Box>
+                <Typography component='h2' className={styles.taskTitle}>
+                  New to Sumo?
+                </Typography>
+                <Typography component='p' className={styles.taskDescription}>
+                  Follow the guided quickstart.
+                </Typography>
+              </Box>
             </Stack>
 
             <Grid container className={styles.quickLinks} spacing={2}>
               {[
                 {
-                  label: 'Collect',
-                  description: 'Connect your data sources',
-                  to: '/docs/send-data',
+                  label: '1. Set up collector',
+                  description: 'Connect your data sources to Sumo Logic',
+                  to: '/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
                 },
                 {
-                  label: 'Analyze',
-                  description: 'Search and investigate logs',
-                  to: '/docs/search',
+                  label: '2. Explore your data insights',
+                  description: 'Search and analyze your data',
+                  to: '/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
                 },
                 {
-                  label: 'Monitor',
-                  description: 'Observe apps and infrastructure',
-                  to: '/docs/observability',
-                },
-                {
-                  label: 'Secure',
-                  description: 'Detect and respond to threats',
-                  to: '/docs/security',
+                  label: '3. Monitor and secure your environment',
+                  description: 'Use apps, dashboards, and security tools',
+                  to: '/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
                 },
               ].map(({ description, label, to }) => (
-                <Grid item key={label} md={3} sm={6} xs={12}>
+                <Grid item key={label} md={4} xs={12}>
                   <Link className={styles.quickLink} to={to}>
                     <span>
                       <strong>{label}</strong>
@@ -173,7 +177,7 @@ export const Home = () => {
 
             <Box className={styles.dojoCallout}>
               <Box
-                alt='Mobot, the Dojo AI log assistant'
+                alt='Mobot, the conversational interface for Dojo AI'
                 className={styles.dojoIcon}
                 component='img'
                 src={MobotIcon}
@@ -183,10 +187,10 @@ export const Home = () => {
                   Meet Dojo AI
                 </Typography>
                 <Typography component='h2' className={styles.dojoTitle}>
-                  Ask questions. Investigate faster.
+                  Ask questions. Get to evidence faster.
                 </Typography>
                 <Typography component='p' className={styles.dojoDescription}>
-                  Use Mobot to turn plain-language questions into accurate log queries and actionable insights.
+                  Use Mobot to analyze logs in plain language, investigate security incidents, and surface clear, actionable findings.
                 </Typography>
               </Box>
               <Button

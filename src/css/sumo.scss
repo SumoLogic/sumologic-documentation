@@ -823,6 +823,7 @@ html[data-theme='light'] .table-of-contents__left-border {
 .navbar__logo {
   align-items: center;
   display: flex;
+  margin-right: 0;
 }
 
 .navbar__logo img {
@@ -831,8 +832,8 @@ html[data-theme='light'] .table-of-contents__left-border {
 }
 
 .navbar__title {
-  margin-left: 0.65rem;
-  padding-left: 0.65rem;
+  margin-left: 0.25rem;
+  padding-left: 0.25rem;
   border-left: 1px solid currentColor;
   font-family: "Lab Grotesque", sans-serif;
   font-size: 1.05rem;
