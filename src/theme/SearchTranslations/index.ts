@@ -4,14 +4,14 @@ export default {
   ...translations,
   button: {
     ...translations.button,
-    buttonText: 'Search Docs or Ask AI',
-    buttonAriaLabel: 'Search Docs or Ask AI',
+    buttonText: 'Search or Ask AI',
+    buttonAriaLabel: 'Search docs or ask AI a question',
   },
   modal: {
     ...translations.modal,
     searchBox: {
       ...translations.modal.searchBox,
-      placeholderText: 'Search Docs or Ask AI',
+      placeholderText: 'Search docs or ask AI a question',
     },
   },
 };
