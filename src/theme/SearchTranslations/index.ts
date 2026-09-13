@@ -4,7 +4,7 @@ export default {
   ...translations,
   button: {
     ...translations.button,
-    buttonText: 'Search or Ask AI',
+    buttonText: 'Search Docs or Ask AI',
     buttonAriaLabel: 'Search docs or ask AI a question',
   },
   modal: {

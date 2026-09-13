@@ -118,23 +118,43 @@ export default function AskAiSidepanel({
     }
   }, []);
 
-  useEffect(() => {
-    if (!isOpen) return;
+  const addShortcutTipWhenReady = React.useCallback(() => {
+    let attempts = 0;
+    let timer: ReturnType<typeof setTimeout> | undefined;
 
-    const tipText = `Tip: Start a new chat with ${shortcutHint}`;
-    const checkInterval = setInterval(() => {
+    const addShortcutTip = () => {
       const intro = document.querySelector(
         '.DocSearch-Sidepanel-NewConversationScreen .DocSearch-Sidepanel-Screen--introduction'
       ) as HTMLElement | null;
 
       if (intro) {
-        intro.setAttribute('data-shortcut-tip', tipText);
-        clearInterval(checkInterval);
+        intro.setAttribute(
+          'data-shortcut-tip',
+          `Tip: Toggle Ask AI with ${shortcutHint}`
+        );
+        return;
       }
-    }, 100);
 
-    return () => clearInterval(checkInterval);
-  }, [isOpen, shortcutHint]);
+      attempts += 1;
+      if (attempts < 12) {
+        timer = window.setTimeout(addShortcutTip, 50);
+      }
+    };
+
+    addShortcutTip();
+
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [shortcutHint]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    return addShortcutTipWhenReady();
+  }, [addShortcutTipWhenReady, isOpen]);
 
   // Track resize so we can suppress Algolia's resize-triggered onClose
   useEffect(() => {
@@ -172,14 +192,20 @@ export default function AskAiSidepanel({
     const root = document.documentElement;
     const body = document.body;
 
+    // The navbar's desktop layout (logo, nav links, search box) needs at
+    // least ~1080px of its own room to render without its items
+    // overlapping. Below that, don't shrink the navbar (or main content) to
+    // make space for the panel — let the panel overlay on top instead
+    // (it already renders above the navbar via z-index).
+    const NAV_MIN_SAFE_WIDTH = 1080;
+
     const syncLayoutShift = () => {
-      const shouldShiftLayout = isOpen && window.innerWidth > 996;
+      const offsetPx = isExpanded ? 540 : 400;
+      const shouldShiftLayout =
+        isOpen && window.innerWidth - offsetPx >= NAV_MIN_SAFE_WIDTH;
 
       if (shouldShiftLayout) {
-        root.style.setProperty(
-          '--ask-ai-layout-offset',
-          isExpanded ? '540px' : '400px'
-        );
+        root.style.setProperty('--ask-ai-layout-offset', `${offsetPx}px`);
         body.classList.add('ask-ai-layout-shifted');
       } else {
         body.classList.remove('ask-ai-layout-shifted');
@@ -450,8 +476,9 @@ export default function AskAiSidepanel({
 
   const handleNewConversation = React.useCallback(() => {
     triggerHeaderAction('Start a new conversation');
+    window.setTimeout(addShortcutTipWhenReady, 0);
     focusPromptTextarea();
-  }, [focusPromptTextarea, triggerHeaderAction]);
+  }, [addShortcutTipWhenReady, focusPromptTextarea, triggerHeaderAction]);
 
   const handleConversationHistory = React.useCallback(() => {
     const sidepanel = document.querySelector('.DocSearch-Sidepanel');
@@ -467,48 +494,6 @@ export default function AskAiSidepanel({
 
     triggerHeaderAction('Conversation history');
   }, [triggerHeaderAction]);
-
-  useEffect(() => {
-    const isEditableTarget = (target: EventTarget | null) => {
-      const element = target as HTMLElement | null;
-      if (!element) return false;
-
-      const tagName = element.tagName;
-      return (
-        element.isContentEditable ||
-        tagName === 'INPUT' ||
-        tagName === 'TEXTAREA' ||
-        tagName === 'SELECT'
-      );
-    };
-
-    const handleShortcut = (event: KeyboardEvent) => {
-      if (
-        event.key.toLowerCase() !== 'i' ||
-        (!event.metaKey && !event.ctrlKey) ||
-        isEditableTarget(event.target)
-      ) {
-        return;
-      }
-
-      event.preventDefault();
-
-      if (isOpen) {
-        handleNewConversation();
-        return;
-      }
-
-      onOpen?.();
-      window.setTimeout(() => {
-        handleNewConversation();
-      }, 50);
-    };
-
-    document.addEventListener('keydown', handleShortcut);
-    return () => {
-      document.removeEventListener('keydown', handleShortcut);
-    };
-  }, [handleNewConversation, isOpen, onOpen]);
 
   const copyTextWithTextarea = React.useCallback((text: string) => {
     const textarea = document.createElement('textarea');
@@ -886,7 +871,7 @@ export default function AskAiSidepanel({
           <div className="ask-ai-header-shortcuts">
             <button
               type="button"
-              className="ask-ai-shortcut-button"
+              className="ask-ai-shortcut-button ask-ai-new-chat-shortcut"
               aria-label="Start a new conversation"
               title="Start a new conversation"
               onClick={handleNewConversation}
@@ -906,7 +891,7 @@ export default function AskAiSidepanel({
                   strokeWidth="2"
                 />
               </svg>
-              <span>New</span>
+              <span>New chat</span>
             </button>
             <button
               type="button"
