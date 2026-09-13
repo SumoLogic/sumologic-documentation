@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-enterprise-edr.png')} alt="VMware Carbon Black Cloud Endpoint Standard icon" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-enterprise-edr.png')} alt="VMware Carbon Black Cloud Enterprise EDR icon" width="70"/>
 
 ***Version: 2.1  
 Updated: Oct 05, 2023***

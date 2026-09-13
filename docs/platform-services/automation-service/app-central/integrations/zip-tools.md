@@ -5,7 +5,7 @@ tags: [cloud soar integrations]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zip-tools.png')} alt="axonius" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zip-tools.png')} alt="ZIP Tools icon" width="70"/>
 
 ***Version: 1.2  
 Updated: Nov 09, 2023***
