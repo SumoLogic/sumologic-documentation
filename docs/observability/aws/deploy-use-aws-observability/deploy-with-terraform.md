@@ -82,6 +82,9 @@ Before you run the Terraform script, perform the following actions on a server m
     ```bash
     jq --version
     ```
+
+<!-- awaiting SME guidance -->
+    
 1. Install Sumo Logic Python SDK using the following command. Click [here](https://pypi.org/project/sumologic-sdk/) to learn more.
     ```bash
     pip install sumologic-sdk
@@ -697,7 +700,7 @@ collect_cloudwatch_metrics = "Kinesis Firehose Metrics Source"
 
 Provide details for the Sumo Logic CloudWatch Metrics source. If not provided, then defaults will be used.
 
-* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source. You can provide both AWS and custom namespaces. 
+* `limit_to_namespaces`. Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics Source. You can provide both AWS and custom namespaces.
 
 Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) and [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for details on which namespaces they support.
 
@@ -724,7 +727,7 @@ Supported namespaces are based on the type of CloudWatch Metrics Source you have
    "AWS/NetworkELB",
    "AWS/SQS",
    "AWS/SNS"
- ], 
+ ],
  "tag_filters": [],
  "source_category": "aws/observability/cloudwatch/metrics",
  "source_name": "CloudWatch Metrics (Region)"
@@ -748,7 +751,7 @@ cloudwatch_metrics_source_details = {
    "AWS/DynamoDB",
    "AWS/Lambda",
    "CWAgent"
-  ], 
+  ],
  "tag_filters": [{
       "type":"TagFilters",
       "namespace" : "AWS/DynamoDB",
@@ -1293,7 +1296,7 @@ auto_enable_logs_subscription="New"
 ### auto_enable_logs_subscription_options
 
 * `filter`. Enter regex for matching logGroups for AWS Lambda only. The regex will check the name. See [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters).
-* `tags_filter`. Enter comma separated key value pairs for filtering logGroups using tags. Ex KeyName1=string,KeyName2=string. This is optional leave it blank if tag based filtering is not needed. See [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters). 
+* `tags_filter`. Enter comma separated key value pairs for filtering logGroups using tags. Ex KeyName1=string,KeyName2=string. This is optional leave it blank if tag based filtering is not needed. See [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination/#configuringparameters).
 
 **Default value:**
 
@@ -1569,13 +1572,13 @@ Refer to step 4 in this [section](/docs/observability/aws/deploy-use-aws-observa
 Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
 ```
 #### Solution
-Run `terraform destroy` again. 
+Run `terraform destroy` again.
 
 ### Field with the given id can't be deleted because it is in use
 #### Error Message
 `"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
 #### Solution
-Run `terraform destroy` again. 
+Run `terraform destroy` again.
 
 
 ### Hierarchy named 'AWS Observability' already exists
@@ -1613,7 +1616,7 @@ Invalid IAM role OR AccessDenied
 ```
 #### Solution
 
-- Refer to [Edit, deactivate/activate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivateactivate-rotate-or-delete-access-keys) for access keys activation. 
+- Refer to [Edit, deactivate/activate, rotate, or delete access keys](/docs/manage/security/access-keys/#edit-deactivateactivate-rotate-or-delete-access-keys) for access keys activation.
 - Refer to [Prerequisites](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy/#prerequisites) for permissions related issues.
 
 
