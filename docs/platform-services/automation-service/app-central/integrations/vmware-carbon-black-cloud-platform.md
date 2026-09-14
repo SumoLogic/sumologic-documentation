@@ -95,9 +95,11 @@ EDR
 
 ## Change Log
 
-* April 7, 2022 - First upload
-* May 11, 2022 - Refactored all actions with CBC SDK
-* June 08, 2022 - Updated integration doc
-* July 19, 2023 (v2.2) - Removed leading/trailing spaces
-* November 7, 2023 (v2.3) - Updated integration for compatibility with new Cloud SOAR API
-* March 4, 2024 (v2.4) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.4 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v2.3 | November 7, 2023 | Updated the integration for compatibility with the new Cloud SOAR API. |
+| v2.2 | July 19, 2023 | Removed leading/trailing spaces. |
+| | June 08, 2022 | Updated the integration documentation. |
+| | May 11, 2022 | Refactored all actions with the CBC SDK. |
+| | April 7, 2022 | Initial release of the VMware Carbon Black Cloud Platform integration. |

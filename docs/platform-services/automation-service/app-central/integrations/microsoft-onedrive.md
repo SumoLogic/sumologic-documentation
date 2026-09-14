@@ -62,22 +62,16 @@ For information about Microsoft OneDrive, see [OneDrive documentation](https://l
 
 ## Change Log
 
-* August 5, 2019 - First upload
-* March 10, 2022 - Logo
-* August 17, 2023 (v1.2) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.3) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v1.4) - Versioning
-* July 02, 2024 (v1.5)
-    - Updated ***Upload File*** action with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.
-    - Added a new field to the Integration resource named ***Authentication Grant Type***. You can select a value based on the permissions added to your app:
-      - Password (Delegated Context) 
-      - Client Credentials (Application Context)
-* April 25, 2025 (v1.6) - Changed required=False for username and password parsers in Integration file.
-* August 14, 2025 (v1.7) - Changed required=False for username and password parsers in all the actions.
-* October 10, 2025 (v1.8)
-    - Added support for listing files from site document library using hostname and site name parameters.
-    - Added support for listing files from specific user accounts via user principal name parameter
-* November 28, 2025 (v1.9)
-    - Added support for downloading file from site document library using hostname and site name parameters.
-    - Added support for downloading file from specific user accounts via user principal name parameter.
-* March 31, 2026 (v1.10) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.10 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.9 | November 28, 2025 | <ul><li>Added support for downloading files from a site document library using hostname and site name parameters.</li><li>Added support for downloading files from specific user accounts using the user principal name parameter.</li></ul> |
+| v1.8 | October 10, 2025 | <ul><li>Added support for listing files from a site document library using hostname and site name parameters.</li><li>Added support for listing files from specific user accounts using the user principal name parameter.</li></ul> |
+| v1.7 | August 14, 2025 | Set `required=False` for the username and password parsers in all actions. |
+| v1.6 | April 25, 2025 | Set `required=False` for the username and password parsers in the integration file. |
+| v1.5 | July 02, 2024 | <ul><li>Updated the **Upload File** action with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.</li><li>Added a new field to the integration resource named **Authentication Grant Type**, allowing you to select a value based on the permissions added to your app: Password (Delegated Context) or Client Credentials (Application Context).</li></ul> |
+| v1.4 | September 19, 2023 | Updated the integration's versioning. |
+| v1.3 | September 4, 2023 | Fixed a bug where if the timeout was not specified, an error would occur. |
+| v1.2 | August 17, 2023 | Updated the integration with Environmental Variables. |
+| | March 10, 2022 | Updated the logo in Microsoft OneDrive integration. |
+| | August 5, 2019 | Initial release of the Microsoft OneDrive integration. |
