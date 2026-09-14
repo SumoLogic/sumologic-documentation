@@ -396,8 +396,6 @@ module.exports = {
       insights: true,
       askAi: {
         assistantId: 'cc341a82-e224-4bb2-906e-4d9c94f9ae9a',
-        agentStudio: true,
-        indexName: 'crawler_sumodocs',
         apiKey: 'fb2f4e1fb40f962900631121cb365549',
         appId: '2SJPGMLW1Q',
         suggestedQuestions: true,

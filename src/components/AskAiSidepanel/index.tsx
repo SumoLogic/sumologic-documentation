@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useHistory } from '@docusaurus/router';
-import '@docsearch/css/dist/sidepanel.css';
+import '@docsearch/css-agent-studio/dist/sidepanel.css';
 import './styles.css';
 
 interface AskAiSidepanelProps {
@@ -102,7 +102,7 @@ export default function AskAiSidepanel({
   // Lazy load the Algolia Sidepanel component
   useEffect(() => {
     if (isOpen && !SidepanelComponent) {
-      import('@docsearch/react/sidepanel').then((module) => {
+      import('@docsearch/react-agent-studio/sidepanel').then((module) => {
         setSidepanelComponent(() => module.Sidepanel);
       });
     }
@@ -819,11 +819,9 @@ export default function AskAiSidepanel({
 
   const {
     assistantId,
-    indexName,
     appId,
     apiKey,
     suggestedQuestions,
-    agentStudio,
     searchParameters,
   } = askAiConfig;
 
@@ -843,9 +841,7 @@ export default function AskAiSidepanel({
         <SidepanelComponent
           appId={appId}
           apiKey={apiKey}
-          indexName={indexName}
-          assistantId={assistantId}
-          agentStudio={agentStudio}
+          agentId={assistantId}
           isOpen={isOpen}
           onOpen={onOpen ?? (() => {})}
           onClose={handleAlgoliaClose}
@@ -856,12 +852,20 @@ export default function AskAiSidepanel({
             'Ctrl/Cmd+I': false,
           }}
           translations={{
-            title: 'Ask AI about Sumo Logic',
-            placeholder: 'Ask a question about Sumo Logic...',
-            greeting: 'How can I help you with Sumo Logic today?',
-            introduction:
-              'I can help you find information about Sumo Logic features, integrations, troubleshooting, APIs, and best practices across our documentation.',
-            poweredBy: 'Powered by Algolia',
+            header: {
+              title: 'Ask AI about Sumo Logic',
+            },
+            promptForm: {
+              promptPlaceholderText: 'Ask a question about Sumo Logic...',
+            },
+            newConversationScreen: {
+              titleText: 'How can I help you with Sumo Logic today?',
+              introductionText:
+                'I can help you find information about Sumo Logic features, integrations, troubleshooting, APIs, and best practices across our documentation.',
+            },
+            logo: {
+              poweredByText: 'Powered by Algolia',
+            },
           }}
           insights
         />
