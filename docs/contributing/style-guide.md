@@ -184,6 +184,35 @@ Subject matter expert guidance, best practices, and Sumo Logic-specific notes. R
 Links to training courses, certifications, and micro lessons.
 :::
 
+## Accessibility
+
+Sumo Logic documentation follows [WCAG 2.1 AA](https://www.w3.org/TR/WCAG21/) as its accessibility baseline.
+
+For **alt text** guidance, see [Images](#images). For **link text** (avoid "click here"), see [Links](#links). For **ableist and non-inclusive language**, see [Inclusive language](#inclusive-language).
+
+### Heading hierarchy
+
+Don't skip heading levels. Screen readers and keyboard users navigate by headings, and a broken hierarchy makes content harder to scan.
+
+**Do:** move through levels in order — H2 → H3 → H4.
+
+**Don't:** jump from H2 to H4, or use headings for visual styling rather than document structure.
+
+### Color and contrast
+
+Don't rely on color alone to convey meaning. Users with color blindness or high-contrast display modes may not perceive color differences.
+
+- If a screenshot or diagram uses color to highlight something, add a label, callout, or annotation so the meaning is clear without color.
+- For custom diagrams or graphics, use a text contrast ratio of at least 4.5:1 (WCAG AA). Check with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) or [TPGi's Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/).
+
+### Screen reader testing
+
+Before submitting a PR for a new doc, consider a quick screen reader check to catch heading, link, and table issues:
+
+- **macOS**: VoiceOver — press **Command+F5** to toggle.
+- **Windows**: [NVDA](https://www.nvaccess.org/) (free) or Narrator (**Windows+Ctrl+Enter**).
+- **Chrome**: [ChromeVox](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn) extension.
+
 ## Capitalization
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.

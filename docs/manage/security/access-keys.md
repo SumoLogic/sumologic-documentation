@@ -56,7 +56,7 @@ Watch this micro lesson to learn how to create access keys.
 
 ### From the Personal Access Keys tab
 
-A *personal access key* is a key that you can create to manage access for personal use.
+A personal access key is a key that you can create to manage access for personal use.
 
 :::tip
 If you are an administrator who needs to create an access key for system use (such as for API scripts, third party integrations, or infrastructure as code), we recommend you create the access key on a [service account](#from-a-service-account).
