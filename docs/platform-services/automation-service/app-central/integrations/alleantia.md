@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alleantia.png')} alt="Alleanta icon" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alleantia.png')} alt="Alleantia icon" width="80"/>
 
 ***Version: 1.3  
 Updated: April 13, 2026***

@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="automox" width="50"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="AWS Athena icon" width="50"/>
 
 ***Version: 1.3  
 Updated: July 23, 2026***

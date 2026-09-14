@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arbor.png')} alt="apivoid" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arbor.png')} alt="Arbor icon" width="90"/>
 
 ***Version: 1.4  
 Updated: April 13, 2026***
