@@ -14,8 +14,6 @@ To start your Agentic Free Trial, head to the [Sumo Logic Free Trial page](https
 
 You'll then get an email inviting you to Sumo Logic's shared trial environment. If you already have a Sumo Logic account, the email links you to activate access. If you're new to Sumo Logic, it links you to create a password and sign in.
 
-<!-- TODO(DOCS-1853): Trial length still needs confirmation. 14 vs. 15 days hasn't been directly addressed yet (asked Adam and Jake in Slack, only the signup/dashboards/post-trial questions were answered). The live /sign-up page shows 14 days, so keeping that for now. -->
-
 ### What's included in your trial
 
 The Agentic Free Trial runs for 14 days entirely on preloaded example data, so there's nothing to instrument and no data to wait on. During your trial, you get:
