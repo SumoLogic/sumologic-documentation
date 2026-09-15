@@ -19,7 +19,7 @@ For high-throughput, multi-source log ingestion, we recommend using the OpenTele
 | Multi-source support | Restricted | 2–4x the capacity |
 | High-EPS workloads | Limited beyond 4 sources | Stable through 32 sources |
 
-Based on these results, Sumo Logic recommends using the OpenTelemetry Collector for most log ingestion workloads, given its stronger CPU efficiency and multi-source scalability. The Installed Collector may still be preferable in a narrower set of cases, very small log messages at low CPU utilization, or where you need a source type only available on the Installed Collector, or where you're collecting security data that requires the Installed Collector. See [When to Choose Installed Collector vs. OpenTelemetry Collector](/docs/send-data/choose-collector-source/#when-to-choose-installed-collector-vs-opentelemetry-collector) for the full decision criteria beyond performance alone.
+Based on these results, Sumo Logic recommends using the OpenTelemetry Collector for most log ingestion workloads, given its stronger CPU efficiency and multi-source scalability. The Installed Collector may still be preferable in a narrower set of cases, very small log messages at low CPU utilization, or where you need a source type only available on the Installed Collector, or where you're collecting security data that requires the Installed Collector. See [Compare Installed Collectors and OpenTelemetry Collectors](/docs/send-data/choose-collector-source/#compare-installed-collectors-and-opentelemetry-collectors) for the full decision criteria beyond performance alone.
 
 ## About these benchmarks
 

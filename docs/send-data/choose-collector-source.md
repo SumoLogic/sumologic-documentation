@@ -65,7 +65,7 @@ For details on system requirements, see [Installed Collector requirements](/docs
 ### Compare Installed Collectors and OpenTelemetry Collectors​
 
 :::tip
-For most log ingestion workloads, we recommend the OpenTelemetry Collector. It has stronger CPU efficiency and scales across more sources than the Installed Collector, especially as throughput grows. See [Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/) for the data behind this recommendation.
+For most log ingestion workloads, we recommend the OpenTelemetry Collector. It has stronger CPU efficiency and scales across more sources than the Installed Collector, especially as throughput grows. See [Installed Collector vs OpenTelemetry Collector Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/) for the data behind this recommendation.
 :::
 
 The Installed Collector and OpenTelemetry Collector are two popular collectors used for collecting metrics, traces, and logs from various sources. While both collectors have their own unique features and advantages, there are some key differences between them.
