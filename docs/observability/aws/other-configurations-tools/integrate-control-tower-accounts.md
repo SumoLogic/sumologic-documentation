@@ -30,7 +30,7 @@ We recommend you familiarize yourself with the AWS Observability Solution. For m
 
 * [About Sumo Logic AWS Observability](/docs/observability/aws/about.md)
 * [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability)
-* [View the AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/)
+* [View the AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards/)
 
  :::note
  CloudTrail must be enabled for EventBridge to capture `CreateManagedAccount` and `UpdateManagedAccount` events, since these events are recorded and delivered through CloudTrail.
@@ -54,7 +54,7 @@ In this step, you configure the collection of logs and metrics for all AWS accou
 
 ### Set up collection manually for AWS accounts
 1. Log in to the AWS Management Console as the AWS account user.
-1. Follow steps 1 through 10 of the instructions in [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+1. Follow steps 1 through 10 of the instructions in [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
 1. In the **Sumo Logic AWS CloudTrail Source Details** section of the template, select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all other options. <br/><img src={useBaseUrl('img/observability/integrate-tower1.png')} alt="Create Sumo Logic CloudTrail Logs Source " style={{border: '1px solid gray'}} width="800" />
 
 ### Set up collection automatically for new AWS accounts
@@ -78,7 +78,9 @@ To deploy the lifecycle events template:
 
 1. Log in to the AWS Management Console as the **AWS Control Tower Master Account**.
 1. Download and launch the Sumo Logic Control Tower CloudFormation template in the region where your Control Tower is deployed. Use the link that matches your AWS Observability version:
+   - **AWSO v3.0.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/templates/extensions/controltower/controltower.template.yaml)  
    - **AWSO v2.15.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master/aws-observability/apps/controltower/controltower.template.yaml)
+   
 1. In the **Sumo Logic Access Configuration** section, fill in the following required fields:
 
    | Parameter | Description |
@@ -107,7 +109,7 @@ In the instructions below, we assume the Log Archive AWS account is used only to
 :::
 
 1. Log in to the AWS Management Console as the Log Archive AWS account user.
-1. Follow steps 1 through 10 of the instructions in the [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+1. Follow steps 1 through 10 of the instructions in the [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
 1. In the **Sumo Logic Access Configuration** section of the template, fill in as required by the template.
 1. In the **AWS Resources Tag Configuration** section of the template, select **None** for **Auto Enable Tagging** and enter `logarchive` as the account alias.
 1. In the **Sumo Logic AWS Observability Apps and Alerts** section of the template, select **No** for “Install AWS Observability Apps”, as they were installed in [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts), above.<br/><img src={useBaseUrl('img/observability/integrate-tower2.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
@@ -166,6 +168,9 @@ You must have a role that grants you the Manage Field Extractions capability to 
 
     <img src={useBaseUrl('img/observability/Field-Extraction-rule.png')} alt="Field Extraction rule" style={{border: '1px solid gray'}} width="400" />
 
-## Step 4: View the AWS Observability dashboards
+:::note
+To backfill your collection source `account` tags with an AWS account alias, see [Backfill AWS Account Alias](/docs/observability/aws/other-configurations-tools/backfill-aws-account-alias/).
+:::
 
-Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/).
+## Step 4: View the AWS Observability dashboards
+Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards/).
