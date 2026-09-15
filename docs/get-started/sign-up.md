@@ -10,29 +10,27 @@ Sumo Logic offers two ways to try the platform. The **Agentic Free Trial**, avai
 
 ## Sign up through Sumo Logic
 
-To start your Agentic Free Trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/) and fill out the sign-up form with your business email, first and last name, and country, then click **Send**. No credit card is required. Your account is provisioned automatically, so you can start exploring the trial right away.
+To start your Agentic Free Trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/) and fill out the sign-up form with your business email, first and last name, and country, then click **Send**. No credit card is required.
 
-<!-- TODO(DOCS-1853): Confirm this activation wording with Adam White before publishing. Internal enablement material describes signup as self-service with instant auto-provisioning (no activation email step, unlike the old Google SSO / email-activation flow this section previously documented), but that hasn't been confirmed directly by Adam. -->
+You'll then get an email inviting you to Sumo Logic's shared trial environment. If you already have a Sumo Logic account, the email links you to activate access. If you're new to Sumo Logic, it links you to create a password and sign in.
+
+<!-- TODO(DOCS-1853): Trial length still needs confirmation. 14 vs. 15 days hasn't been directly addressed yet (asked Adam and Jake in Slack, only the signup/dashboards/post-trial questions were answered). The live /sign-up page shows 14 days, so keeping that for now. -->
 
 ### What's included in your trial
 
 The Agentic Free Trial runs for 14 days entirely on preloaded example data, so there's nothing to instrument and no data to wait on. During your trial, you get:
 
-* **Full access to security and observability scenarios**, including Cloud SIEM.
+* **View access to security and observability features**, including Cloud SIEM. You can search logs, run investigations, and review insights, but you cannot manage settings or configurations.
 * **AI-powered agents**, including the SOC Analyst Agent, which triages Tier-1 alerts end to end, and Mobot, which answers questions about your data in plain language.
-* **Additional prebuilt dashboards**, with some limits on the actions you can take.
-
-<!-- TODO(DOCS-1853): Confirm the exact list of additional prebuilt dashboards and which user actions are limited, with Adam White. -->
+* **A few prebuilt dashboards** from the App Catalog. You can create your own dashboards, but you cannot create other types of saved content, and you cannot share content with or view content from other trial users.
 
 :::note
-The Agentic Free Trial runs entirely on example data. You can't ingest your own data during this trial. To try Sumo Logic with your own data, sign up through the [AWS Marketplace](#sign-up-through-aws-marketplace) instead.
+The Agentic Free Trial runs entirely on example data. You cannot ingest your own data during this trial. To try Sumo Logic with your own data, sign up through the [AWS Marketplace](#sign-up-through-aws-marketplace) or [contact us](https://www.sumologic.com/contact-us/).
 :::
 
 ### After your trial ends
 
-The Agentic Free Trial doesn't convert directly to a paid plan. To continue using Sumo Logic with your own data, [contact Sales](https://www.sumologic.com/contact-us/) or see [Sumo Logic Pricing](https://www.sumologic.com/pricing) for plan options.
-
-<!-- TODO(DOCS-1853): Confirm the recommended next step for a user whose Agentic Free Trial ends (contact Sales, start the AWS Marketplace trial, etc.) with Adam White. -->
+The Agentic Free Trial does not convert directly to a paid plan. You'll get reminder emails on day 7 and day 14 as your trial nears its end. To continue using Sumo Logic with your own data, [contact Sales](https://www.sumologic.com/contact-us/).
 
 ## Sign up through AWS Marketplace
 
@@ -91,10 +89,10 @@ What happens after activation depends on which trial you signed up for.
 Once your account is activated, you'll land in a guided onboarding experience built entirely on preloaded example data, with no setup or data ingestion required. You can:
 
 * Explore the SOC Analyst Agent and Mobot.
-* Perform log searches, and visualize data through the additional prebuilt dashboards.
+* Perform log searches, and visualize data through the prebuilt dashboards.
 * Invite teammates and collaborate.
 
-Because the trial runs on example data, there's no data collector to set up, and you can't ingest your own data during the 14-day trial.
+Because the trial runs on example data, there's no data collector to set up, and you cannot ingest your own data during the 14-day trial.
 
 ### AWS Marketplace trial
 
