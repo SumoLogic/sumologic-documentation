@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/intel-471.png')} alt="intel" width="80"/>
 
 ***Version: 1.3  
-Updated: September 11, 2026***
+Updated: September 15, 2026***
 
 Intel 471 provides comprehensive coverage of the criminal underground, SaaS platform which exposes locally sourced human-driven, automation-enabled insights to gain broad coverage and monitor the threats.
 
@@ -19,10 +19,10 @@ Intel 471 provides comprehensive coverage of the criminal underground, SaaS plat
 
 ## Intel 471 configuration
 
-1. Sign in Intel 471 using your username and password.
-2. Use the token you received in your email to complete log in.
-3. On the left menu, search for your profile and in API, under API KEY click to display your API Key.
-4. Make sure you copy the API Key.
+1. Sign in to the Intel 471 Verity portal at [api.intel471.cloud](https://api.intel471.cloud).
+2. Navigate to your profile settings.
+3. Locate your **Client ID** and **Client Secret**.
+4. Copy the **Client ID** and **Client Secret** for use below.
 
 ## Configure Intel 471 in Automation Service and Cloud SOAR
 
@@ -35,11 +35,11 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>
-* **URL**. Enter your Intel 471 URL, for example, `https://api.intel471.com/`
+* **URL**. Enter your Intel 471 Verity URL, for example, `https://api.intel471.cloud`
 
-* **Email Address**. Enter your email address.
+* **Client ID**. Enter the [Client ID copied above](#intel-471-configuration).
 
-* **API Key**. Insert the [previously copied key](#intel-471-configuration).
+* **Client Secret**. Enter the [Client Secret copied above](#intel-471-configuration).
 * <IntegrationCertificate/>
 * <IntegrationTimeout/>
 * <IntegrationEngine/>
@@ -57,7 +57,7 @@ Threat Intelligence-Reputation
 
 | Version | Date               | Description |
 |:--------|:-------------------|:--|
-| v1.3    | September 11, 2026 | Migrated the Intel 471 integration to the new Verity API, updating the Stream Malware Intelligence Indicators, Search IOC, and List Alerts actions to use the latest API endpoints. |
+| v1.3    | September 15, 2026 | Migrated the Intel 471 integration to the new Verity API, updating the Stream Malware Intelligence Indicators, Search IOC, and List Alerts actions to use the latest API endpoints. |
 | v1.2    | April 29, 2026     | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1    | July 6, 2023       | Updated the integration with Environmental Variables. |
 | v1.0    | May 23, 2022       | First upload. |
