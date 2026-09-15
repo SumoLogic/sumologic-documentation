@@ -40,29 +40,33 @@ For full details on limitations, what's supported, and what's different see our 
 
 ### Installed Collectors (Installed Agent)
 
-**Installed Collectors** are lightweight and efficient. You can choose to install a small number of Collectors to minimize maintenance or to keep your topology simple. Alternatively, you can choose to install many Collectors on many machines to distribute the bandwidth impact across your network rather than having it centralized.
+Installed Collectors are a good fit for very small log messages at low CPU utilization, source types only available on Installed Collectors, or security data that requires them.
 
-[Installed Collectors](/docs/send-data/installed-collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+[Installed Collectors](/docs/send-data/installed-collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Sumo Logic releases Collector software upgrades regularly.
 
 Consider having an Installed Collector on a dedicated machine when:
 
 * You need to collect data with a [Source only available on Installed Collectors](/docs/send-data/installed-collectors/sources).
-* You are running a very high-bandwidth network with high logging levels.
+* You are running a high-bandwidth network with high logging levels.
 * You want a central collection point for many Sources.
 
 Consider having more than one Installed Collector if:
 
-* You expect the Collector to ingest from at least 500 separate files.
+* You expect the Collector to ingest from at least 500 separate files.
 * Your hardware has memory or CPU limitations.
 * You expect combined logging traffic for one Collector to be higher than 15,000 events per second.
 * Your network clusters or regions are geographically separated.
-* You prefer to install many Collectors, for example, one per machine to collect local files.
+* You prefer to install many Collectors, for example, one per machine, to collect local files.
 
-To help design your deployment see [how Installed Collectors work](/docs/send-data/installed-collectors) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
+To help design your deployment, see [how Installed Collectors work](/docs/send-data/installed-collectors) and [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices#local-and-centralized-data-collection).
 
-For details on system requirements, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
+For details on system requirements, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 
 ### Compare Installed Collectors and OpenTelemetry Collectors​
+
+:::tip
+For most log ingestion workloads, we recommend the OpenTelemetry Collector. It has stronger CPU efficiency and scales across more sources than the Installed Collector, especially as throughput grows. See [Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/) for the data behind this recommendation.
+:::
 
 The Installed Collector and OpenTelemetry Collector are two popular collectors used for collecting metrics, traces, and logs from various sources. While both collectors have their own unique features and advantages, there are some key differences between them.
 
