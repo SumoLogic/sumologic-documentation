@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-enterprise-edr.png')} alt="VMware Carbon Black Cloud Endpoint Standard icon" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-enterprise-edr.png')} alt="VMware Carbon Black Cloud Enterprise EDR icon" width="70"/>
 
 ***Version: 2.1  
 Updated: Oct 05, 2023***
@@ -71,6 +71,8 @@ For information about Carbon Black Cloud, see [Carbon Black Cloud documentation]
 
 ## Change Log
 
-* May 11, 2022 - Refactored all actions with CBC SDK
-* June 8, 2022 - Updated Integration doc
-* October 5, 2023 (v2.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.1 | October 5, 2023 | Updated the integration with Environmental Variables. |
+| | June 8, 2022 | Updated the integration documentation. |
+| | May 11, 2022 | Refactored all actions with the CBC SDK. |

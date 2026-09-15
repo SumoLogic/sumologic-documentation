@@ -57,11 +57,11 @@ For information about FortiGate, see [FortiGate documentation](https://docs.fort
 
 ## Change Log
 
-* January 24, 2019 - First upload
-* September 19, 2019 - New actions added
-* June 1, 2020 - New actions added
-* June 23, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 14, 2023 (v1.2)
-	+ Code refactoring
-	+ Changed fields visibility
-* April 29, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | July 14, 2023 | <ul><li>Refactored the code.</li><li>Changed fields visibility.</li></ul> |
+| v1.1 | June 23, 2023 | Updated the integration with Environmental Variables. |
+| | June 1, 2020 | Added new actions. |
+| | September 19, 2019 | Added new actions. |
+| | January 24, 2019 | First upload. |
