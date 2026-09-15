@@ -3,7 +3,7 @@ id: 1password-source
 title: 1Password Source
 sidebar_label: 1Password
 image: 'https://app_icons.s3.amazonaws.com/1Password.png'
-tags:
+keywords:
   - cloud-to-cloud
   - 1password
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.

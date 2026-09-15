@@ -2,7 +2,7 @@
 id: symantec-endpoint-security-source
 title: Symantec Endpoint Security Source
 sidebar_label: Symantec Endpoint Security
-tags:
+keywords:
   - cloud-to-cloud
   - symantec-endpoint-security
 description: Learn how to collect incident and incident events using the Symantec Endpoint Security source.

@@ -2,7 +2,7 @@
 id: microsoft-graph-security-api-source
 title: Microsoft Graph Security API Source
 sidebar_label: Microsoft Graph Security API
-tags:
+keywords:
   - cloud-to-cloud
   - microsoft-graph-security-api
 description: The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.

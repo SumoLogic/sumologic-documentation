@@ -82,8 +82,6 @@ description: One or two sentences for search engines. 140–160 characters. Plai
 keywords:              # optional but recommended
   - keyword1
   - keyword2
-tags:                  # optional
-  - tag1
 ---
 ```
 

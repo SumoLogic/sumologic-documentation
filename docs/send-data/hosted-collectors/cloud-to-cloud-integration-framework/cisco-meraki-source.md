@@ -2,7 +2,7 @@
 id: cisco-meraki-source
 title: Cisco Meraki Source
 sidebar_label: Cisco Meraki
-tags:
+keywords:
   - cloud-to-cloud
   - cisco-meraki
 description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Meraki Organization.

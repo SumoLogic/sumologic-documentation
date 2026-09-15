@@ -2,7 +2,7 @@
 id: akamai-siem-api-source
 title: Akamai SIEM API Source
 sidebar_label: Akamai SIEM API
-tags:
+keywords:
   - cloud-to-cloud
   - akamai-siem-api
 description: The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the V1 SIEM API.
