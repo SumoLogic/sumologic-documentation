@@ -14,7 +14,7 @@ Updated: September 16, 2026***
 
 ## Actions
 
-* **Stream Malware Intelligence Indicators** *(Enrichment)* - Returns a list of malware intelligence indicators matching filter criteria from the Intel 471 Verity stream.
+* **Stream Malware Intelligence Indicators** *(Enrichment)*. Returns a list of malware intelligence indicators matching filter criteria from the Intel 471 Verity stream.
 
 ## Intel 471 Verity configuration
 
@@ -52,9 +52,9 @@ Threat Intelligence-Reputation
 
 ## Change log
 
-| Version | Date               | Description |
-|:--------|:-------------------|:--|
-| v1.0    | September 16, 2026 | First upload. New integration using the Intel 471 Verity stream API with Client ID and Client Secret authentication. |
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | September 16, 2026 | First upload. New integration using the Intel 471 Verity stream API with Client ID and Client Secret authentication. |
 
 ## Additional resources
 
