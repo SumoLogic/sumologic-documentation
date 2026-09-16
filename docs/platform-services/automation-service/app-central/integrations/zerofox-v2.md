@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zerofox.png')} alt="axonius" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zerofox.png')} alt="ZeroFox icon" width="100"/>
 
 ***Version: 1.0  
 Updated: April 24, 2026***
@@ -49,4 +49,6 @@ For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.c
 
 ## Change Log
 
-* April 24, 2026 - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| | April 24, 2026 | Initial release of the ZeroFox V2 integration. |

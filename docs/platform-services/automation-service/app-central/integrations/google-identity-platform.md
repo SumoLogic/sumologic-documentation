@@ -103,5 +103,7 @@ For information about Google Identity Platform, see [Google identity platform do
 
 ## Change Log
 
-* December 17, 2025 (v1.0) - First upload
-* June 17, 2026 (v1.1) - Updated logo
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | June 17, 2026 | Updated the logo in Google Identity Platform integration. |
+| v1.0 | December 17, 2025 | Initial release of the Google Identity Platform integration. |

@@ -112,15 +112,12 @@ Ensure that the integration API key used for retrieving alerts belongs to the sa
 
 ## Change Log
 
-* March 22, 2024 - First upload
-* July 11, 2024 - Added the Actions:
-    + Get On Calls
-    + List Schedules
-* Sep 16, 2024 - Update the Action:
-    + Create Incident - Fixed the bug that caused the action not to add responders to the incident.
-* July 1, 2025 - Fixed an issue related to timeout.
-* January 30, 2026 - Added a retry mechanism to the Create Alert action.
-* March 6, 2026 - Fixed validation logic in the Create Alert action.
-* March 23, 2026 (v1.6)
-    + Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-    + Fixed validation logic in the following actions: `Acknowledge Alert`, `Add Note to Alert`, `Add Responder to Alert`, `Add Tag to Alert`, `Assign Alert`, `Close Alert`, `Delete Alert` and `Escalate Alert`.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | March 23, 2026 | <ul><li>Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.</li><li>Fixed validation logic in the following actions: `Acknowledge Alert`, `Add Note to Alert`, `Add Responder to Alert`, `Add Tag to Alert`, `Assign Alert`, `Close Alert`, `Delete Alert`, and `Escalate Alert`.</li></ul> |
+| | March 6, 2026 | Fixed validation logic in the **Create Alert** action. |
+| | January 30, 2026 | Added a retry mechanism to the **Create Alert** action. |
+| | July 1, 2025 | Fixed an issue related to timeout. |
+| | Sep 16, 2024 | Updated the **Create Incident** action to fix a bug that caused it not to add responders to the incident. |
+| | July 11, 2024 | Added new actions: **Get On Calls** and **List Schedules**. |
+| | March 22, 2024 | Initial release of the Atlassian Opsgenie integration. |

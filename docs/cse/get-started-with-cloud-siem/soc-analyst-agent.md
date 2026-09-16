@@ -10,7 +10,7 @@ import Iframe from 'react-iframe';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
-<img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="Search icon" width="35"/>
+<img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="35"/>
 
 Sumo Logic's SOC Analyst Agent is an agentic AI tool that embeds reasoning and context-awareness directly into Cloud SIEM, helping your Security Operations Center (SOC) team investigate alerts faster, reduce false-positive noise, and respond with confidence. Security teams spend too much time validating false positives and performing repetitive investigative steps — the agent eliminates that noise, standardizes outcomes, and accelerates time to resolution.
 

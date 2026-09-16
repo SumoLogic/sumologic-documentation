@@ -166,4 +166,6 @@ If the issue persists, confirm the integration configuration JSON matches the se
 
 ## Change Log
 
-* August 28, 2026 (v1.1) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | August 28, 2026 | Initial release of the Google Cloud Functions integration. |

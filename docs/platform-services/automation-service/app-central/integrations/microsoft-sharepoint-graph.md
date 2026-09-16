@@ -123,6 +123,8 @@ For information about Microsoft SharePoint, see [SharePoint documentation](https
 
 ## Change Log
 
-* October 10, 2025 - First upload
-* February 24, 2026 - Improved the Folder Relative URL hint to provide clearer guidance on entering the correct relative path format.
-* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | February 24, 2026 | Improved the **Folder Relative URL** hint to provide clearer guidance on entering the correct relative path format. |
+| | October 10, 2025 | Initial release of the Microsoft SharePoint (Graph) integration. |
