@@ -56,13 +56,15 @@ For information about Mimecast, see [Mimecast documentation](https://integration
 
 ## Change Log
 
-* November 3, 2021 - First upload
-* June 9,2023 - Refactored
-* July 7, 2023 (v1.2) - Removed leading/trailing spaces
-* July 14, 2023 (v1.3) - Code refactoring
-* February 28, 2024 (v1.4) - Updated code for compatibility with Python 3.12
-* April 30, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | February 28, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.3 | July 14, 2023 | Code refactoring. |
+| v1.2 | July 7, 2023 | Removed leading/trailing spaces. |
+| v1.1 | June 9, 2023 | Refactored. |
+| v1.0 | November 3, 2021 | Initial release of the Mimecast integration. |
 
 ## Additional resources
 
-- For Mimecast, Sumo Logic offers the [Mimecast source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/) and the [Mimecast app](/docs/integrations/saas-cloud/mimecast/) to collect and visualize your Mimecast data.
+For Mimecast, Sumo Logic offers the [Mimecast source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/) and the [Mimecast app](/docs/integrations/saas-cloud/mimecast/) to collect and visualize your Mimecast data.

@@ -99,4 +99,6 @@ For information about Google Firebase, see [Google Firebase documentation](https
 
 ## Change Log
 
-* November 19, 2025 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | November 19, 2025 | Initial release of the Google Firebase integration. |

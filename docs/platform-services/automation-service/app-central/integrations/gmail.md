@@ -115,59 +115,12 @@ For information about the Gmail API, see [Gmail API documentation](https://devel
 
 ## Change Log
 
-* February 28, 2019 - First upload
-* September 6, 2019 - Added link to Gmail external libraries
-* June 19, 2020 - Gmail daemon added
-* March 10, 2022 - Logo
-* August 18, 2023 (v1.2) - Integration refactored
-* October 26, 2023 (v1.4)
-	+ List of changes grouped by actions
-		- Add Filter
-			* Changed action type to Containment
-			* Changed field type to tag for the following fields: Add Labels IDs, Remove Label IDs
-			* Changed field type to textarea for the following fields: Subject, Query, Negated Query
-			* Changed field type to list for the following fields: Size Comparison
-			* Enabled Incident Artifacts feature flag for the following fields: Add Label IDs, Remove Label IDs, From, To
-		- Delete Mail
-			* Enabled Incident Artifacts feature flag for the following fields: Message ID
-		- Get Attachment
-			* Enabled Incident Artifacts feature flag for the following fields: Message ID, Attachment ID
-			* Changed type to text for the following output path: size
-		- List Filters (formerly Get Filters)
-			* Action renamed from Get Filters to List Filters
-			* Added table view
-			* Extended output mappings
-		- List Labels (formerly Get Labels)
-			* Action renamed from Get Labels to List Labels
-			* Added table view
-		- Get Mail
-			* Enabled Incident Artifacts feature flag for the following fields: Message ID
-			* Added table view
-			* Extended output mappings
-		- Get Thread
-			* Enabled Incident Artifacts feature flag for the following fields: Thread ID
-			* Added table view
-			* Extended output mappings
-		- Gmail Daemon
-			* Extended Table View for action results
-		- Move Mail
-			* Enabled Incident Artifacts feature flag for the following fields: Message ID, Add Labels IDs, Remove Label IDs
-			* Changed field type to tag for the following fields: Add Labels IDs, Remove Label IDs
-			* Added table view
-			* Extended output mappings
-		- Search Mail
-			* Now it is possible to view a list of emails without necessary providing any search keyword
-			* Changed label from Search (Query) to Search
-			* Extended output mappings
-		- Send Email
-			* Enabled Incident Artifacts feature flag for the following fields: From, Final Report ID
-			* Added table view
-			* Added output mappings
-		- Send Email V2
-			* Enabled Incident Artifacts feature flag for the following fields: From
-			* Added table view
-			* Added output mappings
-	+ Other general changes
-		- Code refactoring
-* June 26, 2024 (v1.5)
-	+ Update: The Send Email action now supports the new Cloud SOAR API. This update enables you to send incident attachments directly through the email action.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | June 26, 2024 | The **Send Email** action now supports the new Cloud SOAR API, letting you send incident attachments directly through the email action. |
+| v1.4 | October 26, 2023 | <ul><li>**Add Filter**: changed the action type to Containment; changed the field type to tag for **Add Label IDs** and **Remove Label IDs**; changed the field type to textarea for **Subject**, **Query**, and **Negated Query**; changed the field type to list for **Size Comparison**; and enabled the Incident Artifacts feature flag for **Add Label IDs**, **Remove Label IDs**, **From**, and **To**.</li><li>**Delete Mail**: enabled the Incident Artifacts feature flag for **Message ID**.</li><li>**Get Attachment**: enabled the Incident Artifacts feature flag for **Message ID** and **Attachment ID**, and changed the output path **size** to type text.</li><li>**List Filters** (formerly Get Filters): renamed the action from Get Filters to List Filters, added a table view, and extended output mappings.</li><li>**List Labels** (formerly Get Labels): renamed the action from Get Labels to List Labels and added a table view.</li><li>**Get Mail**: enabled the Incident Artifacts feature flag for **Message ID**, added a table view, and extended output mappings.</li><li>**Get Thread**: enabled the Incident Artifacts feature flag for **Thread ID**, added a table view, and extended output mappings.</li><li>**Gmail Daemon**: extended the table view for action results.</li><li>**Move Mail**: enabled the Incident Artifacts feature flag for **Message ID**, **Add Label IDs**, and **Remove Label IDs**; changed the field type to tag for **Add Label IDs** and **Remove Label IDs**; added a table view; and extended output mappings.</li><li>**Search Mail**: added support for viewing a list of emails without providing a search keyword, changed the label from Search (Query) to Search, and extended output mappings.</li><li>**Send Email**: enabled the Incident Artifacts feature flag for **From** and **Final Report ID**, added a table view, and added output mappings.</li><li>**Send Email V2**: enabled the Incident Artifacts feature flag for **From**, added a table view, and added output mappings.</li><li>Refactored the code.</li></ul> |
+| v1.2 | August 18, 2023 | Refactored the integration. |
+| v1.1 | March 10, 2022 | Updated the logo. |
+| v1.0 | June 19, 2020 | Added a Gmail daemon. |
+| v1.0 | September 6, 2019 | Added a link to the Gmail external libraries. |
+| v1.0 | February 28, 2019 | First upload. |

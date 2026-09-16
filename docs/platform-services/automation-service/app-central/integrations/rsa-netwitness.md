@@ -48,12 +48,11 @@ For information about Netwitness, see the [NetWitness documentation](https://com
 
 ## Change Log
 
-* November 21, 2018 - First upload
-* July 23, 2021 - New action added
-* September 7, 2021 - Actions updated
-* July 13, 2023 (v1.18)
-    + Updated the integration with Environmental Variables
-    + Changed fields visibility
-    + Updated Daemon compatibility
-* February 28, 2023 (v1.19) - Updated code for compatibility with Python 3.12
-* April 30, 2026 (v1.20) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.20 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.19 | February 28, 2023 | Updated code for compatibility with Python 3.12. |
+| v1.18 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li><li>Updated Daemon compatibility.</li></ul> |
+| v1.17 | September 7, 2021 | Updated actions. |
+| v1.16 | July 23, 2021 | Added a new action. |
+| v1.15 | November 21, 2018 | Initial release of the RSA NetWitness integration. |

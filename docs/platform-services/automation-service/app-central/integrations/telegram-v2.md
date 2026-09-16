@@ -49,6 +49,8 @@ For information about Telegram, see the [Telegram website](https://telegram.org/
 
 ## Change Log
 
-* February 12, 2021 - First upload
-* July 7, 2023 (v2.1) - Updated the integration with Environmental Variables
-* April 30, 2026 (v2.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v2.1 | July 7, 2023 | Updated the integration with environmental variables. |
+| v2.0 | February 12, 2021 | Initial release of the Telegram V2 integration. |

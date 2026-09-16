@@ -58,16 +58,13 @@ For information about AlienVault, see [AlienVault documentation](https://cyberse
 
 ## Change Log
 
-* October 3, 2019 - First upload
-* July 19, 2022 (v1.2)
-	+ Changed API key field type to password
-	+ Changed logo
-* January 25 (v1.3)
-	+ added env class
-* March 3, 2023 (v1.4)
-	+ Updated **IP Reputation** action
-	+ Updated integration Fields Label
-* June 15, 2023 (v1.7) - Updated the integration with Environmental Variables
-* June 29, 2023 (v1.8) - Integration renamed from AlienVault OTX OIF to AlienVault OTX
-* August 23, 2023 (v1.11) - Integration refactored
-* September 4, 2023 (v1.12) - Changed action field type from list to text in Scan URL action
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.12 | September 4, 2023 | Changed the **Scan URL** action field type from list to text. |
+| v1.11 | August 23, 2023 | Refactored the integration. |
+| v1.8 | June 29, 2023 | Renamed the integration from AlienVault OTX OIF to AlienVault OTX. |
+| v1.7 | June 15, 2023 | Updated the integration with environmental variables. |
+| v1.4 | March 3, 2023 | <ul><li>Updated the **IP Reputation** action.</li><li>Updated the integration fields label.</li></ul> |
+| v1.3 | January 25 | Added the environment class. |
+| v1.2 | July 19, 2022 | <ul><li>Changed the API key field type to password.</li><li>Changed the logo.</li></ul> |
+| v1.1 | October 3, 2019 | Initial release of the AlienVault OTX integration. |

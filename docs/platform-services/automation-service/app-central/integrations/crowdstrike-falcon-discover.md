@@ -50,6 +50,8 @@ Refer to [Falcon documentation](https://falcon.crowdstrike.com/documentation/45/
 
 ## Change Log
 
-* March 16, 2023 (v1.0) - First upload
-* July 3, 2023 (v1.1) - Removed leading/trailing spaces
-* March 31, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 3, 2023 | Removed leading and trailing spaces. |
+| v1.0 | March 16, 2023 | Initial release of the CrowdStrike Falcon Discover integration. |

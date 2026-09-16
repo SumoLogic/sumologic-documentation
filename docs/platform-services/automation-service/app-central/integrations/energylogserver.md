@@ -56,5 +56,7 @@ For information about Energy Logserver, see [Energy Logserver documentation](htt
 
 ## Change Log
 
-* March 4, 2021 - First upload
-* November 3, 2023 (v1.2) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | November 3, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 4, 2021 | Initial release of the EnergyLogserver integration. |

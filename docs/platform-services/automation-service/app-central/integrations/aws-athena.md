@@ -97,7 +97,9 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Change Log
 
-* February 22, 2023 (v1.0) - First upload
-* June 15, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 29, 2025 (v1.2) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
-* July 23, 2026 (v1.3) - Resolved an issue where the integration fails due to deprecated dependency warnings.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | July 23, 2026 | Resolved an issue where the integration fails due to deprecated dependency warnings. |
+| v1.2 | July 29, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
+| v1.1 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | February 22, 2023 | Initial release of the AWS Athena integration. |

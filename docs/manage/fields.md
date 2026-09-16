@@ -301,7 +301,7 @@ Built-in fields cannot be deleted.
 
 For example, if the field is used by a Field Extraction Rule, you must first delete the Field Extraction Rule before you can delete the field.
 
-<img src={useBaseUrl('img/fields/field-cannot-delete.png')} alt="Field cannot delete" style={{border: '1px solid gray'}} width="400>" />
+<img src={useBaseUrl('img/fields/field-cannot-delete.png')} alt="Field cannot delete" style={{border: '1px solid gray'}} width="400" />
 
 If the field is not used by those features you will see the following prompt.
 

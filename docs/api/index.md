@@ -77,6 +77,11 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/api/content-config-management')}><img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="Topology Explorer icon" width="50"/><h4>Content and Configuration Management</h4></a>  
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/api/content-management')}><img src={useBaseUrl('img/icons/operations/topology-explorer.png')} alt="Topology Explorer icon" width="50"/><h4>Content</h4></a>  
   </div>
 </div>

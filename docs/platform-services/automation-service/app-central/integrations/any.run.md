@@ -47,8 +47,10 @@ For information about ANY.RUN, see [ANY.RUN documentation](https://any.run/cyber
  
 ## Change Log
 
-* February 21, 2020 - First upload
-* February 13, 2023 - Integration refactored
-* June 15, 2023 (v1.3) - Updated the integration with Environmental Variables
-* February 04, 2025 (v1.4) - Updated the action Get Report with Environmental Variables
-* April 13, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | February 04, 2025 | Updated the **Get Report** action with environmental variables. |
+| v1.3 | June 15, 2023 | Updated the integration with environmental variables. |
+| v1.2 | February 13, 2023 | Refactored the integration. |
+| v1.1 | February 21, 2020 | Initial release of the ANY.RUN integration. |

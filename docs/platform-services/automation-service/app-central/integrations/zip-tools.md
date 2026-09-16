@@ -49,13 +49,8 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 ## Change Log
 
-* December 23, 2020 - First upload
-* July 18, 2023 (v1.1) - Updated the integration with Environmental Variables
-* November 9, 2023 (v1.2)
-	+ Changed Logo
-	+ Updated integration for compatibility with new Cloud SOAR API
-	+ Added Proxy options, Server certificate verification and Connection timeout config
-	+ Renamed action from UnZIP File to Unzip File
-	+ Added Incident ID field in action
-	+ Refined labels and hints
-	+ Code refactoring
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | November 9, 2023 | <ul><li>Changed the logo.</li><li>Updated the integration for compatibility with the new Cloud SOAR API.</li><li>Added Proxy options, Server certificate verification, and Connection timeout config.</li><li>Renamed the **UnZIP File** action to **Unzip File**.</li><li>Added an Incident ID field to the action.</li><li>Refined labels and hints.</li><li>Refactored the code.</li></ul> |
+| v1.1 | July 18, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | December 23, 2020 | Initial release of the ZIP Tools integration. |

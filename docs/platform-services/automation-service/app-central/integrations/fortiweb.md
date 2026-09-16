@@ -66,7 +66,9 @@ For information about FortiWeb, see [FortiWeb documentation](https://docs.fortin
 
 ## Change Log
 
-* June 3, 2019 - First upload
-* August 30, 2020 - New action added
-* July 12, 2023 (v1.1) - Updated the integration with Environmental Variables
-* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 12, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | August 30, 2020 | Added a new action. |
+| v1.0 | June 3, 2019 | First upload. |

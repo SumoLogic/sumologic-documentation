@@ -77,10 +77,10 @@ For information about Security Scorecard, see [Security Scorecard documentation]
 
 ## Change Log
 
-* January 31, 2020 - First upload
-* May 5, 2020 - New actions added
-* June 26, 2020 - New actions added
-* July 13, 2023 (v1.3)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
-* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li></ul> |
+| v1.2 | June 26, 2020 | Added new actions. |
+| v1.1 | May 5, 2020 | Added new actions. |
+| v1.0 | January 31, 2020 | Initial release of the Security Scorecard integration. |

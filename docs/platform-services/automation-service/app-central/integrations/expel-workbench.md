@@ -46,6 +46,8 @@ For information about Expel Workbench, see [Expel Workbench documentation](https
 
 ## Change Log
 
-* January 2, 2026 - First upload
-* January 6, 2026 (v1.1) - Updated the description.
-* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | January 6, 2026 | Updated the description. |
+| v1.0 | January 2, 2026 | Initial release of the Expel Workbench integration. |

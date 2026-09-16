@@ -61,4 +61,4 @@ Threat Intelligence-Reputation
 
 ## Additional resources
 
-- For Intel 471, Sumo Logic offers the [Intel 471 Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source/) to collect your Intel 471 data.
+For Intel 471, Sumo Logic offers the [Intel 471 Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source/) to collect your Intel 471 data.

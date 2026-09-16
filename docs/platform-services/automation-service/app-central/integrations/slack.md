@@ -127,34 +127,25 @@ For information about Slack, see [Slack documentation](https://slack.com/help).
 
 ## Change Log
 
-* March 4, 2021 - First upload
-* November 18, 2022 - Get User action fields hints updated
-* December 30, 2022 - Added new actions:
-    + Ask Question
-    + Ask For User Email
-* January 10, 2023 - Refactoring
-* March 3, 2023 (v1.5)
-    + Updated integration Fields Label
-* June 30, 2023 (v1.6) - Removed unnecessary spaces
-* August 21, 2023 (v1.7) - Updated **Send Message** Action
-* January 16, 2024 (v1.8)
-    + Updated action: Ask Question (Resolved issue related to newline characters)
-* March 22, 2024 (v1.9) - New action: Rename Channel
-* Sept 17, 2024 (v1.10)
-    * Updated action: Ask Question (Added Allow Custom Text feature)
-* Oct 1, 2024 (v1.10)
-    * Updated action: Ask Question, Ask For User Email (Made changes for timeout)
-* Oct 10, 2024 (v1.11)
-    * Updated Integration File - Added Token Type and Team ID arg. 
-    * Updated actions - Create Channel, List Channel, Get Channel, List Users, Send Message, Ask Questions, Ask For User Email (added team_id arg if using org level token)
-* January 27, 2025 (v1.12)
-    * Updated actions: Send Message, Ask Question, Ask For User Email (added a fix to support Slack channel and user mentions, for example `<!here>` and `<!channel>`, ensuring proper formatting in messages).
-* Dec 18, 2025 (v1.13)
-    * Updated action: Send Message (Added blocks support to enhance message formatting and interactivity).
-* April 30, 2026 (v1.14) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* June 17, 2026 (v1.15)
-    * Updated action: Send Message (Added **Disable Link Previews** option to control whether Slack displays link previews in messages).
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.15 | June 17, 2026 | Updated the **Send Message** action to add a **Disable Link Previews** option to control whether Slack displays link previews in messages. |
+| v1.14 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.13 | Dec 18, 2025 | Updated the **Send Message** action to add blocks support for enhanced message formatting and interactivity. |
+| v1.12 | January 27, 2025 | Updated the **Send Message**, **Ask Question**, and **Ask For User Email** actions to add a fix supporting Slack channel and user mentions (for example, `<!here>` and `<!channel>`), ensuring proper formatting in messages. |
+| v1.11 | Oct 10, 2024 | <ul><li>Updated the integration file to add Token Type and Team ID arguments.</li><li>Updated actions — **Create Channel**, **List Channels**, **Get Channel**, **List Users**, **Send Message**, **Ask Question**, and **Ask For User Email** — to add a team_id argument when using an org-level token.</li></ul> |
+| v1.10 | Oct 1, 2024 | Updated the **Ask Question** and **Ask For User Email** actions to make changes for timeout. |
+| v1.10 | Sept 17, 2024 | Updated the **Ask Question** action to add an Allow Custom Text feature. |
+| v1.9 | March 22, 2024 | Added a new action: **Rename Channel**. |
+| v1.8 | January 16, 2024 | Updated the **Ask Question** action to resolve an issue related to newline characters. |
+| v1.7 | August 21, 2023 | Updated the **Send Message** action. |
+| v1.6 | June 30, 2023 | Removed unnecessary spaces. |
+| v1.5 | March 3, 2023 | Updated the integration field labels. |
+| v1.4 | January 10, 2023 | Refactored the integration. |
+| v1.3 | December 30, 2022 | Added new actions: **Ask Question** and **Ask For User Email**. |
+| v1.2 | November 18, 2022 | Updated the **Get User** action field hints. |
+| v1.1 | March 4, 2021 | Initial release of the Slack integration. |
 
 ## Additional resources
 
-- For Slack, Sumo Logic offers the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize your Slack data.
+For Slack, Sumo Logic offers the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize your Slack data.

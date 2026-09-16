@@ -48,10 +48,12 @@ For information about Sophos Central, see [Sophos Central documentation](https:/
 
 ## Change Log
 
-* March 6, 2020 - First upload
-* July 11, 2023 (v1.1) - Updated the integration with Environmental Variables
-* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | March 6, 2020 | Initial release of the Sophos Central integration. |
 
 ## Additional resources
 
-- For Sophos Central, Sumo Logic offers the [Sophos Central source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/) and the [Sophos app](/docs/integrations/saas-cloud/sophos/) to collect and visualize your Sophos Central data.
+For Sophos Central, Sumo Logic offers the [Sophos Central source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source/) and the [Sophos app](/docs/integrations/saas-cloud/sophos/) to collect and visualize your Sophos Central data.

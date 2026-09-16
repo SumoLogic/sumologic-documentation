@@ -69,15 +69,10 @@ For information about VirusTotal v3, see [VirusTotal v3 documentation](https://d
 
 ## Change Log
 
-* July 03, 2024
-    + First upload
-    + It is an updated version of VirusTotal which works with V3 API.
-* July 22, 2025
-    + Fixed url parsing issue in **URL Reputation** action.
-* October 3, 2025
-    + Implemented polling mechanism (poll_analysis) in *Scan URL* action to wait until VirusTotal scan status becomes completed.
-* April 8, 2026 
-    + Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* July 31, 2026 (v1.5)
-    + Added new actions: *Get Domain Resolutions*, *Get File Behaviour*, *Get IP Resolutions*, and *Rescan File*.
-    + Improved reliability and consistency across all actions with standardized request handling and enhanced error messages.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | July 31, 2026 | <ul><li>Added new actions: **Get Domain Resolutions**, **Get File Behaviour**, **Get IP Resolutions**, and **Rescan File**.</li><li>Improved reliability and consistency across all actions with standardized request handling and enhanced error messages.</li></ul> |
+| v1.4 | April 8, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | October 3, 2025 | Implemented a polling mechanism (`poll_analysis`) in the **Scan URL** action to wait until the VirusTotal scan status becomes completed. |
+| v1.2 | July 22, 2025 | Fixed a URL parsing issue in the **URL Reputation** action. |
+| v1.1 | July 03, 2024 | Initial release of the VirusTotal V3 integration, an updated version of VirusTotal that works with the V3 API. |

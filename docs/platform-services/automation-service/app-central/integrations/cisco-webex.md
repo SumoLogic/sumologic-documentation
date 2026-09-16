@@ -55,21 +55,9 @@ Messaging
 
 ## Change Log
 
-* May 12, 2021 - First upload
-* November 30, 2022
-	+ New Actions
-		- Create User
-		- Delete User
-		- List Users
-	+ Modified Actions
-		- Add Member
-		- Create Room
-		- Create Team
-		- Delete Message
-		- Delete Team
-		- Edit Message
-		- List Rooms
-		- Send Message
-		- Update Room
-* June 27, 2023 (v1.3) - Updated the integration with Environmental Variables
-* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | June 27, 2023 | Updated the integration with Environmental Variables. |
+| v1.2 | November 30, 2022 | <ul><li>Added new actions: **Create User**, **Delete User**, and **List Users**.</li><li>Modified actions: **Add Member**, **Create Room**, **Create Team**, **Delete Message**, **Delete Team**, **Edit Message**, **List Rooms**, **Send Message**, and **Update Room**.</li></ul> |
+| v1.1 | May 12, 2021 | Initial release of the Cisco Webex integration. |

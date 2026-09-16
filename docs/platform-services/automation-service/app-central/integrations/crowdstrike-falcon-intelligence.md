@@ -94,21 +94,17 @@ For information about CrowdStrike Falcon Intelligence, see [CrowdStrike document
 
 ## Change Log
 
-* July 26, 2022 - First upload
-* February 23, 2023
-    + Integration re-named from **CrowdStrike Falcon X** to **CrowdStrike Falcon Intelligence**
-    + Updated integration: (Updated the integration Fields with Environmental Variables)
-* March 21, 2023 - Logo updated
-* June 30, 2023 (v1.5) - Updated the integration with Environmental Variables
-* March 4, 2024 (v1.7) - Updated code for compatibility with Python 3.12
-* March 31, 2026 (v1.8) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* June 30, 2026 (v1.9) - Updated the available sandbox environments to align with the latest platform support. Ubuntu 16.04 has been removed, Ubuntu 20 is now deprecated, and Ubuntu 24 has been added
-* July 20, 2026 (v1.10) - Improved the reliability of sandbox analysis by automatically monitoring submission progress and retrieving the final report as soon as it becomes available.
-  * Deprecated Actions:
-    + Submission Status Polling
-  * Replacement Actions:
-    + Check Submission Report
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.10 | July 20, 2026 | Improved the reliability of sandbox analysis by automatically monitoring submission progress and retrieving the final report as soon as it becomes available. Deprecated the **Submission Status Polling** action in favor of the new **Check Submission Report** action. |
+| v1.9 | June 30, 2026 | Updated the available sandbox environments to align with the latest platform support. Ubuntu 16.04 has been removed, Ubuntu 20 is now deprecated, and Ubuntu 24 has been added. |
+| v1.8 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.7 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.5 | June 30, 2023 | Updated the integration with Environmental Variables. |
+| v1.4 | March 21, 2023 | Updated the logo. |
+| v1.3 | February 23, 2023 | <ul><li>Renamed the integration from **CrowdStrike Falcon X** to **CrowdStrike Falcon Intelligence**.</li><li>Updated the integration fields with Environmental Variables.</li></ul> |
+| v1.2 | July 26, 2022 | Initial release of the CrowdStrike Falcon Intelligence integration. |
 
 ## Additional resources
 
-- For CrowdStrike Threat Intel, Sumo Logic offers the [CrowdStrike Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source/) to collect your CrowdStrike Threat Intel data.
+For CrowdStrike Threat Intel, Sumo Logic offers the [CrowdStrike Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source/) to collect your CrowdStrike Threat Intel data.

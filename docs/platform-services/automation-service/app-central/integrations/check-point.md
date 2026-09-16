@@ -66,24 +66,12 @@ For information about Check Point, see [Check Point documentation](https://sc1.c
 
 ## Change Log
 
-* February 10, 2020 - First upload
-* May 15, 2020 - New Actions added:
-	+ Block Port
-	+ Add Rule
-	+ Delete Rule
-	+ Add Threat Rule
-	+ Delete Threat Rule
-* September 7, 2021- New actions added
-	+ Add Host To Specific Group
-	+ Assign Global
-	+ Install Policy
-* November 22, 2022 - Integration refactored
-	+ Arg.url changed to arg.server in integration file and actions
-	+ Added verify, timeout and proxy\_url
-	+ Added REQUIRED as help where needed
-	+ Changed type of list to text, where incident\_artifacts: true
-* November 30, 2022 - new action Show Access Rule added
-* June 23, 2023 (v1.4)
-	+ Updated the integration with Environmental Variables
-	+ Renamed from Check Point OIF to Check Point
-* April 27, 2026 (v1.5) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | June 23, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed from Check Point OIF to Check Point.</li></ul> |
+| v1.3 | November 30, 2022 | Added a new action: **Show Access Rule**. |
+| v1.2 | November 22, 2022 | <ul><li>Changed `arg.url` to `arg.server` in the integration file and actions.</li><li>Added `verify`, `timeout`, and `proxy_url`.</li><li>Added REQUIRED as help where needed.</li><li>Changed the type of list to text, where `incident_artifacts` is true.</li></ul> |
+| v1.1 | September 7, 2021 | Added new actions: **Add Host To Specific Group**, **Assign Global**, and **Install Policy**. |
+| v1.0 | May 15, 2020 | Added new actions: **Block Port**, **Add Rule**, **Delete Rule**, **Add Threat Rule**, and **Delete Threat Rule**. |
+| v1.0 | February 10, 2020 | Initial release of the Check Point integration. |

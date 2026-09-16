@@ -56,6 +56,8 @@ For information about Akenza, see [Akenza documentation](https://docs.akenza.io/
 
 ## Change Log
 
-* December 14, 2022 - First upload
-* July 18, 2023 (v1.1) - Removed leading/trailing spaces
-* April 8, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 8, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 18, 2023 | Removed leading and trailing spaces from the integration. |
+| v1.0 | December 14, 2022 | Initial release of the Akenza integration. |

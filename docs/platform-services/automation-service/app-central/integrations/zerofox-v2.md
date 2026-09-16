@@ -49,4 +49,6 @@ For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.c
 
 ## Change Log
 
-* April 24, 2026 - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | April 24, 2026 | Initial release of the ZeroFox V2 integration. |

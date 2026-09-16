@@ -47,10 +47,11 @@ For information about KnowBe4 PhishER, see [KnowBe4 PhishER documentation](https
 
 ## Change Log
 
-* April 26, 2023 - First upload
-* June 26, 2023 (v1.3) - Removed unnecessary empty lines and other little changes
-* August 24, 2023 (v1.4)
-    + New Daemon: PhishER Messages Daemon
-* September 26, 2023 (v1.5) - Updated Action: **Get Message**
-* March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12
-* April 29, 2026 (v1.7) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.7 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.6 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.5 | September 26, 2023 | Updated the **Get Message** action. |
+| v1.4 | August 24, 2023 | Added a new daemon: **PhishER Messages Daemon**. |
+| v1.3 | June 26, 2023 | Removed unnecessary empty lines and made other minor changes. |
+| v1.2 | April 26, 2023 | Initial release of the KnowBe4 PhishER integration. |

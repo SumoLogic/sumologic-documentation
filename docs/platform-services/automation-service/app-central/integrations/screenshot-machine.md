@@ -49,13 +49,10 @@ For information about Screenshot Machine, see [Screenshot Machine documentation]
 
 ## Change Log
 
-* October 16, 2019 - First upload
-* July 11, 2023 (v1.1)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed form Screenshot Machine OIF to Screenshot Machine
-* September 4, 2023 (v1.2)
-	+ integration refactored
-	+ added new action Screenshot Webpage V2
-* February 16, 2024 (v1.3)
-    + Screenshot Webpage Action: Updated with new Cloud SOAR API
-* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | February 16, 2024 | Updated the **Screenshot Webpage** action to use the new Cloud SOAR API. |
+| v1.2 | September 4, 2023 | <ul><li>Refactored the integration.</li><li>Added a new action: **Screenshot Webpage V2**.</li></ul> |
+| v1.1 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Screenshot Machine OIF to Screenshot Machine.</li></ul> |
+| v1.0 | October 16, 2019 | Initial release of the Screenshot Machine integration. |

@@ -62,13 +62,13 @@ For information about Cortex XDR, see [Cortex XDR documentation](https://docs-co
 
 ## Change Log
 
-* July 20, 2021 - First upload
-* July 19, 2022 - Incidents Cortex XDR Daemon action added
-* January 27, 2023 - Integration refactored
-* January 30, 2023 - Updated Daemon
-    + Incidents Cortex XDR Daemon: refactored
-    + Alerts Cortex XDR Daemon: refactored
-* July 11, 2023 (v1.3) - Removed leading/trailing spaces
-* March 4, 2024 (v1.4) - Updated code for compatibility with Python 3.12
-* October 15, 2024 (v1.5) - Fixed the timeout error.
-* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | October 15, 2024 | Fixed the timeout error. |
+| v1.4 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.3 | July 11, 2023 | Removed leading and trailing spaces. |
+| v1.2 | January 30, 2023 | <ul><li>Refactored the **Incidents Cortex XDR Daemon** action.</li><li>Refactored the **Alerts Cortex XDR Daemon** action.</li></ul> |
+| v1.1 | January 27, 2023 | Refactored the integration. |
+| v1.0 | July 19, 2022 | Added the **Incidents Cortex XDR Daemon** action. |
+| v1.0 | July 20, 2021 | Initial release of the Cortex XDR integration. |
