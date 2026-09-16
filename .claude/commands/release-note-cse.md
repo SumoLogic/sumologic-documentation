@@ -92,7 +92,7 @@ Examples:
 **For Content Releases:**
 ```yaml
 ---
-title: {Month} {Day}th, {Year} - Content Release
+title: {Month} {Day}, {Year} - Content Release
 hide_table_of_contents: true
 keywords:
   * rules
@@ -120,9 +120,9 @@ hide_table_of_contents: true
   * Application releases: Feature-specific keywords (e.g., `insights`, `entities`, `signals`, `cloud siem`)
 * User may want to add or modify keywords based on specific content
 
-**Date formatting:**
-* Use ordinal suffixes: "March 12th", "February 3rd", "January 21st"
-* Full month name, not abbreviated.
+**Title and date formatting:**
+* `{Month} {D}, {Year} - Content Release` or `{Month} {D}, {Year} - Application Update`
+* Follow the [style guide](/docs/contributing/style-guide/#release-notes) date format: full month name, no ordinal, no leading zero (`March 12, 2026`).
 
 ### Step 4: Add required import
 
@@ -177,29 +177,20 @@ Additional changes are enumerated below.
 
 **Application Release Guidelines:**
 * Use H3 (`###`) for each feature.
-* Start with clear, concise description.
-* Include "Learn more" link to relevant docs.
-* Keep it brief (2-3 sentences per feature).
 * Add screenshots using: `<img src={useBaseUrl('img/path')} alt="description" />`
-* Highlight business value and user impact.
+* For voice, conciseness, and "Learn more" links, follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide.
 
 ### Step 6: Format dates and titles
 
-**Title formatting rules:**
-* Month: Full name (March, not Mar)
-* Day: Ordinal suffix (12th, 3rd, 21st)
-  * 1st, 2nd, 3rd.
-  * 4th-20th end in "th".
-  * 21st, 22nd, 23rd, 31st.
-  * 24th-30th end in "th".
-* Year: Full 4 digits
-* Type: "Content Release" or "Application Update"
+Title format: `{Month} {D}, {Year} - Content Release` or `{Month} {D}, {Year} - Application Update`.
+
+Dates follow the [style guide](/docs/contributing/style-guide/#release-notes): full month name, no ordinal, no leading zero.
 
 Examples:
-* ✅ "March 19th, 2026 - Content Release".
-* ✅ "February 3rd, 2026 - Application Update".
+* ✅ "March 19, 2026 - Content Release".
+* ✅ "February 3, 2026 - Application Update".
 * ❌ "Mar 19, 2026 - Content Release" (month abbreviated).
-* ❌ "March 19 2026 - Content Release" (missing "th").
+* ❌ "March 19th, 2026 - Content Release" (ordinal suffix).
 
 ### Step 7: Validation checklist
 
@@ -207,7 +198,7 @@ Before finishing, verify:
 * [ ] File created in `/blog-cse/` directory (not `/docs/`).
 * [ ] Filename follows pattern: `YYYY-MM-DD-{type}.md`
 * [ ] Frontmatter complete with all required fields.
-* [ ] Title formatted correctly with ordinal suffix.
+* [ ] Title date formatted correctly (`Month D, YYYY`, no ordinal).
 * [ ] `hide_table_of_contents: true` present
 * [ ] Keywords appropriate for release type.
 * [ ] `import useBaseUrl` statement included.
@@ -228,7 +219,7 @@ Claude:
 1. Confirms date: 2026-03-19
 2. Confirms type: Content Release
 3. Creates: blog-cse/2026-03-19-content.md
-4. Generates frontmatter with proper title: "March 19th, 2026 - Content Release"
+4. Generates frontmatter with proper title: "March 19, 2026 - Content Release"
 5. Adds summary section
 6. Creates sections for Rules and Log Mappers
 7. Formats with proper [New]/[Updated] tags
