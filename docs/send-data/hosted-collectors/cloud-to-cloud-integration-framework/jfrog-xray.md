@@ -2,7 +2,7 @@
 id: jfrog-xray-source
 title: JFrog Xray Source
 sidebar_label: JFrog Xray
-tags:
+keywords:
   - cloud-to-cloud
   - jfrog
   - xray

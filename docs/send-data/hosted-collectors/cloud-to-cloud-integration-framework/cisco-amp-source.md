@@ -2,7 +2,7 @@
 id: cisco-amp-source
 title: Cisco AMP Source
 sidebar_label: Cisco AMP
-tags:
+keywords:
   - cloud-to-cloud
   - cisco-amp
 description: The Cisco AMP Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Amp System Log API.

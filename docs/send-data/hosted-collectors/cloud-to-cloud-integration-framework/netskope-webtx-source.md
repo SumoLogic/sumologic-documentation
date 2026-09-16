@@ -2,7 +2,7 @@
 id: netskope-webtx-source
 title: Netskope WebTx Source
 sidebar_label: Netskope WebTx
-tags:
+keywords:
   - cloud-to-cloud
   - netskope-webtx
 description: Our Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Stream.

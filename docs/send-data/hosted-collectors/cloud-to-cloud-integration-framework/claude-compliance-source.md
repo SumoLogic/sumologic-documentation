@@ -2,7 +2,7 @@
 id: claude-compliance-source
 title: Claude Compliance Source
 sidebar_label: Claude Compliance
-tags:
+keywords:
   - cloud-to-cloud
   - claude-compliance
 description: Learn to collect the chats from the Claude Compliance platform.

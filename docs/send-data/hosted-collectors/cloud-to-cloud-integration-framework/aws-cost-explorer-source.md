@@ -2,7 +2,7 @@
 id: aws-cost-explorer-source
 title: AWS Cost Explorer Source
 sidebar_label: AWS Cost Explorer
-tags:
+keywords:
   - cloud-to-cloud
   - aws-cost-explorer
 description: Learn how to retrieve cost and usage reports from AWS Cost Explorer into the Sumo Logic environment.
