@@ -47,7 +47,7 @@ Every investigation resolves to one of a small set of verdicts, so you always kn
 
 | Verdict | Meaning |
 |:--|:--|
-| **Root cause identified** | The agent reached a conclusion it is confident in, with supporting evidence. |
+| **Identified RCA** | The agent reached a conclusion it is confident in, with supporting evidence. |
 | **In progress** | The investigation is still running. |
 | **Inconclusive** | The agent found relevant signal but could not land on a root cause it can stand behind. This usually happens when the findings point in conflicting directions, or the deciding data sits in a source the agent cannot reach. |
 | **False positive** | The alert did not represent a real problem in the system. |
@@ -64,10 +64,10 @@ Each finding carries the query behind it. Open it and you land in the log search
 
 When a monitor fires, the agent investigates the alert automatically. The result is waiting on the **AI Investigation** tab of the [alert response page](/docs/alerts/monitors/alert-response/) when someone opens it.
 
-1. From **Alerts**, open the alert you want to review.
+1. Go to your [Alert List](/docs/alerts/monitors/alert-response/#alert-list) and click any alert to open its details.
 1. Select the **AI Investigation** tab. The other tabs on the page (**Alert Details**, **Relevant Alerts**, and **Monitor History**) are unchanged.
 
-Use **Ask Mobot** at the top of the page to continue the investigation conversationally in [Mobot](/docs/search/mobot/), with the verdict, findings, and context already loaded. Ask a plain-language question such as `Why is my checkout service down?` and get an investigation back in conversation.
+To continue the investigation conversationally, click **Ask Mobot** at the top of the page. This opens [Mobot](/docs/search/mobot/) with the verdict, findings, and context already loaded. Pick one of the suggested follow-up questions or ask your own, such as `Why is my checkout service down?`, and get an investigation back in conversation.
 
 The tab has the following sections. Each one carries its own thumbs-up and thumbs-down feedback buttons.
 
