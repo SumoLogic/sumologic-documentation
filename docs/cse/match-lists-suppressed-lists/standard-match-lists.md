@@ -255,7 +255,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Description:** DNS domain names that are known business-related domains. This is intended to capture domains related to validated, expected, or critical business functions and may be used for allowlisting or filtering related uninteresting results from query result sets.
 
-*Domain* matches against the `domain` field, not the FQDN (i.e. hostname or query), so *example.com* is a valid entry is but *www.example.com* is not.
+Domain matches against the `domain` field, not the FQDN (i.e. hostname or query), so `example.com` is a valid entry but `www.example.com` is not.
 
 The following Cloud SIEM rules refer to this match list:
 * Bitsadmin to Uncommon TLD

@@ -96,7 +96,7 @@ When a specific alerting condition is met, as defined on the monitor, an inciden
 
 ### Monitor  
 
-A _Monitor_ creates an _Alert_. Using the options below, you're subscribing to an _Alert's Monitor_.
+A Monitor creates an Alert. Using the options below, you're subscribing to an Alert's Monitor.
 
 The monitor is the object that you configure within Sumo Logic that:
   * Checks for specific events of interest against a data source, based on your specified conditions. Events of interest are used in a general sense to denote an event that may be of interest to you.
