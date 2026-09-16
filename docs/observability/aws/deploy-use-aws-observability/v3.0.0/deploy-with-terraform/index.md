@@ -88,7 +88,7 @@ Before you run the Terraform, perform the following actions on a server machine 
 
 Choose one of the following installation methods:
 
-### Option A: Install as a Terraform module (from [registry](https://registry.terraform.io/modules/SumoLogic/aws-observability/sumologic/latest))
+### Option A: Install as a Terraform module (from [registry](https://registry.terraform.io/modules/SumoLogic/aws-observability/sumologic/latest)) using default configuration
 
 Create a new working directory and configure the following files:
 
@@ -152,7 +152,25 @@ Starting with v3.0.0, the AWS Observability Terraform module has moved to a new 
     }
     ```
 
-## Step 3: Determine which AWS Account/Regions to Deploy
+## Step 3: Configure the app module in main.tf
+
+The app module installs AWS Observability apps into the **Installed Apps** catalog and sets up the Explorer hierarchy in your Sumo Logic account. It also deploys monitors, Field Extraction Rules (FER), and fields required for AWS Observability. It should be configured once per Sumo Logic organization.
+
+:::note
+Do not change the **module "app-module"** section unless you want to override app parameters. See [Override app content parameters](#override-app-content-parameters) for available overrides.
+:::
+
+```hcl
+module "app-module" {
+  source                         = "./modules/apps"
+  sumologic_access_id            = var.sumologic_access_id
+  sumologic_access_key           = var.sumologic_access_key
+  sumologic_environment          = var.sumologic_environment
+  sumologic_environment_base_url = var.sumologic_environment_base_url
+}
+```
+
+## Step 4: Determine which AWS Account/Regions to Deploy
 
 You have three options to configure the AWS Account/Region:
 
@@ -230,6 +248,9 @@ output "Collection" {
 
 ### Option 2: Deploy to multiple regions within an AWS account
 
+:::note
+  We recommend deploying the solution with a maximum of three AWS regions per deployment.
+:::
 Use this option to install the AWS Observability Solution for multiple regions within a given AWS account. To do so, add providers for each AWS region in **providers.tf** and add a collection module for each region in **main.tf**.
 
 #### Configure providers in providers.tf
@@ -290,6 +311,7 @@ Add a collection module block for each region pointing to `./modules/collections
 
 ```hcl title="Example main.tf for single account, multiple regions"
 module "collection-module-us-east-1" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -307,6 +329,7 @@ module "collection-module-us-east-1" {
 }
 
 module "collection-module-us-east-2" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -358,6 +381,10 @@ output "Collection" {
 ```
 
 ### Option 3: Deploy to multiple AWS accounts and regions
+
+:::note
+  We recommend deploying the solution with a maximum of three AWS accounts and three AWS regions per deployment.
+:::
 
 Use this option to install the AWS Observability Solution for multiple accounts and regions.
 
@@ -422,6 +449,7 @@ Add a collection module block for each account-region combination. Each module p
 
 ```hcl title="Example main.tf for multiple accounts and regions"
 module "collection-module-production-us-east-1" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -439,6 +467,7 @@ module "collection-module-production-us-east-1" {
 }
 
 module "collection-module-production-us-east-2" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -462,6 +491,7 @@ module "collection-module-production-us-east-2" {
 }
 
 module "collection-module-development-us-west-1" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -507,24 +537,6 @@ output "Collection" {
 }
 ```
 
-## Step 4: Configure the app module in main.tf
-
-The app module installs AWS Observability apps into the **Installed Apps** catalog and sets up the Explorer hierarchy in your Sumo Logic account. It also deploys monitors, Field Extraction Rules (FER), and fields required for AWS Observability. It should be configured once per Sumo Logic organization.
-
-:::note
-Do not change the **module "app-module"** section unless you want to override app parameters. See [Override app content parameters](#override-app-content-parameters) for available overrides.
-:::
-
-```hcl
-module "app-module" {
-  source                         = "./modules/apps"
-  sumologic_access_id            = var.sumologic_access_id
-  sumologic_access_key           = var.sumologic_access_key
-  sumologic_environment          = var.sumologic_environment
-  sumologic_environment_base_url = var.sumologic_environment_base_url
-}
-```
-
 ## Step 5: Override default parameter values
 
 By default, all parameters are set up to automatically collect logs, metrics, install apps, and monitors. If you need to override parameters, you have two options:
@@ -545,6 +557,7 @@ Before you run these commands, make sure you have configured your AWS profiles o
 :::
 
 ```bash
+terraform init
 terraform validate
 terraform plan
 terraform apply
