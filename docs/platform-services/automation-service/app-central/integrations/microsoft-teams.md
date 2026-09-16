@@ -413,20 +413,14 @@ For information about Microsoft Teams, see [Microsoft Teams documentation](https
 
 ## Change Log
 
-* July 12, 2022 (v1.0) - First upload
-* January 10, 2023 (v1.1) - Refactoring
-* May 10, 2023 (v1.2) - Daemon added
-* May 19, 2023 (v1.3)
-    + Updated Daemon - **Microsoft Teams List Channel Messages Daemon** (Removed HTML Tags from Messages)
-    + Documentation Updated
-    + Modified the action type from **Containment** to **Notification** for the following actions:
-        - Add Channel Members
-        - Add Team Members
-        - Create Channel
-        - Create Team
-* June 26, 2023 (v1.4) - Removed unnecessary empty lines and other little changes
-* June 28, 2023 (v1.6) - Visibility of the Resource fields changed
-* July 5, 2023 (v1.8)
-    + Updated Actions - List Users & Create Channel
-* March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
-* April 30, 2026 (v1.10) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.10 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.9 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.8 | July 5, 2023 | Updated the **List Users** and **Create Channel** actions. |
+| v1.6 | June 28, 2023 | Changed the visibility of the resource fields. |
+| v1.4 | June 26, 2023 | Removed unnecessary empty lines and made other minor changes. |
+| v1.3 | May 19, 2023 | <ul><li>Updated the **Microsoft Teams List Channel Messages Daemon** action to remove HTML tags from messages.</li><li>Updated the documentation.</li><li>Changed the action type from Containment to Notification for the following actions: **Add Channel Members**, **Add Team Members**, **Create Channel**, and **Create Team**.</li></ul> |
+| v1.2 | May 10, 2023 | Added a new Daemon action. |
+| v1.1 | January 10, 2023 | Refactored the integration. |
+| v1.0 | July 12, 2022 | Initial release of the Microsoft Teams integration. |

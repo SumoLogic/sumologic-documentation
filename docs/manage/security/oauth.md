@@ -42,7 +42,7 @@ An administrator needs to enable CIMD for your organization before clients can u
 1. Select the **Enable CIMD Clients** check box.
 1. Click **Save**.
 
-Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [Manual OAuth setup](/docs/api/mcp-server#manual-oauth-setup) for the MCP server.
+Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [How to set up MCP without CIMD](/docs/api/mcp-server#how-to-set-up-mcp-without-cimd) for the MCP server.
 
 ## Authorization Code flow
 
@@ -273,7 +273,7 @@ Sumo Logic publishes OAuth 2.0 and OpenID Connect discovery documents so clients
 
 * **Authorization server metadata** returns the `authorization_endpoint`, `token_endpoint`, and other supported OAuth 2.0 parameters, such as scopes, grant types, and response types.
 * **OpenID Connect configuration** returns the OpenID Provider configuration, including the `issuer`, endpoint URLs, and supported claims.
-* **Protected resource metadata** is served by the [Sumo Logic MCP server](/docs/api/mcp-server) to advertise which authorization server issues tokens for it. Replace `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/api/mcp-server#prerequisites).
+* **Protected resource metadata** is served by the [Sumo Logic MCP server](/docs/api/mcp-server) to advertise which authorization server issues tokens for it. Replace `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
 
 For example, to retrieve the authorization server metadata:
 

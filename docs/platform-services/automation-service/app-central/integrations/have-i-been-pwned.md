@@ -49,8 +49,10 @@ For information about Have I Been Pwned, see [Have I Been Pwned documentation](h
 
 ## Change Log
 
-* August 26, 2021 (v1.0) - First upload
-* April 14, 2023 (v1.1) - Refactored
-* April 17, 2023 (v1.2) - Improved error handling
-* December 12, 2023 (v1.3) - Added new action: Get Latest Breach
-* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | December 12, 2023 | Added a new action: **Get Latest Breach**. |
+| v1.2 | April 17, 2023 | Improved error handling. |
+| v1.1 | April 14, 2023 | Refactored the integration. |
+| v1.0 | August 26, 2021 | Initial release of the Have I Been Pwned integration. |

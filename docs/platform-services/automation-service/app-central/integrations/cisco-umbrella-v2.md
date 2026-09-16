@@ -44,9 +44,10 @@ For information about Cisco Umbrella, see [Cisco Umbrella documentation](https:/
 
 ## Change Log
 
-* September 25, 2019 - First upload
-* January, 26, 2023 - Integration refactored
-* May 18, 2023 (v1.2)
-	+ The integration previously known as "**CISCO Umbrella OIF**" has been renamed to "**Cisco Umbrella V2**"
-* July 3, 2023 (v1.3) - Removed leading/trailing spaces
-* April 27, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 3, 2023 | Removed leading and trailing spaces. |
+| v1.2 | May 18, 2023 | Renamed the integration from **Cisco Umbrella OIF** to **Cisco Umbrella V2**. |
+| v1.1 | January 26, 2023 | Refactored the integration. |
+| | September 25, 2019 | Initial release of the Cisco Umbrella V2 integration. |

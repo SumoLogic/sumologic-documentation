@@ -44,9 +44,8 @@ For information about ThreatMiner, see the [ThreatMiner website](https://www.thr
 
 ## Change Log
 
-* June 19, 2020 - First upload
-* July 13, 2023 (v1.1)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
-	+ Added new action: Search DNS Records V2
-* April 30, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 13, 2023 | <ul><li>Updated the integration with environmental variables.</li><li>Changed fields visibility.</li><li>Added a new action: **Search DNS Records V2**.</li></ul> |
+| | June 19, 2020 | Initial release of the ThreatMiner integration. |

@@ -43,7 +43,9 @@ For information about Qualys EDR, see [Qualys EDR documentation](https://docs.qu
 
 ## Change Log
 
-* August 17, 2021 - First upload
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* June 26, 2023 (v1.2) - Changed JWT Token action type to Enrichment
-* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | June 26, 2023 | Changed the **JWT Token** action type to Enrichment. |
+| v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| | August 17, 2021 | Initial release of the Qualys EDR integration. |
