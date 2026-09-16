@@ -64,6 +64,10 @@ dynamodb:DescribeTable
 dynamodb:UpdateTable
 ```
 
+## Additional resources
+
+For AWS DynamoDB, Sumo Logic offers the [Amazon DynamoDB app](/docs/integrations/amazon-aws/dynamodb/) to visualize your DynamoDB data.
+
 ## Change Log
 
 | Version | Date | Description |
