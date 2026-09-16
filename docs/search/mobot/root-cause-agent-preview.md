@@ -92,7 +92,7 @@ Suggested next steps grouped by urgency: **Immediately**, **Short-term**, and **
 Private Preview covers the core loop: the agent investigating on its own, and a way to ask it questions.
 
 * **Automatic investigation of alerts**, across your logs and metrics. When a monitor fires, the agent investigates with no manual trigger, and the result is ready on the alert when someone opens it.
-* **Results on the AI Investigation tab**, with the full detail: verdict, what happened, key findings with supporting evidence, and recommended actions.
+* **Results on the AI Investigation tab**, with the full detail: verdict, what happened, key findings, and a remediation plan.
 * **Ask Mobot**. Continue an investigation in conversation, or ask a plain-language question to start one.
 
 Private Preview investigates the telemetry you already send to Sumo Logic. Support for external sources and Slack is planned for a later preview phase.
