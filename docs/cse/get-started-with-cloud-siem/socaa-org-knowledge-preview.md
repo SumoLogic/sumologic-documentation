@@ -104,12 +104,12 @@ The following apply during Private Preview:
 
 * **Audit logging for knowledge**. A comprehensive record of who added or changed a given fact, and when, is not yet available. It is planned for a later phase.
 * **Role-based contribution controls**. Scoping who can add or edit knowledge by role is not yet available.
+* **Scope**. Knowledge currently powers the SOC Analyst Agent and is not available on standalone Mobot. Support for other Dojo AI agents, such as the Root Cause Agent, is planned for a later phase.
 
 Some limits are not tied to the preview phase:
 
 * **The agent does not act on response knowledge**. You can give the agent knowledge about your response practices, but it does not take or execute containment or remediation actions. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
 * **One knowledge base per organization**. Everyone on your team draws on the same shared knowledge. Per-team or per-tenant partitioning is not part of this release.
-* **SOC Analyst Agent required**. Knowledge is a capability of the SOC Analyst Agent and is not available on standalone Mobot.
 
 ## Permissions and data access
 
