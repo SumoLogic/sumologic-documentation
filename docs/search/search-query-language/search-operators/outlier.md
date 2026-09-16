@@ -2,14 +2,16 @@
 id: outlier
 title: outlier Search Operator
 sidebar_label: outlier
-description: Use the outlier operator to identify unexpected values in time-stamped numerical data sequences for anomaly detection and alerting.
+description: Use the outlier search operator in Sumo Logic to detect anomalies in log data by tracking moving average and standard deviation over time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Given a series of time-stamped numerical values, using the `outlier` operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search.
+## What does the outlier operator do?
 
-To do this, the Outlier operator tracks the moving average and standard deviation of a numerical field. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
+The `outlier` search operator finds unexpected values in Sumo Logic log search results. Given a series of time-stamped numerical values in a query, it can identify values in a sequence that seem unexpected, and trigger an alert or violation, for example, for a scheduled search.
+
+To do this, the outlier operator tracks the moving average and standard deviation of a numerical field in your log data. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
 
 ## Syntax
 
@@ -80,7 +82,7 @@ _sourceCategory=IIS/Access
 | outlier response_time window=5,threshold=3,consecutive=2,direction=+-
 ```
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/IIS.png')} alt="IIS" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/IIS.png')} alt="Chart showing outlier response times in IIS logs marked with pink triangles" style={{border: '1px solid gray'}} width="800" />
 
 The outlier values are represented by the pink triangles in the resulting chart.
 
@@ -97,7 +99,7 @@ _sourceCategory=Apache/Access
 | outlier status_code window=5,threshold=3,consecutive=1,direction=+-
 ```
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Apache-Access.png')} alt="Apache" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Apache-Access.png')} alt="Chart showing outlier server error counts in Apache logs marked with pink triangles" style={{border: '1px solid gray'}} width="800" />
 
 The outlier values are represented by the pink triangles in the
 resulting chart.
@@ -115,7 +117,7 @@ _sourceCategory=Apache/Access
 
 This way, you can run outlier analysis separately for each value of `_sourceHost`, as shown.
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Group-by.png')} alt="Group b" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Group-by.png')} alt="Table showing outlier results grouped by _sourceHost" style={{border: '1px solid gray'}} width="800" />
 
 This example will only produce an aggregation table, not a chart, but the indicator and violation fields will correctly reflect each `_sourceHost` processing.
 
@@ -150,7 +152,7 @@ You can display the raw results of a multidimensional time series in a table cha
 
 In the following table chart, a value of 1 in the `_count_violation` column indicates that the data point corresponding to that timeslice is an outlier.
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Multidimensional.png')} alt="Multidimensional" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Multidimensional.png')} alt="Table chart showing multidimensional outlier violation results by _sourceHost" style={{border: '1px solid gray'}} width="800" />
 
 ### Alerts Based on Multidimensional Outlier Results
 
@@ -176,7 +178,7 @@ Once you have run the query, you can click **Save As** to create a [Scheduled Se
 
 To visualize your results, on the Search page, you can create a column chart, then change the stacking property to normal to display alerts by unique **user_id** (the multidimensional aspect).
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Outlier-Alert.png')} alt="Alert" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Outlier-Alert.png')} alt="Column chart showing outlier alert results stacked by user_id" style={{border: '1px solid gray'}} width="800" />
 
 ### Chart Multidimensional Outlier Results
 
@@ -197,7 +199,7 @@ error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 
 When you select a [line chart](/docs/dashboards/panels/line-charts), this example will display something like the following:
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/OutlierDistri.png')} alt="Outlier distribution" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/OutlierDistri.png')} alt="Line chart showing the distribution of outlier occurrences across time series by _sourceCategory" style={{border: '1px solid gray'}} width="800" />
 
 #### Example 2: Outlier Ranking
 
@@ -218,7 +220,7 @@ _sourceCategory=Apache*
 
 When you select a [line chart](/docs/dashboards/panels/line-charts), this example will display something like the following:
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/OutlierRanking.png')} alt="Outlier ranking" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/OutlierRanking.png')} alt="Line chart ranking outlier deviations by standard deviation across status codes" style={{border: '1px solid gray'}} width="800" />
 
 In the line chart, you can see which series is producing the most “deviating” outliers.
 
