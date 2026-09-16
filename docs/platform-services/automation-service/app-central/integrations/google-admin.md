@@ -63,7 +63,7 @@ For information about Google Admin, see [Google Workspace Admin documentation](h
 
 ## Change Log
 
-* September 19, 2023 (v1.1) - First upload
-* September 21, 2023 (v1.2)
-	+ changed docker to gmail
-	+ implemented error handling for User Service Account JSON
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | September 21, 2023 | <ul><li>Changed the Docker image to `gmail`.</li><li>Implemented error handling for the User Service Account JSON field.</li></ul> |
+| v1.1 | September 19, 2023 | First upload. |

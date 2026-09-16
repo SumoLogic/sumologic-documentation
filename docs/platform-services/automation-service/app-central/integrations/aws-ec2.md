@@ -114,13 +114,12 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 ## Change Log
 
-* October 9, 2019 - First upload
-* March 10, 2022 - Logo
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* January 16, 2024 (v1.3)
-	+ Updated action: Stop Instance (Resolved bug related to checkbox fields)
-+ July 04, 2024 (v1.4)
-	+ Updated action: Describe Instances (Resolved bug related to Instance ID field)
-+ February 04, 2025 (v1.5)
-    + Added action: Describe Instances V2
-+ July 29, 2025 (v1.6) - Added support for IAM role authentication - Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | July 29, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
+| v1.5 | February 04, 2025 | Added a new action: **Describe Instances V2**. |
+| v1.4 | July 04, 2024 | Updated the **Describe Instances** action to resolve a bug related to the Instance ID field. |
+| v1.3 | January 16, 2024 | Updated the **Stop Instance** action to resolve a bug related to checkbox fields. |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| | March 10, 2022 | Updated the logo in AWS EC2 integration. |
+| | October 9, 2019 | Initial release of the AWS EC2 integration. |
