@@ -65,29 +65,27 @@ Each finding carries the query behind it. Open it and you land in the log search
 When a monitor fires, the agent investigates the alert automatically. The result is waiting on the **AI Investigation** tab of the [alert response page](/docs/alerts/monitors/alert-response/) when someone opens it.
 
 1. From **Alerts**, open the alert you want to review.
-1. Select the **AI Investigation** tab. The other tabs on the page (**Alert Detail**, **Relevant Alerts**, and **Monitor History**) are unchanged.
+1. Select the **AI Investigation** tab. The other tabs on the page (**Alert Details**, **Relevant Alerts**, and **Monitor History**) are unchanged.
 
-The tab has the following sections.
+Use **Ask Mobot** at the top of the page to continue the investigation conversationally in [Mobot](/docs/search/mobot/), with the verdict, findings, and context already loaded. Ask a plain-language question such as `Why is my checkout service down?` and get an investigation back in conversation.
+
+The tab has the following sections. Each one carries its own thumbs-up and thumbs-down feedback buttons.
 
 ### AI Verdict
 
-The verdict for the alert (**Root cause identified**, **Inconclusive**, **False positive**, or **In progress**), followed by a short explanation of the reasoning. The section also shows a recommendation, such as **Safe to Resolve** with a **Resolve** action, and when the investigation started and how long it took.
+A badge summarizing the outcome (for example, **Identified RCA**), followed by a short explanation of the reasoning. Below that, a **Severity Confirmed** line states the confirmed severity and a suggested next step, such as **Begin Remediation**.
 
 ### What Happened
 
-A plain-language summary of the alert and what the agent found, followed by the numbered steps it worked through. Use the thumbs-up and thumbs-down buttons to give feedback on the summary.
+A plain-language summary of the alert and what the agent found, as a bulleted list of the steps it worked through.
 
 ### Key Findings
 
-The main points the investigation uncovered, written as plain statements and numbered in the order the agent established them. Each finding links to the log search or metrics query that produced it, so you can open the query and check the evidence yourself. Use the thumbs-up and thumbs-down buttons to give feedback on the findings.
+The main points the investigation uncovered, each with a short title and a plain-language explanation of what it means and how it was established.
 
-### Recommended Actions
+### Remediation Plan
 
-Suggested next steps, ranked, with the reasoning behind each one and its expected impact. These are recommendations for you to act on. The agent does not run them.
-
-### Continue investigating in Mobot
-
-Select **Ask Mobot** to continue the investigation conversationally in [Mobot](/docs/search/mobot/), with the verdict, findings, and context already loaded. The tab also offers suggested follow-up questions you can send straight to Mobot. Ask a plain-language question such as `Why is my checkout service down?` and get an investigation back in conversation.
+Suggested next steps grouped by urgency: **Immediately**, **Short-term**, and **Long-term**. These are recommendations for you to act on. The agent does not run them.
 
 ## What is included in Private Preview
 
