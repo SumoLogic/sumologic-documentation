@@ -87,4 +87,4 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 | [sumologic-python-sdk](https://github.com/SumoLogic/sumologic-python-sdk)| This solution is a Community-supported Python interface to the Sumo Logic REST API.|
 | [Sumotoolbox](https://github.com/voltaire321/sumologictoolbox)| This is a GUI utility for accessing the various Sumo Logic APIs (currently the search, content, and collector APIs.) The idea is to make it easier to perform common API tasks such as copying sources and generating CSV files from searches.|
 
- 
+<!-- awaiting SME guidance - add more info link to SDK line? --> 
