@@ -119,6 +119,19 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   }
   ```
 
+* The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`.
+
+  ```json
+  {
+      "state": "Error",
+      "errorType": "THIRD-PARTY-GENERIC",
+      "errorCode": 401,
+      "errorInfo": "cisco meraki api response 401 Unauthorized: {\"errors\":[\"Invalid API key\"]}"
+  }
+  ```
+
+  Verify that the API key configured in the Source is valid, and make sure the Source is set up with the correct key. Revisit the steps in [Vendor configuration](#vendor-configuration) to generate a new API key if needed.
+
 * The following error occurs when the API call to Cisco Meraki fails because the Meraki organization or network associated with the API key does not have a valid license. API access is available only for actively licensed Meraki organizations, and the issue may occur if the organization’s license has expired or if the API key is associated with an unlicensed or trial organization. In this case, visit the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) and check the license status under **Organization → Configure → License info**.
 
   ```json
