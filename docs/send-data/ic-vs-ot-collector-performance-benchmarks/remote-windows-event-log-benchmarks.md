@@ -60,7 +60,7 @@ Maximum EPS each collector sustained at a given average CPU usage, on a 2-core h
 
 ## Performance as a function of number of sources
 
-## Test conditions
+### Test conditions
 
 - Multiple RWEL/`windows_event_log` sources were configured against the same single remote host.
 - Message size was fixed at 1 KB, tested at three fixed rates: 1,000, 5,000, and 10,000 EPS.
@@ -111,7 +111,7 @@ At 10,000 EPS the OpenTelemetry Collector saturates quickly, exceeding 160% CPU 
 - The two collectors swap CPU efficiency somewhere between 1,000 and 5,000 EPS. The OpenTelemetry Collector is more efficient at low throughput, the Installed Collector becomes more efficient as EPS rises.
 - The OpenTelemetry Collector's CPU scales much more steeply with EPS than the Installed Collector's. At higher event rates it uses significantly more CPU even at a single source.
 - Both collectors approach the 2-core machine ceiling at high source counts regardless of EPS. That ceiling reflects the test hardware, not collector logic.
-Neither collector exceeded the 190% safety cutoff in any of these runs.
+- Neither collector exceeded the 190% safety cutoff in any of these runs.
 
 :::note
 Source-count-32 results are lower-bound estimates. CPU had not fully stabilized by the end of the measurement window, so actual values at that scale are likely somewhat higher than shown.
