@@ -2,7 +2,7 @@
 id: symantec-web-security-service-source
 title: Symantec Web Security Service Source
 sidebar_label: Symantec Web Security Service
-tags:
+keywords:
   - cloud-to-cloud
   - symantec-web-security-service
 description: The Symantec Web Security Service Source provides a secure endpoint to receive WSS Access logs from the Symantec WSS API.
