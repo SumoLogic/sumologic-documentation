@@ -63,7 +63,7 @@ For information about Mimecast, see [Mimecast documentation](https://integration
 | v1.3 | July 14, 2023 | Code refactoring. |
 | v1.2 | July 7, 2023 | Removed leading/trailing spaces. |
 | v1.1 | June 9, 2023 | Refactored. |
-| v1.0 | November 3, 2021 | Initial release of the Mimecast integration. |
+| | November 3, 2021 | Initial release of the Mimecast integration. |
 
 ## Additional resources
 

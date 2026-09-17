@@ -67,4 +67,4 @@ For information about AlienVault, see [AlienVault documentation](https://cyberse
 | v1.4 | March 3, 2023 | <ul><li>Updated the **IP Reputation** action.</li><li>Updated the integration fields label.</li></ul> |
 | v1.3 | January 25 | Added the environment class. |
 | v1.2 | July 19, 2022 | <ul><li>Changed the API key field type to password.</li><li>Changed the logo.</li></ul> |
-| v1.1 | October 3, 2019 | Initial release of the AlienVault OTX integration. |
+| | October 3, 2019 | Initial release of the AlienVault OTX integration. |

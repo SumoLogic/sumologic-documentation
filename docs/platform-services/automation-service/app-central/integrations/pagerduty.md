@@ -58,6 +58,6 @@ For information about PagerDuty, see [PagerDuty documentation](https://developer
 | v1.7 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.6 | August 23, 2023 | Changed the **Delete User** action type to Notification. |
 | v1.3 | March 3, 2023 | Updated the integration field labels. |
-| v1.2 | February 16, 2023 | Changed the type of actions. |
-| v1.1 | January 13, 2023 | Refactored the integration. |
-| v1.0 | January 22, 2019 | Initial release of the PagerDuty integration. |
+| | February 16, 2023 | Changed the type of actions. |
+| | January 13, 2023 | Refactored the integration. |
+| | January 22, 2019 | Initial release of the PagerDuty integration. |

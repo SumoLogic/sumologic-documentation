@@ -60,5 +60,5 @@ For information about Lacework, see [Lacework documentation](https://docs.lacewo
 | v1.3 | December 14, 2023 | Added a new action: **Close Alert**. |
 | v1.2 | October 5, 2023 | <ul><li>Updated the logo.</li><li>Refactored the code.</li><li>Added a new action: **Search Events**.</li><li>Changed the action type for **Search Cloud Activities** and **Search Reports Rules**.</li></ul> |
 | v1.1 | July 5, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | July 29, 2021 | Added a new action. |
-| v1.0 | July 13, 2021 | Initial release of the Lacework integration. |
+| | July 29, 2021 | Added a new action. |
+| | July 13, 2021 | Initial release of the Lacework integration. |

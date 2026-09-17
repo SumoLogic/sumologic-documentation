@@ -56,5 +56,5 @@ To work around the error, install an [automation bridge](/docs/platform-services
 |:--|:--|:--|
 | v2.2 | July 18, 2023 | Refactored the integration. |
 | v2.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
-| v2.0 | June 07, 2022 | Updated all actions with `pyattck==5.4.0`. |
-| v2.0 | February 3, 2021 | Initial release of the MITRE Matrix integration. |
+| | June 07, 2022 | Updated all actions with `pyattck==5.4.0`. |
+| | February 3, 2021 | Initial release of the MITRE Matrix integration. |

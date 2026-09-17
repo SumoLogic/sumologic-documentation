@@ -58,4 +58,4 @@ For information about ConnectWise Manage, see the [ConnectWise website](https://
 | v1.3 | October 29, 2024 | Beta release. Added the **Priority** field to the **Create Ticket** and **Update Ticket** actions. |
 | v1.2 | September 4, 2023 | <ul><li>Refactored the integration.</li><li>Renamed the **Get Tickets** action to **List Tickets**.</li><li>Added new actions: **Add Notes To Ticket** and **List Ticket Notes**.</li><li>Removed the **Get Tickets Daemon**.</li></ul> |
 | v1.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | September 17, 2019 | Initial release of the ConnectWise Manage integration. |
+| | September 17, 2019 | Initial release of the ConnectWise Manage integration. |

@@ -94,7 +94,7 @@ For information about Cloudflare, see [Cloudflare documentation](https://develop
 | v1.3 | July 3, 2025 | Updated the endpoint used in the resource test file to one that does not require any additional permissions on the token. |
 | v1.2 | November 5, 2024 | Added custom token authentication support in all actions. |
 | v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | May 5, 2022 | Initial release of the Cloudflare integration. |
+| | May 5, 2022 | Initial release of the Cloudflare integration. |
 
 ## Additional resources
 

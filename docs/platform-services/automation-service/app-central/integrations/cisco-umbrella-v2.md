@@ -50,4 +50,4 @@ For information about Cisco Umbrella, see [Cisco Umbrella documentation](https:/
 | v1.3 | July 3, 2023 | Removed leading and trailing spaces. |
 | v1.2 | May 18, 2023 | Renamed the integration from **Cisco Umbrella OIF** to **Cisco Umbrella V2**. |
 | v1.1 | January 26, 2023 | Refactored the integration. |
-| v1.0 | September 25, 2019 | Initial release of the Cisco Umbrella V2 integration. |
+| | September 25, 2019 | Initial release of the Cisco Umbrella V2 integration. |

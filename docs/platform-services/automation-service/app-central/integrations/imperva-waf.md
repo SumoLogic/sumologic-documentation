@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imperva-waf.png')} alt="intelligence" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imperva-waf.png')} alt="Imperva WAF icon" width="80"/>
 
 ***Version: 1.2  
 Updated: April 29, 2026***
@@ -46,4 +46,4 @@ For information about Imperva WAF, see [Imperva documentation](https://docs.impe
 |:--|:--|:--|
 | v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | October 28, 2022 | Initial release of the Imperva WAF integration. |
+| | October 28, 2022 | Initial release of the Imperva WAF integration. |

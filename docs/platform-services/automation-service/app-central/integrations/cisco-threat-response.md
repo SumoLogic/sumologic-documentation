@@ -53,5 +53,5 @@ For information about Cisco Threat Response, see [Cisco Threat Response document
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.2 | July 21, 2023 | Refactored the integration. |
-| v1.1 | May 22, 2020 | Added new actions. |
-| v1.0 | February 21, 2020 | Initial release of the Cisco Threat Response integration. |
+| | May 22, 2020 | Added new actions. |
+| | February 21, 2020 | Initial release of the Cisco Threat Response integration. |

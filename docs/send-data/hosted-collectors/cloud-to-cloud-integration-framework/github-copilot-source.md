@@ -2,7 +2,7 @@
 id: github-copilot-source
 title: GitHub Copilot Source
 sidebar_label: GitHub Copilot
-tags:
+keywords:
   - cloud-to-cloud
   - github-copilot
   - github

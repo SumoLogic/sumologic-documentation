@@ -49,4 +49,4 @@ For information about Abuse.ch SSLBL, see [Abuse.ch SSLBL documentation](https:/
 |:--|:--|:--|
 | v1.3 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | June 26, 2023 | Updated the integration with environmental variables. |
-| v1.1 | May 6, 2022 | Initial release of the Abuse.ch SSLBL Feed integration. |
+| | May 6, 2022 | Initial release of the Abuse.ch SSLBL Feed integration. |

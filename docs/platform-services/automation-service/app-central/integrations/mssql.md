@@ -49,4 +49,4 @@ For information about MSSQL, see [MSSQL documentation](https://learn.microsoft.c
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.1 | August 17, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | January 30, 2023 | Initial release of the MSSQL integration. |
+| | January 30, 2023 | Initial release of the MSSQL integration. |

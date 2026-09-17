@@ -47,4 +47,4 @@ For information about Trellix Network Security (formerly FireEye Network Securit
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.1 | July 3, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | June 19, 2019 | First upload. |
+| | June 19, 2019 | First upload. |

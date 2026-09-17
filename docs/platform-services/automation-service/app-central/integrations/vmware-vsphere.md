@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-vsphere.png')} alt="axonius" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-vsphere.png')} alt="VMware vSphere icon" width="100"/>
 
 ***Version: 1.4  
 Updated: Sep 19, 2023***
@@ -75,5 +75,5 @@ For information about VMware vSphere, see [VMware vSphere documentation](https:/
 | v1.4 | September 19, 2023 | Updated the integration's versioning. |
 | v1.3 | September 4, 2023 | Fixed a bug where an error would occur if the timeout was not specified. |
 | v1.2 | August 17, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | September 6, 2019 | Added a link to the VMWare vSphere external library. |
-| v1.0 | August 30, 2019 | Initial release of the VMWare vSphere integration. |
+| | September 6, 2019 | Added a link to the VMWare vSphere external library. |
+| | August 30, 2019 | Initial release of the VMWare vSphere integration. |

@@ -108,5 +108,5 @@ For information about Palo Alto Networks Panorama, see [Palo Alto Networks Panor
 | v2.4 | September 19, 2023 | Updated the version numbering. |
 | v2.3 | September 4, 2023 | Fixed a bug where an error occurred if the timeout was not specified. |
 | v2.2 | July 21, 2023 | Updated the integration with Environmental Variables. |
-| v2.1 | May 22, 2020 | Added support for Dynamic User Groups. |
-| v2.0 | January 14, 2020 | Initial release of the Palo Alto Networks Panorama V2 integration. |
+| | May 22, 2020 | Added support for Dynamic User Groups. |
+| | January 14, 2020 | Initial release of the Palo Alto Networks Panorama V2 integration. |

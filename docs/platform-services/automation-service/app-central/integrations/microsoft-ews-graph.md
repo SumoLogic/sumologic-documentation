@@ -142,4 +142,4 @@ Email Gateway
 | v1.3 | December 10, 2025 | Added a dynamic Mailbox override option to all actions, enabling multi-user execution without requiring resource updates. |
 | v1.2 | November 21, 2025 | <ul><li>Fixed issue in the **Search Emails Extended** action.</li><li>Converted `has_attachments` and `is_unread` from text fields to list fields with true/false options.</li></ul> |
 | v1.1 | October 31, 2025 | Fixed issue in the **Download Mail As EML** action. |
-| v1.0 | September 10, 2025 | Initial release of the Microsoft EWS (Graph) integration. |
+| | September 10, 2025 | Initial release of the Microsoft EWS (Graph) integration. |

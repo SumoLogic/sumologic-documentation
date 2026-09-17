@@ -54,4 +54,4 @@ For information about Atlassian Confluence, see [Confluence documentation](https
 |:--|:--|:--|
 | v1.2 | August 19, 2026 | <ul><li>Fixed an issue where leaving optional fields blank in Confluence actions could cause unexpected failures.</li><li>Error messages for Confluence actions and test connections now show the request URL and failure reason for easier troubleshooting.</li></ul> |
 | v1.1 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.0 | October 13, 2023 | Initial release of the Atlassian Confluence integration. |
+| | October 13, 2023 | Initial release of the Atlassian Confluence integration. |

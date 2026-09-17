@@ -76,4 +76,4 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 | v1.4 | July 29, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
 | v1.3 | June 15, 2023 | Updated the integration with Environmental Variables. |
 | v1.1 | April 14, 2023 | Updated the integration fields with Environmental Variables. |
-| v1.0 | November 10, 2022 | Initial release of the AWS CloudFront integration. |
+| | November 10, 2022 | Initial release of the AWS CloudFront integration. |

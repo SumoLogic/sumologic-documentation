@@ -56,7 +56,7 @@ For information about Duo, see [Duo documentation](https://duo.com/docs).
 | v1.4 | September 4, 2023 | Fixed a bug where an error occurred if the timeout was not specified. |
 | v1.3 | July 21, 2023 | Refactored the integration. |
 | v1.1 | June 23, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | February 16, 2021 | Initial release of the Duo integration. |
+| | February 16, 2021 | Initial release of the Duo integration. |
 
 ## Additional resources
 

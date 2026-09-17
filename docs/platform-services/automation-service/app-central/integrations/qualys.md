@@ -78,5 +78,5 @@ For information about Qualys, see [Qualys documentation](https://www.qualys.com/
 | v1.4 | September 19, 2023 | Versioned the integration. |
 | v1.3 | September 4, 2023 | Fixed a bug where an error would occur if the timeout was not specified. |
 | v1.2 | July 21, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | September 2, 2020 | Added new actions. |
-| v1.0 | February 21, 2020 | Initial release of the Qualys integration. |
+| | September 2, 2020 | Added new actions. |
+| | February 21, 2020 | Initial release of the Qualys integration. |

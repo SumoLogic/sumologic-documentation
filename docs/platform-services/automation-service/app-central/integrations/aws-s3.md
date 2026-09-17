@@ -88,4 +88,4 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 | v1.3 | August 19, 2025 | <ul><li>Added IAM Role Support. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication.</li><li>Added input validation in the **Download File** action.</li></ul> |
 | v1.2 | June 28, 2023 | Changed the visibility of the Resource fields. |
 | v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | October 3, 2019 | Initial release of the AWS S3 integration. |
+| | October 3, 2019 | Initial release of the AWS S3 integration. |

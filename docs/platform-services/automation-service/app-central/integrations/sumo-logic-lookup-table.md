@@ -73,5 +73,5 @@ SIEM
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.1 | April 1, 2026 | Added the Sumo Logic logo. |
-| v1.0 | March 27, 2026 | Initial release of the Sumo Logic Lookup Table integration. |
+| | April 1, 2026 | Added the Sumo Logic logo. |
+| | March 27, 2026 | Initial release of the Sumo Logic Lookup Table integration. |

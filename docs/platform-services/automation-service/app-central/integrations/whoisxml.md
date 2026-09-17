@@ -49,6 +49,6 @@ For information about WhoisXML, see [WhoisXML documentation](https://whois.whois
 | v1.6 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.5 | July 7, 2023 | Removed leading/trailing spaces. |
 | v1.4 | February 28, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
-| v1.3 | February 15, 2023 | Added a new logo. |
-| v1.2 | February 9, 2023 | Added new actions: **DNS Lookup**, **Domain Reputation**, **List Subdomains**, and **Geolocate IP Address**. |
-| v1.1 | November 25, 2022 | Initial release of the WhoisXML integration. |
+| | February 15, 2023 | Added a new logo. |
+| | February 9, 2023 | Added new actions: **DNS Lookup**, **Domain Reputation**, **List Subdomains**, and **Geolocate IP Address**. |
+| | November 25, 2022 | Initial release of the WhoisXML integration. |

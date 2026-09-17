@@ -52,6 +52,6 @@ For information about Cisco Umbrella Investigate, see [Cisco Umbrella Investigat
 |:--|:--|:--|
 | v1.5 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.4 | June 23, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed from Cisco Umbrella Investigate OIF to Cisco Umbrella Investigate.</li></ul> |
-| v1.3 | November 22, 2022 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Set the timeout field as not required.</li></ul> |
-| v1.2 | October 27, 2021 | Added new actions. |
-| v1.1 | September 25, 2019 | Initial release of the Cisco Umbrella Investigate integration. |
+| | November 22, 2022 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Set the timeout field as not required.</li></ul> |
+| | October 27, 2021 | Added new actions. |
+| | September 25, 2019 | Initial release of the Cisco Umbrella Investigate integration. |

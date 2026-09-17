@@ -46,5 +46,5 @@ For information about IBM MSS, see the [IBM Managed Security Service website](ht
 |:--|:--|:--|
 | v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | February 8, 2021 | Updated the **Update Ticket** action. |
-| v1.0 | May 5, 2019 | Initial release of the IBM MSS Tickets integration. |
+| | February 8, 2021 | Updated the **Update Ticket** action. |
+| | May 5, 2019 | Initial release of the IBM MSS Tickets integration. |

@@ -61,5 +61,5 @@ For information about Microsoft SharePoint, see [SharePoint documentation](https
 | v1.5 | September 19, 2023 | Updated the integration's versioning. |
 | v1.4 | September 4, 2023 | Fixed a bug where if the timeout was not specified, an error would occur. |
 | v1.3 | August 17, 2023 | Updated the integration with Environmental Variables. |
-| v1.2 | March 10, 2022 | Updated the logo in Microsoft SharePoint integration. |
-| v1.1 | August 14, 2019 | Initial release of the Microsoft SharePoint integration. |
+| | March 10, 2022 | Updated the logo in Microsoft SharePoint integration. |
+| | August 14, 2019 | Initial release of the Microsoft SharePoint integration. |

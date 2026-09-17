@@ -43,5 +43,5 @@ For information about MxToolbox, see [MxToolbox documentation](https://mxtoolbox
 |:--|:--|:--|
 | v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 23, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | January 13 ,2023 | Made general improvements to the integration. |
-| v1.0 | February 14, 2020 | Initial release of the MxToolbox integration. |
+| | January 13 ,2023 | Made general improvements to the integration. |
+| | February 14, 2020 | Initial release of the MxToolbox integration. |

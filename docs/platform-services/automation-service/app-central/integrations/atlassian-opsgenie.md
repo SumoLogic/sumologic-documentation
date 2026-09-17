@@ -115,9 +115,9 @@ Ensure that the integration API key used for retrieving alerts belongs to the sa
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.6 | March 23, 2026 | <ul><li>Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.</li><li>Fixed validation logic in the following actions: `Acknowledge Alert`, `Add Note to Alert`, `Add Responder to Alert`, `Add Tag to Alert`, `Assign Alert`, `Close Alert`, `Delete Alert`, and `Escalate Alert`.</li></ul> |
-| v1.5 | March 6, 2026 | Fixed validation logic in the **Create Alert** action. |
-| v1.4 | January 30, 2026 | Added a retry mechanism to the **Create Alert** action. |
-| v1.3 | July 1, 2025 | Fixed an issue related to timeout. |
-| v1.2 | Sep 16, 2024 | Updated the **Create Incident** action to fix a bug that caused it not to add responders to the incident. |
-| v1.1 | July 11, 2024 | Added new actions: **Get On Calls** and **List Schedules**. |
-| v1.0 | March 22, 2024 | Initial release of the Atlassian Opsgenie integration. |
+| | March 6, 2026 | Fixed validation logic in the **Create Alert** action. |
+| | January 30, 2026 | Added a retry mechanism to the **Create Alert** action. |
+| | July 1, 2025 | Fixed an issue related to timeout. |
+| | Sep 16, 2024 | Updated the **Create Incident** action to fix a bug that caused it not to add responders to the incident. |
+| | July 11, 2024 | Added new actions: **Get On Calls** and **List Schedules**. |
+| | March 22, 2024 | Initial release of the Atlassian Opsgenie integration. |

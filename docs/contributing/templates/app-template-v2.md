@@ -21,7 +21,7 @@ Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/con
 ---
 id: {{vendor-name}} #example: acme
 title: {{Vendor Name}} #example: Acme
-tags:
+keywords:
   - apps
   - vendor-name #example: acme
 description: 'The Sumo Logic app for {{vendor name}} analyzes...' #Aim for 140–160 characters. Example: The Sumo Logic app for Acme analyzes log data from Acme Events, giving you visibility into performance, authentication, audit activity, and user behavior.

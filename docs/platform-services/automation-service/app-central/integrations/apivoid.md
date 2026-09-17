@@ -60,4 +60,4 @@ For information about APIVoid, see [APIVoid documentation](https://docs.apivoid.
 | v1.3 | July 01, 2024 | Updated the **Save Screenshot** and **Save URL** actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts. |
 | v1.2 | October 5, 2023 | Changed fields visibility. |
 | v1.1 | June 26, 2023 | Updated the integration with environmental variables. |
-| v1.0 | August 14, 2020 | Initial release of the APIVoid integration. |
+| | August 14, 2020 | Initial release of the APIVoid integration. |

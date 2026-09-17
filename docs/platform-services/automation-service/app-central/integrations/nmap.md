@@ -49,4 +49,4 @@ For information about Nmap, see [Nmap documentation](https://nmap.org/book/man.h
 | v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3 | June 26, 2023 | Removed unnecessary empty lines and other little changes. |
 | v1.2 | April 28, 2023 | Refactored the integration. |
-| v1.1 | August 09, 2022 | Initial release of the Nmap integration. |
+| | August 09, 2022 | Initial release of the Nmap integration. |
