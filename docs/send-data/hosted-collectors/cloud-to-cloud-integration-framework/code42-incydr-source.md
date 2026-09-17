@@ -2,7 +2,7 @@
 id: code42-incydr-source
 title: Code42 Incydr Source
 sidebar_label: Code42 Incydr
-tags:
+keywords:
   - cloud-to-cloud
   - code42-incydr
 description: Learn how to collect sessions, file events, and audit logs from the Code42 Incydr.

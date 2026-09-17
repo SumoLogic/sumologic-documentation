@@ -2,7 +2,7 @@
 id: salesforce-source
 title: Salesforce Source
 sidebar_label: Salesforce
-tags:
+keywords:
     - salesforce
     - cloud-SIEM-enterprise
 ---

@@ -2,7 +2,7 @@
 id: sailpoint-source
 title: SailPoint Source
 sidebar_label: SailPoint
-tags:
+keywords:
     - sailpoint
     - cloud-SIEM-enterprise
 ---
