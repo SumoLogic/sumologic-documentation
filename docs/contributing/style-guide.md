@@ -1078,6 +1078,7 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
    * Example: ~~_The operator, which supports up to 10,000 events per second depending on instance size, works with both collector types._~~ &rarr; _The operator supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors._
 * **Use specific version numbers and dates.** Avoid "latest", "current", or "recent" without a specific value. AI tools reproduce whatever is on the page — vague references become stale citations.
 * **Add an "At a glance" section for long pages.** For pages over 800 words, add a brief summary section near the top with key facts as short bullet points. This is the most citation-friendly portion of a page for generative AI tools.
+* **Phrase FAQ questions in second person, except personal or eligibility questions.** Grammatical person doesn't affect AI citation, but it does affect how natural a question reads. Use second person ("How do you configure X?") for most FAQ questions. For personal or eligibility-type questions ("Can I opt out...", "Do I need..."), use first person instead, since it mirrors how the reader is actually asking the question in their head. Answers still respond in second person either way.
 
 
 
