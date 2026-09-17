@@ -6,7 +6,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.0.0  
+***Version: 1.0.1  
 Updated: Sep 17, 2026***
 
 Interact with [AWS DynamoDB](https://docs.aws.amazon.com/dynamodb/) tables, including retrieving table details and modifying table settings directly from automation playbooks.
@@ -72,4 +72,4 @@ For AWS DynamoDB, Sumo Logic offers the [Amazon DynamoDB app](/docs/integrations
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0.0 | September 17, 2026 | Initial release of the AWS DynamoDB integration. |
+| v1.0.1 | September 17, 2026 | Initial release of the AWS DynamoDB integration. |
