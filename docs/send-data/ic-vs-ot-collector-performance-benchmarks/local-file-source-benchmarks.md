@@ -1,5 +1,6 @@
 ---
 id: local-file-source-benchmarks
+id: local-file-source-benchmarks
 title: Local File Source Benchmarks
 sidebar_label: Local File Source Benchmarks
 description: Compare Installed Collector and OpenTelemetry Collector throughput and CPU usage for Local File source collection.
