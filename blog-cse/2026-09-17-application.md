@@ -14,6 +14,6 @@ We're happy to announce a new **Organizations** filter on the Insights page. If 
 Follow the steps below to use the Organizations filter:
 
 1. Click the filter bar and select **Organizations** from the dropdown.<br/><img src={useBaseUrl('img/cse/organizations-filter-for-insights.png')} alt="Organizations filter for Insights" style={{border: '1px solid gray'}} width="300"/>
-1. Select **is any of** as the condition, then select up to 100 tenants from the dropdown, or leave it unselected to keep seeing insights from all child organizations.<br/><img src={useBaseUrl('img/cse/select-tenants-for-organizations-filter-insights.png')} alt="Select tenants for Organizations filter" style={{border: '1px solid gray'}} width="400"/>
+1. Select **is any of** as the condition, then select up to 100 organizations from the dropdown, or leave it unselected to keep seeing insights from all child organizations.<br/><img src={useBaseUrl('img/cse/select-tenants-for-organizations-filter-insights.png')} alt="Select organizations for Organizations filter" style={{border: '1px solid gray'}} width="400"/>
 
 [Learn more](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/#filtering-insights).
