@@ -1,4 +1,5 @@
 ---
+id: remote-windows-event-log-benchmarks
 title: Remote Windows Event Log (RWEL) Benchmarks
 sidebar_label: Remote Windows Event Log (RWEL) Benchmarks
 description: Compare Installed Collector and OpenTelemetry Collector throughput and CPU usage for Remote Windows Event Log collection over WinRM.
