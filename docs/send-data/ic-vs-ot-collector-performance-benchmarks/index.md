@@ -1,4 +1,5 @@
 ---
+slug: /send-data/ic-vs-ot-collector-performance-benchmarks
 title: Installed Collector vs OpenTelemetry Collector Performance Benchmarks
 sidebar_label: IC vs OTel Performance Benchmarks
 description: Compare Installed Collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.
