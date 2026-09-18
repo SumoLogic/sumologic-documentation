@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.18  
-Updated: July 22, 2026***
+***Version: 1.19  
+Updated: September 17, 2026***
 
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights. This integration requires authentication. (Because the [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/) integration operates internally with Sumo Logic, no additional authentication is needed.)
@@ -26,11 +26,13 @@ For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/ge
 * **Add Tag To Insight** *(Notification)* - Add tags to the Insight.
 * **Assign User To Insight** *(Notification)* - Add specific user to an Insight.
 * **Check Insight Status Schedule** *(Scheduled)* - Schedule action that periodically checks if the Insight is closed.
+* **Check Insight Triage Schedule** *(Scheduled)* - Scheduled action that periodically polls the triage status of an Insight until a terminal verdict is reached.
 * **Close Insight Trigger** *(Trigger)* - Trigger action that is executed whenever an Incident is closed.
 * **Create Insight From Signals** *(Notification)* - Create Insight From Signal IDs.
 * **Get Entity** *(Enrichment)* - Get Entity details.
 * **Get Insight** *(Enrichment)* - Get Insight details.
 * **Get Insight Comments** *(Enrichment)* - Get comments for an Insight.
+* **Get Insight Triage** *(Enrichment)* - Get triage details for an Insight.
 * **Get Insight V2** *(Enrichment)* - Get Insight details v2.
 * **Get Signal** *(Enrichment)* - Get Signal details.
 * **List Entities** *(Enrichment)* - List Entities.
@@ -103,6 +105,7 @@ SIEM
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.19 | September 17, 2026 | Added new actions: **Get Insight Triage** and **Check Insight Triage Schedule**. |
 | v1.18 | July 22, 2026 | <ul><li>Improved integration reliability and handling of API rate limits with better edge case support.</li><li>Enhanced error messages with more descriptive details for easier troubleshooting.</li><li>Deprecated the **Add Relation To Insight** action.</li></ul> |
 | v1.17 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.16 | April 3, 2026 | Fixed output field mapping for nested fields with dots in field names in the **Get Signal** and **List Signals** actions. |
