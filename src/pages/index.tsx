@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
+import SearchBar from '@theme/SearchBar';
 import Link from '@docusaurus/Link';
 import { Box, Button, Container, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@mui/lab';
-import bgImage from '../../static/img/reuse/hero-secondary-background.webp';
-import heroImage from '../../static/img/reuse/hero-secondary-graphic.webp';
-import SumoLogicDocsLogo from '../../static/img/reuse/sumo-logic-docs.svg';
+import MobotIcon from '../../static/img/icons/operations/mobot.png';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
+import styles from './index.module.css';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -19,181 +19,81 @@ export const Home = () => {
         description='Sumo Logic documentation for log analytics, cloud monitoring, security, observability, and AI-powered troubleshooting. Get started guides, API references, and release notes.'
         title='Home'
       >
-      {/* H1 hidden, but visible to crawlers */}
-      <Typography
-        component='h1'
-        sx={{
-          position: 'absolute',
-          width: 1,
-          height: 1,
-          p: 0,
-          m: -1,
-          overflow: 'hidden',
-          clip: 'rect(0 0 0 0)',
-          border: 0,
-        }}
-      >
-        Sumo Logic Documentation
-      </Typography>
-        {/* Header */}
-        <Typography
-          component="div"
-          bgcolor='#0045BE'
-          color='#e3e3e3'
-          fontFamily='Lab Grotesque'
-          fontSize={28}
-          fontWeight={700}
-          pt={3}
-          px={2}
-          pb={1}
-          sx={{
-            backgroundImage: 'linear-gradient(to right, rgb(0,0,153), rgb(0,70,190) 30%)',
-          }}
-          textAlign='center'
-        >
-          <Box
-            component={SumoLogicDocsLogo}
-            alt="Sumo Logic Docs logo"
-            aria-hidden="true"
-            height={{
-              md: 36,
-              xs: 28,
-            }}
-            width='100%'
-          />
-        </Typography>
-
         {/* Hero */}
-        <Stack
-          sx={{
-            bgcolor: 'white',
-            backgroundImage: `url(${bgImage})`,
-            backgroundPosition: {
-              md: 'top',
-              xs: 'left center',
-            },
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: {
-              md: '100% 200%',
-              xs: '100% 100%',
-            },
-          }}
-          height={{
-            md: 'auto',
-            xs: '100%',
-          }}
-          py={4}
-          textAlign='center'
-        >
+        <Box component='header' className={styles.hero}>
+          <Container maxWidth='lg' className={styles.heroContainer}>
+            <Stack alignItems='center' className={styles.heroContent} spacing={0}>
+              <Typography component='h1' className={styles.heroTitle}>
+                Sumo Logic Documentation
+              </Typography>
+              <Typography component='p' className={styles.heroTagline}>
+                Turn your data into action.
+              </Typography>
+              <Typography component='p' className={styles.heroDescription}>
+                Find clear guidance for AI-powered log analytics, observability, and security with Sumo Logic. Search setup instructions, how-to guides, and API references.
+              </Typography>
+              <Box className={styles.heroSearch}>
+                <SearchBar />
+              </Box>
+            </Stack>
+          </Container>
+        </Box>
+
+        {/* Task-based entry points */}
+        <Box component='section' className={styles.taskSection}>
           <Container maxWidth='lg'>
-            <Grid
+            <Stack
               alignItems='center'
-              container
-              direction={{
-                md: 'row',
-                xs: 'column-reverse',
-              }}
-              justifyContent={{
-                md: 'center',
-                xs: 'flex-end',
-              }}
-              height='100%'
+              className={styles.taskIntro}
             >
-              <Grid item md={6}>
-                <Stack
-                  alignItems={{
-                    md: 'flex-start',
-                    xs: 'center',
-                  }}
-                  justifyContent='center'
-                  spacing={2}
-                >
-                  <Typography
-                    color='white'
-                    fontFamily='Lab Grotesque'
-                    fontSize={32}
-                    fontWeight={700}
-                    variant='h2'
-                  >
-                    New to Sumo?
-                  </Typography>
-                  <Typography
-                    color='#e3e3e3'
-                    fontFamily='Lab Grotesque'
-                    pb={2}
-                    textAlign='left'
-                    variant='p'
-                  >
-                    Get started quickly with log analytics, AI-powered troubleshooting, observability, and security.
-                  </Typography>
-                  {[
-                    {
-                      children: '1. Set up collector and source',
-                      description: 'Set up a Sumo Logic collector and source',
-                      to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo',
-                    },
-                    {
-                      children: '2. Explore your data insights',
-                      description: 'Explore your insights',
-                      to: '/docs/get-started/quickstart#step-2-search-and-analyze-your-data',
-                    },
-                    {
-                      children: '3. Monitor and secure your environment',
-                      description: 'Monitor, troubleshoot, and secure your environment',
-                      to: '/docs/get-started/quickstart#step-3-monitor-and-troubleshoot-your-environment',
-                    },
-                  ].map(({ children, to, href }) => (
-                    <Link key={to || href} to={to} href={href} style={{ textDecoration: 'none' }}>
-                      <Button
-                        sx={{
-                          bgcolor: 'transparent',
-                          border: '.5px solid',
-                          borderColor: '#e3e3e3',
-                          borderRadius: 2,
-                          fontFamily: 'Lab Grotesque',
-                          textTransform: 'none',
-                          width: {
-                            md: 'auto',
-                            xs: '100%',
-                          },
-                          '&:hover': {
-                            bgcolor: '#0045BE',
-                            borderColor: '#0045BE',
-                            color: '#e3e3e3',
-                          },
-                        }}
-                        variant='contained'
-                      >
-                        {children}
-                      </Button>
-                    </Link>
-                  ))}
-                </Stack>
-              </Grid>
-              <Grid item md={6} pl={{ md: 13 }}>
-                <Box
-                  component='img'
-                  alt=''
-                  loading='lazy'
-                  aria-hidden='true'
-                  src={heroImage}
-                  width={{
-                    lg: 450,
-                    md: 300,
-                    xs: '85%',
-                  }}
-                />
-              </Grid>
+              <Box>
+                <Typography component='h2' className={styles.taskTitle}>
+                  New to Sumo?
+                </Typography>
+                <Typography component='p' className={styles.taskDescription}>
+                  Follow the guided quickstart.
+                </Typography>
+              </Box>
+            </Stack>
+
+            <Grid container className={styles.quickLinks} spacing={2}>
+              {[
+                {
+                  label: '1. Set up collector',
+                  description: 'Connect your data sources to Sumo Logic',
+                  to: '/docs/get-started/quickstart/#step-1-get-your-data-into-sumo',
+                },
+                {
+                  label: '2. Explore your data insights',
+                  description: 'Search and analyze your data',
+                  to: '/docs/get-started/quickstart/#step-2-search-and-analyze-your-data',
+                },
+                {
+                  label: '3. Monitor and secure your environment',
+                  description: 'Use apps, dashboards, and security tools',
+                  to: '/docs/get-started/quickstart/#step-3-monitor-and-troubleshoot-your-environment',
+                },
+              ].map(({ description, label, to }) => (
+                <Grid item key={label} md={4} xs={12}>
+                  <Link className={styles.quickLink} to={to}>
+                    <span>
+                      <strong>{label}</strong>
+                      <small>{description}</small>
+                    </span>
+                    <span aria-hidden='true' className={styles.arrow}>→</span>
+                  </Link>
+                </Grid>
+              ))}
             </Grid>
           </Container>
-        </Stack>
+        </Box>
 
         {/* Product Guides */}
         <Container maxWidth='xl'>
           <Stack
             alignItems='center'
-            pb={5}
-            pt={10}
+            pb={7}
+            pt={8}
             px={2}
           >
             <Typography
@@ -274,6 +174,34 @@ export const Home = () => {
                 </Grid>
               ))}
             </TabContext>
+
+            <Box className={styles.dojoCallout}>
+              <Box
+                alt='Mobot, the conversational interface for Dojo AI'
+                className={styles.dojoIcon}
+                component='img'
+                src={MobotIcon}
+              />
+              <Box className={styles.dojoCopy}>
+                <Typography component='p' className={styles.dojoEyebrow}>
+                  Meet Dojo AI
+                </Typography>
+                <Typography component='h2' className={styles.dojoTitle}>
+                  Ask questions. Get to evidence faster.
+                </Typography>
+                <Typography component='p' className={styles.dojoDescription}>
+                  Use Mobot to analyze logs in plain language, investigate security incidents, and surface clear, actionable findings.
+                </Typography>
+              </Box>
+              <Button
+                className={styles.dojoAction}
+                component={Link}
+                to='/docs/search/mobot'
+                variant='contained'
+              >
+                Explore Mobot
+              </Button>
+            </Box>
           </Stack>
 
         </Container>
