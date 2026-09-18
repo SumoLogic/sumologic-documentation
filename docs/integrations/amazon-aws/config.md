@@ -6,7 +6,7 @@ description: Provides a simple web services interface that can be used to track 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/config.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/config.png')} alt="Config icon" width="50"/>
 
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The Sumo Logic App for AWS Config presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters, which provide visibility into your environment for real-time analysis of overall usage.
 
@@ -37,7 +37,7 @@ Amazon Web Services (AWS) Config provides a simple web services interface that c
 
 ### Sample queries
 
-```sql title="Latest Resource Modifications (from App)"
+```sumo title="Latest Resource Modifications (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | json "Message", "Type"
 | where type == "Notification"
@@ -50,7 +50,7 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | sort by _messageTime desc
 ```
 
-```sql title=Configuration Activity by AWS Region** (from App)"
+```sumo title=Configuration Activity by AWS Region** (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | json "Message", "Type" as single_message, type | where type == "Notification"
 | json field=single_message "configurationItem.awsRegion" as awsRegion
@@ -94,7 +94,7 @@ Creating a new topic also creates a new S3 bucket.
 2. On the page labeled "AWS Config is requesting permissions to read your resources’ configuration," click **Allow**. This authorizes AWS Config to read the configuration of your resources for the purpose of delivery via Amazon SNS.
 3. **Optional:** Expand the **View Details** section to configure the IAM Role and Policy that AWS Config will use.
 
-For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html](http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html).
+For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html](https://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html).
 
 
 ### Configure a Collector
@@ -139,7 +139,7 @@ Parse the message for the JSON field **SubscribeURL** and copy it to your clipbo
 2. Under **Amazon SNS**, under **Actions**, select **Confirm a subscription**.
 3. Paste the SubscribeURL into the **Subscription confirmation URL** field, and click **Confirm subscription**.
 
-For more information about SNS notifications, see the [Amazon documentation](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html).
+For more information about SNS notifications, see the [Amazon documentation](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html).
 
 
 #### Optional: Create a Partition for AWS Config Logs
@@ -154,16 +154,19 @@ To create a partition, follow the instructions to [Create a Partition](/docs/man
 
 Now that you have configured AWS Config, install the Sumo Logic App for AWS Config to take advantage of the pre-configured searches and dashboards to analyze your AWS Config data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing AWS Config Dashboards
 
-This section describes the dashboards provided by the AWS Config app. For general information about dashboards, see [About Dashboards](/docs/dashboards/about).
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-The AWS Config app is an older application, implemented when Sumo dashboards could not be toggled back and forth between Live and Interactive mode. For this reason, the app provides two versions of the AWS Config Overview dashboard, one that runs in Live mode, and one that runs in Interactive mode.
+<ViewDashboards/>
 
+:::info
+The AWS Config app is an older application, implemented when Sumo Logic dashboards could not be toggled back and forth between Live and Interactive mode. For this reason, the app provides two versions of the AWS Config Overview dashboard, one that runs in Live mode, and one that runs in Interactive mode.
+:::
 
 ### AWS Config Overview
 

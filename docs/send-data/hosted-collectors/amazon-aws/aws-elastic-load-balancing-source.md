@@ -7,7 +7,7 @@ description: Add an AWS ELB Source to upload messages to Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/elb.png')} alt="Elastic Load Balancing icon" width="45"/>
 
 AWS Elastic Load Balancing (ELB) distributes incoming application traffic across multiple Amazon EC2 instances in the AWS cloud. The access logs for AWS ELB capture detailed information for all requests made to your load balancer and stores them as log files in an Amazon S3 bucket. Add an AWS ELB Source to upload these messages to Sumo Logic.
 
@@ -18,6 +18,14 @@ To configure an AWS ELB Source:
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add the [AWS Source](aws-sources.md) for ELB.
 1. **Optional:** Install the Sumo Logic App for AWS Elastic Load Balancing.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide an AWS Elastic Load Balancing source with the [`sumologic_elb_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/elb_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Enable ELB logging in AWS
 

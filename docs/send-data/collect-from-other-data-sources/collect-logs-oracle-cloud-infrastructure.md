@@ -2,7 +2,7 @@
 id: collect-logs-oracle-cloud-infrastructure
 title: Collect Logs from Oracle Cloud Infrastructure
 sidebar_label: Oracle Cloud Infrastructure
-description: How to collect logs from Oracle Cloud Infrastructure.
+description: Collect Oracle Cloud Infrastructure (OCI) service, audit, application, and security logs into Sumo Logic using Oracle's Service Connector Hub.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -1,23 +1,27 @@
 ---
 id: elastic-container-service
-title: Amazon Elastic Container Service (ECS)
-sidebar_label: Amazon ECS
+title: Amazon ECS without Container Insights and Traces
+sidebar_label: Amazon ECS without Container Insights and Traces
 description: Provides preconfigured searches and Dashboards that allow you to monitor various metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="ECS icon" width="50"/>
 
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic app for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The app also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
-## Log and Metrics types
+We offer two different ECS versions, which have separate data collection steps:
+* **[Collect Logs and Metrics for ECS](/docs/integrations/amazon-aws/elastic-container-service)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/available-metrics.html) and [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail).
+* **[Collect Logs, Metrics (Container Insights+CloudWatch) and Traces for ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html)**. This version collects [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#available_cloudwatch_metrics), [Container Insights Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-ECS.html), [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail), Application Logs and Traces. Metrics collected by Container Insights are charged as custom metrics. For more information about CloudWatch pricing, see[ Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). This solution enables you to monitor both EC2 and Fargate based ECS deployments. For instructions on collecting this data, refer to the [Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch](/docs/integrations/amazon-aws/elastic-container-service-container-insights-cloudwatch/).
 
-The app collects ECS logs and metrics for:
-* [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html).
-* [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html).
-   * All Amazon ECS actions are logged by CloudTrail and documented in the [Amazon Elastic Container Service API Reference](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Operations.html).
+This documentation has instructions for collecting logs and metrics for the Amazon ECS app without Container Insights and Traces.
 
+## Log and metric types  
+
+The Sumo Logic app for Amazon ECS without Container Insights and Traces uses the following logs and metrics:
+* Amazon CloudWatch Metrics
+* Amazon CloudTrail Logs
 
 ### Sample log messages
 
@@ -272,12 +276,11 @@ The app collects ECS logs and metrics for:
    "recipientAccountId":"435456556566"
 }
 ```
-
 </details>
 
 ### Sample queries
 
-```sql title="Deleted Resources Over Time"
+```sumo title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
 | json "eventName" as event_name
 | parse "\"userName\":\"*\"" as user
@@ -288,152 +291,185 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 | count by resource_type, _timeslice
 | transpose row _timeslice column resource_type
 ```
+## Collecting logs and metrics for Amazon ECS
 
-## Collect Logs and Metrics for Amazon ECS
+### Configure Hosted Collector
 
-This section has instructions for collecting logs and metrics for the Amazon ECS app.
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect Metrics for Amazon ECS
+### Collect Amazon ECS CloudWatch metrics
 
-In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics). However, we also recommend taking a look at the [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/). For a comparison of the two options, please see [Kinesis Firehose source or CloudWatch source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source/#kinesis-firehose-source-or-cloudwatch-source).
+Sumo Logic supports collecting metrics using one of the following source types:
 
-1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-2. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
-4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
-5. Select Amazon CloudWatch Source for Metrics.
-6. **Name.** Enter a name to display for the new source.
-7. **Description.** Enter an optional description.
-8. **Regions.** Select your Amazon Regions for ECS.
-9. **Namespaces.** Select **AWS/ECS**.
-10. **Source Category.** Enter **ecs_metrics**.
-11. **AWS Access**. There are two options for AWS access:
-    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For role-based access enter the Role ARN that was provided by AWS after creating the role.
-    * **Key access**. Enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
-12. **Scan Interval.** Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
-13. Click **Save**.
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
+   :::note
+   Namespace for **Amazon ECS** service is **AWS/ECS**.
+   :::
 
-### Collect ECS events using CloudTrail
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to collect ECS events.
+### Collect Amazon ECS CloudTrail logs
 
-1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket, if you so choose.
-2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
+2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
-5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
-6. Select AWS CloudTrail source.
-7. **Name.** Enter a name to display for the new Source.
-8. **Description.** Enter an optional description.
-9. **S3 Region.** Select the Amazon Region for your ECS S3 bucket.
-10. **Bucket Name.** Enter the exact name of your ECS S3 bucket.
-11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    * **Source Category.** Enter **ecs_event**.
-    * **AWS Access**. There are two options for AWS access:
-        * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
-        * For Key access enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
-    * **Scan Interval.** Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
-   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
-   * **Timestamp Format.** Select **Automatically detect the format**.
-   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
-12. Click **Save**.
 
+   :::note
+   Namespace for **Amazon ECS** service is **AWS/ECS**.
+   :::
+
+Follow the steps below to collect logs for Amazon ECS:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
+
+### Centralized AWS CloudTrail log collection
+
+In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+```sql
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=aws/observability/cloudtrail/logs
+```
+
+#### Parse Expression
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
+```sumo
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
 
 ## Installing the Amazon ECS app
 
 Now that you have set up collection for Amazon ECS, install the Sumo Logic app for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Viewing the Amazon ECS dashboards
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon ECS Service is AWS/ECS.
+- `clustername` The name of the ECS cluster.
+
+#### Field Extraction Rule(s)
+
+The FER **AwsObservabilityECSCloudTrailLogsFER** to extract fields `region`, `namespace`, `clustername`, and `accountid` will be created as a part of app installation.
+
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
+## Viewing the Amazon ECS app dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-This Dashboards displays information in metrics line charts on a timeline for either the last 15 minutes, or the last six hours.
+The **Amazon ECS - Overview** dashboard provides an overview of CPU and memory utilization across all your ECS clusters and services. You can determine which services are high in utilization and accordingly make decisions for the ECS deployment.
 
-Panels include:
-* Cluster Count.
-* Service Count.
-* Count of Services by Cluster.
-* Average CPU Utilization by Service Name.
-* Average Memory Utilization by Service Name.
+Use this dashboard to:
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ecs_app_overview.png')} alt="Amazon ECS" />
+* Quickly determine resource utilization across all your ECS clusters and services so as to provision more capacity or optimize on cost.
+* Get a quick snapshot of overall ECS cluster health, including CPU and memory utilization and reservation levels.
+* Identify clusters or services with unusually high or low resource usage or reservation percentages.
+* View details of individual clusters and services, including their regions and associated accounts.
 
-### CPU and Memory Reservation - Cluster
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Overview.png' alt="Amazon ECS - Overview" style={{border: '1px solid gray'}} width="800" />
 
-Definitions:
-* **CPU Reservation.** The percentage of CPU units that are reserved by running tasks/services in the cluster.
-* **Memory Reservation.** The percentage of memory that is reserved by running tasks/services in the cluster.
+### Audit Events
 
-For more information, see [http://docs.aws.amazon.com/AmazonECS...ce_utilization](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#service_utilization)
+The **Amazon ECS - Audit Events** dashboard provides insights into changes to your ECS environment including top IAM users, locations of events. The dashboard also shows the created, updated, and deleted events with respect to time, along with the details for the top 10 AWS Identity and Access Management users, and the last 20 Container Registration and Deregistration Events.
 
-This Dashboards displays information in metrics line charts on a timeline for the last 24 hours.
+Use this dashboard to:
 
-Panels include:
-* Average CPU Reservation by Cluster.
-* Average Memory Reservation by Cluster.
-* Maximum CPU Reservation by Cluster.
-* Maximum Memory Reservation by Cluster.
+* Quickly identify all changes to your ECS environment.
+* Monitor locations from which changes are being made locations.
+* Examine details and trends for created, updated and deleted ECS resources.
+* Investigate specific container registration and deregistration events in different regions and clusters.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ecs_app_cpu_and_memory_cluster.png')} alt="Amazon ECS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Audit-Events.png' alt="Amazon ECS - Audit Events" style={{border: '1px solid gray'}} width="800" />
 
+### Resource Utilization
 
-### CPU Utilization - Cluster and Service
+The **Amazon ECS - Resource Utilization** dashboard provides trends around CPU and Memory utilization for clusters and services.
 
-**Definitions:**
-* **CPU Utilization.** The percentage of CPU units that are used in the cluster or service.
-* **Cluster CPU Utilization.** Metrics that are filtered by ClusterName without ServiceName. This is measured as the total CPU units in use by Amazon ECS tasks on the cluster, divided by the total CPU units that were registered for all of the container instances in the cluster.
-* **Service CPU Utilization.** Metrics that are filtered by ClusterName and ServiceName. This is measured as the total CPU units in use by the tasks that belong to the service, divided by the total number of CPU units that are reserved for the tasks that belong to the service.
+* Cluster CPU or Cluster memory utilization metrics are only used for tasks using the EC2 launch type.
+* Service CPU or service memory utilization metrics are used for tasks using both the Fargate and the EC2 launch type.
 
-This Dashboards displays information in metrics line charts on a timeline for the last 24 hours.
+Use this dashboard to:
 
-Panels include:
-* CPU Utilization by Service.
-* CPU Utilization by Cluster.
-* CPU Utilization by Service and Cluster.
+* Monitor real-time CPU and memory usage across your ECS clusters and services.
+* Identify performance bottlenecks or underutilized resources in your ECS environment.
+* Compare utilization patterns between clusters and individual services to optimize resource allocation.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ecs_app_cpu_util_cluster_and_service.png')} alt="Amazon ECS" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Resource-Utilization.png' alt="Amazon ECS - Resource Utilization" style={{border: '1px solid gray'}} width="800" />
 
-### Memory Utilization - Cluster and Service
+### Resource Reservation
 
-**Definitions:**
-* **Memory Utilization.** The percentage of memory that is used in the cluster or service. Cluster memory utilization (metrics that are filtered by ClusterName without ServiceName) is measured as the total memory in use by Amazon ECS tasks on the cluster, divided by the total amount of memory that was registered for all of the container instances in the cluster.
-* **Service Memory Utilization.** Metrics that are filtered by ClusterName and ServiceName. This is measured as the total memory in use by the tasks that belong to the service, divided by the total memory that is reserved for the tasks that belong to the service.
-* **Unit.** Percent.
+The **Amazon ECS - Resource Reservation** dashboard provides detailed insights into the average reservation (units utilized) by CPU, Memory, and GPU for a given cluster.
 
-This Dashboards displays information in metrics line charts on a timeline for the last 24 hours.
+* These metrics are available for clusters only.
+* This metric is used only on clusters with tasks or services using the EC2 launch type. It's not supported on clusters with tasks using the Fargate launch type.
 
-Panels include:
-* Memory Utilization by Service.
-* Memory Utilization by Cluster.
-* Memory Utilization by Service and Cluster.
+Use this dashboard to:
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ecs_app_memory_util_cluster_and_service.png')} alt="Amazon ECS" />
+* Track average resource reservation levels across different ECS clusters and services.
+* Identify potential resource constraints or overprovisioning in your ECS environment.
+* Compare reservation patterns between different types of resources (CPU, memory, GPU) over time.
 
 
-### Events
-**Events by Type.** Displays events by type in a table chart including details on event name and count for the last 24 hours.
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonECSWithoutContainerInsightsandTraces/Amazon-ECS-Resource-Reservation.png' alt="Amazon ECS - Resource Reservation" style={{border: '1px solid gray'}} width="800" />
 
-**ECS Events Over Time.** Shows ECS events over time in a line chart on a timeline for the last 24 hours.
+## Create monitors for Amazon ECS app
 
-**Location of Events.** Performs a geo lookup operation and displays the location of ECS events on a map of the world for the last 24 hours.
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-**Resources Created.** Provides information on resources created in a column chart for the last 24 hours.
+<CreateMonitors/>
 
-**Deleted Resources.** Displays details about deleted resources in a column chart for the last 24 hours.
+### Amazon ECS alerts
 
-**Resource Creation Over Time.** Shows information on resources created in a column chart for the last 24 hours.
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `Amazon ECS - High CPU Utilization` | This alert fires when the average CPU utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
+| `Amazon ECS - High Memory Utilization` | This alert fires when the average memory utilization within a 5 minute interval for a service within a cluster is high (>=85%). | Count > = 85 | Count < 85 |
 
-**Deleted Resources Over Time.** Displays deleted resources in a column chart for the last 24 hours.
+## Upgrade/Downgrade the Amazon ECS (Without Container Insights and Traces) app (Optional)
 
-**RegisterContainerInstance Event.** Provides information on RegisterContainerInstance events in a table chart for the last 24 hours.
+import AppUpdate from '../../reuse/apps/app-update.md';
 
-**Top 10 IAM Users.** Shows information on the top 10 IAM user in a column chart for the last 24 hours.
+<AppUpdate/>
 
+## Uninstalling the Amazon ECS (Without Container Insights and Traces) app (Optional)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ecs_app_events.png')} alt="Amazon ECS" />
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

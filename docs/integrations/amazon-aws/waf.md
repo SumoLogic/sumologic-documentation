@@ -6,7 +6,7 @@ description: The Sumo Logic app for AWS Web Application Firewall (WAF) analyzes 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="WAF icon" width="50"/>
 
 AWS Web Application Firewall (WAF) is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
 
@@ -54,13 +54,20 @@ The Sumo Logic app for AWS WAF analyzes traffic flowing through AWS WAF and auto
 }
 ```
 
-## Sample queries  
-
-```sql title="Client IP Threat Info"
+## Sample queries
+```sumo title="Client IP Threat Info"
 _sourceCategory=AWS/WAF {{client_ip}}
 | parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=clientip
 ```
+<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+```sumo title="Client IP Threat Info"
+_sourceCategory=AWS/WAF {{client_ip}}
+| parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
+| threatlookup singleIndicator clientip
+| where (_threatlookup.type="ipv4-addr" or _threatlookup.type="ipv6-addr") and !isNull(_threatlookup.confidence)
+```
+-->
 
 ## Collecting logs for the AWS WAF app
 
@@ -98,11 +105,15 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic app for AWS AWS to use the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallV2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing AWS WAF dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### AWS WAF Overview
 
@@ -118,3 +129,30 @@ See details of threats allowed and blocked by AWS WAF.
 
 See details of allowed and blocked AWS WAF traffic by location, rules and outliers.
 <img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-traffic.png')} alt="AWS WAF" />
+
+## Create monitors for AWS WAF app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS WAF alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS WAF - Known Malicious IP Allowed` | This alert is triggered when AWS WAF allows a request from a known malicious IP address detected via threat intelligence. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+| `AWS WAF - Block Burst from Single IP` | This alert is triggered when a single IP address is blocked by AWS WAF more than 5 times within 5 minutes, indicating active scanning, brute-force, or exploit probing. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+| `AWS WAF - Known Malicious IP Blocked` | This alert is triggered when AWS WAF blocks a request from a known malicious IP address detected via threat intelligence. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+| `AWS WAF - URI Scanning Burst from Single IP` | This alert is triggered when a single IP address accesses more than 5 distinct URIs within 5 minutes, indicating web scanning or directory enumeration activity. `Note: Please configure the scope filter to match your AWS WAF log source.` | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the AWS WAF app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS WAF app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

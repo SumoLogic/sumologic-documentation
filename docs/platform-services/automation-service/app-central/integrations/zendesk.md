@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zendesk.png')} alt="axonius" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zendesk.png')} alt="Zendesk icon" width="100"/>
 
-***Version: 1.4  
-Updated: March 21, 2024***
+***Version: 1.5  
+Updated: April 30, 2026***
 
 Zendesk enhances customer service security with advanced encryption and access controls to safeguard interactions.
 This integration streamlines ticket lifecycle management, from creation to restoration, and enriches user engagement with comprehensive data retrieval.
@@ -32,14 +32,44 @@ This integration supports two primary authentication methods:
 
 Please ensure that you consult the corresponding guide to activate the API and generate the necessary credentials for your chosen method of authentication.
 
+## Configure Zendesk in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your Zendesk URL, for example, `https://your-domain.zendesk.com`.
+
+* **Username**. Enter the username of a Zendesk admin user authorized to authenticate the integration.
+
+* **API Token**. Enter your [Zendesk API token](https://support.zendesk.com/hc/en-us/articles/4408889192858-Managing-access-to-the-Zendesk-API#topic_bsw_lfg_mmb).
+
+* **Password**. Enter the password for the admin user.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/zendesk-configuration.png')} style={{border:'1px solid gray'}} alt="Zendesk configuration" width="400"/>
+
+For information about Zendesk, see [Zendesk documentation](https://www.zendesk.com/service/ticketing-system/documentation/).
 
 ## Change Log
 
-* June 17, 2021 - First upload
-* June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
-* June 21, 2023 (v1.2) - Changed Ticket and Update Ticket actions type to Notification
-* July 6, 2023 (v1.3)
-    + Updated Actions - Create Ticket & Update Ticket
-* March 21, 2024 (v1.4)
-    + Changed "Description" field type to textarea in "Create Ticket" action
-    + Changed "Comment" field type to textarea in "Update Ticket" action
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | March 21, 2024 | <ul><li>Changed the "Description" field type to textarea in the **Create Ticket** action.</li><li>Changed the "Comment" field type to textarea in the **Update Ticket** action.</li></ul> |
+| v1.3 | July 6, 2023 | Updated the **Create Ticket** and **Update Ticket** actions. |
+| v1.2 | June 21, 2023 | Changed the **Ticket** and **Update Ticket** actions type to Notification. |
+| v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
+| | June 17, 2021 | Initial release of the Zendesk integration. |
+
+## Additional resources
+
+For Zendesk, Sumo Logic offers the [Zendesk source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zendesk-source/) and the [Zendesk app](/docs/integrations/saas-cloud/zendesk/) to collect and visualize your Zendesk data.

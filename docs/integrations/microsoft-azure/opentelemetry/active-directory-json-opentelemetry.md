@@ -9,19 +9,23 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="40"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
-The [Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) JSON app helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
+The [Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) JSON app helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON-based event log format. The app includes predefined searches and dashboards that provide user activity in your environment for real-time analysis of overall usage.
 
-We recommend using the Active Directory JSON app in combination with the Windows JSON App.Active Directory logs are sent to Sumo Logic through OpenTelemetry [windowseventlogreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
+We recommend using the Active Directory JSON app in combination with the Windows JSON app. Active Directory logs are sent to Sumo Logic through OpenTelemetry [windowseventlogreceiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Schematics.png' alt="Schematics" />
 
+:::info
+This app includes [built-in monitors](#active-directory-alerts). For details on creating custom monitors, refer to the [Create monitors for Active Directory app](#create-monitors-for-active-directory-app).
+:::
+
 ## Fields creation in Sumo Logic for Active Directory
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of Active Directory App install if not already present.
+The following are the [fields](/docs/manage/fields/) which will be created as part of the Active Directory App install if not already present.
 
-**`sumo.datasource`** - Has fixed value of **activeDirectory**
+**`sumo.datasource`** - Has fixed value of **activeDirectory**.
 
 ### Event logs used by Active Directory app
 
@@ -54,11 +58,15 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 ### Step 2: Configure Integration
 
-In this step, we will configure the yaml required for Active Directory Collection.
+In this step, we will configure the YAML required for Active Directory Collection.
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo.
+You can add any custom fields that you want to tag along with the data ingested in Sumo.
 
-Click on the **Download YAML File** button to get the yaml file.
+Click on the **Download YAML File** button to get the YAML file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -80,7 +88,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Windows">
 
-1. Copy the yaml at `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Copy the YAML at `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
 2. Restart the collector using the command `Restart-Service -Name`.
 
 </TabItem>
@@ -158,7 +166,7 @@ level:"Information"
 
 This sample Query is from the Active Directory - Active Directory Service Activity > Top 10 Messages panel.
 
-```sql
+```sumo
 %"sumo.datasource"=activeDirectory
 | json "event_id", "computer", "message" as event_id, host, msg_summary nodrop
 | parse regex field=msg_summary "(?<msg_summary>.*\.*)" nodrop
@@ -169,14 +177,31 @@ This sample Query is from the Active Directory - Active Directory Service Activi
 
 ## Viewing Active Directory dashboards
 
-### Active Directory Service Activity
+### Service Activity
 
-The **Active Directory Service Activity** dashboard provides insights into overall active directory services like Category overtime, object creation, top 10 messages.
+The **Active Directory - Service Activity** dashboard provides insights into overall active directory services, like Category overtime, object creation, and top 10 messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Activity.png' alt="Service Activity" />
 
-### Active Directory Service Failures
+### Service Failures
 
-The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
+The **Active Directory - Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures over time.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Active-Directory-OpenTelemetry/Active-Directory-Service-Failures.png' alt="Service Failures" />
+
+## Create monitors for Active Directory app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Active Directory alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Active Directory - Account Lockouts Spike` | This alert is triggered when there are multiple account lockouts in a short time period, indicating potential brute force attempts. | Count `>=` 5 | Count `<` 5 |
+| `Active Directory - Directory Service Failures` | This alert is triggered when there are critical Directory Service failures that could impact AD functionality. | Count `>=` 3 | Count `<` 3 |
+| `Active Directory - Mass User Account Deletions` | This alert triggers when multiple user accounts are deleted in a short time period, which could indicate malicious activity. | Count `>` 5 | Count `<=` 5 |
+| `Active Directory - NTLM Authentication Failures` | This alert is triggered when there are multiple NTLM authentication failures, which could indicate credential theft attempts. | Count `>=` 5 | Count `<` 5 |
+| `Active Directory - Replication Failures` | This alert triggers when AD replication failures occur, which can impact directory synchronization. | Count `>` 0 | Count `<=` 0 |
+| `Active Directory - Schema Modifications` | This alert is triggered when changes are made to the AD schema, which are rare and potentially high-impact changes. | Count `>` 0 | Count `<=` 0 |

@@ -3,7 +3,7 @@ id: merge-operator
 title: Merge Operator
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Merge operator reduces a stream of events to a single event using a specified merge strategy. It is particularly useful as a subquery for the [Transactionize](transactionize-operator.md) operator. Each field can have a different merge strategy:
 
@@ -38,18 +38,18 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
 The following query:
 
-```sql
+```sumo
 *  | parse "BytesSentPersec = \"*\"" as BytesPersec
 | merge BytesPersec join with "--", _messageTime takeLast
 ```
 
 produces a result something like this:
 
-![example](/img/reuse/query-search/merge_join_result.png)
+<img src={useBaseUrl('img/reuse/query-search/merge_join_result.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="800" />
 
 A common case for using the merge operator with the [`transactionize`](transactionize-operator.md) operator is when all log messages have a common field, such as **`transaction_id`** or **`request_id`**. Using the `merge` operator with `transactionize` merges all the messages with the common fields, for example:
 
-```sql
+```sumo
 _sourceCategory=travelweb
 | parse regex "(?<ip>[0-9]+\.[0-9]+\.[0-9]+\.[0-9]) - "
 | transactionize ip (merge ip takeFirst, _raw join with "\n\n\n")
@@ -57,4 +57,4 @@ _sourceCategory=travelweb
 
 Which provides results like the following. Notice that all the logs from the same IP are now grouped in one record.
 
-![example](/img/reuse/query-search/merge_transactionize_example.png)
+<img src={useBaseUrl('img/reuse/query-search/merge_transactionize_example.png')} alt="Example" style={{border: '1px solid gray'}} width="800" />

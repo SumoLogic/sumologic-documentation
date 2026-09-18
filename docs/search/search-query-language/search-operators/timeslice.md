@@ -2,8 +2,10 @@
 id: timeslice
 title: timeslice Search Operator
 sidebar_label: timeslice
+description: Use the timeslice operator to aggregate data by time period, creating bucketed results based on fixed intervals like five-minute buckets or a fixed-target number of buckets.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import AlertsTimeslice from '../../../reuse/alerts-timeslice.md';
 
 The `timeslice` operator aggregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.
@@ -16,19 +18,15 @@ Let’s say you log each time a user successfully logs into your service, and yo
 
 ## Syntax 
 
-```sql
-timeslice <#><time_period> [as <field>] | <aggregating_operator> by <field>
-```
+`timeslice <#><time_period> [as <field>] | <aggregating_operator> by <field>`
 
-```sql
-timeslice <#> buckets [as <field>] | <aggregating_operator> by <field>
-```
+`timeslice <#> buckets [as <field>] | <aggregating_operator> by <field>`
 
 Supported `<time_period>` values are weeks (`w`), days (`d`), hours (`h`), minutes (`m`), and seconds (`s`).
 
 To group data by (M) month you can use the formatDate operator to format _timeslice to a month format, like this:
 
-```sql
+```sumo
 | timeslice 1d
 | formatDate(_timeslice,"MM-01-yyyy") as month
 | parseDate(month,"MM-dd-yyyy") as _timeslice
@@ -49,7 +47,7 @@ To group data by (M) month you can use the formatDate operator to format _timesl
 
 Successful logins per hour.
 
-```sql
+```sumo
  _sourceCategory=exampleApplication*
 | parse "login_status=*" as login_status
 | where login_status="success"
@@ -57,7 +55,7 @@ Successful logins per hour.
 | count by _timeslice
 ```
 
-![Aggregates.png](/img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png')} alt="Aggregates" style={{border: '1px solid gray'}} width="400" />
 
 ### Known Issue
 
@@ -67,8 +65,9 @@ For example, in Australia, DST goes into effect on October 2nd for Spring. For t
 
 In another example, if you had a 4h timeslice, you would usually see results at 12 a.m., 4 a.m., 8 a.m., 12 p.m., etc. But when the DST happens, the result after 12 a.m. could be either 3 a.m. or 5 a.m., depending on Fall or Spring.
 
-<AlertsTimeslice/>
+#### How does a timeslice affect a monitor?
 
+<AlertsTimeslice/>
 
 ### Basic examples
 
@@ -92,19 +91,19 @@ Fixed-size buckets of 1 minute each. The output field name is aliased to **`my_
 
 This outputs a table in the Aggregates tab with columns `_count` and **`_timeslice`** with the timeslices spaced in 5 minute intervals:
 
-```sql
+```sumo
 * | timeslice 5m | count by _timeslice 
 ```
 
 This outputs three columns: `_count`, `_sourceCategory`, and **`my_field_name_alias`**:
 
-```sql
+```sumo
 * | timeslice 5m as my_field_name_alias | count by _sourceCategory, my_field_name_alias
 ```
 
 This outputs a table in the Aggregates tab with columns `_count`, `_sourceCategory`, and `_timeslice` with 10 rows for each `_sourceCategory` in that table if you have messages covering the entire search period:
 
-```sql
+```sumo
 * | timeslice 10 buckets | count by _sourceCategory, _timeslice
 ```
 
@@ -112,7 +111,7 @@ This outputs a table in the Aggregates tab with columns `_count`, `_sourceCate
 
 **Example 1:** Checking the server distribution over time to make sure the load balancer is working properly.
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | timeslice 1h
 | parse regex "(?<ip_address>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
@@ -123,11 +122,11 @@ _sourceCategory=Apache/Access
 This query produces these results in the Aggregates tab, which you can
 display as a column chart.
 
-![Timeslice](/img/search/searchquerylanguage/search-operators/timeslice_ex1.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/timeslice_ex1.png')} alt="Timeslice" style={{border: '1px solid gray'}} width="800" />
 
 **Example 2:** All computer access to Sumo Logic over time.
 
-```sql
+```sumo
 _sourceCategory=*IIS*
 | parse "* * * * * * * * " as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, s_ip, cs_useragent
 | timeslice 1m
@@ -137,11 +136,11 @@ _sourceCategory=*IIS*
 
 This query produces these results in the Aggregates tab, which you can display as a stacked column chart:
 
-![Timeslice Example](/img/search/searchquerylanguage/search-operators/TimeSliceEx2.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/TimeSliceEx2.png')} alt="Timeslice example" style={{border: '1px solid gray'}} width="800" />
 
 **Example 3:** Monitoring non-normal status codes (400s and 500s) on Apache servers.
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | parse "HTTP/1.1\" * " as status_code
 | where status_code >= 400
@@ -152,4 +151,4 @@ _sourceCategory=Apache/Access
 
 This query produces these results in the Aggregates tab, which you can display as an area chart:
 
-![Timeslice example](/img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png')} alt="Timeslice example" style={{border: '1px solid gray'}} width="800" />

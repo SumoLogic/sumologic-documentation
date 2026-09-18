@@ -1,0 +1,18 @@
+{
+  "API.version": "v1",
+  "source": {
+    "config": {
+      "name": "DG ARC",
+      "clientID": "hduj34-nduy73h-sdfnuw3r",
+      "clientSecret": "sadadsfsfsdf",
+      "APIGatewayURL": "https://accessgw.XYZ.abcd.com",
+      "authServerURL": "https://authsrv.XYZ.abcd.com",
+      "exportProfile": "profile",
+      "pollingIntervalMin": 5
+    },
+    "schemaRef": {
+      "type": "Digital Guardian ARC"
+    },
+    "sourceType": "Universal"
+  }
+}

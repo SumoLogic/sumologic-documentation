@@ -1,33 +1,33 @@
 ---
 id: searching-data-tiers
 title: Searching Data Tiers
-description: Learn how to search specific Data Tiers.
+description: Learn how to search specific data tiers.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
+This page has information about how to search different data tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
-Searching Data Tiers.
+:::training Micro Lesson
 
-<Iframe url="https://www.youtube.com/embed/w0H8upLpCwU?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/5qgw3qizmv?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Searching Data Tiers Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 :::
 
 ## About the _dataTier search modifier
 
-In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which Data Tier a query should run against: Continuous, Frequent, or Infrequent.
+In Sumo Logic, a search modifier is a tag that gives the Sumo Logic backend information about how to process a query. The `_dataTier` modifier tells Sumo Logic which data tier a query should run against: Continuous, Frequent, or Infrequent.
 
 :::note
 Search modifiers are different from Sumo Logic’s [built-in metadata fields](/docs/search/get-started-with-search/search-basics/built-in-metadata), which are key-value pairs that are tagged to incoming log data, and then can be used to find that data easily, later. 
@@ -60,11 +60,10 @@ The `_dataTier` search modifier is not supported in:
 
 * Live mode dashboards
 * Role search filters
-* Real time alerts
 * Partition routing expressions
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
-* Searches against Cloud SIEM data in Sumo Logic. Don't use `_dataTier` when searching Cloud SIEM data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for Cloud SIEM Records in Sumo Logic](docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
+* Searches against Cloud SIEM data in Sumo Logic. Don't use `_dataTier` when searching Cloud SIEM data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
 
 In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
@@ -73,16 +72,6 @@ In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t a
 * To query a single tier, use `_dataTier=<TierName>` (e.g., `_dataTier=Infrequent`) in the scope of your query.
 * To query all tiers, use `_dataTier=All`.
 * When you run a query that will return data from the Infrequent Tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
-
-### Estimated and actual scan data for Infrequent queries
-
-When you enter a query that will run against the Infrequent Tier (`_dataTier=Infrequent` or `_dataTier=All`), Sumo Logic estimates and displays the amount of data in the Infrequent Tier that will be scanned in order to return the search results. You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears that displays the estimated scan data for the chargeable tiers.
-
-The example below shows the estimate of how much Infrequent data will be scanned for a query that uses `_dataTier=All` in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan.png')} alt="CrossTier-Query-Start-Estimated-Scan" style={{border:'1px solid gray'}} width="800" />
-
-When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the Infrequent data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />
-
-If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/partitions-data-tiers/no-scan-data.png')} alt="scan-details" style={{border:'1px solid gray'}} width="350" />
 
 ### Cross-tier searches and role search filters
 
@@ -105,9 +94,7 @@ When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Au
 
 If you use `_dataTier` to specify a tier other than Continuous in a query of scheduled views or either of the audit indexes, Sumo Logic presents an error message.
 
-### API Support with Rate Limiting
+### API support with rate limiting
 
-The rate limits described in [Rate limit throttling](/docs/api/search-job/#rate-limit-throttling) apply to cross-tier searches with these concurrent active job limits: 
+The rate limits described in [Rate limit throttling](/docs/api/search-job/#rate-limit-throttling) applies to 200 active concurrent search jobs to your organization.
 
-* A limit of 200 active concurrent search jobs applies to your organization for the Continuous Tier (`_dataTier=Continuous`), the Infrequent Tier (`_dataTier=Infrequent`), and All Tiers (`_dataTier=All`).
-* When searching only the Frequent Tier (`_dataTier=Frequent`), a rate limit of 20 concurrent search jobs applies to your organization.

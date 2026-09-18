@@ -6,7 +6,7 @@ description: The Global Intelligence for AWS CloudTrail App enables you to detec
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Global Intelligence SecOps icon" width="50"/>
 
 The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices.
 
@@ -51,7 +51,9 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
 <details>
 <summary>View the list of Scheduled Searches (<strong>click to expand</strong>)</summary>
 
-<table><small>
+<div class="responsive-table">
+
+<table>
   <tr>
     <td><strong>Folder</strong></td>
     <td><strong>Scheduled Search Name (prefixed with gis_benchmarks)</strong></td>
@@ -282,7 +284,9 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
     <td>S3_ListBuckets</td>
     <td>Counts S3 events related to listing buckets.</td>
   </tr>
-</small></table>
+</table>
+
+</div>
 
 * To reduce false positives, the benchmarks and application filter out AWS CloudTrail events from legitimate cloud services including AWS itself and CloudHealth by VMware.
 * Security posture requirements may vary between AWS accounts for a given customer. For example, development accounts might have less strict controls than production accounts. The app supports filtering findings by AWS account ID to facilitate AWS account level posture assessment.
@@ -340,7 +344,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
 ### Sample queries
 
 The following sample query is from the **Unique AWS Resource Types** panel of **Dashboard 01: Attack Surface Benchmark**.
-```sql
+```sumo
 _sourceCategory=Labs/AWS/CloudTrail/Analytics
 | json "eventSource", "errorCode" nodrop
 | where isBlank(errorCode)

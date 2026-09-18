@@ -7,13 +7,13 @@ description: The Microsoft Graph Security V2 app for Sumo Logic enables you to i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/>
 
 The Microsoft Graph Security V2 app for Sumo Logic empowers you to analyze security threats and take proactive measures to safeguard your organization. With its comprehensive widgets, you can track and analyze your security alerts in detail.
 
 The app utilizes Sumo Logic's cloud-to-cloud [Microsoft Graph Security source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) to collect and analyze alerts from the Microsoft Graph Security API endpoint. With this information, organizations can swiftly detect and respond to potential security incidents.
 
-With the Microsoft Graph Security  V2 app, you can:
+With the Microsoft Graph Security V2 app, you can:
 
 * Detect and mitigate potential ransomware attacks.
 * Monitor endpoint security and pinpoint potential threats.
@@ -29,9 +29,9 @@ This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts
 ### Sample log messages
 
 <details>
-<summary>Sample Alert Log (click to expand)</summary>
+<summary>Sample Alert Log</summary>
 
-```json title="Sample Alert Log"
+```json
 {
   "id":"adf3a5c9bc83f5cfd39fd01df4845a64d36f0d4481",
   "providerAlertId":"5bd1db63c29f8f4f17e6be7f8b4b5470199759916a3adee797b414fbaf6b1af1",
@@ -174,57 +174,91 @@ This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts
 
 ### Sample queries     
 
-```sql title="Total Alerts"
-_sourceCategory="ms_alerts"
-|json"id","status","severity","category","title","description","classification","determination","serviceSource","detectionSource" ,"comments[*]","evidence[*]"as  alert_id,status,severity,category,title,description,classification,determination,service_source,detection_source,comments,evidence_info nodrop
-| where severity matches "{{severity}}"
-| where status matches "{{status}}"
-| where classification matches "{{classification}}"
-| count_distinct(alert_id)
+```sumo title="Total Alerts"
+_sourceCategory={{Logsdatasource}} id
+| json "id", "status", "severity", "classification" as  alert_id, status, severity, classification nodrop
+
+// global filters
+| where if ("{{severity}}" = "*", true, severity matches "{{severity}}")
+| where if ("{{status}}" = "*", true, status matches "{{status}}")
+| where if ("{{classification}}" = "*", true, classification matches "{{classification}}")
+
+| count by alert_id
+| count
 ```
 
-## Set up collection
+## Collection configuration and app installation
 
-Follow the instructions for setting up [Cloud-to-Cloud Integration for Microsoft Graph Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) app to create the source and use the same source category while installing the app.
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-## Installing the Microsoft Graph Security app​
+<CollectionConfiguration/>
 
-This section has instructions for installing the Microsoft Graph Security app for Sumo Logic and a description of the dashboard. Configure Microsoft Graph Security app using the steps described in the [Microsoft Graph Security Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/).
+:::important
+Use the [Cloud-to-Cloud Integration for Microsoft Graph Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Microsoft Graph Security app is properly integrated and configured to collect and analyze your Microsoft Graph Security data.
+:::
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+### Create a new collector and install the app
 
-<AppInstall2/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-## Upgrading the Microsoft Graph Security app (Optional)
+<AppCollectionOPtion1/>
 
-import AppUpdate from '../../reuse/apps/app-update.md';
+### Use an existing collector and install the app
 
-<AppUpdate/>
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-### Microsoft Graph Security - Alerts Overview
+<AppCollectionOPtion2/>
 
-The Alerts Overview dashboard lets you analyze security threats and take proactive measures to safeguard your organization. The dashboard includes a variety of widgets, including the total alerts, the alerts by status, the alerts by classification, the alerts by source and detection sources, the alerts by determination, the top analyst, the geo location of alerts, and the top alert categories.
+### Use an existing source and install the app
 
-The top users associated with the alerts widget help you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring that you are always up-to-date on the latest developments.
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Security/Microsoft-Graph-Security-Alerts-Overview.png' alt="Microsoft-Graph-Security-Alerts-Overview" />
-
-### Microsoft Graph Security - Alerts Security Overview
-
-The **Alerts Security Overview** dashboard allows you to have a high-level overview of the security posture of the organization. The dashboards include a variety of widgets including high-severity alerts. The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks.
-
-The top 10 countries with malicious or suspicious IP addresses help to identify and mitigate potential threats originating from countries with a history of suspicious or malicious IP activity. The top 10 user accounts with compromised role highlights user accounts with compromised roles, necessitating immediate investigation, and remediation to protect sensitive data and system integrity. The top 10 attacked device gives an overview of the most targeted devices.
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Microsoft-Graph-Security/Microsoft-Graph-Security-Alerts-Security-Overview.png' alt="Microsoft-Graph-Security-Alerts-Overview" />
-
-## Uninstalling the Microsoft Graph Security app (Optional)
-
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
-
-<AppUninstall/>
+<AppCollectionOPtion3/>
 
 ## Viewing Microsoft Graph Security dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
+
+### Alerts Overview
+
+The **Microsoft Graph Security - Alerts Overview** dashboard lets you analyze security threats and take proactive measures to safeguard your organization. The dashboard includes a variety of widgets, including the total alerts, the alerts by status, the alerts by classification, the alerts by source and detection sources, the alerts by determination, the top analyst, the geo location of alerts, and the top alert categories.
+
+The top users associated with the alerts widget help you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring that you are always up-to-date on the latest developments.
+
+<img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview-v2.png')} alt="Microsoft Graph Security Alerts Overview" />
+
+### Alerts Security Overview
+
+The **Microsoft Graph Security - Alerts Security Overview** dashboard allows you to have a high-level overview of the security posture of the organization. The dashboards include a variety of widgets including high-severity alerts. The geo-location widget highlights alerts from embargoed locations, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks.
+
+The top 10 countries with malicious or suspicious IP addresses help to identify and mitigate potential threats originating from countries with a history of suspicious or malicious IP activity. The top 10 user accounts with compromised role highlights user accounts with compromised roles, necessitating immediate investigation, and remediation to protect sensitive data and system integrity. The top 10 attacked device gives an overview of the most targeted devices.
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Security-Overview-v2.png')} alt="Microsoft Graph Security Alerts Security Overview" />
+
+## Create monitors for Microsoft Graph Security app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Microsoft Graph Security alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `Microsoft Graph Security - Alerts Detected from Embargoed Locations` | This alert is triggered when activity is detected from a location flagged as high-risk, enabling you to monitor access attempts from unusual or restricted geographic regions. It enhances your ability to spot suspicious behaviour and potential threats originating from locations outside your organisation’s typical operating areas. | Critical | Count > 0 | 
+| `Microsoft Graph Security - High Severity Alerts` | This alert is triggered when a high-severity threat is detected, allowing you to promptly monitor and respond to potentially harmful events that may compromise endpoint security. It ensures critical incidents are prioritised for swift investigation and mitigation. | Critical | Count > 0|
+| `Microsoft Graph Security - Embargoed Device` | This alert is triggered when a single device generates multiple alerts, indicating potentially malicious behaviour. It helps you identify high-risk devices, monitor suspicious activity more effectively, and take swift action to prevent further compromise. | Critical | Count > 5 |
+
+## Upgrade/Downgrade the Microsoft Graph Security app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Graph Security app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -1,14 +1,16 @@
 ---
 id: parse-keyvalue-formatted-logs
 title: Parse Keyvalue Formatted Logs
+description: Use the keyvalue operator to extract values from logs that follow a key-value pair structure by specifying the key paired with each value.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.
 
 For example, a log could contain the following keys (highlighted):
 
-![key value](/img/reuse/query-search/Keyvalue_highlight.png)
+<img src={useBaseUrl('img/reuse/query-search/Keyvalue_highlight.png')} alt="Key value" style={{border: '1px solid gray'}} width="800" />
 
 From that log message, you can use the **keyvalue** operator to get the values for one or more keys. For example, if you'd like to see information just about the "remote_ip" value, running this query:
 
@@ -16,7 +18,7 @@ From that log message, you can use the **keyvalue** operator to get the values
 
 would produce these results:
 
-![results](/img/reuse/query-search/Keyvalue_results.png)
+<img src={useBaseUrl('img/reuse/query-search/Keyvalue_results.png')} alt="Results" style={{border: '1px solid gray'}} width="800" />
 
 The keyvalue operator can also be used in two explicit modes:
 
@@ -37,7 +39,7 @@ For example, you'd extract the keys "module" and "thread" and their values from 
 
 to produce these results:
 
-![](/img/reuse/query-search/keyvalue_infer_example_results.png)
+<img src={useBaseUrl('img/reuse/query-search/keyvalue_infer_example_results.png')} alt="Inference mode" style={{border: '1px solid gray'}} width="500" />
 
 ## Regular Expression mode syntax
 
@@ -51,13 +53,13 @@ For example, this is a log with many key value pairs:
 
 To extract the values for the keys "serviceinfo.IP" and "perf.request_start_timestamp_ms" from the log message, use this query:
 
-```sql
+```sumo
 * | keyvalue regex "\s(.*?)=(.*?)," keys "serviceinfo.IP", "perf.request_start_timestamp_ms" as ip, start_ms
 ```
 
 The **keyvalue** operator also supports regular expressions that contain a **single capture group**. The capture group needs to match the value from your key value pair. You may notice an improvement in performance by running queries with a single match group. For example, for the same log you'd run this query to get the same results as the previous query:
 
-```sql
+```sumo
 * | keyvalue regex "=(.*?)," "serviceinfo.IP", "perf.request_start_timestamp_ms"
 ```
 
@@ -69,19 +71,19 @@ The number of fields specified with the "as" clause must match the number of key
 
 The **keyvalue** operator can be abbreviated in either mode (Inference or Regular Expression). For example, running this query:
 
-```sql
+```sumo
 * | keyvalue infer keys "<a>", "<b>"
 ```
 
 will produce the same results as running this query:
 
-```sql
+```sumo
 * | keyvalue "<a>", "<b>"
 ```
 
 Also, **keyvalue** can be abbreviated to "kv". For example:
 
-```sql
+```sumo
 * | kv "<a>", "<b>"
 ```
 
@@ -89,7 +91,7 @@ Also, **keyvalue** can be abbreviated to "kv". For example:
 
 The **keyvalue** operator supports an optional auto mode when using the default Inference mode.
 
-```sql
+```sumo
 * | keyvalue auto
 ```
 
@@ -98,7 +100,7 @@ The **keyvalue** operator supports an optional auto mode when using the defaul
 * If you want to be able to use the keys later in the query, they must be referred to specifically.
 * You can separate the key and value in a key-value pair using any of these delimiters:
 
-    ```sql
+    ```sumo
     : = ->
     ```
 
@@ -107,7 +109,7 @@ The **keyvalue** operator supports an optional auto mode when using the defaul
 If your log messages contain more than one delimiter you must specify
 one delimiter to use when extracting.
 
-```sql
+```sumo
 * | keyvalue auto delim ":"
 ```
 
@@ -115,27 +117,27 @@ one delimiter to use when extracting.
 
 * **Aliases (renaming)** using [**as**](/docs/search/search-query-language/search-operators/as) are supported. For example:
 
-    ```sql
+    ```sumo
     * | keyvalue auto keys "<key1>", "<key2>" as <field1>, <field2>
     ```
 
 * **refonly** extracts only referenced keys. If this option is not used, **keyvalue auto** extracts all other fields it finds in the message.
 
-    ```sql
+    ```sumo
     * | kv auto keys "<key1>", "<key2>"  refonly
     ```
 
 * **field**=field_name allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md).
 
-    ```sql
+    ```sumo
     * | keyvalue field=<field> [infer keys]
     ```
 
-    ```sql
+    ```sumo
     * | keyvalue auto field=<field> [keys]
     ```
 
-    ```sql
+    ```sumo
     * | keyvalue field=<field> regex "<regex>" [keys]
     ```
 

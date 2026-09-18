@@ -1,34 +1,38 @@
 ---
 id: api-gateway
 title: AWS API Gateway
+sidebar_label: AWS API Gateway
 description: Amazon API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS_API_Gateway.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_API_Gateway.png')} alt="AWS API Gateway icon" width="50"/>
 
 AWS API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
 The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
-## Log and metrics types
+## Log and metric types
 
-The AWS API Gateway app uses the following logs and metrics:
+The Sumo Logic app for AWS API Gateway uses the following logs and metrics:
 
-* Amazon API Gateway metrics:
-  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+* [Amazon API Gateway CloudTrail Logs](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 * Amazon API Gateway access logs:
-  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+* Amazon API Gateway Metrics:
+  * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
+  * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="External link icon" width="12"/>
 
 ### Sample log messages
 
-```json title="Sample CloudTrail Log Message"
+<details>
+<summary>Sample CloudTrail Log Message</summary>
+
+```json
 {
    "eventVersion":"1.05",
    "userIdentity":{
@@ -70,8 +74,12 @@ The AWS API Gateway app uses the following logs and metrics:
    "recipientAccountId":"123408221234"
 }
 ```
+</details>
 
-```json title="Sample Access Log Message"
+<details>
+<summary>Sample Access Log Message</summary>
+
+```json
 {
   "requestId": "bf04adbf-eacc-4601-8c14-94605f242e1a",
   "extendedRequestId": "Sca3bFUQgi0EYeA=",
@@ -127,6 +135,7 @@ The AWS API Gateway app uses the following logs and metrics:
   "wafStatus": "200"
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -134,7 +143,7 @@ The AWS API Gateway app uses the following logs and metrics:
 Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
 ```
 
-```sql title="Top Error Codes (CloudTrail Log-based)"
+```sumo title="Top Error Codes (CloudTrail Log-based)"
 "\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
 | json "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "sourceIPAddress", "errorCode", "errorMessage", "requestID" as event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, src_ip, errorCode, errorMessage, requestID nodrop
 | where event_source = "apigateway.amazonaws.com" and !isEmpty(errorCode)
@@ -148,7 +157,7 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 | top 10 errorCode by eventCount, errorCode asc
 ```
 
-```sql title="Distribution by User Agent (Access Log-based)"
+```sumo title="Distribution by User Agent (Access Log-based)"
 account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage domainname requestId identityUserAgent
 | json "requestId", "apiId", "authorizerError", "errorMessage", "errorResponseType", "status", "integrationLatency", "domainName", "identitySourceIp", "identityUserAgent", "stage", "integrationStatus" as requestId, apiId, authorizerError, errorMessage, errorResponseType, status, integrationLatency, domainName, identitySourceIp, identityUserAgent, stage, integrationStatus
 | json "wafLatency", "responseLatency", "responseLength", "path", "httpMethod", "protocol" as wafLatency, responseLatency, responseLength, path, httpMethod, protocol nodrop
@@ -161,103 +170,29 @@ account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage doma
 
 ## Collecting logs and metrics for AWS API Gateway
 
-### Fields in field schema
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for the below fields:
-    * `apiname`
-    * `account`
-    * `namespace`
-    * `region`
-    * `accountid`
-1. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields).
-
-### Field extraction rules
-
-To learn how to create field extraction rules, [Create a Field Extraction Rules](/docs/manage/field-extractions/create-field-extraction-rule).
-
-Create a field extraction rule for cloudTrail logs:
-
-```sql
-Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "apigateway.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "responseElements", "recipientAccountId" as eventSource, region, responseElements, accountid nodrop
-| where eventSource = "apigateway.amazonaws.com"
-| "aws/apigateway" as namespace
-| json field=responseElements "name" as ApiName nodrop
-| tolowercase(ApiName) as apiname
-| fields region, namespace, apiname, accountid
-```
-
-Create a field extraction rule for access logs:
-
-```sql
-Rule Name: AwsObservabilityApiGatewayAccessLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* apiId domainName stage requestId status
-Parse Expression:
-json "apiId", "domainName", "stage" as apiId, domainName, stage
-| "aws/apigateway" as namespace
-| apiId as apiName
-| fields apiName, namespace, apiId
-```
-
-Create/Update field extraction rule(s) for cloudwatch logs:
-
-```sql
-Rule Name: AwsObservabilityGenericCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
-Parse Expression:
-if (isEmpty(namespace),"unknown",namespace) as namespace
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname
-| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop
-| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop
-| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop
-| apiid as apiName
-| tolowercase(dbidentifier) as dbidentifier
-| fields namespace, functionname, dbidentifier, apiid, apiName
-```
-
-### Metrics rules
-
-Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
-
-```sql
-Rule name: AwsObservabilityApiGatewayApiNameMetricsEntityRule
-Metric match expression: Namespace=AWS/ApiGateway apiid=*
-Variable name: apiname
-Tag sequence: $apiid._1
-Save it
-```
-
 ### Configure Hosted Collector
 
-In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-### Collect metrics for AWS API Gateway
+### Collect AWS API Gateway CloudWatch metrics
 
-Sumo Logic supports collecting metrics using two source types:
+Sumo Logic supports collecting metrics using one of the following source types:
 
-* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**); or
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-:::note
-Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
-:::
+   :::note
+   Namespace for **AWS API Gateway** service is **AWS/ApiGateway**.
+   :::
 
-For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account” field.
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
 #### Enable cache metrics
 
@@ -306,9 +241,9 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
    ```
 
-### Collect access logs for AWS API Gateway
+### Collect AWS API Gateway Access logs
 
-1. To your Hosted Collector, add an [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/).
+1. Configure the [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource).
    1. **Name**. Enter a name to display the new Source.
    2. **Description**. Enter an optional description.
    3. **Enable S3 Replay**. Do not check this option.
@@ -324,224 +259,247 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    11. Save the given URL of the source for next step.
 2. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
 3. Create a log group in CloudWatch Logs by referring to the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html). Make sure to set your log group name convention as `/aws/apigateway/<apiid>/<stagename>`.
-4. Follow the below steps to enable access logs for each respective API type:
+4. Follow the steps below to enable access logs for each respective API type:
    :::note
-   Make sure to remove `:*` from the end while adding Access log destination ARN.
+   Ensure to remove `:*` from the end while adding Access log destination ARN.
    :::
    * Enable Access logs for REST APIs by referring to the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-using-console). When you specify the `Log format` field, use the below JSON.
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_REST_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
-   ```json title="JSON Log Format for REST API"
-   {
-      "accountId": "$context.accountId",
-      "requestId": "$context.requestId",
-      "authorizerClaimsProperty": "$context.authorizer.claims.property",
-      "extendedRequestId": "$context.extendedRequestId",
-      "identitySourceIp": "$context.identity.sourceIp",
-      "identityCaller": "$context.identity.caller",
-      "identityUser": "$context.identity.user",
-      "requestTime": "$context.requestTime",
-      "status": "$context.status",
-      "routeKey": "$context.routeKey",
-      "apiId": "$context.apiId",
-      "domainPrefix": "$context.domainPrefix",
-      "httpMethod": "$context.httpMethod",
-      "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
-      "identityUserAgent": "$context.identity.userAgent",
-      "path": "$context.path",
-      "protocol": "$context.protocol",
-      "resourceId": "$context.resourceId",
-      "responseOverrideStatus": "$context.responseOverride.status",
-      "authorizeError": "$context.authorize.error",
-      "resourcePath": "$context.resourcePath",
-      "authorizeLatency": "$context.authorize.latency",
-      "authorizeStatus": "$context.authorize.status",
-      "authorizerError": "$context.authorizer.error",
-      "authorizerIntegrationStatus": "$context.authorizer.integrationStatus",
-      "authorizerIntegrationLatency": "$context.authorizer.integrationLatency",
-      "authorizerLatency": "$context.authorizer.latency",
-      "authorizerPrincipalId": "$context.authorizer.principalId",
-      "authorizerRequestId": "$context.authorizer.requestId",
-      "authorizerStatus": "$context.authorizer.status",
-      "authenticateError": "$context.authenticate.error",
-      "authenticateLatency": "$context.authenticate.latency",
-      "authenticateStatus": "$context.authenticate.status",
-      "connectedAt": "$context.connectedAt",
-      "connectionId": "$context.connectionId",
-      "domainName": "$context.domainName",
-      "errorMessage": "$context.error.message",
-      "errorResponseType": "$context.error.responseType",
-      "errorValidationErrorString": "$context.error.validationErrorString",
-      "eventType": "$context.eventType",
-      "identityAccountId": "$context.identity.accountId",
-      "identityPrincipalOrgId": "$context.identity.principalOrgId",
-      "identityUserArn": "$context.identity.userArn",
-      "identityApiKey": "$context.identity.apiKey",
-      "identityApiKeyId": "$context.identity.apiKeyId",
-      "integrationError": "$context.integration.error",
-      "integrationIntegrationStatus": "$context.integration.integrationStatus",
-      "integrationLatency": "$context.integration.latency",
-      "integrationRequestId": "$context.integration.requestId",
-      "integrationStatus": "$context.integration.status",
-      "contextIntegrationLatency": "$context.integrationLatency",
-      "responseLatency": "$context.responseLatency",
-      "responseLength": "$context.responseLength",
-      "xrayTraceId": "$context.xrayTraceId",
-      "requestTimeEpoch": "$context.requestTimeEpoch",
-      "stage": "$context.stage",
-      "messageId": "$context.messageId",
-      "wafResponseCode": "$context.wafResponseCode",
-      "wafError": "$context.waf.error",
-      "wafLatency": "$context.waf.latency",
-      "wafStatus": "$context.waf.status",
-      "webaclArn": "$context.webaclArn"
-   }
-   ```
+   <details>
+   <summary>JSON Log Format for REST API</summary>
 
+      ```json
+      {
+         "accountId": "$context.accountId",
+         "requestId": "$context.requestId",
+         "authorizerClaimsProperty": "$context.authorizer.claims.property",
+         "extendedRequestId": "$context.extendedRequestId",
+         "identitySourceIp": "$context.identity.sourceIp",
+         "identityCaller": "$context.identity.caller",
+         "identityUser": "$context.identity.user",
+         "requestTime": "$context.requestTime",
+         "status": "$context.status",
+         "routeKey": "$context.routeKey",
+         "apiId": "$context.apiId",
+         "domainPrefix": "$context.domainPrefix",
+         "httpMethod": "$context.httpMethod",
+         "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
+         "identityUserAgent": "$context.identity.userAgent",
+         "path": "$context.path",
+         "protocol": "$context.protocol",
+         "resourceId": "$context.resourceId",
+         "responseOverrideStatus": "$context.responseOverride.status",
+         "authorizeError": "$context.authorize.error",
+         "resourcePath": "$context.resourcePath",
+         "authorizeLatency": "$context.authorize.latency",
+         "authorizeStatus": "$context.authorize.status",
+         "authorizerError": "$context.authorizer.error",
+         "authorizerIntegrationStatus": "$context.authorizer.integrationStatus",
+         "authorizerIntegrationLatency": "$context.authorizer.integrationLatency",
+         "authorizerLatency": "$context.authorizer.latency",
+         "authorizerPrincipalId": "$context.authorizer.principalId",
+         "authorizerRequestId": "$context.authorizer.requestId",
+         "authorizerStatus": "$context.authorizer.status",
+         "authenticateError": "$context.authenticate.error",
+         "authenticateLatency": "$context.authenticate.latency",
+         "authenticateStatus": "$context.authenticate.status",
+         "connectedAt": "$context.connectedAt",
+         "connectionId": "$context.connectionId",
+         "domainName": "$context.domainName",
+         "errorMessage": "$context.error.message",
+         "errorResponseType": "$context.error.responseType",
+         "errorValidationErrorString": "$context.error.validationErrorString",
+         "eventType": "$context.eventType",
+         "identityAccountId": "$context.identity.accountId",
+         "identityPrincipalOrgId": "$context.identity.principalOrgId",
+         "identityUserArn": "$context.identity.userArn",
+         "identityApiKey": "$context.identity.apiKey",
+         "identityApiKeyId": "$context.identity.apiKeyId",
+         "integrationError": "$context.integration.error",
+         "integrationIntegrationStatus": "$context.integration.integrationStatus",
+         "integrationLatency": "$context.integration.latency",
+         "integrationRequestId": "$context.integration.requestId",
+         "integrationStatus": "$context.integration.status",
+         "contextIntegrationLatency": "$context.integrationLatency",
+         "responseLatency": "$context.responseLatency",
+         "responseLength": "$context.responseLength",
+         "xrayTraceId": "$context.xrayTraceId",
+         "requestTimeEpoch": "$context.requestTimeEpoch",
+         "stage": "$context.stage",
+         "messageId": "$context.messageId",
+         "wafResponseCode": "$context.wafResponseCode",
+         "wafError": "$context.waf.error",
+         "wafLatency": "$context.waf.latency",
+         "wafStatus": "$context.waf.status",
+         "webaclArn": "$context.webaclArn"
+      }
+      ```
+   </details>
    * Enable Access logs for HTTP APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html#http-api-enable-logging) and  when you specify the `Log format` field use the below JSON.
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_HTTP_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
-   ```json title="JSON Log Format for HTTP API"
-   {
-      "requestId": "$context.requestId",
-      "extendedRequestId": "$context.extendedRequestId",
-      "identitySourceIp": "$context.identity.sourceIp",
-      "identityCaller": "$context.identity.caller",
-      "identityUser": "$context.identity.user",
-      "requestTime": "$context.requestTime",
-      "httpMethod": "$context.httpMethod",
-      "resourcePath": "$context.resourcePath",
-      "status": "$context.status",
-      "protocol": "$context.protocol",
-      "responseLength": "$context.responseLength",
-      "accountId": "$context.accountId",
-      "authorizerProperty": "$context.authorizer.property",
-      "routeKey": "$context.routeKey",
-      "responseLatency": "$context.responseLatency",
-      "integrationErrorMessage": "$context.integrationErrorMessage",
-      "apiId": "$context.apiId",
-      "authorizerClaimsProperty": "$context.authorizer.claims.property",
-      "authorizerError": "$context.authorizer.error",
-      "authorizerPrincipalId": "$context.authorizer.principalId",
-      "awsEndpointRequestId": "$context.awsEndpointRequestId",
-      "awsEndpointRequestId2": "$context.awsEndpointRequestId2",
-      "customDomainBasePathMatched": "$context.customDomain.basePathMatched",
-      "dataProcessed": "$context.dataProcessed",
-      "domainName": "$context.domainName",
-      "domainPrefix": "$context.domainPrefix",
-      "errorMessage": "$context.error.message",
-      "errorResponseType": "$context.error.responseType",
-      "identityAccountId": "$context.identity.accountId",
-      "identityCognitoAuthenticationProvider": "$context.identity.cognitoAuthenticationProvider",
-      "identityCognitoAuthenticationType": "$context.identity.cognitoAuthenticationType",
-      "identityCognitoIdentityId": "$context.identity.cognitoIdentityId",
-      "identityCognitoIdentityPoolId": "$context.identity.cognitoIdentityPoolId",
-      "identityPrincipalOrgId": "$context.identity.principalOrgId",
-      "identityClientCertClientCertPem": "$context.identity.clientCert.clientCertPem",
-      "identityClientCertSubjectDN": "$context.identity.clientCert.subjectDN",
-      "identityClientCertIssuerDN": "$context.identity.clientCert.issuerDN",
-      "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
-      "identityClientCertValidityNotBefore": "$context.identity.clientCert.validity.notBefore",
-      "identityClientCertValidityNotAfter": "$context.identity.clientCert.validity.notAfter",
-      "identityUserAgent": "$context.identity.userAgent",
-      "identityUserArn": "$context.identity.userArn",
-      "integrationError": "$context.integration.error",
-      "integrationIntegrationStatus": "$context.integration.integrationStatus",
-      "integrationLatency": "$context.integration.latency",
-      "integrationRequestId": "$context.integration.requestId",
-      "integrationStatus": "$context.integration.status",
-      "contextIntegrationLatency": "$context.integrationLatency",
-      "contextIntegrationStatus": "$context.integrationStatus",
-      "path": "$context.path",
-      "requestTimeEpoch": "$context.requestTimeEpoch",
-      "stage": "$context.stage"
-   }
-   ```
+   <details>
+   <summary>JSON Log Format for HTTP API</summary>
+
+      ```json
+      {
+         "requestId": "$context.requestId",
+         "extendedRequestId": "$context.extendedRequestId",
+         "identitySourceIp": "$context.identity.sourceIp",
+         "identityCaller": "$context.identity.caller",
+         "identityUser": "$context.identity.user",
+         "requestTime": "$context.requestTime",
+         "httpMethod": "$context.httpMethod",
+         "resourcePath": "$context.resourcePath",
+         "status": "$context.status",
+         "protocol": "$context.protocol",
+         "responseLength": "$context.responseLength",
+         "accountId": "$context.accountId",
+         "authorizerProperty": "$context.authorizer.property",
+         "routeKey": "$context.routeKey",
+         "responseLatency": "$context.responseLatency",
+         "integrationErrorMessage": "$context.integrationErrorMessage",
+         "apiId": "$context.apiId",
+         "authorizerClaimsProperty": "$context.authorizer.claims.property",
+         "authorizerError": "$context.authorizer.error",
+         "authorizerPrincipalId": "$context.authorizer.principalId",
+         "awsEndpointRequestId": "$context.awsEndpointRequestId",
+         "awsEndpointRequestId2": "$context.awsEndpointRequestId2",
+         "customDomainBasePathMatched": "$context.customDomain.basePathMatched",
+         "dataProcessed": "$context.dataProcessed",
+         "domainName": "$context.domainName",
+         "domainPrefix": "$context.domainPrefix",
+         "errorMessage": "$context.error.message",
+         "errorResponseType": "$context.error.responseType",
+         "identityAccountId": "$context.identity.accountId",
+         "identityCognitoAuthenticationProvider": "$context.identity.cognitoAuthenticationProvider",
+         "identityCognitoAuthenticationType": "$context.identity.cognitoAuthenticationType",
+         "identityCognitoIdentityId": "$context.identity.cognitoIdentityId",
+         "identityCognitoIdentityPoolId": "$context.identity.cognitoIdentityPoolId",
+         "identityPrincipalOrgId": "$context.identity.principalOrgId",
+         "identityClientCertClientCertPem": "$context.identity.clientCert.clientCertPem",
+         "identityClientCertSubjectDN": "$context.identity.clientCert.subjectDN",
+         "identityClientCertIssuerDN": "$context.identity.clientCert.issuerDN",
+         "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
+         "identityClientCertValidityNotBefore": "$context.identity.clientCert.validity.notBefore",
+         "identityClientCertValidityNotAfter": "$context.identity.clientCert.validity.notAfter",
+         "identityUserAgent": "$context.identity.userAgent",
+         "identityUserArn": "$context.identity.userArn",
+         "integrationError": "$context.integration.error",
+         "integrationIntegrationStatus": "$context.integration.integrationStatus",
+         "integrationLatency": "$context.integration.latency",
+         "integrationRequestId": "$context.integration.requestId",
+         "integrationStatus": "$context.integration.status",
+         "contextIntegrationLatency": "$context.integrationLatency",
+         "contextIntegrationStatus": "$context.integrationStatus",
+         "path": "$context.path",
+         "requestTimeEpoch": "$context.requestTimeEpoch",
+         "stage": "$context.stage"
+      }
+      ```
+   </details>
 
    * Enable Access logs for WebSocket APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-using-console) and  when you specify the `Log format` field use the below JSON.
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_WebSocket_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
-   ```json title="JSON Log Format for WebSocket API"
-   {
-      "apiId": "$context.apiId",
-      "authorizeError": "$context.authorize.error",
-      "authorizeLatency": "$context.authorize.latency",
-      "authorizeStatus": "$context.authorize.status",
-      "authorizerError": "$context.authorizer.error",
-      "authorizerIntegrationLatency": "$context.authorizer.integrationLatency",
-      "authorizerIntegrationStatus": "$context.authorizer.integrationStatus",
-      "authorizerLatency": "$context.authorizer.latency",
-      "authorizerRequestId": "$context.authorizer.requestId",
-      "authorizerStatus": "$context.authorizer.status",
-      "authorizerPrincipalId": "$context.authorizer.principalId",
-      "authorizerProperty": "$context.authorizer.property",
-      "authenticateError": "$context.authenticate.error",
-      "authenticateLatency": "$context.authenticate.latency",
-      "authenticateStatus": "$context.authenticate.status",
-      "connectedAt": "$context.connectedAt",
-      "connectionId": "$context.connectionId",
-      "domainName": "$context.domainName",
-      "errorMessage": "$context.error.message",
-      "errorResponseType": "$context.error.responseType",
-      "errorValidationErrorString": "$context.error.validationErrorString",
-      "eventType": "$context.eventType",
-      "extendedRequestId": "$context.extendedRequestId",
-      "identityAccountId": "$context.identity.accountId",
-      "identityApiKey": "$context.identity.apiKey",
-      "identityApiKeyId": "$context.identity.apiKeyId",
-      "identityCaller": "$context.identity.caller",
-      "identityCognitoAuthenticationProvider": "$context.identity.cognitoAuthenticationProvider",
-      "identityCognitoAuthenticationType": "$context.identity.cognitoAuthenticationType",
-      "identityCognitoIdentityId": "$context.identity.cognitoIdentityId",
-      "identityCognitoIdentityPoolId": "$context.identity.cognitoIdentityPoolId",
-      "identityPrincipalOrgId": "$context.identity.principalOrgId",
-      "identitySourceIp": "$context.identity.sourceIp",
-      "identityUser": "$context.identity.user",
-      "identityUserAgent": "$context.identity.userAgent",
-      "identityUserArn": "$context.identity.userArn",
-      "integrationError": "$context.integration.error",
-      "integrationIntegrationStatus": "$context.integration.integrationStatus",
-      "integrationLatency": "$context.integrationLatency",
-      "integrationRequestId": "$context.integration.requestId",
-      "integrationStatus": "$context.integration.status",
-      "messageId": "$context.messageId",
-      "requestId": "$context.requestId",
-      "requestTime": "$context.requestTime",
-      "requestTimeEpoch": "$context.requestTimeEpoch",
-      "routeKey": "$context.routeKey",
-      "stage": "$context.stage",
-      "status": "$context.status",
-      "wafError": "$context.waf.error",
-      "wafLatency": "$context.waf.latency",
-      "wafStatus": "$context.waf.status"
-   }
-   ```
+   <details>
+   <summary>JSON Log Format for WebSocket API</summary>
+
+      ```json
+      {
+         "apiId": "$context.apiId",
+         "authorizeError": "$context.authorize.error",
+         "authorizeLatency": "$context.authorize.latency",
+         "authorizeStatus": "$context.authorize.status",
+         "authorizerError": "$context.authorizer.error",
+         "authorizerIntegrationLatency": "$context.authorizer.integrationLatency",
+         "authorizerIntegrationStatus": "$context.authorizer.integrationStatus",
+         "authorizerLatency": "$context.authorizer.latency",
+         "authorizerRequestId": "$context.authorizer.requestId",
+         "authorizerStatus": "$context.authorizer.status",
+         "authorizerPrincipalId": "$context.authorizer.principalId",
+         "authorizerProperty": "$context.authorizer.property",
+         "authenticateError": "$context.authenticate.error",
+         "authenticateLatency": "$context.authenticate.latency",
+         "authenticateStatus": "$context.authenticate.status",
+         "connectedAt": "$context.connectedAt",
+         "connectionId": "$context.connectionId",
+         "domainName": "$context.domainName",
+         "errorMessage": "$context.error.message",
+         "errorResponseType": "$context.error.responseType",
+         "errorValidationErrorString": "$context.error.validationErrorString",
+         "eventType": "$context.eventType",
+         "extendedRequestId": "$context.extendedRequestId",
+         "identityAccountId": "$context.identity.accountId",
+         "identityApiKey": "$context.identity.apiKey",
+         "identityApiKeyId": "$context.identity.apiKeyId",
+         "identityCaller": "$context.identity.caller",
+         "identityCognitoAuthenticationProvider": "$context.identity.cognitoAuthenticationProvider",
+         "identityCognitoAuthenticationType": "$context.identity.cognitoAuthenticationType",
+         "identityCognitoIdentityId": "$context.identity.cognitoIdentityId",
+         "identityCognitoIdentityPoolId": "$context.identity.cognitoIdentityPoolId",
+         "identityPrincipalOrgId": "$context.identity.principalOrgId",
+         "identitySourceIp": "$context.identity.sourceIp",
+         "identityUser": "$context.identity.user",
+         "identityUserAgent": "$context.identity.userAgent",
+         "identityUserArn": "$context.identity.userArn",
+         "integrationError": "$context.integration.error",
+         "integrationIntegrationStatus": "$context.integration.integrationStatus",
+         "integrationLatency": "$context.integrationLatency",
+         "integrationRequestId": "$context.integration.requestId",
+         "integrationStatus": "$context.integration.status",
+         "messageId": "$context.messageId",
+         "requestId": "$context.requestId",
+         "requestTime": "$context.requestTime",
+         "requestTimeEpoch": "$context.requestTimeEpoch",
+         "routeKey": "$context.routeKey",
+         "stage": "$context.stage",
+         "status": "$context.status",
+         "wafError": "$context.waf.error",
+         "wafLatency": "$context.waf.latency",
+         "wafStatus": "$context.waf.status"
+      }
+      ```
+   </details>
 
 5. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 
 ### Collect AWS API Gateway CloudTrail logs
 
-To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) using the instructions below.
+:::note
+CloudTrail data events will be collected under this source.
+:::
 
-#### Collect CloudTrail Lambda data events
-
-To configure a CloudTrail Source, perform these steps:
+#### Prerequisites
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html). For more information on what events are logged, refer to the [API Gateway API calls documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic. While configuring the source, add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Logs can be queried via the `account` field.
 
-   <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" style={{border: '1px solid gray'}} width="400" />
+:::note
+Namespace for **AWS API Gateway** service is **AWS/ApiGateway**.
+:::
+
+Follow the steps below to collect logs for AWS API Gateway:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
 ### Centralized AWS CloudTrail log collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following field extraction rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 
-```sql
+```sumo
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -550,9 +508,9 @@ _sourceCategory=aws/observability/cloudtrail/logs
 
 #### Parse Expression
 
-Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
+Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `dev` alias for an AWS account with ID `528560886094` and the `prod` alias for an AWS account with ID `567680881046`, your parse expression would look like this:
 
-```sql
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
@@ -565,9 +523,36 @@ Enter a parse expression to create an `account` field that maps to the alias you
 
 Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for AWS API Gateway Service is AWS/ApiGateway.
+- `apiname` API Gateway API name.
+- `apiid` API Gateway API id.
+
+#### Field Extraction Rule(s)
+
+The FER **AwsObservabilityAPIGatewayCloudTrailLogsFER** to extract fields `accountid`, `namespace`, `region`, and `apiname` from CloudTrail logs will be created as a part of app installation.
+
+The FER **AwsObservabilityAPIGatewayAccessLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from access logs will be created as a part of app installation.
+
+The FER **AwsObservabilityAPIGatewayCloudWatchLogsFER** to extract fields `namespace`, `apiid`, and `apiname` from CloudWatch logs will be created as a part of app installation.
+
+#### Metric Rule(s)
+
+The Metric Rule **AwsObservabilityAPIGatewayMetricsRule** for the AWS/ApiGateway namespace will be created as a part of app installation.
+
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
 
 ## Viewing AWS API Gateway dashboards
 
@@ -605,7 +590,7 @@ Use these dashboards to:
 ### Access Logs
 
 Access logs contains information about who has accessed your API and how the caller accessed the API.
-To populate the dashboards, you must explicitly [enable access logs](#collect-access-logs-for-aws-api-gateway).
+To populate the dashboards, you must explicitly [enable access logs](#collect-aws-api-gateway-access-logs).
 
 #### AWS API Gateway - Access Logs - Overview
 
@@ -640,7 +625,7 @@ Use these dashboards to:
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
-* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq)
+* Monitor requests coming in from known malicious IP addresses detected via Sumo Logic [threat intelligence](/docs/security/threat-intelligence/)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 
@@ -715,3 +700,35 @@ Use these dashboards to:
 #### AWS API Gateway - Enhanced Monitoring (WebSocket API)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/7.-AWS-API-Gateway-Enhanced-Monitoring-WebSocket-API.png' alt="Enhanced Monitoring (WebSocket API)" />
+
+## Create monitors for AWS API Gateway app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS API Gateway alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:-----|:------------|:----------------|:--|
+| `AWS API Gateway - High Server-Side Errors` | This alert fires where there are too many API requests (>5%) with server-side errors within 5 minutes. | Count > = 0.05 | Count < 0.05 |
+| `AWS API Gateway - High Client-Side Errors` | This alert fires where there are too many API requests (>5%) with client-side errors within 5 minutes. | Count > = 0.05 | Count < 0.05 |
+| `AWS API Gateway - High Integration Latency` | This alert fires when we detect the high integration latency for the API requests in a stage within 5 minutes. | Count > = 2000 | Count < 2000 |
+| `AWS API Gateway - High Latency` | This alert fires when we detect the high latency in a stage within 5 minutes for REST and HTTP API. | Count > = 2500 | Count < 2500 |
+| `AWS API Gateway - Low Traffic API` | This alert fires when there is low message traffic volume for the API within 5 minutes. | Count < = 1 | Count > 1 |
+| `AWS API Gateway - High Authorizer Errors` | This alert fires when there are too many API requests (>5%) with authorizer errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High Integration Errors` | This alert fires when there are too many API requests (>5%) with integration errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Errors` | This alert fires when there are too many API requests (>5%) with WAF errors within 5 minutes. | Count > 5 | Count < = 5 |
+| `AWS API Gateway - High WAF Latency` | This alert fires when we detect the high WAF latency for the REST and WebSocket API requests in a stage within 5 minutes. | Count > 1000 | Count < = 1000 |
+
+## Upgrade/Downgrade the AWS API Gateway app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS API Gateway app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

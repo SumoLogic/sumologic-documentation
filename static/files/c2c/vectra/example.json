@@ -1,0 +1,16 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+  "name": "Vectra",
+  "accountURL": "https://123456789012.cc1.portal.vectra.ai",
+  "clientId": "8e09xxxxxxxxxxxx36x2d2",
+  "clientSecret": "q3Wxxxxxxxxxxxxxxpy4W5MhxJ4xxsRD63hdf",
+  "pollingIntervalMin": "5m"
+},
+		"schemaRef": {
+            		"type": "Vectra"
+        	},
+        	"sourceType": "Universal"
+	}
+}

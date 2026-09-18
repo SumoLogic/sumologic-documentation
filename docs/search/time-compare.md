@@ -40,7 +40,7 @@ Click the **Time Compare** button to run the default timeshift comparison of 1 d
 
 The comparison results appear in a new column titled with the timeshift.
 
-<img src={useBaseUrl('img/search/timecompare/timecompare-results-aug-24-2021.png')} alt="timecompare-results-aug-24-2021.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/timecompare-results-aug-24-2021.png')} alt="Time compare results" width="400"/>
 
 ### Custom Time Compare
 
@@ -48,7 +48,7 @@ To create a custom Time Compare, select **Custom** from the menu, then make yo
 
 You can retrieve time-shifted data up to the last 40 days. We do not support going back further in time.
 
-<img src={useBaseUrl('img/search/timecompare/CustomTimeCompare.png')} alt="CustomTimeCompare.png" width="400"/>
+<img src={useBaseUrl('img/search/timecompare/CustomTimeCompare.png')} alt="Customtimecompare" width="400"/>
 
 1. Compare this query to a `[number] [hour, day, week]` historical timeshift.
 1. With `[number]` time period(s). If the number is bigger than 0:
@@ -61,7 +61,7 @@ You can retrieve time-shifted data up to the last 40 days. We do not support goi
 
 For example, if you wanted to compare the behavior of backfill errors on continuous queries over the last seven days, use the following query:
 
-```sql
+```sumo
 backfill error
 | timeslice by 1m
 | count _timeslice
@@ -77,13 +77,13 @@ Then, from the **Time Compare** button, select **Custom**, and set the **Cus
 
 From the results in the **Aggregates** tab, you can select the line chart icon, and display your results as:
 
-![compare example.png](/img/search/timecompare/compare-example.png)
+<img src={useBaseUrl('img/search/timecompare/compare-example.png')} alt="Compare example" style={{border: '1px solid gray'}} width="800" />
 
 For more compare operator examples, see [Examples](./time-compare.md).
 
 ## Compare vs. LogCompare
 
-The [`compare`](/docs/search/search-query-language/search-operators/compare) and [`logcompare`](/docs/search/logcompare) operators are very similar in syntax and functionality, but they handle different types of data:
+The [`compare`](/docs/search/search-query-language/search-operators/compare) and [`logcompare`](/docs/search/behavior-insights/logcompare) operators are very similar in syntax and functionality, but they handle different types of data:
 
 * `compare` is used for aggregated numeric data (such as: for analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators such as count, sum, and avg).
 * `logcompare` is used for log signature counts (used right after the first pipe).
@@ -98,23 +98,23 @@ The `compare` operator allows you to compare current search results with data fr
 
 Compare the present results with a single time period in the past. To make the comparison, specify the time interval you want to go back, in the form of number and time granularity:
 
-```sql
+```sumo
 ... | compare timeshift <number><time granularity>
 ```
 
 The following query returns data from the present, along with results from yesterday. Here the parameter `1d` specifies the time interval we want to go back to get the data for the comparison.
 
-```sql
+```sumo
 ... | compare timeshift 1d
 ```
 
 This comparison can be displayed visually as:
 
-<img src={useBaseUrl('img/reuse/query-search/compare_single_diagram.png')} alt="compare_single_diagram.png" width="300"/>
+<img src={useBaseUrl('img/reuse/query-search/compare_single_diagram.png')} alt="Compare single diagram" width="300"/>
 
 In another example, this query returns data from the present along with results from last week.
 
-```sql
+```sumo
 ... | compare timeshift 1w
 ```
 
@@ -122,23 +122,23 @@ In another example, this query returns data from the present along with results
 
 Compare the present results with multiple time periods in the past. The first parameter specifies the time interval between the present query and the most recent comparison point. The second parameter specifies how many comparison points to create.
 
-```sql
+```sumo
 ... | compare timeshift <number><time granularity> <number of timeshifts>
 ```
 
 The following query returns results from the present, along with results from every day of the past week. The first parameter, 1d, specifies the interval between the points of comparison, and the second parameter, 7, specifies the number of comparisons.
 
-```sql
+```sumo
 ... | compare timeshift 1d 7
 ```
 
 Which can be displayed visually as:
 
-![compare multiple diagram](/img/reuse/query-search/compare_multiple_diagram.png)
+<img src={useBaseUrl('img/reuse/query-search/compare_multiple_diagram.png')} alt="Compare multiple diagram" style={{border: '1px solid gray'}} width="800" />
 
 The following query returns result from the present with results from the same day in the last 3 weeks. So if today is Monday, then this query will show a result for today and the last three Mondays.
 
-```sql
+```sumo
 ... | compare timeshift 1w 3
 ```
 
@@ -146,19 +146,19 @@ The following query returns result from the present with results from the same 
 
 Aggregate the results from multiple past time periods using an aggregation operator (`avg`, `min`, or `max`).
 
-```sql
+```sumo
 ... | compare timeshift <number><time granularity> <number of shifts <avg/min/max>
 ```
 
 The following query returns results from the present along with the average of the results from the last five days:
 
-```sql
+```sumo
 ... | compare timeshift 1d 5 avg
 ```
 
 Which can be displayed visually as:
 
-![compare aggregate](/img/reuse/query-search/compare_aggregate_diagram.png)
+<img src={useBaseUrl('img/reuse/query-search/compare_aggregate_diagram.png')} alt="Compare aggregate" style={{border: '1px solid gray'}} width="800" />
 
 Other examples:
 
@@ -169,25 +169,25 @@ Other examples:
 
 You can also do multiple different comparisons queries under the same `compare` operator by using multiple `timeshift` phrases separated by commas.
 
-```sql
+```sumo
 ... | compare <comparison 1>, <comparison 2>, ...
 ```
 
 For example:
 
-```sql
+```sumo
 ... | compare timeshift 12h, timeshift 1d 3 avg, timeshift 1w
 ```
 
 You can specify an alias, and the columns generated use the name you specify.
 
-```sql
+```sumo
 ... | compare <comparison> as <alias>
 ```
 
 For example:
 
-```sql
+```sumo
 ... | compare timeshift 1d as yesterday, timeshift 1w 4 as last_four_weeks
 ```
 
@@ -200,14 +200,14 @@ For example:
 
 * Compare cannot generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
-    ```sql
+    ```sumo
     ... | compare timeshift 1d 14
     ```
 
     This query compares with the past 14 days data. It is not allowed as it
     generates 14 queries. 
 
-    ```sql
+    ```sumo
     ... | compare timeshift 1d 5 avg, timeshift 1w  4
     ```
 
@@ -216,7 +216,7 @@ For example:
 
 * Duplicate aliases are not allowed. For example, the following query is not allowed:
 
-    ```sql
+    ```sumo
     ... | compare timeshift 1d 7 as last_week, timeshift 1d 7 avg as last_week
     ```
 
@@ -230,7 +230,7 @@ For example:
 
 Use compare to analyze the change in log counts between two days.
 
-```sql
+```sumo
 error
 | timeslice by 1h
 | count by _timeslice
@@ -239,15 +239,15 @@ error
 
 The query returns results from both today and two days ago, with each day in its separate column. Today's results are represented by `_count`.
 
-![Count-2d.png](/img/search/timecompare/Count-2d.png)
+<img src={useBaseUrl('img/search/timecompare/Count-2d.png')} alt="Count 2d" style={{border: '1px solid gray'}} width="400" />
 
 Create a line chart to visualize the results.
 
-![count-2dLineChart.png](/img/search/timecompare/count-2dLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/count-2dLineChart.png')} alt="Count 2d Lin Chart>" style={{border: '1px solid gray'}} width="800" />
 
 Using the multiple comparison feature, you can compare the number of logs against every ten minutes of the past hour:
 
-```sql
+```sumo
 _sourceHost = prod
 | timeslice by 1m
 | count by _timeslice
@@ -256,32 +256,32 @@ _sourceHost = prod
 
 Each 10-minute period produces its own column in the output table:
 
-![tenminute.png](/img/search/timecompare/tenminute.png)
+<img src={useBaseUrl('img/search/timecompare/tenminute.png')} alt="Ten minute period" style={{border: '1px solid gray'}} width="800" />
 
 Create a line chart to visualize the results.  
 
-![TenMinuteLIneChart.png](/img/search/timecompare/TenMinuteLIneChart.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinuteLIneChart.png')} alt="Ten Minute LIne Chart" style={{border: '1px solid gray'}} width="800" />
 
 Alternatively, you can compare against the average of all the ten minute periods:
 
-```sql
+```sumo
 _sourceHost = prod
 | timeslice by 1m
 | count by _timeslice
 | compare timeshift 10m 5 avg
 ```
 
-![TenMinAvg.png](/img/search/timecompare/TenMinAvg.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinAvg.png')} alt="Ten Min Avg" style={{border: '1px solid gray'}} width="400" />
 
 Create a line chart to visualize the results.  
 
-![TenMinAvgLineChart.png](/img/search/timecompare/TenMinAvgLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/TenMinAvgLineChart.png')} alt="Ten Min Avg Line Chart" style={{border: '1px solid gray'}} width="800" />
 
 ### Compare categorical data parsed from logs
 
 Use compare to analyze the change in delays on different `_sourceHosts` using parsed data from logs.
 
-```sql
+```sumo
 "delay:"
 | parse "delay: *" as delay
 | avg(delay) as average_delay_in_millis by _sourceHost
@@ -290,17 +290,17 @@ Use compare to analyze the change in delays on different `_sourceHosts` using pa
 
 This example computes the average delay per `_sourceHost`, and compares with results from 30 minutes ago.
 
-![DelayAvg.png](/img/search/timecompare/DelayAvg.png)
+<img src={useBaseUrl('img/search/timecompare/DelayAvg.png')} alt="Delay Avg" style={{border: '1px solid gray'}} width="500" />
 
 These results would create a line chart such as the following.
 
-![DelayLineChart.png](/img/search/timecompare/DelayLineChart.png)
+<img src={useBaseUrl('img/search/timecompare/DelayLineChart.png')} alt="Delay Line Chart" style={{border: '1px solid gray'}} width="800" />
 
 ### Compare after a Transpose operation
 
 You can use the `compare` operator after a transpose operation, such as the following:
 
-```sql
+```sumo
 _sourceCategory=analytics
 | timeslice 1m
 | count by _timeslice, _sourceHost
@@ -314,7 +314,7 @@ You can use the `compare` operator to create scheduled search email alerts.
 
 For example, if you want to be alerted if there is a 15% spike in login failures compared to the average of the last seven days, you'd use the following query:
 
-```sql
+```sumo
 _sourceCateogy=WebserverLogs "Bad username or password"
 | timeslice 30m
 | count _timeslice
@@ -327,7 +327,7 @@ You can then use this query to build the scheduled search email alert.
 
 1. On the Search page, under the query box, click **Save As**.
 1. Click **Schedule this search**.
-1. For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.<br/>  ![Save Item.png](/img/search/timecompare/Save-Item.png)
+1. For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.<br/><img src={useBaseUrl('img/search/timecompare/Save-Item.png')} alt="Save Item" style={{border: '1px solid gray'}} width="400" />
 1. For **Send notification**, select **if the following condition is met**.
 1. For **Alert condition**, select **Greater than >,** and for **Number of results **enter **5**.
 1. For **Alert Type**, select **Email**.

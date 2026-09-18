@@ -13,15 +13,15 @@ The screenshots in this topic were captured from SIR UI16. If you have a differe
 
 ## Overview
 
-The integration polls for Cloud SIEM for Insights and creates a ServiceNow Incident for each Insight. It creates composite fields, CI items, and associated MITRE data in ServiceNow.
+The integration polls for Cloud SIEM for insights and creates a ServiceNow Incident for each insight. It creates composite fields, CI items, and associated MITRE data in ServiceNow.
 
-Once you have configured the integration, Insights that match the query you specify in the configuration, will be ingested by ServiceNow on the configured ingestion cycle, which by default is every five minutes.
+Once you have configured the integration, insights that match the query you specify in the configuration, will be ingested by ServiceNow on the configured ingestion cycle, which by default is every five minutes.
 
 ## Prerequisites
 
 The following SIR plugins are required:
 
-* [Threat Intelligence](https://docs.servicenow.com/bundle/quebec-security-management/page/product/threat-intelligence/reference/threat-intel-landing-page.html) (com.snc.threat.intelligence) — This plugin is required if you want to enable SIR to add  MITRE information (stage, tactic, and technique) to Incidents it creates from Cloud SIEM Insights.
+* [Threat Intelligence](https://docs.servicenow.com/bundle/quebec-security-management/page/product/threat-intelligence/reference/threat-intel-landing-page.html) (com.snc.threat.intelligence) — This plugin is required if you want to enable SIR to add  MITRE information (stage, tactic, and technique) to Incidents it creates from Cloud SIEM insights.
 * [Security Incident Response](https://docs.servicenow.com/bundle/quebec-security-management/page/product/security-incident-response/reference/sir-landing-page.html) (com.snc.security_incident)
 
 The following SIR system table permissions are required:
@@ -30,13 +30,13 @@ The following SIR system table permissions are required:
 * Threat intelligence/mitre tables – Read-only access is required
 * Configuration item tables – Read-write access is required.
 
-Your Cloud SIEM role must allow you to use API keys and to retrieve and modify Insights. 
+Your Cloud SIEM role must allow you to use API keys and to retrieve and modify insights. 
 
 ## Step 1: Copy your API credentials
 
 In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-Cloud SIEM integration in [Step 5](#step-5-install-the-sir-cloud-siem-integration) below. 
 
-You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](/docs/manage/security/access-keys#from-the-preferences-page).
+You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those in the Sumo Logic UI. For more information, see [Access Keys](/docs/manage/security/access-keys).
 
 ## Step 2: Install ServiceNow plugins
 
@@ -73,7 +73,7 @@ CI Lookup Rules are required to enable discovery of configuration items and avoi
 1. Search for **Integration Configurations** under **Security Operations** in the navigation bar. 
 1. Locate **Sumo Logic SIR** and click **Configure**. <br/><img src={useBaseUrl('img/cse/config-button.png')} alt="SumoLogic SIR" width="300"/>
 1. The **Sumo Logic SIR Configuration** popup appears.  <br/><img src={useBaseUrl('img/cse/api-credentials.png')} alt="API credentials" width="600"/>
-1. **Host**. Enter the API endpoint for your Sumo Logic deployment, but leave out the trailing path reference to `/api/`. To determine your endpoint, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). For example, if your API endpoint is `https://api.au.sumologic.com/api/`, enter `https://api.au.sumologic.com` as the value for the **Host** configuration setting.
+1. **Host**. Enter the API endpoint for your Sumo Logic deployment, but leave out the trailing path reference to `/api/`. To determine your endpoint, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security). For example, if your API endpoint is `https://api.au.sumologic.com/api/`, enter `https://api.au.sumologic.com` as the value for the **Host** configuration setting.
 1. **Access ID and Access Key**. Enter the Sumo Logic Access ID and Key you copied in [Step 1](#step-1-copy-your-api-credentials).
 1. **Default Incident State**. Enter the Incident State you want to assign to Incidents created by the integration. The value you enter must by a valid state in your ServiceNow account. To view available options in your environment, enter `sys_choice.list` in your **Environments** sidebar and filter for `table=sn_si_incident`, `inactive=false`. Alternatively, you can directly view the available options in the **State** dropdown in any Incident. This field is case-sensitive. If you supply an invalid value, it will be ignored. The  default state for your Incidents created by the integration will be set based on your business rules.  
 
@@ -83,7 +83,7 @@ To verify that the configuration is working, enter the following in the ServiceN
 
 `x_579138_sumo_logi_sumo_logic_insights.list`
 
-Within five minutes data will appear if new Insights have been created. If no insights have been created, you can check Sumo Logic integration logs by searching for logs with the prefix: “Sumo Cloud SIEM ERROR”. You can also check the Sumo Status table from the navigation bar to see the last error message if any and the current integration health. If the value is healthy then the integration has run at least once with no error.
+Within five minutes data will appear if new insights have been created. If no insights have been created, you can check Sumo Logic integration logs by searching for logs with the prefix: “Sumo Cloud SIEM ERROR”. You can also check the Sumo Status table from the navigation bar to see the last error message if any and the current integration health. If the value is healthy then the integration has run at least once with no error.
 
 ## Configuration options
 
@@ -91,7 +91,7 @@ This section describes configuration changes you can make to the integration.
 
 ## Update the mapping configuration
 
-If desired, you can change the mapping between the fields in Cloud SIEM Insights and the fields in Incidents that the integration creates in ServiceNow.
+If desired, you can change the mapping between the fields in Cloud SIEM insights and the fields in Incidents that the integration creates in ServiceNow.
 
 1. Navigate to the **Table Transform Maps** page in ServiceNow. <br/><img src={useBaseUrl('img/cse/table-transform-maps.png')} alt="Table Transform Maps" width="800"/>
 1. Open the “Sumo Insight Mapper” for editing.
@@ -113,19 +113,19 @@ Double-click a property to edit it.
 
 ##  View generated Incident URL in Cloud SIEM
 
-The URL to the ServiceNow Incident generated for an Insight is shown on the details page for the Insight.
+The URL to the ServiceNow Incident generated for an insight is shown on the details page for the insight.
 
 <img src={useBaseUrl('img/cse/incident-created-popup.png')} alt="Generated incident" width="400"/>
 
 ## Example Incident created by integration
 
-The screenshot below shows a ServiceNow Incident that was created for a Cloud SIEM Insight.
+The screenshot below shows a ServiceNow Incident that was created for a Cloud SIEM insight.
 
 <img src={useBaseUrl('img/cse/incident-draft-tab.png')} alt="Incident draft" width="800"/>
 
-## See closed Insight in Cloud SIEM
+## See closed insight in Cloud SIEM
 
-After an Incident created by the integration is closed in ServiceNow, the Insight from which it was generated will be closed in Cloud SIEM as well.
+After an Incident created by the integration is closed in ServiceNow, the insight from which it was generated will be closed in Cloud SIEM as well.
 
 <img src={useBaseUrl('img/cse/insight-actions-icon.png')} alt="Insight Actions" width="300"/>
 

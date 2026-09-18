@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS Database Migration S
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-database-migration-service-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-database-migration-service-logo.png')} alt="AWS Database Migration Service icon" width="50"/>
 
 AWS Database Migration Service (AWS DMS) is a cloud service that makes it possible to migrate relational databases, data warehouses, NoSQL databases, and other types of data stores. You can use AWS DMS to migrate your data into the AWS Cloud or between combinations of cloud and on-premises setups. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html).
 

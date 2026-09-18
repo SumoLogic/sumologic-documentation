@@ -1,13 +1,13 @@
 ---
 id: global-intelligence-guardduty
 title: Global Intelligence for Amazon GuardDuty
-sidebar_label: Amazon GuardDuty - Global Intelligence
+sidebar_label: Global Intelligence for Amazon GuardDuty
 description: Global Intelligence for Amazon GuardDuty
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Global Intelligence GuardDuty icon" width="50"/>
 
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads. The Sumo Logic App for Global Intelligence for Amazon GuardDuty analyzes GuardDuty threats from the Sumo Logic population to create baselines of threats. These baselines enable you to optimize security posture and remediation based on how unusual your GuardDuty findings are compared to Sumo Logic customers. The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment.
 
@@ -110,7 +110,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 
 The following query is from the threat score trend line in the **GI GuardDuty: Your Company v. Global Baseline** dashboard.
 
-```sql
+```sumo
 _sourceCategory=GIS/test/guardduty
 | json "accountId", "arn", "type","service.detectorId","service.action","severity","title","description","region" nodrop
 | json "type", "severity"
@@ -155,7 +155,7 @@ These tasks require the Manage Collectors and Manage Access Keys [role capabilit
 
 In this step, you need to generate access key and access ID from the Sumo Logic console. To generate an access key and access ID, do the following:
 
-1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#create-an-access-key)) document.
+1. Follow the instructions as described in [Access Keys](/docs/manage/security/access-keys).
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 
@@ -171,7 +171,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 4. In **Configure application parameters** panel, enter the following parameters:
     * Access ID (Required). Sumo Logic Access ID generated from Step 1.
     * Access Key (Required). Sumo Logic Access Key generated from Step 1.
-    * Deployment Name (Required). Deployment name (environment name in lower case as per [docs](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
+    * Deployment Name (Required). Deployment name (environment name in lower case as per [docs](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
     * Collector Name. Enter the name of the Hosted Collector which will be created in Sumo Logic.
     * Source Name. Enter the name of the HTTP Source which will be created within the collector.
     * Source Category Name. Enter the name of the Source Category which will be used for writing search queries.

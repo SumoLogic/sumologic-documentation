@@ -2,7 +2,10 @@
 id: rollingstd
 title: rollingstd Search Operator
 sidebar_label: rollingstd
+description: Use the rollingstd operator to calculate the rolling standard deviation of a numeric field over time, identifying changes and variations in your data.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `rollingstd` operator finds the rolling standard deviation of a field, allowing you to identify changes over time.
 
@@ -14,9 +17,7 @@ If you specify a window length of 5, but only 4 data points are available, the `
 
 ## Syntax
 
-```sql
-rollingstd <field> [, window_length] [as <field>]
-```
+`rollingstd <field> [, window_length] [as <field>]`
 
 ## Rules
 
@@ -32,7 +33,7 @@ rollingstd <field> [, window_length] [as <field>]
 
 Running a query such as:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost
@@ -42,13 +43,13 @@ _sourceCategory=katta
 
 produces results like:
 
-![rollingstd](/img/reuse/query-search/rollingstd_new.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_new.png')} alt="rollingstd" style={{border: '1px solid gray'}} width="400" />
 
 ### Find the rolling standard deviation of a field between time points
 
 Using `rollingstd` with `timeslice`, you can run a query similar to:
 
-```sql
+```sumo
 * | parse "bytes: '*'" as bytes
 | timeslice 1m
 | sum(bytes) as bytes by _timeslice
@@ -58,18 +59,18 @@ Using `rollingstd` with `timeslice`, you can run a query similar to:
 
 that produces results like:
 
-![example 1](/img/reuse/query-search/rollingstd_example.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_example.png')} alt="Example 1" style={{border: '1px solid gray'}} width="400" />
 
 The aggregation table can be made into an area chart, like this:
 
-![example 2](/img/reuse/query-search/rollingstd_example2.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_example2.png')} alt="Example 2" style={{border: '1px solid gray'}} width="800" />
 
 ### Specify a window length of 5, but only 4 data points are available
 
 Before 5 values are available, the `rollingstd` operator takes an average
 of whatever is available. For example:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost
@@ -80,6 +81,6 @@ _sourceCategory=katta
 
 which produces results like:
 
-![data points](/img/reuse/query-search/rollingstd_new_data_points.png)
+<img src={useBaseUrl('img/reuse/query-search/rollingstd_new_data_points.png')} alt="Data points" style={{border: '1px solid gray'}} width="400" />
 
 `rollingstd` is also used with the [backshift](backshift.md) operator.

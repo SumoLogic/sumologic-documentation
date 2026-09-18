@@ -17,7 +17,7 @@ You can modify the fields used for each axis as needed.
 
 For example, in the following query `logins` is the Z dimension and will be displayed as the value of each bubble. The fields `latitude` and `longitude` can be used as dimensions.
 
-```sql
+```sumo
 _sourceCategory=service "message=User logged in" remote_ip
 | parse "[remote_ip=*]" as remote_ip
 | lookup latitude, longitude, city, state from geo://location on ip = remote_ip
@@ -28,8 +28,8 @@ _sourceCategory=service "message=User logged in" remote_ip
 
 To add a panel with a bubble chart:
 
-1. Create or open a Dashboard and click on **Add Panel > Categorical**. <br/><img src={useBaseUrl('/img/dashboards-new/panels/bubble-charts/categorical.png')} style={{border: '1px solid gray'}} alt="categorical" width="700"/>
-1. Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press **Enter** for it to run. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](/docs/search/search-query-language/group-aggregate-operators) for a list.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-log-query.png')} style={{border: '1px solid gray'}} alt="Add log query" width="700"/>
-1. Once the query runs you will need to flip the chart type to **Bubble** and set your **Dimensions**. A bubble chart requires three dimensions, including the aggregate.<br/><img src={useBaseUrl('/img/dashboards-new/panels/bubble-charts/bubble-chart.png')} style={{border: '1px solid gray'}} alt="bubble chart" width="700"/>
+1. Create or open a Dashboard and click on **Add Panel > Categorical**. <br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/categorical.png')} style={{border: '1px solid gray'}} alt="categorical" width="700"/>
+1. Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press **Enter** for it to run. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](/docs/search/search-query-language/group-aggregate-operators) for a list.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} style={{border: '1px solid gray'}} alt="Add log query" width="700"/>
+1. Once the query runs you will need to flip the chart type to **Bubble** and set your **Dimensions**. A bubble chart requires three dimensions, including the aggregate.<br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/bubble-chart.png')} style={{border: '1px solid gray'}} alt="bubble chart" width="700"/>
 1. [Modify the chart](./modify-chart.md) as desired.
-1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png')} style={{border: '1px solid gray'}} alt="Add to Dashboard button" width="300"/>
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} style={{border: '1px solid gray'}} alt="Add to Dashboard button" width="300"/>

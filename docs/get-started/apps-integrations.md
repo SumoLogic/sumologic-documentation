@@ -7,7 +7,7 @@ description: Learn how to install apps to your Library and to multiple environme
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="Apps icon" width="50"/>
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 
@@ -27,26 +27,26 @@ To learn about the vendors and products that Sumo Logic integrates with, refer t
 
 Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
 
-<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" style={{border:'1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/get-started/cert-app.png')} alt="Cert app symbol" style={{border:'1px solid gray'}} width="500" />
 
 These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 
 ## Prerequisites
 
 | Account Type | Account Level |
-| :-- | :-- |
+|:--|:--|
 | Cloud Flex | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Certain apps have specific installation requirements. Be sure to check the instructions for your application for specific instructions.
+Certain apps have specific installation requirements. Be sure to check the application instructions for specific guidance.
 
 :::important
-Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
+Applications can be installed only by users with a Sumo Logic Professional or Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
 ## Next-Gen apps
 
-Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
 
 What makes Next-Gen different from Classic apps?
 
@@ -56,7 +56,7 @@ What makes Next-Gen different from Classic apps?
 * App uninstallation and removal can be completed directly in the App Catalog, making it easy to clean up apps you no longer use.  
 * Additional filter options make it easy to find your installed or upgradeable apps.
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
-* Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
+* Installed app content is immutable, which ensures that any app upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
 ### How to install Next-Gen apps
 
@@ -64,7 +64,24 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+:::info
+When you install a Next-Gen app, you can subscribe to receive email notifications whenever an app upgrade is available. However, you can opt out of receiving these emails by unsubscribing from the app. For more information, see [Email notifications for app upgrade](#email-notifications-for-app-upgrade).
+:::
+
+### Email notifications for app upgrade
+
+When you install a Next-Gen app, you can subscribe to receive email notifications whenever an app upgrade is available.
+
+The following applies to these notifications:
+- The email includes the app name, version, release notes for the new version, and a link to the app in the App Catalog.
+- You can unsubscribe from the email notifications by navigating to the app within the Sumo Logic App Catalog.
+- Users with Manage Apps capabilities can also subscribe or unsubscribe from apps installed by other users.
+
 ### How to upgrade Next-Gen apps
+
+:::info
+See our [Releases Notes](/docs/release-notes) to learn about app version updates.
+:::
 
 import AppUpdate from '../reuse/apps/app-update.md';
 
@@ -75,6 +92,10 @@ import AppUpdate from '../reuse/apps/app-update.md';
 import AppUninstall from '../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::info
+Uninstalling a Next-Gen app automatically removes all email subscriptions for that app.
+:::
 
 ## Classic apps (Legacy)
 
@@ -161,7 +182,7 @@ The **Search** page opens, the search populates a new tab, and the search runs
 If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 :::note
-Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume "Data Volume app") do not require you to select a Source Category.
+Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume) do not require you to select a Source Category.
 :::
 
 ## Custom data filters
@@ -176,8 +197,8 @@ However, if you want to use multiple metadata fields as your filter criteria, f
 
 1. In the App Catalog, select the application you want to install and click **Add Integration**.
 1. Click the down arrow next to **Source Category**.<br/><img src={useBaseUrl('/img/get-started/library/add-apache.png')} alt="Custom Data Filter" style={{border:'1px solid gray'}} width="500" />
-1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="apache-custom-filter" style={{border:'1px solid gray'}} width="500" />
-1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="apache-custom-filter-field" style={{border:'1px solid gray'}} width="500" />
+1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="Apache custom filter" style={{border:'1px solid gray'}} width="500" />
+1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="Apache custom filter field" style={{border:'1px solid gray'}} width="500" />
 
 ### Example custom data filters
 

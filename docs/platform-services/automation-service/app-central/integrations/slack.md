@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/slack.png')} alt="slack" width="80"/>
 
-***Version: 1.10  
-Updated: Sept 17, 2024***
+***Version: 1.15  
+Updated: Jun 17, 2026***
 
 Create a public or private channel, Send messages or Files to channels or Users directly. This Slack integration keeps teams connected. Organize conversations, and quickly find what you need to get work done.
 
@@ -92,34 +92,60 @@ Create a public or private channel, Send messages or Files to channels or Users 
 1. Now you need to Install the APP in the workspace. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-9.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
 1. After installing the App now, you have two Tokens; these tokens are automatically generated when you installed the app. You will need these two tokens later. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-10.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
 
-## Slack in Automation Service and Cloud SOAR
+## Configure Slack in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-13.png')} style={{border:'1px solid gray'}} alt="slack" width="200"/>
-1. Create a new resource for the User.
-1. Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
-1. Create another resource for the Bot User.
-1. Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-16.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-17.png')} style={{border:'1px solid gray'}} alt="slack" width="200"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-19.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Bot/User OAuth Token**. Copy the User OAuth Token from the Slack web page (see [above](#slack-configuration)) and paste it here. For information about tokens, see [Slack documentation](https://api.slack.com/concepts/token-types).
+
+* **Token Type**. Select the token type:
+   * **Org-level Token**. If using an org-level token, select the token type as **Org-level Token** and provide the team ID below. 
+   * **Workspace-level Token**. By default, token type is set to **Workspace-level Token**, which does not require a team ID.
+
+* **Team ID**. If using an org-level token, provide the [team ID](https://slack.com/help/articles/221769328-Locate-your-Slack-URL-or-ID).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+
+Create another resource for the Bot User. Then:
+1. Copy the [Bot OAuth Token](https://api.slack.com/concepts/token-types#bot) from Slack webpage (see [above](#slack-configuration)) and paste it In the **Bot/User OAuth Token** field.
+1. If using an org-level token, select the **Token Type** as **Org-level Token** and provide the team ID. By default, it is set to **Workspace-Level Token**, which does not require a team ID.
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+
+For information about Slack, see [Slack documentation](https://slack.com/help).
 
 ## Change Log
 
-* March 4, 2021 - First upload
-* November 18, 2022 - Get User action fields hints updated
-* December 30, 2022 - Added new actions:
-    + Ask Question
-    + Ask For User Email
-* January 10, 2023 - Refactoring
-* March 3, 2023 (v1.5)
-    + Updated integration Fields Label
-* June 30, 2023 (v1.6) - Removed unnecessary spaces
-* August 21, 2023 (v1.7) - Updated **Send Message** Action
-* January 16, 2024 (v1.8)
-    + Updated action: Ask Question (Resolved issue related to newline characters)
-* March 22, 2024 (v1.9) - New action: Rename Channel
-* Sept 17, 2024 (v1.10)
-    * Updated action: Ask Question (Added Allow Custom Text feature)
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.15 | June 17, 2026 | Updated the **Send Message** action to add a **Disable Link Previews** option to control whether Slack displays link previews in messages. |
+| v1.14 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.13 | Dec 18, 2025 | Updated the **Send Message** action to add blocks support for enhanced message formatting and interactivity. |
+| v1.12 | January 27, 2025 | Updated the **Send Message**, **Ask Question**, and **Ask For User Email** actions to add a fix supporting Slack channel and user mentions (for example, `<!here>` and `<!channel>`), ensuring proper formatting in messages. |
+| v1.11 | Oct 10, 2024 | <ul><li>Updated the integration file to add Token Type and Team ID arguments.</li><li>Updated actions — **Create Channel**, **List Channels**, **Get Channel**, **List Users**, **Send Message**, **Ask Question**, and **Ask For User Email** — to add a team_id argument when using an org-level token.</li></ul> |
+| v1.10 | Oct 1, 2024 | Updated the **Ask Question** and **Ask For User Email** actions to make changes for timeout. |
+| v1.10 | Sept 17, 2024 | Updated the **Ask Question** action to add an Allow Custom Text feature. |
+| v1.9 | March 22, 2024 | Added a new action: **Rename Channel**. |
+| v1.8 | January 16, 2024 | Updated the **Ask Question** action to resolve an issue related to newline characters. |
+| v1.7 | August 21, 2023 | Updated the **Send Message** action. |
+| v1.6 | June 30, 2023 | Removed unnecessary spaces. |
+| v1.5 | March 3, 2023 | Updated the integration field labels. |
+| | January 10, 2023 | Refactored the integration. |
+| | December 30, 2022 | Added new actions: **Ask Question** and **Ask For User Email**. |
+| | November 18, 2022 | Updated the **Get User** action field hints. |
+| | March 4, 2021 | Initial release of the Slack integration. |
+
+## Additional resources
+
+For Slack, Sumo Logic offers the [Slack source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source/) and the [Slack app](/docs/integrations/saas-cloud/slack/) to collect and visualize your Slack data.

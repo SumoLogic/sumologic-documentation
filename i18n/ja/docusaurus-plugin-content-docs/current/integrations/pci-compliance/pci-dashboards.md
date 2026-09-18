@@ -59,8 +59,6 @@ Requirements and Security Assessment Procedures のバージョン 2.0
 日間に発生した失敗の数を示すグラフと考えてください。これらの失敗にはラベルが付いており、その失敗によって違反した可能性のある
 PCI 要件が明確に示されています。
 
-![PCI_PostsureOverview.png](/img/pci-standards/PCI_PostsureOverview.png)
-
 **Current PCI State (現在の PCI の状態)。**過去 1
 日間に発生した失敗の数に関連付けられている 1
 つの色分けされた値が表示されます。
@@ -77,8 +75,6 @@ PCI 要件が明確に示されています。
 ダッシュボードには、各 PCI
 要件の未解決のインシデント数が簡潔に表示されます。
 
-![PCI_ComplianceRequirement_Dashboard.png](/img/pci-standards/PCI_ComplianceRequirement_Dashboard.png)
-
 ## \[PCI Requirement 1 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 1 Secure Network Monitoring (PCI 要件 1 セキュア
@@ -88,8 +84,6 @@ PCI 要件が明確に示されています。
 この要件に関する情報は、カード所有者の送受信アクティビティなどのネットワーク
 アクティビティやイベントのほか、ネットワーク設定変更でも確認できます。
 
-![PCI_Requirement1_Dashboard.png](/img/pci-standards/PCI_Requirement1_Dashboard.png)
-
 ## \[PCI Requirement 2 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 2 Default Setting Monitoring (PCI 要件 2
@@ -98,22 +92,16 @@ PCI 要件が明確に示されています。
 パスワードやセキュリティ
 パラメータが組織で使用されているかどうかに関する情報が表示されます。
 
-![PCI_Requirement2_Dashbaord.png](/img/pci-standards/PCI_Requirement2_Dashbaord.png)
-
 ## \[PCI Requirement 3 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 31 Protect Stored Cardholder Data (PCI 要件 31
 保存されているカード所有者データの保護)\]
 ダッシュボードには、保存されているカード所有者データの保護に関するコンプライアンスの詳細が表示されます。
 
-![PCI_Requirement3_Dashboard.png](/img/pci-standards/PCI_Requirement3_Dashboard.png)
-
 ## \[PCI Requirement 4 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 4 (PCI 要件 4)\]
 ダッシュボードには、組織がカード所有者データを暗号化しているかどうかの状態が報告されます。このダッシュボードのパネルには、暗号化が必要なデータのフローを処理するファイアウォールやその他のホスト、ポートなどで生成されたインシデントの情報が表示されます。
-
-![PCI_Requirement4_Dashboard.png](/img/pci-standards/PCI_Requirement4_Dashboard.png)
 
 ## \[PCI Requirement 5 (PCI 要件 1)\] ダッシュボード
 
@@ -121,23 +109,17 @@ PCI 要件が明確に示されています。
 アンチウイルスの更新)\] ダッシュボードでは、アンチウイルス
 ソフトウェアが定期的に更新されているかや、アンチウイルスがサーバに脅威を与えていないか、アンチウイルスの更新が失敗していないかを確認できます。
 
-![PCI_Requirement5_Dashboard.png](/img/pci-standards/PCI_Requirement5_Dashboard.png)
-
 ## \[PCI Requirement 6 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 6 Application Updates (PCI 要件 6
 アプリケーションの更新)\]
 ダッシュボードには、デプロイで実行されたアプリケーションのアップグレードの状態が表示されます。重大な脆弱性もモニタリングされます。
 
-![PCI_Requirement6_Dashboard.png](/img/pci-standards/PCI_Requirement6_Dashboard.png)
-
 ## \[PCI Requirement 7 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 7 Cardholder Data Access Monitoring (PCI 要件 7
 カード所有者データへのアクセスのモニタリング)\]
 ダッシュボードでは、組織がカード所有者データへのアクセスを制限し、明確な目的を持ったユーザにのみアクセスを許可しているかを確認できます。このダッシュボードには、カード所有者の情報が保存されている環境に対してアクセスの試みがないかを監視する多数のパネルが含まれています。このため、どのユーザがデータへのアクセスを試みているかを簡単に知ることができます。
-
-![PCI_Requirement7_Dashboard.png](/img/pci-standards/PCI_Requirement7_Dashboard.png)
 
 ## \[PCI Requirement 8 (PCI 要件 1)\] ダッシュボード
 
@@ -147,23 +129,17 @@ PCI 要件が明確に示されています。
 週間の間にユーザ
 アカウントが作成または削除された総数の概要を示すグラフも表示されます。
 
-![PCI_Requirement8_Dashboard.png](/img/pci-standards/PCI_Requirement8_Dashboard.png)
-
 ## \[PCI Requirement 9 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 9 Physical Access (PCI 要件 9 物理アクセス)\]
 ダッシュボード内のパネルでは、カード所有者データを含むマシンへの物理アクセスに違反がないかが検査されます。各アクセス
 リクエストは、ユーザ名ごとにログに記録され、表示されます。
 
-![PCI_Requirement9_Dashboard.png](/img/pci-standards/PCI_Requirement9_Dashboard.png)
-
 ## \[PCI Requirement 10 (PCI 要件 1)\] ダッシュボード
 
 \[PCI Requirement 10 Data Access (PCI 要件 10 データ アクセス)\]
 ダッシュボードには、ネットワーク
 リソースがアクセスされるたびにトラッキングを実行するパネルが含まれています。
-
-![PCI_Requirement10_Dashboard.png](/img/pci-standards/PCI_Requirement10_Dashboard.png)
 
 ## \[PCI Requirement 11 (PCI 要件 1)\] ダッシュボード
 
@@ -172,5 +148,3 @@ PCI 要件が明確に示されています。
 システムを定期的にテストするという要件に従うことができます。このダッシュボードでは、過去
 1
 日間にスキャンされたホストの数と、対応が必要な脆弱性を調べることができます。
-
-![PCI_Requirement11_Dashboard.png](/img/pci-standards/PCI_Requirement11_Dashboard.png)

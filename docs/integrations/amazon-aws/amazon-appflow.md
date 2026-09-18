@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon AppFlow service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-appflow-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-appflow-logo.png')} alt="Amazon Appflow icon" width="50"/>
 
 Amazon AppFlow is a fully-managed integration service that enables you to securely exchange data between software as a service (SaaS) applications and AWS services, such as Amazon Simple Storage Service (Amazon S3) and Amazon Redshift. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html).
 

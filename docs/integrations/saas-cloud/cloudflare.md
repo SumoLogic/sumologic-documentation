@@ -7,7 +7,7 @@ description: The Cloudflare App provides a set of dashboards to make analyzing C
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/cloudflare.png')} alt="Cloudflare icon" width="50"/>
 
 This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email [analytics@cloudflare.com](mailto:analytics@cloudflare.com).
 
@@ -39,7 +39,7 @@ The Cloudflare App uses HTTP request logs in JSON format gathered from all of th
 
 The following log query is from the ‘Total Number of Requests’ panel in the ‘Cloudflare - Snapshot’ dashboard.
 
-```sql
+```sumo
 ClientCountry*
 | json "EdgePathingSrc", "EdgePathingOp","EdgePathingStatus", "ClientCountry",
 "ClientIP", "ClientDeviceType", "ClientRequestHost", "ClientRequestUserAgent",
@@ -56,9 +56,13 @@ This section shows you how to set up a Hosted Collector and specify a Sumo Logic
 
 To send Cloudflare logs to Sumo Logic directly, you can follow the steps outlined below, or follow the guide in the Cloudflare documentation ([Enable Logpush to Sumo Logic](https://developers.cloudflare.com/logs/get-started/enable-destinations/sumo-logic/)).
 
+:::info
+The Sumo Logic Cloudflare app works exclusively with **zone-scoped datasets**. For more information, refer to the [log fields](https://developers.cloudflare.com/logs/reference/log-fields/zone/) in the Cloudflare documentation.
+:::
+
 Cloudflare Logpush supports pushing logs directly to Sumo Logic via the Cloudflare dashboard or via API. Cloudflare can send logs to a Hosted Collector with HTTP Logs and Metrics as the source. Once you have set up a collector, you simply provide the HTTP Source Address (a unique URL) to which logs can be posted.
 
-Ensure Log Share permissions are enabled in Cloudflare before attempting to read or configure a Logpush job. For more information, refer to the [Roles](https://developers.cloudflare.com/fundamentals/account-and-billing/members/roles/#roles) section in  Cloudflare documentation.
+Ensure Log Share permissions are enabled in Cloudflare before attempting to read or configure a Logpush job. For more information, refer to the [Roles](https://developers.cloudflare.com/fundamentals/account-and-billing/members/roles/#roles) section in the Cloudflare documentation.
 
 ### Configure a Hosted Collector
 
@@ -203,7 +207,25 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Performance_Static.png')} alt="Cloudflare dashboards" />
 
-## Upgrading the Cloudflare app (Optional)
+## Create monitors for Cloudflare app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cloudflare alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+|:--|:--|:--|:--|
+| `Cloudflare - Bad Bot Spike Detected` | This alert is triggered when the number of bad bots (CAPTCHA challenges not solved) spikes, indicating malicious automated traffic targeting your site. | Critical | Count > 0 |
+| `Cloudflare - High Rate of 5xx Edge Errors` | This alert is triggered when the edge returns a high volume of 5xx responses, indicating server-side failures or an overloaded origin reaching end users. | Critical | Count ≥ 50 |
+| `Cloudflare - High Rate of Origin 5xx Errors` | This alert is triggered when the origin server returns a high volume of 5xx errors (excluding Cloudflare-cached responses), indicating backend instability. | Critical | Count ≥ 20 |
+| `Cloudflare - IP or Country Block Rule Triggered` | This alert is triggered when Cloudflare firewall rules block requests by IP address or country, indicating active enforcement of access control policies. | Critical | Count ≥ 100 |
+| `Cloudflare - L7 DDoS Attack Detected` | This alert is triggered when Cloudflare's DDoS protection activates L7 mitigations, indicating a layer 7 distributed denial of service attack against your origin. | Critical | Count > 0 |
+| `Cloudflare - Rate Limiting Rules Triggered` | This alert is triggered when Cloudflare rate limiting blocks requests, indicating a client is sending excessive requests due to possible abuse, credential stuffing, or scraping. | Critical | Count > 0 |
+| `Cloudflare - WAF High Rule Trigger Rate` | This alert is triggered when a large number of WAF rule hits are detected, indicating a web application attack such as SQL injection, XSS, or path traversal attempts. | Critical | Count ≥ 50 |
+
+## Upgrade/Downgrade the Cloudflare app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
@@ -214,3 +236,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Cloudflare Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/cloudflare/) to automate response actions directly from Cloud SOAR playbooks.

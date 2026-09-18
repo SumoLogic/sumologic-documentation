@@ -2,32 +2,49 @@
 id: asn-lookup
 title: ASN Lookup Search Operator
 sidebar_label: ASN lookup
+description: Use the ASN Lookup operator to retrieve Autonomous System Number (ASN) and organization information for any IP address in your log data.
 ---
 
-Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that do not have an ASN will return null values.
+Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that do not have an ASN will return null values.
 
 ## Syntax
 
-The ASN Lookup operator uses [lookup-classic](/docs/search/search-query-language/search-operators/lookup-classic) with a specific path, `asn://default`, to provide the ASN and associated organization.
+The ASN Lookup operator uses [lookup-classic](/docs/search/search-query-language/search-operators/lookup-classic) with a specific path, `asn://default`, to provide the ASN and associated organization.
 
-```sql
-lookup\<field\> from asn://default on ip\<ip_address\>
-```
+`lookup\<field\> from asn://default on ip\<ip_address\>`
 
-|  Lookup fields |  Description |
+|  Lookup fields |  Description |
 |:--|:--|
 | `*` | Use a wildcard (`*`) character as a shortcut to return both fields. |
 | `asn` | Autonomous System Number |
-| `organization` | Autonomous System Organization Name (Carrier) or ID in some cases. |
+| `organization` |  The name of the organization that owns the ASN or ID in some cases. This organization (Carrier) is responsible for the routing of traffic for network blocks. |
+| `registering_organization` | The organization responsible for the actions and content associated with a given block of IP addresses. Registering Organizations include many types of entities, including corporate, government, or educational entities, and ISPs managing the allocation and use of network blocks. |
+| `carrier_organization` |  The name of the organization that owns the ASN or ID in some cases. This organization (Carrier) is responsible for the routing of traffic for network blocks. |
 
-## Example
+:::note
+The `organization` and `carrier_organization` lookup fields will have the same value because the `carrier` field is used to populate both the `organization` and `carrier_organization` values.
+:::
 
-The following query references a data stream with IPv4 addresses, parses
-those IPv4 addresses, and then uses ASN Lookup to retrieve their
-autonomous system information. 
+## Examples
 
-```sql
-_sourceCategory=stream "remote_ip="
+### Look up ASN details for parsed IP addresses
+
+The following query references a data stream with IPv4 addresses, parses those IPv4 addresses, and then uses ASN Lookup to retrieve their autonomous system information.
+
+```sumo
+_dataTier=all _sourceCategory=stream "remote_ip="
 | parse regex "(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| lookup organization, asn from asn://default on ip = ip
+| lookup organization, registering_organization, asn from asn://default on ip = ip
+```
+
+### Count requests by ASN organization
+
+Use ASN Lookup to group traffic by the owning organization:
+
+```sumo
+_sourceCategory=Apache/Access
+| parse regex "(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| lookup organization, asn from asn://default on ip = src_ip
+| count by organization
+| sort by _count desc
 ```

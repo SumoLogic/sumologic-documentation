@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/couchbase-logo.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/couchbase-logo.png')} alt="Couchbase icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 [Couchbase](https://developer.couchbase.com/what-is-couchbase/), a modern database for enterprise applications, is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud.
 
@@ -32,7 +32,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Prerequisite
 
-By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
+By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following [these instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
 
 import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
@@ -85,6 +85,10 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo.
 Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
 
@@ -172,7 +176,7 @@ _time=09/Jan/2023:04:50:03 +0000+07:00 _level=ERROR _msg=Failed to perform INSER
 
 Following query is from **Average Latency of All HTTP Requests** panel from Couchbase Overview dashboard:
 
-```sql
+```sumo
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"="couchbase"
 | json "log" as _rawlog nodrop
 | if(isEmpty(_rawlog),_raw,_rawlog) as _raw
@@ -226,3 +230,20 @@ Use this dashboard to:
 - To understand user behavior accessing clusters and servers through Rest API.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-HTTP-Access.png' alt="Access" />
+
+## Create monitors for Couchbase app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Couchbase alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Couchbase - Bucket Not Ready` | This alert is triggered when a bucket in the Couchbase cluster is not ready. | Count `>` 0 | Count `<=` 0 |
+| `Couchbase - High Latency HTTP Requests` | This alert is triggered on high average latency for HTTP requests to the Couchbase. | Count `>` 1000 | Count `<=` 1000 |
+| `Couchbase - Node Down` | This alert is triggered when a node in the Couchbase cluster is down. | Count `>` 0 | Count `<=` 0 |
+| `Couchbase - Node Not Respond` | This alert is triggered when a node in the Couchbase cluster does not respond too many times. | Count `>=` 10 | Count `<` 10 |
+| `Couchbase - Too Many Error Queries on Buckets` | This alert is triggered when there are too many error queries on a bucket in a Couchbase cluster. | Count `>=` 1000 | Count `<` 1000 |
+| `Couchbase - Too Many Login Failures` | This alert is triggered when there are too many login failures to a node in a Couchbase cluster. | Count `>=` 1000 | Count `<` 1000 |

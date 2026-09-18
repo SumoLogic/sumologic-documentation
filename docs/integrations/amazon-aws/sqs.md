@@ -6,18 +6,20 @@ description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (UL
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sqs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sqs.png')} alt="SQS icon" width="50"/>
 
 Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications. The Sumo Logic app for Amazon SQS is a unified logs and metrics (ULM) app that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
-## Log and Metrics types
+## Log and metric types
 
-The app uses SQS logs and metrics for:
-* SQS CloudWatch Metrics. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-monitoring-using-cloudwatch.html).
-* SQS operations using AWS CloudTrail. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-logging-using-cloudtrail.html).
-
+The Sumo Logic app for Amazon SNS uses the following logs and metrics:
+* [Amazon SQS CloudTrail Logs](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-logging-using-cloudtrail.html).
+* [Amazon SQS CloudWatch Metrics](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-monitoring-using-cloudwatch.html).
 
 ### Sample log messages
+
+<details>
+<summary>Sample CloudTrail Log Message</summary>
 
 ```json
 {
@@ -63,6 +65,7 @@ The app uses SQS logs and metrics for:
          "sessionCredentialFromConsole":"true"         
 }
 ```
+</details>
 
 ### Sample queries
 
@@ -74,7 +77,7 @@ metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* que
 
 **Top 10 users (CloudTrail Log-based)**
 
-```sql
+```sumo
 account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress","errorCode", "errorMessage" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip, error_code, error_message nodrop
 | json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
@@ -90,82 +93,68 @@ account=* region=* namespace=aws/sqs eventname eventsource "sqs.amazonaws.com"
 | top 10 username by event_count, username asc
 ```
 
-## Collecting logs and metrics for the Amazon SQS app
+## Collecting logs and metrics for Amazon SQS
 
-### Collect Metrics for AmazonSQS
+### Configure Hosted Collector
 
-Sumo Logic supports collecting metrics using two source types:
+When you create an AWS Source, you'll need to identify the Hosted Collector you want to use or create a new Hosted Collector. Once you create an AWS Source, associate it with a Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-1. Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source). (recommended) Or
-2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics).
+### Collect Amazon SQS CloudWatch metrics
 
-:::note
-Namespace for **Amazon SQS** Service is **AWS/SQS**
-:::
+Sumo Logic supports collecting metrics using one of the following source types:
 
-**Metadata**: Add an account field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. Metrics can be queried via the “account” field.
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**)
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-![Metadata](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Metadata+account.png)
+  :::note
+  Namespace for **Amazon SNS** service is **AWS/SQS**.
+  :::
 
-### Collect Amazon SQS Events using CloudTrail
+Follow the steps below to add custom metadata [fields](/docs/manage/fields) with your metrics:
+1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which metrics are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and metrics can be queried using the `account` field.<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+1. After adding fields, check their status indicators:
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+      * You will have the option to automatically add or enable the field.
+      * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
-    * **Name**. Enter a name to display for the new Source.
-    * **Description**. Enter an optional description.
-    * **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
-    * **Bucket Name**. Enter the exact name of your SQS S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).
-    :::note
-    The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    :::
-    * **Source Category**. Enter aws/observability/CloudTrail/logs.
-    * **Fields**. Add an account field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.<br/> ![Account Fields](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/Fields.png)
-    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
-    * **Log File Interval > Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
-    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
-    * **Timestamp Format.** Select **Automatically detect the format**.
-    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
-2. Click **Save**.
+### Collect Amazon SQS CloudTrail logs
 
-## Field in Field Schema
+#### Prerequisites
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
-1. Search for the `queuename` field. 
-1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
+1. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html).
+1. Confirm that logs are being delivered to the Amazon S3 bucket.
 
-## Field Extraction Rule(s)
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+  :::note
+  Namespace for **Amazon SQS** service is **AWS/SQS**.
+  :::
 
-* **Rule Name**: AwsObservabilitySQSCloudTrailLogsFER
-* **Applied at**: Ingest Time
-* **Scope (Specific Data)**: account=* eventname eventsource "sqs.amazonaws.com"
-* **Parse Expression**:
+Follow the steps below to collect logs for Amazon SQS:
+1. Configure a [CloudTrail Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/).
+1. Add custom metadata [fields](/docs/manage/fields) with your logs:
+   1. Click **+Add Field** under **Metadata**. Each field consists of a name (key) and a corresponding value.
+   1. Create a field named `account` and assign it a value that represents a friendly name or alias to your AWS account from which logs are collected. This value will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability), and logs can be queried using the `account` field.<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" style={{border: '1px solid gray'}} width="500" />
+   1. After adding fields, check their status indicators:
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green check mark indicates the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange exclamation icon indicates the field does not exist or is disabled in the schema.
+         * You will have the option to automatically add or enable the field.
+         * If a field is sent but not present or enabled in the schema, it is ignored and marked as **Dropped**.
 
-```sql
-json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements", "sourceIPAddress" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements, src_ip  nodrop
-| json field=userIdentity "accountId", "type", "arn", "userName" as accountid, type, arn, username nodrop
-| json field=requestParameters "queueUrl" as queueUrlReq nodrop
-| json field=responseElements "queueUrl" as queueUrlRes nodrop
-| where event_source="sqs.amazonaws.com"
-| if(event_name="CreateQueue", queueUrlRes, queueUrlReq) as queueUrl
-| parse regex field=queueUrl "(?<queueName>[^\/]*$)"
-| if (isBlank(recipient_account_id), accountid, recipient_account_id) as accountid
-|! toLowerCase(queuename) as queuename
-| "aws/sqs" as namespace
-| fields region, namespace, queuename, accountid
-```
-
-## Centralized AWS CloudTrail Log Collection
+## Centralized AWS CloudTrail log collection
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following **Field Extraction Rule** to map a proper AWS account(s) friendly name/alias. Create it if not already present/update it as required.
 
 * **Rule Name**: AWS Accounts
 * **Applied at**: Ingest Time
 * **Scope (Specific Data)**: _sourceCategory=aws/observability/cloudtrail/logs
-* **Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
 
-```sql
+### Parse Expression
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+
+```sumo
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
@@ -178,9 +167,27 @@ In case you have a centralized collection of CloudTrail logs and are ingesting t
 
 Now that you have set up collection for Amazon SQS, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
+
+- `account` Name / alias to the AWS account.
+- `accountid` AWS account id.
+- `region` The region to which the resource name belongs to.
+- `namespace` Namespace for Amazon SQS Service is AWS/SQS.
+- `queuename` Amazon SQS Service Queue Name.
+
+#### Field Extraction Rule(s)
+
+The FER **AwsObservabilitySQSCloudTrailLogsFER** to extract fields `region`, `namespace`, `accountid`, and `queuename` will be created as a part of app installation.
+
+import DoNotModify from '../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
 
 ## Viewing Amazon SQS dashboards
 
@@ -202,8 +209,7 @@ Use this dashboard to:
 * Monitor number of messages received, sent, deleted and other metrics.
 * Monitor message states, queue health, and message lag.
 
-![1.Amazon SQS Overview](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-Overview.png)
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-Overview.png' alt="Amazon SQS Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Queue Stats
 
@@ -211,8 +217,7 @@ The **1. Amazon SQS - Queue Stats** dashboard provides details of SQS queue metr
 * Monitor trend of messages received, sent, deleted and other metrics.
 * Monitor message states, queue health and message lag.
 
-![1.Amazon SQS- Queue Stats](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-QueueStats.png)
-
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-QueueStats.png' alt="1. Amazon SQS - Queue Stats" style={{border: '1px solid gray'}} width="800" />
 
 ### Audit Events
 
@@ -222,7 +227,8 @@ Use this dashboard to:
 * Monitor successful, failure event locations and trends.
 * Monitor event details by users.
 * Monitor successful and error event details.
-![2.Amazon SQS Audit Events](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-AuditEvents.png)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-AuditEvents.png' alt="2. Amazon SQS - Audit Events" style={{border: '1px solid gray'}} width="800" />
 
 ### Threat Intel
 
@@ -232,4 +238,47 @@ Use this dashboard to:
 * Monitor details of threat locations and count.
 * Get details of threats by malicious confidence and malicious IPs.
 * Get details of all threats by IPs.
-![3.Amazon SQS - Threat Intel](https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png)
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-ThreatIntel.png' alt="3. Amazon SQS - Threat Intel" style={{border: '1px solid gray'}} width="800" />
+
+### Performance Trends
+
+The **1. Amazon SQS - Performance Trends** dashboard provides derived performance insights including true consumer lag, empty receive rate trends, and cross-queue rankings by backlog and message staleness.
+
+Use this dashboard to:
+* Monitor true consumer lag by tracking combined visible and delayed messages in the backlog.
+* Identify queues with high empty receive rates to optimize polling behavior and reduce costs.
+* Rank queues by consumer backlog size to prioritize capacity planning.
+* Identify message staleness risks by tracking the age of the oldest message per queue.
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Amazon-SQS/AmazonSQS-PerformanceTrends.png' alt="1. Amazon SQS - Performance Trends" style={{border: '1px solid gray'}} width="800" />
+
+## Create monitors for AWS SQS app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS SQS alerts
+
+These alerts are available for the AWS SQS app.
+
+| Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `AWS SQS - Access from Highly Malicious Sources` | This alert fires when an Application AWS - SQS is accessed from highly malicious IP addresses within last 5 minutes. | Count > 0 | Count &lt;= 0 |
+| `AWS SQS - Message processing not fast enough` | This alert fires when we detect message processing is not fast enough. That is, the average approximate age of the oldest non-deleted message in the queue is more than 5 seconds for an interval of 5 minutes. | Seconds > 5 | Seconds &lt;= 5 |
+| `AWS SQS - Messages not processed` | This alert fires when we detect messages that have been received by a consumer, but have not been processed (deleted/failed). That is, the average number of messages that are in flight are >=20 for an interval of 5 minutes. | Count >= 20 | Count &lt; 20 |
+| `AWS SQS - Queue has stopped receiving messages` | This alert fires when we detect that the queue has stopped receiving messages. That is, the average number of messages received in the queue &lt;1 for an interval of 30 minutes. | Count &lt; 1 | Count >= 1 |
+
+
+## Upgrade/Downgrade the Amazon SQS app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Amazon SQS app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

@@ -1,0 +1,13 @@
+{
+    "name": "Dragos TAXII",
+    "authType": "Basic",
+    "basicUsername": "--- USER EMAIL ACCOUNT HERE ---",
+    "basicPassword": "--- USER PASSWORD HERE ---",
+    "ti_version": "2.1",
+    "ti_root_source": "1",
+    "ti_discovery_url": "https://portal.dragos.com/taxii2/",
+    "ti_user_source_id": "Dragos Indicators",
+    "enable_limit": false,
+    "polling_interval": "1h"
+  }
+  

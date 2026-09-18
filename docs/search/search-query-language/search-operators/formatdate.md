@@ -2,19 +2,20 @@
 id: formatdate
 title: formatDate Search Operator
 sidebar_label: formatDate
+description: Use the formatDate operator to format dates in log files as strings in your required format, such as U.S.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `formatDate` operator allows you to format dates in log files as a string in the format you require, such as U.S. date formatting, European formatting, and timestamps. 
 
 :::note
-If you're looking to convert a date to a timestamp, use [`parseDate`](docs/search/search-query-language/parse-operators/parsedate.md).
+If you're looking to convert a date to a timestamp, use [`parseDate`](/docs/search/search-query-language/parse-operators/parsedate.md).
 :::
 
 ## Syntax
 
-```sql
-formatDate(<date> [, <format> [, <timeZone>]]) as <field>
-```
+`formatDate(<date> [, <format> [, <timeZone>]]) as <field>`
 
 ### Returns
 
@@ -36,43 +37,43 @@ Convert the date parameter to Long if necessary. Passing a String can produce t
 
 Use the following query to return results for the current date using the date format **yyyy-MM-dd**.
 
-```sql
+```sumo
 * | formatDate(now(), "yyyy-MM-dd") as today
 ```
 
 This creates the today column, and returns the following results.
 
-![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'.](/img/search/searchquerylanguage/search-operators/FormatDate.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/FormatDate.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'" style={{border: '1px solid gray'}} width="600" />
 
 ### European date format dd-MM-yyyy
 
 Use the following query to create a **today** column, and return the results using the European date format of day, month, year, **dd-MM-yyyy**.
 
-```sql
+```sumo
 * | formatDate(now(),"dd-MM-yyyy") as today
 ```
 
 This returns the following results:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'dd-MM-yyyy HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'dd-MM-yyyy HH:MM.SSS -0700'" style={{border: '1px solid gray'}} width="600" />
 
 ### US date format with a timestamp
 
 This example creates a **today** column and uses the US date format with a timestamp, **MM-dd-yyyy HH:mm**.
 
-```sql
+```sumo
 * | formatDate(now(), "MM-dd-yyyy HH:mm", "America/New_York") as today
 ```
 
 Which returns results like:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'.](/img/search/searchquerylanguage/search-operators/DateTimestamp.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/DateTimestamp.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM:SS.SSS -0700'" style={{border: '1px solid gray'}} width="600" />
 
 ### Find messages with incorrect timestamps
 
 This query allows you to find messages with incorrect timestamps.
 
-```sql
+```sumo
 * | formatDate(_receipttime, "MM/dd/yyyy HH:mm:ss:SSS") as receiptDate
 | formatDate(_messageTime, "MM/dd/yyyy HH:mm:ss:SSS") as messageDate
 | _receiptTime - _messageTime as delay
@@ -81,13 +82,13 @@ This query allows you to find messages with incorrect timestamps.
 
 This query produces results like this:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, delay, delayinminutes, messagedate, receiptdate, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, delay, delayinminutes, messagedate, receiptdate, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'" style={{border: '1px solid gray'}} width="800" />
 
 ### Determine age of log messages
 
 This query lets you determine the age of your log messages.
 
-```sql
+```sumo
 * | formatDate(_messageTime, "MM/dd/yyyy HH:mm:ss:SSS") as messageDate
 | formatDate(now(), "MM/dd/yyyy HH:mm:ss:SSS") as today
 | now() as currentTime
@@ -97,7 +98,7 @@ This query lets you determine the age of your log messages.
 
 Which produces results like this:
 
-![A screenshot of a Sumo Logic log query results table with columns for time, currenttime, messageage, messageageinminutes, messagedate, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'.](/img/search/searchquerylanguage/search-operators/MessageAge.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/MessageAge.png')} alt="A screenshot of a Sumo Logic log query results table with columns for time, currenttime, messageage, messageageinminutes, messagedate, today, and message. The timestamps are in the format 'MM/DD/YYYY HH:MM.SSS -0700'" style={{border: '1px solid gray'}} width="800" />
 
 ### Messages by Day of the Week
 
@@ -105,21 +106,21 @@ To get the day of the week from your logs, you can reference your log's timesta
 
 Beginning with the `_messageTime` field, you can determine the day of the week, and then remove the days you do not want using the formatDate operator. This example query provides results only for Mondays:
 
-```sql
+```sumo
 | formatDate(_messagetime, "EEE") as day
 | where day="Mon"
 ```
 
 This example query provides only weekday results:
 
-```sql
+```sumo
 | formatDate(_messagetime, "EEE") as day
 | where !(day="Sat" or day="Sun")
 ```
 
 If you do not use `_messageTime`, and instead parse out another timestamp, you can convert it to milliseconds and determine the day this way:
 
-```sql
+```sumo
 | parseDate(parsedtime, "MM/dd/yyyy HH:mm:ss a") as inMilliseconds
 ```
 
@@ -127,7 +128,7 @@ If you do not use `_messageTime`, and instead parse out another timestamp, you 
 
 With the following example query:
 
-```sql
+```sumo
 _sourceCategory=sourceCategory
 | parse "] [*][*][*].[*]" as (user, datasource, session, command)
 | count, min(_messageTime), max(_messageTime) by session
@@ -147,19 +148,19 @@ In the results, the **`_min`** and **`_max`** values are displayed as an epo
 
 Normally, to convert the epoch time into a date formatted string you'd do something like this:
 
-```sql
+```sumo
 * | formatDate(_messagetime, "``MM-dd-``yyyy`` HH:mm:ss") as myDate
 ```
 
 However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [`toLong`](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator cannot read.
 
-```sql
+```sumo
 * | count, min(_messagetime) as mindate | formatDate(toLong(mindate))
 ```
 
 For the given example, the following query gets the proper date/time values in the results:
 
-```sql
+```sumo
 _sourceCategory=sourceCategory
 | parse "] [*][*][*].[*]" as (user, datasource, session, command)
 | count, min(_messagetime) as mindate, max(_messagetime) as maxdate by session
@@ -171,7 +172,7 @@ _sourceCategory=sourceCategory
 
 If your timestamp is a normal Unix timestamp it is in seconds since January 1, 1970 at 00:00:00 GMT. The formatDate operator requires your timestamp to be in milliseconds. Therefore, you need to convert by multiplying by 1,000 since there are 1,000 milliseconds in a second.
 
-```sql
+```sumo
 ...
 | toLong(eventTimeInEpochSeconds * 1000) as eventTimeInEpochMs
 | formatDate(eventTimeInEpochMs, "MM-dd-yyyy") as eventTimeHuman

@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudCertificateAuthorityService.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudCertificateAuthorityService.png')} alt="Google Cloud Certificate Authority Service icon" width="50"/>
 
 Certificate Authority Service enables you to simplify, automate, and customize the deployment, management, and security of private certificate authorities (CA). For more details, refer to the [GCP documentation](https://cloud.google.com/certificate-authority-service/docs/all-quickstarts)
 

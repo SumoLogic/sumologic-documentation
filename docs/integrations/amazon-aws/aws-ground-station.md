@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS Ground Station servi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-ground-station-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-ground-station-logo.png')} alt="AWS Ground Station icon" width="50"/>
 
 AWS Ground Station is a fully managed service that enables you to control satellite communications, process satellite data, and scale your satellite operations. This means that you no longer have to build or manage your own ground station infrastructure. AWS Ground Station enables you to focus on innovating and rapidly experimenting with new applications that ingest satellite data and dynamically scale your server and storage use, rather than spend resources on operating and maintaining your own ground stations. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/ground-station/latest/ug/what-is-aws-ground-station.html).
 

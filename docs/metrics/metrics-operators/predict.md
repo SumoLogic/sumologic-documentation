@@ -42,7 +42,7 @@ Where:
 
 ## Examples
 
-**Example 1: Read Capacity Consumed for an AWS DynamoDB Table**
+### Example 1: Read Capacity Consumed for an AWS DynamoDB Table
 
 In this example, a developer would like to forecast Read Capacity Consumed for an AWS DynamoDB table over the next 24 hours. Series B in the screenshot below provides the input for the actual Read Capacity Consumed time series. Series C takes Series B as input to create a forecast using the auto-regression model 24 hours into the future.
 
@@ -58,7 +58,7 @@ The forecast is compared with the Provisioned Read Capacity (Series A) so that t
 
 <img src={useBaseUrl('img/metrics/predict-1.png')} alt="example query 1"/>
 
-**Example 2: Forecast Requests for a Service that Uses Sumo Logic APM**
+### Example 2: Forecast Requests for a Service that Uses Sumo Logic APM
 
 Sumo Logic APM renders golden signals from trace data as request, error, and latency time series. In this example, the developer of the “coffee-bar-app” wants to forecast requests per hour for the “coffee-machine” service using metrics derived from transaction traces. The the auto-regressive model predicts requests per hour 50 data points into the future:
 

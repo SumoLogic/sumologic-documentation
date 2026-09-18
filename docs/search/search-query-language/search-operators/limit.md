@@ -2,7 +2,10 @@
 id: limit
 title: limit Search Operator
 sidebar_label: limit
+description: Use the limit operator to reduce the number of raw messages or aggregate results returned in your query.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `limit` operator reduces the number of raw messages or aggregate results returned. If you simply query for a particular term, for example "error" without using an aggregation operator such as group by, limit will reduce the number of raw messages returned. If you first use group-by or other aggregation operator, the limit operator will reduce the number of grouped results instead.
 
@@ -12,9 +15,7 @@ Sumo Logic Apps often use the limit operator in queries to display system data 
 
 ## Syntax
 
-```sql
-limit #
-```
+`limit #`
 
 ## Rules
 
@@ -26,7 +27,7 @@ limit #
 
 In this example, we simply query for the term "error" without using an aggregation operator, and limit will reduce the number of raw messages returned to 10.
 
-```sql
+```sumo
 error *
 | limit 10
 ```
@@ -38,7 +39,7 @@ range you have queried.
 
 In this query, you can search for errors, count by the `_sourceCategory`, sort by the count, and limit the results to the top 5 errors.
 
-```sql
+```sumo
 error *
 | count by _sourceCategory
 | sort by _count | limit 5
@@ -46,13 +47,13 @@ error *
 
 which would provide results similar to:
 
-![limit operator](/img/reuse/query-search/limit_operator_example1.png)
+<img src={useBaseUrl('img/reuse/query-search/limit_operator_example1.png')} alt="limit operator" style={{border: '1px solid gray'}} width="300" />
 
 **Top 10 Service Operations:**
 
 In this query, you can see the top 10 Windows services per host that have started and stopped over the last 10 hours.
 
-```sql
+```sumo
 _sourceCategory=OS/Windows Service Control Manager
 | parse regex "Message = \"The (?<service>\w.+?) service entered the (?<state>\w+) state"
 | parse regex "ComputerName = \"(?<host>[^\"]+)\";"
@@ -65,6 +66,6 @@ _sourceCategory=OS/Windows Service Control Manager
 
 which can be displayed in a bar chart like this:
 
-![Limit](/img/search/searchquerylanguage/search-operators/Limit.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/Limit.png')} alt="Limit" style={{border: '1px solid gray'}} width="800" />
 
 See [Sort](sort.md) operator for more information.

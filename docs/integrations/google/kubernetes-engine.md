@@ -7,7 +7,7 @@ description: The Sumo Logic app for Google Kubernetes Engine (GKE) - Control Pla
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/k8s.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/google/k8s.png')} alt="Kubernetes icon" width="75"/>
 
 [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) provides a managed environment where you can easily deploy, manage, and scale your container-based applications using the Google Cloud infrastructure.
 
@@ -184,7 +184,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 ### Sample queries
 
-```sql title="Error Stream - Google Cloud Logging"
+```sumo title="Error Stream - Google Cloud Logging"
 _source="GKE Cloud Logs" error
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | json field=_raw "message.data.jsonPayload.message" as message
@@ -194,7 +194,7 @@ _source="GKE Cloud Logs" error
 | count by timestamp, project, cluster,log_name, message
 ```
 
-```sql title="Created Resources by Node Over Time - Google Cloud Logging"
+```sumo title="Created Resources by Node Over Time - Google Cloud Logging"
 _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"" "\"reason\":\"Created\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/events"

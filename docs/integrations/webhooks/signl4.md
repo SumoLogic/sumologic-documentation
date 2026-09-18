@@ -6,7 +6,7 @@ description: Learn about the collection process for the Sumo Logic SIGNL4 integr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/signl4-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/signl4-logo.png')} alt="SIGNL4 icon" width="50"/>
 
 SIGNL4 is a mobile alert platform for instant critical notifications via push, text, and calls, optimizing incident management and response. You can use a webhook in the SIGNL4 platform to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor real-time critical alerts and track incident details in Sumo Logic. For more details, refer to the [SIGNL4 Documentation](https://www.signl4.com/webhook-rest-smtp-api-integration/).
 
@@ -49,7 +49,7 @@ Follow the below steps to configure the SIGNL4 Webhook.
     - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 5. Click **Install**.
 6. Verify SIGNL4 events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/signl4
   ```
 

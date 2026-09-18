@@ -9,12 +9,10 @@ Converts angles from radians to degrees.
 
 ## Syntax
 
-```sql
-toDegrees(<x>) as <field>
-```
+`toDegrees(<x>) as <field>`
 
 ## Example
 
-```sql
-toDegrees(asin(1)) as v // v = 90
+```sumo
+* | toDegrees(asin(1)) as v
 ```

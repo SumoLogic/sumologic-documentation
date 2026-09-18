@@ -72,7 +72,6 @@ Following configuration demonstrates:
            - resource/custom_files
            - resourcedetection/system
            - sumologic_schema/custom_files
-           - batch
          exporters:
            - sumologic
    ```
@@ -161,7 +160,6 @@ service:
       - resource/json_files
       - resourcedetection/system
       - sumologic_schema/json_files
-      - batch
       exporters:
       - sumologic
 ```
@@ -207,7 +205,6 @@ Following configuration demonstrates:
          processors:
            - memory_limiter
            - resource/windows_resource_attributes/localhost
-           - batch
          exporters:
            - sumologic
    ```
@@ -267,7 +264,6 @@ service:
       processors:
         - memory_limiter
         - resource/windows_resource_attributes/localhost/1690233479
-        - batch
       exporters:
         - sumologic
 ```
@@ -445,7 +441,6 @@ service:
       processors:
         - memory_limiter
         - resourcedetection/system
-        - batch
       exporters:
         - sumologic
 ```
@@ -481,7 +476,6 @@ service:
       processors:
         - memory_limiter
         - resourcedetection/system
-        - batch
       exporters:
         - sumologic
 ```
@@ -517,7 +511,6 @@ service:
       processors:
         - memory_limiter
         - resourcedetection/system
-        - batch
       exporters:
         - sumologic
 ```
@@ -562,7 +555,6 @@ service:
         - memory_limiter
         - resourcedetection/system
         - resource/sqlquery
-        - batch
       exporters:
         - sumologic
 ```
@@ -610,7 +602,6 @@ service:
       processors:
         - memory_limiter
         - resourcedetection/system
-        - batch
       exporters:
         - sumologic
 ```

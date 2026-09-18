@@ -80,14 +80,6 @@ When you create a Scheduled Search, you can save the results to a [Lookup Table]
 
 For instructions, see [Save to Lookup](save-to-lookup.md).
 
-### Real Time Alerts
-
-Real Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.
-
-When an alert condition is satisfied, Sumo Logic sends an email (or triggers a script action). Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent. 
-
-For instructions, see [Create a Alert](create-real-time-alert.md).
-
 ### Cloud SIEM Signal
 
 You can trigger the creation of a Cloud SIEM Signal with a scheduled search. Signals are otherwise generated when the conditions of a Cloud SIEM rule are satisfied by a Record. Signals are correlated with other Signals to create a [Cloud SIEM Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/).

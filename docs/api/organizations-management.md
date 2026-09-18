@@ -9,36 +9,32 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/manage.png')} alt="Manage icon" width="50"/>
 
-With the Organizations Management API, you can get the credits usage details of the child organizations. For more information, see [Manage Organizational Settings](/docs/manage/manage-subscription/manage-org-settings).
+With the Organizations Management API, you can get the credits usage details of the child organizations. For more information, see [Manage Organization Settings](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings).
 
 ## Documentation
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                                 |
-|:------------|:-------------------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/orgsManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/orgsManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/orgsManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/orgsManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/orgsManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/orgsManagement  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/orgsManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/orgsManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/orgsManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/orgsManagement |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/orgsManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/orgsManagement   |
+| CH  | Switzerland (Zurich)   |  eu-central-2  | https://api.zrh.sumologic.com/docs/#tag/orgsManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/orgsManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/orgsManagement  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/orgsManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/orgsManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/orgsManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/orgsManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/orgsManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/orgsManagement<br/>https://organizations.sumologic.com/docs/#tag/organizationsManagement <sup>`*`</sup>>  |
 
+<sup>`*`</sup> This assembly is exclusive to the US2 deployment and manages APIs for Sumo Logic orgs not tied to a specific deployment, such as parent orgs with child orgs across multiple deployments. It includes the [List Organizations API](https://organizations.sumologic.com/docs/#operation/listOrganizations) to support this setup.
 
-:::info
-Check out our additional [Organizations Management API endpoints](https://organizations.sumologic.com/docs/#tag/organizationsManagement), currently in beta.
-:::
-
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
-* Organizations (all role capabilities)
-
--->
+* [Organizations](/docs/manage/users-roles/roles/role-capabilities/#organizations) (all role capabilities)

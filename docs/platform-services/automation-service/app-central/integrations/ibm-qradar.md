@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-qradar.png')} alt="ibm-qradar" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-qradar.png')} alt="IBM QRadar icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 11, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 IBM QRadar SIEM helps security teams detect, prioritize and respond to threats across the enterprise.
 
@@ -30,23 +30,46 @@ IBM QRadar SIEM helps security teams detect, prioritize and respond to threats a
 * **Get Offenses Daemon V2** *(Daemon)* - Automatically get new QRadar offenses.
 * **Search Into Events QRadar V2** *(Enrichment)* - Search QRadar events.
 
+## Configure IBM QRadar in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Server URL**. Enter your IBM QRadar server URL.
+
+* **Authentication method**. Select either **Username and password** or **Authentication token**.
+
+* **Username**. If you selected **Username and password** above, enter the username of an admin user authorized to authenticate the integration.
+
+* **Password**. If you selected **Username and password** above, enter the password for the admin user.
+
+* **Token**. If you selected **Authentication token** above, enter the [token](https://www.ibm.com/docs/en/qsip/7.5?topic=visibility-creating-authorized-service-token).
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ibm-qradar-configuration.png')} style={{border:'1px solid gray'}} alt="IBM QRadar configuration" width="400"/>
+
+For information about IBM QRadar, see [IBM QRadar documentation](https://www.ibm.com/support/pages/accessing-ibm-qradar-product-documentation).
+
 ## Change Log
 
-* May 5, 2019 - First upload
-* January 31, 2020 - New action added: Get Offense
-* April 3, 2020 - New action added: Add Offense Note
-* May 29, 2020 - Improvements
-* March 22, 2021 - New Actions added
-* June 3, 2021 - New Actions added
-* March 8, 2022 - Description
-* April 11, 2022 - updated Action:
-	+ Get Offenses Daemon V2 (New endpoint added to fetch offense Destination IPs)
-* June 07, 2022 - Updated action:
-	+ Get Offenses Daemon V2
-* July 11, 2023 (v1.3)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from IBM QRadar OIF to IBM QRadar
-	+ Changed field visibility
-	+ Added new actions:
-		- Search Into Events QRadar V3
-		- Search Into Events QRadar V4
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from IBM QRadar OIF to IBM QRadar.</li><li>Changed field visibility.</li><li>Added new actions: **Search Into Events QRadar V3** and **Search Into Events QRadar V4**.</li></ul> |
+| | June 07, 2022 | Updated the **Get Offenses Daemon V2** action. |
+| | April 11, 2022 | Updated the **Get Offenses Daemon V2** action to add a new endpoint for fetching offense destination IPs. |
+| | March 8, 2022 | Updated the description. |
+| | June 3, 2021 | Added new actions. |
+| | March 22, 2021 | Added new actions. |
+| | May 29, 2020 | Made improvements to the integration. |
+| | April 3, 2020 | Added a new action: **Add Offense Note**. |
+| | January 31, 2020 | Added a new action: **Get Offense**. |
+| | May 5, 2019 | Initial release of the IBM QRadar integration. |

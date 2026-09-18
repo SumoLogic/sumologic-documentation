@@ -36,3 +36,4 @@ When writing regular expression rules, you must follow these rules:
 * If two or more rules are listed, the assumed Boolean operator is OR.
 * The processing rule name must be less than 32 characters.
 * A rule will process single line log messages until 1MB of data is processed and multiline log messages until 2,000 lines or 512KB of data is processed, whichever comes first. Once these limits are reached the processing rule will ignore the rest of the log message and move on to the next log.
+* Include and exclude rules do not support Kubernetes sources. To exclude data from Kubernetes sources, update the Helm Chart with [exclude parameters](/docs/send-data/kubernetes/configuration/).

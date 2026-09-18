@@ -10,7 +10,7 @@
   "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
   "dataCollection": [
     "auditEvents",
-    "alerts",
+    "sessions",
     "fileEvents"
   ]
 },

@@ -7,7 +7,7 @@ description: Add a Google Workspace Apps Audit Source to ingest audit logs from 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="Google Workspace Audit icon" width="40"/>
 
 A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 
@@ -45,8 +45,10 @@ In order to provide Sumo logic access to google services, please follow the mana
 1. In the Admin console, go to **Menu** > **Security** > **Access and data control** > **API controls**.
 1. In App access control, click **Manage Third-Party App Access**.
 1. Click **Add app** and search for Sumo Logic OAuth client.
-1. Select Sumo Logic OAuth client, then click **Change access**.
-1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="g-suite-change-access" />
+1. Select the app with the following client ID:<br/>
+`788305497335-k5j5772fpotskboo66orgh48jbvug8uo.apps.googleusercontent.com`
+1. Click **Change access**.
+1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="G Suite change access" />
 1. Click **Change**.
 
 ## Configuring a Google Workspace Apps Audit Source
@@ -55,7 +57,7 @@ Once you've set up a Hosted Collector and have your credentials ready, you're a
 
 To configure a Google Workspace Apps Audit Source:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Google Workspace Apps Audit**.
 1. For **Name**, type the name of the Source. Enter an optional Description.
@@ -63,14 +65,17 @@ To configure a Google Workspace Apps Audit Source:
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   :::note
+   If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
+   :::
 1. Click **Sign in with Google** to give permission to Sumo Logic to set up watchpoints using **the Google Apps Reports API**. Click **Accept**.
 1. Click **Save**.
 
 To confirm events are being logged, you can compare the data in Sumo Logic to the data shown in **Reports** in the Google Admin console.
 
-# Google App Audit Known Issues
+## Google App Audit Known Issues
 
 A few known issues are due to limitations of the Google API and cannot be changed by Sumo Logic. 
 

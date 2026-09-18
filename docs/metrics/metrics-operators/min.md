@@ -2,11 +2,12 @@
 id: min
 title: min Metrics Operator
 sidebar_label: min
+description: Use the min metrics operator to calculate the minimum value of time series that match the query.
 ---
 
 
 
-The min operator calculates the minimum value of the time series that match the query. If grouping is specified, it calculates the minimum for each group.
+The `min` operator calculates the minimum value of the time series that match the query. If grouping is specified, it calculates the minimum for each group.
 
 ## Syntax
 

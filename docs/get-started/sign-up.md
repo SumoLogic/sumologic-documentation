@@ -1,84 +1,75 @@
 ---
 id: sign-up
 title: Sign Up and Activate Your Account
-description: Learn how to sign up with Sumo Logic and create your account.
+description: Sign up for the Sumo Logic Agentic Free Trial, a 14-day sandbox trial built on example data, or start a 30-day AWS Marketplace trial to ingest and analyze your own data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage.
-
-By signing up for a **Trial account**, which you can do through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#sign-up-through-aws-marketplace), you can start using Sumo Logic in minutes. You'll have 30 days of full Enterprise account access to review and use our Sumo Logic SaaS Log Analytics Platform features.
-
-After 45 days, if you've not purchased a plan, your account will convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), and you can [upgrade to a plan](https://www.sumologic.com/pricing) at any time.
+Sumo Logic offers two ways to try the platform. The **Agentic Free Trial**, available through the Sumo Logic website, is a 14-day sandbox trial built on preloaded example data so you can explore AI-powered security and observability features right away, with no setup or data ingestion required. A separate **AWS Marketplace trial** runs for 30 days and lets you ingest and analyze your own data. Sign up through the [Sumo Logic website](#sign-up-through-sumo-logic) or the [AWS Marketplace](#sign-up-through-aws-marketplace) to get started.
 
 ## Sign up through Sumo Logic
 
-To start your 30-day free trial:
+To start your Agentic Free Trial, head to the [Sumo Logic Free Trial page](https://www.sumologic.com/sign-up/) and fill out the sign-up form with your business email, first and last name, and country, then click **Send**. No credit card is required.
 
-1. Go to our [free trial signup page](https://www.sumologic.com/sign-up).
-1. Follow the sign-up steps to register and create your free Sumo Logic instance with a business address.
-
-You'll then receive an account activation email.
-
-### Activate your account
+You'll then get an email inviting you to Sumo Logic's shared trial environment. If you already have a Sumo Logic account, the email links you to activate access. If you're new to Sumo Logic, it links you to create a password and sign in.
 
 :::note
-The link in your account activation email will expire after 3 days. If the link has expired, you'll need to complete the signup process again.
+After activating, confirm you're signed in at `agenticplayground.sumologic.com` and not an existing Sumo Logic account. If you sign up with an email address already tied to another Sumo Logic account, you may be routed to that account instead of the trial. If this happens, switch to the trial organization using [multi-account access](/docs/manage/users-roles/users/multi-account-access) from the top right of the console.
 :::
 
-To activate your Sumo Logic Trial account:
+### What's included in your trial
 
-1. Check your email inbox for the activation Sumo Logic email. If you do not see it, check your Spam and Trash folders.
-1. In the email, click **Activate Now**.
-1. Fill out the **Activate Your Account** form, then click **Activate**.
+The Agentic Free Trial runs for 14 days entirely on preloaded example data, so there's nothing to instrument and no data to wait on. During your trial, you get:
 
-Next, you'll be taken to a brief two-step data collector installation process, which will get you up and running with your data in a couple of minutes.
+* **View access to security and observability features**, including Cloud SIEM. You can search logs, run investigations, and review insights, but you cannot manage settings or configurations.
+* **AI-powered agents**, including the SOC Analyst Agent, which triages Tier-1 alerts end to end, and Mobot, which answers questions about your data in plain language.
+* **A few prebuilt dashboards** from the App Catalog. You can create your own dashboards, but you cannot create other types of saved content, and you cannot share content with or view content from other trial users.
 
-### Set up Collector
+:::note
+The Agentic Free Trial runs entirely on example data. You cannot ingest your own data during this trial. To try Sumo Logic with your own data, sign up through the [AWS Marketplace](#sign-up-through-aws-marketplace) or [contact us](https://www.sumologic.com/contact-us/).
+:::
 
-1. Select the platform (Linux, Windows, macOS, or AWS) from which you'd like to collect data.<br/><img src={useBaseUrl('img/get-started/data-collection.png')} alt="Platform selection showing Linux, Windows, macOS, or AWS" width="400" />
-1. Copy, paste, and run the provided command to your PowerShell or Terminal. This will install the OpenTelemetry collector and relevant dashboards.
-1. When finished, click **Start using Sumo**. <br/><img src={useBaseUrl('img/get-started/install-otel.png')} alt="icon" width="400" />
+### After your trial ends
 
-That's it - congrats! Next, you'll be taken to your onboarding checklist guide, where you can view your Dashboards, run your first log search, set up alerts, install more apps for your environment, and more.
-
-
-### Upgrade or continue with Free account
-
-After 30 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and log analytics services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
-
-|             | Trial accounts | Free accounts
-|:------------|:---------------|:------------
-| Data volume daily | 1GB | 500MB
-| Users | 20 users max. | 3 users max.
-| Data retention <sup>1</sup>| 30 days | 7 days
-| Metrics <sup>2</sup> | &#9989; | &#10060;
-| Data Forwarding <sup>3</sup> | &#9989; | &#10060;
-| Real-time alerts <sup>4</sup> | &#9989; | &#10060;
-
-<sup>1</sup> Data uploaded to the Sumo Logic Cloud.<br/>
-<sup>2</sup> Search through and visualize your data in near real-time, with up to 1000 data points per minute.<br/>
-<sup>3</sup> Forwards your logs to an S3 bucket after being collected and analyzed in Sumo Logic.<br/>
-<sup>4</sup> Notifies you in real-time when errors occur on your systems.
-
-For more information, see [Sumo Logic Account Usage](/docs/manage/manage-subscription).
+The Agentic Free Trial does not convert directly to a paid plan. You'll get reminder emails on day 7 and day 14 as your trial nears its end. To continue using Sumo Logic with your own data, [contact Sales](https://www.sumologic.com/contact-us/).
 
 ## Sign up through AWS Marketplace
 
-Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. It allows you to pay your bill using your Amazon account. All you need to sign up is a company email address and your location: North America, Europe, or Australia.
+Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account with a 30-day trial that includes full access to ingest and analyze your own data. This is separate from the Agentic Free Trial described above, and it's not available for customers with existing Sumo Logic accounts.
 
-:::info Valid Emails
-Do not use a Google or Yahoo email account to create your Sumo Logic account.
-:::
+To sign up through AWS Marketplace:
 
-Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.
+1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace), search for "Sumo Logic", and then click the subscription option of your choice. To sign up with an initial 30-day free trial, select **Sumo Logic Log Analytics Platform (Pay-As-You-Go with 30-day Free Trial)** highlighted below.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_new.png')} alt="AWS Marketplace" style={{border: '1px solid gray'}} width="800" />
+1. Click **View purchase options**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_view_purchase_options.png')} alt="View purchase options" style={{border: '1px solid gray'}} width="800" />
+1. Configure your free trial contract and click **Subscribe**.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_create_contract.png')} alt="Create contract" style={{border: '1px solid gray'}} width="800" />
+1. After the subscription finishes processing, you can set up your account.<br/><img src={useBaseUrl('img/get-started/aws_marketplace_setup_new.png')} alt="Set up your account" style={{border: '1px solid gray'}} width="800" />
+1. You are redirected to Sumo Logic to complete your account creation:
+    - **Email**. Enter a business email address for your account (personal email addresses such as Gmail are not supported). If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace requires a new email to create a separate Sumo Logic organization.
+    - **Region**. Select your region: North America, Europe, or Australia.
+    - **Service License Agreement**. Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
+1. Click **Sign Up**. Sumo Logic will send you an email to activate your account. Follow the instructions in the email to complete the activation process.
+1. At the end of the 30-day trial period for the Sumo Logic Log Analytics Platform (Pay-As-You-Go with 30-day Free Trial), the subscription converts to the paid subscription billed monthly based on actual usage.
+
+### Upgrade your account
+
+Upgrading increases your reserved capacity to avoid overage charges. If upgrades are allowed for your AWS account, you can upgrade your active account directly from Sumo Logic.
+
+- Payment is handled by Amazon. You do not need to provide any payment information.
+- Upgrading increases your reserved Sumo Logic ingest volume, reducing the risk of overage charges.
+- Account upgrades are independent from your AWS subscription.
+
+To upgrade:
+
+1. Click **Upgrade** on the left navigation pane in Sumo Logic.
+1. The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
+1. On the upgrade request form, enter the Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.
 
 ### Billing
 
-An account that is within its limits is defined as using Reserved Capacity.
+An account that is within its limits is defined as using Reserved Capacity. After your trial, if you've signed up for auto-renewal, you will be billed for your plan’s daily ingest data volume.
 
-Each day you will be billed for your plan’s daily ingest data volume. Each day you can burst over the Reserved Capacity or ingest a lower amount, and at the end of the billing cycle, Sumo Logic computes the total amount for the actual usage during this time. If your actual usage exceeds the total Reserved Capacity for the billing cycle, you will be changed for usage for this difference at the on-demand rate.
+Each day, you can burst over the Reserved Capacity or ingest a lower amount, and at the end of the billing cycle, Sumo Logic computes the total amount for the actual usage during this time. If your actual usage exceeds the total Reserved Capacity for the billing cycle, you will be charged for usage for this difference at the on-demand rate.
 
 The Total Reserved Capacity (usage) is: (the actual number of days in the billing cycle) X (plan daily ingest volume).
 
@@ -87,67 +78,56 @@ For example, for 10GB/Day:
 - If the billing cycle is 30 days, the Reserved Capacity is 300GB.
 - If the billing cycle is 31 days, the Reserved Capacity is 310GB.
 
-These accounts have the following limitations:
+#### Cancelling
 
-- Because signing up through AWS Marketplace creates a new Sumo Logic organization, this option is not available for customers with existing Sumo Logic accounts.
-- Personal email addresses such as Gmail or Yahoo are not supported.
+To cancel an auto-renewal subscription, you can do this through the AWS Marketplace under **Manage subscriptions**.
 
-To sign up through AWS Marketplace:
+## What to expect after activation
 
-1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and search for Sumo Logic.<br/>  ![AWS Marketplace](/img/get-started/aws_marketplace_new.png)
-1. Select a Sumo Logic product and click **View purchase options** or **Try it for free**.<br/>  ![View purchase options](/img/get-started/aws_marketplace_view_purchase_options.png)
-1. Configure the software contract and click **Create contract**.<br/> ![Create contract](/img/get-started/aws_marketplace_create_contract.png)
-1. Finalize the software contract and click **Set up your account**.<br/>  ![AWS setup](/img/get-started/aws_marketplace_setup_new.png)
-1. You are redirected to Sumo Logic to complete your account creation:
-    - **Email** - Enter an email for your account. If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace will create a new Sumo Logic organization.
-    - **Region** - Select your region: North America, Europe, or Australia.
-    - Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
-1. Click **Sign Up**.
+What happens after activation depends on which trial you signed up for.
 
-Sumo Logic sends you an email to activate your account.
+### Agentic Free Trial
 
-### Activate your account
+Once your account is activated, you'll land in a guided onboarding experience built entirely on preloaded example data, with no setup or data ingestion required. You can:
 
-Activate your account using the email from Sumo Logic. If you did not find an email, check your Spam and Trash folders.
+* Explore the SOC Analyst Agent and Mobot.
+* Perform log searches, and visualize data through the prebuilt dashboards.
+* Invite teammates and collaborate.
 
-:::note
-You have three days to activate or it will be removed. You can sign up again if you miss activating your account.
-:::
+Because the trial runs on example data, there's no data collector to set up, and you cannot ingest your own data during the 14-day trial.
 
-To activate your Sumo Logic Trial account:
+### AWS Marketplace trial
 
-1. Locate and review the activation Sumo Logic email, then click **Activate Now**.
-1. Fill out the **Activate Your Account** form.
-1. Click **Activate**.
+Once your account is activated, you'll be guided through our personalized onboarding experience. Head to the [Quickstart guide](/docs/get-started/quickstart) to begin your Sumo Logic journey.
 
-In a few minutes, your account is activated.
+You’ll walk through step-by-step instructions to:
 
-### Upgrade your account
+* Explore **Kickstart Data**, preloaded with sample log data and dashboards so you can try out features immediately—no setup or ingestion required.
+* Perform log searches, visualize data through dashboards, and test out real-time alerts.
+* Install recommended apps from the App Catalog.
+* Invite teammates and collaborate.
+* Start ingesting your own data when you’re ready.
 
-If upgrades are allowed for your AWS account, you can upgrade your active account directly from Sumo Logic.
+Whether you’re evaluating the platform or just getting started, this hands-on experience is designed to help you quickly understand the value of Sumo Logic and get up and running with confidence.
 
-- Payment is handled by Amazon. You do not need to provide any payment information.
-- The account upgrade is independent from your AWS subscription. It increases your reserved Sumo Logic ingest volume, so you are less likely to be subject to overage charges.
+### Sign in to Sumo Logic
 
-To upgrade:
+Once you're registered for an account, you can sign in using Google SSO, your email address and password, or—if configured by your organization—an [identity provider](/docs/manage/security/saml).
 
-1. Click **Upgrade** on the left navigation pane in Sumo Logic.
-1. The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
-1. On the Upgrade request form, enter the Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.
+### Set up data collection
 
-### Cancel your account
+If you're on the AWS Marketplace trial or have upgraded to a paid plan, you can start collecting your own data. When you're ready to collect your own data:
 
-Should you decide to cancel, you can do this through AWS Marketplace.
+1. Choose your platform: AWS, Kubernetes, Linux, Windows, or macOS. This installs the OpenTelemetry collector and relevant dashboards.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
+2. For AWS, deploy a single account using a CloudFormation Template, CLI, or Terraform. For Kubernetes, Linux, Windows, or macOS, run the provided install command in your Terminal or PowerShell.
 
-1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
-1. Go to **Manage your software subscriptions** and select **Sumo Logic**.
-1. Click **Cancel subscription**.<br/>  ![AWS Cancel](/img/get-started/aws_marketplace_cancel.png)
+Once installation is complete, click **Start using Sumo**. Your data will begin flowing within a few minutes, and you’ll be guided through a step-by-step onboarding to visualize data in dashboards, run log searches, set up alerts, and more.
 
-Your subscription will be cancelled immediately.
+Alternatively, you can skip setup and browse our [App Catalog](/docs/integrations) to explore prebuilt apps with guided installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 
-## Resources
+## Additional resources
 
-* [Sumo Logic Quickstart](/docs/get-started/quickstart)
-* [Onboarding checklists](/docs/get-started/onboarding-checklists)
-* [Free Sumo Logic Training and Certification](/docs/get-started/training-certification-faq)
-* [Sumo Logic terms and conditions](https://www.sumologic.com/support-terms)
+* [Sumo Logic Quickstart Guide](/docs/get-started/quickstart)
+* [Sumo Logic Onboarding Checklists](/docs/get-started/onboarding-checklists)
+* [Sumo Logic Free Training and Certification](/docs/get-started/training-certification-faq)
+* [Sumo Logic Terms and Conditions](https://www.sumologic.com/support-terms)

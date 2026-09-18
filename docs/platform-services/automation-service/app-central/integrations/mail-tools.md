@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mail-tools.png')} alt="mail-tools" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mail-tools.png')} alt="Mail Tools icon" width="100"/>
 
 ***Version: 1.5  
 Updated: February 23, 2024***
@@ -35,12 +35,34 @@ Set of scripts for Emails to perform actions within Cloud SOAR. You can add emai
 
 * [MSG Parser](https://github.com/vikramarsid/msg_parser/blob/master/LICENSE)
 
+## Configure Mail Tools in Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* <CloudSOARAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/mail-tools-configuration.png')} style={{border:'1px solid gray'}} alt="Mail Tools configuration" width="400"/>
 
 ## Change Log
 
-* February 3, 2022 - First upload
-* January 17, 2023 - Action Email Header Regex added. Integration refactored
-* July 18, 2023 (v1.3) - Removed leading/trailing spaces
-* October 2, 2023 (v1.4) - Integration Updated
-* February 23, 2024 (v1.5)
-    + Analyze MSG EML: Updated with new Cloud SOAR API
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | February 23, 2024 | Updated the **Analyze MSG EML** action to use the new Cloud SOAR API. |
+| v1.4 | October 2, 2023 | Updated the integration. |
+| v1.3 | July 18, 2023 | Removed leading/trailing spaces. |
+| | January 17, 2023 | <ul><li>Added the **Email Header Regex** action.</li><li>Refactored the integration.</li></ul> |
+| | February 3, 2022 | Initial release of the Mail Tools integration. |

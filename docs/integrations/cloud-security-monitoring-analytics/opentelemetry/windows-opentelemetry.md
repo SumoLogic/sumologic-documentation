@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Windows icon" width="85"/>
 
 Windows - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log app that ingests distribution of Windows data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards provide insight into user accounts, login activity, and Windows updates.
 
@@ -56,6 +56,10 @@ In this step, you will configure the YAML file required for Windows event logs a
 Any custom fields can be tagged along with the data in this step.
 
 Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border: '1px solid gray'}} alt="YAML" />
 
@@ -305,3 +309,18 @@ The **WWindows - Security Monitoring - Critical Events** dashboard provides anal
 The **Windows - Security Monitoring - Inventory** dashboard helps you to monitor windows events provided by computer, channel, and provider. This dashboard also provides additional information on computer reboots.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Inventory.png' style={{border: '1px solid gray'}} alt="Windows-Security-Monitoring-Inventory" />
+
+
+## Create monitors for Windows - Cloud Security Monitoring and Analytics app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows - Cloud Security Monitoring and Analytics alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows CSMA - Audit Log Tampering Detection` | This alert is triggered when attempt is detected to clear or tamper with Windows audit logs, indicating potential attempts to cover malicious activities. | Count > = 1 | Count < 1 |
+| `Windows CSMA - Failed Authentication Spike` | This alert is triggered when unusual spikes in failed authentication attempts are detected, indicating potential brute force attacks. | Count > = 10 | Count < 10 |
+| `Windows CSMA - Windows Update Failures` | This alert is triggered when repeated Windows Update failures are detected, indicating potential vulnerabilities to known exploits. | Count > = 3 | Count < 3 |

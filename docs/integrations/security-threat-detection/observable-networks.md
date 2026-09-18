@@ -7,7 +7,7 @@ description: The Observable Networks app allows you to monitor your Observable N
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="Observable icon" width="75"/>
 
 The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The app Overview Dashboard provides insight to high-level data about your network.
 
@@ -45,7 +45,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 Create an access key:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 2. Click **Access Keys**.
 3. Add a new access key called Observable Networks, then save the new **Access ID** and **Access Key** values.
 
@@ -139,7 +139,7 @@ To parse authentication logs:
 
 ### Sample queries
 
-```sql title="Recent Flow Counts"
+```sumo title="Recent Flow Counts"
 _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_count" as type, session_count
 | where type="session_count"
 | timeslice 10m
@@ -147,7 +147,7 @@ _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_
 | order by _timeslice
 ```
 
-```sql title="Top Observation Host"
+```sumo title="Top Observation Host"
 _sourceCategory=observable
 | json field=_raw "obsrvbl_type", "source_info.name" as type, name
 | where type = "observation"
@@ -193,7 +193,7 @@ The Observable Networks Overview dashboard is intended to provide a high level a
 
 **Top Observation Hosts.** This is simple query shows the hosts (sources) with the most observation counts.
 
-## Upgrading the Observable Networks app (Optional)
+## Upgrade/Downgrade the Observable Networks app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

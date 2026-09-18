@@ -1,0 +1,28 @@
+{
+  "api.version": "v1",
+  "source": {
+    "config": {
+      "name": "OpenAI Organization Costs & Audit Logs",
+      "description": "Collects organization cost data and audit logs from OpenAI Admin API",
+      "category": "openai",
+      "fields": {
+        "_siemForward": true
+      },
+      "adminApiKey": "sk-admin-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "projectIds": ["proj_abc123", "proj_def456"],
+      "collectCost": true,
+      "apiKeyIds": ["key_abc123"],
+      "collectAuditLogs": true,
+      "eventTypes": ["api_key.created", "api_key.deleted"],
+      "actorEmails": [],
+      "actorIds": [],
+      "resourceIds": [],
+      "tenantOnly": false,
+      "auditPollingIntervalMin": "5m"
+    },
+    "schemaRef": {
+      "type": "OpenAI"
+    },
+    "sourceType": "Universal"
+  }
+}

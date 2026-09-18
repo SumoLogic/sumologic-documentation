@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudAPIGateway.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudAPIGateway.png')} alt="Google Cloud API Gateway icon" width="50"/>
 
 With API Gateway, you can create, secure, and monitor APIs for Google Cloud serverless back ends, including Cloud Functions, Cloud Run, and App Engine. For more details, refer to the [GCP documentation](https://cloud.google.com/api-gateway/docs/how-to).
 

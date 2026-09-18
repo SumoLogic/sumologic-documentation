@@ -7,7 +7,7 @@ description: The Evident.io ESP app provides pre-configured searches and dashboa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/evidentio.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/evidentio.png')} alt="Evident.io icon" width="75"/>
 
 The Evident.io ESP app provides pre-configured searches and dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
 
@@ -183,7 +183,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 
 ### Sample queries
 
-```sql title="Alerts by Status"
+```sumo title="Alerts by Status"
 _sourceCategory=security_evident
 | json "data.id", "data.attributes" as id, data_attrib
 | json "included.[0].attributes.name" as account_name
@@ -251,7 +251,7 @@ For example, use the query: `_sourceCategory=security_evident SubscribeURL`
 
 Enable Raw Message Delivery for the topic.
 
-For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html).
+For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html](https://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html).
 
 1. Select the AWS Topic.
 2. Click **Other subscription actions**.
@@ -303,7 +303,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Risks by Account.** Displays the total number of risks by account name over the last 24 hours in a column chart.
 
-## Upgrading the Evident.io ESP app (Optional)
+## Upgrade/Downgrade the Evident.io ESP app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

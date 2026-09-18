@@ -2,17 +2,18 @@
 id: geoip
 title: geoip Search Operator
 sidebar_label: geoip
+description: Use the geoip operator to match parsed IPv4 or IPv6 addresses to their geographical location for map chart visualization.
 ---
 
-Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a [map chart](/docs/dashboards/panels/map-charts). To create the map, the `geoip` operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a [map chart](/docs/dashboards/panels/map-charts). To create the map, the `geoip` operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that do not have a location, such as internal addresses, will return null values.
 
 ## Syntax
 
-```sql
-geoip <ip_address_field> [<optional_field1>, <optional_field2>...]
-```
+`geoip <ip_address_field> [<optional_field1>, <optional_field2>...]`
 
 ### Default result fields
 
@@ -25,8 +26,8 @@ geoip <ip_address_field> [<optional_field1>, <optional_field2>...]
 
 ### Optional fields
 
-Depending on how specific you’d like the output to be you can include
-all the optional fields or choose a subset:
+Depending on how specific you'd like the output to be you can include
+all the optional fields or choose a subset:
 
 * region
 * continent
@@ -36,7 +37,7 @@ all the optional fields or choose a subset:
 * state_cf
 * city_cf
 
-Details of these data fields can be found in [Neustar's documentation](https://ipintelligence.neustar.biz/portal/#documentation) under the GeoPoint Data Glossary topic.
+Details of these data fields can be found in <a href={useBaseUrl('files/IP-Geo-Point-Data-Glossary.pdf')} target="_blank">Neustar's documentation</a> under the GeoPoint Data Glossary topic.
 
 ## Syntax to Map
 
@@ -44,7 +45,7 @@ To map the IP addresses properly you must [count](/docs/search/search-query-lang
 
 Your query should use the following syntax:
 
-```sql
+```
 | parse "[ip_fieldname]" as [ip_address]
 | geoip ip_address
 | count by latitude, longitude, [other geo_locator fields]
@@ -59,15 +60,16 @@ This syntax produces aggregate results, so you can add a map to a Dashboard.
 
 ## Examples
 
+### Map IP addresses by count
+
 Sample log message:
 
-```
-2017-12-13 10:29:17,037 -0800 INFO [hostId=prod-frontend-1] [module=SERVICE] [logger=service.endpoint.auth.v1.impl.AuthenticationServiceDelegate [thread=btpool0-8] [remote_ip=67.180.85.25] Successful login for user 'da@users.com', organization: '0000000000000005
-```
+`2017-12-13 10:29:17,037 -0800 INFO [hostId=prod-frontend-1] [module=SERVICE] [logger=service.endpoint.auth.v1.impl.AuthenticationServiceDelegate [thread=btpool0-8] [remote_ip=67.180.85.25] Successful login for user 'da@users.com', organization: '0000000000000005`
 
 Using logs that match the example log format, running a query like this:
 
-```sql
+```sumo
+_sourceCategory=service remote_ip
 | parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
 | count by latitude, longitude
@@ -76,34 +78,28 @@ Using logs that match the example log format, running a query like this:
 
 would produce the following results:
 
-![geo lookup world map.png](/img/search/searchquerylanguage/search-operators/geo-lookup-world-map.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/geo-lookup-world-map.png')} alt="Geo lookup world map" style={{border: '1px solid gray'}} width="800" />
 
 ### View map of geoip results
 
-Enter a query that parses the IP field from your logs, a **geoip** operator to match IP addresses and return geolocation fields you’d like to use to chart each IP address.
+Enter a query that parses the IP field from your logs, a **geoip** operator to match IP addresses and return geolocation fields you'd like to use to chart each IP address.
 
-1. By default, results display as a table:  
-
-    ![geo lookup results fields.png](/img/search/searchquerylanguage/search-operators/geo-lookup-results-fields.png)
-
-1. Click the **Map** icon in the **Aggregates** tab. The map displays:  
-
-    ![map icon location.png](/img/search/searchquerylanguage/search-operators/map-icon-location.png)
+1. By default, results display as a table:<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/geo-lookup-results-fields.png')} alt="Geo lookup results fields" style={{border: '1px solid gray'}} width="800" />
+1. Click the **Map** icon in the **Aggregates** tab. The map displays:<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/map-icon-location.png')} alt="Map icon location" style={{border: '1px solid gray'}} width="800" />
 
 1. Do any of the following:
 
    * Use the zoom slider to zoom in or out on an area of the map. Alternately, click and drag to zoom in or see different areas of a map.
-   * Click any marker on the map to see more detail about where IPs originate in a specific area:  
+   * Click any marker on the map to see more detail about where IPs originate in a specific area:<br/><img src={useBaseUrl('img/search/searchquerylanguage/search-operators/click-map-marker-with-zoomed-results.png')} alt="Click map marker with zoomed result" style={{border: '1px solid gray'}} width="800" />
 
-       ![click map marker with zoomed results.png](/img/search/searchquerylanguage/search-operators/click-map-marker-with-zoomed-results.png)
+1. (Optional) Click **Add to Dashboard** to create a new Dashboard or add the map to an existing Dashboard. After adding a map to a Dashboard you will still be able to zoom in and drill down on the data.
 
-1. (Optional) Click **Add to Dashboard** to create a new Dashboard or add the map to an existing Dashboard. After adding a map to a Dashboard you will still be able to zoom in and drill down on the data.
+### Return optional fields
 
-### Optional fields
+This example returns the optional fields region, continent, and postal_code:
 
-This example returns the optional fields region, continent, and postal_code.
-
-```sql
+```sumo
+_sourceCategory=service remote_ip
 | parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
 | count by latitude, longitude, region, continent, postal_code
@@ -111,11 +107,12 @@ This example returns the optional fields region, continent, and postal_code.
 
 ### Handle null values
 
-To find a mismatch from a geo lookup operator query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
+To find a mismatch from a geo lookup operator query, use the [isNull](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) operator.
 
 For example, running a query like:
 
-```sql
+```sumo
+_sourceCategory=service remote_ip
 | parse "remote_ip=*]" as remote_ip
 | geoip remote_ip
 | if (isNull(country_code), "unknown", country_code) as country_code
@@ -123,4 +120,4 @@ For example, running a query like:
 
 returns results similar to:
 
-![isNull.png](/img/search/searchquerylanguage/search-operators/isNull.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/isNull.png')} alt="isNull" style={{border: '1px solid gray'}} width="600" />

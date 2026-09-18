@@ -4,13 +4,16 @@ resource "sumologic_cloud_to_cloud_source" "microsoft-exchange-trace-logs" {
     type = "MS Exchange Trace Logs"
   }
   config = jsonencode({
-    "app_client_id": "client_id",
-    "directory_tenant_id": "tenant_id",
-    "client_secret": "secret",
-    "authorization_code": "code",
-    "polling_interval": 300,
-    "time_offset": 3600
-  })
+  "name": "CONN-5593",
+  "description":"Microsoft Exchange Trace Logs",
+    "fields":{
+      "_siemForward":false
+    },
+  "clientID": "client_id",
+  "tenantID": "tenant_id",
+  "clientSecret": "client_secret",
+  "pollingIntervalMin": "5m"
+})
 }
 resource "sumologic_collector" "collector" {
   name        = "my-collector"

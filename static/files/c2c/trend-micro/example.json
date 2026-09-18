@@ -1,0 +1,17 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+                    "name": "Trend Micro Vision One",
+                    "description": "To collect data from trend Micro Vision",
+                    "category": "category",
+                    "apiBaseUrl": "api.xdr.trendmicro.com",
+                    "authToken": "eYBXxxxxxxxxxxxxxxxxxx1233x",
+                    "pollingInterval": 15
+		},
+		"schemaRef": {
+            		"type": "Trend Micro Vision One"
+        	},
+        	"sourceType": "Universal"
+	}
+}

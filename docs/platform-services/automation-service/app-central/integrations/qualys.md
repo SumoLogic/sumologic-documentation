@@ -44,10 +44,39 @@ Launch and manage scans and utilize Qualys scan data to enrich incident artifact
 
 * [xmltodict](https://github.com/martinblech/xmltodict/blob/master/LICENSE)
 
+## Configure Qualys in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Qualys API Server**. Enter your [Qualys API server URL](https://docs.qualys.com/en/edr/api/#t=getting_started%2Fapi_conventions.htm), for example, `https://qualysapi.qg2.apps.qualys.eu/`.
+
+* **Username**. Enter the username of a Qualys admin user authorized to authenticate the integration.
+
+* **Password**. Enter the password for the admin user.
+
+* **API X-Requested-With**. Enter the "X-Requested-With" header to use with [authentication](https://docs.qualys.com/en/vm/api/scanauth/get_started/authentication.htm).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/qualys-configuration.png')} style={{border:'1px solid gray'}} alt="Qualys configuration" width="400"/>
+
+For information about Qualys, see [Qualys documentation](https://www.qualys.com/documentation/).
+
 ## Change Log
 
-* February 21, 2020 - First upload
-* September 2, 2020 - New actions added
-* July 21, 2023 (v1.2) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.3) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v1.4) - Versioning
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | September 19, 2023 | Versioned the integration. |
+| v1.3 | September 4, 2023 | Fixed a bug where an error would occur if the timeout was not specified. |
+| v1.2 | July 21, 2023 | Updated the integration with Environmental Variables. |
+| | September 2, 2020 | Added new actions. |
+| | February 21, 2020 | Initial release of the Qualys integration. |
