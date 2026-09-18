@@ -54,7 +54,7 @@ You can switch back to the list view by clicking the **Show List** icon, near th
 You can use the **Filters** area near the top of the page to narrow down the insights that appear on the insights page. You can filter by:
 
 * **Assignee**. The user the insight is assigned to.
-* **Custom resolution**. A [custom sub-resolution](/docs/cse/administration/manage-custom-insight-resolutions/#about-insight-resolutions) applied when a closed insight was resolved. To use this filter, ensure the **Status** filter isn't set to "is not closed", since only closed insights have a resolution.
+* **Custom resolution**. A [custom sub-resolution](/docs/cse/administration/manage-custom-insight-resolutions/#about-insight-resolutions) applied when a closed insight was resolved. To use this filter, ensure the **Status** filter is not set to "is not closed", since only closed insights have a resolution.
 * **Created**. The date and time the insight was created.
 * **Entity**. The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities) the insight is associated with (its primary entity).
 * **Event Time**. The date and time of the event associated with the insight's signals, as opposed to when the insight itself was created.
