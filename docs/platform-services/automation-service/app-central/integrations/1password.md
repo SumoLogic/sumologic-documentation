@@ -6,10 +6,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/1Password.png')} alt="1Password" width="80"/>
 
-***Version: 1.3  
-Updated: June 18, 2026***
+***Version: 1.4  
+Updated: Sep 22, 2026***
 
-1Password's User Management API using OAuth2 authentication. It supports user management operations including listing, retrieving, suspending, and reactivating users.
+[1Password's](https://1password.com/) User Management API using OAuth2 authentication. It supports user management operations including listing, retrieving, suspending, and reactivating users.
 
 ## Actions
 
@@ -66,9 +66,10 @@ Identity and Access Management
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.4 | Sep 22, 2026 | Migrated to 1Password v1 APIs, improved integration stability, and added filtering support to the **List Users** action. |
 | v1.3 | June 18, 2026 | Updated the integration to allow 1Password to identify API calls from the Sumo Logic integration in their logs for easier tracking and troubleshooting. |
 | v1.2 | April 8, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| | Mar 17, 2026 | Initial release of the 1Password integration. |
+| v1.1 | Mar 17, 2026 | Initial release of the 1Password integration. |
 
 ## Additional resources
 
