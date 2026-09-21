@@ -62,6 +62,21 @@ You need the exact MCP server URL that matches your deployment, because OAuth to
 The MCP server is not currently supported in our Zurich or AWS European Sovereign Cloud deployments.
 :::
 
+### Use your org subdomain in the MCP server URL
+
+If your org uses a [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-custom-subdomain) for login, you can add it to the front of the MCP server URL. When an MCP client authenticates with [CIMD](#how-to-enable-cimd-for-mcp-clients), Sumo Logic sends users directly to your org's login page instead of asking them to enter the subdomain first. This is especially useful when your org signs in with SAML on a subdomain.
+
+To build the URL, add `<subdomain>.` before the host name in your deployment's URL from the [table above](#mcp-server-url-for-your-deployment):
+
+| Deployment URL | URL with subdomain |
+| :--- | :--- |
+| `https://mcp.sumologic.com/mcp` | `https://<subdomain>.mcp.sumologic.com/mcp` |
+| `https://mcp.us2.sumologic.com/mcp` | `https://<subdomain>.mcp.us2.sumologic.com/mcp` |
+
+For example, if your subdomain is `acme` and your org is in US West (Oregon), use `https://acme.mcp.us2.sumologic.com/mcp`.
+
+Subdomain URLs are available in all deployments that support the MCP server.
+
 ### MCP-compatible client
 
 The client must support remote HTTP/SSE transport and OAuth 2.0. The setup steps below use the [Claude Code CLI](https://code.claude.com/docs/en/quickstart), which requires a paid Claude subscription or an Anthropic Console account.
@@ -139,7 +154,7 @@ Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an admini
    ```
 1. In Claude Code, run `/mcp`.
 1. Select **sumo-logic** and then **Authenticate**.
-1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
+1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If you registered the server with a [subdomain URL](#use-your-org-subdomain-in-the-mcp-server-url), the browser opens your org's login page directly. Otherwise, if your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [What MCP tools are available?](#what-mcp-tools-are-available)
 
