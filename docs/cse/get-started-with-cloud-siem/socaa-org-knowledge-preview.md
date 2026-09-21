@@ -47,16 +47,11 @@ Knowledge falls into three themes. Each one spans both the facts you would tell 
 | **Historical learning and team judgment** | Specific past incidents, and the recurring patterns your team has learned to recognize. | `The Nov 12 spike was resolved by rotating API credentials.` <br/> `Friday brute-force spikes are usually the scheduled pentest.` |
 | **Operational practices and workflows** | How your organization decides what to do, and the steps your team takes. | `PII gets escalated straight to the security lead; we skip the ticket queue.` <br/> `Impossible-travel alert, verify identity history, then open a ticket.` |
 
-You can attach a supporting file to any of these, such as a runbook, an escalation matrix, a list of known false positives, or a postmortem.
-
 ## Add knowledge
 
 During Private Preview, your account team points you to the settings. Knowledge is managed on the Dojo AI **Agent Settings** page, in the **Knowledge** section for the SOC Analyst Agent.
 
-You add an item in one of two ways:
-
-* **Type a note**. Write the fact, pattern, or practice in plain language.
-* **Upload a file**. Attach a PDF, TXT, or Markdown file, with an optional note describing what it covers.
+You add an item by typing a note. Write the fact, pattern, or practice in plain language.
 
 ### Guardrails on submit
 
@@ -83,14 +78,13 @@ Instead of editing fields directly, you can describe a correction, an added deta
 
 ## Keep your knowledge current
 
-Raw entries on the same topic are synthesized into readable paragraphs, each linking back to the notes and files it came from. A separate page lets you search and verify everything the agent has been told.
+Raw entries on the same topic are synthesized into readable paragraphs, each linking back to the notes it came from. A separate page lets you search and verify everything the agent has been told.
 
 The agent also helps you keep that knowledge healthy. These signals are passive. They appear on the knowledge summary page, never as an interruption during capture or investigation, and resolving them is always your action.
 
 * **Staleness**. Facts in categories that go out of date, such as schedules, requirements, and precedents, are flagged when they have not been re-verified in 90 days, with a one-click **Confirm** or **Update**.
 * **Redundancy**. A new entry that overlaps heavily with an existing one on the same topic is offered as a merge, never merged automatically.
 * **Flag as wrong**. Any stored item can be marked incorrect, with an optional note.
-* **Re-upload**. A file-sourced item can have its source file swapped without losing its place in the record.
 
 ## What is included in Private Preview
 
@@ -113,17 +107,13 @@ Some limits are not tied to the preview phase:
 
 ## Permissions and data access
 
-Adding or changing knowledge requires administrator configuration. Your typed notes and uploaded files are stored as organizational knowledge for the SOC Analyst Agent.
+Adding or changing knowledge requires administrator configuration. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
 
 Knowledge should describe your environment, not carry access to it.
 
 Compliance and security reviews go through the standard review path with your account team.
 
 ## FAQ
-
-### How is this different from the agent learning from past investigations?
-
-The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#does-the-agent-learn-from-past-investigations) does not learn on its own. Knowledge is the supported way to give it durable context. You author it deliberately, you can see everything it holds, and you can correct or remove any item.
 
 ### What should I add first?
 
