@@ -11,7 +11,7 @@ This documentation walks you through migrating an existing [AWS Observability Cl
 
 :::danger
 - This guide supports only active AWSO versions listed [here](/docs/observability/aws/deploy-use-aws-observability/changelog/#awso-lifecycle)
-- Migration script generates a state file. Please do not delete or lose this file until the migration is complete.
+- Migration script generates a params or state file. Please do not delete or lose this file until the migration is complete.
 - Ensure that the account aliases used in your v2.x.x deployment are carried over during migration. The same aliases will be reused in v3.0.0.
 
 - During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Please refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
