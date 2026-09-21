@@ -12,18 +12,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="40" />
 
-The Sumo Logic source for Claude Compliance enables you to collect chat messages and activity logs from Claude into Sumo Logic.
+The Sumo Logic source for Claude Compliance enables you to collect chat messages, activity logs, and local session messages from Claude into Sumo Logic.
 
 Claude provides advanced AI solutions for enterprises, offering secure, compliant, and customizable conversational AI capabilities to improve productivity while meeting organizational governance and regulatory needs.
 
-The Compliance API enables enterprise customers to access structured chat logs, activity events, and metadata to support auditing, compliance, and security requirements.
+The Compliance API enables enterprise customers to access structured local session logs, chat logs, activity events, and metadata to support auditing, compliance, and security requirements.
+
+:::info
+
+Anthropic is making changes to its Chats API that may affect chat data collection for Claude Compliance Source **1.x.x** version starting **September 22, 2026**. If you are using Claude Compliance Source **1.x.x**, you may experience an interruption in chat data collection after the changes take effect. To avoid any interruption, **upgrade your source to version 2.x.x before September 22, 2026**.
+
+For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions). For more information about the Anthropic API change, see [List Chats](https://platform.claude.com/docs/en/api/http/compliance/apps/chats/list).
+
+:::
 
 ## Data collected
 
-| Polling Interval | Data |
-|:--|:--|
-| 5 min | [Chat Messages](https://platform.claude.com/docs/en/manage-claude/compliance-content-data#retrieve-chats-and-messages) |
-| 5 min | [Activity Logs](https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed) |
+| Polling Interval | Data                                                                                                                   |
+| :--------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| 5 min            | [Chat Messages](https://platform.claude.com/docs/en/manage-claude/compliance-content-data#retrieve-chats-and-messages) |
+| 5 min            | [Activity Logs](https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed)                            |
+| 5 min            | [Local Session Messages](https://platform.claude.com/docs/en/api/http/compliance/apps/sessions/local/messages/list)    |
 
 ## Setup
 
@@ -40,9 +49,10 @@ You are required to provide the **Organization UUID** and **API Key** to configu
 #### Steps to generate API Key
 
 Keys are created in the **Compliance access keys** section of **Data Management Settings**.
+
 1. Click **Create key** to name your key.
 2. Name the key and select its scopes based on the data you want to collect:
-   - **read:compliance_user_data**. Required to collect chat messages.
+   - **read:compliance_user_data**. Required to collect chat messages and local session messages.
    - **read:compliance_activities**. Required to collect activity logs.
 3. Receive a secret access key and store it securely.
 
@@ -53,28 +63,30 @@ If you do not see the Compliance access keys section, it means that either you a
 ### Source configuration
 
 :::note
-This source can collect both chat messages and activity logs. You can enable or disable each data type independently using the **Data Collection** settings described in the configuration steps below.
+This source can collect chat messages, activity logs, and local session messages. You can enable or disable each data type independently using the **Data Collection** settings described in the configuration steps below.
 :::
 
 When you create a Claude Compliance Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Claude Compliance Source, follow the steps below:
+
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Claude Compliance**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and a value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema, it is ignored, known as dropped.
+   - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema, it is ignored, known as dropped.
 1. **Organization UUID**. Enter the Organization UUID collected from the [Claude Console](#vendor-configuration).
 1. **API Key**. Enter the API Key generated from the [Claude Console](#vendor-configuration).
 1. **Polling Interval**. The polling interval is set for 5 minutes by default and can be configured to a maximum of 24 hours. You can adjust it based on your needs. This sets how often the source checks for new data.
 1. **Data Collection**. Choose what types of data to collect. At least one must be selected.
    - **Collect Chat Messages**. Selected by default. Collects conversation messages from Claude chats.
    - **Collect Activities**. Collects compliance activity events covering authentication, chat, file, project, administrative, and platform actions. For the full list of activity types, see [Query the Activity Feed](https://platform.claude.com/docs/en/api/compliance/activities/list) in the Claude documentation.
-1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
-1. When you are finished configuring the Source, click **Save**.
+   - **Collect Local Session Messages**. Collects transcripts from local product surfaces such as Claude Code, Cowork, and other, using the [Local Session Messages](https://platform.claude.com/docs/en/api/http/compliance/apps/sessions/local/messages/list) API.
+2. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
+3. When you are finished configuring the Source, click **Save**.
 
 :::info
 After configuring the Claude Compliance source, consider installing the Sumo Logic app for [Claude Compliance](/docs/integrations/saas-cloud/claude-compliance/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
@@ -84,25 +96,26 @@ After configuring the Claude Compliance source, consider installing the Sumo Log
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
-| Parameter | Type | Value | Required | Description |
-|:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"Claude Compliance"}` | Yes | Define the specific schema type. |
-| sourceType | String | `"Universal"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+| Parameter  | Type        | Value                                         | Required | Description                      |
+| :--------- | :---------- | :-------------------------------------------- | :------- | :------------------------------- |
+| schemaRef  | JSON Object | `{"type":"Claude Compliance"}`                | Yes      | Define the specific schema type. |
+| sourceType | String      | `"Universal"`                                 | Yes      | Type of source.                  |
+| config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
 
 ### Configuration Object
 
-| Parameter | Type | Required | Default | Description | Example |
-|:--|:--|:--|:--|:--|:--|
-| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
-| description | String | No | `null` | Type a description of the source. | `"Testing source"` |
-| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.| `{"_siemForward": false, "fieldA": "valueA"}` |
-| orgUUID | String | Yes | `null` | Your Organization UUID from Claude Console. | fbc16730-e0af-40gg-a0be-6057d1741b97 |
-| apiKey | String | Yes | `null` | API Key of the account. | sk-ant-XXXXXXXXXXXXXXX |
-| pollingIntervalMinutes | String | Yes | `5 minutes` | Time interval (in minutes) after which the source will check for new data. | 5m |
-| collectChatMessages | Boolean | No | `true` | Enable collection of chat conversation messages. At least one of `collectChatMessages` or `collectActivities` must be `true`. | `false` |
-| collectActivities | Boolean | No | `false` | Enable collection of compliance activity events. At least one of `collectChatMessages` or `collectActivities` must be `true`. | `true` |
+| Parameter              | Type        | Required | Default     | Description                                                                                                                                                                                                                              | Example                                       |
+| :--------------------- | :---------- | :------- | :---------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------- |
+| name                   | String      | Yes      | `null`      | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.                                | `"mySource"`                                  |
+| description            | String      | No       | `null`      | Type a description of the source.                                                                                                                                                                                                        | `"Testing source"`                            |
+| category               | String      | No       | `null`      | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`                             |
+| fields                 | JSON Object | No       | `null`      | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field \_siemForward to enable forwarding to SIEM.                                                                                           | `{"_siemForward": false, "fieldA": "valueA"}` |
+| orgUUID                | String      | Yes      | `null`      | Your Organization UUID from Claude Console.                                                                                                                                                                                              | fbc16730-e0af-40gg-a0be-6057d1741b97          |
+| apiKey                 | String      | Yes      | `null`      | API Key of the account.                                                                                                                                                                                                                  | sk-ant-XXXXXXXXXXXXXXX                        |
+| pollingIntervalMinutes | String      | Yes      | `5 minutes` | Time interval (in minutes) after which the source will check for new data.                                                                                                                                                               | 5m                                            |
+| collectChatMessages    | Boolean     | No       | `true`      | Enable collection of chat conversation messages. At least one of `collectChatMessages`, `collectActivities`, or `collectLocalSession` must be `true`.                                                                                    | `false`                                       |
+| collectActivities      | Boolean     | No       | `false`     | Enable collection of compliance activity events. At least one of `collectChatMessages`, `collectActivities`, or `collectLocalSession` must be `true`.                                                                                    | `true`                                        |
+| collectLocalSession    | Boolean     | No       | `false`     | Enable collection of local session messages from products such as Claude Code and Cowork. At least one of `collectChatMessages`, `collectActivities`, or `collectLocalSession` must be `true`.                                           | `true`                                        |
 
 ### JSON example
 
@@ -144,10 +157,11 @@ If the source returns the following error:
 ```
 
 This error can occur due to the following reasons:
+
 - **Invalid or incorrect API key**. Verify that the API key configured for the source is correct and valid.
 - **Valid API key, error persists**. If the API key is confirmed valid but the error still occurs, past investigations have traced this to an issue on the Anthropic endpoint side. In this case:
-   - Restart the source and confirm whether it resumes working as expected.
-   - If the error still persists after restarting, contact the Anthropic support team regarding this issue.
+  - Restart the source and confirm whether it resumes working as expected.
+  - If the error still persists after restarting, contact the Anthropic support team regarding this issue.
 
 ## FAQ
 
