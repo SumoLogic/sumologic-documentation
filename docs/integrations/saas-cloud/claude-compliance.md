@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="50"/>
 
-The Sumo Logic app for Claude Compliance provides security, compliance, and operations teams with centralized visibility into Claude platform and local session activity, covering API usage, authentication events, billing operations, data access, integrations, SSO, policy changes, and Claude local session interactions. It includes prebuilt dashboards for local sessions, messages, and tool activity so teams can monitor user behavior, model usage, workspace context, and tool execution outcomes. Prebuilt dashboards and detection monitors help you identify suspicious behavior, investigate threats, and maintain governance across your Claude environment.
+The Sumo Logic app for Claude Compliance provides security, compliance, and operations teams with centralized visibility into Claude platform and local session activity, covering API usage, authentication events, billing operations, data access, integrations, SSO, policy changes, and Claude local session interactions. It includes prebuilt dashboards for local sessions, messages, and tool activity so teams can monitor user behavior, model usage, workspace context, and tool execution outcomes, alongside detection monitors that help you identify suspicious behavior, investigate threats, and maintain governance across your Claude environment.
 
 ## Log types
 
@@ -158,6 +158,19 @@ _sourceCategory="claude_compliance" "claude_chat_msg"
 | where model matches "{{model}}" or isBlank(model)
 | where message_type matches "{{message_type}}" or isBlank(message_type)
 | where message_value contains "{{message}}" or "{{message}}" == "*"
+| where !isBlank(role)
+| count by message_id, role
+| count by role
+| sort by _count, role
+```
+
+```sumo title="Local Session Messages by Role"
+_sourceCategory="claude_compliance" "compliance_local_session_message"
+| json "session.id", "session.product_surface", "session.user.email_address", "message.id", "message.role", "message.model", "message.content[0].type" as session_id, product_surface, user_email, message_id, role, model, message_type nodrop
+| where user_email matches "{{user}}" or isBlank(user_email)
+| where role matches "{{role}}" or isBlank(role)
+| where model matches "{{model}}" or isBlank(model)
+| where product_surface matches "{{product_surface}}" or isBlank(product_surface)
 | where !isBlank(role)
 | count by message_id, role
 | count by role
