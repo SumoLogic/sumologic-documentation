@@ -9,4 +9,4 @@ keywords:
   - oauth
 ---
 
-The [Sumo Logic MCP Server](/docs/api/mcp-server) now supports [subdomain URLs](/docs/api/mcp-server#use-your-org-subdomain-in-the-mcp-server-url) in all deployments that support the MCP server. When you add your org's subdomain to the MCP server URL, MCP clients that authenticate with CIMD send users directly to your org's login page, so they no longer enter the subdomain manually first. This is especially useful for orgs that sign in with SAML on a subdomain.
+The [Sumo Logic MCP Server](/docs/api/mcp-server) now supports [subdomain URLs](/docs/api/mcp-server#how-to-use-your-org-subdomain-in-the-mcp-server-url) in all deployments that support the MCP server. When you add your org's subdomain to the MCP server URL, MCP clients that authenticate with CIMD send users directly to your org's login page, so they no longer enter the subdomain manually first. This is especially useful for orgs that sign in with SAML on a subdomain.
