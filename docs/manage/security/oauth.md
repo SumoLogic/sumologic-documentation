@@ -6,6 +6,7 @@ description: Set up OAuth authentication to securely connect external applicatio
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 OAuth 2.0 enables secure authentication between Sumo Logic and external applications without sharing passwords. Use OAuth to connect AI tools, custom integrations, and third-party services to your Sumo Logic account.
 
@@ -40,7 +41,57 @@ An administrator needs to enable CIMD for your organization before clients can u
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
 1. Select the **Enable CIMD Clients** check box.
+1. (Optional) Select **Restrict to pre-registered clients only** to prevent Sumo Logic from automatically creating new CIMD clients. See [Restrict CIMD to pre-registered clients](#restrict-cimd-to-pre-registered-clients).<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients and Restrict to pre-registered clients only check boxes selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
 1. Click **Save**.
+
+By default, Sumo Logic creates a CIMD client the first time a user connects with a new client metadata URL.
+
+### Restrict CIMD to pre-registered clients
+
+When you select **Restrict to pre-registered clients only**, CIMD stays enabled but Sumo Logic no longer creates CIMD clients automatically. Only CIMD clients that an administrator has already created can connect. Use this option to allow a specific set of CIMD clients in your organization. To do so, select the option, and then [manually create a CIMD client](#manually-create-a-cimd-client) for each client your users are allowed to use.
+
+### Manually create a CIMD client
+
+Administrators can create a CIMD client at any time, whether or not **Restrict to pre-registered clients only** is selected. You need the CIMD URL of the client you want to allow.
+
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click **+ Add OAuth Client**.
+1. For **Client Type**, select **CIMD Authorization Code**.<br/><img src={useBaseUrl('img/api/mcp/create-cimd-oauth-client.png')} alt="Create OAuth Client dialog with CIMD Authorization Code selected as the client type" style={{border: '1px solid gray'}} width="800" />
+1. For **Client ID URL**, enter the HTTPS URL of the client's metadata document, for example `https://example.com/oauth/client-metadata`.
+1. (Optional) Enter a **Description**.
+1. Under **Scopes**, click **Apply MCP Scopes** to automatically select the scopes MCP clients need. To select scopes individually instead, expand a category and select or clear specific scopes.
+1. Click **Save**.
+
+The following table lists CIMD URLs for common clients.
+
+| Client | CIMD URL |
+| :--- | :--- |
+| VS Code | `https://vscode.dev/oauth/client-metadata.json` |
+| Claude Code | `https://claude.ai/oauth/claude-code-client-metadata` |
+| Claude Desktop | `https://claude.ai/oauth/mcp-oauth-client-metadata` |
+| Codex | `https://chatgpt.com/oauth/codex/client.json` |
+| Google Antigravity | `https://antigravity.google/oauth/client-metadata.json` |
+
+### Edit CIMD scopes
+
+Administrators can edit the scopes of an existing CIMD client on the **OAuth Clients** page.
+
+1. Go to **Administration** > **Account Security Settings** > **OAuth Clients**.
+1. Click the client's row, and then click **Edit**.
+1. Under **Scopes**, expand a category and select or clear the **View** and **Manage** check boxes for each resource.<br/><img src={useBaseUrl('img/api/mcp/edit-cimd-oauth-client-scopes.png')} alt="Edit OAuth Client dialog for a CIMD client showing the Alerting scope category expanded with View and Manage check boxes" style={{border: '1px solid gray'}} width="800" />
+1. Click **Save**.
+
+The **Client Type** and **Client ID URL** of a CIMD client can't be changed after it's created.
+
+### Clear scopes on the consent page
+
+When a user authorizes a CIMD client, Sumo Logic shows a consent page listing the scopes the client requested, grouped by category. The user can expand a category and clear individual **View** or **Manage** check boxes before clicking **Allow**, to grant the client less access than it requested.<br/><img src={useBaseUrl('img/api/mcp/consent-page-scopes.png')} alt="Consent page for a CIMD client with the Alerting scope category expanded, showing individual View and Manage check boxes" style={{border: '1px solid gray'}} width="800" />
+
+Effective permissions remain the intersection of the user's roles and the granted scopes, as described in [How permissions work](#how-permissions-work).
+
+### CIMD client icons
+
+Sumo Logic displays a client's icon next to its name on the **OAuth Clients**, consent, and **Personal Authorized Apps** pages, if the client's metadata document includes a `logo_uri` field (a URL pointing to an icon image). This depends on the client, not on any Sumo Logic setting; clients that don't publish a `logo_uri` show no icon.<br/><img src={useBaseUrl('img/api/mcp/oauth-clients-icons.png')} alt="OAuth Clients list showing icons next to Visual Studio Code, Codex, and Google Antigravity, and no icon next to Claude Code" style={{border: '1px solid gray'}} width="800" />
 
 Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [How to set up MCP without CIMD](/docs/api/mcp-server#how-to-set-up-mcp-without-cimd) for the MCP server.
 

@@ -112,7 +112,9 @@ Disabling the MCP server prevents MCP clients from connecting, but does not dele
 CIMD is the recommended authentication mechanism for MCP clients and is disabled by default. An administrator needs to enable it for your organization before clients can authenticate.
 
 1. In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
-1. Select the **Enable CIMD Clients** check box.<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients check box selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
+1. Select the **Enable CIMD Clients** check box.<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients and Restrict to pre-registered clients only check boxes selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
+
+To allow only specific MCP clients, select **Restrict to pre-registered clients only** under **OAuth Clients**, and then manually create a CIMD client for each MCP client you want to allow. For steps and CIMD URLs for common clients, see [Manually create a CIMD client](/docs/manage/security/oauth#manually-create-a-cimd-client).
 
 For how Sumo Logic implements OAuth 2.0 and CIMD in more detail, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
 
