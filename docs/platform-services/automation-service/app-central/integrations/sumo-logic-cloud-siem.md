@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.18  
-Updated: July 22, 2026***
+***Version: 1.19  
+Updated: September 21, 2026***
 
 
 This [automation integration](/docs/platform-services/automation-service/app-central/integrations/) utilizes Cloud SIEM entities to correlate signals and insights. This integration requires authentication. (Because the [Sumo Logic Cloud SIEM Internal](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem-internal/) integration operates internally with Sumo Logic, no additional authentication is needed.)
@@ -26,11 +26,13 @@ For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/ge
 * **Add Tag To Insight** *(Notification)* - Add tags to the Insight.
 * **Assign User To Insight** *(Notification)* - Add specific user to an Insight.
 * **Check Insight Status Schedule** *(Scheduled)* - Schedule action that periodically checks if the Insight is closed.
+* **Check Insight Triage Schedule** *(Scheduled)* - Scheduled action that periodically polls the triage status of an Insight until a terminal verdict is reached.
 * **Close Insight Trigger** *(Trigger)* - Trigger action that is executed whenever an Incident is closed.
 * **Create Insight From Signals** *(Notification)* - Create Insight From Signal IDs.
 * **Get Entity** *(Enrichment)* - Get Entity details.
 * **Get Insight** *(Enrichment)* - Get Insight details.
 * **Get Insight Comments** *(Enrichment)* - Get comments for an Insight.
+* **Get Insight Triage** *(Enrichment)* - Get triage details for an Insight.
 * **Get Insight V2** *(Enrichment)* - Get Insight details v2.
 * **Get Signal** *(Enrichment)* - Get Signal details.
 * **List Entities** *(Enrichment)* - List Entities.
@@ -101,27 +103,28 @@ SIEM
 
 ## Change Log
 
-| Version | Date | Description |
-|:--|:--|:--|
-| v1.18 | July 22, 2026 | <ul><li>Improved integration reliability and handling of API rate limits with better edge case support.</li><li>Enhanced error messages with more descriptive details for easier troubleshooting.</li><li>Deprecated the **Add Relation To Insight** action.</li></ul> |
-| v1.17 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.16 | April 3, 2026 | Fixed output field mapping for nested fields with dots in field names in the **Get Signal** and **List Signals** actions. |
-| v1.15 | January 6, 2025 | Added a new action: **Add Match List Item**. |
-| v1.14 | July 3, 2024 | Updated `check_not_null_field` in the **Close Insight Trigger**. |
-| v1.13 | April 8, 2024 | Updated the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL." |
-| v1.12 | April 5, 2024 | <ul><li>Renamed the integration from "Sumo Logic CSE" to "Sumo Logic Cloud SIEM."</li><li>Added a new field, API Rate Limit Sleep, to the Integration resource (if the API rate limit is exceeded, the integration waits for 1 second and then retries, with a maximum wait time of 10).</li><li>Added new actions: **Get Match List**, **List Match List Items**, **List Match List**, and **Sumo Logic Match List Items Daemon**.</li><li>Added three fields to the Integration resource for the **Close Insight Trigger**: Custom Field Internal Name, Resolution Status, and Closure Comments.</li></ul> |
-| v1.11 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
-| v1.10 | February 7, 2024 | Fixed an issue in the **Add Comment To Insight** action where line breaks in the Insight Comment field were removed upon submission. |
-| v1.9 | December 12, 2023 | <ul><li>Added a new action: **Create Insight From Signals**.</li><li>Updated the **Add Enrichment Insight**, **Add Enrichment Entity**, and **Add Enrichment Signal** actions: text information can now be included as enrichment, the enrichment field now accepts either output.raw or any other JSON format, added fields reputation, expiresAt, and externalUrl, and updated the *Fields Name/Path To Extract* field to allow extracting values from JSON by either Path or Field Name.</li></ul> |
-| v1.8 | November 24, 2023 | <ul><li>Updated the **Sumo Logic Insights Daemon Extended** and **Sumo Logic Insights Daemon** so the query now retrieves data from the past 1 hour instead of 24 hours.</li><li>Expanded output mappings for the following actions/daemons: **Get Signal**, **Get Insight V2**, **Sumo Logic Signals Daemon**, **Sumo Logic Insights Daemon**, and **Sumo Logic Insights Daemon Extended**.</li></ul> |
-| v1.7 | October 4, 2023 | Updated the **Sumo Logic Insights Daemon**. |
-| v1.6 | October 3, 2023 | Updated the **Sumo Logic Insights Daemon Extended**. |
+| Version | Date               | Description |
+|:--|:-------------------|:--|
+| v1.19 | September 21, 2026  | Added new actions: **Get Insight Triage** and **Check Insight Triage Schedule**. |
+| v1.18 | July 22, 2026      | <ul><li>Improved integration reliability and handling of API rate limits with better edge case support.</li><li>Enhanced error messages with more descriptive details for easier troubleshooting.</li><li>Deprecated the **Add Relation To Insight** action.</li></ul> |
+| v1.17 | April 30, 2026     | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.16 | April 3, 2026      | Fixed output field mapping for nested fields with dots in field names in the **Get Signal** and **List Signals** actions. |
+| v1.15 | January 6, 2025    | Added a new action: **Add Match List Item**. |
+| v1.14 | July 3, 2024       | Updated `check_not_null_field` in the **Close Insight Trigger**. |
+| v1.13 | April 8, 2024      | Updated the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL." |
+| v1.12 | April 5, 2024      | <ul><li>Renamed the integration from "Sumo Logic CSE" to "Sumo Logic Cloud SIEM."</li><li>Added a new field, API Rate Limit Sleep, to the Integration resource (if the API rate limit is exceeded, the integration waits for 1 second and then retries, with a maximum wait time of 10).</li><li>Added new actions: **Get Match List**, **List Match List Items**, **List Match List**, and **Sumo Logic Match List Items Daemon**.</li><li>Added three fields to the Integration resource for the **Close Insight Trigger**: Custom Field Internal Name, Resolution Status, and Closure Comments.</li></ul> |
+| v1.11 | March 4, 2024      | Updated code for compatibility with Python 3.12. |
+| v1.10 | February 7, 2024   | Fixed an issue in the **Add Comment To Insight** action where line breaks in the Insight Comment field were removed upon submission. |
+| v1.9 | December 12, 2023  | <ul><li>Added a new action: **Create Insight From Signals**.</li><li>Updated the **Add Enrichment Insight**, **Add Enrichment Entity**, and **Add Enrichment Signal** actions: text information can now be included as enrichment, the enrichment field now accepts either output.raw or any other JSON format, added fields reputation, expiresAt, and externalUrl, and updated the *Fields Name/Path To Extract* field to allow extracting values from JSON by either Path or Field Name.</li></ul> |
+| v1.8 | November 24, 2023  | <ul><li>Updated the **Sumo Logic Insights Daemon Extended** and **Sumo Logic Insights Daemon** so the query now retrieves data from the past 1 hour instead of 24 hours.</li><li>Expanded output mappings for the following actions/daemons: **Get Signal**, **Get Insight V2**, **Sumo Logic Signals Daemon**, **Sumo Logic Insights Daemon**, and **Sumo Logic Insights Daemon Extended**.</li></ul> |
+| v1.7 | October 4, 2023    | Updated the **Sumo Logic Insights Daemon**. |
+| v1.6 | October 3, 2023    | Updated the **Sumo Logic Insights Daemon Extended**. |
 | v1.5 | September 26, 2023 | Updated the **Sumo Logic Signals Daemon**. |
 | v1.4 | September 19, 2023 | Updated the integration with environmental variables. |
-| v1.3 | February 17, 2023 | Updated the **Sumo Logic Insights Daemon Extended**. |
-| | March 17, 2022 | Added a new action: **Update Insight**. |
-| | October 27, 2021 | Added new actions. |
-| | October 18, 2021 | Added new actions. |
-| | October 1, 2021 | Added new actions. |
-| | April 6, 2021 | Added new actions. |
-| | March 26, 2021 | Initial release of the Sumo Logic Cloud SIEM integration. |
+| v1.3 | February 17, 2023  | Updated the **Sumo Logic Insights Daemon Extended**. |
+| | March 17, 2022     | Added a new action: **Update Insight**. |
+| | October 27, 2021   | Added new actions. |
+| | October 18, 2021   | Added new actions. |
+| | October 1, 2021    | Added new actions. |
+| | April 6, 2021      | Added new actions. |
+| | March 26, 2021     | Initial release of the Sumo Logic Cloud SIEM integration. |

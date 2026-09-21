@@ -2,7 +2,7 @@
 id: zendesk-source
 title: Zendesk Source
 sidebar_label: Zendesk
-tags:
+keywords:
   - cloud-to-cloud
   - zendesk
 description: Learn how to collect audit logs using the Zendesk API.
