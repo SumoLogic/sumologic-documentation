@@ -58,7 +58,6 @@ Administrators can create a CIMD client at any time, whether or not **Restrict t
 1. Click **+ Add OAuth Client**.
 1. For **Client Type**, select **CIMD Authorization Code**.<br/><img src={useBaseUrl('img/api/mcp/create-cimd-oauth-client.png')} alt="Create OAuth Client dialog with CIMD Authorization Code selected as the client type" style={{border: '1px solid gray'}} width="800" />
 1. For **Client ID URL**, enter the HTTPS URL of the client's metadata document, for example `https://example.com/oauth/client-metadata`.
-1. (Optional) Enter a **Description**.
 1. Under **Scopes**, click **Apply MCP Scopes** to automatically select the scopes MCP clients need. To select scopes individually instead, expand a category and select or clear specific scopes.
 1. Click **Save**.
 
