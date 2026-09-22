@@ -82,6 +82,8 @@ Administrators can edit the scopes of an existing CIMD client on the **OAuth Cli
 
 The **Client Type** and **Client ID URL** of a CIMD client can't be changed after it's created.
 
+<!-- placeholder: once this merges, add a link back from docs/api/mcp-server.md (DOCS-1909's API-only-scopes note) to this section, pointing out that admins can remove manageLibrary/runLogSearch/viewLibrary/runMetricsQuery/viewUsersAndRoles here to restrict those MCP tools -->
+
 ### Clear scopes on the consent page
 
 When a user authorizes a CIMD client, Sumo Logic shows a consent page listing the scopes the client requested, grouped by category. The user can expand a category and clear individual **View** or **Manage** check boxes before clicking **Allow**, to grant the client less access than it requested.<br/><img src={useBaseUrl('img/api/mcp/consent-page-scopes.png')} alt="Consent page for a CIMD client with the Alerting scope category expanded, showing individual View and Manage check boxes" style={{border: '1px solid gray'}} width="800" />
