@@ -115,6 +115,16 @@ By writing inclusively and using culturally neutral language, our words resonate
 |:---------------|:-------------------|
 | "allowlist"<br/>"denylist"<br/>"placeholder data"<br/>"primary" or "main"<br/>"press" or "click" | "whitelist"<br/>"blacklist"<br/>"dummy data"<br/>"master"<br/>"hit" |
 
+### Concise, human phrasing
+
+Write the way a knowledgeable colleague would explain something in person. Cut anything that does not carry information. This also keeps our docs from reading like generic AI output.
+
+* **No throat-clearing.** Start with the point. Drop preambles like "It's worth noting that", "It's important to understand", and "In this section, we will".
+* **No filler.** Cut "simply", "just", "of course", "as you can see", "needless to say", and intensifiers like "very", "really", and "quite".
+* **Do not restate.** Skip summary sentences that repeat what the paragraph, list, or procedure just said.
+* **One idea per sentence.** Prefer short sentences over long ones stitched together with "and", "which", or semicolons.
+* **Say it once.** When two sentences make the same point, keep the clearer one and delete the other.
+
 ## Abbreviations
 
 Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”. Although they may be well understood, such abbreviations don’t support our goal of a conversational tone. In other words, don’t use language you wouldn’t use verbally.
@@ -993,6 +1003,14 @@ Colons are used to introduce lists or to separate titles from subtitles. Only in
 ### Commas
 
 We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "[I had eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
+
+### Dashes
+
+Try not to use em dashes (the long dash) as they read as generic AI output. Rewrite instead: use a period or semicolon to split two independent clauses, a colon to introduce something, or commas or parentheses for a brief aside.
+
+Use the en dash (–) only for numeric and date ranges, with no space on either side: `9–17`, `2023–2024`. See [Numbers](#numbers) and [Dates](#dates).
+
+Use the hyphen (-) for compound modifiers, such as `drop-down menu` or `read-only field`.
 
 ### Exclamation points
 
