@@ -2,7 +2,7 @@
 id: cybereason-source
 title: Cybereason Source
 sidebar_label: Cybereason
-tags:
+keywords:
   - cloud-to-cloud
   - cybereason
 description: The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason Malops API.

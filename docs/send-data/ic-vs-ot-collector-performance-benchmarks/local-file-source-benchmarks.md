@@ -1,8 +1,8 @@
 ---
-id: ic-vs-ot-collector-performance-benchmarks
-title: Installed Collector vs OpenTelemetry Collector Performance Benchmarks
-sidebar_label: IC vs OTel Performance Benchmarks
-description: Compare Installed Collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.
+id: local-file-source-benchmarks
+title: Local File Source Benchmarks
+sidebar_label: Local File Source Benchmarks
+description: Compare Installed Collector and OpenTelemetry Collector throughput and CPU usage for Local File source collection.
 ---
 
 The Installed Collector and the Sumo Logic Distribution for OpenTelemetry Collector differ significantly in throughput, CPU usage, and scalability for log collection. This page compares both across various workloads to help you choose the right option.

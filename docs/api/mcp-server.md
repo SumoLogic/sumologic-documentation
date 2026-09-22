@@ -24,6 +24,7 @@ The Sumo Logic MCP (Model Context Protocol) server lets MCP clients (external AI
 - **What it does**. Lets external AI clients query Sumo Logic logs, Cloud SIEM insights, alerts, and dashboards using natural language, through a set of MCP tools.
 - **How it works**. MCP clients authenticate over OAuth 2.0 (CIMD recommended) and call MCP tools that are scoped to your Sumo Logic role permissions.
 - **Supported deployments**. All commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud. See the [MCP server URL table](#mcp-server-url-for-your-deployment) for your deployment's endpoint.
+- **Subdomain URLs**. Add your org's subdomain to the MCP server URL so CIMD clients go straight to your org's login page. See [How to use your org subdomain in the MCP server URL](#how-to-use-your-org-subdomain-in-the-mcp-server-url).
 - **Prerequisites**. An MCP-compatible client that supports HTTP/SSE transport and OAuth 2.0; MCP Server access enabled (on by default); CIMD enabled by an administrator (recommended).
 - **Limitations**. Not intended for bulk data extraction, model training, or high-volume automated queries, and is subject to rate limits (4 requests per second, 10 concurrent).
 
@@ -61,6 +62,28 @@ You need the exact MCP server URL that matches your deployment, because OAuth to
 :::note
 The MCP server is not currently supported in our Zurich or AWS European Sovereign Cloud deployments.
 :::
+
+### How to use your org subdomain in the MCP server URL
+
+Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain) to the front of the MCP server URL so MCP clients that authenticate with [CIMD](#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
+
+To build the URL, add `<subdomain>.` before the host name in your deployment's URL from the [table above](#mcp-server-url-for-your-deployment):
+
+| Deployment URL | URL with subdomain |
+| :--- | :--- |
+| `https://mcp.kr.sumologic.com/mcp` | `https://<subdomain>.mcp.kr.sumologic.com/mcp` |
+| `https://mcp.au.sumologic.com/mcp` | `https://<subdomain>.mcp.au.sumologic.com/mcp` |
+| `https://mcp.jp.sumologic.com/mcp` | `https://<subdomain>.mcp.jp.sumologic.com/mcp` |
+| `https://mcp.ca.sumologic.com/mcp` | `https://<subdomain>.mcp.ca.sumologic.com/mcp` |
+| `https://mcp.de.sumologic.com/mcp` | `https://<subdomain>.mcp.de.sumologic.com/mcp` |
+| `https://mcp.eu.sumologic.com/mcp` | `https://<subdomain>.mcp.eu.sumologic.com/mcp` |
+| `https://mcp.sumologic.com/mcp` | `https://<subdomain>.mcp.sumologic.com/mcp` |
+| `https://mcp.fed.sumologic.com/mcp` | `https://<subdomain>.mcp.fed.sumologic.com/mcp` |
+| `https://mcp.us2.sumologic.com/mcp` | `https://<subdomain>.mcp.us2.sumologic.com/mcp` |
+
+For example, if your subdomain is `acme` and your org is in US West (Oregon), use `https://acme.mcp.us2.sumologic.com/mcp`.
+
+Subdomain URLs are available in all deployments that support the MCP server.
 
 ### MCP-compatible client
 
@@ -141,7 +164,7 @@ Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an admini
    ```
 1. In Claude Code, run `/mcp`.
 1. Select **sumo-logic** and then **Authenticate**.
-1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
+1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If you registered the server with a [subdomain URL](#how-to-use-your-org-subdomain-in-the-mcp-server-url), the browser opens your org's login page directly. Otherwise, if your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
 1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [What MCP tools are available?](#what-mcp-tools-are-available)
 
@@ -524,6 +547,10 @@ MCP clients can no longer connect, but no data is deleted. Disabling MCP Server 
 ### Is customer data used to train AI models?
 
 No. Sumo Logic never uses customer data to train AI models, regardless of which MCP tools or clients you connect.
+
+### Can I use my org subdomain in the MCP server URL?
+
+Yes. Add your subdomain to the front of your deployment's MCP server URL, for example `https://<subdomain>.mcp.us2.sumologic.com/mcp`. MCP clients that authenticate with CIMD then go directly to your org's login page instead of asking users to enter the subdomain first. See [How to use your org subdomain in the MCP server URL](#how-to-use-your-org-subdomain-in-the-mcp-server-url).
 
 ### What client authentication does MCP require?
 

@@ -2,7 +2,7 @@
 id: microsoft-graph-identity-protection-source
 title: Microsoft Graph Identity Protection Source
 sidebar_label: Microsoft Graph Identity Protection
-tags:
+keywords:
   - cloud-to-cloud
   - microsoft-graph-identity-protection
 description: The Microsoft Graph Identity Protection Source collects Risk Detection and Risky User from the Microsoft Graph Identity Protection API.

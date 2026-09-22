@@ -2,7 +2,7 @@
 id: zerofox-intel-source
 title: ZeroFox Threat Intel Source
 sidebar_label: ZeroFox Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - zerofox-threat-intel
 description: This integration collects threat indicators using the ZeroFox API and sends them to Sumo Logic for analysis.
