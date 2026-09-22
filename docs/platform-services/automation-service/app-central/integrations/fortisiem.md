@@ -51,5 +51,5 @@ For information about FortiSIEM, see [FortiSIEM documentation](https://docs.fort
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.2 | November 10, 2023 | <ul><li>Changed the Docker image to `qualys` (`qualys` and `fortisiem` share the same library).</li><li>Updated the integration with Environmental Variables.</li><li>Removed trailing/leading spaces.</li><li>Updated output mappings.</li><li>Renamed the **Get Devices** action to **List Devices**.</li></ul> |
-| v1.1 | September 6, 2019 | Added a link to the FortiSIEM external library. |
-| v1.0 | June 3, 2019 | First upload. |
+| | September 6, 2019 | Added a link to the FortiSIEM external library. |
+| | June 3, 2019 | First upload. |

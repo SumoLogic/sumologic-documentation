@@ -2,7 +2,7 @@
 id: qualys-vmdr-source
 title: Qualys VMDR Source
 sidebar_label: Qualys VMDR
-tags:
+keywords:
     - qualys-vmdr
     - cloud-SIEM-enterprise
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.

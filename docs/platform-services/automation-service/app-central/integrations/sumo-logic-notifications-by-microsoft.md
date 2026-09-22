@@ -151,4 +151,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 | Version | Date | Description |
 |:--|:--|:--|
 | v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.0 | December 04, 2024 | Initial release of the Sumo Logic Notifications By Microsoft integration. |
+| | December 04, 2024 | Initial release of the Sumo Logic Notifications By Microsoft integration. |

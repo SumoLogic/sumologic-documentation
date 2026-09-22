@@ -168,5 +168,5 @@ Once the service account is created in the Organization Unit:
 |:--|:--|:--|
 | v2.2 | December 19, 2023 | Updated the **User Attributes** action so users can now be filtered based on their distinguishedName (DN). |
 | v2.1 | June 21, 2023 | Updated the integration with environmental variables. |
-| v2.0 | March 11, 2022 | Updated the logo in Active Directory V2 integration. |
-| v1.9 | March 25, 2021 | Initial release of the Active Directory V2 integration. |
+| | March 11, 2022 | Updated the logo in Active Directory V2 integration. |
+| | March 25, 2021 | Initial release of the Active Directory V2 integration. |

@@ -70,4 +70,4 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0 | December 11, 2025 | Initial release of the AWS Security Hub V2 integration. |
+| | December 11, 2025 | Initial release of the AWS Security Hub V2 integration. |

@@ -84,4 +84,4 @@ Local [Automation Bridge](/docs/platform-services/automation-service/automation-
 | v1.3 | August 19, 2025 | Added IAM Role Support. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
 | v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
 | v1.1 | March 3, 2023 | Updated the integration field labels. |
-| v1.0 | January 30, 2023 | Initial release of the AWS Simple Notification Service integration. |
+| | January 30, 2023 | Initial release of the AWS Simple Notification Service integration. |

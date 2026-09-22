@@ -50,4 +50,4 @@ For information about AlienVault USM Central, see [AlienVault USM Central docume
 |:--|:--|:--|
 | v1.2 | April 8, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 26, 2023 | Updated the integration with environmental variables. |
-| v1.0 | October 26, 2020 | Initial release of the AlienVault USM Central integration. |
+| | October 26, 2020 | Initial release of the AlienVault USM Central integration. |

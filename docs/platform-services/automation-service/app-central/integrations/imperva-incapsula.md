@@ -51,7 +51,7 @@ For information about Imperva Cloud Application Security ([formerly Incapsula](h
 | v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | July 18, 2023 | Refactored the code. |
 | v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | July 29, 2019 | Initial release of the Imperva Incapsula integration. |
+| | July 29, 2019 | Initial release of the Imperva Incapsula integration. |
 
 ## Additional resources
 

@@ -54,5 +54,5 @@ For information about Neurons for ITSM, see [Neurons or ITSM documentation](http
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 6, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed the action type to Notification for the following actions: **Create Change**, **Create Incident Neurons**, and **Create Problem**.</li></ul> |
-| v1.0 | September 1, 2022 | Updated the logo in Neurons ITSM integration. |
-| v1.0 | August 25, 2022 | Initial release of the Neurons ITSM integration. |
+| | September 1, 2022 | Updated the logo in Neurons ITSM integration. |
+| | August 25, 2022 | Initial release of the Neurons ITSM integration. |

@@ -11,7 +11,7 @@ This documentation walks you through migrating an existing [AWS Observability Cl
 
 :::danger
 - This guide supports only active AWSO versions listed [here](/docs/observability/aws/deploy-use-aws-observability/changelog/#awso-lifecycle)
-- Migration script generates a state file. Please do not delete or lose this file until the migration is complete.
+- Migration script generates a params or state file. Please do not delete or lose this file until the migration is complete.
 - Ensure that the account aliases used in your v2.x.x deployment are carried over during migration. The same aliases will be reused in v3.0.0.
 
 - During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Please refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
@@ -56,8 +56,8 @@ Use this script [MigrateAWSOStackToV300.sh](https://raw.githubusercontent.com/Su
 ### What changes
 
 - The v2.x CloudFormation stack is deleted and replaced by a new v3.0.0 stack.
-- AWSO [Field Extraction Rules](/docs/manage/field-extractions/) are renamed to `v215_backup_<name>` and disabled (not deleted).
-- Four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) are deleted and recreated by v3.0.0.
+- AWSO [Field Extraction Rules](/docs/manage/field-extractions/) are renamed to `v215_backup_<name>` and disabled (not deleted). *(Only when Install Apps is `Yes`.)*
+- Four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) are deleted and recreated by v3.0.0. *(Only when Install Apps is `Yes`.)*
 - Source IAM role ARNs are updated to the new v3.0.0 role.
 
 :::warning
@@ -76,8 +76,8 @@ The migration runs through the following phases:
 | 4. Confirm | Displays a full summary — **no changes are made until you approve**. |
 | 5. Protect | Sets `RemoveOnDeleteStack=false` to ensure Sumo Logic resources survive stack deletion. |
 | 6. Delete | Deletes the v2.x CloudFormation stack, but preserves your S3 buckets. |
-| 7. FER Cleanup | Renames and disables AWSO [Field Extraction Rules](/docs/manage/field-extractions/) to free quota for v3.0.0. |
-| 8. Metric Rules | Deletes four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0. |
+| 7. FER Cleanup | Renames and disables AWSO [Field Extraction Rules](/docs/manage/field-extractions/) to free quota for v3.0.0. **Skipped when Install Apps is `No`.** |
+| 8. Metric Rules | Deletes four AWSO [Metric Rules](/docs/metrics/metric-rules-editor/) that conflict with v3.0.0. **Skipped when Install Apps is `No`.** |
 | 9. Deploy | Deploys the v3.0.0 stack — **shows you the full parameter list before deploying**. |
 | 10. Verify | Confirms all stack resources and Sumo Logic sources are healthy. Checks S3 bucket policies, CloudTrail trails, and S3 bucket notifications. |
 | 11. Patch Roles | Updates the source IAM role ARNs to reference the new v3.0.0 IAM role. |
@@ -116,9 +116,17 @@ You will also need your **Sumo Logic Org ID**, found at **Administration > Accou
 
 #### Back up your Field Extraction Rules
 
+:::note
+This step applies only when migrating with Install Apps enabled (`--install-apps Yes`, which is the default). If you are migrating with `--install-apps No`, phase 7 is skipped and no FERs are touched.
+:::
+
 Before running the migration, export a backup of your [Field Extraction Rules](/docs/manage/field-extractions/) from **Manage Data > Logs > Field Extraction Rules**. The script renames them rather than deleting them, but it is good practice to have a backup.
 
 #### Verify FER quota
+
+:::note
+This step applies only when migrating with Install Apps enabled (`--install-apps Yes`, which is the default). If you are migrating with `--install-apps No`, phase 7 is skipped and no FER quota is consumed.
+:::
 
 Phase 7 renames your existing AWSO Field Extraction Rules and v3.0.0 then creates 17 new ones. You need at least **17 free slots** in your FER quota before running the migration.
 
@@ -127,6 +135,10 @@ To check your current usage, go to **Manage Data > Logs > Field Extraction Rules
 If you run the migration without enough quota, phase 7 will pause and list the specific FERs that need to be removed before the script can continue.
 
 #### Back up your Metric Rules
+
+:::note
+This step applies only when migrating with Install Apps enabled (`--install-apps Yes`, which is the default). If you are migrating with `--install-apps No`, phase 8 is skipped and no Metric Rules are deleted.
+:::
 
 The migration permanently deletes 4 AWSO [Metric Rules](/docs/metrics/metric-rules-editor/). Record them before running the script by going to **Manage Data > Metrics > Metric Rules**. They will be recreated automatically by v3.0.0 during deployment, but having a record is useful if you need to verify them afterward.
 
@@ -148,11 +160,14 @@ chmod +x MigrateAWSOStackToV300.sh
   -o <org_id> \
   -s <v2x_stack_name> \
   -r <aws_region> \
-  -n <v300_stack_name> \
-  --install-apps Yes
+  -n <v300_stack_name>
 ```
 
 The script will prompt you interactively for your access key (input is hidden and not saved to shell history).
+
+:::note
+`--install-apps` defaults to `Yes`. Pass `--install-apps No` only if you want to skip app installation, FER cleanup (phase 7), and Metric Rules cleanup (phase 8).
+:::
 
 **Example**
 
@@ -163,8 +178,7 @@ The script will prompt you interactively for your access key (input is hidden an
   -o <your_org_id> \
   -s my-awso-production \
   -r us-east-1 \
-  -n my-awso-production-v300 \
-  --install-apps Yes
+  -n my-awso-production-v300
 ```
 
 #### Script parameters
@@ -184,7 +198,7 @@ The script will prompt you interactively for your access key (input is hidden an
 | Flag | Description | Default |
 |:--|:--|:--|
 | `-k ACCESS_KEY` | Sumo Logic access key | **Prompted interactively** (hidden input) if omitted |
-| `-n NEW_STACK_NAME` | Name for the new v3.0.0 stack. **Required when using `--resume`.** | Same as `-s` |
+| `-n NEW_STACK_NAME` | Name for the new v3.0.0 stack. **Required when using `--resume` or `--patch-roles-only`.** | Same as `-s` |
 | `-v VERSION` | Source version override: `2.12`, `2.13`, `2.14`, `2.15` | Auto-detected |
 | `--install-apps` | Install Sumo Logic observability apps: `Yes` or `No` | `Yes` |
 | `-p AWS_PROFILE` | AWS CLI named profile | `default` |
@@ -226,8 +240,8 @@ Before touching any infrastructure, the script displays a summary of what it fou
   The following PERMANENT changes will be made:
     1. UPDATE stack to set RemoveOnDeleteStack=false
     2. DELETE stack my-awso-production
-    3. RENAME AWSO Field Extraction Rules
-    4. DELETE 4 AWSO Metric Rules
+    3. RENAME AWSO Field Extraction Rules      ← only shown when Install Apps is Yes
+    4. DELETE 4 AWSO Metric Rules              ← only shown when Install Apps is Yes
 
 Proceed with migration? Type 'yes' to continue:
 ```

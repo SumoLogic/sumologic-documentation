@@ -115,5 +115,5 @@ Ticketing System
 | v2.4 | June 28, 2023 | Changed the visibility of the resource fields. |
 | v2.3 | June 27, 2023 | Removed leading and trailing spaces from the integration. |
 | v2.2 | March 27, 2023 | <ul><li>Updated the integration fields with environmental variables and improved error handling.</li><li>Updated the deprecated endpoint.</li><li>Changed the action type from Containment to Notification.</li></ul> |
-| v2.1 | December 19, 2022 | <ul><li>Solved an issue where the **Search Into Issues** action could not search correctly by JQL.</li><li>Added a hint for Host.</li></ul> |
-| v2.0 | June 22, 2022 | Initial release of the Atlassian Jira V2 integration. |
+| | December 19, 2022 | <ul><li>Solved an issue where the **Search Into Issues** action could not search correctly by JQL.</li><li>Added a hint for Host.</li></ul> |
+| | June 22, 2022 | Initial release of the Atlassian Jira V2 integration. |

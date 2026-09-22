@@ -53,4 +53,4 @@ For information about Logpoint, see [Logpoint documentation](https://docs.logpoi
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 30, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Logpoint OIF to Logpoint.</li></ul> |
-| v1.0 | September 3, 2020 | Initial release of the Logpoint integration. |
+| | September 3, 2020 | Initial release of the Logpoint integration. |

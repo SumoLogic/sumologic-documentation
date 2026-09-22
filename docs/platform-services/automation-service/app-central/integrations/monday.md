@@ -62,4 +62,4 @@ For information about Monday, see [Monday documentation](https://developer.monda
 | v1.4 | Nov 12, 2025 | Updated the integration and all actions to align with the supported GraphQL schema. |
 | v1.3 | Nov 10, 2025 | Changed the GraphQL schema for one action for testing purposes. |
 | v1.2 | Oct 15, 2025 | Refactored the code. |
-| v1.1 | Oct 06, 2025 | Initial release of the Monday integration. |
+| | Oct 06, 2025 | Initial release of the Monday integration. |

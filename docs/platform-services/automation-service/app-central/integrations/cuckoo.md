@@ -58,5 +58,5 @@ For information about Cuckoo, see [Cuckoo documentation](https://cuckoo.readthed
 |:--|:--|:--|
 | v1.5 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.4 | July 6, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Cuckoo OIF to Cuckoo.</li></ul> |
-| v1.3 | March 19, 2021 | Updated actions. |
-| v1.2 | September 19, 2019 | Initial release of the Cuckoo integration. |
+| | March 19, 2021 | Updated actions. |
+| | September 19, 2019 | Initial release of the Cuckoo integration. |

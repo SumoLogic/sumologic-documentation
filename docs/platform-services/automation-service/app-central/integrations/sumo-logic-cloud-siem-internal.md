@@ -50,5 +50,5 @@ No configuration is needed. Sumo Logic Cloud SIEM Internal executes without addi
 | v1.15 | April 5, 2024 | Renamed the integration from "CSE Tools" to "Sumo Logic Cloud SIEM Internal." |
 | v1.14 | November 24, 2023 | Extended output mapping for the **Get Signal** action. |
 | v1.13 | October 13, 2023 | Added a new action: **Insight Output Mapping**. |
-| v1.12 | September 20, 2023 | Initial release of the Sumo Logic Cloud SIEM Internal integration. |
+| | September 20, 2023 | Initial release of the Sumo Logic Cloud SIEM Internal integration. |
 

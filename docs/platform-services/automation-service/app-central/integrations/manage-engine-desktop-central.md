@@ -56,4 +56,4 @@ For information about ManageEngine Endpoint Central (formerly Desktop Central), 
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | June 24, 2025 | Updated authentication headers to support both cloud and on-prem account type. |
 | v1.1 | July 5, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | July 8, 2021 | Initial release of the ManageEngine Desktop Central integration. |
+| | July 8, 2021 | Initial release of the ManageEngine Desktop Central integration. |

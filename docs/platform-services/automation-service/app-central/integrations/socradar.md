@@ -48,4 +48,4 @@ For information about SOCRadar, see the [SOCRadar website](https://socradar.io/)
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
-| v1.0 | October 27, 2021 | Initial release of the SOCRadar integration. |
+| | October 27, 2021 | Initial release of the SOCRadar integration. |

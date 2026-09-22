@@ -64,5 +64,5 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 | v1.5 | February 23, 2024 | Updated the **Analyze MSG EML** action to use the new Cloud SOAR API. |
 | v1.4 | October 2, 2023 | Updated the integration. |
 | v1.3 | July 18, 2023 | Removed leading/trailing spaces. |
-| v1.2 | January 17, 2023 | <ul><li>Added the **Email Header Regex** action.</li><li>Refactored the integration.</li></ul> |
-| v1.1 | February 3, 2022 | Initial release of the Mail Tools integration. |
+| | January 17, 2023 | <ul><li>Added the **Email Header Regex** action.</li><li>Refactored the integration.</li></ul> |
+| | February 3, 2022 | Initial release of the Mail Tools integration. |

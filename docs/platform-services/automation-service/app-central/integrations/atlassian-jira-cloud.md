@@ -115,4 +115,4 @@ Ticketing System
 | v1.3 | Nov 6, 2025 | Changed the API endpoint in the resource connection file to prevent admin-level privileges. |
 | v1.2 | Oct 15, 2025 | Added support for the `br` tag in required actions. |
 | v1.1 | Sept 10, 2025 | Added a daemon action. |
-| v1.0 | March 20, 2025 | Initial release of the Atlassian Jira Cloud integration. |
+| | March 20, 2025 | Initial release of the Atlassian Jira Cloud integration. |

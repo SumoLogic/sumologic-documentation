@@ -45,4 +45,4 @@ For information about Shodan, see [Shodan documentation](https://developer.shoda
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | March 27, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
-| v1.0 | February 8, 2019 | Initial release of the Shodan integration. |
+| | February 8, 2019 | Initial release of the Shodan integration. |

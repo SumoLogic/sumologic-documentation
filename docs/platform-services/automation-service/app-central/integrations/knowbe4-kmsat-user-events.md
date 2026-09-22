@@ -51,4 +51,4 @@ For information about KnowBe4 user events, see [KnowBe4 user event documentation
 |:--|:--|:--|
 | v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 26, 2023 | Removed unnecessary empty lines and made other minor changes. |
-| v1.0 | February 6, 2023 | Initial release of the KnowBe4 KMSAT - User Events integration. |
+| | February 6, 2023 | Initial release of the KnowBe4 KMSAT - User Events integration. |

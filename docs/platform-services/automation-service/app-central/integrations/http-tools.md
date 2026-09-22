@@ -54,5 +54,5 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 | v1.5 | January 09, 2024 | Fixed an issue with the `output.raw` JSON field in the **HTTP POST** action. |
 | v1.3 | September 25, 2023 | Updated the **HTTP POST** action. |
 | v1.2 | June 14, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | March 20, 2023 | Updated the **HTTP POST** action to add a new field for form data to be sent in the body of the request. |
-| v1.0 | February 02, 2023 | Initial release of the HTTP Tools integration. |
+| | March 20, 2023 | Updated the **HTTP POST** action to add a new field for form data to be sent in the body of the request. |
+| | February 02, 2023 | Initial release of the HTTP Tools integration. |

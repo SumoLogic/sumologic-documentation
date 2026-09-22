@@ -215,7 +215,7 @@ The final playbook looks like this:<br/><img src={useBaseUrl('/img/platform-serv
 |:--|:--|:--|
 | v1.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.2 | October 2, 2023 | Updated the integration. |
-| v1.1 | May 5, 2022 | Added new filter options for the **Incoming Mail Daemon** action. |
-| v1.0 | March 8, 2022 | Updated the description and guide. |
-| v1.0 | February 8, 2021 | Updated actions. |
-| v1.0 | May 7, 2019 | Initial release of the IMAP integration. |
+| | May 5, 2022 | Added new filter options for the **Incoming Mail Daemon** action. |
+| | March 8, 2022 | Updated the description and guide. |
+| | February 8, 2021 | Updated actions. |
+| | May 7, 2019 | Initial release of the IMAP integration. |

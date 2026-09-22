@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="axonius" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/azure-ad.png')} alt="Azure AD icon" width="80"/>
 
 ***Version: 1.17  
 Updated: Sep 3, 2026***

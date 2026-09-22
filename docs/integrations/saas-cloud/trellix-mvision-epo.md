@@ -7,7 +7,7 @@ description: The Trellix mVision ePO app for Sumo Logic enables security analyst
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trust Login icon" width="90" />
+<img src={useBaseUrl('img/send-data/trellix-logo.png')} alt="Trellix icon" width="90" />
 
 The Sumo Logic app for Trellix mVision ePO provides centralized visibility into endpoint threats, enabling security teams to detect, analyze, and respond to risks across their environment. It aggregates data on detections, remediation failures, severity, and suspicious behaviors to highlight high-priority incidents and defense gaps.
 

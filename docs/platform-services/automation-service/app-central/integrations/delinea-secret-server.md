@@ -52,4 +52,4 @@ For information about Delinea, see [Delinea documentation](https://updates.thyco
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.0 | May 18, 2026 | Initial release of the Delinea Secret Server integration. |
+| | May 18, 2026 | Initial release of the Delinea Secret Server integration. |

@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arbor.png')} alt="apivoid" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arbor.png')} alt="Arbor icon" width="90"/>
 
 ***Version: 1.4  
 Updated: April 13, 2026***
@@ -50,4 +50,4 @@ For information about Arbor, see [Netscout](https://www.netscout.com/arbor).
 | v1.4 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3 | March 4, 2024 | Updated the code for compatibility with Python 3.12. |
 | v1.2 | July 13, 2023 | <ul><li>Updated the integration with environmental variables.</li><li>Changed fields visibility.</li></ul> |
-| v1.1 | May 22, 2020 | Initial release of the Arbor integration. |
+| | May 22, 2020 | Initial release of the Arbor integration. |

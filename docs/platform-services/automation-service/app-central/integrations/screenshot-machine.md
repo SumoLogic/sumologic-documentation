@@ -55,4 +55,4 @@ For information about Screenshot Machine, see [Screenshot Machine documentation]
 | v1.3 | February 16, 2024 | Updated the **Screenshot Webpage** action to use the new Cloud SOAR API. |
 | v1.2 | September 4, 2023 | <ul><li>Refactored the integration.</li><li>Added a new action: **Screenshot Webpage V2**.</li></ul> |
 | v1.1 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Screenshot Machine OIF to Screenshot Machine.</li></ul> |
-| v1.0 | October 16, 2019 | Initial release of the Screenshot Machine integration. |
+| | October 16, 2019 | Initial release of the Screenshot Machine integration. |

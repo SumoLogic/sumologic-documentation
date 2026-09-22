@@ -71,4 +71,4 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.2 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v1.1 | October 18, 2023 | Updated the **Assess Alert Status** action so the Scheduled input is now set dynamically. |
-| v1.0 | September 22, 2023 | Initial release of the Sumo Logic Notifications integration. |
+| | September 22, 2023 | Initial release of the Sumo Logic Notifications integration. |

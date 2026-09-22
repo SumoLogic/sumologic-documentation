@@ -42,4 +42,4 @@ For information about Snort, see [Snort documentation](https://www.snort.org/doc
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 18, 2023 | Removed leading and trailing spaces. |
-| v1.0 | December 13, 2022 | Initial release of the Snort integration. |
+| | December 13, 2022 | Initial release of the Snort integration. |

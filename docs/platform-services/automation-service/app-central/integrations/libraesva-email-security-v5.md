@@ -74,6 +74,6 @@ Email Security
 |:--|:--|:--|
 | v5.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v5.2 | July 7, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li></ul> |
-| v5.1 | October 7, 2022 | <ul><li>Changed user and password to be optional (not required).</li><li>Removed OTP from the resource and actions.</li><li>Added three new actions.</li></ul> |
-| v5.0 | September 12, 2022 | Changed the integration name and logo. |
-| v5.0 | September 2, 2022 | Initial release of the Libraesva Email Security V5 integration. |
+| | October 7, 2022 | <ul><li>Changed user and password to be optional (not required).</li><li>Removed OTP from the resource and actions.</li><li>Added three new actions.</li></ul> |
+| | September 12, 2022 | Changed the integration name and logo. |
+| | September 2, 2022 | Initial release of the Libraesva Email Security V5 integration. |

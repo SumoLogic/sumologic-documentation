@@ -53,5 +53,5 @@ For information about Hacker Target, see the [Hacker Target website](https://hac
 |:--|:--|:--|
 | v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | July 6, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Hacker Target OIF to Hacker Target.</li></ul> |
-| v1.0 | March 10, 2022 | Updated the logo. |
-| v1.0 | December 19, 2019 | Initial release of the Hacker Target integration. |
+| | March 10, 2022 | Updated the logo. |
+| | December 19, 2019 | Initial release of the Hacker Target integration. |

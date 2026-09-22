@@ -275,5 +275,5 @@ Email Gateway
 | v2.4 | March 21, 2024 | Resolved an issue related to the email body. |
 | v2.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
 | v2.2 | October 6, 2023 | Updated the integration. |
-| v2.1 | March 10, 2022 | Updated the logo in Microsoft EWS Daemon integration. |
-| v2.0 | October 27, 2021 | Initial release of the Microsoft EWS Daemon integration. |
+| | March 10, 2022 | Updated the logo in Microsoft EWS Daemon integration. |
+| | October 27, 2021 | Initial release of the Microsoft EWS Daemon integration. |

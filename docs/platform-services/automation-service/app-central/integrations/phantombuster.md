@@ -53,4 +53,4 @@ For information about Phantombuster, see [Phantombuster documentation](https://h
 |:--|:--|:--|
 | v1.6 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.5 | July 18, 2023 | Removed leading and trailing spaces. |
-| v1.4 | April 3, 2023 | Initial release of the Phantombuster integration. |
+| | April 3, 2023 | Initial release of the Phantombuster integration. |

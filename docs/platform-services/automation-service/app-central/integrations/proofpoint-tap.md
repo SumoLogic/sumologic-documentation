@@ -54,7 +54,7 @@ For information about Proofpoint, see the [Proofpoint website](https://www.proof
 |:--|:--|:--|
 | v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1, v1.2 | March 31, 2023 | Refined the integration. |
-| v1.0 | February 4, 2022 | Initial release of the Proofpoint TAP integration. |
+| | February 4, 2022 | Initial release of the Proofpoint TAP integration. |
 
 ## Additional resources
 

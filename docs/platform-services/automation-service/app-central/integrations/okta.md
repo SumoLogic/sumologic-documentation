@@ -71,8 +71,8 @@ For information about Okta, see [Okta documentation](https://help.okta.com/en-us
 | v1.4 | April 24, 2024 | Added new actions: **Activate Network Zone**, **Create Network Zone**, **Deactivate Network Zone**, **Delete Network Zone**, **Get Network Zone**, **List Network Zones**, and **Update Network Zone**. |
 | v1.3 | July 18, 2023 | Refactored the integration code. |
 | v1.2 | June 21, 2023 | Updated the integration with Environmental Variables. |
-| v1.1 | July 18, 2022 | <ul><li>Updated the logo in Okta integration.</li><li>Added missing incident artifacts.</li></ul> |
-| v1.0 | March 20, 2020 | Initial release of the Okta integration. |
+| | July 18, 2022 | <ul><li>Updated the logo in Okta integration.</li><li>Added missing incident artifacts.</li></ul> |
+| | March 20, 2020 | Initial release of the Okta integration. |
 
 ## Additional resources
 

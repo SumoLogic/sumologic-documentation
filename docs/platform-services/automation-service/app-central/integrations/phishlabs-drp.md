@@ -52,4 +52,4 @@ For information about PhishLabs, see the [PhishLabs website](https://www.phishla
 |:--|:--|:--|
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 22, 2023 | Changed indentation. |
-| v1.0 | February 16, 2023 | Initial release of the PhishLabs DRP integration. |
+| | February 16, 2023 | Initial release of the PhishLabs DRP integration. |
