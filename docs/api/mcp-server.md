@@ -242,8 +242,12 @@ Our MCP server provides access to Sumo Logic through these tool categories:
 
 All tools respect your Sumo Logic permission controls and access policies. See [Role capabilities](/docs/manage/users-roles/roles/role-capabilities) for details on each required scope.
 
+The tools your MCP client reports as available are filtered by the scopes in your OAuth access token, which map to your role's Sumo Logic capabilities. For example, if your role doesn't include View Cloud SIEM Enterprise (`viewCse`), Cloud SIEM tools don't appear in your client's tool list; if it doesn't include View Partitions (`viewPartitions`), the partition discovery tool doesn't appear. If a tool you expect to see is missing, confirm your role includes the required scope listed in the tables below.
+
+Some scopes (`manageLibrary`, `runLogSearch`, `viewLibrary`, `runMetricsQuery`, and `viewUsersAndRoles`) correspond to actions every UI user can already perform, with no role-level restriction. These are granted to all OAuth users by design, so tools that require only these scopes appear for everyone regardless of role.
+
 :::note
-The list of tools your MCP client reports as available is not currently filtered by your org's licensed capabilities or your role's permissions. For example, Cloud SIEM tools may appear available even if Cloud SIEM isn't licensed for your org, or if your role lacks the required scope. Calling a tool you don't have access to fails, even though the client showed it as available. If a prompt fails unexpectedly, confirm the underlying capability is licensed and your role has the required scope listed for that tool.
+Tool filtering is based on role permissions, not org licensing. If a capability isn't licensed for your org (for example, Cloud SIEM), its tools may still appear in your client's tool list even though calling them fails.
 :::
 
 ### Utility tools
