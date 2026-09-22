@@ -49,9 +49,9 @@ Knowledge falls into three themes. Each one spans both the facts you would tell 
 
 ## Add knowledge
 
-During Private Preview, your account team points you to the settings. Knowledge is managed on the Dojo AI **Agent Settings** page, in the **Knowledge** section for the SOC Analyst Agent.
+During Private Preview, your account team points you to the settings. Knowledge is managed on the Dojo AI **Agent Settings** page, under **Knowledge** > **Sources** for the SOC Analyst Agent.
 
-You add an item by typing a note. Write the fact, pattern, or practice in plain language.
+To add an item, give it a name and type the fact, pattern, or practice in the content field. Each item is limited to 10,000 characters.
 
 ### Guardrails on submit
 
