@@ -116,6 +116,8 @@ Keyword searches are case-sensitive.
 * `Add a panel showing top 10 source IPs by request count to the Network Overview dashboard.`
 * `Create a dashboard with a panel for error rate, a panel for request latency, and a panel for top status codes.`
 
+For more information, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
+
 ## Monitor creation
 
 * `Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
