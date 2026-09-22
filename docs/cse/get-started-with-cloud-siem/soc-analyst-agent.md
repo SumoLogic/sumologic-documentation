@@ -123,9 +123,12 @@ Follow these steps once you're in Mobot:
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (that is, hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. <br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
 1. After executing a prompt like the one above, Mobot analyzes your request and fashions a log search query based on it.
 1. Click the log search results card to see the results of your request in the Log Search UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
-1. As you work with the investigation agent, after each step you will be presented with follow-up questions. Type a number corresponding to a follow-up question, or enter your own question.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-followup-questions.png')} alt="Insight investigation follow-up questions" style={{border: '1px solid gray'}} width="600" />
 
 At any point during the investigation, click **Open Insight** to return to the insight's **Details** page in Cloud SIEM.<br/><img src={useBaseUrl('img/cse/mobot-open-insight-button.png')} alt="Open Insight button in Mobot" style={{border: '1px solid gray'}} width="400" />
+
+:::note
+Resuming a past investigation conversation starts a fresh investigation using current context rather than continuing from where you left off.
+:::
 
 ### Search for related insights
 
@@ -162,12 +165,6 @@ Following are example questions you could try in the **Ask Something...** field.
 * `Tell me how to create a monitor that will fire if any changes occur on this insight`
 
 For more example prompts, see [Security investigations](/docs/search/mobot/example-prompts#security-investigations) in the Mobot Example Prompts documentation.
-
-### Generate dashboards
-
-To generate dashboards based on the context of your investigation, simply ask Mobot. For example, in the **Ask Something...** field, you could type `Create a dashboard with the results of this investigation`. The agent will build the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard-generated.png')} alt="Ask to generate dashboard" style={{border: '1px solid gray'}} width="700" />
-
-Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
 ### Start a new investigation
 
