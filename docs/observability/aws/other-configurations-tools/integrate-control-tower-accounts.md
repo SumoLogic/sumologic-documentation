@@ -48,7 +48,7 @@ Integrating with AWS Control Tower takes several steps: 
 * [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts):
   * [Set up collection manually](#set-up-collection-manually-for-aws-accounts): Create a CloudFormation stack in each AWS account managed by Control Tower.
   * [Set up collection automatically for new AWS accounts](#set-up-collection-automatically-for-new-aws-accounts): Deploy a single CloudFormation template to your management account so accounts created via Control Tower Account Factory are set up automatically going forward.
-* [Step 2](#step-2-collect-from-the-log-archive-account--cloudtrail-administrator-account): Set up collection of AWS CloudTrail logs that are aggregated from all Control Tower-managed accounts in a centralized Log Archive AWS account / CloudTrail administrator account.
+* [Step 2](#step-2-collect-from-the-log-archive-aws-account--cloudtrail-administrator-account): Set up collection of AWS CloudTrail logs that are aggregated from all Control Tower-managed accounts in a centralized Log Archive AWS account / CloudTrail administrator account.
 * [Step 3](#step-3-create-field-extraction-rule): Create a Field Extraction Rule (FER) that will tag logs with the account aliases you set up for each child account in the previous step.
 * [Step 4](#step-4-view-the-aws-observability-dashboards): View the AWS Observability dashboards for your Control Tower-managed accounts.
 
@@ -149,7 +149,7 @@ Use this option if no CloudTrail trail exists in the Log Archive AWS account / C
 
       1. Select **Yes** for **Create Sumo Logic CloudTrail Logs Source**.
       1. Enter the name of the CloudTrail Bucket in **Amazon S3 Bucket Name**.
-      1. Provide a path expression for the Logs in "**Path Expression for existing CloudTrail logs**. <br/><img src={useBaseUrl('img/observability/integrate-tower6.png')} alt="Any Existing Bucket Path Expression for the CloudTrail logs" style={{border: '1px solid gray'}} width="800" />
+      1. Provide a path expression for the Logs in "**Path Expression for existing CloudTrail logs**". <br/><img src={useBaseUrl('img/observability/integrate-tower6.png')} alt="Any Existing Bucket Path Expression for the CloudTrail logs" style={{border: '1px solid gray'}} width="800" />
 
     Case 2: Already collecting CloudTrail Data in Sumo Logic
 
