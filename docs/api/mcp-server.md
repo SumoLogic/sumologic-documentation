@@ -71,7 +71,14 @@ To build the URL, add `<subdomain>.` before the host name in your deployment's U
 
 | Deployment URL | URL with subdomain |
 | :--- | :--- |
+| `https://mcp.kr.sumologic.com/mcp` | `https://<subdomain>.mcp.kr.sumologic.com/mcp` |
+| `https://mcp.au.sumologic.com/mcp` | `https://<subdomain>.mcp.au.sumologic.com/mcp` |
+| `https://mcp.jp.sumologic.com/mcp` | `https://<subdomain>.mcp.jp.sumologic.com/mcp` |
+| `https://mcp.ca.sumologic.com/mcp` | `https://<subdomain>.mcp.ca.sumologic.com/mcp` |
+| `https://mcp.de.sumologic.com/mcp` | `https://<subdomain>.mcp.de.sumologic.com/mcp` |
+| `https://mcp.eu.sumologic.com/mcp` | `https://<subdomain>.mcp.eu.sumologic.com/mcp` |
 | `https://mcp.sumologic.com/mcp` | `https://<subdomain>.mcp.sumologic.com/mcp` |
+| `https://mcp.fed.sumologic.com/mcp` | `https://<subdomain>.mcp.fed.sumologic.com/mcp` |
 | `https://mcp.us2.sumologic.com/mcp` | `https://<subdomain>.mcp.us2.sumologic.com/mcp` |
 
 For example, if your subdomain is `acme` and your org is in US West (Oregon), use `https://acme.mcp.us2.sumologic.com/mcp`.
