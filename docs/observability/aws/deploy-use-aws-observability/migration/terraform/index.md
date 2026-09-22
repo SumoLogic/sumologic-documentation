@@ -356,6 +356,7 @@ module "app-module" {
 }
 
 module "collection-module-us-east-1" {
+  depends_on = [module.app-module]
   source  = "SumoLogic/aws-observability/sumologic//modules/collections"
   version = "3.0.0"
 
@@ -374,6 +375,7 @@ module "collection-module-us-east-1" {
 }
 
 module "collection-module-us-east-2" {
+  depends_on = [module.app-module]
   source  = "SumoLogic/aws-observability/sumologic//modules/collections"
   version = "3.0.0"
 
@@ -410,6 +412,7 @@ module "app-module" {
 }
 
 module "collection-module-us-east-1" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -427,6 +430,7 @@ module "collection-module-us-east-1" {
 }
 
 module "collection-module-us-east-2" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -682,6 +686,7 @@ module "app-module" {
 
 # Production account — us-east-1 (creates the production collector)
 module "collection-module-production-us-east-1" {
+  depends_on = [module.app-module]
   source  = "SumoLogic/aws-observability/sumologic//modules/collections"
   version = "3.0.0"
 
@@ -701,6 +706,7 @@ module "collection-module-production-us-east-1" {
 
 # Production account — us-east-2 (reuses the production collector)
 module "collection-module-production-us-east-2" {
+  depends_on = [module.app-module]
   source  = "SumoLogic/aws-observability/sumologic//modules/collections"
   version = "3.0.0"
 
@@ -726,6 +732,7 @@ module "collection-module-production-us-east-2" {
 
 # Development account — us-west-1 (creates the development collector)
 module "collection-module-development-us-west-1" {
+  depends_on = [module.app-module]
   source  = "SumoLogic/aws-observability/sumologic//modules/collections"
   version = "3.0.0"
 
@@ -757,6 +764,7 @@ module "app-module" {
 
 # Production account — us-east-1 (creates the production collector)
 module "collection-module-production-us-east-1" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -775,6 +783,7 @@ module "collection-module-production-us-east-1" {
 
 # Production account — us-east-2 (reuses the production collector)
 module "collection-module-production-us-east-2" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
@@ -799,6 +808,7 @@ module "collection-module-production-us-east-2" {
 
 # Development account — us-west-1 (creates the development collector)
 module "collection-module-development-us-west-1" {
+  depends_on = [module.app-module]
   source = "./modules/collections"
 
   providers = {
