@@ -355,20 +355,20 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Sources](/docs/send-data)**. Sources are configured on Sumo Logic collectors and collect customer data.
 
-**[Suppressed signal](/docs/cse/records-signals-entities-insights/about-signal-suppression)**. In Cloud SIEM, a signal that the insight algorithm excludes from the insight generation process. A suppressed signal does not contribute to or become part of an insight. By default, signals are automatically suppressed for 72 hours.
-
 **[Subqueries](/docs/search/subqueries)**. Subqueries allow you to filter and evaluate conditions for a log query when you may not be sure of the exact filter or condition criteria but you can write a short query to set them for you. Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query.
 
 **[Support account](/docs/manage/security/enable-support-account)**. A support account is a special Sumo Logic user account that you can enable so that Sumo Logic support personnel can access your Sumo Logic org. Typically, you enable your support account for a limited period of time, just long enough to allow Sumo Logic support to diagnose a problem or answer a question.
+
+**[Suppressed signal](/docs/cse/records-signals-entities-insights/about-signal-suppression)**. In Cloud SIEM, a signal that the insight algorithm excludes from the insight generation process. A suppressed signal does not contribute to or become part of an insight. By default, signals are automatically suppressed for 72 hours.
 
 
 
 
 ## T
 
-**[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all collectors in an account to not exceed the allowable rate.
-
 **[Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence)**. A Sumo Logic feature that lets you ingest and query threat indicators to enrich log searches and Cloud SIEM detections. Threat indicators are data points about known threats, such as malicious IP addresses, file hashes, and hostnames. Indicators come from Sumo Logic-managed sources or custom sources you configure.
+
+**[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all collectors in an account to not exceed the allowable rate.
 
 **[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
