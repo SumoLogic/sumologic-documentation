@@ -72,7 +72,7 @@ Use these keywords and file path patterns to suggest the most relevant Technical
 
 **Keywords in content/descriptions:**
 
-- **Alerts**: monitor, alert, scheduled search, webhook, notification 
+- **Alerts**: monitor, alert, scheduled search, webhook, notification
 - **APIs**: API, endpoint, REST, SDK, authentication, token
 - **APM**: trace, span, RUM, real user monitoring, application performance
 - **Apps/Integrations**: app, integration, connector, third-party
