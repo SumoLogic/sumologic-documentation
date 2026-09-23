@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zscaler.png')} alt="axonius" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zscaler.png')} alt="Zscaler icon" width="80"/>
 
 **Version: 1.8  
 Updated: April 30, 2026**

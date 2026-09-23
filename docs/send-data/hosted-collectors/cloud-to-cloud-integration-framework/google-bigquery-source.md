@@ -2,7 +2,7 @@
 id: google-bigquery-source
 title: Google BigQuery Source
 sidebar_label: Google BigQuery
-tags:
+keywords:
   - cloud-to-cloud
   - google-bigquery
 description: Learn how to collect data using the BigQuery API.

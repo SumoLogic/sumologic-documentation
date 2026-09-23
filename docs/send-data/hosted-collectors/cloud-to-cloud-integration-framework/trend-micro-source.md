@@ -2,7 +2,7 @@
 id: trend-micro-source
 title: Trend Micro Source
 sidebar_label: Trend Micro
-tags:
+keywords:
   - cloud-to-cloud
   - trend-micro
 description: Learn how to collect alert details from Trend Micro platform.

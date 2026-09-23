@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/tufin-securechange.png')} alt="threatq" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/tufin-securechange.png')} alt="Tufin SecureChange icon" width="100"/>
 
 ***Version: 1.2  
 Updated: April 30, 2026***

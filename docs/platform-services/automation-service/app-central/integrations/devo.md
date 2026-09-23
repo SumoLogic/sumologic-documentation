@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/devo.png')} alt="darktrace" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/devo.png')} alt="Devo icon" width="100"/>
 
 ***Version: 1.3  
 Updated: April 29, 2026***

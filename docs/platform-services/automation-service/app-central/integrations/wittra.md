@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/wittra.png')} alt="wwittra" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/wittra.png')} alt="Wittra icon" width="70"/>
 
 ***Version: 1.2  
 Updated: April 30, 2026***

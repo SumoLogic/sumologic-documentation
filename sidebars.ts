@@ -88,7 +88,17 @@ module.exports = {
       link: {type: 'doc', id: 'send-data/index'},
       items: [
         'send-data/choose-collector-source',
-        'send-data/ic-vs-ot-collector-performance-benchmarks',
+        {
+          type: 'category',
+          label: 'IC vs OTel Performance Benchmarks',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'send-data/ic-vs-ot-collector-performance-benchmarks/index'},
+          items: [
+            'send-data/ic-vs-ot-collector-performance-benchmarks/local-file-source-benchmarks',
+            'send-data/ic-vs-ot-collector-performance-benchmarks/remote-windows-event-log-benchmarks',
+          ],
+        },
         'send-data/setup-wizard',
         {
           type: 'category',
@@ -1495,6 +1505,9 @@ module.exports = {
       link: {type: 'doc', id: 'search/mobot/index'},
       items: [
           'search/mobot/example-prompts',
+          'dashboards/create-panel-with-mobot',
+          'alerts/monitors/create-monitor-with-mobot',
+          'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
       ],
     },
     {

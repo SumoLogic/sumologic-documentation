@@ -2,7 +2,7 @@
 id: crowdstrike-source
 title: CrowdStrike Source
 sidebar_label: CrowdStrike
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike
 description: The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.
