@@ -9,17 +9,15 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## A
 
-**Acronyms**. An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query, etc. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. For example: Secure Shell (SSH).
+**Acronym**. See [Acronyms](/docs/contributing/style-guide/#acronyms) in the style guide.
 
 **Aggregates tab**. When referring to the Aggregates tab (where aggregate search results are displayed) the term Aggregates is capitalized.
 
 **Aka**. Don't use. Write out "also known as" instead.
 
-**Ampersand (&)**. Don't use for "and". Spell out.
-
 **Anomaly Detection**. Always capitalize.
 
-**Apps**. When referring to a Sumo Logic app, do not capitalize. No need to spell out application.
+**App**. When referring to a Sumo Logic app, do not capitalize. No need to spell out application.
 
 **Autocomplete**. One word, not two. The Sumo Logic feature is called Search autocomplete.
 
@@ -69,7 +67,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **En dash**. Use the en dash (–) only for numeric and date ranges. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
-**Exclamation points !**. Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
+**Exclamation point (!)**. See [Exclamation points](/docs/contributing/style-guide/#exclamation-points) in the style guide.
 
 
 ## G
@@ -83,13 +81,13 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## H
 
-**Hash rules**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
+**Hash rule**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
 **Hibachi**. Project for content sharing and collaboration. Includes a new app catalog and app installation flow and a new library design.
 
 **Home Page**. Persistent tab, which services the Jiro and Hibachi projects by helping users get started and discover content more easily.
 
-**Hosted collectors**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
+**Hosted collector**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 
 
 ## I
@@ -135,7 +133,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## O
 
-**Operators**. When referring to a search operator in prose, capitalize the operator's name only if it begins a sentence. When the operator name is the subject of a heading or an entry (such as in the Glossary), write it lowercase in backticks: `` `where` operator ``, `` `parse` operator ``.
+**Operators**. See [Operators](/docs/contributing/style-guide/#operators) in the style guide.
 
 **Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
@@ -195,7 +193,7 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 ## T
 
-**Tabs**. When you name a tab in Sumo Logic, bold the tab's name, match its on-screen capitalization, and keep the word "tab" lowercase and outside the bold. (Examples: **Welcome** tab, **Search** tab, **Status** tab.) See **UI labels**, below.
+**Tab**. When you name a tab in Sumo Logic, bold the tab's name, match its on-screen capitalization, and keep the word "tab" lowercase and outside the bold. (Examples: **Welcome** tab, **Search** tab, **Status** tab.) See **UI labels**, below.
 
 **Text box**. Use text box, not field. A field is a special part of a query.
 
@@ -218,7 +216,7 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 ## U
 
-**UI labels**. When you name a UI element or page as it appears on screen, bold the label and match its on-screen capitalization: the **Search** page, the **Scheduled Views** page, on the **Aggregates** tab, select **Add to Dashboard**. Bold only the label; the generic word after it ("page", "tab", "button", "menu", "dialog", "field") stays lowercase and outside the bold. When you mean the underlying feature or concept rather than the on-screen control, use lowercase and no bold: "a scheduled view is a pre-aggregated index of your data", "run a search". See the style guide's [Bold](/docs/contributing/style-guide/#bold) and [Capitalization](/docs/contributing/style-guide/#capitalization) sections.
+**UI labels**. See [Bold](/docs/contributing/style-guide/#bold) and [Capitalization](/docs/contributing/style-guide/#capitalization) in the style guide.
 
 
 ## W

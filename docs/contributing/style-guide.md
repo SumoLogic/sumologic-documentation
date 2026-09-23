@@ -362,10 +362,10 @@ Avoid less common contractions, like “should’ve”, or “it’ll”.
 
 ## Dates
 
+For dates in prose, we use American-style English (for example, `June 5` not `5 June`).
+
 * Use the month’s full name (September). If space is a concern, use 3-letter abbreviations (Sep).
-* Avoid writing dates numerically (7-25-17) and ordinal indicators (1st, 2nd, 3rd, 4th). Use the 12-hour clock unless the user has specified otherwise, followed by am or pm in lowercase letters without a space.
-* When including a time zone, append the time zone’s abbreviation after the “am” or “pm”, separated by a space.
-* To show a time range, use an en dash and include the “am” or “pm” after both times.
+* Avoid writing dates numerically (7-25-17) and ordinal indicators (1st, 2nd, 3rd, 4th).
 
 :::note
 The notation used in the UI time range editor is an exception to some of these rules.
@@ -1033,9 +1033,12 @@ When a feature becomes Generally Available (GA), remove all Preview-related labe
 
 ## Punctuation
 
-Punctuation is placed outside of quotation marks, British English style. This keeps a quoted command, field value, or error string accurate. Trailing punctuation is not mistaken for part of it. For everything else (dates, times, spelling), we use American English style.
+### Ampersands
+
+Do not use the ampersand symbol (`&`). Spell out as "and".
 
 ### Colons
+
 Colons are used to introduce lists or to separate titles from subtitles. Only include the colon if the introduction isn’t a complete sentence.
 
 ### Commas
@@ -1062,6 +1065,9 @@ Use ellipses for truncation. Don’t use ellipses for placeholders or trailing o
 
 In the UI, avoid periods for single sentences on their own. Whenever there are two or more sentences, use periods at the end of each sentence. Separate sentences by one space, not two.
 
+### Quotation marks
+
+Punctuation is placed outside of quotation marks, U.K.-style English (for example, `"Hello",`, not `"Hello,"`). This keeps a quoted command, field value, or error string accurate, so that trailing punctuation is not mistaken for part of it. For everything else (dates, times, spelling), we use American-style English.
 
 ## Release notes
 
@@ -1165,6 +1171,17 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
 * **Use specific version numbers and dates.** Avoid "latest", "current", or "recent" without a specific value. AI tools reproduce whatever is on the page. Vague references become stale citations.
 * **Add an "At a glance" section for long pages.** For pages over 800 words, add a brief summary section near the top with key facts as short bullet points. This is the most citation-friendly portion of a page for generative AI tools.
 
+## Time
+
+When writing about time, use American-style English, which uses the 12-hour clock, not military time. So you'd write `1:00pm`, not `13:00`.
+
+* Use the 12-hour clock unless the user has specified otherwise, followed by am or pm in lowercase letters without a space.
+* When including a time zone, append the time zone’s abbreviation after the “am” or “pm”, separated by a space.
+* To show a time range, use an en dash and include the “am” or “pm” after both times.
+
+:::note
+The notation used in the UI time range editor is an exception to some of these rules.
+:::
 
 
 ## UI elements
