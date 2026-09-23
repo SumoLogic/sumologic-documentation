@@ -1,37 +1,16 @@
 ---
 slug: /integrations/global-intelligence
 title: Global Intelligence Service
-description: Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
+description: The Global Intelligence Service app provides security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/global-intelligence/gis.svg')} alt="Global Intelligence icon" width="25"/>
 
-Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
+The Global Intelligence Service app provides security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
 
 <div className="box-wrapper" >
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Global Intelligence GuardDuty icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-guardduty')}>Global Intelligence for Amazon GuardDuty</a></h4>
-  <p>A guide to the Sumo Logic app for GI for Amazon GuardDuty.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Global Intelligence Devops icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops')}>Global Intelligence for AWS CloudTrail DevOps</a></h4>
-  <p>A guide to the Sumo Logic app for GI for AWS CloudTrail DevOps.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Global Intelligence Secops icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops')}>Global Intelligence for AWS CloudTrail SecOps</a></h4>
-  <p>A guide to the Sumo Logic app for GI for AWS CloudTrail SecOps.</p>
-  </div>
-</div>
 <div className="box smallbox card">
   <div className="container">
   <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="Cloud SIEM icon" width="50"/>
@@ -40,4 +19,3 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
   </div>
 </div>
 </div>
-

@@ -31,11 +31,6 @@ If you've previously set up our AWS Observability Solution with CloudFormation a
 
 :::
 
-:::note
-The [Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops/) app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.
-:::
-
-
 For this setup, complete the following:
 
 1. Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
