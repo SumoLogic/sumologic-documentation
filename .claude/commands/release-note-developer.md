@@ -1,8 +1,6 @@
 # Create New Developer Release Note
 
-Automates the creation of Developer release notes for APIs, SDKs, integrations, and platform changes relevant to developers.
-
-<!-- awaiting SME guidance --> 
+Automates the creation of Developer release notes for APIs, integrations, and platform changes relevant to developers.
 
 ## What this command does
 
@@ -17,7 +15,6 @@ When you invoke `release-note-developer`, Claude will guide you through:
 
 * Announcing new API endpoints or features
 * Documenting API changes, deprecations, or breaking changes
-* Publishing SDK updates or new SDK versions
 * Releasing developer tools or CLI updates
 * Announcing platform changes affecting developers
 * Documenting authentication or integration changes
@@ -28,7 +25,6 @@ When you invoke `release-note-developer`, Claude will guide you through:
 Developer release notes typically cover:
 
 * **APIs**. New endpoints, changes, deprecations
-* **SDKs**. New SDKs, version updates, improvements
 * **CLI**. Command-line tool updates
 * **Integrations**. New integrations or integration changes
 * **Platform**. Platform changes affecting developers
@@ -74,7 +70,6 @@ blog-developer/YYYY-MM-DD-{slug}.md
 Examples:
 * `blog-developer/2026-03-23-api-endpoints.md`
 * `blog-developer/2026-04-09-india-datacenter-deprecation.md`
-* `blog-developer/2026-05-15-python-sdk-v2.md`
 
 **Important**: Files are created in `/blog-developer/` directory (root level, no subdirectories)
 
@@ -108,7 +103,6 @@ hide_table_of_contents: true
 * **Always ask user if they want to include keywords**
 * Suggest keywords based on content type:
   * API changes: `api`, `endpoints`, `rest-api`
-  * SDK updates: `sdk`, `python`, `java`, etc.
   * Deprecations: `deprecation`, `end-of-life`
   * Breaking changes: `breaking-change`
   * Platform updates: `platform`, `datacenter`
@@ -132,8 +126,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Title guidelines:**
 * Keep concise (2-5 words)
 * Use title case
-* Common patterns: "APIs", "SDKs", "CLI Tools", "Platform Updates"
-* Can be more specific: "Python SDK", "REST API", "Management APIs"
+* Common patterns: "APIs", "CLI Tools", "Platform Updates"
+* Can be more specific: "REST API", "Management APIs"
 
 ### Step 5: Write content
 
@@ -185,14 +179,6 @@ We're excited to announce new API endpoints for managing Field Extraction Rules 
 
 **Monitors API**: The `notificationGroupFields` parameter is now required when creating monitors. Update your integrations before June 1, 2026. See the [Monitors API documentation](/docs/api/monitors) for details.
 ```
-
-#### SDK Updates
-
-For SDK releases:
-* Version number
-* What's new or changed
-* Installation instructions
-* Link to the SDK's own GitHub releases or changelog
 
 #### Deprecations
 
@@ -279,7 +265,7 @@ Before finishing, verify:
 * [ ] Content is clear and includes relevant links
 * [ ] Breaking changes are clearly marked (use bold or H4 sections)
 * [ ] Documentation links use relative paths (start with `/docs/`)
-* [ ] Keywords added if applicable (deprecation, api, sdk, etc.)
+* [ ] Keywords added if applicable (deprecation, api, etc.)
 * [ ] No trailing whitespace
 
 ## Example usage
@@ -456,12 +442,6 @@ Would you like me to help refine the content or add additional details?
 * Clearly state end-of-life date
 * Provide migration path with examples
 * Offer support contact for questions
-
-**For SDK releases:**
-* Include version number prominently
-* Show installation/upgrade commands
-* Highlight breaking changes separately
-* Link to changelog or GitHub release
 
 **All release notes:**
 * Write for developers (assume technical knowledge)

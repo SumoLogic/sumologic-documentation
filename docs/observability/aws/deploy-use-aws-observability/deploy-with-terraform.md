@@ -82,10 +82,7 @@ Before you run the Terraform script, perform the following actions on a server m
     ```bash
     jq --version
     ```
-
-<!-- awaiting SME guidance -->
-    
-1. Install Sumo Logic Python SDK using the following command. Click [here](https://pypi.org/project/sumologic-sdk/) to learn more.
+1. Install Sumo Logic Python SDK using the following command. This is a community-supported package; Sumo Logic doesn't take support tickets for it ([learn more](https://pypi.org/project/sumologic-sdk/)).
     ```bash
     pip install sumologic-sdk
     ```
