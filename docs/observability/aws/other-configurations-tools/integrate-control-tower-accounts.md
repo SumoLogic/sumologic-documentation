@@ -124,6 +124,10 @@ Use this option if the Log Archive AWS account / CloudTrail administrator accoun
    - The **path expression** for the log files (for example, `AWSLogs/*/CloudTrail/*/*`).
    - The **AWS region** of the S3 bucket.
    - A **Source Category** such as `aws/observability/cloudtrail/logs`.
+   - Tag the account field in the source with the right account value
+   <br/><img src={useBaseUrl('img/observability/tag-cloud-trail-field.png')} alt="Tag the account field in the source with the right account value" style={{border: '1px solid gray'}} width="500" />
+
+
 
 ### Option 2: Set up a new trail
 
