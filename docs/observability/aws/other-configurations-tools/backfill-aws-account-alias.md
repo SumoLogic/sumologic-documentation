@@ -5,7 +5,7 @@ sidebar_label: Backfill Source Alias
 description: Use the backfill script to update the account field on existing AWS Observability collector sources with a human-readable alias.
 ---
 
-The AWS Observability Solution uses an `account` field on collector sources to identify AWS accounts in dashboards and the [AWS Observability hierarchy](/docs/dashboards/explore-view/#aws-observability). By default, this field contains the 12-digit AWS account ID. If you want to replace numeric account IDs with human-readable aliases (for example, `prod`, `dev`, or `billing`) on sources that were created before you configured an alias, use the backfill script.
+The AWS Observability Solution uses an `account` field on collector sources to identify AWS accounts in dashboards and the [AWS Observability hierarchy](/docs/dashboards/explore-view/#aws-observability). By default, this field contains the 12-digit AWS account ID. If you want to replace numeric account IDs with human-readable aliases (for example, `prod`, `dev`, or `billing`) on sources that were created before you configured an alias, use the [backfill script](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master/aws-observability/scripts/backfill_aws_account_alias.py).
 
 ## When to use this script
 
