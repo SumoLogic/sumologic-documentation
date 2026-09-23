@@ -35,7 +35,7 @@ The agent uses your knowledge in two places:
 * **Auto-investigation**. The knowledge is applied automatically as the agent triages each insight that flows into Cloud SIEM.
 * **Mobot follow-ups**. When you `@`-mention the SOC Analyst Agent in [Mobot](/docs/search/mobot/) to dig into an investigation result, the same knowledge is in context.
 
-Whenever your knowledge shapes a response, the agent surfaces which piece it drew on, so a verdict is never a black box.
+Whenever your knowledge shapes a response, the agent surfaces which piece it drew on and how it was applied, so a verdict is never a black box.
 
 ## What you can teach the agent
 
@@ -43,7 +43,7 @@ Knowledge falls into three themes. Each one spans both the facts you would tell 
 
 | Theme | What it covers | Examples |
 |:--|:--|:--|
-| **Your environment** | The standing facts about how your organization is set up, how it normally behaves, and what it is required to meet. | `10.0.50.12 is our Nessus scanner; we rotate the IP every 30 days.` <br/> `MFA is required on all admin accounts.` <br/> `Sunday maintenance windows run 0100–0500 UTC and trigger EDR alerts on Host-041.` |
+| **Your environment** | The standing facts about how your organization is set up, how it normally behaves, and what it is required to meet. | `10.0.50.12 is our Nessus scanner; we rotate the IP every 30 days.` <br/> `MFA is required on all admin accounts.` <br/> `Sunday maintenance windows run 0100–0500 UTC and trigger EDR alerts on Host-041.` <br/> `Analysts traveling internationally connect via VPN and may generate authentication alerts from unexpected IP ranges.` |
 | **Historical learning and team judgment** | Specific past incidents, and the recurring patterns your team has learned to recognize. | `The Nov 12 spike was resolved by rotating API credentials.` <br/> `Friday brute-force spikes are usually the scheduled pentest.` |
 | **Operational practices and workflows** | How your organization decides what to do, and the steps your team takes. | `PII gets escalated straight to the security lead; we skip the ticket queue.` <br/> `Impossible-travel alert, verify identity history, then open a ticket.` |
 
@@ -52,6 +52,8 @@ Knowledge falls into three themes. Each one spans both the facts you would tell 
 During Private Preview, your account team points you to the settings. Knowledge is managed on the Dojo AI **Agent Settings** page, under **Knowledge** > **Sources** for the SOC Analyst Agent.
 
 To add an item, give it a name and type the fact, pattern, or practice in the content field. Each item is limited to 10,000 characters.
+
+Each item works best when it covers one concept, uses two to five sentences, and references specific names, IPs, patterns, or procedures your team actually uses. If you paste a longer document, the agent breaks it into separate entries automatically.
 
 ### Guardrails on submit
 
@@ -107,7 +109,7 @@ Some limits are not tied to the preview phase:
 
 ## Permissions and data access
 
-Adding or changing knowledge requires administrator configuration. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
+Adding or changing knowledge requires the `manageAgent` role capability scoped to the SOC Analyst Agent. Sumo Logic provisions the initial grant; contact your account team to get started. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
 
 Knowledge should describe your environment, not carry access to it.
 
