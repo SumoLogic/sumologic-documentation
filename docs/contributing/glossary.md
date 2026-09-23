@@ -67,19 +67,19 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 [**Cloud SOAR**](/docs/cloud-soar). A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
 
-**[Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. A fully-managed collection system that collects logs and events directly from SaaS and cloud platforms such as Salesforce, Microsoft 365, and Okta. The framework handles authentication, scheduling, and state tracking automatically. Also referred to as C2C.
-
-**[Credit](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. A unit of measure that tracks account usage, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose.
-
-<!--
+<!-- TODO keep?
 **[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
 -->
+
+**[Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. A fully-managed collection system that collects logs and events directly from SaaS and cloud platforms such as Salesforce, Microsoft 365, and Okta. The framework handles authentication, scheduling, and state tracking automatically. Also referred to as C2C.
 
 **[Collector](/docs/send-data/choose-collector-source)**. Sumo Logic collectors are lightweight applications that allow you to connect your environment to Sumo Logic in order to collect message data. There are two types of collectors. Installed collectors are configured on machines in your deployment for sources such as Local File, Remote File, Syslog, Local Windows Event Logs, Remote Windows Event Logs, and Script. Hosted collectors require no installation, and are used to collect data from various services like Amazon S3 or over HTTP and Syslog.
 
 **[Content administrator](/docs/manage/content-sharing/admin-mode)**. In the Sumo Logic Library, you can choose **View as Content Administrator** to enter Admin mode, so you can manage content for your organization. In Admin mode you can migrate content from one location to another, and highlight important content in the **Admin Recommended** folder.
 
 **[Content sharing](/docs/manage/content-sharing)**. A Sumo Logic feature that allows you to share searches, dashboards, and folders with a user, a role, or combinations of the two.
+
+**[Credit](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. A unit of measure that tracks account usage, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose.
 
 
 
@@ -102,7 +102,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Detected relationship](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a relationship detected between entities that appear together in a record, such as an IP address and hostname in the same log message, even if they are not part of the insight currently being viewed. Displayed as solid lines in the entity graph.
 
-<!--
+<!-- TODO keep?
 **Dimension**. In [Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20) and [Prometheus](/docs/metrics/introduction/metric-formats#prometheus) metrics, dimensions are the one or more space-separated key-value pairs that uniquely identify what is being measured. Dimensions are also referred to as intrinsic tags and labels.
 -->
 
@@ -117,13 +117,13 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 ## E
 
-**[Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral. Sumo Logic deletes an ephemeral collector automatically after it has been offline for 12 hours.
-
 **[Endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
 **[Enrichment](/docs/cse/integrations/enrichments-and-indicators)**. In Cloud SIEM, addition of data to records that provides more information for analysis of security incidents.
 
 **[Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)**. In Cloud SIEM, a unique actor encountered in incoming messages, such as a user, IP address, or host.
+
+**[Ephemeral](/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral)**. Refers to data sources, such as containers, that are created and destroyed as appropriate, resulting in a high volume log data or metrics. In Sumo Logic, you can set a collector to be ephemeral. Sumo Logic deletes an ephemeral collector automatically after it has been offline for 12 hours.
 
 **[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of processing rule that specifies log messages that you do not want to send to Sumo Logic, think of it as an "allowlist" filter.
 
@@ -132,9 +132,9 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Favorite](/docs/get-started/library)**. The Favorites tab displays searches and dashboards that you refer to frequently, or content that you want to keep handy. In the Library, on the Personal and Org tabs, you can "favorite" content to make it appear on the Favorites tab. Just click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to the Favorites tab for easy access. You can also favorite saved searches from the Search page, and favorite from the **Dashboards** page.
 
-**[Field extraction rule](/docs/manage/field-extractions)**. Field extraction can be set up as rules that parse out fields as log messages are ingested. This means that instead of running a query to parse out fields, that work is done automatically so when it's time to run a search the fields are already available in results.
-
 **[Field](/docs/manage/fields)**. Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as log metadata fields.
+
+**[Field extraction rule](/docs/manage/field-extractions)**. Field extraction can be set up as rules that parse out fields as log messages are ingested. This means that instead of running a query to parse out fields, that work is done automatically so when it's time to run a search the fields are already available in results.
 
 **[`fields` operator](/docs/search/search-query-language/search-operators/fields)**. A search operator that selects which fields to include or exclude from query results. Use allowlist mode to keep only specified fields, or denylist mode to drop specified fields and return the rest.
 
@@ -179,11 +179,11 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a group of signals clustered around a single entity that are generated when an entity’s Activity Score exceeds a threshold.
 
-**[Installed collector](/docs/send-data/installed-collectors)**. Installed collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
-
 **[Installation token](/docs/manage/security/installation-tokens)**. Installation tokens are assigned to your organization and are used to register installed collectors to your Sumo Logic account. They do not expire and can only be used to register installed collectors. You can deactivate, reactivate, or delete tokens at any time.
 
-**[Intrinsic tags](/docs/metrics/introduction/metric-formats#carbon-20)**. In Carbon 2.0-formatted metrics, intrinsic tags are the one or more space-separated key-value pairs that uniquely identify what is being measured. Intrinsic tags are also referred to as dimensions.
+**[Installed collector](/docs/send-data/installed-collectors)**. Installed collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
+
+**[Intrinsic tag](/docs/metrics/introduction/metric-formats#carbon-20)**. In Carbon 2.0-formatted metrics, intrinsic tags are the one or more space-separated key-value pairs that uniquely identify what is being measured. Intrinsic tags are also referred to as dimensions.
 
 
 ## K
@@ -228,23 +228,21 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Messages tab](/docs/search/get-started-with-search/search-page/set-messages-tab-preferences)**. When you run a search query, messages display in the Messages tab in the lower half of the browser window of the Search page.
 
-**[Metadata](/docs/send-data/data-enrichment)**. Data about other data. If the logs and metrics you ingest have associated metadata, you can leverage it for more targeted log searches and metric queries. Metadata for metrics includes both intrinsic tags and meta tags.
-
 **[Meta tags](/docs/metrics/introduction/metric-formats#carbon-20)**. In Carbon 2.0-formatted metrics, meta tags are the key-value pairs for a metric that provide additional, but not identifying information about the thing being measured. A meta tag is a piece of metadata that might be useful in querying your metrics.
 
-**[Metric rules editor](/docs/metrics/metric-rules-editor)**. A page in the Sumo Logic web app for creating metric rules.
-
-**[Metric rules editor](/docs/metrics/metric-rules-editor)**. A page in the Sumo Logic web app for creating metric rules.
+**[Metadata](/docs/send-data/data-enrichment)**. Data about other data. If the logs and metrics you ingest have associated metadata, you can leverage it for more targeted log searches and metric queries. Metadata for metrics includes both intrinsic tags and meta tags.
 
 **[Metric rule](/docs/metrics/metric-rules-editor)**. A Sumo Logic feature that allows you to tag metrics with data derived from the metric identifier. Then, you can use those tags in metric queries.
 
-**[Metric throttling](/docs/metrics/manage-metric-volume/metric-throttling)**. A Sumo Logic feature that throttles your metric sources when you exceed your DPM burst limit. Your ingestion is slowed down until the rate of ingestion is within the allowable contracted limits.
+**[Metric rules editor](/docs/metrics/metric-rules-editor)**. A page in the Sumo Logic web app for creating metric rules.
 
-**[Metrics transformation rules](/docs/metrics/metrics-transformation-rules)**. Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
+**[Metric throttling](/docs/metrics/manage-metric-volume/metric-throttling)**. A Sumo Logic feature that throttles your metric sources when you exceed your DPM burst limit. Your ingestion is slowed down until the rate of ingestion is within the allowable contracted limits.
 
 **[Metric volume index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index)**. A Sumo Logic index to which Sumo Logic writes messages with information about the volume of metrics you are ingesting.
 
-<!--
+**[Metrics transformation rule](/docs/metrics/metrics-transformation-rules)**. Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
+
+<!-- TODO keep?
 **[Microservices](/docs/integrations/app-development)**. The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 -->
 
@@ -311,11 +309,11 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 ## R
 
-**[Receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time)**. You can display search results in the order that the collector received the messages in milliseconds.
-
 **[RBAC](/docs/manage/users-roles/roles/role-based-access-control/)**. Sumo Logic supports Role-Based Access Control (RBAC) to allow administrators to customize system access. With RBAC, administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
 
 **[Real User Monitoring (RUM)](/docs/apm/real-user-monitoring)**. A Sumo Logic APM capability that captures end-to-end user transactions directly in the browser using OpenTelemetry instrumentation. RUM records performance timings, rendering events, errors, and user cohort data so you can understand the quality of your web application experience.
+
+**[Receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time)**. You can display search results in the order that the collector received the messages in milliseconds.
 
 **[Record](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, a collection of normalized data created from a message.
 
@@ -347,9 +345,9 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
-**[Searchable time](/docs/search/get-started-with-search/build-search/use-searchable-time)**. You can display search results in the order in which logs become available for search after being received by the Sumo Logic system.
+**[Search template](/docs/search/get-started-with-search/build-search/search-templates)**. Search templates simplify searches for users by providing easy to select input choices. You can have search templates replace any text in a query, including fields, keywords, and arguments to operators.
 
-**[Search templates](/docs/search/get-started-with-search/build-search/search-templates)**. Search templates simplify searches for users by providing easy to select input choices. You can have search templates replace any text in a query, including fields, keywords, and arguments to operators.
+**[Searchable time](/docs/search/get-started-with-search/build-search/use-searchable-time)**. You can display search results in the order in which logs become available for search after being received by the Sumo Logic system.
 
 **[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met.
 

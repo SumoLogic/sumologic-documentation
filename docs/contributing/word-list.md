@@ -61,9 +61,9 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **E.g., i.e., and etc.** Don't use these abbreviations. Use "for example" instead of "e.g.", "that is" instead of "i.e.", and avoid "etc." by listing items explicitly or using "such as." See [Abbreviations](/docs/contributing/style-guide/#abbreviations) in the style guide.
 
-**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
-
 **Em dash**. Avoid em dashes (—). See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
+
+**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
 **En dash**. Use the en dash (–) only for numeric and date ranges. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
@@ -74,9 +74,9 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **GB and Gbit**. GB is the acronym for gigabytes. Gbit or Gb is the acronym for gigabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10GB or 15Gbit.)
 
-**Geolocation**. Geolocation is one word. It is not capitalized unless used at the beginning of a sentence.
-
 **Geo lookup operator**. Geo lookup is two words.
+
+**Geolocation**. Geolocation is one word. It is not capitalized unless used at the beginning of a sentence.
 
 
 ## H
@@ -199,19 +199,19 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 **Third party**. Hyphenate as an adjective, not as a noun. For example, "We use third-party scripts" is hyphenated. But "Scripts are written by a third party" is not hyphenated.
 
-**Timeline**. Timeline is one word, not two.
-
 **Time range**. Time range is two words, not one.
 
 **Time series.** Time series is two words, not one.
 
 **Time slice**. Time slice is two words, not one.
 
+**Time zone**. Time zone is two words, not one.
+
+**Timeline**. Timeline is one word, not two.
+
 **Timeout / time out**. Use "timeout" as a noun or adjective in computing contexts. Use "time out" as a verb. Don't use "time-out."
 
 **Timestamp**. Timestamp is one word.
-
-**Time zone**. Time zone is two words, not one.
 
 
 ## U
