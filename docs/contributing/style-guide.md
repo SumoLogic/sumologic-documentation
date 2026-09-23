@@ -1049,7 +1049,7 @@ We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orang
 
 Try not to use em dashes (the long dash) as they read as generic AI output. Rewrite instead: use a period or semicolon to split two independent clauses, a colon to introduce something, or commas or parentheses for a brief aside.
 
-Use the en dash (–) only for numeric and date ranges, with no space on either side: `9–17`, `2023–2024`. See [Numbers](#numbers) and [Dates](#dates).
+Use the en dash (–) only for numeric, date, and time ranges, with no space on either side: `9–17`, `2023–2024`. See [Numbers](#numbers), [Dates](#dates), and [Time](#time).
 
 Use the hyphen (-) for compound modifiers, such as `drop-down menu` or `read-only field`.
 
@@ -1173,11 +1173,9 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
 
 ## Time
 
-When writing about time, use American-style English, which uses the 12-hour clock, not military time. So you'd write `1:00pm`, not `13:00`.
-
-* Use the 12-hour clock unless the user has specified otherwise, followed by am or pm in lowercase letters without a space.
-* When including a time zone, append the time zone’s abbreviation after the “am” or “pm”, separated by a space.
-* To show a time range, use an en dash and include the “am” or “pm” after both times.
+* Use the 12-hour clock unless specified otherwise, followed by am or pm in lowercase letters without a space (for example, you'd write `1:00pm`, not `13:00`).
+* When including a time zone, append the time zone’s abbreviation after the “am” or “pm”, separated by a space (for example, `1:00pm EST`).
+* To show a time range, use an en dash and include the “am” or “pm” after both times (for example, `1:00pm–3:00pm`).
 
 :::note
 The notation used in the UI time range editor is an exception to some of these rules.
