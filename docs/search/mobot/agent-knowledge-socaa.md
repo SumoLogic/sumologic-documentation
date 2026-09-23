@@ -1,6 +1,6 @@
 ---
-id: socaa-org-knowledge-preview
-title: SOC Analyst Agent Knowledge
+id: agent-knowledge-socaa
+title: Agent Knowledge for SOC Analyst Agent
 description: Teach the Cloud SIEM SOC Analyst Agent your environment, runbooks, and past incidents so its investigations of Cloud SIEM insights reflect how your team works.
 keywords:
   - mobot
@@ -18,15 +18,17 @@ keywords:
   <meta name="robots" content="noindex" />
 </head>
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
 :::info
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+Agent Knowledge lets org administrators give the Mobot agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation.
 
-SOC Analyst Agent Knowledge lets an administrator give the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation.
+Currently, this feature is available for [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) and we'll be rolling it out to other agents.
 
 Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, that a Friday spike in authentication failures is your scheduled penetration test, or that your team escalates anything involving PII straight to the security lead. Knowledge closes that gap. Over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
@@ -37,7 +39,7 @@ The agent uses your knowledge in two places:
 
 Whenever your knowledge shapes a response, the agent surfaces which piece it drew on and how it was applied, so a verdict is never a black box.
 
-![Knowledge citation panel in an investigation result, showing Source and Used for columns](/img/cse/socaa-knowledge-citation.png)
+<img src={useBaseUrl('img/search/mobot/agent-knowledge-citation-socaa.png')} alt="Knowledge citation panel in an investigation result, showing Source and Used for columns" style={{border: '1px solid gray'}} width="500" />
 
 ## What you can teach the agent
 
@@ -53,7 +55,7 @@ Knowledge falls into three themes.
 
 During Private Preview, your account team points you to the settings. Knowledge is managed on the Dojo AI **Agent Settings** page, under **Knowledge** > **Sources** for the SOC Analyst Agent.
 
-![Knowledge Sources page showing the Name and Content fields for adding a knowledge item, and the list of existing items below](/img/cse/socaa-knowledge-sources.webp)
+<img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Knowledge Sources page showing the Name and Content fields for adding a knowledge item, and the list of existing items below" style={{border: '1px solid gray'}} width="700" />
 
 To add an item, give it a name and type the fact, pattern, or practice in the content field. Each item is limited to 10,000 characters.
 
