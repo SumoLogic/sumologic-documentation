@@ -115,3 +115,19 @@ Keyword searches are case-sensitive.
 * `Add a heatmap panel showing response time distribution by endpoint.`
 * `Add a panel showing top 10 source IPs by request count to the Network Overview dashboard.`
 * `Create a dashboard with a panel for error rate, a panel for request latency, and a panel for top status codes.`
+
+For more information, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
+
+## Monitor creation
+
+* `Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
+* `Create a monitor that notifies me by email when login failures exceed 100 in 10 minutes.`
+* `Change the trigger threshold from 20 to 15 and the time window to 7 minutes.`
+
+For more information, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
+
+## Playbook creation
+
+* `Create a playbook that creates tickets and sends notifications.`
+
+For more information, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).
