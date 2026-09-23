@@ -2,7 +2,7 @@
 id: carbon-black-inventory-source
 title: Carbon Black Inventory Source
 sidebar_label: Carbon Black Inventory
-tags:
+keywords:
     - carbon-black-inventory
     - cloud-to-cloud
 description: The Carbon Black Inventory Source provides a secure endpoint to receive data from the CB Devices API.

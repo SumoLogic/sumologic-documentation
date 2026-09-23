@@ -2,7 +2,7 @@
 id: asana-source
 title: Asana Source
 sidebar_label: Asana
-tags:
+keywords:
   - cloud-to-cloud
   - asana
 description: Learn how to retrieve Asana audit logs into the Sumo Logic environment.

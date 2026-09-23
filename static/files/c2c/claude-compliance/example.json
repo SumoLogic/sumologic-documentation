@@ -7,7 +7,8 @@
         "apiKey": "sk-ant-XXXXXXXXX",
         "pollingIntervalMinutes": "60m",
         "collectChatMessages": true,
-        "collectActivities": true
+        "collectActivities": true,
+        "collectLocalSession": true
       },
       "schemaRef": {
         "type": "Claude Compliance"

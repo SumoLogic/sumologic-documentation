@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/triage-tools.png')} alt="urlscan.io" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/triage-tools.png')} alt="Triage Tools icon" width="100"/>
 
 ***Version: 1.4  
 Updated: April 30, 2026***
