@@ -27,9 +27,7 @@ For more information on the AWS Observability solution, see [About Sumo Logic AW
 To integrate the AWS Observability solution with Control Tower, you collect CloudTrail audit logs from each AWS account that is managed by AWS Control Tower and store the audit logs in an S3 bucket in a Log Archive AWS account / CloudTrail administrator account.
 
 :::note
-AWS Control Tower sets up the **CloudTrail administrator account** when you enable the AWS CloudTrail centralized logging integration. Alternatively, you can use an existing AWS account as the CloudTrail administrator account. You might know this account by its previous name: the **log archive account**.
-
-AWS Control Tower sets up the **Config aggregator account** when you enable the AWS Config service integration. Alternatively, you can use an existing AWS account as the Config aggregator account. You might know this account by its previous name: the **audit account**.
+AWS Control Tower sets up the **CloudTrail administrator account** (formerly the **log archive account**) when you enable the AWS CloudTrail centralized logging integration, and the **Config aggregator account** (formerly the **audit account**) when you enable the AWS Config service integration. You can also use an existing AWS account for either role.
 :::
 
 We recommend you familiarize yourself with the AWS Observability Solution. For more information, see:
