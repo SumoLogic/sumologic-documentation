@@ -37,6 +37,8 @@ The agent uses your knowledge in two places:
 
 Whenever your knowledge shapes a response, the agent surfaces which piece it drew on and how it was applied, so a verdict is never a black box.
 
+![Knowledge citation panel in an investigation result, showing Source and Used for columns](/img/cse/socaa-knowledge-citation.png)
+
 ## What you can teach the agent
 
 Knowledge falls into three themes. Each one spans both the facts you would tell a new analyst on their first day and the judgment they build over time.
@@ -50,6 +52,8 @@ Knowledge falls into three themes. Each one spans both the facts you would tell 
 ## Add knowledge
 
 During Private Preview, your account team points you to the settings. Knowledge is managed on the Dojo AI **Agent Settings** page, under **Knowledge** > **Sources** for the SOC Analyst Agent.
+
+![Knowledge Sources page showing the Name and Content fields for adding a knowledge item, and the list of existing items below](/img/cse/socaa-knowledge-sources.webp)
 
 To add an item, give it a name and type the fact, pattern, or practice in the content field. Each item is limited to 10,000 characters.
 
