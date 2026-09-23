@@ -41,7 +41,7 @@ Whenever your knowledge shapes a response, the agent surfaces which piece it dre
 
 ## What you can teach the agent
 
-Knowledge falls into three themes. Each one spans both the facts you would tell a new analyst on their first day and the judgment they build over time.
+Knowledge falls into three themes.
 
 | Theme | What it covers | Examples |
 |:--|:--|:--|
@@ -58,39 +58,6 @@ During Private Preview, your account team points you to the settings. Knowledge 
 To add an item, give it a name and type the fact, pattern, or practice in the content field. Each item is limited to 10,000 characters.
 
 Each item works best when it covers one concept, uses two to five sentences, and references specific names, IPs, patterns, or procedures your team actually uses. If you paste a longer document, the agent breaks it into separate entries automatically.
-
-### Guardrails on submit
-
-Before anything is saved, the agent checks what you entered and blocks:
-
-* Content that is not knowledge the agent can use, such as off-topic text.
-* Live secrets or credentials.
-* Very long, unstructured text.
-* Entries that duplicate or contradict something already saved.
-
-Each block comes with a plain-language explanation and a way to fix the entry.
-
-### Review before saving
-
-Every entry that passes the guardrails is auto-tagged by theme, checked against your existing knowledge, and shown back to you before it is committed:
-
-* You see what the agent understood, so you can catch a misread at the cheapest possible moment.
-* A detected procedure shows its step count, so a missing step is visible without re-reading the parse.
-* A conflict with existing knowledge is shown as a resolution the agent proposes and you must explicitly accept.
-
-### Adjust with Mobot
-
-Instead of editing fields directly, you can describe a correction, an added detail, or a point of confusion to Mobot in plain language. Mobot updates the draft or flags it for review.
-
-## Keep your knowledge current
-
-Raw entries on the same topic are synthesized into readable paragraphs, each linking back to the notes it came from. A separate page lets you search and verify everything the agent has been told.
-
-The agent also helps you keep that knowledge healthy. These signals are passive. They appear on the knowledge summary page, never as an interruption during capture or investigation, and resolving them is always your action.
-
-* **Staleness**. Facts in categories that go out of date, such as schedules, requirements, and precedents, are flagged when they have not been re-verified in 90 days, with a one-click **Confirm** or **Update**.
-* **Redundancy**. A new entry that overlaps heavily with an existing one on the same topic is offered as a merge, never merged automatically.
-* **Flag as wrong**. Any stored item can be marked incorrect, with an optional note.
 
 ## What is included in Private Preview
 
@@ -115,10 +82,6 @@ Some limits are not tied to the preview phase:
 
 Adding or changing knowledge requires the `manageAgent` role capability scoped to the SOC Analyst Agent. Sumo Logic provisions the initial grant; contact your account team to get started. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
 
-Knowledge should describe your environment, not carry access to it.
-
-Compliance and security reviews go through the standard review path with your account team.
-
 ## FAQ
 
 ### What should I add first?
@@ -131,7 +94,7 @@ No. Knowledge is retrieved and applied as context at investigation time. It does
 
 ### When does new knowledge take effect?
 
-On the next investigation that runs after you save it. Saving knowledge does not re-run past investigations. To apply it to an insight the agent already investigated, click **Investigate** on that insight to run a new one.
+On the next investigation that runs after you save it. Saving knowledge does not re-run past investigations.
 
 ### How is it priced?
 
