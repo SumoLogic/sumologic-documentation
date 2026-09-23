@@ -37,6 +37,7 @@ New Features:
   * Europe (Zurich) 
 * Supports AWS Regions launched after August 2022 to ensure the correct Load Balancer policies are configured. 
 * Supports Solution deployment via Terraform Modules along with Release versioning.
+* Supports next-gen applications with out-of-the-box (OOB) support for dashboards, monitors, FERs, and metric rules.
 
 
 ## v2.15.0, 28-May-2026
