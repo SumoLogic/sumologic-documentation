@@ -134,7 +134,7 @@ Use this option if the Log Archive AWS account / CloudTrail administrator accoun
 Use this option if no CloudTrail trail exists in the Log Archive AWS account / CloudTrail administrator account and you want the AWS Observability CloudFormation template to create the trail and Sumo Logic source together.
 
 1. Log in to the AWS Management Console as the Log Archive AWS account / CloudTrail administrator account user.
-1. Follow steps 1 through 10 of the instructions in the [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+1. Follow steps 1 through 10 of the instructions in the [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
 1. In the **Sumo Logic Access Configuration** section of the template, fill in as required by the template.
 1. In the **AWS Resources Tag Configuration** section of the template, select **None** for **Auto Enable Tagging** and enter `logarchive` as the account alias.
 1. In the **Sumo Logic AWS Observability Apps and Alerts** section of the template, select **No** for "Install AWS Observability Apps", as they were installed in [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts), above.<br/><img src={useBaseUrl('img/observability/integrate-tower2.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
