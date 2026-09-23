@@ -22,7 +22,7 @@ Our docs are built with [Docusaurus](https://docusaurus.io/), a static site gene
 :::tip
 To create a new doc quickly, use a [template](/docs/contributing/templates). Copy the file, add your content, and submit a PR. The Docs Team reviews submissions, suggests edits, adds new content to the navigation, and answers your questions.
 
-If you have Claude Code installed, this repo's `sumo-style` skill applies these conventions automatically when you draft or edit docs, so you do not need to invoke it manually. See AGENTS.md for details.
+If you have Claude Code installed, this repo's `sumo-style` skill applies these conventions automatically when you draft or edit docs, so you do not need to invoke it manually. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for details.
 :::
 
 ## Style references
