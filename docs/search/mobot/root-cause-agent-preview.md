@@ -15,6 +15,8 @@ keywords:
   - sre
 ---
 
+<!-- when this goes GA: in sidebars.ts, add this file to both docs/search/mobot and docs/monitors/alerts -->
+
 <head>
   <meta name="robots" content="noindex" />
 </head>
@@ -29,17 +31,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Root Cause Agent is Mobot's agentic AI investigator. It picks up an alert, gathers the relevant telemetry on its own, follows the signal across your logs and metrics, and returns a root cause along with the evidence it used to get there. Its output appears on the **AI Investigation** tab of your [alert response page](/docs/alerts/monitors/alert-response/).
 
-Today, when a monitor fires, triage starts from a blank page. The on-call engineer decides which dashboard matters, runs a log search, pivots elsewhere, checks other systems, and lines up timestamps by hand. How long that takes depends largely on how well that engineer knows that service.
+Think of it as is the observability counterpart to the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). Where the SOC Analyst Agent investigates security insights in Cloud SIEM, the Root Cause Agent investigates monitor alerts for DevOps and SRE teams. It removes the "where do I start?" phase of triage and gives responders context and direction.
 
-The Root Cause Agent runs that loop for you. It starts from the alert, forms hypotheses, queries your telemetry, follows the signal across both logs and metrics, and produces:
+When a monitor fires, the agent automatically investigates across your logs and metrics (not traces) and posts its findings to the **AI Investigation** tab of the alert. To see it, go to your alerts page, open any alert, and select the **AI Investigation** tab. From there, you can also open the investigation in Mobot to ask follow-up questions.
+
+The agent produces:
 
 * **A verdict**. What it believes the root cause is, or a clear statement that it could not conclude.
-* **Key findings**. The plain-language steps that led there.
-* **The evidence behind each finding**. The exact query that produced it, one click away.
-
-It is built for the DevOps and SRE workflow: it removes the "where do I start?" phase of triage and gives every responder context that today only your most experienced engineers carry.
-
-<!-- add screenshots when available-->
+* **Key findings**. The steps that led there, each backed by the query that produced it.
+* **Recommended actions**. Suggested next steps for you to act on.
 
 ## AI Verdict
 
@@ -47,18 +47,18 @@ Every investigation resolves to one of a small set of verdicts, so you always kn
 
 | Verdict | Meaning |
 |:--|:--|
-| **Identified RCA** | The agent reached a conclusion it is confident in, with supporting evidence. |
+| **Identified Root Cause** | The agent reached a conclusion it is confident in, with supporting evidence. |
 | **In progress** | The investigation is still running. |
-| **Inconclusive** | The agent found relevant signal but could not land on a root cause it can stand behind. This usually happens when the findings point in conflicting directions, or the deciding data sits in a source the agent cannot reach. |
+| **Inconclusive** | The agent found relevant signal but could not reach a conclusion it is confident in. This can happen when the findings point in conflicting directions, or the deciding data sits in a source the agent cannot reach. |
 | **False positive** | The alert did not represent a real problem in the system. |
 
 ### Confidence
 
-The agent surfaces a root cause only when it is confident in the conclusion. If it is not, it returns **Inconclusive** rather than a lower-confidence guess. The goal is a result you can trust every time, even if that means the agent concludes less often.
+The agent surfaces a root cause only when it is confident in the conclusion. If it is not, it returns **Inconclusive** rather than a lower-confidence guess.
 
 ### Auditability
 
-Each finding carries the query behind it. Open it and you land in the log search or metrics query that produced it, ready to run. The agent's job is to hand you verifiable evidence, not an opaque answer.
+Each finding carries the query behind it. Open it and you land in the log search or metrics query that produced it, ready to run.
 
 ## AI Investigation tab
 
@@ -67,43 +67,37 @@ When a monitor fires, the agent investigates the alert automatically. The result
 1. Go to your [Alert List](/docs/alerts/monitors/alert-response/#alert-list) and click any alert to open its details.
 1. Select the **AI Investigation** tab. The other tabs on the page (**Alert Details**, **Relevant Alerts**, and **Monitor History**) are unchanged.
 
-To continue the investigation conversationally, click **Ask Mobot** at the top of the page. This opens [Mobot](/docs/search/mobot/) with the verdict, findings, and context already loaded. Pick one of the suggested follow-up questions or ask your own, such as `Why is my checkout service down?`, and get an investigation back in conversation.
+To continue the investigation conversationally, use either:
+- **Ask Mobot** (top right of the page) — opens [Mobot](/docs/search/mobot/) with the investigation already loaded.
+- **Continue investigating in Mobot** (bottom of the tab) — suggested follow-up questions based on the investigation. Click one to open it in Mobot, or type your own question.
 
 The tab has the following sections. Each one carries its own thumbs-up and thumbs-down feedback buttons.
 
 ### AI Verdict
 
-A badge summarizing the outcome (for example, **Identified RCA**), followed by a short explanation of the reasoning. Below that, a **Severity Confirmed** line states the confirmed severity and a suggested next step, such as **Begin Remediation**.
+A box showing the verdict (for example, **Identified Root Cause**) alongside a plain-language explanation of the root cause. Below that, a **Recommendation** line shows a suggested next action (for example, **Benign Remediation**).
 
 ### What Happened
 
-A plain-language summary of the alert and what the agent found, as a bulleted list of the steps it worked through.
+An expandable section with structured subsections: **Summary**, **Timeline**, **Root Cause of the Spike**, **Secondary Observations**, and **What Was Ruled Out**.
 
 ### Key Findings
 
 The main points the investigation uncovered, each with a short title and a plain-language explanation of what it means and how it was established.
 
-### Remediation Plan
+### Recommended Actions
 
-Suggested next steps grouped by urgency: **Immediately**, **Short-term**, and **Long-term**. These are recommendations for you to act on. The agent does not run them.
+A list of suggested actions, each with a title and explanation. These are recommendations for you to act on. The agent does not run them.
 
-## What is included in Private Preview
+## Preview phases
 
-Private Preview covers the core loop: the agent investigating on its own, and a way to ask it questions.
+Private Preview covers the core investigation experience: automatic investigation of Sumo Logic alerts across logs and metrics, with verdict, key findings, supporting evidence, and recommended actions. Ask Mobot is also available.
 
-* **Automatic investigation of alerts**, across your logs and metrics. When a monitor fires, the agent investigates with no manual trigger, and the result is ready on the alert when someone opens it.
-* **Results on the AI Investigation tab**, with the full detail: verdict, what happened, key findings, and a remediation plan.
-* **Ask Mobot**. Continue an investigation in conversation, or ask a plain-language question to start one.
-
-Private Preview investigates the telemetry you already send to Sumo Logic. Support for external sources and Slack is planned for a later preview phase.
+Additional preview phases are planned. Contact your account team for the latest availability information.
 
 ## Connecting your own context and telemetry sources
 
-The Root Cause Agent starts from the telemetry you already send to Sumo Logic. The deciding evidence often lives somewhere else: the metric that spiked, the flag that flipped, the deploy that went out, the page that woke someone up.
-
-In a later preview phase, you will be able to connect those sources so the agent investigates across them rather than stopping at the edge of Sumo Logic. Examples of the kinds of sources in scope include AWS CloudWatch, GitHub, PagerDuty, and Slack, alongside feature flag and deployment tooling and other third-party telemetry platforms. Interoperability with external agents over open protocols such as MCP is in active development.
-
-For which sources are available to you and when, contact your account team.
+The Root Cause Agent starts from the telemetry you already send to Sumo Logic. Support for connecting external context and telemetry sources is planned for a future preview phase. Contact your account team for availability.
 
 ## Limitations
 
@@ -121,7 +115,7 @@ Some limits are not tied to the preview phase:
 
 ## Permissions and data access
 
-The agent operates with read-only access to your logs and metrics data in Sumo Logic. Agent-level governance covering permissions, roles, and scoping is planned for general availability. Compliance and security reviews go through the standard review path with your account team.
+The agent operates with read-only access to your logs and metrics data in Sumo Logic. Agent-level governance covering permissions, roles, and scoping is planned for a future release. Compliance and security reviews go through the standard review path with your account team.
 
 ## FAQ
 
@@ -135,31 +129,27 @@ Both are agentic investigators in Dojo AI, aimed at different workflows. The [SO
 
 ### Will it run on every alert automatically?
 
-During Private Preview, the agent investigates alerts from Sumo Logic monitors automatically. Controls to scope automatic investigation by alert, alert name, monitor, or tag are planned for a later preview phase, so you can point the agent at the monitors that matter to you.
+During Private Preview, the agent investigates alerts from Sumo Logic monitors automatically. Controls to scope automatic investigation are planned for a future preview phase.
 
 ### Can I use it from Slack?
 
-Slack support is planned for a later preview phase, alongside the official Sumo Logic Slack app. Private Preview covers automatic investigation in the product and asking Mobot in conversation.
+Slack support is planned for a future preview phase. Private Preview covers automatic investigation in the product and asking Mobot in conversation.
 
 ### Can it investigate alerts that did not originate in Sumo Logic?
 
-Not during Private Preview, which covers alerts from Sumo Logic monitors. Investigation from external alerts is planned for a later phase.
+Not during Private Preview, which covers alerts from Sumo Logic monitors. Investigation from external alerts is planned for a future preview phase.
 
 ### Can I connect my own tools and data sources?
 
-Not during Private Preview. Connecting external context and telemetry sources is planned for a later preview phase. See [Connecting your own context and telemetry sources](#connecting-your-own-context-and-telemetry-sources).
+Not during Private Preview. Connecting external context and telemetry sources is planned for a future preview phase. See [Connecting your own context and telemetry sources](#connecting-your-own-context-and-telemetry-sources).
 
 ### How does the agent avoid inventing a root cause?
 
-Two ways. First, the confidence policy: if the agent cannot reach a conclusion it can defend, it returns **Inconclusive** rather than a plausible-sounding guess. Second, evidence-first output: every finding shows the query behind it, so you can disprove it in one click. Reducing spurious correlation is an ongoing focus of the agent's development.
+Two ways. First, the confidence policy: if the agent cannot reach a conclusion it can defend, it returns **Inconclusive** rather than a plausible-sounding guess. Second, every finding shows the query behind it, so you can verify or disprove it in one click.
 
 ### How is it priced?
 
 Pricing and packaging are being finalized. Your account team will have details before general availability.
-
-### How do I get early access?
-
-Customers are nominated for Private Preview by their account teams. Contact your account team to express interest. The cohort is intentionally limited so the team can gather structured feedback on accuracy and usefulness.
 
 ### Which deployments is it available in?
 
