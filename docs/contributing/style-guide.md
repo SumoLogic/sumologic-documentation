@@ -413,9 +413,9 @@ Never underline text.
 <TabItem value="Markdown">
 
 ```markdown
-Emphasis, aka italics, with *asterisks* or _underscores_.
+Emphasis, also known as italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with two **asterisks** or __underscores__.
+Strong emphasis, also known as bold, with two **asterisks** or __underscores__.
 
 Combined emphasis with **asterisks and _underscores_**.
 
@@ -425,9 +425,9 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 </TabItem>
 <TabItem value="Result">
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
+Emphasis, also known as italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with two **asterisks** or __underscores__.
+Strong emphasis, also known as bold, with two **asterisks** or __underscores__.
 
 Combined emphasis with **asterisks and _underscores_**.
 
