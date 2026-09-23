@@ -246,6 +246,8 @@ The tools your MCP client reports as available are filtered by the scopes in you
 
 Some scopes (`manageLibrary`, `runLogSearch`, `viewLibrary`, `runMetricsQuery`, and `viewUsersAndRoles`) correspond to actions every UI user can already perform, with no role-level restriction. These are granted to all OAuth users by design, so tools that require only these scopes appear for everyone regardless of role.
 
+To restrict one of these API-only scopes for OAuth or MCP clients beyond what the UI allows, an administrator can remove the scope from a [CIMD](/docs/manage/security/oauth#enable-cimd) client's configured scopes. The MCP server then hides the corresponding tools for all users authenticating through that client.
+
 :::note
 Tool filtering is based on role permissions, not org licensing. If a capability isn't licensed for your org (for example, Cloud SIEM), its tools may still appear in your client's tool list even though calling them fails.
 :::
