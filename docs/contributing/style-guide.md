@@ -756,7 +756,6 @@ description: Description about this feature.
 keywords:
     - metrics
     - traces
-tags: [metrics, traces]  
 ---
 ```
 
@@ -768,7 +767,7 @@ tags: [metrics, traces]
 | `sidebar_label:` | (Optional) Label for the sidebar navigation. Keep it title short. It does not affect the canonical link or page title. |
 | `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. Keep it 140–160 characters. Use plain text only — no Markdown or backtick formatting. If omitted, search engines will pull the first couple of sentences from the page. See [Metadata descriptions](#metadata-descriptions). |
 | `keywords:` | (Optional) List of keywords to enhance SEO. |
-| `tags:` | (Optional) A string or list of tags that adds labels and permalinks to help with sorting. |
+| `tags:` | **Deprecated. Do not use.** The Docusaurus tag taxonomy was removed sitewide; it generated pages with no reader or search benefit. Use `keywords:` for search terms instead. |
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
@@ -1079,6 +1078,7 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
    * Example: ~~_The operator, which supports up to 10,000 events per second depending on instance size, works with both collector types._~~ &rarr; _The operator supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors._
 * **Use specific version numbers and dates.** Avoid "latest", "current", or "recent" without a specific value. AI tools reproduce whatever is on the page — vague references become stale citations.
 * **Add an "At a glance" section for long pages.** For pages over 800 words, add a brief summary section near the top with key facts as short bullet points. This is the most citation-friendly portion of a page for generative AI tools.
+* **Phrase FAQ questions in second person, except personal or eligibility questions.** Grammatical person doesn't affect AI citation, but it does affect how natural a question reads. Use second person ("How do you configure X?") for most FAQ questions. For personal or eligibility-type questions ("Can I opt out...", "Do I need..."), use first person instead, since it mirrors how the reader is actually asking the question in their head. Answers still respond in second person either way.
 
 
 

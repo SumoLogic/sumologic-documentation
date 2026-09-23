@@ -1,19 +1,31 @@
 ---
-id: ic-vs-ot-collector-performance-benchmarks
-title: Installed Collector vs OpenTelemetry Collector Performance Benchmarks
-sidebar_label: IC vs OTel Performance Benchmarks
-description: Compare Installed Collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.
+id: local-file-source-benchmarks
+title: Local File Source Benchmarks
+sidebar_label: Local File Source Benchmarks
+description: Compare Installed Collector and OpenTelemetry Collector throughput and CPU usage for Local File source collection.
 ---
-
-:::tip
-For high-throughput, multi-source log ingestion, we recommend using the OpenTelemetry Collector.
-:::
 
 The Installed Collector and the Sumo Logic Distribution for OpenTelemetry Collector differ significantly in throughput, CPU usage, and scalability for log collection. This page compares both across various workloads to help you choose the right option.
 
+## Recommendation
+
+For high-throughput, multi-source log ingestion, we recommend using the OpenTelemetry Collector.
+
+| Evaluation metric | IC | OT |
+|:--|:--|:--|
+| Small (100B) payloads, low CPU | Marginal lead | Standard |
+| Medium (512B–5KB) payloads | Standard | Optimal performance |
+| CPU efficiency at scale | Saturates quickly | High efficiency |
+| Multi-source support | Restricted | 2–4x the capacity |
+| High-EPS workloads | Limited beyond 4 sources | Stable through 32 sources |
+
+Based on these results, Sumo Logic recommends using the OpenTelemetry Collector for most log ingestion workloads, given its stronger CPU efficiency and multi-source scalability. The Installed Collector may still be preferable in a narrower set of cases, very small log messages at low CPU utilization, or where you need a source type only available on the Installed Collector, or where you're collecting security data that requires the Installed Collector. See [Compare Installed Collectors and OpenTelemetry Collectors](/docs/send-data/choose-collector-source/#compare-installed-collectors-and-opentelemetry-collectors) for the full decision criteria beyond performance alone.
+
+## About these benchmarks
+
 As with any benchmark, results depend on hardware, network conditions, and configuration, and will shift as new Collector versions are released. Use these numbers as directional guidance, not a guarantee of performance in your environment.
 
-For general guidance on choosing between Installed Collectors and OpenTelemetry Collectors, including platform, source, and feature differences, see [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/). For OpenTelemetry Collector-only benchmark data, see [Performance Benchmarks](/docs/send-data/opentelemetry-collector/performance-benchmarks/).
+For OpenTelemetry Collector-only benchmark data, see [Performance Benchmarks](/docs/send-data/opentelemetry-collector/performance-benchmarks/).
 
 ## Test environment
 
@@ -103,15 +115,3 @@ At 10,000 EPS, Installed Collectors exceed the threshold at 4 or more sources. O
 - Installed Collectors hit the 160% CPU cutoff earlier as throughput increases: at 32 sources (1,000 EPS), 8 sources (5,000 EPS), and 4 sources (10,000 EPS).
 - OpenTelemetry Collectors did not exceed the cutoff in any of these tests.
 - If you're running Installed Collectors at high EPS, use fewer sources per Collector to avoid resource exhaustion. For more information, see [Best Practices: Local and Centralized Data Collection](/docs/send-data/best-practices/#local-and-centralized-data-collection).
-
-## Summary and recommendation
-
-| Evaluation metric | IC | OT |
-|:--|:--|:--|
-| Small (100B) payloads, low CPU | Marginal lead | Standard |
-| Medium (512B–5KB) payloads | Standard | Optimal performance |
-| CPU efficiency at scale | Saturates quickly | High efficiency |
-| Multi-source support | Restricted | 2–4x the capacity |
-| High-EPS workloads | Limited beyond 4 sources | Stable through 32 sources |
-
-Based on these results, Sumo Logic recommends using the OpenTelemetry Collector for most log ingestion workloads, given its stronger CPU efficiency and multi-source scalability. The Installed Collector may still be preferable in a narrower set of cases, very small log messages at low CPU utilization, or where you need a source type only available on the Installed Collector, or where you're collecting security data that requires the Installed Collector. See [When to Choose Installed Collector vs. OpenTelemetry Collector](/docs/send-data/choose-collector-source/#when-to-choose-installed-collector-vs-opentelemetry-collector) for the full decision criteria beyond performance alone.

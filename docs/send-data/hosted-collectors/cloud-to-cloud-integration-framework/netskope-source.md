@@ -2,7 +2,7 @@
 id: netskope-source
 title: Netskope Source
 sidebar_label: Netskope
-tags:
+keywords:
   - cloud-to-cloud
   - netskope
 description: The Netskope Source provides a secure endpoint to receive event data from the Netskope API.

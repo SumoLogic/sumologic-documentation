@@ -2,7 +2,7 @@
 id: atlassian-source
 title: Atlassian Source
 sidebar_label: Atlassian
-tags:
+keywords:
   - cloud-to-cloud
   - atlassian
 description: Learn how to retrieve Atlassian audit logs into the Sumo Logic environment.

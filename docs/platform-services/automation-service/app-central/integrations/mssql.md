@@ -46,5 +46,7 @@ For information about MSSQL, see [MSSQL documentation](https://learn.microsoft.c
 
 ## Change Log
 
-* January 30, 2023- First upload
-* August 17, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | August 17, 2023 | Updated the integration with Environmental Variables. |
+| | January 30, 2023 | Initial release of the MSSQL integration. |

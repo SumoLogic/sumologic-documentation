@@ -20,7 +20,7 @@ import Iframe from 'react-iframe';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 import ConvPlaybookLimits from '../../reuse/conv-playbook-limits.md';
 
-<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Search icon" width="35"/>
+<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="35"/>
 
 Mobot is Sumo Logic's AI-powered conversational assistant for security analysts, on-call engineers, administrators, and other Sumo Logic users. Ask questions in plain language to investigate log data or learn how to use the platform without selecting an agent or writing queries from scratch.
 

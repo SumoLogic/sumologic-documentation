@@ -57,12 +57,10 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 For information about Joe Sandbox, see [Joe Sandbox documentation](https://www.joesecurity.org/guides/joeboxdetect/html/index.html#).
 
 ## Change Log
- 
-* September 25, 2019 - First upload
-* January 25, 2023 - Added Connection Timeout field
-* July 18, 2023 (v1.4) - Updated the integration with Environmental Variables
-* March 6, 2024 (v1.5)
-    * Added new action: Check Submission Status
-    * Action renamed from Download Resource Analysis to Download Analysis Report
-    * Action renamed from Print Report to Get Report
-    * Updated with new Cloud SOAR API
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | March 6, 2024 | <ul><li>Added a new action: **Check Submission Status**.</li><li>Renamed the **Download Resource Analysis** action to **Download Analysis Report**.</li><li>Renamed the **Print Report** action to **Get Report**.</li><li>Updated to use the new Cloud SOAR API.</li></ul> |
+| v1.4 | July 18, 2023 | Updated the integration with Environmental Variables. |
+| | January 25, 2023 | Added the Connection Timeout field. |
+| | September 25, 2019 | Initial release of the Joe Sandbox integration. |

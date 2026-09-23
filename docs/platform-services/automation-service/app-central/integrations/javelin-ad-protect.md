@@ -46,8 +46,7 @@ For information about Symantec Endpoint Threat Defense for Active Directory (for
 
 ## Change Log
 
-* November 26, 2018 - First upload
-* November 10, 2023(v1.2)
-	+ Updated the integration with Environmental Variables
-	+ Improved error handling
-	+ Updated Integration Resource Fields
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | November 10, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Improved error handling.</li><li>Updated integration resource fields.</li></ul> |
+| | November 26, 2018 | Initial release of the Javelin AD Protect integration. |
