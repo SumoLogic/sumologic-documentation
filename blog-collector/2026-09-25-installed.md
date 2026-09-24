@@ -13,5 +13,5 @@ In this release, we've updated the Collector dependencies and runtime components
 - Upgraded Collector JRE to **Amazon Corretto Version 17.0.20.10.1**.
 - Upgraded `com.fasterxml.jackson.core` packages to `2.21.6` to to address CVEs.
 - Upgraded `org.bouncycastle:bc-fips` to `1.0.2.7` to address CVEs.
-- Upgraded `io.netty` packages to ` 4.1.137` to address CVEs.
+- Upgraded `io.netty` packages to `4.1.137` to address CVEs.
 - Upgraded `org.bouncycastle:bcpkix-jdk18on` to `1.85` to address CVEs.
