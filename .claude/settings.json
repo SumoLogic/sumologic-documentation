@@ -1,4 +1,15 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(grep '\\\\.md$')",
+      "Bash(python3 /private/tmp/claude-502/-Users-amee-lepcha-ctr-sumologic-documentation/5705973c-4626-4172-a157-6e60a5aca96c/scratchpad/check_links.py)",
+      "Bash(bun -e ' *)",
+      "Bash(python3 /private/tmp/claude-502/-Users-amee-lepcha-ctr-sumologic-documentation/5705973c-4626-4172-a157-6e60a5aca96c/scratchpad/check_links2.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(bun /private/tmp/claude-502/-Users-amee-lepcha-ctr-sumologic-documentation/5705973c-4626-4172-a157-6e60a5aca96c/scratchpad/slugify.js)",
+      "Bash(python3 -m json.tool)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
