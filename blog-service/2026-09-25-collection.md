@@ -9,4 +9,4 @@ keywords:
 hide_table_of_contents: true    
 ---
 
-We’re excited to introduce that you can now configure HTTP log sources to automatically split JSON arrays into individual log messages while preserving top-level metadata. [Learn more](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+We’re excited to announce that you can now configure HTTP log sources to automatically split JSON arrays into individual log messages while preserving top-level metadata. [Learn more](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
