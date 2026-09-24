@@ -1,6 +1,7 @@
 ---
 id: root-cause-agent-preview
 title: Root Cause Agent
+sidebar_label: placeholder
 description: The Root Cause Agent is Mobot's agentic AI investigator that picks up alerts, gathers the relevant telemetry across your logs and metrics, and returns a root cause with the evidence behind it.
 keywords:
   - mobot
@@ -29,11 +30,9 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Root Cause Agent is Mobot's agentic AI investigator. It picks up an alert, gathers the relevant telemetry on its own, follows the signal across your logs and metrics, and returns a root cause along with the evidence it used to get there. Its output appears on the **AI Investigation** tab of your [alert response page](/docs/alerts/monitors/alert-response/).
+The Root Cause Agent-one of Mobot's agents that works behind the scenes-automatically investigates incidents the moment an alert fires, giving DevOps and SRE teams an evidence-backed observability starting point before anyone has to ask where to look. The agent gathers the relevant telemetry on its own, follows the signal across your logs and metrics, and posts its findings to the **AI Investigation** tab of an [alert's response page](/docs/alerts/monitors/alert-response/). From there, you can also open the investigation in Mobot to ask follow-up questions.
 
-Think of it as is the observability counterpart to the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). Where the SOC Analyst Agent investigates security insights in Cloud SIEM, the Root Cause Agent investigates monitor alerts for DevOps and SRE teams. It removes the "where do I start?" phase of triage and gives responders context and direction.
-
-When a monitor fires, the agent automatically investigates across your logs and metrics (not traces) and posts its findings to the **AI Investigation** tab of the alert. To see it, go to your alerts page, open any alert, and select the **AI Investigation** tab. From there, you can also open the investigation in Mobot to ask follow-up questions.
+Monitors and alert rules are deterministic-they fire when a predefined threshold or condition is met. The Root Cause Agent is agentic: it takes the alert as a starting point, investigates across available signals, forms a hypothesis, and explains why it believes a particular cause is responsible. The monitor tells you something happened; the agent helps investigate why. It is complementary to monitoring, not a replacement for it.
 
 The agent produces:
 
@@ -115,13 +114,13 @@ Some limits are not tied to the preview phase:
 
 ## Permissions and data access
 
-The agent operates with read-only access to your logs and metrics data in Sumo Logic. Agent-level governance covering permissions, roles, and scoping is planned for a future release. Compliance and security reviews go through the standard review path with your account team.
+The agent operates with read-only access to your logs and metrics data in Sumo Logic. Each investigation is recorded as an audit event in the Sumo Logic audit index, which you can search to track agent activity. Agent-level governance covering permissions, roles, and scoping is planned for a future release. Compliance and security reviews go through the standard review path with your account team.
 
 ## FAQ
 
 ### How is this different from asking a chat assistant about my alerts?
 
-A chat assistant is a surface you type into. The Root Cause Agent is a purpose-built investigator with its own tools, its own reasoning depth, and structured output that attaches to the alert. You can ask it questions in conversation, and it also runs unattended against alerts, which a chat assistant alone does not do.
+A chat assistant is a surface you type into. The Root Cause Agent runs automatically when an alert fires and posts its findings to the **AI Investigation** tab on the alert — you do not have to ask it to investigate. When you open an alert, the result is already there. From the tab, you can also continue the investigation conversationally in Mobot.
 
 ### How is this different from the SOC Analyst Agent?
 
@@ -143,6 +142,10 @@ Not during Private Preview, which covers alerts from Sumo Logic monitors. Invest
 
 Not during Private Preview. Connecting external context and telemetry sources is planned for a future preview phase. See [Connecting your own context and telemetry sources](#connecting-your-own-context-and-telemetry-sources).
 
+### How does this relate to Sumo Logic monitors?
+
+Monitors and alert rules are deterministic: they fire when a predefined threshold or condition is met. The Root Cause Agent is agentic: it takes the alert as a starting point, investigates across available signals, forms a hypothesis, and explains why it believes a particular cause is responsible. The monitor tells you something happened; the agent helps investigate why. It is complementary to monitoring, not a replacement for it.
+
 ### How does the agent avoid inventing a root cause?
 
 Two ways. First, the confidence policy: if the agent cannot reach a conclusion it can defend, it returns **Inconclusive** rather than a plausible-sounding guess. Second, every finding shows the query behind it, so you can verify or disprove it in one click.
@@ -151,6 +154,10 @@ Two ways. First, the confidence policy: if the agent cannot reach a conclusion i
 
 Pricing and packaging are being finalized. Your account team will have details before general availability.
 
+### Is my data used to train AI models?
+
+No. Customer data is not used to train shared models.
+
 ### Which deployments is it available in?
 
 Availability is rolling out per deployment. Check with your account team for yours.
@@ -158,6 +165,8 @@ Availability is rolling out per deployment. Check with your account team for you
 ## Additional resources
 
 * [Alert Response](/docs/alerts/monitors/alert-response/). The alert page that hosts the AI Investigation tab.
+* [logs](/docs/search)
+*
 * [Mobot](/docs/search/mobot). The conversational interface for Sumo Logic's AI agents.
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). How Sumo Logic's AI agents fit alongside Mobot, the SOC Analyst Agent, and the Sumo Logic MCP server.
-* [Preview Releases](/docs/preview). How Sumo Logic's customer preview program works.
+* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). The security counterpart to Root Cause Agent, SOC Analyst Agent investigates security insights in Cloud SIEM.
