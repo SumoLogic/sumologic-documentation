@@ -145,3 +145,10 @@ For information about Microsoft Entra ID (formerly Azure AD), see [Entra ID docu
 | v1.2 | November 10, 2022 | Added a new action: **Get Manager**. |
 | v1.1 | March 11, 2022 | Updated the logo in Azure AD integration. |
 | v1.0 | October 7, 2021 | Initial release of the Azure AD integration. |
+
+## Additional resources
+
+For Azure AD, Sumo Logic provides the following sources for collecting data and corresponding apps for visualizing it:
+
+- Use the [Microsoft Azure AD Inventory source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source/) to collect Azure AD Inventory data and the [Microsoft Azure AD Inventory app](/docs/integrations/saas-cloud/microsoft-azure-ad-inventory/) to visualize it.
+- Use the [Microsoft Graph Azure AD Reporting source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source/) to collect Azure AD reporting data and the [Microsoft Graph Azure AD Reporting app](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting/) to visualize it.

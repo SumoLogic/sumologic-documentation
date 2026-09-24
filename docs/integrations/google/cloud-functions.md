@@ -187,3 +187,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Google Cloud Functions Automation Service Integration](/docs/integrations/google/cloud-functions/) to automate response actions directly from Cloud SOAR playbooks.
