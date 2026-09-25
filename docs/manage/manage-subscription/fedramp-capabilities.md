@@ -22,7 +22,7 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Abilities - Solutions | [AWS observability](/docs/observability/aws/) | &#10003; ||
 | Abilities - Solutions | [Logs for Security](/docs/security/additional-security-features/) | &#10003; | &#10003; |
 | Abilities - Solutions | [Cloud SIEM](/docs/cse/) | &#10003; | &#10003; |
-| Abilities - Solutions | [Cloud SOAR](/docs/cloud-soar/) / [Automation Service](/docs/platform-services/automation-service/) | &#10003; |
+| Abilities - Solutions | [Cloud SOAR](/docs/cloud-soar/) / [Automation Service](/docs/platform-services/automation-service/) | &#10003; | &#10003; |
 | Abilities - Solutions | [Software Development Optimization](/docs/observability/sdo/) | &#10003; ||
 | Abilities - Solutions | [Kubernetes observability](/docs/observability/kubernetes/) | &#10003; | &#10003; |
 | Administration - Account | [Account overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview) | &#10003; | &#10003; |
