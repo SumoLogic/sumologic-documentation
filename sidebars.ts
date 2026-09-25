@@ -2292,6 +2292,7 @@ integrations: [
         'integrations/amazon-aws/kinesis-streams',
         'integrations/amazon-aws/amazon-opensearch',
         'integrations/amazon-aws/amazon-sagemaker',
+        'integrations/amazon-aws/amazon-security-lake',
         'integrations/amazon-aws/rds',
         'integrations/amazon-aws/redshift-ulm',
         'integrations/amazon-aws/route-53-resolver-security',
