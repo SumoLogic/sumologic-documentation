@@ -48,7 +48,7 @@ Sumo Logic imposes limits on the input data for a query and the data output by t
 
 *Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
-For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
+For a single metrics query row, Sumo Logic limits the number of input time series to 3000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
 
 In addition, the total number of data points scanned by a single row of query limited to 500,000,000 (500M) raw data points, or 50,000,000 (50M) [rollup data points](/docs/metrics/introduction/metric-quantization/#rollup-types).
 
@@ -62,9 +62,9 @@ If the query that results in the message contains an aggregation operator, the r
 
 #### Output data limit
 
-When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo Logic also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
+When a single row of query returns more than 3000 time series after the input data limit is applied, Sumo Logic also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
 
-`There were too many timeseries in the output, showing first 1000`
+`There were too many timeseries in the output, showing first 3000`
 
 There will also be a tip like this:
 
