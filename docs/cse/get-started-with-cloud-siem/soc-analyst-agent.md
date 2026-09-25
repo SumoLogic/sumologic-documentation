@@ -12,20 +12,18 @@ import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="35"/>
 
-Sumo Logic's SOC Analyst Agent is an agentic AI tool that embeds reasoning and context-awareness directly into Cloud SIEM, helping your Security Operations Center (SOC) team investigate alerts faster, reduce false-positive noise, and respond with confidence. Security teams spend too much time validating false positives and performing repetitive investigative steps — the agent eliminates that noise, standardizes outcomes, and accelerates time to resolution.
+The SOC Analyst Agent investigates Cloud SIEM insights automatically and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already done. Your team can continue any investigation conversationally with [Mobot](/docs/search/mobot/), Dojo AI's chat interface.
 
-Every verdict is evidence-backed and explainable. The agent shows the evidence it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith. It determines whether an insight is malicious, suspicious, or benign, provides a concise summary of the threat incident based on triggered signals, and presents key findings from the signals that fired, resulting in quicker, more detailed analysis.
+By cutting manual triage and reducing mean time to resolution, the agent lets SOC teams focus on real threats instead of repetitive work. It shows the data it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith.
 
 The SOC Analyst Agent performs three distinct jobs that mirror an analyst's daily responsibilities:
-* **Auto-investigation**. Automatically delivers evidence-backed verdicts on every insight as it comes in, determining whether it's malicious, suspicious, or benign, without requiring analyst action.
-* **Investigation (user-led)**. Supports analysts, in Mobot, with a hypothesis-driven approach to assess the scope, context, and likely impact of an event.
+* **Auto-investigation**. Automatically delivers a verdict on every insight as it comes in, without requiring analyst action. The agent determines whether the insight is malicious, suspicious, or benign, summarizes the threat incident based on triggered signals, and presents key findings from the signals that fired. Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals). It does not yet integrate with external MCP connectors or automation services.
+* **Investigation (user-led)**. Supports analysts, in Mobot, with a hypothesis-driven approach to assess the scope, context, and likely impact of an event. Mobot isn't limited to normalized security data: you can ask it about other data in your account that is relevant to the insight, such as raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health.
 * **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken, for consistent documentation across analysts and teams.
 
-The SOC Analyst Agent provides the following functionality:
+You work with the agent in two places:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
-
-Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals); it does not yet integrate with external MCP connectors or automation services. User-led investigation in Mobot isn't limited to this normalized data: you can ask Mobot to search any log data in your account relevant to the insight, not just data normalized into Cloud SIEM records and signals.
 
 :::training Sumo Logic Academy
 
@@ -120,7 +118,7 @@ Follow these steps once you're in Mobot:
 
 1. From the insight's **Details** page, click **Ask Mobot** to open the investigation in [Mobot](/docs/search/mobot/), Dojo AI's chat interface.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
 1. The full AI investigation appears in Mobot. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="800" />
-1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (that is, hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can search any log data in your account relevant to the investigation.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
+1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (that is, hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can also query other data in your account, such as raw cloud logs, metrics, lookup tables, and collector health. When Mobot returns information from outside the Cloud SIEM index, it indicates the source.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
 1. After executing a prompt like the one above, Mobot analyzes your request and fashions a log search query based on it.
 1. Click the log search results card to see the results of your request in the Log Search UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
 1. As you work with the investigation agent, after each step you will be presented with follow-up questions. Type a number corresponding to a follow-up question, or enter your own question.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-followup-questions.png')} alt="Insight investigation follow-up questions" style={{border: '1px solid gray'}} width="600" />
@@ -238,7 +236,7 @@ Unlike traditional correlation logic, which is static, the SOC Analyst Agent app
 
 ### What data does the agent rely on to render verdicts?
 
-The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic and customer-provided [threat intelligence](/docs/security/threat-intelligence) feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details).
+The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic and customer-provided [threat intelligence](/docs/security/threat-intelligence) feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details). Auto-investigation verdicts are based only on this data. When you continue an investigation in Mobot, the agent can also query data outside the Cloud SIEM index, such as raw cloud logs, metrics, lookup tables, and collector health.
 
 ### Can analysts provide feedback or correct AI verdicts?
 
