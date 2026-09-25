@@ -12,20 +12,18 @@ import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="35"/>
 
-Sumo Logic's SOC Analyst Agent is an agentic AI tool that embeds reasoning and context-awareness directly into Cloud SIEM, helping your Security Operations Center (SOC) team investigate alerts faster, reduce false-positive noise, and respond with confidence. Security teams spend too much time validating false positives and performing repetitive investigative steps — the agent eliminates that noise, standardizes outcomes, and accelerates time to resolution.
+The SOC Analyst Agent automatically investigates Cloud SIEM insights and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already laid. Your team can continue any investigation conversationally with [Mobot](/docs/search/mobot/), Dojo AI's chat interface.
 
-Every verdict is evidence-backed and explainable. The agent shows the evidence it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith. It determines whether an insight is malicious, suspicious, or benign, provides a concise summary of the threat incident based on triggered signals, and presents key findings from the signals that fired, resulting in quicker, more detailed analysis.
+By cutting manual triage and reducing mean time to resolution, the agent lets SOC teams focus on real threats instead of repetitive work. It shows the data it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith.
 
 The SOC Analyst Agent performs three distinct jobs that mirror an analyst's daily responsibilities:
-* **Auto-investigation**. Automatically delivers evidence-backed verdicts on every insight as it comes in, determining whether it's malicious, suspicious, or benign, without requiring analyst action.
-* **Investigation (user-led)**. Supports analysts, in Mobot, with a hypothesis-driven approach to assess the scope, context, and likely impact of an event.
-* **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken, for consistent documentation across analysts and teams.
+* **Auto-investigation**. Automatically delivers a verdict on each insight as it arrives, without requiring analyst action. The agent determines whether the insight is malicious, suspicious, or benign, summarizes the threat incident based on triggered signals, and presents key findings from the signals that fired. Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals). It does not yet integrate with external MCP connectors or automation services.
+* **Investigation (user-led)**. Supports analysts in Mobot with a hypothesis-driven approach to assess the scope, context, and likely impact of an event. Mobot isn't limited to normalized security data: you can ask it about other data in your account that is relevant to the insight, such as raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health.
+* **Incident report generation (via Mobot)**. Generates structured reports documenting investigation findings, evidence, and actions taken to ensure consistent documentation across analysts and teams.
 
-The SOC Analyst Agent provides the following functionality:
+You work with the agent in two places:
 * [AI Investigation tab in Cloud SIEM](#ai-investigation-tab)
 * [Insight investigation in Mobot](#investigate-the-insight-in-mobot)
-
-Auto-investigation reasoning is currently limited to normalized security data within the platform (for example, security records and signals); it does not yet integrate with external MCP connectors or automation services. User-led investigation in Mobot isn't limited to this normalized data: you can ask Mobot to search any log data in your account relevant to the insight, not just data normalized into Cloud SIEM records and signals.
 
 :::training Sumo Logic Academy
 
@@ -63,7 +61,7 @@ The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [How
 
 ### Feature Management
 
-To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off from the **Feature Management** page (**Administration** > **Feature Management**), available to any user with the Administrator role or the **Manage Organization Settings** permission. The SOC Analyst Agent has its own **SOC Analyst Agent** toggle, independent of the **AI features** toggle that governs Mobot and Parse Assist, and the **MCP Server access** toggle.
+To disable the SOC Analyst Agent for your entire organization, an administrator can turn it off on the **Feature Management** page (**Administration** > **Feature Management**). This page is available to any user with the Administrator role or the **Manage Organization Settings** permission. The SOC Analyst Agent has its own **SOC Analyst Agent** toggle, independent of the **AI features** toggle that governs Mobot and Parse Assist, and the **MCP Server access** toggle.
 
 Parent and child orgs have the SOC Analyst Agent enabled by default. A parent org administrator can toggle it for the parent org and for its child orgs. Child org administrators cannot toggle it for their own org or for other child orgs.
 
@@ -76,14 +74,14 @@ Parent and child orgs have the SOC Analyst Agent enabled by default. A parent or
 
 The SOC Analyst Agent runs in the background against all insights that flow into Cloud SIEM. After analysis, it renders a verdict about whether the insight requires investigation.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu, select **Cloud SIEM** and then click **Insights** at the top of the screen.
 1. In the **Insights** page, note that the **AI Verdict** column shows the results of the AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-verdict-column.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="800" />
 1. Click **Start typing here to create a filter** near the top of the insights page and select **AI Verdict** to search for insights based on the verdict they are assigned:<br/><img src={useBaseUrl('img/cse/insight-ai-filter.png')} alt="Insight AI Verdict column" style={{border: '1px solid gray'}} width="600" />
-   * **Malicious**. AI analysis determined that the insight is malicious, and warrants immediate investigation by your SOC team.
+   * **Malicious**. AI analysis determined that the insight is malicious and warrants immediate investigation by your SOC team.
    * **Suspicious**. AI analysis determined that the insight is suspicious and warrants investigation by your SOC team.
-   * **Benign**. AI analysis determined that the insight is harmless and is not a candidate for elevation to SOC team investigation.
+   * **Benign**. AI analysis determined that the insight is harmless and not a candidate for elevation to the SOC team for investigation.
    * **In Progress**. AI analysis is in progress.
-   * **Inconclusive**. AI analysis could not determine whether the insight needs to be investigated.
+   * **Inconclusive**. AI analysis could not determine whether the insight requires investigation.
    * **Not Investigated**. No AI analysis was performed on the insight due to rate limiting. Click the **Investigate** button at the top of the insight's details page to manually initiate an AI investigation. See [How does investigation rate limiting work?](#how-does-investigation-rate-limiting-work) for details.
 1. Clicking anywhere on the row of an insight that has an AI verdict opens a side panel with results of the verdict. It's collapsible, allowing you to browse quickly for insights needing more investigation while staying in your insights list:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-side-panel.png')} alt="Insight AI side panel" style={{border: '1px solid gray'}} width="700" />
 1. To investigate an insight further, click the insight's ID (blue link):<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-trigger-full.png')} alt="Insight ID link highlighted in the Insights list" style={{border: '1px solid gray'}} width="700" /><br/>Insights with an AI verdict display an **AI Investigation** tab on the insight's details page. Use the information on this tab to dive deeper into the insight.
@@ -92,23 +90,23 @@ The SOC Analyst Agent runs in the background against all insights that flow into
 
 The **AI Investigation** tab in the details page of a Cloud SIEM insight is an artificial intelligence-generated analysis of the insight. Use the information on this tab to guide your investigation.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu select **Cloud SIEM** and then click **Insights** at the top of the screen.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main menu, select **Cloud SIEM** and then click **Insights** at the top of the screen.
 1. On the insights list page, click an insight's ID.
 1. The **AI Investigation** tab shows results of AI analysis:<br/><img src={useBaseUrl('img/cse/insight-ai-investigation-tab.png')} alt="Insight AI Investigation tab" style={{border: '1px solid gray'}} width="700" />
    1. **AI Verdict**. The AI system's qualitative assessment of the insight (**Malicious**, **Suspicious**, or **Benign**), followed by a brief explanation of the reasoning behind the verdict.
-      * **Current Severity**. The severity of the insight as set by the cumulative activity score for the insight. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity).
+      * **Current Severity**. The severity of the insight is set by the insight's cumulative activity score. For more information, see [About insight severity](/docs/cse/get-started-with-cloud-siem/insight-generation-process/#about-insight-severity).
       * **Global Confidence Score**. A level of confidence that the insight is actionable, predicted by Sumo Logic's Global Intelligence machine learning model. See [What is a Global Confidence score?](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/#what-is-a-global-confidence-score).
-      * **Recommends severity level of ___**. AI analysis recommends a new severity level be assigned to this insight. If you agree with the assessment, click **Accept**. The **Current Severity** field changes to the new value.
-   1. **What Happened**. A concise summary of threat incidents based on triggered signals in the insight, generated by the SOC Analyst Agent. The summary consolidates key details to facilitate quick understanding and response by security teams. The summary is generated when an insight is created, and is regenerated whenever the insight is modified, keeping it current with added or removed signals. Summaries are generated for insights created by the system, as well as custom insights you create manually.
+      * **Recommends severity level of ___**. AI analysis recommends assigning a new severity level to this insight. If you agree with the assessment, click **Accept**. The **Current Severity** field changes to the new value.
+   1. **What Happened**. A concise summary of threat incidents based on triggered signals in the insight, generated by the SOC Analyst Agent. The summary consolidates key details to facilitate quick understanding and response by security teams. The summary is generated when an insight is created and regenerated whenever the insight is modified, keeping it current with any added or removed signals. Summaries are generated for insights created by the system and for custom insights you create manually.
       :::tip
-      Help us refine the tool by using the thumbs-up or thumbs-down buttons to provide feedback on the effectiveness of the summary presented. Clicking the thumbs-down button gives you the opportunity to provide additional feedback.
+      Help us refine the tool by using the thumbs-up or thumbs-down buttons to rate the effectiveness of the summary. Clicking the thumbs-down button allows you to provide additional feedback.
       :::
       <!-- 1. **Recommended Actions**. Actions you can take to remediate the incident.
        1. Click **Execute Action** to run a [playbook](/docs/platform-services/automation-service/playbooks/) to take the recommended action:<br/><img src={useBaseUrl('img/cse/recommended-actions.png')} alt="Recommended actions" style={{border: '1px solid gray'}} width="700" />
        1. Click **View Details** on the confirmation to see details about the playbook automation, and then you should see a confirmation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
        1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
           :::note
-          To be able to run playbooks from **Recommended Actions**, the integrations that the playbooks use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
           :::
           -->
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
@@ -120,10 +118,10 @@ Follow these steps once you're in Mobot:
 
 1. From the insight's **Details** page, click **Ask Mobot** to open the investigation in [Mobot](/docs/search/mobot/), Dojo AI's chat interface.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
 1. The full AI investigation appears in Mobot. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="800" />
-1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (that is, hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can search any log data in your account relevant to the investigation.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
+1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (i.e., hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can also query other data in your account, such as raw cloud logs, metrics, lookup tables, and collector health. When Mobot returns information from outside the Cloud SIEM index, it indicates the source.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
 1. After executing a prompt like the one above, Mobot analyzes your request and fashions a log search query based on it.
-1. Click the log search results card to see the results of your request in the Log Search UI. You can also click the suggestions provided to drill down farther. As you ask questions, Mobot retains the context of your conversation about the insight, allowing you to more easily obtain detail. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
-1. As you work with the investigation agent, after each step you will be presented with follow-up questions. Type a number corresponding to a follow-up question, or enter your own question.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-followup-questions.png')} alt="Insight investigation follow-up questions" style={{border: '1px solid gray'}} width="600" />
+1. Click the log search results card to see the results of your request in the Log Search UI. You can also click the suggestions provided to drill down further. As you ask questions, Mobot retains the context of your conversation about the insight, making it easier to obtain details. <br/><img src={useBaseUrl('img/cse/investigation-agent-results.png')} alt="Insight investigation query results" style={{border: '1px solid gray'}} width="800" />
+1. As you work with the investigation agent, after each step, you will be presented with follow-up questions. Type a number corresponding to a follow-up question, or enter your own question.<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-followup-questions.png')} alt="Insight investigation follow-up questions" style={{border: '1px solid gray'}} width="600" />
 
 At any point during the investigation, click **Open Insight** to return to the insight's **Details** page in Cloud SIEM.<br/><img src={useBaseUrl('img/cse/mobot-open-insight-button.png')} alt="Open Insight button in Mobot" style={{border: '1px solid gray'}} width="400" />
 
@@ -145,7 +143,7 @@ Select a dimension to proceed, or enter your own search criteria.
 
 Auto-investigation and Mobot-led investigations automatically check indicators in an insight, such as IP addresses, domains, and file hashes, against Sumo Logic's [global threat intelligence feeds](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources), any custom threat intel feeds you've added, and your connected inventory sources. When a match is found, the verdict includes match context so you can see why an indicator was flagged rather than take the result on faith.
 
-This is on by default. If you already have threat intel feeds or inventory sources connected, the agent uses them automatically. If you don't, you can [add a feed](/docs/security/threat-intelligence/) at any time.
+This is on by default. If you already have threat intel feeds or inventory sources connected, the agent uses them automatically. If you don't, you can [add a feed](/docs/security/threat-intelligence/) any time.
 
 To check a specific indicator, ask Mobot directly. For example:
 
@@ -155,7 +153,7 @@ To check a specific indicator, ask Mobot directly. For example:
 
 ### Example questions
 
-Following are example questions you could try in the **Ask Something...** field. Although these are general questions, they give you an idea of the wide variety of questions you can ask the agent. However, rather than ask general questions, we recommend you ask questions specific to the insight you're investigating in order to get the most useful responses.
+The following are example questions you could try in the **Ask Something...** field. Although these are general questions, they give you an idea of the wide variety of questions you can ask the agent. However, rather than asking general questions, we recommend asking questions specific to the insight you're investigating to get the most useful responses.
 
 * `Give me an executive summary of the insight`
 * `What actions do you recommend for remediation`
@@ -165,7 +163,7 @@ For more example prompts, see [Security investigations](/docs/search/mobot/examp
 
 ### Generate dashboards
 
-To generate dashboards based on the context of your investigation, simply ask Mobot. For example, in the **Ask Something...** field, you could type `Create a dashboard with the results of this investigation`. The agent will build the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard-generated.png')} alt="Ask to generate dashboard" style={{border: '1px solid gray'}} width="700" />
+To generate dashboards tailored to your investigation, simply ask Mobot. For example, in the **Ask Something...** field, you could type `Create a dashboard with the results of this investigation`. The agent will build the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard-generated.png')} alt="Ask to generate dashboard" style={{border: '1px solid gray'}} width="700" />
 
 Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse/soc-analyst-agent-dashboard.png')} alt="Dashboard generated for insight investigation" style={{border: '1px solid gray'}} width="700" />
 
@@ -179,30 +177,30 @@ To share the current investigation with other users, see [Share conversation](/d
 
 ## Configure SOC Analyst Agent settings
 
-The SOC Analyst Agent automatically investigates every insight that flows into Cloud SIEM, in priority order, up to your organization's committed daily investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when your committed volume is reached.
+The SOC Analyst Agent automatically investigates every insight that flows into Cloud SIEM, in order of priority, up to your organization's committed daily investigation volume. The **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets you control which insights the agent auto-investigates and what happens when you reach your committed volume.
 
-By default, only administrators can view or manage SOC Analyst Settings, and access is not available to federated tenants. An administrator can grant analysts the **View SOC Analyst Settings** permission to view the settings; with view-only access, the controls are visible but disabled. Changing settings always requires the **Manage SOC Analyst Settings** permission, limited to administrators. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
+By default, only administrators can view or manage SOC Analyst Settings, and federated tenants do not have access. An administrator can grant analysts the **View SOC Analyst Settings** permission to view the settings; with view-only access, the controls are visible but disabled. Changing settings always requires the **Manage SOC Analyst Settings** permission, limited to administrators. Manually triggering an investigation (clicking **Investigate** on a **Not Investigated** insight) requires the separate **Trigger Manual Investigation** permission.
 
 To open the settings, select **Cloud SIEM** > **Cloud SIEM Workflow Configuration** > **SOC Analyst Settings**.
 
 ### Auto-Investigation Filter
 
-Insights that match the conditions you define are excluded from auto-investigation, keeping investigation capacity focused on higher-priority signals. Excluded insights receive a **Not Investigated** verdict and do not consume investigation capacity. Analysts can still investigate them manually, because manual investigation ignores the filter. If you do not define any conditions, all insights are eligible for auto-investigation up to your committed volume.
+Insights that match the conditions you define are excluded from auto-investigation, keeping investigation capacity focused on higher-priority signals. Excluded insights receive a **Not Investigated** verdict and do not consume investigation capacity. Analysts can still investigate them manually because manual investigation ignores the filter. If you do not define any conditions, all insights are eligible for auto-investigation up to your committed volume.
 
 At GA, you can define a single filter (with any combination of AND/OR condition groups) per org. Support for multiple, separately prioritized filter rules is planned for a future release.
 
-The filter has an **Active** / **Disabled** toggle in the top right of the section. When it is set to **Disabled**, no insights are excluded and the conditions are hidden ("Filter is currently disabled. Enable the toggle to configure filter criteria."). Set it to **Active** to define conditions.
+The filter has an **Active** / **Disabled** toggle in the top right of the section. When it is set to **Disabled**, no insights are excluded, and the conditions are hidden ("Filter is currently disabled. Enable the toggle to configure filter criteria."). Set it to **Active** to define conditions.
 
 To build the conditions:
 
 1. In a condition row, select a type, an operator, and a value. The types are:
    * **Insight Severity**. Select Critical, High, Medium, or Low.
-   * **Entity Type**. Select the entity type from the **Select type...** dropdown. Options include IP Address, MAC Address, Username, Hostname, Process, Command, Hash, Domain, User Agent, Email, URL, File, Deployment, Pod, ReplicaSet, and Resource, among others.
+   * **Entity Type**. Select the entity type from the **Select type...** dropdown. Options include IP Address, MAC Address, Username, Hostname, Process, Command, Hash, Domain, User Agent, Email, URL, File, Deployment, Pod, ReplicaSet, and Resource.
    * **Signal Name**. The name of a signal in the insight. Enter the value as text.
    * **Signal Rule ID**. The rule ID of a signal in the insight. Enter the value as text.<br/><img src={useBaseUrl('img/cse/auto-investigation-filter.png')} alt="Auto-Investigation Filter with two condition groups joined by AND" style={{border: '1px solid gray'}} width="800" />
 1. For the operator, select **equals** or **does not equal**.
 1. Combine conditions with **OR** and **AND**:
-   * Click **+ OR** to add a condition to a group. An insight matches the group when any condition in it is true.
+   * Click **+ OR** to add a condition to a group. An insight matches the group if any of its conditions are true.
    * Click **+ AND** to add another group. An insight matches the filter only when every group is true.
 
 To remove a condition, click the **X** next to it. To remove an entire group, click the **X** in the top-right corner of the group.
@@ -211,11 +209,11 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 ### Volume & Overage Settings
 
-When your committed daily investigation volume is reached, new insights receive a **Not Investigated** status, and analysts can still manually trigger investigation.
+When your committed daily investigation volume is reached, new insights are marked as **Not Investigated**, and analysts can still manually trigger an investigation.
 
 The section has an **Active** / **Disabled** toggle in the top right, similar to the Auto-Investigation Filter's toggle.
 
-* **Allow overages**. This check box is cleared by default. Select it to continue auto-investigating past your committed volume. Overage investigations are billed separately.
+* **Allow overages**. This checkbox is cleared by default. Select it to continue auto-investigating past your committed volume. Overage investigations are billed separately.
 * **Ceiling**. When **Allow overages** is selected, a **Ceiling** field appears, defaulted to 20%. Enter the maximum percentage above your committed volume that auto-investigation can consume.
 
 <img src={useBaseUrl('img/cse/volume-overage-settings.png')} alt="Volume and Overage Settings with Allow overages selected and the Ceiling field" style={{border: '1px solid gray'}} width="800" />
@@ -226,7 +224,7 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 ### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks like MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), Dojo AI's chat interface, to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks such as MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts with an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), Dojo AI's chat interface, to map relationships, connect entities, and summarize findings.
 
 ### Will the agent increase scanning or data-processing costs?
 
@@ -234,11 +232,11 @@ No. The agent analyzes existing data already ingested into Cloud SIEM. It perfor
 
 ### How does the agent differ from Cloud SIEM correlation or automation rules?
 
-Unlike traditional correlation logic, which is static, the SOC Analyst Agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
+Unlike traditional static correlation logic, the SOC Analyst Agent applies agentic reasoning. It adapts based on insight context, recent analyst actions, and environmental signals, producing contextual, explainable decisions rather than fixed pattern matches.
 
 ### What data does the agent rely on to render verdicts?
 
-The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic and customer-provided [threat intelligence](/docs/security/threat-intelligence) feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details).
+The agent draws from normalized security data (`sec_record*` indexes and signals), correlated entities, Sumo Logic and customer-provided [threat intelligence](/docs/security/threat-intelligence) feeds, and enrichment data (for example, IP geolocation, user behavior, and asset details). Auto-investigation verdicts are based only on this data. When you continue an investigation in Mobot, the agent can also query data outside the Cloud SIEM index, such as raw cloud logs, metrics, lookup tables, and collector health.
 
 ### Can analysts provide feedback or correct AI verdicts?
 
@@ -262,11 +260,11 @@ No. Continuing an investigation in [Mobot](/docs/search/mobot) from an insight (
 
 ### Does the agent automatically investigate things that are not entities in Cloud SIEM?
 
-Traditional Cloud SIEM entities are items like users, IP addresses, hosts, and the like. In addition to these, the agent automatically investigates things that are not usually identified as entities in Cloud SIEM, such as related cloud resources, API endpoints, or service accounts relevant to the insight. This intelligent entity prioritization results in faster investigation and reduces time spent manually determining which entities to investigate.
+Traditional Cloud SIEM entities include users, IP addresses, hosts, and the like. In addition to these, the agent automatically investigates things that are not usually identified as entities in Cloud SIEM, such as related cloud resources, API endpoints, or service accounts relevant to the insight. This intelligent entity prioritization results in faster investigation and reduces time spent manually determining which entities to investigate.
 
 ### Can I converse with the agent in the same way I am used to doing with other AI-enabled tools?
 
-Yes, you can. In your investigation, you are not limited in how you proceed. You can engage the agent in a conversational flow to direct the investigation any way you want. However, the agent has many tools that can help should you need guidance. For example, the agent presents follow-up questions after each step that offer you multiple paths for investigation.
+Yes, you can. In your investigation, you are not limited in how you proceed. You can engage the agent in a conversational flow to direct the investigation any way you want. However, the agent has many tools that can help should you need guidance. For example, the agent presents follow-up questions after each step, offering you multiple paths for investigation.
 
 ### Is the agent's work quality checked?
 
