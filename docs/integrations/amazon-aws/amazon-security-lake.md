@@ -180,97 +180,97 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Amazon Security Lake - Overview** dashboard provides a consolidated, high-level view of every OCSF event collected into your Security Lake. It tracks event volume by category, severity, status, AWS account, region, and reporting product, and highlights critical and failed activity across your environment. Geo-location panels map the global distribution of events and flag activity originating from embargoed locations, while trend charts reveal shifts in category and severity patterns over time.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Overview.png')} alt="Amazon Security Lake Overview" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Overview.png')} alt="Amazon Security Lake Overview" />
 
 ### Application - API Activity
 
 The **Application - API Activity** dashboard provides visibility into API call events across your AWS environment, tracking request volume, success and failure rates, authorization denials, and service usage patterns. It breaks down activity by principal type, cloud region, user agent, and operation, while geo-location panels map the origin of both successful and failed API calls. Error analysis panels surface frequently thrown errors and failed operations to help identify misconfigurations or potential abuse.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Application-API-Activity.png')} alt="Amazon Security Lake Application API Activity" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Application-API-Activity.png')} alt="Amazon Security Lake Application API Activity" />
 
 ### Application - Datastore and File Hosting Activity
 
 The **Application - Datastore and File Hosting Activity** dashboard monitors data access events across databases, storage services, and file hosting platforms. It tracks datastore operations, large file downloads and sharing activity, frequently accessed buckets and databases, and identifies the most active data access users. Dedicated panels surface failed data access attempts and confidential file sharing details, enabling teams to spot data exfiltration risks and policy violations.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Application-Datastore-and-File-Hosting-Activity.png')} alt="Amazon Security Lake Application Datastore and File Hosting Activity" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Application-Datastore-and-File-Hosting-Activity.png')} alt="Amazon Security Lake Application Datastore and File Hosting Activity" />
 
 ### Application - Health and Vulnerability Management
 
 The **Application - Health and Vulnerability Management** dashboard provides visibility into application errors and vulnerability scan operations across your environment. It tracks error volume by severity and status code, identifies frequently impacted devices and products, and monitors scan activity by type and operation. Dedicated detail panels surface recent error events and scan results, enabling teams to correlate application health issues with security vulnerabilities.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Application-Health-and-Vulnerability-Management.png')} alt="Amazon Security Lake Application Health and Vulnerability Management" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Application-Health-and-Vulnerability-Management.png')} alt="Amazon Security Lake Application Health and Vulnerability Management" />
 
 ### Application - Web Resources and Change Management
 
 The **Application - Web Resources and Change Management** dashboard monitors web resource access and application lifecycle events across your environment. It tracks frequently accessed web resources by type, recently installed applications, high and critical risk app installations, and application lifecycle changes including installs, updates, and removals. Dedicated panels surface failed events and visualize lifecycle activity by risk level, giving teams control over their software supply chain.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Application-Web-Resources-and-Change-Management.png')} alt="Amazon Security Lake Application Web Resources and Change Management" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Application-Web-Resources-and-Change-Management.png')} alt="Amazon Security Lake Application Web Resources and Change Management" />
 
 ### IAM - Successful Logins and Sessions
 
 The **IAM - Successful Logins & Sessions** dashboard provides visibility into successful authentication and session authorization events normalized to the OCSF Identity & Access Management category. It tracks login volume, MFA adoption, logon type and protocol distribution, user role activity, and session privilege assignments. Geo-location panels map login origins and flag logins from embargoed locations, while trend charts reveal authentication patterns over time.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-IAM-Successful-Logins-and-Sessions.png')} alt="Amazon Security Lake IAM Successful Logins and Sessions" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-IAM-Successful-Logins-and-Sessions.png')} alt="Amazon Security Lake IAM Successful Logins and Sessions" />
 
 ### IAM - Failed Logins and Sessions
 
 The **IAM - Failed Logins & Sessions** dashboard provides visibility into failed authentication and session authorization events across your environment. It tracks failure volume, failure rate percentage, top failure reasons, targeted users, and denied privilege assignments. Geo-location panels map the origin of failed login attempts, while outlier detection highlights users experiencing abnormally high failure counts, enabling rapid identification of brute-force or credential-stuffing attacks.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-IAM-Failed-Logins-and-Sessions.png')} alt="Amazon Security Lake IAM Failed Logins and Sessions" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-IAM-Failed-Logins-and-Sessions.png')} alt="Amazon Security Lake IAM Failed Logins and Sessions" />
 
 ### IAM - Change and Account Lifecycle Monitoring
 
 The **IAM - Change & Account Lifecycle Monitoring** dashboard provides visibility into user, group, role, and entity management events across your AWS environment. It tracks change volume by management type and actor, monitors account and role lifecycle flows, and surfaces newly assigned privileges and resource ownership changes. Dedicated panels highlight critical IAM management events and display the most frequently updated resources and resource types, enabling teams to enforce least-privilege policies.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-IAM-Change-and-Account-Lifecycle-Monitoring.png')} alt="Amazon Security Lake IAM Change and Account Lifecycle Monitoring" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-IAM-Change-and-Account-Lifecycle-Monitoring.png')} alt="Amazon Security Lake IAM Change and Account Lifecycle Monitoring" />
 
 ### Network - DNS Activity
 
 The **Network - DNS Activity** dashboard provides visibility into OCSF DNS Activity events across your environment, tracking query and response volume trends, top queried hostnames, record types, response and operational codes, and DNS flags. It breaks down activity by application, protocol, operating system, and device type, while geo-location panels map the origin of DNS sources and targets. Detailed event panels surface recent DNS queries for forensic investigation.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Network-DNS-Activity.png')} alt="Amazon Security Lake Network DNS Activity" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Network-DNS-Activity.png')} alt="Amazon Security Lake Network DNS Activity" />
 
 ### Network - Email Activity
 
 The **Network - Email Activity** dashboard provides visibility into OCSF Email Activity events, tracking message volume trends, top senders and recipients, email direction and protocol distribution, and frequently used commands. Geo-location panels map sender and receiver origins globally, while severity-based filtering highlights critical email events. Dedicated detail panels surface recent email activity for forensic analysis of suspicious communications.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Network-Email-Activity.png')} alt="Amazon Security Lake Network Email Activity" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Network-Email-Activity.png')} alt="Amazon Security Lake Network Email Activity" />
 
 ### Network - Network and Tunnel Activity
 
 The **Network - Network and Tunnel Activity** dashboard provides visibility into OCSF Network Activity and Tunnel Activity events, tracking connection volume, outcomes, and traffic byte and packet counts. It breaks down activity by application protocol, traffic boundary, direction, region, and device type, while geo-location panels map source and target endpoints globally. Dedicated panels surface top targeted endpoints, active users, and total bytes in, out, and missed for bandwidth analysis.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Network-Network-and-Tunnel-Activity.png')} alt="Amazon Security Lake Network Network and Tunnel Activity" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Network-Network-and-Tunnel-Activity.png')} alt="Amazon Security Lake Network Network and Tunnel Activity" />
 
 ### Network - Remote Access and Protocol Activity
 
 The **Network - Remote Access and Protocol Activity** dashboard provides unified visibility into DHCP, RDP, SMB, SSH, FTP, and NTP activity events across your environment. It tracks per-protocol volumes, activity and application distribution, SSH authentication methods, SMB and RDP response codes, and file access patterns. Dedicated panels surface critical events, active users, and recently accessed file types, enabling detection of remote access misuse and unauthorized protocol activity.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Network-Remote-Access-and-Protocol-Activity.png')} alt="Amazon Security Lake Network Remote Access and Protocol Activity" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Network-Remote-Access-and-Protocol-Activity.png')} alt="Amazon Security Lake Network Remote Access and Protocol Activity" />
 
 ### Network - Web and HTTP Activity
 
 The **Network - Web and HTTP Activity** dashboard provides visibility into OCSF HTTP Activity events, tracking request methods, response codes and statuses, top user agents, requested file types, and server domains contacted. It highlights unauthorized (401/403) requests and critical HTTP events, while geo-location panels map the origin of source requests and identify traffic from embargoed locations. Severity-based filtering enables prioritization of the most critical web threats.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-Network-Web-and-HTTP-Activity.png')} alt="Amazon Security Lake Network Web and HTTP Activity" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-Network-Web-and-HTTP-Activity.png')} alt="Amazon Security Lake Network Web and HTTP Activity" />
 
 ### System Activity Overview
 
 The **System Activity Overview** dashboard provides a consolidated view of endpoint and host telemetry normalized into the OCSF System Activity category. It tracks event volume by event type, severity, outcome, operating system, host, and reporting product, while highlighting high, critical, and fatal system events. Trend charts reveal system event volume patterns over time, and a recent event summary enables rapid triage of the latest host-level activity.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-System-Activity-Overview.png')} alt="Amazon Security Lake System Activity Overview" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-System-Activity-Overview.png')} alt="Amazon Security Lake System Activity Overview" />
 
 ### System Activity - Execution, Memory and Kernel
 
 The **System Activity - Execution, Memory & Kernel** dashboard provides deep visibility into what is running on your monitored hosts, tracking process launches, command-line arguments, script execution, module and driver loads, kernel object operations, and memory activity such as remote allocation and injection. It identifies the most frequently executed processes, top loaded modules, and hosts with the highest execution activity. Dedicated panels surface process lineage, memory injection details, and kernel extension actions for advanced threat hunting.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-System-Activity-Execution-Memory-and-Kernel.png')} alt="Amazon Security Lake System Activity Execution Memory and Kernel" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-System-Activity-Execution-Memory-and-Kernel.png')} alt="Amazon Security Lake System Activity Execution Memory and Kernel" />
 
 ### System Activity - File, Persistence, Media and Audit
 
 The **System Activity - File, Persistence, Media & Audit** dashboard monitors host activity that affects data integrity, persistence mechanisms, and audit trails. It tracks file system operations, scheduled job changes, event log clearing, peripheral and removable media use, clipboard activity, and device power state transitions. Dedicated panels surface frequently accessed file types, scheduled job configurations, and clipboard activity containing sensitive content, enabling detection of data theft and anti-forensic activity.
 
-<img src={useBaseUrl('/img/integrations/amazon-aws/Amazon-Security-Lake-System-Activity-File-Persistence-Media-and-Audit.png')} alt="Amazon Security Lake System Activity File Persistence Media and Audit" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AmazonSecurityLake/Amazon-Security-Lake-System-Activity-File-Persistence-Media-and-Audit.png')} alt="Amazon Security Lake System Activity File Persistence Media and Audit" />
 
 ## Create monitors for Amazon Security Lake app
 
