@@ -102,7 +102,7 @@ Keyword searches are case-sensitive.
 
 ## Data volume
 
-The [Data Volume Skill](/docs/manage/ingestion-volume/data-volume-index/data-volume-skill/) requires the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) to be enabled.
+The Data Volume Skill requires the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) to be enabled.
 
 * `How much data did I ingest last week?`
 * `What are my top 10 source categories by volume?`
