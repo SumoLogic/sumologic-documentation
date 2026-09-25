@@ -16,6 +16,7 @@
         "inmemory_lookup":true,
         "collectAuditData":true,
         "collectEventLogFileData":true,
+        "fullEventLogFileMonitoring":true,
         "fields":{      
           "_siemForward":false
         },
