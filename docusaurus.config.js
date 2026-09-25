@@ -616,7 +616,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
+        copyright: `© ${new Date().getFullYear()} Sumo Logic, Inc. SUMO and SUMO LOGIC are registered trademarks.`,
       },
     }),
 };
