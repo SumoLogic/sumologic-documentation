@@ -47,6 +47,40 @@ Knowledge falls into three themes.
 | **Historical learning and team judgment** | Specific past incidents, and the recurring patterns your team has learned to recognize. | The Nov 12 spike was resolved by rotating API credentials. <br/> Friday brute-force spikes are usually the scheduled pentest. |
 | **Operational practices and workflows** | How your organization decides what to do, and the steps your team takes. | PII gets escalated straight to the security lead; we skip the ticket queue. <br/> Impossible-travel alert, verify identity history, then open a ticket. |
 
+## Example knowledge entries
+
+### Your environment
+
+| What to capture | Example entry |
+|:--|:--|
+| Vulnerability scanner | 10.0.50.12 is our Nessus scanner. We rotate the IP every 30 days. Do not flag high-severity brute-force or port-scan alerts from this host. |
+| Maintenance windows | Sunday maintenance windows run 0100–0500 UTC. Automated patching routinely triggers EDR alerts on Host-041 during this window. |
+| Known-safe user behavior | User jsmith is a penetration tester who routinely runs Kali Linux tools and Mimikatz from the 192.168.5.0/24 management subnet. This is authorized. |
+| Executive travel | Executive v_rossi travels frequently to APAC. Legitimate logins from Tokyo or Singapore IP blocks are expected during non-US business hours. |
+| Backup vendor activity | Backup vendor Datto uses account svc-datto-backup daily at 0200 UTC to modify shadow copies. Do not flag this as ransomware behavior. |
+| Legacy system exception | Host-102 is a legacy payroll server running an unpatchable OS. Isolate it from outbound internet traffic and ignore normal OS-version vulnerability flags. |
+| Policy exception | Remote root SSH access is forbidden by policy SEC-04 except on Host-009, which holds an approved regulatory waiver due to legacy hardware constraints. |
+
+### Historical learning and team judgment
+
+| What to capture | Example entry |
+|:--|:--|
+| Past incident resolution | The Nov 12 authentication spike was resolved by rotating the API credentials for svc-deploy. Any similar spike on that account should check for stale credentials first. |
+| Known false-positive pattern | Friday brute-force spikes on domain controllers are usually the scheduled pentest run by the security team. Confirm timing before escalating. |
+| Recurring alert noise | Qualys triggers high-severity brute-force alerts on domain controllers every Tuesday at 2300 UTC during scheduled network discoveries. This is expected. |
+| Post-mortem lesson | INC-2025-089: A rogue scheduled task named OneDriveUpdate bypassed triage because analysts assumed it was a native app. Inspect all newly registered tasks regardless of naming conventions. |
+| Forensic heuristic | TrueBot campaigns consistently use renamed 7z.exe binaries for exfiltration. Check file entropy and headers, not just the extension. |
+
+### Operational practices and workflows
+
+| What to capture | Example entry |
+|:--|:--|
+| Escalation rule | PII incidents get escalated straight to the security lead. Skip the ticket queue. |
+| Investigation runbook | Impossible-travel alert: verify identity history in Okta, check the last five login ASN/ISP entries, then open a ticket if the provider changed within 10 minutes. |
+| Containment constraint | Playbook IR-SEC-3 requires manual legal counsel sign-off before isolating any domain controller in the APAC region to avoid cross-border business disruption. |
+| Triage SOP | To investigate unauthorized AWS IAM creation alerts, run the CloudTrail query for EventName CreateUser, correlate with the source IP, and verify against the Jira change queue. |
+| Standing priority rule | Any alert involving the payment gateway server Prod-DB-01 must not trigger automated containment or isolation without manual approval. It processes $50k/min. |
+
 ## Prerequisites
 
 Adding or changing knowledge requires the `manageAgent` role capability scoped to the SOC Analyst Agent. Sumo Logic provisions the initial grant; contact your account team to get started. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
