@@ -116,11 +116,9 @@ For issues, questions, or improvements:
 
 ## Change Log
 
-* January 29, 2019 - First upload
-* July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
-* May 22, 2025 (v1.2) – Modified TheHive integration with case and observable enhancements:
-  * Fixed parsing issues for date related inputs with inconsistent formatting.
-  * Fixed ssl related warning issues.
-  * Added organization name field in resource which will included in the headers.
-  * Enhanced error handling and made the integration more resilient to malformed inputs.
-* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | May 22, 2025 | <ul><li>Fixed parsing issues for date-related inputs with inconsistent formatting.</li><li>Fixed SSL-related warning issues.</li><li>Added an organization name field to the resource, which is included in the headers.</li><li>Enhanced error handling and made the integration more resilient to malformed inputs.</li></ul> |
+| v1.1 | July 3, 2023 | Updated the integration with environmental variables. |
+| | January 29, 2019 | Initial release of the TheHive integration. |
