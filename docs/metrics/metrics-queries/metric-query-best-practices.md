@@ -3,11 +3,16 @@ id: metric-query-best-practices
 title: Metric Query Best Practices
 sidebar_label: Metric Query Best Practices
 description: Learn the secrets for getting the most out of your metric queries.
+keywords:
+  - metric queries
+  - quantization
+  - metric query best practices
+  - DPM
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl'
 
-There are some common stumbling blocks for creating and charting metric queries in Sumo Logic. In this article we'll cover key metric query best practices, patterns, and tips such as:
+Getting accurate metric queries in Sumo Logic means picking the right quantization, rollup, and aggregation for your use case, since metrics and logs use very different query languages even though they share a dashboard UI. This article covers key metric query best practices, patterns, and tips such as:
 * [Logs vs metric queries](#logs-vs-metrics)
 * [Metrics query language tips and techniques](#key-tips-for-metric-query)
 * [Quantization and rollups](#quantization)
@@ -170,7 +175,7 @@ The wrong approach is to average the rollup and count of metric series:
 
 <img src={useBaseUrl('img/metrics/metrics-count-pods-wrong.png')} alt="Wrong query for pod count" style={{border: '1px solid gray'}} width="800" />
 
-### Changing statistic type on a chart changes results
+### How does changing statistic type affect chart results?
 
 Changing the **Statistic Type** on a chart (if that option is present) changes the output of the query that is displayed. Always consider if the default of **Average** is correct:
 
@@ -228,7 +233,7 @@ Unlike log searches, you often don't need to format the query output to make dif
 
 For metrics, the UI has a very large impact on the resulting chart (compared to log search charting). The same query can produce many types of charts even when not aggregated (unlike in logs).
 
-### Aggregate in metrics
+### Why aggregate in metrics?
 
 Good reasons to aggregate in metrics:
 * Better control over resulting time series from query.
@@ -259,7 +264,7 @@ Try the following fixes:
     <br/>or 
     <br/>`| where max > 0`
 
-###  Metric charting options that change output
+### Which metric charting options change output?
 
 Pay special attention to these UI options as they can impact your metrics chart output much more than log search does:
 * Rounding
@@ -425,7 +430,7 @@ Following is an incorrect way to query for pod restarts. It uses `sum` over time
 
 ## Managing DPM and high cardinality
 
-### Understanding DPM drivers
+### What drives DPM?
 
 Metrics are billed in data points per minute (DPM), typically at a rate of 3 credits per 1000 DPM averaged over each 24 hour period. `DPM = metrics * entities * total cardinality` of all tag names/values, so sending more metric/tag combinations increases cost. 
 
@@ -434,7 +439,7 @@ We have three tools in Sumo Logic to track DPM usage and drill down into drivers
 * The **Metrics** dashboard in the [Data Volume app](/docs/integrations/sumo-apps/data-volume/) can track high DPM consumption per metadata fields such as `collector`, `source`, and `sourcecategory`:<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2.png')} alt="Choosing the Metrics dashboard" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-2a.png')} alt="Metrics dashboard showing DPM per metadata field" style={{border: '1px solid gray'}} width="800" />
 * [Metrics Data Ingestion](/docs/metrics/metrics-dpm/) is a filterable admin UI to show detailed DPM and cardinality per metric name or tag. Advanced users can make custom log searches versus the underlying audit indexes for this source.<br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3.png')} alt="Ingestion per metric" style={{border: '1px solid gray'}} width="600" /><br/><img src={useBaseUrl('img/metrics/metric-query-dpm-3a.png')} alt="Ingest per dimension" style={{border: '1px solid gray'}} width="450" />
 
-### Metric DPM versus credits
+### How does DPM affect credits?
 
 More data points require more credits, and therefore, more cost.
 
@@ -484,3 +489,25 @@ If you see an increase in the number of metric series, look for new metric sourc
 Sending one data point per minute will make one DPM per entity x tag cardinality. But sending four data points per minute (every 15s) will make four DPM per entity x tag cardinality. Check the default frequency of metric sources and reduce the frequency to reduce DPM.
 
 A common use case is reducing scape interval so 1m or 2m in Kubernetes collection. Steps for Kubernetes collection v4 (OpenTelemetry) and v3 (Prometheus) can be found [here](/docs/send-data/kubernetes/best-practices/#changing-scrape-interval-for-opentelemetry-metrics-collection).
+
+## FAQ
+
+### Why does my metric query show different results than expected?
+
+Most unexpected metric query results come down to quantization and rollup type. Every metric series stores multiple rollups (`min`, `max`, `latest`, `avg`, `sum`, `count`), and the default `avg` rollup can produce very different totals than `max` or `sum` for the same data, especially when summing across series.
+
+### How do you fix "too many timeseries in the output"?
+
+Reduce the number of result groups below 1000 by aggregating on a lower-cardinality dimension (for example, `| sum by namespace` instead of `| sum by pod`), using the `topk` operator, or filtering out series with the `filter` or `where` operators.
+
+### What increases metric ingest cost (DPM)?
+
+DPM (data points per minute) increases with more metrics, more entities or hosts, higher tag cardinality, and more frequent data points. High-cardinality tags, such as timestamps or user IDs, are the most common cause of runaway DPM costs.
+
+### Should you use logs or metrics for high-cardinality data?
+
+Use logs. Metrics have strict cardinality limits and metrics or tags may be disabled if limits are exceeded, while the log search engine is much more flexible and can handle very high cardinality by design.
+
+### Do logs and metrics use the same query language?
+
+No. Although they share a dashboard chart UI, logs and metrics use different query languages. Metrics have limited operators built for high-performance aggregate charting of lower-cardinality data, while logs support over 100 operators for complex query types like transactions and log reduce.

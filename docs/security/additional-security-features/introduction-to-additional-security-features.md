@@ -3,11 +3,16 @@ id: introduction
 title: Introduction to Logs for Security
 sidebar_label: Introduction
 description: Learn basic concepts about using logs for security use cases. 
+keywords:
+  - logs for security
+  - security analytics
+  - log management
+  - threat detection
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic’s Logs for Security provides a comprehensive foundation for security operations, with a unified platform to ingest, store, and analyze security logs in real time. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
+Logs for Security is Sumo Logic's unified platform to ingest, store, and analyze security logs in real time for security analytics, threat detection, and compliance reporting. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
 
 Unlike fragmented log solutions, Sumo Logic seamlessly integrates across cloud, hybrid, and on-prem environments, reducing complexity and ensuring complete visibility into your infrastructure.
 
@@ -28,7 +33,7 @@ You can use Sumo Logic logs for:
 After you have collected logs for security, you can use them with [Cloud SIEM](/docs/cse/) and [Cloud SOAR](/docs/cloud-soar/), our solutions for threat detection, investigation, and response.
 :::
 
-## The Sumo Logic data pipeline
+## How does the Sumo Logic data pipeline work?
 
 The Sumo Logic data pipeline makes collected data available for security analysis. At a high level, it follows four steps:
 
@@ -72,3 +77,25 @@ Queries are the core of Sumo Logic's data processing platform. With queries, you
    * [How log management protects your security stack](https://www.sumologic.com/blog/log-management-security)
    * [Cloud security vs. traditional security](https://www.sumologic.com/blog/cloud-security-why-its-different)
 * Glossary: [Threat detection and response (TDR) - definition and overview](https://www.sumologic.com/glossary/threat-detection-response/)
+
+## FAQ
+
+### What is Logs for Security?
+
+Logs for Security is Sumo Logic's set of features that use logs for security use cases, including threat detection and investigation, security data lake storage, audit and compliance, application security, and cloud infrastructure security.
+
+### What can you do with Logs for Security?
+
+You can write queries to search security logs in real time, build dashboards to visualize findings, and create alerts based on thresholds. You can also use integrations for common applications and threat intelligence from sources like CrowdStrike and AWS GuardDuty.
+
+### How does Logs for Security relate to Cloud SIEM and Cloud SOAR?
+
+After you've collected logs for security, you can use that data with [Cloud SIEM](/docs/cse/) for threat detection and investigation, and [Cloud SOAR](/docs/cloud-soar/) for automated incident response.
+
+### What tools does Sumo Logic provide for security analysis?
+
+Sumo Logic provides queries, dashboards, and alerts as the core building blocks for security analysis, along with lookup tables to enrich log data and integrations for common applications like AWS, Office 365, and Salesforce.
+
+### Does Logs for Security support compliance reporting?
+
+Yes. Sumo Logic maintains major compliance certifications, including PCI DSS, ISO 27001, and FedRAMP, so you can use Logs for Security for audit and compliance reporting alongside threat detection.
