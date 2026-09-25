@@ -56,3 +56,7 @@ For information about Microsoft Graph Security, see [Microsoft Graph Security do
 | v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.1 | June 21, 2023 | Removed unnecessary empty lines. |
 | v1.0 | February 21, 2019 | Initial release of the Microsoft Graph Security integration. |
+
+## Additional resources
+
+- For Microsoft Graph Security, Sumo Logic offers the [Microsoft Graph Security source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) and the [Microsoft Graph Security app](/docs/integrations/saas-cloud/microsoft-graph-security-v2) to collect and visualize your Microsoft Graph Security data.
