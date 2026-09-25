@@ -11,6 +11,6 @@ hide_table_of_contents: true
 
 ### SOC Analyst Agent: Non-SIEM data in Mobot
 
-When you investigate an insight in Mobot, the SOC Analyst Agent can now query data outside the Cloud SIEM index, such as raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health. Mobot indicates the source when it returns information from outside Cloud SIEM. Auto-investigation verdicts are unchanged and continue to use only Cloud SIEM data.
+When you investigate an insight in Mobot, the SOC Analyst Agent can now query data beyond the Cloud SIEM index, including raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health. Mobot indicates the source when it returns information from outside Cloud SIEM. Auto-investigation verdicts remain unchanged and continue to use only Cloud SIEM data.
 
 [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#investigate-the-insight-in-mobot).
