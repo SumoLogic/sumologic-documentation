@@ -100,6 +100,19 @@ Keyword searches are case-sensitive.
 * `Which of our services has the highest error rate right now and what's driving it?`
 * `What's the most concerning thing happening in our infrastructure right now?`
 
+## Data volume
+
+The [Data Volume Skill](/docs/manage/ingestion-volume/data-volume-index/data-volume-skill/) requires the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) to be enabled.
+
+* `How much data did I ingest last week?`
+* `What are my top 10 source categories by volume?`
+* `Show me daily ingest trends for the last 30 days.`
+* `How much is going to the Infrequent tier?`
+* `Which collector is ingesting the most?`
+* `What's my metrics data points usage?`
+* `How much tracing data did I ingest yesterday?`
+* `Compare my ingest volume this week versus last week.`
+
 ## Platform administration
 
 * `What data sources are available?`
