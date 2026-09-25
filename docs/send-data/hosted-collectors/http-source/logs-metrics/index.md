@@ -31,7 +31,11 @@ We recommend that the data payload of a POST request have a size, before compre
 HTTP POST payloads larger than 1 MB are not guaranteed to unroll correctly during source configuration.
 :::
 
+<<<<<<< HEAD
 As a best practice, Sumo Logic recommends batching data into each POST request to reduce the number of requests being sent over the network. Batching data into a single request minimizes the number of requests required to move a given volume of data and reduces resource utilization on the sending machine. You may send batched requests up to but not exceeding 1MB of uncompressed data. However, the optimal batch size for a given use case depends on the rate and cadence at which logs or metrics are generated in your system.
+=======
+As a best practice, Sumo Logic recommends batching data into each POST request to reduce the number of requests being sent over the network. Batching data into a single request minimizes the number requests required to move a given volume of data and reduces resource utilization on the sending machine. You may send batched requests up to but not exceeding 1MB of uncompressed data. However, the optimal batch for a given use case depends on the rate and cadence at which logs or metrics occur in your system.
+>>>>>>> 3b5506577 (implied suggestions)
 
 ## Configure an HTTP Logs and Metrics Source
 
@@ -61,7 +65,11 @@ To configure an HTTP Logs and Metrics Source:
             * **JSON Path**. Enter the JSON path expression for the array you want to unroll. If you leave this field blank, the root of the JSON payload (`$`) is used by default.
             * (Optional) **New Field Name**. Enter a field name for each unrolled item. If you leave this field blank, the field name is derived from the JSON path. For example, `$.Records` uses `Records` as the field name. If the JSON path is `$`, no wrapper field is added.
          * **Test JSON string**. Use the JSON Unroll Tester to preview how your configuration processes JSON data before saving the source. Enter or paste a sample JSON payload to see the resulting unrolled messages based on the configured JSON path and field name.
+<<<<<<< HEAD
       * **Multiline Processing**. By default, messages spanning multiple lines are detected. See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option to avoid unnecessary processing when collecting single-message-per-line files, such as a Linux `system.log`.
+=======
+      * **Multiline Processing**. By default, messages spanning multiple lines are detected. See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). De-select this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
+>>>>>>> 3b5506577 (implied suggestions)
          * **Infer Message Boundaries.**
             * **Detect Automatically.** By default, the Source is configured to automatically detect which lines belong to the same message.  
             * **Add Boundary Regex.** You can provide a Regular Expression to detect the entire first line of multi-line messages. The expression must match the **entire first line of each log message** within the file.
