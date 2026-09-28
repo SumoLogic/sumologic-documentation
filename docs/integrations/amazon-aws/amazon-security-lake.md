@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-security-lake-logo.png')} alt="Amazon Security Lake logo" width="50" />
 
-The Sumo Logic App for Amazon Security Lake provides unified visibility into security activity across AWS accounts and regions by analyzing events ingested from Amazon Security Lake and normalized using the Open Cybersecurity Schema Framework (OCSF). With pre-built dashboards for network activity, identity and access management, application telemetry, and host-level system activity, the app helps security teams detect threats, investigate anomalies, monitor trends, and continuously assess their AWS security posture.
+The Sumo Logic app for Amazon Security Lake provides unified visibility into security activity across AWS accounts and regions by analyzing events ingested from Amazon Security Lake and normalized using the Open Cybersecurity Schema Framework (OCSF). With pre-built dashboards for network activity, identity and access management, application telemetry, and host-level system activity, the app helps security teams detect threats, investigate anomalies, monitor trends, and continuously assess their AWS security posture.
 
 :::info
 This app includes [built-in monitors](#amazon-security-lake-alerts). For details on creating custom monitors, refer to [Create monitors for Amazon Security Lake app](#create-monitors-for-amazon-security-lake-app).
@@ -20,9 +20,9 @@ This app includes [built-in monitors](#amazon-security-lake-alerts). For details
 This app uses the [Amazon Security Lake Source](/docs/send-data/hosted-collectors/amazon-aws/amazon-security-lake-source/) to collect security events from Amazon Security Lake. Events follow the [Open Cybersecurity Schema Framework (OCSF)](https://schema.ocsf.io/1.9.0/categories?extensions=&profiles=host) and are delivered in JSON format. The app supports the following OCSF event categories:
 
 - **Identity & Access Management (IAM)**. Authentication, Authorize Session, Entity Management, Group Management, User Management, and Role Management events.
-- **Network Activity**. Network, DHCP, HTTP, DNS, RDS SMB, SSH, FTP, Email, NTP, and Tunnel activity events.
-- **Application Activity**. Web Resources, Application Lifecycle, API, Datastore, File Hosting, Scan, and Application Errors events
-- **System Activity**. File System, Kernel Extension, Kernel, Memory, Module, Scheduled Job, Process, Event Log, Script, Peripheral, Device Power State, and Clipboard events
+- **Network Activity**. Network, DHCP, HTTP, DNS, RDP, SMB, SSH, FTP, Email, NTP, and Tunnel activity events.
+- **Application Activity**. Web Resources, Application Lifecycle, API, Datastore, File Hosting, Scan, and Application Errors events.
+- **System Activity**. File System, Kernel Extension, Kernel, Memory, Module, Scheduled Job, Process, Event Log, Script, Peripheral, Device Power State, and Clipboard events.
 
 ### Sample log message
 
