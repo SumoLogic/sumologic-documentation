@@ -2,7 +2,7 @@
 id: druva-cyber-resilience-source
 title: Druva Cyber Resilience Source
 sidebar_label: Druva Cyber Resilience
-tags:
+keywords:
   - cloud-to-cloud
   - druva-cyber-resilience
 description: Learn how to configure the Druva Cyber Resilience Cloud-to-Cloud source setup in your Sumo Logic environment.

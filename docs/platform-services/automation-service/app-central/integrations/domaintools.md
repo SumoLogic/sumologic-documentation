@@ -50,7 +50,8 @@ For information about DomainTools, see [DomainTools documentation](https://docs.
 
 ## Change Log
 
-* December 19, 2018 - First upload
-* March 15, 2023 (v1.1)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
-* June 14, 2023 (v1.2) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | June 14, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 15, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
+| | December 19, 2018 | Initial release of the DomainTools integration. |
