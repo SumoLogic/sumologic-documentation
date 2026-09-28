@@ -17,22 +17,22 @@ import TabItem from '@theme/TabItem';
 
 This is the editorial style guide for Sumo Logic documentation. Use it to keep docs consistent in voice, tone, terminology, and formatting, whether you're on the Docs Team or contributing from outside.
 
-Our docs are built with [Docusaurus](https://docusaurus.io/), a static site generator, and written in GitHub-flavored Markdown. This is a living document: if a rule or UI term you need isn't here, let us know and we'll add it.
+Our docs are built with [Docusaurus](https://docusaurus.io/), a static site generator, and written in GitHub-flavored Markdown. This is a living document: if a rule or UI term you need is not here, let us know and we'll add it.
 
 :::tip
 To create a new doc quickly, use a [template](/docs/contributing/templates). Copy the file, add your content, and submit a PR. The Docs Team reviews submissions, suggests edits, adds new content to the navigation, and answers your questions.
 
-If you have Claude Code installed, this repo's `sumo-style` skill applies these conventions automatically when you draft or edit docs, so you don't need to invoke it manually. See AGENTS.md for details.
+If you have Claude Code installed, this repo's `sumo-style` skill applies these conventions automatically when you draft or edit docs, so you do not need to invoke it manually. See [AGENTS.md](https://github.com/SumoLogic/sumologic-documentation/blob/main/AGENTS.md) for details.
 :::
 
 ## Style references
 
-This guide comes first. When it doesn't cover something, defer to these, in order of precedence:
+This guide comes first. When it does not cover something, defer to these, in order of precedence:
 
 1. _Sumo Logic Brand Guidelines_. Brand Voice and Writing Style Guide. Voice, tone, and brand terms.
 1. [_Microsoft Manual of Style_](https://docs.microsoft.com/en-us/style-guide/welcome/). UI, procedures, and technical formatting. See also [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions).
 1. [_AP Stylebook_](https://www.apstylebook.com/). General usage.
-1. [_The Chicago Manual of Style_](https://www.chicagomanualofstyle.org/home.html). Anything the above don't settle.
+1. [_The Chicago Manual of Style_](https://www.chicagomanualofstyle.org/home.html). Anything the above do not settle.
 1. [_Merriam-Webster Dictionary_](https://www.merriam-webster.com/). Spelling and hyphenation.
 
 For terminology usage guidance, see our [Word List](/docs/contributing/word-list).
@@ -51,24 +51,61 @@ Helpful blogs on tech writing:
 
 ## Voice and tone
 
-* **Clarity and professionalism**. We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
-* **Engagement and assistance**. The reader should feel confident and informed. We should strive to engage our customers and show them where to get additional assistance when needed.
-* **Professional description**. Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
-* **Conversational tone**. Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone, using the sort of words that you would use in a face-to-face conversation. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
-* **Reader address**. Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
-* **Readability and SEO**. Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
-* **First paragraph**. Open every page by telling the reader what it covers, why it matters, and who it's for. In a tutorial, also say which step or stage the page is. See [AEO](#aeo-answer-engine-optimization) for how this helps search and AI answers.
-* **Brand guidelines**. Our brand guideline is to always refer to “Sumo Logic”, rather than Sumo. To be more conversational, it is also fine to say “we”.
-* **Gentle Language**. Use “need to” instead of “have to” or “must”. “Have to” and “must” can sound harsh and unfriendly.
-* **Judicious use of absolutes**. Be judicious in use of “always” and “never”. Sometimes it’s appropriate to say “always” or “never”. Keep in mind though that “always” can imply a result that is not guaranteed, and “never” may very well not be the case — the exception makes the rule.
-* **Error messaging**. When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you recommend to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Use a different email, or contact Sumo Logic for assistance."
-* **Humor**. We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
+We write like a knowledgeable colleague who explains things clearly and helps you get your work done: genuine and trustworthy. Readers should leave a page feeling confident and informed, with what they need to stay in their workflow and a clear place to get more help.
 
-### Active voice
+Customers trust us with their vital data. We're committed to data observability and security. Write in a way that earns that trust.
 
-When writing instructions, use the active voice whenever possible. This example below gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
+Three rules underpin everything below: accuracy, brevity, and clarity.
 
-#### General statements
+### Avoid hype
+
+* **Reader benefit**. Lead with what the reader gains. Avoid generic adjectives like "very" and phrases like "we're the best". Show what the product does instead.
+* **Honest claims**. Do not overpromise. Describe what the product does, not what it might do at its best. When something does not work as expected, say so and tell the reader how to get it right. For example:
+   | &#9989; **Do** | &#10060; **Don't** |
+   |:---------------|:-------------------|
+   | Reduce thousands of log messages to a few patterns with LogReduce. | LogReduce is a very powerful, best-in-class feature. |
+* **Judicious use of absolutes**. Use "always" and "never" only when they are true. "Always" can imply a result that is not guaranteed, and "never" may not hold in every case.
+
+#### Timeless documentation
+
+Docs content needs to be evergreen. Avoid words that anchor a sentence to the moment you wrote it, like "now", "currently", "at this time", or "soon". Write as if there is no publish date, and describe what the product does, not when it started doing it.
+
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Sumo Logic supports AWS CloudTrail as a log source. | Sumo Logic now supports AWS CloudTrail as a log source. |
+| This field is required. | In the future, this field will be required. |
+
+Release notes and other time-stamped content are the exception. Words like "now", "new", and forward-looking phrases like "coming in a future release" are fine there. That's the point of a release note.
+
+### Concise writing
+
+Avoid long-winded passages. Cut anything that does not carry information. This also keeps our docs from reading like verbose AI output.
+
+* **No throat-clearing or filler**. Start with the point, and cut words that add nothing. Drop preambles like "It should be noted that" and "It's important to understand", and cut words like "simply", "just", "of course", "as you can see", "needless to say", "very", "really", and "quite".
+* **No restating**. Skip summary sentences that repeat what the paragraph, list, or procedure just said.
+* **One idea per sentence**. Prefer short sentences over long ones stitched together with "and", "which", or semicolons.
+* **Say it once**. When two sentences make the same point, keep the clearer one and delete the other.
+* **One path**. Document the best path forward, not every possible path forward.
+
+### Conversational voice
+
+Write in an instructive, conversational voice, using the words you would use in a face-to-face conversation. Avoid a stiff, institutional voice.
+
+* **Second person**. Address the reader as "you", as you would in conversation.
+   | &#9989; **Do** | &#10060; **Don't** |
+   |:---------------|:-------------------|
+   | You'll need to provide your API key. | One must provide their API key. |
+* **Friendly help**. When linking to the support site, use phrases like "Need help? Let us know" instead of "Please email our support personnel".
+* **Humor**. We have a sense of humor! We do serious work, but we do not take ourselves too seriously. That makes Sumo Logic feel likable.
+* **Gentle language**. Use "need to" instead of "have to" or "must". "Have to" and "must" can sound harsh and unfriendly.
+
+### How-to instructions
+
+#### Active voice
+
+Use the active voice whenever possible. It gives the reader a clear call to action, reduces word count, and keeps instructions clear.
+
+Not sure if a sentence is passive? Try the zombie test: add "by zombies" after the verb. If the sentence still makes sense, it's passive. For example, "The query was saved (by zombies)" is passive. "You saved the query (by zombies)" is not.
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
@@ -76,7 +113,7 @@ When writing instructions, use the active voice whenever possible. This example 
 
 #### Task directives
 
-We need them to complete a task. No need for please.
+Skip "please" in instructions. The reader needs to complete the task, and "please" adds words without adding information.
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
@@ -84,36 +121,49 @@ We need them to complete a task. No need for please.
 
 #### Instruction introduction (stem)
 
-Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active:
+Introduce your instructions with the goal, then list the steps. This is called a stem. It focuses the task and keeps your writing active.
 
 | &#9989; **Do** | &#10060; **Don't** |
 |:---------------|:-------------------|
-| To add a new collector:<br/>1. Access Sumo Logic and find the... | When you need to add a new collector, access Sumo Logic and find the... |
+| To add a new collector:<br/><br/>1. Access Sumo Logic and find the... | When you need to add a new collector, access Sumo Logic and find the... |
+
+#### Conditional statements
+
+Start with the condition. When a step begins with "if", readers know right away whether it applies to them.
+
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| If you use an Installed Collector, restart it. | Restart the collector if you use an Installed Collector. |
 
 ### Inclusive language
 
-By writing inclusively and using culturally neutral language, our words resonate with global audiences and make everyone feel welcome, no matter their race, gender, socioeconomic status, and ability.
+Inclusive, culturally neutral language resonates with global audiences and makes everyone feel welcome, no matter their race, gender, socioeconomic status, or ability. For approved terms, see the [Word List](/docs/contributing/word-list).
 
-#### Avoid Regional Language
+* **Regional language**. Do not use idioms, slang, expressions, or terms only a specific region or group understands. Phrases like "piece of cake" or "jump on the bandwagon" do not translate well and can confuse global audiences. Some idioms can also offend marginalized groups. Say what you mean directly.
+* **Gender neutrality**. Unless you're referring to a specific person, use "they" or the person's role instead of gendered pronouns. For example:
+   | &#9989; **Do** | &#10060; **Don't** |
+   |:---------------|:-------------------|
+   | Contact your administrator. They may need to update your role. | Contact your administrator. He or she may need to update your role. |
+* **Cultural neutrality**. Replace terms that carry negative connotations with culturally neutral ones. For example:
+   | &#9989; **Do** | &#10060; **Don't** |
+   |:---------------|:-------------------|
+   | "allowlist"<br/>"denylist"<br/>"placeholder data"<br/>"primary" or "main"<br/>"press" or "click" | "whitelist"<br/>"blacklist"<br/>"dummy data"<br/>"master"<br/>"hit" |
 
-* Do not use idioms, slang, expressions, or terminology only understood by a specific region or group.
+### Plain language
 
-#### Simplify Language
+* **Readability**. Write at about an eighth-grade reading level, especially in introductions. This helps readability and SEO. You can check your content with [Writing Tester](http://www.writingtester.com).
+* **Simple words**. Avoid unnecessary technical jargon. Do not use words just because they sound better. Choose short, simple words over long, complicated ones.
 
-* Avoid overly technical jargon.
-* Don’t use words just because they sound better. Choose short, simple words over long and complicated ones.
+### Tone by situation
 
-#### Gender Neutrality
+Our company voice stays the same on every page. Our tone adapts to the reader's frame of mind. Many readers arrive at our docs in the middle of an incident.
 
-* Unless you're referring to a specific person, do not use gender pronouns (he/she).
-
-#### Cultural Neutrality
-
-* Use culturally neutral terms to replace terms with negative connotations. For example:
-
-| &#9989; **Do** | &#10060; **Don't** |
-|:---------------|:-------------------|
-| "allowlist"<br/>"denylist"<br/>"placeholder data"<br/>"primary" or "main"<br/>"press" or "click" | "whitelist"<br/>"blacklist"<br/>"dummy data"<br/>"master"<br/>"hit" |
+| Doc type | Reader situation | Tone |
+|:---------|:------------------|:-----|
+| Troubleshooting | An error or outage | Calm and direct. Acknowledge the problem, then give the next step. |
+| Concept | Learning a new concept or feature | Patient. Walk through ideas in order and point to related resources. |
+| How-to | Setting up or configuring | Efficient. Give the steps and skip the background. |
+| Reference | Looking up an API, operator, or field | Neutral and scannable. Get to the answer fast, no narrative. |
 
 ## Abbreviations
 
@@ -129,7 +179,7 @@ Avoid the use of abbreviations like “e.g.”, “i.e.”, and “etc.”. Alth
 
 ## Acronyms
 
-An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage isn't clear. Acronyms should be capitalized, if not used directly in a query. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis. 
+An acronym uses the first initials of a word or phrase, for brevity. Our industry is full of them, and they can get confusing if their usage is not clear. Acronyms should be capitalized, if not used directly in a query. Unless the usage is clear from the context, for the first usage, spell out the phrase, then present the acronym in parenthesis.
 
 For example, if you're writing a doc about AWS Application Load Balancer, say `AWS Application Load Balancer (ALB)` on first reference, and for the rest of the doc, use `ALB`.
 
@@ -184,11 +234,40 @@ Subject matter expert guidance, best practices, and Sumo Logic-specific notes. R
 Links to training courses, certifications, and micro lessons.
 :::
 
+## Accessibility
+
+Sumo Logic documentation follows [WCAG 2.1 AA](https://www.w3.org/TR/WCAG21/) as its accessibility baseline.
+
+For **alt text** guidance, see [Images](#images). For **link text** (avoid "click here"), see [Links](#links). For **ableist and non-inclusive language**, see [Inclusive language](#inclusive-language).
+
+### Heading hierarchy
+
+Do not skip heading levels. Screen readers and keyboard users navigate by headings, and a broken hierarchy makes content harder to scan.
+
+**Do:** move through levels in order: H2 → H3 → H4.
+
+**Do not:** jump from H2 to H4, or use headings for visual styling rather than document structure.
+
+### Color and contrast
+
+Do not rely on color alone to convey meaning. Users with color blindness or high-contrast display modes may not perceive color differences.
+
+- If a screenshot or diagram uses color to highlight something, add a label, callout, or annotation so the meaning is clear without color.
+- For custom diagrams or graphics, use a text contrast ratio of at least 4.5:1 (WCAG AA). Check with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) or [TPGi's Colour Contrast Analyser](https://www.tpgi.com/color-contrast-checker/).
+
+### Screen reader testing
+
+Before submitting a PR for a new doc, consider a quick screen reader check to catch heading, link, and table issues:
+
+- **macOS**: VoiceOver. Press **Command+F5** to toggle.
+- **Windows**: [NVDA](https://www.nvaccess.org/) (free) or Narrator (**Windows+Ctrl+Enter**).
+- **Chrome**: [ChromeVox](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn) extension.
+
 ## Capitalization
 
 * Title case all doc titles. Example: `Cloud SOAR Incident Management and Triage`.
 * Sentence case all other headers (H2, H3, H4). The only exception is proper nouns, which are always title case. Example: `Throughput signals and contributing factors`.
-* In body text, don't capitalize a term unless it's a proper noun or a literal UI label. Generic product terms are lowercase: collector, source, dashboard, panel, index, partition, role, scheduled view, alert, search.
+* In body text, do not capitalize a term unless it's a proper noun or a literal UI label. Generic product terms are lowercase: collector, source, dashboard, panel, index, partition, role, scheduled view, alert, search.
 * **UI label vs. concept.** When you name a UI element or page as it appears on screen, match its on-screen capitalization and bold the label: the **Search** page, the **Scheduled Views** page, the **Aggregates** tab. When you mean the same thing as a general feature or concept, use lowercase and no bold: "scheduled views let you pre-aggregate data", "run a search". The generic word (`page`, `tab`, `button`) is always lowercase. See [Bold](#bold).
 * Always capitalized: proper nouns and product names (Sumo Logic, Cloud SIEM, Cloud SOAR, Kubernetes, Markdown, RBAC), and named UI areas when used as labels (the **Library**, the **Search** page, **Admin mode**).
 * **Feature names vs. use cases.** Coined or proper feature names stay capitalized (LogReduce, LogCompare, Cloud SIEM, Cloud SOAR, Automation Service). Generic capabilities and use cases are lowercase: security data lake, threat detection and investigation, audit and compliance, application security, observability, continuous intelligence. Marketing keeps a [product and feature name matrix](https://docs.google.com/spreadsheets/d/1U2yPSasgHHzQYXvCzfvEXfIM2t6ofBfW8DYEZLrtj2s/) for edge cases.
@@ -283,10 +362,10 @@ Avoid less common contractions, like “should’ve”, or “it’ll”.
 
 ## Dates
 
+For dates in prose, we use American-style English (for example, `June 5` not `5 June`).
+
 * Use the month’s full name (September). If space is a concern, use 3-letter abbreviations (Sep).
-* Avoid writing dates numerically (7-25-17) and ordinal indicators (1st, 2nd, 3rd, 4th). Use the 12-hour clock unless the user has specified otherwise, followed by am or pm in lowercase letters without a space.
-* When including a time zone, append the time zone’s abbreviation after the “am” or “pm”, separated by a space.
-* To show a time range, use an en dash and include the “am” or “pm” after both times.
+* Avoid writing dates numerically (7-25-17) and ordinal indicators (1st, 2nd, 3rd, 4th).
 
 :::note
 The notation used in the UI time range editor is an exception to some of these rules.
@@ -310,9 +389,9 @@ Use **bold** for the name of a UI element the reader interacts with or navigates
 
 Bold only the label itself. The generic word that follows it (`button`, `tab`, `menu`, `dialog`, `field`, `page`, `pane`) stays outside the bold and lowercase: the **Search** page, not **Search page** or the **Search Page**.
 
-**UI label vs. concept.** Bold and match the on-screen capitalization only when you're pointing to the UI control. When you're describing the feature or concept, don't bold it, and lowercase it. Write "A scheduled view is a pre-aggregated index of your data" (concept), but "Open the **Scheduled Views** page" (UI label). Capitalization follows the same split (see [Capitalization](#capitalization)).
+**UI label vs. concept.** Bold and match the on-screen capitalization only when you're pointing to the UI control. When you're describing the feature or concept, do not bold it, and lowercase it. Write "A scheduled view is a pre-aggregated index of your data" (concept), but "Open the **Scheduled Views** page" (UI label). Capitalization follows the same split (see [Capitalization](#capitalization)).
 
-Don't use bold to emphasize ordinary words.
+Do not use bold to emphasize ordinary words.
 
 ### Italics
 
@@ -334,9 +413,9 @@ Never underline text.
 <TabItem value="Markdown">
 
 ```markdown
-Emphasis, aka italics, with *asterisks* or _underscores_.
+Emphasis, also known as italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with two **asterisks** or __underscores__.
+Strong emphasis, also known as bold, with two **asterisks** or __underscores__.
 
 Combined emphasis with **asterisks and _underscores_**.
 
@@ -346,9 +425,9 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 </TabItem>
 <TabItem value="Result">
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
+Emphasis, also known as italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with two **asterisks** or __underscores__.
+Strong emphasis, also known as bold, with two **asterisks** or __underscores__.
 
 Combined emphasis with **asterisks and _underscores_**.
 
@@ -401,7 +480,7 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 </TabItem>
 </Tabs>
 
-Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Docusaurus carefully formats generated pages to ensure strong search and SEO, and malformed structures can reduce that strength.
+Headings must be used in correct order. The subsection of an H2 header would be H3: you would not jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Docusaurus carefully formats generated pages to ensure strong search and SEO, and malformed structures can reduce that strength.
 
 ### Step headings
 
@@ -412,11 +491,9 @@ When a topic documents a long, multi-step process, break it into sections whose 
 
 ## Hub pages
 
-A hub page is a section's `index.md`. It opens with a short intro, then lists the section's child docs as a grid of cards. Build the grid by hand so you control the order, titles, icons, and descriptions:
+A hub page is a section's `index.md`. It opens with a short intro, then lists the section's child docs as a grid of cards, with each card block containing its link, icon, title, and description.
 
 ```
-In this section, we'll introduce the following concepts:
-
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
@@ -449,9 +526,9 @@ Save images to `/static/img/`, which mirrors the doc folder structure. Import `u
 <img src={useBaseUrl('img/<path>.png')} alt="<description>" style={{border: '1px solid gray'}} width="<pixels>" />
 ```
 
-* **Format.** Use PNG. Don't use animated GIFs — readers can't pause the motion (an accessibility barrier), and screen readers can't convey them.
+* **Format.** Use PNG. Do not use animated GIFs: readers cannot pause the motion (an accessibility barrier), and screen readers cannot convey them.
 * **Size.** Keep files under 2MB. Use `width` to scale down oversized or pixelated images.
-* **Replace, don't version.** When a UI change dates an image, overwrite the existing file rather than adding a second copy. Image files are large and slow the build.
+* **Replace, do not version.** When a UI change dates an image, overwrite the existing file rather than adding a second copy. Image files are large and slow the build.
 * **Web-hosted images.** Pass the full URL and drop `useBaseUrl`:
    * &#9989; `<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png' alt="Jira Catalina" />`
    * &#10060; `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Jira Catalina" />`
@@ -527,7 +604,6 @@ We mask sensitive information like usernames, email addresses, and IP addresses.
 ### Callouts
 
 Create callouts using the shape tool in SnagIt. Callouts should be red, 100% opacity, no drop shadow effect, 2 pts wide.
-
 
 ## Lists
 
@@ -765,7 +841,7 @@ keywords:
 | `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
 | `title:` | **(Required)** For SEO purposes, include main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
 | `sidebar_label:` | (Optional) Label for the sidebar navigation. Keep it title short. It does not affect the canonical link or page title. |
-| `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. Keep it 140–160 characters. Use plain text only — no Markdown or backtick formatting. If omitted, search engines will pull the first couple of sentences from the page. See [Metadata descriptions](#metadata-descriptions). |
+| `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. Keep it 140–160 characters. Use plain text only: no Markdown or backtick formatting. If omitted, search engines will pull the first couple of sentences from the page. See [Metadata descriptions](#metadata-descriptions). |
 | `keywords:` | (Optional) List of keywords to enhance SEO. |
 | `tags:` | **Deprecated. Do not use.** The Docusaurus tag taxonomy was removed sitewide; it generated pages with no reader or search benefit. Use `keywords:` for search terms instead. |
 
@@ -801,17 +877,18 @@ The top navigation bar is configured in [`docusaurus.config.js`](https://docusau
 
 ## Patents and trademarks
 
-Protecting our patents and trademarks is important to do correctly. We do not want to expose the company to a loss of trademark or patent just because we didn't list it correctly.
+Protecting our patents and trademarks is important to do correctly. We do not want to expose the company to a loss of trademark or patent just because we did not list it correctly.
 
-This is a partial list of trademarked terms, which should be capitalized exactly as shown below.
+Always refer to "Sumo Logic", rather than "Sumo". "Sumo" alone is a generic enough word that other, unrelated companies use it too, so the full name keeps our brand unambiguous. To be more conversational, it is also fine to say "we". Never use Sumo Logic in the plural or possessive form.
 
-* Sumo Logic
-* Big Data for Real Time IT
-* Log Reduce
-* Elastic Log Processing
-* Push Analytics
+This is a list of trademarked terms, which should be displayed exactly as shown below:
 
-Never use Sumo Logic in the plural or possessive form.
+* LogReduce® (all one word, camelcase)
+* See Business Differently®
+* Empower the People Who Power Modern Business®
+* Illuminate®
+
+Give a product or feature name (such as LogReduce) its trademark (™) or registered (®) symbol on the first reference on a page only, then drop it. No need to add the symbol to "Sumo Logic" in running text, as it's done in the site footer.
 
 ## Preview releases
 
@@ -955,18 +1032,29 @@ When a feature becomes Generally Available (GA), remove all Preview-related labe
 
 ## Punctuation
 
-Punctuation is placed outside of quotation marks, British English style. For everything else (dates, times, spelling), we use American English style.
+### Ampersands
+
+Do not use the ampersand symbol (`&`). Spell out as "and".
 
 ### Colons
+
 Colons are used to introduce lists or to separate titles from subtitles. Only include the colon if the introduction isn’t a complete sentence.
 
 ### Commas
 
 We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "[I had eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
 
+### Dashes
+
+Try not to use em dashes (the long dash) as they read as generic AI output. Rewrite instead: use a period or semicolon to split two independent clauses, a colon to introduce something, or commas or parentheses for a brief aside.
+
+Use the en dash (–) only for numeric, date, and time ranges, with no space on either side: `9–17`, `2023–2024`. See [Numbers](#numbers), [Dates](#dates), and [Time](#time).
+
+Use the hyphen (-) for compound modifiers, such as `drop-down menu` or `read-only field`.
+
 ### Exclamation points
 
-Use exclamation points to express excitement or encourage the user. Don't use them for errors, warnings, or confirmation of basic actions as they are usually unnecessary and can distract from important details.
+Use exclamation points to express excitement or encourage the user. Do not use them for errors, warnings, or confirmation of basic actions as they are usually unnecessary and can distract from important details.
 
 ### Ellipses and truncation
 
@@ -976,6 +1064,9 @@ Use ellipses for truncation. Don’t use ellipses for placeholders or trailing o
 
 In the UI, avoid periods for single sentences on their own. Whenever there are two or more sentences, use periods at the end of each sentence. Separate sentences by one space, not two.
 
+### Quotation marks
+
+Punctuation is placed outside of quotation marks, U.K.-style English (for example, `"Hello",`, not `"Hello,"`). This keeps a quoted command, field value, or error string accurate, so that trailing punctuation is not mistaken for part of it. For everything else (dates, times, spelling), we use American-style English.
 
 ## Release notes
 
@@ -1003,11 +1094,11 @@ import ApiRoles from '../reuse/api-roles.md';
 
 For example, `reuse/api-roles.md` is one sentence about required role capabilities. Around 50 API reference docs import it under their own `## Required role capabilities` heading, then follow it with the capabilities specific to that API.
 
-Headings inside a reuse file don't show up in the right-side nav of the docs that import it. So keep any H2 or H3 heading in the importing doc, and put only the body (and any H4 or lower headings) in the reuse file.
+Headings inside a reuse file do not show up in the right-side nav of the docs that import it. So keep any H2 or H3 heading in the importing doc, and put only the body (and any H4 or lower headings) in the reuse file.
 
 ## Tables
 
-Use standard Markdown tables. Columns left-align by default; put `:--:` in a column's divider cell to center it, `--:` to right-align. Cells take inline Markdown, links, images, and `<br/>` for line breaks. The site theme adds zebra striping automatically. Fall back to a raw HTML table only for layouts Markdown can't express, such as row or column spans.
+Use standard Markdown tables. Columns left-align by default; put `:--:` in a column's divider cell to center it, `--:` to right-align. Cells take inline Markdown, links, images, and `<br/>` for line breaks. The site theme adds zebra striping automatically. Fall back to a raw HTML table only for layouts Markdown cannot express, such as row or column spans.
 
 
 ## Tabs
@@ -1022,7 +1113,7 @@ import TabItem from '@theme/TabItem';
 Sumo conventions:
 
 * **Use `groupId`** when the same choice appears more than once on a page, or across pages, so the reader's selection syncs and sticks (for example, `groupId="k8s-nonk8s"`).
-* **Make each tab self-contained.** A reader who picks one tab and ignores the rest should still get every step for that path. Don't split a procedure so that step 3 is under one tab and step 4 under another.
+* **Make each tab self-contained.** A reader who picks one tab and ignores the rest should still get every step for that path. Do not split a procedure so that step 3 is under one tab and step 4 under another.
 * `className="unique-tabs"` appears in many existing docs but has no effect, since no stylesheet targets it. Leave it off new tab sets.
 
 
@@ -1046,7 +1137,7 @@ For clarity and search engine discoverability:
 
 The `description` frontmatter field controls the snippet shown in search engine results. Follow these rules:
 
-* **Length: 140–160 characters.** Google truncates descriptions at approximately 160 characters. Descriptions under 100 characters are too short to be useful — search engines may generate their own snippet instead.
+* **Length: 140–160 characters.** Google truncates descriptions at approximately 160 characters. Descriptions under 100 characters are too short to be useful; search engines may generate their own snippet instead.
 * **Plain text only.** Do not use Markdown syntax in the `description` field. Backticks, bold (`**`), and other Markdown formatting render as literal characters in HTML `<meta>` tags and appear as symbols in search results.
 * **Lead with an action verb or the product/feature name.** Do not start with "This page", "This doc", or "This article."
 * **Write for humans.** Describe what the reader will learn or accomplish, not just what the page contains.
@@ -1063,7 +1154,7 @@ Example:
 
 Answer Engine Optimization improves the chances of your content appearing as a direct answer in search results, including Google featured snippets and "People also ask" boxes.
 
-* **Answer the question in the first 1–2 sentences.** The opening paragraph should directly state what the subject is or what the reader will accomplish. Do not bury the answer after several sentences of context.
+* **Answer the question in the first 1–2 sentences.** The opening paragraph should directly state what the subject is or what the reader will accomplish. Do not bury the answer after several sentences of context. In a tutorial, also say which step or stage the page is.
 * **Use question-format H2 headings where natural.** Headings like "What is X?" or "How do I configure Y?" help search engines match content to user queries.
    * Example: ~~_Overview_~~ &rarr; _What is the Outlier operator?_
 * **Use structured lists and tables.** Search engines extract lists and tables preferentially for featured snippets. Use them wherever content is enumerable or comparative.
@@ -1076,10 +1167,19 @@ Generative Engine Optimization improves the likelihood that AI-powered search to
 * **Make the opening paragraph self-contained.** LLMs pull from the first few sentences to decide whether to cite a page. The opening should be understandable without reading anything else on the page.
 * **State facts as explicit standalone sentences.** Avoid burying key information in subordinate clauses. A fact stated in its own sentence is more likely to be cited verbatim.
    * Example: ~~_The operator, which supports up to 10,000 events per second depending on instance size, works with both collector types._~~ &rarr; _The operator supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors._
-* **Use specific version numbers and dates.** Avoid "latest", "current", or "recent" without a specific value. AI tools reproduce whatever is on the page — vague references become stale citations.
+* **Use specific version numbers and dates.** Avoid "latest", "current", or "recent" without a specific value. AI tools reproduce whatever is on the page. Vague references become stale citations.
 * **Add an "At a glance" section for long pages.** For pages over 800 words, add a brief summary section near the top with key facts as short bullet points. This is the most citation-friendly portion of a page for generative AI tools.
 * **Phrase FAQ questions in second person, except personal or eligibility questions.** Grammatical person doesn't affect AI citation, but it does affect how natural a question reads. Use second person ("How do you configure X?") for most FAQ questions. For personal or eligibility-type questions ("Can I opt out...", "Do I need..."), use first person instead, since it mirrors how the reader is actually asking the question in their head. Answers still respond in second person either way.
 
+## Time
+
+* Use the 12-hour clock unless specified otherwise, followed by am or pm in lowercase letters without a space (for example, you'd write `1:00pm`, not `13:00`).
+* When including a time zone, append the time zone’s abbreviation after the “am” or “pm”, separated by a space (for example, `1:00pm EST`).
+* To show a time range, use an en dash and include the “am” or “pm” after both times (for example, `1:00pm–3:00pm`).
+
+:::note
+The notation used in the UI time range editor is an exception to some of these rules.
+:::
 
 
 ## UI elements
@@ -1120,13 +1220,13 @@ If you need to use mouse actions to be specific, use:
 
 ## Videos
 
-Throughout the docs, we embed tutorial videos on pages where they're relevant to the topic. The Training Team produces these videos. When you embed one they've provided — usually inside a `:::training` admonition — add the import once near the top of the file:
+Throughout the docs, we embed tutorial videos on pages where they're relevant to the topic. The Training Team produces these videos. When you embed one they've provided (usually inside a `:::training` admonition), add the import once near the top of the file:
 
 ```md
 import Iframe from 'react-iframe';
 ```
 
-Most Sumo Logic videos are hosted on Wistia. Don't make watching a video required to complete a task; the written steps must stand on their own.
+Most Sumo Logic videos are hosted on Wistia. Do not make watching a video required to complete a task; the written steps must stand on their own.
 
 Paste the matching snippet into the body:
 
