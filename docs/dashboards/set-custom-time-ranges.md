@@ -48,7 +48,7 @@ When you click and drag to select a time range on a log panel, Sumo Logic automa
 
 To drill down into a log panel:
 
-1. Click and drag across the time window you want to zoom into on a log panel.
+1. Click and drag across the time window you want to zoom into on a log panel.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-drag-select.png')} alt="Selecting a time range on a log panel by clicking and dragging" style={{border: '1px solid gray'}} width="800"/>
 1. Sumo Logic recalculates the [timeslice](/docs/search/search-query-language/search-operators/timeslice) for the selected range, rounding up to the nearest of these intervals: 1 second, 1 minute, 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 1 day, or 1 week. Sumo Logic targets a maximum of 1,500 data points per view, so a shorter selected range results in a finer timeslice.
 1. The panel re-fetches and displays data at the new granularity. A row of icons appears above the panel for panning and resetting the zoomed view.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-zoomed.png')} alt="Zoomed-in log panel showing the pan and reset icons" style={{border: '1px solid gray'}} width="800"/>
 1. To drill down further, click and drag again on the zoomed-in view.
