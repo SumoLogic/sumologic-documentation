@@ -1,120 +1,101 @@
 ---
 id: how-to-upgrade
-title: Upgrading to Helm Chart v6
+title: Kubernetes Collection v6.0.0 - How to Upgrade
 sidebar_label: How to Upgrade
-description: Step-by-step instructions for upgrading the Sumo Logic Kubernetes collection Helm chart from v5 to v6.
+description: This page describes how to upgrade the Kubernetes Collection to v6.
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+This guide walks you through upgrading to Sumo Logic Kubernetes Collection v6.0.0. Here's what's new:
+* Sourceless mode is now enabled by default — the Hosted Collector and HTTP sources are replaced by direct installation-token authentication via the OpenTelemetry extension.
+* Metrics Pipeline Unification is now enabled by default — the separate metadata StatefulSet is merged into a single OTel collector pipeline.
 
-This page walks you through upgrading the Sumo Logic Kubernetes collection Helm chart from v5 to v6. Helm chart v6 introduces two major changes that are **enabled by default**: [Sourceless Mode](#sourceless-mode-migration) and [Metrics Pipeline Unification](#metrics-pipeline-unification). Both changes require you to review the relevant documentation and set acknowledgment flags before the upgrade can proceed.
+Both changes are breaking and require you to review the [Important Changes](./important-changes.md) page and set acknowledgment flags before the upgrade proceeds.
+
+## Requirements
+
+- `helm` v3
+- `kubectl`
+- Set the following environment variables, which our commands will use:
+   ```bash
+   export NAMESPACE=...
+   export HELM_RELEASE_NAME=...
+   ```
+
+## Step 1 — Review Important Changes
+
+Before upgrading, read [Important Changes in v6](./important-changes.md) in full. Pay particular attention to:
+- [Sourceless Mode](./important-changes.md#sourceless-mode) — impact on `_source` metadata, Hosted Collector cleanup, and `sourceType` restrictions.
+- [Metrics Pipeline Unification](./important-changes.md#metrics-pipeline-unification) — removed StatefulSet, configuration key changes, and Prometheus remote write URL changes.
+
+## Step 2 — Set Acknowledgment Flags
+
+After reviewing, update your `values.yaml` with both acknowledgment flags and your chosen migration option for each feature.
+
+### Sourceless Mode
+
+**Option 1 — Migrate to sourceless mode (default)**
+
+```yaml
+sumologic:
+  sourcelessMode: true
+  sourcelessModeAck: true
+```
+
+**Option 1a — Migrate and clean up the Hosted Collector**
+
+Choose this only if you have confirmed there are **no custom sources** on your Hosted Collector beyond those created by the Helm chart.
+
+```yaml
+sumologic:
+  sourcelessMode: true
+  sourcelessModeAck: true
+  cleanupHostedCollector: true
+```
 
 :::warning
-Helm chart v6 is a breaking change. Both Sourceless Mode and the unified single-layer metrics pipeline are enabled by default. Read this guide completely before running `helm upgrade`.
+`cleanupHostedCollector: true` permanently deletes the Hosted Collector and **all sources** attached to it. This cannot be undone.
 :::
 
-## Before You Begin
-
-- Ensure you are running Helm chart v5. If you are on an earlier version, upgrade to v5 first.
-- Review [Important Changes in v6](./important-changes.md) before proceeding.
-- Backup your existing `values.yaml` overrides.
-
-## Upgrade Steps
-
-### 1. Review Both Feature Changes
-
-Before upgrading, read the documentation for both features that are enabled by default in v6:
-
-- **Sourceless Mode** — Removes the Hosted Collector and all HTTP sources, migrating to installation-token authentication via the OpenTelemetry extension. See [Important Changes > Sourceless Mode](./important-changes.md#sourceless-mode).
-- **Metrics Pipeline Unification** — Eliminates the metadata StatefulSet and merges metadata enrichment into the collector. See [Important Changes > Metrics Pipeline Unification](./important-changes.md#metrics-pipeline-unification).
-
-### 2. Set Acknowledgment Flags
-
-After reviewing the documentation, set both acknowledgment flags in your `values.yaml` to unblock the upgrade:
+**Option 2 — Defer sourceless mode**
 
 ```yaml
-sumologic:
-  sourcelessMode: true           # enabled by default in v6
-  sourcelessModeAck: true        # required — confirms you have read the migration guide
-
-singleLayerPipeline:
-  enabled: true                  # enabled by default in v6
-  migrationDocAcknowledged: true # required — confirms you have read the migration guide
-```
-
-If you are not ready to migrate either feature, you can defer it by disabling it **and** setting its ack flag:
-
-```yaml
-# To defer Sourceless Mode:
 sumologic:
   sourcelessMode: false
-  sourcelessModeAck: true    # still required to acknowledge the change
+  sourcelessModeAck: true
+```
 
-# To defer Metrics Pipeline Unification:
+:::note
+**GitOps / ArgoCD users:** If `setupEnabled: false`, Terraform does not run and the installation token is not created automatically. Create a token in **Manage Data → Collection → Installation Tokens**, then supply it explicitly:
+```yaml
+sumologic:
+  sourcelessMode: true
+  sourcelessModeAck: true
+  installationToken: "<your-installation-token>"
+```
+:::
+
+### Metrics Pipeline Unification
+
+**Option 1 — Migrate to single-layer pipeline (default)**
+
+```yaml
+singleLayerPipeline:
+  enabled: true
+  migrationDocAcknowledged: true
+```
+
+**Option 2 — Defer metrics pipeline unification**
+
+```yaml
 singleLayerPipeline:
   enabled: false
-  migrationDocAcknowledged: true  # still required to acknowledge the change
+  migrationDocAcknowledged: true
 ```
 
-### 3. Run the Upgrade
+## Step 3 — Run the Upgrade
 
 ```bash
-helm upgrade <RELEASE_NAME> sumologic/sumologic \
-  --version <v6_VERSION> \
-  -f your-values.yaml
+helm upgrade ${HELM_RELEASE_NAME} sumologic/sumologic \
+  -n ${NAMESPACE} \
+  -f values.yaml
 ```
-
-Replace `<RELEASE_NAME>` with your Helm release name and `<v6_VERSION>` with the target v6 chart version.
-
-## Sourceless Mode Migration
-
-When `sumologic.sourcelessMode: true` (the default in v6), the Hosted Collector and all associated HTTP sources are removed from your Sumo Logic organization and collection switches to installation-token authentication.
-
-**What changes:**
-
-- The Hosted Collector configured by the chart is deleted along with all its HTTP sources.
-- Logs, metrics, and traces are sent directly from the OpenTelemetry Collector using an installation token, without an intermediate HTTP source.
-- The `_sourceCategory`, `_sourceName`, and `_sourceHost` metadata fields are set by the OTel collector rather than derived from HTTP source configuration.
-
-**Options:**
-
-| Option | `sourcelessMode` | `sourcelessModeAck` |
-|--------|-----------------|---------------------|
-| Migrate now (default) | `true` | `true` |
-| Defer migration | `false` | `true` |
-
-:::note
-Even if you set `sourcelessMode: false` to defer, you must still set `sourcelessModeAck: true` to confirm you have reviewed this change.
-:::
-
-## Metrics Pipeline Unification
-
-When `singleLayerPipeline.enabled: true` (the default in v6), the separate metadata StatefulSet is removed and its enrichment logic is merged into the OpenTelemetry Collector.
-
-**What changes:**
-
-- The `sumologic-metadata-metrics` StatefulSet is removed.
-- Metrics scraping and metadata enrichment now occur in the same collector pipeline.
-- Some configuration keys under `fluentd.metrics` and `otelcol.metrics` have moved — see [Important Changes > Metrics Pipeline Unification](./important-changes.md#metrics-pipeline-unification) for the full mapping.
-- Prometheus remote write URLs pointing to the metadata StatefulSet must be updated.
-
-**Options:**
-
-| Option | `singleLayerPipeline.enabled` | `singleLayerPipeline.migrationDocAcknowledged` |
-|--------|-------------------------------|------------------------------------------------|
-| Migrate now (default) | `true` | `true` |
-| Defer migration | `false` | `true` |
-
-:::note
-Even if you set `singleLayerPipeline.enabled: false` to defer, you must still set `singleLayerPipeline.migrationDocAcknowledged: true` to confirm you have reviewed this change.
-:::
-
-## Rollback
-
-If you need to roll back to v5 after upgrading:
-
-```bash
-helm rollback <RELEASE_NAME> <REVISION>
-```
-
-Use `helm history <RELEASE_NAME>` to find the previous revision number. Note that rolling back does not restore deleted Sumo Logic hosted collector resources — those must be recreated manually if Sourceless Mode was applied.
