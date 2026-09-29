@@ -21,19 +21,19 @@ Both changes are breaking and require you to review the [Important Changes](./im
    export HELM_RELEASE_NAME=...
    ```
 
-## Step 1 — Review Important Changes
+## Step 1: Review Important Changes
 
 Before upgrading, read [Important Changes in v6](./important-changes.md) in full. Pay particular attention to:
 - [Sourceless Mode](./important-changes.md#sourceless-mode) — impact on `_source` metadata, Hosted Collector cleanup, and `sourceType` restrictions.
 - [Metrics Pipeline Unification](./important-changes.md#metrics-pipeline-unification) — removed StatefulSet, configuration key changes, and Prometheus remote write URL changes.
 
-## Step 2 — Set Acknowledgment Flags
+## Step 2: Set Acknowledgment Flags
 
 After reviewing, update your `values.yaml` with both acknowledgment flags and your chosen migration option for each feature.
 
 ### Sourceless Mode
 
-**Option 1 — Migrate to sourceless mode (default)**
+**Option 1: Migrate to sourceless mode (default)**
 
 ```yaml
 sumologic:
@@ -41,9 +41,9 @@ sumologic:
   sourcelessModeAck: true
 ```
 
-**Option 1a — Migrate and clean up the Hosted Collector**
+**Option 1a: Migrate and clean up the Hosted Collector**
 
-Choose this only if you have confirmed there are **no custom sources** on your Hosted Collector beyond those created by the Helm chart.
+Choose this only if you have confirmed there are **no custom sources** on your Hosted Collector beyond those created by the Helm chart. 
 
 ```yaml
 sumologic:
@@ -56,7 +56,7 @@ sumologic:
 `cleanupHostedCollector: true` permanently deletes the Hosted Collector and **all sources** attached to it. This cannot be undone.
 :::
 
-**Option 2 — Defer sourceless mode**
+**Option 2: Disable sourceless mode and continue using old Hosted collector flow**
 
 ```yaml
 sumologic:
@@ -76,7 +76,7 @@ sumologic:
 
 ### Metrics Pipeline Unification
 
-**Option 1 — Migrate to single-layer pipeline (default)**
+**Option 1: Migrate to single-layer pipeline (default)**
 
 ```yaml
 singleLayerPipeline:
@@ -84,7 +84,7 @@ singleLayerPipeline:
   migrationDocAcknowledged: true
 ```
 
-**Option 2 — Defer metrics pipeline unification**
+**Option 2: Defer metrics pipeline unification**
 
 ```yaml
 singleLayerPipeline:
@@ -92,7 +92,7 @@ singleLayerPipeline:
   migrationDocAcknowledged: true
 ```
 
-## Step 3 — Run the Upgrade
+## Step 3: Run the Upgrade
 
 ```bash
 helm upgrade ${HELM_RELEASE_NAME} sumologic/sumologic \
