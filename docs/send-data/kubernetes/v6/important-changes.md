@@ -1,60 +1,103 @@
 ---
 id: important-changes
-title: Important Changes in v6
+title: Kubernetes Collection v6.0.0 - Important Changes
 sidebar_label: Important Changes
-description: Details of the breaking changes introduced in Helm chart v6 — Sourceless Mode and Metrics Pipeline Unification.
+description: This page describes the major changes and the necessary migration steps.
 ---
 
-Helm chart v6 enables two significant architectural changes by default. Both require you to set an acknowledgment flag before upgrading. This page describes what each change does and what you need to be aware of.
+We're introducing major changes to the Sumo Logic Kubernetes Collection solution in v6.
 
-## Sourceless Mode {#sourceless-mode}
+This page describes each change and its impact on your existing setup. Both changes are **enabled by default** in v6. You must set the corresponding acknowledgment flag before the upgrade can proceed.
 
-**Default:** Enabled (`sumologic.sourcelessMode: true`)
-**Ack flag required:** `sumologic.sourcelessModeAck: true`
+## Sourceless Mode
 
-Sourceless Mode removes the Hosted Collector and all HTTP sources from your Sumo Logic organization and switches collection to installation-token authentication via the OpenTelemetry Sumo Logic extension. This is a permanent, destructive change to your Sumo Logic organization resources.
+Sourceless mode removes the dependency on a Hosted Collector and HTTP/OTLP sources for data ingestion. Instead, collection pods authenticate and register directly with Sumo Logic using an installation token via the Sumo Logic OpenTelemetry extension.
 
-### What Is Removed
+Set `sumologic.sourcelessModeAck: true` in your `values.yaml` to confirm you have read this section before upgrading.
 
-- The Hosted Collector created and managed by the chart (`sumologic.collectorName`)
-- All HTTP sources created by the chart (logs, metrics, traces, events)
+### 1. `_source` metadata no longer available
 
-### What Changes
+In the classic collection model, each data pipeline sends data to a dedicated HTTP or OTLP source, which automatically populates the `_source` metadata field on ingested data. In sourceless mode, there are no sources — data is sent directly to Sumo Logic, so `_source` is no longer populated.
 
-**Authentication**: Collection no longer uses HTTP source URLs. The OTel collector authenticates directly using your installation token via the `sumologicextension`.
+**Impact:**
+- Any saved searches, dashboards, or monitors that filter or group by `_source` will return no results or incorrect results after migration.
+- You must audit and update these before or after enabling sourceless mode.
 
-**Metadata fields**: `_sourceCategory`, `_sourceName`, and `_sourceHost` are now set as OTel resource attributes by the collector configuration rather than being derived from HTTP source settings. Existing saved searches, dashboards, and monitors that filter on these fields may need to be updated if the values change.
+`_collector` **is preserved.** The source processor in the OTel pipeline still populates `_collector` with the value of `sumologic.collectorName` (defaults to `sumologic.clusterName`). Queries that use `_collector` to identify your cluster continue to work without any changes.
 
-**`_sourceType`**: The `_sourceType` field is restricted to `OTC` for all data sent in sourceless mode. Custom `_sourceType` overrides are not supported.
+### 2. Sending data to a specific Hosted Collector source URL
 
-**Cleanup job**: When `sumologic.cleanupHostedCollector: true` (set automatically when sourceless mode is enabled), a Kubernetes Job runs on `helm uninstall` to delete the Hosted Collector from your Sumo Logic organization.
+:::note
+This applies only if you need to continue sending specific data to a Hosted Collector HTTP or OTLP source URL. If you are not using custom source URLs or custom exporters via `config.merge`, skip this section.
+:::
 
-**OTel collector visibility**: In sourceless mode, the OTel collector appears as a registered collector in the Sumo Logic UI under **Manage Data > Collection**, which was not the case in v5.
+When sourceless mode is enabled, all Sumo Logic exporters that do **not** have an explicit `endpoint` configured will route data through the sourceless path. Custom exporters with an explicit `endpoint` defined via `config.merge` continue to send data to that source URL.
 
-### Impact on Existing Data
-
-- Historical data ingested through HTTP sources remains in Sumo Logic and is queryable.
-- New data will be associated with the installation token rather than an HTTP source.
-- If you have dashboards or saved searches that filter on specific `_sourceCategory` or HTTP source names, review them after upgrading.
-
-### Deferring This Change
-
-To continue using HTTP source authentication (v5 behavior), set:
+This allows incremental migration — keep specific pipelines pointing at a source URL while others move to sourceless:
 
 ```yaml
 sumologic:
-  sourcelessMode: false
-  sourcelessModeAck: true  # required even when deferring
+  sourcelessMode: true
+
+metadata:
+  logs:
+    config:
+      merge:
+        exporters:
+          sumologic/custom-logs:
+            endpoint: "https://<your-endpoint>.collection.sumologic.com/receiver/v1/http/<token>"
 ```
+
+Only exporters without an `endpoint` will use the sourceless path. Any exporter with an explicit endpoint continues to send data to the specified source.
+
+### 3. Hosted Collector cleanup
+
+The Hosted Collector and its default sources are **not deleted automatically** when you enable sourceless mode. They remain in your account until you explicitly request cleanup.
+
+Before enabling cleanup, check whether you have added any **custom sources** to the Hosted Collector beyond the defaults created by the Helm chart. The Hosted Collector for your cluster is identified by `sumologic.clusterName` or `sumologic.collectorName` in **Sumo Logic UI → Manage Data → Collection**.
+
+**If you have no custom sources:** You can enable the cleanup flag:
+
+```yaml
+sumologic:
+  sourcelessMode: true
+  cleanupHostedCollector: true
+```
+
+:::warning
+Enabling `cleanupHostedCollector` permanently deletes the Hosted Collector and **all sources** attached to it. This cannot be undone.
+:::
+
+**If you have custom sources:** Do **not** enable `cleanupHostedCollector` until you have migrated all custom sources to an alternative ingestion path.
+
+### 4. Source type restriction
+
+:::note
+This applies only to deployments using `sourceType: http` for logs, metrics, or events.
+:::
+
+`sourcelessMode: true` is incompatible with `sourceType: http`. The Helm chart will fail validation if both are set. You must either:
+- Switch to `sourceType: otlp` (recommended), or
+- Use `config.merge` to define an explicit endpoint for pipelines that must continue using an HTTP source URL (see [section 2](#2-sending-data-to-a-specific-hosted-collector-source-url) above).
+
+### 5. Collector pods now visible under OpenTelemetry Collection
+
+Once sourceless mode is enabled, all collection pods that send data to Sumo Logic will register as OpenTelemetry collectors and appear in **Manage Data → Collection → OpenTelemetry Collection**.
+
+To view pods registered for a specific cluster:
+1. Navigate to **Manage Data → Collection → OpenTelemetry Collection**.
+2. In the **Filters** panel, add the tag: `cluster=<your-cluster-name>`
+3. All collector pods for that cluster are listed with their registration status and last active time.
+
+This is a new visibility surface that was not available in the classic Hosted Collector model.
 
 ---
 
-## Metrics Pipeline Unification {#metrics-pipeline-unification}
+## Metrics Pipeline Unification
 
-**Default:** Enabled (`singleLayerPipeline.enabled: true`)
-**Ack flag required:** `singleLayerPipeline.migrationDocAcknowledged: true`
+In v5, the metrics pipeline used two layers: an OTel collector for scraping and a separate metadata StatefulSet for enrichment. In v6, both layers are merged into a single OTel collector pipeline, eliminating the intermediate StatefulSet.
 
-In v5, the metrics pipeline used two layers: an OTel collector for scraping and a metadata StatefulSet for enrichment. In v6, both layers are merged into a single OTel collector pipeline, eliminating the intermediate StatefulSet.
+Set `singleLayerPipeline.migrationDocAcknowledged: true` in your `values.yaml` to confirm you have read this section before upgrading.
 
 ### What Is Removed
 
@@ -63,11 +106,11 @@ In v5, the metrics pipeline used two layers: an OTel collector for scraping and 
 
 ### What Changes
 
-**Resource sizing**: With a single collector handling both scraping and enrichment, memory and CPU requests/limits are recalculated. The single-layer collector is sized as:
+**Resource sizing**: With a single collector handling both scraping and enrichment, resources are recalculated as:
 - CPU: `scraper_cpu + enrichment_cpu`
 - Memory: `max(scraper_memory, enrichment_memory) * 1.5`
 
-**Configuration key changes**: Some configuration keys have moved from the v5 two-layer structure to the v6 single-layer structure:
+**Configuration key changes**: Some keys have moved from the v5 two-layer structure:
 
 | v5 Key | v6 Key |
 |--------|--------|
@@ -79,13 +122,3 @@ In v5, the metrics pipeline used two layers: an OTel collector for scraping and 
 **Pipeline rename**: The internal pipeline name changes from `metrics/metadata` to `metrics/default`. This affects any custom OTel configuration that references the pipeline by name.
 
 **Prometheus remote write**: If you have external systems (e.g., kube-prometheus-stack) configured to remote-write metrics to the metadata StatefulSet Service URL, update those URLs to point to the new single-layer collector Service.
-
-### Deferring This Change
-
-To keep the two-layer pipeline (v5 behavior), set:
-
-```yaml
-singleLayerPipeline:
-  enabled: false
-  migrationDocAcknowledged: true  # required even when deferring
-```
