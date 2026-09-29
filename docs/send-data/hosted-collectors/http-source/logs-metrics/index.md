@@ -56,10 +56,10 @@ To configure an HTTP Logs and Metrics Source:
       * This option is available only for HTTP log sources.
       * HTTP POST payloads exceeding 1MB are not guaranteed to unroll correctly.
       :::
-         * **Default**. This option is selected by default and unrolls the JSON array at the root of the payload (`$`).
-         * **Custom Unrolling**. Select this option to specify a custom JSON path containing the array you want to unroll, such as `$.Records`.
-            * **JSON Path**. Enter the JSON path expression for the array you want to unroll. If you leave this field blank, the root of the JSON payload (`$`) is used by default.
-            * (Optional) **New Field Name**. Enter a field name for each unrolled item. If you leave this field blank, the field name is derived from the JSON path. For example, `$.Records` uses `Records` as the field name. If the JSON path is `$`, no wrapper field is added.
+         * **Default**. Uses the JSON path `$` to unroll an array at the root of the JSON payload.<br/><img src={useBaseUrl('img/send-data/default-JSON-unroll.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
+         * **Custom Unrolling**. Select this option to specify the JSON path of the array you want to unroll.
+            * **JSON Path**. Enter the JSON path of the array, such as `$.Records`. If you leave this field blank, `$` is used, which refers to the root of the JSON payload.
+            * (Optional) **New Field Name**. Enter a field name to wrap each unrolled item, such as `record`. If you leave this field blank, the field name is derived from the JSON path. For example, `$.Records` uses `Records` as the field name. If the JSON path is `$`, no wrapper field is added.<br/><img src={useBaseUrl('img/send-data/custom-JSON-unroll.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
          * **Test JSON string**. Use the JSON Unroll Tester to preview how your configuration processes JSON data before saving the source. Enter or paste a sample JSON payload to see the resulting unrolled messages based on the configured JSON path and field name.
       * **Multiline Processing**. By default, messages spanning multiple lines are detected. See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option to avoid unnecessary processing when collecting single-message-per-line files, such as a Linux `system.log`.
          * **Infer Message Boundaries.**
