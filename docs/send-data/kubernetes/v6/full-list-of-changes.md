@@ -9,8 +9,8 @@ description: This page describes the complete list of changes in Kubernetes Coll
 
 - `sumologic.sourcelessMode` defaults to `true` in v6 (was `false` in v5)
 - New flag `sumologic.sourcelessModeAck` — must be set to `true` to confirm you have read the migration guide; upgrade is blocked until this is set
-- `_source` metadata field is no longer populated; `_collector` is preserved
-- All Sumo Logic exporters without an explicit `endpoint` route data via the installation token (sourceless path)
+- `_source` metadata field is no longer populated; `_collector` is preserved. So, `_source` cannot be used in search queries.
+- All Sumo Logic exporters without an explicit `endpoint` uplload data using the installation token (sourceless path)
 - Custom exporters with an explicit `endpoint` in `config.merge` continue to use their configured source URL, enabling incremental migration
 - Hosted Collector and its default sources are **not** deleted automatically on upgrade; use `sumologic.cleanupHostedCollector: true` to clean up (permanent and irreversible — verify no custom sources exist first)
 - `sourceType: http` is incompatible with `sourcelessMode: true`; switch to `sourceType: otlp` or use an explicit endpoint via `config.merge`
