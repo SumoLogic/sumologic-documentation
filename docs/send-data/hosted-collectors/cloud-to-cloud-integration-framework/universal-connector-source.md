@@ -9,26 +9,26 @@ import CodeBlock from '@theme/CodeBlock';
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-With our Universal Connector cloud source, you can collect log data from vendor APIs with a modular configuration. The goal of this source is for Sumo Logic to expand the configuration modules over time giving greater compatibility with vendor APIs, but to acknowledge complex APIs will still require a specific cloud source and not be compatible with this source.
+With our Universal Connector cloud source, you can collect log data from vendor APIs with a modular configuration. This source lets Sumo Logic expand configuration modules over time, improving compatibility with vendor APIs, while acknowledging that complex APIs will still require a dedicated cloud source and won't be compatible with this source.
 
 ## Setup
 
-Follow the sections below to gather the required vendor information and setup the source with a compatible configuration.
+Follow the sections below to gather the required vendor information and set up the source with a compatible configuration.
 
 ## Vendor configurations
 
-You need to gather various information from the third party vendor in order to configure collecting log data from their API using this source. Our goal is to support many of the common ways to expose APIs functionality to retrieve log data, but we recognize we cannot support every feature. We recommend gathering all of the requirements listed below.
+You need to gather various information from the third-party vendor to configure log data collection from their API using this source. Our goal is to support common ways to expose API functionality to retrieve log data, but we recognize we cannot support every feature. We recommend gathering all of the requirements listed below.
 
 :::info
-If you are unable to configure the source to support your vendor API, you can either request to add additional features to support it or take a request to build a dedicated source integration if needed.
+If you can't configure the source to support your vendor API, you can request that we add features to support it or build a dedicated source integration, if needed.
 :::
 
-1. Locate the vendors API docs describing the API.
+1. Locate the vendor's API docs describing the API.
 1. Identify how the API implements authentication.
 1. Identify one API endpoint to collect logs from. You will need to create multiple Sumo Logic sources if you wish to collect log data from more than one endpoint.
    - What is the endpoint URL?
    - Are there any required HTTP Headers?
-   - What URL parameters are available to use? Which ones track progression such as ingest timestamps?
+   - What URL parameters are available to use? Which ones track progression, such as ingest timestamps?
    - How is pagination implemented?
    - Where in the response body is the array of logs to ingest?
    - Are there timestamps within the response array of logs indicating the individual log timestamp?
@@ -38,9 +38,9 @@ If you are unable to configure the source to support your vendor API, you can ei
 
 ## Source configuration
 
-When you create an Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new One. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection**, select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Universal Connector**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -49,12 +49,12 @@ When you create an Universal Connector Source, you add it to a Hosted Collector.
 1. (Optional) **Parser path**. If **Forward to SIEM** option is selected, provide a [parser path](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md).
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    - <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Configuration Sections**. Expand each section to learn more about the options available for configuration.
+   - <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but doesn't exist in the Fields schema, it's ignored (dropped).
+1. **Configuration Sections**. Expand each section to learn more about the available configuration options.
 <details>
   <summary>Authentication Configuration</summary>
   <div>
-    Choose the type of authentication based on the vendor API requirements and configure the details of that specific authentication type.
+    Choose the authentication type based on the vendor API requirements, then configure the details for that type.
 
 #### Basic
 
@@ -65,32 +65,32 @@ Basic is the default value. Select this authentication option if the vendor API 
 
 #### API Key
 
-Select this authentication option if the vendor API requires you to use a static API key.
+Select this authentication option if the vendor API requires a static API key.
 
 - **How should we use your API key?**
-  - **In HTTP Request Header**. The requests always include the API key in the HTTP headers. It is a default value.
-  - **In HTTP Request URL Parameters**. The request always includes the API key as part of the URL query parameters.
-- **Location Key**. The key value when using the API key. This is called as header key if used in the headers and URL parameter key if used in the URL parameters.
+  - **In HTTP Request Header**. The requests always include the API key in the HTTP headers. It is the default value.
+  - **In HTTP Request URL Parameters**. The request always includes the API key as a URL query parameter.
+- **Location Key**. The key value when using the API key. This is called a header key if used in the headers and a URL parameter key if used in the URL parameters.
 - **API Key**. Your secret API key credentials.
-- **API Key Prefix**. This is an optional prefix you can add to your API key. Some APIs require a text prefix, followed by a space and then your secret API key. For example: `SSWS {api-key}`. By default the value is empty and no prefix will be used.
+- **API Key Prefix**. This optional prefix can be added to your API key. Some APIs require a text prefix, followed by a space and then your secret API key. For example: `SSWS {api-key}`. By default, the value is empty, so no prefix is used.
 
 #### Bearer
 
-Select this authentication option if the vendor API requires bearer authentication. This is similar to the API Key option, but it is a common format many APIs use. The source will always add the `Authorization` HTTP request header with text `Bearer` followed by your API token. For example: `Authorization: Bearer <token>`.
+Select this authentication option if the vendor API requires bearer authentication. This is similar to the API Key option, but it is a common format many APIs use. The source will always add the `Authorization` HTTP request header with the text `Bearer` followed by your API token. For example: `Authorization: Bearer <token>`.
 
 - **Bearer Token**. Your secret API key credentials.
 
 #### OAuth 2.0 Client Credentials
 
-Select this authentication option if the vendor API allows [OAuth 2 Client Credentials Grant Type](https://oauth.net/2/grant-types/client-credentials/) as a form of authentication. Please be aware, this is specifically for APIs that support the `Client Credentials` grant type and NOT any other form of OAuth grant type.
+Select this authentication option if the vendor API allows [OAuth 2 Client Credentials Grant Type](https://oauth.net/2/grant-types/client-credentials/) as a form of authentication. Please be aware that this is specifically for APIs that support the `Client Credentials` grant type and NOT any other form of OAuth grant type.
 
-You will need to provide your API `Client ID`, `Client Secret`, and the `OAuth Token URL` as required fields.
+You must provide your API `Client ID`, `Client Secret`, and the `OAuth Token URL` as required fields.
 
-Optionally, if the vendor API requires it, you can provide one or more `Scopes` and additional HTTP request parameters when we ask for the token with the `OAuth Token URL`. Reference the vendor's API docs for obtaining the token URL and another other scope information if required by the vendor.
+Optionally, if the vendor API requires it, you can provide one or more `Scopes` and additional HTTP request parameters when we request the token at the `OAuth Token URL`. Refer to the vendor's API docs to obtain the token URL and any other scope information the vendor requires.
 
 #### No Auth
 
-Select this authentication option if the vendor API does not require any form of authentication.
+Select this authentication option if the vendor API does not require authentication.
 
   </div>
 </details>
@@ -98,19 +98,19 @@ Select this authentication option if the vendor API does not require any form of
 <details>
   <summary>Request Configuration</summary>
   <div>
-  Configure how the HTTP requests are created for your source.
+  Configure how your source creates HTTP requests.
 
-:::danger protect your credentials
-Do NOT include any sensitive information such as authentication secrets in this section. Use the authentication section for any sensitive information such as keys and passwords.
+:::danger Protect your credentials
+Do NOT include sensitive information, such as authentication secrets, in this section. Use the authentication section for any sensitive information such as keys and passwords.
 :::
 
 #### HTTP method used in the request
 
-Enter the HTTP method used in the request. The supported values are: `GET` and `POST` with `GET` as the default.
+Enter the HTTP method used in the request. Supported values are `GET` and `POST`, with `GET` as the default.
 
-#### Endpoint Url
+#### Endpoint URL
 
-The endpoint URL should include the `https://` protocol, vendor domain, and the full path to the API endpoint hosting the log data. It should **NOT** include any URL parameters as that information can be included in a dedicated section below.
+The endpoint URL should include the `https://` protocol, vendor domain, and the full path to the API endpoint hosting the log data. It should **NOT** include any URL parameters, as you can include that information in a dedicated section below.
 
 | Example                                  |
 | :--------------------------------------- |
@@ -125,7 +125,7 @@ Invalid examples:
 
 #### Request Headers
 
-Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values-variables) to make them dynamic.
+Include any HTTP request headers the vendor API requires. The key names are static text, but you can use our [variables feature](#dynamic-values-variables) to make the values dynamic.
 
 | Example Header Key | Example Header Value         |
 | :----------------- | :--------------------------- |
@@ -135,7 +135,7 @@ Include any HTTP request headers required by the vendor API. The key names are s
 
 #### Request Parameters
 
-Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [variables feature](#dynamic-values-variables) to make them dynamic.
+Include any URL query parameters the vendor API requires. The key names are static text, but you can use our [variables feature](#dynamic-values-variables) to make the values dynamic.
 
 | Example Header Key | Example Header Value                           |
 | :----------------- | :--------------------------------------------- |
@@ -143,33 +143,33 @@ Include any URL query parameters required by the vendor API. The key names are s
 | `since`            | `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}` |
 | `until`            | `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`   |
 
-Examples URL encoded:
+Examples URL-encoded:
 `?limit=100&since=2024-02-01T08:15:00Z&until=2024-02-01T08:20:00Z`
 
 #### Request Body
 
-This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [dynamic values](#dynamic-values-variables).
+This is optional and only used if the HTTP `POST` method is configured above. Use this field to include any information in the HTTP request body. The data included in this field can access our [dynamic values](#dynamic-values-variables).
 
   </div>
 </details>
 <details>
   <summary>Tracking Progression</summary>
   <div>
-  The source needs a way to keep track of its progress to prevent data loss and duplication. Select the type of progression used and configure the details.
+  The source needs a way to keep track of its progress to prevent data loss and duplication. Select the progression type and configure the details.
 
 #### Time Window
 
-The source will provide both a start and end timestamp for you to [dynamically](#dynamic-values-variables) use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
+The source will provide start and end timestamps for you to [dynamically](#dynamic-values-variables) use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
 
 Use the [dynamic values](#dynamic-values-variables) to include the window start and end timestamps within your HTTP request.
 
-The start time is inclusive and the end time is exclusive as that is the behavior of most APIs.
+The start time is inclusive, and the end time is exclusive, as most APIs behave.
 
-| Setting          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Window Size      | This is the maximum size of the window between the start and end timestamp. The default is `5m` and we recommend leaving this setting unless there is a specific reason to adjust it. The source has 512MB of memory and processing data from the vendor API in small window sizes is ideal to work within the memory limits. Larger windows can be used if you need to make fewer API calls to the vendor and the data volume is low. The smallest window size is `1m` and the largest is `24h`. You must keep this setting less than or equal to your polling interval. |
-| Initial Lookback | This setting determines how far back from current time to start the window when the source is created. Adjusting this after source creation will not have an affect. This value must be greater than or equal to the `window size` and no further back than `31d`. The default value is `24h`.                                                                                                                                                                                                                                                                            |
-| Max Lookback     | This will determine how far back the window is allowed and should be set based on the vendors data retention policy. If the source encounters a repetitive error causing the window to not move forward for a period of time, the window will not be allowed to stagnate past this configured time. The default is `31d` and we recommend leaving the default unless the vendor specifically states their data retention policy. You can configure this setting between the `window size` and `365d`.                                                                     |
+| Setting | Description |
+|:--|:--|
+| Window Size | The maximum window size between the start and end timestamps. The default is `5m`, and we recommend leaving it unless you have a specific reason to change it. The source has 512MB of memory, so processing data from the vendor API in small window sizes is ideal to stay within memory limits. You can use larger windows if you need fewer API calls to the vendor and the data volume is low. The smallest window size is `1m`, and the largest is `24h`. You must keep this setting less than or equal to your polling interval. |
+| Initial Lookback | This setting determines how far back from the current time the window starts when the source is created. Adjusting this after source creation has no effect. This value must be greater than or equal to the `window size` and no further back than `31d`. The default value is `24h`. |
+| Max Lookback | This determines how far back the window can go and should be set based on the vendor's data retention policy. If the source encounters a repetitive error that prevents the window from moving forward for a period of time, the window will not be allowed to stagnate past this configured time. The default is `31d`, and we recommend leaving it unless the vendor specifies a different data retention policy. You can configure this setting between the `window size` and `365d`. |
 
   </div>
 </details>
@@ -180,17 +180,17 @@ The start time is inclusive and the end time is exclusive as that is the behavio
 
 #### JSON with JPath
 
-Use this option when the vendor API returns a JSON document with an array of log data somewhere inside the document. You will need to add one or more log location configurations telling the source where the array log are and how to parse their timestamps. In most cases, the vendor will only provide one array of log data and you only need to configure this once.
+Use this option when the vendor API returns a JSON document with an array of log data somewhere inside the document. You will need to add one or more log location configurations that tell the source where the log array is and how to parse its timestamps. In most cases, the vendor provides only one log array, so you only need to configure it once.
 
 The source follows the [JSON Path standard defined here](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html).
 
-**Logs JPath**. Provide the JPath to the location of the array of individual logs you want to ingest into Sumo Logic starting at the root of the JSON response. The destination of this path must be an array.
+**Logs JPath**. Provide the JSON Path to the array of individual logs you want to ingest into Sumo Logic, starting at the root of the JSON response. This path must point to an array.
 
-**Timestamp JPath**. Provide the JPath to the log timestamp, starting within an individual log. The source will use current time if this field is not populated.
+**Timestamp JPath**. Provide the JPath to the log timestamp, starting within an individual log. The source will use the current time if this field is not populated.
 
 **Timestamp Format**. Provide the timestamp format the logs use in the Go programming language format. [See our time formatting section for more details](#timestamp-formatting).
 
-**Time Value Regex (Optional)**. Use this field only when the timestamp requires extraction from a wrapper format. Provide a regular expression that extracts the timestamp value from a log entry when the timestamp is embedded within a complex string format. This expression must include at least one capture group. If multiple capture groups are defined, only the first capture group will be used. Ensure the regular expression is valid, as invalid expressions will cause the source to return a `failed to validate data processor configs` error.
+**Time Value Regex (Optional)**. Use this field only when you need to extract the timestamp from a wrapper format. Provide a regular expression that extracts the timestamp value from a log entry when the timestamp is embedded within a complex string format. This expression must include at least one capture group. If you define multiple capture groups, only the first capture group will be used. Ensure the regular expression is valid, as invalid expressions will cause the source to return a `failed to validate data processor configs` error.
 
 **JSON with JPath Examples**
 
@@ -282,26 +282,26 @@ The source follows the [JSON Path standard defined here](https://www.ietf.org/ar
 
 #### RFC 8288 Link Headers
 
-Use this type of pagination if the vendor API provides a next URL in the response in the format `<URL>; rel="next"` outlined in [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288). Choose where in the vendor API response this next link is provided.
+Use this type of pagination if the vendor API provides a next URL in the response in the format `<URL>; rel="next"` outlined in [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288). Choose where in the vendor API response to provide this next link.
 
-**Headers**. The source will look through all of the `Link` HTTP response headers from the vendor API and find the next url in the described format.
+**Headers**. The source will scan all `Link` HTTP response headers from the vendor API and find the next URL in the described format.
 
-**Body**. The source expects a JSON response body and you will need to provide the **Next Page URL JPath** as part of this configuration pointing the source to the location of the next link. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard used by the source.
+**Body**. The source expects a JSON response body, and you must provide the **Next Page URL JPath** as part of this configuration, pointing the source to the location of the next link. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard the source uses.
 
 #### Continuation Token
 
-Use this type of pagination if the vendor API provides a continuation token in the header or the response body. This pagination will continue until the API returns an empty string for a continuation token. Choose where the vendor API uses the continuation token in the HTTP request **Headers** or **Parameters**, and you can customize the key names if needed.
+Use this type of pagination if the vendor API provides a continuation token in the header or the response body. This pagination continues until the API returns an empty string for the continuation token. Choose whether the vendor API uses the continuation token in the HTTP request **Headers** or **Parameters**, and customize the key names if needed.
 
-**Headers**. The source will search for a provided key in the response headers from the vendor API to locate the continuation token.
+**Headers**. The source will search the vendor API response headers for a provided key to locate the continuation token.
 
-**Body**. The source expects a JSON response body, and you will need to provide the **Next Page Continuation Token JPath** as part of this configuration, directing the source to the location of the continuation token. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard used by the source.
+**Body**. The source expects a JSON response body, and you must provide the **Next Page Continuation Token JPath** as part of this configuration, directing the source to the continuation token's location. [JPath](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html) is the standard the source uses.
 
 
 #### Numeric Offset
 
-Use this type of pagination if the vendor API uses a numeric limit and offset value to paginate through the data. This pagination will keep paginating (increasing the offset) until the API returns a response with results less than the limit value. You can use the limit/offset key names in the HTTP request **Headers** or **Parameters** and you can customize the key names if needed.
+Use this type of pagination if the vendor API uses a numeric limit and offset value to paginate through the data. This pagination will keep paginating (increasing the offset) until the API returns fewer results than the limit value. You can use the limit/offset key names in the HTTP request **Headers** or **Parameters**, and you can customize the key names if needed.
 
-Here is an example of the pagination using the values as parameters:
+Here is an example of pagination using the values as parameters:
 
 1. `api/v1/events?limit=100`
 1. `api/v1/events?offset=100&limit=100`
@@ -310,9 +310,9 @@ Here is an example of the pagination using the values as parameters:
 
 #### Page Based
 
-Use this type of pagination if the vendor API uses a numeric pageSize and pageNumber to paginate through the data. This pagination will continue (by increasing the pageNumber) until the API returns a result less than the pageSize. You can use the pageSize/pageNumber key names in the HTTP request **Headers** or **Parameters**, and customize the key names if required. You can also specify the initial pageNumber supported by the vendor.
+Use this type of pagination if the vendor API uses a numeric pageSize and pageNumber to paginate through the data. This pagination continues (by increasing the pageNumber) until the API returns fewer results than the pageSize. You can use the pageSize/pageNumber key names in the HTTP request **Headers** or **Parameters**, and customize the key names if required. You can also specify the initial pageNumber supported by the vendor.
 
-Here is an example of the pagination using values as parameters:
+Here is an example of pagination using values as parameters:
 
 1. `api/v1/events?pageNumber=1&pageSize=100`
 1. `api/v1/events?pageNumber=2&pageSize=100`
@@ -339,18 +339,18 @@ The cursor value is **automatically JSON-escaped** before substitution — do no
 ```
 :::
 
-The **first-page request** uses the standard `requestBody` field (configured in the Request Configuration section) with no cursor. The Next Page Request Body Template is only used for the second page onward.
+The **first-page request** uses the standard `requestBody` field (configured in the Request Configuration section) with no cursor. The Next Page Request Body Template applies only to the second page onward.
 
 
 | Field | Example Value |
-| :---- | :---- |
+|:--|:--|
 | Logs JPath | `$.data.entities.nodes[*]` |
 | Next Page Flag JPath | `$.data.entities.pageInfo.hasNextPage` |
 | End Cursor JPath | `$.data.entities.pageInfo.endCursor` |
 | First-page Request Body | `{"query":"{entities(types:[USER] first:1000) {pageInfo{hasNextPage endCursor} nodes{primaryDisplayName}}}"}` |
 | Next Page Request Body Template | `{"query":"{entities(types:[USER] first:1000 after:\"{{GraphQLCursor}}\") {pageInfo{hasNextPage endCursor} nodes{primaryDisplayName}}}"}` |
 
-Your API may use different field names (for example, `moreData` instead of `hasNextPage`, or `nextToken` instead of `endCursor`). Use the JPath fields to point the source at wherever those values live in your API's response.
+Your API may use different field names (for example, `moreData` instead of `hasNextPage`, or `nextToken` instead of `endCursor`). Use the JPath fields to point the source to wherever those values live in your API's response.
 
 #### None
 
@@ -361,19 +361,19 @@ Use this type of pagination if the vendor API does not implement any kind of pag
 <details>
   <summary>HTTP Client Options</summary>
   <div>
-  You can adjust some options specific to the HTTP client used to make calls to the vendor API. Follow the vendor's recommendations any of these settings.
+  You can adjust options specific to the HTTP client used to call the vendor API. Follow the vendor's recommendations for any of these settings.
 
 :::note
-The client will automatically handle HTTP 429 response status codes that include the [Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) response header and back off as instructed by the vendor API.
+The client automatically handles HTTP 429 responses that include the [Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) response header and backs off as instructed by the vendor API.
 :::
 
-| Setting             | Value                                                                                                                                                                                                                                                                                |
-| :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| HTTP Timeout        | How long the source allows the HTTP connection to live before closing it and setting the health to a `context deadline exceeded` timeout error. This time includes receiving the server response and downloading all of the data returned in the response body. The default is `5m`. |
-| HTTP Client Retries | The source will automatically retry without waiting for the next poll interval this many times for some temporary service errors such as a 500 Internal Server. If not specified, the default value `5` will be used.                                                                  |
-| Rate Limit Requests | The number of HTTP requests the source is allowed to make within the `Rate Limit Duration`. The default is `1000` requests.                                                                                                                                                          |
-| Rate Limit Duration | The amount of time the source is allowed to make HTTP request to the vendor API using the `Rate Limit Requests`. The default is `1m`                                                                                                                                                 |
-| Rate Limit Burst    | The number of requests the source is allowed to burst. The default is `1000`. Set this value to `1` to disable bursting.                                                                                                                                                             |
+| Setting | Value |
+|:--|:--|
+| HTTP Timeout | How long the source allows the HTTP connection to live before closing it and setting the health to a `context deadline exceeded` timeout error. This time includes receiving the server response and downloading all of the data returned in the response body. The default is `5m`. |
+| HTTP Client Retries | The source will automatically retry this many times for temporary service errors, such as a 500 Internal Server Error, without waiting for the next poll interval. If not specified, the default is `5`. |
+| Rate Limit Requests | The number of HTTP requests the source is allowed to make within the `Rate Limit Duration`. The default is `1000` requests. |
+| Rate Limit Duration | The amount of time the source can make HTTP requests to the vendor API using the `Rate Limit Requests`. The default is `1m`. |
+| Rate Limit Burst | The number of requests the source can burst. The default is `1000`. Set this value to `1` to disable bursting. |
 
   </div>
 </details>
@@ -382,87 +382,87 @@ The client will automatically handle HTTP 429 response status codes that include
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
+You can configure sources using UTF-8-encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
-| Parameter  | Type        | Value                                         | Required | Description                      |
-| :--------- | :---------- | :-------------------------------------------- | :------- | :------------------------------- |
-| schemaRef  | JSON Object | `{"type":"Universal Connector"}`                     | Yes      | Define the specific schema type. |
-| sourceType | String      | `"Universal"`                                        | Yes      | Type of source. All Cloud-to-Cloud sources use `"Universal"` here |
-| config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
+| Parameter | Type | Value | Required | Description |
+|:--|:--|:--|:--|:--|
+| schemaRef  | JSON Object | `{"type":"Universal Connector"}` | Yes | Define the specific schema type. |
+| sourceType | String | `"Universal"` | Yes | Type of source. All Cloud-to-Cloud sources use `"Universal"` here. |
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. 
 
 ### Configuration object
 
-| Parameter                  | Type        | Required | Default           | Description                                                                                                                                                                                                                              | Example                                                                                                                                                                                                                                                   |
-| :------------------------- | :---------- | :------- | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                       | String      | Yes      | `null`            | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.                                | `"mySource"`                                                                                                                                                                                                                                              |
-| description                | String      | No       | `null`            | Type a description of the source.                                                                                                                                                                                                        | `"Testing source"`                                                                                                                                                                                                                                        |
-| category                   | String      | No       | `null`            | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`                                                                                                                                                                                                                                         |
-| parserPath                 | String      | No       | `null`            | The path to a Cloud SIEM parser. Only applicable when `_siemForward` is `true` in the `fields` object. See the [Cloud SIEM parser catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) for valid paths. | `"/Parsers/System/Vendor/Parser Name"`                                                                                                                                                                                                                    |
-| fields                     | JSON Object | No       | `null`            | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.                                                                                          | `{"_siemForward": false, "fieldA": "valueA"}`                                                                                                                                                                                                             |
-| authCategory               | String      | Yes      | `"Basic"`         | One of currently supported authentication types.                                                                                                                                                                                         | `"Basic"`, `"ApiKey"`, `"Bearer"`, `"OAuth 2.0 Client Credentials"`, `"NoAuth"`                                                                                                                                                                           |
-| authBasicUsername          | String      | No       | `null`            | The HTTP basic authentication username.                                                                                                                                                                                                  | `"collection-user"`                                                                                                                                                                                                                                       |
-| authBasicPassword          | String      | No       | `null`            | The HTTP basic authentication password.                                                                                                                                                                                                  |                                                                                                                                                                                                                                                           |
-| authLocation               | String      | Yes      | `"headers"`       | Only applies when `authCategory` is `"ApiKey"`. Controls whether the API key is sent in the HTTP request headers (`"headers"`) or as a URL query parameter (`"parameters"`).                                                            | `"headers"`, `"parameters"`                                                                                                                                                                                                                               |
-| authKeyName                | String      | Yes      | `"Authorization"` | The key name used to provide the authentication secret.                                                                                                                                                                                  | `"Authorization"`, `"X-API-Key"`                                                                                                                                                                                                                          |
-| authKeyValue               | String      | Yes      | `null`            | The authentication secret value used for the `authKeyName` key.                                                                                                                                                                          |                                                                                                                                                                                                                                                           |
-| authKeyValuePrefix         | String      | No       | `null`            | An optional non-secret text prefix prepended to the `authKeyValue` secret.                                                                                                                                                               | `"SSWS"`                                                                                                                                                                                                                                                  |
-| authBearerToken            | String      | Yes      | `null`            | The authentication bearer secret token.                                                                                                                                                                                                  |                                                                                                                                                                                                                                                           |
-| oauthClientId              | String      | Yes      | `null`            | Your OAuth API client id.                                                                                                                                                                                                                |                                                                                                                                                                                                                                                           |
-| oauthClientSecret          | String      | Yes      | `null`            | Your OAuth API client secret.                                                                                                                                                                                                            |                                                                                                                                                                                                                                                           |
-| oauthTokenUrl              | String      | Yes      | `null`            | Your OAuth API token URL.                                                                                                                                                                                                                |                                                                                                                                                                                                                                                           |
-| oauthScopes                | JSON Object | No       | `null`            | One or more OAuth scopes.                                                                                                                                                                                                                |                                                                                                                                                                                                                                                           |
-| oauthParams                | JSON Object | No       | `null`            | One or more optional HTTP request parameters when calling the OAuth API token URL.                                                                                                                                                       |                                                                                                                                                                                                                                                           |
-| requestMethod              | String      | Yes      | `GET`             | The HTTP method used in the request.                                                                                                                                                                                                     | `"GET"`, `"POST"`                                                                                                                                                                                                                                         |
-| requestEndpoint            | String      | Yes      | `null`            | The API endpoint URL excluding the URL parameters.                                                                                                                                                                                       | `"https://acme.org/api/v1/auditLogs"`                                                                                                                                                                                                                     |
-| requestHeaders             | JSON Object | No       | `null`            | Any HTTP request headers to include.                                                                                                                                                                                                     | `"requestHeaders": [{"headerName": "Accept", "headerValue": "application/json"}, {"headerName": "Content-Type", "headerValue": "application/json"}]`                                                                                                      |
-| requestParams              | JSON Object | No       | `null`            | Any HTTP URL parameters to include.                                                                                                                                                                                                      | `"requestParams": [{"paramName": "limit",  "paramValue": "1000"}, {"paramName": "since", "paramValue": "{{ .WindowStartUTC \"2006-01-02T15:04:05Z07:00\" }}"}, {"paramName": "until", "paramValue": "{{ .WindowEndUTC \"2006-01-02T15:04:05Z07:00\" }}"}` |
-| requestBody                | String      | No       | `null`            | The data to include in the HTTP request body if the `POST` method is used.                                                                                                                                                               |                                                                                                                                                                                                                                                           |
-| progressType               | String      | Yes      | `"window"`        | Select the type of progression the source will use to prevent data loss and duplication. Use `"window"` for time-based polling; use `"none"` for APIs that do not support time-range queries.                                            | `"progressType": "window"`                                                                                                                                                                                                                                |
-| progressWindowSize         | String      | No       | `"5m"`            | The size of each polling time window chunk. Accepts duration strings such as `5m`, `1h`. Must be between `1m` and `24h`. Only applies when `progressType` is `"window"`.                                                                | `"progressWindowSize": "5m"`                                                                                                                                                                                                                              |
-| progressWindowInitLookback | String      | No       | `"24h"`           | How far back the source should start collecting data when first created. This setting has no effect after the initial creation. Only applies when `progressType` is `"window"`.                                                          | `"progressWindowInitLookback": "24h"`                                                                                                                                                                                                                     |
-| progressWindowMaxLookback  | String      | No       | `"31d"`           | How far the window is allowed to stagnate when encountering repetitive errors. Only applies when `progressType` is `"window"`.                                                                                                           | `"progressWindowMaxLookback": "31d"`                                                                                                                                                                                                                      |
-| progressWindowParams       | JSON Object | No       | `[{"paramName":"start",...},{"paramName":"end",...}]` | The request parameters that carry the collection window timestamps. If omitted, the source appends `start` and `end` query parameters by default (equivalent to `[{"paramName": "start", "paramValue": "{{ .WindowStartUTC \"yyyy-MM-ddTHH:mm:ssZ\" }}"}, {"paramName": "end", "paramValue": "{{ .WindowEndUTC \"yyyy-MM-ddTHH:mm:ssZ\" }}"}]`). Set to an explicit empty array `[]` to suppress all default window parameters — required for APIs that reject unknown query parameters. Only applies when `progressType` is `"window"`. | `"progressWindowParams": []`                                                                                                                                                                                                                              |
-| responseLogsType           | String      | Yes      | `"json"`          | How the source should parse the response body. Currently `"json"` is the only supported value.                                                                                                                                          | `"json"`                                                                                                                                                                                                                                                  |
-| responseLogsJsonPaths      | JSON Object | Yes      | `null`            | The location of logs to ingest in the JSON response and how to handle event timestamps. See [full documentation](/docs/send-data/reference-information/time-reference) for details.                                                                                                              | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z", "logTimestampValueRegex": "Date\((.*)\)"}]`<br></br>**Note:** For regex, there should be at least one match group. If there is more than one match group, then only the first group will be considered.                                                                                                                                             |
-| paginationType             | String      | Yes      | `"LinkHeaders"`   | Pagination type. Valid values: `"LinkHeaders"`, `"ContinuationToken"`, `"Offset"`, `"Page"`, `"GraphQLCursor"`, or `"None"`. `"LinkHeaders"` and `"ContinuationToken"` each require a companion `...Type` field (see rows below); omitting it causes misleading validation errors such as `ContinuationToken is not a valid enum value` rather than naming the missing field. `"GraphQLCursor"` requires the three `paginationGraphQLCursor*` fields. | `"LinkHeaders"`, `"ContinuationToken"`, `"Offset"`, `"Page"`, `"GraphQLCursor"`, `"None"`                                                                                                                                                                |
-| paginationLinkHeadersType  | String      | Yes      | `"headers"`       | Configures if the next page URL is included in the Link HTTP response header or in the response body.                                                                                                                                    | `"headers"`, `"body"`                                                                                                                                                                                                                                     |
-| paginationLinkHeadersJPath              | String  | No       | `null`            | A JSON Path to the appropriate body property. Only required when `paginationLinkHeadersType` is `"body"`.                                                                                                                              | `"$.link.next"`, `"$.pagination.nextUrl"`                                                                                                                                                                                                                 |
-| paginationContinuationTokenType         | String  | Yes      | `"headers"`       | Required when `paginationType` is `"ContinuationToken"`. Whether the continuation token is read from the response headers (`"headers"`) or the response body (`"body"`).                                                               | `"headers"`, `"body"`                                                                                                                                                                                                                                     |
-| paginationContinuationTokenJsonPath     | String  | No       | `"$.next"`        | A JSON Path to the continuation token in the response body. Required when `paginationContinuationTokenType` is `"body"`.                                                                                                               | `"$.next_page"`                                                                                                                                                                                                                                           |
-| paginationContinuationTokenHeaderKey    | String  | No       | `"token"`         | The response header key name that contains the continuation token. Required when `paginationContinuationTokenType` is `"headers"`.                                                                                                     | `"X-Next-Page-Token"`                                                                                                                                                                                                                                     |
-| paginationContinuationTokenLocation     | String  | No       | `"parameters"`    | Where to send the continuation token in the follow-up request. Valid values: `"headers"`, `"parameters"`, `"body"`.                                                                                                                    | `"parameters"`, `"headers"`                                                                                                                                                                                                                               |
-| paginationContinuationTokenKey          | String  | No       | `"token"`         | The request key name that carries the continuation token on follow-up requests. Used when `paginationContinuationTokenLocation` is `"headers"` or `"parameters"`.                                                                     | `"cursor"`, `"page_token"`                                                                                                                                                                                                                                |
-| paginationContinuationTokenReqJPath     | String  | No       | `"$.next"`        | A JSON Path into the request body where the continuation token should be injected on follow-up requests. Used when `paginationContinuationTokenLocation` is `"body"`.                                                                  | `"$.pagination.cursor"`                                                                                                                                                                                                                                   |
-| paginationOffsetLocation   | String      | No       | `"parameters"`    | The location in the HTTP request to use the numeric offset pagination key/value pairs. Valid values: `"headers"`, `"parameters"`.                                                                                                        | `"parameters"`, `"headers"`                                                                                                                                                                                                                               |
-| paginationOffsetKey        | String      | No       | `"offset"`        | The key name for the offset to use in the HTTP request headers or parameters.                                                                                                                                                            | `"offset"`, `"page"`                                                                                                                                                                                                                                      |
-| paginationOffsetLimitKey   | String      | No       | `"limit"`         | The key name for the limit to use in the HTTP request headers or parameters.                                                                                                                                                             | `"limit"`, `"per_page"`                                                                                                                                                                                                                                   |
-| paginationOffsetLimitValue | Integer     | No       | `1000`            | The limit value to use to restrict the results per page.                                                                                                                                                                                 | `1000`                                                                                                                                                                                                                                                    |
-| paginationPageLocation     | String      | No       | `"parameters"`    | Required when `paginationType` is `"Page"`. Where to send the page number in each request. Valid values: `"headers"`, `"parameters"`.                                                                                                  | `"parameters"`, `"headers"`                                                                                                                                                                                                                               |
-| paginationPageKey          | String      | No       | `"page"`          | The request key name for the page number. Used when `paginationType` is `"Page"`.                                                                                                                                                      | `"page"`, `"pageNumber"`                                                                                                                                                                                                                                  |
-| paginationPageInitialValue | Integer     | No       | `0`               | The starting page number. Use `0` for zero-indexed APIs and `1` for one-indexed APIs. Valid values: `0` or `1`. Used when `paginationType` is `"Page"`.                                                                                 | `0`, `1`                                                                                                                                                                                                                                                  |
-| paginationPageSizeKey      | String      | No       | `"pageSize"`      | The request key name for the page size limit. Used when `paginationType` is `"Page"`.                                                                                                                                                  | `"pageSize"`, `"limit"`                                                                                                                                                                                                                                   |
-| paginationPageSizeValue    | Integer     | No       | `100`             | The number of results to request per page. Must be between `1` and `100000`. Used when `paginationType` is `"Page"`.                                                                                                                   | `100`                                                                                                                                                                                                                                                     |
-| paginationGraphQLCursorHasNextPageJPath | String | No       | `null`            | Optional when `paginationType` is `"GraphQLCursor"`. JPath to the boolean field in the API response body that signals whether more pages exist. Pagination stops when this value is `false`. Leave empty to rely solely on cursor presence — pagination stops when the cursor is empty or absent. The field name varies by API (for example, `hasNextPage` in Relay-style APIs). | `"$.data.entities.pageInfo.hasNextPage"`                                                                                                                                                                                                                  |
-| paginationGraphQLCursorCursorJPath      | String | Yes      | `null`            | Required when `paginationType` is `"GraphQLCursor"`. JPath to the cursor string in the API response body that identifies the next page. The field name varies by API (for example, `endCursor` in Relay-style APIs). | `"$.data.entities.pageInfo.endCursor"`                                                                                                                                                                                                                    |
-| paginationGraphQLCursorNextPageBody     | String | Yes      | `null`            | Required when `paginationType` is `"GraphQLCursor"`. The request body template for all pages after the first. Must contain the literal placeholder `{{GraphQLCursor}}` at the position where the cursor value should be substituted. The source JSON-escapes the cursor and replaces all occurrences of `{{GraphQLCursor}}` with the escaped value before each follow-up request. Omitting the placeholder causes a validation error at startup. | `"{\"query\":\"{entities(first:1000 after:\\\"{{GraphQLCursor}}\\\") {pageInfo{hasNextPage endCursor} nodes{...}}}\"}"`                                                                                                                                    |
-| clientTimeoutDuration      | String      | Yes      | `"5m"`            | How long the source allows the HTTP connection to live before closing it and setting the health to a timeout error.                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
-| clientTimeoutRetries       | Integer     | Yes      | `5`               | The source will automatically retry without waiting for the next poll interval this many times for some errors such as 500 Internal Server.                                                                                              | `5`                                                                                                                                                                                                                                                       |
-| clientRateLimitReqs        | Integer     | Yes      | `1000`            | The number of HTTP requests the source is allowed to make within the rate limit duration.                                                                                                                                                | `1000`                                                                                                                                                                                                                                                    |
-| clientRateLimitDuration    | String      | Yes      | `"1m"`            | The duration the rate limit requests, must be between 1s and 1h.                                                                                                                                                                         | `"1m"`                                                                                                                                                                                                                                                    |
-| clientRateLimitBurst       | Integer     | Yes      | `1000`            | The number of requests the source is allowed to burst.                                                                                                                                                                                   | `1000`                                                                                                                                                                                                                                                    |
-| pollingInterval            | String      | Yes      | `"5m"`            | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
+| Parameter | Type | Required | Default | Description | Example |
+|:--|:--|:--|:--|:--|:--|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"` |
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
+| parserPath | String | No | `null` | The path to a Cloud SIEM parser. Only applicable when `_siemForward` is `true` in the `fields` object. See the [Cloud SIEM parser catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) for valid paths. | `"/Parsers/System/Vendor/Parser Name"` |
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable SIEM forwarding. | `{"_siemForward": false, "fieldA": "valueA"}` |
+| authCategory | String | Yes | `"Basic"` | One of currently supported authentication types. | `"Basic"`, `"ApiKey"`, `"Bearer"`, `"OAuth 2.0 Client Credentials"`, `"NoAuth"` |
+| authBasicUsername | String | No | `null` | The HTTP basic authentication username. | `"collection-user"` |
+| authBasicPassword | String | No | `null` | The HTTP basic authentication password. | |
+| authLocation | String | Yes | `"headers"` | Only applies when `authCategory` is `"ApiKey"`. Controls whether the API key is sent in the HTTP request headers (`"headers"`) or as a URL query parameter (`"parameters"`). | `"headers"`, `"parameters"` |
+| authKeyName | String | Yes | `"Authorization"` | The key name used to provide the authentication secret. | `"Authorization"`, `"X-API-Key"` |
+| authKeyValue | String | Yes | `null` | The authentication secret value used for the `authKeyName` key. | |
+| authKeyValuePrefix | String | No | `null` | An optional non-secret text prefix prepended to the `authKeyValue` secret. | `"SSWS"` |
+| authBearerToken | String | Yes | `null` | The authentication bearer secret token. | |
+| oauthClientId | String | Yes | `null` | Your OAuth API client id. | |
+| oauthClientSecret | String | Yes | `null` | Your OAuth API client secret. | |
+| oauthTokenUrl | String | Yes | `null` | Your OAuth API token URL. | |
+| oauthScopes | JSON Object | No | `null` | One or more OAuth scopes. | |
+| oauthParams | JSON Object | No | `null` | One or more optional HTTP request parameters when calling the OAuth API token URL. | |
+| requestMethod | String | Yes | `GET` | The HTTP method used in the request. | `"GET"`, `"POST"` |
+| requestEndpoint | String | Yes | `null` | The API endpoint URL excluding the URL parameters. | `"https://acme.org/api/v1/auditLogs"` |
+| requestHeaders | JSON Object | No | `null` | Any HTTP request headers to include. | `"requestHeaders": [{"headerName": "Accept", "headerValue": "application/json"}, {"headerName": "Content-Type", "headerValue": "application/json"}]` |
+| requestParams | JSON Object | No | `null` | Any HTTP URL parameters to include. | `"requestParams": [{"paramName": "limit",  "paramValue": "1000"}, {"paramName": "since", "paramValue": "{{ .WindowStartUTC \"2006-01-02T15:04:05Z07:00\" }}"}, {"paramName": "until", "paramValue": "{{ .WindowEndUTC \"2006-01-02T15:04:05Z07:00\" }}"}` |
+| requestBody | String | No | `null` | The data to include in the HTTP request body if the `POST` method is used. | |
+| progressType | String | Yes | `"window"` | Select the progression type the source will use to prevent data loss and duplication. Use `"window"` for time-based polling; use `"none"` for APIs that do not support time-range queries. | `"progressType": "window"` |
+| progressWindowSize | String | No | `"5m"` | The size of each polling time window chunk. Accepts duration strings such as `5m`, `1h`. Must be between `1m` and `24h`. Only applies when `progressType` is `"window"`. | `"progressWindowSize": "5m"` |
+| progressWindowInitLookback | String | No | `"24h"` | How far back the source should start collecting data when first created. This setting has no effect after the initial creation. Only applies when `progressType` is `"window"`. | `"progressWindowInitLookback": "24h"` |
+| progressWindowMaxLookback  | String | No | `"31d"` | How long the window can stagnate when encountering repetitive errors. Only applies when `progressType` is `"window"`. | `"progressWindowMaxLookback": "31d"` |
+| progressWindowParams | JSON Object | No | `[{"paramName":"start",...},{"paramName":"end",...}]` | The request parameters that carry the collection window timestamps. If omitted, the source appends `start` and `end` query parameters by default (equivalent to `[{"paramName": "start", "paramValue": "{{ .WindowStartUTC \"yyyy-MM-ddTHH:mm:ssZ\" }}"}, {"paramName": "end", "paramValue": "{{ .WindowEndUTC \"yyyy-MM-ddTHH:mm:ssZ\" }}"}]`). Set to an explicit empty array `[]` to suppress all default window parameters — required for APIs that reject unknown query parameters. Only applies when `progressType` is `"window"`. | `"progressWindowParams": []` |
+| responseLogsType | String | Yes | `"json"` | How the source should parse the response body. Currently `"json"` is the only supported value. | `"json"` |
+| responseLogsJsonPaths | JSON Object | Yes | `null` | The location of logs to ingest in the JSON response and how to handle event timestamps. See [full documentation](/docs/send-data/reference-information/time-reference) for details. | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z", "logTimestampValueRegex": "Date\((.*)\)"}]`<br></br>**Note:** For regex, there should be at least one match group. If there is more than one match group, then only the first group will be considered. |
+| paginationType | String | Yes | `"LinkHeaders"` | Pagination type. Valid values: `"LinkHeaders"`, `"ContinuationToken"`, `"Offset"`, `"Page"`, `"GraphQLCursor"`, or `"None"`. `"LinkHeaders"` and `"ContinuationToken"` each require a companion `...Type` field (see rows below); omitting it causes misleading validation errors such as `ContinuationToken is not a valid enum value` rather than naming the missing field. `"GraphQLCursor"` requires the three `paginationGraphQLCursor*` fields. | `"LinkHeaders"`, `"ContinuationToken"`, `"Offset"`, `"Page"`, `"GraphQLCursor"`, `"None"` |
+| paginationLinkHeadersType | String | Yes | `"headers"` | Configures if the next page URL is included in the Link HTTP response header or in the response body. | `"headers"`, `"body"` |
+| paginationLinkHeadersJPath | String | No | `null` | A JSON Path to the appropriate body property. Only required when `paginationLinkHeadersType` is `"body"`. | `"$.link.next"`, `"$.pagination.nextUrl"` |
+| paginationContinuationTokenType | String | Yes | `"headers"` | Required when `paginationType` is `"ContinuationToken"`. Whether the continuation token is read from the response headers (`"headers"`) or the response body (`"body"`). | `"headers"`, `"body"` |
+| paginationContinuationTokenJsonPath | String | No | `"$.next"` | A JSON Path to the continuation token in the response body. Required when `paginationContinuationTokenType` is `"body"`. | `"$.next_page"` |
+| paginationContinuationTokenHeaderKey | String | No | `"token"` | The response header key name that contains the continuation token. Required when `paginationContinuationTokenType` is `"headers"`. | `"X-Next-Page-Token"` |
+| paginationContinuationTokenLocation | String | No | `"parameters"` | Where to send the continuation token in the follow-up request. Valid values: `"headers"`, `"parameters"`, `"body"`. | `"parameters"`, `"headers"` |
+| paginationContinuationTokenKey | String | No | `"token"` | The request key name that carries the continuation token on follow-up requests. Used when `paginationContinuationTokenLocation` is `"headers"` or `"parameters"`. | `"cursor"`, `"page_token"` |
+| paginationContinuationTokenReqJPath | String | No | `"$.next"` | A JSON Path into the request body where the continuation token should be injected on follow-up requests. Used when `paginationContinuationTokenLocation` is `"body"`. | `"$.pagination.cursor"` |
+| paginationOffsetLocation | String | No | `"parameters"` | The location in the HTTP request to use the numeric offset pagination key/value pairs. Valid values: `"headers"`, `"parameters"`. | `"parameters"`, `"headers"` |
+| paginationOffsetKey | String | No | `"offset"` | The key name for the offset to use in the HTTP request headers or parameters. | `"offset"`, `"page"` |
+| paginationOffsetLimitKey | String | No | `"limit"` | The key name for the limit to use in the HTTP request headers or parameters. | `"limit"`, `"per_page"` |
+| paginationOffsetLimitValue | Integer | No | `1000` | The limit value to restrict results per page. | `1000` |
+| paginationPageLocation | String | No | `"parameters"` | Required when `paginationType` is `"Page"`. Where to send the page number in each request. Valid values: `"headers"`, `"parameters"`. | `"parameters"`, `"headers"` |
+| paginationPageKey | String | No | `"page"` | The request key name for the page number. Used when `paginationType` is `"Page"`. | `"page"`, `"pageNumber"` |
+| paginationPageInitialValue | Integer | No | `0` | The starting page number. Use `0` for zero-indexed APIs and `1` for one-indexed APIs. Valid values: `0` or `1`. Used when `paginationType` is `"Page"`. | `0`, `1` |
+| paginationPageSizeKey | String | No | `"pageSize"` | The request key name for the page size limit. Used when `paginationType` is `"Page"`. | `"pageSize"`, `"limit"` |
+| paginationPageSizeValue | Integer | No | `100` | The number of results to request per page. Must be between `1` and `100000`. Used when `paginationType` is `"Page"`. | `100` |
+| paginationGraphQLCursorHasNextPageJPath | String | No | `null` | Optional when `paginationType` is `"GraphQLCursor"`. JPath to the boolean field in the API response body that signals whether more pages exist. Pagination stops when this value is `false`. Leave empty to rely solely on cursor presence — pagination stops when the cursor is empty or absent. The field name varies by API (for example, `hasNextPage` in Relay-style APIs). | `"$.data.entities.pageInfo.hasNextPage"` |
+| paginationGraphQLCursorCursorJPath | String | Yes | `null` | Required when `paginationType` is `"GraphQLCursor"`. JPath to the cursor string in the API response body that identifies the next page. The field name varies by API (for example, `endCursor` in Relay-style APIs). | `"$.data.entities.pageInfo.endCursor"` |
+| paginationGraphQLCursorNextPageBody | String | Yes | `null` | Required when `paginationType` is `"GraphQLCursor"`. The request body template for all pages after the first. Must contain the literal placeholder `{{GraphQLCursor}}` at the position where the cursor value should be substituted. The source JSON-escapes the cursor and replaces all occurrences of `{{GraphQLCursor}}` with the escaped value before each follow-up request. Omitting the placeholder causes a startup validation error. | `"{\"query\":\"{entities(first:1000 after:\\\"{{GraphQLCursor}}\\\") {pageInfo{hasNextPage endCursor} nodes{...}}}\"}"` |
+| clientTimeoutDuration | String | Yes | `"5m"` | How long the source allows the HTTP connection to live before closing it and setting the health to a timeout error. | `"5m"` |
+| clientTimeoutRetries | Integer | Yes | `5` | The source will automatically retry this many times without waiting for the next poll interval for errors such as 500 Internal Server Error. | `5` |
+| clientRateLimitReqs | Integer | Yes | `1000` | The number of HTTP requests the source can make within the rate-limit duration. | `1000` |
+| clientRateLimitDuration | String | Yes | `"1m"` | The duration the rate limit requests, must be between 1s and 1h. | `"1m"` |
+| clientRateLimitBurst | Integer | Yes | `1000` | The number of requests the source can burst. | `1000` |
+| pollingInterval | String | Yes | `"5m"` | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours. | `"5m"` |
 
 ## Dynamic values variables
 
-The source has the ability to use dynamic values, like the window start time, in the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
+The source can use dynamic values, like the window start time, in certain field values, giving you flexibility in crafting the HTTP requests sent to the vendor API.
 
-The following fields values are allowed to access dynamic text from the template functions described in this section:
+The following field values are allowed to access dynamic text from the template functions described in this section:
 
 - HTTP Request Header Values
 - HTTP Request Parameter Values
 - HTTP Request Body
 
-To start using the variables with one of the supported config values listed above, you will need to enclose the template logic inside double curly braces `{{}}`. Any text outside these double curly braces will be treated as normal unmodified text.
+To use variables with one of the supported config values listed above, enclose the template logic in double curly braces `{{}}`. Any text outside these double curly braces will be treated as normal, unmodified text.
 
 Here are some syntax examples calling functions with and without arguments:
 
@@ -481,78 +481,78 @@ Here are some syntax examples calling functions with and without arguments:
 
 ### WindowStartUTC
 
-This variable will get the value in the `start timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable returns the `start timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp always uses `UTC` and never adjusts for a specific timezone.
 
-The syntax for this function requires a timestamp format as a single argument. See the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+This function requires a timestamp format as a single argument. See the [Timestamp formatting](#timestamp-formatting) section for more information on formatting the timestamp.
 
 ```sh
 {{ .WindowStartUTC "<timestamp format>" }}
 ```
 
-| Template Example                                                    | Output                                 |
-| :------------------------------------------------------------------ | :------------------------------------- |
-| `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}`                      | `2024-03-07T20:15:56Z`                 |
-| `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}`                      | `2024-03-07T20:15:56Z`                 |
-| `{{ .WindowStartUTC "2006-01-02T15:04:05.999999Z07:00" }}`          | `2024-03-07T20:15:56.905571Z`          |
-| `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`               | `2024-03-07T20:15:56.905571Z`          |
+| Template Example | Output |
+|:--|:--|
+| `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}` | `2024-03-07T20:15:56Z` |
+| `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ssZ" }}` | `2024-03-07T20:15:56Z` |
+| `{{ .WindowStartUTC "2006-01-02T15:04:05.999999Z07:00" }}` | `2024-03-07T20:15:56.905571Z` |
+| `{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}` | `2024-03-07T20:15:56.905571Z` |
 | `greaterThan:{{ .WindowStartUTC "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T20:15:56.905Z` |
-| `greaterThan:{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `greaterThan:2024-03-07T20:15:56.905Z` |
+| `greaterThan:{{ .WindowStartUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}` | `greaterThan:2024-03-07T20:15:56.905Z` |
 
 ### WindowStartLocation
 
 This variable is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
 
 :::sumo[Best Practice]
-We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
+We strongly recommend using `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
-Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument, and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
 ```sh
 {{ .WindowStartLocation "<time zone location>" "<timestamp format>" }}
 ```
 
-| Template Example                                                                         | Output                                      |
-| :--------------------------------------------------------------------------------------- | :------------------------------------------ |
-| `{{ .WindowStartLocation "US/Eastern" "2006-01-02T15:04:05Z" }}`                         | `2024-03-07T15:15:56-05:00`                 |
-| `{{ .WindowStartLocation "US/Eastern" "yyyy-MM-ddTHH:mm:ssZ" }}`                         | `2024-03-07T15:15:56-05:00`                 |
-| `{{ .WindowStartLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}`             | `2024-03-07T12:15:56.905-08:00`             |
-| `{{ .WindowStartLocation "US/Pacific" "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`                  | `2024-03-07T12:15:56.905-08:00`             |
+| Template Example | Output |
+|:--|:--|
+| `{{ .WindowStartLocation "US/Eastern" "2006-01-02T15:04:05Z" }}` | `2024-03-07T15:15:56-05:00` |
+| `{{ .WindowStartLocation "US/Eastern" "yyyy-MM-ddTHH:mm:ssZ" }}` | `2024-03-07T15:15:56-05:00` |
+| `{{ .WindowStartLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}` | `2024-03-07T12:15:56.905-08:00` |
+| `{{ .WindowStartLocation "US/Pacific" "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}` | `2024-03-07T12:15:56.905-08:00` |
 | `greaterThan:{{ .WindowStartLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T21:15:56.905+01:00` |
-| `greaterThan:{{ .WindowStartLocation "Europe/Berlin" "yyyy-MM-ddTHH:mm:ss.SSSZ" }}`      | `greaterThan:2024-03-07T21:15:56.905+01:00` |
+| `greaterThan:{{ .WindowStartLocation "Europe/Berlin" "yyyy-MM-ddTHH:mm:ss.SSSZ" }}` | `greaterThan:2024-03-07T21:15:56.905+01:00` |
 
 ### WindowEndUTC
 
-This variable will get the value in the `end timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+This variable returns the `end timestamp` of the source window when the source is configured to use the `Time Window` progression. The timestamp always uses `UTC` and never adjusts for a specific timezone.
 
-The syntax for this variable requires a timestamp format as a single argument. Refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+This variable requires a timestamp format as a single argument. Refer to the [Timestamp formatting](#timestamp-formatting) section for more information on formatting the timestamp.
 
 ```sh
 {{ .WindowEndUTC "<timestamp format>" }}
 ```
 
-| Template Example                                               | Output                              |
-| :------------------------------------------------------------- | :---------------------------------- |
-| `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`                   | `2024-03-07T20:15:56Z`              |
-| `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}`                   | `2024-03-07T20:15:56Z`              |
-| `{{ .WindowEndUTC "2006-01-02T15:04:05.999999Z07:00" }}`       | `2024-03-07T20:15:56.905571Z`       |
-| `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}`            | `2024-03-07T20:15:56.905571Z`       |
-| `{{ .WindowEndUTC "epoch" }}`                                  | `1709842556`                        |
-| `{{ .WindowEndUTC "epochMilli" }}`                             | `1709842556000`                     |
-| `{{ .WindowEndUTC "epochNanoInt" }}`                           | `173584347745451512`                |
-| `{{ .WindowEndUTC "epochNanoFloat" }}`                         | `1735843477.45451512`               |
+| Template Example | Output |
+|:--|:--|
+| `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}` | `2024-03-07T20:15:56Z` |
+| `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ssZ" }}` | `2024-03-07T20:15:56Z` |
+| `{{ .WindowEndUTC "2006-01-02T15:04:05.999999Z07:00" }}` | `2024-03-07T20:15:56.905571Z` |
+| `{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSSSSZ" }}` | `2024-03-07T20:15:56.905571Z` |
+| `{{ .WindowEndUTC "epoch" }}` | `1709842556` |
+| `{{ .WindowEndUTC "epochMilli" }}` | `1709842556000` |
+| `{{ .WindowEndUTC "epochNanoInt" }}` | `173584347745451512` |
+| `{{ .WindowEndUTC "epochNanoFloat" }}` | `1735843477.45451512` |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
-| `{"startTime":"{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}"}`   | `{"startTime":"{{ .WindowEndUTC "2024-03-07T20:15:56.905Z" }}"` |
+| `{"startTime":"{{ .WindowEndUTC "yyyy-MM-ddTHH:mm:ss.SSSZ" }}"}` | `{"startTime":"{{ .WindowEndUTC "2024-03-07T20:15:56.905Z" }}"` |
 
 ### WindowEndLocation
 
 This variable is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
 
 :::sumo[Best Practice]
-We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
+We strongly recommend using `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
-Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) to specify the time zone in the first argument, and refer to the [Timestamp formatting](#timestamp-formatting) section for more information on formatting the timestamp.
 
 ```sh
 {{ .WindowEndLocation "<time zone location>" "<timestamp format>" }}
@@ -569,10 +569,10 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ## Timestamp formatting
 
-The source uses the [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and the Human-readable timestamp formatting. See the table below for references and examples.
+The source uses [Go programming language timestamp formatting](https://go.dev/src/time/format.go) and human-readable timestamp formatting. See the table below for references and examples.
 
 :::sumo[Best Practice]
-We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO) as a quick way to locally test timestamp parsing with a format before configuring the source.
+We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO) to quickly test timestamp parsing locally before configuring the source.
 :::
 
 ### Format reference
@@ -636,14 +636,14 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 <details>
   <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
   <div>
-    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
+    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure your endpoint returns data in valid JSON format and that response fields match the configuration.
   </div>
 </details>
 
 <details>
   <summary>oauth2: cannot parse json: invalid character</summary>
   <div>
-    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source with valid OAuth 2.0 credentials, and ensure it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
   </div>
 </details>
 
@@ -669,8 +669,8 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
   <div>No, this source only collects the data. You can use the Sumo Logic platform features to parse/transform the data further after collection.</div>
 </details>
 <details>
-  <summary>What timestamp is used for the data?</summary>
-  <div>If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
+  <summary>What timestamp does the data use?</summary>
+  <div>If you leave the time parsing configuration blank, the source will use the current time for collected logs. Configure the HTTP response log ingestion configuration section to ensure time parsing is handled correctly. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
 </details>
 
 :::note
