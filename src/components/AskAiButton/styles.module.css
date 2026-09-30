@@ -1,0 +1,94 @@
+/**
+ * Ask AI Button - Premium navbar button styling
+ * Matches Algolia and Stripe documentation design patterns
+ */
+
+.askAiButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 0.875rem;
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--ifm-color-border-pale);
+  border-radius: 8px;
+  color: #5f6368;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: -1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Hover effect with subtle background and shadow */
+.askAiButton:hover {
+  background: var(--ifm-color-emphasis-100);
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Active/pressed state - minimal animation */
+.askAiButton:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: transform 0.1s ease;
+}
+
+/* Focus state for accessibility */
+.askAiButton:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Dark mode styling */
+[data-theme='dark'] .askAiButton {
+  border-color: #6b6f78;
+  color: #bdc1c6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .askAiButton:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: #6b6f78;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Button text and icon */
+.buttonText {
+  display: inline;
+  letter-spacing: -0.01em;
+}
+
+.buttonIcon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #5f6368;
+}
+
+/* Dark mode icon color to match DocSearch-Search-Icon */
+[data-theme='dark'] .buttonIcon {
+  color: #bdc1c6;
+}
+
+/* Subtle icon animation on hover */
+.askAiButton:hover .buttonIcon {
+  opacity: 0.8;
+}
+
+/* Responsive: Hide text on mobile, show icon only */
+@media (max-width: 768px) {
+  .buttonText {
+    display: none;
+  }
+
+  .askAiButton {
+    padding: 0 0.625rem;
+    min-width: 36px;
+    justify-content: center;
+  }
+}
