@@ -31,14 +31,19 @@ import MetadataEn from '../reuse/metadata-data-enrichment.md';
 When data enters Sumo Logic, search optimization is done in the
 following order:
 
-1. Metadata is applied to your data as [Fields](/docs/manage/fields). The order of precedence for field assignment from highest to lowest is. 
+1. Metadata is applied to your data as [Fields](/docs/manage/fields). If the same custom field is assigned to a message through more than one mechanism, Sumo Logic resolves the conflict using this order of precedence, from highest to lowest:
     * Field Extraction Rule (FER)
     * Amazon EC2 resource tags
     * Amazon EC2 instance information
     * HTTP Header
-    * Source
-    * Collector
-1. Partitions and Scheduled Views are applied. If both Partitions and Scheduled Views are defined, the Partitions are applied first.
+    * Fields configured at the [Source level](/docs/send-data/choose-collector-source)
+    * Fields configured at the [Collector level](/docs/send-data/choose-collector-source)
+
+    This precedence list determines which value wins a naming conflict between custom fields. It is not an end-to-end routing sequence for your data. It also doesn't apply to Sumo Logic's [built-in metadata fields](get-started-with-search/search-basics/built-in-metadata.md), such as `_source` and `_collector`, which are populated automatically and can't be overridden by a field assignment.
+1. The fields assigned in the previous step, along with other criteria such as `_sourceCategory`, can be referenced in [Partition](/docs/manage/partitions) routing expressions. Partitions and Scheduled Views are applied to route matching data into an index. If both are defined for the same data, Partitions are applied first.
+    :::note
+    Overlapping Partition routing expressions can cause the same data to be indexed more than once, increasing your billed ingest. See [Don't create overlapping partitions](/docs/search/optimize-search-partitions/#dont-create-overlapping-partitions).
+    :::
 1. The data is indexed.
 1. The optimized and indexed data is available for use with other Sumo Logic features.
 
