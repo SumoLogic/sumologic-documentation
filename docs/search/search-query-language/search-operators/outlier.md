@@ -3,13 +3,18 @@ id: outlier
 title: outlier Search Operator
 sidebar_label: outlier
 description: Use the outlier search operator in Sumo Logic to detect anomalies in log data by tracking moving average and standard deviation over time.
+keywords:
+    - outlier
+    - anomaly detection
+    - log anomaly detection
+    - standard deviation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## What does the outlier operator do?
 
-The `outlier` search operator finds unexpected values in Sumo Logic log search results. Given a series of time-stamped numerical values in a query, it can identify values in a sequence that seem unexpected, and trigger an alert or violation, for example, for a scheduled search.
+The `outlier` search operator finds unexpected values in Sumo Logic log search results. Given a series of time-stamped numerical values in a query, it can identify values in a sequence that seem unexpected, and trigger an alert or violation, for example, for a scheduled search. For metrics data, see the [outlier metrics operator](/docs/metrics/metrics-operators/outlier) instead.
 
 To do this, the outlier operator tracks the moving average and standard deviation of a numerical field in your log data. An outlier is identified based on a specified *threshold* of standard deviations around the expected value. If a data point is outside the threshold, it is considered to be an outlier.
 
