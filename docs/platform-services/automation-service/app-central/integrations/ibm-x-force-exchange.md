@@ -58,21 +58,13 @@ Threat Intelligence-Reputation
 
 ## Change Log
 
-* December 19, 2019 - First upload
-* June 19, 2020
-	+ Whois Lookup and Passive DNS results can be saved as a .csv file
-	+ New action has been added
-* June 07, 2022 - New Actions:
-	+ URL Reputation V2
-* August 22, 2022 (v1.2) - General improvements
-* February 23, 2023 (v1.3)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables)
-* July 12, 2023 (v1.4)
-	+ Changed fields visibility
-	+ Integration renamed from IBM X-Force Exchange OIF to IBM X-Force Exchange
-	+ Added new actions:
-		- Passive DNS V2
-		- Whois Lookup V2
-* June 26, 2024 (v1.5)
-	+ Updated Whois Lookup and Passive DNS actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.
-* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | June 26, 2024 | Updated the **Whois Lookup** and **Passive DNS** actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts. |
+| v1.4 | July 12, 2023 | <ul><li>Changed field visibility.</li><li>Renamed the integration from IBM X-Force Exchange OIF to IBM X-Force Exchange.</li><li>Added new actions: **Passive DNS V2** and **Whois Lookup V2**.</li></ul> |
+| v1.3 | February 23, 2023 | Updated the integration fields with Environmental Variables. |
+| v1.2 | August 22, 2022 | Made general improvements to the integration. |
+| | June 07, 2022 | Added a new action: **URL Reputation V2**. |
+| | June 19, 2020 | <ul><li>Whois Lookup and Passive DNS results can now be saved as a CSV file.</li><li>Added a new action.</li></ul> |
+| | December 19, 2019 | Initial release of the IBM X-Force Exchange integration. |

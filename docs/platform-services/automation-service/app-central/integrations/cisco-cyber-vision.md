@@ -49,9 +49,9 @@ For information about Cisco Cyber Vision, see [Cisco Cyber Vision documentation]
 
 ## Change Log
 
-* December 23, 2020 - First upload
-* March 10, 2021 - Actions updated
-* July 13, 2023 (v1.2)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
-* April 27, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li></ul> |
+| | March 10, 2021 | Updated actions. |
+| | December 23, 2020 | Initial release of the Cisco Cyber Vision integration. |

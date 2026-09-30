@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/claude-compliance.png')} alt="Claude Compliance icon" width="50"/>
 
-The Sumo Logic app for Claude Compliance provides security, compliance, and operations teams with centralized visibility into Claude platform activity, covering API usage, authentication events, billing operations, data access, integrations, SSO, and policy changes. Prebuilt dashboards and detection monitors help you identify suspicious behavior, investigate threats, and maintain governance across your Claude environment.
+The Sumo Logic app for Claude Compliance provides security, compliance, and operations teams with centralized visibility into Claude platform and local session activity, covering API usage, authentication events, billing operations, data access, integrations, SSO, policy changes, and Claude local session interactions. It includes prebuilt dashboards for local sessions, messages, and tool activity so teams can monitor user behavior, model usage, workspace context, and tool execution outcomes, alongside detection monitors that help you identify suspicious behavior, investigate threats, and maintain governance across your Claude environment.
 
 ## Log types
 
-This app uses Claude Compliance's activity logs and chat message logs.
+This app uses Claude Compliance's activity logs, chat message logs, and local session endpoint logs.
 
 ### Sample log message
 
@@ -86,6 +86,37 @@ This app uses Claude Compliance's activity logs and chat message logs.
 }
 ```
 
+```json title="Local Session Endpoint Log"
+{
+  "session": {
+    "type": "compliance_local_session",
+    "id": "clls_eyJ2IjoxLCJvIjoiZmJjMWY3MzAtZTBhZi00MGVlLWEwYmUtNjA1N2QxOTcxYjk3IiwicCI6IjhlMWQ5OTNhLTM2NjUtNDc2Ni1hMDUxLTk2YWZjYmIzNDhiMiIsInMiOiI4OWRhZGJlYS1jNDQ5LTQ1YjAtYmJhYy1iZTUzOTI5OWVmM2QifQ",
+    "organization_uuid": "fbc1f730-e0af-40ee-a0be-6057d1971b97",
+    "workspace_id": null,
+    "user": { "id": "user_01JYqynkuhhK4gkr2VXdzqF", "email_address": "giacomo@giacomo.plutoenterprise.org" },
+    "product_surface": "cowork",
+    "created_at": "2026-09-17T05:50:03.258238Z",
+    "updated_at": "2026-09-17T06:12:27.967457Z",
+    "truncated": false
+  },
+  "message": {
+    "type": "compliance_local_session_message",
+    "id": "clsm_eyJ2IjoxLCJsIjoibXNnXzAxMUNmOFd4aEpVRHJzSmZiVTlqanJFMyIsInIiOiJhc3Npc3RhbnQiLCJwIjoxLCJxaCI6ImY5ZjdkNmQ1In0",
+    "role": "user",
+    "created_at": "2026-09-17T06:12:27.967457Z",
+    "provenance": null,
+    "model": "claude-sonnet-5",
+    "content": [
+      {
+        "type": "text",
+        "text": "hey, how are you? Do you know about the claude compliance source in SumoLogic?",
+        "truncated": false
+      }
+    ]
+  }
+}
+```
+
 ### Sample queries
 
 ```sumo title="Compliance Activities"
@@ -133,9 +164,22 @@ _sourceCategory="claude_compliance" "claude_chat_msg"
 | sort by _count, role
 ```
 
+```sumo title="Local Session Messages by Role"
+_sourceCategory="claude_compliance" "compliance_local_session_message"
+| json "session.id", "session.product_surface", "session.user.email_address", "message.id", "message.role", "message.model", "message.content[0].type" as session_id, product_surface, user_email, message_id, role, model, message_type nodrop
+| where user_email matches "{{user}}" or isBlank(user_email)
+| where role matches "{{role}}" or isBlank(role)
+| where model matches "{{model}}" or isBlank(model)
+| where product_surface matches "{{product_surface}}" or isBlank(product_surface)
+| where !isBlank(role)
+| count by message_id, role
+| count by role
+| sort by _count, role
+```
+
 ## Collection configuration
 
-This app requires two types of logs: **activity logs** (compliance events across your Claude environment) and **chat message logs** (conversation-level data from the Claude Messages API). We recommend using the dedicated Cloud-to-Cloud (C2C) source, which supports collecting both log types and handles API-specific behaviors automatically.
+This app requires three types of logs: **activity logs** (compliance events across your Claude environment), **chat message logs** (conversation-level data from the Claude Messages API), and **local session endpoint logs** (session, message, and tool activity from Claude local sessions). We recommend using the dedicated Cloud-to-Cloud (C2C) source, which supports collecting all three log types and handles API-specific behaviors automatically.
 
 
 ### Vendor configuration
@@ -143,7 +187,7 @@ This app requires two types of logs: **activity logs** (compliance events across
 To collect logs, you need a Claude API key with access to the Compliance API. Use one of the following options to create the API key:
 
 :::note
-Admin keys created through Console are limited to the Activity Feed and cannot access chat messages via C2C source.
+Admin keys created through Console are limited to the Activity Feed and cannot access chat messages or local session data via C2C source.
 :::
 
 #### Console / API
@@ -160,7 +204,7 @@ If the Compliance API is enabled for your organization, Admin keys created here 
 
 Keys are created in the **Compliance access keys** section of Data Management Settings.
 1. Click **Create key** to name your key.
-2. Name the key and select its scopes. For activities select `read:compliance_activities` and for chat messages select `read:compliance_user_data`.
+2. Name the key and select its scopes. For activities select `read:compliance_activities`, and for chat messages and local session data select `read:compliance_user_data`.
 3. Receive a secret access key and store it securely.
 
 :::note
@@ -169,9 +213,9 @@ If you do not see the Compliance access keys section, either you are not a Prima
 
 ### Collection methods
 
-1. **[Cloud-to-Cloud (C2C) source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) (recommended)**. Supports collection of both activity logs and chat message logs. Handles Anthropic's Compliance API ingestion delay automatically, ensuring no data is missed at polling boundaries.
+1. **[Cloud-to-Cloud (C2C) source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/) (recommended)**. Supports collection of activity logs, chat message logs, and local session endpoint logs. Handles Anthropic's Compliance API ingestion delay automatically, ensuring no data is missed at polling boundaries.
 
-2. **Universal Connector**. Collects activity logs only — chat message logs are not supported. Because the Universal Connector does not account for Anthropic's ~1-minute API propagation delay, events that arrive at the API boundary may be missed. For this reason, the dedicated C2C source is preferred.
+2. **Universal Connector**. Collects activity logs only — chat message logs and local session endpoint logs are not supported. Because the Universal Connector does not account for Anthropic's ~1-minute API propagation delay, events that arrive at the API boundary may be missed. For this reason, the dedicated C2C source is preferred.
 
 ### Details for C2C source (recommended)
 
@@ -181,7 +225,7 @@ Use the [Cloud-to-Cloud Integration for Claude Compliance](/docs/send-data/hoste
 ### Details for Universal Connector
 
 :::warning
-The Universal Connector collects activity logs only. It does not support chat message logs and does not account for Anthropic's ~1-minute Compliance API propagation delay, which may cause data to be missed at polling window boundaries. Use the [C2C source](#details-for-c2c-source-recommended) instead.
+The Universal Connector collects activity logs only. It does not support chat message logs or local session endpoint logs, and does not account for Anthropic's ~1-minute Compliance API propagation delay, which may cause data to be missed at polling window boundaries. Use the [C2C source](#details-for-c2c-source-recommended) instead.
 :::
 
 1. On the Data Collection page, click **Add Source** next to a Hosted Collector.
@@ -425,6 +469,45 @@ This dashboard is powered by Sumo Logic [Claude Compliance Source](/docs/send-da
 :::
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Chats.png')} alt="Claude Compliance - Chats dashboard" width="800" />
+
+### Tools
+
+The **Claude Compliance - Tools** dashboard provides visibility into tool usage within Claude local sessions, including invocation volume, failed tool executions, error rate, block-type distribution, and frequently used tools. It surfaces recent tool activity, tool response details, and user-level usage patterns to help teams audit how tools are being used during Claude interactions. **Use this dashboard to:**
+- Identify failing, risky, or unexpected tool behavior across local workflows.
+- Audit tool invocation volume and error rates.
+- Review recent tool activity and response details by user.
+
+:::note
+This dashboard is powered by Sumo Logic [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/).
+:::
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Tools.png')} alt="Claude Compliance - Tools dashboard" width="800" />
+
+### Messages
+
+The **Claude Compliance - Messages** dashboard provides message-level visibility into Claude local session activity across users, models, organizations, and product surfaces. It tracks message volume, role distribution, model usage trends, provenance states, truncated content, and content_unavailable events to support audit and investigation workflows. Search and drill-down panels help teams review message activity, investigate specific keywords, and identify unusual or risky usage patterns across local Claude interactions. **Use this dashboard to:**
+- Investigate message content and keywords across local sessions.
+- Track model usage trends and role distribution.
+- Identify unusual or risky usage patterns.
+
+:::note
+This dashboard is powered by Sumo Logic [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/).
+:::
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Messages.png')} alt="Claude Compliance - Messages dashboard" width="800" />
+
+### Sessions
+
+The **Claude Compliance - Sessions** dashboard provides a session-level view of Claude local session activity across users, workspaces, organizations, and product surfaces. It tracks active sessions, unique users, workspace distribution, average session span, and session creation trends to help teams understand where and how Claude is being used locally. Recent session details and activity breakdowns support governance, usage auditing, and investigation of anomalous session behavior. **Use this dashboard to:**
+- Understand where and how Claude is being used locally.
+- Audit session creation trends and workspace distribution.
+- Investigate anomalous session behavior.
+
+:::note
+This dashboard is powered by Sumo Logic [Claude Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/).
+:::
+
+<img src={useBaseUrl('img/integrations/saas-cloud/Claude-Compliance-Sessions.png')} alt="Claude Compliance - Sessions dashboard" width="800" />
 
 ## Create monitors for Claude Compliance app
 

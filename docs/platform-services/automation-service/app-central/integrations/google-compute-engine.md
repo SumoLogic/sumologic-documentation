@@ -106,4 +106,6 @@ For information about Google Compute Engine, see [Google Compute Engine document
 
 ## Change Log
 
-* June 8, 2026 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | June 8, 2026 | Initial release of the Google Compute Engine integration. |
