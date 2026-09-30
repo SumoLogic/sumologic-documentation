@@ -131,7 +131,8 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 **Rules:**
 - Minimum 3 questions per FAQ but aim for 5 to 8.
 - Cover distinct intents (scope, capabilities, limitations, editing, prerequisites), not variations of one question.
-- Phrase questions and answers in the second person (you/your), never the first person (I/me/my). Use "How do you X?", "Can you X?", or "How to X", never "How do I X?".
+- Phrase most questions in the second person (you/your). Use "How do you X?", "Can you X?", or "How to X" rather than "How do I X?".
+- Exception: personal or eligibility-type questions ("Can I opt out...", "Do I need...") may use first person. This mirrors how a reader actually forms the question in their head; forcing it into second person ("Can you opt out...") reads like the document interrogating the reader. Answers still respond in second person regardless of how the question is phrased.
 - Each answer must be fully self-contained. No "see above" or "refer to X".
 - Questions must match natural AI query language for the topic.
 - Answers must be concise with 1 to 3 sentences.

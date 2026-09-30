@@ -1,7 +1,6 @@
 ---
 title: ZIP Tools
 description: ''
-tags: [cloud soar integrations]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -38,7 +37,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <CloudSOARAPIURL/>
 * <AccessID/>
 * <AccessKey/>
-* **Password**. Enter the Zip file password. 
+* **Password**. Enter the Zip file password.
 
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>

@@ -7,6 +7,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="Altassian Opsgenie icon" width="90"/>
 
+:::note
+The Atlassian Opsgenie Automation Service integration will be deprecated and removed from Automation Service on April 5, 2027.
+:::
+
 ***Version: 1.6  
 Updated: March 23, 2026***
 

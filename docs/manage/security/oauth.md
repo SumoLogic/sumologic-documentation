@@ -28,6 +28,10 @@ Effective permissions are always the intersection of the OAuth client's configur
 * **Authorization Code flow**. Effective permissions are the intersection of the authenticated user's roles and the OAuth client's configured scopes. When specific scopes are requested during authorization, effective permissions are further limited to those requested scopes.
 * **Client Credentials flow**. Effective permissions are the intersection of the service account's roles, the OAuth client's configured scopes, and any scopes explicitly requested when obtaining a token.
 
+:::note
+A few scopes (`manageLibrary`, `runLogSearch`, `viewLibrary`, `runMetricsQuery`, and `viewUsersAndRoles`) grant permissions that every user has in the UI regardless of their role. These scopes are granted whenever they are configured on the OAuth client, regardless of user role. To restrict them, remove the scopes from the OAuth client's configured scopes. For CIMD clients, an administrator can edit the client's scopes. The [MCP server](/docs/api/mcp-server) hides the tools that require a removed scope for all users of that client.
+:::
+
 ## Client ID Metadata Documents (CIMD)
 
 [Client ID Metadata Documents (CIMD)](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) let a client identify itself to Sumo Logic using a hosted metadata URL as its client ID, without an administrator pre-registering an OAuth client. CIMD is the default, recommended authentication mechanism for [MCP server](/docs/api/mcp-server) clients such as the Claude Code CLI, which handle browser-based login and token refresh automatically.

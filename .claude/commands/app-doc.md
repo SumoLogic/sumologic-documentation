@@ -69,7 +69,7 @@ Read `docs/contributing/templates/app-template-v2.md` and use it as the exact st
 **Required substitutions and rules:**
 - **`id`**: lowercase, hyphenated slug (e.g., `acme`)
 - **`image`**: S3 icon URL (e.g., `https://app_icons.s3.amazonaws.com/acme.svg`) or placeholder if unavailable
-- **`tags`**: must include both `apps` and the vendor slug
+- **`keywords`**: must include both `apps` and the vendor slug
 - **`description`**: must start with `"The Sumo Logic app for {Vendor} analyzes..."`
 - **Intro paragraph**: must start with `"The Sumo Logic app for {Vendor Name}..."`
 - **Install section**: the template uses `<AppInstall2/>` — never replace this with manually written steps
@@ -182,7 +182,7 @@ Before finishing, verify:
 * [ ] `id` present (lowercase, hyphenated vendor slug).
 * [ ] `title` present, Title Case, under 60 characters.
 * [ ] `image` present (S3 URL or placeholder).
-* [ ] `tags` present and includes both `apps` and the vendor slug.
+* [ ] `keywords` present and includes both `apps` and the vendor slug.
 * [ ] `description` starts with `"The Sumo Logic app for {Vendor}..."`.
 
 **Content**
@@ -221,7 +221,7 @@ Claude:
 3. Generates frontmatter:
    - id: postgresql
    - title: PostgreSQL
-   - tags: [apps, postgresql]
+   - keywords: [apps, postgresql]
 4. Adds template structure with all sections
 5. Updates sidebars.ts: integrations.databases array
 6. Adds card to docs/integrations/databases/index.md
