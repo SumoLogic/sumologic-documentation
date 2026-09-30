@@ -7,32 +7,33 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="CrowdStrike Falcon icon" width="100"/>
 
-***Version: 1.21  
-Updated: March 31, 2026***
+***Version: 1.22  
+Updated: September 28, 2026***
 
-The CrowdStrike Falcon integration allows you to pull and update Alerts/Incidents, and search Incidents/Devices/Alerts.
+The CrowdStrike Falcon integration allows you to pull and update Alerts and Cases, and search Cases/Devices/Alerts.
 
 ## Actions
 
 * **Alerts CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Alerts.
-* **Close CrowdStrike Incident** *(Containment)* - Close the state of the CrowdStrike Incident.
+* **Cases Daemon** *(Daemon)* - Daemon to pull CrowdStrike Cases.
+* **Create Case** *(Containment)* - Create a new Case in CrowdStrike.
 * **Create Indicators** *(Containment)* - Create the Indicators.
 * **Device Actions** *(Containment)* - Take various actions on the hosts in your environment.
 * **Get Browser History** *(Enrichment)* - Get user Browser history.
+* **Get Case Details** *(Enrichment)* - Get details for a specific CrowdStrike Case.
 * **Get Endpoint** *(Enrichment)* - Get details on one or more hosts by providing agent IDs.
-* **Get Incident Info** *(Enrichment)* - Get details for a specific Crowdstrike Incident.
 * **Get Indicators** *(Containment)* - Get Indicators By IDs.
 * **Get User ID By Mail** *(Enrichment)* - Search for a specific User ID with a given email address.
 * **Get IDP Device Info** *(Enrichment)* - Retrieve detailed information about a devices from IDP. Requires IDP rights and relevant IDP-related API scopes.
-* **Incidents CrowdStrike Falcon Daemon** *(Daemon)* - Daemon to pull CrowdStrike Incidents.
+* **List Cases** *(Enrichment)* - List all Cases in CrowdStrike.
 * **List Endpoints** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP.
+* **On Demand Device Scan** *(Containment)* - Initiate a scan on device by providing the device ID. This action will only work for Windows hosts.
 * **Query Devices By Filter** *(Enrichment)* - Search for hosts in your environment by platform, hostname, IP, and other criteria.
 * **Retrieve Alert Details** *(Enrichment)* - Get details for a specific CrowdStrike Alert.
+* **Search Cases** *(Enrichment)* - Search for Cases by providing an FQL filter, sorting, and paging details.
 * **Search into Alerts** *(Enrichment)* - Retrieves all Alerts IDs that match a given query.
-* **Search into Incidents** *(Enrichment)* - Search for incidents by providing an FQL filter, sorting, and paging
-  details.
 * **Update Alerts** *(Containment)* - Perform actions on Alerts identified by composite ID(s) in request.
-* **On Demand Device Scan** *(Containment)* - Initiate a scan on device by providing the device ID. This action will only work for Windows hosts.
+* **Update Case** *(Containment)* - Update an existing Case in CrowdStrike.
 
 ## Category
 
@@ -69,6 +70,7 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v1.22 | September 28, 2026 | CrowdStrike deprecated the Incident module. Deprecated incident-related actions and added Case Management actions as replacements. <ul><li>Deprecated the **Close CrowdStrike Incident**, **Get Incident Info**, **Incidents CrowdStrike Falcon Daemon**, and **Search into Incidents** actions.</li><li>Added new actions: **Cases Daemon**, **Create Case**, **Get Case Details**, **List Cases**, **Search Cases**, and **Update Case**.</li></ul> |
 | v1.21 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.20 | Dec 05, 2025 | Added a new action: **On Demand Device Scan**. |
 | v1.19 | Nov 10, 2025 | Updated the query parameter for the **Get User ID By Mail** action. |
