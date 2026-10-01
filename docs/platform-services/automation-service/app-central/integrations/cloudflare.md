@@ -87,13 +87,15 @@ For information about Cloudflare, see [Cloudflare documentation](https://develop
 
 ## Change Log
 
-* May 5, 2022 - First upload
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
-* November 5, 2024 (v1.2) - Added Custom token auth in all actions
-* July 3. 2025 (v1.3) -  Updated the endpoint used in the resource test file to one that does not require any additional permissions on the token.
-* March 23, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* April 29, 2026 (v1.5) - Fixed urllib3 issue
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 29, 2026 | Fixed a urllib3 issue. |
+| v1.4 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 3, 2025 | Updated the endpoint used in the resource test file to one that does not require any additional permissions on the token. |
+| v1.2 | November 5, 2024 | Added custom token authentication support in all actions. |
+| v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| | May 5, 2022 | Initial release of the Cloudflare integration. |
 
 ## Additional resources
 
-- For Cloudflare, Sumo Logic offers the [Cloudflare app](/docs/integrations/saas-cloud/cloudflare/) to visualize your Cloudflare data.
+For Cloudflare, Sumo Logic offers the [Cloudflare app](/docs/integrations/saas-cloud/cloudflare/) to visualize your Cloudflare data.

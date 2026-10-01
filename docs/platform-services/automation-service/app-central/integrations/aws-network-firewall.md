@@ -55,5 +55,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 For information about AWS Network Firewall, see [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/).
 
 ## Change Log
- 
-* January 24, 2024 - First upload
+
+| Version | Date | Description |
+|:--|:--|:--|
+| | January 24, 2024 | Initial release of the AWS Network Firewall integration. |

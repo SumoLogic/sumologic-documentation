@@ -108,9 +108,11 @@ Ticketing System
 
 ## Change Log
 
-* March 20, 2025 - First upload
-* Sept 10, 2025 (v1.1) - Added daemon action
-* Oct 15, 2025 (v1.2) - Added support of br tag in required actions
-* Nov 6, 2025 (v1.3) - Changed API endpoint in the resource connection file to prevent admin-level privileges.
-* March 23, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
-* July 14, 2026 (v1.5) - Improved reliability across all actions with more stable connections and clearer error messages.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | July 14, 2026 | Improved reliability across all actions with more stable connections and clearer error messages. |
+| v1.4 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | Nov 6, 2025 | Changed the API endpoint in the resource connection file to prevent admin-level privileges. |
+| v1.2 | Oct 15, 2025 | Added support for the `br` tag in required actions. |
+| v1.1 | Sept 10, 2025 | Added a daemon action. |
+| | March 20, 2025 | Initial release of the Atlassian Jira Cloud integration. |

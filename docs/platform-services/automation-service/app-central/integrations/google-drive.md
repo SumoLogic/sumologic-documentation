@@ -65,5 +65,7 @@ For information about  Google Drive, see [Google Drive API documentation](https:
 
 ## Change Log
 
-* October 13, 2023 (v1.0) - First upload
-* March 05, 2025 (v1.1) - Updated List Permissions and Delete Permission actions.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | March 05, 2025 | Updated the **List Permissions** and **Delete Permission** actions. |
+| v1.0 | October 13, 2023 | Initial release of the Google Drive integration. |

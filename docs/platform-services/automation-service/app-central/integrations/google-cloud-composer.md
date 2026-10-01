@@ -120,4 +120,6 @@ For more information on Google Cloud Composer, see [Google Cloud Composer docume
 
 ## Change Log
 
-* June 16, 2026 (v1.2) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | June 16, 2026 | Initial release of the Google Cloud Composer integration. |

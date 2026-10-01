@@ -6,10 +6,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.3  
-Updated: Nov 03, 2025***
+***Version: 1.4.1  
+Updated: Sep 11, 2026***
 
-Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retention Policies.
+[AWS CloudWatch](https://docs.aws.amazon.com/cloudwatch/) provides a reliable, scalable, and flexible monitoring solution that you can start using within minutes. You no longer need to set up, manage, and scale your own monitoring systems and infrastructure.
 
 ## Actions
 
@@ -25,6 +25,9 @@ Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retent
 * **Delete Log Group** (*Containment*) - Deletes the specified log group and permanently deletes all the archived log events associated with the log group.
 * **Delete Log Stream** (*Containment*) - Deletes the specified log stream and permanently deletes all the archived log events associated with the log stream.
 * **Delete Metric Filter** (*Containment*) - Deletes the specified metric filter.
+* **Get Metric Data** (*Enrichment*) - Retrieves CloudWatch metric data for specified metrics within a time range.
+* **List Metrics** (*Enrichment*) - Lists the metrics for the specified namespace, metric name, and dimensions.
+* **Get Metric Statistics** (*Enrichment*) - Gets statistics for the specified metric for a specified time period.
 
 ## External Libraries
 
@@ -61,9 +64,10 @@ For information about AWS CloudWatch Logs, see [CloudWatch Logs documentation](h
 
 ## Change Log
 
-* October 16, 2019 - First upload
-* March 10, 2022 - Logo
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* November 03, 2025 (v1.3) - Updated timestamp parsing to support both legacy and ISO 8601 formats.
-    + Filter Log Events
-    + Put Log Events
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4.1 | September 11, 2026 | Added new metric actions: **Get Metric Data**, **List Metrics**, and **Get Metric Statistics**. |
+| v1.3.0 | November 03, 2025 | Updated timestamp parsing to support both legacy and ISO 8601 formats in the **Filter Log Events** and **Put Log Events** actions. |
+| v1.2.0 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.1.0 | March 10, 2022 | Updated the logo in AWS CloudWatchLogs integration. |
+| v1.0.0 | October 16, 2019 | Initial release of the AWS CloudWatchLogs integration. |
