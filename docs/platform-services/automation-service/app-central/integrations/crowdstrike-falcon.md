@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.22  
 Updated: October 01, 2026***
 
-The CrowdStrike Falcon integration allows you to pull and update Alerts and Cases, and search Cases/Devices/Alerts.
+The [CrowdStrike Falcon](https://www.crowdstrike.com/en-us/platform/) integration allows you to pull and update Alerts and Cases, and search Cases/Devices/Alerts.
 
 ## Actions
 
