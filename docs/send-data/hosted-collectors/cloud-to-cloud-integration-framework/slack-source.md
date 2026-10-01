@@ -9,6 +9,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Slack icon" width="60"/>
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
 This topic describes the Slack Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
 ## Data collected
@@ -30,8 +40,8 @@ The Slack Source uses the following Slack APIs to ingest web and audit events.
 
 The source collects the following API endpoints and routes.
 
-| API       | Req Scope        | Route                                                                        | Free      | Standard  | Plus      | Enterprise |
-|:-----------|:------------------|:------------------------------------------------------------------------------|:-----------|:-----------|:-----------|:------------|
+| API | Req Scope | Route | Free | Standard | Plus | Enterprise |
+|:--|:--|:--|:--|:--|:--|:--|
 | Web API   | admin            | [team.accessLogs](https://api.slack.com/methods/team.accessLogs)             | Collected | Collected | Collected | Collected  |
 | Web API   | team:read        | [team.info](https://api.slack.com/methods/team.info)                         | Collected | Collected | Collected | Collected  |
 | Web API   |                  | [team.billableInfo](https://api.slack.com/methods/team.billableInfo)         | Collected | Collected | Collected | Collected  |
@@ -74,8 +84,8 @@ instructions later for migrating it. <br/><img src={useBaseUrl('img/send-data/sl
 
 Use the table below to reference the required scope permissions you need to add depending on the Slack API you want to collect along with your Slack account type:
 
-| Slack API | Slack Account Type   | Required Scopes                                                                                 |
-|:----------|:----------------------|:-------------------------------------------------------------------------------------------------|
+| Slack API | Slack Account Type | Required Scopes |
+|:--|:--|:--|
 | Web API   | Free Plan            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Pro                  | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Web API   | Business+            | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
@@ -124,6 +134,7 @@ To configure a Slack Source:
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+1. (Optional) Enable **Slack GovSlack** if you are using Slack GovSlack.
 1. **API Auth Bearer Token**. Enter the Slack App access token from the previous steps.
 1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
 1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.
