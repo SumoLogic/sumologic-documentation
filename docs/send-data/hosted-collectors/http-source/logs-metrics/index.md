@@ -52,10 +52,31 @@ To configure an HTTP Logs and Metrics Source:
       * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
    * **Message Processing**. 
       * **JSON Unroll**. Select this option to split a JSON array in the incoming payload into individual log messages.
-      :::note
-      * This option is available only for HTTP log sources.
-      * HTTP POST payloads exceeding 1MB are not guaranteed to unroll correctly.
-      :::
+
+         <details>
+         <summary>Sample JSON array</summary>
+
+         ```json
+         {
+            "source": "app",
+            "version": 2,
+            "Records": [
+               {
+                  "id": 1,
+                  "msg": "hello"
+               },
+               {
+                  "id": 2,
+                  "msg": "world"
+               }
+            ]
+         }
+         ```
+         </details>
+         :::note
+         * This option is available only for HTTP log sources.
+         * HTTP POST payloads exceeding 1MB are not guaranteed to unroll correctly.
+         :::
          * **Default**. Uses the JSON path `$` to unroll an array at the root of the JSON payload.<br/><img src={useBaseUrl('img/send-data/default-JSON-unroll.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
          * **Custom Unrolling**. Select this option to specify the JSON path of the array you want to unroll.
             * **JSON Path**. Enter the [JSON path](https://github.com/json-path/jsonpath) of the array, such as `$.Records`. If you leave this field blank, `$` is used, which refers to the root of the JSON payload.
