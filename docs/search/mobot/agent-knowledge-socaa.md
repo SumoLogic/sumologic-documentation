@@ -28,7 +28,7 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 
 Agent Knowledge lets org administrators give Dojo AI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional Dojo AI agents planned for later phases.
 
-Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, that a Friday spike in authentication failures is your scheduled penetration test, or that your team escalates anything involving PII straight to the security lead. Knowledge closes that gap. Over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
+Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, or that a Friday spike in authentication failures is your scheduled penetration test. Knowledge closes that gap. Over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
 For the SOC Analyst Agent, knowledge applies in two places:
 
@@ -65,17 +65,6 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 | Post-mortem lesson | INC-2025-089: A rogue scheduled task named OneDriveUpdate bypassed triage because analysts assumed it was a native app. Inspect all newly registered tasks regardless of naming conventions. |
 | Forensic heuristic | TrueBot campaigns consistently use renamed 7z.exe binaries for exfiltration. Check file entropy and headers, not just the extension. |
 
-### Operational practices and workflows
-
-How your organization decides what to do, and the steps your team takes.
-
-| What to capture | Example knowledge entries |
-|:--|:--|
-| Escalation rule | PII incidents get escalated straight to the security lead. Skip the ticket queue. |
-| Investigation runbook | Impossible-travel alert: verify identity history in Okta, check the last five login ASN/ISP entries, then open a ticket if the provider changed within 10 minutes. |
-| Containment constraint | Playbook IR-SEC-3 requires manual legal counsel sign-off before isolating any domain controller in the APAC region to avoid cross-border business disruption. |
-| Triage SOP | To investigate unauthorized AWS IAM creation alerts, run the CloudTrail query for EventName CreateUser, correlate with the source IP, and verify against the Jira change queue. |
-| Standing priority rule | Any alert involving the payment gateway server Prod-DB-01 must not trigger automated containment or isolation without manual approval. It processes $50k/min. |
 
 ## How to add an agent knowledge source
 
@@ -106,19 +95,20 @@ From here, whenever your knowledge shapes a response, the agent surfaces which p
 The following apply during Private Preview:
 
 * **Audit logging for knowledge**. A comprehensive record of who added or changed a given fact, and when, is not yet available. It is planned for a later phase.
+* **Security guardrails**. Security guardrails on knowledge content are planned for upcoming phases.
 * **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other Dojo AI agents, such as the Root Cause Agent, is planned for a later phase. It is not available on standalone Mobot.
 * **Text only**. Knowledge sources accept plain text only. File uploads, URLs, and other source types are not supported in this release.
 
 Some limits are not tied to the preview phase:
 
 * **The agent does not act on response knowledge**. You can give the agent knowledge about your response practices, but it does not take or execute containment or remediation actions. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
-* **One knowledge base per organization**. Everyone on your team draws on the same shared knowledge. Per-team or per-tenant partitioning is not part of this release.
+* **One knowledge base per agent**. Everyone on your team draws on the same shared knowledge for a given agent. Per-team or per-tenant partitioning is not part of this release.
 
 ## FAQ
 
 ### What should I add first?
 
-Start with the facts that most often send an investigation the wrong way: which internal IP addresses and accounts are expected to behave unusually, your maintenance and deploy windows, and the alert patterns your team already knows the cause of. Then add the runbooks and escalation rules that define how your team responds.
+Start with the facts that most often send an investigation the wrong way: which internal IP addresses and accounts are expected to behave unusually, your maintenance and deploy windows, and the alert patterns your team already knows the cause of. Then add the runbooks that define how your team investigates.
 
 ### Can I test whether a knowledge entry is working?
 
