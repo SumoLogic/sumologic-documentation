@@ -60,11 +60,13 @@ Example: [https://yourServer.jamfcloud.com](https://yourServer.jamfcloud.com)
 
 ## Change Log
 
-* November 23, 2022 - First upload
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* June 28, 2023 (v1.3) - Updated **List Computers** Action
-* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | June 28, 2023 | Updated the **List Computers** action. |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| | November 23, 2022 | Initial release of the Jamf integration. |
 
 ## Additional resources
 
-- For Jamf, Sumo Logic offers the [Jamf source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source/) and the [Jamf app](/docs/integrations/saas-cloud/jamf/) to collect and visualize your Jamf data.
+For Jamf, Sumo Logic offers the [Jamf source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jamf-source/) and the [Jamf app](/docs/integrations/saas-cloud/jamf/) to collect and visualize your Jamf data.

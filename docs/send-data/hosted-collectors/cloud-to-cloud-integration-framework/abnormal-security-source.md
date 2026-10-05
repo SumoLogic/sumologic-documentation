@@ -2,7 +2,7 @@
 id: abnormal-security-source
 title: Abnormal Security Source
 sidebar_label: Abnormal Security
-tags:
+keywords:
   - cloud-to-cloud
   - abnormal-security
 description: Learn how to collect abnormal threat and case logs from the Abnormal Security source.

@@ -2,7 +2,7 @@
 id: intel471-threat-intel-source
 title: Intel 471 Threat Intel Source
 sidebar_label: Intel 471 Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - intel471-threat-intel
 description: This integration collects threat indicators using the Intel 471 API and sends them to Sumo Logic for analysis.
