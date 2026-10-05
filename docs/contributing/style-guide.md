@@ -832,6 +832,7 @@ description: Description about this feature.
 keywords:
     - metrics
     - traces
+    - cloud siem
 ---
 ```
 
@@ -842,7 +843,7 @@ keywords:
 | `title:` | **(Required)** For SEO purposes, include main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
 | `sidebar_label:` | (Optional) Label for the sidebar navigation. Keep it title short. It does not affect the canonical link or page title. |
 | `description:` | (Optional) 1-2 sentences describing the content in the doc. It appears in search engine results. Keep it 140–160 characters. Use plain text only: no Markdown or backtick formatting. If omitted, search engines will pull the first couple of sentences from the page. See [Metadata descriptions](#metadata-descriptions). |
-| `keywords:` | (Optional) List of keywords to enhance SEO. |
+| `keywords:` | (Optional) List of keywords to enhance SEO. Use lowercase letters. |
 | `tags:` | **Deprecated. Do not use.** The Docusaurus tag taxonomy was removed sitewide; it generated pages with no reader or search benefit. Use `keywords:` for search terms instead. |
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
