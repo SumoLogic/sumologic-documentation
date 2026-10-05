@@ -19,11 +19,15 @@ description: This page describes the complete list of changes in Kubernetes Coll
 
 ## Metrics Pipeline Unification (enabled by default)
 
-- `singleLayerPipeline.enabled` defaults to `true` in v6 (was `false` in v5)
-- New flag `singleLayerPipeline.migrationDocAcknowledged` — must be set to `true` to confirm you have read the migration guide; upgrade is blocked until this is set
-- `sumologic-metadata-metrics` StatefulSet and its Service are removed
-- Metrics scraping and metadata enrichment are merged into a single OTel collector pipeline
-- Collector resource sizing: `cpu = scraper_cpu + enrichment_cpu`, `memory = max(scraper_memory, enrichment_memory) * 1.5`
-- Configuration key changes: `fluentd.metrics.*` → `singleLayerPipeline.fluentd.*`; `otelcol.metrics.statefulset.*` → `singleLayerPipeline.otelcol.*`; `otelcol.metrics.autoscaling.*` → `singleLayerPipeline.autoscaling.*`; `otelcol.metrics.scraper.*` remains at `otelcol.metrics.*` (unchanged)
-- Internal pipeline renamed from `metrics/metadata` to `metrics/default`; update any custom OTel config that references the pipeline by name
-- Prometheus remote write URLs targeting the metadata StatefulSet Service must be updated to point to the new single-layer collector Service
+- `sumologic.metrics.collector.otelcol.singleLayerPipeline.enabled` defaults to `true` in v6 (was `false` in v5)
+- New flag `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` — must be set to `true` to confirm you have read the migration guide; upgrade is blocked until this is set. See [How to Upgrade](./how-to-upgrade.md#metrics-pipeline-unification) for detailed migration steps.
+- `sumologic-metadata-metrics` StatefulSet, HPA, Services, and PDB are removed
+- Metrics scraping and metadata enrichment are merged into a single OTel collector pod using two logical pipelines connected by a `forward` connector
+- Collector resource sizing: `memory = collector memory limit + metadata memory limit` (apply 1.5x safety multiplier), `cpu = collector CPU limit + (total metadata CPU usage / number of collector replicas)`. With single-layer metrics pipeline, the default metrics collector resources are increased to CPU `768m` and memory `768Mi`. If your environment requires more resources, you can reconfigure them using `sumologic.metrics.collector.otelcol.resources`.
+- Configuration keys under `metadata.metrics.statefulset.*` and `metadata.metrics.autoscaling.*` must be migrated to their `sumologic.metrics.collector.otelcol.*` equivalents (see [How to Upgrade](./how-to-upgrade.md#customer-action-required) for the full mapping table)
+- `metadata.metrics.config.override` is incompatible with single-layer pipeline; use `metadata.metrics.config.merge` instead
+- Collector pipeline renamed from `metrics` to `metrics/collector`; the enrichment pipeline keeps the name `metrics`. Update any `sumologic.metrics.collector.otelcol.config.merge` that targets the scraping pipeline to use `metrics/collector`
+- `metadata.metrics.config.merge` targeting `service.pipelines.metrics` continues to work unchanged
+- Prometheus remote write URL hostname changes from `<release>-sumologic-metadata-metrics` to `<release>-sumologic-metrics-collector` (same port 9888, same path)
+- PVCs from the previous pipeline mode are not automatically deleted when switching between modes and must be manually cleaned up
+- To disable single-layer and restore the 2-layer pipeline, set `singleLayerPipeline.enabled: false` and run `helm upgrade`

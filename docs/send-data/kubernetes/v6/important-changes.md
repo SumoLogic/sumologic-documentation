@@ -103,28 +103,26 @@ In the 2-layer pipeline:
 - **Layer 2 (Metadata)** enriches metrics with Kubernetes metadata (k8sattributes, source, sumologic processors), applies routing, batching,
   and exports to Sumo Logic.
 
-In the single-layer pipeline, the collector handles all of this in a single metrics collector layer itself.
+In the single-layer pipeline, the collector handles all of this in a single pod using two logical pipelines connected by a `forward` connector. The metadata StatefulSet, HPA, Services, and PDB are no longer rendered.
 
-### What Is Removed
+:::note
+If you are not using any additional `metadata.metrics.*` configuration overrides, you can set `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged: true` in your values file and proceed with the installation.
+:::
 
-- The `sumologic-metadata-metrics` StatefulSet and its associated Service.
-- The two-hop metrics forwarding path (scraper → metadata StatefulSet → Sumo Logic).
+### Benefits
+
+- Fewer pods (metadata replicas eliminated), reducing resource consumption.
+- Lower end-to-end latency (no internal OTLP hop).
+- Simpler configuration (single pipeline to reason about).
 
 ### What Changes
 
-**Resource sizing**: With a single collector handling both scraping and enrichment, resources are recalculated as:
-- CPU: `scraper_cpu + enrichment_cpu`
-- Memory: `max(scraper_memory, enrichment_memory) * 1.5`
+When `sumologic.metrics.collector.otelcol.singleLayerPipeline.enabled` is set to `true`:
 
-**Configuration key changes**: Some keys have moved from the v5 two-layer structure:
+1. The **metadata metrics StatefulSet, HPA, Services, and PDB are not rendered**.
+2. The **collector config** includes all enrichment processors (`k8sattributes`, `source`, `sumologic`, etc.) and Sumo Logic exporters.
+3. **`SUMO_ENDPOINT_*`** env vars are injected into the collector pod.
+4. Both `sumologic.metrics.collector.otelcol.config.merge` and `metadata.metrics.config.merge` are applied to the collector config, preserving existing customizations.
+5. The **collector pipeline is renamed** from `metrics` to `metrics/collector`. The enrichment pipeline keeps the name `metrics` (matching the 2-layer metadata pipeline name).
 
-| v5 Key | v6 Key |
-|--------|--------|
-| `fluentd.metrics.enabled` | `singleLayerPipeline.fluentd.enabled` |
-| `otelcol.metrics.statefulset.*` | `singleLayerPipeline.otelcol.*` |
-| `otelcol.metrics.autoscaling.*` | `singleLayerPipeline.autoscaling.*` |
-| `otelcol.metrics.scraper.*` | `otelcol.metrics.*` (unchanged) |
-
-**Pipeline rename**: The internal pipeline name changes from `metrics/metadata` to `metrics/default`. This affects any custom OTel configuration that references the pipeline by name.
-
-**Prometheus remote write**: If you have external systems (e.g., kube-prometheus-stack) configured to remote-write metrics to the metadata StatefulSet Service URL, update those URLs to point to the new single-layer collector Service.
+For detailed migration steps including resource sizing, configuration key migration, pipeline rename examples, and rollback instructions, see [How to Upgrade](./how-to-upgrade.md#metrics-pipeline-unification-1).
