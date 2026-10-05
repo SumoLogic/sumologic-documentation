@@ -23,7 +23,7 @@ This search returns the number of requests observed per HTTP status code.
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | count by status_code
@@ -36,7 +36,7 @@ Returns the number of errors caused by web clients over the past seven days. Thi
 
 * Suggested Time Range: -7d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | where status_code matches "4*"
@@ -50,7 +50,7 @@ Returns the number of client errors, server errors, redirects and successful res
 
 * Suggested Time Range: -7d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | if(status_code matches "2*", 1, 0) as successes
@@ -66,7 +66,7 @@ Returns the top 100 URLS that refer to a resource that does not exist on the web
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 (_sourceName=*access_log* AND _sourceCategory=*apache*) AND "404"
 | parse using public/apache/access
 | where status_code="404"
@@ -80,7 +80,7 @@ Returns the top source IP addresses that are responsible for client errors on th
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | where status_code matches "4*"
@@ -98,7 +98,7 @@ Returns the number of bytes served and the number of hits to the website each da
 
 * Suggested Time Range: -7d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | where size != "-"
@@ -113,7 +113,7 @@ This search returns the top 100 IP addresses that cause the most hits to the web
 
 * Suggested Time Range: -1d up to -7d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | count_frequent src_ip
@@ -125,7 +125,7 @@ This search returns the top 100 browsers that are accessing the website.
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | count_frequent user_agent
@@ -138,7 +138,7 @@ This search returns a list of all robots that are accessing the website, assumin
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 (_sourceName=*access_log* AND _sourceCategory=*apache*) AND "/robots.txt"
 | parse using public/apache/access
 | count_frequent user_agent
@@ -156,7 +156,7 @@ This is assuming that the **%T/%D** logging directive is added to the access l
 
 * Suggested Time Range: -30m
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | extract " (?<seconds>\d+)/(?<microseconds>\d+)$"
@@ -171,7 +171,7 @@ Get information on incoming client request URLs which are sent for malicious rea
 
 * Suggested Time Range: -2h
 
-```sql
+```sumo
 (_sourceName=*access_log* AND _sourceCategory=*apache*) AND ("jsessionid" OR "old" OR "bak")
 | parse using public/apache/access
 | where url matches "*.old" OR url matches "*.bak" OR url matches "*jsessionid=*"
@@ -181,7 +181,7 @@ Get information on incoming client request URLs which are sent for malicious rea
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
 | where size != "-"

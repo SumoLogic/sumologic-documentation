@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="cortex-xdr" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="Cortex XDR icon" width="100"/>
 
-***Version: 1.4  
-Updated: Mar 4, 2024***
+***Version: 1.6  
+Updated: April 29, 2026***
 
 Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
@@ -35,13 +35,40 @@ Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
 XDR
 
+## Configure Cortex XDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Cortex XDR API URL**. Enter your Cortex XDR API URL, for example, `https://api-test-dev.xdr.us.paloaltonetworks.com/public_api/v1/`
+
+* **API Key**. Enter your [Cortex API key](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-Started-with-Cortex-XDR-APIs).
+
+* **API Key ID**. Enter key ID associated with the API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cortex/cortex-configuration.png')} style={{border:'1px solid gray'}} alt="Cortex XDR configuration" width="400"/>
+
+For information about Cortex XDR, see [Cortex XDR documentation](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-Started-with-Cortex-XDR-APIs).
+
 ## Change Log
 
-* July 20, 2021 - First upload
-* July 19, 2022 - Incidents Cortex XDR Daemon action added
-* January 27, 2023 - Integration refactored
-* January 30, 2023 - Updated Daemon
-    + Incidents Cortex XDR Daemon: refactored
-    + Alerts Cortex XDR Daemon: refactored
-* July 11, 2023 (v1.3) - Removed leading/trailing spaces
-* March 4, 2024 (v1.4) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | October 15, 2024 | Fixed the timeout error. |
+| v1.4 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.3 | July 11, 2023 | Removed leading and trailing spaces. |
+| | January 30, 2023 | <ul><li>Refactored the **Incidents Cortex XDR Daemon** action.</li><li>Refactored the **Alerts Cortex XDR Daemon** action.</li></ul> |
+| | January 27, 2023 | Refactored the integration. |
+| | July 19, 2022 | Added the **Incidents Cortex XDR Daemon** action. |
+| | July 20, 2021 | Initial release of the Cortex XDR integration. |

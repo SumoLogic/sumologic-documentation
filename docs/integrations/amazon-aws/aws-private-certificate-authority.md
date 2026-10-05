@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS Private Certificate 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-private-certificate-authority-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-private-certificate-authority-logo.png')} alt="AWS Private Certificate Authority icon" width="50"/>
 
 AWS Private CA enables the creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA. Your private CAs can issue end-entity X.509 certificates useful in scenarios including:
 * Creating encrypted TLS communication channels
@@ -34,3 +34,7 @@ You can collect the logs and metrics for Sumo Logic's AWS Private Certificate Au
 ### Configure logs collection
 
 * Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCtIntro.html) using the [AWS CloudTrail](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. AWS Private CA is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service. CloudTrail is enabled by default on your AWS account. You can use AWS CloudTrail to record API calls that are made by AWS Private Certificate Authority. If you configure a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS Private CA. 
+
+## Additional resources
+
+- Use the [AWS Private Certificate Authority Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/aws-private-certificate-authority/) to automate response actions directly from Cloud SOAR playbooks.

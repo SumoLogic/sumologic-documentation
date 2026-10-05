@@ -7,7 +7,7 @@ description: Metrics Data Ingestion allows you to view metrics ingest volumes ac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can view your metrics data ingestion volume on the **Metrics Data Ingestion** page. This page provides a granular breakdown of your metrics ingestion and credits used. You can track consumption by individual metric names, or by specific dimensions and sources. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary action. 
+You can view your metrics data ingestion volume on the **Metrics Data Ingestion** page. This page provides a granular breakdown of your metrics ingestion. You can track consumption by individual metric names, or by specific dimensions and sources. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary action. 
 
 Understanding the volume of metrics that you are ingesting is important because when you exceed the credit limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
 
@@ -22,7 +22,9 @@ While you can also see metrics ingestion breakdown in the [**Metrics** dashboard
  
 ## View Metrics Data Ingestion
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Metrics Data Ingestion page, in the main Sumo Logic menu select **Administration > Account > Metrics Data Ingestion**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Metrics Data Ingestion page, in the Sumo Logic top menu select **Administration**, and then under **Account** select **Metrics Data Ingestion**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Data Ingestion**. Kanso-->
+[**New UI**](/docs/get-started/sumo-logic-ui). To access the Metrics Data Ingestion page, in the Sumo Logic main menu select **Administration**, and then under **Account** select **Metrics Data Ingestion**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Data Ingestion**. 
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Metrics Data Ingestion page, in the main Sumo Logic menu select **Administration > Account > Metrics Data Ingestion**. <br/>
 
  <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics Data Ingestion screen" style={{border: '1px solid gray'}} width="800" />
 
@@ -47,7 +49,7 @@ You can obtain the same information displayed on the Metrics Data Ingestion scre
 
 Following is an example query that lists the metric names that account for metrics data ingested arranged in descending order based on their DPM contribution. 
 
-```
+```sql
 (_index=sumologic_volume _sourceCategory=byMetricDataPoints) 
 | parse "intervalStart: *\n" as interval 
 | parse regex "\n(?<singleRecord>.*)" multi 
@@ -58,7 +60,7 @@ Following is an example query that lists the metric names that account for metri
 | fields -totalDp
 ```
 Following is an example query that computes the average DPM ingestion for a given time period.
-```
+```sql
 (_index=sumologic_volume _sourceCategory=byMetricDataPoints)
 | parse "intervalStart: *\n" as interval
 | parse regex "\n(?<singleRecord>.*)" multi

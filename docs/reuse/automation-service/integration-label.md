@@ -1,0 +1,1 @@
+**Label**. Enter the name you want to use for the resource.

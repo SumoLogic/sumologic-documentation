@@ -7,7 +7,7 @@ description: The Sumo Logic app for Payment Card Industry (PCI) Compliance for W
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows JSON application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
@@ -28,7 +28,7 @@ Success","Channel":"Security","Opcode":"Info","Security":"","Provider":{"Guid":"
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=OS/Windows/Events ( "Audit Policy Change" or "System audit policy was changed" or *policy*change* or "Policy Change" or 4902 or 4904 or 4905 or 4906 or 4907 or 4912 or 4715 or 4719 or 4739)
 | json "EventID", "Computer", "Message" as event_id, host, msg_summary nodrop
 | parse regex field = msg_summary "(?<msg_summary>.*\.*)"
@@ -123,7 +123,7 @@ Track your Windows Update activities.
 * **Windows Update Summary by Host.** Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
 * **Windows Update Summary.** Aggregation table of the latest Windows updates for the last 7 days and a count of their successes and failures
 
-## Upgrading the PCI Compliance for Windows JSON app (Optional)
+## Upgrade/Downgrade the PCI Compliance for Windows JSON app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

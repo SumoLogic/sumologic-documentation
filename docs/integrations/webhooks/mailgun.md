@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Mailgun integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/mailgun-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/mailgun-logo.png')} alt="Mailgun icon" width="50"/>
 
 
 The Mailgun app for Sumo Logic enables you to seamlessly monitor email system performance and user interactions through two comprehensive dashboards. The provided dashboard empowers you to analyze and optimize email delivery by monitoring event trends, identifying errors, understanding client behaviour, and tracking event geolocation data, ensuring efficient email management and an enhanced user experience. Meanwhile, the dashboard also offers a holistic view of email delivery, allowing you to track issues, complaint patterns, and geographic trends in events and complaints, facilitating effective email management and optimization.
@@ -67,7 +67,7 @@ The Sumo Logic integration for Mailgun ingests email events into Sumo Logic thro
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/mailgun"
 | json "event-data.id", "event-data.event", "event-data.log-level" as id, event, loglevel nodrop
 | where event matches "{{event}}" and loglevel matches "{{logLevel}}"
@@ -100,7 +100,7 @@ Follow the below steps to configure the Mailgun webhook.
     - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 5. Click **Create Webhook**.
 6. Verify Mailgun events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/mailgun`
 ```
 
@@ -133,7 +133,7 @@ The **Mailgun - Failed, Complained Events** dashboard offers a holistic view of 
 
 <img src={useBaseUrl('img/integrations/webhooks/mailgun_failedComplainedEvents.png')} style={{border: '1px solid black'}} alt="Mailgun - Failed, Complained Events"/>
 
-## Upgrading the iLeMailgunrt app (Optional)
+## Upgrade/Downgrade the iLeMailgunrt app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

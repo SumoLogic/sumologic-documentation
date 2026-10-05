@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
 
 The PCI Compliance for Linux - OpenTelemetry is a unified log app that sends Linux log data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards help you to monitor system, account, and user activity to ensure that login activity and privileged users are within the expected ranges.
 
@@ -92,6 +92,10 @@ The following logs, located in the `/var/log` folder, are required for using the
 - yum.log
 
 Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
@@ -220,3 +224,17 @@ Use this dashboard to:
 - Monitor actions performed by users with administrative privileges.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid gray'}}/>
+
+## Create monitors for PCI Compliance for Linux app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### PCI Compliance for Linux alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `PCI Linux - Excessive Failed Authentication` | This alert is triggered when multiple failed login attempts are detected over a 5-minute period, indicating potential brute force attempts and addressing PCI Requirement `10.2.4` for invalid logical access attempts. | Count > 5 | Count < = 5 |
+| `PCI Linux - Privileged User Account Changes` | This alert is triggered when privileged user accounts (UID < 1000 or root accounts) are created, deleted, or modified, addressing PCI Requirement `10.2.5` for changes to identification and authentication mechanisms. | Count > 0 | Count < = 0 |
+| `PCI Linux - Unauthorized Sudo Elevation` | This alert is triggered when unauthorized users attempt to use sudo is detected, which addresses PCI Requirement `7.2.0` for implementing an access control system among system components with multiple users. | Count > 2 | Count < = 2 |

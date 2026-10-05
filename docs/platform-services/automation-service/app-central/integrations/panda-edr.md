@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/panda-edr.png')} alt="panda-edr" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/panda-edr.png')} alt="Panda EDR icon" width="100"/>
 
-***Version: 1.3  
-Updated: Nov 24, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 Remotely monitor and manage devices that run these Panda Aether platform endpoint security products:
 
@@ -30,20 +30,41 @@ Remotely monitor and manage devices that run these Panda Aether platform endpoin
 
 EDR
 
+## Configure Panda EDR in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter the [API URL](https://www.watchguard.com/help/docs/api/Content/en-US/api_get_started/make_requests.html) for WatchGuard, for example, `https://api.usa.cloud.watchguard.com`
+
+* **Access ID**. Enter a WatchGuard [access ID](https://www.watchguard.com/help/docs/api/Content/en-US/api_get_started/authentication.html).
+
+* **Password**. Enter the password for the access ID.
+
+* **WatchGuard API Key**. Enter the [API key associated with your WatchGuard Cloud account](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/WG-Cloud/mngd-access_enable-API-access.html) (shown on the [Managed Access](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/WG-Cloud/mngd-access.html) page in WatchGuard Cloud).
+
+* **Account ID**. Enter your WatchGuard Cloud account ID, as shown on the [My Account page](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/WG-Cloud/sub_acct-mgmt-page.html) in WatchGuard Cloud. For example, `WGC-1-123abc456` or `ACC-1234567`.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/panda-edr-configuration.png')} style={{border:'1px solid gray'}} alt="Panda EDR configuration" width="400"/>
+
+For information about Panda EDR, see [Panda EDR documentation](https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/services/edr_core/edr_core_about_c.html).
+
 ## Change Log
 
-* March 1, 2022 - First upload
-* July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
-* November 23, 2023 (v1.2)
-	+ Fixed bugs that prevented these actions from working properly
-		- Stop Device Isolation
-		- Start Action On Specified Device
-		- Scan Device
-		- Isolate Specific Devices
-	+ Extended output mappings
-	+ Refined labels and hints
-	+ Improved error handling
-	+ Code refactoring and optimisation
-	+ Changed Logo
-* November 24, 2023 (v1.3)
-	+ Fixed Token Issue
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | November 24, 2023 | Fixed a token issue. |
+| v1.2 | November 23, 2023 | <ul><li>Fixed bugs that prevented the following actions from working properly: **Stop Device Isolation**, **Start Action On Specified Device**, **Scan Device**, and **Isolate Specific Devices**.</li><li>Extended output mappings.</li><li>Refined labels and hints.</li><li>Improved error handling.</li><li>Refactored and optimized the code.</li><li>Updated the logo.</li></ul> |
+| v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
+| | March 1, 2022 | Initial release of the Panda EDR integration. |

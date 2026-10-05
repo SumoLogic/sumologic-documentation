@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="60"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Mariadb icon" width="60"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [MariaDB](https://mariadb.org/about/) app is a logs based app that helps you monitor MariaDB database. Pre-configured dashboards provide insight into the health of your database clusters, replication, error logs, slow queries and failed logins.
 
@@ -92,6 +92,10 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 In this step, you will configure the yaml required for MariaDB Collection. Path of the log file configured to capture MariaDB logs is needed to be given here.
 
 The files are typically located in `/var/log/mariadb/`. If you're using a customized path, check the respective conf file (default location: `/etc/my.cnf`) for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -178,7 +182,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following query is from the "Errors" panel of the overview dashboard in Mariadb app: 
 
-```sql
+```sumo
  %"sumo.datasource"=mariadb %"deployment.environment"=* %"db.cluster.name"=* "[ERROR]"
 | json "log" nodrop
 | if (isEmpty(log), _raw, log) as mariadb_log_message
@@ -248,3 +252,19 @@ Use this dashboard to:
 - Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Slow-Queries.png' alt="Slow Queries" />
+
+## Create monitors for MariaDB app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### MariaDB alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `MariaDB - Critical Errors` | This alert is triggered when there are critical database errors. | Count `>` 10 | Count `<=` 10 |
+| `MariaDB - Excessive Slow Query Detected` | This alert is triggered when the average time to execute a query is more than 15 seconds for a 5 minute time interval. | Count `>=` 1 | Count `<` 1 |
+| `MariaDB - Failed Login Attempts` | This alert is triggered when there are excessive failed login attempts in a short period. | Count `>=` 1 | Count `<` 1 |
+| `MariaDB - Instance down` | This alert is triggered when the MariaDB instance is down. | Count `>=` 1 | Count `<` 1 |
+| `MariaDB - Replication Failure` | This alert is triggered when there are replication failures. | Count `>=` 1 | Count `<` 1 |

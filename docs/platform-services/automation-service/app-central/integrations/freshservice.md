@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/freshservice.png')} alt="freshservice" width="80"/>
 
-***Version: 1.6  
-Updated: Sept 11, 2024***
+***Version: 1.9  
+Updated: April 29, 2026***
 
 Freshservice is a cloud-based IT Help Desk and service management solution that enables organizations to simplify their IT operations. The solution offers features that include a ticketing system, self-service portal, and knowledge-base.
 
@@ -33,29 +33,48 @@ Freshservice is a cloud-based IT Help Desk and service management solution that 
 ## Freshservice configuration
 
 1. Login to your Freshservice Support Portal.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-1.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
-1. Go to Profile settings Page. Your API key will be available below the change password section to your right. Copy the API KEY.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-2.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
+1. Go to Profile settings Page. [Your API key](https://support.freshservice.com/support/solutions/articles/50000000306-where-do-i-find-my-api-key-) will be available below the change password section to your right. Copy the API KEY.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-2.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
 
-## Freshservice in Automation Service and Cloud SOAR
+## Configure Freshservice in Automation Service and Cloud SOAR
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-5.png')} style={{border:'1px solid gray'}} alt="freshservice" width="200"/> 
-1. Populate all the required fields (\*) then click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-6.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
-1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-7.png')} style={{border:'1px solid gray'}} alt="freshservice" width="200"/> 
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-9.png')} style={{border:'1px solid gray'}} alt="freshservice" width="400"/> 
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Freshservice API URL, for example, `https://your-domain.freshservice.com`
+
+* **API Key**. Enter the Freshservice [API key](https://support.freshservice.com/support/solutions/articles/50000000306-where-do-i-find-my-api-key-) you [copied earlier](#freshservice-configuration).
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/freshservice-configuration.png')} style={{border:'1px solid gray'}} alt="Freshservice configuration" width="400"/> 
+
+For information about Freshservice, see [Freshservice documentation](https://support.freshservice.com/support/solutions#agentguidepage).
 
 ## Category
 
 Ticketing System
 
+:::note
+Providing an invalid or unauthorized Workspace ID may result in a 400 Bad Request error. Verify that the Workspace ID is correct and accessible to the API user.
+:::
+
 ## Change Log
 
-* April 4, 2022 - First upload
-* June 24, 2022 - Daemon action added
-* June 29, 2022
-	+ Added new action: Freshservice Tickets Daemon
-	+ Updated action: Get Tickets
-* March 22, 2023 (v1.4)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables)
-* July 11, 2023 (v1.5) - Removed leading/trailing spaces
-* Sept 11, 2024(v1.6) - Updated the Update Ticket action
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.9 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.8 | Dec 30, 2025 | The **Create Ticket** and **Update Ticket** actions now support an optional Workspace ID. Updated existing custom ticket fields. |
+| v1.6 | Sept 11, 2024 | Updated the **Update Ticket** action. |
+| v1.5 | July 11, 2023 | Removed leading/trailing spaces. |
+| v1.4 | March 22, 2023 | Updated the integration fields with Environmental Variables. |
+| | June 29, 2022 | <ul><li>Added a new action: **Freshservice Tickets Daemon**.</li><li>Updated the **Get Tickets** action.</li></ul> |
+| | June 24, 2022 | Added a daemon action. |
+| | April 4, 2022 | First upload. |

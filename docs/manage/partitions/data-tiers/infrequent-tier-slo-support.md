@@ -10,6 +10,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
+
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<!-- Originally added as a preview article with SUMO-215965. -->
+
 Previously, SLOs were only supported in Sumo Logic's Continuous data tier. This support enabled you to configure SLOs on Infrequent Tier logs to increase the monitoring coverage for reliability management.
 
 ## Sample queries
@@ -17,15 +25,15 @@ Previously, SLOs were only supported in Sumo Logic's Continuous data tier. This 
 While defining SLOs for the Infrequent Tier logs, you can use the following sample queries.
 
 * Use `_dataTier=Infrequent` in your query scope to only search for data in the Infrequent Tier. For example:
-  ```sql
+  ```sumo
   _dataTier=Infrequent _sourceCategory=APIService | parse "Status: *" as status_code | where status_code >= 500
   ```
 * Or, use `_index` parameter to specify the Partition that contains the data you want to access. For example:
-  ```sql
+  ```sumo
   _index=some_infrequent_index
   ```
   Or, you can also search across multiple indices by using the `OR` operator. For example:
-  ```sql
+  ```sumo
   _index=some_infrequent_index OR _index=some_continuous_index
   ```
 
@@ -33,7 +41,7 @@ While defining SLOs for the Infrequent Tier logs, you can use the following samp
 
 Sumo Logic provides a dashboard to monitor the Infrequent Tier consumption by SLOs.
 
-<img src={useBaseUrl('img/partitions-data-tiers/infrequent-support-slo.png')} alt="dashboard" />
+<img src={useBaseUrl('img/manage/partitions-data-tiers/infrequent-support-slo.png')} alt="dashboard" />
 
 The dashboard presents the following information for the currently selected time range:
 * **Avg Credits Consumed/Day**. The daily average number of credits consumed over the last 30 days.

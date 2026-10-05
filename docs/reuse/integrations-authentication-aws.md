@@ -1,0 +1,1 @@
+For configuration information specific to AWS integrations, see the [AWS integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/#aws-integrations) section. 

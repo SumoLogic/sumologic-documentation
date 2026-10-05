@@ -2,6 +2,7 @@
 id: timeshift
 title: timeshift Metrics Operator
 sidebar_label: timeshift
+description: Use the timeshift metrics operator to shift time series from your query by a specified period of time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -32,4 +33,4 @@ Query #B returns the `CPU_Idle` metric for the 15 minute period that ended two h
 #B _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle | timeshift 2h
 ```
 
-<img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" />
+<img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" style={{border: '1px solid gray'}} width="800" />

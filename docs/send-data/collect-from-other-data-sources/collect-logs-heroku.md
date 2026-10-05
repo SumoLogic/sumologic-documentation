@@ -49,11 +49,11 @@ You can determine the drain identifier by running the heroku drains command for
 
 Then, define an FER in Sumo.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**.  
 1. **Rule Name**. Enter a name for the FER.
 1. **Scope**. Specify the _sourceCategory defined for the source to which you will be forwarding Heroku application logs. For example, if the _sourceCategory is "heroku", enter:
 
-    ```sql
+    ```sumo
     _sourceCategory=heroku
     ```
 
@@ -65,7 +65,7 @@ Then, define an FER in Sumo.
 
     The FER below changes the value of _sourceName for two applications. The first line changes _sourceName  from `d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a` to `CustApp`. The second line changes _sourceName from `d.00870f28-53f9-4680-b2ab-2287ec9d8637` to `VendorApp`:
 
-    ```sql
+    ```sumo
     if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName
     | if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName
     ```

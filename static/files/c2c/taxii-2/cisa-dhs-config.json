@@ -1,0 +1,14 @@
+{
+  "name": "My CISA DHS TAXII 2.1 Source",
+  "authType": "None",
+  "ti_version": "2.1",
+  "ti_root_source": "2",
+  "ti_root_urls": [
+    {
+      "ti_root_url": "https://ais2.cisa.dhs.gov/public/"
+    }
+  ],
+  "ti_user_source_id": "cisa-dhs-public-indicators",
+  "enable_limit": false,
+  "polling_interval": "1h"
+}

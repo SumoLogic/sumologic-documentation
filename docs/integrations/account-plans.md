@@ -19,7 +19,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>Enterprise Suite   </td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></td>
+   <td>[Global Intelligence for AWS CloudTrail SecOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops)</td>
    <td>  &#10003; </td>
    <td>   </td>
    <td>  </td>
@@ -27,7 +27,7 @@ Use this page to determine which apps are available based on your account plan.
    <td> &#10003;</td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-guardduty">Global Intelligence for Amazon GuardDuty</a></td>
+   <td>[Global Intelligence for Amazon GuardDuty](/docs/integrations/amazon-aws/global-intelligence-guardduty)</td>
    <td>&#10003;</td>
    <td> </td>
    <td>   </td>
@@ -35,15 +35,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003; </td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></td>
-   <td>&#10003;</td>
-   <td>    </td>
-   <td>&#10003;</td>
-   <td> </td>
-   <td>&#10003;</td>
-  </tr>
-  <tr>
-   <td><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit Apps</a></td>
+   <td>[Enterprise Audit Apps](/docs/integrations/sumo-apps/enterprise-audit)</td>
    <td> &#10003;</td>
    <td> </td>
    <td>&#10003; </td>
@@ -51,7 +43,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003;</td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/pci-compliance">PCI Compliance App</a></td>
+   <td>[PCI Compliance App](/docs/integrations/pci-compliance)</td>
    <td>&#10003;</td>
    <td>  </td>
    <td>&#10003;</td>
@@ -59,7 +51,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003;</td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/sumo-apps/infrequent-data-tier">Infrequent Data Tier</a></td>
+   <td>[Infrequent Data Tier](/docs/integrations/sumo-apps/infrequent-data-tier)</td>
    <td> </td>
    <td> </td>
    <td> </td>
@@ -88,25 +80,25 @@ Use this page to determine which apps are available based on your account plan.
    <td>Enterprise </td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></td>
+   <td>[Global Intelligence for AWS CloudTrail SecOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops)</td>
    <td> &#10003;</td>
    <td>  </td>
    <td> &#10003;</td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-guardduty">Global Intelligence for Amazon GuardDuty</a></td>
+   <td>[Global Intelligence for Amazon GuardDuty](/docs/integrations/amazon-aws/global-intelligence-guardduty)</td>
    <td>  &#10003;</td>
    <td>    </td>
    <td>  &#10003;</td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></td>
-   <td>  &#10003;</td>
-   <td>  </td>
-   <td> &#10003;</td>
+   <td>[Global Intelligence for AWS CloudTrail DevOps](/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops)</td>
+   <td>&#10003;</td>
+   <td>    </td>
+   <td>&#10003;</td>
   </tr>
   <tr>
-   <td><a href="/docs/integrations/sumo-apps/enterprise-audit">Enterprise Audit Apps</a>  </td>
+   <td>[Enterprise Audit Apps](/docs/integrations/sumo-apps/enterprise-audit)</td>
    <td>  &#10003;</td>
    <td>   </td>
    <td>  &#10003;</td>

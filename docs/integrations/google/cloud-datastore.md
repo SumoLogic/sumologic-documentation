@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudDatastore.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudDatastore.png')} alt="Google Cloud Datastore icon" width="50"/>
 
 Datastore is a highly scalable NoSQL database for your web and mobile applications. For more details, refer to the [GCP documentation](https://cloud.google.com/datastore/docs)
 

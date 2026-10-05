@@ -31,19 +31,16 @@ Query CylanceProtect, enrich data and contain threats through devices, zones, po
 * **Delete from Global List** (*Containment*) - Delete the specified hash from a global list.
 * **Update Device Threat** (*Containment*) - Update a device threat with the specified information.
 
-## CylanceProtect Configuration
+## CylanceProtect configuration
 
 To retrieve the API Credentials, refer to the following [guide](https://docs.blackberry.com/en/unified-endpoint-security/blackberry-ues/Cylance-API-user-guide/Application_Management/To_Add_an_Application).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cylanceprotect/cylanceprotect-1.png')} style={{border:'1px solid gray'}} alt="cylanceprotect" width="800"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cylanceprotect/cylanceprotect-2.png')} style={{border:'1px solid gray'}} alt="cylanceprotect" width="800"/>
 
-API URL:
+### API URL
 
 The Auth API will be accessed via the following base endpoint:
-
-North America: *https://protectapi.cylance.com/*
-
-US Government: *https://protectapi.us.cylance.com/*
-
-All Other Regions: *https://protectapi-{region-code}.cylance.com/*
+* North America: `https://protectapi.cylance.com/`
+* US Government: `https://protectapi.us.cylance.com/`
+* All Other Regions: `https://protectapi-{region-code}.cylance.com/`
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cylanceprotect/cylanceprotect-3.png')} style={{border:'1px solid gray'}} alt="cylanceprotect" width="800"/>
 
@@ -51,21 +48,38 @@ All Other Regions: *https://protectapi-{region-code}.cylance.com/*
 
 * [Cylance Protect](https://github.com/jpadilla/pyjwt/blob/master/LICENSE)
 
+## Configure CylanceProtect in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your [CylanceProtect API URL](#api-url), for example, `https://protectapi.cylance.com`
+
+* **Tenant ID**. Enter the CylanceProtect tenant ID you [copied earlier](#cylanceprotect-configuration).
+
+* **Application ID**. Enter your CylanceProtect application ID that you [copied earlier](#cylanceprotect-configuration).
+
+* **Application Secret**. Enter the secret for the application ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cylanceprotect/cylance-protect-configuration.png')} style={{border:'1px solid gray'}} alt="Cylance Protect configuration" width="400"/>
+
+For information about Aurora Endpoint Security (formerly CylanceProtect), see [Aurora Endpoint Security documentation](https://docs.arcticwolf.com/category/aurora_endpoint_security).
+
 ## Change Log
 
-* February 6, 2019 - First upload
-* September 6, 2019 - Added link to Cylance Protect external library
-* November 3, 2023 (v1.2)
-    + Updated the integration with Environmental Variables
-    + Improved error handling
-    + Removed leading/trailing spaces
-    + Code Refactored
-    + The following actions has been renamed
-        - Get Device Threats *to* List Device Threats
-        - Get Devices *to* List Devices
-        - Get Policies *to* List Policies
-        - Get Threat Devices *to* List Threat Devices
-        - Get Threats *to* List Threats
-        - Get Zone Devices *to* Get Device Zone
-        - Get Zones *to* List Zones
-* March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.2 | November 3, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Improved error handling.</li><li>Removed leading and trailing spaces.</li><li>Refactored the code.</li><li>Renamed several actions: **Get Device Threats** to **List Device Threats**, **Get Devices** to **List Devices**, **Get Policies** to **List Policies**, **Get Threat Devices** to **List Threat Devices**, **Get Threats** to **List Threats**, **Get Zone Devices** to **Get Device Zone**, and **Get Zones** to **List Zones**.</li></ul> |
+| | September 6, 2019 | Added a link to the Cylance Protect external library. |
+| | February 6, 2019 | Initial release of the CylanceProtect integration. |

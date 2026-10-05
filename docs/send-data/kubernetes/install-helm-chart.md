@@ -26,7 +26,7 @@ helm repo update
 
 ### Sumo Logic account
 
-If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up).
+If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up/).
 
 The following are required to set up and deploy the Sumo Logic Kubernetes collection.
 
@@ -225,7 +225,7 @@ and the associated hosted collector can be deleted in the Sumo Logic UI.
 
 ## Troubleshooting Installation
 
-See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection#troubleshooting-installation).
+See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection/installation).
 
 ## Installing in OpenShift platform
 

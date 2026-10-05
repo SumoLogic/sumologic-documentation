@@ -1,10 +1,11 @@
-resource "sumologic_cloud_to_cloud_source" "crowdstrike-filevantage_source" {
+resource "sumologic_cloud_to_cloud_source" "snowflake_metrics_source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
     type = "Snowflake SQL API"
   }
   config = jsonencode({
       "name": "Snowflake C2C",
+      "authType": "basic",
       "username": "sumosnowflake",
       "password": "*************",
       "accountIdentifier": "wp71650.us-east-2.aws",

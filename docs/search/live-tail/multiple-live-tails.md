@@ -4,14 +4,15 @@ title: Multiple Live Tails
 description: You can run two Live Tail sessions at a time per browser tab.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic Live Tail supports running two Live Tail sessions at a time per tab. You can start a second Live Tail session from the Live Tail page, or from the Search page.
 
 ## Split the Screen with a second Live Tail session
 
-1. From the **Live Tail** page, click the menu button consisting of three vertical dots and select **Split Screen**. <br/>  ![three-dots icon.png](/img/search/livetail/three-dots-icon.png)
+1. From the **Live Tail** page, click the menu button consisting of three vertical dots and select **Split Screen**. <br/><img src={useBaseUrl('img/search/livetail/three-dots-icon.png')} alt="Three-dots icon" style={{border: '1px solid gray'}} width="200" />
 1. A second pane opens on the **Live Tail** page.
-1. Enter a query and click **Run**. You can compare the two Live Tails side-by-side. <br/>  ![livetail compare](/img/search/livetail/livetail-compare.png)
+1. Enter a query and click **Run**. You can compare the two Live Tails side-by-side. <br/><img src={useBaseUrl('img/search/livetail/livetail-compare.png')} alt="Live Tail compare" style={{border: '1px solid gray'}} width="800" />
 
 ## Start up to four Live Tail sessions
 

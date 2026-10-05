@@ -1,0 +1,1 @@
+**Access Key**. Enter the access key corresponding to your Sumo Logic access ID.

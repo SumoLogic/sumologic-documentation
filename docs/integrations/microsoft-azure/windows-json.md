@@ -6,12 +6,12 @@ description: The Windows JSON app provides insight into your Windows system's op
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="75"/>
 
 The Windows JSON app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON app is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
 :::note
-You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/windows.md).
+You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/windows.md).
 :::
 
 ## Log types
@@ -68,7 +68,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit policy was changed" or *policy*change* or "Policy Change" or 4902 or 4904 or 4905 or 4906 or 4907 or 4912 or 4715 or 4719 or 4739)
 | json "EventID", "Computer", "Message" as event_id, host, msg_summary nodrop
 | parse regex field = msg_summary "(?<msg_summary>.*\.*)"
@@ -160,7 +160,24 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Application.png')} alt="Windows JSON dashboards" />
 
-## Upgrading the Windows JSON app (Optional)
+## Create monitors for the Windows JSON app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows JSON alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows 2012+ (Classic) - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 5 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count &lt;= 0 |
+| `Windows 2012+ (Classic) - User Account Locked Out` | This alert is triggered when a user account is locked out. This may indicate a brute-force attack has triggered the account lockout policy, or a misconfigured service is repeatedly attempting authentication with stale credentials. | Count > 0 | Count &lt;= 0 |
+| `Windows 2012+ (Classic) - User Added to Administrative Group` | This alert is triggered when a user is added to a privileged administrative group such as Administrators, Domain Admins, Schema Admins, Server Operators, Account Operators, or Backup Operators. This may indicate privilege escalation or unauthorized access. | Count > 0 | Count &lt;= 0 |
+| `Windows 2012+ (Classic) - Audit Log Cleared` | This alert is triggered when the Windows Security audit log is cleared. This is a high-severity indicator as attackers often clear audit logs to cover their tracks after compromising a system. | Count > 0 | Count &lt;= 0 |
+| `Windows 2012+ (Classic) - Firewall Rule Modified` | This alert is triggered when a Windows Firewall rule is added, modified, or deleted. Unauthorized firewall changes may indicate an attacker attempting to open access to the system or exfiltrate data. | Count > 0 | Count &lt;= 0 |
+| `Windows 2012+ (Classic) - User Account Deleted` | This alert is triggered when a user account is deleted. This could indicate unauthorized administrative activity or an insider threat attempting to disrupt operations. | Count > 0 | Count &lt;= 0 |
+
+## Upgrade/Downgrade the Windows JSON app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

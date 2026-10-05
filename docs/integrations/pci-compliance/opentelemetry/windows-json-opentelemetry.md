@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
 
 The PCI Compliance for Windows JSON - OpenTelemetry is a log app that sends Windows log data to Sumo Logic via OpenTelemetry [windows event log receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver#readme). The app's preconfigured dashboards help you to monitor system, account, and user activity to ensure that login activity and privileged users are within the expected ranges.
 
@@ -67,6 +67,10 @@ In this step, you will configure the yaml file required for Windows event logs c
 Any custom fields can be tagged along with the data in this step.
 
 Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -264,3 +268,19 @@ Track user activities such as password changes, password resets, excessive faile
 Track your Windows Update activities.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/Windows-PCI-Req-06-Windows-Updates-Activity.png' alt="Windows - PCI Req 06 - Windows Updates Activity" />
+
+## Create monitors for PCI Compliance For Windows JSON app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### PCI Compliance For Windows JSON alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows PCI - Critical Policy Changes` | This alert is triggered when modifications to security policies or audit policies are detected, indicating potential changes to the system's security posture. It supports PCI DSS Requirements `10.2.2` (track changes to system-level objects) and `10.2.5.b` (track use of identification and authentication mechanisms). | Count >= 1 | Count < 1 |
+| `Windows PCI - Excessive Failed Login Attempts` | This alert is triggered when there are multiple authentication failures detected across Windows environments. These are monitored across different authentication mechanisms like local Windows authentication, Kerberos, and network logons. It correlates failure patterns with specific error codes to identify potential security threats such as password guessing, account enumeration, or attempts to access disabled accounts. This helps security teams differentiate between benign issues and malicious activities. | Count >= 5 | Count < 5 |
+| `Windows PCI - Failed Windows Updates` | This alert is triggered when Windows update failures are detected, which could leave systems vulnerable to known exploits. It aligns with PCI DSS Requirement `6.2.0` for installing critical security patches within one month of release. | Count > = 3 | Count < 3 |
+| `Windows PCI - Security Audit Log Tampering` | This alert is triggered when attempt is detected to clear or tamper with Windows security audit logs, indicating potential attempts to hide malicious activities. It supports PCI DSS Requirements `10.2.0` (implement automated audit trails) and `10.3.0` (record audit trail entries). | Count > = 1 | Count < 1 |
+| `Windows PCI - User Account State Change` | This alert is triggered when critical user account state changes are detected, including account creation, deletion, enablement, and disablement. This supports PCI DSS Requirement 8.1.3 for immediately revoking access for terminated users. | Count > = 1 | Count < 1 |

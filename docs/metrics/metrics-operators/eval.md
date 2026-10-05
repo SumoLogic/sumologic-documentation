@@ -2,6 +2,7 @@
 id: eval
 title: eval Metrics Operator
 sidebar_label: eval
+description: Use the eval metrics operator to evaluate time series based on user-specified arithmetic or mathematical functions.
 ---
 
 

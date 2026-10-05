@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Netlify integ
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Netlify icon" width="50"/>
 
 The Sumo Logic app for Netlify offers a comprehensive solution for managing and optimizing web development and deployment processes. It provides insights into high-level web deployment metrics and essential data such as sites, branches, and repositories. Additionally, the app offers deeper insights into deployment operations, helping identify bottlenecks, resolve issues, and analyze performance metrics. It also focuses on version control and development productivity, offering key metrics to assess development activities, deployment status, and environmental transitions. This integration enables users to make data-driven decisions, optimize web development strategies, and maintain efficient and productive web projects.
 
@@ -116,7 +116,7 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/netlify" "name"
 | json "id", "state", "name", "created_at", "updated_at", "user_id", "build_id", "error_message", "branch", "locked", "title", "commit_message", "context", "deploy_time", "manual_deploy", "public_repo", "committer", "published_at" as id, state, name, createdAt, updatedAt, userId, buildId, errorMessage, branch, locked, title, commitMessage, context, deployTime, manualDeploy, publicRepo, committer, publishedAt nodrop
 | where name matches "{{siteName}}" and branch matches "{{branch}}" and context matches "{{context}}" and state matches "{{state}}" and manualDeploy matches "{{manualDeploy}}" and publicRepo matches "{{publicRepo}}"
@@ -151,7 +151,7 @@ Follow the below steps to configure the Netlify webhook.
     - **URL to notify**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 7. Click **Save**.
 8. Verify Netlify events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/netlify`
 ```
 
@@ -176,7 +176,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Netlify - Overview** dashboard offers a comprehensive snapshot of your web deployment ecosystem, providing a detailed insight into critical metrics. With panels tracking Targeted Sites, Branches, and Public Repos, you can effectively manage your web projects. Monitor Total Deployment Triggers, deployment status, errors, deletions, and analyze branch-specific data through Branches by Site. Gain valuable insights into Notifications Generated and their distribution by states, while also delving into deployment specifics by context, process, and repository type. This dashboard keeps you informed with real-time updates on Recent Notifications, empowering you to proactively manage and optimize your web development and hosting operations.
 
-<img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} style={{border: '1px solid black'}} alt="Netlify-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/Netlify_Overview.png')} style={{border: '1px solid black'}} alt="Netlify Overview"/>
 
 ### Build and Deploy Details
 
@@ -190,7 +190,7 @@ The **Netlify - Commit Details** dashboard offers a comprehensive insight into y
 
 <img src={useBaseUrl('img/integrations/webhooks/Netlify_CommitDetails.png')} style={{border: '1px solid black'}} alt="Netlify - Commit Details"/>
 
-## Upgrading the Netlify app (Optional)
+## Upgrade/Downgrade the Netlify app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

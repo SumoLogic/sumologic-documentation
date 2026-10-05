@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-deep-security.png')} alt="trend-micro-deep-security" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-deep-security.png')} alt="Trend Micro Deep Security icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jun 22, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Utilize Trend Micro Deep Security to interact with IP lists, firewall and intrusion rules, and gather enrichment data during incident investigations.
 
@@ -31,10 +31,41 @@ Utilize Trend Micro Deep Security to interact with IP lists, firewall and intrus
 * **Search Systems By Hostname** (*Enrichment*) - Search systems by hostname.
 * **Search Systems By IP** (*Enrichment*) - Search systems by IP Address.
 
+## Configure Trend Micro Deep Security in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your [Trend Micro  Deep Security API URL](https://automation.deepsecurity.trendmicro.com/article/12_0/use-the-previous-rest-api/#basic-api-access).
+
+* **API Key**. Enter your Trend Micro Deep Security [API key](https://docs.trendmicro.com/en-us/documentation/article/deep-security-20-lts-api-key).
+
+* **API Version**. Enter your Trend Micro Deep Security [API version](https://automation.deepsecurity.trendmicro.com/article/20_0/first-steps-for-deep-security-developers/#api-versions).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/trend-micro-deep-security-configuration.png')} style={{border:'1px solid gray'}} alt="Trend Micro Deep Security configuration" width="400"/>
+
+For information about Trend Micro Deep Security, see [Trend Micro Deep Security documentation](https://docs.trendmicro.com/en-us/documentation/deep-security/).
+
 ## Change Log
 
-* March 6, 2020 - First upload
-* October 27, 2022 - Action **Search Systems By Hostname** added.
-* February 17, 2023 (v1.1)
-	+ New Action: Search Systems By IP
-* June 22, 2023 (v1.1) - Removed unnecessary empty lines
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | June 22, 2023 | Removed unnecessary empty lines. |
+| v1.1 | February 17, 2023 | Added a new action: **Search Systems By IP**. |
+| | October 27, 2022 | Added a new action: **Search Systems By Hostname**. |
+| | March 6, 2020 | Initial release of the Trend Micro Deep Security integration. |
+
+## Additional resources
+
+For Trend Micro Deep Security, Sumo Logic offers the [Trend Micro Deep Security app](/docs/integrations/security-threat-detection/trend-micro-deep-security/) to visualize your Trend Micro Deep Security data.

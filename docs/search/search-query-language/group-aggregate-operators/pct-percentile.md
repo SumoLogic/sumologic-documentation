@@ -18,13 +18,9 @@ The input to the operator is a percentile. For example:
 
 ## Syntax
 
-```sql
-...| pct(<field> [, percentile]) [as <field>] [by <field>]
-```
+`...| pct(<field> [, percentile]) [as <field>] [by <field>]`
 
-```sql
-...| pct(<field> [, percentile, percentile, percentile]) [by <field>]
-```
+`...| pct(<field> [, percentile, percentile, percentile]) [by <field>]`
 
 ## Rules
 
@@ -35,11 +31,22 @@ The input to the operator is a percentile. For example:
 
 ## Examples
 
-```sql
-| parse "filesize=*" as filesize
+### Compute 75th and 95th percentile file sizes by host
+
+```sumo
+| parse "filesize=*:" as filesize
 | pct(filesize, 75, 95) by _sourceHost
 ```
 
 Running this query creates the fields `_filesize_pct_75` and `_filesize_pct_95`, corresponding to the 75th and 95th percentile file sizes for each source host.
 
-To find the 99.9th percentile in a query, use, for example, `pct(millis, 99.9)`.
+### Compute a decimal percentile for response times
+
+Use a decimal percentile argument to target a very high percentile, such as the 99.9th:
+
+```sumo
+_sourceCategory=Apache/Access
+| parse "response_time=*ms" as response_time
+| num(response_time)
+| pct(response_time, 99.9) as p999_response_ms
+```

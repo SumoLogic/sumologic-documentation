@@ -4,7 +4,7 @@ title: Search Highlighting
 description: When you perform a search, and results are returned, your search terms are highlighted in the Messages tab.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When you perform a search, and results are returned, your search terms are highlighted in the **Messages** tab.
 
@@ -16,7 +16,7 @@ For example, using this query:
 
 returns the following results in the **Messages** tab:
 
-![search highlighting feb 2022.png](/img/search/get-started-search/search-page/search-highlighting.png)
+<img src={useBaseUrl('img/search/get-started-search/search-page/search-highlighting.png')} alt="Search highlighting" style={{border: '1px solid gray'}} width="800" />
 
 Note that the search terms **Error** and **Exception** are highlighted in yellow.
 

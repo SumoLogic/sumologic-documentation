@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/pagerduty.png')} alt="pagerduty" width="100"/>
 
-***Version: 1.6  
-Updated: Aug 24, 2023***
+***Version: 1.7  
+Updated: April 30, 2026***
 
 Utilize PagerDuty to notify responders during the incident response process.
 
@@ -28,11 +28,36 @@ Utilize PagerDuty to notify responders during the incident response process.
 * **Update Incident** (*Notification*) - Update an incident with the specified parameters.
 * **Delete User** (*Notification*) - Delete user.
 
+## Configure PagerDuty in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your PagerDuty [API](https://developer.pagerduty.com/docs/rest-api-overview) URL, for example, `api.pagerduty.com`
+
+* **Token**. Enter https://developer.pagerduty.com/docs/user-oauth-token-via-code-granthttps://developer.pagerduty.com/docs/oauth-functionality).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/pagerduty-configuration.png')} style={{border:'1px solid gray'}} alt="PagerDuty configuration" width="400"/>
+
+For information about PagerDuty, see [PagerDuty documentation](https://developer.pagerduty.com/docs/introduction).
+
 ## Change Log
 
-* January 22, 2019 - First upload
-* January 13, 2023 - Integration refactored
-* February 16, 2023 - Type of actions changed
-* March 3, 2023 (v1.3)
-	+ Updated integration Fields Label
-* August 23, 2023 (v1.6) - Changed Delete User action type to Notification
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.7 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.6 | August 23, 2023 | Changed the **Delete User** action type to Notification. |
+| v1.3 | March 3, 2023 | Updated the integration field labels. |
+| | February 16, 2023 | Changed the type of actions. |
+| | January 13, 2023 | Refactored the integration. |
+| | January 22, 2019 | Initial release of the PagerDuty integration. |

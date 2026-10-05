@@ -2,6 +2,7 @@
 id: fillmissing
 title: fillmissing Metrics Operator
 sidebar_label: fillmissing
+description: Use the fillmissing metrics operator to fill empty time slices in query results with derived data points, preventing straight-line interpolation in visualizations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -35,7 +36,7 @@ _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready
 The chart in this section shows metric query results with the `fillmissing` operator with the `empty` option. Note that empty time slices are not filled with a derived data point. 
 
 ```sql
-_sourcecategory=labs/aws/host/metrics metric=CPU_Idle 
+_sourceCategory=labs/aws/host/metrics metric=CPU_Idle 
 | avg by _sourcename 
 | fillmissing empty
 ```

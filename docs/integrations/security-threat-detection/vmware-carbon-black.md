@@ -7,7 +7,7 @@ description: The VMware Carbon Black App provides comprehensive visibility into 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="Carbon Black Cloud icon" width="75"/>
 
 Sumo Logic provides a complete security analytics solution by allowing you to correlate, validate and investigate VMware Carbon Black endpoint alerts with alerts from other security vendors and security threat feeds to identify and remediate the root causes of new security threats.
 
@@ -125,7 +125,7 @@ Utilize the S3 bucket created in the previous steps while configuring the Event 
 
 In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findings. Search by the source category you assigned to the HTTP Source that receives the log data, for example:
 
-```sql
+```sumo
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
@@ -281,7 +281,7 @@ This section provides a sample query from the **Top Processes** panel of the **C
 #### Query String
 
 
-```
+```sumo
 _sourceCategory="Labs/cb-edr-json" | parse regex "(?:process_name)(?:\"\:\"|=')
 (?<process_name>.*?)(?:\"|')" multi | parse regex "ioc_type(?:\"\:\"|=')(?<ioc_type>.*?)(?:\"|')
 " nodrop | parse regex "feed_name(?:\"\:\"|=')(?<feed_name>.*?)(?:\"|')" nodrop | parse regex

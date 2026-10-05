@@ -35,7 +35,7 @@ We offer an [add-on for Heroku](https://elements.heroku.com/addons/sumologic) th
 
 #### Log queries
 
-```sql title="Successful App Build Trend"
+```sumo title="Successful App Build Trend"
 _sourceCategory="Heroku" "Build Succeeded"
 | where _sourceName matches "{{log_drain}}"
 | _sourceName as log_drain
@@ -46,7 +46,7 @@ _sourceCategory="Heroku" "Build Succeeded"
 
 #### Metric log queries
 
-```sql title="Memory Utilization (MB)"
+```sumo title="Memory Utilization (MB)"
 _sourceCategory="Heroku"
 | parse regex "dyno=(?<dyno>.*?(?= )).*memory_total=(?<memory_total>.*?(?=MB )).*memory_rss=(?<memory_rss>.*?(?=MB )).*memory_cache=(?<memory_cache>.*?(?=MB )).*memory_swap=(?<memory_swap>.*?(?=MB ))"
 | where dyno matches "{{dyno}}" and _sourceName matches "{{log_drain}}"
@@ -190,18 +190,18 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
    d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
    ```
 2. Define an FER in Sumo Logic.
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. <br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. 
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
         * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
         * **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
 
-        ```sql
+        ```sumo
         if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName
         ```
 
         The FER below changes the value of `_sourceName` for two applications. The first line changes `_sourceName` from “d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a” to “CustApp”. The second line changes `_sourceName` from “d.00870f28-53f9-4680-b2ab-2287ec9d8637” to “VendorApp”:
-        ```sql
+        ```sumo
         if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName
         | if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName
         ```
@@ -361,7 +361,32 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 - **App Errors by Component**. Shows the distribution of application errors for different Heroku components.
 - **App Error Trend by Component**. Shows the count of application errors for different Heroku components over a period of time.
 
-## Upgrading the Heroku app (Optional)
+## Create monitors for Heroku app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Heroku monitors
+
+| Name | Description | Trigger Type | Alert Condition |
+|:--|:--|:--|:--|
+| `Heroku - App Boot Timeout (H20)` | H20 fires when a web dyno fails to bind its assigned port within 60 seconds of startup. The app is completely unreachable during this window. Common causes include long-running startup tasks, migrations, or misconfigured PORT bindings. A single occurrence is enough to alert, since no requests are being served. | Critical | Count > 0 |
+| `Heroku - App Crashed (H10)` | Detects when a dyno process exits unexpectedly. Any crash means all in-flight requests to that dyno return 503 errors. | Critical | Count > 0 |
+| `Heroku - Dyno Restarting Repeatedly` | Detects when a web dyno repeatedly transitions from up to starting, indicating a crash-looping process. A single restart during a deploy is normal; repeated restarts outside of deploy windows indicate an unstable process dropping all active connections on each cycle. | Warning | Count >= 3 |
+| `Heroku - Dyno Restarting Repeatedly` | Detects when a web dyno repeatedly transitions from up to starting, indicating a crash-looping process. A single restart during a deploy is normal; repeated restarts outside of deploy windows indicate an unstable process dropping all active connections on each cycle. | Critical | Count >= 5 |
+| `Heroku - High HTTP 5xx Error Rate` | Detects HTTP 5xx errors returned by the application (distinct from Heroku platform H-errors). A rising 5xx rate indicates unhandled exceptions, broken deployments, or backend dependency failures. | Warning | Count >= 5 |
+| `Heroku - High HTTP 5xx Error Rate` | Detects HTTP 5xx errors returned by the application (distinct from Heroku platform H-errors). A rising 5xx rate indicates unhandled exceptions, broken deployments, or backend dependency failures. | Critical | Count >= 10 |
+| `Heroku - High Memory Usage (Approaching R14 Quota)` | Fires when a dyno's memory usage crosses 90% of its quota. Exceeding the quota triggers an R14 error, causing the dyno to swap heavily and producing severe latency degradation before an eventual crash. Non-zero swap memory in the output is a strong secondary signal. | Warning | Count >= 3 |
+| `Heroku - High Memory Usage (Approaching R14 Quota)` | Fires when a dyno's memory usage crosses 90% of its quota. Exceeding the quota triggers an R14 error, causing the dyno to swap heavily and producing severe latency degradation before an eventual crash. Non-zero swap memory in the output is a strong secondary signal. | Critical | Count >= 5 |
+| `Heroku - High Request Latency` | Detects requests taking over 5 seconds, a leading indicator of degraded user experience and a risk of hitting the 30-second H12 cutoff. Common causes include slow database queries, external API calls without timeouts, and GC pauses. | Warning | Count >= 3 |
+| `Heroku - High Request Latency` | Detects requests taking over 5 seconds, a leading indicator of degraded user experience and a risk of hitting the 30-second H12 cutoff. Common causes include slow database queries, external API calls without timeouts, and GC pauses. | Critical | Count >= 10 |
+| `Heroku - Request Timeout (H12)` | The Heroku router enforces a hard 30-second response deadline and logs H12 when a dyno fails to respond in time. Sustained H12 spikes indicate blocking I/O, unoptimized database calls, or under-provisioned dynos for current traffic. | Warning | Count >= 3 |
+| `Heroku - Request Timeout (H12)` | The Heroku router enforces a hard 30-second response deadline and logs H12 when a dyno fails to respond in time. Sustained H12 spikes indicate blocking I/O, unoptimized database calls, or under-provisioned dynos for current traffic. | Critical | Count >= 5 |
+| `Heroku - Router Connection Errors (H13 or H15 or H18)` | Detects H13 (connection closed without response), H15 (idle connection timeout beyond the router's patience), and H18 (server interrupted an in-progress response) errors. These codes often appear in the minutes before a full dyno crash and serve as early warning indicators. | Warning | Count >= 3 |
+| `Heroku - Router Connection Errors (H13 or H15 or H18)` | Detects H13 (connection closed without response), H15 (idle connection timeout beyond the router's patience), and H18 (server interrupted an in-progress response) errors. These codes often appear in the minutes before a full dyno crash and serve as early warning indicators. | Critical | Count >= 5 |
+
+## Upgrade/Downgrade the Heroku app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

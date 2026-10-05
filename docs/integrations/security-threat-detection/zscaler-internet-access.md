@@ -2,12 +2,12 @@
 id: zscaler-internet-access
 title: Zscaler Internet Access
 sidebar_label: Zscaler Internet Access
-description: Learn about the Sumo Logic app for Zscaler Internet Access (ZIA).
+description: Monitor Zscaler Internet Access (ZIA) with the Sumo Logic app using Cloud NSS logs to visualize threats, DNS, web traffic, and user browsing activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="Zscaler icon" width="75"/>
 
 The Sumo Logic app for Zscaler Internet Access (ZIA) collects logs via Cloud Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards in order to visualize and provide insight into threats, DNS, web traffic behaviors, security, user browsing activities, and risk.
 
@@ -70,7 +70,7 @@ The Sumo Logic app for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, and 
 
 ## Sample queries
 
-```sql title="Top 10 Blocked Base URLs"
+```sumo title="Top 10 Blocked Base URLs"
 _sourceCategory=ZIA
 | json field=_raw "event.clientpublicIP", "event.user", "event.url", "event.action" as src_ip, src_user, url, action
 | where action != "Allowed"
@@ -103,7 +103,7 @@ Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to
 To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the following steps:
 
 1. Log into your ZIA system.
-1. Go to **Administration** > **Nanolog Streaming Service** > **Cloud NSS Feeds**.
+1. Go to **Administration > Nanolog Streaming Service > Cloud NSS Feeds**.
    :::note enable Cloud NSS
    Cloud NSS is disabled by default in ZIA. If you do not see Cloud NSS Feeds option in your ZIA environment, create a support request with Zscaler support.
    :::
@@ -247,7 +247,26 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Threats.png')} alt="zscaler internet access Dashboard" />
 
-## Upgrading the Zscaler Internet Access app (Optional)
+## Create monitors for Zscaler Internet Access app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ZIA alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `ZIA - High Blocked Traffic` | This alert is triggered when a high number of web traffic requests are blocked by ZIA, indicating widespread policy violations or a potential attack. | Count > 10 | Count < = 10 |
+| `ZIA - Advanced Security Risk Threats Detected` | This alert is triggered when transactions are blocked due to advanced security risk threats, indicating active malicious URLs or content targeting users. | Count > 0 | Count < = 0 |
+| `ZIA - Malware Threats Detected` | This alert is triggered when malware or other threat categories are detected in ZIA web traffic, excluding benign sandbox results. | Count > 0 | Count < = 0 |
+| `ZIA - High Sandbox Threat Submissions` | This alert is triggered when a high number of files or URLs are submitted to the Zscaler sandbox for analysis, indicating a surge in suspicious content encountered by users. | Count > 5 | Count < = 5 |
+| `ZIA - File Classification Threats Detected` | This alert is triggered when file-based threats are detected through Zscaler's file classification scanning, indicating malicious file downloads or uploads by users. | Count > 0 | Count < = 0 |
+| `ZIA - Tunnel Down Events` | This alert is triggered when ZIA VPN tunnel down events are detected, indicating network connectivity failures between Zscaler and your locations. | Count > 0 | Count < = 0 |
+| `ZIA - Blocked URL Category Policy Violations` | This alert is triggered when there is a spike in URL category policy violations, indicating users repeatedly attempting to access restricted content categories. | Count > 10 | Count < = 10 |
+| `ZIA - High Bandwidth Usage` | This alert is triggered when a user exceeds 500 MB of downloaded data within 15 minutes, which may indicate data exfiltration or unauthorized large file transfers. | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the Zscaler Internet Access app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
