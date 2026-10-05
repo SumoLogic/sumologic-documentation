@@ -32,7 +32,10 @@ Without this context, the agent reasons from normalized security data alone. It 
 
 Currently, this feature is available for [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) and we'll be rolling it out to other agents.
 
-The agent uses your knowledge in auto-investigation: it is applied automatically as the agent triages each insight that flows into Cloud SIEM.
+The agent uses your knowledge in two places:
+
+* **Auto-investigation**. The knowledge is applied automatically as the agent triages each insight that flows into Cloud SIEM.
+* **Manual investigation**. When a user manually triggers an investigation in Cloud SIEM, the same knowledge is in context.
 
 ## What you can teach the agent
 
@@ -101,7 +104,7 @@ From here, whenever your knowledge shapes a response, the agent surfaces which p
 
 ## What is included in Private Preview
 
-Private Preview covers the full capture flow described above, knowledge applied in auto-investigation, and the knowledge summary page.
+Private Preview covers the full capture flow described above, knowledge applied in both auto-investigation and manual investigation, and the knowledge summary page.
 
 You can also ask the SOC Analyst Agent to answer without your knowledge applied, then compare that response to the knowledge-enriched result. This lets you validate whether a specific knowledge entry is shaping the agent's output as expected.
 
