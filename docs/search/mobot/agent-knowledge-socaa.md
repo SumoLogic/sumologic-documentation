@@ -26,7 +26,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-Agent Knowledge lets org administrators give the Mobot agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation.
+Agent Knowledge lets org administrators give Dojo AI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation.
 
 Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, that a Friday spike in authentication failures is your scheduled penetration test, or that your team escalates anything involving PII straight to the security lead. Knowledge closes that gap. Over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
