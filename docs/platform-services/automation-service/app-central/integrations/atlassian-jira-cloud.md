@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 1.5  
-Updated: July 14, 2026***
+***Version: 1.6  
+Updated: October 6, 2026***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
@@ -32,6 +32,26 @@ This integration uses the [Jira REST API v3](https://developer.atlassian.com/clo
 * **Search Into Issues** *(Enrichment)* - Search Jira Issues.
 * **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
 * **Issues Jira Daemon** *(Daemon)* - Daemon to pull Jira issues.
+
+## Using playbook outputs in Create Issue
+
+The **Create Issue** action supports HTML content in the **Description** field. Line breaks and HTML formatting from playbook outputs are handled automatically — you do not need to manually add `<br/>` tags.
+
+### Supported output formats
+
+| Format | Example |
+|:--|:--|
+| Plain text | `Incident detected on host prod-server-01` |
+| Signal output variable | `{{signal.description}}` |
+| Iterated JSON data | `{{loop.item.summary}}` |
+| HTML with inline formatting | `<b>Host:</b> {{hostname}}<br/>{{signal.details}}` |
+
+### Example: creating an issue from a signal
+
+1. Add the **Create Issue** action to your playbook.
+1. In the **Summary** field, enter a title, for example `Alert: {{signal.name}}`.
+1. In the **Description** field, enter a playbook output variable such as `{{signal.description}}`. The integration renders line breaks and HTML content automatically.
+1. Run the playbook. The action creates a Jira issue with the formatted description.
 
 ## Atlassian Jira Cloud configuration
 
@@ -108,11 +128,12 @@ Ticketing System
 
 ## Change Log
 
-| Version | Date | Description |
-|:--|:--|:--|
-| v1.5 | July 14, 2026 | Improved reliability across all actions with more stable connections and clearer error messages. |
-| v1.4 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
-| v1.3 | Nov 6, 2025 | Changed the API endpoint in the resource connection file to prevent admin-level privileges. |
-| v1.2 | Oct 15, 2025 | Added support for the `br` tag in required actions. |
-| v1.1 | Sept 10, 2025 | Added a daemon action. |
-| | March 20, 2025 | Initial release of the Atlassian Jira Cloud integration. |
+| Version | Date            | Description |
+|:--|:----------------|:--|
+| v1.6 | October 6, 2026 | Improved the **Create Issue** action to automatically handle HTML formatting and line breaks in the **Description** field when using playbook outputs such as signal data and iterated JSON. Added documentation with examples for supported output formats. |
+| v1.5 | July 14, 2026   | Improved reliability across all actions with more stable connections and clearer error messages. |
+| v1.4 | March 23, 2026  | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | Nov 6, 2025     | Changed the API endpoint in the resource connection file to prevent admin-level privileges. |
+| v1.2 | Oct 15, 2025    | Added support for the `br` tag in required actions. |
+| v1.1 | Sept 10, 2025   | Added a daemon action. |
+| | March 20, 2025  | Initial release of the Atlassian Jira Cloud integration. |
