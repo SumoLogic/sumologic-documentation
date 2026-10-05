@@ -32,10 +32,7 @@ Without this context, the agent reasons from normalized security data alone. It 
 
 Currently, this feature is available for [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) and we'll be rolling it out to other agents.
 
-The agent uses your knowledge in two places:
-
-* **Auto-investigation**. The knowledge is applied automatically as the agent triages each insight that flows into Cloud SIEM.
-* **Mobot follow-ups**. When you `@`-mention SOC Analyst Agent in [Mobot](/docs/search/mobot/) to dig into an investigation result, the same knowledge is in context.
+The agent uses your knowledge in auto-investigation: it is applied automatically as the agent triages each insight that flows into Cloud SIEM.
 
 ## What you can teach the agent
 
@@ -93,8 +90,8 @@ To add knowledge for the SOC Analyst Agent:
 1. Click **SOC Analyst Agent**. This opens the agent's settings page.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
 1. In the left nav, click **Sources** to view existing knowledge sources.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
 1. To add a new knowledge source, click **+ Add Source**.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
-1. Give the source a name and type the fact, pattern, or practice in the content field. Each item works best when it covers one concept, uses two to five sentences, and references specific names, IPs, patterns, or procedures your team actually uses. If you paste a longer document, the agent breaks it into separate entries automatically.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" />
-1. Click **Save**.
+1. Give the source a name and type the fact, pattern, or practice in the content field. Only plain text is supported. Each item works best when it covers one concept, uses two to five sentences, and references specific names, IPs, patterns, or procedures your team actually uses. If you paste a longer document, the agent breaks it into separate entries automatically.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" />
+1. Click **Save**. The raw text of each entry is visible on the Sources page in the Dojo AI management page.
 
 From here, whenever your knowledge shapes a response, the agent surfaces which piece it drew on and how it was applied, so a verdict is never a black box.
 
@@ -104,7 +101,7 @@ From here, whenever your knowledge shapes a response, the agent surfaces which p
 
 ## What is included in Private Preview
 
-Private Preview covers the full capture flow described above, knowledge applied in both auto-investigation and Mobot follow-ups, and the knowledge summary page.
+Private Preview covers the full capture flow described above, knowledge applied in auto-investigation, and the knowledge summary page.
 
 You can also ask the SOC Analyst Agent to answer without your knowledge applied, then compare that response to the knowledge-enriched result. This lets you validate whether a specific knowledge entry is shaping the agent's output as expected.
 
@@ -114,6 +111,7 @@ The following apply during Private Preview:
 
 * **Audit logging for knowledge**. A comprehensive record of who added or changed a given fact, and when, is not yet available. It is planned for a later phase.
 * **Scope**. Knowledge currently powers the SOC Analyst Agent and is not available on standalone Mobot. Support for other Dojo AI agents, such as the Root Cause Agent, is planned for a later phase.
+* **Text only**. Knowledge sources accept plain text only. File uploads, URLs, and other source types are not supported in this release.
 
 Some limits are not tied to the preview phase:
 
