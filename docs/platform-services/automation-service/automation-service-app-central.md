@@ -9,17 +9,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 import ActionsLimit from '../../reuse/actions-limit.md';
 
-App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components.
+:::note
+As of October 20, 2026, automation service integrations and playbooks that were previously discovered, viewed, and installed through App Central are now available in the Sumo Logic App Catalog, alongside all other platform apps.
+:::
+
+The App Central now directs you to the App Catalog, where you can search for and add integrations with all the required components.
 
 ## View App Central
 
+[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **App Catalog** or navigate to **Automation > App Central > App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**.  
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **App Catalog** or navigate to **Automation > App Central > App Catalog**. 
+
 :::note
-As of Aug 28, 2026, App Central has merged into the Sumo Logic App Catalog. Automation Service integrations and playbooks are now discovered, viewed, and installed from the App Catalog, the same place you install any platform app.
+You can access the App Catalog from the main navigation or from the Automation section, where App Central was previously accessed. Both paths take you to the App Catalog.
 :::
-
-[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **App Catalog** or navigate to **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  
-
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **App Catalog** or **Automation > App Central** in the left navigation bar. 
 
 Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
 
