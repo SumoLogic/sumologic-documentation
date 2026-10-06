@@ -79,7 +79,7 @@ To add knowledge for the SOC Analyst Agent:
 1. Click **Sources**. On this page, you can view, edit, and delete existing knowledge sources.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
 1. Click **+ Add Source** to add a new knowledge source.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
 1. Give the source a name and type the fact, pattern, or practice in the content field, then click **Save** when you're done. Here's an example:<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" /><br/>
-   See [What you can teach your Dojo AI agents](#what-you-can-teach-dojo-ai-agents) for more sample entries.
+   See [What you can teach your Dojo AI agents](#what-you-can-teach-your-dojo-ai-agents) for more sample entries.
    :::important
    Only plain text is supported. Each knowledge source item works best when it covers one concept, uses two to five sentences, and references specific names, IPs, patterns, or procedures your team actually uses.
    :::
