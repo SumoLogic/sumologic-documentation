@@ -277,7 +277,7 @@ helm upgrade ${HELM_RELEASE_NAME} sumologic/sumologic \
 
 After upgrading, monitor collector pods for memory pressure using `container_memory_working_set_bytes`.
 
-## Rollback
+## Roll back metrics pipeline unification
 
 To restore the 2-layer metrics pipeline, set `singleLayerPipeline.enabled: false` in your values file and run `helm upgrade`. The metadata StatefulSet, HPA, Services, and PDB will be re-created.
 
