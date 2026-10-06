@@ -83,7 +83,7 @@ sumologic:
 :::
 
 :::note
-If it is not possible to migrate your metrics pipeline to single-layer at this time, you can disable it and continue using the existing 2-layer pipeline. See [Rollback](#rollback) for instructions.
+If it is not possible to migrate your metrics pipeline to single-layer at this time, you can disable it and continue using the existing 2-layer pipeline. See [Rollback](#roll-back-metrics-pipeline-unification) for instructions.
 :::
 
 **Option 1: Migrate to single-layer pipeline (default)**
