@@ -11,7 +11,7 @@ This page describes each change and its impact on your existing setup. Both belo
 
 ## 1. Sourceless Mode for data upload
 
-Till helm chart v5, Sumologic kubernetes collection used hosted collector source url to upload data, this new Sourceless mode removes the dependency on Hosted Collector which is listed under Data Collection page with the name `values.sumologic.collectorName` or `values.sumologic.clusterName` and HTTP/OTLP sources created under the Hosted collector for data ingestion. Instead, collection pods authenticate and register directly with Sumo Logic using an installation token via the Sumo Logic OpenTelemetry extension. 
+Through Helm chart v5, the Sumo Logic Kubernetes Collection sent data to HTTP or OpenTelemetry Protocol (OTLP) sources on a Hosted Collector. The Hosted Collector appears in **Manage Data → Collection** under the value configured in `sumologic.collectorName` or, by default, `sumologic.clusterName`. Sourceless mode removes this dependency. Collection pods instead authenticate and register directly with Sumo Logic by using an installation token and the Sumo Logic OpenTelemetry extension.
 
 Below are the key changes and their impact on your existing setup. You can read these impacts and disable the sourceless mode if required, but most of the cases, it's advised to proceed with enabling sourceless mode.
 
