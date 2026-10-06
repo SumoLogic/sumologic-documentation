@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zerofox.png')} alt="ZeroFox icon" width="100"/>
 
 ***Version: 1.2.0  
-Updated: October 5, 2026***
+Updated: October 6, 2026***
 
 Query data and utilize actions in the [ZeroFox](https://www.zerofox.com/) platform, including CTI enrichment lookups, alert management, and automated threat intelligence feeds.
 
@@ -82,6 +82,6 @@ For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.c
 
 | Version | Date | Description |
 |:--|:--|:--|
-| 1.2.0 | October 5, 2026 | Improved integration tracking and vendor compatibility. |
+| 1.2.0 | October 6, 2026 | Improved integration tracking and vendor compatibility. |
 | 1.1.0 | October 1, 2026 | Added new CTI enrichment actions: **Indicator Lookup**, **Malware Lookup**, **Vulnerability Lookup**, **Phishing Domain Lookup**, and **Threat Actor Profile Lookup**. Added new daemon actions: **Alerts Daemon**, **Indicator Feed Daemon**, and **Vulnerability Daemon**. Enhanced **Get Alert Details** with sub-resource enrichment options. Updated authentication to use Bearer JWT token flow. |
 | 1.0.0 | April 24, 2026 | Initial release of the ZeroFox V2 integration. |
