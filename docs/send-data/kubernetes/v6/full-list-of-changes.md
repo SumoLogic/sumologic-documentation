@@ -5,7 +5,7 @@ sidebar_label: Full list of Changes
 description: This page describes the complete list of changes in Kubernetes Collection v6.
 ---
 
-## Sourceless Mode (enabled by default)
+## Sourceless mode (enabled by default)
 
 - `sumologic.sourcelessMode` defaults to `true` in v6 (was `false` in v5)
 - New flag `sumologic.sourcelessModeAck`: must be set to `true` to confirm you have read the migration guide; upgrade is blocked until this is set
@@ -14,10 +14,10 @@ description: This page describes the complete list of changes in Kubernetes Coll
 - Custom exporters with an explicit `endpoint` in `config.merge` continue to use their configured source URL, enabling incremental migration
 - Hosted Collector and its default sources are **not** deleted automatically on upgrade; use `sumologic.cleanupHostedCollector: true` to clean up (permanent and irreversible; verify no custom sources exist first)
 - `sourceType: http` is incompatible with `sourcelessMode: true`; switch to `sourceType: otlp` or use an explicit endpoint via `config.merge`
-- Collection pods register as OpenTelemetry collectors and appear in **Manage Data → Collection → OpenTelemetry Collection**; filter by `cluster=<your-cluster-name>` to view pods for a specific cluster
+- Collection pods register as OpenTelemetry collectors and appear in **Manage Data > Collection > OpenTelemetry Collection**; filter by `cluster=<your-cluster-name>` to view pods for a specific cluster
 - GitOps / ArgoCD users with `setupEnabled: false` must supply `sumologic.installationToken` manually (token is not created automatically when Terraform/setup job is disabled)
 
-## Metrics Pipeline Unification (enabled by default)
+## Metrics pipeline unification (enabled by default)
 
 - `sumologic.metrics.collector.otelcol.singleLayerPipeline.enabled` defaults to `true` in v6 (was `false` in v5)
 - New flag `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged`: must be set to `true` regardless of whether the single-layer pipeline is enabled or disabled; upgrade is blocked until this is set. See [How to Upgrade](./how-to-upgrade.md#metrics-pipeline-unification) for detailed migration steps.
