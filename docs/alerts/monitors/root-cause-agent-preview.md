@@ -116,6 +116,7 @@ The following apply during Private Preview:
 * **Deduplication of investigations**. If the same incident arrives through more than one alert, you may see more than one investigation.
 * **Automatic investigation**. During Private Preview, investigations are started manually. Automatic investigation triggered on alert firing is planned for a later phase.
 * **External alerts**. Private Preview covers alerts from Sumo Logic monitors. Investigation from external alerting systems is planned for a future phase.
+* **Alerts**. Limit of 10 alerts investigated per minute.
 
 Some limits are not tied to the preview phase:
 
