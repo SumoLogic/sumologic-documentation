@@ -58,6 +58,13 @@ Follow the steps below to create Google Workspace Activities service account cre
    * [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
    :::
 1. For delegated user email, you need to add the email of the user whom you want to delegate for API calls.
+1. (Optional) **For the `vault` application only.** If you want to collect Google Vault audit logs, complete these additional steps for the delegated user account:
+    1. **Assign a Vault admin role.** In the Google Workspace Admin console, go to **Directory > Users**, open the delegated user, and assign a role that includes the **Access All Logs** privilege under the Vault section. You can use the built-in **Vault Super Admin** role or a custom Vault admin role that contains this privilege.
+    1. **Ensure an active Vault license.** The delegated user must hold an active Google Vault license.
+   :::note
+   If either requirement is missing, only the `vault` application returns an HTTP 401 `authError` (`Access denied. You are not authorized to read activity records.`).
+   :::
+   If you do not need Vault audit logs, add `vault` to the **Exclude Application Names** field in the source configuration to continue working with other applications.
 
 ### Source configuration
 
@@ -74,7 +81,9 @@ Follow the steps below to create Google Workspace Activities service account cre
 1. **Google Workspace Activities Credentials**. You can authenticate your service account credentials directly by uploading a JSON file, rather than breaking it into separate sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#vendor-configuration).
 1. **Exclude Application Names**. (Optional) Enter the application names and scopes that you do not want to send to Sumo Logic.
    :::note
-   All application names are selected by default unless you exclude some in the config JSON schema. The source collects activity events for the following Google Workspace applications: `access_transparency`, `admin`, `calendar`, `chat`, `drive`, `gcp`, `gmail`, `gplus`, `groups`, `groups_enterprise`, `jamboard`, `login`, `meet`, `mobile`, `rules`, `saml`, `token`, `user_accounts`, `context_aware_access`, `chrome`, `data_studio`, `keep`, `gemini_in_workspace_apps`, `classroom`, `assignments`, `cloud_search`, `tasks`, `data_migration`, `meet_hardware`, `directory_sync`, `ldap`, `profile`, `access_evaluation`, `admin_data_action`, `contacts`, `takeout`, and `graduation`.
+   All application names are selected by default unless you exclude some in the config JSON schema. The source collects activity events for the following Google Workspace applications: `access_transparency`, `admin`, `calendar`, `chat`, `drive`, `gcp`, `gmail`, `gplus`, `groups`, `groups_enterprise`, `jamboard`, `login`, `meet`, `mobile`, `rules`, `saml`, `token`, `user_accounts`, `context_aware_access`, `chrome`, `data_studio`, `keep`, `gemini_in_workspace_apps`, `classroom`, `assignments`, `cloud_search`, `tasks`, `data_migration`, `meet_hardware`, `directory_sync`, `ldap`, `profile`, `access_evaluation`, `admin_data_action`, `contacts`, `takeout`, `graduation`, and `vault`.
+
+   The `vault` application requires the delegated user to have a Vault admin role with the **Access All Logs** privilege and an active Vault license, in addition to the standard reports-admin setup. See the [Vendor configuration](#vendor-configuration) section for details.
    :::
 1. **Processing Rules for Logs**. (Optional) Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
