@@ -44,10 +44,10 @@ metadata:
     config:
       merge:
         exporters:
-          sumologic/custom-logs: // This is a custom exporter which sends data to below mentioned hosted collector http source
+          sumologic/custom-logs: # This is a custom exporter which sends data to below mentioned hosted collector http source
             endpoint: "https://<your-endpoint>.collection.sumologic.com/receiver/v1/http/<token>"
             timeout: 30s
-          sumologic/default: // This is a custom exporter without an explicit endpoint defined, so this will send data to your account directly without any sources.
+          sumologic/default: # This is a custom exporter without an explicit endpoint defined, so this will send data to your account directly without any sources.
             timeout: 30s
 ```
 
