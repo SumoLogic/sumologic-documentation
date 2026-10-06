@@ -46,7 +46,7 @@ The Root Cause Agent performs three distinct jobs:
 <!-- GA: change On-demand investigation bullet to * **Auto-investigation**. Automatically delivers an evidence-backed root cause on every alert as it fires, without requiring engineer action.-->
 
 The Root Cause Agent provides the following functionality:
-* [AI Investigation tab on alerts](#ai-investigation-tab)
+* [Run a root cause analysis](#run-a-root-cause-analysis)
 * [Continuing the investigation in Mobot](#continue-investigating-in-mobot)
 
 ## Run a root cause analysis
