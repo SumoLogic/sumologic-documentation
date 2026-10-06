@@ -21,19 +21,20 @@ Both changes are breaking and require you to review the [Important Changes](./im
    export HELM_RELEASE_NAME=...
    ```
 
-## Step 1: Review Important Changes
+## Step 1: Review important changes
 
 Before upgrading, read [Important Changes in v6](./important-changes.md) in full. Pay particular attention to:
 - [Sourceless mode](./important-changes.md#1-sourceless-mode-for-data-upload). Review the impact on `_source` metadata, Hosted Collector cleanup, and `sourceType` restrictions.
 - [Metrics pipeline unification](./important-changes.md#2-metrics-pipeline-unification). Review the removed StatefulSet, configuration key changes, and Prometheus remote write URL changes.
 
-## Step 2: Set Acknowledgment Flags
+## Step 2: Set acknowledgment flags
 
 After reviewing, update your `values.yaml` with both acknowledgment flags and your chosen migration option for each feature.
 
-### Sourceless Mode
+### Sourceless mode
 
-**Option 1: Migrate to sourceless mode (default)**
+#### Option 1: Migrate to sourceless mode (default)
+
 After reviewing the impacts, add these values to your `values.yaml`:
 
 ```yaml
@@ -42,7 +43,7 @@ sumologic:
   sourcelessModeAck: true
 ```
 
-**Option 1a: Migrate and clean up the Hosted Collector**
+#### Option 1a: Migrate and clean up the Hosted Collector
 
 Choose this only if you have confirmed there are **no custom sources** on your Hosted Collector beyond those created by default by the Helm chart.
 
@@ -57,7 +58,7 @@ sumologic:
 `cleanupHostedCollector: true` permanently deletes the Hosted Collector and **all sources** attached to it. This cannot be undone.
 :::
 
-**Option 2: Disable sourceless mode and continue using old Hosted collector flow**
+#### Option 2: Disable sourceless mode and continue using old Hosted collector flow
 
 After reviewing the impacts, add these values to your `values.yaml`:
 
@@ -68,7 +69,7 @@ sumologic:
 ```
 
 :::note
-**GitOps / ArgoCD users:** If `setupEnabled: false`, Terraform does not run and the installation token is not created automatically. Create a token in **Manage Data → Collection → Installation Tokens**, then supply it explicitly:
+**GitOps / ArgoCD users:** If `setupEnabled: false`, Terraform does not run and the installation token is not created automatically. Create a token in **Manage Data > Collection > Installation Tokens**, then supply it explicitly:
 ```yaml
 sumologic:
   sourcelessMode: true
@@ -77,7 +78,7 @@ sumologic:
 ```
 :::
 
-### Metrics Pipeline Unification
+### Metrics pipeline unification
 
 :::note
 `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` must be set to `true` regardless of whether you enable or disable the single-layer pipeline. The upgrade is blocked until this flag is set. If you are not using any additional `metadata.metrics.*` configuration overrides, you can set this flag and skip to [Step 3](#step-3-run-the-upgrade).
@@ -87,7 +88,7 @@ sumologic:
 If it is not possible to migrate your metrics pipeline to single-layer at this time, you can disable it and continue using the existing 2-layer pipeline. See [Rollback](#roll-back-metrics-pipeline-unification) for instructions.
 :::
 
-**Option 1: Migrate to single-layer pipeline (default)**
+#### Option 1: Migrate to single-layer pipeline (default)
 
 ```yaml
 sumologic:
@@ -99,7 +100,7 @@ sumologic:
           migrationDocAcknowledged: true
 ```
 
-**Option 2: Defer metrics pipeline unification**
+#### Option 2: Defer metrics pipeline unification
 
 ```yaml
 sumologic:
@@ -113,7 +114,7 @@ sumologic:
 
 If you chose Option 1, continue with the migration steps below before running the upgrade.
 
-#### Resource Sizing
+#### Resource sizing
 
 In single-layer mode, the collector handles both scraping and enrichment/export. If you override the default collector or metadata resources, update the collector resources by using the sizing guidance below.
 
@@ -133,9 +134,9 @@ Apply a **1.5x safety multiplier** on memory to account for `k8sattributes` cach
 - **Use HPA with memory target at 60–70%.** This gives headroom for spikes.
 - **Monitor `container_memory_working_set_bytes`** after enabling single-layer. If any pod sustains >80% of its memory limit, increase the limit.
 
-#### Configuration Migration
+#### Configuration migration
 
-##### Automatic (No Action Needed)
+##### Automatic (no action needed)
 
 These keys are consumed directly in the single-layer collector config template:
 
@@ -150,7 +151,7 @@ These keys are consumed directly in the single-layer collector config template:
 | `metadata.metrics.extractNodeLabels` | Extract node labels as resource attributes |
 | `metadata.metrics.config.merge` | Deep-merged into the single-layer collector config |
 
-##### Customer Action Required
+##### Customer action required
 
 These keys configure the metadata StatefulSet's scheduling, resources, and scaling. The collector has equivalent keys — you must move your customizations:
 
@@ -181,11 +182,11 @@ These keys configure the metadata StatefulSet's scheduling, resources, and scali
 |-----|-----------|
 | `metadata.metrics.config.override` | Cannot be used with single-layer pipeline. Use `metadata.metrics.config.merge` instead, or disable single-layer mode. |
 
-#### Prometheus Remote Write
+#### Prometheus remote write
 
 If you use `metadata.metrics.enableSumoPrometheusRemotewriteReceiver` to push metrics via Prometheus remote write, update the remote write URL hostname from `<release>-sumologic-metadata-metrics` to `<release>-sumologic-metrics-collector` (same port 9888, same path).
 
-#### Pipeline Rename
+#### Pipeline rename
 
 In single-layer mode (v6 default), the collector uses two logical pipelines connected by a `forward` connector:
 
@@ -254,7 +255,7 @@ sumologic:
                     - filter/drop_stale_datapoints
 ```
 
-## Step 3: Run the Upgrade
+## Step 3: Run the upgrade
 
 In addition to the flags for the options you chose above, make sure both acknowledgment flags are set to `true` in your `values.yaml` before you run the upgrade.
 
