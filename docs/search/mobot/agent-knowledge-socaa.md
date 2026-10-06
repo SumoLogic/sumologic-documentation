@@ -28,7 +28,7 @@ This feature is in Private Preview. For more information, contact your Sumo Logi
 
 Agent Knowledge lets org administrators give Dojo AI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional Dojo AI agents planned for later phases.
 
-Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, or that a Friday spike in authentication failures is your scheduled penetration test. Knowledge closes that gap. Over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
+Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, or that a Friday spike in authentication failures is your scheduled penetration test. Knowledge closes that gap and keeps it closed — over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
 For the SOC Analyst Agent, knowledge applies in two places:
 
@@ -52,6 +52,8 @@ The standing facts about how your organization is set up, how it normally behave
 | Backup vendor activity | Backup vendor Datto uses account svc-datto-backup daily at 0200 UTC to modify shadow copies. Do not flag this as ransomware behavior. |
 | Legacy system exception | Host-102 is a legacy payroll server running an unpatchable OS. Isolate it from outbound internet traffic and ignore normal OS-version vulnerability flags. |
 | Policy exception | Remote root SSH access is forbidden by policy SEC-04 except on Host-009, which holds an approved regulatory waiver due to legacy hardware constraints. |
+| Recurring alert noise | Qualys triggers high-severity brute-force alerts on domain controllers every Tuesday at 2300 UTC during scheduled network discoveries. This is expected. |
+| Entity name mapping | The core payment processing API is tagged as pay-gateway-prod in application performance logs, but appears as pgw_v2 in API gateway logs and PAYMENT-SVC in incident tickets. Treat these three strings as the exact same entity to avoid missing cross-tier log events. |
 
 ### Historical learning and team judgment
 
@@ -61,7 +63,6 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 |:--|:--|
 | Past incident resolution | The Nov 12 authentication spike was resolved by rotating the API credentials for svc-deploy. Any similar spike on that account should check for stale credentials first. |
 | Known false-positive pattern | Friday brute-force spikes on domain controllers are usually the scheduled pentest run by the security team. Confirm timing before escalating. |
-| Recurring alert noise | Qualys triggers high-severity brute-force alerts on domain controllers every Tuesday at 2300 UTC during scheduled network discoveries. This is expected. |
 | Post-mortem lesson | INC-2025-089: A rogue scheduled task named OneDriveUpdate bypassed triage because analysts assumed it was a native app. Inspect all newly registered tasks regardless of naming conventions. |
 | Forensic heuristic | TrueBot campaigns consistently use renamed 7z.exe binaries for exfiltration. Check file entropy and headers, not just the extension. |
 
@@ -81,7 +82,7 @@ To add knowledge for the SOC Analyst Agent:
 1. Give the source a name and type the fact, pattern, or practice in the content field, then click **Save** when you're done. Here's an example:<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" /><br/>
    See [What you can teach your Dojo AI agents](#what-you-can-teach-your-dojo-ai-agents) for more sample entries.
    :::important
-   Only plain text is supported. Each knowledge source item works best when it covers one concept, uses two to five sentences, and references specific names, IPs, patterns, or procedures your team actually uses.
+   Only plain text is supported. Up to 10,000 characters per entry. Each knowledge source item works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
    :::
 
 Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. You can see this in two places:
@@ -91,17 +92,12 @@ Whenever your knowledge shapes an investigation, the agent surfaces which entrie
 
 ## Limitations
 
-The following apply during Private Preview:
-
-* **Audit logging for knowledge**. A comprehensive record of who added or changed a given fact, and when, is not yet available. It is planned for a later phase.
+* **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other Dojo AI agents is planned for upcoming phases.
+* **Text only**. Knowledge sources accept plain text only. Enhanced knowledge addition mechanisms are planned for upcoming phases.
 * **Security guardrails**. Security guardrails on knowledge content are planned for upcoming phases.
-* **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other Dojo AI agents, such as the Root Cause Agent, is planned for a later phase. It is not available on standalone Mobot.
-* **Text only**. Knowledge sources accept plain text only. File uploads, URLs, and other source types are not supported in this release.
-
-Some limits are not tied to the preview phase:
-
-* **The agent does not act on response knowledge**. You can give the agent knowledge about your response practices, but it does not take or execute containment or remediation actions. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
-* **One knowledge base per agent**. Everyone on your team draws on the same shared knowledge for a given agent. Per-team or per-tenant partitioning is not part of this release.
+* **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
+* **One knowledge base per agent**. Everyone on your team draws on the same shared knowledge for a given agent. No per-team partitioning.
+* **Audit logging for knowledge**. A comprehensive record of who added or changed a fact, and when, is not yet available. Planned for a later phase.
 
 ## FAQ
 
