@@ -128,4 +128,4 @@ When `sumologic.metrics.collector.otelcol.singleLayerPipeline.enabled` is set to
 4. Both `sumologic.metrics.collector.otelcol.config.merge` and `metadata.metrics.config.merge` are applied to the collector config, preserving existing customizations.
 5. The **collector pipeline is renamed** from `metrics` to `metrics/collector`. The enrichment pipeline keeps the name `metrics` (matching the 2-layer metadata pipeline name).
 
-For detailed migration steps including resource sizing, configuration key migration, pipeline rename examples, and rollback instructions, see [How to Upgrade](./how-to-upgrade.md#metrics-pipeline-unification-1).
+For detailed migration steps, including resource sizing, configuration key migration, pipeline rename examples, and rollback instructions, see [How to Upgrade](./how-to-upgrade.md#metrics-pipeline-unification).
