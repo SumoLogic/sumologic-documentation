@@ -34,6 +34,7 @@ After reviewing, update your `values.yaml` with both acknowledgment flags and yo
 ### Sourceless Mode
 
 **Option 1: Migrate to sourceless mode (default)**
+If you read about the impacts of enabling sourceless mode and proceed with enabling sourceless mode, please set below values to your values.yaml
 
 ```yaml
 sumologic:
@@ -43,7 +44,7 @@ sumologic:
 
 **Option 1a: Migrate and clean up the Hosted Collector**
 
-Choose this only if you have confirmed there are **no custom sources** on your Hosted Collector beyond those created by the Helm chart. 
+Choose this only if you have confirmed there are **no custom sources** on your Hosted Collector beyond those created by default by the Helm chart.
 
 ```yaml
 sumologic:
@@ -58,10 +59,11 @@ sumologic:
 
 **Option 2: Disable sourceless mode and continue using old Hosted collector flow**
 
+If you read the impacts of enabling sourceless mode and don't want to enable sourceless mode yet, please set below flag to your values.yaml
+
 ```yaml
 sumologic:
   sourcelessMode: false
-  sourcelessModeAck: true
 ```
 
 :::note
