@@ -52,27 +52,6 @@ To configure an HTTP Logs and Metrics Source:
       * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
    * **Message Processing**. 
       * **JSON Unroll**. Select this option to split a JSON array in the incoming payload into individual log messages.
-
-         <details>
-         <summary>Sample JSON array</summary>
-
-         ```json
-         {
-            "source": "app",
-            "version": 2,
-            "Records": [
-               {
-                  "id": 1,
-                  "msg": "hello"
-               },
-               {
-                  "id": 2,
-                  "msg": "world"
-               }
-            ]
-         }
-         ```
-         </details>
          :::note
          * This option is available only for HTTP log sources.
          * HTTP POST payloads exceeding 1MB are not guaranteed to unroll correctly.
