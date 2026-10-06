@@ -95,3 +95,7 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
 | | July 8, 2022      | Added a new action: **Device Actions**. |
 | | June 3, 2021      | Initial release of the CrowdStrike Falcon integration. |
 | | January 31, 2020  | Updated the **Get Report Summary** action. |
+
+## Additional resources
+
+For CrowdStrike Falcon FileVantage, Sumo Logic offers the [CrowdStrike FileVantage source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) and the [CrowdStrike Falcon FileVantage app](/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage/) to collect and visualize your CrowdStrike Falcon FileVantage data.
