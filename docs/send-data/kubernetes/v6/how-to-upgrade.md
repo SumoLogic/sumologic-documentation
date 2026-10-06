@@ -255,7 +255,7 @@ sumologic:
 
 ## Step 3: Run the Upgrade
 
-Ensure both acknowledgment flags are set to `true` in your `values.yaml` before running the upgrade:
+Along with above mentioned flags as per the option you choose for sourceless mode and metrics pipeline unification, Ensure both feature acknowledgment flags are set to `true` in your `values.yaml` before running the upgrade.
 
 ```yaml
 sumologic:
