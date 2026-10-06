@@ -6,8 +6,8 @@ description: This page describes how to upgrade the Kubernetes Collection to v6.
 ---
 
 This guide walks you through upgrading to Sumo Logic Kubernetes Collection v6.0.0. Here's what's new:
-* Sourceless mode is now enabled by default — the Hosted Collector and HTTP sources are replaced by direct installation-token authentication via the OpenTelemetry extension.
-* Metrics Pipeline Unification is now enabled by default — the separate metadata StatefulSet is merged into a single OTel collector pipeline.
+* Sourceless mode is now enabled by default: the Hosted Collector and HTTP sources are replaced by direct installation-token authentication via the OpenTelemetry extension.
+* Metrics Pipeline Unification is now enabled by default: the separate metadata StatefulSet is merged into a single OTel collector pipeline.
 
 Both changes are breaking and require you to review the [Important Changes](./important-changes.md) page and set acknowledgment flags before the upgrade proceeds.
 
@@ -34,7 +34,7 @@ After reviewing, update your `values.yaml` with both acknowledgment flags and yo
 ### Sourceless Mode
 
 **Option 1: Migrate to sourceless mode (default)**
-If you read about the impacts of enabling sourceless mode and proceed with enabling sourceless mode, please set below values to your values.yaml
+After reviewing the impacts, add these values to your `values.yaml`:
 
 ```yaml
 sumologic:
@@ -59,11 +59,12 @@ sumologic:
 
 **Option 2: Disable sourceless mode and continue using old Hosted collector flow**
 
-If you read the impacts of enabling sourceless mode and don't want to enable sourceless mode yet, please set below flag to your values.yaml
+After reviewing the impacts, add these values to your `values.yaml`:
 
 ```yaml
 sumologic:
   sourcelessMode: false
+  sourcelessModeAck: true
 ```
 
 :::note
@@ -255,7 +256,7 @@ sumologic:
 
 ## Step 3: Run the Upgrade
 
-Along with above mentioned flags as per the option you choose for sourceless mode and metrics pipeline unification, Ensure both feature acknowledgment flags are set to `true` in your `values.yaml` before running the upgrade.
+In addition to the flags for the options you chose above, make sure both acknowledgment flags are set to `true` in your `values.yaml` before you run the upgrade.
 
 ```yaml
 sumologic:
