@@ -114,7 +114,7 @@ If you chose Option 1, continue with the migration steps below before running th
 
 #### Resource Sizing
 
-In single-layer mode, the collector handles both scraping and enrichment/export. You must increase collector resources.
+In single-layer mode, the collector handles both scraping and enrichment/export. If you override the default collector or metadata resources, update the collector resources by using the sizing guidance below.
 
 **Formula:**
 
