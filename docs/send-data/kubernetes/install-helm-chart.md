@@ -47,6 +47,8 @@ The Helm chart installation requires two parameter overrides:
 - `sumologic.accessId` - Sumo [Access ID](/docs/manage/security/access-keys/).
 - `sumologic.accessKey` - Sumo [Access key](/docs/manage/security/access-keys/).
 - `sumologic.clusterName` - An identifier for your Kubernetes cluster. This is the name you will see for the cluster in Sumo Logic. Set a different value for each cluster you install the Helm Chart in.
+- `sumologic.sourcelessModeAck` and `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` - Feature specific flags
+
 
 ### Prepare minimal configuration
 
@@ -57,6 +59,12 @@ sumologic:
   accessId: ${SUMO_ACCESS_ID}
   accessKey: ${SUMO_ACCESS_KEY}
   clusterName: ${MY_CLUSTER_NAME}
+  sourcelessModeAck: true
+  metrics:
+    collector:
+      otelcol:
+        singleLayerPipeline:
+          migrationDocAcknowledged: true
 ```
 
 :::note
