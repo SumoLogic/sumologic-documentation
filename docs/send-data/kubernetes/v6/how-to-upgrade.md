@@ -24,8 +24,8 @@ Both changes are breaking and require you to review the [Important Changes](./im
 ## Step 1: Review Important Changes
 
 Before upgrading, read [Important Changes in v6](./important-changes.md) in full. Pay particular attention to:
-- [Sourceless Mode](./important-changes.md#sourceless-mode) — impact on `_source` metadata, Hosted Collector cleanup, and `sourceType` restrictions.
-- [Metrics Pipeline Unification](./important-changes.md#metrics-pipeline-unification) — removed StatefulSet, configuration key changes, and Prometheus remote write URL changes.
+- [Sourceless mode](./important-changes.md#1-sourceless-mode-for-data-upload). Review the impact on `_source` metadata, Hosted Collector cleanup, and `sourceType` restrictions.
+- [Metrics pipeline unification](./important-changes.md#2-metrics-pipeline-unification). Review the removed StatefulSet, configuration key changes, and Prometheus remote write URL changes.
 
 ## Step 2: Set Acknowledgment Flags
 
