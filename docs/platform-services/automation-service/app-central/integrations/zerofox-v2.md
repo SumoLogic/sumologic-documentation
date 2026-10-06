@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zerofox.png')} alt="ZeroFox icon" width="100"/>
 
-***Version: 1.1.0  
-Updated: October 1, 2026***
+***Version: 1.1.1  
+Updated: October 6, 2026***
 
 Query data and utilize actions in the [ZeroFox](https://www.zerofox.com/) platform, including CTI enrichment lookups, alert management, and automated threat intelligence feeds.
 
@@ -25,6 +25,31 @@ Query data and utilize actions in the [ZeroFox](https://www.zerofox.com/) platfo
 * **Alerts Daemon** *(Daemon)* - Polls for new ZeroFox platform alerts and ingests them for automated triage.
 * **Indicator Feed Daemon** *(Daemon)* - Polls the ZeroFox CTI indicators feed for new and updated indicators of compromise.
 * **Vulnerability Daemon** *(Daemon)* - Polls the ZeroFox CTI vulnerabilities feed for new and updated CVE records.
+
+## Permissions
+
+The following ZeroFox feed permissions are required depending on the actions you want to use:
+
+* **Network & Vulnerability Intelligence Feeds**
+   * C2 Infrastructure Lookup
+   * Botnet Infected Host IPs
+   * Phishing URLs
+   * Malware
+   * Ransomware
+   * Disruption TLDs and URLs
+   * Vulnerabilities
+   * Exploit Scripts
+   * Consolidated Indicators
+* **Identity & Fraud Threat Intelligence Feeds**
+   * Botnet Credential Lookup
+   * Compromised Credential Lookup
+   * Breaches
+* **Deep & Dark Web Intelligence Feeds**
+   * Advanced Dark Web (ZeroFox Analyst Reports)
+   * Threat Actors
+   * Discord
+   * Telegram
+   * Dark Web
 
 ## Configure ZeroFox in Automation Service and Cloud SOAR
 
@@ -57,5 +82,6 @@ For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.c
 
 | Version | Date | Description |
 |:--|:--|:--|
+| 1.1.1 | October 6, 2026 | Improved integration tracking and vendor compatibility. |
 | 1.1.0 | October 1, 2026 | Added new CTI enrichment actions: **Indicator Lookup**, **Malware Lookup**, **Vulnerability Lookup**, **Phishing Domain Lookup**, and **Threat Actor Profile Lookup**. Added new daemon actions: **Alerts Daemon**, **Indicator Feed Daemon**, and **Vulnerability Daemon**. Enhanced **Get Alert Details** with sub-resource enrichment options. Updated authentication to use Bearer JWT token flow. |
 | 1.0.0 | April 24, 2026 | Initial release of the ZeroFox V2 integration. |
