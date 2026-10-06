@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for OpenAI provides visibility into your OpenAI organization's cost, usage, security, and audit activity. It monitors API spend by model and project, tracks authentication events and failed login patterns, analyzes identity and access management changes, and provides geographic and threat intelligence insights. Use this app to optimize costs, detect anomalous behavior, and maintain governance across your OpenAI environment.
 
-## Log type
+## Log types
 
 This app uses the [OpenAI Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source/) to collect data from the OpenAI Administration API. The source collects:
 
@@ -25,34 +25,37 @@ This app uses the [OpenAI Source](/docs/send-data/hosted-collectors/cloud-to-clo
 
 ```json
 {
-  "object": "organization.audit_log",
-  "id": "audit_log_01KWHCH4ZCJSECZEB762MTK7XZ",
-  "type": "service_account.created",
-  "effective_at": 1791284287,
-  "project": { "id": "proj_st90uv12wx34", "name": "model-gateway" },
+  "id": "audit_log-yyy__20240101",
+  "type": "api_key.updated",
+  "effective_at": 1720804190,
   "actor": {
     "type": "session",
     "session": {
       "user": {
-        "id": "user-01KWHCNZ0QHD9Z11NHA9TJSVES",
-        "email": "rhavyn@me.com"
+        "id": "user-xxx",
+        "email": "user@example.com"
       },
-      "ip_address": "45.150.108.61",
-      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
-      "ja3": "d460e8682271fcsdcf27cba24771a7fc53b",
-      "ja4": "t13d26xs10h2_6d1bcf7a4624_188c7f576dcd",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+      "ja3": "a497151ce4338a12c4418c44d375173e",
+      "ja4": "q13d0313h3_55b375c5d22e_c7319ce65786",
       "ip_address_details": {
         "country": "US",
-        "city": "Chicago",
-        "region": "New Jersey",
-        "region_code": "New Jersey_CODE",
-        "asn": "20940",
-        "latitude": "32.82470",
-        "longitude": "-0.12574"
+        "city": "San Francisco",
+        "region": "California",
+        "region_code": "CA",
+        "asn": "1234",
+        "latitude": "37.77490",
+        "longitude": "-122.41940"
       }
     }
   },
-  "service_account.created": { "id": " svc_005", "data": { "role": "admin" } }
+  "api_key.updated": {
+    "id": "key_xxxx",
+    "data": {
+      "scopes": ["resource_2.operation_2"]
+    }
+  }
 }
 ```
 
@@ -151,43 +154,43 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **OpenAI - Audit Overview** dashboard provides a unified view of audit activity across the OpenAI organization. It visualizes event volume, top actors, event categories, and project activity while highlighting geographic threats and access from embargoed locations. Use this dashboard to identify anomalous activity and monitor overall audit health.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Audit-Overview.png')} alt="OpenAI Audit Overview" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Audit-Overview.png' alt="OpenAI Audit Overview" />
 
 ### Cost Monitoring
 
 The **OpenAI - Cost Monitoring** dashboard provides an overview of total spend, cost trends, and budget health across the organization. It tracks cost by model, project, and API key, highlights unusual spending patterns, and shows cumulative spend over time. Use this dashboard to identify cost anomalies and major cost drivers.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Cost-Monitoring.png')} alt="OpenAI Cost Monitoring" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Cost-Monitoring.png' alt="OpenAI Cost Monitoring" />
 
 ### Failed Login Monitoring
 
 The **OpenAI - Failed Login Monitoring** dashboard focuses on failed authentication events to help identify brute-force attempts, suspicious IP addresses, and credential-related issues. It provides insights into failure reasons, error codes, geographic activity, multi-device login patterns, and repeated authentication failures.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Failed-Login-Monitoring.png')} alt="OpenAI Failed Login Monitoring" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Failed-Login-Monitoring.png' alt="OpenAI Failed Login Monitoring" />
 
 ### Identity and Access Management
 
 The **OpenAI - Identity and Access Management** dashboard monitors user lifecycle changes, invitations, group management, role assignments, and service account activity across the organization. It tracks IAM activity over time, highlights top actors, and provides detailed audit information for user, role, and group operations.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Identity-and-Access-Management.png')} alt="OpenAI Identity and Access Management" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Identity-and-Access-Management.png' alt="OpenAI Identity and Access Management" />
 
 ### Security and Infrastructure Configuration
 
 The **OpenAI - Security and Infrastructure Configuration** dashboard monitors security and infrastructure configuration changes, including IP allowlists, rate limits, SCIM configuration, certificates, tunnels, workload identity providers, checkpoint permissions, and organization-level settings. It categorizes security events, highlights the top actors, and provides detailed audit information for each configuration area.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Security-and-Infrastructure-Configuration.png')} alt="OpenAI Security and Infrastructure Configuration" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Security-and-Infrastructure-Configuration.png' alt="OpenAI Security and Infrastructure Configuration" />
 
 ### Successful Login Monitoring
 
 The **OpenAI - Successful Login Monitoring** dashboard provides visibility into successful authentication activity across the OpenAI organization. It shows login trends, geographic distribution, multi-IP login patterns, and access from embargoed locations to help identify unusual activity.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Successful-Login-Monitoring.png')} alt="OpenAI Successful Login Monitoring" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-Successful-Login-Monitoring.png' alt="OpenAI Successful Login Monitoring" />
 
 ### User Agent Analysis
 
 The **OpenAI - User Agent Analysis** dashboard analyzes the clients and platforms accessing the OpenAI environment. It provides visibility into browser, operating system, platform, and automated versus human activity, while highlighting user agents associated with failed or potentially suspicious activity.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-User-Agent-Analysis.png')} alt="OpenAI User Agent Analysis" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/OpenAI/OpenAI-User-Agent-Analysis.png' alt="OpenAI User Agent Analysis" />
 
 ## Create monitors for the OpenAI app
 
