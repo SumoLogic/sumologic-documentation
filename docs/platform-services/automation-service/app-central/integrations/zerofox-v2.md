@@ -18,6 +18,9 @@ Query data and utilize actions in the [ZeroFox](https://www.zerofox.com/) platfo
 * **Vulnerability Lookup** *(Enrichment)* - Searches ZeroFox CTI for vulnerability intelligence by CVE, product, or vendor, returning CVSS scores, remediation guidance, and optionally associated exploit code.
 * **Phishing Domain Lookup** *(Enrichment)* - Searches the ZeroFox CTI phishing dataset by domain pattern, hosting IP, or TLS certificate fingerprint, returning phishing site details with hosting and certificate context.
 * **Threat Actor Profile Lookup** *(Enrichment)* - Searches ZeroFox CTI for MITRE ATT&CK-anchored threat actor profiles by name, technique, tactic, target industry, or country.
+* **Botnet Credential Lookup** *(Enrichment)* - Searches the ZeroFox CTI botnet compromised credentials dataset searchable by username, email, IP, domain, botnet family, or country code.
+* **C2 Infrastructure Lookup** *(Enrichment)* - Searches the ZeroFox CTI C2 domains dataset for command-and-control infrastructure, returning associated domains, ports, and IP addresses, filterable by domain, port, or tag.
+* **Compromised Credential Lookup** *(Enrichment)* - Searches the ZeroFox CTI compromised credentials dataset for breach and combolist credential records by email, domain, or breach ID.
 * **Get Alert Details** *(Enrichment)* - Retrieves a specific alert with enriched context, including AI/ML insights, metadata, WHOIS enrichment, breach data, offending content, scan results, and session cookie data.
 * **List Alerts** *(Enrichment)* - Returns alerts matching given filters and parameters.
 * **List Users** *(Enrichment)* - Lists all users.
@@ -83,5 +86,5 @@ For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.c
 | Version | Date | Description |
 |:--|:--|:--|
 | 1.1.1 | October 6, 2026 | Improved integration tracking and vendor compatibility. |
-| 1.1.0 | October 1, 2026 | Added new CTI enrichment actions: **Indicator Lookup**, **Malware Lookup**, **Vulnerability Lookup**, **Phishing Domain Lookup**, and **Threat Actor Profile Lookup**. Added new daemon actions: **Alerts Daemon**, **Indicator Feed Daemon**, and **Vulnerability Daemon**. Enhanced **Get Alert Details** with sub-resource enrichment options. Updated authentication to use Bearer JWT token flow. |
+| 1.1.0 | October 1, 2026 | Added new CTI enrichment actions: **Indicator Lookup**, **Malware Lookup**, **Vulnerability Lookup**, **Phishing Domain Lookup**, **Threat Actor Profile Lookup**, **Botnet Credential Lookup**, **C2 Infrastructure Lookup**, and **Compromised Credential Lookup**. Added new daemon actions: **Alerts Daemon**, **Indicator Feed Daemon**, and **Vulnerability Daemon**. Enhanced **Get Alert Details** with sub-resource enrichment options. Updated authentication to use Bearer JWT token flow. |
 | 1.0.0 | April 24, 2026 | Initial release of the ZeroFox V2 integration. |
