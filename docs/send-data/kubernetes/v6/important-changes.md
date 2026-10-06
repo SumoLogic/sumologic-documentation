@@ -81,7 +81,7 @@ This applies only to deployments using `sourceType: http` for logs, metrics, or 
 
 `sourcelessMode: true` is incompatible with `sourceType: http`. The Helm chart will fail validation if both are set. You must either:
 - Switch to `sourceType: otlp` (recommended), or
-- Use `config.merge` to define an explicit endpoint for pipelines that must continue using an HTTP source URL (see [section 2](#2-sending-data-to-a-specific-hosted-collector-source-url) above).
+- Use `config.merge` to define an explicit endpoint for pipelines that need to continue using an HTTP source URL. See [section 1.2](#12-sending-data-to-a-specific-hosted-collector-source-url).
 
 ### 1.5 Collector pods now visible under OpenTelemetry Collection
 
