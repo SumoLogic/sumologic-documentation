@@ -47,8 +47,8 @@ The Helm chart installation requires the following parameters:
 - `sumologic.accessId` - Sumo [Access ID](/docs/manage/security/access-keys/).
 - `sumologic.accessKey` - Sumo [Access key](/docs/manage/security/access-keys/).
 - `sumologic.clusterName` - An identifier for your Kubernetes cluster. This is the name you will see for the cluster in Sumo Logic. Set a different value for each cluster you install the Helm Chart in.
-- `sumologic.sourcelessModeAck` - Confirms you have read the [v6 upgrade guide](/docs/send-data/kubernetes/v6/how-to-upgrade) and understand the sourceless mode migration. The upgrade is blocked until this is set to `true`.
-- `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` - Confirms you have read the [v6 upgrade guide](/docs/send-data/kubernetes/v6/how-to-upgrade) and understand the metrics pipeline unification. The upgrade is blocked until this is set to `true`.
+- `sumologic.sourcelessModeAck` - Acknowledges the sourceless mode change introduced in v6. Must be set to `true` to proceed with the upgrade.
+- `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` - Acknowledges the metrics pipeline unification introduced in v6. Must be set to `true` to proceed with the upgrade.
 
 
 ### Prepare minimal configuration
