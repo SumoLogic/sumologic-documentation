@@ -7,13 +7,13 @@ description: This page describes the major changes and the necessary migration s
 
 We're introducing two major changes to the Sumo Logic Kubernetes Collection solution in v6.
 
-This page describes each change and its impact on your existing setup. Both below listed features are **enabled by default** in v6. You can read the changes and disable if required. You also need set the corresponding acknowledgment flag before the upgrade can proceed.
+This page describes each change and its impact on your existing setup. Both below listed features are **enabled by default** in v6. You can read the changes and disable if required. You must also set the corresponding acknowledgment flag before the upgrade can proceed.
 
 ## 1. Sourceless Mode for data upload
 
 Through Helm chart v5, the Sumo Logic Kubernetes Collection sent data to HTTP or OpenTelemetry Protocol (OTLP) sources on a Hosted Collector. The Hosted Collector appears in **Manage Data → Collection** under the value configured in `sumologic.collectorName` or, by default, `sumologic.clusterName`. Sourceless mode removes this dependency. Collection pods instead authenticate and register directly with Sumo Logic by using an installation token and the Sumo Logic OpenTelemetry extension.
 
-Below are the key changes and their impact on your existing setup. You can read these impacts and disable the sourceless mode if required, but most of the cases, it's advised to proceed with enabling sourceless mode.
+Below are the key changes and their impact on your existing setup. You can review these impacts and disable sourceless mode if needed. In most cases, we recommend enabling sourceless mode.
 
 ### 1.1 `_source` metadata no longer available
 
