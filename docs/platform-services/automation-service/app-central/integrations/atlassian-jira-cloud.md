@@ -33,9 +33,9 @@ This integration uses the [Jira REST API v3](https://developer.atlassian.com/clo
 * **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
 * **Issues Jira Daemon** *(Daemon)* - Daemon to pull Jira issues.
 
-## Using playbook outputs in Create Issue
+## Using playbook outputs in Create Issue and Update Issue
 
-The **Create Issue** action supports HTML content in the **Description** field. Line breaks and HTML formatting from playbook outputs are handled automatically — you do not need to manually add `<br/>` tags.
+The **Create Issue** and **Update Issue** actions support HTML content in the **Description** field. When passing plain text or signal variable inputs, line breaks are handled automatically and you do not need to add `<br/>` tags. When passing explicit HTML content, `<br/>` tags are supported and render correctly as line separators.
 
 ### Supported output formats
 
@@ -45,6 +45,12 @@ The **Create Issue** action supports HTML content in the **Description** field. 
 | Signal output variable | `{{signal.description}}` |
 | Iterated JSON data | `{{loop.item.summary}}` |
 | HTML with inline formatting | `<b>Host:</b> {{hostname}}<br/>{{signal.details}}` |
+| Due date (Unix timestamp) | `{{signal.timestamp}}` |
+| Due date (ISO datetime string) | `2026-10-06T09:00:00Z` |
+
+:::note
+The `{{loop.item.*}}` syntax is only available when a loop action is configured upstream in the playbook. For details, see [Arrays in playbooks](/docs/platform-services/automation-service/playbooks/arrays-in-playbooks).
+:::
 
 ### Example: creating an issue from a signal
 
@@ -130,7 +136,7 @@ Ticketing System
 
 | Version | Date            | Description |
 |:--|:----------------|:--|
-| v1.6 | October 6, 2026 | Improved the **Create Issue** action to automatically handle HTML formatting and line breaks in the **Description** field when using playbook outputs such as signal data and iterated JSON. Added documentation with examples for supported output formats. |
+| v1.6 | October 6, 2026 | Improved the **Create Issue** and **Update Issue** actions to correctly render multi-line text and HTML formatting in the **Description** field when using playbook outputs (signal data, iterated JSON). Top-level `<br/>` tags and `\n` line breaks now create separate paragraphs in Jira instead of being truncated or collapsed. Added support for Unix timestamps and ISO datetime strings in the **Due Date** field. |
 | v1.5 | July 14, 2026   | Improved reliability across all actions with more stable connections and clearer error messages. |
 | v1.4 | March 23, 2026  | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3 | Nov 6, 2025     | Changed the API endpoint in the resource connection file to prevent admin-level privileges. |
