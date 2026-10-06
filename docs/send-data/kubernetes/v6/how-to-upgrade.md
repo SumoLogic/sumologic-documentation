@@ -77,7 +77,7 @@ sumologic:
 ### Metrics Pipeline Unification
 
 :::note
-If you are not using any additional `metadata.metrics.*` configuration overrides, you can set `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged: true` in your values file and skip to [Step 3](#step-3-run-the-upgrade).
+`sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` must be set to `true` regardless of whether you enable or disable the single-layer pipeline. The upgrade is blocked until this flag is set. If you are not using any additional `metadata.metrics.*` configuration overrides, you can set this flag and skip to [Step 3](#step-3-run-the-upgrade).
 :::
 
 :::note

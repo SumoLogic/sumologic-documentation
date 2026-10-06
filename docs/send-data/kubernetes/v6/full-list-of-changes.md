@@ -20,7 +20,7 @@ description: This page describes the complete list of changes in Kubernetes Coll
 ## Metrics Pipeline Unification (enabled by default)
 
 - `sumologic.metrics.collector.otelcol.singleLayerPipeline.enabled` defaults to `true` in v6 (was `false` in v5)
-- New flag `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` — must be set to `true` to confirm you have read the migration guide; upgrade is blocked until this is set. See [How to Upgrade](./how-to-upgrade.md#metrics-pipeline-unification) for detailed migration steps.
+- New flag `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` — must be set to `true` regardless of whether the single-layer pipeline is enabled or disabled; upgrade is blocked until this is set. See [How to Upgrade](./how-to-upgrade.md#metrics-pipeline-unification) for detailed migration steps.
 - `sumologic-metadata-metrics` StatefulSet, HPA, Services, and PDB are removed
 - Metrics scraping and metadata enrichment are merged into a single OTel collector pod using two logical pipelines connected by a `forward` connector
 - Collector resource sizing: `memory = collector memory limit + metadata memory limit` (apply 1.5x safety multiplier), `cpu = collector CPU limit + (total metadata CPU usage / number of collector replicas)`. With single-layer metrics pipeline, the default metrics collector resources are increased to CPU `768m` and memory `768Mi`. If your environment requires more resources, you can reconfigure them using `sumologic.metrics.collector.otelcol.resources`.

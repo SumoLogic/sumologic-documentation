@@ -106,7 +106,7 @@ In the 2-layer pipeline:
 In the single-layer pipeline, the collector handles all of this in a single pod using two logical pipelines connected by a `forward` connector. The metadata StatefulSet, HPA, Services, and PDB are no longer rendered.
 
 :::note
-If you are not using any additional `metadata.metrics.*` configuration overrides, you can set `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged: true` in your values file and proceed with the installation.
+`sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` must be set to `true` regardless of whether you enable or disable the single-layer pipeline. The upgrade is blocked until this flag is set. If you are not using any additional `metadata.metrics.*` configuration overrides, you can set this flag and proceed with the installation.
 :::
 
 ### Benefits
