@@ -69,7 +69,7 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 ## How to add an agent knowledge source
 
 :::info
-Adding or changing knowledge requires the `manageAgent` role capability scoped to the SOC Analyst Agent. Sumo Logic provisions the initial grant; contact your account team to get started. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
+Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings (`cseManageSocAnalystSettings`). Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
 :::
 
 To add knowledge for the SOC Analyst Agent:
@@ -84,11 +84,10 @@ To add knowledge for the SOC Analyst Agent:
    Only plain text is supported. Each knowledge source item works best when it covers one concept, uses two to five sentences, and references specific names, IPs, patterns, or procedures your team actually uses.
    :::
 
-From here, whenever your knowledge shapes a response, the agent surfaces which piece it drew on and how it was applied, so a verdict is never a black box.
+Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. You can see this in two places:
 
-<img src={useBaseUrl('img/search/mobot/agent-knowledge-citation-socaa.png')} alt="Knowledge citation panel in an investigation result, showing Source and Used for columns" style={{border: '1px solid gray'}} width="500" />
-
-*Example: citation panel from an investigation showing which knowledge the agent applied and how it was used.*
+* **In Cloud SIEM Insights**. Open an Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
+* **In the investigation result detail**. A citation panel shows the source name and how it was used.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-citation-socaa.png')} alt="Knowledge citation panel in an investigation result, showing Source and Used for columns" style={{border: '1px solid gray'}} width="500" />
 
 ## Limitations
 
