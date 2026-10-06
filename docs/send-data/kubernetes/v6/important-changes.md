@@ -9,9 +9,9 @@ We're introducing two major changes to the Sumo Logic Kubernetes Collection solu
 
 This page describes each change and its impact on your existing setup. Both below listed features are **enabled by default** in v6. You can read the changes and disable if required. You must also set the corresponding acknowledgment flag before the upgrade can proceed.
 
-## 1. Sourceless Mode for data upload
+## 1. Sourceless mode for data upload
 
-Through Helm chart v5, the Sumo Logic Kubernetes Collection sent data to HTTP or OpenTelemetry Protocol (OTLP) sources on a Hosted Collector. The Hosted Collector appears in **Manage Data → Collection** under the value configured in `sumologic.collectorName` or, by default, `sumologic.clusterName`. Sourceless mode removes this dependency. Collection pods instead authenticate and register directly with Sumo Logic by using an installation token and the Sumo Logic OpenTelemetry extension.
+Through Helm chart v5, the Sumo Logic Kubernetes Collection sent data to HTTP or OpenTelemetry Protocol (OTLP) sources on a Hosted Collector. The Hosted Collector appears in **Manage Data > Collection** under the value configured in `sumologic.collectorName` or, by default, `sumologic.clusterName`. Sourceless mode removes this dependency. Collection pods instead authenticate and register directly with Sumo Logic by using an installation token and the Sumo Logic OpenTelemetry extension.
 
 Below are the key changes and their impact on your existing setup. You can review these impacts and disable sourceless mode if needed. In most cases, we recommend enabling sourceless mode.
 
@@ -57,7 +57,7 @@ Only exporters without an `endpoint` use the sourceless path. Exporters with an 
 
 The Hosted Collector and its default sources are **not deleted automatically** when you enable sourceless mode. They remain in your account until you explicitly request cleanup.
 
-Before enabling cleanup, check whether you have added any **custom sources** to the Hosted Collector beyond the defaults created by the Helm chart. The Hosted Collector for your cluster is identified by `sumologic.clusterName` or `sumologic.collectorName` in **Sumo Logic UI → Manage Data → Collection**.
+Before enabling cleanup, check whether you have added any **custom sources** to the Hosted Collector beyond the defaults created by the Helm chart. The Hosted Collector for your cluster is identified by `sumologic.clusterName` or `sumologic.collectorName` in **Sumo Logic UI > Manage Data > Collection**.
 
 **If you have no custom sources:** You can enable the cleanup flag:
 
@@ -85,17 +85,17 @@ This applies only to deployments using `sourceType: http` for logs, metrics, or 
 
 ### 1.5 Collector pods now visible under OpenTelemetry Collection
 
-Once sourceless mode is enabled, all collection pods that send data to Sumo Logic will register as OpenTelemetry collectors and appear in **Manage Data → Collection → OpenTelemetry Collection**.
+Once sourceless mode is enabled, all collection pods that send data to Sumo Logic will register as OpenTelemetry collectors and appear in **Manage Data > Collection > OpenTelemetry Collection**.
 
 To view pods registered for a specific cluster:
-1. Navigate to **Manage Data → Collection → OpenTelemetry Collection**.
+1. Navigate to **Manage Data > Collection > OpenTelemetry Collection**.
 2. In the **Filters** panel, add the tag: `cluster=<your-cluster-name>`
 3. All collector pods for that cluster are listed with their registration status and last active time.
 
 This pod visibility was not available in the classic Hosted Collector model.
 
 
-## 2. Metrics Pipeline Unification
+## 2. Metrics pipeline unification
 
 The Kubernetes metrics collection pipeline is moving from a **2-layer architecture** (collector StatefulSet + metadata StatefulSet) to a
 **single-layer architecture** (collector only).
@@ -118,7 +118,7 @@ In the single-layer pipeline, the collector handles all of this in a single pod 
 - Lower end-to-end latency (no internal OTLP hop).
 - Simpler configuration (single pipeline to reason about).
 
-### What Changes
+### What changes
 
 When `sumologic.metrics.collector.otelcol.singleLayerPipeline.enabled` is set to `true`:
 
