@@ -2,7 +2,7 @@
 id: proofpoint-trap-source
 title: Proofpoint TRAP Source
 sidebar_label: Proofpoint TRAP
-tags:
+keywords:
   - cloud-to-cloud
   - proofpoint-trap
 description: Learn how to collect Proofpoint TRAP message data and send it to Sumo Logic.

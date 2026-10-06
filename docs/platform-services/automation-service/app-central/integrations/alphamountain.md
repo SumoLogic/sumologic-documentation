@@ -53,11 +53,9 @@ Threat Intelligence-Reputation
 
 ## Change Log
 
-* June 21, 2022 - First upload
-* September 15, 2022
-	+ Changed integration name in alphaMountain
-	+ Updated integration guide
-	+ Changed action name: Get Likely Impersonations -> Get Possible Impersonations
-	+ Updated tableview for Get Categories and Get Threat Score
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* April 13, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | June 26, 2023 | Updated the integration with environmental variables. |
+| | September 15, 2022 | <ul><li>Changed the integration name in alphaMountain.</li><li>Updated the integration guide.</li><li>Renamed the **Get Likely Impersonations** action to **Get Possible Impersonations**.</li><li>Updated the table view for **Get Categories** and **Get Threat Score**.</li></ul> |
+| | June 21, 2022 | Initial release of the alphaMountain integration. |

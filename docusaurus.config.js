@@ -191,7 +191,6 @@ module.exports = {
             '/files/**',
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
-            '/tags/**'
           ],
           filename: 'sitemap.xml',
         },

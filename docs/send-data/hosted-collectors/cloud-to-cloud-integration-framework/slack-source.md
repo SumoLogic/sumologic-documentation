@@ -27,6 +27,8 @@ The Slack Source uses the following Slack APIs to ingest web and audit events.
 - [Slack Web API](https://api.slack.com/web)
 - [Slack Audit API](https://api.slack.com/admins/audit-logs)
 
+By default, the Slack Source collects from Slack's commercial endpoints. If your organization uses GovSlack, enable the **Government Endpoint** option to collect from Slack's government endpoints instead. See [Government endpoint support](#government-endpoint-support) for details.
+
 
 The source collects the following API endpoints and routes.
 
@@ -53,6 +55,17 @@ The Slack source can collect data from Slack's [Web API](https://api.slack.com/w
 including all workspaces, but it requires a Slack Enterprise Grid license. Each  API collects different information; collect from both if you have a Slack Enterprise Grid license.
 
 We recommend creating a Slack App for each Slack Workspace you want to monitor. This requires a Sumo Logic Slack C2C per Slack Workspace. If you have a Slack Enterprise Grid account, you can create an additional Slack app, install it on the Enterprise Grid instead of a Workspace and create another Sumo Logic C2C to monitor your Enterprise Grid audit logs from the Audit API.
+
+#### Government endpoint support
+
+The Slack Source supports collecting data from Slack's government endpoints in addition to the standard commercial endpoints. This is controlled by the **Government Endpoint** (`is_gov`) option in the Source configuration, which is disabled (`false`) by default. When enabled, the Source uses the following base URLs instead of the commercial ones:
+
+| API | Government Base URL |
+|:----|:---------------------|
+| Audit API | `https://api.slack-gov.com` |
+| Web API | `https://slack-gov.com` |
+
+Only enable this option if your Slack App is installed on a GovSlack workspace or organization.
 
 **Process overview**
 
@@ -126,6 +139,7 @@ To configure a Slack Source:
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **API Auth Bearer Token**. Enter the Slack App access token from the previous steps.
 1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
+1. **Government Endpoint**. Enable this option (`is_gov`) if you want to collect data from Slack's government endpoints instead of the commercial endpoints. Disabled by default. See [Government endpoint support](#government-endpoint-support) for the base URLs used.
 1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.
 1. When you are finished configuring the Source, click **Submit**.
 

@@ -121,8 +121,10 @@ Use Google Chat to receive notifications, ensuring you promptly get important up
 
 ## Change Log
 
-* August 27, 2024 (v2.0) - First upload
-* October 29, 2024 (v2.0) - Updated the docs 
-* December 06, 2024 (v2.1) - Added the Rich Text Message support in the Create Message action
-* September 25, 2025 (v2.2) - Updated the WIF configuration steps
-* July 23, 2026 (v2.3) - Resolved an issue where the integration fails due to deprecated dependency warnings.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.3 | July 23, 2026 | Resolved an issue where the integration failed due to deprecated dependency warnings. |
+| v2.2 | September 25, 2025 | Updated the WIF configuration steps. |
+| v2.1 | December 06, 2024 | Added Rich Text Message support to the **Create Message** action. |
+| v2.0 | October 29, 2024 | Updated the docs. |
+| v2.0 | August 27, 2024 | First upload. |

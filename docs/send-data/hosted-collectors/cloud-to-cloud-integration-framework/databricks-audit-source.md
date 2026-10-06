@@ -2,7 +2,7 @@
 id: databricks-audit-source
 title: Databricks Audit Source
 sidebar_label: Databricks Audit
-tags:
+keywords:
   - cloud-to-cloud
   - databricks-audit-logs
 description: Learn how to collect Databricks Audit logs and send them to Sumo Logic for monitoring, auditing, and compliance.
