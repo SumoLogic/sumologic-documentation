@@ -21,7 +21,7 @@ In the classic collection model, each data pipeline sends data to a dedicated HT
 
 **Impact:**
 - Any saved searches, dashboards, or monitors that filter or group by `_source` will return no results or incorrect results after migration.
-- You must audit and update these before or after enabling sourceless mode. You are good if you're not using _source in any queries.
+- Audit and update these queries before enabling sourceless mode. No changes are needed if your queries do not use `_source`.
 
 `_collector` **is preserved.** The source processor in the OTel pipeline still populates `_collector` with the value of `sumologic.collectorName` (defaults to `sumologic.clusterName`). Queries that use `_collector` to identify your cluster continue to work without any changes.
 
