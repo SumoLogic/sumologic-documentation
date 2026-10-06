@@ -33,7 +33,7 @@ To create the query size limit using the **Advanced** configuration:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Scan Budget**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Administration**, and then under **Account**, select **Scan Budget**. You can also click the **Go To...** menu at the top of the screen and select **Scan Budget**.<br/><img src={useBaseUrl('/img/manage/account/scan-budget-advanced.png')} alt="Scan budget advanced" style={{border:'1px solid gray'}} width="800"/>
 1. Click **+ Create Scan Budget**.
 1. **Scope**. Include or exclude the users and roles for whom the scan budget should apply.
-    - **Request Source**. Select **All Sources** to apply the budget to all chargeable query types, or select **Filtered Request Sources** to scope it to specific sources (also called caller modules), such as **Search API**, **AI Search (MCP)**, or **Mobot**.
+    - **Request Source**. Select **All Sources** to apply the budget to all chargeable query types, or select **Filtered Request Sources** to scope it to specific sources, such as **Search API**, **AI Search (MCP)**, or **Mobot**.
 1. **Capacity**. You can set either query level or time-phased budgets. You can also check the query size of the last 10 queries by clicking on the **Click here** button to help you determine the appropriate size limit.
     - **Query level budgets**. Select **Query** from the **Budget Type** dropdown and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. 
     - **Time-phased budgets**. Select **Daily**, **Weekly**, or **Monthly** from the **Budget Type** dropdown and enter the maximum amount of budget in GB. You can set a single shared budget for an entire group by selecting the **Capacity for the Group** option, whereas, you can set a budget for individual user in the selected scope by selecting the **Capacity per User** option.
@@ -79,7 +79,7 @@ To view the selected scan budget:
   - **Status**. Describes if the scan budget is active or inactive.
   - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for data tier this is shown as **Infrequent Scan**.
   - **Scope**. Displays the list of roles or users for whom the selected scan budget is applied for or excluded from.
-  - **Requested Source**. Displays the request source(s), also known as caller modules, that the scan budget applies to, such as Search API, AI Search (MCP), or Mobot. Shows **All Sources** if the budget applies to every request source.
+  - **Requested Source**. Displays the request sources that the scan budget applies to, such as Search API, AI Search (MCP), or Mobot. Shows **All Sources** if the budget applies to every request source.
   - **Capacity (per user)**. Describes the budget set for individual user search.
   - **Action when capacity reached**. Describes the type of action sected to notify when the budget limit is reached.
   - **Reset every day/week/month at**. Displays the time phase when the budget can reset.
