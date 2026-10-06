@@ -5,7 +5,7 @@ description: Definitions of Sumo Logic terms, features, and product components y
 keywords:
   - glossary
   - definitions
-  - Sumo Logic terms
+  - sumo logic terms
   - terminology
 ---
 
@@ -51,8 +51,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Burst limit](/docs/metrics/manage-metric-volume/metric-throttling)**. The point at which Sumo Logic slows metric data ingestion to keep it within your allowable contracted limits. Metric data volume is measured in Data Points per Minute (DPM). Sumo Logic allows for spikes in metrics ingestion until it reaches a calculated burst limit, then starts throttling your data sources.
 
 
-
-
 ## C
 
 **[Capability](/docs/manage/users-roles/roles/role-capabilities)**. In Sumo Logic role-based access control (RBAC), you grant the users with a role the right to perform a particular function by assigning the corresponding capability to the role. For example, the “Manage Collectors” capability allows a user to install and manage installed and hosted collectors and sources.
@@ -63,13 +61,9 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Clobber](/docs/send-data/installed-collectors/collector-installation-reference/force-collectors-name-clobber/)**. During the installation process, use the clobber flag in situations where you're creating a new collector that will use a name that is already in use by another collector. Clobber deletes (clobbers) the existing collector with the same name.
 
-[**Cloud SIEM**](/docs/cse). A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
+**[Cloud SIEM](/docs/cse)**. A cloud-native security information and event management solution that automatically normalizes, correlates, and analyzes your security data. Cloud SIEM surfaces insights that help security analysts detect and investigate threats faster.
 
-[**Cloud SOAR**](/docs/cloud-soar). A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
-
-<!-- TODO keep?
-**[Cloud](/docs/get-started#sumo-logic-cloud)**. The Sumo Logic Cloud is a secure, scalable repository for all of your operations, security, compliance, development, and other log data. The Sumo Logic Cloud stores, indexes, parses, and analyzes data, and provides unlimited horsepower with elastic scalability.
--->
+**[Cloud SOAR](/docs/cloud-soar)**. A security orchestration, automation, and response platform that helps security teams streamline incident response. Cloud SOAR automates repetitive tasks, orchestrates workflows across security tools, and tracks the full incident lifecycle.
 
 **[Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. A fully-managed collection system that collects logs and events directly from SaaS and cloud platforms such as Salesforce, Microsoft 365, and Okta. The framework handles authentication, scheduling, and state tracking automatically. Also referred to as C2C.
 
@@ -80,8 +74,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Content sharing](/docs/manage/content-sharing)**. A Sumo Logic feature that allows you to share searches, dashboards, and folders with a user, a role, or combinations of the two.
 
 **[Credit](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. A unit of measure that tracks account usage, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose.
-
-
 
 
 ## D
@@ -102,17 +94,13 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Detected relationship](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a relationship detected between entities that appear together in a record, such as an IP address and hostname in the same log message, even if they are not part of the insight currently being viewed. Displayed as solid lines in the entity graph.
 
-<!-- TODO keep?
 **Dimension**. In [Carbon 2.0](/docs/metrics/introduction/metric-formats#carbon-20) and [Prometheus](/docs/metrics/introduction/metric-formats#prometheus) metrics, dimensions are the one or more space-separated key-value pairs that uniquely identify what is being measured. Dimensions are also referred to as intrinsic tags and labels.
--->
 
 **[Disabled metric source](/docs/metrics/manage-metric-volume/disabled-metrics-sources)**. A metric source that Sumo Logic has disabled because it has received too many unique time series. A disabled metric source will stop receiving data, and that data cannot be recovered.
 
 **[DPM](/docs/metrics/manage-metric-volume/data-limits-for-metrics)**. Stands for data points per minute. Metric data volume is measured in DPM. For example, a CPU metric reported on a single host every 15 seconds produces 4 DPM.
 
 **[Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing)**. A Sumo Logic feature that automatically extracts fields from JSON log messages at search time, without requiring manual parse rules. Also called Auto Parse. "Dynamic Parsing" is used in documentation and the API, while "Auto Parse" appears in the UI.
-
-
 
 
 ## E
@@ -156,8 +144,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Group](/docs/search/search-query-language/group-aggregate-operators)**. A search operator keyword that groups aggregation results by one or more fields. `group`, `by`, and `group by` are interchangeable, so `count by user` and `count group by user` are the same. Each aggregation function returns a field prefixed with an underscore, such as `_count`.
 
 
-
-
 ## H
 
 **[Hash rule](/docs/send-data/collection/processing-rules/hash-rules)**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
@@ -170,8 +156,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 
 ## I
-
-**[`if` operator](/docs/search/search-query-language/search-operators/if)**. A search operator that returns one of two values depending on whether a condition is true or false (a ternary `if`/else).
 
 **[Include rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Include rules are a type of processing rule that is used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
@@ -242,10 +226,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Metrics transformation rule](/docs/metrics/metrics-transformation-rules)**. Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
 
-<!-- TODO keep?
-**[Microservices](/docs/integrations/app-development)**. The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
--->
-
 **[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. Ask questions in natural language to search logs, investigate security insights, get platform guidance, and more. Mobot automatically routes questions to specialized agents based on your intent.
 
 **[Monitor](/docs/alerts/monitors/overview)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
@@ -265,8 +245,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Organization](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings)**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
 
 **Outlier**. A value in a sequence that deviates from the expected range and may signal an operational or performance issue. Identify outliers in logs with the [`outlier` search operator](/docs/search/search-query-language/search-operators/outlier), and in metrics with the [`outlier` metrics operator](/docs/metrics/metrics-operators/outlier/).
-
-
 
 
 ## P
@@ -305,8 +283,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[`quantize` operator](/docs/metrics/metrics-operators/quantize/)**. A metrics operator that sets the size of the time buckets Sumo Logic aggregates metrics into, and the aggregation method for each bucket. It is the metrics-query counterpart of the `timeslice` search operator.
 
 
-
-
 ## R
 
 **[RBAC](/docs/manage/users-roles/roles/role-based-access-control/)**. Sumo Logic supports Role-Based Access Control (RBAC) to allow administrators to customize system access. With RBAC, administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
@@ -330,7 +306,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Rollup table](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage)**. Metric data is stored in Sumo Logic as raw data points, and aggregated over one minute and one hour resolutions. The one minute and one hour aggregated metrics are referred to as rollup tables. Raw data is retained for 7 days, one-minute rollups for 30 days and one-hour rollups for 13 months.
 
 **[Rule](/docs/cse/rules/about-cse-rules)**. In Cloud SIEM, a set of logic that fires on incoming records and creates signals when its conditions are met. Cloud SIEM includes six rule types: **Match** (fires on a single record match), **Threshold** (fires when a record matches a minimum number of times in a time window), **Chain** (fires on combinations of event types over a time window), **Aggregation** (fires when aggregation conditions are met), **First Seen** (fires when an entity exhibits a behavior for the first time), and **Outlier** (fires when entity behavior deviates from its established baseline).
-
 
 
 ## S
@@ -362,8 +337,6 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[Suppressed signal](/docs/cse/records-signals-entities-insights/about-signal-suppression)**. In Cloud SIEM, a signal that the insight algorithm excludes from the insight generation process. A suppressed signal does not contribute to or become part of an insight. By default, signals are automatically suppressed for 72 hours.
 
 
-
-
 ## T
 
 **[Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence)**. A Sumo Logic feature that lets you ingest and query threat indicators to enrich log searches and Cloud SIEM detections. Threat indicators are data points about known threats, such as malicious IP addresses, file hashes, and hostnames. Indicators come from Sumo Logic-managed sources or custom sources you configure.
@@ -386,7 +359,3 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 **[user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties)**. The user.properties file is used to pass collector parameters for some installation methods.
 
 
-## W
-
-
-**[`where` operator](/docs/search/search-query-language/search-operators/where)**. A search operator that filters results by a boolean condition. Similar to SQL `WHERE`, but it can appear anywhere in the query pipeline, before or after other operators.

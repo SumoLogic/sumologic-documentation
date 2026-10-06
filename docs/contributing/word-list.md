@@ -55,7 +55,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Drill down**. Drill down, as in a menu, or other filtering feature is two words, not one.
 
-**Dropdown**. Use "dropdown" (one word, no hyphen) as an adjective before a noun: "dropdown list," "dropdown menu." Don’t use it as a standalone noun. When possible, describe the action instead: "Select X from the list." Do not use "drop-down" (hyphenated) or "drop down" (two words).
+**Dropdown**. Use "dropdown" (one word, no hyphen) as an adjective before a noun: "dropdown list", "dropdown menu". Don’t use it as a standalone noun. When possible, describe the action instead: "Select X from the list." Do not use "drop-down" (hyphenated) or "drop down" (two words).
 
 ## E
 
@@ -83,16 +83,10 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Hash rule**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
-**Hibachi**. Project for content sharing and collaboration. Includes a new app catalog and app installation flow and a new library design.
-
-**Home Page**. Persistent tab, which services the Jiro and Hibachi projects by helping users get started and discover content more easily.
-
 **Hosted collector**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 
 
 ## I
-
-**`if` operator**. A ternary operator used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.
 
 **Include rule**. Include rules are a type of processing rule used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
@@ -113,11 +107,11 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## M
 
-**Manipulate**. Avoid. Use "work with," "handle," or "use" instead.
+**Manipulate**. Avoid. Use "work with", "handle", or "use" instead.
 
 **Markdown**. Always capitalize. It's a proper noun (the name of the markup language).
 
-**MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
+**MB and Mbit**. MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
 **Menu**. When referring to a menu in the UI, use "menu" or "dropdown menu." Don't use "list" or "selector."
 
@@ -133,7 +127,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## O
 
-**Operators**. See [Operators](/docs/contributing/style-guide/#operators) in the style guide.
+**Operators**. "Operators" can refer to [log search operators](/docs/search/search-query-language/search-operators/) or [metrics operators](/docs/metrics/metrics-operators/). When the context is ambiguous, use the full phrase. When referring to an operator by name in prose, capitalize only if it begins a sentence; otherwise write the name lowercase in backticks: `` `where` ``, `` `if` ``.
 
 **Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 
@@ -155,24 +149,22 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## R
 
-**Real time / real-time**. Two words as a noun: "Data updates in real time." Hyphenate as an adjective before a noun: "real-time alerts," "real-time dashboard."
+**Real time / real-time**. Two words as a noun: "Data updates in real time". Hyphenate as an adjective before a noun: "real-time alerts", "real-time dashboard".
 
 **Repo**. Short for repository. No need to spell out repository as our audience is technical enough for this to be clear.
 
 
 ## S
 
-**Saved search**. Saved search is not capitalized.
+**Saved search**. Lowercase in prose. Capitalize only when used as a literal UI label.
 
-**Scheduled search.** Scheduled search is not capitalized.
+**Scheduled search**. Lowercase in prose. Capitalize only when used as a literal UI label.
 
 **Search**. Search is not capitalized, unless you are referring to the Search page.
 
-**Search autocomplete**. One word, not two. The Sumo Logic feature is called Search autocomplete.
-
 **Setup vs Set up**. Setup as one word is a _noun_ or an _adjective_. Set up as two words is a _verb_. For example, "You can set up your collector using the setup procedure."
 
-**Source** / **Sources**. Lowercase `source` because it's the generic word for the category, not part of a source's name. Capitalize the service or type name in front of it, matching the **Add Source** list, and leave `source` lowercase:
+**Source** / **Sources**. Lowercase "source" because it's the generic word for the category, not part of a source's name. Capitalize the service or type name in front of it, matching the **Add Source** list, and leave `source` lowercase:
 
 * Local File source
 * Remote File source
@@ -201,7 +193,7 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 **Time range**. Time range is two words, not one.
 
-**Time series.** Time series is two words, not one.
+**Time series**. Time series is two words, not one.
 
 **Time slice**. Time slice is two words, not one.
 
@@ -224,7 +216,5 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 **Web Application**. Avoid using where possible. "Sumo Logic" or "our product" should be sufficient. If you need to refer to our web application to distinguish from API, do so. Don't capitalize.
 
 **Website**. Website or websites is one word.
-
-**`where` operator**. A conditional operator that can precede or follow another operator. Example combinations include `where x matches y`, `where x in (a, b, c)`, `where x not in (a, b, c)` and `where a > 1 and b / 4 < sqrt(x)`.
 
 **Wildcard**. Wildcard is one word.
