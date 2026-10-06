@@ -51,7 +51,7 @@ metadata:
             timeout: 30s
 ```
 
-Only exporters without an `endpoint` will use the sourceless path. Any exporter with an explicit endpoint continues to send data to the specified source. To move these custom exporters to sourcless ingestion mode, you can remove endpoint parameter in the exporter configuration.
+Only exporters without an `endpoint` use the sourceless path. Exporters with an explicit endpoint continue sending data to that source. To move a custom exporter to sourceless ingestion, remove the `endpoint` parameter from its configuration.
 
 ### 1.3 Hosted Collector cleanup
 
