@@ -28,7 +28,7 @@ In the classic collection model, each data pipeline sends data to a dedicated HT
 ### 1.2 Sending data to a specific Hosted Collector source URL
 
 :::note
-This applies only if you need to continue sending specific data to a Hosted Collector HTTP or OTLP source URL. If you are not using custom source URLs or custom exporters via `config.merge` or `config.merge`, skip this section.
+This applies only if you need to continue sending specific data to a Hosted Collector HTTP or OTLP source URL. If you are not using custom source URLs or custom exporters through `config.merge` or `config.override`, skip this section.
 :::
 
 When sourceless mode is enabled, all Sumo Logic exporters that do **not** have an explicit `endpoint` configured will route data through the sourceless path. Custom exporters with an explicit `endpoint` defined via `config.merge` or `config.override` continue to send data to that source URL.
