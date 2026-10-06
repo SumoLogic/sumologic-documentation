@@ -26,6 +26,31 @@ Query data and utilize actions in the [ZeroFox](https://www.zerofox.com/) platfo
 * **Indicator Feed Daemon** *(Daemon)* - Polls the ZeroFox CTI indicators feed for new and updated indicators of compromise.
 * **Vulnerability Daemon** *(Daemon)* - Polls the ZeroFox CTI vulnerabilities feed for new and updated CVE records.
 
+## Permissions
+
+The following ZeroFox feed permissions are required depending on the actions you want to use:
+
+* **Network & Vulnerability Intelligence Feeds**
+   * C2 Infrastructure Lookup
+   * Botnet Infected Host IPs
+   * Phishing URLs
+   * Malware
+   * Ransomware
+   * Disruption TLDs and URLs
+   * Vulnerabilities
+   * Exploit Scripts
+   * Consolidated Indicators
+* **Identity & Fraud Threat Intelligence Feeds**
+   * Botnet Credential Lookup
+   * Compromised Credential Lookup
+   * Breaches
+* **Deep & Dark Web Intelligence Feeds**
+   * Advanced Dark Web (ZeroFox Analyst Reports)
+   * Threat Actors
+   * Discord
+   * Telegram
+   * Dark Web
+
 ## Configure ZeroFox in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
