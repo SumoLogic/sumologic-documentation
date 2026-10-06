@@ -17,11 +17,11 @@ Below are the key changes and their impact on your existing setup. You can read 
 
 ### 1.1 `_source` metadata no longer available
 
-In the classic collection model, each data pipeline sends data to a dedicated HTTP or OTLP source, which automatically populates the `_source` metadata field on ingested data. In sourceless mode, there are no sources — data is sent directly to Sumo Logic, so `_source` is no longer populated and cannot be used in search queries.
+In the classic collection model, each data pipeline sends data to a dedicated HTTP or OTLP source, which automatically populates the `_source` metadata field on ingested data. In sourceless mode, there are no sources involved and data is sent directly to Sumo Logic, so `_source` is no longer populated and cannot be used in search queries.
 
 **Impact:**
 - Any saved searches, dashboards, or monitors that filter or group by `_source` will return no results or incorrect results after migration.
-- You must audit and update these before or after enabling sourceless mode.
+- You must audit and update these before or after enabling sourceless mode. You are good if you're not using _source in any queries.
 
 `_collector` **is preserved.** The source processor in the OTel pipeline still populates `_collector` with the value of `sumologic.collectorName` (defaults to `sumologic.clusterName`). Queries that use `_collector` to identify your cluster continue to work without any changes.
 
@@ -44,11 +44,14 @@ metadata:
     config:
       merge:
         exporters:
-          sumologic/custom-logs:
+          sumologic/custom-logs: // This is a custom exporter which sends data to below mentioned hosted collector http source
             endpoint: "https://<your-endpoint>.collection.sumologic.com/receiver/v1/http/<token>"
+            timeout: 30s
+          sumologic/default: // This is a custom exporter without an explicit endpoint defined, so this will send data to your account directly without any sources.
+            timeout: 30s
 ```
 
-Only exporters without an `endpoint` will use the sourceless path. Any exporter with an explicit endpoint continues to send data to the specified source.
+Only exporters without an `endpoint` will use the sourceless path. Any exporter with an explicit endpoint continues to send data to the specified source. To move these custom exporters to sourcless ingestion mode, you can remove endpoint parameter in the exporter configuration.
 
 ### 1.3 Hosted Collector cleanup
 
