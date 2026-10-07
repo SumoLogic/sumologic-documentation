@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
 ***Version: 1.6.0  
-Updated: October 6, 2026***
+Updated: October 7, 2026***
 
-Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
+[Jira cloud](https://developer.atlassian.com/cloud/jira/platform/) is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
 :::note
 This integration uses the [Jira REST API v3](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#about).
@@ -136,7 +136,7 @@ Ticketing System
 
 | Version | Date            | Description |
 |:--------|:----------------|:--|
-| v1.6.0  | October 6, 2026 | Improved the **Create Issue** and **Update Issue** actions to correctly render multi-line text and HTML formatting in the **Description** field when using playbook outputs (signal data, iterated JSON). Top-level `<br/>` tags and `\n` line breaks now create separate paragraphs in Jira instead of being truncated or collapsed. Added support for Unix timestamps and ISO datetime strings in the **Due Date** field. |
+| v1.6.0  | October 7, 2026 | Improved the **Create Issue** and **Update Issue** actions to correctly render multi-line text and HTML formatting in the **Description** field when using playbook outputs (signal data, iterated JSON). Top-level `<br/>` tags and `\n` line breaks now create separate paragraphs in Jira instead of being truncated or collapsed. Added support for Unix timestamps and ISO datetime strings in the **Due Date** field. |
 | v1.5    | July 14, 2026   | Improved reliability across all actions with more stable connections and clearer error messages. |
 | v1.4    | March 23, 2026  | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | v1.3    | Nov 6, 2025     | Changed the API endpoint in the resource connection file to prevent admin-level privileges. |
