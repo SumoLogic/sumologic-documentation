@@ -2,10 +2,11 @@
 id: how-to-upgrade
 title: Kubernetes Collection v6.0.0 - How to Upgrade
 sidebar_label: How to Upgrade
-description: This page describes how to upgrade the Kubernetes Collection to v6.
+description: Learn how to upgrade Kubernetes Collection to v6, including setting acknowledgment flags, migrating configuration, and rolling back the metrics pipeline.
 ---
 
 This guide walks you through upgrading to Sumo Logic Kubernetes Collection v6.0.0. Here's what's new:
+
 * Sourceless mode is now enabled by default: the Hosted Collector and HTTP sources are replaced by direct installation-token authentication via the OpenTelemetry extension.
 * Metrics Pipeline Unification is now enabled by default: the separate metadata StatefulSet is merged into a single OTel collector pipeline.
 
@@ -15,7 +16,7 @@ Both changes are breaking and require you to review the [Important Changes](./im
 
 - `helm` v3
 - `kubectl`
-- Set the following environment variables, which our commands will use:
+- Set the following environment variables, which the commands in this guide use:
    ```bash
    export NAMESPACE=...
    export HELM_RELEASE_NAME=...
@@ -58,7 +59,7 @@ sumologic:
 `cleanupHostedCollector: true` permanently deletes the Hosted Collector and **all sources** attached to it. This cannot be undone.
 :::
 
-#### Option 2: Disable sourceless mode and continue using old Hosted collector flow
+#### Option 2: Disable sourceless mode and keep using the Hosted Collector
 
 After reviewing the impacts, add these values to your `values.yaml`:
 
@@ -116,7 +117,7 @@ If you chose Option 1, continue with the migration steps below before running th
 
 #### Resource sizing
 
-In single-layer mode, the collector handles both scraping and enrichment/export. If you override the default collector or metadata resources, update the collector resources by using the sizing guidance below.
+In single-layer mode, the collector handles both scraping and enrichment/export. If you override the default collector or metadata resources, update the collector resources using the following sizing guidance.
 
 **Formula:**
 
@@ -153,7 +154,7 @@ These keys are consumed directly in the single-layer collector config template:
 
 ##### Customer action required
 
-These keys configure the metadata StatefulSet's scheduling, resources, and scaling. The collector has equivalent keys — you must move your customizations:
+These keys configure the metadata StatefulSet's scheduling, resources, and scaling. The collector has equivalent keys, so you must move your customizations:
 
 | Metadata Key (No Longer Used) | Collector Equivalent |
 |-------------------------------|----------------------|
@@ -220,7 +221,7 @@ The key difference is that the scraping pipeline is now named `metrics/collector
 
 **Impact on `config.merge`:**
 
-- **`metadata.metrics.config.merge`** targeting `service.pipelines.metrics` continues to work unchanged — it hits the enrichment pipeline, which has the same name and processor structure as the 2-layer metadata pipeline.
+- **`metadata.metrics.config.merge`** targeting `service.pipelines.metrics` continues to work unchanged. It targets the enrichment pipeline, which has the same name and processor structure as the 2-layer metadata pipeline.
 - **`sumologic.metrics.collector.otelcol.config.merge`** targeting `service.pipelines.metrics` now targets the **enrichment** pipeline, not the scraping pipeline. If your collector `config.merge` adds processors or modifies the scraping pipeline, update the pipeline reference from `metrics` to `metrics/collector`.
 
 **Example migration:**

@@ -2,18 +2,18 @@
 id: important-changes
 title: Kubernetes Collection v6.0.0 - Important Changes
 sidebar_label: Important Changes
-description: This page describes the major changes and the necessary migration steps.
+description: Learn about the major changes in Kubernetes Collection v6, including sourceless mode and metrics pipeline unification, and the migration steps for each.
 ---
 
 We're introducing two major changes to the Sumo Logic Kubernetes Collection solution in v6.
 
-This page describes each change and its impact on your existing setup. Both below listed features are **enabled by default** in v6. You can read the changes and disable if required. You must also set the corresponding acknowledgment flag before the upgrade can proceed.
+This page describes each change and its impact on your existing setup. Both features are **enabled by default** in v6. You can review the changes and disable either feature if needed. You must also set the corresponding acknowledgment flag before the upgrade can proceed.
 
 ## 1. Sourceless mode for data upload
 
 Through Helm chart v5, the Sumo Logic Kubernetes Collection sent data to HTTP or OpenTelemetry Protocol (OTLP) sources on a Hosted Collector. The Hosted Collector appears in **Manage Data > Collection** under the value configured in `sumologic.collectorName` or, by default, `sumologic.clusterName`. Sourceless mode removes this dependency. Collection pods instead authenticate and register directly with Sumo Logic by using an installation token and the Sumo Logic OpenTelemetry extension.
 
-Below are the key changes and their impact on your existing setup. You can review these impacts and disable sourceless mode if needed. In most cases, we recommend enabling sourceless mode.
+The following sections describe the key changes and their impact on your existing setup. Review these impacts and disable sourceless mode if needed. In most cases, we recommend enabling it.
 
 ### 1.1 `_source` metadata no longer available
 
@@ -33,7 +33,7 @@ This applies only if you need to continue sending specific data to a Hosted Coll
 
 When sourceless mode is enabled, all Sumo Logic exporters that do **not** have an explicit `endpoint` configured will route data through the sourceless path. Custom exporters with an explicit `endpoint` defined via `config.merge` or `config.override` continue to send data to that source URL.
 
-This allows incremental migration keeping specific custom pipelines pointing at a source URL while others move to sourceless:
+This lets you migrate incrementally, keeping specific custom pipelines pointed at a source URL while others move to sourceless:
 
 ```yaml
 sumologic:
@@ -44,10 +44,10 @@ metadata:
     config:
       merge:
         exporters:
-          sumologic/custom-logs: # This is a custom exporter which sends data to below mentioned hosted collector http source
+          sumologic/custom-logs: # Custom exporter that sends data to the HTTP source below
             endpoint: "https://<your-endpoint>.collection.sumologic.com/receiver/v1/http/<token>"
             timeout: 30s
-          sumologic/default: # This is a custom exporter without an explicit endpoint defined, so this will send data to your account directly without any sources.
+          sumologic/default: # No explicit endpoint, so this exporter sends data directly to your account without a source
             timeout: 30s
 ```
 
@@ -57,9 +57,9 @@ Only exporters without an `endpoint` use the sourceless path. Exporters with an 
 
 The Hosted Collector and its default sources are **not deleted automatically** when you enable sourceless mode. They remain in your account until you explicitly request cleanup.
 
-Before enabling cleanup, check whether you have added any **custom sources** to the Hosted Collector beyond the defaults created by the Helm chart. The Hosted Collector for your cluster is identified by `sumologic.clusterName` or `sumologic.collectorName` in **Sumo Logic UI > Manage Data > Collection**.
+Before enabling cleanup, check whether you have added any **custom sources** to the Hosted Collector beyond the defaults created by the Helm chart. The Hosted Collector for your cluster is identified by `sumologic.clusterName` or `sumologic.collectorName` in **Manage Data > Collection**.
 
-**If you have no custom sources:** You can enable the cleanup flag:
+**If you have no custom sources**, you can enable the cleanup flag:
 
 ```yaml
 sumologic:
@@ -71,7 +71,7 @@ sumologic:
 Enabling `cleanupHostedCollector` permanently deletes the Hosted Collector and **all sources** attached to it. This cannot be undone.
 :::
 
-**If you have custom sources:** Do **not** enable `cleanupHostedCollector` until you have migrated all custom sources to an alternative ingestion path.
+**If you have custom sources**, do **not** enable `cleanupHostedCollector` until you have migrated all custom sources to an alternative ingestion path.
 
 ### 1.4 Source type restriction
 
@@ -89,34 +89,31 @@ Once sourceless mode is enabled, all collection pods that send data to Sumo Logi
 
 To view pods registered for a specific cluster:
 1. Navigate to **Manage Data > Collection > OpenTelemetry Collection**.
-2. In the **Filters** panel, add the tag: `cluster=<your-cluster-name>`
+2. In the **Filters** panel, add the tag `cluster=<your-cluster-name>`.
 3. All collector pods for that cluster are listed with their registration status and last active time.
 
-This pod visibility was not available in the classic Hosted Collector model.
-
+The classic Hosted Collector model did not provide this pod visibility.
 
 ## 2. Metrics pipeline unification
 
-The Kubernetes metrics collection pipeline is moving from a **2-layer architecture** (collector StatefulSet + metadata StatefulSet) to a
-**single-layer architecture** (collector only).
+The Kubernetes metrics collection pipeline is moving from a **2-layer architecture** (collector StatefulSet and metadata StatefulSet) to a **single-layer architecture** (collector only).
 
 In the 2-layer pipeline:
 
 - **Layer 1 (Collector)** scrapes metrics via the Prometheus receiver, applies light processing, and forwards via OTLP to Layer 2.
-- **Layer 2 (Metadata)** enriches metrics with Kubernetes metadata (k8sattributes, source, sumologic processors), applies routing, batching,
-  and exports to Sumo Logic.
+- **Layer 2 (Metadata)** enriches metrics with Kubernetes metadata (k8sattributes, source, sumologic processors), applies routing, batching, and exports to Sumo Logic.
 
 In the single-layer pipeline, the collector handles all of this in a single pod using two logical pipelines connected by a `forward` connector. The metadata StatefulSet, HPA, Services, and PDB are no longer rendered.
 
 :::note
-`sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` must be set to `true` regardless of whether you enable or disable the single-layer pipeline. The upgrade is blocked until this flag is set. If you are not using any additional `metadata.metrics.*` configuration overrides, you can set this flag and proceed with the installation.
+`sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` must be set to `true` regardless of whether you enable or disable the single-layer pipeline. The upgrade is blocked until this flag is set. If you are not using any `metadata.metrics.*` configuration overrides, you can set this flag and proceed with the upgrade.
 :::
 
 ### Benefits
 
-- Fewer pods (metadata replicas eliminated), reducing resource consumption.
+- Fewer pods, because the metadata replicas are eliminated, which reduces resource consumption.
 - Lower end-to-end latency (no internal OTLP hop).
-- Simpler configuration (single pipeline to reason about).
+- Simpler configuration, with a single pipeline to manage.
 
 ### What changes
 
