@@ -3,8 +3,8 @@ slug: /security
 title: Sumo Logic Security Solutions
 keywords:
   - security
-  - SIEM
-  - SOAR
+  - siem
+  - soar
   - threat detection
 ---
 

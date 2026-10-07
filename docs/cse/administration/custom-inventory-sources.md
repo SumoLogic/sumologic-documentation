@@ -4,7 +4,7 @@ title: Configure a Custom Inventory Source
 sidebar_label: Custom Inventory Source
 description: Learn how to extract inventory data from your data sources
 keywords:
-  - Cloud SIEM inventory
+  - cloud siem inventory
   - inventory data
   - custom inventory source
   - webhook

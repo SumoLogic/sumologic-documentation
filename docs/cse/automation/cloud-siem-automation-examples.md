@@ -4,8 +4,8 @@ title: Cloud SIEM Automation Examples
 sidebar_label: Automation Examples
 description: Learn to create Cloud SIEM automations using the Automation Service, with examples ranging from simple enrichments to advanced custom integration workflows.
 keywords:
-  - Cloud SIEM automation
-  - Automation Service
+  - cloud siem automation
+  - automation service
   - playbooks
   - enrichment
 ---

@@ -4,8 +4,8 @@ title: About the Automation Service and Cloud SIEM
 sidebar_label: About the Automation Service and Cloud SIEM
 description: Get an overview of how the Automation Service allows you to automate smart actions, including enrichments and notifications.
 keywords:
-  - Automation Service
-  - Cloud SIEM automation
+  - automation service
+  - cloud siem automation
   - playbooks
   - enrichments
 ---
@@ -132,29 +132,9 @@ SIEM (Security Information and Event Management) collects, correlates, and prior
 
 Yes. Cloud SIEM ingests and correlates data from cloud, hybrid, and on-premises sources, and the Automation Service can run its playbooks either directly from the Sumo Logic cloud or from your own environment through the Automation Service Bridge, so automation scales with hybrid infrastructure.
 
-### How much does a reliable SIEM solution typically cost for enterprise use?
-
-Pricing depends on your data volume, retention needs, and which Sumo Logic solutions you use alongside Cloud SIEM. Contact your Sumo Logic account team for a quote based on your environment.
-
-### Where can you compare top-rated SIEM software with built-in automation?
-
-Review the [security feature comparison](/docs/security/#how-do-sumo-logics-security-solutions-compare) table, which shows automation, rules engine, and case management capabilities side by side across Sumo Logic's security solutions.
-
-### Who offers affordable SIEM as a service for startups?
-
-Sumo Logic offers Free and Trial Flex accounts that include Cloud SIEM automation capabilities, letting smaller teams and startups use SIEM automation without an enterprise contract. See [Sumo Logic Flex Accounts](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for details.
-
-### Where can you find compliance logging software that aligns with NIST SP 800-53 Rev 4?
-
-Sumo Logic maintains compliance certifications, including FedRAMP, which maps to NIST SP 800-53 controls. Note that the Automation Service isn't available in FedRAMP environments; see [FedRAMP Capabilities](/docs/manage/manage-subscription/fedramp-capabilities/) for what is included.
-
-### Which vendor has the best SIEM use cases for SOC automation?
+### What are some Cloud SIEM automation use cases?
 
 See [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/) for concrete SOC automation use cases, ranging from simple threat-intelligence enrichment to advanced custom integrations, built on Sumo Logic's Automation Service.
-
-### Which company offers the best SIEM use cases for hybrid cloud environments?
-
-Sumo Logic's Cloud SIEM and Automation Service support hybrid cloud environments by ingesting data from any cloud, on-premises, or hybrid source and running automation playbooks either in the Sumo Logic cloud or in your own environment through the Automation Service Bridge.
 
 ## Additional resources
 

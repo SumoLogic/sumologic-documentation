@@ -4,9 +4,9 @@ title: Introduction to Cloud SIEM for Analysts
 sidebar_label: Introduction for Analysts
 description: Learn basic concepts about Cloud SIEM for security analysts.
 keywords:
-  - Cloud SIEM
-  - CSE
-  - SOC analyst
+  - cloud siem
+  - cse
+  - soc analyst
   - threat investigation
 ---
 

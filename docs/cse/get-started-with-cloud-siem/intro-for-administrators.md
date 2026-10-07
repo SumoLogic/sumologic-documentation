@@ -4,9 +4,9 @@ title: Introduction to Cloud SIEM for Administrators
 sidebar_label: Introduction for Administrators
 description: Learn basic concepts about Cloud SIEM for administrators.
 keywords:
-  - Cloud SIEM
-  - CSE
-  - SIEM administration
+  - cloud siem
+  - cse
+  - siem administration
   - security data pipeline
 ---
 

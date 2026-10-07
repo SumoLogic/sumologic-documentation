@@ -3,10 +3,10 @@ id: cloud-infrastructure-security-for-aws
 title: Cloud Infrastructure Security for AWS
 description: Cloud Infrastructure Security for AWS provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity.
 keywords:
-  - AWS security
+  - aws security
   - cloud infrastructure security
-  - AWS CloudTrail
-  - AWS GuardDuty
+  - aws cloudtrail
+  - aws guardduty
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

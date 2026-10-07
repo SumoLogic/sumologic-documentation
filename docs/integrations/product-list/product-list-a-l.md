@@ -3,7 +3,7 @@ id: product-list-a-l
 title: Product List A-L
 description: This article lists all the products A-L that Sumo Logic integrates with.
 keywords:
-  - Sumo Logic integrations
+  - sumo logic integrations
   - product list
   - vendors
   - apps

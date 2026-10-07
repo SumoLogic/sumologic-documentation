@@ -5,8 +5,8 @@ sidebar_label: Find Threats with Cloud SIEM
 description: Learn how to use threat intelligence indicators in Cloud SIEM.
 keywords:
   - threat intelligence
-  - Cloud SIEM
-  - hasThreatMatch
+  - cloud siem
+  - hasthreatmatch
   - threat indicators
 ---
 

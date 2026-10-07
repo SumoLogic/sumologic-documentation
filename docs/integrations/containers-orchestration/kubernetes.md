@@ -4,9 +4,9 @@ title: Kubernetes
 sidebar_label: Kubernetes
 description: The Sumo Logic Kubernetes app provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
 keywords:
-  - Kubernetes
-  - Kubernetes app
-  - Kubernetes monitoring
+  - kubernetes
+  - kubernetes app
+  - kubernetes monitoring
   - k8s
 ---
 

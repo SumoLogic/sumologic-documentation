@@ -4,7 +4,7 @@ title: Sumo Logic FedRAMP Solution Capabilities
 sidebar_label: FedRAMP Capabilities
 description: Learn the capabilities included with Sumo Logic’s FedRAMP solution.
 keywords:
-  - FedRAMP
+  - fedramp
   - compliance
   - federal
   - security

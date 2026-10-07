@@ -5,7 +5,7 @@ sidebar_label: Normalized Authentication Rules
 description: Cloud SIEM's normalized authentication rules detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support.
 keywords:
   - normalized authentication rules
-  - Cloud SIEM
+  - cloud siem
   - brute force detection
   - authentication logs
 ---

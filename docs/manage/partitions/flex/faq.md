@@ -4,8 +4,8 @@ title: Flex Pricing FAQ
 sidebar_label: FAQ
 description: Answers to frequently asked questions about Sumo Logic Flex Pricing.
 keywords:
-  - Flex Pricing
-  - Flex FAQ
+  - flex pricing
+  - flex faq
   - partitions
   - search cost
 ---

@@ -3,8 +3,8 @@ id: introduction
 title: Introduction to Cloud SOAR
 sidebar_label: Introduction
 keywords:
-  - Cloud SOAR
-  - SOAR
+  - cloud soar
+  - soar
   - incident response
   - security automation
 ---
@@ -693,9 +693,9 @@ Combine centralized log collection, threat intelligence, and automated response.
 
 At minimum, monitor authentication events, network traffic, and infrastructure configuration changes, since this data is what Cloud SIEM's rules and Cloud SOAR's playbooks most commonly act on to generate and respond to insights.
 
-### What's the difference between CloudOps, DevOps, and SRE?
+### How does Cloud SOAR help with incident response?
 
-CloudOps focuses on the day-to-day operation and monitoring of cloud infrastructure. DevOps focuses on collaboration between development and operations teams to ship software faster. SRE (Site Reliability Engineering) applies software engineering practices to keep systems reliable at scale. Sumo Logic's platform, including Cloud SIEM and Cloud SOAR, supports all three by centralizing the logs, metrics, and security events each of these teams needs.
+Cloud SOAR uses playbooks to automate incident containment, eradication, and recovery, so your SOC team responds faster and more consistently. It also provides case management to track investigations, and dashboards and reports to communicate results across teams.
 
 ### How do you find trusted log analytics solutions for cloud-native infrastructure?
 

@@ -4,8 +4,8 @@ title: Sumo Logic Flex Accounts
 sidebar_label: Flex Accounts
 description: View information on Sumo Logic Flex Accounts and intuitively monitor usage and manage account costs.
 keywords:
-  - Flex account
-  - Flex credits
+  - flex account
+  - flex credits
   - account overview
   - subscription
 ---

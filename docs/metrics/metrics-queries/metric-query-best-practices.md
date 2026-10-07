@@ -7,7 +7,7 @@ keywords:
   - metric queries
   - quantization
   - metric query best practices
-  - DPM
+  - dpm
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl'
