@@ -25,6 +25,10 @@ Role search filters affect the data that a viewer can see in the shared dashboar
 
 ## Set data access level
 
+:::note
+If you don’t have the **Change Data Access Level of Dashboards** capability, your Sumo Logic administrator will need to [edit your role](/docs/manage/users-roles/roles/create-manage-roles/#edit-a-role) to add it under **Capabilities**.
+:::
+
 The **Change Data Access Level of Dashboards** role capability is required for the dashboard creator, or user that has **Edit** or **Manage** permission, to change the data access level for the dashboard.
 
 To change the Data Access Level for a dashboard.
