@@ -2819,6 +2819,7 @@ integrations: [
           'integrations/saas-cloud/microsoft-graph-azure-ad-reporting',
           'integrations/saas-cloud/netskope-webtx',
           'integrations/saas-cloud/netskope-webtx-streaming',
+          'integrations/saas-cloud/openai',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',
