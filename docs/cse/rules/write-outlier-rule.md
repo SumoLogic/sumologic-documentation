@@ -72,19 +72,11 @@ After your rule starts generating signals, evaluate them to determine if they tr
 If the records gathered for a baseline exceed 50 million, the historical baseline capabilities to generate a baseline via a query become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
 :::tip
-For high-volume sources such as DNS or network logs, keep the baseline small:
-   * Make the **For the records matching the expression** filter as specific as possible, so the rule matches only the activity you want to measure.
-   * Add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to exclude known-benign, high-volume records.
-   * Shorten the **Baseline Retention Period (days)** if you don't need the full 90 days.
-   * Choose entity fields with a manageable number of distinct values. Each distinct value, or combination of values, gets its own baseline.
-:::
+Sumo Logic uses circuit breakers to prevent rule processing from affecting production environments. If a rule matches too many records in a short period, the circuit breaker trips and the rule enters a Degraded state. Outlier rules are also subject to these limits.
 
-:::tip
-Sumo Logic ensures that rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and outlier rules are no exception.
+On the rule detail page, click the degraded message for details about the problem and how to resolve it. A degraded rule usually needs to be tuned for your environment.
 
-On the rule detail page, if you view the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
-
-An outlier rule can also fail if its baseline can't be built, which is more likely when the rule matches a very large number of records. For ways to reduce the data the baseline has to process, and what to do if the status details are generic, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
+An outlier rule can also have a baseline-building failure when the overall record volume is high or the rule matches a large number of records. In this case, generating a historical baseline through a query may be inefficient. You can let the baseline gather data over the period configured in the rule, or edit the rule to filter more records. For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
 :::
 
 ## Example rule

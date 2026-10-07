@@ -35,7 +35,7 @@ Following are the different kinds of rule status. A rule's status can change dep
 | **Active** | The rule is executing normally. | No action required. |
 | **Degraded** | The rule encountered a problem during processing and is removed from execution until the problem is resolved. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Degraded** label for details. Depending on the information provided, you may need to edit the rule to reduce the chance it will become degraded again later. See [Degraded rules](#degraded-rules) below for more information. |
 | **Disabled** | The rule was manually disabled using the toggle in the UI, or was disabled with the API. | Enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). | 
-| **Failed** | The rule encountered a problem that resulted in its being automatically disabled. For example, processing the rule caused the system to exceed a rule limit, or the baseline for a first seen or outlier rule could not be built. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure. Depending on the reason provided in the details, you may need to edit the rule to prevent it from failing again in the future. For example, a first seen or outlier rule can fail if its baseline can't be built, in which case you should narrow the baseline as described in [Troubleshoot baseline problems](#troubleshoot-baseline-problems).<br/> If the details are generic or don't identify a cause, see [If the status details aren't enough](#if-the-status-details-are-not-enough). After addressing the reason for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
+| **Failed** | The rule encountered a problem that resulted in it being automatically disabled. For example, processing the rule caused the system to exceed a rule limit. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Failed** label for details about the failure. Depending on the reason provided in the details, you may need to edit the rule to prevent it from failing again in the future.<br/> After addressing the reason for the failure, enable the rule with the toggle in the UI, or enable the rule with the [API](https://api.sumologic.com/docs/sec/#operation/UpdateRuleEnabled). |
 | **Pending Baseline** | The baseline for the [first seen rule](/docs/cse/rules/write-first-seen-rule/#baselines-for-first-seen-rules) or [outlier rule](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules) is being generated. | Click the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the **Pending Baseline** label for details.  If data exists in the system to build the baseline, baseline generation typically takes only minutes to complete, and then the rule's status changes to "Active". However, if there is not enough data in the system, the pending status can last longer. See [Troubleshoot baseline problems](#troubleshoot-baseline-problems) below. |
 
 <!-- For DOCS-72 - Rule limits
@@ -45,10 +45,6 @@ Following are the different kinds of rule status. A rule's status can change dep
 ### Degraded rules
 
 A degraded rule is one that has been temporarily removed from execution because a problem was encountered during rule processing. After the problem is resolved, the rule returns to execution.
-
-:::note
-A first seen or outlier rule whose baseline can't be built may repeatedly move between Degraded and Active while Cloud SIEM tries to recover it. If a rule keeps returning to Degraded, treat it as a baseline problem and follow the steps in [Troubleshoot baseline problems](#troubleshoot-baseline-problems).
-:::
 
 Rules can be degraded for many reasons, such as a failure to parse the rule. If the rule is degraded because it is approaching a rule limit, it is removed for one hour to allow processing to catch up, and at the end of the hour, the rule is allowed to execute again and its status changes back to Active.
 
@@ -62,30 +58,38 @@ Following are some situations when a rule can be become degraded:
 
 ### Troubleshoot baseline problems
 
-Sometimes there may be a problem creating a baseline for a [first seen rule](/docs/cse/rules/write-first-seen-rule/#baselines-for-first-seen-rules) or [outlier rule](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules). In these cases, the rule might enter a Degraded, Failed, or Pending Baseline state. Clicking the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the status label in most cases will provide enough information to resolve the problem. But if not, you can do additional troubleshooting:
+Sometimes there may be a problem creating a baseline for a [first seen rule](/docs/cse/rules/write-first-seen-rule/#baselines-for-first-seen-rules) or [outlier rule](/docs/cse/rules/write-outlier-rule/#baselines-for-outlier-rules). In these cases, the rule might enter a Degraded, Failed, or Pending baseline state.
+
+:::note
+A baseline-building failure does not mean that the rule has failed. The rule continues to work, but the baseline must wait for the data retention period or 7 days, whichever is shorter, before it can be rebuilt.
+:::
+
+Clicking the information button <img src={useBaseUrl('img/cse/rule-status-information-button.png')} alt="Rule status information button" width="20"/> on the status label in most cases will provide enough information to resolve the problem. But if not, you can do additional troubleshooting:
 *  Check the [Sumo Logic status](https://status.sumologic.com/) page to see if there’s an outage in your deployment. If the system is down, it cannot generate the baseline.
-* If the rule has a Degraded status because it failed to parse, fix the rule so that it parses correctly. A baseline cannot be built if the rule does not successfully parse. One thing you can do is ensure that a matching expression for the rule parses correctly is to use the compatible [core platform literals](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
-* If the rule has a Failed status, clicking the information button might show that the amount of data requested is too large to return (see [Rule limits](#rule-limits)), or that the baseline could not be built in the time allowed. This is most common for rules that match a very large number of records, such as rules on high-volume sources like DNS or cloud audit logs. In these cases, reduce the amount of data the baseline has to process:
+* If the rule has a Degraded baseline status because it failed to parse, fix the rule so that it parses correctly. A baseline cannot be built if the rule does not successfully parse. One thing you can do is ensure that a matching expression for the rule parses correctly is to use the compatible [core platform literals](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+* If the rule has a Failed baseline status, the rule itself does not fail and continues to work. The baseline must wait for the retention period or 7 days, whichever is shorter, before it can be rebuilt. Baseline failures are most common for rules that match a very large number of records, such as rules on high-volume sources like DNS or cloud audit logs. To reduce the amount of data the baseline needs to process, create a more filtered baseline focusing on the exact activity you want to capture:
    * Narrow the rule expression. Filter to the specific activity you want to capture, for example a specific event type, account, or zone.
    * Add a rule tuning expression to exclude high-volume, known-benign records. Updating a tuning expression that applies to the rule recalculates its baseline.
    * Shorten the baseline retention period. A shorter period means less data to process.
    * Reduce entity cardinality. For outlier rules, select fewer or lower-cardinality fields in for the entity(ies). For first seen rules, consider whether a global baseline fits your use case better than a per-entity baseline.
 Changing an outlier rule's baseline window from daily to hourly doesn't reduce the amount of data scanned, so it is unlikely to resolve a baseline that fails because of data volume.
-After editing the rule, the baseline is rebuilt automatically. Confirm that the status returns to Active.
-* If the rule has a persistent Pending Baseline status, there might not be enough data in the system to build the baseline:
+After editing the rule, confirm that the status returns to Active.
+* If the rule has a persistent Pending baseline status, there might not be enough data in the system to build the baseline:
    *  Check the ingest configuration of your Cloud SIEM data sources and confirm the appropriate records are being added to the system.
    * The matching expression may not be using the right fields. Cloud SIEM records are normalized to a defined [schema](/docs/cse/schema/schema-attributes/). The matching expression and all other fields should use that schema and not the raw log field names.
    * There may not be enough activity to build a baseline. Expand the baseline retention period to gather more activity.
    * Make sure that the Sumo Logic system has been active and ingesting data for the full baseline retention period. For example, if the rule has a default baseline retention period of 90 days, but your company only started using Sumo Logic a few days ago, then the rule will remain in the Pending Baseline state until 90 days have passed. To resolve the issue, change the baseline retention period window.
 
-#### If the status details are not enough
+#### If the baseline status details are not enough
 
-If the information button shows only a generic message, such as a system error, and the steps above don't resolve the problem, [contact Support](https://support.sumologic.com/support/s). Include:
-   * The rule ID and name, for example `OUTLIER-U00002`.
-   * Your organization ID.
-   * Your Sumo Logic deployment.
-   * When the rule first entered the Failed or Degraded state.
-   * Any changes you made to the rule, such as tuning expressions or baseline settings.
+If the information button shows a generic message, such as a system error, the baseline may be processing a large volume of data or the rule expression may be inefficient (computationally expensive). This does not mean that the rule expression is incorrect. See [Troubleshoot baseline problems](#troubleshoot-baseline-problems) for ways to reduce the amount of data the baseline processes and improve rule efficiency.
+
+If these steps don't resolve the problem, [contact Support](https://support.sumologic.com/support/s). Include:
+* The rule ID and name, for example `OUTLIER-U00002`.
+* Your organization ID.
+* Your Sumo Logic deployment.
+* When the rule first entered the Failed or Degraded state.
+* Any changes you made to the rule, such as tuning expressions or baseline settings.
 
 ## Rule limits
 
