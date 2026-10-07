@@ -143,3 +143,7 @@ Ticketing System
 | v1.2    | Oct 15, 2025    | Added support for the `br` tag in required actions. |
 | v1.1    | Sept 10, 2025   | Added a daemon action. |
 |         | March 20, 2025  | Initial release of the Atlassian Jira Cloud integration. |
+
+## Additional resources
+
+For Atlassian Jira Cloud, Sumo Logic offers the [Jira Cloud app](/docs/integrations/app-development/jira-cloud/) to collect your Jira Cloud data.
