@@ -70,7 +70,7 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 ## How to add an agent knowledge source
 
 :::info
-Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings (`cseManageSocAnalystSettings`). Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
+Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings (`cseManageSocAnalystSettings`) role capability. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
 :::
 
 To add knowledge for the SOC Analyst Agent:
