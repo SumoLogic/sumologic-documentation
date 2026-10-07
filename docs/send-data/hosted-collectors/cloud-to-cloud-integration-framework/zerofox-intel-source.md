@@ -97,4 +97,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [ZeroFox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/zerofox/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [ZeroFox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/zerofox/) and [ZeroFox V2 Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/zerofox-v2) to automate response actions directly from Cloud SOAR playbooks.

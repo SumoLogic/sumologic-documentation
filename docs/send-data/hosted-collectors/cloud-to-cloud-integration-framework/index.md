@@ -489,6 +489,12 @@ In this section, we'll introduce the following concepts:
     <p>Provides a secure and centralized access to user lists from the OneLogin API.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+    <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source')}><img src={useBaseUrl('/img/send-data/openAI-logo.png')} alt="OpenAI logo" width="75"/><h4>OpenAI</h4></a>
+    <p>Collects organization usage costs and audit logs from the OpenAI Administration API.</p>
+  </div>
+</div>
   <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source')}><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="Palo Alto Network icon" width="100"/><h4>Palo Alto Cortex XDR</h4></a>
