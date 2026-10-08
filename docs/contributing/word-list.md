@@ -15,6 +15,8 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Aka**. Don't use. Write out "also known as" instead.
 
+**Ampersand (&)**. See [Ampersands](/docs/contributing/style-guide/#ampersands) in the style guide.
+
 **Anomaly Detection**. Always capitalize.
 
 **App**. When referring to a Sumo Logic app, do not capitalize. No need to spell out application.
@@ -135,7 +137,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Page**. When you name a page in the UI, bold the page name, match its on-screen capitalization, and keep the word "page" lowercase and outside the bold: the **Search** page. Don't use "pane" or "tab" for a page. A tab appears inside a page. (Example: The **Messages** tab appears on the **Search** page.) See **UI labels**, below.
 
-**Panel**. Lowercase. Put the type right before "panel": "area chart panel", "text panel". Write "dashboard panel" only when the dashboard context isn't already clear.
+**Panel**. Lowercase. Put the type right before "panel": "area chart panel", "text panel". Write "dashboard panel" only when the dashboard context is not already clear.
 
 **Please**. Avoid using please. You're making recommendations on how to use software and services; it's not an inconvenience to the user.
 

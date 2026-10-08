@@ -77,15 +77,15 @@ Docs content needs to be evergreen. Avoid words that anchor a sentence to the mo
 
 Release notes and other time-stamped content are the exception. Words like "now", "new", and forward-looking phrases like "coming in a future release" are fine there. That's the point of a release note.
 
-### Concise writing
+### Concise, human phrasing
 
-Avoid long-winded passages. Cut anything that does not carry information. This also keeps our docs from reading like verbose AI output.
+Write the way a knowledgeable colleague would explain something in person. Cut anything that does not carry information. This also keeps our docs from reading like generic AI output.
 
-* **No throat-clearing or filler**. Start with the point, and cut words that add nothing. Drop preambles like "It should be noted that" and "It's important to understand", and cut words like "simply", "just", "of course", "as you can see", "needless to say", "very", "really", and "quite".
-* **No restating**. Skip summary sentences that repeat what the paragraph, list, or procedure just said.
-* **One idea per sentence**. Prefer short sentences over long ones stitched together with "and", "which", or semicolons.
-* **Say it once**. When two sentences make the same point, keep the clearer one and delete the other.
-* **One path**. Document the best path forward, not every possible path forward.
+* **No throat-clearing.** Start with the point. Drop preambles like "It's worth noting that", "It's important to understand", and "In this section, we will".
+* **No filler.** Cut "simply", "just", "of course", "as you can see", "needless to say", and intensifiers like "very", "really", and "quite".
+* **Do not restate.** Skip summary sentences that repeat what the paragraph, list, or procedure just said.
+* **One idea per sentence.** Prefer short sentences over long ones stitched together with "and", "which", or semicolons.
+* **Say it once.** When two sentences make the same point, keep the clearer one and delete the other.
 
 ### Conversational voice
 
@@ -880,16 +880,15 @@ The top navigation bar is configured in [`docusaurus.config.js`](https://docusau
 
 Protecting our patents and trademarks is important to do correctly. We do not want to expose the company to a loss of trademark or patent just because we did not list it correctly.
 
-Always refer to "Sumo Logic", rather than "Sumo". "Sumo" alone is a generic enough word that other, unrelated companies use it too, so the full name keeps our brand unambiguous. To be more conversational, it is also fine to say "we". Never use Sumo Logic in the plural or possessive form.
+This is a partial list of trademarked terms, which should be capitalized exactly as shown below.
 
-This is a list of trademarked terms, which should be displayed exactly as shown below:
+* Sumo Logic
+* Big Data for Real Time IT
+* Log Reduce
+* Elastic Log Processing
+* Push Analytics
 
-* LogReduce® (all one word, camelcase)
-* See Business Differently®
-* Empower the People Who Power Modern Business®
-* Illuminate®
-
-Give a product or feature name (such as LogReduce) its trademark (™) or registered (®) symbol on the first reference on a page only, then drop it. No need to add the symbol to "Sumo Logic" in running text, as it's done in the site footer.
+Never use Sumo Logic in the plural or possessive form.
 
 ## Preview releases
 

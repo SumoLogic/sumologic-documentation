@@ -295,7 +295,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Related insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, an insight that a related signal is attached to.
 
-**[Related signal](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a signal that isn't part of the current insight (not attached), but fired on the same entity as the current insight's attached signals within 7 days of those signals.
+**[Related signal](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a signal that is not part of the current insight (not attached), but fired on the same entity as the current insight's attached signals within 7 days of those signals.
 
 **[Relative expression](/docs/search/get-started-with-search/search-basics/time-range-expressions)**. Used in time range expressions, when setting the non-absolute time limits of a search. For example, -1d, -1d -12h, -12h -60m.
 
