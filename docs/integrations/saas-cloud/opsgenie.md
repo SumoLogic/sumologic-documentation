@@ -7,7 +7,11 @@ description: The Opsgenie App provides at-a-glance views and detailed analytics 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Opsgenie icon" width="75"/>
+
+:::note
+The Opsgenie App will be deprecated and removed from the App Catalog on April 5, 2027.
+:::
 
 The Opsgenie App provides at-a-glance views and detailed analytics for alerts on your DevOps environment, allowing you to effectively monitor and gain valuable insights into your incidents and incident handling operations.
 
@@ -38,7 +42,7 @@ Different Alert types used by Opsgenie, with sample payloads, are defined here: 
 The following query sample is taken from the **Alerts by Priority Over Time** panel on the **Opsgenie - Alerts Breakdown Dashboard**:
 
 
-```sql
+```sumo
 _sourceCategory="opsgenie/events" Create
 | json "alert.createdAt", "alert.description", "alert.message", "action", "alert.team",  
 "alert.priority", "alert.source" , "alert.tags[*]","alert.recipients[*]" as created_at,

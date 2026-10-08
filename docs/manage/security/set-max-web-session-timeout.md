@@ -1,12 +1,12 @@
 ---
 id: set-max-web-session-timeout
 title: Set a Maximum Web Session Timeout
-description: Learn how to set the maximum web session timeout that a Sumo Logic user can select on the Preference page.
+description: Learn how to set the maximum web session timeout that a Sumo Logic user can select on the preferences page.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic users can set their web session timeout on the **Preferences** page, up to a maximum of 7 days. If you are a Sumo Logic admin with the **Manage Organization Settings** role capability, you can specify the maximum web session timeout period that users in your org can select. The period you choose controls what values appear on the **Web session timeout** pulldown on a user’s **Preferences** page. 
+Sumo Logic users can set their web session timeout on the **Preferences** page, up to a maximum of 7 days. If you are a Sumo Logic admin with the [Manage Organization Settings](/docs/manage/users-roles/roles/role-capabilities/#security) role capability, you can specify the maximum web session timeout period that users in your org can select. The period you choose controls what values appear on the **Web session timeout** pulldown on a user’s **Preferences** page. 
 
 When you change the maximum timeout:
 

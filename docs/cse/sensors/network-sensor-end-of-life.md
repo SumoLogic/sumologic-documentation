@@ -20,7 +20,7 @@ We fully recognize that this decision may have implications for your business op
 
 We're confident that our highly scalable, cloud-native security solutions can continue to support your security operations. Let's discuss how we can help you achieve your security goals.
 
-If you have any questions, please don't hesitate to reach out to your Sumo Logic Account team or [open a support ticket](https://support.sumologic.com/support/s/) with our Customer Support Team. We're happy to help.
+If you have any questions do not hesitate to reach out to your Sumo Logic Account team or [open a support ticket](https://support.sumologic.com/support/s/) with our Customer Support Team. We're happy to help.
 
 | Milestone | Definition | Date |
 | :-- | :-- | :-- |

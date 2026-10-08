@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/lansweeper.png')} alt="lansweeper" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 **Lansweeper** helps you to minimize risks and optimize your IT by providing actionable insight into your entire technology estate.
 
@@ -22,7 +22,7 @@ Updated: Jul 18, 2023***
 
 Log in to **Lansweeper** with your email ID and password to start the [configuration process](https://docs.lansweeper.com/docs/api/authenticate#personal-application).
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-1.png')} style={{border:'1px solid gray'}} alt="lansweeper-1" width="300"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-1.png')} style={{border:'1px solid gray'}} alt="Lansweeper UI" width="300"/>
 
 ## Configure Lansweeper in Automation Service and Cloud SOAR
 
@@ -49,5 +49,8 @@ For information about Lansweeper, see [Lansweeper documentation](https://develop
 
 ## Change Log
 
-* December 07, 2022 - First upload
-* July 18, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 18, 2023 | Updated the integration with Environmental Variables. |
+| | December 07, 2022 | Initial release of the Lansweeper integration. |

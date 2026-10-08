@@ -7,7 +7,7 @@ description: Install the Slack Source for Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Slack icon" width="60"/>
 
 This topic describes the Slack Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
@@ -26,6 +26,8 @@ The Slack Source uses the following Slack APIs to ingest web and audit events.
 
 - [Slack Web API](https://api.slack.com/web)
 - [Slack Audit API](https://api.slack.com/admins/audit-logs)
+
+By default, the Slack Source collects from Slack's commercial endpoints. If your organization uses GovSlack, enable the **Government Endpoint** option to collect from Slack's government endpoints instead. See [Government endpoint support](#government-endpoint-support) for details.
 
 
 The source collects the following API endpoints and routes.
@@ -53,6 +55,17 @@ The Slack source can collect data from Slack's [Web API](https://api.slack.com/w
 including all workspaces, but it requires a Slack Enterprise Grid license. Each  API collects different information; collect from both if you have a Slack Enterprise Grid license.
 
 We recommend creating a Slack App for each Slack Workspace you want to monitor. This requires a Sumo Logic Slack C2C per Slack Workspace. If you have a Slack Enterprise Grid account, you can create an additional Slack app, install it on the Enterprise Grid instead of a Workspace and create another Sumo Logic C2C to monitor your Enterprise Grid audit logs from the Audit API.
+
+#### Government endpoint support
+
+The Slack Source supports collecting data from Slack's government endpoints in addition to the standard commercial endpoints. This is controlled by the **Government Endpoint** (`is_gov`) option in the Source configuration, which is disabled (`false`) by default. When enabled, the Source uses the following base URLs instead of the commercial ones:
+
+| API | Government Base URL |
+|:----|:---------------------|
+| Audit API | `https://api.slack-gov.com` |
+| Web API | `https://slack-gov.com` |
+
+Only enable this option if your Slack App is installed on a GovSlack workspace or organization.
 
 **Process overview**
 
@@ -87,7 +100,7 @@ Only follow these steps if you are installing a Slack App on a specific workspac
 you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
 section.
 
-1. On the app settings page, click **Install App** and the **Install to Workspace** button. <br/><img src={useBaseUrl('img/send-data/slack-install-app-to-workspace.png')} alt="slack-install-app-to-workspace.png" width="650"/>
+1. On the app settings page, click **Install App** and the **Install to Workspace** button. <br/><img src={useBaseUrl('img/send-data/slack-install-app-to-workspace.png')} alt="Slack install app to workspace" width="650"/>
 2. Allow your new Slack App to monitor your workspace. <br/><img src={useBaseUrl('img/send-data/slack-app-allow.png')} alt="Allow App to Monitor Workspace" width="450"/>
 3. Save the generated access token. This will be used by the Sumo Logic  configuration for access. <br/><img src={useBaseUrl('img/send-data/slack-copy-user-token.png')} alt="Copy Token" width="500"/>
 
@@ -122,11 +135,17 @@ To configure a Slack Source:
 1. Enter a **Name** for the Source. The **Description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **API Auth Bearer Token**. Enter the Slack App access token from the previous steps.
 1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
+1. **Government Endpoint**. Enable this option (`is_gov`) if you want to collect data from Slack's government endpoints instead of the commercial endpoints. Disabled by default. See [Government endpoint support](#government-endpoint-support) for the base URLs used.
 1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins.
+1. When you are finished configuring the Source, click **Submit**.
+
+:::tip
+After configuring the Slack source, consider installing the Sumo Logic app for [Slack](/docs/integrations/saas-cloud/slack/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ### JSON example
 
@@ -159,3 +178,7 @@ Each page adds to the overall number of API calls needed and adds time due to th
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Slack Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/slack/) to automate response actions directly from Cloud SOAR playbooks.

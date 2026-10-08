@@ -68,7 +68,7 @@ Trace Query Visualizations allow you to visualize the breakdown of where time wa
 * **Error count**
 * **Span count**
 
-<img src={useBaseUrl('/img/apm/traces/trace-query-view.png')} alt="trace-query-view.png" />
+<img src={useBaseUrl('/img/apm/traces/trace-query-view.png')} alt="Trace query view" />
 
 These metrics can be viewed as either a **timeseries** chart or a **histogram** chart.
 * **Timeseries**. It shows the average trace duration for each time bucket.
@@ -83,14 +83,14 @@ For both charts, you can switch between linear and logarithmic scales to better 
     - The height of the bar represents the average trace duration for each time bucket.
     - Each segment represents a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
   * **Histogram**. It helps you understand the distribution of trace durations. For example, you can notice groups of durations responsible for longer traces during slowdown periods.
- <img src={useBaseUrl('/img/apm/traces/trace-duration-histogram.png')} alt="trace-duration-histogram.png" />
+ <img src={useBaseUrl('/img/apm/traces/trace-duration-histogram.png')} alt="Trace duration histogram" />
 
  Similarly, you can choose **timeseries** chart type from the dropdown and view the chart.
 
 * **Error count**.
   * **Timeseries**. It helps you visualise the average number of errors per trace for selected time range.
   * **Histogram**. It provides insight into how many traces were found with a certain number of errors. For example, if a backend fails in a specific way, it can always generate a similar number of errors for traces from that period.
-  <img src={useBaseUrl('/img/apm/traces/error-count-timeseries.png')} alt="error-count-timeseries.png" />
+  <img src={useBaseUrl('/img/apm/traces/error-count-timeseries.png')} alt="Error count timeseries" />
 
  Similarly, you can choose histogram chart type from the dropdown and view the chart.
 
@@ -98,7 +98,7 @@ For both charts, you can switch between linear and logarithmic scales to better 
   * **Timeseries**. It helps you visualize how many spans you have per trace for the selected timerange.
   * **Histogram**. It gives you information about how many traces have a certain number of spans. If a certain type of transaction is expected to produce a similar number of spans every time it runs, spotting an anomaly here can help uncover broken transactions or incomplete traces.
 
-  <img src={useBaseUrl('img/apm/traces/span-count-histogram.png')} alt="error-count-histogram.png" />
+  <img src={useBaseUrl('img/apm/traces/span-count-histogram.png')} alt="Error count histogram" />
 
   Similarly, you can choose timeseries chart type from the dropdown and view the chart.
 
@@ -182,7 +182,7 @@ The details of the span are provided. contains general information about the spa
 
 To drill down further into your data, the **Logs** section has links to run searches against related log data. Top links for span IDs and trace IDs work if you have span and trace IDs injected into logs. Lower section links are available and work automatically if you've installed the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy).
 
-<img src={useBaseUrl('img/apm/traces/Logs-links.png')} alt="logs-links.png" width="400"/>
+<img src={useBaseUrl('img/apm/traces/Logs-links.png')} alt="Logs links" width="400"/>
 
 If no logs are produced for this spanID, results may come back empty. [Learn how to add spanID to logs](/docs/apm/traces/advanced-configuration/correlate-logs).
 
@@ -263,8 +263,8 @@ Monitors track your Metrics or Logs data in real time and send notifications whe
 
 Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered. Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
 
-<img src={useBaseUrl('img/dashboards/drill-root-causes/triggered-monitors.png')} alt="triggered-monitors.png" style={{border: '1px solid gray'}} width="300"/>
+<img src={useBaseUrl('img/dashboards/drill-root-causes/triggered-monitors.png')} alt="Triggered monitors" style={{border: '1px solid gray'}} width="300"/>
 
 #### Troubleshoot links
 
-This tab also displays troubleshooting links for related Entities and Environments. To investigate, click the **Open In** button, then select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.<br/><img src={useBaseUrl('img/dashboards/drill-root-causes/infrastructure-tab-with-RCE-link.png')} alt="infrastructure tab with RCE link.png" style={{border: '1px solid gray'}} width="350"/>
+This tab also displays troubleshooting links for related Entities and Environments. To investigate, click the **Open In** button, then select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.<br/><img src={useBaseUrl('img/dashboards/drill-root-causes/infrastructure-tab-with-RCE-link.png')} alt="Infrastructure tab with RCE link" style={{border: '1px solid gray'}} width="350"/>

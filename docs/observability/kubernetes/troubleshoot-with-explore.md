@@ -10,7 +10,7 @@ import Iframe from 'react-iframe';
 
 [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) allow you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -45,7 +45,7 @@ Once we've determined which pod is having problems, we can drill down into the 
 
 <img src={useBaseUrl('img/kubernetes/Explore_TS_Pod_drill-down.png')} alt="Explore TS Pod drill-down" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/kubernetes/Explore_TS_Drill-down_Pod_search-results.png')} alt="Explore_TS_Drill-down_Pod_search-results" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/kubernetes/Explore_TS_Drill-down_Pod_search-results.png')} alt="Explore_TS_Drill down_Pod_search results" style={{border: '1px solid gray'}} width="800" />
 
 ## Troubleshooting walkthrough - Pod-level authentication
 

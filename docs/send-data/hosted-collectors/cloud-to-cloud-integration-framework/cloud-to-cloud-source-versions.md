@@ -81,7 +81,7 @@ The Audit Event Index provides event logs in JSON on activities from your accou
 
 This query parses the versions from update events and only returns ones that changed. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](/docs/search/get-started-with-search/search-basics/comments-search-queries) `//` from the scope of the query.
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=collection _sourceName=SourceUpdated //"<Name of Source>"
 | json "to.schemaRef.version" as to_version
 | json "from.schemaRef.version" as from_version
@@ -171,7 +171,7 @@ Returns the following
 
 This query parses the versions and states from update events and only returns ones that have a value of `upgrading` as the `from state`. Minor upgrade events show a state change from `upgrading` to `pending`. The version changes are not tracked in one event log so the to and from versions will be the same. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](/docs/search/get-started-with-search/search-basics/comments-search-queries) `//` from the scope of the query.
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceName=SourceUpdated //"<Name of Source>"
 | json "from.state.state" as from_state
 | where from_state="Upgrading"

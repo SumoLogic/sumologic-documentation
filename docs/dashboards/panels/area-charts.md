@@ -11,7 +11,7 @@ To create an area chart, you must use a query that provides more than one data p
 
 For example, you'd use the following query to create an area chart:
 
-```sql
+```sumo
 error | timeslice 1m | count by _timeslice
 ```
 

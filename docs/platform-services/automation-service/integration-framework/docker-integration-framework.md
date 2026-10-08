@@ -1,13 +1,13 @@
 ---
 id: docker-integration-framework
-title: Use Docker with the Integration Framework for Cloud SOAR
+title: Use Docker with the Open Integration Framework for Cloud SOAR
 sidebar_label: Docker for Cloud SOAR
-description: Learn how to use Docker with the integration framework for Cloud SOAR. 
+description: Learn how to use Docker with the open integration framework for Cloud SOAR. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-For Cloud SOAR, you can use the integration framework to execute all the actions of an integration in a container built from a custom Docker image. This is particularly useful, for example, if you want to improve actions by taking advantage of third-party libraries. In that case, you can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts. However, there are many other ways in which using a custom Docker image can allow you to customize your integrations and actions.
+For Cloud SOAR, you can use the open integration framework to execute all the actions of an integration in a container built from a custom Docker image. This is particularly useful, for example, if you want to improve actions by taking advantage of third-party libraries. In that case, you can install those third-party libraries in the Docker container where actions will be executed making them available to the interpreter of the action scripts. However, there are many other ways in which using a custom Docker image can allow you to customize your integrations and actions.
 
 ## Custom Docker image
 

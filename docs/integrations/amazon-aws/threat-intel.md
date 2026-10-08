@@ -6,7 +6,7 @@ description: The Threat Intel for AWS App correlates Sumo Logic threat intellige
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/threat-intel-aws.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/threat-intel-aws.png')} alt="Threat Intel AWS icon" width="75"/>
 
 The Threat Intel for AWS App correlates Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. The Threat Intel for AWS App scans your AWS CloudTrail, AWS ELB and AWS VPC Flow logs for threats based on IP address.
 
@@ -24,7 +24,7 @@ The Sumo Logic Threat Intel lookup database is only available with Sumo Logic En
 
 If you are not already collecting your AWS logs, follow the instructions below to collect data from one or more of these data sources:
 * [Collect AWS CloudTrail Logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)
-* [Collect AWS ELB Logs](/docs/integrations/amazon-aws/classic-load-balancer#collecting-logs-and-metrics-for-the-aws-classic-load-balancer)
+* [Collect AWS ELB Logs](/docs/integrations/amazon-aws/classic-load-balancer#collecting-logs-and-metrics-for-aws-classic-load-balancer)
 
 VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an Amazon S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
 * [Using an Amazon S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source)

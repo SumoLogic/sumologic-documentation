@@ -1,13 +1,13 @@
 ---
 id: amazon-guardduty
-title: Amazon GuardDuty Cloud Security Monitoring and Analytics
+title: Amazon GuardDuty Cloud Security Monitoring
 sidebar_label: Amazon GuardDuty
 description: Guide to Amazon GuardDuty Cloud Security Monitoring and Analytics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon_GuardDuty_Benchmark.png')} alt="Thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon_GuardDuty_Benchmark.png')} alt="Amazon GuardDuty Benchmark icon" width="70"/>
 
 The focus of GuardDuty is on protecting AWS accounts, workloads, and data with intelligent threat detection. The corresponding Sumo Logic dashboards are designed to surface the most relevant security insights from that data to yield actionable processes to tackle specific security concerns within your AWS infrastructure. Utilizing this app allows you to stay ahead of changing attack surfaces in a repeatable way via cloud security monitoring and analytics dashboards that provide operational security awareness for Amazon GuardDuty data sources.
 

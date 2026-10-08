@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: Jan 03, 2024***
 
-Axonius is a cybersecurity asset management platform that provides comprehensive visibility and control over Assests in an organization's network.
+Axonius is a cybersecurity asset management platform that provides comprehensive visibility and control over assets in an organization's network.
 
 ## Actions
 
@@ -25,8 +25,8 @@ Axonius is a cybersecurity asset management platform that provides comprehensive
 The API Key and Secret for an Axonius user is available from the [My Account page](https://docs.axonius.com/docs/account-settings).
 
 1. Log in to Axonius with a user account or Service Account whose role has the **API access enabled** permission.
-1. At the bottom of the Navigation toolbar, click on your account avatar. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-1.png')} style={{border:'1px solid gray'}} alt="axonius-1" width="200"/>
-1. Click **User Settings** and then click the **API Key** tab. Copy the existing API key and secret. To reset them, click **Reset** Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-2.png')} style={{border:'1px solid gray'}} alt="axonius-2" width="600"/>
+1. At the bottom of the Navigation toolbar, click on your account avatar. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-1.png')} style={{border:'1px solid gray'}} alt="Axonius 1" width="200"/>
+1. Click **User Settings** and then click the **API Key** tab. Copy the existing API key and secret. To reset them, click **Reset** Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-2.png')} style={{border:'1px solid gray'}} alt="Axonius reset" width="600"/>
 
 **Enable API Access Permission**
 
@@ -34,8 +34,8 @@ Using the **Axonius API** to query Axonius assets requires a that the user's rol
 
 To set this permission:
 
-1. Open the **Manage Roles** page. From the top right corner of all pages, click . The **System Settings** page opens. Then, click the **Manage Roles** tab.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-3.png')} style={{border:'1px solid gray'}} alt="axonius-3" width="700"/>
-1. Select the relevant role as described in [Manage Roles](https://docs.axonius.com/manage-roles). For the selected role, under the **API Access** category, select the **API access enabled** checkbox.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-4.png')} style={{border:'1px solid gray'}} alt="axonius-4" width="700"/>
+1. Open the **Manage Roles** page. From the top right corner of all pages, click . The **System Settings** page opens. Then, click the **Manage Roles** tab.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-3.png')} style={{border:'1px solid gray'}} alt="Axonius 3" width="700"/>
+1. Select the relevant role as described in [Manage Roles](https://docs.axonius.com/manage-roles). For the selected role, under the **API Access** category, select the **API access enabled** checkbox.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-4.png')} style={{border:'1px solid gray'}} alt="Axonius API access settings" width="700"/>
 1. Click **Save**.
 
 More info related to creating queries is [here](https://docs.axonius.com/docs/query-wizard-and-query-filter).
@@ -71,4 +71,6 @@ For information about Axonius, see [Axonius documentation](https://docs.axonius.
 
 ## Change Log
 
-* January 3, 2024 - First Upload
+| Version | Date | Description |
+|:--|:--|:--|
+| | January 3, 2024 | Initial release of the Axonius integration. |

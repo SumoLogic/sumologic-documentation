@@ -17,7 +17,7 @@ Load Balancing log.
 
 **Parsing Rule:**
 
-```sql
+```sumo
 parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
 ```
 

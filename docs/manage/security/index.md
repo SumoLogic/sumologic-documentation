@@ -8,7 +8,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Security icon" width="50"/>
 
 :::tip
 Looking for our security features like Cloud SIEM and Cloud SOAR? Head to [Sumo Logic Security Solutions](/docs/security).
@@ -44,7 +44,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/manage/security/access-keys')}><img src={useBaseUrl('img/icons/security/security.png')} alt="Shield icon" width="40"/><h4>Access Keys</h4></a>
-  <p>Learn how to use Access Keys to securely register new Collectors or access Sumo Logic APIs.</p>
+  <p>Learn how to use Access Keys to securely register new collectors or access Sumo Logic APIs.</p>
   </div>
 </div>
 <div className="box smallbox card">

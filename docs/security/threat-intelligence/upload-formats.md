@@ -7,7 +7,7 @@ description: Learn how to format upload files containing threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes the format to use for upload files when you add threat intelligence sources by [manually uploading them in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) or when you use the upload APIs in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource.
+This documentation describes the format to use for upload files when you [manually upload indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload) or when you use the upload APIs in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource.
 
 Following are the formats for file upload:
 
@@ -94,7 +94,7 @@ The following attributes are required:
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [How to view threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-to-view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -160,7 +160,7 @@ Columns for the following attributes are required in the upload file:
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to entities in the Cloud SIEM UI. See [How to view threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-to-view-threat-indicator-labels-in-the-cloud-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -183,7 +183,7 @@ Columns for the following attributes are required in the upload file:
 ## STIX 2.x JSON format
 
 :::note
-Use this format only with the [STIX 2.x JSON upload API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource. You cannot [add indicators in the **Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#add-indicators-button) using this format.
+Use this format only with the [STIX 2.x JSON upload API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management API](/docs/api/threat-intel-ingest/) resource. You cannot add indicators in [**Threat Intelligence**](/docs/security/threat-intelligence/threat-intelligence-indicators/#upload) using this format.
 :::
 
 STIX 2.x JSON format is a method to present JSON data according to the STIX 2.x specification.

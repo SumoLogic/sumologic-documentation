@@ -6,12 +6,12 @@ description: As an Admin, you can reset another user's password.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic describes how to reset another user's password. When you reset a user's password, Sumo Logic will send the user an email with a temporary password, which the user will be required to reset upon signing in.
+When you reset a user's password, Sumo Logic will send the user an email with a temporary password, which the user will be required to reset upon signing in.
 
 The **Reset Password** option is only available if you are an admin, and is not available when SAML is [locked down](/docs/manage/security/saml/set-up-saml).
 
 :::note
-Looking for instructions on resetting your own password? See [Changing Your Password.](../../../get-started/account-settings-preferences.md)
+Looking for instructions on resetting your own password? See [Change password](/docs/get-started/account-settings-preferences/#change-password).
 :::
 
 To reset a user's password follow these steps:

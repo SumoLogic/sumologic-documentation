@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Thumbnail icon" width="120"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Mongodb icon" width="120"/><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 [MongoDB](https://www.mongodb.com/why-use-mongodb#:~:text=MongoDB%20is%20a%20document%20database,development%20teams%20using%20agile%20methodologies.) is a source-available cross-platform document-oriented database program. The Sumo Logic app for MongoDB supports logs and metrics from the open source version of MongoDB. The app is tested on the 7.0.14 version of MongoDB.
 
@@ -109,6 +109,10 @@ Below are the inputs required:
 - **`password (optional)`**. If authentication is required, the password can be provided here.
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 
@@ -230,7 +234,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample queries
 
-```sql title="Errors by Component( MongoDB - Errors and Warnings)"
+```sumo title="Errors by Component( MongoDB - Errors and Warnings)"
 deployment.environment=* db.cluster.name=* sumo.datasource=mongodb  | json "log"  as _rawlog nodrop
 | if  (isEmpty(_rawlog), _raw, _rawlog)  as _raw
 | json field=_raw "t.$date"  as  timestamp

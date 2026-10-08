@@ -28,15 +28,15 @@ This article describes the various setup and configuration options for the Cloud
 Use these settings to configure how Cloud SOAR handles [incidents](/docs/cloud-soar/incidents-triage/#incidents).
 
 * **Duplicates**.
-    * **Prohibit duplicate naming**. Select this checkbox to prevent incidents from being named identically.
+    * **Prohibit duplicate naming**. Select this check box to prevent incidents from being named identically.
     * **Default suffix for duplicated incident name**. Select the suffix to add to the end of incident names to differentiate incidents that are named the same.
     * **Use suffix on non-duplicate**. Use the selected suffix on all incidents, regardless of whether they are named the same.
 * **Objects**. Gather objects, such as IP addresses, domains and email addresses, and add them to the appropriate object's section within the incident.
     * **Extract from**:
        * **Incident field**. Gather objects from the incident properties.
        * **Task field**. Gather objects from the incident tasks.
-       * **Note field**. Gather objects from the the incident notes.
-    * **Filename extension whitelist**. Enter filename extensions to allow when gathering objects.
+       * **Note field**. Gather objects from the incident notes.
+    * **Filename extension allowlist**. Enter filename extensions to allow when gathering objects.
 * **Process Phase**. Configure phases for monitoring progress of incidents as they progress. Determine whether the phase is **Mandatory**, and the **Status** of the incident when the phase is reached. Select **Show Deleted** to show phases on deleted incidents.
 * **Mandatory Closing Note**. Make a final incident note mandatory before the incident can be closed.
 
@@ -55,7 +55,7 @@ For additional setup needed for Slack, see [Configure Slack for Cloud SOAR](/doc
 
 A *group* in Cloud SOAR is a collection of users that can be added as incident investigators. When you have a number of users to add as investigators, adding a group of users is faster and easier than adding each user individually. In addition, you can assign everyone in the group the same profile (role), limiting them as incident investigators to only the rights that the profile gives them.
 
-For example, let's say that you have a team of SOC analysts that share responsibility for investigating incidents. You can add all the members of the team to a group and give its members the "Analyst" profile. Then when you need to add the SOC analysts as investigators to incidents, you can simply select the group as the investigator.
+For example, let's say that you have a team of SOC analysts that share responsibility for investigating incidents. You can add all the members of the team to a group and give its members the "Analyst" profile. Then when you need to add the SOC analysts as investigators to incidents, you can select the group as the investigator.
 
 ### Create a group
 
@@ -83,7 +83,7 @@ To add a group as an incident investigator, follow the same steps as described i
 
 ### Group role assignments
 
-The role specified in an assigned group profile supersedes the user's [role assignments in the Sumo Logic Log Analytics Platform](/docs/manage/users-roles/roles/add-remove-users-role/). The group permissions are persistent until the user leaves the group, the profile is removed from the group, or the group is deleted.
+The role specified in an assigned group profile supersedes your [role assignments in the Sumo Logic Log Analytics Platform](/docs/manage/users-roles/roles/add-remove-users-role/). The group permissions are persistent until the user leaves the group, the profile is removed from the group, or the group is deleted.
 
 | User | Result |
 | :-- | :-- |
@@ -127,14 +127,14 @@ A complete list of field types is listed below. Additional fields are required o
 | Field Type        | Description                                                                                       |
 |:--|:--|
 | Calculation  | Perform a calculation between two fields or between a field and a static value. |
-| Checkbox   | Checkbox. |
+| Check box   | Check box. |
 | Color Picker  | Interactive color picker to select a color. |
 | Date | Date only picker. |
-| Date & Time   | Date and time picker. |
-| Email Address | Email address available to use in actions which require a email input.    |
+| Date and Time   | Date and time picker. |
+| Email Address | Email address available to use in actions which require an email input.    |
 | Filename | Filename available to use in actions which require a filename input.   |
 | Hash | Hash value available to use in actions which require a hash input.  |
-| IP Address    | IP address available to use in actions which require a IP address input.    |
+| IP Address    | IP address available to use in actions which require an IP address input.    |
 | List   | Dropdown list.  |
 | Multi Select List | Multiselect list box.  |
 | Numeric Textbox   | Accepting numeric values only.  |
@@ -143,11 +143,11 @@ A complete list of field types is listed below. Additional fields are required o
 | Time Interval     | Numeric time interval which can be used as a value in another calculated field.  |
 | Timezone   | Timezone list dropdown. |
 | URL | URL available to use in actions which require a URL input. |
-| User Details | User details, such as a user name. Available to use in actions which require a user details input. |
+| User Details | User details, such as a user name. Available to use in actions which require user details input. |
 
 ### Using custom fields for SLAs
 
-Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of `Date`, `Date & Time`, and `Time Interval` type fields.
+Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of `Date`, `Date and Time`, and `Time Interval` type fields.
 
 In the following example, custom fields provide information on the status of an organization's notification SLA. Two of the custom fields require user input:
 * **Notification SLA Requirement** is used to store the SLA time interval, such as 30 minutes.
@@ -233,7 +233,7 @@ If you need to follow HIPAA compliance, it is important to explicitly communicat
 
 You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
 
-In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.
+In order to do that, Open a [Support ticket](/docs/get-started/help#support) with your request.
 
 ## Static IP addresses
 

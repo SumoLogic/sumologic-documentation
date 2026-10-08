@@ -43,7 +43,7 @@ An entity lookup table defines two sets of values: a lookup value to look for in
 * **User ID to Normalized Username**
 * **Username to Normalized Username**
 
-Entity lookup tables are based on Sumo Logic’s [lookup tables](/docs/search/lookup-tables/) feature. Here is an example of a **Host ID to Normalized Hostname** lookup table in the Sumo Logic Library:
+Entity lookup tables are based on Sumo Logic’s [lookup tables](/docs/search/lookup-tables/) feature. Here is an example of a **Host ID to Normalized Hostname** lookup table in the Sumo Logic library:
 
 <img src={useBaseUrl('img/cse/example-table.png')} alt="Example entity lookup table" style={{border: '1px solid gray'}} width="800"/>
 
@@ -59,7 +59,7 @@ You can configure a maximum of five entity lookup tables. 
 
 You can create lookup tables from information about hosts and users–known as inventory data–in your environment. Inventory data is collected by Sumo Logic core platform inventory sources, typically by an Active Directory source running on a Sumo Logic Installed Collector, and also by sources that leverage the Sumo Logic Cloud-to-Cloud Integration Framework.
 
-This method–the typical way to populate a lookup table for the purpose of entity normalization–involves running a log search against data collected by a Cloud SIEM Inventory source, and then saving and scheduling the search. This process is described in the [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table) topic. After creating the table, perform the steps in [Configure the lookup table in Cloud SIEM](#configure-the-lookup-table-in-cloud-siem), below.
+This method–the typical way to populate a lookup table for the purpose of entity normalization–involves running a log search against data collected by a Cloud SIEM inventory source, and then saving and scheduling the search. This process is described in the [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table) topic. After creating the table, perform the steps in [Configure the lookup table in Cloud SIEM](#configure-the-lookup-table-in-cloud-siem), below.
 
 ### Existing lookups
 
@@ -69,14 +69,14 @@ For instructions, see [Create a Lookup Table](/docs/search/lookup-tables/create-
 
 ### Configure the lookup table in Cloud SIEM
 
-After you've [created your entity lookup table](/docs/search/lookup-tables/create-lookup-table/) in the Sumo Logic Library, you can configure it in Cloud SIEM.
+After you've [created your entity lookup table](/docs/search/lookup-tables/create-lookup-table/) in the Sumo Logic library, you can configure it in Cloud SIEM.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Normalization**. You can also click the **Go To...** menu at the top of the screen and select **Normalization**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Normalization**. 
 1. On the **Normalization** tab, click **Lookup Tables**.
 1. Select the lookup table.
 1. The **Existing Lookup Table** popup appears. Following is an example.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing lookup table dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Edit** to configure the lookup table. Note that most fields are read-only.
-    1. **Path**. The path to the existing lookup table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` <br/>To see the path to the [lookup table](/docs/search/lookup-tables/create-lookup-table) in the Sumo Logic Library, hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab button on a library item" style={{border: '1px solid gray'}} width="800"/>
+    1. **Path**. The path to the existing lookup table in the Sumo Logic library. For example: `/Library/Admin Recommended/NormalizedHostNames` <br/>To see the path to the [lookup table](/docs/search/lookup-tables/create-lookup-table) in the Sumo Logic library, hover over the row for the table in the library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="Kebab button on a library item" style={{border: '1px solid gray'}} width="800"/>
     1. **Type**. The type of normalization:
        * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
        * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.

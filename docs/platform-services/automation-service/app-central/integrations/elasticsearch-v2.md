@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/elasticsearch-v2.png')} alt="elasticsearch" width="100"/>
 
-***Version: 1.3  
-Updated: Nov 03, 2023***
+***Version: 1.4  
+Updated: Jul 23, 2026***
 
 Query Elasticsearch
 
@@ -62,9 +62,9 @@ For information about Elasticsearch, see [Elasticsearch documentation](https://w
 
 ## Change Log
 
-* November 17, 2020 - First upload
-* November 10, 2022 (v1.2) - New Action: Query Extended
-* November 3, 2023 (v1.3)
-	+ Updated the integration with Environmental Variables
-	+ Improved error handling
-	+ Removed leading/trailing spaces
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | July 23, 2026 | Resolved an issue where the integration fails due to deprecated dependency warnings. |
+| v1.3 | November 3, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Improved error handling.</li><li>Removed leading and trailing spaces.</li></ul> |
+| v1.2 | November 10, 2022 | Added a new action: **Query Extended**. |
+| | November 17, 2020 | Initial release of the Elasticsearch V2 integration. |

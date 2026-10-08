@@ -146,37 +146,37 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/metrics/introduction/get-started-metrics/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="icon" width="40"/><h4>Get Started with Metrics</h4></a>
+  <a href={useBaseUrl('docs/metrics/introduction/get-started-metrics/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="Investigate icon" width="40"/><h4>Get Started with Metrics</h4></a>
   <p>Learn how to get started with metrics and create your first visualization.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/metrics/introduction/built-in-metadata/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="icon" width="40"/><h4>Built-in Metadata for Metrics</h4></a>
+  <a href={useBaseUrl('docs/metrics/introduction/built-in-metadata/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="Investigate icon" width="40"/><h4>Built-in Metadata for Metrics</h4></a>
   <p>Learn about the metadata attached to metrics.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/metrics/introduction/metric-formats/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="icon" width="40"/><h4>Metrics Formats</h4></a>
+  <a href={useBaseUrl('docs/metrics/introduction/metric-formats/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="Investigate icon" width="40"/><h4>Metrics Formats</h4></a>
   <p>Sumo Logic supports the Graphite, Carbon 2.0, and Prometheus metric formats.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/metrics/introduction/joins/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="icon" width="40"/><h4>Join Metrics Queries</h4></a>
+  <a href={useBaseUrl('docs/metrics/introduction/joins/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="Investigate icon" width="40"/><h4>Join Metrics Queries</h4></a>
   <p>You can join metrics queries to combine, compare, and perform operations on the multiple queries’ results.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/metrics/introduction/metric-histograms/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="icon" width="40"/><h4>Metrics Histograms</h4></a>
+  <a href={useBaseUrl('docs/metrics/introduction/metric-histograms/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="Investigate icon" width="40"/><h4>Metrics Histograms</h4></a>
   <p>Learn how to use histograms to calculate percentiles.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/metrics/introduction/metric-quantization/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="icon" width="40"/><h4>Metrics Quantization</h4></a>
+  <a href={useBaseUrl('docs/metrics/introduction/metric-quantization/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="Investigate icon" width="40"/><h4>Metrics Quantization</h4></a>
   <p>Learn about how Sumo aggregates metric data points over time buckets.</p>
   </div>
 </div>

@@ -66,13 +66,13 @@ conjunction with group-by functions. When using any grouping function, the word 
 :::note
 An aggregation function cannot take another function (such as a math function). For example, you cannot use:
 
-```sql
+```sumo
 ... | avg(x + y) as average
 ```
 
 Instead, use separate steps:  
 
-```sql
+```sumo
 ... | x + y as z | avg(z) as average
 ```
 :::

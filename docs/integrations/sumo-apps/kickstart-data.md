@@ -7,7 +7,7 @@ description: The Sumo Logic Kickstart Data app offers real-time insights for mon
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Kickstart-Data-Icon.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/Sumo-Logic-Kickstart-Data-Icon.png')} alt="Sumo Logic Kickstart Data icon" width="100"/>
 
 The Sumo Logic Kickstart Data app offers real-time insights for monitoring telemetry data from our OpenTelemetry Demo Astronomy application. Featuring predefined searches and dashboards, this app enhances visibility into application performance and operational metrics.
 
@@ -44,7 +44,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Sumo Logic Kickstart Data - Application Health
 
-The **Sumo Logic Logic Kickstart Data - Application Health** dashboard provides details on user journey, interface performance, and internal server metrics for an e-commerce application.
+The **Sumo Logic Kickstart Data - Application Health** dashboard provides details on user journey, interface performance, and internal server metrics for an e-commerce application.
 
 Use this dashboard to:
 * Monitor the user journey funnel from home page visits to completed payments, identifying potential drop-off points in the conversion process.

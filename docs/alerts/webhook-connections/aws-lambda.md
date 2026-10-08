@@ -7,7 +7,7 @@ description: You can trigger an AWS Lambda function directly from a Sumo Logic a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/connection-and-integration/aws-lambda.svg')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/connection-and-integration/aws-lambda.svg')} alt="AWS Lambda icon" width="50"/>
 
 You can trigger an AWS Lambda function directly from a Monitor or Scheduled Search by configuring a webhook connection. You can use the Webhook Connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
 
@@ -71,7 +71,7 @@ Configure the webhook connection to trigger the AWS Lambda function.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **AWS Lambda** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/aws-lambda-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. For **Connection Type**, select **AWS Lambda** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/aws-lambda-dropdown.png')} alt="AWS Lambda dropdown menu" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
@@ -82,7 +82,7 @@ Configure the webhook connection to trigger the AWS Lambda function.
       * For Lambda Function URL, enter **lambda** as the service name.
       * For API Gateway, enter **execute-api** as the service name.
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
-        <img src={useBaseUrl('img/connection-and-integration/create-new-connection-aws-lambda.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+        <img src={useBaseUrl('img/connection-and-integration/create-new-connection-aws-lambda.png')} alt="Create New Connection AWS Lambda icon" style={{border: '1px solid gray'}} width="500" />
 1. **Alert Payload**. Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
 1. **Recovery Payload.** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
 1. Click **Test Alert** or **Test Recovery** to test the connection. If the connection is made to your Lambda function successfully, you will see a `200 OK` response message.

@@ -46,7 +46,7 @@ To install an upgrade on one or more collectors:
         :::note
         We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
         :::
-      <img src={useBaseUrl('/img/send-data/upgrade-collectors.png')} alt="icon" />
+      <img src={useBaseUrl('/img/send-data/upgrade-collectors.png')} alt="Upgrade Collectors icon" />
 
   - **If your collector is on the deprecated JRE version**:
 

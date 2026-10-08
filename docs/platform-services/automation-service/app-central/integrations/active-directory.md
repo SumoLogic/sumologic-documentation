@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory.png')} alt="active-directory" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory.png')} alt="Active directory icon" width="100"/>
 
 **Version: 1.3  
 Updated: Dec 19, 2023**
@@ -64,14 +64,11 @@ For information about Active Directory, see [Active Directory documentation](htt
 
 ## Change Log
 
-* December 19, 2019 - First upload
-* November 9, 2020 - Added new actions
-* October 27, 2021 - Added new actions
-* June 07, 2022- Updated action:
-	+ User Attributes V2 (updated the output)
-* July 7, 2023 (v1.2)
-	+ Integration renamed from Active Directory OIF to Active Directory
-	+ Updated the integration with Environmental Variables
-* December 19, 2023 (v1.3)
-	+ Updated action: User Attributes V2
-		- Now, with the User Attributes V2 Action, users can be filtered based on their distinguishedName (DN)
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | December 19, 2023 | Updated the **User Attributes V2** action so users can now be filtered based on their distinguishedName (DN). |
+| v1.2 | July 7, 2023 | <ul><li>Renamed the integration from Active Directory OIF to Active Directory.</li><li>Updated the integration with environmental variables.</li></ul> |
+| | June 07, 2022 | Updated the **User Attributes V2** action to update the output. |
+| | October 27, 2021 | Added new actions. |
+| | November 9, 2020 | Added new actions. |
+| | December 19, 2019 | Initial release of the Active Directory integration. |

@@ -77,7 +77,7 @@ Follow these instructions to create an entity group based on entity name or whet
     * **Prefix**. After you select this option, a **Prefix** field appears. Enter a string that matches the leading characters of the names of the entities you want to include in the group.
     * **Suffix**. After you select this option, a **Suffix** field appears. Enter a string that matches the trailing characters of the names of the entities you want to include in the group.
     * **IP Address Range.** After you select this option, an **IP Address Range** field appears. Enter a CIDR block of IP addresses.
-    * **Sensor Zone**. This field is present if you selected _IP Address _as the **Entity Type** above. Optionally, select a **Sensor Zone** from the pulldown.
+    * **Sensor Zone**. This field is present if you selected **IP Address** as the **Entity Type** above. Optionally, select a **Sensor Zone** from the pulldown.
     :::note
     If you select a [Sensor Zone](/docs/cse/administration/using-sensor-zones), the IP addresses assigned to the entity group will be limited to addresses that are within the specified **IP Address Range** and also have been assigned the selected Sensor Zone.
     :::
@@ -102,7 +102,7 @@ Follow these instructions to create an entity group that corresponds to a group 
 1. **Source**. Select an inventory source from the pull-down list.
 1. **Value**. Enter a value for the attribute selected in the **Inventory Key** field above. You can use REGEX expressions in this field (for example, in the screenshot above, the value is `.*OU\=ADFS.*`). <br/>If **groups** was selected in the **Inventory Key** field, enter the name of the group in the inventory system that contains the entities you want to add to the entity group. 
    :::note
-   **Value** refers to a normalized attribute. The name of the raw attribute varies depending on the inventory source. And if you are entering a value for a group, keep in mind that just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
+   **Value** refers to a normalized attribute. The name of the raw attribute varies depending on the inventory source. And if you are entering a value for a group, keep in mind that as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
    :::
 1. **Dynamic Schema Tags**. Select if you'd like to apply a [custom tag schema](/docs/cse/administration/create-a-custom-tag-schema) to the entities in the group. If you select this option, the **Value** field changes to *, indicating the value will be automatically generated from the custom tag schema. 
 1. **Tag Schema**. Select the tag schema to use for the entity group.

@@ -30,7 +30,7 @@ For example, instead of creating one monitor to alert on CPU utilization, you co
 
 Sumo Logic will automatically disable a monitor if it violates specific limitations. You can check the reason it was disabled with the [System Event Index](/docs/manage/security/audit-indexes/system-event-index.md). The following query will search the System Event Index for the reason:
 
-```sql
+```sumo
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
 ```
 

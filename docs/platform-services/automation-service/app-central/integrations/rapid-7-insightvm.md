@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="rapid-7-insightvm" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapid-7-insightvm.png')} alt="Rapid 7 InsightVM icon" width="80"/>
 
-***Version: 1.2  
-Updated: Jul 07, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Utilize and interact with Rapid7 Vulnerability management tool.
 
@@ -61,8 +61,10 @@ For information about Rapid7 InsightVM, see [Rapid7 InsightVM documentation](htt
 
 ## Change Log
 
-* October 27, 2021 - First upload
-* October 28, 2022 - Added new action: Search Asset By Hostname added
-* February 17, 2023 (v1.1)
-	+ New Action: Search Asset By IP
-* July 7, 2023 (v1.2) - Removed leading/trailing spaces
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | July 7, 2023 | Removed leading and trailing spaces. |
+| v1.1 | February 17, 2023 | Added a new action: **Search Asset By IP**. |
+| | October 28, 2022 | Added a new action: **Search Asset By Hostname**. |
+| | October 27, 2021 | Initial release of the Rapid7 InsightVM integration. |

@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortianalyzer.png')} alt="fortianalyzer" width="100"/>
 
-***Version: 1.5  
-Updated: Mar 4, 2024***
+***Version: 1.6  
+Updated: April 29, 2026***
 
 Search events and network traffic from Fortinet FortiAnalyzer.
 
@@ -54,9 +54,12 @@ For information about FortiAnalyzer, see [FortiAnalyzer documentation](https://d
 
 ## Change Log
 
-* June 19, 2019 - First upload
-* May 29, 2020 - New action added
-* July 21, 2023 (v1.2) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.3) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v1.4) - Versioning
-* March 4, 2024 (v1.5) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.4 | September 19, 2023 | Updated versioning. |
+| v1.3 | September 4, 2023 | Fixed a bug where an error would occur if the timeout was not specified. |
+| v1.2 | July 21, 2023 | Updated the integration with Environmental Variables. |
+| | May 29, 2020 | Added a new action. |
+| | June 19, 2019 | First upload. |

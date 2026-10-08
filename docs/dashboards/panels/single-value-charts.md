@@ -35,7 +35,7 @@ To add a panel with a single value chart:
 
 A boolean single value chart displays a value as true or false. For example, the following query checks if more than 100 errors are found.
 
-```sql
+```sumo
 error | count as MyCount | if (MyCount> 100, true, false) as MyCount
 ```
 

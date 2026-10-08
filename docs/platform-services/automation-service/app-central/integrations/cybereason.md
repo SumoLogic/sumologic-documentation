@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cybereason.png')} alt="cybereason" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Query Cybereason, set item reputations and work with isolation rules.
 
@@ -45,5 +45,12 @@ For information about Cybereason, see the [Cybereason website](https://www.cyber
 
 ## Change Log
 
-* December 17, 2018 - First upload
-* July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 3, 2023 | Updated the integration with Environmental Variables. |
+| | December 17, 2018 | Initial release of the Cybereason integration. |
+
+## Additional resources
+
+For Cybereason, Sumo Logic offers the [Cybereason source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source/) to collect your Cybereason data.

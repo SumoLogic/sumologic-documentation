@@ -7,7 +7,7 @@ description: The Microsoft Graph Security V1 app for Sumo Logic enables you to i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('/img/send-data/ms-graph.svg')} alt="MS Graph icon" width="50"/>
 
 The Sumo Logic app for Microsoft Graph Security V1 enables you to identify security threats by analyzing alert logs and helps you to improve web security posture, proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
 
@@ -111,7 +111,7 @@ Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/r
 
 ## Sample queries
 
-```sql title="Alerts Count"
+```sumo title="Alerts Count"
 _sourceCategory="ms_graph"
 |json"id","status","severity","category","feedback","assignedTo","userStates[*]",,"title","description","confidence","malwareStates[*].category" as  alert_id,status,severity,category,feedback,analyst,user_info,title,description,confidence,malware_category nodrop
 | where severity matches "{{severity}}"
@@ -157,7 +157,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Microsoft Graph Security - Alerts Overview** dashboard provides a comprehensive overview of events which helps you to analyze security threats and take proactive measures to safeguard your organization. This dashboard features various widgets, including total alerts, high severity alerts, alerts by status, alerts by analyst feedback, alerts by confidence level, alerts by malware category, top analyst, and top alert categories.
 
-The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks. The top users associated with the alerts widget helps you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring you are always up-to-date on the latest developments.<br/><img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview.png')} alt="Microsoft-Graph-Security-Alerts-Overview" />
+The geo-location widget highlights alerts from high-risk countries, making it easier to identify and respond to potential threats from specific locations. The severity and trend widgets provide a detailed overview of the frequency and severity of alerts over time, allowing you to take proactive measures to mitigate risks. The top users associated with the alerts widget helps you pinpoint and address potential security risks related to user behavior efficiently. The recent alerts widget offers a quick snapshot of the latest security activity, ensuring you are always up-to-date on the latest developments.<br/><img src={useBaseUrl('/img/integrations/saas-cloud/Microsoft-Graph-Security-Alerts-Overview.png')} alt="Microsoft Graph Security Alerts Overview" />
 
 ## Upgrade/Downgrade the Microsoft Graph Security app (Optional)
 

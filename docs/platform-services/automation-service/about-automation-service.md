@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
 import StaticIpAddresses from '../../reuse/static-ips-automation-service.md';
 
-The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide arrange of events. 
+The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide range of events. 
 
 To use the Automation Service, execute playbooks to run actions in a workflow. Actions are provided by integrations with Sumo Logic and third-party vendors. The Automation Service has number of integrations, actions, and playbooks that you can customize. You can also create your own.
 

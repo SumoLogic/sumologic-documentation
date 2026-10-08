@@ -59,7 +59,7 @@ This app uses Sumo Logic’s [Carbon Black Inventory Source](/docs/send-data/hos
 
 ## Sample queries
 
-```sql title="Total Devices"
+```sumo title="Total Devices"
 _sourceCategory="Labs/CarbonBlackInventory"
 | json "id", "quarantined", "compliance_status", "host_based_firewall_status", "av_status", "sensor_pending_update", "os", "vulnerability_severity", "last_external_ip_address", "sensor_states", "passive_mode", "name", "sensor_out_of_date", "last_reported_time", "last_contact_time", "registered_time", "vulnerability_score", "os_version", "av_last_scan_time" as id, quarantined, compliance_status, host_based_firewall_status, av_status_list, sensor_pending_update, os, vulnerability_severity, last_external_ip_address, sensor_states_list, passive_mode, name, sensor_out_of_date, last_reported_time, last_contact_time, registered_time, vulnerability_score, os_version, av_last_scan_time nodrop
 
@@ -106,7 +106,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Carbon Black Inventory – Overview** dashboard offers a comprehensive snapshot of endpoint assets and their security posture. It highlights key metrics such as total device count, quarantined systems, compliance issues, and devices with outdated scans or disabled protections. The dashboard also provides visibility into inactive or outdated sensors, non-reporting endpoints, and pending sensor updates, along with breakdowns by operating system, vulnerability severity, and geographic location. By consolidating these insights into a unified view, it enables security teams to quickly identify at-risk devices, maintain compliance, and prioritize remediation efforts to improve endpoint hygiene and reduce organizational risk.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/carbon-black-inventory/Carbon+Black+Inventory+-+Overview.png' alt="Carbon-Black-Inventory-Overview-Dashboard" />
+The **Carbon Black Inventory – Overview** dashboard offers a comprehensive snapshot of endpoint assets and their security posture. It highlights key metrics such as total device count, quarantined systems, compliance issues, and devices with outdated scans or disabled protections. The dashboard also provides visibility into inactive or outdated sensors, non-reporting endpoints, and pending sensor updates, along with breakdowns by operating system, vulnerability severity, and geographic location. By consolidating these insights into a unified view, it enables security teams to quickly identify at-risk devices, maintain compliance, and prioritize remediation efforts to improve endpoint hygiene and reduce organizational risk.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/carbon-black-inventory/Carbon+Black+Inventory+-+Overview.png' alt="Carbon Black Inventory Overview Dashboard" />
 
 ## Create monitors for the Carbon Black Inventory app
 

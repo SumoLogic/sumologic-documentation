@@ -11,7 +11,7 @@ description: The Microsoft Azure AD Inventory Source collects user and device
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="Active Directory icon" width="55"/>
 
 The Microsoft Azure AD Inventory Source collects user and device data from the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview) Security endpoint. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -40,7 +40,7 @@ Use the following steps to create a service application:
 1. Then select **New Registration**. Go through the registration process, providing a name for the application. Selecting **Accounts in this organizational directory only** is sufficient.<br/><img src={useBaseUrl('img/send-data/Azure-new-registration-in-step-4.png')} alt="Select new registration" style={{border: '1px solid gray'}} width="800" />
 1. After the Application is registered (created), be sure to copy the **Application (client) ID** and the **Directory (tenant) ID**. These are used later as configuration parameters in Sumo Logic when creating the Microsoft Azure AD Inventory Source.<br/><img src={useBaseUrl('img/send-data/Azure-created-app-in-step-5.png')} alt="Copy IDs" style={{border: '1px solid gray'}} width="800" />
 1. Within the Application configuration page, select **Certificates and Secrets** to create an Application Client Secret Key.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-6.png')} alt="Cerfifications and secrets" style={{border: '1px solid gray'}} width="800" />
-1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Azure AD Inventory Source.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-7.png')} alt="Client secret value" style={{border: '1px solid gray'}} width="800>" />
+1. Copy the **Client Secret Value** (pictured below). It's needed later in Sumo Logic when creating the Microsoft Azure AD Inventory Source.<br/><img src={useBaseUrl('img/send-data/Azure-AD-step-7.png')} alt="Client secret value" style={{border: '1px solid gray'}} width="800" />
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
 From there, select (or search for) the following permissions under type **Application permissions**. An Administrator must approve (grant) these permissions before the integration will function.
@@ -73,8 +73,8 @@ To configure a Microsoft Azure AD Inventory Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
 1. **Application Client Secret Value**. Provide the Application Client Secret Value you created in step 7 of the setup section.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Devices** and **Users**.
@@ -88,6 +88,10 @@ To configure a Microsoft Azure AD Inventory Source:
     :::
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
+
+:::info
+After configuring the Microsoft Azure AD Inventory source, consider installing the Sumo Logic app for [Microsoft Azure AD Inventory](/docs/integrations/saas-cloud/microsoft-azure-ad-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -139,3 +143,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Azure AD Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.

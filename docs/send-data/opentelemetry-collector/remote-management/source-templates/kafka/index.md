@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="65"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/><img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="Kafka icon" width="65"/>
 
 The Kafka source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Kafka logs and metrics in Sumo Logic.
 
@@ -59,14 +59,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Kafka collection. Below are the inputs required for configuration:
+import KafkaConfigureSourceTemplate from '../../../../../reuse/send-data/kafka-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-- **Server file log path**. Enter the path to the server log file for your Kafka instance.
-- **Controller file log path**. Enter the path to the controller log file for your Kafka instance.
-- **Endpoint**. The URL of the broker endpoint (default: `localhost:9092`).
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/kafka user needs to provide the value for `webengine.cluster.name`.
+<KafkaConfigureSourceTemplate/>
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

@@ -17,7 +17,7 @@ Usage log.
 
 **Parsing Rule:**
 
-```sql
+```sumo
 parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, bucket, time, remoteIP, requester, request_ID, operation, key, request_URI, status_code, error_code, bytes_sent, object_size, total_time, turn_time, referrer, user_agent, version_ID
 ```
 

@@ -77,7 +77,7 @@ To modify only the access keys on a service account (rather than the service acc
 
 Service account events are recorded in the Audit Event Index as user events. To search for for service account events, run this query:
 
-```
+```sumo
 _index=sumologic_audit_events _sourceCategory=users
 ```
 

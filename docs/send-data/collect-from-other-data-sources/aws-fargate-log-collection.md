@@ -176,7 +176,7 @@ The previous steps showed you how to configure container log collection. This se
 
 To verify your container logs are coming into Sumo Logic, run an interactive search such as shown in the following example:
 
-```sql
+```sumo
 _sourceCategory=ECS/Fargate
 ```
 

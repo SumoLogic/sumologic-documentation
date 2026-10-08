@@ -10,7 +10,7 @@ description: This document outlines what is Azure database for PostgreSQL, how t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-postgresql.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-postgresql.png')} alt="Azure Database for PostgreSQL icon" width="50"/>
 
 [Azure Database for PostgreSQL](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview) is a fully managed relational database service in the Microsoft cloud based on the PostgreSQL community edition. This integration helps in monitoring resource utilization and identifying slow queries to optimize your workloads and configure your server for the best performance.
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/><img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Nginx icon" width="90"/>
 
 The Nginx source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Nginx logs and metrics in Sumo Logic.
 
@@ -67,14 +67,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Nginx collection. Below are the inputs required for configuration:
+import NginxConfigureSourceTemplate from '../../../../../reuse/send-data/nginx-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-- **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:80/status`).
-- **Path to Nginx access Log file**. Enter the path to the Access log file for your Nginx instance.
-- **Path to Nginx error Log file**. Enter the path to the error log file for your Nginx instance.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default sumo tags `_sourceCategory` with the value otel/nginx user needs to provide the value for `webengine.cluster.name`.
+<NginxConfigureSourceTemplate/>
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

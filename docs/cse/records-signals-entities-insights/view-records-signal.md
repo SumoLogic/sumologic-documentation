@@ -15,7 +15,7 @@ Cloud SIEM uses rules to evaluate incoming records, and when the conditions of 
 1. Click the plus sign (+) for a record to view its details. 
 1. Use the following to work with the records: 
    * **Timestamp**. Sort records by their timestamp. 
-   * **Open in Log Search**. Select one of the the following options to run a query for the signal's records in log search:
+   * **Open in Log Search**. Select one of the following options to run a query for the signal's records in log search:
        * **Distinct Aggregated Records**. Exact records evaluated by the rule.
        * **All Related Records**. All records related to the signal.
    * **Export**. Export the records to a comma-separated value (CSV) or JSON file.<br/><img src={useBaseUrl('img/cse/attached-records.png')} alt="View attached records" style={{border: '1px solid gray'}} width="800"/>
@@ -25,7 +25,7 @@ Cloud SIEM uses rules to evaluate incoming records, and when the conditions of 
 
 ## Select favorite fields
 
-Favorite fields let you show the most important fields in the summary view of a record so you don't have to open the record's details to see them.
+Favorite fields let you show the most important fields in the summary view of a record so you do not have to open the record's details to see them.
 
 To select favorite fields:
 1. Open a signal to view the first record associated with it. <br/><img src={useBaseUrl('img/cse/example-record.png')} alt="Example record" style={{border: '1px solid gray'}} width="800"/>

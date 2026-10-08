@@ -7,7 +7,7 @@ description: The Audit app uses Sumo audit index events to present information a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Audit app icon" width="75"/>
 
 The Sumo Logic Audit app uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
 
@@ -169,6 +169,21 @@ See information about Library Content (searches, dashboards/reports, and folders
 **Content Exported Over Time.** Show the number of library content exported by users on a column chart for the last 24 hours.
 
 **Application Installed by Users.** Shows an aggregation table of applications installed by users with columns for the time, user, app name, and count, for the last 24 hours.
+
+
+### Library Content - Monitors
+
+See monitors usage based on users working with monitors, deletions, and notifications.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-Library-Content-Monitors.png')} alt="test" />
+
+**Top 20 Popular Monitors**. Displays the top 20 monitors with the highest activity in the selected time range, based on audit events.
+
+**Top 20 Users Working With Monitors**. Shows the top 20 users generating the most monitor-related activity in the selected time period.
+
+**Monitors Deleted**. Displays monitor deletion events with timestamp, user, and source IP address for audit tracking.
+
+**Monitors with Notifications**. Lists monitors that have active notification configurations, including the notification type and frequency of activity.
 
 
 ### User Activity - Login and Credentials

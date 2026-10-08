@@ -7,7 +7,7 @@ description: Fastly is a content delivery network (CDN) that provides you contro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/fastly.png')} alt="Fastly icon" width="50"/>
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
@@ -20,15 +20,15 @@ The Fastly app uses the following log types:
 
 ### Sample queries
 
-```sql title="Top Error-causing URLs"
+```sumo title="Top Error-causing URLs"
 _sourceCategory=fastly 50? | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status | urldecode(path) as path | where status > 499 | where status < 600 | count as errors by path | sort by errors
 ```
 
-```sql title="Cache Performance"
+```sumo title="Cache Performance"
 _sourceCategory=fastly cacheStatus | parse "\"cacheStatus\":\"*\"" as status | where !(status="") | if(status="0", "0 - Non cacheable", if(status="1" OR status="2", "1/2 - Cache Hit", if(status="3", "3 - Cache Miss", ""))) as cachestatus | count by cachestatus
 ```
 
-```sql title="Top Denials by Host"
+```sumo title="Top Denials by Host"
 _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host | where deny != "" | timeslice 1m | count by host, _timeslice | transpose row _timeslice column host
 ```
 
@@ -290,7 +290,7 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to add 
 
 This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see Creating a Field Extraction Rule.
 
-```sql
+```sumo
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin| parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 

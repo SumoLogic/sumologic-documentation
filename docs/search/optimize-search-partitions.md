@@ -52,13 +52,13 @@ Whenever possible, we rewrite a user's queries to perform better. We'll illustra
 
 This means that:
 
-```sql
+```sumo
 _sourceCategory=prod/security/snort
 ```
 
 Will be rewritten as:
 
-```sql
+```sumo
 _index=prod AND _sourceCategory=prod/security/snort
 ```
 

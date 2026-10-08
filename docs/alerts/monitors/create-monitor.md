@@ -1,7 +1,7 @@
 ---
 id: create-monitor
 title: Create a New Monitor
-description: Learn how to create a Sumo Logic monitor.
+description: Create Sumo Logic monitors with ML-powered anomaly detection, customizable trigger conditions, playbook automation, and alerting for logs and metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,6 +19,10 @@ import TerraformLink from '../../reuse/terraform-link.md';
 You can use Terraform to manage monitors with the [`sumologic_monitor`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) and [`sumologic_monitor_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder) resources.
 
 <TerraformLink/>
+:::
+
+:::tip
+You can also create logs monitors from plain-language prompts with Mobot. For details, see [Create Monitors with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
 :::
 
 ## Open the New Monitor window
@@ -105,7 +109,7 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn about anomaly monitors.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"
@@ -188,13 +192,13 @@ Triggers are evaluated by balancing the requirement of timely alert notification
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="Config resolution window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Static detection method
 
 **Example: Logs - Static - Critical and Warning**  
 
-<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="Logs trigger type" style={{border: '1px solid gray'}} width="600"/>
 
 `Alert when result is <threshold type> <threshold> within <time range - trigger>. Evaluate every <trigger - frequency>.`
 
@@ -215,7 +219,7 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 
 **Example: Logs - Static - Missing Data**
 
-<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="Logs static missing" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when missing data within <time range - trigger>. Evaluate every <trigger - frequency>.`
 
@@ -246,7 +250,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 **Example: Logs - Outlier - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="Monitor outlier logs" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
 
@@ -277,7 +281,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-metrics.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-metrics.png')} alt="Config resolution window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Prerequisites
 
@@ -296,7 +300,7 @@ Examples:
 
 **Example: Metrics - Static - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="metrics trigger types.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="Metrics trigger types" style={{border: '1px solid gray'}} width="800" />
 
 `Alert when result is <threshold type> <threshold> <occurrence type> <time range>`
 
@@ -345,7 +349,7 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 **Example: Metrics - Anomaly - Critical**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="metrics-anomaly-critical" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="Metrics anomaly critical" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when anomaly count is at least <count> (max. 5) at any time within <time range>`
 
@@ -358,7 +362,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 **Example: Metrics - Anomaly - Missing Data**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="metrics-anomaly-missing" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="Metrics anomaly missing" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when missing data within <time range>`
 
@@ -372,7 +376,7 @@ For recovery, Sumo Logic will automatically resolve the incident when the resolu
 
 **Example: Metrics - Outlier - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="monitor metrics outlier triggers.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="Monitor metrics outlier triggers" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <time range>`
 
@@ -419,6 +423,15 @@ Collection delays may occur due to your environment and it takes a couple of min
 If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics), we recommend a setting of 900 seconds.
 :::
 
+### Timestamp
+
+You can switch the **Timestamp** mode to **Message Time** or **Searchable Time** to view and evaluate logs based on different timestamp contexts. <img src={useBaseUrl('img/alerts/monitors/timestamp-dropdown.png')} alt="select timestamp" style={{border: '1px solid gray'}} width="500"/>
+
+- **Message Time**. Returns messages based on the timestamp specified in each message.
+- **Searchable Time**. Returns messages based on the time they are indexed or become searchable in Sumo Logic.
+
+This allows you to troubleshoot ingestion delays, correlate events accurately, and monitor data using the most relevant time reference. Learn more in [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/#create-a-monitor-using-searchable-time).
+
 ## Step 3. Notifications (optional)
 
 Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services.
@@ -429,7 +442,9 @@ Notifications will be sent when the monitor is triggered as configured in the [A
 
 * **Preferred Notification Time Zone**. Set the time zone for your alert notifications. If you do not select anything, it will default to the time zone specified in your user preferences.
 * **Connection Type**. Choose the [connection](/docs/alerts/webhook-connections) notification method (e.g., email, Webhook, PagerDuty). Monitor notifications support [Alert Variables](/docs/alerts/monitors/alert-variables) to reference its configuration settings or your raw data.
-   * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body.
+   * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body. You can also include additional context in the email notification:
+      * **Include Query** (`includeQuery`). Adds the monitor's search query to the email notification. Supported for Logs, Metrics, and SLO monitors.
+      * **Include Results** (`includeResultSet`). Adds the search results to the email notification. Supported for Logs and Metrics monitors. SLO monitors do not support this option. Setting `includeResultSet` on an SLO monitor returns an error indicating that the flag is not applicable.
    * **Webhook**. By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 * **Trigger Type Notifications**. Set different notification channels for each trigger type (**Critical**, **Warning**, **Missing Data**). Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification. You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.
    * For the connection types listed [here](/docs/alerts/webhook-connections), you can use the **Recovery** checkbox to enable an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic.
@@ -465,3 +480,7 @@ Optionally, you can add [**Tags**](/docs/alerts/monitors/settings#tags) to organ
 ### Using Terraform
 
 You can configure Sumo Logic monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+
+### Using Mobot
+
+You can also create and update logs monitors from plain-language prompts using [Mobot](/docs/alerts/monitors/create-monitor-with-mobot).

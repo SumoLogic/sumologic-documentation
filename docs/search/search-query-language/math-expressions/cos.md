@@ -8,12 +8,10 @@ Cosine of argument in radians.
 
 ## Syntax
 
-```sql
-cos(<x>) as <field>
-```
+`cos(<x>) as <field>`
 
 ## Example
 
-```sql
+```sumo
 * | cos(1) as v
 ```

@@ -3,11 +3,16 @@ id: about-automation-service-and-cloud-siem
 title: About the Automation Service and Cloud SIEM
 sidebar_label: About the Automation Service and Cloud SIEM
 description: Get an overview of how the Automation Service allows you to automate smart actions, including enrichments and notifications.
+keywords:
+  - automation service
+  - cloud siem automation
+  - playbooks
+  - enrichments
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic provides an overview of using the [Automation Service](/docs/platform-services/automation-service/) to configure automations in Cloud SIEM.
+The [Automation Service](/docs/platform-services/automation-service/) lets you configure automations in Cloud SIEM that run playbooks to enrich, notify, or otherwise act on insights and entities automatically. This topic provides an overview of using the Automation Service to configure automations in Cloud SIEM.
 
 The Automation Service allows you to define and automate smart actions, including enrichments and notifications. These actions can be automatically triggered when certain events occur in Cloud SIEM, helping you to quickly investigate, understand, and react to potential security threats.
 
@@ -26,7 +31,7 @@ You can use Terraform to manage Cloud SIEM automation with the [`sumologic_cse_a
 <TerraformLink/>
 :::
 
-## Benefits
+## What are the benefits of the Automation Service?
 
 * The Automation Service supports enrichment, notification, containment, user choice, and custom actions in Cloud SIEM. 
 * Enrichment actions can be used to gather additional information about an entity or insight, including threat indicators.
@@ -39,7 +44,7 @@ You can use Terraform to manage Cloud SIEM automation with the [`sumologic_cse_a
   1. Invites certain people to the Slack channel.
 
 :::note
-* Cloud SIEM automation is intended to replace the legacy [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/platform-services/automation-service/automation-service-bridge)). Those capabilities will be deprecated later in 2023. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+* Cloud SIEM automation is intended to replace the legacy [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/). All of the actions and integrations provided with those capabilities are included in the Automation Service (though some may require “on-premise” deployment through the [bridge](/docs/platform-services/automation-service/automation-service-bridge)). Those capabilities will be deprecated later. See [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 * Actions can run directly from the Sumo Logic cloud or from other environments via a [bridge](/docs/platform-services/automation-service/automation-service-bridge/). For security and performance reasons, only certified integrations and actions can run directly from the Sumo Logic cloud environment.
 * The Automation Service is not available in FedRAMP environments at this time.
 :::
@@ -83,7 +88,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 
 ## Support and compliance
 
-### API and Terraform support
+### API support
 
 The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. Endpoints include:
 * `GET /automations`. Get the list of automations
@@ -93,15 +98,43 @@ The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. E
 * `GET /automations/{id}`. Get a specific automation
 * `PUT /automations/{id}`. Update a specific automation
 
-The Sumo Logic Terraform provider also supports automation, but does not support the ability to create or modify integrations, playbooks, or actions. For more information about Terraform, see the [Sumo Logic Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs) documentation.
-
 :::note
 The Automation Service uses the [Cloud SOAR API](/docs/api/cloud-soar/). 
 :::
 
+### Terraform support
+
+The Sumo Logic Terraform provider supports Cloud SIEM automation with the [sumologic_cse_automation](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_automation) resource. For more information about Terraform, see [Use Terraform with Sumo Logic](/docs/api/about-apis/terraform-with-sumo-logic/).
+
 ### Data retention
 
 Cloud SIEM automation data is retained in accordance with Sumo Logic's policies. For more information, see [Cloud SIEM Data Retention](/docs/cse/administration/cse-data-retention).
+
+## FAQ
+
+### What is the Automation Service in Cloud SIEM?
+
+The Automation Service lets you define and automate smart actions, such as enrichments and notifications, that run automatically when certain events occur in Cloud SIEM, such as an insight being created or closed.
+
+### How does the Automation Service relate to Cloud SOAR?
+
+The Automation Service is a subset of automation capabilities adapted from Cloud SOAR, made available to the entire Sumo Logic log analytics platform. If Cloud SOAR is also installed, its automation features supersede the standalone Automation Service.
+
+### Is the Automation Service available in FedRAMP environments?
+
+No, the Automation Service is not available in FedRAMP environments at this time.
+
+### What is SIEM and how does it help with incident response?
+
+SIEM (Security Information and Event Management) collects, correlates, and prioritizes security data into actionable insights. In Sumo Logic, Cloud SIEM generates those insights, and the Automation Service runs playbooks that automatically enrich, notify, or contain based on them, so incident response starts faster and with more context.
+
+### Are there scalable SIEM options designed for hybrid IT infrastructures?
+
+Yes. Cloud SIEM ingests and correlates data from cloud, hybrid, and on-premises sources, and the Automation Service can run its playbooks either directly from the Sumo Logic cloud or from your own environment through the Automation Service Bridge, so automation scales with hybrid infrastructure.
+
+### What are some Cloud SIEM automation use cases?
+
+See [Cloud SIEM Automation Examples](/docs/cse/automation/cloud-siem-automation-examples/) for concrete SOC automation use cases, ranging from simple threat-intelligence enrichment to advanced custom integrations, built on Sumo Logic's Automation Service.
 
 ## Additional resources
 

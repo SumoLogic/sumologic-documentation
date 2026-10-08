@@ -91,7 +91,7 @@ When using the [auto option](#json-auto-option) the keys are not case sensitive.
 
 The JSON operator allows you to extract a single, top-level field. For example, to extract `accountId`:
 
-```sql
+```sumo
 _index=audit_events
 | json "accountId"
 | fields accountId
@@ -105,7 +105,7 @@ produces results like:
 
 You can also extract multiple fields in a single operation. For example, to extract `accountId` and `eventName`:
 
-```sql
+```sumo
 _index=audit_events
 | json "accountId", "eventName"
 | fields accountId, eventName
@@ -117,7 +117,7 @@ produces these results:
 
 In addition, you can assign names to fields that differ from their original key names. To use `aID` instead of `accountId` and `eName` instead of `eventName`, you'd use the `as` option like this:
 
-```
+```sumo
 _index=sumologic_audit_events | json "accountId", "eventName" as aID, eName | fields aID, eName
 ```
 
@@ -131,7 +131,7 @@ The example log message has nested keys, which you can extract by specifying the
 
 For example, to extract the nested key `type` from `meta`, use the following query:
 
-```sql
+```sumo
 * | json field=jsonobject "meta.type"
 ```
 
@@ -141,7 +141,7 @@ In some cases, fields values are actually arrays, like `baselineIntervals` in 
 
 You can instruct the JSON operator to extract `@baselineIntervals`, like this:
 
-```sql
+```sumo
 * | json field=jsonobject "baselineIntervals"
 ```
 
@@ -153,14 +153,14 @@ like this:
 
 To refer to one specific entry in the array, provide the array's index: 
 
-```sql
+```sumo
 * | json field=jsonobject "baselineIntervals[1]"
 ```
 
 **Nested Array**. You can parse from a nested array using the dot
 notation.
 
-```sql
+```sumo
 _sourceCategory=O365* | json "Actor[0].Type" as Actortype0 | json "Actor[1].Type" as Actortype1
 ```
 
@@ -172,7 +172,7 @@ The result of the query would look like this: 
 
 By default, the JSON operator optimizes results by dropping messages that do not use the specified key or keys, or messages that use invalid JSON keys. Use the `nodrop` option to prevent this optimization, and set the extracted field values to null (empty):
 
-```sql
+```sumo
 * | json field=jsonobject "baselineIntervals[0]" nodrop
 ```
 
@@ -191,7 +191,7 @@ The result of the query would look like this:
 
 Next, if required, you can use the array elements to perform additional operations. For example, you can find the max of Type for a CreationTime and Id using this query:
 
-```sql
+```sumo
 _sourceCategory=O365*
 | json field=_raw "CreationTime", "Id"
 | json "Actor[*].Type" as ActorType
@@ -237,7 +237,7 @@ Operates on a specified field. By default, **json auto** will attempt to extra
 
 Example:
 
-```sql
+```sumo
 * | json auto field=<myfield>
 ```
 
@@ -247,7 +247,7 @@ References specific keys in json. The keys are not case sensitive with the **au
 
 Example:
 
-```sql
+```sumo
 * | json auto keys "<key1>", "<key2>" as <field1>, <field2>
 ```
 
@@ -255,7 +255,7 @@ Use the **refonly** option to extract only the referenced keys. If you do not
 
 Example:
 
-```sql
+```sumo
 * | json auto keys "<key1>", "<key2>" refonly
 ```
 
@@ -287,27 +287,27 @@ The following examples show how the previous sample changes when maxdepth values
 
 **`json auto maxdepth 1:`**
 
-```sql
+```sumo
 field: foo value: {"bar": [{"k1": "v1"}, {"k2", "v2"}], "baz": "qux"}
 ```
 
 **`json auto maxdepth 2:`**
 
-```sql
+```sumo
 field: foo.bar value: [{"k1": "v1"}, {"k2", "v2"}]
 ```
 
-```sql
+```sumo
 field: foo.baz value: qux
 ```
 
 Example:
 
-```sql
+```sumo
 * | json auto maxdepth 2
 ```
 
-```sql
+```sumo
 * | json auto extractarrays
 ```
 
@@ -336,14 +336,14 @@ With the **extractarrays** option, **json auto** yields these field-value pa
 
 1. Fields extracted using json auto need not be referenced explicitly in order to be used later in the query. For example, the user does not need to do this:
 
-    ```sql
+    ```sumo
     * | json auto keys "username"
     | count by username
     ```
 
     The user can simply write:
 
-    ```sql
+    ```sumo
     * | json auto | count by username
     ```
 
@@ -363,14 +363,14 @@ With the **extractarrays** option, **json auto** yields these field-value pa
 
     For example, this will not work:
 
-    ```sql
+    ```sumo
     * | json auto
     | count by users[2].address.street
     ```
 
     But this will:
 
-    ```sql
+    ```sumo
     * | json auto
     | count by %users[2].address.street
     ```
@@ -397,14 +397,14 @@ This is only a warning message to inform you that at least one log returned in t
 
 Use the [nodrop](parse-nodrop-option.md) option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that do not have this key:
 
-```sql
+```sumo
 _sourceCategory="nginx"
 | json "event" nodrop
 ```
 
 You can remove the warning about the key not being found by specifying the key(s) you need in the scope of the query, like this:
 
-```sql
+```sumo
 _sourceCategory="nginx" "event"
 | json "event"
 ```

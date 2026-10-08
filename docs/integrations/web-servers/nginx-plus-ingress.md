@@ -48,7 +48,7 @@ The Sumo Logic app for Nginx Plus Ingress assumes Prometheus format Metrics for 
 
 This sample query is from the **Visitor Locations** panel of the **Nginx Plus Ingress - Overview** dashboard.
 
-```
+```sumo
 Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}} _sourceCategory = *ingress*
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as nginx_log_message
@@ -84,7 +84,7 @@ Both the parse expressions can be used for logs collected from the Nginx Plus Se
 
 If you're using the default Nginx Plus Ingress log format use the following Parse Expression:
 
-```
+```sumo
 | json field=_raw "log" as nginx_log_message nodrop
 | if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
 | parse regex field=nginx_log_message
@@ -94,7 +94,7 @@ If you're using the default Nginx Plus Ingress log format use the following Pars
 
 If you aren’t using the default log format, use the below Parse Expression and edit/add fields as needed:
 
-```
+```sumo
 | json field=_raw "log" as nginx_log_message nodrop
 | if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
 | parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
@@ -106,7 +106,7 @@ If you aren’t using the default log format, use the below Parse Expression and
 
 Use the following Parse Expression:
 
-```
+```sumo
 | json field=_raw "log" as nginx_log_message nodrop
 | if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
 | parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"

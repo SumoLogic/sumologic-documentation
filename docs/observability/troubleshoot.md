@@ -7,7 +7,7 @@ description: Use Observability to troubleshoot and diagnose issues across a vari
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="icon" width="70"/>
+<img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Troubleshoot icon" width="70"/>
 
 Now that you have identified the issue and isolated the cause to a specific service or area, the next step is to get to the root cause and fix it so that the system could be restored to a healthy state.
 

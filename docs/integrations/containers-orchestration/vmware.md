@@ -44,7 +44,7 @@ computeResource=esx1.sumolabscluster.com,,,key=3553,,,chainId=3269
 ### Sample queries
 
 The following query is from the vSphere Errors Trend panel of the vCenter Errors - Analysis Dashboard.
-```sql
+```sumo
 _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 | parse "message=*,,," as err_msg
 | parse "host=*,,," as esx_host

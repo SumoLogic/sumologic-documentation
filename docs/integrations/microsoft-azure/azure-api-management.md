@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure API Man
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-api-management.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-api-management.png')} alt="Azure API Management icon" width="50"/>
 
 [Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts) is a hybrid multicloud platform for managing APIs across different environments. As a platform-as-a-service, it supports the entire API lifecycle and provides near real-time visibility into API status and health, offering essential API Management operations and details for auditing.
 

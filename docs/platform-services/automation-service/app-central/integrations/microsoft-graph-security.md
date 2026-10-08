@@ -4,18 +4,21 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-graph-security.png')} alt="microsoft-graph-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-graph-security.png')} alt="Microsoft Graph Security icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jun 21, 2023***
+***Version: 1.3  
+Updated: September 1, 2026***
 
-Query the Microsoft Graph Security API and update alerts.
+Query the [Microsoft Graph Security API](https://learn.microsoft.com/en-us/graph/security-concept-overview) and update alerts.
 
 ## Actions
 
-* **Search Into Alerts** (*Enrichment*) - Search Graph Security alerts.
-* **Get Alert** (*Enrichment*) - Get details for a Graph Security alert.
-* **Update Security Alert** (*Containment*) - Update a Graph Security alert.
+* **Get Alert** (*Enrichment*) - Get details for a Graph Security alert using the new [alerts_v2 API](https://learn.microsoft.com/en-us/graph/alertsv1-alertsv2-migration).
+* **Microsoft Graph Security Alerts Daemon** (*Daemon*) - Automatically retrieve Microsoft Graph Security alerts.
+* **Search Alerts** (*Enrichment*) - Search Graph Security alerts using the new [alerts_v2 API](https://learn.microsoft.com/en-us/graph/alertsv1-alertsv2-migration).
+* **Search Into Alerts** (*Enrichment*) - Search Graph Security alerts using the legacy alerts API.
+* **Update Alert** (*Containment*) - Update a Graph Security alert using the new [alerts_v2 API](https://learn.microsoft.com/en-us/graph/alertsv1-alertsv2-migration).
+* **Update Security Alert** (*Containment*) - Update a Graph Security alert using the legacy alerts API.
 
 ## Configure Microsoft Graph Security in Automation Service and Cloud SOAR
 
@@ -47,6 +50,13 @@ For information about Microsoft Graph Security, see [Microsoft Graph Security do
 
 ## Change Log
 
-* February 21, 2019 - First upload
-* March 10, 2022 - Logo
-* June 21, 2023 (v1.1) - Removed unnecessary empty lines
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | September 1, 2026 | <ul><li>Migrated **Get Alert**, **Search Alerts**, and **Update Alert** actions to the new Microsoft Graph Security [alerts_v2 API](https://learn.microsoft.com/en-us/graph/alertsv1-alertsv2-migration). The legacy `/security/alerts` endpoint is deprecated and will be retired on October 15, 2026.</li><li>Legacy actions **Search Into Alerts** and **Update Security Alert** are retained for backward compatibility, as the alerts_v2 API is not a one-to-one replacement for the legacy API and some alerts may be unavailable through the new endpoint.</li></ul> |
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | June 21, 2023 | Removed unnecessary empty lines. |
+| v1.0 | February 21, 2019 | Initial release of the Microsoft Graph Security integration. |
+
+## Additional resources
+
+- For Microsoft Graph Security, Sumo Logic offers the [Microsoft Graph Security source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source/) and the [Microsoft Graph Security app](/docs/integrations/saas-cloud/microsoft-graph-security-v2) to collect and visualize your Microsoft Graph Security data.

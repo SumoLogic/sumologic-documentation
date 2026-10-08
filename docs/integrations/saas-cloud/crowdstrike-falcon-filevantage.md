@@ -7,7 +7,7 @@ description: Analyze CrowdStrike Falcon FileVantage data to identify unauthorize
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The Sumo Logic app for CrowdStrike Falcon FileVantage enables security analysts to monitor and analyze file integrity across your environment. Leveraging the CrowdStrike Falcon FileVantage data helps detect unauthorized or high-risk file changes, policy violations, and suspicious activity that may indicate potential threats or compliance breaches.
 
@@ -101,7 +101,7 @@ This app uses Sumo Logic’s [CrowdStrike FileVantage Source](/docs/send-data/ho
 
 ### Sample queries
 
-```sql title="File Changes"
+```sumo title="File Changes"
 _sourceCategory="Labs/CrowdStrikeFalconFileVantage" entity_type file
 | json "id", "is_suppressed", "severity", "entity_type", "action_type", "host.os_version", "platform_name", "host.name", "user_name", "policy.rule_group.name", "policy.rule_group.rule.base_path", "process_id", "process_image_file_name", "host.external_ip", "action_timestamp", "entity_path", "policy.name" as id, is_suppressed, severity, entity_type, action_type, os_version, platform_name, host_name, user_name, rule_group_name, rule_base_path, process_id, process_image_file_name, ip, action_timestamp, entity_path, policy_name nodrop
 
@@ -190,3 +190,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [CrowdStrike Falcon Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/) to automate response actions directly from Cloud SOAR playbooks.

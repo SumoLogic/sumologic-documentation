@@ -7,10 +7,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 1.3  
-Updated: Nov 6, 2025***
+***Version: 1.6.0  
+Updated: October 7, 2026***
 
-Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
+[Jira cloud](https://developer.atlassian.com/cloud/jira/platform/) is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
 :::note
 This integration uses the [Jira REST API v3](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#about).
@@ -33,11 +33,37 @@ This integration uses the [Jira REST API v3](https://developer.atlassian.com/clo
 * **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
 * **Issues Jira Daemon** *(Daemon)* - Daemon to pull Jira issues.
 
+## Using playbook outputs in Create Issue and Update Issue
+
+The **Create Issue** and **Update Issue** actions support HTML content in the **Description** field. When passing plain text or signal variable inputs, line breaks are handled automatically and you do not need to add `<br/>` tags. When passing explicit HTML content, `<br/>` tags are supported and render correctly as line separators.
+
+### Supported output formats
+
+| Format | Example |
+|:--|:--|
+| Plain text | `Incident detected on host prod-server-01` |
+| Signal output variable | `{{signal.description}}` |
+| Iterated JSON data | `{{loop.item.summary}}` |
+| HTML with inline formatting | `<b>Host:</b> {{hostname}}<br/>{{signal.details}}` |
+| Due date (Unix timestamp) | `{{signal.timestamp}}` |
+| Due date (ISO datetime string) | `2026-10-06T09:00:00Z` |
+
+:::note
+The `{{loop.item.*}}` syntax is only available when a loop action is configured upstream in the playbook. For details, see [Arrays in playbooks](/docs/platform-services/automation-service/playbooks/arrays-in-playbooks).
+:::
+
+### Example: creating an issue from a signal
+
+1. Add the **Create Issue** action to your playbook.
+1. In the **Summary** field, enter a title, for example `Alert: {{signal.name}}`.
+1. In the **Description** field, enter a playbook output variable such as `{{signal.description}}`. The integration renders line breaks and HTML content automatically.
+1. Run the playbook. The action creates a Jira issue with the formatted description.
+
 ## Atlassian Jira Cloud configuration
 
 Sign in to [Jira](https://id.atlassian.com) with your Atlassian account.
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-2" width="300"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira V2 sign in" width="300"/>
 
 ### Create an API token
 
@@ -45,7 +71,7 @@ Create an API token from your Atlassian account:
 1. Log in to https://id.atlassian.com/manage-profile/security/api-tokens.
 1. Click **Create API token**.
 1. From the dialog that appears, enter a memorable and concise **Label** for your token and click **Create**.
-1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-3" width="300"/>
+1. Click **Copy to clipboard**, then paste the token to your script, or elsewhere to save.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira V2 Copy to clipboard" width="300"/>
 
 ### Revoke an API token
 
@@ -82,7 +108,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="atlassian-jira-v2-8" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png')} style={{border:'1px solid gray'}} alt="Atlassian Jira V2 configuration dialog" width="400"/>
 
 For information about Atlassian Jira Cloud, see [Jira Cloud documentation](https://support.atlassian.com/jira-software-cloud/resources/). For the REST API v3, see the [REST API v3 documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/).
 
@@ -108,7 +134,16 @@ Ticketing System
 
 ## Change Log
 
-* March 20, 2025 - First upload
-* Sept 10, 2025 (v1.1) - Added daemon action
-* Oct 15, 2025 (v1.2) - Added support of br tag in required actions
-* Nov 6, 2025 (v1.3) - Changed API endpoint in the resource connection file to prevent admin-level privileges. 
+| Version | Date            | Description |
+|:--------|:----------------|:--|
+| v1.6.0  | October 7, 2026 | Improved the **Create Issue** and **Update Issue** actions to correctly render multi-line text and HTML formatting in the **Description** field when using playbook outputs (signal data, iterated JSON). Top-level `<br/>` tags and `\n` line breaks now create separate paragraphs in Jira instead of being truncated or collapsed. Added support for Unix timestamps and ISO datetime strings in the **Due Date** field. |
+| v1.5    | July 14, 2026   | Improved reliability across all actions with more stable connections and clearer error messages. |
+| v1.4    | March 23, 2026  | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3    | Nov 6, 2025     | Changed the API endpoint in the resource connection file to prevent admin-level privileges. |
+| v1.2    | Oct 15, 2025    | Added support for the `br` tag in required actions. |
+| v1.1    | Sept 10, 2025   | Added a daemon action. |
+|         | March 20, 2025  | Initial release of the Atlassian Jira Cloud integration. |
+
+## Additional resources
+
+For Atlassian Jira Cloud, Sumo Logic offers the [Jira Cloud app](/docs/integrations/app-development/jira-cloud/) to collect your Jira Cloud data.

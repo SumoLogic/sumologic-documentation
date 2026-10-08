@@ -41,7 +41,7 @@ Interact with multiple Gmail mailboxes.
 7) A JSON is generated and automatically downloads.
 8) From the **Service accounts** page you have to copy your client ID. It will need domain-wide delegation.
 9) From the **Service accounts** details page you must **Enable the G Suite Domain-wide Delegation**.
-10) At this link [http://admin.google.com/ac/owl/domainwidedelegation](http://admin.google.com/ac/owl/domainwidedelegation), you have to add the following xcopes:
+10) At this link [http://admin.google.com/ac/owl/domainwidedelegation](https://admin.google.com/ac/owl/domainwidedelegation), you have to add the following xcopes:
     * `https://mail.google.com/`
     * `https://www.googleapis.com/auth/gmail.settings.basic`
     * `https://www.googleapis.com/auth/admin.directory.user.readonly`
@@ -75,5 +75,7 @@ For information about the Gmail API, see [Gmail API documentation](https://devel
 
 ## Change Log
 
-* June 19, 2020 - First upload
-* August 18, 2023 (v1.1) - Integration refactored
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | August 18, 2023 | Refactored the integration. |
+| | June 19, 2020 | First upload. |

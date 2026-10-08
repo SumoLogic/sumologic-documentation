@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sonicwall.png')} alt="sonicwall" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 11, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Query data and utilize actions on SonicWall Next-Gen Firewall.
 
@@ -56,6 +56,9 @@ For information about SonicWall, see [SonicWall documentation](https://www.sonic
 
 ## Change Log
 
-* April 21, 2021 - First upload
-* June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 11, 2023 (v1.2) - integration refactored
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | July 11, 2023 | Refactored the integration. |
+| v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
+| | April 21, 2021 | Initial release of the SonicWall integration. |

@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory-v2.png')} alt="active-directory-v2" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory-v2.png')} alt="Active directory V2 icon" width="90"/>
 
 ***Version: 2.2  
 Updated: Dec 19, 2023***
@@ -164,9 +164,9 @@ Once the service account is created in the Organization Unit:
 
 ## Change Log
 
-* March 25, 2021 - First upload
-* March 11, 2022 - Logo
-* June 21, 2023 (v2.1) - Updated the integration with Environmental Variables
-* December 19, 2023 (v2.2)
-	+ Updated action: User Attributes
-		- Now, with the User Attributes Action, users can be filtered based on their distinguishedName (DN)
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.2 | December 19, 2023 | Updated the **User Attributes** action so users can now be filtered based on their distinguishedName (DN). |
+| v2.1 | June 21, 2023 | Updated the integration with environmental variables. |
+| | March 11, 2022 | Updated the logo in Active Directory V2 integration. |
+| | March 25, 2021 | Initial release of the Active Directory V2 integration. |

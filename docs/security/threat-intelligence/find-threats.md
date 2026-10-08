@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Use the lookup search operator
 
-The [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) in the threat intelligence datastore contain threat indicators supplied by third party intel vendors and maintained by Sumo Logic: <br/><img src={useBaseUrl('img/security/global-feed-threat-intelligence-tab-example.png')} alt="Global feed in the Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
+The [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) in the threat intelligence datastore contain threat indicators supplied by third party intel vendors and maintained by Sumo Logic: <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence" style={{border: '1px solid gray'}} width="800" />
 
 Any Sumo Logic user can use the [`lookup`](/docs/search/search-query-language/search-operators/lookup/) search operator to point to a Sumo Logic threat intelligence source to search for potential threats:
 * `SumoLogic_ThreatIntel`. Use `sumo://threat/i471` in log search queries.
@@ -17,7 +17,7 @@ Any Sumo Logic user can use the [`lookup`](/docs/search/search-query-language/se
 
 For example:
 
-```
+```sumo
 _sourceCategory=cylance "IP Address"
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where !isNull(ip_address)
@@ -49,7 +49,7 @@ You can use the `threatlookup` search operator to find matches to indicators in 
 
 For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than `50`): 
 
-```
+```sumo
 _index=sec_record*
 | threatlookup srcDevice_ip
 | where _threatlookup.confidence > 50

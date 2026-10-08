@@ -9,7 +9,7 @@ Combo charts have a secondary vertical axis allowing you to view two aggregates 
 
 For example, say we're running a query like:
 
-```sql
+```sumo
 _sourceCategory=*apache*
 | parse "HTTP/1.1\" * * * " as status_code, size, referrer
 | timeslice 5m

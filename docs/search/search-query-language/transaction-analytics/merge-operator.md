@@ -38,7 +38,7 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
 The following query:
 
-```sql
+```sumo
 *  | parse "BytesSentPersec = \"*\"" as BytesPersec
 | merge BytesPersec join with "--", _messageTime takeLast
 ```
@@ -49,7 +49,7 @@ produces a result something like this:
 
 A common case for using the merge operator with the [`transactionize`](transactionize-operator.md) operator is when all log messages have a common field, such as **`transaction_id`** or **`request_id`**. Using the `merge` operator with `transactionize` merges all the messages with the common fields, for example:
 
-```sql
+```sumo
 _sourceCategory=travelweb
 | parse regex "(?<ip>[0-9]+\.[0-9]+\.[0-9]+\.[0-9]) - "
 | transactionize ip (merge ip takeFirst, _raw join with "\n\n\n")

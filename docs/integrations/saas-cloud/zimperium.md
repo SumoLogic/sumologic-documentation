@@ -7,7 +7,7 @@ description: The Sumo Logic App for Zimperium provides visibility into mobile th
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/integrations/zimperium/zimperium-logo.png')} alt="Thumbnail icon" width="80" />
+<img src={useBaseUrl('/img/integrations/zimperium/zimperium-logo.png')} alt="Zimperium icon" width="80" />
 
 The Sumo Logic app for Zimperium equips security analysts with comprehensive visibility into mobile threat activity, enabling faster detection, investigation, and response to security incidents on mobile devices. Its dashboard centralizes Zimperium’s threat intelligence and device telemetry, helping identify high-risk users, compromised devices, and malicious activity targeting mobile endpoints.
 
@@ -234,7 +234,7 @@ The Zimperium app leverages the threat events collected via Zimperium Webhook.
 
 ### Sample queries
 
-```sql title="Threat Summary"
+```sumo title="Threat Summary"
 _sourceCategory=*zimperium* system_token  mitigated
 | json field=_raw "additional_public_forensics", "team_name", "account_id", "device_owner", "device_info", "user_info", "eventtimestamp", "location", "mitigated", "forensics", "event_id", "risk_posture", "severity" nodrop 
 | json field=_raw "mitigated" 
@@ -259,7 +259,7 @@ Administrator privileges are required to access the Account Management page.
 :::
 3. Add a new **Data Export Configuration** and set the **Destination Type** to **REST Endpoint**.
 4. Enter the required details as shown in the screenshot below, and use the **Sumo Logic HTTP Source URL** from step 1 as the **Endpoint**.
-<img src={useBaseUrl('/img/integrations/zimperium/add-data-export-config.png')} alt="Thumbnail icon" width="500"/>
+<img src={useBaseUrl('/img/integrations/zimperium/add-data-export-config.png')} alt="Add Data Export Config" width="500"/>
 
 ## Installing the Zimperium app
 
@@ -277,7 +277,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Security
 
-The **Zimperium - Security** dashboard enables you to monitor mobile threats by severity, investigate malicious network connections, and correlate detections with specific users for targeted response. It highlights top actionable threats, vulnerable OS versions, jailbroken devices, and system tampering events, while providing visibility into device risk posture to prioritize high-risk assets and track mitigation efforts for compliance. The dashboard streamlines detection, investigation, and remediation of mobile security incidents.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/zimperium/Zimperium+-+Security.png' alt="Zimperium-Security" />
+The **Zimperium - Security** dashboard enables you to monitor mobile threats by severity, investigate malicious network connections, and correlate detections with specific users for targeted response. It highlights top actionable threats, vulnerable OS versions, jailbroken devices, and system tampering events, while providing visibility into device risk posture to prioritize high-risk assets and track mitigation efforts for compliance. The dashboard streamlines detection, investigation, and remediation of mobile security incidents.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/zimperium/Zimperium+-+Security.png' alt="Zimperium Security" />
 
 ## Create monitors for the Zimperium app
 

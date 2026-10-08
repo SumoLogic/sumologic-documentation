@@ -255,11 +255,11 @@ export const Footer = () => {
             },
             {
               label: 'Privacy Statement',
-              href: 'https://www.sumologic.com/privacy-statement',
+              href: 'https://www.sumologic.com/legal/privacy-statement',
             },
             {
               label: 'Terms of Use',
-              href: 'https://www.sumologic.com/terms-conditions',
+              href: 'https://www.sumologic.com/legal/terms-conditions',
             },
             {
               label: 'CA Privacy Notice',

@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v5.png')} alt="libraesva-email-security-v5" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v5.png')} alt="Libraesva Email Security V5 icon" width="100"/>
 
-***Version: 5.2  
-Updated: Jul 11, 2023***
+***Version: 5.3  
+Updated: April 29, 2026***
 
 Libraesva Email Security V5 is active defense against phishing, 0-day malware, impersonation, spoofing, and email threats.
 
@@ -31,8 +31,8 @@ Libraesva Email Security V5 is active defense against phishing, 0-day malware, i
 
 1. To generate the [token](https://docs.libraesva.com/knowledgebase/esg-api/) make sure you provided the URL API, user, and password.
 1. Test the resource to check that the credentials are correct.
-1. Execute the Generate Token action with the Test Action.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-8.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-8" width="400"/>
-1. Copy the token (without quotation marks).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-9.png')} style={{border:'1px solid gray'}} alt="libraesva-email-security-v5-9" width="700"/>
+1. Execute the Generate Token action with the Test Action.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-8.png')} style={{border:'1px solid gray'}} alt="Libraesva email security v5 8" width="400"/>
+1. Copy the token (without quotation marks).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-9.png')} style={{border:'1px solid gray'}} alt="Libraesva email security v5 9" width="700"/>
 1. Now you can populate the Token field in the resource below.
 
 ## Configure Libraesva Email Security V5 in Automation Service and Cloud SOAR
@@ -70,9 +70,10 @@ Email Security
 
 ## Change Log
 
-* September 2, 2022 - First upload
-* September 12, 2022 - Changed integration name and logo
-* October 7, 2022 - Changed user and password to be not required; OTP removed from resource and actions; added three new actions
-* July 7, 2023 (v5.2)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
+| Version | Date | Description |
+|:--|:--|:--|
+| v5.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v5.2 | July 7, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li></ul> |
+| | October 7, 2022 | <ul><li>Changed user and password to be optional (not required).</li><li>Removed OTP from the resource and actions.</li><li>Added three new actions.</li></ul> |
+| | September 12, 2022 | Changed the integration name and logo. |
+| | September 2, 2022 | Initial release of the Libraesva Email Security V5 integration. |

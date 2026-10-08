@@ -6,15 +6,16 @@ resource "sumologic_cloud_to_cloud_source" "cyberark_audit_test_source" {
   config = jsonencode({
 			"name": "CyberArkAudit",
 			"identityId": "ac212",
-            "appId": "sumologic",
-            "username": "user@cyberark.cloud.1234",
-            "password": "******",
-            "tenantURL": "https://sumologic.audit.cyberark.cloud",
-            "apiKey": "*******",
-            "serviceType": [],
-            "statusType": [],
-            "actionType": [],
-            "pollingIntervalMin": 5
+      "useIdaptiveDomain": false,
+      "appId": "sumologic",
+      "username": "user@cyberark.cloud.1234",
+      "password": "******",
+      "tenantURL": "https://sumologic.audit.cyberark.cloud",
+      "apiKey": "*******",
+      "serviceType": [],
+      "statusType": [],
+      "actionType": [],
+      "pollingIntervalMin": 5
   })
 }
 resource "sumologic_collector" "collector" {

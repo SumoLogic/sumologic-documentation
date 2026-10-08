@@ -7,7 +7,7 @@ description: The Sumo Logic app for Azure SQL Database helps you monitor activit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql.png')} alt="Azure SQL icon" width="75"/>
 
 Azure SQL Database is a managed relational cloud database service. The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL. The preconfigured dashboards provide insight into resource utilization, blocking queries, database wait events, errors, runtime execution stats, and other database analytics.
 
@@ -77,7 +77,7 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 
 ### Sample queries
 
-```sql title="Top 10 Errors"
+```sumo title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent
 | json "LogicalServerName", "SubscriptionId", "ResourceGroup", "resourceId", "category", "operationName", "properties" nodrop
 | json field=properties "severity", "error_number", "DatabaseName", "message", "user_defined", "state"

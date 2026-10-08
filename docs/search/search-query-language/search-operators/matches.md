@@ -2,6 +2,7 @@
 id: matches
 title: matches Search Operator
 sidebar_label: matches
+description: Use the matches operator to match a string against a wildcard pattern or RE2-compliant regex and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,29 +17,17 @@ You can use `matches` in Dashboard Panels and in conjunction with other operator
 The string expression is case-sensitive and can be provided as a field.
 :::
 
-```sql
-<string expression> matches <pattern> as <field>
-```
+`<string expression> matches <pattern> as <field>`
 
-```sql
-if(<string expression> matches <pattern>, <value_if_true>, <value_if_false>) as <field>
-```
+`if(<string expression> matches <pattern>, <value_if_true>, <value_if_false>) as <field>`
 
-```sql
-if(<string expression> matches /<regex>/, <value_if_true>, <value_if_false>) as <field>
-```
+`if(<string expression> matches /<regex>/, <value_if_true>, <value_if_false>) as <field>`
 
-```sql
-where <string expression> matches <pattern>
-```
+`where <string expression> matches <pattern>`
 
-```sql
-where <string expression> matches /<regex>/
-```
+`where <string expression> matches /<regex>/`
 
-```sql
-where !(<string expression> matches <pattern>)
-```
+`where !(<string expression> matches <pattern>)`
 
 ## Rules
 
@@ -57,13 +46,13 @@ This example is using a regex to match certain IPv4 addresses in a parsed field
 
 A query can use this regex with the `matches` operator with a `where` or `if` operator to filter the results. With a where operator you can filter the results to return only matching `ip` addresses:
 
-```sql
+```sumo
 | where ip matches /12\.1[34][1-5]\.12\.12[3-7]/
 ```
 
 With an `if` operator, you can return an additional boolean field, in this example the new field will be named `ip_group` and will have a value of `1` when the `ip` matched the regex:
 
-```sql
+```sumo
 | if(ip matches /12\.1[34][1-5]\.12\.12[3-7]/, 1,0) as ip_group
 ```
 
@@ -73,7 +62,7 @@ Running a query containing a `matches` operator on Apache Access logs can show y
 
 Running a search like:
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | extract "\"[A-Z]+ \S+ HTTP/[\d\.]+\" \S+ \S+ \S+ \"(?<agent>[^\"]+?)\""
 | if (agent matches "*Windows NT*","Windows","Other") as OS
@@ -99,7 +88,7 @@ In this example, we will run a query against Windows logs to see the distributio
 
 Running a search like:
 
-```sql
+```sumo
 _sourceCategory=OS/Windows (error or warning)
 | parse "Type = \"*\";" as evtType
 | if (_raw matches "*EventType = Error*",1,0) as errors
@@ -119,7 +108,7 @@ Produces results similar to the following, when you configure it to be visualize
 
 The matches operator can match against your parsed fields by using the [`concat`](concat.md) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
 
-```sql
+```sumo
 | parse "instance \"*\"" as instance
 | concat("*", instance, "*") as instance_match
 | where !(host matches instance_match)

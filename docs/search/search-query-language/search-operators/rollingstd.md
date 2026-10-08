@@ -2,6 +2,7 @@
 id: rollingstd
 title: rollingstd Search Operator
 sidebar_label: rollingstd
+description: Use the rollingstd operator to calculate the rolling standard deviation of a numeric field over time, identifying changes and variations in your data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,9 +17,7 @@ If you specify a window length of 5, but only 4 data points are available, the `
 
 ## Syntax
 
-```sql
-rollingstd <field> [, window_length] [as <field>]
-```
+`rollingstd <field> [, window_length] [as <field>]`
 
 ## Rules
 
@@ -34,7 +33,7 @@ rollingstd <field> [, window_length] [as <field>]
 
 Running a query such as:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost
@@ -50,7 +49,7 @@ produces results like:
 
 Using `rollingstd` with `timeslice`, you can run a query similar to:
 
-```sql
+```sumo
 * | parse "bytes: '*'" as bytes
 | timeslice 1m
 | sum(bytes) as bytes by _timeslice
@@ -71,7 +70,7 @@ The aggregation table can be made into an area chart, like this:
 Before 5 values are available, the `rollingstd` operator takes an average
 of whatever is available. For example:
 
-```sql
+```sumo
 _sourceCategory=katta
 | timeslice by 1m
 | count by _timeslice,_sourceHost

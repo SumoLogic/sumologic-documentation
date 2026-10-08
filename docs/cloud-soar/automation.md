@@ -17,9 +17,9 @@ The **Automation** section contains configuration tools for Cloud SOAR's automat
 Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR features, see the Automation Service articles:
 * [App Central](/docs/platform-services/automation-service/app-central/)
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/)
-* [Automation bridge](/docs/platform-services/automation-service/automation-service-bridge)
-* [Integration framework](/docs/platform-services/automation-service/integration-framework/)
-* [Audit logging](/docs/platform-services/automation-service/automation-service-audit-logging)
+* [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge)
+* [Open Integration Framework](/docs/platform-services/automation-service/integration-framework/)
+* [Audit Logging for the Automation Service and Cloud SOAR](/docs/platform-services/automation-service/automation-service-audit-logging)
 * [Playbooks](/docs/platform-services/automation-service/playbooks/). (For information specific to running playbooks in Cloud SOAR, see [Run playbooks in Cloud SOAR](#run-playbooks-in-cloud-soar) below.)
 
 The following sections describe automation features only used in Cloud SOAR.
@@ -54,7 +54,7 @@ When you [create a playbook](/docs/platform-services/automation-service/playbook
 
 To monitor and run playbooks on [incidents](/docs/cloud-soar/incidents-triage/#incidents):
 1. Within an incident, select **Operations > Playbooks** to see the playbooks assigned to the incident. 
-1. If playbooks haven't been assigned by an incident template, you can add playbooks by clicking the **+** button.
+1. If playbooks have not been assigned by an incident template, you can add playbooks by clicking the **+** button.
 1. To manually run a playbook for the incident, click the **Run** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cloud-soar/playbook-on-incident.png')} alt="Playbook on an incident" style={{border: '1px solid gray'}} width="700"/>
 
 ### Add a playbook to an incident with the API
@@ -70,7 +70,7 @@ For more information about how to use APIs, see [Cloud SOAR APIs](/docs/api/clou
 
 ## Incident templates
 
-Incident templates define the way in which incidents will be created for a specific alert, incident type or event. They allow you to define a certain number of incident attributes (for example, incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, knowledge base articles, or any other incident attribute. Since rules are created for generating incidents based on syslog messages, email, SIEM integrations, or other data sources, it is the incident templates that will define how the initial incident will be created.
+Incident templates define the way in which incidents will be created for a specific alert, incident type, or event. They allow you to define a certain number of incident attributes (for example, incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, knowledge base articles, or any other incident attribute. Since rules are created for generating incidents based on syslog messages, email, SIEM integrations, or other data sources, it is the incident templates that will define how the initial incident will be created.
 
 ### Create a new incident template
 
@@ -78,7 +78,7 @@ Incident templates define the way in which incidents will be created for a speci
 1. Click **+** to the left of **Template**.<br/><img src={useBaseUrl('img/cloud-soar/incident-templates.png')} alt="Add template" style={{border: '1px solid gray'}} width="800"/>
 1. Define the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template.png')} alt="Create incident template dialog" style={{border: '1px solid gray'}} width="400"/>
    1. **Template name**. Enter a name that is easily identifiable and related to the activity it is developed for.
-   1. **Category**. Enter a category for this template. For example, suppose we're building a template for a DLP incident. We might enter a category named **Data Theft**, but we can enter anything we want that will help us group incident templates in the future. You can customize this field to fit your environment, as well as all other fields in Cloud SOAR (see [Custom fields](/docs/cloud-soar/settings/#custom-fields)).
+   1. **Category**. Enter a category for this template. For example, suppose we're building a template for a Data Loss Prevention (DLP) incident. We might enter a category named **Data Theft**, but we can enter anything we want that will help us group incident templates in the future. You can customize this field to fit your environment, as well as all other fields in Cloud SOAR (see [Custom fields](/docs/cloud-soar/settings/#custom-fields)).
    1. **Tags**. Enter any tags to further categorize or define the incident. You can use these tags later when searching for or correlating events.
 1. Click **Incident** at the top of the dialog.
 1. Define any incident parameters you want to set by default when an incident is creating using the template: <br/><img src={useBaseUrl('img/cloud-soar/create-incident-template-2.png')} alt="Create incident template dialog to define the incident type" style={{border: '1px solid gray'}} width="400"/>
@@ -130,7 +130,7 @@ You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-
     ```
     :::note
     * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
-    * For information on additional fields, please refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
+    * For information on additional fields, refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
     * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
     :::
 1. Click **Save**.
@@ -244,13 +244,13 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
  If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [user choice](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-user-choice-node-to-a-playbook) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" style={{border: '1px solid gray'}} width="700"/>
-<br/>In this case, the Authorizer set is just a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.
+<br/>In this case, the Authorizer set is a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.
 1. When the playbook flow reaches the **User Choice**, the user will receive a message containing the reference to the incident, the playbook name, and the question set for the **User Choice**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="Slack user choice message" style={{border: '1px solid gray'}} width="600"/>
 1. After a recipient chooses one of the available options, the playbook flow will continue and a message will inform the user or the group about the choice made.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice-2.png')} alt="Selected user choice" style={{border: '1px solid gray'}} width="600"/>
 
 ### Bidirectional use cases between Slack and incident management
 
-You can manage Slack communication channels directly by creating/editing various incidents within Cloud SOAR. Here are some use cases:
+You can manage Slack communication channels directly by creating or editing various incidents within Cloud SOAR. Here are some use cases:
 
 * Creating an incident <br/>When an incident is created, a conversation channel will automatically be created within your Slack workspace, where the channel name will be formed like this: **incident-incident_id**. Furthermore, all users (owners, investigators, groups) who are part of the workspace will be added to the channel.<br/><img src={useBaseUrl('img/cloud-soar/created-incident-fs.png')} alt="Created incident" style={{border: '1px solid gray'}} width="800"/><br/><img src={useBaseUrl('img/cloud-soar/created-slack-channel.png')} alt="Created Slack channel" style={{border: '1px solid gray'}} width="800"/>
 * Adding / removing users from the incident <br/>When users (owners, investigators, groups) are added or removed from the incident, they will be managed in the same way within the channel in the workspace.

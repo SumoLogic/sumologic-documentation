@@ -6,9 +6,9 @@ description: Add scheduled searches that monitor log ingestion and send alerts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Sumo Logic Credits Account Overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview).
+This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see Sumo Logic Credits [Account Overview](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview).
 
-With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
+With the exception of the [throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
 Some of the alerts are based on your billing period or ingest plan limit. You must make the appropriate changes for the alert to function and return valid results. The alerts approximate ingest rates and might not precisely match the actual ingest volume used for invoicing purposes.
 
@@ -22,7 +22,7 @@ You must update all of the indicated fields for the search to save successfully
 
 #### Setup
 
-1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
+1. Enable the Data Volume Index. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 2. Substitute the correct values of `X` for the following parameters in the search query. For the billing start and end values, use the day of the month. For example, in the screenshot below, the value for `billing_start` is 17 so the updated line from the search becomes `17 as billing_start`.
     ```
     X as billing_start
@@ -31,17 +31,17 @@ You must update all of the indicated fields for the search to save successfully
     ```
     You can find the correct values on the Account page. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <br/><img src={useBaseUrl('img/manage/ingestion-volume/account-overview.png')} alt="account overview" />
 3. (Optional)  Modify the following line if you want to change the percentage threshold for generating the alert.
-    ```sql
+    ```sumo
     | where pct_used > 85
     ```
     Example: To generate an alert at 80 % utilization, change the line to:
-    ```sql
+    ```sumo
     | where pct_used > 80
     ```
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 | parse regex "\"(?<sourcename>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
@@ -79,7 +79,7 @@ _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 
 After completing the setup, schedule the search to run: 
 
-1. Schedule Query you created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
+1. Schedule Query you created in Setup. For details, see [Create a Scheduled Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Daily**.
 1. Enter **-32d** for the time range.<br/><img src={useBaseUrl('img/manage/ingestion-volume/daily-32d.png')} alt="Time range monthly plan" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
@@ -95,9 +95,9 @@ You must update the indicated field for the search to be successfully saved.
 
 #### Setup
 
-1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
+1. Enable the Data Volume Index. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. Substitute the correct value of `X` for the following parameter in the search query (see entry in yellow in the query below).
-   ```sql
+   ```sumo
    X as daily_plan_size
    ```
    The correct value is on the Account page.
@@ -106,7 +106,7 @@ You must update the indicated field for the search to be successfully saved.
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume sizeInBytes
 | where _sourceCategory="collector_volume"
 | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
@@ -124,7 +124,7 @@ _index=sumologic_volume sizeInBytes
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you created in the previous step (**Query**). For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
+1. Schedule the query you created in the previous step (**Query**). For details, see [Create a Scheduled Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Daily**.
 1. Set time range value to **Last 24 Hours**.<br/><img src={useBaseUrl('img/manage/ingestion-volume/daily-last-24.png')} alt="Time range daily plan limit" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
@@ -133,27 +133,27 @@ After completing the setup steps above, schedule the search to run, as follows.�
 
 This hourly alert is generated when both of the following occur:
 
-* Ingest for any `_sourceCategory` in your account has a 50% spike compared with the maximum log ingest for the same `_sourceCategory` over the **last four weeks** (comparison is with the same hour and day of week).
+* Ingest for any `_sourceCategory` in your account has a 50% spike compared with the maximum log ingest for the same `_sourceCategory` over the last four weeks (comparison is with the same hour and day of week).
 * The log volume ingested by the `_sourceCategory` represents at least 25 % of the total data ingested within the hour.
 
 #### Setup
 
-1. Enable the Data Volume Index. See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
+1. Enable the Data Volume Index. See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. (Optional) To adjust the sensitivity of this alert, change either of the values from the following line of the query:
-    ```sql
+    ```sumo
     | where pct_increase  > 30 and ingest_weight\> 30
     ```
     Example: Change the `pct_increase` value higher to make the alert less sensitive.
-    ```sql
+    ```sumo
     | where pct_increase  > 50 and ingest_weight\> 30
     ```
-1. (Optional) To change the alert to evaluate a spike in a Collector or Source, do either of the following: 
-    * To generate an alert on a spike in ingest for a Collector, change the first line of the query replacing `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="collector_volume"`
-    * To generate an alert on a spike in ingest for a Source, change the first line of the query replacing   `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="source_volume"`
+1. (Optional) To change the alert to evaluate a spike in a collector or source, do either of the following: 
+    * To generate an alert on a spike in ingest for a collector, change the first line of the query replacing `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="collector_volume"`
+    * To generate an alert on a spike in ingest for a source, change the first line of the query replacing   `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="source_volume"`
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
 | parse regex "\"(?<_sourcecategory>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
@@ -173,7 +173,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
+1. Schedule the query you just created in Setup. For details, see [Create a Scheduled Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Hourly**.
 1. Enter **-65m -5m** for the time range.<br/><img src={useBaseUrl('img/manage/ingestion-volume/hourly-65.png')} alt="Time range usage spike" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
@@ -182,7 +182,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 
 ## Data not sent alert
 
-This hourly alert will notify you if any of your Collectors have not sent log data for the last 24 hours (-24h). Because this alert will trigger if **any** Collectors do not send data in the specified time range, we recommend that you verify that all your Collectors are sending data before you set this alert and that you extend the time range if 24 hours is not long enough for your data to collect.
+This hourly alert notifies you if any collectors have not sent log data in the past 24 hours (-24h). Since this alert is triggered when *any* collector stops sending data within this timeframe, ensure that all collectors are actively sending data before enabling the alert, and adjust the time range if 24 hours is insufficient for your data collection cycle.
 
 :::note
 This type of alert isn't suitable for ephemeral environments and can send false positives.
@@ -190,22 +190,21 @@ This type of alert isn't suitable for ephemeral environments and can send false 
 
 #### Setup
 
-**Prerequisite**. All collectors must be sending data **before** you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [Collector API](/docs/api/collector-management/collector-api-methods-examples)
-attributes `alive` and `LastSeenAlive`.
+**Prerequisite**. All collectors must be sending data *before* you set this alert. This alert will be triggered if *any* collector stops sending data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [collector API](/docs/api/collector-management/collector-api-methods-examples) attributes `alive` and `LastSeenAlive`.
 
-1. Enable the Data Volume Index.  See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
+1. Enable the Data Volume Index.  See [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
 1. (Optional) Depending on how busy your collectors are, you can modify the following alert threshold:
-    ```sql
+    ```sumo
     | where mins_since_last_logs\>= 60
     ```
     For example, if your collectors ingest less often than 60 minutes, 4 hours may be more appropriate and you can change the line to 240 minutes:
-    ```sql
+    ```sumo
     | where mins_since_last_logs\>= 240
     ```
 
 #### Query
 
-```
+```sumo
 _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 | parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "sizeInBytes", "count" as bytes, count
@@ -219,26 +218,26 @@ _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 | format ("%s Has not collected data in the past 60 minutes", collector) as message
 ```
 
-You can run a similar query across Sources, sourceHosts, sourceNames, source categories, or views, by changing the entry for `"collector_volume"` in the search scope keyword line to:`"source_volume"` for Sources, `"sourcehost_volume"`for sourceHosts, `"sourcename_volume"` for sourceNames, `"sourceCategory_volume"` for sourceCategories, or `"view_volume"` for views. 
+You can run a similar query across sources, sourceHosts, sourceNames, source categories, or views, by changing the entry for `"collector_volume"` in the search scope keyword line to:`"source_volume"` for sources, `"sourcehost_volume"` for sourceHosts, `"sourcename_volume"` for sourceNames, `"sourceCategory_volume"` for sourceCategories, or `"view_volume"` for views. 
 
-If you do not want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
+If you do not want the results of the query across sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
 
 #### Scheduling
 
-After completing the setup steps, you'll need to create a monitor. 
+After completing the setup steps above, schedule the search to run, as follows:  
 
-1. Create a monitor corresponding to the query you've created above ([learn more](/docs/alerts/monitors/create-monitor)).
+1. Schedule the query you just created in the Setup section. For details, see [Create a Scheduled Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Hourly**.
 1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/><img src={useBaseUrl('img/manage/ingestion-volume/AlertDataLoss.png')} alt="Alert" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 1. (Optional) You can test your new alert in one of the following ways.
     * Limit the results to monitor just two collectors by adding this extra line to the end of the query:
-        ```sql
+        ```sumo
         | where collector = "some_name" or collector = "some_other_name"
         ```
    * Turn off a collector using [Start or Stop a Collector using Scripts](/docs/send-data/collection/start-stop-collector-using-scripts.md) and verify that you received the alert.
    * Reduce the time range for collectors to send data to 15 minutes:
-        ```sql
+        ```sumo
         | where mins_since_last_logs\>= 15
         ```
 
@@ -247,16 +246,16 @@ After completing the setup steps, you'll need to create a monitor. 
 This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15-minute period.
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [data tier](/docs/manage/partitions/data-tiers).
 :::
 
 #### Setup
 
-Enable the Audit Index. See [Enable and Manage the Audit Index](/docs/manage/security/audit-indexes/audit-index#enable-the-audit-index) for instructions.
+Enable the Audit Index. See [Enable the audit Index](/docs/manage/security/audit-indexes/audit-index#enable-the-audit-index) for instructions.
 
 #### Query
 
-```sql
+```sumo
 _index=sumologic_audit _sourceCategory=account_management _sourceName=VOLUME_QUOTA "rate limit"
 ```
 
@@ -264,7 +263,7 @@ _index=sumologic_audit _sourceCategory=account_management _sourceName=VOLUME_QUO
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
+1. Schedule the query you just created in Setup. For details, see [Create a Scheduled Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the **Run frequency** to **Every 15 Minutes**.
 1. Set the time range to the **Last 15 Minutes**.<br/><img src={useBaseUrl('img/manage/ingestion-volume/time-throttling.png')} alt="Time range throttling alert" style={{border: '1px solid gray'}} width="500" />
 1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.

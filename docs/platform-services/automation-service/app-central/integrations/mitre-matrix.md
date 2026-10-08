@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mitre-matrix.png')} alt="mitre-matrix" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mitre-matrix.png')} alt="Mitre matrix icon" width="100"/>
 
 ***Version: 2.2  
 Updated: Jul 18, 2023***
@@ -52,7 +52,9 @@ To work around the error, install an [automation bridge](/docs/platform-services
 
 ## Change Log
 
-* February 3, 2021 - First upload
-* June 07, 2022 - Updated all the actions with pyattck==5.4.0
-* June 26, 2023 (v2.1) - Updated the integration with Environmental Variables
-* July 18, 2023 (v2.2) - Integration refactored
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.2 | July 18, 2023 | Refactored the integration. |
+| v2.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| | June 07, 2022 | Updated all actions with `pyattck==5.4.0`. |
+| | February 3, 2021 | Initial release of the MITRE Matrix integration. |

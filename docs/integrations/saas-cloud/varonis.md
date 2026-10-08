@@ -7,7 +7,7 @@ description: The Sumo Logic app for Varonis provides insights into your organiza
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/misc/varonis-logo.png')} alt="Varonis icon" width="100"/>
 
 The Sumo Logic app for Varonis provides a centralized view of threat intelligence and detection activity across your Varonis environment. It helps you quickly evaluate threat volume, confidence levels, types, and associated detection sources and techniques.
 
@@ -59,7 +59,7 @@ This app uses Sumo Logic’s [Varonis source](/docs/send-data/hosted-collectors/
 
 ## Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourcecategory=*varonis*
 | json  "id", "dataSource", "policy.category", "policy.severity", "policy.name",  "generationTime.dateTimeUtc", "escalationType", "status" as threat.id, detection.source, detection.technique, detection.confidence, threat.name, event.time, event.type, finding.status  nodrop
 | where detection.confidence !=NULL

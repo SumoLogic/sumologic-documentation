@@ -24,7 +24,7 @@ If the export is successful, your browser will automatically download the data 
 
 You can export message fields to a CSV file, either just the fields displayed, or all fields, including hidden fields.
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/export-search-results/display-hidden-fields.png')} alt="Display-hidden-fields" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/export-search-results/display-hidden-fields.png')} alt="Display hidden fields" style={{border: '1px solid gray'}} width="800" />
 
 Click the gears icon in the top-right corner of the **Messages** tab, and then select **Export** **(Display Fields)** to export only the messages displayed, or **Export (All Fields)** to export all message fields. If the export is successful, your browser will automatically download the data and save it to a CSV file.
 

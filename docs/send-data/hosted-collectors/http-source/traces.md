@@ -6,7 +6,7 @@ description: An HTTP Traces Source is an endpoint for receiving traces.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/http-traces.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/send-data/http-traces.png')} alt="HTTP Traces icon" width="60"/>
 
 An HTTP Traces Source is an endpoint for receiving trace data. The URL securely encodes the Collector and Source information. You can add as many HTTP Traces Sources as you'd like to a single Hosted Collector.
 

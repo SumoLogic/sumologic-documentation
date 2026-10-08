@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Key Vau
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vault.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-key-vault.png')} alt="Azure Key Vault icon" width="50"/>
 
 [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/) is a cloud service that helps you securely store and manage secrets, keys, and certificates. You can use it to protect data for cloud apps and services. This integration helps in comprehensive monitoring of your Key Vault operations, requests, failures, and latency.
 

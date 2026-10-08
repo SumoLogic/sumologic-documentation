@@ -10,11 +10,11 @@ If your search returns fields that are valid JSON objects, you can expand or col
 
 ## Expand or collapse JSON messages
 
-By default, the collapsed version of JSON messages is shown. You can see the top level JSON attributes, and only the attributes below the top that are objects rather than simple values. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expand-collapse.png')} alt="expand-collapse.png"/>
+By default, the collapsed version of JSON messages is shown. You can see the top level JSON attributes, and only the attributes below the top that are objects rather than simple values. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expand-collapse.png')} alt="Expand collapse"/>
 
 Click **Expand/Collapse** on the upper right side of the **Messages** table to see expand options:
 * **Expand all Rows.** Rows that show truncated messages are expanded to show complete messages.
-* **Expand all Rows and JSON.** Rows that show truncated messages are expanded to show complete messages, and nested JSON messages are expanded, as shown below. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expanded-json-message.png')} alt="expanded-json-message"/>
+* **Expand all Rows and JSON.** Rows that show truncated messages are expanded to show complete messages, and nested JSON messages are expanded, as shown below. <br/><img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/expanded-json-message.png')} alt="Expanded JSON message"/>
 
 After you’ve expanded either all rows, or all rows and JSON objects, the **Expand/Collapse JSON** has options for resetting your view.
 
@@ -22,12 +22,17 @@ You can also expand and collapse the JSON objects in a particular message using 
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/view-search-results-json-logs/context-menu.png')} alt="context menu"/>
 
+## Why copy JSON fields easily?
+
+Copying JSON fields from search results used to require manually highlighting the exact text for each value or label — a repetitive and error-prone process. With the copy options now available, hovering over a JSON field and clicking the **Copy** icon captures the full value automatically. If you prefer to copy only a portion, you can still drag to select specific text and copy just that selection.
+
 ## Copy message content
 Right-click an individual message to see the following option:
 
 * **Copy selected text**.
 * **Copy entire string as JSON**. Copies the message to the clipboard in JSON format. This function is not available on Safari due to a
     browser limitation.
+* **Copy field value**. Copies the JSON field value.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-field-name.png')} alt="Copy field name" style={{border: '1px solid gray'}} width="400" />
 
 ## Reference parsed JSON fields
 
@@ -45,6 +50,8 @@ Search results table:
     Copying a field name using this option will automatically format [field names that have special characters](/docs/search/get-started-with-search/search-basics/reference-field-special-characters). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
      
 * A copy button is available to the right of each column (field) name allowing you to easily copy a field name.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png')} alt="Copy button messages table" style={{border: '1px solid gray'}} width="500" />  
+
+* A copy button is available next to a JSON value or the full JSON structure allowing you to copy the selected JSON value or the JSON structure inside the selected array.<br/><img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/copy-json.png')} alt="Copy JSON" style={{border: '1px solid gray'}} width="400" />
 
 ## Format JSON messages in search results 
 

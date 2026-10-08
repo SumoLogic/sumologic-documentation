@@ -32,7 +32,7 @@ This app uses Sumo Logic’s [AWS IAM Users Source](/docs/send-data/hosted-colle
 
 ### Sample queries
 
-```sql title="Total Users"
+```sumo title="Total Users"
 _sourceCategory="Labs/AWSIAMUsers"
 | json "UserId", "UserName", "CreateDate", "PasswordLastUsed", "PermissionsBoundary", "Arn" as user_id, user_name, create_date, password_last_used, permission_boundry, arn nodrop
 
@@ -44,7 +44,7 @@ _sourceCategory="Labs/AWSIAMUsers"
 | count
 ```
 
-```sql title="Never Logged Users"
+```sumo title="Never Logged Users"
 _sourceCategory="Labs/AWSIAMUsers"
 | json "UserId", "UserName", "CreateDate", "PasswordLastUsed", "PermissionsBoundary", "Arn" as user_id, user_name, create_date, password_last_used, permission_boundry, arn nodrop
 

@@ -14,11 +14,11 @@ When you select the Debug Mode option for SAML, whenever an error occurs a debug
 
 <img src={useBaseUrl('img/security/saml-config-debug.png')} alt="Debug Mode option selected on the SAML tab" style={{border: '1px solid gray'}} width="800" />
 
-The debug page is displayed in a new browser window (not in the Sumo Web application). A new page is generated for each error.
+The debug page is displayed in a new browser window. A new page is generated for each error.
 
 <img src={useBaseUrl('img/security/SAML_debug_page.png')} alt="Example debug page" style={{border: '1px solid gray'}} width="600" />
 
-The Debug page includes:
+The debug page includes:
 
 * **Error.** The actual error that triggered the debug page.
 * **Parsed response data.** Subset of data that summarize the error condition.

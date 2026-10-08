@@ -108,7 +108,7 @@ You can query audit logs for rule status changes. For more information about que
 
 Use the following query to find rules that are disabled. It finds rules that are manually disabled by users (in `_index=sumologic_audit_events`) or automatically disabled by the system (in `_index=sumologic_system_events`).
 
-```sql
+```sumo
 (_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=cseRule
 | where (%"aggregationrule.enabled" = "false" 
 or %"chainrule.enabled" = "false"
@@ -123,7 +123,7 @@ or %"thresholdrule.enabled" = "false")
 
 Use the following query to find rules that have been updated. This query finds rules that are updated for any reason. The update may not result in a status change for the rule.
 
-```sql
+```sumo
 (_index=sumologic_audit_events OR _index=sumologic_system_events) _sourceCategory=cseRule
 | where (eventName = "AggregationRuleUpdated" 
 or eventName = "ChainRuleUpdated" 

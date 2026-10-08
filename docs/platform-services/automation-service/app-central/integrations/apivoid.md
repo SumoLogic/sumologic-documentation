@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/apivoid.png')} alt="apivoid" width="90"/>
 
-***Version: 1.3  
-Updated: July 01, 2024***
+***Version: 1.4  
+Updated: April 13, 2026***
 
 Utilize APIVOID to gather enrichment data during incident investigations.
 
@@ -54,7 +54,10 @@ For information about APIVoid, see [APIVoid documentation](https://docs.apivoid.
 
 ## Change Log
 
-* August 14, 2020 - First upload
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* October 5, 2023 (v1.2) - Changed fields visibility
-* July 01, 2024 (v1.3) - Updated ***Save Screenshot*** & ***Save URL*** actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 01, 2024 | Updated the **Save Screenshot** and **Save URL** actions with the new Cloud SOAR API; results can now be saved as incident attachments and artifacts. |
+| v1.2 | October 5, 2023 | Changed fields visibility. |
+| v1.1 | June 26, 2023 | Updated the integration with environmental variables. |
+| | August 14, 2020 | Initial release of the APIVoid integration. |

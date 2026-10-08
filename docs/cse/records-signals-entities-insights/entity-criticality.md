@@ -48,6 +48,6 @@ You can configure both the detection window and the threshold activity score for
 You can associate a criticality with one or more entities. 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
-1. Navigate to the entity you want to assign a criticality and click on it to display the **Entity Details** page. 
+1. Navigate to the entity you want to assign a criticality and click it to display the **Entity Details** page. 
 2. On the **Entity Details** page, click the **Criticality** field to display a list of Criticalities. <br/><img src={useBaseUrl('img/cse/entity-details-criticality.png')} alt="Entity criticality details" style={{border: '1px solid gray'}} width="300"/>
 3. Click a criticality to apply it to the entity.

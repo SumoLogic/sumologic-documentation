@@ -10,7 +10,7 @@ description: This document outlines what is Azure Container Instances, how to se
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instances.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-container-instances.png')} alt="Azure Container Instances icon" width="50"/>
 
 [Azure Container Instances](https://learn.microsoft.com/en-us/azure/container-instances/) is a fully managed serverless container service that enables you to deploy and manage containers in Azure without the need for virtual machines. It is ideal for event-driven applications, microservices, and batch processing workloads.
 

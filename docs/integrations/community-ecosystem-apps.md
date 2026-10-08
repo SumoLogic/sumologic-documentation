@@ -7,7 +7,7 @@ description: Community Ecosystem Apps Listing and program description.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/general/community.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/icons/general/community.png')} alt="Community icon" width="60"/>
 
 Sumo Logic Community Ecosystem Apps are provided and supported by our internal and external users and creator community.
 

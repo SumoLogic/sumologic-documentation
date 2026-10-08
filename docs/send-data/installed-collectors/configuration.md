@@ -26,7 +26,7 @@ You can use Terraform to provide an install collector with the [`sumologic_colle
 <TerraformLink/>
 :::
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/22427pvuhh?web_component=true&seo=true&videoFoam=false"
   width="854px"

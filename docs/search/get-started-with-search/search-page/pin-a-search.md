@@ -15,7 +15,7 @@ Once pinned, a search will run in the background for up to 24 hours. If it has n
 Limitations:
 * There is a limit of ten pinned searches per user. 
 * Queries that use the [save operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
-* There is a known issue that may cause pinned searches to be lost when Sumo Logic performs an upgrade. For information on scheduled maintenance for your deployment, see [Sumo Logic status](http://status.sumologic.com). 
+* There is a known issue that may cause pinned searches to be lost when Sumo Logic performs an upgrade. For information on scheduled maintenance for your deployment, see [Sumo Logic status](https://status.sumologic.com). 
 
 #### Pin and unpin a search
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/><img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Apache icon" width="70"/>
 
 The Apache source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can collect Apache logs and metrics to send to Sumo Logic.
 
@@ -68,14 +68,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Apache Collection. Below are the inputs required for configuration:
+import ApacheConfigureSourceTemplate from '../../../../../reuse/send-data/apache-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-- **Endpoint**. The URL of the httpd status endpoint (default: `http://localhost:80/server-status?auto`).
-- **Access File log Path**. Enter the path to the Access log file for your Apache instance.
-- **Error file log path**. Enter the path to the error log file for your Apache instance.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/apache user needs to provide the value for `webengine.cluster.name`.
+<ApacheConfigureSourceTemplate/>
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic OpenTelemetry Collector Insights app provides comprehensive monitoring and observability for your OpenTelemetry Collector instances. Monitor collector performance, telemetry data flow, resource utilization, and troubleshoot data collection issues with preconfigured dashboards and alerts. Track metrics and logs to ensure your telemetry pipeline is running smoothly and efficiently.
 
@@ -208,7 +208,7 @@ You can now remotely configure and manage OpenTelemetry Collectors for the follo
 - [Linux](/docs/send-data/opentelemetry-collector/remote-management/source-templates/linux/)
 - [Mac](/docs/send-data/opentelemetry-collector/remote-management/source-templates/mac/)
 - [MySql](/docs/send-data/opentelemetry-collector/remote-management/source-templates/mysql/)
-- [Nginix](/docs/send-data/opentelemetry-collector/remote-management/source-templates/nginx/)
+- [Nginx](/docs/send-data/opentelemetry-collector/remote-management/source-templates/nginx/)
 - [PostgreSql](/docs/send-data/opentelemetry-collector/remote-management/source-templates/postgresql/)
 - [RabbitMQ](/docs/send-data/opentelemetry-collector/remote-management/source-templates/rabbitmq/)
 - [Redis](/docs/send-data/opentelemetry-collector/remote-management/source-templates/redis/)
@@ -220,7 +220,7 @@ If you want to configure your source locally, you can do so by downloading the Y
 
 ### Step 1: Set up OpenTelemetry collector
 
-To get started, set up a remotely managed collector on your system by following the.instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+To get started, set up a remotely managed collector on your system by following the instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
 
 For the apps listed above, the installation commands now include a `--remotely-managed` flag. When this flag is used, a remotely managed collector is installed automatically instead of a locally managed one. If you prefer to use a locally managed collector, simply remove the flag from the installation command.
 

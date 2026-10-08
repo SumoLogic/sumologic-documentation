@@ -10,9 +10,13 @@ description: Learn how to collect metrics from Snowflake SQL aggregation queries
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Snowflake icon" width="150"/>
 
 The Snowflake SQL API source can be used to execute SQL queries with aggregation fields and translate the results to metrics. This source only collects metrics and does not currently collect any log data.
+
+:::note
+Upgrade the Snowflake SQL API source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 ## Data collected
 Customers can provide custom SQL queries for the source to execute and a configuration to translate the results to custom metrics data.
@@ -43,8 +47,8 @@ To configure the Snowflake SQL API Source:
 1. Enter a **Name** to display for the source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **Snowflake Account Identifier**, enter your Snowflake account identifier obtained from the vendor configuration above. The identifier should look something like this: `wp00000.us-east-2.aws`.
 1. **Authentication Configuration**. Sumo Logic provides two different ways to configure: **Basic** and **Programmatic Access Token**.
     - **Basic**:

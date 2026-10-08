@@ -7,7 +7,7 @@ description: Use CloudFormation to set up AWS products.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/aws-cloudformation.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/aws-cloudformation.svg')} alt="AWS CloudFormation icon" width="40"/>
 
 You can use AWS CloudFormation to leverage AWS products without creating or configuring any AWS infrastructure. With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.
 

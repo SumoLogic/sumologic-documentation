@@ -163,7 +163,7 @@ By design, Sumo does not ingest Prometheus comments. Sumo also rejects Prometheu
 
 Sumo does not ingest metric expositions in which the metric value contains +Inf, -Inf, or NaN. For example, this line would not be ingested:
 
-```sql
+```sumo
 http_request_duration_seconds_bucket{le="1234"} NaN
 ```
 
@@ -181,13 +181,13 @@ The Prometheus format requires that label key-value pairs be comma-separated. If
 
 **Correct:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.5", abc = "def"} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.5". abc = "def"} 7.7711e-05 1530708470
 ```
 
@@ -197,13 +197,13 @@ The Prometheus format requires that metric label values be enclosed in quotes. I
 
 **Correct:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{abc = “def”} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{abc = def} 7.7711e-05 1530708470
 ```
 
@@ -213,13 +213,13 @@ The Prometheus format requires that metric label key-value pairs be defined in `
 
 **Correct:**  
 
-```sql
+```sumo
 Go_gc_duration_seconds{quantile = "0.5"} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile"0.5"} 7.7711e-05 1530708470
 ```
 
@@ -229,12 +229,12 @@ The Prometheus format requires that metric labels have a name. If they are not, 
 
 **Correct:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.56"} 5.809e-05 1530708471
 ```
 
 **Incorrect:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{="0.56"} 5.809e-05 1530708471
 ```

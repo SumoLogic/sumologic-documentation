@@ -3,28 +3,33 @@ id: custom-inventory-sources
 title: Configure a Custom Inventory Source
 sidebar_label: Custom Inventory Source
 description: Learn how to extract inventory data from your data sources
+keywords:
+  - cloud siem inventory
+  - inventory data
+  - custom inventory source
+  - webhook
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic explains how you can extract inventory data from logs in Sumo Logic and send it to Cloud SIEM. If you want to leverage inventory data from a system or service that isn’t supported by a Sumo Logic Source inventory source, you can follow the instructions in this topic. This procedure assumes that you already ingest log data that contains inventory data.
+You can extract inventory data from logs already ingested in Sumo Logic and send it to Cloud SIEM using a scheduled search and a webhook, even if the source isn't a supported Sumo Logic inventory source. This topic explains how, and assumes that you already ingest log data that contains inventory data.
 
-Cloud SIEM uses _inventory data_—information about hosts and users in your environment—to provide context to signals. Inventory data can also be used in entity groups to set attributes on entities (users, hosts, and so on); those attributes can be later used in detection rule definitions, to adjust the severity of signals (using criticality), and for further context in signals.
+Cloud SIEM uses *inventory data* (information about hosts and users in your environment) to provide context to signals. Inventory data can also be used in entity groups to set attributes on entities (users, hosts, and so on). Those attributes can be later used in detection rule definitions, to adjust the severity of signals (using criticality), and for further context in signals.
 
 Sumo Logic provides a number of Sources you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. For more information, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
 
 
-## How it works
+## How does a custom inventory source work?
 
 In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/alerts/scheduled-searches) that returns inventory data that’s been ingested by your inventory source. You configure a Webhook connection as the alert type for the scheduled search. The webhook’s payload is inventory data, and its destination is an HTTP Source that you’ve set up to receive the data.
 
 
 ## Before you start
 
-Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
+Identify your source of inventory data and review the [Cloud SIEM inventory schema](#what-is-the-cloud-siem-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
-## Limitations
+## What are the limitations of this method?
 
 This approach uses Scheduled Searches, which are limited to 100 unique rows of data each time they trigger. This means that if you have more than 100 inventory items, only the first 100 will be sent using this method.
 
@@ -34,7 +39,7 @@ This approach uses Scheduled Searches, which are limited to 100 unique rows of d
 In this step, you configure an HTTP Source that will receive the inventory data from the Webhook you’ll set up later in this procedure. You can add the source to an existing Hosted Collector or configure a new collector.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
-2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Navigate to an existing Hosted Collector, or if you prefer to set up a new one, follow the instructions in [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. In the row for the Hosted Collector, click **Add Source**. <br/><img src={useBaseUrl('img/cse/add-source-link.png')} alt="Add Source link on the Collection tab" style={{border: '1px solid gray'}} width="800" />
 4. Click **HTTP Logs & Metrics.**  <br/><img src={useBaseUrl('img/cse/select-source.png')} alt="TTP Logs & Metrics tile on the Collection tag" style={{border: '1px solid gray'}} width="800" />
 5. The source configuration page appears. <br/><img src={useBaseUrl('img/cse/http-source.png')} alt="Source configuration page" style={{border: '1px solid gray'}} width="800" />
@@ -42,7 +47,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 7. **Description**. (Optional)
 8. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
 9. **Source Category**. Enter a string to tag the output collected from the source, for example, _cse/custom/inventory_. The string that you supply will be saved in a metadata field called `_sourceCategory`.
-10. **SIEM Processing**. Click the checkbox to configure the source to forward log messages to Cloud SIEM.
+10. **SIEM Processing**. Click the check box to configure the source to forward log messages to Cloud SIEM.
 11. **Fields**. Click **+Add Field**, and add a field whose name is `_siemdatatype` with value _inventory_.
 12. Click **Save**
 13. Copy the URL that appears. You will need this to create the Webook in the next step.
@@ -62,7 +67,7 @@ In this step, you create a webhook that points to the HTTP source.
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#what-is-the-cloud-siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search
@@ -81,7 +86,7 @@ In this step, you schedule the search you created above to send results to the W
     8. **Alert Type**. Select Webhook,  and pick the one you created that goes to the HTTP Endpoint. Check **Send a separate alert for each search result**.
     9. **Location to save to**. Choose a folder location for the search. <br/><img src={useBaseUrl('img/cse/save-item-4.png')} alt="Refreshed Save Item dialog" style={{border: '1px solid gray'}} width="450"/>
 
-## Cloud SIEM inventory schema
+## What is the Cloud SIEM inventory schema?
 
 This section defines the attributes in the Cloud SIEM inventory schema for hosts and users. Note that the same attributes can be used for either host or user inventory data.
 
@@ -209,7 +214,7 @@ The table below lists attributes most typically used in user inventory records. 
 
 The search below extracts inventory fields from JAMF logs.
 
-```json
+```sumo
 _sourceCategory="security/jamf" and _collector="Jamf"
 | json field _raw "event.computer.osVersion as os_version
 | json field _raw "event.computer.deviceName as hostname
@@ -223,9 +228,9 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 | count by os_version, hostname, ip, mac, username,email, role
 ```
 
-**Notes**
-
-* `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
+:::note
+`_collector` and `_sourceCategory` specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
+:::
 
 ### Webhook payload for User entity
 
@@ -262,9 +267,30 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 }
 ```
 
-
-**Notes**
-
+:::note
 * The `source` key is an arbitrary string that identifies the source of the inventory data.
 * The `customInventory` key identifies the payload as custom inventory data. You must include this in your webhook payload.
 * The `type` key specifies what type of inventory data the webhook sends. Set the value to _user_ or _computer_. You must include this in your webhook payload.
+:::
+
+## FAQ
+
+### Why would you create a custom inventory source?
+
+Create a custom inventory source when you want to use inventory data (information about hosts and users) from a system or service that isn't already supported by a Sumo Logic inventory source, so Cloud SIEM can use it for context in signals and entity groups.
+
+### How much inventory data can you send with this method?
+
+Scheduled searches are limited to 100 unique rows of data each time they trigger. If you have more than 100 inventory items, only the first 100 are sent using this method.
+
+### What inventory types does Cloud SIEM support?
+
+Cloud SIEM supports two inventory types: user and computer (host). Each has its own set of supported attributes that you map from your inventory source's fields.
+
+### Do you need to modify existing metadata to use a custom inventory source?
+
+No. Setting up a custom inventory source only requires an HTTP Source, a webhook connection, and a scheduled search — you don't need to change the metadata or source categories on your existing sources.
+
+### Can you use a custom inventory source to set entity criticality?
+
+Yes. Attributes ingested through a custom inventory source can be used in entity groups to set attributes on entities, which you can then use in detection rule definitions and to adjust signal severity through criticality.

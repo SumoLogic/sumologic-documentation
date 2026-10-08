@@ -302,7 +302,7 @@ spec:
 
 After performing the configuration described above, your logs should start streaming to Sumoin json or text format with the appropriate metadata. If you're using json format you can auto extract fields, for example:
 
-```
+```sumo
 _sourceCategory=some/app | json auto.
 ```
 

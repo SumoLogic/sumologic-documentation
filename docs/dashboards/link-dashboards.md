@@ -45,7 +45,7 @@ To link a custom Dashboard to your stack in monitoring dashboards, do the follo
     <br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/Create-Stack-Linking-option-from-Dashboard-New.png')} alt="Create Stack Linking option from Dashboard New" style={{border: '1px solid gray'}} width="300" />
 1. In the **Dashboard Stack Linking** dialog, set the **Domain** you want the key available in.
 1. Select an **Entity Type** for which you would like to display the dashboard.
-1. If you would like to further specify for which entities of a given type the dashboard is displayed, you can input the relevant **Entity Name** (as displayed in the monitoring dashboards tab). If you would like to see the dashboards for all entities of a given type, you can use (`*`) as the **Entity Name**. <br/><img src={useBaseUrl('img/dashboards/link-dashboard-explore/dashboard-stack-linking.png')} alt="time-series-or-categorical" width="600"/>
+1. If you would like to further specify for which entities of a given type the dashboard is displayed, you can input the relevant **Entity Name** (as displayed in the monitoring dashboards tab). If you would like to see the dashboards for all entities of a given type, you can use (`*`) as the **Entity Name**. <br/><img src={useBaseUrl('img/dashboards/link-dashboard-explore/dashboard-stack-linking.png')} alt="Time series or categorical" width="600"/>
 1. You can add more entity associations by clicking **Add another entity type/name pair**.
 1. Click **Apply** to apply the stack link.
 1. Now when you navigate in a monitoring dashboard to an entity with matching entity type and entity name, you will have the option to view your **Dashboard** in the monitoring dashboards view.  

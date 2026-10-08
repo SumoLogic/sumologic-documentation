@@ -2,13 +2,18 @@
 id: cloud-siem-automation-examples
 title: Cloud SIEM Automation Examples
 sidebar_label: Automation Examples
-description: See examples that show you how to create automations for different situations.   
+description: Learn to create Cloud SIEM automations using the Automation Service, with examples ranging from simple enrichments to advanced custom integration workflows.
+keywords:
+  - cloud siem automation
+  - automation service
+  - playbooks
+  - enrichment
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimit from '../../reuse/actions-limit.md';
 
-Following are examples that show you how to create Cloud SIEM automations using the [Automation Service](/docs/platform-services/automation-service/). The examples, which are listed in order from simple (performing a basic automation using an out-of-the-box integration) to advanced (creating a custom integration), illustrate many of the tasks you’ll perform on a regular basis when you create your own automations.
+This article walks through four examples of creating Cloud SIEM automations using the [Automation Service](/docs/platform-services/automation-service/), ranging from a simple enrichment using an out-of-the-box integration to an advanced custom integration. The examples illustrate many of the tasks you’ll perform on a regular basis when you create your own automations.
 
 :::note
 <ActionsLimit/>
@@ -92,7 +97,7 @@ The following example shows how to configure a notification that sends an email 
    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
@@ -283,7 +288,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
@@ -375,3 +380,25 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. View the **Status** field to find out if the playbook has a status of Success or another status such as **Completed with errors**.
    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**.
    1. Click a node to download results of that node’s run.
+
+## FAQ
+
+### What's the easiest way to start automating Cloud SIEM tasks?
+
+Start with the simple enrichment example on this page, which adds an IP reputation lookup to an insight using an out-of-the-box VirusTotal integration and requires no custom code.
+
+### Do you need a custom integration to automate Cloud SIEM tasks?
+
+No. Most automations, including enrichments and notifications, can be built using out-of-the-box integrations like VirusTotal, Sumo Logic, and Basic Tools. Custom integrations are only needed for services without a built-in integration.
+
+### Can Cloud SIEM automations run outside the Sumo Logic cloud?
+
+Yes. Actions can run from the Sumo Logic cloud, or from other environments using the [Automation Service Bridge](/docs/platform-services/automation-service/automation-service-bridge/), which is required for custom integrations.
+
+### What's the difference between the simple, intermediate, and advanced examples on this page?
+
+The simple example configures an enrichment using an out-of-the-box integration (VirusTotal). The intermediate example adds a notification action, sending an email, after an enrichment. The advanced examples build a custom integration from YAML files, or combine enrichment, search, and notification into one complex playbook.
+
+### Can you add enrichment to entities instead of insights?
+
+Yes. Use the same custom integration steps as for insight enrichment, but select **Entity** instead of **Insight** as the playbook input, and use the **Add Entity Enrichment** action instead of **Add Insight Enrichment**.

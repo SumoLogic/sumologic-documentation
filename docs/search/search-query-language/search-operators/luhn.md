@@ -2,6 +2,7 @@
 id: luhn
 title: luhn Search Operator
 sidebar_label: luhn
+description: Use the luhn operator to validate potential credit card numbers in log messages using Luhn's algorithm.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,13 +11,9 @@ The `luhn` operator uses Luhn’s algorithm to check message logs for strings of
 
 ## Syntax
 
-```sql
-luhn(<field>) [as <field>]
-```
+`luhn(<field>) [as <field>]`
 
-```sql
-luhn("<input string>") [as <field>]
-```
+`luhn("<input string>") [as <field>]`
 
 ## Examples
 
@@ -24,7 +21,7 @@ luhn("<input string>") [as <field>]
 
 Use the following query to identify credit card numbers in message logs, and verify them using the Luhn operator:
 
-```sql
+```sumo
 | parse regex "(?<maybecc>\d{4}-\d{4}-\d{4}-\d{4})" nodrop
 | parse regex "(?<maybecc>\d{4}\s\d{4}\s\d{4}\s\d{4})" nodrop
 | parse regex "(?<maybecc>\d{16})" nodrop
@@ -39,7 +36,7 @@ which provides results such as:
 
 Use the following query to search for a specific credit card number and verify it using the Luhn operator:
 
-```sql
+```sumo
 *| "6666-7777-6666-8888" as b
  | luhn(b) as d
 ```

@@ -1,6 +1,11 @@
 ---
 slug: /security
 title: Sumo Logic Security Solutions
+keywords:
+  - security
+  - siem
+  - soar
+  - threat detection
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,10 +15,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Sumo Logic security solutions support the entire spectrum of security use cases, from security analytics to SIEM and SOAR: 
 * **[Logs for Security](/docs/security/additional-security-features/)**<br/>Provides enhanced insight into threat activity via logs. Collect security log and event data from your infrastructure and applications, on-premises and in-cloud. Analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 * **Threat detection, investigation, and response**<br/>After you have collected logs for security, you can use them with the following solutions for threat detection, investigation, and response:
-   * **[Cloud SIEM](/docs/cse/)**<br/>Gives SOC (security operations center) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
+   * **[Cloud SIEM](/docs/cse/)**<br/>Gives security operations center (SOC) analysts prioritized and contextualized actionable threats with automated security workflows. Out-of-the-box automated detection reduces manual work, saving valuable resource time and enabling your team to be more effective by allowing them to focus on higher-value security functions.
    * **[Cloud SOAR](/docs/cloud-soar/)**<br/>Fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
-## Security feature comparison
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: [Security courses](https://learn.sumologic.com/path/sumo-security)
+* **Instructor-led virtual classes**:
+    * [Workshops: Essential Cloud SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-cloud-siem-skills-for-soc-analysts#section-2)
+    * [Workshops: Automation Workshop](https://www.sumologic.com/learn/training?_workshops=automation-workshop#section-2)
+    * [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security#section-2)
+    * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem#section-2)
+:::
+
+## How do Sumo Logic's security solutions compare?
 
 Following are features available with our security solutions. If you have any questions on availability or a free trial, you can reach out to your Sumo Logic account team.
 
@@ -23,7 +42,7 @@ Following are features available with our security solutions. If you have any qu
 | App catalog (out-of-the-box analytics) | &#10003; | &#10003; | &#10003; |
 | Dashboard | &#10003; | &#10003; | &#10003; |
 | Deep search (Sumo Logic Search Query Language) | &#10003; | &#10003; | &#10003; |
-| Advanced analytics with machine learning (GIS for GuardDuty and CloudTrail) | &#10003; | &#10003; | &#10003; |
+| Advanced analytics with machine learning (Global Intelligence Service for GuardDuty and CloudTrail) | &#10003; | &#10003; | &#10003; |
 | Monitoring | &#10003; | &#10003; | &#10003; |
 | Alerts | &#10003; | &#10003; | &#10003; |
 | Threat Intelligence (threat intel feed and threat analysis app) | &#10003; | &#10003; | &#10003; |
@@ -62,3 +81,25 @@ Following are features available with our security solutions. If you have any qu
    * [Cloud SIEM: Insight investigation](https://www.sumologic.com/demo/insight-investigation)
    * [Cloud SIEM: Cloud insights triaging and investigation](https://www.sumologic.com/demo/cloud-insights)
    * [Cloud SIEM: MITRE ATT&CK™ coverage explorer](https://www.sumologic.com/demo/mitre-attack-coverage-explorer)
+
+## FAQ
+
+### What security solutions does Sumo Logic offer?
+
+Sumo Logic offers three security solutions that work together: Logs for Security for security analytics and log-based threat detection, Cloud SIEM for prioritized and contextualized threat investigation, and Cloud SOAR for automated incident triage, investigation, and remediation.
+
+### What's the difference between Cloud SIEM and Cloud SOAR?
+
+Cloud SIEM focuses on the investigation phase, giving SOC analysts prioritized, contextualized threats with automated detection. Cloud SOAR focuses on the response phase, automating triage, investigation, and remediation through playbooks. You can use either solution independently or together.
+
+### Do you need Logs for Security before you can use Cloud SIEM or Cloud SOAR?
+
+Yes. You collect logs for security first, then use that data with Cloud SIEM and Cloud SOAR for threat detection, investigation, and response.
+
+### Which Sumo Logic security solution should you use for automated incident response?
+
+Use Cloud SOAR. It fully automates triage, investigation, and remediation with an open integrations framework and full incident response lifecycle management, accelerating mean time to respond (MTTR).
+
+### Does Sumo Logic offer out-of-the-box threat detection?
+
+Yes. All three solutions, Logs for Security, Cloud SIEM, and Cloud SOAR, include a threat intelligence feed and threat analysis app. Cloud SIEM adds out-of-the-box detection content and a rules engine on top of that.

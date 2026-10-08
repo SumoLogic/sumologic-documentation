@@ -8,7 +8,7 @@ description: Configure collection of Microsoft 365 log messages to be parsed by 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To ingest Microsoft 365 Audit data into Cloud SIEM:
-1. [Configure a Microsoft Office 365 Audit source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/#configure-a-microsoft-office-365-audit-source) on a collector. When you configure the source, do the following:
+1. [Configure a Microsoft Office 365 Audit source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/#source-configuration) on a collector. When you configure the source, do the following:
     1. Click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Add another field named `_parser` with value */Parsers/System/Microsoft/Office 365*. This ensures that the Microsoft Office 365 Audit logs are parsed and normalized into structured records in Cloud SIEM.
 1. To verify that your logs are successfully making it into Cloud SIEM:

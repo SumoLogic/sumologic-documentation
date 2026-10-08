@@ -72,7 +72,7 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/cse/schema/username-and-hostname-normalization')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Username and Hostname Normalization</h4></a>
-  <p>Learn how to import YARA rules from GitHub into Cloud SIEM.</p>
+  <p>Learn about how Cloud SIEM normalizes usernames and hostnames during mapping and parsing.</p>
   </div>
 </div>
 </div>

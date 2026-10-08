@@ -51,3 +51,7 @@ Where your data is stored depends on the geographical location the Account Owner
 import AWSDeploymentRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
 <AWSDeploymentRegion/>
+
+## What does Preview mean on some features?
+
+Preview features are available for early access before general availability. Sumo Logic offers three preview tiers: Private Preview, Extended Preview, and Public Preview. Each tier reflects different levels of maturity, customer participation, and production readiness. To learn more about eligibility, participation criteria, and available features, see [Preview Releases](/docs/preview).
