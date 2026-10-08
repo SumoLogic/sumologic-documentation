@@ -111,9 +111,6 @@ The settings in the **If Triggered** section are divided into two subsections, o
    The baseline window sets how data is grouped into data points. It doesn't reduce the amount of data the baseline has to process. If the rule's baseline fails because the rule matches too many records, switching from daily to hourly is unlikely to resolve it. Narrow the rule expression or add a tuning expression instead.
    :::
 1. **for the entity(ies)**. Select one or more record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
-   :::note
-   Fields with many distinct values, such as IP addresses or hostnames, create many baselines, which increases the work needed to build them. If a rule fails to build its baseline, try selecting a field with fewer distinct values.
-   :::
 1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 4, and the maximum is 90. The default is 90 days.
    :::note
    If the [retention period for logs](/docs/cse/administration/cse-data-retention/) is less than the baseline retention period, then the baseline will be created based on the logs retention time only.
