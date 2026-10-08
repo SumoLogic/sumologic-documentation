@@ -118,11 +118,11 @@ export const features3 = [
       message: 'Mobot (Dojo AI)',
       description: 'Title for Dojo AI / Mobot',
     }),
-    imageUrl: 'img/icons/operations/human-to-machine.png',
+    imageUrl: 'img/icons/operations/mobot.png',
     description: (<Translate
       id='landing.feature.mobot.desc'
       description='Mobot description'>
-      Our AI-powered log assistant allows you to ask questions in plain English and get accurate log queries without writing code.
+      Ask questions in plain language to analyze logs, investigate security incidents, and get answers from official documentation.
     </Translate>),
     link: 'docs/search/mobot',
   },
@@ -132,20 +132,33 @@ export const features3 = [
       message: 'Dojo AI Platform',
       description: 'Title for Dojo AI platform overview',
     }),
-    imageUrl: 'img/icons/operations/human-to-machine.png',
+    imageUrl: 'img/icons/operations/dojo-ai.png',
     description: (
       <Translate
         id='landing.feature.dojo-ai.desc'
         description='Dojo AI platform teaser description'>
-        Explore our evolving AI capabilities built to accelerate investigation, automate workflows, and surface insights across your observability and security data.
+        Explore the multi-agent AI platform that helps security and observability teams detect threats, investigate incidents, and act on their data.
       </Translate>
     ),
-    link: 'https://www.sumologic.com/solutions/dojo-ai',
+    link: 'docs/get-started/ai-machine-learning',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.ai-security-investigations.title',
+      message: 'AI-powered security investigations',
+      description: 'Title for AI-powered security investigations',
+    }),
+    imageUrl: 'img/icons/security/soc-analyst-agent-icon.png',
+    description: (
+      <Translate
+        id='landing.feature.ai-security-investigations.desc'
+        description='AI-powered security investigations description'>
+        Investigate Cloud SIEM insights with evidence-backed verdicts, correlated activity, and clear findings for faster threat response.
+      </Translate>
+    ),
+    link: 'docs/get-started/ai-machine-learning',
   },
 ];
-
-// After it goes GA: docs/cse/get-started-with-cloud-siem/soc-analyst-agent
-// After it goes GA: mcp-server
 
 // Tab 4: Observability
 export const features4 = [

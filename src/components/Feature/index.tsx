@@ -18,8 +18,10 @@ export const Feature = ({
 
   return (
     <Stack
-      direction='row'
+      alignItems='center'
+      direction='column'
       spacing={2}
+      textAlign='center'
     >
       {imgUrl && (
         <Box
