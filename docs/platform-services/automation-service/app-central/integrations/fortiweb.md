@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiweb.png')} alt="fortiweb" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 12, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 List and create policies and rules with Fortinet FortiWeb.
 
@@ -66,6 +66,9 @@ For information about FortiWeb, see [FortiWeb documentation](https://docs.fortin
 
 ## Change Log
 
-* June 3, 2019 - First upload
-* August 30, 2020 - New action added
-* July 12, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 12, 2023 | Updated the integration with Environmental Variables. |
+| | August 30, 2020 | Added a new action. |
+| | June 3, 2019 | First upload. |

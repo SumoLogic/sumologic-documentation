@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/pop3.png')} alt="pop3" width="80"/>
 
-***Version: 1.2  
-Updated: Oct 27, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -52,7 +52,8 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 ## Change Log
 
-* August 19, 2021 - First upload
-* October 27, 2023 (v1.2)
-	+ Updated with new Cloud SOAR API
-	+ Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | October 27, 2023 | <ul><li>Updated the integration to use the new Cloud SOAR API.</li><li>Updated the integration with Environmental Variables.</li></ul> |
+| | August 19, 2021 | Initial release of the POP3 integration. |

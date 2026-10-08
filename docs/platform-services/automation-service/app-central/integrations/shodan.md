@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/shodan.png')} alt="shodan" width="100"/>
 
-***Version: 1.1  
-Updated: Apr 19, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Shodan is a search engine for Internet-connected devices. Web search engines, such as Google and Bing, are great for finding websites. But what if you're interested in measuring which countries are becoming more connected? Or if you want to know which version of Microsoft IIS is the most popular? Or you want to find the control servers for malware? Maybe a new vulnerability came out and you want to see how many hosts it could affect? Traditional web search engines do not let you answer those questions.
 
@@ -41,6 +41,8 @@ For information about Shodan, see [Shodan documentation](https://developer.shoda
 
 ## Change Log
 
-* February 8, 2019 - First upload
-* March 27, 2023 (v1.1)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | March 27, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
+| | February 8, 2019 | Initial release of the Shodan integration. |

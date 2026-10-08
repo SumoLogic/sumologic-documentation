@@ -2,6 +2,7 @@
 id: isreservedip
 title: isReservedIP Search Operator
 sidebar_label: isReservedIP
+description: Use the isReservedIP operator to check if an IPv4 address is reserved as defined by RFC 5735 and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

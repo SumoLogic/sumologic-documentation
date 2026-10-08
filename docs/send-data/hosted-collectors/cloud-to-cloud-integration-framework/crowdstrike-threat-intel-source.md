@@ -2,7 +2,7 @@
 id: crowdstrike-threat-intel-source
 title: CrowdStrike Threat Intel Source
 sidebar_label: CrowdStrike Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-threat-intel
 description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike platform.
@@ -122,3 +122,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [CrowdStrike Falcon Intelligence Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/) to automate response actions directly from Cloud SOAR playbooks.

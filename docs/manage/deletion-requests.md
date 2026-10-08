@@ -23,7 +23,7 @@ Key features:
 - **Robust auditing mechanisms**. Ensure thorough tracking.
 
 :::info
-If a certificate of destruction is required, this feature cannot be used. Instead, you must create a Sumo Logic support ticket to request data deletion.
+This feature does not provide a certificate of destruction. If you require a certificate confirming complete destruction of all account data at the end of your subscription, create a Sumo Logic support ticket instead.
 :::
 
 ## Prerequisites
@@ -38,10 +38,6 @@ If a certificate of destruction is required, this feature cannot be used. Instea
 By default, data deletion is disabled and can *only* be enabled by the account owner from the **Policies** page or through a Sumo Logic support ticket. These enablement actions will be captured in the audit log. To enable the the log search data deletion, follow the below steps:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to **Administration > Security > Policies**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings**, select **Policies**.
 1. Select the **Enable Log Search Data Deletion** checkbox to allow users with the appropriate role capabilities to manage data deletion requests.<br/><img src={useBaseUrl('img/search/get-started-search/enable-deletion-request.png')} alt="enable deletion request" style={{border: '1px solid gray'}} width="400"/>
-:::
-
-:::info
-You can configure the number of approvers for each data deletion request.
 :::
 
 ## Create a deletion request
@@ -120,7 +116,7 @@ Once the deletion request is created, an email notification will be sent to the 
     - **Reject**. Enter the reason for rejection in the **Reject Deletion Request** pop-up to help the requester understand the reason for rejection and take any necessary actions, and click the **Reject Request** button.<br/><img src={useBaseUrl('img/search/get-started-search/reject-deletion-request.png')} alt="Reject deletion requests pop-up" style={{border: '1px solid gray'}} width="400"/>
 
 :::note
-To process a data deletion request, approval from two admins with the **Review Deletion Requests** capability is required. If required, account owner can change the default to one admin approver.
+By default, data deletion requests require approval from two of your org admins with the **Review Deletion Requests** capability. To change the number of required approvals, contact our [Support team](https://support.sumologic.com/support/s/).
 :::
 
 ## Limitations

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hacker-target.png')} alt="Hacker target icon" width="100"/>
 
-***Version: 1.1
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Utilize Hacker Target's investigational tools during an incident.
 
@@ -49,8 +49,9 @@ For information about Hacker Target, see the [Hacker Target website](https://hac
 
 ## Change Log
 
-* December 19, 2019 - First upload
-* March 10, 2022 - Logo
-* July 6, 2023 (v1.1)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from Hacker Target OIF to Hacker Target
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Hacker Target OIF to Hacker Target.</li></ul> |
+| | March 10, 2022 | Updated the logo. |
+| | December 19, 2019 | Initial release of the Hacker Target integration. |

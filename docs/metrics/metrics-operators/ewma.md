@@ -2,6 +2,7 @@
 id: ewma
 title: ewma Metrics Operator
 sidebar_label: ewma
+description: Use the ewma metrics operator to compute an Exponentially Weighted Moving Average on time series data, smoothing short-term fluctuations to reveal long-term trends.
 ---
 
 

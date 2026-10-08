@@ -23,6 +23,7 @@ The Field Management API allows you to configure fields from HTTP endpoints. Fie
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/fieldManagementV1   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/fieldManagementV1  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/fieldManagementV1   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/fieldManagementV1  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/fieldManagementV1   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/fieldManagementV1  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/fieldManagementV1   |

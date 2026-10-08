@@ -2,6 +2,7 @@
 id: compare
 title: compare Search Operator
 sidebar_label: compare
+description: Use the compare operator to compare current aggregate query results against one or multiple past time periods.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

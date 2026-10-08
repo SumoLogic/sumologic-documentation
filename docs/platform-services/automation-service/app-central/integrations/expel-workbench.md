@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/expel-workbench.png')} alt="expel workbench" width="100"/>
 
-***Version: 1.1  
-Updated: Jan 6, 2026***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Expel allows security analysts to follow investigations in real time, see every action taken, and communicate seamlessly with the Expel team.
 
@@ -46,5 +46,8 @@ For information about Expel Workbench, see [Expel Workbench documentation](https
 
 ## Change Log
 
-* January 2, 2026 - First upload
-* January 6, 2026 (v1.1) - Updated the description.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | January 6, 2026 | Updated the description. |
+| | January 2, 2026 | Initial release of the Expel Workbench integration. |

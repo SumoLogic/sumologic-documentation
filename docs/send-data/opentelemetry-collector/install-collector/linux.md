@@ -68,7 +68,7 @@ You can run the script in two ways:
    ```
 * By first downloading the script, inspecting its contents for security, and then running it:
    ```bash
-   sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh
+   sudo curl -sLo install-otelcol-sumo.sh https://download-otel.sumologic.com/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh
    ```
 

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/neurons-itsm.png')} alt="Neurons ITSM icon" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Ivanti Neurons ITSMis IT service management solution that transforms help desks and support teams into strategic business.
 
@@ -50,11 +50,9 @@ For information about Neurons for ITSM, see [Neurons or ITSM documentation](http
 
 ## Change Log
 
-* August 25, 2022 - First upload
-* September 1, 2022 - New Logo
-* July 6, 2023 (v1.1)
-	+ Updated the integration with Environmental Variables
-	+ Changed type to Notification for following actions:
-		- Create Change
-		- Create Incident Neurons
-		- Create Problem
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed the action type to Notification for the following actions: **Create Change**, **Create Incident Neurons**, and **Create Problem**.</li></ul> |
+| | September 1, 2022 | Updated the logo in Neurons ITSM integration. |
+| | August 25, 2022 | Initial release of the Neurons ITSM integration. |

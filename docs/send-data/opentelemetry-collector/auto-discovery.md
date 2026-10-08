@@ -9,29 +9,32 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 With the Sumo Logic OpenTelemetry collector Auto Discovery feature, you can detect, monitor, and observe services that are installed on the server on which the collector is running. Once the services are discovered, you can evaluate the information on Sumo Logic platform and proceed with the onboarding of applications.
 
 :::note
-- Auto Discovery is supported only in Linux and macOS operating systems.
-- Minimum collector version required to use this feature is `v0.89.0-sumo-0`.
+- Auto Discovery is supported only in Windows, Linux and macOS operating systems.
+- To use this feature on Linux and macOS, the minimum required collector version is `v0.89.0-sumo-0`.
+- To use this feature on Windows, the minimum required collector version is `v0.151.0-sumo-0`.
 :::
 
 ## View discovered services
 
 Auto Discovery is enabled by default on all the OpenTelemetry collectors for the supported version. Below are the **Auto Discoverable Services** provided by Sumo Logic.
 
-- ActiveMQ
-- Apache
-- Cassandra
-- Docker
-- ElasticSearch
-- HAProxy
-- JMX
-- Kafka
-- Memcached
-- Microsoft SQL Server
-- MySQL
-- Nginx
-- PostgreSQL
-- RabbitMQ
-- Redis
+| Service | Linux | macOS | Windows |
+|:--|:--:|:--:|:--:|
+| ActiveMQ | ✓ | ✓ | ✓ |
+| Apache | ✓ | ✓ | ✓ |
+| Cassandra | ✓ | ✓ | ✓ |
+| Docker | ✓ | ✓ | ✓ |
+| ElasticSearch | ✓ | ✓ | ✓ |
+| HAProxy | ✓ | ✓ | ✗ |
+| JMX | ✓ | ✓ | ✓ |
+| Kafka | ✓ | ✓ | ✗ |
+| Memcached | ✓ | ✓ | ✗ |
+| Microsoft SQL Server | ✓ | ✓ | ✓ |
+| MySQL | ✓ | ✓ | ✓ |
+| Nginx | ✓ | ✓ | ✓ |
+| PostgreSQL | ✓ | ✓ | ✓ |
+| RabbitMQ | ✓ | ✓ | ✓ |
+| Redis | ✓ | ✓ | ✗ |
 
 For the discovered services, you can set up data collection with guided onboarding steps. Below are the two different ways by which you can install and setup the OTEL Auto discovery apps.
 

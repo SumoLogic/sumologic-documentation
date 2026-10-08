@@ -2,7 +2,7 @@
 id: intel471-threat-intel-source
 title: Intel 471 Threat Intel Source
 sidebar_label: Intel 471 Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - intel471-threat-intel
 description: This integration collects threat indicators using the Intel 471 API and sends them to Sumo Logic for analysis.
@@ -93,3 +93,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Intel 471 Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/intel-471/) to automate response actions directly from Cloud SOAR playbooks.

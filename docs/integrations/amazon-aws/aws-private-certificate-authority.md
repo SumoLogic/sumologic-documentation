@@ -34,3 +34,7 @@ You can collect the logs and metrics for Sumo Logic's AWS Private Certificate Au
 ### Configure logs collection
 
 * Collect [AWS CloudTrail Logs](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCtIntro.html) using the [AWS CloudTrail](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/) source. AWS Private CA is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or AWS service. CloudTrail is enabled by default on your AWS account. You can use AWS CloudTrail to record API calls that are made by AWS Private Certificate Authority. If you configure a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS Private CA. 
+
+## Additional resources
+
+- Use the [AWS Private Certificate Authority Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/aws-private-certificate-authority/) to automate response actions directly from Cloud SOAR playbooks.

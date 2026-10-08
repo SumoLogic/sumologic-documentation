@@ -2,6 +2,7 @@
 id: now
 title: now Search Operator
 sidebar_label: now
+description: Use the now operator to return the current epoch time in milliseconds.Often used with the formatDate operator to get formatted current time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -36,4 +36,10 @@ In this section, we'll introduce the following concepts:
   <p>Get information on how Sumo Logic throttles metric when metrics ingestion exceeds your DPM limit.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/metrics/source-and-collector-cardinality')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>Source and Collector Wise Cardinality</h4></a>
+  <p>Identify and analyze source and collector-level cardinality to pinpoint high-cardinality sources.</p>
+  </div>
+</div>
 </div>

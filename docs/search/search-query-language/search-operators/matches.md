@@ -2,6 +2,7 @@
 id: matches
 title: matches Search Operator
 sidebar_label: matches
+description: Use the matches operator to match a string against a wildcard pattern or RE2-compliant regex and return a boolean result.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

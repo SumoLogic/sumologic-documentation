@@ -9,6 +9,10 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Remote Windows Event Log Source to use a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.
 
+:::tip
+Events are delivered over WinRM, which has a throughput ceiling independent of the Collector. If you're scaling this Source across many hosts or a high event rate, see [Remote Windows Event Log Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/remote-windows-event-log-benchmarks/) for expected CPU usage and throughput.
+:::
+
 The following about setting up a Remote Windows Event Log Source:
 
 * Remote Windows Event Sources can only be run on, and collect remotely from, systems running Windows Server 2012 or later.
@@ -24,6 +28,9 @@ To configure a remote Windows Event Log Source:
 1. Select the **Windows Event Log** source.<br/><img src={useBaseUrl('img/send-data/windows-event-log-source-icon.png')} alt="Windows event log source icon" style={{border: '1px solid gray'}} width="100" />
 1. Choose **Remote** for **Type of Windows Event Source**.
 1. (Available in version 19.361-3+) Check the **Domain Controller Mode** checkbox to set the Source as a part of Windows Active Directory Inventory (AD). The Source will detect any (potentially many) domain controllers on the AD network. Each domain controller contains an event log that includes a security log. The Source connects to each domain controller’s security log and begins monitoring events.<br/><img src={useBaseUrl('img/send-data/DCM.png')} alt="Domain Controller Mode" style={{border: '1px solid gray'}} width="500" />
+  :::note
+**Domain Controller Mode** is available for OpenTelemetry collectors using the custom YAML source template. [Learn more](/docs/send-data/opentelemetry-collector/remote-management/source-templates/customyaml/#configure-domain-controller-mode-for-windows-ad-event-collection).
+  :::
 1. Set the following:
    * **Name.** Type the name you'd like to display for this source in Sumo Logic. 
    * **Description.** Optional description.

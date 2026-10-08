@@ -131,7 +131,7 @@ _sourceCategory="Labs/AbnormalSecurity" caseId severity_level
 import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
 <CollectionConfiguration/>
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for Abnormal Security](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Abnormal Security app is properly integrated and configured to collect and analyze your Abnormal Security data.
 :::
 
@@ -198,3 +198,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Abnormal Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/) to automate response actions directly from Cloud SOAR playbooks.

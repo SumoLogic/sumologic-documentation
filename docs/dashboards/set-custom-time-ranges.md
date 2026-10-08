@@ -16,13 +16,13 @@ After changing the time range for a dashboard or panel, you can set the new rang
 
 You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times.
 
-Dashboard panels are limited to a 32-day maximum time range. This limitation does not apply for queries using aggregate scheduled views.
+Dashboard panels are limited to a 32-day maximum time range. This limitation does not apply to queries backed by an aggregate scheduled source, such as an aggregate scheduled view, an aggregate scheduled search, or a combination of both. Aggregate scheduled sources are pre-aggregated (or precomputed), which lets queries span longer time windows without exceeding query limits. See [Scheduled Views](/docs/manage/scheduled-views) and [Create a Scheduled Search](/docs/alerts/scheduled-searches/schedule-search) for details.
 
 ### Set a predefined time range
 
 To select a predefined time range:
 
-1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" style={{border: '1px solid gray'}} width="675"/>
+1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" style={{border: '1px solid gray'}} width="800"/>
 1. Select one of the time range options on the **Relative** tab.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/relative-ranges.png')} style={{border: '1px solid gray'}} alt="relative ranges" width="300"/>
 
 
@@ -44,13 +44,13 @@ To set a custom time range:
 
 ## Set default time ranges
 
-A dashboard has a default time range defined by its creator. The default time range is shown in the upper right of a dashboard. The default time range is displayed in gray font.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" style={{border: '1px solid gray'}} width="675"/>
+A dashboard has a default time range defined by its creator. The default time range is shown in the upper right of a dashboard. The default time range is displayed in gray font.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" style={{border: '1px solid gray'}} width="800"/>
 
 ### Modify time ranges
 
 You can modify the time range in panel to zoom in for granular details, especially for charts with larger compliance periods. To do so, select and drag across date/time and click **Update dashboard time range** button to zoom in further. Now, this time range is considered as a temporary time range and all the time series panels in the dashboard will be zoomed in for the selected time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/update-dashboard-time-range.png')} alt="Update dashboard time range" style={{border: '1px solid gray'}} width="500"/>
 
-After you do, the new time range is shown in blue, and a more options menu is available that allows you to revert back to the default, or make it the default time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-modified.png')} alt="dash modified" style={{border: '1px solid gray'}} width="675"/>
+After you do, the new time range is shown in blue, and a more options menu is available that allows you to revert back to the default, or make it the default time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-modified.png')} alt="dash modified" style={{border: '1px solid gray'}} width="800"/>
 
 ### Set default time ranges
 

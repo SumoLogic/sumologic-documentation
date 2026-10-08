@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-asa.png')} alt="Cisco ASA icon" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 Get, Add and Update ACLs, Policies, and Routes with Cisco ASA.
 
@@ -47,6 +47,13 @@ For information about Cisco ASA, see [Cisco ASA documentation](https://www.cisco
 
 ## Change Log
 
-* February 26, 2019 - First upload
-* July 19, 2019 - Bug Fix
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| | July 19, 2019 | Fixed a bug. |
+| | February 26, 2019 | Initial release of the Cisco ASA integration. |
+
+## Additional resources
+
+For Cisco ASA, Sumo Logic offers the [Cisco ASA app](/docs/integrations/security-threat-detection/cisco-asa/) to visualize your Cisco ASA data.

@@ -161,7 +161,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 <CollectionConfiguration/>
 
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for Vectra](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/vectra-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Vectra app is properly integrated and configured to collect and analyze your Vectra data.
 :::
 
@@ -220,3 +220,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Vectra Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/vectra/) to automate response actions directly from Cloud SOAR playbooks.

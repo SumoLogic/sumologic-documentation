@@ -2,6 +2,7 @@
 id: tolowercase-touppercase
 title: toLowerCase, toUpperCase Search Operators
 sidebar_label: toLowerCase, toUpperCase
+description: Use the toLowerCase and toUpperCase operators to convert strings to all lowercase or uppercase letters.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

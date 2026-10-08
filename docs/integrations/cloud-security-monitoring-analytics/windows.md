@@ -99,7 +99,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 ### Inventory
 
-The **Windows - Security Monitoring - Inventory** dashboard helps you to quickly assess system inventory and recent system reboots/restarts in order to understand device activity within your environment.
+The **Windows (Classic) - Security Monitoring - Inventory** dashboard helps you to quickly assess system inventory and recent system reboots/restarts in order to understand device activity within your environment.
 
 **Use case:** System inventory and system boots are leading indicators of potential security threats to be aware of, and that may require further attention.
 
@@ -107,7 +107,7 @@ The **Windows - Security Monitoring - Inventory** dashboard helps you to quickly
 
 ### Critical Events
 
-The **Windows - Security Monitoring - Critical Events** dashboard helps you when the audit logs are tampered, services are stopped, and ingestion delays go above ten seconds, these are all good indicators that there are action items to be taken to resolve issues within your Windows machines.
+The **Windows (Classic) - Security Monitoring - Critical Events** dashboard helps you when the audit logs are tampered, services are stopped, and ingestion delays go above ten seconds, these are all good indicators that there are action items to be taken to resolve issues within your Windows machines.
 
 **Use case:** Evaluating unexpected critical events within Windows infrastructure allows for teams to stay on top of any necessary remedial steps.
 
@@ -115,7 +115,7 @@ The **Windows - Security Monitoring - Critical Events** dashboard helps you when
 
 ### Windows Updates
 
-The **Windows - Security Analytics - Windows Updates** dashboard provides rich visualizations to indicate the ongoing flow of Windows updates within your organization, so that engineering teams are made aware of red flags or update schedules that require updating.
+The **Windows (Classic) - Security Analytics - Windows Updates** dashboard provides rich visualizations to indicate the ongoing flow of Windows updates within your organization, so that engineering teams are made aware of red flags or update schedules that require updating.
 
 **Use case:** Assess overall trend lines via the dashboard, and dive into specific events and event types to understand specific update failures.
 
@@ -123,7 +123,7 @@ The **Windows - Security Analytics - Windows Updates** dashboard provides rich v
 
 ### Windows Firewall
 
-The **Windows - Security Analytics - Windows Firewall** dashboard allows you to view Windows Firewall activity including Firewall Service Events, MPSSVC Rule Level Policy Changes, and Filtering Platform Policy Changes.
+The **Windows (Classic) - Security Analytics - Windows Firewall** dashboard allows you to view Windows Firewall activity including Firewall Service Events, MPSSVC Rule Level Policy Changes, and Filtering Platform Policy Changes.
 
 **Use case:** Filter by EventID or specific device to analyze traffic patterns within your Windows environments
 
@@ -131,7 +131,7 @@ The **Windows - Security Analytics - Windows Firewall** dashboard allows you to 
 
 ### Windows Defender
 
-The **Windows - Security Analytics - Windows Defender** dashboard is designed to offer visibility into Defender Service Events and Defender Threat Events at the Computer and Trend level.
+The **Windows (Classic) - Security Analytics - Windows Defender** dashboard is designed to offer visibility into Defender Service Events and Defender Threat Events at the Computer and Trend level.
 
 **Use case:** Understand cross-sections of service events and threat events, filtered down by specific devices to stay ahead of changing attack surfaces.
 
@@ -139,7 +139,7 @@ The **Windows - Security Analytics - Windows Defender** dashboard is designed to
 
 ### User Group Updates
 
-The **Windows - Security Analytics - User Group Updates** dashboard provides User Group Updates that are generally a good litmus test for a summarized trend of how successfully Windows groups are being updated and on a correct cadence depending on policy requirements.
+The **Windows (Classic) - Security Analytics - User Group Updates** dashboard provides User Group Updates that are generally a good litmus test for a summarized trend of how successfully Windows groups are being updated and on a correct cadence depending on policy requirements.
 
 **Use case:** Aligning group update schedules to existing policies within your organization, and informing future policy changes as well based on triangulation against security events tied to update changes.
 
@@ -147,7 +147,7 @@ The **Windows - Security Analytics - User Group Updates** dashboard provides Use
 
 ### User Authentication
 
-The **Windows - Security Analytics - User Authentication** dashboard points to snapshots of trends for successful logins as well as unsuccessful logins.
+The **Windows (Classic) - Security Analytics - User Authentication** dashboard points to snapshots of trends for successful logins as well as unsuccessful logins.
 
 **Use case:** Unsuccessful logins in particular will indicate potential threats including brute-force attempts.
 
@@ -155,7 +155,7 @@ The **Windows - Security Analytics - User Authentication** dashboard points to s
 
 ### User Account Changes
 
-The **Windows - Security Analytics - User Account Changes** dashboard shows user accounts created, deleted, locked out, as well as password changes for a given account.
+The **Windows (Classic) - Security Analytics - User Account Changes** dashboard shows user accounts created, deleted, locked out, as well as password changes for a given account.
 
 **Use case:** Begin with the summarized visuals in the left columns, and navigate to the right column details to understand specific computers and subjects involved in the given activity.
 
@@ -163,7 +163,7 @@ The **Windows - Security Analytics - User Account Changes** dashboard shows user
 
 ### TLS Certificates and Secure Channels
 
-The **Windows - Security Analytics - TLS Certificates and Secure Channels** dashboard indicates TLS Certificate and Secure Channel activity and associated computers, trends, and latest events.
+The **Windows (Classic) - Security Analytics - TLS Certificates and Secure Channels** dashboard indicates TLS Certificate and Secure Channel activity and associated computers, trends, and latest events.
 
 **Use case:** By mapping changes in certificates and associated trends, teams can identify areas of improvement for current TLS Certificate deployments.
 
@@ -171,11 +171,30 @@ The **Windows - Security Analytics - TLS Certificates and Secure Channels** dash
 
 ### Default Accounts Usage
 
-The **Windows - Security Analytics - Default Accounts Usage** dashboard allows you to filter Default Accounts Usage by EventID, Computer, SubjectUserName, and TargetUserName.
+The **Windows (Classic) - Security Analytics - Default Accounts Usage** dashboard allows you to filter Default Accounts Usage by EventID, Computer, SubjectUserName, and TargetUserName.
 
 **Use case:** Honeycomb visuals also point to potential hotspots, or in other words specific computers that may require further attention relative to typical expected behavior within your organization.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Default-Accounts-Usage.png')} alt="Windows cloud Security Analytics dashboards" />
+
+## Create monitors for the Windows Cloud Security app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows Cloud Security Monitoring and Analytics alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows (Classic) - Security Analytics - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 5 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count &lt;= 0 |
+| `Windows (Classic) - Security Analytics - User Account Locked Out` | This alert is triggered when a user account is locked out (EventID 4740). This may indicate a brute-force attack has triggered the account lockout policy, or a misconfigured service is repeatedly attempting authentication with stale credentials. | Count > 0 | Count &lt;= 0 |
+| `Windows (Classic) - Security Analytics - User Added to Administrative Group` | This alert is triggered when a user is added to a privileged administrative group such as Administrators, Domain Admins, Schema Admins, or Enterprise Admins. This may indicate privilege escalation or unauthorized access. | Count > 0 | Count &lt;= 0 |
+| `Windows (Classic) - Security Analytics - Audit Log Cleared` | This alert is triggered when the Windows Security or System audit log is cleared (EventIDs 104, 517, 1102). This is a high-severity indicator as attackers often clear audit logs to cover their tracks after compromising a system. | Count > 0 | Count &lt;= 0 |
+| `Windows (Classic) - Security Analytics - Windows Defender Malware Detected` | This alert is triggered when Windows Defender detects malware or other potentially unwanted software (EventIDs 1006, 1007, 1008, 1015, 1116, 1117, 1118, 1119). Immediate investigation is required to determine the scope of infection. | Count > 0 | Count &lt;= 0 |
+| `Windows (Classic) - Security Analytics - Windows Defender Real-Time Protection Disabled` | This alert is triggered when Windows Defender Real-Time Protection is disabled (EventID 5001). Disabling real-time protection leaves the system vulnerable to malware and may indicate an attacker attempting to evade detection. | Count > 0 | Count &lt;= 0 |
+| `Windows (Classic) - Security Analytics - Windows Firewall Disabled` | This alert is triggered when the Windows Firewall Service is stopped (EventID 5025). A disabled firewall significantly increases the attack surface and may indicate an attacker attempting to open network access. | Count > 0 | Count &lt;= 0 |
+| `Windows (Classic) - Security Analytics - Default Account Activity` | This alert is triggered when activity is detected from default or built-in accounts (Administrator, Guest, Root). These accounts should not be used in a properly configured environment and activity may indicate unauthorized access or policy violation. | Count > 0 | Count &lt;= 0 |
 
 ## Upgrade/Downgrade the Windows Cloud Security app (Optional)
 

@@ -2,6 +2,7 @@
 id: outlier
 title: outlier Search Operator
 sidebar_label: outlier
+description: Use the outlier operator to identify unexpected values in time-stamped numerical data sequences for anomaly detection and alerting.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

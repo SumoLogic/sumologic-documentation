@@ -8,7 +8,7 @@ on:
     branches:
       - staging/**
     paths-ignore:
-      - .claude
+      - .claude/**
       - .github/**
       - .clabot
       - CONTRIBUTING.md

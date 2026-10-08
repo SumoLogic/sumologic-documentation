@@ -2,6 +2,7 @@
 id: length
 title: length Search Operator
 sidebar_label: length
+description: Use the length operator to return the number of characters in a string field.Works only on string fields and returns 0 for null strings.
 ---
 
 The `length` operator returns the number of characters in a string. You can use it in where clauses or to create new fields.

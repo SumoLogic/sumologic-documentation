@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/opswat-metadefender.png')} alt="Opswat Metadefender icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 MetaDefender is a cybersecurity platform for preventing and detecting cybersecurity threats on multiple data channels. 
 
@@ -46,5 +46,8 @@ For information about Opswat Metadefender, see [Opswat Metadefender documentatio
 
 ## Change Log
 
-* May 11, 2021 - First upload
-* July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
+| | May 11, 2021 | Initial release of the Opswat Metadefender integration. |

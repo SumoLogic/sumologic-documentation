@@ -2,6 +2,7 @@
 id: lookup-classic
 title: lookup (Classic) Search Operator
 sidebar_label: lookup (Classic)
+description: Use the lookup (classic) operator to enrich log messages with data from the classic Lookup Tables feature.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

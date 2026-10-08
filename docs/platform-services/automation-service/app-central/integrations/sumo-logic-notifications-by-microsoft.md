@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.0  
-Updated: Dec 04, 2024***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 Integration with Sumo Logic platform for monitors and Microsoft (Outlook) notification.
 
@@ -147,4 +147,8 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-notifications-by-microsoft-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Notifications by Microsoft configuration" width="400"/>
 
 ## Change Log
-* December 04, 2024 - First upload
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | December 04, 2024 | Initial release of the Sumo Logic Notifications By Microsoft integration. |

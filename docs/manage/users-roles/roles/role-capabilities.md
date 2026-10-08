@@ -68,13 +68,18 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Password Policy|Set the password policy for your Sumo Logic account. | `managePasswordPolicy` |
 |Allowlist IP Addresses | [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges. | `ipAllowlisting` |
 | Create Access Keys | Create your own [access keys](/docs/manage/security/access-keys/). | `createAccessKeys` |
-| Manage Access Keys |Set up, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
+| Manage Access Keys | Set up, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
 | Manage Support Account Access |Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization. | `manageSupportAccountAccess` |
 | Manage Audit Data Feed|Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on internal events. | `manageAuditDataFeed` |
 | Manage SAML|Provision and manage [SAML](/docs/manage/security/saml) for single sign-on. | `manageSAML` |
 | Manage Share Dashboards Outside Organization | [Share a dashboard](/docs/dashboards/share-dashboard-outside-org/) with users who do not have Sumo Logic access. | `shareDashboardOutsideOrg` |
 | Manage Organization Settings | Configure concurrent session limits and the Data Access Level for Shared Dashboards security policy. | `manageOrgSettings` |
 |Change Data Access Level|Change the [data access level](/docs/dashboards/set-data-access-level/) of dashboards or scheduled searches. | `changeDataAccessLevel` |
+
+<!-- Private Preview features to be added to Security (DOCS-1615)
+| Manage Data Masking Rules | Create, update, enable, disable, or delete [data masking rules](/docs/manage/data-masking). (Private Preview) | `manageDataMaskingRules` |
+| View Unmasked Data | View log data in its original, unmasked form when [data masking rules](/docs/manage/data-masking) are active. Users without this capability see masked data. (Private Preview) | `viewUnmaskedData` |
+-->
 
 ## Dashboards
 
@@ -100,20 +105,20 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). | `cloudSoarIncidentTaskView` |
+| Task View | View tasks in [playbooks](/docs/platform-services/automation-service/playbooks/) in read-only mode. | `cloudSoarIncidentTaskView` |
 | Task Access | Access your tasks in playbooks. | `cloudSoarIncidentTaskAccess` |
 | Task Access All| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
-| Task Edit| Configure tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
-| Task Reassign | Assign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
-| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
-| App Central Export | Export integrations and playbooks from App Central. | `cloudSoarAppCentralExport` |
-| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
-| Integrations Configure| Create and edit integrations. | `cloudSoarIntegrationsConfigure` |
-| Playbooks Access | View playbooks. | `cloudSoarPlaybooksAccess` |
-| Playbooks Configure| Create and edit playbooks. | `cloudSoarPlaybooksConfigure` |
+| Task Edit| Create, edit, and close tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
+| Task Reassign | Reassign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
+| App Central Access | View and install packages from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
+| App Central Export | Export integrations, playbooks, rules, actions, and templates from App Central. | `cloudSoarAppCentralExport` |
+| Integrations Access | View and test [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
+| Integrations Configure| Create, edit, and manage integrations. | `cloudSoarIntegrationsConfigure` |
+| Playbooks Access | View and export playbooks. | `cloudSoarPlaybooksAccess` |
+| Playbooks Configure| Create, edit, and manage playbooks, including import, duplicate, and execute. | `cloudSoarPlaybooksConfigure` |
 | Bridge Monitoring Access |Monitor Bridge operations. | `cloudSoarBridgeMonitoringAccess` |
-| Observability Access | Access automation in the SaaS Log UI. | `cloudSoarObservabilityAccess` |
-| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | `cloudSoarObservabilityManagement` |
+| Observability Access | Access and monitor playbook executions in the Automation Service. | `cloudSoarObservabilityAccess` |
+| Observability Configure | Interact with running automations and perform manual actions during playbook execution. | `cloudSoarObservabilityManagement` |
 
 ## Alerting
 

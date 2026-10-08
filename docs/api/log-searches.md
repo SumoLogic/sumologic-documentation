@@ -25,6 +25,7 @@ Whether you're running ad hoc searches during a forensic investigation or runnin
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/logSearchesManagement   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/logSearchesManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/logSearchesManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/logSearchesManagement  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/logSearchesManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/logSearchesManagement  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/logSearchesManagement   |

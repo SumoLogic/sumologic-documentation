@@ -94,7 +94,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-See information about Windows update errors, fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
+The **Windows 7+ - 2008 (Legacy) - Overview** dashboard shows information about Windows update errors, fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/Overview.png')} alt="Overview" />
 
@@ -111,7 +111,7 @@ See information about Windows update errors, fatal or warning messages, policy c
 
 ### Default
 
-See information about the start and stop operations for Windows services; Windows events; operations events; and errors and warnings.
+The **Windows 7+ - 2008 (Legacy) - Default** dashboard shows information about the start and stop operations for Windows services; Windows events; operations events; and errors and warnings.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/Default.png')} alt="Default" />
 
@@ -126,7 +126,7 @@ See information about the start and stop operations for Windows services; Window
 
 ### Login Status
 
-See information about successful and failed logins, and successful RDP reconnects.
+The **Windows 7+ - 2008 (Legacy) - Login Status** dashboard shows information about successful and failed logins, and successful RDP reconnects.
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/LoginStatus.png')} alt="Login Status" />
 
@@ -141,7 +141,7 @@ See information about successful and failed logins, and successful RDP reconnect
 
 ### Event Errors
 
-See information about Window event messages that contain a keyword that indicates a problem. (If a Windows event contains  "error", "timeout", "exception", or "fail", Sumo tags the message with "error_keyword", "timeout_keyword", "exception_keyword", or "fail_keyword" respectively.)
+The **Windows 7+ - 2008 (Legacy) - Event Errors** dashboard shows information about Window event messages that contain a keyword that indicates a problem. (If a Windows event contains "error", "timeout", "exception", or "fail", Sumo tags the message with "error_keyword", "timeout_keyword", "exception_keyword", or "fail_keyword" respectively.)
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/EventErrors.png')} alt="Event Errors" />
 
@@ -156,6 +156,23 @@ See information about Window event messages that contain a keyword that indicate
 **Error Keyword - Outlier**. See timeslices where the count of problem keywords exceeds the moving average by a statistically significant amount, three standard deviations over the last 24 hours.
 
 **Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce)).
+
+## Create monitors for the Windows Legacy app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Windows Legacy alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Windows 7+ - 2008 (Legacy) - Excessive Failed Logins` | This alert is triggered when a single user has more than 10 failed login attempts within 5 minutes. This may indicate a brute-force attack or credential stuffing attempt against the user's account. | Count > 0 | Count &lt;= 0 |
+| `Windows 7+ - 2008 (Legacy) - User Account Locked Out` | This alert is triggered when a user account is locked out. This may indicate a brute-force attack has triggered the account lockout policy, or a misconfigured service is repeatedly attempting authentication with stale credentials. | Count > 0 | Count &lt;= 0 |
+| `Windows 7+ - 2008 (Legacy) - User Added to Administrative Group` | This alert is triggered when a user is added to a privileged administrative group such as Administrators, Domain Admins, Schema Admins, Server Operators, Account Operators, or Backup Operators. This may indicate privilege escalation or unauthorized access. | Count > 0 | Count &lt;= 0 |
+| `Windows 7+ - 2008 (Legacy) - Audit Log Cleared` | This alert is triggered when the Windows Security audit log is cleared. This is a high-severity indicator as attackers often clear audit logs to cover their tracks after compromising a system. | Count > 0 | Count &lt;= 0 |
+| `Windows 7+ - 2008 (Legacy) - Firewall Rule Modified` | This alert is triggered when a Windows Firewall rule is added, modified, or deleted. Unauthorized firewall changes may indicate an attacker attempting to open access to the system or exfiltrate data. | Count > 0 | Count &lt;= 0 |
+| `Windows 7+ - 2008 (Legacy) - User Account Deleted` | This alert is triggered when a user account is deleted. This could indicate unauthorized administrative activity or an insider threat attempting to disrupt operations. | Count > 0 | Count &lt;= 0 |
 
 ## Upgrade/Downgrade the Windows Legacy app (Optional)
 

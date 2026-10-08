@@ -1,6 +1,7 @@
 ---
 id: parse-delimited-logs-using-split
 title: Parse Delimited Logs Using Split
+description: Use the split operator to parse delimited log entries such as space-delimited, tab-delimited, or custom-delimited formats.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

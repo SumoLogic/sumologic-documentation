@@ -5,10 +5,13 @@ description: Learn how to extract structured fields from raw log messages using 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../../../reuse/mobot-callout.md';
 
 Parse operators allow you to extract fields from log messages within a query manually and on an ad hoc basis.
 
 For best practices, use Parse operators to build [Field Extraction Rules](/docs/manage/field-extractions) to automatically extract field values and use them to extend your query.
+
+<MobotCallout/>
 
 In this section, we'll introduce the following concepts:
 

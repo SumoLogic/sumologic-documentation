@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/libraesva-email-security-v4.png')} alt="Libraesva Email Security V4 icon" width="100"/>
 
-***Version: 4.1  
-Updated: Jul 11, 2023***
+***Version: 4.2  
+Updated: April 29, 2026***
 
 Libraesva Email Security V4 provides security, continuity, and compliance capabilities that include the Email Security Gateway, the Email Load Balancer and the Email Archiver.
 
@@ -49,6 +49,9 @@ For information about Libraesva Email Security V4, see [Libraesva Email Security
 
 ## Change Log
 
-* May 11, 2021 - First upload
-* September 12, 2022 - Changed integration name and logo
-* July 11, 2023 (v4.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v4.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v4.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
+| | September 12, 2022 | Changed the integration name and logo. |
+| | May 11, 2021 | Initial release of the Libraesva Email Security V4 integration. |

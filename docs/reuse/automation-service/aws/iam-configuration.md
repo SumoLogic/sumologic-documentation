@@ -10,10 +10,24 @@ To enable AWS IAM role-based authentication without sharing access keys and secr
        {
          "Effect": "Allow",
          "Principal": {
-           "AWS": "arn:aws:iam::926226587429:root"
+           "AWS": "arn:aws:iam::926226587429:role/<dep>-csoar-automation-awsiam"
          },
          "Action": "sts:AssumeRole"
        }
      ]
    }
    ```
+   Replace `<dep>` with the prefix that corresponds to your Sumo Logic deployment:
+
+   | Prefix | Deployment       |
+   |--------|------------------|
+   | `prod` | US1 (Production) |
+   | `us2` | US2              |
+   | `dub` | EU (Dublin)      |
+   | `fra` | EU (Frankfurt)   |
+   | `zrh` | EU (Zurich)      |
+   | `fed` | US Federal       |
+   | `syd` | AU (Sydney)      |
+   | `tky` | JP (Tokyo)       |
+   | `kor` | KR (Seoul)       |
+   | `mon` | CA (Montreal)    |

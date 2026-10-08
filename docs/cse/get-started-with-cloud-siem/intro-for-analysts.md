@@ -3,11 +3,16 @@ id: intro-for-analysts
 title: Introduction to Cloud SIEM for Analysts
 sidebar_label: Introduction for Analysts
 description: Learn basic concepts about Cloud SIEM for security analysts.
+keywords:
+  - cloud siem
+  - cse
+  - soc analyst
+  - threat investigation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides an introduction to Cloud SIEM for analysts.
+As a Cloud SIEM analyst, you investigate insights, which are groups of correlated signals generated from your log data, to identify and respond to potential security threats. This article provides an introduction to Cloud SIEM for analysts.
 
 If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)). To use Cloud SIEM as an analyst, you must be assigned [Cloud SIEM role capabilities](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem) that allow you to view Cloud SIEM elements and perform analyst tasks.
 
@@ -127,7 +132,7 @@ Your answer to all these questions may vary. Make sure you feel confident naviga
 * Depending on your monitor size and the zoom settings of your browser, you may only see the icons, and not the words, in the top navigation bar. Try resizing your browser and adjusting your zoom settings to suit your needs.
 :::
 
-## Introduction to threat investigation
+## What is threat investigation in Cloud SIEM?
 
 ### Different threats but one platform
 
@@ -140,7 +145,7 @@ Sumo Logic can help all of these companies meet their different security and com
 
 Think about it: What security and compliance issues are you most concerned about in your company today? How has that changed over the years? How were security concerns different at other companies you've worked for in the past?
 
-### Using the MITRE ATT&CK matrix
+### How is the MITRE ATT&CK matrix used in Cloud SIEM?
 
 The [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/) is published by MITRE, a non-profit research organization. ATT&CK stands for Adversarial Tactics, Techniques, and Common Knowledge. 
 
@@ -166,16 +171,7 @@ Threat investigation is an iterative process, much like troubleshooting. In both
 
 Cloud SIEM acts as your first line of defense, monitoring your system. Cloud SIEM's threat intelligence and correlation algorithms organize related potential security events into insights. When you get alerted to an insight, it's up to you to diagnose the problem and take action.
 
-<img src={useBaseUrl('img/cse/intro-insight-example.png')} alt="Insight example" style={{border: '1px solid gray'}} width="800"/>
-
-* A. **Name**. The insight's name can point you to how the event occurred, or why the adversaries did it. In this case, the adversaries wanted to gain credential access.
-* B. **Assignee**. You can assign the insight to a coworker, update the insight's status, send alerts, close the insight, and perform other actions here.
-* C. **Entity**. The entity can point to who, where, or what was affected. In this case, the insight is clustered around a username.
-* D. **Left pane**. A summary of the insight's key features, like its severity, can be found in the left pane.
-* E. **Timeline**. The timeline can show you when the events occurred. Each event represents a signal.
-* F. **Signals**. The signals below the timeline contain details of each event.
-
-The insight page shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
+The [insight page](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) shows everything you need to start unravelling the security event. As you start investigating, try to answer as many wh- questions as you can about the event:
 
 * Who is behind the event?
 * What assets did the event affect?
@@ -210,8 +206,8 @@ Of course, this process will repeat each day as new insights are generated for y
 In this section, you'll be investigating an insight for your organization that was detected through Cloud SIEM. Our goal is to analyze the insight details and complete the narrative of what happened.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Insights** at the top of the screen. 
-1. Find an insight to investigate. 
-1. Click the insight's name to investigate it. For our example, we found one named **Discovery with Execution and Initial Access**. <br/><img src={useBaseUrl('img/cse/intro-insight-example-investigation.png')} alt="Example threat insight" style={{border: '1px solid gray'}} width="800"/>
+1. [Find an insight to investigate](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). 
+1. Click the insight's name to investigate it.
 1. Use the insight's name (and the [MITRE ATT&CK matrix](https://attack.mitre.org/matrices/enterprise/)), timeline, signals, and entities to answer these questions:
    * What events (signals) were detected and correlated together?
    * What is the total of all the severity scores of the signals in this insight?
@@ -243,9 +239,9 @@ The **Entities** tab lists all the entities that your rules have detected in the
 
 Sometimes you want to take your investigation even further. An in-depth threat investigation will use the most of both Cloud SIEM and Sumo Logic's core search functionality. 
 
-There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One [context action](/docs/cse/administration/create-cse-context-actions) is **Sumo Logic Search**. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it was not detected by a rule in Cloud SIEM. Hover your mouse over the entity name, click the <img src={useBaseUrl('img/cse/intro-context-action-icon.png')} alt="Context action button" style={{border: '1px solid gray'}} width="20"/> button that appears, and select **Sumo Logic Search** from the list.
+There are several ways to bring the information you find in Cloud SIEM back to the Sumo Logic platform. One [context action](/docs/cse/administration/create-cse-context-actions) is **Sumo Logic Search**. Selecting this action will create a log search in Sumo Logic. This way, you can find all log messages with that entity, even if it wasn't detected by a rule in Cloud SIEM. Hover your mouse over the entity name, click the three-dot button that appears, and select **Sumo Logic Search** from the list.
 
-<img src={useBaseUrl('img/cse/intro-log-search-context-action.png')} alt="Sumo Logic Search context menu option" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/intro-log-search-context-action.png')} alt="Sumo Logic Search context menu option" style={{border: '1px solid gray'}} width="800"/>
 
 Many entities in the insights, signals, and entities pages have context actions (six dots icon). Hover next to certain entities and the six dot icon may appear, if context actions are available for that object. Use the context actions to insert the entity into an API call, do a DNS lookup, or many other tasks. Your admin can add custom context actions too.
 
@@ -441,6 +437,28 @@ Rule tuning, custom rules, and custom insights are a taste of what you can custo
 * [Match lists](/docs/cse/match-lists-suppressed-lists/)
 * [APIs](/docs/cse/administration/cse-apis/) and other [plugins](/docs/cse/integrations/)
 * How much data Cloud SIEM [ingests](/docs/cse/ingestion/)
+
+## FAQ
+
+### What is an insight in Cloud SIEM?
+
+An insight is a group of signals clustered around a single entity, created when the sum of their severity scores crosses an activity score threshold, 12 by default, within a certain timeframe, 14 days by default.
+
+### What's the difference between a record, a signal, and an insight?
+
+A record is a parsed, mapped, and enriched log message. A signal is created when a record matches a rule. An insight is created when enough signals for the same entity accumulate enough severity to cross the activity score threshold.
+
+### How do you start investigating a Cloud SIEM insight?
+
+Open the insight to see its entities, signals, and timeline, then try to answer who, what, where, when, why, and how the event occurred. You can also pivot to Sumo Logic search using the Sumo Logic Search context action for deeper investigation.
+
+### What's the best software to support Tier 1 and Tier 2 SOC analysts?
+
+Cloud SIEM supports Tier 1 and Tier 2 SOC analysts with prioritized insights, automatic entity correlation, and a low false-positive rate, so analysts spend less time triaging and more time on actual investigation. Cloud SOAR then adds playbook automation so Tier 1 analysts can respond consistently, freeing Tier 2 analysts for deeper threat hunting.
+
+### What is the MITRE ATT&CK matrix used for in Cloud SIEM?
+
+Cloud SIEM uses the MITRE ATT&CK framework's tactic names for the stages of signals and the names of insights, helping you understand how or why an event occurred and prioritize which techniques matter most to your organization.
 
 ## Additional resources
 

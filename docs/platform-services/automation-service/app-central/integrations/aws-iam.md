@@ -69,20 +69,11 @@ For information about AWS IAM, see [IAM documentation](https://docs.aws.amazon.c
 
 ## Change Log
 
-* October 1, 2019 - First upload
-* June 21, 2023 (v1.1) - Updated the integration with Environmental Variables
-* January 16, 2024 (v1.2)
-    + Changed the field type of the Access key to password
-    + Updated action: Get User (Table View issue fixed)
-* January 24, 2024 (v1.3)
-    + Added New Action: Update Access Key
-* February 5, 2024 (v1.4)
-    + Added New Action: Get Access Key Last Used
-* February 8, 2024 (v1.5)
-    * A bug has been addressed in the actions listed below:
-        * Detach Policy
-        * List Access Key For User
-        * List Group
-        * List Instance Profiles
-        * List Instance Profiles For Role
-        * List Roles
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | February 8, 2024 | Fixed a bug affecting the following actions: **Detach Policy**, **List Access Key For User**, **List Group**, **List Instance Profiles**, **List Instance Profiles For Role**, and **List Roles**. |
+| v1.4 | February 5, 2024 | Added a new action: **Get Access Key Last Used**. |
+| v1.3 | January 24, 2024 | Added a new action: **Update Access Key**. |
+| v1.2 | January 16, 2024 | <ul><li>Changed the field type of the Access Key to password.</li><li>Updated the **Get User** action to fix a Table View issue.</li></ul> |
+| v1.1 | June 21, 2023 | Updated the integration with Environmental Variables. |
+| | October 1, 2019 | Initial release of the AWS IAM integration. |

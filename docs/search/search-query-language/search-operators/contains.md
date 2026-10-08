@@ -2,6 +2,7 @@
 id: contains
 title: contains Search Operator
 sidebar_label: contains
+description: Use the contains operator to compare string values of two parsed fields and check if one field's value exists within another.
 ---
 
 The `contains` operator compares string values of two [parsed](/docs/search/search-query-language/parse-operators) fields and returns a boolean result based on whether the second field's value exists in the first.
@@ -25,7 +26,9 @@ The `contains` operator compares string values of two [parsed](/docs/search/sear
 * Returns `true` when the value from field2 was found and `false` when the value was not found in field1.
 * Returns `true` if field1 and field2 are empty, and `false` when only one is empty.
 
-## Example
+## Examples
+
+### Filter rows where one field exists within another
 
 Given the following example log:
 
@@ -37,4 +40,15 @@ Parsing the log so the fields are `city` with the value "San Francisco" and `a
 
 ```sumo
 | where contains(address, city)
+```
+
+### Return a boolean field indicating whether a path contains a string
+
+Use `contains` with `as` to create a boolean field for downstream filtering:
+
+```sumo
+_sourceCategory=Apache/Access
+| parse "GET * HTTP" as url
+| contains(url, "/admin") as is_admin_request
+| where is_admin_request = true
 ```

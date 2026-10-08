@@ -6,7 +6,9 @@ description: Master Sumo Logic's search query language to run advanced log searc
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
+import MobotCallout from '../../reuse/mobot-callout.md';
 
+<MobotCallout/>
 
 In this section, we'll introduce the following concepts:
 

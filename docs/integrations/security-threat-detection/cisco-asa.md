@@ -166,3 +166,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Cisco ASA Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/cisco-asa/) to automate response actions directly from Cloud SOAR playbooks.

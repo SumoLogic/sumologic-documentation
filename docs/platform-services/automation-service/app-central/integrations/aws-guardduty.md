@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: Jul 23, 2026***
 
 Interact with AWS GuardDuty during incident investigation.
 
@@ -73,6 +73,9 @@ For information about AWS GuardDuty, see [GuardDuty documentation](https://docs.
 
 ## Change Log
 
-* January 24, 2020 - First upload
-* March 10, 2022 - Logo
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | July 23, 2026 | Resolved an issue where the integration fails due to deprecated dependency warnings. |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| | March 10, 2022 | Updated the logo in AWS GuardDuty integration. |
+| | January 24, 2020 | Initial release of the AWS GuardDuty integration. |

@@ -2,7 +2,7 @@
 id: mimecast-source
 title: Mimecast Source
 sidebar_label: Mimecast
-tags:
+keywords:
   - cloud-to-cloud
   - mimecast
 description: The Mimecast source collects SIEM, DLP, Audit, and Hold Message List data from the Mimecast API.
@@ -14,6 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/Mimecast-icon.png')} alt="Mimecast icon" width="50"/>
 
 The Mimecast Source supports collecting SIEM, DLP, Audit, and Hold Message List data from the [Mimecast API](https://developer.services.mimecast.com/apis). It securely stores the required authentication, scheduling, and state tracking information.
+
+:::note
+Upgrade the Mimecast source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 ## Data collected
 
@@ -57,8 +61,8 @@ To configure a Mimecast Source:
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
-After configuring the Box source, consider installing the Sumo Logic app for [Mimecast](/docs/integrations/saas-cloud/mimecast/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::tip
+After configuring the Mimecast source, consider installing the Sumo Logic app for [Mimecast](/docs/integrations/saas-cloud/mimecast/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -124,3 +128,7 @@ To resolve these errors:
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Mimecast Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mimecast/) to automate response actions directly from Cloud SOAR playbooks.

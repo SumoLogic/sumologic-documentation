@@ -1,6 +1,6 @@
 ---
 id: close-cancel-sumo-account  
-title: Close or Cancel a Sumo Logic Account (Free, Trial, or Paid Plans)  
+title: Close or Cancel Your Sumo Logic Account
 sidebar_label: Close or Cancel Your Account  
 description: Learn how to permanently close a Sumo Logic Free or Trial account or cancel a paid account like Essentials or Enterprise.  
 ---

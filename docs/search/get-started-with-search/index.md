@@ -6,8 +6,11 @@ description: Start here to begin exploring your data in Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
+import MobotCallout from '../../reuse/mobot-callout.md';
 
 Learn how to build and run searches, review logs, and more.
+
+<MobotCallout/>
 
 :::training Micro Lesson
 Watch this micro lesson to get an introduction to search.

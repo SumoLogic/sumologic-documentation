@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-sharepoint.png')} alt="Microsoft SharePoint icon" width="100"/>
 
-***Version: 1.1  
-Updated: February 24, 2026***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Utilize Microsoft SharePoint lists, files, and folders during incident investigations.
 
@@ -123,5 +123,8 @@ For information about Microsoft SharePoint, see [SharePoint documentation](https
 
 ## Change Log
 
-* October 10, 2025 - First upload
-* February 24, 2026 - Improved the Folder Relative URL hint to provide clearer guidance on entering the correct relative path format.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | February 24, 2026 | Improved the **Folder Relative URL** hint to provide clearer guidance on entering the correct relative path format. |
+| | October 10, 2025 | Initial release of the Microsoft SharePoint (Graph) integration. |

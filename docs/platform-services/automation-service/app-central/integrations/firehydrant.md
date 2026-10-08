@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/firehydrant.png')} alt="firehydrant" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 **FireHydrant** is incident management platform that creates consistency across the entire incident management process.
 
@@ -56,5 +56,8 @@ For information about FireHydrant, see [FireHydrant documentation](https://docs.
   
 ## Change Log
 
-* November 29, 2022 - First upload
-* July 18, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 18, 2023 | Updated the integration with Environmental Variables. |
+| | November 29, 2022 | First upload. |

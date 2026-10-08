@@ -28,7 +28,7 @@ You need the `Manage Event Extraction Rules` [role capability](/docs/manage/user
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the Event Extraction Rules page, in the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Event Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Event Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Event Extraction Rules**. 
 1. Click the **+ Add Event Extraction Rule** button on the top right of the table.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/event-extraction-rule.png')} alt="Event extraction rule" style={{border: '1px solid gray'}} width="800"/>
-1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rule.png')} alt="Create event extraction rule" style={{border: '1px solid gray'}} width="500"/>
+1. Enter the following options in the **Create New Event Extraction Rule** page:<br/><img src={useBaseUrl('img/manage/event-extraction-rule/create-event-extraction-rules.png')} alt="Create event extraction rule" style={{border: '1px solid gray'}} width="500"/>
     1. **Log Query**. Enter the log search query for the event to filter the logs. 
         :::note
           - To optimize query performance, limit log volume, parse and extract only the necessary fields, and use the `fields` operator in [denylist mode](/docs/search/search-query-language/search-operators/fields/#denylist) to exclude unnecessary fields and return only what’s required for event correlation and visualization.".
@@ -82,6 +82,104 @@ To delete the existing event extraction rule, follow the below steps:
 1. Navigate to the respective event rule which you wish to edit.
 1. On the left pane, click **Delete** button.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-event-extraction-rules.png')} alt="Delete event extraction rule" style={{border: '1px solid gray'}} width="400"/>
 1. In the **Delete [rule name] item** pop-up, click on **Delete**.<br/><img src={useBaseUrl('img/manage/event-extraction-rule/delete-confirm-event-extraction-rule.png')} alt="Delete confirm event extraction rule" style={{border: '1px solid gray'}} width="400"/>
+
+:::note
+A status of **Internal Cache Cleanup in Progress** means your requested data has already been deleted successfully. The remaining cache cleanup is an internal background operation managed by Sumo Logic and may take additional time to complete before the request is marked as fully complete.
+:::
+
+## Examples
+
+Cloud environments such as AWS CloudTrail, Azure Activity Logs, and GCP Audit Logs produce massive volumes of audit logs, and the events that matter are easily buried among millions of routine API calls. Event Extraction Rules surface those high-value events so you can quickly answer questions such as:
+
+- Who deleted an IAM role?
+- Who modified a security group?
+- When was an S3 bucket policy changed?
+- Who disabled logging?
+- When was a production instance terminated?
+
+The following examples use AWS CloudTrail logs to show how a rule turns a raw audit log into a meaningful, queryable event.
+
+### Detect IAM role deletions
+
+Track every time an IAM role is removed so you can correlate permission changes with incidents and speed up security investigations. Given the following raw log:
+
+```json
+{
+  "eventName": "DeleteRole",
+  "eventSource": "iam.amazonaws.com",
+  "userIdentity": {
+    "userName": "john.doe"
+  },
+  "awsRegion": "us-east-1",
+  "eventTime": "2026-05-01T12:30:00Z"
+}
+```
+
+Configure the rule with the following log query:
+
+```
+_sourceCategory=aws/cloudtrail
+| json "eventName" as eventName
+| json "userIdentity.userName" as user
+| json "awsRegion" as region
+| where eventName = "DeleteRole"
+```
+
+The rule extracts an **IAM Role Deleted** event with the fields `user = john.doe`, `region = us-east-1`, `resource = IAM Role`, and `timestamp = 2026-05-01T12:30:00Z`.
+
+### Track S3 bucket policy changes
+
+Capture every change to an S3 bucket policy so you can correlate later S3 access failures with the policy change that caused them. Given the following raw log:
+
+```json
+{
+  "eventName": "PutBucketPolicy",
+  "eventSource": "s3.amazonaws.com",
+  "requestParameters": {
+    "bucketName": "customer-prod-data"
+  }
+}
+```
+
+Configure the rule with the following log query:
+
+```
+_sourceCategory=aws/cloudtrail
+| json "eventName" as eventName
+| json "requestParameters.bucketName" as bucketName
+| where eventName = "PutBucketPolicy"
+```
+
+The rule extracts an **S3 Bucket Policy Modified** event for the `customer-prod-data` bucket.
+
+### Monitor production instance terminations
+
+Flag when a production EC2 instance is terminated so you can connect infrastructure failures and alerts to the deployments or user actions behind them. Given the following raw log:
+
+```json
+{
+  "eventName": "TerminateInstances",
+  "eventSource": "ec2.amazonaws.com",
+  "requestParameters": {
+    "instancesSet": {
+      "items": [
+        { "instanceId": "i-123456" }
+      ]
+    }
+  }
+}
+```
+
+Configure the rule with the following log query:
+
+```
+_sourceCategory=aws/cloudtrail
+| json "eventName" as eventName
+| json "requestParameters.instancesSet.items[0].instanceId" as instanceId
+| where eventName = "TerminateInstances"
+```
+
+The rule extracts a **Production Instance Terminated** event for instance `i-123456`.
 
 ## Limitations
 

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/automox.png')} alt="automox" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 03, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 Automox is a cloud-native patching platform that automates patch management across Windows, macOS, Linux, and third-party software including Adobe, Java, Firefox, Chrome, and Windows.
 
@@ -57,5 +57,12 @@ For information about Automox, see [Automox documentation](https://docs.automox.
 
 ## Change Log
 
-* July 7, 2022 - First upload
-* July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 3, 2023 | Updated the integration with environmental variables. |
+| | July 7, 2022 | Initial release of the Automox integration. |
+
+## Additional resources
+
+For Automox, Sumo Logic offers the [Automox source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/automox-source/) and the [Automox app](/docs/integrations/saas-cloud/automox/) to collect and visualize your Automox data.

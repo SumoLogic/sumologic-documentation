@@ -28,5 +28,7 @@ Role search filters affect the data that a viewer can see in the shared dashboar
 The **Change Data Access Level of Dashboards** role capability is required for the dashboard creator, or user that has **Edit** or **Manage** permission, to change the data access level for the dashboard.
 
 To change the Data Access Level for a dashboard.
-1. Choose **Data Access Level** in the dashboard menu.<br/><img src={useBaseUrl('img/dashboards/data-access-level.png')} alt="Data access level" width="700"/>
-1. On the **Change Data Access Level** popup, select the desired data access level.<br/><img src={useBaseUrl('img/dashboards/data-access-level-options.png')} alt="Data access level options" width="400"/>
+
+1. Choose **Data Access Level** in the dashboard menu.<br/><img src={useBaseUrl('img/dashboards/data-access-level.png')} alt="data-access-level" style={{border: '1px solid gray'}} width="400"/>
+1. On the **Change Data Access Level** popup, select the desired data access level.<br/><img src={useBaseUrl('img/dashboards/data-access-level-options.png')} alt="data-access-level-options" width="400"/>
+

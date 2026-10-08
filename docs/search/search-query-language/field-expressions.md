@@ -5,6 +5,10 @@ sidebar_label: Field Expressions
 description: Understand how to write field expressions in search queries to calculate, transform, and filter log data.
 ---
 
+import MobotCallout from '../../reuse/mobot-callout.md';
+
+<MobotCallout/>
+
 The Sumo Logic Query Language can be used to create fields based on calculated expressions, such as:
 
 ```sumo

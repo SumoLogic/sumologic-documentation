@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/freshservice.png')} alt="freshservice" width="80"/>
 
-***Version: 1.8  
-Updated: Dec 30, 2025***
+***Version: 1.9  
+Updated: April 29, 2026***
 
 Freshservice is a cloud-based IT Help Desk and service management solution that enables organizations to simplify their IT operations. The solution offers features that include a ticketing system, self-service portal, and knowledge-base.
 
@@ -68,13 +68,13 @@ Providing an invalid or unauthorized Workspace ID may result in a 400 Bad Reques
 
 ## Change Log
 
-* April 4, 2022 - First upload
-* June 24, 2022 - Daemon action added
-* June 29, 2022
-	+ Added new action: Freshservice Tickets Daemon
-	+ Updated action: Get Tickets
-* March 22, 2023 (v1.4)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables)
-* July 11, 2023 (v1.5) - Removed leading/trailing spaces
-* Sept 11, 2024(v1.6) - Updated the Update Ticket action
-* Dec 30, 2025 (v1.8) - Create and Update Ticket actions now support an optional Workspace ID. Updated existing custom ticket fields.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.9 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.8 | Dec 30, 2025 | The **Create Ticket** and **Update Ticket** actions now support an optional Workspace ID. Updated existing custom ticket fields. |
+| v1.6 | Sept 11, 2024 | Updated the **Update Ticket** action. |
+| v1.5 | July 11, 2023 | Removed leading/trailing spaces. |
+| v1.4 | March 22, 2023 | Updated the integration fields with Environmental Variables. |
+| | June 29, 2022 | <ul><li>Added a new action: **Freshservice Tickets Daemon**.</li><li>Updated the **Get Tickets** action.</li></ul> |
+| | June 24, 2022 | Added a daemon action. |
+| | April 4, 2022 | First upload. |

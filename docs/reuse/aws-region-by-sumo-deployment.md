@@ -4,8 +4,9 @@ The following table describes the AWS regions used by each Sumo Logic deployment
 |:----|:----|:---|:-----|
 | AU | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/api/   |
 | CA | Canada (Central) | ca-central-1 | https://api.ca.sumologic.com/api/   |
-| CH | Swizerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/api/ |
+| CH | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/api/ |
 | DE | EU (Frankfurt)  | eu-central-1 | https://api.de.sumologic.com/api/   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/api/ |
 | EU | EU (Ireland)    | eu-west-1  | https://api.eu.sumologic.com/api/   |
 | FED | US East (N. Virginia) | us-east-1  | https://api.fed.sumologic.com/api/  |
 | JP  | Asia Pacific (Tokyo)  | ap-northeast-1 | https://api.jp.sumologic.com/api/  |

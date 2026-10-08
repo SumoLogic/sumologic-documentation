@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Use the lookup search operator
 
-The [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) in the threat intelligence datastore contain threat indicators supplied by third party intel vendors and maintained by Sumo Logic: <br/><img src={useBaseUrl('img/security/global-feed-threat-intelligence-tab-example.png')} alt="Global feed in the Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
+The [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) in the threat intelligence datastore contain threat indicators supplied by third party intel vendors and maintained by Sumo Logic: <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence" style={{border: '1px solid gray'}} width="800" />
 
 Any Sumo Logic user can use the [`lookup`](/docs/search/search-query-language/search-operators/lookup/) search operator to point to a Sumo Logic threat intelligence source to search for potential threats:
 * `SumoLogic_ThreatIntel`. Use `sumo://threat/i471` in log search queries.

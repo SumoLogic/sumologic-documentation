@@ -23,6 +23,7 @@ Use this API to customize parsers. The parsers library contains the parsers used
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/parsersLibraryManagement   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/parsersLibraryManagement   |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/parsersLibraryManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/parsersLibraryManagement  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/parsersLibraryManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/parsersLibraryManagement  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/parsersLibraryManagement   |
