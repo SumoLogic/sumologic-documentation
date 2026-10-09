@@ -537,6 +537,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/onelogin-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source',
@@ -659,7 +660,7 @@ module.exports = {
           items: [
             {
               type: 'category',
-              label: 'v5 (latest)',
+              label: 'v6 (latest)',
               collapsible: true,
               collapsed: true,
               items: [
@@ -687,6 +688,17 @@ module.exports = {
                     'send-data/kubernetes/troubleshoot-collection/common-issues',
                   ],
                 },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'v6 Upgrade Guide',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v6/important-changes',
+                'send-data/kubernetes/v6/how-to-upgrade',
+                'send-data/kubernetes/v6/full-list-of-changes',
               ],
             },
             {
@@ -2807,6 +2819,7 @@ integrations: [
           'integrations/saas-cloud/microsoft-graph-azure-ad-reporting',
           'integrations/saas-cloud/netskope-webtx',
           'integrations/saas-cloud/netskope-webtx-streaming',
+          'integrations/saas-cloud/openai',
           'integrations/saas-cloud/opsgenie',
           'integrations/saas-cloud/pagerduty-v2',
           'integrations/saas-cloud/pagerduty-v3',

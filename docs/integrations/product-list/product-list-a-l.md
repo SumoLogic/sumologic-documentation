@@ -2,11 +2,16 @@
 id: product-list-a-l
 title: Product List A-L
 description: This article lists all the products A-L that Sumo Logic integrates with.
+keywords:
+  - sumo logic integrations
+  - product list
+  - vendors
+  - apps
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Following are the vendors and products that Sumo Logic integrates with, listed A-L. We've divided the list into two articles to make the list easier to navigate. For the remainder, see [Product List M-Z](/docs/integrations/product-list/product-list-m-z/).
+This article lists every vendor and product, A through L, that Sumo Logic integrates with, along with links to the app, automation, Cloud SIEM, and collector integrations available for each. We've divided the list into two articles to make the list easier to navigate. For the remainder, see [Product List M-Z](/docs/integrations/product-list/product-list-m-z/).
 
 For descriptions of the different types of integrations Sumo Logic offers, see [Product List](/docs/integrations/product-list/).
 
@@ -152,7 +157,7 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 |  <img src={useBaseUrl('img/send-data/cato-logo.png')} alt="Cato icon" width="50"/>   | [Cato Networks](https://www.catonetworks.com/)  | 	App: [Cato Networks](/docs/integrations/saas-cloud/cato-networks/) <br/>Cloud SIEM integration: [Cato Networks](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/53e043b0-76e3-471a-84ec-0266a4f3b279.md) <br/>Collector: [Cato Networks Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source/) |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/censys.png')} alt="Censys icon" width="75"/> | [Censys](https://censys.com/) | Automation integrations: <br/>- [Censys](/docs/platform-services/automation-service/app-central/integrations/censys/) <br/>- [Censys V2](/docs/platform-services/automation-service/app-central/integrations/censys-v2/) <br/>- [Censys V3](/docs/platform-services/automation-service/app-central/integrations/censys-v3/) |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/certego.png')} alt="Certego icon" width="75"/>  | [Certego](https://www.certego.net/) | Automation integration: [Certego](/docs/platform-services/automation-service/app-central/integrations/certego/) |
-|  <img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Chatgpt Compliance icon" width="50"/>   | [ChatGPT Compliance](https://chatgpt.com/)  | App: [ChatGPT Compliance](/docs/integrations/saas-cloud/chatgpt-compliance/) <br/>Collector: [ChatGPT Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source) |
+|  <img src={useBaseUrl('img/send-data/chatgpt-compliance.png')} alt="Chatgpt Compliance icon" width="50"/>   | [ChatGPT Compliance](https://chatgpt.com/)  | App: [ChatGPT Compliance](/docs/integrations/saas-cloud/chatgpt-compliance/) <br/>App: [OpenAI](/docs/integrations/saas-cloud/openai/) <br/>Collector: [ChatGPT Compliance Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/chatgpt-compliance-source) |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/check-host.png')} alt="Check Host icon" width="75"/>  | [Check-Host](https://check-host.net/) | Automation integration: [Check-Host](/docs/platform-services/automation-service/app-central/integrations/check-host/) |
 |  <img src={useBaseUrl('img/integrations/misc/checkpoint-logo.png')} alt="Checkpoint icon" width="100"/>   | [Check Point](https://www.checkpoint.com/)  | Automation integration: [Check Point](/docs/platform-services/automation-service/app-central/integrations/check-point/) <br/>Cloud SIEM integration: [Check Point](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/vendors/6ee43776-3c2c-49b9-a5cf-51309e815aa3.md) <br/>Community app: [Sumo Logic for Check Point](https://github.com/SumoLogic/sumologic-content/tree/master/Checkpoint) |
 |  <img src={useBaseUrl('img/send-data/chef-logo.png')} alt="Chef icon" width="50"/>   | [Chef](https://www.chef.io/)  | 	Collector: [Install OpenTelemetry Collector Using Chef](/docs/send-data/opentelemetry-collector/install-collector/chef/) <br/>Community app: [Sumo Logic for Chef](https://github.com/SumoLogic/sumologic-content/tree/master/Chef) |
@@ -349,3 +354,25 @@ For descriptions of the different types of integrations Sumo Logic offers, see [
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/logpoint.png')} alt="Logpoint icon" width="100"/> | [LogPoint](https://www.logpoint.com/en/) | Automation integration: [LogPoint](/docs/platform-services/automation-service/app-central/integrations/logpoint/) |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/logrhythm.png')} alt="Logrhythm icon" width="100"/> | [LogRhythm](https://logrhythm.com/) | Automation integration: [LogRhythm](/docs/platform-services/automation-service/app-central/integrations/logrhythm/) |
 |  <img src={useBaseUrl('img/integrations/misc/lucidum-logo.png')} alt="Lucidum icon" width="50"/>   |  [Lucidum](https://lucidum.io/) | Partner integration: [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)	 |
+
+## FAQ
+
+### How many vendors and products does Sumo Logic integrate with?
+
+Sumo Logic integrates with hundreds of vendors and products, split alphabetically across two articles: this page covers A-L, and [Product List M-Z](/docs/integrations/product-list/product-list-m-z/) covers the rest.
+
+### What types of integrations does Sumo Logic offer?
+
+Depending on the vendor, Sumo Logic offers apps (pre-built dashboards), automation integrations (App Central playbooks and actions), Cloud SIEM integrations (parsers and rules), and collectors (sources for ingesting data), as described in [Product List](/docs/integrations/product-list/).
+
+### Is your vendor or product supported by Sumo Logic?
+
+Search this page or [Product List M-Z](/docs/integrations/product-list/product-list-m-z/) for the vendor's name. If it isn't listed, check with your Sumo Logic account team, since new integrations are added regularly.
+
+### Can a single vendor have multiple types of Sumo Logic integrations?
+
+Yes. Many vendors, such as AWS and Atlassian, have several integration types at once, including apps, automation integrations, Cloud SIEM integrations, and collectors, each linked separately in this list.
+
+### Are community-built integrations included in this list?
+
+Yes. Some entries link to community apps built and maintained outside of Sumo Logic's official app catalog, in addition to the officially supported apps, automation integrations, and collectors.
