@@ -878,17 +878,21 @@ The top navigation bar is configured in [`docusaurus.config.js`](https://docusau
 
 ## Patents and trademarks
 
-Protecting our patents and trademarks is important to do correctly. We do not want to expose the company to a loss of trademark or patent just because we did not list it correctly.
+Protecting our patents and trademarks is important to do correctly. Failing to mark a trademarked term can put the company at risk of losing that trademark.
 
-This is a partial list of trademarked terms, which should be capitalized exactly as shown below.
+### Trademarks
 
-* Sumo Logic
-* Big Data for Real Time IT
-* Log Reduce
-* Elastic Log Processing
-* Push Analytics
+Use the trademark (™) or registered (®) symbol on the first reference to a trademarked term on a page, then drop it. The following terms must use the symbol shown.
 
-Never use Sumo Logic in the plural or possessive form.
+* LogReduce®
+
+Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use Sumo Logic in the plural or possessive form.
+
+For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
+
+### Patents
+
+Do not cite patent numbers in docs. Sumo Logic's patent notice is maintained at [Patents](https://www.sumologic.com/legal/patents), which satisfies the legal marking requirement under 35 U.S.C. § 287(a).
 
 ## Preview releases
 
