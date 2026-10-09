@@ -27,11 +27,11 @@ If a search completes in under about a minute, pin it manually so you can find i
 
 1. Enter a query in the search box and click **Start Search**.
 1. After the search completes, click the three-dot kebab icon and click **Run in Background (Pin)** from the provided options. <br/> <img src={useBaseUrl('img/search/get-started-search/search-page/pin-search-menu-option.png')} alt="Run in Background (Pin) menu option" style={{border: '1px solid gray'}} width="600"/>
-1. A message confirms where you can find the pinned search later. Since the search already finished, you won't receive an email notification. The pinned search is named by default with the name of the search. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/pinned-message-no-email.png')} alt="Pinned search confirmation message" style={{border: '1px solid gray'}} width="500" />
+1. A message confirms where you can find the pinned search later. Since the search already finished, you will not receive an email notification. The pinned search is named by default with the name of the search. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/pinned-message-no-email.png')} alt="Pinned search confirmation message" style={{border: '1px solid gray'}} width="500" />
 1. To change the name of the pinned search, double-click the **Search** tab to activate the name field and enter a new name.
 1. To preserve the pinned search, follow the steps in [Save a pinned search](#save-a-pinned-search).
 1. To unpin the search, click the three-dot kebab icon and click **Unpin** from the provided options.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/unpin-search-menu-option.png')} alt="Unpin menu option" style={{border: '1px solid gray'}} width="600"/>
-1. A confirmation dialog appears, since unpinning closes the tab and you won't be able to access the results. Click **Unpin** to confirm. The search is removed from the **Pinned searches** list. (Removing an instance of a saved search from the **Pinned searches** list does not delete the saved search from your **Personal** folder.)<br/><img src={useBaseUrl('img/search/get-started-search/search-page/confirm-unpin-search-dialog.png')} alt="Confirm Unpin Search dialog" style={{border: '1px solid gray'}} width="350"/>
+1. A confirmation dialog appears, since unpinning closes the tab and you will not be able to access the results. Click **Unpin** to confirm. The search is removed from the **Pinned searches** list. (Removing an instance of a saved search from the **Pinned searches** list does not delete the saved search from your **Personal** folder.)<br/><img src={useBaseUrl('img/search/get-started-search/search-page/confirm-unpin-search-dialog.png')} alt="Confirm Unpin Search dialog" style={{border: '1px solid gray'}} width="350"/>
 
 ## Run a slow search in the background automatically
 
@@ -39,7 +39,7 @@ If a log search's elapsed time exceeds about one minute, a banner appears below 
 
 Click **Run in Background** to pin the search, the same as [pinning a search manually](#pin-and-unpin-a-search). Because the search is still running, a message confirms where you can find the search later, and that you'll receive an email notification when it completes.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/background-search-pinned-message.png')} alt="Message confirming your background search is available as a pinned search" style={{border: '1px solid gray'}} width="700" />
 
-Once pinned, the search appears in your **Pinned searches** list, and when it completes, you receive an email notification with a link to the results, so you don't need to keep the **Search** page open while you wait.
+Once pinned, the search appears in your **Pinned searches** list, and when it completes, you receive an email notification with a link to the results, so you do not need to keep the **Search** page open while you wait.
 
 Limitations:
 * This automatic prompt only applies to log searches. It does not appear for metrics searches.
