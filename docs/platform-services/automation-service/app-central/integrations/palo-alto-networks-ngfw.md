@@ -51,9 +51,9 @@ For information about Palo Alto Networks NGFW, see [Palo Alto Networks Next-Gene
 
 ## Change Log
 
-* January 14, 2020 - First upload
-* July 11, 2023 (v1.3)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from Palo Alto Networks NGFW OIF to Palo Alto Networks NGFW
-* May 29, 2024 (v1.4) - Docker updated
-* July 23, 2026 (v1.5) - Resolved an issue where the integration fails due to deprecated dependency warnings.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | July 23, 2026 | Resolved an issue where the integration fails due to deprecated dependency warnings. |
+| v1.4 | May 29, 2024 | Updated the Docker image. |
+| v1.3 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Palo Alto Networks NGFW OIF to Palo Alto Networks NGFW.</li></ul> |
+| | January 14, 2020 | Initial release of the Palo Alto Networks NGFW integration. |

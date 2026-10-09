@@ -53,18 +53,22 @@ You can switch back to the list view by clicking the **Show List** icon, near th
 
 You can use the **Filters** area near the top of the page to narrow down the insights that appear on the insights page. You can filter by:
 
-* Assignee
-* Custom resolution
-* Created
-* Entity
-* Event Time
-* Name
-* Resolution
-* Rule ID
-* Severity
-* Sensor Zone (Record)
-* Status
-* Tags
+* **Assignee**. The user the insight is assigned to.
+* **Custom resolution**. A [custom sub-resolution](/docs/cse/administration/manage-custom-insight-resolutions/#about-insight-resolutions) applied when a closed insight was resolved. To use this filter, ensure the **Status** filter is not set to "is not closed", since only closed insights have a resolution.
+* **Created**. The date and time the insight was created.
+* **Entity**. The [entity](/docs/cse/records-signals-entities-insights/view-manage-entities) the insight is associated with (its primary entity).
+* **Event Time**. The date and time of the event associated with the insight's signals, as opposed to when the insight itself was created.
+* **Name**. The insight's name, made up of the insight ID and the MITRE stage or stages associated with its signals.
+* **Organizations**. Available if you're logged in to a parent organization with child organizations that also use Cloud SIEM. Use it to choose which child organizations' insights appear on the [multi-insights list page](#view-insights-in-child-organizations). Select one or more organizations from the dropdown menu.
+   :::note
+   You can select up to 100 organizations in the **Organizations** filter. By default, no organizations are selected, which means insights from all child organizations are shown.
+   :::
+* **Resolution**. One of the four built-in [resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) selected when a closed insight was resolved: Duplicate, False Positive, No Action, or Resolved.
+* **Rule ID**. The ID of the [rule](/docs/cse/rules/) that generated the signal or signals which triggered the insight.
+* **Severity**. The severity of the insight, based on the configured entity activity score threshold used for insight generation.
+* **Sensor Zone (Record)**. The [sensor zone](/docs/cse/administration/using-sensor-zones/) attribute attached to a record, used to distinguish entities that share the same private IP address but come from different network zones (for example, different cloud regions).
+* **Status**. The insight's current [workflow status](/docs/cse/administration/manage-custom-insight-statuses/): New, In Progress, Closed, or any custom status your organization has created.
+* **Tags**. Any [tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules) that have been assigned to the insight.
 
 ### Bulk update insights
 
@@ -281,7 +285,7 @@ By default, this view shows the same entities that are displayed on the list vie
 
 In addition, the following can appear in the graph:
 * **Detected entities**. Entities with a *detected* relationship will be connected with solid lines. A *detected relationship* is when a relationship is detected between entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
-* **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly. For more information about threat indicators, see [View threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui).
+* **Threat indicators**. Any entity with a threat indicator will have an additional icon in the upper right. If the threat indicator is Malicious or Suspicious, the entity will be highlighted in red or yellow accordingly. For more information about threat indicators, see [How to view threat indicator labels in the Cloud SIEM UI](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-to-view-threat-indicator-labels-in-the-cloud-siem-ui).
 * **Hover**. If you hover over an entity, it and all connections to it will be highlighted in blue. If its value is not fully visible by default, the full value will be displayed.
 
 :::training Micro Lesson

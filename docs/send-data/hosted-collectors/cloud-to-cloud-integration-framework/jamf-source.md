@@ -2,7 +2,7 @@
 id: jamf-source
 title: Jamf Source
 sidebar_label: Jamf
-tags:
+keywords:
   - cloud-to-cloud
   - jamf
 description: Learn how to collect data from the Jamf platform.

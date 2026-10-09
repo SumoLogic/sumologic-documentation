@@ -268,10 +268,12 @@ Email Gateway
 
 ## Change Log
 
-* October 27, 2021 - First upload
-* March 10, 2022 - Logo
-* October 6, 2023 (v2.2) - Integration Updated
-* March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
-* March 21, 2024 (v2.4) - Resolved an issue related to the Email Body
-* May 9, 2024 (v2.5) - A new field has been added to the integration resource for specifying the folder or path to search within 
-* May 16, 2025 (v2.6) - Enhanced attachment handling to ensure accurate detection and processing.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.6 | May 16, 2025 | Enhanced attachment handling to ensure accurate detection and processing. |
+| v2.5 | May 9, 2024 | Added a new field to the integration resource for specifying the folder or path to search within. |
+| v2.4 | March 21, 2024 | Resolved an issue related to the email body. |
+| v2.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v2.2 | October 6, 2023 | Updated the integration. |
+| | March 10, 2022 | Updated the logo in Microsoft EWS Daemon integration. |
+| | October 27, 2021 | Initial release of the Microsoft EWS Daemon integration. |

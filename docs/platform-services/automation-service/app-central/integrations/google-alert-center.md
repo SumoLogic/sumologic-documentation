@@ -68,4 +68,6 @@ For information about Google Alert Center, see [Google Alert Center documentatio
 
 ## Change Log
 
-* December 12, 2023 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | December 12, 2023 | First upload. |

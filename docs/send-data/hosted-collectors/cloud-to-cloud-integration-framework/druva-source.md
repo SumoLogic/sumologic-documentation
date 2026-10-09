@@ -2,7 +2,7 @@
 id: druva-source
 title: Druva Source
 sidebar_label: Druva
-tags:
+keywords:
   - cloud-to-cloud
   - druva
 description: Learn how to configure the Druva Cloud-to-Cloud source setup in your Sumo Logic environment.

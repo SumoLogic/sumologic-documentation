@@ -51,9 +51,11 @@ For information about Druva, see [Druva documentation](https://help.druva.com/en
 
 ## Change Log
 
-* April 4, 2024 - First upload
-* April 29, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | April 4, 2024 | Initial release of the Druva integration. |
 
 ## Additional resources
 
-- For Druva, Sumo Logic offers the [Druva source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) and the [Druva app](/docs/integrations/saas-cloud/druva/) to collect and visualize your Druva data.
+For Druva, Sumo Logic offers the [Druva source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) and the [Druva app](/docs/integrations/saas-cloud/druva/) to collect and visualize your Druva data.

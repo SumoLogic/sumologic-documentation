@@ -2,7 +2,7 @@
 id: microsoft-exchange-trace-logs
 title: Microsoft Exchange Trace Logs
 sidebar_label: Microsoft Exchange Trace Logs
-tags:
+keywords:
   - cloud-to-cloud
   - microsoft-exchange-trace-logs
 description: The Microsoft Exchange Trace Logs Source collects a list of the message trace logs via the Microsoft Graph API.

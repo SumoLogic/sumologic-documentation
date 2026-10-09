@@ -57,7 +57,7 @@ If you’re sharing the Akamai Denials by Host search query in a dashboard with 
 
 When you add this to a dashboard, you’ll see the short name. When you click the link, it will open the Akamai denials by host search query.
 
-<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png')} alt="Akamai search query" style={{border: '1px solid gray'}} width="600>" />
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png')} alt="Akamai search query" style={{border: '1px solid gray'}} width="600" />
 
 #### Using a column for short name, and a prefix
 

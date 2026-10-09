@@ -164,7 +164,7 @@ AI tools and featured snippet algorithms favor pages where headings signal the q
 
 Only reframe headings where the question form is natural and specific. Do not reframe step headings like "Step 1: Configure the source" — those are correct as-is.
 
-For procedural sections, use a "How to X" statement (for example, `How to configure the source`), not "How do I X". Keep every heading in the second person or neutral phrasing, never the first person ("How do I", "What do I need").
+For procedural sections, use a "How to X" statement (for example, `How to configure the source`), not "How do I X". Keep every heading in the second person or neutral phrasing, never the first person ("How do I", "What do I need"). Note: FAQ questions are different — those use first person ("How do I X?", "Can I X?"); see Pattern 5.
 
 ### Pattern 4: Make facts citation-ready
 
