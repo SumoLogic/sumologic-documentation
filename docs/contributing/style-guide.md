@@ -717,7 +717,7 @@ When sizing images, use your discretion. For square logos, set the width to abou
 |:---------------|:-------------------|
 | <img src={useBaseUrl('img/contributing/logo-yes.png')} alt="Screenshot showing correctly sized logo" width="400"/> | <img src={useBaseUrl('img/contributing/logo-no.png')} alt="Screenshot showing oversized logo" width="440"/> |
 
-For wide logos (like [in this doc](/docs/integrations/microsoft-azure/iis-7/)), set the width to about 90-120px.
+For wide logos (like [in this doc](/docs/integrations/apps/microsoft-azure/iis-7/)), set the width to about 90-120px.
 
 ### Screenshots
 

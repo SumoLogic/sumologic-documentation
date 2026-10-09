@@ -55,7 +55,7 @@ To configure a Symantec Endpoint Security Source, follow the steps below:
 7. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Symantec Endpoint Security source, consider installing the Sumo Logic app for [Symantec Endpoint Security](/docs/integrations/saas-cloud/symantec-endpoint-security-service/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Symantec Endpoint Security source, consider installing the Sumo Logic app for [Symantec Endpoint Security](/docs/integrations/apps/saas-cloud/symantec-endpoint-security-service/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

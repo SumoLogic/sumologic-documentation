@@ -81,7 +81,7 @@ To configure a VMware Workspace One Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
-After configuring the VMware Workspace One source, consider installing the Sumo Logic app for [VMware Workspace One](/docs/integrations/saas-cloud/vmware-workspace-one/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the VMware Workspace One source, consider installing the Sumo Logic app for [VMware Workspace One](/docs/integrations/apps/saas-cloud/vmware-workspace-one/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -131,4 +131,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [VMware Workspace ONE Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/vmware-workspace-one/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [VMware Workspace ONE Automation Service Integration](/docs/integrations/automation-integrations/integrations/vmware-workspace-one/) to automate response actions directly from Cloud SOAR playbooks.

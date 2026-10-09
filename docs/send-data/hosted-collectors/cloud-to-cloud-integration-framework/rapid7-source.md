@@ -43,7 +43,7 @@ To configure an Rapid7 Source:
 1. Enter the **API Key** for authorization.
 
 :::info
-After configuring the Rapid7 source, consider installing the Sumo Logic app for [Rapid7](/docs/integrations/saas-cloud/rapid7/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Rapid7 source, consider installing the Sumo Logic app for [Rapid7](/docs/integrations/apps/saas-cloud/rapid7/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

@@ -27,7 +27,7 @@ Other metrics Source options are also available:
 
 After you set up a Source, metrics data is ingested automatically and available for query and visualization.
 
-To get started quickly after installing your Collector and Sources, you can install the [AWS EC2 Host Metrics app](/docs/integrations/amazon-aws/ec2-host-metrics/) with preconfigured searches and Dashboards, to analyze your metrics data. 
+To get started quickly after installing your Collector and Sources, you can install the [AWS EC2 Host Metrics app](/docs/integrations/apps/amazon-aws/ec2-host-metrics/) with preconfigured searches and Dashboards, to analyze your metrics data. 
 
 ## 3. Add your data to a dashboard
 

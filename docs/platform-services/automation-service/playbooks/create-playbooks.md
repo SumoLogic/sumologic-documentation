@@ -12,7 +12,7 @@ import ConvPlaybookLimits from '../../../reuse/conv-playbook-limits.md';
 
 ## View playbooks
 
-The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central).
+The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/integrations/playbook-templates/playbook-templates/#install-an-out-of-the-box-playbook-from-app-central).
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>The list of playbooks displays. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} style={{border:'1px solid gray'}} alt="Opened playbook" width="700"/>
@@ -20,7 +20,7 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/integrations/playbook-templates/playbook-templates/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
 
 :::tip
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
@@ -215,7 +215,7 @@ Perform the following steps to use the user choice responder variables in nodes 
 
 #### User choice nodes in out-of-the-box playbooks
 
-Here are just a few of the [out-of-the-box playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
+Here are just a few of the [out-of-the-box playbooks](/docs/integrations/playbook-templates/playbook-templates/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
 * 18 - DDoS
 * 21 - DLP Alert
 * 24 - DoS with Decision Tree
@@ -251,14 +251,14 @@ A filter node filters results from the preceding action based on the condition y
 
 ## Action types
 
-Every [automation integration](/docs/platform-services/automation-service/app-central/integrations/) contains different types of actions you can perform to help with incident remediation, such as sending notifications, adding additional information (enrichment), containment, and so on. Following are the different types of actions available in integrations:
+Every [automation integration](/docs/integrations/automation-integrations/integrations/) contains different types of actions you can perform to help with incident remediation, such as sending notifications, adding additional information (enrichment), containment, and so on. Following are the different types of actions available in integrations:
 * [**Containment**](#containment). Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
 * [**Custom**](#custom). Performs an action defined in a custom action YAML file.
 * [**Enrichment**](#enrichment). Enriches data with additional information, such as adding information about a known malicious IP address.
 * [**Notification**](#notification). Sends a notification, for example, an email or a post in a messaging service.
 * [**Scheduled**](#scheduled). Runs an action on a schedule once the playbook starts.
 
-Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
+Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/integrations/automation-integrations/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
 * **Get Entity** *(Enrichment)* - Get Entity details.
 * **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
 * **Add Comment To Insight** *(Notification)* - Add a comment to an existing Insight.
@@ -274,7 +274,7 @@ When you [add an action node to a playbook](#add-an-action-node-to-a-playbook), 
 1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
 1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
 1. Select **Action**.
-1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
+1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
 1. Click the **Type** field to select the type of action you want to perform. The drop-down menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
 1. Click the **Action** field to select the action to run in the playbook. Only actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-cloud-siem.png')} alt="Enrichment actions on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
 1. Proceed with the rest of the steps to [add an action node to a playbook](#add-an-action-node-to-a-playbook).
@@ -291,66 +291,66 @@ Containment actions perform some sort of response or remediation action, such as
 * Disconnect devices from the network
 
 Many integrations offer containment actions. Here are just a few:
-* [Active Directory V2](/docs/platform-services/automation-service/app-central/integrations/active-directory-v2/)
-* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
-* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
-* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
-* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
-* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
-* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
-* [Okta](/docs/platform-services/automation-service/app-central/integrations/okta/)
-* [OneLogin](/docs/platform-services/automation-service/app-central/integrations/onelogin/)
-* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
+* [Active Directory V2](/docs/integrations/automation-integrations/integrations/active-directory-v2/)
+* [AWS IAM](/docs/integrations/automation-integrations/integrations/aws-iam/)
+* [Azure AD](/docs/integrations/automation-integrations/integrations/azure-ad/)
+* [Cortex XDR](/docs/integrations/automation-integrations/integrations/cortex-xdr/)
+* [CrowdStrike Falcon](/docs/integrations/automation-integrations/integrations/crowdstrike-falcon/)
+* [Gmail](/docs/integrations/automation-integrations/integrations/gmail/)
+* [Microsoft Defender ATP](/docs/integrations/automation-integrations/integrations/microsoft-defender-atp/)
+* [Okta](/docs/integrations/automation-integrations/integrations/okta/)
+* [OneLogin](/docs/integrations/automation-integrations/integrations/onelogin/)
+* [Slack](/docs/integrations/automation-integrations/integrations/slack/)
 
 ### Custom
 
 Custom actions perform an activity defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
 
-A few [integrations](/docs/platform-services/automation-service/app-central/integrations/) also offer actions labelled as custom types:
-* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp)
-* [Triage Tools](/docs/platform-services/automation-service/app-central/integrations/triage-tools/)
+A few [integrations](/docs/integrations/automation-integrations/integrations/) also offer actions labelled as custom types:
+* [Microsoft Defender ATP](/docs/integrations/automation-integrations/integrations/microsoft-defender-atp)
+* [Triage Tools](/docs/integrations/automation-integrations/integrations/triage-tools/)
 
 ### Enrichment
 
 Enrichment actions enrich data with additional information, such as adding information about a known malicious IP address.
 
 Many integrations offer enrichment actions. Here are just a few:
-* [Abnormal Security](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/)
-* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
-* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
-* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
-* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
-* [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip/)
-* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
-* [IP Quality Score](/docs/platform-services/automation-service/app-central/integrations/ip-quality-score/)
-* [Salesforce](/docs/platform-services/automation-service/app-central/integrations/salesforce/)
-* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
-* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
+* [Abnormal Security](/docs/integrations/automation-integrations/integrations/abnormal-security/)
+* [Atlassian Jira V2](/docs/integrations/automation-integrations/integrations/atlassian-jira-v2/)
+* [AWS IAM](/docs/integrations/automation-integrations/integrations/aws-iam/)
+* [Azure AD](/docs/integrations/automation-integrations/integrations/azure-ad/)
+* [Cortex XDR](/docs/integrations/automation-integrations/integrations/cortex-xdr/)
+* [Criminal IP](/docs/integrations/automation-integrations/integrations/criminal-ip/)
+* [CrowdStrike Falcon](/docs/integrations/automation-integrations/integrations/crowdstrike-falcon/)
+* [IP Quality Score](/docs/integrations/automation-integrations/integrations/ip-quality-score/)
+* [Salesforce](/docs/integrations/automation-integrations/integrations/salesforce/)
+* [SentinelOne](/docs/integrations/automation-integrations/integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/integrations/sumo-logic-cloud-siem/)
+* [VirusTotal](/docs/integrations/automation-integrations/integrations/virustotal/)
 
 ### Notification
 
 Notification actions send a notification, for example, an email or a post in a messaging service.
 
 Many integrations offer notification actions. Here are just a few:
-* [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
-* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
-* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
-* [SMTP V3](/docs/platform-services/automation-service/app-central/integrations/smtp-v3/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [Basic Tools](/docs/integrations/automation-integrations/integrations/basic-tools/)
+* [Gmail](/docs/integrations/automation-integrations/integrations/gmail/)
+* [Slack](/docs/integrations/automation-integrations/integrations/slack/)
+* [SMTP V3](/docs/integrations/automation-integrations/integrations/smtp-v3/)
+* [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/integrations/sumo-logic-cloud-siem/)
 
 ### Scheduled
 
 Scheduled actions run on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
 
 Many integrations offer scheduled actions. Here are just a few:
-* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
-* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
-* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
-* [Sumo Logic Notifications by Microsoft](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-microsoft/)
-* [Sumo Logic Notifications](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/)
-* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
+* [Atlassian Jira V2](/docs/integrations/automation-integrations/integrations/atlassian-jira-v2/)
+* [Microsoft Defender ATP](/docs/integrations/automation-integrations/integrations/microsoft-defender-atp/)
+* [SentinelOne](/docs/integrations/automation-integrations/integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/integrations/sumo-logic-cloud-siem/)
+* [Sumo Logic Notifications by Microsoft](/docs/integrations/automation-integrations/integrations/sumo-logic-notifications-by-microsoft/)
+* [Sumo Logic Notifications](/docs/integrations/automation-integrations/integrations/sumo-logic-notifications/)
+* [VirusTotal](/docs/integrations/automation-integrations/integrations/virustotal/)
 
 ## Playbook versioning
 

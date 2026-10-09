@@ -21,7 +21,7 @@ Sumo Logic apps address these common use cases:
 * **Decrease app time to market**. Sumo Logic facilitates a consistent release process, resulting in timely releases. It aids in quickly identifying application issues and configuration changes across development, testing, and deployment environments.
 * **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real-time through a single, highly scalable solution.
 
-To learn about the vendors and products that Sumo Logic integrates with, refer to the [Product List](/docs/integrations/product-list/).
+To learn about the vendors and products that Sumo Logic integrates with, refer to the [Product List](/docs/integrations/apps/product-list/).
 
 ## Certified by Sumo Logic
 
@@ -182,7 +182,7 @@ The **Search** page opens, the search populates a new tab, and the search runs
 If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 :::note
-Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume) do not require you to select a Source Category.
+Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/apps/sumo-apps/data-volume) do not require you to select a Source Category.
 :::
 
 ## Custom data filters

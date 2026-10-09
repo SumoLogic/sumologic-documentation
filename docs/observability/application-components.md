@@ -13,17 +13,17 @@ Pre-configured dashboards available for application components solve many common
 
 :::warning Limitations
 This solution is currently supported for the following apps only:
-* [Cassandra](/docs/integrations/databases/cassandra)
-* [Couchbase](/docs/integrations/databases/couchbase)
-* [Elasticsearch](/docs/integrations/databases/elasticsearch)
-* [MariaDB](/docs/integrations/databases/mariadb)
-* [Memcached](/docs/integrations/databases/memcached)
-* [MongoDB](/docs/integrations/databases/mongodb)
-* [MySQL](/docs/integrations/databases/mysql)
-* [Oracle](/docs/integrations/databases/oracle)
-* [PostgreSQL](/docs/integrations/databases/postgresql)
-* [Redis](/docs/integrations/databases/redis)
-* [SQL Server](/docs/integrations/microsoft-azure/sql-server)
+* [Cassandra](/docs/integrations/apps/databases/cassandra)
+* [Couchbase](/docs/integrations/apps/databases/couchbase)
+* [Elasticsearch](/docs/integrations/apps/databases/elasticsearch)
+* [MariaDB](/docs/integrations/apps/databases/mariadb)
+* [Memcached](/docs/integrations/apps/databases/memcached)
+* [MongoDB](/docs/integrations/apps/databases/mongodb)
+* [MySQL](/docs/integrations/apps/databases/mysql)
+* [Oracle](/docs/integrations/apps/databases/oracle)
+* [PostgreSQL](/docs/integrations/apps/databases/postgresql)
+* [Redis](/docs/integrations/apps/databases/redis)
+* [SQL Server](/docs/integrations/apps/microsoft-azure/sql-server)
 :::
 
 ## Installation
@@ -208,17 +208,17 @@ At the end of the console output, you should see two links, one for Apps Folder 
 ### Configure metrics and logs collection
 
 Refer to the documentation for the app you're using. App Components Solution currently supports:
-* [Cassandra](/docs/integrations/databases/cassandra)
-* [Couchbase](/docs/integrations/databases/couchbase)
-* [Elasticsearch](/docs/integrations/databases/elasticsearch)
-* [MariaDB](/docs/integrations/databases/mariadb)
-* [Memcached](/docs/integrations/databases/memcached)
-* [MongoDB](/docs/integrations/databases/mongodb)
-* [MySQL](/docs/integrations/databases/mysql)
-* [Oracle](/docs/integrations/databases/oracle)
-* [PostgreSQL](/docs/integrations/databases/postgresql)
-* [Redis](/docs/integrations/databases/redis)
-* [SQL Server](/docs/integrations/microsoft-azure/sql-server)
+* [Cassandra](/docs/integrations/apps/databases/cassandra)
+* [Couchbase](/docs/integrations/apps/databases/couchbase)
+* [Elasticsearch](/docs/integrations/apps/databases/elasticsearch)
+* [MariaDB](/docs/integrations/apps/databases/mariadb)
+* [Memcached](/docs/integrations/apps/databases/memcached)
+* [MongoDB](/docs/integrations/apps/databases/mongodb)
+* [MySQL](/docs/integrations/apps/databases/mysql)
+* [Oracle](/docs/integrations/apps/databases/oracle)
+* [PostgreSQL](/docs/integrations/apps/databases/postgresql)
+* [Redis](/docs/integrations/apps/databases/redis)
+* [SQL Server](/docs/integrations/apps/microsoft-azure/sql-server)
 
 ### Configure fields in Sumo Logic
 

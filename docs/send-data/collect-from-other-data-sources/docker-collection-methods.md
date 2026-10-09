@@ -112,5 +112,5 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 
 Sumo Logic provides the following apps for Docker:  
 
-* [Docker](/docs/integrations/containers-orchestration/docker-community-edition.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host), [Collector as a Container](#collector-as-a-container), or [OpenTelemetry Collector with Docker Source Template](#opentelemetry-collector-with-docker-source-template) collection strategy.
-* [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.
+* [Docker](/docs/integrations/apps/containers-orchestration/docker-community-edition.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host), [Collector as a Container](#collector-as-a-container), or [OpenTelemetry Collector with Docker Source Template](#opentelemetry-collector-with-docker-source-template) collection strategy.
+* [Docker ULM](/docs/integrations/apps/containers-orchestration/docker-ulm.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.

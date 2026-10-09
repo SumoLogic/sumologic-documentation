@@ -60,7 +60,7 @@ To configure a Sophos Central Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
-After configuring the Sophos source, consider installing the Sumo Logic app for [Sophos](/docs/integrations/saas-cloud/sophos/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Sophos source, consider installing the Sumo Logic app for [Sophos](/docs/integrations/apps/saas-cloud/sophos/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -115,4 +115,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Sophos Central Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/sophos-central/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Sophos Central Automation Service Integration](/docs/integrations/automation-integrations/integrations/sophos-central/) to automate response actions directly from Cloud SOAR playbooks.

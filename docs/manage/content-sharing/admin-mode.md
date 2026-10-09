@@ -45,4 +45,4 @@ Remember to switch out of Content Administrator viewing when you are done.
 
 ## Track content changes in your org
 
-If you need to track what content has been shared in your organization, or recently changed by another content administrator, you can find dashboards to help you track that information in the [Sumo Logic Audit app](/docs/integrations/sumo-apps/audit).
+If you need to track what content has been shared in your organization, or recently changed by another content administrator, you can find dashboards to help you track that information in the [Sumo Logic Audit app](/docs/integrations/apps/sumo-apps/audit).

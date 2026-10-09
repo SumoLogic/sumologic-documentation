@@ -60,7 +60,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
-After configuring the 1Password source, consider installing the Sumo Logic app for [1Password](/docs/integrations/saas-cloud/1password) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the 1Password source, consider installing the Sumo Logic app for [1Password](/docs/integrations/apps/saas-cloud/1password) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -125,4 +125,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [1Password Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/1password/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [1Password Automation Service Integration](/docs/integrations/automation-integrations/integrations/1password/) to automate response actions directly from Cloud SOAR playbooks.

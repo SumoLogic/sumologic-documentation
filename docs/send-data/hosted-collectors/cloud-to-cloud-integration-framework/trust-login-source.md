@@ -51,7 +51,7 @@ To configure a Trust Login Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Trust Login source, consider installing the Sumo Logic app for [Trust Login](/docs/integrations/saas-cloud/trust-login/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Trust Login source, consider installing the Sumo Logic app for [Trust Login](/docs/integrations/apps/saas-cloud/trust-login/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

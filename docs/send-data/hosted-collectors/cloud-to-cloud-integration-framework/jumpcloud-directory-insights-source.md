@@ -50,7 +50,7 @@ To configure a JumpCloud Directory Insights source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the JumpCloud Directory Insights source, consider installing the Sumo Logic app for [JumpCloud Directory Insights](/docs/integrations/saas-cloud/jumpcloud-directory-insights/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the JumpCloud Directory Insights source, consider installing the Sumo Logic app for [JumpCloud Directory Insights](/docs/integrations/apps/saas-cloud/jumpcloud-directory-insights/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

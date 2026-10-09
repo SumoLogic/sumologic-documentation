@@ -235,7 +235,7 @@ Provide the following:
 
 ## Useful dashboards and search queries
 
-The [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/) app includes useful dashboards for monitoring Cloud SIEM components including rules:
+The [Enterprise Audit - Cloud SIEM](/docs/integrations/apps/sumo-apps/cse/) app includes useful dashboards for monitoring Cloud SIEM components including rules:
 * Signal analysis:
     * Cloud SIEM - Signal Analysis
     * Cloud SIEM - Signal Analysis - Rules

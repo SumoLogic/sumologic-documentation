@@ -23,7 +23,7 @@ Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from t
 
 :::note
 * After initial installation, data collection may be delayed.
-* If you have already installed the [Amazon Security Quickstart](/docs/integrations/amazon-aws/security-quickstart/), collectors may be duplicated to collect from the same sources. To prevent this, use the existing source category for collection.
+* If you have already installed the [Amazon Security Quickstart](/docs/integrations/apps/amazon-aws/security-quickstart/), collectors may be duplicated to collect from the same sources. To prevent this, use the existing source category for collection.
 :::
 
 :::training Micro Lesson

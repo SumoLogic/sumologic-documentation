@@ -31,23 +31,23 @@ Before you can access App Central, you must have the App Central Access role cap
 
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" style={{border:'1px solid gray'}} width="800"/>
 
-1. **Playbooks**. Click to view [playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/) that are available to install.
-1. **Integrations**. Click to view [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that are available to install.
+1. **Playbooks**. Click to view [playbooks in App Central](/docs/integrations/playbook-templates/playbook-templates/) that are available to install.
+1. **Integrations**. Click to view [integrations in App Central](/docs/integrations/automation-integrations/integrations/) that are available to install.
 1. **Search**. Search for integrations or playbooks to install.
 1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
    :::note
    <ActionsLimit/>
    :::
-1. **Install**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central).
+1. **Install**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](/docs/integrations/playbook-templates/playbook-templates/#install-an-out-of-the-box-playbook-from-app-central).
 
 ## Work with integrations in App Central
 
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Central shows you [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that you can install.
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Central shows you [integrations in App Central](/docs/integrations/automation-integrations/integrations/) that you can install.
 
 ### Install an integration from App Central
 
 1. From the App Catalog, open the **Integrations** tab and click **INSTALL**. After installation is complete, **INSTALLED** replaces the **INSTALL** link in the corner of the integration box.
-1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Central](/docs/integrations/automation-integrations/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
 
@@ -98,4 +98,4 @@ Sumo Logic will validate the integration, and work with you to make any updates 
 
 ## Playbooks in App Central
 
-To work with playbooks in App Central, see [Out-of-the-Box Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
+To work with playbooks in App Central, see [Out-of-the-Box Playbooks in App Central](/docs/integrations/playbook-templates/playbook-templates/).

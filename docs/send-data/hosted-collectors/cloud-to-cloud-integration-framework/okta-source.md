@@ -52,7 +52,7 @@ To configure an Okta Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
-After configuring the Okta source, consider installing the Sumo Logic app for [Okta](/docs/integrations/saml/okta) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Okta source, consider installing the Sumo Logic app for [Okta](/docs/integrations/apps/saml/okta) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -111,4 +111,4 @@ During a polling interval, an Okta Source will make a request for every 1,000 
 
 ## Additional resources
 
-- Use the [Okta Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/okta/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Okta Automation Service Integration](/docs/integrations/automation-integrations/integrations/okta/) to automate response actions directly from Cloud SOAR playbooks.

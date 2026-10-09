@@ -89,7 +89,7 @@ When a collector is experiencing throttling, the throttling slows the rate at w
 
 ## How do I know which collector is contributing to excess ingestion?
 
-You can use the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) and the [Data Volume App](/docs/integrations/sumo-apps/data-volume) to help determine the ingestion per collector, source, source category, view, or partition.
+You can use the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) and the [Data Volume App](/docs/integrations/apps/sumo-apps/data-volume) to help determine the ingestion per collector, source, source category, view, or partition.
 
 ## How can I be alerted when throttling takes place?
 

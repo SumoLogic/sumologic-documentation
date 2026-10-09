@@ -62,7 +62,7 @@ To configure a Mimecast Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::tip
-After configuring the Mimecast source, consider installing the Sumo Logic app for [Mimecast](/docs/integrations/saas-cloud/mimecast/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Mimecast source, consider installing the Sumo Logic app for [Mimecast](/docs/integrations/apps/saas-cloud/mimecast/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -131,4 +131,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Mimecast Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mimecast/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Mimecast Automation Service Integration](/docs/integrations/automation-integrations/integrations/mimecast/) to automate response actions directly from Cloud SOAR playbooks.

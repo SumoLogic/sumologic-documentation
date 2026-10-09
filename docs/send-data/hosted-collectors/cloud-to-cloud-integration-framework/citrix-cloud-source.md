@@ -87,7 +87,7 @@ To configure the Citrix Cloud API:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Citrix Cloud source, consider installing the Sumo Logic app for [Citrix Cloud](/docs/integrations/saas-cloud/citrix-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Citrix Cloud source, consider installing the Sumo Logic app for [Citrix Cloud](/docs/integrations/apps/saas-cloud/citrix-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

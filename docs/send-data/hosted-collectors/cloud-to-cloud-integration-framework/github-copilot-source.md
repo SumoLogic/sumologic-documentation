@@ -63,7 +63,7 @@ To configure a GitHub Copilot Source, follow the steps below:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the GitHub Copilot source, consider installing the Sumo Logic app for [GitHub Copilot](/docs/integrations/saas-cloud/github-copilot/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the GitHub Copilot source, consider installing the Sumo Logic app for [GitHub Copilot](/docs/integrations/apps/saas-cloud/github-copilot/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

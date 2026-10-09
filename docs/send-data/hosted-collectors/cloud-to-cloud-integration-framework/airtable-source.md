@@ -59,7 +59,7 @@ To configure an Airtable Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::tip
-After configuring the Airtable source, consider installing the Sumo Logic app for [Airtable](/docs/integrations/saas-cloud/airtable/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Airtable source, consider installing the Sumo Logic app for [Airtable](/docs/integrations/apps/saas-cloud/airtable/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -103,4 +103,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Airtable Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/airtable/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Airtable Automation Service Integration](/docs/integrations/automation-integrations/integrations/airtable/) to automate response actions directly from Cloud SOAR playbooks.

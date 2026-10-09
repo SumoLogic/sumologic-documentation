@@ -1,0 +1,90 @@
+---
+slug: /integrations/apps/databases
+title: Database Servers
+description: Learn how to use the Sumo Logic apps for database servers.
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This guide has documentation for Sumo apps for database servers.
+
+<div className="box-wrapper" >
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/databases/opentelemetry')}><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="55"/><h4>OpenTelemtry</h4></a>
+  <p>A guide to OpenTelemetry apps for database servers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/databases/cassandra')}><img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Cassandra icon" width="75"/><h4>Cassandra</h4></a>
+  <p>Monitor the availability, performance, health, and resource utilization of your Cassandra clusters.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/databases/couchbase')}><img src={useBaseUrl('img/integrations/databases/couchbase-logo.png')} alt="Couchbase icon" width="75"/><h4>Couchbase</h4></a>
+  <p>Monitor Couchbase cluster activity, errors, and health.</p>
+  </div>
+</div>
+    <div className="box smallbox card">
+    <div className="container">
+    <a href={useBaseUrl('docs/integrations/databases/elasticsearch')}><img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Elasticsearch icon" width="75"/><h4>Elasticsearch</h4></a>
+      <p>Monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/elasticsearch')}><img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="MariaDB icon" width="95"/><h4>MariaDB</h4></a>
+      <p>Monitor the availability, performance, and resource utilization of your MariaDB clusters.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/memcached')}><img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Memcached icon" width="75"/><h4>Memcached</h4></a>
+      <p>Monitor the availability, performance, health, and resource utilization of your Memcached clusters.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/mongodb')}><img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="MongoDB icon" width="150"/><h4>MongoDB</h4></a>
+      <p>Insight into overall system health, queries, logins, connections, errors and warnings, replication, and sharding.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/mongodb-atlas')}><img src={useBaseUrl('img/integrations/databases/mongodbatlas.png')} alt="MongoDB Atlas icon" width="75"/><h4>MongoDB Atlas</h4></a>
+      <p>Visibility into the security posture of your clusters, performance KPIs, and database operational activities.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/mysql')}><img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="MySQL icon" width="75"/><h4>MySQL</h4></a>
+      <p>Gain insight into the health of your MySQL servers, replication status, and errors.</p>
+      </div>
+    </div>
+        <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/oracle')}><img src={useBaseUrl('img/integrations/databases/oracle.png')} alt="Oracle icon" width="75"/><h4>Oracle</h4></a>
+      <p>Gain insight into the health and activity of your Oracle database. </p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/postgresql')}><img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="PostgreSQL icon" width="45"/><h4>PostgreSQL</h4></a>
+      <p>Track your performance, logins, connections, errors, and overall system health.</p>
+      </div>
+    </div>
+    <div className="box smallbox card">
+      <div className="container">
+      <a href={useBaseUrl('docs/integrations/databases/redis')}><img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Redis icon" width="75"/><h4>Redis</h4></a>
+      <p>Monitor the state of your Redis database cluster.</p>
+      </div>
+    </div>
+  </div>
+
+<br/>
+
+:::note
+If you're looking for an app for AWS, Microsoft, or Google, see [Amazon and AWS](/docs/integrations/apps/amazon-aws), [Microsoft and Azure](/docs/integrations/apps/microsoft-azure), or [Google](/docs/integrations/apps/google).
+:::

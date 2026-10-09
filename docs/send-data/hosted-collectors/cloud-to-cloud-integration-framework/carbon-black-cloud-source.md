@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Observations Search, Processes Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip
-The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic Amazon S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black).
+The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic Amazon S3 Source instead of a Carbon Black Cloud Source. For details, see [how to collect logs for Carbon Black](/docs/integrations/apps/security-threat-detection/vmware-carbon-black).
 :::
 
 ## Data collected
@@ -67,7 +67,7 @@ To configure a Carbon Black Cloud Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Carbon Black Cloud source, consider installing the Sumo Logic app for [Carbon Black Cloud](/docs/integrations/security-threat-detection/carbon-black-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Carbon Black Cloud source, consider installing the Sumo Logic app for [Carbon Black Cloud](/docs/integrations/apps/security-threat-detection/carbon-black-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

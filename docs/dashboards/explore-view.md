@@ -38,7 +38,7 @@ AWS Observability provides an intuitive dashboard framework that mirrors industr
 
 ### Kubernetes Views
 
-Kubernetes views provide a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. These views, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allow you to intuitively monitor and troubleshoot issues as they arise. You can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. [Learn more](/docs/observability/kubernetes/monitoring.md).<br/><img src={useBaseUrl('img/dashboards/explore/k8s-view.png')} alt="Kubernetes views" style={{border: '1px solid gray'}} width="300"/>
+Kubernetes views provide a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. These views, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/apps/containers-orchestration/kubernetes.md), allow you to intuitively monitor and troubleshoot issues as they arise. You can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. [Learn more](/docs/observability/kubernetes/monitoring.md).<br/><img src={useBaseUrl('img/dashboards/explore/k8s-view.png')} alt="Kubernetes views" style={{border: '1px solid gray'}} width="300"/>
 
 ### Application service views
 
@@ -53,7 +53,7 @@ Application Monitoring provides three Service and Application dashboard views. T
 Sumo Logic provides a set of dashboards for various components of your application that allow you to review the state of individual parts of your system. You can track errors, performance, and usage of application components, grouped by their type and logical clusters.
 
 :::note
-This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/databases) and [Application Component Solution](/docs/observability/application-components).
+This feature is currently supported only for Database apps. To learn more, go to the [Database docs](/docs/integrations/apps/databases) and [Application Component Solution](/docs/observability/application-components).
 :::
 
 1. Select the **Database View** category.

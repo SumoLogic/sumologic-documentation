@@ -62,7 +62,7 @@ To configure a Duo Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
-After configuring the SailPoint source, consider installing the Sumo Logic app for [SailPoint](/docs/integrations/security-threat-detection/sailpoint/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the SailPoint source, consider installing the Sumo Logic app for [SailPoint](/docs/integrations/apps/security-threat-detection/sailpoint/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -120,4 +120,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [SailPoint Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/sailpoint/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [SailPoint Automation Service Integration](/docs/integrations/automation-integrations/integrations/sailpoint/) to automate response actions directly from Cloud SOAR playbooks.

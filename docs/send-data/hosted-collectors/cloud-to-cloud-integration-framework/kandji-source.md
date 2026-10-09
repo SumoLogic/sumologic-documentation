@@ -66,7 +66,7 @@ To configure Kandji Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Kandji source, consider installing the Sumo Logic app for [Kandji](/docs/integrations/saas-cloud/kandji/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Kandji source, consider installing the Sumo Logic app for [Kandji](/docs/integrations/apps/saas-cloud/kandji/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

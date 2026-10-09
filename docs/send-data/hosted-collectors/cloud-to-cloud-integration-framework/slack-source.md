@@ -130,7 +130,7 @@ To configure a Slack Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
-After configuring the Slack source, consider installing the Sumo Logic app for [Slack](/docs/integrations/saas-cloud/slack/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Slack source, consider installing the Sumo Logic app for [Slack](/docs/integrations/apps/saas-cloud/slack/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ### JSON example
@@ -167,4 +167,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Slack Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/slack/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Slack Automation Service Integration](/docs/integrations/automation-integrations/integrations/slack/) to automate response actions directly from Cloud SOAR playbooks.

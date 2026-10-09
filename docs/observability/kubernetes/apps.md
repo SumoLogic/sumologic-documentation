@@ -11,7 +11,7 @@ Sumo Logic provides a selection of Kubernetes apps to monitor various different 
 
 ## Kubernetes app
 
-The [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/kubernetes) provides visibility into the operations and security of the worker nodes in a cluster, as well as the application logs of the worker nodes.
+The [Sumo Logic Kubernetes app](/docs/integrations/apps/containers-orchestration/kubernetes) provides visibility into the operations and security of the worker nodes in a cluster, as well as the application logs of the worker nodes.
 
 The app is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. The app also integrates with Falco, an open source container native runtime security tool, to monitor and detect anomalous container, application, host, and network activity. 
 
@@ -25,7 +25,7 @@ The following dashboard is an example of one of the many pre-configured dashboar
 
 ## Kubernetes Control Plane app
 
-The [Sumo Logic Kubernetes Control Plane app](/docs/integrations/containers-orchestration/kubernetes-control-plane.md) monitors and manages the master node control plane, including the API server, etcd, kube-system, and worker nodes. The app utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity, such as creating pods that are privileged, mounting sensitive host paths, and using host networking. Seamlessly integrated with the Sumo Logic Kubernetes app, pre-configured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
+The [Sumo Logic Kubernetes Control Plane app](/docs/integrations/apps/containers-orchestration/kubernetes-control-plane.md) monitors and manages the master node control plane, including the API server, etcd, kube-system, and worker nodes. The app utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity, such as creating pods that are privileged, mounting sensitive host paths, and using host networking. Seamlessly integrated with the Sumo Logic Kubernetes app, pre-configured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
@@ -33,7 +33,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ## Amazon EKS - Control Plane app
 
-The [Sumo Logic app for Amazon EKS - Control Plane](/docs/integrations/amazon-aws/eks-control-plane.md) provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app’s pre-configured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
+The [Sumo Logic app for Amazon EKS - Control Plane](/docs/integrations/apps/amazon-aws/eks-control-plane.md) provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app’s pre-configured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
@@ -41,7 +41,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ## Azure Kubernetes System (AKS) - Control Plane app
 
-The [Sumo Logic app for Azure Kubernetes Service (AKS) - Control Plane](/docs/integrations/microsoft-azure/kubernetes.md) provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The pre-configured app dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
+The [Sumo Logic app for Azure Kubernetes Service (AKS) - Control Plane](/docs/integrations/apps/microsoft-azure/kubernetes.md) provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The pre-configured app dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 
@@ -49,7 +49,7 @@ The following dashboard is an example of one of the many pre-configured app dash
 
 ## Google Kubernetes Engine (GKE) - Control Plane app
 
-The [Sumo Logic app for Google Kubernetes Engine (GKE) - Control Plane](/docs/integrations/google/kubernetes-engine.md) allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
+The [Sumo Logic app for Google Kubernetes Engine (GKE) - Control Plane](/docs/integrations/apps/google/kubernetes-engine.md) allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This app works in conjunction with Sumo Logic Kubernetes app that provides visibility into worker node metrics and application logs.
 
 The following dashboard is an example of one of the many pre-configured app dashboards you can access to view and analyze data from your Kubernetes environment.
 

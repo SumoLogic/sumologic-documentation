@@ -46,7 +46,7 @@ To configure a Vectra Source, follow the steps below:
 1. When you are finished configuring the Source, click **Save**.
 
 :::tip
-After configuring the Vectra source, consider installing the Sumo Logic app for [Vectra](/docs/integrations/saas-cloud/vectra/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Vectra source, consider installing the Sumo Logic app for [Vectra](/docs/integrations/apps/saas-cloud/vectra/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -92,4 +92,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Vectra Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/vectra/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Vectra Automation Service Integration](/docs/integrations/automation-integrations/integrations/vectra/) to automate response actions directly from Cloud SOAR playbooks.

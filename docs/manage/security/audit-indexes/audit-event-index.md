@@ -11,7 +11,7 @@ description: The Audit Event Index provides event logs in JSON on your account's
 | Cloud Flex | Trial, Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The Audit Event Index contains event logs in JSON format on account activities, allowing you to monitor and audit changes. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps](/docs/integrations/sumo-apps/enterprise-audit) to visually display data from the Audit Event Index for monitoring and analysis.
+The Audit Event Index contains event logs in JSON format on account activities, allowing you to monitor and audit changes. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API. Enterprise accounts have the Audit Event Index enabled and available to search by default. You can use the [Enterprise Audit Apps](/docs/integrations/apps/sumo-apps/enterprise-audit) to visually display data from the Audit Event Index for monitoring and analysis.
 
 This index is separate from the [System Event Index](/docs/manage/security/audit-indexes/system-event-index), which shows events triggered by Sumo Logic rather than user action events.
 

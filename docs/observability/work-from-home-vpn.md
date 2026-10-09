@@ -12,10 +12,10 @@ Enable quick, safe, and reliable work-from-home monitoring with our Work from Ho
 
 This solution provides support in all areas of remote work management for your enterprise, including:
 
-* **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo Security](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/okta), [OneLogin](/docs/integrations/saml/onelogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)
-* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki)
-* **Productivity Apps**: [Google Workspace](/docs/integrations/google/workspace), [Office 365](/docs/integrations/microsoft-azure/office-365/), [Salesforce](/docs/integrations/saas-cloud/salesforce), [Sailpoint](/docs/integrations/security-threat-detection/sailpoint), [Slack](/docs/integrations/saas-cloud/slack), [Microsoft Teams](/docs/integrations/microsoft-azure/teams), [Workday](/docs/integrations/saas-cloud/workday), [Zoom](/docs/integrations/saas-cloud/zoom)
-* **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/security-threat-detection/cylance)
+* **SSO**: [Auth0](/docs/integrations/apps/saml/auth0), [Duo Security](/docs/integrations/apps/security-threat-detection/duo-security), [Okta](/docs/integrations/apps/saml/okta), [OneLogin](/docs/integrations/apps/saml/onelogin), [Azure Active Directory](/docs/integrations/apps/microsoft-azure/active-directory-azure)
+* **Remote Access**: [Cisco Meraki](/docs/integrations/apps/security-threat-detection/cisco-meraki)
+* **Productivity Apps**: [Google Workspace](/docs/integrations/apps/google/workspace), [Office 365](/docs/integrations/apps/microsoft-azure/office-365/), [Salesforce](/docs/integrations/apps/saas-cloud/salesforce), [Sailpoint](/docs/integrations/apps/security-threat-detection/sailpoint), [Slack](/docs/integrations/apps/saas-cloud/slack), [Microsoft Teams](/docs/integrations/apps/microsoft-azure/teams), [Workday](/docs/integrations/apps/saas-cloud/workday), [Zoom](/docs/integrations/apps/saas-cloud/zoom)
+* **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/apps/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/apps/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/apps/security-threat-detection/cylance)
 
 ## VPN monitoring use cases
 
@@ -65,10 +65,10 @@ To find our Work from Home apps, go to the **App Catalog** > **Work from Home So
 
 To install any of these apps, follow their directions by clicking on an app link below:
 
-* **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo Security](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/okta), [OneLogin](/docs/integrations/saml/onelogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)
-* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki)
-* **Productivity Apps**: [Google Workspace](/docs/integrations/google/workspace), [Office 365](/docs/integrations/microsoft-azure/office-365/), [Salesforce](/docs/integrations/saas-cloud/salesforce), [Sailpoint](/docs/integrations/security-threat-detection/sailpoint), [Slack](/docs/integrations/saas-cloud/slack), [Microsoft Teams](/docs/integrations/microsoft-azure/teams), [Workday](/docs/integrations/saas-cloud/workday), [Zoom](/docs/integrations/saas-cloud/zoom)
-* **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/security-threat-detection/cylance)
+* **SSO**: [Auth0](/docs/integrations/apps/saml/auth0), [Duo Security](/docs/integrations/apps/security-threat-detection/duo-security), [Okta](/docs/integrations/apps/saml/okta), [OneLogin](/docs/integrations/apps/saml/onelogin), [Azure Active Directory](/docs/integrations/apps/microsoft-azure/active-directory-azure)
+* **Remote Access**: [Cisco Meraki](/docs/integrations/apps/security-threat-detection/cisco-meraki)
+* **Productivity Apps**: [Google Workspace](/docs/integrations/apps/google/workspace), [Office 365](/docs/integrations/apps/microsoft-azure/office-365/), [Salesforce](/docs/integrations/apps/saas-cloud/salesforce), [Sailpoint](/docs/integrations/apps/security-threat-detection/sailpoint), [Slack](/docs/integrations/apps/saas-cloud/slack), [Microsoft Teams](/docs/integrations/apps/microsoft-azure/teams), [Workday](/docs/integrations/apps/saas-cloud/workday), [Zoom](/docs/integrations/apps/saas-cloud/zoom)
+* **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/apps/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/apps/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/apps/security-threat-detection/cylance)
 
 ## Step 3: View dashboards and insights
 
@@ -102,7 +102,7 @@ When you build your own searches and dashboards consider these VPN monitoring be
     * Top events
     * Events trend over time
     * Connections over time
-* **Suspicious activity**. Use our [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) and [ASN Lookup](/docs/search/search-query-language/search-operators/asn-lookup) integration to monitor for malicious connections.
+* **Suspicious activity**. Use our [Threat Intel Quick Analysis](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis) and [ASN Lookup](/docs/search/search-query-language/search-operators/asn-lookup) integration to monitor for malicious connections.
     * Top suspicious IPs and threat intelligence
     * Suspicious IPs trend over time
     * Abnormal session durations
@@ -115,6 +115,6 @@ The Work from Home Solution includes Remote Access apps for Cisco Meraki, Zscale
 * [Palo Alto Networks GlobalProtect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/GlobalProtect)
 * [Cisco AnyConnect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Cisco)
 * [Netscaler VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Citrix/VPN)
-* [Zoom](/docs/integrations/saas-cloud/zoom)
+* [Zoom](/docs/integrations/apps/saas-cloud/zoom)
 
 If you’d like assistance with custom content, a Customer Success representative would be happy to spend an hour working with your team to tailor a solution. If content for your Remote Access platform isn’t supported yet, check out the next section for common use cases.

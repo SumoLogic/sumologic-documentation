@@ -198,7 +198,7 @@ To configure a Proofpoint TAP Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::tip
-After configuring the Proofpoint TAP source, consider installing the Sumo Logic app for [Proofpoint TAP](/docs/integrations/saas-cloud/proofpoint-tap/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Proofpoint TAP source, consider installing the Sumo Logic app for [Proofpoint TAP](/docs/integrations/apps/saas-cloud/proofpoint-tap/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -262,4 +262,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Proofpoint TAP Automation Service Integration](/docs/integrations/automation-integrations/integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.

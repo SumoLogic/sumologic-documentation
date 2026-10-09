@@ -39,7 +39,7 @@ The AWS Inventory source collects the inventory of AWS resources in your AWS acc
 | [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source) | Cloud-to-Cloud | Computer |
 | [CrowdStrike FDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source) | Cloud-to-Cloud | Computer |
 | [Cloud SIEM AWS EC2 Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source)| Cloud-to-Cloud | Computer |
-| [Cylance](/docs/integrations/security-threat-detection/cylance) | Cloud-to-Cloud | Computer | <!-- The link goes to an app article. There is no Cylance source article in our docs. -->
+| [Cylance](/docs/integrations/apps/security-threat-detection/cylance) | Cloud-to-Cloud | Computer | <!-- The link goes to an app article. There is no Cylance source article in our docs. -->
 | [Google Workspace Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source) | Cloud-to-Cloud | User |
 | [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source) | Cloud-to-Cloud | Computer and User |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Cloud-to-Cloud | User |

@@ -58,7 +58,7 @@ To configure a Automox Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::tip
-After configuring the Automox source, consider installing the Sumo Logic app for [Automox](/docs/integrations/saas-cloud/automox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Automox source, consider installing the Sumo Logic app for [Automox](/docs/integrations/apps/saas-cloud/automox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -109,4 +109,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Automox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/automox/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Automox Automation Service Integration](/docs/integrations/automation-integrations/integrations/automox/) to automate response actions directly from Cloud SOAR playbooks.

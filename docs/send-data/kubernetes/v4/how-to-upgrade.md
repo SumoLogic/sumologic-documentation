@@ -55,7 +55,7 @@ There are several scenarios here, depending on the exact use case:
 
 ### Upgrade the Kubernetes app
 
-**When?**: If you use the [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/kubernetes/)
+**When?**: If you use the [Sumo Logic Kubernetes app](/docs/integrations/apps/containers-orchestration/kubernetes/)
 
 Recording rule metrics removed in version 4 were used in the Sumo Logic Kubernetes app. A new version of the app must be installed to ensure compatibility with version 4 of Helm Chart. See [here][k8s_app_upgrade] for upgrade instructions.
 

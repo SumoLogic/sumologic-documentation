@@ -74,7 +74,7 @@ To configure Cisco Meraki Source:
 13. When you are finished configuring the Source, click **Save**.
 
 :::tip
-After configuring the Cisco Meraki source, consider installing the Sumo Logic app for [Cisco Meraki](/docs/integrations/saas-cloud/cisco-meraki-c2c/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Cisco Meraki source, consider installing the Sumo Logic app for [Cisco Meraki](/docs/integrations/apps/saas-cloud/cisco-meraki-c2c/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -168,4 +168,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Cisco Meraki Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/cisco-meraki/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Cisco Meraki Automation Service Integration](/docs/integrations/automation-integrations/integrations/cisco-meraki/) to automate response actions directly from Cloud SOAR playbooks.

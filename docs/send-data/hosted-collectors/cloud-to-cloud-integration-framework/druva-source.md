@@ -75,7 +75,7 @@ To configure a Druva Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::tip
-After configuring the Druva source, consider installing the Sumo Logic app for [Druva](/docs/integrations/saas-cloud/druva/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Druva source, consider installing the Sumo Logic app for [Druva](/docs/integrations/apps/saas-cloud/druva/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata Fields
@@ -124,4 +124,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Druva Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/druva/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Druva Automation Service Integration](/docs/integrations/automation-integrations/integrations/druva/) to automate response actions directly from Cloud SOAR playbooks.

@@ -63,7 +63,7 @@ To configure a Trend Micro source:
 1. When you are finished configuring the source, click **Save**.
 
 :::info
-After configuring the Trend Micro source, consider installing the Sumo Logic app for [Trend Micro Vision One](/docs/integrations/saas-cloud/trend-micro-vision-one/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Trend Micro source, consider installing the Sumo Logic app for [Trend Micro Vision One](/docs/integrations/apps/saas-cloud/trend-micro-vision-one/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

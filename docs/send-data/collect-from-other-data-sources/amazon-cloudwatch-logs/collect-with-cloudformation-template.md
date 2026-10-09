@@ -58,7 +58,7 @@ The following AWS Lambda environment variables are supported in both the Lambda 
 | `SOURCE_HOST_OVERRIDE` | (Optional) You can use this variable to override the `_sourceHost` configured for the HTTP Source. |
 | `SOURCE_NAME_OVERRIDE` | (Optional) You can use this variable to override the `_sourceName` configured for the HTTP Source. |
 
-If you are configuring log collection for VPC flow logs, see [Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation](/docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow#collect-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation).
+If you are configuring log collection for VPC flow logs, see [Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation](/docs/integrations/apps/cloud-security-monitoring-analytics/amazon-vpc-flow#collect-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation).
 
 Define variables in the `Environment` section of the CloudFormation template.
 

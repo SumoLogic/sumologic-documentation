@@ -80,7 +80,7 @@ To configure a Sumo Collection Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Sumo Collection source, consider installing the Sumo Logic app for [Sumo Collection](/docs/integrations/saas-cloud/sumo-collection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Sumo Collection source, consider installing the Sumo Logic app for [Sumo Collection](/docs/integrations/apps/saas-cloud/sumo-collection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

@@ -12,17 +12,17 @@ To use Sumo Logic for audit and compliance, you can use [pre-built apps](#pre-bu
 ## Pre-built apps for audit and compliance
 
 [Install](/docs/get-started/apps-integrations) the following apps for compliance:
-* [**PCI Compliance**](/docs/integrations/pci-compliance/). Apps for payment card industry (PCI) compliance.
+* [**PCI Compliance**](/docs/integrations/apps/pci-compliance/). Apps for payment card industry (PCI) compliance.
 
 Following are some of the Sumo Logic apps you can [install](/docs/get-started/apps-integrations) for auditing:
-* [**Amazon S3 Audit**](/docs/integrations/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
-* [**AWS Security Hub**](/docs/integrations/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
-* [**Azure Audit**](/docs/integrations/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
-* [**Google Cloud Audit**](/docs/integrations/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
-* [**Microsoft Graph Azure AD Reporting**](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting). App that enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. 
-* [**Sumo Logic Audit**](/docs/integrations/sumo-apps/audit/). App that uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
-* [**Sumo Logic Enterprise Audit**](/docs/integrations/sumo-apps/enterprise-audit/). Apps to generate queries that are compatible with the Sumo Logic Audit Event Index. 
-* [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). App that provides immediate visibility into your account's search activity and helps you identify areas of improvement. 
+* [**Amazon S3 Audit**](/docs/integrations/apps/amazon-aws/s3-audit/). App that provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. 
+* [**AWS Security Hub**](/docs/integrations/apps/amazon-aws/security-hub/). App to view your security state within AWS and your compliance with security industry standards.
+* [**Azure Audit**](/docs/integrations/apps/microsoft-azure/audit/). App to collect data from the Azure Activity Log and monitor the health of your Azure environment. 
+* [**Google Cloud Audit**](/docs/integrations/apps/google/cloud-audit/). App to monitor activities and track the actions of administrators in your Google Cloud Platform projects.
+* [**Microsoft Graph Azure AD Reporting**](/docs/integrations/apps/saas-cloud/microsoft-graph-azure-ad-reporting). App that enables you to access and monitor data, including audit information, user activity, sign-in patterns, and provisioning activities. 
+* [**Sumo Logic Audit**](/docs/integrations/apps/sumo-apps/audit/). App that uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
+* [**Sumo Logic Enterprise Audit**](/docs/integrations/apps/sumo-apps/enterprise-audit/). Apps to generate queries that are compatible with the Sumo Logic Audit Event Index. 
+* [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/apps/sumo-apps/enterprise-search-audit/). App that provides immediate visibility into your account's search activity and helps you identify areas of improvement. 
 
 ## About audit and compliance
 
@@ -81,7 +81,7 @@ Create filters and search parameters with Sumo Logic to find any data at any tim
 
 #### Step 4: Use out-of-the-box content
 
-Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/pci-compliance), allow you to monitor many security tools you already use.
+Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/apps/pci-compliance), allow you to monitor many security tools you already use.
 
 #### Step 5: Retain data
 
@@ -123,8 +123,8 @@ In [Perform a PCI compliance audit](#perform-a-pci-compliance-audit) below, weâ€
 This example shows how to use the PCI app for Palo Alto Networks to perform a PCI audit for requirement 4: "Encrypt transmission of cardholder data across open, public networks".
 
 Before you can perform the audit, collect logs, and install the app for the version of Palo Alto Networks you'll use:
-* [PCI Compliance for Palo Alto Networks 9](/docs/integrations/pci-compliance/palo-alto-networks-9/)
-* [PCI Compliance for Palo Alto Networks 10](/docs/integrations/pci-compliance/palo-alto-networks-10/)
+* [PCI Compliance for Palo Alto Networks 9](/docs/integrations/apps/pci-compliance/palo-alto-networks-9/)
+* [PCI Compliance for Palo Alto Networks 10](/docs/integrations/apps/pci-compliance/palo-alto-networks-10/)
 
 To perform the audit:
 

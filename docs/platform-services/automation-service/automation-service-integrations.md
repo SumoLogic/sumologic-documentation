@@ -9,14 +9,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
-Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View integrations](#view-integrations)). Integrations that are available for installation appear in App Central (see [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/)).
+Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View integrations](#view-integrations)). Integrations that are available for installation appear in App Central (see [Automation Integrations in App Central](/docs/integrations/automation-integrations/integrations/)).
 
 ## Available integrations
 
-For a complete list of integrations that are available to install, see [Out-of-the-Box Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
+For a complete list of integrations that are available to install, see [Out-of-the-Box Integrations in App Central](/docs/integrations/automation-integrations/integrations/).
 
 :::warning Important
-All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/automation-integrations/).
 :::
 
 ## View integrations
@@ -122,7 +122,7 @@ To make your custom integration available for everyone in App Central, see [Publ
 You can test an action on an integration to ensure that it is working correctly.
 
 1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations). 
-1. [Ensure that authentication is configured for the integration](/docs/platform-services/automation-service/configure-authentication-for-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 
+1. [Ensure that authentication is configured for the integration](/docs/integrations/automation-integrations/automation-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 
 1. Select an action on the integration. For our example shown below, we'll select the **List Users** action on the Atlassian Jira V2 integration. <br/><img src={useBaseUrl('img/platform-services/automation-service/example-action-for-test-action.png')} alt="Example action" style={{border: '1px solid gray'}} width="700" />
 1. Enter any values needed for the action to run and click **TEST ACTION**.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-test-action.png')} alt="Example test action" style={{border: '1px solid gray'}} width="400" />
    :::tip
@@ -141,7 +141,7 @@ You may want to change the output of an action to allow playbooks to execute dif
 
 1. [Open an integration](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) and do the following:
    1. [Ensure that it is a certified integration](/docs/platform-services/automation-service/automation-service-integrations/#certified-integrations). Only certified integrations allow you to edit the output of their actions. 
-   1. [Ensure that authentication is configured for the integration](/docs/platform-services/automation-service/configure-authentication-for-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 
+   1. [Ensure that authentication is configured for the integration](/docs/integrations/automation-integrations/automation-integrations/). Testing actions on the integration will fail unless the integration's authentication settings are correctly configured so that the product you're integrating with can communicate with Sumo Logic. 
 1. Select an action on the integration. For our example, we'll edit the output for the **List Users** action on the Atlassian Jira V2 integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-example-action.png')} alt="Example action" style={{border: '1px solid gray'}} width="700" />
 1. First, let's [test the action](#test-action) to see the output it generates. Enter any values needed for the action to run and click **TEST ACTION**:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action.png')} alt="Test action" style={{border: '1px solid gray'}} width="400" />
 1. Output of the action is displayed in the **Show Details** dialog. Although this dialog shows the user IDs and names, there is much more output that is generated by the action. We'll see that when we edit the action next.<br/><img src={useBaseUrl('img/platform-services/automation-service/action-output-test-action-results.png')} alt="Test action results" style={{border: '1px solid gray'}} width="500" />

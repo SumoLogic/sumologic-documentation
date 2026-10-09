@@ -27,15 +27,15 @@ Before setting up the SDO solution, you need to complete the following tasks:
 
 To set up the SDO solution manually, configure collection and install apps for each tool that you want to integrate with this solution. Complete the following instructions for each app integration:
 
-* [Bitbucket](/docs/integrations/app-development/bitbucket)
+* [Bitbucket](/docs/integrations/apps/app-development/bitbucket)
 * [CircleCI](https://circleci.com/docs/sumo-logic-integration/)
-* [GitHub](/docs/integrations/app-development/github)
-* [GitLab](/docs/integrations/app-development/gitlab)
-* [Jenkins](/docs/integrations/app-development/jenkins)
-* [Jira Cloud](/docs/integrations/app-development/jira-cloud)
-* [Jira Server](/docs/integrations/app-development/jira)
-* [Opsgenie](/docs/integrations/saas-cloud/opsgenie)
-* [PagerDuty](/docs/integrations/saas-cloud/pagerduty-v2)
+* [GitHub](/docs/integrations/apps/app-development/github)
+* [GitLab](/docs/integrations/apps/app-development/gitlab)
+* [Jenkins](/docs/integrations/apps/app-development/jenkins)
+* [Jira Cloud](/docs/integrations/apps/app-development/jira-cloud)
+* [Jira Server](/docs/integrations/apps/app-development/jira)
+* [Opsgenie](/docs/integrations/apps/saas-cloud/opsgenie)
+* [PagerDuty](/docs/integrations/apps/saas-cloud/pagerduty-v2)
 
 ## Create new FERs
 
@@ -69,15 +69,15 @@ Complete the configuration for the build and deploy tool you use.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Search for *Software Development Optimization* collector.
 1. Under this collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
-   * **Deploy**: Follow the steps outlined in [this document](/docs/integrations/app-development/bitbucket#collecting-logs-for-bitbucket-app) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
+   * **Deploy**: Follow the steps outlined in [this document](/docs/integrations/apps/app-development/bitbucket#collecting-logs-for-bitbucket-app) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
 
 ### Jenkins for build and deploy
 
-1. Install the latest Jenkins plugin as described [here](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins).
+1. Install the latest Jenkins plugin as described [here](/docs/integrations/apps/app-development/jenkins#collecting-logs-and-metrics-for-jenkins).
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Search for *Software Development Optimization* collector.
 1. Under this collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins plugin :
-    * **Build Pipeline Stages**: Follow directions in [Jenkins](/docs/integrations/app-development/jenkins) to configure the Jenkins Sumo Logic plugin.
+    * **Build Pipeline Stages**: Follow directions in [Jenkins](/docs/integrations/apps/app-development/jenkins) to configure the Jenkins Sumo Logic plugin.
     * **Build**: Follow [this](/docs/observability/sdo/jenkins-plugin-build-deploy-events/) doc to modify your Jenkins plugin to explicitly identify, enrich, and send build events to Sumo Logic.
     * **Deploy**: Follow [this](/docs/observability/sdo/jenkins-plugin-build-deploy-events/) doc to modify your Jenkins plugin to explicitly identify, enrich, and send deploy events to Sumo Logic.
 

@@ -78,7 +78,7 @@ Each detailed log will be broken down into two logs, one for packages and one fo
 :::
 
 :::info
-After configuring the Sysdig Secure source, consider installing the Sumo Logic app for [Sysdig Secure](/docs/integrations/saas-cloud/sysdig-secure/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Sysdig Secure source, consider installing the Sumo Logic app for [Sysdig Secure](/docs/integrations/apps/saas-cloud/sysdig-secure/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

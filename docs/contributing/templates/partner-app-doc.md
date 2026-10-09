@@ -8,7 +8,7 @@ description: Use this template to create a Sumo Logic Partner app doc (/docs/int
   <meta name="robots" content="noindex"/>
 </head>
 
-Use this template to create a [Sumo Logic Partner app](/docs/integrations/partner-ecosystem-apps) doc. Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
+Use this template to create a [Sumo Logic Partner app](/docs/integrations/apps/partner-ecosystem-apps) doc. Copy and paste this into your new .md file. Refer to the [Style Guide](/docs/contributing/style-guide) if needed.
 
 
 ```md
@@ -67,7 +67,7 @@ The `{AppName}` App uses...
 
 ## Collection configuration and app installation
 
-\This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](/docs/integrations/google/app-engine/#collection-process-for-gcp-services).\
+\This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](/docs/integrations/apps/google/app-engine/#collection-process-for-gcp-services).\
 
 ### Step 1.
 

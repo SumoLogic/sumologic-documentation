@@ -66,7 +66,7 @@ To configure a Symantec Web Security Service Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Symantec Web Security Service source, consider installing the Sumo Logic app for [Symantec Web Security Service](/docs/integrations/saas-cloud/symantec-web-security-service/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Symantec Web Security Service source, consider installing the Sumo Logic app for [Symantec Web Security Service](/docs/integrations/apps/saas-cloud/symantec-web-security-service/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

@@ -12,11 +12,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Collected metrics](/docs/send-data/installed-collectors/sources/host-metrics-source/#collected-metrics).
 
-* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#cpu-metrics)
-* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#memory-metrics)
-* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#tcp-metrics)
-* [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#networking-metrics)
-* [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics/#disk-metrics)
+* [CPU Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics/#cpu-metrics)
+* [Memory Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics/#memory-metrics)
+* [TCP Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics/#tcp-metrics)
+* [Networking Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics/#networking-metrics)
+* [Disk Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics/#disk-metrics)
 
 ### Time intervals
 

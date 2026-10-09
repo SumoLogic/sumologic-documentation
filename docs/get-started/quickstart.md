@@ -58,14 +58,14 @@ This dashboard will give you an instant view of key performance metrics using Ki
 1. **Transition to real data**. Kickstart Data is available for 20 days or until you start ingesting real data—whichever comes first. It deactivates automatically at the end of the trial, but can be skipped at any time.
 
 :::note For Admins
-For configuration information, refer to [Kickstart Data app](/docs/integrations/sumo-apps/kickstart-data) and [Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
+For configuration information, refer to [Kickstart Data app](/docs/integrations/apps/sumo-apps/kickstart-data) and [Kickstart Data source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
 :::
 
 ### Getting started with Kickstart Data in your trial
 
 As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards—no setup, data ingestion, or firewall configuration required—so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data is used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
 
-The Kickstart sample data you see in the [sample app/dashboards](/docs/integrations/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
+The Kickstart sample data you see in the [sample app/dashboards](/docs/integrations/apps/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
 
 Once you're ready to work with your own data, follow the in-product prompts to begin ingesting logs via OpenTelemetry, Hosted Collectors, or Installed Collectors. The Kickstart experience will phase out automatically once you start ingesting real data or after 20 days—whichever comes first.
 

@@ -210,7 +210,7 @@ Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly 
 
 #### App Central, custom integrations, and other automations
 
-Cloud SOAR has hundreds of [pre-built playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
+Cloud SOAR has hundreds of [pre-built playbooks](/docs/integrations/playbook-templates/playbook-templates/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
 
 Both pre-built and custom playbooks are simply combinations of various integrations and automations. These integrations can also be used stand-alone rather than as part of a playbook. Typically, an integration in Cloud SOAR contains one or more of these actions:
 * **Enrichment**. Adds information, metadata, or context, such as from a threat intelligence database.

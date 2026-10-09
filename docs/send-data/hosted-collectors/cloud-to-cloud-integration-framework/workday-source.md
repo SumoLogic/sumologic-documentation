@@ -162,7 +162,7 @@ To configure a Workday Source, follow the steps below:
 16. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Workday source, consider installing the Sumo Logic app for [Workday](/docs/integrations/saas-cloud/workday/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Workday source, consider installing the Sumo Logic app for [Workday](/docs/integrations/apps/saas-cloud/workday/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

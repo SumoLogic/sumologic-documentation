@@ -80,7 +80,7 @@ To configure the CrowdStrike FDR Host Inventory API:
 12. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the CrowdStrike FDR Host Inventory source, consider installing the Sumo Logic app for [CrowdStrike FDR Host Inventory](/docs/integrations/saas-cloud/crowdstrike-fdr-host-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the CrowdStrike FDR Host Inventory source, consider installing the Sumo Logic app for [CrowdStrike FDR Host Inventory](/docs/integrations/apps/saas-cloud/crowdstrike-fdr-host-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata Field

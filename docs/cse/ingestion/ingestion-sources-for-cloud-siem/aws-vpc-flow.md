@@ -8,7 +8,7 @@ description: Configure collection and ingestion of VPC Flow logs from an S3 buck
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To ingest AWS VPC Flow data into Cloud SIEM:
-1. [Collect Amazon VPC Flow logs using an Amazon S3 source](/docs/integrations/amazon-aws/vpc-flow-logs/#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source) on a collector. When you configure the source, do the following:
+1. [Collect Amazon VPC Flow logs using an Amazon S3 source](/docs/integrations/apps/amazon-aws/vpc-flow-logs/#collecting-amazon-vpc-flow-logs-using-an-amazon-s3-source) on a collector. When you configure the source, do the following:
     1. Click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. Add another field named `_parser` with value */Parsers/System/AWS/AWS VPC Flow*. This ensures that the AWS VPC Flow logs are parsed and normalized into structured records in Cloud SIEM.
 1. To verify that your logs are successfully making it into Cloud SIEM:

@@ -87,7 +87,7 @@ To configure an Webex source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Webex source, consider installing the Sumo Logic app for [Webex](/docs/integrations/saas-cloud/webex/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Webex source, consider installing the Sumo Logic app for [Webex](/docs/integrations/apps/saas-cloud/webex/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

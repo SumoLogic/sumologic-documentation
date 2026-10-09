@@ -70,10 +70,10 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Cloud APIs | [HTTP Logs & Metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics/) | &#10003; | &#10003; |
 | Collection - Cloud APIs | [HTTP Traces](/docs/send-data/hosted-collectors/http-source/traces/) | &#10003; ||
 | Collection - Cloud APIs | [Microsoft Azure AD Inventory](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
-| Collection - Cloud APIs | [Microsoft Graph Security API](/docs/integrations/saas-cloud/microsoft-graph-security-v2/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.*
-| Collection - Cloud APIs | [Mimecast](/docs/integrations/saas-cloud/mimecast/) | &#10003; | &#10003; |
-| Collection - Cloud APIs | [MS Graph Azure AD Reporting](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
-| Collection - Cloud APIs | [MS Graph Identity Protection](/docs/integrations/microsoft-azure/microsoft-graph-identity-protection/) | &#10003; | &#10003; |
+| Collection - Cloud APIs | [Microsoft Graph Security API](/docs/integrations/apps/saas-cloud/microsoft-graph-security-v2/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.*
+| Collection - Cloud APIs | [Mimecast](/docs/integrations/apps/saas-cloud/mimecast/) | &#10003; | &#10003; |
+| Collection - Cloud APIs | [MS Graph Azure AD Reporting](/docs/integrations/apps/saas-cloud/microsoft-graph-azure-ad-reporting/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
+| Collection - Cloud APIs | [MS Graph Identity Protection](/docs/integrations/apps/microsoft-azure/microsoft-graph-identity-protection/) | &#10003; | &#10003; |
 | Collection - Cloud APIs | [Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Netskope WebTx](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-webtx-source/) | &#10003; | &#10003;<br/>*Available upon request within 5 business days.* |
 | Collection - Cloud APIs | [Office 365 Audit](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/) | &#10003; | &#10003; |

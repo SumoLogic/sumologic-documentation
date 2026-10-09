@@ -80,7 +80,7 @@ To configure the CrowdStrike FileVantage Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the CrowdStrike FileVantage source, consider installing the Sumo Logic app for [CrowdStrike FileVantage](/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the CrowdStrike FileVantage source, consider installing the Sumo Logic app for [CrowdStrike FileVantage](/docs/integrations/apps/saas-cloud/crowdstrike-falcon-filevantage/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

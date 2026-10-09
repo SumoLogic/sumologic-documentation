@@ -125,7 +125,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Fingerprint](/docs/send-data/installed-collectors/configuration/#fingerprint)**. A fingerprint consists of the first 2048 bytes of a file and is used by Installed Collectors to track what data has been collected.
 
-**[Flow Graph](/docs/integrations/amazon-aws/guardduty-benchmark)**. A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](/docs/integrations/amazon-aws/guardduty-benchmark) dashboard.
+**[Flow Graph](/docs/integrations/apps/amazon-aws/guardduty-benchmark)**. A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](/docs/integrations/apps/amazon-aws/guardduty-benchmark) dashboard.
 
 
 ## G
@@ -143,7 +143,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Hash rules](/docs/send-data/collection/processing-rules/hash-rules)**. Hash rules replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
 
-**[Host Metrics](/docs/integrations/hosts-operating-systems/host-metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
+**[Host Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
 **[Hosted Collectors](/docs/send-data/hosted-collectors)**. Hosted Collectors do not require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 
@@ -212,7 +212,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 **[Metric volume index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index)**. A Sumo Logic index to which Sumo Logic writes messages with information about the volume of metrics you are ingesting.
 
 <!--
-**[Microservices](/docs/integrations/app-development)**. The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
+**[Microservices](/docs/integrations/apps/app-development)**. The microservices architecture enables you to structure applications as collections of loosely coupled services that are fine-grained, with protocols that are lightweight. Building applications using different smaller services improves modularity and provides for the continuous delivery and deployment of large, complex applications.
 -->
 
 **[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. It uses a suite of specialized agents to help you search, analyze, and learn about your data using natural language.
