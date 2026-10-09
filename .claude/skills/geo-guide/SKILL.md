@@ -104,7 +104,7 @@ Rewrite every H2 and H3 as the question a user would type into an AI tool, or as
 
 **Rules:**
 - Use "How to X" for procedural headings (not "How do I X"). Use What, Why, When, or Which for conceptual headings.
-- Write headings in the second person or as a neutral task statement, never the first person ("How do I", "What do I need").
+- Write headings in the second person or as a neutral task statement, never the first person ("How do I", "What do I need"). Exception: FAQ questions (Principle 4) use first person.
 - Include "Sumo Logic" and the feature name where it reads naturally.
 - Apply to H2 and H3 only. H1 is generated from `title:` frontmatter.
 
@@ -118,7 +118,7 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 ### What is [feature name] in Sumo Logic?
 [One-sentence BLUF answer.]
 
-### How do you [primary task for this page]?
+### How do I [primary task for this page]?
 [Direct answer with inline code or steps if relevant.]
 
 ### What happens if [common error or edge case]?
@@ -131,8 +131,7 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 **Rules:**
 - Minimum 3 questions per FAQ but aim for 5 to 8.
 - Cover distinct intents (scope, capabilities, limitations, editing, prerequisites), not variations of one question.
-- Phrase most questions in the second person (you/your). Use "How do you X?", "Can you X?", or "How to X" rather than "How do I X?".
-- Exception: personal or eligibility-type questions ("Can I opt out...", "Do I need...") may use first person. This mirrors how a reader actually forms the question in their head; forcing it into second person ("Can you opt out...") reads like the document interrogating the reader. Answers still respond in second person regardless of how the question is phrased.
+- Phrase all questions in the first person (I/my). Use "How do I X?", "Can I X?", "Do I need to X?" rather than "How do you X?" or "Can you X?". Answers respond in second person ("you") as usual.
 - Each answer must be fully self-contained. No "see above" or "refer to X".
 - Questions must match natural AI query language for the topic.
 - Answers must be concise with 1 to 3 sentences.
