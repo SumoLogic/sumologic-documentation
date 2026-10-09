@@ -141,6 +141,41 @@ Every major page ends with a structured FAQ block. These are the highest-value c
 
 Add `keywords` to every major documentation page. This is the signal layer AI crawlers read before rendering the page. See the [Frontmatter Template (GEO-optimized)](#frontmatter-template-geo-optimized) above for the full pattern. Per-page JSON-LD schema injection requires a swizzled `@theme/DocItem/Metadata` component that does not yet exist in this repo — scope Principle 5 to `keywords` only until that infrastructure is built.
 
+## AEO patterns
+
+These cover AEO (Answer Engine Optimization) signals — featured snippets and "People also ask" — not explicitly addressed by the Five GEO Principles above.
+
+### Make facts citation-ready
+
+LLMs extract facts stated as short, explicit, standalone sentences.
+
+**Hard to cite (buried fact):**
+> The integration, which was released in version 3.5 and works with both hosted and installed collectors, supports up to 10,000 events per second depending on the instance size.
+
+**Easy to cite (explicit facts):**
+> The integration supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors. It was introduced in version 3.5.
+
+### Replace vague version references
+
+AI tools reproduce whatever is on the page. Vague references become stale citations.
+
+| Vague | Specific |
+|-------|----------|
+| the latest version | version 3.10 |
+| the current release | the May 2026 release |
+| recent updates | updates added in Q1 2026 |
+
+If the doc intentionally stays version-agnostic, add a note like "See the release notes for the current version number."
+
+### Define acronyms and terms
+
+LLMs cannot infer definitions. An undefined acronym or domain term can produce an incorrect expansion in AI-generated answers.
+
+Define on first use in body text:
+> Sumo Logic uses Field Extraction Rules (FERs) to parse key-value pairs from raw log messages at ingest time.
+
+After the first use, the abbreviation alone is fine. Define the term once at its genuine first use (often the opening paragraph). Do not re-expand the same acronym in later tables or sections.
+
 ## Gotchas
 
 GEO restructures pages in ways that are intentional for AI citation but inconsistent with the standard Sumo Logic style guide. Applying it to the wrong pull requests creates review noise and style drift. Only apply GEO when the prompt explicitly asks for it — trigger phrases are listed above. If a prompt asks you to "update the authentication page" with no mention of GEO, AI citation, or structured metadata, make the content change only. Do not rewrite headings as questions, do not add an FAQ section.
