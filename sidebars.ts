@@ -2253,6 +2253,33 @@ integrations: [
     items: [
       {
         type: 'category',
+        label: 'Apps',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/apps'},
+        items: [
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Integrations',
+        collapsible: true,
+        collapsed: false,
+        link: {type: 'doc', id: 'integrations/automation-integrations/index'},
+        items: [
+        ],
+      },
+      {
+        type: 'category',
+        label: 'Playbook Templates',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/playbook-templates'},
+        items: [
+        ],
+      },
+      {
+        type: 'category',
         label: 'Product List',
         collapsible: true,
         collapsed: true,
