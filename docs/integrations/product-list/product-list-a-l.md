@@ -365,7 +365,7 @@ Sumo Logic integrates with hundreds of vendors and products, split alphabeticall
 
 Depending on the vendor, Sumo Logic offers apps (pre-built dashboards), automation integrations (App Central playbooks and actions), Cloud SIEM integrations (parsers and rules), and collectors (sources for ingesting data), as described in [Product List](/docs/integrations/product-list/).
 
-### Is your vendor or product supported by Sumo Logic?
+### Is my vendor or product supported by Sumo Logic?
 
 Search this page or [Product List M-Z](/docs/integrations/product-list/product-list-m-z/) for the vendor's name. If it isn't listed, check with your Sumo Logic account team, since new integrations are added regularly.
 

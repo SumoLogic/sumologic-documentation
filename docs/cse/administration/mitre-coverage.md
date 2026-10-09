@@ -218,7 +218,7 @@ It shows which MITRE ATT&CK tactics, techniques, and procedures are covered by r
 
 Recent Activity shows coverage based on signals your organization actually generated in the last 180 days. Theoretical Coverage shows the coverage you'd have if all enabled rules generated at least one signal, which helps you identify valuable custom rules to write.
 
-### Can you export MITRE ATT&CK coverage data?
+### Can I export MITRE ATT&CK coverage data?
 
 Yes. You can export the filtered coverage to a JSON file in the standard MITRE format, which you can combine with exports from other security tools to calculate total coverage across your environment.
 
@@ -226,6 +226,6 @@ Yes. You can export the filtered coverage to a JSON file in the standard MITRE f
 
 Each technique gets a score from 0 to 3 based on the number of rules covering it: 0 (None, 10 or fewer rules), 1 (Low, 11–13 rules), 2 (Medium, 14–16 rules), and 3 (High, 17 or more rules).
 
-### Can you use APIs to get MITRE ATT&CK coverage data?
+### Can I use APIs to get MITRE ATT&CK coverage data?
 
 Yes. The `MitreTaggedRules` API returns a list of MITRE ATT&CK tagged rules, and the `MitreAttackCoverageExportJson` API returns a JSON representation of your MITRE ATT&CK coverage.

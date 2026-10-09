@@ -107,7 +107,7 @@ This section contains the following topics:
 
 Cloud SIEM is a cloud-based security information and event management system that collects and correlates log and event data from your infrastructure and applications into prioritized security insights.
 
-### What data can you send to Cloud SIEM?
+### What data can I send to Cloud SIEM?
 
 You can forward log and event data already ingested into Sumo Logic, from on-premises or cloud sources, to Cloud SIEM for parsing, mapping, and enrichment into records.
 
@@ -119,6 +119,6 @@ Cloud SIEM focuses on the investigation phase of security operations, while [Clo
 
 Records are parsed and enriched log messages. Signals are created when a record matches a rule. Entities are the unique identifiers, like IP addresses or usernames, extracted from signals. Insights are groups of related signals for the same entity that cross a severity threshold.
 
-### Can you write custom rules in Cloud SIEM?
+### Can I write custom rules in Cloud SIEM?
 
 Yes. In addition to hundreds of built-in rules, you can write custom match, threshold, chain, aggregation, first seen, and outlier rules to cover threats or data sources specific to your environment.
