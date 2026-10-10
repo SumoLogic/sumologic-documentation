@@ -61,7 +61,7 @@ For any change touching 50+ files (e.g. terminology migrations, frontmatter audi
 | Collector release notes | `/blog-collector/` |
 | CSE release notes | `/blog-cse/` |
 | C2C source docs | `/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/` |
-| App integration docs | `/docs/platform-services/automation-service/app-central/integrations/` |
+| App integration docs | `/docs/integrations/automation-integrations/automation-integration-catalog/` |
 | Sidebar config | `sidebars.ts` |
 
 ## Frontmatter

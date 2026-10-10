@@ -55,7 +55,7 @@ The table below shows the `_sourceCategory` that is assigned to Audit Event Inde
 
 | Product Feature | _sourceCategory Value |
 |:--|:--|
-| [App Central packages](/docs/platform-services/automation-service/automation-service-app-central/)  | `oarAppCentralPackages`   |
+| [App Central packages](/docs/integrations/)  | `oarAppCentralPackages`   |
 | [Automation action](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActions`  |
 | [Automation action configuration](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook) | `oarAutomationActionConfigurations` |
 | [Integration](/docs/platform-services/automation-service/automation-service-integrations/)   | `oarIntegrations`  |

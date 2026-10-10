@@ -1,6 +1,6 @@
 ---
 slug: /integrations
-title: Apps and Integrations
+title: App Catalog
 description: Discover integrations that connect Sumo Logic to popular services, apps, and platforms for centralized data collection and analysis.
 keywords:
   - apps

@@ -110,7 +110,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Task Access All| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
 | Task Edit| Create, edit, and close tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
 | Task Reassign | Reassign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
-| App Central Access | View and install packages from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
+| App Central Access | View and install packages from [App Catalog](/docs/integrations/). | `cloudSoarAppCentralAccess` |
 | App Central Export | Export integrations, playbooks, rules, actions, and templates from App Central. | `cloudSoarAppCentralExport` |
 | Integrations Access | View and test [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
 | Integrations Configure| Create, edit, and manage integrations. | `cloudSoarIntegrationsConfigure` |

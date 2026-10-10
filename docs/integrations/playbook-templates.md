@@ -18,7 +18,7 @@ The out-of-the-box playbooks are templates that you need to configure before the
 1. [Install the playbook](#install-an-out-of-the-box-playbook-from-app-catalog).
 1. [Configure the installed out-of-the-box playbook](#configure-an-out-of-the-box-playbook) to run actions in the integrations you have in your environment. 
     :::note IMPORTANT
-    You must first [install integrations](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central) and [configure authentication for them](/docs/platform-services/automation-service/configure-authentication-for-integrations/) before you can configure playbooks to use the actions from those integrations. 
+    You must first [install integrations](/docs/integrations/automation-integrations/manage-automation-integrations/#install-an-integration-from-app-catalog) and [configure authentication for them](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/) before you can configure playbooks to use the actions from those integrations. 
     :::
 
 ## Install an out-of-the-box playbook from App Catalog
@@ -37,10 +37,10 @@ After you install an out-of-the-box playbook from App Catalog, it appears on the
 1. Select the playbook from the list. In the example below, the *21 - DLP Alert* playbook is selected. <br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook.png')} alt="Example out-of-the-box playbook" style={{border: '1px solid gray'}} width="700" />
 1. Click the edit button at the bottom of the screen.
 1. Hover your mouse over a node and click the edit button that appears on the node. The **Edit Node** dialog appears.
-1. Note the **Node name**. It should tell you what action you need to connect to. In the following example, the node name is *IP reputation destination address with VirusTotal*. That tells us we need to connect to the *IP Reputation* action in the [VirusTotal integration](/docs/platform-services/automation-service/app-central/integrations/virustotal/) and use the *destination address*.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-2.png')} alt="Example out-of-the-box playbook node" style={{border: '1px solid gray'}} width="400" />
+1. Note the **Node name**. It should tell you what action you need to connect to. In the following example, the node name is *IP reputation destination address with VirusTotal*. That tells us we need to connect to the *IP Reputation* action in the [VirusTotal integration](/docs/integrations/automation-integrations/automation-integration-catalog/virustotal/) and use the *destination address*.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-2.png')} alt="Example out-of-the-box playbook node" style={{border: '1px solid gray'}} width="400" />
 1. In the **Integration** field, select the integration. (In our example, select  **VirusTotal**.)
     :::note IMPORTANT
-    You must have [already installed the integration](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central) and [configured its authentication](/docs/platform-services/automation-service/configure-authentication-for-integrations/) before you can use actions in the integration.
+    You must have [already installed the integration](/docs/integrations/automation-integrations/manage-automation-integrations/#install-an-integration-from-app-catalog) and [configured its authentication](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/) before you can use actions in the integration.
     :::
 1. In the **Action** field, select the action. (In our example, select **IP Reputation**.)
 1. Fill out other fields as needed. Fields with asterisks are required. (In our example, in the **IP** field select **destinationAddress**).<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-3.png')} alt="Example out-of-the-box playbook node with integration and action selected" style={{border: '1px solid gray'}} width="400" />
@@ -2466,7 +2466,7 @@ This playbook analyses automatically an incoming suspect email for phishing, ext
 
 The purpose of this playbook is to prevent DoS/DDoS attacks. When Cloud SOAR receives an alert, it tries to collect initial information regarding the impact of the DoS/DDoS attack and notifies the SOC team if some information is missing. It then gathers data about the involved interfaces and command history and sends the information to the SOC team through email.
 
-Next, the playbook collects all the information from all the previous actions, after which it proceeds with additional activities (that is, execution of custom scripts, running SELECT query into the DB, and so on). After the playbook provides all the necessary information, it allows the analysts to conduct extra CTI activities to verify whether the IoCs are malicious, enabling them to decide on the following action by running an additional playbook ([20 - Decision tree for DOS](/docs/platform-services/automation-service/playbooks-in-app-central/#20---decision-tree-for-dos) in our case).
+Next, the playbook collects all the information from all the previous actions, after which it proceeds with additional activities (that is, execution of custom scripts, running SELECT query into the DB, and so on). After the playbook provides all the necessary information, it allows the analysts to conduct extra CTI activities to verify whether the IoCs are malicious, enabling them to decide on the following action by running an additional playbook ([20 - Decision tree for DOS](/docs/integrations/playbook-templates/#20---decision-tree-for-dos) in our case).
 
 Once they decide, the playbook can inform the technician or execute additional cmd, depending on the result of the previous playbook execution. Lastly, the playbook sends an incident summary and creates a user choice.
 

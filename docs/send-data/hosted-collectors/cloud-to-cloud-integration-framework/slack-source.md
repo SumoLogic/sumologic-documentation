@@ -181,4 +181,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Slack Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/slack/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Slack Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/slack/) to automate response actions directly from Cloud SOAR playbooks.
