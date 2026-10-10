@@ -5960,8 +5960,5 @@
   "/docs/platform-services/automation-service/automation-service-app-central/": "/docs/integrations/",
   "/docs/platform-services/automation-service/playbooks-in-app-central/": "/docs/integrations/playbook-templates/",
   "/docs/platform-services/automation-service/configure-authentication-for-integrations/": "/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/",
-  "/docs/platform-services/automation-service/app-central/integrations/": "/docs/integrations/automation-integrations/automation-integration-catalog",
-  "/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central" : "/docs/integrations/automation-integrations/manage-automation-integrations/#install-an-integration-from-app-catalog",
-  "/docs/platform-services/automation-service/automation-service-app-central/#publish-an-integration-to-app-central" : "/docs/integrations/automation-integrations/manage-automation-integrations/#publish-an-integration-to-app-catalog",
-  "/docs/platform-services/automation-service/automation-service-app-central/#view-app-central" : "/docs/integrations/"
+  "/docs/platform-services/automation-service/app-central/integrations/": "/docs/integrations/automation-integrations/automation-integration-catalog"
 }
