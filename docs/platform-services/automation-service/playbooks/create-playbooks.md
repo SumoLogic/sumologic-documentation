@@ -215,7 +215,7 @@ Perform the following steps to use the user choice responder variables in nodes 
 
 #### User choice nodes in out-of-the-box playbooks
 
-Here are just a few of the [out-of-the-box playbooks](docs/integrations/playbook-templates/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
+Here are just a few of the [out-of-the-box playbooks](/docs/integrations/playbook-templates/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
 * 18 - DDoS
 * 21 - DLP Alert
 * 24 - DoS with Decision Tree
