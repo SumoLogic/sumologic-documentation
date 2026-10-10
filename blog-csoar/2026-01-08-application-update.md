@@ -17,7 +17,7 @@ Following are the updates made in December, 2025.
 
 #### Integrations
 
-Added a new integration for [Google Identity Platform](/docs/platform-services/automation-service/app-central/integrations/google-identity-platform/).
+Added a new integration for [Google Identity Platform](/docs/integrations/automation-integrations/automation-integration-catalog/google-identity-platform/).
 
 #### Platform
 
@@ -36,5 +36,5 @@ Fixed an issue where results and errors were not displaying for containment type
 
 #### Integrations
 
-* In the [Microsoft EWS (Graph)](/docs/platform-services/automation-service/app-central/integrations/microsoft-ews-graph/) integration, removed the default values for the `has_attachments` and `un_read` fields in the Search Emails Extended action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
-* In the [Freshservice](/docs/platform-services/automation-service/app-central/integrations/freshservice/) integration, the Create Ticket and Update Ticket actions now support an optional Workspace ID. Also updated existing custom ticket fields.
+* In the [Microsoft EWS (Graph)](/docs/integrations/automation-integrations/automation-integration-catalog/microsoft-ews-graph/) integration, removed the default values for the `has_attachments` and `un_read` fields in the Search Emails Extended action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
+* In the [Freshservice](/docs/integrations/automation-integrations/automation-integration-catalog/freshservice/) integration, the Create Ticket and Update Ticket actions now support an optional Workspace ID. Also updated existing custom ticket fields.

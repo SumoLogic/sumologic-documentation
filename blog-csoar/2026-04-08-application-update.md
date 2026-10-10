@@ -19,30 +19,30 @@ Following are the updates made in March 2026.
 
 We are excited to introduce new integrations for the following services:
 
-- [1Password](/docs/platform-services/automation-service/app-central/integrations/1password/)
-- [Sumo Logic Cloud Monitor](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-monitor/)
-- [Sumo Logic Lookup Table](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-lookup-table/)
-- [Sumo Logic Rules Tuning](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-rules-tuning)
-- [Upwind](/docs/platform-services/automation-service/app-central/integrations/upwind/)
+- [1Password](/docs/integrations/automation-integrations/automation-integration-catalog/1password)
+- [Sumo Logic Cloud Monitor](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-cloud-monitor/)
+- [Sumo Logic Lookup Table](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-lookup-table/)
+- [Sumo Logic Rules Tuning](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-rules-tuning)
+- [Upwind](/docs/integrations/automation-integrations/automation-integration-catalog/upwind/)
 
 #### Enhancements
 
 Upgraded the `python3_generic` **(Python 3.8)** Docker image to `python3_12_generic` **(Python 3.12)** across the following integrations to address Python 3.8 end-of-life and enhance security and performance:
-- [Abuse.ch SSLBL Feed](/docs/platform-services/automation-service/app-central/integrations/abuse.ch-sslbl-feed/)
-- [AbuseIPDB](/docs/platform-services/automation-service/app-central/integrations/abuseipdb/)
-- [Airtable](/docs/platform-services/automation-service/app-central/integrations/airtable/)
-- [Atlassian Jira Cloud](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-cloud/)
-- [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
-- [Atlassian Opsgenie](/docs/platform-services/automation-service/app-central/integrations/atlassian-opsgenie/)
-- [Censys V3](/docs/platform-services/automation-service/app-central/integrations/censys-v3/)
-- [Cloudflare](/docs/platform-services/automation-service/app-central/integrations/cloudflare/)
-- [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
-- [CrowdStrike Falcon Discover](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-discover/)
-- [CrowdStrike Falcon Intelligence](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/)
-- [CrowdStrike Falcon Sandbox](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-sandbox/)
-- [Microsoft OneDrive](/docs/platform-services/automation-service/app-central/integrations/microsoft-onedrive/)
-- [ThreatConnect V3](/docs/platform-services/automation-service/app-central/integrations/threatconnect-v3/)
-- [URLScan.io](/docs/platform-services/automation-service/app-central/integrations/urlscan.io/)
+- [Abuse.ch SSLBL Feed](/docs/integrations/automation-integrations/automation-integration-catalog/abuse.ch-sslbl-feed/)
+- [AbuseIPDB](/docs/integrations/automation-integrations/automation-integration-catalog/abuseipdb/)
+- [Airtable](/docs/integrations/automation-integrations/automation-integration-catalog/airtable/)
+- [Atlassian Jira Cloud](/docs/integrations/automation-integrations/automation-integration-catalog/atlassian-jira-cloud/)
+- [Atlassian Jira V2](/docs/integrations/automation-integrations/automation-integration-catalog/atlassian-jira-v2/)
+- [Atlassian Opsgenie](/docs/integrations/automation-integrations/automation-integration-catalog/atlassian-opsgenie/)
+- [Censys V3](/docs/integrations/automation-integrations/automation-integration-catalog/censys-v3/)
+- [Cloudflare](/docs/integrations/automation-integrations/automation-integration-catalog/cloudflare/)
+- [CrowdStrike Falcon](/docs/integrations/automation-integrations/automation-integration-catalog/crowdstrike-falcon/)
+- [CrowdStrike Falcon Discover](/docs/integrations/automation-integrations/automation-integration-catalog/crowdstrike-falcon-discover/)
+- [CrowdStrike Falcon Intelligence](/docs/integrations/automation-integrations/automation-integration-catalog/crowdstrike-falcon-intelligence/)
+- [CrowdStrike Falcon Sandbox](/docs/integrations/automation-integrations/automation-integration-catalog/crowdstrike-falcon-sandbox/)
+- [Microsoft OneDrive](/docs/integrations/automation-integrations/automation-integration-catalog/microsoft-onedrive/)
+- [ThreatConnect V3](/docs/integrations/automation-integrations/automation-integration-catalog/threatconnect-v3/)
+- [URLScan.io](/docs/integrations/automation-integrations/automation-integration-catalog/urlscan.io/)
 
 #### Platform
 
@@ -59,9 +59,9 @@ Upgraded the `python3_generic` **(Python 3.8)** Docker image to `python3_12_gene
 
 #### Integrations
 
-- **Incident Tools**. Set the default start time to the current time when it is not specified in the Create Incident From Template action. [Learn more](/docs/platform-services/automation-service/app-central/integrations/incident-tools/).
-- **Microsoft Azure Security Center**. Updated the integration to use Microsoft’s recommended app-only authentication. [Learn more](/docs/platform-services/automation-service/app-central/integrations/microsoft-azure-security-center/).
+- **Incident Tools**. Set the default start time to the current time when it is not specified in the Create Incident From Template action. [Learn more](/docs/integrations/automation-integrations/automation-integration-catalog/incident-tools/).
+- **Microsoft Azure Security Center**. Updated the integration to use Microsoft’s recommended app-only authentication. [Learn more](/docs/integrations/automation-integrations/automation-integration-catalog/microsoft-azure-security-center/).
 
 #### Playbooks
 
-- Fixed an issue that prevented playbook paths from appearing in App Central playbook previews.
+- Fixed an issue that prevented playbook paths from appearing in App Catalog playbook previews.

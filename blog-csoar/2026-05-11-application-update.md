@@ -17,7 +17,7 @@ The following are the updates made in April 2026.
 
 This section includes new integrations and upgrades to existing ones.
 
-- We are excited to introduce the new ZeroFox V2 integration. [Learn more](/docs/platform-services/automation-service/app-central/integrations/zerofox-v2/).
+- We are excited to introduce the new ZeroFox V2 integration. [Learn more](/docs/integrations/automation-integrations/automation-integration-catalog/zerofox-v2/).
 - Upgraded integrations from the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life while improving security and performance.
 
 ### Platform

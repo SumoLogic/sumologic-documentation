@@ -265,4 +265,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Microsoft Graph Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/microsoft-graph-security/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Microsoft Graph Security Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/microsoft-graph-security/) to automate response actions directly from Cloud SOAR playbooks.

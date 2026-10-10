@@ -1,0 +1,24 @@
+---
+slug: /integrations/automation-integrations/automation-integration-catalog
+title: Automation Integrations Catalog
+sidebar_position: 1
+description: ''
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This section includes the complete catalog of currently supported automation integrations available in App Central. Our Automation Service and Cloud SOAR offer a comprehensive suite of integrations designed to enhance your automation and orchestration capabilities. 
+
+Some of these automation integrations only appear in the [App Central](/docs/cloud-soar/automation) in Cloud SOAR because they are tailor-made for Cloud SOAR. They are indicated as such within their respective articles.
+
+:::warning Important
+All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/).
+:::
+
+
+## Integrations
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items} />

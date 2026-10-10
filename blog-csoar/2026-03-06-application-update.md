@@ -17,10 +17,10 @@ Following are the updates made in February 2026.
 
 #### Integrations
 
-* [Added] [Sumo Logic Automation Tools](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-automation-tools/) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
-* [Updated] [ThreatConnect V3](/docs/platform-services/automation-service/app-central/integrations/threatconnect-v3/) - Added observations parameter to the Update Intelligence action to enable recording observation counts for indicators.
-* [Updated] [Atlassian Opsgenie](/docs/platform-services/automation-service/app-central/integrations/atlassian-opsgenie/) - Added a retry mechanism to the Create Alert action of Atlassian Opsgenie.
-* [Updated] [Microsoft SharePoint (Graph)](/docs/platform-services/automation-service/app-central/integrations/microsoft-sharepoint-graph/) - Improved the Folder Relative URL hint to provide clearer guidance on entering the correct relative path format.
+* [Added] [Sumo Logic Automation Tools](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-automation-tools/) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
+* [Updated] [ThreatConnect V3](/docs/integrations/automation-integrations/automation-integration-catalog/threatconnect-v3/) - Added observations parameter to the Update Intelligence action to enable recording observation counts for indicators.
+* [Updated] [Atlassian Opsgenie](/docs/integrations/automation-integrations/automation-integration-catalog/atlassian-opsgenie/) - Added a retry mechanism to the Create Alert action of Atlassian Opsgenie.
+* [Updated] [Microsoft SharePoint (Graph)](/docs/integrations/automation-integrations/automation-integration-catalog/microsoft-sharepoint-graph/) - Improved the Folder Relative URL hint to provide clearer guidance on entering the correct relative path format.
 
 #### Platform
 

@@ -1,6 +1,6 @@
 ---
 slug: /integrations
-title: Apps and Integrations
+title: App Catalog
 description: Discover integrations that connect Sumo Logic to popular services, apps, and platforms for centralized data collection and analysis.
 keywords:
   - apps
@@ -72,6 +72,24 @@ You can use Terraform to provide apps with the [`sumologic_app`](https://registr
 <br/>
 
 <div className="box-wrapper">
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/apps/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Apps</h4></a>
+  <p>Learn about the Sumo Logic apps available in Sumo Logic</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/automation-integrations/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Integrations</h4></a>
+  <p>Learn about the automation integrations available in Sumo Logic</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/playbook-templates/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Playbook Templates</h4></a>
+  <p>Learn about the playbook templates available in Sumo Logic</p>
+  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/product-list/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Product List</h4></a>

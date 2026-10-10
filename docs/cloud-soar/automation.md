@@ -15,7 +15,7 @@ The **Automation** section contains configuration tools for Cloud SOAR's automat
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**.
 
 Because Cloud SOAR provides automation functionality to the [Automation Service](/docs/platform-services/automation-service/), many features are identical between Cloud SOAR and the Automation Service. Therefore, for information about the following Cloud SOAR features, see the Automation Service articles:
-* [App Central](/docs/platform-services/automation-service/app-central/)
+* [App Central](/docs/integrations/)
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/)
 * [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge)
 * [Open Integration Framework](/docs/platform-services/automation-service/integration-framework/)

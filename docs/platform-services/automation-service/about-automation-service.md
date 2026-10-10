@@ -34,7 +34,7 @@ For more information, see [Cloud SOAR Compared to the Automation Service](/docs/
 ## Automation Service UI
 
 The Automation Service UI is composed of the following tabs:
-* [**App Central**](/docs/platform-services/automation-service/automation-service-app-central). Displays a central repository of integrations and playbooks you can install to your environment.<br/><img src={useBaseUrl('img/platform-services/app-central-main-screen.png')} style={{border:'1px solid gray'}} alt="App Central screen" width="800"/> 
+* [**App Central**](/docs/integrations/). Displays a central repository of integrations and playbooks you can install to your environment.<br/><img src={useBaseUrl('img/platform-services/app-central-main-screen.png')} style={{border:'1px solid gray'}} alt="App Central screen" width="800"/> 
 * [**Playbook**](/docs/platform-services/automation-service/playbooks/). Shows playbooks, which are workflows you can run to perform automations. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} style={{border:'1px solid gray'}} alt="Playbook screen" width="800"/>
 * [**Integration**](/docs/platform-services/automation-service/automation-service-integrations). Lists integrations with Sumo Logic and third-party vendors that provide actions used in playbooks. <br/><img src={useBaseUrl('img/platform-services/integrations-main-screen.png')} style={{border:'1px solid gray'}} alt="Integrations screen" width="800"/>
 * [**Bridge**](/docs/platform-services/automation-service/automation-service-bridge). Shows connections between on-premises servers and the Sumo Logic cloud. A bridge allows you to create a custom integration in your own system and use it to for automation. <br/><img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} style={{border:'1px solid gray'}} alt="Bridge screen" width="800"/>
@@ -88,11 +88,11 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 
 ### Configure the connection for an integration resource
 
-To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must first configure the connection for their resources. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must first configure the connection for their resources. See [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/).
 
 ## Actions limit
 
-To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 500 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 500 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Catalog UI](/docs/integrations/). All actions running in the cloud or via the bridge are included in this limit.
 
 <ActionsLimitQuery/>
 
