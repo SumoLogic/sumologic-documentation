@@ -2658,7 +2658,7 @@ This playbook allows users to retrieve information about a specific SLUG (incide
 
 *Brute Force*
 
-This playbook investigates a suspected brute force attack with Sumo Logic Cloud SIEM. By obtaining an insight from Cloud SIEM, if the number of attempts surpasses the pre-selected threshold, the playbook prompts you with user choice that allows you to stop the EC2 instance and manually review the incident or send an email notification. 
+This playbook investigates a suspected brute force attack with Sumo Logic Cloud SIEM. By obtaining an insight from Cloud SIEM, if the number of attempts surpasses the preselected threshold, the playbook prompts you with user choice that allows you to stop the EC2 instance and manually review the incident or send an email notification. 
 
 <SamplePlaybooks/>
 
