@@ -44,5 +44,7 @@ For information about Microsoft Azure Log Analytics, see [Microsoft Azure Log An
 
 ## Change Log
 
-* September 4, 2023 (v1.0) - First upload
-* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.0 | September 4, 2023 | Initial release of the Microsoft Azure Log Analytics integration. |

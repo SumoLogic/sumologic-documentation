@@ -2,7 +2,7 @@
 id: vectra-source
 title: Vectra Source
 sidebar_label: Vectra
-tags:
+keywords:
   - cloud-to-cloud
   - vectra
 description: Learn how to collect the list of threats detected in the Vectra platform.

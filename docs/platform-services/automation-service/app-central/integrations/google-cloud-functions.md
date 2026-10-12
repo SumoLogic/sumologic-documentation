@@ -166,4 +166,10 @@ If the issue persists, confirm the integration configuration JSON matches the se
 
 ## Change Log
 
-* August 28, 2026 (v1.1) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | August 28, 2026 | Initial release of the Google Cloud Functions integration. |
+
+## Additional resources
+
+- For Google Cloud Functions, Sumo Logic offers the [Google Cloud Functions app](/docs/integrations/google/cloud-functions) to collect and visualize your Google Cloud Functions data.

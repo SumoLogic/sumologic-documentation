@@ -77,19 +77,9 @@ For information about Aurora Endpoint Security (formerly CylanceProtect), see [A
 
 ## Change Log
 
-* February 6, 2019 - First upload
-* September 6, 2019 - Added link to Cylance Protect external library
-* November 3, 2023 (v1.2)
-    + Updated the integration with Environmental Variables
-    + Improved error handling
-    + Removed leading/trailing spaces
-    + Code Refactored
-    + The following actions has been renamed
-        - Get Device Threats *to* List Device Threats
-        - Get Devices *to* List Devices
-        - Get Policies *to* List Policies
-        - Get Threat Devices *to* List Threat Devices
-        - Get Threats *to* List Threats
-        - Get Zone Devices *to* Get Device Zone
-        - Get Zones *to* List Zones
-* March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.2 | November 3, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Improved error handling.</li><li>Removed leading and trailing spaces.</li><li>Refactored the code.</li><li>Renamed several actions: **Get Device Threats** to **List Device Threats**, **Get Devices** to **List Devices**, **Get Policies** to **List Policies**, **Get Threat Devices** to **List Threat Devices**, **Get Threats** to **List Threats**, **Get Zone Devices** to **Get Device Zone**, and **Get Zones** to **List Zones**.</li></ul> |
+| | September 6, 2019 | Added a link to the Cylance Protect external library. |
+| | February 6, 2019 | Initial release of the CylanceProtect integration. |

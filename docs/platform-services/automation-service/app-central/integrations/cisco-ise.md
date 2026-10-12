@@ -71,10 +71,12 @@ For information about Cisco ISE, see [Cisco ISE documentation](https://www.cisco
    
 ## Change Log
 
-* September 3, 2019 - First upload
-* January 5, 2021 - Updated actions
-* July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
-* July 14, 2023 (v1.3) - Removed leading/trailing spaces
-* August 17, 2023 (v1.4) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.5) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v1.6) - Versioning
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | September 19, 2023 | Versioned the integration. |
+| v1.5 | September 4, 2023 | Fixed a bug where an error would occur if the timeout was not specified. |
+| v1.4 | August 17, 2023 | Updated the integration with Environmental Variables. |
+| v1.3 | July 14, 2023 | Removed leading and trailing spaces. |
+| v1.1 | July 3, 2023 | Updated the integration with Environmental Variables. |
+| | January 5, 2021 | Updated actions. |
+| | September 3, 2019 | Initial release of the Cisco ISE integration. |

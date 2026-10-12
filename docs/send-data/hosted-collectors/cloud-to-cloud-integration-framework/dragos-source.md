@@ -2,7 +2,7 @@
 id: dragos-source
 title: Dragos Source
 sidebar_label: Dragos
-tags:
+keywords:
     - Dragos
 description: Collect address, asset, vulnerability, notification, and zone details from the Dragos API and send them to Sumo Logic.
 ---

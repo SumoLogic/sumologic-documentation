@@ -24,15 +24,18 @@ Sumo Logic offers the following account types: Free, Trial, Essentials, Enterpri
 
 ### Free
 
+When your trial period ends, your account is automatically converted to a Free account.
+
 Free accounts offer access to most Sumo Logic features with the following limitations:
-- **Daily Credit Allocation**. 20 credits for logs, metrics, and traces.
+- **Ingestion**. Not supported.
 - **Retention**. 7-day log retention.
 - **Users**. Limited to three users.
 
 Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
 
 :::note
-Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
+- Free accounts are deleted automatically after 90 days if not upgraded.
+- Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
 :::
 
 ### Trial
@@ -42,7 +45,7 @@ Trial accounts allow full access to all Sumo Logic features to test how Sumo Log
 - **Retention**: 30 days for all data.
 - **Users**: Up to 20 users.
 
-Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](https://support.sumologic.com/support/s/).
+Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest. When your trial period ends, your account is automatically converted to a [Free](#free) account. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](https://support.sumologic.com/support/s/).
 
 ### Essentials
 

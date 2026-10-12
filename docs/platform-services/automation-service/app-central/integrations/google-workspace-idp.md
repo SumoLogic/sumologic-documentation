@@ -69,5 +69,7 @@ For information about Google Workspace IDP, see [Google Workspace IDP API docume
 
 ## Change Log
 
-* May 21, 2025 (v1.0) - First upload
-* May 21, 2025 (v1.1) - Updated google logo in integration
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | May 21, 2025 | Updated the Google logo in the integration. |
+| v1.0 | May 21, 2025 | Initial release of the Google Workspace IDP integration. |

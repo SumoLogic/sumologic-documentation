@@ -24,7 +24,7 @@ For quick, temporary article-level review, use `/review-deploy` instead — it t
 - **URL**: `https://helpdocs-sumo-logic.pantheonsite.io/help/`
 - **HTTP basic auth protected**: Contact the docs team for credentials.
 - **Single shared slot**: Only one PR can be staged at a time. Deploying overwrites the previous deployment.
-- **Build time**: 5–10 minutes after the push triggers the workflow.
+- **Build time**: 20–30 minutes after the push triggers the workflow.
 
 ## Workflow
 

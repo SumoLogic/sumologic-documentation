@@ -50,9 +50,9 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 ## Change Log
 
-* January 29, 2021 - First upload
-* April 4, 2022 - Logo changed
-* October 27, 2023 (v1.1)
-	+ Updated with new Cloud SOAR API
-	+ Updated the integration with Environmental Variables
-* April 29, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | October 27, 2023 | <ul><li>Updated to use the new Cloud SOAR API.</li><li>Updated the integration with Environmental Variables.</li></ul> |
+| | April 4, 2022 | Updated the logo in the ESMTP integration. |
+| | January 29, 2021 | Initial release of the ESMTP integration. |

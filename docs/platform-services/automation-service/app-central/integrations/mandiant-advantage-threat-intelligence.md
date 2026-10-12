@@ -53,10 +53,12 @@ Threat Intelligence-Reputation
 
 ## Change Log
 
-* April 27, 2023 (v1.0) - First Upload
-* July 18, 2023 (v1.5) - Removed leading/trailing spaces
-* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | July 18, 2023 | Removed leading/trailing spaces. |
+| v1.0 | April 27, 2023 | Initial release of the Mandiant Advantage Threat Intelligence integration. |
 
 ## Additional resources
 
-- For Mandiant, Sumo Logic offers the [Mandiant Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/) to collect your Mandiant data.
+For Mandiant, Sumo Logic offers the [Mandiant Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mandiant-threat-intel-source/) to collect your Mandiant data.

@@ -2,7 +2,7 @@
 id: confluent-metrics-source
 title: Confluent Metrics Source
 sidebar_label: Confluent Metrics
-tags:
+keywords:
   - cloud-to-cloud
   - confluent-cloud-metrics
 description: The Confluent Metrics source aims to collect metric data from the Confluent Metrics platform API and send them to Sumo Logic.
