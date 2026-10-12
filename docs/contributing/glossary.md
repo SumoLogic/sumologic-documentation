@@ -357,3 +357,5 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 ## U
 
 **[user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties)**. The user.properties file is used to pass collector parameters for some installation methods.
+
+
