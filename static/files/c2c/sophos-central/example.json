@@ -9,7 +9,7 @@
         "description":"East field",
         "clientId":"********",
         "clientSecret":"********",
-        "supported_apis": ["Events", "Alerts"],
+        "supported_apis": ["alerts", "events", "cases", "detections"],
         "fields":{
           "_siemForward":false
         },
