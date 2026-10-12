@@ -876,23 +876,22 @@ The top navigation bar is configured in [`docusaurus.config.js`](https://docusau
 * For numbers 100,000 and higher, use “K”, “M”, and “B” to indicate thousands, millions, or billions.
 * Use an en-dash without a space on either side for number ranges.
 
-## Patents and trademarks
+## Trademarks
 
-Protecting our patents and trademarks is important to do correctly. Failing to mark a trademarked term can put the company at risk of losing that trademark.
-
-### Trademarks
+Protecting our trademarks is important. Failing to mark a trademarked term can put the company at risk of losing that trademark.
 
 Use the trademark (™) or registered (®) symbol on the first reference to a trademarked term on a page, then drop it. The following terms must use the symbol shown.
 
 * LogReduce®
 
+Use trademarked terms as adjectives, not as nouns or verbs. Never use them in the plural or possessive form.
+
+* Correct: Use the LogReduce® feature to reduce log volume.
+* Incorrect: Use LogReduce® to reduce log volume.
+
 Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use Sumo Logic in the plural or possessive form.
 
 For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
-
-### Patents
-
-Do not cite patent numbers in docs. Sumo Logic's patent notice is maintained at [Patents](https://www.sumologic.com/legal/patents), which satisfies the legal marking requirement under 35 U.S.C. § 287(a).
 
 ## Preview releases
 
