@@ -530,7 +530,7 @@ Rate limits may be increased for customers with higher needs. Contact your Sumo 
 
 Yes. MCP supports multi-tool calls within a single conversational interaction.
 
-### How does MCP affect your Sumo Logic usage?
+### How does MCP affect my Sumo Logic usage?
 
 MCP-triggered actions can consume Sumo Logic resources in the same way equivalent UI or API actions do. For example, if an AI client uses MCP to run a log search, that search may consume search resources.
 
@@ -538,7 +538,7 @@ MCP-triggered actions can consume Sumo Logic resources in the same way equivalen
 For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) remains the preferred option.
 :::
 
-### Where does your agent run?
+### Where does my agent run?
 
 Agents connected via MCP run in your own environment, not within Sumo Logic infrastructure.
 

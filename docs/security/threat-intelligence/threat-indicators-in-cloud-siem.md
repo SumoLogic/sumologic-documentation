@@ -107,7 +107,7 @@ For example, if you have a list of allowed IP addresses, add them to the [`verif
 
 A threat intelligence indicator is a known indicator of compromise, such as an IP address, domain, or hash, sourced from threat intelligence feeds. Cloud SIEM automatically enriches signals with matching indicators and displays a reputation label, such as Malicious, Suspicious, or Not Flagged.
 
-### Can you still add custom threat intelligence sources in Cloud SIEM?
+### Can I still add custom threat intelligence sources in Cloud SIEM?
 
 No. You can no longer add custom threat intelligence sources. To add new sources, [ingest threat intelligence indicators](/docs/security/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) using the Sumo Logic threat intelligence framework instead.
 
