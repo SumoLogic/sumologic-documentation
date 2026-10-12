@@ -359,6 +359,12 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-activities')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="180"/><h4>Google Workspace Activities</h4></a>
+  <p>Configure Google Workspace Activities Cloud-to-Cloud connector.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter')}><img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="Google Workspace icon" width="180"/><h4>Google Workspace AlertCenter</h4></a>
   <p>Configure Google Workspace AlertCenter Cloud-to-Cloud connector.</p>
   </div>
