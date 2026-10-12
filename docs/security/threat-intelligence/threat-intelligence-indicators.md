@@ -15,7 +15,7 @@ The **Threat Intelligence** page displays the indicators added to your threat in
 To access Threat Intelligence in Sumo Logic,
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.<br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. Click **+Add Source** to add threat intelligence sources to your datastore:
-    1. **New Source**. This flow lets you select from available threat intelligence sources, choose a collector, and complete configuration in a streamlined workflow.
+    1. **New Source**. This flow lets you create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/), select from available threat intelligence sources and complete configuration in a streamlined workflow.
     1. **Upload**. Manually upload files that add threat intelligence indicators.
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
