@@ -681,15 +681,15 @@ Cloud SIEM focuses on the investigation phase of the security pipeline, while Cl
 
 Playbooks are automated or partially automated workflows made up of nodes, such as actions, conditions, and notifications, that respond to an incident. Cloud SOAR includes hundreds of prebuilt playbooks in App Central, and you can also build custom playbooks.
 
-### What cloud logging strategy should you use?
+### What cloud logging strategy should I use?
 
 Centralize logs from all your cloud, hybrid, and on-premises sources into one platform so you can query and visualize them together. Sumo Logic's security pipeline takes it further: ingested logs feed threat intelligence and Cloud SIEM, and Cloud SOAR then automates your response to the insights that pipeline surfaces.
 
-### How do you secure your cloud infrastructure?
+### How do I secure my cloud infrastructure?
 
 Combine centralized log collection, threat intelligence, and automated response. Sumo Logic's Log Analytics Platform ingests and correlates your cloud infrastructure logs, Cloud SIEM investigates the resulting insights, and Cloud SOAR automates the response with playbooks so your SOC team can contain, eradicate, and recover from incidents faster.
 
-### What should you monitor in your cloud environment?
+### What should I monitor in my cloud environment?
 
 At minimum, monitor authentication events, network traffic, and infrastructure configuration changes, since this data is what Cloud SIEM's rules and Cloud SOAR's playbooks most commonly act on to generate and respond to insights.
 
@@ -697,7 +697,7 @@ At minimum, monitor authentication events, network traffic, and infrastructure c
 
 Cloud SOAR uses playbooks to automate incident containment, eradication, and recovery, so your SOC team responds faster and more consistently. It also provides case management to track investigations, and dashboards and reports to communicate results across teams.
 
-### How do you find trusted log analytics solutions for cloud-native infrastructure?
+### How do I find trusted log analytics solutions for cloud-native infrastructure?
 
 Look for a log analytics platform that ingests data from cloud-native sources, like Kubernetes and container orchestration platforms, correlates it with threat intelligence, and integrates with a response tool. Sumo Logic's Log Analytics Platform, paired with Cloud SIEM and Cloud SOAR, provides that full pipeline for cloud-native environments.
 

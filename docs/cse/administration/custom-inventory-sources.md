@@ -279,7 +279,7 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 Create a custom inventory source when you want to use inventory data (information about hosts and users) from a system or service that isn't already supported by a Sumo Logic inventory source, so Cloud SIEM can use it for context in signals and entity groups.
 
-### How much inventory data can you send with this method?
+### How much inventory data can I send with this method?
 
 Scheduled searches are limited to 100 unique rows of data each time they trigger. If you have more than 100 inventory items, only the first 100 are sent using this method.
 
@@ -287,10 +287,10 @@ Scheduled searches are limited to 100 unique rows of data each time they trigger
 
 Cloud SIEM supports two inventory types: user and computer (host). Each has its own set of supported attributes that you map from your inventory source's fields.
 
-### Do you need to modify existing metadata to use a custom inventory source?
+### Do I need to modify existing metadata to use a custom inventory source?
 
 No. Setting up a custom inventory source only requires an HTTP Source, a webhook connection, and a scheduled search — you don't need to change the metadata or source categories on your existing sources.
 
-### Can you use a custom inventory source to set entity criticality?
+### Can I use a custom inventory source to set entity criticality?
 
 Yes. Attributes ingested through a custom inventory source can be used in entity groups to set attributes on entities, which you can then use in detection rule definitions and to adjust signal severity through criticality.
