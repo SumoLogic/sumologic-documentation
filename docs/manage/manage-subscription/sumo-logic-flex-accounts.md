@@ -104,7 +104,7 @@ The following table provides a summary list of key features by Flex package acco
 | Insight Trainer |  |  | | &#10003; |
 | Kubernetes Observability | &#10003; | &#10003; | &#10003; | &#10003; |
 | Live Tail for Streaming Logs | &#10003; | &#10003; | &#10003; | &#10003; |
-| LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
+| LogReduce®, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
 | Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
 | Log Data Frequent Tier Volume | | &#10003; | &#10003; |  |
 | Log Data storage  | &#10003; | &#10003; | &#10003; | &#10003; |
