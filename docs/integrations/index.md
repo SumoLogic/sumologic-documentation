@@ -1,6 +1,6 @@
 ---
 slug: /integrations
-title: App Catalog
+title: Apps
 description: Discover integrations that connect Sumo Logic to popular services, apps, and platforms for centralized data collection and analysis.
 keywords:
   - apps
@@ -13,6 +13,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/integrations.png')} alt="Integrations icon" width="50"/>
+
+<div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/apps/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Apps</h4></a>
+  <p>Learn about the apps available in Sumo Logic</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/automation-integrations/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Integrations</h4></a>
+  <p>Learn about the automation integrations available in Sumo Logic</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/playbook-templates/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Playbook Templates</h4></a>
+  <p>Learn about the playbook templates available in Sumo Logic</p>
+  </div>
+</div>
+</div>
 
 In this section, you'll find documentation for our **App Catalog**, encompassing Sumo Logic apps, webhooks, and other integrations.
 
@@ -72,24 +93,6 @@ You can use Terraform to provide apps with the [`sumologic_app`](https://registr
 <br/>
 
 <div className="box-wrapper">
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/integrations/apps/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Apps</h4></a>
-  <p>Learn about the Sumo Logic apps available in Sumo Logic</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/integrations/automation-integrations/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Integrations</h4></a>
-  <p>Learn about the automation integrations available in Sumo Logic</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/integrations/playbook-templates/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Playbook Templates</h4></a>
-  <p>Learn about the playbook templates available in Sumo Logic</p>
-  </div>
-</div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/product-list/')}><img src={useBaseUrl('img/icons/integrations.png')} alt="Integrations icon" width="40"/><h4>Product List</h4></a>
