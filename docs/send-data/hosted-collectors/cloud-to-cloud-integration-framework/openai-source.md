@@ -1,6 +1,6 @@
 ---
 id: openai-source
-title: OpenAI Source
+title: OpenAI
 sidebar_label: OpenAI
 keywords:
   - cloud-to-cloud
@@ -11,17 +11,7 @@ description: Learn how to collect organization usage costs and audit logs from t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/send-data/openAI-logo.png')} alt="OpenAI logo" width="40" />
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
+<img src={useBaseUrl('/img/send-data/openAI-logo.png')} alt="OpenAI logo" width="75" />
 
 The OpenAI Administration API provides organization-level management and monitoring capabilities, including user management, project management, API key administration, audit logs, and usage and billing data. The OpenAI source collects two types of data:
 
@@ -128,4 +118,5 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
+- Use the [OpenAI app](/docs/integrations/saas-cloud/openai/) to monitor cost, usage, security, and audit activity across your OpenAI organization.
 - Use the [OpenAI ChatGPT Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/openai-chatgpt/) to automate response actions directly from Cloud SOAR playbooks.
