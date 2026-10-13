@@ -1106,7 +1106,7 @@ Add `keywords` when they aid discoverability.
 
 ### Per-folder conventions
 
-**Choosing between Service and Developer:** use Developer when the primary audience is someone writing code to connect to Sumo Logic — API endpoints, auth flows, the MCP server. Use Service when the audience is a Sumo Logic user, even if the feature has an API.
+**Choosing between Service and Developer.** Use *Developer* when the primary audience is someone writing code to connect to Sumo Logic API endpoints, auth flows, and the MCP server. Use *Service* when the audience is a Sumo Logic user, even if the feature has an API.
 
 Service and Collector titles are specific enough to stand alone without a date. CSE and CSOAR titles ("Content Release", "Application Update") are generic, so they include the date to be meaningful in an RSS feed. Developer follows the same pattern for the same reason.
 
