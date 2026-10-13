@@ -79,11 +79,9 @@ The integration has different types of actions, and different permissions are re
 
 ## Change Log
 
-* June 19, 2020 (v1.0) - First upload
-* March 6, 2023 (v1.1) - Integration refactored
-* June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
-* March 20, 2024 (v1.3)
-    * Enabled resource testing capability
-    * Certificate fields have been made optional, depending on CyberArk configuration settings.
-    * Extended output mappings
-    * Implemented various minor enhancements
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | March 20, 2024 | <ul><li>Enabled resource testing capability.</li><li>Made Certificate fields optional, depending on CyberArk configuration settings.</li><li>Extended output mappings.</li><li>Implemented various minor enhancements.</li></ul> |
+| v1.2 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 6, 2023 | Refactored the integration. |
+| v1.0 | June 19, 2020 | Initial release of the CyberArk PAM integration. |

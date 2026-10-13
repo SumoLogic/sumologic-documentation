@@ -2,7 +2,7 @@
 id: trellix-source
 title: Trellix Source
 sidebar_label: Trellix
-tags:
+keywords:
   - cloud-to-cloud
   - trellix-mvisio-epo
 description: Learn how to collect event logs using the Trellix.

@@ -66,7 +66,7 @@ Sumo Logic provides the following out-of-the-box default sources of threat indic
 ### Ingest threat intelligence indicators
 
 A Cloud SIEM administrator must first ingest the indicators before they can be used to uncover threats. Indicators can be ingested using one of the following methods:
-* **Add Source**. This flow lets you select from available threat intelligence sources given below, choose a collector, and complete configuration in a streamlined workflow.
+* **Add Source**. This flow lets you create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/), select from available threat intelligence sources given below, and complete configuration in a streamlined workflow.
    * [CrowdStrike Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source)
    * [Google Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source/)
    * [Intel471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source)
@@ -89,7 +89,7 @@ A Cloud SIEM administrator must first ingest the indicators before they can be u
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
 
-After threat indicator sources are ingested, they appear on the Threat Intelligence **Sources** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function).
+After threat indicator sources are ingested, they appear on the Threat Intelligence **Sources** tab and are ready to be used in [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-to-use-the-hasthreatmatch-function-to-detect-threat-indicators).
 
 <CloudSIEMThreatIntelNote/>
 
@@ -123,7 +123,7 @@ Set firewall rules to allowlist the Sumo Logic IPs listed in [Static IP addresse
 
 Here is the typical workflow to set up and use threat intelligence indicators:
 
-1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up the collector to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the Threat Intelligence **Sources** tab. You can manually add more indicators as needed, such as your own private indicators, using the Threat Intelligence **Sources** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
+1. A system administrator [ingests threat intelligence indicators](#ingest-threat-intelligence-indicators) and adds them to the threat intelligence data store. For example, create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) and configure the source such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source) to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the Threat Intelligence **Sources** tab. You can manually add more indicators as needed, such as your own private indicators, using the Threat Intelligence **Sources** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
 1. Analysts use the threat indicators data to uncover threats using [Cloud SIEM rules](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/).
 1. A system administrator occasionally checks to see why a connector is not ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
 

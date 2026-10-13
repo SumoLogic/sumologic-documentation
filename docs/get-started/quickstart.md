@@ -41,6 +41,10 @@ You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-star
 
 ## Get Started page
 
+:::note
+If you signed up for the [Agentic Free Trial](/docs/get-started/sign-up#sign-up-through-sumo-logic), your trial runs entirely on example data for 14 days and doesn't include data ingestion. The Kickstart Data experience and "transition to real data" step below apply to accounts that can ingest their own data, such as an [AWS Marketplace trial](/docs/get-started/sign-up#sign-up-through-aws-marketplace) or a paid plan.
+:::
+
 Welcome to Sumo! After signing up, be sure to head to **Get Started** page, your personalized onboarding hub that guides you through key actions like sending data, exploring apps, and inviting teammates.
 
 <img src={useBaseUrl('img/get-started/kickstart-welcome-landing.png')} alt="Kickstart Data and onboarding welcome page" style={{border: '1px solid gray'}} width="600" />

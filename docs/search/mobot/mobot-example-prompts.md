@@ -100,6 +100,19 @@ Keyword searches are case-sensitive.
 * `Which of our services has the highest error rate right now and what's driving it?`
 * `What's the most concerning thing happening in our infrastructure right now?`
 
+## Data volume
+
+The Data Volume Skill requires the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) to be enabled.
+
+* `How much data did I ingest last week?`
+* `What are my top 10 source categories by volume?`
+* `Show me daily ingest trends for the last 30 days.`
+* `How much is going to the Infrequent tier?`
+* `Which collector is ingesting the most?`
+* `What's my metrics data points usage?`
+* `How much tracing data did I ingest yesterday?`
+* `Compare my ingest volume this week versus last week.`
+
 ## Platform administration
 
 * `What data sources are available?`
@@ -115,3 +128,19 @@ Keyword searches are case-sensitive.
 * `Add a heatmap panel showing response time distribution by endpoint.`
 * `Add a panel showing top 10 source IPs by request count to the Network Overview dashboard.`
 * `Create a dashboard with a panel for error rate, a panel for request latency, and a panel for top status codes.`
+
+For more information, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
+
+## Monitor creation
+
+* `Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
+* `Create a monitor that notifies me by email when login failures exceed 100 in 10 minutes.`
+* `Change the trigger threshold from 20 to 15 and the time window to 7 minutes.`
+
+For more information, see [Create a Monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
+
+## Playbook creation
+
+* `Create a playbook that creates tickets and sends notifications.`
+
+For more information, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).

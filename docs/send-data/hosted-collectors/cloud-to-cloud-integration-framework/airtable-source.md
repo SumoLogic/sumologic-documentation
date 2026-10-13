@@ -2,7 +2,7 @@
 id: airtable-source
 title: Airtable Source
 sidebar_label: Airtable
-tags:
+keywords:
   - cloud-to-cloud
   - airtable
 description: Learn how to retrieve Airtable audit logs into the Sumo Logic environment.

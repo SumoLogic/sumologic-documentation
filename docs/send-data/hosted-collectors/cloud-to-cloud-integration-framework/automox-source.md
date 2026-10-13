@@ -2,7 +2,7 @@
 id: automox-source
 title: Automox Source
 sidebar_label: Automox
-tags:
+keywords:
   - cloud-to-cloud
   - automox
 description: The Automox Source provides a secure endpoint to receive all events objects, audit trail events, and device inventory details from the Automox platform.

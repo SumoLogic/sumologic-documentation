@@ -2,7 +2,7 @@
 id: zerofox-intel-source
 title: ZeroFox Threat Intel Source
 sidebar_label: ZeroFox Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - zerofox-threat-intel
 description: This integration collects threat indicators using the ZeroFox API and sends them to Sumo Logic for analysis.
@@ -97,4 +97,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [ZeroFox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/zerofox/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [ZeroFox Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/zerofox/) and [ZeroFox V2 Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/zerofox-v2) to automate response actions directly from Cloud SOAR playbooks.

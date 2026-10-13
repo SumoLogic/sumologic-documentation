@@ -116,7 +116,8 @@ Before pushing any commit that changes docs content:
 - **Creating tickets**: Use one of three approaches — a user-provided description, analysis of the code changes being made, or the file paths touched. (Claude Code: see `.claude/commands/jira.md` for the concrete pattern and Technical Area mappings.)
 - **Titles**: Sentence case, action verb, specific, under 10 words
 - **Descriptions**: Benefit-driven, active voice, under 150 words unless complex, markdown format
-- **Comment attribution**: Always append `— via Claude Code` to any comment posted to a Jira ticket
+- **Comment attribution**: Never append Claude attribution to a Jira comment. Do not add `— via Claude Code` or any similar marker. This is enforced by a PreToolUse hook (see [GitHub Rules](#github-rules) for details), and the same rule covers GitHub and Slack.
+- **Comment format**: Jira comments are stored as ADF, and `contentFormat: markdown` is a lossy conversion layer over it. Markdown is fine for plain prose, which covers most comments. Use `contentFormat: adf` when the comment needs something markdown cannot express: an `@` mention, an image, or a panel. This matters most for mentions, since a markdown `@Name` posts as literal text and notifies nobody; a real mention is an ADF node carrying an account ID.
 - **Status transitions**: Use workflow states: Backlog → To Do → In Progress → Blocked → In Review → On Hold → Published → Closed
 
 ### Publishing Checklist
@@ -127,6 +128,7 @@ Before transitioning any ticket to Published:
 
 ## GitHub Rules
 - **Assignee**: Assign any new PR to the current user unless otherwise specified
+- **Comment attribution**: Never append Claude attribution to a comment. Do not add `— via Claude Code` or any similar marker. This covers GitHub PR review comments, GitHub PR issue comments, Jira ticket comments (see [Jira Rules](#jira-rules-sumo-logic-internal--requires-atlassian-access)), and Slack messages. A PreToolUse hook (`.claude/hooks/forbid-claude-attribution.sh`, wired up in `.claude/settings.json`) blocks any call carrying the marker, so compliance does not depend on remembering the rule.
 
 ## Search, crawlers, and LLM-facing files
 Three pieces work together and should be kept in sync when touching any of them:

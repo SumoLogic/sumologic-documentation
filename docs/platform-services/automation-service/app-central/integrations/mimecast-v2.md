@@ -55,4 +55,10 @@ For information about Mimecast, see [Mimecast documentation](https://developer.s
 
 ## Change Log
 
-* Sep 8, 2026 (v1.2) - Initial release of the Mimecast V2 integration
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | Sep 8, 2026 | Initial release of the Mimecast V2 integration. |
+
+## Additional resources
+
+For Mimecast, Sumo Logic offers the [Mimecast source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/) and the [Mimecast app](/docs/integrations/saas-cloud/mimecast/) to collect and visualize your Mimecast data.

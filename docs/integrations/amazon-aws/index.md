@@ -249,6 +249,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <img src={useBaseUrl('img/integrations/amazon-aws/amazon-security-lake-logo.png')} alt="Amazon Security Lake icon" width="50"/>
+        <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-security-lake')}>Amazon Security Lake</a></h4>
+        <p>Learn about security monitoring and analytics across your AWS environment by ingesting security events from Amazon Security Lake.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="RDS icon" width="50"/>
         <h4><a href={useBaseUrl('docs/integrations/amazon-aws/rds')}>Amazon RDS</a></h4>
         <p>A guide to the Sumo Logic app for Amazon RDS.</p>

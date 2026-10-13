@@ -2,7 +2,7 @@
 id: crowdstrike-threat-intel-source
 title: CrowdStrike Threat Intel Source
 sidebar_label: CrowdStrike Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-threat-intel
 description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike platform.

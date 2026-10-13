@@ -8,4 +8,4 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We're excited to introduce **Copy to Dashboard**, a new way to copy an existing panel from one dashboard to another, or to a new dashboard, without rebuilding the query. [Learn more](/docs/dashboards/create-dashboard-new/#copy-a-panel-to-another-dashboard).
+**Copy to Dashboard**, a new way to copy an existing panel from one dashboard to another, or to a new dashboard, without rebuilding the query. [Learn more](/docs/dashboards/create-dashboard-new/#copy-a-panel-to-another-dashboard).

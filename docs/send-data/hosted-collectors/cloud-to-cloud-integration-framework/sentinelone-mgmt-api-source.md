@@ -2,7 +2,7 @@
 id: sentinelone-mgmt-api-source
 title: SentinelOne Mgmt API Source
 sidebar_label: SentinelOne Mgmt API
-tags:
+keywords:
     - sentinelone-mgmt-api
     - cloud-SIEM-enterprise
 ---

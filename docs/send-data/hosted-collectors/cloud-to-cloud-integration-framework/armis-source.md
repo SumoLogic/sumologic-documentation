@@ -2,7 +2,7 @@
 id: armis-source
 title: Armis Source
 sidebar_label: Armis
-tags:
+keywords:
   - cloud-to-cloud
   - armis-api
 description: Learn how to fetch device and alerts logs from Armis platform and send it to Sumo Logic.
