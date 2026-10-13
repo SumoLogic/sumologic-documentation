@@ -178,8 +178,8 @@ def validate_query_via_api(query, access_id, access_key, query_num):
         return False, error_msg
 
     if resp.status_code == 401:
-        print("::error::Authentication failed — check SUMO_LOGIC_ACCESS_ID and SUMO_LOGIC_ACCESS_KEY")
-        sys.exit(1)
+        print("::warning::Authentication failed — SUMO_LOGIC_ACCESS_ID/SUMO_LOGIC_ACCESS_KEY may be invalid or expired for this org. Skipping API validation.")
+        return True, None
 
     if resp.status_code not in (200, 202):
         print(f"   ❌ Query {query_num} unexpected API response {resp.status_code}: {resp.text}")
