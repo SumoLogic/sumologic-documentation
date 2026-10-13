@@ -14,7 +14,7 @@ There are two ways to create a dashboard at child-org level, either by using the
 
 1.  [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.
 1. Select the **Dashboard** text field at the top of the window and enter a unique name for your new dashboard.
-1. From the **Select Org** dropdown, select the child org under which you need to create the dashboard. You can either select one child org or multiple child orgs.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/select-org-for-dashboard.png')} alt="select-org-for-dashboard" style={{border: '1px solid gray'}} width="800" />
+1. From the **Select Org** dropdown, select the child org under which you need to create the dashboard. You can either select one child org or multiple child orgs.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/select-org-for-dashboard.png')} alt="Select org for dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ## Add a panel
 
@@ -56,14 +56,14 @@ A few important things to note are:
 Follow the below steps to change the default child org:
 
 1. In the **Select Org** dropdown, select the org of your choice.
-1. Click the kebab icon on the **Select Org** option, and select **Set as Default**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/set-as-default.png')} alt="set-as-default" style={{border: '1px solid gray'}} width="400" />
+1. Click the kebab icon on the **Select Org** option, and select **Set as Default**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/set-as-default.png')} alt="Set as default" style={{border: '1px solid gray'}} width="400" />
 
 ## Log Search page
 
 To create a Dashboard from the [Log Search page](/docs/search/search-across-child-orgs/):
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Log Search** page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs** > **Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
-1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="child-org-select-button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. You can either select one child org or multiple child orgs. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="child-org-dropdown" style={{border: '1px solid gray'}} width="800"/>
+1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="Child org select button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. You can either select one child org or multiple child orgs. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="Child org dropdown" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the required query and click the search button to obtain the search results.
 1. From the Log Search page click the **Add to Dashboard** button on the **Aggregates tab** after running your aggregate query.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-dashboard-new-logs.png')} alt="Add to dashboard new logs" style={{border: '1px solid gray'}} width="700" />
 1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />

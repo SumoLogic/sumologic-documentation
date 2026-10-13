@@ -2,6 +2,7 @@
 id: rate
 title: rate Metrics Operator
 sidebar_label: rate
+description: Use the rate metrics operator to calculate the per-second rate of change between data points in time series.
 ---
 
 

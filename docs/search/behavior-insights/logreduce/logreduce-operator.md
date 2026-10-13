@@ -63,7 +63,7 @@ Once a LogReduce query has run with the details operator, you cannot use that qu
 
 ### Optimize option
 
-LogReduce Optimize is a scaled-out version of LogReduce that groups logs by existing signatures. You need to prerun LogReduce on new data sources to create its signatures. In many cases, the optimized version provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. The only caveat with the optimized version is that some LogReduce classic features are not supported. The table below compares classic LogReduce with its optimized version based on available features and performance:
+LogReduce Optimize is a scaled-out version of LogReduce that groups logs by existing signatures. You need to prerun the LogReduce operator on new data sources to create its signatures. In many cases, the optimized version provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. The only caveat with the optimized version is that some LogReduce classic features are not supported. The table below compares classic LogReduce with its optimized version based on available features and performance:
 
 | Features | LogReduce | LogReduce Optimize |
 | :-- | :-- | :-- |
@@ -76,19 +76,19 @@ LogReduce Optimize is a scaled-out version of LogReduce that groups logs by exis
 
 Optimize option syntax:
 
-```sql
+```sumo
 ... | logreduce [field<field>] optimize
 ```
 
 For example:
 
-```sql
+```sumo
 _sourceCategory=cloudtrail  
 | logreduce optimize
 ```
 
 
-```sql
+```sumo
 _sourceCategory=kubernetes-audit
 | json auto
 | logreduce field=object optimize
@@ -98,7 +98,7 @@ _sourceCategory=kubernetes-audit
 
 1. First optimization:
 
-    ```sql
+    ```sumo
     _sourceCategory = "Labs/AWS/GuardDuty_V8"
     | json keys "resource", "partition", "region"
     | logreduce
@@ -106,7 +106,7 @@ _sourceCategory=kubernetes-audit
      
 1. Next LogReduce by region:
 
-    ```sql
+    ```sumo
     _sourceCategory = "Labs/AWS/GuardDuty_V8"
     | json keys "resource", "partition", "region"
     | logreduce(partition) by region limit=5,criteria=mostcommon
@@ -114,21 +114,21 @@ _sourceCategory=kubernetes-audit
      
 1. The LogReduce operator can act as an aggregate operator, supporting grouping by `_timeslice` as well as by other dimensions, such as `_sourceHost`.  
 
-    ```sql
+    ```sumo
     ...     | logreduce by _sourceHost
     ```
 
     By grouping by `timeslice`, you can determine how signature counts
     change over a period of time.   
 
-    ```sql
+    ```sumo
     ...     | timeslice 1m       | logreduce by _timeslice
     ```  
 
      
 1. LogReduce by timeslice:
 
-    ```sql
+    ```sumo
     _sourceCategory=MyApp
     | timeslice 1m
     | logreduce by _timeslice limit=5,criteria=mostcommon
@@ -137,7 +137,7 @@ _sourceCategory=kubernetes-audit
 
 1. LogReduce by sourceHost:
 
-    ```sql
+    ```sumo
     _sourceCategory=MyApp`  
     | logreduce by _sourceHost limit=5,criteria=mostcommon
     | transpose row _sourceHost column signature

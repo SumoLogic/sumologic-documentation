@@ -1,6 +1,7 @@
 ---
 id: parse-csv-formatted-logs
 title: Parse CSV Formatted Logs
+description: Use the CSV operator to parse comma-separated value formatted log entries with comma as the default delimiter.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -41,7 +42,7 @@ Specify an escape, and quote character:
 Use the following query to parse a CSV file’s comma delimited fields as
 shown:
 
-```sql
+```sumo
 _sourceCategory=csv
 | csv _raw extract 1 as user2, 2 as id, 3 as name
 ```
@@ -52,7 +53,7 @@ which provides results like:
 
 ### Parse a stream query and extract search terms
 
-```sql
+```sumo
 "Starting stream query"
 | parse "query=[*], queryId" as query
 | csv query extract searchTerms, op1, op2, op3

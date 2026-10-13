@@ -2,6 +2,7 @@
 id: now
 title: now Search Operator
 sidebar_label: now
+description: Use the now operator to return the current epoch time in milliseconds.Often used with the formatDate operator to get formatted current time.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,9 +13,7 @@ It is important to note that the Now operator outputs the exact time (down to th
 
 ## Syntax
 
-```sql
-now()
-```
+`now()`
 
 ## Examples
 
@@ -22,7 +21,7 @@ now()
 
 This query returns a long version of the current date and time in milliseconds.
 
-```sql
+```sumo
 * | now() as current_date
 ```
 
@@ -34,7 +33,7 @@ Which returns results similar to:
 
 Use the following query with formatDate to return results for the current date formatted as yyyy-MM-dd.
 
-```sql
+```sumo
 * | formatDate(now(), "yyyy-MM-dd") as today
 ```
 

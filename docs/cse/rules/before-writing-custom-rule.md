@@ -53,7 +53,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Using the attributes we discovered from looking at the log mapping, we’ll run the following query, which returns the usernames that have successfully logged on over the last week, counted by `user_username`:
 
-   ```sql
+   ```sumo
    _index=sec_record_*
    | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624"
    | count by user_username
@@ -68,7 +68,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Now, we can refine our search to return usernames that do not comply with either of our standard patterns:
 
-   ```sql
+   ```sumo
    _index=sec_record_*
    | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$")
    | count by user_username
@@ -78,7 +78,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Usernames returned include “anonymous logon”. A little [research](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-special-identities-groups) indicates that this is typically no cause for alarm, so we’ll refine our search again to exclude “anonymous logon”:
 
-   ```sql
+   ```sumo
    _index=sec_record_*
    | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon"
    ```
@@ -87,7 +87,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Now we have a query we can use as the basis of an expression for our rule. Note that when you paste it into the rules editor, you should remove the first portion of the query (`_index=sec_record_*` and `| where`), which is only necessary when you are querying records in Sumo Logic. The expression is then as follows:
 
-   ```sql
+   ```sumo
    metadata_vendor = "Microsoft" 
    and metadata_product = "Windows" 
    and metadata_deviceEventId = "Security-4624" 

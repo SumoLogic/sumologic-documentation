@@ -53,7 +53,7 @@ Assign the _deviceType tag to devices running in your environment. Select the ap
 |Tag values|When to use|
 | :-- | :-- |
 |authServer|Network authentication servers, including Active Directory, LDAP, Kerberos, RADIUS/TACACS, and NIS servers. May be used in analytics designed to detect [DCSync](https://attack.mitre.org/techniques/T1003/006/) attacks. |
-|lanScanner |Devices excepted from analytics identifying Local Area Network (LAN)  scanning activity. Used in specific cases to exclude hosts from flagging particular types of rule content, primarily around scanning of commonly targeted LAN service ports, etc. Not an across-the-board allowlist. This tag value is not intended for vulnerability scanners, which should be tagged with _deviceType=vulnerabilityScanner.<br/><br/>Examples of devices that are suited for this tag value include telephony servers that push content to deployed softphones over SMB/CIFS and data security audit software that connect to SMB shares.|
+|lanScanner |Devices excepted from analytics identifying Local Area Network (LAN)  scanning activity. Used in specific cases to exclude hosts from flagging particular types of rule content, primarily around scanning of commonly targeted LAN service ports. This tag value is not intended for vulnerability scanners, which should be tagged with _deviceType=vulnerabilityScanner.<br/><br/>Examples of devices that are suited for this tag value include telephony servers that push content to deployed softphones over SMB/CIFS and data security audit software that connect to SMB shares.|
 |nms |Network Management Systems (NMS) that identify, configure, monitor, update,  and troubleshoot network devices – both wired and wireless – in an enterprise network. Can be used as an exception tag value to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts.|
 |paloAltoSinkhole |IP addresses for the sinkhole IP or IPs configured for [Palo Alto DNS sinkhole](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClGECA0).<br/><br/>Use this tag value for the  default IPv4 sinkhole address from PANW (72.5.65.111) any other sinkhole IP you have configured.|
 |proxyServer |Forward proxy servers, including HTTP and SOCKS proxies. |
@@ -548,7 +548,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Target column:** Username (`Username`)
 
-**Description:**  Known approved Docker images that act as a whitelist. If an image is identified that is not on this list, further investigation is warranted. If approved images are identified they should be added to this list. 
+**Description:**  Known approved Docker images that act as an allowlist. If an image is identified that is not on this list, further investigation is warranted. If approved images are identified they should be added to this list. 
 
 The following Cloud SIEM rules refer to this match list:
 * Unrecognized Container Image
@@ -557,7 +557,7 @@ The following Cloud SIEM rules refer to this match list:
 
 **Target column:** IP Address (`Ip`)
 
-**Description:** IP addresses excepted from analytics identifying LAN protocol scanning activity. Used in specific cases to exclude hosts from flagging particular types of rule content, primarily around scanning of commonly targeted LAN service ports, etc. Not an across-the-board allowlist. This match list is not intended for vulnerability scanners, which should be listed instead in vuln scanners.
+**Description:** IP addresses excepted from analytics identifying LAN protocol scanning activity. Used in specific cases to exclude hosts from flagging particular types of rule content, primarily around scanning of commonly targeted LAN service ports. This match list is not intended for vulnerability scanners, which should be listed instead in vuln scanners.
 
 Examples of hosts that are suited for this match list:
 * Telephony server that pushes content to deployed softphones over SMB/CIFS

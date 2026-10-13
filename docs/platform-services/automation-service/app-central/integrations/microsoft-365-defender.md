@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-365-defender.png')} alt="microsoft-365-defender" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-365-defender.png')} alt="Microsoft 365 Defender icon" width="100"/>
 
-***Version: 1.5  
-Updated: Mar 4, 2024***
+***Version: 1.6  
+Updated: April 30, 2026***
 
 Microsoft 365 Defender is a part of Microsoft’s XDR solution which can automatically analyze threat data across domains, building a complete picture of each attack in a single dashboard. Microsoft 365 Defender integration allows us to query and update incident related data from the solution itself.
 
@@ -54,11 +54,12 @@ For information about Microsoft 365 Defender, see [Microsoft 365 Defender docume
 
 ## Change Log
 
-* April 8, 2021 - First upload
-* May 4, 2021 - Actions updated: Accept multiple DateTime formats
-* January 30, 2023 - Updated Daemon
-    + Microsoft 365 Defender Incidents Daemon: Duplicate results removed
-* May 23, 2023 (v1.3)
-    + Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
-* June 28, 2023 (v1.4) - Removed leading/trailing spaces
-* March 4, 2024 (v1.5) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.4 | June 28, 2023 | Removed leading/trailing spaces. |
+| v1.3 | May 23, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
+| | January 30, 2023 | Updated the Microsoft 365 Defender Incidents Daemon to remove duplicate results. |
+| | May 4, 2021 | Updated actions to accept multiple DateTime formats. |
+| | April 8, 2021 | Initial release of the Microsoft 365 Defender integration. |

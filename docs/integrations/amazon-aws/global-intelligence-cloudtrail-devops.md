@@ -6,7 +6,7 @@ description: Global Intelligence for AWS CloudTrail - DevOps provides insights f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Global Intelligence Devops icon" width="75"/>
 
 Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, infrastructure engineers, and DevOps users accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services:
 
@@ -95,7 +95,7 @@ state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
 
 This sample query is from the **Lambda Configuration: My Company v. Others (Categorical)** panel of **GI CloudTrail DevOps - 05. Configuration Benchmarks** dashboard.
 
-```sql
+```sumo
 // id=@config_lambda_categorical_values
 _sourceCategory=Labs/AWS/CloudTrailDevOps/Analytics
 (AwsApiCall lambda !errorCode)
@@ -152,7 +152,7 @@ If you already have AWS CloudTrail logs flowing into Sumo Logic, you can skip th
 
 With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection_Process_Overview-devops" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection Process Overview devops" />
 
 ### Prerequisites
 

@@ -59,13 +59,13 @@ Entity names have a limit of 512 characters. If an entity's name value is 512 ch
 |:--|:--|
 | a | **Filters**. Filter the list of entities by values such as signal severity total, activity score, criticality, indicator, sensor zone, suppressed, tags, type, and value. |
 | b | **Import Metadata**. Upload a .csv file of updates to entity tags, suppression state, and criticality, as described in [Update multiple entities](#update-multiple-entities). |
-| c | **Checkboxes**. Select checkboxes to [update multiple entities](#update-multiple-entities). 
+| c | **Check boxes**. Select check boxes to [update multiple entities](#update-multiple-entities). 
 | d | **Entity**. Displays the entity name. |
 | e | **Entity Type**. Shows the entity type and its value.  |
 | f | **Activity Score**. The current activity score for the entity, which by default is the sum of the severities of the signals that have fired on the entity over the previous two weeks. For more information, see [Understanding entity activity scores](/docs/cse/get-started-with-cloud-siem/insight-generation-process#understanding-entity-activity-scores), in the *Insight Generation Process* topic. |
 | g | **Signal Severity Total**. The total amount of signal severity for the entity. |
 | h | **Suppressed Lists**. If an entity is on a suppressed list, that means that signals will not be fired on the entity. |
-| i | **Criticality**. Shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality hasn't been assigned to an entity, the column contains "default". | 
+| i | **Criticality**. Shows whether a [criticality](/docs/cse/records-signals-entities-insights/entity-criticality/) has been assigned to the entity. A criticality adjusts the severity of signals for specific entities based on some risk factor or other consideration. If a criticality has not been assigned to an entity, the column contains "default". | 
 
 ## About the entities details page
 
@@ -108,7 +108,7 @@ Similarly, a red icon indicates that the record set contains an insight, and the
 
 <img src={useBaseUrl('img/cse/entity-timeline.png')} alt="Entity timeline" style={{border: '1px solid gray'}} width="800"/>
 
-You can view a summary of the records in a record set by clicking on it. The records are listed on the right side of the **Entity Timeline** tab. To view the complete record, click the link in the upper right corner of the card for a record.
+You can view a summary of the records in a record set by clicking it. The records are listed on the right side of the **Entity Timeline** tab. To view the complete record, click the link in the upper right corner of the card for a record.
 
 <img src={useBaseUrl('img/cse/timeline-records.png')} alt="Timeline records" style={{border: '1px solid gray'}} width="800"/>
 
@@ -129,8 +129,8 @@ or criticality for one or more entities.
 ### Update entities from the UI
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
-1. Note that there is a checkbox at the left of each entity row, and one above the entities list. Click the top checkbox to select all of the entities on the page, or click the checkbox next to each entity you want to update. 
-1. Note that once you select checkboxes for multiple entities, a box slides out showing three options above the list of selected entities. See the instructions for each option below:
+1. Note that there is a check box at the left of each entity row, and one above the entities list. Click the top check box to select all of the entities on the page, or click the check box next to each entity you want to update. 
+1. Note that once you select check boxes for multiple entities, a box slides out showing three options above the list of selected entities. See the instructions for each option below:
    * [Change Tags](#change-tags)
    * [Change Suppression](#change-suppression)
    * [Change Criticality](#change-criticality)<br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/>
@@ -140,7 +140,7 @@ or criticality for one or more entities.
 1. After selecting the entities you want to update, click **Change Tags**. 
 1. Click the down arrow to display the options: <br/><img src={useBaseUrl('img/cse/tag-options.png')} alt="Tag options" style={{border: '1px solid gray'}} width="400"/>
    * **Add.** Select this option to add one or more tags to the entity, without affecting any tags already assigned to the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add.
-   * **Remove**. Select his option to remove one or more tags from the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected entity doesn't have the specified tags, no change will be made to the entity. 
+   * **Remove**. Select his option to remove one or more tags from the entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected entity does not have the specified tags, no change will be made to the entity. 
    * **Replace**. Select this option to remove all of the tags currently assigned to the entity and add one or more specified tags. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. 
     :::important
     When you use the **Replace** option, be sure to specify new tags. If you do not, the existing tags will still be removed.

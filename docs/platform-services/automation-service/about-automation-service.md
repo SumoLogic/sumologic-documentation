@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
 import StaticIpAddresses from '../../reuse/static-ips-automation-service.md';
 
-The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide arrange of events. 
+The Automation Service allows you to set up actions that run automatically when certain conditions are met in Sumo Logic. These automated actions help you to respond quickly to a wide range of events. 
 
 To use the Automation Service, execute playbooks to run actions in a workflow. Actions are provided by integrations with Sumo Logic and third-party vendors. The Automation Service has number of integrations, actions, and playbooks that you can customize. You can also create your own.
 
@@ -71,20 +71,20 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
    * **Automation Service**
-      * **Task View**
-      * **Task Access**
-      * **Task Access all**
-      * **Task Edit**
-      * **Task Reassign**
-      * **App Central Access**
-      * **App Central Export**
-      * **Integrations Access**
-      * **Integrations Configure**
-      * **Playbooks Access**
-      * **Playbooks Configure**
-      * **Bridge Monitoring Access**
-      * **Observability Access**
-      * **Observability Configure**
+      * **View Tasks**
+      * **Access Tasks**
+      * **Access All Tasks**
+      * **Edit Tasks**
+      * **Reassign Tasks**
+      * **Access App Central**
+      * **Export App Central**
+      * **View Integrations**
+      * **Manage Integrations**
+      * **Access Playbooks**
+      * **Configure Playbooks**
+      * **Access Bridge Monitoring**
+      * **Access Observability**
+      * **Configure Observability**
 
 ### Configure the connection for an integration resource
 

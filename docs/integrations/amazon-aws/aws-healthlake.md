@@ -6,7 +6,7 @@ description: Learn about the collection process for the AWS HealthLake service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aws-healthlake-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-healthlake-logo.png')} alt="AWS HealthLake icon" width="50"/>
 
 AWS HealthLake is a HIPAA eligible service for clinical data ingestion, storage, and analysis utilizing the Healthcare Interoperability FHIR (R4) specification. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-amazon-health-lake.html).
 

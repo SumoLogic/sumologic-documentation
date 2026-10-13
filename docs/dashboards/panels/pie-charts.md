@@ -11,7 +11,7 @@ To create a pie chart, use an aggregate query that provides at least a few resul
 
 For example, you'd use the following simple query to get results from your logs:
 
-```sql
+```sumo
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count
 ```
 

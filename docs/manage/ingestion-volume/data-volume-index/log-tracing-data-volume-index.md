@@ -56,7 +56,7 @@ In this case, the `_sourceCategory` returns `2862`, which is the actual size 
 
 To further limit the search results to the data volume index data for a specific volume category, you can supply the index source category using the `_sourceCategory` metadata and one of the index source categories from the previous table. For example:
 
-```sql
+```sumo
 _index=sumologic_volume AND _sourceCategory=collector_and_tier_volume
 ```
 
@@ -89,7 +89,7 @@ For example, a single message for the "Collector" volume data may look similar t
 This example query will return the volume for each Source Category by
 data tier.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory = "sourcecategory_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcecategory, dataTier, bytes, count
@@ -105,7 +105,7 @@ would produce results such as:
 
 This example query will return the volume for each collector.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as collector, dataTier, bytes, count
@@ -117,7 +117,7 @@ _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 
 The following query returns the message volume for a specific source. The source name and data tier can be supplied within a JSON operation to get the data for that source.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory = "source_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as source, dataTier, bytes, count
@@ -131,7 +131,7 @@ _index=sumologic_volume _sourceCategory = "source_and_tier_volume"
 
 The following query returns the message volume for a specific collector. The collector name and data tier can be supplied within a JSON operation to get the data for that collector.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as collector, dataTier, bytes, count
@@ -145,7 +145,7 @@ _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 
 The following query returns the message volume for each source host. The source host name and data tier can be supplied within a JSON operation to get the data for that source host.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
@@ -159,7 +159,7 @@ _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 
 The following query returns the message volume for the default index. The data tier can be supplied with a JSON operation to filter results of that tier.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
@@ -194,7 +194,7 @@ For example, a single message for collector volume data may look similar to the 
 
 When you query the index, the query scope must include the following:
 
-```
+```sumo
 _index=sumologic_volume _sourceCategory=<index_source_category>
 ```
 
@@ -214,7 +214,7 @@ Where `index_source_category` is one of the categories listed in the table below
 
 This query returns the tracing volume by source category.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory="sourcecategory_tracing_volume"
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "billedBytes", "spansCount"
@@ -229,7 +229,7 @@ This query produces results like these: 
 
 This query returns the tracing volume by collector.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 | parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "billedBytes", "spansCount"
@@ -244,7 +244,7 @@ This query produces results like these:
 
 This query returns the tracing volume for a specific collector. The collector name can be supplied within a JSON operation to get the data for that collector.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 | parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "billedBytes", "spansCount"
@@ -257,7 +257,7 @@ _index=sumologic_volume _sourceCategory="collector_tracing_volume"
 
 This query runs against the tracing volume index and uses the [outlier](/docs/search/search-query-language/search-operators/outlier) operator to find timeslices in which your tracing ingestion in billed bytes or span count was greater than the running average by a statistically significant amount.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "billedBytes", "spansCount"
@@ -272,7 +272,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 This query runs against the tracing volume index and uses the [predict](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "billedBytes", "spansCount"

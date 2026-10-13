@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="Monitor and Visualize icon" width="40"/>
 
 The Muting Schedules Management API allows you to pause alert notifications from monitors. When a muting schedule is active on a monitor, the monitor will still generate alerts, but no notifications will be sent. For more information, see [Muting Schedules](/docs/alerts/monitors/muting-schedules).
 
@@ -23,6 +23,7 @@ The Muting Schedules Management API allows you to pause alert notifications from
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/mutingSchedulesLibraryManagement   |

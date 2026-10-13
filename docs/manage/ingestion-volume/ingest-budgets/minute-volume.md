@@ -45,7 +45,7 @@ A few sources on Hosted Collectors will behave differently when instructed to st
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
 1. Click the **+ Add Budget** button on the top right of the table.
-1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/manage/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid gray'}} width="300" />
+1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/manage/ingestion-volume/create-ingest-budget.png')} alt="Create ingest budget" style={{border: '1px solid gray'}} width="300" />
 1. Under **Create Ingest Budget**, provide the following information.
    * **Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Description** is optional.
@@ -77,13 +77,13 @@ A few sources on Hosted Collectors will behave differently when instructed to st
 
 To search for only ingest budgets with minute control where threshold was breached:
 
-```sql
+```sumo
 _index=sumologic_audit exceeded drop_data "bytes/minute"
 ```
 
 To search for ingest budgets that are currently enforced to stop collecting data:
 
-```sql
+```sumo
 _index=sumologic_audit_events minuteVolume stopCollecting
 ```
 
@@ -92,7 +92,7 @@ _index=sumologic_audit_events minuteVolume stopCollecting
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
 1. Run the following query. The goal of this query is to understand previous data ingestion trends and suggest to you the peak volume seen per minute. To obtain the most accurate ingest rates, run the query using the [Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time/).
-   ```sql    
+   ```sumo    
     _sourceCategory=<source category> AND _index=<partition name>
     | timeslice 1m
     | sum(_size) as bytes by _timeslice
