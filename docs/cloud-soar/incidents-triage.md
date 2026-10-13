@@ -208,7 +208,7 @@ When you add an investigator to an incident, you select the [role assigned to th
 For example, an incident contains sensitive data in the notes section. If you want the investigators on the incident to be able to access the notes data, the investigators you assign to the incident must have the **Note > Access** Cloud SOAR role capability assigned to their role.
 
 :::note
-To allow users to access incidents without being added as investigators, assign them the **Incident > Access All Incidents** role Cloud SOAR role capability. This privilege is useful for users who need to monitor all incidents.
+To allow users to access incidents without being added as investigators, assign them the **Incident > Access All Incidents** Cloud SOAR role capability. This privilege is useful for users who need to monitor all incidents.
 :::
 
 ### Incident generation 
