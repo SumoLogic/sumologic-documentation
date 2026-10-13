@@ -6,7 +6,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-In this release, we've enhanced the security and stability of the Collector with added support for security patches and bug fixes.
+In this release, we've enhanced the Collector's security and stability with added support for security patches and bug fixes.
 
 #### Security fixes
 
@@ -15,7 +15,7 @@ In this release, we've enhanced the security and stability of the Collector with
 - Upgraded `com.fasterxml.jackson.core:jackson-databind` to `2.21.7` to address CVEs ([CVE-2026-91776](https://nvd.nist.gov/vuln/detail/cve-2026-91776) and [CVE-2026-91777](https://nvd.nist.gov/vuln/detail/cve-2026-91777)).
 - Upgraded `io.netty packages` to `4.2.19.Final` to address CVEs ([CVE-2026-89044](https://nvd.nist.gov/vuln/detail/cve-2026-89044), [CVE-2026-93488](https://nvd.nist.gov/vuln/detail/cve-2026-93488), [CVE-2026-93491](https://nvd.nist.gov/vuln/detail/cve-2026-93491), and [CVE-2026-93558](https://nvd.nist.gov/vuln/detail/cve-2026-93558)).
 - Upgraded `org.bouncycastle:bcpkix-jdk18on` to `1.86` to address CVEs ([CVE-2026-17508](https://nvd.nist.gov/vuln/detail/cve-2026-17508), [CVE-2026-71888](https://nvd.nist.gov/vuln/detail/cve-2026-71888), [CVE-2026-71889](https://nvd.nist.gov/vuln/detail/cve-2026-71889), and [CVE-2026-71892](https://nvd.nist.gov/vuln/detail/cve-2026-71892)).
-- Upgraded `org.bouncycastle:bcprov-jdk18on` to 1.86 to address CVEs ([CVE-2026-17508](https://nvd.nist.gov/vuln/detail/cve-2026-17508), [CVE-2026-18036](https://nvd.nist.gov/vuln/detail/cve-2026-18036), [CVE-2026-18040](https://nvd.nist.gov/vuln/detail/cve-2026-18040), [CVE-2026-71889](https://nvd.nist.gov/vuln/detail/cve-2026-71889), and [CVE-2026-71891](https://nvd.nist.gov/vuln/detail/cve-2026-71891)).
+- Upgraded `org.bouncycastle:bcprov-jdk18on` to `1.86` to address CVEs ([CVE-2026-17508](https://nvd.nist.gov/vuln/detail/cve-2026-17508), [CVE-2026-18036](https://nvd.nist.gov/vuln/detail/cve-2026-18036), [CVE-2026-18040](https://nvd.nist.gov/vuln/detail/cve-2026-18040), [CVE-2026-71889](https://nvd.nist.gov/vuln/detail/cve-2026-71889), and [CVE-2026-71891](https://nvd.nist.gov/vuln/detail/cve-2026-71891)).
 
 #### Bug fixes
 
