@@ -13,10 +13,12 @@ When you invoke `release-note-developer`, Claude will guide you through:
 
 ## When to use this command
 
+Use this feed when the **primary audience is someone writing code to connect to Sumo Logic** — a developer building an integration, not a Sumo Logic end user. If the feature is something a user accesses in the UI that also happens to have an API, it belongs in the Service release notes instead.
+
 * Announcing new API endpoints or features
 * Documenting API changes, deprecations, or breaking changes
 * Releasing developer tools or CLI updates
-* Announcing platform changes affecting developers
+* Announcing platform changes affecting developers (MCP server, OAuth, auth flows)
 * Documenting authentication or integration changes
 * Publishing deprecation notices
 

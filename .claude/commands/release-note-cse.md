@@ -92,7 +92,7 @@ Examples:
 **For Content Releases:**
 ```yaml
 ---
-title: {Month} {Day}, {Year} - Content Release
+title: {Month} {D}, {Year} - Content Release
 hide_table_of_contents: true
 keywords:
   * rules
@@ -105,7 +105,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 **For Application Releases:**
 ```yaml
 ---
-title: {Month} {Day}, {Year} - Application Update
+title: {Month} {D}, {Year} - Application Update
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
   * {relevant-keyword}
