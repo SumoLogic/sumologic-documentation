@@ -4,49 +4,30 @@ title: Grok Deprecation Notice
 sidebar_label: Grok Deprecation
 description: Learn about deprecation of Grok and what you need to know about migrating to Sumo Logic data sources.
 ---
+
 <head>
   <meta name="robots" content="noindex" />
 </head>
 
-## Update your Cloud SIEM data sources
+On April 23, 2026, Sumo Logic deprecates the Grok parsing service. Sumo Logic parsers and Cloud-to-Cloud (C2C) integrations are the supported methods for ingesting data into Cloud SIEM. If your instance uses Grok for parsing, you must migrate before that date or those sources will stop creating records, signals, and insights in Cloud SIEM.
 
-On April 23, 2026, Sumo Logic deprecates the Grok parsing service. For over two years Sumo Logic has been using Sumo Parsers and Cloud-to-Cloud (C2C) integrations as the approved methods of ingesting data into Cloud SIEM. If your Sumo Logic Instance contains sources that are utilizing Grok for parsing, you must migrate them to use the supported C2Cs or Sumo Logic parsers.
+## Migrate to a C2C integration
 
-If you do not configure your data sources to use the supported C2Cs or Sumo Logic parsers, then you will lose the ability for those data sources to create any records, signals, or insights within Cloud SIEM on the Grok deprecation date and going forward.
+C2C integrations are the preferred option. They automatically tag messages with the mapping hints Cloud SIEM requires, and most have a **Forward to SIEM** option in the configuration UI.
 
-## Setting up Cloud-to-Cloud integrations
+See [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) for the full list of available integrations.
 
-The Cloud-to-Cloud Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. This data often includes custom events and user data critical for operations monitoring, security, and compliance use cases. As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework.
+## Migrate to a Sumo Logic parser
 
-Documentation on setting up C2C integrations are available publicly at [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/). 
+If no C2C integration exists for your data source, use a Sumo Logic Source with a parser.
 
-## Setting up Sumo Logic parsers
-
-To set up Sumo Logic parsers, we recommend following [Cloud SIEM ingestion best practices](/docs/cse/ingestion/cse-ingestion-best-practices/) as described below.
-
-If there isn’t a C2C connector for your data source, your next best option is to use a Sumo Logic Source (running on an Installed Collector or a Hosted Collector, depending on the data source) and a Sumo Logic parser, if we have one for the data source.   
-
-To check if there’s a parser for your data source, go to the **Data Management > Logs > Parsers** page in the Sumo Logic UI. If there is a parser for your data source, but you find it doesn’t completely meet your needs, for instance if the parser doesn’t support the particular log format you use, consider customizing the parser with a [local configuration](/docs/cse/schema/parser-editor#create-a-local-configuration-for-a-system-parser). If that’s not practical, you can submit a request for a new parser by filing a ticket at [https://support.sumologic.com](https://support.sumologic.com/).  
-
-    When you forward logs to Cloud SIEM for parser processing, there are two bits of important configuration:  
-    1. Configure the source to forward logs. To configure an HTTP source to send log messages to Cloud SIEM, click the **SIEM Processing** checkbox. You can configure other source types to send data to Cloud SIEM by assigning a field named `_siemforward`, set to *true*, to the source. For example:  
-        ```
-        _siemforward=true
-        ```
-         :::note
-         A field can also be assigned at the collector level, in which case sources on the collector inherit the field setting, unless the same field is defined with a different value at the source level.
-         :::
-    2. Configure the source with the path to the appropriate parser, by assigning a field named `_parser`, whose value is the path to parser, for example:  
-        ```
-        _parser=/Parsers/System/AWS/AWS Network Firewall
-        ```  
-         :::note
-         You can get the path to a parser on the **Data Management > Logs > Parsers** page in Sumo Logic. Click the three-dot more options menu in the row for a parser, and select **Copy Path**.
-         :::
+1. Find a parser. Go to **Data Management > Logs > Parsers** in the Sumo Logic UI. If the parser doesn't fully meet your needs, [create a local configuration](/docs/cse/schema/parser-editor#create-a-local-configuration-for-a-system-parser). If none exists, [file a support ticket](https://support.sumologic.com/).
+1. Configure the source to forward logs. Click the **SIEM Processing** checkbox on an HTTP source, or assign `_siemforward=true` as a field on any other source type.
+1. Set the parser path. Assign `_parser` as a field on the source, with the full path as its value, for example: `_parser=/Parsers/System/AWS/AWS Network Firewall`. To get a parser's path, open **Data Management > Logs > Parsers**, click the three-dot menu for the parser, and select **Copy Path**.
 
 ## Additional references
 
 * [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/)
 * [Ingestion Sources for Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/)
-* [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) 
+* [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/)
 * [Troubleshoot Parsers](/docs/cse/troubleshoot/troubleshoot-parsers/)
