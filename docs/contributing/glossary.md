@@ -189,7 +189,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
-**[LogReduce](/docs/search/behavior-insights/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
+**[LogReduce®](/docs/search/behavior-insights/logreduce)**. The LogReduce operator uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website. See also: [Operators](/docs/contributing/word-list#o).
 
 **[Logs for Security](/docs/security/additional-security-features)**. Sumo Logic's full set of features that leverage logs for security use cases, including pre-built dashboards, out-of-the-box security apps, and robust query capabilities for analyzing security log and event data.
 
