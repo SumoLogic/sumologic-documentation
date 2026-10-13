@@ -42,7 +42,7 @@ The following returns `true`:
 ```sumo
 | isValidIP("10.255.255.255") as isIP
 ```
-```sql
+```sumo
 | isValidIP("30.255.255.255") as isIP
 ```
 

@@ -14,10 +14,10 @@ For example, using `where` with the boolean operator [`isValidIP`](/docs/searc
     | where isValidIP("192.168.0.10")
     ```
 * Checking my PR:
-    ```sql
+    ```sumo
     _collector="ABC1" | where type="web"
     ```
-    ```sql
+    ```sumo
     _collector="ABC7" | where type="web"
     ```   
 * Filters as false and will not return results:
