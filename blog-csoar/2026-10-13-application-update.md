@@ -25,7 +25,7 @@ The following updates were made in September 2026.
 The following enhancements were made to the conversational playbook via Mobot:
 * **Playbook metadata updates**. Mobot can now update playbook names, descriptions, tags, and categories through conversation in the chat interface.
 * **Smart integration discovery**. Mobot can now identify and recommend relevant integrations from the App Catalog, including installed and non-installed ones. It can also discover newly available actions for installed integrations and use them to generate recommendations, helping you find the right connectors and actions when building workflows.
-* **User and group awareness for approval tasks**. Mobot can now access your organization's user and group information, making it easier to assign and configure approvers when adding Task or Approval nodes to playbooks.
+* **User and group awareness for approval tasks**. Mobot can now access your organization's user and group information, making it easier to assign and configure approvers when adding Task or User Choice nodes to playbooks.
 * **Canvas validation fix**. Fixed an issue that allowed Mobot to place a Filter node immediately after non-action nodes, such as Condition or Decision nodes. AI-generated playbook structures now adhere to supported canvas rules.
 
 ### Integrations
