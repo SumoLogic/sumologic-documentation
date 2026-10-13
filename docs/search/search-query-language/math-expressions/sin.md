@@ -9,12 +9,10 @@ Sine of argument in radians.
 
 ## Syntax
 
-```sql
-sin(<x>) as <field>
-```
+`sin(<x>) as <field>`
 
 ## Example
 
-```sql
+```sumo
 * | sin(1) as v
 ```

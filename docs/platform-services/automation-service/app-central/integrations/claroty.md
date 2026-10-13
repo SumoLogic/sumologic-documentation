@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/claroty.png')} alt="claroty" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 11, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Query Claroty CTD, an OT scanner and monitoring system. Claroty CTD provides fundamental cybersecurity controls that support the REVEAL, PROTECT, DETECT, CONNECT framework for industrial networks.
 
@@ -46,5 +46,8 @@ For information about Claroty, see the [Claroty website](https://claroty.com/).
 
 ## Change Log
 
-* March 24, 2021 - First upload
-* July 11, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
+| | March 24, 2021 | Initial release of the Claroty integration. |

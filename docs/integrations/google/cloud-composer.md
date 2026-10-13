@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudComposer.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudComposer.png')} alt="Google Cloud Composer icon" width="50"/>
 
 Cloud Composer is a managed Apache Airflow service that helps you create, schedule, monitor, and manage workflows.  For more details, refer to the [GCP documentation](https://cloud.google.com/composer/docs/how-to)
 

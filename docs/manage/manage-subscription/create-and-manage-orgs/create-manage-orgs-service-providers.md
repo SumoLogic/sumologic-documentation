@@ -70,8 +70,8 @@ After you create a child org, you can’t delete it.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
-1. Click **+ Add Organization**. <br/> <img src={useBaseUrl('img/manage/subscriptions/orgs-page.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="800"/>
-1. The **Create New Organization** pane appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/sp-create-new-org.png')} style={{border:'1px solid gray'}} alt="orgs-page" width="400"/>
+1. Click **+ Add Organization**. <br/> <img src={useBaseUrl('img/manage/subscriptions/orgs-page.png')} style={{border:'1px solid gray'}} alt="Orgs page" width="800"/>
+1. The **Create New Organization** pane appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/sp-create-new-org.png')} style={{border:'1px solid gray'}} alt="Orgs page" width="400"/>
 
 ### Allocate credits
 
@@ -81,7 +81,7 @@ After you create a child org, you can’t delete it.
       Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may incur additional deployment charges.
       :::
 1. Click **View Baseline**.
-1. The **Baselines** popup appears and displays the POV Trial org ingest limits, which you cannot change. <br/> <img src={useBaseUrl('/img/manage/subscriptions/baselines-pov.png')} style={{border:'1px solid gray'}} alt="baselines-pov" width="450"/>
+1. The **Baselines** popup appears and displays the POV Trial org ingest limits, which you cannot change. <br/> <img src={useBaseUrl('/img/manage/subscriptions/baselines-pov.png')} style={{border:'1px solid gray'}} alt="Baselines pov" width="450"/>
 1. View the following:
       * **Continuous Log Ingest**. Estimated daily ingestion to the Continuous Tier.
       * **Frequent Log Ingest.** Estimated daily ingestion to the Frequent Tier.
@@ -129,7 +129,7 @@ If a POV trial org is not upgraded to Enterprise plan after 45 days, the org wil
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Organizations**. You can also click the **Go To...** menu at the top of the screen and select **Organizations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations**. 
 1. Click the org with the **CF Credit - Free** plan that you want to upgrade to.
 1. The right pane appears with information about the org. Click **Upgrade**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/upgrade.png')} alt="upgrade" style={{border: '1px solid gray'}} width="400" />
-1. Click **Set Baseline**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/free-org-set-baseline.png')} alt="free-org-set-baseline" style={{border: '1px solid gray'}} width="400" />
+1. Click **Set Baseline**.<br/> <img src={useBaseUrl('/img/manage/subscriptions/free-org-set-baseline.png')} alt="Free org set baseline" style={{border: '1px solid gray'}} width="400" />
 1. The credits calculator appears.<br/> <img src={useBaseUrl('/img/manage/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
    * **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous Tier.
    * **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent Tier.
@@ -178,14 +178,14 @@ To change an org's credits allocation:
       :::
       You can select **Credits to be Added** and enter either the recommended credit value or a value of your choice to top-up additional credits and avoid credit depletion. This recommendation is calculated based on the usage forecast and the average daily credit usage for the selected contract period.
 
-      **Example 1**: Consider that you are heading towards credit depletion and need to add more credits. The below image shows you have almost run out of the credits (1840/1841) allocated to the child org. To increase the credits to the child org, select **Credits to be Added**. An info icon will appear below with a suggestion on how many credits can be added to this child org based on the usage forecast. So, in this case, it is suggested that you add 135 credits.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendation" width="450" />
-      <br/>Click **View Details** to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="modify-allocation-usage-forecast" width="450" />
+      **Example 1**: Consider that you are heading towards credit depletion and need to add more credits. The below image shows you have almost run out of the credits (1840/1841) allocated to the child org. To increase the credits to the child org, select **Credits to be Added**. An info icon will appear below with a suggestion on how many credits can be added to this child org based on the usage forecast. So, in this case, it is suggested that you add 135 credits.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendation.png')} style={{border:'1px solid gray'}} alt="Modify allocation recommendation" width="450" />
+      <br/>Click **View Details** to view the detailed breakdown of the recommended value.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-usage-forecast.png')} style={{border:'1px solid gray'}} alt="Modify allocation usage forecast" width="450" />
 
-      **Example 2**: Consider you need to increase credits to your child org. The below image shows that you have used 35 credits out of 31026 credits allocated to your child org. Now, if you wish to increase the credits to your child org, select **Credits to be Added** and add the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="modify-allocation-recommendatio-example-2" width="450" />
+      **Example 2**: Consider you need to increase credits to your child org. The below image shows that you have used 35 credits out of 31026 credits allocated to your child org. Now, if you wish to increase the credits to your child org, select **Credits to be Added** and add the additional credits required.<br/> <img src={useBaseUrl('img/manage/subscriptions/modify-allocation-recommendatio-example-2.png')} style={{border:'1px solid gray'}} alt="Modify allocation recommendatio example 2" width="450" />
 1. If you want to modify the baseline, click **View Baseline**. The **Credits Calculator** appears.
-      1. Click **Edit** and follow the steps in [Allocate credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="edit-baseline" width="450" />
-      1. Once you save the new baseline, you can view the recommended value in the **Credits to be Added/Reduced** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="baseline-credits-to-add" width="450" />
-      1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="baseline-view-details" width="450" />
+      1. Click **Edit** and follow the steps in [Allocate credits](#allocate-credits) to update the credits allocation.<br/> <img src={useBaseUrl('img/manage/subscriptions/edit-baseline.png')} style={{border:'1px solid gray'}} alt="Edit baseline" width="450" />
+      1. Once you save the new baseline, you can view the recommended value in the **Credits to be Added/Reduced** section.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-credits-to-add.png')} style={{border:'1px solid gray'}} alt="Baseline credits to add" width="450" />
+      1. (Optional) Click **View Details** to view the detailed breakdown of additional credits required value.<br/><img src={useBaseUrl('img/manage/subscriptions/baseline-view-details.png')} style={{border:'1px solid gray'}} alt="Baseline view details" width="450" />
 1. Click **Save** once you finish editing the credit values.
 
 ## Deactivate a POV Trial org

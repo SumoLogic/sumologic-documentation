@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Machine
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-machine-learning.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-machine-learning.png')} alt="Azure Machine Learning icon" width="50"/>
 
 [Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is a cloud service for accelerating and managing the machine learning project lifecycle that includes training, deploying, and monitoring models. This integration helps in monitoring the training runs, model deployments, and resource utilization of the nodes present in your workspace.
 

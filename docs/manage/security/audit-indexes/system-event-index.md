@@ -43,7 +43,7 @@ For example, to search for system events:
 
 The System Event Index has detailed JSON logs for the following features. To search for system events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search system events for alerts you would use the query:
 
-```sql
+```sumo
 _index=sumologic_system_events _sourceCategory=alerts
 ```
 

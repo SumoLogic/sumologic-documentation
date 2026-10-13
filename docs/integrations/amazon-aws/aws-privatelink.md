@@ -1,7 +1,7 @@
 ---
 id: aws-privatelink
-title: Sumo Logic Connector for AWS PrivateLink (Beta)
-sidebar_label: AWS PrivateLink (Beta)
+title: Sumo Logic Connector for AWS PrivateLink
+sidebar_label: AWS PrivateLink
 description: AWS PrivateLink provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your traffic to the public internet.
 ---
 
@@ -11,9 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-<!-- Originally added as a beta article with SUMO-187085. -->
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<!-- Originally added as a preview article with SUMO-187085. -->
 
 Sumo Logic provides the ability to configure private connectivity between your AWS Infrastructure and Sumologic via [AWS PrivateLink](https://aws.amazon.com/privatelink). This prevents any traffic from being accessible to the public internet.
 
@@ -47,6 +51,7 @@ Sumo Logic exposes AWS PrivateLink endpoints to different [regions that depend 
 | CA         | `collectors.ca.sumologic.com` | `open-collectors.ca.sumologic.com` | `opamp-collectors.ca.sumologic.com` | `ca-central-1` |
 | CH         | `collectors.ch.sumologic.com` | `open-collectors.ch.sumologic.com` | `opamp-collectors.ch.sumologic.com` | `eu-central-2` |
 | DE         | `collectors.de.sumologic.com` | `open-collectors.de.sumologic.com` | `opamp-collectors.de.sumologic.com` | `eu-central-1` |
+| ESC        | `collectors.esc.sumologic.com` | `open-collectors.esc.sumologic.com` | `opamp-collectors.esc.sumologic.com` | `eusc-de-east-1` |
 | EU         | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` | `opamp-collectors.eu.sumologic.com` | `eu-west-1` |
 | JP         | `collectors.jp.sumologic.com` | `open-collectors.jp.sumologic.com` | `opamp-collectors.jp.sumologic.com` | `ap-northeast-1` |
 | KR         | `collectors.kr.sumologic.com` | `open-collectors.kr.sumologic.com` | `opamp-collectors.kr.sumologic.com` |  `ap-northeast-2` |

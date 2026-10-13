@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.5  
-Updated: February 26, 2026***
+***Version: 1.6  
+Updated: April 30, 2026***
 
 Sumo Logic Automation Tools simplifies Cloud SOAR playbooks with data processing and automation.
 
@@ -507,3 +507,4 @@ No authentication configuration is needed. Sumo Logic Automation Tools executes 
 * Nov 14, 2025 (v1.3) - Added "Convert Time" action to convert timestamps to the selected timezone.
 * Feb 25, 2026 (v1.4) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
 * Feb 26, 2026 (v1.5) - Added a new output path to enable easier data consumption in playbook workflows.
+* April 30, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.

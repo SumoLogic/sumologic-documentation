@@ -38,7 +38,7 @@ For example, to search for audit events:
 
 This Audit Event Index has detailed JSON logs for the following features. To search for audit events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search user action events for access keys you would use the query:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=accessKeys
 ```
 
@@ -52,6 +52,7 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 | [Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) | `connections` |
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
+| [Dojo AI](/docs/get-started/ai-machine-learning/#dojo-ai) | `dojo` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
 | [Fields](/docs/manage/fields) | `fieldManagement` |
 | [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) | `ingestBudgets` |
