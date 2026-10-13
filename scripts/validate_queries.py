@@ -228,7 +228,7 @@ def validate_file(file_path, repo_root, access_id, access_key):
     queries = extract_new_queries(file_path, repo_root)
 
     if not queries:
-        print("   No new SQL/Sumo queries found")
+        print("   No new ```sumo queries found")
         return True
 
     print(f"   Found {len(queries)} new query/queries")

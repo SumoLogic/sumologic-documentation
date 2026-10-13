@@ -1,4 +1,4 @@
-name: SQL Query Validation
+name: Sumo Query Validation
 on:
   pull_request:
     paths:
@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Detect changed files with SQL blocks
+      - name: Detect changed files with sumo query blocks
         id: check-sql
         run: |
           BASE_COMMIT="${{ github.event.pull_request.base.sha }}"
@@ -61,4 +61,4 @@ jobs:
 
       - name: Skip validation
         if: steps.check-sql.outputs.sql_changed == 'false'
-        run: echo "No new SQL/Sumo query blocks detected — skipping validation"
+        run: echo "No new ```sumo query blocks detected — skipping validation"
