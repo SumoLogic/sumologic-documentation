@@ -84,19 +84,27 @@ def _parse_added_queries_from_diff(diff_content):
     current_block = []
 
     for line in diff_content.split("\n"):
-        if line.startswith("+```sql"):
+        # Strip leading '+' then any indentation to handle indented code blocks
+        if not line.startswith("+"):
+            if in_sumo_block:
+                in_sumo_block = False
+                current_block = []
+            continue
+        content = line[1:]  # strip leading '+'
+        stripped = content.lstrip()
+        if stripped.startswith("```sql"):
             wrong_marker_found = True
-        elif line.startswith("+```sumo"):
+        elif stripped.startswith("```sumo"):
             in_sumo_block = True
             current_block = []
-        elif line.startswith("+```") and in_sumo_block:
+        elif stripped.startswith("```") and in_sumo_block:
             in_sumo_block = False
             query = "\n".join(current_block).strip()
             if query:
                 queries.append(query)
             current_block = []
-        elif in_sumo_block and line.startswith("+"):
-            current_block.append(line[1:])  # strip leading '+'
+        elif in_sumo_block:
+            current_block.append(content)
 
     if wrong_marker_found:
         print("::error::Found ```sql code block(s) in docs. Use ```sumo for Sumo Logic queries.")
