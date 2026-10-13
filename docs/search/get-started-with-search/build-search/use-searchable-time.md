@@ -13,6 +13,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This resolves the inconsistent error messages due to variable ingestion latency and non-linear receipt time indexing issues by marking the time only when the data is truly searchable. This ensures running queries with non-overlapping but exhaustive time ranges will prevent any gaps or duplication in the data.
 
+:::note
+This setting controls which timestamp field a search's time range is measured against, not the time range itself. To set the time range, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). Searchable time is one of three timestamp fields you can search by, along with message time (the default) and [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time), the time a message hit the Sumo Logic receivers.
+:::
+
 :::info
 Currently, **Searchable Time** is only available for the Log Search UI page, Scheduled Searches, Saved Searches, Dashboards, Monitors, and Search Job API queries.
 :::

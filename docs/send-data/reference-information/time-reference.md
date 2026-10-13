@@ -273,20 +273,6 @@ They will see the same data, just displayed using their custom set time zone. Fo
 
 <img src={useBaseUrl('img/send-data/timezone_dashboards_compare.png')} alt="Screenshot comparing how dashboards display time zones differently for users with custom time zone settings, highlighting the same data shown in different time zones." width="600"/>
 
-## Time ranges
-
-The **Time Range** field on the **Search** page uses the time zone that is set for the Sumo Logic user interface. This is either the default time zone used in the web browser and set by the operating system, or the **Default Timezone** setting on the **Preferences** page, if you have set this option.
-
-When you create a [Scheduled Search](/docs/alerts/scheduled-searches), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches.
-
 :::note
-The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or real-time alerts. If you'd like your Scheduled Searches and real-time alerts to use the same time zone as your user interface, you'll need to edit them to do so, and save them.
+This page covers timestamp parsing at ingestion time. For how the Search page's Time Range field, time range expressions, and date formats work, see [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) and [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). To search by a different timestamp field instead of the default message time, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) or [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time).
 :::
-
-For more information on time ranges, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range).
-
-Search Time Ranges can also search all data with any and all timestamps. For details, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time).
-
-## Date format
-
-If the browser used to access Sumo Logic is in a location that uses the day/month/year format instead of month/day/year, dates are presented in that format.
