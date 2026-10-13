@@ -7,7 +7,7 @@ description: The Sumo Logic app for Azure Web Apps allows you to collect Azure w
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="Web Apps icon" width="50"/>
 
 The Azure Web Apps app allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment. This app provides preconfigured dashboards that allow you to monitor server operation, traffic requests, and response times.
 
@@ -29,8 +29,7 @@ For Azure Web Apps, you can collect the following logs and metrics:
 
 - **Activity logs**, provides insight into any subscription-level or management group level events that have occurred in the Azure. To learn more, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema).
 
-* **Azure WebApps platform metrics**. These are metrics specific to Functions like execution count and execution units.
-  For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics).
+* **Metrics** are available in [Microsoft.Web/sites](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-web-sites-metrics) namespace. For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/monitor-app-service-reference).
 
 ### Sample log messages
 
@@ -44,7 +43,7 @@ eShopCart.azurewebsites.net 200 0 0 3098 1008 1000
 
 ### Sample queries
 
-```sql title="Traffic over time outlier"
+```sumo title="Traffic over time outlier"
 _sourceCategory=Azure/Web-app
 | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<s_sitename>\S+) (?<cs_method>\S+) (?<cs_uri_stem>\S+) (?<cs_uri_query>\S+) (?<src_port>\S+) (?<src_user>\S+) (?<client_ip>\S+) (?<cs_user_agent>\S+) (?<cs_cookie>\S+) (?<cs_referrer>\S+) (?<cs_host>\S+) (?<sc_status>\S+) (?<sc_substatus>\S+) (?<sc_win32_status>\S+) (?<sc_bytes>\S+) (?<cs_bytes>\S+) (?<time_taken>\S+)"
 | timeslice 5m
@@ -64,11 +63,15 @@ You must explicitly enable diagnostic settings for each web app that you want to
 
 When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/WebApps/Logs`, `Azure/WebApps/Metrics`.
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -85,11 +88,9 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
 
-:::note
-Since this source contains logs from multiple regions, make sure that you do not tag this source with the location tag.
-:::
+<ActivityLogs/>
 
 ##### Enabling Microsoft Defender for Cloud
 
@@ -327,3 +328,8 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
+## Troubleshooting
+
+### Metrics collection via Azure Metrics Source
+
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).

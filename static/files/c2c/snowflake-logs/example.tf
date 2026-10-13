@@ -5,6 +5,7 @@ resource "sumologic_cloud_to_cloud_source" "snowflake_logs_source" {
   }
   config = jsonencode({
       "name": "Snowflake Logs",
+      "authType": "basic",
       "username": "SUMO",
       "password": "bhwgdy4u28c",
       "accountIdentifier": "gsy64-cnkc8",

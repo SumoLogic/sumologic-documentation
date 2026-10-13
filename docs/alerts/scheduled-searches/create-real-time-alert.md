@@ -7,6 +7,8 @@ title: Deprecation of Real-Time Scheduled Searches
  <meta name="robots" content="noindex" />
 </head>
 
+<!-- Article added by DOCS-780. -->
+
 :::warning Deprecated Feature
 As of May 29, 2024, creating new Real-Time Scheduled Searches has been disabled. Existing Real-Time Scheduled Searches will continue to function as-is. For new alerting needs, we recommend using [Monitors](/docs/alerts/monitors/overview).
 :::
@@ -29,7 +31,7 @@ Monitors offer significant improvements over Real-Time Scheduled Searches, inclu
 * [Multiple trigger conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) (Critical, Warning, Missing Data)
 * [Alert grouping](/docs/alerts/monitors/alert-grouping/)
 * [Playbook support](/docs/alerts/monitors/alert-response/#alert-details)
-* [AI-driven alerting](/release-notes-service/2024/12/31/#march-12-2024-alerts)
+* [Anomaly alerting](/release-notes-service/2024/12/31/#march-12-2024-alerts)
 * [Integration with the Alert Response page](/docs/alerts/monitors/alert-response/)
 
 Monitors are the strategic focus for our future alerting development and enhancements.

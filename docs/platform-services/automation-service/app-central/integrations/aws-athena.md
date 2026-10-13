@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="automox" width="50"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="AWS Athena icon" width="50"/>
 
-***Version: 1.1  
-Updated: Jun 15, 2023***
+***Version: 1.3  
+Updated: July 23, 2026***
 
 Amazon Athena is a cloud-based service that enables you to run SQL queries on data stored in Amazon S3 without the need to set up any infrastructure. It is a serverless, pay-per-query service that makes it easy to analyze large amounts of data.
   
@@ -34,9 +34,11 @@ To [get access key and secret access key](https://docs.aws.amazon.com/athena/lat
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
 import IntegrationsAuthAWS from '../../../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../../../reuse/automation-service/aws/iam-configuration.md';
 import AWSRegions from '../../../../reuse/automation-service/aws/region.md';
 import AWSAccesskey from '../../../../reuse/automation-service/aws/access-key.md';
 import AWSSecret from '../../../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../../../reuse/automation-service/aws/iam-role.md';
 import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
 import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
 import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
@@ -49,6 +51,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <AWSRegions/>
 * <AWSAccesskey/>
 * <AWSSecret/>
+* <AWSIAMRole/>
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
 * <IntegrationEngine/>
@@ -56,9 +59,37 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/aws-athena-configuration.png')} style={{border:'1px solid gray'}} alt="AWS Athena configuration" width="400"/>
 
+For information about Amazon Athena, see [Athena documentation](https://docs.aws.amazon.com/athena/).
+
 <IntegrationsAuthAWS/>
 
-For information about Amazon Athena, see [Athena documentation](https://docs.aws.amazon.com/athena/).
+### AWS IAM role-based access
+
+<IAMConfiguration/>
+
+## Required Permissions
+```
+  athena:StartQueryExecution
+  athena:GetQueryExecution
+  athena:GetQueryResults
+  athena:StopQueryExecution
+  athena:ListDatabases
+  athena:ListWorkGroups
+  athena:ListTableMetadata
+  glue:GetDatabase
+  glue:GetDatabases
+  glue:GetTable
+  glue:GetTables
+  glue:GetTableVersion
+  glue:GetTableVersions
+  s3:GetObject
+  s3:PutObject
+  s3:ListBucket
+```
+
+## Limitations
+
+Local [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge/) is not supported in this version.
 
 ## External Libraries
 
@@ -66,5 +97,9 @@ For information about Amazon Athena, see [Athena documentation](https://docs.aws
 
 ## Change Log
 
-* February 22, 2023 (v1.0) - First upload
-* June 15, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | July 23, 2026 | Resolved an issue where the integration fails due to deprecated dependency warnings. |
+| v1.2 | July 29, 2025 | Added support for IAM role authentication. Users can now authenticate using an AWS IAM Role in addition to access key–based authentication. |
+| v1.1 | June 15, 2023 | Updated the integration with Environmental Variables. |
+| v1.0 | February 22, 2023 | Initial release of the AWS Athena integration. |

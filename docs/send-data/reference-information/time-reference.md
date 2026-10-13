@@ -1,6 +1,6 @@
 ---
 id: time-reference
-title: Timestamps, Time Zones, Time Ranges, and Date Formats
+title: Timestamps, Time Zones, Time Ranges, Date Formats
 description: Learn how Sumo Logic manages timestamps, time zones, time ranges, and dates, and the configuration options that are available.
 keywords:
   - time
@@ -22,6 +22,10 @@ Because of the importance of timestamps, Sumo Logic indexes the timestamp of e
 The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
 
 When configuring a Source, you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
+
+:::note Using OpenTelemetry Remote Management (OTRM)?
+This page covers timestamp parsing for standard Sumo Logic sources. If you're using OTRM source templates, refer to [Timestamps, time zones, time ranges, and date formats for OTRM](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) instead.
+:::
 
 ### Timestamp considerations
 
@@ -163,12 +167,12 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
 ### Using _format for troubleshooting
 
 You can use `_format` to see how the timestamp is parsed from the log file. Assign _format an alias to return it in your search results, for example: 
-```sql
+```sumo
 | _format as timestampFormat
 ```
 
 The fields returned in the search results of `_format` are:
-```sql
+```sumo
 t:<parse type>,o:<offset>,l:<length>,p:<date_format>
 ```
 
@@ -186,7 +190,7 @@ where `<parse type>` can take the values:
 #### Example
 
 When you’re troubleshooting issues related to timestamp, you can run a query similar to this to see how the timestamp is parsed:
-```sql
+```sumo
 _sourceCategory=PaloAltoNetworks
 | _format as timestampformat
 ```

@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/manage-engine-desktop-central.png')} alt="manage-engine-desktop-central" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/manage-engine-desktop-central.png')} alt="ManageEngine Desktop Central icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 05, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Query data an utilize actions in Desktop Central unified endpoint management (UEM) solution for managing servers, laptops, desktops, smartphones.
 
@@ -38,6 +38,7 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
 * <IntegrationLabel/>
 * **Server Host**. Enter your ManageEngine Desktop Central [hostname](https://www.manageengine.com/products/desktop-central/help/getting_started/working_with_desktop_central.html).
 
+* **Account Type**. Select your Account type (default is Cloud).
 * **Access Token**. Enter your ManageEngine Desktop Central [authentication key](https://www.manageengine.com/products/desktop-central/api/).
 * <IntegrationTimeout/>
 * <IntegrationCertificate/>
@@ -50,5 +51,9 @@ For information about ManageEngine Endpoint Central (formerly Desktop Central), 
 
 ## Change Log
 
-* July 8, 2021 - First upload
-* July 5, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | June 24, 2025 | Updated authentication headers to support both cloud and on-prem account type. |
+| v1.1 | July 5, 2023 | Updated the integration with Environmental Variables. |
+| | July 8, 2021 | Initial release of the ManageEngine Desktop Central integration. |

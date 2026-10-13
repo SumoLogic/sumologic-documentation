@@ -1,7 +1,7 @@
 ---
 id: create-monitor
 title: Create a New Monitor
-description: Learn how to create a Sumo Logic monitor.
+description: Create Sumo Logic monitors with ML-powered anomaly detection, customizable trigger conditions, playbook automation, and alerting for logs and metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,9 +9,21 @@ import Iframe from 'react-iframe';
 
 This guide will walk you through the steps of creating a monitor in Sumo Logic, from setting up trigger conditions to configuring advanced settings, notifications, and playbooks.
 
-Our AI-driven alerts use machine learning to analyze historical data, establish baselines, detect significant deviations, and filter out irrelevant alerts to reduce alert fatigue and help teams focus on critical issues. These capabilities apply to both logs and metrics, providing a comprehensive monitoring solution. With seasonality detection and customizable anomaly clustering, false positives are minimized, enabling faster issue resolution.
+Our alerts use machine learning to analyze historical data, establish baselines, detect significant deviations, and filter out irrelevant alerts to reduce alert fatigue and help teams focus on critical issues. These capabilities apply to both logs and metrics, providing a comprehensive monitoring solution. With seasonality detection and customizable anomaly clustering, false positives are minimized, enabling faster issue resolution.
 
 Integrated playbooks automate incident response by gathering diagnostics, notifying teams, triggering recovery actions, and streamlining workflows to improve response times. You can link playbooks to monitors to automate tasks such as restarting services or scaling infrastructure, ensuring swift and efficient anomaly resolution.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage monitors with the [`sumologic_monitor`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) and [`sumologic_monitor_folder`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor_folder) resources.
+
+<TerraformLink/>
+:::
+
+:::tip
+You can also create logs monitors from plain-language prompts with Mobot. For details, see [Create Monitors with Mobot](/docs/alerts/monitors/create-monitor-with-mobot).
+:::
 
 ## Open the New Monitor window
 
@@ -19,7 +31,7 @@ There are several ways to create a new monitor, depending on where you are in Su
 
 ### From Monitors
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Alerts > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
 1. Click **Add** > **New Monitor**, and the **New Monitor** dialog box will appear.
 
 <!-- These options are not appearing
@@ -40,19 +52,19 @@ Click the kebab icon in the upper right corner, then **Create a Monitor**.
 
 -->
 
-### From Metrics Explorer
+### From Metrics Search
 
 Creating a monitor based on the threshold values defined in the Metrics page can save time and effort. By using the pre-filled monitor editor, you can quickly create a monitor with the same threshold values as defined in the Metrics page. This will ensure that the monitor is using the same criteria as the Metrics page, providing consistency in monitoring.
 
-To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer/), follow the steps below:
+To create a monitor from the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/), follow the steps below:
 
-1. Open the **Metrics Explorer**:
-   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/alerts/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
+1. Open the **Metrics Search**:
    * [**New UI**](/docs/get-started/sumo-logic-ui). Click the **Go To...** menu at the top of the screen and select **Metrics Search**.
-1. On the **Metrics Explorer** page:
+   * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). From Sumo Logic home, click **Metrics**.<br/><img src={useBaseUrl('img/alerts/monitors/home-metrics.png')} alt="Screenshot of the Sumo Logic home page with rectangle around the Metrics icon" style={{border: '1px solid gray'}} width="200"/>
+1. On the **Metrics Search** page:
    1. Enter a metrics query.<br/><img src={useBaseUrl('img/alerts/query-metrics-explorer-view.png')} alt="Metrics explorer query" style={{border: '1px solid gray'}} width="800"/>
-   1. In the **Thresholds** section, define the critical and warning thresholds for your metrics query.<br/><img src={useBaseUrl('img/alerts/thresholdonly-metrics-explorer-view.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, displaying a line chart for node memory utilization over time. The chart shows the memory utilization metric from 17:42:12 to 17:57:12 on 21/02/2023. The right side of the screen includes a thresholds panel with critical and warning thresholds set to 500000000 and 80, respectively. The 'Fill remaining area as green' option is toggled off." style={{border: '1px solid gray'}} width="800"/>
-1. Click the three-dot kebab icon button at the end of the query field and select **Create a Monitor**.<br/><img src={useBaseUrl('img/alerts/monitors/create-monitor.png')} alt="Screenshot of the Metrics Explorer in Sumo Logic, showing the dropdown menu accessed via the three vertical dots icon. The menu includes options for Basic Mode, Duplicate Query, Create a Monitor, and Create an SLO. The option 'Create a Monitor' is highlighted. Below the menu, the thresholds panel shows critical and warning thresholds set to 500000000 and 80, respectively, with the 'Fill remaining area as green' option toggled off." style={{border: '1px solid gray'}} width="400"/>
+   1. In the **Thresholds** section, define the critical and warning thresholds for your metrics query.<br/><img src={useBaseUrl('img/alerts/thresholdonly-metrics-explorer-view.png')} alt="Screenshot of the Metrics Search in Sumo Logic, displaying a line chart for node memory utilization over time. The chart shows the memory utilization metric from 17:42:12 to 17:57:12 on 21/02/2023. The right side of the screen includes a thresholds panel with critical and warning thresholds set to 500000000 and 80, respectively. The 'Fill remaining area as green' option is toggled off." style={{border: '1px solid gray'}} width="800"/>
+1. Click the three-dot kebab icon button at the end of the query field and select **Create a Monitor**.<br/><img src={useBaseUrl('img/alerts/monitors/create-monitor.png')} alt="Screenshot of the Metrics Search in Sumo Logic, showing the dropdown menu accessed via the three vertical dots icon. The menu includes options for Basic Mode, Duplicate Query, Create a Monitor, and Create an SLO. The option 'Create a Monitor' is highlighted. Below the menu, the thresholds panel shows critical and warning thresholds set to 500000000 and 80, respectively, with the 'Fill remaining area as green' option toggled off." style={{border: '1px solid gray'}} width="400"/>
 1. The **New Monitor** will open with prefilled data based on the threshold values you set in the previous steps.<br/><img src={useBaseUrl('img/alerts/monitors/new-monitor-window.png')} alt="Screenshot of the 'New Monitor' setup page in Sumo Logic, specifically focusing on the Trigger Conditions section. The Monitor Type is set to Metrics and Detection Method to Static. The query is set for node memory utilization for a specific collector. The Alert Grouping options include one alert per monitor or one alert per time series. The Trigger Type section shows critical alerts set to trigger when the result is greater than or equal to 500000000 within 15 minutes. The recovery settings are enabled to recover automatically when the result is less than 500000000 within a 15-minute window. Historical Trend is displayed below, with a dashed red line indicating the threshold." style={{border: '1px solid gray'}} width="600"/>
 1. In the **Trigger Type** section, enable the checkbox that corresponds to the threshold value that you want to use (Critical and/or Warning).
    * The threshold values will be the same as defined in the Metrics page for both Critical and Warning thresholds.
@@ -62,10 +74,10 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 1. The same threshold will also be applied to the histogram chart.
 
 :::note
-The same threshold translating functionality supports [opening the Alerts Response Page in the Metrics Explorer](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Explorer](/docs/alerts/monitors/settings/#view-in-metrics-explorer).
+The same threshold translating functionality supports [opening the Alerts Response Page in the Metrics Search](/docs/alerts/monitors/alert-response/#translating-thresholds) and [opening a monitor in the Metrics Search](/docs/alerts/monitors/settings/#view-in-metrics-search).
 :::
 :::tip
-When you create a monitor and open the metrics search query in the Metrics Explorer, the signal gets a new value for the [`quantize`](/docs/metrics/metrics-operators/quantize/) operator based on the time range of the query. The default value for the `quantize` operator is `1m`. Because opening the query in Metrics Explorer may not match because of quantization differences, you may need to adjust the query to return the results you expect, especially when creating a monitor that uses the [anomaly detection method](#detection-method).<br/><img src={useBaseUrl('img/alerts/monitors/metrics-query-with-quantize.png')} alt="Metrics query with quantize" style={{border: '1px solid gray'}} width="600"/>
+When you create a monitor and open the metrics search query in the Metrics Search, the signal gets a new value for the [`quantize`](/docs/metrics/metrics-operators/quantize/) operator based on the time range of the query. The default value for the `quantize` operator is `1m`. Because opening the query in Metrics Search may not match because of quantization differences, you may need to adjust the query to return the results you expect, especially when creating a monitor that uses the [anomaly detection method](#detection-method).<br/><img src={useBaseUrl('img/alerts/monitors/metrics-query-with-quantize.png')} alt="Metrics query with quantize" style={{border: '1px solid gray'}} width="600"/>
 :::
 
 ## Step 1. Set trigger conditions
@@ -88,7 +100,7 @@ Set specific threshold conditions for well-defined KPIs with constant thresholds
 
 #### Anomaly
 
-Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This *AI-driven alerting* system uses historical data to minimize false positives and alerts you to deviations.
+Leverage machine learning to identify unusual behavior and suspicious patterns by establishing baselines for normal activity. This alerting system uses historical data to minimize false positives and alerts you to deviations.
 
 * **Model-driven detection**. Machine learning models create accurate baselines, eliminating guesswork and noise.
 * **AutoML**. The system self-tunes with seasonality detection, minimizing user intervention and adjusting for recurring patterns to reduce false positives.
@@ -97,8 +109,8 @@ Leverage machine learning to identify unusual behavior and suspicious patterns b
 * **Auto-diagnosis and recovery**. The Automation Service handles diagnosis and resolution, closing the loop from alert to recovery.
 * **Customizable detection**. Use advanced rules like "Cluster anomalies" to detect multiple data points exceeding thresholds within a set timeframe.
 
-:::sumo Micro Lesson
-Learn about AI-driven alerting.
+:::training Micro Lesson
+Watch this micro lesson to learn about anomaly monitors.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/8z9b2zqtc3?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -180,13 +192,13 @@ Triggers are evaluated by balancing the requirement of timely alert notification
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-logs.png')} alt="Config resolution window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Static detection method
 
 **Example: Logs - Static - Critical and Warning**  
 
-<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="logs trigger type.png" style={{border: '1px solid gray'}} width="600"/>
+<img src={useBaseUrl('img/alerts/monitors/logs-trigger-type.png')} alt="Logs trigger type" style={{border: '1px solid gray'}} width="600"/>
 
 `Alert when result is <threshold type> <threshold> within <time range - trigger>. Evaluate every <trigger - frequency>.`
 
@@ -197,7 +209,7 @@ For example, if your monitor evaluates the last 1 hour, you can set a resolution
 | `<time range - trigger>` | The duration of time to evaluate. Values range from 2 Minutes to 24 Hours (or 7 Days, by request only). |
 | `<trigger - frequency>` | The frequency that the trigger is evaluated. |
 
-After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/flex/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
+After setting the frequency evaluation, you can preview your [estimated scan data](/docs/manage/partitions/estimate-scan-data) by clicking the **Show Estimated Scan** icon, as seen below.
 
 <img src={useBaseUrl('img/alerts/monitors/show-estimated-scan.png')} alt="Estimated Scan Data icon" style={{border: '1px solid gray'}} width="700"/>
 
@@ -207,7 +219,7 @@ For example, if an alert is set to `greater than 10`, the recovery would be se
 
 **Example: Logs - Static - Missing Data**
 
-<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="logs-static-missing" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/logs-static-missing.png')} alt="Logs static missing" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when missing data within <time range - trigger>. Evaluate every <trigger - frequency>.`
 
@@ -238,7 +250,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 **Example: Logs - Outlier - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="monitor outlier logs.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-outlier-logs.png')} alt="Monitor outlier logs" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <consecutive> consecutive out of <window> data points`
 
@@ -269,7 +281,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 When configuring monitor trigger conditions, you can set a resolution window to resolve alerts quickly once the underlying issue is fixed. The resolution window specifies how long a monitor will wait before resolving an alert after the issue is corrected.
 
-For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-metrics.png')} alt="config-resolution-window" style={{border: '1px solid gray'}} width="700"/>
+For example, if your monitor evaluates the last 1 hour, you can set a resolution window of 15 minutes. Once the resolution window is continuously satisfied for 15 minutes, the alert will resolve automatically.<br/><img src={useBaseUrl('img/alerts/monitors/config-resolution-window-metrics.png')} alt="Config resolution window" style={{border: '1px solid gray'}} width="700"/>
 
 #### Prerequisites
 
@@ -288,7 +300,7 @@ Examples:
 
 **Example: Metrics - Static - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="metrics trigger types.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-trigger-types.png')} alt="Metrics trigger types" style={{border: '1px solid gray'}} width="800" />
 
 `Alert when result is <threshold type> <threshold> <occurrence type> <time range>`
 
@@ -310,7 +322,7 @@ For example, when an alert is set to `greater than 10`, the recovery would be
 | `<threshold type>` | How you want the value compared. Select greater than, greater than or equal, less than or equal, or less than. |
 | `<threshold>` | The value against which the resolution will be evaluated. You can specify any valid numeric value. |
 
-The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/>![metrics alert datapoints.png](/img/alerts/monitors/minimum-datapoints.png)
+The Alert and recovery setting affects both the alert generation logic and the alert recovery logic. `Alert and recovery require a minimum of <count> data points for "at all times" evaluation windows`. This setting only works when you choose `at all times within` as the type of occurrence for the alert. <br/><img src={useBaseUrl('img/alerts/monitors/minimum-datapoints.png')} alt="Metrics alert datapoints" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|
@@ -337,7 +349,7 @@ Anomaly detection applies to one time series at a time. All metrics anomaly moni
 
 **Example: Metrics - Anomaly - Critical**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="metrics-anomaly-critical" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-critical.png')} alt="Metrics anomaly critical" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when anomaly count is at least <count> (max. 5) at any time within <time range>`
 
@@ -350,7 +362,7 @@ Tune the number of anomalous data points detected per day compared to the predic
 
 **Example: Metrics - Anomaly - Missing Data**
 
-<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="metrics-anomaly-missing" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/metrics-anomaly-missing.png')} alt="Metrics anomaly missing" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when missing data within <time range>`
 
@@ -364,7 +376,7 @@ For recovery, Sumo Logic will automatically resolve the incident when the resolu
 
 **Example: Metrics - Outlier - Critical and Warning**
 
-<img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="monitor metrics outlier triggers.png" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/alerts/monitors/monitor-metrics-outlier-triggers.png')} alt="Monitor metrics outlier triggers" style={{border: '1px solid gray'}} width="600" />
 
 `Alert when result is greater than or equal to <threshold> standard deviations from baseline for <time range>`
 
@@ -411,6 +423,15 @@ Collection delays may occur due to your environment and it takes a couple of min
 If your data is coming from the [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics), we recommend a setting of 900 seconds.
 :::
 
+### Timestamp
+
+You can switch the **Timestamp** mode to **Message Time** or **Searchable Time** to view and evaluate logs based on different timestamp contexts. <img src={useBaseUrl('img/alerts/monitors/timestamp-dropdown.png')} alt="select timestamp" style={{border: '1px solid gray'}} width="500"/>
+
+- **Message Time**. Returns messages based on the timestamp specified in each message.
+- **Searchable Time**. Returns messages based on the time they are indexed or become searchable in Sumo Logic.
+
+This allows you to troubleshoot ingestion delays, correlate events accurately, and monitor data using the most relevant time reference. Learn more in [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/#create-a-monitor-using-searchable-time).
+
 ## Step 3. Notifications (optional)
 
 Configure who gets notified when the monitor triggers an alert. When a trigger condition is met, you can send notifications to other people and services.
@@ -421,7 +442,9 @@ Notifications will be sent when the monitor is triggered as configured in the [A
 
 * **Preferred Notification Time Zone**. Set the time zone for your alert notifications. If you do not select anything, it will default to the time zone specified in your user preferences.
 * **Connection Type**. Choose the [connection](/docs/alerts/webhook-connections) notification method (e.g., email, Webhook, PagerDuty). Monitor notifications support [Alert Variables](/docs/alerts/monitors/alert-variables) to reference its configuration settings or your raw data.
-   * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body.
+   * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body. You can also include additional context in the email notification:
+      * **Include Query** (`includeQuery`). Adds the monitor's search query to the email notification. Supported for Logs, Metrics, and SLO monitors.
+      * **Include Results** (`includeResultSet`). Adds the search results to the email notification. Supported for Logs and Metrics monitors. SLO monitors do not support this option. Setting `includeResultSet` on an SLO monitor returns an error indicating that the flag is not applicable.
    * **Webhook**. By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 * **Trigger Type Notifications**. Set different notification channels for each trigger type (**Critical**, **Warning**, **Missing Data**). Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification. You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.
    * For the connection types listed [here](/docs/alerts/webhook-connections), you can use the **Recovery** checkbox to enable an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic.
@@ -457,3 +480,7 @@ Optionally, you can add [**Tags**](/docs/alerts/monitors/settings#tags) to organ
 ### Using Terraform
 
 You can configure Sumo Logic monitors using [Terraform modules](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor).
+
+### Using Mobot
+
+You can also create and update logs monitors from plain-language prompts using [Mobot](/docs/alerts/monitors/create-monitor-with-mobot).

@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/gcp_netapp.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/gcp_netapp.png')} alt="Gcp Net App icon" width="50"/>
 
 NetApp Cloud Volumes Service is a fully managed, cloud-native data storage service that provides advanced data management capabilities and highly scalable performance. For more details, refer to the [GCP documentation](https://cloud.google.com/architecture/partners/netapp-cloud-volumes).
 

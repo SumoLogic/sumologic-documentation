@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Windows icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic app for Windows allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, our Windows app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 
@@ -49,86 +49,29 @@ Standard Windows event channels include:
 You can skip this section if you have already set up the logs collection through [Windows PCI](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import WindowsConfigureSourceTemplate from '../../../reuse/send-data/windows-configure-source-template.md';
 
-In this step, you will configure the YAML file required for Windows event logs and metrics Collection.
+<WindowsConfigureSourceTemplate/>
 
-Any custom fields can be tagged along with the data in this step.
+### Step 3: Push the source template to the desired remotely managed collectors
 
-#### Enable process metric collection (Optional)
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
-
-<ProcMetrics/>
-
-Click on the **Download YAML File** button to get the YAML file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid gray'}} width="800"/>
-
-### Step 3: Send logs to Sumo
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Windows"
-  values={[
-    {label: 'Windows', value: 'Windows'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Windows">
-
-1. Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 :::note
 If you receive an error during installation that includes the message `failed to bind to address localhost`, change all instances of `localhost` to `127.0.0.1` in the YAML file. 
@@ -155,7 +98,7 @@ If you receive an error during installation that includes the message `failed to
 
 ## Sample metrics message
 
-```sql
+```sumo
 {
 	"queryId":"A",
 	"_source":"windows-otel-metric",
@@ -184,7 +127,7 @@ If you receive an error during installation that includes the message `failed to
 
 ## Sample queries
 
-This is a sample metrics query from the **CPU User Time** panel in the **Host Metric - CPU** dashboard.
+This is a sample metrics query from the **CPU User Time** panel in the **Windows - CPU Metrics** dashboard.
 
 ```sql title="Metrics Query String"
 sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.utilization state=user | avg by host.name
@@ -192,7 +135,7 @@ sumo.datasource=windows host.name={{host.name}} cpu=cpu0  metric=system.cpu.uti
 
 This is a sample log query from the **System Restarts** panel in the **Windows - Overview** dashboard.
 
-```sql title="Log Query String"
+```sumo title="Log Query String"
 %"sumo.datasource"=windows  "\"channel\":\"Security\""
 | json "event_id", "computer", "message", "channel" as event_id_obj, host.name, msg_summary, channel nodrop 
 | json field=event_id_obj "id" as event_id
@@ -274,30 +217,30 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 - You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times. [Learn more](/docs/dashboards/set-custom-time-ranges/).
 - You can use template variables to drill down and examine the data on a granular level. For more information, see [Filtering Dashboards with Template Variables](/docs/dashboards/filter-template-variables/).
 
-### Host Metrics - Overview
+### Windows - Host Metrics Overview
 
-The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
+The **Windows - Host Metrics Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Windows - CPU Metrics/Disk Metrics/Memory Metrics/Network Metrics/TCP Metrics dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
 - Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Overview.png' alt="Host Metrics - Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Host-Metrics-Overview.png' alt="Windows - Host Metrics Overview" />
 
-### Host Metrics - CPU
+### Windows - CPU Metrics
 
-The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Windows - CPU Metrics** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Windows - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
 - Identify hosts and processes with high CPU utilization.
 - Examine CPU usage by type and identify anomalies over time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-CPU.png' alt="Host Metrics - CPU" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-CPU-Metrics.png' alt="Windows - CPU Metrics" />
 
-### Host Metrics - Disk
+### Windows - Disk Metrics
 
-The **Host Metrics - Disk** dashboard provides detailed information about disk utilization and disk IO operations.You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Windows - Disk Metrics** dashboard provides detailed information about disk utilization and disk IO operations. You can drill down from this dashboard to the Windows - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -305,11 +248,11 @@ Use this dashboard to:
 - Monitor abnormal spikes in read/write rates.
 - Compare disk throughput across storage devices of a host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Disk.png' alt="Host Metrics - Disk" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Disk-Metrics.png' alt="Windows - Disk Metrics" />
 
-### Host Metrics - Memory
+### Windows - Memory Metrics
 
-The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Windows - Memory Metrics** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Windows - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -317,11 +260,11 @@ Use this dashboard to:
 - Examine memory distribution (free, buffered-cache, used, total) for a given host.
 - Monitor abnormal spikes in memory and swap utilization.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Memory.png' alt="Host Metrics - Memory" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Memory-Metrics.png' alt="Windows - Memory Metrics" />
 
-### Host Metrics - Network
+### Windows - Network Metrics
 
-The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
+The **Windows - Network Metrics** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
 
@@ -329,31 +272,32 @@ Use this dashboard to:
 - Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 - Use dashboard filters to compare throughput across the interface of a host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-Network.png' alt="Host Metrics - Network" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Network-Metrics.png' alt="Windows - Network Metrics" />
 
-### Host Metrics - TCP
+### Windows - TCP Metrics
 
-The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
+The **Windows - TCP Metrics** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:
 
 - Identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-TCP-Metrics.png' alt="Windows - TCP Metrics" />
 
-### The Process Metrics - Overview
+### Windows - Process Metrics Overview
 
-The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations, and thread count.
+The **Windows - Process Metrics Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations, and thread count.
 
-User this dashboard to :
-- Process wise distribution of CPU and memory usage
-- Process wise read/write operations
+Use this dashboard to:
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
+- Process wise distribution of CPU and memory usage.
+- Process wise read/write operations.
 
-### Process Metrics - Details
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Process-Metrics-Overview.png' alt="Windows - Process Metrics Overview" />
 
-The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
+### Windows - Process Metrics Details
+
+The **Windows - Process Metrics Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
 Use this dashboard to:
 
@@ -361,7 +305,7 @@ Use this dashboard to:
 - Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
 - Troubleshoot memory leaks using the resident set memory trend chart.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Process-Metrics-Details.png' alt="Windows - Process Metrics Details" />
 
 ## Create monitors for Windows app
 

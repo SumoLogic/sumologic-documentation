@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imperva-securesphere.png')} alt="imperva-securesphere" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imperva-securesphere.png')} alt="Imperva SecureSphere icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Retrieve and modify IP groups for incident investigation and remediation.
 
@@ -45,5 +45,8 @@ For information about Imperva SecureSphere, see the [Imperva SecureSphere docume
 
 ## Change Log
 
-* July 29, 2019 - First upload
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| | July 29, 2019 | Initial release of the Imperva SecureSphere integration. |

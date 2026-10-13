@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/smtp-v3.png')} alt="smtp-v3" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/smtp-v3.png')} alt="SMTP V3" width="100"/>
 
-***Version: 3.2  
-Updated: Mar 18, 2024***
+***Version: 3.3  
+Updated: April 30, 2026***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -80,6 +80,9 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 ## Change Log
 
-* June 20, 2022 - First upload
-* October 6, 2023 (v3.1) - Integration Updated
-* March 18, 2024 (v3.2) - Send Email action updated
+| Version | Date | Description |
+|:--|:--|:--|
+| v3.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v3.2 | March 18, 2024 | Updated the **Send Email** action. |
+| v3.1 | October 6, 2023 | Updated the integration. |
+| | June 20, 2022 | Initial release of the SMTP V3 integration. |

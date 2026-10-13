@@ -15,20 +15,19 @@ You can manage Sumo Logic user permissions using ADFS and SAML. To do this, you 
 Before you begin, here are a few key points, limitations, and tips:
 
 * User permissions are updated upon every SSO login. This allows you to manage permissions for Sumo Logic users within Active Directory.
-* SAML does not provide a deprovisioning mechanism. This means that if a user is deleted or disabled in Active Directory, it will not be reflected in Sumo Logic. However, these users would no longer be able to sign in to Sumo Logic via SSO. The exception is Access Keys, and if SAML lockdown is not enabled, users would still be able to login via native accounts.
-* Access Keys are NOT controlled by SAML. This means that if a user has been turned off on the SSO side, their Access Keys would still be valid. For this reason, administrators should audit users regularly and disable Access Keys when necessary.
-* By default, administrators can create new Sumo Logic native logins in addition to SAML provisioned users. This creates the need to either audit your accounts or ask Sumo Logic Support to enable SAML Lock Down.
-* SAML Lock Down disables the ability for users to login directly to Sumo Logic using username and password. There are also a few minor changes to user management behavior, such as not sending an email when a user’s email account is modified. 
+* SAML does not provide a deprovisioning mechanism. This means that if a user is deleted or disabled in Active Directory, it will not be reflected in Sumo Logic. However, these users would no longer be able to sign in to Sumo Logic via SSO. The exception is access keys, and if SAML lockdown is not enabled, users would still be able to login via native accounts.
+* Access keys are NOT controlled by SAML. This means that if a user has been turned off on the SSO side, their access keys would still be valid. For this reason, administrators should audit users regularly and disable access keys when necessary.
+* By default, administrators can create new Sumo Logic native logins in addition to SAML provisioned users. This creates the need to either audit your accounts or ask Sumo Logic Support to enable SAML lockdown.
+* SAML lockdown disables the ability for users to login directly to Sumo Logic using username and password. There are also a few minor changes to user management behavior, such as not sending an email when a user’s email account is modified. 
 * After you have successfully set up your SAML configuration, turn on **Debug** within the SAML configuration in Sumo Logic to identify any issues.
 
-## Create a New Claim Rule
+## Create a new claim rule
 
 Create a claim rule that gathers AD groups.
 
-For more information on “The Role of Claims”, see this Microsoft TechNet article:
-[https://technet.microsoft.com/en-us/...(v=ws.11).aspx](https://technet.microsoft.com/en-us/library/ee913589(v=ws.11).aspx).
+For more information on claims, see the Microsoft TechNet article [Role of Claims](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913589(v=ws.11)?redirectedfrom=MSDN).
 
-To create a new Claim Rule:
+To create a new claim rule:
 
 1. Complete the provisioning steps in [Set Up SAML for Single Sign-On](set-up-saml.md).
 1. Open the ADFS Management application.
@@ -43,10 +42,9 @@ To create a new Claim Rule:
     ```
 1. Click **OK**.
 
-## Create a New Role
+## Create a new role
 
-Create a new role that modifies the Group name and supplies the
-claim/attribute name that will be passed.
+Create a new role that modifies the group name and supplies the claim/attribute name that will be passed.
 
 This role will:
 
@@ -54,7 +52,7 @@ This role will:
 * Search the contents of `http://temp/variable` for Active Directory groups that have a `SUMO_ prefix`. The `SUMO_ prefix` is used to allow the ADFS Rule to identify Sumo Logic groups within the list of roles assigned to every user. Once the groups are identified, the `SUMO_ prefix` is removed.
 * The results are passed to an attribute called `https://sumologic.com/SAML/Attributes/Role`. This attribute contains a list of values that contain your of Sumo Logic Active Directory groups.
 
-Here is a sample Role attribute contained within the XML Assertion:
+Here is a sample role attribute contained within the XML assertion:
 
 ```xml
 <Attribute Name="https://sumologic.com/SAML/Attributes/Role">
@@ -63,7 +61,7 @@ Here is a sample Role attribute contained within the XML Assertion:
 </Attribute>
 ```
 
-To create a new Role:
+To create a new role:
 
 1. In the ADFS Management Application, click **Edit Claims**.
 1. Select the template **Send Claims Using a Custom Rule**. <br/><img src={useBaseUrl('img/security/create_role.png')} alt="Roles Translation dialog" style={{border: '1px solid gray'}} width="500" />
@@ -75,13 +73,13 @@ To create a new Role:
     ```
 1. Click **OK**.
 
-## Update the Roles Attribute in Sumo Logic
+## Update the roles attribute in Sumo Logic
 
-Now that you have setup SAML successfully, update the Roles Attribute (Optional) in Sumo Logic to match the attribute name defined in your role translation claim.
+Now that you have set up SAML successfully, update the roles attribute in Sumo Logic to match the attribute name defined in your role translation claim.
 
 To update the roles attribute:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > SAML**. 
 1. Click **Configure**. <br/><img src={useBaseUrl('img/security/roles-attribute2.png')} alt="Roles attribute" style={{border: '1px solid gray'}} width="300" />
 1. Activate the **Roles Attribute (Optional)** check box.
 1. Enter the URL, for example, `https://sumologic.com/SAML/Attributes/Role`.

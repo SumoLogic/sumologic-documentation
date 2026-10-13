@@ -34,7 +34,7 @@ Monitoring dashboards are available for the following apps and solutions.
 
 ### AWS Observability
 
-AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From this tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
+AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From this tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
 
 ### Kubernetes Views
 
@@ -125,7 +125,7 @@ https://<endpoint>/ui/#/explore/[@<startMs>,<endMs>]@topology=<topologyId>@<enti
 ```
 
 Required:
-* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
+* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
 * `<entityKey>` is the type of entity you want to explore, such as cluster, deployment, service, node, account, region, namespace, or pod.
 * `<entityValue>` is the value of the entity to explore.
 
@@ -147,7 +147,7 @@ Dashboard:
 
 Let’s create a URL to open on the `primary-eks `cluster, `kube-system` namespace, and `metrics-server` service.
 
-The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
 https://service.us2.sumologic.com/ui/#/explore/@cluster=primary-eks@namespace=kube-system@service=metrics-server
 ```
@@ -161,7 +161,7 @@ https://service.us2.sumologic.com/ui/#/explore/@1601092800000,1601389990282@clus
 
 Navigation capabilities allow you to quickly locate the object that needs debugging in a physical stack. This section walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-:::sumo micro lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
   width="854px"

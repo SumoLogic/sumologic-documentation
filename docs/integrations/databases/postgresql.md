@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="PostgreSQL icon" width="75"/>
 
 The Sumo Logic app for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app provides operational insights into the PostgreSQL database—installed on your local hardware—for real time analysis.
 
@@ -39,7 +39,7 @@ This guide provides an overview of the Sumo app for PostgreSQL features and Dash
 
 This sample query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
 
-```txt title="Query String"
+```sumo title="Query String"
 _sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as _raw
@@ -203,7 +203,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
   Since pods are frequently killed and spawned it’s recommended to use operators like this [postgresql operator](https://github.com/CrunchyData/postgres-operator) so that when new pods are created the annotations and labels are automatically applied using the ConfigMap or CRD based configurations.
 
 5. Add an FER to normalize the fields in Kubernetes environments. This step is not needed if using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**.  
    2. Click the **+ Add** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
@@ -216,7 +216,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
        pod_labels_db_system=* pod_labels_db_cluster=*
        ```
       * **Parse Expression**. Enter the following parse expression:
-      ```sql
+      ```sumo
       | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
       | pod_labels_component as component
       | pod_labels_db_system as db_system
@@ -224,7 +224,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
       ```
    5. Click **Save** to create the rule.
    6. Verify logs are flowing into Sumo Logic by running the following logs query
-    ```sql
+    ```sumo
     component="database" and db_system="postgresql"
     ```
 
@@ -570,6 +570,6 @@ postgresql_table_size<br/>
 
 ## Additional resources
 
-* Blogs: 
+* Blogs:
    * [How to use Kubernetes to deploy Postgres](https://www.sumologic.com/blog/kubernetes-deploy-postgres/)
-   * [PostgreSQL vs MySQL](https://www.sumologic.com/blog/postgresql-vs-mysql/) 
+   * [PostgreSQL vs MySQL](https://www.sumologic.com/blog/postgresql-vs-mysql/)

@@ -1,11 +1,13 @@
 ---
 id: integration-framework-output
-title: Integration Framework Output
+title: Open Integration Framework Output
 sidebar_label: Output
 description: Learn how to work with output from the integration framework. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This article describes the format of integration output. To edit the output of an integration, see [Edit output of an action](/docs/platform-services/automation-service/automation-service-integrations/#edit-output-of-an-action).
 
 ## About integration output
 
@@ -217,7 +219,7 @@ With the same action used in [Use mult-select in output](#use-multi-select-in-ou
 
 Pipe function `join('separator')`:
 
-```
+```sumo
 output:
   - path : '[].guid | join(,)'
 ```

@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CollBegin from '../../reuse/collection-should-begin-note.md';
 
-<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="80"/>
+<img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="MariaDB icon" width="80"/>
 
 The MariaDB app is a unified logs and metrics app that helps you monitor MariaDB database cluster availability, performance, and resource utilization. Pre-configured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs.
 
@@ -181,7 +181,7 @@ The process to set up collection for MariaDB data is done through the following 
 
 This section provides instructions for configuring log collection for MariaDB running on a non-Kubernetes environment for the Sumo Logic app for MariaDB. By default, MariaDB logs are stored in a log file. MariaDB also supports forwarding logs via Syslog Audit Logs.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. To view more requirements, see [Installed Collector requirements](/docs/get-started/system-requirements#installed-collector-requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. To view more requirements, see [Installed Collector requirements](/docs/get-started/system-requirements#installed-collector-requirements).
 
 Based on your infrastructure and networking setup, choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 

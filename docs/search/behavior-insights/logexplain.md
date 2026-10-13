@@ -4,6 +4,8 @@ title: LogExplain
 description: Group by the keys of JSON or keyvalue logs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The **LogExplain** operator allows you to compare sets of structured logs based on events you are interested in. Structured logs can be in JSON, CSV, key-value, or any structured format. Often logs relevant to troubleshooting and security insights are scattered among other logs that show the expected behavior and performance. These logs normally consist of different content, where it is helpful to see which values occur more often in events of interest versus normal operation logs. For example, events of interest often contain information relevant to persistent errors, excess load, and high latency.
 
 You will need to specify an event of interest as a conditional statement, this is called the Event Condition. You can specify a condition to compare against the event-of-interest condition, this is called the Against Condition. If no Against Condition is provided, LogExplain will generate the comparison data set based on the fields in your Event Condition.
@@ -39,7 +41,7 @@ With the provided results you can:
 
 ## Syntax
 
-```sql
+```sumo
 | logexplain <event_condition> [against <against_condition>] on <fieldname>[,<fieldname>, ...]
 ```
 
@@ -66,8 +68,8 @@ With the provided results you can:
 
 ### Errors by host
 
-```sql
-__sourceCategory=stream 
+```sumo
+_sourceCategory=stream 
 | if(_raw matches "error", 1, 0) as hasError
 | logexplain hasError == 1 on _sourceHost
 ```
@@ -76,7 +78,7 @@ __sourceCategory=stream 
 
 Having seen that there are a lot of `AccessDenied` errors, in the example below, we want to explain which combinations of `eventName`, `userName`, or AWS service (`invokedBy`) might be responsible for errorCode having a value of `AccessDenied` by comparing logs with `AccessDenied` errors against logs with other `errorCode`s. Values from `userName`s or `invokedBy`s might be candidates for further investigation. 
 
-```sql
+```sumo
 _sourceCategory= *cloudtrail* errorCode
 | json field=_raw "eventSource" as eventSource
 | json field=_raw "eventName" as eventName
@@ -95,7 +97,7 @@ After using [LogReduce Values to explore your event logs based on specific key
 
 If a cluster of logs has `reason="FailedScheduling"` indicating the Kubernetes scheduler is unable to find nodes that can satisfy requirements for the requested pods, you can use `logexplain` to understand which pods and the reason they are unable to find a node to run in.
 
-```sql
+```sumo
 _sourceCategory="nite-primary-eks/events"
 | where _raw contains "forge"
 | json auto "object.reason", "object.involvedObject.name", "object.message" as reason, objectName, message
@@ -106,7 +108,7 @@ _sourceCategory="nite-primary-eks/events"
 
 After using [LogReduce Values to explore your event logs based on specific keys](/docs/search/behavior-insights/logreduce/logreduce-values) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
-```sql
+```sumo
 _sourceCategory=*cloudtrail*
 | json field=_raw "userIdentity.userName" as userName nodrop
 | json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
@@ -125,7 +127,7 @@ _sourceCategory=*cloudtrail*
 
 Results show the relevance of each explanation:
 
-![CloudTrail example with LogExplain.png](/img/search/behavior-insights/cloudtrail-example-logexplain.png)
+<img src={useBaseUrl('img/search/behavior-insights/cloudtrail-example-logexplain.png')} alt="CloudTrail example with LogExplain" style={{border: '1px solid gray'}} width="800" />
 
 ### Windows Credentials
 
@@ -137,7 +139,7 @@ SecOps Insight: A hacked credential will display a remote login pattern (`eventd
 
 The time compare query attempts to enumerate all machine-to-user combinations over the past 24 hours and compares the average daily logins for each pair of machine and user. As `compare` only supports up to 8 sequential slices, the data has to be sliced into 2-day intervals with 7 epochs, to create 14 days of data.
 
-```sql
+```sumo
 _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
 | count by eventdata_targetusername, eventdata_workstationname
 | where !isBlank(eventdata_targetusername) && !isBlank(eventdata_workstationname)
@@ -153,7 +155,7 @@ In an example dataset, this requires you to examine 150 machine-user combinatio
 
 #### Approach 2: The equivalent query with LogExplain
 
-```sql
+```sumo
 _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
 | where !isBlank(eventdata_targetusername) && !isBlank(eventdata_workstationname)
 | logexplain (now() - _messagetime\< 86400000) on eventdata_workstationname, eventdata_targetusername

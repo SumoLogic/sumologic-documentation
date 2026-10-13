@@ -2,7 +2,7 @@
 id: cyberark-source
 title: CyberArk EPM Source
 sidebar_label: CyberArk EPM
-tags:
+keywords:
   - cloud-to-cloud
   - cyberark
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.
@@ -11,7 +11,7 @@ description: This integration accesses CyberArk EPMs API to retrieve administrat
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/cyberark.png')} alt="CyberArk icon" width="50"/>
 
 The CyberArk Endpoint Privilege Manager (EPM) is a security solution that helps organizations reduce the risk of information theft or ransomware attacks by enforcing the principle of least privilege and preventing unauthorized access to critical systems and data. The solution employs a combination of privilege security, application control, and credential theft prevention to reduce the likelihood of malware infections.
 
@@ -35,14 +35,14 @@ The integration with CyberArk EPM's API allows for retrieving administrative, de
 In this configuration, you will set up a CyberArk EPM source account and configure it to be authorized and authenticated to use CyberArk API. CyberArk EPM supports EPM Authentication. It authenticates a user to EPM using the username and password and returns a token and EPM server URL.
 To set up a CyberArk account, follow the steps below:
 1. Navigate to [CyberArk](https://login.epm.cyberark.com/login) application.
-1. Enter the **Username** and **Password** of your choice. You can enter any combination of letters, numbers, or special characters for both the username and password. There are no limitations on the length or complexity of the username and password either. <br/> <img src={useBaseUrl('img/send-data/login-cyberark.png')} alt="login-cyberark.png" width="600" />
+1. Enter the **Username** and **Password** of your choice. You can enter any combination of letters, numbers, or special characters for both the username and password. There are no limitations on the length or complexity of the username and password either. <br/> <img src={useBaseUrl('img/send-data/login-cyberark.png')} alt="Login CyberArk" width="600" />
 
 ### Source configuration
 
 When you create a CyberArk EPM Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 
 To configure a CyberArk EPM Source, follow the steps below:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CyberArk EPM**.
 1. **Name**. Enter a name to display for the Source in the Sumo Logic web application.
@@ -50,8 +50,8 @@ To configure a CyberArk EPM Source, follow the steps below:
 1. **Source Category**. Enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. Fields. (Optional) Click **+Add** to ad additional fields; each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **EPM Username**. Enter your EPM username from the [Vendor configuration](#vendor-configuration) section.
 1. **EPM User Password**. Enter your EPM password from the [Vendor configuration](#vendor-configuration) section.
 1. **CyberArk EPM Dispatch Server**. Enter your CyberArk EPM Dispatch Server URL, it is the dispatch server for your region. Following are some examples of dispatch server URLs:
