@@ -8,51 +8,36 @@ on:
 jobs:
   validate-queries:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required for git diff detection
+          fetch-depth: 0
 
-      - name: Check for SQL changes
+      - name: Detect changed files with SQL blocks
         id: check-sql
         run: |
-          # Get the base commit for comparison
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            BASE_COMMIT="${{ github.event.pull_request.base.sha }}"
-          else
-            # For push events, compare with previous commit
-            BASE_COMMIT="${{ github.event.before }}"
-          fi
-          
-          echo "Base commit: $BASE_COMMIT"
-          echo "Current commit: ${{ github.sha }}"
-          
-          # Get changed markdown files
+          BASE_COMMIT="${{ github.event.pull_request.base.sha }}"
+          echo "Base: $BASE_COMMIT  Head: ${{ github.sha }}"
+
           git diff --name-only --diff-filter=AM $BASE_COMMIT...${{ github.sha }} -- '**/*.md' > changed_files.txt
-          
+
           if [ ! -s changed_files.txt ]; then
             echo "No markdown files changed"
             echo "sql_changed=false" >> $GITHUB_OUTPUT
             exit 0
           fi
-          
-          echo "Changed markdown files:"
-          cat changed_files.txt
-          
-          # Check if any of the changed files have SQL code block modifications
+
           SQL_CHANGED=false
           while IFS= read -r file; do
-            if [ -f "$file" ]; then
-              # Check if the file contains SQL code blocks AND has changes
-              if grep -q "\`\`\`sql\|\`\`\`sumo" "$file"; then
-                echo "File contains SQL blocks, validating: $file"
-                SQL_CHANGED=true
-              fi
+            if [ -f "$file" ] && git diff "$BASE_COMMIT...${{ github.sha }}" -- "$file" | grep -qE '^\+```(sql|sumo)'; then
+              echo "New query block found in: $file"
+              SQL_CHANGED=true
             fi
           done < changed_files.txt
-          
+
           echo "sql_changed=$SQL_CHANGED" >> $GITHUB_OUTPUT
-          echo "SQL changes detected: $SQL_CHANGED"
 
       - name: Set up Python
         if: steps.check-sql.outputs.sql_changed == 'true'
@@ -62,20 +47,18 @@ jobs:
 
       - name: Install dependencies
         if: steps.check-sql.outputs.sql_changed == 'true'
-        run: pip install requests python-dotenv
+        run: pip install requests
 
-      - name: Validate queries
+      - name: Validate queries against Sumo Logic
         if: steps.check-sql.outputs.sql_changed == 'true'
         working-directory: ./scripts
         env:
           SUMO_LOGIC_ACCESS_ID: ${{ secrets.SUMO_LOGIC_ACCESS_ID }}
           SUMO_LOGIC_ACCESS_KEY: ${{ secrets.SUMO_LOGIC_ACCESS_KEY }}
-          BASE_COMMIT: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          BASE_COMMIT: ${{ github.event.pull_request.base.sha }}
           CURRENT_COMMIT: ${{ github.sha }}
-        run: |
-          echo "Validating only changed SQL queries between $BASE_COMMIT and $CURRENT_COMMIT"
-          python validate_queries.py
+        run: python validate_queries.py
 
       - name: Skip validation
         if: steps.check-sql.outputs.sql_changed == 'false'
-        run: echo "No SQL code block changes detected, skipping validation"
+        run: echo "No new SQL/Sumo query blocks detected — skipping validation"
