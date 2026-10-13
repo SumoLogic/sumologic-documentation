@@ -24,15 +24,18 @@ Sumo Logic offers the following account types: Free, Trial, Essentials, Enterpri
 
 ### Free
 
+When your trial period ends, your account is automatically converted to a Free account.
+
 Free accounts offer access to most Sumo Logic features with the following limitations:
-- **Daily Credit Allocation**. 20 credits for logs, metrics, and traces.
+- **Ingestion**. Not supported.
 - **Retention**. 7-day log retention.
 - **Users**. Limited to three users.
 
 Free accounts can be upgraded to a paid subscription in the Sumo Logic UI. For details, see [Upgrade a Sumo Logic Credits Account](/docs/manage/manage-subscription/upgrade-account/upgrade-credits-account).
 
 :::note
-Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
+- Free accounts are deleted automatically after 90 days if not upgraded.
+- Free accounts do not support [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management).
 :::
 
 ### Trial
@@ -42,7 +45,7 @@ Trial accounts allow full access to all Sumo Logic features to test how Sumo Log
 - **Retention**: 30 days for all data.
 - **Users**: Up to 20 users.
 
-Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](https://support.sumologic.com/support/s/).
+Trials are limited to 30 days. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](/docs/manage/ingestion-volume/log-ingestion/#log-throttling) will be applied to your log ingest. When your trial period ends, your account is automatically converted to a [Free](#free) account. If you need to extend your trial period or request a Proof of Concept (PoC), contact our [sales team](https://support.sumologic.com/support/s/).
 
 ### Essentials
 
@@ -108,15 +111,22 @@ The following table provides a summary list of key features by credits package a
 
 ## Account Overview  
 
+:::note
+- To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) role capability. 
+- To view, create, and manage the **Create Usage Alerts**, you must have the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities/#alerting) role capability.
+:::
+
 The **Account Overview** tab provides detailed information about your Sumo Logic organization, including account type, contract periods, credit usage, live dashboards, and real-time alerts. Account owners can also reassign the Account Owner role from this page.  
 
 To access the **Account Overview** tab:    
 * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or select **Account Overview** from the **Go To...** menu.
 * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
 
-To view this tab, your role must include the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities#data-management) capability.  
 
 [Data Tiers](/docs/manage/partitions/data-tiers) are available with Enterprise Suite packages, allowing you to optimize analytics by segmenting data into Continuous, Frequent, and Infrequent tiers. For more details, contact your Sumo Logic account manager.  
+
+<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
+
 
 ### Key features  
 
@@ -124,15 +134,16 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * Track consumption against plan baselines.  
 * Visualize usage by day, week, or month.  
 * Download reports or credit usage data as CSV files.  
-* Hover over charts for detailed insights.  
+* Hover over charts for detailed insights.
+* Create alerts for 70% and 90% credit breach.
 
-<img src={useBaseUrl('/img/manage/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>  
 
 ### Organization information panel  
 
 * **Organization**. Displays your organization’s name and hexadecimal ID.  
 * **Plan**. Shows your subscription type (e.g., Trial, Enterprise Suite).  
 * **Contract period**. Lists the start and end dates of your contract period.  
+* **Credit blocks in Contract**. If your account has more than one active credit block, shows the number of blocks. See [Credit blocks](#credit-blocks) for details. Accounts with a single credit block do not show this field.
 * **Live Dashboard Panels and Real-Time Alerts Count**. Displays a count of live dashboards and real-time alerts.  
 
 ### Total Credit Usage panel  
@@ -140,6 +151,9 @@ To view this tab, your role must include the [View Account Overview](/docs/manag
 * **Credits Used**. Total and percentage used since the start of the current contract.  
 * **Credits Remaining**. Remaining credits and percentage consumed.  
 * **Total Credits Usage Breakdown**. Consumed contract and promotional credits.  
+* **Create Usage Alert**. Click this button to create a monitor that sends a warning alert when 70% of credits are used and a critical alert when 90% of credits are used. This opens the **New Monitor** pane with a prefilled query. In the **Trigger Type** section, select the alert severity you want to configure, **Warning** or **Critical**, based on the percentage of credits consumed. You can then add your preferred notification channels, such as email, Slack, or webhooks, and save the monitor to create the alert. For more customization, refer to [Create a New Monitor](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions).
+
+If your account has a single credit block, this panel shows the total and percentage of credits consumed for that block. If your account has more than one credit block, such as Promotional Credit Block - 1, Paid Credit Block - 1, and Paid Credit Block - 2, this panel shows the combined total and percentage across all blocks. Hover over the bar to see the amount of credits consumed by each individual credit block.
 
 ### Usage Forecast panel  
 
@@ -173,6 +187,12 @@ To analyze usage trends:
 * Use the pan feature (magnifying glass icon) to scroll through data.  
 * Hover over chart sections for detailed insights.  
 
+If your account has more than one credit block, a **Viewing** dropdown appears in this panel. Use it to switch between combined usage (all blocks combined) and an individual credit block, to see usage broken out by product variable for that block. Downloaded usage reports also include a separate line per product variable for each credit block. <br/><img src={useBaseUrl('img/manage/account/viewing-dropdown.png')} alt="Viewing dropdown for individual credit blocks" style={{border: '1px solid gray'}} width="300" />
+
+:::info
+If your account has a single credit block, the **Viewing** dropdown does not appear, and downloaded usage reports are unchanged.
+:::
+
 ### Promotional credits  
 
 There are times when Sumo Logic promotes services and consumables through the provision of promotional credits. Promotional credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the promotional credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. promotional credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional credit consumption is calculated separately from the credits you paid for in your contract period. Promotional credits are utilized as the priority credit for the specified credit variable.
@@ -184,3 +204,7 @@ To monitor promotional credits:
 * Refine further by deselecting specific credit types (e.g., Continuous Ingest, Storage).  
 
 Promotional credits graphs display the rate of consumption for allocated promotional credits.  
+
+### Credit blocks
+
+If you purchase additional credits mid-subscription at a different burn rate, Sumo Logic creates a separate credit block for the new credits so your existing credits keep burning at their original rate instead of being repriced. Older credit blocks are consumed before newer ones.

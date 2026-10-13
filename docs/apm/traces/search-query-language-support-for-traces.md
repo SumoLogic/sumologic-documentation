@@ -100,7 +100,7 @@ The following is a table of automatically-parsed span attributes:
 
 You can search for spans from the `api` service that resulted in a status code that is not `OK`. For example,
 
-```sql
+```sumo
 _index=_trace_spans
 | where service = "api"
 | where statuscode != "OK"
@@ -118,7 +118,7 @@ can look in the **tags** field and view the `http.status_code` field.
 
 To extract this tag as a new field and filter it to show only codes below 500 (4xx essentially) you could run the following query:
 
-```sql
+```sumo
 _index=_trace_spans
 | where service = "api"
 | where statuscode != "OK"
@@ -133,7 +133,7 @@ _index=_trace_spans
 To chart the number of errors over one-minute intervals by status code
 you could run the following query:
 
-```sql
+```sumo
 _index=_trace_spans
 | where service = "api"
 | where statuscode != "OK"

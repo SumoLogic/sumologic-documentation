@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudDeploy.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudDeploy.png')} alt="Google Cloud Deploy icon" width="50"/>
 
 Cloud Deploy is a managed service that automates delivery of your applications to a series of target environments in a defined promotion sequence. For more details, refer to the [GCP documentation](https://cloud.google.com/deploy/docs/overview)
 

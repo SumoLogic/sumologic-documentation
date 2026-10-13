@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
-***Version: 1.1  
-Updated: Jan 6, 2026***
+***Version: 1.2  
+Updated: March 31, 2026***
 
 Censys helps organizations, individuals, and researchers find and monitor every server on the internet to reduce exposure and improve security.
 
@@ -45,5 +45,8 @@ For information about Censys V3, see [Censys documentation](https://docs.censys.
 
 ## Change Log
 
-* January 2, 2026 - First upload
-* January 6, 2026 (v1.1) - Updated the description.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | January 6, 2026 | Updated the description. |
+| | January 2, 2026 | Initial release of the Censys V3 integration. |

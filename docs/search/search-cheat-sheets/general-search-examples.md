@@ -18,19 +18,19 @@ Host: raw_hosted_apps Name: /usr/sumo/collector-16.1-5/logs/reporter.log Categor
 
 Look for failed attempts to su or sudo to root.
 
-```sql
+```sumo
 (su OR sudo ) AND (fail* OR error)
 ```
 
 Look for errors in sshd logs.
 
-```sql
+```sumo
 sshd AND (fail* OR error OR allowed OR identity)
 ```
 
 Look for general authorization failures excluding router messages.
 
-```sql
+```sumo
 auth* AND (fail* OR error?) NOT _sourceCategory=routers
 ```
 
@@ -42,26 +42,26 @@ For more information, see [Keyword Search Expressions](../get-started-with-sear
 
 Extract `"from"` and `"to"` fields. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.
 
-```sql
+```sumo
 * | parse "From: * To: *" as (from, to)
 ```
 
 Extract the source IP addresses using a regular expression for the four octets of an IP address.
 
-```sql
+```sumo
 *| parse regex "(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 ```
 
 Identify all URL addresses visited, extract them as the `url` field.                                                         
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse "GET * " as url
 ```
 
 Identify traffic from Source Category `apache` and extract the source addresses, message sizes, and the URLs visited.
 
-```sql
+```sumo
 _sourceCategory=apache
 | parse "* " as src_IP
 | parse " 200 * " as size
@@ -70,7 +70,7 @@ _sourceCategory=apache
 
 For the Source Category `apache`, calculate the total number of bytes transferred to each source IP address.
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse "* " as src_IP 
 | parse " 200 * " as size 
@@ -79,7 +79,7 @@ _sourceCategory=apache 
 
 For the Source Category `apache`, calculate the average size of all successful HTTP responses.
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse " 200 * " as size 
 | avg(size)
@@ -87,7 +87,7 @@ _sourceCategory=apache 
 
 For the Source Category `apache`, extract src, size, and URL even if the size field is missing from the log message (`nodrop`).
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse "* " as src_IP 
 | parse " 200 * " as size nodrop 
@@ -96,7 +96,7 @@ _sourceCategory=apache 
 
 Identify the number of times a URL has been visited.
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse "GET * " as url 
 | count by url
@@ -104,7 +104,7 @@ _sourceCategory=apache 
 
 Identify the total number of pages by source IP address.
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse "* -" as src_ip 
 | count by src_ip
@@ -112,7 +112,7 @@ _sourceCategory=apache 
 
 Identify the total number of pages by source IP address and re-order them by most frequently loaded pages.
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse "* " as src_ip 
 | parse "GET * " as url 
@@ -122,7 +122,7 @@ _sourceCategory=apache 
 
 Identify the top 10 requested pages.
 
-```sql
+```sumo
 * | parse "GET * " as url 
 | count by url 
 | top 10 url by _count
@@ -130,7 +130,7 @@ Identify the top 10 requested pages.
 
 Identify the top 10 source IP addresses by bandwidth usage.
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse " 200 * " as size 
 | parse "* -" as src_ip 
@@ -140,7 +140,7 @@ _sourceCategory=apache 
 
 Identify the top 100 source IP addresses by number of hits.
 
-```sql
+```sumo
 _sourceCategory=apache 
 | parse "* -" as src_ip 
 | count by src_ip 
@@ -155,7 +155,7 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 
 For the Source Category `apache`, count by `status_code` and [`timeslice`](/docs/search/search-query-language/search-operators/timeslice) of 1 hour.
 
-```sql
+```sumo
 _sourceCategory=apache*
 | parse "HTTP/1.1\" * * \"" as (status_code, size)
 | timeslice 1h
@@ -164,7 +164,7 @@ _sourceCategory=apache*
 
 For the Source Category `apache`, count by `status_code` and `timeslice` of 1 hour, transpose status_code to column.
 
-```sql
+```sumo
 _sourceCategory=apache*
 | parse "HTTP/1.1\" * * \"" as (status_code, size)
 | timeslice 1h
@@ -174,7 +174,7 @@ _sourceCategory=apache*
 
 For the Source Category `apache`, count by `status_code` and `timeslice` into 5 buckets over search result.
 
-```sql
+```sumo
 _sourceCategory=apache*
 | parse "HTTP/1.1\" * * \"" as (status_code, size)
 | timeslice 5 buckets
@@ -183,7 +183,7 @@ _sourceCategory=apache*
 
 For the Source Category `Apache/Access`, count messages by status code categories, grouping all 200s, 300s, 400s, and 500s together.
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | timeslice 15m
 | if (status_code matches "20*",1,0) as resp_200
@@ -196,7 +196,7 @@ _sourceCategory=Apache/Access
 
 Or, alternately, you can use:
 
-```sql
+```sumo
 _sourceCategory=Apache/Access
 | timeslice 15m
 | if(status_code matches "20*","200s",
@@ -215,7 +215,7 @@ For more information, see [`timeslice` operator](/docs/search/search-query-lang
 
 For the Source Category `apache`, find all messages with a client error status code (`40*`):
 
-```sql
+```sumo
 _sourceCategory=apache*
 | parse "HTTP/1.1\" * * \"" as (status_code, size)
 | where status_code matches "40*"
@@ -223,7 +223,7 @@ _sourceCategory=apache*
 
 For the Source Category `apache`, count hits by browser:
 
-```
+```sumo
 _sourceCategory=Apache/Access
 | extract "\"[A-Z]+ \S+ HTTP/[\d\.]+\" \S+ \S+ \S+ \"(?<agent>[^\"]+?)\""
 | if (agent matches "*MSIE*",1,0) as ie
@@ -235,21 +235,21 @@ _sourceCategory=Apache/Access
 
 Use the [`where` operator](/docs/search/search-query-language/search-operators/where) to match only weekend days.
 
-```sql
+```sumo
 * | parse "day=*:" as day_of_week
 | where day_of_week in ("Saturday","Sunday")
 ```
 
 Identify all URLs that contain the subdirectory "Courses" in the path.
 
-```sql
+```sumo
 *| parse "GET * " as url
 | where url matches "*Courses*"
 ```
 
 Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number.
 
-```sql
+```sumo
 * | parse "Version=*." as number | num(number)
 | where number in (2,3,6)
 ```
@@ -262,7 +262,7 @@ For more information, see [`where` operator](/docs/search/search-query-language/
 
 Use Sumo Logic’s clustering algorithm to look for patterns in error/exception incidents in your deployment.
 
-```sql
+```sumo
 exception* or fail* or error* or fatal*
 | logreduce
 ```

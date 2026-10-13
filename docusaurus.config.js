@@ -34,6 +34,15 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
   headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'llms-txt',
+        href: '/llms.txt',
+        type: 'text/plain',
+        title: 'LLM Documentation Index',
+      },
+    },
     // Intellimize
     {
       tagName: 'style',
@@ -120,10 +129,19 @@ module.exports = {
   ],
   clientModules: [
     require.resolve('./src/client-modules/trackTrialClick.js'),
+    require.resolve('./src/client-modules/fixAnchorScroll.js'),
   ],
+  storage: {
+    type: 'localStorage',
+    namespace: true,
+  },
   future: {
-    v4: true,
-    experimental_faster: true,
+    faster: true,
+    v4: {
+      siteStorageNamespacing: true,
+      fasterByDefault: true,
+      removeLegacyPostBuildHeadAttribute: true,
+    },
   },
   staticDirectories: ['static'],
   presets: [
@@ -168,12 +186,11 @@ module.exports = {
           changefreq: 'daily',
           ignorePatterns: [
             '/docs/reuse/**',
-            '/docs/beta/**',
+            '/docs/preview/**',
             '/ja/**',
             '/files/**',
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
-            '/tags/**'
           ],
           filename: 'sitemap.xml',
         },
@@ -322,6 +339,7 @@ module.exports = {
         )
       },
     ],
+    require('./src/plugins/markdown-mirror'),
   ],
   themeConfig:
     ({
@@ -342,12 +360,13 @@ module.exports = {
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '628' },
       { property: 'og:image:alt', content: 'Sumo Logic Docs' },
+      { property: 'og:type', content: 'article' },
     ],
     announcementBar: {
-      id: 'domain',
-      content: 'Come see us at RSA Conference 2026! Visit booth 6465 — March 23–26 in San Francisco. <a href="https://www.sumologic.com/events/rsa-conference/book-meeting" target="_blank" rel="noopener noreferrer">Book a meeting</a>.',
-      backgroundColor: '#000',
-      textColor: '#000',
+      id: 'mobot-banner-v3',
+      content: `<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
+      backgroundColor: '#0055B7',
+      textColor: '#fff',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -376,7 +395,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json'],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`],
     },
       navbar: {
         logo: {
@@ -465,6 +484,11 @@ module.exports = {
                 label: 'Traces, RUM, APM',
                 icon: 'account_tree',
               },
+              {
+                label: 'Contribute to Docs',
+                to: 'docs/contributing',
+                icon: 'edit_note',
+              },
             ]
           },
           {
@@ -504,7 +528,7 @@ module.exports = {
               },
               {
                 label: 'Request a Demo',
-                to: 'https://www.sumologic.com/demos',
+                href: 'https://www.sumologic.com/demo',
                 icon: 'co_present',
               },
               {
@@ -512,22 +536,29 @@ module.exports = {
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
                 icon: 'thumbs_up_down',
               },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
-              },
             ],
           },
-        //{
-          //className: 'header-github-link',
-          //to: 'https://github.com/SumoLogic/sumologic-documentation',
-          //position: 'right',
-          //alt: 'Link to Sumo Logic Docs GitHub repository',
-        //},
           {
             type: 'search',
             position: 'left',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: 'google_translate',
+            className: 'navbar-translate-item',
+          },
+          {
+            label: 'Log In',
+            to: 'https://service.sumologic.com/',
+            position: 'right',
+            className: 'header-login',
+          },
+          {
+            label: 'Try for Free',
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
           },
         ],
       },
@@ -572,7 +603,7 @@ module.exports = {
             items: [
               {
                 label: 'Start Free Trial',
-                href: 'https://www.sumologic.com/sign-up'
+                href: 'https://www.sumologic.com/sign-up/'
               },
               {
                 label: 'Request a demo',

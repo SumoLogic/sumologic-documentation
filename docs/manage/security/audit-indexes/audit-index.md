@@ -37,7 +37,7 @@ Auditing typically adds a nominal amount of data to your overall volume (approxi
 
 You can query the audit index in a log search tab. To search for all types of audit events,  enter:
 
-```sql
+```sumo
 _index=sumologic_audit
 ```
 
@@ -89,7 +89,7 @@ When you query the audit index, the search results will include the class and ac
 
 ## Account management events
 
-```sql
+```sumo
 _sourceCategory=account_management
 ```
 
@@ -116,7 +116,7 @@ Sumo Logic logs audit messages for Microsoft Office 365 Audit Source when the
 
 To search for these events use this query:
 
-```sql
+```sumo
 _index=sumologic_audit _sourceCategory=account_management _sourceName=collector
 ```
 
@@ -154,7 +154,7 @@ Throttling events are reported in the Audit Index if the following criteria are 
 
 For example, searching with the following query
 
-```sql
+```sumo
 _index=sumologic_audit
 _sourceCategory=account_management _sourceName=VOLUME_QUOTA  "rate limit"
 ```
@@ -173,7 +173,7 @@ When the scan interval is increased, a message is added to the audit log. No ac
 
 The following is an example query to locate throttling notification in the audit index.
 
-```sql
+```sumo
 _index=sumologic_audit _sourceCategory=account_management _sourceName=COLLECTOR
 ```
 
@@ -189,20 +189,20 @@ For audit sources, Sumo Logic refreshes OAuth tokens and subscription watchpoint
 
 The following is an example query to locate refresh failure notification in the audit index.
 
-```sql
+```sumo
 _index = sumologic_audit  
 _sourceCategory = "account_management" _sourceName=COLLECTOR
 ```
 
 The query yields the following refresh failure notification.
 
-```sql
+```sumo
 Failed to refresh OAuth token for source SOURCE_NAME. Exception: com.sumologic.cocoa.api.FailedThirdPartyOperationException Error message: Status code: 400, error message: { "error": "invalid_grant", "error_description": "Token has been expired or revoked."}....
 ```
 
 ## User activity events
 
-```sql
+```sumo
 _sourceCategory=user_activity
 ```
 
@@ -237,7 +237,7 @@ following:
 
 For example, searching with the following query:
 
-```sql
+```sumo
 _index=sumologic_audit _sourceCategory=user_activity _sourceName=COLLECTOR | Status
 ```
 
@@ -249,7 +249,7 @@ Status: FAILURE Message: Upgrade collector yanm-mac, from version 20.1-2832,  to
 
 ### Support account events
 
-```sql
+```sumo
 _sourceCategory=support_account_activity
 ```
 
@@ -265,7 +265,7 @@ Support account events are logged only if you have [enabled a support account](
 
 ### Scheduled search events
 
-```sql
+```sumo
 _sourceCategory=scheduled_search
 ```
 
@@ -287,7 +287,7 @@ Suspend events only occur if Sumo Logic has manually suspended a search for some
 
 ### Metric ingestion and extraction events
 
-```sql
+```sumo
 _sourceCategory=metrics
 ```
 

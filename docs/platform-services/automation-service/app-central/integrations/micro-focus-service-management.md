@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/micro-focus-service-management.png')} alt="micro-focus-service-management" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/micro-focus-service-management.png')} alt="Micro Focus Service Management icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 ESM SaaS is an analytics-driven enterprise service management solution that combines these key application areas: IT Service Management (ITSM), IT Asset Management (ITAM), Extended Service Management (XSM), and Universal Discovery and CMDB. ESM has fully functioning out-of-the-box processes and workflows that are ready to be used and allows for a further extension of applications via an easily extendable and fully codeless studio functionality.
 
@@ -44,5 +44,8 @@ For information about Micro Focus Service Management, see [Micro Focus Service M
 
 ## Change Log
 
-* July 1, 2022 - First upload
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| | July 1, 2022 | Initial release of the Micro Focus Service Management integration. |

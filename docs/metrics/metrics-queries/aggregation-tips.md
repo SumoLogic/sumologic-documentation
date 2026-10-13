@@ -18,14 +18,14 @@ Aggregation tips are available in the Metrics Search, and in metrics queries in 
 
 ## View aggregation tips
 
-The screenshot below shows the **Time Series** tab for a query that returns 270 time series. Note the tip below the query suggests grouping the data by the `prometheus_replica` dimension using the [`avg`](/docs/metrics/metrics-operators/avg/) operator. You can ignore the tip and close the tip by clicking the x to the right. Or you can click **Add operator to query** to add the recommended operator and dimension to your query.<br/><img src={useBaseUrl('img/metrics/hint1.png')} alt="line-commented.png" style={{border: '1px solid gray'}} width="800" />
+The screenshot below shows the **Time Series** tab for a query that returns 270 time series. Note the tip below the query suggests grouping the data by the `prometheus_replica` dimension using the [`avg`](/docs/metrics/metrics-operators/avg/) operator. You can ignore the tip and close the tip by clicking the x to the right. Or you can click **Add operator to query** to add the recommended operator and dimension to your query.<br/><img src={useBaseUrl('img/metrics/hint1.png')} alt="Add operator to query" style={{border: '1px solid gray'}} width="800" />
 
-If you click **Add operator to query**, the aggregation clause is added to your query. We don’t run the query automatically—press Enter, or click the run icon to execute the query.<br/><img src={useBaseUrl('img/metrics/hint2.png')} alt="line-commented.png" style={{border: '1px solid gray'}} width="800" />
+If you click **Add operator to query**, the aggregation clause is added to your query. We don’t run the query automatically—press Enter, or click the run icon to execute the query.<br/><img src={useBaseUrl('img/metrics/hint2.png')} alt="The aggregation clause is added to your query" style={{border: '1px solid gray'}} width="800" />
 
-If you’re running multiple queries, a tip will be provided for each of the queries that exceeds a cardinality threshold.<br/><img src={useBaseUrl('img/metrics/hint3.png')} alt="line-commented.png" style={{border: '1px solid gray'}} width="800" />
+If you’re running multiple queries, a tip will be provided for each of the queries that exceeds a cardinality threshold.<br/><img src={useBaseUrl('img/metrics/hint3.png')} alt="Tip provided for each query" style={{border: '1px solid gray'}} width="800" />
 
 ## Disable tips
 
 If you prefer not to see query tips, choose **Disable Query Tips** from the three-dot kebab menu in the Metrics Search.
 
-<img src={useBaseUrl('img/metrics/disable-query-tips.png')} alt="line-commented.png" style={{border: '1px solid gray'}} width="200" />
+<img src={useBaseUrl('img/metrics/disable-query-tips.png')} alt="Disable Query Tips option" style={{border: '1px solid gray'}} width="200" />

@@ -13,7 +13,7 @@ After you have set up [collection](set-up-collection.md), you can start monitori
 
 With [monitors](/docs/alerts/monitors/create-monitor/), you can set up meaningful alerts that instantaneously notify you and your team about changes in state of your system. The intelligent alerting framework minimizes alert noise and alert fatigue so you and your team are not inundated with a lot of notifications, by de-duplicating them, and auto-remediating issues when the system returns to a normal state. The alerting framework is designed to integrate with your incident management workflows with  features such as notification customization, multi-channel notifications, and priority-based notification handling. 
 
-<img src={useBaseUrl('img/observability/observability-monitors.png')} alt="Observability-monitors" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/observability/observability-monitors.png')} alt="Observability monitors" style={{border: '1px solid gray'}} width="800" />
 
 Use [alert response](/docs/alerts/monitors/alert-response/) to create advanced alerts, providing extensive data to determine false positives, investigate root cause, and use playbooks to resolve issues. For AWS Observability, on-call engineers can review the triggered alert and related alerts based on the timeframe and entities, finding faults in services and servers and viewing entity data from one aggregated report.
 

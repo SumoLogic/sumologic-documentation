@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop.png' alt="Thumbnail icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="35"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Hadoop-OpenTelemetry/Hadoop.png' alt="Hadoop icon" width="175"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="35"/>
 
 The Sumo Logic app for [Apache Hadoop](https://hadoop.apache.org/docs/stable/) provides logs and metrics to help you monitor the health, performance, availability, and resource utilization of Hadoop clusters. It provides preconfigured dashboards and searches that offer deep visibility into HDFS and YARN components for real-time and historical analysis.
 The app delivers end-to-end observability across NameNode, DataNode, and ResourceManager services, enabling faster troubleshooting, capacity planning, and operational stability.
@@ -116,6 +116,10 @@ Below are the inputs required for configuration:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
 <EnvVarOpt/>
@@ -204,7 +208,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log queries
 
-```sql
+```sumo
 _source="hadoop/filelog"
 | json "message" nodrop
 | if (_raw matches "{*", message, _raw) as message
