@@ -387,7 +387,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
 
 Start with the simple enrichment example on this page, which adds an IP reputation lookup to an insight using an out-of-the-box VirusTotal integration and requires no custom code.
 
-### Do you need a custom integration to automate Cloud SIEM tasks?
+### Do I need a custom integration to automate Cloud SIEM tasks?
 
 No. Most automations, including enrichments and notifications, can be built using out-of-the-box integrations like VirusTotal, Sumo Logic, and Basic Tools. Custom integrations are only needed for services without a built-in integration.
 
@@ -399,6 +399,6 @@ Yes. Actions can run from the Sumo Logic cloud, or from other environments using
 
 The simple example configures an enrichment using an out-of-the-box integration (VirusTotal). The intermediate example adds a notification action, sending an email, after an enrichment. The advanced examples build a custom integration from YAML files, or combine enrichment, search, and notification into one complex playbook.
 
-### Can you add enrichment to entities instead of insights?
+### Can I add enrichment to entities instead of insights?
 
 Yes. Use the same custom integration steps as for insight enrichment, but select **Entity** instead of **Insight** as the playbook input, and use the **Add Entity Enrichment** action instead of **Add Insight Enrichment**.

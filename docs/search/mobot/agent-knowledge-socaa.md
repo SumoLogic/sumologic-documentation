@@ -37,8 +37,6 @@ For the SOC Analyst Agent, knowledge applies in two places:
 
 ## What you can teach your Dojo AI agents
 
-Knowledge falls into three themes.
-
 ### Your environment
 
 The standing facts about how your organization is set up, how it normally behaves, and what it is required to meet.
@@ -70,7 +68,7 @@ Specific past incidents, and the recurring patterns your team has learned to rec
 ## How to add an agent knowledge source
 
 :::info
-Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings (`cseManageSocAnalystSettings`). Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
+Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings (`cseManageSocAnalystSettings`) role capability. Your typed notes are stored as knowledge that only the SOC Analyst Agent can access.
 :::
 
 To add knowledge for the SOC Analyst Agent:
@@ -80,15 +78,13 @@ To add knowledge for the SOC Analyst Agent:
 1. Click **Sources**. On this page, you can view, edit, and delete existing knowledge sources.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
 1. Click **+ Add Source** to add a new knowledge source.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
 1. Give the source a name and type the fact, pattern, or practice in the content field, then click **Save** when you're done. Here's an example:<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" /><br/>
-   See [What you can teach your Dojo AI agents](#what-you-can-teach-your-dojo-ai-agents) for more sample entries.
    :::important
    Only plain text is supported. Up to 10,000 characters per entry. Each knowledge source item works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
    :::
 
-Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. You can see this in two places:
+See [What you can teach your Dojo AI agents](#what-you-can-teach-your-dojo-ai-agents) for more sample knowledge source entries.
 
-* **In Cloud SIEM Insights**. Open an Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
-* **In the investigation result detail**. A citation panel shows the source name and how it was used.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-citation-socaa.png')} alt="Knowledge citation panel in an investigation result, showing Source and Used for columns" style={{border: '1px solid gray'}} width="500" />
+Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
 
 ## Limitations
 

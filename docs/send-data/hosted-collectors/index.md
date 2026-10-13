@@ -112,7 +112,7 @@ A Hosted Collector requires no local installation since Sumo Logic runs it for y
 
 A single Hosted Collector can have any number of Sources, up to the organization-wide maximum of 10,000 Collectors.
 
-### Do you need to install anything to use a Hosted Collector?
+### Do I need to install anything to use a Hosted Collector?
 
 No. Sumo Logic hosts the Collector and its Sources in AWS, so you don't need to install or maintain anything locally.
 

@@ -108,7 +108,7 @@ Databases require structured or semi-structured data for real-time processing an
 
 Sumo Logic manages large volumes of security data efficiently, supports data tiering for cost-effective storage without sacrificing accessibility, and holds certifications such as FedRAMP, HIPAA, ISO 27001, FISMA, and CSA Star, so your data lake also meets compliance requirements.
 
-### What data can you store in a security data lake?
+### What data can I store in a security data lake?
 
 You can store structured, semi-structured, and unstructured security data, including firewall logs, proxy and web filtering logs, endpoint security data, network security logs, user access logs, and threat intelligence data.
 
