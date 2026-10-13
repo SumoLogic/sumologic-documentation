@@ -5,6 +5,9 @@ on:
       - 'docs/**/*.md'
       - 'blog-*/**/*.md'
 
+permissions:
+  contents: read
+
 jobs:
   validate-queries:
     runs-on: ubuntu-latest
