@@ -7,4 +7,4 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We're excited to announce the support for longer dashboard time ranges. Previously, dashboard queries could exceed the 32-day maximum time range only when using aggregate scheduled views. Currently, dashboard queries will be allowed to run beyond the 32-day time range when using aggregate scheduled views, aggregate scheduled searches, or a combination of both. [Learn more](/docs/dashboards/set-custom-time-ranges/#set-time-range).
+The support for longer dashboard time ranges. Previously, dashboard queries could exceed the 32-day maximum time range only when using aggregate scheduled views. Currently, dashboard queries will be allowed to run beyond the 32-day time range when using aggregate scheduled views, aggregate scheduled searches, or a combination of both. [Learn more](/docs/dashboards/set-custom-time-ranges/#set-time-range).
