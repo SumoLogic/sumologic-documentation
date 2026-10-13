@@ -33,21 +33,16 @@ Modifying the query will apply your data access level to the scheduled search. Y
 :::note
 It may take up to 20 minutes for changes in alert conditions to take effect. If you cannot wait 20 minutes, one option is to create a new scheduled search using the *Save As* query option in the search UI.
 :::
-If Sumo Logic presents a "Cannot Edit Scheduled Search" message, refer to the section below.
+If Sumo Logic presents a **Confirm Save** dialog, refer to the section below.
 
 ### Edit permissions
 
 A scheduled search runs in the context of the Sumo user that scheduled the search. In other words, when the search is shared with other users, the scheduler's role filter governs what data is returned by the search. 
 
-When you try to edit a scheduled search query, add a schedule to a saved search, or edit a saved search's schedule, you will not be allowed to edit the scheduled search unless you have the **Change Data Access Level** role capability. 
+When you try to edit a scheduled search's query, add a schedule to a saved search, or edit a saved search's schedule, and you don't have the **Change Data Access Level** role capability, Sumo Logic shows a **Confirm Save** dialog with two options to resolve the issue. 
 
-You have two options to resolve the issue:
+<img src={useBaseUrl('img/alerts/confirm-save-scheduled-search.png')} alt="Confirm Save dialog" style={{border: '1px solid gray'}} width="500" />
 
-* You can duplicate the scheduled search and edit the copy.
-* If you have the **Change Data Access Level** role capability, you can change the data access level for the scheduled search. Note that, after the data access level for a scheduled search is changed, the search results will be different for users that run the search if their role search filter is more restrictive than the user who originally scheduled the search.
+* **Request or update permissions.** Click **Manage Roles** to add the **Change Data Access Level** role capability to your role. If you can't manage roles yourself, ask your Sumo Logic administrator to [edit your role](/docs/manage/users-roles/roles/create-manage-roles/#edit-a-role) to add it under **Capabilities**.
+* **Save as a new search.** Click **Save as Copy** to save your edits into a new copy of the search, where you become the owner.
 
-:::note
-If you don’t have the **Change Data Access Level** capability, your Sumo Logic administrator will need to update your role to include it.
-:::
-
-<img src={useBaseUrl('img/alerts/cannot-edit-scheduled-search.png')} alt="Edit search" style={{border: '1px solid gray'}} width="400" />
