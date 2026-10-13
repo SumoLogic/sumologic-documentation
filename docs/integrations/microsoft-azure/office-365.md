@@ -426,7 +426,7 @@ To use the following searches, you will need to edit the search query to add the
 
 **Demo - Honing on Suspicious User**. Provides information on a suspicious user that you identify.
 
-**Demo - LogReduce on Suspicious IP**. Performs a LogReduce operation on a suspicious IP address that you specify.
+**Demo - LogReduce® on Suspicious IP**. Performs a LogReduce operation on a suspicious IP address that you specify.
 
 **Demo - Outlier**. Performs an outlier operation on an IP address that you specify.
 
