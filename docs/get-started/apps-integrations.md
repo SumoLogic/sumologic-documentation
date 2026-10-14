@@ -162,7 +162,7 @@ Sumo Logic apps provide a host of pre-built saved searches for popular data Sou
 
 To run a saved search from a Sumo Logic app, find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
 
-In order to run a search from an app, you would first need to have data ingested in your system that the search query would find. For example, before you can run a search from the Sumo Logic app for Apache, you must set up a Collector and Source to ingest your Apache data. If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
+In order to run a search from an app, you would first need to have data ingested in your system that the search query would find. For example, before you can run a search from the Sumo Logic app for Apache, you need to set up a Collector and Source to ingest your Apache data. If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 After the search has run, you can [save the search](/docs/search/get-started-with-search/search-basics/save-search) to use it again in the future from the Library.
 
