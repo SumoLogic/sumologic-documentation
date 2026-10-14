@@ -36,8 +36,8 @@ The left nav bar provides easy access to libraries, personal collections of das
 
 The top of the left nav bar is where you can search for content and users and easily switch browsing modes. 
 
-* Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/TUI_Search_Details.png')} alt="Search details" style={{border: '1px solid gray'}} width="800" />
+* **Searching**. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users.
+* **Switching browsing modes**. Click the three-dot kebab icon and make a selection from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/TUI_Search_Details.png')} alt="Search details" style={{border: '1px solid gray'}} width="800" />
 
 ### Hide and show the left nav bar
 
@@ -187,7 +187,7 @@ After you start a search, you can “pin” it, and it will run in the backgr
 
 There is a limit of ten pinned searches per user. Also, queries that use the [save operator](/docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
 
-You must start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
+You need to start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
 
 To pin a search, do the following:
 
@@ -256,7 +256,7 @@ To administer Sumo Logic accounts, users, and security, do the following:
 1. Choose from the following, as needed:
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index), [support account access,](/docs/manage/security/enable-support-account) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy), [set up an allowlist for IP or CIDR addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index), [support account access,](/docs/manage/security/enable-support-account) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
 
 ## Become a Sumo Logic Pro user
 

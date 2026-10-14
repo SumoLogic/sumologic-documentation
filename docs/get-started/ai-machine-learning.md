@@ -161,7 +161,7 @@ They're still here, but renamed and repositioned as their capabilities have evol
 
 ### Can Dojo AI access be controlled at a user level?
 
-Not at this time. Dojo AI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions—users cannot access data or execute platform actions they aren't authorized to perform manually.
+Not at this time. Dojo AI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions. Users cannot access data or execute platform actions they are not authorized to perform manually.
 
 ### How can administrators audit or track Dojo AI usage?
 
