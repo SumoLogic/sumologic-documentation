@@ -95,9 +95,9 @@ Examples:
 title: {Month} {D}, {Year} - Content Release
 hide_table_of_contents: true
 keywords:
-  * rules
-  * log mappers
-  * parsers
+  - rules
+  - log mappers
+  - parsers
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 ---
 ```
@@ -108,7 +108,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 title: {Month} {D}, {Year} - Application Update
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
-  * {relevant-keyword}
+  - {relevant-keyword}
 hide_table_of_contents: true
 ---
 ```
@@ -202,6 +202,7 @@ Before finishing, verify:
 * [ ] `hide_table_of_contents: true` present
 * [ ] Keywords appropriate for release type.
 * [ ] `import useBaseUrl` statement included.
+* [ ] Application releases open with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...").
 * [ ] Content follows proper structure (Rules → Log Mappers → Parsers).
 * [ ] All `[New]` and `[Updated]` tags present.
 * [ ] Parser paths use full `/Parsers/System/Vendor/Name` format.

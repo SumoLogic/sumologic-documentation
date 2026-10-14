@@ -264,6 +264,7 @@ Before finishing, verify:
 * [ ] Date format uses full month name, no ordinal (e.g., "April 9" not "April 9th")
 * [ ] `hide_table_of_contents: true` is present
 * [ ] Standard image URL is used
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] Content is clear and includes relevant links
 * [ ] Breaking changes are clearly marked (use bold or H4 sections)
 * [ ] Documentation links use relative paths (start with `/docs/`)
