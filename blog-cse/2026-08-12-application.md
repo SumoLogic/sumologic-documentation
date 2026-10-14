@@ -9,6 +9,6 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're happy to announce a redesigned Automations tab on Insights, featuring a new table view that replaces the previous card view, along with a new side panel for a more streamlined experience.
+A redesigned Automations tab on Insights, featuring a new table view that replaces the previous card view, along with a new side panel for a more streamlined experience.
 
 The Insights Automations tab displays all associated playbook runs, including the trigger, start time, and current status. Select a playbook to view detailed execution information. [Learn more](/docs/cse/automation/automations-in-cloud-siem#view-results-of-an-automation).
