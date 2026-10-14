@@ -11,8 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Google Workspace Activities helps you monitor user and administrator activity across your Google Workspace environment by ingesting audit activity events from the Google Admin SDK Reports API. The app provides a comprehensive set of predefined dashboards that present activity for core productivity services including Gmail, Drive, Calendar, Meet, Chat, Keep, Tasks, Contacts, and Gemini, alongside security, identity, and administration services such as Admin console changes, SAML and OAuth Token sign-ins, LDAP, Context-Aware Access, User Accounts, Rules, Mobile devices, Chrome, Directory Sync, Takeout, and Vault.
 
-The Google Workspace Activities app also offers a pre-built dashboard that enables you to start monitoring your Google Workspace Activities logs right away. 
-
 :::info
 This app includes [built-in monitors](#google-workspace-activities-alerts). For details on creating custom monitors, refer to [Create monitors for Google Workspace Activities app](#create-monitors-for-google-workspace-activities-app).
 :::
@@ -30,7 +28,7 @@ This app uses the [Google Workspace Activities Source](/docs/send-data/hosted-co
 {
   "actor": {
     "email": "pablo.loaiza@abcd.com",
-    "profileId": "2026-10-12T22:12:3093187574"
+    "profileId": "116159349057010206877"
   },
   "etag": "\"nNEc9gal71zAXcZCAEuACF_HaHL-qljl7gkdrnnYaAs/ByvKAj_gE0W_hIlyo6zci0ZIiZo\"",
   "events": [
@@ -65,7 +63,7 @@ This app uses the [Google Workspace Activities Source](/docs/send-data/hosted-co
     "applicationName": "login",
     "customerId": "C01ydpbjo",
     "time": "2026-10-12T22:12:30.064Z",
-    "uniqueQualifier": "-2026-10-12T22:12:30807047"
+    "uniqueQualifier": "5462944545274950170"
   },
   "ipAddress": "168.119.168.251",
   "kind": "admin#reports#activity",
