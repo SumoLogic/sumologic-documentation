@@ -19,4 +19,4 @@ In this release, we've upgraded Collector dependencies and the JRE to address se
 
 #### Bug fixes
 
-- Fixed a macOS issue in `538-3` where the collector did not start after installation or upgrade on some computers.
+- Fixed a macOS issue in the previous release, where the collector did not start after installation or upgrade on some computers.
