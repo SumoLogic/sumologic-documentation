@@ -13,7 +13,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Aggregates tab**. When referring to the Aggregates tab (where aggregate search results are displayed) the term Aggregates is capitalized.
 
-**Aka**. Don't use. Write out "also known as" instead.
+**Aka**. Do not use. Write out "also known as" instead.
 
 **Ampersand (&)**. See [Ampersands](/docs/contributing/style-guide/#ampersands) in the style guide.
 
@@ -27,11 +27,11 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## B
 
-**Backend**. One word in Sumo Logic documentation. Don't use "back-end" or "back end."
+**Backend**. One word in Sumo Logic documentation. Do not use "back-end" or "back end."
 
 ## C
 
-**Checkbox**. One word. Don't use "check box" (two words).
+**Checkbox**. One word. Do not use "check box" (two words).
 
 **Classic UI**. Use this term to clarify that you're talking about the legacy UI.
 
@@ -41,7 +41,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
-**Column**. When referring to a column in a dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box, "Column" is capitalized). The word "column" doesn't appear in the main dashboard UI.
+**Column**. When referring to a column in a dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box, "Column" is capitalized). The word "column" does not appear in the main dashboard UI.
 
 
 
@@ -57,13 +57,13 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Drill down**. Drill down, as in a menu, or other filtering feature is two words, not one.
 
-**Dropdown**. Use "dropdown" (one word, no hyphen) as an adjective before a noun: "dropdown list", "dropdown menu". Don’t use it as a standalone noun. When possible, describe the action instead: "Select X from the list." Do not use "drop-down" (hyphenated) or "drop down" (two words).
+**Dropdown**. Use "dropdown" (one word, no hyphen) as an adjective before a noun: "dropdown list", "dropdown menu". Do not use it as a standalone noun. When possible, describe the action instead: "Select X from the list." Do not use "drop-down" (hyphenated) or "drop down" (two words).
 
 ## E
 
-**E.g., i.e., and etc.** Don't use these abbreviations. Use "for example" instead of "e.g.", "that is" instead of "i.e.", and avoid "etc." by listing items explicitly or using "such as." See [Abbreviations](/docs/contributing/style-guide/#abbreviations) in the style guide.
+**E.g., i.e., and etc.** Do not use these abbreviations. Use "for example" instead of "e.g.", "that is" instead of "i.e.", and avoid "etc." by listing items explicitly or using "such as." See [Abbreviations](/docs/contributing/style-guide/#abbreviations) in the style guide.
 
-**Em dash**. Avoid em dashes (—). See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
+**Em dash**. Try not to use em dashes. Rewrite with a period, semicolon, colon, or parentheses instead. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
@@ -74,7 +74,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## G
 
-**GB and Gbit**. GB is the acronym for gigabytes. Gbit or Gb is the acronym for gigabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10GB or 15Gbit.)
+**GB and Gbit**. GB is the acronym for gigabytes. Gbit or Gb is the acronym for gigabits. Make sure to capitalize correctly. Do not use a space between the acronym and the number. (Example: 10GB or 15Gbit.)
 
 **Geo lookup operator**. Geo lookup is two words.
 
@@ -92,7 +92,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Include rule**. Include rules are a type of processing rule used to send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude.
 
-**Installed collector**. Installed collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
+**Installed collector**. Installed collectors are deployed in your environment, either on a local machine, a machine in your org, or even an Amazon Machine Image (AMI). Installed collectors require a software download and installation. Upgrades to collector software are released regularly by Sumo Logic.
 
 ## J
 
@@ -102,7 +102,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Library**. The Sumo Logic Library (formerly the Content Library) is now just the Library. Capitalize.
 
-**Lifecycle**. One word. Don't use "life cycle" (two words) or "life-cycle" (hyphenated).
+**Lifecycle**. One word. Do not use "life cycle" (two words) or "life-cycle" (hyphenated).
 
 **Login vs Log In**. Login as one word is a _noun_ or an _adjective_. Log in as two words is a _verb_. For example, "You can log in on the login page."
 
@@ -113,9 +113,9 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Markdown**. Always capitalize. It's a proper noun (the name of the markup language).
 
-**MB and Mbit**. MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
+**MB and Mbit**. MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Do not use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
-**Menu**. When referring to a menu in the UI, use "menu" or "dropdown menu." Don't use "list" or "selector."
+**Menu**. When referring to a menu in the UI, use "menu" or "dropdown menu." Do not use "list" or "selector."
 
 **Messages tab**. When referring to the Messages tab (where non-aggregate search results are displayed) the term Messages is capitalized.
 
@@ -135,7 +135,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 ## P
 
-**Page**. When you name a page in the UI, bold the page name, match its on-screen capitalization, and keep the word "page" lowercase and outside the bold: the **Search** page. Don't use "pane" or "tab" for a page. A tab appears inside a page. (Example: The **Messages** tab appears on the **Search** page.) See **UI labels**, below.
+**Page**. When you name a page in the UI, bold the page name, match its on-screen capitalization, and keep the word "page" lowercase and outside the bold: the **Search** page. Do not use "pane" or "tab" for a page. A tab appears inside a page. (Example: The **Messages** tab appears on the **Search** page.) See **UI labels**, below.
 
 **Panel**. Lowercase. Put the type right before "panel": "area chart panel", "text panel". Write "dashboard panel" only when the dashboard context is not already clear.
 
@@ -203,7 +203,7 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 **Timeline**. Timeline is one word, not two.
 
-**Timeout / time out**. Use "timeout" as a noun or adjective in computing contexts. Use "time out" as a verb. Don't use "time-out."
+**Timeout / time out**. Use "timeout" as a noun or adjective in computing contexts. Use "time out" as a verb. Do not use "time-out."
 
 **Timestamp**. Timestamp is one word.
 
@@ -213,9 +213,14 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 **UI labels**. See [Bold](/docs/contributing/style-guide/#bold) and [Capitalization](/docs/contributing/style-guide/#capitalization) in the style guide.
 
 
+## V
+
+**Very**. Avoid. Filler words like "very", "really", and "quite" do not add information for the reader. See [Concise, human phrasing](/docs/contributing/style-guide/#concise-human-phrasing) in the style guide.
+
+
 ## W
 
-**Web Application**. Avoid using where possible. "Sumo Logic" or "our product" should be sufficient. If you need to refer to our web application to distinguish from API, do so. Don't capitalize.
+**Web Application**. Avoid using where possible. "Sumo Logic" or "our product" should be sufficient. If you need to refer to our web application to distinguish from API, do so. Do not capitalize.
 
 **Website**. Website or websites is one word.
 
