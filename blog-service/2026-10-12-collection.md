@@ -8,5 +8,5 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We’re excited to introduce the new Sumo Logic source for Google Workspace Activities, enabling seamless collection of Google Workspace activity data.
+The new Sumo Logic source for Google Workspace Activities, enabling seamless collection of Google Workspace activity data.
 This source helps you monitor user activities and analyze events for improved visibility and security. [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-activities).

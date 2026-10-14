@@ -399,7 +399,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td>[logreduce](/docs/search/behavior-insights/logreduce)</td>
-   <td>The LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the <strong>LogReduce</strong> button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website. (Formerly Summarize.)</td>
+   <td>The LogReduce® algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the <strong>LogReduce</strong> button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website. (Formerly Summarize.)</td>
    <td></td>
    <td>Not supported in Dashboards.</td>
    <td><code>| logreduce</code></td>

@@ -17,7 +17,7 @@ App Central provides apps to help you be more productive in the Automation Servi
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access App Central, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
 
-Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
+Before you can access App Central, you must have the Access App Central role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
 
 ## App Central UI
 
