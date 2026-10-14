@@ -36,8 +36,8 @@ The left nav bar provides easy access to libraries, personal collections of das
 
 The top of the left nav bar is where you can search for content and users and easily switch browsing modes. 
 
-* Searching: Enter text in the **Search** field to quickly find apps, dashboards, searches, and users.
-* Switching browsing modes: Click the three-dot kebab icon and make a selection from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/TUI_Search_Details.png')} alt="Search details" style={{border: '1px solid gray'}} width="800" />
+* **Searching**. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users.
+* **Switching browsing modes**. Click the three-dot kebab icon and make a selection from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/TUI_Search_Details.png')} alt="Search details" style={{border: '1px solid gray'}} width="800" />
 
 ### Hide and show the left nav bar
 
