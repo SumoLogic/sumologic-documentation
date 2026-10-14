@@ -63,7 +63,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **E.g., i.e., and etc.** Do not use these abbreviations. Use "for example" instead of "e.g.", "that is" instead of "i.e.", and avoid "etc." by listing items explicitly or using "such as." See [Abbreviations](/docs/contributing/style-guide/#abbreviations) in the style guide.
 
-**Em dash**. Use sparingly. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
+**Em dash**. Try not to use em dashes. Rewrite with a period, semicolon, colon, or parentheses instead. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
