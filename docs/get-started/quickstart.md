@@ -67,7 +67,7 @@ For configuration information, refer to [Kickstart Data app](/docs/integrations/
 
 ### Getting started with Kickstart Data in your trial
 
-As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards with no setup, data ingestion, or firewall configuration required, so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data are used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
+As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards with no setup, data ingestion, or firewall configuration required, so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data is used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
 
 The Kickstart sample data you see in the [sample app/dashboards](/docs/integrations/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
 
@@ -128,7 +128,7 @@ See [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector
 
 ## Step 2: Search and analyze your data
 
-Once your data are available in Sumo Logic, you and your colleagues can search your logs and metrics to identify unusual conditions or errors that could indicate a problem. You do this by creating queries and parsing the resulting messages.
+Once your data is available in Sumo Logic, you and your colleagues can search your logs and metrics to identify unusual conditions or errors that could indicate a problem. You do this by creating queries and parsing the resulting messages.
 
 You can start a log search, metrics search, or live tail from the Sumo Logic Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics/).
 

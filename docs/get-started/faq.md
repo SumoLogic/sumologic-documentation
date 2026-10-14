@@ -46,7 +46,7 @@ The following table lists data types and some of the popular sources that produc
 
 ## Where is my data stored?
 
-Where your data are stored depends on the geographical location the Account Owner selects when creating your Sumo Logic account. Your data are stored only in your selected region.
+Where your data is stored depends on the geographical location the Account Owner selects when creating your Sumo Logic account. Your data is stored only in your selected region.
 
 import AWSDeploymentRegion from '../reuse/aws-region-by-sumo-deployment.md';
 

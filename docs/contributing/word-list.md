@@ -51,7 +51,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Dashboard Theme**. Choose between light or dark themes for dashboards. Only capitalize Theme when you're referring to the UI element in the Dashboard Properties menu.
 
-**Data**. Data is plural. Use "data are", not "data is".
+**Data**. Use "data is" in prose. Treating "data" as a mass noun (like "information") is standard in modern technical writing.
 
 **Dimension**. Used interchangeably with tags.
 

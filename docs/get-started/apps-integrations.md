@@ -19,7 +19,7 @@ Sumo Logic apps address these common use cases:
 * **Provide real-time insights**. With Sumo Logic, enterprises can easily extract machine data insights to provide greater intelligence around their customers, products, and application usage. These insights provide a more accurate and complete analysis for business users.
 * **Accelerate Cloud deployment**. Sumo Logic enables enterprises to automate and speed the development and deployment process for cloud-based applications. Companies can rapidly detect, identify and resolve application issues.
 * **Decrease app time to market**. Sumo Logic facilitates a consistent release process, resulting in timely releases. It aids in quickly identifying application issues and configuration changes across development, testing, and deployment environments.
-* **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data are centralized, secured, and easily analyzed in real time through a single, highly scalable solution.
+* **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real time through a single, highly scalable solution.
 
 To learn about the vendors and products that Sumo Logic integrates with, refer to the [Product List](/docs/integrations/product-list/).
 
