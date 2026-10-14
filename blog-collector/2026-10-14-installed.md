@@ -6,7 +6,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-In this release, we've enhanced the Collector's security and stability with added support for security patches and bug fixes.
+In this release, we've upgraded Collector dependencies and the JRE to address security vulnerabilities and fix a macOS startup issue.
 
 #### Security fixes
 
