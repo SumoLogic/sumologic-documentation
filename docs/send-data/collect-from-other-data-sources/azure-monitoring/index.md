@@ -49,7 +49,7 @@ The Azure-Sumo Logic pipelines for Azure log and metric collection use event hub
 * The **Sumo Logic Azure functions** are small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo Logic HTTP source. Each of the functions also maintains its own logs: one for recording failures (when logs could not be sent to HTTP endpoint for some reason) and another for function debug information.
 * A **Sumo Logic HTTP source** receives and ingests the monitoring data from the Azure function. This is used in metrics collection pipeline.
 * A **Azure Event Hubs Source for Logs** consumes the log events from the Event Hub. It securely stores the required authentication, scheduling, and state tracking information. This is used in logs collection pipeline.
-* The **Sumo Logic Azure functions** are small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo Logic HTTP source. Each of the functions also maintains its own logs: one for recording failures (when logs could not be sent to Sumo Logic for some reason) and another for function debug information.
+* The **Sumo Azure functions** are small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo Logic HTTP source. Each of the functions also maintains its own logs: one for recording failures (when logs could not be sent to Sumo Logic for some reason) and another for function debug information.
 
 
 

@@ -47,7 +47,7 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
 1. Now you are back on the **Custom deployment** blade.
    1. Create a new Resource Group (recommended) or select an existing one.
    1. Choose **Region**. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional.
-   1. For the **Sumo Logic Endpoint URL** supply the URL for HTTP source you defined in [Step 1](#step-1-configure-an-http-source).
+   1. For the **Sumo Endpoint URL** supply the URL for HTTP source you defined in [Step 1](#step-1-configure-an-http-source).
    1. Click **Review + Create**.<br/><img src={useBaseUrl('/img/send-data/azure-metrics/pipeline-custom-deployment.png')} alt="Pipeline custom deployment" style={{border: '1px solid gray'}} width="800" />
 1. After clicking on **create** button, you will land to the **Deployment** page, you should see the **Your deployment is complete** message after deployment is finished:<br/><img src={useBaseUrl('/img/send-data/azure-metrics/microsofttemplate_resource.png')} alt="Microsoft template resource" style={{border: '1px solid gray'}} width="800" />
 1. Creating container for failover logs
