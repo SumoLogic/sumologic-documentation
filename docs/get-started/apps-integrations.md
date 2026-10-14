@@ -109,7 +109,7 @@ import ClassicAppInstall from '../reuse/apps/app-install.md';
 
 ### How to install classic apps in multiple environments
 
-If you have multiple environments generating data that you want to monitor using Sumo Logic apps, for example, environments for production, development, and testing, you’ll need to perform the following steps in each environment:
+If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 
 1. Set up Sumo Logic Collectors and Sources for each environment. Make sure that Source Hosts and Source Categories are named correctly in order to clearly indicate the environment name to the apps when they are installed.
 1. Perform any prerequisites required for the particular Sumo Logic app in that environment. Each Sumo Logic app has unique requirements, so make sure to follow the specific instructions for that app.
@@ -187,7 +187,7 @@ Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/
 
 ## Custom data filters
 
-When you install a Sumo Logic app, you tell Sumo what data to search and present in app dashboards.
+When you install a Sumo Logic app, you tell Sumo Logic what data to search and present in app dashboards.
 
 Most typically, you specify the source category that was assigned to the logs or metrics source when data collection was set up for the app. 
 

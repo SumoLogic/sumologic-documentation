@@ -7,7 +7,7 @@ description: Get to know the Sumo Logic platform user interface.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note 
+:::note
 This page describes the Classic UI. For the most streamlined navigation and the newest user experience, switch to the [New UI](/docs/get-started/sumo-logic-ui).
 :::
 
@@ -187,7 +187,7 @@ After you start a search, you can “pin” it, and it will run in the backgr
 
 There is a limit of ten pinned searches per user. Also, queries that use the [save operator](/docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
 
-You must start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
+You need to start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
 
 To pin a search, do the following:
 

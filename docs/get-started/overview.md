@@ -73,7 +73,7 @@ The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opente
 
 #### Installed Collector
 
-Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source). Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud in real time. A single Sumo Logic Collector can collect up to 15,000 events per second and has fault tolerance during network or service outages. See [Installed Collector System Requirements](system-requirements.md).
+Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source). Collectors collect raw log data, compress it, encrypt it, and send it to Sumo Logic Cloud in real time. A single Sumo Logic Collector can collect up to 15,000 events per second and has fault tolerance during network or service outages. See [Installed Collector System Requirements](system-requirements.md).
 
 If you'd like to collect non-traditional machine data, [Script Sources](/docs/send-data/installed-collectors/sources/script-source) and [Script Actions](/docs/send-data/installed-collectors/sources/script-action) can provide a great deal of flexibility to collect files.
 

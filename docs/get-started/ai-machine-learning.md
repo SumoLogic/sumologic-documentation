@@ -181,7 +181,7 @@ Log searches Mobot runs on your behalf are also tracked in the [Search Audit Ind
 
 ### Do Dojo AI agents access customer data?
 
-Yes. Capabilities like Mobot and the SOC Analyst Agent process customer telemetry to perform investigations, run queries, and generate findings. All processing occurs securely within your platform context, and customer data is never used to train generalized AI models.
+Yes. Capabilities like Mobot and the SOC Analyst Agent process customer telemetry to perform investigations, run queries, and generate findings. All processing occurs securely within your platform context, and customer data are never used to train generalized AI models.
 
 Administrators can turn off Dojo AI capabilities at any time through **Feature Management** or by submitting a support ticket. Customers that previously opted out of Sumo Logic AI capabilities will not get access to these or future AI capabilities until they explicitly opt back in.
 
@@ -189,15 +189,15 @@ Administrators can turn off Dojo AI capabilities at any time through **Feature M
 
 Sumo Logic AI capabilities follow strict legal, compliance, and security standards to ensure data minimization and fit-for-purpose processing.
 
-- Customer data is never used to train AI models, shared externally, or used to improve global models.
+- Customer data are never used to train AI models, shared externally, or used to improve global models.
 - Data remains within the customer's environment and is processed only to deliver results back to that customer.
-- Sumo Logic applies strong safeguards and filtering to ensure sensitive data is handled securely and appropriately at all times.
+- Sumo Logic applies strong safeguards and filtering to ensure sensitive data are handled securely and appropriately at all times.
 
 Customers can opt out of capabilities that process customer data, including the SOC Analyst Agent and Mobot, at any time from **Feature Management** or by submitting a support ticket.
 
 ### Is customer data or PII used to train AI models?
 
-No. Customer data is never used to train AI models.
+No. Customer data are never used to train AI models.
 
 All Sumo Logic AI capabilities are designed to serve customer-specific outcomes within their own environment. Mobot uses a large language model (LLM) via Amazon Bedrock, which processes data securely and does not retain or use customer information for training or other external purposes.
 
@@ -207,7 +207,7 @@ For more information, see [Security and Compliance](/docs/search/mobot/#security
 
 ### Does any third party have access to Dojo AI customer data?
 
-No additional third parties have any access. Dojo AI leverages foundation models securely hosted through Amazon Bedrock. When customer data is processed using Amazon Bedrock:
+No additional third parties have any access. Dojo AI leverages foundation models securely hosted through Amazon Bedrock. When customer data are processed using Amazon Bedrock:
 
 - Customer inputs and outputs are treated as Customer Content under AWS terms.
 - AWS does not use Customer Content to train models or improve Amazon Bedrock.
