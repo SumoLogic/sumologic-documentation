@@ -94,7 +94,7 @@ This section describes configuration changes you can make to the integration.
 If desired, you can change the mapping between the fields in Cloud SIEM insights and the fields in Incidents that the integration creates in ServiceNow.
 
 1. Navigate to the **Table Transform Maps** page in ServiceNow. <br/><img src={useBaseUrl('img/cse/table-transform-maps.png')} alt="Table Transform Maps" width="800"/>
-1. Open the “Sumo Logic Insight Mapper” for editing.
+1. Open the “Sumo Insight Mapper” for editing.
 1. Make your edits and save your changes. 
 
 ## Configuration properties
@@ -134,4 +134,4 @@ After an Incident created by the integration is closed in ServiceNow, the insigh
 To view log messages written by the integration:
 
 1. Choose **System Log > All** in the ServiceNow left-nav pane.
-1. Search the messages for “Sumo Logic Cloud SIEM”. <br/><img src={useBaseUrl('img/cse/messages-sumo-cse.png')} alt="Integration log messages" width="800"/>
+1. Search the messages for “Sumo Cloud SIEM”. <br/><img src={useBaseUrl('img/cse/messages-sumo-cse.png')} alt="Integration log messages" width="800"/>
