@@ -27,6 +27,29 @@ Layered Next-Gen Security for physical, virtual, and cloud environments provided
 * **Policy Details** (*Enrichment*) - Get details of specific policy.
 * **Remove From Blocklist** (*Containment*) - Remove file hashes from Blocklist.
 
+## Permissions
+
+The following Bitdefender GravityZone permissions are required depending on the actions you want to use:
+
+* **Reports**
+    * Create Report
+    * Delete Report
+* **Policies**
+    * List Policies
+    * Policy Details
+* **Network**
+    * Get Endpoint List
+    * Get Scan List
+    * Create Scan Task
+* **Companies**
+    * List Companies
+* **Quarantine**
+    * Add File To Quarantine
+* **Incidents**
+    * List Blocklist Items
+    * Add To Blocklist
+    * Remove From Blocklist
+
 ## Configure Bitdefender GravityZone in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';

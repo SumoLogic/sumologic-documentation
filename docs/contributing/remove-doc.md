@@ -93,7 +93,7 @@ It can take months for an old URL to drop from Google search engine results. If 
 
 ### Exclude pages from the site build
 
-You can prevent content from being indexed by excluding it from compilation entirely. Pages that aren't compiled into the build output won't appear on the live site or sitemap, so neither search engines nor internal site search can index them.
+You can prevent content from being indexed by excluding it from compilation entirely. Pages that are not compiled into the build output will not appear on the live site or sitemap, so neither search engines nor internal site search can index them.
 
 To exclude docs, add their paths to the `docs.exclude` setting in `docusaurus.config.js`:
 
@@ -113,7 +113,7 @@ presets: [
 ];
 ```
 
-Any Markdown files in the listed directories are excluded from the build and won't be served or indexed. Note that `reuse` files are still embedded where referenced; they just won't compile as standalone pages.
+Any Markdown files in the listed directories are excluded from the build and will not be served or indexed. Note that `/docs/reuse` files are still embedded where referenced; they will not compile as standalone pages.
 
 For finer-grained control, such as keeping a page compiled but hidden from search, use `robots.txt` or `noindex` meta tags instead. If content should never be published at all, excluding it from compilation is the most reliable approach.
 

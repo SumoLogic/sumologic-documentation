@@ -86,6 +86,6 @@ The <img src={useBaseUrl('img/search/log-search-eye-icon.png')} alt="Eye button"
 
 [Search Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) provides real-time syntax suggestions, operator completions, and schema-based field hints as you type. Logs Search Recommendation focuses specifically on surfacing your organization's saved [macros](/docs/manage/macro) when your expression partially matches one, helping you reuse complex, predefined query logic.
 
-### Do you need special permissions to see macro suggestions?
+### Do I need special permissions to see macro suggestions?
 
 You need access to the macros in your organization. Only macros you have permission to view are surfaced in the recommendation panel. Role-based access controls apply. If you do not have access to a macro, it will not appear in suggestions.
