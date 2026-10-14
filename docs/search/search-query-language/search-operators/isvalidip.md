@@ -42,9 +42,6 @@ The following returns `true`:
 ```sumo
 | isValidIP("10.255.255.255") as isIP
 ```
-```sumo
-| isValidIP("30.255.255.255") as isIP
-```
 
 The following returns `true`:
 
