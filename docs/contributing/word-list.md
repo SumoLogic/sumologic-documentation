@@ -63,7 +63,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **E.g., i.e., and etc.** Do not use these abbreviations. Use "for example" instead of "e.g.", "that is" instead of "i.e.", and avoid "etc." by listing items explicitly or using "such as." See [Abbreviations](/docs/contributing/style-guide/#abbreviations) in the style guide.
 
-**Em dash**. Avoid em dashes (—). See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
+**Em dash**. Use sparingly. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
@@ -211,6 +211,11 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 ## U
 
 **UI labels**. See [Bold](/docs/contributing/style-guide/#bold) and [Capitalization](/docs/contributing/style-guide/#capitalization) in the style guide.
+
+
+## V
+
+**Very**. Avoid. Filler words like "very", "really", and "quite" do not add information for the reader. See [Concise, human phrasing](/docs/contributing/style-guide/#concise-human-phrasing) in the style guide.
 
 
 ## W
