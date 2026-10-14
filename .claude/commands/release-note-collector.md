@@ -211,6 +211,7 @@ Before finishing, verify:
 * [ ] For installed: Sections use H4 (`####`), proper order (Security → Bug → Feature)
 * [ ] For installed: Version numbers in **bold** format
 * [ ] For installed: CVE/GHSA references included where applicable
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] For OTel: Opens with a direct statement, not an announcement phrase (see the [style guide](/docs/contributing/style-guide/#release-notes))
 * [ ] For OTel: "Learn more" link included with relative path
 * [ ] No trailing whitespace.
