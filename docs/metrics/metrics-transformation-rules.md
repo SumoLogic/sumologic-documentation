@@ -72,15 +72,12 @@ Metrics transformation rules are useful when:
 
 ### Discard metrics from development and test environments
 
-Assume that the metrics you collect from your dev environment are of
-no interest once they've been aggregated. You tag metrics from the dev
-environment with a dimension whose key is “environment” and value is
-“dev”. When you configure your rule:
+Assume that the metrics you collect from your dev environment are of no interest once they've been aggregated. You tag metrics from the dev environment with a dimension whose key is “environment” and value is “dev”. When you configure your rule:
 
-1. Selector. Enter: `environment=dev`
-1. Aggregate On. Add the dimensions you want to aggregate by, for example, `environment`.
-1. Retention. Select **Do Not Store**.
-1. Aggregate Retention. **400 days** (the only available option).
+1. **Selector**. Enter: `environment=dev`
+1. **Aggregate On**. Add the dimensions you want to aggregate by, for example, `environment`.
+1. **Retention**. Select **Do Not Store**.
+1. **Aggregate Retention**. **400 days** (the only available option).
 
 All metrics that match the selector `environment=dev` are aggregated and the raw metrics are discarded, so you keep the aggregated trend data without paying to store 400 days of raw dev-environment metrics you have no interest in.
 
