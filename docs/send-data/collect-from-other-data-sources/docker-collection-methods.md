@@ -64,7 +64,7 @@ You can bake the Collector into an image, install it manually, or use automat
 ### Collector as a Container
 
 In this method, you run the Collector in a Dockerized container. See our [Sumo Logic Collector for Docker](https://hub.docker.com/r/sumologic/collector/) repository that offers several variants of Docker images to run the Sumo Logic
-Logic collector.
+collector.
 
 * **Pros**
     * No need to bake into any AMIs. Can be fully automated depending on your automation tooling around Docker.

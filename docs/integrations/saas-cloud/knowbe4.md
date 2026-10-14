@@ -53,7 +53,7 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
   },
   "landing_page": {
     "id": 183506,
-    "name": "Sumo Logic Landing Page"
+    "name": "Sumo Landing Page"
   },
   "scheduled_count": 625,
   "delivered_count": 625,

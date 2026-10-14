@@ -11,8 +11,7 @@ description: Learn how to provision SAML for single sign-on (SSO) access to Sumo
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Learn how to provision SAML for single sign-on (SSO) access to Sumo Logic
-Logic.
+Learn how to provision SAML for single sign-on (SSO) access to Sumo Logic.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

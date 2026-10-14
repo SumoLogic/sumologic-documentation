@@ -340,7 +340,7 @@ Configure these parameters in **atlassian.auto.tfvars**.
 | jira_cloud_url | Jira Cloud URL |
 | jira_cloud_user | Jira Cloud Username |
 | jira_cloud_password | Jira Cloud Password or [API Key](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) |
-| jira_cloud_jql | Jira Cloud [Query Language](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Example: "project = Sumo Logic" |
+| jira_cloud_jql | Jira Cloud [Query Language](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Example: "project = Sumo" |
 | jira_cloud_events | Jira Cloud [Events](https://developer.atlassian.com/cloud/jira/platform/webhooks/) |
 
 ### Sumo Logic to Jira Cloud Webhook
@@ -352,7 +352,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 | jira_cloud_auth | To generate Authorization Header follow this [doc](/docs/alerts/webhook-connections/jira-cloud) |
 | jira_cloud_user | Jira Cloud Username |
 | jira_cloud_password | Jira Cloud Password or [API Key](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) |
-| jira_cloud_jql | Jira Cloud [Query Language](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Example: "project = Sumo Logic" |
+| jira_cloud_jql | Jira Cloud [Query Language](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Example: "project = Sumo" |
 | jira_cloud_events | Jira Cloud [Events](https://developer.atlassian.com/cloud/jira/platform/webhooks/) |
 
 ### Sumo Logic to Jira Service Desk Webhook
@@ -381,7 +381,7 @@ This script configures Jira Server webhooks and creates resources in Sumo Logic.
 | jira_server_url | Jira Server URL |
 | jira_server_user | Jira Server Username |
 | jira_server_password | Needs to be the password. API Key is not supported on Jira Server yet. |
-| jira_server_jql | Jira Server [Query](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Language Example: "project = Sumo Logic" |
+| jira_server_jql | Jira Server [Query](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Language Example: "project = Sumo" |
 | jira_servicedesk_priority | Jira Server [Events](https://developer.atlassian.com/server/jira/platform/webhooks/) |
 
 ### Sumo Logic to Jira Server Webhook
