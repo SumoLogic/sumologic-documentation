@@ -29,7 +29,7 @@ Layered Next-Gen Security for physical, virtual, and cloud environments provided
 
 ## Permissions
 
-The following Bitdefender GravityZone feed permissions are required depending on the actions you want to use:
+The following Bitdefender GravityZone permissions are required depending on the actions you want to use:
 
 * **Reports**
     * Create Report
