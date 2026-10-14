@@ -10,4 +10,4 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We're excited to announce v6 of the Sumo Logic Kubernetes Helm chart, which enables sourceless mode and metrics pipeline unification by default. Sourceless mode removes the Hosted Collector dependency, and a single metrics pipeline means fewer pods, lower latency, and simpler configuration. [Learn more](/docs/send-data/kubernetes/v6/how-to-upgrade/).
+V6 of the Sumo Logic Kubernetes Helm chart, which enables sourceless mode and metrics pipeline unification by default. Sourceless mode removes the Hosted Collector dependency, and a single metrics pipeline means fewer pods, lower latency, and simpler configuration. [Learn more](/docs/send-data/kubernetes/v6/how-to-upgrade/).
