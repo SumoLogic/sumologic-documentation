@@ -2502,6 +2502,7 @@ integrations: [
           'integrations/google/cloud-vpc',
           'integrations/google/compute-engine',
           'integrations/google/kubernetes-engine',
+          'integrations/google/workspace-activities',
           {
             type: 'category',
             label: 'Google Workspace',
