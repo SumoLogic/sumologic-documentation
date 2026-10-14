@@ -983,7 +983,7 @@ Ensure that you send ACCESSID/ACCESSKEY pair even if cookies are sent for the Se
 
 # Variables.
 PROTOCOL=$1    # HTTPS is the only acceptable PROTOCOL
-HOST=$2        # Use your Sumo Logic endpoint as the HOST
+HOST=$2        # Use your Sumo endpoint as the HOST
 ACCESSID=$3    # Authenticate with an access id and key
 ACCESSKEY=$4
 OPTIONS="--silent -b cookies.txt -c cookies.txt"

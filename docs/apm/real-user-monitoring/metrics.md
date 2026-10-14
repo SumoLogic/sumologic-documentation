@@ -158,7 +158,7 @@ We also measure any erroneous HTTP responses to XHR POST calls, counting them as
 <!--
 ### Navigation (Route Change) Metrics
 Another browsing technique used by single-page apps is a special way of handling page navigation (e.g., clicking on links, buttons) called route change. It is basically a way to navigate to a new page/view without having to load a new document.
-Every time we open a new tab in Sumo Logic, we do a route change (but we are not loading the whole document at the same time). Such actions typically also generate some XHR calls in the background. What we do with this is:
+Every time we open a new tab in Sumo, we do a route change (but we are not loading the whole document at the same time). Such actions typically also generate some XHR calls in the background. What we do with this is:
 * Create a special type of user actions called `route_changes` with the name of the page that is being opened (i.e., “Route to [https://service.us2.sumologic.com/ui#/search/*](https://service.us2.sumologic.com/ui#/search/*)”)
 * Show these actions as third type of action next to document loads and XHR requests
 * Measure same type of metrics for them as for XHR requests

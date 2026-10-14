@@ -97,7 +97,7 @@ import AccessKey from '../../../../reuse/automation-service/access-key.md';
 * <IntegrationEngine/>
 * <IntegrationProxy/>
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-7.png')} style={{border:'1px solid gray'}} alt="Sumo Logic notifications" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-7.png')} style={{border:'1px solid gray'}} alt="Sumo logic notifications" width="400"/>
 
 ## Change Log
 

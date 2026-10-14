@@ -185,7 +185,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source')}><img src={useBaseUrl('img/send-data/cisco-meraki-sumo-source-select.png')} alt="Cisco Meraki Sumo Logic Source Select icon" width="90"/><h4>Cisco Meraki</h4></a>
+  <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source')}><img src={useBaseUrl('img/send-data/cisco-meraki-sumo-source-select.png')} alt="Cisco Meraki Sumo Source Select icon" width="90"/><h4>Cisco Meraki</h4></a>
   <p>Provides a secure endpoint to receive data from the Cisco Meraki API.</p>
   </div>
 </div>
@@ -647,7 +647,7 @@ In this section, we'll introduce the following concepts:
       </div>
             <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic Square icon" width="50"/><h4>Universal Connector Source</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Square icon" width="50"/><h4>Universal Connector Source</h4></a>
         <p> Learn how to set up a Universal Connector to collect data into the Sumo Logic environment.</p>
         </div>
       </div>

@@ -48,7 +48,7 @@ Follow the below steps to configure the Hosted Collector to receive VMware Tanzu
 1. Download the product file from [Broadcom Products](https://support.broadcom.com/group/ecx/productdownloads?subfamily=Sumo Logic%20Logic%20Nozzle%20for%20VMware%20Tanzu).            
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.                     
 1. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for VMware Tanzu. This adds the tile to your staging area.
-1. Click the newly added **Sumo Logic Nozzle** for VMware Tanzu tile to access the configuration settings.<br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumoTile.png')} alt="Sumo Logic tile" style={{border: '1px solid gray'}} width="800" />
+1. Click the newly added **Sumo Logic Nozzle** for VMware Tanzu tile to access the configuration settings.<br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumoTile.png')} alt="Sumo tile" style={{border: '1px solid gray'}} width="800" />
 1. **Assign AZs and Networks**.
    1. Choose placement.
    1. Click **Save**.
