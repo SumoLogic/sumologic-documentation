@@ -83,7 +83,7 @@ To verify that the configuration is working, enter the following in the ServiceN
 
 `x_579138_sumo_logi_sumo_logic_insights.list`
 
-Within five minutes data will appear if new insights have been created. If no insights have been created, you can check Sumo Logic integration logs by searching for logs with the prefix: “Sumo Logic Cloud SIEM ERROR”. You can also check the Sumo Logic Status table from the navigation bar to see the last error message if any and the current integration health. If the value is healthy then the integration has run at least once with no error.
+Within five minutes data will appear if new insights have been created. If no insights have been created, you can check Sumo Logic integration logs by searching for logs with the prefix: “Sumo Cloud SIEM ERROR”. You can also check the Sumo Status table from the navigation bar to see the last error message if any and the current integration health. If the value is healthy then the integration has run at least once with no error.
 
 ## Configuration options
 
