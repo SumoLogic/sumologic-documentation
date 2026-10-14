@@ -105,7 +105,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/get-started/keyboard-shortcuts')}><img src={useBaseUrl('img/icons/general/computer.png')} alt="Computer icon" width="50"/><h4>Keyboard Shortcuts</h4></a>
-  <p>Complete reference to Windows and macOS keyboard shortcuts for the Sumo Logic Logic UI. </p>
+  <p>Complete reference to Windows and macOS keyboard shortcuts for the Sumo Logic UI. </p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -24,7 +24,7 @@ $ openssl x509 -inform der -in acm_ca.der -out acm_ca.crt
 
 ### Send data to a Cloud Syslog Source with rsyslog
 
-This section shows how to configure a syslog client using rsyslog that will send the syslog message to be received by the Sumo Logic Logic Cloud syslog service. If you are new to rsyslog, follow the [rsyslog documentation](http://www.rsyslog.com/doc/v8-stable/installation/index.html) to install.
+This section shows how to configure a syslog client using rsyslog that will send the syslog message to be received by the Sumo Logic Cloud syslog service. If you are new to rsyslog, follow the [rsyslog documentation](http://www.rsyslog.com/doc/v8-stable/installation/index.html) to install.
 
 After rsyslog is installed, edit the configuration file to start sending logs to Sumo Logic. The configuration file is located at `/etc/rsyslog.conf` by default. 
 

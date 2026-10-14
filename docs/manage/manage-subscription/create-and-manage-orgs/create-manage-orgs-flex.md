@@ -19,7 +19,7 @@ This feature is not enabled by default. If you’d like to have it enabled, cont
 
 This topic has information about Sumo Logic’s organizations feature for Flex licensing, which you can use to create and manage orgs. The term *parent org* refers to the organization from which you create a new organization, while *child orgs* are the organizations you create.
 
-Sumo Logic Logic organitztions allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
+Sumo Logic organitztions allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
 
 When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. When you provision a child org you use a credits calculator to estimate and allocate required credits for each product variable. 
 

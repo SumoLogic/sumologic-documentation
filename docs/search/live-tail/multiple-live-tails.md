@@ -6,7 +6,7 @@ description: You can run two Live Tail sessions at a time per browser tab.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic Logic Live Tail supports running two Live Tail sessions at a time per tab. You can start a second Live Tail session from the Live Tail page, or from the Search page.
+Sumo Logic Live Tail supports running two Live Tail sessions at a time per tab. You can start a second Live Tail session from the Live Tail page, or from the Search page.
 
 ## Split the Screen with a second Live Tail session
 

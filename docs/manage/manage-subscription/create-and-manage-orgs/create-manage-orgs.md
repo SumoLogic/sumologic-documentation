@@ -24,7 +24,7 @@ This feature is not enabled by default. If you’d like to have it enabled, cont
 
 This topic has information about Sumo Logic’s organizations feature, which you can use to create and manage orgs. We use the term *parent org* to refer to the org from which you create a new org, and *child orgs* to refer to the orgs you create. 
 
-Sumo Logic Logic organizations allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
+Sumo Logic organizations allow you to logically group, provision, and centrally manage and monitor the credits usage of multiple orgs.
 
 When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable. 
 
