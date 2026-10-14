@@ -40,11 +40,11 @@ cloud.provider=gcp project_id=* region=* cloud.platform=gcp_cloudfunctions funct
 
 ## Collecting logs for the Google Cloud Functions app
 
-This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions app.
+This section describes the Sumo Logic pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions app.
 
 ### Collection Process for GCP Services
 
-The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
+The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo Logic’s Google Cloud Platform (GCP) source running on a hosted collector.
 
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Google Cloud Loggings [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 

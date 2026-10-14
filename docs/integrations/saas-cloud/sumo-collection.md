@@ -1,20 +1,20 @@
 ---
 id: sumo-collection
-title: Sumo Collection
-sidebar_label: Sumo Collection
-description: The Sumo Collection app for Sumo Logic provides insights into health and status of Sumo Logic collectors and sources, allowing you to effectively manage and monitor collectors and sources within Sumo Logic.
+title: Sumo Logic Collection
+sidebar_label: Sumo Logic Collection
+description: The Sumo Logic Collection app for Sumo Logic provides insights into health and status of Sumo Logic collectors and sources, allowing you to effectively manage and monitor collectors and sources within Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="Sumo Logic icon" width="80"/>
 
-The Sumo Collection app is a comprehensive tool that offers detailed insights into the health and status of Sumo Logic collectors and sources. It enables efficient management and monitoring by tracking key parameters such as collector types, versions, operational status, and source metrics through intuitive analytics and visualizations. By providing organizations with the data they need to make informed decisions and optimize their data management strategies, the app enhances operational efficiency and facilitates proactive issue identification within the Sumo Logic ecosystem.
+The Sumo Logic Collection app is a comprehensive tool that offers detailed insights into the health and status of Sumo Logic collectors and sources. It enables efficient management and monitoring by tracking key parameters such as collector types, versions, operational status, and source metrics through intuitive analytics and visualizations. By providing organizations with the data they need to make informed decisions and optimize their data management strategies, the app enhances operational efficiency and facilitates proactive issue identification within the Sumo Logic ecosystem.
 
 With its comprehensive overview of collector and source activities, the app strengthens data collection infrastructure. Leveraging its analytics and visualization capabilities, organizations can make data-driven decisions, optimize performance, and ensure seamless data collection within the Sumo Logic environment.
 
 :::info
-This app includes [built-in monitors](#sumo-collection-monitors). For details on creating custom monitors, refer to [Create monitors for Sumo Collection app](#create-monitors-for-sumo-collection-app).
+This app includes [built-in monitors](#sumo-collection-monitors). For details on creating custom monitors, refer to [Create monitors for Sumo Logic Collection app](#create-monitors-for-sumo-collection-app).
 :::
 
 :::tip
@@ -23,7 +23,7 @@ For related info on collector health events, see [this doc](/docs/manage/health-
 
 ## Log types
 
-This app uses Sumo Logic’s [Sumo Collection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source/) to collect the collectors and source logs from the Sumo Logic platform.
+This app uses Sumo Logic’s [Sumo Logic Collection Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source/) to collect the collectors and source logs from the Sumo Logic platform.
 
 ### Sample log messages
 
@@ -139,7 +139,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Sumo Collection](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Sumo Collection app is properly integrated and configured to collect and analyze your Sumo Logic data.
+Use the [Cloud-to-Cloud Integration for Sumo Logic Collection](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source/) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Sumo Logic Collection app is properly integrated and configured to collect and analyze your Sumo Logic data.
 :::
 
 ### Create a new collector and install the app
@@ -160,7 +160,7 @@ import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
 
 <AppCollectionOPtion3/>
 
-## Viewing the Sumo Collection dashboards​​
+## Viewing the Sumo Logic Collection dashboards​​
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
@@ -168,35 +168,35 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Collectors Overview
 
-The **Sumo Collection - Collectors Overview** dashboard provides a comprehensive view of data collection processes within Sumo Logic. It offers insights into total collectors, their distribution by type and version, the operational status of installed and hosted collectors, and collector-source relationships. You can track collectors by time zone, operating system, and associated sources, streamlining management and monitoring. With detailed health and performance metrics, the dashboard enables you to optimize data collection, make informed decisions, and ensure smooth operations. By offering real-time visibility and trend analysis, it empowers you to improve data collection infrastructure and prioritize actions for better performance and reliability.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sumo+Collection+-+Collectors+Overview.png' alt="Collectors Overview" />
+The **Sumo Logic Collection - Collectors Overview** dashboard provides a comprehensive view of data collection processes within Sumo Logic. It offers insights into total collectors, their distribution by type and version, the operational status of installed and hosted collectors, and collector-source relationships. You can track collectors by time zone, operating system, and associated sources, streamlining management and monitoring. With detailed health and performance metrics, the dashboard enables you to optimize data collection, make informed decisions, and ensure smooth operations. By offering real-time visibility and trend analysis, it empowers you to improve data collection infrastructure and prioritize actions for better performance and reliability.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sumo Logic+Collection+-+Collectors+Overview.png' alt="Collectors Overview" />
 
 ### Sources Overview
 
-The **Sumo Collection - Sources Overview** dashboard provides offers a detailed view of data sources within Sumo Logic, enabling effective monitoring and management of data ingestion. It displays metrics such as total sources, source categorization, distribution of Cloud-to-Cloud (C2C) sources, and the health status of C2C sources. You can analyze sources by error states, identify top C2C vendors, and track error counts to resolve issues quickly. The dashboard also highlights specific error types like THIRD-PARTY-CONFIG and THIRD-PARTY-GENERIC, providing insights to optimize data flow and improve data quality. With its analytics and visualizations, you can proactively manage data sources, make informed decisions, and ensure reliable data ingestion within the Sumo Logic ecosystem.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sumo+Collection+-+Sources+Overview.png' alt="Sources Overview" />
+The **Sumo Logic Collection - Sources Overview** dashboard provides offers a detailed view of data sources within Sumo Logic, enabling effective monitoring and management of data ingestion. It displays metrics such as total sources, source categorization, distribution of Cloud-to-Cloud (C2C) sources, and the health status of C2C sources. You can analyze sources by error states, identify top C2C vendors, and track error counts to resolve issues quickly. The dashboard also highlights specific error types like THIRD-PARTY-CONFIG and THIRD-PARTY-GENERIC, providing insights to optimize data flow and improve data quality. With its analytics and visualizations, you can proactively manage data sources, make informed decisions, and ensure reliable data ingestion within the Sumo Logic ecosystem.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sumo Logic+Collection+-+Sources+Overview.png' alt="Sources Overview" />
 
 ### Sources Time Lag
 
-The **Sumo Collection - Sources Time Lag** dashboard offers a comprehensive view of time delaysthat are affecting Cloud-to-Cloud (C2C) sources within the Sumo Logic platform. This dashboard is designed to help you to monitor data transmission efficiency by highlighting metrics such as average, maximum, and minimum time lags, while also identifying the top 10 sources with significant delays. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sources-Time-Lag.png' alt="Sources Time Lag" />
+The **Sumo Logic Collection - Sources Time Lag** dashboard offers a comprehensive view of time delaysthat are affecting Cloud-to-Cloud (C2C) sources within the Sumo Logic platform. This dashboard is designed to help you to monitor data transmission efficiency by highlighting metrics such as average, maximum, and minimum time lags, while also identifying the top 10 sources with significant delays. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Sumo-Collection/Sources-Time-Lag.png' alt="Sources Time Lag" />
 
-## Create monitors for Sumo Collection app
+## Create monitors for Sumo Logic Collection app
 
 import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 <CreateMonitors/>
 
-### Sumo Collection monitors
+### Sumo Logic Collection monitors
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
 |:--|:--|:--|:--|
 | `C2C Sources with THIRD-PARTY-CONFIG Errors` | This alert is triggered when Cloud-to-Cloud (C2C) sources encounter THIRD-PARTY-CONFIG errors, causing potential issues in the data ingestion process. | Critical | Count > 0 |
 
-## Upgrading the Sumo Collection app (Optional)
+## Upgrading the Sumo Logic Collection app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the Sumo Collection app (Optional)
+## Uninstalling the Sumo Logic Collection app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 

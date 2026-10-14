@@ -121,13 +121,13 @@ In this section, we'll introduce the following concepts and more:
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Square icon" width="50"/>
+    <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic Square icon" width="50"/>
     <h4><a href={useBaseUrl('docs/alerts/webhook-connections/audit-index')}>Sumo Logic Audit Index</a></h4>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Square icon" width="50"/>
+    <img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic Square icon" width="50"/>
     <h4><a href={useBaseUrl('docs/alerts/webhook-connections/schedule-searches-webhook-connections')}>Sumo Logic Scheduled Searches</a></h4>
     </div>
   </div>

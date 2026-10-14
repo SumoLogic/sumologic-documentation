@@ -110,7 +110,7 @@ This section is an overview of the multiple methods Sumo Logic provides for inst
 
 ### Collector installation and configuration
 
-Sumo provides multiple methods for installing a Collector:
+Sumo Logic provides multiple methods for installing a Collector:
 
 * UI installers. You provide configuration settings during the installation dialog. The installer writes these settings to `user.properties` in the collector’s `/config` directory. 
 * Command-line installer. You supply configuration settings on the command line, or using a varfile. the installer writes these settings to `user.properties` in the collector’s  `/config` directory.   
@@ -147,7 +147,7 @@ This section is an overview of how Installed Collectors and their Sources operat
 
 ### Installed Collector startup
 
-When you start up an Installed Collector for the first time it registers with Sumo Logic and creates any Sources that you have defined in a UTF-8 encoded JSON source configuration file.
+When you start up an Installed Collector for the first time it registers with Sumo Logic Logic and creates any Sources that you have defined in a UTF-8 encoded JSON source configuration file.
 
 When the collector tries to register with Sumo Logic it first sends the request to the US1 deployment. If your organization is in another deployment Sumo Logic will redirect the Collector to your deployment URL based on the authentication credential's deployment. You can define the deployment URL in the Collector's [user.properties](collector-installation-reference/user-properties.md) file with the `url` parameter.
 

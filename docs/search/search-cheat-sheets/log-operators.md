@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item. For a complete list of Sumo Logic Search operators, download the <a href={useBaseUrl('files/search-operators-cheat-sheet.pdf')} target="_blank">PDF version</a>.
 
-The following tables provide a list of available Sumo Logic parsers, aggregators, search operators, and mathematical expressions.  
+The following tables provide a list of available Sumo Logic Logic parsers, aggregators, search operators, and mathematical expressions.  
 
 ## Parsing
 
-Sumo provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
+Sumo Logic provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
 
 <table>
   <tr>

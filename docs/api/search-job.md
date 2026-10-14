@@ -74,7 +74,7 @@ import RateLimit from '../reuse/api-rate-limit.md';
 
 Search Job APIs have additional limits. A limit of 200 active concurrent search jobs applies to your organization. Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit. 
 
-This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
+This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo Logic UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
 You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches and helps keep you from reaching the Search Job API throttling limit. See [Deleting a search job](#delete-a-search-job) for details.
 
@@ -983,7 +983,7 @@ Ensure that you send ACCESSID/ACCESSKEY pair even if cookies are sent for the Se
 
 # Variables.
 PROTOCOL=$1    # HTTPS is the only acceptable PROTOCOL
-HOST=$2        # Use your Sumo endpoint as the HOST
+HOST=$2        # Use your Sumo Logic endpoint as the HOST
 ACCESSID=$3    # Authenticate with an access id and key
 ACCESSKEY=$4
 OPTIONS="--silent -b cookies.txt -c cookies.txt"

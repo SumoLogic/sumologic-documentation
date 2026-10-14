@@ -144,7 +144,7 @@ There are two places you can access the Sumo Logic add-on for Heroku: from the H
 
 Heroku users can use all Sumo Logic features associated with their account type, with a few exceptions.
 
-All Heroku add-on user accounts are created as Sumo Logic administrators, but no user information or roles can be added or edited in Sumo. You can only log into Sumo Logic from the Heroku application panel. For this reason, you cannot change your password once your account is created, and as required by Heroku, you cannot log out of Sumo Logic once you have installed the add-on.
+All Heroku add-on user accounts are created as Sumo Logic administrators, but no user information or roles can be added or edited in Sumo Logic. You can only log into Sumo Logic from the Heroku application panel. For this reason, you cannot change your password once your account is created, and as required by Heroku, you cannot log out of Sumo Logic once you have installed the add-on.
 
 In addition, the following features are not supported:
 
@@ -193,8 +193,8 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
     1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. <br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. 
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
-        * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
-        * **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
+        * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Logic Add-on.
+        * **Parse Expression**. For each Heroku application reporting data to Sumo Logic, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
 
         ```sumo
         if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName
@@ -216,7 +216,7 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 <AppInstall2/>
 
 :::note
-While using the **Sumo Add-on**, the value `_sourceCategory=heroku` should be used while installing the app.
+While using the **Sumo Logic Add-on**, the value `_sourceCategory=heroku` should be used while installing the app.
 :::
 
 ## Viewing Heroku Dashboards

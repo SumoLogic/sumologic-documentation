@@ -30,9 +30,9 @@ Use the following query to output only the word "world!" and the exclamation poi
 ... | substring("Hello world!", 6)
 ```
 
-### Output "Sumo" from "Sumo Logic"
+### Output "Sumo Logic" from "Sumo Logic"
 
-This query would output the word "Sumo" from the company name "Sumo Logic".
+This query would output the word "Sumo Logic" from the company name "Sumo Logic".
 
 ```sumo
 ... | substring("Sumo Logic", 0, 4)

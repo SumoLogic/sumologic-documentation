@@ -18,7 +18,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 :::
 
 :::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](https://sumodojo.slack.com).
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Logic Dojo](https://sumodojo.slack.com).
 :::
 
 <div className="box-wrapper" markdown="1">

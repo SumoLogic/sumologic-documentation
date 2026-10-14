@@ -1,11 +1,11 @@
 ---
 id: sumo-collection-source
-title: Sumo Collection Source
-sidebar_label: Sumo Collection
+title: Sumo Logic Collection Source
+sidebar_label: Sumo Logic Collection
 keywords:
   - cloud-to-cloud
   - sumo-collection
-description: The Sumo Collection Source aims to collect the list of the collectors and their sources and send them to Sumo Logic.
+description: The Sumo Logic Collection Source aims to collect the list of the collectors and their sources and send them to Sumo Logic.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="Sumo Logic icon" width="60"/>
 
-Sumo Logic's Cloud-to-Cloud (C2C) framework enables seamless data integration by leveraging API-based connections to collect insights from external systems and services. The Sumo Collection Source is part of this framework and is designed to gather a list of collectors and their associated sources directly from the Sumo Logic platform.
+Sumo Logic's Cloud-to-Cloud (C2C) framework enables seamless data integration by leveraging API-based connections to collect insights from external systems and services. The Sumo Logic Collection Source is part of this framework and is designed to gather a list of collectors and their associated sources directly from the Sumo Logic platform.
 
 This source supports both Installed and Hosted Collectors configured within a C2C environment. By using Sumo Logic’s API, it provides centralized, real-time visibility into collector and source health, operational status, and configuration metrics—helping teams proactively monitor deployments, troubleshoot issues, and maintain a reliable data collection pipeline.
 
@@ -32,7 +32,7 @@ For related info on collector health events, see [this doc](/docs/manage/health-
 
 ### Vendor configuration
 
-The Sumo Collection source requires you to provide the **Deployment**, **Access ID**, and **Access Key** to access the data.
+The Sumo Logic Collection source requires you to provide the **Deployment**, **Access ID**, and **Access Key** to access the data.
 
 #### Deployment
 
@@ -58,12 +58,12 @@ To generate the Access ID and Access Key, refer to [Create an access key](/docs/
 
 ### Source configuration
 
-When you create a Sumo Collection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Sumo Logic Collection Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Sumo Collection Source:
+To configure a Sumo Logic Collection Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **Sumo Collection**.
+1. Search for and select **Sumo Logic Collection**.
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
@@ -80,7 +80,7 @@ To configure a Sumo Collection Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Sumo Collection source, consider installing the Sumo Logic app for [Sumo Collection](/docs/integrations/saas-cloud/sumo-collection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Sumo Logic Collection source, consider installing the Sumo Logic app for [Sumo Logic Collection](/docs/integrations/saas-cloud/sumo-collection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -89,7 +89,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{“type”: “Sumo Collection”}` | Yes | Define the specific schema type. |
+| schemaRef | JSON Object  | `{“type”: “Sumo Logic Collection”}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. |
 | config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 

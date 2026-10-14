@@ -59,7 +59,7 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 1. **Description**. (Optional) Describe the parser.
 1. **Parser Configuration**. Paste your parser code in this area.
 1. **Import Messages from**. In this step, you enter or fetch messages that you’ll use to test whether the parser parses the messages correctly. There are three options:
-   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo Logic log search](#using-sumo-logic-log-search) below.
+   * **Sumo Logic Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo Logic log search](#using-sumo-logic-log-search) below.
    * **Saved Logs**. You can select a set of messages that you saved when previously using the **Paste Logs** option. Follow the instructions in [Using saved logs](#using-saved-logs) below.
    * **Paste Logs**. You can paste logs directly into the **Log Messages** area. Follow the instructions in [Using paste logs](#using-paste-logs) below. 
 
@@ -80,7 +80,7 @@ This section describes the three methods of obtaining messages for use in testin
 
 To import messages by running a Sumo Logic search:
 
-1. Choose the **Sumo Log Search** option to display this popup.<br/><img src={useBaseUrl('img/cse/search-for-sample-logs.png')} alt="Search for sample logs" width="600"/>
+1. Choose the **Sumo Logic Log Search** option to display this popup.<br/><img src={useBaseUrl('img/cse/search-for-sample-logs.png')} alt="Search for sample logs" width="600"/>
 1. Enter a log query, time range, the number of messages you want returned, and click **OK**.
 1. The popup now displays the results of your search.<br/><img src={useBaseUrl('img/cse/messages-returned.png')} alt="Messages returned" width="600"/>
 1. Click **OK** to close the popup.

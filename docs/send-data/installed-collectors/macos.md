@@ -31,7 +31,7 @@ Download the Collector in either of the following ways.
 
 ### Via browser
 
-Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/about-apis/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
+Open a browser and enter the static URL for your Sumo Logic deployment. See [Which endpoint should I use?](/docs/api/about-apis/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install Collector
 
@@ -70,11 +70,11 @@ Specify the installation parameters on the command line, or create a variables f
 
 1. Open the downloaded installer file to mount it.   
     ```sh
-    open /Volumes/SumoCollector/Sumo\ Logic\ Collector\ Installer.app
+    open /Volumes/SumoCollector/Sumo Logic\ Logic\ Collector\ Installer.app
     ```
 1. In a terminal prompt, change the directory to the Java class within the mounted location:   
     ```sh
-    cd /Volumes/SumoCollector/Sumo\ Logic\ Collector\ Installer.app/Contents/MacOS/
+    cd /Volumes/SumoCollector/Sumo Logic\ Logic\ Collector\ Installer.app/Contents/MacOS/
     ```
 1. Run the JavaApplicationStub binary with the parameters that you want to configure. See [Parameters for the Command Line Installer](collector-installation-reference/parameters-command-line-installer.md) for a description of the parameters.
 
@@ -122,11 +122,11 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 1. In a terminal prompt, change the directory to the Collector installation directory. Example:
    ```bash
-   cd /Applications/Sumo\ Logic\ Collector
+   cd /Applications/Sumo Logic\ Logic\ Collector
    ```
 1. Run the JavaApplicationStub binary with the `-q` option, which executes the command without presenting additional prompts. Example:
    ```bash
-   sudo Sumo\ Logic\ Collector\ Uninstaller.app/Contents/MacOS/JavaApplicationStub -q
+   sudo Sumo Logic\ Logic\ Collector\ Uninstaller.app/Contents/MacOS/JavaApplicationStub -q
    ```
 
 ### Delete the Collector from Sumo Logic

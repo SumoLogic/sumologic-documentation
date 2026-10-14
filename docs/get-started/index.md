@@ -57,7 +57,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('/docs/get-started/training-certification-faq/')}><img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="Sumo Academy icon" width="100"/><h4>Training and Certifications FAQ</h4></a>
+  <a href={useBaseUrl('/docs/get-started/training-certification-faq/')}><img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="Sumo Logic Academy icon" width="100"/><h4>Training and Certifications FAQ</h4></a>
   <p>Find answers to frequently asked questions about Sumo Logic training, certifications, and learning resources.</p>
   </div>
 </div>
@@ -69,12 +69,12 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/get-started/sumo-logic-ui')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Square icon" width="40"/><h4>Tour the Sumo Logic UI</h4></a>
+  <a href={useBaseUrl('docs/get-started/sumo-logic-ui')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic Square icon" width="40"/><h4>Tour the Sumo Logic UI</h4></a>
   <p>Get to know the Sumo Logic platform user interface.</p>
   </div>
 </div><div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/get-started/sumo-logic-ui-classic')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Square icon" width="40"/><h4>Tour the Sumo Logic Classic UI</h4></a>
+  <a href={useBaseUrl('docs/get-started/sumo-logic-ui-classic')}><img src={useBaseUrl('img/reuse/sumo-square.png')} alt="Sumo Logic Square icon" width="40"/><h4>Tour the Sumo Logic Classic UI</h4></a>
   <p>Get to know the classic Sumo Logic platform user interface.</p>
   </div>
 </div>
@@ -105,7 +105,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/get-started/keyboard-shortcuts')}><img src={useBaseUrl('img/icons/general/computer.png')} alt="Computer icon" width="50"/><h4>Keyboard Shortcuts</h4></a>
-  <p>Complete reference to Windows and macOS keyboard shortcuts for the Sumo Logic UI. </p>
+  <p>Complete reference to Windows and macOS keyboard shortcuts for the Sumo Logic Logic UI. </p>
   </div>
 </div>
 <div className="box smallbox card">

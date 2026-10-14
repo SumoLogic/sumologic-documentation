@@ -180,7 +180,7 @@ Capitalize "Source" only where it's the literal UI text, such as the **Add Sourc
 
 **Space bar**. Two words, not one.
 
-**Sumo Logic**. For all references, always use "Sumo Logic," never "Sumo" alone, including in the possessive. This helps our SEO, which is essential for a SaaS offering. To be more conversational, "we" is also fine.
+**Sumo Logic**. For all references, always use "Sumo Logic," never "Sumo Logic" alone, including in the possessive. This helps our SEO, which is essential for a SaaS offering. To be more conversational, "we" is also fine.
 
 
 ## T

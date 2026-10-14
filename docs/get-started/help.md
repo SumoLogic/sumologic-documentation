@@ -35,7 +35,7 @@ Sumo Logic provides free training. With our Self-Paced program, you can take Sum
 
 ## Community
 
-Want to collaborate with other Sumo Logic users for tips and tricks and help with issues? Go to **Help** > **Community** and visit the Sumo Dojo, the online community for users of Sumo Logic and aficionados of analytics.
+Want to collaborate with other Sumo Logic users for tips and tricks and help with issues? Go to **Help** > **Community** and visit the Sumo Logic Dojo, the online community for users of Sumo Logic and aficionados of analytics.
 
 You can also search for and request features, comment, and vote on issues that are important to you.
 

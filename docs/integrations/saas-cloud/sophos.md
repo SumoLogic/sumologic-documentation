@@ -45,7 +45,7 @@ This app uses Sumo Logic’s Sophos Source to collect [Alerts](https://developer
   "severity": "medium",
   "tenant": {
     "id": "aaabbbdddcccddd",
-    "name": "Sumo AB"
+    "name": "Sumo Logic AB"
   },
   "type": "Event::Endpoint::SavDisabled",
   "person": {

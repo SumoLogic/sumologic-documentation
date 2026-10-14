@@ -33,7 +33,7 @@ The sections below describe the configuration prompts in the CloudFormation temp
 
 AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
 
-`AWS Observability Apps-\<Version\> \<Date of installation\>` folder of dashboards by default will be created in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
+`AWS Observability Apps-\<Version\> \<Date of installation\>` folder of dashboards by default will be created in the personal library and will be shared with the Sumo Logic org of the user that the Sumo Logic Access keys belong to.
 
 ## Step 1: Open the CloudFormation template
 

@@ -18,7 +18,7 @@ The Audit Index provides event logs in plain text on the internal events that oc
 This index is different from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index), and there is some
 overlap of audited events. The Audit Event Index provides event logs in JSON on activities from your account.
 
-Before you can use the audit index, an administrator must enable it. When the audit index is enabled, Sumo logs messages to it once every five minutes. Note that data does not backfill.
+Before you can use the audit index, an administrator must enable it. When the audit index is enabled, Sumo Logic logs messages to it once every five minutes. Note that data does not backfill.
 
 :::note
 All users can access the data contained within the audit index, but only administrators can enable and disable auditing.
@@ -73,7 +73,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 | Action | The action that was performed. Actions vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions).    |
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
-| Interface | Indicates how the event was initiated from the Sumo Logic UI or using an API. Values include: "UI", "API", and "INTERNAL". |
+| Interface | Indicates how the event was initiated from the Sumo Logic Logic UI or using an API. Values include: "UI", "API", and "INTERNAL". |
 | `_sourceCategory` | The source category associated with the event type. For more information, see [Audit index source categories](#audit-index-source-categories). |
 | `_sourceHost` | IP address of the source's host, or "no_sourceHost". |
 | sourceSession | The session ID associated with the event, or "no_session". |

@@ -6,7 +6,7 @@ description: Browse all Sumo Logic apps for Amazon Web Services, including integ
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide has documentation for all of the apps that Sumo provides for Amazon and AWS. See also: [AWS Observability Solution](/docs/observability/aws).
+This guide has documentation for all of the apps that Sumo Logic provides for Amazon and AWS. See also: [AWS Observability Solution](/docs/observability/aws).
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
