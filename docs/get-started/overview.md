@@ -98,7 +98,7 @@ Sumo Logic provides access from anywhere since it is fully browser-based. It als
 This section describes local collection, centralized collection, and data collection best practices.
 
 * [Basics](/docs/send-data/best-practices#local-and-centralized-data-collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
-* [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, etc.). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
+* [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, and so on). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
 * [Centralized Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review centralized collection and its pros and cons. Centralized collector installation involves dedicated collection machines that run the collector agent and collect logs from many different target machines at once (a 1-to-many relationship between collectors and hosts). This concept prevents resource usage on the target machines and removes the need for outbound internet access on the target machines.
 
 :::training Micro Lesson
@@ -125,9 +125,9 @@ Once you've set up a collector and source, read these tips on configuring and ma
 ### Data volume and retention
 
 * [Data Retention](/docs/manage/partitions/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary.
-* [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
+* [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo Logic tool.
 * [Audit Index](/docs/manage/security/audit-indexes/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
-* [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
+* [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in the Sumo Logic App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](/docs/integrations/sumo-apps/audit). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 
 

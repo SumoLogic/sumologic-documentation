@@ -182,7 +182,7 @@ To see dashboards, searches, and folders that have been shared with you, do the 
 
 After you start a log search, you can “pin” it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
 
-You must start a search for the **Pin** option to appear. To pin a search, do the following:
+Start a search for the **Pin** option to appear. To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.

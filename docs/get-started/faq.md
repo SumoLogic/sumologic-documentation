@@ -24,7 +24,7 @@ For example, from our own production logs, we use the following:
 2012-08-16 13:39:36,979 [metrics] INFO com.sumologic.util.Reporter - com.sumologic.util.scala.Aggregator.Buffer[/usr/sumo/stream-19.5-3/logs/stream.log]-Size-Meter (bytes/s) count=78847, fifteenMinuteRate=0.26, fiveMinuteRate=0.11, oneMinuteRate=0.00, meanRate=1.06
 ```
 
-This is a key-value pair log, which is easy to parse and easy to read in Sumo.
+This is a key-value pair log, which is easy to parse and easy to read in Sumo Logic.
 
 ## What types of logs can I collect?
 
@@ -46,7 +46,7 @@ The following table lists data types and some of the popular sources that produc
 
 ## Where is my data stored?
 
-Where your data is stored depends on the geographical location the Account Owner selects when creating your Sumo Logic account. Your data is stored only in your selected region.
+Where your data are stored depends on the geographical location the Account Owner selects when creating your Sumo Logic account. Your data are stored only in your selected region.
 
 import AWSDeploymentRegion from '../reuse/aws-region-by-sumo-deployment.md';
 

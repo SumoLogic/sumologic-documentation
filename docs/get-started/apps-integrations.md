@@ -19,7 +19,7 @@ Sumo Logic apps address these common use cases:
 * **Provide real-time insights**. With Sumo Logic, enterprises can easily extract machine data insights to provide greater intelligence around their customers, products, and application usage. These insights provide a more accurate and complete analysis for business users.
 * **Accelerate Cloud deployment**. Sumo Logic enables enterprises to automate and speed the development and deployment process for cloud-based applications. Companies can rapidly detect, identify and resolve application issues.
 * **Decrease app time to market**. Sumo Logic facilitates a consistent release process, resulting in timely releases. It aids in quickly identifying application issues and configuration changes across development, testing, and deployment environments.
-* **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real-time through a single, highly scalable solution.
+* **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data are centralized, secured, and easily analyzed in real time through a single, highly scalable solution.
 
 To learn about the vendors and products that Sumo Logic integrates with, refer to the [Product List](/docs/integrations/product-list/).
 
@@ -109,7 +109,7 @@ import ClassicAppInstall from '../reuse/apps/app-install.md';
 
 ### How to install classic apps in multiple environments
 
-If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
+If you have multiple environments generating data that you want to monitor using Sumo Logic apps, for example, environments for production, development, and testing, you’ll need to perform the following steps in each environment:
 
 1. Set up Sumo Logic Collectors and Sources for each environment. Make sure that Source Hosts and Source Categories are named correctly in order to clearly indicate the environment name to the apps when they are installed.
 1. Perform any prerequisites required for the particular Sumo Logic app in that environment. Each Sumo Logic app has unique requirements, so make sure to follow the specific instructions for that app.
@@ -152,7 +152,7 @@ Apps are dependent on the Source Category [metadata](/docs/search/get-started-w
 
 #### How can I change the Source Category associated with an app?
 
-To change the Source Category used by an app, you can simply reinstall the same app. Currently, apps cannot be uninstalled or edited in any other way.
+To change the Source Category used by an app, you can reinstall the same app. Currently, apps cannot be uninstalled or edited in any other way.
 
 For more information, see [Custom Data Filters](#custom-data-filters).
 
@@ -160,7 +160,7 @@ For more information, see [Custom Data Filters](#custom-data-filters).
 
 Sumo Logic apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the app itself. This way, you can try the searches in a Sumo Logic app against your data before you decide to install it. Or you can run the searches to see how good example queries are written.
 
-To run a saved search from a Sumo Logic app, just find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
+To run a saved search from a Sumo Logic app, find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
 
 In order to run a search from an app, you would first need to have data ingested in your system that the search query would find. For example, before you can run a search from the Sumo Logic app for Apache, you must set up a Collector and Source to ingest your Apache data. If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
@@ -191,7 +191,7 @@ When you install a Sumo Logic app, you tell Sumo what data to search and present
 
 Most typically, you specify the source category that was assigned to the logs or metrics source when data collection was set up for the app. 
 
-However, if you want to use multiple metadata fields as your filter criteria, for example, both source category and source host, you must define a custom data filter. The app will prefix its searches with your custom data filter. 
+However, if you want to use multiple metadata fields as your filter criteria, for example, both source category and source host, you need to define a custom data filter. The app will prefix its searches with your custom data filter. 
 
 ### Define a custom data filter
 
@@ -208,5 +208,5 @@ The table below has examples of custom data filters.
 | :-- | :-- |
 | `_sourceHost=stage-EMEA* AND _sourceCategory=Apache*` | App searches will return data whose source host begins with the string stage-EMEA and whose source category begins with the string Apache. |
 | `_sourceCategory=Apache* AND "dev-us"` | App searches will return log data that contains the string dev-us whose source category begins with the string Apache. |
-| `_sourceHost = "Jon Smith"` | App searches will return data whose source host is Jon Smith. If a metadata field value contains spaces, you must use quotes. |
+| `_sourceHost = "Jon Smith"` | App searches will return data whose source host is Jon Smith. If a metadata field value contains spaces, you need to use quotes. |
 | `_sourceHost=stage-EMEA* AND (_source=Apache* or _source=DB)` | App searches will return data whose source host begins with the string stage-EMEA and whose source either begins with Apache or is DB. We use parentheses to group the logic operations. |

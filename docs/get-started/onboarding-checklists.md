@@ -30,7 +30,7 @@ After configuring Sources to collect the logs you need, you can begin using sear
 * [Parsing](/docs/search/search-query-language/parse-operators) Sumo Logic provides a number of ways to parse fields in your log messages.
 * [Aggregating](/docs/search/search-query-language/group-aggregate-operators). Aggregating functions evaluate messages and place them into groups, which allows you to count and order your results. Once you have aggregate results, you can visualize your data using charts.
 * [Search Operators](/docs/search/search-query-language/group-aggregate-operators). This section provides detailed syntax, rules, and examples for Sumo Logic Operators, Expressions, and Search Language.
-* [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). An efficient search query returns targeted results as quickly as possible, with as little "noise" as possible. There are some easy ways to structure queries that run efficiently—returning better results in less time. To write more efficient search queries, see the following tips.
+* [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). An efficient search query returns targeted results as quickly as possible, with as little "noise" as possible. There are some easy ways to structure queries that run efficiently, returning better results in less time. To write more efficient search queries, see the following tips.
 
 ### Advanced search operators and capabilities
 
@@ -63,7 +63,7 @@ Once you have created search queries, you can visualize your data using charts, 
 
 ### Working with metrics
 
-Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](/docs/metrics/introduction). Metrics-related features for analysts include:
+Sumo Logic supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo Logic, see [Overview of Metrics in Sumo Logic](/docs/metrics/introduction). Metrics-related features for analysts include:
 
 * [Metric queries](/docs/metrics/metrics-queries). You can query your metrics from a metric query tab. For information about the operators you can use in metric queries, see [Metric Operators](/docs/metrics/metrics-operators). 
 * Metric charts. You can create [map charts](/docs/metrics/metrics-queries/map-charts), [heat maps](/docs/metrics/metrics-queries/heat-map), and [funnel charts](/docs/metrics/metrics-queries/funnel-chart).
@@ -107,7 +107,7 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 
 ### Managing collection and data volume
 
-Sumo provides a tool for tracking and managing collection and data volume.
+Sumo Logic provides a tool for tracking and managing collection and data volume.
 
 * [Log Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index). Sumo Logic writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume), which provides pre-configured searches and dashboards for analyzing log ingestion. 
 * [Metric Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index.md). The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
@@ -141,17 +141,17 @@ Sumo Logic provides a number of tools for managing users' access to Sumo Logic 
 * [Set password policies](/docs/manage/security/set-password-policy.md). Set rules for password expiration, reuse, and lock out.
 * [Create an Allowlist for IP or CIDR addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses.md). Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 * [Manage access keys](/docs/manage/security/access-keys.md). Access keys are used in sumo to securely register new collectors and for accessing Sumo Logic APIs.
-* [Sumo audit index](/docs/manage/security/audit-indexes/audit-index.md). If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
+* [Sumo audit index](/docs/manage/security/audit-indexes/audit-index.md). If you enable the audit index, Sumo Logic captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
 * [Support account access](/docs/manage/security/enable-support-account.md). You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 * [Set Up SAML for Single Sign-On](/docs/manage/security/saml). Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. In addition to basic SAML functionality, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
 * [Role-based access control (RBAC)](/docs/manage/users-roles). Sumo Logic supports RBAC. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments grant users specific capabilities, and govern what data users can view.   
 
 ### Metrics
 
-Sumo Logic supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo Logic, see [Overview of Metrics in Sumo](/docs/metrics/introduction). Metrics-related features for administrators include:
+Sumo Logic supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo Logic, see [Overview of Metrics in Sumo Logic](/docs/metrics/introduction). Metrics-related features for administrators include:
 
 * [Metric Rules Editor](/docs/metrics/metric-rules-editor). An interface you can use to tag metrics with data derived from the metric identifier. Then, users can use those tags in metric queries.
-* [Logs-to-Metrics](../metrics/logs-to-metrics.md). Sumo’s Logs-to-Metrics features allow you to extract or create metrics from log data:
+* [Logs-to-Metrics](../metrics/logs-to-metrics.md). Sumo Logic’s Logs-to-Metrics features allow you to extract or create metrics from log data:
   * You can extract metrics that are embedded in logs. For example, your logs might contain numerical values for latency, bytes sent, request time, and so on. You can extract multiple metrics from a single log.
   * You can count logs as a metric. For example, you might count the number of log messages that contain a 404 status code. 
 
