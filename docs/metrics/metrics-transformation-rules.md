@@ -17,7 +17,7 @@ Metrics transformation rules are useful when:
 ## Key facts
 
 * A metrics transformation rule applies to metrics that match a selector that you define for the rule. You can check what metrics will be affected by entering the selector in a metric query tab.  
-* By default, Sumo Logic saves your metrics for 400 days. If you aggregate the metrics that match the rule selector, you can also choose to discard the raw metrics entirely by setting their retention to **Do Not Store**.
+* By default, Sumo Logic saves your metrics for 400 days. If you aggregate the metrics that match the rule selector, you can also choose to discard the raw metrics entirely by setting their retention to **Do Not Store**. Rules that already use 15-day retention get migrated to 400 days.
 * Optionally, you aggregate the metrics that match the selector by one or more dimensions. If you choose to aggregate the metrics:
    * Aggregated metrics are retained for 400 days.
    * You can reduce the retention time for the raw (non-aggregated) metrics to zero. In this case, Sumo Logic will aggregate the metrics, and discard the raw metrics.
@@ -70,16 +70,16 @@ Metrics transformation rules are useful when:
 
 ## Metrics transformation rule examples
 
-### Discard metrics from development and test environments
+### Discard raw metrics from development environments
 
-Assume that the metrics you collect from your dev environment are of no interest once they've been aggregated. You tag metrics from the dev environment with a dimension whose key is “environment” and value is “dev”. When you configure your rule:
+Assume that the raw metrics you collect from your dev environment are of no interest once they've been aggregated, but you want to keep service-level trends. You tag metrics from the dev environment with a dimension whose key is “environment” and value is “dev”. When you configure your rule:
 
 1. **Selector**. Enter: `environment=dev`
-1. **Aggregate On**. Add the dimensions you want to aggregate by, for example, `environment`.
+1. **Aggregate On**. Add the dimensions you want to aggregate by, for example, `service`.
 1. **Retention**. Select **Do Not Store**.
 1. **Aggregate Retention**. **400 days** (the only available option).
 
-All metrics that match the selector `environment=dev` are aggregated and the raw metrics are discarded, so you keep the aggregated trend data without paying to store 400 days of raw dev-environment metrics you have no interest in.
+All metrics that match the selector `environment=dev` are aggregated and the raw metrics are discarded, so you keep the aggregated trend data without storing raw dev-environment metrics.
 
 ### Aggregate high cardinality and ephemeral data for long term trending
 
