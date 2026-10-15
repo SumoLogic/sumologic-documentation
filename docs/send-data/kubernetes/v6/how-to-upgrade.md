@@ -145,7 +145,6 @@ These keys are consumed directly in the single-layer collector config template:
 |-----|-------------|
 | `metadata.metrics.logLevel` | OTel Collector log verbosity |
 | `metadata.metrics.metricsLevel` | Internal metrics verbosity |
-| `metadata.metrics.useSumoK8sProcessor` | `k8s_tagger` vs `k8sattributes` processor selection |
 | `metadata.metrics.waitForMetadata` | Wait for K8s API cache before processing |
 | `metadata.metrics.waitForMetadataTimeout` | Timeout for the above |
 | `metadata.metrics.extractPodLabels` | Extract pod labels as resource attributes |
@@ -170,6 +169,7 @@ These keys configure the metadata StatefulSet's scheduling, resources, and scali
 | `metadata.metrics.statefulset.extraEnvVars` | `sumologic.metrics.collector.otelcol.extraEnvVars` |
 | `metadata.metrics.statefulset.extraVolumes` | `sumologic.metrics.collector.otelcol.extraVolumes` |
 | `metadata.metrics.statefulset.extraVolumeMounts` | `sumologic.metrics.collector.otelcol.extraVolumeMounts` |
+| `metadata.metrics.statefulset.persistentVolumeClaimRetentionPolicywhenScaled` | `sumologic.metrics.collector.otelcol.persistentVolumeClaimRetentionPolicywhenScaled` |
 | `metadata.metrics.autoscaling.enabled` | `sumologic.metrics.collector.otelcol.autoscaling.enabled` |
 | `metadata.metrics.autoscaling.minReplicas` | `sumologic.metrics.collector.otelcol.autoscaling.minReplicas` |
 | `metadata.metrics.autoscaling.maxReplicas` | `sumologic.metrics.collector.otelcol.autoscaling.maxReplicas` |

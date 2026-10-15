@@ -124,7 +124,7 @@ Open the section's `index.md` and add a card for your doc: copy an existing `<di
 
 ### Step 6: Create CID URL
 
-We assign each document a permanent URL with a content ID (CID) number, which performs a 301 redirect to the canonical URL. This means future changes to the canonical URL, such as a product name change, won't break **Learn More** links or require code changes to the user interface.
+We assign each document a permanent URL with a content ID (CID) number, which performs a 301 redirect to the canonical URL. This means future changes to the canonical URL, such as a product name change, will not break **Learn More** links or require code changes to the user interface.
 
 This URL is then placed in the UI in the appropriate place. For example, `cid=0071` links to a metrics page, which appears in the product in the **Metrics** section as a help link.
 

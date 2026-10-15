@@ -17,7 +17,7 @@ Following are the updates made in March 2026.
 
 #### New integrations
 
-We are excited to introduce new integrations for the following services:
+New integrations for the following services:
 
 - [1Password](/docs/integrations/automation-integrations/automation-integration-catalog/1password)
 - [Sumo Logic Cloud Monitor](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-cloud-monitor/)
