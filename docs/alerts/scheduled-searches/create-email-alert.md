@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can set a scheduled search to alert you with an email when a set of conditions are satisfied. A maximum of 120 emails are sent per day per scheduled search.
 
-:::note
+:::important
 Scheduled Search email alerts are sent from `noreply@notifications.sumologic.com`. To keep receiving them:
 * Allowlist this address so the emails are not marked as spam.
 * Update any email filters, inbox rules, distribution lists, or automated workflows that depend on the previous sender address.
