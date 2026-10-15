@@ -47,7 +47,7 @@ For information about ThreatConnect, see [ThreatConnect documentation](https://d
 
 | Version | Date | Description |
 |:--|:--|:--|
-| v1.4 | October 15, 2026 | <ul><li>Added **Tags** and **Tags Mode** fields to the **Update Intelligence** action. You can now add, replace, or remove tags on an indicator.</li><li>Fixed an issue where the **Search Intelligence** action could fail when you didn't select an indicator type.</li></ul> |
+| v1.4 | October 15, 2026 | <ul><li>Added **Tags** and **Tags Mode** fields to the **Update Intelligence** action. You can now add, replace, or remove tags on an indicator.</li><li>Added the **Owner** field to the **Update Intelligence** action, matching the **Search Intelligence** action, so you can specify the owner of the indicator you want to update.</li><li>Fixed an issue where the **Search Intelligence** action could fail when you didn't select an indicator type.</li></ul> |
 | v1.3 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
 | | February 19, 2026 | <ul><li>Added an observations parameter to the **Update Intelligence** action to enable recording observation counts for indicators.</li><li>Added output field definitions, which help with playbook data mapping.</li></ul> |
 | | February 11, 2026 | <ul><li>Improved API error handling.</li><li>Updated **Search Intelligence** handling to avoid errors on empty or missing results.</li></ul> |
