@@ -34,7 +34,6 @@ Before you can access App Catalog, you must have the Access App Central role cap
 ## Work with integrations in App Catalog
 
 Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
-
 ### Install an integration from App Catalog
 
 1. Use the **INSTALL** in the lower left corner of the integration box. After installation is complete, **INSTALLED** replaces the **INSTALL** link in the corner of the integration box.
