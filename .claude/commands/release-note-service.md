@@ -279,6 +279,7 @@ Before finishing, verify:
 * [ ] Standard image URL is used
 * [ ] Keywords confirmed with user
 * [ ] Category label uses correct format: (Apps), (Collection), (Manage), (Search), (New UI)
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] Content is clear and focused on user benefits
 * [ ] Documentation link uses relative path (starts with `/docs/`)
 * [ ] No trailing whitespace
@@ -398,6 +399,7 @@ Checklist:
 * [ ] Standard image URL is used
 * [ ] hide_table_of_contents: true is present
 * [ ] Documentation link uses relative path
+* [ ] Content opens with a direct statement — no announcement framing
 * [ ] Content is clear and concise
 * [ ] Keywords confirmed with user
 

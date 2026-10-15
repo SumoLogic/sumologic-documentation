@@ -393,6 +393,7 @@ Fixed issues while selecting variables containing the period character in textar
 * [ ] Import statement included
 * [ ] H2 header: "## {Month} release"
 * [ ] Intro: "Following are the updates made in {Month} {YYYY}."
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] Integration changes use [Added]/[Updated] WITH descriptions
 * [ ] Integration links point to correct paths
 * [ ] All sections properly formatted (H3 for main, H4 for subsections)
