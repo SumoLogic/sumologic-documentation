@@ -2,7 +2,7 @@
 id: normalized-threat-rules
 title: Normalized Threat Rules
 sidebar_label: Normalized Threat Rules
-description: Cloud SIEM's built-in threat rules pass alerts from a security product to the signal generation process, and are normalized work across multiple security products.
+description: Cloud SIEM's built-in threat rules pass alerts from a security product to the signal generation process, and are normalized to work across multiple security products.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -39,7 +39,7 @@ There are multiple categories of normalized threat rules for different types of 
 
 ### intrusion
 
-For messages that indicate an intrusion has taken place These messages typically include a signature for the exploit attempted. 
+For messages that indicate an intrusion has taken place. These messages typically include a signature for the exploit attempted. 
 
 Log sources that issue intrusion-related messages include:
 
@@ -88,15 +88,12 @@ Cloud SIEM provides the following normalized malware rules:
 
 ### direct
 
-For messages that indicate suspicious or malicious activity based on behavior, rather than a signature. These messages don’t usually include a signature, instead might contain the command line arguments and other actions taken by the adversary.
-
 Behavior-based detections are divided among the six more specific types described below. The `direct` type is retained for out-of-the-box mappings from generic sources that can't be assigned to a single type, such as the Microsoft Graph Security API catch-all mappings, and for your own log mappings that set `threat_ruleType` to `direct`.
 
-Log sources that remain mapped to `direct` include:
+After the endpoint and cloud migration completes, log sources that remain mapped to `direct` include:
 
 * Microsoft Graph Security API catch-all mappings
-* Microsoft 365 Defender
-* Microsoft Azure Advanced Threat Protection (standalone mapping)
+* Microsoft Advanced Threat Analytics (ATA)
 * Exabeam
 * Qualys
 
@@ -115,6 +112,7 @@ Log sources that issue endpoint-related messages include:
 * Carbon Black
 * Palo Alto Cortex XDR
 * Windows Defender and Azure Defender for Endpoint
+* Microsoft 365 Defender (Microsoft Graph Security API)
 * Sophos
 * Trend Micro
 * McAfee
@@ -127,7 +125,7 @@ Log sources that issue endpoint-related messages include:
 * Tanium
 * FireEye HX
 * Bitdefender
-* Google Workspace
+* Google Workspace Alert Center (mobile device management)
 
 Cloud SIEM provides the following normalized endpoint rule:
 
@@ -162,7 +160,7 @@ Log sources that issue cloud-related messages include:
 * Orca Security
 * Wiz
 * Palo Alto Prisma Cloud
-* Azure
+* Microsoft Defender for Cloud (Azure security alerts)
 
 Cloud SIEM provides the following normalized cloud rule:
 
@@ -248,8 +246,8 @@ The `endpoint`, `runtime`, `cloud`, `identity`, `network`, and `data_protection`
 | `identity` | Completed August 4, 2026 |
 | `network` | Completed August 17, 2026 |
 | `data_protection` | Completed August 17, 2026 |
-| `cloud` | Target: On Hold |
-| `endpoint` | Target: On Hold |
+| `cloud` | Target: January 11, 2027 |
+| `endpoint` | Target: January 11, 2027 |
 
 :::note
 All six rules are available now, but out-of-the-box log mappings are migrating in phases. The remaining dates in the table are targets and may shift. For the actual dates that out-of-the-box mappings migrate, monitor the [Cloud SIEM content release notes](/release-notes-cse/). Until a source's out-of-the-box mappings are migrated, its records keep a `threat_ruleType` of `direct` and continue to fire [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md).
@@ -261,9 +259,9 @@ Types are assigned per log mapping, not per vendor, so a single security product
 
 ### Migrate custom content
 
-Custom content that depends on [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) won't apply to records once their out-of-the-box mappings are migrated. For sources that haven't migrated yet, make these updates before their target date:
+Custom content that depends on [Normalized Security Signal](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/MATCH-S00402.md) won't apply to records once their out-of-the-box mappings are migrated. Tuning expressions don't transfer to the new rules, so signals from migrated sources arrive untuned and alert volume can increase. Custom rules that match on `threat_ruleType = 'direct'` stop matching records from migrated sources without raising an error. For sources that haven't migrated yet, make these updates before they migrate:
 
-* Re-scope any [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions) on `MATCH-S00402` to the new rule IDs for those sources.
-* If there are custom rules based on `MATCH-S00402` or utilizing `threat_ruleType = 'direct'`, migrate expression logic to the new detection category rules as tuning expressions or modify those rules to use the new `threat_ruleType` values. For example, if you have a custom rule that looks for `threat_ruleType = 'direct'` and a specific signature, you can change it to look for `threat_ruleType = 'endpoint'` and the same signature once the source's out-of-the-box mappings are migrated.
+* Re-scope any [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions) on `MATCH-S00402` to the new rule IDs for those sources. For endpoint and cloud sources, these are `MATCH-S01158` and `MATCH-S01160`.
+* If there are custom rules based on `MATCH-S00402` or utilizing `threat_ruleType = 'direct'`, migrate expression logic to the new detection category rules as tuning expressions or modify those rules to use the new `threat_ruleType` values. For example, if you have a custom rule that looks for `threat_ruleType = 'direct'` and a specific signature, you can change it to look for `threat_ruleType = 'endpoint'` and the same signature once the source's out-of-the-box mappings are migrated. To match records both before and after migration, use a list of values, such as `threat_ruleType IN ('direct', 'endpoint', 'cloud')`.
 * Update any [custom insights](/docs/cse/records-signals-entities-insights/configure-custom-insight) that reference `MATCH-S00402`.
-* Update saved searches, dashboards, or automations that filter on `threat_ruleType = 'direct'`.
+* Update Cloud SOAR playbooks, webhooks, saved searches, dashboards, or automations that reference `MATCH-S00402` or filter on `threat_ruleType = 'direct'`.
