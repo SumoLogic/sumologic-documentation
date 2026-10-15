@@ -403,7 +403,6 @@ In addition to settings, Cloud SOAR administrators have privileged access to the
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-menu.png')} alt="Cloud SOAR Automation menu" style={{border: '1px solid gray'}} width="400"/>
 
 Within Automation, you’ll see subsections for:
-* [App Catalog](/docs/integrations/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
 * [Playbooks](/docs/platform-services/automation-service/playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
 * [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/). Lets you connect third party tools through APIs.
@@ -526,7 +525,7 @@ Let's walk through how to install and configure useful integrations through App 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog** in the left navigation bar. 
 2. Click the **Integrations** tab in the top tab row.<br/>The automation integrations page shows a long list of installed and available integrations to augment Cloud SOAR functionality with both Sumo Logic and third-party vendor functionality.<br/><img src={useBaseUrl('img/cloud-soar/app-central-integrations-tab.png')} alt="App Catalog Integrations tab" style={{border: '1px solid gray'}} width="600"/>
-1. Choose a sample integration from the list and click it. A popup window will appear showing the details of the integration, including version, description, and a list of actions that are supported in automations.
+1. Choose a sample integration from the list and click it. You'll see the details of the integration, including version, description, and a list of actions that are supported in automations.
 1. Navigate to the **Integrations** view to show installed integrations.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>In this view, you can see the integrations that have already been installed and configured in the system.
 1. Click an integration. The panel on the right will show the integration details, including available actions.  Many integrations after install will require appropriate configuration using "resources".
 1. Move the mouse cursor over the resource, then click the **Edit** (pencil) icon.<br/><img src={useBaseUrl('img/cloud-soar/example-integration-resource.png')} alt="Example integration resource" style={{border: '1px solid gray'}} width="600"/>

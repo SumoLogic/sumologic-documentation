@@ -143,7 +143,7 @@ To create a playbook so you can add it to a monitor, see [Create a new playbook]
 
 [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) are connectors to applications from industry-leading network and security vendors. Integrations provide the actions run in playbooks.
 
-To use an integration's actions in a playbook, [install the integration from App Catalog](/docs/integrations/automation-integrations/manage-automation-integrations). To use an existing integration as the basis for a new integration, [duplicate the integration](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration).
+To use an integration's actions in a playbook, [install the integration from App Catalog](/docs/integrations/automation-integrations/manage-automation-integrations/#install-an-integration-from-app-catalog). To use an existing integration as the basis for a new integration, [duplicate the integration](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration).
 
 Some integrations that have useful actions for monitors include:
 * [**Sumo Logic Log Analytics**](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-log-analytics/). Integration with Sumo Logic platform for logs, metrics, and monitors. Actions include:

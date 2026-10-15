@@ -54,19 +54,14 @@ Strictly speaking, the Automation Service is a subset of functionality provided 
 
 [App Catalog](/docs/integrations/) is a central repository of out-of-the-box solutions that can help any organization get going with automations quickly without needing customization or development. The Automation Service comes with hundreds of pre-built [playbooks](/docs/integrations/playbook-templates/) and [integrations](/docs/integrations/automation-integrations/) as part of App Catalog. 
 
-<img src={useBaseUrl('img/platform-services/automation-service/intro-app-central.png')} alt="App Catalog screen" style={{border: '1px solid gray'}} width="800" />
-
 As a Sumo Logic administrator, you can explore App Catalog and install any integrations your team requests. You can also create custom integrations using APIs from the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) page. These integrations will connect Automation Service features to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, App Catalog can be a single, central location for orchestrating your security response. 
 
 <img src={useBaseUrl('img/platform-services/automation-service/intro-integrations.png')} alt="Integrations screen" style={{border: '1px solid gray'}} width="800" />
 
-## Explore the Automation Service UI
+### Integrations
 
 Let's check out the Automation Service UI and learn about installing and configuring integrations. 
 
-1. Navigate to the [App Catalog](/docs/integrations/) page. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). To access App Catalog, in the main Sumo Logic menu select **App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog** in the left navigation bar. 
-1. The App Catalog **Integrations** page shows a long list of installed and available integrations to augment Automation Service functionality with both Sumo Logic and third-party vendor functionality. <br/><img src={useBaseUrl('img/platform-services/automation-service/intro-explore-ui-integrations.png')} alt="Integrations in App Catalog" style={{border: '1px solid gray'}} width="700" />
-1. Choose a sample integration from the list and click on it. A popup window will appear showing the details of the integration, including version, description, and a list of "actions" that are supported in automations.
 1. Navigate to the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) page to show installed integrations. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
 1. In this view, you can see the integrations that have already been installed and configured in the system. Locate an integration called [Sumo Logic Log Analytics](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-log-analytics/) in the list and click on it. The panel on the right will show the integration details, including available actions. Many integrations after install will require appropriate configuration using "resources".<br/><img src={useBaseUrl('img/platform-services/automation-service/intro-explore-ui-installed-integrations.png')} alt="Installed integrations" style={{border: '1px solid gray'}} width="600" />
 1. Move the mouse cursor over the existing resource called **Sumo Logic Log Analytics resource**, then click the **Edit** (pencil) icon. You will see a dialog showing the configuration fields for this resource.
@@ -75,7 +70,7 @@ Let's check out the Automation Service UI and learn about installing and configu
      :::
 1. Click the **Test** button after you have configured the resource to test the connection info. You will see a small popup that indicates whether the test was successful. It may take a few seconds to execute depending on the integration.
 
-## Playbooks
+### Playbooks
 
 Once you’ve identified a potential security incident, you can respond to it by executing a playbook. [Playbooks](/docs/platform-services/automation-service/playbooks/) are automated, or partially automated, workflows that act based on information from an incident or alert. A playbook can enrich data, contain threats, notify teams, and other actions with custom APIs. These actions help automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
 

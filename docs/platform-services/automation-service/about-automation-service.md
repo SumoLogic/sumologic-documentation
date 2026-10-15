@@ -22,7 +22,7 @@ You can use the Automation Service to run automations for the following:
 
 ## Differences compared to Cloud SOAR
 
-The Automation Service is a subset of automation capabilities adapted from [Cloud SOAR Automation](/docs/cloud-soar/automation/) that is available to the entire Sumo Logic log analytics platform. The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the Cloud SOAR action types, the Automation Service action types can perform automated responses to events, including run containment actions and manual user interaction steps. 
+The Automation Service is a subset of automation capabilities adapted from [Cloud SOAR Automation](/docs/cloud-soar/automation/) that is available to the entire Sumo Logic log analytics platform. The Automation Service only has Cloud SOAR’s playbook-related features, including the Automation Bridge. Like the Cloud SOAR action types, the Automation Service action types can perform automated responses to events, including run containment actions and manual user interaction steps. 
 
 The Automation Service differs from Cloud SOAR in the following ways:
 * The Automation Service does not include the incident and case management features from Cloud SOAR.
@@ -91,7 +91,7 @@ To use [integrations](/docs/platform-services/automation-service/automation-serv
 
 ## Actions limit
 
-To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 500 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Catalog UI](/docs/integrations/). All actions running in the cloud or via the bridge are included in this limit.
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 500 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [Playbook Templates](/docs/integrations/playbook-templates/) page. All actions running in the cloud or via the bridge are included in this limit.
 
 <ActionsLimitQuery/>
 

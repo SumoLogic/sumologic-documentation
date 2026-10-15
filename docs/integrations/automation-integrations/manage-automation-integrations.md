@@ -8,57 +8,27 @@ description: Learn how to configure authentication for automation integrations.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
 
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu in the Automation page shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
 
-## View App Catalog
-
-[**New UI**](/docs/get-started/sumo-logic-ui). To access App Catalog, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  
-
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access App Catalog, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
-
-Before you can access App Catalog, you must have the Access App Central role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
-
-## App Catalog UI
-
-<img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" style={{border:'1px solid gray'}} width="800"/>
-
-1. **Playbooks**. Click to view [playbooks in App Catalog](/docs/platform-services/automation-service/playbooks-in-app-central/) that are available to install.
-1. **Integrations**. Click to view [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that are available to install.
-1. **Search**. Search for integrations or playbooks to install.
-1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
-   :::note
-   <ActionsLimit/>
-   :::
-1. **Install**. Click to [install an integration](#install-an-integration-from-app-catalog) or [install a playbook](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central).
-
-## Work with integrations in App Catalog
-
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
 ### Install an integration from App Catalog
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the out-of-the-box playbooks, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
 1. Select the integration you want to install.
 1. Click **Install Integration**. Once installed, the integration card displays an Installed tag in the top-right corner.
 1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
-### Update an integration from App Catalog
+### Upgrade an integration from App Catalog
 
-If a newer version of an installed integration is available, you will se a **Upgrade Available** tag on the integration card.
+If a newer version of an installed integration is available, an **Upgrade Available** tag appears on its card.
  
 Follow the steps below to upgrade the integration:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the out-of-the-box playbooks, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.
 1. Select the integration you want to upgrade.
 1. Click **Upgrade**.
 
 ### Update integrations to include all available actions
 
-The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Catalog to make sure you do not have any integrations without useful actions.
-
-Update integrations in App Catalog using keywords in the bottom left corner of the integration:
-
-* **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" style={{border:'1px solid gray'}} width="300"/>
-* **INSTALLED**: Appears when the integration is installed and updated to the latest version, and with the correct actions.<br/><img src={useBaseUrl('img/cloud-soar/integration-installed.png')} alt="Installed" style={{border:'1px solid gray'}} width="300"/>
-* **INSTALL**. Appears if this integration is not yet installed.<br/><img src={useBaseUrl('img/cloud-soar/integration-download.png')} style={{border:'1px solid gray'}} alt="Download" width="300"/>
+You need to update your integrations to include all types of actions that should be present in that integration. For example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Catalog to make sure you do not have any integrations without useful actions.
 
 #### Update an installed integration to show all actions
 
