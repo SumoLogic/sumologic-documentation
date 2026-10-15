@@ -332,6 +332,12 @@ Many integrations offer enrichment actions. Here are just a few:
 
 Notification actions send a notification, for example, an email or a post in a messaging service.
 
+:::note
+Automation Service email notifications are sent from `noreply@notifications.sumologic.com`. To keep receiving them:
+* Allowlist this address so the emails aren't marked as spam.
+* Update any email filters, inbox rules, distribution lists, or automated workflows that depend on the previous sender address.
+:::
+
 Many integrations offer notification actions. Here are just a few:
 * [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
 * [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
