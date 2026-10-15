@@ -526,6 +526,28 @@ Rate limits may be increased for customers with higher needs. Contact your Sumo 
 * **Audit trails**. All MCP interactions are logged for compliance and security review.
 * **Multi-tenant isolation**. Tenant-level security controls are enforced at the gateway.
 
+### IP allowlisting and MCP tools
+
+All MCP tools forward your original client IP to Sumo Logic, so IP allowlisting works consistently across all tools, including log search (`runLogSearch`) and [Mobot](/docs/search/mobot).
+
+## Troubleshooting
+
+### MCP tool calls fail with 401 Request blocked by IP allowlist policy
+
+#### Symptom
+
+One or more MCP tool calls fail with `401 "Request blocked by IP allowlist policy"`.
+
+#### Cause
+
+Your org has an IP allowlist configured and the client IP making the MCP request is not on it.
+
+#### Resolution
+
+1. Confirm your client's IP address is included in your org's IP allowlist. See [Create an Allowlist for IP or CIDR Addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses/).
+1. If the IP is already allowlisted and calls are still failing, note the exact error text, the failing tool name, and the time of failure in UTC.
+1. Contact [Sumo Logic Support](https://support.sumologic.com/support/s) with those details and your deployment region.
+
 ## FAQ
 
 ### Can MCP handle multiple operations in a single request?
@@ -559,6 +581,10 @@ Yes. Add your subdomain to the front of your deployment's MCP server URL, for ex
 ### What client authentication does MCP require?
 
 MCP clients authenticate with OAuth 2.0. CIMD is the recommended mechanism and requires no manually created credentials; clients that don't support CIMD can connect with a manually created, pre-registered OAuth client instead.
+
+### Why does an MCP tool call fail with 401 Request blocked by IP allowlist policy?
+
+Your org has an IP allowlist configured and the client IP making the request is not on it. Check that your client's IP is included in your allowlist. See [MCP tool calls fail with 401 Request blocked by IP allowlist policy](#mcp-tool-calls-fail-with-401-request-blocked-by-ip-allowlist-policy) for troubleshooting steps.
 
 ## Additional resources
 

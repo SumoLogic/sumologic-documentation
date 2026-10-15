@@ -325,11 +325,12 @@ Sumo Logic publishes OAuth 2.0 and OpenID Connect discovery documents so clients
 | :--- | :--- |
 | Authorization server metadata ([RFC 8414](https://datatracker.ietf.org/doc/html/rfc8414)) | `https://[deployment-endpoint]/.well-known/oauth-authorization-server` |
 | OpenID Connect configuration | `https://[deployment-endpoint]/.well-known/openid-configuration` |
-| Protected resource metadata ([RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728)) | `https://[mcp-server-endpoint]/.well-known/oauth-protected-resource` |
+| Protected resource metadata, API ([RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728)) | `https://[api-endpoint]/.well-known/oauth-protected-resource` |
+| Protected resource metadata, MCP ([RFC 9728](https://datatracker.ietf.org/doc/html/rfc9728)) | `https://[mcp-server-endpoint]/.well-known/oauth-protected-resource` |
 
 * **Authorization server metadata** returns the `authorization_endpoint`, `token_endpoint`, and other supported OAuth 2.0 parameters, such as scopes, grant types, and response types.
 * **OpenID Connect configuration** returns the OpenID Provider configuration, including the `issuer`, endpoint URLs, and supported claims.
-* **Protected resource metadata** is served by the [Sumo Logic MCP server](/docs/api/mcp-server) to advertise which authorization server issues tokens for it. Replace `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
+* **Protected resource metadata** advertises which authorization server issues tokens for a given resource. The API endpoint and the [Sumo Logic MCP server](/docs/api/mcp-server) each publish their own. Replace `[api-endpoint]` with your [deployment-specific API endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `api.sumologic.com` for US1) and `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/api/mcp-server#mcp-server-url-for-your-deployment).
 
 For example, to retrieve the authorization server metadata:
 

@@ -98,4 +98,5 @@ For information about CrowdStrike Falcon, see [CrowdStrike documentation](https:
 
 ## Additional resources
 
-For CrowdStrike Falcon FileVantage, Sumo Logic offers the [CrowdStrike FileVantage source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source/) and the [CrowdStrike Falcon FileVantage app](/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage/) to collect and visualize your CrowdStrike Falcon FileVantage data.
+- For CrowdStrike Falcon, Sumo Logic offers the [CrowdStrike Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-threat-intel-source/) to collect your CrowdStrike Falcon data.
+- You can also find the CrowdStrike Falcon app in the Sumo Logic App Catalog to analyze and visualize your CrowdStrike Falcon data.
