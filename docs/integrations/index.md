@@ -37,12 +37,9 @@ The Sumo Logic App Catalog provides a unified place to discover, explore, and in
 </div>
 </div>
 
-## App Catalog UI
+## Access the App Catalog
 
 To access the App Catalog, in the main Sumo Logic menu select **App Catalog**.
-
-<img src={useBaseUrl('img/integrations/app-catalog-ui.png')} alt="Integrations icon" /><br/>
-
 
 :::training Sumo Logic Academy
 
