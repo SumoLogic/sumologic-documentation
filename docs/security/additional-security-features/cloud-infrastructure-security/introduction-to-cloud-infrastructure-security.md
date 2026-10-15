@@ -27,7 +27,7 @@ We provide built-in threat intelligence correlations on logs for cloud services.
 
 ### Suspicious activity
 
-We surface suspicious user/IAM/network activity using AI-driven anomaly detection. While threat detection capabilities from cloud services may only identify known threats, monitoring suspicious activity helps detect potential threats early. 
+We surface suspicious user/IAM/network activity using anomaly detection. While threat detection capabilities from cloud services may only identify known threats, monitoring suspicious activity helps detect potential threats early. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-suspicious-network-activity.png')} alt="Suspicious Network Activity dashboard" style={{border: '1px solid gray'}} width="700"/>
 
@@ -39,7 +39,7 @@ The apps offer curated saved searches developed by subject matter experts, such 
 
 ### Monitors
 
-The apps provide monitors crafted by subject matter experts such as the Sumo Logic SOC team. Some monitors use our AI-driven alerting capabilities, which apply next-generation anomaly detection capabilities, and some have playbooks. Many of these monitors use the Sumo Logic Alert Grouping feature, where a single monitor will trigger separate alerts based on different criteria. 
+The apps provide monitors crafted by subject matter experts such as the Sumo Logic SOC team. Some monitors use our anomaly detection capabilities, and some have playbooks. Many of these monitors use the Sumo Logic Alert Grouping feature, where a single monitor will trigger separate alerts based on different criteria. 
 
 <img src={useBaseUrl('img/security/cis-for-aws-monitors.png')} alt="Example monitors" style={{border: '1px solid gray'}} width="400"/>
 
@@ -75,3 +75,9 @@ Cybersecurity refers to the set of processes, policies and techniques that work 
 ### How does Sumo Logic encrypt its data for cloud security?
 
 All data at rest within the Sumo Logic system is encrypted using strong AES 256-bit encryption. All spinning disks are encrypted at the OS level and all long-term data storage is encrypted using per-customer keys that are rotated every twenty-four hours.
+
+## Additional resources
+
+* Blog: [Making the cloud the safest place to compute: Sumo Logic Cloud Infrastructure Security for AWS](https://www.sumologic.com/blog/cloud-infrastructure-security-aws/)
+* Brief: [Cloud Infrastructure Security for AWS solutions brief](https://www.sumologic.com/brief/security-analytics/)
+* Webinar: [Cloud Infrastructure Security for AWS](https://www.sumologic.com/webinar/cloud-infrastructure-security-for-aws/)

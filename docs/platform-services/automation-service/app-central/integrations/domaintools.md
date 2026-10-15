@@ -25,9 +25,33 @@ DomainTools is the global leader for internet intelligence and the first place s
 
 Threat Intelligence-Reputation
 
+## Configure DomainTools in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **Username**. Enter the username of a DomainTools admin user authorized to provide authentication for the integration. 
+
+* **API Key**. Enter a DomainTools API key.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/domaintools-configuration.png')} style={{border:'1px solid gray'}} alt="DomainTools configuration" width="400"/>
+
+For information about DomainTools, see [DomainTools documentation](https://docs.domaintools.com/).
+
 ## Change Log
 
-* December 19, 2018 - First upload
-* March 15, 2023 (v1.1)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
-* June 14, 2023 (v1.2) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | June 14, 2023 | Updated the integration with Environmental Variables. |
+| v1.1 | March 15, 2023 | Updated the integration fields with Environmental Variables and improved error handling. |
+| | December 19, 2018 | Initial release of the DomainTools integration. |

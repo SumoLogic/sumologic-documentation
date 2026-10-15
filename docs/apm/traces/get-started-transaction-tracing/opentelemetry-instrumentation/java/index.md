@@ -9,7 +9,7 @@ Perhaps the most convenient way to start capturing telemetry from Java (or, gene
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/p46o4kivj4?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -22,19 +22,6 @@ import Iframe from 'react-iframe';
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/P_74rhI1M30?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 

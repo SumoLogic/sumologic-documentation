@@ -4,7 +4,7 @@ title: Define Boundary Regex for Multiline Messages
 description: By default, Sumo Logic Sources have multiline processing enabled, which is useful when logs contain messages that span multiple lines separated by line breaks, such as a stack trace.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 For details on how the Collector processes multiline logs see [Collecting MultilineLogs](/docs/send-data/reference-information/collect-multiline-logs.md)
 
@@ -12,7 +12,7 @@ By default, Sumo Logic Sources have multiline processing enabled, which is usef
 
 If you want your Source to treat each log line as a separate message, you can deselect this option, **Detect messages spanning multiple lines**. 
 
-![img](/img/send-data/multiline.png)
+<img src={useBaseUrl('img/send-data/multiline.png')} alt="Checkbox for Detect messages spanning multiple lines" style={{border: '1px solid gray'}} width="600" />
 
 Multi-line processing gives you two primary options:
 

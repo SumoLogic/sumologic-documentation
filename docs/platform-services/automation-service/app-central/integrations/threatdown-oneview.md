@@ -1,13 +1,13 @@
 ---
-title: ThreatDown Oneview
+title: ThreatDown OneView
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatdown-oneview.png')} alt="threatdown-oneview" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatdown-oneview.png')} alt="ThreatDown OneView icon" width="100"/>
 
-***Version: 1.0  
-Updated: Mar 7, 2025***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 Malwarebytes ThreatDown OneView (MBOV) provides your business with a powerful and affordable security management platform that gives security teams maximum control. OneView streamlines endpoint security management by providing out-of-the-box security policies, scans, and remediation.
 
@@ -38,21 +38,53 @@ Malwarebytes ThreatDown OneView (MBOV) provides your business with a powerful an
 
 Threat Intelligence Reputation
 
-## ThreatDown Oneview in Automation Service and Cloud SOAR
+## ThreatDown OneView configuration
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add a new resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview1.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview1" width="100"/>
-1. Label and populate all the required fields (\*).
-    1. **Label**. Add a name for the resource.
-    1. **URL**. Enter your ThreatDown Oneview site URL.
-    1. **Client ID**. Enter your Client ID.
-    1. **Client Secret**. Enter your Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview2" width="400"/>
-1. Click **SAVE**.
-1. To make sure the resource is working, hover over the resource and then click the **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview3.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview3" width="150"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview4.png')} style={{border:'1px solid gray'}} alt="threatdown-oneview4" width="250"/>
+### Generate API credentials
 
+[Create API credentials](https://support.threatdown.com/hc/en-us/articles/4413799441683-Create-OAuth2-credentials-for-OneView) from your Malwarebytes account:
+1. Sign in to [Malwarebytes](https://oneview.threatdown.com/dashboard) with your Malwarebytes account. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview5.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview5" width="300"/>
+2. Click **Integrate**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview6.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview6" width="200"/>
+3. Click **"+"** to create credentials. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview7.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview7" width="800"/>
+4. Give a name to the application.
+1. Select the required access. <br/>When configuring credentials for the integration, permissions can be set to Read, Write, and Execute. While it's possible to grant only the required permissions based on your use case, we recommend assigning all three permissions during credential creation. This ensures full compatibility with all available actions in the integration and avoids permission-related failures in the future.
+<br/>The minimum required permissions vary based on the type of actions being performed:
+   * Enrichment actions 
+      * These actions only retrieve data.
+      * Required Permission: Read
+   * Containment actions
+      * These actions perform changes or take action on endpoints.
+      * Required Permissions: Write and Execute
+5. After this you will get an Client ID and Client Secret. Copy the Client ID and Client Secret.
+
+## Configure ThreatDown OneView in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your ThreatDown OneView site URL, for example, `https://api.malwarebytes.com`.
+
+* **Client ID**. Enter your ThreatDown OneView [client ID](https://support.threatdown.com/hc/en-us/articles/4413799441683-Create-OAuth2-credentials-for-OneView).
+
+* **Client Secret**. Enter the secret for your client ID.
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/threatdown-oneview/threatdown-oneview2.png')} style={{border:'1px solid gray'}} alt="Threatdown oneview2" width="400"/>
+
+For information about ThreatDown OneView, see [ThreatDown OneView documentation](https://support.threatdown.com/hc/en-us/sections/4413802067603-Administration).
 
 ## Change Log
 
-* March 7, 2025 - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | March 7, 2025 | Initial release of the ThreatDown OneView integration. |

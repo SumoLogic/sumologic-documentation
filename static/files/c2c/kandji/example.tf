@@ -12,7 +12,8 @@ resource "sumologic_cloud_to_cloud_source" "kandji" {
         "pollingIntervalMin": 5,
         "pollingIntervalHour": 12,
         "collectDeviceActivities": true,
-        "collectDeviceDetails": true
+        "collectDeviceDetails": true,
+        "collectDeviceApps": true
   })
 }
 resource "sumologic_collector" "collector" {

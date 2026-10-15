@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Hasura integr
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/hasura-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/hasura-logo.png')} alt="Hasura icon" width="50"/>
 
 
 The Hasura app for Sumo Logic enables you to seamlessly integrate and analyze your Hasura data event and schema operation metrics. It offers a holistic view of your data events, showcasing key metrics such as Events Generated, Distribution by Operation, Deleted events, Target Schema, and Target Tables. By tracking trends in Events by Table Schema, Trigger, and Operation, you can make data-driven decisions to optimize your data architecture and operations. Additionally, the app provides a quick overview of recent data changes with summaries for Recent Insertions, Updates, and Deletions, allowing for real-time monitoring and informed action.
@@ -58,7 +58,7 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
 ```
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/hasura"
 | json "id", "created_at", "event.op","table.name","table.schema","trigger.name" as id, created_at, operation, tableName, tableSchema, triggerName nodrop
 | where tableSchema matches "{{tabelSchema}}" and tableName matches "{{tabelName}}" and operation matches "{{operation}}" and triggerName matches "{{triggerName}}"
@@ -93,7 +93,7 @@ Follow the below steps to configure the Hasura webhook.
     - **Webhook (HTTP/S) Handlers**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 6. Click **Create Event Trigger**.
 7. Verify Hasura events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 _sourceCategory=webhook/hasura
 ```
 

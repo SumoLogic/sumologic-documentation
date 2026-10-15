@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ipinfo.png')} alt="ipinfo" width="90"/>
 
-***Version: 1.2  
-Updated: Nov 24, 2023***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 IPinfo is an IP data provider specialized in IP address geolocation, ASN, IP address company, VPN detection, carrier IP address, IP address ranges, and hosted domain data.
 
@@ -28,13 +28,36 @@ Visit [IPinfo](https://ipinfo.io/developers/hosted-domains) for more info.
 
 ## IPinfo configuration
 
-This integration requires an IPinfo Access Token. You can [retrieve](https://ipinfo.io/account/token) the Access Token from your IPinfo account.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ipinfo/ipinfo-1.png')} style={{border:'1px solid gray'}} alt="ipinfo" width="800"/>
+This integration requires an IPinfo [Access Token](https://ipinfo.io/developers). You can [retrieve](https://ipinfo.io/account/token) the Access Token from your IPinfo account.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/ipinfo/ipinfo-1.png')} style={{border:'1px solid gray'}} alt="ipinfo" width="800"/>
+
+## Configure IPinfo in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your IPinfo URL.
+
+* **Token**. Enter the IPinfo [token](https://ipinfo.io/developers) you [retrieved earlier](#ipinfo-configuration).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/ipinfo-configuration.png')} style={{border:'1px solid gray'}} alt="IPinfo configuration" width="400"/>
+
+For information about IPinfo, see [IPinfo documentation](https://ipinfo.io/developers).
 
 ## Change Log
 
-* July 12, 2022 - First upload
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* November 24, 2023 (v1.2)
-	+ Enabled Incident Artifacts feature flag for IP Address field
-	+ Added integer validator and placeholder for Connection Timeout resource field
-	+ Removed trailing/leading spaces
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | November 24, 2023 | <ul><li>Enabled the Incident Artifacts feature flag for the IP Address field.</li><li>Added an integer validator and placeholder for the Connection Timeout resource field.</li><li>Removed trailing/leading spaces.</li></ul> |
+| v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| | July 12, 2022 | Initial release of the IPinfo integration. |

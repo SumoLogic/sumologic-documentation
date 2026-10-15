@@ -1,7 +1,7 @@
 ---
 id: onboarding-checklists
 title: Onboarding Checklists
-sidebar_label: Onboarding checklists
+sidebar_label: Onboarding Checklists
 description: Onboarding Checklists for Analysts and Administrators.
 ---
 
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This document provides a high-level checklist of onboarding tasks for Administrators and Analysts (non-admins). To determine whether your role is Analyst or Administrator:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu, select your username and then **Preferences**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select your username and then **Preferences**. 
 1. In your profile, view the roles you are assigned. <br/><img src={useBaseUrl('img/get-started/check-role.png')} alt="Check role" width="500" style={{border: '1px solid gray'}} width="300" />
 
 
@@ -34,15 +34,15 @@ After configuring Sources to collect the logs you need, you can begin using sear
 
 ### Advanced search operators and capabilities
 
-Sumo's search query language provides many search operators for advanced use cases. Here are some key operators:
+The Sumo Logic search query language provides many search operators for advanced use cases. Here are some key operators:
 
 * [Save Operator](/docs/search/search-query-language/search-operators/save-classic). The Save operator allows you to save the results of a query into the Sumo Logic file system. Later, you can use the Lookup operator to access the saved data. The Save operator saves data in a simple format to a location you choose.
-* [Lookup Operator](/docs/search/search-query-language/search-operators/lookup-classic). Using a lookup operator, you can map data in your log messages to meaningful information. For example, you could use a lookup operator to map "userID" to a real user's name. Or, you could use a lookup operator to find black-listed IP addresses.
+* [Lookup Operator](/docs/search/search-query-language/search-operators/lookup-classic). Using a lookup operator, you can map data in your log messages to meaningful information. For example, you could use a lookup operator to map "userID" to a real user's name. Or, you could use a lookup operator to find denylisted IP addresses.
 * [Join Operator](/docs/search/search-query-language/search-operators/join). The Join operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The Join operator in Sumo Logic works much like a standard SQL join.
 * [Transaction Operator](/docs/search/search-query-language/transaction-analytics). The transaction operator is used to analyze related sequences of logs. For example, if you ran a retail website, you could use the transaction operator to track your customer's movements through the log events that determine the states of their transaction, such as login, cart, payment, and checkout. From the results, you can visualize your customers as they move or "flow" through the site as a Flow Diagram, and identify any problems, such as a drop-off at the payment state, which prevents them from completing their purchase.
 * [Predict Operator](/docs/search/search-query-language/search-operators/predict). The Predict Operator uses a series of time-stamped numerical values to predict future values. For example, you could use this operator to take your current disk space capacity numbers, and predict when your system might run out of disk space.
 * [Outlier Operator](/docs/search/search-query-language/search-operators/outlier). Given a series of time-stamped numerical values, using the Outlier operator in a query can identify values in a sequence that seem unexpected, and would identify an alert or violation, for example, for a scheduled search. To do this, the Outlier operator tracks the moving average and standard deviation of the value, and detects or alerts when the difference between the value exceeds mean by some multiple of standard deviation, for example, 3 standard deviation.
-* [Geo Lookup Operator (Map)](/docs/search/search-query-language/search-operators/geo-lookup-map). Sumo Logic can match an extracted IP address to it's geographical location on a map. To create the map, after parsing the IP addresses from log files, the lookup operator matches extracted IP addresses to the physical location where the addresses originated. Finally, geolocation fields are used by the Google Maps API to add the IPs to a map. The latitude and longitude fields are required; optional fields are country_code, country_name, region, city, state, postal_code, connection_type, country_cf, state_cf, city_cf. Details of these data fields can be found in [Neustar's documentation](https://ipintelligence.neustar.biz/portal/#documentation) under the GeoPoint Data Glossary topic. Depending on how specific you’d like the output to be, you can include all the optional fields, or choose a subset.
+* [Geo Lookup Operator (Map)](/docs/search/search-query-language/search-operators/geo-lookup-map). Sumo Logic can match an extracted IP address to its geographical location on a map. To create the map, after parsing the IP addresses from log files, the lookup operator matches extracted IP addresses to the physical location where the addresses originated. Finally, geolocation fields are used by the Google Maps API to add the IPs to a map. The latitude and longitude fields are required; optional fields are country_code, country_name, region, city, state, postal_code, connection_type, country_cf, state_cf, city_cf. Details of these data fields can be found in [Neustar's documentation](https://ipintelligence.neustar.biz/portal/#documentation) under the GeoPoint Data Glossary topic. Depending on how specific you’d like the output to be, you can include all the optional fields, or choose a subset.
 * [Subqueries](/docs/search/subqueries). Subqueries let you filter a query when you may not be sure of the exact filter criteria but you can write a short query to set the filter criteria for you. Subqueries use one query to pass results back to another query to narrow down the set of messages that are searched in that query. 
 
 ### Visualizing log data with charts and dashboards
@@ -63,7 +63,7 @@ Once you have created search queries, you can visualize your data using charts, 
 
 ### Working with metrics
 
-Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](/docs/metrics/introduction). Metrics-related features for analysts include:
+Sumo Logic supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo Logic, see [Overview of Metrics in Sumo Logic](/docs/metrics/introduction). Metrics-related features for analysts include:
 
 * [Metric queries](/docs/metrics/metrics-queries). You can query your metrics from a metric query tab. For information about the operators you can use in metric queries, see [Metric Operators](/docs/metrics/metrics-operators). 
 * Metric charts. You can create [map charts](/docs/metrics/metrics-queries/map-charts), [heat maps](/docs/metrics/metrics-queries/heat-map), and [funnel charts](/docs/metrics/metrics-queries/funnel-chart).
@@ -107,7 +107,7 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 
 ### Managing collection and data volume
 
-Sumo provides a tool for tracking and managing collection and data volume.
+Sumo Logic provides a tool for tracking and managing collection and data volume.
 
 * [Log Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index). Sumo Logic writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](/docs/integrations/sumo-apps/data-volume), which provides pre-configured searches and dashboards for analyzing log ingestion. 
 * [Metric Ingest Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index.md). The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
@@ -130,8 +130,8 @@ Search optimization tools speed the search process, delivering query results in 
 * [Optimize Search Performance](../search/optimize-search-performance.md). Describes index-based and field-based methods for search optimization, the search optimization process, and how to choose the right tool for the job.
 * [Partitions](/docs/manage/partitions). Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
 * [Scheduled Views](/docs/manage/scheduled-views). Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
-* [Field Extraction](/docs/manage/field-extractions). Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you don’t need to run a query to parse the fields.
-* [Field Browser](/docs/search/get-started-with-search/search-page/field-browser). The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
+* [Field Extraction](/docs/manage/field-extractions). Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you do not need to run a query to parse the fields.
+* [Field Browser](/docs/search/get-started-with-search/search-page/field-browser). The Field Browser allows you to zero in on the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you do not want to see.
 * [Search Templates](../search/get-started-with-search/build-search/search-templates.md). You can set up search templates to simplify searches for your users. Search templates shield users from search syntax and allow them to select search parameter values from a selector list.  
 
 ### Users, roles, and security
@@ -140,18 +140,18 @@ Sumo Logic provides a number of tools for managing users' access to Sumo Logic 
 
 * [Set password policies](/docs/manage/security/set-password-policy.md). Set rules for password expiration, reuse, and lock out.
 * [Create an Allowlist for IP or CIDR addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses.md). Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
-* [Manage access keys](/docs/manage/security/access-keys.md). Access keys are used in sumo to securely register new collectors and for accessing Sumo Logic APIs.
-* [Sumo audit index](/docs/manage/security/audit-indexes/audit-index.md). If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
+* [Manage access keys](/docs/manage/security/access-keys.md). Access keys are used in Sumo Logic to securely register new collectors and for accessing Sumo Logic APIs.
+* [Sumo audit index](/docs/manage/security/audit-indexes/audit-index.md). If you enable the audit index, Sumo Logic captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
 * [Support account access](/docs/manage/security/enable-support-account.md). You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
 * [Set Up SAML for Single Sign-On](/docs/manage/security/saml). Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. In addition to basic SAML functionality, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
 * [Role-based access control (RBAC)](/docs/manage/users-roles). Sumo Logic supports RBAC. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments grant users specific capabilities, and govern what data users can view.   
 
 ### Metrics
 
-Sumo Logic supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo Logic, see [Overview of Metrics in Sumo](/docs/metrics/introduction). Metrics-related features for administrators include:
+Sumo Logic supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo Logic, see [Overview of Metrics in Sumo Logic](/docs/metrics/introduction). Metrics-related features for administrators include:
 
 * [Metric Rules Editor](/docs/metrics/metric-rules-editor). An interface you can use to tag metrics with data derived from the metric identifier. Then, users can use those tags in metric queries.
-* [Logs-to-Metrics](../metrics/logs-to-metrics.md). Sumo’s Logs-to-Metrics features allow you to extract or create metrics from log data:
+* [Logs-to-Metrics](../metrics/logs-to-metrics.md). Our Logs-to-Metrics feature allows you to extract or create metrics from log data:
   * You can extract metrics that are embedded in logs. For example, your logs might contain numerical values for latency, bytes sent, request time, and so on. You can extract multiple metrics from a single log.
   * You can count logs as a metric. For example, you might count the number of log messages that contain a 404 status code. 
 
@@ -159,7 +159,7 @@ Sumo Logic supports several metric formats: Carbon 2.0, Prometheus, and Graphite
 
 For customers with Enterprise accounts, Sumo Logic provides different APIs to interact with third-party scripts and applications.
 
-* [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
+* [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security). Sumo Logic has five deployments, or pods, that are assigned depending on the geographic location and the date a Sumo Logic account is created.
 * [Collector Management API](/docs/api/collector-management). The Collector Management API allows you to define an initial Source configuration for your Collectors using a JSON file. It also allows you to create, update, and delete Collectors and Sources from an HTTP endpoint.
 * [Search Job API](/docs/api/search-job). Sumo Logic exposes the Search Job API for access to resources and log data from third-party scripts and applications. The API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 

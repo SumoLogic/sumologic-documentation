@@ -1,6 +1,6 @@
 ---
 id: close-cancel-sumo-account  
-title: Close or Cancel a Sumo Logic Account (Free, Trial, or Paid Plans)  
+title: Close or Cancel Your Sumo Logic Account
 sidebar_label: Close or Cancel Your Account  
 description: Learn how to permanently close a Sumo Logic Free or Trial account or cancel a paid account like Essentials or Enterprise.  
 ---
@@ -15,9 +15,9 @@ Any financial obligations outlined in your contract remain in effect even if you
 
 Owners of Sumo Logic Free or Trial accounts can permanently delete their organization, removing all users, data, and access to Sumo Logic. This process will also log you out as a user.
 
-1. Navigate to your Account Overview.
+1. Navigate to your Account Overview. 
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or use the **Go To...** menu to select **Account Overview**.
    * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. Navigate to **Administration > Account > Account Overview**.  
-   * **[New UI](/docs/get-started/sumo-logic-ui)**. Navigate to **Administration > Account > Account Overview**, or use the **Go To...** menu to select **Account Overview**.  
 1. At the top of the page, click the **Details** icon.  
 1. Select **Delete this Organization from Sumo Logic?**, then click **Delete Org**.  
 1. In the confirmation dialog, type **DELETE** to confirm.  
@@ -26,8 +26,6 @@ Owners of Sumo Logic Free or Trial accounts can permanently delete their organiz
 :::warning  
 Deleting your organization is permanent and removes all users, data, and the account itself. **This action cannot be undone.**  
 :::
-
-If you have a self-service trial account, it will automatically convert to a Free plan at the end of the trial period (typically 30 days) if you do not upgrade to a paid subscription.  
 
 ## Cancel a Sumo Logic licensed account
 
