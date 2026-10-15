@@ -105,20 +105,20 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Task View | View tasks in [playbooks](/docs/platform-services/automation-service/playbooks/) in read-only mode. | `cloudSoarIncidentTaskView` |
-| Task Access | Access your tasks in playbooks. | `cloudSoarIncidentTaskAccess` |
-| Task Access All| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
-| Task Edit| Create, edit, and close tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
-| Task Reassign | Reassign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
-| App Central Access | View and install packages from [App Catalog](/docs/integrations/). | `cloudSoarAppCentralAccess` |
-| App Central Export | Export integrations, playbooks, rules, actions, and templates from App Central. | `cloudSoarAppCentralExport` |
-| Integrations Access | View and test [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
-| Integrations Configure| Create, edit, and manage integrations. | `cloudSoarIntegrationsConfigure` |
-| Playbooks Access | View and export playbooks. | `cloudSoarPlaybooksAccess` |
-| Playbooks Configure| Create, edit, and manage playbooks, including import, duplicate, and execute. | `cloudSoarPlaybooksConfigure` |
-| Bridge Monitoring Access |Monitor Bridge operations. | `cloudSoarBridgeMonitoringAccess` |
-| Observability Access | Access and monitor playbook executions in the Automation Service. | `cloudSoarObservabilityAccess` |
-| Observability Configure | Interact with running automations and perform manual actions during playbook execution. | `cloudSoarObservabilityManagement` |
+| View Tasks | View tasks in [playbooks](/docs/platform-services/automation-service/playbooks/) in read-only mode. | `cloudSoarIncidentTaskView` |
+| Access Tasks | Access your tasks in playbooks. | `cloudSoarIncidentTaskAccess` |
+| Access All Tasks| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
+| Edit Tasks| Create, edit, and close tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
+| Reassign Tasks | Reassign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
+| Access App Central | View and install packages from [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
+| Export App Central | Export integrations, playbooks, rules, actions, and templates from App Central. | `cloudSoarAppCentralExport` |
+| View Integrations | View and test [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
+| Manage Integrations | Create, edit, and manage integrations. | `cloudSoarIntegrationsConfigure` |
+| Access Playbooks | View and export playbooks. | `cloudSoarPlaybooksAccess` |
+| Configure Playbooks | Create, edit, and manage playbooks, including import, duplicate, and execute. | `cloudSoarPlaybooksConfigure` |
+| Access Bridge Monitoring |Monitor Bridge operations. | `cloudSoarBridgeMonitoringAccess` |
+| Access Observability | Access and monitor playbook executions in the Automation Service. | `cloudSoarObservabilityAccess` |
+| Configure Observability | Interact with running automations and perform manual actions during playbook execution. | `cloudSoarObservabilityManagement` |
 
 ## Alerting
 

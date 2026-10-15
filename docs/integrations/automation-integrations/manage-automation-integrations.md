@@ -10,6 +10,30 @@ import IAMConfiguration from '../../reuse/automation-service/aws/iam-configurati
 
 Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
 
+## View App Catalog
+
+[**New UI**](/docs/get-started/sumo-logic-ui). To access App Catalog, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  
+
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access App Catalog, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
+
+Before you can access App Catalog, you must have the Access App Central role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
+
+## App Catalog UI
+
+<img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" style={{border:'1px solid gray'}} width="800"/>
+
+1. **Playbooks**. Click to view [playbooks in App Catalog](/docs/platform-services/automation-service/playbooks-in-app-central/) that are available to install.
+1. **Integrations**. Click to view [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that are available to install.
+1. **Search**. Search for integrations or playbooks to install.
+1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
+   :::note
+   <ActionsLimit/>
+   :::
+1. **Install**. Click to [install an integration](#install-an-integration-from-app-catalog) or [install a playbook](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central).
+
+## Work with integrations in App Catalog
+
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
 ### Install an integration from App Catalog
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the out-of-the-box playbooks, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
