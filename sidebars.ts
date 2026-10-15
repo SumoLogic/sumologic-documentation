@@ -515,6 +515,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-activities',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source',
@@ -2543,6 +2544,7 @@ integrations: [
           'integrations/google/cloud-vpc',
           'integrations/google/compute-engine',
           'integrations/google/kubernetes-engine',
+          'integrations/google/workspace-activities',
           {
             type: 'category',
             label: 'Google Workspace',
