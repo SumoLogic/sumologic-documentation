@@ -448,7 +448,7 @@ Notifications will be sent when the monitor is triggered as configured in the [A
 
       :::note
       Monitor email notifications are sent from `noreply@notifications.sumologic.com`. To keep receiving them:
-      * Allowlist this address so the emails aren't marked as spam.
+      * Allowlist this address so the emails are not marked as spam.
       * Update any email filters, inbox rules, distribution lists, or automated workflows that depend on the previous sender address.
       :::
    * **Webhook**. By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
