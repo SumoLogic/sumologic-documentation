@@ -23,27 +23,28 @@ The out-of-the-box playbooks are templates that you need to configure before the
 
 ## Install an out-of-the-box playbook from App Catalog
 
-1. Use the **Search** bar in the upper right of the **Playbooks** tab to find playbooks.
-1. Click **Install** in the corner of the playbook box.
-1. Click **Next**.
-1. Click **Install** to install the playbook.
-1. Click **Close**. After installation is complete, **Installed** replaces the **Install** link in the corner of the playbook box.
-1. Click **Show More** in the playbook box to see if there are additional steps you need to follow to configure the installed playbook. Failure to perform these additional steps may result in the playbook not working properly.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the out-of-the-box playbooks, in the main Sumo Logic menu select **App Catalog > Playbook Templates**. You can also click the **Go To...** menu at the top of the screen and select **Playbook Templates**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Playbook Templates**.<br/><img src={useBaseUrl('img/integrations/playbook-templates.png')} alt="playbook-templates" style={{border: '1px solid gray'}} width="700" />
+1. Select the playbook you want to install.
+1. Click **Add Playbook**.
+1. (Optional) Select the integrations you want to use with the playbook.
+1. Click **Next** to complete installation. Once installed, the playbook card displays an Installed tag in the top-right corner.
 
 ## Configure an out-of-the-box playbook
 
-After you install an out-of-the-box playbook from App Catalog, it appears on the [**Playbooks**](/docs/platform-services/automation-service/playbooks/create-playbooks/#view-playbooks) list. Perform the following steps to configure the out-of-the-box playbook.
+After you install an out-of-the-box playbook from App Catalog, it appears on the [**Playbooks**](/docs/platform-services/automation-service/playbooks/create-playbooks/#view-playbooks) list. Perform the following steps to configure the out-of-the-box playbook:
 
-1. Select the playbook from the list. In the example below, the *21 - DLP Alert* playbook is selected. <br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook.png')} alt="Example out-of-the-box playbook" style={{border: '1px solid gray'}} width="700" />
-1. Click the edit button at the bottom of the screen.
-1. Hover your mouse over a node and click the edit button that appears on the node. The **Edit Node** dialog appears.
-1. Note the **Node name**. It should tell you what action you need to connect to. In the following example, the node name is *IP reputation destination address with VirusTotal*. That tells us we need to connect to the *IP Reputation* action in the [VirusTotal integration](/docs/integrations/automation-integrations/automation-integration-catalog/virustotal/) and use the *destination address*.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-2.png')} alt="Example out-of-the-box playbook node" style={{border: '1px solid gray'}} width="400" />
+1. Navigate to **App Catalog > Playbook Templates**.
+1. Select the playbook you want to configure and then click **Configure Playbook**. You will be redirected to the [**Automation Service Playbooks**](/docs/platform-services/automation-service/playbooks/create-playbooks/#view-playbooks) page.
+1. Select the playbook from the list and click **Open**. In the example below, the *21 - DLP Alert* playbook is selected. <br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook.png')} alt="Example out-of-the-box playbook" style={{border: '1px solid gray'}} width="700" />
+1. Click the **Edit as Draft** in the top-right corner of the screen.
+1. Hover your cursor over a node and click the edit button that appears on the node. The **EDIT NODE** dialog appears.
+1. Note the **Node name**. It should tell you what action you need to connect to. In the following example, the node name is *IP reputation destination address with VirusTotal*. That tells us we need to connect to the *IP Reputation* action in the [VirusTotal integration](/docs/integrations/automation-integrations/automation-integration-catalog/virustotal/) and use the *destination address*.<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-2.png')} alt="Example out-of-the-box playbook node" style={{border: '1px solid gray'}} width="300" />
 1. In the **Integration** field, select the integration. (In our example, select  **VirusTotal**.)
     :::note IMPORTANT
     You must have [already installed the integration](/docs/integrations/automation-integrations/manage-automation-integrations/#install-an-integration-from-app-catalog) and [configured its authentication](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/) before you can use actions in the integration.
     :::
 1. In the **Action** field, select the action. (In our example, select **IP Reputation**.)
-1. Fill out other fields as needed. Fields with asterisks are required. (In our example, in the **IP** field select **destinationAddress**).<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-3.png')} alt="Example out-of-the-box playbook node with integration and action selected" style={{border: '1px solid gray'}} width="400" />
+1. Fill out other fields as needed. Fields with asterisks are required. (In our example, in the **IP** field select **destinationAddress**).<br/><img src={useBaseUrl('img/platform-services/automation-service/example-out-of-the-box-playbook-3.png')} alt="Example out-of-the-box playbook node with integration and action selected" style={{border: '1px solid gray'}} width="300" />
 1. After you're done configuring the node, toggle **Test Mode** at the top of the dialog to [test the node](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-nodes-in-a-playbook).
 1. After you are sure the node works as expected, click **Save**.
 1. Continue configuring nodes until you have configured all the nodes in the playbook. 
@@ -53,7 +54,7 @@ After you install an out-of-the-box playbook from App Catalog, it appears on the
 The out-of-the-box playbooks are merely templates to guide you, and the integrations indicated in their node names may not exist in your environment. Edit the playbook to connect to integrations that you have installed and configured, and change the playbooks as needed.
 :::
 
-## Playbooks in App Catalog
+## Playbook Templates in App Catalog
 
 This section lists all the out-of-the-box playbooks you can install from App Catalog.
 

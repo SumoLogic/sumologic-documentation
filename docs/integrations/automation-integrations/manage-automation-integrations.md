@@ -12,12 +12,19 @@ Integrations are connectors to applications from industry-leading network and se
 
 ### Install an integration from App Catalog
 
-1. Use the **INSTALL** in the lower left corner of the integration box. After installation is complete, **INSTALLED** replaces the **INSTALL** link in the corner of the integration box.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the out-of-the-box playbooks, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
+1. Select the integration you want to install.
+1. Click **Install Integration**. Once installed, the integration card displays an Installed tag in the top-right corner.
 1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Catalog
 
- If a newer version of an installed integration is available, you can update the integration from App Catalog by clicking **UPDATE** in the lower left corner of the integration box.
+If a newer version of an installed integration is available, you will se a **Upgrade Available** tag on the integration card.
+ 
+Follow the steps below to upgrade the integration:
+1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the out-of-the-box playbooks, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.
+1. Select the integration you want to upgrade.
+1. Click **Upgrade**.
 
 ### Update integrations to include all available actions
 
