@@ -5,7 +5,7 @@ sidebar_label: Netskope
 keywords:
   - cloud-to-cloud
   - netskope
-description: The Netskope Source provides a secure endpoint to receive event data from the Netskope API.
+description: Netskope Source provides a secure endpoint for receiving event data from the Netskope API.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -59,8 +59,8 @@ Netskope REST API v2 provides an easy way to extend the Netskope platform to bui
 To obtain a Netskope REST API v2 auth token, do the following:
 
 1. Log in to Netskope as the Tenant Admin.
-1. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API v2**.
-1. Click **New Token** and provide the token name and expiration duration, then add the READ privilege to `/api/v2/events/dataexport/events/<type>` for every event type you want to collect, where `<type>` is one of `page`, `application`, `infrastructure`, `audit`, `network`, `connection`, `incident`, or `endpoint`. Also add READ permission for `/api/v2/events/dataexport/events/alert`, unless you turn on **Disable Alerts** in the Source configuration.
+1. Go to the API section of Netskope: **Settings** > **Tools** > ** REST API v2**.
+1. Click **New Token** and provide the token name and expiration duration, then add the READ privilege to `/api/v2/events/dataexport/events/<type>` for every event type you want to collect, where `<type>` is one of `page`, `application`, `infrastructure`, `audit`, `network`, `connection`, `incident`, or `endpoint`. Also add READ permission for `/api/v2/events/dataexport/events/alert` unless you enable **Disable Alerts** in the Source configuration.
 1. Copy the token in the next dialog box and save it somewhere, as it won't be visible after.
 
 #### Netskope REST API v2 with RBAC v3
@@ -117,8 +117,8 @@ user interface (UI).
 To obtain a Netskope auth token, do the following:
 
 1. Log in to Netskope as the Tenant Admin.
-1. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API v1**.
-1. Copy the existing token to your clipboard, or you can generate a new token and copy that token.
+1. Go to the API section of Netskope: **Settings** > **Tools** > ** REST API v1**.
+1. Copy the existing token to your clipboard, or generate a new token and copy it.
 
 ### Source configuration
 
@@ -140,7 +140,7 @@ To configure a Netskope Source:
    * `https://tenant.eu.goskope.com` becomes `tenant.eu`
 1. **Government Account**. Check this box if your tenant is a Netskope government account. The Source then uses `https://<tenant>.govskope.us` instead of `goskope.com`.
 1. Enter the Netskope **API Token** you want to use to authenticate requests.
-1. (Optional) **Event Types**. Select the event types to collect. If this field is empty, all 8 event types (page, application, infrastructure, audit, network, connection, incident, and endpoint) are collected. Your token needs READ permission for every selected event type. If you collect all event types and Netskope adds a new type later, you might need to update your token.
+1. (Optional) **Event Types**. Select the event types to collect. If this field is empty, Netskope collects all 8 event types (page, application, infrastructure, audit, network, connection, incident, and endpoint). Your token needs READ permission for every selected event type. If you collect all event types and Netskope adds a new type later, you might need to update your token.
 1. **Disable Alerts**. Alert events are collected by default. Check this box to stop collecting them.
 1. **Processing Rules**. Configure any desired filters, such as include, exclude, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
@@ -156,11 +156,11 @@ After configuring the Netskope source, consider installing the Sumo Logic app fo
 | `_siemVendor` | `Netskope` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Security Cloud` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types, with one exception. If the eventType is audit and the description contains logon/login or logoff/logout, the eventType field will be the eventType with the value -logon or -logoff added respectively, such as: audit-logon or audit-logoff. |
+| `_siemEventID` | `<eventType>` | Where eventType is one of the above event types, with one exception. If the eventType is audit and the description contains logon/login or logoff/logout, the eventType field will be the eventType with the value -logon or -logoff added respectively, such as audit-logon or audit-logoff. |
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+You can configure sources using UTF-8-encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
