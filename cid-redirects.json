@@ -5974,7 +5974,6 @@
   "/docs/integrations/product-list/productlist-a-l": "/docs/integrations/product-list/product-list-a-l",
   "/docs/manage/connections-and-integrations/terraform": "/docs/api/about-apis/terraform-with-sumo-logic",
   "/docs/manage/manage-subscription/delete-data": "/docs/manage/manage-subscription/close-cancel-sumo-account",
-  "/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-cloudformation": "/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation",
   "/docs/observability/aws/other-configurations-tools/add-new-aws-service": "/docs/observability/aws/other-configurations-tools",
   "/docs/observability/aws/other-configurations-tools/integrate-control-tower-ac": "/docs/observability/aws/other-configurations-tools/integrate-control-tower-accounts",
   "/docs/observability/synthetic-monitoring": "/docs/observability",
