@@ -446,7 +446,7 @@ Notifications will be sent when the monitor is triggered as configured in the [A
       * **Include Query** (`includeQuery`). Adds the monitor's search query to the email notification. Supported for Logs, Metrics, and SLO monitors.
       * **Include Results** (`includeResultSet`). Adds the search results to the email notification. Supported for Logs and Metrics monitors. SLO monitors do not support this option. Setting `includeResultSet` on an SLO monitor returns an error indicating that the flag is not applicable.
 
-      :::note
+      :::important
       Monitor email notifications are sent from `noreply@notifications.sumologic.com`. To keep receiving them:
       * Allowlist this address so the emails are not marked as spam.
       * Update any email filters, inbox rules, distribution lists, or automated workflows that depend on the previous sender address.
