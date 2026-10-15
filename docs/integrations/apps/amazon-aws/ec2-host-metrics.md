@@ -1,0 +1,220 @@
+---
+id: ec2-host-metrics
+title: AWS EC2 Host Metrics
+sidebar_label: AWS EC2 Host Metrics
+description: The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instance metrics and display them using predefined dashboards.
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_EC2_CW_Metrics.png')} alt="AWS EC2 CW Metrics icon" width="50"/>
+
+Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
+
+The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, memory, disk, network, and TCP. Also, it provides detailed insights into all CloudTrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
+
+## Log and metric types  
+
+The Sumo Logic app for AWS EC2 Host Metrics uses the following metrics:
+* [CPU Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics#cpu-metrics)
+* [Memory Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics#memory-metrics)
+* [TCP Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics#tcp-metrics)
+* [Networking Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics#networking-metrics)
+* [Disk Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics#disk-metrics)
+
+### Sample queries  
+
+```sql title="Average CPU Utilization"
+_sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
+```
+
+## Collecting metrics for AWS EC2 Host Metrics
+
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics).
+
+The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. This section describes the data sources for the Host Metrics (EC2) app and has instructions for setting up metric collection.
+
+### Configure Host Metrics sources  
+
+Follow the instructions in this section to configure the Sumo Logic Installed Collector and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your **AWS EC2** hosts. You will assign **account** and **namespace** metadata [fields](/docs/manage/fields) to the sources so that incoming logs and metrics will be appropriately tagged.
+
+This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
+
+Perform these steps for each EC2 host:
+
+1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors).
+2. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source). In the **Fields** portion of the configuration::
+   * Add a field named **account**, and set it to your AWS account alias.
+   * Add a field named **namespace** and set it to **aws/ec2**.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/configure-metadata.png')} alt="Configure metadata" style={{border: '1px solid gray'}} width="500" />
+
+3. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute.
+
+A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
+
+You can also build your EC2 AMI machine image with these fields and settings. For instructions, see [this blog](https://www.sumologic.com/blog/packer-and-sumo-logic). Here’s a sample sources.json file that you can include in your AMI.
+
+<details>
+<summary>Click to expand</summary>
+
+```json
+{
+  "api.version": "v1",
+   "source": {
+    "name": "Host Metrics",
+    "category": "hostmetrics",
+    "automaticDateParsing": false,
+    "multilineProcessingEnabled": true,
+    "useAutolineMatching": true,
+    "contentType": "HostMetrics",
+    "forceTimeZone": false,
+    "filters": [],
+    "cutoffTimestamp": 0,
+    "encoding": "UTF-8",
+    "fields": {
+      "account": "<your AWS account alias>",
+      "Namespace": "AWS/EC2"
+    },
+    "thirdPartyRef": {
+      "resources": [
+        {
+          "serviceType": "HostMetrics",
+          "path": {
+            "type": "NoPathExpression"
+          },
+          "authentication": {
+            "type": "NoAuthentication"
+          }
+        }
+      ]
+    },
+    "interval": 300000,
+    "metrics": [
+      "CPU_User",
+      "CPU_Sys",
+ …..
+    ],
+    "processMetrics": [],
+    "sourceType": "SystemStats"
+  }
+}
+```
+</details>
+
+#### AWS metadata
+
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
+
+## Install the Host Metrics (EC2) App
+
+Now that you have set up the collection for Host Metrics (EC2) metrics, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+
+import AppInstall from '../../../reuse/apps/app-install.md';
+
+<AppInstall/>
+
+As part of the app installation process, the following **content** will be created by default along with dashboards and monitor template:
+
+#### Fields
+
+- `accountid` AWS account id.
+
+import DoNotModify from '../../../reuse/apps/do-not-modify-installed-content.md';
+
+<DoNotModify/>
+
+## Viewing EC2 Host Metrics dashboards
+
+### AWS EC2 - Overview (Host OS Metrics)
+
+The **AWS EC2 - Overview (Host OS Metrics)** dashboard provides insights into EC2 performance throughout your infrastructure, including CPU utilization, network rates, disk, and memory usage.
+
+Use this dashboard to:
+
+* Quickly identify instances with high and low CPU and memory utilization.
+* Monitor average statistics across various resource dimensions across all of your EC2 instances.
+* Identify trends and deviations in resource usage across instance types, based upon which you can identify which instance types need to be resized.
+* Monitor average CPU utilization by instance type.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/1.-AWS-EC2-Metrics-Overview-Host-Metrics.png' alt="Host Metrics (EC2) - Overview" style={{border: '1px solid gray'}} width="800" />
+
+### AWS EC2 - Summary (Host OS Metrics)
+
+The **AWS EC2 - Summary (Host OS Metrics)** dashboard provides resource utilization insights for a specific EC2 instance.
+
+Use this dashboard to:
+
+* Monitor resource utilization statistics for a specific  EC2 instance.
+* Determine if an instance needs to be resized based on utilization.
+* Identify potential infrastructure issues by identifying deviations in trends and monitoring.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/1.-AWS-EC2-Metrics-Summary-Host-Metrics.png' alt="Host Metrics (EC2) - Summary" style={{border: '1px solid gray'}} width="800" />
+
+
+### AWS EC2 - CPU
+
+The **AWS EC2 - CPU (Host OS Metrics)** dashboard provides insights into EC2 CPU performance throughout your infrastructure, including average CPU load, system, user, idle, and wait times, as well as statistics per instance.
+
+Use this dashboard to:
+* Quickly identify if high CPU utilization for an EC2 instance is potentially causing a production issue.
+* Determine how CPU cycles are being spent across  CPU user time, system time, and  IO wait time.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/2.-AWS-EC2-Metrics-CPU-Host-Metrics.png' alt="Host Metrics (EC2) - CPU" style={{border: '1px solid gray'}} width="800" />
+
+
+### AWS EC2 - Memory (Host OS Metrics)
+
+The **AWS EC2 - Memory (Host OS Metrics)** dashboard provides insights into EC2 memory usage per instance for total and percentage memory usage, free memory use, buffers, cache memory, and system memory.
+
+Use this dashboard to:
+* Quickly identify if high memory utilization for an EC2 instance is potentially causing a production issue
+* Determine how memory is being used across buffers and cache memory.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/3.-AWS-EC2-Metrics-Memory-Host-Metrics.png' alt="Host Metrics (EC2) - Memory" style={{border: '1px solid gray'}} width="800" />
+
+
+### AWS EC2 - Disk (Host OS Metrics)
+
+The **AWS EC2 - Disk (Host OS Metrics)** dashboard provides insights into EC2 disk usage per instance throughout your infrastructure, including directory, writes and usage, available bytes, used bytes, and byte read and write rates.
+
+Use this dashboard to:
+* Quickly identify if high disk utilization for an EC2 instance is potentially causing a production issue.
+* Determine which directories have the most disk usage.
+* Determine the performance of your storage by monitoring disk read/write rates.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/4.-AWS-EC2-Metrics-Disk-Host-Metrics.png' alt="Host Metrics (EC2) - Disk" style={{border: '1px solid gray'}} width="800" />
+
+
+### AWS EC2 - Network (Host OS Metrics)
+
+The **AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
+
+Use this dashboard to:
+* Quickly identify if traffic sent and received rates for an EC2 instance is potentially causing a production issue.
+* Determine if any improvements need to be made to your AWS networking infrastructure for optimal performance.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/5.-AWS-EC2-Metrics-Network-Host-Metrics.png' alt="Host Metrics (EC2) - Network" style={{border: '1px solid gray'}} width="800" />
+
+
+### AWS EC2 - TCP (Host OS Metrics)
+
+The **AWS EC2 - TCP (Host OS Metrics)** dashboard  provides insights into TCP traffic performance per EC2 instance throughout your infrastructure, including metrics for inbound and outbound connections, listen and established connections, and close wait and time wait connections.
+
+Use this dashboard to:
+* Quickly identify if TCP traffic for an EC2 instance is potentially causing a production issue.
+* Identify if any improvements need to be made to optimize TCP traffic by analyzing various TCP connection states.
+
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/HostMetricsEC2/6.-AWS-EC2-Metrics-TCP-Host-Metrics.png' alt="Host Metrics (EC2) - TCP" style={{border: '1px solid gray'}} width="800" />
+
+## Upgrade/Downgrade the Host Metrics (EC2) app (Optional)
+
+import AppUpdate from '../../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Host Metrics (EC2) app (Optional)
+
+import AppUninstall from '../../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

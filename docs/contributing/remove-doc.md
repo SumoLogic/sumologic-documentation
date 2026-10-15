@@ -38,7 +38,7 @@ As an example, let's say there are two docs called **Nginx App** and **Nginx (Le
 1. In your GitHub authoring tool (like VS Code), open the [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.
 1. Add a redirect from the old URL you're removing to the new URL containing the equivalent content.
    ```json
-   "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",
+   "/docs/integrations/apps/web-servers/nginx-legacy": "/docs/integrations/apps/web-servers/nginx",
    ```
 
 ## Step 3: Update internal links
@@ -51,7 +51,7 @@ Ensure any internal links pointing to the deleted doc are updated to the new URL
    :::
 1. If applicable:
    * Remove from its parent index.md hub page.
-   * Remove from [Product List](/docs/integrations/product-list/).
+   * Remove from [Integrations](/docs/integrations/).
 
 ## Step 4: Delete the doc file
 

@@ -46,7 +46,7 @@ To configure the LastPass Source:
 1. When you are finished configuring the source, click **Save**.
 
 :::info
-After configuring the LastPass source, consider installing the Sumo Logic app for [LastPass](/docs/integrations/saas-cloud/lastpass/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the LastPass source, consider installing the Sumo Logic app for [LastPass](/docs/integrations/apps/saas-cloud/lastpass/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

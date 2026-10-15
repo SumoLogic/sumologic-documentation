@@ -30,7 +30,7 @@ Customers can experiment with the Intel 471 feed by referencing the `sumo://thre
 On April 30, 2025, the global CrowdStrike feed will be fully replaced by Intel 471 in the Sumo Logic platform, and references to the old feed will automatically be updated to point to the new feed.
 -->
 
-Sumo Logic's native security applications will be updated to support this vendor change. To take advantage of the new Intel 471 feed, customers only need to update queries in their custom apps. For examples of queries using the `lookup` operator, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app.
+Sumo Logic's native security applications will be updated to support this vendor change. To take advantage of the new Intel 471 feed, customers only need to update queries in their custom apps. For examples of queries using the `lookup` operator, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) app.
 
 ## How do I know if I need to update a search or dashboard?
 
@@ -79,7 +79,7 @@ You may need to make changes in these scenarios:
 
 ### lookup operator
 
-In most cases, no change is needed if you use the [lookup](/docs/search/search-query-language/search-operators/lookup/) search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) instead of `sumo://threat/i471` instead (the new `SumoLogic_ThreatIntel` source). For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app. See [Threat Intel Optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) for guidance on using those queries.
+In most cases, no change is needed if you use the [lookup](/docs/search/search-query-language/search-operators/lookup/) search operator to point to `sumo://threat/cs` (the legacy `_sumo_global_feed_cs` source) instead of `sumo://threat/i471` instead (the new `SumoLogic_ThreatIntel` source). For examples, see the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis/) app. See [Threat Intel Optimization](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) for guidance on using those queries.
 <!--
 * Until April 30, 2025, queries in apps that use the `lookup` search operator to point to `sumo://threat/cs` are unchanged. 
 * After April 30, 2025, queries in apps that use the `lookup` operator to point to `sumo://threat/cs` are updated to point to `sumo://threat/i471` instead. **You must upgrade your apps to get this update.** In the App Catalog, open apps labeled **Upgrade Available** and select **Manage > Upgrade**.

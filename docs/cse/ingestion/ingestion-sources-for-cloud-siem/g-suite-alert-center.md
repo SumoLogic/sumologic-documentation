@@ -8,7 +8,7 @@ description: Collect log messages from G Suite Alert Center to be parsed by Clou
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To ingest G Suite Alert Center data into Cloud SIEM:
-1. [Configure a Google Workspace Apps Audit source](/docs/integrations/google/workspace/collect-logs/#configure-google-workspace-apps-audit-sources) for Google Workspace Alert Center on a collector. When you configure the source, do the following:
+1. [Configure a Google Workspace Apps Audit source](/docs/integrations/apps/google/workspace/collect-logs/#configure-google-workspace-apps-audit-sources) for Google Workspace Alert Center on a collector. When you configure the source, do the following:
    1. Click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
    1. Click the **+Add** link to add a field whose name is `_parser` with value */Parsers/System/Google/G Suite Alert Center*. This ensures that the G Suite Alert Center logs are parsed and normalized into structured records in Cloud SIEM.
 1. To verify that your logs are successfully making it into Cloud SIEM:

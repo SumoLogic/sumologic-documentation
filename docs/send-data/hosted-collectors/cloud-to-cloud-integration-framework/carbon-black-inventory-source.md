@@ -52,7 +52,7 @@ To configure a Carbon Black Inventory Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Carbon Black Inventory source, consider installing the Sumo Logic app for [Carbon Black Inventory](/docs/integrations/saas-cloud/carbon-black-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Carbon Black Inventory source, consider installing the Sumo Logic app for [Carbon Black Inventory](/docs/integrations/apps/saas-cloud/carbon-black-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

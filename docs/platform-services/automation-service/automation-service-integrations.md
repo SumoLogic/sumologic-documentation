@@ -13,7 +13,7 @@ Integrations that are already installed to your environment appear in the **Inte
 
 ## Available integrations
 
-For a complete list of integrations that are available to install, see [Out-of-the-Box Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/).
+For a complete list of integrations that are available to install, see [Out-of-the-Box Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integrations/).
 
 :::warning Important
 All automation integrations require authentication to communicate between the vendor and Sumo Logic. For directions, see [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/).

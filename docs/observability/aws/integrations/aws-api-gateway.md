@@ -196,7 +196,7 @@ Use these dashboards to:
 ### Access Logs
 
 Access logs contains information about who has accessed your API and how the caller accessed the API. 
-To populate the dashboards, you must explicitly [enable access logs](/docs/integrations/amazon-aws/api-gateway/#collect-aws-api-gateway-access-logs).
+To populate the dashboards, you must explicitly [enable access logs](/docs/integrations/apps/amazon-aws/api-gateway/#collect-aws-api-gateway-access-logs).
 
 #### AWS API Gateway - Access Logs - Overview
 
@@ -231,7 +231,7 @@ Use these dashboards to:
 * Monitor all API Gateway-related audit logs available via CloudTrail events.
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations.
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons.
-* Monitor requests coming in from known malicious IP addresses detected via [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis).
+* Monitor requests coming in from known malicious IP addresses detected via [Threat Intel Quick Analysis](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events"style={{border: '1px solid gray'}} width="800" />
 
@@ -239,7 +239,7 @@ Use these dashboards to:
 
 The **AWS API Gateway - Latency, Cache** dashboards provide insights into API Gateway performance including API requests, latency, integration latency, and its statistics, API cache hits, and back-end cache misses.
 
-Cache related panels will populate for apis which have [cache enabled](/docs/integrations/amazon-aws/api-gateway/#enable-cache-metrics).
+Cache related panels will populate for apis which have [cache enabled](/docs/integrations/apps/amazon-aws/api-gateway/#enable-cache-metrics).
 
 There are two dashboards related to latency and cache: **AWS API Gateway - Latency, Cache (REST API)** and **AWS API Gateway - Latency (HTTP and WebSocket API)**.
 
@@ -283,7 +283,7 @@ Use these dashboards to:
 
 The **AWS API Gateway - Enhanced Monitoring** dashboards provide detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits, and misses, latency averages, data processed, and errors by HTTP method, resource and stage.
 
-To populate the dashboards, you must explicitly [enable detailed CloudWatch metrics](/docs/integrations/amazon-aws/api-gateway/#enable-enhanced-metrics).
+To populate the dashboards, you must explicitly [enable detailed CloudWatch metrics](/docs/integrations/apps/amazon-aws/api-gateway/#enable-enhanced-metrics).
 
 There are three dashboards related to enhanced monitoring: **AWS API Gateway - Enhanced Monitoring (REST API)**, **AWS API Gateway - Enhanced Monitoring (HTTP API)**, and **AWS API Gateway - Enhanced Monitoring (WebSocket API)**.
 

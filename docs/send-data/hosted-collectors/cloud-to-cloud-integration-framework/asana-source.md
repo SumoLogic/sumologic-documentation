@@ -60,7 +60,7 @@ To configure an Asana Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Asana source, consider installing the Sumo Logic app for [Asana](/docs/integrations/saas-cloud/asana/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Asana source, consider installing the Sumo Logic app for [Asana](/docs/integrations/apps/saas-cloud/asana/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON Configuration

@@ -49,7 +49,7 @@ To configure the JFrog Xray Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the JFrog Xray source, consider installing the Sumo Logic app for [JFrog Xray](/docs/integrations/app-development/jfrog-xray/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the JFrog Xray source, consider installing the Sumo Logic app for [JFrog Xray](/docs/integrations/apps/app-development/jfrog-xray/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

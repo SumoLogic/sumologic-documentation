@@ -92,7 +92,7 @@ Begin forwarding data to Cloud SIEM using our [ingest guides](/docs/cse/ingestio
 See:
 * [Cloud SIEM Ingestion](/docs/cse/ingestion/)
 * [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
-* [Sumo Logic Data Volume App](/docs/integrations/sumo-apps/data-volume/)
+* [Sumo Logic Data Volume App](/docs/integrations/apps/sumo-apps/data-volume/)
 
 #### Configure partitions
 
@@ -133,16 +133,16 @@ Install the Cloud SIEM app to monitor data that is parsed, along with all the si
 Also install any out-of-the-box apps or dashboards for security data sources we support, including the Threat Intel Quick Analysis app. These apps are useful for quick visualizations and configuring context actions to pivot directly to from Cloud SIEM.
 
 See:
-* [Enterprise Audit - Cloud SIEM](/docs/integrations/sumo-apps/cse/)
-* [Security and Threat Detection](/docs/integrations/security-threat-detection/)
-* [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
+* [Enterprise Audit - Cloud SIEM](/docs/integrations/apps/sumo-apps/cse/)
+* [Security and Threat Detection](/docs/integrations/apps/security-threat-detection/)
+* [Threat Intel Quick Analysis](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis/)
 
 #### Import threat intel searches
 
 You can configure Sumo Logic [threat intelligence](/docs/security/threat-intelligence/) matches from the Threat Intel Quick Analysis app to become signals within Cloud SIEM using scheduled searches. An example would be to fire a Cloud SIEM signal from a scheduled search when there is a highly malicious threat intel match on device IPs. Review other current scheduled search alerts that might be candidates for generating signals.
 
 See:
-* [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/)
+* [Threat Intel Quick Analysis](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis/)
 * [Generate Cloud SIEM Signals With a Scheduled Search](/docs/alerts/scheduled-searches/generate-cse-signals/)
 
 ## Initial configuration
@@ -224,7 +224,7 @@ You could also create a context action to show users’ Google activity. For exa
 
 See:
 * [Create Context Actions](/docs/cse/administration/create-cse-context-actions/)
-* The [User Activity](/docs/integrations/google/workspace/install-app-dashboards/#drive---user-activity) section of the [Google Workspace App and Dashboards](/docs/integrations/google/workspace/install-app-dashboards/) article.
+* The [User Activity](/docs/integrations/apps/google/workspace/install-app-dashboards/#drive---user-activity) section of the [Google Workspace App and Dashboards](/docs/integrations/apps/google/workspace/install-app-dashboards/) article.
 
 ### Configure rules
 

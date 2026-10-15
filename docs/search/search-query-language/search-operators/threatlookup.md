@@ -60,7 +60,7 @@ _index=sec_record*
 
 <!-- Per DOCS-643, add this after sumo://threat/cs is replaced by threatlookup":
 ## Threatlookup queries in dashboards
-The `threatlookup` search operator is used for queries in some dashboards, including dashboards in the [Threat Intel Quick Analysis app](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/). These queries provide great examples of how to use the operator.
+The `threatlookup` search operator is used for queries in some dashboards, including dashboards in the [Threat Intel Quick Analysis app](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis/). These queries provide great examples of how to use the operator.
 To see `threatlookup` used in a query:
 1. Open the Threat Intel Quick Analysis app.
 1. Navigate to a dashboard, such as **Overview**.

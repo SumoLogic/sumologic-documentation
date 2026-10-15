@@ -15,13 +15,13 @@ When you invoke `app-doc`, Claude will guide you through:
 
 ## When to use this command
 
-* Creating a new app integration doc in `/docs/integrations/`.
+* Creating a new app integration doc in `/docs/integrations/apps/`.
 * Documenting a new vendor/product integration.
 * Setting up app documentation from scratch.
 
 ## App categories
 
-Apps are organized by category in `/docs/integrations/`:
+Apps are organized by category in `/docs/integrations/apps/`:
 
 1. `aiml/` — AI and Machine Learning platforms
 2. `amazon-aws/` — AWS services
@@ -35,13 +35,12 @@ Apps are organized by category in `/docs/integrations/`:
 10. `hosts-operating-systems/` — OS monitoring (Linux, Windows)
 11. `microsoft-azure/` — Azure services
 12. `pci-compliance/` — PCI compliance integrations
-13. `product-list/` — Product integrations
-14. `saas-cloud/` — SaaS cloud applications
-15. `saml/` — SAML authentication providers
-16. `security-threat-detection/` — Security and threat tools
-17. `sumo-apps/` — Sumo Logic native apps
-18. `web-servers/` — Web servers (Nginx, Apache)
-19. `webhooks/` — Webhook integrations
+13. `saas-cloud/` — SaaS cloud applications
+14. `saml/` — SAML authentication providers
+15. `security-threat-detection/` — Security and threat tools
+16. `sumo-apps/` — Sumo Logic native apps
+17. `web-servers/` — Web servers (Nginx, Apache)
+18. `webhooks/` — Webhook integrations
 
 ## Workflow
 
@@ -60,7 +59,7 @@ Ask the user for:
 
 **Derived:**
 * **File ID**. Lowercase, hyphenated version of vendor name (e.g., "acme", "jfrog-artifactory")
-* **File path**. `docs/integrations/{category}/{file-id}.md`
+* **File path**. `docs/integrations/apps/{category}/{file-id}.md`
 
 ### Step 2: Create the markdown file
 
@@ -75,7 +74,7 @@ Read `docs/contributing/templates/app-template-v2.md` and use it as the exact st
 - **Install section**: the template uses `<AppInstall2/>` — never replace this with manually written steps
 - **Dashboard sections**: follow the comment example in the template exactly — `width="800"`, `style={{border: '1px solid gray'}}`, and `Use this dashboard to:` with `*` bullet points
 
-**Path adjustment for imports**: The template uses `../../reuse/...` which is correct for files two levels deep (`docs/integrations/{category}/`). Use `../../..` for three levels.
+**Path adjustment for imports**: The template uses `../../reuse/...` but app docs now live at `docs/integrations/apps/{category}/`, which is three levels deep. Use `../../../reuse/...` for all app docs. For files inside an `opentelemetry/` subdirectory (four levels deep), use `../../../../reuse/...`.
 
 ### Step 3: Add to sidebar navigation
 
@@ -83,7 +82,7 @@ Read `docs/contributing/templates/app-template-v2.md` and use it as the exact st
 2. Find the appropriate category section (e.g., `integrations.databases`).
 3. Add the new doc entry alphabetically:
    ```typescript
-   'integrations/category/vendor-slug',
+   'integrations/apps/category/vendor-slug',
    ```
 4. Validate TypeScript syntax after adding.
 
@@ -91,21 +90,21 @@ Read `docs/contributing/templates/app-template-v2.md` and use it as the exact st
 ```typescript
 integrations: {
   databases: [
-    'integrations/databases/mongodb',
-    'integrations/databases/mysql',
-    'integrations/databases/postgresql', // <- new entry added here
+    'integrations/apps/databases/mongodb',
+    'integrations/apps/databases/mysql',
+    'integrations/apps/databases/postgresql', // <- new entry added here
   ],
 }
 ```
 
 ### Step 4: Add card to hub page
 
-1. Read the category's `index.md` file (e.g., `docs/integrations/databases/index.md`).
+1. Read the category's `index.md` file (e.g., `docs/integrations/apps/databases/index.md`).
 2. Create a card using the standard HTML pattern:
    ```html
    <div className="box smallbox card">
      <div className="container">
-     <a href={useBaseUrl('docs/integrations/category/vendor-slug')}>
+     <a href={useBaseUrl('docs/integrations/apps/category/vendor-slug')}>
        <img src={useBaseUrl('img/integrations/category/icon.png')}
             alt="Thumbnail icon" width="55"/>
        <h4>Vendor Name</h4>
@@ -127,16 +126,16 @@ integrations: {
    - Use next sequential number.
 3. Add mapping:
    ```json
-   "/cid/5XXX": "/docs/integrations/category/vendor-slug",
+   "/cid/5XXX": "/docs/integrations/apps/category/vendor-slug",
    ```
 4. Validate JSON syntax.
 5. Tell the user their CID number for UI integration.
 
 **Example:**
 ```json
-"/cid/5120": "/docs/integrations/databases/mongodb",
-"/cid/5121": "/docs/integrations/databases/mysql",
-"/cid/5122": "/docs/integrations/databases/postgresql",
+"/cid/5120": "/docs/integrations/apps/databases/mongodb",
+"/cid/5121": "/docs/integrations/apps/databases/mysql",
+"/cid/5122": "/docs/integrations/apps/databases/postgresql",
 ```
 
 ### Step 6: Populate template sections
@@ -217,15 +216,15 @@ User: "Create a new app doc for PostgreSQL in the databases category"
 
 Claude:
 1. Confirms: vendor = "PostgreSQL", category = "databases"
-2. Creates: docs/integrations/databases/postgresql.md
+2. Creates: docs/integrations/apps/databases/postgresql.md
 3. Generates frontmatter:
    - id: postgresql
    - title: PostgreSQL
    - keywords: [apps, postgresql]
 4. Adds template structure with all sections
 5. Updates sidebars.ts: integrations.databases array
-6. Adds card to docs/integrations/databases/index.md
-7. Creates CID: "/cid/5122": "/docs/integrations/databases/postgresql"
+6. Adds card to docs/integrations/apps/databases/index.md
+7. Creates CID: "/cid/5122": "/docs/integrations/apps/databases/postgresql"
 8. Provides checklist and next steps
 ```
 
@@ -240,17 +239,17 @@ Claude:
 
 ## Common patterns
 
-**Two-level paths** for vendor with multiple products:
+**Category paths** for vendor with multiple products:
 ```
-docs/integrations/amazon-aws/config.md
-docs/integrations/amazon-aws/cloudfront.md
-docs/integrations/amazon-aws/s3-audit.md
+docs/integrations/apps/amazon-aws/config.md
+docs/integrations/apps/amazon-aws/cloudfront.md
+docs/integrations/apps/amazon-aws/s3-audit.md
 ```
 
-**Single-level paths** for standalone vendors:
+**Category paths** for standalone vendors:
 ```
-docs/integrations/databases/postgresql.md
-docs/integrations/app-development/jenkins.md
+docs/integrations/apps/databases/postgresql.md
+docs/integrations/apps/app-development/jenkins.md
 ```
 
 ## Icon guidelines
@@ -272,9 +271,9 @@ After successfully creating the app doc, tell the user:
 ✅ App doc created successfully!
 
 Files created/modified:
-* 📄 docs/integrations/{category}/{vendor-slug}.md
+* 📄 docs/integrations/apps/{category}/{vendor-slug}.md
 * 🔗 sidebars.ts (added to {category} section)
-* 🎴 docs/integrations/{category}/index.md (card added)
+* 🎴 docs/integrations/apps/{category}/index.md (card added)
 * 🔢 cid-redirects.json (CID: /cid/XXXX)
 
 Next steps:
@@ -326,14 +325,14 @@ Would you like me to help fill in any of these sections?
 Common imports for app docs:
 
 ```markdown
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-import CreateMonitors from '../../reuse/apps/create-monitors.md';
-import AppUpdate from '../../reuse/apps/app-update.md';
-import AppUninstall from '../../reuse/apps/app-uninstall.md';
+import AppInstall2 from '../../../reuse/apps/app-install-v2.md';
+import ViewDashboards from '../../../reuse/apps/view-dashboards.md';
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+import AppUpdate from '../../../reuse/apps/app-update.md';
+import AppUninstall from '../../../reuse/apps/app-uninstall.md';
 ```
 
-**Path adjustment**. Relative paths depend on file location depth. Most integrations are 2 levels deep (`../..`).
+**Path adjustment**. App docs live at `docs/integrations/apps/{category}/` (3 levels deep), so use `../../../reuse/`. Files inside an `opentelemetry/` subdirectory are 4 levels deep — use `../../../../reuse/`.
 
 ## References
 

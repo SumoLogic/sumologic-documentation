@@ -54,7 +54,7 @@ To configure a Confluent Metrics source:
 1. When you are finished configuring the source, click **Save**.
 
 :::info
-After configuring the Confluent Metrics source, consider installing the Sumo Logic app for [Confluent Cloud](/docs/integrations/saas-cloud/confluent-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Confluent Metrics source, consider installing the Sumo Logic app for [Confluent Cloud](/docs/integrations/apps/saas-cloud/confluent-cloud/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

@@ -81,7 +81,7 @@ To configure a Microsoft Graph Azure AD Reporting Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Microsoft Graph Azure AD Reporting source, consider installing the Sumo Logic app for [Microsoft Graph Azure AD Reporting](/docs/integrations/saas-cloud/microsoft-graph-azure-ad-reporting/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Microsoft Graph Azure AD Reporting source, consider installing the Sumo Logic app for [Microsoft Graph Azure AD Reporting](/docs/integrations/apps/saas-cloud/microsoft-graph-azure-ad-reporting/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -146,4 +146,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Azure AD Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Azure AD Automation Service Integration](/docs/integrations/automation-integrations/automation-integrations/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.

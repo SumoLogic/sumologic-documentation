@@ -8,7 +8,7 @@ description: Learn how to configure authentication for automation integrations.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
 
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integrations/) that you can install.
 
 ## View App Catalog
 
@@ -23,7 +23,7 @@ Before you can access App Catalog, you must have the Access App Central role cap
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" style={{border:'1px solid gray'}} width="800"/>
 
 1. **Playbooks**. Click to view [playbooks in App Catalog](/docs/platform-services/automation-service/playbooks-in-app-central/) that are available to install.
-1. **Integrations**. Click to view [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that are available to install.
+1. **Integrations**. Click to view [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integrations/) that are available to install.
 1. **Search**. Search for integrations or playbooks to install.
 1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
    :::note
@@ -33,13 +33,13 @@ Before you can access App Catalog, you must have the Access App Central role cap
 
 ## Work with integrations in App Catalog
 
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations in App Catalog](/docs/integrations/automation-integrations/automation-integrations/) that you can install.
 ### Install an integration from App Catalog
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the out-of-the-box playbooks, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
 1. Select the integration you want to install.
 1. Click **Install Integration**. Once installed, the integration card displays an Installed tag in the top-right corner.
-1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Catalog
 

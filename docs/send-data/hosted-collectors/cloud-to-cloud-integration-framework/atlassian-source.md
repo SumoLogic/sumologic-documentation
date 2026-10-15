@@ -62,7 +62,7 @@ To configure an Atlassian Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Atlassian source, consider installing the Sumo Logic app for [Atlassian](/docs/integrations/saas-cloud/atlassian/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Atlassian source, consider installing the Sumo Logic app for [Atlassian](/docs/integrations/apps/saas-cloud/atlassian/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON Configuration

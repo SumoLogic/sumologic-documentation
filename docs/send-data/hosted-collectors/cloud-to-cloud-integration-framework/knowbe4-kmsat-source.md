@@ -77,7 +77,7 @@ To configure the KnowBe4 API Source:
 13. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the KnowBe4 API source, consider installing the Sumo Logic app for [KnowBe4 API](/docs/integrations/saas-cloud/knowbe4/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the KnowBe4 API source, consider installing the Sumo Logic app for [KnowBe4 API](/docs/integrations/apps/saas-cloud/knowbe4/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata Field

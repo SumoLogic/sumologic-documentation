@@ -57,7 +57,7 @@ To configure an Akamai CPC Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Akamai CPC source, consider installing the Sumo Logic app for [Akamai CPC](/docs/integrations/saas-cloud/akamai-cpc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Akamai CPC source, consider installing the Sumo Logic app for [Akamai CPC](/docs/integrations/apps/saas-cloud/akamai-cpc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON configuration

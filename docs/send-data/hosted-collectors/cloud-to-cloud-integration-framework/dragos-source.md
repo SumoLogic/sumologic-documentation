@@ -67,7 +67,7 @@ To configure a Dragos Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Dragos source, consider installing the Sumo Logic app for [Dragos](/docs/integrations/saas-cloud/dragos/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Dragos source, consider installing the Sumo Logic app for [Dragos](/docs/integrations/apps/saas-cloud/dragos/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

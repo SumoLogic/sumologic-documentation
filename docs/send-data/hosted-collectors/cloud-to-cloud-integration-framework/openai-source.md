@@ -118,5 +118,5 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [OpenAI app](/docs/integrations/saas-cloud/openai/) to monitor cost, usage, security, and audit activity across your OpenAI organization.
-- Use the [OpenAI ChatGPT Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/openai-chatgpt/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [OpenAI app](/docs/integrations/apps/saas-cloud/openai/) to monitor cost, usage, security, and audit activity across your OpenAI organization.
+- Use the [OpenAI ChatGPT Automation Service Integration](/docs/integrations/automation-integrations/automation-integrations/openai-chatgpt/) to automate response actions directly from Cloud SOAR playbooks.

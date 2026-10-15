@@ -28,7 +28,7 @@ You can query the data volume index just like any other message using the Sumo 
 
 ## Sumo Logic app for data volume
 
-Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Sumo Logic Data Volume App](/docs/integrations/sumo-apps/data-volume).
+Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Sumo Logic Data Volume App](/docs/integrations/apps/sumo-apps/data-volume).
 
 ## Known issue
 

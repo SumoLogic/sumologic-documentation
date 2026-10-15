@@ -90,7 +90,7 @@ To configure a Microsoft Azure AD Inventory Source:
 1. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Microsoft Azure AD Inventory source, consider installing the Sumo Logic app for [Microsoft Azure AD Inventory](/docs/integrations/saas-cloud/microsoft-azure-ad-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Microsoft Azure AD Inventory source, consider installing the Sumo Logic app for [Microsoft Azure AD Inventory](/docs/integrations/apps/saas-cloud/microsoft-azure-ad-inventory/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields
@@ -146,4 +146,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Azure AD Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Azure AD Automation Service Integration](/docs/integrations/automation-integrations/automation-integrations/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.

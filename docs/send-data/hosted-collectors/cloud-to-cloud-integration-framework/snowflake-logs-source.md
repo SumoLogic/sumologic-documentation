@@ -87,7 +87,7 @@ To configure a Snowflake source:
 1. When you are finished configuring the source, click **Save**.
 
 :::info
-After configuring the Snowflake Logs source, consider installing the Sumo Logic app for [Snowflake Logs](/docs/integrations/saas-cloud/snowflake-logs/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Snowflake Logs source, consider installing the Sumo Logic app for [Snowflake Logs](/docs/integrations/apps/saas-cloud/snowflake-logs/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

@@ -48,7 +48,7 @@ To configure a Druva Cyber Resilience Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Druva Cyber Resilience source, consider installing the Sumo Logic app for [Druva Cyber Resilience](/docs/integrations/saas-cloud/druva-cyber-resilience/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Druva Cyber Resilience source, consider installing the Sumo Logic app for [Druva Cyber Resilience](/docs/integrations/apps/saas-cloud/druva-cyber-resilience/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata field

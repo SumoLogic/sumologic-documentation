@@ -13,7 +13,7 @@ Understanding the volume of metrics that you are ingesting is important because 
 
 Data volume for metrics is often measured in data points per minute (DPM). A data point is an individual piece of data. The total number of data points being sent in a given time can give you a good idea of where the load is heaviest. For example, let's say you want to find out how much data is being sent to metrics from a certain source, host, or source category. You can look at the actual number of individual data points per minute being sent from these to determine whether they are consuming too much metrics bandwidth. Knowing the DPM for these and other kinds of data allows you to monitor your consumption rates.
 
-While you can also see metrics ingestion breakdown in the [**Metrics** dashboard](/docs/integrations/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics Data Ingestion screen to get more detailed information.
+While you can also see metrics ingestion breakdown in the [**Metrics** dashboard](/docs/integrations/apps/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics Data Ingestion screen to get more detailed information.
 
 :::note
 * To see data volume, you'll need to enable [Audit Index](/docs/manage/security/audit-indexes/audit-index).
