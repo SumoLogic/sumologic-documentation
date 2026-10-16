@@ -10,55 +10,38 @@ import IAMConfiguration from '../../reuse/automation-service/aws/iam-configurati
 
 Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu in the Automation page shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
 
-### Install an integration from App Catalog
+## Install an integration from App Catalog
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
-1. Select the integration you want to install.
-1. Click **Install Integration**. Once installed, the integration card displays an Installed tag in the top-right corner.
-1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. Select the integration you want to install. For example, Atlassian.<br/><img src={useBaseUrl('img/integrations/integration-to-install.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
+1. Click **Install Integration**. Once installed, the integration card displays a green colored **Installed** tag in the top-right corner.
 
-### Upgrade an integration from App Catalog
+:::note
+Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+:::
 
-If a newer version of an installed integration is available, an **Upgrade Available** tag appears on its card.
+## Upgrade an integration from App Catalog
+
+If a newer version of an installed integration is available, an **Upgrade Available** tag appears on its card.<br/><img src={useBaseUrl('img/integrations/upgrade-available.png')} alt="upgrade-available" style={{border: '1px solid gray'}} width="250" />
  
 Follow the steps below to upgrade the integration:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.
 1. Select the integration you want to upgrade.
-1. Click **Upgrade**.
+1. Click **Upgrade**. Once upgraded, the integration card displays a green colored **Installed** tag in the top-right corner which indicates that the integration is installed with the latest upgrades.
 
-### Update integrations to include all available actions
+### When to upgrade an integration
 
-You need to update your integrations to include all types of actions that should be present in that integration. For example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Catalog to make sure you do not have any integrations without useful actions.
+#### When integrations are installed through playbooks
 
-#### Update an installed integration to show all actions
+Integrations installed through playbooks may not include all available actions, such as Containment, Custom, and Scheduled, and so on. These integrations display an **i** icon.<br/><img src={useBaseUrl('img/integrations/i-icon.png')} style={{border:'1px solid gray'}} alt="Installed integration" width="300"/>
 
-Here an example of updating an installed integration.
+Click the icon to open the integration's page in the App Catalog, where you can [upgrade](#upgrade-an-integration-from-app-catalog) it to include all available actions.
 
-1. In the Integrations section, check the actions present on the installed integration. In the example below, the only types of actions in the integration are Enrichment and Notification. <br/><img src={useBaseUrl('img/cloud-soar/installed-integration.png')} style={{border:'1px solid gray'}} alt="Installed integration" width="800"/>
-1. Go to App Catalog and search for the same integration. Click the integration. <br/><img src={useBaseUrl('img/cloud-soar/installed-detail.png')} alt="Installed integration" style={{border:'1px solid gray'}} width="300"/>
-1. On the dialog that appears, click **INSTALL**. <br/><img src={useBaseUrl('img/cloud-soar/install-already-installed-integration.png')} alt="Already installed integration" style={{border:'1px solid gray'}} width="400"/>
-1. Go to the Integrations section and select the same integration. As you see in the image below, the Containment action type was added to the two types of actions that were there previously. <br/><img src={useBaseUrl('img/cloud-soar/integration-with-all-actions.png')} style={{border:'1px solid gray'}} alt="All actions installed" width="800"/>
+#### When installed integration version differs from the version in the App Catalog
 
-#### Update an integration with a new version to show all actions
+If the installed integration version differs from the version in the App Catalog, you can upgrade to the latest version.
 
-If there are two different versions between the integration installed and that in App Catalog, the type of operation required to update the integration is **UPDATE**.
-
-1. In the Integrations section, open the installed integration in code mode to view the version. <br/><img src={useBaseUrl('img/cloud-soar/integration-code-mode.png')} style={{border:'1px solid gray'}} alt="Integration code mode" width="800"/>
-1. Go to App Catalog and search for the same integration. Click **UPDATE**. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-version.png')} alt="Integration update version" style={{border:'1px solid gray'}} width="300"/>
-1. On the dialog that appears, click **Update**.  <br/><img src={useBaseUrl('img/cloud-soar/integration-update-2.png')} style={{border:'1px solid gray'}} alt="Integration update" width="400"/>
-1. Go back to the Integrations section at the end of the update operation. Open the integration and check the if the version of that integration updated. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-complete.png')} style={{border:'1px solid gray'}} alt="Integration update complete" width="700"/>
-1. Check in the integration detail to see if it shows all the types of actions we expect. <br/><img src={useBaseUrl('img/cloud-soar/integration-all-actions.png')} style={{border:'1px solid gray'}} alt="Integration with all actions" width="600"/> 
-
-### Publish an integration to App Catalog
-
-If you create a custom integration that you would like to make available for others to use, you can submit it to Sumo Logic for review and publication in App Catalog. This will allow everyone to install and run the integration in the cloud without having to use the Bridge.
-
-The integration should be for a commercial product for which no integration exists in App Catalog, or be a general purpose integration. Sumo Logic will not add integrations to App Catalog that can only be used by one customer.
-
-1. Ask your Sumo Logic account representative to engage the Professional Services team. The Professional Services team member will guide you through the process of submitting an integration for publication in App Catalog.
-1. Select **Integrations** from the navigation menu at the left of the screen.
-1. Select your custom integration.
-1. Hover the mouse over your custom integration and click the **Export** button that appears to the right. This exports the integration's YAML files to a tar.gz archive file.<br/><img src={useBaseUrl('img/cloud-soar/export-button.png')} alt="Export button" width="100"/>
-1. Provide the tar.gz archive file containing your custom integration's YAML files to the Professional Services team member.
-
-Sumo Logic will validate the integration, and work with you to make any updates if needed. If the integration is approved, Sumo Logic will add it to App Catalog. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Integrations**.
+1. In the Integrations section, open the installed integration in code mode to view the version. <br/><img src={useBaseUrl('img/cloud-soar/integration-code-mode.png')} style={{border:'1px solid gray'}} alt="Integration code mode" width="300"/>
+1. Navigate to **App Catalog > Integrations** in the main Sumo Logic menu and select the same integration. Click **Upgrade**. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-version.png')} alt="Integration update version" style={{border:'1px solid gray'}} width="300"/>
+1. Once the integration is upgraded, go back to **Automation > Integrations** in the main Sumo Logic menu to verify if the version of that integration upgraded. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-complete.png')} style={{border:'1px solid gray'}} alt="Integration update complete" width="300"/>
