@@ -158,7 +158,7 @@ For more information, see [Custom Data Filters](#custom-data-filters).
 
 ## Run Searches from Sumo Logic apps
 
-Sumo Logic apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the app itself. This way, you can try the searches in a Sumo Logic app against your data before you decide to install it. Or you can run the searches to see how good example queries are written.
+Sumo Logic apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the app itself. This way, you can try the searches in a Sumo Logic app against your data before you decide to install it. Or you can run the searches to see how good example queries are written.
 
 To run a saved search from a Sumo Logic app, find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
 

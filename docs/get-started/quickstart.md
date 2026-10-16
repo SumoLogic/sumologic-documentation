@@ -185,5 +185,5 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 See more quickstart tutorials in [learning portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-learning-portal).
 
 :::sumo Need help?
-Contact us at the [Sumo Logic Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
 :::
