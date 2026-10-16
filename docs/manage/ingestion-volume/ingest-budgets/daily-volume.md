@@ -231,25 +231,25 @@ You can schedule the following searches to get alerts when needed, see [Create a
 
 Search for when approaching usage capacity (≥ 85%):
 
-```sql
+```sumo
 _index=sumologic_audit _sourceName=VOLUME_QUOTA _sourceCategory=account_management "Budget" "last reset" "Approaching"
 ```
 
 Search for all available audit logs:
 
-```sql
+```sumo
 _index=sumologic_audit _sourceName=VOLUME_QUOTA _sourceCategory=account_management "Budget" "reset"
 ```
 
 Search for only reset logs:
 
-```sql
+```sumo
 _index=sumologic_audit _sourceName=VOLUME_QUOTA _sourceCategory=account_management "Budget" "is reset"
 ```
 
 Search for only capacity usage logs:
 
-```sql
+```sumo
 _index=sumologic_audit _sourceName=VOLUME_QUOTA _sourceCategory=account_management "Budget" "last reset"
 ```
 
@@ -261,7 +261,7 @@ Ingest budgets that have exceeded their capacity are placed in an error health
 
 A query to search for all ingest budgets that are over capacity.
 
-```sql
+```sumo
 _index=sumologic_system_events "IngestBudget"
 | json "eventType","severityLevel", "resourceIdentity.type" as eventType , severity, resourceType
 | where eventType = "Health-Change" AND resourceType = "IngestBudget" and severity="Error"
@@ -269,7 +269,7 @@ _index=sumologic_system_events "IngestBudget"
 
 A query to search for all ingest budgets that are nearing their capacity.
 
-```sql
+```sumo
 _index=sumologic_system_events "IngestBudget"
 | json "eventType","severityLevel", "resourceIdentity.type" as eventType , severity, resourceType
 | where eventType = "Health-Change" AND resourceType = "IngestBudget" and severity="Warning"

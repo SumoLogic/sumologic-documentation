@@ -7,7 +7,7 @@ description: The Sumo Logic App for Workday provides visibility into your Workda
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Workday icon" width="50"/>
 
 The Sumo Logic app for Workday provides insights into authentication activity, user activity, and administrator activity. The pre-configured dashboards help identify events that identify compliance and incident reporting, common security events, and real-time analysis of suspicious activities.
 
@@ -67,7 +67,7 @@ The query sample provided in this section is from the **Failed Login Reasons** p
 * `Failed_Signon:*`
 * `Authentication_Failure_Message:*`
 
-```sql title="Query String"
+```sumo title="Query String"
 _sourceCategory=workday_logs and _sourceName=signonlogs
 | json auto
 | where Failed_Signon=1

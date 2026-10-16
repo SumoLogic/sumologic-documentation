@@ -18,7 +18,7 @@ For example, if you were to integrate Azure DevOps, which provides developer se
 
 For example, if you were to map an Azure DevOps Pull Request Event to an SDO Pull Request Event Schema, you would create a new FER, and extract and map fields to the [pull request schema](supported-tools-schema.md). You can use the parse expressions defined to support out-of-the-box tools in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
-```sql
+```sumo
 json field=_raw "eventType"
 | where eventType matches "git.pullrequest*"
 | json "eventType", "resource.title", "createdDate", "resource.closedDate", "resource.repository.name", "resource.status" , "resource.url", "resource.lastMergeSourceCommit.commitId", "resource.targetRefName", "resource.createdBy.displayName", "resource.repository.project.name", "resource.reviewers[0].displayName" as action, title, dateTime, closeddate ,repository_name,  merge, link, commit_id, target_branch ,user, service, reviewers nodrop

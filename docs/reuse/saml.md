@@ -1,6 +1,6 @@
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can create multiple SAML configurations in Sumo Logic. To create an additional SAML configuration, click the plus (**+**) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
+You can create multiple SAML configurations in Sumo Logic. To create an additional SAML configuration, click the **+ Add Configuration** button to create a new configuration. Enter the settings for the new configuration, as described the previous section.
 
 <img src={useBaseUrl('img/security/saml-config-list.png')} alt="Plus button on the Configuration List page" style={{border: '1px solid gray'}} width="500" />
 
@@ -12,7 +12,7 @@ After you create a SAML configuration, you can require users to sign in using SA
 
 If you intend to require Sumo Logic users to sign-in using SAML, as described in the following section, [Require SAML for sign-in](#require-saml-for-sign-in-1), it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
-```sql
+```sumo
 _index=sumologic_audit action=login | count by class, sourceuser
 ```
 

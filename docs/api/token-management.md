@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Security icon" width="50"/>
 
 The Tokens Management API allows you to manage [Installation Tokens](/docs/manage/security/installation-tokens) from HTTP endpoints to organize your content.
 
@@ -23,6 +23,7 @@ The Tokens Management API allows you to manage [Installation Tokens](/docs/manag
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/tokensLibraryManagement   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/tokensLibraryManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/tokensLibraryManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/tokensLibraryManagement  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/tokensLibraryManagement   |

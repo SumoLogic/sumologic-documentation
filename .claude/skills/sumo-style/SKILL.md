@@ -78,12 +78,10 @@ Every doc should include:
 id: page-slug          # required for content pages; kebab-case, short
 title: Page Title      # required; Title Case; max 60 chars for SEO; include keywords
 sidebar_label: Label   # optional; what appears in sidebar nav
-description: One or two sentences for search engines.
+description: One or two sentences for search engines. 140–160 characters. Plain text only — no backticks or Markdown. Do not start with "This page" or "This doc."
 keywords:              # optional but recommended
   - keyword1
   - keyword2
-tags:                  # optional
-  - tag1
 ---
 ```
 
@@ -215,6 +213,8 @@ These are Sumo Logic- and repo-specific facts that override general assumptions.
 - **Never write an H1 in the body.** The `title:` frontmatter generates it. A second H1 breaks the page structure.
 - **`/docs/reuse/` pages must not be listed in `sidebars.ts`** and should not be navigable. They are import-only partials.
 - **Negative contractions must always be spelled out.** "cannot", "will not", "do not" -- even in casual or conversational tone.
+- **After editing, self-review for mid-sentence capitalization.** When removing a word (e.g., "please") before a verb mid-sentence, ensure the following word is not accidentally capitalized. For example, "please file" → "file" (lowercase), not "File".
 - **Numbered list items always use `1.`** (not `1.`, `2.`, `3.`). Docusaurus handles rendering.
 - **Capitalized product terms.** Collector, Source, Hosted Collector, Library. User-created objects (dashboards, folders) are lowercase.
 - **C2C sources and apps have distinct openers.** Do not use the app opener for a source doc or vice versa.
+- **Release notes have their own rules.** Voice, openers (no announcement framing), title date format, and per-folder conventions live in [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide. Apply that section when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`.

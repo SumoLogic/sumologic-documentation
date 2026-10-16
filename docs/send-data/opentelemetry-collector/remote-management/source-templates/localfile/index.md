@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/>
 
 The Local File source template generates an OpenTelemetry configuration that can be sent to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and deploying the configuration to the appropriate OpenTelemetry agent, you can ensure your logs are collected and sent to Sumo Logic.
 

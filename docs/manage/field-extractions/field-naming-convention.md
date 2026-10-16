@@ -9,7 +9,7 @@ Sumo Logic recommends using the following naming convention for standard fields.
 
 For example, if you create your own FER for source IP, and at some point you want to count by source IPs across multiple sources, you can easily do so because you've used the same name for the field across all sources. In your query, simply use:
 
-```sql
+```sumo
 | count by src_ip
 ```
 

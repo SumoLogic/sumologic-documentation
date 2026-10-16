@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/OpenLLMetry.png' alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/OpenLLMetry.png' alt="Openllmetry icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="25"/>
 
 OpenLLMetry is an open-source observability framework designed to provide visibility into applications built using Large Language Models (LLMs), Vector databases, AI Frameworks, and Protocol (MCP). Built on top of OpenTelemetry standards, it enables developers and operations teams to collect and analyze telemetry data such as traces, metrics, and application-specific events generated during interactions.
 
@@ -204,11 +204,11 @@ The system returns the top matching documents that are semantically similar to t
 
 #### Trace overview
   
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 #### Trace view detail
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 ### Demonstration code for OTLP/HTTP source with Auth-Header
 
@@ -284,10 +284,10 @@ The system returns the top matching documents that are semantically similar to t
 
 #### Trace overview
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Traces-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 #### Trace view detail
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces-Sumo-Logic" style={{border: '1px solid gray'}} width="800"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/OpenLLMetry/Trace-View-Sumo-Logic-OTLP-HTTP-Source.png' alt="Traces Sumo Logic" style={{border: '1px solid gray'}} width="800"/>
 
 

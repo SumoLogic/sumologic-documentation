@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/gitlab.png')} alt="gitlab" width="80"/>
 
-***Version: 1.1  
-Updated: Jun 26, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 Query data from GitLab.
 
@@ -42,6 +42,13 @@ For information about GitLab, see [GitLab documentation](https://docs.gitlab.com
 
 ## Change Log
 
-* August 19, 2021 - First upload
-* September 24, 2021 - New action added
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| | September 24, 2021 | Added a new action. |
+| | August 19, 2021 | First upload. |
+
+## Additional resources
+
+For GitLab, Sumo Logic offers the [GitLab app](/docs/integrations/app-development/gitlab/) to visualize your GitLab data.

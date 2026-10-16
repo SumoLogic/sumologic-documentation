@@ -11,7 +11,7 @@ description: This document outlines what an Azure Subscription is, how to set it
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-subscription.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-subscription.png')} alt="Azure Subscription icon" width="50"/>
 
 The Sumo Logic app for Azure Subscription allows you to collect, analyze, and monitor cloud activity logs in one centralized platform. This improves security, operational visibility, and compliance monitoring.
 

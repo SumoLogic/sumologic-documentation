@@ -50,7 +50,7 @@ To create the lookup table schema:
 1. For the first column, enter:
    * **Fields**. Enter *mail*.
    * **Value Type**. Leave the default, *string*, selected.
-   * **Primary Key Field(s)**. Click the **Yes** checkbox.
+   * **Primary Key Field(s)**. Click the **Yes** check box.
 1. For the second column, enter:
    * **Fields**. Enter *samaccountname*.
    * **Value Type**. Leave the default, *string,* selected.
@@ -62,7 +62,7 @@ In this step you create an aggregate search that returns the fields required for
 
 For our use case, the query is:
 
-```sql
+```sumo
 _sourceCategory="/windows/inventory" and _collector="ad-collector"
 | where !isBlank(mail) and !isBlank(samaccountname)
 | count by mail, samaccountname

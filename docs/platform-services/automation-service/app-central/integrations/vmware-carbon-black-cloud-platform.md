@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-platform.png')} alt="vmware-carbon-black-cloud-platform" width="60"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-platform.png')} alt="VMware Carbon Black Cloud Platform icon" width="60"/>
 
 ***Version: 2.4  
 Updated: Mar 4, 2024***
@@ -45,11 +45,11 @@ VMware Carbon Black Cloud Platform Integration transform your security with inte
 ## VMware Carbon Black Cloud Platform configuration
 
 1. Log in to the [CBC Console](https://defense.conferdeploy.net).
-1. Navigate to the **Settings** menu, and then click on [**API Access**](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-7AA95653-EF83-4F49-B11F-F984F7D62CB8-en/GUID-F3816FB5-969F-4113-80FC-03981C65F969-en.html).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-1.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="300"/>
-1. From the **API ACCESS** page, click on Add API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-2.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="700"/>
-1. Populate the name, Access Level type, and click the Save button.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-3.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="600"/>
-1. Copy the API Credentials (API ID and API Secret Key).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-4.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="300"/>
-1. Also you will see the ORG KEY from **API Access**. You need to copy it.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-5.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="600"/>
+1. Navigate to the **Settings** menu, and then click on [**API Access**](https://techdocs.broadcom.com/us/en/carbon-black/cloud/carbon-black-cloud/index/cbc-user-guide-tile/GUID-9620FAB7-FE70-45DE-9CAB-590FA358721F-en/GUID-7AA95653-EF83-4F49-B11F-F984F7D62CB8-en/GUID-F3816FB5-969F-4113-80FC-03981C65F969-en.html).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-1.png')} style={{border:'1px solid gray'}} alt="Vmware carbon black cloud platform" width="300"/>
+1. From the **API ACCESS** page, click on Add API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-2.png')} style={{border:'1px solid gray'}} alt="Vmware carbon black cloud platform" width="700"/>
+1. Populate the name, Access Level type, and click the Save button.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-3.png')} style={{border:'1px solid gray'}} alt="Vmware carbon black cloud platform" width="600"/>
+1. Copy the API Credentials (API ID and API Secret Key).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-4.png')} style={{border:'1px solid gray'}} alt="Vmware carbon black cloud platform" width="300"/>
+1. Also you will see the ORG KEY from **API Access**. You need to copy it.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-5.png')} style={{border:'1px solid gray'}} alt="Vmware carbon black cloud platform" width="600"/>
 
 ## Configure VMware Carbon Black Cloud Platform in Automation Service and Cloud SOAR
 
@@ -95,9 +95,11 @@ EDR
 
 ## Change Log
 
-* April 7, 2022 - First upload
-* May 11, 2022 - Refactored all actions with CBC SDK
-* June 08, 2022 - Updated integration doc
-* July 19, 2023 (v2.2) - Removed leading/trailing spaces
-* November 7, 2023 (v2.3) - Updated integration for compatibility with new Cloud SOAR API
-* March 4, 2024 (v2.4) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.4 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v2.3 | November 7, 2023 | Updated the integration for compatibility with the new Cloud SOAR API. |
+| v2.2 | July 19, 2023 | Removed leading/trailing spaces. |
+| | June 08, 2022 | Updated the integration documentation. |
+| | May 11, 2022 | Refactored all actions with the CBC SDK. |
+| | April 7, 2022 | Initial release of the VMware Carbon Black Cloud Platform integration. |

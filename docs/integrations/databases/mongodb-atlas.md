@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mongodbatlas.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/databases/mongodbatlas.png')} alt="MongoDB Atlas icon" width="100"/>
 
 The Sumo Logic app for MongoDB Atlas allows you to monitor database operations, performance KPIs and provides visibility into the security posture of your clusters with the following dashboard types:  
 
@@ -221,7 +221,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
-```sql
+```sumo
 (_sourceCategory="Labs/mongodbatlas6/logs" ) | json "atype", "local.ip", "remote.ip", "users","result", "project_id", "hostname", "cluster_name", "param" as atype, local_ip, remote_ip, users, result, project_id, hostname, cluster_name, param
 | json field=param "db", "ns" as database1, database2 nodrop
 | parse field=database2 "*.*" as database2, collection nodrop

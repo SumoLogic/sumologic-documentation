@@ -6,7 +6,7 @@ description: Provides a simple web services interface that can be used to track 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/config.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/config.png')} alt="Config icon" width="50"/>
 
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The Sumo Logic App for AWS Config presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters, which provide visibility into your environment for real-time analysis of overall usage.
 
@@ -37,7 +37,7 @@ Amazon Web Services (AWS) Config provides a simple web services interface that c
 
 ### Sample queries
 
-```sql title="Latest Resource Modifications (from App)"
+```sumo title="Latest Resource Modifications (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | json "Message", "Type"
 | where type == "Notification"
@@ -50,7 +50,7 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | sort by _messageTime desc
 ```
 
-```sql title=Configuration Activity by AWS Region** (from App)"
+```sumo title=Configuration Activity by AWS Region** (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | json "Message", "Type" as single_message, type | where type == "Notification"
 | json field=single_message "configurationItem.awsRegion" as awsRegion

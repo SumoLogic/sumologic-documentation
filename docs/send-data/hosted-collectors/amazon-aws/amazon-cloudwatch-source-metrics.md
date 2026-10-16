@@ -7,7 +7,7 @@ description: A Sumo Logic CloudWatch Source allows you to gather metrics data fr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cloudwatch-icon.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/cloudwatch-icon.png')} alt="CloudWatch icon" width="40"/>
 
 A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource. 
 

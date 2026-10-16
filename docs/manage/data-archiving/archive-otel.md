@@ -63,7 +63,7 @@ In many environments, the `collectorID` can be a dummy value. The `bladeID` (sou
 
 Below is a sample OpenTelemetry collector configuration that archives logs from files into S3 using the supported Sumo Logic archive format.
 
-```
+```sumo
 receivers:
   filelog/myapps:
     include: ["/home/ec2-user/docker/validation/s3archive/logs/*.log"]
@@ -82,10 +82,6 @@ processors:
         value: "myapp"        # replace with a logical source name
         action: insert
 
-  batch:
-    timeout: 600s
-    send_batch_size: 8192
-
 exporters:
   awss3/my-sumo-archive:
     marshaler: "sumo_ic"
@@ -98,11 +94,17 @@ exporters:
       s3_partition_timezone: 'UTC'
       compression: gzip
 
+    sending_queue:
+      queue_size: 8192000
+      batch:
+        flush_timeout: 600s
+        min_size: 8192
+
 service:
   pipelines:
     logs:
       receivers: [filelog/myapps]
-      processors: [resource/add_sumo_fields, batch]
+      processors: [resource/add_sumo_fields]
       exporters: [awss3/my-sumo-archive]
 ```
 
@@ -120,7 +122,7 @@ If differentiation is not required, you can use dummy 16-digit hexadecimal value
 
 ## Batching
 
-The size and time window of archived files is controlled using the OpenTelemetry batch processor. For example, a batching timeout of 15 minutes produces one S3 file approximately every 15 minutes.
+The size and time window of archived files is controlled using the OpenTelemetry Exporter Batching. For example, a batching timeout of 15 minutes produces one S3 file approximately every 15 minutes.
 
 If the ingestion job window does not exactly align with the batching boundaries, the Hosted Collector behaves conservatively and may ingest slightly more data rather than risk data loss. This ensures no data loss around interval boundaries.
 
@@ -177,8 +179,8 @@ To use JSON to create an AWS S3 archive source, reference our AWS Log source�
     :::note
     Fields specified on an AWS S3 archive source take precedence if the archived data has the same fields.
     :::
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.
