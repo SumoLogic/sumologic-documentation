@@ -141,7 +141,7 @@ To configure a Netskope Source:
 1. **Government Account**. Check this box if your tenant is a Netskope government account. The Source then uses `https://<tenant>.govskope.us` instead of `goskope.com`.
 1. Enter the Netskope **API Token** you want to use to authenticate requests.
 1. (Optional) **Event Types**. Select the event types to collect. If this field is empty, Netskope collects all 8 event types (page, application, infrastructure, audit, network, connection, incident, and endpoint). Your token needs READ permission for every selected event type. If you collect all event types and Netskope adds a new type later, you might need to update your token.
-1. **Disable Alerts**. Alert events are collected by default. Check this box to stop collecting them.
+1. **Disable Alerts**. Alert events are collected by default. Select **Disable Alerts** to stop collecting them.
 1. **Processing Rules**. Configure any desired filters, such as include, exclude, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
