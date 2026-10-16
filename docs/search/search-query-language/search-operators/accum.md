@@ -2,6 +2,7 @@
 id: accum
 title: accum Search Operator
 sidebar_label: accum
+description: Use the accum operator to calculate the cumulative sum of a numeric field in your search results.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,9 +11,7 @@ The `accum` operator calculates the cumulative sum of a field. It can be used to
 
 ## Syntax
 
-```sql
-accum <field> [as <field>] [by <field1>, <field2>, ...]
-```
+`accum <field> [as <field>] [by <field1>, <field2>, ...]`
 
 ## Rules
 
@@ -27,7 +26,7 @@ accum <field> [as <field>] [by <field1>, <field2>, ...]
 ### Requests by running total
 With the accum operator, we can find the number of requests by a user as a running total. Running a query similar to:
 
-```sql
+```sumo
 _sourceCategory=IIS/Access (Wyatt OR Luke)
 | parse "* * * * * * * * " as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_username
 | timeslice by 1m
@@ -45,7 +44,7 @@ produces results of a running total of all requests, similar to:
 Another option is to find a running
 total for each user's requests. Running a query similar to:
 
-```sql
+```sumo
 _sourceCategory=IIS/Access (Wyatt OR Luke)
 | parse "* * * * * * * * " as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_username
 | timeslice by 1m

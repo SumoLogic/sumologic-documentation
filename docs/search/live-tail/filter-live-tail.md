@@ -29,11 +29,15 @@ Wildcards are supported in keywords and at the beginning and end of metadata fi
 
 The **Run** button changes to **Running**, the new query runs, and the screen automatically scrolls with the results.
 
+:::note
+Ensure that you use appropriate keywords for effective Live Tail usage, and ensure your query does not exceed the limitations described in [About Live Tail](/docs/search/live-tail/about-live-tail/#limitations).
+:::
+
 ## Examples
 
 In this example, we have started a Live Tail on the Source Host nite-index-1.
 
-```sql
+```sumo
 _sourceHost=nite-index-1
 ```
 
@@ -41,7 +45,7 @@ _sourceHost=nite-index-1
 
 Next, we added a Source Category filter to the query. Here we're looking for the Source Category called "search".
 
-```sql
+```sumo
 _sourceHost=nite-index-1 _sourceCategory=search
 ```
 
@@ -49,7 +53,7 @@ _sourceHost=nite-index-1 _sourceCategory=search
 
 In this example, we will add some more keywords to the query, and a wildcard to a keyword.
 
-```sql
+```sumo
 _sourceHost=nite-index-1 (error or fail* or exception)
 ```
 
@@ -57,7 +61,7 @@ _sourceHost=nite-index-1 (error or fail* or exception)
 
 In a different example, we're looking for a different Source Host, Source Category, and filtered for log messages that do not include the keyword "info". This way, we know we're getting all of our warnings and errors.
 
-```sql
+```sumo
 _sourceHost=nite-cqsplitter-1 _sourceCategory=cqsplitter !info
 ```
 

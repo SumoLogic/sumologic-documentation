@@ -7,7 +7,7 @@ description: The Sumo Logic app for Alert Logic provides enhanced security opera
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="thumbnail icon" width="200"/>
+<img src={useBaseUrl('/img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="Alert Logic icon" width="200"/>
 
 The Sumo Logic app for Alert Logic provides enhanced security operations by seamlessly combining the capabilities of Alert Logic's incident detection and response with Sumo Logic's advanced log management and analytics platform. This powerful integration allows you to gain comprehensive insights into your security landscape, detect potential threats, and respond effectively to security incidents.
 
@@ -35,7 +35,7 @@ Refer to [Alert Logic guide](https://docs.alertlogic.com/configure/connections/t
 
 ## Sample queries
 
-```sql title="Events Count"
+```sumo title="Events Count"
 _sourceCategory=alertlogic
 | json   "extra.status", "extra.class", "incident.threatRating", "updatetime_str", "victim", "attacker", "incident.recommendations", "incident.description","incident.summary", "incidentId",  "asset_deployment_type", "customer", "accountId" as status,  incident_class, threat_rating, timestamp, victim, attacker, recommendations, description, summary, incident_id, deployment_name, customer_name, account_id  nodrop
 | json "extra.target_host", "extra.investigation_report", "extra.class", "extra.incidentUrl", "mitre_classification[*].technique", "mitre_classification[*].tactic" as target_host, investigation_report, incident_class, incident_url, mitre_technique, mitre_tactic nodrop

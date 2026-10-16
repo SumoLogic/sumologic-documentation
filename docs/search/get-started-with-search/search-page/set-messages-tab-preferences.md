@@ -13,7 +13,7 @@ You can change how messages are displayed on the **Messages** tab.
 To set Messages tab preferences, do the following:
 
 1. In the **Messages** tab, click the Settings gear icon in the upper right.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/gear-menu.png')} alt="Messages tab" style={{border: '1px solid gray'}} width="800" />
-1. Click **Display Message Preferences** to open the **Message Display Preferences** window.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/message-display-preferences.png')} alt="message-display-preferences.png" width="450"/>
+1. Click **Display Message Preferences** to open the **Message Display Preferences** window.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/message-display-preferences.png')} alt="Message Display Preferences window" width="450"/>
 1. You have the following options:
     * **Sort by.** You can order messages by most recent or oldest.
     * **View n messages per page**. You can set the number of messages per page to a value between 15 and 500.

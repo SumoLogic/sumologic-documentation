@@ -2,6 +2,7 @@
 id: count
 title: count Metrics Operator
 sidebar_label: count
+description: Use the count metrics operator to count the total number of time series that match the query. When grouping is specified, it counts the total for each group.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,7 +27,7 @@ metric=size | count
 
 ### Count of time series for a metric by IP address
 
-This query returns the number of time series for the size metric by src_ip. 
+This query returns the number of time series for the size metric by `src_ip`. 
 
 ```sql
 metric=size | count by src_ip

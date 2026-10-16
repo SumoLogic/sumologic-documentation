@@ -11,7 +11,7 @@ This topic describes commonly used Cloud SIEM rules language functions. Rules l
 
 The following Sumo Logic core platform literals are supported in Cloud SIEM rule expressions. For more information about these literals, see [Field Expressions](/docs/search/search-query-language/field-expressions/).
 
-* [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix) (millisecond-based. i.e., 1s == 1000)
+* [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix) (millisecond-based, that is, 1s == 1000)
 
   * ns (nanosecond)
   * us (microsecond)
@@ -42,6 +42,67 @@ The following Sumo Logic core platform literals are supported in Cloud SIEM rule
 
   * For example, `"\"foo\""` is the literal `"foo"`
 
+
+## Referencing record fields
+
+Cloud SIEM records contain two types of fields that you can reference in rule expressions:
+
+* **Normalized fields**. These are schema fields that Cloud SIEM maps during log ingestion to provide a consistent structure across different log sources. Reference these fields directly by name.
+* **Parsed fields**. These are the original fields from the log source that the parser extracts, typically following the vendor's schema. These fields are stored in a `fields` dictionary and require special syntax to access.
+
+### Normalized fields
+
+Reference normalized fields directly by name in your rule expressions:
+
+```
+action = "blocked"
+```
+
+```
+srcDevice_ip = "192.168.1.100"
+```
+
+```
+severity > 5
+```
+
+For a complete list of normalized schema fields, see the [Cloud SIEM Schema](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md).
+
+### Parsed fields (fields syntax)
+
+To reference non-normalized parsed fields, use the `fields` dictionary syntax:
+
+```
+fields['parsed-field_name'] = "value of interest"
+```
+
+This syntax allows you to access fields that were extracted by the parser but not mapped to a normalized schema field.
+
+**Examples**
+
+* Match on a specific parsed field value:
+   ```
+   fields['EventType'] = "UserLogon"
+   ```
+
+* Combine parsed fields with normalized fields:
+   ```
+   action = "blocked" AND fields['risk_score'] > 80
+   ```
+
+* Use parsed fields with functions:
+   ```
+   int(fields['bytes_transferred']) > 1000000
+   ```
+
+* Check if a parsed field contains a pattern:
+   ```
+   fields['command_line'] LIKE '%powershell%'
+   ```
+
+:::tip
+To discover which parsed fields are available for a particular log source, examine sample records in Cloud SIEM or review the parser configuration for that source.
+:::
 
 ## Rules language functions
 
@@ -389,23 +450,23 @@ where:
 * `list_name` is the name of a Match List or a threat intel list
 
 :::note
-When you reference a threat intel  list using array_contains, you must substitute underscores for spaces in the threat intel list name.
+When you reference a threat intel  list using `array_contains`, you must substitute underscores for spaces in the threat intel list name.
 :::  
 
 **Syntax for matching to a keyword tag**
 
-The syntax for checking to see if the the `fieldsTag` field contains a particular keyword tag is:
+The syntax for checking to see if the `fieldsTag` field contains a particular keyword tag is:
 
 `array_contains(fieldTags["user_username"], "keyword-tag")`
 
 where:
 
-* `field `is the name of a record field
+* `field` is the name of a record field
 * `keyword-tag` is a keyword tag
 
 **Syntax for matching to a schema key tag**
 
-The syntax for checking to see if the the `fieldTag` field contains a particular schema key tag is:
+The syntax for checking to see if the `fieldTag` field contains a particular schema key tag is:
 
 `array_contains(fieldTags["user_username"], "schema-key:schema-value")`
 
@@ -649,11 +710,11 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
 * **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`. <br/>You can filter on the following indicator attributes:
-   * `confidence` Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
-   * `indicator`. Value of the indicator, such as an IP address, file name, email address, etc. 
+   * `confidence`. Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
+   * `indicator`. Value of the indicator, such as an IP address, file name, email address, and so on. 
    * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
    * `threat_type`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
-   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, etc.)
+   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, and so on)
 * **`<indicators>`**. An optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
@@ -944,8 +1005,7 @@ to `size` in the Cloud SIEM rules syntax.
 
 ### json
 
-Extracts values from JSON logs with selected JSONPath expressions. See
-Supported JSONPath syntax elements below.
+Extracts values from JSON logs with selected JSONPath expressions.
 
 You can use the `json` operator allows to extract:
 
@@ -973,36 +1033,28 @@ attribute.
 **Syntax notes**
 
 * In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
-
-:::note
-Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
-:::
-
+    :::note
+    Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
+    :::
 * As part of the ingestion process, the `fields` field in Cloud SIEM is mapped to the `_raw` field in Sumo Logic core platform.  For easy copy/paste functionality, Cloud SIEM accepts `_raw` as an alias to `fields`.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.
 * Cloud SIEM doesn’t support all of the `json` operator syntax options that Sumo Logic core platform does, but you can do things like:
-
-  * `| json field=fields "foo.bar['baz']" as nestedKey`
-  * `| json field=fields "foo[0]" as indexKey`
-  * `| json field=fields "foo[*]" as asteriskKey`
-
-        Works for arrays, not maps.
-
-  * `| json field=fields "['foo.bar']" as topLevelKey`
-
-        This is a top-level key named \`foo.bar\`.
+    * `| json field=fields "foo.bar['baz']" as nestedKey`
+    * `| json field=fields "foo[0]" as indexKey`
+    * `| json field=fields "foo[*]" as asteriskKey`. Works for arrays, not maps.
+    * `| json field=fields "['foo.bar']" as topLevelKey`. This is a top-level key named \`foo.bar\`.
 
 **Examples**
 
-```
+```sumo
 | json field=fields "foo" as alias
 | where toInt(alias) > 5
 ```
 
 
-```
+```sumo
 | json field=fields "packetsSent" as packets_sent
 | json field=fields "packetsReceived" as packets_received
 | where toInt(packets_sent) != toInt(packets_received)
@@ -1022,13 +1074,8 @@ Returns the number of characters in a string. If the string is null, it returns 
 
 **Examples**
 
-* The following expression returns "10":
-
-   `length("sumo logic")`
-
-* The following expression returns "0":
-
-   `length(null)`
+* The following expression returns "10": `length("sumo logic")`
+* The following expression returns "0": `length(null)`
 
 ### like
 
@@ -1294,7 +1341,7 @@ Allows you to specify an offset that will output only part of a string, referred
 * The `startOffset` must be a non-negative integer and less than the length of the `sourceString`.
 * The `endOffset` must be a non-negative integer that is equal to or greater than `startOffset`.
 * If the `endOffset` is not specified, the `substring` is taken from the `startOffset` until the very end of the `sourceString`.
-* The `endOffset` may be equal to or greater than the length of the `sourceString`, but it would behave the same as if the user did not specify an `endOffset`.
+* The `endOffset` may be equal to or greater than the length of the `sourceString`, but it would behave the same as if you did not specify an `endOffset`.
 
 **Examples**
 
@@ -1302,7 +1349,7 @@ Allows you to specify an offset that will output only part of a string, referred
 
    `substring("Hello world!", 6)`
 
-* The following expression returns "Sumo":
+* The following expression returns "Sumo Logic":
 
    `substring("Sumo Logic", 0, 4)`
 
@@ -1356,7 +1403,7 @@ The following expression returns "90 (asin(1) is pi / 2)":
 
 Casts string data to the double data type.
 
-**Syntax **
+**Syntax**
 
 `toDouble(<field>)`
 
@@ -1382,7 +1429,7 @@ rules syntax.
 
 Casts string data to the long data type.
 
-**Syntax **
+**Syntax**
 
 `toLong(<field>)`
 
@@ -1443,7 +1490,7 @@ URL string.
 
 **Example**
 
-The following expression returns "http://yourmainserver-city55555.org/...iWS7o3KLdfg90&":
+The following expression returns `http://yourmainserver-city55555.org/...iWS7o3KLdfg90&`:
 
 `urldecode("http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26")`
 
@@ -1457,7 +1504,7 @@ Encodes the URL into an ASCII character set.
 
 **Example**
 
-The following expression returns "http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26"
+The following expression returns `http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26`
 
 `urlencode("http://yourmainserver-city55555.org/...iWS7o3KLdfg90&")`
 

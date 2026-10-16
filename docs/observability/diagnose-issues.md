@@ -11,7 +11,7 @@ After you have identified an issue using the available monitoring tools, the nex
 
 ## Connect the dots with Entity Inspector
 
-You can use [Entity Inspector](../dashboards/drill-down-to-discover-root-causes.md) to connect the dots between your various data streams of logs, metrics, and traces. Using the guided experience, you can start from an alert and drill down to the root cause quickly.
+You can use [Entity Inspector](/docs/dashboards/drill-down-to-discover-root-causes/) to connect the dots between your various data streams of logs, metrics, and traces. Using the guided experience, you can start from an alert and drill down to the root cause quickly.
 
 <img src={useBaseUrl('img/observability/entity-inspector.png')} alt="Entity inspector" style={{border: '1px solid gray'}} width="800" />
 
@@ -23,6 +23,6 @@ Observe apps and microservices using [Transaction Tracing](/docs/apm/traces) and
 
 ## Analyze Key Metrics quickly using Metrics Search 
 
-Easily find and visualize your metrics with the [Re-vamped Metrics Search](../metrics/metrics-queries/metrics-explorer.md) that comes with a new structured query builder, and an extended range of visualizations for ad hoc analysis.  Mimicking the Dashboard workflow, you now have the same unified experience in the main metrics tab.
+Easily find and visualize your metrics with [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/), which comes with a structured query builder, and an extended range of visualizations for ad hoc analysis. Mimicking the dashboard workflow, you now have the same unified experience in the main metrics tab.
 
 <img src={useBaseUrl('img/observability/metrics-explorer.png')} alt="Metrics explorer" style={{border: '1px solid gray'}} width="800" />

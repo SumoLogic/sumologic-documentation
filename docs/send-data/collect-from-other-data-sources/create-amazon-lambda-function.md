@@ -35,7 +35,7 @@ Sumo provides a Lambda function for use with Amazon Web Services (AWS). It coll
     <img src={useBaseUrl('img/send-data/trigger.png')} alt="Trigger" style={{border: '1px solid gray'}} width="800" />
 
     1. **Log Group.** Select the log group that serves as the event source. Events sent to the log source will trigger your Lambda function. 
-    1. **Filter Name.** Enter a filter name, even if you do not use a Filter Pattern. You can enter any placeholder. 1. **Filter Pattern.** (Optional) For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS help.
+    1. **Filter Name.** Enter a filter name, even if you do not use a Filter Pattern. You can enter any placeholder. 1. **Filter Pattern.** (Optional) For information about AWS filter patterns, see [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS help.
     1. **Enable trigger.** Check the box to enable the trigger immediately. If you do not enable the trigger it will be created in a disabled state and you can test it with sample events (recommended).
 
     :::important

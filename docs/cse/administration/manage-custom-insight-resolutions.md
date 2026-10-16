@@ -13,10 +13,10 @@ This topic has information about custom insight resolutions and how to create an
 
 When you close an insight, Cloud SIEM prompts you to select a resolution that indicates why you closed it. There are four built-in resolutions:
 
-* Duplicate — The insight has triggered before on the same entity and is a duplicate.
-* False Positive—An insight triggered and it is legitimate activity.
-* No Action—An insight triggered and it might not be an incident but is also not a false positive.
-* Resolved — An incident occurred and was resolved.
+* Duplicate. The insight has triggered before on the same entity and is a duplicate.
+* False Positive. An insight triggered and it is legitimate activity.
+* No Action. An insight triggered and it might not be an incident but is also not a false positive.
+* Resolved. An incident occurred and was resolved.
 
 You can define custom *sub-resolutions* for any of the built-in resolutions. This enables you to create more granular resolutions that indicate more clearly why an insight was closed. For example, you might want to create a “Remediated” sub-resolution under “Resolved”.
 

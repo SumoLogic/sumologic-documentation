@@ -18,6 +18,7 @@ import {
   faLinkedinIn,
   faGithub,
   faSquareFacebook,
+  faRedditAlien,
 } from '@fortawesome/free-brands-svg-icons';
 import { Stack } from '@mui/system';
 import {
@@ -207,6 +208,20 @@ export const Footer = () => {
                 },
               }
             },
+            {
+              alt: 'Sumo Logic Reddit',
+              color: '#e3e3e3',
+              href: 'https://www.reddit.com/r/sumologic',
+              'aria-label': 'Sumo Logic Reddit',
+              icon: faRedditAlien,
+              size: 'lg',
+              sx: {
+                cursor: 'pointer',
+                '&:hover': {
+                  color: '#0045BE',
+                },
+              }
+            },
           ].map(({ alt, href, ...other }) => (
             <Tooltip key={href} title={alt}>
               <Link href={href} rel='noreferrer noopener'>
@@ -240,11 +255,11 @@ export const Footer = () => {
             },
             {
               label: 'Privacy Statement',
-              href: 'https://www.sumologic.com/privacy-statement',
+              href: 'https://www.sumologic.com/legal/privacy-statement',
             },
             {
               label: 'Terms of Use',
-              href: 'https://www.sumologic.com/terms-conditions',
+              href: 'https://www.sumologic.com/legal/terms-conditions',
             },
             {
               label: 'CA Privacy Notice',

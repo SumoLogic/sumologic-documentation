@@ -9,13 +9,17 @@ description: Use Event Analytics Management APIs to configure Event Extraction R
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a></p>
+
+:::info
+This feature is in Extended Preview. For more information, contact your Sumo Logic account representative.
+:::
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/operations/rules.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/rules.png')} alt="Rules icon" width="50"/>
 
 The Event Analytics Management API allows you to configure event extraction rules from HTTP endpoints. For more information, refer to [Event Extraction Rules](/docs/manage/event-extraction-rules).
 

@@ -6,7 +6,7 @@ description: The Search Audit Index is populated with log messages and the messa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Account admins with the Manage Password Policy capability can set the account's password policy on the Password Policy page.
+Account admins with the [Manage Password Policy](/docs/manage/users-roles/roles/role-capabilities/#security) capability can set the account's password policy on the Password Policy page.
 
 For details on password policies and Multi-account Access, see [Multi-Account Access](../users-roles/users/multi-account-access.md). 
 
@@ -20,7 +20,7 @@ You can use Terraform to set the password policy with the [`sumologic_password_p
 
 ## Changing the password policy
 
-Admins with Manage Password Policy capability can make changes at any time for users in their organization. The updated settings are applied to each user's account the next time he or she changes their password.
+Admins with [Manage Password Policy](/docs/manage/users-roles/roles/role-capabilities/#security) capability can make changes at any time for users in their organization. The updated settings are applied to each user's account the next time he or she changes their password.
 
 To change the password policy:
 
