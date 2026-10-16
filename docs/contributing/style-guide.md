@@ -319,14 +319,18 @@ Append `#L4-L5` to the URL to embed only those lines, and add a title with `json
 
 Use a [Docusaurus `<details>` block](https://docusaurus.io/docs/markdown-features#details) to fold away long optional content: verbose examples, long code samples, or big reference lists. Put the title between the `<summary>` tags and the content after them. Collapsed content is still indexed for search.
 
-| &#9989; **Do** | &#10060; **Don't** |
-|:---------------|:-------------------|
-| Collapse long code samples (100+ lines), multiple installation methods, or alternative configuration options. | Collapse FAQ sections, troubleshooting steps, or required instructions — hidden content cannot be cited by AI tools or search engines. |
-| Keep collapsed content optional and supplementary. | Collapse short content (2–5 lines) where the interaction adds friction without saving space. |
+| Use case | Use | Why |
+|:---------|:----|:----|
+| **FAQ sections** | ❌ DON'T | Hidden content cannot be cited by AI tools or search engines. FAQ content must be immediately visible and scannable. |
+| **Troubleshooting sections** | ❌ DON'T | Users searching for solutions need immediate access to troubleshooting steps. |
+| **Critical instructions** | ❌ DON'T | Required steps and warnings must always be visible. |
+| **Long code samples** | ✅ DO | Code samples over 100 lines benefit from collapsing to reduce page scrolling. |
+| **Multiple installation methods** | ✅ DO | Collapse each method so users can jump to their preferred approach. |
+| **Alternative configuration options** | ✅ DO | Collapse alternatives (e.g., AWS regions, authentication methods) to reduce clutter. |
 
 ### Format FAQ questions as headings
 
-Write each FAQ question as a heading, not as bold text. Headings create discrete, retrievable units that answer engines and AI tools can chunk and cite individually, while bold is purely visual and carries no semantic weight. Use an `H3` for questions directly under an `H2` FAQ section (for example, `## FAQs` → `### How do I reset my password?`), and an `H4` for questions grouped under an `H3` sub-category (for example, `### Security and privacy` → `#### Is my data encrypted?`).
+Write each FAQ question as a heading (`H3` or `H4`), not as bold text. Headings are discrete, citable units that AI tools and answer engines can chunk and reference individually; bold is purely visual with no semantic weight. Use `H3` for questions under an `H2` section (e.g., `## FAQs` → `### How do I reset my password?`) and `H4` under an `H3` sub-category (e.g., `### Security and privacy` → `#### Is my data encrypted?`).
 
 <Tabs
   defaultValue="Markdown"
