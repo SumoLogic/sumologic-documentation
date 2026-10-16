@@ -93,7 +93,7 @@ We are going to create a dashboard to look at our security activity in several d
 
 You can add more flexibility to your queries and dashboard outputs by using template variables.
 1. In the upper right corner of the dashboard, change the time range to 24 hours.
-1. Click on the filter icon to display the template variable bar.<br/><img src={useBaseUrl('img/csa/filter-icon.png')} alt="Filter icon" style={{border: '1px solid gray'}} width="200"/>
+1. Click the filter icon to display the template variable bar.<br/><img src={useBaseUrl('img/csa/filter-icon.png')} alt="Filter icon" style={{border: '1px solid gray'}} width="200"/>
 1. In the template variable bar, select **Create a Template Variable**.<br/><img src={useBaseUrl('img/csa/create-template-variable.png')} alt="Create a template variable" style={{border: '1px solid gray'}} width="800"/>
 1. In this panel for the **Variable Name** enter **event_type** and for the **Variable Type**, select **Logs Search**.<br/><img src={useBaseUrl('img/csa/create-template-variable-dialog.png')} alt="Create a template variable dialog" style={{border: '1px solid gray'}} width="800"/>
 1. For the query paste the following. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -121,7 +121,7 @@ You can add more flexibility to your queries and dashboard outputs by using temp
 1. Your results look like something like this. <br/><img src={useBaseUrl('img/csa/create-variable-2.png')} alt="Create another template variable" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Create Template Variable** button.
 1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name.
-1. Click on the three vertical dots in the upper right corner of the **Top 10 User Activity** panel.
+1. Click the three vertical dots in the upper right corner of the **Top 10 User Activity** panel.
 1. Select the **Edit** option so you can modify your query.
 1. We want to filter by event_type in our panel, but allow the dashboard viewer options to pick the event type. Add a new line to the query by pressing Shift + Enter and type or copy the following code:
    ```

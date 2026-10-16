@@ -377,7 +377,7 @@ Or using action's input:
 If you use an action's input, this input field should be `required = true*`.
 :::
 
-```
+```sumo
 integration: 'Testing Purpose'
 name: 'testing Scheduled'
 type: Scheduled

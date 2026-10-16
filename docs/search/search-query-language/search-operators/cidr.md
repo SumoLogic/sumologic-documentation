@@ -2,6 +2,7 @@
 id: cidr
 title: cidr Search Operator
 sidebar_label: CIDR
+description: Use the three CIDR operators (getCIDRPrefix, compareCIDRPrefix, maskFromCIDR) to analyze IPv4 networks using Classless Inter-Domain Routing notation and narrow analysis to specific subnets.
 ---
 
 Sumo Logic's three CIDR operators work with CIDR (Classless Inter-Domain Routing, sometimes pronounced "cider") notation to narrow the analysis of IPv4 networks to specific subnets. CIDR notations specify the routing prefix of IP addresses. Input data will be trimmed, making these operators more flexible, which allows you to set your expectations accordingly.
@@ -24,9 +25,7 @@ Extracts the network prefix from an IPv4 address. 
 
 ### Syntax
 
-```sql
-getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>
-```
+`getCIDRPrefix("<ip_addr>", "<prefix_length>") as <field>`
 
 Where:
 
@@ -37,19 +36,19 @@ Where:
 
 The following returns `10.10.1.0`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "24") as net
 ```
 
 The following returns `10.10.1.32`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "27") as net
 ```
 
 The following returns `10.10.1.32`:
 
-```sql
+```sumo
 getCIDRPrefix("10.10.1.35", "29") as net
 ```
 
@@ -59,9 +58,7 @@ Compares two IPv4 addresses and returns true if the network prefixes match.
 
 ### Syntax
 
-```sql
-compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
-```
+`compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>`
 
 `ip_add1` and `ip_addr2` are string representations (such as "10.10.1.35")
 
@@ -69,7 +66,7 @@ compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
 
 **Boolean expression syntax**
 
-```sql
+```sumo
 compareCIDRPrefix(<ip_addr1>, <ip_addr2>, "<prefix_length>")
 ```
 
@@ -86,15 +83,15 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
     (denied OR rejected AND _sourceCategory=firewall | ...
     ```
 1. Parse the IP addresses. For example:   
-    ```sql
+    ```sumo
     ... | parse "ip=*," as ip_address ...
     ```
 1. Compare to the full CIDR notation you requested. For example, 10.10.1.32/27:  
-    ```sql
+    ```sumo
     ... | where compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```
 1. Keep matching records, and drop non-matching records from search results:  
-    ```sql
+    ```sumo
     ... | count by ip_address
     ```
 
@@ -105,11 +102,11 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
    (denied OR rejected AND _sourceCategory=firewall | ...
    ```
 1. Parse the IP addresses. For example:   
-    ```sql
+    ```sumo
     ... | parse "ip=*," as ip_address ...
     ```
 1. Compare to the full CIDR notation you requested, and drop matching records. For example, 10.10.1.32/27:  
-    ```sql
+    ```sumo
     ... | where !compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```
 
@@ -119,9 +116,7 @@ A utility function that returns a subnet mask for boolean operations with IPv4 a
 
 ### Syntax
 
-```sql
-maskFromCIDR("<prefix_length>") as <field>
-```
+`maskFromCIDR("<prefix_length>") as <field>`
 
 Where:
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Docker icon" width="90"/>
 
 The Sumo Logic app for Docker is a unified logs and metrics app that enables you to monitor Docker deployments. The app provides preconfigured dashboards that include information about container state and resource usage, including information on CPU, memory, block I/O, and network.
 
@@ -22,7 +22,7 @@ The Sumo Logic OpenTelemetry collector will run on the same host as Docker and c
 The Sumo Logic app for Docker supports Docker version `23.0.2`.
 :::
 
-<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Docker-OpenTelemetry/Docker.png' alt="Dockerstats-Schematics"/>
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Docker-OpenTelemetry/Docker.png' alt="Dockerstats Schematics"/>
 
 :::info
 This app includes [built-in monitors](#docker-alerts). For details on creating custom monitors, refer to [Create monitors for Docker app](#create-monitors-for-docker-app).
@@ -148,7 +148,7 @@ import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configurat
 
 This sample log query is from the **Docker Events Over Time** panel in the **Docker - Overview** dashboard.
 
-```sql title="Log query"
+```sumo title="Log query"
 sumo.datasource=docker
 | json field=_raw "status" as state
 | json field=_raw "Type" as type
@@ -178,7 +178,7 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 
 ### Overview
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Overview-Otel.png')} alt="Docker-Overview"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Overview-Otel.png')} alt="Docker Overview"/>
 
 - **Number of Docker Hosts**. The total number of Docker hosts monitored.
 - **Number of Containers Started**. The total number of containers started.
@@ -195,7 +195,7 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 
 ### CPU Usage
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-CPU-Usage-Otel.png')} alt="Docker-CPU-Usage"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-CPU-Usage-Otel.png')} alt="Docker CPU Usage"/>
 
 - **Total CPU Consumed by Container in Kernel Mode**. Total CPU consumed in kernel mode by each container.
 - **CPU Usage by Image Name**. CPU consumed by container image name per timeslice.
@@ -206,7 +206,7 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 
 ### Memory Usage
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Memory-Usage-Otel.png')} alt="Docker-Memory-Usage"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Memory-Usage-Otel.png')} alt="Docker Memory Usage"/>
 
 - **Number of Times Container Hit Memory Limit**. Number of times that each container reached its memory limit.
 - **Memory Limit by Container**. Memory limit for each container.
@@ -218,7 +218,7 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 
 ### Network Usage
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="Docker-Network-Usage"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-Network-Usage-Otel.png')} alt="Docker Network Usage"/>
 
 - **Average Rx Bytes by Container**. Displays the average number of bytes received per timeslice by each container.
 - **Average Tx Bytes by Container**. Displays the average number of bytes transmitted per timeslice by each container.

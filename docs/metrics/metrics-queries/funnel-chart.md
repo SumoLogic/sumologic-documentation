@@ -26,7 +26,7 @@ A funnel chart visualizes categorical data. It’s useful for visualizing the st
 
 ## Example funnel chart
 
-<img src={useBaseUrl('img/metrics/funnel-chart.png')} alt="funnel-chart.png" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/metrics/funnel-chart.png')} alt="Funnel chart" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 * **Funnel width**. The width of the funnel reflects the number of datapoints at each stage of the process.

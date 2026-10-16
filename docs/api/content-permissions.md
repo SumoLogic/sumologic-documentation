@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/general/community.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/icons/general/community.png')} alt="Community icon" width="60"/>
 
 The Content Permissions API allows you to share your folders, searches, and dashboards with specific users or roles from HTTP endpoints. For more information, see [Share Content](/docs/manage/content-sharing/).
 
@@ -23,6 +23,7 @@ The Content Permissions API allows you to share your folders, searches, and dash
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/contentPermissions   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/contentPermissions  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/contentPermissions   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/contentPermissions  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/contentPermissions   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/contentPermissions  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/contentPermissions   |

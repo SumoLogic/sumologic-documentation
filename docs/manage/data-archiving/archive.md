@@ -21,9 +21,11 @@ Every archived log message is tagged with the metadata fields specified by the
 ## Create an AWS archive destination
 
 :::note
-You need the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability to create an AWS archive destination.
+- You can also create and manage AWS archive destinations using the [Data Archiving Management API](/docs/api/data-archiving/), enabling automated destination setup at scale.
+- Creating an AWS archive destination, whether through the UI or the [Data Archiving Management API](/docs/api/data-archiving/), requires the [Manage S3 Data Forwarding](/docs/manage/users-roles/roles/role-capabilities/#data-management) role capability.
 :::
 
+To create an AWS archive destination using the UI, follow the steps below:
 1. Follow the instructions in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to grant Sumo Logic permission to send data to the destination S3 bucket.
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Data Archiving**. You can also click the **Go To...** menu at the top of the screen and select **Data Archiving**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Data Archiving**. 
 1. Click **+** to add a new destination.
@@ -154,8 +156,8 @@ To use JSON to create an AWS S3 archive source, reference our AWS Log source�
     :::note
     Fields specified on an AWS S3 archive source take precedence if the archived data has the same fields.
     :::
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for details.

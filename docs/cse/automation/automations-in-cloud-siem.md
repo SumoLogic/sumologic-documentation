@@ -148,40 +148,29 @@ If an automation is set to run when an insight is created or closed, it [runs au
 
 When automations run, the results display on insights and entities.
 1. Open an insight or entity.
-1. Click **Automations** at the top of the screen. The example below shows automations that ran on an insight. Each automation shows its result under **Status**. You can click **View Playbook** to see the playbook that the automation ran.<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an insight" style={{border: '1px solid gray'}} width="800"/>
+1. Click the **Automations** tab. The example below shows automations that ran on an insight.<br/><img src={useBaseUrl('img/cse/automations-on-insight.png')} alt="Automations on an insight" style={{border: '1px solid gray'}} width="800"/><br/>Each automation shows the following results:
+   - **Playbook Name**. The name of the associated playbook.
+   - **Trigger**. What caused the playbook to run.
+   - **Started on**. The time and date when the automation was run.
+   - **Status**. The current state of the playbook.
+      :::note
+      You may have to manually refresh this screen to see the most current status.
+      :::
+1. Click a playbook to view its details.<br/><img src={useBaseUrl('img/cse/playbook-details.png')} alt="Playbook execution details" style={{border: '1px solid gray'}} width="800"/>
+   
+   - You can switch to the graphical view by clicking **Graph View** in the upper-right corner:
+   <img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" style={{border: '1px solid gray'}} width="800"/>
 
-While viewing an insight or entity, you can [run automations manually](#run-an-automation-manually).
+   - If a playbook execution includes multiple nested playbooks, you can click the forward and back arrows to navigate between them.<br/><img src={useBaseUrl('img/cse/nested-playbook.png')} alt="Navigating nested playbooks" style={{border: '1px solid gray'}} width="800"/>
+
+   - You can also approve nodes that are waiting for approval, and kill a running execution to stop it before it finishes. Logs are available for both of these actions, as well as for any node that fails during execution, so you can review exactly what happened.
 
 ### View enrichments provided by automations
 
 When automations run, they can provide enrichments to insights, entities, and signals.
 1. Open an insight, entity, or signal with enrichments provided by an automation.
-1. Click **Enrichments** at the top of the screen.
-1. If threat indicators are set by the [enrichment](/docs/cse/integrations/enrichments-and-indicators), they are displayed. The following example shows a **Malicious** threat indicator.<br/><img src={useBaseUrl('img/cse/automations-malicious-threat-indicator.png')} alt="Threat indicator example" style={{border: '1px solid gray'}} width="800"/>
-
-## View an automation's status
-
-After [running an automation](#run-an-automation-automatically), you can go to the **Automations** tab for the insight or entity to view the automation's  status.  
-
-<img src={useBaseUrl('img/cse/automations-execution-status.png')} alt="Automations execution status" style={{border: '1px solid gray'}} width="800"/>
-
-For each automation you will find:
-* The time and date when the automation was run.
-* The name and description of the associated playbook.
-* The playbook’s current status.
-* A link to **View Playbook** in the Automation Service UI.
-
-:::note
-You may have to manually refresh this screen to see the most current status.
-:::
-
-If you click **View Playbook**, the Automation Service UI will open to the playbook status page:
-
-<img src={useBaseUrl('img/cse/automations-playbook-status.png')} alt="Playbook status" style={{border: '1px solid gray'}} width="800"/>
-
-You can switch to the graphical view by clicking **Graph View** in the upper-right corner:
-
-<img src={useBaseUrl('img/cse/automations-playbook-status-graph.png')} alt="Playbook status graph" style={{border: '1px solid gray'}} width="800"/>
+1. Click the **Enrichments** tab.
+1. If threat indicators are set by the [enrichment](/docs/cse/integrations/enrichments-and-indicators), they are displayed. The following example shows a **Suspicious** threat indicator.<br/><img src={useBaseUrl('img/cse/automations-suspicious-threat-indicator.png')} alt="Threat indicator example" style={{border: '1px solid gray'}} width="800"/>
 
 ## Migrate from legacy actions and enrichments to the Automation Service
 

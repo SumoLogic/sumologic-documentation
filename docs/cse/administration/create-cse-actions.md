@@ -68,7 +68,7 @@ You can configure an action to send a notification when any Network Sensor goes 
 You can configure an action to send a notification when a rule is automatically disabled. (Cloud SIEM automatically disables rules that generate too many signals, more than 100K in an hour, or 1 million in 24 hours.)
 
 :::note
-A rule action doesn't fire when a rule is enabled, moved in or out of prototype mode, or manually disabled.
+A rule action does not fire when a rule is enabled, moved in or out of prototype mode, or manually disabled.
 :::
 
 The notification sent by a rule action contains the name of the rule and the reason it was disabled.

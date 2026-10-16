@@ -7,7 +7,7 @@ description: The Evident.io ESP app provides pre-configured searches and dashboa
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/evidentio.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/evidentio.png')} alt="Evident.io icon" width="75"/>
 
 The Evident.io ESP app provides pre-configured searches and dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
 
@@ -183,7 +183,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 
 ### Sample queries
 
-```sql title="Alerts by Status"
+```sumo title="Alerts by Status"
 _sourceCategory=security_evident
 | json "data.id", "data.attributes" as id, data_attrib
 | json "included.[0].attributes.name" as account_name

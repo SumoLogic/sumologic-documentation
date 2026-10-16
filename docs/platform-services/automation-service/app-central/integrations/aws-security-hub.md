@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-***Version: 1.4
-Updated: Aug 28, 2025***
+***Version: 1.5  
+Updated: April 27, 2026***
 
 Interact with AWS Security Hub through Insights and Findings.
 
@@ -57,11 +57,11 @@ For information about AWS Security Hub, see [AWS Security Hub documentation](htt
 
 ## Change Log
 
-* February 28, 2019 - First upload
-* March 10, 2022 - Logo
-* June 19, 2023 (v1.2) - Updated the integration with Environmental Variables
-* February 28, 2023 (v1.3) - Updated code for compatibility with Python 3.12
-* August 28, 2025 (v1.4)
-  * Renamed action `Batch Import Finding` to `Import Single Finding`.
-  * Renamed action `List Enable Products` to `List Enabled Products`.
-  * Updated hints for all actions.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.5 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | August 28, 2025 | <ul><li>Renamed the `Batch Import Finding` action to **Import Single Finding**.</li><li>Renamed the `List Enable Products` action to **List Enabled Products**.</li><li>Updated hints for all actions.</li></ul> |
+| v1.2 | June 19, 2023 | Updated the integration with Environmental Variables. |
+| v1.3 | February 28, 2023 | Updated code for compatibility with Python 3.12. |
+| | March 10, 2022 | Updated the logo in AWS Security Hub integration. |
+| | February 28, 2019 | Initial release of the AWS Security Hub integration. |

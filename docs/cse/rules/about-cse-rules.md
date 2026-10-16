@@ -2,7 +2,7 @@
 id: about-cse-rules
 title: About Cloud SIEM Rules
 sidebar_label: About Cloud SIEM Rules
-description: Learn about Cloud SIEM rules, rules syntax, and how to write rules.
+description: Understand Cloud SIEM rules that fire on incoming records to create signals, including rule types, syntax, and how rules fit into the insight generation process.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -65,7 +65,7 @@ When you click a rule on the **Rules** page, a details page for the rule appears
 | d | [**Status**](/docs/cse/rules/rules-status/), [**Rule Type**](/docs/cse/rules/about-cse-rules/#rule-types), **Severity**, and number of [**Tuning Expressions**](#about-tuning-expressions).  |
 | e | **Signal Suppression**. When [signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/) occurred. Click a square on the calendar to see the number of signals suppressed on that day. |
 | f | **Rule Editor**. Click in fields to edit the rule. For information about the fields, see articles for the [rule types](#rule-types). |
-| g | **Prototype Rule**. Select the checkbox to [save the rule a prototype](/docs/cse/rules/write-chain-rule/#save-as-prototype).  |
+| g | **Prototype Rule**. Select the check box to [save the rule a prototype](/docs/cse/rules/write-chain-rule/#save-as-prototype).  |
 | h | **History**. Change events for the rule, including who made the change and the type of change event. |
 | i | **Insights**. The [insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) that resulted from the rule's firing.  |
 
@@ -87,13 +87,13 @@ The [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule)
 
 Like a rule expression, a tuning expression is matched against incoming records. As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
 
-```sql
+```sumo
 metadata_vendor = 'Microsoft' and metadata_product = 'Windows' and metadata_deviceEventId = 'Security-1102' and fields['Provider.Name'] = 'Microsoft-Windows-Eventlog'
 ```
 
 If you don’t want the rule to generate a signal if the person performing the action is “jdoe”, you can add a tuning expression like this to the rule:
 
-```sql
+```sumo
 user_userId = !jdoe
 ```
 
@@ -121,14 +121,14 @@ There are several kinds of rules. Each supports a different sort of firing behav
 * **Chain rule**. You can use a chain rule to look for two or more types of events, and to fire a signal based on the frequency of each over a time window. For example, you can configure it to fire when a user has more than 10 failed login attempts and one successful login attempt in a one hour window. Like a threshold rule, a chain rule is stateful and counts multiple records. The difference is that a chain rule applies multiple expressions to a record. For more information about chain rules, see [Write a Chain Rule](/docs/cse/rules/write-chain-rule).
 * **Aggregation rule**. Fires a signal when up to three aggregation conditions are met within a specified period of time. For example, you can configure it to fire when a large variety of different AWS CloudTrail event IDs from the same `device_ip` are observed within a 30 minute period. For more information about aggregation rules, see [Write an Aggregation Rule](/docs/cse/rules/write-aggregation-rule).
 * **Threshold rule**. Fires a signal when the rule expression is matched at least a certain number times during a specified length of time. For example, you can configure it to fire if there are five or more failed login attempts for the same IP address within one hour. A threshold rule is stateful. A condition must be satisfied by multiple records over a period of time. For more information about threshold rules, see [Write a Threshold Rule](/docs/cse/rules/write-threshold-rule).
-* **First seen rule**. Fires a signal when behavior by an entity is encountered that hasn't been seen before. For example, you can configure it to fire the first time when a user logs in from a new location, or when a new admin account is created. For more information about first seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
+* **First seen rule**. Fires a signal when behavior by an entity is encountered that has not been seen before. For example, you can configure it to fire the first time when a user logs in from a new location, or when a new admin account is created. For more information about first seen rules, see [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule).
 * **Outlier rule**. Fires when behavior by an entity is encountered that deviates from its baseline activity. For each outlier rule, Cloud SIEM automatically creates a baseline model of normal behavior. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a signal. For more information about outlier rules, see [Write an Outlier Rule](/docs/cse/rules/write-outlier-rule).
 
 ## Product identification metadata fields
 
 During the record parsing process, Cloud SIEM adds metadata that identifies the product or service that generated the record. You use this metadata in a rule to specify what records the rule should be applied to. For example, the rule fragment below will match records generated by Trend Micro Deep Security devices with IDs in a specified range: 
 
-```sql
+```sumo
 metadata_vendor = 'Trend Micro' and metadata_product = 'Deep Security'  and metadata_deviceEventId between '2000000' and '2999999'
 ```
 
@@ -195,7 +195,7 @@ When you’re writing a rule that needs to take advantage of the results of the 
 
 The syntax is:
 
-```sql
+```sumo
 array_contains(listMatches, "match-list-name")
 ```
 
@@ -211,13 +211,13 @@ Depending on your goal, you precede the `array_contains` function with either AN
 
 For example, the fragment below looks at a record for a field named `listMatches` that contains the value “vuln_scanners”. If not encountered, that indicates that the IP address is not a vulnerable scanner, so, given that the rest of the rule expression is matched, a signal will be fired for that record. 
 
-```sql
+```sumo
 ... AND NOT array_contains(listMatches, "vuln_scanners")
 ```
 
 This example below checks a record for a field named `listMatches` that contains either “vul_scanners” or  “business_ips”. Notice that the two `array_contains` statements  are combined with an OR and enclosed in parentheses:  
    
-```sql
+```sumo
 ...AND NOT (array_contains(listMatches, 'vuln_scanners') OR array_contains(listMatches, 'business_ips'))
 ```
 

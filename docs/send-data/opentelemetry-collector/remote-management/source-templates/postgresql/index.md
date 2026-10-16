@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="20"/>
+<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="PostgreSQL icon" width="35"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="35"/>
 
 The PostgreSQL source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of PostgreSQL logs and metrics to Sumo Logic.
 
@@ -42,7 +42,7 @@ Configure logging in PostgreSQL:
 2. Connect to the database server (using SSH) in a terminal window.
 3. Open `postgresql.conf` configuration file.
 4. Under the ERROR REPORTING AND LOGGING section of the file, use the following config parameters. For more information on the following parameters, [click here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html).
-  ```sql
+  ```sumo
     log_destination = 'stderr'
     logging_collector = on
     log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
