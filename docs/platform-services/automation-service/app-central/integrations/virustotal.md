@@ -63,45 +63,20 @@ For information about VirusTotal, see [VirusTotal documentation](https://docs.vi
 
 ## Change Log
 
-* July 17, 2019 - First upload
-* April 10, 2020 - Actions updated:
-    + IP and Domain Reputation: WHOIS information has been added to action's output
-* December 21, 2020 - Updated descriptions
-* June 3, 2021 - Action Updated:
-    + IP Reputation: Detected URLs information has been added as output
-* July 1, 2021 - New action added:
-    + IP Reputation V3 - API v3
-* June 14, 2022 - Updated action
-    + File Reputation: now it's possible to select a FileHash artifact as an input for this action
-* November 22, 2022
-    + solved issue for which the integration test will throw an error if no value for timeout is provided
-    + set the timeout field as not required
-* March 20, 2023 (V1.6) - Updated Actions:
-    + Merge IP Reputation V2 into IP Reputation V3 Action (IP Reputation V3 use API V3)
-    + Merge URL Reputation V2 into URL Reputation Action
-* June 27, 2023 (v1.7)
-    + The name of **VirusTotal OIF** modified to **VirusTotal**
-    + The visibility of the resource field changed
-    + Two new actions added (**URL Scan V2** and **File Scan V2**)
-    + Removed leading/trailing spaces
-* July 25, 2023 (v1.8) - Updated Integration Resource Fields
-* March 4, 2024 (v1.10) - Updated code for compatibility with Python 3.12
-* April 4, 2024 (v1.11) New action added:
-    + Search VirusTotal
-* June 20, 2024 (v1.12)
-    + Updated action Scan File V2: added checkbox field for handling files passed through `output.raw`
-* July 03, 2024 (v1.13)
-    * A new version is available: ***VirusTotal V3***
-    + Added new actions:
-        - **Check Scanned Status**
-        - **Download Report**
-        - **Get Report**
-    + Updated actions:
-        - **Scan File** - Just Scan the specific file
-        - **Scan URL** - Just Scan on a specific URL
-    + Moved actions using V3 API to VirusTotal V3
-        - **IP Reputation V3** as **IP Reputation**
-        - **Search VirusTotal** as **Search VirusTotal**
-        - **File Scan V2** as **Scan File** but it just scans the specific file
-        - **URL Scan V2** as **Scan URL** but it just scans on a specific URL
-* April 30, 2026 (v1.14) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.14 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.13 | July 03, 2024 | <ul><li>Noted that a new version is available: **VirusTotal V3**.</li><li>Added new actions: **Check Scanned Status**, **Download Report**, and **Get Report**.</li><li>Updated actions: **Scan File** now just scans the specific file, and **Scan URL** now just scans the specific URL.</li><li>Moved actions using the V3 API to VirusTotal V3: **IP Reputation V3** as **IP Reputation**, **Search VirusTotal** as **Search VirusTotal**, **File Scan V2** as **Scan File** (which just scans the specific file), and **URL Scan V2** as **Scan URL** (which just scans the specific URL).</li></ul> |
+| v1.12 | June 20, 2024 | Updated the **Scan File V2** action to add a checkbox field for handling files passed through `output.raw`. |
+| v1.11 | April 4, 2024 | Added a new action: **Search VirusTotal**. |
+| v1.10 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.8 | July 25, 2023 | Updated the integration resource fields. |
+| v1.7 | June 27, 2023 | <ul><li>Renamed **VirusTotal OIF** to **VirusTotal**.</li><li>Changed the visibility of the resource field.</li><li>Added new actions: **URL Scan V2** and **File Scan V2**.</li><li>Removed leading/trailing spaces.</li></ul> |
+| | March 20, 2023 | <ul><li>Merged **IP Reputation V2** into the **IP Reputation V3** action (IP Reputation V3 uses API V3).</li><li>Merged **URL Reputation V2** into the **URL Reputation** action.</li></ul> |
+| | November 22, 2022 | <ul><li>Fixed an issue where the integration test would throw an error if no value was provided for timeout.</li><li>Set the timeout field as not required.</li></ul> |
+| | June 14, 2022 | Updated the **File Reputation** action to allow selecting a FileHash artifact as input. |
+| | July 1, 2021 | Added a new action: **IP Reputation V3 - API v3**. |
+| | June 3, 2021 | Added detected URLs information as output to the **IP Reputation** action. |
+| | December 21, 2020 | Updated the descriptions. |
+| | April 10, 2020 | Added WHOIS information to the **IP and Domain Reputation** action's output. |
+| | July 17, 2019 | Initial release of the VirusTotal integration. |

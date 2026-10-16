@@ -94,7 +94,7 @@ If you are using version 1.0.x of the [Microsoft Exchange Trace Logs C2C source]
 
 ### Overview
 
-The **Microsoft Exchange Trace Logs Overview** dashboard provides a comprehensive view of email flow and performance across your Exchange environment. It highlights key metrics such as message volumes, delivery success and failure rates, and total data transmitted. The dashboard also offers insights into top senders and recipients, geo-location patterns, and inbound or outbound domain activity. Additionally, it includes trend analyses and detailed message-level information to help identify anomalies, monitor high-volume transmissions, and ensure smooth mail operations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Exchange-Trace-Logs-Overview.png')} alt="Microsoft Exchange Trace Logs - Overview" width="900"/>
+The **Microsoft Exchange Trace Logs Overview** dashboard provides a comprehensive view of email flow and performance across your Exchange environment. It highlights key metrics such as message volumes, delivery success and failure rates, and total data transmitted. The dashboard also offers insights into top senders and recipients, geo-location patterns, and inbound or outbound domain activity. Additionally, it includes trend analyses and detailed message-level information to help identify anomalies, monitor high-volume transmissions, and ensure smooth mail operations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-overview.png')} alt="Microsoft Exchange Trace Logs - Overview" width="900"/>
 
 ### Security Overview
 

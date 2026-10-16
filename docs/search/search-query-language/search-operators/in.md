@@ -32,3 +32,13 @@ _sourceCategory=Apache/Access
 would return results similar to:
 
 <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/in.png')} alt="in search operator" style={{border: '1px solid gray'}} width="800" />
+
+### Filter rows using where with in
+
+Use `in` with `where` to restrict results to rows matching a set of known values:
+
+```sumo
+_sourceCategory=Apache/Access
+| parse "GET * HTTP/1.1\" *" as url, status_code
+| where status_code in ("200", "201", "204")
+```

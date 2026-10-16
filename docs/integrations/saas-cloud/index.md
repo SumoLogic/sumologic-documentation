@@ -351,14 +351,18 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
   <p>Monitor, analyze, and secure your web traffic.</p>
   </div>
 </div>
-<!--
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/netskope-webtx-streaming')}><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="Netskope icon" width="40"/><h4>Netskope WebTx Streaming</h4></a>
   <p>Monitor, analyze, and secure your web traffic with streaming transaction data.</p>
   </div>
 </div>
--->
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/integrations/saas-cloud/openai')}><img src={useBaseUrl('img/send-data/openAI-logo.png')} alt="OpenAI icon" width="55"/><h4>OpenAI</h4></a>
+  <p>Monitor cost, usage, security, and audit activity across your OpenAI organization.</p>
+  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/integrations/saas-cloud/opsgenie')}><img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Opsgenie icon" width="50"/><h4>Opsgenie</h4></a>

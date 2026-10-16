@@ -430,9 +430,6 @@ processors:
   memory_limiter:
     check_interval: 1s
     limit_mib: 512
-  batch:
-    send_batch_size: 2048
-    timeout: 5s
   resourcedetection/system:
     detectors: ["system"]
     system:
@@ -461,13 +458,18 @@ processors:
 exporters:
   sumologic:
     metric_format: prometheus
+    sending_queue:
+      queue_size: 2048000
+      batch:
+        flush_timeout: 5s
+        min_size: 2048
 
 service:
   extensions: [sumologic]
   pipelines:
     metrics:
       receivers: [prometheus]
-      processors: [memory_limiter, batch, resourcedetection/system, resource/common, resource/sumologic]
+      processors: [memory_limiter, resourcedetection/system, resource/common, resource/sumologic]
       exporters: [sumologic]
 ```
 
@@ -566,67 +568,85 @@ Most Next-Gen apps allow you to provide the scope at the installation time and a
 
 ### Metrics Overview
 
-The **LiteLLM - Metrics Overview** dashboard provides a high-level summary of proxy health and usage from Prometheus metrics. Single-value panels give instant visibility into total requests, failed requests, active teams, active API keys, and active models. The Requests by Requested Model and Spend by Team honeycomb panels let you compare request volume and cost distribution at a glance. Time-series views for requests over time and failed requests over time surface usage trends and anomalies across the selected period.
+The **LiteLLM - Metrics Overview** dashboard provides high-level visibility into LiteLLM operational metrics and system health including total request volume, success rates, concurrent requests, request distribution across models and teams, and error rates.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Metrics-Overview.png" alt="LiteLLM - Metrics Overview" style={{border: '1px solid gray'}} width="800" />
 
-### Proxy Health and Performance
+### Logs Overview
 
-The **LiteLLM - Proxy Health and Performance** dashboard provides operational visibility into proxy request health filtered by deployment environment, team, end user, and model. Total Requests Over Time and Failed Requests Over Time track throughput and failure trends side by side, while Traffic by Route surfaces which API paths (for example, `/chat/completions`, `/embeddings`) drive the most load. This dashboard is the primary starting point for detecting spikes, degraded success rates, or unexpected traffic patterns across routes.
+The **LiteLLM - Logs Overview** dashboard provides high-level KPIs, business metrics, cost tracking, and usage patterns across all LiteLLM deployments including requests, success rates, costs, models, users, teams, and tags.
 
-<img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Proxy-Health-and-Performance.png" alt="LiteLLM - Proxy Health and Performance" style={{border: '1px solid gray'}} width="800" />
+<img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Logs-Overview.png" alt="LiteLLM - Logs Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Latency and Performance
 
-The **LiteLLM - Latency and Performance** dashboard provides a deep dive into request latency, time to first token (TTFT), and LLM API latency. LLM API Latency Over Time and Latency by Requested Model track end-to-end and provider latency trends across the selected period. Time to First Token by Team measures streaming responsiveness per team, which is critical for interactive use cases. Request Count by Requested Model shows traffic distribution, while the Top 10 Slowest Models (Avg Latency) table helps pinpoint models that consistently contribute to slow responses and SLA breaches.
+The **LiteLLM - Latency and Performance** dashboard provides comprehensive monitoring of response times and throughput metrics for LiteLLM including request latency percentiles (p50, p95, p99), time to first token (TTFT), streaming performance, and token throughput rates.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Latency-and-Performance.png" alt="LiteLLM - Latency and Performance" style={{border: '1px solid gray'}} width="800" />
 
+### Performance and Cache
+
+The **LiteLLM - Performance and Cache** dashboard provides comprehensive performance monitoring for LiteLLM including response times, token throughput, streaming performance, LiteLLM overhead tracking, cache analytics, vector store latency, and MCP tool performance for SRE and platform engineers.
+
+<img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Performance-and-Cache.png" alt="LiteLLM - Performance and Cache" style={{border: '1px solid gray'}} width="800" />
+
 ### Budget and Rate Limits
 
-The **LiteLLM - Budget and Rate Limits** dashboard provides visibility into remaining budgets and provider-side rate limits. The Budget by Team and Rate Limit Headroom by Model & API Base honeycomb panels give instant color-coded health of budget and rate limit status across teams and models. Team Budget Remaining and API Key Budget Remaining time-series panels track available spend over time, and Hours Until Budget Reset surfaces upcoming resets before limits are exhausted. Remaining Budget By Teams and Max Budget By Teams tables give a ranked view for governance. Remaining Requests and Remaining Tokens track provider rate limit headroom sourced from upstream response headers.
+The **LiteLLM - Budget and Rate Limits** dashboard provides comprehensive monitoring of budget utilization and rate limiting controls for LiteLLM including budget spent, remaining budget across teams, rate limit configurations, and token usage patterns.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Budget-and-Rate-Limits.png" alt="LiteLLM - Budget and Rate Limits" style={{border: '1px solid gray'}} width="800" />
 
+### Tokens and Cost
+
+The **LiteLLM - Tokens and Cost** dashboard provides detailed analysis of token consumption and associated costs for LiteLLM including total tokens consumed, cost per request, token distribution across prompt and completion tokens, and cost trends over time.
+
+<img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Tokens-and-Cost.png" alt="LiteLLM - Tokens and Cost" style={{border: '1px solid gray'}} width="800" />
+
+### Tag Analysis
+
+The **LiteLLM - Tag Analysis** dashboard provides comprehensive cost tracking for LiteLLM including LLM costs, MCP tool costs, prompt version comparison, tag-based attribution, batch operations, end-user costs, budget monitoring, and cache savings analysis.
+
+<img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Tag-Analysis.png" alt="LiteLLM - Tag Analysis" style={{border: '1px solid gray'}} width="800" />
+
 ### Deployment and Fallback Health
 
-The **LiteLLM - Deployment and Fallback Health** dashboard monitors the health of individual LLM deployments and the effectiveness of fallback routing. The Deployment Health by Model & Provider honeycomb panel provides a color-coded status view across all deployments, while Deployment State By Model tracks health state (0 = healthy, 1 = partial, 2 = outage) over time. Success vs Failure Responses compares response outcomes, and Fallback Success by Requested Model and Fallback Failure by Requested Model show whether the router successfully recovered from primary failures. Proxy Failures by Exception Class and Deployment Failures by Exception Status break down failure root causes. Cooled Down by Model tracks deployments that have recently recovered from a cooldown period.
+The **LiteLLM - Deployment and Fallback Health** dashboard provides visibility into model deployment health and fallback mechanism performance for LiteLLM including deployment success rates, fallback trigger frequency, health check statuses, and deployment availability metrics.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Deployment-and-Fallback-Health.png" alt="LiteLLM - Deployment and Fallback Health" style={{border: '1px solid gray'}} width="800" />
 
 ### Infrastructure and Callbacks
 
-The **LiteLLM - Infrastructure and Callbacks** dashboard provides visibility into the supporting services and callback integrations that underpin LiteLLM's operation. Redis Latency, Postgres Latency, and LiteLLM Self Latency panels track dependency health over time. Redis Failed Requests and Callback Logging Failures surface error conditions in caching and observability pipelines. Queue size panels for the Pod Lock Manager Queue, In-Memory Spend Update Queue, and Redis Spend Update Queue serve as backpressure indicators that signal whether the system is keeping up with spend tracking workloads. The Deployment Correlation table maps each model to its provider and API base, giving operators a fast reference for routing topology.
+The **LiteLLM - Infrastructure and Callbacks** dashboard provides detailed insights into infrastructure performance and callback system operations for LiteLLM including database connection pool health, callback success rates, queue depths, and system resource consumption.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Infrastructure-and-Callbacks.png" alt="LiteLLM - Infrastructure and Callbacks" style={{border: '1px solid gray'}} width="800" />
 
-### Cost Analytics
+### User and Route Visibility
 
-The **LiteLLM - Cost Analytics** dashboard provides comprehensive cost tracking sourced from LiteLLM request logs. Single-value panels for Total Cost ($), Input Token Cost ($), and Output Token Cost ($) give instant spend visibility. Cost Trend (LLM + MCP + Tools) breaks spend into input, output, tool, and MCP cost components over time, while Cost by Provider Over Time shows which LLM providers drive spending. Top 15 Models by Cost, Top 15 Teams by Cost, Top 15 API Key Users by Cost, and Top 20 End Users by Cost (B2B) tables provide ranked attribution for chargeback and governance. Top 15 Cost by Prompt Version (A/B Testing) and Top 15 MCP Tool Costs by Server and Tool enable prompt and tooling cost comparison. Token Cost Efficiency by Model surfaces cost per million tokens, Cache Cost Savings tracks cost avoided through cache hits, and User Budget Status monitors budget consumption per API key user.
+The **LiteLLM - User and Route Visibility** dashboard provides comprehensive insights into user activity and API route usage patterns for LiteLLM including active users, user request volumes, route-specific request distribution, and user authentication patterns.
 
-<img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Cost-Analytics.png" alt="LiteLLM - Cost Analytics" style={{border: '1px solid gray'}} width="800" />
+<img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-User-and-Route-Visibility.png" alt="LiteLLM - User and Route Visibility" style={{border: '1px solid gray'}} width="800" />
 
 ### Error Analysis and Debugging
 
-The **LiteLLM - Error Analysis and Debugging** dashboard provides comprehensive error tracking sourced from LiteLLM request logs. Total Errors and Failure Rate (%) single-value panels give instant error visibility. Error Trend Over Time and Error Rate Trend Over Time track failure volume and percentage trends. Error Codes Distribution and Error Class Distribution pie charts identify the most common failure categories, while Errors Distribution by Provider breaks down failures by upstream LLM provider. Top 15 Models by Error Count and Top 15 Error Messages tables surface the highest-impact models and error strings. Recent Errors (Latest 100) and Detailed Error Analysis with Trace IDs tables support active debugging with distributed trace correlation. Guardrail Status Distribution and Guardrail Status Trend monitor guardrail execution outcomes, and Top 20 IP Addresses by Error Count and Top 20 Network Error Patterns support network-level security and connectivity debugging. Cost Calculation Failures surfaces requests where cost attribution failed.
+The **LiteLLM - Error Analysis and Debugging** dashboard provides comprehensive error tracking and debugging for LiteLLM including error rates, trace IDs for distributed tracing, cost failure debugging, end-user error patterns, IP-based network analysis, and detailed failure investigation.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Error-Analysis-and-Debugging.png" alt="LiteLLM - Error Analysis and Debugging" style={{border: '1px solid gray'}} width="800" />
 
 ### Security and Compliance
 
-The **LiteLLM - Security and Compliance** dashboard provides comprehensive security monitoring sourced from LiteLLM request logs. It covers detailed guardrail analytics, entity masking and PII detection, geographic access patterns, network security analysis, and compliance tracking — designed for security teams and compliance officers who need audit-ready visibility into how AI is being used across the organization.
+The **LiteLLM - Security and Compliance** dashboard provides comprehensive security monitoring for LiteLLM including detailed guardrail analytics, entity masking & PII detection, geographic access patterns, network security analysis, and compliance tracking for security teams and compliance officers.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Security-and-Compliance.png" alt="LiteLLM - Security and Compliance" style={{border: '1px solid gray'}} width="800" />
 
 ### MCP Overview
 
-The **LiteLLM - MCP Overview** dashboard provides visibility into Model Context Protocol (MCP) tool usage sourced from LiteLLM request logs. Total MCP Tool Calls and Total MCP Tool Cost ($) single-value panels give instant MCP activity and spend visibility. Active Prompt Versions tracks the number of distinct prompt versions in use. MCP Tool Call Trends shows usage volume over time by tool, while Top 20 MCP Tools by Server and MCP Tool Performance & Success Rate tables identify the most-used tools and their latency and success metrics. MCP Cost by Tool & Server ranks tooling costs for attribution. RAG Request Trend (Vector Store Queries) tracks retrieval-augmented generation activity over time, Vector Store by Provider shows distribution across vector store backends, and Prompt Management Integration Usage Distribution and Prompt Version Usage Trend monitor prompt management integrations such as Langfuse and PromptLayer.
+The **LiteLLM - MCP Overview** dashboard provides comprehensive monitoring for LiteLLM advanced features including MCP tool call analytics, prompt management & A/B testing, vector store & RAG performance, and request tags classification for ML engineers and feature developers.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-MCP-Overview.png" alt="LiteLLM - MCP Overview" style={{border: '1px solid gray'}} width="800" />
 
 ### Vector Overview
 
-The **LiteLLM - Vector Overview** dashboard provides visibility into vector store and RAG usage sourced from LiteLLM request logs. RAG vs Non-RAG Requests shows the proportion of retrieval-augmented requests versus standard requests. Vector Store by Provider breaks down which vector store backends are in use. Top Searched Queries surfaces the most frequent queries sent to vector stores, and Top 10 Vector Stores with Highest Average Score identifies the best-performing stores by retrieval score — helping teams assess and improve RAG retrieval quality.
+The **LiteLLM - Vector Overview** dashboard provides comprehensive monitoring of vector store and RAG operations for LiteLLM including vector search performance, embedding latency, query success rates, and retrieval analytics.
 
 <img src="https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Litellm/LiteLLM-Vector-Overview.png" alt="LiteLLM - Vector Overview" style={{border: '1px solid gray'}} width="800" />
 

@@ -9,7 +9,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - .claude
+      - .claude/**
       - .github/**
       - .clabot
       - CONTRIBUTING.md

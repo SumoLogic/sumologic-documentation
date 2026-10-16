@@ -74,20 +74,10 @@ The [Sumo Logic Exporter](https://github.com/SumoLogic/sumologic-otel-collector/
 sends data to Sumo Logic. It has the following features that can help with performance:
 
 - `retry_on_failure` with its `initial_interval`, `max_interval` and `max_elapsed_time` settings
-- `sending_queue` with its `num_consumers`, `queue_size` settings
+- `sending_queue` with its `num_consumers`, `queue_size`, `batch` settings
 - `timeout`
 
 Read more about these features in the [Sumo Logic Exporter docs](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/exporter/sumologicexporter/README.md).
-
-### Batch Processor
-
-The [Batch Processor](https://github.com/open-telemetry/opentelemetry-collector/tree/main/processor/batchprocessor) joins records of each type in batches. It has the following features that can help with performance:
-
-- `send_batch_size`
-- `send_batch_max_size`
-- `timeout`
-
-Read more about these features in the [Batch Processor docs](https://github.com/open-telemetry/opentelemetry-collector/blob/main/processor/batchprocessor/README.md).
 
 ### Memory Limiter Processor
 

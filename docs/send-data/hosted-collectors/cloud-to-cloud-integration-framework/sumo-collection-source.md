@@ -2,7 +2,7 @@
 id: sumo-collection-source
 title: Sumo Collection Source
 sidebar_label: Sumo Collection
-tags:
+keywords:
   - cloud-to-cloud
   - sumo-collection
 description: The Sumo Collection Source aims to collect the list of the collectors and their sources and send them to Sumo Logic.
@@ -44,6 +44,7 @@ Identify your **Deployment** region based on your Base URL. The deployment regio
 | CA  |	`https://api.ca.sumologic.com/`  |
 | CH  |	`https://api.ch.sumologic.com/`  |
 | DE  |	`https://api.de.sumologic.com/`  |
+| ESC |	`https://api.esc.sumologic.com/` |
 | EU  | `https://api.eu.sumologic.com/`  |
 | FED |	`https://api.fed.sumologic.com/` |
 | JP  |	`https://api.jp.sumologic.com/`  |

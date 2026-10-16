@@ -9,6 +9,10 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Remote Windows Event Log Source to use a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.
 
+:::tip
+Events are delivered over WinRM, which has a throughput ceiling independent of the Collector. If you're scaling this Source across many hosts or a high event rate, see [Remote Windows Event Log Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/remote-windows-event-log-benchmarks/) for expected CPU usage and throughput.
+:::
+
 The following about setting up a Remote Windows Event Log Source:
 
 * Remote Windows Event Sources can only be run on, and collect remotely from, systems running Windows Server 2012 or later.

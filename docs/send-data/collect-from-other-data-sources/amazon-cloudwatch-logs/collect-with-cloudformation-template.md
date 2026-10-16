@@ -1,6 +1,6 @@
 ---
 id: collect-with-cloudformation-template
-title: Collect Amazon CloudWatch Logs using a CloudFormation Template
+title: Collect CloudWatch Logs with CloudFormation
 sidebar_label: Collect Logs using CloudFormation
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template.
 ---

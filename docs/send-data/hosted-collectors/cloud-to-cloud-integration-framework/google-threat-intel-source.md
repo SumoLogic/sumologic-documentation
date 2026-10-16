@@ -2,7 +2,7 @@
 id: google-threat-intel-source
 title: Google Threat Intel Source
 sidebar_label: Google Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - google-threat-intel
 description: Learn how to collect Google Threat Intel data and send it to Sumo Logic.

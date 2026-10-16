@@ -37,21 +37,11 @@ Ask for the file path if not provided. Read the complete file including frontmat
 
 ### Step 2: Diagnose AEO and GEO gaps
 
-Before proposing changes, assess the doc against these signals and tell the user what you found:
+Before proposing changes, assess the doc against the **Five GEO Principles** defined in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md) — answer-first (BLUF), one page one question, question-style headings, FAQ sections, and structured metadata — and tell the user what you found.
 
-**AEO signals** (featured snippets, "People also ask", direct answer boxes)
-- Are any H2 or H3 headings phrased as questions (e.g., "What is X?", "How do I configure Y?")?
-- Does the first paragraph directly answer the implied question a user would search for?
-- Are there structured lists or tables that search engines can extract as direct answers?
-- Are key terms defined with explicit "X is..." or "X means..." sentences?
+Also check these AEO-specific signals, which the GEO skill does not cover:
 
-**Opening paragraph quality** (AEO + GEO)
-An LLM and a featured snippet algorithm both scan the first 1–3 sentences first. Check:
-- Does it directly answer "what is [subject]" or "what does [subject] do"?
-- Is it self-contained (understandable without reading anything else)?
-- Does it avoid filler openers like "This document covers..." or "Welcome to..."?
-
-**Factual density** (GEO)
+**Factual density**
 LLMs prefer pages where key facts are stated explicitly as short, standalone sentences.
 - Are definitions buried in subordinate clauses?
 - Are numbers and specifications stated directly?
@@ -61,18 +51,12 @@ LLMs prefer pages where key facts are stated explicitly as short, standalone sen
 Lists, tables, and short Q&A pairs are extracted by AI more reliably than prose paragraphs.
 - Does the doc have lists for things that are enumerable?
 - Does it have a table for comparisons, parameters, or options?
-- Are there H2 or H3 headings phrased as questions?
+- Are key terms defined with explicit "X is..." or "X means..." sentences?
 
 **Summary section**
 Pages with an "At a glance", "Key facts", or "Overview" section near the top get cited more often because the summary is the most citation-friendly portion.
 - Does the doc have such a section?
 - Is it near the top?
-
-**Self-containedness**
-AI tools cannot follow links. If the doc depends on the reader having read another page first, an AI cannot synthesize it correctly.
-- Does the doc explain its own prerequisites briefly?
-- Are acronyms defined on first use?
-- Would a reader with no context understand the key points?
 
 ### Step 3: Propose improvements
 
@@ -125,89 +109,22 @@ After the user confirms which changes to make:
 
 After applying changes, tell the user:
 - Which checks in `/seo-audit` this resolves
-- Whether any remaining GEO suggestions need a larger rewrite (offer `/rewrite-intro` if the opening paragraph needed major work)
-- Whether the doc would benefit from a `/tone-check` pass afterward
+- Whether any remaining GEO suggestions need a larger rewrite (offer to rewrite the opening paragraph if it needed major work)
 
 ---
 
 ## GEO improvement patterns
 
-### Pattern 1: Strengthen the opening paragraph
+Full rules and examples for each pattern live in [`geo-guide/SKILL.md`](.claude/skills/geo-guide/SKILL.md). Use this table as a quick reference when proposing changes.
 
-The opening paragraph is the highest-leverage GEO change. LLMs pull from the first few sentences more than anywhere else on the page.
-
-**Weak opener (do not leave as-is):**
-> This document provides information about configuring the AWS Observability solution.
-
-**Strong opener:**
-> The Sumo Logic AWS Observability solution collects metrics and logs from Amazon Web Services, including EC2, RDS, ELB, and Lambda, and correlates them in pre-built dashboards. It uses CloudFormation templates to deploy collectors automatically, requiring no manual source configuration.
-
-Rules for a strong GEO opener:
-- State what the subject is or does in the first sentence
-- State the mechanism, scope, or key capability in the second sentence
-- Do not start with "This document", "This page", "Overview", or "Welcome"
-- Aim for 2–4 sentences, 50–100 words
-
-### Pattern 2: Add an "At a glance" section
-
-Place this immediately after the opening paragraph for docs over 600 words.
-
-```markdown
-## At a glance
-
-- **What it does**: [One sentence — the core capability]
-- **How it works**: [One sentence — the mechanism]
-- **Supported [versions/types/platforms]**: [Specific list]
-- **Prerequisites**: [Specific list]
-- **Limitations**: [Key limits, if any]
-```
-
-Adapt the labels to fit the doc type. For reference docs, use "Key fields" or "Parameters at a glance." For how-to guides, use "Before you begin."
-
-### Pattern 3: Reframe headings as questions
-
-AI tools and featured snippet algorithms favor pages where headings signal the question being answered.
-
-| Original heading | Question-format alternative |
-|-----------------|----------------------------|
-| Overview | What is [feature]? |
-| How it works | How does [feature] work? |
-| Prerequisites | What do you need before you start? |
-| Limitations | What are the limitations of [feature]? |
-| Troubleshooting | Why is [feature] not working? |
-
-Only reframe headings where the question form is natural and specific. Do not reframe step headings like "Step 1: Configure the source" — those are correct as-is.
-
-### Pattern 4: Make facts citation-ready
-
-LLMs extract facts that are stated as short, explicit, standalone sentences.
-
-**Hard to cite (buried fact):**
-> The integration, which was released in version 3.5 and works with both hosted and installed collectors, supports up to 10,000 events per second depending on the instance size.
-
-**Easy to cite (explicit facts):**
-> The integration supports up to 10,000 events per second on large instances. It works with both Hosted and Installed Collectors. It was introduced in version 3.5.
-
-### Pattern 5: Replace vague version references
-
-AI tools reproduce whatever is on the page. Vague references become stale citations.
-
-| Vague | Specific |
-|-------|----------|
-| the latest version | version 3.10 |
-| the current release | the May 2026 release |
-| recent updates | updates added in Q1 2026 |
-
-If the doc intentionally stays version-agnostic, add a note like "See the release notes for the current version number."
-
-### Pattern 6: Define acronyms and terms
-
-LLMs cannot infer definitions. If an acronym or domain term appears without definition, an AI may generate an incorrect expansion.
-
-Define on first use in body text:
-> Sumo Logic uses Field Extraction Rules (FERs) to parse key-value pairs from raw log messages at ingest time.
-
-After the first use, the abbreviation alone is fine.
+| Pattern | What it addresses | Rule source |
+|---------|------------------|-------------|
+| Strengthen the opening paragraph | Weak openers that bury the point | [Principle 1 — Answer first (BLUF)](.claude/skills/geo-guide/SKILL.md#principle-1--answer-first-bluf) |
+| Add an "At a glance" section | No citable summary near the top | [Principle 1 — Answer first (BLUF)](.claude/skills/geo-guide/SKILL.md#principle-1--answer-first-bluf) |
+| Reframe headings as questions | Section headings that don't signal the question being answered | [Principle 3 — Question-style headings](.claude/skills/geo-guide/SKILL.md#principle-3--question-style-headings) |
+| Make facts citation-ready | Key facts buried in long sentences | [AEO patterns — Make facts citation-ready](.claude/skills/geo-guide/SKILL.md#make-facts-citation-ready) |
+| Replace vague version references | "latest", "current", "recent" without specifics | [AEO patterns — Replace vague version references](.claude/skills/geo-guide/SKILL.md#replace-vague-version-references) |
+| Define acronyms and terms | Undefined abbreviations or domain terms | [AEO patterns — Define acronyms and terms](.claude/skills/geo-guide/SKILL.md#define-acronyms-and-terms) |
 
 ---
 
@@ -227,4 +144,4 @@ After the first use, the abbreviation alone is fine.
 * Preserve technical accuracy above all else — if a rewrite would require fact-checking, flag it and ask the user to verify
 * Do not alter frontmatter except `description` if explicitly requested
 * Keep the Sumo Logic voice — do not make the doc sound like a Wikipedia article
-* If a section is very long and difficult to restructure safely, recommend `/rewrite-intro` or `/simplify` instead of attempting a full rewrite here
+* If a section is very long and difficult to restructure safely, flag it and ask the user how they'd like to proceed instead of attempting a full rewrite here

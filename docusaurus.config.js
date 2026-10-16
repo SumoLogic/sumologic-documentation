@@ -191,7 +191,6 @@ module.exports = {
             '/files/**',
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
-            '/tags/**'
           ],
           filename: 'sitemap.xml',
         },
@@ -212,7 +211,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
           },
         },
         theme: {
@@ -305,7 +304,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
          },
        },
     ],
@@ -329,7 +328,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Collector Release Notes',
             description: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
           },
         },
     ],
@@ -340,6 +339,7 @@ module.exports = {
         )
       },
     ],
+    require('./src/plugins/markdown-mirror'),
   ],
   themeConfig:
     ({
@@ -363,10 +363,10 @@ module.exports = {
       { property: 'og:type', content: 'article' },
     ],
     announcementBar: {
-      id: 'domain',
-      content: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>Check out <a href="https://www.sumologic.com/help/docs/search/mobot/">Mobot</a>, your conversational interface for Sumo Logic. Search logs using natural language, troubleshoot faster, and get how-to guidance.<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M12 2l1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2z"/><path d="M19 14l.75 2.75L22.5 17.5l-2.75.75L19 21l-.75-2.75L15.5 17.5l2.75-.75L19 14z"/></svg>',
-      backgroundColor: '#000',
-      textColor: '#000',
+      id: 'mobot-banner-v3',
+      content: `<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
+      backgroundColor: '#0055B7',
+      textColor: '#fff',
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -484,6 +484,11 @@ module.exports = {
                 label: 'Traces, RUM, APM',
                 icon: 'account_tree',
               },
+              {
+                label: 'Contribute to Docs',
+                to: 'docs/contributing',
+                icon: 'edit_note',
+              },
             ]
           },
           {
@@ -531,22 +536,29 @@ module.exports = {
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
                 icon: 'thumbs_up_down',
               },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
-              },
             ],
           },
-        //{
-          //className: 'header-github-link',
-          //to: 'https://github.com/SumoLogic/sumologic-documentation',
-          //position: 'right',
-          //alt: 'Link to Sumo Logic Docs GitHub repository',
-        //},
           {
             type: 'search',
             position: 'left',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: 'google_translate',
+            className: 'navbar-translate-item',
+          },
+          {
+            label: 'Log In',
+            to: 'https://service.sumologic.com/',
+            position: 'right',
+            className: 'header-login',
+          },
+          {
+            label: 'Try for Free',
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
           },
         ],
       },
@@ -604,7 +616,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
+        copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
       },
     }),
 };

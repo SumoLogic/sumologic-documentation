@@ -2,7 +2,7 @@
 id: microsoft-graph-azure-ad-reporting-source
 title: Microsoft Graph Azure AD Reporting Source
 sidebar_label: Microsoft Graph Azure AD Reporting
-tags:
+keywords:
   - cloud-to-cloud
   - microsoft-graph-azure-ad-reporting
 description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
@@ -131,15 +131,16 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```
 ## Troubleshooting
 
-<details>
-  <summary>This request is throttled. Please try again after the value specified in the Retry-After header.</summary>
-  <div>
-    This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls. 
-  </div>
-</details>
+### This request is throttled. Please try again after the value specified in the Retry-After header.
+
+This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls.
 
 ## FAQ
 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Azure AD Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.

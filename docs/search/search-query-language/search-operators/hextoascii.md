@@ -13,10 +13,22 @@ The `hexToAscii` operator converts a hexadecimal string to an ASCII string.
 
 `hexToAscii("<hexadecimal string>") as <field>`
 
-## Example
+## Examples
 
-The following returns `V` with a value of `hello world`:
+### Convert a literal hex string
+
+The following returns `V` with a value of `hello world`:
 
 ```sumo
 | hexToAscii("68656c6c6f20776f726c640a") as V
+```
+
+### Convert a hex-encoded field from log data
+
+To decode a hex-encoded session token parsed from application logs:
+
+```sumo
+_sourceCategory=application/backend
+| parse "session_hex=*," as session_hex
+| hexToAscii(session_hex) as session_token
 ```

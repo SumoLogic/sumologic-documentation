@@ -15,11 +15,11 @@ When you add the `timeslice` before the `join`, each of the tables created by th
 
 You can reference the table's `_timeslice` field to use in your group by operation. The name of the table is appended to the table's fields.
 
-## Example
+## Examples
 
-For example, if your table is named *errors*, your field would be `errors__timeslice`. (Notice that the name contains two underscores.)
+### Join stream events by timeslice
 
-Here's an example query:
+If your table is named *errors*, your field would be `errors__timeslice`. (Notice that the name contains two underscores.)
 
 ```sumo
 *
@@ -30,4 +30,16 @@ Here's an example query:
 on table1.streamId = table2.streamId
 | count table1_streamId, table1__timeslice
 | formatDate(fromMillis(table1__timeslice ), "MM/dd/yyyy HH:mm:ss z") as timeslice
+```
+
+### Join login and logout events by 15-minute intervals
+
+```sumo
+_sourceCategory=auth
+| timeslice 15m
+| join
+(parse "user=* logged in" as user) as logins,
+(parse "user=* logged out" as user) as logouts
+on logins.user = logouts.user
+| count logins_user, logins__timeslice
 ```

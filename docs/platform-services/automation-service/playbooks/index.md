@@ -33,6 +33,12 @@ You can use Terraform to manage playbooks with the [`sumologic_csoar_playbook`](
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="SIEM Challenges icon" width="40"/><h4>Create Playbooks with Mobot</h4></a>
+  <p>Create and manage playbooks in Mobot from plain-language prompts, without manual configuration.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/platform-services/automation-service/playbooks/playbook-payloads/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="SIEM Challenges icon" width="40"/><h4>Playbook Payloads</h4></a>
   <p> Learn about the data payloads of the different playbook types.</p>
   </div>

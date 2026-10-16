@@ -1,6 +1,6 @@
 ---
 id: sql-server-linux-opentelemetry
-title: Microsoft SQL Server for Linux - OpenTelemetry Collector
+title: MS SQL Server for Linux - OTel Collector
 sidebar_label: Microsoft SQL Server for Linux - OTel Collector
 description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Linux.
 ---
@@ -67,6 +67,10 @@ The Microsoft SQL Server app's queries and dashboards depend on logs from the SQ
 `/var/opt/mssql/log/errorlog`
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the YAML file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-Linux-OpenTelemetry/SQL-Server-linux-YAML.png' alt="YAML" style={{border: '1px solid gray'}} />
 

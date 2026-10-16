@@ -45,11 +45,11 @@ The following table shows the availability of features for Dashboard.
 | Run As Creator / Data Access Level Control | Supported |
 | Dark Theme | [Supported](/docs/dashboards/about/#dark-theme) |
 | Configured Dashboard Linking | [Supported](/docs/dashboards/link-dashboards/) |
-| Recommended Dashboards & Logs Drilldowns | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes).|
+| Recommended Dashboards & Logs Drilldowns | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes). Cluster Map and Heatmap panels support *Shift+click* on a data point to drill down to the search. Missile map panels support *Shift+click* on the line to drill down to the search. [Learn more](/docs/dashboards/panels/map-charts/#drill-down-from-a-map-chart).|
 | Combined Metrics & Logs Panel | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series |  Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards/panels/modify-chart/). |
 | Colors by Value Range  | Supported |
-| Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
+| Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/), with a selectable theme and resolution for PDF and PNG exports. |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
 | Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
@@ -90,6 +90,8 @@ Live mode restrictions do not apply to Dashboard. 
 ## Dark Theme
 
 Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="400" />
+
+You can also select a Light or Dark theme when you [export a dashboard](/docs/dashboards/export-dashboard-new/) or create a [scheduled report](/docs/dashboards/scheduled-report/).
 
 ## Clickable Legend
 
@@ -144,6 +146,34 @@ The dropdown only displays the time-interval which is greater than or equal to t
 :::
 
 <img src={useBaseUrl('/img/dashboards/about-dashboard/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="400" />
+
+### Auto-refresh guardrails
+
+Auto-refresh helps dashboards stay up to date by automatically rerunning panel queries at the interval you configure. However, continuously refreshing a dashboard that no one is viewing, or repeatedly retrying a query that keeps failing, consumes unnecessary compute resources without adding value.
+
+Sumo Logic's auto-refresh guardrails solve this by automatically pausing refresh activity when it is unlikely to help, while keeping dashboards quick to resume when needed.
+
+Two guardrails apply to both private and public dashboards:
+
+#### Hidden tab pause
+
+When you switch away from a dashboard tab (browser tab or Bento tab) for longer than **10 minutes**, auto-refresh pauses automatically. Panels retain their last loaded state, so no data is lost. When you return to the tab, auto-refresh resumes automatically and no action is required.
+
+#### Panel failure exclusion
+
+If a panel's query fails **5 consecutive times** during auto-refresh cycles, that panel is excluded from future auto-refresh cycles. Other healthy panels continue refreshing normally.
+
+When a panel is excluded, you see:
+
+* An error overlay on the affected panel with the original error message.
+* A toast notification when the panel is first excluded.
+
+<img src={useBaseUrl('/img/dashboards/about-dashboard/panel-failure-exclusion.png')} alt="Panel error overlay with Retry Panel button" style={{border: '1px solid gray'}} width="500" />
+
+To resume the panel:
+
+* Click **Retry Panel** on the affected panel to resume that panel only.
+* Click the dashboard **Run** button to resume all excluded panels.
 
 ## Auto Run
 

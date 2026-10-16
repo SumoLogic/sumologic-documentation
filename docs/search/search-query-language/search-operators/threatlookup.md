@@ -7,16 +7,6 @@ description: Use the threatlookup operator to search threat intelligence indicat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
- <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
 The `threatlookup` operator identifies suspicious indicators of compromise in your data which match your [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) sources. Using this operator provides security analytics to help you to detect threats in your environment.
 
 This operator supersedes the more limited [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator, allowing matches against multiple sources for multiple kinds of indicators.

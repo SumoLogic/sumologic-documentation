@@ -158,102 +158,17 @@ Example: For defining multiple patterns for multiple processes you can use the p
 
 ## Sample queries
 
-**CPU Utilization by Host** panel in **Host Metrics - CPU** Dashboard
+**CPU Utilization by Host** panel in **Host and Process Metrics - CPU** Dashboard
 
 ```sql
 host.name=*  cpu=cpu-total  metric=(host_cpu_usage_user OR host_cpu_usage_system OR host_cpu_usage_iowait OR host_cpu_usage_steal OR host_cpu_usage_softirq OR host_cpu_usage_irq OR host_cpu_usage_nice) | sum by host.name
 ```
 
-**CPU Usage** panel in **Process Metrics Details** Dashboard
+**CPU Usage** panel in **Host and Process Metrics - Process Details** Dashboard
 
 ```sql
 metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.name, process.executable.name | outlier
 ```
-
-## Installing the Alerts
-
-The next few sections provide instructions for installing the Sumo app and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
-
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
-
-For details on the individual alerts, see [last section](#host-and-process-metrics-alerts).
-
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing them a JSON or a Terraform script.
-
-There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
-
-
-### Method A: Importing a JSON file
-
-1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/host_process_metrics/host_process_metrics.json) describing all the monitors.<br/>The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all hosts, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific hosts or environments, update the JSON file by replacing the text `$$hostmetrics_data_source` with `<your sourceCategory>`. SourceCategory examples:
-   * For alerts applicable only to a specific cluster of hosts, your custom filter could be: `'_sourceCategory=yourclustername/metrics'`.
-   * For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be: `'_sourceCategory=ec2hosts-prod*/metrics'`.
-   * For alerts applicable to a specific cluster within a production environment, your custom filter could be: `'_sourceCategory=prod/yourclustername/metrics'`
-2. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
-3. Click **Add**.
-4. Click **Import** to import monitors from the JSON above.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors/settings) document to enable monitors, to configure each monitor, to send notifications to teams or connections, see the instructions detailed in [Create a Monitor](/docs/alerts/monitors/create-monitor).
-
-
-### Method B: Using a Terraform script
-
-1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using instructions in [Access Keys](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using [this link](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-1. **Download the Sumo Logic Terraform package for Host and Process alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/postgresql). You can either download it through the “git clone” command or as a zip file.
-1. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/`. Edit the `host_and_processes.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-   ```bash
-   access_id   = "<SUMOLOGIC ACCESS ID>"
-   access_key  = "<SUMOLOGIC ACCESS KEY>"
-   environment = "<SUMOLOGIC DEPLOYMENT>"
-   ```
-   Update the variable `host_and_processes_data_source` with your source category. SourceCategory examples:
-    * For alerts applicable only to a specific cluster of hosts, your custom filter could be: `_sourceCategory=yourclustername/metrics`.
-    * For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be:`_sourceCategory=ec2hosts-prod*/metrics`.
-    * For alerts applicable to a specific cluster within a production environment, your custom filter could be: `_sourceCategory=prod/yourclustername/metrics`.
-1. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to false in this file.
-1. By default, the monitors are configured in a monitor folder called “Host and “Process Metrics”, if you would like to change the name of the folder, update the monitor folder name in this file.
-1. **Email and Connection Notification Configuration Examples**. If you would like the alerts to send email or connection notifications, configure these in the file `host_process_metrics_notifications.auto.tfvars`.
-   * To configure notifications, modify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types. Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-   ```sql title="Pagerduty Connection Example:"
-   connection_notifications = [
-       {
-         connection_type       = "PagerDuty",
-         connection_id         = "<CONNECTION_ID>",
-         payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       },
-       {
-         connection_type       = "Webhook",
-         connection_id         = "<CONNECTION_ID>",
-         payload_override      = "",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       }
-     ]
-   ```
-
-   ```sql title="Email Notifications Example"
-   email_notifications = [
-       {
-         connection_type       = "Email",
-         recipients            = ["abc@example.com"],
-         subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-         time_zone             = "PST",
-         message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-       }
-     ]
-   ```
-1. Install the Alerts.
-   1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/` and run `terraform init`. This will initialize Terraform and will download the required components.
-   2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-   3. Run `terraform apply`.
-
-
-#### Post Installation
-
-If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 ## Installing the Host and Process Metrics app
 
@@ -269,101 +184,139 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host and Process Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Overview.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Overview.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### CPU
 
-The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts and processes with high CPU utilization.
 * Examine CPU usage by type and identify anomalies over time.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### Disk
 
-The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts with high disk utilization and disk IO operations.
 * Monitor abnormal spikes in read/write rates.
 * Compare disk throughput across storage devices of a host.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### Memory
-The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify hosts with high memory utilization.
 * Examine memory distribution (free, buffered-cache, used, total) for a given host.
 * Monitor abnormal spikes in memory and swap utilization.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### Network
 
-The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
+The **Host and Process Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
 * Determine top hosts with network errors and dropped packets.
 * Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 * Use dashboard filters to compare throughput across the interface of a host.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host and Process Metrics dashboards" />
 
 
 ### TCP
-The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
+The **Host and Process Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:
 * Identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.png')} alt="Host and Process Metrics dashboards" />
 
 
-### Process Metrics - Overview
+### Process Overview
 
-The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
+The **Host and Process Metrics - Process Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations and thread count. You can drill down from this dashboard to the **Host and Process Metrics - Process Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 * Identify top processes by CPU, memory usage, and open file descriptors.
 * Determine the longest running processes and users that have spawned the most number of processes.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Overview.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Overview.png')} alt="Host and Process Metrics dashboards" />
 
 
-### Process Metrics - Details
+### Process Details
 
-The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
+The **Host and Process Metrics - Process Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
 Use this dashboard to:
-* Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits,, it can cause IOException errors.
-* Identify anomalies in CPU usage, memory usage,  major/minor page faults and reads/writes over time.
+* Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits, it can cause IOException errors.
+* Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
 * Troubleshoot memory leaks using the resident set memory trend chart.
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Details.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Details.png')} alt="Host and Process Metrics dashboards" />
 
 
-### Process Metrics - Trends
+### Process Trends
 
-The **Process Metrics - Trend** dashboard gives you insight into the state of your processes over time.
+The **Host and Process Metrics - Process Trends** dashboard gives you insight into the state of your processes over time.
 
 Use this dashboard to:
 * Analyze the current state of all the processes (sleeping, dead, idle, stopped, total, paging)
 * Identify anomalies over time in the number of threads, zombie processes, and total processes
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host and Process Metrics dashboards" />
+
+## Create monitors for the Host and Process Metrics app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Host and Process Metrics alerts
+
+#### Host Metrics
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Host and Process Metrics - High CPU Utilization` | This alert is triggered when host CPU utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | &lt;= 90% |
+| `Host and Process Metrics - Host Out of Memory` | This alert is triggered when memory utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | &lt;= 90% |
+| `Host and Process Metrics - Host Out of Disk Space` | This alert is triggered when disk utilization exceeds the threshold (Warning: 80%, Critical: 90%). | > 90% (Critical) | &lt;= 90% |
+| `Host and Process Metrics - Host Out of Inodes` | This alert is triggered when a host's filesystem is close to running out of available iNodes (Warning: 80%, Critical: 90%). | > 90% (Critical) | &lt;= 90% |
+| `Host and Process Metrics - Host Swap is Filling Up` | This alert is triggered when swap utilization exceeds the threshold (Warning: 60%, Critical: 80%). | > 80% (Critical) | &lt;= 80% |
+| `Host and Process Metrics - Host Swap is Filling Up (Windows)` | This alert is triggered when swap utilization exceeds the threshold for Windows machines (Warning: 60%, Critical: 80%). | > 80% (Critical) | &lt;= 80% |
+| `Host and Process Metrics - High Network Errors` | This alert is triggered when a host has encountered network errors in the last five minutes. | > 200 (Critical) | &lt;= 200 |
+| `Host and Process Metrics - Unusual Disk Read Rate` | This alert is triggered when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval. | > 50 MB/s (Warning) | &lt;= 50 MB/s |
+| `Host and Process Metrics - Unusual Disk Write Rate` | This alert is triggered when the disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval. | > 50 MB/s (Warning) | &lt;= 50 MB/s |
+| `Host and Process Metrics - Unusual Network Throughput In` | This alert is triggered when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/s (Warning) | &lt;= 100 MB/s |
+| `Host and Process Metrics - Unusual Network Throughput Out` | This alert is triggered when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/s (Warning) | &lt;= 100 MB/s |
+| `Host and Process Metrics - High CPU IO Wait` | This alert is triggered when CPU I/O wait is high, indicating disk or network I/O bottlenecks causing the CPU to idle while waiting for operations to complete. | > 50% (Critical) | &lt;= 50% |
+| `Host and Process Metrics - High Disk IO` | This alert is triggered when disk I/O operations in progress are high, indicating disk saturation that can lead to slow application response times and system degradation. | > 100 (Critical) | &lt;= 100 |
+| `Host and Process Metrics - High Network Packet Drops` | This alert is triggered when network packet drops are high, indicating network congestion or buffer overflow leading to retransmissions and degraded application performance. | > 200 (Critical) | &lt;= 200 |
+
+#### Process Metrics
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Host and Process Metrics - Process High CPU Usage` | This alert is triggered when the CPU utilization of a process exceeds the threshold (Warning: 60%, Critical: 80%). | > 80% (Critical) | &lt;= 80% |
+| `Host and Process Metrics - Process High Memory Usage` | This alert is triggered when the memory used by a process exceeds the threshold (Warning: 60%, Critical: 80%). | > 80% (Critical) | &lt;= 80% |
+| `Host and Process Metrics - Process High Open File Descriptors` | This alert is triggered when the number of file descriptors used by a process exceeds the threshold (Warning: 800, Critical: 1000). | > 1000 (Critical) | &lt;= 1000 |
+| `Host and Process Metrics - Process High Page Faults` | This alert is triggered when the rate of page faults exceeds the threshold (Warning: 800, Critical: 1000). | > 1000 (Critical) | &lt;= 1000 |
+| `Host and Process Metrics - Process High Read Rate` | This alert is triggered when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 20 MB/s (Warning) | &lt;= 20 MB/s |
+| `Host and Process Metrics - Process High Write Rate` | This alert is triggered when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 20 MB/s (Warning) | &lt;= 20 MB/s |
 
 ## Upgrade/Downgrade the Host and Process Metrics app (Optional)
 
@@ -376,37 +329,3 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
-
-
-## Host and Process Metrics Alerts
-
-### For Host Metrics
-
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
-| Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
-|:-----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| Host Metrics - High CPU Utilization           | This alert fires when host CPU utilization is over 80%.                                                                                  | > 80 %          | `<=` 80 %           |
-| Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | `<=` 1%             |
-| Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | `<=` 100 MB/sec     |
-| Host Metrics - Unusual network throughput out | This alert fires when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval.   | > 100 MB/sec    | `<=` 100 MB/sec     |
-| Host Metrics - Host out of memory             | This alert fires when memory utilization is over 90%.                                                                                    | > 90 %          | `<=` 90 %           |
-| Host Metrics - Host out of inodes             | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used).                                      | > 90 %          | `<=` 90 %           |
-| Host Metrics - Host swap is filling up        | This alert fires when swap utilization is over 80%.                                                                                    | > 80 %          | `<=` 80 %           |
-| Host Metrics - Host out of disk space         | This alert fires when disk utilization is over 90%.                                                                                      | > 90 %          | `<=` 90 %           |
-| Host Metrics - Unusual disk read rate         | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Host Metrics - Unusual disk write rate        | This alert fires when the Disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | `<=` 50 MB/sec      |
-
-
-### For Process Metrics
-
-Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
-| Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
-|:----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| Process Metrics - High CPU Usage             | This alert fires when the CPU utilization of a process is over 80% of the system CPU.                                  | > 80 %          | `<=` 80 %           |
-| Process Metrics - High Read Rate             | This alert fires when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Process Metrics - High Write Rate            | This alert fires when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Process Metrics - High Page Faults           | This alert fires when the rate of page faults is high (> 1000).                                                        | > 1000          | `<=` 1000           |
-| Process Metrics - High Memory Usage          | This alert fires when the memory used by a process is over 80% of system memory.                                       | > 80 %          | `<=` 80 %           |
-| Process Metrics - High Open file descriptors | This alert fires when the number of file descriptors used by a process is more than 1000.                              | > 1000          | `<=` 1000           |
