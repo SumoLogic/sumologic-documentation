@@ -20,7 +20,7 @@ By tuning and using a built-in rule, you avoid the effort of writing a rule, and
 The following topics provide information that’s relevant to the process of writing a custom rule:
 
 * [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline). This topic describes how Cloud SIEM creates records for incoming messages. It provides facts about how message fields are mapped to Cloud SIEM schema attributes; about the attributes Cloud SIEM adds to records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude records based on identifiers found in records; how to leverage threat intel data and more.
-* [Schema Attributes](/docs/cse/schema/schema-attributes). This topic defines the record attributes you can reference in rules.
+* [Cloud SIEM Schema Attributes](/docs/cse/schema/schema-attributes). This topic defines the record attributes you can reference in rules.
 * [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax). This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
 * [Searching for Cloud SIEM Records in Sumo Logic](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo). This topic explains how to search Cloud SIEM records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the rules editor.
 
@@ -36,7 +36,7 @@ Review the standard [rule types](/docs/cse/rules/about-cse-rules#rule-types) to 
 
 Before you write a rule, you’ll want to verify what attributes are available in the records created from the target data source. You can do this by reviewing the log mapping for the data source.  
 
-Let’s say you’re going to write a rule that fires every time a successful Windows login occurs from a user account that doesn’t match your standard account naming convention. You know, maybe because you’ve checked Microsoft documentation, that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the Cloud SIEM log mapping for that event, assuming there is one.
+Let’s say you’re going to write a rule that fires every time a successful Windows login occurs from a user account that doesn’t match your standard account naming convention. You’ve checked Microsoft documentation and found that the Windows event that records successful logins is Security Log Event ID 4624. So, you’ll take a look at the Cloud SIEM log mapping for that event, assuming there is one.
 
 To find and review a log mapping:
 
@@ -53,7 +53,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Using the attributes we discovered from looking at the log mapping, we’ll run the following query, which returns the usernames that have successfully logged on over the last week, counted by `user_username`:
 
-   ```sql
+   ```sumo
    _index=sec_record_*
    | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624"
    | count by user_username
@@ -68,7 +68,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Now, we can refine our search to return usernames that do not comply with either of our standard patterns:
 
-   ```sql
+   ```sumo
    _index=sec_record_*
    | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$")
    | count by user_username
@@ -78,7 +78,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Usernames returned include “anonymous logon”. A little [research](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-special-identities-groups) indicates that this is typically no cause for alarm, so we’ll refine our search again to exclude “anonymous logon”:
 
-   ```sql
+   ```sumo
    _index=sec_record_*
    | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$") and user_username != "anonymous logon"
    ```
@@ -87,7 +87,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 
 1. Now we have a query we can use as the basis of an expression for our rule. Note that when you paste it into the rules editor, you should remove the first portion of the query (`_index=sec_record_*` and `| where`), which is only necessary when you are querying records in Sumo Logic. The expression is then as follows:
 
-   ```sql
+   ```sumo
    metadata_vendor = "Microsoft" 
    and metadata_product = "Windows" 
    and metadata_deviceEventId = "Security-4624" 

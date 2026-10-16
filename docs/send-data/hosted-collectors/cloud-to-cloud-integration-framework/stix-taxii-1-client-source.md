@@ -48,8 +48,8 @@ To configure a TAXII 1 Client Source:
 1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Sumo Logic Threat Intel Source ID**. Enter the name you want to use for the source that will be created in the [Threat Intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) tab in Sumo Logic. The threat intelligence indicators will be stored in this source. Do not use spaces in the name.
 1. **STIX/TAXII Configuration**:
    * **Discovery URL**. Enter the TAXII Discovery URL provided by the vendor (optional).
@@ -105,8 +105,8 @@ Below is a list of Sumo Logic recommended configuration examples for specific th
 
 | Vendor | Notes |
 | :-- | :-- |
-| <a href="/files/c2c/taxii-1/alien-vault-config.json" target="_blank">AlienVault</a> | Use your API key as the HTTP username and leave the password blank. |
-| <a href="/files/c2c/taxii-1/recorded-future-config.json" target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. The Recorded Future TAXII v1 service supports Recorded Future’s [default and large risk lists](https://support.recordedfuture.com/hc/en-us/articles/115008327148-Default-and-Large-Risk-Lists), as well as collections for each risk rule. More information can be found on the [Recorded Future Support portal](https://support.recordedfuture.com/hc/en-us/articles/115004303128-TAXII-V1-service). |
+| <a href={useBaseUrl('files/c2c/taxii-1/alien-vault-config.json')} target="_blank">AlienVault</a> | Use your API key as the HTTP username and leave the password blank. |
+| <a href={useBaseUrl('files/c2c/taxii-1/recorded-future-config.json')} target="_blank">Recorded Future</a> | Use your API key as the HTTP password and leave the username blank. The Recorded Future TAXII v1 service supports Recorded Future’s [default and large risk lists](https://support.recordedfuture.com/hc/en-us/articles/115008327148-Default-and-Large-Risk-Lists), as well as collections for each risk rule. More information can be found on the [Recorded Future Support portal](https://support.recordedfuture.com/hc/en-us/articles/115004303128-TAXII-V1-service). |
 
 ## FAQ
 

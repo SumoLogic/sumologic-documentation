@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Elasticsearch icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Elasticsearch](https://www.elastic.co/what-is/elasticsearch) app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, sharding, garbage collection, and search, index, and cache performance.
 
@@ -17,7 +17,7 @@ We use the OpenTelemetry collector to collect Elasticsearch metrics and logs.
 
 The diagram below illustrates the components of the Elasticsearch collection for each database server. OpenTelemetry collector runs on the same host as Elasticsearch, and uses the [Elasticsearch Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/elasticsearchreceiver/) to obtain Elasticsearch metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. Elasticsearch logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Schematics-diagram.png' alt="Elasticsearch-Schematics" />
+<img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Schematics-diagram.png' alt="Elasticsearch Schematics" />
 
 :::info
 This app includes [built-in monitors](#elasticsearch-alerts). For details on creating custom monitors, refer to [Create monitors for Elasticsearch app](#create-monitors-for-elasticsearch-app).
@@ -73,115 +73,37 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/Elasticsearch-Collector.png' style={{border:'1px solid gray'}}  alt="Collector" />
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import ElasticsearchConfigureSourceTemplate from '../../../reuse/send-data/elasticsearch-configure-source-template.md';
 
-In this step, you will configure the yaml required for Elasticsearch Collection.
+<ElasticsearchConfigureSourceTemplate/>
 
-Below are the inputs required:
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-- **Endpoint**. Enter the url of the server you need to monitor. Example: `http://localhost:9200`.
-- **User Name**. Specifies the username used to authenticate with Elasticsearch using basic auth. Must be specified if password is specified.
-- **Password**. Specifies the password used to authenticate with Elasticsearch using basic auth. Must be specified if username is specified.
-- **Elasticsearch cluster log path**. By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`.
-- **Tags**. `db.cluster.name`.
+<TimestampParsing/>
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+import ProcessingRules from '../../../reuse/opentelemetry/processing-rules.md';
 
-import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
+<ProcessingRules/>
 
-<EnvVar/>
+### Step 3: Push the source template to the desired remotely managed collectors
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-### Step 3: Send logs and metrics to Sumo Logic
-
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'},
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Elasticsearch instance which needs to be monitored.
-2. Place Env file in the following directory:
-  ```sh
-  /etc/otelcol-sumo/env/
-  ```
-3. Testart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-<TabItem value="Windows">
-
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-<TabItem value="macOS">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Elasticsearch instance which needs to be monitored.
-2. Restart the otelcol-sumo process using: 
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-  ```
-
-</TabItem>
-<TabItem value="Chef">
-
-import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
-
-<ChefEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
-
-<AnsEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
-
-<PuppetEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 
@@ -231,7 +153,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This is a sample log query from the **Errors** panel.
 
-```sql
+```sumo
 db.system=elasticsearch %"deployment.environment"={{deployment.environment}} db.cluster.name={{db.cluster.name}} ERROR | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw
 | json field=_raw "timestamp" as timestamp

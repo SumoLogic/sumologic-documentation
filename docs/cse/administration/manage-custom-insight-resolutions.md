@@ -13,12 +13,20 @@ This topic has information about custom insight resolutions and how to create an
 
 When you close an insight, Cloud SIEM prompts you to select a resolution that indicates why you closed it. There are four built-in resolutions:
 
-* Duplicate — The insight has triggered before on the same entity and is a duplicate.
-* False Positive—An insight triggered and it is legitimate activity.
-* No Action—An insight triggered and it might not be an incident but is also not a false positive.
-* Resolved — An incident occurred and was resolved.
+* Duplicate. The insight has triggered before on the same entity and is a duplicate.
+* False Positive. An insight triggered and it is legitimate activity.
+* No Action. An insight triggered and it might not be an incident but is also not a false positive.
+* Resolved. An incident occurred and was resolved.
 
 You can define custom *sub-resolutions* for any of the built-in resolutions. This enables you to create more granular resolutions that indicate more clearly why an insight was closed. For example, you might want to create a “Remediated” sub-resolution under “Resolved”.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom insight resolutions with the [`sumologic_cse_insights_resolution`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_insights_resolution) resource.
+
+<TerraformLink/>
+:::
 
 ## Create a custom sub-resolution
 

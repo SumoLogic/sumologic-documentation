@@ -20,7 +20,7 @@ Returns the top sources that were denied.
 
 * Suggested Time Range: -1h
 
-```sql
+```sumo
 _sourceCategory=*cisco*asa* AND ("denied" OR "Deny")
 | parse using public/cisco/asa
 | where access_decision="denied" OR action matches "Deny *"
@@ -34,7 +34,7 @@ Returns the top destinations that were denied.
 
 * Suggested Time Range: -1d
 
-```sql
+```sumo
 _sourceCategory=*cisco*asa* AND ("denied" OR "Deny")
 | parse using public/cisco/asa
 | where access_decision="denied" OR action matches "Deny *"
@@ -48,7 +48,7 @@ Returns the top sources with outbound connections by the number of connections.
 
 * Suggested Time Range: -1h
 
-```sql
+```sumo
 _sourceCategory=*cisco*asa* AND "built outbound"
 | parse using public/cisco/asa
 | where src_host !=""
@@ -62,7 +62,7 @@ Returns the top internal destinations by number of connections.
 
 * Suggested Time Range: -1h
 
-```sql
+```sumo
 _sourceCategory=*cisco*asa* AND "built inbound"
 | parse using public/cisco/asa
 | where dest_host !=""
@@ -77,7 +77,7 @@ Returns all attacks detected by the IPS.
 
 * Suggested Time Range: -15m; run as a scheduled search to return results only if number of messages is > 0
 
-```sql
+```sumo
 _sourceCategory=*cisco*asa* ": ``ips``:" AND ("attack" OR "Proxied RPC Request" OR "buffer overflow" OR "IP Impossible Packet" OR "IP Fragments Overlap" OR "Fragmented ICMP Traffic" OR "Large ICMP Traffic" OR "TCP NULL flags" OR "TCP SYN+FIN flags" OR "TCP FIN only flags")
 | parse using public/cisco/``asa
 ```

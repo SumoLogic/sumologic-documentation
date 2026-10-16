@@ -148,8 +148,8 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
 
 ### Using the binary package
 
-1. Install the version of JRE you want to use from the following location. (The collector requires Java 8 or higher). The binary installation process does not include JRE installation. See the [downloads list](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html).
-1. Check the version of Java is 8 or higher:
+1. Install the version of JRE you want to use from the following location. (The collector requires Java 17 or higher). The binary installation process does not include JRE installation. See the [downloads list](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html).
+1. Check the version of Java is 17 or higher:
    ```bash
    java -version
    ```

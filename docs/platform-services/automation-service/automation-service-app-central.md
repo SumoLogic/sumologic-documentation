@@ -17,7 +17,7 @@ App Central provides apps to help you be more productive in the Automation Servi
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access App Central, in the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
 
-Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
+Before you can access App Central, you must have the Access App Central role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
 
 ## App Central UI
 
@@ -30,7 +30,7 @@ Before you can access App Central, you must have the App Central Access role cap
    :::note
    <ActionsLimit/>
    :::
-1. **Install**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](/docs/platform-services/automation-service/playbooks-in-app-central/#install-a-playbook-from-app-central).
+1. **Install**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central).
 
 ## Work with integrations in App Central
 
@@ -39,7 +39,7 @@ Integrations are connectors to applications from industry-leading network and se
 ### Install an integration from App Central
 
 1. Use the **INSTALL** in the lower left corner of the integration box. After installation is complete, **INSTALLED** replaces the **INSTALL** link in the corner of the integration box.
-1. **IMPORTANT**: Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. **IMPORTANT**: Find the article for the integration in [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
 
@@ -90,4 +90,4 @@ Sumo Logic will validate the integration, and work with you to make any updates 
 
 ## Playbooks in App Central
 
-To work with playbooks in App Central, see [Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).
+To work with playbooks in App Central, see [Out-of-the-Box Playbooks in App Central](/docs/platform-services/automation-service/playbooks-in-app-central/).

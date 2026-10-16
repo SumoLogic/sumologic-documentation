@@ -2,7 +2,7 @@
 id: metric-query-error-messages
 title: Metric Query Error Messages
 sidebar_label: Error Messages
-description: Explanation of warning and error messages from Sumo Logic Metric Query, and .
+description: Explanation of warning and error messages from Sumo Logic Metric Query.
 ---
 
 This page describes warning and error messages that are presented for long-running metric queries and metric queries that return too many results.
@@ -11,19 +11,19 @@ This page describes warning and error messages that are presented for long-runni
 
 An error means a critical issue that prevents your query from running. When an error happens, you query will not yield any result. The error could be caused by a syntax error in the query string, or by the query reaching a hard limit. You can request Sumo Logic for a limit increase if a hard limit is reached.
 
-### Query Timeout
+### Query timeout
 
 When a metric query runs for 60 seconds, it will time out, and Sumo Logic will present a message like this:
 
 `The metrics query timed out. Please consider making the query more selective.`
 
-The error might results from the query matching too many time series, but it could also be caused by other conditions, for instance a backend failure or problem.
+The error might result from the query matching too many time series, but it could also be caused by other conditions, for instance a backend failure or problem.
 
-### Hard Limits on Metric Queries
+### Hard limits on metric queries
 
-To provide the best user experience, we have hard limits that are preventing some unusual query patterns from executing. If your use case involves queries over any of these limits, please contact customer support to increase the limit. 
+To provide the best user experience, we have hard limits that prevent some unusual query patterns from executing. If your use case involves queries over any of these limits, [contact customer support](https://support.sumologic.com/support/s/) to increase the limit. 
 
-The following hard limits apply to Metrics queries in Sumo Logic:
+The following hard limits apply to metrics queries in Sumo Logic:
 
 |Property|Limit|Error Message|
 |:---|:---|:---|

@@ -4,16 +4,13 @@ title: Test Connectivity for Sumo Logic Collectors
 description: Learn how you can test access and connectivity from an installed Collector to the Sumo Logic service.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Make sure you have the required access and connectivity to the Sumo Logic service by running these checks from the machine where you want the Collector installed.
 
 Choose one of these testing options:
 
-* **Browser-based test.** Open a browser and go to [https://collectors.sumologic.com](https://collectors.sumologic.com/). You should see the word "Tweep". 
-
-    ![image](/img/send-data/tweep.png)
-
+* **Browser-based test.** Open a browser and go to [https://collectors.sumologic.com](https://collectors.sumologic.com/). You should see the word "Tweep". <br/><img src={useBaseUrl('img/send-data/tweep.png')} alt="Tweep" style={{border: '1px solid gray'}} width="300" />
 * **Telnet.** Telnet session to **collectors.sumologic.com 443** and you should see a result like this one:
 
     ```bash

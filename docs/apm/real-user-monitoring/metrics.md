@@ -21,7 +21,7 @@ The following document load metrics are collected from JavaScript. These are ava
 
 These metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](/docs/apm/real-user-monitoring/dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.
 
-![Diagram showing various navigation metrics from user clicks to a fully loaded document, including DNS resolution, SSL connection, TCP establishment, request end, first byte, response end, interactive time, and processing end](/img/rum/Navigation-metrics.png)
+<img src={useBaseUrl('img/rum/Navigation-metrics.png')} alt="Document load metrics" style={{border: '1px solid gray'}} width="800" />
 
 Timing metrics are not calculated if the visibility state of the document is "hidden" at any point during the load.
 
@@ -124,7 +124,7 @@ These CWV KPIs are captured and displayed on Overview dashboards for Document Lo
 ## XHR monitoring metrics
 
 :::note
-Currently, XHR metrics extraction in RUM is only supported for applications that use the [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to perform XHR calls. If your application uses [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), metrics may not be collected at this time. A fix to support `XMLHttpRequest`-based calls is in progress and expected to roll out in mid 2025. We will update this page when that support becomes available.
+XHR metrics extraction in RUM is supported for applications that use both the [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) to perform XHR calls.
 :::
 
 An XMLHttpRequest (XHR) is a way for browsers to communicate with a backend server without reloading the page. For example, a page may use XHR to update a price ticker automatically or after clicking an "Update Price" button.

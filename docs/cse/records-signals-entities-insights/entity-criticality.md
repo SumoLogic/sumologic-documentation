@@ -17,6 +17,14 @@ Just as you can use criticality to increase severity, you can use it to decrease
 
 If the formula you specify results in a number that isn’t whole, the value is rounded down to the nearest integer.
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage entity criticality with the [`sumologic_cse_entity_criticality_config`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_entity_criticality_config) resource.
+
+<TerraformLink/>
+:::
+
 ## About criticality and insight generation
 
 The maximum severity that can be assigned to a Cloud SIEM rule is 10, so normally, signal severity is also limited to 10. Note however that Cloud SIEM doesn’t impose a maximum value on the severity that results from a criticality, although the minimum value will always be 0. 
@@ -40,6 +48,6 @@ You can configure both the detection window and the threshold activity score for
 You can associate a criticality with one or more entities. 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Click **Entities** at the top of the screen. 
-1. Navigate to the entity you want to assign a criticality and click on it to display the **Entity Details** page. 
+1. Navigate to the entity you want to assign a criticality and click it to display the **Entity Details** page. 
 2. On the **Entity Details** page, click the **Criticality** field to display a list of Criticalities. <br/><img src={useBaseUrl('img/cse/entity-details-criticality.png')} alt="Entity criticality details" style={{border: '1px solid gray'}} width="300"/>
 3. Click a criticality to apply it to the entity.

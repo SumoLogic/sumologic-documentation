@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-esa.png')} alt="cisco-esa" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-esa.png')} alt="Cisco ESA" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 27, 2026***
 
 Cisco ESA provides a comprehensive view of security for improved threat intelligence, defense, and remediation. That includes: Centralized management of email spam quarantine, comprehensive threat monitoring across multiple web and email security gateways.
 
@@ -47,5 +47,8 @@ Email Gateway
 
 ## Change Log
 
-* October 12, 2022 - First upload
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| | October 12, 2022 | Initial release of the Cisco ESA integration. |

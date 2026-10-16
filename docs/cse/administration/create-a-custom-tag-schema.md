@@ -19,6 +19,14 @@ Schema tags can enforce specific tag values and prevent confusion from variatio
 
 For more information about tags in Cloud SIEM, see [Using Tags with Insights, Signals, Entities, and Rules](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules).
 
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom tag schemas with the [`sumologic_cse_tag_schema`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_tag_schema) resource.
+
+<TerraformLink/>
+:::
+
 ## Define a custom tag schema
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Workflow** select **Tag Schemas**. You can also click the **Go To...** menu at the top of the screen and select **Tag Schemas**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Workflow** select **Tag Schemas**.

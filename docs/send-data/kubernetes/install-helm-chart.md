@@ -26,7 +26,7 @@ helm repo update
 
 ### Sumo Logic account
 
-If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up).
+If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up/).
 
 The following are required to set up and deploy the Sumo Logic Kubernetes collection.
 
@@ -42,11 +42,13 @@ To get an idea of the resources this chart will require to run on your cluster, 
 
 ### Required parameters
 
-The Helm chart installation requires two parameter overrides:
+The Helm chart installation requires the following parameters:
 
 - `sumologic.accessId` - Sumo [Access ID](/docs/manage/security/access-keys/).
 - `sumologic.accessKey` - Sumo [Access key](/docs/manage/security/access-keys/).
 - `sumologic.clusterName` - An identifier for your Kubernetes cluster. This is the name you will see for the cluster in Sumo Logic. Set a different value for each cluster you install the Helm Chart in.
+- `sumologic.sourcelessModeAck` and `sumologic.metrics.collector.otelcol.singleLayerPipeline.migrationDocAcknowledged` - Feature-specific acknowledgment flags introduced in v6 of the Helm chart. For more details, see [Important Changes in v6](/docs/send-data/kubernetes/v6/important-changes).
+
 
 ### Prepare minimal configuration
 
@@ -57,6 +59,12 @@ sumologic:
   accessId: ${SUMO_ACCESS_ID}
   accessKey: ${SUMO_ACCESS_KEY}
   clusterName: ${MY_CLUSTER_NAME}
+  sourcelessModeAck: true
+  metrics:
+    collector:
+      otelcol:
+        singleLayerPipeline:
+          migrationDocAcknowledged: true
 ```
 
 :::note
@@ -225,7 +233,7 @@ and the associated hosted collector can be deleted in the Sumo Logic UI.
 
 ## Troubleshooting Installation
 
-See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection#troubleshooting-installation).
+See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection/installation).
 
 ## Installing in OpenShift platform
 

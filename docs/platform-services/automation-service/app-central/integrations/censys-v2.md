@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
-***Version: 2.3  
-Updated: Jul 31, 2025***
+***Version: 2.4  
+Updated: April 27, 2026***
 
 Censys reduces your Internet attack surface by continually discovering unknown assets and helping remediate Internet facing risks.   
 
@@ -45,8 +45,9 @@ For information about Censys V2, see [Censys documentation](https://docs.censys.
 
 ## Change Log
 
-* February 14, 2022 - First upload
-* July 7, 2023 (v2.2)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from Censys 2.0 to Censys V2
-* July 31, 2025 (v2.3) - Updated the integration logo.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.4 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v2.3 | July 31, 2025 | Updated the integration logo. |
+| v2.2 | July 7, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Censys 2.0 to Censys V2.</li></ul> |
+| | February 14, 2022 | Initial release of the Censys V2 integration. |

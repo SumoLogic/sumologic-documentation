@@ -3,6 +3,8 @@ id: transactionize-operator
 title: Transactionize Operator
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The _Transactionize_ operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
 
 Unlike other "group by" operators, where the logs in a group must match on all defined fields, `transactionize` just needs one field to match in order to assign logs to the same group.
@@ -37,7 +39,7 @@ Use the [`merge` operator](merge-operator.md), which reduces a stream of events 
 Parameters must follow the `as [<field>]` clause, as shown in the above
 Syntax section. For example,   
 
-```sql
+```sumo
 | transactionize accountId as account maxlogs = 10
 ```
 
@@ -79,7 +81,7 @@ With that in mind, the logs could look similar to:
 
 To group the logs that belong to the same request, we can use [parse nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option) to extract each session ID, then run `transactionize` to group the logs with a query similar to:
 
-```sql
+```sumo
 | parse "[system=001] [sessionId=*]" as system1Id nodrop
 | parse "[system=002][sessionId=*]" as system2Id nodrop
 | parse "[system=003][sessionId=*]" as system3Id nodrop
@@ -89,7 +91,7 @@ To group the logs that belong to the same request, we can use [parse nodrop](/do
 
 For example:
 
-![transactionalize.png](/img/search/searchquerylanguage/transaction-analytics/transactionalize.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/transactionalize.png')} alt="Transactionalize" style={{border: '1px solid gray'}} width="800" />
 
 :::note
 To see an example of using the `transactionize` operator with merge, see [`merge` operator](merge-operator.md). 

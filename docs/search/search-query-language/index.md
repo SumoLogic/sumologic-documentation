@@ -6,44 +6,46 @@ description: Master Sumo Logic's search query language to run advanced log searc
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
+import MobotCallout from '../../reuse/mobot-callout.md';
 
+<MobotCallout/>
 
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/search-operators"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Search Operators</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/search-operators')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Search Operators</h4></a>
   <p>Available search operators in the Sumo Logic search query language.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/parse-operators"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Parse Operators</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/parse-operators')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Parse Operators</h4></a>
   <p>Sumo Logic provides a number of ways to parse fields in your log messages.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/group-aggregate-operators"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Group or Aggregate Operators</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/group-aggregate-operators')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Group or Aggregate Operators</h4></a>
   <p>Evaluate messages and place them into groups.</p>
   </div>
 </div>
 <div className="box smallbox card">
    <div className="container">
-   <a href="/docs/search/search-query-language/field-expressions"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Field Expressions</h4></a>
+   <a href={useBaseUrl('docs/search/search-query-language/field-expressions')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Field Expressions</h4></a>
    <p>Overview of the expressions that create user-defined numeric, boolean, or string fields.</p>
    </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/search-query-language/math-expressions"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Math Expressions</h4></a>
+  <a href={useBaseUrl('docs/search/search-query-language/math-expressions')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Math Expressions</h4></a>
   <p>Use general mathematical expressions on numerical data extracted from log lines.</p>
   </div>
 </div>
 <div className="box smallbox card">
      <div className="container">
-     <a href="/docs/search/search-query-language/transaction-analytics"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Transaction Analytics</h4></a>
+     <a href={useBaseUrl('docs/search/search-query-language/transaction-analytics')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon showing magnifying glass hovering over a data symbol" width="40"/><h4>Transaction Analytics</h4></a>
      <p>Find and group related log data.</p>
      </div>
 </div>
@@ -67,7 +69,7 @@ Search syntax, queries, parameters, and filenames are displayed in `Regular Code
 
 Example:
 
-```sql
+```sumo
 | parse [field=<field_name>] "<start_anchor>*<stop_anchor>" as <field> [nodrop]
 ```
 
@@ -80,7 +82,7 @@ The optional arguments are `[field=<field_name>]` and the `[nodrop]` option.
 
 Example:
 
-```sql
+```sumo
 concat(<field1>, <field2>[, <field3>, ...]) as <field>
 ```
 

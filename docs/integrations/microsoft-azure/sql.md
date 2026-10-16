@@ -7,7 +7,7 @@ description: The Sumo Logic app for Azure SQL Database helps you monitor activit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql.png')} alt="Azure SQL icon" width="75"/>
 
 Azure SQL Database is a managed relational cloud database service. The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL. The preconfigured dashboards provide insight into resource utilization, blocking queries, database wait events, errors, runtime execution stats, and other database analytics.
 
@@ -77,7 +77,7 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 
 ### Sample queries
 
-```sql title="Top 10 Errors"
+```sumo title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent
 | json "LogicalServerName", "SubscriptionId", "ResourceGroup", "resourceId", "category", "operationName", "properties" nodrop
 | json field=properties "severity", "error_number", "DatabaseName", "message", "user_defined", "state"
@@ -104,9 +104,9 @@ Create a hosted collector if not already configured and tag the `tenant_name` fi
 
 ### Configure metrics collection
 
-import MetricsSourceBeta from '../../reuse/metrics-source-beta.md';
+import MetricsSource from '../../reuse/metrics-source.md';
 
-<MetricsSourceBeta/>
+<MetricsSource/>
 
 ### Configure logs collection
 
@@ -521,3 +521,9 @@ These alerts are metrics-based and will work for Azure SQL.
 | `Azure SQL - DTU Percentage` | This monitor triggers alerts when High average DTU consumption percentage is detected in Azure SQL. | Count > 80 | Count =< 80 |
 | `Azure SQL - Tempdb Percent Log Used` | This monitor triggers alerts when High Tempdb Percent Log Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
 | `Azure SQL - High Worker Usage` | This monitor triggers alerts when High Worker Usage is detected in Azure SQL. | Count > 60 | Count =< 60 |
+
+## Troubleshooting
+
+### Metrics collection via Azure Metrics Source
+
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).
