@@ -344,7 +344,7 @@ The client will automatically handle HTTP 429 response status codes that include
   </div>
 </details>
 10. (Optional) **Polling Interval**. Set how frequently to poll for new data. It must be between 5 minutes and 48 hours
-1. When you are finished configuring the Source, click **Save**.
+11. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
 
@@ -582,40 +582,23 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 
 ## Troubleshooting
 
-<details>
-  <summary>
-    Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing
-  </summary>
-  <div>
-    <strong>Possible resolution</strong>
-    <ul>
-      <li>Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.</li>
-      <li>Verify that all configured fields exist in the API response.</li>
-      <li>Confirm that the API response is returned in valid JSON format.</li>
-    </ul>
-  </div>
-</details>
+### Errors related to partial log ingestion, log preparation, timestamp extraction, or response parsing
 
-<details>
-  <summary>Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data</summary>
-  <div>
-    These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
-  </div>
-</details>
+- Ensure that the <code>HTTP Response Log Ingest Configuration</code> matches the API response structure.
+- Verify that all configured fields exist in the API response.
+- Confirm that the API response is returned in valid JSON format.
 
-<details>
-  <summary>oauth2: cannot parse json: invalid character</summary>
-  <div>
-    This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
-  </div>
-</details>
+### Error getting partial logs, error preparing log, error getting timestamp data, timestamp path not in data, or error parsing response data
 
-<details>
-  <summary>Failed to validate the base request config or error preparing new request</summary>
-  <div>
-    These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
-  </div>
-</details>
+These errors are typically caused by an improper endpoint response format or incorrect log ingestion configuration. Ensure that your endpoint returns data in a valid JSON format and response fields are as per the configuration.
+
+### oauth2: cannot parse json: invalid character
+
+This error occurs due to an OAuth 2.0 authentication misconfiguration. Reconfigure the source using valid OAuth 2.0 credentials and ensure that it aligns with the steps in the [Authentication Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
+
+### Failed to validate the base request config or error preparing new request
+
+These errors indicate that the endpoint configuration is not set up correctly. Verify that your endpoint configuration follows the instructions in the [Request Configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/universal-connector-source#source-configuration) section.
 
 ## FAQ
 
@@ -623,18 +606,14 @@ We recommend using [this code snippet](https://goplay.tools/snippet/WTFe5ZLU9PO)
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
-<details>
-  <summary>What if I want to query multiple HTTP endpoints?</summary>
-  <div>You will need to create a new source per endpoint for the data you wish to collect, even if the endpoint is within the same API.</div>
-</details>
-<details>
-  <summary>Can I transform the data collected?</summary>
-  <div>No, this source only collects the data. You can use the Sumo Logic platform features to parse/transform the data further after collection.</div>
-</details>
-<details>
-  <summary>What timestamp is used for the data?</summary>
-  <div>If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
-</details>
+### What if I want to query multiple HTTP endpoints?
+You will need to create a new source per endpoint for the data you wish to collect, even if the endpoint is within the same API.
+
+### Can I transform the data collected?
+No, this source only collects the data. You can use the Sumo Logic platform features to parse/transform the data further after collection.
+
+### What timestamp is used for the data?
+If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.
 
 :::note
 By default, this source supports up to *512 MB* of memory in a single API response. For higher limits or additional requirements, contact Sumo Logic Support.
