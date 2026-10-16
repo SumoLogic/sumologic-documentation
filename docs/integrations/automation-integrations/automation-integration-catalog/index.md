@@ -7,7 +7,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section includes the complete catalog of currently supported automation integrations available in App Central. Our Automation Service and Cloud SOAR offer a comprehensive suite of integrations designed to enhance your automation and orchestration capabilities. 
+This section includes the complete catalog of currently supported automation integrations available in App Catalog. Our Automation Service and Cloud SOAR offer a comprehensive suite of integrations designed to enhance your automation and orchestration capabilities. 
 
 Some of these automation integrations only appear in the in [Cloud SOAR](/docs/cloud-soar/automation) because they are tailor-made for Cloud SOAR. They are indicated as such within their respective articles.
 

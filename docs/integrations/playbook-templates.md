@@ -27,7 +27,7 @@ The out-of-the-box playbooks are templates that you need to configure before the
 1. Select the playbook you want to install.
 1. Click **Add Playbook**.
 1. (Optional) Select the integrations you want to use with the playbook.
-1. Click **Next** to complete installation. Once installed, the playbook card displays an Installed tag in the top-right corner.
+1. Click **Next** to complete installation. Once installed, the playbook card displays an **Installed** tag in the top-right corner.
 
 ## Configure an out-of-the-box playbook
 
@@ -54,7 +54,7 @@ After you install an out-of-the-box playbook from App Catalog, it appears on the
 The out-of-the-box playbooks are merely templates to guide you, and the integrations indicated in their node names may not exist in your environment. Edit the playbook to connect to integrations that you have installed and configured, and change the playbooks as needed.
 :::
 
-## Playbook Templates in App Catalog
+## Playbook templates in App Catalog
 
 This section lists all the out-of-the-box playbooks you can install from App Catalog.
 

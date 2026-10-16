@@ -5986,7 +5986,7 @@
   "/docs/observability/aws/other-configurations-tools/add-new-aws-service": "/docs/observability/aws/other-configurations-tools",
   "/docs/observability/aws/other-configurations-tools/integrate-control-tower-ac": "/docs/observability/aws/other-configurations-tools/integrate-control-tower-accounts",
   "/docs/observability/synthetic-monitoring": "/docs/observability",
-  "/docs/platform-services/automation-service/app-central/installing-updating-app-central-items-in-automation-service": "/docs/integrations/",
+  "/docs/platform-services/automation-service/app-central/installing-updating-app-central-items-in-automation-service": "/docs/integrations/automation-integrations/manage-automation-integrations/",
   "/docs/platform-services/automation-service/app-central/integrations/aws-mcp": "/docs/api/mcp-server",
   "/docs/platform-services/automation-service/app-central/integrations/openai-source": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source",
   "/docs/platform-services/connections": "/docs/alerts/webhook-connections",

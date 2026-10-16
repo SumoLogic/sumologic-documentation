@@ -2,7 +2,7 @@
 id: manage-automation-integrations
 title: Manage Automation Integrations
 sidebar_label: Manage Automation Integrations
-description: Learn how to configure authentication for automation integrations.
+description: Learn how to install and upgrade integrations from the App Catalog.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

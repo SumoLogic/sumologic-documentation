@@ -2740,9 +2740,6 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/global-intelligence/index'},
         items: [
-//          'integrations/amazon-aws/global-intelligence-guardduty',
-//          'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
-//          'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
         ],
       },
