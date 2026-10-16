@@ -889,7 +889,7 @@ Use trademarked terms as adjectives, not as nouns or verbs. Never use them in th
 * Correct: Use the LogReduce® feature to reduce log volume.
 * Incorrect: Use LogReduce® to reduce log volume.
 
-Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use Sumo Logic in the plural or possessive form.
+Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use a Sumo Logic product name in the plural or possessive form (for example, never "Sumo Logic OpenTelemetry Collector's" or "Sumo Logic Collectors"). Generic possessives referring to the company are acceptable (for example, "Sumo Logic's platform").
 
 For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
 
