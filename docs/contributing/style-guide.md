@@ -319,7 +319,18 @@ Append `#L4-L5` to the URL to embed only those lines, and add a title with `json
 
 Use a [Docusaurus `<details>` block](https://docusaurus.io/docs/markdown-features#details) to fold away long optional content: verbose examples, long code samples, or big reference lists. Put the title between the `<summary>` tags and the content after them. Collapsed content is still indexed for search.
 
-Never put required steps or instructions in a collapsible block.
+| Use case | Use | Why |
+|:---------|:----|:----|
+| **FAQ sections** | ❌ DON'T | Hidden content cannot be cited by AI tools or search engines. FAQ content must be immediately visible and scannable. |
+| **Troubleshooting sections** | ❌ DON'T | Users searching for solutions need immediate access to troubleshooting steps. |
+| **Critical instructions** | ❌ DON'T | Required steps and warnings must always be visible. |
+| **Long code samples** | ✅ DO | Code samples over 100 lines benefit from collapsing to reduce page scrolling. |
+| **Multiple installation methods** | ✅ DO | Collapse each method so users can jump to their preferred approach. |
+| **Alternative configuration options** | ✅ DO | Collapse alternatives (e.g., AWS regions, authentication methods) to reduce clutter. |
+
+### Format FAQ questions as headings
+
+Write each FAQ question as a heading (`H3` or `H4`), not as bold text. Headings are discrete, citable units that AI tools and answer engines can chunk and reference individually; bold is purely visual with no semantic weight. Use `H3` for questions under an `H2` section (e.g., `## FAQs` → `### How do I reset my password?`) and `H4` under an `H3` sub-category (e.g., `### Security and privacy` → `#### Is my data encrypted?`).
 
 <Tabs
   defaultValue="Markdown"
