@@ -593,7 +593,7 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
-        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source')}><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="Sumo Logic icon" width="55"/><h4>Sumo Logic Collection</h4></a>
+        <a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-collection-source')}><img src={useBaseUrl('img/send-data/sumo-logic-logo.png')} alt="Sumo Logic icon" width="55"/><h4>Sumo Collection</h4></a>
         <p>Learn how to collect the list of collectors and their sources using the Sumo Logic Collector API and Sources API.</p>
         </div>
       </div>

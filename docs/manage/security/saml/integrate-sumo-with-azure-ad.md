@@ -29,7 +29,7 @@ The steps below are for the new Azure Management Console. For general steps for 
 1. Select **Manage > All Applications.**
 1. Click **New application** at the top of the **All applications** blade. <br/><img src={useBaseUrl('img/security/new-application-option.png')} alt="New application button" style={{border: '1px solid gray'}} width="800" />
 1. Search for **SumoLogic**.
-1. Select the **SumoLogic** tile. <br/><img src={useBaseUrl('img/security/sumo-logic-tile.png')} alt="Sumo tile" style={{border: '1px solid gray'}} width="800" />
+1. Select the **SumoLogic** tile. <br/><img src={useBaseUrl('img/security/sumo-logic-tile.png')} alt="Sumo Logic tile" style={{border: '1px solid gray'}} width="800" />
 1. Enter a name for your application and click **Create**. Throughout this procedure, we refer to the application name as \<*app-name*\>. <br/><img src={useBaseUrl('img/security/create.png')} alt="Sumo Logic name field" style={{border: '1px solid gray'}} width="400" />
 1. From the **Overview** tab, click **Get Started** in the **Set up single sign-on** tile. <br/><img src={useBaseUrl('img/security/get-started.png')} alt="Get started link" style={{border: '1px solid gray'}} width="800" />
 1. Click the **SAML** tile on the **Single sign-on** page. <br/><img src={useBaseUrl('img/security/saml-tile.png')} alt="SAML tile" style={{border: '1px solid gray'}} width="800" />
