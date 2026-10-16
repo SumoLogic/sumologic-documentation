@@ -179,7 +179,7 @@ You can configure sources using UTF-8-encoded JSON files with the Collector Ma
 | tenantID | String | Yes | `null` | Subdomain of your Netskope tenant URL, without `https://` and without the domain (`goskope.com`, or `govskope.us` for government accounts). The Source adds the domain automatically. | `"tenant.eu"` |
 | isGovAccount | Boolean | No | `false` | Set to `true` for a Netskope government account. The Source then uses `https://<tenant>.govskope.us` instead of `goskope.com`. | `false` |
 | apiToken | String | Yes | `null` | The Netskope API Token you want to use to authenticate requests. |  |
-| eventTypes | Array of Strings | No | all | Defines the types of events to collect. Accepted values are `page`, `application`, `infrastructure`, `audit`, `network`, `connection`, `incident`, and `endpoint`. If empty, all 8 types are collected. | `["page","audit"]` |
+| eventTypes | Array of Strings | No | all | Defines the types of events to collect. Accepted values are `page`, `application`, `infrastructure`, `audit`, `network`, `connection`, `incident`, and `endpoint`. If empty, all eight types are collected. | `["page","audit"]` |
 | disableAlerts | Boolean | No | `false` | Alert events are collected by default. Set to `true` to stop collecting them. | `false` |
 
 ### JSON example
