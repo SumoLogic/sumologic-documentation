@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="90"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="Kafka icon" width="90"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic app for Kafka is a unified logs and metrics app. The app helps you to monitor the brokers, partition replicas, and consumer groups components of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the broker operations, topics, replication, and error logs.
 
@@ -137,7 +137,7 @@ started (kafka.server.KafkaServer)
 
 This is a sample log query from the **Events by Severity** panel in the **Kafka - Logs** dashboard.
 
-```sql
+```sumo
 sumo.datasource=kafka messaging.cluster.name={{messaging.cluster.name}}
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as kafka_log_message

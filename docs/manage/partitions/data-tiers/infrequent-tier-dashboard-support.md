@@ -10,9 +10,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href={useBaseUrl('docs/beta')}><span className="beta">Beta</span></a></p>
+<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
 
-<!-- Originally added as a beta article with DASH-734. -->
+:::info
+This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
+:::
+
+<!-- Originally added as a preview article with DASH-734. -->
 
 Previously, dashboards were only supported in our Continuous data tier. With this update, you can set up dashboard panels to include data from the Infrequent Tier.
 
@@ -21,15 +25,15 @@ Previously, dashboards were only supported in our Continuous data tier. With thi
 To use data from the Infrequent Tier in your dashboard panels, you can use the following sample queries.
 
 * Use `_dataTier=Infrequent` in your query scope. For example:
-  ```sql
+  ```sumo
   _dataTier=Infrequent _sourceCategory=appA "error"
   ```
 * Or select data in the Infrequent Tier by specifying the Partition that contains it. For example:
-  ```sql
+  ```sumo
   _index=some_infrequent_index
   ```
   Or, run the following query:
-  ```sql
+  ```sumo
   _index=some_infrequent_index OR _index=some_continuous_index
   ```
 

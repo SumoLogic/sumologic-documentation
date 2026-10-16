@@ -1,6 +1,6 @@
 ---
 id: collect-with-cloudformation-template
-title: Collect Amazon CloudWatch Logs using a CloudFormation Template
+title: Collect CloudWatch Logs with CloudFormation
 sidebar_label: Collect Logs using CloudFormation
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template.
 ---
@@ -16,7 +16,7 @@ When you upload the template to AWS, it creates the AWS resources described in t
 
 | Resource Name |  Description |
 |:--|:--|
-| `SumoCWLogGroup` | A log group that has a subscription filter (`SumoCWLogSubsriptionFilter`)  associated with it that delivers real time logs to Sumo’s CloudWatch Lambda function (`SumoCWLogsLambda`). |
+| `SumoCWLogGroup` | A log group that has a subscription filter (`SumoCWLogSubsriptionFilter`)  associated with it that delivers real time logs to Sumo Logic’s CloudWatch Lambda function (`SumoCWLogsLambda`). |
 | `SumoCWLogsLambda` | A Lambda function responsible for sending data to the Sumo Logic HTTP Source URL. It is configured with a dead letter queue (`SumoCWDeadLetterQueue`) that receives messages that can’t be processed successfully. You can subscribe other logs to this function except its own log group. |
 | `SumoCWProcessDLQLambda` | A Lambda function responsible for reading messages from the dead letter queue and resending messages. This function is periodically triggered by AWS CloudWatch Events using a schedule rule (`SumoCWProcessDLQScheduleRule`). |
 | `SumoCWLambdaPermission` | Permission to CloudWatch Logs for invoking Lambda functions. |
@@ -219,15 +219,15 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
-1. Select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Lambda subscription filter**.<br/><img src={useBaseUrl('img/send-data/create-lambda-subscription-filter.png')} style={{border: '1px solid gray'}} alt="create-lambda-subscription-filter" width="700"/>
+1. Select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Lambda subscription filter**.<br/><img src={useBaseUrl('img/send-data/create-lambda-subscription-filter.png')} style={{border: '1px solid gray'}} alt="Create Lambda subscription filter" width="700"/>
 1. In the Create Lambda subscription filter page, go to **Choose Destination** section and select the Lambda function that begins with `SumoCWLogsLambda`.
 1. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
     :::info
     - If no subscription filter pattern is provided, it will stream all the logs present in the log group.
     - Sometimes log format will be specified in the Sumo Logic app specific collection page, so use that specific format otherwise dashboards may not light up.
     :::
-    <br/><img src={useBaseUrl('img/send-data/create-destination.png')} style={{border: '1px solid gray'}} alt="create-destination" width="700"/>
-1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="test-pattern" width="700"/>
+    <br/><img src={useBaseUrl('img/send-data/create-destination.png')} style={{border: '1px solid gray'}} alt="Create destination" width="700"/>
+1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="Test pattern" width="700"/>
 
 :::note
 Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder with ```IncludeLogGroupInfo``` set to ```false``` .
@@ -241,7 +241,7 @@ Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwar
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
-If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md). When you edit the connector parameters, set the `DestinationArnValue` parameter to the `SumoCWLogsLambda` function ARN.
+If you want to collect logs from multiple Log Groups, you can use Sumo Logic’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md). When you edit the connector parameters, set the `DestinationArnValue` parameter to the `SumoCWLogsLambda` function ARN.
 
 ## Dealing with alarms​
 

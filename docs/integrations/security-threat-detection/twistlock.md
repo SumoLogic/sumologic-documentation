@@ -7,7 +7,7 @@ description: The Sumo Logic app for Twistlock provides comprehensive monitoring 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="thumbnail icon" width="135"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock.png')} alt="Twistlock icon" width="135"/>
 
 [Twistlock](https://www.twistlock.com/) is a cloud native cybersecurity platform for hosts, containers, and serverless setups that ensures the protection of all your workloads across any environment.
 
@@ -44,7 +44,7 @@ In this step you configure an installed collector with a Syslog source that will
    3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Twistlock Console for Syslog forwarding.
    4. **Port**. Port number. Choose the port you configured in Twistlock Console for Syslog forwarding.
    5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/best-practices).
-1. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields) to the Syslog Source so you can reference it in the [Sumo Explorer view](/docs/observability/kubernetes). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
+1. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields) to the Syslog Source so you can reference it in the [Sumo Logic Explorer view](/docs/observability/kubernetes). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
 1. Click **Save**.
 
 ### Step 2: Send Twistlock logs to Sumo Logic
@@ -55,7 +55,7 @@ This step shows you how to configure Twistlock to send logs to the Sumo Logic sy
 2. Go to **Manage > System > Logging**.
 3. Enable **Syslog**.
 4. Enable both options under **verbose syslog output**.
-5. Edit **Send syslog messages over the network to** with the syslog endpoint that you configured in the [Sumo Syslog Source step](#step-1-configure-a-sumo-logic-syslog-source).
+5. Edit **Send syslog messages over the network to** with the syslog endpoint that you configured in the [Sumo Logic Syslog Source step](#step-1-configure-a-sumo-logic-syslog-source).
    * Format to specify the endpoint: `<protocol>://<server>:<port>`
    * Example: `tcp://192.168.125.200:514`
 
@@ -88,7 +88,7 @@ compliance="0"
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
 
-```
+```sumo
 _sourceCategory=*Twistlock* type log_type *scan* vulnerability severity
 | parse regex "\s+(?<component>Twistlock-Console|Twistlock-Defender?)\s*.*\s*time=\"" nodrop
 | parse "type=\"*\"" as type nodrop | parse "log_type=\"*\"" as log_type nodrop | parse "severity=\"*\""

@@ -6,7 +6,7 @@ title: Help
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-<img src={useBaseUrl('img/icons/business/support.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/business/support.png')} alt="Support icon" width="40"/>
 
 Our in-product left-nav **Help** menu provides quick access to Sumo Logic Support, community, and more.
 
@@ -16,7 +16,7 @@ Docs cover all product features and should be your first resource when you have 
 
 ## Support
 
-If you haven't found the answer to your question in our online help documentation:
+If you have not found the answer to your question in our online help documentation:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Help > Support**. <br/> [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Help > Support**. 
 1. You'll be taken to Sumo Logic Support. Click **Submit a Request** to file a ticket.<br/><img src={useBaseUrl('img/get-started/Help-Support.png')} alt="Support page" style={{border: '1px solid gray'}} width="800" />

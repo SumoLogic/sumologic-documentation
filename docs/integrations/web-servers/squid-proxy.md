@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Squid Proxy icon" width="75"/>
 
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests, performance metrics, IP domain DNS statistics, traffic details, HTTP response codes, URLs experiencing redirects, client errors, server errors, and quality of service data that helps you understand your users’ experience.
 
@@ -602,11 +602,11 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
    * **Applied At.** Choose **Ingest Time.**
    * **Scope**. Select **Specific Data.**
    * **Scope**: Enter the following keyword search expression.
-     ```sql
+     ```sumo
      pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_cluster=* pod_labels_proxy_system=*
      ```
    * **Parse Expression**. Enter the following parse expression:
-    ```sql
+    ```sumo
     if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
     | pod_labels_component as component
     | pod_labels_proxy_system as proxy_system

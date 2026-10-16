@@ -9,6 +9,10 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/get-started/sumo-academy.png')} alt="sumo logic academy" width="200"/><br/><br/>
 
+:::training Need to Access a Self-Paced Course?
+If you clicked a link to a self-paced course and cannot see the content, you need to **[sign in to the learning portal first](#how-do-i-access-the-learning-portal)**.
+:::
+
 Sumo Logic Academy is your hub for training and professional development. All courses (self‑paced eLearning, public hands‑on virtual classes, and workshops) are free, with paid private instruction offerings available.
 
 Certification exams are paid and live‑proctored through our assessment partner, Kryterion. Successful candidates receive industry‑recognized digital badges issued by Credly. Check out our certification catalog [here](https://www.sumologic.com/learn/training).
@@ -36,6 +40,38 @@ In this video, we'll walk through learning and certification offerings to help y
 
 :::
 
+## Role-based learning paths
+
+Sumo Logic Academy offers 8 role-based learning paths, one for each of the most common roles working in Sumo Logic. Instead of learning through a generic list of courses, each path gives you the exact course sequence built for your role, broken into milestones so there's always a next step to come back for as you grow into the platform. Every path is available two ways: as a guided, click-through path in the [Learning Portal](#how-do-i-access-the-learning-portal), and as a downloadable PDF handout you can save or share with your team.
+
+Follow the learning path built for your role, self-paced or in a free live session with an instructor, and work toward certification along the way.
+
+:::training Pick Your Path
+**Recommended:** Browse and start any of the 8 guided paths on the [Sumo Logic Learning Portal home page](https://learn.sumologic.com). You'll need to **[sign in to the learning portal first](#how-do-i-access-the-learning-portal)**.
+:::
+
+### Security paths
+
+Pick the path closest to your role and learn to detect threats, investigate incidents, and respond with confidence.
+
+| Role | Learning Portal | Download |
+|:---|:---:|:---:|
+| SOC/Security Analyst | <a href="https://learn.sumologic.com/path/soc-security-analyst-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the SOC/Security Analyst learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/soc-security-analyst-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the SOC/Security Analyst learning path PDF">Download PDF</a> |
+| Cloud Security Architect | <a href="https://learn.sumologic.com/path/cloud-security-architect-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the Cloud Security Architect learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/cloud-security-architect-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the Cloud Security Architect learning path PDF">Download PDF</a> |
+| SOC Administrator | <a href="https://learn.sumologic.com/path/soc-administrator-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the SOC Administrator learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/soc-administrator-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the SOC Administrator learning path PDF">Download PDF</a> |
+
+### Observability paths
+
+Pick the path closest to your role and learn to monitor, troubleshoot, and keep systems reliable at scale.
+
+| Role | Learning Portal | Download |
+|:---|:---:|:---:|
+| DevOps/IT Contributor | <a href="https://learn.sumologic.com/path/dev-ops-it-contributor-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the DevOps/IT Contributor learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/dev-ops-it-contributor-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the DevOps/IT Contributor learning path PDF">Download PDF</a> |
+| Log Analyst/SRE | <a href="https://learn.sumologic.com/path/log-analyst-sre-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the Log Analyst/SRE learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/log-analyst-sre-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the Log Analyst/SRE learning path PDF">Download PDF</a> |
+| IT Ops Leader | <a href="https://learn.sumologic.com/path/it-ops-leader-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the IT Ops Leader learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/it-ops-leader-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the IT Ops Leader learning path PDF">Download PDF</a> |
+| System Administrator | <a href="https://learn.sumologic.com/path/system-administrator-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the System Administrator learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/system-administrator-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the System Administrator learning path PDF">Download PDF</a> |
+| DevOps Leader | <a href="https://learn.sumologic.com/path/dev-ops-leader-learning-path" target="_blank" className="button button--secondary button--sm" aria-label="Start the DevOps Leader learning path">Start path</a> | <a href={useBaseUrl('files/learning-paths/dev-ops-leader-learning-path.pdf')} target="_blank" className="button button--link button--sm" aria-label="Download the DevOps Leader learning path PDF">Download PDF</a> |
+
 ## Getting started
 
 ### How do I access the learning portal?
@@ -59,7 +95,7 @@ Self‑paced training is available in our [learning portal](#how-do-i-access-the
 
 ### What content is available for self‑paced learning?
 
-* **Learning Paths** for General, Observability, and Security ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Logic Expert**).
+* **[Role-based Learning Paths](#role-based-learning-paths)** for Security and Observability roles ([Learning Hub](#how-do-i-access-the-learning-portal) > **Become a Sumo Logic Expert**).
 * **Micro Lessons** ([Learning Hub](#how-do-i-access-the-learning-portal) > **Learn a New Skill**).
 * **Recorded Live Training** sessions with lab guides and slides ([Learning Hub](#how-do-i-access-the-learning-portal) > **Recorded Live Training**).
 
@@ -130,8 +166,11 @@ Both Analyst and Admin accounts are available for any learner to request. Choose
 #### How to request credentials
 
 1. Open a second browser (for example, Firefox if you are reading this in Chrome) so you can stay logged in to both your regular Sumo Logic account and the training lab at the same time.
-2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Become a Sumo Logic Expert**.<br/><img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Training lab credentials" style={{border: '1px solid gray'}} width="600" />
-3. Click **Request Training Analyst Login** or **Request Training Admin Login** based on your course requirements.
+2. Go to your [learning portal](#how-do-i-access-the-learning-portal) and click **Lab credentials** in the toolbar.
+
+   <img src={useBaseUrl('img/get-started/lab-credentials.png')} alt="Lab credentials self-service tool" style={{border: '1px solid gray'}} width="600" />
+
+3. Click **Request Analyst Login** or **Request Admin Login** based on your course requirements.
 4. Review the summary confirmation that appears and accept to proceed.
 5. The system will automatically assign you an available account:
    * **Analyst accounts**. `training+analyst###@sumologic.com` (where ### is between 001-999).
@@ -146,6 +185,10 @@ Both Analyst and Admin accounts are available for any learner to request. Choose
 * Training lab credentials expire at the end of each month.
 * A new set of credentials needs to be generated after the first of each month.
 * Any account-specific data you add will be wiped when credentials expire.
+:::
+
+:::info
+If you need assistance with lab credentials, click the **Get help** link in the self-service tool to email the Sumo Logic Academy team.
 :::
 
 ## Certifications
@@ -226,28 +269,30 @@ Not at this time.
 
 ### I cannot install third-party software on my company-issued device. Can I use a personal device to take exams?
 
-Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. To ensure a secure testing environment, you must install the "Lockdown Browser" to attend a live proctored Sumo Logic Certified exam. Because many corporate IT policies restrict third-party software, we strongly recommend using a personal device to complete your exam. In this case, simply follow the normal process to access Kryterion through the in-product **Learn** tab from your personal device.
+Yes. Sumo Logic Academy uses [Kryterion Webassessor](https://www.kryterion.com/blog/the-evolution-of-webassessor-from-bold-beginnings-to-a-future-powered-by-ai/) for exam registration. Exams require their Lockdown Browser, software that many corporate IT policies restrict. We strongly recommend using a personal device to complete your exam.
 
-For customers whose access to their Sumo Logic organization is also restricted to approved company machines, a standalone login process is required to log in to Kryterion Webassessor to attend the exam via a personal machine.
+If you can access your Sumo Logic org from your personal device, no special setup is needed. Open the **Learn** tab from your personal device and follow the normal process.
 
-If you cannot access your Sumo Logic environment from your personal machine, use the following process to enroll you into Webassessor through our standard single sign-on (SSO) procedure, and set a password on your account so that you can log in from a different machine without needing to access Sumo Logic first:
+If your Sumo Logic org is restricted to approved company machines, you'll need to complete a one-time setup to create standalone Webassessor credentials before you can log in from your personal device. Follow the steps below.
 
-1. Log in from your work machine:
-   1. Sign in to Sumo Logic as normal.
-   1. Select the **Learn** tab in the UI.
-   1. Click on **Learning Portal - Start Here!** to register via SSO for. You may be prompted to validate your login via email.
-   1. Click on **Exam Registration**. This will enroll you into Kryterion Webassessor through SSO.<br/><img src={useBaseUrl('img/get-started/learn-tab.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
-   1. Once logged in to Webassessor, click **Edit Profile** at the top. Copy your username into a note for later use. Note that this will be a string of alphanumeric characters.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
-   1. Click **Log Out**, then on the next screen, **Log In**.
-   1. Now click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
-   1. Paste your username (not your email address) and click **Submit**.
-   1. An email with a password reset link will be sent to your inbox. Click the link in the email and set a password. Note the password for future use.
-You can now log in to your Webassessor account using both single sign on (SSO) and from the Webassessor login page.
-1. Log in from your personal machine:
-   1. Access the Kryterion Webassessor standalone login page.
-   1. Log in using your username (not your email address) and password set in the previous section.
-   1. You can now proceed as normal with attending your live exam.
-   1. If you pass the exam, you will see the new badge in your Skilljar learner transcript, and an email with your Credly badge acceptance request will also follow as normal.
+#### Step 1: Set up your Webassessor credentials (work machine)
+
+1. Sign in to Sumo Logic and open the **Learn** tab.
+1. Click **Learning Portal - Start Here!** to register via SSO. You may be prompted to validate your login via email.<br/><img src={useBaseUrl('img/get-started/learning-hub-sso.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="600" />
+1. Return to the Sumo Logic **Learn** tab and click **Exam Registration**. This enrolls you in Kryterion Webassessor via SSO.<br/><img src={useBaseUrl('img/get-started/exam-registration.png')} alt="Exam registration" style={{border: '1px solid gray'}} width="600" />
+1. Once logged in to Webassessor, click **Edit Profile**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-editprofile.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
+1. Copy your username, which will be a string of alphanumeric characters (not your email address), and save it.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-registration.png')} alt="Webassessor" style={{border: '1px solid gray'}} width="600" />
+1. Click **Log Out**, then click **Log In** on the next screen.
+1. Click **Forgot Password**.<br/><img src={useBaseUrl('img/get-started/kryterion-webassessor-forgot-password.png')} alt="Webassessor forgot password" style={{border: '1px solid gray'}} width="600" />
+1. Paste your username and click **Submit**.
+1. Check your email for a password reset link. Set a password and save it for future use.
+
+#### Step 2: Take your exam (personal device)
+
+1. Go to the Kryterion Webassessor standalone login page.
+1. Log in with your username and the password you just set.
+1. Proceed with your exam as normal.
+1. If you pass, your Credly badge and Skilljar transcript will update as usual.
 
 ## Exam logistics
 

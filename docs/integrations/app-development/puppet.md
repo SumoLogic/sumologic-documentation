@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Puppet icon" width="50"/>
 
 Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic app for Puppet helps you monitor Puppet metrics and events, which means that you can easily:
 
@@ -28,7 +28,7 @@ Sumo Logic’s Puppet Logs source and Puppet Reports source use an installed col
 
 ### Puppet reports
 
-Puppet reports are in YAML format. They must be converted to JSON prior to ingestion to Sumo.
+Puppet reports are in YAML format. They must be converted to JSON prior to ingestion to Sumo Logic.
 
 <Tabs
   className="unique-tabs"
@@ -154,7 +154,7 @@ metrics:
 
 ### Sample queries
 
-```sql title="Failed Resources"
+```sumo title="Failed Resources"
 _sourceCategory=prod/web/puppet/reports
 | parse "\"resources\":{\"name\":\"resources\",\"label\":\"Resources\",\"values\":[[\"total\",\"Total\",*],[\"skipped\",\"Skipped\",*],[\"failed\",\"Failed\",*],[\"failed_to_restart\",\"Failed to restart\",*],[\"restarted\",\"Restarted\",*],[\"changed\",\"Changed\",*],[\"out_of_sync\",\"Out of sync\",*],[\"scheduled\",\"Scheduled\",*],[\"corrective_change\",\"Corrective change\",*]]" as total_res,skipped,failed,failed_to_restart,restarted,changed,out_of_sync,scheduled,corrective_change
 | sum(total_res) as total_resources, sum(failed) as failed_resources
@@ -164,9 +164,9 @@ _sourceCategory=prod/web/puppet/reports
 
 ## Collecting logs for Puppet
 
-Learn how to collect Puppet logs, reports, and events for the Sumo app for Puppet.
+Learn how to collect Puppet logs, reports, and events for the Sumo Logic app for Puppet.
 
-The sections below provide instructions for installing a collector on a Puppet Master host, setting up Sumo Puppet sources (server, access and reports logs), and installing the Sumo app for Puppet. With this configuration you can collect Puppet logs, events, and reports, and visualize resource performance and puppet runs data in the dashboards provided by the app.
+The sections below provide instructions for installing a collector on a Puppet Master host, setting up Sumo Logic Puppet sources (server, access and reports logs), and installing the Sumo Logic app for Puppet. With this configuration you can collect Puppet logs, events, and reports, and visualize resource performance and puppet runs data in the dashboards provided by the app.
 
 
 ### Step 1: Create access keys
@@ -205,9 +205,9 @@ Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sou
 
 ### Step 5: Configure Puppet Reports script source
 
-Puppet reports are in YAML format. They must be converted into JSON format before Sumo ingests them.
+Puppet reports are in YAML format. They must be converted into JSON format before Sumo Logic ingests them.
 
-This section has instructions for setting up a Script source that runs a shell script to convert the YAML files to JSON for ingestion by the Sumo collector. Alternatively, you can convert the YAML files with a third party tool and provide the configure a local file source on installed collection to obtain the JSON from the directory you specify.  
+This section has instructions for setting up a Script source that runs a shell script to convert the YAML files to JSON for ingestion by the Sumo Logic collector. Alternatively, you can convert the YAML files with a third party tool and provide the configure a local file source on installed collection to obtain the JSON from the directory you specify.  
 
 
 #### Script source prerequisites

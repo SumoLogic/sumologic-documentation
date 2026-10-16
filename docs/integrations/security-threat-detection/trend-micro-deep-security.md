@@ -7,7 +7,7 @@ description: The Trend Micro Deep Security app works with system and security ev
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg' alt="thumbnail icon" width="100"/>
+<img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg' alt="Trend Micro icon" width="100"/>
 
 The Trend Micro Deep Security app works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The app analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
 
@@ -80,7 +80,7 @@ Now you must add the Syslog Source to your Policy configuration. Set the integra
 
 ## Sample queries
 
-```sql title="Top 5 Reasons For Prevented Packets"
+```sumo title="Top 5 Reasons For Prevented Packets"
 _sourceCategory=Trendmicro dst
 | parse "CEF:0|*|*|*|*|*|*|*" as Device_Vendor,Device_Product,Device_Version,Signature_ID, Name, Severity, Extension
 | where (signature_id >= 100 AND signature_id <= 199) OR signature_id = 20 OR signature_id = 21
@@ -92,7 +92,7 @@ _sourceCategory=Trendmicro dst
 
 ### Collect cloud-based logs for the Trend Micro Deep Security app
 
-This section has instructions for collecting logs for the Trend Micro Deep Security using a Sumo Cloud Syslog source on a hosted collector.
+This section has instructions for collecting logs for the Trend Micro Deep Security using a Sumo Logic Cloud Syslog source on a hosted collector.
 
 
 #### Step 1: Create a Cloud Syslog source on a hosted collector
@@ -109,7 +109,7 @@ Supply this information as input to the Log Source Identifier: Server Name, and 
 
 For Log Source Identifier field, use this format: `Deep Security Manager [token from Cloud Syslog source]`. Note the spaces with `Deep Security Manager`.
 
-#### Step 2: Configure Sumo as a syslog server in Trend Micro Deep Security.
+#### Step 2: Configure Sumo Logic as a syslog server in Trend Micro Deep Security.
 
 1. In the Deep Security Manager console, select **Policies > Common Objects.**
 2. Expand the **Other** node in the left pane.
@@ -275,3 +275,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Trend Micro Deep Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/trend-micro-deep-security/) to automate response actions directly from Cloud SOAR playbooks.

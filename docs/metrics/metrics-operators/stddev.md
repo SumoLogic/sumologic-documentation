@@ -2,6 +2,7 @@
 id: stddev
 title: stddev Metrics Operator
 sidebar_label: stddev
+description: Use the stddev metrics operator to measure the magnitude of deviations between values in time series, calculating standard deviation at each time interval.
 ---
 
 

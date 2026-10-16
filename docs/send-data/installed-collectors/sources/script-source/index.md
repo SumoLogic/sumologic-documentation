@@ -6,11 +6,11 @@ description: Uses a script to fetch from custom sources of data, such a database
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you need to collect data that isn't stored in log files, like system performance metrics, database records, or perhaps data output from third-party monitoring solutions you can use a Script Source that runs a script to fetch those custom sources of data from your machine's standard output and error streams. The script executes at defined intervals and then sends the data to Sumo for analysis. This allows you to collect all sorts of data from any supported OS, including data from command-line tools such as iostat, transient, or unstable data sources.
+If you need to collect data that isn't stored in log files, like system performance metrics, database records, or perhaps data output from third-party monitoring solutions you can use a Script Source that runs a script to fetch those custom sources of data from your machine's standard output and error streams. The script executes at defined intervals and then sends the data to Sumo Logic for analysis. This allows you to collect all sorts of data from any supported OS, including data from command-line tools such as iostat, transient, or unstable data sources.
 
 The Collector executes the script as the user running the Collector process. Your script needs to output the data to your machine's `stdout` or `stderror` output streams to be collected.
 
-Once a Script Source is configured, access to the machine running the Collector associated with the Source is granted to all Sumo users with roles that include collector management.
+Once a Script Source is configured, access to the machine running the Collector associated with the Source is granted to all Sumo Logic users with roles that include collector management.
 
 ## Preparing your script
 
@@ -44,8 +44,8 @@ To configure a Script Source:
 1. For **Source Host**, enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters. You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-a-script-source), below.
 1. For **Source Category**, enter any information you'd like to include in the metadata. This Source Category value is stored in a searchable metadata field called _sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables), below.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. For **Frequency**, choose one of the following:
 
    * An option to run the script at the selected frequency.
@@ -60,7 +60,7 @@ To configure a Script Source:
      * Windows Options<br/><img src={useBaseUrl('img/send-data/script-source-win-cmds.png')} alt="Script source Windows commands" style={{border: '1px solid gray'}} width="300" />
 1. For **Script**, do one of the following:
    * Choose **Type a path to the script to execute** if you have the script saved to a file location.
-   * Choose **Type the script to execute** if you'd like to enter the script directly in the Sumo web app. Then type the script in the text box.
+   * Choose **Type the script to execute** if you'd like to enter the script directly in the Sumo Logic web app. Then type the script in the text box.
 1. For **Working Directory**, you'll only need to enter a path if your script refers to a file indirectly. So, enter the path of the file you'd like to collect if required; otherwise, this option can remain blank.
 1. Under **Advanced** you'll see options regarding timestamps and time zones:
    * **Timestamp Parsing**. By default **Extract timestamp information from log file entries** is selected, meaning that we use the timestamp information from the data you collect. Deselecting this option turns off all timestamp parsing.

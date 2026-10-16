@@ -185,7 +185,7 @@ Playbook process with an alarm received from McAfee in order to enrich and autom
 
 *Vulnerability*
 
-Playbook created to be followed in case a critical vulnerability/flaw is discovered.Upon receiving a new critical vulnerability, the playbook provides a list of all target vulnerabilities through Qualys.
+Playbook created to be followed in case a critical vulnerability/flaw is discovered. Upon receiving a new critical vulnerability, the playbook provides a list of all target vulnerabilities through Qualys.
 
 If the vulnerability has already been identified, the playbook involves searching for events in the SIEM related to that vulnerability to check all possible correlations between the vulnerability and possible exploit attempts, creating a risk scoring activity.
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/archive.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/archive.png')} alt="Archive icon" width="40"/>
 
 The Archive Ingestion Management API allows you to ingest data from Archive destinations. You can use this API to ingest data from your Archive with an existing [AWS S3 Archive Source](/docs/manage/data-archiving/archive#create-an-aws-s3-archivesource).
 
@@ -27,6 +27,7 @@ You need the [Manage or View Collectors role capability](/docs/manage/users-role
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/archiveManagement   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/archiveManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/archiveManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/archiveManagement  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/archiveManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/archiveManagement  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/archiveManagement   |

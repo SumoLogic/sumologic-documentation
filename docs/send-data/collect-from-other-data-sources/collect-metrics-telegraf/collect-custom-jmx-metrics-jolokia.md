@@ -79,7 +79,7 @@ The output will be similar to this:
 You can use output returned by your curl command from the previous step to create this configuration: 
 
 
-```sql
+```sumo
 [[inputs.jolokia2_agent]]
             urls = ["http://127.0.0.1:8778/jolokia"]
 

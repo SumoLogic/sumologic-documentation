@@ -2,7 +2,7 @@
 id: akamai-siem-api-source
 title: Akamai SIEM API Source
 sidebar_label: Akamai SIEM API
-tags:
+keywords:
   - cloud-to-cloud
   - akamai-siem-api
 description: The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the V1 SIEM API.
@@ -11,7 +11,7 @@ description: The Akamai SIEM API Source provides a secure endpoint to receive se
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="90"/>
 
 The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -40,7 +40,7 @@ To configure an Akamai SIEM API Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a HostedCollector.
 1. Search for and select **Akamai SIEM API**.
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
+1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. **Client Token**, **Client Secret**, **Access Token**, and **Akamai API Host**. Provide the Akamai SIEM API authentication credentials you want to use to [authenticate](#vendor-configuration)) collection requests. The **Akamai API Host** is the custom hostname applied to your credentials, it looks something like this: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net`.

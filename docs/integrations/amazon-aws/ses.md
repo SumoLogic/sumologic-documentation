@@ -1,21 +1,21 @@
 ---
 id: ses
 title: Amazon SES
-description: The Sumo App for Amazon SES provides operational insight into Amazon Simple Email Service. The app includes dashboards that allow you to  view information about bounced notifications, delivered notifications, and CloudTrail events.
+description: The Sumo Logic App for Amazon SES provides operational insight into Amazon Simple Email Service. The app includes dashboards that allow you to  view information about bounced notifications, delivered notifications, and CloudTrail events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../reuse/collection-should-begin-note.md';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ses.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/ses.png')} alt="SES icon" width="50"/>
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Sumo Logic App for Amazon SES helps you monitor the email platform activities. The app uses CloudTrail events and SES notifications, and provides pre-configured dashboards that provide insights on the status of the email delivery including bounced notifications, delivered notifications, and various SES CloudTrail events.
 
 ## Log types
 
 The Amazon SES App uses:
-* AWS CloudTrail events for SES. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
-* SES Notifications. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-using-notifications.html). 
+* AWS CloudTrail events for SES. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail).
+* SES Notifications. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-using-notifications.html).
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Amazon SES App helps you monitor the email platform activities, utilizing CloudTrail events and SES notifications (via SNS).
 
@@ -78,7 +78,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 
 ### Sample queries
 
-```sql title="Top bounced email addresses"
+```sumo title="Top bounced email addresses"
 (_sourceCategory=aws-ses or _sourceCategory=AWS/SES/Notifications) "\"notificationType\":\"Bounce\""
 | json "notificationType" nodrop
 | json "bounce.bounceSubType" as bounceSubType nodrop
@@ -134,8 +134,8 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     :::
 9. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called `_sourceCategory`.)
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Then define the fields you want to associate, each field needs a name (key) and value.
-    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
@@ -148,7 +148,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
     The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint).
 
-    1. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click **Create URL** and use the provided endpoint URL when creating your subscription in step 3.
+    1. To set up the subscription you need to get an endpoint URL from Sumo Logic to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click **Create URL** and use the provided endpoint URL when creating your subscription in step 3.
 
      Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts).
 
@@ -208,22 +208,22 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
     **Note the source EndPoint URL**. Once an HTTP Source is added, it generates a URL which will be used to receive notifications from SNS. The URL looks like `https://collectors.sumologic.com/receiver/v1/http/ABCDEFGHIJK`.
 
-4. You are going to send SES Notifications to SNS and then from SNS forward them to Sumo Logic. Have your Amazon SNS topic ready to receive SES notifications. Create SNS Topic, if not already created in SNS Service at AWS account from which to forward events to Sumo. Follow instructions in the [Amazon documentation](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-sns-notifications.html#configure-feedback-notifications-prerequisites) to setup an SNS topic to receive SES notifications.
+4. You are going to send SES Notifications to SNS and then from SNS forward them to Sumo Logic. Have your Amazon SNS topic ready to receive SES notifications. Create SNS Topic, if not already created in SNS Service at AWS account from which to forward events to Sumo Logic. Follow instructions in the [Amazon documentation](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-sns-notifications.html#configure-feedback-notifications-prerequisites) to setup an SNS topic to receive SES notifications.
 
     **Note the SNS Topic ARN**, as you'll need it to set the subscription.
 
 5. Whenever the SNS topic referred to in the previous step receives SES notification, forward the received notification to registered subscribers of that SNS topic. Now, subscribe Sumo Logic endpoint as subscriber. Create a Subscription to the SNS Topic you just created, specifying the following:
     * Topic ARN — from Step 4.
     * Protocol — **HTTPS**
-    * EndPoint — Sumo source Endpoint URL you noted in Step 3.
-6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo source endpoint. Do the following:
-    * Go to the Sumo search box and execute the following:
+    * EndPoint — Sumo Logic source Endpoint URL you noted in Step 3.
+6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](https://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo Logic source endpoint. Do the following:
+    * Go to the Sumo Logic search box and execute the following:
      ```
      _sourceCategory=AWS/SES/Events/Notifications SubscribeURL
      ```
-    * Look in Sumo for the source category, and get the SubscribeURL field value. You need to confirm the subscription by entering the SubscribeURL field value in the **Subscription confirmation URL** field.
+    * Look in Sumo Logic for the source category, and get the SubscribeURL field value. You need to confirm the subscription by entering the SubscribeURL field value in the **Subscription confirmation URL** field.
     * Go to **AWS Account > SNS service**, and select the subscription you just created. Then, choose **Confirm Subscription**, paste the SubscribeURL, and click **Confirm Subscription**.
-7. Select the subscription, then under **Other Subscription actions** or **Actions**, select **Edit Subscription Attributes**, check the check box for **Raw message delivery**, and click **Set Subscription attributes**. This delivers a message to Sumo source with only one field as raw.
+7. Select the subscription, then under **Other Subscription actions** or **Actions**, select **Edit Subscription Attributes**, check the check box for **Raw message delivery**, and click **Set Subscription attributes**. This delivers a message to Sumo Logic source with only one field as raw.
 8. After completing successful subscription, Configure Notifications Using the Amazon SES Console. For detailed instructions, see the [Amazon documentation](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-sns-notifications.html#configure-feedback-notifications-console).
 
 :::note

@@ -38,7 +38,7 @@ Tracing data from your services is sent through multiple local OpenTelemetry Col
 
 Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v4.9.0/docs/installation.md) for the current version. Tracing is enabled by default.
 
-If you plan to [auto-instrument your Java, Python, and JS applications in K8s environments](docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes.md), use the Helm command in that article.
+If you plan to [auto-instrument your Java, Python, and JS applications in K8s environments](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes.md), use the Helm command in that article.
 
 #### Using the command line
 
@@ -159,7 +159,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
   * Replica Set: `collection-sumologic-traces-gateway-<hash>`
   * Service: `collection-sumologic-traces-gateway`
   * Config Map: `collection-sumologic-traces-gateway`
-* `traces-sampler` - collector responsible for forwarding data to Sumo Receiver
+* `traces-sampler` - collector responsible for forwarding data to Sumo Logic Receiver
   * Deployment: `collection-sumologic-traces-sampler`
   * Pod: `collection-sumologic-traces-sampler-<hash>-<hash>`
   * Replica Set: `collection-sumologic-traces-sampler-<hash>`

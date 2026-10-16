@@ -2,16 +2,16 @@
 id: faq
 title: Data Tiers FAQ
 sidebar_label: FAQ
-description: Answers to frequently asked questions about Data Tiers.
+description: Get answers to frequently asked questions about Sumo Logic Data Tiers, including how to choose between Continuous, Frequent, and Infrequent tiers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](/docs/manage/partitions/data-tiers).
 
-## In which Sumo subscriptions are Data Tiers available? 
+## In which Sumo Logic subscriptions are Data Tiers available? 
 
-The Continuous Data Tier is available in all Sumo subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
+The Continuous Data Tier is available in all Sumo Logic subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
 
 ## Is the Infrequent Tier available to existing Cloud Flex customers?
 
@@ -31,13 +31,13 @@ You can use [Role-Based Access Control (RBAC)](/docs/manage/users-roles/roles/ro
 
 For example, if you want to restrict access to a partition whose routing expression is:
 
-```
+```sumo
 _sourceCategory=staging/*
 ```
 
 You can create a role with this role search filter:
 
-```
+```sumo
 !(_sourceCategory=staging/*)
 ```
 
@@ -83,7 +83,7 @@ Add a custom metadata field at either the collector or source level, and then us
 
 Then, when you create a new partition, you can use the field in the scoping expression along with other scoping rules.
 
-<img src={useBaseUrl('img/manage/partitions-data-tiers/use-tier.png')} alt="use-tier.png" width="350"/> 
+<img src={useBaseUrl('img/manage/partitions-data-tiers/use-tier.png')} alt="Use tier" width="350"/> 
 
 In the future, if you want to change the data that goes into the partition, you can just update the usage field.
 
@@ -105,7 +105,7 @@ The cost of queries depends on two factors: 
 
 Using keywords or other metadata in a query will not reduce the amount of data scanned. For example, the inclusion of a keyword and custom field in the scope of the query below does not reduce the amount of data that Sumo Logic will scan. Sumo Logic will scan all data in the partition named `ybase_partition`.
 
-```sql
+```sumo
 _index=ybase_partition (error and cluster=nxt)
 ```
 

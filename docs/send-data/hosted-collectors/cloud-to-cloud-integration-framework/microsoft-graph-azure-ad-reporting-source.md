@@ -2,7 +2,7 @@
 id: microsoft-graph-azure-ad-reporting-source
 title: Microsoft Graph Azure AD Reporting Source
 sidebar_label: Microsoft Graph Azure AD Reporting
-tags:
+keywords:
   - cloud-to-cloud
   - microsoft-graph-azure-ad-reporting
 description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
@@ -11,7 +11,7 @@ description: The Microsoft Graph Azure AD Reporting Source collects Directory Au
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="40"/>
 
 The Microsoft Graph Azure AD Reporting Source collects [Directory Audit](https://docs.microsoft.com/en-us/graph/api/directoryaudit-list?view=graph-rest-1.0), [Sign-in](https://docs.microsoft.com/en-us/graph/api/signin-list?view=graph-rest-1.0), and [Provisioning](https://docs.microsoft.com/en-us/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0) data from the [Microsoft Graph API Azure AD activity reports](https://docs.microsoft.com/en-us/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-1.0). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -69,12 +69,12 @@ To configure a Microsoft Graph Azure AD Reporting Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **MS Graph Azure AD Reporting**.
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
+1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**. 
 1. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
 1. **Application Client Secret Value**. Provide the Application Client Secret Value you created in step 7 of the setup section.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **Directory Audit**, **Sign-in**, and **Provisioning**.
@@ -131,15 +131,16 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ```
 ## Troubleshooting
 
-<details>
-  <summary>This request is throttled. Please try again after the value specified in the Retry-After header.</summary>
-  <div>
-    This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls. 
-  </div>
-</details>
+### This request is throttled. Please try again after the value specified in the Retry-After header.
+
+This error occurs when the API request limit (throttling threshold) is exceeded and the source makes more API calls than the limit specified in the [Microsoft documentation](https://learn.microsoft.com/en-us/graph/throttling-limits#identity-and-access-reports-service-limits). In many cases, this happens when the same credentials are used concurrently by multiple vendors or integrations. Please verify that the credentials configured for the Sumo Logic source are not shared with other platforms making API calls.
 
 ## FAQ
 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Azure AD Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.

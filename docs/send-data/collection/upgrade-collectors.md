@@ -46,7 +46,7 @@ To install an upgrade on one or more collectors:
         :::note
         We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
         :::
-      <img src={useBaseUrl('/img/send-data/upgrade-collectors.png')} alt="icon" />
+      <img src={useBaseUrl('/img/send-data/upgrade-collectors.png')} alt="Upgrade Collectors icon" />
 
   - **If your collector is on the deprecated JRE version**:
 
@@ -101,7 +101,7 @@ The steps to upgrade an Installed Collector using the command line are similar t
 Download the collector in either of the following ways:
 
 * On the [**Collection**](/docs/send-data/collection/) page, click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
+* Open a browser and enter the static URL for your Sumo Logic deployment. See [how to determine which endpoint to use](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
 
 See the following table for commands:
 

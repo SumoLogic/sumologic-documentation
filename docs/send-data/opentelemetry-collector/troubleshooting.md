@@ -49,7 +49,7 @@ By default, the OpenTelemetry Collector will flush data either every second or e
 
 The default cache size for the Sumo Logic OpenTelemetry Collector is 5000 batches, each containing up to 1024 data points. The actual on-disk size of the cache depends on the size of the data points, but it's typically around 700 bytes per data point.
 
-The collector caches data when it’s unable to send it to the Sumo backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo, and others.
+The collector caches data when it’s unable to send it to the Sumo Logic backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo Logic, and others.
 
 #### Does the Sumo Logic backend know when a OpenTelemetry Collector is down? How does that work?
 
@@ -78,11 +78,11 @@ Because the OpenTelemetry Collector is connected to the terminal, it will stop r
 
 #### I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to get a heartbeat`. Does this mean my collector is not collecting any data?
 
-<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="950" />
+<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="Unable to get a heartbeat error" width="950" />
 
 This means the collector is having trouble connecting to the Sumo Logic backend.
 
-While data should still be collected and shipped to Sumo, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
+While data should still be collected and shipped to Sumo Logic, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
 
 ## Collector installation errors
 
@@ -157,7 +157,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors logs in Sumo Logic by performing a log search similar to the following:
-```
+```sumo
 _collector="<collector name>" and _sourceName="/var/log/otelcol.log"
 ```
 
@@ -215,7 +215,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors metrics in Sumo Logic by performing a metrics search similar to the following:
-```
+```sumo
 _collector="<collector name>"  _sourcename="otc metric input"
 ```
 

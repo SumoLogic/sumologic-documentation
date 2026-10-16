@@ -23,7 +23,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 
 ## Notes regarding Docker Sources
 
-* We recommend running the Sumo collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see https://hub.docker.com/r/sumologic/collector.
+* We recommend running the Sumo Logic collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see https://hub.docker.com/r/sumologic/collector.
 * The Sumo Logic Collector uses the Docker Remote API to collect Docker logs. This requires that the log driver configured on the container uses either the `json-file` or `journald` option, as described in https://docs.docker.com/engine/admin/logging/overview.
 * If you're using Kubernetes we recommend using an open source [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
 * The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/reference-information/time-reference) and the Source is configured to detect it properly. If there are issues with timestamp detection and the Docker container is restarted the Source will reingest all log data since there are no timestamps to track.
@@ -64,8 +64,8 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
    * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **`web_apps`** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables.](#configure-sourcecategory-and-sourcehost-using-variables)
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. Configure the Advanced options.
 

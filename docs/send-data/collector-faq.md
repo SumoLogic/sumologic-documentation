@@ -13,7 +13,7 @@ To interact with other Sumo Logic users, post feedback, or ask a question, visit
 
 This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need. 
 
-## Collector fails to connect to Sumo
+## Collector fails to connect to Sumo Logic
 
 For this issue, the failure to connect may be due to the target server failed to respond or HTTP 504 or HTTP 408 errors.
 
@@ -32,7 +32,7 @@ This warning indicates that a brief lapse in network connectivity between your C
 
 Here are a few troubleshooting steps to try when your Collector is consistently unable to connect to the Service:
 
-1. Test DNS resolution and connectivity to the Sumo servers: 
+1. Test DNS resolution and connectivity to the Sumo Logic servers: 
      ```bash
      curl -i https://collectors.sumologic.com
      # you should see the word "Tweep" returned
@@ -329,7 +329,7 @@ To increase the maximum Java Heap size:
 
 To monitor collectors for out-of-memory issues, ingest the collector logs, and schedule following search to run every 15 minutes with time range last 15 minutes.
 
-```sql
+```sumo
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
@@ -413,11 +413,11 @@ On Windows servers where the generated number of events is much higher than appr
 
 ## How to Ingest Old or Historical Data
 
-The overwhelming majority of log data processed by Sumo are nearly real-time messages. For this reason, Sumo's timestamp detection and data indexing systems are optimized to handle streams of data originating in the recent past.
+The overwhelming majority of log data processed by Sumo Logic are nearly real-time messages. For this reason, Sumo Logic's timestamp detection and data indexing systems are optimized to handle streams of data originating in the recent past.
 
 Ingested old or historical data, especially when mixed with recent or real-time data in one source, may occasionally be misinterpreted.
 
-This article describes the assumptions that Sumo makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
+This article describes the assumptions that Sumo Logic makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
 
 See [using _format for troubleshooting](/docs/send-data/reference-information/time-reference.md) timestamps.
 
@@ -481,7 +481,7 @@ If no time zone is found in the message, or if the time zone is in an unsupporte
 
 #### Potential time zone configuration issues
 
-The following scenarios represent common time zone-related configuration issues for Sumo users. Review these use cases for insights into potential issues with your time zone configuration.
+The following scenarios represent common time zone-related configuration issues for Sumo Logic users. Review these use cases for insights into potential issues with your time zone configuration.
 
 #### Example 1 - Unsupported Time Zone format in File
 
@@ -517,7 +517,7 @@ Review your time zone settings, and apply a time zone on the Source that reflec
 
 The query below can be executed in your account to find the number of messages for each of your Sources where the receipt time and message time are more than 30 minutes apart. This should at least give you a good starting place for you to run additional analysis.
 
-```sql
+```sumo
 *
 | _receiptTime as r
 | _messageTime as t
@@ -535,7 +535,7 @@ The query below can be executed in your account to find the number of messages f
 
 After identifying a list of (problematic) Sources in the previous search, you can then use the query below to view the time delay average, the max delay, and the min delay for each Source. Substitute `<problem_child>` with the Source(s) that you uncovered in the initial query above.  
 
-```sql
+```sumo
 _source=<problem_child>
 | _format as format
 | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
@@ -574,7 +574,7 @@ If your user account is not an administrator check your role assignment for any
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/>. Stopped Collectors do not send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/>. Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 

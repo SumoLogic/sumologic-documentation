@@ -7,7 +7,7 @@ description: Add a Google Workspace Apps Audit Source to ingest audit logs from 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/send-data/google-workspace-audit.png')} alt="Google Workspace Audit icon" width="40"/>
 
 A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 
@@ -41,12 +41,14 @@ Authentication must be with a new Google Workspace Apps Audit Source. We do not
 :::
 
 ### Manage Third party app access
-In order to provide Sumo logic access to google services, please follow the manage third-party app access steps as follows. See Google's [Manage Third-party App Access](https://support.google.com/a/answer/7281227#zippy=%2Cstep-manage-third-party-app-access-to-google-services-add-apps) documentation for more details.
+In order to provide Sumo Logic access to google services, please follow the manage third-party app access steps as follows. See Google's [Manage Third-party App Access](https://support.google.com/a/answer/7281227#zippy=%2Cstep-manage-third-party-app-access-to-google-services-add-apps) documentation for more details.
 1. In the Admin console, go to **Menu** > **Security** > **Access and data control** > **API controls**.
 1. In App access control, click **Manage Third-Party App Access**.
 1. Click **Add app** and search for Sumo Logic OAuth client.
-1. Select Sumo Logic OAuth client, then click **Change access**.
-1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="g-suite-change-access" />
+1. Select the app with the following client ID:<br/>
+`788305497335-k5j5772fpotskboo66orgh48jbvug8uo.apps.googleusercontent.com`
+1. Click **Change access**.
+1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="G Suite change access" />
 1. Click **Change**.
 
 ## Configuring a Google Workspace Apps Audit Source
@@ -63,8 +65,8 @@ To configure a Google Workspace Apps Audit Source:
 1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
    :::note
    If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
    :::
@@ -92,8 +94,8 @@ To provide feedback on these limitations, and known issues, contact Google sup
 
 ### Access Tokens
 
-An access token is granted by a third party service, such as Google Workspace, to Sumo for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo will continue to try to update a token for about a week. After several failures, we recommend recreating the Google Workspace Apps Audit Source.
+An access token is granted by a third party service, such as Google Workspace, to Sumo Logic for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo Logic automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo Logic will continue to try to update a token for about a week. After several failures, we recommend recreating the Google Workspace Apps Audit Source.
 
 ### Subscription Watchpoints
 
-A subscription is a channel established with the third party service to receive notification events. Similar to access tokens, subscriptions are valid only before the expiration time. Before a subscription expires, Sumo invalidates the current subscription and obtains a new subscription. In the event of failure to update a subscription, an entry is logged in the Audit Index.
+A subscription is a channel established with the third party service to receive notification events. Similar to access tokens, subscriptions are valid only before the expiration time. Before a subscription expires, Sumo Logic invalidates the current subscription and obtains a new subscription. In the event of failure to update a subscription, an entry is logged in the Audit Index.

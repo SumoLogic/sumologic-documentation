@@ -1,7 +1,7 @@
 ---
 id: sumo-logic-ui-classic
 title: Tour the Sumo Logic Classic UI
-sidebar_label: Tour the Sumo UI (Classic)
+sidebar_label: Tour the Sumo Logic UI (Classic)
 description: Get to know the Sumo Logic platform user interface.
 ---
 
@@ -36,8 +36,8 @@ The left nav bar provides easy access to libraries, personal collections of das
 
 The top of the left nav bar is where you can search for content and users and easily switch browsing modes. 
 
-* Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the three-dot kebab icon and make a selection from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/TUI_Search_Details.png')} alt="Search details" style={{border: '1px solid gray'}} width="800" />
+* **Searching**. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users.
+* **Switching browsing modes**. Click the three-dot kebab icon and make a selection from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/TUI_Search_Details.png')} alt="Search details" style={{border: '1px solid gray'}} width="800" />
 
 ### Hide and show the left nav bar
 
@@ -80,7 +80,7 @@ To rename or close a tab, do the following:
 
 Log Search, Metrics, and Live Tail tabs have additional options you can use to customize your environment. The tabs even stay open when you sign out and sign back in again, so you can start where you left off. Clicking any of the following icons opens a tabbed window.
 
-<img src={useBaseUrl('img/get-started/ui/WTS_UI_LogSearch-Metrics-LiveTail.png')} alt="WTS_UI_LogSearch-Metrics-LiveTail.png" width="200"/>
+<img src={useBaseUrl('img/get-started/ui/WTS_UI_LogSearch-Metrics-LiveTail.png')} alt="UI log search Metrics Live Tail" width="200"/>
 
 To access additional Log Search, Metrics, and Live Tail options, do the following:
 
@@ -128,7 +128,7 @@ This section shows you how to get started working with logs and metrics. The li
 To launch a search, metrics visualization, or live tail session, do the following:
 
 1. Go to the Sumo Logic **Home** page.
-1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" style={{border: '1px solid gray'}}  width="600"/>
+1. Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="Home icons" style={{border: '1px solid gray'}}  width="600"/>
    * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
    * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
    * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
@@ -161,7 +161,7 @@ To view Favorites and add to the list, do the following:
 1. To add a search to the Favorites list, do the following:
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
-   1. Click the three-dot kebab icon and click **Favorite** from the provided options. <br/> <img src={useBaseUrl('img/get-started/ui/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
+   1. Click the three-dot kebab icon and click **Favorite** from the provided options. <br/> <img src={useBaseUrl('img/get-started/ui/favorite-saved-search.png')} alt="Favorite saved search" width="200"/>
 
 ### Share a dashboard, search, or folder
 
@@ -187,13 +187,13 @@ After you start a search, you can “pin” it, and it will run in the backgr
 
 There is a limit of ten pinned searches per user. Also, queries that use the [save operator](/docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
 
-You must start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
+You need to start a search for the Pin option to appear. Once a search is pinned, it cannot be unpinned, but it can be removed from the Pinned Searches tab.
 
 To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot kebab icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="pin-search.png" style={{border: '1px solid gray'}} width="200"/>
+1. Click the three-dot kebab icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="Pin search" style={{border: '1px solid gray'}} width="200"/>
 1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/><img src={useBaseUrl('img/get-started/ui/pinmessage.png')} alt="Location of pinned search" style={{border: '1px solid gray'}} width="500" />
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 
@@ -256,7 +256,7 @@ To administer Sumo Logic accounts, users, and security, do the following:
 1. Choose from the following, as needed:
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index), [support account access,](/docs/manage/security/enable-support-account) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy), [set up an allowlist for IP or CIDR addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index), [support account access,](/docs/manage/security/enable-support-account) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
 
 ## Become a Sumo Logic Pro user
 

@@ -34,7 +34,7 @@ Monitoring dashboards are available for the following apps and solutions.
 
 ### AWS Observability
 
-AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From this tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
+AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From this tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
 
 ### Kubernetes Views
 

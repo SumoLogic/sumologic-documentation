@@ -2,6 +2,7 @@
 id: trace
 title: trace Search Operator
 sidebar_label: trace
+description: Use the trace operator as a sophisticated filter to connect related log messages using identifying values like user IDs, IP addresses, or session IDs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -15,9 +16,7 @@ Trace operators require the following:
 
 ## Syntax
 
-```sql
-trace "<regex>" "<starting_value>"
-```
+`trace "<regex>" "<starting_value>"`
 
 ## Tracing session IDs
 
@@ -27,7 +26,7 @@ Let's say that your product uses a variety of session IDs to track requests as t
 
 Imagine that an error happened at some point in the process, generating an error including "PROCESSING FAILED: webID=7F92. Starting from this information, we can use a trace operator in our query to following the chain of activity:
 
-```sql
+```sumo
 * | trace "ID=([0-9a-fA-F]{4})" "7F92" | where _raw matches "*ERROR*"
 ```
 

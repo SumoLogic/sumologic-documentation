@@ -43,7 +43,7 @@ For example, to search for system events:
 
 The System Event Index has detailed JSON logs for the following features. To search for system events for a specific feature use the metadata field `_sourceCategory` with its corresponding value. For example, to search system events for alerts you would use the query:
 
-```sql
+```sumo
 _index=sumologic_system_events _sourceCategory=alerts
 ```
 
@@ -81,7 +81,7 @@ Each system event log has common keys that categorize it to a product area and p
 | eventName | The name of the event. | String |
 | eventTime | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | eventFormatVersion | The event log format version. | String |
-| operator | Information of who did the operation. If its missing, the Sumo service was the operator. | JSON object of Strings |
+| operator | Information of who did the operation. If it's missing, the Sumo Logic service was the operator. | JSON object of Strings |
 | subsystem | The product area of the event. | String |
 
 ```json

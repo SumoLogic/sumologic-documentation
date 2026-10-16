@@ -28,7 +28,7 @@ To search for events:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
-    ```sql
+    ```sumo
     (_index=sumologic_audit_events or _index=sumologic_system_events) _sourceCategory=oar*
     | where subsystem contains "Playbook"
     ```
@@ -45,7 +45,7 @@ For Audit Event Index documentation, see [Automation Service and Cloud SOAR audi
 
 To search for Audit Event Index events for a specific feature, use `_index=sumologic_audit_events` and enter the `_sourceCategory` for that feature. For example:
 
-```sql
+```sumo
 _index=sumologic_audit_events _sourceCategory=oarPlaybookExecutions
 ```
 
@@ -101,7 +101,7 @@ For System Event Index documentation, see [Automation Service and Cloud SOAR aud
 
 To search for System Event Index events for a specific feature, use `_index=sumologic_system_events` and enter the `_sourceCategory` for that feature. For example:
 
-```sql
+```sumo
 _index=sumologic_system_events _sourceCategory=oarAutomationActions
 ```
 
@@ -146,7 +146,7 @@ Each audit event log has common keys that categorize it to a product area and pr
 | `eventName` | The name of the event. | String |
 | `eventTime` | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | `eventFormatVersion` | The event log format version. | String |
-| `operator` | Information of who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
+| `operator` | Information of who did the operation. If it's missing, the Sumo Logic service was the operator. | JSON object of Strings |
 | `subsystem` | The product area of the event. | String |
 
 ## Example event log

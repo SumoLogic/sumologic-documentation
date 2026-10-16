@@ -27,7 +27,7 @@ To configure an AWS CloudTrail Source, perform these steps:
    * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
    * Create the CloudFormation stack in AWS Management Console using the template.
    * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, see [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation).
-5. [Enable Sumo to track AWS Admin activity](/docs/integrations/amazon-aws/cloudtrail/#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+5. [Enable Sumo Logic to track AWS Admin activity](/docs/integrations/amazon-aws/cloudtrail/#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 6. Install the Sumo Logic App for AWS CloudTrail.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can upgrade your account at any time.
@@ -64,7 +64,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 }
 ```
 
-```sql title="Field Extraction Template"
+```sumo title="Field Extraction Template"
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress
 | parse "\"eventName\":\"*\"" as event_name
 | parse "\"eventSource\":\"*\"" as event_source
@@ -74,7 +74,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 ### Sample queries
 
-```sql title="Created and Deleted Network and Security Events"
+```sumo title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | parse "\"userName\":\"*\"" as user
 | parse "\"eventName\":\"*\"" as event
@@ -151,3 +151,49 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Use Case:** Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Monitoring-Threat-Intelligence.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+### Security Analytics - Data Exfiltration and Exposure
+
+**Description:** Dashboard analyzing API-level data access, publicly exposed resource creation, and cross-account access patterns to detect data exfiltration attempts.
+
+**Use Case:** Provides analysis of data exposure risks including publicly exposed resources over time, secret accesses via Secrets Manager, KMS decrypt and SSM decryption activity, and sensitive access outliers to help identify potential data exfiltration.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Data-Exfiltration-and-Exposure.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+### Security Analytics - Suspicious Indicators
+
+**Description:** This dashboard tracks ransomware signals like KMS key deletions, backup/snapshot removals, and S3 data protection downgrades.
+
+**Use Case:** Provides visibility into ransomware and destructive activity indicators including KMS key deletions and disables over time, backup deletion events, S3 data protection configuration changes, and detailed tables of impacted resources.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Suspicious-Indicators.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
+
+## Create monitors for the AWS CloudTrail app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### AWS CloudTrail alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `CloudTrail Logging Stopped or Deleted` | This alert is triggered when CloudTrail logging is stopped or a trail is deleted. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+| `GuardDuty Disabled` | This alert is triggered when GuardDuty is disabled or a member account is disassociated from its master account. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+| `Root Account Used` | This alert is triggered when the AWS root account is used to perform an action. `Note: Please change the _sourceCategory to match your collector's source category instead of using the default value.` | Count > 0 | Count < = 0 |
+
+## Upgrade/Downgrade the AWS CloudTrail app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the AWS CloudTrail app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Additional resources
+
+- Use the [AWS CloudTrail Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/aws-cloudtrail/) to automate response actions directly from Cloud SOAR playbooks.

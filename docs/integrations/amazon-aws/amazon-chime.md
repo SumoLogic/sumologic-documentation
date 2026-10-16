@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon Chime service.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-chime-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-chime-logo.png')} alt="Amazon Chime icon" width="50"/>
 
 Amazon Chime is a communications service that transforms online meetings with an application that is secure and comprehensive. Amazon Chime works across your devices so that you can stay connected. You can use Amazon Chime for online meetings, video conferencing, calls, and chat. You can also share content inside and outside of your organization. Amazon Chime is a fully managed service that runs securely on the AWS cloud, which frees IT from deploying and managing complex infrastructures. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/chime/latest/ag/what-is-chime.html).
 

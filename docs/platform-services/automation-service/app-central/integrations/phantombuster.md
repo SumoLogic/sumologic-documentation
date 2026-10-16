@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/phantombuster.png')} alt="phantombuster" width="100"/>
 
-***Version: 1.5  
-Updated: Jul 18, 2023***
+***Version: 1.6  
+Updated: April 30, 2026***
 
 Phantombuster is a platform that enables businesses to automate their web tasks without the need for extensive coding. It provides a range of pre-built automation workflows and customizable APIs, allowing users to scrape data, automate social media tasks, and send personalized emails to prospects. Phantombuster helps businesses save time and improve their productivity by streamlining their workflows.
 
@@ -49,5 +49,8 @@ For information about Phantombuster, see [Phantombuster documentation](https://h
 
 ## Change Log
 
-* April 3, 2023 - First upload
-* July 18, 2023 (v1.5) - Removed leading/trailing spaces
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.5 | July 18, 2023 | Removed leading and trailing spaces. |
+| | April 3, 2023 | Initial release of the Phantombuster integration. |

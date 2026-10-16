@@ -7,7 +7,7 @@ description: The Google Cloud Firewall App enables you to monitor request activi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/firewall.png')} alt="thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/firewall.png')} alt="Firewall icon" width="50"/>
 
 The Google Cloud Firewall App enables you to monitor request activity and the effect of your firewall rules. Google Cloud Platform (GCP) firewall rules can allow or deny traffic to and from VMs in a Google VPC network.
 
@@ -22,7 +22,7 @@ The Google Cloud Firewall App uses the following logs:
 
 **Denied Ingress Traffic by Network Over Time**
 
-```
+```sumo
 _sourceCategory=*gcp* logName reference resource "\"type\":\"gce_subnetwork\"" "\"direction\":\"INGRESS\"" "\"disposition\":\"DENIED\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | parse regex "\"reference\":\"network:[^\"/]+/firewall:(?<rule_name>[^\"]+)\""
@@ -39,7 +39,7 @@ _sourceCategory=*gcp* logName reference resource "\"type\":\"gce_subnetwork\"" "
 
 ## Collecting logs for the Google Cloud Firewall app
 
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud Firewall App.
+This page describes the Sumo Logic pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud Firewall App.
 
 ### Enable Logging for Firewall rules
 
@@ -61,7 +61,7 @@ For more information, see [Firewall Rules Logging Overview](https://cloud.google
 
 ### Collection Process for GCP Services
 
-The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
+The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo Logic’s Google Cloud Platform (GCP) source running on a hosted collector.
 
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
@@ -76,7 +76,7 @@ The GCP service generates logs which are exported and published to a Google Pub/
 See the following sections for configuration instructions.
 
 :::note
-Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
+Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo Logic.
 :::
 
 ### Configure a Google Cloud Platform Source
@@ -98,8 +98,8 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
 6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 1,024 characters.
 7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema. Proceed to the next step.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema. Proceed to the next step.
 8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" />
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.

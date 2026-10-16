@@ -6,7 +6,7 @@ description: Learn what record fields a match list with a given target column is
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic is a reference to the record fields that a match list with a given target column will be compared to. Each header below (Domain, Hostname, Username, etc.) is a supported target column for a Cloud SIEM match list. The items listed below each header are record fields 
+This topic is a reference to the record fields that a match list with a given target column will be compared to. Each header below (Domain, Hostname, Username, and so on) is a supported target column for a Cloud SIEM match list. The items listed below each header are record fields 
 
 If a record contains a field whose name matches one of the match fields for a target column, Cloud SIEM will append the match list name to the record in the `list_matches` array.
 

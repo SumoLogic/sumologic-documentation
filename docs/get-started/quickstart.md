@@ -2,21 +2,21 @@
 id: quickstart
 title: Quickstart Your Sumo Logic Experience
 sidebar_label: Quickstart
-description: Follow our quickstart guide to get up and running with Sumo Logic in minutes.
+description: Get started quickly with Sumo Logic by following this quickstart guide to connect data sources, search and analyze logs, set up monitoring, and share findings.
 keywords:
   - quickstart
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="35"/>
+<img src={useBaseUrl('img/icons/business/mission.png')} alt="Mission icon" width="35"/>
 
 Sumo Logic provides extensive features and options to gather, monitor, and analyze data, manage your infrastructure, integrate with third-party applications, and so much more!
 
 Follow this quickstart guide to connect, integrate, configure, and start using Sumo Logic for your organization. If you're new to Sumo Logic, check out the [Sumo Logic Overview](/docs/get-started/overview).
 
 What you'll learn:
-* Get your data into Sumo
+* Get your data into Sumo Logic
 * Search and analyze your data
 * Monitor and troubleshoot your environment
 * Share your findings with your team
@@ -29,8 +29,10 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 * **Self-paced**:
     * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
-    * [Onboarding courses](https://learn.sumologic.com/page/onboarding)
-* **Instructor-led virtual classes**: [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Micro lessons](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-5)
+* **Instructor-led virtual classes**: 
+    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Welcome Webinar Resources](https://learn.sumologic.com/welcome-webinar-resources) (To access, first sign in to our [learning portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-learning-portal).)
 :::
 
 ## Prerequisites
@@ -39,7 +41,11 @@ You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-star
 
 ## Get Started page
 
-Welcome to Sumo! After signing up, be sure to head to **Get Started** page, your personalized onboarding hub that guides you through key actions like sending data, exploring apps, and inviting teammates.
+:::note
+If you signed up for the [Agentic Free Trial](/docs/get-started/sign-up#sign-up-through-sumo-logic), your trial runs entirely on example data for 14 days and does not include data ingestion. The Kickstart Data experience and "transition to real data" step below apply to accounts that can ingest their own data, such as an [AWS Marketplace trial](/docs/get-started/sign-up#sign-up-through-aws-marketplace) or a paid plan.
+:::
+
+Welcome to Sumo Logic! After signing up, be sure to head to **Get Started** page, your personalized onboarding hub that guides you through key actions like sending data, exploring apps, and inviting teammates.
 
 <img src={useBaseUrl('img/get-started/kickstart-welcome-landing.png')} alt="Kickstart Data and onboarding welcome page" style={{border: '1px solid gray'}} width="600" />
 
@@ -61,13 +67,13 @@ For configuration information, refer to [Kickstart Data app](/docs/integrations/
 
 ### Getting started with Kickstart Data in your trial
 
-As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards—no setup, data ingestion, or firewall configuration required—so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data is used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
+As part of your trial, Kickstart Data gives you instant access to preloaded sample log data and dashboards with no setup, data ingestion, or firewall configuration required, so you can immediately explore the value of Sumo Logic in a safe sandbox environment. No sensitive or real data is used, and the prebuilt dashboards offer a hands-on way to learn how to monitor applications, analyze trends, and respond to incidents.
 
 The Kickstart sample data you see in the [sample app/dashboards](/docs/integrations/sumo-apps/kickstart-data) are [sourced from cloud-to-cloud data](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sumo-logic-kickstart-data-source).
 
 Once you're ready to work with your own data, follow the in-product prompts to begin ingesting logs via OpenTelemetry, Hosted Collectors, or Installed Collectors. The Kickstart experience will phase out automatically once you start ingesting real data or after 20 days—whichever comes first.
 
-## Step 1: Get your data into Sumo
+## Step 1: Get your data into Sumo Logic
 
 The journey of 10,000 logs begins with a single collector. Your data analytics journey starts by sending your data to Sumo Logic.
 
@@ -79,7 +85,7 @@ To set up data collection, select the platform (AWS, Kubernetes, Linux, Windows,
 
 You'll also see an option to bypass setup and explore our [App Catalog](/docs/integrations), where you'll find a wide range of apps and easy-to-follow setup guides for installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 
-When the installation is complete, click **Start using Sumo**.
+When the installation is complete, click **Start using Sumo Logic**.
 
 Your data will start flowing in a couple of minutes. Next, you'll be taken to a step-by-step onboarding guide, where you can visualize your data via dashboards, run your first log search, set up alerts, install apps, and more.
 
@@ -122,9 +128,9 @@ See [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector
 
 ## Step 2: Search and analyze your data
 
-Once your data is available in Sumo, you and your colleagues can search your logs and metrics to identify unusual conditions or errors that could indicate a problem. You do this by creating queries and parsing the resulting messages.
+Once your data is available in Sumo Logic, you and your colleagues can search your logs and metrics to identify unusual conditions or errors that could indicate a problem. You do this by creating queries and parsing the resulting messages.
 
-You can start a log search, metrics search, or live tail from the Sumo Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics/).
+You can start a log search, metrics search, or live tail from the Sumo Logic Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics/).
 
 ## Step 3: Monitor and troubleshoot your environment
 
@@ -152,7 +158,7 @@ You have the ability to share with individual users and groups with specific rol
 
 ## Have fun with Sumo Logic
 
-Learning and mastering Sumo skills is important, but so is having fun. Enjoy the Sumo journey. The journey is its own reward when you empower others along the way.
+Learning and mastering Sumo Logic skills is important, but so is having fun. Enjoy the Sumo Logic journey. The journey is its own reward when you empower others along the way.
 
 
 ## Training and Certification
@@ -163,7 +169,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 
 - Quickstart videos
 - Getting Started tutorials
-- Sumo docs, support, community, and training
+- Sumo Logic docs, support, community, and training
 
 <img src={useBaseUrl('img/get-started/Welcome_learn.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="800" />
 

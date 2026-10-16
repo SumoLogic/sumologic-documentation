@@ -26,15 +26,15 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
 1. **Source Category.** Enter a string to tag the collected messages with the searchable metadata field `_sourceCategory`. For example, enter **firewall** to tag all collected messages in a field called `_sourceCategory`. Enter *`_sourceCategory=firewall`* in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate; each field needs a name (key) and value. <br/>
-     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
      :::note
      If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM, click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
      :::
 1. Set any of the following under **Advanced**:
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
+   * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+   * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 1. Create any processing rules you'd like for the new Source.
 1. When you are finished configuring the Source, click **Save**.
 
@@ -59,7 +59,7 @@ In the syslog configuration file, `facility.level` and `action` must be separat
   * `facility` is the syslog message facility, which identifies the type of software that generated the message. Default syslog message facilities are – `auth`, `authpriv`, `daemon`, `cron`, `ftp`, `lpr`, `kern`, `mail`, `news`, `syslog`, `user`, and `local0` – `local7`.
   * `level` indicates message severity:  `emerg`, `alert`,  `crit`,  `err`,  `warn`,  `notice`, `info`, or `debug`. The syslog agent will send messages with the specified severity level and higher. For example, if you specified `auth.crit`, you would get messages from the authorization system whose severity is `emerg`, `alert`, and `crit`. If you want to get messages of certain severity only, prefix the severity with an equals sign, for example `auth.=crit`
 
-* `action` specifies what to do with the messages. There are a variety of types of actions you can specify. For the purpose of this procedure, you’ll use `action` to specify the address of the collector where you configured the Syslog Source. To send messages via UDP, use this format: `@IP_address`. To send messages via TCP, use this format: `@@IP_address`. If you have configured the Sumo Source to list on a port other than 514, specify the port as well, like this: `@IP_address:port`.
+* `action` specifies what to do with the messages. There are a variety of types of actions you can specify. For the purpose of this procedure, you’ll use `action` to specify the address of the collector where you configured the Syslog Source. To send messages via UDP, use this format: `@IP_address`. To send messages via TCP, use this format: `@@IP_address`. If you have configured the Sumo Logic Source to list on a port other than 514, specify the port as well, like this: `@IP_address:port`.
 
 ## Examples
 
@@ -89,7 +89,7 @@ The following line causes messages whose severity is `crit` or higher from the `
 
 When you configure a syslog source, you choose a transfer protocol, either TCP or UDP. If your syslog-enabled hosts or devices have already been configured using TCP or UDP, choose the same protocol. If you are just setting up your devices, your first choice should probably be TCP.
 
-TCP includes a guaranteed delivery mechanism, meaning that the network layer provides that all of your logs arrive at the Sumo collector in order and without any dropped log messages. The downside of this protocol is that it creates more network and CPU overhead than the alternative UDP protocol. However, due to its reliability guarantee, TCP is the recommended protocol unless you have network and CPU utilization concerns that you need to work around due to an extremely high volume of log messages.
+TCP includes a guaranteed delivery mechanism, meaning that the network layer provides that all of your logs arrive at the Sumo Logic collector in order and without any dropped log messages. The downside of this protocol is that it creates more network and CPU overhead than the alternative UDP protocol. However, due to its reliability guarantee, TCP is the recommended protocol unless you have network and CPU utilization concerns that you need to work around due to an extremely high volume of log messages.
 
 The collector supports single-line TCP messages up to 65,535 bytes.
 
@@ -188,7 +188,7 @@ If data is not being ingested into your syslog source, you may need to add fir
 
 These steps can help identify the problem:
 
-1. **Use netstat to verify that Sumo is listening on the port.** Once the Syslog source is configured, verify on the collector host that there is a listen process on the configured port in the output of "netstat -nap". If there is no Sumo process listening on the configured protocol (TCP/UDP) and port, it could be that the Sumo process could not bind to the port because another process was using the port. In this case, a collector log message will indicate that the Sumo process failed to bind to the port.
+1. **Use netstat to verify that Sumo Logic is listening on the port.** Once the Syslog source is configured, verify on the collector host that there is a listen process on the configured port in the output of "netstat -nap". If there is no Sumo Logic process listening on the configured protocol (TCP/UDP) and port, it could be that the Sumo Logic process could not bind to the port because another process was using the port. In this case, a collector log message will indicate that the Sumo Logic process failed to bind to the port.
 
 1. **Push test messages using *netcat*.** Use netcat to push data to the port using a chat session. Netcat is a networking utility with a simple interface that you can use to read and write from TCP and UDP sockets. Netcat is not included by default; you can download it [here](https://nmap.org/ncat).
 
@@ -224,11 +224,11 @@ These steps can help identify the problem:
     how are you?
     ```
 
-1. **Verify ingestion of test messages and check for timestamp issues**: Check the Sumo **Search** page to make sure that the data pushed in the chat interface is available. 
+1. **Verify ingestion of test messages and check for timestamp issues**: Check the Sumo Logic **Search** page to make sure that the data pushed in the chat interface is available. 
 
-    If the messages are available in the Sumo Search page, that indicates that the Syslog Source is working as expected. In this case, the problem might be that data is not reaching the Syslog-configured port from the original Syslog clients or from a load balancer.
+    If the messages are available in the Sumo Logic Search page, that indicates that the Syslog Source is working as expected. In this case, the problem might be that data is not reaching the Syslog-configured port from the original Syslog clients or from a load balancer.
 
-    Also, check the **Use Receipt Time** box next to the **Start** button on the Search page. The Syslog source is configured to use UTC time by default. Because your test messages do not have a timestamp, Sumo will interpret the logs as UTC, and the search won't include the results in the default Last 15 Minute timeframe.
+    Also, check the **Use Receipt Time** box next to the **Start** button on the Search page. The Syslog source is configured to use UTC time by default. Because your test messages do not have a timestamp, Sumo Logic will interpret the logs as UTC, and the search won't include the results in the default Last 15 Minute timeframe.
 
 1. **Check for firewall issues if test messages are ingested but not data from the Source.** If ncat data pushed from the local host where the collector runs is ingested, but ncat data pushed from a remote host is not ingested, that could mean that a firewall rule is blocking the external data from being received on the host (or sometimes is received on the host but not by the process) where the collector is running. You may need to add firewall rules (or remove firewall exceptions, as the case may be) to allow inbound traffic on the port where the collector is listening.
 

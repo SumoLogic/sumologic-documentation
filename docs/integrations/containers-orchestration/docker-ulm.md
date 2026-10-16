@@ -7,7 +7,7 @@ description: The Docker ULM app is a unified logs and metrics (ULM) app that uti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="90"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Docker icon" width="90"/>
 
 :::note
 The Docker app will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
@@ -17,9 +17,9 @@ The Sumo Logic app for Docker ULM is a unified logs and metrics app that allows 
 
 ## Log and metric types
 
-Sumo’s Docker Logs source and Docker Stats source use the Docker Engine API to gather the following data from Docker:
+Sumo Logic’s Docker Logs source and Docker Stats source use the Docker Engine API to gather the following data from Docker:
 
-* **Docker container logs**. Sumo Logic’s Docker Logs source collects container logs. For information about the API Sumo uses to collect logs, see the [https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs](https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs) in Docker help.
+* **Docker container logs**. Sumo Logic’s Docker Logs source collects container logs. For information about the API Sumo Logic uses to collect logs, see the [https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs](https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs) in Docker help.
 * **Docker engine events**. Sumo Logic’s Docker Log source collect Docker events. For information about Docker events, see [https://docs.docker.com/engine/api/v1.37/#operation/SystemPing](https://docs.docker.com/engine/api/v1.37/#operation/SystemPing) in Docker help.
 * **Docker container stats**. Sumo Logic’s Docker Stats source collects stats. For information about Docker stats, see [https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats](https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats) in Docker help.
 
@@ -41,7 +41,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Docker Source Recommendations
 
-* We recommend running the Sumo collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see [https://hub.docker.com/r/sumologic/collector/](https://hub.docker.com/r/sumologic/collector/).
+* We recommend running the Sumo Logic collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see [https://hub.docker.com/r/sumologic/collector/](https://hub.docker.com/r/sumologic/collector/).
 * The Sumo Logic Collector uses the Docker Remote API to collect Docker logs. This requires that the log driver configured on the container uses either the `json-file` or `journald` option, as described in [https://docs.docker.com/engine/admin/logging/overview/](https://docs.docker.com/engine/admin/logging/overview/).
 * If you're using Kubernetes, we recommend using an open source [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection). To learn more, see [Kubernetes Observability](/docs/observability/kubernetes).
 * The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/reference-information/time-reference) and the Source is configured to detect it properly. If there are issues with timestamp detection and the Docker container is restarted, the Source will reingest all log data since there are no timestamps to track.
@@ -76,8 +76,8 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
    * **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure `sourceCategory` and `sourceHost` using variables](#configure-sourcecategory-and-sourcehost-using-variables).
    * **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **`_sourceCategory=web_apps`** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure `sourceCategory` and `sourceHost` using variables](#configure-sourcecategory-and-sourcehost-using-variables).
    * **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value.
-      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 5. Configure the Advanced options.
    * **Enable Timestamp Parsing**. This option is checked by default and **required**.
    * **Time Zone**. Default is “Use time zone from log file”.
@@ -484,8 +484,8 @@ You build templates for sourceCategory and sourceHost specifying component varia
 ```
 
 Where:
-* `NAMESPACE` is a namespace that indicates the variable type. 
-* `VAR_NAME` is the variable name.  These are case-sensitive.
+* `NAMESPACE` is a namespace that indicates the variable type.
+* `VAR_NAME` is the variable name. These are case-sensitive.
 
 The table below defines the types of variables you can use.
 

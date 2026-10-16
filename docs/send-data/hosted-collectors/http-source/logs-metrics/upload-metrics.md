@@ -19,17 +19,17 @@ Metrics you upload to an HTTP source must be in seconds or milliseconds. Metrics
 
 The table below lists the types of metrics you can upload to an HTTP Source and Content-Type header you must use when uploading metrics of each type. If you omit the Content-Type header, or set a value not listed below, the HTTP payload will be ingested as log data. 
 
-You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other than one of the Content-Type values below, Sumo ignores the extraneous text. (Some metric frameworks append or prepend extra text in Content-Type headers.)
+You must specify the Content-Type header value exactly as shown in the table below. If a Content-Type header value contains any extra text other than one of the Content-Type values below, Sumo Logic ignores the extraneous text. (Some metric frameworks append or prepend extra text in Content-Type headers.)
 
 So, Sumo Logic will treat a `Content-Type` value of `application/vnd.sumologic.graphite; charset=utf8` as `application/vnd.sumologic.graphite`.
 
-Based on the Content-Type header specified, Sumo parses and interprets each line in the HTTP payload in the desired metric format.
+Based on the Content-Type header specified, Sumo Logic parses and interprets each line in the HTTP payload in the desired metric format.
 
 | Format | Content-Type Header |
 |:--|:--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon 2.0](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2` |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo Logic won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo Logic](upload-metrics.md#prometheus-metrics-not-accepted-by-sumo-logic). |
 
 :::note
 For information about metric formats, see [Metric Formats](/docs/metrics/introduction/metric-formats).
@@ -37,7 +37,7 @@ For information about metric formats, see [Metric Formats](/docs/metrics/introdu
 
 ## Sending multiple metrics in a single payload
 
-To minimize HTTP overhead, Sumo supports sending multiple metrics in a single HTTP payload. To send multiple metrics in a single HTTP payload, specify each metric in the same format, separated by newlines:
+To minimize HTTP overhead, Sumo Logic supports sending multiple metrics in a single HTTP payload. To send multiple metrics in a single HTTP payload, specify each metric in the same format, separated by newlines:
 
 **Content-Type: application/vnd.sumologic.graphite**
 
@@ -155,21 +155,21 @@ URL with auth header:
 curl -v -X POST -H 'Content-Type:application/vnd.sumologic.prometheus' -H "x-sumo-token: [TokenString]" -T [local_file_name] http://collectors.sumologic.com/receiver/v1/http
 ```
 
-## Prometheus Metrics Not Accepted by Sumo
+## Prometheus Metrics Not Accepted by Sumo Logic
 
-By design, Sumo does not ingest Prometheus comments. Sumo also rejects Prometheus metrics that do not conform to the Prometheus metric format. This page lists the conditions that will cause Sumo to reject Prometheus metrics
+By design, Sumo Logic does not ingest Prometheus comments. Sumo Logic also rejects Prometheus metrics that do not conform to the Prometheus metric format. This page lists the conditions that will cause Sumo Logic to reject Prometheus metrics
 
 ### Metrics with +Inf, -Inf, or NaN in the metric value
 
-Sumo does not ingest metric expositions in which the metric value contains +Inf, -Inf, or NaN. For example, this line would not be ingested:
+Sumo Logic does not ingest metric expositions in which the metric value contains +Inf, -Inf, or NaN. For example, this line would not be ingested:
 
-```sql
+```sumo
 http_request_duration_seconds_bucket{le="1234"} NaN
 ```
 
 ### Comments
 
-Sumo does not ingest the comment lines uploaded with Prometheus metrics. Comment lines start with a pound sign (#). For example, Sumo would not ingest a line like this:
+Sumo Logic does not ingest the comment lines uploaded with Prometheus metrics. Comment lines start with a pound sign (#). For example, Sumo Logic would not ingest a line like this:
 
 ```
 # TYPE go_memstats_buck_hash_sys_bytes gauge
@@ -177,64 +177,64 @@ Sumo does not ingest the comment lines uploaded with Prometheus metrics. Comment
 
 ### Missing comma in label list
 
-The Prometheus format requires that label key-value pairs be comma-separated. If they aren’t, Sumo will not ingest the metric.   
+The Prometheus format requires that label key-value pairs be comma-separated. If they aren’t, Sumo Logic will not ingest the metric.   
 
 **Correct:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.5", abc = "def"} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.5". abc = "def"} 7.7711e-05 1530708470
 ```
 
 ### Missing quotes around label values 
 
-The Prometheus format requires that metric label values be enclosed in quotes. If they aren’t, Sumo will not ingest the metric.   
+The Prometheus format requires that metric label values be enclosed in quotes. If they aren’t, Sumo Logic will not ingest the metric.   
 
 **Correct:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{abc = “def”} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{abc = def} 7.7711e-05 1530708470
 ```
 
 ### Missing equals sign in a label key-value pair
 
-The Prometheus format requires that metric label key-value pairs be defined in `key=value` form. If they aren’t, Sumo will not ingest the metric.   
+The Prometheus format requires that metric label key-value pairs be defined in `key=value` form. If they aren’t, Sumo Logic will not ingest the metric.   
 
 **Correct:**  
 
-```sql
+```sumo
 Go_gc_duration_seconds{quantile = "0.5"} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile"0.5"} 7.7711e-05 1530708470
 ```
 
 ### Missing label name
 
-The Prometheus format requires that metric labels have a name. If they are not, Sumo will not ingest the metric.   
+The Prometheus format requires that metric labels have a name. If they are not, Sumo Logic will not ingest the metric.   
 
 **Correct:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.56"} 5.809e-05 1530708471
 ```
 
 **Incorrect:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{="0.56"} 5.809e-05 1530708471
 ```

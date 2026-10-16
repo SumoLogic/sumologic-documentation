@@ -6,7 +6,9 @@ description: Master Sumo Logic's search query language to run advanced log searc
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
+import MobotCallout from '../../reuse/mobot-callout.md';
 
+<MobotCallout/>
 
 In this section, we'll introduce the following concepts:
 
@@ -67,7 +69,7 @@ Search syntax, queries, parameters, and filenames are displayed in `Regular Code
 
 Example:
 
-```sql
+```sumo
 | parse [field=<field_name>] "<start_anchor>*<stop_anchor>" as <field> [nodrop]
 ```
 
@@ -80,7 +82,7 @@ The optional arguments are `[field=<field_name>]` and the `[nodrop]` option.
 
 Example:
 
-```sql
+```sumo
 concat(<field1>, <field2>[, <field3>, ...]) as <field>
 ```
 
