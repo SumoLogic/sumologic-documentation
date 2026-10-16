@@ -10,7 +10,7 @@ Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of 
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 How to search data using the Basic Search Mode in Sumo Logic.
 
@@ -53,7 +53,7 @@ This query means:
 
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 
-```sql
+```sumo
 _sourceCategory=apache
 | parse "* --" as src_ip
 | count by src_ip | sort _count
@@ -61,9 +61,10 @@ _sourceCategory=apache
 
 This method lines up the pipes and makes your query much easier to read.
 
-:::note
-Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
-:::
+## Limitations
+
+- Searches can be long and complex, but they are limited to a maximum of 15,000 characters.
+- A maximum of 250 active concurrent search jobs is allowed per organization.
 
 ## Default data scope
 

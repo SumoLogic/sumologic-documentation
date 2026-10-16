@@ -2,6 +2,7 @@
 id: sessionize
 title: sessionize Search Operator
 sidebar_label: sessionize
+description: Use the sessionize operator to correlate log messages across multiple systems using an extracted value, creating a unified session view.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +13,7 @@ Depending on your use case, you'd also use the [join](join.md) operator, which 
 
 For example, let's say we have the value of a userRequestId, which entered a distributed system; the request goes through systems named Service, Stream, and Config:
 
-<img src={useBaseUrl('img/reuse/query-search/Sessionize_layout.png')} alt="Sessionize layout" width="600>" />
+<img src={useBaseUrl('img/reuse/query-search/Sessionize_layout.png')} alt="Sessionize layout" width="600" />
 
 Each system generated log messages, so we know that at some point a failure occurred. We know the userRequestID value from the log files from the Service machine, and we know the serviceSessionId, streamRequestId, and configSessionId. Using **sessionize**, we can weave together these disparate logs to identify where the failure occurred.
 
@@ -22,9 +23,7 @@ Queries using `sessionize` cannot be added to a Dashboard.
 
 ## Syntax
 
-```sql
-sessionize ("<anchor pattern1>") as (<alias list1>), ("<anchor pattern2>") as (<alias list2>)
-```
+`sessionize ("<anchor pattern1>") as (<alias list1>), ("<anchor pattern2>") as (<alias list2>)`
 
 Where *anchor pattern* is like a parse anchor expression, except that it can include variables from previous expressions (using `$variableName`).
 
@@ -47,7 +46,7 @@ These two events together for a system can reveal how problematic a particular W
 
 In this example:
 
-```sql
+```sumo
 _sourceCategory=OS/Windows
  | sessionize "ComputerName = \"*\";\n\tEventCode = 4778;*Account Name:\t\t*\r*Account Domain:\t\t*\r*Logon ID:\t\t*\r" as (computerName,_11,userName,_u1,domain,_d1,logonID),
  "ComputerName = \"$computerName\";\n\tEventCode = 4779;*Account Name:\t\t$userName\r*Account Domain:\t\t$domain\r*Logon ID:\t\t*\r" as (_event2,_u2,_d2,_21)
@@ -59,3 +58,12 @@ _sourceCategory=OS/Windows
 Here's an example of the results from this query:
 
 <img src={useBaseUrl('img/search/searchquerylanguage/search-operators/sessionize.png')} alt="Sessionize" style={{border: '1px solid gray'}} width="800" />
+
+### Correlate web request start and completion events
+
+Track how requests flow through a service by matching a request ID across start and finish log messages:
+
+```sumo
+_sourceCategory=microservices
+| sessionize "requestId=* started" as (requestId), "requestId=$requestId completed in * ms" as (duration)
+```

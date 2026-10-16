@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-panorama-v2.png')} alt="palo-alto-networks-panorama-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/palo-alto-networks-panorama-v2.png')} alt="Palo Alto BNetworks Panorama V2 icon" width="100"/>
 
 ***Version: 2.5  
 Updated: May 29, 2024***
@@ -102,9 +102,11 @@ For information about Palo Alto Networks Panorama, see [Palo Alto Networks Panor
 
 ## Change Log
 
-* January 14, 2020 - First upload
-* May 22, 2020 - Added support for Dynamic User Groups
-* July 21, 2023 (v2.2) - Updated the integration with Environmental Variables
-* September 4, 2023 (v2.3) - Fixed a bug where if the timeout was not specified, an error would occur
-* September 19, 2023 (v2.4) - Versioning
-* May 29, 2024 (v2.5) - Docker updated
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.5 | May 29, 2024 | Updated the Docker image. |
+| v2.4 | September 19, 2023 | Updated the version numbering. |
+| v2.3 | September 4, 2023 | Fixed a bug where an error occurred if the timeout was not specified. |
+| v2.2 | July 21, 2023 | Updated the integration with Environmental Variables. |
+| | May 22, 2020 | Added support for Dynamic User Groups. |
+| | January 14, 2020 | Initial release of the Palo Alto Networks Panorama V2 integration. |

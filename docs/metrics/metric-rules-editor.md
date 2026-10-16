@@ -10,23 +10,23 @@ The purpose of metrics rules is to make it easier to query metrics. This guide d
 
 ## About metrics rules
 
-metrics rules can create tags derived from segments of a Graphite metric path, or from the key-value pairs for a Carbon 2.0 metric.  
+Metrics rules can create tags derived from segments of a Graphite metric path, or from the key-value pairs for a Carbon 2.0 metric.  
 
-metrics rules are especially useful for Graphite metrics, although they can also be used with the Carbon 2.0 format. Attaching tags to Graphite metrics significantly eases the metric query process, enabling users to interactively build a query as a set of key-value pairs. 
+Metrics rules are especially useful for Graphite metrics, although they can also be used with the Carbon 2.0 format. Attaching tags to Graphite metrics significantly eases the metric query process, enabling users to interactively build a query as a set of key-value pairs. 
 
 Consider a Graphite metric with the following structure: `cluster.node.cpu.metric-name`. Here are some metrics with that structure: `cluster-1.node-1.cpu-1.cpu-idle Cluster-2.node-1.cpu-6.cpu-user cluster-6.node-1.cpu-2.cpu-sys`.
 
-Without applying a metrics rule, you can’t search these metrics using key-value pairs. You can type the graphite string into a metric query tab and use an asterisk for one or more segments, like this: `cluster-1.node-1.*.cpu-idle`.
+Without applying a metrics rule, you can’t search these metrics using key-value pairs. You can type the Graphite string into a metric query tab and use an asterisk for one or more segments, like this: `cluster-1.node-1.*.cpu-idle`.
 
-In contrast, after we applying a rule to our metrics, a user can interactively construct an analogous query formed of key-value pairs: `cluster=cluster-1 node=node-1 cpu=* metric-name=cpu-idle`.
+In contrast, after we apply a rule to our metrics, a user can interactively construct an analogous query formed of key-value pairs: `cluster=cluster-1 node=node-1 cpu=* metric-name=cpu-idle`.
 
-Building a query made up of key-value pairs is easier, because Sumo prompts you with keys and values. You don’t need to know the exact name of the key, and as you build up the query, you can see matching time series in the metric query tab.  
+Building a query made up of key-value pairs is easier, because Sumo Logic prompts you with keys and values. You don’t need to know the exact name of the key, and as you build up the query, you can see matching time series in the metric query tab.  
 
 ## Supported Metrics
 
 Sumo Logic supports Graphite, Carbon 2.0, and Prometheus metrics. 
 
-Graphite metrics are identified by a dot-separated string, referred to as the metric path or a graphite string. Carbon 2.0 metrics are identified by one or more key-value pairs. In the Prometheus format, a time series is uniquely identified by its metric name and a set of labels, which are key-value pairs. 
+Graphite metrics are identified by a dot-separated string, referred to as the metric path or a Graphite string. Carbon 2.0 metrics are identified by one or more key-value pairs. In the Prometheus format, a time series is uniquely identified by its metric name and a set of labels, which are key-value pairs. 
 
 Here is an example of the Graphite metric path, the Carbon 2.0 key-value pairs, and the Prometheus labels for the same metric:
 
@@ -52,29 +52,23 @@ A metric match expression defines the scope of the rule. Put another way, the ma
 
 ### Dot-delimited match expressions
 
-A match expression can be one or more dot-delimited string, like this: `collectd.*.*.*.*`.
+A match expression can be one or more dot-delimited string, like this: `collectd.*.*.*.*`, which matches all Graphite metrics that have five segments in the string, where the value of the first segment is `collectd`.
 
-which matches all graphite metrics that have five segments in the string, where the value of the first segment is “collectd”.
-
-Given a dot-delimited match expression, Sumo applies the match expression to the `_rawName` field, which is present for Graphite metrics and contains the metric path for a metric.
+Given a dot-delimited match expression, Sumo Logic applies the match expression to the `_rawName` field, which is present for Graphite metrics and contains the metric path for a metric.
 
 ### Key-value pair(s) match expressions
 
-A match expression can be one or more key-value pairs, each of which specify a field available for the metric and a field value, like this: `_sourceCategory=training/shipping/metrics type=payment`.
-
-which matches all metrics with the source category "training/shipping/metrics", whose `type` field is “payment”.
+A match expression can be one or more key-value pairs, each of which specify a field available for the metric and a field value, like this: `_sourceCategory=training/shipping/metrics type=payment`, which matches all metrics with the source category `training/shipping/metrics`, whose `type` field is `payment`.
 
 :::tip
 If you don’t know what fields are available for a metric, you can see what they are on the **Legend** tab when you run a query that returns the metric. 
 :::
 
-If a match expression is made up of key-value pairs, Sumo applies it to metric fields *other* than the `_rawName` field. If a key you specify does not exist as a metric field, no matches will be found.
+If a match expression is made up of key-value pairs, Sumo Logic applies it to metric fields *other* than the `_rawName` field. If a key you specify does not exist as a metric field, no matches will be found.
 
 ### Multiple match expressions
 
-You can define multiple match expressions for the same rule. If you do, tags will be applied to metrics that match both expressions. For example: `nete.*.*.*.* classPath=*.*.*`.
-
-matches metrics whose structure is `nete.*.*.*.*` and have a three-segment, dot-separated classpath.
+You can define multiple match expressions for the same rule. If you do, tags will be applied to metrics that match both expressions. For example: `nete.*.*.*.* classPath=*.*.*` matches metrics whose structure is `nete.*.*.*.*` and have a three-segment, dot-separated classpath.
 
 ### Greedy match expressions 
 
@@ -84,7 +78,7 @@ Different classes have dot-delimited names of various lengths, so a match expres
 
 ## Create a Metrics Rule
 
-Here's how to create a metrics rule using the metrics rules editor in the Sumo UI:
+Here's how to create a metrics rule using the metrics rules editor in the Sumo Logic UI:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Data Management**, and then under **Metrics** select **Metrics Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Rules**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Metrics > Metrics Rules**.<br/>The **Metrics Rules** page lists the metrics rules that have already been defined.<br/><img src={useBaseUrl('img/metrics/named-rule.png')} alt="Metrics rules" style={{border: '1px solid gray'}} width="800" />
 1. To add a new rule, click **+ Add new rule** in the upper right of the **Metrics Rules** page. The **Add New Rule** popup appears.<br/><img src={useBaseUrl('img/metrics/add-metric-rule-empty.png')} alt="Add metrics rule" style={{border: '1px solid gray'}} width="600" />
@@ -109,17 +103,11 @@ When you define a variable you give it a name and define its Tag Sequence, which
 
 ### Extract variables from a dot-delimited match expression
 
-For this dot-delimited match expression: `collectd.*.*.*.*`.
-   
-You can define four variables: one for each of the segments represented by an asterisk. As described in [Dot-delimited match expressions](#dot-delimited-match-expressions), if no key is specified, Sumo will match the expression against metrics’ `_rawName` field. When matching against ` _rawName`, specify the Tag Sequence for a variable in this form: `$_sequence`.
-
-where `sequence` indicates the placement of the segment in the match expression. For example, enter `$_2` to extract the second component of the metric match expression.
-
-The screenshot below shows variable definitions for the “collectd” rule. The entries in the screenshot below tell Sumo to define the tags “cluster”, “node”, “id”, and “metric”. These tags map to the segments of the match expression that are represented by asterisks, in the order that they appear.  
+For this dot-delimited match expression: `collectd.*.*.*.*` you can define four variables: one for each of the segments represented by an asterisk. As described in [Dot-delimited match expressions](#dot-delimited-match-expressions), if no key is specified, Sumo Logic will match the expression against metrics’ `_rawName` field. When matching against ` _rawName`, specify the Tag Sequence for a variable in this form: `$_sequence`, where `sequence` indicates the placement of the segment in the match expression. For example, enter `$_2` to extract the second component of the metric match expression.
 
 ### Extract variables from a key-value pair match expression
 
-If your match expression is made up of key-value pairs, rather than a dot-delimited string, Sumo will match the expression against metric fields *other* than `_rawName` field.
+If your match expression is made up of key-value pairs, rather than a dot-delimited string, Sumo Logic will match the expression against metric fields *other* than `_rawName` field.
 
 For key-value pair expressions, you must specify the field name in the define the Tag Sequence, in this format: `$field._sequence`. Where:
 * `field` is the name of the field from which you want to extract a tag.
@@ -137,7 +125,7 @@ To check out how your variable assignments work, select a metric in the **Time S
 
 <img src={useBaseUrl('img/metrics/variable-extraction-selection.png')} alt="Selection in time series" style={{border: '1px solid gray'}} width="600" />   
 
-In the screenshot above, the following metric is selected: `AWS/EC2 i-09fe7b149b8248820`. The values Sumo assigns to the variables are shown to the right of the variable definition. For our example metric, Sumo would attach the following name-value pairs to the metric: `entity=i-09fe7b149b8248820`.
+In the screenshot above, the following metric is selected: `AWS/EC2 i-09fe7b149b8248820`. The values Sumo Logic assigns to the variables are shown to the right of the variable definition. For our example metric, Sumo Logic would attach the following name-value pairs to the metric: `entity=i-09fe7b149b8248820`.
 
 
 ## Metrics Rules editor error messages

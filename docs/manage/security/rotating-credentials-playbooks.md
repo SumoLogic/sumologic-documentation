@@ -34,7 +34,7 @@ Sumo Logic Customer Support Engineers can disable your access keys internally.
 ### Monitoring access keys
 As a best practice, create a [scheduled search](/docs/alerts/scheduled-searches/) for tracking usage of access keys via API, using the following query. We recommend that these results are set as a scheduled search (which may be emailed to the correct contacts as a saved search), and to periodically review them for possible suspicious activity from unknown IP addresses.
 
-```
+```sumo
 _index=sumologic_audit_events accessId api
 | json "operator.interface" as interface nodrop
 | json "subsystem" nodrop

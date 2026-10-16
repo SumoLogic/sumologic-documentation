@@ -19,7 +19,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/match-lists-suppressed-lists/custom-match-list-columns')}><img src={useBaseUrl('img/icons/operations/matching-list.png')} alt="List icon" width="40"/><h4>Custom match list Columns</h4></a>
+  <a href={useBaseUrl('docs/cse/match-lists-suppressed-lists/custom-match-list-columns')}><img src={useBaseUrl('img/icons/operations/matching-list.png')} alt="List icon" width="40"/><h4>Custom Match List Columns</h4></a>
   <p>Learn how to define custom columns for use in match lists.</p>
   </div>
 </div>

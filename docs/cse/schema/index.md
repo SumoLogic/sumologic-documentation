@@ -35,12 +35,6 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/schema/parsing-language-reference-guide')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parsing Language Reference</h4></a>
-  <p>Parsing is the first step in the Cloud SIEM record processing pipeline.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/cse/schema/create-structured-log-mapping')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Log Mapping</h4></a>
   <p>Learn how to create a log mapping for structured messages.</p>
   </div>  
@@ -65,8 +59,20 @@ This guide has information about Cloud SIEM schemas. In this section, we'll intr
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/cse/schema/parsing-language-reference-guide')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parsing Language Reference</h4></a>
+  <p>Parsing is the first step in the Cloud SIEM record processing pipeline.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/cse/schema/parsing-patterns')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Parsing Patterns</h4></a>
+  <p>Learn about predefined named regular expressions used in regex-based parsers.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/cse/schema/username-and-hostname-normalization')}><img src={useBaseUrl('img/icons/operations/schema.png')} alt="Flow diagram icon" width="40"/><h4>Username and Hostname Normalization</h4></a>
-  <p>Learn how to import YARA rules from GitHub into Cloud SIEM.</p>
+  <p>Learn about how Cloud SIEM normalizes usernames and hostnames during mapping and parsing.</p>
   </div>
 </div>
 </div>

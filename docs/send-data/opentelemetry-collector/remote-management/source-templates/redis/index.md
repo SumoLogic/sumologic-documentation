@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('/img/integrations/databases/redis.png')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/><img src={useBaseUrl('/img/integrations/databases/redis.png')} alt="Redis icon" width="30"/>
 
 The Redis source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can collect your redis logs and metrics to Sumo Logic.
 
@@ -46,17 +46,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Local File Collection. Below are the inputs required:
+import RedisConfigureSourceTemplate from '../../../../../reuse/send-data/redis-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/redis.
-- **File Path**. Provide the file which needs to be read by OpenTelemetry agent. You can provide path to multiple files by adding new entry to it.
-- **DenyList**. Provide path expression describing the files to be excluded.
-- **Endpoint**. (Default: `localhost:6379`.) The hostname and port of the Redis instance,
-separated by a colon.
-- **Username** (Optional). Enter the Redis username in case you are using a specific user for monitoring.
-- **Password Environment Variable Name** (Required). Enter the Redis password environment variable name.
+<RedisConfigureSourceTemplate/>
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

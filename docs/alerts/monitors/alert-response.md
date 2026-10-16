@@ -6,7 +6,7 @@ description: Quickly investigate and resolve issues you've been alerted about wi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="alert-and-notify.png" width="40"/>
+<img src={useBaseUrl('img/icons/operations/alert-and-notify.png')} alt="Alert and notify icon" width="40"/>
 
 Alert response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures. An alert provides curated information to on-calls to help them troubleshoot issues more quickly.
 
@@ -16,7 +16,7 @@ By assembling relevant context from prior alerts and by analyzing patterns in lo
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Learn how to use alert response.
 
@@ -88,14 +88,14 @@ To resolve an alert, click a row to select it, then click **Resolve**.
 
 Threshold translating allows you to open the alert response page in the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer) that helps you to easily view the threshold associated with an alert. This also helps you to understand how your monitor's thresholds are translating into metrics and compare the threshold values set in a monitor with the data displayed in the Metrics Search chart.
 
-For example, when you open an alert response page in Metrics Search, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Search view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="arp-metrics-explorer" width="800"/>
+For example, when you open an alert response page in Metrics Search, you can see critical thresholds defined with some number. You can then see that this threshold is also applied and enabled in the Metrics Search view, with exactly the same number defined.<br/> <img src={useBaseUrl('img/alerts/arp-metrics-explorer.png')} alt="Alert response page in metrics explorer" width="800"/>
 
 To view the alert response chart in Metrics Search, follow the steps below:
 
 1. Navigate to your [Alert List](#alert-list) and select the alert for which you want to view the corresponding metrics and threshold values.
 1. Click the **View in Metrics Search** button for that alert. You can click on either of the two buttons, and they both function the same way.
 1. The Metrics Search view will open with the graph of the metric associated with the alert.
-1. In the **Threshold** section of the Metrics Search, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="threshold-metrics-explorer" width="800"/>
+1. In the **Threshold** section of the Metrics Search, you can see the same threshold values for the monitor associated with the alert.<br/> <img src={useBaseUrl('img/alerts/threshold-metrics-explorer-view.png')} alt="Threshold metrics explorer" width="800"/>
 1. The thresholds will be enabled and only the ones that are defined in the monitor will be displayed.
    * If the alert has both critical and warning thresholds defined in the corresponding monitor, both thresholds will be displayed in the Metrics Search view.
    * If the alert has only a critical threshold defined in the corresponding monitor, only the warning threshold will be displayed in the Metrics Search view.
@@ -123,7 +123,7 @@ The following images and lists describe alert element on the page.<br/><img src=
 * **D**. Status of the alert (**Active** or **Resolved**).
 * **E**. Refreshes the alert page.
 * **F**. Opens the [playbook associated with this monitor](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional).  
-   * Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/><img src={useBaseUrl('img/alerts/monitors/playbook-example.png')} alt="playbook example.png" style={{border: '1px solid gray'}} width="250" />
+   * Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert:<br/><img src={useBaseUrl('img/alerts/monitors/playbook-example.png')} alt="Text playbook example" style={{border: '1px solid gray'}} width="250" />
    * [Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#view-automated-playbooks-for-an-alert) run automatically when an alert is triggered: <br/><img src={useBaseUrl('img/alerts/monitors/automated-playbooks-in-alert-screen.png')} alt="Automated playbooks" style={{border: '1px solid gray'}} width="300" />
 * **G**. Opens the monitor that generated this alert.
 * **H**. Resolves the alert. This will also resolve the monitor that generated the alert. The monitor will fire again when the alert condition is met.

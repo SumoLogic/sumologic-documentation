@@ -2,6 +2,7 @@
 id: fillmissing
 title: fillmissing Metrics Operator
 sidebar_label: fillmissing
+description: Use the fillmissing metrics operator to fill empty time slices in query results with derived data points, preventing straight-line interpolation in visualizations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

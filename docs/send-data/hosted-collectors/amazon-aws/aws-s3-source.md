@@ -8,13 +8,13 @@ description: Add an Amazon S3 Source to upload messages to Sumo Logic.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="Amazon S3 Audit icon" width="40"/>
 
 Amazon Simple Storage Service (Amazon S3) provides a web services interface that can be used to store and retrieve any amount of data from anywhere on the web. Use an Amazon S3 Source to upload data to Sumo Logic from S3.
 
 One Amazon S3 Source can collect data from a single S3 bucket. However, you can configure multiple S3 Sources to collect from one S3 bucket. For example, you could use one S3 Source to collect one particular data type, and then configure another S3 Source to collect another data type.
 
-For information on S3 performance optimization, see [Request Rate and Performance Considerations](http://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html). 
+For information on S3 performance optimization, see [Request Rate and Performance Considerations](https://docs.aws.amazon.com/AmazonS3/latest/dev/request-rate-perf-considerations.html). 
 
 import TerraformLink from '../../../reuse/terraform-link.md';
 
@@ -40,7 +40,7 @@ Files are transferred in their compressed form and decompressed when ingested. 
 ## Configure an Amazon S3 Source
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to an Amazon S3 bucket.
-1. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
+1. [Enable logging in AWS](https://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add an Amazon S3 Source to collect objects from your Amazon S3 bucket. See below for details.
 
@@ -116,8 +116,8 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
      :::note
      If you have [Cloud SIEM](/docs/cse) installed and you want to forward log data to Cloud SIEM: 
      * Click the **+Add Field** link and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM. 
@@ -127,7 +127,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**.
 
    * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. <br/><img src={useBaseUrl('img/send-data/Role-based-access-input-roleARN.png')} alt="AWS Access method selection screen with role-based access" style={{border: '1px solid gray'}} width="500" />
-   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 
 1. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 
