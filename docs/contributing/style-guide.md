@@ -319,46 +319,11 @@ Append `#L4-L5` to the URL to embed only those lines, and add a title with `json
 
 Use a [Docusaurus `<details>` block](https://docusaurus.io/docs/markdown-features#details) to fold away long optional content: verbose examples, long code samples, or big reference lists. Put the title between the `<summary>` tags and the content after them. Collapsed content is still indexed for search.
 
-### When to use and when NOT to use `<details>` tags
-
-| Use Case | ✅ DO Use | ❌ DO NOT Use | Why |
-|:---------|:----------|:--------------|:----|
-| **FAQ Sections** | | ❌ Never | **Against GEO principles**: Hidden content negatively impacts Generative Engine Optimization and search visibility. **AI citation fails**: AI tools and search engines cannot properly cite or reference content hidden inside accordion components. FAQ content must be immediately visible and scannable. |
-| **Troubleshooting Sections** | | ❌ Never | Users searching for solutions need immediate visibility of troubleshooting steps. Hidden content creates friction and poor user experience. |
-| **Critical Instructions** | | ❌ Never | Required steps, warnings, or important information must always be visible. Users should not need to click to reveal essential information. |
-| **Short Content** | | ❌ Avoid | If collapsed content is only 2-5 lines, keep it visible. The expand/collapse interaction adds unnecessary friction. |
-| **Primary Documentation Flow** | | ❌ Avoid | Main concepts and procedures should not be hidden behind accordions. Core content must be scannable. |
-| **Long Code Samples** | ✅ Yes | | Code samples over 100 lines of JSON, YAML, or configuration examples benefit from collapsing to reduce page scrolling. |
-| **Multiple Installation Methods** | ✅ Yes | | When documenting 3+ installation methods (UI installer, command-line, package managers), collapse each method so users can choose their preferred approach. |
-| **API Endpoint Documentation** | ✅ Yes | | Collapse detailed request parameters, response formats, and examples to keep API reference pages scannable. |
-| **Alternative Configuration Options** | ✅ Yes | | When showing different setup paths or service configurations (e.g., AWS regions, authentication methods), collapse alternatives to reduce clutter. |
-| **Sample Log Formats** | ✅ Yes | | Lengthy log examples (50+ lines) that users reference occasionally should be collapsed. |
-
-:::warning Important
-Using `<details>` tags for FAQ and troubleshooting content violates **Generative Engine Optimization (GEO)** best practices and prevents AI tools from properly citing your documentation. Always keep FAQ and troubleshooting content visible.
-:::
+Never use collapsible blocks for FAQ sections, troubleshooting steps, or any required instructions — that content must stay visible for search and AI citation.
 
 ### Format FAQ questions as headings
 
 Write each FAQ question as a heading, not as bold text. Headings create discrete, retrievable units that answer engines and AI tools can chunk and cite individually, while bold is purely visual and carries no semantic weight. Use an `H3` for questions directly under an `H2` FAQ section (for example, `## FAQs` → `### How do I reset my password?`), and an `H4` for questions grouped under an `H3` sub-category (for example, `### Security and privacy` → `#### Is my data encrypted?`).
-
-#### How to use collapsible sections
-
-When using `<details>` tags for appropriate content (see table above), follow these guidelines:
-
-1. **Always include a descriptive title** in the `<summary>` tag. This title should clearly describe what content is collapsed.
-2. **Add the `title` attribute** to the `<details>` tag for better accessibility and SEO.
-3. You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
-4. Add all content after the `<summary>` tags and before the closing `</details>` tag.
-
-```markdown
-<details title="Installation using command-line">
-<summary>Install Using the Command-Line Installer</summary>
-
-Your installation steps and code samples go here...
-
-</details>
-```
 
 <Tabs
   defaultValue="Markdown"
