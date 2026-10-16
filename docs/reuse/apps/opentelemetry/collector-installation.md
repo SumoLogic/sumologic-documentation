@@ -1,6 +1,8 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 In this step, we'll install the collector and add a uniquely identifiable tag to these collectors.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
 1. On the **OpenTelemetry Collection** page, click **+ Add Collector**.
 1. In the **Set up Collector** step:
    1. Choose your platform (for example, Linux).
@@ -9,6 +11,6 @@ In this step, we'll install the collector and add a uniquely identifiable tag to
    1. Leave the **Collector Settings** at their default values to configure collectors as remotely managed.
    1. Under **Generate and run the command to install the collector**, copy and run the installation command in your system terminal where the collector needs to be installed.
 1. After installation is complete, click **Next** to proceed.
-1. Select a source template (for example, Apache source template) to start collecting logs from all linked collectors, then proceed with the data configuration.<br/><img src="/img/send-data/source-template.png" alt="source template page" style={{border:'1px solid gray'}} width="90%" />
+1. Select a source template (for example, Apache source template) to start collecting logs from all linked collectors, then proceed with the data configuration.<br/><img src={useBaseUrl('img/send-data/source-template.png')} alt="source template page" style={{border:'1px solid gray'}} width="90%" />
 
-To revisit this screen later: From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Collection > Source Template**. From the [**New UI**](/docs/get-started/sumo-logic-ui), select **Configuration** > **Source Template**.
+To revisit this screen later: From the [**Classic UI**](/docs/get-started/sumo-logic-ui-classic), select **Manage Data > Collection > Source Template**. From the [**New UI**](/docs/get-started/sumo-logic-ui), select **Data Management** and under **Data Collection** select **Source Template**.

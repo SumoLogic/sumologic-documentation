@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sophos-central-v3.png')} alt="sophos-central" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sophos-central-v3.png')} alt="Sophos Central icon" width="80"/>
 
-***Version: 3.3  
-Updated: Mar 4, 2024***
+***Version: 3.4  
+Updated: April 30, 2026***
 
 Utilize Sophos Central enrichment data during incident investigations.
 
@@ -22,41 +22,47 @@ Utilize Sophos Central enrichment data during incident investigations.
 
 ## Sophos Central V3 configuration
 
-The following steps show how to create new API credentials to work with Cloud SOAR.
+The following steps show how to create new [API credentials](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/APICredentials/index.html) to work with Cloud SOAR.
 
 1. Log in to the [Sophos Central Partner](https://central.sophos.com/manage/partner) platform.
-1. On the left click on **Settings & Policies** and then click the **API credentials**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-1.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
-1. Click on **Add Credential**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-2.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
-1. Enter **Credential name (required)** and the description if you want.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-3.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
+1. On the left click on **Settings & Policies** and then click the **API credentials**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-1.png')} style={{border:'1px solid gray'}} alt="Sophos central" width="600"/>
+1. Click on **Add Credential**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-2.png')} style={{border:'1px solid gray'}} alt="Add credentials" width="600"/>
+1. Enter **Credential name (required)** and the description if you want.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-3.png')} style={{border:'1px solid gray'}} alt="Credentials name" width="600"/>
 1. Click the **Copy** button on the Client ID and paste it temporally in a text editor.
-1. Click **Show Client Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-4.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
-1. Now you can copy the key as shown.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-5.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="600"/>
+1. Click **Show Client Secret**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-4.png')} style={{border:'1px solid gray'}} alt="Show client secret" width="600"/>
+1. Now you can copy the key as shown.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-5.png')} style={{border:'1px solid gray'}} alt="Copy key" width="600"/>
 
 ## Configure Sophos Central V3 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter your[ Sophos API URL](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/APICredentials/ThirdPartyAccess/index.html), for example, `https://api.central.sophos.com`.
+
+* **Client ID**. Enter the [client ID](https://docs.sophos.com/central/customer/help/en-us/ManageYourProducts/GlobalSettings/APICredentials/index.html) you [obtained earlier](#sophos-central-v3-configuration).
+
+* **Client Secret**. Enter the secret for the client ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sophos-center-v3-configuration.png')} style={{border:'1px solid gray'}} alt="Sophos Central V3 configuration" width="400"/>
 
 For information about Sophos Central, see [Sophos Central documentation](https://docs.sophos.com/central/customer/help/en-us/index.html).
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new
-   Resource.
-1. Populate all the required fields (\*) and then click **SAVE**.
-    * **Label**. The name of the resource.
-    * **URL**. `https://api.central.sophos.com`.
-    * Client ID and Client Secret taken earlier from Sophos.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-9.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-10.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-11.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sophos-central-v3/sophos-central-v3-12.png')} style={{border:'1px solid gray'}} alt="sophos-central" width="400"/>
-
 ## Change Log
 
-* December 28, 2021 - First upload
-* January 24, 2022 - New actions added
-* July 11, 2023 (v3.2)
-    + Updated the integration with Environmental Variables
-    + Integration renamed from Sophos Central 3.0 to Sophos Central V3
-* March 4, 2024 (v3.3) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v3.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v3.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v3.2 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Sophos Central 3.0 to Sophos Central V3.</li></ul> |
+| | January 24, 2022 | Added new actions. |
+| | December 28, 2021 | Initial release of the Sophos Central V3 integration. |

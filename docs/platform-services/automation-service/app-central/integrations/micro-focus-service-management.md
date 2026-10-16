@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/micro-focus-service-management.png')} alt="micro-focus-service-management" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/micro-focus-service-management.png')} alt="Micro Focus Service Management icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 ESM SaaS is an analytics-driven enterprise service management solution that combines these key application areas: IT Service Management (ITSM), IT Asset Management (ITAM), Extended Service Management (XSM), and Universal Discovery and CMDB. ESM has fully functioning out-of-the-box processes and workflows that are ready to be used and allows for a further extension of applications via an easily extendable and fully codeless studio functionality.
 
@@ -18,26 +18,34 @@ ESM SaaS is an analytics-driven enterprise service management solution that comb
 ## Configure Micro Focus Service Management in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your Micro Focus API [URL](https://docs.microfocus.com/SM/9.61/Hybrid/Content/integrations/case_exchange/concepts/iip_general.htm?Highlight=%22tenant%20ID%22), for example, `https://us1-smax.saas.microfocus.com`
+
+* **Username**. Enter the username of a Micro Focus account user authorized to authenticate the integration.
+
+* **Password**. Enter the admin user password. 
+
+* **Tenant ID**. Enter your Micro Focus [tenant ID](https://docs.microfocus.com/SM/9.61/Hybrid/Content/integrations/case_exchange/concepts/iip_general.htm?Highlight=%22tenant%20ID%22).
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/micro-focus-configuration.png')} style={{border:'1px solid gray'}} alt="Micro Focus Service Management configuration" width="400"/>
 
 For information about Micro Focus Service Management, see [Micro Focus Service Manager documentation](https://docs.microfocus.com/SM/9.61/Hybrid/Content/service_manager_doc_set_pD.htm).
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Populate all the required fields (\*) in the resource.
-   * **Label**. The name for the resource
-   * **API URL**. The API URL 'https://us1-smax.saas.microfocus.com'.
-   * **Username**. The Micro Focus account username.
-   * **Password**. The Micro Focus account password.
-   * **Tenant ID**. the Micro Focus tenant ID.
-1. Click **SAVE**. 
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/micro-focus-service-management/micro-focus-service-management-4.png')} style={{border:'1px solid gray'}} alt="micro-focus-service-management" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/micro-focus-service-management/micro-focus-service-management-5.png')} style={{border:'1px solid gray'}} alt="micro-focus-service-management" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/micro-focus-service-management/micro-focus-service-management-6.png')} style={{border:'1px solid gray'}} alt="micro-focus-service-management" width="400"/>
-
 ## Change Log
 
-* July 1, 2022 - First upload
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| | July 1, 2022 | Initial release of the Micro Focus Service Management integration. |

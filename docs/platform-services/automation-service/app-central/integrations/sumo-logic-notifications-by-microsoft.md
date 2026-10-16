@@ -5,10 +5,10 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="sumo-logic-notifications" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-notifications.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.0  
-Updated: Dec 04, 2024***
+***Version: 1.1  
+Updated: April 30, 2026***
 
 Integration with Sumo Logic platform for monitors and Microsoft (Outlook) notification.
 
@@ -98,25 +98,57 @@ Microsoft Graph (7)
 ## Create an access key in Sumo Logic
 
 1. In the main Sumo Logic menu, select your username and then **Preferences**. 
-2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
-3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+2. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-2.png')} style={{border:'1px solid gray'}} alt="Sumo logic notifications" width="600"/>
+3. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-gmail/sumo-logic-notifications-by-gmail-3.png')} style={{border:'1px solid gray'}} alt="Sumo logic notifications" width="400"/>
 4. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
    :::note
    They won't be available again once you close this screen.
    :::
-5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+5. Click **Done** after you copied the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-4.png')} style={{border:'1px solid gray'}} alt="Sumo logic notifications" width="400"/>
 
 ## Configure Sumo Logic Notifications by Microsoft in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
+import SumoLogicAPIURL from '../../../../reuse/automation-service/sumo-logic-api-url.md';
+import CloudSOARAPIURL from '../../../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../../../reuse/automation-service/access-id.md';
+import AccessKey from '../../../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **API URL**. Enter your API URL for Microsoft, for example, `https://graph.microsoft.com/v1.0`.
 
-   * For the first **API URL** field, provide the Microsoft Graph API URL.
-   * Specify the **Authentication Grant Type** and **Directory (Tenant) ID**.
-   * For **Client ID** and **Client Secret**, provide the Microsoft Graph client ID and secret obtained as described in [Add a client secret](#add-a-client-secret).
-   * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
-   * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
+* **Authentication Grant Type**. Choose one of the following according to the permissions you add to your app:
+   * **Password (Delegated Context)**
+   * **Client Credentials (Application Context)**
+
+* **Directory (Tenant) ID**. Enter the [tenant ID](https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application#application-id-client-id) of the AAD directory in which you created the application. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)).
+
+* **Client ID**. Enter your application ID. (You can check from your [app registration page](https://learn.microsoft.com/en-us/graph/auth-register-app-v2)). This is required for both authentication grant types.
+
+* **Client Secret**. Enter your client secret. This is required for both authentication grant types.
+
+* **Username**. Enter the username of an admin user authorized to authenticate the integration. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+
+* **Password**. Enter the password for the admin user. This is required only if you set the authentication grant type as **Password (Delegated Context)**. Leave this field empty if you set the authentication grant type as **Client Credentials (Application Context)**.
+* <SumoLogicAPIURL/>
+* <AccessID/>
+* <AccessKey/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/sumo-logic-notifications-by-microsoft-configuration.png')} style={{border:'1px solid gray'}} alt="Sumo Logic Notifications by Microsoft configuration" width="400"/>
 
 ## Change Log
-* December 04, 2024 - First upload
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | December 04, 2024 | Initial release of the Sumo Logic Notifications By Microsoft integration. |

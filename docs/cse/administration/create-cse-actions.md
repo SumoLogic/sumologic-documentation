@@ -10,8 +10,8 @@ import Iframe from 'react-iframe'; 
 
 This topic has instructions for configuring Cloud SIEM actions.
 
-:::warning
-In the future, Cloud SIEM actions will be deprecated because comparable behavior is available in the Automation Service. Although Cloud SIEM actions are still supported, we recommend you use the Automation Service to perform actions. For more information, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+:::tip
+The Automation Service is a newer way to perform actions. For more information about how to use the Automation Service instead of Cloud SIEM actions, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 
 ## About Cloud SIEM actions
@@ -30,7 +30,7 @@ You can use Cloud SIEM actions to issue a notification to another service when c
 
 An action can be configured for insight-related activity as described below in [Insight actions](#insight-actions). You can also configure an action to be run when a rule is automatically disabled, as described below in [Rule actions](#rule-actions).
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn how to configure an action.
 
@@ -45,19 +45,6 @@ Watch this micro lesson to learn how to configure an action.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/uHY-r04edn0?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 
@@ -81,14 +68,14 @@ You can configure an action to send a notification when any Network Sensor goes 
 You can configure an action to send a notification when a rule is automatically disabled. (Cloud SIEM automatically disables rules that generate too many signals, more than 100K in an hour, or 1 million in 24 hours.)
 
 :::note
-A rule action doesn't fire when a rule is enabled, moved in or out of prototype mode, or manually disabled.
+A rule action does not fire when a rule is enabled, moved in or out of prototype mode, or manually disabled.
 :::
 
 The notification sent by a rule action contains the name of the rule and the reason it was disabled.
 
 ## Create an action
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Actions**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Actions**. You can also click the **Go To...** menu at the top of the screen and select **Actions**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Actions**. 
 1. On the **Actions** tab, click **+ Add Action**.
 1. The **Add Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create action dialog" style={{border: '1px solid gray'}} width="400" />
 1. **Name**. Enter a name that communicates what the action does.

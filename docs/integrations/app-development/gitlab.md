@@ -7,7 +7,7 @@ description: Provides you a complete overview of your GitLab’s builds, deploym
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="GitLab icon" width="75"/>
 
 The Sumo Logic App for GitLab provides you a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits. The integration listens for GitLab events and uses the event data to populate the pre-configured Dashboards.
 
@@ -35,7 +35,7 @@ For more information about log messages, see [GitLab documentation](https://docs
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 
-```sql
+```sumo
 _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge Request Hook"
 |json "object_attributes.state" as merge_request_state
 | where merge_request_state="opened"
@@ -112,7 +112,7 @@ Field x-gitlab-event not found, please check the spelling and try again.
 Do the following to resolve:
 
 1. Close all app dashboards.
-2. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+2. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. 
 1. Delete the **x-gitlab-event field.**
 1. Add it again using the Dropped Fields section:
     * At **Dropped Fields** dropdown, click on **x-gitlab-event**, then click **Create Field** to create the field.
@@ -205,3 +205,7 @@ Use this dashboard to:
 * Identify the Modified, Added, and Removed files by commit id in chronological order. You can use filters to drill down to a more detailed view.
 
 <img src={useBaseUrl('img/integrations/app-development/Gitlab-Commits.png')} alt="GitLab" />
+
+## Additional resources
+
+- Use the [GitLab Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/gitlab/) to automate response actions directly from Cloud SOAR playbooks.

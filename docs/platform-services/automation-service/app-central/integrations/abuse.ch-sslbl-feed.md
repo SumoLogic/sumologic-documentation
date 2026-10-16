@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuse.ch-sslbl-feed.png')} alt="abuse.ch-sslbl-feed" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuse.ch-sslbl-feed.png')} alt="Abuse.ch SSLBL feed" width="90"/>
 
-***Version: 1.2  
-Updated: Jun 26, 2023***
+***Version: 1.3  
+Updated: March 31, 2026***
 
 An SSL certificate can be associated with one or more servers (IP address:port combination). SSLBL collects IP addresses that are running with an SSL certificate blacklisted on SSLBL. These are usually botnet Command&Control servers (C&C). SSLBL hence publishes a blacklist containing these IPs which can be used to detect botnet C2 traffic from infected machines towards the internet, leaving your network. 
 
@@ -25,20 +25,28 @@ An SSL certificate can be associated with one or more servers (IP address:port c
 ## Configure Abuse.ch SSLBL Feed in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-For information about Abuse.ch SSLBL, see [Abuse.ch SSLBL documentation](https://sslbl.abuse.ch/).
+* <IntegrationLabel/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Populate all the required fields (\*) and then click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuse.ch-sslbl-feed/abuse.ch-sslbl-feed-4.png')} style={{border:'1px solid gray'}} alt="abuse.ch-sslbl-feed-4" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuse.ch-sslbl-feed/abuse.ch-sslbl-feed-5.png')} style={{border:'1px solid gray'}} alt="abuse.ch-sslbl-feed-5" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuse.ch-sslbl-feed/abuse.ch-sslbl-feed-6.png')} style={{border:'1px solid gray'}} alt="abuse.ch-sslbl-feed-6" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abuse.ch-sslbl-feed/abuse.ch-sslbl-feed-7.png')} style={{border:'1px solid gray'}} alt="abuse.ch-sslbl-feed-7" width="400"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/abuse-ch-sslbl-configuration.png')} style={{border:'1px solid gray'}} alt="Abuse.ch SSLBL configuration" width="400"/>
+
+For information about Abuse.ch SSLBL, see [Abuse.ch SSLBL documentation](https://sslbl.abuse.ch/).
 
 ## Change Log
 
-* May 6, 2022 - First upload
-* June 26, 2023 (v1.2) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | June 26, 2023 | Updated the integration with environmental variables. |
+| | May 6, 2022 | Initial release of the Abuse.ch SSLBL Feed integration. |

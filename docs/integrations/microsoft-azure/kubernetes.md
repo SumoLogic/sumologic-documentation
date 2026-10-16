@@ -2,7 +2,14 @@
 id: kubernetes
 title: Azure Kubernetes Service
 sidebar_label: Azure Kubernetes Service
-description: The Sumo Logic app for Azure Kubernetes Service (AKS) provides visibility into the AKS with operational insights into the Audit, API server, Scheduler, Cloud Control Manager, Kube Control Manager, Cluster Autoscalar, and worker nodes.
+keywords: 
+ - aks
+ - aks architecture
+ - aks integration
+ - aks monitoring
+ - azure kubernetes service
+ - kubernetes
+description: This document outlines what is Azure AKS, how to set it up with Sumo Logic, and how to install and view the pre-configured Sumo Logic Azure dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,7 +33,7 @@ The following are the minimum supported requirements for this application:
   </tr>
 </table>
 
-## Log types  
+## Logs and Metric types  
 
 The AKS - Control Plane app collects logs for the following [Azure Kubernetes Services](https://azure.microsoft.com/en-us/services/kubernetes-service/):
 
@@ -37,62 +44,19 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 * **kube-controller-manager**. The Controller Manager oversees a number of smaller controllers that perform actions, such as replicating pods and handling node operations.
 * **cluster-autoscaler**. The cluster autoscaler component watches for pods in your cluster that can't be scheduled because of resource constraints. When the cluster autoscaler detects issues, it scales up the number of nodes in the node pool to meet the application demands. It also regularly checks nodes for a lack of running pods and scales down the number of nodes as needed.
 
-### Configure field in field schema
+**Azure Kubernetes Service Metrics** are available in [Microsoft.ContainerService/managedClusters](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference#supported-metrics-for-microsoftcontainerservicemanagedclusters) namespaces. 
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
-1. Search for the following fields:
-   - `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
-   - `location`. The region to which the resource name belongs to.
-   - `subscription_id`. ID associated with a subscription where the resource is present.
-   - `resource_group`. The resource group name where the Azure resource is present.
-   - `provider_name`. Azure resource provider name (for example, Microsoft.Network).
-   - `resource_type`. Azure resource type (for example, storage accounts).
-   - `resource_name`. The name of the resource (for example, storage account name).
-   - `service_type`. Type of the service that can be accessed with a Azure resource.
-   - `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Kubernetes service is Subscriptions).
-1. Create the fields if they are not present. Refer to [Manage fields](/docs/manage/fields/#manage-fields).
+For more details on Azure Kubernetes Service logs and metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference).
 
-### Configure field extraction rules
+## Setup
 
-Create the following Field Extraction Rule(s) (FER) for Azure Kubernetes Service by following the instructions in [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
+Azure service sends monitoring data to Azure Monitor, which can then [stream data to Eventhub](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/stream-monitoring-data-event-hubs).
 
-#### Azure location extraction FER
+You must explicitly enable diagnostic settings for each Kubernetes Service you want to monitor. You can forward logs to the same Event Hub provided they satisfy the limitations and permissions as described [here](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings?tabs=portal#destination-limitations).
 
-   ```sql
-   Rule Name: AzureLocationExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
+Sumo Logic supports metrics collection using [Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source).
 
-   ```sql title="Parse Expression"
-   json "location", "properties.resourceLocation", "properties.region" as location, resourceLocation, service_region nodrop
-   | replace(toLowerCase(resourceLocation), " ", "") as resourceLocation
-   | if (!isBlank(resourceLocation), resourceLocation, location) as location
-   | if (!isBlank(service_region), service_region, location) as location 
-   | if (isBlank(location), "global", location) as location
-   | fields location
-   ```
-
-#### Resource ID extraction FER
-
-   ```sql
-   Rule Name: AzureResourceIdExtractionFER
-   Applied at: Ingest Time
-   Scope (Specific Data): tenant_name=*
-   ```
-
-   ```sql title="Parse Expression"
-   json "resourceId", "ResourceId" as resourceId1, resourceId2 nodrop
-   | if (isBlank(resourceId1), resourceId2, resourceId1) as resourceId
-   | toUpperCase(resourceId) as resourceId
-   | parse regex field=resourceId "/SUBSCRIPTIONS/(?<subscription_id>[^/]+)" nodrop
-   | parse field=resourceId "/RESOURCEGROUPS/*/" as resource_group nodrop
-   | parse regex field=resourceId "/PROVIDERS/(?<provider_name>[^/]+)" nodrop
-   | parse regex field=resourceId "/PROVIDERS/[^/]+(?:/LOCATIONS/[^/]+)?/(?<resource_type>[^/]+)/(?<resource_name>.+)" nodrop
-   | parse regex field=resource_name "(?<parent_resource_name>[^/]+)(?:/PROVIDERS/[^/]+)?/(?<service_type>[^/]+)/?(?<service_name>.+)" nodrop
-   | if (isBlank(parent_resource_name), resource_name, parent_resource_name) as resource_name
-   | fields subscription_id, location, provider_name, resource_group, resource_type, resource_name, service_type, service_name
-   ```
+When you configure the Event Hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example:  `Azure/AKS/ControlPlane/Logs`.
 
 ### Sample log messages
 
@@ -194,7 +158,7 @@ Create the following Field Extraction Rule(s) (FER) for Azure Kubernetes Service
 
 ### Sample queries
 
-```sql title="kube-audit"
+```sumo title="kube-audit"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-audit")
 | json "category", "properties.log", "properties.pod" as category, log, pod
 | where category="kube-audit" and pod matches "{{pod}}"
@@ -204,7 +168,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | order by _count, verb
 ```
 
-```sql title="kube-audit-admin"
+```sumo title="kube-audit-admin"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-audit-admin")
 | json "category", "properties.log", "properties.pod" as category, log, pod
 | where category="kube-audit-admin" and pod matches "{{pod}}"
@@ -214,7 +178,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | order by _count, verb
 ```
 
-```sql title="kube-apiserver"
+```sumo title="kube-apiserver"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} location={{location}} method (timeout or abort) ("kube-apiserver")
 | json "properties.log", "category", "time", "properties.pod" as log, category, time, pod
 | where category ="kube-apiserver" and pod matches "{{pod}}"
@@ -223,7 +187,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={
 | sort by uri desc
 ```
 
-```sql title="kube-controller-manager"
+```sumo title="kube-controller-manager"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("kube-controller-manager")
 | json "properties.log", "category", "time", "properties.pod", "resourceId" as log, category, time, pod, resourceId
 | where category ="kube-controller-manager" and pod matches "{{pod}}"
@@ -232,7 +196,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | sort by _count
 ```
 
-```sql title="kube-scheduler"
+```sumo title="kube-scheduler"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group = {{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} "kube-scheduler"
 | json "properties.log", "category", "time", "properties.pod" as log, category, time, pod
 | where category ="kube-scheduler" and pod matches "{{pod}}"
@@ -243,7 +207,7 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group =
 | fillmissing timeslice(1h)
 ```
 
-```sql title="cluster-autoscaler"
+```sumo title="cluster-autoscaler"
 tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={{resource_group}} resource_name={{resource_name}} provider_name={{provider_name}} resource_type={{resource_type}} ("cluster-autoscaler")
 | json "properties.log", "category", "properties.pod", "resourceId" as log, category, pod, resourceId
 | where category ="cluster-autoscaler" and pod matches "{{pod}}"
@@ -252,24 +216,23 @@ tenant_name={{tenant_name}} subscription_id={{subscription_id}} resource_group={
 | sort by _count
 ```
 
+###  Configure collector
+
+Create a hosted collector if not already configured and tag the `tenant_name` field. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name). Make sure you create the required sources in this collector. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-Storage-Tag-Tenant-Name.png')} alt="Azure Tag Tenant Name" style={{border: '1px solid gray'}} width="500" />
+
 ### Configure metrics collection
 
-:::note
-Sumo Logic Metrics source is currently in Beta, to participate, contact your Sumo Logic account executive.
-:::
+import MetricsSource from '../../reuse/metrics-source.md';
 
-- To set up the Azure Metrics source in Sumo Logic, refer to the shared beta documentation.
-- Configure the namespaces as `Microsoft.ContainerService/managedClusters`, `microsoft.kubernetes/connectedClusters`, `microsoft.kubernetesconfiguration/extensions`, and `microsoft.hybridcontainerservice/provisionedClusters`. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/azure-kubernetes-service-namespaces.png')} alt="Azure Container Instance Namespaces" style={{border: '1px solid gray'}} width="500" />
+<MetricsSource/>
 
 ### Collecting logs for the Azure Kubernetes Cluster  
 
 This section walks you through the process of configuring a pipeline to send logs from Azure Monitor to Sumo Logic.
 
 1. To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
-
-	 When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AKS/ControlPlane/Logs`.
   
-   Enable the Kubernetes master node logs in Azure Kubernetes Service to send logs to an event hub created in the previous step.
+   Enable the Kubernetes master node logs in Azure Kubernetes Service to send logs to an Event Hub.
 
 2. Push logs from Azure Monitor to Event Hub.
 	1. Sign in to [Azure Portal](https://portal.azure.com/).
@@ -281,7 +244,7 @@ This section walks you through the process of configuring a pipeline to send log
 	7. **Event hub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
 	8. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
 	9. Select **RootManageSharedAccessKey** from **Select event hub policy name** dropdown.
-	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-azure-kuberetes-service.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-kuberetes" width="800"/>
+	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-azure-kuberetes-service.png')} style={{border: '1px solid gray'}} alt="Diagnostic setting Kubernetes" width="800"/>
 	11. Click **Save**.
 
 ## Installing the Azure Kubernetes Service app
@@ -290,11 +253,27 @@ Now that you have set up collection for Azure Kubernetes Cluster, you can instal
 
 All the dashboards are linked to the [Kubernetes views](/docs/dashboards/explore-view/#kubernetes-views) so they can be easily accessed by clicking the Cluster in the navigation pane of the tab.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallIndexV2 from '../../reuse/apps/app-install-index-option.md';
 
-<AppInstall/>
+<AppInstallIndexV2/>
+
+As part of the app installation process, the following fields will be created by default:
+
+- `tenant_name`. This field is tagged at the collector level. You can get the tenant name using the instructions [here](https://learn.microsoft.com/en-us/azure/active-directory-b2c/tenant-management-read-tenant-name#get-your-tenant-name).
+- `location`. The region to which the resource name belongs to.
+- `subscription_id`. ID associated with a subscription where the resource is present.
+- `resource_group`. The resource group name where the Azure resource is present.
+- `provider_name`. Azure resource provider name (for example, Microsoft.Network).
+- `resource_type`. Azure resource type (for example, storage accounts).
+- `resource_name`. The name of the resource (for example, storage account name).
+- `service_type`. Type of the service that can be accessed with a Azure resource.
+- `service_name`. Services that can be accessed with an Azure resource (for example, in Azure Container Instances the service is Subscriptions).
 
 ## Viewing the Azure Kubernetes Service dashboards
+
+import ViewDashboardsIndex from '../../reuse/apps/view-dashboards-index.md';
+
+<ViewDashboardsIndex/>
 
 ### Overview
 
@@ -386,8 +365,15 @@ The **Azure Kubernetes Service - Node Memory** dashboard provides insights about
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/AzureKubernetesService/Azure-Kubernetes-Service-Node-Memory.png')} alt="Azure Kubernetes Service - Node Memory" />
 
-### Azure Key Vaults alerts
-These alerts are metric based and will work for all Key Vaults.
+## Create monitors for Azure Kubernetes Service
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Azure Kubernetes Service alerts
+
+These alerts are metric based and will work for all Azure Kubernetes Managed Clusters.
 
 | Alert Name | Alert Description and Conditions | Alert Condition | Recover Condition |
 |:--|:--|:--|:--|
@@ -395,3 +381,32 @@ These alerts are metric based and will work for all Key Vaults.
 | `Azure Kubernetes Service - Unreachable Kube Node(s)` | This alert is triggered when kube node(s) unreachable count greater than 1. | Count >= 1 | Count < 1  |
 | `Azure Kubernetes Service - High Memory Working Set` | This alert is triggered when memory working set is greater than 100%. | percentage >= 100 | percentage < 100  |
 | `Azure Kubernetes Service - High Node Disk Usage` | This alert is triggered when node disk usage is greater than 80% . Also, a warning alert will be triggered when  node disk usage is greater than 70%. | percentage >= 80  | percentage < 80   |
+| `Azure Kubernetes Service - High CPU Usage` | This alert is triggered when CPU usage percentage is greater than 95%. Also, a warning type alert will be triggered when CPU usage percentage is greater than 85%. | percentage >= 95 | percentage < 95 |
+| `Azure Kubernetes Service - Unreachable Kube Node(s)` | This alert is triggered when kube node(s) unreachable count greater than 1. | Count >= 1 | Count < 1 |
+| `Azure Kubernetes Service - High Memory Working Set` | This alert is triggered when memory working set is greater than 100%. | percentage >= 100 | percentage < 100 |
+| `Azure Kubernetes Service - High Node Disk Usage` | This alert is triggered when node disk usage is greater than 80% . Also, a warning alert will be triggered when node disk usage is greater than 70%. | percentage >= 80 | percentage < 80 |
+
+## Upgrade/Downgrade the Azure Kubernetes Service app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Azure Kubernetes Service app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Troubleshooting
+
+### Metrics collection via Azure Metrics Source
+
+To troubleshoot metrics collection via Azure Metrics Source, follow the instructions in [Troubleshooting Azure Metrics Source](/docs/send-data/hosted-collectors/microsoft-source/azure-metrics-source/#troubleshooting).
+
+## Additional resources
+
+- Blog: [Azure monitoring and troubleshooting](https://www.sumologic.com/blog/azure-services-monitoring)
+- Blog: [Comparing Kubernetes Services on AWS vs. Azure vs. GCP](https://www.sumologic.com/blog/kubernetes-aws-azure-gcp)
+- Blog: [Monitoring k8s-powered Apps with Sumo Logic](https://www.sumologic.com/blog/k8s-monitoring)
+- Glossary: [Microsoft Azure](https://www.sumologic.com/glossary/microsoft-azure)

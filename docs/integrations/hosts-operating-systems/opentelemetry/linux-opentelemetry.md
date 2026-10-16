@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic app for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs.
 
@@ -61,108 +61,29 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 You can skip this section if you have already set up the logs collection through [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up Collector
-
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
-
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
-
-### Step 2: Configure integration
-
-In this step, you will configure the yaml file required for Linux Collection. The app requires path for system log file, based on your Linux version used.
-
-#### Required Logs for Ubuntu
-
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
-
-- `auth.log`
-- `syslog`
-- `daemon.log`
-- `dpkg.log`
-- `kern.log`
-
-#### Required Logs for CentOS, Amazon Linux, and Red Hat
-
-The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
-
-- `audit/audit.log`
-- `secure`
-- `Messages`
-- `yum.log`
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
 :::note
-By default, the path for Linux log files required for all the distros are pre-populated in the UI. Not all of the files might be available on your Linux distribution. Optionally, you can remove unwanted file paths from the list. OpenTelemetry collection will still work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
 :::
 
-#### Enable process metric collection (Optional)
+<OtelCollectorInstallation/>
 
-import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
+### Step 2: Configure the source template
 
-<ProcMetrics/>
+import LinuxConfigureSourceTemplate from '../../../reuse/send-data/linux-configure-source-template.md';
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid gray'}} width="800"/>
+<LinuxConfigureSourceTemplate/>
 
-### Step 3: Send logs and metrics to Sumo Logic
+### Step 3: Push the source template to the desired remotely managed collectors
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance that needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Sample log messages
 
@@ -208,7 +129,7 @@ Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-
 
 This is a sample log query from the **Total Event Distribution** panel.
 
-```sql
+```sumo
 %"sumo.datasource"=linux   
 | parse regex "\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S+)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 |where dest_hostname matches "{{dest_hostname}}" AND process_name matches "{{process_name}}"
@@ -231,24 +152,24 @@ All dashboards have a set of filters that you can apply to the entire dashboard.
 
 ### Linux - Overview
 
-The **Linux - Overview** dashboard provides an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, successful and failed logins, sudo attempts, and the count of reporting hosts. This dashboard also gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - Overview** dashboard provides an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, successful and failed logins, sudo attempts, and the count of reporting hosts. This dashboard also gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Linux - CPU Metrics/Disk Metrics/Memory Metrics/Network Metrics/TCP Metrics dashboard by using the honeycombs or line charts in all the panels.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Overview.png' alt="Linux - Overview" />
 
-### Host Metrics - CPU
+### Linux - CPU Metrics
 
-The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - CPU Metrics** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
 - Identify hosts and processes with high CPU utilization.
 - Examine CPU usage by type and identify anomalies over time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-CPU.png' alt="Host Metrics - CPU" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-CPU-Metrics.png' alt="Linux - CPU Metrics" />
 
-### Host Metrics - Disk
+### Linux - Disk Metrics
 
-The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - Disk Metrics** dashboard provides detailed information about disk utilization and disk IO operations. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -256,11 +177,11 @@ Use this dashboard to:
 - Monitor abnormal spikes in read/write rates.
 - Compare disk throughput across storage devices of a host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Disk.png' alt="Host Metrics - Disk" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Disk-Metrics.png' alt="Linux - Disk Metrics" />
 
-### Host Metrics - Memory
+### Linux - Memory Metrics
 
-The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Process Metrics - Details dashboard by using the honeycombs or line charts in all the panels.
+The **Linux - Memory Metrics** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the Linux - Process Metrics Details dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
 
@@ -268,11 +189,11 @@ Use this dashboard to:
 - Examine memory distribution (free, buffered-cache, used, total) for a given host.
 - Monitor abnormal spikes in memory and swap utilization.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Memory.png' alt="Host Metrics - Memory" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Memory-Metrics.png' alt="Linux - Memory Metrics" />
 
-### Host Metrics - Network
+### Linux - Network Metrics
 
-The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
+The **Linux - Network Metrics** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
 
@@ -280,27 +201,27 @@ Use this dashboard to:
 - Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 - Use dashboard filters to compare throughput across the interface of a host.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-Network.png' alt="Host Metrics - Network" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Network-Metrics.png' alt="Linux - Network Metrics" />
 
-### Host Metrics - TCP
+### Linux - TCP Metrics
 
-The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections. Use this dashboard to identify abnormal spikes in inbound, outbound, open, or established connections.
+The **Linux - TCP Metrics** dashboard provides detailed information around inbound, outbound, open, and established TCP connections. Use this dashboard to identify abnormal spikes in inbound, outbound, open, or established connections.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Host-Metrics-TCP.png' alt="Host Metrics - TCP" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-TCP-Metrics.png' alt="Linux - TCP Metrics" />
 
-### Process Metrics - Overview
+### Linux - Process Metrics Overview
 
-The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.
+The **Linux - Process Metrics Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors, CPU usage, memory usage, disk read/write operations and thread count.
 
-User this dashboard to:
+Use this dashboard to:
 - Process wise distribution of CPU and memory usage.
 - Process wise read/write operations.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Process-Metrics-Overview.png' alt="Linux - Process Metrics Overview" />
 
-### Process Metrics - Details
+### Linux - Process Metrics Details
 
-The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
+The **Linux - Process Metrics Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
 Use this dashboard to:
 
@@ -308,7 +229,7 @@ Use this dashboard to:
 - Identify anomalies in CPU usage, memory usage, major/minor page faults and reads/writes over time.
 - Troubleshoot memory leaks using the resident set memory trend chart.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Process-Metrics-Details.png' alt="Process Metrics - Details" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Process-Metrics-Details.png' alt="Linux - Process Metrics Details" />
 
 ### Linux - Event Sources
 

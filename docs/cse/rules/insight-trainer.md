@@ -14,7 +14,7 @@ import Iframe from 'react-iframe';
 
 [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. 
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this micro lesson to learn how to use the Insight Trainer dashboard.
 
@@ -29,19 +29,6 @@ Watch this micro lesson to learn how to use the Insight Trainer dashboard.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/I90Wsjp5XPA?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 
@@ -138,3 +125,7 @@ Following is the suggested workflow to use the Insight Trainer dashboard:
 1. Adjust rule severities if needed.
 
 We suggest adjusting rule severities to the recommended levels only after you have written rule tuning expressions and seen how they result in lowering false positives. The algorithm adjusts its recommendations continuously. So if at first you do not see your false positives change much, wait a few days, and you will notice new recommendations.  
+
+## Additional resources
+
+Blog: [Fine-tuning Cloud SIEM detections through machine learning](https://www.sumologic.com/blog/tuning-cloud-siem-machine-learning)

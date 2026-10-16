@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/censys.png')} alt="censys" width="100"/>
 
-***Version: 2.2  
-Updated: Jul 07, 2023***
+***Version: 2.4  
+Updated: April 27, 2026***
 
 Censys reduces your Internet attack surface by continually discovering unknown assets and helping remediate Internet facing risks.   
 
@@ -21,27 +21,33 @@ Censys reduces your Internet attack surface by continually discovering unknown a
 ## Configure Censys V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
+* <IntegrationLabel/>
+* **URL**. Enter the URL of Censys V2, for example `https://search.censys.io`
+
+* **User ID**. Enter the [API ID](https://docs.censys.com/docs/ls-api).
+
+* **User Secret**. Enter the secret for the API ID.
+* <IntegrationCertificate/>
+* <IntegrationTimeout/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/censys-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Censys V2 configuration" width="400"/>
 
 For information about Censys V2, see [Censys documentation](https://docs.censys.com/docs).
 
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.
-1. Populate all the required fields (\*):
-   * **Label**. Name of the resource.
-   * **URL**. URL of Censys V2 (example URL: [https://search.censys.io](https://search.censys.io/api)).
-   * **User ID**
-   * **User Secret** <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-v2-4.png')} style={{border:'1px solid gray'}} alt="censys" width="400"/>
-1. Then click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-v2-5.png')} style={{border:'1px solid gray'}} alt="censys" width="400"/>
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-v2-6.png')} style={{border:'1px solid gray'}} alt="censys" width="400"/>
-1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-v2-7.png')} style={{border:'1px solid gray'}} alt="censys" width="400"/>
-1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/censys-v2/censys-v2-8.png')} style={{border:'1px solid gray'}} alt="censys" width="400"/>
-
 ## Change Log
 
-* February 14, 2022 - First upload
-* July 7, 2023 (v2.2)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from Censys 2.0 to Censys V2
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.4 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v2.3 | July 31, 2025 | Updated the integration logo. |
+| v2.2 | July 7, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Censys 2.0 to Censys V2.</li></ul> |
+| | February 14, 2022 | Initial release of the Censys V2 integration. |

@@ -4,15 +4,21 @@ title: Detect Patterns with LogReduce
 description: LogReduce groups messages with similar structures and common repeated text strings into signatures, providing a quick investigative view, or snapshot, for the keywords or time range provided.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The LogReduce&reg; algorithm uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided.
 
 The **Signatures** tab displays LogReduce results as signatures. A signature is basically a reflection of the logs grouped by LogReduce—not all logs grouped in a signature will exactly match it. Within a signature, fields that vary are displayed with wildcard placeholders (`**********`) while other fields, such as timestamp (and some URLs) are ignored and replaced with placeholder variables such as `$DATE` and `$URL`.
 
 You can refine the results of the LogReduce algorithm to make the outcome more generic or more specific. See [Influencing the LogReduce Outcome](influence-the-logreduce-outcome.md) for more information.
 
+:::note
+The LogReduce operator truncates raw 256KB messages to 64KB before matching and grouping the logs into signatures, so content beyond 64KB is not included. This can also affect response time when you run the LogReduce operator against large messages.
+:::
+
 ## Will my LogReduce search results match my keyword search results?
 
-Generally speaking, no. LogReduce is intended to be a jumping-off point for your analysis. Unlike a keyword search, where you are looking for data related to, say, a specific source or an error message, LogReduce returns signatures that contain messages that *may* be of interest to you using fuzzy logic. If you are not happy with a signature, you can [teach](influence-the-logreduce-outcome.md) LogReduce how you'd like the results to be made more specific. do not think of a signature as an example of what logs are grouped under it; instead think of a signature as a reflection of what LogReduce thinks you will find interesting if that signature catches your eye. Once you begin digging in to LogReduce results, you will then want to structure a keyword query that delivers precise results.
+Generally speaking, no. The LogReduce operator is intended to be a jumping-off point for your analysis. Unlike a keyword search, where you are looking for data related to, say, a specific source or an error message, the LogReduce operator returns signatures that contain messages that *may* be of interest to you using fuzzy logic. If you are not happy with a signature, you can [teach](influence-the-logreduce-outcome.md) LogReduce how you'd like the results to be made more specific. do not think of a signature as an example of what logs are grouped under it; instead think of a signature as a reflection of what the LogReduce operator considers you will find interesting if that signature catches your eye. Once you begin digging in to LogReduce results, you will then want to structure a keyword query that delivers precise results.
 
 ## Running a LogReduce query
 
@@ -30,7 +36,7 @@ The logreduce operator cannot be used with group-by functions such as "count b
    * Rate the relevance of signatures by promoting or demoting them under the available **Actions**.
    * Change signatures by clicking the pencil icon.
    * Split signatures that should not be grouped by clicking on the split arrows.
-   * To export the results, click the **Export** icon. Then click **Download** to save the file to your computer.<br/> ![LogreduceIcons.png](/img/search/logreduce/logreduceicons.png)
+   * To export the results, click the **Export** icon. Then click **Download** to save the file to your computer.<br/><img src={useBaseUrl('img/search/logreduce/logreduceicons.png')} alt="Logreduce Icons" style={{border: '1px solid gray'}} width="800" />
 1. Promote, Demote, Split, and Edit icons. 
 1. Undo and Redo icons. 
 1. Click to view messages for the selected signature.

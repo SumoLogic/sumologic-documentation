@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="Thumbnail icon" width="100" />
+<img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="MySQL icon" width="100" />
 
 The Sumo Logic app for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins and error logs.
 
@@ -94,7 +94,7 @@ This sample query is from the MySQL - Logs dashboard > Logs panel.
 
 <TabItem value="k8s">
 
-```sql title="Query String - Top 10 Slow Queries by Average Execution Time"
+```sumo title="Query String - Top 10 Slow Queries by Average Execution Time"
 db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"  
 | parse regex "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
 | parse regex field=query_block "# User@Host: \S+?\[(?<user>\S*?)\] @ (?<host_name>\S+)\s\[(?<ip_addr>\S*?)\]" nodrop // Pttrn1-vrtn1
@@ -115,7 +115,7 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 </TabItem>
 <TabItem value="non-k8s">
 
-```sql title="Query String - Top 10 Slow Queries by Average Execution Time"
+```sumo title="Query String - Top 10 Slow Queries by Average Execution Time"
 db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"  
 | parse regex "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
 | parse regex field=query_block "# User@Host: \S+?\[(?<user>\S*?)\] @ (?<host_name>\S+)\s\[(?<ip_addr>\S*?)\]" nodrop // Pttrn1-vrtn1
@@ -156,7 +156,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 The diagram below illustrates how data is collected from MySQL in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-<br/><img src={useBaseUrl('img/integrations/databases/k8s-flow.png')} alt="K8s flow" />
+<br/><img src={useBaseUrl('img/integrations/databases/k8s-flow.png')} alt="Kubernetes flow" />
 
 The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from MySQL. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: that is, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator.
 Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
@@ -400,7 +400,7 @@ For information about properties that can be configured globally in the Telegraf
 
 This section provides instructions for configuring collection of logs for MySQL running on a non-Kubernetes environment. MySQL logs are stored in log files. Slow query logs must be explicitly enabled to be able to be written to a log file.
 
-Sumo Logic supports collecting logs via a local log file. Local log files can be collected by Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors), which requires you to allow outbound traffic to Sumo Logic [endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
+Sumo Logic supports collecting logs via a local log file. Local log files can be collected by Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors), which requires you to allow outbound traffic to Sumo Logic [endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
 1. **Configure MySQL to log to a local file(s)**. MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
    1. Open `my.cnf` in a text editor.

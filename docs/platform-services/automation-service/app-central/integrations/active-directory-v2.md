@@ -5,7 +5,7 @@ description: ''
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory-v2.png')} alt="active-directory-v2" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory-v2.png')} alt="Active directory V2 icon" width="90"/>
 
 ***Version: 2.2  
 Updated: Dec 19, 2023***
@@ -79,23 +79,45 @@ If an existing Windows Server is not available, follow these steps to set up a n
 ## Configure Active Directory V2 in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
-For information about Active Directory V2, see [Active Directory V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
+* <IntegrationLabel/>
+* **Host**. The hostname or IP address of the AD server.
 
-### Required resources from an existing Active Directory installation
+* **Login Port**. The port used for LDAP authentication. The default is `389` for LDAP and `636` for LDAPS.
 
-To configure the Automation Service or Cloud SOAR to connect to an existing Active Directory installation, enter details about the Active Directory instance in the new resource configuration dialog:
-1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
-1. After the list of the integrations appears, search for the **Active Directory V2** integration and click on the row.
-1. The integration details will appear. Click on the **+** button to add a new resource.
-1. Populate all the required fields (\*), including:
-   * **Host**. The hostname or IP address of the AD server.
-   * **Login Port**. The port used for LDAP authentication (the default is `389` for LDAP and `636` for LDAPS).
-   * **Login DN (Distinguished Name)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the following sections for information about how to get the login DN.
-   * **Password**. The corresponding password for the provided username.
-1. Click **SAVE**.
+* **Login DN (Distinguished Name)**. Enter the distinguished name format (for example, `CN=Administrator,CN=Users,DC=csoar,DC=com`). See the [following sections](#how-to-get-login-dn-with-a-local-account) for information about how to get the login DN.
+
+* **Password**. The corresponding password for the provided username.
+
+* **Connection Security**. Select the type of security to use for communication (**SSL**, **NonSSL**, **StartTLS**, or **LDAP over TLS**).
+
+* **CA Certificate Format**. Select the format (**PFX, P12** or **PEM**).
+
+* **CA Certificate**. Enter the certificate. Only required if you selected **LDAP over TLS**. The certificate must be in Base64 encoded format.
+
+* **Certificate Passphrase**. Enter the passphrase. Only required if you selected the **PFX, P12** certificate format.
+
+* **Base DN**. Enter the Base Distinguished Name. 
+
+* **Global Catalog or DN Port**. Select the catalog or port. For global catalog, select port 3268 for LDAP or 3269 for secure LDAP.
+
+* <IntegrationTimeout/>
+* **Docker Hostnames**. Enter the container's hostname.
+
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+   
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/active-directory-v2/active-directory-v2-configuration.png')} style={{border:'1px solid gray'}} alt="Active Directory V2 configuration" width="400"/>
+
+For information about Microsoft Entra Connect V2 (formerly Active Directory V2), see [Microsoft Entra Connect V2 documentation](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect-v2).
 
 ### How to get login DN with a local account
 
@@ -142,9 +164,9 @@ Once the service account is created in the Organization Unit:
 
 ## Change Log
 
-* March 25, 2021 - First upload
-* March 11, 2022 - Logo
-* June 21, 2023 (v2.1) - Updated the integration with Environmental Variables
-* December 19, 2023 (v2.2)
-	+ Updated action: User Attributes
-		- Now, with the User Attributes Action, users can be filtered based on their distinguishedName (DN)
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.2 | December 19, 2023 | Updated the **User Attributes** action so users can now be filtered based on their distinguishedName (DN). |
+| v2.1 | June 21, 2023 | Updated the integration with environmental variables. |
+| | March 11, 2022 | Updated the logo in Active Directory V2 integration. |
+| | March 25, 2021 | Initial release of the Active Directory V2 integration. |
