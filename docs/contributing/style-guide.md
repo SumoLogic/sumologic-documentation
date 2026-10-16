@@ -319,7 +319,10 @@ Append `#L4-L5` to the URL to embed only those lines, and add a title with `json
 
 Use a [Docusaurus `<details>` block](https://docusaurus.io/docs/markdown-features#details) to fold away long optional content: verbose examples, long code samples, or big reference lists. Put the title between the `<summary>` tags and the content after them. Collapsed content is still indexed for search.
 
-Never use collapsible blocks for FAQ sections, troubleshooting steps, or any required instructions — that content must stay visible for search and AI citation.
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Collapse long code samples (100+ lines), multiple installation methods, or alternative configuration options. | Collapse FAQ sections, troubleshooting steps, or required instructions — hidden content cannot be cited by AI tools or search engines. |
+| Keep collapsed content optional and supplementary. | Collapse short content (2–5 lines) where the interaction adds friction without saving space. |
 
 ### Format FAQ questions as headings
 
