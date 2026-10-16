@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/splunk.png')} alt="splunk" width="70"/>
 
-***Version: 1.3
-Updated: Sep 18, 2025***
+***Version: 1.4
+Updated: April 30, 2026***
 
 Search and send events with Splunk.
 
@@ -66,18 +66,15 @@ For information about Splunk, see [Splunk documentation](https://docs.splunk.com
 
 ## Change Log
 
-* May 5, 2019 - First upload
-* June 4, 2019 - Search Into Events Daemon updated
-* June 19, 2019 - Search Into Events Daemon updated
-* December 19, 2019 - Splunk Alerts Daemon Added
-* February 21, 2020 - Updated Splunk Events Daemon
-* March 9, 2021 - New action added
-* March 25, 2021 - Updated authentication (Authentication Token and Basic Authentication available)
-* July 13, 2023 (v1.2)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from Splunk OIF to Splunk
-	+ Changed fields visibility
-	+ Changed Daemon compatibility (Splunk Alerts Daemon)
-* September 18, 2025 (v1.3)
-    + Improved timezone handling in alert queries.
-    + Improved URL encoding to handle reserved characters.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | September 18, 2025 | <ul><li>Improved timezone handling in alert queries.</li><li>Improved URL encoding to handle reserved characters.</li></ul> |
+| v1.2 | July 13, 2023 | <ul><li>Updated the integration with environmental variables.</li><li>Renamed the integration from Splunk OIF to Splunk.</li><li>Changed fields visibility.</li><li>Changed Daemon compatibility (Splunk Alerts Daemon).</li></ul> |
+| | March 25, 2021 | Updated authentication, adding support for Authentication Token and Basic Authentication. |
+| | March 9, 2021 | Added a new action. |
+| | February 21, 2020 | Updated the Splunk Events Daemon. |
+| | December 19, 2019 | Added the Splunk Alerts Daemon. |
+| | June 19, 2019 | Updated the Search Into Events Daemon. |
+| | June 4, 2019 | Updated the Search Into Events Daemon. |
+| | May 5, 2019 | Initial release of the Splunk integration. |

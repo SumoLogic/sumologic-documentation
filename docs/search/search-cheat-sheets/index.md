@@ -5,8 +5,11 @@ description: Use these quick-reference cheat sheets to master Sumo Logic search 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../../reuse/mobot-callout.md';
 
 Use cheat sheets as a quick reference guide or get up to speed quickly with our Log Search functionality. You'll find lists all Sumo Logic search operators, along with corresponding query examples and use cases.
+
+<MobotCallout/>
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -17,8 +20,8 @@ Use cheat sheets as a quick reference guide or get up to speed quickly with our 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/search-cheat-sheets/grep-searching-with-sumo')}><img src={useBaseUrl('img/icons/general/bookmark.png')} alt="Bookmark icon" width="35"/><h4>grep to Searching with Sumo</h4></a>
-  <p>This cheat sheet helps you move from grep to searching with Sumo.</p>
+  <a href={useBaseUrl('docs/search/search-cheat-sheets/grep-searching-with-sumo')}><img src={useBaseUrl('img/icons/general/bookmark.png')} alt="Bookmark icon" width="35"/><h4>grep to Searching with Sumo Logic</h4></a>
+  <p>This cheat sheet helps you move from grep to searching with Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">

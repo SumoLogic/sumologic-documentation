@@ -91,7 +91,11 @@ The files are typically located in `/var/log/memcached/memcached.log`. If you're
 
 For metrics, you're required to provide the Memcached endpoint (default is localhost:11211) along with the `collection_interval` (default is 1 minute).
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 

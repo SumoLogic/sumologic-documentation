@@ -1,6 +1,6 @@
 ---
 id: collect-with-cloudformation-template
-title: Collect Amazon CloudWatch Logs using a CloudFormation Template
+title: Collect CloudWatch Logs with CloudFormation
 sidebar_label: Collect Logs using CloudFormation
 description: Learn how to collect Amazon CloudWatch Logs using a CloudFormation template.
 ---
@@ -16,7 +16,7 @@ When you upload the template to AWS, it creates the AWS resources described in t
 
 | Resource Name |  Description |
 |:--|:--|
-| `SumoCWLogGroup` | A log group that has a subscription filter (`SumoCWLogSubsriptionFilter`)  associated with it that delivers real time logs to Sumo’s CloudWatch Lambda function (`SumoCWLogsLambda`). |
+| `SumoCWLogGroup` | A log group that has a subscription filter (`SumoCWLogSubsriptionFilter`)  associated with it that delivers real time logs to Sumo Logic’s CloudWatch Lambda function (`SumoCWLogsLambda`). |
 | `SumoCWLogsLambda` | A Lambda function responsible for sending data to the Sumo Logic HTTP Source URL. It is configured with a dead letter queue (`SumoCWDeadLetterQueue`) that receives messages that can’t be processed successfully. You can subscribe other logs to this function except its own log group. |
 | `SumoCWProcessDLQLambda` | A Lambda function responsible for reading messages from the dead letter queue and resending messages. This function is periodically triggered by AWS CloudWatch Events using a schedule rule (`SumoCWProcessDLQScheduleRule`). |
 | `SumoCWLambdaPermission` | Permission to CloudWatch Logs for invoking Lambda functions. |
@@ -241,7 +241,7 @@ Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwar
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
-If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md). When you edit the connector parameters, set the `DestinationArnValue` parameter to the `SumoCWLogsLambda` function ARN.
+If you want to collect logs from multiple Log Groups, you can use Sumo Logic’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md). When you edit the connector parameters, set the `DestinationArnValue` parameter to the `SumoCWLogsLambda` function ARN.
 
 ## Dealing with alarms​
 

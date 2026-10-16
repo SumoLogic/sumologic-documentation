@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hudsonrock-cavalier.png')} alt="HudsonRock Cavalier icon" width="80"/>
 
-***Version: 1.0  
-Updated: Feb 03, 2023***
+***Version: 1.1  
+Updated: April 29, 2026***
 
 HudsonRock Cavalier is a cybercrime intelligence data source composed of millions of machines compromised in global malware spreading campaigns. It is based on forensic technologies and operational know-how developed at the IDF's 8200 Unit to counter nation-state adversaries and professional threat-actors.
 
@@ -44,4 +44,7 @@ For information about HudsonRock, see [HudsonRock documentation](https://docs.hu
 
 ## Change Log
 
-* February 3, 2023 - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | February 3, 2023 | Initial release of the HudsonRock Cavalier integration. |

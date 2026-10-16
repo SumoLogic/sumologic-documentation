@@ -2,11 +2,11 @@
 id: manage-orgs-for-mssps
 title: Manage Organizations for MSSPs
 sidebar_label: Manage Orgs for MSSPs
-description: Learn how to manage organizational Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs).
+description: Learn how to manage features, Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs).
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to manage Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
+This article describes how to manage features, Cloud SIEM rules, rule tuning expressions, organizational library content, and monitors for Managed Security Service Providers (MSSPs). MSSP administrators must ensure that the content of their child organizations is properly configured. MSSPs often consist of a parent organization with child organizations that use [Cloud SIEM](/docs/cse/).
 
 ## Considerations
 
@@ -27,13 +27,55 @@ This multi-insights list page (also known as a "federated" page) shows insights 
 
 To be able to see insights in child organizations, add child organizations that use Cloud SIEM. Then when the parent organization user goes to their Cloud SIEM insights list page, all the child organizations' insights appear in the list.
 
+## Manage features
+
+As an MSSP administrator, you can manage feature availability for your child organizations directly from the Organizations UI. This allows you to opt in or opt out individual child organizations from specific Sumo Logic features without needing to contact Sumo Logic support.
+
+This includes the **AI features** toggle (Mobot and Parse Assist), the **SOC Analyst Agent** toggle, and the **MCP Server access** toggle. See [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning/#can-i-opt-out-of-ai-features) for details. It also includes the **App Catalog** toggle, which controls whether the child org can browse and install pre-built integrations and applications. Unlike standalone orgs, MSSP parent orgs don't see these toggles on their own **Feature Management** page; manage them per child org here instead.
+
+:::note
+Support account users cannot manage child-org features from an MSSP parent org, even with the Administrator role.
+:::
+
+Features available for self-service management are controlled by Sumo Logic. Only features that have been made available for your enablement appear in the **Manage Features** list. Features may be:
+
+- **Opt-in**. You can explicitly enable them for one or more child organizations.
+- **Opt-out**. You can disable them for child organizations that do not require them.
+
+Some features include sub-features. You can expand a top-level feature to manage its sub-features individually.
+
+:::note
+You can apply changes to multiple child organizations in a single action.
+:::
+
+### Opt in a child organization to a feature
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
+1. Click the child organization you want to manage. A details pane opens on the right.
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="More Actions dropdown with Manage Features option highlighted" style={{border: '1px solid gray'}} width="400"/><br/>Alternatively, you can scroll down the details pane to the **Features** section and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button-bottom.png')} alt="Features section with Manage Features link highlighted" style={{border: '1px solid gray'}} width="400"/> 
+1. In the **Manage Features** panel, toggle next to the feature you want to enable.<br/><img src={useBaseUrl('img/manage/subscriptions/select-features.png')} alt="Select Features" style={{border: '1px solid gray'}} width="800"/>
+   - To manage sub-features, click the feature name to expand it and select the desired sub-features.
+1. Click **Save Changes** button to apply your changes.
+
+### Opt out a child organization from a feature
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Organizations** select **Manage Account**. You can also click the **Go To...** menu at the top of the screen and select **Manage Account**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Organizations > Manage Account**.
+1. Click the child organization you want to manage. A details pane opens on the right.
+1. In the details pane, click the **More Actions** dropdown and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button.png')} alt="More Actions dropdown with Manage Features option highlighted" style={{border: '1px solid gray'}} width="400"/><br/>Alternatively, you can scroll down the details pane to the **Features** section and select **Manage Features**.<br/><img src={useBaseUrl('img/manage/subscriptions/manage-features-button-bottom.png')} alt="Features section with Manage Features link highlighted" style={{border: '1px solid gray'}} width="400"/>
+1. In the **Manage Features** panel, toggle next to the feature you want to disable.<br/><img src={useBaseUrl('img/manage/subscriptions/de-select-features.png')} alt="De-select Features Button" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Save Changes** button to apply your changes.
+
 ## Manage content
 
 To ensure that content is consistent across child organizations, use the **Manage Content** tab to push content in target organizations with content from a source organization.
 
+:::tip
+You can also push and sync content across child orgs programmatically with the [Content and Configuration Management (C3M) APIs](/docs/api/content-config-management).
+:::
+
 You can push the following:
-* Cloud SIEM [rules](/docs/cse/rules/)
-* Cloud SIEM [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
+* [Cloud SIEM rules](/docs/cse/rules/)
+* [Cloud SIEM rule tuning expressions](/docs/cse/rules/rule-tuning-expressions/)
 * [Library](/docs/get-started/library)
 * [Monitors](/docs/alerts/monitors/)
 * [Source templates](/docs/send-data/opentelemetry-collector/remote-management/source-templates/)
@@ -68,6 +110,7 @@ You can push the following:
 * In the destination organization, if a lookup with the same name already exists with a different schema and contains data, the push operation is automatically skipped and an error message is displayed. If a lookup table with the same name exists but does not contain any data, the push proceeds and the existing file is replaced with the new data.
 * **Monitor notifications**. Select **Include and Update Notifications** to copy the alert notification to the target organization. If the notification does not already exist, it will be created automatically. Select **Ignore Notifications** to exclude the alert notification, resulting in monitors being pushed without any active notifications.
 * **Source Templates**. Select **Skip the Push** to avoid pushing the source template with same name in the target organization. Select **Overwrite Source Template** to overwrite source template with same name in the target organization.
+* **Scheduled searches and monitors with lookup dependency**. You can push scheduled searches and monitors that have lookup table dependencies to target organizations.
 
 ### Limitations
 
@@ -95,8 +138,7 @@ You can push the following:
 
 If a content push job is stopped or interrupted, you can review the progress and status of items that were processed before the interruption by accessing the results table. The results table provides visibility into successfully pushed items as well as those that failed or were stopped. Follow the steps below to view and manage the results of a stopped content push job:
 
-1. After the push is stopped, a warning banner appears at the top of the content search bar. Click **View Results** in the warning banner to open the **Content Push Job Results** page.
-   <br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-results.png')} alt="MSSPs View Results Button" style={{border: '1px solid gray'}} width="800"/>
+1. After the push is stopped, a warning banner appears at the top of the content search bar. Click **View Results** in the warning banner to open the **Content Push Job Results** page.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-view-results.png')} alt="MSSPs View Results Button" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Content Push Job Results** page, you can view the number of destination org details with the total number of items processed. You can also find the successful, failed, and stopped items.<br/><img src={useBaseUrl('img/manage/subscriptions/mssp-content-push-job-results.png')} alt="MSSP content push job results" style={{border: '1px solid gray'}} width="800"/>
    :::note
    Select the **Show Warning Updates** checkbox to display the warning-related entries in the **Failed Updates** section.

@@ -2,7 +2,7 @@
 id: crowdstrike-fdr-host-inventory-source
 title: CrowdStrike FDR Host Inventory Source
 sidebar_label: CrowdStrike FDR Host Inventory
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-fdr-host-inventory
 description: Learn how to collect device information from the CrowdStrike FDR and send it to Sumo Logic.

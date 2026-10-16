@@ -2,7 +2,7 @@
 id: microsoft-graph-security-api-source
 title: Microsoft Graph Security API Source
 sidebar_label: Microsoft Graph Security API
-tags:
+keywords:
   - cloud-to-cloud
   - microsoft-graph-security-api
 description: The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the Microsoft Graph Security API endpoint.
@@ -14,6 +14,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/ms-graph.svg')} alt="MS Graph icon" width="40"/>
 
 The Microsoft Graph Security API Source provides a secure endpoint to receive alerts from the [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview) Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
+
+:::note
+* Upgrade the Microsoft Graph Security API source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+* This source does not support Microsoft GCC High environments. For GCC High-compatible log collection, see the [MS Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/).
+:::
 
 ## Data collected
 
@@ -148,11 +153,10 @@ The "**Unauthorized request - Account is not provisioned**" error occurs when Mi
 
 ## FAQ
 
-
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
 
+## Additional resources
 
-
-
+- Use the [Microsoft Graph Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/microsoft-graph-security/) to automate response actions directly from Cloud SOAR playbooks.

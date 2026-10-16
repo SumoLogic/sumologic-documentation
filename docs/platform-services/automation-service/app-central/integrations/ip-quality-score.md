@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-quality-score.png')} alt="IP Quality Score icon" width="100"/>
 
-***Version: 1.2  
-Updated: Jan 29, 2024***
+***Version: 1.3  
+Updated: April 29, 2026***
 
 Perform threat intelligence evidence gathering with IPQualityScore.
 
@@ -43,15 +43,9 @@ For information about IPQualityScore, see [IPQualityScore documentation](https:/
 
 ## Change Log
 
-* September 18, 2020 - First upload
-* July 5, 2023 (v1.1) - Updated the integration with Environmental Variables
-* January 29, 2024 (v1.2)
-    * Added 2 new actions:
-        * Email Reputation
-        * URL Reputation
-    * Renamed action from "Get Credit Usage API" to "Get Credit Usage"
-    * Code refactoring
-    * Refined labels and hints
-    * Extended output mapping with examples
-    * Added link to API doc in src code
-    * Resized logo
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | January 29, 2024 | <ul><li>Added new actions: **Email Reputation** and **URL Reputation**.</li><li>Renamed the **Get Credit Usage API** action to **Get Credit Usage**.</li><li>Refactored the code.</li><li>Refined labels and hints.</li><li>Extended output mapping with examples.</li><li>Added a link to the API doc in the source code.</li><li>Resized the logo.</li></ul> |
+| v1.1 | July 5, 2023 | Updated the integration with Environmental Variables. |
+| | September 18, 2020 | Initial release of the IP Quality Score integration. |

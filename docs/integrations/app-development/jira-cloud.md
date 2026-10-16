@@ -234,3 +234,7 @@ Use this dashboard to:
 * Monitor and audit all administrative activities related to the creation and modification of Jira Cloud users.
 
 <img src={useBaseUrl('img/integrations/app-development/Jira_Cloud_User_Events.png')} alt="jira cloud" />
+
+## Additional resources
+
+- Use the [Atlassian Jira Cloud Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-cloud/) to automate response actions directly from Cloud SOAR playbooks.

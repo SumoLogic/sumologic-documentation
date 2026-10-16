@@ -87,7 +87,7 @@ Use this dashboard to:
 * Monitor number of messages and messages by publish size.
 * Monitor delivered and failed notifications.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Overview.png')} alt="Amazon SNS - Overview dashboard" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Overview.png')} alt="Amazon SNS - Overview dashboard" width="800" />
 
 ### Amazon SNS - Audit Events  
 
@@ -100,7 +100,7 @@ Use this dashboard to:
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events.png')} alt="Amazon SNS - Audit Events dashboard" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events.png')} alt="Amazon SNS - Audit Events dashboard" width="800" />
 
 
 ### Amazon SNS - Messages, Notifications  
@@ -115,7 +115,7 @@ Use this dashboard to:
 * Compare messages published and message size by today, yesterday, last week.  
 * Compare notifications delivered and failed by today, yesterday, last week.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Messages-Notifications.png')} alt="Amazon SNS - Messages, Notifications dashboard" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Messages-Notifications.png')} alt="Amazon SNS - Messages, Notifications dashboard" width="800" />
 
 
 
@@ -130,7 +130,7 @@ Use this dashboard to:
 * Get details of all threats by IPs.
 
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS - Threat Intel dashboard" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Threat-Intel.png')} alt="Amazon SNS - Threat Intel dashboard" width="800" />
 
 ### Amazon SNS - Audit Events Details
 
@@ -142,4 +142,4 @@ Use this dashboard to:
 * Get all details of all subscription events.
 * Get details of all read only and non read only events.
 
-<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon SNS - Audit Events Details dashboard" />
+<img src={useBaseUrl('img/observability/Amazon-SNS-Audit-Events-Details.png')} alt="Amazon SNS - Audit Events Details dashboard" width="800" />

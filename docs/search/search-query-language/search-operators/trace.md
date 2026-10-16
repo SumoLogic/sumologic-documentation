@@ -2,6 +2,7 @@
 id: trace
 title: trace Search Operator
 sidebar_label: trace
+description: Use the trace operator as a sophisticated filter to connect related log messages using identifying values like user IDs, IP addresses, or session IDs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

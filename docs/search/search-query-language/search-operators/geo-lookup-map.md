@@ -2,6 +2,7 @@
 id: geo-lookup-map
 title: Geo Lookup (Map) Search Operator
 sidebar_label: Geo Lookup (Map)
+description: Use the Geo Lookup (Map) operator to match parsed IPv4 or IPv6 addresses to their geographical location for visualization on map charts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

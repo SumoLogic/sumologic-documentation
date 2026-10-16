@@ -11,56 +11,63 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic app for Miro provides visibility into Miro audit logs to ensure the security and compliance of your Miro environment. The app leverages the [Miro cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to collect audit log data and provides pre-built dashboards and visualizations to enable security teams to easily monitor and investigate potential security threats.
 
-The app provides a comprehensive overview of key security events and user activity. It includes widgets that track key metrics such as total events, board events, team events, sign-in security events, and more. Additionally, it offers insights into the distribution of sign-in security events and sign-ins over time by authentication methods. The dashboard also highlights sign-ins from risky geo-locations, which helps you to quickly identify potential security threats and take appropriate actions to mitigate them. These widgets help you to monitor your account performance, identify improvement areas, and ensure their data's security. With these widgets, you can easily monitor and manage their security posture, ensuring your data and systems remain secure and protected.
+The app provides a comprehensive overview of key security events and user activity. It includes widgets that track key metrics such as total events, board events, team events, sign-in security events, and more. Additionally, it offers insights into the distribution of sign-in security events and sign-ins over time by authentication methods. The dashboard also highlights sign-ins from risky geo-locations, which helps you to quickly identify potential security threats and take appropriate actions to mitigate them.
 
-With the Sumo Logic app for Miro, security teams can stay on top of potential security threats, proactively identify vulnerabilities, and respond quickly to security incidents.
+:::info
+This app includes [built-in monitors](#miro-alerts). For details on creating custom monitors, refer to [Create monitors for Miro app](#create-monitors-for-miro-app).
+:::
 
 ## Log types
 
-This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
+This App uses Sumo Logic's Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
 
-## Sample log messages
+### Sample log messages
 
-```json title="Audit Log"
+<details>
+<summary>Audit Log</summary>
+
+```json
 {
-      "type": "event",
-      "event": "board_opened",
-      "details": {
-        "role": "OWNER"
-      },
-      "createdAt": "2018-10-19T23:59:45Z",
-      "createdBy": {
-        "type": "user",
-        "name": "Test",
-        "id": "3074457346235995512",
-      },
-      "object": {
-        "id": "3074457346235995523",
-        "name": "BoardName"
-      },
-      "context": {
-        "organization": {
-                      "type": "organization",
-          "name": "CompanyName",
-          "id": "3074457345821140123"
-        },
-        "team": {
-          "type": "team",
-          "name": "TeamName",
-          "id": "3074457345710755694"
-        },
-        "ip": "10.10.10.10"
-      },
-      "id": "450256789"
+  "type": "event",
+  "event": "board_opened",
+  "details": {
+    "role": "OWNER"
+  },
+  "createdAt": "2018-10-19T23:59:45Z",
+  "createdBy": {
+    "type": "user",
+    "name": "Test",
+    "id": "3074457346235995512"
+  },
+  "object": {
+    "id": "3074457346235995523",
+    "name": "BoardName"
+  },
+  "context": {
+    "organization": {
+      "type": "organization",
+      "name": "CompanyName",
+      "id": "3074457345821140123"
+    },
+    "team": {
+      "type": "team",
+      "name": "TeamName",
+      "id": "3074457345710755694"
+    },
+    "ip": "10.10.10.10"
+  },
+  "id": "450256789"
 }
 ```
-## Sample queries
+</details>
 
-```sumo title="Total Phishing Security Tests"
+### Sample queries
+
+```sumo title="Total Events"
 _sourceCategory=miro
 | json "id", "type", "context.team.name", "context.organization.name", "context.ip", "createdAt", "event", "createdBy.name", "createdBy.email" as id, type, team_name, organization_name, ip, createdAt, event, user_name, user_email nodrop
-| where organization_name matches "{{organization}}"
-| where team_name matches "{{team}}"
+| where if(isNull(organization_name), "*", organization_name) matches "{{organization}}"
+| where if(isNull(team_name), "*", team_name) matches "{{team}}"
 | where event matches "{{event}}"
 | count_distinct (id)
 ```
@@ -103,7 +110,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **Miro - Overview** dashboard provides a comprehensive overview of events related to Miro. The dashboard features various widgets, including Total Events, Total Board Events, Distribution of App Events, Events By Team, Boards Created and Opened over Time, Events Over Time, Geo-Location of Events, Recent File Event Summary, and Recent Event Summary.
 
-The widgets allow you to track and analyze event-related information, including the total number of events, their distribution, team-wise breakdown, creation and opening of boards over time, and their geographical locations. The Recent File Event Summary and Recent Event Summary widgets provide a summary of the latest events for quick reference. A dashboard is a useful tool for monitoring and improving event management by providing quick access to relevant information.
+The widgets allow you to track and analyze event-related information, including the total number of events, their distribution, team-wise breakdown, creation and opening of boards over time, and their geographical locations. The Recent File Event Summary and Recent Event Summary widgets provide a summary of the latest events for quick reference.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro - Overview dashboard" />
 
@@ -111,9 +118,25 @@ The widgets allow you to track and analyze event-related information, including 
 
 The **Miro - Security Events** dashboard provides a comprehensive overview of your security events related to Miro. The dashboard features various widgets, including Sign-in Security Events, Account(s) Created, Account(s) Deleted, User(s) Deactivated, User(s) Reactivated, Distribution of Sign-in Security Events, Sign-In over time by Authentication Methods, and Sign-in from Risky Geo-Locations.
 
-The widgets allow you to track and analyze your security events, including the number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of Sign-in Security Events widget provides an overview of sign-in patterns across different events, while the Sign-in over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The Sign-in from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security. A dashboard is a useful tool for monitoring and improving your security by providing quick access to relevant information.
+The widgets allow you to track and analyze your security events, including the number of sign-in security events, account creation, deletion, deactivation, and reactivation. The Distribution of Sign-in Security Events widget provides an overview of sign-in patterns across different events, while the Sign-in over time by Authentication Methods widget offers a breakdown of sign-ins by the authentication method. The Sign-in from Risky Geo-Locations widget helps you to identify geographic locations that pose a higher risk to your security.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Security-Events.png' alt="Miro - Security Events dashboard" />
+
+## Create monitors for Miro app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Miro alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition |
+|:--|:--|:--|:--|
+| `Miro - Excessive Failed Sign-ins Detected` | This alert is triggered when failed sign-in attempts for a single user exceed 5 within a 15-minute window, indicating a potential brute force or credential stuffing attack. | Critical | Count > 5 |
+| `Miro - Account Deleted` | This alert is triggered when a Miro account is deleted. Account deletion is irreversible and may indicate unauthorized insider activity or a compromised administrator account. | Critical | Count > 0 |
+| `Miro - User Deactivated` | This alert is triggered when one or more users are deactivated in Miro. Unexpected deactivations may indicate unauthorized administrative activity or an insider threat. | Critical | Count > 0 |
+| `Miro - Excessive Board Exports Detected` | This alert is triggered when a single user performs more than 10 board exports within a 30-minute window, which may indicate unauthorized data exfiltration. | Critical | Count > 10 |
+| `Miro - Sign-in from Risky Geo-Location` | This alert is triggered when a sign-in event originates from an embargoed or geographically restricted location, indicating potential unauthorized access or policy violations. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the Miro app (Optional)
 

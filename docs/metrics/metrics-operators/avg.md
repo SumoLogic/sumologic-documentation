@@ -2,6 +2,7 @@
 id: avg
 title: avg Metrics Operator
 sidebar_label: avg
+description: Use the avg metrics operator to calculate the average of all matching time series. When grouping is specified, it calculates the average for each group.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

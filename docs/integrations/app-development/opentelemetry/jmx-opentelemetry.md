@@ -1,6 +1,6 @@
 ---
 id: jmx-opentelemetry
-title: Java Management Extensions (JMX) - OpenTelemetry Collector
+title: JMX Monitoring - OpenTelemetry Collector
 sidebar_label: JMX - OTel Collector
 description: The Sumo Logic app for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
@@ -101,6 +101,10 @@ Below is the input required:
 - **Password**. Password for JMX authentication, if applicable.
 
 Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 

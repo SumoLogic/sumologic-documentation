@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/netskope-v2.png')} alt="netskope" width="100"/>
 
-***Version: 1.2  
-Updated: Nov 5, 2024***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Netskope provides unrivaled visibility and real-time data and threat protection when accessing cloud services, websites, and private apps from anywhere, on any device.
 
@@ -86,9 +86,9 @@ For information about Netskope RBACv3, see [Netskope RBACv3 configuration](https
 
 ## Change Log
 
-* December 21, 2022 - First upload
-* July 13, 2023 (v1.1)
-	+ Changed fields visibility
-	+ Changed Daemon compatibility
-* November 5, 2024 (v1.2) - Added New action
-    + URL List Deploy
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | November 5, 2024 | Added a new action: **URL List Deploy**. |
+| v1.1 | July 13, 2023 | <ul><li>Changed fields visibility.</li><li>Changed Daemon compatibility.</li></ul> |
+| | December 21, 2022 | Initial release of the Netskope V2 integration. |

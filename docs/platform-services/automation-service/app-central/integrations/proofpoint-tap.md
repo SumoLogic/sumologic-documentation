@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/proofpoint-tap.png')} alt="Proofpoint TAP icon" width="100"/>
 
-***Version: 1.2  
-Updated: Mar 31, 2023***
+***Version: 1.3  
+Updated: April 30, 2026***
 
 Proofpoint Targeted Attack Protection (TAP) integration which protects against and provides additional visibility into phishing and other malicious attacks.
 
@@ -50,5 +50,12 @@ For information about Proofpoint, see the [Proofpoint website](https://www.proof
 
 ## Change Log
 
-* February 4, 2022 - First upload
-* March 31, 2023 (v1.1 and v1.2) - Integration refined.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1, v1.2 | March 31, 2023 | Refined the integration. |
+| | February 4, 2022 | Initial release of the Proofpoint TAP integration. |
+
+## Additional resources
+
+For Proofpoint TAP, Sumo Logic offers the [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) and the [Proofpoint TAP app](/docs/integrations/saas-cloud/proofpoint-tap/) to collect and visualize your Proofpoint TAP data.

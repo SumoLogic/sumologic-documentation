@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/openai-chatgpt.png')} alt="OpenAI ChatGPT icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jun 26, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 The OpenAI API can be applied to virtually any task that involves understanding or generating natural language, code, or images. We offer a spectrum of models with different levels of power suitable for different tasks, as well as the ability to fine-tune your own custom models. These models can be used for everything from content generation to semantic search and classification.
 
@@ -80,5 +80,12 @@ For information about OpenAI, see [OpenAI documentation](https://platform.openai
 
 ## Change Log
 
-* May 12, 2023 - First upload
-* June 26, 2023 (v1.3) - Changed multiline hints to single line
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | June 26, 2023 | Changed multiline hints to single line. |
+| | May 12, 2023 | Initial release of the OpenAI ChatGPT integration. |
+
+## Additional resources
+
+For OpenAI, Sumo Logic offers the [OpenAI source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/openai-source/) to collect your OpenAI data.

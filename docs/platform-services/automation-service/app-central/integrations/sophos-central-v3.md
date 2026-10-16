@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sophos-central-v3.png')} alt="Sophos Central icon" width="80"/>
 
-***Version: 3.3  
-Updated: Mar 4, 2024***
+***Version: 3.4  
+Updated: April 30, 2026***
 
 Utilize Sophos Central enrichment data during incident investigations.
 
@@ -59,9 +59,10 @@ For information about Sophos Central, see [Sophos Central documentation](https:/
 
 ## Change Log
 
-* December 28, 2021 - First upload
-* January 24, 2022 - New actions added
-* July 11, 2023 (v3.2)
-    + Updated the integration with Environmental Variables
-    + Integration renamed from Sophos Central 3.0 to Sophos Central V3
-* March 4, 2024 (v3.3) - Updated code for compatibility with Python 3.12
+| Version | Date | Description |
+|:--|:--|:--|
+| v3.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v3.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v3.2 | July 11, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Renamed the integration from Sophos Central 3.0 to Sophos Central V3.</li></ul> |
+| | January 24, 2022 | Added new actions. |
+| | December 28, 2021 | Initial release of the Sophos Central V3 integration. |

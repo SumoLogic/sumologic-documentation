@@ -2,6 +2,7 @@
 id: total
 title: total Search Operator
 sidebar_label: total
+description: Use the total operator to insert the sum of a field into every row as a new column, enabling comparisons between individual values and the total.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

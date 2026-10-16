@@ -2,6 +2,7 @@
 id: parse
 title: parse Metrics Operator
 sidebar_label: parse
+description: Use the parse metrics operator to parse specified fields and create new fields for use in metrics queries.
 ---
 
 The parse operator parses the specified field to create new fields to use in the metrics query.

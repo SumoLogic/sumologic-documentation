@@ -18,7 +18,11 @@ Follow the steps below to perform a child org-level search:
 1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="Child org select button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. You can either select one child org or multiple child orgs.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="Child org dropdown" style={{border: '1px solid gray'}} width="800"/>
 1. Enter the required query and click the search button to obtain the search results.
     :::note
-    Make sure you use an aggregator and `_orgID` for multi-child org queries. For example, `* | count by _orgId` or `* | count by _orgId | sum (_count)`.
+    Make sure you use an aggregator and `_orgId` for multi-child org queries. For example, `* | count by _orgId` or `* | count by _orgId | sum (_count)`.
+    :::
+    
+    :::info
+    Search results also include the `_orgName` field, which shows the organization name for each child org alongside its `_orgId`. When you manage many child orgs, `_orgName` helps you identify an org by name without remembering its `_orgId`. The `_orgId` field is still required for multi-child org queries. The `_orgName` field is an additional field to make results easier to read, and you can reference it in your queries. For example, `* | count by _orgId, _orgName`.
     :::
 
 There can be two possible errors while running the multi-child org queries:
@@ -31,6 +35,10 @@ There can be two possible errors while running the multi-child org queries:
 - Audit logs for the completed searches would appear under the child org logs.
 - Raw messages and facets are supported only for one child org query and not for multiple chid orgs query.
 - By default, new users (email format: `<username>+parent-api-user-<orgID>@<domain>`) will be created with **Administrator** role. To manage a parent org user’s access within a child org, the child org administrator can modify the parent org user role and RBAC (role-based access control) configurations in the child org.
+:::
+
+:::note
+You can also run MSSP log searches programmatically using the `childOrgIds` and `includeAllChildOrgs` parameters of the [Search Job Management API](/docs/api/search-job/#search-job-management-api), instead of using the Search UI.
 :::
 
 Enable **Auto Parse Mode** to allow automatic field extraction from your JSON log messages when you run a search. For more details, refer to the [Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing/).

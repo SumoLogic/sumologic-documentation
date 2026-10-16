@@ -2,6 +2,7 @@
 id: topk
 title: topk Search Operator
 sidebar_label: topk
+description: Use the topk operator to select top values from fields and group them by other fields, choosing the top of top.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

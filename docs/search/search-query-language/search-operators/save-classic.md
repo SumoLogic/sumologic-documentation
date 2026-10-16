@@ -2,6 +2,7 @@
 id: save-classic
 title: save (Classic) Search Operator
 sidebar_label: save (Classic)
+description: Use the save (classic) operator to save query results to the Sumo Logic file system with the classic Lookup Tables feature.
 ---
 
 The `save` (classic) operator works with the classic Lookup Tables feature.

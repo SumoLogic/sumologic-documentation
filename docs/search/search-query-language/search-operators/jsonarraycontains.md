@@ -2,6 +2,7 @@
 id: jsonarraycontains
 title: jsonArrayContains Search Operator
 sidebar_label: jsonArrayContains
+description: Use the jsonArrayContains operator to check whether a JSON array field contains a specific string item.
 ---
 
 
@@ -12,3 +13,22 @@ Use the `jsonArrayContains` operator to determine whether a JSON array contains 
 `jsonArrayContains(<jsonArrayField>, <stringField>)`
 
 The `<jsonArrayField>` argument is a field that contains a string in JSON array format (for example, `["foo", "bar"]`). `<stringField>` is a string to check against the items of that array (for example, `"foo"`). If the item is in the array, it returns `true`; otherwise it returns `false`.
+
+## Examples
+
+### Filter logs where a tags array contains a specific value
+
+```sumo
+_sourceCategory=application/events
+| parse "tags=*," as tags
+| where jsonArrayContains(tags, "critical")
+```
+
+### Create a boolean field indicating array membership
+
+```sumo
+_sourceCategory=application/events
+| parse "roles=*}" as roles
+| jsonArrayContains(roles, "admin") as is_admin
+| where is_admin = true
+```
