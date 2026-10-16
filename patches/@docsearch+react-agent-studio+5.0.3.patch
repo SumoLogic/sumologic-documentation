@@ -1,0 +1,77 @@
+diff --git a/node_modules/@docsearch/react-agent-studio/dist/esm/sidepanel.js b/node_modules/@docsearch/react-agent-studio/dist/esm/sidepanel.js
+index e184717..f2319ca 100644
+--- a/node_modules/@docsearch/react-agent-studio/dist/esm/sidepanel.js
++++ b/node_modules/@docsearch/react-agent-studio/dist/esm/sidepanel.js
+@@ -146,7 +146,8 @@ const ConversationExchange = React.forwardRef(({ exchange, translations = {}, is
+ 	}, [assistantMessage, isLastExchange]);
+ 	const wasStopped = ((_userMessage$metadata = userMessage.metadata) === null || _userMessage$metadata === void 0 ? void 0 : _userMessage$metadata.stopped) || (assistantMessage === null || assistantMessage === void 0 || (_assistantMessage$met = assistantMessage.metadata) === null || _assistantMessage$met === void 0 ? void 0 : _assistantMessage$met.stopped);
+ 	const isThinking = ["submitted", "streaming"].includes(status) && !assistantParts.some((part) => part.type !== "step-start");
+-	const showActions = !wasStopped && (!isLastExchange || isLastExchange && status === "ready" && Boolean(assistantMessage));
++	const hasAssistantResponse = Boolean(assistantMessage && (assistantContent || urlsToDisplay.length > 0));
++	const showActions = !wasStopped && hasAssistantResponse && (!isLastExchange || status === "ready" || status === "error");
+ 	const messageId = (assistantMessage === null || assistantMessage === void 0 ? void 0 : assistantMessage.id) || exchange.id;
+ 	return /* @__PURE__ */ React.createElement("div", {
+ 		className: "DocSearch-AskAiScreen-Response-Container",
+diff --git a/node_modules/@docsearch/react-agent-studio/dist/esm/useSuggestedQuestions-DitQZbae.js b/node_modules/@docsearch/react-agent-studio/dist/esm/useSuggestedQuestions-DitQZbae.js
+index f3c57e9..f4d0c9a 100644
+--- a/node_modules/@docsearch/react-agent-studio/dist/esm/useSuggestedQuestions-DitQZbae.js
++++ b/node_modules/@docsearch/react-agent-studio/dist/esm/useSuggestedQuestions-DitQZbae.js
+@@ -3,7 +3,7 @@ import { n as SearchIcon, t as _objectWithoutProperties } from "./objectWithoutP
+ import { d as _objectDestructuringEmpty, l as CloseIcon, m as LoadingIcon, n as createStoredConversations, o as SUGGESTED_QUETIONS_INDEX_NAME, s as ContentIcon, u as _extends } from "./useSearchClient-mIHVB6ga.js";
+ import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+ import { Popover } from "@base-ui/react/popover";
+-import { DefaultChatTransport, generateId, isDataUIPart, isToolOrDynamicToolUIPart, lastAssistantMessageIsCompleteWithToolCalls } from "ai";
++import { DefaultChatTransport, generateId, isDataUIPart, isToolOrDynamicToolUIPart } from "ai";
+ import { marked } from "marked";
+ import { Chat, useChat } from "@ai-sdk/react";
+ 
+@@ -452,14 +452,11 @@ Popover$1.Title = PopoverTitle;
+ function SourcesPanel({ links, titleText = "Source", pluralTitleText = "Sources" }) {
+ 	const [open, setOpen] = React.useState(false);
+ 	const triggerRef = React.useRef(null);
+-	const [boundary, setBoundary] = React.useState(null);
++	const boundary = triggerRef.current?.closest(".DocSearch-Sidepanel-Content") ?? triggerRef.current?.closest(".DocSearch-Dropdown") ?? null;
+ 	const sourcesTitle = links.length > 1 ? pluralTitleText : titleText;
+ 	useEffect(() => {
+-		var _ref, _trigger$closest;
+ 		if (!open) return;
+-		const trigger = triggerRef.current;
+-		const scrollContainer = (_ref = (_trigger$closest = trigger === null || trigger === void 0 ? void 0 : trigger.closest(".DocSearch-Sidepanel-Content")) !== null && _trigger$closest !== void 0 ? _trigger$closest : trigger === null || trigger === void 0 ? void 0 : trigger.closest(".DocSearch-Dropdown")) !== null && _ref !== void 0 ? _ref : null;
+-		setBoundary(scrollContainer);
++		const scrollContainer = boundary;
+ 		if (!scrollContainer) return;
+ 		const handleScroll = () => {
+ 			if (!triggerRef.current) return;
+@@ -471,17 +468,20 @@ function SourcesPanel({ links, titleText = "Source", pluralTitleText = "Sources"
+ 		return () => {
+ 			scrollContainer.removeEventListener("scroll", handleScroll);
+ 		};
+-	}, [open]);
++	}, [boundary, open]);
+ 	if (links.length === 0) return null;
+ 	return /* @__PURE__ */ React.createElement(Popover$1, {
+ 		open,
+-		modal: "trap-focus",
++		modal: false,
+ 		onOpenChange: setOpen
+ 	}, /* @__PURE__ */ React.createElement(Popover$1.Trigger, {
+ 		ref: triggerRef,
+ 		className: "DocSearch-AskAiScreen-Sources-Action"
+ 	}, /* @__PURE__ */ React.createElement("span", { className: "DocSearch-AskAiScreen-Sources-Action-icon" }, /* @__PURE__ */ React.createElement(ContentIcon, null)), /* @__PURE__ */ React.createElement("span", { className: "DocSearch-AskAiScreen-Sources-Action-text" }, links.length, " ", sourcesTitle)), /* @__PURE__ */ React.createElement(Popover$1.Popup, {
+-		container: boundary,
++		container: triggerRef.current?.ownerDocument.body,
++		className: "DocSearch-Popover-Popup DocSearch-AskAiScreen-Sources-Popover",
++		initialFocus: false,
++		finalFocus: false,
+ 		sideOffset: 10,
+ 		align: "start",
+ 		alignOffset: -16,
+@@ -1208,7 +1208,7 @@ const useAskAi = ({ agentId, apiKey, appId, tools = EMPTY_TOOLS, searchParameter
+ 	const createChatInstance = useCallback((messages, id = generateId()) => new Chat({
+ 		id,
+ 		messages,
+-		sendAutomaticallyWhen: lastAssistantMessageIsCompleteWithToolCalls,
++		sendAutomaticallyWhen: () => false,
+ 		transport: askAiTransportRef.current,
+ 		onToolCall: handleToolCall
+ 	}), [handleToolCall]);
