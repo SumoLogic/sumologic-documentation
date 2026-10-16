@@ -757,7 +757,7 @@ Here's how to make a [table](#tables).
 
 ```md
 * Learn how to [sign up with Sumo](../get-started/sign-up.md); or
-* Learn how to [sign up with Sumo](/docs/get-started/sign-up).
+* Learn how to [sign up with Sumo Logic](/docs/get-started/sign-up).
 ```
 
 #### Linking to external URLs
@@ -893,16 +893,21 @@ Protecting our trademarks is important. Failing to mark a trademarked term can p
 
 Use the trademark (™) or registered (®) symbol on the first reference to a trademarked term on a page, then drop it. The following terms must use the symbol shown.
 
-* LogReduce®
+Currently, LogReduce® is the only trademarked term that is used in Sumo Logic docs. For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
 
 Use trademarked terms as adjectives, not as nouns or verbs. Never use them in the plural or possessive form.
 
-* Correct: Use the LogReduce® feature to reduce log volume.
-* Incorrect: Use LogReduce® to reduce log volume.
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Use the LogReduce® feature to reduce log volume. | Use LogReduce® to reduce log volume. |
 
-Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use Sumo Logic in the plural or possessive form.
+Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use a Sumo Logic product or feature name in the plural or possessive form, whether trademarked or not. For example, write "the Sumo Logic OpenTelemetry Collector", not "Sumo Logic's OpenTelemetry Collector".
 
-For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| the LogReduce values-details operator | LogReduce's values-details operator |
+
+Generic possessives referring to the company are acceptable ("Sumo Logic's platform" is fine).
 
 ## Preview releases
 
@@ -1162,7 +1167,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-Sumo conventions:
+Sumo Logic conventions:
 
 * **Use `groupId`** when the same choice appears more than once on a page, or across pages, so the reader's selection syncs and sticks (for example, `groupId="k8s-nonk8s"`).
 * **Make each tab self-contained.** A reader who picks one tab and ignores the rest should still get every step for that path. Do not split a procedure so that step 3 is under one tab and step 4 under another.

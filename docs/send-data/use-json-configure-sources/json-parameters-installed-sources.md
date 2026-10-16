@@ -4,7 +4,7 @@ title: JSON Parameters for Installed Sources
 description: This topic describes JSON Source parameters for installed Collectors.
 ---
 
-This topic describes JSON Source parameters for installed Collectors. For more information about configuring sources in JSON files, and how to configure Sumo to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+This topic describes JSON Source parameters for installed Collectors. For more information about configuring sources in JSON files, and how to configure Sumo Logic to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
 :::important
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).

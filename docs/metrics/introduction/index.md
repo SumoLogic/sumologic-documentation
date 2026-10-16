@@ -177,7 +177,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/metrics/introduction/metric-quantization/')}><img src={useBaseUrl('img/icons/operations/investigate.png')} alt="Investigate icon" width="40"/><h4>Metrics Quantization</h4></a>
-  <p>Learn about how Sumo aggregates metric data points over time buckets.</p>
+  <p>Learn about how Sumo Logic aggregates metric data points over time buckets.</p>
   </div>
 </div>
 </div>

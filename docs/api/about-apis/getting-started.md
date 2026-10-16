@@ -174,5 +174,5 @@ Clients must be prepared to handle such failures if they anticipate concurrent u
 
 ## Sumo Logic alerts from static IP addresses
 
-Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
+Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
