@@ -216,10 +216,8 @@ This page lists the maximum limits and quotas for various features, services, an
 
 See [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage) for details.
 
-| Data Type Retained | Retention Period |
-|:--|:--|
-| Raw                    | 30 days      |
-| 1-hour resolution      | 13 months    |
+* **Raw data**. Retained for 30 days.
+* **1-hour resolution rollups**. Retained for 13 months.
 
 
 ## APM, traces, and RUM
