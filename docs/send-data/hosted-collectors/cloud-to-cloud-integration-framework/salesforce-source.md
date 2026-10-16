@@ -82,7 +82,7 @@ To configure a Salesforce Source:
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **API Collection.** Select the checkbox depending on the type of data that you wish to collect.
-   * **Full EventLogFile Monitoring/Shield add‑on.** Select the checkbox if you wish to collect full EventLogFile monitoring or Shield add-on is enabled.
+   * **Full EventLogFile Monitoring/Shield add-on.** Select the checkbox to collect full EventLogFile monitoring or if the Shield add-on is enabled.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
     :::note
     <CollBegin/>
