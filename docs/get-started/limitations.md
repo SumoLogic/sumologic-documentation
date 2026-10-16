@@ -8,7 +8,7 @@ description: A reference of quotas, limitations, and maximum values across Sumo 
 import LookupTableLimits from '../reuse/lookup-table-limits.md';
 import MonitorLimits from '../reuse/monitor-limits.md';
 
-This page lists the maximum limits and quotas for various features, services, and components within Sumo Logic.
+This page lists the maximum limits and quotas for various features, services, and components within Sumo Logic. If you're running into a limit, [contact Sumo Logic Support](https://support.sumologic.com).
 
 ## Log search
 
