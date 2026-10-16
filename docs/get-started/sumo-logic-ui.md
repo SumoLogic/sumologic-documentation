@@ -131,7 +131,7 @@ This section provides information on how to perform basic everyday tasks using 
 * [View content that is shared with you](#view-content-that-is-shared-with-you)
 * [Pin and manage searches](#pin-and-managesearches)
 * [Manage your personal account preferences](#manage-your-personal-account-preferences)
-* [Get help: Sumo Logic Docs, Community, and more](#get-support)
+* [Get help: Sumo Docs, Community, and more](#get-support)
 
 ### Administrators
 
