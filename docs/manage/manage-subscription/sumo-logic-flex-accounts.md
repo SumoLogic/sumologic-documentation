@@ -104,7 +104,7 @@ The following table provides a summary list of key features by Flex package acco
 | Insight Trainer |  |  | | &#10003; |
 | Kubernetes Observability | &#10003; | &#10003; | &#10003; | &#10003; |
 | Live Tail for Streaming Logs | &#10003; | &#10003; | &#10003; | &#10003; |
-| LogReduce©, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
+| LogReduce®, LogCompare, and LogExplain | &#10003; | &#10003; | &#10003; | &#10003; |
 | Log Data Continuous Volume | &#10003; | &#10003; | &#10003; |  |
 | Log Data Frequent Tier Volume | | &#10003; | &#10003; |  |
 | Log Data storage  | &#10003; | &#10003; | &#10003; | &#10003; |
@@ -258,11 +258,11 @@ Sumo Logic offers four Flex account types: Free, Trial, Essentials, and Enterpri
 
 For Flex accounts, credits are consumed based on log data volume scanned, along with storage, metrics, and tracing usage, rather than data ingested.
 
-### Where can you monitor your Flex credit usage?
+### Where can I monitor my Flex credit usage?
 
 Use the **Account Overview** tab (**Administration > Account > Account Overview**) to review credit usage by category, track consumption against your plan baseline, and set up usage alerts at 70% and 90% credit thresholds.
 
-### Can you upgrade a Free or Trial Flex account?
+### Can I upgrade a Free or Trial Flex account?
 
 Yes. Essentials accounts can upgrade to Enterprise Suite Flex at any time, and you can request an upgrade from any account type through [Upgrade a Sumo Logic Flex Account](/docs/manage/manage-subscription/upgrade-account/upgrade-sumo-logic-flex-account).
 

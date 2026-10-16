@@ -135,7 +135,9 @@ Disabling the MCP server prevents MCP clients from connecting, but does not dele
 CIMD is the recommended authentication mechanism for MCP clients and is disabled by default. An administrator needs to enable it for your organization before clients can authenticate.
 
 1. In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
-1. Select the **Enable CIMD Clients** check box.<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients check box selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
+1. Select the **Enable CIMD Clients** check box.<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients and Restrict to pre-registered clients only check boxes selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
+
+To allow only specific MCP clients, select **Restrict to pre-registered clients only** under **OAuth Clients**, and then manually create a CIMD client for each MCP client you want to allow. For steps and CIMD URLs for common clients, see [Manually create a CIMD client](/docs/manage/security/oauth#manually-create-a-cimd-client).
 
 For how Sumo Logic implements OAuth 2.0 and CIMD in more detail, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
 
@@ -524,13 +526,35 @@ Rate limits may be increased for customers with higher needs. Contact your Sumo 
 * **Audit trails**. All MCP interactions are logged for compliance and security review.
 * **Multi-tenant isolation**. Tenant-level security controls are enforced at the gateway.
 
+### IP allowlisting and MCP tools
+
+All MCP tools forward your original client IP to Sumo Logic, so IP allowlisting works consistently across all tools, including log search (`runLogSearch`) and [Mobot](/docs/search/mobot).
+
+## Troubleshooting
+
+### MCP tool calls fail with 401 Request blocked by IP allowlist policy
+
+#### Symptom
+
+One or more MCP tool calls fail with `401 "Request blocked by IP allowlist policy"`.
+
+#### Cause
+
+Your org has an IP allowlist configured and the client IP making the MCP request is not on it.
+
+#### Resolution
+
+1. Confirm your client's IP address is included in your org's IP allowlist. See [Create an Allowlist for IP or CIDR Addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses/).
+1. If the IP is already allowlisted and calls are still failing, note the exact error text, the failing tool name, and the time of failure in UTC.
+1. Contact [Sumo Logic Support](https://support.sumologic.com/support/s) with those details and your deployment region.
+
 ## FAQ
 
 ### Can MCP handle multiple operations in a single request?
 
 Yes. MCP supports multi-tool calls within a single conversational interaction.
 
-### How does MCP affect your Sumo Logic usage?
+### How does MCP affect my Sumo Logic usage?
 
 MCP-triggered actions can consume Sumo Logic resources in the same way equivalent UI or API actions do. For example, if an AI client uses MCP to run a log search, that search may consume search resources.
 
@@ -538,7 +562,7 @@ MCP-triggered actions can consume Sumo Logic resources in the same way equivalen
 For bulk data retrieval or model training, the [Search Job API](/docs/api/search-job) remains the preferred option.
 :::
 
-### Where does your agent run?
+### Where does my agent run?
 
 Agents connected via MCP run in your own environment, not within Sumo Logic infrastructure.
 
@@ -557,6 +581,10 @@ Yes. Add your subdomain to the front of your deployment's MCP server URL, for ex
 ### What client authentication does MCP require?
 
 MCP clients authenticate with OAuth 2.0. CIMD is the recommended mechanism and requires no manually created credentials; clients that don't support CIMD can connect with a manually created, pre-registered OAuth client instead.
+
+### Why does an MCP tool call fail with 401 Request blocked by IP allowlist policy?
+
+Your org has an IP allowlist configured and the client IP making the request is not on it. Check that your client's IP is included in your allowlist. See [MCP tool calls fail with 401 Request blocked by IP allowlist policy](#mcp-tool-calls-fail-with-401-request-blocked-by-ip-allowlist-policy) for troubleshooting steps.
 
 ## Additional resources
 
