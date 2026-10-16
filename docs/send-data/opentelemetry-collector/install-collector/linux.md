@@ -35,8 +35,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
 :::info
-Whitelist the following repository URLs to allow a seamless installation:
-
+Allowlist the following repository URLs to allow a seamless installation:
 * [packages.sumologic.com](https://packages.sumologic.com/)
 * [d3fo0g5hm7lbuv.cloudfront.net](https://d3fo0g5hm7lbuv.cloudfront.net/)
 * [packagecloud.io](https://packagecloud.io/)
