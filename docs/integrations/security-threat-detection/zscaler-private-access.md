@@ -181,6 +181,25 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />
 
+## Create monitors for Zscaler Private Access app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### ZPA alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `ZPA - High Connector CPU Utilization` | This alert is triggered when a ZPA connector's CPU utilization exceeds 80%. Sustained high CPU may cause dropped connections and degraded performance. | Count > 0 | Count < = 0 |
+| `ZPA - High Connector Memory Utilization` | This alert is triggered when a ZPA connector's memory utilization exceeds 80%. High memory pressure can lead to connector instability and service interruptions. | Count > 0 | Count < = 0 |
+| `ZPA - High Connector Transmission Errors` | This alert is triggered when a ZPA connector reports a high number of network transmission errors, which may indicate underlying network issues or hardware faults. | Count > 10 | Count < = 10 |
+| `ZPA - High Access Policy Blocks` | This alert is triggered when there is a spike in user connections blocked by access policy, which may indicate misconfigured policies or unauthorized access attempts. | Count > 10 | Count < = 10 |
+| `ZPA - High Timeout Policy Blocks` | This alert is triggered when there is a spike in user connections blocked due to SAML session timeout, which may indicate authentication configuration issues. | Count > 10 | Count < = 10 |
+| `ZPA - High Sign In Failures` | This alert is triggered when there are multiple sign-in failures, which may indicate a brute-force or credential stuffing attack against user accounts. | Count > 5 | Count < = 5 |
+| `ZPA - Admin Configuration Changes` | This alert is triggered when there are a high number of administrative configuration changes in the ZPA admin portal, which may indicate unauthorized or erroneous changes. | Count > 5 | Count < = 5 |
+| `ZPA - Malicious IP Connections` | This alert is triggered when a user connects from an IP address identified as malicious by threat intelligence, indicating a potentially compromised endpoint. | Count > 0 | Count < = 0 |
+
 ## Upgrade/Downgrade the Zscaler Private Access app (optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';

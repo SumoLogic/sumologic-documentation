@@ -15,7 +15,7 @@ The **Threat Intelligence** page displays the indicators added to your threat in
 To access Threat Intelligence in Sumo Logic,
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.<br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. Click **+Add Source** to add threat intelligence sources to your datastore:
-    1. **New Source**. This flow lets you select from available threat intelligence sources, choose a collector, and complete configuration in a streamlined workflow.
+    1. **New Source**. This flow lets you create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/), select from available threat intelligence sources and complete configuration in a streamlined workflow.
     1. **Upload**. Manually upload files that add threat intelligence indicators.
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
@@ -28,6 +28,7 @@ To access Threat Intelligence in Sumo Logic,
 :::note
 * The `SumoLogic_ThreatIntel` and `_sumo_global_feed_cs` sources are default sources and cannot be changed or deleted.
 * The default storage limit is 10 million total indicators (not including any indicators provided by Sumo Logic such as in the `SumoLogic_ThreatIntel` and `_sumo_global_feed_cs` sources).
+* By default the page only displays active indicators.
 :::
 
 ## Add a source
@@ -96,7 +97,7 @@ When you remove indicators, the event is recorded in the Audit Event Index. See 
 
 Indicators are deemed valid until they reach the date set by their "valid until" attribute (`validUntil` for [normalized JSON](/docs/security/threat-intelligence/upload-formats/#normalized-json-format) and [CSV](/docs/security/threat-intelligence/upload-formats/#csv-format), and `valid_until` for [STIX](/docs/security/threat-intelligence/upload-formats/#stix-2x-json-format)). After that date, they are considered expired.
 
-Expired indicators are retained until they reach the end of the retention period. At the end of the retention period, expired indicators are automatically deleted. Between the time they expire and are deleted, the indicators are still in the system, and you can still use them to find threats.
+Expired indicators are retained until they reach the end of the retention period. At the end of the retention period, expired indicators are automatically deleted. Between the time they expire and are deleted, expired indicators remain in the system but are excluded from search and the UI by default.
 
 By default, expired indicators are retained for 180 days. To change the retention period:
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.

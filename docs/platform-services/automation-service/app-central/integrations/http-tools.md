@@ -47,16 +47,12 @@ import IntegrationTimeout from '../../../../reuse/automation-service/integration
    
 ## Change Log
 
-* February 02, 2023 - First upload
-* March 20, 2023 (V1.1) - Updated Action:
-	+ HTTP POST: (Added new field for From-Data to be send in the body of the Request)
-* June 14, 2023 (v1.2) - Updated the integration with Environmental Variables
-* September 25, 2023 (v1.3) - Updated Action: HTTP POST Action
-* June 12, 2024 (v1.4) - New Actions:
-    + HTTP DELETE
-    + HTTP HEAD
-    + HTTP PATCH
-    + HTTP PUT
-* January 09, 2024 (v1.5) - Updated Action: 
-  * HTTP POST Action - Fix the issue with the "output.raw JSON" field.
-* April 29, 2026 (v1.6) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.6 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.4 | June 12, 2024 | Added new actions: **HTTP DELETE**, **HTTP HEAD**, **HTTP PATCH**, and **HTTP PUT**. |
+| v1.5 | January 09, 2024 | Fixed an issue with the `output.raw` JSON field in the **HTTP POST** action. |
+| v1.3 | September 25, 2023 | Updated the **HTTP POST** action. |
+| v1.2 | June 14, 2023 | Updated the integration with Environmental Variables. |
+| | March 20, 2023 | Updated the **HTTP POST** action to add a new field for form data to be sent in the body of the request. |
+| | February 02, 2023 | Initial release of the HTTP Tools integration. |

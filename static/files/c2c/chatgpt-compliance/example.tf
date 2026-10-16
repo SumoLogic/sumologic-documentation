@@ -9,7 +9,7 @@ resource "sumologic_cloud_to_cloud_source" "chatgpt-compliance-source" {
     name                = "ChatGPT Compliance"
     workspaceID         = "ABCD-SAMPLE-WORKSPACE-ID"
     apiKey              = "sk-proj-XXXXXXXXX"
-    enabledEventType    = ["CONVERSATION"]
+    enabledEventType    = ["CONVERSATION", "CODEX", "CODEX_SECURITY", "AUDIT", "APP", "AUTH", "APP_AUTH"]
     pollingIntervalHour = "1h"
   })
 }

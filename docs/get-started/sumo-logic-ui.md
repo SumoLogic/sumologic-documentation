@@ -20,7 +20,7 @@ This guide will help you get started with the new and improved Sumo Logic user i
 
 With the new UI, you'll benefit from:
 
-* **Everything in one place**. Unified experience across operational and security analytics products, so you don’t have to switch between different interfaces.
+* **Everything in one place**. Unified experience across operational and security analytics products, so you do not have to switch between different interfaces.
 * **Accelerate your work**. Faster load times and improved caching mean less waiting and more doing.
 * **Pick up where you left off**. Stateful URLs automatically save your session, making it easy to resume work after logging in.
 * **Find what you need instantly**. Use-case-driven navigation helps you locate key features without digging through menus.
@@ -91,7 +91,7 @@ You can manage your personal account settings from the **Preferences** page. T
 
 To manage your personal Sumo Logic account preferences:
 
-1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="300"/>
+1. From the top nav bar, click the person icon <img src={useBaseUrl('img/get-started/acct-pref.png')} alt="Account Preferences" width="25"/>, and then from the dropdown, select **Preferences**.
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
     * **My Preferences**. Your account session settings.
@@ -182,7 +182,7 @@ To see dashboards, searches, and folders that have been shared with you, do the 
 
 After you start a log search, you can “pin” it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
 
-You must start a search for the **Pin** option to appear. To pin a search, do the following:
+You need to start a search for the **Pin** option to appear. To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
@@ -242,7 +242,7 @@ We understand that the removal of in-app tabs in the New UI is a significant cha
 | In-house tabs solution. Always trying to keep up with browser tab improvements. | Utilizes browser’s native tab capability like tab grouping and coloring. |
 | User needs to learn new way of organizing tabs. Managing multiple Sumo Logic instances is difficult. | User utilizes what they already know. Managing multiple Sumo Logic instances is easier. |
 | Performance degrades over long usage because user is using one browser tab. | Memory usage is distributed over different tabs. |
-| Tab switches reload the tab. | Tab switches won’t reload the tab. This will accelerate time to load, which is especially useful for data-rich features like Dashboards. |
+| Tab switches reload the tab. | Tab switches will not reload the tab. This will accelerate time to load, which is especially useful for data-rich features like Dashboards. |
 
 </details>
 

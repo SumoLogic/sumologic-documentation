@@ -6,7 +6,13 @@
         "workspaceID": "ABCD-SAMPLE-WORKSPACE-ID",
         "apiKey": "sk-proj-XXXXXXXXX",
         "enabledEventType": [
-          "CONVERSATION"
+          "CONVERSATION",
+          "CODEX",
+          "CODEX_SECURITY",
+          "AUDIT",
+          "APP",
+          "AUTH",
+          "APP_AUTH"
         ],
         "pollingIntervalHour": "1h"
       },
@@ -16,4 +22,3 @@
       "sourceType": "Universal"
     }
 }
-  

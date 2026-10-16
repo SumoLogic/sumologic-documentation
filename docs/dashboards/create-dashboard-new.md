@@ -29,6 +29,10 @@ Rather watch a short micro lesson video?
 
 :::
 
+:::tip
+You can also create dashboard panels by typing a description of the panel you want directly into Mobot, instead of configuring panels manually. For details, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
+:::
+
 ## Dashboard AutoSave
 
 When you rename or add a panel to a dashboard it is automatically saved in your Sumo Logic Personal folder. Likewise, ongoing changes and additions to the dashboard are saved. This ensures the integrity of your work and prevents any loss due to unforeseen interruptions or outages.

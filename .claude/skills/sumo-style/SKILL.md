@@ -82,8 +82,6 @@ description: One or two sentences for search engines. 140–160 characters. Plai
 keywords:              # optional but recommended
   - keyword1
   - keyword2
-tags:                  # optional
-  - tag1
 ---
 ```
 
@@ -219,3 +217,4 @@ These are Sumo Logic- and repo-specific facts that override general assumptions.
 - **Numbered list items always use `1.`** (not `1.`, `2.`, `3.`). Docusaurus handles rendering.
 - **Capitalized product terms.** Collector, Source, Hosted Collector, Library. User-created objects (dashboards, folders) are lowercase.
 - **C2C sources and apps have distinct openers.** Do not use the app opener for a source doc or vice versa.
+- **Release notes have their own rules.** Voice, openers (no announcement framing), title date format, and per-folder conventions live in [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide. Apply that section when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`.

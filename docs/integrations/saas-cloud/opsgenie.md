@@ -9,6 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/opsgenie.png')} alt="Opsgenie icon" width="75"/>
 
+:::note
+The Opsgenie App will be deprecated and removed from the App Catalog on April 5, 2027.
+:::
+
 The Opsgenie App provides at-a-glance views and detailed analytics for alerts on your DevOps environment, allowing you to effectively monitor and gain valuable insights into your incidents and incident handling operations.
 
 Opsgenie is an incident management platform for operating services that are on 24/7. Opsgenie allows you to plan for service disruptions and stay in control during incidents. Opsgenie centralizes alerts and reliably notifies the correct contacts to ensure timely analysis and efficient action.

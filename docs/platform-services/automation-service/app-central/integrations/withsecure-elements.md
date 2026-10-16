@@ -58,7 +58,9 @@ Threat Intelligence-Reputation
 
 ## Change Log
 
-* March 22, 2023 - First upload
-* July 18, 2023 (v1.1) - Removed leading/trailing spaces
-* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
-* April 30, 2026 (v1.3) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v1.1 | July 18, 2023 | Removed leading/trailing spaces. |
+| | March 22, 2023 | Initial release of the WithSecure Elements integration. |

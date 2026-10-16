@@ -50,8 +50,10 @@ For information about Material Security, see the [Material Security website](htt
 
 ## Change Log
 
-* June 08, 2022 - First upload
-* January 05, 2023 - New actions added, previously developed actions refactored.
-* July 5, 2023 (v1.2) - Removed leading/trailing spaces
-* July 18, 2023 (v1.3) - Code refactoring
-* April 30, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 18, 2023 | Refactored the integration. |
+| v1.2 | July 5, 2023 | Removed leading/trailing spaces. |
+| | January 05, 2023 | Added new actions and refactored previously developed actions. |
+| | June 08, 2022 | Initial release of the Material Security integration. |
