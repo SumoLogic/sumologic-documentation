@@ -76,12 +76,31 @@ This page lists the maximum limits and quotas for various features, services, an
 - **[Results limit](/docs/search/index)**. Only the first 100,000 messages are included.
 - **[Surrounding messages](/docs/search/index)**. Also limited to 100,000.
 - **Search Job API limit parameter**. Max 10,000 records.
+- **[Pinned searches](/docs/get-started/sumo-logic-ui-classic)**. Up to 10 per user.
 
 ### Subquery limits
 
 - **[Maximum results from child query](/docs/search/subqueries)**. Up to 10,000 unique results (rows).
 - **[Memory limit](/docs/search/subqueries)**. Up to 100 MB to return those results.
 - **[Unsupported in subqueries](/docs/search/subqueries)**. Auto-refresh dashboards, Field Extraction Rules, and Scheduled Views.
+
+### Lookup tables
+
+| [Account Type](/docs/search/lookup-tables/create-lookup-table) | Lookup Tables per org |
+|:--|:--|
+| Professional (Cloud Flex) | 10 |
+| Enterprise (Cloud Flex) | 100 |
+| Essentials (Cloud Flex Credits) | 10 |
+| Enterprise Ops / Security / Suite (Cloud Flex Credits) | 100 |
+| Free | None |
+
+- **[File size](/docs/search/lookup-tables/create-lookup-table)**. Up to 100 MB per lookup table.
+- **[Row size](/docs/search/lookup-tables/create-lookup-table)**. Up to 200 KB per row.
+- **[Primary key length](/docs/search/lookup-tables/create-lookup-table)**. Up to 1,024 characters.
+
+### Concurrent search jobs
+
+- **[Active concurrent search jobs](/docs/manage/partitions/data-tiers/searching-data-tiers)**. Up to 200 per organization (Search Job API).
 
 ### Metric query limits
 
@@ -164,6 +183,7 @@ This page lists the maximum limits and quotas for various features, services, an
 - **[Roles](/docs/manage/users-roles/roles)**. Up to 100 per account.
 - **[Naming](/docs/manage/users-roles/roles)**. Role names must use alphanumeric characters or underscores (`_`).
 - **Free accounts**. Limited to 3 users.
+- **[Concurrent sessions per user](/docs/manage/security/set-limit-user-concurrent-sessions)**. Administrators can restrict each user to between 1 and 100 concurrent sessions. No limit by default.
 
 ## Accounts
 
