@@ -24,7 +24,7 @@ This page lists the maximum limits and quotas for various features, services, an
 
 ### Lookup tables
 
-| [Account Type](/docs/search/lookup-tables/create-lookup-table) | Lookup Tables per org |
+| Account Type | Lookup Tables per org |
 |:--|:--|
 | Professional (Cloud Flex) | 10 |
 | Enterprise (Cloud Flex) | 100 |
@@ -47,7 +47,7 @@ This page lists the maximum limits and quotas for various features, services, an
 
 ### Log monitors
 
-| [Plan](/docs/alerts/monitors/overview/#log-monitors) | Max Log Monitors |
+| Plan | Max Log Monitors |
 |:-------------------------|:-----------------|
 | Enterprise, Trial        | 1,000            |
 | Essentials, Professional | 300              |
@@ -58,7 +58,7 @@ This page lists the maximum limits and quotas for various features, services, an
 
 ### Metric monitors
 
-| [Plan](/docs/alerts/monitors/overview/#metrics-monitors) | Max Metric Monitors |
+| Plan | Max Metric Monitors |
 |:-------------------------|:--------------------|
 | Enterprise, Trial        | 1,500               |
 | Essentials, Professional | 500                 |
@@ -97,11 +97,8 @@ This page lists the maximum limits and quotas for various features, services, an
 * **Log message size**. Messages greater than 64 KB are truncated.
 * **[Fields per collector or source](/docs/manage/fields)**. Up to 10.
 * **[Multiline logs](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)**. Limited to 2,000 lines or 512 KB.
-
-### Cloud-to-Cloud sources
-
-* **[Maximum Cloud-to-Cloud Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. Limited to 20 for free accounts, and 50 for all other accounts.
-* **Warning threshold**. You are warned when you reach 80% of the limit (16 sources for free accounts, 40 for other accounts).
+* **[Maximum Cloud-to-Cloud sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. Limited to 20 for free accounts, and 50 for all other accounts.
+   * **Warning threshold**. You are warned when you reach 80% of the limit (16 sources for free accounts, 40 for other accounts).
 
 
 ## Cloud SIEM
@@ -128,7 +125,9 @@ This page lists the maximum limits and quotas for various features, services, an
 
 * **[Playbook actions](/docs/platform-services/automation-service/about-automation-service/#actions-limit)**. Limited to 350 actions per hour per organization. Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward this limit. User Choice, IF, and Task actions do not.
 
-## Field extraction
+## Data management
+
+### Field extraction
 
 * **[Field Extraction Rules per org](/docs/manage/fields)**. Up to 200.
 * **[Field name (key) length](/docs/manage/fields)**. Up to 255 characters.
@@ -138,7 +137,7 @@ This page lists the maximum limits and quotas for various features, services, an
 * **Subqueries**. Not supported.
 * **[HTTP request field limit](/docs/manage/fields)**. Up to 30 fields.
 
-## Partitions
+### Partitions
 
 * **[Maximum partitions](/docs/manage/partitions)**. Up to 50 per account.
 * **[Optimal size](/docs/manage/partitions)**. Between 1%–30% of daily ingest. Ideally, with less than 5 TB data per day flowing into each.
@@ -148,21 +147,14 @@ This page lists the maximum limits and quotas for various features, services, an
 * **[Routing rule length](/docs/manage/partitions)**. Up to 2,048 characters.
 * **[Unsupported conditions](/docs/manage/partitions)**. Do not use the `NOT` operator or `sourceHost` when defining partitions.
 
-## Scheduled views
+### Scheduled views
 
 * **[Maximum views](/docs/manage/scheduled-views)**. Up to 500 per account.
 * **[Start date](/docs/manage/scheduled-views)**. Cannot select a date older than 365 days.
 * **[Unsupported](/docs/manage/scheduled-views)**. Subqueries and Field Extraction Rules are not supported.
 
-## Users and roles
 
-* **[Users](/docs/manage/users-roles/users)**. Up to 1,000 per account.
-* **[Roles](/docs/manage/users-roles/roles)**. Up to 100 per account.
-* **[Naming](/docs/manage/users-roles/roles)**. Role names must use alphanumeric characters or underscores (`_`).
-* **Free accounts**. Limited to 3 users.
-* **[Concurrent sessions per user](/docs/manage/security/set-limit-user-concurrent-sessions)**. Administrators can restrict each user to between 1 and 100 concurrent sessions. No limit by default.
-
-## Accounts
+## Accounts and plans
 
 ### Free accounts
 
@@ -183,6 +175,14 @@ This page lists the maximum limits and quotas for various features, services, an
 
 * **Retention**. Varies based on subscription.
 * **Users**. Can be scaled to meet organizational needs.
+
+### Users and roles
+
+* **[Users](/docs/manage/users-roles/users)**. Up to 1,000 per account.
+* **[Roles](/docs/manage/users-roles/roles)**. Up to 100 per account.
+* **[Naming](/docs/manage/users-roles/roles)**. Role names must use alphanumeric characters or underscores (`_`).
+* **Free accounts**. Limited to 3 users.
+* **[Concurrent sessions per user](/docs/manage/security/set-limit-user-concurrent-sessions)**. Administrators can restrict each user to between 1 and 100 concurrent sessions. No limit by default.
 
 ## Dashboards
 
