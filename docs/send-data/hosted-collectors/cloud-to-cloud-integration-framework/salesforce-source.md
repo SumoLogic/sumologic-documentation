@@ -125,7 +125,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
 | collectAuditData | Boolean | No | True | Set to true to collect the audit events data.|  |
 | collectEventLogFileData | Boolean | No | True | Set to true to collect the event log files data.|  |
-| fullEventLogFileMonitoring | Boolean | No | True | Set to true to collect full EventLogFile monitoring or Shield add-on is enabled.|  |
+| fullEventLogFileMonitoring | Boolean | No | True | Set to true to collect full EventLogFile monitoring or when the Shield add-on is enabled.|  |
 
 ### JSON example
 
