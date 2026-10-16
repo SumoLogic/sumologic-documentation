@@ -204,15 +204,13 @@ This page lists the maximum limits and quotas for various features, services, an
 
 ### Metric query limits
 
-| Property | Limit | Error Message |
-|:---|:---|:---|
-| Query Rows | 6 | Too many query rows ([number of rows]). The limit is: [limit]. |
-| Query String Length | 1,500 chars | Too long ([queryLength] characters). The limit is: [limit]. |
-| Max Number of Operators | 60 | Too many operators: [number of operators]. The maximum number of possible operators is: [limit]. |
-| Max Number of Selectors | 50 | Too many selectors: [number of selectors]. The maximum number of possible selectors is: [limit]. |
-| Max Time Range | 1,000d | The given time range was invalid. |
-| Max Quantization Interval | 30d | The given quantization was too big. |
-| Max Timeshift | 1,000d | The given timeshift was too big. |
+* **Query rows**. Up to 6.
+* **Query string length**. Up to 1,500 characters.
+* **Operators**. Up to 60.
+* **Selectors**. Up to 50.
+* **Time range**. Up to 1,000 days.
+* **Quantization interval**. Up to 30 days.
+* **Timeshift**. Up to 1,000 days.
 
 ### Metric retention
 
