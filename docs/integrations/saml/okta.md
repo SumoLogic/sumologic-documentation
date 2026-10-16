@@ -391,4 +391,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Okta Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/okta/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Okta Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/okta/) to automate response actions directly from Cloud SOAR playbooks.

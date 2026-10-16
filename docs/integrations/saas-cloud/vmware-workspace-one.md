@@ -228,4 +228,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [VMware Workspace ONE Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/vmware-workspace-one/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [VMware Workspace ONE Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/vmware-workspace-one/) to automate response actions directly from Cloud SOAR playbooks.

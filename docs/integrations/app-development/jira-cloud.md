@@ -237,4 +237,4 @@ Use this dashboard to:
 
 ## Additional resources
 
-- Use the [Atlassian Jira Cloud Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-cloud/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Atlassian Jira Cloud Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/atlassian-jira-cloud/) to automate response actions directly from Cloud SOAR playbooks.

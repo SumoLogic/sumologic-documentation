@@ -1,0 +1,52 @@
+---
+title: Abuse.ch SSLBL Feed
+description: ''
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abuse.ch-sslbl-feed.png')} alt="Abuse.ch SSLBL feed" width="90"/>
+
+***Version: 1.3  
+Updated: March 31, 2026***
+
+An SSL certificate can be associated with one or more servers (IP address:port combination). SSLBL collects IP addresses that are running with an SSL certificate blacklisted on SSLBL. These are usually botnet Command&Control servers (C&C). SSLBL hence publishes a blacklist containing these IPs which can be used to detect botnet C2 traffic from infected machines towards the internet, leaving your network. 
+
+## Actions
+
+* **Get Botnet C2 IP Blacklist** *(Enrichment)* - Collects IP addresses that are running with an SSL certificate blacklisted on SSLBL
+
+## Notes
+
+* The Botnet C2 IP Blacklist gets generated every 5 minutes. Do not fetch it more often than every 5 minutes.
+* As IP addresses are getting recycled and reused, this blacklist only contains IP addresses that have been see to be associated with malicious SSL certificate in past 30 days. The false positive rate for this blacklist should therefore be low.
+* I strongly recommend you to not use the aggressive version of the Botnet C2 IP blacklist as it definitely will cause false positives. If you want to reduce the amount of false positives, do not use this option. If you want to get maximum protection and do not care about false positives, you can enable the action by selecting the checkbox (not recommended).
+* More info: 'https://sslbl.abuse.ch/'
+
+## Configure Abuse.ch SSLBL Feed in Automation Service and Cloud SOAR
+
+import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
+
+<IntegrationsAuth/>
+
+* <IntegrationLabel/>
+* <IntegrationTimeout/>
+* <IntegrationCertificate/>
+* <IntegrationEngine/>
+* <IntegrationProxy/>
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/misc/abuse-ch-sslbl-configuration.png')} style={{border:'1px solid gray'}} alt="Abuse.ch SSLBL configuration" width="400"/>
+
+For information about Abuse.ch SSLBL, see [Abuse.ch SSLBL documentation](https://sslbl.abuse.ch/).
+
+## Change Log
+
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | March 31, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.2 | June 26, 2023 | Updated the integration with environmental variables. |
+| | May 6, 2022 | Initial release of the Abuse.ch SSLBL Feed integration. |

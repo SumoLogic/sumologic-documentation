@@ -223,4 +223,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Vectra Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/vectra/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Vectra Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/vectra/) to automate response actions directly from Cloud SOAR playbooks.

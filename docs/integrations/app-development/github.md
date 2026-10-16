@@ -304,4 +304,4 @@ The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of th
 
 ## Additional resources
 
-- Use the [GitHub Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/github/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [GitHub Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/github/) to automate response actions directly from Cloud SOAR playbooks.

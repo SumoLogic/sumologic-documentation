@@ -103,4 +103,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Airtable Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/airtable/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Airtable Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/airtable/) to automate response actions directly from Cloud SOAR playbooks.

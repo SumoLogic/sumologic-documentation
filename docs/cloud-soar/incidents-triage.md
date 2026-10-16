@@ -380,7 +380,7 @@ Perform the following steps to:
     1. Click **+** to the left of **Rules**.
     1. On the **Add Automation Rule** dialog, select a name for the rule (for example, *Triage example*). Then select the integration daemon to use with this new rule, the integration resource, and fill in all the remaining parameters that you'd like this rule to use.
         :::important
-        Make sure that the integration resource is already fully configured for authentication. This ensures that the integration's vendor can securely communicate with Sumo Logic. For more information about configuring authentication, see [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/). For configuration directions for each integration, see [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).
+        Make sure that the integration resource is already fully configured for authentication. This ensures that the integration's vendor can securely communicate with Sumo Logic. For more information about configuring authentication, see [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/). For configuration directions for each integration, see [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/).
         :::
     1. Click **Save**. The rule appears in the list of available automation rules.
     1. In the **Filters** field of your triage automation rule, make sure to click the **Edit** button to add filtering. This is important to properly evaluate the incoming data and determine when to add an event to triage.
@@ -394,7 +394,7 @@ Perform the following steps to:
 1. Create playbooks with the custom playbook type you created in step 1 above (for example, *Custom Triage*):
     1. [Create a new playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#create-a-new-playbook). 
     1. In the **Type** field of the **New Playbook** dialog, select the custom playbook type you created earlier (for example, *Custom Triage*).
-    1. Configure the playbook to run actions on the triage event. For example, you could add actions from the [Triage Tools](/docs/platform-services/automation-service/app-central/integrations/triage-tools/) integration to do things like discard the triage event, grab or reassign the triage event, or convert the triage to an incident. 
+    1. Configure the playbook to run actions on the triage event. For example, you could add actions from the [Triage Tools](/docs/integrations/automation-integrations/automation-integration-catalog/triage-tools/) integration to do things like discard the triage event, grab or reassign the triage event, or convert the triage to an incident. 
     1. Enable the playbook.
 
 Once you enable the triage automation rule you created above, when a triage event is grabbed by an analyst, any playbooks defined for that type (in our example, *Custom Triage*) will be automatically executed. Because *all* playbooks for the specified playbook type are automatically executed as soon as the triage event is grabbed, we recommended that you create separate playbook types and playbooks for triage events. Keep in mind that you can nest playbooks to run specific workflows for triage.
