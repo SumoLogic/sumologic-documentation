@@ -7,6 +7,39 @@ description: A reference of quotas, limitations, and maximum values across Sumo 
 
 This page lists the maximum limits and quotas for various features, services, and components within Sumo Logic.
 
+
+## Log search
+
+- **[Query length](/docs/search/get-started-with-search/build-search/keyword-search-expressions)**. Up to 15,000 characters.
+- **[Results limit](/docs/search/index)**. Only the first 100,000 messages are included.
+- **[Surrounding messages](/docs/search/index)**. Also limited to 100,000.
+- **[Search Job API limit parameter](/docs/api/search-job)**. Max 10,000 records.
+- **[Pinned searches](/docs/get-started/sumo-logic-ui-classic)**. Up to 10 per user.
+
+### Subquery limits
+
+- **[Maximum results from child query](/docs/search/subqueries)**. Up to 10,000 unique results (rows).
+- **[Memory limit](/docs/search/subqueries)**. Up to 100 MB to return those results.
+- **[Unsupported in subqueries](/docs/search/subqueries)**. Auto-refresh dashboards, Field Extraction Rules, and Scheduled Views.
+
+### Lookup tables
+
+| [Account Type](/docs/search/lookup-tables/create-lookup-table) | Lookup Tables per org |
+|:--|:--|
+| Professional (Cloud Flex) | 10 |
+| Enterprise (Cloud Flex) | 100 |
+| Essentials (Cloud Flex Credits) | 10 |
+| Enterprise Ops / Security / Suite (Cloud Flex Credits) | 100 |
+| Free | None |
+
+- **[File size](/docs/search/lookup-tables/create-lookup-table)**. Up to 100 MB per lookup table.
+- **[Row size](/docs/search/lookup-tables/create-lookup-table)**. Up to 200 KB per row.
+- **[Primary key length](/docs/search/lookup-tables/create-lookup-table)**. Up to 1,024 characters.
+
+### Concurrent search jobs
+
+- **[Active concurrent search jobs](/docs/api/search-job/#rate-limit-throttling)**. Up to 200 per organization.
+
 ## Alerts and monitors
 
 - **[Maximum number of monitors (active and inactive)](/docs/alerts/monitors/monitor-faq/#is-there-a-limit-to-the-number-of-monitors-i-can-have)**. Up to 5,000 (can be increased by contacting support).
@@ -70,66 +103,6 @@ This page lists the maximum limits and quotas for various features, services, an
 - **[Maximum Cloud-to-Cloud Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. Limited to 20 for free accounts, and 50 for all other accounts.
 - **Warning threshold**. You are warned when you reach 80% of the limit (16 sources for free accounts, 40 for other accounts).
 
-## Log search
-
-- **[Query length](/docs/search/get-started-with-search/build-search/keyword-search-expressions)**. Up to 15,000 characters.
-- **[Results limit](/docs/search/index)**. Only the first 100,000 messages are included.
-- **[Surrounding messages](/docs/search/index)**. Also limited to 100,000.
-- **[Search Job API limit parameter](/docs/api/search-job)**. Max 10,000 records.
-- **[Pinned searches](/docs/get-started/sumo-logic-ui-classic)**. Up to 10 per user.
-
-### Subquery limits
-
-- **[Maximum results from child query](/docs/search/subqueries)**. Up to 10,000 unique results (rows).
-- **[Memory limit](/docs/search/subqueries)**. Up to 100 MB to return those results.
-- **[Unsupported in subqueries](/docs/search/subqueries)**. Auto-refresh dashboards, Field Extraction Rules, and Scheduled Views.
-
-### Lookup tables
-
-| [Account Type](/docs/search/lookup-tables/create-lookup-table) | Lookup Tables per org |
-|:--|:--|
-| Professional (Cloud Flex) | 10 |
-| Enterprise (Cloud Flex) | 100 |
-| Essentials (Cloud Flex Credits) | 10 |
-| Enterprise Ops / Security / Suite (Cloud Flex Credits) | 100 |
-| Free | None |
-
-- **[File size](/docs/search/lookup-tables/create-lookup-table)**. Up to 100 MB per lookup table.
-- **[Row size](/docs/search/lookup-tables/create-lookup-table)**. Up to 200 KB per row.
-- **[Primary key length](/docs/search/lookup-tables/create-lookup-table)**. Up to 1,024 characters.
-
-### Concurrent search jobs
-
-- **[Active concurrent search jobs](/docs/api/search-job/#rate-limit-throttling)**. Up to 200 per organization.
-
-### Metric query limits
-
-| Property | Limit | Error Message |
-|:---|:---|:---|
-| Query Rows | 6 | Too many query rows ([number of rows]). The limit is: [limit]. |
-| Query String Length | 1,500 chars | Too long ([queryLength] characters). The limit is: [limit]. |
-| Max Number of Operators | 60 | Too many operators: [number of operators]. The maximum number of possible operators is: [limit]. |
-| Max Number of Selectors | 50 | Too many selectors: [number of selectors]. The maximum number of possible selectors is: [limit]. |
-| Max Time Range | 1,000d | The given time range was invalid. |
-| Max Quantization Interval | 30d | The given quantization was too big. |
-| Max Timeshift | 1,000d | The given timeshift was too big. |
-
-## APM, traces, and RUM
-
-### Traces
-
-- **[Spans per trace](/docs/apm/spans)**. Up to 10,000 spans per trace.
-- **[Trace query retention](/docs/apm/traces/view-and-investigate-traces)**. 15 days.
-- **[Unique tag names](/docs/apm/traces/view-and-investigate-traces)**. Up to 10,000 unique tag names per retention period per org.
-- **Span data retention** (`_trace_spans` index). Same as default log index retention.
-
-### Real User Monitoring (RUM)
-
-- RUM data is stored in the `_trace_spans` index and follows the same retention as log data.
-
-## Platform service
-
-- **[Playbook actions](/docs/platform-services/automation-service/about-automation-service/#actions-limit)**. Limited to 350 actions per hour per organization. Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward this limit. User Choice, IF, and Task actions do not.
 
 ## Cloud SIEM
 
@@ -150,6 +123,24 @@ This page lists the maximum limits and quotas for various features, services, an
 - **[Total indicators](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Default storage limit is 10 million total indicators (excluding Sumo Logic-provided sources).
 - **[Indicators per API call](/docs/security/threat-intelligence/about-threat-intelligence)**. Up to 100 indicators per upload call.
 - **[Expired indicator retention](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Up to 180 days (configurable).
+
+
+## APM, traces, and RUM
+
+### Traces
+
+- **[Spans per trace](/docs/apm/spans)**. Up to 10,000 spans per trace.
+- **[Trace query retention](/docs/apm/traces/view-and-investigate-traces)**. 15 days.
+- **[Unique tag names](/docs/apm/traces/view-and-investigate-traces)**. Up to 10,000 unique tag names per retention period per org.
+- **Span data retention** (`_trace_spans` index). Same as default log index retention.
+
+### Real User Monitoring (RUM)
+
+- RUM data is stored in the `_trace_spans` index and follows the same retention as log data.
+
+## Platform service
+
+- **[Playbook actions](/docs/platform-services/automation-service/about-automation-service/#actions-limit)**. Limited to 350 actions per hour per organization. Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward this limit. User Choice, IF, and Task actions do not.
 
 ## Field extraction
 
@@ -225,6 +216,18 @@ This page lists the maximum limits and quotas for various features, services, an
 
 ## Metrics
 
+### Metric query limits
+
+| Property | Limit | Error Message |
+|:---|:---|:---|
+| Query Rows | 6 | Too many query rows ([number of rows]). The limit is: [limit]. |
+| Query String Length | 1,500 chars | Too long ([queryLength] characters). The limit is: [limit]. |
+| Max Number of Operators | 60 | Too many operators: [number of operators]. The maximum number of possible operators is: [limit]. |
+| Max Number of Selectors | 50 | Too many selectors: [number of selectors]. The maximum number of possible selectors is: [limit]. |
+| Max Time Range | 1,000d | The given time range was invalid. |
+| Max Quantization Interval | 30d | The given quantization was too big. |
+| Max Timeshift | 1,000d | The given timeshift was too big. |
+
 ### Metric retention
 
 See [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage) for details.
@@ -233,4 +236,3 @@ See [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ing
 |:--|:--|
 | Raw                    | 30 days      |
 | 1-hour resolution      | 13 months    |
-
