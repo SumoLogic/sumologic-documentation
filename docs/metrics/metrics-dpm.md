@@ -49,7 +49,7 @@ You can obtain the same information displayed on the Metrics Data Ingestion scre
 
 Following is an example query that lists the metric names that account for metrics data ingested arranged in descending order based on their DPM contribution. 
 
-```
+```sql
 (_index=sumologic_volume _sourceCategory=byMetricDataPoints) 
 | parse "intervalStart: *\n" as interval 
 | parse regex "\n(?<singleRecord>.*)" multi 
@@ -60,7 +60,7 @@ Following is an example query that lists the metric names that account for metri
 | fields -totalDp
 ```
 Following is an example query that computes the average DPM ingestion for a given time period.
-```
+```sql
 (_index=sumologic_volume _sourceCategory=byMetricDataPoints)
 | parse "intervalStart: *\n" as interval
 | parse regex "\n(?<singleRecord>.*)" multi

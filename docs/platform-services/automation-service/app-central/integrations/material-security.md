@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/material-security.png')} alt="material-security" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/material-security.png')} alt="Material Security icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 18, 2023***
+***Version: 1.4  
+Updated: April 30, 2026***
 
 **Material Security** protects critical data in employee, partner, contractor, and VIP accounts—without hurting productivity. Material finds and redacts sensitive content in email archives and brings it back when you need it, after a simple verification step.
 
@@ -50,7 +50,10 @@ For information about Material Security, see the [Material Security website](htt
 
 ## Change Log
 
-* June 08, 2022 - First upload
-* January 05, 2023 - New actions added, previously developed actions refactored.
-* July 5, 2023 (v1.2) - Removed leading/trailing spaces
-* July 18, 2023 (v1.3) - Code refactoring
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 18, 2023 | Refactored the integration. |
+| v1.2 | July 5, 2023 | Removed leading/trailing spaces. |
+| | January 05, 2023 | Added new actions and refactored previously developed actions. |
+| | June 08, 2022 | Initial release of the Material Security integration. |

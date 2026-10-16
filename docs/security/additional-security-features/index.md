@@ -7,6 +7,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 *Logs for Security* is Sumo Logic's full set of features that leverage logs for security use cases. First, you collect security log and event data from your infrastructure and applications, on-premises and in-cloud. Then, you analyze your security data with pre-built and custom dashboards, out-of-the-box security apps, and robust queries.
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: [Logs for Security Self-Paced](https://learn.sumologic.com/path/sumo-security/cloud-security-monitoring-and-analytics-self-paced-course)
+* **Instructor-led virtual classes**: [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security#section-2)
+:::
+
 This section contains the following topics:
 
 <div className="box-wrapper">

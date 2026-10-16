@@ -1,6 +1,6 @@
 ---
 id: set-up-security-incident-webhook
-title: Set Up a ServiceNow Security Incident Webhook Connection
+title: Set Up a ServiceNow Security Incident Webhook
 sidebar_label: Set Up Security Incident Webhooks
 description: This page shows you how to set up a ServiceNow Incident Webhook connection, and create scheduled searches for the connection.
 
@@ -19,7 +19,7 @@ A Webhook is an HTTP callback: an HTTP POST that occurs when something happens.�
 A security incident is an unplanned security-related interruption that has occurred in your business and this is reported in ServiceNow via a security incident.
 
 :::important Security Incidents
-To create security incidents, the ServiceNow plugin [Security Incidents Response](http://docs.servicenow.com/?context=Security_incident) is required.
+To create security incidents, the ServiceNow plugin [Security Incidents Response](https://docs.servicenow.com/?context=Security_incident) is required.
 :::
 
 ## Set up a ServiceNow connection
@@ -30,7 +30,7 @@ To configure a Webhook connection, you must have a Sumo Logic role that grants y
 
 To set up a ServiceNow Security Incident Webhook connection:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**.
 1. On the **Connections** page click **Add**.
 1. Click **Webhook**.
 1. In the **Create Connection** dialog, enter the **Name** of the connection.

@@ -56,7 +56,7 @@ The Sumo Logic app for AWS Observability DynamoDB is a unified logs and metrics 
 
 ### Sample queries
 
-```sql title="All IP Threat Count"
+```sumo title="All IP Threat Count"
 _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""
 | json "eventName", "awsRegion", "requestParameters.tableName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, entity, ip_address, user
 | where Region matches "*" and tolowercase(entity) matches "*"
@@ -72,7 +72,7 @@ _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynam
 ```
 
 <!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
-```sql title="All IP Threat Count"
+```sumo title="All IP Threat Count"
 _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""
 | json "eventName", "awsRegion", "requestParameters.tableName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, entity, ip_address, user
 | where Region matches "*" and tolowercase(entity) matches "*"

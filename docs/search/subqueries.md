@@ -30,7 +30,7 @@ This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indi
 
 **Search expression syntax:**
 
-```sql
+```sumo
 Parent query
 [subquery [from=(<fromTime>)] [to=(<toTime>)] : <child query>
 | compose <field1>[, <field2>, ...] [maxresults=<int>] [keywords]
@@ -40,7 +40,7 @@ Rest of parent query
 
 **`where` operator syntax:**
 
-```sql
+```sumo
 Parent query
 | where [subquery [from=(<fromTime>)] [to=(<toTime>)] : <child query>
 | compose <field1>[, <field2>, ...] [maxresults=<int>]
@@ -52,7 +52,7 @@ You can use the not `!` option using the [`where` operator](/docs/search/sea
 
 **`if` operator syntax:**
 
-```sql
+```sumo
 Parent query
 | if ( [subquery [from=(<fromTime>)] [to=(<toTime>)] : <child query>
 | compose <field1>[, <field2>, ...] [maxresults=<int>]
@@ -87,7 +87,7 @@ For example, if the subquery generated the following results:
 
 This would be converted to a single output as follows:
 
-```sql
+```sumo
 (( _sourceHost="prod-search-1" AND _sourceCategory=”stream” AND clientip=”1.1.1.1”) OR
 (_sourceHost=”prod-remix-1” AND _sourceCategory=”remix” AND clientip=”10.10.10.10”))
 ```
@@ -163,7 +163,7 @@ Let’s say that our company has a shopping website, and we want to track purcha
 
 Our parent query provides statistics such as items checked out, and items purchased for a given user. For this example we are tracking users through their IP address using the following query over our custom application logs.
 
-```sql
+```sumo
 _sourceCategory=reinvent/travel/checkout 243.63.233.30
 | json field=_raw "funcName"
 | where funcname in ("process_cart","charge")
@@ -179,7 +179,7 @@ With a subquery, we can pass the IP address that is highlighted from a child qu
 
 Our child query provides the most active user, and we track it using IP addresses in our web server logs using this query:
 
-```sql
+```sumo
 _sourceCategory=reinvent/travel/nginx
     | count by src_ip
     | topk(1,_count)
@@ -203,7 +203,7 @@ Combine the two queries into a subquery to allow the parent query to harness the
 
 With keywords, you can replace the IP address (243.63.233.30) from the parent query with a child query.  
 
-```sql {2-6}
+```sumo {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip
@@ -224,7 +224,7 @@ Since we only want to pass the IP address back as a keyword we specified the 
 
 If the parent query had the IP address specified with a field, such as `src_ip=243.63.233.30`, where `src_ip` is the field name, you can also replace it in the parent query with the child query.  
 
-```sql {2-6}
+```sumo {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip
@@ -247,7 +247,7 @@ A query using a filter operator like `where` may take longer to run than a query
 
 Once the parent query is ready and recognizes the same field name, in this case `src_ip`, simply place the child query in the query as the where filter expression. As mentioned in the syntax section, `keywords` is not supported with where operations.
 
-```sql {5-7}
+```sumo {5-7}
 _sourceCategory=reinvent/travel/checkout
 | json field=_raw "source_ip" as src_ip
 | json field=_raw "funcName"
@@ -273,7 +273,7 @@ Once the parent query is ready and recognizes the same field name, in this case 
 
 The following will create a field named `boolean` that is returned as true or false based on if our most active user's IP address is found. The subquery will return `(src_ip="243.63.233.30")` and the if operator checks it against the logs from the parent query, in this case, true if the `src_ip` is the same as the log evaluated from the parent query.
 
-```sql {5-7}
+```sumo {5-7}
 _sourceCategory=reinvent/travel/checkout
 | json field=_raw "source_ip" as src_ip
 | json field=_raw "funcName"
@@ -291,7 +291,7 @@ By default, the child query runs on the same time range as the parent query, but
 
 Use both `from` and `to`, as shown below to explicitly specify a time range. Only the highlighted brackets `[ ]` are required, the rest indicate optional arguments.
 
-```sql
+```sumo
 Parent query
 [subquery [from=(<fromTime>)] [to=(<toTime>)] : <child query>
 | compose <field1>[, <field2>, ...] [maxresults=<int>] [keywords]
@@ -305,7 +305,7 @@ To specify a relative time range, only provide the `from` argument. See the fo
 
 **Relative:**
 
-```sql
+```sumo
 [subquery from=(-15m):error
 | count by _sourceHost
 | topk(1, _count)
@@ -315,7 +315,7 @@ To specify a relative time range, only provide the `from` argument. See the fo
 
 **Absolute:**  
 
-```sql
+```sumo
 [subquery from=(2018/07/08 23:13:36) to=(2018/07/09 23:13:36):error
 | count by _sourceHost
 | topk(1, _count)
@@ -366,7 +366,7 @@ Generally, when you build an alert you have to perform some complex calculations
 
 Before subquery, this level of detail was not possible in your alerts, but with Subquery you can easily get it. For example, you want to get alerted whenever you have an issue deploying an index. First, see if there is a given index was not successfully deployed even after retrying `_count\> 3`, if that happens the subquery will send useful information about the given index, like which host it was deployed on.
 
-```sql
+```sumo
 _sourceCategory=search "error while retrying to deploy index"
 | parse \",name=*-*\" as cus, index | where [subquery: _sourceCategory=search "error while retrying to deploy index"!info
          | parse ",indexName='*-*'" as cus, index         | count by index // Ignore cases where retry might have happened.
@@ -379,7 +379,7 @@ _sourceCategory=search "error while retrying to deploy index"
 
 The following search allows a security analyst to track logs related to a malicious IP address that was flagged by Amazon GuardDuty and also by a [threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/) feed. The subquery is returning the field `src_ip` with the IP addresses deemed as threats to the parent query, note that the keywords option was not used so the parent query will expect a field src_ip to exist. The results will include logs from the weblogs sourceCategory that have a `src_ip` value that was deemed a threat from the subquery.
 
-```sql
+```sumo
 _sourceCategory=weblogs
 [subquery:_sourceCategory="Labs/SecDemo/guardduty" "EC2 Instance" "communicating on an unusual server port 22"
 | json field=_raw "service.action.networkConnectionAction.remoteIpDetails" as remoteIpDetails
@@ -391,7 +391,7 @@ _sourceCategory=weblogs
 | compose src_ip]
 ```
 <!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
-```sql
+```sumo
 _sourceCategory=weblogs
 [subquery:_sourceCategory="Labs/SecDemo/guardduty" "EC2 Instance" "communicating on an unusual server port 22"
 | json field=_raw "service.action.networkConnectionAction.remoteIpDetails" as remoteIpDetails
@@ -412,7 +412,7 @@ Updates to the newer version of [Lookup Tables](/docs/search/lookup-tables) are 
 
 This query identifies specific sessions and correlates them to status messages across services from different data sources:
 
-```sql
+```sumo
 _sourceCategory=katta
  [subquery:(_sourceCategory=stream explainJSONPlan.ETT) error
       | where !(statusmessage="Finished successfully" or statusmessage="Query canceled" or isNull(statusMessage))
@@ -427,7 +427,7 @@ _sourceCategory=katta
 This query identifies transaction errors and correlates them with
 shipping information from another data source:
 
-```sql
+```sumo
 [subquery: _source=sourceA and ("Transaction Error")
 | parse "message=* )" as MsgTxt
 | parse "transaction *\\\"" as trans_id
@@ -458,7 +458,7 @@ These concepts are covered in [How to Build a Search](/docs/search/get-started-w
 
 * If the child query is used to build the filter clause, try having the filter clause close to the search expression (rather than having it further down in the query to improve performance. Your query should be more like the one on the right.
 
-    ```sql title="Less Efficient"
+    ```sumo title="Less Efficient"
     query scope
     | operator 1
     | operator 2
@@ -468,7 +468,7 @@ These concepts are covered in [How to Build a Search](/docs/search/get-started-w
     | some more operations
     ```
 
-    ```sql title="More Efficient"
+    ```sumo title="More Efficient"
     query scope
     | subquery
     | operator 1

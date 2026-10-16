@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 We recommend transitioning to a our newer [Flex Plan](/docs/manage/manage-subscription/sumo-logic-flex-accounts/) for the newest features and enhanced functionality. 
 :::
 
-This page has information about upgrading a Cloud Flex Legacy plan, which has the following [account types](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account): Free, Trial, Professional, and Enterprise.
+This page has information about upgrading a Cloud Flex Legacy plan, which has the following [account types](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/#cloud-flex-legacy---account-types): Free, Trial, Professional, and Enterprise.
 
 ## Upgrade options for legacy accounts
 
@@ -40,14 +40,14 @@ It depends on your current account type:
     * **Metrics**. Enter an estimate of the metrics to be ingested daily, in data points per minute (DPM.)
 1. **Billing Frequency.** Click the radio button next to **Annually** or **Monthly**. 
 1. Click **Upgrade**.
-1. The page refreshes to display the **Payment Method** step.If you've previously upgraded you may choose to use the existing payment method and click **Next**.
+1. The page refreshes to display the **Payment Method** step. If you've previously upgraded you may choose to use the existing payment method and click **Next**.
 1. To add a new payment method, click **Use a New Credit Card**, enter the credit card information you'd like Sumo Logic to bill, and click **Submit**. <br/><img src={useBaseUrl('img/manage/subscriptions/step-2-cloudflex.png')} alt="New credit card information" style={{border: '1px solid gray'}} width="800" />
 1. The page refreshes to show the **Confirm Upgrade** step.<br/><img src={useBaseUrl('img/manage/subscriptions/order-summary.png')} alt="Order summary" style={{border: '1px solid gray'}} width="800" />
 1. Read the Service Level Agreements, then click **I have read and agree to the Service Level Agreements** to continue.
 1. Click **Confirm** to complete the upgrade. After you click **Confirm**, the credit card you provided to Sumo Logic is charged.
 1. The upgrade is processed, then a **Congratulations** screen appears. Click **Finish**.
 
-If you have any issues, or if you do not see a charge on your credit card within 48 hours, contact [support@sumologic.com](mailto:support@sumologic.com).
+If you have any issues, or if you do not see a charge on your credit card within 48 hours, [contact Support](https://support.sumologic.com/support/s/).
 
 :::note
 The price shown in the screenshots above may not reflect the actual current price.

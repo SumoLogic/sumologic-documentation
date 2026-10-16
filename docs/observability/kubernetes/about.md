@@ -7,7 +7,7 @@ description: Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get t
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes-explorer.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/operations/kubernetes-explorer.png')} alt="Kubernetes Explorer icon" width="40"/>
 
 With the Sumo Logic Kubernetes Solution, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. You can:
 
@@ -34,7 +34,7 @@ The Sumo Logic Kubernetes Solution provides observability into all the critical 
 
 The critical areas for monitoring in Kubernetes include the control plane, individual nodes, and pods. The following graphic provides a high-level view of the Kubernetes cluster architecture.
 
-<img src={useBaseUrl('img/kubernetes/Intro_K8s_architecture.png')} alt="Intro to Kubernetes architecture" style={{border: '1px solid gray'}} width="600>" />
+<img src={useBaseUrl('img/kubernetes/Intro_K8s_architecture.png')} alt="Intro to Kubernetes architecture" style={{border: '1px solid gray'}} width="600" />
 
 ### Control plane
 

@@ -13,7 +13,7 @@ Despite all of these services being a part of AWS, troubleshooting across differ
 
 The Sumo Logic AWS Observability solution analyzes data across key AWS services and accounts, establishes activity baselines, and determines causes for application incidents and high deviation events.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch the following micro lesson to learn about our AWS Observability solution.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/fz0hceixkc?web_component=true&seo=true&videoFoam=false"
@@ -46,10 +46,6 @@ Sumo Logic provides an AWS CloudFormation templates (CFN) and Terraform scripts 
 
 * **Sumo Logic AWS Observability** supports the following AWS services: EC2, ECS, Amazon RDS, Amazon ElastiCache, Amazon API Gateway, AWS Lambda, Amazon DynamoDB, Classic ELB, Application ELB, Network ELB, Amazon SNS, and Amazon SQS.
 
-After you have [prepared](/docs/observability/aws/deploy-use-aws-observability/before-you-deploy) and [deployed](/docs/observability/aws/deploy-use-aws-observability) the solution, you can [add and configure additional AWS services](/docs/observability/aws/other-configurations-tools/add-new-aws-service) as your infrastructure grows.
-
-<img src={useBaseUrl('img/observability/AWS_Observ_architecture.jpeg')} alt="AWS observability architecture" style={{border: '1px solid gray'}} width="800" />
-
 ### Data collection and dashboards
 
 Sumo Logic collects logs, metrics, and events including AWS EC2 Host Metrics, CloudWatch logs and metrics, and CloudTrail logs. The collected data streams are enriched with the following metadata:
@@ -61,11 +57,11 @@ Sumo Logic collects logs, metrics, and events including AWS EC2 Host Metrics, Cl
 
 This new metadata can also be used in ad hoc logs and metrics searches.
 
-<img src={useBaseUrl('/img/observability/AWS_Observability_Collection.png')} alt="AWS_Observability_Collection"/>
+<img src={useBaseUrl('/img/observability/AWS_Observability_Collection.png')} alt="AWS_Observability_Collection" width="800"/>
 
-You can navigate from overview dashboards of the infrastructure and drill down into account, AWS Region, service, or entity views. The intuitive navigation enables you to quickly resolve issues, minimize downtime, and improve system availability. See [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards) for details.
+You can navigate from overview dashboards of the infrastructure and drill down into account, AWS Region, service, or entity views. The intuitive navigation enables you to quickly resolve issues, minimize downtime, and improve system availability. See [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards) for details.
 
-<img src={useBaseUrl('/img/observability/Expand_Namespace.png')} alt="Expand_Namespace"/>
+<img src={useBaseUrl('/img/observability/Expand_Namespace.png')} alt="Expand_Namespace" width="800"/>
 
 ### Work with AWS account hierarchies
 

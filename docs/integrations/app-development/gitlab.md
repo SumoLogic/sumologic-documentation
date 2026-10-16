@@ -7,7 +7,7 @@ description: Provides you a complete overview of your GitLab’s builds, deploym
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="GitLab icon" width="75"/>
 
 The Sumo Logic App for GitLab provides you a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits. The integration listens for GitLab events and uses the event data to populate the pre-configured Dashboards.
 
@@ -35,7 +35,7 @@ For more information about log messages, see [GitLab documentation](https://docs
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 
-```sql
+```sumo
 _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge Request Hook"
 |json "object_attributes.state" as merge_request_state
 | where merge_request_state="opened"
@@ -205,3 +205,7 @@ Use this dashboard to:
 * Identify the Modified, Added, and Removed files by commit id in chronological order. You can use filters to drill down to a more detailed view.
 
 <img src={useBaseUrl('img/integrations/app-development/Gitlab-Commits.png')} alt="GitLab" />
+
+## Additional resources
+
+- Use the [GitLab Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/gitlab/) to automate response actions directly from Cloud SOAR playbooks.

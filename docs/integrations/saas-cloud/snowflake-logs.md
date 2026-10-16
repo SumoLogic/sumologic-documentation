@@ -7,7 +7,7 @@ description: The Sumo Logic app for Snowflake Logs allows you to gain real-time 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/snowflake.png')} alt="Snowflake icon" width="150"/>
 
 The Sumo Logic app for Snowflake Logs offers a powerful analytics solution designed to help you fully leverage the Snowflake cloud data platform. Known for its scalability and advanced data warehousing capabilities and analytics, Snowflake supports data-driven decision-making at scale. This app provides real-time visibility into key metrics, query performance, and the overall health of Snowflake environments. By analyzing Snowflake logs, you can monitor system performance, track login activity, optimize data management, and maintain better control over your data warehouse.
 
@@ -129,9 +129,9 @@ This app uses Sumo Logic’s [Snowflake Logs Source](/docs/send-data/hosted-coll
 
 ### Sample queries
 
-```sql title="Users Login Over Time"
+```sumo title="Users Login Over Time"
 _sourceCategory="Labs/SnowflakeLogs"
-| Json "REPORTED_CLIENT_TYPE", "USER_NAME", "FIRST_AUTHENTICATION_FACTOR", "SECOND_AUTHENTICATION_FACTOR", "AUTHENTICATION_METHOD", "SESSION_ID", "STAGE_ID", "STAGE_TYPE", "TRANSFER_TYPE", "CLIENT_IP", "CREATED_ON", "ROLE", "GRANTED_TO", "GRANTEE_NAME", "GRANTED_BY", "QUERY_TEXT", "QUERY_TYPE", "ROLE_NAME", "EXECUTION_STATUS", "EXECUTION_TIME" as client_type, user_name, first_authentication, second_authentication, authentication_method, session_id, stage_id, stage_type, data_transfer_type, ip_address, date, role, granted_to, grantee_name, granted_by, query_text, query_type, role_name, status, execution_time nodrop
+| json "REPORTED_CLIENT_TYPE", "USER_NAME", "FIRST_AUTHENTICATION_FACTOR", "SECOND_AUTHENTICATION_FACTOR", "AUTHENTICATION_METHOD", "SESSION_ID", "STAGE_ID", "STAGE_TYPE", "TRANSFER_TYPE", "CLIENT_IP", "CREATED_ON", "ROLE", "GRANTED_TO", "GRANTEE_NAME", "GRANTED_BY", "QUERY_TEXT", "QUERY_TYPE", "ROLE_NAME", "EXECUTION_STATUS", "EXECUTION_TIME" as client_type, user_name, first_authentication, second_authentication, authentication_method, session_id, stage_id, stage_type, data_transfer_type, ip_address, date, role, granted_to, grantee_name, granted_by, query_text, query_type, role_name, status, execution_time nodrop
 
 // global filters
 | where isNull(stage_type) or stage_type matches "{{stage_type}}"
@@ -148,9 +148,9 @@ _sourceCategory="Labs/SnowflakeLogs"
 | fillmissing timeslice
 ```
 
-```sql title="Breakdown by Session Closed Reason"
+```sumo title="Breakdown by Session Closed Reason"
 _sourceCategory="Labs/SnowflakeLogs"
-| Json "AUTHENTICATION_METHOD", "SESSION_ID", "CLOSED_REASON", "TARGET_CLOUD", "SOURCE_CLOUD", "REPORTED_CLIENT_TYPE", "CLIENT_IP", "IS_SUCCESS", "USER_NAME", "ERROR_CODE", "ERROR_MESSAGE", "TRANSFER_TYPE", "SOURCE_REGION", "TARGET_REGION", "BYTES_TRANSFERRED" as authentication_method, session_id, session_closed_reason, target_cloud, source_cloud, client_type, ip_address, is_success, user_name, error_code, error_message, data_transfer_type, source_region, target_region, bytes_transferred nodrop
+| json "AUTHENTICATION_METHOD", "SESSION_ID", "CLOSED_REASON", "TARGET_CLOUD", "SOURCE_CLOUD", "REPORTED_CLIENT_TYPE", "CLIENT_IP", "IS_SUCCESS", "USER_NAME", "ERROR_CODE", "ERROR_MESSAGE", "TRANSFER_TYPE", "SOURCE_REGION", "TARGET_REGION", "BYTES_TRANSFERRED" as authentication_method, session_id, session_closed_reason, target_cloud, source_cloud, client_type, ip_address, is_success, user_name, error_code, error_message, data_transfer_type, source_region, target_region, bytes_transferred nodrop
 
 // global filters
 | where isNull(session_closed_reason) or session_closed_reason matches "{{session_closed_reason}}"

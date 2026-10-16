@@ -82,7 +82,7 @@ Failures could be related to the Scheduled Search query. Check the following:
 
 Failures can be seen across many Scheduled Searches due to back-end infrastructure issues at Sumo Logic. In this case, wait until Sumo Logic service is restored and test your query for normal performance.
 
-* Check http://status.sumologic.com for outages impacting multiple customers and specific functionalities.
+* Check https://status.sumologic.com for outages impacting multiple customers and specific functionalities.
 * Sumo Logic reports Scheduled Search failures in the [Audit Index](/docs/manage/security/audit-indexes/audit-index). Determine if many Scheduled Search failures occurred at the same time of your failure. In this case, the Sumo Logic operations team is alerted to infrastructure issues and will address them promptly. 
 
 ### Other issues
@@ -137,6 +137,11 @@ Sumo Logic has an email quota allowing 100 emails to be sent per day per schedul
 
 The quota assumes that no more than 5 alert emails will be triggered per hour or an alert every 12 minutes on average. Alerts are used as an exception and it is unlikely to find email Alerts being sent at a rate higher than 5 emails per hour.
 
+## Why is the Message (_raw) field empty in my Save to Index results?
+
+For aggregate queries (for example, `... | timeslice 1m | count by batch, parsedfield`) saved via Save to Index, the **Message (`_raw`)** field is no longer populated. It previously held a synthesized, comma-separated string of the row's values (for example, `Count=1,batch=3,parsedfield=testlog_HwMoOdtQ00`) and that behavior has been removed.
+
+No data is lost and all values remain available in their named fields (`_count`, `batch`, `parsedfield`, etc.). If your queries parse or search `_raw`/Message for this data, update them to reference the named fields directly. See [Save to Index Limitations](/docs/alerts/scheduled-searches/save-to-index/#limitations) for details.
 
 ## What happens when a Scheduled Search is suspended?
 

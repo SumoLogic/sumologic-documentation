@@ -23,8 +23,8 @@ A record contains the information from an incoming message, transformed and enha
 
 For each incoming message, Cloud SIEM creates a set of key-value pairs that reflect all of the information in the message. To accomplish this, Cloud SIEM provides these ingestion routes:
 
-* **C2C Connector**. Sumo Logic’s Cloud-to-Cloud (C2C) Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. For a list of available C2C collectors, see [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
-* **Sumo Logic Parser**. For other data sources, the Sumo Logic’s built-in parsers that extract key-value pairs from messages. To see currently available parsers, go to Manage **Data > Logs > Parsers** in the Sumo Logic UI.  
+* **C2C Connector**. Sumo Logic’s Cloud-to-Cloud (C2C) Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. For a list of available C2C collectors, see [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
+* **Sumo Logic Parser**. For other data sources, the Sumo Logic’s built-in parsers that extract key-value pairs from messages. To see currently available parsers, go to Manage **Data > Logs > Parsers** in the Sumo Logic UI. For more information about parsers, see [Parser Editor](/docs/cse/schema/parser-editor/). 
 
 For more information on these alternatives, see [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices).
 
@@ -42,10 +42,9 @@ What’s the benefit of mapping? It results in records that use a common (standa
 
 [Username and hostname normalization](/docs/cse/schema/username-and-hostname-normalization/) is the process of transforming the value of record attributes that contain usernames and hostnames into a standard format. The normalized value replaces the non-normalized value in a record. The non-normalized values of hostname and usernames are retained in a `_raw` field in the record.
 
-Why normalize? Assume Cloud SIEM receives messages with an email-type field "bob@bobsbaitshop.com" and username-type field  "bob". We can use normalization to transform "bob@bobsbaitshop.com" to "bob", allowing the username and email to be correlated together.
+Why normalize? Assume Cloud SIEM receives messages with an email-type field `bob@bobsbaitshop.com` and username-type field  `bob`. We can use normalization to transform `bob@bobsbaitshop.com` to `bob`, allowing the username and email to be correlated together.
 
-Normalization allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.  
-The values of the following schema attributes are normalized into a standard format, which replaces the non-normalized field value in the record.
+Normalization allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form. The values of the following schema attributes are normalized into a standard format, which replaces the non-normalized field value in the record:
 
 * `device_hostname`
 * `dstDevice_hostname`
@@ -53,7 +52,7 @@ The values of the following schema attributes are normalized into a standard for
 * `srcDevice_hostname`
 * `user_username`
 
-## Entity Lookup Table processing
+## Entity lookup table processing
 
 [Entity lookup tables](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table) allow you to define your own hostname and username normalization rules. After the normalization described in the previous step is performed, any normalization you’ve configured in entity lookup tables is applied. 
 
@@ -79,9 +78,9 @@ The name of each added attribute is formed by appending an underscore plus a str
 
 Cloud SIEM’s match list feature allows you to leverage lists of important identifiers that, if they exist in an incoming message, indicate the message should be exempt from ordinary rule processing, or treated differently in some way. Typically, match lists are used to define “allow lists” of items, like IP addresses, URLs, and hostnames. Many Cloud SIEM rules reference match lists; the lists are predefined, and you populate them with indicators that exist in your environment. 
 
-For example, vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. A Cloud SIEM analyst can populate a match list called “vuln_scanners” that contains the IP addresses of your scanners.
+For example, vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. A Cloud SIEM analyst can populate a match list called `vuln_scanners` that contains the IP addresses of your scanners.
 
-Cloud SIEM compares the contents of every message to your match lists. When it finds a match, it appends fields two fields to the record: `listMatches` and `matchedItems`. `listMatches` contains the names of lists that were matched against the record, and  `matchedItems` contains the actual key-value pairs that were matched. You can take advantage of the appended data in searches and rules. So, a Cloud SIEM rule can see from a record that matches a rule condition that the IP address in the record is on the  “vuln_scanners” match list, and thus know that the rule shouldn’t fire. For more information, see [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list).
+Cloud SIEM compares the contents of every message to your match lists. When it finds a match, it appends fields two fields to the record: `listMatches` and `matchedItems`. `listMatches` contains the names of lists that were matched against the record, and  `matchedItems` contains the actual key-value pairs that were matched. You can take advantage of the appended data in searches and rules. So, a Cloud SIEM rule can see from a record that matches a rule condition that the IP address in the record is on the  `vuln_scanners` match list, and thus knows that the rule shouldn’t fire. For more information, see [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list).
 
 ## Suppressed list processing
 

@@ -9,8 +9,6 @@ Based on user feedback, we're introducing several changes to the Sumo Logic Kube
 
 This page describes the major changes and the necessary migration steps.
 
-## Important changes
-
 ## Prometheus 3.0
 
 Prometheus 3.0 includes several breaking changes. Learn more about those changes and the migration guide in the [documentation](https://prometheus.io/docs/prometheus/latest/migration/).
@@ -165,3 +163,26 @@ sumologic:
 Routing configurations are still defined under `sumologic.logs.otelcol.routing.table`.
 
 Internally, Sumo Logic Helm Chart will convert this configuration into Routing connector configurations.
+
+## Metrics Server source chart changed
+
+Starting from version 4.26.0, We have changed our Bitnami based metrics server to the open source Metrics Server.
+
+### How to upgrade
+
+The default configurations for metrics-server has been changed. If you have overridden any values under metrics-server.* in your local values.yaml, please migrate them to new naming convention.
+Example:
+```yaml
+metrics-server:
+  extraArgs: --types=InternalIP
+```
+
+Needs to be moved to metrics-server.args
+
+```yaml
+metrics-server:
+  args: --types=InternalIP
+```
+
+There are some other configs changed in new metrics server, please refer metrics-server.* in [readme](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/README.md)
+

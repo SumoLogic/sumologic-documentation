@@ -19,7 +19,7 @@ You configure Telegraf in the `telegraf.conf` configuration file, which you can 
 You configure the Redis input plugin in the Telegraf configuration file
 like this:
 
-```sql
+```sumo
 -- Read Redis's basic status information
 [[inputs.redis]]
  -- specify servers via a url matching:
@@ -106,7 +106,7 @@ java -jar ./jolokia-jvm-1.6.2-agent.jar start 6
 
 You configure the Jolokia input plugin in the Telegraf configuration file like this:
 
-```sql
+```sumo
 urls = ["http://127.0.0.1:8778/jolokia"]
 
   [[inputs.jolokia2_agent.metric]]

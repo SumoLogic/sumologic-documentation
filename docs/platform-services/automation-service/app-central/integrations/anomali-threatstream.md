@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/anomali-threatstream.png')} alt="anomali-threatstream" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/anomali-threatstream.png')} alt="Anomali ThreatStream icon" width="100"/>
 
-***Version: 1.2  
-Updated: Jun 27, 2023***
+***Version: 1.3  
+Updated: April 13, 2026***
 
 Anomali ThreatStream (previously known as ThreatStream Optic) is Threat Intelligence Management that automates the collection and processing of raw data, filters out the noise, and transforms it into relevant, actionable threat intelligence for security teams. This integration allows you to pull threat intelligence from the ThreatStream platform, import observables into ThreatStream, manage threat model entities and investigations, and so on.
 
@@ -43,6 +43,8 @@ For information about Anomali ThreatStream, see [Anomali documentation](https://
 
 ## Change Log
 
-* November 10, 2022 - First upload
-* June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
-* June 27, 2023 (v1.2) - Removed leading/trailing spaces
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.3 | April 13, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | June 26, 2023 | Updated the integration with environmental variables. |
+| | November 10, 2022 | Initial release of the Anomali ThreatStream integration. |

@@ -49,7 +49,7 @@ The default way of generating an insight for each entity may result in custom in
 
 In that case, under **Strict Signal Configuration**, select **Only include the signals defined in this custom insight**. This generates insights only on those signals defined in your custom insight. Any additional signals related to the applicable entity are excluded. 
 
-<img src={useBaseUrl('img/cse/strict-signal-configuration-checkbox.png')} alt="Strict Signal Configuration checkbox" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('img/cse/strict-signal-configuration-checkbox.png')} alt="Strict Signal Configuration check box" style={{border: '1px solid gray'}} width="400"/>
  
 ## Create a custom insight
 

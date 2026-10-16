@@ -7,7 +7,7 @@ description: Partner Ecosystem Apps are third-party Sumo Logic apps for partners
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="60"/>
+<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Partner ecosystem icon" width="60"/>
 
 Sumo Logic Partner Ecosystem Apps are provided and supported by our partner network. The following links provide collection, installation, and dashboard information on working with these apps.
 * [Aqua Security](https://github.com/aquasecurity/Sumo-Logic-App/)  

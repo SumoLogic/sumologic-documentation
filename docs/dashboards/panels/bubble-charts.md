@@ -17,7 +17,7 @@ You can modify the fields used for each axis as needed.
 
 For example, in the following query `logins` is the Z dimension and will be displayed as the value of each bubble. The fields `latitude` and `longitude` can be used as dimensions.
 
-```sql
+```sumo
 _sourceCategory=service "message=User logged in" remote_ip
 | parse "[remote_ip=*]" as remote_ip
 | lookup latitude, longitude, city, state from geo://location on ip = remote_ip

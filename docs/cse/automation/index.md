@@ -1,7 +1,7 @@
 ---
 slug: /cse/automation
 title: Cloud SIEM Automation
-description: Learn how to configure automations to create notifications and enrichments in Cloud SIEM.
+description: Use the Sumo Logic Automation Service to configure Cloud SIEM automations that run playbooks to add enrichments and send notifications for insights and entities.
 keywords:
   - automation
 ---

@@ -24,7 +24,7 @@ Switching to the Intel 471 global threat feed from CrowdStrike will introduce di
 
 Importantly, the intel vendors themselves control what appears in these "raw" fields, and each vendor prioritizes different aspects of the intel they provide. For example, CrowdStrike often includes CVEs where applicable, whereas Intel 471 bundles geo-IP data with some of its entries. CrowdStrike reports the publication timestamp of its indicators, whereas Intel 471 reports the recommended expiration timestamp. As such, Sumo Logic strongly encourages customers to review their searches and dashboards for "raw" field handling, and to modify them appropriately.
 
-Customers can experiment with the Intel 471 feed by referencing the `sumo://threat/i471` lookup table as a parameter to the [`lookup` search operator](/docs/search/search-query-language/search-operators/lookup). (It isn't possible to do the same for `threatip`, though its `raw_threat` field is the same as the `lookup` operator's `raw` field.)  
+Customers can experiment with the Intel 471 feed by referencing the `sumo://threat/i471` lookup table as a parameter to the [`lookup` search operator](/docs/search/search-query-language/search-operators/lookup). (It is not possible to do the same for `threatip`, though its `raw_threat` field is the same as the `lookup` operator's `raw` field.)  
 
 <!--
 On April 30, 2025, the global CrowdStrike feed will be fully replaced by Intel 471 in the Sumo Logic platform, and references to the old feed will automatically be updated to point to the new feed.
