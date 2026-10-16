@@ -882,16 +882,21 @@ Protecting our trademarks is important. Failing to mark a trademarked term can p
 
 Use the trademark (™) or registered (®) symbol on the first reference to a trademarked term on a page, then drop it. The following terms must use the symbol shown.
 
-* LogReduce®
+Currently, LogReduce® is the only trademarked term that is used in Sumo Logic docs. For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
 
 Use trademarked terms as adjectives, not as nouns or verbs. Never use them in the plural or possessive form.
 
-* Correct: Use the LogReduce® feature to reduce log volume.
-* Incorrect: Use LogReduce® to reduce log volume.
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Use the LogReduce® feature to reduce log volume. | Use LogReduce® to reduce log volume. |
 
-Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use a Sumo Logic product or feature name in the plural or possessive form, whether trademarked or not. For example, write "the LogReduce values-details operator", not "LogReduce's values-details operator"; write "the Sumo Logic OpenTelemetry Collector", not "Sumo Logic's OpenTelemetry Collector". Generic possessives referring to the company are acceptable ("Sumo Logic's platform" is fine).
+Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use a Sumo Logic product or feature name in the plural or possessive form, whether trademarked or not. For example, write "the Sumo Logic OpenTelemetry Collector", not "Sumo Logic's OpenTelemetry Collector".
 
-For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| the LogReduce values-details operator | LogReduce's values-details operator |
+
+Generic possessives referring to the company are acceptable ("Sumo Logic's platform" is fine).
 
 ## Preview releases
 

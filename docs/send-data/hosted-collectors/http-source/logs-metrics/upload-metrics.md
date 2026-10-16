@@ -29,7 +29,7 @@ Based on the Content-Type header specified, Sumo Logic parses and interprets eac
 |:--|:--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon 2.0](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2` |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo Logic won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo Logic](upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo Logic won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo Logic](upload-metrics.md#prometheus-metrics-not-accepted-by-sumo-logic). |
 
 :::note
 For information about metric formats, see [Metric Formats](/docs/metrics/introduction/metric-formats).
