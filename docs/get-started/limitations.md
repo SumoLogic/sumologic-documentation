@@ -75,7 +75,7 @@ This page lists the maximum limits and quotas for various features, services, an
 - **[Query length](/docs/search/get-started-with-search/build-search/keyword-search-expressions)**. Up to 15,000 characters.
 - **[Results limit](/docs/search/index)**. Only the first 100,000 messages are included.
 - **[Surrounding messages](/docs/search/index)**. Also limited to 100,000.
-- **Search Job API limit parameter**. Max 10,000 records.
+- **[Search Job API limit parameter](/docs/api/search-job)**. Max 10,000 records.
 - **[Pinned searches](/docs/get-started/sumo-logic-ui-classic)**. Up to 10 per user.
 
 ### Subquery limits
@@ -100,7 +100,7 @@ This page lists the maximum limits and quotas for various features, services, an
 
 ### Concurrent search jobs
 
-- **[Active concurrent search jobs](/docs/manage/partitions/data-tiers/searching-data-tiers)**. Up to 200 per organization (Search Job API).
+- **[Active concurrent search jobs](/docs/api/search-job/#rate-limit-throttling)**. Up to 200 per organization.
 
 ### Metric query limits
 
