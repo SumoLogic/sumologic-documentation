@@ -1,11 +1,11 @@
 ---
 id: sumo-logic-limits
-title: Sumo Logic Limits and Quotas Reference
+title: Limits and Quotas
 sidebar_label: Limits and Quotas
-description: A comprehensive reference of quotas, limitations, and maximum values across Sumo Logic services.
+description: A reference of quotas, limitations, and maximum values across Sumo Logic services.
 ---
 
-This page lists the baseline limits and quotas for various features, services, and components within Sumo Logic.
+This page lists the maximum limits and quotas for various features, services, and components within Sumo Logic.
 
 ## Alerts and monitors
 
@@ -21,7 +21,7 @@ This page lists the baseline limits and quotas for various features, services, a
 | Free Trial               | 50               |
 
 - **[Query length](/docs/alerts/monitors/overview/#general)**. Up to 15,000 characters.
-- **[Execution delay](/docs/alerts/monitors/overview/#general)**. 2 minutes (to allow for ingestion lag).
+- **[Execution delay](/docs/alerts/monitors/overview/#log-monitors)**. 2 minutes (to account for ingestion delays).
 
 ### Metric monitors
 
@@ -31,15 +31,15 @@ This page lists the baseline limits and quotas for various features, services, a
 | Essentials, Professional | 500                 |
 | Free Trial               | 50                  |
 
-- **[Aggregate monitor](/docs/alerts/monitors/overview/#general)***. Can evaluate up to 15,000 time series.
+- **[Aggregate monitor](/docs/alerts/monitors/overview/#general)**. Can evaluate up to 15,000 time series.
 - **[Non-aggregate monitor](/docs/alerts/monitors/overview/#general)**. Can evaluate up to 3,000 time series.
 - **[Execution delay](/docs/alerts/monitors/overview/#metrics-monitors)**. 1 minute.
 - **[Query limit](/docs/alerts/monitors/overview/#general)**. Up to 6 queries.
 
 ### Notification grouping
 
-- **[Log monitors](/docs/alerts/monitors/overview/#alerts)**. Always group notifications.
-- **[Metric monitors](/docs/alerts/monitors/overview/#alerts)**. Can group notifications, resolving when all time series return to normal.
+- [Log monitors always group notifications.](/docs/alerts/monitors/overview/#alerts)
+- [Metric monitors can group notifications, resolving when all time series return to normal.](/docs/alerts/monitors/overview/#alerts)
 
 ### Unsupported features in monitors
 
@@ -48,7 +48,7 @@ This page lists the baseline limits and quotas for various features, services, a
 - **[Frequent](/docs/manage/partitions/data-tiers) and [Infrequent](/docs/manage/partitions/data-tiers) data tiers**. Not supported.
 - **[Save to Index](/docs/alerts/scheduled-searches/save-to-index) and [Save to Lookup](/docs/alerts/scheduled-searches/save-to-lookup)**. Not supported.
 - **[Search templates](/docs/search/get-started-with-search/build-search/search-templates.md)**. Not supported.
-- **[`timeshift` metrics operator](/docs/metrics/metrics-operators/timeshift)**. Not supported in Metric Monitors.
+- **[`timeshift` metrics operator](/docs/metrics/metrics-operators/timeshift)**. Not supported in Metric Monitors.
 
 ### Alert response
 
@@ -58,92 +58,92 @@ This page lists the baseline limits and quotas for various features, services, a
 
 ### Scheduled searches
 
-- **Maximum searches**. Up to 6,000 per account.
-- **Timeout**. One-third of search range (min 3 minutes, max 120 minutes).
-- **Emails per search**. Up to 120 emails per day.
+- **[Maximum searches](/docs/alerts/scheduled-searches/schedule-search)**. Up to 6,000 per account.
+- **[Timeout](/docs/alerts/scheduled-searches/faq/#how-do-i-prevent-my-scheduled-search-from-timing-out)**. One-third of search range (min 3 minutes, max 120 minutes).
+- **[Emails per search](/docs/alerts/scheduled-searches/schedule-search)**. Up to 120 emails per day.
 - **Webhook connections**. Limited to 512 records.
 - **Row extraction**. Limited to 100 unique rows per trigger.
 - **Infrequent Data Tier**. Not supported.
 
-## Collectors and Sources
+## Collectors and sources
 
-- Maximum number of collector per organization is 10,000.
-- A single installed collector can handle up to 15,000 events per second.
-- Log messages greater than 64KB are truncated.
-- A collector or source can have up to 10 fields.
-- A collector can have up to 1,000 sources.
-- Multiline logs are limited to 2000 lines or 512KB.
-- Maximum of 100 processing rules per source.
-- The number of Cloud-to-Cloud Sources is limited to 20 for free accounts, and 50 for all other accounts.
-- You are warned when you reach 80% of the Cloud-to-Cloud Sources limit (16 Sources for free accounts, and 40 Sources for other accounts).
+- **[Maximum collectors per organization](/docs/send-data/installed-collectors/configuration)**. Up to 10,000.
+- **[Sources per collector](/docs/send-data/installed-collectors/configuration)**. Up to 1,000.
+- **[Processing rules per source](/docs/send-data/installed-collectors/configuration)**. Up to 100.
+- **[Events per second](/docs/send-data/installed-collectors/configuration)**. A single installed collector can handle up to 15,000 events per second.
+- **Log message size**. Messages greater than 64 KB are truncated.
+- **[Fields per collector or source](/docs/manage/fields)**. Up to 10.
+- **[Multiline logs](/docs/send-data/use-json-configure-sources/json-parameters-installed-sources)**. Limited to 2,000 lines or 512 KB.
 
-## Log Search
+### Cloud-to-Cloud sources
 
-- **Query length**. Up to 15,000 characters.
-- **Results limit**. Only the first 100,000 messages are included. If your time range includes more than 100,000 messages, your source message may not be highlighted in the returned results.
-- **Surrounding messages**. Also limited to 100,000. If your time range includes more than 100,000 messages, your source message may not be included in your returned results.
+- **[Maximum Cloud-to-Cloud Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. Limited to 20 for free accounts, and 50 for all other accounts.
+- **Warning threshold**. You are warned when you reach 80% of the limit (16 sources for free accounts, 40 for other accounts).
+
+## Log search
+
+- **[Query length](/docs/search/get-started-with-search/build-search/keyword-search-expressions)**. Up to 15,000 characters.
+- **[Results limit](/docs/search/index)**. Only the first 100,000 messages are included.
+- **[Surrounding messages](/docs/search/index)**. Also limited to 100,000.
 - **Search Job API limit parameter**. Max 10,000 records.
 
 ### Subquery limits
 
-- Up to 10,000 unique results (rows) from the child query.
-- Up to 100MB of memory to return those results.
-- Subqueries are not supported in:
-    - Auto-refresh dashboards.
-    - Field Extraction Rules.
-    - Scheduled Views.
+- **[Maximum results from child query](/docs/search/subqueries)**. Up to 10,000 unique results (rows).
+- **[Memory limit](/docs/search/subqueries)**. Up to 100 MB to return those results.
+- **[Unsupported in subqueries](/docs/search/subqueries)**. Auto-refresh dashboards, Field Extraction Rules, and Scheduled Views.
 
 ### Metric query limits
 
-|Property|Limit|Error Message|
+| Property | Limit | Error Message |
 |:---|:---|:---|
-|Query Rows|6|Too many query rows ([number of rows]). The limit is: [limit].|
-|Query String Length|1500 chars|Too long ([queryLength] characters). The limit is: [limit].|
-|Max Number of Operators|60|Too many operators: [number of operators]. The maximum number of possible operators is: [limit].|
-|Max Number of Selectors|50|Too many selectors: [number of selectors]. The maximum number of possible selectors is: [limit].|
-|Max Time Range|1000d|The given time range was invalid.|
-|Max Quantization Interval|30d|The given quantization was too big.|
-|Max Timeshift|1000d|The given timeshift was too big.|
+| Query Rows | 6 | Too many query rows ([number of rows]). The limit is: [limit]. |
+| Query String Length | 1,500 chars | Too long ([queryLength] characters). The limit is: [limit]. |
+| Max Number of Operators | 60 | Too many operators: [number of operators]. The maximum number of possible operators is: [limit]. |
+| Max Number of Selectors | 50 | Too many selectors: [number of selectors]. The maximum number of possible selectors is: [limit]. |
+| Max Time Range | 1,000d | The given time range was invalid. |
+| Max Quantization Interval | 30d | The given quantization was too big. |
+| Max Timeshift | 1,000d | The given timeshift was too big. |
 
 ## Platform service
 
-- **Playbook actions**. Limited to 350 actions per hour per organization.
+- **[Playbook actions](/docs/cse/automation/automations-in-cloud-siem)**. Limited to 350 actions per hour per organization.
 
 ## Cloud SIEM
 
-- **Signal limits**. Up to 100,000 signals/hour or 1 million/24 hours.
+- **[Signal limits](/docs/cse/rules/rules-status)**. Up to 100,000 signals/hour or 1 million/24 hours.
 
 ## Field extraction
 
-- **Field name limit**. Up to 200 Field Extraction Rules per org.
-- **Field name (key) length**. Up to 255 characters.
-- **Field value length**. Up to 200 characters.
-- **Custom field limit**. Up to 400 for Enterprise and Enterprise Suite users.
-- **Shared quota**. Field Extraction Rule and metadata fields share the 200-field limit.
+- **[Field Extraction Rules per org](/docs/manage/fields)**. Up to 200.
+- **[Field name (key) length](/docs/manage/fields)**. Up to 255 characters.
+- **[Field value length](/docs/manage/fields)**. Up to 200 characters.
+- **[Custom field limit](/docs/manage/fields)**. Up to 400 for Enterprise and Enterprise Suite users.
+- **[Shared quota](/docs/manage/fields)**. Field Extraction Rule and metadata fields share the 200-field limit.
 - **Subqueries**. Not supported.
-- **HTTP request field limit**. Up to 30 fields.
+- **[HTTP request field limit](/docs/manage/fields)**. Up to 30 fields.
 
 ## Partitions
 
-- **Maximum partitions**. Up to 50 per account.
-- **Optimal size**. Between 1%–30% of daily ingest. Ideally, with less than 5 TB data per day flowing into each.
+- **[Maximum partitions](/docs/manage/partitions)**. Up to 50 per account.
+- **[Optimal size](/docs/manage/partitions)**. Between 1%–30% of daily ingest. Ideally, with less than 5 TB data per day flowing into each.
   - Below 1% can cause index fragmentation and degraded search performance.
   - Above 30% may reduce performance gains.
-- **Name restrictions**. Cannot start with `sumologic_` or an underscore (`_`).
-- **Routing rule length**. Up to 2048 characters.
-- **Unsupported conditions**. Do not use the `NOT` operator or `sourceHost` when defining partitions.
+- **[Name restrictions](/docs/manage/partitions)**. Cannot start with `sumologic_` or an underscore (`_`).
+- **[Routing rule length](/docs/manage/partitions)**. Up to 2,048 characters.
+- **[Unsupported conditions](/docs/manage/partitions)**. Do not use the `NOT` operator or `sourceHost` when defining partitions.
 
 ## Scheduled views
 
-- **Maximum views**. Up to 500 per account.
-- **Start date**. Cannot select a date older than 365 days.
-- **Unsupported**. Subqueries and Field Extraction Rules are not supported.
+- **[Maximum views](/docs/manage/scheduled-views)**. Up to 500 per account.
+- **[Start date](/docs/manage/scheduled-views)**. Cannot select a date older than 365 days.
+- **[Unsupported](/docs/manage/scheduled-views)**. Subqueries and Field Extraction Rules are not supported.
 
 ## Users and roles
 
-- **Users**. Up to 1,000 per account.
-- **Roles**. Up to 100 per account.
-- **Naming**. Role names must use alphanumeric characters or underscores (`_`).
+- **[Users](/docs/manage/users-roles/users)**. Up to 1,000 per account.
+- **[Roles](/docs/manage/users-roles/roles)**. Up to 100 per account.
+- **[Naming](/docs/manage/users-roles/roles)**. Role names must use alphanumeric characters or underscores (`_`).
 - **Free accounts**. Limited to 3 users.
 
 ## Accounts
@@ -168,46 +168,27 @@ This page lists the baseline limits and quotas for various features, services, a
 - **Retention**. Varies based on subscription.
 - **Users**. Can be scaled to meet organizational needs.
 
-### Cloud Flex Legacy accounts
-
-- **Collectors**. Maximum of 10,000 Collectors per organization.
-- **Sources**. Maximum of 1,000 Sources per Collector.
-- **Processing Rules**. Maximum of 100 Processing Rules per Source.
-- **Continuous Queries**. Maximum of 200 queries per organization (excluding Free accounts).
-
-### Flex accounts
-
-#### Free flex accounts
-
-- **Daily Credit Allocation**. 1.25 credits per day.
-- **Retention**. 7 days for logs.
-- **Users**. Limited to 3 users.
-
-#### Trial flex accounts
-
-- **Daily Credit Allocation**. 1 GB per day.
-- **Retention**. 30 days for logs.
-- **Users**. Up to 20 users.
-
 ## Dashboards
 
-- **Panel queries**. Up to 6 log and 6 metric queries.
-- **Queries per dashboard**. Up to 100.
-- **Data points per query**. Dashboard queries cannot return more than 1,440 data points.
-- **Query length**. Queries built for dashboards/panels have a limit of 10,240 characters.
-- **Time range**. Up to 32 days per panel.
-- **PDF Export timeout**. Will timeout after 5 minutes if a panel takes too long to load.
-- **Template variable queries**. Up to 10 concurrent queries per user.
+- **[Panel queries](/docs/dashboards/about)**. Up to 6 log and 6 metric queries.
+- **[Queries per dashboard](/docs/dashboards/about)**. Up to 100.
+- **[Data points per query](/docs/dashboards/about)**. Dashboard queries cannot return more than 1,440 data points.
+- **[Query length](/docs/dashboards/about)**. Up to 10,240 characters.
+- **[Time range](/docs/dashboards/about)**. Up to 32 days per panel.
+- **[PDF Export timeout](/docs/dashboards/about)**. Will time out after 5 minutes if a panel takes too long to load.
+- **[Template variable queries](/docs/dashboards/about)**. Up to 10 concurrent queries per user.
 - **External sharing**. Dashboards shared outside an organization are view-only.
-- **Time range support**. Only relative time supported (e.g., Last 15 Minutes). Absolute time ranges are not supported.
+- **Time range support**. Only relative time supported (for example, Last 15 Minutes). Absolute time ranges are not supported.
 
 ## SLO
 
-- **Data Retention**. 800 days.
+- **[Data Retention](/docs/observability/reliability-management-slo)**. 800 days.
 
-## Metric
+## Metrics
 
 ### Metric retention
+
+See [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage) for details.
 
 | Data Type Retained | Retention Period |
 |:--|:--|
@@ -216,6 +197,6 @@ This page lists the baseline limits and quotas for various features, services, a
 
 ### Host metric source limits
 
-- **Disk metrics**. Approximately 10 metrics are collected for each Source disk on each host.
-- **Network metrics**. Network metrics are calculated per interface on each host, and approximately 4 metrics per interface are collected.
-- **CPU, memory, and TCP metrics**. Approximately 10 CPU, memory, and TCP metrics are collected for each host.
+- **[Disk metrics](/docs/send-data/installed-collectors/sources/host-metrics-source)**. Approximately 10 metrics are collected for each source disk on each host.
+- **[Network metrics](/docs/send-data/installed-collectors/sources/host-metrics-source)**. Network metrics are calculated per interface on each host, and approximately 4 metrics per interface are collected.
+- **[CPU, memory, and TCP metrics](/docs/send-data/installed-collectors/sources/host-metrics-source)**. Approximately 10 CPU, memory, and TCP metrics are collected for each host.
