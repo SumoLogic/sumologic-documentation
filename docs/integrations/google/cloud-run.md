@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudRun.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudRun.png')} alt="Google Cloud Run icon" width="50"/>
 
 Cloud Run is a managed compute platform that lets you run containers directly on top of Google's scalable infrastructure. For more details, refer to the [GCP documentation](https://cloud.google.com/run/docs/overview/what-is-cloud-run).
 

@@ -6,8 +6,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ipstack.png')} alt="ipstack" width="90"/>
 
-***Version: 1.1  
-Updated: Jul 05, 2023***
+***Version: 1.2  
+Updated: April 29, 2026***
 
 IPstack API services enable you to locate and identify website visitors at a stage before any data is entered into your system. The data received from the API can be used to enhance user experiences based on location data and assess risks and potential threats to your web application in time.
 
@@ -46,5 +46,8 @@ For information about IPstack, see [IPstack documentation](https://ipstack.com/d
 
 ## Change Log
 
-* July 12, 2022 - First upload
-* July 5, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 5, 2023 | Updated the integration with Environmental Variables. |
+| | July 12, 2022 | Initial release of the IPstack integration. |

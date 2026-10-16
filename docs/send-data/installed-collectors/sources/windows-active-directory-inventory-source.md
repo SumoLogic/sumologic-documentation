@@ -2,7 +2,7 @@
 id: windows-active-directory-inventory-source
 title: Windows Active Directory Inventory Source
 sidebar_label: Windows Active Directory Inventory Source
-description: A Windows Active Directory Inventory Source collects inventory data from Active Directory Database.
+description: Collect Windows Active Directory inventory data including computer names, usernames, and locations to enrich Cloud SIEM log data and build network profiles.
 keywords:
     - windows-active-directory-inventory
     - cloud-SIEM-enterprise
@@ -49,8 +49,8 @@ To configure a Windows Active Directory Inventory Source:
    * `_siemProduct`: Windows
    * `_siemForward`: true
    * `_siemDataType`: Inventory
-     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
    * **Active Directory Attributes**. (Optional)
      * **Additional Attributes**. Provide a semi-colon separated list of the LDAP Names of Active Directory attributes to report, in addition to the default list:
        * Username
@@ -62,7 +62,7 @@ To configure a Windows Active Directory Inventory Source:
      *  **Exclude Distinguished Name Suffixes**. Provide a semi-colon separated list of Distinguished Name suffixes. When set, the Source won't ingest any records that contain the Distinguished Name suffixes specified.
      *  **Directory Filter**. Specifies a filter to use when searching for Domain Objects in Active Directory.
    * **Advanced Options for Logs**.
-     * **Enable Timestamp Parsing**. Disable this option so that timestamps are not parsed. Disabling this option will stamp logs with the time at which the messages are received. For more information, see [Message time and receipt time](/docs/send-data/collector-faq/#message-time-and-receipt-time).
+     * **Enable Timestamp Parsing**. Disable this option so that timestamps are not parsed. Disabling this option will stamp logs with the time at which the messages are received. For more information, see [Message time and receipt time](/docs/send-data/collector-faq/#message-time-receipt-time-and-searchable-time).
    *  **Processing Rules for Logs**. Create any processing rules you'd like for the new Source.
 1. Click **Save**.
 

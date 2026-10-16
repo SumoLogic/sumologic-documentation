@@ -7,7 +7,7 @@ description: The Docker app monitors Docker container logs and metrics (stats) i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="90"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="Docker icon" width="90"/>
 
 :::note
 The Docker app will be fully functional with Docker setup using [cgroup v1](https://docs.docker.com/config/containers/runmetrics/#control-groups).
@@ -136,7 +136,7 @@ If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/in
 
 ### Sample queries
 
-```sql title="Containers created or started"
+```sumo title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from
 | parse "\"status\":\"*\"" as status, "\"id\":\"*\"" as container_id, "\"from\":\"*\"" as image
 | count_distinct(container_id)

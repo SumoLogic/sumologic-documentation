@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/wittra.png')} alt="wwittra" width="70"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/wittra.png')} alt="Wittra icon" width="70"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Wittra is hardware and software provider with patented solutions for business in the Internet of Moving Things.
 
@@ -47,6 +47,9 @@ For information about Wittra, see [Wittra documentation](https://docs.wittra.io/
 
 ## Change Log
 
-* February 8, 2023 - First upload
-* February 13, 2023 - New Logo
-* July 18, 2023 (v1.1) - Removed leading/trailing spaces
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 18, 2023 | Removed leading/trailing spaces. |
+| | February 13, 2023 | Added a new logo. |
+| | February 8, 2023 | Initial release of the Wittra integration. |

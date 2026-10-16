@@ -56,13 +56,8 @@ In the template statement, be sure to replace `YOUR_TOKEN` with your actual to
 **For rsyslog v8 and later**
 
 ```bash
-# Setup disk assisted queues# Setup disk assisted queues
-$WorkDirectory /var/spool/rsyslog     # where to place spool files
-$ActionQueueFileName fwdRule1         # unique name prefix for spool files
-$ActionQueueMaxDiskSpace 1g           # 1gb space limit (use as much as possible)
-$ActionQueueSaveOnShutdown on         # save messages to disk on shutdown
-$ActionQueueType LinkedList           # run asynchronously
-$ActionResumeRetryCount -1            # infinite retries if host is down
+# Where to place spool files
+$WorkDirectory /var/spool/rsyslog
 
 # RsyslogGnuTLS
 $DefaultNetstreamDriverCAFile /etc/rsyslog.d/keys/ca.d/acm_ca.crt
@@ -77,7 +72,14 @@ action(type="omfwd"
    StreamDriver="gtls"
    StreamDriverMode="1"
    StreamDriverAuthMode="x509/name"
-   StreamDriverPermittedPeers="syslog.collection.*.sumologic.com")
+   StreamDriverPermittedPeers="syslog.collection.*.sumologic.com"
+   queue.type="LinkedList"
+   queue.filename="fwdRule1"
+   queue.maxDiskSpace="1g"
+   queue.saveOnShutdown="on"
+   action.resumeRetryCount="-1")
 ```
+
+The `queue.*` and `action.resumeRetryCount` parameters configure a disk-assisted queue that retries indefinitely when Sumo Logic is unreachable. Set them inside the `action()` block. rsyslog silently ignores legacy `$ActionQueue*` and `$ActionResumeRetryCount` directives when they are used with `action()`, so messages are lost without any warning or error.
 
 In the template statement, be sure to replace `YOUR_TOKEN` with your actual token, and `YOUR_DEPLOYMENT` with your deployment. Properties in the string begin and end with `%`. All other texts and white space are treated literally. For more information about rsyslog configuration, see the [rsyslog template documentation](http://www.rsyslog.com/doc/master/configuration/templates.html) or the [rsyslog omfwd documentation](http://www.rsyslog.com/doc/master/configuration/modules/omfwd.html).

@@ -11,7 +11,7 @@ description: This document outlines what are Azure Functions, how to set it up w
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-functions.png')} alt="thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-functions.png')} alt="Azure Functions icon" width="45"/>
 
 [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview) is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. This integration helps in monitoring the health, tracking executions, and estimating the cost of your function apps.
 

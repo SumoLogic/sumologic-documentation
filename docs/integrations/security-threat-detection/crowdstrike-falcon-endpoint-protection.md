@@ -7,7 +7,7 @@ description: The CrowdStrike Falcon Endpoint Protection app provides visibility 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The CrowdStrike Falcon Endpoint Protection app provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. The app allows you to analyze indicators of compromise (IOCs) by affected users, tactic, technique, and objective, and identify hosts on your network with the highest malware detections. The dashboards in this app help identify threats and incidents, from which you can drill down to investigate further.
 
@@ -113,46 +113,63 @@ For more information on Events, refer to the [Streaming API Event Dictionary](ht
     "eventCreationTime": 1480375833,
     "offset": 80960
   }
-}NOPQRSTUV","eventType":"AuthActivityAuditEvent","eventCreationTime":1480375833,"offset":80960}}
+}
 ```
 
 </details>
 
 <details>
-<summary>Detection Status Update</summary>
+<summary>User Activity and Audit Event</summary>
 
-```json title="Detection Status Update"
+```json
 {
     "metadata": {
-        "customerIDString": "0123456789ABCDEFGHIJKLMNOPQRSTUV",
-        "offset": 11049003,
+        "customerIDString": "d43fe8bddfb848b18b4da90d58681c07",
+        "offset": 1680712,
         "eventType": "UserActivityAuditEvent",
-        "eventCreationTime": 1479770848
+        "eventCreationTime": 1766724718104,
+        "version": "1.0"
     },
     "event": {
-        "UserId": "user@example.com",
-        "UserIp": "",
-        "OperationName": "detection_update",
-        "ServiceName": "detections",
+        "UserId": "tim.sullivan@cxe.com",
+        "UserIp": "70.106.217.160",
+        "OperationName": "update_group",
+        "ServiceName": "groups",
         "AuditKeyValues": [
             {
-                "Key": "detection_id",
-                "ValueString": "ldt:b60f82cf1aa342f47363bf3b6bfb6b7d:123456356541"
+                "Key": "group_id",
+                "ValueString": "56af7a44a7fc4ca5869c76b197af327b"
             },
             {
-                "Key": "new_state",
-                "ValueString": "in_progress"
-            },
-            {
-                "Key": "assigned_to",
-                "ValueString": "Knightley"
-            },
-            {
-                "Key": "assigned_to_uid",
-                "ValueString": "user@example.com"
+                "Key": "action_name",
+                "ValueString": "add_group_member"
             }
         ],
-        "UTCTimestamp": 1479770848
+        "UTCTimestamp": 1766724718104
+    }
+}
+```
+</details>
+
+<details>
+<summary>Incident Summary Event</summary>
+
+```json
+{
+    "metadata": {
+        "customerIDString": "b2848e6c8ac249d68d9a93a859a211c9",
+        "offset": 101,
+        "eventType": "IncidentSummaryEvent",
+        "eventCreationTime": 1766724888084,
+        "version": "1.0"
+    },
+    "event": {
+        "FineScore": 10,
+        "LateralMovement": 0,
+        "IncidentStartTime": 1766724888,
+        "IncidentEndTime": 1766724888,
+        "FalconHostLink": "https://falcon.crowdstrike.com/crowdscore/incidents/details/inc:108f5b7f5ai940438c81f5q7f423855b:1bf0d2jk7dd04d979aaswa37860528b8",
+        "State": "closed"
     }
 }
 ```
@@ -162,7 +179,7 @@ For more information on Events, refer to the [Streaming API Event Dictionary](ht
 
 This section provides query examples for each event type.
 
-```sql title="Detection Event"
+```sumo title="Detection Event"
 _sourceCategory={{Logsdatasource}}  eventType EppDetectionSummaryEvent event SeverityName
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.Tactic","event.Technique", "event.Objective", "event.ComputerName", "event.UserName", "event.CompositeId", "event.Description", "event.Severity", "event.SeverityName", "event.FileName", "event.FilePath", "event.CommandLine", "event.MD5String", "event.SHA256String", "event.MachineDomain" , "event.FalconHostLink","event.LocalIP", "event.MACAddress", "event.ProcessEndTime" as event_type, customer_id, event_time, tactic, technique, objective, computer_name, user_name, composite_id, detect_desc, severity, severity_name, file_name, file_path, cmd_line, md5_string, sha256_string, machine_domain, falconHost_link, local_ip, mac_adderess, process_endTIme nodrop
 
@@ -174,7 +191,7 @@ _sourceCategory={{Logsdatasource}}  eventType EppDetectionSummaryEvent event Sev
 | sort by _count, severity_name
 ```
 
-```sql title="Authentication Event"
+```sumo title="Authentication Event"
 _sourceCategory={{Logsdatasource}} eventType AuthActivityAuditEvent event OperationName
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.UserId", "event.UserIp", "event.OperationName", "event.ServiceName", "event.Success", "event.UTCTimestamp" as event_type, customer_id, event_time, src_user, user_ip, operation_name, service_name, success, operation_time nodrop
 
@@ -186,7 +203,7 @@ _sourceCategory={{Logsdatasource}} eventType AuthActivityAuditEvent event Operat
 | sort by _count, operation_name
 ```
 
-```sql title="Detection Status Update"
+```sumo title="Detection Status Update"
 _sourceCategory={{Logsdatasource}} eventType UserActivityAuditEvent event OperationName quarantined_file_update
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.OperationName",  "event.UserId", "event.UserIp", "event.ServiceName", "event.AuditKeyValues" as event_type, customer_id, event_time, operation_name, src_user, user_ip, service_name, audit_values nodrop
 
@@ -231,9 +248,9 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
-### Overview  
+### Security Overview  
 
-The **CrowdStrike Falcon - Overview** dashboard provides high-level visibility into the state of endpoints that are managed by the CrowdStrike Falcon platform. Panels provide insights into events, detections, authentications, and detection status updates for overall security posture and analysis of user activities.
+The **CrowdStrike Falcon - Security Overview** dashboard provides high-level visibility into the state of endpoints that are managed by the CrowdStrike Falcon platform. Panels provide insights into events, detections, authentications, and detection status updates for overall security posture and analysis of user activities.
 
 Use this dashboard to:
 
@@ -255,9 +272,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/security-threat-detection/CSF_Platform_Authentication.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
 
-### Detections  
+### Threat Detections  
 
-The **CrowdStrike Falcon - Detections** dashboard provides visibility into malicious behavior in your environment, where you can analyze group detections, discover blocked detections, and analyze detection trends by type. Panels also display a detailed analysis of detected malware and help quickly identify hosts with the most detected malware.
+The **CrowdStrike Falcon - Threat Detections** dashboard provides visibility into malicious behavior in your environment, where you can analyze group detections, discover blocked detections, and analyze detection trends by type. Panels also display a detailed analysis of detected malware and help quickly identify hosts with the most detected malware.
 
 Use this dashboard to:
 
@@ -272,9 +289,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/security-threat-detection/CrowdStrike_Falcon_Detections.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
 
-### Detection Status Update  
+### User Activity and Audit
 
-The **CrowdStrike Falcon - Detection Status Update** dashboard provides high-level and detailed insights into the status of severity event detection in your CrowdStrike environment. Panels display event geographic locations, event classification by operation, details on quarantined files, and updates on policies and groups.
+The **CrowdStrike Falcon - User Activity and Audit** dashboard provides high-level and detailed insights into the status of severity event detection in your CrowdStrike environment. Panels display event geographic locations, event classification by operation, details on quarantined files, and updates on policies and groups.
 
 Use this dashboard to:
 
@@ -284,9 +301,8 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/security-threat-detection/CSF_Platform_Detection_Status_Update.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
 ### Incident Summary Events
-30
 
-The **CrowdStrike - Falcon - Incident Summary Events** dashboard provides visibility into Falcon incidents, event trends, and risk.
+The **CrowdStrike Falcon - Incident Summary Events** dashboard provides visibility into Falcon incidents, event trends, and risk.
 
 Use this dashboard to:
 
@@ -295,6 +311,22 @@ Use this dashboard to:
 * Drill-down to the details of an incident using pre-built links in the CrowdStrike Falcon Console.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CrowdStrike_Falcon_Incident_Summary_Events.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
+
+## Create monitors for Crowdstrike Falcon Endpoint Protection app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Crowdstrike Falcon Endpoint Protection monitors
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `CrowdStrike Falcon Endpoint Protection - Successful Authentication Events from Embargoed Geo Locations` | This alert is triggered when event authentication is successful and it is originating from sanctioned or embargoed regions are detected. This alert helps maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+| `CrowdStrike Falcon Endpoint Protection - Failed Authentication Events from Embargoed Geo Locations` | This alert is triggered when event authentication fail and it is originating from sanctioned or embargoed regions are detected. This alert helps maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+| `CrowdStrike Falcon Endpoint Protection - High Severity Alerts` | This alert is triggered when client-side protection detects an event with high severity. It indicates a high-impact threat that requires immediate investigation and remediation to prevent potential exploitation or data compromise. | Critical | Count > 3 |
+| `CrowdStrike Falcon Endpoint Protection - Multiple Failed Authentications from Specific User` | This alert is triggered when client-side protection detects more than three failed authentication from single user in short period of time. | Critical | Count > 0 |
+| `CrowdStrike Falcon Endpoint Protection - Multiple High Severity Detections from Single Host` | This alert is triggered when client-side protection detects more than three high or critical severity from single host in short period of time. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the CrowdStrike Falcon Endpoint Protection app (Optional)
 

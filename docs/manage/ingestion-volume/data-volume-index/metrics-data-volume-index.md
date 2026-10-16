@@ -8,9 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic populates the Metrics Data Volume Index with a set of JSON-formatted messages every five minutes. The messages contain the volume of metric data points your account is ingesting. 
 
-You can query the index to:
-
-* Get the total metric data volume (data points) ingested by collector, source, source name, source category, or source host. 
+You can query the index to get the total metric data volume (data points) ingested by collector, source, source name, source category, or source host. 
 
 :::note
 You cannot query the index to get storage credits. For information about storage credits, see [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts).
@@ -23,7 +21,7 @@ Each JSON message contains the parent object for each source data point, and chi
 For example, a single message for collector volume data may look similar to the following, where `collector_N `is the name of a collector. The data points values are the aggregated volume for a five minute time
 period.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "billedBytes", "spansCount"
@@ -37,7 +35,7 @@ _index=sumologic_volume _sourceCategory=sourcecategory_tracing_volume
 
 When you query the index, the query scope must include the following:
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory=<index_source_category>
 ```
 
@@ -58,7 +56,7 @@ Where `index_source_category` is one of the categories listed in the table below
 
 This query returns the metric volume by source category.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory="sourcecategory_metrics_volume"
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "dataPoints"
@@ -73,7 +71,7 @@ It returns results like these:
 
 This query returns the metric volume by collector.
 
-```sql
+```sumo
 _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 | parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "dataPoints"
@@ -86,9 +84,9 @@ It returns results like these:
 
 ### Metric volume for a specific collector
 
-This query returns the metric volume for a specific Collector. The Collector name can be supplied within using the where operator to get the ingest data for a specific Collector.
+This query returns the metric volume for a specific collector. The collector name can be supplied within using the where operator to get the ingest data for a specific collector.
 
-```sql
+```sumo
 _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 | parse regex "\"(?<collector>[^\"]+)\"\:(?<data>\{[^\}]*\})"
 | json field=data "dataPoints"
@@ -99,9 +97,9 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 
 ### Query for metric ingestion outliers 
 
-This query runs against the metrics volume index and uses the [outlier](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
+This query runs against the metrics volume index and uses the [outlier](/docs/search/search-query-language/search-operators/outlier/) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "dataPoints"
@@ -116,7 +114,7 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 This query runs against the metrics volume index and uses the [predict](/docs/search/search-query-language/search-operators/predict) operator to predict future values.
 
-```sql
+```sumo
 _index=sumologic_volume _sourceCategory=sourcecategory_metrics_volume datapoints
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:(?<data>\{[^\}]*\})" multi
 | json field=data "dataPoints"

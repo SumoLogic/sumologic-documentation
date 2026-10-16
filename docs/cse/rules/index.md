@@ -79,12 +79,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/cse/rules/import-yara-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Import YARA Rules</h4></a>
-  <p>Learn how to import YARA rules from GitHub into Cloud SIEM.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/cse/rules/normalized-authentication-rules')}><img src={useBaseUrl('img/icons/operations/rules.png')} alt="Flow diagram icon" width="40"/><h4>Normalized Authentication Rules</h4></a>
   <p>Detect activities that compromise accounts using authentication logs.</p>
   </div>

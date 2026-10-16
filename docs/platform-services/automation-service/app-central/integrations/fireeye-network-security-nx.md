@@ -4,7 +4,7 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-network-security-nx.png')} alt="fireeye-network-security-nx" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-network-security-nx.png')} alt="Fireeye Network Security icon" width="100"/>
 
 ***Version: 1.1  
 Updated: Jul 03, 2023***
@@ -44,5 +44,7 @@ For information about Trellix Network Security (formerly FireEye Network Securit
 
 ## Change Log
 
-* June 19, 2019 - First upload
-* July 3, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | July 3, 2023 | Updated the integration with Environmental Variables. |
+| | June 19, 2019 | First upload. |

@@ -11,7 +11,7 @@ In partnership with [Intel 471](https://www.intel471.com/), Sumo Logic maintains
 * Sumo Logic maintains an up-to-date copy of Intel 471's threat database.
 * Sumo Logic customers can use the Intel 471 database in threat analysis queries over their logs (through a [`lookup` operator](/docs/search/search-query-language/search-operators/lookup/)). For example, you can point to the **SumoLogic_ThreatIntel** source in queries by [using the lookup search operator](/docs/security/threat-intelligence/find-threats/#use-the-lookup-search-operator). The query scans Sumo Logic logs and parses fields (such as for domain, email, and IP address) for comparison against the threat feed from Intel 471. Think of it as an Inner Join between parsed fields and the threat table.
 
-## Indicators of compromise (IOC)
+## Indicators of compromise (IoC)
 
 The following [indicators of compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise) types are available from Intel 471:
 * Domain
@@ -23,9 +23,9 @@ The following [indicators of compromise](https://en.wikipedia.org/wiki/Indicator
 * SSDEEP
 * URL
 
-### Samples for different IOC types
+### Samples for different IoC types
 
-| IOC type | IOC |
+| IoC type | IoC |
 |:--|:--|
 | Domain | `9jdco01e.ru`|
 | Email | `sherigerber@mail.ru`|
@@ -36,9 +36,9 @@ The following [indicators of compromise](https://en.wikipedia.org/wiki/Indicator
 | SSDEEP | `3:aRn:aRn` |
 | URL | `http://tycahatit.ru/zapoy/gate.php`|
 
-### Expiration of IOCs and threats
+### Expiration of IoCs and threats
 
-IOCs and threats will often remain in the system because an IOC, such as an IP address, could go dormant and they reappear as part of another threat. Be aware that over the period, their malicious confidence can be downgraded or upgraded depending upon recent activity.
+IoCs and threats will often remain in the system because an IoC, such as an IP address, could go dormant and they reappear as part of another threat. Be aware that over the period, their malicious confidence can be downgraded or upgraded depending upon recent activity.
 
 ## FAQs
 
@@ -52,7 +52,7 @@ No, we do not allow an export of the threat Intel feeds as that is confidential 
 
 ### Is threat lookup real-time using Continuous Queries (CQs)?
 
-Yes. You can scan for malicious indicators of compromise (IOCs) in real time [using the lookup search operator](/docs/security/threat-intelligence/find-threats/#use-the-lookup-search-operator).
+Yes. You can scan for malicious indicators of compromise (IoCs) in real time [using the lookup search operator](/docs/security/threat-intelligence/find-threats/#use-the-lookup-search-operator).
 
 ### Can I historically search my logs for threats?
 
@@ -64,7 +64,7 @@ No. No results in your dashboards can mean that nothing has been identified by I
 
 It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive. When you use them with Sumo Logic operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase/#using-tolowercaseor-touppercase-with-an-equating-condition).
 
-### I found an IOC in VirusTotal (or any other third-party threat feed), but why can’t I find that IOC in Intel 471 using the Sumo Logic lookup?
+### I found an IoC in VirusTotal (or any other third-party threat feed), but why can’t I find that IoC in Intel 471 using the Sumo Logic lookup?
 
 Intel 471 focuses on quality versus quantity when it comes to threat assessment. They have a dedicated intel team that does that work. A threat from a third-party feed may not be present in Intel 471 threats because it has been rejected by the Intel 471 intel assessment team.
 
