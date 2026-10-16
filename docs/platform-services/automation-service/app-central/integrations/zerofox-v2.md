@@ -91,4 +91,4 @@ For information about ZeroFox, see [ZeroFox documentation](https://www.zerofox.c
 
 ## Additional resources
 
-For ZeroFox V2, Sumo Logic offers the [ZeroFox Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source/) to collect your ZeroFox data.
+For ZeroFox V2, Sumo Logic offers the [ZeroFox Threat Intel source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source/) and the [ZeroFox app](https://drive.google.com/file/d/13svc5FP0WP3WAES6DvXhK1O8WRiPenf3/edit) to collect your ZeroFox data.
