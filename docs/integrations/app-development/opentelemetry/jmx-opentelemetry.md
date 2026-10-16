@@ -1,6 +1,6 @@
 ---
 id: jmx-opentelemetry
-title: Java Management Extensions (JMX) - OpenTelemetry Collector
+title: JMX Monitoring - OpenTelemetry Collector
 sidebar_label: JMX - OTel Collector
 description: The Sumo Logic app for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/app-development/jmx.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/jmx.png')} alt="JMX icon" width="50"/>
 
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
@@ -101,6 +101,10 @@ Below is the input required:
 - **Password**. Password for JMX authentication, if applicable.
 
 Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 

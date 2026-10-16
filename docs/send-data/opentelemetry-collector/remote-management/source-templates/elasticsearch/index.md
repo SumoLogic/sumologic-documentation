@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-<img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Thumbnail icon" width="60"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="20"/>
+<img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="Elasticsearch icon" width="60"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="20"/>
 
 The Elasticsearch source template creates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the config to the appropriate OpenTelemetry agent, you can ensure collection of Elasticsearch logs and metrics to Sumo Logic.
 
@@ -68,15 +68,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Elasticsearch collection. Below are the inputs required for configuration:
+import ElasticsearchConfigureSourceTemplate from '../../../../../reuse/send-data/elasticsearch-configure-source-template.md';
 
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-- **Log Filepath**. Location where the Elasticsearch logs are logged. Please refer to your elasticsearch.conf file.
-- **Endpoint**. Enter the url of the server you need to monitor. (default: `localhost:9200`).
-- **Username**. Enter the Elasticsearch username.
-- **Password Environment Variable Name**. Enter the Elasticsearch password environment variable name.
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, Sumo Logic tags `_sourceCategory` with the value otel/elasticsearch user needs to provide the value for `db.cluster.name`.
+<ElasticsearchConfigureSourceTemplate/>
 
 import TimestampParsing from '../../../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 

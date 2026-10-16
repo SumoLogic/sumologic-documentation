@@ -28,7 +28,7 @@ For each insight created, the enrichment checks the records in the signals that 
 * `file_hash_sha256`
 * `file_hash_ssdeep`
 
-The enrichment looks up each value it finds in VirusTotal, calling the VirusTotal API to do so. When a record value has a match in VirusTotal, the enrichment writes the response to Cloud SIEM, where you can view it the signal’s **Enrichment** tab. For an example, see [Example VirusTotal Enrichment](#example-virustotal-enrichment).
+The enrichment looks up each value it finds in VirusTotal, calling the VirusTotal API to do so. When a record value has a match in VirusTotal, the enrichment writes the response to Cloud SIEM, where you can view it the signal’s **Enrichment** tab. For an example, see [Example VirusTotal enrichment](#example-virustotal-enrichment).
 
 :::note
 VirusTotal enrichments are only added to signals that are part of an insight.
@@ -36,7 +36,7 @@ VirusTotal enrichments are only added to signals that are part of an insight.
 
 ## Configure VirusTotal enrichment
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Enrichment**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Enrichment**. You can also click the **Go To...** menu at the top of the screen and select **Enrichment**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Enrichment**. You can also click the **Go To...** menu at the top of the screen and select **Enrichment**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Enrichment**. 
 1. On the **Enrichment** tab, select **VirusTotal** and click the **Edit** button.
 2. On the **Edit VirusTotal** popup, enter your VirusTotal API Key, and click **Save**.
 

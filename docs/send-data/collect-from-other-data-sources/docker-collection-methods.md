@@ -20,6 +20,7 @@ The following table summarizes what you can collect with each collection method.
 | Docker Logging Driver	 | &#10003; |  |
 | Installed Collector on Docker Host<br/>(with Docker Log source and Docker Stats source)| &#10003; | &#10003; |
 | Collector as a Container<br/>(with Docker Log source and Docker Stats source)	 | &#10003; | &#10003; |
+| OpenTelemetry Collector<br/>(with Docker Source Template) | &#10003; | &#10003; |
 
 ## Docker collection options
 
@@ -72,7 +73,25 @@ Logic collector.
     * Configurable metadata. You can use variables available from Docker and the Docker host to configure the `_sourceCategory` and `sourceHost` for a Docker log source or a Docker stats. For more information, see Configure `_sourceCategory` and `sourceHost` using variables.
 * **Cons**
     * With this method, you cannot collect host metrics from the Docker host. The Collector must be installed on the Docker host to get the host metrics. You can still collect container logs, container metrics and host logs.
-    * It’s not as easy to set up this method to monitor selected containers on a host, as opposed to all containers. You might need to configure multiple sources to achieve this goal.
+    * It's not as easy to set up this method to monitor selected containers on a host, as opposed to all containers. You might need to configure multiple sources to achieve this goal.
+
+### OpenTelemetry Collector with Docker Source Template
+
+This method uses a remotely managed OpenTelemetry collector with a [Docker source template](/docs/send-data/opentelemetry-collector/remote-management/source-templates/docker/). The source template automatically configures the OpenTelemetry collector to collect Docker logs and metrics.
+
+Docker logs are collected using the OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver) to capture Docker container event logs, and metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md).
+
+* **Pros**
+    * Modern, cloud-native collection approach using OpenTelemetry standard.
+    * Centralized configuration management through source templates that can be pushed to multiple collectors.
+    * Supports both logs and metrics collection.
+    * Easy to update configurations remotely without direct access to collectors.
+    * Integrates with the broader OpenTelemetry ecosystem.
+* **Cons**
+    * Only supports Linux.
+    * Requires additional setup to grant the `otelcol-sumo` user access to `docker.sock`.
+    * Requires running the `docker events` command to capture container event logs.
+    * Newer method that may have less community documentation compared to traditional collectors.
 
 ### Docker Platform Considerations
 
@@ -82,16 +101,16 @@ The following table describes the collection methods that are supported by diffe
 The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher for the following table.
 :::
 
-| Platform | Installed Collector On Docker Host  | Collector As Container | Docker Logging Driver |
-|:--|:--|:--|:--|
-| Docker<br/>(not managed service) | &#10003; |   &#10003; | &#10003; |
-| ECS | &#10003; |  &#10003; | &#10003; |
-| Docker Swarm | &#10003; |  &#10003; | &#10003; |
-| Rancher<br/>(non-Kubernetes) | &#10003; |  &#10003; | &#10003; |
+| Platform | Installed Collector On Docker Host  | Collector As Container | Docker Logging Driver | OpenTelemetry Collector |
+|:--|:--|:--|:--|:--|
+| Docker<br/>(not managed service) | &#10003; |   &#10003; | &#10003; | &#10003; |
+| ECS | &#10003; |  &#10003; | &#10003; | &#10003; |
+| Docker Swarm | &#10003; |  &#10003; | &#10003; | &#10003; |
+| Rancher<br/>(non-Kubernetes) | &#10003; |  &#10003; | &#10003; | &#10003; |
 
 ### Sumo Logic apps for Docker
 
 Sumo Logic provides the following apps for Docker:  
 
-* [Docker](/docs/integrations/containers-orchestration/docker-community-edition.md): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
+* [Docker](/docs/integrations/containers-orchestration/docker-community-edition.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host), [Collector as a Container](#collector-as-a-container), or [OpenTelemetry Collector with Docker Source Template](#opentelemetry-collector-with-docker-source-template) collection strategy.
 * [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.

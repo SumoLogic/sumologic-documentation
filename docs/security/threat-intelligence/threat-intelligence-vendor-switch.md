@@ -24,7 +24,7 @@ Switching to the Intel 471 global threat feed from CrowdStrike will introduce di
 
 Importantly, the intel vendors themselves control what appears in these "raw" fields, and each vendor prioritizes different aspects of the intel they provide. For example, CrowdStrike often includes CVEs where applicable, whereas Intel 471 bundles geo-IP data with some of its entries. CrowdStrike reports the publication timestamp of its indicators, whereas Intel 471 reports the recommended expiration timestamp. As such, Sumo Logic strongly encourages customers to review their searches and dashboards for "raw" field handling, and to modify them appropriately.
 
-Customers can experiment with the Intel 471 feed by referencing the `sumo://threat/i471` lookup table as a parameter to the [`lookup` search operator](/docs/search/search-query-language/search-operators/lookup). (It isn't possible to do the same for `threatip`, though its `raw_threat` field is the same as the `lookup` operator's `raw` field.)  
+Customers can experiment with the Intel 471 feed by referencing the `sumo://threat/i471` lookup table as a parameter to the [`lookup` search operator](/docs/search/search-query-language/search-operators/lookup). (It is not possible to do the same for `threatip`, though its `raw_threat` field is the same as the `lookup` operator's `raw` field.)  
 
 <!--
 On April 30, 2025, the global CrowdStrike feed will be fully replaced by Intel 471 in the Sumo Logic platform, and references to the old feed will automatically be updated to point to the new feed.
@@ -36,8 +36,6 @@ Sumo Logic's native security applications will be updated to support this vendor
 
 If your queries reference `json field=raw` or `parse field=raw` (or `raw_threat`, in the case of the `threatip` operator), you are extracting vendor-specific data that might need to be updated.
 
-Additionally, the Intel 471 source currently does not include domain or email indicators, instead prioritizing IP addresses, URLs, and file hashes. 
-
 ## How can I translate CrowdStrike-specific fields to Intel 471-specific fields?
 
 In many cases, it may not be possible to translate CrowdStrike-specific fields to Intel 471-specific fields, as the two vendors emphasize different aspects of indicators of compromise. However, the table below provides approximate mappings to help you start adapting your queries.
@@ -48,7 +46,7 @@ As a starting point to analyze field mapping, examine the following translations
 
 | CrowdStrike | Intel 471 | Translation notes |
 | :-- | :-- | :-- |
-| `indicator` | `data.indicator_data.*` <br/><br/>For example:<br/>`data.indicator_data.address`<br/>`data.indicator_data.file.md5`<br/>`data.indicator_data.file.sha1`<br/>`data.indicator_data.file.sha256`<br/>`data.indicator_data.url` | Depends on the type. Every Intel 471 file hash record includes all hash types. <br/><br/>Intel 471 also includes geoip data for IP addresses under `data.indicator_data.geo_ip`.<br/><br/>Intel 471 has no domain or email indicators, instead prioritizing IP addresses, URLs, and file hashes. |
+| `indicator` | `data.indicator_data.*` <br/><br/>For example:<br/>`data.indicator_data.address`<br/>`data.indicator_data.file.md5`<br/>`data.indicator_data.file.sha1`<br/>`data.indicator_data.file.sha256`<br/>`data.indicator_data.url` | Depends on the type. Every Intel 471 file hash record includes all hash types. <br/><br/>Intel 471 also includes geoip data for IP addresses under `data.indicator_data.geo_ip`. |
 | `kill_chains` | `data.mitre_tactics` |
 | `labels[*].name` | `data.threat.type`<br/>`data.threat.data.family`<br/>`data.context.description`<br/>`data.mitre_tactics` | CrowdStrike's labels are redundant with other sections in the CrowdStrike record. |
 | `last_updated` | `last_updated` | CrowdStrike's timestamps are in epoch seconds whereas Intel 471's are in milliseconds. |
@@ -78,7 +76,6 @@ You may need to make changes in these scenarios:
 * If you have rules with `hasThreatMatch` syntax that explicitly point to the legacy `_sumo_global_feed_cs` source, change them to point to `SumoLogic_ThreatIntel` source. For example: 
    * Change this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="_sumo_global_feed_cs")` 
    * To this: <br/>`hasThreatMatch([srcDevice_ip], confidence > 50 AND source="SumoLogic_ThreatIntel")`
-* The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using `hasThreatMatch`, update your rule syntax to remove them.
 
 ### lookup operator
 
@@ -89,7 +86,6 @@ In most cases, no change is needed if you use the [lookup](/docs/search/search-q
 -->
 
 You may need to make changes in these scenarios:
-* The `domain-name` and `email-addr` types are not supported in Intel 471. If you filter for these types using the `lookup` operator, update your queries to remove them.
 * If you parse the `raw` field returned from the `lookup` operation, you will see different fields when you use the new `SumoLogic_ThreatIntel` source. To avoid problems with fields not returning data, use a [nodrop](/docs/search/search-query-language/parse-operators/parse-nodrop-option/) clause when you use `parse field=raw` or `json field=raw`. In the following excerpt from a query, `nodrop` is added at the end of the line where `json field=raw` is called:
    ```
    | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip

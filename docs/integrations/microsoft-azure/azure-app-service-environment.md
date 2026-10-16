@@ -1,16 +1,16 @@
 ---
 id: azure-app-service-environment
 title: Azure App Service Environment
-description: Learn about the Sumo Logic collection process for the Azure App Service Environment service.
+description: Collect Azure App Service Environment activity logs and platform event logs via Azure Monitor and Event Hubs using the Sumo Logic Azure integration.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-service-environment.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-app-service-environment.png')} alt="Azure App Service Environment icon" width="50"/>
 
 An [Azure App Service Environment](https://learn.microsoft.com/en-us/azure/app-service/environment/overview) is an Azure App Service feature that provides a fully isolated and dedicated environment for running App Service apps securely at high scale. This integration helps in monitoring your environments operational events such as upgrades, scaling, and suspensions.
 
-The below instructions applies to App Service Environment v3.
+The instructions below apply to App Service Environment v3.
 
 ## Log types
 
@@ -48,7 +48,9 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 
 #### Activity logs (optional)
 
-To collect activity logs, follow the instructions [here](/docs/integrations/microsoft-azure/audit). If you are already collecting activity logs for a subscription, do not perform this step.
+import ActivityLogs from '../../reuse/apps/azure-activity-logs.md';
+
+<ActivityLogs/>
 
 ## Installing the Azure App Service Environment app
 

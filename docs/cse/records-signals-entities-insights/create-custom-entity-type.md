@@ -11,7 +11,7 @@ This topic has instructions for how to create custom entity types in Cloud SIEM.
 
 In Cloud SIEM, *entities* are fundamental to the insight generation process. When a Cloud SIEM rule fires, it generates a signal for each “on-entity” attribute configured for the rule. Cloud SIEM correlates signals by entity to create insights. This process is described in the [Insight Generation Process](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic.
 
-Cloud SIEM has a number of built-in [entity types](/docs/cse/records-signals-entities-insights/view-manage-entities#about-entities), for example, IP Address, Hostname, and Username.
+Cloud SIEM has a number of built-in entity types, for example, IP address, hostname, and username. For a list of fields that Cloud SIEM considers entities and the entity types they map to, see [Schema: Entity Fields](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/entity_fields.md) in the Cloud SIEM Content Catalog. 
 
 When you create a rule, in the signal configuration section, the rules editor prompts you to select an “on-entity” attribute from a list of all of the Cloud SIEM schema attributes that hold entities. What if you want to correlate signals by something other than an item that is one of Cloud SIEM standard entity types? That’s what custom entity types are for.
 
@@ -21,7 +21,7 @@ Just as for entities of built-in types listed above—IP addresses, MAC addresse
 
 To create a custom entity type:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Entities** select **Custom Types**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Entities** select **Custom Types**. You can also click the **Go To...** menu at the top of the screen and select **Custom Types**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Entities** select **Custom Types**. 
 1. On the **Custom Entity Types** tab click **+ Add Custom Type**. 
 2. The **Add Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom entity type" style={{border: '1px solid gray'}} width="400"/>
 3. **Name**. Enter a meaningful name for the custom entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom entity type on the **Custom Entity Type** page. 
@@ -31,3 +31,11 @@ To create a custom entity type:
     :::
 5. **Fields**. Use the dropdown list to select the schema attribute or attributes you want to associate with the custom entity type.
 6. Click **Save**.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage custom entity types with the [`sumologic_cse_custom_entity_type`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cse_custom_entity_type) resource.
+
+<TerraformLink/>
+:::

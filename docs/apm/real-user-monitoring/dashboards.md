@@ -35,8 +35,8 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 Once the RUM app has been installed, use the Real User Monitoring view to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Real User Monitoring**, select **User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  
-1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)<br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Real User Monitoring**, select **User Experience**. You can also click the **Go To...** menu at the top of the screen and select **User Experience**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then in the upper-left corner of the screen, select **Real User Monitoring** from the dropdown menu.
+1. Select your desired dashboard from **Dashboard** dropdown menu in the header:<br/><img src={useBaseUrl('img/rum/explore-rum-with-red-box.png')} alt="Explore RUM with red box" style={{border: '1px solid gray'}} width="800" /><br/> There are three dashboard types on the **Application**, **Service**, and **Environment** levels, and a single one on the **Action type** and **Action** levels.
 1. Set your desired filters. RUM data is organized on five levels:
    * **Application**. corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
    * **Service**. corresponds to the name of the service in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
@@ -47,7 +47,7 @@ Once the RUM app has been installed, use the Real User Monitoring view to gain v
      * **route changes**. Single-page-app specific way to navigate to a new page/view without having to load a new document.
    * **Action Name**. Automatically generated from URLs. No configuration is required. The specifics of it will depend on action type. Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names. For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
 
-Example:<br/><img src={useBaseUrl('img/rum/explore-view-rum.png')} alt="Real User Monitoring Load Action Dashboard" />
+Example:<br/><img src={useBaseUrl('img/rum/explore-view-rum.png')} alt="Real User Monitoring Load Action Dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Navigating RUM Dashboards
@@ -67,9 +67,9 @@ You can also click on any data-point on the charts to open a details panel and v
 
 Overview dashboards on all view levels have a panel showing geographical user activity for the selected entity. Geographic dashboards measure user activity as dot size and performance as a color.
 
-![RUM Overview dashboard](/img/rum/RUM-Overview.png)
+<img src={useBaseUrl('img/rum/RUM-Overview.png')} alt="RUM Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
-![RUM Overview Application and RUM Overview Service dashboards](/img/rum/RUM-Overview-Application-Service.png)
+<img src={useBaseUrl('img/rum/RUM-Overview-Application-Service.png')} alt="RUM Overview Application and RUM Overview Service dashboards" style={{border: '1px solid gray'}} width="800" />
 
 ### RUM TopN Application/Service
 
@@ -83,7 +83,7 @@ Use these dashboards to:
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
 
-![RUM TopN Application and RUM TopN Service dashboards](/img/rum/RUM-TopN-Application.png)
+<img src={useBaseUrl('img/rum/RUM-TopN-Application.png')} alt="RUM TopN Application and RUM TopN Service dashboards" style={{border: '1px solid gray'}} width="800" />
 
 ### RUM Performance Analytics Application/Service
 
@@ -96,7 +96,7 @@ Use these dashboards to:
 
 You can click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.
 
-![RUM-Performance-Analytics-Application dashboard](/img/rum/RUM-Performance-Analytics-Application.png)
+<img src={useBaseUrl('img/rum/RUM-Performance-Analytics-Application.png')} alt="RUM Performance Analytics Application dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Collecting Browser Errors
@@ -113,7 +113,7 @@ Browser error logs, although collected via RUM script, contribute to your log Co
 
 Data in the index is query-able using normal log search query. Here’s a sample query and results:
 
-<img src={useBaseUrl('img/rum/logerrors1.png')} alt="Sumo Logic log search displaying error logs filtered by the operation 'click on Pay'" />
+<img src={useBaseUrl('img/rum/logerrors1.png')} alt="Sumo Logic log search displaying error logs filtered by the operation 'click on Pay'" style={{border: '1px solid gray'}} width="800" />
 
 The following fields are available to better aggregate and filter your results:
 * Application
@@ -130,10 +130,10 @@ Because errors do not always have to be connected with user actions, it is ok to
 
 In addition to that, we also aggregate that information in form of log-query based panels and display on various dashboards:
 
-<img src={useBaseUrl('img/rum/logerrors2.png')} alt="Real User Monitoring log errors per second graphic" />
+<img src={useBaseUrl('img/rum/logerrors2.png')} alt="Real User Monitoring log errors per second graphic" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/rum/logerrors-xhr.png')} alt="Real User Monitoring log errors XHR per second graphic" />
+<img src={useBaseUrl('img/rum/logerrors-xhr.png')} alt="Real User Monitoring log errors XHR per second graphic" style={{border: '1px solid gray'}} width="800" />
 
-<img src={useBaseUrl('img/rum/logerrors-by-browser.png')} alt="Real User Monitoring log errors by browser, operating system, and geolocations graphic" />
+<img src={useBaseUrl('img/rum/logerrors-by-browser.png')} alt="Real User Monitoring log errors by browser, operating system, and geolocations graphic" style={{border: '1px solid gray'}} width="800" />
 
 Logs collection is enabled by default. You can disable by setting `collectErrors=false` in your RUM script options.

@@ -2,7 +2,7 @@
 id: generate-cse-signals
 title: Generate Cloud SIEM Signals With a Scheduled Search
 sidebar_label: Generate Cloud SIEM Signals
-description: You can generate a Cloud SIEM signal with a scheduled search.
+description: Create a Sumo Logic scheduled search to generate Cloud SIEM signals, with guidance on required fields, MITRE ATT&CK stage mappings, and record type schemas.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -71,7 +71,7 @@ And because the final output of this query is an aggregate, and Cloud SIEM signa
 
 This is how the final query might look:
 
-```txt
+```sumo
 ((_index=sec_record_* objectType=*)
 AND _sourcename = "Google Apps Audit Event")
 AND _sourcecategory = "GoogleWorkspace/Groups"
@@ -107,7 +107,7 @@ AND _sourcecategory = "GoogleWorkspace/Groups"
 ## View signals in Cloud SIEM
 
 To view signals that were created from a scheduled search, run a keyword search on “Scheduled Search” on the **Signals** page in the Cloud SIEM UI:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**, and then select **Signals** in the top menu. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Cloud SIEM**, and then select **Signals** in the top menu. 
 1. Click in the **Filters** field at the top of the screen.
 1. Type **Scheduled Search** and press Enter. The keyword search returns a list of all signals created by scheduled searches.
 1. Click a signal from the list. Below is a screenshot of a signal that was created from a scheduled search. Note that:

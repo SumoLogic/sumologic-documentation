@@ -7,7 +7,7 @@ description: Learn how to get started with the Sumo Logic APIs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/advanced-certificates.png')} alt="Advanced Certificates icon" width="50"/>
 
 Sumo Logic has a host of useful APIs across all products that let you access data and perform actions without using the Sumo Logic UI. API calls can be used for to gather data, automate processes, and create custom reports.
 
@@ -33,7 +33,7 @@ In this section, we'll walk you through creating a personal access key that you 
 
 A user with the [Manage Access Keys role capability](/docs/manage/users-roles/roles/role-capabilities/#security) can create and manage access keys for other users in your organization. As an administrator, you can use the general **Access Keys** page instead of the **Personal Access Keys** page.
 
-1. Navigate to the **Access Keys** page. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). From the left menu, click **Administration > Security**, then select the **Access Keys** tab. [**New UI**](/docs/get-started/sumo-logic-ui/). In the upper-right corner, click on **Administration > Access Keys**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In main Sumo Logic menu select **Administration**, then under **Account Security Settings** select **Access Keys**. You can also click the **Go To..**. menu at the top of the screen and select **Access Keys**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). From the left menu, click **Administration > Security**, then select the **Access Keys** tab. 
 1. Click **+Add Access Key** in the upper right and create it using the same steps as above.
 
 As with the personal access key popup, any displayed ID/key will not be available again once the display screen is closed, so make sure you copy both the ID and key to another location for reference before closing the popup. If you miss copying either of the access values, find your access key in the list, delete it, and then recreate it.
@@ -252,7 +252,7 @@ We'll need to provide in our HTTP request the new configuration for this collect
 
 As discussed earlier, we need to provide the ETag from our GET command to ensure that there are no interim changes that would cause our modifications to be rejected. Either through code or through the app, we will add an `IF-MATCH` header to our PUT command with the ETag value (remember to keep the double-quotes).
 
-<img src={useBaseUrl('img/api/if-match.png')} alt="IF-MATCH" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/api/if-match.png')} alt="IF MATCH" style={{border: '1px solid gray'}} width="800" />
 
 With these elements in place, we are now ready to execute the PUT command. If the command is successful, we will receive an "echo" of the new configuration as the response body. If something is not configured correctly (the new configuration is not properly formed, or the ETag doesn't match, for instance), you will see an error message as the body of the response instead. You can always check the changed configuration through another GET command (or through the website) to ensure that the changes were accepted.
 

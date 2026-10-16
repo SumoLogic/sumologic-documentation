@@ -7,7 +7,7 @@ description: Authenticate and connect to Sumo Logic APIs. Learn how to set up ac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="icon" width="40"/>
+<img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="Security and Compliance icon" width="40"/>
 
 This guide describes API authentication and the Sumo Logic endpoints to use for your API client.
 
@@ -17,17 +17,19 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
 
 To access our API documentation, navigate to the appropriate link based on your Sumo Logic deployment. If you're not sure, see [Which endpoint should I use?](#which-endpoint-should-i-should-use)
 
-| Deployment | API documentation URL                       |
-|:-----------|:----------------------------------|
-| AU         | https://api.au.sumologic.com/docs/  |
-| CA         | https://api.ca.sumologic.com/docs/  |
-| DE         | https://api.de.sumologic.com/docs/  |
-| EU         | https://api.eu.sumologic.com/docs/  |
-| FED        | https://api.fed.sumologic.com/docs/ |
-| JP         | https://api.jp.sumologic.com/docs/  |
-| KR         | https://api.kr.sumologic.com/docs/  |
-| US1        | https://api.sumologic.com/docs/     |
-| US2        | https://api.us2.sumologic.com/docs/ |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/  |
 
 ## Authentication
 
@@ -81,7 +83,7 @@ This would yield a Base64 encoded string `QWxhZGRpbjpPcGVuU2VzYW1l` that is used
 
 ## Sumo Logic endpoints by deployment and firewall security
 
-<img src={useBaseUrl('img/icons/operations/firewall.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/operations/firewall.png')} alt="Firewall icon" width="50"/>
 
 Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created.
 
@@ -93,7 +95,9 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
 |:--|:--|:--|:--|:--|:--|
 | AU | [service.au.sumologic.com](https://service.au.sumologic.com) | `api.au.sumologic.com/api/` | `collectors.au.sumologic.com` | `syslog.collection.au.sumologic.com` | `open-collectors.au.sumologic.com` |
 | CA | [service.ca.sumologic.com](https://service.ca.sumologic.com) | `api.ca.sumologic.com/api/` | `collectors.ca.sumologic.com` | `syslog.collection.ca.sumologic.com` | `open-collectors.ca.sumologic.com` |
+| CH | [service.ch.sumologic.com](https://service.ch.sumologic.com) | `api.ch.sumologic.com/api/` | `collectors.ch.sumologic.com`<br/>`endpoint1-9.collection.ch.sumologic.com` | `syslog.collection.ch.sumologic.com` | `open-collectors.ch.sumologic.com` |
 | DE | [service.de.sumologic.com](https://service.de.sumologic.com) | `api.de.sumologic.com/api/` | `collectors.de.sumologic.com` | `syslog.collection.de.sumologic.com` | `open-collectors.de.sumologic.com` |
+| ESC | [service.esc.sumologic.com](https://service.esc.sumologic.com) | `api.esc.sumologic.com/api/` | `collectors.esc.sumologic.com` | `syslog.collection.esc.sumologic.com` | `open-collectors.esc.sumologic.com` |
 | EU | [service.eu.sumologic.com](https://service.eu.sumologic.com) | `api.eu.sumologic.com/api/` | `collectors.eu.sumologic.com`<br/>`endpoint1.collection.eu.sumologic.com` | `syslog.collection.eu.sumologic.com` | `open-collectors.eu.sumologic.com` |
 | FED | [service.fed.sumologic.com](https://service.fed.sumologic.com) | `api.fed.sumologic.com/api/` | `collectors.fed.sumologic.com` | `syslog.collection.fed.sumologic.com` | `open-collectors.fed.sumologic.com` |
 | JP | [service.jp.sumologic.com](https://service.jp.sumologic.com) | `api.jp.sumologic.com/api/` | `collectors.jp.sumologic.com` | `syslog.collection.jp.sumologic.com` | `open-collectors.jp.sumologic.com` |
@@ -105,7 +109,7 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
 
 ### Which endpoint should I should use?
 
-To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
+To determine which endpoint you should use, you'll need to find your account's deployment pod, which is located in the Sumo Logic URL you use. If you see `us2`, that means you're running on the US2 pod. If you see `eu`, `jp`, `de`, `ca`, `kr`, `ch`, `esc`, or `au`, you're on one of those pods. The only exception is the US1 pod, which uses `service.sumologic.com`.
 
 The specific collection endpoint will vary per account. The general format is: `endpoint[N].collection.[deploymentID].sumologic.com`.
 
@@ -134,7 +138,7 @@ Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2
 
 import AWSDeploymentRegion from '../../reuse/aws-region-by-sumo-deployment.md';
 
-* <AWSDeploymentRegion/>
+<AWSDeploymentRegion/>
 
 ## Status codes
 
@@ -172,4 +176,3 @@ Clients must be prepared to handle such failures if they anticipate concurrent u
 
 Sumo Logic provides notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
-The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections#test-a-connection) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="30"/>
+<img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="30"/><img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Linux icon" width="30"/>
 
 The Linux source template generates an OpenTelemetry configuration that can be pushed to a remotely managed OpenTelemetry collector (abbreviated as otelcol). By creating this source template and pushing the configuration to the appropriate OpenTelemetry agent, you can ensure the collection of Linux logs and host metrics for Sumo Logic.
 
@@ -54,27 +54,9 @@ import CollectorInstallation from '../../../../../reuse/apps/opentelemetry/colle
 
 ### Step 2: Configure the source template
 
-In this step, you will configure the yaml required for Linux Collection. Below are the inputs required for configuration:
+import LinuxConfigureSourceTemplate from '../../../../../reuse/send-data/linux-configure-source-template.md';
 
-
-- **Name**. Name of the source template.
-- **Description**. Description for the source template.
-
-#### Logs collection
-- **Fields/Metadata**. You can provide any customer fields to be tagged with the data collected. By default, sumo tags `_sourceCategory` with the value otel/linux.
-- **Logs**. The following fields are pre-populated with default paths, for common log files that are used in different Linux distributions. Not all paths might be relevant for your operating system. Modify the list of files as required or leave the default values.
-
-#### Metrics collection
-- **Metrics**. Select the metric scrappers you want to enable. By default, metric collection for CPU, memory, disk, load, file system, network, and paging are enabled and process metric collection is disabled.
-
-##### Enable process metric collection (optional)
-
-import ProcMetrics from '../../../../../reuse/apps/opentelemetry/process-metric-collection.md';
-
-<ProcMetrics/>
-
-- **Scan Interval**. The frequency at which the source is scanned.
-- **Processing Rules**. You can add processing rules for logs/metrics collected. To learn more, refer to [Processing Rules](../../processing-rules/index.md).
+<LinuxConfigureSourceTemplate/>
 
 ### Step 3: Push the source template to the desired remotely managed collectors
 

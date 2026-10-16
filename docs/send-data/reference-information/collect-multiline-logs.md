@@ -7,7 +7,7 @@ description: Sumo Logic Sources can be configured to detect log boundaries autom
 Sumo Logic Sources, by default, have multiline processing enabled. Multiline processing is used to ensure that a log message made up of multiple lines, with each line separated by a line break or carriage return, is correctly grouped as a single log message when ingested into Sumo Logic.
 
 :::warning
-The line breaks or carriage returns are control characters used to create new lines, usually represented by the escape sequences `\r` and `\r\n`, but are often invisible in text editors. Sumo Logic will not be able to split your log messages that do not contain these characters.
+The line breaks or carriage returns are control characters used to create new lines, usually represented by the escape sequences `\n` and `\r\n`, but are often invisible in text editors. Sumo Logic will not be able to split your log messages that do not contain these characters.
 :::
 
 ## Multiline Processing Caveats
@@ -15,7 +15,7 @@ The line breaks or carriage returns are control characters used to create new li
 Multiline messages that are more than 2,000 lines or 512KB in size will get flushed and collected as single log lines due to the default log message size limitations. Depending on the Collector's available memory, you may be able to increase this limit. Contact Support for assistance by navigating to **Help** > **Support** in the Sumo Logic
 menu.
 
-Messages will be further broken down when they are received and indexed. When collecting log messages that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks. Chunks are ideally created at a line break depending on the Source type, protocol, and size of the message. Each section of the large messages is annotated with metadata to keep the message in order when viewing or searching the log. Review the relevant Source's documentation for additional information.
+Messages will be further broken down when they are received and indexed. When collecting log messages that are larger than 256KB in size, Sumo Logic slices the messages into a stream of smaller message chunks. Chunks are ideally created at a line break depending on the Source type, protocol, and size of the message. Each section of the large messages is annotated with metadata to keep the message in order when viewing or searching the log. Review the relevant Source's documentation for additional information.
 
 ## Multiline Processing Options
 

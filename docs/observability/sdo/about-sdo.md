@@ -5,6 +5,8 @@ sidebar_label: About SDO
 description: Learn how the Sumo Logic Software Development Optimization Solution (SDO) effectively manages and enhances development and production environments.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Organizations are automating their software application development lifecycle with a process known as Continuous Integration and Continuous Delivery (CI/CD). The core foundation of CI/CD is automating software development, test, and build processes to increase development velocity and quality without creating extra work for the developers and operations teams.
 
 Sumo Logic enables CI/CD by giving development, QE, DevOps, SecOps teams a single pane of glass to measure and monitor KPIs or metrics developed by the DevOps Research and Assessment (DORA) organization for measuring the effectiveness of the software development and delivery process and the ability to monitor and troubleshoot their pipelines and incident management processes by analyzing real-time data from various stages in CI/CD pipelines and DevOps tools. 
@@ -17,13 +19,13 @@ The Software Development Optimization Solution enables you to effectively mana
 * Navigation from executive dashboards to phases in the pipeline to individual tools to seamlessly measure software development productivity and quickly troubleshoot and unblock issues in the pipeline that helps in accelerating the software development cycle.
 * Unified visibility across the CI/CD pipeline with streamlined setup and pre-built dashboards for the most popular DevOps tools.
 
-![SDP_Benchmarks.png](/img/sdo/SDP_Benchmarks.png)
+<img src={useBaseUrl('img/sdo/SDP_Benchmarks.png')} alt="SDP Benchmarks" style={{border: '1px solid gray'}} width="800" />
 
 ## The DevOps lifecycle
 
 The Software Development Optimization solution references the following phases in the DevOps Lifecycle, which are commonly used by most organizations: 
 
-![DevOps_Lifecycle.png](/img/sdo/DevOps_Lifecycle.png)
+<img src={useBaseUrl('img/sdo/DevOps_Lifecycle.png')} alt="DevOps Lifecycle" style={{border: '1px solid gray'}} width="600" />
 
 ### Plan
 

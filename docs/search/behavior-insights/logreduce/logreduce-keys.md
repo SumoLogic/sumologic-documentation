@@ -4,6 +4,7 @@ title: LogReduce Keys
 description: Group by the keys of JSON or keyvalue logs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **LogReduce Keys** operator allows you to quickly explore JSON or key-value formatted logs by schemas. If you have a large volume of JSON or key-value logs with different formats and aren't sure which ones you need to focus on, this operator can process them into their object schemas so you can review which ones are relevant to your needs.
 
@@ -23,7 +24,7 @@ With the provided results, you can:
 
 ## Syntax
 
-```sql
+```sumo
 | logreduce keys [parser <parser>] [maxdepth <maxdepth>] [field <fieldname>] [noaggregate]
 ```
 
@@ -56,7 +57,7 @@ Results can be returned in two ways:
 
 ## Examples
 
-```sql
+```sumo
 _sourceCategory = "Labs/AWS/GuardDuty_V8"
 | json keys "region", "partition", "resource"
 | logreduce keys field=resource
@@ -66,14 +67,14 @@ _sourceCategory = "Labs/AWS/GuardDuty_V8"
 
 To get a summary of patterns in Kubernetes event logs, you can quickly scan for unique schemas with LogReduce Keys:
 
-```sql
+```sumo
 _sourceCategory="primary-eks/events"
 | logreduce keys
 ```
 
 Returned schema:
 
-```sql
+```sumo
 object.apiversion, object.count, object.firsttimestamp, object.involvedobject.kind, object.involvedobject.name, object.involvedobject.namespace, object.kind, object.lasttimestamp, object.message, object.metadata.creationtimestamp, object.metadata.name, object.metadata.namespace, object.metadata.resourceversion, object.metadata.selflink, object.metadata.uid, object.reason, object.reportingcomponent, object.reportinginstance, object.source.component, object.type, timestamp, type, object.involvedobject.apiversion, object.involvedobject.resourceversion, object.involvedobject.uid, object.source.host, object.involvedobject.fieldpath
 ```
 
@@ -83,7 +84,7 @@ Next, use [LogReduce Values to explore the schema based on specific keys](/doc
 
 To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS, you'd use a query such as the following:
 
-```sql {13}
+```sumo {13}
 _sourceCategory=*cloudtrail* *AccessDenied* 
 | json field=_raw "userIdentity.userName" as userName nodrop
 | json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
@@ -102,6 +103,6 @@ _sourceCategory=*cloudtrail* *AccessDenied* 
 
 The schemas returned in your results are sorted based on the alphabetical ordering of keys to allow easy identification of changes in patterns.
 
-![CloudTrail example LogReduce Keys.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Keys.png)
+<img src={useBaseUrl('img/search/behavior-insights/CloudTrail-example-LogReduce-Keys.png')} alt="CloudTrail example LogReduce Keys" style={{border: '1px solid gray'}} width="700" />
 
 Next, use [LogReduce Values](/docs/search/behavior-insights/logreduce/logreduce-values) to explore the schema based on specific keys.
