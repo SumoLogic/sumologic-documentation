@@ -13,7 +13,7 @@ Integrations are connectors to applications from industry-leading network and se
 ## Install an integration from App Catalog
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
-1. Select the integration you want to install. For example, Atlassian.<br/><img src={useBaseUrl('img/integrations/integration-to-install.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
+1. Select the integration you want to install. For example, Atlassian Jira Cloud.<br/><img src={useBaseUrl('img/integrations/integration-to-install.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
 1. Click **Install Integration**. Once installed, the integration card displays a green colored **Installed** tag in the top-right corner.
 
 :::note
@@ -22,7 +22,7 @@ Find the article for the integration in [Automation Integrations in App Catalog]
 
 ## Upgrade an integration from App Catalog
 
-If a newer version of an installed integration is available, an **Upgrade Available** tag appears on its card.<br/><img src={useBaseUrl('img/integrations/upgrade-available.png')} alt="upgrade-available" style={{border: '1px solid gray'}} width="250" />
+If a newer version of an installed integration is available, an **Upgrade Available** tag appears in the top-right corner of the card.
  
 Follow the steps below to upgrade the integration:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.
