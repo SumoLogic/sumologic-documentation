@@ -24,7 +24,7 @@ For example, from our own production logs, we use the following:
 2012-08-16 13:39:36,979 [metrics] INFO com.sumologic.util.Reporter - com.sumologic.util.scala.Aggregator.Buffer[/usr/sumo/stream-19.5-3/logs/stream.log]-Size-Meter (bytes/s) count=78847, fifteenMinuteRate=0.26, fiveMinuteRate=0.11, oneMinuteRate=0.00, meanRate=1.06
 ```
 
-This is a key-value pair log, which is easy to parse and easy to read in Sumo.
+This is a key-value pair log, which is easy to parse and easy to read in Sumo Logic.
 
 ## What types of logs can I collect?
 
@@ -51,3 +51,7 @@ Where your data is stored depends on the geographical location the Account Owner
 import AWSDeploymentRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
 <AWSDeploymentRegion/>
+
+## What does Preview mean on some features?
+
+Preview features are available for early access before general availability. Sumo Logic offers three preview tiers: Private Preview, Extended Preview, and Public Preview. Each tier reflects different levels of maturity, customer participation, and production readiness. To learn more about eligibility, participation criteria, and available features, see [Preview Releases](/docs/preview).

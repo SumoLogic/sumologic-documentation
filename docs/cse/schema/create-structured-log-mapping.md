@@ -2,7 +2,7 @@
 id: create-structured-log-mapping
 title: Create a Structured Log Mapping
 sidebar_label: Log Mapping
-description: Learn how to create a log mapping for structured messages.
+description: Create Cloud SIEM log mappings for structured messages to define record types, map fields from key-value pairs, and apply normalized classification.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

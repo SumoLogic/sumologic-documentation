@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Redis icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 [Redis](https://redis.io/docs/about/) is an in-memory data structure that implements a distributed, in-memory key-value database with durability options.
 
@@ -109,7 +109,7 @@ Here's a sample log message in a non-Kubernetes environment.
 
 This sample query is from the **Redis - Logs** dashboard > Logs panel.
 
-```sql title="Query string"
+```sumo title="Query string"
 db.cluster.name=* sumo.datasource="redis"
 | json auto maxdepth 1 nodrop
 | if  (isEmpty(log), _raw, log)  as message
@@ -122,7 +122,8 @@ db.cluster.name=* sumo.datasource="redis"
 
 This sample query is from the **Redis - Cluster Operations** dashboard Metrics panel.
 
-```sql sumo.datasource=redis metric=redis.cmd.calls 
+```sql
+sumo.datasource=redis metric=redis.cmd.calls 
 (cmd=set* or cmd=get* or cmd=incr* or cmd=decr* or cmd=mget or cmd=mset* or cmd=strlen or cmd=psetex or cmd=append) 
 deployment.environment=*  db.cluster.name=* db.node.name=*  
 | delta 

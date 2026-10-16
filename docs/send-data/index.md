@@ -14,15 +14,36 @@ Learn how to send data to Sumo Logic and get started with our observability and 
 
 :::tip Designing your Deployment
 * [How to choose a Collector and Source](/docs/send-data/choose-collector-source)
+* [Installed Collector vs OpenTelemetry Collector Performance Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks)
 * [How to use the Collection UI](/docs/send-data/collection)
 :::
 
+:::training Sumo Logic Academy
+
+import SumoAcademy from '../reuse/sumo-logic-academy.md';
+
+<SumoAcademy/>
+
+* **Self-paced**: 
+    * [Onboarding Fast Track for Administrators](https://learn.sumologic.com/onboarding-fasttrack-for-admins)
+    * [Fundamentals Self-Paced](https://learn.sumologic.com/fundamentals-self-paced)
+    * [Administration Self-Paced](https://learn.sumologic.com/administration-self-paced)
+* **Instructor-led virtual classes**: 
+    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
+    * [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
+:::
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/send-data/choose-collector-source')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>Choosing a Sumo Logic Collector and Source</h4></a>
   <p>Choose the right data source type in Sumo Logic for collecting logs, metrics, or traces using OpenTelemetry Collectors, Installed Collectors, and Hosted Collectors.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href={useBaseUrl('docs/send-data/ic-vs-ot-collector-performance-benchmarks')}><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="Data collection icon" width="40"/><h4>IC vs OTel Performance Benchmarks</h4></a>
+  <p>Compare Installed Collector and OpenTelemetry Collector throughput, CPU usage, and scalability to choose the right collector for your workload.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -27,7 +27,7 @@ In addition to the fields found in your logs, the Field Browser shows **Time**, 
   The **Searchable Time** field will only be displayed in the field browser.
   :::
   
-<img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="FB_Field-Browser_Display-Fields" width="300"/>
+<img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="Field Browser display fields" width="300"/>
 
 - A. Search for fields by entering text in this field.
 - B. List of Fields shown in the Messages tab.
@@ -77,13 +77,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Search from the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/search-from-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Search from the Field Browser</h4></a>
   <p>Drilling down into a field from the Field Browser is seamless for non-aggregate queries.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
+  <a href={useBaseUrl('docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="40"/><h4>Show and Hide Fields in the Field Browser</h4></a>
   <p>Change the fields that are displayed in search results by showing or hiding in the Field Browser.</p>
   </div>
 </div>

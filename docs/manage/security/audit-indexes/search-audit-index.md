@@ -29,7 +29,7 @@ To enable the Search Audit Index:
 1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index Record checkbox" style={{border: '1px solid gray'}} width="600" />
 
 :::note
-* Users with a role that grants the [**Manage audit data feed**](/docs/manage/users-roles/roles/role-capabilities#security) capability are allowed to enable the Search Audit Index.
+* Users with a role that grants the [Manage Audit Data Feed](/docs/manage/users-roles/roles/role-capabilities#security) capability are allowed to enable the Search Audit Index.
 * Enabling the index will not count towards your data volume quota.
 * Logging to the index begins when the index is enabled.
 :::
@@ -46,7 +46,7 @@ Querying the index returns results only if the index is enabled.
 
 ## Index retention period
 
-By default, the retention period of the Search Audit index is the same as the retention period of your Default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
+By default, the retention period of the Search Audit Index is the same as the retention period of your default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
 
 ## Log Search Audit Index message fields
 
@@ -55,7 +55,7 @@ The following table provides details on the fields returned by the index:
 | Field  | Description |
 |:--|:--|
 | `time` | The time when the audit log was generated. |
-| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](/docs/manage/partitions/data-tiers). |
+| `analytics_tier` | The data tier associated with the audit message. Learn more about [data tiers](/docs/manage/partitions/data-tiers). |
 | `content_identifier` | The ID of the content item that triggered the search query. |
 | `content_name` | The name of the content item that triggered the search query. |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
@@ -82,13 +82,13 @@ The table below shows the possible values for the `query_type` field.
 
 | query_type value | Description |
 |:--|:--|
-| Alerts | Search queries run by users accessing the [Alert Response Page](/docs/alerts/monitors/alert-response). |
-| Search API | Search queries run by users using the [Search Job API](/docs/api/search-job) only. |
+| Alerts | Search queries run by users accessing the [Alert Response](/docs/alerts/monitors/alert-response) page. |
+| Search API | Search queries run by users using the [Search Job APIs](/docs/api/search-job) only. |
 | Interactive Search | Search queries run from the Search tab in the UI only. |
 | Interactive Dashboard | Search queries run from dashboards in the UI only. |
-| Scheduled Search | [Scheduled search](/docs/alerts/scheduled-searches) queries run as per the frequency specified by users in the org. |
+| Scheduled Search | [Scheduled sSearch](/docs/alerts/scheduled-searches) queries run as per the frequency specified by users in the org. |
 | View Maintenance | [Scheduled View](/docs/manage/scheduled-views) queries run on behalf of the users in the org. |
-| Sumo Internal | The Internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, etc.).                                    |
+| Sumo Internal | The internal searches Sumo Logic runs in the background that are critical in providing other services (for example, autocomplete, scheduled view optimization, etc.).                                    |
 | Auto Refresh Dashboard | Search queries used to power auto refresh dashboard panels. |
 | Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
 | Span Analytics | Queries run for filtering and aggregating trace data based on [span attributes](/docs/apm/spans) to understand application services performance. Queries can be built using input fields, with filters and visualized results available.  |

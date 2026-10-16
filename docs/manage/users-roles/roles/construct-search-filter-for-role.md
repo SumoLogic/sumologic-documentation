@@ -7,7 +7,7 @@ description: Construct a role search filter to control what log data users with 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import RoleStacking from '../../../reuse/role-stacking-tip.md';
 
-This page describes how to define search filters for a role. These instructions apply to the **Search Filter** option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
+This page describes how to define search filters for a role. These instructions apply to the **Search Filter** option in the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
   
 ## Search filter basics
 
@@ -27,19 +27,19 @@ The sections below list search filter limitations, and describe how you can use 
 * Use a field or an FER in the role search filter to control access to data.
 * If the search filter of a role is modified, the data can still be accessed in the pinned queries for up to 24 hours from the original run prior to the search filter modification.
 
-For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
+For limitations related to the use of Scheduled Views or partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
 
 ### Using metadata in a search filter
 
 You can use metadata fields in a role search filter. The following search filter grants access to log data from a Collector named “HR_Tools”, and no other data:
 
-```sql
+```sumo
 _collector=HR_Tools
 ```
 
 When a user with that role filter runs a query, Sumo Logic prepends the filter to the query with an `AND`:
 
-```sql
+```sumo
 _collector=HR_Tools AND <user-query>
 ```
 
@@ -47,25 +47,25 @@ _collector=HR_Tools AND <user-query>
 
 You can use `AND` and `OR` in a search filter. For example, this role filter uses `OR` to grant access to log data from two source categories:
 
-```sql
+```sumo
 _sourceCategory=stock OR _sourceCategory=insurance
 ```
 
 When a user with that role filter runs a query, Sumo Logic prepends the filter to the query with an `AND`:
 
-```sql
+```sumo
 (_sourceCategory=stock OR _sourceCategory=insurance) AND <user-query>
 ```
 
 This role filter below uses `AND` to grant access to log data with the source category “insurance” from the collector named “HR_Tools”:
 
-```sql
+```sumo
 _collector=HR_Tools AND _sourceCategory=insurance
 ```
 
 When a user with that role filter runs a query, Sumo Logic prepends the filter to the query with an `AND`:
 
-```sql
+```sumo
 (_collector=HR_Tools AND _sourceCategory=insurance) AND <user-query>
 ```
 
@@ -73,13 +73,13 @@ When a user with that role filter runs a query, Sumo Logic prepends the filter t
 
 You can include a string you want to search for in a role search filter. This role filter grants access to logs from the collector named “HR_Tools” that contain the string “enrollment”: 
 
-```sql
+```sumo
 _collector=HR_Tools AND enrollment
 ```
 
 When a user with that role filter runs a query, Sumo Logic runs it like this:
 
-```sql
+```sumo
 (_collector=HR_Tools AND enrollment) AND <user-query>
 ```
 
@@ -87,25 +87,25 @@ When a user with that role filter runs a query, Sumo Logic runs it like this:
 
 You can use an asterisk (\*) as a wildcard in a role search filter. This role filter grants access to logs from all collectors whose name begins with “HR”:
 
-```sql
+```sumo
 _collector=HR* 
 ```
 
 When a user with that role filter runs a query, Sumo Logic runs it like this:
 
-```sql
+```sumo
 _collector=HR* AND <user-query>
 ```
 
 This role filter grants access to logs that contain the string “violation” from all collectors whose name begins with “HR”.
 
-```sql
+```sumo
 _collector=HR* AND violation
 ```
 
 When a user with that role filter runs a query, Sumo Logic runs it like this:
 
-```sql
+```sumo
 (_collector=HR* AND violation) AND <user-query>
 ```
 
@@ -113,7 +113,7 @@ When a user with that role filter runs a query, Sumo Logic runs it like this:
 
 You can use an exclamation point character (!) in a role search filter to restrict, rather than allow, access. For example, this filter:
 
-```sql
+```sumo
 !_sourceHost=humanresources* AND !_sourceName=*finance* AND !_sourceCategory=*secret*
 ```
 
@@ -125,7 +125,7 @@ denies access to log data whose:  
 
 When a user with that role filter runs a query, Sumo Logic runs it like this:
 
-```sql
+```sumo
 (!_sourceHost=humanresources* AND !_sourceName=*finance* AND !_sourceCategory=*secret*) AND <your-query>
 ```
 
@@ -156,7 +156,7 @@ Role B Allows access to log data whose `_sourceCategory` tag begins with “Vx�
 
 When a user with Roles A and B runs a query, Sumo Logic applies the filters with an `OR`, and prepends them with an `AND` to your query, like this:
 
-```sql
+```sumo
 ((_source="GCP Audit" AND _collector="GCP") OR _sourceCategory="Vx*")
 AND <your-query>
 ```
@@ -178,7 +178,7 @@ Role B Allows access to any log data whose `_collector` tag matches “f\*”, a
 
 When a user with Roles A and B runs a query, Sumo Logic combines the two filters with an `OR`, and prepends them with an `AND` to your query, like this:
 
-```sql
+```sumo
 (_collector=fee  OR _collector=f) AND <your-query>
 ```
 
@@ -200,7 +200,7 @@ Role B Allows access to log data whose `_sourceCategory` begins with “analytic
 
 When a user with Roles A and B runs a query, Sumo Logic combines the two filters with an `OR`, like this:
 
-```sql
+```sumo
 (_sourceCategory=analytics-lab OR _sourceCategory=analytics*) AND <your-query>
 ```
 
@@ -222,7 +222,7 @@ Role B prevents access to log data whose `_sourceCategory` tag does contain “s
 
 When a user with Roles A and B runs a query, Sumo Logic combines the two filters with an `OR`, and prepends them with an `AND` to your query, like this:
 
-```sql
+```sumo
 (_collector=prod* OR !_sourceCategory=*shoguns*) AND <your-query>
 ```
 
@@ -246,4 +246,4 @@ When a user with Roles A and B runs a query, Sumo Logic combines the two filters
 
 ## Test role filtering
 
-To test whether filtering works as expected, select a role and click the **Emulate log search** button. For more information, see [Test a role](/docs/manage/users-roles/roles/create-manage-roles/#test-a-roles-log-access-rights).
+To test whether filtering works as expected, select a role and click the **Emulate log search** button. For more information, see [Test a role's log access rights](/docs/manage/users-roles/roles/create-manage-roles/#test-a-roles-log-access-rights).

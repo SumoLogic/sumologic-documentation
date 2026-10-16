@@ -16,7 +16,7 @@ description: This document outlines what is Azure Database for MySQL, how to set
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mysql.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-database-for-mysql.png')} alt="Azure Database for MySQL icon" width="50"/>
 
 [Azure Database for MySQL](https://learn.microsoft.com/en-us/azure/mysql/single-server/overview) is a relational database service in the Microsoft cloud based on the MySQL Community Edition database engine. This integration helps in identifying slow queries, and tracking database-level activity, including connection, administration, data definition language (DDL), and data manipulation language (DML) events.
 

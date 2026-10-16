@@ -1,7 +1,7 @@
 ---
 id: create-allowlist-ip-cidr-addresses
 title: Create an Allowlist for IP or CIDR Addresses
-description: Service Allowlist Settings let you explicitly grant access to specific IP or CIDR addresses.
+description: Create a Sumo Logic Service Allowlist to restrict logins, API access, and dashboard sharing to specific IP addresses or CIDR ranges for enhanced security.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -32,7 +32,7 @@ The IP is generally your host IP address. But if your request is coming through 
 1. Under **Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box. <br/><img src={useBaseUrl('img/security/service-allow-list-2.png')} alt="Enable Dashboard Allowlist** check box in Service Allowlist settings" style={{border: '1px solid gray'}} width="400" />
 1. Copy and paste your IP address in the **IP Address or CIDR** text box, a **Description** is optional, then click **Add**.
 1. Type additional IP and/or CIDR addresses in the text box, and click **Add**. Repeat this step until you've added all the addresses you'd like to allowlist.
-vClick **Save**.
+Click **Save**.
 
 ### Disable allowlist settings
 

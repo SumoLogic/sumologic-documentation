@@ -20,7 +20,7 @@ Cloud SOAR is a security operations technology platform that empowers MSSPs, SOC
 * **Better collaboration**
 <br/>Cloud SOAR’s native orchestration capabilities boost the collaboration within the SOC team, ensuring efficient synergy during each phase of incident response. Automation of the full incident lifecycle eases the burden on security analysts, while helping to successfully pinpoint real threats and coordinate an effective response across tools and team members.
 * **Customizable reports**
-<br/>Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IOC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
+<br/>Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IoC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
 * **Speed incident response**
 <br/>Cloud SOAR improves incident response time with flexible workflow automation across tools and teams. Machine learning distinguishes real threats from false positives to reduce alert fatigue.
 * **Connect disparate tools**
@@ -38,7 +38,7 @@ For more information about these features, see [Cloud SOAR Incident Management a
 
 ### Triage
 
-Cloud SOAR provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases.
+Cloud SOAR provides automated investigation of indicators of compromise (IoC) for cyber and non-cyber use cases.
 
 <img src={useBaseUrl('img/cloud-soar/overview-advanced-triage.png')} alt="Advanced triage" style={{border: '1px solid gray'}} width="800" />
 
@@ -102,4 +102,4 @@ Cloud SOAR provides static egress for Cloud executions. IP addresses can be ente
 
 Cloud SOAR interacts with the platforms in your environment using a module called Automation Bridge.
 
-Automation Bridge is a process running on a Linux-based VM (deployed inside the your environment) that interacts with your Cloud SOAR Instance and allows you to execute playbook actions on all the systems that Cloud SOAR is orchestrating in that specific environment. For more information, see [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge).
+Automation Bridge is a process running on a Linux-based virtual machine (VM) deployed inside your environment that interacts with your Cloud SOAR Instance and allows you to execute playbook actions on all the systems that Cloud SOAR is orchestrating in that specific environment. For more information, see [Automation Bridge](/docs/platform-services/automation-service/automation-service-bridge).

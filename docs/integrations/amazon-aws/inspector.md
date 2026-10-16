@@ -6,7 +6,7 @@ description: The Sumo Logic Inspector App helps reveal trends and identify anoma
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Inspector Classic icon" width="50"/>
 
 Amazon Inspector is an automated vulnerability management service that continually scans Amazon EC2 and container images for software vulnerabilities and network exposures. The Sumo Logic Inspector app helps reveal trends and identify anomalies from these findings.
 
@@ -58,7 +58,7 @@ For information about integrating Amazon Inspector with Security Hub, see [Integ
 
 ### Sample queries
 
-```sql title="Findings by resource type and severity query"
+```sumo title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
 | json  "AwsAccountId", "Id", "GeneratorId", "ProductArn", "CreatedAt", "UpdatedAt", "Resources",
  "Severity.Normalized", "SourceUrl",

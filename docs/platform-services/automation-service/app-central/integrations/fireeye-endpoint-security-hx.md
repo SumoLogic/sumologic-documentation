@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-endpoint-security-hx.png')} alt="fireeye-endpoint-security-hx" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-endpoint-security-hx.png')} alt="FireEye Endpoint Security icon" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 13, 2023***
+***Version: 1.4  
+Updated: April 29, 2026***
 
 Interact with FireEye Endpoint Security (HX) during incident investigations.
 
@@ -50,8 +50,9 @@ For information about Trellix Endpoint Security (HX), (formerly FireEye Endpoint
 
 ## Change Log
 
-* March 3, 2020 - First upload
-* June 26, 2020 - Updated the Search into Events action
-* July 13, 2023 (v1.3)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | July 13, 2023 | <ul><li>Updated the integration with Environmental Variables.</li><li>Changed fields visibility.</li></ul> |
+| | June 26, 2020 | Updated the Search into Events action. |
+| | March 3, 2020 | First upload. |
