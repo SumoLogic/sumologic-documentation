@@ -2,7 +2,7 @@
 id: crowdstrike-filevantage-source
 title: CrowdStrike FileVantage Source
 sidebar_label: CrowdStrike FileVantage
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-filevantage
 description: Learn how to collect file integrity monitoring logs from the CrowdStrike FileVantage platform.
@@ -121,3 +121,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ### Limitation
 
 - This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
+
+## Additional resources
+
+- Use the [CrowdStrike Falcon Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/) to automate response actions directly from Cloud SOAR playbooks.

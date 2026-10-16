@@ -73,7 +73,7 @@ The client secret, known also as an application password, is a string value of y
 2. Select **API permissions > Add a permission**.
 3. Delegated permissions are selected by default. Delegated permissions are appropriate for client apps that access an API as the signed-in user, and whose access should be restricted to the permissions you select in the next step.
 4. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
-5. Select Add a permission, and add the following permissions (as we can see from picutre). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-5.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
+5. Select Add a permission, and add the following permissions (as we can see from the picture below). <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-ews/microsoft-ews-5.png')} style={{border:'1px solid gray'}} alt="/microsoft-ews" width="800"/>
 
 #### EWS API to be configured for these permissions
 
@@ -196,16 +196,13 @@ Email Gateway
 
 ## Change Log
 
-* April 12, 2019 - First upload
-* December 21, 2020
-    + Added new actions
-    + Search Emails Extended replaced the Search Email action
-    + Added new Authentication Method OAuth 2.0 to all actions
-* March 10, 2022 - Logo
-* October 26, 2022 - added config doc
-* November 29, 2022 - Added new actions (Send Email and Reply To Email)
-* October 6, 2023 (v2.2) - Integration Updated
-* March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
-* November 12, 2024 (v2.4) 
-  * Updated the exchange_lib library to 5.4.2
-  * Updated the action Get Contacts to return the message "No contacts found" if the contacts are not found rather than returning an exception.
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.4 | November 12, 2024 | <ul><li>Updated the `exchange_lib` library to 5.4.2.</li><li>Updated the **Get Contacts** action to return the message "No contacts found" if contacts are not found, rather than returning an exception.</li></ul> |
+| v2.3 | March 4, 2024 | Updated code for compatibility with Python 3.12. |
+| v2.2 | October 6, 2023 | Updated the integration. |
+| | November 29, 2022 | Added new actions: **Send Email** and **Reply To Email**. |
+| | October 26, 2022 | Added configuration documentation. |
+| | March 10, 2022 | Updated the logo in Microsoft EWS integration. |
+| | December 21, 2020 | <ul><li>Added new actions.</li><li>The **Search Emails Extended** action replaced the **Search Email** action.</li><li>Added the OAuth 2.0 authentication method to all actions.</li></ul> |
+| | April 12, 2019 | Initial release of the Microsoft EWS integration. |

@@ -2,7 +2,7 @@
 id: microsoft-graph-azure-ad-reporting-source
 title: Microsoft Graph Azure AD Reporting Source
 sidebar_label: Microsoft Graph Azure AD Reporting
-tags:
+keywords:
   - cloud-to-cloud
   - microsoft-graph-azure-ad-reporting
 description: The Microsoft Graph Azure AD Reporting Source collects Directory Audit, Sign-in, and Provisioning data from the Microsoft Graph API Security endpoint.
@@ -140,3 +140,7 @@ This error occurs when the API request limit (throttling threshold) is exceeded 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Azure AD Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.

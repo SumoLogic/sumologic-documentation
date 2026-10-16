@@ -12,6 +12,10 @@ Use the instructions in this topic to configure a system for remote access by a 
 Windows events can only be collected remotely from systems running Windows Server 2012 or later.
 :::
 
+:::tip
+Once this is configured, see [Remote Windows Event Log Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/remote-windows-event-log-benchmarks/) for expected CPU usage and throughput at scale. WinRM has a delivery ceiling that's independent of Collector version.
+:::
+
 There are two primary configuration requirements to enable remote event log collection:
 
 1. The user account specified in the source must have permissions to read the event log remotely

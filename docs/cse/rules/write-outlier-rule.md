@@ -72,11 +72,11 @@ After your rule starts generating signals, evaluate them to determine if they tr
 If the records gathered for a baseline exceed 50 million, the historical baseline capabilities to generate a baseline via a query become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
 :::tip
-Sumo Logic ensures that rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and outlier rules are no exception.
+Sumo Logic uses circuit breakers to prevent rule processing from affecting production environments. If a rule matches too many records in a short period, the circuit breaker trips and the rule enters a Degraded state. Outlier rules are also subject to these limits.
 
-On the rule detail page, if you view the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
+On the rule detail page, click the degraded message for details about the problem and how to resolve it. A degraded rule usually needs to be tuned for your environment.
 
-For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
+An outlier rule can also have a baseline-building failure when the overall record volume is high or the rule matches a large number of records. In this case, generating a historical baseline through a query may be inefficient. You can let the baseline gather data over the period configured in the rule, or edit the rule to filter more records. For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
 :::
 
 ## Example rule
@@ -107,6 +107,9 @@ The settings in the **If Triggered** section are divided into two subsections, o
     The [baseline for an outlier rule](#baselines-for-outlier-rules) is recalculated if a rule tuning expression that applies to the selected rule is updated. However, the baseline is not recalculated if the rule tuning expression applies to all rules.
     :::
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
+   :::note
+   The baseline window sets how data is grouped into data points. It doesn't reduce the amount of data the baseline has to process. If the rule's baseline fails because the rule matches too many records, switching from daily to hourly is unlikely to resolve it. Narrow the rule expression or add a tuning expression instead.
+   :::
 1. **for the entity(ies)**. Select one or more record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
 1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 4, and the maximum is 90. The default is 90 days.
    :::note
