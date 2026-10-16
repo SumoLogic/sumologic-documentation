@@ -41,15 +41,6 @@ This page lists the maximum limits and quotas for various features, services, an
 - [Log monitors always group notifications.](/docs/alerts/monitors/overview/#alerts)
 - [Metric monitors can group notifications, resolving when all time series return to normal.](/docs/alerts/monitors/overview/#alerts)
 
-### Unsupported features in monitors
-
-- **[Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time)**. Not supported.
-- **[LogReduce](/docs/search/behavior-insights/logreduce/logreduce-operator) and [LogCompare](/docs/search/behavior-insights/logcompare) operators**. Not supported.
-- **[Frequent](/docs/manage/partitions/data-tiers) and [Infrequent](/docs/manage/partitions/data-tiers) data tiers**. Not supported.
-- **[Save to Index](/docs/alerts/scheduled-searches/save-to-index) and [Save to Lookup](/docs/alerts/scheduled-searches/save-to-lookup)**. Not supported.
-- **[Search templates](/docs/search/get-started-with-search/build-search/search-templates.md)**. Not supported.
-- **[`timeshift` metrics operator](/docs/metrics/metrics-operators/timeshift)**. Not supported in Metric Monitors.
-
 ### Alert response
 
 - **Related Alerts and Monitor History**. Shows the top 250 alerts.
@@ -63,7 +54,6 @@ This page lists the maximum limits and quotas for various features, services, an
 - **[Emails per search](/docs/alerts/scheduled-searches/schedule-search)**. Up to 120 emails per day.
 - **Webhook connections**. Limited to 512 records.
 - **Row extraction**. Limited to 100 unique rows per trigger.
-- **Infrequent Data Tier**. Not supported.
 
 ## Collectors and sources
 
@@ -104,22 +94,6 @@ This page lists the maximum limits and quotas for various features, services, an
 | Max Time Range | 1,000d | The given time range was invalid. |
 | Max Quantization Interval | 30d | The given quantization was too big. |
 | Max Timeshift | 1,000d | The given timeshift was too big. |
-
-## Mobot and AI features
-
-### Mobot
-
-- **[Prompts per user per day](/docs/search/mobot)**. Up to 10 prompts per user, per Sumo Logic Org ID, per day.
-- **[Prompt character limit](/docs/search/mobot)**. Up to 40,000 characters per prompt.
-
-### Conversational Playbooks
-
-- **[Prompts per user per day](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot)**. Up to 50 prompts per user, per Sumo Logic Org ID, per day (separate from the standard Mobot limit).
-
-### SOC Analyst Agent
-
-- **[Investigation prompts per user per day](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent)**. Up to 30 prompts per user per day when continuing an investigation via **Ask Mobot** from an insight. Governed by SOC Analyst Agent licensing, not the standard Mobot limit.
-- **[Auto-investigation volume](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent)**. Insights are auto-investigated in priority order up to your organization's committed daily investigation volume, which resets daily per Sumo Logic Org ID.
 
 ## APM, traces, and RUM
 
@@ -240,8 +214,3 @@ See [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ing
 | Raw                    | 30 days      |
 | 1-hour resolution      | 13 months    |
 
-### Host metric source limits
-
-- **[Disk metrics](/docs/send-data/installed-collectors/sources/host-metrics-source)**. Approximately 10 metrics are collected for each source disk on each host.
-- **[Network metrics](/docs/send-data/installed-collectors/sources/host-metrics-source)**. Network metrics are calculated per interface on each host, and approximately 4 metrics per interface are collected.
-- **[CPU, memory, and TCP metrics](/docs/send-data/installed-collectors/sources/host-metrics-source)**. Approximately 10 CPU, memory, and TCP metrics are collected for each host.
