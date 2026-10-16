@@ -306,7 +306,7 @@ b'xgb8NJ3ZYPJbzX6vWHySZbLd73bKWPsGMKoSnry7hL4='
 b'gAAAAABb6asvlRfxEj_ZQTKOyrqnGNMbfo_kpxrqv4DCO6TorS4FmKFzrepe0_xtiMT67ZT6OOf5bfrVZXNnUDFNlwPWrpFSfg=='
 ```
 
-**Store the generate key in a file** with restrictive access based on your environment.
+**Store the generated key in a file** with restrictive access based on your environment.
 
 **Modify the scripts** to include the encrypted password and the path to file with key created in previous step:
 
