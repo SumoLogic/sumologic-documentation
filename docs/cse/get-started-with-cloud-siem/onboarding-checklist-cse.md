@@ -106,7 +106,7 @@ See:
 
 #### Create parsers
 
-When messages are sent to Cloud SIEM, they are processed through the records data pipeline (parsers to log mappers) for parsing and normalization into the Cloud SIEM schema. Each data source should be configured with the out-of-the-box parser built for that data type, and adhere to other ingestion best practices. If Sumo Logic doesn’t provide an out-of-the-box parser or log mapper for some of your sources, we can help you create the parsers. You’ll need to specify `_siemForward` and `_parser` fields as needed, or use the **Forward to SIEM** checkbox where possible when configuring sources.
+When messages are sent to Cloud SIEM, they are processed through the records data pipeline (parsers to log mappers) for parsing and normalization into the Cloud SIEM schema. Each data source should be configured with the out-of-the-box parser built for that data type, and adhere to other ingestion best practices. If Sumo Logic doesn’t provide an out-of-the-box parser or log mapper for some of your sources, we can help you create the parsers. You’ll need to specify `_siemForward` and `_parser` fields as needed, or use the **Forward to SIEM** check box where possible when configuring sources.
 
 See:
 * [Cloud SIEM Ingestion Best Practices](/docs/cse/ingestion/cse-ingestion-best-practices/)
@@ -212,7 +212,7 @@ Perform the following tasks to create actions to run in Cloud SIEM.
 
 #### Create Cloud SIEM actions
 
-You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an insight to another system, either automatically when the insight is created, or on-demand from the insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, Jira, Slack, etc.), or to send an email to analysts when they are assigned insights.
+You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an insight to another system, either automatically when the insight is created, or on-demand from the insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, Jira, Slack, and so on), or to send an email to analysts when they are assigned insights.
 
 See: [Create Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/)
 
@@ -247,7 +247,7 @@ See: [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions/)
 
 #### Configure first seen rule baseline
 
-First seen rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that hasn't been seen before. Cloud SIEM automatically creates a baseline model of normal behavior over a 30-day period. Typically longer baselines (such as 30 days) reduce alert noise. However, for testing purposes, you may want to reduce the time window to generate signal data before the full baseline window has occurred.
+First seen rules allow you to generate a signal when behavior by an entity (such as a user) is encountered that has not been seen before. Cloud SIEM automatically creates a baseline model of normal behavior over a 30-day period. Typically longer baselines (such as 30 days) reduce alert noise. However, for testing purposes, you may want to reduce the time window to generate signal data before the full baseline window has occurred.
 
 See: [Write a First Seen Rule](/docs/cse/rules/write-first-seen-rule/)
 

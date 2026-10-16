@@ -4,10 +4,10 @@ description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/pulse-secure.png')} alt="pulse-secure" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/pulse-secure.png')} alt="Pulse Secure icon" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 07, 2023***
+***Version: 1.2  
+Updated: April 30, 2026***
 
 Block users and their associated IP addresses with Pulse Secure.
 
@@ -58,5 +58,8 @@ For information about Secure Access Client (formerly Pulse Secure), see [Secure 
 
 ## Change Log
 
-* September 2, 2020 - First upload
-* July 7, 2023 (v1.1) - Updated the integration with Environmental Variables
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 7, 2023 | Updated the integration with Environmental Variables. |
+| | September 2, 2020 | Initial release of the Pulse Secure integration. |

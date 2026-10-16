@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon Kinesis - Streams is a unified logs a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="Kinesis icon" width="50"/>
 
 Amazon Kinesis is a platform for streaming data on AWS. It makes it easy to load and analyze streaming data, and it provides the ability for you to build custom streaming data applications for your needs. Amazon Kinesis Streams is used to collect and process large streams of data records in real time. The Sumo Logic app for Amazon Kinesis - Streams is a unified logs and metrics (ULM) app which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis Streams.
 
@@ -52,7 +52,7 @@ The app uses Kinesis logs and metrics for:
 
 ### Sample queries
 
-```sql title="Details of errors in events"
+```sumo title="Details of errors in events"
 _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | json field=_raw "eventSource", "eventName", "awsRegion", "sourceIPAddress","userAgent" nodrop
 | json field=_raw "requestParameters.streamName" as streamName nodrop

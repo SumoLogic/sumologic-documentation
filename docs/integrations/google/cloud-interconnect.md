@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudInterconnect.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudInterconnect.png')} alt="Google Cloud Interconnect icon" width="50"/>
 
 Cloud Interconnect extends your external network to the Google network through a high availability, low latency connection. For more details, refer to the [GCP documentation](https://cloud.google.com/network-connectivity/docs/interconnect/concepts/overview)
 

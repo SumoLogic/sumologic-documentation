@@ -7,7 +7,7 @@ description: Send data from alerts to your New Relic account.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="thumbnail icon" width="100"/>
+<img src='https://newrelic.com/themes/custom/erno/assets/mediakit/new_relic_logo_horizontal.png' alt="New Relic Logo Horizontal icon" width="100"/>
 
 New Relic webhook connections allow you to send alert results to New Relic as a custom event (Insight). You can learn more about the New Relic Insights custom events in their [API Help](https://docs.newrelic.com/docs/insights/explore-data/custom-events/insert-custom-events-insights-api).
 
@@ -21,7 +21,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. 
 1. On the **Connections** page, click **+ Add**.
-1. For **Connection Type**, select **New Relic** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/new-relic-dropdown.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+1. For **Connection Type**, select **New Relic** from the dropdown.<br/><img src={useBaseUrl('img/connection-and-integration/new-relic-dropdown.png')} alt="New Relic dropdown menu" style={{border: '1px solid gray'}} width="500" />
 1. In the **Connection Settings** dialog, enter:
     * **Name**. Enter a name for the connection.
     * (Optional) **Description**. Enter a description for the connection.
@@ -31,7 +31,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
         ```
     * **Insert Key**. Enter your API Key generated from New Relic Insights. See [Create an API key for New Relic Webhook](#create-an-api-keyfor-new-relic-webhook).
     * (Optional) **Custom Headers**. Enter up to five comma separated key-value pairs.
-      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-new-relic.png')} alt="Thumbnail icon" style={{border: '1px solid gray'}} width="500" />
+      <img src={useBaseUrl('img/connection-and-integration/create-new-connection-new-relic.png')} alt="Create New Connection New Relic" style={{border: '1px solid gray'}} width="500" />
 1. Customize your **Payload** to include any information you want to send from your scheduled search to New Relic. See [Send Events to New Relic using a Webhook](#send-events-to-new-relic-insights-using-a-webhook). For details on variables that can be used as parameters within your JSON object, see [webhook payload variables](set-up-webhook-connections.md).
 1. Click **Test Alert** to test the connection. If successful, you'll see a `200 OK` response message.
 1. Click **Save**.
@@ -70,7 +70,7 @@ A maximum of 200 aggregate results or 10 raw messages for this field can be sent
 
 By default, a "timestamp" field will be applied in New Relic Insights when the event is received. To override this, you must specify "timestamp" as a field in your Sumo Logic query (as an unformatted Unix timestamp, in seconds or milliseconds relative to the Unix epoch). For example, if you would like your timeslice to be represented in New Relic as the timestamp, you may add the following to your query:
 
-```sql
+```sumo
 | timeslice 1m
 | format ("%s",_timeslice) as timestamp
 | count by timestamp

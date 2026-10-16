@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/oracle.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/databases/oracle.png')} alt="Oracle icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The [Oracle](https://docs.oracle.com/database/121/CNCPT/intro.htm#CNCPT001) app is a logs and metrics based app. Preconfigured dashboards and searches provide insight into the listeners, audit logs (traditional - sys/xml and unified), performance, and security. It also gives insight around count of rollback, commits, transaction, process, session, hard parse, and DML locks.
 
@@ -198,6 +198,10 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Once the details are filled, click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 
 <EnvVar/>
@@ -300,7 +304,7 @@ TNS-12514: TNS:listener does not currently know of service requested in connect 
 
 This sample query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"=oracle establish ("SID=" or "SERVICE_NAME=")  | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as oracle_log_message 
 | parse regex field=oracle_log_message "CONNECT_DATA[\s\S]+?SERVICE_NAME=(?<serviceName>[^)]*)\)[\s\S]+establish" nodrop

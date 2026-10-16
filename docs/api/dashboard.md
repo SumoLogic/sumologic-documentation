@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="50"/>
 
 The Dashboard Management APIs allow you to create, retrieve, update, and delete dashboards created with the [Dashboard](/docs/dashboards) platform from HTTP endpoints to organize your content.
 
@@ -23,6 +23,7 @@ The Dashboard Management APIs allow you to create, retrieve, update, and delete 
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/dashboardManagement   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/dashboardManagement  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/dashboardManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/dashboardManagement  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/dashboardManagement   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/dashboardManagement  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/dashboardManagement   |
