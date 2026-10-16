@@ -745,7 +745,7 @@ Here's how to make a [table](#tables).
 #### Linking to files in other parent folders
 
 ```md
-* Learn how to [sign up with Sumo Logic](../get-started/sign-up.md); or
+* Learn how to [sign up with Sumo](../get-started/sign-up.md); or
 * Learn how to [sign up with Sumo Logic](/docs/get-started/sign-up).
 ```
 

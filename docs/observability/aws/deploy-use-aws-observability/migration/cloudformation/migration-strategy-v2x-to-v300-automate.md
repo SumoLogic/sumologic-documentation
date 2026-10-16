@@ -232,7 +232,7 @@ Before touching any infrastructure, the script displays a summary of what it fou
     [100653041] classic-lb-logs (Polling)
     [100653042] kinesis-firehose-cloudwatch-logs (HTTP)
 
-  S3 Buckets (read from Sumo Logic source configs):
+  S3 Buckets (read from Sumo source configs):
     ALB bucket:        aws-observability-logs-4bc184f0
     CloudTrail bucket: aws-observability-logs-4bc184f0
     ELB bucket:        aws-observability-logs-4bc184f0

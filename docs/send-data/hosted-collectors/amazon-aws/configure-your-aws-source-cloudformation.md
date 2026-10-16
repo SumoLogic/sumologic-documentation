@@ -154,7 +154,7 @@ Both methods require a YAML file with the CloudFormation template. You can creat
 ```yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Description: A CloudFormation template that creates a role for authenticating with
-  Sumo Logic’s AWS integrations.
+  Sumo’s AWS integrations.
 Parameters:
   ExternalID:
     Type: String
