@@ -62,7 +62,7 @@ _index=sumologic_audit_events _sourceCategory=accessKeys
 | [Password Policy](/docs/manage/security/set-password-policy) | `passwordPolicy` |
 | [Roles](/docs/manage/users-roles/roles/create-manage-roles) | `roles` |
 | [SAML](/docs/manage/security/saml) | `saml` |
-| [Scheduled Views](/docs/manage/views) | `scheduledView` |
+| [Scheduled Views](/docs/manage/views/scheduled-views) | `scheduledView` |
 | Security Policies: Share Dashboards Outside of the Organization, [Data Access Level for Shared Dashboards](/docs/manage/security/data-access-level-shared-dashboards), [Per User Concurrent Sessions Limit](/docs/manage/security/set-limit-user-concurrent-sessions), and [User Session Timeout](/docs/manage/security/set-max-web-session-timeout) | `orgSettings` |
 | Security Policy: [Support Account Access](/docs/manage/security/enable-support-account) | `supportAccount` |
 | [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) | `serviceAllowlist` |
