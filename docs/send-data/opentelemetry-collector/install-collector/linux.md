@@ -22,7 +22,7 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
-Supported Versions:
+Supported versions:
 
 * RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2(AL2), Amazon Linux 2023(AL2023), CentOS (7, 8)
 
@@ -34,16 +34,11 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
-:::info
-Allowlist the following repository URLs to allow a seamless installation:
-* [packages.sumologic.com](https://packages.sumologic.com/)
-* [d3fo0g5hm7lbuv.cloudfront.net](https://d3fo0g5hm7lbuv.cloudfront.net/)
-* [packagecloud.io](https://packagecloud.io/)
-:::
+If your environment restricts internet access, refer to [Packagecloud's security documentation](https://packagecloud.io/docs/security) for the current list of IP ranges to allowlist. For strict firewall policies, mirror the repository and use a configuration management tool (Chef, Puppet, or Ansible) instead of the UI installer.
 
 ### UI Installation
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/linux-terminal.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
