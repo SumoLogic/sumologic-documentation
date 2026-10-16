@@ -221,7 +221,7 @@ For example:
     ```
 
 * Real-time queries using time compare need to have at least three timeslices within its time range. For example, if the time range is 10 minutes, your timeslices need to be no longer than 3 minutes so that there are at least three of them.
-* Compare is not supported in [Scheduled Views](/docs/manage/scheduled-views).
+* Compare is not supported in [Views](/docs/manage/views).
 * Compare can only be used once in a search query.
 
 ## Examples

@@ -97,8 +97,8 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 -->
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/security')}><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="User Permissions icon" width="40"/><h4>Security</h4></a>
-  <p>Learn how to set up security for Sumo Logic accounts.</p>
+  <a href="/docs/manage/views"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Views</h4></a>
+  <p>Accelerate the search process for data subsets by functioning as a pre-aggregated index.</p>
   </div>
 </div>
 <div className="box smallbox card">

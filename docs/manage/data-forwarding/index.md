@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Document with a forward symbol icon" width="50"/>
 
-Data Forwarding allows you to forward log data to an external server or supported storage service. You can forward log data to an AWS S3 bucket or Google Cloud Storage (GCS) through [partitions](/docs/manage/partitions) or [scheduled views](/docs/manage/scheduled-views). 
+Data Forwarding allows you to forward log data to an external server or supported storage service. You can forward log data to an AWS S3 bucket or Google Cloud Storage (GCS) through [Partitions](/docs/manage/partitions) or [Scheduled Views](/docs/manage/views/scheduled-views). See [Forwarding Data from Sumo Logic to S3](amazon-s3-bucket.md) for details.
 
 ## Guide contents
 
@@ -51,4 +51,4 @@ In this section, we'll introduce the following concepts:
       <p>Learn how to view data forwarding configuration information for your organization.</p>
     </div>
   </div>
-  </div>
+</div>

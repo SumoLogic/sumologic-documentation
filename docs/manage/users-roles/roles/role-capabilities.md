@@ -29,8 +29,8 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Apps |Install and manage [apps](/docs/integrations). | `manageApps` |
 | Manage Connections | Manage the [connections](/docs/alerts/webhook-connections/) that allow you to send alerts to other tools. | `manageConnections` |
 | View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. | `viewConnections` |
-| View Views | [View Scheduled Views](/docs/manage/scheduled-views). | `viewScheduledViews` |
-| Manage Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Views capability, users with that role will also have View Views capability. | `manageScheduledViews` |
+| View Scheduled Views | [View Scheduled Views](/docs/manage/views/scheduled-views). | `viewScheduledViews` |
+| Manage Scheduled Views | View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Scheduled Views capability, users with that role will also have View Scheduled Views capability. | `manageScheduledViews` |
 | View Partitions | View [partitions](/docs/manage/partitions). | `viewPartitions` |
 | Manage Partitions | View, create, edit, and delete partitions. Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 Data Forwarding capabilities. | `managePartitions` |
 | View Account Overview| View the Account Overview page. | `viewAccountOverview` |

@@ -1,13 +1,12 @@
 ---
-slug: /manage/scheduled-views
+slug: /manage/views/scheduled-views
 title: Scheduled Views
-description: Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
+description: Views speed the process for small and historical subsets of your data by functioning as a pre-aggregated index.
 ---
 
 Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated/pre-compute index.
 
-* Due to the way data is indexed not all operators are supported in Scheduled Views. See our [list of supported operators](scheduled-views-best-practices.md).
-* There is a limit of 500 Scheduled Views per account.
+* Due to the way data is indexed not all operators are supported in Scheduled Views. See our [list of supported operators](/docs/manage/views/scheduled-views/best-practices).
 * Scheduled View queries run once per minute.
 * Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. 
 * Creating a Scheduled View for a query can vastly reduce the amount of data scanned at search time.
@@ -16,13 +15,13 @@ Scheduled Views speed the search process for small and historical subsets of you
 * Scheduled Views can include historical data from as far back as the beginning of your retention period (say, 60 days or 90 days). Because historical data is included, Scheduled Views can help uncover long-term trends.
 * You can use Scheduled Views in Scheduled Searches, Dashboards, and ad hoc searches. Your Dashboards can include a large quantity of data without sacrificing performance. 
 * Scheduled Views are assigned to the **InternalCollector** index.
-* Account Admins and users whose role grants the "Manage Scheduled Views" [role capability](../users-roles/roles/role-capabilities.md) can set up Scheduled Views, but anyone in an organization can run searches against them. Other users' data access to a Scheduled View is governed by the search filters associated with their roles; they will only be able to see data to which their roles allow them access. For more information, see [Construct a Search Filter for a Role](../users-roles/roles/construct-search-filter-for-role.md).
+* Account Admins and users whose role grants the “Manage Scheduled Views” [role capability](/docs/manage/users-roles/roles/role-capabilities) can set up Scheduled Views, but anyone in an organization can run searches against them. Other users’ data access to a Scheduled View is governed by the search filters associated with their roles; they will only be able to see data to which their roles allow them access. For more information, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role).
 * For the Flex model, scan and storage charges apply to scheduled views. Storage usage for each view is based on the non-aggregated data ingested into that view over its retention period.
 * For the Tier model, scheduled views are only supported in the Continuous tier.
   - Aggregated scheduled views do not incur charges for storage, ingestion, or querying. Storage is always displayed as 0 bytes, regardless of the actual data size.
   - Non-aggregated scheduled views do not incur charges for querying. However, ingestion and storage charges apply. Storage is calculated based on the charged ingest volume accumulated over the retention period.
 
-## How could my organization use Scheduled Views?
+### How could my organization use Scheduled Views?
 
 **Web access trends.** Creating a Scheduled View allows you to isolate logs related to your site, making it easy to report on web traffic patterns.
 
@@ -33,7 +32,7 @@ Scheduled Views speed the search process for small and historical subsets of you
 **User behavior.** A Scheduled View can be used to parse logins by user ID across your entire deployment, so you can answer audit-related questions quickly. Faster query results on this dataset allow for high-level investigations, such as checking to see if users have logged in during the past 60 days (or as far back as your retention period).
 
 :::note
-For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](scheduled-views-best-practices.md). 
+For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](/docs/manage/views/scheduled-views/best-practices). 
 :::
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -45,38 +44,27 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/scheduled-views/add-scheduled-view')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Add a Scheduled View</h4></a>
+  <a href="/docs/manage/views/scheduled-views/add-view"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Add a Scheduled View</h4></a>
   <p>Learn how to add a Scheduled View.</p>
   </div>
 </div>
+
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/scheduled-views/pause-disable-scheduled-views')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Pause or Disable Scheduled Views</h4></a>
-  <p>Learn how to pause a view to stop new data from being indexed.</p>
+  <a href="/docs/manage/views/scheduled-views/pause-disable-view"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="40"/><h4>Pause or Disable a Scheduled View</h4></a>
+  <p>Learn how to pause or disable a Scheduled View.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/scheduled-views/run-search-against-scheduled-view')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="40"/><h4>Run a Search Against a Scheduled View</h4></a>
-  <p>Learn how to run a search against indexed data in a Scheduled View.</p>
+  <a href="/docs/manage/views/scheduled-views/lag-time"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Views Lag Time</h4></a>
+  <p>Learn how to view data that's not up to date in the View.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/manage/scheduled-views/scheduled-view-lag-time')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="50"/><h4>Scheduled View Lag Time</h4></a>
-  <p>Learn how to view data that's not up to date in the Scheduled View.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/manage/scheduled-views/scheduled-views-best-practices')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="50"/><h4>Scheduled Views Best Practices and Examples</h4></a>
+  <a href="/docs/manage/views/scheduled-views/best-practices"><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="icon" width="50"/><h4>Scheduled Views Best Practices and Examples</h4></a>
   <p>Get to know some tips for setting up Scheduled View queries.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/manage/scheduled-views/view-list-scheduled-views')}><img src={useBaseUrl('img/icons/operations/frequent-search.png')} alt="Frequent Search icon" width="50"/><h4>View Information About Scheduled Views</h4></a>
-  <p>Learn how to view a list of Scheduled Views configured for your org.</p>
   </div>
 </div>
 </div>

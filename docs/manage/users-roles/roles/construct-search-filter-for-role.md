@@ -27,7 +27,7 @@ The sections below list search filter limitations, and describe how you can use 
 * Use a field or an FER in the role search filter to control access to data.
 * If the search filter of a role is modified, the data can still be accessed in the pinned queries for up to 24 hours from the original run prior to the search filter modification.
 
-For limitations related to the use of Scheduled Views or partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
+For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/views/scheduled-views).
 
 ### Using metadata in a search filter
 
