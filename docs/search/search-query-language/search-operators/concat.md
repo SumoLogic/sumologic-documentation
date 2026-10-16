@@ -2,6 +2,7 @@
 id: concat
 title: concat Search Operator
 sidebar_label: concat
+description: Use the concat operator to join multiple strings, numbers, and fields into a single user-defined field.
 ---
 
 The `concat` operator allows you to concatenate or join multiple strings, numbers, and fields into a single user-defined field. It concatenates strings end-to-end and joins them into a new string that you define. For example, to concatenate the words "foot" and "ball" would give you "football". You can also use punctuation and spaces in quotes to concatenate strings in a readable way.
@@ -13,9 +14,7 @@ In another example, if you had a log message of an incident with four fields, su
 
 ## Syntax
 
-```sql
-concat(<field1>, <field2>[, <field3>, ...]) as <field>
-```
+`concat(<field1>, <field2>[, <field3>, ...]) as <field>`
 
 ## Rules
 
@@ -33,7 +32,7 @@ If you had the following fields: field1 = time, field2 = 4, field3 = logs.
 
 Using this query:
 
-```sql
+```sumo
 ... | concat(field1, field2, field3) as new_string
 ```
 
@@ -41,7 +40,7 @@ would return: `new_string = time4logs`
 
 If you add punctuation and spaces in quotes, like this:
 
-```sql
+```sumo
 ... | concat(field1, " ", field2, " ", field3) as new_string
 ```
 
@@ -53,7 +52,7 @@ In this example, to create an IP address out of separate message log
 fields, concatenate four number fields with punctuation to complete a
 new field named `ip_address`.
 
-```sql
+```sumo
 ... | concat(octet1, ".", octet2, ".", octet3, ".", octet4) as ip_address
 ```
 
@@ -62,7 +61,7 @@ new field named `ip_address`.
 In this example, you'd concatenate fields for a first and last name
 to create a new field called **fullName**.
 
-```sql
+```sumo
 ... | concat(firstName, " ", lastName) as fullName
 ```
 
@@ -70,7 +69,7 @@ to create a new field called **fullName**.
 
 You can use the Concat operator to format dates, as shown:
 
-```sql
+```sumo
 ... | concat(month, "/", day, "/", year) as date
 ```
 
@@ -78,13 +77,13 @@ You can use the Concat operator to format dates, as shown:
 
 To use more than 16 inputs with the concat operator, you can combine operators, using one of the following formats:
 
-```sql
+```sumo
 ... | concat(field1, field2, ...) as b
 | concat(b, field17, field18,...) as c
 | ...
 ```
 
-```sql
+```sumo
 ... | concat(concat(field1, field2, ...), field17, field18,...) as concatenated_fields
 ```
 

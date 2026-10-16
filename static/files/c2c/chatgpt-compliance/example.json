@@ -1,0 +1,24 @@
+{
+    "api.version": "v1",
+    "source": {
+      "config": {
+        "name": "ChatGPT Compliance",
+        "workspaceID": "ABCD-SAMPLE-WORKSPACE-ID",
+        "apiKey": "sk-proj-XXXXXXXXX",
+        "enabledEventType": [
+          "CONVERSATION",
+          "CODEX",
+          "CODEX_SECURITY",
+          "AUDIT",
+          "APP",
+          "AUTH",
+          "APP_AUTH"
+        ],
+        "pollingIntervalHour": "1h"
+      },
+      "schemaRef": {
+        "type": "ChatGPT Compliance"
+      },
+      "sourceType": "Universal"
+    }
+}

@@ -11,6 +11,7 @@
             "secret_key": "********",
             "application_id": "ApplicationID",
             "userSignInActivity": false,
+            "userGroupDetails": false,
             "fields": {
                 "_siemForward": false
             }

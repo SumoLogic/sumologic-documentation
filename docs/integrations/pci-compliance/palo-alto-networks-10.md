@@ -6,7 +6,7 @@ description: The Sumo Logic app for PCI Compliance for Palo Alto Networks 10 off
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
 
 The Sumo Logic app for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
@@ -46,7 +46,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 To configure a hosted collector with a Cloud Syslog source, do the following:
 
-1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
+1. Sign in to Sumo Logic and [create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 2. Create a [Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source) on the hosted collector, specifying the following:
     1. Enter a Source Name.
     2. Provide a Source Category: **NW/PAN/V10**
@@ -88,7 +88,7 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
-2. Once the setup is done, log in to Sumo Logic.
+2. Once the setup is done, sign in to Sumo Logic.
 3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as:
 `_sourceCategory = NW/PAN/V10`
 
@@ -107,7 +107,7 @@ This example query is from the **Allowed Network Activity by Direction** panel o
 <details>
 <summary>Click to expand</summary>
 
-```sql
+```sumo
 _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, \
 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, \
@@ -199,7 +199,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-02-04-Insecure-Data-In-Transit.png')} alt="Palo Alto 10 dashboards" />
 
-## Upgrading the PCI for Palo Alto Networks 10 app (Optional)
+## Upgrade/Downgrade the PCI for Palo Alto Networks 10 app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

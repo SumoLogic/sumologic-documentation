@@ -50,10 +50,10 @@ The biggest difference between regulatory compliance and security controls is th
 Following are regulatory framework examples:
 * [**GDPR**](https://gdpr.eu/what-is-gdpr/). The General Data Protection Regulation (GDPR) is a compliance framework that “imposes obligations onto organizations anywhere” if “they target or collect data related to people in the EU.” It’s a set of standards primarily governing data privacy and security. 
 * [**HIPAA**](https://www.cdc.gov/phlp/publications/topic/hipaa.html). The Health Insurance Portability and Accountability Act, or HIPAA, is a U.S. federal law that requires “the creation of national standards to protect sensitive patient health information from being disclosed without the patient’s consent or knowledge.”
-* [**NIST**](https://www.ftc.gov/business-guidance/small-businesses/cybersecurity/nist-framework). The National Institute of Standards and Technology, or NIST, is responsible for multiple compliance frameworks related to cybersecurity and privacy controls. Similar to some HIPAA applications, adherence to the NIST framework is voluntary, but its implementation helps companies identify, protect, detect, respond, and recover from cybersecurity threats and attacks. 
+* [**NIST**](https://www.nist.gov/). The National Institute of Standards and Technology, or NIST, is responsible for multiple compliance frameworks related to cybersecurity and privacy controls. Similar to some HIPAA applications, adherence to the NIST framework is voluntary, but its implementation helps companies identify, protect, detect, respond, and recover from cybersecurity threats and attacks. 
 * [**CMMC**](https://dodcio.defense.gov/CMMC/about/). The Cybersecurity Maturity Model Certification (CMMC) is an assessment framework developed in alignment with the U.S. Department of Defense (DoD)’s information security requirements. It generally applies to companies that are either DoD contractors or engage with the [Defense Industrial Base Sector](https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience/critical-infrastructure-sectors/defense-industrial-base-sector) or DIB.
 * [**ISO 27001**](https://www.iso.org/standard/27001). The International Standards Organization (ISO) publishes various industrial and commercial standards. These standards, such as ISO 27001, are vital to world trade initiatives and work to establish common standards for organizations that must adhere to different countries’ requirements and priorities.
-* [**PCI-DSS**](https://www.pcisecuritystandards.org/). The Payment Card Industry Data Security Standard (PCI DSS) outlines best practices and drives “adoption of data security standards and resources for safe payments worldwide.” It is mandatory for any organization handling payment cardholder data. Failure to adhere to it can result in financial penalties.
+* [**PCI-DSS**](https://www.pcisecuritystandards.org/standards/pci-dss/). The Payment Card Industry Data Security Standard (PCI DSS) outlines best practices and drives “adoption of data security standards and resources for safe payments worldwide.” It is mandatory for any organization handling payment cardholder data. Failure to adhere to it can result in financial penalties.
 
 #### Security controls
 
@@ -108,7 +108,7 @@ You can read the goals and requirements in the following table.
 | Goal | PCI DSS requirements |
 | :-- | :-- |
 | Build and maintain a secure network | 1. Install and maintain a firewall configuration to protect cardholder data. <br/>2. Do not use vendor-supplied defaults for system passwords and other security parameters. |
-| Protect cardholder data | 3. Protect stored cardholder data. <br/>**4. Encrypt transmission of cardholder data across open, public networks.** |
+| Protect cardholder data | 3. Protect stored cardholder data. <br/>4. Encrypt transmission of cardholder data across open, public networks. |
 | Maintain a vulnerability management program | 5. Use and regularly update anti-virus software or programs. <br/>6. Develop and maintain secure systems and applications |
 | Implement strong access control measures | 7. Restrict access to cardholder data on a business need-to-know basis. <br/>8. Assign a unique ID to each person with computer access. <br/>9. Restrict physical access to cardholder data. |
 | Regularly monitor and test networks | 10. Track and monitor all access to network resources and cardholder data. <br/>11. Regularly test security systems and processes. |
@@ -160,20 +160,25 @@ The root account generally has unrestricted access to resources in an account. A
 
 To use Sumo Logic to start an audit of AWS root for compliance, perform these steps:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
 1. Make sure you’re in Advanced Mode. If you’re in Basic Mode, click the three-dot icon on the right side of the query builder, then select **Advanced Mode**.
 1. Copy and paste this query into the query builder. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
- ```
- _sourceCategory=Labs/AWS/CloudTrail and (root or su or sudo)
- | json "eventType", "eventName", "eventSource", "sourceIPAddress", "userIdentity", "responseElements" nodrop
- | json field=userIdentity "type", "arn" nodrop
- | where type="Root"
- | formatDate(_messageTime, "yy-MM-dd HH:mm:ss") as date
- | count date, eventname, eventtype, sourceipaddress, type, arn
- | sort date
- ```
- This query looks at AWS CloudTrail data for any messages that contain root, su, or sudo keywords. These commands are all associated with root account access. It then parses the JSON fields into human-readable column names and only displays messages where the user identity type matches `Root`. Finally, the messages are formatted, sorted, and aggregated by event type and date. This query was designed to work in the Sumo Logic training lab environment. If you want to use it in your own environment, you may need to change it to work with your data's structure and naming conventions.
+     ```
+     _sourceCategory=Labs/AWS/CloudTrail and (root or su or sudo)
+     | json "eventType", "eventName", "eventSource", "sourceIPAddress", "userIdentity", "responseElements" nodrop
+     | json field=userIdentity "type", "arn" nodrop
+     | where type="Root"
+     | formatDate(_messageTime, "yy-MM-dd HH:mm:ss") as date
+     | count date, eventname, eventtype, sourceipaddress, type, arn
+     | sort date
+     ```
+     This query looks at AWS CloudTrail data for any messages that contain root, su, or sudo keywords. These commands are all associated with root account access. It then parses the JSON fields into human-readable column names and only displays messages where the user identity type matches `Root`. Finally, the messages are formatted, sorted, and aggregated by event type and date. This query was designed to work in the Sumo Logic training lab environment. If you want to use it in your own environment, you may need to change it to work with your data's structure and naming conventions.
 1. Next to the clock icon, select a time frame that covers the time you want to audit. 
 1. Click the magnifying glass icon or press Enter to start the search.
 1. Click the **Aggregates** tab in the results. In the results, see API calls using the root account type. You can work with your AWS administrators to find out if this use of root is necessary and legitimate or not.
 
+## Additional resources
+
+* Blog: [What to expect when you’re expecting a cybersecurity audit for compliance](https://www.sumologic.com/blog/what-to-expect-when-youre-expecting-a-cybersecurity-audit-for-compliance/)
+* Guide: [NIS2 compliance guide](https://www.sumologic.com/brief/nis2-compliance-guide/)
+* Brief: [PCI DSS Compliance](https://www.sumologic.com/briefs/pci-dss-compliance-solution)

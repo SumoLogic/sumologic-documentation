@@ -1,0 +1,8 @@
+{
+  "name": "AlienVault TAXII 1 Feed",
+  "useBasicAuth": true,
+  "httpBasicUsername": "--- API KEY HERE ---",
+  "discoveryURL": "https://otx.alienvault.com/taxii/discovery",
+  "userSourceID": "AlienVault Indicators",
+  "pollingInterval": "1h"
+}

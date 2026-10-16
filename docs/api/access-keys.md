@@ -9,33 +9,33 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/security/security.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/security/security.png')} alt="Security icon" width="50"/>
 
-The [Access Keys](/docs/manage/security/access-keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs. 
+The [Access Keys](/docs/manage/security/access-keys) Management API allows you to securely register new Collectors or access Sumo Logic APIs.
 
 ## Documentation
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                           |
-|:------------|:------------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/accessKeyManagement  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/accessKeyManagement  |
-| DE         | https://api.de.sumologic.com/docs/#tag/accessKeyManagement  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/accessKeyManagement  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/accessKeyManagement |
-| IN         | https://api.in.sumologic.com/docs/#tag/accessKeyManagement  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/accessKeyManagement  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/accessKeyManagement  |
-| US1        | https://api.sumologic.com/docs/#tag/accessKeyManagement     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement |
 
-<!-- ## Required role capabilities
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/accessKeyManagement   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/accessKeyManagement   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/accessKeyManagement  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/accessKeyManagement   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/accessKeyManagement  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/accessKeyManagement   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/accessKeyManagement  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/accessKeyManagement   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/accessKeyManagement   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/accessKeyManagement      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/accessKeyManagement  |
+
+## Required role capabilities
 
 <ApiRoles/>
 
-* Security
+* [Security](/docs/manage/users-roles/roles/role-capabilities/#security)
     * Create Access Keys
     * Manage Access Keys
-
--->

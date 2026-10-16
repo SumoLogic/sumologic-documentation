@@ -9,17 +9,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="80"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="JFrog Artifactory icon" width="80"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 The Sumo Logic app for Artifactory provides insight into your [JFrog Artifactory](https://jfrog.com/artifactory/) binary repository. The app provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity. Artifactory logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Schematics.png' alt="Artifactory-Schematics" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Schematics.png' alt="Artifactory Schematics" />
+
+:::info
+This app includes [built-in monitors](#jfrog-artifactory-alerts). For details on creating custom monitors, refer to the [Create monitors for JFrog Artifactory app](#create-monitors-for-jfrog-artifactory-app).
+:::
 
 ## Fields creation in Sumo Logic for Artifactory
 
 Following are the Tags which will be created as part of Artifactory app install if not already present.
 
-* `sumo.datasource`. Has fixed value of **artifactory**
+* `sumo.datasource`. Has fixed value of **artifactory**.
 
 ## Prerequisites
 
@@ -80,7 +84,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' style={{border:'1px solid gray'}} alt="Artifactory-Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' style={{border:'1px solid gray'}} alt="Artifactory Collector" />
 
 ### Step 2: Configure integration
 
@@ -97,7 +101,11 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png' style={{border:'1px solid gray'}} alt="Artifactory-YAML" />
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-YAML.png' style={{border:'1px solid gray'}} alt="Artifactory YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -185,7 +193,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 This sample Query is from the **Artifactory - Cached Deployment Activity** > **Accepted Deploys by Geolocation** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 " %"sumo.datasource"=artifactory "ACCEPTED DEPLOY" "-cache"
 |parse "[*] [*] *" as trace_id, event_type, user_info
 | parse regex field=user_info "(?:(?<repo>[^:]*):(?<path>[^\s]*))?\s+(?<opt_msg>[\w\s:]+)?\s+(?<user>[^\/]+)\/(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\."
@@ -199,7 +207,7 @@ This sample Query is from the **Artifactory - Cached Deployment Activity** > **A
 
 ### Artifactory - Overview
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Overview.png' alt="Artifactory-Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Overview.png' alt="Artifactory Overview" />
 
 import JfrogOv from '../../../reuse/apps/jfrog/artifactory-overview.md';
 
@@ -207,7 +215,7 @@ import JfrogOv from '../../../reuse/apps/jfrog/artifactory-overview.md';
 
 ### Artifactory - Cached Deployment Activity
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Cached-Deployment-Activity.png' alt="Artifactory-Cached-Deployment-Activity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Cached-Deployment-Activity.png' alt="Artifactory Cached Deployment Activity" />
 
 import JfrogCache from '../../../reuse/apps/jfrog/artifactory-cached.md';
 
@@ -215,7 +223,7 @@ import JfrogCache from '../../../reuse/apps/jfrog/artifactory-cached.md';
 
 ### Artifactory - Download Activity
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Download-Activity.png' alt="Artifactory-Download-Activity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Download-Activity.png' alt="Artifactory Download Activity" />
 
 import JfrogDl from '../../../reuse/apps/jfrog/artifactory-download.md';
 
@@ -223,7 +231,7 @@ import JfrogDl from '../../../reuse/apps/jfrog/artifactory-download.md';
 
 ### Artifactory - Non-Cached Deployment Activity
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Non-Cached-Deployment-Activity.png' alt="Artifactory-Non-Cached-Deployment-Activity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Non-Cached-Deployment-Activity.png' alt="Artifactory Non Cached Deployment Activity" />
 
 import JfrogNon from '../../../reuse/apps/jfrog/artifactory-noncached.md';
 
@@ -231,7 +239,7 @@ import JfrogNon from '../../../reuse/apps/jfrog/artifactory-noncached.md';
 
 ### Artifactory - Request and Access
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Request-and-Access.png' alt="Artifactory-Request-and-Access" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Request-and-Access.png' alt="Artifactory Request and Access" />
 
 import JfrogReq from '../../../reuse/apps/jfrog/artifactory-request-access.md';
 
@@ -239,8 +247,26 @@ import JfrogReq from '../../../reuse/apps/jfrog/artifactory-request-access.md';
 
 ### Artifactory - Traffic
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Traffic.png' alt="Artifactory-Traffic" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Traffic.png' alt="Artifactory Traffic" />
 
 import JfrogTr from '../../../reuse/apps/jfrog/artifactory-traffic.md';
 
 <JfrogTr/>
+
+## Create monitors for JFrog Artifactory app
+
+import CreateMonitors from '../../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### JFrog Artifactory alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Artifactory - Excessive Denied Login Attempts` | This alert is triggered when there are multiple denied login attempts from the same IP or user. | Count > 5 | Count \<= 5 |
+| `Artifactory - High 4xx Status Codes` | This alert is triggered when there's a high number of HTTP 4xx error responses. | Count > 10 | Count \<= 10 |
+| `Artifactory - High 5xx Status Codes` | This alert is triggered when there's a high number of HTTP 5xx error responses. | Count > 10 | Count \<= 10 |
+| `Artifactory - High Denied Deploys to Cached Repos` | This alert is triggered when there's a high number of denied deploy attempts to cached repositories. | Count > 5 | Count \<= 5 |
+| `Artifactory - High Denied Deploys to Non-Cached Repos` | This alert is triggered when there's a spike in denied deploy attempts to non-cached repositories. | Count > 5 | Count \<= 5 |
+| `Artifactory - High Denied Downloads` | This alert is triggered when there's a high number of denied download attempts. | Count > 5 | Count \<= 5 |
+| `Artifactory - Slow HTTP Response Times` | This alert is triggered when Artifactory response times are high. | Count > 5 | Count \<= 5 |

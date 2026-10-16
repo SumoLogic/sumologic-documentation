@@ -7,7 +7,7 @@ description: Learn how to install apps to your Library and to multiple environme
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/cloud/apps.png')} alt="Apps icon" width="50"/>
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 
@@ -19,7 +19,7 @@ Sumo Logic apps address these common use cases:
 * **Provide real-time insights**. With Sumo Logic, enterprises can easily extract machine data insights to provide greater intelligence around their customers, products, and application usage. These insights provide a more accurate and complete analysis for business users.
 * **Accelerate Cloud deployment**. Sumo Logic enables enterprises to automate and speed the development and deployment process for cloud-based applications. Companies can rapidly detect, identify and resolve application issues.
 * **Decrease app time to market**. Sumo Logic facilitates a consistent release process, resulting in timely releases. It aids in quickly identifying application issues and configuration changes across development, testing, and deployment environments.
-* **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real-time through a single, highly scalable solution.
+* **Enforce compliance**. Sumo Logic delivers a simple, proactive and automated process to audit and investigate operational, security and regulatory compliance incidents. All data is centralized, secured, and easily analyzed in real time through a single, highly scalable solution.
 
 To learn about the vendors and products that Sumo Logic integrates with, refer to the [Product List](/docs/integrations/product-list/).
 
@@ -27,26 +27,26 @@ To learn about the vendors and products that Sumo Logic integrates with, refer t
 
 Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
 
-<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" style={{border:'1px solid gray'}} width="500" />
+<img src={useBaseUrl('img/get-started/cert-app.png')} alt="Cert app symbol" style={{border:'1px solid gray'}} width="500" />
 
 These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 
 ## Prerequisites
 
 | Account Type | Account Level |
-| :-- | :-- |
+|:--|:--|
 | Cloud Flex | Trial, Professional, Enterprise |
 | Credits | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Certain apps have specific installation requirements. Be sure to check the instructions for your application for specific instructions.
+Certain apps have specific installation requirements. Be sure to check the application instructions for specific guidance.
 
 :::important
-Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
+Applications can be installed only by users with a Sumo Logic Professional or Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
 ## Next-Gen apps
 
-Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
 
 What makes Next-Gen different from Classic apps?
 
@@ -56,13 +56,26 @@ What makes Next-Gen different from Classic apps?
 * App uninstallation and removal can be completed directly in the App Catalog, making it easy to clean up apps you no longer use.  
 * Additional filter options make it easy to find your installed or upgradeable apps.
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
-* Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
+* Installed app content is immutable, which ensures that any app upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
 ### How to install Next-Gen apps
 
 import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
+
+:::info
+When you install a Next-Gen app, you can subscribe to receive email notifications whenever an app upgrade is available. However, you can opt out of receiving these emails by unsubscribing from the app. For more information, see [Email notifications for app upgrade](#email-notifications-for-app-upgrade).
+:::
+
+### Email notifications for app upgrade
+
+When you install a Next-Gen app, you can subscribe to receive email notifications whenever an app upgrade is available.
+
+The following applies to these notifications:
+- The email includes the app name, version, release notes for the new version, and a link to the app in the App Catalog.
+- You can unsubscribe from the email notifications by navigating to the app within the Sumo Logic App Catalog.
+- Users with Manage Apps capabilities can also subscribe or unsubscribe from apps installed by other users.
 
 ### How to upgrade Next-Gen apps
 
@@ -79,6 +92,10 @@ import AppUpdate from '../reuse/apps/app-update.md';
 import AppUninstall from '../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+:::info
+Uninstalling a Next-Gen app automatically removes all email subscriptions for that app.
+:::
 
 ## Classic apps (Legacy)
 
@@ -135,7 +152,7 @@ Apps are dependent on the Source Category [metadata](/docs/search/get-started-w
 
 #### How can I change the Source Category associated with an app?
 
-To change the Source Category used by an app, you can simply reinstall the same app. Currently, apps cannot be uninstalled or edited in any other way.
+To change the Source Category used by an app, you can reinstall the same app. Currently, apps cannot be uninstalled or edited in any other way.
 
 For more information, see [Custom Data Filters](#custom-data-filters).
 
@@ -143,9 +160,9 @@ For more information, see [Custom Data Filters](#custom-data-filters).
 
 Sumo Logic apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the app itself. This way, you can try the searches in a Sumo Logic app against your data before you decide to install it. Or you can run the searches to see how good example queries are written.
 
-To run a saved search from a Sumo Logic app, just find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
+To run a saved search from a Sumo Logic app, find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
 
-In order to run a search from an app, you would first need to have data ingested in your system that the search query would find. For example, before you can run a search from the Sumo Logic app for Apache, you must set up a Collector and Source to ingest your Apache data. If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
+In order to run a search from an app, you would first need to have data ingested in your system that the search query would find. For example, before you can run a search from the Sumo Logic app for Apache, you need to set up a Collector and Source to ingest your Apache data. If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 After the search has run, you can [save the search](/docs/search/get-started-with-search/search-basics/save-search) to use it again in the future from the Library.
 
@@ -165,23 +182,23 @@ The **Search** page opens, the search populates a new tab, and the search runs
 If you do not have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 :::note
-Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume "Data Volume app") do not require you to select a Source Category.
+Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume) do not require you to select a Source Category.
 :::
 
 ## Custom data filters
 
-When you install a Sumo Logic app, you tell Sumo what data to search and present in app dashboards.
+When you install a Sumo Logic app, you tell Sumo Logic what data to search and present in app dashboards.
 
 Most typically, you specify the source category that was assigned to the logs or metrics source when data collection was set up for the app. 
 
-However, if you want to use multiple metadata fields as your filter criteria, for example, both source category and source host, you must define a custom data filter. The app will prefix its searches with your custom data filter. 
+However, if you want to use multiple metadata fields as your filter criteria, for example, both source category and source host, you need to define a custom data filter. The app will prefix its searches with your custom data filter. 
 
 ### Define a custom data filter
 
 1. In the App Catalog, select the application you want to install and click **Add Integration**.
 1. Click the down arrow next to **Source Category**.<br/><img src={useBaseUrl('/img/get-started/library/add-apache.png')} alt="Custom Data Filter" style={{border:'1px solid gray'}} width="500" />
-1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="apache-custom-filter" style={{border:'1px solid gray'}} width="500" />
-1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="apache-custom-filter-field" style={{border:'1px solid gray'}} width="500" />
+1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="Apache custom filter" style={{border:'1px solid gray'}} width="500" />
+1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="Apache custom filter field" style={{border:'1px solid gray'}} width="500" />
 
 ### Example custom data filters
 
@@ -191,5 +208,5 @@ The table below has examples of custom data filters.
 | :-- | :-- |
 | `_sourceHost=stage-EMEA* AND _sourceCategory=Apache*` | App searches will return data whose source host begins with the string stage-EMEA and whose source category begins with the string Apache. |
 | `_sourceCategory=Apache* AND "dev-us"` | App searches will return log data that contains the string dev-us whose source category begins with the string Apache. |
-| `_sourceHost = "Jon Smith"` | App searches will return data whose source host is Jon Smith. If a metadata field value contains spaces, you must use quotes. |
+| `_sourceHost = "Jon Smith"` | App searches will return data whose source host is Jon Smith. If a metadata field value contains spaces, you need to use quotes. |
 | `_sourceHost=stage-EMEA* AND (_source=Apache* or _source=DB)` | App searches will return data whose source host begins with the string stage-EMEA and whose source either begins with Apache or is DB. We use parentheses to group the logic operations. |

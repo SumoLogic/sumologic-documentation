@@ -12,7 +12,7 @@ resource "sumologic_cloud_to_cloud_source" "code42incydr_source" {
     "secretKey": "XXXXV%DsznXXX!hxr479cXsxxnbkX@vxxrxkbfxc",
     "dataCollection": [
       "auditEvents",
-      "alerts",
+      "sessions",
       "fileEvents"
     ]
   })

@@ -8,12 +8,10 @@ Returns the inverse sine of the argument.
 
 ## Syntax
 
-```sql
-asin(<x>) as <field>
-```
+`asin(<x>) as <field>`
 
 ## Example
 
-```sql
-asin(1) as v // v = 1.5707963267948966
+```sumo
+* | asin(1) as v
 ```
