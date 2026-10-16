@@ -23,7 +23,7 @@ See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) 
 
 Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
+The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo Logic web interface.
 
 ## Log Sources for Installed Collectors
 
@@ -106,7 +106,7 @@ In addition to the common parameters, the following parameters are for an HTTP 
 | `fields` | JSON Object | No |  | Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`. | modifiable |
 | `sourceType` | String | Yes |  | HTTP | not modifiable |
 | `messagePerRequest` | Boolean | Yes |  | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. <br/>You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | modifiable |
-| `url` | String | No | URL assigned by Sumo for Source | The Source's unique HTTP endpoint web address. | not modifiable |
+| `url` | String | No | URL assigned by Sumo Logic for Source | The Source's unique HTTP endpoint web address. | not modifiable |
 
 ```json title="HTTP Source JSON example"
 {
@@ -181,7 +181,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 | `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#awscloudfrontsource): AwsCloudFrontBucket<br/>[CloudTrail](#awscloudtrailsource): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
 | `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
 | `paused` | Boolean | Yes | false | When set to true, the scanner for S3 bucket items is paused. To disable, set to false. | modifiable |
-| `url` | String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
+| `url` | String | No | URL | assigned by Sumo Logic for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo Logic when the Source is created. | not modifiable |
 | `thirdPartyRef` | Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
 | `snsTopicOrSubscriptionArn`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
 | `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |

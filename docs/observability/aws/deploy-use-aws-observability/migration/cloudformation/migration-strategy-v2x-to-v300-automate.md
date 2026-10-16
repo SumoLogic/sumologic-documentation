@@ -247,7 +247,7 @@ Proceed with migration? Type 'yes' to continue:
 ```
 
 :::warning
-The S3 bucket names shown above come from your **Sumo Logic source configurations**, not from the AWS CloudFormation stack. If your Sumo sources reference a stale or incorrect bucket, v3.0.0 will be deployed with the wrong bucket names and no log data will be ingested.
+The S3 bucket names shown above come from your **Sumo Logic source configurations**, not from the AWS CloudFormation stack. If your Sumo Logic sources reference a stale or incorrect bucket, v3.0.0 will be deployed with the wrong bucket names and no log data will be ingested.
 
 Before typing `yes`, verify the bucket names match your actual S3 buckets:
 ```bash
@@ -258,7 +258,7 @@ If there is a mismatch, the script will warn you. Investigate before proceeding.
 :::
 
 The script also cross-checks the collector ID found in Sumo Logic against the `SumoLogicHostedCollector` resource recorded in your CF stack. If they differ — which can happen if the wrong credentials were provided or the collector was recreated outside CloudFormation — the script will display both IDs and offer three options:
-1. **Use the Sumo API collector** — proceed with the name-matched collector.
+1. **Use the Sumo Logic API collector** — proceed with the name-matched collector.
 2. **Enter the correct collector ID manually** — for cases where you know the exact collector ID to use.
 3. **Abort** — stop the migration for manual investigation.
 
@@ -293,7 +293,7 @@ After deploying v3.0.0, the script automatically checks the following. Warnings 
 | Check | What is verified |
 |:--|:--|
 | Stack resources | All CloudFormation resources reached `CREATE_COMPLETE`. |
-| Sumo collector and sources | The AWSO collector is found and all sources are alive. |
+| Sumo Logic collector and sources | The AWSO collector is found and all sources are alive. |
 | S3 bucket policies | Each log bucket has the required service principals (`cloudtrail.amazonaws.com` for the CloudTrail bucket; `delivery.logs.amazonaws.com` for ALB/ELB buckets). A missing policy silently blocks log delivery. |
 | CloudTrail trails | At least one trail writing to your CloudTrail bucket is active and `IsLogging=true`. The v2.x `Aws-Observability-*` trail is deleted with the old stack and is not recreated by v3.0.0 unless it also creates a new bucket. |
 | S3 bucket notifications | The SNS topic configured on your log bucket exists and has not been deleted. A stale or deleted topic means S3 sources stop receiving new object events. |
@@ -387,13 +387,13 @@ Validate > Patch Roles > Report
 | `ROLLBACK_COMPLETE` on v3.0.0 deploy | Template or parameter error during deployment | Delete the rolled-back stack and follow the [resume steps](#if-the-v300-deployment-fails). |
 | `Failed to rename FER — already exists` | A previous partial run already renamed some FERs | Use `--resume`. The script detects already-renamed FERs and skips them. |
 | Sources show `<empty>` bucket in report | Expected in resume mode — buckets are not re-captured | Does not affect the migration. The params file already has the correct bucket values. |
-| `[WARN] Bucket name mismatch` | Sumo source config references a different bucket than the CF stack parameter | Investigate before proceeding — wrong bucket name means no data ingested after migration. Check your Sumo source configuration and your S3 bucket names in the AWS Console. |
-| `[WARN] Collector ID mismatch` | The collector found via Sumo API does not match the one recorded in the CF stack | Verify you are using the correct Sumo Logic credentials for this stack. The script will prompt you to confirm before continuing. |
+| `[WARN] Bucket name mismatch` | Sumo Logic source config references a different bucket than the CF stack parameter | Investigate before proceeding — wrong bucket name means no data ingested after migration. Check your Sumo Logic source configuration and your S3 bucket names in the AWS Console. |
+| `[WARN] Collector ID mismatch` | The collector found via Sumo Logic API does not match the one recorded in the CF stack | Verify you are using the correct Sumo Logic credentials for this stack. The script will prompt you to confirm before continuing. |
 | `[WARN] policy missing cloudtrail.amazonaws.com` | S3 bucket policy does not grant CloudTrail write access | Check the bucket policy with `aws s3api get-bucket-policy --bucket <bucket> --region <region> --query Policy --output text \| jq .` and add a statement granting `s3:PutObject` to `cloudtrail.amazonaws.com`. |
 | `[WARN] policy missing delivery.logs.amazonaws.com` | S3 bucket policy does not grant ALB/ELB log delivery access | Add a statement granting `s3:PutObject` to `delivery.logs.amazonaws.com` in the bucket policy. |
 | `[WARN] No active CloudTrail trail found` | The v2.x `Aws-Observability-*` trail was deleted with the old stack and no replacement exists | Create a new trail: `aws cloudtrail create-trail --name <name> --s3-bucket-name <bucket> --region <region>` then `aws cloudtrail start-logging --name <name> --region <region>`. |
 | `Stack DELETE_FAILED — BucketNotEmpty` | Phase 6 stack deletion failed because the `CommonS3Bucket` resource is not empty. The script automatically retries using `--retain-resources` — it retains only the blocked resources (the S3 bucket), deletes everything else including nested stacks, and continues the migration. | Automatic recovery — the script handles this without intervention. If the old stack or nested stacks remain after a previous interrupted run, re-run with `--resume -s <old_stack_name>` to clean them up. |
-| `[WARN] SNS topic deleted or inaccessible` | The SNS topic wiring your S3 bucket to the Sumo source was deleted with the v2.x stack | Recreate the SNS topic, set its resource policy to allow S3 to publish to it, subscribe the Sumo source endpoint URL, and update the bucket notification configuration to point at the new topic ARN. The source endpoint URL is visible in **Manage Data > Collection > your source > Show URL**. |
+| `[WARN] SNS topic deleted or inaccessible` | The SNS topic wiring your S3 bucket to the Sumo Logic source was deleted with the v2.x stack | Recreate the SNS topic, set its resource policy to allow S3 to publish to it, subscribe the Sumo Logic source endpoint URL, and update the bucket notification configuration to point at the new topic ARN. The source endpoint URL is visible in **Manage Data > Collection > your source > Show URL**. |
 
 ---
 
@@ -720,7 +720,7 @@ This runs Phase 12 and Phase 13 only, without touching any CloudFormation resour
 | `StackSet already exists` on Phase 9 | A previous run already created the target StackSet (when using `-n` or `select` mode) | The script detects this automatically and reuses the existing StackSet — no action needed. |
 | `[WARN] Retrying CANCELLED instances` | Some instances were not reached due to failure tolerance being exceeded | Automatic — the script retries cancelled instances per account. If it persists, increase `--failure-tolerance`. |
 | `[WARN] Failed to patch '<source>' — HTTP 400` | A source was patched with a role ARN from the wrong region | Should not occur in current version — fixed by region-scoped source filtering. If seen, run `--patch-roles-only` to retry. |
-| `[WARN] Collector ID mismatch` | The collector found via the Sumo API does not match the one recorded in the CF stack | The script prompts you to choose between the CF value, the API value, or a manual entry. Verify you are using the correct Sumo Logic credentials. |
+| `[WARN] Collector ID mismatch` | The collector found via the Sumo Logic API does not match the one recorded in the CF stack | The script prompts you to choose between the CF value, the API value, or a manual entry. Verify you are using the correct Sumo Logic credentials. |
 | `[ERROR] Cannot assume execution role` | The execution role trust policy does not allow the management account to assume it | Verify the trust relationship on the execution role in the member account allows `sts:AssumeRole` from the management account. |
 | `[WARN] FER quota too low` | Fewer than 17 free FER slots available | Delete or consolidate unused Field Extraction Rules until at least 17 slots are free, then re-run with `--from-phase fer_cleanup`. |
 | `Failed to rename FER — already exists` | A previous partial run already renamed some FERs | Use `--resume` or `--from-phase fer_cleanup`. The script detects already-renamed FERs and skips them. |

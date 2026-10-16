@@ -110,7 +110,7 @@ This section is an overview of the multiple methods Sumo Logic provides for inst
 
 ### Collector installation and configuration
 
-Sumo provides multiple methods for installing a Collector:
+Sumo Logic provides multiple methods for installing a Collector:
 
 * UI installers. You provide configuration settings during the installation dialog. The installer writes these settings to `user.properties` in the collector’s `/config` directory. 
 * Command-line installer. You supply configuration settings on the command line, or using a varfile. the installer writes these settings to `user.properties` in the collector’s  `/config` directory.   
