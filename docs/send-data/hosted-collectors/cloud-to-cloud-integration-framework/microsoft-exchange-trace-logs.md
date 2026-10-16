@@ -94,7 +94,7 @@ To configure a Microsoft Exchange Trace Logs Source:
 12. When you are finished configuring the Source, click **Submit**.
 
 :::info
-After configuring the Microsoft Exchange Trace source, consider installing the Sumo Logic app for [Microsoft Exchange Trace](/docs/integrations/saas-cloud/microsoft-exchange-trace-logs) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Microsoft Exchange Trace source, consider installing the Sumo Logic app for [Microsoft Exchange Trace](/docs/integrations/apps/saas-cloud/microsoft-exchange-trace-logs) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

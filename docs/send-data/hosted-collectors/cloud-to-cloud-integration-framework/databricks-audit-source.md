@@ -66,7 +66,7 @@ To configure Databricks Audit Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Databricks Audit source, consider installing the Sumo Logic app for [Databricks Audit](/docs/integrations/saas-cloud/databricks-audit/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Databricks Audit source, consider installing the Sumo Logic app for [Databricks Audit](/docs/integrations/apps/saas-cloud/databricks-audit/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

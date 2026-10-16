@@ -80,7 +80,7 @@ To configure the CrowdStrike FileVantage Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the CrowdStrike FileVantage source, consider installing the Sumo Logic app for [CrowdStrike FileVantage](/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the CrowdStrike FileVantage source, consider installing the Sumo Logic app for [CrowdStrike FileVantage](/docs/integrations/apps/saas-cloud/crowdstrike-falcon-filevantage/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
@@ -124,4 +124,4 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 
 ## Additional resources
 
-- Use the [CrowdStrike Falcon Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [CrowdStrike Falcon Automation Service Integration](/docs/integrations/automation-integrations/automation-integrations/crowdstrike-falcon/) to automate response actions directly from Cloud SOAR playbooks.

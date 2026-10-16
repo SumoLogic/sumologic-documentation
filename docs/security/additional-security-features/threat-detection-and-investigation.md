@@ -12,9 +12,9 @@ To use Sumo Logic for threat detection and investigation, you can use [pre-built
 ## Pre-built apps for threat detection and investigation
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
-* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
-* [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
-* [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
+* [**Security and threat detection**](/docs/integrations/apps/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/apps/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
+* [**Cloud security monitoring and analytics**](/docs/integrations/apps/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
+* [**Global Intelligence Service**](/docs/integrations/apps/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
 ## About threat detection and investigation
 
@@ -51,7 +51,7 @@ Attacks may persist without further investigation and patches, so it’s critica
 
 While the pre-built apps can meet many of your needs, you can also build your own dashboards. In this section, we show you how to build an example dashboard for threat detection and investigation.
 
-The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail/) logs to monitor security data. You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).) AWS CloudTrail logs contain information about requests for resources in your account, such as:
+The steps in this section describe how to query [AWS CloudTrail](/docs/integrations/apps/amazon-aws/cloudtrail/) logs to monitor security data. You can search AWS CloudTrail logs to extract the user, event, and IP addresses as metadata. Because they're in JSON format, you'll use the [parse json](/docs/search/search-query-language/parse-operators/parse-json-formatted-logs/) operator. This way, you can use the extracted values later to monitor user activity. (To perform the steps in the section, you must first have set up [collection of CloudTrail logs](/docs/integrations/apps/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).) AWS CloudTrail logs contain information about requests for resources in your account, such as:
 
 * who made the request
 * the services used

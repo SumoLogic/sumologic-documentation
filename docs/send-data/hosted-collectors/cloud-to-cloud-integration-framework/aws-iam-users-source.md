@@ -69,7 +69,7 @@ To configure a AWS IAM Users source:
 1. When you are finished configuring the source, click **Save**.
 
 :::info
-After configuring the AWS IAM Users source, consider installing the Sumo Logic app for [AWS IAM Users](/docs/integrations/saas-cloud/aws-iam-users/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the AWS IAM Users source, consider installing the Sumo Logic app for [AWS IAM Users](/docs/integrations/apps/saas-cloud/aws-iam-users/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

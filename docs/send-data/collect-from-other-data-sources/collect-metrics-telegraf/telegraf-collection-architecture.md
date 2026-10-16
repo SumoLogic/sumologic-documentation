@@ -32,8 +32,8 @@ The metrics collection pipeline for using Telegraf in a non-Kubernetes environme
 #### For applications that do not expose metrics
 
 Some applications may not expose their metrics for another system to access, in which case you'll need to configure the application to expose the metrics so that Telegraf can collect them. Some examples:
-* To collect metrics from Nginx, you'd need to configure it to expose metrics in the Nginx configuration file. For more information, see [Collecting Logs and Metrics for Nginx](/docs/integrations/web-servers/nginx).
-* To collect JMX metrics from a Java application, you'd need to configure the application to use [Jolokia](https://jolokia.org/agent.html), a JMX-HTTP bridge. For more information, see [Collecting Metrics for JMX](/docs/integrations/app-development/jmx/#collecting-metrics-for-jmx).
+* To collect metrics from Nginx, you'd need to configure it to expose metrics in the Nginx configuration file. For more information, see [Collecting Logs and Metrics for Nginx](/docs/integrations/apps/web-servers/nginx).
+* To collect JMX metrics from a Java application, you'd need to configure the application to use [Jolokia](https://jolokia.org/agent.html), a JMX-HTTP bridge. For more information, see [Collecting Metrics for JMX](/docs/integrations/apps/app-development/jmx/#collecting-metrics-for-jmx).
 
 You select an existing HTTP Source on a Hosted Collection as the destination for the Telegraf-collected metrics, or configure a new collector and source, as desired. 
 

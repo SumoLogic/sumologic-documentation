@@ -23,7 +23,7 @@ This repo takes contributions from both Sumo Logic employees and external commun
 ## Doc Reviews
 When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
 
-Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
+Some directories have conventions that differ significantly from standard docs. For example, `/docs/integrations/playbook-templates/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
 
 ## Output tone (comments)
 
@@ -61,7 +61,7 @@ For any change touching 50+ files (e.g. terminology migrations, frontmatter audi
 | Collector release notes | `/blog-collector/` |
 | CSE release notes | `/blog-cse/` |
 | C2C source docs | `/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/` |
-| App integration docs | `/docs/platform-services/automation-service/app-central/integrations/` |
+| App integration docs | `/docs/integrations/automation-integrations/automation-integration-catalog/` |
 | Sidebar config | `sidebars.ts` |
 
 ## Frontmatter

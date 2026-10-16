@@ -130,7 +130,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Flex Account](/docs/manage/manage-subscription/sumo-logic-flex-accounts)**. Sumo Logic's credit-based account packaging, available as Free, Trial, Essentials, or Enterprise Suite Flex. All Flex account types use [credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) as the unit of measure for data ingested, stored, and scanned.
 
-**[Flow graph](/docs/integrations/amazon-aws/guardduty-benchmark)**. A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](/docs/integrations/amazon-aws/guardduty-benchmark) dashboard.
+**[Flow graph](/docs/integrations/apps/amazon-aws/guardduty-benchmark)**. A graph or map that dynamically displays a directional flow from a source to a target. Such as the flow of cyber threats from the geographic locations of sources to their targets, dynamically illustrated in the Threat Sources and Targets by Geography panel of the [Amazon GuardDuty Global Baseline](/docs/integrations/apps/amazon-aws/guardduty-benchmark) dashboard.
 
 **[`formatDate` operator](/docs/search/search-query-language/search-operators/formatdate)**. A search operator that converts a timestamp in milliseconds to a human-readable date string in the format you specify, such as `yyyy-MM-dd` or `MM/dd/yyyy HH:mm:ss`.
 
@@ -150,7 +150,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Health Event](/docs/manage/health-events)**. System events that Sumo Logic generates automatically when it detects an issue with a Collector or Source, or when a usage threshold is exceeded for Lookup Tables, Partitions, Fields, or Field Extraction Rules. Health Events give administrators visibility into collection health and help investigate data ingestion errors and warnings.
 
-**[Host Metrics](/docs/integrations/hosts-operating-systems/host-metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
+**[Host Metrics](/docs/integrations/apps/hosts-operating-systems/host-metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
 **[Hosted collector](/docs/send-data/hosted-collectors)**. Hosted collectors do not require installation or registration, nor do hosted collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 

@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more.
 
-To visualize your Search Audit Index data, download the [Enterprise Search Audit App](/docs/integrations/sumo-apps/enterprise-search-audit), which provides pre-built dashboards and reports to help you analyze your current search use and identify areas for improvement.
+To visualize your Search Audit Index data, download the [Enterprise Search Audit App](/docs/integrations/apps/sumo-apps/enterprise-search-audit), which provides pre-built dashboards and reports to help you analyze your current search use and identify areas for improvement.
 
 ## Availability
 

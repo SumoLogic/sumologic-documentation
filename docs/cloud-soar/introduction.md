@@ -69,7 +69,7 @@ Finally, you can take the insights from Cloud SIEM and automatically respond to 
 Sumo Logic’s Cloud SOAR is a cloud-based web application available as an add-on to existing Sumo Logic deployments. Some of Cloud SOAR’s key features include:
 
 * **War Room**. A central location for all the information, analysis, and actions related to an incident. This includes notes, documentation, and knowledge transfer as well as tools for collecting data and assessing, investigating, and correlating different incidents.
-* **App Central**. A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started. 
+* **App Catalog**. A large out-of-the-box library of apps, playbooks, integrations, and use cases for different threats to get you started. 
 * **Cybersecurity best practices**. Cloud SOAR’s design and architecture meets many cybersecurity industry standards, regulatory frameworks, and best practices from organizations like ISO, GDPR, OASIS, NIST, and many others.
 
 Below is the SecOps and Dashboard page.  
@@ -213,9 +213,9 @@ Here are some other workflows you could automate with a playbook:
 
 Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly and easily automate any of these tasks, or create new custom playbooks to suit your specific business needs. Normally, playbooks are automatically attached to incidents based on information like entities and severity scores. 
 
-#### App Central, custom integrations, and other automations
+#### App Catalog, custom integrations, and other automations
 
-Cloud SOAR has hundreds of [pre-built playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
+Cloud SOAR has hundreds of [pre-built playbooks](/docs/integrations/playbook-templates/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
 
 Both pre-built and custom playbooks are simply combinations of various integrations and automations. These integrations can also be used stand-alone rather than as part of a playbook. Typically, an integration in Cloud SOAR contains one or more of these actions:
 * **Enrichment**. Adds information, metadata, or context, such as from a threat intelligence database.
@@ -224,11 +224,11 @@ Both pre-built and custom playbooks are simply combinations of various integrati
 * **Notification**. An alert sent via email, Slack, PagerDuty, or most other services you can connect with an API.
 * **Custom**. Scripts and any other automations you can create using Perl, Python, PowerShell or Bash.
 
-Actions are the building blocks of integrations. You can find many pre-built playbooks, integrations, and automations in Cloud SOAR’s [App Central](/docs/platform-services/automation-service/app-central/). From App Central, analysts can easily install and deploy a wide variety of automations that leverage these actions.
+Actions are the building blocks of integrations. You can find many pre-built playbooks, integrations, and automations in Cloud SOAR’s [App Catalog](/docs/integrations/). From App Catalog, analysts can easily install and deploy a wide variety of automations that leverage these actions.
 
-The Sumo Logic Cloud SOAR team is constantly adding new integrations, playbooks, and use cases to App Central. These playbooks in App Central are only a starting point, however. You can build off of them and create custom playbooks of your own as well.
+The Sumo Logic Cloud SOAR team is constantly adding new integrations, playbooks, and use cases to App Catalog. These playbooks in App Catalog are only a starting point, however. You can build off of them and create custom playbooks of your own as well.
 
-App Central may not be available to all users. Ask your Cloud SOAR admin if you need access to App Central.
+App Catalog may not be available to all users. Ask your Cloud SOAR admin if you need access to App Catalog.
 
 When you open a playbook, you'll see a flowchart like the one below. 
 
@@ -403,7 +403,7 @@ In addition to settings, Cloud SOAR administrators have privileged access to the
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-menu.png')} alt="Cloud SOAR Automation menu" style={{border: '1px solid gray'}} width="400"/>
 
 Within Automation, you’ll see subsections for:
-* [App Central](/docs/platform-services/automation-service/app-central/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
+* [App Catalog](/docs/integrations/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
 * [Playbooks](/docs/platform-services/automation-service/playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
 * [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/). Lets you connect third party tools through APIs.
@@ -516,16 +516,16 @@ Typically, each playbook in Sumo Logic Cloud SOAR will help automate or partiall
 
 <img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" width="600"/>
 
-#### Import and configure an integration through App Central
+#### Import and configure an integration through App Catalog
 
-Cloud SOAR comes with hundreds of pre-built playbooks and integrations as part of App Central. For more information, see [App Central](/docs/platform-services/automation-service/automation-service-app-central/). 
+Cloud SOAR comes with hundreds of pre-built playbooks and integrations as part of App Catalog. For more information, see [App Catalog](/docs/integrations/). 
 
-As a Cloud SOAR administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SOAR to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SOAR can be a single, central location for orchestrating your security response. 
+As a Cloud SOAR administrator, you can explore App Catalog and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SOAR to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SOAR can be a single, central location for orchestrating your security response. 
 
-Let's walk through how to install and configure useful integrations through App Central.
+Let's walk through how to install and configure useful integrations through App Catalog.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
-2. Click the **Integrations** tab in the top tab row.<br/>The App Central integrations page shows a long list of installed and available integrations to augment Cloud SOAR functionality with both Sumo Logic and third-party vendor functionality.<br/><img src={useBaseUrl('img/cloud-soar/app-central-integrations-tab.png')} alt="App Central Integrations tab" style={{border: '1px solid gray'}} width="600"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog** in the left navigation bar. 
+2. Click the **Integrations** tab in the top tab row.<br/>The automation integrations page shows a long list of installed and available integrations to augment Cloud SOAR functionality with both Sumo Logic and third-party vendor functionality.<br/><img src={useBaseUrl('img/cloud-soar/app-central-integrations-tab.png')} alt="App Catalog Integrations tab" style={{border: '1px solid gray'}} width="600"/>
 1. Choose a sample integration from the list and click it. A popup window will appear showing the details of the integration, including version, description, and a list of actions that are supported in automations.
 1. Navigate to the **Integrations** view to show installed integrations.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>In this view, you can see the integrations that have already been installed and configured in the system.
 1. Click an integration. The panel on the right will show the integration details, including available actions.  Many integrations after install will require appropriate configuration using "resources".
@@ -566,7 +566,7 @@ Custom actions can also include trigger actions, which run based on an event typ
 
 ##### Best practices
 
-Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Central to see if an out-of-the-box playbook that does what you want already exists, or if you can modify a existing playbook that’s similar to what you have in mind. 
+Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Catalog to see if an out-of-the-box playbook that does what you want already exists, or if you can modify a existing playbook that’s similar to what you have in mind. 
 
 #### Create a custom playbook for Cloud SIEM insights
 
@@ -679,7 +679,7 @@ Cloud SIEM focuses on the investigation phase of the security pipeline, while Cl
 
 ### What are playbooks in Cloud SOAR?
 
-Playbooks are automated or partially automated workflows made up of nodes, such as actions, conditions, and notifications, that respond to an incident. Cloud SOAR includes hundreds of prebuilt playbooks in App Central, and you can also build custom playbooks.
+Playbooks are automated or partially automated workflows made up of nodes, such as actions, conditions, and notifications, that respond to an incident. Cloud SOAR includes hundreds of prebuilt playbooks in App Catalog, and you can also build custom playbooks.
 
 ### What cloud logging strategy should I use?
 

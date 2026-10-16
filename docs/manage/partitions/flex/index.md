@@ -26,7 +26,7 @@ Flex Pricing delivers a new financial model for log management in which you can 
 :::
 
 :::info
-To set up and configure the Flex app, refer to [Flex](/docs/integrations/sumo-apps/flex/).
+To set up and configure the Flex app, refer to [Flex](/docs/integrations/apps/sumo-apps/flex/).
 :::
 
 ## Feature support

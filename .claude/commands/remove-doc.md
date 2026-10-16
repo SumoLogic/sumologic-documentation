@@ -53,7 +53,7 @@ Ask the user for:
 4. Check for references in:
    - Other markdown docs.
    - Parent hub/index pages.
-   - Product List (`docs/integrations/product-list/`).
+   - Integrations list (`docs/integrations`).
 
 **Warning**: Never do a Find All > Replace All blindly, as this can break image paths or other unrelated URLs.
 
@@ -135,7 +135,7 @@ Claude:
 ```
 Old: docs/integrations/vendor/product-legacy.md
 New: docs/integrations/vendor/product.md
-Also check: docs/integrations/product-list/ (remove old entry)
+Also check: docs/integrations/ (remove old entry)
 ```
 
 **Moving to a new category**:

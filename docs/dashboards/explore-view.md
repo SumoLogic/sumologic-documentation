@@ -38,7 +38,7 @@ AWS Observability provides an intuitive dashboard framework that mirrors industr
 
 ### Kubernetes Views
 
-Kubernetes views provide a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. These views, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes.md), allow you to intuitively monitor and troubleshoot issues as they arise. You can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. [Learn more](/docs/observability/kubernetes/monitoring.md).<br/><img src={useBaseUrl('img/dashboards/explore/k8s-view.png')} alt="Kubernetes views" style={{border: '1px solid gray'}} width="300"/>
+Kubernetes views provide a visual hierarchy of the clusters in your environment that allows you to view and switch between clusters with a single click. These views, used in conjunction with the Sumo Logic [Kubernetes App](/docs/integrations/apps/containers-orchestration/kubernetes.md), allow you to intuitively monitor and troubleshoot issues as they arise. You can intuitively filter on four hierarchical views of your Kubernetes system: Node, Deployment, Service, and Namespace. [Learn more](/docs/observability/kubernetes/monitoring.md).<br/><img src={useBaseUrl('img/dashboards/explore/k8s-view.png')} alt="Kubernetes views" style={{border: '1px solid gray'}} width="300"/>
 
 ### Application service views
 

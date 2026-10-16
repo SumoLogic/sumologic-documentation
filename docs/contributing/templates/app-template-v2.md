@@ -39,13 +39,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 \Insert code snippet\
 
-<!--Example: https://github.com/SumoLogic/sumologic-documentation/blob/main/docs/integrations/amazon-aws/config.md#sample-log-messages -->
+<!--Example: https://github.com/SumoLogic/sumologic-documentation/blob/main/docs/integrations/apps/amazon-aws/config.md#sample-log-messages -->
 
 ### Sample queries
 
 \Insert code snippet\
 
-<!--Example: https://github.com/SumoLogic/sumologic-documentation/blob/main/docs/integrations/amazon-aws/config.md#sample-queries -->
+<!--Example: https://github.com/SumoLogic/sumologic-documentation/blob/main/docs/integrations/apps/amazon-aws/config.md#sample-queries -->
 
 ## Installing the `{{vendor name}}` app
 

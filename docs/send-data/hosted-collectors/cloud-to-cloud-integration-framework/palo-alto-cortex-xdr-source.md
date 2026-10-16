@@ -87,7 +87,7 @@ To configure a Palo Alto Cortex XDR Source:
 
 :::note
 - To ensure accurate and effective display of all alerts, we recommend enabling duplicate alerts for each alert host IP. This prevents any host IP array flattening.
-- After configuring the Palo Alto Cortex XDR source, consider installing the Sumo Logic app for [Palo Alto Cortex XDR](/docs/integrations/saas-cloud/palo-alto-cortex-xdr/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+- After configuring the Palo Alto Cortex XDR source, consider installing the Sumo Logic app for [Palo Alto Cortex XDR](/docs/integrations/apps/saas-cloud/palo-alto-cortex-xdr/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## Metadata fields

@@ -122,17 +122,17 @@ The [Global Intelligence Service](/docs/integrations/global-intelligence) apps p
 
 Sumo Logic offers integrations with AI platforms for monitoring, governance, and security analysis. The following are some popular examples that let you collect, analyze, and act on data from AI tools directly within Sumo Logic:
 
-* [Amazon Bedrock](/docs/integrations/amazon-aws/amazon-bedrock)
-* [Amazon Bedrock AgentCore](/docs/integrations/amazon-aws/amazon-bedrock-agentcore)
-* [Amazon SageMaker](/docs/integrations/amazon-aws/amazon-sagemaker)
-* [ChatGPT Compliance](/docs/integrations/saas-cloud/chatgpt-compliance)
-* [Claude Compliance](/docs/integrations/saas-cloud/claude-compliance)
-* [Databricks Audit](/docs/integrations/saas-cloud/databricks-audit)
-* [GitHub Copilot](/docs/integrations/saas-cloud/github-copilot)
-* [Google Cloud Vertex AI](/docs/integrations/google/cloud-vertex-ai)
-* [LiteLLM](/docs/integrations/saas-cloud/litellm)
-* [Microsoft Foundry](/docs/integrations/microsoft-azure/microsoft-foundry)
-* [OpenLLMetry](/docs/integrations/aiml/opentelemetry/openllmetry)
+* [Amazon Bedrock](/docs/integrations/apps/amazon-aws/amazon-bedrock)
+* [Amazon Bedrock AgentCore](/docs/integrations/apps/amazon-aws/amazon-bedrock-agentcore)
+* [Amazon SageMaker](/docs/integrations/apps/amazon-aws/amazon-sagemaker)
+* [ChatGPT Compliance](/docs/integrations/apps/saas-cloud/chatgpt-compliance)
+* [Claude Compliance](/docs/integrations/apps/saas-cloud/claude-compliance)
+* [Databricks Audit](/docs/integrations/apps/saas-cloud/databricks-audit)
+* [GitHub Copilot](/docs/integrations/apps/saas-cloud/github-copilot)
+* [Google Cloud Vertex AI](/docs/integrations/apps/google/cloud-vertex-ai)
+* [LiteLLM](/docs/integrations/apps/saas-cloud/litellm)
+* [Microsoft Foundry](/docs/integrations/apps/microsoft-azure/microsoft-foundry)
+* [OpenLLMetry](/docs/integrations/apps/aiml/opentelemetry/openllmetry)
 
 ## FAQ
 

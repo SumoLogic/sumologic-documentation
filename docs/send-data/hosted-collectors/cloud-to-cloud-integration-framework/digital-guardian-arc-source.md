@@ -57,7 +57,7 @@ To configure Digital Guardian ARC Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Digital Guardian ARC source, consider installing the Sumo Logic app for [Digital Guardian ARC](/docs/integrations/saas-cloud/digital-guardian-arc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Digital Guardian ARC source, consider installing the Sumo Logic app for [Digital Guardian ARC](/docs/integrations/apps/saas-cloud/digital-guardian-arc/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema
