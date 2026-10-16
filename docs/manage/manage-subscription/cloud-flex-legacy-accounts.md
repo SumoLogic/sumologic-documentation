@@ -190,3 +190,7 @@ To drill into usage data, do the following:
 1. To return to the original data display, click the Reset icon.<br/><img src={useBaseUrl('img/manage/subscriptions/reset-icon.png')} alt="Cloud Flex drilldown reset" style={{border: '1px solid gray'}} width="800" />
 
     The display changes accordingly.
+
+## See also
+
+* [Limits and Quotas](/docs/get-started/limitations) — a full reference of maximum values and quotas across Sumo Logic features and services.

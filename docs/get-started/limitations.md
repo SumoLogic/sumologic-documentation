@@ -5,8 +5,10 @@ sidebar_label: Limits and Quotas
 description: A reference of quotas, limitations, and maximum values across Sumo Logic services.
 ---
 
-This page lists the maximum limits and quotas for various features, services, and components within Sumo Logic.
+import LookupTableLimits from '../reuse/lookup-table-limits.md';
+import MonitorLimits from '../reuse/monitor-limits.md';
 
+This page lists the maximum limits and quotas for various features, services, and components within Sumo Logic.
 
 ## Log search
 
@@ -24,13 +26,7 @@ This page lists the maximum limits and quotas for various features, services, an
 
 ### Lookup tables
 
-| Account Type | Lookup Tables per org |
-|:--|:--|
-| Professional (Cloud Flex) | 10 |
-| Enterprise (Cloud Flex) | 100 |
-| Essentials (Cloud Flex Credits) | 10 |
-| Enterprise Ops / Security / Suite (Cloud Flex Credits) | 100 |
-| Free | None |
+<LookupTableLimits/>
 
 * **[File size](/docs/search/lookup-tables/create-lookup-table)**. Up to 100 MB per lookup table.
 * **[Row size](/docs/search/lookup-tables/create-lookup-table)**. Up to 200 KB per row.
@@ -43,7 +39,8 @@ This page lists the maximum limits and quotas for various features, services, an
 ## Alerts and monitors
 
 * **[Maximum number of monitors (active and inactive)](/docs/alerts/monitors/monitor-faq/#is-there-a-limit-to-the-number-of-monitors-i-can-have)**. Up to 5,000 (can be increased by contacting support).
-* **[Email notifications](/docs/alerts/monitors/overview/#general)**. Up to 100 recipients.
+
+<MonitorLimits/>
 
 ### Log monitors
 
@@ -53,7 +50,6 @@ This page lists the maximum limits and quotas for various features, services, an
 | Essentials, Professional | 300              |
 | Free Trial               | 50               |
 
-* **[Query length](/docs/alerts/monitors/overview/#general)**. Up to 15,000 characters.
 * **[Execution delay](/docs/alerts/monitors/overview/#log-monitors)**. 2 minutes (to account for ingestion delays).
 
 ### Metric monitors
@@ -64,10 +60,7 @@ This page lists the maximum limits and quotas for various features, services, an
 | Essentials, Professional | 500                 |
 | Free Trial               | 50                  |
 
-* **[Aggregate monitor](/docs/alerts/monitors/overview/#general)**. Can evaluate up to 15,000 time series.
-* **[Non-aggregate monitor](/docs/alerts/monitors/overview/#general)**. Can evaluate up to 3,000 time series.
 * **[Execution delay](/docs/alerts/monitors/overview/#metrics-monitors)**. 1 minute.
-* **[Query limit](/docs/alerts/monitors/overview/#general)**. Up to 6 queries.
 
 ### Notification grouping
 
@@ -100,90 +93,6 @@ This page lists the maximum limits and quotas for various features, services, an
 * **[Maximum Cloud-to-Cloud sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework)**. Limited to 20 for free accounts, and 50 for all other accounts.
    * **Warning threshold**. You are warned when you reach 80% of the limit (16 sources for free accounts, 40 for other accounts).
 
-
-## Cloud SIEM
-
-* **[Signal limits](/docs/cse/rules/rules-status)**. Up to 100,000 signals/hour or 1 million/24 hours.
-* **[Match list items](/docs/cse/match-lists-suppressed-lists/create-match-list)**. Up to 100,000 items per match list.
-* **[Suppressed list items](/docs/cse/match-lists-suppressed-lists/suppressed-lists)**. Up to 50,000 items per suppressed list.
-* **[Match list value length](/docs/cse/match-lists-suppressed-lists/create-match-list)**. Up to 2,000 characters.
-
-## Cloud SOAR
-
-* **[Custom fields per section](/docs/cloud-soar/overview)**. Up to 100 custom fields per section (for example, the Incidents section).
-* **[Data retention — standard](/docs/cloud-soar/overview)**. Incidents, Triage, Entities, and Playbook/action executions are retained for 2 years.
-* **[Data retention — HIPAA](/docs/cloud-soar/overview)**. Incidents, Triage, Entities, and Playbook/action executions are retained for 7 years.
-* **[Custom retention range](/docs/cloud-soar/overview)**. Can be set between 1 day and 5,000 days.
-
-## Threat intelligence
-
-* **[Total indicators](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Default storage limit is 10 million total indicators (excluding Sumo Logic-provided sources).
-* **[Indicators per API call](/docs/security/threat-intelligence/about-threat-intelligence)**. Up to 100 indicators per upload call.
-* **[Expired indicator retention](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Up to 180 days (configurable).
-
-## Platform service
-
-* **[Playbook actions](/docs/platform-services/automation-service/about-automation-service/#actions-limit)**. Limited to 350 actions per hour per organization. Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward this limit. User Choice, IF, and Task actions do not.
-
-## Data management
-
-### Field extraction
-
-* **[Field Extraction Rules per org](/docs/manage/fields)**. Up to 200.
-* **[Field name (key) length](/docs/manage/fields)**. Up to 255 characters.
-* **[Field value length](/docs/manage/fields)**. Up to 200 characters.
-* **[Custom field limit](/docs/manage/fields)**. Up to 400 for Enterprise and Enterprise Suite users.
-* **[Shared quota](/docs/manage/fields)**. Field Extraction Rule and metadata fields share the 200-field limit.
-* **Subqueries**. Not supported.
-* **[HTTP request field limit](/docs/manage/fields)**. Up to 30 fields.
-
-### Partitions
-
-* **[Maximum partitions](/docs/manage/partitions)**. Up to 50 per account.
-* **[Optimal size](/docs/manage/partitions)**. Between 1%–30% of daily ingest. Ideally, with less than 5 TB data per day flowing into each.
-  - Below 1% can cause index fragmentation and degraded search performance.
-  - Above 30% may reduce performance gains.
-* **[Name restrictions](/docs/manage/partitions)**. Cannot start with `sumologic_` or an underscore (`_`).
-* **[Routing rule length](/docs/manage/partitions)**. Up to 2,048 characters.
-* **[Unsupported conditions](/docs/manage/partitions)**. Do not use the `NOT` operator or `sourceHost` when defining partitions.
-
-### Scheduled views
-
-* **[Maximum views](/docs/manage/scheduled-views)**. Up to 500 per account.
-* **[Start date](/docs/manage/scheduled-views)**. Cannot select a date older than 365 days.
-* **[Unsupported](/docs/manage/scheduled-views)**. Subqueries and Field Extraction Rules are not supported.
-
-
-## Accounts and plans
-
-### Free accounts
-
-* **Daily ingest**. 500 MB per day.
-* **Retention**. 7 days for logs.
-* **Storage**. Up to 4 GB.
-* **Users**. Up to 3.
-* **Continuous queries**. Up to 20.
-* **Dashboard panel time range**. Up to 7 days.
-
-### Trial accounts
-
-* **Daily ingest**. 1 GB per day.
-* **Retention**. 30 days for logs.
-* **Users**. Up to 20 users.
-
-### Essentials and Enterprise accounts
-
-* **Retention**. Varies based on subscription.
-* **Users**. Can be scaled to meet organizational needs.
-
-### Users and roles
-
-* **[Users](/docs/manage/users-roles/users)**. Up to 1,000 per account.
-* **[Roles](/docs/manage/users-roles/roles)**. Up to 100 per account.
-* **[Naming](/docs/manage/users-roles/roles)**. Role names must use alphanumeric characters or underscores (`_`).
-* **Free accounts**. Limited to 3 users.
-* **[Concurrent sessions per user](/docs/manage/security/set-limit-user-concurrent-sessions)**. Administrators can restrict each user to between 1 and 100 concurrent sessions. No limit by default.
-
 ## Dashboards
 
 * **[Panel queries](/docs/dashboards/about)**. Up to 6 log and 6 metric queries.
@@ -195,10 +104,6 @@ This page lists the maximum limits and quotas for various features, services, an
 * **[Template variable queries](/docs/dashboards/about)**. Up to 10 concurrent queries per user.
 * **External sharing**. Dashboards shared outside an organization are view-only.
 * **Time range support**. Only relative time supported (for example, Last 15 Minutes). Absolute time ranges are not supported.
-
-## SLO
-
-* **[Data Retention](/docs/observability/reliability-management-slo)**. 800 days.
 
 ## Metrics
 
@@ -219,6 +124,91 @@ See [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ing
 * **Raw data**. Retained for 30 days.
 * **1-hour resolution rollups**. Retained for 13 months.
 
+## Data management
+
+### Field extraction
+
+* **[Field Extraction Rules per org](/docs/manage/fields)**. Up to 200.
+* **[Field name (key) length](/docs/manage/fields)**. Up to 255 characters.
+* **[Field value length](/docs/manage/fields)**. Up to 200 characters.
+* **[Custom field limit](/docs/manage/fields)**. Up to 400 for Enterprise and Enterprise Suite users.
+* **[Shared quota](/docs/manage/fields)**. Field Extraction Rule and metadata fields share the 200-field limit.
+* **Subqueries**. Not supported.
+* **[HTTP request field limit](/docs/manage/fields)**. Up to 30 fields.
+
+### Partitions
+
+* **[Maximum partitions](/docs/manage/partitions)**. Up to 50 per account.
+* **[Optimal size](/docs/manage/partitions)**. Between 1%–30% of daily ingest. Ideally, with less than 5 TB data per day flowing into each.
+  * Below 1% can cause index fragmentation and degraded search performance.
+  * Above 30% may reduce performance gains.
+* **[Name restrictions](/docs/manage/partitions)**. Cannot start with `sumologic_` or an underscore (`_`).
+* **[Routing rule length](/docs/manage/partitions)**. Up to 2,048 characters.
+* **[Unsupported conditions](/docs/manage/partitions)**. Do not use the `NOT` operator or `sourceHost` when defining partitions.
+
+### Scheduled views
+
+* **[Maximum views](/docs/manage/scheduled-views)**. Up to 500 per account.
+* **[Start date](/docs/manage/scheduled-views)**. Cannot select a date older than 365 days.
+* **[Unsupported](/docs/manage/scheduled-views)**. Subqueries and Field Extraction Rules are not supported.
+
+## Accounts and plans
+
+### Free accounts
+
+* **[Daily ingest](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. 500 MB per day.
+* **[Retention](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. 7 days for logs.
+* **[Storage](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. Up to 4 GB.
+* **[Users](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. Up to 3.
+* **[Continuous queries](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. Up to 20.
+* **[Dashboard panel time range](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. Up to 7 days.
+
+### Trial accounts
+
+* **[Daily ingest](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. 1 GB per day.
+* **[Retention](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. 30 days for logs.
+* **[Users](/docs/manage/manage-subscription/cloud-flex-legacy-accounts)**. Up to 20 users.
+
+### Essentials and Enterprise accounts
+
+* **[Retention](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. Varies based on subscription.
+* **[Users](/docs/manage/manage-subscription/sumo-logic-credits-accounts)**. Can be scaled to meet organizational needs.
+
+## Users and roles
+
+* **[Users](/docs/manage/users-roles/users)**. Up to 1,000 per account.
+* **[Roles](/docs/manage/users-roles/roles)**. Up to 100 per account.
+* **[Naming](/docs/manage/users-roles/roles)**. Role names must use alphanumeric characters or underscores (`_`).
+* **Free accounts**. Limited to 3 users.
+* **[Concurrent sessions per user](/docs/manage/security/set-limit-user-concurrent-sessions)**. Administrators can restrict each user to between 1 and 100 concurrent sessions. No limit by default.
+
+## Cloud SIEM
+
+* **[Signal limits](/docs/cse/rules/rules-status)**. Up to 100,000 signals/hour or 1 million/24 hours.
+* **[Match list items](/docs/cse/match-lists-suppressed-lists/create-match-list)**. Up to 100,000 items per match list.
+* **[Suppressed list items](/docs/cse/match-lists-suppressed-lists/suppressed-lists)**. Up to 50,000 items per suppressed list.
+* **[Match list value length](/docs/cse/match-lists-suppressed-lists/create-match-list)**. Up to 2,000 characters.
+
+## Threat intelligence
+
+* **[Total indicators](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Default storage limit is 10 million total indicators (excluding Sumo Logic-provided sources).
+* **[Indicators per API call](/docs/security/threat-intelligence/about-threat-intelligence)**. Up to 100 indicators per upload call.
+* **[Expired indicator retention](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Up to 180 days (configurable).
+
+## Cloud SOAR
+
+* **[Custom fields per section](/docs/cloud-soar/overview)**. Up to 100 custom fields per section (for example, the Incidents section).
+* **[Data retention — standard](/docs/cloud-soar/overview)**. Incidents, Triage, Entities, and Playbook/action executions are retained for 2 years.
+* **[Data retention — HIPAA](/docs/cloud-soar/overview)**. Incidents, Triage, Entities, and Playbook/action executions are retained for 7 years.
+* **[Custom retention range](/docs/cloud-soar/overview)**. Can be set between 1 day and 5,000 days.
+
+## Platform service
+
+* **[Playbook actions](/docs/platform-services/automation-service/about-automation-service/#actions-limit)**. Limited to 350 actions per hour per organization. Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward this limit. User Choice, IF, and Task actions do not.
+
+## SLO
+
+* **[Data Retention](/docs/observability/reliability-management-slo)**. 800 days.
 
 ## APM, traces, and RUM
 
@@ -232,3 +222,8 @@ See [Metric Ingestion and Storage](/docs/metrics/manage-metric-volume/metric-ing
 ### Real User Monitoring (RUM)
 
 * RUM data is stored in the `_trace_spans` index and follows the same retention as log data.
+
+## Additional resources
+
+* [Manage your subscription](/docs/manage/manage-subscription) — view plan details, account type comparisons, and upgrade options.
+* Need a higher limit? Many limits on this page can be increased. [Contact Sumo Logic Support](https://support.sumologic.com) to request a change.

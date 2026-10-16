@@ -8,6 +8,7 @@ description: Sumo Logic monitors continuously query your logs or metrics and sen
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MonitorLimits from '../../reuse/monitor-limits.md';
 
 Monitors track your metrics and logs data in real time and send notifications when noteworthy changes happen in your production applications.
 
@@ -137,11 +138,9 @@ Custom variables used inside the Action Payload.
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
 * [LogReduce](/docs/search/behavior-insights/logreduce/logreduce-operator) / [LogCompare](/docs/search/behavior-insights/logcompare) operators are not supported in monitors. If your query contains these operators, you will not be able to create the monitor.  
 * Monitors only support the [Continuous data tier](/docs/manage/partitions/data-tiers).
-* An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
+<MonitorLimits/>
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
-* A Log Monitor can have one query up to 15,000 characters long. Metric monitors can specify up to six queries.
-* Email notifications can have up to 100 recipients.
 * The [`timeshift metrics` operator](/docs/metrics/metrics-operators/timeshift) is not supported in a Metric Monitor.
 * [Hidden Metrics queries](../../metrics/metrics-queries/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
