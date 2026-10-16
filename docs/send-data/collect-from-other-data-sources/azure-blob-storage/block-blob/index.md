@@ -18,7 +18,7 @@ This solution is for newly created blobs only (not for existing blobs).
 
 For step-by-step instructions for configuring the Azure-Sumo Logic pipeline, see [Collect Logs from Azure Blob Storage (block blobs)](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs).
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 Watch this tutorial for an overview of collecting logs from Azure Blob Storage.
 
@@ -33,19 +33,6 @@ Watch this tutorial for an overview of collecting logs from Azure Blob Storage.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/_-N3QGxrn9k?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
--->
 
 :::
 

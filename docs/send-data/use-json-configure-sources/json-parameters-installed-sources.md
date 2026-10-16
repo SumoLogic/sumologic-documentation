@@ -594,7 +594,7 @@ Graphite contentType JSON example: 
 }
 ```
 
-## Additional information
+## Additional resources
 
 See the following topics for additional information:
 * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.

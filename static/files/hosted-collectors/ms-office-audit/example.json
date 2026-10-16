@@ -1,0 +1,24 @@
+{
+   "api.version":"v1",
+   "source": {
+     "sourceType": "HTTP",
+     "name": "o365-api-test-app",
+     "category": "o365/audit",
+     "thirdPartyRef": {
+       "resources": [{
+         "serviceType": "O365AuditNotification",
+         "path": {
+           "type": "O365NotificationPath",
+           "workload": "Audit.Exchange",
+           "region": "Commercial"
+         },
+         "authentication": {
+           "type": "O365AppRegistrationAuthentication",
+           "tenantId": "test-tenant-id",
+           "clientId": "test-client-id",
+           "clientSecret": "test-client-secret"
+         }
+       }]
+     }
+   }
+ }

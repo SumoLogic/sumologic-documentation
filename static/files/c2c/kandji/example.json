@@ -10,7 +10,8 @@
       "pollingIntervalMin": 5,
       "pollingIntervalHour": 12,
       "collectDeviceActivities": true,
-      "collectDeviceDetails": true
+      "collectDeviceDetails": true,
+      "collectDeviceApps": true
     },
     "schemaRef": {
       "type": "Kandji"

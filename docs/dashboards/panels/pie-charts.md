@@ -11,11 +11,11 @@ To create a pie chart, use an aggregate query that provides at least a few resul
 
 For example, you'd use the following simple query to get results from your logs:
 
-```sql
+```sumo
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count
 ```
 
-which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/pie-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="300" /> 
+which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/pie-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="500" /> 
 
 ## Create a pie chart
 

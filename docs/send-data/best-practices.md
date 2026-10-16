@@ -34,7 +34,7 @@ Following the naming convention described previously, you could set the followin
 
 While the components at the beginning of the value do not add any obvious value, they do provide a high-level grouping of this data. This allows us to fulfill the three purposes of Source Categories.
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/wihnfxauzh?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -47,18 +47,6 @@ While the components at the beginning of the value do not add any obvious value,
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/vkKeJOBVVjk"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"      allowfullscreen
-     />
--->
 
 :::
 

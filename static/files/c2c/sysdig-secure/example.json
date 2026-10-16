@@ -2,18 +2,20 @@
 	"api.version": "v1",
 	"source": {
 		"config": {
-                	"name": "Sysdig",
-  					"baseURL": "https://us2.app.sysdig.com",
-  					"bearerToken": "wdwxxxxxqwedwedxxxxxqewdxxxxxxqwedxxxx",
-  					"scope": [
-    			        		{
-      				            "fieldName": "Field",
-      				            "fieldValue": "Value"
-    			        		}
-  			        		]
+  "name": "Sysdig Secure",
+  "baseURL": "https://us2.app.sysdig.com",
+  "bearerToken": "wdwxxxxxqwedwedxxxxxqewdxxxxxxqwedxxxx",
+  "scopeFilters": [
+    {
+      "fieldName": "Field",
+      "fieldValue": "Value"
+    }
+  ],
+  "pollingIntervalRuntimeResultHrs": "24h"
 },
-		            "schemaRef": {
-            		            "type": "Sysdig"
-        	                     },
-        	        "sourceType": "Universal"
-}}
+		"schemaRef": {
+            		"type": "Sysdig"
+        	},
+        	"sourceType": "Universal"
+	}
+}

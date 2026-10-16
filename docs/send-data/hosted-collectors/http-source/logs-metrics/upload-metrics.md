@@ -93,6 +93,7 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 | Custom Source Category | `X-Sumo-Category` | Desired source category.<br/>Useful if you want to override the source category configured for the source. |
 | Custom Metric Dimensions | `X-Sumo-Dimensions` | Comma-separated key=value list of dimensions to apply to every metric.<br/>For metrics only. Custom dimensions will allow you to query your metrics at a more granular level. |
 | Custom Metric Metadata | `X-Sumo-Metadata` | Comma-separated, key=value list of metadata to apply to every metric.<br/>For metrics only. Custom metadata  will allow you to query your metrics at a more granular level. |
+| Token authentication | `x-sumo-token` | Token to be used for authentication in an authorization header. Obtain the token when you select **Auth Header** when you [configure the HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source), or when you [regenerate the URL](/docs/send-data/hosted-collectors/http-source/generate-new-url/). |
 
 ## Data volume and metadata limits for metrics
 
@@ -104,29 +105,54 @@ When using cURL to POST data from a file: 
 
  * Make sure to use the `-T` parameter to specify the file path, not `-d`.   The `-d` parameter causes new lines to be removed from the content, which will interfere with message boundary detection.
  * Make sure that each line in the file follows the format specified by the `Content-Type` header for the HTTP request.
+ * Enter the URL (and auth header if applicable) obtained when you [configured the HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source) or when you [regenerate the URL](/docs/send-data/hosted-collectors/http-source/generate-new-url/). If you use an auth header, enter it in this format: <br/>`-H "x-sumo-token: [TokenString]"`
 
 **POST upload ([Graphite](http://metrics20.org/implementations/)-formatted metrics)**
 
+Presigned URL:
 ```bash
 curl -v -X POST -H 'Content-Type:application/vnd.sumologic.graphite' -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode]
 ```
 
+URL with auth header:
+```bash
+curl -v -X POST -H 'Content-Type:application/vnd.sumologic.graphite' -H "x-sumo-token: [TokenString]" -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http
+```
+
 **POST upload ([Carbon 2.0](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol)-formatted metrics)**
 
+Presigned URL:
 ```bash
 curl -v -X POST -H 'Content-Type:application/vnd.sumologic.carbon2' -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode]
 ```
 
+URL with auth header:
+```bash
+curl -v -X POST -H 'Content-Type:application/vnd.sumologic.carbon2' -H "x-sumo-token: [TokenString]" -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http
+```
+
 **POST upload (gzip compressed [Graphite](http://metrics20.org/implementations/)-formatted metrics)** 
 
+Presigned URL:
 ```bash
 curl -v -X POST -H 'Content-Encoding:gzip' -H 'Content-Type:application/vnd.sumologic.graphite' -T [local_file_name.gz] https://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode]
 ```
 
+URL with auth header:
+```bash
+curl -v -X POST -H 'Content-Encoding:gzip' -H 'Content-Type:application/vnd.sumologic.graphite' -H "x-sumo-token: [TokenString]" -T [local_file_name.gz] https://collectors.sumologic.com/receiver/v1/http
+```
+
 **POST upload ([Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md)-formatted metrics)**
 
+Presigned URL:
 ```bash
 curl -v -X POST -H 'Content-Type:application/vnd.sumologic.prometheus' -T [local_file_name] http://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode]
+```
+
+URL with auth header:
+```bash
+curl -v -X POST -H 'Content-Type:application/vnd.sumologic.prometheus' -H "x-sumo-token: [TokenString]" -T [local_file_name] http://collectors.sumologic.com/receiver/v1/http
 ```
 
 ## Prometheus Metrics Not Accepted by Sumo
@@ -137,7 +163,7 @@ By design, Sumo does not ingest Prometheus comments. Sumo also rejects Prometheu
 
 Sumo does not ingest metric expositions in which the metric value contains +Inf, -Inf, or NaN. For example, this line would not be ingested:
 
-```sql
+```sumo
 http_request_duration_seconds_bucket{le="1234"} NaN
 ```
 
@@ -155,13 +181,13 @@ The Prometheus format requires that label key-value pairs be comma-separated. If
 
 **Correct:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.5", abc = "def"} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.5". abc = "def"} 7.7711e-05 1530708470
 ```
 
@@ -171,13 +197,13 @@ The Prometheus format requires that metric label values be enclosed in quotes. I
 
 **Correct:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{abc = “def”} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{abc = def} 7.7711e-05 1530708470
 ```
 
@@ -187,13 +213,13 @@ The Prometheus format requires that metric label key-value pairs be defined in `
 
 **Correct:**  
 
-```sql
+```sumo
 Go_gc_duration_seconds{quantile = "0.5"} 7.7711e-05 1530708470
 ```
 
 **Incorrect:**
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile"0.5"} 7.7711e-05 1530708470
 ```
 
@@ -203,12 +229,12 @@ The Prometheus format requires that metric labels have a name. If they are not, 
 
 **Correct:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{quantile="0.56"} 5.809e-05 1530708471
 ```
 
 **Incorrect:**  
 
-```sql
+```sumo
 go_gc_duration_seconds{="0.56"} 5.809e-05 1530708471
 ```

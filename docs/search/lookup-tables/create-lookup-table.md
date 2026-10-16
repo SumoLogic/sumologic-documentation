@@ -1,7 +1,7 @@
 ---
 id: create-lookup-table
 title: Create a Lookup Table
-description: Learn about lookup tables and how to create and manage them.
+description: Learn how to create and manage lookup tables in Sumo Logic to enrich your searches and join logs with external metadata sources efficiently.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,12 +13,16 @@ For additional articles about lookup tables, see the following:
 * To configure a Lookup Table for use in Cloud SIEM, see [Configure an Entity Lookup Table](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/).
 * To populate a Lookup Table with Cloud SIEM inventory data, see [Save Inventory Data to a Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table/).
 
-:::note
-New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
-:::
-
 :::tip
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to create and manage Lookup Tables. 
+:::
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a lookup table with the [`sumologic_lookup_table`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/lookup_table) resource.
+
+<TerraformLink/>
 :::
 
 ## Introduction to Lookup Tables

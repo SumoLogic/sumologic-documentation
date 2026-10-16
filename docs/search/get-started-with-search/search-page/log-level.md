@@ -15,7 +15,7 @@ When performing **Log Search** queries, you can visualize and filter log-level d
 * Navigate through a large volume of logs
 * Filter the relevant logs in their troubleshooting workflows
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch the following micro lesson to learn about log level detection.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/mvutc9bmtg?web_component=true&seo=true&videoFoam=false"
@@ -29,19 +29,6 @@ Watch the following micro lesson to learn about log level detection.
   allow="autoplay; fullscreen"
   allowfullscreen
 />
-
-<!-- old
-<Iframe url="https://www.youtube.com/embed/cAQYiVs-PXY?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
--->
 
 :::
 
@@ -58,18 +45,22 @@ If the log message is in JSON format, the log level detection method searches fo
 
 And if the log message is in a non-JSON format, the log level detection method looks for keywords such as "debug", "info/information", "warn/warning", and "error". If any of these keywords are found in the log message, their corresponding values will be considered and displayed in the results. 
 
+:::note
+Sumo Logic does not have any source specific special logic for log level extraction except for OTEL. For OTEL sources, `severityTextField` is used with `severityNumber` as fallback, if `severityTextField` is not populated. For more details, refer to the [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/).
+:::
+
 :::info
 If multiple log levels are detected in the message, they will be prioritized in the following order: ERROR > WARN > INFO > DEBUG.
 :::
 
 Just execute a log search to see the `_loglevel` field:
 
-<img src={useBaseUrl('img/search/get-started-search/search-page/log-level-legend.png')} width="950" alt="log-level-legend" />
+<img src={useBaseUrl('img/search/get-started-search/search-page/log-level-legend.png')} width="950" alt="Log level legend" />
 
 | Element | Description
 | :-- | :--
 | A | Histogram with stacked bars representing log level distribution over your search timeframe.
-| B | Interactive Histogram legend showing the log level that each color represents. Click on any label to isolate it in the Histogram and corresponding messages beneath that. To select multiple log levels, use **shift + click**. In the following example, the **ERROR** and **INFO** label have been selected, so you'll see only error and info logs reflected. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-level-error-filter.png')} width="850" alt="log-level-error-filter.png" /> |
+| B | Interactive Histogram legend showing the log level that each color represents. Click on any label to isolate it in the Histogram and corresponding messages beneath that. To select multiple log levels, use **shift + click**. In the following example, the **ERROR** and **INFO** label have been selected, so you'll see only error and info logs reflected. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-level-error-filter.png')} width="850" alt="Log level error filter" /> |
 | C | [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) **_loglevel** filter. You can use this reserved field in your queries to perform advanced operations.
 | D | Log level for this log message. Quickly identify the log level of each log message using the color-coded Histogram legend for each message.
 | E | Distribution of log levels under **_loglevel** field in the field browser.
@@ -77,7 +68,7 @@ Just execute a log search to see the `_loglevel` field:
 
 The <strong>_loglevel</strong> field value for log messages with the log level <code>""</code> in the Histogram is <code>null</code>. To query these messages, you can run:
 
-```sql  
+```sumo  
 | where isNull(_loglevel)
 ```
 
