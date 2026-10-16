@@ -105,13 +105,42 @@ This page lists the maximum limits and quotas for various features, services, an
 | Max Quantization Interval | 30d | The given quantization was too big. |
 | Max Timeshift | 1,000d | The given timeshift was too big. |
 
+## APM, traces, and RUM
+
+### Traces
+
+- **[Spans per trace](/docs/apm/spans)**. Up to 10,000 spans per trace.
+- **[Trace query retention](/docs/apm/traces/view-and-investigate-traces)**. 15 days.
+- **[Unique tag names](/docs/apm/traces/view-and-investigate-traces)**. Up to 10,000 unique tag names per retention period per org.
+- **Span data retention** (`_trace_spans` index). Same as default log index retention.
+
+### Real User Monitoring (RUM)
+
+- RUM data is stored in the `_trace_spans` index and follows the same retention as log data.
+
 ## Platform service
 
-- **[Playbook actions](/docs/cse/automation/automations-in-cloud-siem)**. Limited to 350 actions per hour per organization.
+- **[Playbook actions](/docs/platform-services/automation-service/about-automation-service/#actions-limit)**. Limited to 350 actions per hour per organization. Custom, Notification, Enrichment, Daemon, Scheduled, and Trigger Actions count toward this limit. User Choice, IF, and Task actions do not.
 
 ## Cloud SIEM
 
 - **[Signal limits](/docs/cse/rules/rules-status)**. Up to 100,000 signals/hour or 1 million/24 hours.
+- **[Match list items](/docs/cse/match-lists-suppressed-lists/create-match-list)**. Up to 100,000 items per match list.
+- **[Suppressed list items](/docs/cse/match-lists-suppressed-lists/suppressed-lists)**. Up to 50,000 items per suppressed list.
+- **[Match list value length](/docs/cse/match-lists-suppressed-lists/create-match-list)**. Up to 2,000 characters.
+
+## Cloud SOAR
+
+- **[Custom fields per section](/docs/cloud-soar/overview)**. Up to 100 custom fields per section (for example, the Incidents section).
+- **[Data retention — standard](/docs/cloud-soar/overview)**. Incidents, Triage, Entities, and Playbook/action executions are retained for 2 years.
+- **[Data retention — HIPAA](/docs/cloud-soar/overview)**. Incidents, Triage, Entities, and Playbook/action executions are retained for 7 years.
+- **[Custom retention range](/docs/cloud-soar/overview)**. Can be set between 1 day and 5,000 days.
+
+## Threat intelligence
+
+- **[Total indicators](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Default storage limit is 10 million total indicators (excluding Sumo Logic-provided sources).
+- **[Indicators per API call](/docs/security/threat-intelligence/about-threat-intelligence)**. Up to 100 indicators per upload call.
+- **[Expired indicator retention](/docs/security/threat-intelligence/threat-intelligence-indicators)**. Up to 180 days (configurable).
 
 ## Field extraction
 
