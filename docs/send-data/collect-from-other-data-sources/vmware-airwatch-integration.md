@@ -5,6 +5,8 @@ sidebar_label: VMware AirWatch
 description: This page shows you how to configure AirWatch cloud syslog events for use with Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 [VMware AirWatch](https://www.air-watch.com) is an enterprise mobility management (EMM) software and standalone management systems for content, applications and email. Sumo Logic integrates with VMware AirWatch to provide visibility for monitoring enterprise mobility management in your deployment. The unified digital workspace platform simplifies and secures app access and IT management throughout your environment.
 
 VMware Airwatch is an integral part of [Workspace ONE](https://www.air-watch.com/why-workspace-one-airwatch/), an any app, any device experience that provides 1-click workflows with a virtual assistant for an intuitive and engaging experience.
@@ -41,11 +43,11 @@ To enable integration and configure syslog, do the following:
 1. Log in to your AirWatch account.
 1. Navigate to **Monitor > Reports and Analytics > Events > Syslog**.
 
-    ![Syslog_dialog.png](/img/send-data/Syslog_dialog.png)
+    <img src={useBaseUrl('img/send-data/Syslog_dialog.png')} alt="AirWatch Syslog dialog" style={{border: '1px solid gray'}} width="300" />
 
 1. Select **Enabled** on the Syslog dialog.
 
-    ![Syslog_dialog_options.png](/img/send-data/Syslog_dialog_options.png)
+    <img src={useBaseUrl('img/send-data/Syslog_dialog_options.png')} alt="Enabled on the Syslog dialog" style={{border: '1px solid gray'}} width="500" />
 
 1. Specify the following options in the Syslog dialog:
 

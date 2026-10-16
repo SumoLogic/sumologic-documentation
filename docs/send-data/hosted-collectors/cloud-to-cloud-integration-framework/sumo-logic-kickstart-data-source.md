@@ -10,7 +10,7 @@ description: Learn how to collect audit reporting events from Sumo Logic Kicksta
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/send-data/sumo-logic-kickstart-data.png')} alt="Sumo Logic Kickstart Data icon" width="100"/>
 
 The Sumo Logic Kickstart Data source ingests logs and metrics into Sumo Logic for our pre-loaded [OpenTelemetry Demo Astronomy application](/docs/integrations/sumo-apps/kickstart-data), an e-commerce-style app that simulates real user interactions and system performance. It provides a continuous stream of data that highlights latency spikes across various services, enabling hands-on exploration of Sumo Logic features.
 
@@ -50,7 +50,7 @@ If you want to prevent Kickstart Data from continuing to ingest or appearing in 
 
 To stop new Kickstart Data from being ingested every 6 hours:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection**, select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection**, select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Locate the collector named `sample_otel_astronomy_shop`.
 1. Delete the collector.
 
@@ -62,7 +62,7 @@ To focus only on your own data in search, use a filter to exclude Kickstart logs
 
 Add a line like the following to your query:
 
-```sql
+```sumo
 _sourceCategory=custom_data/logs
 | where !(_sourceCategory=datagen_otel)
 ```

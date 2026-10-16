@@ -8,29 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This article describes the menus and navigation options for Cloud SOAR.
 
-## Classic UI
-
-The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Sumo Logic Classic UI](/docs/get-started/sumo-logic-ui-classic).
-
-### Top menu
-
-This menu appears at the top of the Cloud SOAR screen: <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-top-menu.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="600"/>
-
-Use the top menu to access:
-* [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action.
-* [**Entities**](/docs/cloud-soar/incidents-triage/#entities). Manage entities identified across incidents.
-* <img src={useBaseUrl('img/cloud-soar/cloud-soar-support-icon.png')} alt="Support menu icon" style={{border: '1px solid gray'}} width="25"/> **Support**. Access help, including documentation and support contact information.
-* <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](/docs/cloud-soar/settings/). Configure Cloud SOAR settings.
-
-### Settings menu
-
-The **Settings** menu allows you to configure Cloud SOAR settings. To access the menu, click <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> on the [top menu](#top-menu). <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-menu.png')} alt="Settings menu" style={{border: '1px solid gray'}} width="150"/>
-
-Use the **Settings** menu to access:
-* [**Automation**](/docs/cloud-soar/automation/). Configure Cloud SOAR's automation and orchestration features.
-* [**Settings**](/docs/cloud-soar/settings/). Configure Cloud SOAR settings.
-* [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports.
-
 ## New UI
 
 The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the Sumo Logic UI](/docs/get-started/sumo-logic-ui).
@@ -61,7 +38,7 @@ Click **Automation** in the main Sumo Logic menu to open the sidebar menu.<br/><
 
 Use the **Automation** sidebar menu to access:
 * [**App Central**](/docs/platform-services/automation-service/app-central/). Add new integrations and playbooks to your environment.
-* [**Playbooks**](/docs/platform-services/automation-service/automation-service-playbooks/). Create playbooks to run automated actions.
+* [**Playbooks**](/docs/platform-services/automation-service/playbooks/). Create playbooks to run automated actions.
 * [**Template**](/docs/cloud-soar/automation/#incident-templates). Create incident templates.
 * [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations). Manage integrations with vendors.
 * [**Rules**](/docs/cloud-soar/automation/#automation-rules). Create automation rules.
@@ -93,3 +70,27 @@ Use the **Go To...** menu to access these Cloud SOAR features:
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports.
 * [**SecOps & Dashboard**](/docs/cloud-soar/incidents-triage/#secops-and-dashboard). Open the home screen of Cloud SOAR.
 * [**Triage**](/docs/cloud-soar/incidents-triage/#triage). Triage events which may be unverified or have a low confidence level before they are converted to incidents.
+
+## Classic UI
+
+The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Sumo Logic Classic UI](/docs/get-started/sumo-logic-ui-classic).
+
+### Top menu
+
+This menu appears at the top of the Cloud SOAR screen: <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-top-menu.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="600"/>
+
+Use the top menu to access:
+* [**Incidents**](/docs/cloud-soar/incidents-triage/#incidents). Manage security incidents that require investigation and action.
+* [**Entities**](/docs/cloud-soar/incidents-triage/#entities). Manage entities identified across incidents.
+* <img src={useBaseUrl('img/cloud-soar/cloud-soar-support-icon.png')} alt="Support menu icon" style={{border: '1px solid gray'}} width="25"/> **Support**. Access help, including documentation and support contact information.
+* <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](/docs/cloud-soar/settings/). Configure Cloud SOAR settings.
+
+### Settings menu
+
+The **Settings** menu allows you to configure Cloud SOAR settings. To access the menu, click <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> on the [top menu](#top-menu). <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-menu.png')} alt="Settings menu" style={{border: '1px solid gray'}} width="150"/>
+
+Use the **Settings** menu to access:
+* [**Automation**](/docs/cloud-soar/automation/). Configure Cloud SOAR's automation and orchestration features.
+* [**Settings**](/docs/cloud-soar/settings/). Configure Cloud SOAR settings.
+* [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports.
+

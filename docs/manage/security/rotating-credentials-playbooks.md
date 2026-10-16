@@ -34,7 +34,7 @@ Sumo Logic Customer Support Engineers can disable your access keys internally.
 ### Monitoring access keys
 As a best practice, create a [scheduled search](/docs/alerts/scheduled-searches/) for tracking usage of access keys via API, using the following query. We recommend that these results are set as a scheduled search (which may be emailed to the correct contacts as a saved search), and to periodically review them for possible suspicious activity from unknown IP addresses.
 
-```
+```sumo
 _index=sumologic_audit_events accessId api
 | json "operator.interface" as interface nodrop
 | json "subsystem" nodrop
@@ -53,7 +53,7 @@ Use the playbooks below to assist you in rotating any third-party credentials us
 
 ### Rotating third-party credentials used in Webhook Connections
 To properly rotate these credentials, identify the credentials that need to be retired/rotated. 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Monitoring > Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Connection**. 
 1. Select any Connections defined in your Sumo Logic Account.
 1. For the Connections you have defined, create new access credentials where necessary (that is, API keys, passwords, authorization headers, etc).
 1. Replace the old access credentials with the newly created access credentials.

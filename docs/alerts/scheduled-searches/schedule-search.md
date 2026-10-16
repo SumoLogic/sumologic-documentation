@@ -1,14 +1,24 @@
 ---
 id: schedule-search
 title: Create a Scheduled Search
-description: Learn how to save and schedule a log search to run at a regularly scheduled time, and add alerts.
+description: Save and schedule Sumo Logic log searches to run at specified intervals and configure alerts, including email, webhook, and other notification options.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article outlines the process of creating a Scheduled Search, which is essentially a saved [Log Search](/docs/search) that you set to run at specified intervals and configure with [alerts](#step-6-choose-a-scheduled-search-alert-type).
+This article outlines the process of creating a Scheduled Search, which is essentially a saved [Log Search](/docs/search) that you set to run at specified intervals and configure with [alerts](#step-6-add-scheduled-search-alert-types).
 
 To run a Scheduled Search using receipt time, save the search with receipt time enabled.
+
+To run a Scheduled Search using searchable time, save the search with searchable time enabled.
+
+import TerraformLink from '../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to manage content such as scheduled searches with the [`sumologic_content`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content) resource.
+
+<TerraformLink/>
+:::
 
 ## Create a Scheduled Search
 
@@ -17,7 +27,7 @@ This section describes how to create a Scheduled Search at the time you save a s
 ### Step 1. Initiate Creation
 
 1. Run a Log Search and click the save icon.
-1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="schedule-this-search.png" width="500"/>
+1. In the popup, click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/schedule-this-search.png')} alt="Schedule this search" width="500"/>
 
 ### Step 2. Set Run Frequency
 
@@ -85,11 +95,17 @@ Under **Send Notification**, select the condition for when you want an alert to 
       * **Fewer than.** Choose if you want to be notified only if the search results include fewer than the number of messages or groups you set in the text box.
       * **Fewer than or equal to.** Choose if you want to be notified only if the search results include fewer than or equal to the number of messages or groups you set in the text box.
 
+:::note
+The date and time format used for timestamps in your notification payloads is set by an organization-wide policy. Learn more in [Notification timestamp format](/docs/alerts/monitors/alert-variables/#notification-timestamp-format).
+:::
+
 In the next section, we'll walk you through the available Scheduled Search alert types.
 
-### Step 6. Choose a Scheduled Search alert type
+### Step 6. Add Scheduled Search alert types
 
-When creating a Scheduled Search, you can configure various alert types, including:
+Under **Notifications**, choose an **Alert Type** for your first alert. To add another, click **Add Notification**. You can add up to 10 alert types to a single Scheduled Search, mixing and matching any combination of the types below instead of choosing just one. For example, add an Email alert and a Webhook alert to the same Scheduled Search, or add multiple Email alerts with different recipients.
+
+Each alert you add gets its own **Alert Type** dropdown with the same options, and collapses into a summary row once you move on to the next one, for example **Notification 1: Email (jane@example.com)**. Click a row to expand it again, or click its trash icon to remove that alert.<br/><img src={useBaseUrl('img/alerts/schedule-search-add-notification.png')} alt="First notification collapsed into a summary row, with a second Alert Type block added below it" style={{border:'1px solid gray'}} width="500"/>
 
 * [Email](create-email-alert.md). You can create a Scheduled Search to alert you via email when a set of conditions are satisfied. A maximum of 120 emails are sent per day per Scheduled Search.
 * [Script Action](/docs/send-data/installed-collectors/sources/script-action). Trigger actions based on search results, such as firing SNMP traps.
@@ -98,6 +114,10 @@ When creating a Scheduled Search, you can configure various alert types, includi
 * [Save to Index](save-to-index.md). Save search results to an index for future retrieval. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.
 * [Save to Lookup](save-to-lookup.md). Save results to a [Lookup Table](../../search/lookup-tables/create-lookup-table.md) and use the [`lookup`](/docs/search/search-query-language/search-operators/lookup) operator for data enrichment.
 * [Cloud SIEM Signal](generate-cse-signals.md). Trigger the creation of a Cloud SIEM Signal, which are otherwise generated when the conditions of a Cloud SIEM rule are satisfied by a Record.
+
+All alerts you add share the trigger condition from [Step 5](#step-5-notification-settings) and fire from the same search execution, but each alert's own configuration, such as email recipients or webhook payload, is set independently. The following example combines four notifications on one Scheduled Search: two Email alerts, a Webhook alert, and a ServiceNow Connection alert.<br/><img src={useBaseUrl('img/alerts/schedule-search-notifications-list.png')} alt="Edit Scheduled Search dialog listing four configured notifications: two Email alerts, a Webhook alert, and a ServiceNow Connection alert" style={{border:'1px solid gray'}} width="500"/>
+
+Scheduled Searches created before multi-alert support was added keep working exactly as configured, with their single alert type unchanged.
 
 ## Troubleshooting
 

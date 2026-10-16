@@ -12,7 +12,7 @@ This page explains Cloud SIEM's insight generation process. 
 
 The concept of an *entity* is central to the process Cloud SIEM uses to correlate signals and create insights. So, what is an entity? In Cloud SIEM, an entity is a actor, for example, a  hostname, username, or MAC address encountered in an incoming message. For more information about entities and entity types, see [View and Manage Entities](/docs/cse/records-signals-entities-insights/view-manage-entities).
 
-:::sumo Micro Lesson
+:::training Micro Lesson
 Watch this micro lesson to learn how insights are created.
 
 <Iframe url="https://fast.wistia.net/embed/iframe/5un1z2hwoe?web_component=true&seo=true&videoFoam=false"
@@ -104,7 +104,7 @@ The severity of each signal is also shown. Cloud SIEM generated an insight for e
 
 ### Redundant signal suppression
 
-Under certain circumstances, Cloud SIEM suppresses signals to prevent generation of multiple, virtually identical insights. A few unique signals firing numerous times for the same entity in a short period of time could cause the entity’s activity score to climb, resulting in an insight. At that point, the entity’s Activity score is reset, and the cycle could repeat, leading to several insights in succession on the same entity that contain a very similar or identical set of unique signals. 
+Under certain circumstances, Cloud SIEM suppresses signals to prevent generation of multiple, virtually identical insights. A few unique signals firing numerous times for the same entity in a short period of time could cause the entity’s activity score to climb, resulting in an insight. At that point, the entity’s activity score is reset, and the cycle could repeat, leading to several insights in succession on the same entity that contain a very similar or identical set of unique signals. 
 
 This makes insight triage less than ideal for the analyst since they're getting multiple insights for the same sets of signals. Cloud SIEM prevents this by suppressing signals that have the same name and are on the same entity during a 12 hour time window, or up to 72 hours if signals for the signal-entity combination are firing continuously.   
 

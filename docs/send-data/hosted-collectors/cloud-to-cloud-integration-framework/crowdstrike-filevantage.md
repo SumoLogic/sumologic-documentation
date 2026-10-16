@@ -2,7 +2,7 @@
 id: crowdstrike-filevantage-source
 title: CrowdStrike FileVantage Source
 sidebar_label: CrowdStrike FileVantage
-tags:
+keywords:
   - cloud-to-cloud
   - crowdstrike-filevantage
 description: Learn how to collect file integrity monitoring logs from the CrowdStrike FileVantage platform.
@@ -10,7 +10,7 @@ description: Learn how to collect file integrity monitoring logs from the CrowdS
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="CrowdStrike icon" width="85"/>
 
 The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by querying the API for file changes resource IDs. It will then make another API call using those resource IDs to obtain the file changelogs and ingest them into Sumo Logic.
 
@@ -65,19 +65,23 @@ Identify your **Region** based on your **Base URL**. The region can be selected 
 When you create a CrowdStrike FileVantage Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure the CrowdStrike FileVantage Source:
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike FileVantage** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
-   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="green check circle.png" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="orange exclamation point.png" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **CrowdStrike Base URL**, choose the region as per your Base URL. See [Region](#region) section to know your region.
 1. In **API Client ID**, enter the Client ID you generated and secured from the [API Client](#api-client-and-api-secret) section.
 1. In **API Client Secret**, enter the Client Secret you generated and secured from the [API Secret](#api-client-and-api-secret) section.
 1. (Optional) The **Polling Interval** is set for 15 minutes default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
+
+:::info
+After configuring the CrowdStrike FileVantage source, consider installing the Sumo Logic app for [CrowdStrike FileVantage](/docs/integrations/saas-cloud/crowdstrike-falcon-filevantage/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## JSON schema
 
@@ -117,3 +121,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 ### Limitation
 
 - This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
+
+## Additional resources
+
+- Use the [CrowdStrike Falcon Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/) to automate response actions directly from Cloud SOAR playbooks.

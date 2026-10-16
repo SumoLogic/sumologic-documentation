@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="SQL icon" width="75"/>
 
 The Sumo Logic App for Microsoft SQL Server is an unified logs and metrics app that provides insight into your SQL server performance metrics and errors. The App consists of predefined Dashboards, providing visibility into your environment for real-time or historical analysis on backup, latency, performance counter, restore, mirroring, database monitoring, general health and operations of your system.
 
@@ -34,7 +34,7 @@ Sumo Logic supports collection of logs and metrics data from SQL Server in both 
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with the Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sqlk8s.png')} alt="sqlk8s.png" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with the Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector). <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sqlk8s.png')} alt="Telegraf flow diagram" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we are running Telegraf as a sidecar deployment in each pod from which we want to collect metrics. This means that Telegraf is running in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
 The injection of the Telegraf sidecar container is done by the Telegraf Operator.
@@ -190,7 +190,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 4. Add a FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-  1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  
+  1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. 
   2. Click the **+ Add Rule** button on the top right of the table.
   3. The **Add Field Extraction Rule** form will appear.
   4. Enter the following options:
@@ -198,14 +198,14 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
      * **Applied At**. Choose **Ingest Time**
      * **Scope**. Select **Specific Data**
      * **Scope**. Enter the following keyword search expression:
-        ```sql
+        ```sumo
          pod_labels_environment=* pod_labels_component=database
          pod_labels_db_system=*
          pod_labels_db_cluster=*
         ```
      * **Parse Expression**. Enter the following parse expression:
     
-       ```sql
+       ```sumo
        if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
        | pod_labels_component as component
        | pod_labels_db_system as db_system
@@ -216,7 +216,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 </TabItem>
 <TabItem value="non-k8s">
 
-In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="sql-nonk8s.png" />
+In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="Telegraf flow diagram" />
 
 Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/installed-collectors/sources/local-file-source).
 
