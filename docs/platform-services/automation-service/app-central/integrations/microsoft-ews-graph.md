@@ -10,7 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.4  
 Updated: Dec 30, 2025***
 
-Perform actions on Microsoft EWS mailboxes and accounts using Graph API. 
+:::tip Recommended for Exchange Online
+Microsoft is retiring Exchange Web Services (EWS) in Exchange Online beginning October 2026. Use this integration for new Exchange Online configurations. If you currently use [Microsoft EWS](microsoft-ews.md) or [Microsoft EWS Extension](microsoft-ews-extension.md), migrate to this integration before April 2027.
+:::
+
+Perform actions on Microsoft EWS mailboxes and accounts using the Microsoft Graph API.
 
 ## Actions
 

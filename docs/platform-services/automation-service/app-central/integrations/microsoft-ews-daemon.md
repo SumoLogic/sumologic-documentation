@@ -4,6 +4,7 @@ description: ''
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import EwsRetirement from '../../../../../reuse/ews-retirement-warning.md';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-daemon.png')} alt="Microsoft Defender ATP icon" width="100"/>
 
@@ -13,6 +14,8 @@ Updated: May 16, 2025***
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
 :::
+
+<EwsRetirement/>
 
 Process emails with EWS Daemon.
 

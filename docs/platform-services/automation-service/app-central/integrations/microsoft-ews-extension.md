@@ -3,11 +3,14 @@ title: Microsoft EWS Extension
 description: ''
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import EwsRetirement from '../../../../../reuse/ews-retirement-warning.md';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-extension.png')} alt="Microsoft EWS Extension icon" width="100"/>
 
 ***Version: 1.3  
 Updated: Oct 06, 2023***
+
+<EwsRetirement/>
 
 Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 
