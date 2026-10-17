@@ -4,7 +4,7 @@ title: Agent Knowledge for SOC Analyst Agent
 description: Teach the Cloud SIEM SOC Analyst Agent your environment, runbooks, and past incidents so its investigations of Cloud SIEM insights reflect how your team works.
 keywords:
   - mobot
-  - dojo ai
+  - dojoai
   - soc analyst agent
   - agentic ai
   - cloud siem
@@ -26,7 +26,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-Agent Knowledge lets org administrators give Dojo AI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional Dojo AI agents planned for later phases.
+Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional DojoAI agents planned for later phases.
 
 Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, or that a Friday spike in authentication failures is your scheduled penetration test. Knowledge closes that gap and keeps it closed — over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
@@ -35,7 +35,7 @@ For the SOC Analyst Agent, knowledge applies in two places:
 * **Auto-investigation**. The knowledge is applied automatically as the agent triages each insight that flows into Cloud SIEM.
 * **Manual investigation**. When a user manually triggers an investigation in Cloud SIEM, the same knowledge is in context.
 
-## What you can teach your Dojo AI agents
+## What you can teach your DojoAI agents
 
 ### Your environment
 
@@ -73,7 +73,7 @@ Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings 
 
 To add knowledge for the SOC Analyst Agent:
 
-1. Click the **Dojo AI** tab in the left navigation.
+1. Click the **DojoAI** tab in the left navigation.
 1. Click **SOC Analyst Agent**. This opens the agent's settings page.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
 1. Click **Sources**. On this page, you can view, edit, and delete existing knowledge sources.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
 1. Click **+ Add Source** to add a new knowledge source.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
@@ -82,13 +82,13 @@ To add knowledge for the SOC Analyst Agent:
    Only plain text is supported. Up to 10,000 characters per entry. Each knowledge source item works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
    :::
 
-See [What you can teach your Dojo AI agents](#what-you-can-teach-your-dojo-ai-agents) for more sample knowledge source entries.
+See [What you can teach your DojoAI agents](#what-you-can-teach-your-dojo-ai-agents) for more sample knowledge source entries.
 
 Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
 
 ## Limitations
 
-* **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other Dojo AI agents is planned for upcoming phases.
+* **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other DojoAI agents is planned for upcoming phases.
 * **Text only**. Knowledge sources accept plain text only. Enhanced knowledge addition mechanisms are planned for upcoming phases.
 * **Security guardrails**. Security guardrails on knowledge content are planned for upcoming phases.
 * **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
