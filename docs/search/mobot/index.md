@@ -5,7 +5,7 @@ sidebar_label: Mobot ✨
 description: Troubleshoot logs, create monitors and dashboards, and learn the platform using plain-language questions with Mobot, Sumo Logic's AI assistant.
 keywords:
   - mobot
-  - dojo ai
+  - dojoai
   - ai assistant
   - agent
   - log analysis
@@ -57,8 +57,8 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 
 <SumoAcademy/>
 
-* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
-* **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
+* **Self-paced**. [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+* **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and DojoAI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 :::
 
 :::training Micro Lesson
@@ -644,6 +644,6 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 ## Additional resources
 
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
-* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+* **Self-paced**. [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
-* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.
+* [DojoAI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.

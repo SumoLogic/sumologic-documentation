@@ -110,13 +110,13 @@ export const features2 = [
 ];
 
 
-// Tab 3: Dojo AI
+// Tab 3: DojoAI
 export const features3 = [
   {
     title: translate({
       id: 'landing.feature.mobot.title',
-      message: 'Mobot (Dojo AI)',
-      description: 'Title for Dojo AI / Mobot',
+      message: 'Mobot (DojoAI)',
+      description: 'Title for DojoAI / Mobot',
     }),
     imageUrl: 'img/icons/operations/human-to-machine.png',
     description: (<Translate
@@ -129,14 +129,14 @@ export const features3 = [
   {
     title: translate({
       id: 'landing.feature.dojo-ai.title',
-      message: 'Dojo AI Platform',
-      description: 'Title for Dojo AI platform overview',
+      message: 'DojoAI Platform',
+      description: 'Title for DojoAI platform overview',
     }),
     imageUrl: 'img/icons/operations/human-to-machine.png',
     description: (
       <Translate
         id='landing.feature.dojo-ai.desc'
-        description='Dojo AI platform teaser description'>
+        description='DojoAI platform teaser description'>
         Explore our evolving AI capabilities built to accelerate investigation, automate workflows, and surface insights across your observability and security data.
       </Translate>
     ),
@@ -244,7 +244,7 @@ export const features5 = [
 export const features = [
   features1, // Security
   features2, // Log Search
-  features3, // Dojo AI
+  features3, // DojoAI
   features4, // Observability
   features5, // Alerts, Dashboards, and Apps
 ];
