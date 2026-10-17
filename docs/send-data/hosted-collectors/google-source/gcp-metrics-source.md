@@ -171,7 +171,7 @@ For details on GCP collected metrics, refer to the [Google Cloud metrics documen
 
 ## API Call Optimization for GCP Metrics
 
-The minimum sample period for GCP metrics is 60 seconds, in which only 1 data point is returned with the same value for min, max, sum, avg, and count. To reduce the number of API calls and chance of throttling, Sumo fetches one statistic which reduces five API calls to one with a sample period of 60 seconds. Which statistics will be queries depends on Metric Kind and Value type. For more information, see [Google Value types and metric kinds](https://cloud.google.com/monitoring/api/v3/kinds-and-types#:~:text=A%20gauge%20metric%2C%20in%20which,at%20the%20time%20of%20measurement).
+The minimum sample period for GCP metrics is 60 seconds, in which only 1 data point is returned with the same value for min, max, sum, avg, and count. To reduce the number of API calls and chance of throttling, Sumo Logic fetches one statistic which reduces five API calls to one with a sample period of 60 seconds. Which statistics will be queries depends on Metric Kind and Value type. For more information, see [Google Value types and metric kinds](https://cloud.google.com/monitoring/api/v3/kinds-and-types#:~:text=A%20gauge%20metric%2C%20in%20which,at%20the%20time%20of%20measurement).
 
 | Value Type | DELTA Metric Kind | CUMULATIVE Metric Kind | GAUGE Metric Kind |
 |:---|:---|:---|:---|

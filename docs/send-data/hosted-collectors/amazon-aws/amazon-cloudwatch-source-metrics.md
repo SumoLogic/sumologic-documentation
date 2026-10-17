@@ -25,9 +25,9 @@ You can use Terraform to provide an Amazon CloudWatch source with the [`sumologi
 
 ## Supported AWS metrics
 
-A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a regular interval. It cannot ingest metrics that are emitted with significant latency, such as Amazon S3 Daily Storage Metrics or AWS Billing metrics, or at sporadic intervals, such as Amazon DynamoDB throttled events.
+A Sumo Logic CloudWatch Source only supports CloudWatch metrics that are emitted at a regular interval. It cannot ingest metrics that are emitted with significant latency, such as Amazon S3 Daily Storage Metrics or AWS Billing metrics, or at sporadic intervals, such as Amazon DynamoDB throttled events.
 
-Sumo does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
+Sumo Logic does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](https://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
 
 :::tip
 EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.

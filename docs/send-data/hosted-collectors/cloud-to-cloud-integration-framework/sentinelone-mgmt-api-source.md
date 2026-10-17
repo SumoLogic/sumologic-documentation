@@ -2,7 +2,7 @@
 id: sentinelone-mgmt-api-source
 title: SentinelOne Mgmt API Source
 sidebar_label: SentinelOne Mgmt API
-tags:
+keywords:
     - sentinelone-mgmt-api
     - cloud-SIEM-enterprise
 ---
@@ -54,7 +54,7 @@ To configure a SentinelOne Mgmt API Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **SentinelOne Mgmt API**.
-1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
+1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.

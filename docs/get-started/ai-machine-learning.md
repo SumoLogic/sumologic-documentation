@@ -75,7 +75,7 @@ The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Ava
 
 <img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="45"/>
 
-The [Sumo Logic MCP server](/docs/api/mcp-server) connects MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data — no custom integrations required. Use natural language to run log searches, triage Cloud SIEM insights and detection rules, retrieve alerts, and manage dashboards, with the same governance and access controls you already rely on. Any paid customer can activate the MCP server through a self-service feature in admin settings.
+The [Sumo Logic MCP (Model Context Protocol) server](/docs/api/mcp-server) connects MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data — no custom integrations required. Use natural language to run log searches, triage Cloud SIEM insights and detection rules, retrieve alerts, and manage dashboards, with the same governance and access controls you already rely on. Any paid customer can activate the MCP server through a self-service feature in admin settings.
 
 ## Classical machine learning
 
@@ -141,9 +141,15 @@ Sumo Logic offers integrations with AI platforms for monitoring, governance, and
 AI features are on by default. We offer two methods for opting out:
 
 * **Via your account team or support**. You can opt out of specific AI features or all AI features by contacting your Sumo Logic account team or opening a support ticket. If you choose to opt out of all AI features, your tenant is automatically exempted from future AI feature releases.
-* **In-product self opt-out**. Beginning August 2026, platform administrators can opt out of all AI features directly within the product settings under **Feature Management** (**Administration** > **Feature Management**). Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot, Parse Assist, and the SOC Analyst Agent share a single **AI features** toggle; the MCP server has its own separate **MCP Server access** toggle on the same page.
+* **In-product self opt-out**. Platform administrators can opt out of all AI features under **Administration** > **Feature Management**. Disabling AI at the admin level automatically exempts your tenant from any future AI feature rollouts. Mobot and Parse Assist share a single **AI features** toggle; the SOC Analyst Agent and the MCP server each have their own independent toggle (**SOC Analyst Agent** and **MCP Server access**) on the same page.
 
 <MSSPfeatureMgmt/>
+
+### What is the Feature Management page?
+
+**Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
+
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 ### What happened to Query Agent, Knowledge Agent, and Summary Agent?
 
@@ -155,7 +161,7 @@ They're still here, but renamed and repositioned as their capabilities have evol
 
 ### Can Dojo AI access be controlled at a user level?
 
-Not at this time. Dojo AI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions—users cannot access data or execute platform actions they aren't authorized to perform manually.
+Not at this time. Dojo AI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions. Users cannot access data or execute platform actions they are not authorized to perform manually.
 
 ### How can administrators audit or track Dojo AI usage?
 

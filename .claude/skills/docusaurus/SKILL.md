@@ -27,9 +27,6 @@ description: Description of this section.
 keywords:
   - keyword1
   - keyword2
-tags:
-  - tag1
-  - tag2
 ---
 ```
 

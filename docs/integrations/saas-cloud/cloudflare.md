@@ -236,3 +236,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Cloudflare Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/cloudflare/) to automate response actions directly from Cloud SOAR playbooks.

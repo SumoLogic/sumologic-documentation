@@ -2,7 +2,7 @@
 id: sumo-collection-source
 title: Sumo Collection Source
 sidebar_label: Sumo Collection
-tags:
+keywords:
   - cloud-to-cloud
   - sumo-collection
 description: The Sumo Collection Source aims to collect the list of the collectors and their sources and send them to Sumo Logic.
@@ -80,7 +80,7 @@ To configure a Sumo Collection Source:
 1. When you are finished configuring the Source, click **Save**.
 
 :::info
-After configuring the Sumo Collection source, consider installing the Sumo Logic app for [Sumo Collection](/docs/integrations/saas-cloud/sumo-collection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+After configuring the Sumo Logic Collection source, consider installing the Sumo Logic app for [Sumo Collection](/docs/integrations/saas-cloud/sumo-collection/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
 ## JSON schema

@@ -1,6 +1,6 @@
 ---
 id: preconfigure-machine-collect-remote-windows-events
-title: Preconfigure a Machine to Collect Remote Windows Events
+title: Preconfigure a Machine for Remote Windows Events
 description: Configure user accounts and firewall settings on Windows Server 2012+ to allow a Sumo Logic Remote Windows Event Log Source to collect events remotely.
 ---
 
@@ -12,6 +12,10 @@ Use the instructions in this topic to configure a system for remote access by a 
 Windows events can only be collected remotely from systems running Windows Server 2012 or later.
 :::
 
+:::tip
+Once this is configured, see [Remote Windows Event Log Benchmarks](/docs/send-data/ic-vs-ot-collector-performance-benchmarks/remote-windows-event-log-benchmarks/) for expected CPU usage and throughput at scale. WinRM has a delivery ceiling that's independent of Collector version.
+:::
+
 There are two primary configuration requirements to enable remote event log collection:
 
 1. The user account specified in the source must have permissions to read the event log remotely
@@ -19,7 +23,7 @@ There are two primary configuration requirements to enable remote event log coll
 
 ## User account
 
-When configuring the Source, you will enter a domain name, user name, and password. This user account will be used by the Collector to perform the remote collection of event log records. The credentials are stored in Sumo's database encrypted and in the Collector's memory. The account must be configured such that it has permissions to read the event log from each of the specified remote systems.
+When configuring the Source, you will enter a domain name, user name, and password. This user account will be used by the Collector to perform the remote collection of event log records. The credentials are stored in Sumo Logic's database encrypted and in the Collector's memory. The account must be configured such that it has permissions to read the event log from each of the specified remote systems.
 
 <img src={useBaseUrl('img/send-data/remotewin-sourceuser.png')} alt="User account configuration" style={{border: '1px solid gray'}} width="500" />
 

@@ -1,5 +1,5 @@
 ---
-title: August 3rd, 2026 - Application Update
+title: August 3, 2026 - Application Update
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
   - insights
@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### SOC Analyst Agent
 
-We're excited to announce that Sumo Logic's SOC Analyst Agent, a powerful agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations, is now generally available. The agent investigates Cloud SIEM insights with evidence-backed verdicts, helping your team cut through false-positive noise and speed up threat resolution. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent).
+Sumo Logic's SOC Analyst Agent, a powerful agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations, is now generally available. The agent investigates Cloud SIEM insights with evidence-backed verdicts, helping your team cut through false-positive noise and speed up threat resolution. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent).
 
 The agent requires a Cloud SIEM subscription and is opt-in.
 

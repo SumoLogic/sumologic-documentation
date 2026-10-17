@@ -2,7 +2,7 @@
 id: aws-iam-users-source
 title: AWS IAM Users Source
 sidebar_label: AWS IAM Users
-tags:
+keywords:
   - cloud-to-cloud
   - aws-iam-users-source
 description: Learn how to collect the IAM User Inventory logs from the AWS SDK and send them to Sumo Logic.

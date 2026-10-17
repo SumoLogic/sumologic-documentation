@@ -16,6 +16,10 @@ Sumo Logic is an all-in-one cloud data analytics platform focused on Security, O
 
 Let's get started!
 
+:::tip
+New to Sumo Logic? [Mobot](/docs/search/mobot), our AI-powered conversational assistant, answers platform how-to questions and investigates log data in plain language, no query expertise required.
+:::
+
 :::training Sumo Logic Academy
 
 import SumoAcademy from '../reuse/sumo-logic-academy.md';
@@ -107,7 +111,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/get-started/help')}><img src={useBaseUrl('img/icons/business/support.png')} alt="Support icon" width="50"/><h4>Help</h4></a>
-  <p>Get help from Sumo Docs, Support, and more.</p>
+  <p>Get help from Sumo Logic docs, Support, and more.</p>
   </div>
 </div>
 <div className="box smallbox card">

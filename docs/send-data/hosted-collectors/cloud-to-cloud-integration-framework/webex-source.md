@@ -2,7 +2,7 @@
 id: webex-source
 title: Webex Source
 sidebar_label: Webex
-tags:
+keywords:
   - cloud-to-cloud
   - webex
 description: Learn how to collect admin audit events using Webex API.

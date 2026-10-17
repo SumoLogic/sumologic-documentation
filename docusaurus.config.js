@@ -191,7 +191,6 @@ module.exports = {
             '/files/**',
             '/release-notes-*/archive/**',
             '/release-notes-*/2021/**',
-            '/tags/**'
           ],
           filename: 'sitemap.xml',
         },
@@ -212,7 +211,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
           },
         },
         theme: {
@@ -305,7 +304,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
          },
        },
     ],
@@ -329,7 +328,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Collector Release Notes',
             description: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
           },
         },
     ],
@@ -485,6 +484,11 @@ module.exports = {
                 label: 'Traces, RUM, APM',
                 icon: 'account_tree',
               },
+              {
+                label: 'Contribute to Docs',
+                to: 'docs/contributing',
+                icon: 'edit_note',
+              },
             ]
           },
           {
@@ -532,22 +536,29 @@ module.exports = {
                 to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
                 icon: 'thumbs_up_down',
               },
-              {
-                label: 'Contribute to Docs',
-                to: 'docs/contributing',
-                icon: 'edit_note',
-              },
             ],
           },
-        //{
-          //className: 'header-github-link',
-          //to: 'https://github.com/SumoLogic/sumologic-documentation',
-          //position: 'right',
-          //alt: 'Link to Sumo Logic Docs GitHub repository',
-        //},
           {
             type: 'search',
             position: 'left',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: 'google_translate',
+            className: 'navbar-translate-item',
+          },
+          {
+            label: 'Log In',
+            to: 'https://service.sumologic.com/',
+            position: 'right',
+            className: 'header-login',
+          },
+          {
+            label: 'Try for Free',
+            to: 'https://www.sumologic.com/sign-up',
+            position: 'right',
+            className: 'header-trial',
           },
         ],
       },
@@ -605,7 +616,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
+        copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
       },
     }),
 };
