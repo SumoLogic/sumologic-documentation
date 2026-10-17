@@ -14,7 +14,7 @@ values.
 
 ## Syntax
 
-```sql
+```metrics
 accum
 ```
 

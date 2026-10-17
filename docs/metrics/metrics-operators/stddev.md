@@ -15,7 +15,7 @@ Often used in financial applications, calculating standard deviations also has v
 
 ## Syntax
 
-```sql
+```metrics
 stddev [by FIELD [, FIELD, ...]]
 ```
 
@@ -27,7 +27,7 @@ stddev [by FIELD [, FIELD, ...]]
 
 This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment.
 
-```sql
+```metrics
 dep=prod metric=CPU_Sys | stddev
 ```
 
@@ -35,6 +35,6 @@ dep=prod metric=CPU_Sys | stddev
 
 This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment, grouped by the source that collected the metrics.
 
-```sql
+```metrics
 dep=prod metric=CPU_Sys | stddev by _source
 ```

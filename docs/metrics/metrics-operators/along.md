@@ -15,7 +15,7 @@ The `along` metrics statement is useful when you join queries – it allows you 
 
 ## Syntax
 
-```sql
+```metrics
 <expression> [along <field>[, <field>, …]]
 ```
 

@@ -10,7 +10,7 @@ The eval operator evaluates a time series based on a user-specified arithmetic o
 
 ## Syntax
 
-```sql
+```metrics
 eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
 ```
 

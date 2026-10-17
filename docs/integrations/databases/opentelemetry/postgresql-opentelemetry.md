@@ -146,7 +146,7 @@ sumo.datasource=postgresql db.cluster.name=*
 
 This sample query is from the **PostgreSQL - Database Metrics** dashboard, **Number of Active Databases** panel.
 
-```sql
+```metrics
 sumo.datasource=postgresql deployment.environment=* db.cluster.name=* metric=postgresql.backends postgresql.database.name=* db.node.name=* | count by postgresql.database.name | count
 ```
 
