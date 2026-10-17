@@ -22,7 +22,7 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
-Supported Versions
+Supported versions:
 
 * RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2(AL2), Amazon Linux 2023(AL2023), CentOS (7, 8)
 
@@ -33,6 +33,8 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [UI Installation](#ui-installation)
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
+
+If your environment restricts internet access, refer to [Packagecloud's security documentation](https://packagecloud.io/docs/security) for the current list of IP ranges to allowlist. For strict firewall policies, mirror the repository and use a configuration management tool (Chef, Puppet, or Ansible) instead of the UI installer.
 
 ### UI Installation
 
