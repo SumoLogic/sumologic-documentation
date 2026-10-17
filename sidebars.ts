@@ -3385,6 +3385,7 @@ integrations: [
         'api/schema-base-management',
         'api/scim-user',
         'api/search-job',
+        'api/search-job-v2',
         'api/service-accounts',
         'api/service-allowlist',
         'api/service-map',
