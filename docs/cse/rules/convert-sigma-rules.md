@@ -13,21 +13,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The pySigma backend for Sumo Logic converts Sigma detection rules into Cloud SIEM rule JSON, ready for import via the CSE API. It includes field mappings for 70+ log sources, automatic entity selector assignment, MITRE ATT&CK tag mapping, and confidence scoring.
 
+- Sigma plugin directory: https://sigmahq.io/docs/digging-deeper/backends.html#sumologic
 - PyPI package: https://pypi.org/project/pysigma-backend-sumologic/
 - Source code and documentation: https://github.com/SumoLogic/pySigma-backend-sumologic
 
 ## Install the Sumo Logic backend
 
-Run the following to install both Sigma CLI and the Sumo Logic backend in one step:
+**Option 1** — Install via Sigma CLI (recommended if you already have Sigma CLI installed):
+
+```bash
+sigma plugin install sumologic
+```
+
+**Option 2** — Install via pip (also installs Sigma CLI if not already present):
 
 ```bash
 pip install sigma-cli pysigma-backend-sumologic
-```
-
-Or, if you already have [Sigma CLI](https://sigmahq.io/docs/guide/getting-started.html) installed, install only the backend:
-
-```bash
-pip install pysigma-backend-sumologic
 ```
 
 ## Sigma resources
