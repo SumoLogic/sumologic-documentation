@@ -73,7 +73,7 @@ Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings 
 
 To add knowledge for the SOC Analyst Agent:
 
-1. Click the **DojoAI** tab in the left navigation.
+1. Click the **Dojo AI** tab in the left navigation.
 1. Click **SOC Analyst Agent**. This opens the agent's settings page.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
 1. Click **Sources**. On this page, you can view, edit, and delete existing knowledge sources.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
 1. Click **+ Add Source** to add a new knowledge source.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
@@ -82,7 +82,7 @@ To add knowledge for the SOC Analyst Agent:
    Only plain text is supported. Up to 10,000 characters per entry. Each knowledge source item works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
    :::
 
-See [What you can teach your DojoAI agents](#what-you-can-teach-your-dojo-ai-agents) for more sample knowledge source entries.
+See [What you can teach your DojoAI agents](#what-you-can-teach-your-dojoai-agents) for more sample knowledge source entries.
 
 Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
 
