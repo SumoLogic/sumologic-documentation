@@ -13,10 +13,9 @@ export default function (Prism) {
     // 2. Pipe operator
     'operator': /\|/,
 
-    // 3. Aggregate/transform/eval pipe operators — rendered pink (no italic)
-    // Note: modifier arguments like counter, gauge, over are intentionally excluded
-    // as they render as plain text in the Sumo Logic UI
-    'keyword': /\b(?:along|avg|bottomk|count|delta|eval|ewma|fillmissing|filter|max|min|outlier|predict|quantize|rate|stddev|sum|timeshift|topk)\b/,
+    // 3. Pipe operators and named functions — rendered pink (no italic)
+    // Modifier arguments (counter, gauge, over) intentionally excluded — plain in UI
+    'keyword': /\b(?:accum|along|avg|bottomk|count|delta|eval|ewma|fillmissing|filter|histogram_quantile|in|max|min|outlier|parse|pct|predict|quantize|rate|stddev|sum|timeshift|topk|where)\b/,
 
     // 4. Time units (e.g. 5m, 1h, 30s) — MUST come before number
     'time': /\b\d+(?:ms|s|m|h|d|w)\b/,
@@ -28,16 +27,17 @@ export default function (Prism) {
     'selector-key': /\b[a-zA-Z_]\w*(?=\s*=)/,
 
     // 7. Unquoted values after = — cyan via 'constant'
-    'constant': /(?<==)[^\s"|=]+/,
+    // Stops at space, pipe, quote, =, parens, and brackets
+    'constant': /(?<==)[^\s"|=()[\]<>]+/,
 
-    // 8. Numbers
-    'number': /\b\d+(?:\.\d+)?\b/,
+    // 8. Whole integers only — avoids highlighting decimal args like .5 inside parens
+    'number': /\b\d+\b/,
 
-    // 9. Operators including arithmetic used in eval
-    'operator': /[|*/+\-]/,
+    // 9. Pipe operator only — * is a wildcard value selector, not arithmetic
+    'operator': /[|+\-]/,
 
     // 10. Punctuation
-    'punctuation': /[=,]/,
+    'punctuation': /[=,*[\]()]/,
   };
 
   Prism.languages.sumo = {

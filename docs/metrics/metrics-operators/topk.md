@@ -40,5 +40,5 @@ Top 10 time series based on a calculated value.
 This query applies a math expression — `(max / avg * 2)` — to each time series that matches the query selector. The time series are ranked by the calculated value, and the top 10 time series are returned.
 
 ```metrics
-metric=CPU_Sys |topk (10, max / avg * 2)
+metric=CPU_Sys | topk (10, max / avg * 2)
 ```

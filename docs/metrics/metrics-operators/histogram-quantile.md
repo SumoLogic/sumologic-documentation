@@ -6,7 +6,7 @@ description: Use the histogram_quantile metrics operator to calculate the φ-qua
 ---
 
 
-The `histogram_quantile` operator calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets of a histogram. This operator is specific to the [Prometheus Histogram data type](https://prometheus.io/docs/concepts/metric_types/#histogram) and does not work with non-Prometheus histograms. It is equivalent to the [PromQL histogram_quantile()](https://prometheus.io/docs/prometheus/latest/querying/functions/#histogram_quantile)
+The `histogram_quantile` operator calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets of a histogram. This operator is specific to the [Prometheus Histogram data type](https://prometheus.io/docs/concepts/metric_types/#histogram) and does not work with non-Prometheus histograms. It is equivalent to the [PromQL histogram_quantile()](https://prometheus.io/docs/prometheus/latest/querying/functions/#histogram_quantile)
 operator.
 
 ## Syntax
@@ -17,6 +17,8 @@ histogram_quantile(quantile)
 
 ## Examples
 
+### Calculate the 99th and 50th quantile
+
 ```metrics
 * | histogram_quantile(.99)
 ```
@@ -25,7 +27,9 @@ histogram_quantile(quantile)
 * | histogram_quantile(.5)
 ```
 
-The following PromQL query to measure the 99th quantile of the `apiserver_request_latencies` histogram:
+### Convert a PromQL histogram_quantile query
+
+The following PromQL query measures the 99th quantile of the `apiserver_request_latencies` histogram:
 
 ```metrics
 histogram_quantile(0.99, rate(apiserver_request_latencies_bucket{}[5m]))
@@ -38,5 +42,5 @@ metric=apiserver_request_latencies_bucket | quantize using max | delta | histogr
 ```
 
 :::note
-You must include the `quantize` and `delta` operators to get the same results as the PromQL query would produce.
+You must include the `quantize` and `delta` operators to get the same results as the PromQL query would produce.
 :::
