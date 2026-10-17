@@ -75,5 +75,7 @@ For information about the Gmail API, see [Gmail API documentation](https://devel
 
 ## Change Log
 
-* June 19, 2020 - First upload
-* August 18, 2023 (v1.1) - Integration refactored
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | August 18, 2023 | Refactored the integration. |
+| | June 19, 2020 | First upload. |

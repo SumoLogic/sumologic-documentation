@@ -103,4 +103,6 @@ For information about Google Cloud IAM, see [Google Cloud IAM documentation](htt
 
 ## Change Log
 
-* October 17, 2025 (v1.0) - First upload
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.0 | October 17, 2025 | Initial release of the Google Cloud IAM integration. |

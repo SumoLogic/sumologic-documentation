@@ -75,7 +75,7 @@ The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Ava
 
 <img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="45"/>
 
-The [Sumo Logic MCP server](/docs/api/mcp-server) connects MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data — no custom integrations required. Use natural language to run log searches, triage Cloud SIEM insights and detection rules, retrieve alerts, and manage dashboards, with the same governance and access controls you already rely on. Any paid customer can activate the MCP server through a self-service feature in admin settings.
+The [Sumo Logic MCP (Model Context Protocol) server](/docs/api/mcp-server) connects MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data — no custom integrations required. Use natural language to run log searches, triage Cloud SIEM insights and detection rules, retrieve alerts, and manage dashboards, with the same governance and access controls you already rely on. Any paid customer can activate the MCP server through a self-service feature in admin settings.
 
 ## Classical machine learning
 
@@ -161,7 +161,7 @@ They're still here, but renamed and repositioned as their capabilities have evol
 
 ### Can Dojo AI access be controlled at a user level?
 
-Not at this time. Dojo AI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions—users cannot access data or execute platform actions they aren't authorized to perform manually.
+Not at this time. Dojo AI is enabled at the platform level and cannot be toggled for individual users or roles. However, all AI interactions strictly enforce user-level permissions. Users cannot access data or execute platform actions they are not authorized to perform manually.
 
 ### How can administrators audit or track Dojo AI usage?
 

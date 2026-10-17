@@ -97,7 +97,7 @@ Each audit event log has common keys that categorize it to a product area and pr
 | eventName | The name of the event. | String |
 | eventTime | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | eventFormatVersion | The event log format version. | String |
-| operator | Information of who did the operation. If its missing, the Sumo service was the operator. | JSON object of Strings |
+| operator | Information of who did the operation. If it's missing, the Sumo Logic service was the operator. | JSON object of Strings |
 | subsystem | The product area of the event. | String |
 
 ```json

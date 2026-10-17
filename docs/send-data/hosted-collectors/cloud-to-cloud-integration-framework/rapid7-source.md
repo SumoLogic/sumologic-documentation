@@ -2,7 +2,7 @@
 id: rapid7-source
 title: Rapid7 Source
 sidebar_label: Rapid7
-tags:
+keywords:
     - rapid7
 description: Learn how to collect assets and vulnerabilities from Rapid7 InsightVM.
 ---

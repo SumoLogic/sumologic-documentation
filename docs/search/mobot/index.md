@@ -20,7 +20,7 @@ import Iframe from 'react-iframe';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 import ConvPlaybookLimits from '../../reuse/conv-playbook-limits.md';
 
-<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Search icon" width="35"/>
+<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="35"/>
 
 Mobot is Sumo Logic's AI-powered conversational assistant for security analysts, on-call engineers, administrators, and other Sumo Logic users. Ask questions in plain language to investigate log data or learn how to use the platform without selecting an agent or writing queries from scratch.
 
@@ -33,6 +33,7 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 * **Security**. Investigate login attempts, data exfiltration, and threat intelligence matches. For example, `Have any IPs or domains in my logs been flagged by threat intelligence?` See [Security investigations](/docs/search/mobot/example-prompts#security-investigations) for more examples.
 * **Observability**. Spot error spikes, latency anomalies, and timeouts. For example, `Are there any error spikes happening in the last 15 minutes?` See [Observability investigations](/docs/search/mobot/example-prompts#observability-investigations) for more examples.
 * **Platform administration**. Check on Collectors, data sources, and data usage. For example, `Any collectors that have gone silent in the last few hours?` See [Platform administration](/docs/search/mobot/example-prompts#platform-administration) for more examples.
+* **Data volume and billing**. Ask about ingest volume by collector, source category, tier, or time range and get answers in any unit, without writing a query against the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) directly. Useful for admins tracking noisy sources and finance teams attributing spend. For example, `What are my top 10 source categories by daily ingest volume?` See [Data volume](/docs/search/mobot/example-prompts#data-volume) for more examples.
 * **How-to questions**. Get setup guidance and answers about the platform, sourced from official Sumo Logic documentation. For example, `How do I configure OpenTelemetry for my service?` See [Sumo Logic how-to questions](/docs/search/mobot/example-prompts#sumo-logic-how-to-questions) for more examples.
 
 ## Key capabilities
@@ -528,6 +529,8 @@ They're still here, working behind the scenes, but renamed and repositioned as t
 * **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
 * **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
 * **Summary Agent → part of SOC Analyst Agent**. The Summary Agent is no longer a separate agent. Its signal summarization is now a core part of how the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) contextualizes and presents its findings.
+
+Log Analysis Agent and Platform Optimization Agent aren't names you'll see anywhere in the UI; you always interact with them through Mobot's single chat interface. Don't confuse the Log Analysis Agent with [search autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete) or [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist), which are UI features you use directly on the Search page rather than through a conversation.
 
 ### Can Mobot detect what sources or integrations I don't have set up?
 

@@ -63,7 +63,7 @@ Once a LogReduce query has run with the details operator, you cannot use that qu
 
 ### Optimize option
 
-LogReduce Optimize is a scaled-out version of LogReduce that groups logs by existing signatures. You need to prerun LogReduce on new data sources to create its signatures. In many cases, the optimized version provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. The only caveat with the optimized version is that some LogReduce classic features are not supported. The table below compares classic LogReduce with its optimized version based on available features and performance:
+LogReduce Optimize is a scaled-out version of LogReduce that groups logs by existing signatures. You need to prerun the LogReduce operator on new data sources to create its signatures. In many cases, the optimized version provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. The only caveat with the optimized version is that some LogReduce classic features are not supported. The table below compares classic LogReduce with its optimized version based on available features and performance:
 
 | Features | LogReduce | LogReduce Optimize |
 | :-- | :-- | :-- |
