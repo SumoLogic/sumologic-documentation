@@ -445,6 +445,12 @@ Notifications will be sent when the monitor is triggered as configured in the [A
    * **Email**. Provide 1-100 recipient email addresses. You can customize the email subject and body. You can also include additional context in the email notification:
       * **Include Query** (`includeQuery`). Adds the monitor's search query to the email notification. Supported for Logs, Metrics, and SLO monitors.
       * **Include Results** (`includeResultSet`). Adds the search results to the email notification. Supported for Logs and Metrics monitors. SLO monitors do not support this option. Setting `includeResultSet` on an SLO monitor returns an error indicating that the flag is not applicable.
+
+      :::important
+      Monitor email notifications are sent from `noreply@notifications.sumologic.com`. To keep receiving them:
+      * Allowlist this address so the emails are not marked as spam.
+      * Update any email filters, inbox rules, distribution lists, or automated workflows that depend on the previous sender address.
+      :::
    * **Webhook**. By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 * **Trigger Type Notifications**. Set different notification channels for each trigger type (**Critical**, **Warning**, **Missing Data**). Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification. You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.
    * For the connection types listed [here](/docs/alerts/webhook-connections), you can use the **Recovery** checkbox to enable an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic.
