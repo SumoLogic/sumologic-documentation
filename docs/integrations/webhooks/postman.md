@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Postman app for Sumo Logic enables you to monitor API test results, collection changes, monitor alerts, environment modifications, and custom automation workflow triggers effectively. This app is based on Postman Webhook, which provides seamless integration between Postman and Sumo Logic. The app enhances the reliability, performance, and security of APIs while optimizing resource allocation and fostering effective team collaboration.
 
-Postman is an API development tool that streamlines API building, testing, modification, and simplifies the process of working with APIs for developers. You can use a webhook in the Postman platform to forward change events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor API test results, collection changes, monitor alerts, environment modifications, and custom automation workflow triggers in Sumo logic. For more details, refer to the [Postman Documentation](https://learning.postman.com/docs/introduction/overview/).
+Postman is an API development tool that streamlines API building, testing, modification, and simplifies the process of working with APIs for developers. You can use a webhook in the Postman platform to forward change events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor API test results, collection changes, monitor alerts, environment modifications, and custom automation workflow triggers in Sumo Logic. For more details, refer to the [Postman Documentation](https://learning.postman.com/docs/introduction/overview/).
 
 ## Event types
 

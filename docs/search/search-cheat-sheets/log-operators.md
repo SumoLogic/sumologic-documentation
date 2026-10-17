@@ -13,7 +13,7 @@ The following tables provide a list of available Sumo Logic parsers, aggregator
 
 ## Parsing
 
-Sumo provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
+Sumo Logic provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
 
 <table>
   <tr>

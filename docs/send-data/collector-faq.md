@@ -13,7 +13,7 @@ To interact with other Sumo Logic users, post feedback, or ask a question, visit
 
 This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need. 
 
-## Collector fails to connect to Sumo
+## Collector fails to connect to Sumo Logic
 
 For this issue, the failure to connect may be due to the target server failed to respond or HTTP 504 or HTTP 408 errors.
 
@@ -32,7 +32,7 @@ This warning indicates that a brief lapse in network connectivity between your C
 
 Here are a few troubleshooting steps to try when your Collector is consistently unable to connect to the Service:
 
-1. Test DNS resolution and connectivity to the Sumo servers: 
+1. Test DNS resolution and connectivity to the Sumo Logic servers: 
      ```bash
      curl -i https://collectors.sumologic.com
      # you should see the word "Tweep" returned
@@ -413,11 +413,11 @@ On Windows servers where the generated number of events is much higher than appr
 
 ## How to Ingest Old or Historical Data
 
-The overwhelming majority of log data processed by Sumo are nearly real-time messages. For this reason, Sumo's timestamp detection and data indexing systems are optimized to handle streams of data originating in the recent past.
+The overwhelming majority of log data processed by Sumo Logic are nearly real-time messages. For this reason, Sumo Logic's timestamp detection and data indexing systems are optimized to handle streams of data originating in the recent past.
 
 Ingested old or historical data, especially when mixed with recent or real-time data in one source, may occasionally be misinterpreted.
 
-This article describes the assumptions that Sumo makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
+This article describes the assumptions that Sumo Logic makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
 
 See [using _format for troubleshooting](/docs/send-data/reference-information/time-reference.md) timestamps.
 
@@ -481,7 +481,7 @@ If no time zone is found in the message, or if the time zone is in an unsupporte
 
 #### Potential time zone configuration issues
 
-The following scenarios represent common time zone-related configuration issues for Sumo users. Review these use cases for insights into potential issues with your time zone configuration.
+The following scenarios represent common time zone-related configuration issues for Sumo Logic users. Review these use cases for insights into potential issues with your time zone configuration.
 
 #### Example 1 - Unsupported Time Zone format in File
 
