@@ -81,7 +81,7 @@ Use these keywords and file path patterns to suggest the most relevant Technical
 - **Cloud SOAR**: SOAR, incident response, security orchestration
 - **Collectors/Sources**: collector, source, ingestion, data collection
 - **Dashboards**: dashboard, panel, visualization, chart
-- **DojoAI**: Dojo, AI assistant, AI features
+- **DojoAI**: Dojo, AI assistant, AI features, agents, Mobot, tools, skills, MCP
 - **Getting Started**: onboarding, quick start, tutorial, getting started
 - **Log Search**: search, query, log query, LogReduce
 - **Logs for Security**: security logs, log analytics for security, security data lake, infrastructure security
