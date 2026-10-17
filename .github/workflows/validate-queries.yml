@@ -1,0 +1,67 @@
+name: Sumo Query Validation
+on:
+  pull_request:
+    paths:
+      - 'docs/**/*.md'
+      - 'blog-*/**/*.md'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-queries:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed files with sumo query blocks
+        id: check-sql
+        run: |
+          BASE_COMMIT="${{ github.event.pull_request.base.sha }}"
+          echo "Base: $BASE_COMMIT  Head: ${{ github.sha }}"
+
+          git diff --name-only --diff-filter=AM $BASE_COMMIT...${{ github.sha }} -- '**/*.md' > changed_files.txt
+
+          if [ ! -s changed_files.txt ]; then
+            echo "No markdown files changed"
+            echo "sql_changed=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          SQL_CHANGED=false
+          while IFS= read -r file; do
+            if [ -f "$file" ] && git diff "$BASE_COMMIT...${{ github.sha }}" -- "$file" | grep -qE '^\+```(sql|sumo)'; then
+              echo "New query block found in: $file"
+              SQL_CHANGED=true
+            fi
+          done < changed_files.txt
+
+          echo "sql_changed=$SQL_CHANGED" >> $GITHUB_OUTPUT
+
+      - name: Set up Python
+        if: steps.check-sql.outputs.sql_changed == 'true'
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        if: steps.check-sql.outputs.sql_changed == 'true'
+        run: pip install requests
+
+      - name: Validate queries against Sumo Logic
+        if: steps.check-sql.outputs.sql_changed == 'true'
+        working-directory: ./scripts
+        env:
+          SUMO_LOGIC_ACCESS_ID: ${{ secrets.SUMO_LOGIC_ACCESS_ID }}
+          SUMO_LOGIC_ACCESS_KEY: ${{ secrets.SUMO_LOGIC_ACCESS_KEY }}
+          BASE_COMMIT: ${{ github.event.pull_request.base.sha }}
+          CURRENT_COMMIT: ${{ github.sha }}
+        run: python validate_queries.py
+
+      - name: Skip validation
+        if: steps.check-sql.outputs.sql_changed == 'false'
+        run: echo "No new ```sumo query blocks detected — skipping validation"

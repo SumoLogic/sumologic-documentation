@@ -122,6 +122,16 @@ Use [comparison operators](/docs/search/search-query-language/field-expressions.
 ```
 
 ```sumo
+_sourceCategory=Apache/Access
+| parse "HTTP/1.1\" * " as status_code
+| parse "bytes=*" as bytes
+| num(bytes) | num(status_code)
+| where status_code >= 400 and bytes > 1000
+| count by status_code
+| sort by _count desc
+```
+
+```sumo
 ... | where x matches "Android" or x matches "iPhone" or x matches "iPad"
 ```
 
