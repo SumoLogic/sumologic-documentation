@@ -142,5 +142,13 @@ For more information, see [Create a Monitor with Mobot](/docs/alerts/monitors/cr
 ## Playbook creation
 
 * `Create a playbook that creates tickets and sends notifications.`
+* `Create a playbook that sends a Slack message to #security-alerts when a new Critical insight is created.`
+* `Build a playbook to enrich an insight's IP entities with VirusTotal and add the results as a comment.`
+* `Add a step to this playbook that posts to Slack before the Jira ticket is created.`
+* `Change the notification channel in this playbook from Email to Microsoft Teams.`
+* `Update this playbook to use the Jira Cloud integration instead of Jira V2.`
+* `Summarize what this playbook does, step by step.`
+* `What integrations does this playbook use, and what does each step do?`
+* `Explain what would happen if this playbook ran on a Critical insight right now.`
 
 For more information, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).

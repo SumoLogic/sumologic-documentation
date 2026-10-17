@@ -31,6 +31,6 @@ To configure an HTTP Traces Source:
 
 If you need to access the Source's URL again, click **Show URL**.<br/><img src={useBaseUrl('img/apm/traces/show-url-traces.png')} alt="Show URL traces" style={{border: '1px solid gray'}} width="800" />
 
-## Send a test trace to Sumo
+## Send a test trace to Sumo Logic
 
 Now that you have created an HTTP Traces Source, you can send tracing data to it. Set up a collector and instrument your application with OpenTelemetry as described [here](/docs/apm/traces/get-started-transaction-tracing) or test it quickly with our [PetClinic demo application](https://github.com/SumoLogic/opentelemetry-petclinic).

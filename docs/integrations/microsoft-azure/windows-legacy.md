@@ -141,7 +141,7 @@ The **Windows 7+ - 2008 (Legacy) - Login Status** dashboard shows information ab
 
 ### Event Errors
 
-The **Windows 7+ - 2008 (Legacy) - Event Errors** dashboard shows information about Window event messages that contain a keyword that indicates a problem. (If a Windows event contains "error", "timeout", "exception", or "fail", Sumo tags the message with "error_keyword", "timeout_keyword", "exception_keyword", or "fail_keyword" respectively.)
+The **Windows 7+ - 2008 (Legacy) - Event Errors** dashboard shows information about Window event messages that contain a keyword that indicates a problem. (If a Windows event contains "error", "timeout", "exception", or "fail", Sumo Logic tags the message with "error_keyword", "timeout_keyword", "exception_keyword", or "fail_keyword" respectively.)
 
 <img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/dashboards/Windows/EventErrors.png')} alt="Event Errors" />
 
@@ -155,7 +155,7 @@ The **Windows 7+ - 2008 (Legacy) - Event Errors** dashboard shows information ab
 
 **Error Keyword - Outlier**. See timeslices where the count of problem keywords exceeds the moving average by a statistically significant amount, three standard deviations over the last 24 hours.
 
-**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce)).
+**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo Logic's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information, see, [Detect Patterns with LogReduce](/docs/search/behavior-insights/logreduce/detect-patterns-with-logreduce)).
 
 ## Create monitors for the Windows Legacy app
 

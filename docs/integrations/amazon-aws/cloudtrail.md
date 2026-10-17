@@ -74,7 +74,7 @@ To configure an AWS CloudTrail Source, perform these steps:
   * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
   * Create the CloudFormation stack in AWS Management Console using the template.
   * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in the Sumo Logic CloudTrail Source created in step 3. For more information, refer to [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-iam-role).
-3. [Enable Sumo to track AWS Admin activity](#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+3. [Enable Sumo Logic to track AWS Admin activity](#enable-sumo-logic-to-track-aws-admin-activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 4. Install the Sumo Logic App for AWS CloudTrail.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-account/upgrade-cloud-flex-legacy-account) at any time.
@@ -107,7 +107,7 @@ To track Admin activity in your AWS account and to provide data for all Administ
 2. Click **Save**, and make a note of the generated URL for the source.
 
 
-### Upload admin_users File to Sumo
+### Upload admin_users File to Sumo Logic
 
 1. Create a file named `admin_users.csv` that contains a list of all the AWS usernames of Admin(s) in your AWS account, including one username on each line. For example:
   ```
@@ -155,7 +155,7 @@ Additionally, you can change the time range of a Panel. Even though these  have 
 
 #### AWS Admin activity not tracked
 
-To track Admin activity in your AWS account, and to provide data for all Administrator Activity Panels in the User Monitoring Dashboard, you need to supply a list of admin users to Sumo. For instructions, see [Enable Sumo to Track AWS Admin Activity](#enable-sumo-logic-to-track-aws-admin-activity)
+To track Admin activity in your AWS account, and to provide data for all Administrator Activity Panels in the User Monitoring Dashboard, you need to supply a list of admin users to Sumo Logic. For instructions, see [Enable Sumo Logic to Track AWS Admin Activity](#enable-sumo-logic-to-track-aws-admin-activity)
 
 </details>
 

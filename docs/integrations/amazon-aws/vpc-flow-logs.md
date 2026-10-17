@@ -129,7 +129,7 @@ Paste the JSON below, after adding the ARN of the Lambda functions.
 4. Click **Next**.
 5. Select **JSON** for **Log Format**.
 6. Click **Next**.
-7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo.
+7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo Logic.
 
 
 
