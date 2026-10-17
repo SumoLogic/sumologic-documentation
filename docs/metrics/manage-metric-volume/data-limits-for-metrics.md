@@ -65,7 +65,7 @@ Streaming metric sources are custom, as are the number of collected metrics. Cus
 
 ### Limits on number of unique time series
 
-In some cases, Sumo Logic disables a metrics source to limit the number of ingested time series. Sumo disables a metric source that has received too many unique time series. For more information, see [Disabled Metrics Sources](/docs/metrics/manage-metric-volume/disabled-metrics-sources/).
+In some cases, Sumo Logic disables a metrics source to limit the number of ingested time series. Sumo Logic disables a metric source that has received too many unique time series. For more information, see [Disabled Metrics Sources](/docs/metrics/manage-metric-volume/disabled-metrics-sources/).
 
 ### Metrics metadata limits
 

@@ -37,7 +37,7 @@ Create the script and save it to a folder on the host with the Installed Collect
 
 ## Step 3. Set up Script Action
 
-You can set up a Script Action using the Sumo web app, described in [Option A](#option-a-set-up-script-action-using-ui) below, or by specifying it in a JSON file, described in [Option B](#option-b-set-up-script-action-in-json-file).
+You can set up a Script Action using the Sumo Logic web app, described in [Option A](#option-a-set-up-script-action-using-ui) below, or by specifying it in a JSON file, described in [Option B](#option-b-set-up-script-action-in-json-file).
 
 ### Option A. Set up Script Action using UI
 

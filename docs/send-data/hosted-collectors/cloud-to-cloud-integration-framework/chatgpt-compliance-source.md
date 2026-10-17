@@ -2,7 +2,7 @@
 id: chatgpt-compliance-source
 title: ChatGPT Compliance Source
 sidebar_label: ChatGPT Compliance
-tags:
+keywords:
   - cloud-to-cloud
   - chatgpt-compliance
 description: Learn to collect conversations, Codex, audit, app, and auth events from the ChatGPT Compliance platform.

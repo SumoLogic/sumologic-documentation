@@ -64,7 +64,7 @@ Data Collection API.
 | CPU Target Percentage | You can choose to set a [CPU target](/docs/send-data/collection/set-collector-cpu-usage-target.md) to limit the amount of CPU processing a Collector uses. |
 | Ephemeral | When true, the collector will be deleted after 12 hours of inactivity. For more information, see [Setting a Collector as Ephemeral](set-collector-as-ephemeral.md). |
 | Clobber | When selected, if there is any existing Collector with the same name, that Collector will be deleted (clobbered). See Forcing a Collector's Name with Clobber for more information. |
-| FIPS-compliant JCE | When selected, FIPS 140-2 compliant Java Cryptography Extension (JCE) will be enabled.<br/>This option is only supported in specific deployments, ask your Sumo account representative for details. |
+| FIPS-compliant JCE | When selected, FIPS 140-2 compliant Java Cryptography Extension (JCE) will be enabled.<br/>This option is only supported in specific deployments, ask your Sumo Logic account representative for details. |
 
 ## Proxy Settings
 

@@ -2,7 +2,7 @@
 id: proofpoint-tap-source
 title: Proofpoint TAP Source
 sidebar_label: Proofpoint TAP
-tags:
+keywords:
     - proofpoint-tap
 description: The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint TAP SIEM API.
 ---

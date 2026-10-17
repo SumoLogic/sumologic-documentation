@@ -6,7 +6,7 @@ description: You can influence the algorithm by editing a signature to make the 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The algorithm used for the LogReduce&reg; operator uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **Signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided. LogReduce data is based on the data available to the algorithm during the time range of your search.
+The algorithm used for the LogReduce&reg; operator uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **Signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided. LogReduce operator results are based on the data available to the algorithm during the time range of your search.
 
 In some cases, this data sampling produces results that do not meet the needs of your organization. You can see more granular results by [splitting a signature](#splitting-a-signature). In addition, you can promote or demote a signature to help Sumo Logic understand what data is the most relevant to you.
 
@@ -23,10 +23,10 @@ The following icons allow you to change the results of a LogReduce report:
 
 ## Promoting or Demoting a LogReduce Signature
 
-Relevance is one factor in LogReduce, but it is a global factor. Members of your org can promote and demote signatures related to your Search. 
+Relevance is one factor in the LogReduce operator, but it is a global factor. Members of your org can promote and demote signatures related to your Search. 
 
 To influence the relevance of signatures, select the **Signatures** tab and:
-* **Promote** a signature by clicking the Thumbs-Up icon for a signature to indicate to Sumo Logic that the data included in the signature is relevant to you. This feedback is taken into consideration when you run LogReduce the next time.<br/><img src={useBaseUrl('img/search/logreduce/LogReducePromote.png')} alt="LogReduce Promote" style={{border: '1px solid gray'}} width="800" />
+* **Promote** a signature by clicking the Thumbs-Up icon for a signature to indicate to Sumo Logic that the data included in the signature is relevant to you. This feedback is taken into consideration when you next run the LogReduce operator.<br/><img src={useBaseUrl('img/search/logreduce/LogReducePromote.png')} alt="LogReduce Promote" style={{border: '1px solid gray'}} width="800" />
 * **Demote** a signature by clicking the Thumbs-Down icon for a signature to indicate that this signature is not relevant to you.<br/><img src={useBaseUrl('img/search/logreduce/LogReduceDemote.png')} alt="LogReduce Demote" style={{border: '1px solid gray'}} width="800" />
 
 If no one in your account has ever promoted or demoted a signature the default [relevance score](understand-the-logreduce-relevance-column.md) calculated by Sumo Logic is displayed. If you have never promoted or demoted a signature but someone else in your account has, then you will see the global setting for this signature. If you have promoted or demoted a signature, then you will see your personally calculated relevance score.

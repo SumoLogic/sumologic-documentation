@@ -228,7 +228,7 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Thumbnail iƒßcon" width="40"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="Azure Kubernetes Service icon" width="40"/>
   <h4><a href={useBaseUrl('docs/integrations/microsoft-azure/kubernetes')}>Azure Kubernetes Service</a></h4>
   <p>A guide to the Sumo Logic app for Azure Kubernetes Service Control Plane.</p>
   </div>

@@ -2,7 +2,7 @@
 id: metric-quantization
 title: Metrics Quantization
 sidebar_label: Metrics Quantization
-description: Learn about how Sumo aggregates metric data points over time buckets.
+description: Learn about how Sumo Logic aggregates metric data points over time buckets.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

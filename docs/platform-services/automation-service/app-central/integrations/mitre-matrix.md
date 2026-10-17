@@ -52,7 +52,9 @@ To work around the error, install an [automation bridge](/docs/platform-services
 
 ## Change Log
 
-* February 3, 2021 - First upload
-* June 07, 2022 - Updated all the actions with pyattck==5.4.0
-* June 26, 2023 (v2.1) - Updated the integration with Environmental Variables
-* July 18, 2023 (v2.2) - Integration refactored
+| Version | Date | Description |
+|:--|:--|:--|
+| v2.2 | July 18, 2023 | Refactored the integration. |
+| v2.1 | June 26, 2023 | Updated the integration with Environmental Variables. |
+| | June 07, 2022 | Updated all actions with `pyattck==5.4.0`. |
+| | February 3, 2021 | Initial release of the MITRE Matrix integration. |

@@ -24,13 +24,17 @@ For more information on the AWS Observability solution, see [About Sumo Logic AW
 
 ## Prerequisites
 
-To integrate the AWS Observability solution with Control Tower, you collect CloudTrail audit logs from each AWS account that is managed by AWS Control Tower and store the audit logs in an S3 bucket in a Log Archive AWS account.
+To integrate the AWS Observability solution with Control Tower, you collect CloudTrail audit logs from each AWS account that is managed by AWS Control Tower and store the audit logs in an S3 bucket in a Log Archive AWS account / CloudTrail administrator account.
+
+:::note
+AWS Control Tower sets up the **CloudTrail administrator account** (formerly the **log archive account**) when you enable the AWS CloudTrail centralized logging integration, and the **Config aggregator account** (formerly the **audit account**) when you enable the AWS Config service integration. You can also use an existing AWS account for either role.
+:::
 
 We recommend you familiarize yourself with the AWS Observability Solution. For more information, see:
 
 * [About Sumo Logic AWS Observability](/docs/observability/aws/about.md)
 * [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability)
-* [View the AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/)
+* [View the AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards/)
 
  :::note
  CloudTrail must be enabled for EventBridge to capture `CreateManagedAccount` and `UpdateManagedAccount` events, since these events are recorded and delivered through CloudTrail.
@@ -42,7 +46,7 @@ Integrating with AWS Control Tower takes several steps: 
 * [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts):
   * [Set up collection manually](#set-up-collection-manually-for-aws-accounts): Create a CloudFormation stack in each AWS account managed by Control Tower.
   * [Set up collection automatically for new AWS accounts](#set-up-collection-automatically-for-new-aws-accounts): Deploy a single CloudFormation template to your management account so accounts created via Control Tower Account Factory are set up automatically going forward.
-* [Step 2](#step-2-collect-from-the-log-archive-account): Set up collection of AWS CloudTrail logs that are aggregated from all Control Tower-managed accounts in a centralized log archive account.
+* [Step 2](#step-2-collect-from-the-log-archive-aws-account--cloudtrail-administrator-account): Set up collection of AWS CloudTrail logs that are aggregated from all Control Tower-managed accounts in a centralized Log Archive AWS account / CloudTrail administrator account.
 * [Step 3](#step-3-create-field-extraction-rule): Create a Field Extraction Rule (FER) that will tag logs with the account aliases you set up for each child account in the previous step.
 * [Step 4](#step-4-view-the-aws-observability-dashboards): View the AWS Observability dashboards for your Control Tower-managed accounts.
 
@@ -54,7 +58,7 @@ In this step, you configure the collection of logs and metrics for all AWS accou
 
 ### Set up collection manually for AWS accounts
 1. Log in to the AWS Management Console as the AWS account user.
-1. Follow steps 1 through 10 of the instructions in [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+1. Follow steps 1 through 10 of the instructions in [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
 1. In the **Sumo Logic AWS CloudTrail Source Details** section of the template, select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all other options. <br/><img src={useBaseUrl('img/observability/integrate-tower1.png')} alt="Create Sumo Logic CloudTrail Logs Source " style={{border: '1px solid gray'}} width="800" />
 
 ### Set up collection automatically for new AWS accounts
@@ -63,7 +67,7 @@ For new AWS accounts created using Control Tower Account Factory, you can config
 
 <img src={useBaseUrl('img/observability/integrate-tower8.png')} alt="Sumo Logic AWS ALB Log Source Details" style={{border: '1px solid gray'}} width="800" />
 
-When an account creation or update succeeds in Control Tower, the solution captures the `CreateManagedAccount` or `UpdateManagedAccount` lifecycle event and triggers an AWS Lambda function. The Lambda function deploys the AWS Observability CloudFormation stack to the new account across all configured regions, with CloudTrail log source creation and app installation disabled. (The centralized Log Archive account handles CloudTrail logs, and apps are already installed from the manual setup above.)
+When an account creation or update succeeds in Control Tower, the solution captures the `CreateManagedAccount` or `UpdateManagedAccount` lifecycle event and triggers an AWS Lambda function. The Lambda function deploys the AWS Observability CloudFormation stack to the new account across all configured regions, with CloudTrail log source creation and app installation disabled. (The centralized Log Archive AWS account / CloudTrail administrator account handles CloudTrail logs, and apps are already installed from the manual setup above.)
 
 The Lambda function derives the account alias from the account name (lowercase alphanumeric characters only, truncated to 30 characters) and passes it automatically to the stack.
 
@@ -78,7 +82,9 @@ To deploy the lifecycle events template:
 
 1. Log in to the AWS Management Console as the **AWS Control Tower Master Account**.
 1. Download and launch the Sumo Logic Control Tower CloudFormation template in the region where your Control Tower is deployed. Use the link that matches your AWS Observability version:
+   - **AWSO v3.0.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master-v3x/cloudformation-sumologic-aws-observability/templates/extensions/controltower/controltower.template.yaml)  
    - **AWSO v2.15.0**: [controltower.template.yaml](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/refs/heads/master/aws-observability/apps/controltower/controltower.template.yaml)
+   
 1. In the **Sumo Logic Access Configuration** section, fill in the following required fields:
 
    | Parameter | Description |
@@ -100,41 +106,62 @@ To deploy the lifecycle events template:
    CloudFormation creates a KMS key and stores the Sumo Logic Access ID and Access Key in AWS Secrets Manager. The secret is named using the CloudFormation stack name as an alias.
    :::
 
-## Step 2: Collect from the Log Archive account
+## Step 2: Collect from the Log Archive AWS account / CloudTrail administrator account
 
 :::note
-In the instructions below, we assume the Log Archive AWS account is used only to centralize logs across AWS Control Tower-managed accounts. If this is not the case and you want to monitor AWS services in these accounts, follow the instructions in [AWS Observability Solution](/docs/observability/aws/) to set up the relevant services.
+In the instructions below, we assume the Log Archive AWS account / CloudTrail administrator account is used only to centralize logs across AWS Control Tower-managed accounts. If this is not the case and you want to monitor AWS services in these accounts, follow the instructions in [AWS Observability Solution](/docs/observability/aws/) to set up the relevant services.
 :::
 
-1. Log in to the AWS Management Console as the Log Archive AWS account user.
-1. Follow steps 1 through 10 of the instructions in the [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
+Choose the option that matches your environment:
+
+### Option 1: CloudTrail trail already exists
+
+Use this option if the Log Archive AWS account / CloudTrail administrator account already has an active CloudTrail trail writing logs to an S3 bucket. You only need to create a Sumo Logic CloudTrail source pointing at that existing bucket — no new trail or CloudFormation stack is required.
+
+1. Grant Sumo Logic access to the S3 bucket that contains the CloudTrail logs. See [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/).
+1. In Sumo Logic, create an **AWS CloudTrail Source** for the existing bucket. Follow the instructions in [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source/), providing:
+   - The **S3 bucket name** where CloudTrail logs are delivered.
+   - The **path expression** for the log files (for example, `AWSLogs/*/CloudTrail/*/*`).
+   - The **AWS region** of the S3 bucket.
+   - A **Source Category** such as `aws/observability/cloudtrail/logs`.
+   - Tag the account field in the source with the right account value
+   <br/><img src={useBaseUrl('img/observability/tag-cloud-trail-field.png')} alt="Tag the account field in the source with the right account value" style={{border: '1px solid gray'}} width="500" />
+
+
+
+### Option 2: Set up a new trail
+
+Use this option if no CloudTrail trail exists in the Log Archive AWS account / CloudTrail administrator account and you want the AWS Observability CloudFormation template to create the trail and Sumo Logic source together.
+
+1. Log in to the AWS Management Console as the Log Archive AWS account / CloudTrail administrator account user.
+1. Follow steps 1 through 10 of the instructions in the [Deploy with AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/deploy-with-aws-cloudformation/) to configure the AWS Observability CloudFormation template.
 1. In the **Sumo Logic Access Configuration** section of the template, fill in as required by the template.
-1. In the **AWS Resources Tag Configuration** section of the template, select **None** for **Auto Enable Tagging** and enter `logarchive` as the account alias.
-1. In the **Sumo Logic AWS Observability Apps and Alerts** section of the template, select **No** for “Install AWS Observability Apps”, as they were installed in [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts), above.<br/><img src={useBaseUrl('img/observability/integrate-tower2.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
+1. In the **AWS Resources Tag Configuration** section of the template, select **None** for **Auto Enable Tagging** and enter `logarchive` as the account alias.
+1. In the **Sumo Logic AWS Observability Apps and Alerts** section of the template, select **No** for "Install AWS Observability Apps", as they were installed in [Step 1](#step-1-set-up-collection-of-logs-and-metrics-data-from-your-aws-accounts), above.<br/><img src={useBaseUrl('img/observability/integrate-tower2.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
 1. In the **Sumo Logic AWS CloudWatch Metrics Sources** section of the template, select **None** for **Select the Sumo Logic Metrics Sources to create**, and leave the other options blank.<br/><img src={useBaseUrl('img/observability/integrate-tower4.png')} alt="elect the Sumo Logic Metrics Sources to create" style={{border: '1px solid gray'}} width="800" />
 1. In the **Sumo Logic AWS ALB Log Source** section of the template:
-    1. Select **None** for **Enable ALB Access logging**. 
+    1. Select **None** for **Enable ALB Access logging**.
     1. Select **No** for **Create Sumo Logic ALB Logs Source.**
     1. Keep the default values for all the other options. <br/><img src={useBaseUrl('img/observability/integrate-tower5.png')} alt="Sumo Logic AWS ALB Log Source Details" style={{border: '1px solid gray'}} width="800" />
 1. In the **Sumo Logic AWS ELB classic Log Source** section of the template:
-    1. Select **None** for **Enable ELB Access logging**. 
+    1. Select **None** for **Enable ELB Access logging**.
     1. Select **No** for **Create Sumo Logic ELB Logs Source.**
     1. Keep the default values for all the other options. <br/><img src={useBaseUrl('img/observability/integrate-tower9.png')} alt="Sumo Logic AWS ALB Log Source Details" style={{border: '1px solid gray'}} width="800" />
 1. In the **Sumo Logic AWS CloudTrail Source** section of the template:
 
-    Case 1: Set up Sumo Logic CloudTrail Source to collect data in Sumo Logic.
+    Case 1: Set up Sumo Logic CloudTrail Source to collect data in Sumo Logic.
 
-      1. Select **Yes** for **Create Sumo Logic CloudTrail Logs Source**.
+      1. Select **Yes** for **Create Sumo Logic CloudTrail Logs Source**.
       1. Enter the name of the CloudTrail Bucket in **Amazon S3 Bucket Name**.
-      1. Provide a path expression for the Logs in “**Path Expression for existing CloudTrail logs**. <br/><img src={useBaseUrl('img/observability/integrate-tower6.png')} alt="Any Existing Bucket Path Expression for the CloudTrail logs" style={{border: '1px solid gray'}} width="800" />
+      1. Provide a path expression for the Logs in "**Path Expression for existing CloudTrail logs**". <br/><img src={useBaseUrl('img/observability/integrate-tower6.png')} alt="Any Existing Bucket Path Expression for the CloudTrail logs" style={{border: '1px solid gray'}} width="800" />
 
     Case 2: Already collecting CloudTrail Data in Sumo Logic
 
-      1. Select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all the other options.
+      1. Select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all the other options.
 
 1. In the **Sumo Logic CloudWatch Logs Source** section of the template:
-   1. Select **None** for **Select the Sumo Logic CloudWatch Logs Source Type** if you don’t plan to collect CloudWatch logs from this account.
-   1. If you want to monitor Lambda CloudWatch logs, fill in the details required by the template.
+   1. Select **None** for **Select the Sumo Logic CloudWatch Logs Source Type** if you don't plan to collect CloudWatch logs from this account.
+   1. If you want to monitor Lambda CloudWatch logs, fill in the details required by the template.
 1. Run through the prompts and click **Create the stack**.
 
 ## Step 3: Create Field Extraction Rule
@@ -166,6 +193,9 @@ You must have a role that grants you the Manage Field Extractions capability to 
 
     <img src={useBaseUrl('img/observability/Field-Extraction-rule.png')} alt="Field Extraction rule" style={{border: '1px solid gray'}} width="400" />
 
-## Step 4: View the AWS Observability dashboards
+:::note
+To backfill your collection source `account` tags with an AWS account alias, see [Backfill AWS Account Alias](/docs/observability/aws/other-configurations-tools/backfill-aws-account-alias/).
+:::
 
-Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/view-dashboards/).
+## Step 4: View the AWS Observability dashboards
+Now you can start monitoring your AWS services in AWS Control Tower managed accounts. For information about the solution dashboards, see [View AWS Observability Solution Dashboards](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards/).

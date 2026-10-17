@@ -52,13 +52,10 @@ For information about ConnectWise Manage, see the [ConnectWise website](https://
 
 ## Change Log
 
-* September 17, 2019 - First upload
-* July 11, 2023 (v1.1) - Updated the integration with Environmental Variables
-* September 4, 2023 (v1.2)
-	+ integration refactored
-	+ renamed Get Tickets action to List Tickets
-	+ added new actions: Add Notes To Ticket, List Ticket Notes
-	+ removed Get Tickets Daemon
-* October 29, 2024 (v1.3) Beta Release
-    + Added the "Priority" field to the Create Ticket and Update Ticket actions.
-* April 29, 2026 (v1.4) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.4 | April 29, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.3 | October 29, 2024 | Beta release. Added the **Priority** field to the **Create Ticket** and **Update Ticket** actions. |
+| v1.2 | September 4, 2023 | <ul><li>Refactored the integration.</li><li>Renamed the **Get Tickets** action to **List Tickets**.</li><li>Added new actions: **Add Notes To Ticket** and **List Ticket Notes**.</li><li>Removed the **Get Tickets Daemon**.</li></ul> |
+| v1.1 | July 11, 2023 | Updated the integration with Environmental Variables. |
+| | September 17, 2019 | Initial release of the ConnectWise Manage integration. |
