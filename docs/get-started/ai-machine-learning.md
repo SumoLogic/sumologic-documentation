@@ -18,6 +18,8 @@ keywords:
    - conversational playbooks
    - soc analyst agent
    - mcp server
+   - root cause agent
+   - dojoai credits
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -60,6 +62,20 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language such as monitors, dashboards, and playbooks.
 
 See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
+
+### Root Cause Agent
+
+The Root Cause Agent automates the first stage of incident investigation for DevOps and SRE teams. When an alert fires, the agent gathers relevant telemetry, tests possible explanations, and follows signals across your logs and metrics — returning a structured result with a verdict, key findings, supporting evidence, and a recommended next step. Each finding links to the query that produced it, so you can verify the agent's reasoning in one click. From the investigation, you can continue digging conversationally in Mobot with full context already loaded.
+
+:::note
+The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Contact your Sumo Logic account representative for access.
+:::
+
+### DojoAI Credits
+
+DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage. It replaces per-user daily prompt caps, so your whole team can use AI assistance without hitting individual limits. Credits are drawn down by Mobot prompts and SOC Analyst Agent investigated insights. Usage alerts notify your team at 80%, 90%, and 100% consumption, and agents stay active rather than shutting off if you exceed your monthly allocation.
+
+To learn more or size a pool for your organization, contact your Sumo Logic account team.
 
 ### SOC Analyst Agent
 
@@ -147,7 +163,7 @@ AI features are on by default. We offer two methods for opting out:
 
 ### What is the Feature Management page?
 
-**Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
+**Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission. DojoAI Credits usage and pool sizing are managed through your Sumo Logic account team, not through Feature Management.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
