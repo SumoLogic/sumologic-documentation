@@ -11,7 +11,7 @@ operator.
 
 ## Syntax
 
-```metrics
+```sql
 histogram_quantile(quantile)
 ```
 
@@ -19,11 +19,11 @@ histogram_quantile(quantile)
 
 ### Calculate the 99th and 50th quantile
 
-```metrics
+```
 * | histogram_quantile(.99)
 ```
 
-```metrics
+```
 * | histogram_quantile(.5)
 ```
 
@@ -31,13 +31,13 @@ histogram_quantile(quantile)
 
 The following PromQL query measures the 99th quantile of the `apiserver_request_latencies` histogram:
 
-```metrics
+```sql
 histogram_quantile(0.99, rate(apiserver_request_latencies_bucket{}[5m]))
 ```
 
 It would be written in Sumo Logic as:
 
-```metrics
+```sql
 metric=apiserver_request_latencies_bucket | quantize using max | delta | histogram_quantile(0.99)
 ```
 

@@ -10,7 +10,7 @@ The eval operator evaluates a time series based on a user-specified arithmetic o
 
 ## Syntax
 
-```metrics
+```sql
 eval [REDUCER BOOLEAN EXPRESSION | _value EXPRESSION] [_granularity]
 ```
 
@@ -34,7 +34,7 @@ eval [REDUCER BOOLEAN EXPRESSION | _value EXPRESSION] [_granularity]
 
 This query returns the value of the `CPU_Idle` metric, multiplied by 100.
 
-```metrics
+```
 metric=CPU_Idle | eval _value * 100
 ```
 
@@ -42,7 +42,7 @@ metric=CPU_Idle | eval _value * 100
 
 This query sets the value of each point in a single time series to the average of all values in that time series.
 
-```metrics
+```
 metric=CPU_Idle | eval avg
 ```
 
@@ -64,6 +64,6 @@ m2: (0, 6) (1, 6) (2, 6)
 
 This query returns the rate of change per second for the metric.
 
-```metrics
+```
 metric=CPU_Idle | sum | eval 1000 * _value / _granularity
 ```

@@ -15,7 +15,7 @@ The `avg` operator calculates the average of all matching time series. If groupi
 avg [by FIELD [, FIELD, ...]]
 ```
 
-## Examples 
+## Examples
 
 ### Average value across all time series 
 
@@ -23,7 +23,7 @@ This query returns the average value of the `RequestCount` metric across matchin
 
 ```sql
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg 
-```  
+```
 
 <img src={useBaseUrl('img/metrics/avg1.png')} alt="avg operator" style={{border: '1px solid gray'}} width="800" />
 
@@ -33,7 +33,7 @@ This query returns the average value of the `RequestCount` metric by one field�
 
 ```sql
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg by TargetGroup
-```  
+```
  
 ### Average by two fields
 

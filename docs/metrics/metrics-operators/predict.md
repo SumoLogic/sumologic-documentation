@@ -13,7 +13,7 @@ The `predict` operator takes a single time series metric to predict future value
 
 `predict` supports linear regression (linear) models, which use a linear model on the timestamp to extrapolate into the future, and Auto-regressive (ar) models, which use a window of previously observed data to predict future values. Note that prediction using an AR model does not output any predictions in the first time window.
 
-The `predict` operator outputs two time series: the original input time series and the predicted time series that extends into the future. The predicted time series is also depicted over a portion of the historical time range so that the user can validate forecast accuracy at a glance against actual values.   
+The `predict` operator outputs two time series: the original input time series and the predicted time series that extends into the future. The predicted time series is also depicted over a portion of the historical time range so that the user can validate forecast accuracy at a glance against actual values.
 
 ## Syntax
 
@@ -34,9 +34,9 @@ Where:
   * `ar.window` must be less than 50% of all data points gathered by the metrics query. If no value is specified, the system uses 20% of the query time range as the `ar.window`.
 
 ## Limitations
-* Currently, we only support a single time series metric as input.  
+* Currently, we only support a single time series metric as input.
 * The `predict` operator cannot be used in monitors.
-* We cap forecasts to at most 50 data points in the future. If the `forecast` parameter exceeds 50 data points, we give a warning and cap predictions at 50 data points.  
+* We cap forecasts to at most 50 data points in the future. If the `forecast` parameter exceeds 50 data points, we give a warning and cap predictions at 50 data points.
 * The auto-regressive model’s output time series does not depict data points at the beginning of the historical time range.
 * At least two data points are required to make predictions for linear regression.
 

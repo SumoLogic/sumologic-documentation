@@ -1,45 +1,8 @@
 // SCOPE (DOCS-63): The `sumo` language definition covers Sumo Logic LOG search
 // query syntax only (pipe operators, parse, where, count, fields, keywords, etc.).
-// SCOPE (DOCS-1952): The `metrics` language definition covers Sumo Logic metrics
-// query syntax (key=value selectors, pipe operators, metric names, etc.).
+// Metrics query syntax highlighting is out of scope and will be addressed in a
+// future initiative.
 export default function (Prism) {
-  Prism.languages.metrics = {
-    // 1. Quoted values — e.g. _collector="labs - hostmetricsv2"
-    'string': {
-      pattern: /"(?:\\.|[^\\"])*"/,
-      greedy: true,
-    },
-
-    // 2. Pipe operator
-    'operator': /\|/,
-
-    // 3. Pipe operators and named functions — rendered pink (no italic)
-    // Modifier arguments (counter, gauge, over) intentionally excluded — plain in UI
-    'keyword': /\b(?:accum|along|avg|bottomk|count|delta|eval|ewma|fillmissing|filter|histogram_quantile|in|max|min|outlier|parse|pct|predict|quantize|rate|stddev|sum|timeshift|topk|where)\b/,
-
-    // 4. Time units (e.g. 5m, 1h, 30s) — MUST come before number
-    'time': /\b\d+(?:ms|s|m|h|d|w)\b/,
-
-    // 5. Special metric variables used in eval expressions
-    'variable': /\b_(?:value|granularity|rawmin|rawmax|count)\b/,
-
-    // 6. Selector key (word before =) — plain/white
-    'selector-key': /\b[a-zA-Z_]\w*(?=\s*=)/,
-
-    // 7. Unquoted values after = — cyan via 'constant'
-    // Stops at space, pipe, quote, =, parens, and brackets
-    'constant': /(?<==)[^\s"|=()[\]<>]+/,
-
-    // 8. Whole integers only — avoids highlighting decimal args like .5 inside parens
-    'number': /\b\d+\b/,
-
-    // 9. Pipe operator only — * is a wildcard value selector, not arithmetic
-    'operator': /[|+\-]/,
-
-    // 10. Punctuation
-    'punctuation': /[=,*[\]()]/,
-  };
-
   Prism.languages.sumo = {
     // 1. Strings
     'string': {

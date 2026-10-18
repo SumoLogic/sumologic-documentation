@@ -15,13 +15,13 @@ You can use the `filter` operator to limit the results returned by a metric quer
 
 There are two supported syntaxes for the `filter` operator.
 
-```metrics
+```sql
 filter [REDUCER BOOLEAN EXPRESSION]
 ```
 
 or
 
-```metrics
+```sql
 filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
@@ -29,13 +29,13 @@ filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] 
 
 The first variant filters based on a function (usually an aggregation function) applied to the time series.
 
-```metrics
+```sql
 filter [REDUCER BOOLEAN EXPRESSION]
 ```
 
 Where:
 
-`[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value. 
+`[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value.
 
 The supported functions are:
 
@@ -51,7 +51,7 @@ The supported functions are:
 
 The second variant filters based on how many times the values of individual data points of a time series meet a value condition over a particular duration.
 
-```metrics
+```sql
 filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
@@ -70,7 +70,7 @@ Where:
 
 Return the time series in which the average value of the `CPU_User` metric is greater than 95:
 
-```metrics
+```sql
 metric=CPU_User | filter avg > 95
 ```
 
@@ -78,7 +78,7 @@ metric=CPU_User | filter avg > 95
 
 Return the time series in which the latest value of the `CPU_User` metric is greater than 50:
 
-```metrics
+```sql
 metric=CPU_User | filter latest > 50
 ```
 
@@ -86,21 +86,21 @@ metric=CPU_User | filter latest > 50
 
 **Example 1**
 
-Return only the time series in which all data points during the last 5 minutes of the query time range have a value greater than 3. 
+Return only the time series in which all data points during the last 5 minutes of the query time range have a value greater than 3.
 
 :::note
 There must be a least one data point in the last 5 minutes of the time range for this to be valid.
 :::
 
-```metrics
+```
 metric=CPU_User | filter _value > 3 all last 5m
 ```
 
 **Example 2**
 
-Return only the time series that have at least 1 data point greater than 3 for the last 5 minutes of the query time range. 
+Return only the time series that have at least 1 data point greater than 3 for the last 5 minutes of the query time range.
 
-```metrics
+```
 metric=CPU_User | filter _value > 3 atleast 1 last 5m
 ```
 
@@ -108,18 +108,18 @@ metric=CPU_User | filter _value > 3 atleast 1 last 5m
 
 Return only the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
-```metrics
+```
 metric=CPU_User | filter _value > 3 all any 5m
 ```
 
 **Example 4**
 
-Return only the time series that have only values greater than 3 for the first 5 minutes of the query time range. 
+Return only the time series that have only values greater than 3 for the first 5 minutes of the query time range.
 
 :::tip
 There must be a least one data point in the first 5 minutes of the time range for this to be valid.
 :::
 
-```metrics
+```
 metric=CPU_User | filter _value > 3 all first 5m
-```  
+```

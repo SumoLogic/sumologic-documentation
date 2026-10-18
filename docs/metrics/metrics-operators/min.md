@@ -31,5 +31,5 @@ This query returns the minimum `CPU_Sys` value by node for each time interval ac
 
 ```sql
 cluster=search metric=CPU_Sys | min by node
-```  
+```
  
