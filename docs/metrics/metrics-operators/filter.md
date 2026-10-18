@@ -44,14 +44,14 @@ The supported functions are:
 * `max`. Returns the maximum value in the time series.
 * `sum`. Returns the sum of the values in the time series.
 * `count`. Returns the count of data points in the time series.
-* `pct(n)`. Returns the nth percentile of the values in the time series.
+* `pct(n)`. Returns the nth percentile of the values in the time series.
 * `latest`. Returns the last data point in the time series.
 
 ### Syntax 2
 
 The second variant filters based on how many times the values of individual data points of a time series meet a value condition over a particular duration.
 
-```sql
+```
 filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
