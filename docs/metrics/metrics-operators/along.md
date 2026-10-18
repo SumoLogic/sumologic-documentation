@@ -22,16 +22,10 @@ The `along` metrics statement is useful when you join queries – it allows you 
 ## Examples
 Queries #A and #B return the `Net_InBytes` and `Net_OutBytes` metrics with the assigned `account` and averaged over `account`. Query #C calculates the difference of the pairs of time series from #A and #B whose `account` value matches.
 
-```
-#A: metric=Net_InBytes account=* | avg by account
-```
+#A: `metric=Net_InBytes account=* | avg by account`
 
-```
-#B: metric=Net_OutBytes account=* | avg by account
-```
+#B: `metric=Net_OutBytes account=* | avg by account`
 
-```
-#C: #B - #A along account
-```
+#C: `#B - #A along account`
 
 <img src={useBaseUrl('img/metrics/along-example.png')} alt="Along example"/>

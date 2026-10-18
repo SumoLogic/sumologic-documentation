@@ -66,7 +66,7 @@ Where:
 
 ### Filter by aggregation function
 
-**Example 1**
+### Filter by average value
 
 Return the time series in which the average value of the `CPU_User` metric is greater than 95:
 
@@ -74,7 +74,7 @@ Return the time series in which the average value of the `CPU_User` metric is gr
 metric=CPU_User | filter avg > 95
 ```
 
-**Example 2**
+### Filter by latest value
 
 Return the time series in which the latest value of the `CPU_User` metric is greater than 50:
 
@@ -84,7 +84,7 @@ metric=CPU_User | filter latest > 50
 
 ### Filter by value condition
 
-**Example 1**
+### All data points in the last 5 minutes
 
 Return only the time series in which all data points during the last 5 minutes of the query time range have a value greater than 3. 
 
@@ -96,7 +96,7 @@ There must be a least one data point in the last 5 minutes of the time range for
 metric=CPU_User | filter _value > 3 all last 5m
 ```
 
-**Example 2**
+### At least one data point in the last 5 minutes
 
 Return only the time series that have at least 1 data point greater than 3 for the last 5 minutes of the query time range. 
 
@@ -104,7 +104,7 @@ Return only the time series that have at least 1 data point greater than 3 for t
 metric=CPU_User | filter _value > 3 atleast 1 last 5m
 ```
 
-**Example 3**
+### Any consecutive 5-minute window
 
 Return only the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
@@ -112,7 +112,7 @@ Return only the time series that have only values greater than 3 for any consecu
 metric=CPU_User | filter _value > 3 all any 5m
 ```
 
-**Example 4**
+### First 5 minutes of the time range
 
 Return only the time series that have only values greater than 3 for the first 5 minutes of the query time range. 
 

@@ -23,6 +23,8 @@ histogram_quantile(quantile)
 * | histogram_quantile(.99)
 ```
 
+The following query calculates the 50th quantile:
+
 ```sql
 * | histogram_quantile(.5)
 ```
