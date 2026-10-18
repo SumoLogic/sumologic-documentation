@@ -22,11 +22,11 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
     * [Query Language Basics Self-Paced](https://learn.sumologic.com/query-language-basics)
     * [Search Mastery Self-Paced](https://learn.sumologic.com/search-mastery-self-paced-course)
     * [Best Practices for Query Efficiency Workshop](https://learn.sumologic.com/path/sumo-onboarding/best-practices-for-query-efficiency)
-    * [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai)
+    * [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai)
 * **Instructor-led virtual classes**:
     * [Certifications: Search Mastery](https://www.sumologic.com/learn/training?_certifications=search-mastery#section-2)
     * [Workshops: Best Practices for Query Efficiency](https://www.sumologic.com/learn/training?_workshops=best-practices-for-query-efficiency#section-2)
-    * [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2)
+    * [Workshops: Hands on with Mobot and DojoAI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2)
 :::
 
 :::tip
@@ -47,12 +47,6 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href={useBaseUrl('docs/search/get-started-with-search')}><img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="35"/><h4>Getting started with Log Search</h4></a>
   <p>Start here to begin exploring your data in Sumo Logic.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href={useBaseUrl('docs/search/mobot')}><img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="40"/><h4>Mobot</h4></a>
-  <p>Ask Mobot a question in plain language to analyze your logs or learn the platform, no query writing or agent selection required.</p>
   </div>
 </div>
 <div className="box smallbox card">

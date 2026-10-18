@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can create monitors from plain-language prompts in [Mobot](/docs/search/mobot), Sumo Logic's conversational AI assistant. Describe the monitor you want in everyday language, and Mobot validates your query, suggests a complete configuration, and creates the monitor after you confirm. You can also update a monitor within the same conversation.
+You can create monitors from plain-language prompts in [Mobot](/docs/ai/mobot), Sumo Logic's conversational AI assistant. Describe the monitor you want in everyday language, and Mobot validates your query, suggests a complete configuration, and creates the monitor after you confirm. You can also update a monitor within the same conversation.
 
 Mobot supports logs monitors only, not metrics or SLO (Service Level Objective) monitors, and can create static, anomaly, and outlier detection types. From a single prompt, it populates the monitor name, description, query, trigger conditions, recovery conditions, and notifications, and you can accept or adjust each suggestion before the monitor is created.
 
@@ -44,7 +44,7 @@ From your prompt, Mobot suggests values for the following, and you can accept ea
 
 ## How to create a monitor with Mobot
 
-1. Open [Mobot](/docs/search/mobot) and describe the monitor you want in plain language. For example:<br/>`Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
+1. Open [Mobot](/docs/ai/mobot) and describe the monitor you want in plain language. For example:<br/>`Alert me when the payment-service query has more than 20 errors in a 5-minute window.`
 1. Mobot validates your query and suggests a configuration, including name, description, monitor type, query, trigger, recovery, and notifications.<br/>{/* TODO: add screenshot of the suggested configuration card */}
 1. Review each suggestion. To change a value, tell Mobot what you want. For example, ask it to rename the monitor or adjust the trigger threshold.
 1. (Optional) Add a notification. You can be notified by email or through a connection, such as Slack.
@@ -104,6 +104,6 @@ You can be notified by email or through a connection, such as Slack. If your org
 
 ## Related resources
 
-- [Mobot](/docs/search/mobot)
+- [Mobot](/docs/ai/mobot)
 - [Create a New Monitor](/docs/alerts/monitors/create-monitor)
-- [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
+- [AI Capabilities](/docs/ai)

@@ -1,7 +1,7 @@
 ---
 id: example-prompts
 title: Mobot Example Prompts
-sidebar_label: Example Prompts
+sidebar_label: Mobot Example Prompts ✨
 description: A library of example prompts for Sumo Logic's Mobot, covering security and observability investigations, platform administration, and how-to questions.
 ---
 
@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="45"/>
 
-Use these prompts as starting points. After Mobot responds, refine the result through follow-up questions. For examples of complete multi-turn conversations, see [Example end-to-end conversation](/docs/search/mobot/#example-end-to-end-conversation) in the Mobot documentation.
+Use these prompts as starting points. After Mobot responds, refine the result through follow-up questions. For examples of complete multi-turn conversations, see [Example end-to-end conversation](/docs/ai/mobot/#example-end-to-end-conversation) in the Mobot documentation.
 
 :::note
 Keyword searches are case-sensitive.

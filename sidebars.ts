@@ -28,12 +28,12 @@ module.exports = {
         'get-started/onboarding-checklists',
         'get-started/training-certification-faq',
         'get-started/account-settings-preferences',
+        'ai/index',
         'get-started/sumo-logic-ui',
         'get-started/sumo-logic-ui-classic',
         'get-started/apps-integrations',
         'get-started/library',
         'get-started/system-requirements',
-        'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
         'get-started/help',
         'get-started/faq',
@@ -925,6 +925,7 @@ module.exports = {
     collapsed: false,
     link: {type: 'doc', id: 'manage/index'},
     items: [
+      'manage/feature-management',
       'manage/fields',
     {
       type: 'category',
@@ -1129,7 +1130,7 @@ module.exports = {
         'manage/ingestion-volume/collection-status-page',
         {
           type: 'category',
-          label: 'Data Volume Index',
+          label: 'Data Volume Index ✨',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/data-volume-index/index'},
@@ -1508,19 +1509,6 @@ module.exports = {
             'search/get-started-with-search/suggested-searches/windows-events',
           ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Mobot ✨',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'search/mobot/index'},
-      items: [
-          'search/mobot/example-prompts',
-          'dashboards/create-panel-with-mobot',
-          'alerts/monitors/create-monitor-with-mobot',
-          'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
       ],
     },
     {
@@ -3331,7 +3319,6 @@ integrations: [
             'api/about-apis/troubleshooting',
           ],
         },
-        'api/mcp-server',
         'api/access-keys',
         'api/account-management',
         'api/app-management',
@@ -3395,6 +3382,62 @@ integrations: [
         'api/token-management',
         'api/tracing',
         'api/user-management',
+      ],
+    },
+  ],
+  // AI
+  ai: [
+    {
+      type: 'category',
+      label: 'AI Capabilities',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'ai/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Mobot',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'ai/mobot/index'},
+          items: [
+            'ai/mobot/about',
+            'ai/mobot/example-prompts',
+            'alerts/monitors/create-monitor-with-mobot',
+            'dashboards/create-panel-with-mobot',
+            'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
+            'manage/ingestion-volume/data-volume-index/index',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'MCP Server ✨',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'ai/mcp-server/index'},
+          items: [
+            'ai/mcp-server/connect-mcp-client',
+            'ai/mcp-server/mcp-tools-reference',
+            'ai/mcp-server/investigate-with-mcp',
+            'ai/mcp-server/usage-costs-rate-limits',
+            'ai/mcp-server/troubleshooting-faq',
+          ],
+        },
+//        {
+//          type: 'category',
+//          label: 'DojoAI',
+//          collapsible: true,
+//          collapsed: true,
+//          link: {type: 'doc', id: 'ai/dojoai/index'},
+//          items: [
+            // PLACEHOLDER(DOCS-1976, 2026-11-30): Agent Knowledge for SOC Analyst Agent
+            // 'ai/dojoai/agent-knowledge-socaa',
+//          ],
+//        },
+        'cse/get-started-with-cloud-siem/soc-analyst-agent',
+     // 'alerts/monitors/root-cause-agent-preview',
+     //  SOC Recommendation and Response
+        'ai/trust-data-faq',
       ],
     },
   ],
