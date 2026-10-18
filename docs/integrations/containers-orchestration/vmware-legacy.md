@@ -232,7 +232,7 @@ vcenter03.company.com "domain_name\user_name"
 4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication.
 5. Edit the following in the **cron_vcenter_perf.sh** script:
     * Change the **SCRIPT_PATH** variable to reflect the absolute path where the script resides.
-    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
+    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see [Segmenting Collection](#segmenting-performance-collection).
 
 Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#troubleshooting-and-manual-testing).
 ```bash
