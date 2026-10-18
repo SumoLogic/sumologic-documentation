@@ -35,7 +35,7 @@ filter [REDUCER BOOLEAN EXPRESSION]
 
 Where:
 
-`[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value.
+`[REDUCER BOOLEAN EXPRESSION]` is an expression that takes all the values of a given time series, uses a function to reduce them to a single value, and evaluates that value. 
 
 The supported functions are:
 
@@ -86,21 +86,21 @@ metric=CPU_User | filter latest > 50
 
 **Example 1**
 
-Return only the time series in which all data points during the last 5 minutes of the query time range have a value greater than 3.
+Return only the time series in which all data points during the last 5 minutes of the query time range have a value greater than 3. 
 
 :::note
 There must be a least one data point in the last 5 minutes of the time range for this to be valid.
 :::
 
-```
+```sql
 metric=CPU_User | filter _value > 3 all last 5m
 ```
 
 **Example 2**
 
-Return only the time series that have at least 1 data point greater than 3 for the last 5 minutes of the query time range.
+Return only the time series that have at least 1 data point greater than 3 for the last 5 minutes of the query time range. 
 
-```
+```sql
 metric=CPU_User | filter _value > 3 atleast 1 last 5m
 ```
 
@@ -108,18 +108,18 @@ metric=CPU_User | filter _value > 3 atleast 1 last 5m
 
 Return only the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
-```
+```sql
 metric=CPU_User | filter _value > 3 all any 5m
 ```
 
 **Example 4**
 
-Return only the time series that have only values greater than 3 for the first 5 minutes of the query time range.
+Return only the time series that have only values greater than 3 for the first 5 minutes of the query time range. 
 
 :::tip
 There must be a least one data point in the first 5 minutes of the time range for this to be valid.
 :::
 
-```
+```sql
 metric=CPU_User | filter _value > 3 all first 5m
-```
+```  

@@ -27,9 +27,9 @@ where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duratio
 
 Where:
 
-* `all | atleast n` — use `all` to require every data point within the duration to meet the condition, or `atleast n` to specify a minimum count.
-* `first | any | last` — the part of the time range the duration applies to: the start, any part, or the end.
-* `duration` — length of time in minutes (m), hours (h), or days (d). For example, `5m`, `6h`, or `1d`.
+* `all | atleast n`. Use `all` to require every data point within the duration to meet the condition, or `atleast n` to specify a minimum count.
+* `first | any | last`. The part of the time range the duration applies to: the start, any part, or the end.
+* `duration`. Length of time in minutes (m), hours (h), or days (d). For example, `5m`, `6h`, or `1d`.
 
 :::note
 All three of the extended parameters above are required when using the time window form.
@@ -60,13 +60,13 @@ This query returns the time series where the average value of its data points is
 metric=CPU_Idle | where avg > 3
 ```
 
-This query returns only the time series that have all values greater than 3 for any consecutive 5 minutes of the time range.
+This query only returns the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
 metric=CPU_Idle | where _value > 3 all any 5m
 ```
 
-This query returns only the time series that have at least three data points with values greater than 3 for any consecutive 5 minutes of the time range.
+This query only returns the time series that have at least three data points with values greater than 3 for any consecutive 5 minutes of the time range.
 
 ```sql
 metric=CPU_Idle | where _value > 3 atleast 3 any 5m

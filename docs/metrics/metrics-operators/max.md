@@ -31,5 +31,5 @@ This query returns the maximum `CPU_Sys` value by node for each time interval ac
 
 ```sql
 cluster=search metric=CPU_Sys | max by node
-```
+```  
  

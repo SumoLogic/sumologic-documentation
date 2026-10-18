@@ -34,7 +34,7 @@ You can also use the `increasing` or `decreasing` option to make `rate` consider
 
 ### Rate of change between consecutive data points
 
-This query calculates the increase or decrease per second in the `Net_InBytes` metric from one collected data point to the next.
+This query calculates the increase or decrease per second in the `Net_InBytes` metric from one collected data point to the next. 
 
 ```sql
 metric=Net_InBytes Interface=eth0 | rate
@@ -42,7 +42,7 @@ metric=Net_InBytes Interface=eth0 | rate
 
 ### Rate of change between consecutive counter values
 
-This query calculates the increase in `apiserver_request_total` counter value from one collected data point to the next.
+This query calculates the increase in `apiserver_request_total` counter value from one collected data point to the next. 
 
 ```sql
 metric=apiserver_request_total | rate counter

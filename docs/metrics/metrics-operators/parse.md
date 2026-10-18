@@ -29,7 +29,7 @@ Where:
 
 ### parse three fields from a metric field
 
-In this query, we parse the `LoadBalancer` field. The format of the field is `type/name/id`, for example:
+In this query, we parse the `LoadBalancer` field. The format of the field is `type/name/id`, for example:   
 
 ```sql
 app/app-song-8d/4567223890123456

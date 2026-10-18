@@ -30,4 +30,4 @@ This query calculates the total of the `CPU_Sys` metric values across all time s
 
 ```sql
 dep=prod metric=CPU_Sys | sum by node
-```
+```  

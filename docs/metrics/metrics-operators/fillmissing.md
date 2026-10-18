@@ -29,7 +29,7 @@ Where `<policy>` is one of:
 
 The chart in this section shows metric query results without the `fillmissing` operator.
 
-```
+```sql
 _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready
 ```
 
@@ -38,8 +38,8 @@ _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready
 The chart in this section shows metric query results with the `fillmissing` operator with the `empty` option. Note that empty time slices are not filled with a derived data point. 
 
 ```sql
-_sourceCategory=labs/aws/host/metrics metric=CPU_Idle
-| avg by _sourcename
+_sourceCategory=labs/aws/host/metrics metric=CPU_Idle 
+| avg by _sourcename 
 | fillmissing empty
 ```
 
@@ -50,9 +50,9 @@ _sourceCategory=labs/aws/host/metrics metric=CPU_Idle
 The chart in this section shows metric query results with the `fillmissing` operator with the `interpolation` option. Note that empty time slices are filled with a derived data point whose value is a linear interpolation of the data points prior to and after the empty time slice. 
 
 ```sql
-_sourceCategory=labs/aws/host/metrics metric=CPU_Idle
-| avg by _sourcename
-| fillmissing interpolation
+_sourceCategory=labs/aws/host/metrics metric=CPU_Idle 
+| avg by _sourcename 
+| fillmissing interpolation 
 ```
 
 <img src={useBaseUrl('img/metrics/fillmissing-interpolation.png')} alt="fillmissing empty" style={{border: '1px solid gray'}} width="800" />
@@ -61,7 +61,7 @@ _sourceCategory=labs/aws/host/metrics metric=CPU_Idle
 
 The chart in this section shows metric query results with the `fillmissing` operator with the `last` option. Note that empty time slices are filled with a derived data point whose value is the value of the metric from the previous time slice.
 
-```
+```sql
 _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready | fillmissing last
 ```
 
@@ -72,9 +72,9 @@ _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready | 
 The chart in this section shows metric query results with the `fillmissing` operator with a constant value of 0. Note that empty time slices are filled with a data point whose value is 0.
 
 ```sql
-_sourceCategory=labs/aws/host/metrics metric=CPU_Idle
-| avg by _sourcename
-| fillmissing 0
+_sourceCategory=labs/aws/host/metrics metric=CPU_Idle 
+| avg by _sourcename 
+| fillmissing 0 
 ```
 
 <img src={useBaseUrl('img/metrics/fillmissing-constant.png')} alt="fillmissing empty" style={{border: '1px solid gray'}} width="800" />
