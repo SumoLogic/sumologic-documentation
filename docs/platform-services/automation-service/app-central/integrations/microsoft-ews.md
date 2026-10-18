@@ -4,7 +4,7 @@ description: ''
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import EwsRetirement from '../../../../../reuse/ews-retirement-warning.md';
+import EwsRetirement from '../../../../reuse/ews-retirement-warning.md';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="Microsoft EWS icon" width="100"/>
 
