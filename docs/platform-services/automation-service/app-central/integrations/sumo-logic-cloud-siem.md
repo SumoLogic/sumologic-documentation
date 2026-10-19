@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="Sumo Logic icon" width="100"/>
 
-***Version: 1.20  
+***Version: 1.20.0  
 Updated: October 19, 2026***
 
 
@@ -105,7 +105,7 @@ SIEM
 
 | Version | Date               | Description |
 |:--|:-------------------|:--|
-| v1.20 | October 19, 2026   | Fixed the output schema of the **Get Insight V2** action to match the actual response. The action now returns the Summary, Sub Resolution, and Confidence fields, and the involved entity output path is corrected. |
+| v1.20.0 | October 19, 2026   | Enhanced the **Get Insight V2** action by adding summary, sub-resolution, and confidence to its output schema and updating the involved entity field. |
 | v1.19 | September 21, 2026  | Added new actions: **Get Insight Triage** and **Check Insight Triage Schedule**. |
 | v1.18 | July 22, 2026      | <ul><li>Improved integration reliability and handling of API rate limits with better edge case support.</li><li>Enhanced error messages with more descriptive details for easier troubleshooting.</li><li>Deprecated the **Add Relation To Insight** action.</li></ul> |
 | v1.17 | April 30, 2026     | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
