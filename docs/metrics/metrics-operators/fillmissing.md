@@ -23,7 +23,9 @@ Where `<policy>` is one of:
 * `last`. The derived data point is the same value as the previous data point.
 * `<fixed>`. With this option, you supply a fixed value, for example “50”, and the derived data point will have that value.
 
-## Query without fillmissing
+## Examples
+
+### Query without fillmissing
 
 The chart in this section shows metric query results without the `fillmissing` operator.
 
@@ -31,7 +33,7 @@ The chart in this section shows metric query results without the `fillmissing` o
 _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready
 ```
 
-### Example 1: fillmissing empty
+### fillmissing empty
 
 The chart in this section shows metric query results with the `fillmissing` operator with the `empty` option. Note that empty time slices are not filled with a derived data point. 
 
@@ -43,7 +45,7 @@ _sourceCategory=labs/aws/host/metrics metric=CPU_Idle
 
 <img src={useBaseUrl('img/metrics/fillmissing-empty.png')} alt="fillmissing empty" style={{border: '1px solid gray'}} width="800" />
 
-### Example 2: fillmissing interpolation
+### fillmissing interpolation
 
 The chart in this section shows metric query results with the `fillmissing` operator with the `interpolation` option. Note that empty time slices are filled with a derived data point whose value is a linear interpolation of the data points prior to and after the empty time slice. 
 
@@ -55,7 +57,7 @@ _sourceCategory=labs/aws/host/metrics metric=CPU_Idle
 
 <img src={useBaseUrl('img/metrics/fillmissing-interpolation.png')} alt="fillmissing empty" style={{border: '1px solid gray'}} width="800" />
 
-### Example 3: fillmissing last
+### fillmissing last
 
 The chart in this section shows metric query results with the `fillmissing` operator with the `last` option. Note that empty time slices are filled with a derived data point whose value is the value of the metric from the previous time slice.
 
@@ -65,7 +67,7 @@ _sourceCategory=Labs/VMWare6.5/Metrics hostname=thisveryhost metric=cpu_ready | 
 
 <img src={useBaseUrl('img/metrics/fillmissing-last.png')} alt="fillmissing empty" style={{border: '1px solid gray'}} width="800" />
 
-### Example 4: fillmissing with fixed value
+### fillmissing with fixed value
 
 The chart in this section shows metric query results with the `fillmissing` operator with a constant value of 0. Note that empty time slices are filled with a data point whose value is 0.
 

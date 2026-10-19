@@ -23,7 +23,7 @@ stddev [by FIELD [, FIELD, ...]]
 
 ## Examples
 
-**Example 1**
+### Standard deviation of a metric
 
 This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment.
 
@@ -31,7 +31,7 @@ This query returns the standard deviation of the `CPU_Sys` metric from the _prod
 dep=prod metric=CPU_Sys | stddev
 ```
 
-**Example 2**
+### Standard deviation grouped by source
 
 This query returns the standard deviation of the `CPU_Sys` metric from the _prod_ deployment, grouped by the source that collected the metrics.
 
