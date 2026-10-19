@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Updated: Dec 30, 2025***
 
 :::tip Recommended for Exchange Online
-Microsoft is retiring Exchange Web Services (EWS) in Exchange Online beginning October 2026. Use this integration for new Exchange Online configurations. If you currently use [Microsoft EWS](microsoft-ews.md) or [Microsoft EWS Extension](microsoft-ews-extension.md), migrate to this integration before April 2027.
+Microsoft is retiring Exchange Web Services (EWS) in Exchange Online beginning October 2026. Use this integration for new Exchange Online configurations. If you currently use [Microsoft EWS](microsoft-ews.md), migrate to this integration before April 2027. See [Migrate from Microsoft EWS](#migrate-from-microsoft-ews).
 :::
 
 Perform actions on Microsoft EWS mailboxes and accounts using the Microsoft Graph API.
@@ -30,6 +30,23 @@ Perform actions on Microsoft EWS mailboxes and accounts using the Microsoft Grap
 * **Forward Mail** *(Containment)* - Forward the email.
 * **Send Email** *(Notification)* - Send an email.
 * **Reply To Email** *(Notification)* - Reply to an email with a given item ID.
+
+## Migrate from Microsoft EWS
+
+Microsoft EWS (Graph) is a separate integration from Microsoft EWS. Configure it as a new resource, then update your playbooks and rules to use its actions.
+
+### Action differences
+
+* All actions in Microsoft EWS are available here, except **Junk Mail**. This action is not currently supported in Microsoft EWS (Graph). Microsoft plans a Graph API for this in Q4 2026, and we will evaluate adding the action once it is available.
+* **Forward Mail** is available only in Microsoft EWS (Graph).
+
+### Authentication and permissions
+
+* Microsoft EWS (Graph) uses application permissions only. It does not support delegated permissions, Basic, or NTLM authentication.
+* You authenticate with a tenant ID, client ID, and client secret instead of a host and authentication method.
+* You don't need to assign a role in the Exchange Admin Center.
+
+Follow the [Microsoft EWS configuration](#microsoft-ews-configuration) steps to register the application and add the permissions.
 
 ## Microsoft EWS configuration
 

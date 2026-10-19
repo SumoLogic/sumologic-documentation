@@ -4,7 +4,6 @@ description: ''
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import EwsRetirement from '../../../../reuse/ews-retirement-warning.md';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-daemon.png')} alt="Microsoft Defender ATP icon" width="100"/>
 
@@ -15,7 +14,11 @@ Updated: May 16, 2025***
 This integration is only for Cloud SOAR.
 :::
 
-<EwsRetirement/>
+:::warning EWS retirement for Exchange Online
+Microsoft is retiring Exchange Web Services (EWS) in Exchange Online. Disablement begins October 2026, with full disablement by April 2027. This integration is affected for Exchange Online.
+
+There is no Microsoft Graph replacement for the incoming mail daemon. See [Microsoft's retirement announcement](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online) for details and timeline.
+:::
 
 Process emails with EWS Daemon.
 
