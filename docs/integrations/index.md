@@ -36,7 +36,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
    * [Tutorials](https://learn.sumologic.com/page/learn-a-new-skill#by-type_tutorial)
 * **Instructor-led virtual classes**: 
    * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
-   * [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
+   * [Certifications: Administrator](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
 :::
 
 

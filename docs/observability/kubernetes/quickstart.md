@@ -169,9 +169,3 @@ We provide an array of partner apps designed specifically for Kubernetes. The fo
 We also provide a selection of security-focused partner apps with specialized detection and investigation features.
 
 <img src={useBaseUrl('img/kubernetes/K8s_PartnerApps_Security.png')} alt="Sumo Logic Security partner apps" style={{border: '1px solid gray'}} width="800" />
-
-### Get certified
-
-Make the most of our Kubernetes Observability offerings by enrolling in our free training, where you'll learn more about using OpenTelemetry collectors, tracing agents, and our Reliability Management features. The Sumo Logic Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
-
-<a href="https://www.sumologic.com/learn/training/"><img src={useBaseUrl('img/kubernetes/K8s_Kubernetes_Analyst_Cert.png')} alt="Kubernetes Analyst Cert icon" width="450"/></a>

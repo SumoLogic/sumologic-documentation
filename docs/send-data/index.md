@@ -30,7 +30,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
     * [Administration Self-Paced](https://learn.sumologic.com/administration-self-paced)
 * **Instructor-led virtual classes**: 
     * [Certifications: Fundamentals](https://www.sumologic.com/learn/training?_certifications=fundamentals#section-2)
-    * [Certifications: Administration](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
+    * [Certifications: Administrator](https://www.sumologic.com/learn/training?_certifications=administration#section-2)
 :::
 
 <div className="box-wrapper" >
