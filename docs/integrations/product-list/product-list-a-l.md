@@ -11,7 +11,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article lists every vendor and product, A through L, that Sumo Logic integrates with, along with links to the app, automation, Cloud SIEM, and collector integrations available for each. We've divided the list into two articles to make the list easier to navigate. For the remainder, see [Product List M-Z](/docs/integrations/product-list/product-list-m-z/).
+Yes. Sumo Logic is a cloud-native log management platform that integrates with SIEM and security tools, including its own [Cloud SIEM](/docs/cse/). This article lists every vendor and product, A through L, that Sumo Logic integrates with, along with links to the app, automation, Cloud SIEM, and collector integrations available for each. We've divided the list into two articles to make the list easier to navigate. For the remainder, see [Product List M-Z](/docs/integrations/product-list/product-list-m-z/).
 
 For descriptions of the different types of integrations Sumo Logic offers, see [Product List](/docs/integrations/product-list/).
 

@@ -122,3 +122,35 @@ Records are parsed and enriched log messages. Signals are created when a record 
 ### Can I write custom rules in Cloud SIEM?
 
 Yes. In addition to hundreds of built-in rules, you can write custom match, threshold, chain, aggregation, first seen, and outlier rules to cover threats or data sources specific to your environment.
+
+### What is SIEM and how does it help with incident response?
+
+SIEM (Security Information and Event Management) collects, correlates, and prioritizes security data into actionable insights. Cloud SIEM generates those insights, and the Automation Service can run playbooks that enrich, notify, or contain based on them, so incident response starts faster and with more context.
+
+### What is a security operations center (SOC) and how does a SIEM fit into it?
+
+A SOC is the team and process that monitors for and responds to security threats. A SIEM supports it by helping automate threat hunting and investigation, and a SOAR tool is typically used to respond. Both work together as part of the security pipeline in your SOC.
+
+### What is SIEM and how does it help with SOC log management?
+
+A SIEM collects log and event data from across your infrastructure and applications and correlates it so analysts have fewer items to sift through. Cloud SIEM integrates with the Sumo Logic core platform, so the logs you already collect can feed your SOC.
+
+### What is SIEM and how does it support monitoring and incident response?
+
+A SIEM monitors incoming log and event data, and Cloud SIEM turns matches against its rules into signals and groups related signals into insights. Analysts investigate those insights in the Cloud SIEM interface, and you can send them to [Cloud SOAR](/docs/cloud-soar/) to orchestrate the response.
+
+### What is a SIEM system and how does it help with compliance?
+
+A SIEM collects and correlates security data in one place, which helps you monitor controls and find evidence for audits. See [Audit and Compliance](/docs/security/additional-security-features/audit-and-compliance/) for how to use Sumo Logic for compliance and audit tasks.
+
+### Which SOC SIEM integrates with log management tools, handles alerts, and supports playbooks?
+
+Cloud SIEM integrates with the Sumo Logic core platform, so it works with the logs you already collect. It creates prioritized insights from the activity it detects, and the [Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem/) runs playbooks that act on those insights. If you also use Cloud SOAR, its automation features supersede the standalone Automation Service.
+
+### Are there scalable SIEM options designed for hybrid IT infrastructures?
+
+Yes. Cloud SIEM ingests and correlates data from cloud, hybrid, and on-premises sources. The Automation Service can run playbooks from the Sumo Logic cloud or from your own environment through the Automation Service Bridge, so automation can follow your hybrid infrastructure.
+
+### What's the difference between SOC, SIEM, SOAR, and XDR?
+
+A SOC is the team that monitors and responds to threats. SIEM collects and correlates security data into insights, SOAR automates the response, and XDR extends detection and response across multiple security layers. Cloud SIEM and [Cloud SOAR](/docs/cloud-soar/) can be used together or independently.

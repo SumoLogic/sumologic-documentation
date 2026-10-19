@@ -175,6 +175,24 @@ This section shows how an outlier rule would function with a daily baseline.
  If you are unsure what to set the minimum count value to from the default value of 1, consider providing the value which is beyond the normal acceptable behavior for a given time window for a particular entity. The **Minimum Count Value** is geared towards false positive reduction and improving the fidelity of signals generated, and will vary based upon the use case and type of logs collected.
  :::
 
+## FAQ
+
+### How does Cloud SIEM identify abnormal user behavior?
+
+Outlier rules automatically build a baseline model of normal behavior for an entity, such as a user. After the baseline learning period, they fire a signal when behavior deviates from that baseline. [First seen rules](/docs/cse/rules/write-first-seen-rule/) fire when an entity does something new, such as logging in from a new location.
+
+### Can Cloud SIEM detect insider threats?
+
+Outlier and first seen rules surface behavior that is unusual for a user, such as a spike in failed logins, a login from a new location, or a new admin account. These behavioral signals help you spot insider threats. See [Use case for a spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user).
+
+### Do you need a separate tool to detect abnormal user behavior?
+
+No. Outlier rules are a Cloud SIEM rule type, so they run on the data already in Cloud SIEM, and you don't need to replace your existing security tools to use them.
+
+### Do outlier rules help reduce alert fatigue?
+
+Outlier rules generate signals, not standalone alerts. Cloud SIEM groups related signals for the same entity into insights, so you triage fewer, prioritized items.
+
 ## Additional resources
 
 * Blog: [From weeks to minutes: How Sumo Logic’s historic baselining supercharges UEBA](https://www.sumologic.com/blog/sumo-logic-historic-baselining)

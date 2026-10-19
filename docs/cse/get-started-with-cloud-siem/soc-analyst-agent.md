@@ -288,6 +288,42 @@ Yes. An insight's **AI Verdict**, **Key Findings**, and **What Happened** summar
 
 No. The agent renders verdicts and findings to guide your investigation; it does not take remediation or containment actions itself.
 
+### Is an AI SOC deterministic?
+
+Not in the way a fixed rule is. A Cloud SIEM rule fires on the same match every time, while the SOC Analyst Agent applies agentic reasoning that adapts to the insight's context. Because of that, treat each verdict as an evidence-backed assessment, and review the supporting evidence and tool calls.
+
+### How does the agent handle hallucinations?
+
+Verdicts are based only on your normalized security data, correlated entities, threat intelligence, and enrichment data. Every tool call the agent makes is logged to Cloud SIEM so you can review how it reached a verdict, and senior analysts regularly review a sample of verdicts. You can also override a verdict and flag feedback.
+
+### What guardrails apply to autonomous action for an AI SOC?
+
+The agent can't take remediation or containment actions itself. It renders verdicts and findings to guide your investigation, investigates insights only up to your organization's committed daily volume, and lets you exclude insights from auto-investigation. See [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
+
+### How much manual work is required with an AI SOC?
+
+The agent automatically investigates insights in priority order and delivers a verdict on each, so analysts don't have to start every investigation by hand. Analysts still review verdicts, can manually investigate any insight that wasn't auto-investigated, and decide on any response.
+
+### Will AI replace SOC analysts?
+
+The SOC Analyst Agent is designed to assist analysts, not replace them. It speeds up triage and investigation, while analysts review verdicts, override them, direct the investigation conversationally, and take any containment actions.
+
+### How does the agent help reduce false positives?
+
+The agent labels each insight as **Malicious**, **Suspicious**, or **Benign** and explains its reasoning, so you can quickly see which insights are likely benign. This helps reduce false-positive noise and keeps your attention on higher-priority insights.
+
+### Does the agent help reduce analyst burnout?
+
+By investigating insights automatically and surfacing a verdict with its reasoning, the agent reduces the time analysts spend on manual triage, so they can focus on investigations that need human judgment.
+
+### What software supports Tier 1 and Tier 2 SOC analysts?
+
+Cloud SIEM gives analysts prioritized insights with correlated entities, and the SOC Analyst Agent adds an AI verdict on each insight. Tier 1 analysts can use the verdict to triage faster, and Tier 2 analysts can continue the investigation in Mobot. Cloud SOAR adds playbook automation for response.
+
+### Does the agent provide contextual alerting?
+
+Cloud SIEM groups related signals for the same entity into insights, so analysts triage one prioritized item instead of many separate alerts. The agent adds a verdict and a summary of the threat based on the triggered signals.
+
 ## Additional resources
 
 * [Sumo Logic | Dojo AI](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
