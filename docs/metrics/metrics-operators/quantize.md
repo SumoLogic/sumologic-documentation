@@ -14,7 +14,7 @@ You can specify:
 
 ## Syntax
 
-```sql
+```metrics
 quantize [to INTERVAL] [using ROLLUP] [drop last]
 ```
 
@@ -39,7 +39,7 @@ In the Metrics Search, you must [switch to advanced mode](/docs/metrics/metrics-
 
 The `quantize` clause in this metric query sets the time bucket size to 5 minutes. Sumo Logic will aggregate the metrics in each time bucket using the default rollup type, `avg`. 
 
-```sql
+```metrics
 _sourceCategory=hostmetrics | quantize to 5m
 ```
 
@@ -47,7 +47,7 @@ _sourceCategory=hostmetrics | quantize to 5m
 
 The `quantize` clause in this metric query sets the time bucket size to 10 minutes, and specifies the `max` rollup type. Sumo Logic will take maximum of the metric values in each 10 minute time bucket and return that value.
 
-```sql
+```metrics
 metric=CPU_User cluster=kafka | quantize to 10m using max
 ```
 
@@ -55,7 +55,7 @@ metric=CPU_User cluster=kafka | quantize to 10m using max
 
 The `quantize` clause in this metric query sets the time bucket size to 10 minutes, and specifies the `max` rollup type. Sumo Logic will take maximum of the metric values in each 10 minute time bucket and return that value. If the last time bucket ends after the end of the query time range, that bucket is dropped.
 
-```sql
+```metrics
 metric=CPU_User cluster=kafka | quantize to 10m using max drop last
 ```
 
@@ -63,6 +63,6 @@ metric=CPU_User cluster=kafka | quantize to 10m using max drop last
 
 In this example we omit the `to INTERVAL` part of the query and let Sumo Logic determine appropriate quantization interval according to [How Sumo Logic chooses rollup table and quantization interval](/docs/metrics/introduction/metric-quantization/#quantization-at-ingestion). `max` rollup type will be used to aggregate the metrics in each time bucket.
 
-```sql
+```metrics
 metric=CPU_User cluster=kafka | quantize using max
 ```

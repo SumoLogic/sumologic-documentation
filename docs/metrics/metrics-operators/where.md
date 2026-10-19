@@ -10,7 +10,7 @@ You can use the `where` operator to filter out either entire time series, or ind
 
 ## Syntax
 
-```sql
+```metrics
 where [VALUE BOOLEAN EXPRESSION | REDUCER BOOLEAN EXPRESSION]
 ```
 
@@ -21,7 +21,7 @@ Where:
 
 To filter by a value condition over a time window, use the extended syntax:
 
-```sql
+```metrics
 where [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] [duration]
 ```
 
@@ -42,13 +42,13 @@ All three of the extended parameters above are required when using the time wind
 
 This query filters out data points that are less than or equal to 5.
 
-```sql
+```metrics
 metric=CPU_Idle | where _value > 5
 ```
 
 This query filters out data points that are less than or equal to the minimum value minus 5.
 
-```sql
+```metrics
 metric=CPU_Idle | where _value > min - 5
 ```
 
@@ -56,18 +56,18 @@ metric=CPU_Idle | where _value > min - 5
 
 This query returns the time series where the average value of its data points is greater than 3.
 
-```sql
+```metrics
 metric=CPU_Idle | where avg > 3
 ```
 
 This query only returns the time series that have only values greater than 3 for any consecutive 5 minutes of the time range.
 
-```sql
+```metrics
 metric=CPU_Idle | where _value > 3 all any 5m
 ```
 
 This query only returns the time series that have at least three data points with values greater than 3 for any consecutive 5 minutes of the time range.
 
-```sql
+```metrics
 metric=CPU_Idle | where _value > 3 atleast 3 any 5m
 ```

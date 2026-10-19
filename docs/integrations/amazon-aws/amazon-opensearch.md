@@ -190,7 +190,7 @@ account=* region=* namespace=aws/es "\"eventsource\":\"es.amazonaws.com\""
 | sort by event_count, event_name asc
 ```
 
-```sql title="Write Latency by Domain Name (Metrics-based)"
+```metrics title="Write Latency by Domain Name (Metrics-based)"
 account=* region=* namespace=aws/es domainname=* !nodeid=* metric=WriteLatency statistic = average | avg by domainname 
 ```
 
@@ -270,7 +270,7 @@ Scope (Specific Data): account=* eventName eventSource "es.amazonaws.com"
 
 #### Create/Update Field Extraction Rule(s) for OpenSearch CloudWatch logs
 
-```sql
+```metrics
 Rule Name: AwsObservabilityOpenSearchCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
