@@ -17,15 +17,21 @@ histogram_quantile(quantile)
 
 ## Examples
 
-```sql
+### Calculate the 99th and 50th quantile
+
+```
 * | histogram_quantile(.99)
 ```
+
+The following query calculates the 50th quantile:
 
 ```sql
 * | histogram_quantile(.5)
 ```
 
-The following PromQL query to measure the 99th quantile of the `apiserver_request_latencies` histogram:
+### Convert a PromQL histogram_quantile query
+
+The following PromQL query measures the 99th quantile of the `apiserver_request_latencies` histogram:
 
 ```sql
 histogram_quantile(0.99, rate(apiserver_request_latencies_bucket{}[5m]))
