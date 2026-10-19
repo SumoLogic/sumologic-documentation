@@ -324,7 +324,7 @@ This sample query is from the **Oracle - Overview** dashboard > **DB Connection*
 
 This sample query is from the **Oracle - Overview** dashboard > **Session Count** panel.
 
-```sql title="Session Count"
+```metrics title="Session Count"
 sumo.datasource=oracle metric=oracledb.sessions.usage  deployment.environment=*  db.cluster.name=* db.node.name=* | sum 
 ```
 

@@ -639,7 +639,7 @@ The following parameters are for an AWS CloudWatch Source.
 |:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See best practices for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices#good-and-bad-source-categories) for details. | modifiable |
 | `sourceType` | String | Yes |  | Polling | not modifiable |
 | `contentType` | String | No |  | AwsCloudWatch | not modifiable |
 | `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds.<br/>Minimum value:  1000 | modifiable |
