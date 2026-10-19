@@ -27,7 +27,7 @@ SOC Recommendation and Response extends the [SOC Analyst Agent](/docs/cse/get-st
 ## Prerequisites
 
 * Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
-* SOC analysts have the necessary Sumo Logic permissions to approve and execute response actions.
+* SOC analysts have the **Manage Integrations** permission, which is required to execute response actions.
 * The Response Agent feature has been enabled for your org by your Sumo Logic representative.
 * For executable actions, the corresponding integration must be installed and configured in Sumo Logic's integrations platform. Contact your Sumo Logic representative for the list of integrations supported in the private preview and the permissions required for each.
 
@@ -39,10 +39,11 @@ Every action requires explicit analyst approval before execution. The agent neve
 
 ### Review recommendations after triage
 
-After the SOC Analyst Agent completes an investigation, recommendations appear in three places:
+After the SOC Analyst Agent completes an investigation, recommendations appear in four places:
 
 * The **Insights** list side panel when you click an insight row.<br/><img src={useBaseUrl('img/cse/soc-rr-side-panel.png')} alt="Insights list side panel showing Recommended Actions with text-only and executable cards" style={{border: '1px solid gray'}} width="700" />
 * The insight's **Overview** tab > **AI Recommended Actions** section (right panel).<br/><img src={useBaseUrl('img/cse/soc-rr-overview-tab.png')} alt="AI Recommended Actions panel on the Overview tab of an insight, showing one text-only card and two cards with Execute buttons" style={{border: '1px solid gray'}} width="700" />
+* The insight's **AI Investigation** tab.<br/><img src={useBaseUrl('img/cse/soc-rr-ai-inv-tab.png')} alt="AI Investigation tab of an insight showing the AI Verdict, the What Happened summary, and Recommended Actions with Execute buttons" style={{border: '1px solid gray'}} width="700" />
 * In Mobot, when you open the investigation, they appear inline under the **Assessment** heading.<br/><img src={useBaseUrl('img/cse/soc-rr-mobot-assessment.png')} alt="Mobot Assessment section showing the agent verdict and two recommendation cards below it" style={{border: '1px solid gray'}} width="700" />
 
 ### Execute a recommended action
@@ -51,7 +52,7 @@ After the SOC Analyst Agent completes an investigation, recommendations appear i
 1. Review the **Reasoning** and edit the **Payload** (JSON) if needed.
 1. Click **Confirm**.
 
-The system records your approval with your analyst identity and a timestamp. Execution runs asynchronously; results feed back into the agent so follow-up questions in Mobot reflect what was done.
+The system records your approval with your analyst identity and a timestamp. Execution runs synchronously; results feed back into the agent so follow-up questions in Mobot reflect what was done.
 
 When execution completes, the card shows a green **Executed** badge. If an action fails, it shows a red **Failed** badge with an inline error message.
 
@@ -60,32 +61,6 @@ When execution completes, the card shows a green **Executed** badge. If an actio
 ### Use investigation context with recommendations
 
 If you investigate an insight in Mobot before acting, recommendations update as Mobot uncovers additional context. The UI indicates when recommendations are informed by investigation findings.
-
-### View the audit trail
-
-To review all response activity for an insight, click **View Audit Trail** from the insight's details page. The audit trail includes:
-
-* Analyst identity (username)
-* Insight ID and triage verdict
-* Each recommended action and rationale
-* Modifications made by the analyst
-* Approval timestamp
-* Validation results
-* Execution start and end timestamps
-* Execution results and verification evidence
-* Any errors or failures
-* External systems accessed
-
-Audit records are immutable, retained for at least one year, and exportable as CSV or JSON for compliance reporting. Audit logs are also accessible via the Sumo Logic API for SIEM ingestion.
-
-```sql
-_index=sumologic_audit_events _sourceCategory=dojo
-| where eventName = "ResponseAgentAction"
-```
-
-### Provide feedback
-
-After an action executes, a **Was this response appropriate?** prompt appears. Use the thumbs-up or thumbs-down buttons to rate the recommendation and optionally add a comment. For broader feedback, reach out to your Sumo Logic representative or the preview program contact in your onboarding materials.
 
 ## Known limitations
 
