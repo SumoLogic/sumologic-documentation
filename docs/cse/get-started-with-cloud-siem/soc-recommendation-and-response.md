@@ -27,7 +27,7 @@ SOC Recommendation and Response extends the [SOC Analyst Agent](/docs/cse/get-st
 ## Prerequisites
 
 * Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
-* SOC analysts have the **Manage Integrations** permission, which is required to execute response actions.
+* SOC analysts have a role with the **Manage Integrations** [role capability](/docs/manage/users-roles/roles/role-capabilities/#automation-service), which is required to execute response actions.
 * The Response Agent feature has been enabled for your org by your Sumo Logic representative.
 * For executable actions, the corresponding integration must be installed and configured in Sumo Logic's integrations platform. Contact your Sumo Logic representative for the list of integrations supported in the private preview and the permissions required for each.
 
