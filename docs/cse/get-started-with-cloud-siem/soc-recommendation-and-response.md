@@ -70,7 +70,6 @@ The following capabilities are not available in the private preview:
 * **Multi-action plans**. Execute actions individually; coordinated multi-action plans are not yet supported.
 * **Playbook recommendations**. Customer-created playbooks are not suggested alongside recommended actions.
 * **Autonomous execution**. All actions require explicit analyst approval. Fully autonomous execution is planned for a future phase.
-* **Network segmentation**. Moving compromised systems to a quarantine VLAN is not supported.
 * **Automated rollback**. Reversal of executed actions requires manual steps.
 
 ## Additional resources
