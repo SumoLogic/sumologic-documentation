@@ -65,7 +65,9 @@ See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
 ### Root Cause Agent
 
-The Root Cause Agent automates the first stage of incident investigation for DevOps and SRE teams. When an alert fires, the agent gathers relevant telemetry, tests possible explanations, and follows signals across your logs and metrics — returning a structured result with a verdict, key findings, supporting evidence, and a recommended next step. Each finding links to the query that produced it, so you can verify the agent's reasoning in one click. From the investigation, you can continue digging conversationally in Mobot with full context already loaded.
+The Root Cause Agent investigates alerts. It gathers telemetry, follows signals across logs and metrics, and returns a verdict, findings, supporting evidence, and a recommended next step. Each finding links to the query that produced it, so you can run it in search and verify the result. You can continue the investigation in Mobot.
+
+Investigations start when an alert matches a trigger you configure, or you can start one on demand. The agent can also investigate alerts that come from outside Sumo Logic.
 
 :::note
 The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Contact your Sumo Logic account representative for access.
@@ -73,9 +75,9 @@ The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Conta
 
 ### DojoAI Credits
 
-DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage. It replaces per-user daily prompt caps, so your whole team can use AI assistance without hitting individual limits. Credits are drawn down by Mobot prompts and SOC Analyst Agent investigated insights. Usage alerts notify your team at 80%, 90%, and 100% consumption, and agents stay active rather than shutting off if you exceed your monthly allocation.
+DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts and SOC Analyst Agent investigated insights use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
 
-To learn more or size a pool for your organization, contact your Sumo Logic account team.
+You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
 
 ### SOC Analyst Agent
 
@@ -163,7 +165,7 @@ AI features are on by default. We offer two methods for opting out:
 
 ### What is the Feature Management page?
 
-**Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission. DojoAI Credits usage and pool sizing are managed through your Sumo Logic account team, not through Feature Management.
+**Feature Management** (**Administration** > **Feature Management**) is where administrators enable or disable Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
