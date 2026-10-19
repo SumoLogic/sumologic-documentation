@@ -7,6 +7,10 @@ description: You can adjust the time range for searches and metrics to get the i
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::note
+This page covers how to set the time period a search looks at. By default, that period is measured against message time. To measure it against a different timestamp field instead, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) or [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time).
+:::
+
 To set the time range for searches or metrics visualizations, click the time area.
 
 <img src={useBaseUrl('img/reuse/query-search/time-range-cropped.png')} alt="Time range cropped" style={{border: '1px solid gray'}} width="300" />
@@ -19,11 +23,8 @@ The current time range is displayed, along with the following options to set the
 
 #### Display details
 
+* Time ranges use either the default timezone set in your web browser, or the [Default Timezone](../../../get-started/account-settings-preferences.md) setting on the **Preferences** page, if you have set it.
 * The timezone offset is displayed in the time range selector pop-up dialog. For example, in the previous screenshot, +1100 is added to display the offset for Australia, including DST.
 * The timezone offset is also displayed in the **Time** column of the **Messages** tab in search results.
 
 For the syntax rules for typing relative and absolute time range expressions directly into the time range field, see [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions).
-
-:::note
-This page covers how to set the time period a search looks at. By default, that period is measured against message time. To measure it against a different timestamp field instead, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) or [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time).
-:::

@@ -8,11 +8,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When you are building a search query, you have the option to add a time range expression in the time range field.
 
-The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
+The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6:30 PM will run as 6:15:00.000 to 6:29:59.999.
 
 ## General rules
 
-* When entering hours, you can use a 24-hour format, such as 17:32:00, or a 12-hour format, such as 5:32pm.
+* When entering hours, you can use a 24-hour format, such as 17:32:00, or a 12-hour format, such as 5:32 PM.
 * To enter dates, always use a slash (`/`) between month, day, and year in this format: mm/dd/yyyy. Sumo Logic does not support dates entered in yyyy/mm/dd notation or yy/mm/dd notation.
 * The Custom time range picker's quick-adjust control uses its own abbreviations: `h`=hours, `d`=days, `w`=weeks, `m`=months. This is a different scale than the [relative expression](#relative-time-range-expressions) shorthand below, where `m` means minute.
 * Time range options can vary depending on the type of account your organization has. Sumo Logic Free accounts allow time ranges up to seven days.
@@ -62,7 +62,7 @@ The table below contains examples of relative time-range expressions. 
 
 While relative expressions are useful, sometimes it is more important to express a specific point in time. If only one time expression is present, it is interpreted as the start time, and the end time is automatically set to "now". If two expressions are present, the first one is interpreted as the start time, the second is interpreted as the end time. If only a date is entered, the time value is implied to be midnight. Again, the token "now" represents the  current time. If no year is present in an absolute time expression, the current year is assumed.
 
-To avoid indeterminate values, always enter the year in the format YYYY.
+To avoid indeterminate values, always enter the year in the format yyyy.
 
 There are many different ways to combine year, month, and days in an absolute time range expression. Search time ranges use either the default **date format** set in your web browser or the [Date Format](../../../get-started/account-settings-preferences.md) setting on the **Preferences** page, if you have set it.
 
@@ -74,14 +74,14 @@ The table below contains examples of absolute time-range expressions. 
 
 | Absolute Expression | Definition |
 | :-- | :-- |
-| 04/01 | From the most recent April 1st to now. |
-| 04/01/2017 20:32:00 to 04/01/2017 20:35:00 | From April 1st, 2017 at 8:32 PM until April 1st, 2017 at 8:35 PM. |
-| 04/01 04/02 | From midnight April 1st to midnight April 2nd of the current year. |
-| 04/01/2017 00:00:00 to 04/02/2017 | From midnight April 1st, 2014 to midnight April 2nd, 2017. |
-| 04/01/2017 | From midnight April 1st, 2017 to now. |
-| 04/01/2017 04/02/2017 | From midnight April 1st, 2017 to midnight April 2nd, 2017. |
+| 04/01 | From the most recent April 1 to now. |
+| 04/01/2017 20:32:00 to 04/01/2017 20:35:00 | From April 1, 2017 at 8:32 PM until April 1, 2017 at 8:35 PM. |
+| 04/01 04/02 | From midnight April 1 to midnight April 2 of the current year. |
+| 04/01/2017 00:00:00 to 04/02/2017 | From midnight April 1, 2017 to midnight April 2, 2017. |
+| 04/01/2017 | From midnight April 1, 2017 to now. |
+| 04/01/2017 04/02/2017 | From midnight April 1, 2017 to midnight April 2, 2017. |
 
-## Additional resources
+## See also
 
 - [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). Use the Relative, Custom, and Recent time range picker in the Search UI instead of typing an expression.
 - [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) or [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time). Change which timestamp field a search's time range applies to, instead of the default message time.
