@@ -13,7 +13,7 @@ The following tables provide a list of available Sumo Logic parsers, aggregator
 
 ## Parsing
 
-Sumo provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
+Sumo Logic provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
 
 <table>
   <tr>
@@ -406,14 +406,14 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td>[logreduce keys](/docs/search/behavior-insights/logreduce/logreduce-keys)</td>
-   <td>The logreduce keys operator allows you to quickly explore JSON or key-value formatted logs by schemas.</td>
+   <td>The LogReduce Keys operator allows you to quickly explore JSON or key-value formatted logs by schemas.</td>
    <td>_signature_id<br/>_schema<br/>_count</td>
    <td></td>
    <td><code>_sourcecategory="Labs/AWS/GuardDuty_V8"<br/>| json keys "region", "partition", "resource"<br/>| logreduce keys field=resource</code></td>
   </tr>
   <tr>
    <td>[logreduce values](/docs/search/behavior-insights/logreduce/logreduce-values)</td>
-   <td>The logreduce values operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
+   <td>The LogReduce Values operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_cluster_id<br/>_signature<br/>_count</td>
    <td></td>
    <td><code>_sourceCategory= *cloudtrail* errorCode<br/>| json field=_raw "eventSource" as eventSource<br/>| json field=_raw "eventName" as eventName<br/>| json field=_raw "errorCode" as errorCode<br/>| logreduce values on eventSource, eventName, errorCode</code></td>

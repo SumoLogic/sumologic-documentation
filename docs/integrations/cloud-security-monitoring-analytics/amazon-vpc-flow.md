@@ -138,7 +138,7 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 4. Click **Next**.
 5. Select **JSON** for **Log Format**.
 6. Click **Next**.
-7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo.
+7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo Logic.
 
 
 ## Collect Amazon VPC Flow Logs Using an Amazon S3 Source

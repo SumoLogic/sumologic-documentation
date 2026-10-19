@@ -143,7 +143,7 @@ The content of the Facets panel is affected by your current active filters and t
 
 ### Aggregates tab
 
-The **Aggregates** tab shows your data charted. See Panels from Dashboard for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
+The **Aggregates** tab shows your data charted. See [Panels](/docs/dashboards/panels) for details on the settings. However, note that not all settings will be available on the Spans page. The interface will only show you available settings.
 
 <img src={useBaseUrl('img/apm/spans-aggregates-visualize.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
