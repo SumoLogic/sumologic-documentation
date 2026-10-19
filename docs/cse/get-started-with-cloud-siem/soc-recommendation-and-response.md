@@ -52,7 +52,7 @@ After the SOC Analyst Agent completes an investigation, recommendations appear i
 1. Review the **Reasoning** and edit the **Payload** (JSON) if needed.
 1. Click **Confirm**.
 
-The system records your approval with your analyst identity and a timestamp. Execution runs synchronously; results feed back into the agent so follow-up questions in Mobot reflect what was done.
+The system records your approval with your analyst identity and a timestamp. Execution runs synchronously. For further analysis, you can converse with Mobot.
 
 When execution completes, the card shows a green **Executed** badge. If an action fails, it shows a red **Failed** badge with an inline error message.
 
