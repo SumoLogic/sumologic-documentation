@@ -224,7 +224,7 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 ### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst Agent is part of the [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks such as MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts with an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface, to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks such as MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts with an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface, to map relationships, connect entities, and summarize findings.
 
 ### Will the agent increase scanning or data-processing costs?
 

@@ -574,7 +574,7 @@ No. All processing happens within your region's cluster. RAG context is scoped t
 
 ### Does a fourth party have access to Mobot customer data?
 
-No. Mobot uses foundation models securely hosted through Amazon Bedrock. See our [AI and Machine Learning FAQ](/docs/get-started/ai-machine-learning/#does-any-third-party-have-access-to-dojo-ai-customer-data) for more information.
+No. Mobot uses foundation models securely hosted through Amazon Bedrock. See our [AI and Machine Learning FAQ](/docs/get-started/ai-machine-learning/#does-any-third-party-have-access-to-dojoai-customer-data) for more information.
 
 ### Does Mobot use any open-source libraries, GenAI providers, or cloud providers?
 
@@ -633,7 +633,7 @@ Mobot shares a single **AI features** toggle with Parse Assist — turning it of
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
-<MSSPfeatureMgmt/> 
+<MSSPfeatureMgmt/>
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 

@@ -142,10 +142,35 @@ export const features3 = [
     ),
     link: 'https://www.sumologic.com/solutions/dojo-ai',
   },
+  {
+    title: translate({
+      id: 'landing.feature.soc-analyst-agent.title',
+      message: 'SOC Analyst Agent',
+      description: 'Title for SOC Analyst Agent',
+    }),
+    imageUrl: 'img/icons/security/soc-analyst-agent-icon.png',
+    description: (<Translate
+      id='landing.feature.soc-analyst-agent.desc'
+      description='SOC Analyst Agent description'>
+      Automatically investigate Cloud SIEM insights and get an AI verdict with supporting evidence.
+    </Translate>),
+    link: 'docs/cse/get-started-with-cloud-siem/soc-analyst-agent',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.mcp-server.title',
+      message: 'MCP Server',
+      description: 'Title for MCP Server',
+    }),
+    imageUrl: 'img/icons/operations/mcp-server.png',
+    description: (<Translate
+      id='landing.feature.mcp-server.desc'
+      description='MCP Server description'>
+      Connect external AI tools to Sumo Logic to query logs, investigate insights, and manage alerts and dashboards.
+    </Translate>),
+    link: 'docs/api/mcp-server',
+  },
 ];
-
-// After it goes GA: docs/cse/get-started-with-cloud-siem/soc-analyst-agent
-// After it goes GA: mcp-server
 
 // Tab 4: Observability
 export const features4 = [

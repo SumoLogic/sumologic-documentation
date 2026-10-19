@@ -128,7 +128,7 @@ Some limits are not tied to the preview phase:
 
 ### What is the Sumo Logic Root Cause Agent?
 
-The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojo-ai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface.
+The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface.
 
 ### How is this different from asking a chat assistant about my alerts?
 
