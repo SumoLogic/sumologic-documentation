@@ -27,6 +27,29 @@ Layered Next-Gen Security for physical, virtual, and cloud environments provided
 * **Policy Details** (*Enrichment*) - Get details of specific policy.
 * **Remove From Blocklist** (*Containment*) - Remove file hashes from Blocklist.
 
+## Permissions
+
+The following Bitdefender GravityZone permissions are required depending on the actions you want to use:
+
+* **Reports**
+    * Create Report
+    * Delete Report
+* **Policies**
+    * List Policies
+    * Policy Details
+* **Network**
+    * Get Endpoint List
+    * Get Scan List
+    * Create Scan Task
+* **Companies**
+    * List Companies
+* **Quarantine**
+    * Add File To Quarantine
+* **Incidents**
+    * List Blocklist Items
+    * Add To Blocklist
+    * Remove From Blocklist
+
 ## Configure Bitdefender GravityZone in Automation Service and Cloud SOAR
 
 import IntegrationsAuth from '../../../../reuse/integrations-authentication.md';
@@ -52,6 +75,8 @@ For information about Bitdefender GravityZone, see [GravityZone documentation](h
 
 ## Change Log
 
-* January 22, 2021 - First upload
-* July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
-* April 27, 2026 (v1.2) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.2 | April 27, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| v1.1 | July 6, 2023 | Updated the integration with Environmental Variables. |
+| | January 22, 2021 | Initial release of the Bitdefender GravityZone integration. |

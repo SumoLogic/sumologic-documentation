@@ -2,7 +2,7 @@
 id: cato-networks-source
 title: Cato Networks Source
 sidebar_label: Cato Networks
-tags:
+keywords:
     - cato-networks
 description: Learn how to configure the Cato Networks Source Cloud-to-Cloud connector for Sumo Logic.
 ---

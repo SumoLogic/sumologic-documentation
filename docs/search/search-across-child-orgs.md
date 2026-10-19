@@ -37,6 +37,10 @@ There can be two possible errors while running the multi-child org queries:
 - By default, new users (email format: `<username>+parent-api-user-<orgID>@<domain>`) will be created with **Administrator** role. To manage a parent org user’s access within a child org, the child org administrator can modify the parent org user role and RBAC (role-based access control) configurations in the child org.
 :::
 
+:::note
+You can also run MSSP log searches programmatically using the `childOrgIds` and `includeAllChildOrgs` parameters of the [Search Job Management API](/docs/api/search-job/#search-job-management-api), instead of using the Search UI.
+:::
+
 Enable **Auto Parse Mode** to allow automatic field extraction from your JSON log messages when you run a search. For more details, refer to the [Dynamic Parsing](/docs/search/get-started-with-search/build-search/dynamic-parsing/).
 
 For more information about the Log Search, refer to [Search Basics](/docs/search/get-started-with-search/search-basics/).

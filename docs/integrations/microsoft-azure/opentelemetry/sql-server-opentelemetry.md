@@ -95,7 +95,7 @@ If you want to use an existing OTel Collector, then this step can be skipped by 
 
 If you want to create a new Collector, select the **Add a new Collector** option.
 
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
+Select the platform for which you want to install the Sumo Logic OpenTelemetry Collector.
 
 This will generate a command you can execute on the machine that you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector agent.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 

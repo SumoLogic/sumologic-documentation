@@ -45,7 +45,7 @@ In your search query, you'll see that we have separated out important terms in a
 |:--|:--|
 | Blue | Boolean operators (and, or, not) |
 | Red | Quoted string |
-| Purple | Sumo first operators (parse, nodrop, etc.) and secondary operators (row, column) |
+| Purple | Sumo Logic first operators (parse, nodrop, etc.) and secondary operators (row, column) |
 | Green | Specific numeric values |
 
 ## Guide contents

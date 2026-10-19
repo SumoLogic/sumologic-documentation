@@ -6,6 +6,8 @@ This file is the canonical source of context and guardrails for AI coding agents
 Open-source Sumo Logic documentation site built with Docusaurus 3.
 Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic style guide.
 
+This repo takes contributions from both Sumo Logic employees and external community contributors (see [docs/contributing](https://www.sumologic.com/help/docs/contributing) for the fork-and-PR workflow external contributors follow). Most of this file — the skills, directory conventions, frontmatter rules, and slash commands below — works the same for anyone with the repo cloned and Claude Code installed. The exception is anything under **Jira Rules** and the Jira-specific steps in **Pull Requests**: those require internal Sumo Logic Atlassian access, so external contributors should skip them and follow the plain PR steps in docs/contributing instead.
+
 ## Repository
 @https://github.com/SumoLogic/sumologic-documentation
 
@@ -22,6 +24,20 @@ Docs live in /docs, written in Markdown. Contributions follow the Sumo Logic sty
 When reviewing any PR or doc, always check existing docs of the same type in the same directory before flagging issues. A pattern consistent with neighboring docs is not a bug — it is the established convention. Only flag it if it's a deviation from the pattern or a net-new problem introduced by the PR.
 
 Some directories have conventions that differ significantly from standard docs. For example, `docs/platform-services/automation-service/app-central/integrations/` intentionally uses `description: ''`, omits `id`, opens with a logo image, and includes a `***Version / Updated***` block — all correct for that directory. When in doubt, read two or three neighboring files before forming an opinion.
+
+## Output tone (comments)
+
+A comment Claude posts should read as though a person wrote it. This section governs the prose in GitHub PR comments, GitHub issue comments, and Jira ticket comments.
+
+**Run the `humanizer` skill on the draft of every comment before posting it.** Use the skill's embedded mode, which returns only the final text. It rewrites the patterns that mark prose as machine-written, keeps the meaning, and leaves code, commands, paths, and link targets alone. This is not a manual step to be requested; it applies to every comment.
+
+The following hold whether or not the skill runs:
+
+- **No em dashes.** Rewrite with a period, semicolon, colon, commas, or parentheses.
+- **Be concise.** Lead with the point. No throat-clearing preambles, no filler ("simply", "just", "of course", "it's worth noting"), no sentences that restate what was just said.
+- **Plain language.** Short sentences, one idea each. When two phrasings say the same thing, use the shorter one.
+
+**On a PR, use inline comments whenever possible.** Attach each point to the line or file it refers to instead of collecting everything in one top-level comment. Reserve a single summary comment for feedback that is not tied to a specific line, such as overall scope or a concern that spans several files.
 
 ## Bulk Changes
 For any change touching 50+ files (e.g. terminology migrations, frontmatter audits, link updates, admonition format changes), follow these rules:
@@ -83,8 +99,8 @@ Before pushing any commit that changes docs content:
 2. Tell the user to confirm the changes appear correctly on the site
 3. Wait for explicit approval before pushing
 
-## Jira Rules
-**CRITICAL**: All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`.
+## Jira Rules (Sumo Logic internal — requires Atlassian access)
+**CRITICAL**: All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`. This section applies to Sumo Logic employees only — external contributors don't have access to the internal Jira instance and should skip it.
 
 ### Field Requirements
 - **Assignee**: Do not set manually — Jira Automation assigns based on Technical Area.
@@ -94,13 +110,14 @@ Before pushing any commit that changes docs content:
   - MUST be populated when creating or updating tickets that touch existing articles
   - Use full production URL (e.g., `https://www.sumologic.com/help/docs/get-started/training-certification-faq`)
 - **GitHub PR link** (`customfield_10466`): After creating a PR, automatically update this field with the PR URL
-- **Description**: Always use `contentFormat: markdown`
+- **Description**: Use `contentFormat: markdown` for text-only fields. Switch to `contentFormat: adf` when the field contains, or should keep, anything markdown cannot represent: attached images and other media nodes, panels, expand/collapse blocks, status lozenges, `@` mentions, date nodes, or column layouts. Jira Cloud stores rich text as ADF, and markdown is a lossy conversion layer over it, so **rewriting a description as markdown silently deletes those nodes**. On read, a media node comes back as a `![](blob:https://media.staging.atl-paas.net/...)` placeholder that is not a usable image source; writing that back destroys the attachment. Fetch the field as ADF first when you are unsure what it contains.
 
 ### Workflow Requirements
 - **Creating tickets**: Use one of three approaches — a user-provided description, analysis of the code changes being made, or the file paths touched. (Claude Code: see `.claude/commands/jira.md` for the concrete pattern and Technical Area mappings.)
 - **Titles**: Sentence case, action verb, specific, under 10 words
 - **Descriptions**: Benefit-driven, active voice, under 150 words unless complex, markdown format
-- **Comment attribution**: Always append `— via Claude Code` to any comment posted to a Jira ticket
+- **Comment attribution**: Never append Claude attribution to a Jira comment. Do not add `— via Claude Code` or any similar marker. This is enforced by a PreToolUse hook (see [GitHub Rules](#github-rules) for details), and the same rule covers GitHub and Slack.
+- **Comment format**: Jira comments are stored as ADF, and `contentFormat: markdown` is a lossy conversion layer over it. Markdown is fine for plain prose, which covers most comments. Use `contentFormat: adf` when the comment needs something markdown cannot express: an `@` mention, an image, or a panel. This matters most for mentions, since a markdown `@Name` posts as literal text and notifies nobody; a real mention is an ADF node carrying an account ID.
 - **Status transitions**: Use workflow states: Backlog → To Do → In Progress → Blocked → In Review → On Hold → Published → Closed
 
 ### Publishing Checklist
@@ -111,6 +128,7 @@ Before transitioning any ticket to Published:
 
 ## GitHub Rules
 - **Assignee**: Assign any new PR to the current user unless otherwise specified
+- **Comment attribution**: Never append Claude attribution to a comment. Do not add `— via Claude Code` or any similar marker. This covers GitHub PR review comments, GitHub PR issue comments, Jira ticket comments (see [Jira Rules](#jira-rules-sumo-logic-internal--requires-atlassian-access)), and Slack messages. A PreToolUse hook (`.claude/hooks/forbid-claude-attribution.sh`, wired up in `.claude/settings.json`) blocks any call carrying the marker, so compliance does not depend on remembering the rule.
 
 ## Search, crawlers, and LLM-facing files
 Three pieces work together and should be kept in sync when touching any of them:
@@ -130,8 +148,8 @@ If you change the `/help/llm/` URL structure or add new machine-readable mirror 
 
 The sections below apply only to Claude Code. Other agents can ignore them.
 
-### Jira Commands
-All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`, including the three-approach ticket-creation pattern and Technical Area mappings.
+### Jira Commands (Sumo Logic internal)
+All Jira operations MUST follow the patterns defined in `.claude/commands/jira.md`, including the three-approach ticket-creation pattern and Technical Area mappings. Requires internal Atlassian access — not available to external contributors.
 
 ### Slash Commands
 Primary commands for documentation work. Proactively suggest when context fits — don't wait for the user to ask.
@@ -140,6 +158,7 @@ Primary commands for documentation work. Proactively suggest when context fits �
 **Release notes:** `/release-note-service`, `/release-note-collector`, `/release-note-cse`, `/release-note-csoar`, `/release-note-developer`
 **Quality:** `/audit-doc`, `/seo-audit`, `/geo-optimize`
 **Workflow:** `/jira`, `/docs-pr-reviewer`
+**Staging:** `/stage-deploy`, `/stage-teardown`, `/review-deploy`, `/review-teardown`
 
 **When to proactively suggest:**
 - User mentions a Jira ticket → suggest `/doc-from-jira`
@@ -147,6 +166,7 @@ Primary commands for documentation work. Proactively suggest when context fits �
 - Doc needs discoverability improvements → suggest `/geo-optimize`
 - User asks about doc quality → suggest `/audit-doc` and `/seo-audit` together
 - An SME/stakeholder without a local dev environment wants to apply their own edit to an existing PR (not just view or approve it — those happen directly on the PR's staging link and GitHub page) → suggest `/docs-pr-reviewer`
+- A PR needs a live preview before merge → suggest `/stage-deploy` for UX/UI or feature work, `/review-deploy` for quick article-level review
 
 **Creating docs**
 
@@ -193,6 +213,15 @@ Primary commands for documentation work. Proactively suggest when context fits �
 | Command | What it does |
 |---------|-------------|
 | `/docs-pr-reviewer` | Apply an SME's self-serve edit to an already-open PR (no local env needed) |
+
+**Staging**
+
+| Command | What it does |
+|---------|-------------|
+| `/stage-deploy` | Deploy a PR to the `helpdocs` staging site, for UX/UI and feature-level previews |
+| `/stage-teardown` | Delete a staging branch and free the `helpdocs` slot |
+| `/review-deploy` | Deploy a PR to the `docs-review` site, for quick article-level review |
+| `/review-teardown` | Delete a review branch and free the `docs-review` slot |
 
 ### Which audit command to use
 

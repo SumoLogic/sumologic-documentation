@@ -60,6 +60,10 @@ AI Parse Assist automatically generates a parse statement from the text you sele
 1. The **AI Parse Assistant** pop-up appears, showing the AI-generated parse statement and the suggested field name and value extracted from your selected text.<br/><img src={useBaseUrl('img/search/searchquerylanguage/parse-operators/anchor/ai-parse-text-pop-up.png')} alt="AI Parse Assistant pop-up showing a suggested parse field with Cancel and Accept buttons." style={{border: '1px solid gray'}} width="800" />
 1. Review the suggested field. Click **Accept** to add the parse statement to your query, or **Cancel** to dismiss.
 
+:::note
+AI Parse Assist is one of several AI-assisted search capabilities. For how it differs from search autocomplete and Mobot, see [Related AI-assisted search features](/docs/search/get-started-with-search/search-basics/search-autocomplete#related-ai-assisted-search-features).
+:::
+
 #### AI Parse Assist limitations
 
 * Works only on the raw log message (the **Messages** column). It does not work on parsed fields or JSON key/value sub-menus.

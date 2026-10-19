@@ -81,5 +81,7 @@ SIEM
 
 ## Change Log
 
-* March 12, 2026 - First Upload
-* April 30, 2026 (v1.1) - Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance.
+| Version | Date | Description |
+|:--|:--|:--|
+| v1.1 | April 30, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
+| | March 12, 2026 | Initial release of the Sumo Logic Cloud Monitor integration. |
