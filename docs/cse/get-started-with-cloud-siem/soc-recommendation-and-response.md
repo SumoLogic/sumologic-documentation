@@ -75,4 +75,4 @@ The following capabilities are not available in the private preview:
 ## Additional resources
 
 * [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/). Learn about the triage and investigation capabilities that the Response Agent builds on.
-* [Sumo Logic | Dojo AI](https://www.sumologic.com/blog/dojo-ai/). Learn about Dojo AI, Sumo Logic's multi-agent AI platform.
+* [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai/). Learn about DojoAI, Sumo Logic's multi-agent AI platform.
