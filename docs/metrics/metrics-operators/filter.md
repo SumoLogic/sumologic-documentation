@@ -57,7 +57,7 @@ filter _value [VALUE BOOLEAN EXPRESSION] [all | atleast n] [first | any | last] 
 
 Where:
 
-* `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example, `> 3`
+* `[VALUE BOOLEAN EXPRESSION]` is a value expression that operates on individual data points of a time series. For example, `> 3`.
 * Use `all` to specify that all data points within the duration must meet the value condition, or `atleast n`, where `n` is a count, to specify how many data points must meet the value condition.
 * Use `first`, `any`, or `last` to specify what part of the time range that duration applies to: the start of the time range, any part of the time range, or the end of the time range.
 * Use `duration` to specify the length of time to consider in the query in minutes (m), hours (h), or days (d). For example, `5m`, `6h`, or `1d`.
