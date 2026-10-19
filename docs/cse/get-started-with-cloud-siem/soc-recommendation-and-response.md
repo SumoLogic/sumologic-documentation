@@ -67,7 +67,6 @@ If you investigate an insight in Mobot before acting, recommendations update as 
 The following capabilities are not available in the private preview:
 
 * **Recommending uninstalled integrations**. Uninstalled integrations appear as text-only suggestions; the agent will not guide you through installation.
-* **Send to ticket / Add to tasks**. Routing a recommendation to an external ticket or the insight's Tasks tab is not yet available.
 * **Multi-action plans**. Execute actions individually; coordinated multi-action plans are not yet supported.
 * **Playbook recommendations**. Customer-created playbooks are not suggested alongside recommended actions.
 * **Remediation actions**. Post-containment remediation (for example, deleting malware files, restoring from backup) is not supported in this release.
