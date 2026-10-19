@@ -17,9 +17,9 @@ The Sumo Logic app for Docker ULM is a unified logs and metrics app that allows 
 
 ## Log and metric types
 
-Sumo’s Docker Logs source and Docker Stats source use the Docker Engine API to gather the following data from Docker:
+Sumo Logic’s Docker Logs source and Docker Stats source use the Docker Engine API to gather the following data from Docker:
 
-* **Docker container logs**. Sumo Logic’s Docker Logs source collects container logs. For information about the API Sumo uses to collect logs, see the [https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs](https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs) in Docker help.
+* **Docker container logs**. Sumo Logic’s Docker Logs source collects container logs. For information about the API Sumo Logic uses to collect logs, see the [https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs](https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs) in Docker help.
 * **Docker engine events**. Sumo Logic’s Docker Log source collect Docker events. For information about Docker events, see [https://docs.docker.com/engine/api/v1.37/#operation/SystemPing](https://docs.docker.com/engine/api/v1.37/#operation/SystemPing) in Docker help.
 * **Docker container stats**. Sumo Logic’s Docker Stats source collects stats. For information about Docker stats, see [https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats](https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats) in Docker help.
 
@@ -41,7 +41,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 ### Docker Source Recommendations
 
-* We recommend running the Sumo collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see [https://hub.docker.com/r/sumologic/collector/](https://hub.docker.com/r/sumologic/collector/).
+* We recommend running the Sumo Logic collector on the same host where you run Docker. You can deploy the collector as a Docker container. For more information, see [https://hub.docker.com/r/sumologic/collector/](https://hub.docker.com/r/sumologic/collector/).
 * The Sumo Logic Collector uses the Docker Remote API to collect Docker logs. This requires that the log driver configured on the container uses either the `json-file` or `journald` option, as described in [https://docs.docker.com/engine/admin/logging/overview/](https://docs.docker.com/engine/admin/logging/overview/).
 * If you're using Kubernetes, we recommend using an open source [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection). To learn more, see [Kubernetes Observability](/docs/observability/kubernetes).
 * The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/reference-information/time-reference) and the Source is configured to detect it properly. If there are issues with timestamp detection and the Docker container is restarted, the Source will reingest all log data since there are no timestamps to track.

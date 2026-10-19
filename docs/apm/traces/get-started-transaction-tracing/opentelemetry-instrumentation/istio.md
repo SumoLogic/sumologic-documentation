@@ -41,7 +41,7 @@ OpenCensus agent by default uses **W3C** context propagation same as OpenTelemet
 
 ### Zipkin exporter
 
-Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.zipkin.address=` to the URL of Sumo
+Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.zipkin.address=` to the URL of Sumo Logic
 receiving collector:
 
 * For [*Kubernetes collectors*](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):

@@ -43,7 +43,7 @@ Check out this brief tutorial on how to submit a basic change to our docs.
 <Iframe url="https://fast.wistia.net/embed/iframe/83p9f6qa6n?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Tutorial: Contributing to Sumo Docs: Simple Edits Video"
+  title="Tutorial: Contributing to Sumo Logic Docs: Simple Edits Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
@@ -68,7 +68,7 @@ This will fork and submit changes to the Docs Team for review.
 
 ## Edit a doc
 
-### Step 1: Fork the Sumo Docs repository
+### Step 1: Fork the Sumo Logic Docs repository
 
 import ForkRepo from '../reuse/contributing/fork-repo.md';
 
@@ -92,7 +92,7 @@ To submit more extensive edits, such as creating a new doc, we recommend forking
 
 Feel free to [reach out to the Sumo Logic Docs Team](#contact-us) to discuss. We're happy to work with you on the project and talk through rewriting content, changing flow, adding a new topic or section, and deprecating content.
 
-### Step 1: Fork the Sumo Docs repository
+### Step 1: Fork the Sumo Logic Docs repository
 
 <ForkRepo/>
 

@@ -63,7 +63,7 @@ getsockopt: connection refused"}
 
 ## Collecting Metrics and Logs for the Kubernetes app
 
-This section contains instructions for collecting logs and metrics for the Sumo App for Kubernetes.
+This section contains instructions for collecting logs and metrics for the Sumo Logic App for Kubernetes.
 
 :::note Prerequisites  
 Set the following fields in the Sumo Logic UI before configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards.

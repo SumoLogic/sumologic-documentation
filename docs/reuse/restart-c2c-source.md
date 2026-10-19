@@ -14,7 +14,7 @@ To restart your source in the Sumo Logic platform, follow the steps below:
 
 #### API
 
-To restart your source using the Sumo Management API, follow the instructions below:
+To restart your source using the Sumo Logic Management API, follow the instructions below:
 * Method: `POST`
 * Example endpoint:
   ```
