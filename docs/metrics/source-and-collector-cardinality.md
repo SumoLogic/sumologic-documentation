@@ -12,7 +12,7 @@ To address this, you can now run a query to identify total cardinality and cardi
 
 Use the query below to determine the cardinality associated with sources for a specific collector.
 
-```sql
+```metrics
 _view=sumologic_volume _sourceCategory=cardinalityPerSourceCollector
 | parse regex "bucket:\s+(?<bucket>[^,\s]+), totalCardinality: (?<totalCardinality>\d+)"
 | parse regex "(?<collectorName>[^;\s]+);(?<sourceName>[^:]+?):(?<sourceCardinality>\d+)" multi nodrop

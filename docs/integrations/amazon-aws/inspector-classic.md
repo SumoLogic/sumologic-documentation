@@ -71,7 +71,7 @@ For more information on Amazon Inspector notifications, see:
 
 ## Collecting data for the Amazon Inspector Classic app
 
-For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see Amazon Inspector.
+For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector).
 
 This section provides instructions for configuring data collection for the Amazon Inspector App.
 

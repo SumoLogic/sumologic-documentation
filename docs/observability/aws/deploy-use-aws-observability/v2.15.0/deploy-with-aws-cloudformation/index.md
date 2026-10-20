@@ -33,7 +33,7 @@ The sections below describe the configuration prompts in the CloudFormation temp
 
 AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
 
-`AWS Observability Apps-\<Version\> \<Date of installation\>` folder of dashboards by default will be created in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
+`AWS Observability Apps-\<Version\> \<Date of installation\>` folder of dashboards by default will be created in the personal library and will be shared with the Sumo Logic org of the user that the Sumo Logic Access keys belong to.
 
 ## Step 1: Open the CloudFormation template
 
@@ -45,8 +45,7 @@ AWS Observability integrates with the [AWS Observability view](/docs/dashboards/
      Download this or other versions of this template from [Changelog](../../changelog.md). 
      :::
      :::note
-      - To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.12.0 or greater and follow the instructions in the [Modify the source categories](#modify-the-source-categories) section.
-      - The Global Intelligence for AWS CloudTrail DevOps app is planned for deprecation in the near future and has therefore been removed from the AWS Observability Solution. With this removal, the app will no longer be backed up or maintained during future solution upgrades.     
+      To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.12.0 or greater and follow the instructions in the [Modify the source categories](#modify-the-source-categories) section.
      :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::danger

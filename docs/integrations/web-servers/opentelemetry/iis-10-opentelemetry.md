@@ -88,7 +88,7 @@ Perform the following task, if logging on your IIS Server is not already enabled
 
 For more information about IIS log format and log configuration refer to this [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 
-Once the logs are configured to be written into a local file follow the below step to configure collection in Sumo.
+Once the logs are configured to be written into a local file follow the below step to configure collection in Sumo Logic.
 
 ## Collection configuration and app installation
 
@@ -228,7 +228,7 @@ This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 
 ## Sample metric query
 
-```sql title="Running Application pool"
+```metrics title="Running Application pool"
 sumo.datasource=iis  deployment.environment=* webengine.cluster.name=* webengine.node.name=* instance=*  metric=win.app.pool.was.Current.Application.Pool.State  | filter latest = 3 | count
 ```
 

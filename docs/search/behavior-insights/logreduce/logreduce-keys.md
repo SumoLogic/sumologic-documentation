@@ -6,7 +6,7 @@ description: Group by the keys of JSON or keyvalue logs.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The **LogReduce Keys** operator allows you to quickly explore JSON or key-value formatted logs by schemas. If you have a large volume of JSON or key-value logs with different formats and aren't sure which ones you need to focus on, this operator can process them into their object schemas so you can review which ones are relevant to your needs.
+The **LogReduce® Keys** operator allows you to quickly explore JSON or key-value formatted logs by schemas. If you have a large volume of JSON or key-value logs with different formats and aren't sure which ones you need to focus on, this operator can process them into their object schemas so you can review which ones are relevant to your needs.
 
 The operator accepts JSON and key-value data separated by <code>&quot;=&quot;, &quot;:&quot;, &quot;=&gt;&quot;, &quot;-&gt;&quot;</code>. The keys are automatically parsed for you. 
 
