@@ -7,6 +7,10 @@ description: Use our extensive Search Query Language to gain valuable insight in
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::note
+Looking for the `trace` search operator, which connects related log messages by an identifying value? See [trace](/docs/search/search-query-language/search-operators/trace).
+:::
+
 You can use our [Search Query Language](/docs/search/search-query-language) in a log search to query raw spans from tracing data for the same period as the default partition.
 
 Tracing data retention in `_trace_spans` index is the same as default log index retention.
