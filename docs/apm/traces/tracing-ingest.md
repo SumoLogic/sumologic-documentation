@@ -19,9 +19,9 @@ The following limits and constraints apply to trace data ingested by Sumo Logic:
 | Maximum spans per trace | 1,000 (Older HTTP Traces sources) | Older HTTP Traces sources have a lower span limit per trace. |
 | Span arrival window | 24 hours | Sumo Logic does not accept spans older than 24 hours. Spans with timestamps outside this window are dropped. |
 | Maximum time between first and last span in a trace | 24 hours | All spans within a single trace must fall within a 24-hour window. The time difference between the earliest and latest span in a trace cannot exceed 24 hours. |
-| Maximum metadata per trace | 64 MB | Total size of all metadata across all spans in a trace. |
+| Maximum metadata per trace | 64MB | Total size of all metadata across all spans in a trace. |
 | Maximum unique tag names per trace | 1,024 | Defines the maximum limit of indexed distinct tag keys. Tags beyond this limit are not indexed. |
-| Maximum unique tag names per org | 10,000 per retention period | Organization-wide limit on unique tag names. |
+| Maximum unique tag names per org | 10,000 per retention period | Org-wide limit on unique tag names. |
 | Tag name length | 64 characters | Tags with names longer than 64 characters are not indexed. |
 | Tag value length | 4,096 characters | Tags with values over 4,096 characters are not indexed. |
 
@@ -33,7 +33,7 @@ When Sumo Logic receives spans, it assembles them into complete traces. The trac
 * **Trace duration limit**. The maximum time between the first and last span in a trace is 24 hours. If your application produces transactions that span more than 24 hours, the trace will only contain spans that fall within a 24-hour window.
 
 :::note
-These limits apply to Sumo Logic's hosted trace collection endpoints. If you are using the [Aggregating OpenTelemetry Collector](/docs/apm/traces/advanced-configuration/filter-shape-tracing-data), it has its own buffering configuration (`decision_wait` defaults to 30 seconds) that is separate from the backend trace assembly timeout.
+These limits apply to the hosted trace collection endpoints. If you are using the [Aggregating OpenTelemetry Collector](/docs/apm/traces/advanced-configuration/filter-shape-tracing-data), it has its own buffering configuration (`decision_wait` defaults to 30 seconds) that is separate from the backend trace assembly timeout.
 :::
 
 ### Recommendations for long-running traces

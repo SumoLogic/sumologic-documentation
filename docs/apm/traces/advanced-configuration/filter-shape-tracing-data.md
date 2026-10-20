@@ -39,7 +39,7 @@ The cascading filter combines the spans into traces and then applies a three-sta
 
 You can modify to adjust each of the sections to enable and adjust each of required stages.
 
-### Pattern Filtering
+### Pattern filtering
 
 Pattern Filtering `(trace_reject_filters)` filters out traces where at least one span matches the pattern. For example, you can filter health-checks this way. All remaining traffic is passed to next defined logic.
 
@@ -123,9 +123,9 @@ In case of multiple deployments sharing a single configuration map (k8s) or file
 Because trace filtering requires action on the whole trace, collector buffers the incoming data in memory before making the decision. This impacts the resource usage which must be factored when planning the usage of available memory and CPU. For a collector that has cascading filter enabled, we recommend:
 
 * 1 CPU core per each 25,000 spans/sec on the input
-* 4 GB RAM per each 10,000 spans/sec on the input
+* 4GB RAM per each 10,000 spans/sec on the input
 
-For example, when 50,000 spans per second are anticipated on the collector input, there should be at least 2 CPU cores and 20 GB RAM available. The actual numbers depend on a number of factors:
+For example, when 50,000 spans per second are anticipated on the collector input, there should be at least 2 CPU cores and 20GB RAM available. The actual numbers depend on a number of factors:
 
 * size of spans (such as number of attributes, size of span events)
 * cascading filter configuration (such as `decision_wait` duration)

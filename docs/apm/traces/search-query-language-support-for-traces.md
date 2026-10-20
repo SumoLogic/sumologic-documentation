@@ -24,7 +24,7 @@ Tracing data retention in `_trace_spans` index is the same as default log index
 
 ## Search span data
 
-Searching span data is the same as running a log search. You just need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions) (also called the scope) of your query.
+Searching span data is the same as running a log search. You need to specify the `_index` metadata field with the value `_trace_spans` in the [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions) (also called the scope) of your query.
 
 To search your tracing data do the following:
 
@@ -47,16 +47,16 @@ Syntax: `_any=<value>`
 
 The `_any` option is not supported outside of the scope of a query. This is supported for the Security and Tracing tiers.
 
-### Parse Your Spans
+### Parse your spans
 
 You can parse your spans in the same way you parse log data. This includes any value from the **tags** field by using the field option with the JSON operator, for example, `| json field=tags`. See how to Parse JSON Formatted Logs for details.
 
-### View Your Search Results
+### View your search results
 
 When viewing your search results you can add any parsed fields to display by selecting them from the Field Browser on the left, or by using the fields operator in your query. The following image shows a query using the `fields` operator to display `operation`, `service`, `spanid`, `statuscode`, and `traceid`. The Field Browser can also set the fields to display.<br/><img src={useBaseUrl('img/apm/spans-search-with-fields-highlighted.png')} alt="Spans search with fields highlighted" style={{border: '1px solid gray'}} width="800" />
 
-### Monitors and Scheduled Searches
-You can also set Monitors and Scheduled Searches for Traces.
+### Monitors and scheduled searches
+You can also set monitors and scheduled searches for traces.
 
 ## Span structure
 

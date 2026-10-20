@@ -6,7 +6,7 @@ description: Learn how to modify the attributes of your spans.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can add, delete, hash, or modify span attributes (metadata tags) on Collectors or directly in your application code. This helps you enhance diagnostic details included in your data, remove redundant information to cut the cost, or mask sensitive information before they leave your site.
+You can add, delete, hash, or modify span attributes (metadata tags) on collectors or directly in your application code. This helps you enhance diagnostic details included in your data, remove redundant information to cut the cost, or mask sensitive information before they leave your site.
 
 ## Attach logs to spans
 
@@ -19,11 +19,11 @@ You can collect logs with traces attached to them by [inserting `spanid` and `t
  * message
  * stack
 
-and they are displayed in the **Span logs** tab in [Details Pane](/docs/apm/traces/view-and-investigate-traces) after clicking on the span.
+and they are displayed in the **Span logs** tab in [Details Pane](/docs/apm/traces/view-and-investigate-traces) after clicking the span.
 
 <img src={useBaseUrl('img/apm/span-logs-in-details-pane.png')} alt="Span logs in details pane" style={{border: '1px solid gray'}} width="400" />
 
-## Working with attributes on OpenTelemetry collector
+## Working with attributes on OpenTelemetry Collector
 
 Whether you're using the Sumo Logic OpenTelemetry collector distribution, an original installation, or the OpenTelemetry collector as part of Sumo Logic Kubernetes collection, you can use the attributes processor to add, modify, delete, or hash the values of attributes.
 
