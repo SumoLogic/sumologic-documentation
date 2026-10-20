@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### SOC Analyst Agent
 
-Sumo Logic's SOC Analyst Agent, a powerful agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations, is now generally available. The agent investigates Cloud SIEM insights with evidence-backed verdicts, helping your team cut through false-positive noise and speed up threat resolution. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent).
+Sumo Logic's SOC Analyst Agent, a powerful agentic AI tool designed to improve the speed and accuracy of your Security Operations Center (SOC) team's threat investigations, is now generally available. The agent investigates Cloud SIEM insights with evidence-backed verdicts, helping your team cut through false-positive noise and speed up threat resolution. [Learn more](/docs/dojo-ai/agents/soc-analyst-agent).
 
 The agent requires a Cloud SIEM subscription and is opt-in.
 
@@ -37,7 +37,7 @@ When you select the **Ask Mobot** button on the new **AI Investigation** tab in 
 
 #### SOC Analyst Settings
 
-The new **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets administrators control how the agent consumes your committed monthly investigation volume. Define an **Auto-Investigation Filter** to exclude low-priority insights from automatic investigation, and use **Volume & Overage Settings** to choose whether investigation continues past your committed volume. [Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent#configure-soc-analyst-agent-settings).
+The new **SOC Analyst Settings** tab on the **Cloud SIEM Workflow Configuration** page lets administrators control how the agent consumes your committed monthly investigation volume. Define an **Auto-Investigation Filter** to exclude low-priority insights from automatic investigation, and use **Volume & Overage Settings** to choose whether investigation continues past your committed volume. [Learn more](/docs/dojo-ai/agents/soc-analyst-agent#configure-soc-analyst-agent-settings).
 
 <img src={useBaseUrl('img/cse/auto-investigation-filter.png')} alt="Auto-Investigation Filter on the SOC Analyst Settings tab" style={{border: '1px solid gray'}} width="800" />
 

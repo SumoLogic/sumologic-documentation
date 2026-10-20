@@ -13,4 +13,4 @@ hide_table_of_contents: true
 
 When you investigate an insight in Mobot, the SOC Analyst Agent can now query data beyond the Cloud SIEM index, including raw cloud logs (for example, AWS CloudTrail), metrics, lookup tables, and collector health. Mobot indicates the source when it returns information from outside Cloud SIEM. Auto-investigation verdicts remain unchanged and continue to use only Cloud SIEM data.
 
-[Learn more](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#investigate-the-insight-in-mobot).
+[Learn more](/docs/dojo-ai/agents/soc-analyst-agent/#investigate-the-insight-in-mobot).
