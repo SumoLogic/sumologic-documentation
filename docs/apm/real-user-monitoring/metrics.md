@@ -2,7 +2,7 @@
 id: metrics
 title: Real User Monitoring Metrics
 sidebar_label: RUM Metrics
-description: Learn how Sumo Logic generates Real User Monitoring metrics from browser traces, including document load, XHR, and route change metrics and Core Web Vitals.
+description: Learn how Sumo Logic generates Real User Monitoring metrics from browser traces, including document load, XHR metrics, Core Web Vitals, and longtask events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
