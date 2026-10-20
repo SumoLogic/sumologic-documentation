@@ -10,7 +10,7 @@ import Iframe from 'react-iframe';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
-<img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="35"/>
+<img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="40"/>
 
 The SOC Analyst Agent automatically investigates Cloud SIEM insights and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already laid. Your team can continue any investigation conversationally with [Mobot](/docs/ai/mobot/), DojoAI's chat interface.
 

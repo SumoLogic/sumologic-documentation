@@ -7,7 +7,7 @@ keywords:
   - mobot
   - dashboard
   - panel
-  - dojo ai
+  - dojoai
 ---
 
 [Mobot](/docs/ai/mobot) enables you to create dashboard panels using natural language. Instead of manually building a query and configuring a visualization, describe the panel you want, and Mobot generates the query, selects an appropriate visualization, and adds the panel to a new or existing dashboard after your confirmation.

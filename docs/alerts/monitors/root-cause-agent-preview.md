@@ -4,7 +4,7 @@ title: Root Cause Agent
 description: Root Cause Agent, agentic AI investigator, investigates Sumo Logic alerts on demand and returns evidence-backed root causes based on relevant telemetry across your logs and metrics.
 keywords:
   - mobot
-  - dojo ai
+  - dojoai
   - root cause agent
   - agentic ai
   - alerts

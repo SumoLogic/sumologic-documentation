@@ -6,7 +6,7 @@ description: Create and manage playbooks in Mobot from plain-language prompts, w
 keywords:
   - mobot
   - playbook
-  - dojo ai
+  - dojoai
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

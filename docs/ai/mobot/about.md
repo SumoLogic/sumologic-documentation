@@ -2,6 +2,15 @@
 id: about
 title: About Mobot ✨
 description: Troubleshoot logs, create monitors and dashboards, and learn the platform using plain-language questions with Mobot, Sumo Logic's AI assistant.
+keywords:
+  - mobot
+  - dojoai
+  - ai assistant
+  - agent
+  - log analysis
+  - log troubleshooting
+  - unstructured logs
+  - soc analyst
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

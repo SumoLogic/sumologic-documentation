@@ -173,11 +173,11 @@ account=* region=* namespace=/aws/sagemaker/processingjobs
 | sort by time
 ```
 
-```sql title="Feature Store Invocations (CloudWatch Metric)"
+```metrics title="Feature Store Invocations (CloudWatch Metric)"
 account=* region=* namespace=aws/sagemaker featuregroupname=* operationname=* metric=Invocations statistic=sum | quantize using sum | sum 
 ```
 
-```sql title="CPU Utilization by Endpoint (CloudWatch Metric)"
+```metrics title="CPU Utilization by Endpoint (CloudWatch Metric)"
 account=* region=* namespace=/aws/sagemaker/endpoints endpointname=* metric=CPUUtilization statistic=average | avg by endpointname 
 ```
 
@@ -268,7 +268,7 @@ json "eventSource", "awsRegion", "recipientAccountId" as event_source, region, a
 
 #### Create/Update Field Extraction Rule(s) for SageMaker CloudWatch logs
 
-```sql
+```metrics
 Rule Name: AwsObservabilitySagemakerCloudWatchLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -292,7 +292,7 @@ extract field=_sourceHost "/aws/sagemaker/(?<ns>[^/]*)" nodrop
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present and update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
