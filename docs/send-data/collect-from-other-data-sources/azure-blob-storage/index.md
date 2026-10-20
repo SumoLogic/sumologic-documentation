@@ -1,7 +1,7 @@
 ---
 slug: /send-data/collect-from-other-data-sources/azure-blob-storage
 title: Azure Blob Storage
-description: This Sumo integration provides a event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic.
+description: This Sumo Logic integration provides a event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

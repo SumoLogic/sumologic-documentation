@@ -2,7 +2,7 @@
 id: metric-ingestion-and-storage
 title: Metric Ingestion and Storage
 sidebar_label: Metric Ingestion and Storage
-description: How long Sumo stores raw metric data points, one minute roll-ups, and one hour roll-ups.
+description: How long Sumo Logic stores raw metric data points, one minute roll-ups, and one hour roll-ups.
 ---
 This page has information about how Sumo Logic stores raw and rolled up metrics data.
 
