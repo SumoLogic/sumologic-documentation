@@ -1,6 +1,6 @@
 ---
 id: set-up-traces-collection-for-kubernetes-environments
-title: Set up Traces Collection for Kubernetes Environments
+title: Set Up Traces Collection for Kubernetes Environments
 sidebar_label: Kubernetes Environment Setup
 description: Learn how to install the Sumo Logic Kubernetes Collection and send enhanced traces using OpenTelemetry.
 ---
@@ -16,9 +16,9 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 
 | Account Type | Account Level         |
 |:--------------|:--------------------------|
-| Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
+| Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5GB a day |
 
-## Installing Sumo Logic Tracing on Kubernetes
+## Installing Sumo Logic tracing on Kubernetes
 
 Installation is the same as for the official [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection). The process uses a Helm chart to set all required components. It will automatically download and configure the [OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which will collect, process, and export telemetry data to Sumo Logic.
 
