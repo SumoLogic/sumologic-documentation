@@ -169,3 +169,7 @@ We provide an array of partner apps designed specifically for Kubernetes. The fo
 We also provide a selection of security-focused partner apps with specialized detection and investigation features.
 
 <img src={useBaseUrl('img/kubernetes/K8s_PartnerApps_Security.png')} alt="Sumo Logic Security partner apps" style={{border: '1px solid gray'}} width="800" />
+
+### Get trained
+
+Make the most of our Kubernetes Observability offerings with free training from [Sumo Logic Academy](https://www.sumologic.com/learn/training/). The Kubernetes on Sumo Logic Self-Paced course covers Kubernetes architecture and using Sumo Logic to monitor and troubleshoot a Kubernetes environment. The Observability Administration Self-Paced course covers setting up collection on Kubernetes, using OpenTelemetry collectors and agents for tracing, and using Reliability Management features.

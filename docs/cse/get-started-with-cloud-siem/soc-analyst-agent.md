@@ -30,10 +30,10 @@ You work with the agent in two places:
 <SumoAcademy/>
 
 * **Self-paced**:
-    * [Essential Cloud SIEM Skills for SOC Analysts](https://learn.sumologic.com/path/sumo-security/essential-cloud-siem-skills-for-soc-analysts)
+    * [Essential SIEM Skills for SOC Analysts](https://learn.sumologic.com/path/sumo-security/essential-cloud-siem-skills-for-soc-analysts)
     * [Cloud SIEM](https://learn.sumologic.com/path/sumo-security/cloud-siem-training-self-paced)
 * **Instructor-led virtual classes**:
-    * [Workshops: Security Operations Center (SOC) Analyst: The Ride](https://www.sumologic.com/learn/training?_workshops=essential-siem-skills-for-soc-analysts#section-2)
+    * [Workshops: Essential SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-siem-skills-for-soc-analysts#section-2)
     * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem#section-2)
 :::
 
