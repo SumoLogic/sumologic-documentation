@@ -81,7 +81,7 @@ When you enable data forwarding, Cloud SIEM automatically starts processing your
 <img src={useBaseUrl('img/cse/intro-forward-data.gif')} alt="Forward data"  width="500"/>
 
 As an admin, there are several steps you must complete to forward data to Cloud SIEM. 
-1. First, you request backend configuration. This is a one-time setup for each Sumo Logic organization. Often, your Sumo account rep will complete this process for you. 
+1. First, you request backend configuration. This is a one-time setup for each Sumo Logic organization. Often, your Sumo Logic account rep will complete this process for you. 
 1. Next, you enable data forwarding. You can do this by adding the `_siemForward = True` field when you set up a collector. For cloud data sources, you can also toggle the **Forward to SIEM** check box. You'll need to enable data forwarding each time you add a new data source into Sumo Logic, update your partitions, or make other changes to your data ingestion process.
 
     Cloud SIEM will not ingest historic data. In other words, any new data ingested into Sumo Logic will be forwarded to Cloud SIEM as soon as you enable data forwarding. However, older data will not be processed by Cloud SIEM. Data will start flowing from Sumo Logic into Cloud SIEM within a few minutes of enabling data forwarding. You can expect signals and insights to start generating within a few hours.

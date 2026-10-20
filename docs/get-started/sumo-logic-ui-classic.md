@@ -1,7 +1,7 @@
 ---
 id: sumo-logic-ui-classic
 title: Tour the Sumo Logic Classic UI
-sidebar_label: Tour the Sumo UI (Classic)
+sidebar_label: Tour the Sumo Logic UI (Classic)
 description: Get to know the Sumo Logic platform user interface.
 ---
 

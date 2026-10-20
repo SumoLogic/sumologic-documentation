@@ -9,6 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.3  
 Updated: Oct 06, 2023***
 
+:::note Exchange Online and the EWS retirement
+This integration is not affected by Microsoft's retirement of Exchange Web Services (EWS) in Exchange Online. It connects through Exchange PowerShell instead.
+
+Microsoft has disabled Basic authentication, including Remote PowerShell, in Exchange Online, so the **Basic** authentication method can't connect to Exchange Online. See [Microsoft's retirement announcement](https://learn.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online) for the EWS timeline.
+:::
+
 Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 
 ## Actions

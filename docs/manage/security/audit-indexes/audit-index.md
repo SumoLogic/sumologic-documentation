@@ -18,7 +18,7 @@ The Audit Index provides event logs in plain text on the internal events that oc
 This index is different from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index), and there is some
 overlap of audited events. The Audit Event Index provides event logs in JSON on activities from your account.
 
-Before you can use the audit index, an administrator must enable it. When the audit index is enabled, Sumo logs messages to it once every five minutes. Note that data does not backfill.
+Before you can use the audit index, an administrator must enable it. When the audit index is enabled, Sumo Logic logs messages to it once every five minutes. Note that data does not backfill.
 
 :::note
 All users can access the data contained within the audit index, but only administrators can enable and disable auditing.

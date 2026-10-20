@@ -47,7 +47,7 @@ The following log types are used in the Upwind Sumo Logic app:
 
 ### Sample queries
 
-```sql
+```metrics
 _sourceCategory="Labs/Upwind" id severity status category mitre_attacks
 | json "id", "severity", "status", "category", "resource.cloud_provider" as id, severity, status, category, cloud_provider nodrop
 
@@ -90,7 +90,7 @@ Follow the steps below to configure the Upwind webhook and workflow.
 8. Select the webhook integration created above and save the workflow.
 9. Verify Upwind events are getting ingested in Sumo Logic by executing the following query in Log Search:
 
-```sql
+```metrics
 _sourceCategory=webhook/upwind
 ```
 
