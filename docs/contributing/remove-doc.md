@@ -25,7 +25,7 @@ import DocPrereq from '../reuse/contributing/doc-prerequisites.md';
 
 <DocPrereq/>
 
-## Step 1: Fork the Sumo Docs repository
+## Step 1: Fork the Sumo Logic Docs repository
 
 import ForkRepo from '../reuse/contributing/fork-repo.md';
 

@@ -75,7 +75,7 @@ Once you've configured your Hosted Collector, the next step is to configure a So
       <div className="container">
       <img src={useBaseUrl('img/icons/cloud/cloud-systems.png')} alt="Cloud icon" width="50"/>
       <h4><a href={useBaseUrl('docs/send-data/hosted-collectors/cloud-syslog-source')}>Cloud Syslog Sources</a></h4>
-      <p>Configure a syslog client to send RFC 5424-compliant messages to Sumo.</p>
+      <p>Configure a syslog client to send RFC 5424-compliant messages to Sumo Logic.</p>
       </div>
     </div>
     <div className="box smallbox card">

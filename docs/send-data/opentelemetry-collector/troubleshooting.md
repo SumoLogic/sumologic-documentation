@@ -49,7 +49,7 @@ By default, the OpenTelemetry Collector will flush data either every second or e
 
 The default cache size for the Sumo Logic OpenTelemetry Collector is 5000 batches, each containing up to 1024 data points. The actual on-disk size of the cache depends on the size of the data points, but it's typically around 700 bytes per data point.
 
-The collector caches data when it’s unable to send it to the Sumo backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo, and others.
+The collector caches data when it’s unable to send it to the Sumo Logic backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo Logic, and others.
 
 #### Does the Sumo Logic backend know when a OpenTelemetry Collector is down? How does that work?
 
@@ -82,7 +82,7 @@ Because the OpenTelemetry Collector is connected to the terminal, it will stop r
 
 This means the collector is having trouble connecting to the Sumo Logic backend.
 
-While data should still be collected and shipped to Sumo, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
+While data should still be collected and shipped to Sumo Logic, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
 
 ## Collector installation errors
 

@@ -159,7 +159,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
   * Replica Set: `collection-sumologic-traces-gateway-<hash>`
   * Service: `collection-sumologic-traces-gateway`
   * Config Map: `collection-sumologic-traces-gateway`
-* `traces-sampler` - collector responsible for forwarding data to Sumo Receiver
+* `traces-sampler` - collector responsible for forwarding data to Sumo Logic Receiver
   * Deployment: `collection-sumologic-traces-sampler`
   * Pod: `collection-sumologic-traces-sampler-<hash>-<hash>`
   * Replica Set: `collection-sumologic-traces-sampler-<hash>`

@@ -70,7 +70,7 @@ Each health event log has common keys that categorize it to a product area and p
 | eventName          | The name of the event. | String |
 | eventTime          | The event timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. | String |
 | eventFormatVersion | The event log format version. | String |
-| operator           | Information on who did the operation. If it's missing, the Sumo service was the operator. | JSON object of Strings |
+| operator           | Information on who did the operation. If it's missing, the Sumo Logic service was the operator. | JSON object of Strings |
 | subsystem          | The product area of the event. | String |
 | resourceIdentity   | This includes any unique identifiers, names, and the type of the object associated with the event. | JSON object of Strings |
 

@@ -15,7 +15,7 @@ Tracing data retention in `_trace_spans` index is the same as default log index
 
 * The following operators are not supported when searching trace span data:
     * cat
-    * Logreduce without a field, value, or key suffices
+    * LogReduce® without a field, value, or key suffices
 * `_index` and `_view` are not supported other than when specified as `_trace_spans`.
 * Adding to Dashboard is supported as long as your total dashboard-originated `_trace_spans `read volume does not exceed 200x of your tracing ingest. Contact your Sumo Logic representative for paid subscription service options for volume requirements exceeding 200x of your tracing ingest.
 * Field extraction rules are not supported as the index has well defined schema

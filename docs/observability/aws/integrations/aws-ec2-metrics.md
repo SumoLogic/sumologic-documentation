@@ -58,7 +58,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ```
 ### Sample queries
 
-```sql title="CPU utilization (Cloudwatch metric)"
+```metrics title="CPU utilization (Cloudwatch metric)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
 ```
 
