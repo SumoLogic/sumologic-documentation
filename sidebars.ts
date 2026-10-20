@@ -3445,8 +3445,8 @@ integrations: [
                     'dojo-ai/configure-agents/knowledge/learnings',
                   ],
                 },
-                'dojo-ai/configure-agents/triggers',
-                'dojo-ai/configure-agents/volume-and-overage',
+                // PLACEHOLDER(future): 'dojo-ai/configure-agents/triggers',
+                // PLACEHOLDER(future): 'dojo-ai/configure-agents/volume-and-overage',
                 // PLACEHOLDER(future): Connected Systems
                 // PLACEHOLDER(future): Access
               ],
