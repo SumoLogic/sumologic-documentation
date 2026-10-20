@@ -89,6 +89,4 @@ When setting up OTLP Endpoint for OpenTelemetry Collector/Agent add port number 
 
 To confirm the instrumentation was installed, after starting the service, the following log lines are to be expected in the console:
 
-```log
-[otel.javaagent 2024-02-28 10:15:24:219 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 2.6.0
-```
+`[otel.javaagent 2024-02-28 10:15:24:219 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 2.6.0`
