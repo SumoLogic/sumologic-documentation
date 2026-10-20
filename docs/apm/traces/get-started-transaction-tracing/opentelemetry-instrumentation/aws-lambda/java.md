@@ -143,7 +143,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 
 1. Download and extract Sumo Logic Distribution for OpenTelemetry Java Lambda Layer archive with instrumentation packages specific for your architecture, [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v2.19.0/opentelemetry-java-wrapper-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v2.19.0/opentelemetry-java-wrapper-arm64.zip).
 1. Add extracted instrumentation libraries to the image in the `/opt` directory. See the Dockerfile example:
-   ```bash
+   ```dockerfile
    FROM public.ecr.aws/lambda/java:21-arm64
    # Lambda Function Code
    COPY lambda-function-.jar /opt/java/lib/

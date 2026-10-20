@@ -23,7 +23,7 @@ The below description applies to [v1.6.0](https://github.com/open-telemetry/open
 Install OpenTelemetry .NET Automatic Instrumentation via PowerShell
 module. This process requires administrator permissions.
 
-```sh
+```powershell
 # Download the module
 $module_url = "https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/download/v1.6.0/OpenTelemetry.DotNet.Auto.psm1"
 $download_path = Join-Path $env:temp "OpenTelemetry.DotNet.Auto.psm1"
@@ -38,7 +38,7 @@ Install-OpenTelemetryCore
 
 After installation, you can set the service name and run the application.
 
-```sh
+```powershell
 # Set up the instrumentation for the current PowerShell session.
 # Can be done via environment variable.
 Register-OpenTelemetryForCurrentSession -OTelServiceName "MyServiceDisplayName"
@@ -53,7 +53,7 @@ The final step is to configure the exporter endpoint, service and application na
 
 More extensive description of all available options can be found [here](https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/blob/main/docs/config.md)
 
-```sh
+```powershell
 # Run your application with instrumentation
 .\MyNetApp.exe
 ```
@@ -67,7 +67,7 @@ ASP.NET application that runs on IIS requires two additional steps.
 
 This step requires to execute following command in powershell.
 
-```sh
+```powershell
 # Setup IIS instrumentation
 Register-OpenTelemetryForIIS
 ```

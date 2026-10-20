@@ -22,13 +22,13 @@ pip install opentelemetry-exporter-otlp-proto-http==1.26.0
 
 If requirements.txt is used to manage dependencies in the project add:
 
-```bash
+```text
 opentelemetry-distro==0.47b0 opentelemetry-exporter-otlp-proto-http==1.26.0
 ```
 
 If pipfile, add these dependencies instead of using the pip commands. For example:
 
-```bash
+```toml
 opentelemetry-distro = "0.47b0" opentelemetry-exporter-otlp-proto-http = "1.26.0"
 ```
 
@@ -94,7 +94,7 @@ opentelemetry-instrument python3 SCRIPT_NAME.py
 
 To enable auto-instrumentation, you will need to include `opentelemetry-instrument` at the beginning of your application execution. If this is not an option for you, you will need to follow the usage instructions for each instrumentation library you install. For example, for Django instrumentation, you will need to add the following two lines to your code (outlined in the [Usage section](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/django/django.html#id1) of the library documentation):
 
-```
+```python
 from opentelemetry.instrumentation.django import DjangoInstrumentor
 
 DjangoInstrumentor().instrument()     ##This goes inside of main
@@ -164,7 +164,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 * For **Django**, run the application server with the `--noreload` flag, such as:
 
    ```bash
-   opentelemetry-instrument python3 manage.py runserver ---noreload
+   opentelemetry-instrument python3 manage.py runserver --noreload
    ```
 
 ## Log correlation

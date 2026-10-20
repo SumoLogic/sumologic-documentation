@@ -46,7 +46,7 @@ The injection allows you to click a link from the Trace View tab and launch a se
   log4net.ThreadContext.Properties["span_id"] = Tracer.CurrentSpan.Context.SpanId;
   ```
 2. Extend log pattern layout in log4net.config file, like in the attached configuration, with two additional properties `%property{trace_id}` and `%property{span_id}`:
-  ```
+  ```xml
   <appender name="textFileAppender" type="log4net.Appender.FileAppender">
             <file value="log-log4net-textFile.log" />
             <layout type="log4net.Layout.PatternLayout">

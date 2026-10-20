@@ -22,7 +22,7 @@ Installation of the packages listed below is required to apply the instrumentati
 
 * **bundler**. Insert the packages into your **gemfile** and run the **bundle install** command:  
 
-   ```bash
+   ```ruby
    gem 'opentelemetry-sdk', '1.5.0'
    gem 'opentelemetry-exporter-otlp', '0.28.1'
    ```
@@ -55,7 +55,7 @@ To enable instrumentation in the Ruby on Rails application and export the teleme
 
 * Specific package instrumentation - in this example only Rails library will be instrumented:  
 
-   ```bash
+   ```ruby
    require 'opentelemetry/sdk'
    require_relative 'application'
 
@@ -73,7 +73,7 @@ To enable instrumentation in the Ruby on Rails application and export the teleme
 
 * "All in one" instrumentation - this configuration will instrument Rails and other supported and used in project libraries:  
 
-   ```bash
+   ```ruby
    require 'opentelemetry/sdk'
    require_relative 'application'
 
@@ -104,7 +104,7 @@ Additional information like TraceID, SpanID or operation data in the application
 
 See example code:
 
-```bash
+```ruby
 logger = ::Logger.new(STDOUT)
 logger.formatter = proc do |severity, time, progname, msg|
   span_id = OpenTelemetry::Trace.current_span.context.hex_span_id
@@ -122,6 +122,6 @@ set :logger, logger
 
 Example output:  
 
-```json
+```log
 "2022-02-28 13:01:25 +0000, INFO: {:remote_ip=>\"127.0.0.6\", :request_path=>\"/get_beans\", :query_string=>\"\", :request_method=>\"POST\", :execution_time_sec=>0.00033453479409217834, :response_status_code=>200} - trace_id=cdd460d538917f82560cbb91373a05a6 - span_id=12a09921c89fd6e9 - operation=POST /get_beans
 ```

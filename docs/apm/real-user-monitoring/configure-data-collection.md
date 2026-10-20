@@ -118,7 +118,7 @@ The following are base script examples, populated when you create and configur
 
 <TabItem value="synchronous">
 
-```javascript
+```html
 <script src="https://rum.sumologic.com/sumologic-rum-v3.js" type="text/javascript"></script>
 <script>
   window.sumoLogicOpenTelemetryRum &&
@@ -137,7 +137,7 @@ The following are base script examples, populated when you create and configur
 
 You can load the script asynchronously using the script below but some functionalities like user interactions or requests made before script run will be limited.
 
-```javascript
+```html
 <script>
   (function (w, s, d, r, e, n) {
     (w[s] = w[s] || {

@@ -66,7 +66,7 @@ When ingest events are returned by the query, audit logs provide the name of the
 
 In the following example, 57 spans were dropped and reported in one audit log.
 
-```
+```json
 "severityLevel": "Info",
 "details": {
 "amount": 57,

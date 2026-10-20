@@ -66,7 +66,7 @@ The templates provided above support the following protocols:
 
 A published Docker image could be used: 
 
-```bash
+```text
 public.ecr.aws/sumologic/sumologic-otel-collector:0.97.0-sumo-1
 ```
 

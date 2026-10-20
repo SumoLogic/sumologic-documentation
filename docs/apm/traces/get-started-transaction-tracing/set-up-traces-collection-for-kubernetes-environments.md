@@ -184,7 +184,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
 
   Having this enabled, `kubectl logs -n sumologic collection-sumologic-traces-sampler-<ENTER ACTUAL POD ID>` might yield the following output:
 
-  ```yaml
+  ```log
       2020-03-09T10:47:28.861Z TraceData with 1 spans
       Node service name: carpogonial
       Node attributes:

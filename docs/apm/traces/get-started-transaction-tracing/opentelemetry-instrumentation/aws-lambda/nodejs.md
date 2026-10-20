@@ -117,7 +117,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 
 1. Download and extract Sumo Logic OTel Lambda archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/nodejs-v2.0.2/opentelemetry-nodejs-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/nodejs-v2.0.2/opentelemetry-nodejs-arm64.zip).
 1. Add extracted instrumentation libraries to the image in the `/opt` directory. See the following Dockerfile example:
-    ```sh
+    ```dockerfile
     FROM public.ecr.aws/lambda/nodejs:20-arm64
 
     # Lambda Function Code  

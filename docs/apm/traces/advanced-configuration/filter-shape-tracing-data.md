@@ -142,7 +142,7 @@ Among the metrics available, there is `otelcol_receiver_accepted_spans`, which p
 
 When enabled, cascading filter emits logs on startup indicating that the rules have been applied. For example:
 
-```json
+```log
 2021-11-18T19:50:23.451+0100    info    cascadingfilterprocessor@v0.38.0/processor.go:132    Adding trace reject rule    {"kind": "processor", "name": "cascading_filter", "name": "healthcheck-rule"}
 2021-11-18T19:50:23.451+0100    info    cascadingfilterprocessor@v0.38.0/processor.go:169    Adding trace accept rule    {"kind": "processor", "name": "cascading_filter", "name": "test1", "spans_per_second": 50}
 2021-11-18T19:50:23.451+0100    info    cascadingfilterprocessor@v0.38.0/processor.go:169    Adding trace accept rule    {"kind": "processor", "name": "cascading_filter", "name": "test2", "spans_per_second": 50}

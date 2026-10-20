@@ -125,6 +125,6 @@ set :logger, logger
 
 Example output:
 
-```json
+```log
 "2022-02-28 13:01:25 +0000, INFO: {:remote_ip\>\"127.0.0.6\", :request_path\>\"/get_beans\", :query_string\>\"\", :request_method\>\"POST\", :execution_time_sec\>0.00033453479409217834, :response_status_code\>200} - trace_id=cdd460d538917f82560cbb91373a05a6 - span_id=12a09921c89fd6e9 - operation=POST /get_beans
 ```
