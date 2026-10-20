@@ -52,9 +52,9 @@ After the SOC Analyst Agent completes an investigation, recommendations appear i
 1. Review the **Reasoning** and edit the **Payload** (JSON) if needed.
 1. Click **Confirm**.
 
-The system records your approval with your analyst identity and a timestamp. Execution runs synchronously. For further analysis, you can converse with Mobot.
+The system records your approval with your analyst identity and a timestamp, then runs the action in the background. The card updates when execution completes. To analyze the result further, you can continue the conversation in Mobot.
 
-When execution completes, the card shows a green **Executed** badge. If an action fails, it shows a red **Failed** badge with an inline error message.
+When execution completes, the card shows a green **Executed** badge. If an action fails, it shows a red **Failed** badge with an inline error message, and you can execute it again.
 
 <img src={useBaseUrl('img/cse/soc-rr-mobot-execute-green.png')} alt="Mobot recommendation card showing a green Executed badge and the execution result message below the card title" style={{border: '1px solid gray'}} width="800" />
 
@@ -75,4 +75,4 @@ The following capabilities are not available in the private preview:
 ## Additional resources
 
 * [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/). Learn about the triage and investigation capabilities that the Response Agent builds on.
-* [Sumo Logic | Dojo AI](https://www.sumologic.com/blog/dojo-ai/). Learn about Dojo AI, Sumo Logic's multi-agent AI platform.
+* [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai/). Learn about DojoAI, Sumo Logic's multi-agent AI platform.
