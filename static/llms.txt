@@ -43,7 +43,7 @@
 ### Getting Started
 - [Get started overview](https://www.sumologic.com/help/docs/get-started/): Introduction to Sumo Logic, onboarding, and the UI
 - [Quickstart](https://www.sumologic.com/help/docs/get-started/quickstart/): Fast path to sending data and running your first search
-- [AI Capabilities](https://www.sumologic.com/help/docs/ai/): Overview of AI-powered features across the platform, including Mobot, the SOC Analyst Agent, and the MCP server
+- [AI Capabilities](https://www.sumologic.com/help/docs/dojo-ai/): Overview of AI-powered features across the platform, including Mobot, the SOC Analyst Agent, and the MCP server
 
 ### Send Data
 - [Send data overview](https://www.sumologic.com/help/docs/send-data/): How to get data into Sumo Logic

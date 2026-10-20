@@ -19,7 +19,7 @@ Search autocomplete is also supported in [Dashboards](/docs/dashboards), [Schedu
 1. **Leverage syntax and schema suggestions**. As you type, watch for real-time suggestions for fields and operators. Use the arrow keys to navigate suggestions and press `Tab` to select a highlighted suggestion.
 1. **Take advantage of predictions**. Use partial query predictions to build queries faster and more accurately.
 1. **Review and correct errors**. Address flagged errors before running your query to ensure it executes as intended.
-1. **Edit queries with Mobot**. If you're using [Mobot](/docs/ai/mobot), modify your query directly in the [code editor field](/docs/ai/mobot/#edit-query-code) and use autocomplete suggestions there for further refinement.
+1. **Edit queries with Mobot**. If you're using [Mobot](/docs/dojo-ai/mobot), modify your query directly in the [code editor field](/docs/dojo-ai/mobot/about#edit-query-code) and use autocomplete suggestions there for further refinement.
 
 ## Features
 
@@ -92,7 +92,7 @@ Under **My Preferences** > **Query Editing**, you can control how `Return` and `
 Search autocomplete is a passive, built-in part of the query text box; it isn't presented as a standalone named feature in the UI. Do not confuse it with:
 
 * [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist). A UI action you trigger from the right-click menu on selected log text to generate a `parse` statement.
-* [Mobot](/docs/ai/mobot). A conversational assistant that writes and runs entire queries from a plain-language question, rather than suggesting completions as you type.
+* [Mobot](/docs/dojo-ai/mobot). A conversational assistant that writes and runs entire queries from a plain-language question, rather than suggesting completions as you type.
 
 :::note
 This capability shipped in release notes as **Logs Query Assist** (Preview, November 2024) and **Query Assist** (full release, July 2025). It's documented here as Search Autocomplete to match the terminology used in the product UI.

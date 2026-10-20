@@ -14,7 +14,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-Connect Claude Code or another MCP-compatible client to the Sumo Logic MCP server. Before you start, an administrator must [enable the MCP server and CIMD](/docs/ai/mcp-server/enable-mcp-server) for your organization.
+Connect Claude Code or another MCP-compatible client to the Sumo Logic MCP server. Before you start, an administrator must [enable the MCP server and CIMD](/docs/dojo-ai/mcp-server/enable-mcp-server) for your organization.
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ The MCP server is not currently supported in our Zurich or AWS European Sovereig
 
 ### How to use your org subdomain in the MCP server URL
 
-Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain) to the front of the MCP server URL so MCP clients that authenticate with [CIMD](/docs/ai/mcp-server/enable-mcp-server#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
+Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain) to the front of the MCP server URL so MCP clients that authenticate with [CIMD](/docs/dojo-ai/mcp-server/enable-mcp-server#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
 
 To build the URL, add `<subdomain>.` before the host name in your deployment's URL from the [table above](#mcp-server-url-for-your-deployment):
 
@@ -94,7 +94,7 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 
 ## How to configure the MCP server in Claude Code CLI
 
-Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an administrator has [enabled CIMD](/docs/ai/mcp-server/enable-mcp-server#how-to-enable-cimd-for-mcp-clients) on the Policies page. You do not need to create OAuth credentials; browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an administrator has [enabled CIMD](/docs/dojo-ai/mcp-server/enable-mcp-server#how-to-enable-cimd-for-mcp-clients) on the Policies page. You do not need to create OAuth credentials; browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 
@@ -117,10 +117,10 @@ Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an admini
 1. Select **sumo-logic** and then **Authenticate**.
 1. Claude Code opens a browser window. Log in with your Sumo Logic credentials. If you registered the server with a [subdomain URL](#how-to-use-your-org-subdomain-in-the-mcp-server-url), the browser opens your org's login page directly. Otherwise, if your org uses an identity provider, click **Sign in with your identity provider**, navigate to your org, and complete sign-in.
 1. Verify the connection with `/mcp` to confirm the server is connected.<br/><img src={useBaseUrl('img/api/mcp/claude-mcp-connected.png')} alt="Claude Code CLI showing Sumo Logic MCP server connected" width="600"/>
-1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [What MCP tools are available?](/docs/ai/mcp-server/mcp-tools-reference#what-mcp-tools-are-available)
+1. Prompt Claude Code to `List my available MCP tools` to see what you can do. You can also refer to [What MCP tools are available?](/docs/dojo-ai/mcp-server/mcp-tools-reference#what-mcp-tools-are-available)
 
 :::tip
-For more consistent investigation results, set up the [sumo-investigator skill for Claude Code](/docs/ai/mcp-server/investigate-with-mcp#improve-investigations-with-the-sumo-investigator-skill).
+For more consistent investigation results, set up the [sumo-investigator skill for Claude Code](/docs/dojo-ai/mcp-server/investigate-with-mcp#improve-investigations-with-the-sumo-investigator-skill).
 :::
 
 ### How to switch Sumo Logic organizations
@@ -155,7 +155,7 @@ Both require the **Sumo Logic Administrator role** to create the OAuth client an
       ```
    * Select your **Service Account** from the dropdown.
    * Optionally, add a **Description**.
-   * Under **Scopes**, leave every checkbox unchecked to grant access to all scopes, or select specific scopes to restrict the client's access. See [What MCP tools are available?](/docs/ai/mcp-server/mcp-tools-reference#what-mcp-tools-are-available) for the scope each tool requires.
+   * Under **Scopes**, leave every checkbox unchecked to grant access to all scopes, or select specific scopes to restrict the client's access. See [What MCP tools are available?](/docs/dojo-ai/mcp-server/mcp-tools-reference#what-mcp-tools-are-available) for the scope each tool requires.
    * Click **Save**.
 1. Copy the **Client ID** and **Client Secret**. You'll use these in the next step.
 

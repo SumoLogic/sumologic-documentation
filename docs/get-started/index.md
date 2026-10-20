@@ -17,7 +17,7 @@ Sumo Logic is an all-in-one cloud data analytics platform focused on Security, O
 Let's get started!
 
 :::tip
-New to Sumo Logic? [Mobot](/docs/ai/mobot), our AI-powered conversational assistant, answers platform how-to questions and investigates log data in plain language, no query expertise required.
+New to Sumo Logic? [Mobot](/docs/dojo-ai/mobot), our AI-powered conversational assistant, answers platform how-to questions and investigates log data in plain language, no query expertise required.
 :::
 
 :::training Sumo Logic Academy

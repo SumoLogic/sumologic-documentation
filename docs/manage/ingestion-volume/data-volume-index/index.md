@@ -44,7 +44,7 @@ Granular data tracking is a part of usage management that allows you to proactiv
 
 ## Ask Mobot about data volume
 
-You can ask [Mobot](/docs/ai/mobot/) natural-language questions about your ingest volume without writing queries against the Data Volume Index directly. The Data Volume skill is part of Mobot's Platform Optimization Agent and is available to all Mobot users with no separate opt-in required. It is included at no additional cost for active credit subscriptions.
+You can ask [Mobot](/docs/dojo-ai/mobot/) natural-language questions about your ingest volume without writing queries against the Data Volume Index directly. The Data Volume skill is part of Mobot's Platform Optimization Agent and is available to all Mobot users with no separate opt-in required. It is included at no additional cost for active credit subscriptions.
 
 Admins can use it to identify noisy sources and explain month-over-month fluctuations. Finance teams can use it to attribute spend, reconcile credits, and forecast renewals.
 
@@ -57,7 +57,7 @@ Example questions:
 
 Mobot parses your question to identify the time window, units, and breakdown you're asking for, queries this index, and returns a structured answer in any unit (GB, TB, MB, bytes, or event counts). If this index is not yet enabled, Mobot detects that and guides you through turning it on.
 
-For more example questions, see [Data volume](/docs/ai/mobot/example-prompts#data-volume) in Mobot Example Prompts.
+For more example questions, see [Data volume](/docs/dojo-ai/mobot/example-prompts#data-volume) in Mobot Example Prompts.
 
 ## Guide contents
 

@@ -78,4 +78,4 @@ Rate limits may be increased for customers with higher needs. Contact your Sumo 
 
 ## Security
 
-For how Sumo Logic secures MCP access, including audit trails and IP allowlisting, see the [MCP FAQ](/docs/ai/mcp-server/troubleshooting-faq#how-does-sumo-logic-secure-mcp-access).
+For how Sumo Logic secures MCP access, including audit trails and IP allowlisting, see the [MCP FAQ](/docs/dojo-ai/mcp-server/troubleshooting-faq#how-does-sumo-logic-secure-mcp-access).

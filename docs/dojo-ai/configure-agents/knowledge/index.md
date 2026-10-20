@@ -122,4 +122,4 @@ Pricing and packaging are being finalized. Your account team will have details b
 
 * [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/). The agent that Knowledge extends.
 * [Mobot](/docs/dojo-ai/mobot/). The conversational interface for Sumo Logic's AI agents.
-* [AI Capabilities](/docs/ai). How the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
+* [AI Capabilities](/docs/dojo-ai). How the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.

@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Once your AI client is [connected to the Sumo Logic MCP server](/docs/ai/mcp-server/connect-mcp-client), you can investigate alerts, insights, and logs by asking questions in plain language. This page shows how to get more consistent results with the sumo-investigator skill, and gives example multi-step prompts for common investigation tasks, such as triage, threat hunting, and incident response. For the tools your client can call, see the [MCP tools reference](/docs/ai/mcp-server/mcp-tools-reference).
+Once your AI client is [connected to the Sumo Logic MCP server](/docs/dojo-ai/mcp-server/connect-mcp-client), you can investigate alerts, insights, and logs by asking questions in plain language. This page shows how to get more consistent results with the sumo-investigator skill, and gives example multi-step prompts for common investigation tasks, such as triage, threat hunting, and incident response. For the tools your client can call, see the [MCP tools reference](/docs/dojo-ai/mcp-server/mcp-tools-reference).
 
 ## Improve investigations with the sumo-investigator skill
 

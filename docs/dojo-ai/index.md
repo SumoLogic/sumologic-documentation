@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic's AI capabilities help you investigate faster, build content in plain language, and connect your own AI tools to your Sumo Logic data. This page lists each capability and links to its documentation.
 
-[DojoAI](https://www.sumologic.com/solutions/dojo-ai) puts agentic AI to work across security and cloud operations. Use [Mobot](/docs/ai/mobot), DojoAI's conversational interface, in plain language to search your logs, create alerts, dashboards, playbooks and more, without writing any code. Agents such as the SOC Analyst Agent investigate alerts and return evidence-backed verdicts, and the Root Cause Agent diagnoses observability alerts, with a human in the loop at every step. The [MCP server](/docs/ai/mcp-server) connects external AI tools to your Sumo Logic data.
+[DojoAI](https://www.sumologic.com/solutions/dojo-ai) puts agentic AI to work across security and cloud operations. Use [Mobot](/docs/dojo-ai/mobot), DojoAI's conversational interface, in plain language to search your logs, create alerts, dashboards, playbooks and more, without writing any code. Agents such as the SOC Analyst Agent investigate alerts and return evidence-backed verdicts, and the Root Cause Agent diagnoses observability alerts, with a human in the loop at every step. The [MCP server](/docs/dojo-ai/mcp-server) connects external AI tools to your Sumo Logic data.
 
 :::tip
 Look for the sparkle icon (✨) in the docs table of contents to find AI features.

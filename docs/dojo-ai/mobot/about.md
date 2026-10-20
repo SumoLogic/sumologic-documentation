@@ -509,7 +509,7 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 
 ## Additional resources
 
-* [AI Capabilities](/docs/ai)
+* [AI Capabilities](/docs/dojo-ai)
 * **Self-paced**. [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 * [DojoAI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.

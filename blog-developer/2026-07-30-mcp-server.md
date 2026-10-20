@@ -9,7 +9,7 @@ keywords:
   - agent
 ---
 
-The Sumo Logic MCP server is now generally available. The MCP server lets MCP-compatible clients, such as developer IDEs, security workflows, and enterprise AI platforms, connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more, all using natural language. See [Sumo Logic MCP Server](/docs/api/mcp-server) for setup and available tools.
+The Sumo Logic MCP server is now generally available. The MCP server lets MCP-compatible clients, such as developer IDEs, security workflows, and enterprise AI platforms, connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more, all using natural language. See [Sumo Logic MCP Server](/docs/dojo-ai/mcp-server) for setup and available tools.
 
 [OAuth Client Setup](/docs/manage/security/oauth), the authentication framework the MCP server and other integrations use to connect securely to Sumo Logic, is also now generally available.
 
@@ -26,4 +26,4 @@ All tools respect your existing Sumo Logic permission controls and access polici
 
 #### Getting started
 
-Connect an MCP-compatible client using OAuth 2.0 with Client ID Metadata Documents (CIMD), including setup steps for Claude Code CLI. See [Sumo Logic MCP Server](/docs/api/mcp-server) for the deployment-specific server URL, prerequisites, and configuration steps.
+Connect an MCP-compatible client using OAuth 2.0 with Client ID Metadata Documents (CIMD), including setup steps for Claude Code CLI. See [Sumo Logic MCP Server](/docs/dojo-ai/mcp-server) for the deployment-specific server URL, prerequisites, and configuration steps.

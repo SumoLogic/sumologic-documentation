@@ -128,7 +128,7 @@ Some limits are not tied to the preview phase:
 
 ### What is the Sumo Logic Root Cause Agent?
 
-The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/ai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/dojo-ai/mobot/), DojoAI's chat interface.
+The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/dojo-ai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/dojo-ai/mobot/), DojoAI's chat interface.
 
 ### How is this different from asking a chat assistant about my alerts?
 
@@ -188,7 +188,7 @@ Availability is rolling out per deployment. Check with your account team for you
 
 * [Example Prompts for Mobot](/docs/dojo-ai/mobot/example-prompts). Find more example prompts here to continue your root cause observability investigation.
 * [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the Root Cause Agent.
-* [AI Capabilities](/docs/ai). How Sumo Logic's AI agents fit alongside Mobot, the SOC Analyst Agent, and the Sumo Logic MCP server.
+* [AI Capabilities](/docs/dojo-ai). How Sumo Logic's AI agents fit alongside Mobot, the SOC Analyst Agent, and the Sumo Logic MCP server.
 * [Alert Response](/docs/alerts/monitors/alert-response/). The alert page that hosts the AI Investigation tab.
 * [Mobot](/docs/dojo-ai/mobot/). The conversational interface for Sumo Logic's AI agents.
 * [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent). The security counterpart to the Root Cause Agent — investigates Cloud SIEM insights for security teams.

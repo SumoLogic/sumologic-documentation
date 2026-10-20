@@ -10,7 +10,7 @@ keywords:
   - dojoai
 ---
 
-[Mobot](/docs/ai/mobot) enables you to create dashboard panels using natural language. Instead of manually building a query and configuring a visualization, describe the panel you want, and Mobot generates the query, selects an appropriate visualization, and adds the panel to a new or existing dashboard after your confirmation.
+[Mobot](/docs/dojo-ai/mobot) enables you to create dashboard panels using natural language. Instead of manually building a query and configuring a visualization, describe the panel you want, and Mobot generates the query, selects an appropriate visualization, and adds the panel to a new or existing dashboard after your confirmation.
 
 Mobot supports logs panels only, not metrics panels, and can create multiple panels from a single prompt. It creates new panels only; it cannot update an existing panel.
 
@@ -31,14 +31,14 @@ For logs panels, Mobot can create the following visualization types:
 
 ## How to create a panel with Mobot
 
-1. Open [Mobot](/docs/ai/mobot) and type a description of the panel you want directly into the chat. For example:<br/>`Add a panel showing request count by geo location on a map.`
+1. Open [Mobot](/docs/dojo-ai/mobot) and type a description of the panel you want directly into the chat. For example:<br/>`Add a panel showing request count by geo location on a map.`
 1. Mobot looks up a relevant data source or existing query, then shows you a breakdown of the source, parsing, aggregation, and visualization it plans to use, along with the draft query.
 1. Mobot asks which dashboard to add the panel to. Choose one of the suggested existing dashboards, or name a new dashboard to create.
 1. Confirm when Mobot asks if it should proceed. Mobot creates the dashboard (if new) and adds the panel.
 
 The new panel appears on the dashboard, the same as a panel created through the dashboard UI.
 
-For more prompts to try, see [Dashboard panel creation](/docs/ai/mobot/example-prompts#dashboard-panel-creation) in the Mobot Example Prompts library.
+For more prompts to try, see [Dashboard panel creation](/docs/dojo-ai/mobot/example-prompts#dashboard-panel-creation) in the Mobot Example Prompts library.
 
 ## How to create multiple panels in one request
 
@@ -85,6 +85,6 @@ Yes. After the panel is created, you can modify it using the standard dashboard 
 
 ## Related resources
 
-- [Mobot](/docs/ai/mobot)
-- [Mobot Example Prompts](/docs/ai/mobot/example-prompts)
+- [Mobot](/docs/dojo-ai/mobot)
+- [Mobot Example Prompts](/docs/dojo-ai/mobot/example-prompts)
 - [Create a New Dashboard](/docs/dashboards/create-dashboard-new)

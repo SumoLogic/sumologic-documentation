@@ -35,7 +35,7 @@ Yes. MCP supports multi-tool calls within a single conversational interaction.
 
 ### How does MCP affect my Sumo Logic usage?
 
-MCP-triggered actions can consume Sumo Logic resources in the same way equivalent UI or API actions do. For example, if an AI client uses MCP to run a log search, that search may consume search resources. See [What drives MCP cost?](/docs/ai/mcp-server/usage-costs-rate-limits#what-drives-mcp-cost) for details. For bulk data retrieval or model training, use the [Search Job API](/docs/api/search-job) instead.
+MCP-triggered actions can consume Sumo Logic resources in the same way equivalent UI or API actions do. For example, if an AI client uses MCP to run a log search, that search may consume search resources. See [What drives MCP cost?](/docs/dojo-ai/mcp-server/usage-costs-rate-limits#what-drives-mcp-cost) for details. For bulk data retrieval or model training, use the [Search Job API](/docs/api/search-job) instead.
 
 ### Where does my agent run?
 
@@ -51,7 +51,7 @@ No. Sumo Logic never uses customer data to train AI models, regardless of which 
 
 ### Can I use my org subdomain in the MCP server URL?
 
-Yes. Add your subdomain to the front of your deployment's MCP server URL, for example `https://<subdomain>.mcp.us2.sumologic.com/mcp`. MCP clients that authenticate with CIMD then go directly to your org's login page instead of asking users to enter the subdomain first. See [How to use your org subdomain in the MCP server URL](/docs/ai/mcp-server/connect-mcp-client#how-to-use-your-org-subdomain-in-the-mcp-server-url).
+Yes. Add your subdomain to the front of your deployment's MCP server URL, for example `https://<subdomain>.mcp.us2.sumologic.com/mcp`. MCP clients that authenticate with CIMD then go directly to your org's login page instead of asking users to enter the subdomain first. See [How to use your org subdomain in the MCP server URL](/docs/dojo-ai/mcp-server/connect-mcp-client#how-to-use-your-org-subdomain-in-the-mcp-server-url).
 
 ### What client authentication does MCP require?
 
@@ -71,4 +71,4 @@ Your org has an IP allowlist configured and the client IP making the request is 
 
 ### Does IP allowlisting apply to all MCP tools?
 
-Yes. All MCP tools forward your original client IP to Sumo Logic, so IP allowlisting works consistently across all tools, including log search (`runLogSearch`) and [Mobot](/docs/ai/mobot).
+Yes. All MCP tools forward your original client IP to Sumo Logic, so IP allowlisting works consistently across all tools, including log search (`runLogSearch`) and [Mobot](/docs/dojo-ai/mobot).

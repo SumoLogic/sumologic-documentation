@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic's AI capabilities help you investigate faster, build content in plain language, and connect your own AI tools to your Sumo Logic data. This page lists each capability and links to its documentation.
 
-[DojoAI](https://www.sumologic.com/solutions/dojo-ai) puts agentic AI to work across security and cloud operations. Use [Mobot](/docs/ai/mobot), DojoAI's conversational interface, in plain language to search your logs, create alerts, dashboards, playbooks and more, without writing any code. Agents such as the SOC Analyst Agent investigate alerts and return evidence-backed verdicts, and the Root Cause Agent diagnoses observability alerts, with a human in the loop at every step. The [MCP server](/docs/ai/mcp-server) connects external AI tools to your Sumo Logic data.
+[DojoAI](https://www.sumologic.com/solutions/dojo-ai) puts agentic AI to work across security and cloud operations. Use [Mobot](/docs/dojo-ai/mobot), DojoAI's conversational interface, in plain language to search your logs, create alerts, dashboards, playbooks and more, without writing any code. Agents such as the SOC Analyst Agent investigate alerts and return evidence-backed verdicts, and the Root Cause Agent diagnoses observability alerts, with a human in the loop at every step. The [MCP server](/docs/dojo-ai/mcp-server) connects external AI tools to your Sumo Logic data.
 
 ## What is DojoAI?
 
@@ -40,14 +40,14 @@ Sumo Logic's AI capabilities show up in several places in the product. Use this 
 
 | I want to... | Go to | Docs |
 |:--|:--|:--|
-| Chat with an agent, ask questions about my data, or create content in plain language | **Mobot** | [Mobot](/docs/ai/mobot) |
+| Chat with an agent, ask questions about my data, or create content in plain language | **Mobot** | [Mobot](/docs/dojo-ai/mobot) |
 | Create a monitor, dashboard panel, or playbook from a prompt | The monitor, dashboard, or playbook page, which opens Mobot | [Create a monitor with Mobot](/docs/alerts/monitors/create-monitor-with-mobot), [Create a panel with Mobot](/docs/dashboards/create-panel-with-mobot), [Create playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot) |
 | Review an agent's verdict on a Cloud SIEM insight, and continue the investigation in Mobot | The insight's **AI Investigation** tab | [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent) |
 | Review a root cause investigation for a monitor alert | The alert's **AI Investigation** tab | [Root Cause Agent](/docs/dojo-ai/agents/root-cause-agent-preview) |
-| Teach an agent my team's facts, patterns, and practices | **DojoAI** in the left navigation | [Agent Knowledge for the SOC Analyst Agent](/docs/ai/configure-agents/knowledge) |
+| Teach an agent my team's facts, patterns, and practices | **DojoAI** in the left navigation | [Agent Knowledge for the SOC Analyst Agent](/docs/dojo-ai/configure-agents/knowledge) |
 | Turn AI features on or off, or audit AI activity | **Administration** > **Feature Management** | [Feature Management](/docs/dojo-ai/about/#feature-management) |
-| Connect Claude Code, GitHub Copilot, or another AI client to my data | Your AI client | [MCP server](/docs/ai/mcp-server) |
-| Understand how AI features handle my data | | [AI Trust and Data FAQ](/docs/ai/trust-data-faq) |
+| Connect Claude Code, GitHub Copilot, or another AI client to my data | Your AI client | [MCP server](/docs/dojo-ai/mcp-server) |
+| Understand how AI features handle my data | | [AI Trust and Data FAQ](/docs/dojo-ai/trust-data-faq) |
 
 ## DojoAI Credits
 
@@ -104,7 +104,7 @@ The audit includes:
 * **User activity**. Individual user prompts, queries, and shared Mobot conversation threads.
 * **Actions on customer data**. Log searches, playbook executions, and triage steps performed by agents across the platform.
 
-Log searches that Mobot runs on your behalf are also tracked in the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/). See [Audit Mobot queries](/docs/ai/mobot/about#audit-mobot-queries).
+Log searches that Mobot runs on your behalf are also tracked in the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/). See [Audit Mobot queries](/docs/dojo-ai/mobot/about#audit-mobot-queries).
 
 
 ## Other AI features

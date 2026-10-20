@@ -97,7 +97,7 @@ No. All processing happens within your region's cluster. RAG context is scoped t
 
 ### Does a fourth party have access to Mobot customer data?
 
-No. Mobot uses foundation models securely hosted through Amazon Bedrock. See our [AI Trust and Data FAQ](/docs/ai/trust-data-faq/#does-any-third-party-have-access-to-dojoai-customer-data) for more information.
+No. Mobot uses foundation models securely hosted through Amazon Bedrock. See our [AI Trust and Data FAQ](/docs/dojo-ai/trust-data-faq/#does-any-third-party-have-access-to-dojoai-customer-data) for more information.
 
 ### Does Mobot use any open-source libraries, GenAI providers, or cloud providers?
 
@@ -109,7 +109,7 @@ Yes. The on-call developer or security engineer troubleshooting an incident is t
 
 ### Does Sumo Logic hold any AI-specific certifications or accreditations?
 
-See our [AI Trust and Data FAQ](/docs/ai/trust-data-faq/#does-sumo-logic-hold-any-ai-specific-certifications-or-accreditations) for more information.
+See our [AI Trust and Data FAQ](/docs/dojo-ai/trust-data-faq/#does-sumo-logic-hold-any-ai-specific-certifications-or-accreditations) for more information.
 
 ### Which Mobot capabilities are available in FED deployments?
 

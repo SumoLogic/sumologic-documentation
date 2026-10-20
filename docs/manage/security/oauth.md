@@ -30,12 +30,12 @@ Effective permissions are always the intersection of the OAuth client's configur
 * **Client Credentials flow**. Effective permissions are the intersection of the service account's roles, the OAuth client's configured scopes, and any scopes explicitly requested when obtaining a token.
 
 :::note
-A few scopes (`manageLibrary`, `runLogSearch`, `viewLibrary`, `runMetricsQuery`, and `viewUsersAndRoles`) grant permissions that every user has in the UI regardless of their role. These scopes are granted whenever they are configured on the OAuth client, regardless of user role. To restrict them, remove the scopes from the OAuth client's configured scopes. For CIMD clients, an administrator can edit the client's scopes. The [MCP server](/docs/ai/mcp-server) hides the tools that require a removed scope for all users of that client.
+A few scopes (`manageLibrary`, `runLogSearch`, `viewLibrary`, `runMetricsQuery`, and `viewUsersAndRoles`) grant permissions that every user has in the UI regardless of their role. These scopes are granted whenever they are configured on the OAuth client, regardless of user role. To restrict them, remove the scopes from the OAuth client's configured scopes. For CIMD clients, an administrator can edit the client's scopes. The [MCP server](/docs/dojo-ai/mcp-server) hides the tools that require a removed scope for all users of that client.
 :::
 
 ## Client ID Metadata Documents (CIMD)
 
-[Client ID Metadata Documents (CIMD)](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) let a client identify itself to Sumo Logic using a hosted metadata URL as its client ID, without an administrator pre-registering an OAuth client. CIMD is the default, recommended authentication mechanism for [MCP server](/docs/ai/mcp-server) clients such as the Claude Code CLI, which handle browser-based login and token refresh automatically.
+[Client ID Metadata Documents (CIMD)](https://datatracker.ietf.org/doc/draft-ietf-oauth-client-id-metadata-document/) let a client identify itself to Sumo Logic using a hosted metadata URL as its client ID, without an administrator pre-registering an OAuth client. CIMD is the default, recommended authentication mechanism for [MCP server](/docs/dojo-ai/mcp-server) clients such as the Claude Code CLI, which handle browser-based login and token refresh automatically.
 
 CIMD uses the [Authorization Code flow](#authorization-code-flow) behind the scenes, so the same [permission rules](#how-permissions-work) apply.
 
@@ -98,7 +98,7 @@ Effective permissions remain the intersection of the user's roles and the grante
 
 Sumo Logic displays a client's icon next to its name on the **OAuth Clients**, consent, and **Personal Authorized Apps** pages, if the client's metadata document includes a `logo_uri` field (a URL pointing to an icon image). This depends on the client, not on any Sumo Logic setting; clients that don't publish a `logo_uri` show no icon.<br/><img src={useBaseUrl('img/api/mcp/oauth-clients-icons.png')} alt="OAuth Clients list showing icons next to Visual Studio Code, Codex, and Google Antigravity, and no icon next to Claude Code" style={{border: '1px solid gray'}} width="800" />
 
-Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [How to set up MCP without CIMD](/docs/ai/mcp-server/connect-mcp-client#how-to-set-up-mcp-without-cimd) for the MCP server.
+Clients that do not support CIMD can connect with a pre-registered OAuth client instead, using either the [Authorization Code flow](#authorization-code-flow) or the [Client Credentials flow](#client-credentials-flow). See [How to set up MCP without CIMD](/docs/dojo-ai/mcp-server/connect-mcp-client#how-to-set-up-mcp-without-cimd) for the MCP server.
 
 ## Authorization Code flow
 
@@ -330,7 +330,7 @@ Sumo Logic publishes OAuth 2.0 and OpenID Connect discovery documents so clients
 
 * **Authorization server metadata** returns the `authorization_endpoint`, `token_endpoint`, and other supported OAuth 2.0 parameters, such as scopes, grant types, and response types.
 * **OpenID Connect configuration** returns the OpenID Provider configuration, including the `issuer`, endpoint URLs, and supported claims.
-* **Protected resource metadata** advertises which authorization server issues tokens for a given resource. The API endpoint and the [Sumo Logic MCP server](/docs/ai/mcp-server) each publish their own. Replace `[api-endpoint]` with your [deployment-specific API endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `api.sumologic.com` for US1) and `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/ai/mcp-server/connect-mcp-client#mcp-server-url-for-your-deployment).
+* **Protected resource metadata** advertises which authorization server issues tokens for a given resource. The API endpoint and the [Sumo Logic MCP server](/docs/dojo-ai/mcp-server) each publish their own. Replace `[api-endpoint]` with your [deployment-specific API endpoint](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) (for example, `api.sumologic.com` for US1) and `[mcp-server-endpoint]` with your [deployment's MCP server URL](/docs/dojo-ai/mcp-server/connect-mcp-client#mcp-server-url-for-your-deployment).
 
 For example, to retrieve the authorization server metadata:
 

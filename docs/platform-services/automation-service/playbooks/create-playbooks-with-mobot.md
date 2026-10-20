@@ -12,7 +12,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ConvPlaybookLimits from '../../../reuse/conv-playbook-limits.md';
 
-[Mobot](/docs/ai/mobot) enables you to create playbooks using natural language. Mobot is the AI Playbook Assistant built into the Playbooks editor. Instead of manually wiring up nodes, you describe what you want in plain language, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you.
+[Mobot](/docs/dojo-ai/mobot) enables you to create playbooks using natural language. Mobot is the AI Playbook Assistant built into the Playbooks editor. Instead of manually wiring up nodes, you describe what you want in plain language, and Mobot proposes a plan, asks clarifying questions, and builds the playbook for you.
 
 <ConvPlaybookLimits/>
 
@@ -39,5 +39,5 @@ Follow the steps below to create a playbook using Mobot:
 
 ## Related resources
 
-- [Mobot](/docs/ai/mobot)
+- [Mobot](/docs/dojo-ai/mobot)
 - [Create Playbooks](/docs/platform-services/automation-service/playbooks/create-playbooks)

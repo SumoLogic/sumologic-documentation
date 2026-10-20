@@ -20,13 +20,13 @@ The Sumo Logic MCP server lets MCP clients (external AI models) connect to Sumo 
 
 - **What it does**. Lets external AI clients query Sumo Logic logs, Cloud SIEM insights, alerts, and dashboards using natural language, through a set of MCP tools.
 - **How it works**. MCP clients authenticate over OAuth 2.0 (CIMD recommended) and call MCP tools that are scoped to your Sumo Logic role permissions.
-- **Supported deployments**. All commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud. See the [MCP server URL table](/docs/ai/mcp-server/connect-mcp-client#mcp-server-url-for-your-deployment) for your deployment's endpoint.
-- **Subdomain URLs**. Add your org's subdomain to the MCP server URL so CIMD clients go straight to your org's login page. See [How to use your org subdomain in the MCP server URL](/docs/ai/mcp-server/connect-mcp-client#how-to-use-your-org-subdomain-in-the-mcp-server-url).
+- **Supported deployments**. All commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud. See the [MCP server URL table](/docs/dojo-ai/mcp-server/connect-mcp-client#mcp-server-url-for-your-deployment) for your deployment's endpoint.
+- **Subdomain URLs**. Add your org's subdomain to the MCP server URL so CIMD clients go straight to your org's login page. See [How to use your org subdomain in the MCP server URL](/docs/dojo-ai/mcp-server/connect-mcp-client#how-to-use-your-org-subdomain-in-the-mcp-server-url).
 - **Prerequisites**. An MCP-compatible client that supports HTTP/SSE transport and OAuth 2.0; MCP Server access enabled (on by default); CIMD enabled by an administrator (recommended).
 - **Limitations**. Not intended for bulk data extraction, model training, or high-volume automated queries, and is subject to rate limits (4 requests per second, 10 concurrent).
 
 :::note
-Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](/docs/ai/mcp-server/investigate-with-mcp#improve-investigations-with-the-sumo-investigator-skill)), while [Mobot](/docs/ai/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
+Prefer a built-in conversational experience instead of connecting an external AI client? The MCP server exposes discrete tools that any MCP-compatible client can call (optionally guided by the [sumo-investigator skill](/docs/dojo-ai/mcp-server/investigate-with-mcp#improve-investigations-with-the-sumo-investigator-skill)), while [Mobot](/docs/dojo-ai/mobot) is Sumo Logic's own set of specialized agents — including the SOC Analyst Agent, Query Agent, Knowledge Agent, and monitor creation — built directly into the product.
 :::
 
 :::training Sumo Logic Academy

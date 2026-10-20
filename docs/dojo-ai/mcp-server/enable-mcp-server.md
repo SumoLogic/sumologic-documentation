@@ -14,7 +14,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
-An administrator must enable MCP server access for your organization before MCP clients can connect. MCP server access is on by default. CIMD, the recommended way for MCP clients to authenticate, is off by default and is enabled separately on the **Policies** page. After both are set, see [Connect an MCP Client](/docs/ai/mcp-server/connect-mcp-client).
+An administrator must enable MCP server access for your organization before MCP clients can connect. MCP server access is on by default. CIMD, the recommended way for MCP clients to authenticate, is off by default and is enabled separately on the **Policies** page. After both are set, see [Connect an MCP Client](/docs/dojo-ai/mcp-server/connect-mcp-client).
 
 ## Enable or disable the MCP server
 
