@@ -32,12 +32,12 @@ Vectra AI detects and prioritises high-fidelity alerts in real time and responds
 
 ## Configure Vectra in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
-import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
-import IntegrationEngine from '../../../reuse/automation-service/integration-engine.md';
-import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
-import IntegrationProxy from '../../../reuse/automation-service/integration-proxy.md';
-import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
+import IntegrationsAuth from '../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>

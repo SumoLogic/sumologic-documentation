@@ -4,7 +4,7 @@ description: ''
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import EwsRetirement from '../../../reuse/ews-retirement-warning.md';
+import EwsRetirement from '../../reuse/ews-retirement-warning.md';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="Microsoft EWS icon" width="100"/>
 
@@ -146,15 +146,15 @@ Once API permission are added then Admin must consent to a grant these permissio
 
 ## Configure Microsoft EWS in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
-import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
-import IntegrationEngine from '../../../reuse/automation-service/integration-engine.md';
-import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
-import IntegrationProxy from '../../../reuse/automation-service/integration-proxy.md';
-import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
-import CloudSOARAPIURL from '../../../reuse/automation-service/cloud-soar-api-url.md';
-import AccessID from '../../../reuse/automation-service/access-id.md';
-import AccessKey from '../../../reuse/automation-service/access-key.md';
+import IntegrationsAuth from '../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../reuse/automation-service/integration-timeout.md';
+import CloudSOARAPIURL from '../../reuse/automation-service/cloud-soar-api-url.md';
+import AccessID from '../../reuse/automation-service/access-id.md';
+import AccessKey from '../../reuse/automation-service/access-key.md';
 
 <IntegrationsAuth/>
 

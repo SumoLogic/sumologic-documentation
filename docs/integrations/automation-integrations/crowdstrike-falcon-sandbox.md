@@ -32,12 +32,12 @@ For improved polling reliability, use the **Check Submission Status** (*Schedule
 
 ## Configure CrowdStrike Falcon Sandbox in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
-import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
-import IntegrationEngine from '../../../reuse/automation-service/integration-engine.md';
-import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
-import IntegrationProxy from '../../../reuse/automation-service/integration-proxy.md';
-import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
+import IntegrationsAuth from '../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>

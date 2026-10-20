@@ -25,10 +25,10 @@ MITRE is a globally-accessible knowledge base of adversary tactics and technique
 
 ## Configure MITRE Matrix in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
-import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
-import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
-import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
+import IntegrationsAuth from '../../reuse/integrations-authentication.md';
+import IntegrationCertificate from '../../reuse/automation-service/integration-certificate.md';
+import IntegrationLabel from '../../reuse/automation-service/integration-label.md';
+import IntegrationTimeout from '../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 * <IntegrationLabel/>

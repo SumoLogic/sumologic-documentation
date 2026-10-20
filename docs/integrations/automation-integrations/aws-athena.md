@@ -32,18 +32,18 @@ To [get access key and secret access key](https://docs.aws.amazon.com/athena/lat
 
 ## Configure Amazon Athena in Automation Service and Cloud SOAR
 
-import IntegrationsAuth from '../../../reuse/integrations-authentication.md';
-import IntegrationsAuthAWS from '../../../reuse/integrations-authentication-aws.md';
-import IAMConfiguration from '../../../reuse/automation-service/aws/iam-configuration.md';
-import AWSRegions from '../../../reuse/automation-service/aws/region.md';
-import AWSAccesskey from '../../../reuse/automation-service/aws/access-key.md';
-import AWSSecret from '../../../reuse/automation-service/aws/secret.md';
-import AWSIAMRole from '../../../reuse/automation-service/aws/iam-role.md';
-import IntegrationCertificate from '../../../reuse/automation-service/integration-certificate.md';
-import IntegrationEngine from '../../../reuse/automation-service/integration-engine.md';
-import IntegrationLabel from '../../../reuse/automation-service/integration-label.md';
-import IntegrationProxy from '../../../reuse/automation-service/integration-proxy.md';
-import IntegrationTimeout from '../../../reuse/automation-service/integration-timeout.md';
+import IntegrationsAuth from '../../reuse/integrations-authentication.md';
+import IntegrationsAuthAWS from '../../reuse/integrations-authentication-aws.md';
+import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
+import AWSRegions from '../../reuse/automation-service/aws/region.md';
+import AWSAccesskey from '../../reuse/automation-service/aws/access-key.md';
+import AWSSecret from '../../reuse/automation-service/aws/secret.md';
+import AWSIAMRole from '../../reuse/automation-service/aws/iam-role.md';
+import IntegrationCertificate from '../../reuse/automation-service/integration-certificate.md';
+import IntegrationEngine from '../../reuse/automation-service/integration-engine.md';
+import IntegrationLabel from '../../reuse/automation-service/integration-label.md';
+import IntegrationProxy from '../../reuse/automation-service/integration-proxy.md';
+import IntegrationTimeout from '../../reuse/automation-service/integration-timeout.md';
 
 <IntegrationsAuth/>
 
