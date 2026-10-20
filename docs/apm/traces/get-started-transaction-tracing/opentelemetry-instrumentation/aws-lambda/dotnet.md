@@ -18,7 +18,7 @@ To obtain tracing data from AWS Lambda functions developed in .NET, you can use 
 
 ### OpenTelemetry Lambda layer
 
-[OpenTelemetry Lambda Layer for Collector](https://github.com/open-telemetry/opentelemetry-lambda/tree/main/collector#opentelemetry-collector-aws-lambda-extension-layer) includes OpenTelemetry Collector for Lambda components. Apply this layer to your Lambda handler that's already been instrumented with the OpenTelemetry Lambda .NET SDK to enable end-to-end tracing.
+[OpenTelemetry Lambda Layer for Collector](https://github.com/open-telemetry/opentelemetry-lambda/tree/main/collector#opentelemetry-collector-aws-lambda-extension-layer) includes [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for Lambda components. Apply this layer to your Lambda handler that's already been instrumented with the OpenTelemetry Lambda .NET SDK to enable end-to-end tracing.
 
 #### .NET Lambda layer supports
 

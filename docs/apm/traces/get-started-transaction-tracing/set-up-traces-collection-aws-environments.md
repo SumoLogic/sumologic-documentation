@@ -20,7 +20,7 @@ To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including
 
 ## Telemetry data collection
 
-AWS provides a few alternative scenarios for setting up the Collector. Documentation related to the configuration and installation of the Sumo Logic Distribution for OpenTelemetry Collector for specific AWS Services can be found below.
+AWS provides a few alternative scenarios for setting up the Collector. Documentation related to the configuration and installation of the Sumo Logic Distribution for [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for specific AWS Services can be found below.
 
 ## Sumo Logic Distribution for OpenTelemetry Collector configuration scenarios
 

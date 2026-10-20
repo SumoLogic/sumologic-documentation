@@ -95,7 +95,7 @@ To configure a RUM HTTP Traces source:
 
 The script includes a RUM HTTP Traces source URL for `collectionSourceUrl` in the generated script. This is saved for the script as `sumo_logic_http_traces_source_url`. Your user's browser should be allowed to POST data to this URL.  
 
-This can be also replaced with an internal OpenTelemetry collector if you wish to redirect browser traffic over it. In this case, replace this URL with the OpenTelemetry collector OTLP/HTTP receiver endpoint as described in [Getting Started with Transaction Tracing](/docs/apm/traces/get-started-transaction-tracing). In this case, the OpenTelemetry collector exporter will send data to the RUM HTTP Traces source URL.
+This can be also replaced with an internal [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) if you wish to redirect browser traffic over it. In this case, replace this URL with the OpenTelemetry Collector OTLP/HTTP receiver endpoint as described in [Getting Started with Transaction Tracing](/docs/apm/traces/get-started-transaction-tracing). In this case, the OpenTelemetry Collector exporter will send data to the RUM HTTP Traces source URL.
 
 ## Step 2: Add RUM script to your page header
 

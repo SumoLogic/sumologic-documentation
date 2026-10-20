@@ -27,7 +27,7 @@ import Iframe from 'react-iframe';
 
 ## Installation
 
-The Java agent and configuration needs to be provided for each of the monitored service instances. The address of the OpenTelemetry Collector (or Collector/Agent) needs to be prepared first (`OTLP_HTTP_ENDPOINT`) and the desired name of the service (`SERVICE_NAME`) and application (`APPLICATION_NAME`).
+The Java agent and configuration needs to be provided for each of the monitored service instances. The address of the [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) (or Collector/Agent) needs to be prepared first (`OTLP_HTTP_ENDPOINT`) and the desired name of the service (`SERVICE_NAME`) and application (`APPLICATION_NAME`).
 
 Instruction below applies to **OpenTelemetry Java Auto Instrumentation** in version [2.6.0](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/tag/v2.6.0).
 

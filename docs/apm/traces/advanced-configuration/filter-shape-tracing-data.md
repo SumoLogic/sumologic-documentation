@@ -7,15 +7,15 @@ description: Learn how to create and apply custom rules to shape tracing data.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You may ask yourself, "What if I do not want to send all my trace data to Sumo Logic?". With our OpenTelemetry collector, you can define custom rules to filter and extract data based on your selection.
+You may ask yourself, "What if I do not want to send all my trace data to Sumo Logic?". With our OpenTelemetry Collector, you can define custom rules to filter and extract data based on your selection.
 
-Our OpenTelemetry collector is uniquely capable of [shaping trace data at output](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor). You can define rules in a cascading fashion, assign different volume pool sizes to each rule, and give them different priorities.
+Our OpenTelemetry Collector is uniquely capable of [shaping trace data at output](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor). You can define rules in a cascading fashion, assign different volume pool sizes to each rule, and give them different priorities.
 
 Most of the following configuration rules are based on whole trace inspection (end-to-end trace duration) and the decision of whether to send a trace or not, is also based on all or none spans for the trace. Therefore it is important that a single collector working with that capability enabled **always sees a complete trace**.
 
 Output-level filtering ensures you will always have valuable, useful, and cost-optimized data for backend analysis. Most users want to filter tracing data to help with scaling, privacy, or cost optimization for large environments.
 
-For best results, perform filtering on a central instance of Aggregating OpenTelemetry Collector (see the following diagram), as it gives possibilities to act on whole trace, rather than individual span level.
+For best results, perform filtering on a central instance of Aggregating [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) (see the following diagram), as it gives possibilities to act on whole trace, rather than individual span level.
 
 <img src={useBaseUrl('img/apm/traces/env-multiple-agents-bd.png')} alt="Environment with multiple agents" style={{border: '1px solid gray'}} width="800" />
 

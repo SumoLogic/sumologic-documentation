@@ -22,7 +22,7 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 
 Installation is the same as for the official [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection). The process uses a Helm chart to set all required components. It will automatically download and configure the [OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which will collect, process, and export telemetry data to Sumo Logic.
 
-In the following installation steps, we use the release name `collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the OpenTelemetry Collector endpoint name.
+In the following installation steps, we use the release name `collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) endpoint name.
 
 :::note
  If you're upgrading from Sumo Logic Kubernetes Collection:

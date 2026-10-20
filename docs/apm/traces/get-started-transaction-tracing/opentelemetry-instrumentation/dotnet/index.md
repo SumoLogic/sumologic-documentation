@@ -47,7 +47,7 @@ Register-OpenTelemetryForCurrentSession -OTelServiceName "MyServiceDisplayName"
 The final step is to configure the exporter endpoint, service and application name otherwise defaults will be used. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_HTTP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_HTTP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector)/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma-separated key=value pairs. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
 
