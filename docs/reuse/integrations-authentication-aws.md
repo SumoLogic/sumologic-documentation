@@ -1,1 +1,1 @@
-For configuration information specific to AWS integrations, see the [AWS integrations](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/#aws-integrations) section. 
+For configuration information specific to AWS integrations, see the [AWS integrations](/docs/integrations/automation-integrations/configure-authentication/#aws-integrations) section. 

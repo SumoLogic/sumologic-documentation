@@ -1,8 +1,8 @@
 ---
-id: manage-automation-integrations
-title: Manage Automation Integrations
-sidebar_label: Manage Automation Integrations
-description: Learn how to install and upgrade integrations from the App Catalog.
+id: install-automation-integrations
+title: Installing and Upgrading Automation Integrations
+sidebar_label: Installation
+description: Learn how to install and upgrade automation integrations from the App Catalog.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -23,7 +23,7 @@ Find the article for the integration in [Automation Integrations in App Catalog]
 ## Upgrade an integration from App Catalog
 
 If a newer version of an installed integration is available, an **Upgrade Available** tag appears in the top-right corner of the card.
- 
+
 Follow the steps below to upgrade the integration:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.
 1. Select the integration you want to upgrade.

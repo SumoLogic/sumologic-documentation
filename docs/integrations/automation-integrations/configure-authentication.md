@@ -1,28 +1,28 @@
 ---
-id: configure-authentication-for-automation-integrations
+id: configure-authentication
 title: Configure Authentication for Automation Integrations
-sidebar_label: Configure Authentication for Automation Integrations
+sidebar_label: Configure Authentication
 description: Learn how to configure authentication for automation integrations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
 
-This article provides a quick reference to configure authentication for [automation integrations in App Catalog](/docs/integrations/automation-integrations/) for the Automation Service and Cloud SOAR. Refer to the individual [integrations articles](/docs/integrations/automation-integrations/) for detailed information on setup, usage, and features. 
+This article provides a quick reference to configure authentication for [automation integrations in App Catalog](/docs/integrations/automation-integrations/) for the Automation Service and Cloud SOAR. Refer to the individual [integrations articles](/docs/integrations/automation-integrations/) for detailed information on setup, usage, and features.
 
 ## How to configure authentication for automation integrations
 
-1. [Install the integration](/docs/integrations/automation-integrations/manage-automation-integrations/#install-an-integration-from-app-catalog) from App Catalog.<br/>
+1. [Install the integration](/docs/integrations/automation-integrations/install-automation-integrations/#install-an-integration-from-app-catalog) from App Catalog.<br/>
 Before you can access integrations, you must have the Access App Central role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).<br/>
 1. Select the integration you want to configure in the App Catalog and then click **Configure Integration**. You will be redirected to the [**Automation Service Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) page.
-1. Hover your cursor over the resource name and click the **Edit** icon that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="800"/> 
+1. Hover your cursor over the resource name and click the **Edit** icon that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="800"/>
 1. Enter the authentication needed by the resource. <br/>What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/>For example, in the following screen enter the **API URL** and **API Key** from the vendor. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="300"/>
    :::note
    In many integrations, the configuration screen asks you to do the following:
       * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
    :::
-1. When done, click **TEST** to test the configuration. 
+1. When done, click **TEST** to test the configuration.
 1. Click **SAVE** to save the configuration.
 
 ## Authentication needed for automation integrations
@@ -32,17 +32,17 @@ Before you can access integrations, you must have the Access App Central role ca
 The following outlines the authentication requirements for commonly used integrations:
 * **[HTTP Tools](/docs/integrations/automation-integrations/http-tools/)**:
    * For **HTTP API URL** provide the resource-specific URL.
-   * In **Extra Headers** add required auth tokens (if applicable) as JSON input or key-value pairs. Verify that the auth token provided has the necessary permissions for the requested playbook actions. 
+   * In **Extra Headers** add required auth tokens (if applicable) as JSON input or key-value pairs. Verify that the auth token provided has the necessary permissions for the requested playbook actions.
 * **[Incident Tools](/docs/integrations/automation-integrations/incident-tools/)** / **[Mail Tools](/docs/integrations/automation-integrations/mail-tools/)** / **[Triage Tools](/docs/integrations/automation-integrations/triage-tools/)** / **[Zip Tools](/docs/integrations/automation-integrations/zip-tools/)**:
    * Set the **Cloud SOAR API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Provide the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
 * **[Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/)**:
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
-* **[Sumo Logic Log Analytics](/docs/integrations/automation-integrations/sumo-logic-log-analytics/)**: 
+* **[Sumo Logic Log Analytics](/docs/integrations/automation-integrations/sumo-logic-log-analytics/)**:
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). For minimal configuration, select the scope **Log Search** or other relevant scopes as required.
-* **[Sumo Logic Notifications](/docs/integrations/automation-integrations/sumo-logic-notifications/)**: 
+* **[Sumo Logic Notifications](/docs/integrations/automation-integrations/sumo-logic-notifications/)**:
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
    * Provide the **Slack Bot/User OAuth Token**.
@@ -83,11 +83,11 @@ To resolve Sumo Logic API endpoint errors, verify the [API endpoint URL](/docs/a
 To resolve vendor API endpoint errors:
 * Validate integration setup via the third-party vendor’s dashboard or Postman.
 * Configure API tokens and access keys with the appropriate scope.
-* Check if authentication credentials and API parameters are correct. 
+* Check if authentication credentials and API parameters are correct.
 * Review the vendor’s API documentation:
    * Identify the correct authentication method.
    * Define minimum permissions required.
-   * Validate endpoint URLs and API parameters. 
+   * Validate endpoint URLs and API parameters.
 
 Examples of vendor API documentation:
    * [AbuseIPDB](https://www.abuseipdb.com/api.html)
@@ -100,7 +100,7 @@ For additional help with APIs, [contact support](https://support.sumologic.com/s
 
 ### Permissions issues
 
-Where possible, permissions should be granted in accordance with the principle of least privilege. 
+Where possible, permissions should be granted in accordance with the principle of least privilege.
 
 Permissions depend on the integration’s use case. Users should:
 * Refer to the vendor API documentation for required credentials.

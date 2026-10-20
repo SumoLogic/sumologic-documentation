@@ -380,7 +380,7 @@ Perform the following steps to:
     1. Click **+** to the left of **Rules**.
     1. On the **Add Automation Rule** dialog, select a name for the rule (for example, *Triage example*). Then select the integration daemon to use with this new rule, the integration resource, and fill in all the remaining parameters that you'd like this rule to use.
         :::important
-        Make sure that the integration resource is already fully configured for authentication. This ensures that the integration's vendor can securely communicate with Sumo Logic. For more information about configuring authentication, see [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication-for-automation-integrations/). For configuration directions for each integration, see [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/).
+        Make sure that the integration resource is already fully configured for authentication. This ensures that the integration's vendor can securely communicate with Sumo Logic. For more information about configuring authentication, see [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication/). For configuration directions for each integration, see [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/).
         :::
     1. Click **Save**. The rule appears in the list of available automation rules.
     1. In the **Filters** field of your triage automation rule, make sure to click the **Edit** button to add filtering. This is important to properly evaluate the incoming data and determine when to add an event to triage.
