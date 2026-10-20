@@ -97,7 +97,7 @@ Overridden metadata field values are not returned with [Search Autocomplete](/do
 
 ## Data volume and metadata limits for metrics
 
-For information about the limits Sumo Logic enforces on the metrics you ingest to Sumo Logic, including data volume limits and metadata-related limits, see Data Limits for Metrics.
+For information about the limits Sumo Logic enforces on the metrics you ingest to Sumo Logic, including data volume limits and metadata-related limits, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics).
 
 ## Command line examples using cURL
 

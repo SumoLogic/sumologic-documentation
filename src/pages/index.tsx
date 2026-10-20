@@ -232,7 +232,7 @@ export const Home = () => {
                 {[
                   'Security',
                   'Log Search',
-                  'Dojo AI',
+                  'DojoAI',
                   'Observability',
                   'Alerts, Apps, Dashboards',
                 ].map((label, index) => (

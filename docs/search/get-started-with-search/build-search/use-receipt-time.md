@@ -10,6 +10,10 @@ By default, log searches run by Message time. Enable the **Use Receipt Time** se
 
 To search data based on the order that Collectors received the messages use **Receipt Time**. This option has the search reference the [metadata](../search-basics/built-in-metadata.md) field `_receiptTime` instead of `_messageTime`, giving you the ability to view the difference in the parsed [timestamp](/docs/send-data/reference-information/time-reference) (`_messageTime`) and receipt time (`_receiptTime`) to pinpoint Sources that may be parsing the message's timestamps incorrectly.
 
+:::note
+This setting controls which timestamp field a search's time range is measured against, not the time range itself. To set the time range, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). Receipt time is one of three timestamp fields you can search by, along with message time (the default) and [searchable time](/docs/search/get-started-with-search/build-search/use-searchable-time), the time when a message became available for search.
+:::
+
 ## Run a search by Receipt Time
 
 To run a log search by Receipt Time:
