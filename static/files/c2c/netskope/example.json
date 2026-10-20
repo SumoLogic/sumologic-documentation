@@ -8,9 +8,7 @@
           "_siemForward":false
         },
         "apiToken":"********",
-        "tenantID":"partners",
-        "isGovAccount":false,
-        "disableAlerts":false
+        "tenantID":"partners"
       },
       "schemaRef":{
         "type":"Netskope"
