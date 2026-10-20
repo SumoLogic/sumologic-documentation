@@ -36,7 +36,6 @@ following order:
     * Amazon EC2 resource tags
     * Amazon EC2 instance information
     * HTTP Header
-    * Fields configured at the [Source level](/docs/send-data/choose-collector-source)
     * Fields configured at the [Source level](/docs/manage/fields#collector-and-source-fields)
     * Fields configured at the [Collector level](/docs/manage/fields#collector-and-source-fields)
 
