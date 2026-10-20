@@ -8,7 +8,7 @@ description: Learn how to install and upgrade integrations from the App Catalog.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
 
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu in the Automation page shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations](/docs/integrations/automation-integrations/automation-integration-catalog/) that you can install.
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu in the Automation page shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations](/docs/integrations/automation-integrations/) that you can install.
 
 ## Install an integration from App Catalog
 
@@ -17,7 +17,7 @@ Integrations are connectors to applications from industry-leading network and se
 1. Click **Install Integration**. Once installed, the integration card displays a green colored **Installed** tag in the top-right corner.
 
 :::note
-Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+Find the article for the integration in [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 :::
 
 ## Upgrade an integration from App Catalog

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.18  
 Updated: September 7, 2026***
 
-This [automation integration](/docs/integrations/automation-integrations/) utilizes Cloud SIEM entities to correlate signals and insights through Sumo Logic system calls. Because this integration operates internally with Sumo Logic, no additional authentication is needed. (The [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-cloud-siem/) automation integration requires additional authentication.) 
+This [automation integration](/docs/integrations/automation-integrations/) utilizes Cloud SIEM entities to correlate signals and insights through Sumo Logic system calls. Because this integration operates internally with Sumo Logic, no additional authentication is needed. (The [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/) automation integration requires additional authentication.) 
 
 For information about Cloud SIEM, see [Get Started with Cloud SIEM](/docs/cse/get-started-with-cloud-siem/).
 

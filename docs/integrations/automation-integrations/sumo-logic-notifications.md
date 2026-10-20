@@ -28,7 +28,7 @@ The ID and key won't be available again once you close the confirmation screen.
 
 ### Create a Slack token
 
-Configure a Bot or User OAuth token in Slack as described in [Slack Configuration](/docs/integrations/automation-integrations/automation-integration-catalog/slack/#slack-configuration). You will provide the token when you configure the integration as described in the next section.
+Configure a Bot or User OAuth token in Slack as described in [Slack Configuration](/docs/integrations/automation-integrations/slack/#slack-configuration). You will provide the token when you configure the integration as described in the next section.
 
 Add the following scopes to the token:
 * For sending notifications (messages) to Slack:

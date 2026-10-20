@@ -8,7 +8,7 @@ description: Learn how to configure authentication for automation integrations.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
 
-This article provides a quick reference to configure authentication for [automation integrations in App Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/) for the Automation Service and Cloud SOAR. Refer to the individual [integrations articles](/docs/integrations/automation-integrations/automation-integration-catalog/) for detailed information on setup, usage, and features. 
+This article provides a quick reference to configure authentication for [automation integrations in App Catalog](/docs/integrations/automation-integrations/) for the Automation Service and Cloud SOAR. Refer to the individual [integrations articles](/docs/integrations/automation-integrations/) for detailed information on setup, usage, and features. 
 
 ## How to configure authentication for automation integrations
 
@@ -30,41 +30,41 @@ Before you can access integrations, you must have the Access App Central role ca
 ### Authentication for common integrations
 
 The following outlines the authentication requirements for commonly used integrations:
-* **[HTTP Tools](/docs/integrations/automation-integrations/automation-integration-catalog/http-tools/)**:
+* **[HTTP Tools](/docs/integrations/automation-integrations/http-tools/)**:
    * For **HTTP API URL** provide the resource-specific URL.
    * In **Extra Headers** add required auth tokens (if applicable) as JSON input or key-value pairs. Verify that the auth token provided has the necessary permissions for the requested playbook actions. 
-* **[Incident Tools](/docs/integrations/automation-integrations/automation-integration-catalog/incident-tools/)** / **[Mail Tools](/docs/integrations/automation-integrations/automation-integration-catalog/mail-tools/)** / **[Triage Tools](/docs/integrations/automation-integrations/automation-integration-catalog/triage-tools/)** / **[Zip Tools](/docs/integrations/automation-integrations/automation-integration-catalog/zip-tools/)**:
+* **[Incident Tools](/docs/integrations/automation-integrations/incident-tools/)** / **[Mail Tools](/docs/integrations/automation-integrations/mail-tools/)** / **[Triage Tools](/docs/integrations/automation-integrations/triage-tools/)** / **[Zip Tools](/docs/integrations/automation-integrations/zip-tools/)**:
    * Set the **Cloud SOAR API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Provide the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
-* **[Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-cloud-siem/)**:
+* **[Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/)**:
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
-* **[Sumo Logic Log Analytics](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-log-analytics/)**: 
+* **[Sumo Logic Log Analytics](/docs/integrations/automation-integrations/sumo-logic-log-analytics/)**: 
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). For minimal configuration, select the scope **Log Search** or other relevant scopes as required.
-* **[Sumo Logic Notifications](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-notifications/)**: 
+* **[Sumo Logic Notifications](/docs/integrations/automation-integrations/sumo-logic-notifications/)**: 
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
    * Provide the **Slack Bot/User OAuth Token**.
-* **[Sumo Logic Notifications by Gmail](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-notifications-by-gmail/)**:
+* **[Sumo Logic Notifications by Gmail](/docs/integrations/automation-integrations/sumo-logic-notifications-by-gmail/)**:
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
-   * Provide **Client ID (Gmail)** and **Client Secret ID (Gmail)** setup steps obtained as described [here](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-notifications-by-gmail/#sumo-logic-notifications-by-gmail-configuration).
+   * Provide **Client ID (Gmail)** and **Client Secret ID (Gmail)** setup steps obtained as described [here](/docs/integrations/automation-integrations/sumo-logic-notifications-by-gmail/#sumo-logic-notifications-by-gmail-configuration).
    * Configure authorization separately from the playbook (initial one-time setup).
-* **[Sumo Logic Notifications by Microsoft](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-notifications-by-microsoft/)**:
+* **[Sumo Logic Notifications by Microsoft](/docs/integrations/automation-integrations/sumo-logic-notifications-by-microsoft/)**:
    * For the first **API URL** field, provide the Microsoft Graph API URL.
    * Specify the **Authentication Grant Type** and **Directory (Tenant) ID**.
-   * For **Client ID** and **Client Secret**, provide the Microsoft Graph client ID and secret obtained as described in [Add a client secret](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-notifications-by-microsoft/#add-a-client-secret).
+   * For **Client ID** and **Client Secret**, provide the Microsoft Graph client ID and secret obtained as described in [Add a client secret](/docs/integrations/automation-integrations/sumo-logic-notifications-by-microsoft/#add-a-client-secret).
    * Provide the **Sumo Logic API URL** (for example, `https://api.sumologic.com`). Enter the [API endpoint URL](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your region.
    * Enter the **Access ID** and **Access Key** from a Sumo Logic [access key](/docs/manage/security/access-keys/). Select **Default** as the scope when generating access keys.
 
 ### Integrations not requiring authentication
 
 These integrations execute without additional authentication:
-* [Basic Tools](/docs/integrations/automation-integrations/automation-integration-catalog/basic-tools/)
-* [Sumo Logic Automation Tools](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-automation-tools/)
-* [Sumo Logic Cloud SIEM Internal](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-cloud-siem-internal/)
-* [Sumo Logic Log Analytics Internal](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-log-analytics-internal/)
+* [Basic Tools](/docs/integrations/automation-integrations/basic-tools/)
+* [Sumo Logic Automation Tools](/docs/integrations/automation-integrations/sumo-logic-automation-tools/)
+* [Sumo Logic Cloud SIEM Internal](/docs/integrations/automation-integrations/sumo-logic-cloud-siem-internal/)
+* [Sumo Logic Log Analytics Internal](/docs/integrations/automation-integrations/sumo-logic-log-analytics-internal/)
 
 ## Troubleshooting general issues
 
@@ -114,7 +114,7 @@ Use [Check-Host](https://check-host.net/) to monitor website and host availabili
 
 ### AWS integrations
 
-This section applies to all AWS integrations, (for example, [AWS EC2](/docs/integrations/automation-integrations/automation-integration-catalog/aws-ec2/), [AWS S3](/docs/integrations/automation-integrations/automation-integration-catalog/aws-s3/), etc.)
+This section applies to all AWS integrations, (for example, [AWS EC2](/docs/integrations/automation-integrations/aws-ec2/), [AWS S3](/docs/integrations/automation-integrations/aws-s3/), etc.)
 
 For AWS service endpoints information, see [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html).
 
@@ -137,16 +137,16 @@ A single integration can be used across multiple AWS regions. However, if region
 
 ### CyberArk
 
-For [CyberArk PAM](/docs/integrations/automation-integrations/automation-integration-catalog/cyberark-pam/), obtain client certificates, private keys, and root CA certificates via [CyberArk Docs](https://docs.cyberark.com/portal/latest/en/docs.htm).
+For [CyberArk PAM](/docs/integrations/automation-integrations/cyberark-pam/), obtain client certificates, private keys, and root CA certificates via [CyberArk Docs](https://docs.cyberark.com/portal/latest/en/docs.htm).
 
 ### Slack
 
-For the [Slack](/docs/integrations/automation-integrations/automation-integration-catalog/slack/) and [Sumo Logic Notifications](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-notifications/) integrations, a Slack OAuth token is required because the integration specifically sends notifications from Sumo Logic to Slack channels.
+For the [Slack](/docs/integrations/automation-integrations/slack/) and [Sumo Logic Notifications](/docs/integrations/automation-integrations/sumo-logic-notifications/) integrations, a Slack OAuth token is required because the integration specifically sends notifications from Sumo Logic to Slack channels.
 
 ### Sumo Logic Log Analytics
 
 Users often ask what is the difference between the Sumo Logic Log Analytics Internal and Sumo Logic Log Analytics integrations.
 
-[Sumo Logic Log Analytics Internal](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-log-analytics-internal/) is designed for internal actions. It requires no additional authentication as it's integrated directly within the Sumo Logic environment. It is used primarily for simple automation within the platform without external API calls.
+[Sumo Logic Log Analytics Internal](/docs/integrations/automation-integrations/sumo-logic-log-analytics-internal/) is designed for internal actions. It requires no additional authentication as it's integrated directly within the Sumo Logic environment. It is used primarily for simple automation within the platform without external API calls.
 
-[Sumo Logic Log Analytics](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-log-analytics/) requires API-based authentication (Access ID and Access Key) and is intended for external API calls or extended functionality beyond internal tools.
+[Sumo Logic Log Analytics](/docs/integrations/automation-integrations/sumo-logic-log-analytics/) requires API-based authentication (Access ID and Access Key) and is intended for external API calls or extended functionality beyond internal tools.
