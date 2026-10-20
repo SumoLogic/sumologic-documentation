@@ -1,4 +1,4 @@
-1. Fork the [Sumo Docs repository](https://github.com/SumoLogic/sumologic-documentation) locally.
+1. Fork the [Sumo Logic Docs repository](https://github.com/SumoLogic/sumologic-documentation) locally.
    :::tip GitHub tips
    * [How to fork a repo](https://help.github.com/articles/fork-a-repo/)
    * [How to sync your fork with branches](https://help.github.com/articles/syncing-a-fork/)

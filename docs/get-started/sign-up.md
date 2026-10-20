@@ -121,7 +121,7 @@ If you're on the AWS Marketplace trial or have upgraded to a paid plan, you can 
 1. Choose your platform: AWS, Kubernetes, Linux, Windows, or macOS. This installs the OpenTelemetry collector and relevant dashboards.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 2. For AWS, deploy a single account using a CloudFormation Template, CLI, or Terraform. For Kubernetes, Linux, Windows, or macOS, run the provided install command in your Terminal or PowerShell.
 
-Once installation is complete, click **Start using Sumo**. Your data will begin flowing within a few minutes, and you’ll be guided through a step-by-step onboarding to visualize data in dashboards, run log searches, set up alerts, and more.
+Once installation is complete, click **Start using Sumo Logic**. Your data will begin flowing within a few minutes, and you’ll be guided through a step-by-step onboarding to visualize data in dashboards, run log searches, set up alerts, and more.
 
 Alternatively, you can skip setup and browse our [App Catalog](/docs/integrations) to explore prebuilt apps with guided installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 

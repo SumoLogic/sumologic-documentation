@@ -90,7 +90,7 @@ Sumo Logic Community Ecosystem Apps are provided and supported by our internal a
 
 ### What is this?
 
-A central place to list community content from the internal and external Sumo Community to enable more rapid time to value for customers.
+A central place to list community content from the internal and external Sumo Logic Community to enable more rapid time to value for customers.
 
 ### How do I use this content?
 
