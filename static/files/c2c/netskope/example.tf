@@ -10,9 +10,7 @@ resource "sumologic_cloud_to_cloud_source" "netskope-source" {
         "_siemForward":false
       },
       "apiToken":"********",
-      "tenantID":"partners",
-      "isGovAccount":false,
-      "disableAlerts":false
+      "tenantID":"partners"
   })
 }
 resource "sumologic_collector" "collector" {
