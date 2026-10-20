@@ -148,7 +148,7 @@ export const features3 = [
       message: 'SOC Analyst Agent',
       description: 'Title for SOC Analyst Agent',
     }),
-    imageUrl: 'img/icons/security/soc-analyst-agent-icon.png',
+    imageUrl: 'img/icons/operations/soc-analyst-agent.png',
     description: (<Translate
       id='landing.feature.soc-analyst-agent.desc'
       description='SOC Analyst Agent description'>

@@ -46,13 +46,13 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 
 ## DojoAI
 
-<img src={useBaseUrl('img/icons/operations/dojo-ai.png')} alt="DojoAI icon" width="45"/>
+<img src={useBaseUrl('img/icons/operations/dojo-ai.png')} alt="DojoAI icon" width="40"/>
 
 [DojoAI](https://www.sumologic.com/solutions/dojo-ai) is Sumo Logic’s multi-agent AI platform, bringing specialized agents across security and observability workflows. Agents work together to detect threats, investigate incidents, explore data, and answer platform questions, with a human in the loop at every step. DojoAI is built and deployed on AWS and is available through Sumo Logic and in AWS Marketplace.
 
 ### Mobot
 
-<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot head icon" width="45"/>
+<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot head icon" width="40"/>
 
 [Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
 
@@ -81,7 +81,7 @@ You can also keep the daily free Mobot prompts instead of using a credit pool. T
 
 ### SOC Analyst Agent
 
-<img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="45"/>
+<img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="40"/>
 
 Investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in Mobot using natural language to explore scope, impact, and supporting evidence, then generate a structured incident report to document your findings.
 
@@ -91,7 +91,7 @@ The SOC Analyst Agent requires a Cloud SIEM subscription and is opt-in. See [Ava
 
 ### Sumo Logic MCP server
 
-<img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="45"/>
+<img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="40"/>
 
 The [Sumo Logic MCP (Model Context Protocol) server](/docs/api/mcp-server) connects MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data — no custom integrations required. Use natural language to run log searches, triage Cloud SIEM insights and detection rules, retrieve alerts, and manage dashboards, with the same governance and access controls you already rely on. Any paid customer can activate the MCP server through a self-service feature in admin settings.
 

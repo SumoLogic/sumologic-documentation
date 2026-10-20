@@ -15,7 +15,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 import Iframe from 'react-iframe';
 import MSSPfeatureMgmt from '../reuse/mssp-feat-mgmt.md';
 
-<img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="45"/>
+<img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="40"/>
 
 The Sumo Logic MCP (Model Context Protocol) server lets MCP clients (external AI models) connect to Sumo Logic to query logs, investigate security insights, manage alerts and dashboards, and more. Use natural language to bring Sumo Logic search, evidence, and platform context into the AI tools you already use, such as developer IDEs, security workflows, and enterprise AI platforms.
 

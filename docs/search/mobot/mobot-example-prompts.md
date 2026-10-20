@@ -7,7 +7,7 @@ description: A library of example prompts for Sumo Logic's Mobot, covering secur
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="45"/>
+<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="40"/>
 
 Use these prompts as starting points. After Mobot responds, refine the result through follow-up questions. For examples of complete multi-turn conversations, see [Example end-to-end conversation](/docs/search/mobot/#example-end-to-end-conversation) in the Mobot documentation.
 
