@@ -4,11 +4,14 @@ description: ''
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import EwsRetirement from '../../../../reuse/ews-retirement-warning.md';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews.png')} alt="Microsoft EWS icon" width="100"/>
 
 ***Version: 2.4  
 Updated: Nov 12, 2024***
+
+<EwsRetirement/>
 
 Perform actions on Microsoft EWS mailboxes, accounts, and security settings.
 

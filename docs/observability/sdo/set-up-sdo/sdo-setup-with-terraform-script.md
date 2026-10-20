@@ -24,7 +24,7 @@ Before setting up the SDO solution, you need to complete the following tasks:
 
 * Create or collect API Keys and credentials for Jira, GitHub, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
 * Get access to Jenkins with Manage Plugins permissions.
-* Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities/):
+* Make sure you have access to the Sumo Logic console. The user account associated with a Sumo Logic role needs the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities/):
   * Manage Field Extraction Rules
   * View Fields
   * View field Extraction Rules
@@ -451,7 +451,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
 |:--|:--|
-| pagerduty_services_sumo_webhooks | [Sumo Logic to Pagerduty Webhook](/docs/alerts/webhook-connections/pagerduty). List of Pagerduty Service IDs. Example: \["P1QWK8J","PK9FKW3"\]. You can get these from the URL after opening a specific service in Pagerduty. Alerts are sent from Sumo to Pagerduty for these services. |
+| pagerduty_services_sumo_webhooks | [Sumo Logic to Pagerduty Webhook](/docs/alerts/webhook-connections/pagerduty). List of Pagerduty Service IDs. Example: \["P1QWK8J","PK9FKW3"\]. You can get these from the URL after opening a specific service in Pagerduty. Alerts are sent from Sumo Logic to Pagerduty for these services. |
 
 ### GitHub
 

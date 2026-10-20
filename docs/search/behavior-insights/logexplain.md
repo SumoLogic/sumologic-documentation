@@ -93,7 +93,7 @@ _sourceCategory= *cloudtrail* errorCode
 
 ### Kubernetes
 
-After using [LogReduce Values to explore your event logs based on specific keys](/docs/search/behavior-insights/logreduce/logreduce-values), you can use LogExplain to analyze the frequency of events.
+After using [LogReduce® Values to explore your event logs based on specific keys](/docs/search/behavior-insights/logreduce/logreduce-values), you can use LogExplain to analyze the frequency of events.
 
 If a cluster of logs has `reason="FailedScheduling"` indicating the Kubernetes scheduler is unable to find nodes that can satisfy requirements for the requested pods, you can use `logexplain` to understand which pods and the reason they are unable to find a node to run in.
 

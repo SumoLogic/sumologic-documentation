@@ -140,7 +140,7 @@ account={{account}} region={{region}} Namespace={{namespace}}
 | top 10 caller by Invocations
 ```
 
-```sql title="Error (Count)(CloudWatch metric Based)"
+```metrics title="Error (Count)(CloudWatch metric Based)"
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | sum
 ```
 
