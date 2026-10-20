@@ -1,6 +1,6 @@
 ---
 id: nodejs
-title: AWS Lambda - NodeJS function instrumentation
+title: AWS Lambda - NodeJS Function Instrumentation
 sidebar_label: NodeJS
 description: Learn how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on NodeJS and send data to Sumo Logic.
 ---
@@ -17,17 +17,17 @@ To obtain tracing data from AWS Lambda functions developed in Node.js, you can u
 * nodejs18.x, nodejs20.x, and nodejs22.x
 * x86_64 and arm64 architectures
 
-## Sumo Logic Distribution for OpenTelemetry Lambda Layer
+## Sumo Logic Distribution for OpenTelemetry Lambda layer
 
 [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 2.0.2](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-nodejs-v2.0.2/nodejs) provides packed [OpenTelemetry NodeJS](https://github.com/open-telemetry/opentelemetry-js) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
 
 ### Lambda function requirements
 
-It is very simple to instrument your AWS NodeJS Lambda function using the Sumo Logic Distro for Lambda layer. You'll need the following:
+It is simple to instrument your AWS NodeJS Lambda function using the Sumo Logic Distro for Lambda layer. You'll need the following:
 
 * NodeJS v18.x, v20.x, or v22.x
 * Lambda layers add permissions
-* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
+* Sumo Logic OTLP/HTTP source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 1. Navigate to the **Layers** section and click **Add a layer**.
@@ -43,11 +43,11 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
    * `OTEL_RESOURCE_ATTRIBUTES`. Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Add Services Panel to Dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
      * `application=YOUR_APPLICATION_NAME`. the string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID`. set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as: `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
-   * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
+   * Set `SUMO_OTLP_HTTP_ENDPOINT_URL` to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing source or create a new one, if needed.
     :::note
-    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
+    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
-   * `SUMO_OTEL_SUPPRESS_AWS_INSTRUMENTATION` (optional, default: true, values: true/false). When true, suppresses instrumentation of internal AWS SDK calls made by the Lambda runtime. Set to false if you need spans for downstream AWS service calls (DynamoDB, S3, SQS, etc.).
+   * `SUMO_OTEL_SUPPRESS_AWS_INSTRUMENTATION` (optional, default: true, values: true/false). When true, suppresses instrumentation of internal AWS SDK calls made by the Lambda runtime. Set to false if you need spans for downstream AWS service calls (DynamoDB, S3, and SQS).
     <img src={useBaseUrl('img/apm/traces/lambda-nodejs3.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 
@@ -111,7 +111,7 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 
 * Docker
 * NodeJS v18.x, v20.x, or v22.x
-* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
+* Sumo Logic OTLP/HTTP source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Lambda function image changes
 
@@ -150,10 +150,10 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
    * `OTEL_RESOURCE_ATTRIBUTES`. Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Add Services Panel to Dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
      * `application=YOUR_APPLICATION_NAME`. The string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID`. Set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as: `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
-   * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
+   * Set `SUMO_OTLP_HTTP_ENDPOINT_URL` to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing source or create a new one, if needed.
     :::note
-    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
+    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
-   * `SUMO_OTEL_SUPPRESS_AWS_INSTRUMENTATION` (optional, default: true, values: true/false). When true, suppresses instrumentation of internal AWS SDK calls made by the Lambda runtime. Set to false if you need spans for downstream AWS service calls (DynamoDB, S3, SQS, etc.).
+   * `SUMO_OTEL_SUPPRESS_AWS_INSTRUMENTATION` (optional, default: true, values: true/false). When true, suppresses instrumentation of internal AWS SDK calls made by the Lambda runtime. Set to false if you need spans for downstream AWS service calls (DynamoDB, S3, and SQS).
    * `SUMO_OTEL_DISABLE_AWS_CONTEXT_PROPAGATION` (optional, default: true, values: true, false). In case of `xray trace context` propagation (AWS), set to `false`.<br/><img src={useBaseUrl('img/apm/traces/lambda-nodejs4.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).

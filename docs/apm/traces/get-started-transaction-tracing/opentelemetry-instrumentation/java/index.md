@@ -82,7 +82,7 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
 ```
 
 :::note
-When setting up OTLP Endpoint for OpenTelemetry Collector/Agent add port number (4318) e.g. `http://OTLP_HTTP_ENDPOINT:4318`.
+When setting up OTLP Endpoint for OpenTelemetry Collector/Agent add port number (4318), for example, `http://OTLP_HTTP_ENDPOINT:4318`.
 :::
 
 ## Troubleshooting

@@ -5,7 +5,7 @@ sidebar_label: OpenTelemetry Auto-Instrumentation
 description: The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet.
 ---
 
-Automatic instrumentation of the .NET applications is a very easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
+Automatic instrumentation of the .NET applications is an easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
 
 ## .NET full auto-instrumentation vs library-instrumentation (partial auto)
 
@@ -20,7 +20,7 @@ The below description applies to [v1.6.0](https://github.com/open-telemetry/open
 
 ## Instrument a .NET application automatically (Windows)
 
-OpenTelemetry .NET Automatic Instrumentation has to be installed via PowerShell
+Install OpenTelemetry .NET Automatic Instrumentation via PowerShell
 module. This process requires administrator permissions.
 
 ```sh
@@ -63,7 +63,7 @@ More extensive description of all available options can be found [here](https://
 
 ASP.NET application that runs on IIS requires two additional steps.
 
-#### Step 1. Setup IIS instrumentation
+#### Step 1. Set up IIS instrumentation
 
 This step requires to execute following command in powershell.
 
@@ -72,9 +72,9 @@ This step requires to execute following command in powershell.
 Register-OpenTelemetryForIIS
 ```
 
-#### Step 2. Define opentelemetry modules loaded by IIS
+#### Step 2. Define OpenTelemetry modules loaded by IIS
 
-There are two options in order to achieve the goal.
+There are two options to achieve the goal.
 
 First, update the application's `web.config` with the following section.
 
@@ -169,7 +169,7 @@ var app = builder.Build();
 
 ### Step 3. Configure instrumentation
 
-The final step is to provide configuration for instrumentation. There are a few things which have to be configured: exporter endpoint, service, and application name. Configuration can be provided using environment variables or `appsettings.json` file.
+The final step is to provide configuration for instrumentation. You need to configure a few things: exporter endpoint, service, and application name. Configuration can be provided using environment variables or `appsettings.json` file.
 
 #### Environment variables
 
@@ -275,11 +275,11 @@ In `<system.webServer>` section additional HTTP Module should be added:
 
 ### Step 3. Instrumentation initialization
 
-To enable [.NET instrumentation](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/tree/Instrumentation.AspNet-1.8.0-beta.3/src/OpenTelemetry.Instrumentation.AspNet#aspnet-instrumentation-for-opentelemetry) some additional code has to be introduced. The code needs to be added at the application startup phase usually located in the **Global.asax.cs** file. A few things in the code below were added.
+To enable [.NET instrumentation](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/tree/Instrumentation.AspNet-1.8.0-beta.3/src/OpenTelemetry.Instrumentation.AspNet#aspnet-instrumentation-for-opentelemetry), you need to introduce some additional code. The code needs to be added at the application startup phase usually located in the **Global.asax.cs** file. A few things in the code below were added.
 
 `private TracerProvider tracerProvider` was added as a class variable to create the trace provider in the next step. In the `Application_Start()` method, `Sdk.CreateTracerProviderBuilder()` was introduced. Thanks to this it is possible to configure what can be instrumented and where the telemetry data will be sent.
 
-`.AddAspNetInstrumentation()` adds .NET instrumentation. The service name and application attributes are set by the `.SetResourceBuilder()` which reads the values from the `OTEL_RESOURCE_ATTRIBUTES` environment variable. An exporter has to be configured to send the spans. In this case, it is the [OpenTelemetryProtocol exporter](https://github.com/open-telemetry/opentelemetry-dotnet/tree/core-1.8.0/src/OpenTelemetry.Exporter.OpenTelemetryProtocol#otlp-exporter-for-opentelemetry-net) which is configured by the `.AddOtlpExporter()` method.
+`.AddAspNetInstrumentation()` adds .NET instrumentation. The service name and application attributes are set by the `.SetResourceBuilder()` which reads the values from the `OTEL_RESOURCE_ATTRIBUTES` environment variable. You need to configure an exporter to send the spans. In this case, it is the [OpenTelemetryProtocol exporter](https://github.com/open-telemetry/opentelemetry-dotnet/tree/core-1.8.0/src/OpenTelemetry.Exporter.OpenTelemetryProtocol#otlp-exporter-for-opentelemetry-net) which is configured by the `.AddOtlpExporter()` method.
 
 ```cs
 public class MvcApplication : System.Web.HttpApplication
@@ -314,7 +314,7 @@ public class MvcApplication : System.Web.HttpApplication
 
 ### Step 4. Instrumentation configuration
 
-The final step is to provide configuration for instrumentation. There are a few things which have to be configured: exporter endpoint, service, and application name. Configuration can be provided using environment variables or `web.config` file.
+The final step is to provide configuration for instrumentation. You need to configure a few things: exporter endpoint, service, and application name. Configuration can be provided using environment variables or `web.config` file.
 
 #### Environment variables
 
@@ -368,7 +368,7 @@ It will be required to modify `tracerProvider` like in example below:
 
 ## Additional libraries instrumentation
 
-In the case of the other libraries like GrpcNetClient, HttpClient, StackExchangeRedis, and SqlClient, it is highly recommended to install specific packages by adding a single line of code in the application startup methods. This will ensure full end-to-end visibility includingthe health of client calls. To see all supported instrumentation libraries please check [OpenTelemetry Dotnet Contrib repository](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/tree/main/src).
+In the case of the other libraries like GrpcNetClient, HttpClient, StackExchangeRedis, and SqlClient, it is highly recommended to install specific packages by adding a single line of code in the application startup methods. This will ensure full end-to-end visibility including the health of client calls. To see all supported instrumentation libraries check [OpenTelemetry Dotnet Contrib repository](https://github.com/open-telemetry/opentelemetry-dotnet-contrib/tree/main/src).
 
 ### GrpcNetClient instrumentation
 

@@ -24,7 +24,7 @@ go get -u go.opentelemetry.io/otel/sdk@v1.30.0
 
 It downloads and installs OpenTelemetry package for Go. It includes APIs for traces.
 
-Next, you'll install the spans exporter. There are currently three supported protocols OTLP, Zipkin and Jaeger. Sumo Logic recommends the OTLP HTTP exporter. Execute the command below:
+Next, you'll install the spans exporter. There are three supported protocols OTLP, Zipkin and Jaeger. Sumo Logic recommends the OTLP HTTP exporter. Execute the command below:
 
 ```bash
 go get -u go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.30.0
@@ -118,4 +118,4 @@ export OTEL_RESOURCE_ATTRIBUTES="application=APPLICATION_NAME,deployment.environ
 
 ## Manual instrumentation
 
-If you’re using libraries that are not officially supported, or if you want to be very specific and granular with instrumentation, you can instrument your code manually using https://pkg.go.dev/go.opentelemetry.io/otel/api. Examples of using manual instrumentation can be found [here](https://github.com/open-telemetry/opentelemetry-go/tree/main/example)
+If you’re using libraries that are not officially supported, or if you want to be specific and granular with instrumentation, you can instrument your code manually using https://pkg.go.dev/go.opentelemetry.io/otel/api. Examples of using manual instrumentation can be found [here](https://github.com/open-telemetry/opentelemetry-go/tree/main/example)

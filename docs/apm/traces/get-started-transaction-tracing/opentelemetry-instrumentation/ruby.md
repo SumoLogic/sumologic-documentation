@@ -1,17 +1,17 @@
 ---
 id: ruby
-title: Ruby OpenTelemetry auto-instrumentation
+title: Ruby OpenTelemetry Auto-Instrumentation
 sidebar_label: Ruby
 description: Learn how to collect telemetry data from applications written in Ruby.
 ---
 
-Obtaining telemetry data from applications written in Ruby has never been easier. Thanks to [Opentelemetry-Ruby](https://github.com/open-telemetry/opentelemetry-ruby) the instrumentation process is very simple. Enabling auto-instrumentation requires you to perform three steps, explained in detail below. First, installation of the required gems, which hold the OpenTelemetry SDK and library-specific instrumentation. Second, code changes required for instrumentation enable and lastly, the exporter configuration.
+Obtaining telemetry data from applications written in Ruby has never been easier. Thanks to [Opentelemetry-Ruby](https://github.com/open-telemetry/opentelemetry-ruby) the instrumentation process is simple. Enabling auto-instrumentation requires you to perform three steps, explained in detail below. First, installation of the required gems, which hold the OpenTelemetry SDK and library-specific instrumentation. Second, code changes required for instrumentation enable and lastly, the exporter configuration.
 
 ## How to instrument your Ruby application?
 
 There are a few simple steps to instrument the application and export the telemetry data by [OpenTelemetry Protocol exporter](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.28.1/exporter/otlp) - **version sdk=1.5.0, exporter=0.28.1**.
 
-## Step 1. Gems Installation  
+## Step 1. Gems installation  
 
 Installation of the packages listed below is required to apply the instrumentation and export telemetry data. All listed gems are located on RubyGems.org and they can be installed in two different ways:
 
@@ -22,7 +22,7 @@ Installation of the packages listed below is required to apply the instrumentati
    gem install opentelemetry-exporter-otlp -v 0.28.1
    ```
 
-* **bundler**, the packages have to be inserted into your **gemfile** and **bundle install** command has to be run
+* **bundler**. Insert the packages into your **gemfile** and run the **bundle install** command.
 
    ```bash
    gem 'opentelemetry-sdk', '1.5.0'
@@ -33,7 +33,7 @@ Installation of the gems above is mandatory. The next step is to install instrum
 
 There are two solutions:
 
-* Installation of the specific packages - for example, if the application is a **Sinatra** HTTP server which is also performing some HTTP requests using **Net HTTP** package. To instrument all the incoming and outgoing requests corresponding instrumented packages have to be installed:
+* Installation of the specific packages - for example, if the application is a **Sinatra** HTTP server which is also performing some HTTP requests using **Net HTTP** package. To instrument all the incoming and outgoing requests, install the corresponding instrumented packages:
 
    ```bash
    gem install opentelemetry-instrumentation-sinatra -v 0.24.1
@@ -101,11 +101,11 @@ The final step is to configure the exporter host and service name. This can be d
    OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
    ```
 
-## TraceID, SpanID and operation data injection into logs
+## Trace ID, span ID, and operation data injection into logs
 
-Additional information like TraceID, SpanID or operation data in the application logs could be very helpful to correlate traces, spans and operations with specific logs. To add this data to the logs it is required to obtain it from `OpenTelemetry::Trace` and modify logger.
+Additional information like TraceID, SpanID or operation data in the application logs could be helpful to correlate traces, spans and operations with specific logs. To add this data to the logs it is required to obtain it from `OpenTelemetry::Trace` and modify logger.
 
-Please see example code:
+See example code:
 
 ```rb
 logger = ::Logger.new(STDOUT)

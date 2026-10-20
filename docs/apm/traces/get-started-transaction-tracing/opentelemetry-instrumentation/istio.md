@@ -1,6 +1,6 @@
 ---
 id: istio
-title: Istio OpenTelemetry auto-instrumentation
+title: Istio OpenTelemetry Auto-Instrumentation
 sidebar_label: Istio
 description: Learn how to instrument OpenTelemetry Application code to collect Istio trace data generated from Envoy proxies.
 ---
@@ -59,7 +59,7 @@ receiving collector:
     ```
 
 :::note
-In case of usage of Zipkin exporter with OpenTelemetry instrumented application it is recommended to configure on the application instrumentation level B3 propagation. Please see the instructions below.
+In case of usage of Zipkin exporter with OpenTelemetry instrumented application it is recommended to configure on the application instrumentation level B3 propagation. See the instructions below.
 :::
 
 ### Reconfigure OpenTelemetry to use B3 - Zipkin exporter
@@ -103,7 +103,7 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
     ...
 ```
 
-### Distributed Tracing customization
+### Distributed tracing customization
 
 See the [Configure tracing using MeshConfig and Pod annotations](https://istio.io/latest/docs/tasks/observability/distributed-tracing/mesh-and-proxy-config/) guide for information to configure any advanced capabilities on span data generation from Istio, such as probabilistic sampling, extending the length of some fields, or adding custom metadata/annotations to spans.
 

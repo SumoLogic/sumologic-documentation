@@ -18,7 +18,7 @@ There are a few simple steps to instrument your application and obtain telemetry
 ### Packages installation
 
 :::note required step
-You must install the packages listed below to apply the instrumentation and export telemetry data.
+You need to install the packages listed below to apply the instrumentation and export telemetry data.
 :::
 
 ```bash
@@ -58,7 +58,7 @@ After successful installation of the packages, it is important to properly confi
 
 ### Application execution
 
-When everything is configured, it is very simple to run an instrumented application.
+When everything is configured, it is simple to run an instrumented application.
 
 ```bash
 node --require @opentelemetry/auto-instrumentations-node/register your-js-script.js

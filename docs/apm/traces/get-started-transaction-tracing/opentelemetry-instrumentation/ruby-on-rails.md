@@ -1,6 +1,6 @@
 ---
 id: ruby-on-rails
-title: Ruby on Rails OpenTelemetry auto-instrumentation
+title: Ruby on Rails OpenTelemetry Auto-Instrumentation
 sidebar_label: Ruby on Rails
 description: Learn how to collect telemetry data from Ruby on Rails applications.
 ---
@@ -20,7 +20,7 @@ Installation of the packages listed below is required to apply the instrumentati
    gem install opentelemetry-exporter-otlp -v 0.28.1
    ```
 
-* **bundler**, the packages have to be inserted into your **gemfile** and the **bundle install** command has to be run:  
+* **bundler**. Insert the packages into your **gemfile** and run the **bundle install** command:  
 
    ```bash
    gem 'opentelemetry-sdk', '1.5.0'
@@ -31,7 +31,7 @@ Installation of the gems above is mandatory. The next step is to install instrum
 
 There are two solutions:
 
-* Installation of the specific package - for example, if the application is a **Rails** Web server that is also performing some database queries using **MySQL** package. To get traces from libraries used in the project, corresponding instrumented packages have to be installed:  
+* Installation of the specific package - for example, if the application is a **Rails** Web server that is also performing some database queries using **MySQL** package. To get traces from libraries used in the project, install the corresponding instrumented packages:  
 
    ```bash
    gem install opentelemetry-instrumentation-rails -v 0.31.1
@@ -51,7 +51,7 @@ There are two solutions:
 
 ## Step 2. Code changes  
 
-To enable instrumentation in the Ruby on Rails application and export the telemetry data it is enough to add the code below to the project. Two examples below present a specific package and an "all in one" instrumentation. The code has to be added in the **config/environment.rb** file before application initialization as in the examples below:
+To enable instrumentation in the Ruby on Rails application and export the telemetry data it is enough to add the code below to the project. Two examples below present a specific package and an "all in one" instrumentation. Add the code to the **config/environment.rb** file before application initialization as in the examples below:
 
 * Specific package instrumentation - in this example only Rails library will be instrumented:  
 
@@ -98,11 +98,11 @@ The final step is to configure the exporter host, service and application name.
 
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma-separated key=value pairs. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
 
-## TraceID, SpanID and operation data injection into logs
+## Trace ID, span ID, and operation data injection into logs
 
-Additional information like TraceID, SpanID or operation data in the application logs could be very helpful to correlate traces, spans and operations with specific logs. To add this data to the logs it is required to obtain it from `OpenTelemetry::Trace` and modify logger.
+Additional information like TraceID, SpanID or operation data in the application logs could be helpful to correlate traces, spans and operations with specific logs. To add this data to the logs it is required to obtain it from `OpenTelemetry::Trace` and modify logger.
 
-Please see example code:
+See example code:
 
 ```bash
 logger = ::Logger.new(STDOUT)

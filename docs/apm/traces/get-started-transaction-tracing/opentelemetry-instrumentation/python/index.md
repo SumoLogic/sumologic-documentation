@@ -9,7 +9,7 @@ OpenTelemetry Python instrumentation provides the ability to capture telemetry d
 
 ## How to instrument your app
 
-The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.26.0/0.47b0** with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.26.0/exporter/opentelemetry-exporter-otlp-proto-http).
+The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. You only need to install a few Python packages to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.26.0/0.47b0** with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.26.0/exporter/opentelemetry-exporter-otlp-proto-http).
 
 ## Mandatory packages installation
 
@@ -86,7 +86,7 @@ OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
 
 ## Application execution
 
-When everything is configured it is very simple to run an instrumented application.
+When everything is configured it is simple to run an instrumented application.
 
 ```bash
 opentelemetry-instrument python3 SCRIPT_NAME.py
@@ -160,8 +160,8 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 
 ## Instrumentation notes
 
-* For **Flask application** instrumentation debug mode has to be disabled (`debug=false`).
-* In case of **Django**, the application server has to be run with `--noreload` flag such as:
+* For **Flask application** instrumentation, disable debug mode (`debug=false`).
+* For **Django**, run the application server with the `--noreload` flag, such as:
 
    ```bash
    opentelemetry-instrument python3 manage.py runserver ---noreload
@@ -174,11 +174,11 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 
 ## Examples
 
-### Django Instrumentation
+### Django instrumentation
 
 [This article](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#django-instrumentation) will show you how to use the `opentelemetry-instrumentation-django` library to automatically instrument a Django app. It covers how to reference the library manually within your code, as well as how to use [Auto-instrumentation](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#auto-instrumentation) without having to edit your code.
 
-### Sample Flask App Instrumentation
+### Sample Flask app instrumentation
 
 [This article](https://opentelemetry.io/docs/languages/python/getting-started/) walks you through deploying a simple Flask app and configuring instrumentation for it. The example demonstrates how to log traces to the console for basic testing.
 

@@ -31,9 +31,9 @@ You'll need the following:
 
 * .NET 6 SDK or later
 * Lambda layers add permissions
-* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
+* Sumo Logic OTLP/HTTP source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
-## Quick Start
+## Quick start
 
 ### Overview
 
@@ -95,7 +95,7 @@ Navigate toÂ [functions](https://console.aws.amazon.com/lambda/home#/functions)Â
 
 * Configure the following environment variables:
 
-  Navigate to the **Configuration > Environment variables** section and ensure that the following  environment variables are setup:
+  Navigate to the **Configuration > Environment variables** section and ensure that the following  environment variables are set up:
 
   | Variable | Value | Purpose |
   |:---------|:------|:--------|

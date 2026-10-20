@@ -2,13 +2,14 @@
 id: kubernetes
 title: Kubernetes OpenTelemetry Auto-Instrumentation
 sidebar_label: Kubernetes
+description: Set up OpenTelemetry auto-instrumentation for Java, Python, Node.js, and .NET apps in Kubernetes with the OpenTelemetry Operator and send traces to Sumo Logic.
 ---
 
-Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applications deployed in Kubernetes just got easier. In a few simple steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator), your application is automatically instrumented and your traces are sent to Sumo Logic.
+Setting up Tracing instrumentation for Java, Python, NodeJS, and .NET applications deployed in Kubernetes is easier. In a few steps, with the [OpenTelemetry-Operator](https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator), your application is automatically instrumented and your traces are sent to Sumo Logic.
 
 ## Installation
 
-To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you have to set `opentelemetry-operator.enabled=true`.
+To enable the OpenTelemetry-Operator for the [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection#sumologic-kubernetes-collection), you need to set `opentelemetry-operator.enabled=true`.
 
 The OpenTelemetry Operator needs to know how to instrument containers. For this purpose, the `Instrumentation` resource must be created in the namespace where you want to use auto-instrumentation. Setting `instrumentation.createDefaultInstrumentation` to `true` and `instrumentation.instrumentationNamespaces` will help with that.
 
@@ -56,7 +57,7 @@ List of annotations per instrumented language:
 .Net auto-instrumentation is in **Beta** stage.
 :::
 
-In the case of a Pod with multiple containers inside, you must specify additional annotation (`instrumentation.opentelemetry.io/container-names`), which will take a comma-separated list of the container names as its value. If annotation for multiple containers is not set, the instrumentation will be provided to the first container on the list.
+In the case of a Pod with multiple containers inside, you need to specify an additional annotation (`instrumentation.opentelemetry.io/container-names`), which will take a comma-separated list of the container names as its value. If annotation for multiple containers is not set, the instrumentation will be provided to the first container on the list.
 
 ## Compatibility matrix
 
@@ -177,7 +178,7 @@ Environment variables:
           value: FinanceServiceCall
   ```
 
-* `OTEL_RESOURCE_ATTRIBUTES` - if this parameter is not set, the default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. If you'd like to manually set the application name, add  `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma separated key=value pairs (i.e., `application=my-app,key=value`):
+* `OTEL_RESOURCE_ATTRIBUTES` - if this parameter is not set, the default application name assumes the name of Namespace. This will appear as a tracing application name in Sumo Logic. If you'd like to manually set the application name, add  `OTEL_RESOURCE_ATTRIBUTES` `application=name` in the environment variables section of container configuration. You can add additional attributes here as comma separated key=value pairs (that is, `application=my-app,key=value`):
 
   ```yaml
   spec:
@@ -195,7 +196,7 @@ Environment variables:
 ## Custom OpenTelemetry Operator Instrumentation resource
 
 You might want to create a custom `Instrumentation` resource. For more info, see the [`Instrumentation` object schema](https://github.com/open-telemetry/opentelemetry-operator/blob/v0.63.1/apis/v1alpha1/instrumentation_types.go) and [example usage](https://github.com/open-telemetry/opentelemetry-operator/tree/v0.63.1#opentelemetry-auto-instrumentation-injection).
-In the case of defining an endpoint to export telemetry data from instrumented application, follow the pattern `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` (e.g., `collection-sumologic-otelagent.sumologic`).
+In the case of defining an endpoint to export telemetry data from instrumented application, follow the pattern `RELEASE_NAME-CHART_NAME-otelagent.RELEASE_NAMESPACE` (for example, `collection-sumologic-otelagent.sumologic`).
 
 Make sure supported auto-instrumentation images are used:
 
@@ -209,7 +210,7 @@ Make sure supported auto-instrumentation images are used:
 By default, the Sumo Logic Kubernetes Collection chart collects container logs by scraping log files from `/var/log/pods/` on each node (via the logs collector DaemonSet). You can alternatively ingest application logs directly via OpenTelemetry auto-instrumentation, where the OTel SDK inside the application sends structured log records over OTLP to the `otelcol-instrumentation` StatefulSet.
 
 :::tip Key difference
-File-based collection captures everything written to stdout/stderr. Auto-instrumentation log export captures structured log records emitted through the application's logging framework (for example, SLF4J, Python logging, Bunyan). Log records include full semantic context — trace IDs, span IDs, severity, and attributes.
+File-based collection captures everything written to stdout/stderr. Auto-instrumentation log export captures structured log records emitted through the application's logging framework (for example, SLF4J, Python logging, Bunyan). Log records include full semantic context: trace IDs, span IDs, severity, and attributes.
 :::
 
 ### Enable the logs pipeline on otelcol-instrumentation
@@ -336,7 +337,7 @@ instrumentation:
 ```
 
 :::note
-Node.js auto-instrumentation supports Bunyan, Pino, and Winston logging libraries. Set `OTEL_NODE_ENABLED_INSTRUMENTATIONS` to include the specific logging library your application uses. `console.log` is **not** captured — only structured logging frameworks are supported.
+Node.js auto-instrumentation supports Bunyan, Pino, and Winston logging libraries. Set `OTEL_NODE_ENABLED_INSTRUMENTATIONS` to include the specific logging library your application uses. `console.log` is **not** captured. Only structured logging frameworks are supported.
 :::
 
 #### .NET
@@ -409,7 +410,7 @@ otelcolInstrumentation:
 
 ### Avoiding duplicate logs
 
-When auto-instrumentation log export is enabled alongside file-based log collection, the same log message can appear twice in Sumo Logic — once from the logs collector DaemonSet (scraped from stdout/stderr files) and once from the otelcol-instrumentation pipeline (sent via OTLP from the SDK).
+When auto-instrumentation log export is enabled alongside file-based log collection, the same log message can appear twice in Sumo Logic. One copy comes from the logs collector DaemonSet (scraped from stdout/stderr files) and one from the otelcol-instrumentation pipeline (sent via OTLP from the SDK).
 
 **Recommended approach:** Exclude instrumented namespaces from file-based collection:
 
@@ -525,9 +526,9 @@ sumologic:
 
 ### Limitations
 
-* **Go** — No auto-instrumentation support for logs. Requires manual SDK integration.
-* **Console output** — `console.log` (Node.js), `System.out.println` (Java), `print()` (Python) are NOT captured by auto-instrumentation. Only structured logging frameworks are supported.
-* **Startup logs** — Logs emitted before the OTel SDK initializes (e.g., during class loading) may be lost. File-based collection captures these.
-* **Sidecar/init containers** — Only the main application container is instrumented. Sidecar and init container logs require file-based collection.
-* **Log volume** — High-volume logging (>1000 lines/sec per pod) may require significant memory for the sending queue. Monitor and scale accordingly.
+* **Go**. No auto-instrumentation support for logs. Requires manual SDK integration.
+* **Console output**. `console.log` (Node.js), `System.out.println` (Java), `print()` (Python) are NOT captured by auto-instrumentation. Only structured logging frameworks are supported.
+* **Startup logs**. Logs emitted before the OTel SDK initializes (for example, during class loading) may be lost. File-based collection captures these.
+* **Sidecar/init containers**. Only the main application container is instrumented. Sidecar and init container logs require file-based collection.
+* **Log volume**. High-volume logging (>1000 lines/sec per pod) may require significant memory for the sending queue. Monitor and scale accordingly.
 
