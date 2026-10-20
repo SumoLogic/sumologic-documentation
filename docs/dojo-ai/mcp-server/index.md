@@ -1,5 +1,5 @@
 ---
-slug: /ai/mcp-server
+slug: /dojo-ai/mcp-server
 title: MCP Server
 description: Connect your AI tools to Sumo Logic via MCP to query logs, manage insights, and investigate security incidents using Claude Code CLI.
 keywords:
@@ -41,8 +41,14 @@ Prefer a built-in conversational experience instead of connecting an external AI
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/ai/mcp-server/enable-mcp-server')}><img src={useBaseUrl('img/icons/operations/manage.png')} alt="Enable icon" width="50"/><h4>Enable the MCP Server</h4></a>
+  <p>Turn on MCP server access and CIMD for your organization.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/ai/mcp-server/connect-mcp-client')}><img src={useBaseUrl('img/icons/cloud/api2.png')} alt="Connect icon" width="50"/><h4>Connect an MCP Client</h4></a>
-  <p>Find your server URL, enable CIMD, and connect Claude Code.</p>
+  <p>Find your server URL and connect Claude Code or another client.</p>
   </div>
 </div>
 <div className="box smallbox card">

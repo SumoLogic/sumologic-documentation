@@ -12,6 +12,8 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+Once your AI client is [connected to the Sumo Logic MCP server](/docs/ai/mcp-server/connect-mcp-client), you can investigate alerts, insights, and logs by asking questions in plain language. This page shows how to get more consistent results with the sumo-investigator skill, and gives example multi-step prompts for common investigation tasks, such as triage, threat hunting, and incident response. For the tools your client can call, see the [MCP tools reference](/docs/ai/mcp-server/mcp-tools-reference).
+
 ## Improve investigations with the sumo-investigator skill
 
 A skill gives an AI agent standing instructions and workflow context that persist across every conversation, so you do not need to repeat detailed prompting each time you ask a question. For Claude Code, a skill is a folder containing a `SKILL.md` file that documents how to approach a class of tasks, in this case, investigating Sumo Logic data through the MCP server's tools.

@@ -2,12 +2,11 @@
 id: usage-costs-rate-limits
 title: MCP Usage, Costs, and Rate Limits
 sidebar_label: Usage, Costs, and Rate Limits ✨
-description: Understand when to use the MCP server, what drives cost, the rate limits, and how Sumo Logic secures MCP access.
+description: Understand when to use the MCP server, what drives cost, and the rate limits.
 keywords:
   - mcp server
   - rate limits
   - cost
-  - security
 ---
 
 
@@ -77,14 +76,6 @@ To stay within the limits, your MCP client should:
 Rate limits may be increased for customers with higher needs. Contact your Sumo Logic account representative. Sumo Logic may adjust these rate limits over time.
 :::
 
-## How does Sumo Logic secure MCP access?
+## Security
 
-* **Permissioned access**. All integrations occur through secure, controlled interfaces.
-* **Customer control**. You retain full control over how your data is accessed and used by connected AI tools.
-* **No model training**. Customer data is never used to train AI models.
-* **Audit trails**. All MCP interactions are logged for compliance and security review.
-* **Multi-tenant isolation**. Tenant-level security controls are enforced at the gateway.
-
-### IP allowlisting and MCP tools
-
-All MCP tools forward your original client IP to Sumo Logic, so IP allowlisting works consistently across all tools, including log search (`runLogSearch`) and [Mobot](/docs/ai/mobot).
+For how Sumo Logic secures MCP access, including audit trails and IP allowlisting, see the [MCP FAQ](/docs/ai/mcp-server/troubleshooting-faq#how-does-sumo-logic-secure-mcp-access).

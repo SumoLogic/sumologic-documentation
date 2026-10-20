@@ -1,7 +1,7 @@
 ---
-id: agent-knowledge-socaa
-title: Agent Knowledge for SOC Analyst Agent
-description: Teach the Cloud SIEM SOC Analyst Agent your environment, runbooks, and past incidents so its investigations of Cloud SIEM insights reflect how your team works.
+slug: /dojo-ai/configure-agents/knowledge
+title: Knowledge
+description: Teach DojoAI agents the facts, patterns, and practices your team relies on. Teach the Cloud SIEM SOC Analyst Agent your environment, runbooks, and past incidents so its investigations of Cloud SIEM insights reflect how your team works.
 keywords:
   - mobot
   - dojoai
@@ -13,6 +13,7 @@ keywords:
   - ai investigation
   - soc
 ---
+
 
 <head>
   <meta name="robots" content="noindex" />
@@ -26,7 +27,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional DojoAI agents planned for later phases.
+Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/) is the first agent to support it, with additional DojoAI agents planned for later phases.
 
 Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, or that a Friday spike in authentication failures is your scheduled penetration test. Knowledge closes that gap and keeps it closed — over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
@@ -91,7 +92,7 @@ Whenever your knowledge shapes an investigation, the agent surfaces which entrie
 * **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other DojoAI agents is planned for upcoming phases.
 * **Text only**. Knowledge sources accept plain text only. Enhanced knowledge addition mechanisms are planned for upcoming phases.
 * **Security guardrails**. Security guardrails on knowledge content are planned for upcoming phases.
-* **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
+* **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/dojo-ai/agents/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
 * **One knowledge base per agent**. Everyone on your team draws on the same shared knowledge for a given agent. No per-team partitioning.
 * **Audit logging for knowledge**. A comprehensive record of who added or changed a fact, and when, is not yet available. Planned for a later phase.
 
@@ -119,6 +120,6 @@ Pricing and packaging are being finalized. Your account team will have details b
 
 ## Additional resources
 
-* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/). The agent that Knowledge extends.
-* [Mobot](/docs/ai/mobot/). The conversational interface for Sumo Logic's AI agents.
+* [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/). The agent that Knowledge extends.
+* [Mobot](/docs/dojo-ai/mobot/). The conversational interface for Sumo Logic's AI agents.
 * [AI Capabilities](/docs/ai). How the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.

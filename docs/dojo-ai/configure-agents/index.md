@@ -1,6 +1,6 @@
 ---
-slug: /ai/dojoai
-title: DojoAI
+slug: /dojo-ai/configure-agents
+title: Configure Agents (Dojo AI left nav)
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 ├── Dojo AI (/docs/dojo-ai/, new, mirrors the product nav item)
-│   ├── Dojo AI overview (new)
 │   ├── The Dojo, Your agent roster (new)
 │   └── Settings (one page per tab, per-agent partials)
 │       ├── General

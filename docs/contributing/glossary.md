@@ -326,7 +326,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met.
 
-**[SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent)**. An AI-powered Cloud SIEM feature that automatically investigates security insights, delivers evidence-backed verdicts (malicious, suspicious, or benign), and surfaces key findings from triggered signals to help security analysts triage faster and reduce false-positive noise.
+**[SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent)**. An AI-powered Cloud SIEM feature that automatically investigates security insights, delivers evidence-backed verdicts (malicious, suspicious, or benign), and surfaces key findings from triggered signals to help security analysts triage faster and reduce false-positive noise.
 
 **[Source](/docs/send-data)**. Sources are configured on Sumo Logic collectors and collect customer data.
 

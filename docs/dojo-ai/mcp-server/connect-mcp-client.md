@@ -2,9 +2,8 @@
 id: connect-mcp-client
 title: Connect an MCP Client
 sidebar_label: Connect an MCP Client ✨
-description: Find your deployment's MCP server URL, enable CIMD, and connect Claude Code or another MCP client to Sumo Logic.
+description: Find your deployment's MCP server URL and connect Claude Code or another MCP client to Sumo Logic.
 keywords:
-  - feature management
   - mcp server
   - claude code
   - cimd
@@ -13,23 +12,9 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 import Iframe from 'react-iframe';
 
-## How to enable or disable the MCP server
-
-### Feature Management
-
-MCP server access is enabled by default. An administrator can turn it on or off for your entire organization. For the other AI toggles and for auditing, see [Feature Management](/docs/manage/feature-management).
-
-1. In the main Sumo Logic menu, select **Administration** > **Feature Management**.
-1. In the **MCP Server access** row, use the **Enabled** toggle to turn the MCP server on or off.<br/><img src={useBaseUrl('img/api/mcp/mcp-feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
-
-<MSSPfeatureMgmt/>
-
-Enabling MCP Server access makes the server available for connection. Clients still authenticate with OAuth 2.0, and CIMD is enabled separately on the Policies page. See [What do you need before getting started?](#prerequisites) and [How to enable CIMD for MCP clients](#how-to-enable-cimd-for-mcp-clients).
-
-Disabling the MCP server prevents MCP clients from connecting, but does not delete any data. MCP Server access is a separate setting from the **AI features** toggle, which governs Mobot and Parse Assist, and from the **SOC Analyst Agent** toggle, so you can enable or disable the MCP server independently of those capabilities.
+Connect Claude Code or another MCP-compatible client to the Sumo Logic MCP server. Before you start, an administrator must [enable the MCP server and CIMD](/docs/ai/mcp-server/enable-mcp-server) for your organization.
 
 ## Prerequisites
 
@@ -57,7 +42,7 @@ The MCP server is not currently supported in our Zurich or AWS European Sovereig
 
 ### How to use your org subdomain in the MCP server URL
 
-Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain) to the front of the MCP server URL so MCP clients that authenticate with [CIMD](#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
+Add your org's [subdomain](/docs/manage/manage-subscription/create-and-manage-orgs/manage-org-settings/#set-up-a-customsubdomain) to the front of the MCP server URL so MCP clients that authenticate with [CIMD](/docs/ai/mcp-server/enable-mcp-server#how-to-enable-cimd-for-mcp-clients) go straight to your org's login page instead of asking users to enter the subdomain first. This can be useful if your org signs in with SAML on a subdomain.
 
 To build the URL, add `<subdomain>.` before the host name in your deployment's URL from the [table above](#mcp-server-url-for-your-deployment):
 
@@ -107,20 +92,9 @@ Watch this micro lesson to learn how to connect an MCP-compatible AI client, suc
 
 :::
 
-## How to enable CIMD for MCP clients
-
-CIMD is the recommended authentication mechanism for MCP clients and is disabled by default. An administrator needs to enable it for your organization before clients can authenticate.
-
-1. In the main Sumo Logic menu, select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
-1. Select the **Enable CIMD Clients** check box.<br/><img src={useBaseUrl('img/api/mcp/enable-cimd-policies.png')} alt="Policies page showing the Enable CIMD Clients and Restrict to pre-registered clients only check boxes selected under OAuth Clients" style={{border: '1px solid gray'}} width="800" />
-
-To allow only specific MCP clients, select **Restrict to pre-registered clients only** under **OAuth Clients**, and then manually create a CIMD client for each MCP client you want to allow. For steps and CIMD URLs for common clients, see [Manually create a CIMD client](/docs/manage/security/oauth#manually-create-a-cimd-client).
-
-For how Sumo Logic implements OAuth 2.0 and CIMD in more detail, see [OAuth Client Setup](/docs/manage/security/oauth#enable-cimd).
-
 ## How to configure the MCP server in Claude Code CLI
 
-Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an administrator has [enabled CIMD](#how-to-enable-cimd-for-mcp-clients) on the Policies page. You do not need to create OAuth credentials; browser-based login handles authentication and token refresh automatically.
+Claude Code CLI uses OAuth 2.0 with CIMD. Before proceeding, make sure an administrator has [enabled CIMD](/docs/ai/mcp-server/enable-mcp-server#how-to-enable-cimd-for-mcp-clients) on the Policies page. You do not need to create OAuth credentials; browser-based login handles authentication and token refresh automatically.
 
 ### Setup
 

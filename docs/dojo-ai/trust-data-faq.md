@@ -14,7 +14,7 @@ keywords:
    - fedramp
 ---
 
-This page answers common questions about how Sumo Logic's AI and machine learning features handle your data. For an overview of our AI capabilities, see [AI Capabilities](/docs/ai). To turn AI features on or off, see [Feature Management](/docs/manage/feature-management).
+This page answers common questions about how Sumo Logic's AI and machine learning features handle your data. For an overview of our AI capabilities, see [AI Capabilities](/docs/ai). To turn AI features on or off, see [Feature Management](/docs/dojo-ai/about/#feature-management).
 
 ### Do DojoAI agents access customer data?
 
@@ -40,7 +40,7 @@ All Sumo Logic AI capabilities are designed to serve customer-specific outcomes 
 
 Traditional ML features, such as AI-driven alerts, generate models specific to each customer's environment and are never shared or made public.
 
-For more information, see [Security and Compliance](/docs/ai/mobot/#security-and-compliance).
+For more information, see [Security and Compliance](/docs/dojo-ai/mobot/about#security-and-compliance).
 
 ### Does any third party have access to DojoAI customer data?
 
@@ -96,8 +96,8 @@ Yes. Sumo Logic uses machine learning in several features, including [LogReduce]
 * [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai). Self-paced training course covering Mobot and the DojoAI agents.
 
 * [Mobot](/docs/ai/mobot). The conversational interface for DojoAI — ask questions in plain language to analyze log data, investigate incidents, and get answers sourced from official documentation.
-* [Mobot Example Prompts](/docs/ai/mobot/example-prompts). A library of example prompts covering security and observability investigations, platform administration, and how-to questions.
-* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). Investigate Cloud SIEM insights faster with evidence-backed AI verdicts, correlated entities, and recommended actions.
+* [Mobot Example Prompts](/docs/dojo-ai/mobot/example-prompts). A library of example prompts covering security and observability investigations, platform administration, and how-to questions.
+* [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent). Investigate Cloud SIEM insights faster with evidence-backed AI verdicts, correlated entities, and recommended actions.
 * [Sumo Logic MCP server](/docs/ai/mcp-server). Connect MCP-compatible AI clients, such as Claude Code and GitHub Copilot, to your Sumo Logic data using natural language.
 * [DojoAI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about DojoAI, Sumo Logic's multi-agent AI platform for security and observability, including Mobot, the SOC Analyst Agent, and the MCP server.
 * [Welcome to DojoAI: Where AI agents strengthen your SOC](https://www.sumologic.com/blog/welcome-dojo-ai-agents-soc). Introducing DojoAI and its role across Sumo Logic's security and observability workflows.
@@ -108,6 +108,6 @@ Yes. Sumo Logic uses machine learning in several features, including [LogReduce]
 ## Additional resources
 
 * [AI Capabilities](/docs/ai). Find every Sumo Logic AI capability in one place.
-* [Feature Management](/docs/manage/feature-management). Turn AI features on or off and audit DojoAI activity.
+* [Feature Management](/docs/dojo-ai/about/#feature-management). Turn AI features on or off and audit DojoAI activity.
 * [DojoAI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about DojoAI, Sumo Logic's multi-agent AI platform for security and observability.
 * [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai). Self-paced training course covering Mobot and the DojoAI agents.

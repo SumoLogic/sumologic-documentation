@@ -1,5 +1,5 @@
 ---
-slug: /ai/mobot
+slug: /dojo-ai/mobot
 title: Mobot
 description: Troubleshoot logs, create monitors and dashboards, and learn the platform using plain-language questions with Mobot, Sumo Logic's AI assistant.
 keywords:

@@ -40,7 +40,7 @@ The Root Cause Agent performs three distinct jobs:
    * **AI verdict**. What it believes the root cause is, or a clear statement that it could not conclude.
    * **Key findings**. The steps that led there, each backed by the query that produced it.
    * **Recommended actions**. Suggested next steps for you to act on.
-* **Conversational follow-up (via Mobot)**. Lets you continue the investigation in [Mobot](/docs/ai/mobot/), with the full context of the AI investigation already loaded.
+* **Conversational follow-up (via Mobot)**. Lets you continue the investigation in [Mobot](/docs/dojo-ai/mobot/), with the full context of the AI investigation already loaded.
 * **Audit trail**. Logs every query the agent runs to the Sumo Logic audit index, so you can review exactly what it did and how it reached its verdict.
 
 <!-- GA: change On-demand investigation bullet to * **Auto-investigation**. Automatically delivers an evidence-backed root cause on every alert as it fires, without requiring engineer action.-->
@@ -88,7 +88,7 @@ A list of suggested actions, each with a title and explanation. These are recomm
 
 ### Continue investigating in Mobot
 
-From here, you can continue the investigation conversationally in [Mobot](/docs/ai/mobot/), with the full context of the investigation already loaded.
+From here, you can continue the investigation conversationally in [Mobot](/docs/dojo-ai/mobot/), with the full context of the investigation already loaded.
 
 Click one of the suggested follow-up questions to autopopulate it in Mobot.<br/><img src={useBaseUrl('img/alerts/root-cause-agent-continue-mobot.png')} alt="Continue investigating in Mobot suggested questions at the bottom of the AI Investigation tab" style={{border: '1px solid gray'}} width="800" />
 
@@ -128,7 +128,7 @@ Some limits are not tied to the preview phase:
 
 ### What is the Sumo Logic Root Cause Agent?
 
-The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/ai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/ai/mobot/), DojoAI's chat interface.
+The Root Cause Agent is part of [Sumo Logic DojoAI](/docs/ai). It applies agentic AI reasoning to observability triage — investigating monitor alerts on demand, gathering evidence across logs and metrics, and returning an evidence-backed root cause. When deeper analysis is needed, you continue the same investigation conversationally in [Mobot](/docs/dojo-ai/mobot/), DojoAI's chat interface.
 
 ### How is this different from asking a chat assistant about my alerts?
 
@@ -136,7 +136,7 @@ A chat assistant is a surface you type into. The Root Cause Agent is an investig
 
 ### How is this different from the SOC Analyst Agent?
 
-Both are agentic investigators in DojoAI, aimed at different workflows. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent) triages Cloud SIEM insights for security teams and returns a malicious, suspicious, or benign verdict. The Root Cause Agent triages monitor alerts for DevOps and SRE teams, investigates across logs and metrics, and returns a root cause. Both let you continue the investigation in Mobot.
+Both are agentic investigators in DojoAI, aimed at different workflows. The [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent) triages Cloud SIEM insights for security teams and returns a malicious, suspicious, or benign verdict. The Root Cause Agent triages monitor alerts for DevOps and SRE teams, investigates across logs and metrics, and returns a root cause. Both let you continue the investigation in Mobot.
 
 ### How is this different from Sumo Logic monitors?
 
@@ -186,9 +186,9 @@ Availability is rolling out per deployment. Check with your account team for you
 
 ## Additional resources
 
-* [Example Prompts for Mobot](/docs/ai/mobot/example-prompts). Find more example prompts here to continue your root cause observability investigation.
+* [Example Prompts for Mobot](/docs/dojo-ai/mobot/example-prompts). Find more example prompts here to continue your root cause observability investigation.
 * [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the Root Cause Agent.
 * [AI Capabilities](/docs/ai). How Sumo Logic's AI agents fit alongside Mobot, the SOC Analyst Agent, and the Sumo Logic MCP server.
 * [Alert Response](/docs/alerts/monitors/alert-response/). The alert page that hosts the AI Investigation tab.
-* [Mobot](/docs/ai/mobot/). The conversational interface for Sumo Logic's AI agents.
-* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent). The security counterpart to the Root Cause Agent — investigates Cloud SIEM insights for security teams.
+* [Mobot](/docs/dojo-ai/mobot/). The conversational interface for Sumo Logic's AI agents.
+* [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent). The security counterpart to the Root Cause Agent — investigates Cloud SIEM insights for security teams.

@@ -169,11 +169,11 @@ Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse
 
 ### Start a new investigation
 
-To start a new investigation, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**. To clear your current session instead, see [New conversation](/docs/ai/mobot/#new-conversation).
+To start a new investigation, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**. To clear your current session instead, see [New conversation](/docs/ai/mobot/about#new-conversation).
 
 ### Share the conversation
 
-To share the current investigation with other users, see [Share conversation](/docs/ai/mobot/#share-conversation).
+To share the current investigation with other users, see [Share conversation](/docs/ai/mobot/about#share-conversation).
 
 ## Configure SOC Analyst Agent settings
 
