@@ -130,5 +130,7 @@ sigma convert -t sumologic_cse_rule -p sumologic_cse -O min_confidence=0.0 test-
 | `min_confidence` | `0.25` | Minimum mapping confidence score required to convert a rule. Set to `0.0` to disable the threshold. |
 | `rule_source` | `user` | Value of the `rule_source` field on converted rules. |
 | `include_conversion_timestamp` | `true` | Include a `conversion_timestamp` in the conversion metadata. Set to `false` for reproducible output that's easier to compare between runs. |
+| `include_confidence_metadata` | `true` | Include `mapping_confidence` in the conversion metadata. |
+| `fail_on_unmapped_logsource` | `false` | Block conversion of rules whose log source has no vendor/product mapping. |
 
 For the full list of options and known limitations, see the [pySigma Sumo Logic backend documentation](https://github.com/SumoLogic/pySigma-backend-sumologic#configuration-options).
