@@ -6,7 +6,7 @@ description: Learn how to modify the attributes of your spans.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can add, delete, hash, or modify span attributes (metadata tags) on collectors or directly in your application code. This helps you enhance diagnostic details included in your data, remove redundant information to cut the cost, or mask sensitive information before they leave your site.
+You can add, delete, hash, or modify span attributes (metadata tags) on the OpenTelemetry Collector or directly in your application code. This helps you enhance diagnostic details included in your data, remove redundant information to cut the cost, or mask sensitive information before they leave your site.
 
 ## Attach logs to spans
 

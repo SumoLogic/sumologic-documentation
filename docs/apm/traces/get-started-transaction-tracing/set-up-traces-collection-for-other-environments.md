@@ -18,7 +18,7 @@ Depending on the architecture of the environment, OpenTelemetry Collector can be
 * a gateway that retrieves all data, processes it and sends it to the backend (Sumo Logic Receiver)
 * an optional (though recommended) Agent, which can be run on each node or as a sidecar next to the service; it buffers and tags spans, sending them to the gateway
 
-Due to the fact that vital metadata (information about the host and its OS) is available only for collectors inside individual node/host, we recommend that instances of OpenTelemetry Collector should be run at least on each of the nodes/hosts as **agents**. Doing so allows you to collect metadata tags locally and also in case of high volume environments, to buffer the messages, reducing the number of requests for each individual collector instance.
+Due to the fact that vital metadata (information about the host and its OS) is available only for OpenTelemetry Collectors inside individual node/host, we recommend that instances of OpenTelemetry Collector should be run at least on each of the nodes/hosts as **agents**. Doing so allows you to collect metadata tags locally and also in case of high volume environments, to buffer the messages, reducing the number of requests for each individual OpenTelemetry Collector instance.
 
 <img src={useBaseUrl('img/apm/traces/OpenTelemetry-Deployment.png')} alt="OpenTelemetry deployment" style={{border: '1px solid gray'}} width="800" />
 
@@ -89,7 +89,7 @@ otelcol-sumo-0.97.0-sumo-1-darwin_amd64 --config=config.yaml
 
 ### Step 4 - Connecting clients to OpenTelemetry Collector Gateway (if Agent is not used)
 
-During [instrumentation of your application](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation), typically you need to configure collector endpoint and protocol.
+During [instrumentation of your application](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation), typically you need to configure the OpenTelemetry Collector endpoint and protocol.
 
 OpenTelemetry tracing client libraries need to point spans accordingly to the protocol used. When a direct connection to OpenTelemetry Collector Gateway is used, the following settings can be used:
 
@@ -143,7 +143,7 @@ otelcol-sumo-0.97.0-sumo-1-darwin_amd64 --config agent-config.yaml
 
 ### Step 3 - Connecting clients to OpenTelemetry Collector Agent
 
-During [instrumentation of your application](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation), typically you need to configure collector endpoint and protocol.
+During [instrumentation of your application](/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation), typically you need to configure the OpenTelemetry Collector endpoint and protocol.
 
 Tracing client libraries need to point spans accordingly to the protocol used:
 

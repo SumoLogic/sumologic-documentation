@@ -15,11 +15,11 @@ You'll still need to instrument with OpenTelemetry for full functionality. Istio
 
 ## Configuration
 
-To send data to Sumo Logic collector either in a Kubernetes or standalone setup, configure the OpenCensus Agent (recommended due to simpler setup) or Zipkin (if for any reason that’s your preference) exporter and send this data to the associated collector port. Enable one of the exporters setting **meshConfig** options in Envoy proxies.
+To send data to the OpenTelemetry Collector either in a Kubernetes or standalone setup, configure the OpenCensus Agent (recommended due to simpler setup) or Zipkin (if for any reason that’s your preference) exporter and send this data to the associated OpenTelemetry Collector port. Enable one of the exporters setting **meshConfig** options in Envoy proxies.
 
 ### OpenCensus Agent exporter
 
-Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCensusAgent.address=` to the endpoint of the receiving collector:
+Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCensusAgent.address=` to the endpoint of the receiving OpenTelemetry Collector:
 
 * For [*Kubernetes collectors*](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):
 
@@ -28,7 +28,7 @@ Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCe
     --set meshConfig.defaultConfig.tracing.openCensusAgent.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:55678
     ```
 
-* For [standalone collectors](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):
+* For [standalone OpenTelemetry Collectors](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):
 
     ```bash
     --set meshConfig.enableTracing=true
@@ -42,7 +42,7 @@ OpenCensus agent by default uses **W3C** context propagation same as OpenTelemet
 ### Zipkin exporter
 
 Set `meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.zipkin.address=` to the URL of Sumo Logic
-receiving collector:
+receiving OpenTelemetry Collector:
 
 * For [*Kubernetes collectors*](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md):
 
@@ -51,7 +51,7 @@ receiving collector:
     --set meshConfig.defaultConfig.tracing.zipkin.address=RELEASE_NAME-CHART_NAME-otelagent.NAMESPACE:9411
     ```
 
-* For [*standalone collectors*](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):
+* For [*standalone OpenTelemetry Collectors*](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md):
 
     ```bash
     --set meshConfig.enableTracing=true
@@ -72,7 +72,7 @@ Without this there will be a lack of context propagation between different servi
 You can reconfigure OpenTelemetry instrumentation to use b3 in addition to W3C context propagation.
 
 :::note
-Before proceeding make sure you have the most recent versions of instrumentations and collectors in place.
+Before proceeding make sure you have the most recent versions of instrumentations and OpenTelemetry Collectors in place.
 :::
 
 The following is a Java example to set up b3 context propagation. Add the following parameter to JVM environment variables or command line:

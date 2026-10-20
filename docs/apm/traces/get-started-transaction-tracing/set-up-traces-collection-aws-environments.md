@@ -20,7 +20,7 @@ To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including
 
 ## Telemetry data collection
 
-AWS provides a few alternative scenarios for setting up the Collector. Documentation related to the configuration and installation of the Sumo Logic Distribution for [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for specific AWS Services can be found below.
+AWS provides a few alternative scenarios for setting up the OpenTelemetry Collector. Documentation related to the configuration and installation of the Sumo Logic Distribution for [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) for specific AWS Services can be found below.
 
 ## Sumo Logic Distribution for OpenTelemetry Collector configuration scenarios
 
@@ -38,7 +38,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 
 ### Scenario 1: Sumo Logic Distribution for OpenTelemetry Collector installation on ECS EC2
 
-1. Download the CloudFormation template file which will be used later to install the Collector:
+1. Download the CloudFormation template file which will be used later to install the OpenTelemetry Collector:
 
     ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ecs-ec2-deployment.yaml
@@ -50,20 +50,20 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
     curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/config.yaml
     ```
 
-1. Set up the following environment variables that are needed to perform the Collector deployment.
+1. Set up the following environment variables that are needed to perform the OpenTelemetry Collector deployment.
    * `CLUSTER_NAME`. Your ECS Cluster name previously set up.
    * `AWS_REGION`. Your ECS Cluster deployment region.
    * `TEMPLATE_PATH`. Path to the template file from the first step.
    * `CONFIG_FILE_PATH`. Path to the config file from the second step.
    * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) from prerequisites section.
 
-1. It is necessary to provide the configuration to the Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:  
+1. It is necessary to provide the configuration to the OpenTelemetry Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:  
 
     ```bash
     aws ssm put-parameter --name "sumologic-otel-col-config" --type "String" --data-type "text" --value "$(cat ${CONFIG_FILE_PATH} | awk -v url=$SUMO_OTLP_HTTP_ENDPOINT_URL '{gsub(/SUMO_OTLP_HTTP_ENDPOINT_URL/,url)}1')"
     ```
 
-1. Execute the command below to create an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that deploys the Collector on your cluster:
+1. Execute the command below to create an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that deploys the OpenTelemetry Collector on your cluster:
 
     ```bash
     aws cloudformation create-stack --stack-name sumologic-aws-otel-col-ecs-ec2 --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=ClusterName,ParameterValue=${CLUSTER_NAME} --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}
@@ -71,21 +71,21 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 
 1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-ec2** stack status is **CREATE_COMPLETE**. <br/><img src={useBaseUrl('img/apm/traces/stack_status.png')} alt="Stack status" style={{border: '1px solid gray'}} width="800" />
 
-1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the Collector. Navigate to the **Tasks** tab and check if the task is running. <br/><img src={useBaseUrl('img/apm/traces/task-status-running.png')} alt="Task status running" style={{border: '1px solid gray'}} width="800" />
+1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running. <br/><img src={useBaseUrl('img/apm/traces/task-status-running.png')} alt="Task status running" style={{border: '1px solid gray'}} width="800" />
 
 1. Finally, select the **task** and click the **Networking** tab. You'll find the information on where to send telemetry data.<br/>
-  If you plan to send data to the ECS Collector service from a container running in the bridge network mode using the same host, you can use Docker Gateway IP - 172.17.0.1 on EC2 Linux in the application environment variables. For example:
+  If you plan to send data to the ECS OpenTelemetry Collector service from a container running in the bridge network mode using the same host, you can use Docker Gateway IP - 172.17.0.1 on EC2 Linux in the application environment variables. For example:
 
   ```bash
   OTEL_EXPORTER_OTLP_ENDPOINT=http://172.17.0.1:4318
   OTEL_TRACES_EXPORTER=otlp
   ```
 
-  However, with this configuration, the collector service task must be running in each of the used EC2 instances.
+  However, with this configuration, the OpenTelemetry Collector service task must be running in each of the used EC2 instances.
 
 ### Scenario 2: Sumo Logic Distribution for OpenTelemetry Collector installation on ECS Fargate
 
-1. Download the CloudFormation template file which will be used later to install the Collector:
+1. Download the CloudFormation template file which will be used later to install the OpenTelemetry Collector:
     ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ecs-fargate-deployment.yaml
     ```
@@ -93,7 +93,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
     ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/config.yaml
     ```
-1. Set up the following environment variables that are needed to perform the Collector deployment:
+1. Set up the following environment variables that are needed to perform the OpenTelemetry Collector deployment:
    * `CLUSTER_NAME`. Your ECS Cluster name setup from prerequisite
    * `AWS_REGION`. Your ECS Cluster deployment region
    * `TEMPLATE_PATH`. Path to the template file from the first step
@@ -105,7 +105,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
      * OTLP - ports: 4317/tcp, 4318/tcp
     :::
    * `SUBNETS`. As with Security Groups, you need to configure Subnets for AWS Fargate. To find Subnets used on the cluster, use the VPC ID from Security Group and search for it on the list [here](https://console.aws.amazon.com/vpc/home#subnets:). In the case of multiple Subnets use a comma as a separator, such as: `subnet-xyz,subnet-xyz`.
-1. It is necessary to provide the configuration to the Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:
+1. It is necessary to provide the configuration to the OpenTelemetry Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:
     ```bash
     aws ssm put-parameter --name "sumologic-otel-col-config" --type "String" --data-type "text" --value "$(cat ${CONFIG_FILE_PATH} | awk -v url=$SUMO_OTLP_HTTP_ENDPOINT_URL '{gsub(/SUMO_OTLP_HTTP_ENDPOINT_URL/,url)}1')"
     ```
@@ -119,7 +119,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 
 ## Amazon Elastic Computing (EC2)
 
-1. Download the CloudFormation template file which will be used later to install the Collector on your EC2 instance.
+1. Download the CloudFormation template file which will be used later to install the OpenTelemetry Collector on your EC2 instance.
     ```bash
     curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ec2-deployment.yaml
     ```
@@ -129,7 +129,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
    * `SUMO_OTLP_HTTP_ENDPOINT_URL`. Mandatory [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
    * `SSH_KEY_NAME`. [Amazon EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) needed to ssh to the EC2 instance
    * `AMI_ID`. An Amazon image ID, depends on the region. To obtain it go to [EC2 Launch Instances](https://console.aws.amazon.com/ec2/v2/home#LaunchInstanceWizard:) and get AMI ID for **Amazon Linux 2 AMI** image, such as: `ami-0a6dc7529cd559185`. Note that the AMI ID depends on the region.
-1. Execute the command below to create the [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that will create an EC2 instance and install collector on it:
+1. Execute the command below to create the [AWS CloudFormation](https://aws.amazon.com/cloudformation/) stack that will create an EC2 instance and install the OpenTelemetry Collector on it:
     ```bash
     aws cloudformation create-stack --stack-name sumologic-otel-ec2 --template-body file://${TEMPLATE_PATH} --parameters ParameterKey=SumoOtlpHttpEndpointURL,ParameterValue=${SUMO_OTLP_HTTP_ENDPOINT_URL} ParameterKey=SSHKeyName,ParameterValue=${SSH_KEY_NAME} ParameterKey=InstanceAMI,ParameterValue=${AMI_ID} --capabilities=CAPABILITY_NAMED_IAM --region=${AWS_REGION}
     ```
@@ -142,7 +142,7 @@ In the case of the Amazon EKS service, we highly recommend using our native [Su
 
 ## Sumo Logic Distribution for OpenTelemetry Collector default configuration
 
-For each deployment scenario, the Sumo Logic Distribution for OpenTelemetry uses the same default configuration. In this configuration, the Collector is receiving telemetry data for:
+For each deployment scenario, the Sumo Logic Distribution for OpenTelemetry uses the same default configuration. In this configuration, the OpenTelemetry Collector is receiving telemetry data for:
 
 * OTLP gRPC protocol - port 4317
 * OTLP HTTP protocol - port 4318

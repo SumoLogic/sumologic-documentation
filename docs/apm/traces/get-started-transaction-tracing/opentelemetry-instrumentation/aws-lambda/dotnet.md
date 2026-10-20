@@ -60,9 +60,9 @@ Navigate toÂ [functions](https://console.aws.amazon.com/lambda/home#/functions)Â
   Lambda layers are a regionalized resource, meaning that they can only be used in the Region in which they are published. Make sure to use the layer in the same region as your Lambda functions.
   :::
 
-  By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
+  By default, OpenTelemetry Collector Lambda layer exports telemetry data to AWS backends. To customize the OpenTelemetry Collector configuration, add a collector.yaml to your function and specify its location via the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` environment file.
 
-* Configure the collector layer to send data to SumoLogic:
+* Configure the OpenTelemetry Collector layer to send data to SumoLogic:
 
     ```yaml
     receivers:
@@ -87,7 +87,7 @@ Navigate toÂ [functions](https://console.aws.amazon.com/lambda/home#/functions)Â
           exporters: [otlphttp]
     ```
 
-    Once the file has been deployed with a Lambda, configuring the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` will tell the OpenTelemetry extension where to find the collector configuration:
+    Once the file has been deployed with a Lambda, configuring the `OPENTELEMETRY_COLLECTOR_CONFIG_URI` will tell the OpenTelemetry extension where to find the OpenTelemetry Collector configuration:
 
     ```bash
     aws lambda update-function-configuration --function-name Function --environment Variables={OPENTELEMETRY_COLLECTOR_CONFIG_URI=/var/task/collector.yaml}

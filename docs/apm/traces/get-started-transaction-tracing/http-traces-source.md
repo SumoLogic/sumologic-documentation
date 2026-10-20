@@ -7,7 +7,7 @@ description: An HTTP Traces source is an endpoint for receiving traces.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-An HTTP Traces source is an endpoint for receiving trace data. The URL securely encodes the collector and source information. You can add as many HTTP Traces sources as you'd like to a single hosted collector.
+An HTTP Traces source is an endpoint for receiving trace data. The URL securely encodes the hosted collector and source information. You can add as many HTTP Traces sources as you'd like to a single hosted collector.
 
 When you set up an HTTP Traces source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time.
 
@@ -33,4 +33,4 @@ If you need to access the source's URL again, click **Show URL**.<br/><img sr
 
 ## Send a test trace to Sumo Logic
 
-Now that you have created an HTTP Traces source, you can send tracing data to it. Set up a collector and instrument your application with OpenTelemetry as described [here](/docs/apm/traces/get-started-transaction-tracing) or test it quickly with our [PetClinic demo application](https://github.com/SumoLogic/opentelemetry-petclinic).
+Now that you have created an HTTP Traces source, you can send tracing data to it. Set up an OpenTelemetry Collector and instrument your application with OpenTelemetry as described [here](/docs/apm/traces/get-started-transaction-tracing) or test it quickly with our [PetClinic demo application](https://github.com/SumoLogic/opentelemetry-petclinic).

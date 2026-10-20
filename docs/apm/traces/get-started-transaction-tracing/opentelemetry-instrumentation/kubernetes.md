@@ -21,7 +21,7 @@ The value of the flag `instrumentation.instrumentationNamespaces` is backslash c
  $ helm dependency update
  ```
 
-2. Installation/upgrade enabling operator and setting namespaces to watch. You can find more details about installing an OT collector in Kubernetes environments [here](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments).
+2. Installation/upgrade enabling operator and setting namespaces to watch. You can find more details about installing the OpenTelemetry Collector in Kubernetes environments [here](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments).
 
  ```bash
  $ helm upgrade --install collection sumologic/sumologic \

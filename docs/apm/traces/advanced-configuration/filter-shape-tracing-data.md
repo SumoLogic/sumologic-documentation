@@ -11,7 +11,7 @@ You may ask yourself, "What if I do not want to send all my trace data to Sumo L
 
 Our OpenTelemetry Collector is uniquely capable of [shaping trace data at output](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor). You can define rules in a cascading fashion, assign different volume pool sizes to each rule, and give them different priorities.
 
-Most of the following configuration rules are based on whole trace inspection (end-to-end trace duration) and the decision of whether to send a trace or not, is also based on all or none spans for the trace. Therefore it is important that a single collector working with that capability enabled **always sees a complete trace**.
+Most of the following configuration rules are based on whole trace inspection (end-to-end trace duration) and the decision of whether to send a trace or not, is also based on all or none spans for the trace. Therefore it is important that a single OpenTelemetry Collector working with that capability enabled **always sees a complete trace**.
 
 Output-level filtering ensures you will always have valuable, useful, and cost-optimized data for backend analysis. Most users want to filter tracing data to help with scaling, privacy, or cost optimization for large environments.
 
@@ -19,7 +19,7 @@ For best results, perform filtering on a central instance of Aggregating [OpenTe
 
 <img src={useBaseUrl('img/apm/traces/env-multiple-agents-bd.png')} alt="Environment with multiple agents" style={{border: '1px solid gray'}} width="800" />
 
-The aggregating collector can receive data from local collectors/agents or directly from the tracing client.
+The aggregating OpenTelemetry Collector can receive data from local OpenTelemetry Collectors/agents or directly from the tracing client.
 
 ## Prerequisites
 
@@ -113,19 +113,19 @@ By default, the cascading filter waits for 30 seconds before making the decision
 
 ## Multiple instances of cascading filter
 
-In case of multiple deployments sharing a single configuration map (k8s) or file of the traces-sampler (`cascading_filter` instances), an environment variable called `SUMO_COLLECTOR_INSTANCES` or `collector_instances` option should be used to scale down properly the `spans_per_second` global and policy limits. `SUMO_COLLECTOR_INSTANCES` should be a positive integer corresponding to the number of collectors with configured cascading filters, for example, `SUMO_COLLECTOR_INSTANCES=5`. As a result, configured the `spans_per_second` limit will be divided by 5 for global and policy limits.
+In case of multiple deployments sharing a single configuration map (k8s) or file of the traces-sampler (`cascading_filter` instances), an environment variable called `SUMO_COLLECTOR_INSTANCES` or `collector_instances` option should be used to scale down properly the `spans_per_second` global and policy limits. `SUMO_COLLECTOR_INSTANCES` should be a positive integer corresponding to the number of OpenTelemetry Collector instances with configured cascading filters, for example, `SUMO_COLLECTOR_INSTANCES=5`. As a result, configured the `spans_per_second` limit will be divided by 5 for global and policy limits.
 
 * Kubernetes collection (multiple traces-sampler pods): [multiple-cascading-filter-sampler-instances.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/instrumentation/multiple-cascading-filter-sampler-instances.yaml)
 * Non-Kubernetes collection: [sampler-configuration-multiple-instances-template.yaml](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/sampler_configuration_multiple_instances_template.yaml)
 
 ## Resource sizing guide
 
-Because trace filtering requires action on the whole trace, collector buffers the incoming data in memory before making the decision. This impacts the resource usage which must be factored when planning the usage of available memory and CPU. For a collector that has cascading filter enabled, we recommend:
+Because trace filtering requires action on the whole trace, the OpenTelemetry Collector buffers the incoming data in memory before making the decision. This impacts the resource usage which must be factored when planning the usage of available memory and CPU. For an OpenTelemetry Collector that has cascading filter enabled, we recommend:
 
 * 1 CPU core per each 25,000 spans/sec on the input
 * 4GB RAM per each 10,000 spans/sec on the input
 
-For example, when 50,000 spans per second are anticipated on the collector input, there should be at least 2 CPU cores and 20GB RAM available. The actual numbers depend on a number of factors:
+For example, when 50,000 spans per second are anticipated on the OpenTelemetry Collector input, there should be at least 2 CPU cores and 20GB RAM available. The actual numbers depend on a number of factors:
 
 * size of spans (such as number of attributes, size of span events)
 * cascading filter configuration (such as `decision_wait` duration)
@@ -135,7 +135,7 @@ For example, when 50,000 spans per second are anticipated on the collector input
 
 To verify the actual number of spans on the input, OpenTelemetry Collector own metrics can be used (available under `http://<COLLECTOR_HOST>:8888/metrics` in Prometheus/OpenMetrics format). Those could be self-scraped or checked manually.
 
-Among the metrics available, there is `otelcol_receiver_accepted_spans`, which provides the total number of spans that were received by the collector. This value can be observed over time or divided by collector runtime (available in `otelcol_process_uptime` metric).
+Among the metrics available, there is `otelcol_receiver_accepted_spans`, which provides the total number of spans that were received by the OpenTelemetry Collector. This value can be observed over time or divided by the OpenTelemetry Collector runtime (available in `otelcol_process_uptime` metric).
 
 
 ## Troubleshooting
