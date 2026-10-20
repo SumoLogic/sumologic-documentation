@@ -211,7 +211,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Service Release Notes',
             description: 'Latest features and bug fixes for Sumo Logic log analytics, AI and automation, observability, alerts, sources, and more.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
           },
         },
         theme: {
@@ -304,7 +304,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Developer Release Notes',
             description: 'The latest Sumo Logic developer features and updates to our APIs, Live Tail CLI, and more.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
          },
        },
     ],
@@ -328,7 +328,7 @@ module.exports = {
             xslt: true,
             title: 'Sumo Logic Collector Release Notes',
             description: 'Latest features, improvements, and fixes for the Sumo Logic Installed Collector and OpenTelemetry Collector.',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+            copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
           },
         },
     ],
@@ -395,7 +395,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala', 'bash', 'diff', 'json', `sql`, `sumo`, `metrics`],
     },
       navbar: {
         logo: {
@@ -616,7 +616,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,
+        copyright: `© 2010 – ${new Date().getFullYear()} Sumo Logic, Inc.`,
       },
     }),
 };

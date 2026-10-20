@@ -1986,3 +1986,44 @@ article header h2[class*='title_'] {
 .language-sumo .token.time     { color: var(--sumo-number);   }
 .language-sumo .token.operator { color: var(--sumo-operator); }
 .language-sumo .token.regex    { color: var(--sumo-regex);    }
+
+/* ─── Metrics query syntax highlighting (DOCS-1952) ────────────────────────── */
+/* Mirrors the color scheme visible in the Sumo Logic metrics query editor.     */
+
+[data-theme='light'] .language-metrics {
+  /* keywords: pipe operators (rate, sum, avg, etc.) */
+  --metrics-keyword:      #CF222E;
+  /* unquoted values after = (metric name, cluster name, etc.) */
+  --metrics-value:        #005CC5;
+  /* time units: 5m, 1h, 30s */
+  --metrics-time:         #0086B3;
+  /* special variables: _value, _granularity */
+  --metrics-variable:     #953800;
+  /* quoted strings */
+  --metrics-string:       #C6105F;
+  /* plain numbers */
+  --metrics-number:       #005F73;
+  /* pipe and arithmetic operators */
+  --metrics-operator:     #555555;
+}
+
+[data-theme='dark'] .language-metrics {
+  --metrics-keyword:      #C586C0;
+  --metrics-value:        #4FC1FF;
+  --metrics-time:         #4EC9B0;
+  --metrics-variable:     #CE9178;
+  --metrics-string:       #CE9178;
+  --metrics-number:       #B5CEA8;
+  --metrics-operator:     #AAAAAA;
+}
+
+/* Reset Dracula italic and inline-style color bleed-through */
+.language-metrics .token                { font-style: normal !important; }
+.language-metrics .token.keyword        { color: var(--metrics-keyword)  !important; }
+.language-metrics .token.constant       { color: var(--metrics-value)    !important; }
+.language-metrics .token.time           { color: var(--metrics-time)     !important; }
+.language-metrics .token.variable       { color: var(--metrics-variable) !important; }
+.language-metrics .token.string         { color: var(--metrics-string)   !important; }
+.language-metrics .token.number         { color: var(--metrics-number)   !important; }
+.language-metrics .token.operator       { color: var(--metrics-operator) !important; }
+/* selector-key intentionally omitted — renders as plain text */

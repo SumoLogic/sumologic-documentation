@@ -515,6 +515,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-threat-intel-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-activities',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source',
@@ -660,7 +661,7 @@ module.exports = {
           items: [
             {
               type: 'category',
-              label: 'v5 (latest)',
+              label: 'v6 (latest)',
               collapsible: true,
               collapsed: true,
               items: [
@@ -688,6 +689,17 @@ module.exports = {
                     'send-data/kubernetes/troubleshoot-collection/common-issues',
                   ],
                 },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'v6 Upgrade Guide',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v6/important-changes',
+                'send-data/kubernetes/v6/how-to-upgrade',
+                'send-data/kubernetes/v6/full-list-of-changes',
               ],
             },
             {
@@ -2338,9 +2350,6 @@ integrations: [
         'integrations/amazon-aws/waf',
         'integrations/amazon-aws/cis-aws-foundations-benchmark',
         'security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws',
-        'integrations/amazon-aws/global-intelligence-guardduty',
-        'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
-        'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
         'integrations/amazon-aws/vpc-flow-logs-pci-compliance',
         'integrations/amazon-aws/cloudtrail-pci-compliance'
       ],
@@ -2490,6 +2499,7 @@ integrations: [
           'integrations/google/cloud-vpc',
           'integrations/google/compute-engine',
           'integrations/google/kubernetes-engine',
+          'integrations/google/workspace-activities',
           {
             type: 'category',
             label: 'Google Workspace',
@@ -2685,9 +2695,6 @@ integrations: [
         collapsed: true,
         link: {type: 'doc', id: 'integrations/global-intelligence/index'},
         items: [
-          'integrations/amazon-aws/global-intelligence-guardduty',
-          'integrations/amazon-aws/global-intelligence-cloudtrail-devops',
-          'integrations/amazon-aws/global-intelligence-cloudtrail-secops',
           'cse/records-signals-entities-insights/global-intelligence-security-insights',
         ],
       },

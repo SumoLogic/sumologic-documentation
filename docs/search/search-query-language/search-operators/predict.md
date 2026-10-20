@@ -21,7 +21,7 @@ The `predict` operator supports two predictive models:
 * Linear regression. Uses existing data over the query time range as a training set to generate a [linear model](https://en.wikipedia.org/wiki/Linear_regression), and then extrapolates future values using this model.
 
 :::note
-If a missing data point is encountered in the generated time series, Sumo uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](fillmissing.md) operator.   
+If a missing data point is encountered in the generated time series, Sumo Logic uses a zero value and issues a warning to alert you. If you'd like to use customized values, you can do so with the [fillmissing](fillmissing.md) operator.   
 :::
 
 ## Syntax

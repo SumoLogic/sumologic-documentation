@@ -13,7 +13,7 @@ This topic has information about the classic version of the `lookup` operator, w
 For information about our newer, more scalable Lookup Tables feature and the new `lookup` operator that works with it, see [Lookup Tables](/docs/search/lookup-tables) and [lookup](/docs/search/search-query-language/search-operators/lookup) operator.
 :::
 
-The `lookup` (classic) operator maps data in your log messages to meaningful information saved in Sumo or on an HTTPS server. For example, you'd use a lookup operator to map "userID" to a real user's name. Or, you'd use a lookup operator to find deny-listed IP addresses.
+The `lookup` (classic) operator maps data in your log messages to meaningful information saved in Sumo Logic or on an HTTPS server. For example, you'd use a lookup operator to map "userID" to a real user's name. Or, you'd use a lookup operator to find deny-listed IP addresses.
 
 In either case, you will point the operator to one of the following:
 
