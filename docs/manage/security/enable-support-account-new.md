@@ -37,6 +37,8 @@ To enable support account access to your organization for specific Sumo Logic su
 
 ### Who can access my account?
 
+Sumo Logic Customer Support, Customer Success, Professional Services, Sales Engineering, and Product Development teams can request access. Product Development engineers, who wrote the code for the feature, may need access to your account to find the root cause of an issue.
+
 When a support user requests access, they are asked for the explicit reason why access is required. Additionally, you can control the amount of time the support user can access your account to ensure it is limited to the shortest amount of time necessary to complete the investigation.
 
 ### Do I need to create a special user account? 
