@@ -317,7 +317,7 @@ In this section, you deploy the SAM application, which creates the necessary res
 1. We go to the mongo console, click on **Organization Access** > **Access Manager** > **API Keys**, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
 1. Click **Next** > **Add Access List Entry**. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
 
-The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
+The lambda function should be working now in sending logs to Sumo Logic. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
 
 ##### Configure collection for multiple projects
 

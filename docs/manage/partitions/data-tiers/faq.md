@@ -9,9 +9,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](/docs/manage/partitions/data-tiers).
 
-## In which Sumo subscriptions are Data Tiers available? 
+## In which Sumo Logic subscriptions are Data Tiers available? 
 
-The Continuous Data Tier is available in all Sumo subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
+The Continuous Data Tier is available in all Sumo Logic subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
 
 ## Is the Infrequent Tier available to existing Cloud Flex customers?
 

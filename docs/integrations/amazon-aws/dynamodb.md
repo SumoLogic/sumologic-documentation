@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon DynamoDB is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. For more details see here.
 
-The Sumo app for Amazon DynamoDB uses both logs and metrics to is a unified logs and metrics app that provides operational insights into your DynamoDB. The app includes Dashboards that allow you to monitor key metrics, view the throttle events, errors, and latency, and also help you plan the capacity of your DynamoDB instances.
+The Sumo Logic app for Amazon DynamoDB uses both logs and metrics to is a unified logs and metrics app that provides operational insights into your DynamoDB. The app includes Dashboards that allow you to monitor key metrics, view the throttle events, errors, and latency, and also help you plan the capacity of your DynamoDB instances.
 
 ## Log and metric types  
 
@@ -64,7 +64,7 @@ The Sumo Logic app for AWS DynamoDB uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Successful Request latency by Table Name (Metric based)"
+```metrics title="Successful Request latency by Table Name (Metric based)"
 namespace=aws/dynamodb metric=SuccessfulRequestLatency Statistic=Average account=* region=* tablename=*  | sum by account, region, namespace, tablename
 ```
 
@@ -129,7 +129,7 @@ Follow the steps below to collect logs for Amazon DynamoDB:
 ### Centralized AWS CloudTrail log collection
 
 In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
