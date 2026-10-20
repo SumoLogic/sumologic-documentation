@@ -37,7 +37,8 @@ following order:
     * Amazon EC2 instance information
     * HTTP Header
     * Fields configured at the [Source level](/docs/send-data/choose-collector-source)
-    * Fields configured at the [Collector level](/docs/send-data/choose-collector-source)
+    * Fields configured at the [Source level](/docs/manage/fields#collector-and-source-fields)
+    * Fields configured at the [Collector level](/docs/manage/fields#collector-and-source-fields)
 
     This precedence list determines which value wins a naming conflict between custom fields. It is not an end-to-end routing sequence for your data. It also doesn't apply to Sumo Logic's [built-in metadata fields](get-started-with-search/search-basics/built-in-metadata.md), such as `_source` and `_collector`, which are populated automatically and can't be overridden by a field assignment.
 1. The fields assigned in the previous step, along with other criteria such as `_sourceCategory`, can be referenced in [Partition](/docs/manage/partitions) routing expressions. Partitions and Scheduled Views are applied to route matching data into an index. If both are defined for the same data, Partitions are applied first.
