@@ -15,7 +15,7 @@ keywords:
   - sre
 ---
 
-<!-- GA: Add to docs/monitors/alerts AND docs/ai/mobot sidebars.ts. Change description: Root Cause Agent, agentic AI investigator, automatically investigates Sumo Logic alerts the moment they fire, and immediately returns evidence-backed root causes based on relevant telemetry across your logs and metrics.-->
+<!-- GA: Add to docs/monitors/alerts AND docs/ai/mobot sidebars.ts. Right now, AI investigation is manual. At GA, automation. Change description: Root Cause Agent, agentic AI investigator, automatically investigates Sumo Logic alerts the moment they fire, and immediately returns evidence-backed root causes based on relevant telemetry across your logs and metrics.-->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -15,10 +15,6 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic's AI capabilities help you investigate faster, build content in plain language, and connect your own AI tools to your Sumo Logic data. This page lists each capability and links to its documentation.
-
-[DojoAI](https://www.sumologic.com/solutions/dojo-ai) puts agentic AI to work across security and cloud operations. Use [Mobot](/docs/dojo-ai/mobot), DojoAI's conversational interface, in plain language to search your logs, create alerts, dashboards, playbooks and more, without writing any code. Agents such as the SOC Analyst Agent investigate alerts and return evidence-backed verdicts, and the Root Cause Agent diagnoses observability alerts, with a human in the loop at every step. The [MCP server](/docs/dojo-ai/mcp-server) connects external AI tools to your Sumo Logic data.
-
 :::tip
 Look for the sparkle icon (✨) in the docs table of contents to find AI features.
 :::
@@ -26,7 +22,7 @@ Look for the sparkle icon (✨) in the docs table of contents to find AI feature
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/ai/mobot')}><img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="50"/><h4>Mobot</h4></a>
+  <a href={useBaseUrl('docs/dojo-ai/mobot')}><img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="50"/><h4>Mobot</h4></a>
   <p>Ask questions about your logs and security data in natural language, and create monitors, dashboards, and playbooks.</p>
   </div>
 </div>
@@ -46,7 +42,7 @@ Look for the sparkle icon (✨) in the docs table of contents to find AI feature
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/ai/mcp-server')}><img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="50"/><h4>MCP Server</h4></a>
+  <a href={useBaseUrl('docs/dojo-ai/mcp-server')}><img src={useBaseUrl('img/icons/operations/mcp-server.png')} alt="MCP server icon" width="50"/><h4>MCP Server</h4></a>
   <p>Connect external AI tools to Sumo Logic to query logs, investigate insights, and manage alerts and dashboards.</p>
   </div>
 </div>
@@ -70,7 +66,7 @@ Look for the sparkle icon (✨) in the docs table of contents to find AI feature
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/ai/trust-data-faq')}><img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="AI trust icon" width="50"/><h4>AI Trust and Data FAQ</h4></a>
+  <a href={useBaseUrl('docs/dojo-ai/trust-data-faq')}><img src={useBaseUrl('img/icons/security/security-and-compliance.png')} alt="AI trust icon" width="50"/><h4>AI Trust and Data FAQ</h4></a>
   <p>Learn how Sumo Logic AI and machine learning features handle your data, including training, retention, and third-party access.</p>
   </div>
 </div>

@@ -1267,7 +1267,7 @@ module.exports = {
             'alerts/monitors/overview',
             'alerts/monitors/create-monitor',
             'alerts/monitors/create-monitor-with-mobot',
-            'dojo-ai/agents/root-cause-agent-preview',
+         // 'dojo-ai/agents/root-cause-agent-preview',
             'alerts/monitors/settings',
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-variables',
@@ -3422,7 +3422,7 @@ integrations: [
           items: [
             'dojo-ai/agents/soc-analyst-agent',
          // 'dojo-ai/agents/soc-recommendation-and-response',
-            'dojo-ai/agents/root-cause-agent-preview',
+         // 'dojo-ai/agents/root-cause-agent-preview',
           ],
         },
         {
@@ -3474,7 +3474,6 @@ integrations: [
           label: 'Apps for AI Platforms ✨',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'dojo-ai/apps-integrations/index'},
           items: [
             'integrations/amazon-aws/amazon-bedrock',
             'integrations/amazon-aws/amazon-bedrock-agentcore',

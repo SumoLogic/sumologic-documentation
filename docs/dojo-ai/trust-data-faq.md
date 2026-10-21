@@ -93,8 +93,9 @@ Yes. Sumo Logic uses machine learning in several features, including [LogReduce]
 
 ## Additional resources
 
+* [AI Capabilities](/docs/dojo-ai). Find every Sumo Logic AI capability in one place.
+* [Feature Management](/docs/dojo-ai/about/#feature-management). Turn AI features on or off and audit DojoAI activity.
 * [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai). Self-paced training course covering Mobot and the DojoAI agents.
-
 * [Mobot](/docs/dojo-ai/mobot). The conversational interface for DojoAI — ask questions in plain language to analyze log data, investigate incidents, and get answers sourced from official documentation.
 * [Mobot Example Prompts](/docs/dojo-ai/mobot/example-prompts). A library of example prompts covering security and observability investigations, platform administration, and how-to questions.
 * [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent). Investigate Cloud SIEM insights faster with evidence-backed AI verdicts, correlated entities, and recommended actions.
@@ -104,10 +105,3 @@ Yes. Sumo Logic uses machine learning in several features, including [LogReduce]
 * [New agents in the Dojo: Expanded Sumo Logic DojoAI](https://www.sumologic.com/blog/agents-dojo-ai-soc-analyst-mcp). An overview of the SOC Analyst Agent and the Sumo Logic MCP server joining the DojoAI platform.
 * [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team). How the SOC Analyst Agent applies agentic reasoning to Cloud SIEM insight triage and investigation.
 * [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats). A look at how AI-driven agents are reshaping the modern security operations center.
-
-## Additional resources
-
-* [AI Capabilities](/docs/dojo-ai). Find every Sumo Logic AI capability in one place.
-* [Feature Management](/docs/dojo-ai/about/#feature-management). Turn AI features on or off and audit DojoAI activity.
-* [DojoAI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn more about DojoAI, Sumo Logic's multi-agent AI platform for security and observability.
-* [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai). Self-paced training course covering Mobot and the DojoAI agents.

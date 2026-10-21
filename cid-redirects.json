@@ -5993,5 +5993,5 @@
   "/docs/send-data/installed-collectors/sources/windows-performance-monitor-logs-source": "/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source",
   "/docs/send-data/kubernetes/v6": "/docs/send-data/kubernetes/v6/how-to-upgrade",
   "/docs/senddata/collection/processing-rules/include-and-exclude-rules": "/docs/send-data/collection/processing-rules/include-and-exclude-rules",
-  "/docs/get-started/ai-machine-learning": "/docs/dojo-ai/trust-data-faq"
+  "/docs/get-started/ai-machine-learning": "/docs/dojo-ai"
 }

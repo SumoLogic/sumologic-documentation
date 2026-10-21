@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic's AI capabilities help you investigate faster, build content in plain language, and connect your own AI tools to your Sumo Logic data. This page lists each capability and links to its documentation.
 
-[DojoAI](https://www.sumologic.com/solutions/dojo-ai) puts agentic AI to work across security and cloud operations. Use [Mobot](/docs/dojo-ai/mobot), DojoAI's conversational interface, in plain language to search your logs, create alerts, dashboards, playbooks and more, without writing any code. Agents such as the SOC Analyst Agent investigate alerts and return evidence-backed verdicts, and the Root Cause Agent diagnoses observability alerts, with a human in the loop at every step. The [MCP server](/docs/dojo-ai/mcp-server) connects external AI tools to your Sumo Logic data.
+[DojoAI](https://www.sumologic.com/solutions/dojo-ai) puts agentic AI to work across security and cloud operations. Use [Mobot](/docs/dojo-ai/mobot), DojoAI's conversational interface, in plain language to search your logs, create alerts, dashboards, playbooks and more, without writing any code. Agents such as the [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent) investigate alerts and return evidence-backed verdicts, and the [Root Cause Agent](/docs/dojo-ai/agents/root-cause-agent-preview) diagnoses observability alerts, with a human in the loop at every step. The [MCP server](/docs/dojo-ai/mcp-server) connects external AI tools to your Sumo Logic data.
 
 ## What is DojoAI?
 
@@ -73,7 +73,7 @@ import MSSPfeatureMgmt from '../reuse/mssp-feat-mgmt.md';
 
 **Feature Management** is where administrators turn Mobot, Parse Assist, the SOC Analyst Agent, and MCP server access on or off for your organization. It's available to any user with the Administrator role or the **Manage Organization Settings** permission.
 
-<img src={useBaseUrl('img/ai/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 ### Can I opt out of AI features?
 
@@ -107,19 +107,16 @@ The audit includes:
 Log searches that Mobot runs on your behalf are also tracked in the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/). See [Audit Mobot queries](/docs/dojo-ai/mobot/about#audit-mobot-queries).
 
 
-## Other AI features
-
-These AI and machine learning features are not part of DojoAI. Each is documented with the area it works in.
-
-* [AI Parse Assist](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor#ai-parse-assist). Highlight text in a log message to generate a parse statement and field names.
-* [LogReduce](/docs/search/behavior-insights/logreduce). Cluster thousands of log lines into patterns.
-* [Outlier Detection](/docs/metrics/metrics-operators/outlier). Detect anomalous values in metrics.
-
-Common AI terms:
+## Common AI terms
 
 * **Agent**. Software that perceives its environment, makes decisions, and takes actions toward a goal. Examples in Sumo Logic include Mobot and the SOC Analyst Agent.
-* **Agentic AI**. AI that plans and carries out multi-step work toward a goal, rather than answering a single prompt.
+* **Agentic AI** takes generative AI further by enabling autonomous, multi-step reasoning and action. Agentic systems can plan, use tools, and coordinate specialized agents to complete complex tasks like triaging a security incident or translating a natural-language question into a log query, with a human in the loop.
+* **Artificial intelligence (AI)** encompasses machines that mimic human-like intelligence, leveraging algorithms to compute tasks efficiently. It includes machine learning, deep learning, generative AI, and agentic AI.
+* **Deep learning**, another subset of AI, employs artificial neural networks with multiple layers to process data, excelling in tasks like image recognition and natural language understanding.
+* **Generative AI**, closely related to deep learning, produces new content (text, summaries, queries) from patterns in training data, often using large language models (LLMs).
 * **LLM**. Large language model. A model trained on large amounts of text to understand and generate language.
+* **Machine learning (ML)**, a subset of AI, involves training machines to learn from data without explicit programming, improving performance over time. Within ML, there are various types: supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning, each suited for different problem settings such as classification, regression, and clustering.
 * **MCP**. Model Context Protocol. An open standard that lets AI clients connect to external tools and data through a common interface.
+* **Pattern learning** is fundamental to machine learning and deep learning, where algorithms discern patterns in data to make predictions or classifications.
 * **Skill**. A reusable set of instructions that guides an AI agent through a class of tasks, such as the sumo-investigator skill for Claude Code.
-* **Tool**. --
+* **Tool**. A capability exposed by an MCP server or agent framework that an AI agent can call to perform a specific action, such as running a search, reading a file, or executing a query.
