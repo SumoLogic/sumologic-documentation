@@ -198,8 +198,8 @@ This release introduces new integrations, new playbooks, and several updates.
 
 ### Integrations
 
-* [New] [AWS WAF](/docs/integrations/automation-integrations/automation-integration-catalog/aws-waf)
-* [Updated] [Okta](/docs/integrations/automation-integrations/automation-integration-catalog/okta)
+* [New] [AWS WAF](/docs/integrations/automation-integrations/aws-waf)
+* [Updated] [Okta](/docs/integrations/automation-integrations/okta)
 
 ### Playbooks
 
@@ -266,16 +266,16 @@ Voice and wording follow [Release notes](/docs/contributing/style-guide/#release
 * Simple bulleted list with [New] or [Updated] tags
 * Format: `* [Tag] [Integration Name](link)`
 * NO descriptions needed - just link to integration doc
-* Links use full path: `/docs/integrations/automation-integrations/automation-integration-catalog/{slug}`
+* Links use full path: `/docs/integrations/automation-integrations/{slug}`
 
 **Example:**
 ```markdown
 ### Integrations
 
-* [New] [AWS WAF](/docs/integrations/automation-integrations/automation-integration-catalog/aws-waf)
-* [New] [Cyberint](/docs/integrations/automation-integrations/automation-integration-catalog/cyberint)
-* [Updated] [Okta](/docs/integrations/automation-integrations/automation-integration-catalog/okta)
-* [Updated] [ServiceNow V2](/docs/integrations/automation-integrations/automation-integration-catalog/servicenow-v2)
+* [New] [AWS WAF](/docs/integrations/automation-integrations/aws-waf)
+* [New] [Cyberint](/docs/integrations/automation-integrations/cyberint)
+* [Updated] [Okta](/docs/integrations/automation-integrations/okta)
+* [Updated] [ServiceNow V2](/docs/integrations/automation-integrations/servicenow-v2)
 ```
 
 #### Playbooks Section (H3)
@@ -308,7 +308,7 @@ Voice and wording follow [Release notes](/docs/contributing/style-guide/#release
 **Integrations subsection:**
 * Use tags: `[Added]` for new integrations, `[Updated]` for existing ones
 * Format: `[Tag] [Integration Name](link) - Description.`
-* Link to integration documentation in `/docs/integrations/automation-integrations/automation-integration-catalog/`
+* Link to integration documentation in `/docs/integrations/automation-integrations/`
 * Be specific about what action or feature was added/updated
 * Can mention specific actions: "Added 'Count Occurrence Of Value' action"
 
@@ -316,8 +316,8 @@ Voice and wording follow [Release notes](/docs/contributing/style-guide/#release
 ```markdown
 #### Integrations
 
-* [Added] [Sumo Logic Automation Tools](/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-automation-tools/) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
-* [Updated] [ThreatConnect V3](/docs/integrations/automation-integrations/automation-integration-catalog/threatconnect-v3/) - Added observations parameter to the Update Intelligence action to enable recording observation counts for indicators.
+* [Added] [Sumo Logic Automation Tools](/docs/integrations/automation-integrations/sumo-logic-automation-tools/) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
+* [Updated] [ThreatConnect V3](/docs/integrations/automation-integrations/threatconnect-v3/) - Added observations parameter to the Update Intelligence action to enable recording observation counts for indicators.
 ```
 
 **Platform subsection:**
@@ -354,7 +354,7 @@ Voice and wording follow [Release notes](/docs/contributing/style-guide/#release
 
 #### Integrations
 
-* In the [Microsoft EWS (Graph)](/docs/integrations/automation-integrations/automation-integration-catalog/microsoft-ews-graph/) integration, removed the default values for the `has_attachments` and `un_read` fields in the Search Emails Extended action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
+* In the [Microsoft EWS (Graph)](/docs/integrations/automation-integrations/microsoft-ews-graph/) integration, removed the default values for the `has_attachments` and `un_read` fields in the Search Emails Extended action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
 
 #### Platform
 
@@ -446,14 +446,14 @@ Claude:
 
 Integration docs are located at:
 ```
-/docs/integrations/automation-integrations/automation-integration-catalog/{integration-slug}/
+/docs/integrations/automation-integrations/{integration-slug}/
 ```
 
 **Common integrations:**
-* Microsoft EWS (Graph): `/docs/integrations/automation-integrations/automation-integration-catalog/microsoft-ews-graph/`
-* ThreatConnect V3: `/docs/integrations/automation-integrations/automation-integration-catalog/threatconnect-v3/`
-* Atlassian Opsgenie: `/docs/integrations/automation-integrations/automation-integration-catalog/atlassian-opsgenie/`
-* Sumo Logic Automation Tools: `/docs/integrations/automation-integrations/automation-integration-catalog/sumo-logic-automation-tools/`
+* Microsoft EWS (Graph): `/docs/integrations/automation-integrations/microsoft-ews-graph/`
+* ThreatConnect V3: `/docs/integrations/automation-integrations/threatconnect-v3/`
+* Atlassian Opsgenie: `/docs/integrations/automation-integrations/atlassian-opsgenie/`
+* Sumo Logic Automation Tools: `/docs/integrations/automation-integrations/sumo-logic-automation-tools/`
 
 **Tip**: Integration slugs are lowercase with hyphens. If unsure, use Grep to find the integration doc.
 
@@ -593,5 +593,5 @@ Would you like me to help refine any sections or add additional details?
 * [Cloud SOAR Release Notes](https://sumologic.com/help/release-notes-csoar)
 * [Cloud SOAR Documentation](/docs/cloud-soar)
 * [Automation Service](/docs/platform-services/automation-service)
-* [Automation Integrations Catalog](/docs/integrations/automation-integrations/automation-integration-catalog/)
+* [Automation Integrations Catalog](/docs/integrations/automation-integrations/)
 * [Style Guide](/docs/contributing/style-guide)

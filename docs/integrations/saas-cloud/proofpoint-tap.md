@@ -220,4 +220,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Proofpoint TAP Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Proofpoint TAP Automation Service Integration](/docs/integrations/automation-integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.

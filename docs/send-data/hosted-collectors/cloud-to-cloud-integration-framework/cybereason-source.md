@@ -133,4 +133,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Cybereason Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/cybereason/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Cybereason Automation Service Integration](/docs/integrations/automation-integrations/cybereason/) to automate response actions directly from Cloud SOAR playbooks.

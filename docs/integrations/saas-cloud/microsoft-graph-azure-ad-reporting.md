@@ -459,4 +459,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Azure AD Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Azure AD Automation Service Integration](/docs/integrations/automation-integrations/azure-ad/) to automate response actions directly from Cloud SOAR playbooks.

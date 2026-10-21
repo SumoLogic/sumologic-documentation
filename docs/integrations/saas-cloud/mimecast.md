@@ -251,4 +251,4 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 ## Additional resources
 
-- Use the [Mimecast Automation Service Integration](/docs/integrations/automation-integrations/automation-integration-catalog/mimecast/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Mimecast Automation Service Integration](/docs/integrations/automation-integrations/mimecast/) to automate response actions directly from Cloud SOAR playbooks.
