@@ -23,7 +23,7 @@ A new **Spans** page opens. Data is displayed once you run a query.
 
 From here, you can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab.
 
-For more advanced use cases, you can further enhance your query by clicking the [Open in Search](#open-in-search) button, which opens a new Log Search of your spans based on your query. Here, you can use [Search Query Language](/docs/apm/traces/search-query-language-support-for-traces) to investigate further.
+For more advanced use cases, you can further enhance your query by clicking the [Open in Search](#open-in-search) button, which opens a new log search of your spans based on your query. Here, you can use [Search Query Language](/docs/apm/traces/search-query-language-support-for-traces) to investigate further.
 
 :::note
 Tracing must be enabled in your account to use this functionality. Contact your account team if the only thing you see is an infographic.
@@ -98,7 +98,7 @@ When you run a query using **Visualize** and/or **Group By**, the results tab au
 
 ### Set time range
 
-You set the time range of the query at the top right of the Spans page, above the search button. Tracing data retention in `_trace_spans` index is the same as default log index retention. See [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) for details.  
+You set the time range of the query at the top right of the Spans page. Tracing data retention in `_trace_spans` index is the same as default log index retention. See [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) for details.  
 
 <img src={useBaseUrl('img/apm/spans-time-range.png')} alt="Spans time range" style={{border: '1px solid gray'}} width="200" />
 
@@ -108,7 +108,7 @@ Once you have defined your spans query, with filters and aggregation if desired,
 
 <img src={useBaseUrl('img/apm/spans-search-button.png')} alt="Spans search button" style={{border: '1px solid gray'}} width="100" />
 
-You can pause or stop your search by clicking the appropriate icons below the search button.  
+You can pause or stop your search by clicking the appropriate icons.  
 
 <img src={useBaseUrl('img/apm/pause-or-stop-spans-query.png')} alt="Pause or stop spans quer" style={{border: '1px solid gray'}} width="100" />
 
@@ -118,7 +118,7 @@ You can pause or stop your search by clicking the appropriate icons below the se
 
 ### Messages tab
 
-The **Messages** table shows your raw span data. You can click on any row to open a right-side Details pane (similar to the one in [Trace View](/docs/apm/traces/view-and-investigate-traces)) showing span details and options to navigate to other parts of the system from there.
+The **Messages** table shows your raw span data. You can click any row to open a right-side Details pane (similar to the one in [Trace View](/docs/apm/traces/view-and-investigate-traces)) showing span details and options to navigate to other parts of the system from there.
 
 <img src={useBaseUrl('img/apm/spans-messages-results.png')} alt="Messages results" style={{border: '1px solid gray'}} width="800" />
 
@@ -135,7 +135,7 @@ The content of the Facets panel is affected by your current active filters and t
 <img src={useBaseUrl('img/apm/facets-expanded.png')} alt="Facets expanded" style={{border: '1px solid gray'}} width="300" />
 
 * You can adjust which fields are displayed in the raw span messages table by checking or unchecking the box next to the field in the Facets panel.
-* Use the search field to easily find the metadata from your data. This applies the filter to both tag names and their values.
+* Use the search field to find the metadata from your data. This applies the filter to both tag names and their values.
 * The number of values found for each is displayed for your reference.
 * Add and remove fields from your query by hovering over a field and clicking.  
 
@@ -159,7 +159,7 @@ To add your aggregated span data to a dashboard:
 
 #### Open in Search
 
-To further enhance your query, you can use the [Search Query Language](/docs/apm/traces/search-query-language-support-for-traces) for more advanced use cases by opening a Search of your spans. Click the three-dot kebab menu icon and select **Open in Search**.  
+To further enhance your query, you can use the [Search Query Language](/docs/apm/traces/search-query-language-support-for-traces) for more advanced use cases by opening a search of your spans. Click the three-dot kebab menu icon and select **Open in Search**.  
 
 <img src={useBaseUrl('img/apm/span-open-in-search.png')} alt="Span open in search" style={{border: '1px solid gray'}} width="400" />
 
@@ -169,7 +169,7 @@ To further enhance your query, you can use the [Search Query Language](/docs/ap
 
 To compare the performance of different release versions defined by a custom tag `assemblyVersion`, you can graph the 95th percentile of latency of a microservice in the function of time by version.
 
-Use the **filters** or **facets** features to find the appropriate service in the dropdown and select it. Next, select to visualize duration’s 95th percentile and pick a group by time. For example, 1-minute granularity and the `assemblyVersion` custom tag that carries version information. That’s it!
+Use the **filters** or **facets** features to find the appropriate service in the dropdown menu and select it. Next, select to visualize duration’s 95th percentile and pick a group by time. For example, 1-minute granularity and the `assemblyVersion` custom tag that carries version information.
 
 <img src={useBaseUrl('img/apm/service-percentile-by-time.png')} alt="Service percentile by time" style={{border: '1px solid gray'}} width="800" />
 
@@ -183,7 +183,7 @@ Here is the simple query we used to visualize that data:
 
 <img src={useBaseUrl('img/apm/spans-status-codes-example.png')} alt="Status codes spans example" style={{border: '1px solid gray'}} width="800" />
 
-It’s now easier than ever to drill down into the information you care about. Note that our query only includes spans with codes from 4xx and 5xx ranges and visualizes the count of such spans, broken down by two dimensions, service and status code. Easy!
+You can drill down into the information you care about. Our query only includes spans with codes from 4xx and 5xx ranges and visualizes the count of such spans, broken down by two dimensions, service and status code.
 
 The number of cases you can realize with this is unlimited. In addition to the above examples, you can aggregate and visualize the content of custom metrics in your spans, and filter and break them down by any field, including custom tags. These can all be presented in any of the available chart visualizations.
 

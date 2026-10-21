@@ -37,7 +37,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Click**. You click a UI element. Do not use "click on".
 
-**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name. Always capitalize it.
+**Collector**. Lowercase. `collector`, `hosted collector`, and `installed collector` are descriptive terms, not product names, so they follow the same rule as "collecting events" or "data collection". Capitalize only in a literal UI label, such as the **Add Collector** button. Exception: **OpenTelemetry Collector** is a proper product name. Always capitalize the C when "Collector" follows "OpenTelemetry", including in longer names such as "Sumo Logic Distribution for OpenTelemetry Collector".
 
 **Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
