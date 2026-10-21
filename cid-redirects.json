@@ -5959,7 +5959,7 @@
   "/docs/tags/zero-networks-segment": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zero-networks-segment-source",
   "/docs/tags/zerofox-threat-intel": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zerofox-intel-source",
   "/docs/tags/zimperium-mtd": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/zimperium-mtd-source",
-  "/docs/platform-services/automation-service/app-central/": "/docs/integrations/",
+  "/docs/platform-services/automation-service/app-central/": "/docs/integrations/automation-integrations/",
   "/docs/platform-services/automation-service/automation-service-app-central/": "/docs/integrations/automation-integrations/install-automation-integrations/",
   "/docs/platform-services/automation-service/playbooks-in-app-central/": "/docs/integrations/playbook-templates/",
   "/docs/platform-services/automation-service/configure-authentication-for-integrations/": "/docs/integrations/automation-integrations/configure-authentication/",
