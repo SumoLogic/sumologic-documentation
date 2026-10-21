@@ -146,6 +146,7 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 1. **Entity.** The entity the insight fired on.
 1. **Age**. The elapsed time since the insight was created.
 1. **Signals**. The total count of signals on the insight entity during the detection window.
+1. **Overview**. Displays an overview of the insight.
 1. **GCS**. The [Global Confidence Score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
 1. **Tags** The number of tags that have already been assigned to the insight, and a dropdown arrow to view and add tags.
 1. **Incidents**. Incidents that the insight is associated with.
