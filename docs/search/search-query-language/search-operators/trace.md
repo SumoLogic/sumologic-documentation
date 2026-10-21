@@ -7,6 +7,10 @@ description: Use the trace operator as a sophisticated filter to connect related
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::note
+Looking for Traces, the distributed tracing product? See [Traces](/docs/apm/traces). This page covers the `trace` search operator, which connects related log messages.
+:::
+
 The `trace` operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator, such as a user ID, IP address, or session ID, to retrieve a comprehensive set of activity associated to that original ID.
 
 Trace operators require the following:

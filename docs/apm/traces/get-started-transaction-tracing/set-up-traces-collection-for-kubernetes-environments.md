@@ -1,13 +1,13 @@
 ---
 id: set-up-traces-collection-for-kubernetes-environments
-title: Set up Traces Collection for Kubernetes Environments
+title: Set Up Traces Collection for Kubernetes Environments
 sidebar_label: Kubernetes Environment Setup
 description: Learn how to install the Sumo Logic Kubernetes Collection and send enhanced traces using OpenTelemetry.
 ---
 
 After installing or upgrading your Sumo Logic Kubernetes Collection, you will be able to send your traces directly to its endpoint using OpenTelemetry (as well as older formats like Jaeger or Zipkin).
 
-Traces will be enhanced with Kubernetes metadata, similarly to the logs and metrics collected by the collector. See below for installation instructions.
+Traces will be enhanced with Kubernetes metadata, similarly to the logs and metrics collected by the OpenTelemetry Collector. See below for installation instructions.
 
 ## Prerequisites
 
@@ -16,13 +16,13 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 
 | Account Type | Account Level         |
 |:--------------|:--------------------------|
-| Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
+| Credits    | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5GB a day |
 
-## Installing Sumo Logic Tracing on Kubernetes
+## Installing Sumo Logic tracing on Kubernetes
 
 Installation is the same as for the official [Sumo Logic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection). The process uses a Helm chart to set all required components. It will automatically download and configure the [OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which will collect, process, and export telemetry data to Sumo Logic.
 
-In the following installation steps, we use the release name `collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the OpenTelemetry Collector endpoint name.
+In the following installation steps, we use the release name `collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) endpoint name.
 
 :::note
  If you're upgrading from Sumo Logic Kubernetes Collection:
@@ -105,12 +105,12 @@ helm upgrade --install collection sumologic/sumologic \
 
 ### Custom configuration
 
-Every customization to your collector configuration should be applied using keys `config.merge` or `config.override`:
+Every customization to your OpenTelemetry Collector configuration should be applied using keys `config.merge` or `config.override`:
   - **For `otelcolInstrumentation`**. Use `otelcolInstrumentation.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/otelcol-instrumentation-config/traces-gateway-enabled.output.yaml#L15) or `otelcolInstrumentation.config.override`, which will override the whole configuration.
   - **For `tracesGateway`**. Use `tracesGateway.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-gateway-loadbalancing/traces-gateway-true.output.yaml#L14) or `tracesGateway.config.override` which will override the whole configuration.
   - **For `tracesSampler`**. Use `tracesSampler.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-sampler/simple.output.yaml#L14) or `tracesSampler.config.override`, which will override the whole configuration.
 
-### Pointing tracing clients (instrumentation exporters) to the agent collectors
+### Pointing tracing clients (instrumentation exporters) to the agent OpenTelemetry Collectors
 
 Using OTLP HTTP is recommended:
 
@@ -147,19 +147,19 @@ For example, when the default release name (`collection`) and namespace (`sumolo
 
 After enabling and installing tracing, you should have additional Kubernetes resources:
 
-* `otelcol-instrumentation` - collector responsible for data collection and tagging
+* `otelcol-instrumentation` - OpenTelemetry Collector responsible for data collection and tagging
   * StatefulSet: `collection-sumologic-otelcol-instrumentation`
   * Pod: `collection-sumologic-otelcol-instrumentation-<hash>`
   * Service: `collection-sumologic-otelagent`
   * Service (**`deprecated`**): `collection-sumologic-otelcol`
   * Config Map: `collection-sumologic-otelcol-instrumentation`
-* `traces-gateway` - collector responsible for traces load balancing
+* `traces-gateway` - OpenTelemetry Collector responsible for traces load balancing
   * Deployment: `collection-sumologic-traces-gateway`
   * Pod: `collection-sumologic-traces-gateway-<hash>-<hash>`
   * Replica Set: `collection-sumologic-traces-gateway-<hash>`
   * Service: `collection-sumologic-traces-gateway`
   * Config Map: `collection-sumologic-traces-gateway`
-* `traces-sampler` - collector responsible for forwarding data to Sumo Logic Receiver
+* `traces-sampler` - OpenTelemetry Collector responsible for forwarding data to Sumo Logic Receiver
   * Deployment: `collection-sumologic-traces-sampler`
   * Pod: `collection-sumologic-traces-sampler-<hash>-<hash>`
   * Replica Set: `collection-sumologic-traces-sampler-<hash>`
@@ -172,7 +172,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
 * There are running pods `<RELEASE_NAME>-sumologic-otelcol-instrumentation-<hash>, <RELEASE_NAME>-sumologic-traces-gateway-<hash>, <RELEASE_NAME>-sumologic-traces-sampler-<hash>`
 * Kubernetes metadata tags such as `pod` and `replicaset` should be applied to all spans.
 * The OpenTelemetry Collector can export metrics, which include information such as the number of spans exported. Several metrics starting with `otelcol_` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.
-* **OpenTelemetry Collector can have Debug exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending `debug` to the list of exporters):
+* **OpenTelemetry Collector can have Debug exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the OpenTelemetry Collector (appending `debug` to the list of exporters):
 
     ```bash
     helm upgrade collection sumologic/sumologic \
@@ -184,7 +184,7 @@ After enabling and installing tracing, you should have additional Kubernetes res
 
   Having this enabled, `kubectl logs -n sumologic collection-sumologic-traces-sampler-<ENTER ACTUAL POD ID>` might yield the following output:
 
-  ```yaml
+  ```log
       2020-03-09T10:47:28.861Z TraceData with 1 spans
       Node service name: carpogonial
       Node attributes:
