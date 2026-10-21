@@ -6,7 +6,6 @@ description: Learn how to install and upgrade automation integrations from the A
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import IAMConfiguration from '../../reuse/automation-service/aws/iam-configuration.md';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu in the Automation page shows the integrations installed to your environment, the **Integrations** tab in App Catalog shows you [integrations](/docs/integrations/automation-integrations/) that you can install.
 
