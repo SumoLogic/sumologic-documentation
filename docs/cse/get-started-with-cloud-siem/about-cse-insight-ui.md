@@ -154,9 +154,7 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 1. **Entities**. Click to view [entities](#about-the-entities-tab-graph-view) on the signal.
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
 1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the insight.
-
-{/*1. Gear icon. Click to configure the panels in the **Overview** tab.
-
+1. Gear icon. Click to configure the panels in the **Overview** tab.
 
 ### Overview
 
