@@ -5100,7 +5100,7 @@
   "/docs/reuse/csoar-api-table": "/docs/api/cloud-soar",
   "/docs/send-data/collectors/hosted-collectors": "/docs/send-data/hosted-collectors",
   "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/office-365-audit-source": "/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source",
-  "/docs/send-data/installed-collectors/collector-installation-reference\u2026": "/docs/send-data/installed-collectors/collector-installation-reference",
+  "/docs/send-data/installed-collectors/collector-installation-reference…": "/docs/send-data/installed-collectors/collector-installation-reference",
   "/docs/send-data/opentelemetry/otlp": "/docs/send-data/opentelemetry-collector",
   "/docs/alerts/metrics/metric-monitors": "/docs/alerts/monitors",
   "/docs/alerts/monitors/faq": "/docs/alerts/monitors",
