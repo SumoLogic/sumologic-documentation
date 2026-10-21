@@ -121,7 +121,7 @@ section. A Slack Enterprise Grid account is required.
 10. Get the client ID and client secret from the Basic information of your Slack app. Replace the `<CODE>`, `<CLIENT_ID>`
 and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>`
 11. Open a new browser tab and paste the URL from the previous step into the URL field, then press Enter.
-12. From the response, save the token value from the field `access_token` as it will be used for the Sumo source.
+12. From the response, save the token value from the field `access_token` as it will be used for the Sumo Logic source.
 
 ### Source configuration
 
@@ -181,4 +181,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Slack Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/slack/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Slack Automation Service Integration](/docs/integrations/automation-integrations/slack/) to automate response actions directly from Cloud SOAR playbooks.

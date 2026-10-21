@@ -11,7 +11,7 @@ The `timeshift` operator shifts the time series from your metrics query by a spe
 
 ## Syntax
 
-```sql
+```metrics
 timeshift TIME_INTERVAL
 ```
 
@@ -19,18 +19,18 @@ Where:
 
 * `TIME_INTERVAL` is a time interval in millisecond(ms), seconds (s), minutes (m), hours (h), or days (d).
 
-## Example
+## Examples
 
 Query #A returns the `CPU_Idle` metric for the currently selected query time range, the last 15 minutes.
 
-```sql
-#A _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle
+```metrics
+#A _sourceCategory=prod/host _sourceHost=my-mac metric=CPU_Idle
 ```
 
 Query #B returns the `CPU_Idle` metric for the 15 minute period that ended two hours ago.
 
-```sql
-#B _sourceCategory=prod/host _sourceHost=my-mac= metric=CPU_Idle | timeshift 2h
+```metrics
+#B _sourceCategory=prod/host _sourceHost=my-mac metric=CPU_Idle | timeshift 2h
 ```
 
 <img src={useBaseUrl('img/metrics/timeshift.png')} alt="your description" style={{border: '1px solid gray'}} width="800" />

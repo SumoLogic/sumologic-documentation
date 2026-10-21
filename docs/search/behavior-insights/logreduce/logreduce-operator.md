@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The summarize operator has been renamed the LogReduce operator, to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with logreduce.
 :::
 
-The LogReduce&reg; algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
+The LogReduce® algorithm uses fuzzy logic to group messages together based on string and pattern similarity. You can use the logreduce operator to quickly assess activity patterns for things like a range of devices or traffic on a website. Focus the LogReduce algorithm on an area of interest by defining that area in the keyword expression.
 
 There are two ways to use the operator.
 
@@ -63,7 +63,7 @@ Once a LogReduce query has run with the details operator, you cannot use that qu
 
 ### Optimize option
 
-LogReduce Optimize is a scaled-out version of LogReduce that groups logs by existing signatures. You need to prerun LogReduce on new data sources to create its signatures. In many cases, the optimized version provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. The only caveat with the optimized version is that some LogReduce classic features are not supported. The table below compares classic LogReduce with its optimized version based on available features and performance:
+LogReduce Optimize is a scaled-out version of LogReduce that groups logs by existing signatures. You need to prerun the LogReduce operator on new data sources to create its signatures. In many cases, the optimized version provides up to 10x speedup over classic LogReduce on datasets with hundreds of thousands of logs. The only caveat with the optimized version is that some LogReduce classic features are not supported. The table below compares classic LogReduce with its optimized version based on available features and performance:
 
 | Features | LogReduce | LogReduce Optimize |
 | :-- | :-- | :-- |

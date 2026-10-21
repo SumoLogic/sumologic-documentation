@@ -126,7 +126,7 @@ and _sourceName = kube-apiserver-audit*
 
 ## Collecting logs and metrics for the Amazon EKS - Control Plane app
 
-This section has instructions for collecting logs and metrics for the Sumo app for Amazon EKS - Control Plane. This is a two step process:
+This section has instructions for collecting logs and metrics for the Sumo Logic app for Amazon EKS - Control Plane. This is a two step process:
 * Setting up collection and installing the Sumo Logic Kubernetes app.
 * Configuring CloudWatch log collection.
 

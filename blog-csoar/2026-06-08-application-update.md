@@ -1,5 +1,5 @@
 ---
-title: June 08, 2026 - Application Update
+title: June 8, 2026 - Application Update
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -17,8 +17,8 @@ The following are the updates made in May 2026.
 
 This section includes new integrations and upgrades to existing ones.
 
-- **Azure AD**. Added the **Reset User MFA** action. [Learn more](/docs/platform-services/automation-service/app-central/integrations/azure-ad/).
-- **Delinea Secret Server**. Added new integration for Delinea Secret Server. [Learn more](/docs/platform-services/automation-service/app-central/integrations/delinea-secret-server/).
+- **Azure AD**. Added the **Reset User MFA** action. [Learn more](/docs/integrations/automation-integrations/azure-ad/).
+- **Delinea Secret Server**. Added new integration for Delinea Secret Server. [Learn more](/docs/integrations/automation-integrations/delinea-secret-server/).
 
 ### Platform
 
@@ -28,8 +28,8 @@ Updated the UI design of checkbox and switch components to ensure consistency ac
 
 #### Integrations
 
-- **Azure AD**. Resolved an issue in the Reset User Password and Remove Member From Group actions that caused errors while processing responses. [Learn more](/docs/platform-services/automation-service/app-central/integrations/azure-ad/).
-- **Microsoft Defender ATP**. Fixed the List Machine Actions issue where the machine name filter was not applied correctly. [Learn more](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/).
+- **Azure AD**. Resolved an issue in the Reset User Password and Remove Member From Group actions that caused errors while processing responses. [Learn more](/docs/integrations/automation-integrations/azure-ad/).
+- **Microsoft Defender ATP**. Fixed the List Machine Actions issue where the machine name filter was not applied correctly. [Learn more](/docs/integrations/automation-integrations/microsoft-defender-atp/).
 
 #### Playbooks
 

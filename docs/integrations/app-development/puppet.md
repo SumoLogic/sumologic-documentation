@@ -28,7 +28,7 @@ Sumo Logic’s Puppet Logs source and Puppet Reports source use an installed col
 
 ### Puppet reports
 
-Puppet reports are in YAML format. They must be converted to JSON prior to ingestion to Sumo.
+Puppet reports are in YAML format. They must be converted to JSON prior to ingestion to Sumo Logic.
 
 <Tabs
   className="unique-tabs"
@@ -164,9 +164,9 @@ _sourceCategory=prod/web/puppet/reports
 
 ## Collecting logs for Puppet
 
-Learn how to collect Puppet logs, reports, and events for the Sumo app for Puppet.
+Learn how to collect Puppet logs, reports, and events for the Sumo Logic app for Puppet.
 
-The sections below provide instructions for installing a collector on a Puppet Master host, setting up Sumo Puppet sources (server, access and reports logs), and installing the Sumo app for Puppet. With this configuration you can collect Puppet logs, events, and reports, and visualize resource performance and puppet runs data in the dashboards provided by the app.
+The sections below provide instructions for installing a collector on a Puppet Master host, setting up Sumo Logic Puppet sources (server, access and reports logs), and installing the Sumo Logic app for Puppet. With this configuration you can collect Puppet logs, events, and reports, and visualize resource performance and puppet runs data in the dashboards provided by the app.
 
 
 ### Step 1: Create access keys
@@ -205,9 +205,9 @@ Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sou
 
 ### Step 5: Configure Puppet Reports script source
 
-Puppet reports are in YAML format. They must be converted into JSON format before Sumo ingests them.
+Puppet reports are in YAML format. They must be converted into JSON format before Sumo Logic ingests them.
 
-This section has instructions for setting up a Script source that runs a shell script to convert the YAML files to JSON for ingestion by the Sumo collector. Alternatively, you can convert the YAML files with a third party tool and provide the configure a local file source on installed collection to obtain the JSON from the directory you specify.  
+This section has instructions for setting up a Script source that runs a shell script to convert the YAML files to JSON for ingestion by the Sumo Logic collector. Alternatively, you can convert the YAML files with a third party tool and provide the configure a local file source on installed collection to obtain the JSON from the directory you specify.  
 
 
 #### Script source prerequisites
