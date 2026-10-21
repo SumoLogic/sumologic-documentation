@@ -1,7 +1,7 @@
 ---
-id: agent-knowledge-socaa
-title: Agent Knowledge for SOC Analyst Agent
-description: Teach the Cloud SIEM SOC Analyst Agent your environment, runbooks, and past incidents so its investigations of Cloud SIEM insights reflect how your team works.
+slug: /dojo-ai/configure-agents/knowledge
+title: Knowledge
+description: Teach DojoAI agents the facts, patterns, and practices your team relies on. Teach the Cloud SIEM SOC Analyst Agent your environment, runbooks, and past incidents so its investigations of Cloud SIEM insights reflect how your team works.
 keywords:
   - mobot
   - dojoai
@@ -13,6 +13,7 @@ keywords:
   - ai investigation
   - soc
 ---
+
 
 <head>
   <meta name="robots" content="noindex" />
@@ -26,7 +27,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) is the first agent to support it, with additional DojoAI agents planned for later phases.
+Agent Knowledge lets org administrators give DojoAI agents the facts, patterns, and practices that normally live only in your team's heads. You teach the agent once, and it keeps that context across sessions and applies it to every investigation. The [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/) is the first agent to support it, with additional DojoAI agents planned for later phases.
 
 Without this context, the agent reasons from normalized security data alone. It does not know that a particular IP address is your vulnerability scanner, or that a Friday spike in authentication failures is your scheduled penetration test. Knowledge closes that gap and keeps it closed — over time, the agent's verdicts and follow-ups reflect your environment and your team's judgment rather than a generic baseline.
 
@@ -74,24 +75,24 @@ Adding, changing or deleting knowledge requires the Manage SOC Analyst Settings 
 To add knowledge for the SOC Analyst Agent:
 
 1. Click the **DojoAI** tab in the left navigation.
-1. Click **SOC Analyst Agent**. This opens the agent's settings page.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
-1. Click **Sources**. On this page, you can view, edit, and delete existing knowledge sources.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
-1. Click **+ Add Source** to add a new knowledge source.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
-1. Give the source a name and type the fact, pattern, or practice in the content field, then click **Save** when you're done. Here's an example:<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" /><br/>
+1. Click **SOC Analyst Agent**. This opens the agent's settings page.<br/><img src={useBaseUrl('img/ai/mobot/agent-knowledge-dojo-roster-socaa.png')} alt="The Dojo agent roster page showing the SOC Analyst Agent card" style={{border: '1px solid gray'}} width="700" />
+1. Click **Sources**. On this page, you can view, edit, and delete existing knowledge sources.<br/><img src={useBaseUrl('img/ai/mobot/agent-knowledge-sources-socaa.png')} alt="Sources page under SOC Analyst Agent settings, showing the list of knowledge sources and the Add Source button" style={{border: '1px solid gray'}} width="700" />
+1. Click **+ Add Source** to add a new knowledge source.<br/><img src={useBaseUrl('img/ai/mobot/agent-knowledge-add-source-socaa1.png')} alt="Add Source form with empty Name and Content fields" style={{border: '1px solid gray'}} width="700" />
+1. Give the source a name and type the fact, pattern, or practice in the content field, then click **Save** when you're done. Here's an example:<br/><img src={useBaseUrl('img/ai/mobot/agent-knowledge-add-source-socaa2.png')} alt="Sources form showing Name and Content fields filled in with a vulnerability scanning example" style={{border: '1px solid gray'}} width="700" /><br/>
    :::important
    Only plain text is supported. Up to 10,000 characters per entry. Each knowledge source item works best when it covers one concept and references specific names, IPs, patterns, or procedures your team actually uses.
    :::
 
 See [What you can teach your DojoAI agents](#what-you-can-teach-your-dojoai-agents) for more sample knowledge source entries.
 
-Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/search/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
+Whenever your knowledge shapes an investigation, the agent surfaces which entries it drew on so a verdict is never a black box. Open a Cloud SIEM Insight and scroll down in the **AI Analysis** panel. A **Knowledge sources** section lists every entry the agent applied, with a short description of each. Click any entry to page through the full set.<br/><img src={useBaseUrl('img/ai/mobot/agent-knowledge-insight-socaa.png')} alt="AI Analysis panel on a Cloud SIEM Insight showing the Knowledge sources section with linked source entries" style={{border: '1px solid gray'}} width="700" />
 
 ## Limitations
 
 * **Scope**. Knowledge currently powers the SOC Analyst Agent only. Support for other DojoAI agents is planned for upcoming phases.
 * **Text only**. Knowledge sources accept plain text only. Enhanced knowledge addition mechanisms are planned for upcoming phases.
 * **Security guardrails**. Security guardrails on knowledge content are planned for upcoming phases.
-* **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
+* **No containment actions**. The agent does not take or execute containment or remediation actions based on knowledge. See [Can the agent take containment actions on its own?](/docs/dojo-ai/agents/soc-analyst-agent/#can-the-agent-take-containment-actions-on-its-own) in the SOC Analyst Agent documentation.
 * **One knowledge base per agent**. Everyone on your team draws on the same shared knowledge for a given agent. No per-team partitioning.
 * **Audit logging for knowledge**. A comprehensive record of who added or changed a fact, and when, is not yet available. Planned for a later phase.
 
@@ -119,6 +120,6 @@ Pricing and packaging are being finalized. Your account team will have details b
 
 ## Additional resources
 
-* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/). The agent that Knowledge extends.
-* [Mobot](/docs/search/mobot/). The conversational interface for Sumo Logic's AI agents.
-* [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning/). How the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
+* [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/). The agent that Knowledge extends.
+* [Mobot](/docs/dojo-ai/mobot/). The conversational interface for Sumo Logic's AI agents.
+* [AI Capabilities](/docs/dojo-ai). How the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.

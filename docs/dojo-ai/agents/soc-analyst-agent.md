@@ -12,7 +12,7 @@ import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
 <img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="40"/>
 
-The SOC Analyst Agent automatically investigates Cloud SIEM insights and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already laid. Your team can continue any investigation conversationally with [Mobot](/docs/search/mobot/), DojoAI's chat interface.
+The SOC Analyst Agent automatically investigates Cloud SIEM insights and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already laid. Your team can continue any investigation conversationally with [Mobot](/docs/dojo-ai/mobot/), DojoAI's chat interface.
 
 By cutting manual triage and reducing mean time to resolution, the agent lets SOC teams focus on real threats instead of repetitive work. It shows the data it collected, the reasoning it applied, and the conclusion it reached, so you can interrogate any part of its analysis rather than take a black-box result on faith.
 
@@ -67,7 +67,7 @@ Parent and child orgs have the SOC Analyst Agent enabled by default. A parent or
 
 <MSSPfeatureMgmt/>
 
-<img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/ai/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
 
 ## View AI verdicts on insights
@@ -116,7 +116,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
 
 Follow these steps once you're in Mobot:
 
-1. From the insight's **Details** page, click **Ask Mobot** to open the investigation in [Mobot](/docs/search/mobot/), DojoAI's chat interface.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
+1. From the insight's **Details** page, click **Ask Mobot** to open the investigation in [Mobot](/docs/dojo-ai/mobot/), DojoAI's chat interface.<br/><img src={useBaseUrl('img/cse/ask-mobot-buttons.png')} alt="Ask Mobot buttons" style={{border: '1px solid gray'}} width="800" />
 1. The full AI investigation appears in Mobot. For example, under each step in **Key Findings**, you can click the provided links to see more details.<br/><img src={useBaseUrl('img/cse/insight-agent-in-mobot.png')} alt="Mobot investigation" style={{border: '1px solid gray'}} width="800" />
 1. In **Ask Something...**, type a question about the insight using details provided in the **What Happened** or **Key Findings** sections above. For example, you could ask to see logs about the entities mentioned in the text (i.e., hosts, users, IP addresses, file hashes, and so on). You could even ask more general questions, like `Help me investigate this insight`. Mobot isn't limited to Cloud SIEM's normalized security records (`sec_record*` partitions); it can also query other data in your account, such as raw cloud logs, metrics, lookup tables, and collector health. When Mobot returns information from outside the Cloud SIEM index, it indicates the source.<br/><img src={useBaseUrl('img/cse/investigation-agent-query.png')} alt="Insight investigation query" style={{border: '1px solid gray'}} width="500" />
 1. After executing a prompt like the one above, Mobot analyzes your request and fashions a log search query based on it.
@@ -159,7 +159,7 @@ The following are example questions you could try in the **Ask Something...** fi
 * `What actions do you recommend for remediation`
 * `Tell me how to create a monitor that will fire if any changes occur on this insight`
 
-For more example prompts, see [Security investigations](/docs/search/mobot/example-prompts#security-investigations) in the Mobot Example Prompts documentation.
+For more example prompts, see [Security investigations](/docs/dojo-ai/mobot/example-prompts#security-investigations) in the Mobot Example Prompts documentation.
 
 ### Generate dashboards
 
@@ -169,11 +169,11 @@ Click the provided link to view the dashboard:<br/><img src={useBaseUrl('img/cse
 
 ### Start a new investigation
 
-To start a new investigation, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**. To clear your current session instead, see [New conversation](/docs/search/mobot/#new-conversation).
+To start a new investigation, navigate back to Cloud SIEM, select another insight, and click **Ask Mobot**. To clear your current session instead, see [New conversation](/docs/dojo-ai/mobot/about#new-conversation).
 
 ### Share the conversation
 
-To share the current investigation with other users, see [Share conversation](/docs/search/mobot/#share-conversation).
+To share the current investigation with other users, see [Share conversation](/docs/dojo-ai/mobot/about#share-conversation).
 
 ## Configure SOC Analyst Agent settings
 
@@ -224,7 +224,7 @@ After changing this setting, click **Save Settings** to apply your changes, or *
 
 ### What is the Sumo Logic SOC Analyst Agent?
 
-The SOC Analyst Agent is part of the [Sumo Logic DojoAI](/docs/get-started/ai-machine-learning/#dojoai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks such as MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts with an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/search/mobot/), DojoAI's chat interface, to map relationships, connect entities, and summarize findings.
+The SOC Analyst Agent is part of the [Sumo Logic DojoAI](/docs/dojo-ai). The SOC Analyst Agent is an assistant that applies agentic AI reasoning to triage and investigation tasks. It correlates alerts, weighs patterns against frameworks such as MITRE ATT&CK, and renders evidence-backed verdicts, providing analysts with an immediate sense of threat impact. When deeper analysis is required, you continue the same investigation conversationally in [Mobot](/docs/dojo-ai/mobot/), DojoAI's chat interface, to map relationships, connect entities, and summarize findings.
 
 ### Will the agent increase scanning or data-processing costs?
 
@@ -256,7 +256,7 @@ If you have questions about your organization's investigation volume, ask your S
 
 ### Does continuing an investigation in Mobot count against Mobot's usage limits?
 
-No. Continuing an investigation in [Mobot](/docs/search/mobot) from an insight (via **Ask Mobot**) is metered under SOC Analyst Agent licensing, not standard Mobot limits — up to 30 prompts per user per day, separate from your organization's standard Mobot limit.
+No. Continuing an investigation in [Mobot](/docs/dojo-ai/mobot) from an insight (via **Ask Mobot**) is metered under SOC Analyst Agent licensing, not standard Mobot limits — up to 30 prompts per user per day, separate from your organization's standard Mobot limit.
 
 ### Does the agent automatically investigate things that are not entities in Cloud SIEM?
 
@@ -291,7 +291,7 @@ No. The agent renders verdicts and findings to guide your investigation; it does
 ## Additional resources
 
 * [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, Sumo Logic's multi-agent AI platform, and the other specialized agents alongside the SOC Analyst Agent.
-* [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning). See how the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
+* [AI Capabilities](/docs/dojo-ai). See how the SOC Analyst Agent fits alongside Mobot, the Sumo Logic MCP server, and Sumo Logic's classical machine learning capabilities.
 * [The SOC Analyst Agent: Bring an agentic approach to work with your SOC team](https://www.sumologic.com/blog/soc-analyst-agent-for-soc-team)
 * [The AI SOC explained: Intelligent security for modern threats](https://www.sumologic.com/blog/ai-soc-intelligent-security-for-modern-threats)
 * [AWS Case Studies | Accelerating security analytics using Amazon Nova with Sumo Logic](https://aws.amazon.com/solutions/case-studies/sumo-logic-nova-case-study/). Learn how security solutions provider Sumo Logic built an AI assistant by using Amazon Nova 2 Lite and Amazon Bedrock.

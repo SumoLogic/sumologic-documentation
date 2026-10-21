@@ -9,4 +9,4 @@ keywords:
   - scopes
 ---
 
-The [Sumo Logic MCP Server](/docs/api/mcp-server) now filters the tools an MCP client sees based on the OAuth scopes in the user's access token, which map to their role's Sumo Logic capabilities. Users without Cloud SIEM access no longer see Cloud SIEM tools, and users without partition or field management scopes no longer see the partition and field discovery tools. See [What MCP tools are available?](/docs/api/mcp-server#what-mcp-tools-are-available) for the scope each tool requires.
+The [Sumo Logic MCP Server](/docs/dojo-ai/mcp-server) now filters the tools an MCP client sees based on the OAuth scopes in the user's access token, which map to their role's Sumo Logic capabilities. Users without Cloud SIEM access no longer see Cloud SIEM tools, and users without partition or field management scopes no longer see the partition and field discovery tools. See [What MCP tools are available?](/docs/dojo-ai/mcp-server/mcp-tools-reference#what-mcp-tools-are-available) for the scope each tool requires.

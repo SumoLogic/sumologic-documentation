@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
 :::
 
-SOC Recommendation and Response extends the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) by making its verdicts actionable. After the SOC Analyst Agent triages an insight, it generates contextually appropriate **AI Recommended Actions** you can review and execute without leaving Cloud SIEM. You can also request recommendations directly in a [Mobot](/docs/search/mobot/) investigation by asking the agent to recommend actions.
+SOC Recommendation and Response extends the [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/) by making its verdicts actionable. After the SOC Analyst Agent triages an insight, it generates contextually appropriate **AI Recommended Actions** you can review and execute without leaving Cloud SIEM. You can also request recommendations directly in a [Mobot](/docs/dojo-ai/mobot/) investigation by asking the agent to recommend actions.
 
 * Recommendations appear as cards with a title and a rationale. Each card is one of two types:
   * **Executable**. The required integration is installed. The card shows a blue **Execute** button.
@@ -26,7 +26,7 @@ SOC Recommendation and Response extends the [SOC Analyst Agent](/docs/cse/get-st
 
 ## Prerequisites
 
-* Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/).
+* Your org has a Cloud SIEM subscription with the SOC Analyst Agent enabled. See [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/).
 * SOC analysts have a role with the **Manage Integrations** [role capability](/docs/manage/users-roles/roles/role-capabilities/#automation-service), which is required to execute response actions.
 * The Response Agent feature has been enabled for your org by your Sumo Logic representative.
 * For executable actions, the corresponding integration must be installed and configured in Sumo Logic's integrations platform. Contact your Sumo Logic representative for the list of integrations supported in the private preview and the permissions required for each.
@@ -74,5 +74,5 @@ The following capabilities are not available in the private preview:
 
 ## Additional resources
 
-* [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/). Learn about the triage and investigation capabilities that the Response Agent builds on.
+* [SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent/). Learn about the triage and investigation capabilities that the Response Agent builds on.
 * [Sumo Logic | DojoAI](https://www.sumologic.com/solutions/dojo-ai/). Learn about DojoAI, Sumo Logic's multi-agent AI platform.

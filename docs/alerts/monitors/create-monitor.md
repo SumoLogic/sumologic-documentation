@@ -2,6 +2,10 @@
 id: create-monitor
 title: Create a New Monitor
 description: Create Sumo Logic monitors with ML-powered anomaly detection, customizable trigger conditions, playbook automation, and alerting for logs and metrics.
+keywords:
+  - machine learning
+  - anomaly detection
+  - monitors
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

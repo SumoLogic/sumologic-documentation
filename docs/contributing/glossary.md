@@ -185,7 +185,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Local configuration file management](/docs/send-data/use-json-configure-sources/local-configuration-file-management)**. Local configuration file management allows you to set up and manage sources on an installed collector using one or more JSON files.
 
-**[Log Analysis Agent](/docs/search/mobot)**. One of the specialized agents that powers [Mobot](/docs/search/mobot). The Log Analysis Agent interprets intent, guides investigations, and surfaces relevant data from your logs through natural language. Formerly called the Query Agent.
+**[Log Analysis Agent](/docs/dojo-ai/mobot)**. One of the specialized agents that powers [Mobot](/docs/dojo-ai/mobot). The Log Analysis Agent interprets intent, guides investigations, and surfaces relevant data from your logs through natural language. Formerly called the Query Agent.
 
 **[LogCompare](/docs/search/behavior-insights/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
@@ -208,7 +208,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Mask rule](/docs/send-data/collection/processing-rules/mask-rules)**. Mask rules are a type of processing rule that replaces an expression with a mask string that you can customize. This is another option to protect data, such as passwords, that you would not normally track.
 
-**[MCP Server, Sumo Logic](/docs/api/mcp-server)**. A Sumo Logic service that lets AI clients compatible with the Model Context Protocol (MCP), such as Claude Code, developer IDEs, and enterprise AI platforms, connect to Sumo Logic using natural language to query logs, investigate Cloud SIEM insights, manage alerts, and more.
+**[MCP Server, Sumo Logic](/docs/dojo-ai/mcp-server)**. A Sumo Logic service that lets AI clients compatible with the Model Context Protocol (MCP), such as Claude Code, developer IDEs, and enterprise AI platforms, connect to Sumo Logic using natural language to query logs, investigate Cloud SIEM insights, manage alerts, and more.
 
 **[Messages tab](/docs/search/get-started-with-search/search-page/set-messages-tab-preferences)**. When you run a search query, messages display in the Messages tab in the lower half of the browser window of the Search page.
 
@@ -226,7 +226,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Metrics transformation rule](/docs/metrics/metrics-transformation-rules)**. Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
 
-**[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. Ask questions in natural language to search logs, investigate security insights, get platform guidance, and more. Mobot automatically routes questions to specialized agents based on your intent.
+**[Mobot](/docs/dojo-ai/mobot)**. Sumo Logic's AI assistant. Ask questions in natural language to search logs, investigate security insights, get platform guidance, and more. Mobot automatically routes questions to specialized agents based on your intent.
 
 **[Monitor](/docs/alerts/monitors/overview)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
 
@@ -267,7 +267,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Pinned search](/docs/get-started/library)**. The pinned search feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the Library on the Recent tab in a folder named Pinned Searches.
 
-**[Platform Optimization Agent](/docs/search/mobot)**. One of the specialized agents that powers [Mobot](/docs/search/mobot). The Platform Optimization Agent answers how-to questions about Sumo Logic, helps troubleshoot issues, and helps users get more from the platform, drawing on official Sumo Logic documentation. Formerly called the Knowledge Agent.
+**[Platform Optimization Agent](/docs/dojo-ai/mobot)**. One of the specialized agents that powers [Mobot](/docs/dojo-ai/mobot). The Platform Optimization Agent answers how-to questions about Sumo Logic, helps troubleshoot issues, and helps users get more from the platform, drawing on official Sumo Logic documentation. Formerly called the Knowledge Agent.
 
 **[Playbook](/docs/platform-services/automation-service/playbooks)**. In the Automation Service, a predefined set of actions and conditional statements that run as an automated workflow in response to a security event or incident. Playbooks can run automatically without user intervention or in interactive mode, where a user must authorize specific actions.
 
@@ -326,7 +326,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met.
 
-**[SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent)**. An AI-powered Cloud SIEM feature that automatically investigates security insights, delivers evidence-backed verdicts (malicious, suspicious, or benign), and surfaces key findings from triggered signals to help security analysts triage faster and reduce false-positive noise.
+**[SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent)**. An AI-powered Cloud SIEM feature that automatically investigates security insights, delivers evidence-backed verdicts (malicious, suspicious, or benign), and surfaces key findings from triggered signals to help security analysts triage faster and reduce false-positive noise.
 
 **[Source](/docs/send-data)**. Sources are configured on Sumo Logic collectors and collect customer data.
 

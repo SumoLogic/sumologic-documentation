@@ -4,6 +4,7 @@ title: Improve Rules with Insight Trainer
 sidebar_label: Improve Rules with Insight Trainer
 description: The Cloud SIEM Insight Trainer dashboard recommends adjustments to rules to improve insight generation.  
 keywords:
+  - machine learning
   - cloud siem
   - insight trainer
   - rule tuning
@@ -12,7 +13,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-[Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. 
+[Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse/#cloud-siem---insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity signals, resulting in generation of more meaningful insights. Insight Trainer uses machine learning to generate its recommendations. 
 
 :::training Micro Lesson
 

@@ -1,6 +1,7 @@
 ---
 slug: /manage/ingestion-volume/data-volume-index
 title: Data Volume Index
+sidebar_label: Data Volume Index ✨
 description: Provides data that helps Admins understand data ingest volume in bytes and number of log messages processed overall.
 ---
 
@@ -19,7 +20,7 @@ If you are a user of Credits package accounts, the Data Volume Index should be m
 Data Volume Index will be enabled by default for Flex package accounts.
 :::
 
-<img src={useBaseUrl('/img/manage/account/enable-data-volume.png')} alt="Enable Granular Data Tracking" style={{border:'1px solid gray'}} width="800"/> 
+<img src={useBaseUrl('/img/manage/account/enable-data-volume.png')} alt="Enable Granular Data Tracking" style={{border:'1px solid gray'}} width="800"/>
 
 After the Data Volume Index is enabled, you can access it using this search query: 
 
@@ -37,13 +38,13 @@ Granular data tracking is a part of usage management that allows you to proactiv
 
 ### Disable granular data tracking
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account**.
 1. Click the gear icon <img src={useBaseUrl('/img/manage/account/gear-icon-accounts-page.png')} alt="Gear icon accounts page" width="40"/> in the top left panel of the **Account Overview** page.
-1. Click **Disable Granular Data Tracking**.<br/><img src={useBaseUrl('/img/manage/account/disable-granular-data-tracking.png')} alt="Disable Granular Data Tracking" style={{border:'1px solid gray'}} width="700"/> 
+1. Click **Disable Granular Data Tracking**.<br/><img src={useBaseUrl('/img/manage/account/disable-granular-data-tracking.png')} alt="Disable Granular Data Tracking" style={{border:'1px solid gray'}} width="700"/>
 
 ## Ask Mobot about data volume
 
-You can ask [Mobot](/docs/search/mobot/) natural-language questions about your ingest volume without writing queries against the Data Volume Index directly. The Data Volume skill is part of Mobot's Platform Optimization Agent and is available to all Mobot users with no separate opt-in required. It is included at no additional cost for active credit subscriptions.
+You can ask [Mobot](/docs/dojo-ai/mobot/) natural-language questions about your ingest volume without writing queries against the Data Volume Index directly. The Data Volume skill is part of Mobot's Platform Optimization Agent and is available to all Mobot users with no separate opt-in required. It is included at no additional cost for active credit subscriptions.
 
 Admins can use it to identify noisy sources and explain month-over-month fluctuations. Finance teams can use it to attribute spend, reconcile credits, and forecast renewals.
 
@@ -56,7 +57,7 @@ Example questions:
 
 Mobot parses your question to identify the time window, units, and breakdown you're asking for, queries this index, and returns a structured answer in any unit (GB, TB, MB, bytes, or event counts). If this index is not yet enabled, Mobot detects that and guides you through turning it on.
 
-For more example questions, see [Data volume](/docs/search/mobot/example-prompts#data-volume) in Mobot Example Prompts.
+For more example questions, see [Data volume](/docs/dojo-ai/mobot/example-prompts#data-volume) in Mobot Example Prompts.
 
 ## Guide contents
 

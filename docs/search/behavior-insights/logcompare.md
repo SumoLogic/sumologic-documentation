@@ -2,11 +2,15 @@
 id: logcompare
 title: LogCompare
 description: LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies.
+keywords:
+  - machine learning
+  - logcompare
+  - log comparison
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes.
+LogCompare allows you to easily compare log data from different time periods to detect major changes or anomalies. LogCompare uses machine learning to cluster logs into patterns before comparing them. LogCompare runs a delta analysis that helps you troubleshoot and discover root causes.
 
 For example, you could determine what was different right before a failure compared to the previous day or previous week. Or, you could easily check if a new release introduced a new issue by reviewing the difference in log streams across time.
 

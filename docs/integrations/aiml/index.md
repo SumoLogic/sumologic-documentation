@@ -16,3 +16,21 @@ This guide provides documentation for Sumo Logic apps designed for **AI/ML techn
   </div>
 </div>
 </div>
+
+## Apps for AI platforms
+
+Use these apps to collect, analyze, and act on data from AI platforms and tools in Sumo Logic:
+
+* [Amazon Bedrock](/docs/integrations/amazon-aws/amazon-bedrock)
+* [Amazon Bedrock AgentCore](/docs/integrations/amazon-aws/amazon-bedrock-agentcore)
+* [Amazon SageMaker](/docs/integrations/amazon-aws/amazon-sagemaker)
+* [ChatGPT Compliance](/docs/integrations/saas-cloud/chatgpt-compliance)
+* [Claude Compliance](/docs/integrations/saas-cloud/claude-compliance)
+* [Databricks Audit](/docs/integrations/saas-cloud/databricks-audit)
+* [GitHub Copilot](/docs/integrations/saas-cloud/github-copilot)
+* [Google Cloud Vertex AI](/docs/integrations/google/cloud-vertex-ai)
+* [LiteLLM](/docs/integrations/saas-cloud/litellm)
+* [Microsoft Foundry](/docs/integrations/microsoft-azure/microsoft-foundry)
+* [OpenLLMetry](/docs/integrations/aiml/opentelemetry/openllmetry)
+
+{/* PLACEHOLDER(DOCS-1971, TBD): AI Observability. After PR 7207 merges and the app is GA, add `* [AI Observability](/docs/integrations/saas-cloud/ai-observability)` to the list above, in alphabetical order. */}

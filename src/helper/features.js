@@ -124,7 +124,7 @@ export const features3 = [
       description='Mobot description'>
       Our AI-powered log assistant allows you to ask questions in plain English and get accurate log queries without writing code.
     </Translate>),
-    link: 'docs/search/mobot',
+    link: 'docs/ai/mobot',
   },
   {
     title: translate({
@@ -168,7 +168,7 @@ export const features3 = [
       description='MCP Server description'>
       Connect external AI tools to Sumo Logic to query logs, investigate insights, and manage alerts and dashboards.
     </Translate>),
-    link: 'docs/api/mcp-server',
+    link: 'docs/ai/mcp-server',
   },
 ];
 

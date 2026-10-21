@@ -364,7 +364,7 @@ module.exports = {
     ],
     announcementBar: {
       id: 'mobot-banner-v3',
-      content: `<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/search/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
+      content: `<img src="https://cdn-service.us2.sumologic.com/ui/images/app/mobot-welcome.png?v=2" height="24" style="vertical-align:middle;margin-right:5px" alt="Mobot"/>Meet the new <a href="https://www.sumologic.com/help/docs/dojo-ai/mobot/"><strong>Mobot</strong></a> — now a full investigation partner, not just a query tool.`,
       backgroundColor: '#0055B7',
       textColor: '#fff',
     },
@@ -429,6 +429,12 @@ module.exports = {
                 sidebarId: 'searchlogs',
                 label: 'Log Search',
                 icon: 'article',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'ai',
+                label: 'AI Experiences',
+                icon: 'auto_awesome',
               },
               {
                 type: 'docSidebar',

@@ -10,7 +10,7 @@ import Iframe from 'react-iframe';
 The Sumo Logic OpenTelemetry (OTel) Collector is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata for Observability to Sumo Logic. This can help simplify and streamline the performance and behavior monitoring of complex distributed systems, making it easier to identify and diagnose issues and improve overall system reliability and efficiency.
 
 :::tip
-Setting up the OTel Collector? Ask [Mobot](/docs/search/mobot), Sumo Logic's AI-powered conversational assistant, a question like "How do I set up an OTel Collector?" and get a structured answer with setup steps and documentation links.
+Setting up the OTel Collector? Ask [Mobot](/docs/dojo-ai/mobot), Sumo Logic's AI-powered conversational assistant, a question like "How do I set up an OTel Collector?" and get a structured answer with setup steps and documentation links.
 :::
 
 :::training Micro Lesson

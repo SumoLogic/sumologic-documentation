@@ -2,12 +2,16 @@
 slug: /search/behavior-insights/logreduce
 title: LogReduce
 description: The LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
+keywords:
+  - machine learning
+  - logreduce
+  - log patterns
 ---
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The LogReduce® algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
+The LogReduce® algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. LogReduce is a machine learning feature that distills thousands of log lines into patterns. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
 :::important
 The `summarize` operator has been renamed to `logreduce` to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with LogReduce.

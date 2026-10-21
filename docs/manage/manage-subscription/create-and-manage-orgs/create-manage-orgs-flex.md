@@ -63,7 +63,7 @@ You cannot delete a new child org once it is created.
           :::note
           Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM provisioning](#monitor-cloud-siem-provisioning), below.
           :::
-1. **[SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent)**. Click the checkbox to enable the SOC Analyst Agent for the child org. Enter the **Number of investigation per day**, and optionally select **Allow Overage** to permit investigations beyond that daily limit.<br/> <img src={useBaseUrl('img/manage/subscriptions/soc-analyst-agent-baseline.png')} alt="SOC Analyst Agent baseline fields" style={{border:'1px solid gray'}} width="450" />
+1. **[SOC Analyst Agent](/docs/dojo-ai/agents/soc-analyst-agent)**. Click the checkbox to enable the SOC Analyst Agent for the child org. Enter the **Number of investigation per day**, and optionally select **Allow Overage** to permit investigations beyond that daily limit.<br/> <img src={useBaseUrl('img/manage/subscriptions/soc-analyst-agent-baseline.png')} alt="SOC Analyst Agent baseline fields" style={{border:'1px solid gray'}} width="450" />
 1. As you enter the ingestion estimates, the number of credits required for the specified ingestion levels will be incremented.
 1. The calculator now shows the recommended credit allocation, which provides you a suggestion on how many credits you would need for the child org. This is calculated based on the baseline added, the burndowns in your contract, and the days remaining in your contract.
 1. Throttling limits displays the rate of ingestion. To learn more, refer to [Log Ingestion](/docs/manage/ingestion-volume/log-ingestion/).
