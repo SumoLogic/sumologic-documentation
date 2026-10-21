@@ -1,8 +1,8 @@
 ---
 id: traceid-spanid-injection-into-logs
-title: JavaScript TraceId and SpanId injection into logs
-sidebar_label: TraceId and SpanId injection into logs
-description: Learn how to configure traceId, spanId, and trace flags data injection into user logs in JavaScript applications.
+title: JavaScript Trace ID and Span ID Injection into Logs
+sidebar_label: Trace ID and Span ID injection into logs
+description: Learn how to configure trace ID, span ID, and trace flags data injection into user logs in JavaScript applications.
 ---
 
 Configuring the injection of **traceId**, **spanId**, and **trace flags** data into user logs in JavaScript applications is straightforward. Typically, you only need to add instrumented versions of the logging packages to your project dependencies and register them as new instrumentation.
@@ -11,7 +11,7 @@ Configuring the injection of **traceId**, **spanId**, and **trace flags** data i
 The examples below are compatible with **OpenTelemetry JS API and SDK 1.0+**.
 :::
 
-## Winston Logger OpenTelemetry instrumentation
+## Winston logger OpenTelemetry instrumentation
 
 The following information walks through [winston](https://www.npmjs.com/package/winston) logger [OpenTelemetry instrumentation](https://www.npmjs.com/package/@opentelemetry/instrumentation-winston):
 
@@ -34,7 +34,7 @@ The following information walks through [winston](https://www.npmjs.com/package/
       });
       ```
 
-## Bunyan Logger OpenTelemetry instrumentation
+## Bunyan logger OpenTelemetry instrumentation
 
 The following information walks through [bunyan](https://www.npmjs.com/package/bunyan) logger [OpenTelemetry instrumentation](https://www.npmjs.com/package/@opentelemetry/instrumentation-bunyan):
 
@@ -57,7 +57,7 @@ The following information walks through [bunyan](https://www.npmjs.com/package/b
       });
       ```
 
-## Pino Logger OpenTelemetry instrumentation
+## Pino logger OpenTelemetry instrumentation
 
 The following information walks through [pino](https://www.npmjs.com/package/pino) logger [OpenTelemetry instrumentation](https://www.npmjs.com/package/@opentelemetry/instrumentation-pino).
 
@@ -71,7 +71,7 @@ The following information walks through [pino](https://www.npmjs.com/package/pin
       const { PinoInstrumentation } = require('@opentelemetry/instrumentation-pino');
       ```
    * Register `PinoInstrumentation`.
-      ```sql
+      ```js
       registerInstrumentations({
       instrumentations: [
          new PinoInstrumentation(),
@@ -80,7 +80,7 @@ The following information walks through [pino](https://www.npmjs.com/package/pin
       });
       ```
 
-## Custom logger - span Context extraction
+## Custom logger - span context extraction
 
 In the case of custom loggers, the most important thing is to know how to obtain the current traceId, spanId, and trace flag. Follow the steps below:
 
