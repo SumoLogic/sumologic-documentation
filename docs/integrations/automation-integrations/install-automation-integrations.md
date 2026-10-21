@@ -12,7 +12,7 @@ Integrations are connectors to applications from industry-leading network and se
 ## Install an integration from App Catalog
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). To access the integrations, in the main Sumo Logic menu select **App Catalog > Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog > Integrations**.<br/><img src={useBaseUrl('img/integrations/integration-tab.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
-1. Select the integration you want to install. For example, Atlassian Jira Cloud.<br/><img src={useBaseUrl('img/integrations/integration-to-install.png')} alt="integrations-tab" style={{border: '1px solid gray'}} width="700" />
+1. Select the integration you want to install. For example, Atlassian Jira Cloud.<br/><img src={useBaseUrl('img/integrations/integration-to-install.png')} alt="Atlassian Jira Cloud integration card" style={{border: '1px solid gray'}} width="700" />
 1. Click **Install Integration**. Once installed, the integration card displays a green colored **Installed** tag in the top-right corner.
 
 :::note
