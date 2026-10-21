@@ -235,7 +235,7 @@ More information [here](https://www.sumologic.com/learn/training#certified).
 
 ### Do I have to take certifications in a specific order?
 
-Not entirely. *Sumo Logic Certified Fundamentals User* is a requirement for all other certifications, so pass it first. After that, you can take the others in any order.
+No. However, we recommend passing *Sumo Logic Certified Fundamentals User* before attempting advanced certifications.
 
 ### How long do certifications last?
 
