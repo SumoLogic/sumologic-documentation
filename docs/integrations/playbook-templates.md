@@ -12,7 +12,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import SamplePlaybooks from '../reuse/automation-service/sample-playbooks.md';
 
-A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Sumo Logic provides hundreds of out-of-the-box playbooks in the **Playbooks** tab of [App Catalog](/docs/integrations/). These out-of-the-box playbooks can handle many different situations, such as phishing attempts, brute force attacks, ransomware, and many others.
+A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Sumo Logic provides hundreds of out-of-the-box playbooks in the **Playbook Templates** section of [App Catalog](/docs/integrations/). These out-of-the-box playbooks can handle many different situations, such as phishing attempts, brute force attacks, ransomware, and many others.
 
 The out-of-the-box playbooks are templates that you need to configure before they will work in your environment. Look through the playbooks to find ones that could help you. Once you've identified one you'd like to use, follow these steps:
 1. [Install the playbook](#install-an-out-of-the-box-playbook-from-app-catalog).
