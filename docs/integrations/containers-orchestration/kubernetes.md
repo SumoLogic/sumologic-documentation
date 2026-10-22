@@ -287,6 +287,8 @@ Use this dashboard to:
 * Investigate warning events by namespace and by reason, and review the latest warning events.
 * Track Back-Off and OOM Kill events over time.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Events.png')} alt="Kubernetes Events dashboard" />
+
 ### Security Overview
 
 :::note
