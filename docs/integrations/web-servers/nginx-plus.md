@@ -264,7 +264,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 ## Installing the Nginx Plus app
 
-This section has instructions for installing the Sumo app for Nginx Plus. The instructions assume you have already set up the collection as described above.
+This section has instructions for installing the Sumo Logic app for Nginx Plus. The instructions assume you have already set up the collection as described above.
 
 import AppInstall2 from '../../reuse/apps/app-install-sc-k8s.md';
 
