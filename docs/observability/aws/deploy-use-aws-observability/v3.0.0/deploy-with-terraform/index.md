@@ -1554,9 +1554,9 @@ Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
 #### Solution
 Run `terraform destroy` again.
 
-### Field with the given id cannot be deleted because it is in use
+### Field with the given id can't be deleted because it is in use
 #### Error Message
-`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id cannot be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
 #### Solution
 Run `terraform destroy` again.
 

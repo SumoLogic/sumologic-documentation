@@ -20,7 +20,7 @@ The Software Development Optimization (SDO) Solution comes bundled with Terrafor
 The apps and dashboards that are part of this solution are organized into:
 
 * Tool specific dashboards that are based on the logs from individual DevOps tools to monitor the operations and security of individual tools.
-* Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you do not have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
+* Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you don’t have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
 
 ##  Schema overview
 
@@ -111,7 +111,7 @@ The table below shows how Pull Request events are represented in the schema: 
 | reviewers | This field represents a list of  reviewers. This data is expected to be in the following format: `["john","bob",..]` | Required |
 | datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
 | status | This field represents the status of the pull request event. Values for this field should be set to one of: “merged”, “declined” or “created”. You can also send in other values if applicable as well. | Required |
-| closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (for example, created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
+| closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (e.g.  created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
 | updateddatetime_epoch | This field is used to indicate the last updated date and time in UTC epoch milliseconds of the event. | Required |
 | target_branch | This field is used to indicate the target code branch associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |
 | user | This field indicates the user associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |

@@ -77,7 +77,7 @@ Before you run the Terraform script, perform the following actions on a server m
     ```bash
     jq --version
     ```
-1. Install Sumo Logic Python SDK using the following command. This is a community-supported package; Sumo Logic does not take support tickets for it ([learn more](https://pypi.org/project/sumologic-sdk/)).
+1. Install Sumo Logic Python SDK using the following command. This is a community-supported package; Sumo Logic doesn't take support tickets for it ([learn more](https://pypi.org/project/sumologic-sdk/)).
     ```bash
     pip install sumologic-sdk
     ```
@@ -1566,9 +1566,9 @@ Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
 #### Solution
 Run `terraform destroy` again. 
 
-### Field with the given id cannot be deleted because it is in use
+### Field with the given id can't be deleted because it is in use
 #### Error Message
-`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id cannot be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
 #### Solution
 Run `terraform destroy` again. 
 
