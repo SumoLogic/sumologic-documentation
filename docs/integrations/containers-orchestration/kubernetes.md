@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
-Sumo Logic Kubernetes provides visibility into worker nodes and their application logs, as well as seamlessly managing the master node control plane, including the API server, etcd, kube-system and worker nodes. With Sumo Logic Kubernetes, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. Falco events are utilized to monitor and detect abnormal container, application, host, and network activity.
+The Sumo Logic app for Kubernetes provides visibility into worker nodes and their application logs, as well as managing the master node control plane, including the API server, etcd, kube-system, and worker nodes. With Sumo Logic Kubernetes, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. Falco monitors and detects abnormal container, application, host, and network activity.
 
 :::note
 The Kubernetes app is a [next-gen app](/docs/get-started/apps-integrations/#next-gen-apps). Dashboards, monitors, and the fields the app needs are created when you install it.
