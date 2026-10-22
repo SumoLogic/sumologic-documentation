@@ -319,7 +319,7 @@ Use this dashboard to:
 
 CoreDNS is a [DNS server](https://en.wikipedia.org/wiki/Domain_Name_System) and can be used as a replacement for kube-dns in a Kubernetes cluster.
 
-The **Kubernetes - CoreDNS** dashboard provides insights into CoreDNS status including Cache details, Resource Usage.
+The **Kubernetes - CoreDNS** dashboard provides insights into CoreDNS status including cache details, resource usage.
 
 Use this dashboard to:
 * Track the total number of requests.
