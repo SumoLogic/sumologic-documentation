@@ -415,7 +415,7 @@ Yes. The Security Overview and Security Rules Triggered dashboards rely on Falco
 
 ### What new fields appear in Hosted Kubernetes Collectors after v5.0.0?
 
-Users would see the following new fields in the Hosted Kubernetes Collectors after upgrading or installing v5.0.0 of the Sumo Logic Kubernetes Collection.
+You would see the following new fields in the Hosted Kubernetes Collectors after upgrading or installing v5.0.0 of the Sumo Logic Kubernetes Collection.
 
 ```aiignore
 sumo.cluster.name: <cluster_name> (Shows the cluster name set during the helm chart installation)
