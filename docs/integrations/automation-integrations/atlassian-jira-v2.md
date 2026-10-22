@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 2.14  
 Updated: October 22, 2026***
 
-Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
+[Jira](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#about) is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
 :::note
 This integration uses the [Jira REST API v2](https://developer.atlassian.com/cloud/jira/platform/rest/v2/intro/#about).
