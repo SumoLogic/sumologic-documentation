@@ -15,10 +15,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
-The Sumo Logic app for Kubernetes provides visibility into worker nodes and their application logs, and helps you manage the master node control plane, including the API server, etcd, kube-system, and worker nodes. With Sumo Logic Kubernetes, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. Falco monitors and detects abnormal activity across containers, applications, hosts, and networks.
+The Sumo Logic app for Kubernetes provides visibility into worker nodes and their application logs and helps you manage the master-node control plane, including the API server, etcd, kube-system, and worker nodes. With Sumo Logic Kubernetes, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. Falco monitors and detects abnormal activity across containers, applications, hosts, and networks.
 
 :::note
-The Kubernetes app is a [next-gen app](/docs/get-started/apps-integrations/#next-gen-apps). Dashboards, monitors, and the fields the app needs are created when you install it.
+The Kubernetes app is a [next-gen app](/docs/get-started/apps-integrations/#next-gen-apps). When you install it, it creates dashboards, monitors, and the fields the app needs.
 :::
 
 Along with the Kubernetes app, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane apps provide dedicated dashboards for control plane components, including the API server, scheduler, and controller manager.
@@ -70,7 +70,7 @@ getsockopt: connection refused"}
 
 ## Collecting Metrics and Logs for the Kubernetes app
 
-This section explains how to collect logs and metrics for the Sumo Logic app for Kubernetes.
+This section explains how to collect logs and metrics for the Sumo Logic Kubernetes app.
 
 Your logs and metrics must include the metadata fields the app dashboards use. The app creates these fields when you [install it](#installing-the-kubernetes-app).
 
@@ -96,7 +96,7 @@ After you install the app, the app page provides these options:
 
 * **Explore Dashboards**. Opens the Kubernetes Explore hierarchy. You can also click **Open Dashboards in Library** to view the app dashboards in the library.
 * **Manage** dropdown:
-  * **Add Another Cluster**. Walks you through the **Add Repo** and **Install Helm chart** steps for an additional cluster. Monitors are packaged with the app, so you don't need a separate monitor installation step. See [Create monitors for the Kubernetes app](#create-monitors-for-the-kubernetes-app).
+  * **Add Another Cluster**. Walks you through the **Add Repo** and **Install Helm chart** steps for an additional cluster. Monitors are packaged with the app, so you don't need to install a separate monitor. See [Create monitors for the Kubernetes app](#create-monitors-for-the-kubernetes-app).
   * **Uninstall**. See [Uninstalling the Kubernetes app](#uninstalling-the-kubernetes-app-optional).
   * **Upgrade** and **Revert**, when available. See [Upgrade/Downgrade the Kubernetes app](#upgradedowngrade-the-kubernetes-app-optional).
 
@@ -107,7 +107,7 @@ Installing the next-gen app does not remove the dashboards from the previous Cla
 
 After you confirm that the new app's dashboards work for your clusters, you can delete the dashboards outside the **Installed Apps** folder.
 
-Deleting dashboards is permanent. Before you delete, make sure that no one in your org still relies on them, and copy any customizations that you want to keep.
+Deleting dashboards is permanent. Before you delete them, make sure no one in your org still relies on them, and copy any customizations you want to keep.
 :::
 
 #### Fields
@@ -137,7 +137,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Cluster Explorer
 
-The **Kubernetes - Cluster Explorer** dashboard provides a high-level view of cluster service health, along with details on resources used by each service.
+The **Kubernetes - Cluster Explorer** dashboard provides a high-level view of cluster service health, along with details on each service's resource usage.
 
 Use this dashboard to:
 * Navigate the cluster topology
@@ -201,7 +201,7 @@ Use this dashboard to:
 
 ### Pod
 
-The **Kubernetes - Pod** dashboard provides a high-level view of cluster pod health, along with details on resource utilization.
+The **Kubernetes - Pod** dashboard provides a high-level view of cluster pod health and resource utilization details.
 
 Use this dashboard to:
 * Monitor pod health.
@@ -213,7 +213,7 @@ Use this dashboard to:
 
 ### Container
 
-The **Kubernetes - Container** dashboard provides a high-level view of cluster container health, along with details on resource utilization.
+The **Kubernetes - Container** dashboard provides a high-level view of cluster container health and details on resource utilization.
 
 Use this dashboard to:
 * Monitor container health.
@@ -223,14 +223,14 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Container.png')} alt="Kubernetes dashboards" />
 
-### Daemonsets - Overview
+### DaemonSets - Overview
 
-The **Kubernetes - Daemonsets - Overview** dashboard provides a high-level view of the health of the Daemonsets.
+The **Kubernetes - DaemonSets - Overview** dashboard provides a high-level view of DaemonSet health.
 
 Use this dashboard to:
-* Monitor the health of Daemonsets.
+* Monitor the health of DaemonSets.
 * Identify whether the required replica level is achieved or not.
-* View logs and errors and investigate potential issues.
+* View logs and errors, and investigate potential issues.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Daemonsets_Overview.png')} alt="Kubernetes dashboards" />
 
