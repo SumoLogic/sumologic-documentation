@@ -13,7 +13,7 @@ Dashboard allows you to analyze metric and log data on the same dashboard, i
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
-## What's great about dashboard 
+## What's great about Dashboard 
 
 Dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view. This gives you control over the visual display of metric data as well as log data. Dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features. 
 
@@ -25,13 +25,13 @@ Dashboard provides the unique ability to display metrics metadata and logs dat
 See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 :::
 
-* dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
-* dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* dashboard utilizes the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
+* Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
+* Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
+* Dashboard utilizes the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
-The following table shows the availability of features for dashboard.
+The following table shows the availability of features for Dashboard.
 
-| Feature |dashboard|
+| Feature |Dashboard|
 | :-- | :-- |
 | Filtering a dashboard | [Template Variable Based Filters](/docs/dashboards/filter-template-variables/) with greater control on filter values, data type, and acceptable input. |
 | Adding Queries to dashboards | Add a panel from Search or Metrics<br/>Ability to [add panels inline](/docs/dashboards/filter-template-variables/) through Add a Panel button |
@@ -39,25 +39,25 @@ The following table shows the availability of features for dashboard.
 | Metric Visualizations |  [Area](/docs/dashboards/panels/area-charts/)<br/>[Bar](/docs/dashboards/panels/bar-charts/)<br/>[Box Plot](/docs/dashboards/panels/box-plot-charts/)<br/>[Bubble](/docs/dashboards/panels/bubble-charts/)<br/>[Cluster Map](/docs/dashboards/panels/map-charts/)<br/>[Column](/docs/dashboards/panels/column-charts/)<br/>[Combo](/docs/dashboards/panels/combo-charts/)<br/>Connection Map<br/>[Funnel](/docs/metrics/metrics-queries/funnel-chart/)<br/>[Geo Heat Map](/docs/dashboards/panels/map-charts/)<br/>[Heat Map](/docs/metrics/metrics-queries/heat-map/)<br/>Honeycomb<br/>[Line](/docs/dashboards/panels/line-charts/)<br/>[Pie](/docs/dashboards/panels/pie-charts/)<br/>[Sankey Diagram](/docs/dashboards/panels/sankey-charts/)<br/>[Scatter](/docs/dashboards/panels/scatter-charts/)<br/>[Single Value](/docs/dashboards/panels/single-value-charts/)<br/>[Table](/docs/dashboards/panels/table-charts/) |
 | Text Panel | [Supported](/docs/dashboards/panels/markdown-syntax/) |
 | Real Time Dashboarding | [Auto Refresh](/docs/dashboards/about/#auto-refresh) |
-| dashboards as Wall Monitors | Public dashboards<br/>Whitelisting |
-| dashboard Sharing with Variables and Time Range preserved | [Supported](/docs/dashboards/share-dashboard-new/) |
-| dashboard Content Item Sharing | [Supported](/docs/dashboards/share-dashboard-new/#sharing-a-dashboard-within-your-organization) |
+| Dashboards as Wall Monitors | Public Dashboards<br/>Whitelisting |
+| Dashboard Sharing with Variables and Time Range preserved | [Supported](/docs/dashboards/share-dashboard-new/) |
+| Dashboard Content Item Sharing | [Supported](/docs/dashboards/share-dashboard-new/#sharing-a-dashboard-within-your-organization) |
 | Run As Creator / Data Access Level Control | Supported |
 | Dark Theme | [Supported](/docs/dashboards/about/#dark-theme) |
-| Configured dashboard Linking | [Supported](/docs/dashboards/link-dashboards/) |
-| Recommended dashboards & Logs Drilldowns | Supported by clicking data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes). Cluster Map and Heatmap panels support *Shift+click* on a data point to drill down to the search. Missile map panels support *Shift+click* on the line to drill down to the search. [Learn more](/docs/dashboards/panels/map-charts/#drill-down-from-a-map-chart).|
+| Configured Dashboard Linking | [Supported](/docs/dashboards/link-dashboards/) |
+| Recommended Dashboards & Logs Drilldowns | Supported by clicking data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes). Cluster Map and Heatmap panels support *Shift+click* on a data point to drill down to the search. Missile map panels support *Shift+click* on the line to drill down to the search. [Learn more](/docs/dashboards/panels/map-charts/#drill-down-from-a-map-chart).|
 | Combined Metrics & Logs Panel | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series |  Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards/panels/modify-chart/). |
 | Colors by Value Range  | Supported |
 | Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/), with a selectable theme and resolution for PDF and PNG exports. |
-| Scheduled dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
-| Link dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
+| Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
+| Link Dashboard to Your Stack | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
-## Restricted Operators in dashboard
+## Restricted Operators in Dashboard
 
-The following operators cannot be used with dashboard:
+The following operators cannot be used with Dashboard:
 
 * Details
 * LogReduce
@@ -66,7 +66,7 @@ The following operators cannot be used with dashboard:
 * Transaction
 
 :::note
-Live mode restrictions do not apply to dashboard. 
+Live mode restrictions do not apply to Dashboard. 
 :::
 
 ## Limitations
@@ -74,9 +74,9 @@ Live mode restrictions do not apply to dashboard. 
 * A panel can have up to 6 logs and 6 metrics queries.
 * Joining log queries in a separate query is not supported. See how to [join metric queries](/docs/metrics/metrics-queries/metrics-explorer) for details on how this works.
 * A dashboard can have up to 100 queries.
-* dashboard chart properties are not retained when viewed from the Search page.
+* Dashboard chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a dashboard from the Search page.
-* dashboard queries cannot return more than 1440 data points.
+* Dashboard queries cannot return more than 1440 data points.
 
 ## Rules
 

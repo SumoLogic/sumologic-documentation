@@ -13,7 +13,7 @@ This table shows the complete list of features that are changed after the implem
 | Features |  Supported    |   Not Supported   |
 | :--------   | :-------------    |   :------------  |  
 | Theme      | No effect; migrated as-is | N/A  |
-| dashboard Layout | Panel position in the grid stays the same<br/><br/>Panel heights might slightly differ | N/A |
+| Dashboard Layout | Panel position in the grid stays the same<br/><br/>Panel heights might slightly differ | N/A |
 | Chart colors | Exact colors won’t be preserved, however, color families will be preserved. [Learn more](#color-mapping). |  N/A |
 | Table Panels | <ul><li>Font size conversion:</li> <ul> <li>Small **>8**</li> <li>Normal **>12**</li> <li>Large **>16**</li> </ul> </ul> | Text Truncation |
 | Bar/Column panel | <ul><li>Stacking settings:</li> <ul> <li>None - default</li>  <li>Normal - stacked</li> <li>Percent - stacked percent</li> </ul> <li>Legend Position</li> <li>Axis settings</li> <li>Multi-series support (Enabled in dashboards as overrides)</li></ul> | <ul> <li>Label truncation </li> </ul> |

@@ -60,7 +60,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/dashboards/panels')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>dashboard Panels</h4></a>
+  <a href={useBaseUrl('docs/dashboards/panels')}><img src={useBaseUrl('img/icons/dashboards.png')} alt="Dashboards icon" width="40"/><h4>Dashboard Panels</h4></a>
   <p>Learn about the various dashboard panels and the types of data best suited for each.</p>
   </div>
 </div>

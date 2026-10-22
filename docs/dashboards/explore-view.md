@@ -140,7 +140,7 @@ Filters:
 ```xml
 https://<endpoint>/ui/#//explore/@1628023955694,1628024855694@topology=0000000000000041@cluster=kubernetes@filters@1:cl-tracing-training:_collector,0:kubernetes:_origin
 ```
-dashboard:
+Dashboard:
 * `<dashboardId>` is the unique identifier of the dashboard.
 
 #### Example

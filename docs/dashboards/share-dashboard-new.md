@@ -18,7 +18,7 @@ Share a dashboard inside your organization.
 <Iframe url="https://fast.wistia.net/embed/iframe/n2s8bxaq6m?web_component=true&seo=true&videoFoam=false"
   width="854px"
   height="480px"
-  title="Micro Lesson: Share a dashboard (New) Inside Your Organization Video"
+  title="Micro Lesson: Share a Dashboard (New) Inside Your Organization Video"
   id="wistiaVideo"
   className="video-container"
   display="initial"
