@@ -56,7 +56,7 @@ If the certified integration resource was configured before the duplication proc
 
 In the following example a **(2)** follows the duplicated integration's name, as well as the resource name. A **(3)** would follow the name of the next duplicate, **(4)** the next, and so on. The actions listed in the integration do not have the **Certified Actions** check mark, because they exist on a duplicated integration.<br/><img src={useBaseUrl('img/cse/automations-integration-duplicated-resources-actions.png')} style={{border:'1px solid gray'}} alt="No changes to duplicated resource actions" width="600"/>
 
- If you choose a duplicated resource when you [add an acton node to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook), the actions available will be the ones belonging to the duplicated resource. The following example shows selecting an action from a duplicated resource.<br/><img src={useBaseUrl('img/cse/automations-integration-add-comment-to-issue.png')} style={{border:'1px solid gray'}} alt="Add comment to issue" width="600"/>
+ If you choose a duplicated resource when you [add an action node to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook), the actions available will be the ones belonging to the duplicated resource. The following example shows selecting an action from a duplicated resource.<br/><img src={useBaseUrl('img/cse/automations-integration-add-comment-to-issue.png')} style={{border:'1px solid gray'}} alt="Add comment to issue" width="600"/>
 
 ## Create a new integration
 

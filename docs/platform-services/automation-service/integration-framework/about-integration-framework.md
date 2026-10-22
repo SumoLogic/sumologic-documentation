@@ -15,7 +15,7 @@ The second type of file is an action definition file, which is used to define a 
 
 The following diagram shows the integration file hierarchy:
 
-<img src={useBaseUrl('img/cse/integration-framework-container.png')} style={{border:'1px solid gray'}} alt="Integraton framework container" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-container.png')} style={{border:'1px solid gray'}} alt="Integration framework container" width="700"/>
 
 Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file.
 
