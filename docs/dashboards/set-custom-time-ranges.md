@@ -48,12 +48,12 @@ When you click and drag to select a time range on a log panel, Sumo Logic automa
 
 To drill down into a log panel:
 
-1. Click and drag across the time window you want to zoom into on a log panel.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-drag-select.png')} alt="Selecting a time range on a log panel by clicking and dragging" style={{border: '1px solid gray'}} width="800"/>
+1. Click and drag across the time window you want to zoom into on a log panel. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-fetching.png')} alt="Log panel re-fetching data at a finer granularity after zoom" style={{border: '1px solid gray'}} width="800"/>
    :::note
    Sumo Logic recalculates the [timeslice](/docs/search/search-query-language/search-operators/timeslice) for the selected range, rounding up to the nearest of these intervals: 1 second, 1 minute, 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 1 day, or 1 week. Sumo Logic targets a maximum of 1,500 data points per view, so a shorter selected range results in a finer timeslice.
    :::
-1. The panel begins re-fetching data at a finer granularity.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-fetching.png')} alt="Log panel re-fetching data at a finer granularity after zoom" style={{border: '1px solid gray'}} width="800"/>
-1. The panel re-fetches data at the new granularity. A row of icons appears above the panel for panning and resetting the zoomed view.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-zoomed.png')} alt="Log panel re-fetching data at a finer granularity with pan and reset icons visible" style={{border: '1px solid gray'}} width="800"/>
+1. The panel begins re-fetching data at a finer granularity.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-zoomed.png')} alt="Log panel re-fetching data at a finer granularity with pan and reset icons visible" style={{border: '1px solid gray'}} width="800"/>
+1. The panel re-fetches data at the new granularity. A row of icons appears above the panel for panning and resetting the zoomed view.
 1. Once the data has been fetched, the finer granularity data will be displayed.<br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/log-panel-zoomed-result.png')} alt="Zoomed-in log panel showing finer granularity data" style={{border: '1px solid gray'}} width="800"/>
 1. To drill down further, click and drag again on the zoomed-in view.
 1. To pan across the zoomed-in time range, use the pan icon above the panel. Sumo Logic pre-fetches adjacent time windows in the background, so panning feels seamless. If you pan past the edge of the original time range, a message lets you know you've reached the edge.
