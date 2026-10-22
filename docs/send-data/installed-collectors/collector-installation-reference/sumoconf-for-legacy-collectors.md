@@ -6,7 +6,7 @@ description: This file passes Collector configuration parameters during installa
 
 
 
-For legacy Collectors (releases prior to 19.137), the `sumo.conf` file allows you to pass Collector configuration parameters to Sumo during installation.
+For legacy Collectors (releases prior to 19.137), the `sumo.conf` file allows you to pass Collector configuration parameters to Sumo Logic during installation.
 
 To authenticate Collectors, you must include an access ID and access key. See [Access Keys](/docs/manage/security/access-keys) for information on generating and managing access keys.
 
