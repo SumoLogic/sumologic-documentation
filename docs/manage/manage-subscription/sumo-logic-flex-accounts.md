@@ -146,7 +146,7 @@ The following table provides a summary list of key features by Flex package acco
 
 \* Contact your account manager to customize your account to meet your organization's needs.
 
-\*\* The **Threat Intelligence** tab is available only to Cloud SIEM customers. Customers without Cloud SIEM won't see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches. See [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/).
+\*\* The **Threat Intelligence** tab is available only to Cloud SIEM users. Without Cloud SIEM, you won't see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches. See [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/).
 
 ## Account Overview
 
