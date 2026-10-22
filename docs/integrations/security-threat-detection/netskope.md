@@ -21,7 +21,7 @@ This app includes [built-in monitors](#netskope-alerts). For details on creating
 
 The Netskope app provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
 
-For more information on Netskope, refer to the Netskope [documentation](https://www.netskope.com/platform/how-it-works).
+To set up log collection, see [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source). For more information on Netskope, refer to the Netskope [documentation](https://www.netskope.com/platform/how-it-works).
 
 ### Sample log message
 
