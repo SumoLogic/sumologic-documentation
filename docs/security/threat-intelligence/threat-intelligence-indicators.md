@@ -15,7 +15,7 @@ The **Threat Intelligence** page displays the indicators added to your threat in
 To access Threat Intelligence in Sumo Logic,
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.<br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. Click **+Add Source** to add threat intelligence sources to your datastore:
-    1. **New Source**. This flow lets you select from available threat intelligence sources, choose a collector, and complete configuration in a streamlined workflow.
+    1. **New Source**. This flow lets you create a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/), select from available threat intelligence sources and complete configuration in a streamlined workflow.
     1. **Upload**. Manually upload files that add threat intelligence indicators.
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).<br/><img src={useBaseUrl('img/security/threat-intelligence-actions-icon.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
@@ -39,8 +39,8 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
 
 ### New source
 
-1. Click **+ Add Source** and then select **New Source** from the dropdown.
-1. Select a collector from the **Collector** dropdown and a source (for example, CrowdStrike Threat Intel) from the available integrations grid.
+1. Click **+ Add Source** and then select **New Source** from the dropdown menu.
+1. Select a collector from the **Collector** dropdown list and a source (for example, CrowdStrike Threat Intel) from the available integrations grid.
 1. Click **Next**. <br/><img src={useBaseUrl('img/collector/select-threat-intel-source-and-collector.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 1. Enter the following details to configure the source:
     :::note
@@ -50,7 +50,7 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
     1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
     1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and a value.
         * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
+        * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field does not exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but is not present or enabled in the schema, it’s ignored and marked as **Dropped**.
     1. **Region**. Select the region of your account from the dropdown.
     1. **Client ID**: Provide the client ID you want to use to authenticate collection requests.
     1. **Client Secret**. Provide the client secret key you want to use to authenticate collection requests.
@@ -58,14 +58,14 @@ Use the **+Add Source** button in the **Sources** tab to add threat intelligence
         :::note
         If no Application ID is provided, a random ID is generated. Any time this ID is changed, the Source will re-read the data stream starting at the beginning.
         :::
-    1. (Optional) **Malicious Confidence**. Select the confidence level of the threat type from the dropdown as High, Medium, Low, Unverified, or leave it empty for all types. 
+    1. (Optional) **Malicious Confidence**. Select the confidence level of the threat type from the dropdown list as High, Medium, Low, Unverified, or leave it empty for all types. 
 1. When you are finished configuring the Source, click **Next**.
 1. Once you have reviewed all the details, click **Done**. A confirmation message appears when the source is successfully configured.
 
 ### Upload
 
 To manually upload threat intelligence indicators from a file:
-1. Click **+ Add Source** and then select **Upload** from the dropdown. The upload dialog displays.
+1. Click **+ Add Source** and then select **Upload** from the dropdown menu. The upload dialog displays.
 1. Select the format of the file to upload (see [Upload formats](/docs/security/threat-intelligence/upload-formats/) for the format to use in the file):
     * **Normalized JSON**. A normalized JSON file. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
     * **CSV**. A comma-separated value (CSV) file. <br/><img src={useBaseUrl('img/security/threat-intelligence-add-indicators-csv.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />

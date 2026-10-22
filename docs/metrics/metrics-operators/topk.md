@@ -9,7 +9,7 @@ The `topk` operator applies a specified aggregation function to the time series 
 
 ## Syntax
 
-```sql
+```metrics
 topk (N, SCALAR_EXPRESSION) [by FIELD [, FIELD, ...]]
 ```
 
@@ -31,7 +31,7 @@ Where: 
 
 This query ranks the time series that match the query selector by the maximum value of the `CPU_Sys` metric over the time range, and returns the top 10 time series.
 
-```sql
+```metrics
 metric=CPU_Sys | topk (10, max)
 ```
 
@@ -39,6 +39,6 @@ Top 10 time series based on a calculated value.
 
 This query applies a math expression — `(max / avg * 2)` — to each time series that matches the query selector. The time series are ranked by the calculated value, and the top 10 time series are returned.
 
-```sql
+```metrics
 metric=CPU_Sys |topk (10, max / avg * 2)
 ```
