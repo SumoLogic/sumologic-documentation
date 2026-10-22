@@ -597,7 +597,8 @@ Compares string values of two fields and returns a boolean result based on wheth
 `contains(<field1>, <field2>)`
 
 :::note
-Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here. 
+- Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here.
+- `contains()` performs a case-sensitive substring match. The value must match the casing of the stored data exactly. CrowdStrike actor names are typically uppercase. For example, `HELIXKITTEN`.
 :::
 
 ### cos
@@ -709,12 +710,20 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 
 Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
-* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`. <br/>You can filter on the following indicator attributes:
+* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`, `contains()`, `toString()`, and all the existing operators.
+
+:::note
+Both `contains()` and `toString()` functions are available for any field in the expression. `toString()` is useful when you need to coerce a non-string field (such as, an integer like confidence) to a string before passing it to `contains()`. For `actors` and `kill_chain` specifically, `toString()` is redundant since they are already strings.
+:::
+
+You can filter on the following indicator attributes:
+   * `actors`. Names of threat actors associated with the indicator, stored as a comma-separated string. For example `contains(actors, 'HELIXKITTEN')`.
    * `confidence`. Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
    * `indicator`. Value of the indicator, such as an IP address, file name, email address, and so on. 
+   * `kill_chain`. Kill chain phases associated with the indicator, stored as a comma-separated string. Use the [`contains`](#contains) function to filter on it, for example `contains(kill_chain, 'command-and-control')`.
    * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
    * `threat_type`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
-   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, and so on)
+   * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, and so on).
 * **`<indicators>`**. An optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
@@ -738,6 +747,73 @@ Following are the standard indicator types you can filter on:
 
 For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/security/threat-intelligence/upload-formats).
 
+#### Filter on custom fields
+
+Threat intelligence feeds can include custom fields beyond the standard indicator attributes. To filter on one of these fields in the `<filters>` expression, use the `_threatlookup_fields` syntax:
+
+```
+_threatlookup_fields['<key1>']['<key2>']['<key3>']...
+```
+
+Suppose a custom feed delivers this indicator:
+
+```json
+{
+  "indicator": "198.51.100.7",
+  "confidence": 80,
+  "fields": {
+    "domain": "malware.example.com",
+    "score": "82",
+    "valid_from": "1740000000",
+    "data.threat.data.family": "Redline",
+    "reputation": "{\"vendor\": {\"name\": \"AcmeIntel\", \"rating\": \"high\"}}"
+  }
+}
+```
+
+**Access a feed-specific key**
+
+Put the key in brackets for an exact string match:
+
+`_threatlookup_fields['domain'] = 'malware.example.com'`
+
+**Keys with dots are literal**
+
+`data.threat.data.family` is one key name that happens to contain dots. It is not a path to a data object, then threat, and so on:
+
+`_threatlookup_fields['data.threat.data.family'] = 'Redline'`
+
+**Going deeper with chained brackets**
+
+The reputation value is a string that contains JSON. Sumo Logic parses it internally, so you can chain brackets to reach inside it. The first bracket picks the top-level key, and each further bracket goes one level down:
+
+`_threatlookup_fields['reputation']['vendor']['rating'] = 'high'`
+
+**Integer comparison**
+
+`score` is stored as the text “82”, but you can compare it as a number:
+
+`_threatlookup_fields['score'] >= 70`
+
+**Date/time comparison**
+
+Dates are Unix epoch seconds. `1735689600` is January 1, 2025 and `1767225600` is January 1, 2026:
+
+```
+_threatlookup_fields['valid_from'] > 1735689600
+_threatlookup_fields['valid_until'] < 1767225600
+```
+
+**Using it in a rule**
+
+`hasThreatMatch([srcDevice_ip], _threatlookup_fields['score'] >= 70 AND _threatlookup_fields['data.threat.data.family'] = 'Redline')`
+
+This matches records whose srcDevice_ip equals an indicator that has a score of at least 70 and malware family Redline.
+
+**If a key doesn’t exist**
+
+If an indicator has no `score` key, the expression doesn’t error. The indicator simply doesn’t match and is skipped.
+
 **Examples**
 
 :::tip
@@ -754,11 +830,16 @@ For standard rules that use the `hasThreatMatch` function, refer to the [Rules p
 * `hasThreatMatch([file_hash_ssdeep], confidence > 1 AND type='file:hashes.ssdeep')`
 * `hasThreatMatch([http_url_rootDomain], confidence > 1 AND (type='domain-name' OR type='url'))`
 * `hasThreatMatch([user_email,targetUser_email], confidence > 1 AND source = "s_global_feed_1")`
+* `hasThreatMatch([srcDevice_ip], _threatlookup_fields['score'] >= 70 AND _threatlookup_fields['data.threat.data.family'] = 'Redline')`
 
 You can exclude matches from allowlists such as [standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists). For example:
 ```text
 hasThreatMatch([dstDevice_ip], confidence > 74 AND (type='ipv4-addr' OR type='ipv6-addr')) AND NOT (array_contains(listMatches, 'business_asns') OR array_contains(listMatches, 'business_domains') OR array_contains(listMatches, 'business_hostnames') OR array_contains(listMatches, 'business_ips') OR array_contains(listMatches, 'sandbox_ips') OR array_contains(listMatches, 'verified_domains') OR array_contains(listMatches, 'verified_hostnames') OR array_contains(listMatches, 'verified_ips'))
 ```
+
+:::tip
+When writing a rule that uses `hasThreatMatch`, include each entity that you reference in the rule expression in the **On Entity** field. This makes it easier for analysts to see which entity matched the threat indicator.
+:::
 
 ### haversine
 
