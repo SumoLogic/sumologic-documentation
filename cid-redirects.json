@@ -6364,5 +6364,7 @@
   "/docs/platform-services/automation-service/app-central/integrations/zerofox": "/docs/integrations/automation-integrations/zerofox/",
   "/docs/platform-services/automation-service/app-central/integrations/zerofox-v2": "/docs/integrations/automation-integrations/zerofox-v2/",
   "/docs/platform-services/automation-service/app-central/integrations/zoom": "/docs/integrations/automation-integrations/zoom/",
-  "/docs/platform-services/automation-service/app-central/integrations/zscaler": "/docs/integrations/automation-integrations/zscaler/"
+  "/docs/platform-services/automation-service/app-central/integrations/zscaler": "/docs/integrations/automation-integrations/zscaler/",
+  "/docs/api/search-job-management": "/docs/api/search-job",
+  "/docs/send-data/installed-collectors/remote-host-source": "/docs/send-data/installed-collectors/sources/remote-file-source"
 }
