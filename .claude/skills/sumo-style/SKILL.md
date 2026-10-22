@@ -223,20 +223,6 @@ Every post filename must start with `YYYY-MM-DD-`. Docusaurus takes the publish 
 
 ### Structure and frontmatter
 
-- When a note runs long, write a one to two paragraph introduction, add `<!--truncate-->`, then the full notes. List views show only text above that line.
-- Copy frontmatter from a recent post in the same folder. Two fields matter for every release note:
-  - `hide_table_of_contents: true` — renders the note clean and full-width.
-  - `image` — used by the RSS feed and social card. Use a screenshot from the note if it has one, otherwise the Sumo Logic logo: `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg`
-
-### Per-folder conventions
-
-| Folder | Filename | Title | Date in title? | Feature heading | Notes |
-|--------|----------|-------|---------------|-----------------|-------|
-| `blog-service` | `YYYY-MM-DD-<category-or-feature>` | Feature description in title case, then category in parentheses: (Apps), (Collection), (Manage), (Search), (New UI) | No | n/a | One feature per note |
-| `blog-collector` | `YYYY-MM-DD-installed` or `YYYY-MM-DD-otel` | Installed Collector: "Installed Collector Version X.Y.Z-N". OTel: feature name in title case, no category | No | H4: Security fix, Bug fix, Feature | Order: security, bug fixes, features. Cite CVE or GHSA IDs |
-| `blog-cse` | `YYYY-MM-DD-content` or `YYYY-MM-DD-application` | "Month D, YYYY - Content Release" or "Month D, YYYY - Application Update" | Yes | H3 per feature | Content releases: tag entries [New] or [Updated], group under Rules, Log Mappers, Parsers |
-| `blog-csoar` | `YYYY-MM-DD-content-release` or `YYYY-MM-DD-application-update` | "Month D, YYYY - Content Release" or "Month D, YYYY - Application Update" | Yes | Content: H3. Application: H3 with H4 sub-sections | Content releases are simple lists. Application updates carry descriptions and a Bug Fixes section |
-| `blog-developer` | `YYYY-MM-DD-<slug>` | "Month D, YYYY - Topic" | Yes | H4 sub-sections | Note the impact: breaking change, deprecation, new feature, or minor change |
 
 **Choosing between Service and Developer:** Use Developer when the primary audience is someone writing code to connect to Sumo Logic API endpoints, auth flows, and the MCP server. Use Service when the audience is a Sumo Logic user, even if the feature has an API.
 
