@@ -18,7 +18,7 @@ Minimal resource requirements are the following:
 * 200 MB of disk space
 * 64 MB of RAM
 
-Supported versions:
+Supported Versions
 
 * Windows 10 and up, Windows Server 2016 and up
 
