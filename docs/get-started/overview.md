@@ -166,6 +166,6 @@ If applicable, identify a set of logs to be pre-parsed by a FER. When you create
 [Sumo Logic Academy](/docs/get-started/training-certification-faq/) offers self-paced courses and public virtual instructor-led classes at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, self-paced training, and a range of certifications. We’ve done studies showing that when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently, and build impactful dashboards.
 
 Our instructor-led training options include:
-* [Public virtual classes.](https://www.sumologic.com/learn/training/) Free online classes covering our training curriculum are open to all, whether you are a customer, partner or testing out Sumo Logic.
+* [Public virtual classes.](https://www.sumologic.com/learn/training#section-2) Free online classes covering our training curriculum are open to all, whether you are a customer, partner or testing out Sumo Logic.
 * Private training. Dedicated virtual or on-site sessions are available for purchase. For details, see [Training and Certifications FAQ](/docs/get-started/training-certification-faq/).
 * Professional Services. For professional services and offerings, [contact our sales team](mailto:sales@sumologic.com) or your account representative.
