@@ -15,15 +15,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
-The Sumo Logic app for Kubernetes provides visibility into worker nodes and their application logs, as well as managing the master node control plane, including the API server, etcd, kube-system, and worker nodes. With Sumo Logic Kubernetes, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. Falco monitors and detects abnormal container, application, host, and network activity.
+The Sumo Logic app for Kubernetes provides visibility into worker nodes and their application logs, and helps you manage the master node control plane, including the API server, etcd, kube-system, and worker nodes. With Sumo Logic Kubernetes, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. Falco monitors and detects abnormal activity across containers, applications, hosts, and networks.
 
 :::note
 The Kubernetes app is a [next-gen app](/docs/get-started/apps-integrations/#next-gen-apps). Dashboards, monitors, and the fields the app needs are created when you install it.
 :::
 
-In conjunction with the Kubernetes app, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane apps provide dedicated dashboards for the control plane components, including the API server, scheduler, and controller manager.
+Along with the Kubernetes app, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane apps provide dedicated dashboards for control plane components, including the API server, scheduler, and controller manager.
 
-[Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
+[Kubernetes](https://kubernetes.io/) automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container orchestration lets you deploy and manage multi-container applications at scale.
 
 :::tip
 For an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment, see the [Kubernetes Solution pages](/docs/observability/kubernetes).
@@ -70,13 +70,13 @@ getsockopt: connection refused"}
 
 ## Collecting Metrics and Logs for the Kubernetes app
 
-This section contains instructions for collecting logs and metrics for the Sumo Logic app for Kubernetes.
+This section explains how to collect logs and metrics for the Sumo Logic app for Kubernetes.
 
-Your logs and metrics must be tagged with the metadata fields that the app dashboards use. The app creates these fields when you [install it](#installing-the-kubernetes-app).
+Your logs and metrics must include the metadata fields the app dashboards use. The app creates these fields when you [install it](#installing-the-kubernetes-app).
 
-Reference the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) in our sumologic-kubernetes-collection GitHub repository for detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic.
+Refer to the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) in our sumologic-kubernetes-collection GitHub repository for detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service-level metadata; and send them to Sumo Logic.
 
-The Deployment Guide has information on advanced configurations, best practices, performance, troubleshooting, and upgrading for our latest and previous versions of supported software.
+The Deployment Guide covers advanced configurations, best practices, performance, troubleshooting, and upgrades for our latest and previous versions of supported software.
 
 ## Installing the Kubernetes app
 
@@ -96,7 +96,7 @@ After you install the app, the app page provides these options:
 
 * **Explore Dashboards**. Opens the Kubernetes Explore hierarchy. You can also click **Open Dashboards in Library** to view the app dashboards in the library.
 * **Manage** dropdown:
-  * **Add Another Cluster**. Walks you through the **Add Repo** and **Install Helm chart** steps for an additional cluster. Monitors are packaged with the app, so there is no separate monitor installation step. See [Create monitors for the Kubernetes app](#create-monitors-for-the-kubernetes-app).
+  * **Add Another Cluster**. Walks you through the **Add Repo** and **Install Helm chart** steps for an additional cluster. Monitors are packaged with the app, so you don't need a separate monitor installation step. See [Create monitors for the Kubernetes app](#create-monitors-for-the-kubernetes-app).
   * **Uninstall**. See [Uninstalling the Kubernetes app](#uninstalling-the-kubernetes-app-optional).
   * **Upgrade** and **Revert**, when available. See [Upgrade/Downgrade the Kubernetes app](#upgradedowngrade-the-kubernetes-app-optional).
 
@@ -105,7 +105,7 @@ After you install the app, the app page provides these options:
 :::warning
 Installing the next-gen app does not remove the dashboards from the previous Classic version of the Kubernetes app. The next-gen app content is installed in the **Installed Apps** folder of your [Library](/docs/get-started/library). If you installed the Classic app, its dashboards remain in other Library folders.
 
-After you confirm that the new app's dashboards work for your clusters, you can delete the dashboards outside the **Installed Apps** folder accordingly.
+After you confirm that the new app's dashboards work for your clusters, you can delete the dashboards outside the **Installed Apps** folder.
 
 Deleting dashboards is permanent. Before you delete, make sure that no one in your org still relies on them, and copy any customizations that you want to keep.
 :::
@@ -137,7 +137,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Cluster Explorer
 
-The **Kubernetes - Cluster Explorer** dashboard provides a high-level view of the health of the cluster services, along with details on the utilized resources by service.
+The **Kubernetes - Cluster Explorer** dashboard provides a high-level view of cluster service health, along with details on resources used by each service.
 
 Use this dashboard to:
 * Navigate the cluster topology
@@ -180,7 +180,7 @@ Use this dashboard to:
 
 ### Node - Overview
 
-The **Kubernetes - Node - Overview** dashboard provides high-level information on the health and performance of the cluster nodes.
+The **Kubernetes - Node - Overview** dashboard provides high-level information on cluster node health and performance.
 
 Use this dashboard to:
 * Get quick insights into the health of the node.
@@ -190,7 +190,7 @@ Use this dashboard to:
 
 ### Namespace
 
-The **Kubernetes - Namespace** dashboard provides a high-level view of the health of the cluster namespaces, along with details on the utilized resources.
+The **Kubernetes - Namespace** dashboard provides a high-level view of cluster namespace health, along with details on the resources in use.
 
 Use this dashboard to:
 * Monitor namespace health.
@@ -201,19 +201,19 @@ Use this dashboard to:
 
 ### Pod
 
-The **Kubernetes - Pod** dashboard provides a high-level view on the health of the cluster pods, along with details on the utilized resources.
+The **Kubernetes - Pod** dashboard provides a high-level view of cluster pod health, along with details on resource utilization.
 
 Use this dashboard to:
 * Monitor pod health.
 * Track the restart rate by container.
-* Get insight into the components of a pod and how resources are being used across namespaces and fine-tune configurations accordingly.
+* Get insight into the components of a pod and how resources are being used across namespaces, and fine-tune configurations accordingly.
 * Investigate potential issues.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Pod.png')} alt="Kubernetes dashboards" />
 
 ### Container
 
-The **Kubernetes - Container** dashboard provides a high-level view of the health of cluster containers, along with details of the utilized resources.
+The **Kubernetes - Container** dashboard provides a high-level view of cluster container health, along with details on resource utilization.
 
 Use this dashboard to:
 * Monitor container health.
@@ -236,7 +236,7 @@ Use this dashboard to:
 
 ### StatefulSets - Overview
 
-The **Kubernetes - StatefulSets - Overview** dashboard provides a high-level view of the health of the StatefulSets.
+The **Kubernetes - StatefulSets - Overview** dashboard provides a high-level view of StatefulSet health.
 
 Use this dashboard to:
 * Monitor the health of StatefulSets.
@@ -258,7 +258,7 @@ Use this dashboard to:
 
 ### Collection Health Check
 
-The **Kubernetes - Collection Health Check** dashboard displays collection status from otel components in the Kubernetes cluster.
+The **Kubernetes - Collection Health Check** dashboard displays collection status from OTel components in the Kubernetes cluster.
 
 Use this dashboard to:
 * Monitor the health of OpenTelemetry-based collection in your Kubernetes environment.
@@ -292,10 +292,10 @@ Use this dashboard to:
 ### Security Overview
 
 :::note
-This dashboard relies on Falco. If the dashboard is not populated, enable Falco by setting the flag `falco.enabled` as `"true"` in values.yaml, as described [here](/docs/send-data/kubernetes/install-helm-chart).
+This dashboard relies on Falco. If the dashboard is not populated, enable Falco by setting the flag `falco.enabled` to `"true"` in values.yaml, as described [here](/docs/send-data/kubernetes/install-helm-chart).
 :::
 
-The **Kubernetes - Security Overview** dashboard provides high level details of anomalous container, application, host, and network activity.
+The **Kubernetes - Security Overview** dashboard provides high-level details of anomalous container, application, host, and network activity.
 
 Use this dashboard to:
 * Identify and investigate anomalous activity.
@@ -305,33 +305,33 @@ Use this dashboard to:
 ### Security Rules Triggered
 
 :::note
-This dashboard relies on Falco. If the dashboard is not populated, enable Falco by setting the flag `falco.enabled` as `"true"` in values.yaml. For details, please see the Sumo Logic Kubernetes Collection Helm Chart [documentation](https://github.com/SumoLogic/sumologic-kubernetes-collection#documentation).
+This dashboard relies on Falco. If the dashboard is not populated, enable Falco by setting the flag `falco.enabled` to `"true"` in values.yaml. For details, please see the Sumo Logic Kubernetes Collection Helm Chart [documentation](https://github.com/SumoLogic/sumologic-kubernetes-collection#documentation).
 :::
 
-The **Kubernetes - Security Rules Triggered** dashboard provides detailed information of anomalous activity, in addition it also provides details of the OOB Falco rules triggered by the activity on your infrastructure.
+The **Kubernetes - Security Rules Triggered** dashboard provides detailed information on anomalous activity and the OOB Falco rules triggered by activity on your infrastructure.
 
 Use this dashboard to:
 * Review detailed information on anomalous activity.
-* Review if the OOB Falco security events are triggered and identify the root cause.
+* Review whether the OOB Falco security events are triggered and identify the root cause.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Sec_Rules_Triggered.png')} alt="Kubernetes dashboards" />
 
 ### Service
 
-The **Kubernetes - Service** dashboard provides a high-level view of the health of the cluster services, along with details on the utilized resources by service.
+The **Kubernetes - Service** dashboard provides a high-level view of cluster service health, along with details on the resources services use.
 
 Use this dashboard to:
 * Review detailed information on services.
-* Identify components by Services.
-* Determine any errors and warnings by Services.
+* Identify components by service.
+* Determine any errors and warnings by service.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Service.png')} alt="Kubernetes dashboards" />
 
 ### CoreDNS
 
-CoreDNS is a [DNS server](https://en.wikipedia.org/wiki/Domain_Name_System) and can be used as a replacement for kube-dns in a Kubernetes cluster.
+CoreDNS is a [DNS server](https://en.wikipedia.org/wiki/Domain_Name_System) that can replace kube-dns in a Kubernetes cluster.
 
-The **Kubernetes - CoreDNS** dashboard provides insights into CoreDNS status including cache details, resource usage.
+The **Kubernetes - CoreDNS** dashboard provides insights into CoreDNS status, including cache details and resource usage.
 
 Use this dashboard to:
 * Track the total number of requests.
@@ -342,9 +342,9 @@ Use this dashboard to:
 
 ### HPA
 
-The Horizontal Pod Autoscaler automatically scales the number of Pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization.
+The Horizontal Pod Autoscaler automatically scales the number of Pods in a replication controller, deployment, replica set, or stateful set based on observed CPU utilization.
 
-The **Kubernetes - HPA** dashboard provides a high-level view of the health of the Horizontal Pod Autoscaler.
+The **Kubernetes - HPA** dashboard provides a high-level view of the Horizontal Pod Autoscaler's health.
 
 Use this dashboard to:
 * Identify whether the required replica level has been achieved or not.
@@ -360,14 +360,14 @@ import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
 ### Kubernetes alerts
 
-The app includes the following monitors. Node Disk Pressure, Node Memory Pressure, Deployment Replica Mismatch, Node Filesystem Running Full, and API Server Error Rate High are new.
+The app includes the following monitors. New monitors include Node Disk Pressure, Node Memory Pressure, Deployment Replica Mismatch, Node Filesystem Running Full, and API Server Error Rate High.
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | Recovery Condition |
 |:--|:--|:--|:--|:--|
 | `Kubernetes - Kube Node Not Ready` | This alert is fired when a Kubernetes node is not in a ready state. | Critical/MissingData | \<=0 | >0 |
 | `Kubernetes - DaemonSet Not Scheduled` | This alert is fired when DaemonSet pods are not scheduled. | Warning | >0 | \<=0 |
 | `Kubernetes - etcd Insufficient Members` | This alert is fired when the etcd cluster has insufficient members. | Critical | >0 | \<=0 |
-| `Kubernetes - Pod Crash Looping` | This alert is fired when a pod is crash looping. | Warning | >0 | \<=0 |
+| `Kubernetes - Pod Crash Looping` | This alert is fired when a pod is crash-looping. | Warning | >0 | \<=0 |
 | `Kubernetes - Multiple Terminated Pods (Errored Out)` | This alert is fired when pods have been terminated due to errors. | Critical | >5 | \<=5 |
 | `Kubernetes - Multiple Terminated Pods (OOM Killed)` | This alert is fired when pods have been OOM Killed. | Critical | >5 | \<=5 |
 | `Kubernetes - Container Waiting` | This alert is fired when a pod container has been waiting longer than 1 hour. | Warning | >0 | \<=0 |
@@ -378,7 +378,7 @@ The app includes the following monitors. Node Disk Pressure, Node Memory Pressur
 | `Kubernetes - Kube Controller Manager Down` | This alert is fired when KubeControllerManager disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | >0 |
 | `Kubernetes - DaemonSet Misscheduled` | This alert is fired when DaemonSet pods are mis-scheduled (running on nodes they should not be on). | Warning | >0 | \<=0 |
 | `Kubernetes - Kube Scheduler Down` | This alert is fired when Kube Scheduler disappears from Prometheus target discovery. | Critical/MissingData | \<=0 | >0 |
-| `Kubernetes - StatefulSet Generation Mismatch` | This alert is fired when StatefulSet observed generation differs from metadata generation, indicating a possible rollback. | Warning | >0 | \<=0 |
+| `Kubernetes - StatefulSet Generation Mismatch` | This alert is fired when the observed StatefulSet generation differs from the metadata generation, indicating a possible rollback. | Warning | >0 | \<=0 |
 | `Kubernetes - Multiple Terminated Pods (Deadline Exceeded)` | This alert is fired when pods have been terminated due to deadline exceeded. | Critical | >5 | \<=5 |
 | `Kubernetes - Multiple Terminated Pods (Container Cannot Run)` | This alert is fired when pods have been terminated because the container cannot run. | Critical | >5 | \<=5 |
 | `Kubernetes - Multiple Containers OOM Killed` | This alert is fired when multiple containers are OOM Killed. | Warning | >=5 | \<5 |
@@ -387,7 +387,7 @@ The app includes the following monitors. Node Disk Pressure, Node Memory Pressur
 | `Kubernetes - Node Memory Pressure` | This alert fires when a Kubernetes node reports MemoryPressure condition, indicating the node is running low on memory. | Warning | >0 | \<=0 |
 | `Kubernetes - Deployment Replica Mismatch` | This alert fires when the number of available replicas for a deployment is less than the desired replica count. | Warning | >0 | \<=0 |
 | `Kubernetes - Node Filesystem Running Full` | This alert fires when a node's filesystem is predicted to run out of space. Critical at less than 5% free, Warning at less than 10% free. | Critical/Warning | Critical: \<5, Warning: \<10 | Critical: >=5, Warning: >=10 |
-| `Kubernetes - API Server Error Rate High` | This alert fires when the Kubernetes API server error rate (5xx responses) exceeds 5% of total requests. Critical at greater than 10%, Warning at greater than 5%. | Critical/Warning | Critical: >10, Warning: >5 | Critical: \<=10, Warning: \<=5 |
+| `Kubernetes - API Server Error Rate High` | This alert fires when the Kubernetes API server error rate (5xx responses) exceeds 5% of total requests. Critical at>10%, Warning at>5%. | Critical/Warning | Critical: >10, Warning: >5 | Critical: \<=10, Warning: \<=5 |
 
 ## Upgrade/Downgrade the Kubernetes app (Optional)
 
@@ -411,7 +411,7 @@ It monitors worker node and application health across your Kubernetes cluster, i
 
 ### What data sources does the Kubernetes app use?
 
-It uses application logs and Kubernetes events, plus Node-exporter, kube-state-metrics, cAdvisor, CoreDNS, and API server metrics, collected using the Sumo Logic Distribution for OpenTelemetry Collector.
+It uses application logs and Kubernetes events, plus Node Exporter, kube-state-metrics, cAdvisor, CoreDNS, and API server metrics, collected using the Sumo Logic Distribution for the OpenTelemetry Collector.
 
 ### Do I need a separate app for the Kubernetes control plane?
 
@@ -419,7 +419,7 @@ The Kubernetes app includes monitors for control plane components such as the AP
 
 ### Which Helm chart version does the Kubernetes app require?
 
-The app is compatible with the latest version of the Sumo Logic Kubernetes Collection Helm Chart. Check the [support matrix](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix) in the GitHub repository for the exact supported platforms and versions.
+The app supports the latest version of the Sumo Logic Kubernetes Collection Helm Chart. Check the [support matrix](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix) in the GitHub repository for the exact supported platforms and versions.
 
 ### Can the Kubernetes app detect security issues?
 
@@ -427,19 +427,19 @@ Yes. The Security Overview and Security Rules Triggered dashboards rely on Falco
 
 ### What new fields appear in Hosted Kubernetes Collectors after v5.0.0?
 
-You would see the following new fields in the Hosted Kubernetes Collectors after upgrading or installing v5.0.0 of the Sumo Logic Kubernetes Collection.
+You will see the following new fields in the Hosted Kubernetes Collectors after upgrading or installing v5.0.0 of the Sumo Logic Kubernetes Collection.
 
 ```aiignore
-sumo.cluster.name: <cluster_name> (Shows the cluster name set during the helm chart installation)
+sumo.cluster.name: <cluster_name> (Shows the cluster name set during the Helm chart installation)
 sumo.helm.release: <helm_version> (Shows the Helm chart version used to install Sumo Logic Kubernetes Collection)
-sumo.hostedcollector.subtype: K8s
+sumo.hostedcollector.subtype: K8S
 ```
 <img src={useBaseUrl('img/integrations/containers-orchestration/k8s_collector_fields.png')} alt="Kubernetes Collector Fields" />
 
 
 These fields are required to support the Kubernetes Collection page. Removing them prevents you from viewing content on that page. These new fields are static and do not
-impact the user's storage/ingest budget. Since the new fields are static, they also do not impact the cardinality of the metric timeseries.
+impact the user's storage/ingest budget. Because the new fields are static, they also don't affect the cardinality of the metric time series.
 
 :::note 
-These fields are required to support the new Kubernetes Collection page. If users decide to remove these fields, they will not be able to view the content on the new Kubernetes Collection page (upcoming feature).
+These fields are required to support the new Kubernetes Collection page. If users remove these fields, they will not be able to view content on the new Kubernetes Collection page (upcoming feature).
 :::
