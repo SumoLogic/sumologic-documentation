@@ -38,7 +38,7 @@ If you can't configure the source to support your vendor API, you can request th
 
 ## Source configuration
 
-When you create a Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new One. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a Universal Connector Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new one. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu, select **Data Management**, and then under **Data Collection**, select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
@@ -326,14 +326,14 @@ Use this type of pagination if the vendor API returns a **cursor** (an opaque st
 
 Configure the following fields:
 
-- **Next Page Flag JPath** (optional). The JPath to the boolean field in the API response body that signals whether more pages exist. Pagination stops when this value is `false`. If your API does not provide such a boolean, leave this field empty — pagination will then stop only when the cursor returned by the API is empty or absent.
+- **Next Page Flag JPath** (optional). The JPath to the boolean field in the API response body that signals whether more pages exist. Pagination stops when this value is `false`. If your API does not provide such a boolean, leave this field empty; pagination will then stop only when the cursor returned by the API is empty or absent. If your API always returns a cursor on every page, this field is required. Omitting it causes the source to paginate indefinitely.
 - **End Cursor JPath** (required). The JPath to the cursor string in the API response body. The cursor value is automatically JSON-escaped and injected into each follow-up request via the `{{GraphQLCursor}}` placeholder.
 - **Next Page Request Body Template** (required). The request body to use for all pages after the first. Place the literal placeholder `{{GraphQLCursor}}` at the exact position in the body where the cursor value should be inserted. The source JSON-escapes the cursor and replaces all occurrences of `{{GraphQLCursor}}` before sending each follow-up request.
 
 :::note Placeholder requirement
 The **Next Page Request Body Template** must contain the exact string `{{GraphQLCursor}}` (including double curly braces). If this placeholder is missing, the source will fail to initialize with a validation error to prevent a silent infinite loop.
 
-The cursor value is **automatically JSON-escaped** before substitution — do not add extra escaping around the placeholder. Write it inside quoted arguments naturally:
+The cursor value is **automatically JSON-escaped** before substitution, so do not add extra escaping around the placeholder. Write it inside quoted arguments naturally:
 ```
 {"query":"{entities(first:1000 after:\"{{GraphQLCursor}}\") {pageInfo{hasNextPage endCursor} nodes{...}}}"}
 ```
@@ -388,7 +388,7 @@ You can configure sources using UTF-8-encoded JSON files with the Collector Ma
 |:--|:--|:--|:--|:--|
 | schemaRef  | JSON Object | `{"type":"Universal Connector"}` | Yes | Define the specific schema type. |
 | sourceType | String | `"Universal"` | Yes | Type of source. All Cloud-to-Cloud sources use `"Universal"` here. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. 
+| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
 
 ### Configuration object
 
