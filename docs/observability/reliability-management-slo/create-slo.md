@@ -145,7 +145,7 @@ Your monitor must be in an **active** state.
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
-1. Click on any active monitor to open its panel.
+1. Click any active monitor to open its panel.
 1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" />   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" /><br/>
 This will open the **New SLO** window.
 1. **Define your SLI**. Your monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" width="800" />
@@ -201,14 +201,14 @@ You can add key/value pair tags to your SLOs to allow you to better organize and
 
 To add a tag(s) to an existing SLO:
 
-1. Click on any SLO line item in your list, then click **Edit**.
-1. Scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. Click any SLO line item in your list, then click **Edit**.
+1. Scroll down to section **(3) SLO Details**. Click **Tags (Optional)** and type in a new tag or select an existing tag.
 1. Click **Save**.
 
 To add a tag while creating a new SLO:
 
 1. Click **Add** > **New SLO**.
-1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click on **Tags (Optional)** and type in a new tag or select an existing tag.
+1. After you've filled out sections **1** and **2**, scroll down to section **(3) SLO Details**. Click **Tags (Optional)** and type in a new tag or select an existing tag.
 1. Click **Save**.
 
 #### Filter SLOs by tags
@@ -241,7 +241,7 @@ You can create and save custom filter views, allowing you to focus on the SLOs a
 This is how default filter rendering looks like:<br/><img src={useBaseUrl('img/observability/DefaultView.png')} alt="Default view" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > Click on **Set as default**.
+You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > **Set as default**.
 :::
 
 You can see the list of all saved filter views by clicking the funnel icon.

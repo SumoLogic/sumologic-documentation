@@ -14,7 +14,7 @@ This documentation walks you through manually migrating an existing [AWS Observa
 
 - Ensure that the account aliases used in your v2.x.x deployment are carried over during migration. The same aliases will be reused in v3.0.0.
 
-- During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Please refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
+- During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
 :::
 
 :::warning
