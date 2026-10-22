@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira-v2.png')} alt="Atlassian logo" width="80"/>
 
-***Version: 2.13  
-Updated: July 13, 2026***
+***Version: 2.14  
+Updated: October 22, 2026***
 
 Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.
 
@@ -103,6 +103,7 @@ Ticketing System
 
 | Version | Date | Description |
 |:--|:--|:--|
+| v2.14 | October 22, 2026 | Added an optional **Priority (Custom Name)** field to the **Create Issue** and **Update Issue** actions. Use it to send an exact Jira priority name, such as `Critical` or a project-specific priority, which takes precedence over the **Priority** list. The existing **Priority** list behavior is unchanged, and `Critical` selected from that list still maps to `Highest`. |
 | v2.13 | July 13, 2026 | Improved integration reliability, enhanced error handling, better edge case support, and more user-friendly error messages. |
 | v2.12 | June 26, 2026 | Added a new action: **Search User**, to search for Jira users by display name, email address, or account ID. |
 | v2.11 | March 23, 2026 | Upgraded the `python3_generic` Docker image (Python 3.8) to `python3_12_generic` (Python 3.12) to address Python 3.8 end-of-life and improve security and performance. |
