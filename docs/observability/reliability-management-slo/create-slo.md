@@ -244,7 +244,7 @@ This is how default filter rendering looks like:<br/><img src={useBaseUrl('img/o
 You can also set a saved filter view as default later by clicking the kebab menu next to the funnel icon > Click on **Set as default**.
 :::
 
-You can see the list of all saved filter views by clicking on the funnel icon.
+You can see the list of all saved filter views by clicking the funnel icon.
 
 <img src={useBaseUrl('img/observability/ListOfSavedFilters.png')} alt="List of saved filters" style={{border: '1px solid gray'}} width="800" />
 

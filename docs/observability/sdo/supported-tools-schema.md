@@ -20,7 +20,7 @@ The Software Development Optimization (SDO) Solution comes bundled with Terrafor
 The apps and dashboards that are part of this solution are organized into:
 
 * Tool specific dashboards that are based on the logs from individual DevOps tools to monitor the operations and security of individual tools.
-* Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you don’t have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
+* Dashboards that are based on an abstracted schema to monitor DORA metrics and the stages of your CI/CD pipelines across various phases. This is done so that you do not have to change individual dashboard queries when you replace your tools, as well as to accommodate application development teams that have their own tool sets.
 
 ##  Schema overview
 

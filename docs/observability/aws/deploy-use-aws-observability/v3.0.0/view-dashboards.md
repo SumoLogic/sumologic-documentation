@@ -48,7 +48,7 @@ To investigate services in your AWS environment, do the following:
 
 ## Drill down for root cause analysis
 
-From each level in the hierarchy, you can drill-down to individual entities by opening any logs or metrics dashboard panel. To do so:
+From each level in the hierarchy, you can drill down to individual entities by opening any logs or metrics dashboard panel. To do so:
 
 Select the graph data point you are interested in. In the following screenshot, we selected 5xx Error Codes by Load Balancer in the honeycomb graph. A list of related content links for our failed pod appears in a panel on the right.
 
