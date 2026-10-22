@@ -87,7 +87,7 @@ Leverage machine learning analytics to improve and streamline audit processes an
 
 Retain data for as long as you need it to perform your audit and compliance process.  
 
-#### Step 6: Monitor in real-time
+#### Step 6: Monitor in real time
 
 Sumo Logic monitors incoming data and security controls in real time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
 

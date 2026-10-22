@@ -64,7 +64,7 @@ No. No results in your dashboards can mean that nothing has been identified by I
 
 It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and the not equal to sign (`!=`) conditions are case-sensitive. When you use them with Sumo Logic operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/search-query-language/search-operators/tolowercase-touppercase/#using-tolowercaseor-touppercase-with-an-equating-condition).
 
-### I found an IoC in VirusTotal (or any other third-party threat feed), but why can’t I find that IoC in Intel 471 using the Sumo Logic lookup?
+### I found an IoC in VirusTotal (or any other third-party threat feed), but why can I not find that IoC in Intel 471 using the Sumo Logic lookup?
 
 Intel 471 focuses on quality versus quantity when it comes to threat assessment. They have a dedicated intel team that does that work. A threat from a third-party feed may not be present in Intel 471 threats because it has been rejected by the Intel 471 intel assessment team.
 

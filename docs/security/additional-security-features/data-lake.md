@@ -20,7 +20,7 @@ A data lake is a centralized repository to store data. Data in the lake can then
 
 ### What's the difference between a database and a data lake?
 
-“Database” and “data lake” are sometimes used in similar contexts, but they aren’t interchangeable terms. Databases require structured or semi-structured data for real-time data processing and record keeping, whereas data lakes use both structured and unstructured data for analytical workloads. 
+“Database” and “data lake” are sometimes used in similar contexts, but they are not interchangeable terms. Databases require structured or semi-structured data for real-time data processing and record keeping, whereas data lakes use both structured and unstructured data for analytical workloads. 
 
 Data lakes can:
 * Store structured, semi-structured, and unstructured data.
