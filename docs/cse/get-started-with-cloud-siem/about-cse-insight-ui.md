@@ -146,6 +146,7 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 1. **Entity.** The entity the insight fired on.
 1. **Age**. The elapsed time since the insight was created.
 1. **Signals**. The total count of signals on the insight entity during the detection window.
+1. **Overview**. Displays an overview of the insight.
 1. **GCS**. The [Global Confidence Score](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights/) for the insight, if available.
 1. **Tags** The number of tags that have already been assigned to the insight, and a dropdown arrow to view and add tags.
 1. **Incidents**. Incidents that the insight is associated with.
@@ -153,9 +154,7 @@ From the [Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-d
 1. **Entities**. Click to view [entities](#about-the-entities-tab-graph-view) on the signal.
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
 1. **Automations**. Click to view [automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) on the insight.
-
-{/*1. Gear icon. Click to configure the panels in the **Overview** tab.
-
+1. Gear icon. Click to configure the panels in the **Overview** tab.
 
 ### Overview
 
@@ -164,7 +163,6 @@ The **Overview** tab provides panels that give an overview of the insight:
 * **Signals**. The signals on the insight entity that fired during the detection window. For more information on signals, see [Signal visualization area](#signal-visualization-area).
 * **MITRE ATT&CK**. The MITRE ATT&CK tactics and techniques associated with the insight's tracked activity. 
 * **Log Activity**. The log activity associated with the signals that fired to create the insight.
-*/}
 
 ### Signal visualization area
 
