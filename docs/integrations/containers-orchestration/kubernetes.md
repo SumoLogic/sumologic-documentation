@@ -100,6 +100,16 @@ After you install the app, the app page provides these options:
   * **Uninstall**. See [Uninstalling the Kubernetes app](#uninstalling-the-kubernetes-app-optional).
   * **Upgrade** and **Revert**, when available. See [Upgrade/Downgrade the Kubernetes app](#upgradedowngrade-the-kubernetes-app-optional).
 
+#### Delete the content of the previous version (Classic App)
+
+:::warning
+Installing the next-gen app does not remove the dashboards from the previous Classic version of the Kubernetes app. The next-gen app content is installed in the **Installed Apps** folder of your [Library](/docs/get-started/library). If you installed the Classic app, its dashboards remain in other Library folders.
+
+After you confirm that the new app's dashboards work for your clusters, you can delete the dashboards outside the **Installed Apps** folder accordingly.
+
+Deleting dashboards is permanent. Before you delete, make sure that no one in your org still relies on them, and copy any customizations that you want to keep.
+:::
+
 #### Fields
 
 As part of the app installation process, the following fields will be created by default:
