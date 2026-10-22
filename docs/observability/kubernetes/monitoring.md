@@ -14,7 +14,7 @@ Sumo Logic allows you to monitor and troubleshoot your applications in Kubernete
 
 We currently provide four hierarchical Views of the Kubernetes system: Node, Deployment, Service, and Namespace. These views make it easy to traverse your Kubernetes hierarchy to monitor specific components, identify problems, discover root causes, and take progressive action.
 
-* [Node](https://kubernetes.io/docs/concepts/architecture/nodes/): Observe the infrastructure topology of resources (e.g., physical nodes, VMs) on your private cloud, public cloud or bare metal.
+* [Node](https://kubernetes.io/docs/concepts/architecture/nodes/): Observe the infrastructure topology of resources (for example, physical nodes, VMs) on your private cloud, public cloud or bare metal.
 * [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/): Observe how your Kubernetes deployment(s) perform against your specified criteria and manage changes.
 * [Service](https://kubernetes.io/docs/concepts/services-networking/service/): Observe how your Kubernetes Service(s) interacts with your other services within and outside your cluster.
 * [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces): Track environments with many users spread across multiple teams, or projects like dev, lab, and prod.
@@ -38,8 +38,8 @@ To navigate and analyze your Kubernetes environment, do the following:
 1. In the upper-left corner of the screen, select the Kubernetes view you want from the dropdown menu.
 1. Click the arrow to the left of a content name to expand and view its contents.<br/><img src={useBaseUrl('img/kubernetes/Explore_cluster_contents.png')} alt="Explore cluster contents" style={{border: '1px solid gray'}} width="400" />
 1. Dead entities are shown faded:<br/><img src={useBaseUrl('img/kubernetes/faded-entity-explore.png')} alt="Dead entities" style={{border: '1px solid gray'}} width="300" />
-1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/><img src={useBaseUrl('img/kubernetes/Explore_Drill-Down.png')} alt="Explore drill-down" style={{border: '1px solid gray'}} width="800" />
-1. Optional: Select another type of dashboard display from the dropdown menu at the top of the dashboard, and select another time interval.<br/><img src={useBaseUrl('img/kubernetes/Explore_Drill-Down_Dashboard_options.png')} alt="Explore drill-down dashboard options" style={{border: '1px solid gray'}} width="800" />
+1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/><img src={useBaseUrl('img/kubernetes/Explore_Drill-Down.png')} alt="Explore drill down" style={{border: '1px solid gray'}} width="800" />
+1. Optional: Select another type of dashboard display from the dropdown menu at the top of the dashboard, and select another time interval.<br/><img src={useBaseUrl('img/kubernetes/Explore_Drill-Down_Dashboard_options.png')} alt="Explore drill down dashboard options" style={{border: '1px solid gray'}} width="800" />
 
 <!--
     The navigation panel appears on the left with a collapsed view of your Kubernetes stack.
@@ -156,7 +156,7 @@ To add a custom field to a collector, do the following:
 1. Click **Add Field**.<br/><img src={useBaseUrl('img/kubernetes/MM_Add-Field.png')} alt="Add field" style={{border: '1px solid gray'}} width="600" />
 1. Enter a field name and value in the respective text fields. In this example, we created a field for a **cluster** with the label **k8s.dev** and a pod with the name **pod_test** and label **k8s.test**. This allows you to easily search for log data for that cluster or pod.
     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark appears when the field exists and is enabled in the fields table schema.
-    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.<br/><img src={useBaseUrl('img/kubernetes/MM_Fields_Key-Value-Pairs.png')} alt="Fields key-value pairs" style={{border: '1px solid gray'}} width="600" />
+    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point appears when the field does not exist yet, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.<br/><img src={useBaseUrl('img/kubernetes/MM_Fields_Key-Value-Pairs.png')} alt="Fields key-value pairs" style={{border: '1px solid gray'}} width="600" />
 1. Click **Save**.
 
 Now, any logs sent to this Collector will have these key-value pairs associated with it. With this association, you can search for `cluster=k8s.dev` or `pod_test=k8s.test` to return your logs.
