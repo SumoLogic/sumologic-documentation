@@ -5,7 +5,7 @@ sidebar_label: KnowBe4 KMSAT
 keywords:
   - cloud-to-cloud
   - knowbe4-api
-description: Learn how to configure the KnowBe4 KMSAT Cloud-to-Cloud source setup using the Sumo logic environment.
+description: Learn how to configure the KnowBe4 KMSAT Cloud-to-Cloud source setup using the Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

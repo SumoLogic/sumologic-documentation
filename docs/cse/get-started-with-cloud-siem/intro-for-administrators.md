@@ -81,7 +81,7 @@ When you enable data forwarding, Cloud SIEM automatically starts processing your
 <img src={useBaseUrl('img/cse/intro-forward-data.gif')} alt="Forward data"  width="500"/>
 
 As an admin, there are several steps you must complete to forward data to Cloud SIEM. 
-1. First, you request backend configuration. This is a one-time setup for each Sumo Logic organization. Often, your Sumo account rep will complete this process for you. 
+1. First, you request backend configuration. This is a one-time setup for each Sumo Logic organization. Often, your Sumo Logic account rep will complete this process for you. 
 1. Next, you enable data forwarding. You can do this by adding the `_siemForward = True` field when you set up a collector. For cloud data sources, you can also toggle the **Forward to SIEM** check box. You'll need to enable data forwarding each time you add a new data source into Sumo Logic, update your partitions, or make other changes to your data ingestion process.
 
     Cloud SIEM will not ingest historic data. In other words, any new data ingested into Sumo Logic will be forwarded to Cloud SIEM as soon as you enable data forwarding. However, older data will not be processed by Cloud SIEM. Data will start flowing from Sumo Logic into Cloud SIEM within a few minutes of enabling data forwarding. You can expect signals and insights to start generating within a few hours.
@@ -405,13 +405,13 @@ Typically, each playbook in Cloud SIEM will help partially or fully automate one
 
 ### Automations and integrations
 
-Cloud SIEM comes with hundreds of pre-built playbooks, integrations, and use cases as part of [App Central](/docs/platform-services/automation-service/app-central/). 
+Cloud SIEM comes with hundreds of pre-built playbooks, integrations, and use cases as part of [App Catalog](/docs/integrations/). 
 
-As a Cloud SIEM administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SIEM to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SIEM can be a single, central location for orchestrating your security response. 
+As a Cloud SIEM administrator, you can explore App Catalog and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SIEM to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SIEM can be a single, central location for orchestrating your security response. 
 
 ### Install a new integration
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then and click **App Central** in the left navigation bar. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **App Catalog** in the left navigation bar. 
 1. Click **Integrations** at the top of the window.
 1. Find any integration that is not already installed and click **Install**. If an integration has already been installed by another user, you will not see the option to download it. Instead, it will say **Installed**. 
 1. A popup window will appear, summarizing the actions that will become available once the integration has been installed. Once you have reviewed these actions, click **Install**. The actions will vary based on which integration you chose to install. 

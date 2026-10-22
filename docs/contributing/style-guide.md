@@ -319,7 +319,18 @@ Append `#L4-L5` to the URL to embed only those lines, and add a title with `json
 
 Use a [Docusaurus `<details>` block](https://docusaurus.io/docs/markdown-features#details) to fold away long optional content: verbose examples, long code samples, or big reference lists. Put the title between the `<summary>` tags and the content after them. Collapsed content is still indexed for search.
 
-Never put required steps or instructions in a collapsible block.
+| Use case | Use | Why |
+|:---------|:----|:----|
+| **FAQ sections** | ❌ DON'T | Hidden content cannot be cited by AI tools or search engines. FAQ content must be immediately visible and scannable. |
+| **Troubleshooting sections** | ❌ DON'T | Users searching for solutions need immediate access to troubleshooting steps. |
+| **Critical instructions** | ❌ DON'T | Required steps and warnings must always be visible. |
+| **Long code samples** | ✅ DO | Code samples over 100 lines benefit from collapsing to reduce page scrolling. |
+| **Multiple installation methods** | ✅ DO | Collapse each method so users can jump to their preferred approach. |
+| **Alternative configuration options** | ✅ DO | Collapse alternatives (e.g., AWS regions, authentication methods) to reduce clutter. |
+
+### Format FAQ questions as headings
+
+Write each FAQ question as a heading (`H3` or `H4`), not as bold text. Headings are discrete, citable units that AI tools and answer engines can chunk and reference individually; bold is purely visual with no semantic weight. Use `H3` for questions under an `H2` section (e.g., `## FAQs` → `### How do I reset my password?`) and `H4` under an `H3` sub-category (e.g., `### Security and privacy` → `#### Is my data encrypted?`).
 
 <Tabs
   defaultValue="Markdown"
@@ -746,7 +757,7 @@ Here's how to make a [table](#tables).
 
 ```md
 * Learn how to [sign up with Sumo](../get-started/sign-up.md); or
-* Learn how to [sign up with Sumo](/docs/get-started/sign-up).
+* Learn how to [sign up with Sumo Logic](/docs/get-started/sign-up).
 ```
 
 #### Linking to external URLs
@@ -882,16 +893,21 @@ Protecting our trademarks is important. Failing to mark a trademarked term can p
 
 Use the trademark (™) or registered (®) symbol on the first reference to a trademarked term on a page, then drop it. The following terms must use the symbol shown.
 
-* LogReduce®
+Currently, LogReduce® is the only trademarked term that is used in Sumo Logic docs. For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
 
 Use trademarked terms as adjectives, not as nouns or verbs. Never use them in the plural or possessive form.
 
-* Correct: Use the LogReduce® feature to reduce log volume.
-* Incorrect: Use LogReduce® to reduce log volume.
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Use the LogReduce® feature to reduce log volume. | Use LogReduce® to reduce log volume. |
 
-Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use Sumo Logic in the plural or possessive form.
+Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use a Sumo Logic product or feature name in the plural or possessive form, whether trademarked or not. For example, write "the Sumo Logic OpenTelemetry Collector", not "Sumo Logic's OpenTelemetry Collector".
 
-For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| the LogReduce values-details operator | LogReduce's values-details operator |
+
+Generic possessives referring to the company are acceptable ("Sumo Logic's platform" is fine).
 
 ## Preview releases
 
@@ -1151,7 +1167,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-Sumo conventions:
+Sumo Logic conventions:
 
 * **Use `groupId`** when the same choice appears more than once on a page, or across pages, so the reader's selection syncs and sticks (for example, `groupId="k8s-nonk8s"`).
 * **Make each tab self-contained.** A reader who picks one tab and ignores the rest should still get every step for that path. Do not split a procedure so that step 3 is under one tab and step 4 under another.

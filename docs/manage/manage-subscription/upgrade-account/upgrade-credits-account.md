@@ -22,9 +22,9 @@ Essentials plans is ideal for:
 - IT professionals, developers, and analysts who need rapid access to advanced features for security, monitoring, and analytics.
 
 <details>
-<summary>What's a Sumo Credit?</summary>
+<summary>What's a Sumo Logic Credit?</summary>
 
-Sumo Credit is a unit of measure used to flexibly pay for any products (for example, logs, metrics, or storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
+Sumo Logic Credit is a unit of measure used to flexibly pay for any products (for example, logs, metrics, or storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
 
 </details>
 
