@@ -15,7 +15,7 @@ We do not guarantee 100% conversion from classic to dashboard, although we do pr
 
 This section explains to you the step-by-step process to migrate your dashboards.
 
-1. Navigate to any of your classic dashboards or create a new one. Click on **Migrate to dashboards**.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard1.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
+1. Navigate to any of your classic dashboards or create a new one. Click **Migrate to dashboards**.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard1.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
 2. A dialog box appears. Click **Migrate to Dashboard** as shown below.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard2.png')} alt="dashboard" style={{border: '1px solid gray'}} width="600"/>
 3. Click **Open Dashboard** to view the migrated dashboard, given the migration is successful.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard3.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/> <br/>The following dialog can have 2 other states:
     1. **Warning State.** Showing any warnings during migrations: warnings don’t fail the migration process, however, it might be something that you have to fix on your own or is a feature that is not yet supported on the dashboard.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard4.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
@@ -25,7 +25,7 @@ This section explains to you the step-by-step process to migrate your dashboards
 
 The bulk migration feature is an extension to the dashboard migration feature that allows the user to migrate multiple classic dashboards at once:
 
-1. Go to **Library**, and select two or more **Dashboards**. Click on **Migrate Dashboards**.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-1.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
+1. Go to **Library**, and select two or more **Dashboards**. Click **Migrate Dashboards**.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-1.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
   :::info
   Choosing more than 50 dashboards will disable the **Migrate Dashboards** button.
   :::

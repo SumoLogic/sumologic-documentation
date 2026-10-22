@@ -79,7 +79,7 @@ Yes. Mobot enforces your existing role-based access control (RBAC) settings at t
 
 Review the generated panel before confirming. You can reject the suggestion and provide additional guidance.
 
-### Can you edit the generated query?
+### Can I edit the generated query?
 
 Yes. After the panel is created, you can modify it using the standard dashboard editor.
 

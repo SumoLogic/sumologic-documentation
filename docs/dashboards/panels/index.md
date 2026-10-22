@@ -170,7 +170,7 @@ The link is displayed is in the panel.
 
 The [Services List and Map](/docs/apm/services-list-map) views display high-level views of your application environment, giving you a greater insight into your application architecture and dependencies between monitored microservices.
 
-The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
+The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
 You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="Panel service" width="800"/>
 
