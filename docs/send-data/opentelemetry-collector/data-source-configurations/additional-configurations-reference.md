@@ -61,6 +61,26 @@ extensions:
 Setting the clobber flag to `true` deletes (clobbers) any existing collector with the same collector name/hostname, so make sure that is what you want to do. Clobber is effective only before the new collector has been registered (activated) with Sumo Logic.
 :::
 
+### Clobber rate limiting
+
+Use `clobber: true` only when the original collector with that name is no longer running, for example after you delete and recreate a VM. If two running collectors share a name and both set `clobber: true`, each one deletes the other when it registers. The two collectors then keep deregistering and reinstalling each other in a loop.
+
+To prevent this loop, Sumo Logic rate limits registrations that use `clobber: true`. The limit applies to each collector name in your organization. After about 50 registration attempts with the same collector name within an hour, Sumo Logic rejects further attempts with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`) and records an audit event. Registrations that don't set `clobber: true` aren't affected.
+
+The registration fails with the following message:
+
+```
+Too many collector registrations with clobber=true for collector name '<name>'. This usually indicates multiple machines are attempting to register with the same collector name simultaneously. Use unique collector names per machine or disable clobber.
+```
+
+To avoid or resolve a rejected registration:
+
+1. Use a unique `collector_name` for each machine. Set the `collector_name` property under `extensions.sumologic`.
+1. Use `clobber: true` only to replace a collector that is no longer running. If the same name is in use by a running collector, remove `clobber: true`.
+1. Restart the collector. If the rate limit was reached, wait for the one-hour window to pass before you register again.
+
+For more information, see [Registration is rejected with an HTTP 429 error when `clobber` is enabled](/docs/send-data/opentelemetry-collector/troubleshooting/#registration-is-rejected-with-an-http-429-error-when-clobber-is-enabled).
+
 ## Custom Configuration
 
 Use Custom configuration to customize the collection of your logs, metrics and traces in Sumo Logic. Learn more about configuration [here](https://opentelemetry.io/docs/collector/configuration).

@@ -268,6 +268,26 @@ This affects the `_collectorId` attribute, which is different for every new coll
 
 To prevent this, remove the `extensions.sumologic.clobber` property or set it to `false`.
 
+### Registration is rejected with an HTTP 429 error when `clobber` is enabled
+
+If the collector fails to register with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`) and the following message, Sumo Logic has rate limited your registration requests:
+
+```
+Too many collector registrations with clobber=true for collector name '<name>'. This usually indicates multiple machines are attempting to register with the same collector name simultaneously. Use unique collector names per machine or disable clobber.
+```
+
+This happens after about 50 registration attempts with `extensions.sumologic.clobber` set to `true` and the same collector name within an hour. A common cause is multiple machines that share a collector name, each deleting the other's collector when it registers.
+
+To resolve this:
+
+1. Find any other running collector that uses the same collector name, on this machine or a different one.
+1. Do one of the following:
+   * Use a unique `collector_name` for each machine.
+   * Remove the `extensions.sumologic.clobber` property or set it to `false`. Use `clobber` only to replace a collector that is no longer running.
+1. Restart the collector. If the rate limit was reached, wait for the one-hour window to pass before you register again.
+
+For more information, see [Clobber rate limiting](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/#clobber-rate-limiting).
+
 ### Cannot start reading file logs from specific point in time
 
 The [Filelog receiver][filelogreceiver_docs] currently supports only two modes of reading local files:
