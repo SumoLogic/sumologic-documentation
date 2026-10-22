@@ -40,7 +40,7 @@ Certified integrations are those that are provided by Sumo Logic. You can [insta
 
 Certified integrations are designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cse/automations-integration-certified.png')} style={{border:'1px solid gray'}} alt="Certified integration" width="300"/>
 
-After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code can’t be edited using the Automation Service internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-2.png')} style={{border:'1px solid gray'}} alt="Certified integration message in resource code" width="400"/>
+After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code cannot be edited using the Automation Service internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-2.png')} style={{border:'1px solid gray'}} alt="Certified integration message in resource code" width="400"/>
 
 Certified actions are designated by a **Certified Action** check mark.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-action.png')} style={{border:'1px solid gray'}} alt="Certified action" width="300"/>
 

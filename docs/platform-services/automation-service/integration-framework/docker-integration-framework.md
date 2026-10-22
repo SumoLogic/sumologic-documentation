@@ -45,7 +45,7 @@ If you go to the Docker YAML editor of the integration, if it is using a custom 
 
 <img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image-3.png')} alt="Docker custom image" width="800"/>
 
-However, the best way to check whether an integration is using a custom image is to open the Docker editor for that integration (by clicking on the button with the Docker logo on it).
+However, the best way to check whether an integration is using a custom image is to open the Docker editor for that integration (by clicking the button with the Docker logo on it).
 
 Integrations using a custom image will have a **Docker image tag**, a **Last update** date, and some Dockerfile content.
 
