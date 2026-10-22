@@ -425,7 +425,7 @@ sumo.hostedcollector.subtype: K8s
 <img src={useBaseUrl('img/integrations/containers-orchestration/k8s_collector_fields.png')} alt="Kubernetes Collector Fields" />
 
 
-These fields are added to support the new Kubernetes Collection feature, which will be released soon on Sumo Logic. These new fields are static and do not
+These fields are required to support the Kubernetes Collection page. Removing them prevents you from viewing content on that page. These new fields are static and do not
 impact the user's storage/ingest budget. Since the new fields are static, they also do not impact the cardinality of the metric timeseries.
 
 :::note 
