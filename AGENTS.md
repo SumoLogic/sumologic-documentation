@@ -15,7 +15,7 @@ This repo takes contributions from both Sumo Logic employees and external commun
 @https://github.com/SumoLogic/sumologic-documentation/tree/main/docs
 
 ## Skills
-- `.claude/skills/sumo-style/SKILL.md` — Sumo Logic writing conventions. Claude fetches the live style guide and applies it automatically when writing or editing docs.
+- `.claude/skills/sumo-style/SKILL.md` — Sumo Logic writing conventions. **Always invoke this skill before writing or editing any file in `/docs`, `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`.** Do not wait to be asked.
 - `.claude/skills/docusaurus/SKILL.md` — Docusaurus 3 syntax, frontmatter templates, and sidebar config patterns.
 - `.claude/skills/pr-template-guide/SKILL.md` — PR template structure, formatting examples, and best practices.
 - `.claude/skills/geo-guide/SKILL.md` — Reference guide of GEO principles and patterns loaded as context by `/geo-optimize` and `/seo-audit`. Not an invocable command.

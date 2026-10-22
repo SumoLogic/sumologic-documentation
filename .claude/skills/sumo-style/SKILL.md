@@ -202,6 +202,46 @@ Fetch the full list at https://www.sumologic.com/help/docs/contributing/word-lis
 
 ---
 
+## Release notes
+
+Release notes are the changelog. They publish to the docs site and to an RSS feed. Keep every note short and link out for detail.
+
+Each product area has its own blog folder: `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, `blog-developer`. Copy a recent post in the matching folder as the model for filename, frontmatter, and structure.
+
+Every post filename must start with `YYYY-MM-DD-`. Docusaurus takes the publish date and sort order from that prefix.
+
+### Writing style
+
+- **Open with a direct statement of what changed.** Do not use announcement framing ("We're excited to...", "We are pleased to announce..."). State the change and let it speak for itself.
+  - ✅ "Multi-child-org search results now include an `_orgName` field alongside `_orgId`."
+  - ❌ "We're excited to announce that multi-child-org search results now include an `_orgName` field."
+- **Lead with the benefit.** Say what the reader can now do and why it matters.
+- **Be concise.** Two to three sentences for a feature. One sentence per list item.
+- **End the opening paragraph with a "Learn more" link** to the relevant doc, using a relative path starting with `/docs/`.
+- **Mark breaking changes and prerequisites** with an admonition.
+- **Title dates as Month D, YYYY.** Full month name, no ordinal, no leading zero: "March 9, 2026", not "March 9th, 2026" or "March 09, 2026".
+
+### Structure and frontmatter
+
+- When a note runs long, write a one to two paragraph introduction, add `<!--truncate-->`, then the full notes. List views show only text above that line.
+- Copy frontmatter from a recent post in the same folder. Two fields matter for every release note:
+  - `hide_table_of_contents: true` — renders the note clean and full-width.
+  - `image` — used by the RSS feed and social card. Use a screenshot from the note if it has one, otherwise the Sumo Logic logo: `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg`
+
+### Per-folder conventions
+
+| Folder | Filename | Title | Date in title? | Feature heading | Notes |
+|--------|----------|-------|---------------|-----------------|-------|
+| `blog-service` | `YYYY-MM-DD-<category-or-feature>` | Feature description in title case, then category in parentheses: (Apps), (Collection), (Manage), (Search), (New UI) | No | n/a | One feature per note |
+| `blog-collector` | `YYYY-MM-DD-installed` or `YYYY-MM-DD-otel` | Installed Collector: "Installed Collector Version X.Y.Z-N". OTel: feature name in title case, no category | No | H4: Security fix, Bug fix, Feature | Order: security, bug fixes, features. Cite CVE or GHSA IDs |
+| `blog-cse` | `YYYY-MM-DD-content` or `YYYY-MM-DD-application` | "Month D, YYYY - Content Release" or "Month D, YYYY - Application Update" | Yes | H3 per feature | Content releases: tag entries [New] or [Updated], group under Rules, Log Mappers, Parsers |
+| `blog-csoar` | `YYYY-MM-DD-content-release` or `YYYY-MM-DD-application-update` | "Month D, YYYY - Content Release" or "Month D, YYYY - Application Update" | Yes | Content: H3. Application: H3 with H4 sub-sections | Content releases are simple lists. Application updates carry descriptions and a Bug Fixes section |
+| `blog-developer` | `YYYY-MM-DD-<slug>` | "Month D, YYYY - Topic" | Yes | H4 sub-sections | Note the impact: breaking change, deprecation, new feature, or minor change |
+
+**Choosing between Service and Developer:** Use Developer when the primary audience is someone writing code to connect to Sumo Logic API endpoints, auth flows, and the MCP server. Use Service when the audience is a Sumo Logic user, even if the feature has an API.
+
+---
+
 ## Gotchas
 
 These are Sumo Logic- and repo-specific facts that override general assumptions.
@@ -217,4 +257,4 @@ These are Sumo Logic- and repo-specific facts that override general assumptions.
 - **Numbered list items always use `1.`** (not `1.`, `2.`, `3.`). Docusaurus handles rendering.
 - **Capitalized product terms.** Collector, Source, Hosted Collector, Library. User-created objects (dashboards, folders) are lowercase.
 - **C2C sources and apps have distinct openers.** Do not use the app opener for a source doc or vice versa.
-- **Release notes have their own rules.** Voice, openers (no announcement framing), title date format, and per-folder conventions live in [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide. Apply that section when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`.
+- **Release notes have their own rules.** Apply the section below when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`. The live style guide at [Release notes](/docs/contributing/style-guide/#release-notes) takes precedence if fetched.
