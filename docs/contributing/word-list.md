@@ -129,8 +129,6 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Operators**. "Operators" can refer to [log search operators](/docs/search/search-query-language/search-operators/) or [metrics operators](/docs/metrics/metrics-operators/). When the context is ambiguous, use the full phrase. When referring to an operator by name in prose, capitalize only if it begins a sentence; otherwise write the name lowercase in backticks: `` `where` ``, `` `if` ``.
 
-**Org** / **Organization**. Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
-
 ## P
 
 **Page**. When you name a page in the UI, bold the page name, match its on-screen capitalization, and keep the word "page" lowercase and outside the bold: the **Search** page. Do not use "pane" or "tab" for a page. A tab appears inside a page. (Example: The **Messages** tab appears on the **Search** page.) See **UI labels**, below.

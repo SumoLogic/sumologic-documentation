@@ -20,7 +20,7 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Catalog](/docs/integrations/playbook-templates/#install-an-out-of-the-box-playbook-from-app-catalog) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there is not one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Catalog](/docs/integrations/playbook-templates/#install-an-out-of-the-box-playbook-from-app-catalog) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
 
 :::tip
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
@@ -38,7 +38,7 @@ The following procedure provides a brief introduction to how to create a playboo
     * **Alert**. An [alert](/docs/alerts/) from an [automated playbook in a monitor](/docs/alerts/monitors/use-playbooks-with-monitors/).
     * **Parse from json**. A payload from a [parent playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-a-playbook-node-to-a-playbook). (You can also select this option if you want to pass a custom payload from an alert.)
     * Leave blank if the trigger will run by a Cloud SOAR incident. See [Run playbooks in Cloud SOAR](/docs/cloud-soar/automation/#run-playbooks-in-cloud-soar). <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node-parameters.png')} alt="Types of start node parameters" style={{border:'1px solid gray'}} width="400"/>
-1. When you select one of these options, standard parameters for the trigger type are displayed. (If you select **Parse from json**, a box appears for you to enter the JSON payload.) Click the **Remove** icon to remove any parameters you don't want passed into the playbook, and if you want to add more parameters, click **Add New Param** at the bottom of the dialog.
+1. When you select one of these options, standard parameters for the trigger type are displayed. (If you select **Parse from json**, a box appears for you to enter the JSON payload.) Click the **Remove** icon to remove any parameters you do not want passed into the playbook, and if you want to add more parameters, click **Add New Param** at the bottom of the dialog.
 1. Click **Update**. The playbook will display a black screen with a **Start** node and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. You can drag and drop them anywhere on the screen to allow you space to add multiple nodes between them.
 1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="500"/>
 
@@ -46,7 +46,7 @@ See [Add nodes to a playbook](/docs/platform-services/automation-service/playboo
 
 ## Add nodes to a playbook
 
-You can add nodes to a playbook when you either create a new playbook, or edit an existing playbook. To add a node to a playbook, hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears on the node. A *node* is a step in a playbook. Nodes run in the order they are placed in a playbook. When all nodes run without error, the playbook is considered to have executed successfully.
+You can add nodes to a playbook when you either create a new playbook, or edit an existing playbook. To add a node to a playbook, hover your mouse over an existing node, such as the **Start** node, and click the **+** button that appears on the node. A *node* is a step in a playbook. Nodes run in the order they are placed in a playbook. When all nodes run without error, the playbook is considered to have executed successfully.
 
 See the following sections to learn how to add the following node types:
    * [**Action**](#add-an-action-node-to-a-playbook). Automatically take specific actions such as enriching data or taking containment steps.
@@ -69,7 +69,7 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 :::
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. Hover your mouse over an existing node, such as the **Start** node, and click the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
 1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
 1. Select **Action**. The action node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-action-node-1.png')} style={{border:'1px solid gray'}} alt="Add action node" width="600"/>  
 1. Give a **Node name** that identifies the action being taken.
@@ -82,9 +82,9 @@ Before you can add action nodes to a playbook, you must [configure the connectio
    * **Notification**
    * **Scheduled**
    :::note
-   The **Type** drop-down menu shows only the action types available in the selected integration.
+   The **Type** dropdown menu shows only the action types available in the selected integration.
    :::
-1. Select the **Action** from the drop-down list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" style={{border:'1px solid gray'}} width="600"/>
+1. Select the **Action** from the dropdown list. The dialog updates to show the integration resource that the action originates from, along with additional fields you must fill out to configure how you would like the action to be performed.<br/><img src={useBaseUrl('img/cse/automations-add-action-node.png')} alt="Configure action node" style={{border:'1px solid gray'}} width="600"/>
 1. Fill out the fields with the specific information required by the action. For  more information about the action, you can [view the integration that provides the action](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations).
 1. Deselect the **Cartesian product** checkbox.
    :::warning
@@ -105,7 +105,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 :::
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
+1. Hover your mouse over an existing node and click the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Condition**. The condition node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" style={{border:'1px solid gray'}} width="500"/>
 1. Deselect the **Cartesian product** checkbox.
@@ -116,7 +116,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 1. Draw a line from a previous action node to the new condition node. This is required to allow the condition to evaluate the output values from the previous action.
 1. Now that you've linked the condition to an action, hover the mouse over the condition node and click the edit button on the node to configure the condition settings.<br/><img src={useBaseUrl('img/cse/automations-edit-condition-node.png')} style={{border:'1px solid gray'}} alt="Edit a condition node" width="150"/>
 1. The condition node configuration dialog displays again. Under **Condition1**, click **Select a value**.<br/><img src={useBaseUrl('img/cse/automations-add-a-condition-3.png')} style={{border:'1px solid gray'}} alt="Select values for the condition" width="500"/>
-1. Click **Get Value** and select values from the drop-down menu to use for the condition:
+1. Click **Get Value** and select values from the dropdown menu to use for the condition:
    * **Internal values**. Whether the condition will evaluate to **true (bool)**, **false (bool)**, or **empty**.
    * **Artifact fields**. Fields obtained from [incident artifacts](/docs/cloud-soar/incidents-triage/#incident-generation).
    * **Incident fields**. Fields obtained from [incidents](/docs/cloud-soar/settings/#incidents).
@@ -136,7 +136,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 Define a task to assign to an individual, such as a security analyst.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/>
+1. Hover your mouse over an existing node and click the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Task**. The task node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-task-node.png')} style={{border:'1px solid gray'}} alt="Add task node" width="500"/>
 1. Give the node a **Title** that will display in the playbook.
@@ -178,7 +178,7 @@ Perform the following steps to use the variables in nodes that come after the ta
 When a user choice node is encountered, the execution will pause until a user selects an option. For example, after enrichment, a user could be asked whether to proceed with a containment action or to perform additional enrichment first. When a playbook is paused at a user choice node, the status of that playbook will say **Waiting user interaction**.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
+1. Hover your mouse over an existing node and click the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **User Choice**. The user choice node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-user-choice-node.png')} alt="Add user choice node" style={{border:'1px solid gray'}} width="500"/>
 1. Type a **Question** for the user. The answers they can choose from are provided by the **Answers** field.<br/>If desired, you can click the variable icon <img src={useBaseUrl('img/cse/automations-placeholder-icon.png')} style={{border:'1px solid gray'}} alt="Placeholder icon" width="20"/> and click in the resulting box to display a list of variables you can add to the description.
@@ -215,7 +215,7 @@ Perform the following steps to use the user choice responder variables in nodes 
 
 #### User choice nodes in out-of-the-box playbooks
 
-Here are just a few of the [out-of-the-box playbooks](/docs/integrations/playbook-templates/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
+Here are a few of the [out-of-the-box playbooks](/docs/integrations/playbook-templates/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
 * 18 - DDoS
 * 21 - DLP Alert
 * 24 - DoS with Decision Tree
@@ -228,10 +228,10 @@ Here are just a few of the [out-of-the-box playbooks](/docs/integrations/playboo
 Define a playbook to run inside another playbook. For example, you may want to call another playbook in response to a [condition](#add-a-condition-node-to-a-playbook) statement.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
+1. Hover your mouse over an existing node and click the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Playbook**. The playbook node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-playbook-node.png')} alt="Add playbook node" style={{border:'1px solid gray'}} width="500"/>
-1. In the **Playbook** drop-down menu, select the playbook to run.
+1. In the **Playbook** dropdown menu, select the playbook to run.
 1. Click **Create**.
 
 ### Add a filter node to a playbook
@@ -271,11 +271,11 @@ To use one of these actions, start by adding an action node to a playbook, then 
 When you [add an action node to a playbook](#add-an-action-node-to-a-playbook), you select the type of action to perform from the integration.
 
 1. Either [create a new playbook](#create-a-new-playbook), or edit an existing playbook.
-1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. Hover your mouse over an existing node, such as the **Start** node, and click the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
 1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
 1. Select **Action**.
 1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
-1. Click the **Type** field to select the type of action you want to perform. The drop-down menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
+1. Click the **Type** field to select the type of action you want to perform. The dropdown menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
 1. Click the **Action** field to select the action to run in the playbook. Only actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-cloud-siem.png')} alt="Enrichment actions on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
 1. Proceed with the rest of the steps to [add an action node to a playbook](#add-an-action-node-to-a-playbook).
 
@@ -290,7 +290,7 @@ Containment actions perform some sort of response or remediation action, such as
 * Delete attachments
 * Disconnect devices from the network
 
-Many integrations offer containment actions. Here are just a few:
+Many integrations offer containment actions. Here are a few:
 * [Active Directory V2](/docs/integrations/automation-integrations/active-directory-v2/)
 * [AWS IAM](/docs/integrations/automation-integrations/aws-iam/)
 * [Azure AD](/docs/integrations/automation-integrations/azure-ad/)
@@ -314,7 +314,7 @@ A few [integrations](/docs/integrations/automation-integrations/) also offer act
 
 Enrichment actions enrich data with additional information, such as adding information about a known malicious IP address.
 
-Many integrations offer enrichment actions. Here are just a few:
+Many integrations offer enrichment actions. Here are a few:
 * [Abnormal Security](/docs/integrations/automation-integrations/abnormal-security/)
 * [Atlassian Jira V2](/docs/integrations/automation-integrations/atlassian-jira-v2/)
 * [AWS IAM](/docs/integrations/automation-integrations/aws-iam/)
@@ -332,7 +332,7 @@ Many integrations offer enrichment actions. Here are just a few:
 
 Notification actions send a notification, for example, an email or a post in a messaging service.
 
-Many integrations offer notification actions. Here are just a few:
+Many integrations offer notification actions. Here are a few:
 * [Basic Tools](/docs/integrations/automation-integrations/basic-tools/)
 * [Gmail](/docs/integrations/automation-integrations/gmail/)
 * [Slack](/docs/integrations/automation-integrations/slack/)
@@ -343,7 +343,7 @@ Many integrations offer notification actions. Here are just a few:
 
 Scheduled actions run on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
 
-Many integrations offer scheduled actions. Here are just a few:
+Many integrations offer scheduled actions. Here are a few:
 * [Atlassian Jira V2](/docs/integrations/automation-integrations/atlassian-jira-v2/)
 * [Microsoft Defender ATP](/docs/integrations/automation-integrations/microsoft-defender-atp/)
 * [SentinelOne](/docs/integrations/automation-integrations/sentinelone/)
@@ -363,7 +363,7 @@ Every time you create or edit a playbook, the changes in the playbook are saved 
 To publish a playbook so that others may use it, click the publish button at the top right corner of the playbook window.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
 
 Every time you publish a playbook, a new version of the playbook is retained. You can also click the dropdown to view all the versions of the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-versions-dropdown.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/><br/>
-Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
+Click a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
 
 ## Enable or disable playbooks
 
@@ -396,7 +396,7 @@ When you publish a playbook:
 
 With the mechanism to export and import playbooks, you can move a playbook, along with all its configurations, from one instance to another. You can also use the export function to manage playbooks using Terraform.
 
-1. Click on the **Export** icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
+1. Click the **Export** icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
 1. Select one of the following:
    * **Export All (ZIP Format)**. Exports a tar.gz archive file.
        1. After export, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click the **Import** icon.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="700"/>
