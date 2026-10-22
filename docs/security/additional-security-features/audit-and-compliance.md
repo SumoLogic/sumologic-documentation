@@ -81,7 +81,7 @@ Create filters and search parameters with Sumo Logic to find any data at any tim
 
 #### Step 4: Use out-of-the-box content
 
-Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/pci-compliance), allow you to monitor many security tools you already use.
+Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Out-of-the-box integrations like our [PCI dashboards](/docs/integrations/pci-compliance) let you monitor many security tools you already use.
 
 #### Step 5: Retain data
 
@@ -89,11 +89,11 @@ Retain data for as long as you need it to perform your audit and compliance proc
 
 #### Step 6: Monitor in real-time
 
-Sumo Logic monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
+Sumo Logic monitors incoming data and security controls in real time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
 
 #### Step 7: Create a unified system
 
-Use Sumo Logic's countless data integrations and out-of-the box applications ensure that all data is properly collected and cataloged as it’s generated.
+Use Sumo Logic's countless data integrations and out-of-the-box applications ensure that all data is properly collected and cataloged as it’s generated.
 
 ### Use case: PCI compliance
 

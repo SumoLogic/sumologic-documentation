@@ -123,12 +123,12 @@ Non-nation-state-based threats are categorized by intention, not location. For i
 ---
 #### `report`
 **Data Type:** string<br/>
-**Description:** The report ID that the indicator is associated with (e.g., CSIT-XXXX, CSIR-XXXX, etc). The report list is also represented under the labels list in the JSON data structure.
+**Description:** The report ID that the indicator is associated with (for example, CSIT-XXXX or CSIR-XXXX). The report list is also represented under the labels list in the JSON data structure.
 
 ---
 #### `actor`
 **Data Type:** string<br/>
-**Description:** The named Actor that the indicator is associated with (e.g. panda, bear, spider, etc). The actor list is also represented under the labels list in the JSON data structure.
+**Description:** The named Actor that the indicator is associated with (for example, panda, bear, or spider). The actor list is also represented under the labels list in the JSON data structure.
 
 ---
 #### `malicious_confidence`
@@ -200,7 +200,7 @@ The database is updated once per day. We have implemented a multi-layer cache fo
 
 ### Can I export all of the threats from Sumo Logic?
 
-No, we do not allow an export of the threat Intel feeds as that is confidential to CrowdStrike. However, we will match lookups from your logs against the entire threat database. You will ONLY see data returned when you have a match against the database to a specific threat from your log data (for example, IP, domain, email, etc.) via the lookup operator.
+No, we do not allow an export of the threat Intel feeds as that is confidential to CrowdStrike. However, we will match lookups from your logs against the entire threat database. You will ONLY see data returned when you have a match against the database to a specific threat from your log data (for example, IP address, domain, or email) via the lookup operator.
 
 ### Is threat lookup real-time using Continuous Queries (CQs)?
 

@@ -48,7 +48,7 @@ The database is updated once per day. We have implemented a multi-layer cache fo
 
 ### Can I export all of the threats from Sumo Logic?
 
-No, we do not allow an export of the threat Intel feeds as that is confidential to Intel 471. However, we will match lookups from your logs against the entire threat database. You will ONLY see data returned when you have a match against the database to a specific threat from your log data (for example, IP, domain, email, etc.) via the lookup operator.
+No, we do not allow an export of the threat Intel feeds as that is confidential to Intel 471. However, we will match lookups from your logs against the entire threat database. You will ONLY see data returned when you have a match against the database to a specific threat from your log data (for example, IP address, domain, or email) via the lookup operator.
 
 ### Is threat lookup real-time using Continuous Queries (CQs)?
 
