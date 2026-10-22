@@ -2,7 +2,7 @@
 id: kubernetes
 title: Kubernetes
 sidebar_label: Kubernetes
-description: Sumo Logic Kubernetes provides visibility into worker nodes and their application logs, as well as seamlessly managing the master node control plane, including the API server, etcd, kube-system and worker nodes. With Sumo Logic Kubernetes, you can monitor and troubleshoot container health, replication, load balancing, pod state, and hardware resource allocation. Falco events are utilized to monitor and detect abnormal container, application, host, and network activity.
+description: The Sumo Logic app for Kubernetes provides visibility into worker node and application health, including container health, replication, pod state, and anomalous activity detected by Falco.
 keywords:
   - kubernetes
   - kubernetes app
