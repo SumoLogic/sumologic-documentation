@@ -34,7 +34,7 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
-If your environment restricts internet access, refer to [Packagecloud's security documentation](https://packagecloud.io/docs/security) for the current list of IP ranges to allowlist. For strict firewall policies, mirror the repository and use a configuration management tool (Chef, Puppet, or Ansible) instead of the UI installer.
+If your environment restricts internet access, refer to [Packagecloud's security documentation](https://packagecloud.io/docs/security) for the hostnames to allowlist. For strict firewall policies, mirror the repository and use a configuration management tool (Chef, Puppet, or Ansible) instead of the UI installer.
 
 ### UI Installation
 
