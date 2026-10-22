@@ -124,7 +124,7 @@ The following expression returns true if `A` matches `B` or `A` matches `C`:
 
 `where "A" matches "B" || where "A" matches "C"`
 
-In Cloud SIEM, both sides of the `||` must be boolean. Other values such as string are not supported when using a logical OR operator. 
+In Cloud SIEM, both sides of the `||` must be Boolean. Other values such as string are not supported when using a logical OR operator. 
 
 ### !
 
@@ -590,7 +590,7 @@ The following example returns "1/1/2020":
 
 ### contains
 
-Compares string values of two fields and returns a boolean result based on whether the second field's value exists in the first.
+Compares string values of two fields and returns a Boolean result based on whether the second field's value exists in the first.
 
 **Syntax**
 
@@ -710,7 +710,7 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 
 Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
-* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`, `contains()`, `toString()`, and all the existing operators.
+* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` Boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`, `contains()`, `toString()`, and all the existing operators.
 
 :::note
 Both `contains()` and `toString()` functions are available for any field in the expression. `toString()` is useful when you need to coerce a non-string field (such as, an integer like confidence) to a string before passing it to `contains()`. For `actors` and `kill_chain` specifically, `toString()` is redundant since they are already strings.
@@ -765,6 +765,7 @@ Suppose a custom feed delivers this indicator:
     "domain": "malware.example.com",
     "score": "82",
     "valid_from": "1740000000",
+    "valid_until": "1760000000",
     "data.threat.data.family": "Redline",
     "reputation": "{\"vendor\": {\"name\": \"AcmeIntel\", \"rating\": \"high\"}}"
   }
@@ -948,7 +949,7 @@ The following expression returns "2130706433":
 
 ### isBlank
 
-Checks to see if a string contains text. Specifically, it checks to see if a character sequence is whitespace, empty (""), or null. It takes a single parameter and returns a boolean value: “true” if the variable is blank, or “false” if the variable contains a value other than whitespace, empty, or null.
+Checks to see if a string contains text. Specifically, it checks to see if a character sequence is whitespace, empty (""), or null. It takes a single parameter and returns a Boolean value: “true” if the variable is blank, or “false” if the variable contains a value other than whitespace, empty, or null.
 
 **Syntax**
 
@@ -956,7 +957,7 @@ Checks to see if a string contains text. Specifically, it checks to see if a cha
 
 ### isEmpty
 
-Checks to see if a string contains no characters or whitespace, and returns a boolean value: “true” if the string contains no characters or whitespace, or “false” otherwise.
+Checks to see if a string contains no characters or whitespace, and returns a Boolean value: “true” if the string contains no characters or whitespace, or “false” otherwise.
 
 **Syntax**
 
@@ -964,7 +965,7 @@ Checks to see if a string contains no characters or whitespace, and returns a bo
 
 ### isNull
 
-Checks to see if a string is null, and returns a boolean value: “true” if the string is null, or “false” if the string is not null.
+Checks to see if a string is null, and returns a Boolean value: “true” if the string is null, or “false” if the string is not null.
 
 **Syntax**
 
@@ -986,7 +987,7 @@ qualifier, like 123L.
 
 ### isPrivateIP
 
-Checks if an IPv4 address is private and returns a boolean.
+Checks if an IPv4 address is private and returns a Boolean.
 
 **Syntax**
 
@@ -1000,7 +1001,7 @@ The following expression returns "true":
 
 ### isPublicIP
 
-Checks if an IPv4 address is public and returns a boolean.
+Checks if an IPv4 address is public and returns a Boolean.
 
 **Syntax**
 
@@ -1259,7 +1260,7 @@ Uses Luhn’s algorithm to check message logs for strings of numbers that may be
 
 ### maskFromCIDR
 
-A utility function that returns a subnet mask for boolean operations with IPv4 addresses.
+A utility function that returns a subnet mask for Boolean operations with IPv4 addresses.
 
 **Syntax**
 
@@ -1273,7 +1274,7 @@ The following expression returns "255.255.255.252":
 
 ### matches
 
-Can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with `where` or `if` operators.
+Can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a Boolean value; the operator can be used with `where` or `if` operators.
 
 **Syntax**
 
@@ -1591,11 +1592,11 @@ The following expression returns `http%3A%2F%2Fyourmainserver-city55555.org%2Ffu
 
 ### where
 
-Filters results based on the value of a boolean expression.  
+Filters results based on the value of a Boolean expression.  
 
 **Syntax**
 
-`... | where <boolean expression>`
+`... | where <Boolean expression>`
 
 **Examples**
 

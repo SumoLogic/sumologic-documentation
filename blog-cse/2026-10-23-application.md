@@ -20,7 +20,7 @@ Because the snapshot is captured when the signal is created, it doesn't change i
 Write more precise threat detection rules. The `hasThreatMatch` function now supports:
 
 * The `actors` and `kill_chain` attributes, to match on threat actor names and kill chain phases.
-* The `contains()` and `toString()` functions, to search text values within those attributes.
+* The `contains()` function, to search text, and the `toString()` function, to convert values to strings.
 * `_threatlookup_fields`, to filter on custom fields from your own threat intelligence feeds.
 
 For example, `hasThreatMatch([srcDevice_ip], contains(actors, 'HELIXKITTEN'))` matches only indicators associated with a specific actor. 
