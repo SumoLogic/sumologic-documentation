@@ -200,7 +200,7 @@ Navigate to the directory [sumologic-solution-templates/application-components/]
 2. Run `terraform plan` to view the Sumo Logic resources like monitors,apps,fers,fields and hierarchy which will be created/modified by Terraform.
 3. Run `terraform apply`.
 
-At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click on them to go to the Sumo Logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
+At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click them to go to the Sumo Logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
 
 
 ## Post installation
