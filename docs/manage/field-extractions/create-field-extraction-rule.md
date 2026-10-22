@@ -58,7 +58,7 @@ To create a Field Extraction Rule:
         * Time - At the time of ingestion, only applies to data moving forward. If you want to parse data ingested before the creation of your FER, you can either parse your data in your query, or create Scheduled Views to extract fields for your historical data.
       * Run Time
         * Parsing support - JSON, automatically
-        * Rule limit - none
+        * Rule limit - A Run Time rule keeps a maximum of 200 extracted fields per search. If a rule extracts more than 200 fields, only 200 are kept. This limit is separate from the maximum fields limit for your account.
         * Time - During a search when using **Auto Parse Mode** from [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md).
    * **Scope**. Select either **All Data** or **Specific Data**. When specifying data the options for the scope differ depending on when the rule is applied.
      * For an **Ingest Time** rule, type a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. Think of the scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the scope to run a search against the rule. Custom metadata fields are not supported here, they have not been indexed to your data yet at this point in collection.
