@@ -18,7 +18,6 @@ The Search Job API provides third-party scripts and applications access to your 
 * **[Search Job Management API](#search-job-management-api)**. Built with OpenAPI specifications. Each request is addressed by the search job's `jobId` alone, so it doesn't require session cookies to keep a search job alive between requests. We recommend this version for new integrations.
 * **[Legacy Search Job API](#legacy-search-job-api)**. The earlier version. Requires session cookies to keep a search job alive between requests, and is slower than the OpenAPI-based version.
 
-
 ## Prerequisites
 
 The Search Job API is available to Enterprise accounts.

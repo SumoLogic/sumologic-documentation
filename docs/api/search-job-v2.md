@@ -1,8 +1,8 @@
 ---
 id: search-job-v2
-title: Search Job APIs V2
-sidebar_label: Search Job V2 
-description: Search Job APIs provides access to resources and log data from third-party scripts and applications.
+title: Search Job V2
+sidebar_label: Search Job V2
+description: Search Job APIs provide access to resources and log data from third-party scripts and applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,13 +10,9 @@ import ApiEndpoints from '../reuse/api-endpoints.md';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/icons/search.png')} alt="Search icon" width="55"/>
 
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
-
-:::warning
-Sumo Logic recommends you to use Search Job APIs V2, which are now built with OpenAPI specifications and are included in our [Swagger docs](https://api.sumologic.com/docs). 
-:::
 
 ## Prerequisites
 
@@ -35,7 +31,9 @@ The Search Job API is available to Enterprise accounts.
 |:------------|:-----------------------------------------------------------|
 | AU         | https://api.au.sumologic.com/docs/#tag/searchJobManagement  |
 | CA         | https://api.ca.sumologic.com/docs/#tag/searchJobManagement  |
+| CH         | https://api.ch.sumologic.com/docs/#tag/searchJobManagement  |
 | DE         | https://api.de.sumologic.com/docs/#tag/searchJobManagement  |
+| ESC        | https://api.esc.sumologic.com/docs/#tag/searchJobManagement |
 | EU         | https://api.eu.sumologic.com/docs/#tag/searchJobManagement  |
 | FED        | https://api.fed.sumologic.com/docs/#tag/searchJobManagement |
 | IN         | https://api.in.sumologic.com/docs/#tag/searchJobManagement  |
@@ -66,14 +64,7 @@ An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
 While the search job is running you need to request the job status based on the search job ID. The API keeps the search job alive by either polling for status every 20 to 30 seconds or gathering results. If the search job is not kept alive by API requests, it is canceled. When a search job is canceled for inactivity, you will get a 404 status.
 
-You must enable cookies for subsequent requests to the search job. A 404 status (Page Not Found) on a follow-up request may be due to a cookie not accompanying the request.
-
 There's a query timeout after eight hours, even if the API is polling and making requests. If you are running very few queries, you may be able to go a little longer, but you can expect most of your queries to end after eight hours.
-
-So, a 404 status is generated in these two situations:
-
-* When cookies are disabled.
-* When a query session is canceled.
 
 You can start requesting results asynchronously while the job is running and page through partial results while the job is in progress.
 
