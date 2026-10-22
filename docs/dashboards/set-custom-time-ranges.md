@@ -14,7 +14,7 @@ After changing the time range for a dashboard or panel, you can set the new rang
 
 ## Set time range
 
-You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times.
+You can change the time range for a dashboard or panel by selecting a predefined interval from a dropdown list, choosing a recently used time range, or specifying custom dates and times.
 
 Dashboard panels are limited to a 32-day maximum time range. This limitation does not apply to queries backed by an aggregate scheduled source, such as an aggregate scheduled view, an aggregate scheduled search, or a combination of both. Aggregate scheduled sources are pre-aggregated (or precomputed), which lets queries span longer time windows without exceeding query limits. See [Scheduled Views](/docs/manage/scheduled-views) and [Create a Scheduled Search](/docs/alerts/scheduled-searches/schedule-search) for details.
 
@@ -44,7 +44,7 @@ To set a custom time range:
 
 ## Drill down on a log panel by zooming
 
-When you click and drag to select a time range on a log panel, Sumo Logic automatically recalculates the query's timeslice granularity and re-fetches the panel's data at that finer resolution, so you can drill into spikes, anomalies, and granular trends without editing the underlying query. This zoom is local to the panel you're interacting with. It doesn't change the dashboard's overall time range or affect other panels. To zoom the whole dashboard's time range instead, see [Modify time ranges](#modify-time-ranges).
+When you click and drag to select a time range on a log panel, Sumo Logic automatically recalculates the query's timeslice granularity and re-fetches the panel's data at that finer resolution, so you can drill into spikes, anomalies, and granular trends without editing the underlying query. This zoom is local to the panel you're interacting with. It does not change the dashboard's overall time range or affect other panels. To zoom the whole dashboard's time range instead, see [Modify time ranges](#modify-time-ranges).
 
 To drill down into a log panel:
 
@@ -65,7 +65,7 @@ A dashboard has a default time range defined by its creator. The default time ra
 
 ### Modify time ranges
 
-You can modify the time range in panel to zoom in for granular details, especially for charts with larger compliance periods. To do so, select and drag across date/time and click **Update dashboard time range** button to zoom in further. Now, this time range is considered as a temporary time range and all the time series panels in the dashboard will be zoomed in for the selected time range. This is different from [drilling down on a log panel by zooming](#drill-down-on-a-log-panel-by-zooming), which is local to a single panel and doesn't affect other panels. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/update-dashboard-time-range.png')} alt="Update dashboard time range" style={{border: '1px solid gray'}} width="500"/>
+You can modify the time range in panel to zoom in for granular details, especially for charts with larger compliance periods. To do so, select and drag across date/time and click **Update dashboard time range** button to zoom in further. Now, this time range is considered as a temporary time range and all the time series panels in the dashboard will be zoomed in for the selected time range. This is different from [drilling down on a log panel by zooming](#drill-down-on-a-log-panel-by-zooming), which is local to a single panel and does not affect other panels. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/update-dashboard-time-range.png')} alt="Update dashboard time range" style={{border: '1px solid gray'}} width="500"/>
 
 After you do, the new time range is shown in blue, and a more options menu is available that allows you to revert back to the default, or make it the default time range. <br/><img src={useBaseUrl('img/dashboards/set-custom-time-ranges/dashboard-setting-modified.png')} alt="dash modified" style={{border: '1px solid gray'}} width="800"/>
 

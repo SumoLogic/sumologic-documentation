@@ -15,7 +15,7 @@ A single value chart is useful for summarizing a time series in a single value. 
 
 To add a panel with a single value chart:
 
-1. Create or open a Dashboard and click on **Add Panel > Single Value**.<br/><img src={useBaseUrl('/img/dashboards/panels/single-value-charts/single-value-pane.png')} alt="single value pane" style={{border: '1px solid gray'}} width="600" />
+1. Create or open a dashboard and click **Add Panel > Single Value**.<br/><img src={useBaseUrl('/img/dashboards/panels/single-value-charts/single-value-pane.png')} alt="single value pane" style={{border: '1px solid gray'}} width="600" />
 1. Provide a Metrics or Logs query and press **Enter** for it to run.
 
     **Log query:**
@@ -43,4 +43,4 @@ The boolean single value chart would look like the following.<br/><img src={useB
 
 ## Sparkline
 
-The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operation and you will need to [sort](/docs/search/search-query-language/search-operators/sort) the timeslice as part of the query for the sparkling to render correctly.
+The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](/docs/search/search-query-language/search-operators/timeslice) operation and you will need to [sort](/docs/search/search-query-language/search-operators/sort) the timeslice as part of the query for the sparkline to render correctly.

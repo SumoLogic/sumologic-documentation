@@ -57,9 +57,9 @@ This feature is currently supported only for Database apps. To learn more, go to
 :::
 
 1. Select the **Database View** category.
-1. Select an environment (e.g., `dev` or `prod`).
+1. Select an environment (for example, `dev` or `prod`).
    * **Application Components - Environments Overview** will appear on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
-1. Select from the list of that environment's components (e.g., `Elastisearch Clusters`).
+1. Select from the list of that environment's components (for example, `Elastisearch Clusters`).
    * The respective dashboard will appear in the right nav.
 1. Then choose a specific database .
 1. Drill down into hierarchy to find specific component entities to view dashboards at more granular levels.
@@ -110,7 +110,7 @@ The default filter is displayed in the **Filter** dropdown menu with a **Default
 
 ## Linking to entities
 
-### Obtaining Links
+### Obtaining links
 
 Use the link button to the right of the dashboard title to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/link-explore-dashboard.png')} alt="Link dashboards" />
 
@@ -140,7 +140,7 @@ Filters:
 ```xml
 https://<endpoint>/ui/#//explore/@1628023955694,1628024855694@topology=0000000000000041@cluster=kubernetes@filters@1:cl-tracing-training:_collector,0:kubernetes:_origin
 ```
-Dashboard:
+dashboard:
 * `<dashboardId>` is the unique identifier of the dashboard.
 
 #### Example
@@ -179,7 +179,7 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
 
 ### Step 1: Analyzing the cluster
 
-We suspect there's a problem with a Kubernetes cluster but aren't sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Cluster_Overview.png')} alt="Cluster overview" />
+We suspect there's a problem with a Kubernetes cluster but are not sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Cluster_Overview.png')} alt="Cluster overview" />
 
 ### Step 2: Exploring a namespace
 

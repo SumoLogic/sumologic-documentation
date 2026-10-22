@@ -5,7 +5,7 @@ description: Markdown Syntax options are supported in Dashboards.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The following Markdown Syntax options are supported in Dashboards. When your syntax is supported, you will see "Markdown Supported" near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
+The following Markdown Syntax options are supported in dashboards. When your syntax is supported, you will see "Markdown Supported" near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
 
 :::important
 Images, blockquotes, code blocks, URLs, and email addresses are not supported in the text panels.

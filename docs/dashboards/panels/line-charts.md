@@ -22,7 +22,7 @@ which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/p
 
 To add a panel with a line:
 
-1. Create or open a Dashboard and click on **Add Panel > Time Series**.<br/><img src={useBaseUrl('/img/dashboards/panels/line-charts/time-series-icon.png')} style={{border: '1px solid gray'}} alt="time series icon" width="700"/>
+1. Create or open a dashboard and click **Add Panel > Time Series**.<br/><img src={useBaseUrl('/img/dashboards/panels/line-charts/time-series-icon.png')} style={{border: '1px solid gray'}} alt="time series icon" width="700"/>
 1. Provide a Metric or Log query and press **Enter** for it to run.
 1. Once the query runs, ensure the chart type is set to **Line**.<br/><img src={useBaseUrl('/img/dashboards/panels/line-charts/New-line-chart-setting.png')} style={{border: '1px solid gray'}} alt="New line chart setting" width="800"/>
 1. [Modify the chart](./modify-chart.md) as desired.

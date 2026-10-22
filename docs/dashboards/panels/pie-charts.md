@@ -19,7 +19,7 @@ which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/p
 
 ## Create a pie chart
 
-1. Create or open a Dashboard and click on **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/pie-charts/categorical.png')} alt="categorical" style={{border: '1px solid gray'}} width="600" /> 
+1. Create or open a dashboard and click **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/pie-charts/categorical.png')} alt="categorical" style={{border: '1px solid gray'}} width="600" /> 
 1. Provide a Log or Metric query and press **Enter** for it to run.
 1. Once the query runs you will need to flip the chart type to **Pie**.<br/><img src={useBaseUrl('/img/dashboards/panels/pie-charts/new-pie-chart.png')} alt="new pie chart" style={{border: '1px solid gray'}} width="700" /> 
 1. [Modify the chart](./modify-chart.md) as desired.

@@ -16,7 +16,7 @@ Sankey diagrams are named after Irish Captain Matthew Sankey, an engineer who us
 ## Create a Sankey chart
 
 To add a panel with a Sankey chart:
-1. Create or open a Dashboard and click on **Add Panel > Categorical**. <br/><img src={useBaseUrl('/img/dashboards/panels/sankey-chart/panel_type.png')} alt="FlowDiagram" width="700"/>
+1. Create or open a dashboard and click **Add Panel > Categorical**. <br/><img src={useBaseUrl('/img/dashboards/panels/sankey-chart/panel_type.png')} alt="FlowDiagram" width="700"/>
 1. Type a supported query in the Search box, including `fromstate` and `tostate` arguments and press **Enter** for it to run.
 1. Once the search results appear, select **Sankey** from the **Chart Type** dropdown.<br/><img src={useBaseUrl('/img/dashboards/panels/sankey-chart/chart_type.png')} alt="chart_type" width="800"/>
 1. [Modify the chart](/docs/dashboards/panels/modify-chart/) as desired.

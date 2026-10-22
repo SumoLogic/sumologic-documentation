@@ -47,8 +47,8 @@ Administrator privileges are required to enable the service allowlist.
 
 1. Go to your **Library** and search for the dashboard you want to share.
 1. Right-click the dashboard name in the resulting list.
-1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="Share option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click on the share icon next to the dashboard title.  <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="Share option 2" style={{border: '1px solid gray'}} width="400"/>
-1.  The Share Dashboard dialog appears.
+1. Click **Share** in the context menu. <br/><img src={useBaseUrl('/img/dashboards/share-option.png')} alt="Share option" style={{border: '1px solid gray'}} width="200"/> <br/>Or, click the share icon next to the dashboard title.  <br/><img src={useBaseUrl('/img/dashboards/share-option_2.png')} alt="Share option 2" style={{border: '1px solid gray'}} width="400"/>
+1.  The **Share Dashboard** dialog appears.
 1.  Click **Get shareable URL** to expand that section of the page. <br/><img src={useBaseUrl('/img/dashboards/share-outside.png')} alt="Share outside" width="800"/>
 1.  If you want viewers to see the current time range in the URL, toggle the **Include current time range in the URL** option.
 1.  If you want viewers to see the current variable values in the URL, toggle the **Include current variable values in the URL** option.
@@ -71,15 +71,15 @@ The URL that external users can use to access the dashboard appears under the **
 If you have the [Audit Index](/docs/manage/security/audit-indexes/audit-index) enabled, Sumo Logic logs the key-sharing events. 
 
 When a user shares a dashboard outside of the organization, Sumo Logic logs the following information:
-* Dashboard name
-* Dashboard URL
+* dashboard name
+* dashboard URL
 * Owner name
 * Owner email
 * Visibility (Anyone or Allowlist only)
 
 When someone views a dashboard without signing in, Sumo Logic logs the following information:
-* Dashboard name
-* Dashboard URL
+* dashboard name
+* dashboard URL
 * Owner name
 * Owner email
 * Visibility (Anyone or Allowlist only)

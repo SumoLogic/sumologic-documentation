@@ -49,7 +49,7 @@ You can select parsing mode between manual and [Auto Parse Mode](../../search/ge
 
 ### Link dashboards
 
-You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill-down-to-discover-root-causes.md) you will have an option to click on linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
+You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill-down-to-discover-root-causes.md) you will have an option to click linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
 
 1. Click the **Add Dashboard Link** from the bottom of the general settings menu.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/mar-21-add-dashboard-link.png')} style={{border: '1px solid gray'}} alt="mar 21 add dashboard link" width="400"/>
 1. Click in the **Dashboard Name** input area and select or enter the name of the dashboard you want the panel to link to.
@@ -124,7 +124,7 @@ The ability to modify the threshold allows you to define warning and critical th
             - **less than**. Any value less than the value you specify will violate this threshold.
             - **less than or equal**. Any value less than or equal to the value you specify will violate the threshold.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Threshold_Conditional_icon.png')} style={{border: '1px solid gray'}} alt="Threshold_Conditional_icon" width="400"/>
             :::note
-            You can add upto 10 threshold conditions.
+            You can add up to 10 threshold conditions.
             :::
 
 :::info
