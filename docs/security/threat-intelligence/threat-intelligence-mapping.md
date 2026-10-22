@@ -56,7 +56,7 @@ The `type` object is mapped to the following normalized type values:
 
 ## Intel 471
 
-You can ingest threat indicators from Intel 471 using the [Intel 471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source/). In addition |  Sumo Logic provides an out-of-the-box `SumoLogic_ThreatIntel` source whose indicators are supplied by Intel 471. The same normalization applies to schema in both sources.
+You can ingest threat indicators from Intel 471 using the [Intel 471 Threat Intel Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/intel471-threat-intel-source/). In addition, Sumo Logic provides an out-of-the-box `SumoLogic_ThreatIntel` source whose indicators are supplied by Intel 471. The same normalization applies to schema in both sources.
 
 Following are the normalized values for Intel 471:
 
