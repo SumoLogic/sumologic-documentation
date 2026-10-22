@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Logs for Security is Sumo Logic's unified platform to ingest, store, and analyze security logs in real time for security analytics, threat detection, and compliance reporting. AI-powered search enables teams to quickly find relevant logs, while anomaly detection highlights unusual patterns for further review. 
 
-Unlike fragmented log solutions, Sumo Logic seamlessly integrates across cloud, hybrid, and on-premises environments, reducing complexity and ensuring complete visibility into your infrastructure.
+Unlike fragmented log solutions, Sumo Logic seamlessly integrates across cloud, hybrid, and on-prem environments, reducing complexity and ensuring complete visibility into your infrastructure.
 
 Security teams can quickly access log data for security log management, cloud security monitoring, and compliance reporting. By prioritizing a logs-first approach, Sumo Logic empowers you to move beyond manual log analysis and manage your security posture with greater efficiency.
 
