@@ -81,7 +81,7 @@ You can also keep the daily free Mobot prompts instead of using a credit pool. T
 
 ### SOC Analyst Agent
 
-<img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="45"/>
+<img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="45"/>
 
 Investigate Cloud SIEM insights faster with the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent), which applies agentic reasoning to analyze alerts and deliver evidence-backed verdicts (malicious, suspicious, or benign). It correlates related activity, maps entity relationships, and summarizes findings, so analysts start with an investigation instead of a raw alert. From there, you can continue digging in Mobot using natural language to explore scope, impact, and supporting evidence, then generate a structured incident report to document your findings.
 

@@ -61,7 +61,7 @@ Following are features available with our security solutions. If you have any qu
 | Tags (MITRE ATT&CK, custom tag schema, network blocks) | | &#10003; | |
 | Automation Service | &#10003; | &#10003; | |
 | Open Integration Framework (OIF) | &#10003; | &#10003; | &#10003; |
-| App Central | &#10003; | &#10003; | &#10003; |
+| App Catalog | &#10003; | &#10003; | &#10003; |
 | Playbook |&#10003; | &#10003; | &#10003; |
 | SecOps dashboard | | | &#10003; |
 | Case Manager | | | &#10003; |

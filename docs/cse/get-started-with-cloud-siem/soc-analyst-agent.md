@@ -10,7 +10,7 @@ import Iframe from 'react-iframe';
 import SumoAcademy from '../../reuse/sumo-logic-academy.md';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 
-<img src={useBaseUrl('img/icons/security/soc-analyst-agent-icon.png')} alt="SOC Analyst Agent icon" width="35"/>
+<img src={useBaseUrl('img/icons/operations/soc-analyst-agent.png')} alt="SOC Analyst Agent icon" width="40"/>
 
 The SOC Analyst Agent automatically investigates Cloud SIEM insights and delivers an evidence-backed verdict on each one, so your analysts start every investigation with the groundwork already laid. Your team can continue any investigation conversationally with [Mobot](/docs/search/mobot/), DojoAI's chat interface.
 
@@ -106,7 +106,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
        1. Click **View Details** on the confirmation to see details about the playbook automation, and then you should see a confirmation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
        1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
           :::note
-          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication/).
           :::
           -->
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.

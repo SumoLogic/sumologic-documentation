@@ -34,6 +34,8 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
+If your environment restricts internet access, refer to [Packagecloud's security documentation](https://packagecloud.io/docs/security) for the hostnames to allowlist. For strict firewall policies, mirror the repository and use a configuration management tool (Chef, Puppet, or Ansible) instead of the UI installer.
+
 ### UI Installation
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. 
