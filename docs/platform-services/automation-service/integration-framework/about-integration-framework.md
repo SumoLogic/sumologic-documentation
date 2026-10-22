@@ -41,7 +41,7 @@ Both the integration definition file and the action definition file are YAML fil
      * `perl`
      * `powershell`
      * `python`
-   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
+   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
 * **docker_repo_tag** `*` [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
 * **local_repo** [Boolean] (Cloud SOAR only): Indicates that the Docker image is a local one and not one present in the repository.
 * **configuration** `*`:
