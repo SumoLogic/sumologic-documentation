@@ -153,11 +153,11 @@ This will open the **New SLO** window.
 1. When you're done, click **Save**, which will save the SLO.<br/><img src={useBaseUrl('img/observability/new-slo4.png')} alt="Monitor-based SLO" width="350" />
 
 To edit SLO parameters:
-1. Go to the **SLO** tab, locate your SLO and click on it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
+1. Go to the **SLO** tab, locate your SLO and click it. (If you're unable to find it, try applying filters or go to the search bar at the top and enter the SLO name or folder name.)
 1. Edit definition and other parameters.
 
 To edit SLO parameters from a monitor:
-1. Go to the **Monitors** tab and click on any monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
+1. Go to the **Monitors** tab and click any monitor.<br/><img src={useBaseUrl('img/observability/monitors-tab.png')} alt="Monitor-based SLO" width="500" />
 1. In the panel, click **Monitor-based SLO** to view the list of SLOs associated with that particular monitor.<br/><img src={useBaseUrl('img/observability/monitor-based-slo-panel.png')} alt="Monitor-based SLO" width="800" />
 
 :::important

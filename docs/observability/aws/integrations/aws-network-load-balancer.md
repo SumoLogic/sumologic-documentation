@@ -7,7 +7,7 @@ description: The Sumo Logic Observability integration for AWS Network Load Balan
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The AWS Network Load Balancer service is distributed in OSI Layer 4 (i.e., network) traffic (e.g., TCP, UDP, TLS) and can handle over a million requests per second. 
+The AWS Network Load Balancer service is distributed in OSI Layer 4 (that is, network) traffic (for example, TCP, UDP, TLS) and can handle over a million requests per second.
 
 The AWS Network Load Balancer dashboards provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors.
 

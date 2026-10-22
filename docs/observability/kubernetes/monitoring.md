@@ -14,7 +14,7 @@ Sumo Logic allows you to monitor and troubleshoot your applications in Kubernete
 
 We currently provide four hierarchical Views of the Kubernetes system: Node, Deployment, Service, and Namespace. These views make it easy to traverse your Kubernetes hierarchy to monitor specific components, identify problems, discover root causes, and take progressive action.
 
-* [Node](https://kubernetes.io/docs/concepts/architecture/nodes/): Observe the infrastructure topology of resources (e.g., physical nodes, VMs) on your private cloud, public cloud or bare metal.
+* [Node](https://kubernetes.io/docs/concepts/architecture/nodes/): Observe the infrastructure topology of resources (for example, physical nodes, VMs) on your private cloud, public cloud or bare metal.
 * [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/): Observe how your Kubernetes deployment(s) perform against your specified criteria and manage changes.
 * [Service](https://kubernetes.io/docs/concepts/services-networking/service/): Observe how your Kubernetes Service(s) interacts with your other services within and outside your cluster.
 * [Namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces): Track environments with many users spread across multiple teams, or projects like dev, lab, and prod.
@@ -159,7 +159,7 @@ To add a custom field to a collector, do the following:
     * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point appears when the field doesn't exist yet, or is disabled, in the fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the fields schema or is disabled it is ignored, known as dropped.<br/><img src={useBaseUrl('img/kubernetes/MM_Fields_Key-Value-Pairs.png')} alt="Fields key-value pairs" style={{border: '1px solid gray'}} width="600" />
 1. Click **Save**.
 
-Now, any logs sent to this Collector will have these key-value pairs associated with it. With this association, you can search for `cluster=k8s.dev` or `pod_test=k8s.test` to return your logs.
+Now, any logs sent to this collector will have these key-value pairs associated with it. With this association, you can search for `cluster=k8s.dev` or `pod_test=k8s.test` to return your logs.
 
 ### Leveraging metadata for quicker results
 

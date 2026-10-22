@@ -27,4 +27,4 @@ After the end-of-life date of Root Cause Explorer on 3 June 2025, the feature is
 
 There are no specific preparations or actions that customers need to take as a result of this deprecation and end-of-life. As of the end-of-life date, while Root Cause Explorer will no longer be available in the Sumo Logic interface. Its removal will not have any effect on other existing features and functions that customers may be using.
 
-For any additional questions please reach out to your Sumo Logic Account team or [open a support ticket](https://support.sumologic.com/support/s/) with our Customer Support Team.
+For any additional questions, reach out to your Sumo Logic Account team or [open a support ticket](https://support.sumologic.com/support/s/) with our Customer Support Team.

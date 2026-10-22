@@ -513,7 +513,7 @@ Use this dashboard to:
 * Obtain count of slow queries and unique slow queries.
 * Identify number of slow queries by user, host and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
-* Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
+* Obtain unique slow queries along with execution time, analyzing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />

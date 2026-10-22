@@ -84,7 +84,7 @@ Use this dashboard to:
 
 * Determine the overall deployment frequency. 
 * Monitor trends of successful and failed deploy to determine how it affects deployment frequency.
-* Identify deploys by service, team, and deployment environments (production, test, staging, etc.) to determine areas of improvement.
+* Identify deploys by service, team, and deployment environments (production, test, staging, and similar) to determine areas of improvement.
 * Monitor deployment frequency trends and quickly identify any unexpected highs and lows.
 
 <img src={useBaseUrl('img/sdo/Software-Development-Optimization-Deployment-Frequency.png')} alt="SDO - Deployment Frequency dashboard" style={{border: '1px solid gray'}} width="800" />

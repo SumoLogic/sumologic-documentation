@@ -1338,7 +1338,7 @@ auto_enable_logs_subscription_options = {
 
 Provide an existing Sumo Logic Collector ID. See [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
-If provided, all the provided sources will be created within the collector. If kept empty, a new Collector will be created and all provided sources will be created within that collector.
+If provided, all the provided sources will be created within the collector. If kept empty, a new collector will be created and all provided sources will be created within that collector.
 
 **Default value:**
 
@@ -1372,7 +1372,7 @@ sumologic_existing_collector_details = {
 
 Provide details for the Sumo Logic collector. If not provided, then defaults will be used.
 
-The Collector will be created if any new source is created and sumologic_existing_collector_id is empty.
+The collector will be created if any new source is created and sumologic_existing_collector_id is empty.
 
 **Default value:**
 

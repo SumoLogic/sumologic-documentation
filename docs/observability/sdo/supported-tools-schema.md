@@ -111,7 +111,7 @@ The table below shows how Pull Request events are represented in the schema: 
 | reviewers | This field represents a list of  reviewers. This data is expected to be in the following format: `["john","bob",..]` | Required |
 | datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
 | status | This field represents the status of the pull request event. Values for this field should be set to one of: “merged”, “declined” or “created”. You can also send in other values if applicable as well. | Required |
-| closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (e.g.  created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
+| closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (for example, created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
 | updateddatetime_epoch | This field is used to indicate the last updated date and time in UTC epoch milliseconds of the event. | Required |
 | target_branch | This field is used to indicate the target code branch associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |
 | user | This field indicates the user associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |

@@ -200,7 +200,7 @@ Navigate to the directory [sumologic-solution-templates/application-components/]
 2. Run `terraform plan` to view the Sumo Logic resources like monitors,apps,fers,fields and hierarchy which will be created/modified by Terraform.
 3. Run `terraform apply`.
 
-At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click on them to go to the Sumo Logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
+At the end of the console output, you should see two links, one for Apps Folder and the other for Monitors Folder. You can click them to go to the Sumo Logic portal and view the dashboards and monitors. In case you missed noting down the links after deployment, you can run the `terraform show` command to see those output values again.
 
 
 ## Post installation
@@ -278,7 +278,7 @@ Assuming your last terraform application run was successful and you have the tfs
 3. The above step will deploy new dashboards and new monitors, so after migrating your custom content to these new dashboards, you can delete old FERs and dashboards.
 
 #### How do I view changes introduced in the new version?
-See the [CHANGLELOG.md file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/CHANGELOG.md) for bug fixes or enhancements in the latest solution version.
+See the [CHANGELOG.md file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/CHANGELOG.md) for bug fixes or enhancements in the latest solution version.
 
 #### How do I view all resources created by the solution?  
 See the [RESOURCES.md file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/RESOURCES.md) to view all resources and modules present in the solution.
