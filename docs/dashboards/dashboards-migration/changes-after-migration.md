@@ -33,8 +33,8 @@ This table shows the complete list of features that are changed after the implem
 
 ## Color mapping
 
-Dashboards (Classic) had 6 color schemes, while Dashboards have 11 color schemes. The color mapping from the Classic to the dashboard is shown in the image below.
+Dashboards (Classic) had 6 color schemes, while dashboards have 11 color schemes. The color mapping from the Classic to the dashboard is shown in the image below.
 
-With Dashboards (Classic), you could choose chart colors while setting it up. With Dashboards, you cannot choose your colors upfront, but you can [modify your color palette afterwards](/docs/dashboards/panels/modify-chart/#modifydisplay-settings).
+With Dashboards (Classic), you could choose chart colors while setting it up. With dashboards, you cannot choose your colors upfront, but you can [modify your color palette afterwards](/docs/dashboards/panels/modify-chart/#modifydisplay-settings).
 
 <img src={useBaseUrl('img/dashboards/color-mapping.png')} alt="Color mapping palette" width="800"/>

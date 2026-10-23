@@ -55,23 +55,23 @@ For example: `Create a dashboard with a panel for error rate, a panel for reques
 
 ## Frequently asked questions
 
-### Can you create metrics panels with Mobot?
+### Can I create metrics panels with Mobot?
 
 No. Mobot creates logs panels only from plain-language prompts.
 
-### Can you create more than one panel in the same request?
+### Can I create more than one panel in the same request?
 
 Yes. You can ask for multiple panels in a single prompt, and Mobot adds them together after you confirm.
 
-### Can you update an existing panel with Mobot?
+### Can I update an existing panel with Mobot?
 
 No. Mobot only creates new panels this way. To change an existing panel, edit it from the dashboard UI.
 
-### Can you customize visual settings like legends or axis titles in your prompt?
+### Can I customize visual settings like legends or axis titles in my prompt?
 
 No. Visual settings configuration is not supported, and Mobot ignores any visual settings included in a prompt.
 
-### Does this respect your existing dashboard permissions?
+### Does this respect my existing dashboard permissions?
 
 Yes. Mobot enforces your existing role-based access control (RBAC) settings at the dashboard and panel level when it creates panels this way.
 
@@ -79,7 +79,7 @@ Yes. Mobot enforces your existing role-based access control (RBAC) settings at t
 
 Review the generated panel before confirming. You can reject the suggestion and provide additional guidance.
 
-### Can you edit the generated query?
+### Can I edit the generated query?
 
 Yes. After the panel is created, you can modify it using the standard dashboard editor.
 

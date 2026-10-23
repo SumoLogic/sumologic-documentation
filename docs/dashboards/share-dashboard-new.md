@@ -39,7 +39,7 @@ You can grant the same access right to everyone with whom you share the dashboar
 
 ## Dashboard sharing options
 
-The following example shows the Share Dashboard dialog options you will use to specify with whom to share the dashboard and their access
+The following example shows the **Share Dashboard** dialog options you will use to specify with whom to share the dashboard and their access
 permissions:
 
 * **Share with specific users and roles**. This is where you select the users or roles with whom you wish to share the dashboard.
@@ -67,4 +67,4 @@ To share a dashboard within your organization, do the following:
 
 ## Shareable URL
 
-A URL to your Dashboard is available from the **Shareable URL** section. You have the option to include the current time range or variable values in the URL.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/dashboard-new-shareable-url.png')} alt="dashboard new shareable url" />
+A URL to your dashboard is available from the **Shareable URL** section. You have the option to include the current time range or variable values in the URL.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/dashboard-new-shareable-url.png')} alt="dashboard new shareable url" />

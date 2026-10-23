@@ -60,7 +60,7 @@ Follow the below steps to change the default child org:
 
 ## Log Search page
 
-To create a Dashboard from the [Log Search page](/docs/search/search-across-child-orgs/):
+To create a dashboard from the [Log Search page](/docs/search/search-across-child-orgs/):
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Log Search** page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs** > **Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.
 1. Click the <img src={useBaseUrl('img/search/get-started-search/search-page/child-org-select-button.png')} alt="Child org select button" style={{border: '1px solid gray'}} width="30"/> button to select the child org where you want to query. You can either select one child org or multiple child orgs. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/child-org-dropdown.png')} alt="Child org dropdown" style={{border: '1px solid gray'}} width="800"/>

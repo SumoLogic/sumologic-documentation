@@ -32,7 +32,7 @@ To schedule a dashboard email report, do the following:
    * **Select report width**. Set the width of the report, in pixels, anywhere from 1,500 to 6,000. The default is 1,500. Increase the resolution for a sharper image on large displays, such as wall monitors or TV screens.
    * **Select theme**. Choose **Light** or **Dark** theme for the report. By default, the selected theme matches the dashboard's current theme.
    * **Select variables**. If the dashboard supports template variables, select the values which you need for the scheduled report for the dashboard.
-   * **Select Time Range**. Set the time range for the dashboard by selecting a predefined interval from a drop-down list or by choosing a recently used time range.
+   * **Select Time Range**. Set the time range for the dashboard by selecting a predefined interval from a dropdown list or by choosing a recently used time range.
    * **Select a frequency**. Choose the frequency settings for the scheduled dashboard report: 
       * **Frequency**. Choose the frequency Daily, Weekly, or Monthly.
       * **Every.** The options depend on the Frequency you selected.
@@ -78,7 +78,7 @@ To cancel a scheduled report:
 1. Click the kebab menu and select **Delete** against the required report.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/delete_scheduled_report_1.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 1. In the popup window, click **Delete**. <br/><img src={useBaseUrl('img/dashboards/scheduled_reports/delete_scheduled_report.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="500"/>
 
-## Duplicate a Scheduled Report
+## Duplicate a scheduled report
 
 To duplicate to an existing a Scheduled Report:
 
@@ -86,7 +86,7 @@ To duplicate to an existing a Scheduled Report:
 1. Click the kebab menu and select **Save As...** against the required report.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/duplicate_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 1. Make your desired changes. When you're done, click **Schedule**. <br/><img src={useBaseUrl('/img/dashboards/scheduled_reports/scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 
-## Subscribe/Unsubscribe to a Scheduled Report
+## Subscribe/unsubscribe to a scheduled report
 
 :::info
 You will not be able to unsubscribe if you are the only recipient.

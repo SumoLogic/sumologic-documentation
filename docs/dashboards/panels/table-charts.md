@@ -17,7 +17,7 @@ which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/p
 
 To add a panel with a table chart:
 
-1. Create or open a Dashboard and click on **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/time-series-or-categorical.png')} alt="time series or categorical" style={{border: '1px solid gray'}} width="600" />
+1. Create or open a dashboard and click **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/time-series-or-categorical.png')} alt="time series or categorical" style={{border: '1px solid gray'}} width="600" />
 1. Provide a Metric or Log query and press **Enter** for it to run. You can create Log and Metric queries on the same panel.
 
     **Log query:**

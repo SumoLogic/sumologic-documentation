@@ -6,7 +6,7 @@ description: Find answers to frequently asked questions about our Dashboards.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## How do I convert a Classic Dashboard to the dashboard framework?
+## How do I convert a Classic dashboard to the dashboard framework?
 
 There is **not** an automatic conversion method from classic dashboards to the dashboard framework. The best way to convert a classic dashboard to the dashboard framework is to manually transfer over the panels you want to migrate. See [Steps to Migrate](/docs/dashboards/dashboards-migration/steps-to-migrate).
 

@@ -133,11 +133,11 @@ Text can clarify what you are showing on dashboards or act as a note to your v
 
 Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](markdown-syntax.md).
 
-There is no limit to the number of Text Panels you can add to Dashboards. These types of Panels do not count against the quota in Sumo Logic Free accounts.
+There is no limit to the number of Text Panels you can add to dashboards. These types of Panels do not count against the quota in Sumo Logic Free accounts.
 
 To add a Text Panel:
 
-1. With the Dashboard open, click the **Add Panel** button.<br/><img src={useBaseUrl('/img/dashboards/panels/add-panel.png')} style={{border: '1px solid gray'}} alt="add panel" width="800"/>
+1. With the dashboard open, click the **Add Panel** button.<br/><img src={useBaseUrl('/img/dashboards/panels/add-panel.png')} style={{border: '1px solid gray'}} alt="add panel" width="800"/>
 1. Choose **Text **as the Panel Type**.** 
 1. The **Text Editor** and **Visual Settings** are displayed.<br/><img src={useBaseUrl('/img/dashboards/panels/Display-options.png')} style={{border: '1px solid gray'}} alt="Display options" width="800"/>
     1. Input your **Text** or **Markdown** syntax in the **Text Editor** pane. See [Markdown Syntax](markdown-syntax.md) for details on what is supported.
@@ -150,9 +150,9 @@ To add a Text Panel:
 
 ### Add links to text panels
 
-Text panels can provide links to URLs or other Dashboards with markdown syntax. To create a link to a URL, surround your linked text with square brackets `[]`, then add your URL in parenthesis `()`, as shown.
+Text panels can provide links to URLs or other dashboards with markdown syntax. To create a link to a URL, surround your linked text with square brackets `[]`, then add your URL in parenthesis `()`, as shown.
 
-To add a link to a Panel in order to drill down to another Dashboard, see [Add Dashboard Link](/docs/dashboards/panels/#add-links-to-text-panels).
+To add a link to a Panel in order to drill down to another dashboard, see [Add Dashboard Link](/docs/dashboards/panels/#add-links-to-text-panels).
 
 ### Syntax
 
@@ -170,7 +170,7 @@ The link is displayed is in the panel.
 
 The [Services List and Map](/docs/apm/services-list-map) views display high-level views of your application environment, giving you a greater insight into your application architecture and dependencies between monitored microservices.
 
-The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
+The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
 You can filter the map according to application and service. See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.<br/><img src={useBaseUrl('/img/dashboards/panels/panel-service.png')} style={{border: '1px solid gray'}} alt="Panel service" width="800"/>
 
@@ -190,7 +190,7 @@ To add a Services panel:
 
 <img src={useBaseUrl('/img/dashboards/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="Icon trace list" width="75"/>
 
-Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/spans), and a breakdown of services. The panel panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel. 
+Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/spans), and a breakdown of services. The panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel. 
 
 See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
@@ -205,7 +205,7 @@ To add a Traces panel:
 1. With the dashboard open, click the **Add Panel** button. <br/><img src={useBaseUrl('/img/apm/traces/add-tracelist.png')} style={{border: '1px solid gray'}} alt="add-tracelist" width="800"/>
 1. A panel configuration page opens. <br/><img src={useBaseUrl('/img/dashboards/panels/create-tracelist.png')} style={{border: '1px solid gray'}} alt="create-tracelist" width="800"/>
 1. Configure a [Trace query](/docs/apm/traces/view-and-investigate-traces) to search for desired set of traces. 
-1. Select a time range or [create a custom range](/docs/dashboards/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.<br/><img src={useBaseUrl('/img/dashboards/panels/timerange.png')} style={{border: '1px solid gray'}} alt="timerange" width="300"/>
+1. Select a time range or [create a custom range](/docs/dashboards/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the dashboard panel.<br/><img src={useBaseUrl('/img/dashboards/panels/timerange.png')} style={{border: '1px solid gray'}} alt="timerange" width="300"/>
 1. Select **Chart Type** as either:
    1. **Table**. showing table with traces.
    1. **Breakdown chart**. showing aggregated Trace Duration Breakdown Chart.  
@@ -219,7 +219,7 @@ To add a Traces panel:
     | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
     | Duration | 12.582 ms | The amount of time the trace spans.  |
     | Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
-    | Duration Breakdown | <img src={useBaseUrl('/img/apm/traces/breakdown.png')} style={{border: '1px solid gray'}} alt="breakdown" width="800"/> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('/img/apm/traces/span-hover-view.png')} style={{border: '1px solid gray'}} alt="span hover" width="800"/> |
+    | Duration Breakdown | <img src={useBaseUrl('/img/apm/traces/breakdown.png')} style={{border: '1px solid gray'}} alt="breakdown" width="800"/> | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/><img src={useBaseUrl('/img/apm/traces/span-hover-view.png')} style={{border: '1px solid gray'}} alt="span hover" width="800"/> |
     | Number of errors | 0 | The number of errors in the trace. |
     | Status | 200 | The HTTP status code of the trace. |
 1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('/img/apm/traces/tracelist-details.png')} style={{border: '1px solid gray'}} alt="tracelist details" width="400"/>
@@ -229,7 +229,7 @@ To add a Traces panel:
 
 You can delete a panel that you no longer need.
 
-1. Go to the Dashboard in Sumo Logic that has the panel you want to delete.
+1. Go to the dashboard in Sumo Logic that has the panel you want to delete.
 1. Hover the cursor over the **Details** icon to display the pop-up menu. <br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/details-option.png')} style={{border: '1px solid gray'}} alt="details option" width="800"/>
 1. Select **Delete**. <br/><img src={useBaseUrl('/img/dashboards/panels/delete-panel/delete-a-panel.png')} style={{border: '1px solid gray'}} alt="delete a panel" width="800"/>
 1. In the confirmation dialog, click **Delete Panel** to remove the panel, or **Cancel** to keep it.

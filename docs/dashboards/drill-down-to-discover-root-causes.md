@@ -15,7 +15,7 @@ Not all error states will provide related content links.
 
 To discover and view related content, do the following:
 
-1. Sign in to Sumo Logic and open the Dashboard.
+1. Sign in to Sumo Logic and open the dashboard.
 1. Select the graph data point you are interested in. In the following screenshot, we selected a bar in a bar chart. A panel appears on the right of the window with details and a list of related content links.<br/><img src={useBaseUrl('/img/dashboards/drill-root-causes/details-pane.png')} alt="details pane" style={{border: '1px solid gray'}} width="800" />
 
 ## Summary tab
@@ -53,12 +53,12 @@ Alerts are only visible when the [Time Selector](#time-selector) is set to **No
 
 Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered.<br/><img src={useBaseUrl('/img/dashboards/drill-root-causes/monitor-types.png')} alt="monitor types" style={{border: '1px solid gray'}} width="200" />
 
-Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.<br/><img src={useBaseUrl('/img/dashboards/drill-root-causes/triggered-monitors.png')} alt="triggered monitors" style={{border: '1px solid gray'}} width="400" />
+Click the **Triggered monitors** row to view the related Monitors. You can click them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.<br/><img src={useBaseUrl('/img/dashboards/drill-root-causes/triggered-monitors.png')} alt="triggered monitors" style={{border: '1px solid gray'}} width="400" />
 
 ## Limitations
 
 * Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, Application Components, and Host domains are supported.
-* A few Panel types do not support the features documented on this page. You will not have the option to click on a data point to view the Summary and Entities tabs on the following Panel types:
+* A few Panel types do not support the features documented on this page. You will not have the option to click a data point to view the Summary and Entities tabs on the following Panel types:
     * [Single Value Panel](/docs/dashboards/panels#single-value-panel)
     * [Map Panel](/docs/dashboards/panels#map-panel)
     * [Text Panel](/docs/dashboards/panels#text-panel)
