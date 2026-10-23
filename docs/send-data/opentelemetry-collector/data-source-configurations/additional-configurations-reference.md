@@ -65,7 +65,11 @@ Setting the clobber flag to `true` deletes (clobbers) any existing collector wit
 
 Use `clobber: true` only when the original collector with that name is no longer running, for example after you delete and recreate a VM. If two running collectors share a name and both set `clobber: true`, each one deletes the other when it registers. The two collectors then keep deregistering and reinstalling each other in a loop.
 
-To prevent this loop, Sumo Logic rate limits registrations that use `clobber: true`. The limit applies to each collector name in your organization. After about 50 registration attempts with the same collector name within an hour, Sumo Logic rejects further attempts with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`) and records an audit event. Registrations that don't set `clobber: true` aren't affected.
+To prevent this loop, Sumo Logic rate limits OT Collector registrations that use `clobber: true`. The limit applies to each collector name in your organization. After about 50 registration attempts with the same collector name within an hour, Sumo Logic rejects further attempts with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`). Registrations that don't set `clobber: true` aren't affected.
+
+:::note
+This rate limit applies to OT Collector only. It doesn't apply to Installed Collector registrations.
+:::
 
 The registration fails with the following message:
 
@@ -77,7 +81,8 @@ To avoid or resolve a rejected registration:
 
 1. Use a unique `collector_name` for each machine. Set the `collector_name` property under `extensions.sumologic`.
 1. Use `clobber: true` only to replace a collector that is no longer running. If the same name is in use by a running collector, remove `clobber: true`.
-1. Restart the collector. If the rate limit was reached, wait for the one-hour window to pass before you register again.
+1. If the rate limit was reached, stop all registration attempts with that name and wait about an hour before you try again. Each attempt, including a rejected one, resets the one-hour timer.
+1. Restart the collector.
 
 For more information, see [Registration is rejected with an HTTP 429 error when `clobber` is enabled](/docs/send-data/opentelemetry-collector/troubleshooting/#registration-is-rejected-with-an-http-429-error-when-clobber-is-enabled).
 
