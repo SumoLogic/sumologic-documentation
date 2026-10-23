@@ -772,8 +772,6 @@ html[data-theme='light'] .table-of-contents__left-border {
       background: none;
       padding: 0;
       border: 0;
-      font-size: inherit;
-      font-weight: inherit;
     }
   }
 
@@ -785,7 +783,7 @@ html[data-theme='light'] .table-of-contents__left-border {
     border-left: 4px solid;
 
     code {
-      font-weight: inherit;
+      font-weight: 600;
       color: var(--ifm-font-color-base);
       white-space: nowrap;
     }
