@@ -43,7 +43,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 ## DORA Metrics Dashboards
 
-These dashboards calculate four DORA metrics that help measure application release velocity and availability. The Software Development Optimization - DORA Metrics dashboard resides in the top-level folder created at app install time and detailed dashboards that help you drill-down into the individual metrics reside in the DORA Metrics folder.
+These dashboards calculate four DORA metrics that help measure application release velocity and availability. The Software Development Optimization - DORA Metrics dashboard resides in the top-level folder created at app install time and detailed dashboards that help you drill down into the individual metrics reside in the DORA Metrics folder.
 
 ### SDO - DORA Metrics Overview
 
@@ -84,7 +84,7 @@ Use this dashboard to:
 
 * Determine the overall deployment frequency. 
 * Monitor trends of successful and failed deploy to determine how it affects deployment frequency.
-* Identify deploys by service, team, and deployment environments (production, test, staging, etc.) to determine areas of improvement.
+* Identify deploys by service, team, and deployment environments (production, test, staging, and similar) to determine areas of improvement.
 * Monitor deployment frequency trends and quickly identify any unexpected highs and lows.
 
 <img src={useBaseUrl('img/sdo/Software-Development-Optimization-Deployment-Frequency.png')} alt="SDO - Deployment Frequency dashboard" style={{border: '1px solid gray'}} width="800" />
@@ -162,7 +162,7 @@ For the Active Development and Review & Merge times to be accurate, the followin
 
 ## CI/CD Pipeline Monitoring
 
-These dashboards help you monitor and troubleshoot issues in individual phases of your DevOps pipelines. The Software Development Optimization - Pipeline Overview dashboard resides in the top-level folder created at app install time and detailed dashboards that help you drill-down into the individual metrics reside in the “CI/CD Pipeline Monitoring” folder.
+These dashboards help you monitor and troubleshoot issues in individual phases of your DevOps pipelines. The Software Development Optimization - Pipeline Overview dashboard resides in the top-level folder created at app install time and detailed dashboards that help you drill down into the individual metrics reside in the “CI/CD Pipeline Monitoring” folder.
 
 ### SDO - Pipeline Overview
 
@@ -181,10 +181,10 @@ The **Software Development Optimization- Alerts** dashboard provides insights in
 
 Use this dashboard to:
 
-* Quickly identify and drill-down into high priority alerts and drill down into them.
+* Quickly identify and drill down into high priority alerts and drill down into them.
 * Identify services that are impacted most by production incidents.
 * Determine teams that are overloaded with production alerts.
-* Monitor trends to identify and drill-down into unexpected behavior.
+* Monitor trends to identify and drill down into unexpected behavior.
 
 <img src={useBaseUrl('img/sdo/Software-Development-Optimization-Alerts.png')} alt="SDO - Alerts dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -195,7 +195,7 @@ The **Software Development Optimization- Deployment** dashboard provides detaile
 Use this dashboard to:
 
 * Determine if code was successfully deployed to a given production or non-production environment. 
-* Identify and drill-down into commits that led to failed deployments or that led to production or testing issues.
+* Identify and drill down into commits that led to failed deployments or that led to production or testing issues.
 * Identify which services and teams have the most deployment failures.
 * Monitor successful/failure deploy events across repositories, services, teams, and environments.
 

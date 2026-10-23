@@ -1208,7 +1208,7 @@ For `lambda_log_forwarder_config` (used with Lambda Log Forwarder):
 * Provide your `email_id` to receive alerts. You will receive a confirmation email after the deployment is complete. Follow the instructions in this email to validate the address.
 * `IncludeLogGroupInfo`. Set to `true` to include loggroup/logstream values in logs. For AWS Lambda Logs IncludeLogGroupInfo must be set to `true`.
 * `logformat`. For Lambda, the value should be set to "Others".
-* `log_stream_prefix`. Enter a comma-separated list of logStream name prefixes to filter by logStream. Please note this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s). LogGroup(s) still need to be subscribed to the created Lambda function.
+* `log_stream_prefix`. Enter a comma-separated list of logStream name prefixes to filter by logStream. Note that this is separate from a logGroup. This is used to only send certain logStreams within a CloudWatch logGroup(s). LogGroup(s) still need to be subscribed to the created Lambda function.
 * `workers`. Number of lambda function invocations for CloudWatch logs source Dead Letter Queue processing.
 
 **Default value:**
@@ -1338,7 +1338,7 @@ auto_enable_logs_subscription_options = {
 
 Provide an existing Sumo Logic Collector ID. See [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration).
 
-If provided, all the provided sources will be created within the collector. If kept empty, a new Collector will be created and all provided sources will be created within that collector.
+If provided, all the provided sources will be created within the collector. If kept empty, a new collector will be created and all provided sources will be created within that collector.
 
 **Default value:**
 
@@ -1372,7 +1372,7 @@ sumologic_existing_collector_details = {
 
 Provide details for the Sumo Logic collector. If not provided, then defaults will be used.
 
-The Collector will be created if any new source is created and sumologic_existing_collector_id is empty.
+The collector will be created if any new source is created and sumologic_existing_collector_id is empty.
 
 **Default value:**
 
@@ -1554,9 +1554,9 @@ Error: waiting for S3 Bucket Policy (bucket-name) delete: found resource
 #### Solution
 Run `terraform destroy` again.
 
-### Field with the given id can't be deleted because it is in use
+### Field with the given id cannot be deleted because it is in use
 #### Error Message
-`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id can't be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
+`"errors":[{"code":"field:cant_be_deleted","message":"Field with the given id cannot be deleted because it is in use","meta":{"reason":"Field is used in the Field Extraction Rule"}}]`
 #### Solution
 Run `terraform destroy` again.
 

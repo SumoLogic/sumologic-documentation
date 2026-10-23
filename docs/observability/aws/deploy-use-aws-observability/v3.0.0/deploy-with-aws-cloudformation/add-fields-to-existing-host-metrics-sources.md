@@ -63,7 +63,7 @@ This section provides a listing of configuration prompts for the CloudFormation 
 
 An existing stack can be updated using a new version of CloudFormation template or the same version of the CloudFormation template.
 
-To update an existing stack, please follow the steps below:
+To update an existing stack, follow the steps below:
 
 1. Locate the **Main Stack** created using CloudFormation template and Click **Update**.  <br/>  <img src={useBaseUrl('img/observability/add-fields3.png')} alt="Update button" style={{border: '1px solid gray'}} width="800" />
 1. Select ‘Use Current Template’ and select **Next**.<br/><img src={useBaseUrl('img/observability/add-fields4.png')} alt="Select Use Current Template" style={{border: '1px solid gray'}} width="800" />
@@ -72,7 +72,7 @@ To update an existing stack, please follow the steps below:
 1. On the **Review** page, check the **Change set preview** for potential updates. <br/><img src={useBaseUrl('img/observability/add-fields6.png')} alt="Change set preview" style={{border: '1px solid gray'}} width="800" />
 1. Select the capabilities and Click **Update stack**. <br/><img src={useBaseUrl('img/observability/add-fields7.png')} alt="Update stack" style={{border: '1px solid gray'}} width="800" />
 
-1. After the update is completed successfully, you can see **UPDATE_COMPLETE** status. If the update is not successful, please correct the errors and run the CloudFormation template again. 
+1. After the update is completed successfully, you can see **UPDATE_COMPLETE** status. If the update is not successful, correct the errors and run the CloudFormation template again.
 
 ## Multi-region installation using StackSets
 

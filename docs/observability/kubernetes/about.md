@@ -82,7 +82,7 @@ A node is a worker machine in a Kubernetes cluster that serves as a delivery veh
 
 Each node is managed by the cluster and contains the services necessary to run pods. Node services include kubelet and kube-proxy.
 
-<img src={useBaseUrl('img/kubernetes/Intro_Nodes-and-Pods.png')} alt="Inroduction to nodes and pods" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/kubernetes/Intro_Nodes-and-Pods.png')} alt="Introduction to nodes and pods" style={{border: '1px solid gray'}} width="600" />
 
 #### Kubelet
 

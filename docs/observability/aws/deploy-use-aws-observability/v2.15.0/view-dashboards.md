@@ -27,7 +27,7 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 [Monitoring dashboards](/docs/dashboards/explore-view/) provide an intuitive visual representation of your environment.
 
-Go to the [AWS Observibility Solution](/docs/observability/aws) tab in the home page or do the following:
+Go to the [AWS Observability Solution](/docs/observability/aws) tab in the home page or do the following:
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu.  
 1. In the navigation panel, make a selection for the hierarchy to view. The contents of your selection appear below.
@@ -48,7 +48,7 @@ To investigate services in your AWS environment, do the following:
 
 ## Drill down for root cause analysis
 
-From each level in the hierarchy, you can drill-down to individual entities by opening any logs or metrics dashboard panel. To do so:
+From each level in the hierarchy, you can drill down to individual entities by opening any logs or metrics dashboard panel. To do so:
 
 Select the graph data point you are interested in. In the following screenshot, we selected 5xx Error Codes by Load Balancer in the honeycomb graph. A list of related content links for our failed pod appears in a panel on the right.
 
