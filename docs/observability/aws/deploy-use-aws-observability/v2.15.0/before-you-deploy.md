@@ -121,16 +121,16 @@ If desired, you can run the AWS CloudFormation template from the AWS CLI, using 
 
 ### Configure Host Metrics sources 
 
-Follow the instructions in this section to configure an Sumo Logic Installed Collector and a Host Metrics Source on each of your AWS EC2 hosts. You will assign `account` and `Namespace` metadata fields to the sources so that incoming logs and metrics will be appropriately tagged.
+Follow the instructions in this section to configure a [Sumo Logic Installed Collector](/docs/send-data/installed-collectors/) and a [Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source) on each of your AWS EC2 hosts. You will assign `account` and `Namespace` metadata fields to the sources so that incoming logs and metrics will be appropriately tagged.
 
 :::note
-This step is not necessary if you already have an Installed Collector and Host Metrics tagged with account and Namespace metadata fields.
+This step is not necessary if you already have an installed collector and Host Metrics tagged with account and Namespace metadata fields.
 :::
 
 Perform these steps for each EC2 host.
 
-1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors/).
-1. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/#manuallyconfigure-a-host-metrics-source). 
+1. Set up a [Sumo Logic Installed Collector](/docs/send-data/installed-collectors/).
+1. Add a Host Metrics Source to the installed collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/#manuallyconfigure-a-host-metrics-source).
 1. In the **Fields** portion of the configuration:
    1. Add a field named `account`, and set it to your AWS account alias.
    1. Add a field `Namespace` named and set it to `AWS/EC2`. 
