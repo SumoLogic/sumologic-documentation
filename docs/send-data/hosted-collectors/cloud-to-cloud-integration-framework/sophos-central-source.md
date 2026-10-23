@@ -5,7 +5,7 @@ sidebar_label: Sophos Central
 keywords:
   - cloud-to-cloud
   - sophos-central
-description: The Sophos Central Source provides a secure endpoint to receive authentication logs from the Sophos Central APIs.
+description: The Sophos Central Source provides a secure endpoint to receive alerts, events, cases, and detections from the Sophos Central APIs.
 ---
 
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="Sophos icon" width="60"/>
 
-The Sophos Central Source provides a secure endpoint to receive authentication logs from the [Sophos Central APIs](https://developer.sophos.com/). It securely stores the required authentication, scheduling, and state tracking information.
+The Sophos Central Source provides a secure endpoint to receive alerts, events, cases, and detections from the [Sophos Central APIs](https://developer.sophos.com/). It securely stores the required authentication, scheduling, and state tracking information.
 
 :::note
 To link the endpoint data to the alert, you can map the `alert.ManagedAgent.ID` field from the alert response with the `endpointID` field from the endpoint response.
@@ -23,8 +23,10 @@ To link the endpoint data to the alert, you can map the `alert.ManagedAgent.ID` 
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts](https://developer.sophos.com/docs/common-v1/1/routes/alerts/get), Endpoint data is consumed for alerts with a product value of type `endpoint` from the Sophos [Endpoint API](https://developer.sophos.com/docs/endpoint-v1/1/routes/endpoints/get).|
-| 5 min |  [Events](https://developer.sophos.com/docs/siem-v1/1/routes/events/get) |
+| 5 min | [Alerts](https://developer.sophos.com/docs/common-v1/1/routes/alerts/get). Endpoint data is consumed for alerts with a product value of type `endpoint` from the Sophos [Endpoint API](https://developer.sophos.com/docs/endpoint-v1/1/routes/endpoints/get). |
+| 5 min | [Events](https://developer.sophos.com/docs/siem-v1/1/routes/events/get) |
+| 5 min | [Cases](https://developer.sophos.com/docs/cases-v1/1/overview). Security investigation cases including incidents, hunts, and investigations. |
+| 5 min | [Detections](https://developer.sophos.com/docs/detections-v1/1/overview). Security detections with MITRE ATT&CK mapping, device information, and threat context. |
 
 ## Setup
 
@@ -54,7 +56,7 @@ To configure a Sophos Central Source:
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 1. **Client ID**. Provide the Sophos Central Client ID you want to use to authenticate collection requests.
 1. **Client Secret**. Provide the Sophos Central Client Secret you want to use to authenticate collection requests.
-1. **Supported APIs to collect**. Select one or more of the available APIs, **Alerts** and **Events**.
+1. **Supported APIs to collect**. Select one or more of the available APIs: **Alerts**, **Events**, **Cases**, and **Detections**.
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs. This sets how often the Source checks for new data.
 1. **Processing Rules for Logs (Optional)**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
 1. When you are finished configuring the Source, click **Submit**.
@@ -70,7 +72,7 @@ After configuring the Sophos source, consider installing the Sumo Logic app for 
 | `_siemVendor` | `Sophos` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Sophos Central` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<eventId>` | Populated by the alert category. This will be one of the following values: azure, adSync, applicationControl, appReputation, blockListed, connectivity, cwg, denc, downloadReputation, endpointFirewall, fenc, forensicSnapshot, general, iaas, iaasAzure, isolation, malware, mtr, mobiles, policy, protection, pua, runtimeDetections, security, smc, systemHealth, uav, uncategorized, updating, utm, virt, wireless, or xgEmail. |
+| `_siemEventID` | `<eventId>` | Set based on the API type: for **Alerts**, populated by the alert category (one of: azure, adSync, applicationControl, appReputation, blockListed, connectivity, cwg, denc, downloadReputation, endpointFirewall, fenc, forensicSnapshot, general, iaas, iaasAzure, isolation, malware, mtr, mobiles, policy, protection, pua, runtimeDetections, security, smc, systemHealth, uav, uncategorized, updating, utm, virt, wireless, or xgEmail); for **Events**, set to the event type; for **Cases**, set to the case type (for example, `incident` or `hunt`); for **Detections**, set to the detection type (for example, `Threat`). |
 
 ## JSON schema
 
@@ -92,7 +94,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | clientId | String | Yes | `null` | Provide the Sophos Client ID you want to use to authenticate collection requests. |  |
 | clientSecret` | String | Yes | `null` | Provide the Sophos Secrete you want to use to authenticate collection requests. |  |
-| supported_apis | Array of strings | Yes | `null`  | Define one or more of the available APIs to collect: Events, and Alerts.| `["Events","Alerts"]` |
+| supported_apis | Array of strings | No | `["alerts"]`  | Define one or more of the available APIs to collect: `alerts`, `events`, `cases`, and `detections`. | `["alerts","events","cases","detections"]` |
 | pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
 ### JSON example
