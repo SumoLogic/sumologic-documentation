@@ -124,7 +124,7 @@ The following expression returns true if `A` matches `B` or `A` matches `C`:
 
 `where "A" matches "B" || where "A" matches "C"`
 
-In Cloud SIEM, both sides of the `||` must be Boolean. Other values such as string are not supported when using a logical OR operator. 
+In Cloud SIEM, both sides of the `||` must be boolean. Other values such as string are not supported when using a logical OR operator. 
 
 ### !
 
@@ -590,15 +590,14 @@ The following example returns "1/1/2020":
 
 ### contains
 
-Compares string values of two fields and returns a Boolean result based on whether the second field's value exists in the first.
+Compares string values of two fields and returns a boolean result based on whether the second field's value exists in the first.
 
 **Syntax**
 
 `contains(<field1>, <field2>)`
 
 :::note
-- Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here.
-- `contains()` performs a case-sensitive substring match. The value must match the casing of the stored data exactly. CrowdStrike actor names are typically uppercase. For example, `HELIXKITTEN`.
+Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here. 
 :::
 
 ### cos
@@ -710,17 +709,13 @@ When an entity is processed by a rule using the `hasThreatMatch` function and is
 
 Parameters:
 * **`<fields>`**. A list of comma-separated [field names](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/schema/full_schema.md). At least one field name is required.
-* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` Boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`, `contains()`, `toString()`, and all the existing operators.
-
-:::note
-Both `contains()` and `toString()` functions are available for any field in the expression. `toString()` is useful when you need to coerce a non-string field (such as, an integer like confidence) to a string before passing it to `contains()`. For `actors` and `kill_chain` specifically, `toString()` is redundant since they are already strings.
-:::
+* **`<filters>`**. A logical expression using [indicator attributes](/docs/security/threat-intelligence/upload-formats/#normalized-json-format). Allowed in the filtering are parentheses `()`; `OR` and `AND` boolean operators; comparison operators `=`, `<`, `>`, `=<`, `>=`, `!=`; and any other [Cloud SIEM rules syntax](#rules-language-functions) function, such as `contains()` and `toString()`.
 
 You can filter on the following indicator attributes:
-   * `actors`. Names of threat actors associated with the indicator, stored as a comma-separated string. For example `contains(actors, 'HELIXKITTEN')`.
+   * `actors`. Names of threat actors associated with the indicator, stored as a comma-separated string.
    * `confidence`. Confidence that the data represents a valid threat, where 100 is highest.  Malicious confidence scores from different sources are normalized and mapped to a 0-100 numerical value.
    * `indicator`. Value of the indicator, such as an IP address, file name, email address, and so on. 
-   * `kill_chain`. Kill chain phases associated with the indicator, stored as a comma-separated string. Use the [`contains`](#contains) function to filter on it, for example `contains(kill_chain, 'command-and-control')`.
+   * `kill_chain`. Kill chain associated with the indicator, stored as a comma-separated string.
    * `source`. The source in the Sumo Logic datastore displayed in the **Threat Intelligence** tab.
    * `threat_type`. The threat type of the indicator (for example, `anomalous-activity`, `anonymization`, `benign`, `compromised`, `malicious-activity`, `attribution`, `unknown`).
    * `type`. The indicator type (for example, `ipv4-addr`, `domain-name`, `'file:hashes`, and so on).
@@ -832,6 +827,12 @@ For standard rules that use the `hasThreatMatch` function, refer to the [Rules p
 * `hasThreatMatch([http_url_rootDomain], confidence > 1 AND (type='domain-name' OR type='url'))`
 * `hasThreatMatch([user_email,targetUser_email], confidence > 1 AND source = "s_global_feed_1")`
 * `hasThreatMatch([srcDevice_ip], _threatlookup_fields['score'] >= 70 AND _threatlookup_fields['data.threat.data.family'] = 'Redline')`
+* `hasThreatMatch([srcDevice_ip], contains(actors, 'HELIXKITTEN') AND type='ipv4-addr')`
+* `hasThreatMatch([dstDevice_ip], contains(kill_chain, 'command-and-control') AND confidence > 50)`
+* `hasThreatMatch([http_url_rootDomain], _threatlookup_fields['domain'] = 'malware.example.com' AND type='domain-name')`
+* `hasThreatMatch([srcDevice_ip], _threatlookup_fields['reputation']['vendor']['rating'] = 'high' AND type='ipv4-addr')`
+* `hasThreatMatch([srcDevice_ip], _threatlookup_fields['valid_until'] > 1767225600 AND _threatlookup_fields['score'] >= 70)`
+* `hasThreatMatch([file_hash_sha256], contains(toString(_threatlookup_fields['data.threat.data.family']), 'Redline') AND type="file:hashes.'SHA-256'")`
 
 You can exclude matches from allowlists such as [standard match lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists/#standard-match-lists). For example:
 ```text

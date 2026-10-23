@@ -93,21 +93,14 @@ A banner at the top of the tab shows the result of the threat intelligence evalu
 When the banner shows `Threat Indicator Matched`, the tab populates the following fields:
 - **Detection Timestamp**. The time that the match was detected.
 - A caption under the timestamp that states when the threat intelligence was gathered. For example, threat intelligence gathered at signal creation.
-- **Threat Intelligence Sources**. The threat intelligence sources that contain a matching indicator. The number in parentheses is the number of sources. Click a source to expand the indicator details.
-    - **Valid from**. When the indicator became valid. For example, 10/13/2026 9:40:12 PM IST.
+- **Threat Intelligence Sources**. The threat intelligence sources that contain a matching indicator. The number in parentheses is the number of sources. Click a source to expand the indicator details, which include the following common fields:
+    - **Indicator value**. The value of the indicator, such as an IP address.
     - **Indicator type**. The indicator type. For example, `ipv4-addr`.
     - **Indicator confidence score**. The indicator's confidence score, from 0 to 100.
+    - **Source**. The source that provided the indicator. For example, `_sumo_global_feed_cs`.
     - **Threat type**. The threat type assigned to the indicator. See [Threat type mapping to reputation](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem#threat-type-mapping-to-reputation). For example, `malicious-activity`.
-    - **Threat rating**. The source's assessment of the indicator, shown as a JSON object. It can include a confidence level and score, a severity level and the reasons for it, and a threat score. For example, `{"confidence_level":"Low","confidence_score":4,"severity_level":"none","threat_score":1}`.
-    - **Is publishable**. Whether the source allows the indicator to be shared, as a Boolean value.
-    - **Mscore**. The Mandiant score, a number from 0 to 100 that indicates how confident Mandiant is that the indicator is malicious. A higher value means higher confidence.
-    - **Id**. The unique identifier of the indicator in the source.
-    - **Last updated**. When the indicator was last updated in the source.
-    - **Misp**. The results of checking the indicator against MISP warning lists, which are lists of known benign values, such as common public services. It's a JSON object in which each key is a warning list name and each value is `true` if the indicator is on that list, or `false` if it isn't. If a value is `true`, the indicator may be a false positive. For example, `{"akamai":false,"alexa":false,"cloudflare":false,"googlebot":false}`.
-    - **Is exclusive**. Whether the indicator is exclusive to the source's customers, as a Boolean value.
-    - **First seen / Last seen**. When the source first and last observed the indicator.
-    - **Type**. The type of the indicator value.
-    - **Sources**. The list of sources that reported the indicator, shown as a JSON array. Each entry can include the source name, when the source first and last saw the indicator, whether the source is open source intelligence (OSINT), and the indicator's category.
-    - **Value**. The indicator value.
+    - **Actors**. The threat actors associated with the indicator. For example, `HELIXKITTEN`.
+    - **Valid from**. When the indicator became valid. For example, 10/13/2026 9:40:12 PM IST.
+    - **Valid until**. When the indicator expires.
 
-Feed-specific fields, such as **Threat rating**, **Mscore**, and **Sources**, appear as provided by the source.
+Any other fields shown for a source are custom fields from the feed, displayed as key-value pairs as provided by the source. Common examples are **Threat rating**, **Mscore**, **Misp**, and **Sources**. You can filter on these fields in the `hasThreatMatch` function. See [Filter on custom fields](/docs/cse/rules/cse-rules-syntax/#filter-on-custom-fields).

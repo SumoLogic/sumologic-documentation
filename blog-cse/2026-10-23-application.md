@@ -20,8 +20,8 @@ Because the snapshot is captured when the signal is created, it doesn't change i
 Write more precise threat detection rules. The `hasThreatMatch` function now supports:
 
 * The `actors` and `kill_chain` attributes, to match on threat actor names and kill chain phases.
-* The `contains()` function, to search text, and the `toString()` function, to convert values to strings.
+* Any Cloud SIEM rules syntax function in the filter expression, such as `contains()` and `toString()`.
 * `_threatlookup_fields`, to filter on custom fields from your own threat intelligence feeds.
 
-For example, `hasThreatMatch([srcDevice_ip], contains(actors, 'HELIXKITTEN'))` matches only indicators associated with a specific actor. 
+For example, `hasThreatMatch([srcDevice_ip], contains(actors, 'HELIXKITTEN'))` matches only indicators associated with a specific actor.
 [Learn more](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
