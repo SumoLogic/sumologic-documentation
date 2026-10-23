@@ -6,7 +6,7 @@ description: With Local Configuration File Management, you can set up and manage
 
 With local configuration file management, you can configure Sources for an Installed Collector in one or more UTF-8 encoded JSON files.
 
-After you switch over to local configuration file management, you can no longer manage Sources through the Sumo web application or the Collector Management API. In the Sumo web application, the **Add Source** option is disabled on the **Manage Data** > **Collection** > **Collection** page.
+After you switch over to local configuration file management, you can no longer manage Sources through the Sumo Logic web application or the Collector Management API. In the Sumo Logic web application, the **Add Source** option is disabled on the **Collection** page.
 
 :::note
 Local configuration file management is available on Collector version v19.108 and later.
@@ -16,7 +16,7 @@ Local configuration file management is available on Collector version v19.108 an
 
 If you’re an experienced admin, local configuration file management is a quick way to set up or edit Sources across your deployment.
 
-* You don’t need to log in to the Sumo web app or use API calls. Instead, you edit the JSON configuration file(s), and they are read almost immediately by the Collector.
+* You don’t need to log in to the Sumo Logic web app or use API calls. Instead, you edit the JSON configuration file(s), and they are read almost immediately by the Collector.
 * If you have a large scale deployment, it can be impractical to add or edit Sources one at a time. Using local configuration management allows you to manage Sources more easily.
 * You can use deployment tools so that established policies for deployments are not interrupted.
 
@@ -84,7 +84,7 @@ To convert existing Sources from Cloud Management to Local Configuration File Ma
 
 ### Configure the location of JSON file or folder
 
-When using local file configuration management you specify the location of the JSON file or the folder that contains multiple JSON files in the Collector’s `config/user.properties` file. You need to use the `syncSources` parameter to point to your configuration file or folder. See `user.properties` for details on all of the available parameters.
+When using local file configuration management you specify the location of the JSON file or the folder that contains multiple JSON files in the Collector’s `config/user.properties` file. You need to use the `syncSources` parameter to point to your configuration file or folder. See [`user.properties`](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) for details on all of the available parameters.
 
 **syncSources**. Use to define the Sources to configure upon Collector registration. The Source definitions will be continuously monitored and synchronized with the Collector's configuration. 
 * On \*nix, to point to a JSON file that defines Sources for a Collector:

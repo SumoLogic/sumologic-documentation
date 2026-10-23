@@ -2,7 +2,7 @@
 id: linux
 title: Install a Collector on Linux
 sidebar_label: For Linux
-description: Install or uninstall a Collector on a Linux system.
+description: Deploy the Sumo Logic Installed Collector on Linux systems to collect logs and metrics and gain real-time observability into your stack.
 ---
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/installed-collectors/sources) for information on other OSs.
@@ -19,14 +19,14 @@ Follow the steps in this topic to install or uninstall a collector on Linux. S
 Download the Collector in either of the following ways.
 
 ### Via installation
-    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
     1. Click **Add Collector**.
     1. Click **Installed Collector**.
     1. Click the link for the Collector to begin the download.
 
 ### Via browser
 
-Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
+Open a browser and enter the static URL for your Sumo Logic deployment. See [Which endpoint should I use?](/docs/api/about-apis/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install Collector
 
@@ -52,7 +52,8 @@ Run the installer on your server with root or Administrator privileges. If you a
    * [Access Key](/docs/manage/security/access-keys/). If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
    * [Installation Token](/docs/manage/security/installation-tokens/). Enter the **Token String** you want to use to register the Collector in the input box.
 1. Click **Finish** to complete the setup.
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. Verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
 ### Using the command line installer
 
@@ -134,7 +135,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
    Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group. Modifying `user.properties` may require sudo privileges. For more information see [Enhanced File System Security for Installed Collectors](collector-installation-reference/enhanced-file-system-security-installed-collectors.md).
    :::
 
-1. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo web app. See [Sources](/docs/send-data/choose-collector-source).
+1. (Optional) Provide a JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo Logic web app. See [Sources](/docs/send-data/choose-collector-source).
 1. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](collector-installation-reference/set-run-as-user-for-collector.md).
 1. (Optional on Collector version 19.253-3+ in the Fed deployment) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data to Sumo Logic's Fed deployment in US1 only. FIPS mode is not supported for any other deployment. If you are unsure whether you are on the Fed deployment, check our deployments. To enable, locate and run the script `configureFipsMode.sh` contained in Collector's installation directory under `/script`:      
    ```bash
@@ -147,8 +148,8 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
 
 ### Using the binary package
 
-1. Install the version of JRE you want to use from the following location. (The collector requires Java 8 or higher). The binary installation process does not include JRE installation. See the [downloads list](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html).
-1. Check the version of Java is 8 or higher:
+1. Install the version of JRE you want to use from the following location. (The collector requires Java 17 or higher). The binary installation process does not include JRE installation. See the [downloads list](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/what-is-corretto-17.html).
+1. Check the version of Java is 17 or higher:
    ```bash
    java -version
    ```
@@ -198,7 +199,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
    ```bash
    sudo script/secureFiles.sh
    ```
-1. (Optional) Provide JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure sources at any time by using the Sumo web app. See [Sources](/docs/send-data/choose-collector-source).
+1. (Optional) Provide JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/use-json-configure-sources). Alternatively, you can configure sources at any time by using the Sumo Logic web app. See [Sources](/docs/send-data/choose-collector-source).
 1. (Optional) Set the run as user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](collector-installation-reference/set-run-as-user-for-collector.md).
 1. (Optional on Collector version 19.253-3+) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-1. To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**:
    ```bash
@@ -212,7 +213,8 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit
    ```bash
    sudo ./collector start
    ```
-1. To verify that the collector is installed, go to **Manage Data** > **Collection** > **Collection** in the Sumo web app and verify that you can see the collector.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. Verify that you can see the collector.
 
 ## Uninstall the collector
 
@@ -276,7 +278,7 @@ sudo dpkg -r SumoCollector
 
 ### Remove the collector from the web app 
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Find the collector you want to remove, and click **Delete**.
 1. When the Confirm dialog displays, click **OK**.
 

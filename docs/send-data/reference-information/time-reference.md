@@ -1,6 +1,6 @@
 ---
 id: time-reference
-title: Timestamps, Time Zones, Time Ranges, and Date Formats
+title: Timestamps, Time Zones, Time Ranges, Date Formats
 description: Learn how Sumo Logic manages timestamps, time zones, time ranges, and dates, and the configuration options that are available.
 keywords:
   - time
@@ -17,11 +17,19 @@ We support several options for timestamps, time zones, time ranges, and dates. 
 
 Because of the importance of timestamps, Sumo Logic indexes the timestamp of each message, making sure that data relevant to a query’s time range is returned properly in search results, which allows you to reconstruct a correct event timeline.
 
+:::note
+This page covers timestamp parsing at ingestion time. For how the Search page's Time Range field, time range expressions, and date formats work, see [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions) and [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range). To search by a different timestamp field instead of the default message time, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) or [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time).
+:::
+
 ## Timestamps
 
 The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
 
 When configuring a Source, you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
+
+:::note Using OpenTelemetry Remote Management (OTRM)?
+This page covers timestamp parsing for standard Sumo Logic sources. If you're using OTRM source templates, refer to [Timestamps, time zones, time ranges, and date formats for OTRM](/docs/send-data/opentelemetry-collector/remote-management/source-templates/otrm-time-reference) instead.
+:::
 
 ### Timestamp considerations
 
@@ -33,7 +41,7 @@ If your log messages from a Source contain multiple timestamps, timestamps in un
 
 The Collector assumes that all log messages coming from a particular Source will have timestamps that are close together. If a message comes through that appears to be more than one day earlier or later than recent messages from that Source it will be auto-corrected to match the current time. You can stop this auto-correction by explicitly configuring a custom timestamp format on your Source.
 
-The Collector also assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log message with a parsed timestamp outside of that window is automatically re-stamped with the current time. You must contact [Sumo Logic Support](https://support.sumologic.com/) to adjust this auto-correction behavior. See [How to ingest old or historical data](/docs/send-data/collector-faq#how-to-ingest-old-or-historical-data) for further details.
+The Collector also assumes that all log messages coming from a particular Source will have timestamps that are within a window of -1 year through +2 days compared to the current time. Any log messages with a timestamp older than 30 days is automatically set to the current time. You must contact [Sumo Logic Support](https://support.sumologic.com/) to adjust this auto-correction behavior. See [How to ingest old or historical data](/docs/send-data/collector-faq#how-to-ingest-old-or-historical-data) for further details.
 
 ### Automated timestamp parsing
 
@@ -163,12 +171,12 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
 ### Using _format for troubleshooting
 
 You can use `_format` to see how the timestamp is parsed from the log file. Assign _format an alias to return it in your search results, for example: 
-```sql
+```sumo
 | _format as timestampFormat
 ```
 
 The fields returned in the search results of `_format` are:
-```sql
+```sumo
 t:<parse type>,o:<offset>,l:<length>,p:<date_format>
 ```
 
@@ -186,7 +194,7 @@ where `<parse type>` can take the values:
 #### Example
 
 When you’re troubleshooting issues related to timestamp, you can run a query similar to this to see how the timestamp is parsed:
-```sql
+```sumo
 _sourceCategory=PaloAltoNetworks
 | _format as timestampformat
 ```
@@ -268,21 +276,3 @@ In another example, if your time zone is set to **UTC**, and you share a Dashbo
 They will see the same data, just displayed using their custom set time zone. For example, if you have a Panel that uses a time series, the timeline on the X axis of your chart is displayed in your time zone, **UTC**. The other user will see the timeline on the X axis displayed in their time zone, **PST**. But the data displayed in the chart is exactly the same.
 
 <img src={useBaseUrl('img/send-data/timezone_dashboards_compare.png')} alt="Screenshot comparing how dashboards display time zones differently for users with custom time zone settings, highlighting the same data shown in different time zones." width="600"/>
-
-## Time ranges
-
-The **Time Range** field on the **Search** page uses the time zone that is set for the Sumo Logic user interface. This is either the default time zone used in the web browser and set by the operating system, or the **Default Timezone** setting on the **Preferences** page, if you have set this option.
-
-When you create a [Scheduled Search](/docs/alerts/scheduled-searches) or a [real-time alert](/docs/alerts/scheduled-searches/create-real-time-alert), the time range of the search that you save uses the time zone that is set for the Sumo Logic user interface. If you have changed the time zone using the **Default Timezone** setting, this time zone will be used for your Scheduled Searches and Real Time Alerts.
-
-:::note
-The **Default Timezone** setting does not automatically update the configurations of existing Scheduled Searches or real-time alerts. If you'd like your Scheduled Searches and real-time alerts to use the same time zone as your user interface, you'll need to edit them to do so, and save them.
-:::
-
-For more information on time ranges, see [Set the Time Range of a Search](/docs/search/get-started-with-search/build-search/set-time-range).
-
-Search Time Ranges can also search all data with any and all timestamps. For details, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time).
-
-## Date format
-
-If the browser used to access Sumo Logic is in a location that uses the day/month/year format instead of month/day/year, dates are presented in that format.

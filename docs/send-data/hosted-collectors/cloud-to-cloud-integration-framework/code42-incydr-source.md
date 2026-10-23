@@ -2,28 +2,31 @@
 id: code42-incydr-source
 title: Code42 Incydr Source
 sidebar_label: Code42 Incydr
-tags:
+keywords:
   - cloud-to-cloud
   - code42-incydr
-description: Learn how to collect alerts, file events, and audit logs from the Code42 Incydr.
+description: Learn how to collect sessions, file events, and audit logs from the Code42 Incydr.
 ---
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/code42-incydr/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/code42-incydr/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/code42-incydr/example.tf';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="code42-incydr-icon" width="100" />
+<img src={useBaseUrl('img/send-data/code42-incydr-logo.png')} alt="Code42 Incydr icon" width="100" />
 
 The Code42 Incydr is an insider risk management solution that allows you to detect and respond to data exposure and exfiltration from corporate computer, cloud, and email systems. It provides the visibility, context, and controls needed to protect data without overwhelming security teams or inhibiting employee productivity.
 
-Code42 Incydr source is used to analyze and fetch file events, alerts and audit logs from the Code42 Incydr API and send it to Sumo Logic.
+Code42 Incydr source is used to analyze and fetch sessions, file events, and audit logs using the [Code42 Incydr API](https://developer.code42.com/api) and send it to Sumo Logic.
+
+:::note
+Upgrade the Code42 Incydr source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Alerts, File Events, and Audit Logs (Audit Events)](https://developer.code42.com/api) |
+| 5 minutes | [Sessions](https://developer.code42.com/api/#tag/Alerts-and-Sessions/operation/SearchSessions) |
+| 5 minutes | [File Events](https://developer.code42.com/api/#tag/File-Events/operation/searchEvents) |
+| 5 minutes | [Audit Logs](https://developer.code42.com/api/#tag/Audit-Log/operation/searchAuditLog) |
 
 ## Setup
 
@@ -36,6 +39,12 @@ The Code42 Incydr source requires you to provide the **Base URL**, **Client ID**
     - api.us2.code42.com
     - api.ie.code42.com
     - api.gov.code42.com
+    - api.us7.code42.com
+    - api.uk.code42.com
+    - api.au.code42.com
+    - api.ca.code42.com
+    - api.de.code42.com
+    - api.za.code42.com
     :::info
     Make sure that all API requests are made using HTTPs.
     :::
@@ -46,18 +55,22 @@ The Code42 Incydr source requires you to provide the **Base URL**, **Client ID**
 When you create an Code42 Incydr source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Code42 Incydr Source:
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Code42 Incydr**.
-1. Enter a **Name** for the source. The description is optional. 
+1. Enter a **Name** for the source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
+   * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+   * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **Base URL**, select the domain from which you want to retrieve the source data from the Incydr API.
 1. In **Client ID**, enter the Client ID you generated from the Code42 Incydr platform.
 1. In **Secret Key**, enter the Secret Key you generated from the Code42 Incydr platform.
 1. In **Data Collection**, select the type of source from which you want to collect the data from. This allows you to limit the response to just the data you want.
+
+:::info
+After configuring the Code42 Incydr source, consider installing the Sumo Logic app for [Code42 Incydr](/docs/integrations/saas-cloud/code42-incydr/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
+:::
 
 ## Metadata fields
 
@@ -83,22 +96,23 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| baseURL | String | Yes | `null` | API Key to used for Authorization.  |  |
+| baseURL | String | Yes | `null` | Domain from which you want to retrieve the source data from the Incydr API.  |  |
 | clientID | Boolean | No | `null` | Client ID generated from the Code42 Incydr platform. |  |
 | secretKey | String | No | `null` | Secret Key generated secured from the Code42 Incydr platform. |  |
 | dataCollection | String | No | `null` | Type of source from which you want to collect the data from. |  |
 
 ### JSON example
 
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-<a href="/files/c2c/code42-incydr/example.json" target="_blank">Download example</a>
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/code42-incydr/example.json
+```
 
 ### Terraform example
 
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
+```sh reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/code42-incydr/example.tf
+```
 
-<a href="/files/c2c/code42-incydr/example.tf" target="_blank">Download example</a>
 
 ## Troubleshooting
 

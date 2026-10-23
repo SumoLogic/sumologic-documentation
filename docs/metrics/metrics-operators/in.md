@@ -2,6 +2,7 @@
 id: in
 title: in Metrics Operator
 sidebar_label: in
+description: Use the in metrics operator in query selectors as shorthand for multiple OR conditions, simplifying queries that check if a field matches any value in a list.
 ---
 
 
@@ -9,7 +10,7 @@ The `in` operator functionality can be used in a metrics query selector as short
 
 ## Syntax
 
-```sql
+```metrics
 <selectors> <field>=(<value>[, <value>, …])
 ```
 
@@ -20,9 +21,9 @@ Where:
 * `<value>` is the value of dimension that you want to limit your query to.
 
 
-## Example
+## Examples
 This example will match time series in which the value of the `dimX` field is one of the strings in the array enclosed in parentheses.
 
-```sql
+```metrics
 metric=CPU_Total dimX=(123, 345, 567)
 ```

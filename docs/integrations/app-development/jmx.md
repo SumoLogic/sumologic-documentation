@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/app-development/jmx.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/jmx.png')} alt="JMX icon" width="50"/>
 
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
@@ -35,7 +35,7 @@ The following types of metrics are collected from JMX:
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 
-```sql
+```metrics
 _sourceCategory=Labs/jmx/metrics
 metric=java_lang_OperatingSystem_TotalMemorySize jolokia_agent_url={{Server}} | eval (_value / 1024 / 1024 / 1024) | sum
 ```
@@ -384,7 +384,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/JMX_ClassLoadingCompilation.png')} alt="jmx dashboard" />
 
-## Upgrading the JMX app (Optional)
+## Upgrade/Downgrade the JMX app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

@@ -2,14 +2,15 @@
 id: max
 title: max Metrics Operator
 sidebar_label: max
+description: Use the max metrics operator to calculate the maximum value of time series that match the query.
 ---
 
 
-The max operator calculates the maximum value of the time series that match the query. If grouping is specified, it calculates the maximum for each group.
+The `max` operator calculates the maximum value of the time series that match the query. If grouping is specified, it calculates the maximum for each group.
 
 ## Syntax
 
-```sql
+```metrics
 max [by FIELD [, FIELD, ...]]
 ```
 
@@ -20,7 +21,7 @@ max [by FIELD [, FIELD, ...]]
 This query returns the maximum `CPU_Sys` value for each time interval
 across all matching time series.
 
-```sql
+```metrics
 dep=prod metric=CPU_Sys | max
 ```
 
@@ -28,7 +29,7 @@ dep=prod metric=CPU_Sys | max
 
 This query returns the maximum `CPU_Sys` value by node for each time interval across all matching time series.
 
-```sql
+```metrics
 cluster=search metric=CPU_Sys | max by node
 ```  
  

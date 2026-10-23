@@ -1,21 +1,21 @@
 ---
 id: existing-collectors-and-sources
-title: Local Configuration File Management for Existing Collectors and Sources
+title: Config File Management for Existing Collectors
 sidebar_label: For Existing Collectors and Sources
 description: Managing existing deployments means making changes only to a JSON file.
 ---
 
 With [Local Configuration File](/docs/send-data/use-json-configure-sources/local-configuration-file-management) management, all configuration is done through a configuration file. This approach allows you to create scripts to configure multiple Collectors and Sources or to create configuration backups.
 
-If you're using local configuration file management, you cannot use the API or the Sumo web app to modify the configuration.
+If you're using local configuration file management, you cannot use the API or the Sumo Logic web app to modify the configuration.
 
 ## Step 1. Get a configuration file
 
-The Sumo web application can generate ready-to-use JSON for the Sources that are already configured for the Collector. For additional details, see [View or Download Collector or Source JSON Configuration](view-download-source-json-configuration.md). 
+The Sumo Logic web application can generate ready-to-use JSON for the Sources that are already configured for the Collector. For additional details, see [View or Download Collector or Source JSON Configuration](view-download-source-json-configuration.md). 
 
 To get the JSON configuration and create a configuration file:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Select the information icon to the right of the Collector.
 1. Copy and paste the displayed JSON into a new text file. Name the text file `sources.json`, or any other name that makes sense. The file must have a `.json` extension
 1. Save the file to a location accessible by the Collector and make a note of the file path.
@@ -56,12 +56,12 @@ To add the syncSources parameter:
 
 ## Step 3. Make the switch
 
-You can now move to the local configuration file management option, using the Sumo web application or the Collector Management API.
+You can now move to the local configuration file management option, using the Sumo Logic web application or the Collector Management API.
 
 Do one of the following:
 
-* In the Sumo web app, choose **Local Configuration File** in the **Edit Collector** dialog box.
-* In the Collector Management API, use the PUT method to update the Collector's `sourceSyncMode` to "`Json`". For more information, see Collector API Methods and Examples. The following example shows the `sourceSyncMode` of a Collector using UI mode: `"sourceSyncMode":"UI",`
+* In the Sumo Logic web app, choose **Local Configuration File** in the **Edit Collector** dialog box.
+* In the Collector Management API, use the PUT method to update the Collector's `sourceSyncMode` to "`Json`". For more information, see [Collector API Methods and Examples](/docs/api/collector-management/collector-api-methods-examples). The following example shows the `sourceSyncMode` of a Collector using UI mode: `"sourceSyncMode":"UI",`
 
 ## Step 4. Restart the Collector
 

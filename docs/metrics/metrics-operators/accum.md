@@ -2,8 +2,10 @@
 id: accum
 title: accum Metrics Operator
 sidebar_label: accum
+description: Use the accum metrics operator to create a series of running totals for each metric time series, starting from the first data point and iteratively adding successive values.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `accum` operator creates a series of running totals for each metric time series. The running total in each series starts from the value of the first data point in the series, then iteratively adds up successive
 values.
@@ -12,11 +14,11 @@ values.
 
 ## Syntax
 
-```sql
+```metrics
 accum
 ```
 
-## Example
+## Examples
 
 This query calculates the running total for the `success.count` metric: `success.count | accum`.
 
@@ -31,5 +33,5 @@ In the metric chart below, the green time series is the result of using
 
 The orange time series shows the results without the `accum` operator.
 
-![accum.png](/img/metrics/accum.png)  
+<img src={useBaseUrl('img/metrics/accum.png')} alt="accum operator" style={{border: '1px solid gray'}} width="800" />
  

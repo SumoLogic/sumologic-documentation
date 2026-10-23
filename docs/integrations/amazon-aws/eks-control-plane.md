@@ -6,7 +6,7 @@ description: The Sumo Logic app for Amazon EKS - Control Plane provides visibili
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="EKS icon" width="50"/>
 
 [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS) allows you to readily deploy, manage, and scale container-based applications with [Kubernetes](https://aws.amazon.com/kubernetes/) on AWS. The Sumo Logic app for Amazon EKS - Control Plane provides visibility into the EKS control plane with operational insights into the api server, scheduler, control manager, and worker nodes. The app’s preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
@@ -110,7 +110,7 @@ scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory = "EKS_LOGS"
 and _sourceName = kube-apiserver-audit*
 | json field=_raw "message.responseStatus.code" as status_code
@@ -126,7 +126,7 @@ and _sourceName = kube-apiserver-audit*
 
 ## Collecting logs and metrics for the Amazon EKS - Control Plane app
 
-This section has instructions for collecting logs and metrics for the Sumo app for Amazon EKS - Control Plane. This is a two step process:
+This section has instructions for collecting logs and metrics for the Sumo Logic app for Amazon EKS - Control Plane. This is a two step process:
 * Setting up collection and installing the Sumo Logic Kubernetes app.
 * Configuring CloudWatch log collection.
 

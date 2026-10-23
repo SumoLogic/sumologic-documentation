@@ -9,13 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 import ApiRoles from '../reuse/api-roles.md';
 
-<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="50"/>
 
 The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints. For information about running a metrics query using the API, see [Executing a query](/docs/api/metrics/#executing-a-query) in *Metrics APIs*.
 
-Here is example content for a `v1/metricQueries` API call:
+Here is example content for a `v1/metricsQueries` API call:
 
-``` json
+```json
 {
   "queries": [
     {
@@ -36,29 +36,28 @@ Here is example content for a `v1/metricQueries` API call:
 }
 ```
 
-A metric query consists of a metric, one or more filters, and optionally, one or more [metrics operators](/docs/metrics/metrics-operators/). Although both filters and operators are optional, in practice, your metric queries will almost always contain filters that narrow the scope of your query. 
+A metric query consists of a metric, one or more filters, and optionally, one or more [metrics operators](/docs/metrics/metrics-operators/). Although both filters and operators are optional, in practice, your metric queries will almost always contain filters that narrow the scope of your query.
 
 ## Documentation
 
 <ApiIntro/>
 
-| Deployment | Documentation URL                                    |
-|:------------|:------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/metricsQuery  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/metricsQuery  |
-| DE         | https://api.de.sumologic.com/docs/#tag/metricsQuery  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/metricsQuery  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/metricsQuery |
-| IN         | https://api.in.sumologic.com/docs/#tag/metricsQuery  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/metricsQuery  |
-| KR         | https://api.kr.sumologic.com/docs/#tag/metricsQuery  |
-| US1        | https://api.sumologic.com/docs/#tag/metricsQuery     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/metricsQuery |
+| Region code | Region name | AWS region | API endpoint |
+|:----|:----|:---|:-----|
+| AU  | Asia Pacific (Sydney)  | ap-southeast-2 | https://api.au.sumologic.com/docs/#tag/metricsQuery   |
+| CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/metricsQuery   |
+| CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/metricsQuery  |
+| DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/metricsQuery   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/metricsQuery  |
+| EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/metricsQuery   |
+| FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/metricsQuery  |
+| JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/metricsQuery   |
+| KR  | Asia Pacific (Seoul)   | ap-northeast-2 | https://api.kr.sumologic.com/docs/#tag/metricsQuery   |
+| US1 | US East (N. Virginia)  | us-east-1      | https://api.sumologic.com/docs/#tag/metricsQuery      |
+| US2 | US West (Oregon)       | us-west-2      | https://api.us2.sumologic.com/docs/#tag/metricsQuery  |
 
-<!-- ## Required role capabilities
+## Required role capabilities
 
 <ApiRoles/>
 
-* Metrics (all role capabilities)
-
--->
+* [Metrics](/docs/manage/users-roles/roles/role-capabilities/#metrics) (all role capabilities)

@@ -7,7 +7,7 @@ description: The Sumo Logic App for Gmail Trace Logs monitors spam, malware thre
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/gmail-icon.png')} alt="Gmail icon" width="100"/>
 
 Gmail Trace Logs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cloud source, which is a managed analytics data warehouse that provides scalable Gmail reports of your organization.
 
@@ -125,7 +125,7 @@ For details, see the [Schema for Gmail logs in BigQuery](https://support.google.
 
 ### Sample queries
 
-```sql title="Gmail messages classifications"
+```sumo title="Gmail messages classifications"
 _sourceCategory=Labs/GmailTraceLogs
 | json "event_info.success", "message_info.action_type", "message_info.attachment[*].file_extension_type", "message_info.attachment", "message_info.subject", "message_info.attachment[*].malware_family", "message_info.attachment[*].sha256", "message_info.connection_info.client_ip", "message_info.connection_info.ip_geo_city", "message_info.connection_info.ip_geo_country", "message_info.connection_info.is_internal", "message_info.connection_info.smtp_response_reason", "message_info.connection_info.smtp_reply_code", "message_info.connection_info.smtp_tls_state", "message_info.destination[*].address", "message_info.is_spam", "message_info.spam_info.classification_reason", "message_info.spam_info.disposition", "message_info.message_set[*].type", "message_info.source.address" as is_event_success, action_type, file_extension_type, message_attachment, message_subject, message_malware_family, message_sha256, client_ip,  client_city,  client_country, is_message_internal, smtp_response_reason, smtp_reply_code, smtp_tls_state, destination_email, is_spam, spam_classification_reason, spam_disposition, message_set_type, message_source_email  nodrop
 | parse regex field=message_set_type "(?<message_setType>[\w]+)" multi
@@ -135,31 +135,57 @@ _sourceCategory=Labs/GmailTraceLogs
 | count by message_set_type
 | sort by _count
 ```
+## Collection configuration and app installation
 
-## Collecting logs for Gmail Trace Logs app
+import CollectionConfiguration from '../../reuse/apps/collection-configuration.md';
 
-This section provides instructions for setting up [Cloud-to-Cloud-Integration for Gmail Trace Logs App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source.md) to create the source and use the same source category while installing the app.
+<CollectionConfiguration/>
 
-## Installing the Gmail Trace Logs app
+:::important
+Use the [Cloud-to-Cloud Integration for Gmail Trace Logs](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Gmail Trace Logs app is properly integrated and configured to collect and analyze your Gmail Trace Logs data.
+:::
 
-import AppInstall from '../../reuse/apps/app-install.md';
+### Create a new collector and install the app
 
-<AppInstall/>
+import AppCollectionOPtion1 from '../../reuse/apps/app-collection-option-1.md';
 
-## Viewing Gmail Trace Logs Dashboards
+<AppCollectionOPtion1/>
 
-**All dashboard have a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+### Use an existing collector and install the app
 
-You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+import AppCollectionOPtion2 from '../../reuse/apps/app-collection-option-2.md';
 
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<AppCollectionOPtion2/>
 
-### Security Overview Dashboard
+### Use an existing source and install the app
 
-**Gmail Trace Logs - Security Overview**. This dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
+import AppCollectionOPtion3 from '../../reuse/apps/app-collection-option-3.md';
+
+## Viewing the Gmail Trace Logs dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Security Overview
+
+The **Gmail Trace Logs - Security Overview** dashboard lets you monitor spam messages, malware threats, dropped messages, and rejected messages.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/tracelogsapp-overview.png')} alt="Gmail Trace Logs Overview" width="900"/>
 
-**CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
+The **CrowdStrike Analysis**. To protect your organisation from threats, the app also scans the SHA256 hash of Gmail attachments with CrowdStrike's threat detection service.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="Crowdstrike Analysis" width="900"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/crowdstrike-analysis.png')} alt="CrowdStrike Analysis" width="900"/>
+
+## Upgrading the Microsoft Teams app (optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Microsoft Teams app (optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+

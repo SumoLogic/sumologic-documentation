@@ -2,15 +2,16 @@
 id: metrics
 title: Real User Monitoring Metrics
 sidebar_label: RUM Metrics
+description: Learn how Sumo Logic generates Real User Monitoring metrics from browser traces, including document load, XHR metrics, Core Web Vitals, and longtask events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-RUM metrics are automatically generated for you from browser traces. They provide insight into your website's overall user experience as well as front-end services, operating systems, geographical locations, and top-loaded page groups and user cohorts categorized by their browsers.
+RUM metrics are automatically generated for you from browser traces. They provide insight into your website's overall user experience as well as frontend services, operating systems, geographical locations, and top-loaded page groups and user cohorts categorized by their browsers.
 
 Metrics are collected for user actions representing document loads, which means actual retrieval and execution of web documents in the browser as well as XHR calls and route changes. Measurements include W3C navigation timings, XHR delays, Core Web Vitals KPIs, longtask events (delays) and others.
 
-For ad hoc queries, you can find these metrics in [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer.md) by querying for:
+For ad hoc queries, you can find these metrics in [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer.md) by querying for:
 ```sql
 _contenttype=rummetricfromtrace
 ```
@@ -21,7 +22,7 @@ The following document load metrics are collected from JavaScript. These are ava
 
 These metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](/docs/apm/real-user-monitoring/dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.
 
-![Diagram showing various navigation metrics from user clicks to a fully loaded document, including DNS resolution, SSL connection, TCP establishment, request end, first byte, response end, interactive time, and processing end](/img/rum/Navigation-metrics.png)
+<img src={useBaseUrl('img/rum/Navigation-metrics.png')} alt="Document load metrics" style={{border: '1px solid gray'}} width="800" />
 
 Timing metrics are not calculated if the visibility state of the document is "hidden" at any point during the load.
 
@@ -123,11 +124,15 @@ These CWV KPIs are captured and displayed on Overview dashboards for Document Lo
 
 ## XHR monitoring metrics
 
-An XML HTTP Request (XHR) is a form of communication between the browser and the application backend without reloading the page. A typical example is when a page needs to update a price ticker automatically or after pressing the “update price” button next to it.
+:::note
+XHR metrics extraction in RUM is supported for applications that use both the [`fetch` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [`XMLHttpRequest`](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) to perform XHR calls.
+:::
 
-The XHR technique is frequently used in _single-page apps_ &#8212; apps that load the page once and then provide all interaction and navigation without loading additional documents. These pages can generate one or more XHR requests, typically in the form of HTTP POSTs/GETs, related to various user actions on a page. Sumo Logic provides the following monitoring coverage for XHR interactions:
+An XMLHttpRequest (XHR) is a way for browsers to communicate with a backend server without reloading the page. For example, a page may use XHR to update a price ticker automatically or after clicking an "Update Price" button.
 
-Pages can generate one or more XHR requests, typically in the form of HTTP POSTs, related to various user actions on a page. The following performance timings are measured:
+XHR is commonly used in *single-page applications* (SPAs), which load once and then handle all interactions without refreshing the page. These apps often generate multiple XHR requests (typically HTTP `POST` or `GET` calls) based on user actions.
+
+Sumo Logic provides monitoring coverage for XHR interactions, including the following performance timings:
 
 ### `browser_time_to_first_xhr`
 
@@ -145,22 +150,11 @@ Time from the UI interaction until all browser-side processing of all XHR reques
 
 The total time when the transaction was “busy” executing XHR communication.
 
-In addition to these metrics, the system also measures how many XHR requests have been generated and identifies the user action that triggered the XHRs by blending the UI interaction (e.g., `“click on Pay”`) with the page name (e.g., `http://www.acme.com/checkout`). This results in an action name like `"Click on Pay on http://www.acme.com/checkout"`. Any erroneous HTTP responses to XHR POST calls are counted as XHR errors.
+In addition to these metrics, the system also measures how many XHR requests have been generated and identifies the user action that triggered the XHRs by blending the UI interaction (for example, `“click on Pay”`) with the page name (for example, `http://www.acme.com/checkout`). This results in an action name like `"Click on Pay on http://www.acme.com/checkout"`. Any erroneous HTTP responses to XHR POST calls are counted as XHR errors.
 
 We also measure any erroneous HTTP responses to XHR POST calls, counting them as XHR errors, and provide drill-down capabilities via EI to specific traces that explain the full process of loading and executing each transaction.
 
 <img src={useBaseUrl('img/rum/xhr-action.png')} alt="Interface for monitoring XHR interactions, displaying performance timings and metrics for XMLHttpRequests within a web application" style={{border: '1px solid gray'}} />
-
-<!--
-### Navigation (Route Change) Metrics
-Another browsing technique used by single-page apps is a special way of handling page navigation (e.g., clicking on links, buttons) called route change. It is basically a way to navigate to a new page/view without having to load a new document.
-Every time we open a new tab in Sumo, we do a route change (but we are not loading the whole document at the same time). Such actions typically also generate some XHR calls in the background. What we do with this is:
-* Create a special type of user actions called `route_changes` with the name of the page that is being opened (i.e., “Route to [https://service.us2.sumologic.com/ui#/search/*](https://service.us2.sumologic.com/ui#/search/*)”)
-* Show these actions as third type of action next to document loads and XHR requests
-* Measure same type of metrics for them as for XHR requests
-* Allow drill-down via EI to specific traces that explain full process of loading and execution of each such transaction
-<img src={useBaseUrl('img/rum/nav-action.png')} alt="Real User Monitoring" />
--->
 
 ## Longtask delay metrics
 

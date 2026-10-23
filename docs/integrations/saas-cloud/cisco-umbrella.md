@@ -24,19 +24,19 @@ To know about the Sample Logs and Schema for Cisco Umbrella logs, [click here](h
 
 ### Sample queries
 
-```sql title="DNS Logs"
+```sumo title="DNS Logs"
 _sourceCategory=Labs/cisco_umbrella
 | where _sourceName matches "*dnslogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,identity,identites_all,internal_ip,external_ip,action,query_type,response_code,domain_name,categories,first_identity_type_matched,all_identity_types,blocked_categories
 ```
 
-```sql title="Proxy Logs"
+```sumo title="Proxy Logs"
 _sourceCategory=Labs/cisco_umbrella
 | where _sourceName matches "*proxylogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as timestamp,policy_identity_label,internal_client_ip,external_client_ip,destination_ip,content_type,action,url,referer,user_agent,status_code,request_size,response_size,response_body_size,sha256,categories,av_detections,PUAs,AMP_disposition,AMP_malware_name,AMP_score,policy_identity_type,blocked_categories,identities,identity_types,request_method,DLP_status,certificate_errors,file_name,ruleset_ID,rule_ID,destination_list_IDs,isolate_action,file_action,warn_status
 ```
 
-```sql title=Admin Logs"
+```sumo title="Admin Logs"
 _sourceCategory=Labs/cisco_umbrella
 | where _sourceName matches "*auditlogs*"
 | parse "\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\",\"*\"" as  id, timestamp, email, user, type, action, ip, before, after
@@ -56,9 +56,16 @@ The Cisco Umbrella app offers logging to Amazon S3 as it has the ability to uplo
 
  <img src={useBaseUrl('img/integrations/saas-cloud/options-aws-s3.png')} alt="options aws s3 cisco" width="750"/>
 
-:::note
-If you're collecting from a Cisco Umbrella bucket, SNS Subscription Endpoint is not supported. For more information, see important note on using the [Sumo Logic Amazon S3 source for the Cisco-Managed S3 bucket](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source/#cisco-umbrella)
-:::
+Collection from a Cisco-managed S3 bucket has the following limitations:
+
+* AWS versioned APIs are not supported. The **Use AWS versioned APIs** setting on the Source must be disabled.
+* S3 Event Notifications Integration is not supported, so you cannot use an SNS subscription endpoint.
+* Access must be provided with an Access ID and Key. Role-based access is not supported.
+* Use a prefix in the path expression so it doesn't point to the root directory.
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example:
+  * Bucket Name: `cisco-managed-us-east-1`
+  * Path Expression: `987654321_12e34c..../*`
+
 
 By having all your logs uploaded to an S3 bucket, you can then download logs automatically to keep in perpetuity in backup storage. Or, ingest the logs through your SIEM or another security tool to determine if any security events in these Umbrella logs coincide with events in other security tools.
 
@@ -89,7 +96,25 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Cisco Umbrella - Proxy**. This dashboard provides insights into the traffic that has gone through Umbrella's Secure Web Gateway (SWG) or Selective Proxy. It gives you a clear view of the geographical location of the traffic sources, client requests by blocked or allowed actions, malware detections, blocked sources and URLs, anti-virus detections, traffic request/response size, and an overall traffic summary.
 By using the dashboard's filters, you can easily analyze the data by different key fields such as action, identity, malware, anti-virus detection, blocked category, referrer, and category.<br/><img src={useBaseUrl('img/integrations/saas-cloud/cisco-umbrella-proxy.png')} alt="cisco umbrella proxy" width="750"/>
 
-## Upgrading the Cisco Umbrella app (Optional)
+## Create monitors for Cisco Umbrella app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### Cisco Umbrella alerts
+
+| Name | Description | Alert Condition | Recover Condition |
+|:--|:--|:--|:--|
+| `Cisco Umbrella - Admin Setting Deletion` | This alert is triggered when an admin deletes a setting in Cisco Umbrella. Any destructive delete action by an administrator may indicate unauthorized access or accidental misconfiguration. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - Bulk Admin Changes` | This alert is triggered when a single admin user makes more than 5 changes to Cisco Umbrella settings within 5 minutes. High-velocity changes from a single user may indicate a compromised admin account or unauthorized bulk modifications. | Count > 5 | Count < = 5 |
+| `Cisco Umbrella - High Volume DNS Blocks per Identity` | This alert is triggered when a single identity has more than 5 DNS requests blocked by Cisco Umbrella within 5 minutes. High-volume DNS blocks for a single identity may indicate malware probing C2 infrastructure or a device actively circumventing security policy. | Count > 5 | Count < = 5 |
+| `Cisco Umbrella - Proxy Malware Detection` | This alert is triggered when Cisco Umbrella proxy detects malware via AV scanning or AMP threat intelligence. Any AV detection or AMP malware identification in proxy traffic indicates a direct malware delivery attempt. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - Proxy DLP Violation` | This alert is triggered when Cisco Umbrella proxy detects a DLP policy violation. A non-empty DLP status indicates sensitive data was identified in outbound traffic, which may indicate data exfiltration. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - Proxy File Blocked` | This alert is triggered when Cisco Umbrella proxy blocks or quarantines a file transfer. A blocked or quarantined file action indicates a direct malware delivery attempt was stopped at the proxy layer. | Count > 0 | Count < = 0 |
+| `Cisco Umbrella - High Volume Proxy Blocks per Identity` | This alert is triggered when a single identity has more than 5 requests blocked by the Cisco Umbrella proxy within 5 minutes. High-volume proxy blocks for a single identity may indicate repeated policy violations or automated scanning activity. | Count > 5 | Count < = 5 |
+
+## Upgrade/Downgrade the Cisco Umbrella app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 

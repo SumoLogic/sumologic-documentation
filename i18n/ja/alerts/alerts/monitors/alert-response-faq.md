@@ -42,7 +42,7 @@ For example, in Slack, you can add the following section to the payload:
 },
 ```
 
-![alertResponseURLExample.png](/img/monitors/alertResponseURLExample.png)
+![alertResponseURLExample.png](/img/alerts/monitors/alertResponseURLExample.png)
 
 Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 
@@ -58,7 +58,7 @@ Sometimes because of internal system errors Log Fluctuation cards might not appe
 
 Sumo Logic detects and maintains a signature library. It does that by analyzing logs sent to Sumo Logic and catalogs them into various signatures in the signature library. This process happens in the background and runs periodically, to keep the signatures up to date. There could be cases, that the process has still not cataloged a new log message to a signature, as a result, it gets bundled into the "Others" category. This problem should be fixed automatically after some time (when the background process runs).
 
-You can also force run the signature cataloging process manually, by calling the [LogCompare](../../search/logcompare.md) or [LogReduce](/docs/search/logreduce) operators from the Log Search page. 
+You can also force run the signature cataloging process manually, by calling the [LogCompare](/docs/search/behavior-insights/logcompare) or [LogReduce](/docs/search/behavior-insights/logreduce) operators from the Log Search page. 
 
 ## I don’t see the Dimensional Explanation Card for logs-based Alert?
 

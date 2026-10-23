@@ -5,22 +5,26 @@ description: Metadata tags are attached to your log messages at ingest, which is
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Sumo Logic has several metadata fields that are automatically tagged to ingested data. These metadata fields are referenced by the service in
 many ways, such as the user interface when managing Collection, and can be referenced in search queries.
 
-<Iframe url="https://www.youtube.com/embed/HNsXN5RoPwo"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+:::training Micro Lesson
 
-import Iframe from 'react-iframe';
+<Iframe url="https://fast.wistia.net/embed/iframe/sibzw75hsu?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Built-in Metadata Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
+
+:::
 
 #### Built-in metadata fields
 
@@ -69,7 +73,7 @@ This table shows some examples and a description of each metadata type.
 
 In the **Messages** tab, each message displays its metadata tags:  
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/msg-with-metadata.png')} style={{border:'1px solid gray'}} alt="msg-with-metadata" width="800"/>
+<img src={useBaseUrl('img/search/get-started-search/search-basics/msg-with-metadata.png')} style={{border:'1px solid gray'}} alt="Message with metadata" width="800"/>
 
 ## Search different values of a metadata field in the same query
 

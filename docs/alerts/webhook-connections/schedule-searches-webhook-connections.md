@@ -1,9 +1,11 @@
 ---
 id: schedule-searches-webhook-connections
 title: Scheduled Searches for Webhook Connections
-sidebar_label: Sumo Scheduled Searches
+sidebar_label: Sumo Logic Scheduled Searches
 description: Create a Scheduled Search to send alerts to a third-party tool via Webhook Connections.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Scheduled searches](/docs/alerts/scheduled-searches) are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a Webhook Connection.
 
@@ -24,15 +26,14 @@ The payload for each scheduled search can be customized (depending on the tool y
 To set up a scheduled search for a Webhook Connection:
 
 1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
-1. On the **Save Item** page, click **Schedule this search**.<br/> ![schedule frequency.png](/img/connection-and-integration/schedule-frequency.png)
-1. Change **Run Frequency** from "Never" to the desired frequency.<br/> ![itemized alert.png](/img/connection-and-integration/itemized-alert.png)
+1. On the **Save Item** page, click **Schedule this search**.<br/><img src={useBaseUrl('img/connection-and-integration/schedule-frequency.png')} alt="Schedule frequency" style={{border: '1px solid gray'}} width="400" />
+1. Change **Run Frequency** from "Never" to the desired frequency.<br/><img src={useBaseUrl('img/connection-and-integration/itemized-alert.png')} alt="Itemized alert" style={{border: '1px solid gray'}} width="500" />
 1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches). 
 1. **Alert Type**. Select **Webhook**.
 1. Select a **Webhook** from the **Connection** list.
    * (Optional) Select the checkbox if you want a **separate alert sent for each search result**. You can set up to a maximum of 100 alerts. Any results that exceed the configured maximum do not generate an alert. For example, if your scheduled search is configured to send a maximum of 50 alerts and generates 60 results only the first 50 results will generate an alert, all subsequent results will not generate an alert.
       :::note
-      - This may generate duplicate alerts for non-real-time schedules. If your search time range is longer than the search frequency (like a window of 60 minutes, but the frequency of 15 minutes) duplicate alerts are sent since there is an overlap of 45 minutes between each search and all results are sent, not just the difference.
-      - If the alert condition is: Number of results equal to 0 and "Send a separate alert for each search result" checkbox is selected, it would not trigger any alerts when the alert threshold matches since there are no results to itemize.
+      If the alert condition is: Number of results equal to 0 and "Send a separate alert for each search result" checkbox is selected, it would not trigger any alerts when the alert threshold matches since there are no results to itemize.
       :::
    * [Webhook payload variables](set-up-webhook-connections.md) will have values generated for each result. For example, a payload defined as:
         ```

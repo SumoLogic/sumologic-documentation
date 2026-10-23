@@ -9,25 +9,25 @@ Perhaps the most convenient way to start capturing telemetry from Java (or, gene
 
 import Iframe from 'react-iframe';
 
-:::sumo Micro Lesson
-Tutorial: Auto-instrumentation of a Java app by OpenTelemetry for K8s Environment.
+:::training Micro Lesson
 
-<Iframe url="https://www.youtube.com/embed/P_74rhI1M30?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/p46o4kivj4?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Tutorial: Auto-instrumentation of a Java app by OpenTelemetry for K8s Environment Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 :::
 
 ## Installation
 
-The Java agent and configuration needs to be provided for each of the monitored service instances. The address of the OpenTelemetry Collector (or Collector/Agent) needs to be prepared first (`OTLP_HTTP_ENDPOINT`) and the desired name of the service (`SERVICE_NAME`) and application (`APPLICATION_NAME`).
+The Java agent and configuration needs to be provided for each of the monitored service instances. The address of the [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) (or Collector/Agent) needs to be prepared first (`OTLP_HTTP_ENDPOINT`) and the desired name of the service (`SERVICE_NAME`) and application (`APPLICATION_NAME`).
 
 Instruction below applies to **OpenTelemetry Java Auto Instrumentation** in version [2.6.0](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/tag/v2.6.0).
 
@@ -44,7 +44,7 @@ Ensure that the agent has root permissions for the Java jar files.
 Either of the following options could be used as the template, with the following changes:
 
 * The path to the javaagent JAR file needs to replaced with the location of the file downloaded and distributed in step 1.
-* `OTLP_HTTP_ENDPOINT` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). Refer to the following setup instructions if you do not yet have the collector installed:
+* `OTLP_HTTP_ENDPOINT` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). Refer to the following setup instructions if you do not yet have the OpenTelemetry Collector installed:
   * [Set up traces collection for Kubernetes environments](../../set-up-traces-collection-for-kubernetes-environments.md)
   * [Set up traces collection for other environments](../../set-up-traces-collection-for-other-environments.md)
 * `SERVICE_NAME` needs to be replaced with the name used for the identification of the service.
@@ -82,7 +82,7 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
 ```
 
 :::note
-When setting up OTLP Endpoint for OpenTelemetry Collector/Agent add port number (4318) e.g. `http://OTLP_HTTP_ENDPOINT:4318`.
+When setting up OTLP Endpoint for OpenTelemetry Collector/Agent add port number (4318), for example, `http://OTLP_HTTP_ENDPOINT:4318`.
 :::
 
 ## Troubleshooting

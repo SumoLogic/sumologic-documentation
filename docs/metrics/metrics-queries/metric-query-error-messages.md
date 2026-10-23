@@ -2,7 +2,7 @@
 id: metric-query-error-messages
 title: Metric Query Error Messages
 sidebar_label: Error Messages
-description: Explanation of warning and error messages from Sumo Logic Metric Query, and .
+description: Explanation of warning and error messages from Sumo Logic Metric Query.
 ---
 
 This page describes warning and error messages that are presented for long-running metric queries and metric queries that return too many results.
@@ -11,19 +11,19 @@ This page describes warning and error messages that are presented for long-runni
 
 An error means a critical issue that prevents your query from running. When an error happens, you query will not yield any result. The error could be caused by a syntax error in the query string, or by the query reaching a hard limit. You can request Sumo Logic for a limit increase if a hard limit is reached.
 
-### Query Timeout
+### Query timeout
 
 When a metric query runs for 60 seconds, it will time out, and Sumo Logic will present a message like this:
 
 `The metrics query timed out. Please consider making the query more selective.`
 
-The error might results from the query matching too many time series, but it could also be caused by other conditions, for instance a backend failure or problem.
+The error might result from the query matching too many time series, but it could also be caused by other conditions, for instance a backend failure or problem.
 
-### Hard Limits on Metric Queries
+### Hard limits on metric queries
 
-To provide the best user experience, we have hard limits that are preventing some unusual query patterns from executing. If your use case involves queries over any of these limits, please contact customer support to increase the limit. 
+To provide the best user experience, we have hard limits that prevent some unusual query patterns from executing. If your use case involves queries over any of these limits, [contact customer support](https://support.sumologic.com/support/s/) to increase the limit. 
 
-The following hard limits apply to Metrics queries in Sumo Logic:
+The following hard limits apply to metrics queries in Sumo Logic:
 
 |Property|Limit|Error Message|
 |:---|:---|:---|
@@ -48,7 +48,7 @@ Sumo Logic imposes limits on the input data for a query and the data output by t
 
 *Input data* is the data that matches the selector, prior to aggregation. Sumo Logic evaluates the volume of input data in terms of the number of time series.
 
-For a single metrics query row, Sumo Logic limits the number of input time series to 1000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
+For a single metrics query row, Sumo Logic limits the number of input time series to 3000 for non-aggregate queries. For aggregate queries (queries that have an aggregate operator like `avg` or `max`) the limit is at least 200,000 for time ranges within last 24 hours and 50,000 otherwise.
 
 In addition, the total number of data points scanned by a single row of query limited to 500,000,000 (500M) raw data points, or 50,000,000 (50M) [rollup data points](/docs/metrics/introduction/metric-quantization/#rollup-types).
 
@@ -62,9 +62,9 @@ If the query that results in the message contains an aggregation operator, the r
 
 #### Output data limit
 
-When a single row of query returns more than 1000 time series after the input data limit is applied, Sumo Logic also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
+When a single row of query returns more than 3000 time series after the input data limit is applied, Sumo Logic also limits the number of time series in the visualization and any aggregate calculations, and presents a message as follows:
 
-`There were too many timeseries in the output, showing first 1000`
+`There were too many timeseries in the output, showing first 3000`
 
 There will also be a tip like this:
 

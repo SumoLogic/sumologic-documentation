@@ -46,7 +46,7 @@ For information on collecting unified logs and metrics for VMware, see [VMware U
 
 ## Sample queries
 
-```sql title="vCenter User Activity"
+```sumo title="vCenter User Activity"
  _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "message=User "
  | parse "message=User * *,,," as user,task
  | timeslice 5m
@@ -54,7 +54,7 @@ For information on collecting unified logs and metrics for VMware, see [VMware U
  | transpose row _timeslice column task as *
 ```
 
-```sql title="Average Memory Used in MB"
+```sumo title="Average Memory Used in MB"
 _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "Memory" AND "NonKernel MBytes"
 | parse "\\\\*\\Memory\\NonKernel MBytes: *" as esx_server,mbytes
 | timeslice by 1h
@@ -161,7 +161,7 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages.
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Click **Add Source**.
 1. Select **Syslog** for the Source type.
 1. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
@@ -199,7 +199,7 @@ Collecting performance logs involves using VMware tools and scripts running on v
 
 Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. Click **Add Source** for your vCenter Server Collector.
 1. Select **Local File** for the Source type.
 1. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
@@ -232,7 +232,7 @@ vcenter03.company.com "domain_name\user_name"
 4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication.
 5. Edit the following in the **cron_vcenter_perf.sh** script:
     * Change the **SCRIPT_PATH** variable to reflect the absolute path where the script resides.
-    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
+    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see [Segmenting Performance Collection](#segmenting-performance-collection).
 
 Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#troubleshooting-and-manual-testing).
 ```bash

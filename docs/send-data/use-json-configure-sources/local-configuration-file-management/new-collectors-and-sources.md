@@ -6,7 +6,7 @@ description: Local Configuration File Management is a straightforward way to get
 ---
 
 
-With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data** > **Collection** > **Collection** page.
+With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Collection** page.
 
 ## Step 1. Determine the Sources you need
 
@@ -16,7 +16,7 @@ Depending on the data you’re planning to upload to Sumo Logic, there are sever
 
 The JSON configuration file allows you to define Sources for collection. For JSON configuration details, see [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). 
 
-If you have an existing Collector with Sources of the same types that you are about to configure, you can obtain their JSON configuration from the Sumo web app, as described in Step 1 of [Local Configuration File Management for Existing Collectors and Sources](/docs/send-data/use-json-configure-sources/local-configuration-file-management), and use that JSON as a starting point for creating Source configurations.
+If you have an existing Collector with Sources of the same types that you are about to configure, you can obtain their JSON configuration from the Sumo Logic web app, as described in Step 1 of [Local Configuration File Management for Existing Collectors and Sources](/docs/send-data/use-json-configure-sources/local-configuration-file-management), and use that JSON as a starting point for creating Source configurations.
 
 There are two ways to implement local configuration file management:
 

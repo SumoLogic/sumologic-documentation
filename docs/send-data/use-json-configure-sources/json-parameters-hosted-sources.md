@@ -23,7 +23,7 @@ See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) 
 
 Each Source can have its own unique fields in addition to the generic fields listed in [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources). The `sourceType` field determines the type of Source (and the associated parameters). The next table lists the valid field types. The sections that follow list the unique parameters for each and associated JSON examples.
 
-The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo web interface.
+The Google Workspace Apps Audit Source cannot be created with JSON. This Source requires manual 0Auth confirmation which is only supported in the Sumo Logic web interface.
 
 ## Log Sources for Installed Collectors
 
@@ -75,7 +75,9 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | [Duo Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) | Universal |
 | [Google Cloud Platform Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#google-cloud-platform-source) | HTTP |
 | [HTTP Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#http-source) | HTTP |
+| [Krutrim Object Storage](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#krutrim-object-storage) | Polling |
 | [Microsoft Graph Security API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source) | Universal |
+| [Microsoft Office 365 Audit Source](#microsoft-office-365-audit-source) | HTTP |
 | [Mimecast Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source) | Universal |
 | [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) | Universal |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Universal |
@@ -91,6 +93,7 @@ The Google Workspace Apps Audit Source cannot be created with JSON. This Source
 | Field Type | Type Value |
 |:--|:--|
 | [AWS CloudWatch Source](/docs/send-data/use-json-configure-sources/json-parameters-hosted-sources#awscloudwatchsource) | Polling |
+| [Azure Metrics Source](#azure-metrics-source) | Polling |
 
 ## Log Source parameters for Hosted Collectors
 
@@ -103,7 +106,7 @@ In addition to the common parameters, the following parameters are for an HTTP 
 | `fields` | JSON Object | No |  | Enable Extended HTTP Metadata Collection by adding `_convertHeadersToFields=true`. | modifiable |
 | `sourceType` | String | Yes |  | HTTP | not modifiable |
 | `messagePerRequest` | Boolean | Yes |  | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. <br/>You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | modifiable |
-| `url` | String | No | URL assigned by Sumo for Source | The Source's unique HTTP endpoint web address. | not modifiable |
+| `url` | String | No | URL assigned by Sumo Logic for Source | The Source's unique HTTP endpoint web address. | not modifiable |
 
 ```json title="HTTP Source JSON example"
 {
@@ -178,7 +181,7 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-sourc
 | `contentType` | String | No |  | Define based on the AWS Source you are creating.<br/>[Archive](#awss3-archive-source): AwsS3ArchiveBucket<br/>[S3](#amazon-s3-source): AwsS3Bucket<br/>[S3 Audit](#amazon-s3-audit-source): AwsS3AuditBucket<br/>[CloudFront](#awscloudfrontsource): AwsCloudFrontBucket<br/>[CloudTrail](#awscloudtrailsource): AwsCloudTrailBucket<br/>[ELB](#aws-elastic-load-balancing-source): AwsElbBucket<br/>[Metadata](#aws-metadata-tag-source): AwsMetadata<br/>[Kinesis](#aws-kinesis-firehose-for-logs-source): KinesisLog	| not modifiable |
 | `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds. Minimum value:  1000<br/>For Automatic assign to: -1 | modifiable |
 | `paused` | Boolean | Yes | false | When set to true, the scanner for S3 bucket items is paused. To disable, set to false. | modifiable |
-| `url` | String | No | URL | assigned by Sumo for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo when the Source is created. | not modifiable |
+| `url` | String | No | URL | assigned by Sumo Logic for Source | Used to set up Event Based Notifications with AWS. This value is created and assigned by Sumo Logic when the Source is created. | not modifiable |
 | `thirdPartyRef` | Nested | JSON | Yes |  | Includes all required information for third-party integration, including the S3 bucket name, path expression for the S3 objects, and access credentials.<br/>See examples below table. | modifiable |
 | `snsTopicOrSubscriptionArn`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | No |  | SNS topic/subscription ARN. If SNS has been successfully configured and has received a subscription confirmation request isSuccess will be true.<br/>See example below table. | not modifiable |
 | `bucketName`<br/>This parameter goes in the thirdPartyRef nested JSON. | String | Yes |  | Name of your Amazon S3 bucket. | Modifiable |
@@ -542,6 +545,90 @@ To disable S3 Replay use the `NoPathExpression` placeholder for `path` and `a
 }
 ```
 
+### Microsoft Office 365 Audit Source
+
+:::note
+When creating a Microsoft Office 365 Audit source via JSON in Sumo Logic, only the **App Registration**–based authentication method is supported. Authentication using user account credentials is not supported for JSON-based source creation. [Learn more](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/#vendor-configuration).
+:::
+
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Microsoft Office 365 Audit Source.
+
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| sourceType | String | Yes | `null` | HTTP | Not modifiable |
+| workload | String | Yes | `null` | Select the type of log to collect. If you want to collect from additional content types, create additional instances of this source type. | `Audit.Exchange` |
+| region | String | Yes | `Commercial` | Select the region that corresponds to your Microsoft 365 or Office 365 subscription plan. | not modifiable |
+| tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | `11111111‑aaaa‑2222‑bbbb‑333333333333` |
+| clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| `44444444‑cccc‑5555‑dddd‑666666666666` |
+| clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| `xxxxxxxx‑super‑secret‑value‑xxxxxxxx` |
+
+Microsoft Office 365 Audit Source JSON example: 
+
+```json
+{
+"api.version":"v1",
+   "source": {
+     "sourceType": "HTTP",
+     "name": "o365-api-test-app",
+     "category": "o365/audit",
+     "thirdPartyRef": {
+       "resources": [{
+         "serviceType": "O365AuditNotification",
+         "path": {
+           "type": "O365NotificationPath",
+           "workload": "Audit.Exchange",
+           "region": "Commercial"
+         },
+         "authentication": {
+           "type": "O365AppRegistrationAuthentication",
+           "tenantId": "test-tenant-id",
+           "clientId": "test-client-id",
+           "clientSecret": "test-client-secret"
+         }
+       }]
+     }
+   }
+}
+```
+### Krutrim Object Storage
+
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources), the following parameters are for a Krutrim Object Storage.
+
+| Parameter | Type |  Required? | Default | Description | Access |
+|:--|:--|:--|:--|:--|:--|
+| sourceType | String | Yes |  | Krutrim | not modifiable |
+
+Krutrim Object Storage JSON example: 
+
+```json
+{
+  "source": {
+      "sourceType": "Polling",
+      "name": "Krutrim HYD1 Source",
+      "contentType": "Krutrim",
+      "cutoffTimestamp": 1776834104619,
+      "scanInterval": 300000,
+      "paused": false,
+      "thirdPartyRef": {
+        "resources": [{
+          "serviceType": "Krutrim",
+          "path": {
+            "type": "S3BucketPathExpression",
+            "bucketName": "<BUCKET_NAME>",
+            "pathExpression": "*"
+          },
+          "authentication": {
+            "type": "S3BucketAuthentication",
+            "awsId": "<KRUTRIM_ACCESS_KEY>",
+            "awsKey": "<KRUTRIM_SECRET_KEY>",
+            "region": "hyd1"
+          }
+        }]
+      }
+  }
+}
+```
+
 ## Metrics Source parameters for Hosted Collectors
 
 ### AWS CloudWatch Source
@@ -552,7 +639,7 @@ The following parameters are for an AWS CloudWatch Source.
 |:---------------|:----------|:---------------|:-------------|:-----------------|:----------------|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See best practices for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](/docs/send-data/best-practices#good-and-bad-source-categories) for details. | modifiable |
 | `sourceType` | String | Yes |  | Polling | not modifiable |
 | `contentType` | String | No |  | AwsCloudWatch | not modifiable |
 | `scanInterval` | Long | Yes | 300000 | Time interval of S3 bucket scans for new data, in milliseconds.<br/>Minimum value:  1000 | modifiable |
@@ -630,4 +717,29 @@ This is an AWS Kinesis Firehose for Metrics Source JSON example:
     }
   }
 }
+```
+
+### Azure Metrics Source
+
+The following parameters are for an Azure Metrics Source.
+
+| Parameter | Type | Required | Default | Description | Example |
+|:---|:---|:---|:---|:---|:---|
+| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
+| description | String | No | `null` | Type a description of the source. | `"Testing source"`
+| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| environment | String | Yes | `null` | Type of environment from which you would like to collect metrics. | |
+| limitToRegions | Array | No | `null` | Specify the regions from which you want to collect metrics. To collect from all regions, leave `null`. | |
+| limitToNamespaces | Array | No | `null` | Specify the namespaces from which you want to collect metrics. To collect from all namespaces, leave `null`. | |
+| tagFilters | JSON Object | No | `null` | For each namespace, if defined, the source will only collect metrics for resources that match the tag filter. | |
+| tenantId | String | Yes | `null` | Enter the tenant Id collected from the Azure platform. | |
+| clientId | String | Yes | `null` | Enter the client Id collected from the Azure platform.| |
+| clientSecret | String | Yes | `null` | Enter the client secret collected from the Azure platform.| |
+| scanInterval | Integer | No | 1 minute | How frequently the integration should collect the metrics data from Azure. <br/> **Options**: 1m or 5m. |  |
+
+Azure Metrics Source JSON example:
+
+```json reference
+https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/hosted-collectors/azure-metrics/example.json
 ```

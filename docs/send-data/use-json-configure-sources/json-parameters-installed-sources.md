@@ -4,7 +4,7 @@ title: JSON Parameters for Installed Sources
 description: This topic describes JSON Source parameters for installed Collectors.
 ---
 
-This topic describes JSON Source parameters for installed Collectors. For more information about configuring sources in JSON files, and how to configure Sumo to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+This topic describes JSON Source parameters for installed Collectors. For more information about configuring sources in JSON files, and how to configure Sumo Logic to read the JSON files, see [Local Configuration File Management](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
 :::important
 JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
@@ -34,15 +34,14 @@ Each Source can have its own unique fields in addition to the generic fields lis
 
 ### Local file source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types),
-the following parameters are for local file source. 
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), the following parameters are for local file source. 
 
-| Parameter | Type | Required? | Default | Description |  Access |
-|:--|:--|:--|:--|:--|:--|
-| `sourceType` | String | Yes |  | LocalFile	not | modifiable |
-| `pathExpression` | String | Yes |  | A valid path expression (full path) of the file to collect. For files on Windows systems (not including Windows Events), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash (\). If you are collecting from Windows using CIFS/SMB, see Prerequisites for Windows Log Collection. Use a single asterisk wildcard [*] for file or folder names. Example:[var/foo/*.log]. Use two asterisks [**]to recurse within directories and subdirectories. Example:  [var/**/*.log]. | modifiable |
-| `denylist` | String Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
-| `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
+| Parameter   | Type         | Required? | Default | Description     | Access   |
+|:------------|:-----------|:-----------|:--------|:--------------|:---------|
+| `sourceType`    | String    | Yes       |      | LocalFile   | not modifiable |
+| `pathExpression` | String        | Yes       |      | A valid path expression (full path) of the file to collect. For files on Windows systems (not including [Windows Events](/docs/send-data/installed-collectors/sources/local-windows-event-log-source), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash [`\`]. If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Windows Log Collection](/docs/send-data/installed-collectors/sources/remote-file-source/prerequisites-windows-remote-file-collection). Use a single asterisk wildcard [`*`] for file or folder names. Example: `[var/foo/*.log]`. Use two asterisks [`**`] to recurse within directories and subdirectories. Example: `[var/**/*.log]`. | modifiable     |
+| `denylist`      | String Array  | No     | [ ]     | Comma-separated list of valid path expressions from which logs will not be collected. Example: `["/var/log/**/*.bak","/var/oldlog/*.log"]`    | modifiable     |
+| `encoding`    | String      | No        | UTF-8   | Defines the encoding form. Default is `"UTF-8"`; options include `"UTF-16"`; `"UTF-16BE"`; `"UTF-16LE"`.    | modifiable |
 
 Local File Source JSON example with `cutoffTimestamp`:
 
@@ -482,9 +481,9 @@ In addition to the [common parameters](/docs/send-data/use-json-configure-source
 |:--|:--|:--|:--|:--|:--|
 | `sourceType` | String | Yes |  | DockerStats | not modifiable |
 | `contentType` | String | No |  | If value is empty or does not exist, it’s a json-based source, if value is “DockerMetrics”, it’s a metrics source. | modifiable |
-| `metrics` | String | Array | No | All metrics	List of metrics to be collected. Each metric is an object with two fields, category and metric. For a full list of available metrics, see Docker metrics definitions. When omitted, all available host metrics will be collected. | modifiable |
+| `metrics` | String | Array | No | All metrics	List of metrics to be collected. Each metric is an object with two fields, category and metric. For a full list of available metrics, see [Docker metrics definitions](/docs/send-data/installed-collectors/sources/docker-sources#docker-metrics-definitions). When omitted, all available host metrics will be collected. | modifiable |
 | `uri` | String | Yes |  | URI of the Docker daemon. | modifiable |
-| `specifiedContainers` | List |  |  | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see More about defining container filters. | modifiable |
+| `specifiedContainers` | List |  |  | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](/docs/send-data/installed-collectors/sources/docker-sources). | modifiable |
 | `allContainers` | Boolean | Yes |  | Flag indicating whether the Source includes all running containers (true) or only the containers listed in specifiedContainers (false). | modifiable |
 | `certPath` | String | * |  | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
 | `pollInterval` | Long | No | Continuous (By default, polling occurs continuously, rather than on a periodic basis.) | The frequency, in milliseconds, at which stats are polled. The minimum acceptable polling frequency is 1 second. | modifiable |
@@ -595,7 +594,7 @@ Graphite contentType JSON example: 
 }
 ```
 
-## Additional information
+## Additional resources
 
 See the following topics for additional information:
 * [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.

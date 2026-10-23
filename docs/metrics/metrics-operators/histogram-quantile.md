@@ -2,6 +2,7 @@
 id: histogram-quantile
 title: histogram_quantile Metrics Operator
 sidebar_label: histogram_quantile
+description: Use the histogram_quantile metrics operator to calculate the φ-quantile (0 ≤ φ ≤ 1) from Prometheus histogram buckets.
 ---
 
 
@@ -10,29 +11,35 @@ operator.
 
 ## Syntax
 
-```sql
+```metrics
 histogram_quantile(quantile)
 ```
 
 ## Examples
 
-```sql
-histogram_quantile(.99)
+### Calculate the 99th and 50th quantile
+
+```metrics
+* | histogram_quantile(.99)
 ```
 
-```sql
-histogram_quantile(.5)
+The following query calculates the 50th quantile:
+
+```metrics
+* | histogram_quantile(.5)
 ```
 
-The following PromQL query to measure the 99th quantile of the `apiserver_request_latencies` histogram:
+### Convert a PromQL histogram_quantile query
 
-```sql
+The following PromQL query measures the 99th quantile of the `apiserver_request_latencies` histogram:
+
+```metrics
 histogram_quantile(0.99, rate(apiserver_request_latencies_bucket{}[5m]))
 ```
 
-It would be written in Sumo as:
+It would be written in Sumo Logic as:
 
-```sql
+```metrics
 metric=apiserver_request_latencies_bucket | quantize using max | delta | histogram_quantile(0.99)
 ```
 

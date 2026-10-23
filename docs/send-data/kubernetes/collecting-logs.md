@@ -301,18 +301,40 @@ It's possible to customize the built-in Sumo Logic metadata (like [source name][
 
 ```yaml
 sumologic:
-  logs:
-    container|systemd|kubelet:
-      ## Set the _sourceHost metadata field in Sumo Logic.
-      sourceHost: ""
-      ## Set the _sourceName metadata field in Sumo Logic.
-      sourceName: "%{namespace}.%{pod}.%{container}"
-      ## Set the _sourceCategory metadata field in Sumo Logic.
-      sourceCategory: "%{namespace}/%{pod_name}"
-      ## Set the prefix, for _sourceCategory metadata.
-      sourceCategoryPrefix: "kubernetes/"
-      ## Used to replace - with another character.
-      sourceCategoryReplaceDash: "/"
+ clusterName: my-k8s-cluster
+ logs:
+   container:
+     enabled: true
+     ## Set the _sourceHost metadata field in Sumo Logic.
+     sourceHost: "%{node}"
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "%{namespace}.%{pod}.%{container}"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/%{namespace}/%{pod_name}"
+     ## Set the prefix, for _sourceCategory metadata. Not able to use variables for prefix
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
+   systemd:
+     enabled: true
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "k8s_systemd"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/systemd"
+     ## Set the prefix, for _sourceCategory metadata.
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
+   kubelet:
+     enabled: true
+     ## Set the _sourceName metadata field in Sumo Logic.
+     sourceName: "k8s_kubelet"
+     ## Set the _sourceCategory metadata field in Sumo Logic.
+     sourceCategory: "%{cluster}/kubelet"
+     ## Set the prefix, for _sourceCategory metadata.
+     sourceCategoryPrefix: ""
+     ## Used to replace - with another character.
+     sourceCategoryReplaceDash: "-"
 ```
 
 As can be seen in the above example, these fields can contain templates of the form `%{field_name}`, where `field_name` is the name of a resource attribute. Available resource attributes include the values of `sumologic.logs.fields`, which by default are:
@@ -486,7 +508,7 @@ sumologic:
 
 ### Multiline unstructured logs with HTTP sources
 
-By default, the Helm Chart sends data to Sumo using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain HTTP Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
+By default, the Helm Chart sends data to Sumo Logic using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain HTTP Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
 
 ```yaml
 sumologic:

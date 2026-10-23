@@ -4,6 +4,7 @@ title: Metrics Include and Exclude Rules
 description: You can use metrics processing rules to specify what metrics a metrics source are sen to Sumo Logic.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes metrics include and exclude processing rules, which you can apply to a metrics source to control metrics are sent to Sumo Logic.
 
@@ -19,7 +20,7 @@ As a best practice, specify these rules to match the lesser volume of data.
 
 You configure metrics processing rules on the **Collection > Collectors and Sources > Edit Source** page for a metrics source. There are two rule types for metrics: **Exclude metrics that match** and **Include metrics that match.**
 
-![metric-processing-rule.png](/img/collector/processing-rules/metric-processing-rule.png)
+<img src={useBaseUrl('img/collector/processing-rules/metric-processing-rule.png')} alt="Metric processing rule" style={{border: '1px solid gray'}} width="600" />
 
 ## Exclude metrics example
 

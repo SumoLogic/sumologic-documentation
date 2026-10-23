@@ -13,7 +13,7 @@ Submit issues or questions about Sumo Logic open-source solutions through GitHub
 Sumo Logic Developers on GitHub is a central location that lists all of the open-source repositories that Sumo Logic is aware of. Repos are divided into two categories:
 
 1. [Official Sumo Logic Repositories](https://github.com/SumoLogic)
-1. [Sumo Experts](http://sumologic.github.io/sumo-experts.html)
+1. [Sumo Logic Experts](http://sumologic.github.io/sumo-experts.html)
 
 For complete details, visit http://sumologic.github.io.
 
@@ -39,7 +39,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 | [Docker](https://github.com/SumoLogic/sumologic-collector-docker) | This repository offers several variants of Docker images to run the Sumo Logic Collector. When images are run, the Collector automatically registers with the Sumo Logic service and create sources based on a sumo-sources.json file. The Collector is configured ephemeral. |
 | [FluentD](https://github.com/SumoLogic/fluentd-output-sumologic) | This plugin sends logs or metrics to Sumo Logic via an HTTP endpoint.  |
 | [JavaScript Logging SDK](https://github.com/SumoLogic/js-sumo-logger) | The JavaScript Logging SDK library enables you to send custom log messages to an HTTP Source without installing a Collector on your server. |
-| [Jenkins](https://github.com/SumoLogic/sumologic-jenkins-plugin) | A Sumo Logic Jenkins plugin. |
+| [Jenkins](https://github.com/jenkinsci/sumologic-publisher-plugin) | A Sumo Logic Jenkins plugin. |
 | [Kinesis](https://github.com/SumoLogic/sumologic-kinesis-connector) | The Kinesis-Sumologic Connector is a Java connector that acts as a pipeline between an Amazon Kinesis stream and a  Sumo Logic Collector. Data is fetched from the Kinesis Stream, transformed into a POJO, and then sent to the Sumologic Collection as JSON. For complete details, see Sumo Logic App for Amazon VPC Flow Logs using Kinesis. |
 | [Logback appender](https://github.com/SumoLogic/sumologic-logback-appender) | This solution is a Logback appender that sends straight to Sumo Logic. |
 | [Logstash](https://github.com/SumoLogic/logstash-output-sumologic) | This solution is a Logstash Sumo Logic output plugin.  |
@@ -70,7 +70,7 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 |:-- |:--|
 | [dmail](https://github.com/SumoLogic/dmail) | A simple way to capture a screenshot of a Sumo Logic Dashboard, which is then embedded into an email. |
 | [livetail-cli](https://github.com/SumoLogic/livetail-cli)                              | The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line, similar to tail -f The output is directed to stdout - so you can pipe the output to commands (grep, awk, etc.). For complete details, see Live Tail CLI. |
-| [sumo-report-generator](https://github.com/SumoLogic/sumo-report-generator)   | This tool allows a user to execute multiple searches, and compile the data in a single report. Currently, the only format is Excel. Each tab in Excel would correspond to a search executed in Sumo Logic. NOTE: You must have access to the Sumo Search API in order to use this tool.                     |
+| [sumo-report-generator](https://github.com/SumoLogic/sumo-report-generator)   | This tool allows a user to execute multiple searches, and compile the data in a single report. Currently, the only format is Excel. Each tab in Excel would correspond to a search executed in Sumo Logic. NOTE: You must have access to the Sumo Logic Search API in order to use this tool.                     |
 | [sumobot](https://github.com/SumoLogic/sumobot) | This solution is a Sumo Logic Slack bot. |
 | [Terraform](https://github.com/SumoLogic/terraform-provider-sumologic "https://github.com/SumoLogic/terraform-provider-sumologic") | Terraform provider for Sumo Logic. |
 | [Tailing Sidecar](https://github.com/SumoLogic/tailing-sidecar) | Tailing Sidecar is a streaming sidecar container, the cluster-level logging agent for Kubernetes. |

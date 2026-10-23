@@ -5,13 +5,15 @@ sidebar_label: Troubleshooting
 description: Frequently asked questions about collecting data into Sumo Logic that provide the how-to answers you need to setup and troubleshoot collectors.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 :::sumo
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Collect Data Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTCOWA2/collectors?tabset-cabe3=2).
 :::
 
 This section provides frequently asked questions about collecting data into Sumo Logic and the answers you need. 
 
-## Collector fails to connect to Sumo
+## Collector fails to connect to Sumo Logic
 
 For this issue, the failure to connect may be due to the target server failed to respond or HTTP 504 or HTTP 408 errors.
 
@@ -30,7 +32,7 @@ This warning indicates that a brief lapse in network connectivity between your C
 
 Here are a few troubleshooting steps to try when your Collector is consistently unable to connect to the Service:
 
-1. Test DNS resolution and connectivity to the Sumo servers: 
+1. Test DNS resolution and connectivity to the Sumo Logic servers: 
      ```bash
      curl -i https://collectors.sumologic.com
      # you should see the word "Tweep" returned
@@ -102,7 +104,7 @@ When attempting to upgrade a Windows Collector from the UI, the upgrade fails an
 
 This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the Collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
 
-1. Download the <a href="/files/wrapper-dll.zip" target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
+1. Download the <a href={useBaseUrl('files/wrapper-dll.zip')} target="_blank">wrapper-dll.zip</a> file attached to this article, which includes the missing wrapper.dll files.
 1. Stop the Sumo Logic Collector service running on the host.
 1. Unzip the downloaded file and place the extracted .dll files into the following directory, where \<version\> is the "current version" listed in the upgrade UI in Sumo Logic:
 
@@ -110,7 +112,7 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-     1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+     1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 
      1. Click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
@@ -327,7 +329,7 @@ To increase the maximum Java Heap size:
 
 To monitor collectors for out-of-memory issues, ingest the collector logs, and schedule following search to run every 15 minutes with time range last 15 minutes.
 
-```sql
+```sumo
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
@@ -411,17 +413,23 @@ On Windows servers where the generated number of events is much higher than appr
 
 ## How to Ingest Old or Historical Data
 
-The overwhelming majority of log data processed by Sumo are nearly real-time messages. For this reason, Sumo's timestamp detection and data indexing systems are optimized to handle streams of data originating in the recent past.
+The overwhelming majority of log data processed by Sumo Logic are nearly real-time messages. For this reason, Sumo Logic's timestamp detection and data indexing systems are optimized to handle streams of data originating in the recent past.
 
 Ingested old or historical data, especially when mixed with recent or real-time data in one source, may occasionally be misinterpreted.
 
-This article describes the assumptions that Sumo makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
+This article describes the assumptions that Sumo Logic makes about customer data, tips to help you make sure your data is handled correctly, and guidance on when to contact [Sumo Logic Support](https://support.sumologic.com) regarding historical data uploads.
 
 See [using _format for troubleshooting](/docs/send-data/reference-information/time-reference.md) timestamps.
 
-#### Assumption: Data is less than 365 days old
+#### Assumption: Data is less than 30 days but within 365 days
 
-Sumo Logic assumes that all log message times fall within a window of -1 year through +2 days compared to the current time. Any log messages with a parsed timestamp outside of that window is automatically re-stamped with the current time.
+* To ingest historical data older than 30 days but within 365 days, you must specify a `timestamp` field using a regex locator and a valid date format.
+
+#### Assumption: Data is older than 365 days
+
+Sumo Logic assumes that all log message times fall within a window of -1 year through +2 days compared to the current time. Any log messages with a parsed timestamp outside of that window are automatically re-stamped with the current time.
+* Data older than 365 days can still be ingested. However, even if a custom timestamp is provided, it will be autocorrected to the current time unless technical support disables this function at the organization level.
+* To ingest data older than 365 days with the original timestamp intact, you'll need to contact [Support](https://support.sumologic.com/support/s) to disable the autocorrection function at the org level.
 
 #### Assumption: Data from a source will have similar timestamps
 
@@ -439,19 +447,19 @@ Use the following tips for working with historical data:
 
 ## Troubleshooting time discrepancies
 
-In most scenarios, the message time and receipt time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time and receipt time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent Dashboards from populating with data.
+In most scenarios, the message time, receipt time, and searchable time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time, receipt time, and searchable time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent dashboards from populating with data.
 
-This page explains the elements that can be involved in time
-discrepancies and offers solutions for troubleshooting your problem.
+This page explains the elements that can be involved in time discrepancies and offers solutions for troubleshooting your problem.
 
 :::tip
 See details on the supported [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference.md).
 :::
 
-#### Message time and receipt time
+#### Message time, Receipt time, and Searchable time
 
 * **Message time** represents the time of your log events. This is parsed from your logs by the Collector. When adding a Source to a Collector, most users choose to automatically detect timestamps in their logs and parse them by selecting **Extract timestamp information from log file entries** in the Source configuration settings.
 * **Receipt time** is the timestamp the log message was received by the Collector. See [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) for details.
+* **Searchable Time** refers to the additional processing time required to make logs available for searching after they are received by the Sumo Logic system. This processing includes enrichment, indexing, and storage, all of which contribute to the overall searchable time. See [Use Searchable Time](/docs/search/get-started-with-search/build-search/use-searchable-time/) for more details.
 
 :::note
 If Enable Timestamp Parsing is not selected for your Source, Sumo Logic automatically sets the message time to be equivalent to the receipt time.
@@ -473,7 +481,7 @@ If no time zone is found in the message, or if the time zone is in an unsupporte
 
 #### Potential time zone configuration issues
 
-The following scenarios represent common time zone-related configuration issues for Sumo users. Review these use cases for insights into potential issues with your time zone configuration.
+The following scenarios represent common time zone-related configuration issues for Sumo Logic users. Review these use cases for insights into potential issues with your time zone configuration.
 
 #### Example 1 - Unsupported Time Zone format in File
 
@@ -495,13 +503,13 @@ In this scenario, there is no time zone in the sample message at all. However, t
 
 #### Troubleshooting a misconfigured time zone
 
-If you are experiencing apparent delays during ingest (receiving data), select the "Use Receipt Time" check box under the time picker. This will present data in the order in which it was received by Sumo, as well as display the timestamp that has been detected/applied.
+If you are experiencing apparent delays during ingest (receiving data), select the **Use Receipt Time** check box under the time picker. This will present data in the order in which it was received by Sumo Logic, as well as display the timestamp that has been detected/applied.
 
-![UseReceiptTime_chekcbox.png](/img/send-data/UseReceiptTime_chekcbox.png)
+<img src={useBaseUrl('img/send-data/UseReceiptTime_chekcbox.png')} alt="Use receipt time checkbox" style={{border: '1px solid gray'}} width="800" />
 
 A gap between the two values indicates a potential misconfiguration of the time zone setting, particularly when the gap is (nearly) a multiple of hours, such as in the following example.
 
-![TimeDiscrepancy.png](/img/send-data/TimeDiscrepancy.png)
+<img src={useBaseUrl('img/send-data/TimeDiscrepancy.png')} alt="Time discrepancy" style={{border: '1px solid gray'}} width="500" />
 
 Review your time zone settings, and apply a time zone on the Source that reflects what the time zone is of the sending application. For example, if your application is sending events with a UTC timestamp, you can specify this in the Source configuration.
 
@@ -509,7 +517,7 @@ Review your time zone settings, and apply a time zone on the Source that reflec
 
 The query below can be executed in your account to find the number of messages for each of your Sources where the receipt time and message time are more than 30 minutes apart. This should at least give you a good starting place for you to run additional analysis.
 
-```sql
+```sumo
 *
 | _receiptTime as r
 | _messageTime as t
@@ -527,7 +535,7 @@ The query below can be executed in your account to find the number of messages f
 
 After identifying a list of (problematic) Sources in the previous search, you can then use the query below to view the time delay average, the max delay, and the min delay for each Source. Substitute `<problem_child>` with the Source(s) that you uncovered in the initial query above.  
 
-```sql
+```sumo
 _source=<problem_child>
 | _format as format
 | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
@@ -550,7 +558,7 @@ After installing a Collector and configuring a Source, your data should appear i
 
 You can view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Status**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. Kanso-->
+[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Status**. You can also click the **Go To...** menu at the top of the screen and select **Status**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Status**.
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -560,13 +568,13 @@ Make sure that you're viewing Running Collectors or All Collectors in the S
 
 #### Try a search
 
-Collected data should be searchable within a couple of minutes. You can run a search based on when Sumo Logic received your data by running a search by Receipt Time. Try specifying the Collector with the metadata field `_collector` and the Collector name, like `_collector=<name>`.
+Collected data should be searchable within a couple of minutes. You can run a search based on when Sumo Logic received your data by running a search by **Receipt Time** timestamp or run a search based on when the log data is ready for search after they are received by the Sumo Logic system by **Searchable Time** timestamp. Try specifying the Collector with the metadata field `_collector` and the Collector name, like `_collector=<name>`.
 
-If your user account is not an administrator check your Role assignment for any search filters that may be restricting access to the data.
+If your user account is not an administrator check your role assignment for any search filters that may be restricting access to the data.
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors do not send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/>. Stopped Collectors and Sources are marked with <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/>. Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 
@@ -589,11 +597,11 @@ When you configure a Source, you can choose one of three timestamp options. Firs
 
 To view Source settings:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 
-    ![img](/img/send-data/timezone_parsing_options.png)
+    <img src={useBaseUrl('img/send-data/timezone_parsing_options.png')} alt="Time zone parsing options" style={{border: '1px solid gray'}} width="500" />
 
    * Extract timestamp information from log file entries. Select this option if you'd like Sumo Logic to always extract timestamps from log messages. If no timestamp is detected, Sumo Logic uses the time when the data is received. Generally, this is the best option (it's also selected by default).
    * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files do not have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.

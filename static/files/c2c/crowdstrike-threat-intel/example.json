@@ -1,0 +1,23 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+  				"name": "Crowdstrike TI",
+  				"baseURL": "https://api.crowdstrike.com",
+  				"clientId": "8e094xxxxxxxxxxxx2b1nu36x2d2",
+  				"clientSecret": "***********",
+  				"pollingIntervalHour": 1,
+				"userSourceID": "id1",
+  				"maliciousConfidence": [
+    					"high",
+    					"medium",
+    					"low",
+    					"unverifed"
+  				]
+            },    
+		"schemaRef": {
+            		"type": "Crowdstrike Threat Intel"
+        	},
+        	"sourceType": "Universal"
+    }
+}

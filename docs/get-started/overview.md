@@ -7,25 +7,32 @@ sidebar_label: Intro to Sumo Logic
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data.
+Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Our pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data.
+
+Sumo Logic empowers your team with advanced data analytics, making it simple to transform complex data into actionable insights. With pre-configured searches and intuitive, visual dashboards, anyone on your team can quickly search, filter, and analyze data without requiring deep technical expertise.
+
+Our real-time, at-a-glance visualizations provide continuous monitoring of your application and network health, security, and performance. These insights enable proactive troubleshooting and faster resolution of issues, helping your team stay ahead in an ever-changing digital landscape.
 
 Visual displays of real-time data allow you to monitor the health, fitness, and security of your application and network, providing insights for troubleshooting and timely resolutions.
 
 ## Overview
 
+:::training Micro Lesson
 Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
-<Iframe url="https://www.youtube.com/embed/T4WAZz8-r54?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/pfps97emeh?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Introduction to Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
+:::
 
 ## Benefits of using Sumo Logic
 
@@ -33,19 +40,20 @@ Sumo Logic helps businesses build, run, and secure modern applications through f
 
 There are various factors to consider when implementing a Sumo Logic solution in your organization, based on the different collection strategies.
 
-:::sumo micro lesson
+:::training Micro Lesson
 Get to know more about the benefits of using Sumo Logic.
 
-<Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/w9h0my941q?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Benefits of Using Sumo Logic Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
 :::
 
@@ -53,7 +61,7 @@ Get to know more about the benefits of using Sumo Logic.
 
 A Collector is a small application that gathers log data from your servers and sends it to the cloud. Using Sumo Logic, you can interact with and analyze your data in the Sumo Logic Cloud in real time.
 
-![Collectors M.png](/img/get-started/CollectorsM.png)
+<img src={useBaseUrl('img/get-started/CollectorsM.png')} alt="Collectors flow diagram" style={{border: '1px solid gray'}} width="800" />
 
 ### (A) Sumo Logic Collectors and Sources
 
@@ -65,13 +73,13 @@ The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opente
 
 #### Installed Collector
 
-Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source). Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud in real time. A single Sumo Logic Collector can collect up to 15,000 events per second and has fault tolerance during network or service outages. See [Installed Collector System Requirements](system-requirements.md).
+Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source). Collectors collect raw log data, compress it, encrypt it, and send it to Sumo Logic Cloud in real time. A single Sumo Logic Collector can collect up to 15,000 events per second and has fault tolerance during network or service outages. See [Installed Collector System Requirements](system-requirements.md).
 
 If you'd like to collect non-traditional machine data, [Script Sources](/docs/send-data/installed-collectors/sources/script-source) and [Script Actions](/docs/send-data/installed-collectors/sources/script-action) can provide a great deal of flexibility to collect files.
 
 #### Hosted Collector
 
-Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted in the Sumo Cloud and receive data from one or more [Sources](/docs/send-data/choose-collector-source). You can configure it to collect data from various cloud services like Amazon Web Services, Google Cloud Platform, G Suite, and Microsoft Office 365. It offers [Cloud Syslog Sources](/docs/send-data/hosted-collectors/cloud-syslog-source) to receive syslog data and [HTTP Sources](/docs/send-data/hosted-collectors/http-source/logs-metrics) to receive logs and metrics.
+Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted in the Sumo Logic Cloud and receive data from one or more [Sources](/docs/send-data/choose-collector-source). You can configure it to collect data from various cloud services like Amazon Web Services, Google Cloud Platform, G Suite, and Microsoft Office 365. It offers [Cloud Syslog Sources](/docs/send-data/hosted-collectors/cloud-syslog-source) to receive syslog data and [HTTP Sources](/docs/send-data/hosted-collectors/http-source/logs-metrics) to receive logs and metrics.
 
 The Hosted Collector is not an installed software agent, but rather a collection of endpoints and integration that collects logs from various cloud data sources.
 
@@ -90,22 +98,25 @@ Sumo Logic provides access from anywhere since it is fully browser-based. It als
 This section describes local collection, centralized collection, and data collection best practices.
 
 * [Basics](/docs/send-data/best-practices#local-and-centralized-data-collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
-* [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, etc.). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
+* [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, and so on). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
 * [Centralized Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review centralized collection and its pros and cons. Centralized collector installation involves dedicated collection machines that run the collector agent and collect logs from many different target machines at once (a 1-to-many relationship between collectors and hosts). This concept prevents resource usage on the target machines and removes the need for outbound internet access on the target machines.
 
-Get to know the Collection process through our video, "Data Collection Strategy".
+:::training Micro Lesson
+Get to know the collection process through our video, "Data Collection Strategy".
 
-<Iframe url="https://www.youtube.com/embed/Y1UVF4ASm_c?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+<Iframe url="https://fast.wistia.net/embed/iframe/w03b0igi54?web_component=true&seo=true&videoFoam=false"
+  width="854px"
+  height="480px"
+  title="Micro Lesson: Data Collection Strategy Video"
+  id="wistiaVideo"
+  className="video-container"
+  display="initial"
+  position="relative"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+/>
 
+:::
 
 ## Account configuration
 
@@ -114,9 +125,9 @@ Once you've set up a collector and source, read these tips on configuring and ma
 ### Data volume and retention
 
 * [Data Retention](/docs/manage/partitions/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary.
-* [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
+* [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo Logic tool.
 * [Audit Index](/docs/manage/security/audit-indexes/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
-* [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
+* [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in the Sumo Logic App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](/docs/integrations/sumo-apps/audit). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 
 

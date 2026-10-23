@@ -6,7 +6,7 @@ description: The Sumo Logic Amazon GuardDuty Benchmark App integrates Global Int
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="GuardDuty Benchmark icon" width="50"/>
 
 :::sumo Availability
 For Trial and Enterprise account plans.
@@ -43,7 +43,7 @@ Sumo Logic provides a SAM application based on [AWS Serverless Application Model
 After completing this process, logs are ingested into Sumo Logic in the following way:
 
 1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
-2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
+2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo Logic CloudWatchEventFunction Lambda function.
 3. The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Collection_Overview.png')} alt="flow" />
 
 This section shows you how to generate an access key and access ID for log collection, and then how to deploy the Amazon GuardDuty Benchmark App.
@@ -54,7 +54,7 @@ This section shows you how to generate an access key and access ID for log colle
 In this step, you need to generate access key and access ID from the Sumo Logic console.
 
 To generate an access key and access ID, do the following:
-1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#create-an-access-key)) document.
+1. Follow the instructions as described in [Access Keys](/docs/manage/security/access-keys#create-an-access-key).
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 
@@ -66,11 +66,11 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_Benchmark_App_dialog.png')} alt="flow" />
-3. When the page for the Sumo app appears, click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_App_dialog.png')} alt="flow" />
+3. When the page for the Sumo Logic app appears, click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_App_dialog.png')} alt="flow" />
 4. In **Configure application parameters** panel, enter the following parameters:
     * Access ID (Required): Sumo Logic Access ID generated from Step 1.
     * Access Key (Required): Sumo Logic Access Key generated from Step 1.
-    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
+    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
     * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
     * Source Name: Enter the name of the HTTP Source which will be created within the collector.
     * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
@@ -219,7 +219,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 The following query is from the **Threats by Region** panel of the **Amazon GuardDuty - Threat Details** dashboard:
 
-```sql
+```sumo
 _sourceCategory=*guardduty*
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
 | parse field=type "*:*/*" as ThreatPurpose,ResourceType,ThreatName

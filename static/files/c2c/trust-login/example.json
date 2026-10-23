@@ -1,0 +1,13 @@
+{
+	"api.version": "v1",
+	"source": {
+		"config": {
+                    "name": "Trust Login",
+                    "bearerToken": "hgvwuilvgwovghwovhiowhvo",
+                    "pollingIntervalMin": 5
+},
+		"schemaRef": {
+            		"type": "Trust Login"
+        	},
+        	"sourceType": "Universal"
+}}
