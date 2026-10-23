@@ -37,7 +37,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 ## Step 2: Download the CloudFormation template
 
-Download the `DLQLambdaCloudFormation.json` CloudFormation template [here](https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormation.json).
+Download the `dlq_lambda_cloudformation.template.yaml` CloudFormation template [here](https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/refs/heads/main-v3x/cloudwatchlogs-with-dlq/dlq_lambda_cloudformation.template.yaml).
 
 ## Step 3: Tailor the CloudFormation template
 
@@ -166,8 +166,8 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
 1. In the **Management Tools** menu, select **CloudFormation**.
 1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard)**.<br/><img src={useBaseUrl('img/send-data/CF_animated.gif')} alt="Create a new stack" style={{border: '1px solid gray'}} width="600" />
 1. On the **Specify Template** window, do one of the following:
-   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormation.json` file, and then click **Next**.<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog.png')} alt="Upload a template file" style={{border: '1px solid gray'}} width="500" />
-   * Otherwise, if you did not modify the CloudFormation template, select **Specify an Amazon S3 template URL** and enter: `https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormation.json`<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog_2.png')} alt="Specify an Amazon S3 URL" style={{border: '1px solid gray'}} width="500" />
+   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `dlq_lambda_cloudformation.template.yaml` file, and then click **Next**.<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog.png')} alt="Upload a template file" style={{border: '1px solid gray'}} width="500" />
+   * Otherwise, if you did not modify the CloudFormation template, select **Specify an Amazon S3 template URL** and enter: `https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/dlq_lambda_cloudformation.template.yaml`<br/><img src={useBaseUrl('img/send-data/Create_Stack_dialog_2.png')} alt="Specify an Amazon S3 URL" style={{border: '1px solid gray'}} width="500" />
 1. Select **Next** and the **Specify Stack Details** window appears. Enter the following:
    * **Stack Name**.
    * **EmailID** (Optional) Used for alerts.
