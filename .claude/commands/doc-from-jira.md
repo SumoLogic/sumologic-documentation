@@ -42,7 +42,7 @@ If no ticket is found, ask the user for the ticket number.
 ### Step 2: Fetch the ticket
 
 Use the Jira MCP tool to fetch the ticket:
-- **Cloud ID**: `247075db-3b0b-4f1b-92db-51683ab743a6`
+- **Cloud ID**: `247075db-3b0b-4f1b-92cb-51683ab743a6`
 - **Issue key**: the provided DOCS-XXXX number
 
 Extract from the ticket:
