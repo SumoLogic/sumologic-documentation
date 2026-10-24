@@ -260,15 +260,15 @@ After successful registration of collector, if you delete the collector in Sumo 
 
 To work around this, delete the local collector registration file at `~/.sumologic-otel-collector/`. The collector will re-register on next run.
 
-### Enabling `clobber` property re-registers collector on every restart
+### Enabling the clobber flag re-registers collector on every restart
 
-If you set the `extensions.sumologic.clobber` property to `true`, a new collector registration that replaces the previously existing registration will be created on every run of the collector.
+If you set the `extensions.sumologic.clobber` flag to `true`, a new collector registration that replaces the previously existing registration will be created on every run of the collector.
 
 This affects the `_collectorId` attribute, which is different for every new collector registration.
 
-To prevent this, remove the `extensions.sumologic.clobber` property or set it to `false`.
+To prevent this, remove the `extensions.sumologic.clobber` flag or set it to `false`.
 
-### Registration is rejected with an HTTP 429 error when `clobber` is enabled
+### Registration is rejected with an HTTP 429 error when the clobber flag is enabled
 
 If the collector fails to register with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`) and the following message, Sumo Logic has rate limited your registration requests:
 
@@ -283,7 +283,7 @@ To resolve this:
 1. Find any other running collector that uses the same collector name, on this machine or a different one.
 1. Do one of the following:
    * Use a unique `collector_name` for each machine.
-   * Remove the `extensions.sumologic.clobber` property or set it to `false`. Use `clobber` only to replace a collector that is no longer running.
+   * Remove the `extensions.sumologic.clobber` flag or set it to `false`. Use `clobber` only to replace a collector that is no longer running.
 1. Stop all registration attempts with that name and wait about an hour before you try again. Each attempt, including a rejected one, resets the one-hour timer.
 1. Restart the collector.
 
