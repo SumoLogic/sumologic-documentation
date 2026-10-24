@@ -276,7 +276,7 @@ If the collector fails to register with an HTTP `429` response (`ot-collector-re
 Too many collector registrations with clobber=true for collector name '<name>'. This usually indicates multiple machines are attempting to register with the same collector name simultaneously. Use unique collector names per machine or disable clobber.
 ```
 
-This rate limit applies to OT Collector only, not Installed Collector. Registration is rejected after about 50 registration attempts with `extensions.sumologic.clobber` set to `true` and the same collector name within an hour. A common cause is multiple machines that share a collector name, each deleting the other's collector when it registers.
+This rate limit applies to OpenTelemetry collectors only, not installed collectors. Registration is rejected after about 50 registration attempts with `extensions.sumologic.clobber` set to `true` and the same collector name within an hour. A common cause is multiple machines that share a collector name, each deleting the other's collector when it registers.
 
 To resolve this:
 
