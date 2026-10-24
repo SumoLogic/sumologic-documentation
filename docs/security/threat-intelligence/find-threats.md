@@ -7,6 +7,40 @@ description: Learn how to detect and investigate security threats using Sumo Log
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+## Use the threatlookup search operator
+
+To search threat intelligence indicators in your log data, use the [`threatlookup`](/docs/search/search-query-language/search-operators/threatlookup/) search operator. It matches field values in your logs against indicators in your [threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#threat-intelligence-sources), including Sumo Logic-managed sources and custom sources you've added.
+
+Compared to `lookup` and `threatip`, `threatlookup`:
+* Searches all of your threat intelligence sources, or a single source you specify with `source="<source_name>"`.
+* Matches multiple kinds of indicators, not only IP addresses.
+* Returns normalized indicator fields, such as `_threatlookup.confidence`, `_threatlookup.threat_type`, and `_threatlookup.source`.
+
+For example, this query returns the single best match for each `srcDevice_ip` value and keeps only high-confidence matches:
+
+```sumo
+_index=sec_record*
+| threatlookup singleIndicator srcDevice_ip
+| where _threatlookup.confidence > 50
+| where !isNull(_threatlookup.source)
+| timeslice 1h
+| count by _timeslice
+```
+
+To search a specific source, such as a custom source named `mysource`:
+
+```sumo
+_index=sec_record*
+| threatlookup source="mysource" srcDevice_ip
+| where _threatlookup.confidence > 50
+```
+
+For syntax, response fields, and more examples, see [threatlookup Search Operator](/docs/search/search-query-language/search-operators/threatlookup/).
+
+:::tip
+`threatlookup` supersedes the `threatip` operator. For new queries, use `threatlookup`.
+:::
+
 ## Use the lookup search operator
 
 The [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources) in the threat intelligence datastore contain threat indicators supplied by third-party intel vendors and maintained by Sumo Logic: <br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence" style={{border: '1px solid gray'}} width="800" />
@@ -28,7 +62,7 @@ _sourceCategory=cylance "IP Address"
 For more information, see [Threat Intel optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-optimization) in the *Threat Intel Quick Analysis* article.
 
 :::note
-You can only use the `lookup` operator to search using the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources). You cannot use the operator with other threat intelligence sources in your datastore.
+You can only use the `lookup` operator to search using the [Sumo Logic threat intelligence sources](/docs/security/threat-intelligence/about-threat-intelligence/#sumo-logic-threat-intelligence-sources). To search other threat intelligence sources in your datastore, use the [`threatlookup`](#use-the-threatlookup-search-operator) operator.
 :::
 
 :::tip
@@ -38,6 +72,8 @@ All the dashboards in the [Threat Intel Quick Analysis](/docs/integrations/secur
 ## Use the threatip search operator
 
 To find threats using IP addresses, use the `threatip` search operator. This operator [uses `sumo://threat/cs` in log search queries](#use-the-lookup-search-operator) to correlate data in the `_sumo_global_feed_cs` threat intelligence source.
+
+The `threatip` operator is limited to IP addresses and the CrowdStrike source. To search multiple sources and indicator types, use the [`threatlookup`](#use-the-threatlookup-search-operator) operator instead.
 
 For more information, see [threatip Search Operator](/docs/search/search-query-language/search-operators/threatip/).
 
