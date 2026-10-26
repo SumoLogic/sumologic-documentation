@@ -183,7 +183,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 
 ### Sample queries
 
-```sql title="Alerts by Status"
+```sumo title="Alerts by Status"
 _sourceCategory=security_evident
 | json "data.id", "data.attributes" as id, data_attrib
 | json "included.[0].attributes.name" as account_name

@@ -25,6 +25,7 @@ To manage roles, you must have an administrator role or your role must have been
 | CA  | Canada (Central)       | ca-central-1   | https://api.ca.sumologic.com/docs/#tag/roleManagementV2   |
 | CH  | Switzerland (Zurich)   | eu-central-2   | https://api.ch.sumologic.com/docs/#tag/roleManagementV2  |
 | DE  | EU (Frankfurt)         | eu-central-1   | https://api.de.sumologic.com/docs/#tag/roleManagementV2   |
+| ESC | AWS European Sovereign Cloud | eusc-de-east-1 | https://api.esc.sumologic.com/docs/#tag/roleManagementV2  |
 | EU  | EU (Ireland)           | eu-west-1      | https://api.eu.sumologic.com/docs/#tag/roleManagementV2   |
 | FED | US East (N. Virginia)  | us-east-1      | https://api.fed.sumologic.com/docs/#tag/roleManagementV2  |
 | JP  | Asia Pacific (Tokyo)   | ap-northeast-1 | https://api.jp.sumologic.com/docs/#tag/roleManagementV2   |
@@ -44,11 +45,11 @@ Currently, Role Management APIs V2 records both the V1 and V2 log line changes.
 V2 changes are **only** applicable for `RoleUpdate` and `RoleCreated` events.
 :::
 
-<br/><img src={useBaseUrl('img/users-roles/JSON-diff-V1-V2.png')} alt="JSON-diff-V1-V2" style={{border: '1px solid gray'}} width="800"/>
+<br/><img src={useBaseUrl('img/users-roles/JSON-diff-V1-V2.png')} alt="JSON diff V1 V2" style={{border: '1px solid gray'}} width="800"/>
 
 For example, consider you are interested in querying upon audit logs with change in `RoleUpdated` or `RoleCreated` events. Now, if you perform this search you will initially see the V1 type of event in the search results. However, to view the results with the V2 event type, you are required to adjust the parameters in the query.
 
-```sql title="V1 Audit Logging"
+```sumo title="V1 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
 | json fields=_raw "eventTime" as eventTime
@@ -59,7 +60,7 @@ For example, consider you are interested in querying upon audit logs with change
 | count by eventTime, eventName, actor, role_name, create_role, update_role
 ```
 
-```sql title="V2 Audit Logging"
+```sumo title="V2 Audit Logging"
 (_index=sumologic_audit_events)
 | json fields=_raw "roleIdentity.roleName" as role_name
 | json fields=_raw "eventTime" as eventTime

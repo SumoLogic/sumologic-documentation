@@ -53,7 +53,7 @@ This app uses Sumo Logic’s [Databricks Audit source](/docs/send-data/hosted-co
 
 ## Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory="Labs/DatabricksAudit"
 | json "action_name", "audit_level", "event_time", "response", "service_name", "source_ip_address", "user_identity", "workspace_id" as action_name, audit_level, event_time, response, service_name, ip_address, user_identity, workspace_id nodrop
 | json field=response "status_code", "result", "error_message" as status_code, result, error_message nodrop
@@ -73,7 +73,7 @@ _sourceCategory="Labs/DatabricksAudit"
 | count
 ```
 
-```sql title="API Response Code"
+```sumo title="API Response Code"
 _sourceCategory="Labs/DatabricksAudit"
 | json "action_name", "audit_level", "event_time", "response", "service_name", "source_ip_address", "user_identity", "workspace_id" as action_name, audit_level, event_time, response, service_name, ip_address, user_identity, workspace_id nodrop
 | json field=response "status_code", "result", "error_message" as status_code, result, error_message nodrop
@@ -135,7 +135,7 @@ The **Databricks Audit - Overview** dashboard provides a comprehensive view of u
 
 The dashboard tracks login activity and failed login attempts over time, allowing for rapid detection of authentication anomalies and potential security risks. Panels highlight the most active services and actions, along with a detailed audit summary, supporting effective monitoring of operational events and risk assessment.
 
-By consolidating these critical insights, the dashboard enables security and compliance teams to detect unusual behaviors, investigate incidents, and proactively strengthen the security of their Databricks workspaces. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Databricks-Audit/Databricks-Audits-Overview.png' alt="Databricks-Audit-Overview" />
+By consolidating these critical insights, the dashboard enables security and compliance teams to detect unusual behaviors, investigate incidents, and proactively strengthen the security of their Databricks workspaces. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Databricks-Audit/Databricks-Audits-Overview.png' alt="Databricks Audit Overview" />
 
 ### Security Overview
 
@@ -143,7 +143,7 @@ The **Databricks Audit - Security Overview** dashboard provides targeted insight
 
 Security teams can easily track trends in failed authentications and API errors, investigate root causes, and identify patterns that signal emerging threats or compliance violations. The dashboard also includes a geographic overview of audit activities, highlighting events originating from embargoed or high-risk regions to help monitor potential data exfiltration or policy breaches.
 
-By consolidating these critical security indicators, including summaries of failed API attempts and geographic context, the dashboard empowers teams to rapidly investigate incidents, respond to evolving risks, and maintain strong security and compliance across all Databricks workspaces. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Databricks-Audit/Databricks-Audits-Security.png' alt="Databricks-Audit-Security" />
+By consolidating these critical security indicators, including summaries of failed API attempts and geographic context, the dashboard empowers teams to rapidly investigate incidents, respond to evolving risks, and maintain strong security and compliance across all Databricks workspaces. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Databricks-Audit/Databricks-Audits-Security.png' alt="Databricks Audit Security" />
 
 ## Create monitors for Databricks Audit app
 

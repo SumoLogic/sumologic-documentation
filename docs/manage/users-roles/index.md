@@ -1,7 +1,7 @@
 ---
 slug: /manage/users-roles
 title: Users and Roles
-description: Learn how to manage users and roles in Sumo Logic.
+description: Manage Sumo Logic users and roles using role-based access control (RBAC) to assign capabilities, search filters, and data access permissions to users.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

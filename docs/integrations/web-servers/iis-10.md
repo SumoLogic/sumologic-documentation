@@ -146,7 +146,7 @@ This section demonstrates how to configure a Local File Source for HTTP Error Lo
        * `component = webserver`
        * `webserver_system = iis`
        * `webserver_farm = <Your_IISserver_farm_Name>`. (Enter **Default** if you do not have one.)
-       * `environment = <Your_Environment_Name>` (For example, Dev, QA, or Prod)<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-http-logs.png')} alt="IIS-access-logs" width="500"/>
+       * `environment = <Your_Environment_Name>` (For example, Dev, QA, or Prod)<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-http-logs.png')} alt="IIS access logs" width="500"/>
 3. Configure the Advanced section settings:
     * **Timestamp Parsing Settings**. Make sure the setting matches the timezone on the log files.
     * **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
@@ -430,7 +430,7 @@ Use this dashboard to:
 * Get a high-level overview of sites, requests, connect, cache, data received and sent, queue, application pool, client location, client platforms, errors, and threats identified.
 * Drill Down to specific use cases by clicking on specific panels of interest.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Overview.png')} alt="IIS-Overview" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Overview.png')} alt="IIS Overview" />
 
 ### HTTP Error
 
@@ -441,7 +441,7 @@ Use this dashboard to:
 * Identify the reason for failure. Check if the request violated the HTTP protocol, or if there was a WAS/the application pool failure.
 * Correct the error identified to ensure a consistent and satisfactory user experience.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-HTTP-Error.png')} alt="IIS-HTTP-Error" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-HTTP-Error.png')} alt="IIS HTTP Error" />
 
 ### Performance Snapshot
 
@@ -454,7 +454,7 @@ Use this dashboard to:
 * Monitor the load on your site by looking into the rate of all the requests and rates based on specific types of HTTP methods, to anticipate resource needs and allocate them accordingly.
 * Monitor Bytes/Files transferred, to check if there is a need to make page content more lightweight, or track the most typically transferred high data content. This can also be an indicator of a potential spike in traffic.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Performance-Snapshot.png')} alt="IIS-Performance-Snapshot" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Performance-Snapshot.png')} alt="IIS Performance Snapshot" />
 
 ### Performance Trends
 
@@ -464,7 +464,7 @@ Use this dashboard to:
 * Monitor trends of various metrics to keep track of how requests are served over time and anticipate potential performance bottlenecks.
 * Acquire current performance snapshots of IIS servers. You can drill down to the Performance Snapshot by clicking the Requests Per Sec (All methods) panel.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Performance-Trends.png')} alt="IIS-Performance-Trends" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Performance-Trends.png')} alt="IIS Performance Trends" />
 
 ### Threat Analysis
 
@@ -474,19 +474,19 @@ Use this dashboard to:
 * Identify potential threats and indicators of compromise.
 * Monitor if your site is accessed.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Threat-Analysis.png')} alt="IIS-Threat-Analysis" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Threat-Analysis.png')} alt="IIS Threat Analysis" />
 
 ### Latency
 
 The **IIS - Latency** dashboard provides visual graphs and detailed information for the integrity of performance throughout your IIS infrastructure. Dashboard panels show response time averages, cumulative percentiles, histograms, and outliers. Panels also show details for traffic distribution, slowest pages, slowest GET and POST requests, and average redirection time.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Latency.png')} alt="IIS-Latency" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Latency.png')} alt="IIS Latency" />
 
 ### Web Server Operations
 
 The **IIS - Web Server Operations** dashboard provides visual graphs and detailed information on server operation errors in your IIS infrastructure. Dashboard panels show server errors by the server, server errors over time, server error outliers, and redirections by the server. Panels also show client errors by the server, client error outliers, top URLs with 404 errors, and response codes over time.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Web-Server-Operations.png')} alt="IIS-Web-Server-Operations" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Web-Server-Operations.png')} alt="IIS Web Server Operations" />
 
 ### Requests Stats
 
@@ -498,31 +498,31 @@ Use this dashboard to:
 * Analyze request volume trends against the last 7 days to understand business fluctuations.
 * Identify how you are acquiring unique users with unique client outliers, and compare with positive and negative outliers.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Requests-Stats.png')} alt="IIS-Requests-Stats" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Requests-Stats.png')} alt="IIS Requests Stats" />
 
 ### Visitor Access Types
 
 The **IIS - Visitor Access Types** Dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Access-Types.png')} alt="IIS-Visitor-Access-Types" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Access-Types.png')} alt="IIS Visitor Access Types" />
 
 ### Visitor Locations  
 
 The **IIS - Visitor Locations** Dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Locations.png')} alt="IIS-Visitor-Locations" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Locations.png')} alt="IIS Visitor Locations" />
 
 ### Visitor Traffic Insights
 
 The **IIS - Visitor Traffic Insights** Dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Traffic-Insights.png')} alt="IIS-Visitor-Traffic-Insights" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Visitor-Traffic-Insights.png')} alt="IIS Visitor Traffic Insights" />
 
 ### Application Pool
 
 The **IIS - Application Pool** dashboard provides a high-level view of the Application Pool State, Information, and Worker Process Metrics.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Application-Pool.png')} alt="IIS-Application-Pool" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Application-Pool.png')} alt="IIS Application Pool" />
 
 ### ASP.NET
 
@@ -534,7 +534,7 @@ Use this dashboard to:
 * Monitor the Application Information.
 * Understand Request execution and wait time.
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-ASP.NET.png')} alt="IIS-ASP.NET" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-ASP.NET.png')} alt="IIS ASP.NET" />
 
 ### ASP.NET Applications
 
@@ -550,7 +550,7 @@ Use this dashboard to monitor the following key metrics:
 * Pipeline Instance Count
 * Output Cache
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-ASP.NET-Applications.png')} alt="IIS-ASP.NET-Applications" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-ASP.NET-Applications.png')} alt="IIS ASP.NET Applications" />
 
 
 ### Cache Performance
@@ -564,7 +564,7 @@ Use this dashboard to monitor the following key metrics:
 * File Cache
 * URI Cache
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Cache-Performance.png')} alt="IIS-Cache-Performance" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Cache-Performance.png')} alt="IIS Cache Performance" />
 
 
 ### Web Service
@@ -579,7 +579,7 @@ Use this dashboard to monitor the following key metrics:
 * Method
 * Miscellaneous
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-Web-Service.png')} alt="IIS-Web-Service" />
+<img src={useBaseUrl('img/integrations/web-servers/IIS-Web-Service.png')} alt="IIS Web Service" />
 
 ## Installing IIS monitors
 

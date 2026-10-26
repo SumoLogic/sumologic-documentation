@@ -8,7 +8,7 @@ description: This integration aims to collect the report logs from the Trust Log
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="trust-login-icon" width="50" />
+<img src={useBaseUrl('img/send-data/trust-login-icon.png')} alt="Trust Login icon" width="50" />
 
 Trust Login is an advanced authentication platform that provides a secure and seamless login solution for both users and organizations. It improves the authentication process by focusing on trust, ease of use, and robust security. This approach ensures reliable access control while maintaining a positive user experience.
 

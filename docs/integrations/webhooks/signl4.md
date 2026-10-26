@@ -49,7 +49,7 @@ Follow the below steps to configure the SIGNL4 Webhook.
     - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 5. Click **Install**.
 6. Verify SIGNL4 events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-  ```sql
+  ```sumo
   _sourceCategory=webhook/signl4
   ```
 

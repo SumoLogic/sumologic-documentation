@@ -2,14 +2,14 @@
 id: cloud-sql
 title: Google Cloud SQL
 sidebar_label: Google Cloud SQL
-description: The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs.
+description: The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, error logs, and performance metrics for both MySQL and PostgreSQL instances.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/sql.png')} alt="SQL icon" width="50"/>
 
-The Sumo Logic app for Google Cloud SQL helps you to monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs, along with CPU disk memory utilization, Disk input/output operations, replication lag, received/sent bytes, and connections.  
+The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, error logs, and performance metrics for both MySQL and PostgreSQL instances.  
 
 ## Log and metric types
 
@@ -20,7 +20,7 @@ The App uses:
 
 ### Sample queries
 
-```bash title="Created Resources Over Time"
+```sumo title="Created Resources Over Time"
 _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/*"
@@ -41,11 +41,11 @@ project_id=* region=* cloud.platform=gcp_cloudsql database_id=* metric=database/
 
 ## Collecting logs for the Google Cloud SQL
 
-This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud SQL.
+This section describes the Sumo Logic pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud SQL.
 
 ### Collection Process for GCP services
 
-The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
+The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo Logic’s Google Cloud Platform (GCP) source running on a hosted collector.
 
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Google Cloud Loggings [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
@@ -189,6 +189,24 @@ The **Google Cloud SQL - MySQL Performance** dashboard works with Google Cloud S
 The **Google Cloud SQL - Performance Overview** dashboard works with Google Cloud SQL metrics. This dashboard provides an overview of the average disk/CPU/memory utilization across all Cloud SQL instances, the number of connections, disk input/output operations count, and memory used along with the database status.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-Performance-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - Performance Overview" width="800"/>
+
+### PostgreSQL - Error Logs
+
+The **Google Cloud SQL - PostgreSQL - Error Logs** dashboard works with Google Cloud SQL PostgreSQL instance logs. Monitor errors, fatal events, authentication failures, lock waits, and connection activity.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-PostgreSQL-Error-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - PostgreSQL - Error Logs" width="800"/>
+
+### PostgreSQL - Slow Query Logs
+
+The **Google Cloud SQL - PostgreSQL - Slow Query Logs** dashboard works with Google Cloud SQL PostgreSQL instance logs. Monitor slow queries exceeding the log_min_duration_statement threshold, track execution time trends, and identify worst-performing queries.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-PostgreSQL-Slow-Query-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - PostgreSQL - Slow Query Logs" width="800"/>
+
+### PostgreSQL Performance
+
+The **Google Cloud SQL - PostgreSQL Performance** dashboard works with Google Cloud SQL metrics for PostgreSQL. Monitor active backends, transaction rates, vacuum health, replication lag, deadlocks, cache hit ratio, and temp file spills.
+
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-PostgreSQL-Performance.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - PostgreSQL Performance" width="800"/>
 
 ## Upgrade/Downgrade the Google Cloud SQL app (Optional)
 

@@ -88,7 +88,7 @@ Use this dashboard to:
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
 * Get insights into Active and dropped connections.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Overview.png')} alt="Nginx-Overview" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Overview.png')} alt="Nginx Overview" />
 
 ### Error Logs
 
@@ -101,7 +101,7 @@ Use this dashboard to:
 * To track and view client geographic locations generating errors.
 * Track critical alerts and emergency error alerts.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Error-Logs.png')} alt="Nginx-Ingress-Error-Logs" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Error-Logs.png')} alt="Nginx Ingress Error Logs" />
 
 ### Trends
 
@@ -112,7 +112,7 @@ Use this dashboard to:
 * To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 * Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Trends.png')} alt="Nginx-Ingress-Trends" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Trends.png')} alt="Nginx Ingress Trends" />
 
 ### Outlier Analysis
 
@@ -125,7 +125,7 @@ Use this dashboard to:
 
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Outlier-Analysis.png')} alt="Nginx-Ingress-Outlier-Analysis" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Outlier-Analysis.png')} alt="Nginx Ingress Outlier Analysis" />
 
 ### Threat Intel
 
@@ -134,7 +134,7 @@ The **Nginx Ingress - Threat Intel** dashboard provides an at-a-glance view of t
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Threat-Intel.png')} alt="Nginx-Ingress-Threat-Intel" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Threat-Intel.png')} alt="Nginx Ingress Threat Intel" />
 
 ### Web Server Operations
 
@@ -144,7 +144,7 @@ Use this dashboard to:
 * Gain insights into Client and Server Responses on the Nginx Server. This helps you identify errors in the Nginx Server.
 * To identify geolocations of all Client errors. This helps you identify client locations causing errors and helps you to block client IPs.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Web-Server-Operations.png')} alt="Nginx-Ingress-Web-Server-Operations" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Web-Server-Operations.png')} alt="Nginx Ingress Web Server Operations" />
 
 ### Visitor Access Types
 
@@ -154,7 +154,7 @@ Use this dashboard to:
 * Understand which platform and browsers are used to gain access to your infrastructure.
 * These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Access-Types.png')} alt="Nginx-Ingress-Visitor-Access-Types" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Access-Types.png')} alt="Nginx Ingress Visitor Access Types" />
 
 ### Visitor Locations
 
@@ -163,7 +163,7 @@ The **Nginx Ingress - Visitor Locations** dashboard provides a high-level view o
 Use this dashboard to:
 * Gain insights into the geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Locations.png')} alt="Nginx-Ingress-Visitor-Locations" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Locations.png')} alt="Nginx Ingress Visitor Locations" />
 
 ### Visitor Traffic Insight
 
@@ -173,7 +173,7 @@ Use this dashboard to:
 * To understand the type of content that is frequently requested by users.
 * It helps in allocating IT resources according to the content types.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Traffic-Insight.png')} alt="Nginx-Ingress-Visitor-Traffic-Insight" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Traffic-Insight.png')} alt="Nginx Ingress Visitor Traffic Insight" />
 
 ### Connections and Requests Metrics
 
@@ -184,7 +184,7 @@ Use this dashboard to:
 * Gain information about active and dropped connections. This helps you identify the connection rejected by the Nginx Server.
 * Gain information about the total requests handled by Nginx Server per second. This helps you understand read, and write requests on the Nginx Server.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Connections-and-Requests-Metrics.png')} alt="Nginx-Ingress-Connections-and-Requests-Metrics" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Connections-and-Requests-Metrics.png')} alt="Nginx Ingress Connections and Requests Metrics" />
 
 ### Controller Metrics
 
@@ -194,7 +194,7 @@ Use this dashboard to:
 * Gain information about Nginx ingress Controller status and reloads. This helps you understand the availability of Nginx Ingress controllers.
 * Gain information about Nginx reload time and any reload errors.
 
-<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Controller-Metrics.png')} alt="Nginx-Ingress-Controller-Metrics" />
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Controller-Metrics.png')} alt="Nginx Ingress Controller Metrics" />
 
 ## Create monitors for Nginx Ingress app
 

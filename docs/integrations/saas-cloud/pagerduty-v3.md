@@ -40,7 +40,7 @@ For examples of incident.triggered, incident.acknowledged and incident.resolved 
 The following Top Altering Services query is shown on the PagerDuty V3 - Overview dashboard.
 
 
-```
+```sumo
 _sourceCategory = Labs/pagerduty_v3 "incident.triggered"
 | json "event.event_type","event.data","event.data.created_at" as event,incident,created_on nodrop
 | json field=incident "id", "number", "escalation_policy.summary", "service.summary", "status", "title", "urgency", "teams[*].summary", "assignees[*]"  as incident_id, incident_number, escalation_policy_name, alertedBy_service, incident_status, incident_title, incident_urgency,  incident_team_involved, assignee nodrop

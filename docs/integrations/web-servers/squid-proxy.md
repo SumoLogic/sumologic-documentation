@@ -602,11 +602,11 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
    * **Applied At.** Choose **Ingest Time.**
    * **Scope**. Select **Specific Data.**
    * **Scope**: Enter the following keyword search expression.
-     ```sql
+     ```sumo
      pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_cluster=* pod_labels_proxy_system=*
      ```
    * **Parse Expression**. Enter the following parse expression:
-    ```sql
+    ```sumo
     if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
     | pod_labels_component as component
     | pod_labels_proxy_system as proxy_system

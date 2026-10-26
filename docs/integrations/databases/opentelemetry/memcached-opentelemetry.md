@@ -91,7 +91,11 @@ The files are typically located in `/var/log/memcached/memcached.log`. If you're
 
 For metrics, you're required to provide the Memcached endpoint (default is localhost:11211) along with the `collection_interval` (default is 1 minute).
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -215,7 +219,7 @@ Jun 23 07:35:01 node03 memcached: \
 
 Following is the query from Errors panel of Memcached app's overview Dashboard:
 
-```sql
+```sumo
 %"deployment.environment"=* %"db.cluster.name"=* %"sumo.datasource"=memcached memcached ">" ERROR | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as memcached_log_message
 | parse regex field=memcached_log_message ">(?<pid>\d+) (?<cmd>\w+)"
@@ -225,7 +229,7 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 ```
 ## Sample metrics queries
 
-```sql title="Total Get"
+```metrics title="Total Get"
 sumo.datasource=memcached deployment.environment=* db.cluster.name=* db.node.name=* metric=memcached.commands command=get | sum
 ```
 

@@ -19,7 +19,7 @@ The Imperva Incapsula - Web Application Firewall app uses security and access lo
 
 ### Sample queries
 
-```sql title="Parse Command for all CEF items in Imperva Incapsula"
+```sumo title="Parse Command for all CEF items in Imperva Incapsula"
 | parse "fileId=* " as ID nodrop
 | parse "src=* " as main_client_ip nodrop
 | parse "caIP=* " as additional_client_ip nodrop
@@ -60,7 +60,7 @@ The Imperva Incapsula - Web Application Firewall app uses security and access lo
 | parse "dproc=* cs6" as browser_type nodrop
 ```
 
-```sql title="Top attack vectors"
+```sumo title="Top attack vectors"
 _sourceCategory="Incapsula"
 | parse "SIEMintegration|1|1|*|" as policy_type
 | parse "sourceServiceName=* " as site_name
@@ -174,3 +174,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Imperva Incapsula Automation Service Integration](/docs/integrations/automation-integrations/imperva-incapsula/) to automate response actions directly from Cloud SOAR playbooks.

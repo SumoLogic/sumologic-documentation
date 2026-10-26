@@ -34,11 +34,13 @@ You can install our OpenTelemetry Collector using one of the following methods:
 * [Install script](#install-script)
 * [Manual step-by-step installation](#manual-step-by-step-installation)
 
+If your environment restricts internet access, refer to [Packagecloud's security documentation](https://packagecloud.io/docs/security) for the hostnames to allowlist. For strict firewall policies, mirror the repository and use a configuration management tool (Chef, Puppet, or Ansible) instead of the UI installer.
+
 ### UI Installation
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **OpenTelemetry Collection**. You can also click the **Go To...** menu at the top of the screen and select **OpenTelemetry Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > OpenTelemetry Collection**. 
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-linux.png')} alt="linux-terminal" style={{border: '1px solid gray'}} width="900"/>
+1. On the left panel, select **Linux** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/otel-linux.png')} alt="Linux terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. Select the **Time Zone**. By default, the timezone is set to `(UTC) Etc/UTC`.
 1. (Optional) In the **Collector Settings**, select the **Ephemeral** checkbox to auto-delete your collector after 12 hours, and select the **Locally Manage Collector** checkbox if you want to configure, maintain, and monitor your collector locally.
@@ -68,7 +70,7 @@ You can run the script in two ways:
    ```
 * By first downloading the script, inspecting its contents for security, and then running it:
    ```bash
-   sudo curl -sL https://download-otel.sumologic.com/latest/download/install.sh
+   sudo curl -sLo install-otelcol-sumo.sh https://download-otel.sumologic.com/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh
    ```
 

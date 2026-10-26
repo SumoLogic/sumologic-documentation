@@ -198,14 +198,14 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
      * **Applied At**. Choose **Ingest Time**
      * **Scope**. Select **Specific Data**
      * **Scope**. Enter the following keyword search expression:
-        ```sql
+        ```sumo
          pod_labels_environment=* pod_labels_component=database
          pod_labels_db_system=*
          pod_labels_db_cluster=*
         ```
      * **Parse Expression**. Enter the following parse expression:
     
-       ```sql
+       ```sumo
        if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
        | pod_labels_component as component
        | pod_labels_db_system as db_system

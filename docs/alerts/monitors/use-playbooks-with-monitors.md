@@ -68,7 +68,7 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
    | <img src={useBaseUrl('img/alerts/monitors/playbook-completed-icon.png')} alt="Completed icon" width="30" /> | Completed |
    | <img src={useBaseUrl('img/alerts/monitors/playbook-completed-with-errors-icon.png')} alt="Completed icon" width="30" /> | Completed with errors |
 
-1. Click the playbook name to open the [playbook in the Automation Service](//docs/platform-services/automation-service/playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
+1. Click the playbook name to open the [playbook in the Automation Service](/docs/platform-services/automation-service/playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
 1. Click an action to view more about its status. Status information opens in a box to the left. <br/>In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task. <br/><img src={useBaseUrl('img/alerts/monitors/playbook-waiting-owner.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="800" />
 1. If you have an action marked as **Waiting Owner**, perform the steps needed to complete the **Action Task**. When done, click the appropriate button at the bottom of the **Waiting Owner** action box (**Approve**, **Approve & Close**, or **Reject**). The action completes, and the subsequent remaining actions in the playbook run.<br/><img src={useBaseUrl('img/alerts/monitors/playbook-complete-task.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="300" />
 1. Address any other actions in the playbook that need attention. For example, click and open any failed actions to see why they failed and to determine what you need to do to get them to complete successfully.
@@ -143,15 +143,15 @@ To create a playbook so you can add it to a monitor, see [Create a new playbook]
 
 [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) are connectors to applications from industry-leading network and security vendors. Integrations provide the actions run in playbooks.
 
-To use an integration's actions in a playbook, [install the integration from App Central](/docs/platform-services/automation-service/automation-service-app-central/#install-an-integration-from-app-central). To use an existing integration as the basis for a new integration, [duplicate the integration](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration).
+To use an integration's actions in a playbook, [install the integration from App Catalog](/docs/integrations/automation-integrations/install-automation-integrations/#install-an-integration-from-app-catalog). To use an existing integration as the basis for a new integration, [duplicate the integration](/docs/platform-services/automation-service/automation-service-integrations/#duplicate-an-integration).
 
 Some integrations that have useful actions for monitors include:
-* [**Sumo Logic Log Analytics**](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-log-analytics/). Integration with Sumo Logic platform for logs, metrics, and monitors. Actions include:
+* [**Sumo Logic Log Analytics**](/docs/integrations/automation-integrations/sumo-logic-log-analytics/). Integration with Sumo Logic platform for logs, metrics, and monitors. Actions include:
    * **Resolve Alert**. Resolve the alert.
    * **Search Metrics**. Query metrics from Sumo Logic.
    * **Search Output Mapping**. Parse the output of a Search Sumo Logic action.
    * **Search Sumo Logic**. Query logs data from Sumo Logic.
-* [**Sumo Logic Notifications**](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/). Integration with the Sumo Logic platform for monitors and Slack notifications. Actions include:
+* [**Sumo Logic Notifications**](/docs/integrations/automation-integrations/sumo-logic-notifications/). Integration with the Sumo Logic platform for monitors and Slack notifications. Actions include:
    * **Assess Alert Status**. Periodically monitor status of a Sumo Logic alert and notify a Slack user if the alert is unresolved.
 
 ### Pass custom fields from a monitor to playbooks

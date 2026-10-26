@@ -116,6 +116,10 @@ Below are the inputs required:
 
 The path of the log file configured to capture haproxy logs is needed to be given here. The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the `haproxy.conf` file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
@@ -213,7 +217,7 @@ May 13 08:24:43 localhost haproxy[21813]:
 
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 
-```
+```sumo
 webengine.cluster.name=* %"sumo.datasource"=haproxy
 | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as haproxy_log_message
@@ -236,7 +240,7 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 
 Here is a sample metrics query from the **Http Response Codes** dashboard > **HAProxy - Backend Metrics** panel:
 
-```
+```metrics
 sumo.datasource=haproxy metric=haproxy.requests.total status_code=* haproxy.service_name=backend deployment.environment=* webengine.cluster.name=* webengine.node.name=*  haproxy.proxy_name=* 
 | parse field=status_code *  as code 
 | avg by webengine.cluster.name,webengine.node.name,haproxy.proxy_name,code

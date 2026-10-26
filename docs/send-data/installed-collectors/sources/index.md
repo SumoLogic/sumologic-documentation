@@ -1,7 +1,7 @@
 ---
 slug: /send-data/installed-collectors/sources
 title: Sources for Installed Collectors
-description: You can configure a variety of Sources on Installed Collectors.
+description: Configure a variety of data sources on Sumo Logic Installed Collectors, including Windows event logs, Docker, host metrics, syslog, and script sources.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

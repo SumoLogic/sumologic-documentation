@@ -220,7 +220,7 @@ If you want to configure your source locally, you can do so by downloading the Y
 
 ### Step 1: Set up OpenTelemetry collector
 
-To get started, set up a remotely managed collector on your system by following the.instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
+To get started, set up a remotely managed collector on your system by following the instructions in [Step 1: Set up collector](#step-1-set-up-collector).<br/><img src={useBaseUrl('img/send-data/opentelemetry-collector/install-otel-collector.png')} alt="learn-more-button-warning" style={{border:'1px solid gray'}} width="700"/>
 
 For the apps listed above, the installation commands now include a `--remotely-managed` flag. When this flag is used, a remotely managed collector is installed automatically instead of a locally managed one. If you prefer to use a locally managed collector, simply remove the flag from the installation command.
 
@@ -310,13 +310,13 @@ sumo.datasource=otel_collector
 
 This sample metrics query is from the **Collector Resource Usage** panel.
 
-```sql title="Sample metrics query"
+```metrics title="Sample metrics query"
 sumo.datasource=otel_collector metric=otelcol_process_memory_rss deployment.environment=* | avg by deployment.environment
 ```
 
 This sample query monitors queue health from the **Exporter Queue Health** panel.
 
-```sql
+```metrics
 sumo.datasource=otel_collector metric=otelcol_exporter_queue_size deployment.environment=* 
 | avg by exporter, deployment.environment
 ```

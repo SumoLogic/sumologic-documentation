@@ -201,7 +201,7 @@ The App uses:
 
 ### Sample queries
 
-```bash title="Status codes over time"
+```sumo title="Status codes over time"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | json "message.data.resource.type" as type
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
@@ -221,12 +221,12 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 
 ## Collecting logs for the Google App Engine app
 
-This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google App Engine App. A sample log message and query are also provided.
+This section describes the Sumo Logic pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google App Engine App. A sample log message and query are also provided.
 
 
 ### Collection Process for GCP Services
 
-The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
+The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo Logic’s Google Cloud Platform (GCP) source running on a hosted collector.
 
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
@@ -241,7 +241,7 @@ Configuring collection for GCP uses the following process:
 See the following sections for configuration instructions.
 
 :::note
-Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
+Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo Logic.
 :::
 
 ### Configure a Google Cloud Platform Source

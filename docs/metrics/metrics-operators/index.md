@@ -1,6 +1,7 @@
 ---
 slug: /metrics/metrics-operators
 title: Metrics Operators
+description: Reference guide to Sumo Logic metrics operators with syntax and usage examples for querying, transforming, and analyzing time series metrics data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -126,7 +127,7 @@ In this section, we'll introduce the following concepts:
   <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/metrics/metrics-operators/quantize')}><img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="40"/><h4>quantize</h4></a>
-    <p>Learn how to use this operator to control Sumo’s quantization behavior.</p>
+    <p>Learn how to use this operator to control Sumo Logic’s quantization behavior.</p>
     </div>
   </div>
   <div className="box smallbox card">

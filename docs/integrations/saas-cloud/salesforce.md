@@ -57,7 +57,7 @@ For the complete list of available events and fields, see [Event Monitoring Even
 
 ### Sample queries
 
-```sql title="Most Viewed Reports"
+```sumo title="Most Viewed Reports"
 _sourceCategory=salesforce EVENT_TYPE REPORT_ID_DERIVED Report
 | json "EVENT_TYPE", "REPORT_ID_DERIVED", "REPORT_ID_DERIVED_LOOKUP", "REQUEST_STATUS" as event_type, report_id, report_name, request_status nodrop
 | where event_type matches "Report"
@@ -96,7 +96,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 <CollectionConfiguration/>
 
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for Salesforce](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
 :::
 
@@ -252,3 +252,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Salesforce Automation Service Integration](/docs/integrations/automation-integrations/salesforce/) to automate response actions directly from Cloud SOAR playbooks.

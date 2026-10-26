@@ -59,7 +59,7 @@ This app uses Sumo Logic’s [Varonis source](/docs/send-data/hosted-collectors/
 
 ## Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourcecategory=*varonis*
 | json  "id", "dataSource", "policy.category", "policy.severity", "policy.name",  "generationTime.dateTimeUtc", "escalationType", "status" as threat.id, detection.source, detection.technique, detection.confidence, threat.name, event.time, event.type, finding.status  nodrop
 | where detection.confidence !=NULL

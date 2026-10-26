@@ -33,7 +33,7 @@ We use OpenTelemetry collector to gather the following data from Puppet:
 
 The default Puppet Server Access log file is: `/var/log/puppetlabs/puppetserver/puppetserver-access.log`. If your Puppet Server Access logs are located elsewhere, please note the path this will be used later while app installation.
 
-Puppet reports are in YAML format. They must be converted into JSON format before Sumo ingests them. You can convert the YAML files using the Sumo-provided shell script below:
+Puppet reports are in YAML format. They must be converted into JSON format before Sumo Logic ingests them. You can convert the YAML files using the Sumo-provided shell script below:
 
 ```json
 MaxFileSize=20
@@ -157,6 +157,10 @@ Path of the log file configured to capture puppet access logs and puppet report 
 
 Click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Puppet-OpenTelemetry/Puppet-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
@@ -250,7 +254,7 @@ This is a sample log message for non-Kubernetes environments.
 
 This sample query is from the **Puppet - Overview** dashboard > **Node Requests Summary Over Time** panel.
 
-```
+```sumo
 %"sumo.datasource"=puppet
 | parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
 | parse regex "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*"

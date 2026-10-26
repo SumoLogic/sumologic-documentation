@@ -46,7 +46,7 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 <details>
 <summary>Click to expand</summary>
 
-```
+```sumo
 | parse regex "(?<protocol>TCP|tcp|UDP|udp|ICMP|icmp)" nodrop
 | parse regex "%[\w-]+(?<log_level>\d)-(?<message_id>\d{6})" nodrop
 | parse regex "bytes\s(?<bytes_in>\d*)" nodrop
@@ -166,3 +166,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Cisco ASA Automation Service Integration](/docs/integrations/automation-integrations/cisco-asa/) to automate response actions directly from Cloud SOAR playbooks.

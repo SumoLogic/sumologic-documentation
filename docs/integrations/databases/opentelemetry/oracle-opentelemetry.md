@@ -198,6 +198,10 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Once the details are filled, click on the **Download YAML File** button to get the yaml file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVar from '../../../reuse/apps/opentelemetry/env-var-required.md';
 
 <EnvVar/>
@@ -300,7 +304,7 @@ TNS-12514: TNS:listener does not currently know of service requested in connect 
 
 This sample query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
  %"db.cluster.name"=* %"deployment.environment"=* %"sumo.datasource"=oracle establish ("SID=" or "SERVICE_NAME=")  | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as oracle_log_message 
 | parse regex field=oracle_log_message "CONNECT_DATA[\s\S]+?SERVICE_NAME=(?<serviceName>[^)]*)\)[\s\S]+establish" nodrop
@@ -320,7 +324,7 @@ This sample query is from the **Oracle - Overview** dashboard > **DB Connection*
 
 This sample query is from the **Oracle - Overview** dashboard > **Session Count** panel.
 
-```sql title="Session Count"
+```metrics title="Session Count"
 sumo.datasource=oracle metric=oracledb.sessions.usage  deployment.environment=*  db.cluster.name=* db.node.name=* | sum 
 ```
 

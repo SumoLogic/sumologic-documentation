@@ -51,7 +51,7 @@ To create a Field Extraction Rule:
 1. The **Add Field Extraction Rule** form will appear:<br/><img src={useBaseUrl('img/field-extraction-rules/create-fer.png')} alt="Create Field extraction rule with dynamic parsing" style={{border: '1px solid gray'}} width="400" />
 1. Enter the following options:
     * **Rule Name**. Type a name that makes it easy to identify the rule.
-    * **Applied At**. There are two types available, Ingest Time and Run Time. The main differences are Run Time only supports JSON data and the time that Sumo parses the fields. The following is an overview of the differences:
+    * **Applied At**. There are two types available, Ingest Time and Run Time. The main differences are Run Time only supports JSON data and the time that Sumo Logic parses the fields. The following is an overview of the differences:
       * Ingest Time
         * Parsing support - any data format, requires manually written parser expressions.
         * Rule limit - There is a limit of 50 Field Extraction Rules and 200 fields. This includes the default fields defined by Sumo Logic (about 16). The 200-field limit is per account, and deleting rules does not create more space.
@@ -71,7 +71,7 @@ To create a Field Extraction Rule:
     :::sumo Best Practices
     If you are not using partitions we recommend using [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
 
-    We recommend creating a separate partition for your JSON dataset and use that partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary partitions.
+    We recommend creating a separate partition for your JSON dataset and use that partition as the scope for run time field extraction. For example, let's say you have AWS CloudTrail logs, and they are stored in `_view=cloudtrail` partition in Sumo Logic. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary partitions.
     :::
 
    * **Parsed template** (Optional for Ingest Time rules).

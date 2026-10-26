@@ -2,12 +2,15 @@
 slug: /search/search-query-language/search-operators
 title: Search Operators
 sidebar_label: Search Operators
-description: Process data in meaningful ways and provide logic to queries with search operators. This section lists the available search operators in Sumo's search query language.
+description: Process data in meaningful ways and provide logic to queries with search operators.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import MobotCallout from '../../../reuse/mobot-callout.md';
 
 Search operators process data in meaningful ways and provide logic to queries. This page lists the available search operators in the Sumo Logic search query language.
+
+<MobotCallout/>
 
 In this section, we'll introduce the following concepts:
 
@@ -69,7 +72,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/search/search-query-language/search-operators/compare')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Queries icon" width="40"/><h4>compare</h4></a>
-  <p>The `compare` operator can be used with the [Time Compare button](/docs/search/time-compare) in the Sumo UI, which generates correct syntax and adds it to your aggregate query.</p>
+  <p>The `compare` operator can be used with the [Time Compare button](/docs/search/time-compare) in the Sumo Logic UI, which generates correct syntax and adds it to your aggregate query.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -261,7 +264,7 @@ In this section, we'll introduce the following concepts:
         <div className="box smallbox card">
           <div className="container">
           <a href={useBaseUrl('docs/search/search-query-language/search-operators/lookup-classic')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Queries icon" width="40"/><h4>lookup (Classic)</h4></a>
-          <p>The `lookup` (Classic) operator maps data in your log messages to meaningful information saved in Sumo or on an HTTPS server.</p>
+          <p>The `lookup` (Classic) operator maps data in your log messages to meaningful information saved in Sumo Logic or on an HTTPS server.</p>
           </div>
         </div>
         <div className="box smallbox card">
@@ -384,12 +387,12 @@ In this section, we'll introduce the following concepts:
           <p>Correlates threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
           </div>
         </div>
-        <!-- <div className="box smallbox card">
+        <div className="box smallbox card"> 
           <div className="container">
           <a href={useBaseUrl('docs/search/search-query-language/search-operators/threatlookup')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Queries icon" width="40"/><h4>threatlookup</h4></a>
           <p>Allows you to search logs for matches in threat intelligence indicators.</p>
           </div>
-        </div> -->
+        </div>
         <div className="box smallbox card">
           <div className="container">
           <a href={useBaseUrl('docs/search/search-query-language/search-operators/timeslice')}><img src={useBaseUrl('img/icons/operations/queries.png')} alt="Queries icon" width="40"/><h4>timeslice()</h4></a>

@@ -1,11 +1,11 @@
 ---
 id: traceid-spanid-injection-into-logs
-title: Python TraceId and SpanId Injection into Logs Configuration
-sidebar_label: TraceId and SpanId injection into logs
-description: Learn how to configure traceId, spanId, and trace flags data injection into user logs in Python applications.
+title: Python Trace ID and Span ID Injection into Logs
+sidebar_label: Trace ID and Span ID injection into logs
+description: Learn how to configure trace ID, span ID, and trace flags data injection into user logs in Python applications.
 ---
 
-To add `trace_id` and `span_id` to your Python lambda logs, you'll have to get a context from current span and attach it to the log.
+To add `trace_id` and `span_id` to your Python lambda logs, you'll need to get a context from the current span and attach it to the log.
 
 :::important
 Make sure that the code from below is active in the `.py` file where your application requests are traced with OpenTelemetry python instrumentation. Logs not related to traced requests will not have `span_id` or `trace_id` filled in.

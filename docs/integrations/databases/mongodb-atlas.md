@@ -221,7 +221,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
-```sql
+```sumo
 (_sourceCategory="Labs/mongodbatlas6/logs" ) | json "atype", "local.ip", "remote.ip", "users","result", "project_id", "hostname", "cluster_name", "param" as atype, local_ip, remote_ip, users, result, project_id, hostname, cluster_name, param
 | json field=param "db", "ns" as database1, database2 nodrop
 | parse field=database2 "*.*" as database2, collection nodrop
@@ -317,7 +317,7 @@ In this section, you deploy the SAM application, which creates the necessary res
 1. We go to the mongo console, click on **Organization Access** > **Access Manager** > **API Keys**, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
 1. Click **Next** > **Add Access List Entry**. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
 
-The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
+The lambda function should be working now in sending logs to Sumo Logic. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
 
 ##### Configure collection for multiple projects
 

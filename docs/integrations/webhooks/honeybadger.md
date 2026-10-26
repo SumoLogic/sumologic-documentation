@@ -45,7 +45,7 @@ Follow the below steps to configure the Honeybadger webhook.
     - **Check-Ins**. Select the type of check-in events that will cause this webhook to execute.
 6. Click **Save Changes**.
 7. Verify Honeybadger events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/honeybadger`
 ```
 

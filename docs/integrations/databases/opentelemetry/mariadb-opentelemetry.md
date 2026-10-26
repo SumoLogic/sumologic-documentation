@@ -91,7 +91,11 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 In this step, you will configure the yaml required for MariaDB Collection. Path of the log file configured to capture MariaDB logs is needed to be given here.
 
-The files are typically located in `/var/log/mariadb/`. If you're using a customized path, check the respective conf file (default location: `/etc/my.cnf`) for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
+The files are typically located in `/var/log/mariadb/`. If you're using a customized path, check the respective conf file (default location: `/etc/my.cnf`) for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -178,7 +182,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 Following query is from the "Errors" panel of the overview dashboard in Mariadb app: 
 
-```sql
+```sumo
  %"sumo.datasource"=mariadb %"deployment.environment"=* %"db.cluster.name"=* "[ERROR]"
 | json "log" nodrop
 | if (isEmpty(log), _raw, log) as mariadb_log_message

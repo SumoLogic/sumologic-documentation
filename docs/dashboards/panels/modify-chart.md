@@ -193,8 +193,8 @@ To modify the JSON of a chart, do the following:<br/><img src={useBaseUrl('/img/
 1. Click **Update Dashboard** in the upper right corner of the window to save your chart customizations.
 1. Click the **JSON** icon in the menu bar.
 1. Modify the JSON as necessary.
-1. Click **Update Preview** or **Copy To Clipboard**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/DB_CustomChart_JSON-option.png')} style={{border: '1px solid gray'}} alt="DB_CustomChart_JSON-option" width="400"/>
-1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard-option" width="300"/>
+1. Click **Update Preview** or **Copy To Clipboard**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/DB_CustomChart_JSON-option.png')} style={{border: '1px solid gray'}} alt="DB_CustomChart_JSON option" width="400"/>
+1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC Update Dashboard option" width="300"/>
 
 ### Values in chart
 

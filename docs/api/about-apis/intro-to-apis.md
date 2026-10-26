@@ -252,7 +252,7 @@ We'll need to provide in our HTTP request the new configuration for this collect
 
 As discussed earlier, we need to provide the ETag from our GET command to ensure that there are no interim changes that would cause our modifications to be rejected. Either through code or through the app, we will add an `IF-MATCH` header to our PUT command with the ETag value (remember to keep the double-quotes).
 
-<img src={useBaseUrl('img/api/if-match.png')} alt="IF-MATCH" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/api/if-match.png')} alt="IF MATCH" style={{border: '1px solid gray'}} width="800" />
 
 With these elements in place, we are now ready to execute the PUT command. If the command is successful, we will receive an "echo" of the new configuration as the response body. If something is not configured correctly (the new configuration is not properly formed, or the ETag doesn't match, for instance), you will see an error message as the body of the response instead. You can always check the changed configuration through another GET command (or through the website) to ensure that the changes were accepted.
 

@@ -2,7 +2,7 @@
 id: vectra-source
 title: Vectra Source
 sidebar_label: Vectra
-tags:
+keywords:
   - cloud-to-cloud
   - vectra
 description: Learn how to collect the list of threats detected in the Vectra platform.
@@ -10,7 +10,7 @@ description: Learn how to collect the list of threats detected in the Vectra pla
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Vectra-icon" width="70" />
+<img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/vectra.png')} alt="Vectra icon" width="70" />
 
 Vectra is a leading cybersecurity company specialising in AI-driven threat detection and response solutions. Vectra is committed to helping organisations protect their digital assets from evolving cyber threats. It provides comprehensive visibility across the entire network, enabling organisations to identify malicious activities, including insider threats and advanced persistent threats (APTs).
 
@@ -45,7 +45,7 @@ To configure a Vectra Source, follow the steps below:
 1. The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
+:::tip
 After configuring the Vectra source, consider installing the Sumo Logic app for [Vectra](/docs/integrations/saas-cloud/vectra/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -89,3 +89,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Vectra Automation Service Integration](/docs/integrations/automation-integrations/vectra/) to automate response actions directly from Cloud SOAR playbooks.

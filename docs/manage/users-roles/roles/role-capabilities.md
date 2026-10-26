@@ -68,13 +68,18 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Manage Password Policy|Set the password policy for your Sumo Logic account. | `managePasswordPolicy` |
 |Allowlist IP Addresses | [Explicitly grant access](/docs/manage/security/create-allowlist-ip-cidr-addresses) to specific IP addresses or address ranges. | `ipAllowlisting` |
 | Create Access Keys | Create your own [access keys](/docs/manage/security/access-keys/). | `createAccessKeys` |
-| Manage Access Keys |Set up, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
+| Manage Access Keys | Set up, activate, deactivate, or delete access keys for your organization. | `manageAccessKeys` |
 | Manage Support Account Access |Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization. | `manageSupportAccountAccess` |
 | Manage Audit Data Feed|Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on internal events. | `manageAuditDataFeed` |
 | Manage SAML|Provision and manage [SAML](/docs/manage/security/saml) for single sign-on. | `manageSAML` |
 | Manage Share Dashboards Outside Organization | [Share a dashboard](/docs/dashboards/share-dashboard-outside-org/) with users who do not have Sumo Logic access. | `shareDashboardOutsideOrg` |
 | Manage Organization Settings | Configure concurrent session limits and the Data Access Level for Shared Dashboards security policy. | `manageOrgSettings` |
 |Change Data Access Level|Change the [data access level](/docs/dashboards/set-data-access-level/) of dashboards or scheduled searches. | `changeDataAccessLevel` |
+
+<!-- Private Preview features to be added to Security (DOCS-1615)
+| Manage Data Masking Rules | Create, update, enable, disable, or delete [data masking rules](/docs/manage/data-masking). (Private Preview) | `manageDataMaskingRules` |
+| View Unmasked Data | View log data in its original, unmasked form when [data masking rules](/docs/manage/data-masking) are active. Users without this capability see masked data. (Private Preview) | `viewUnmaskedData` |
+-->
 
 ## Dashboards
 
@@ -100,20 +105,20 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 
 | Capability | Description | <ApiCreateRole/> |
 | :-- | :-- | :-- |
-| Task View | See tasks in [playbooks](/docs/platform-services/automation-service/playbooks/). | `cloudSoarIncidentTaskView` |
-| Task Access | Access your tasks in playbooks. | `cloudSoarIncidentTaskAccess` |
-| Task Access All| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
-| Task Edit| Configure tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
-| Task Reassign | Assign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
-| App Central Access | View [App Central](/docs/platform-services/automation-service/automation-service-app-central/). | `cloudSoarAppCentralAccess` |
-| App Central Export | Export integrations and playbooks from App Central. | `cloudSoarAppCentralExport` |
-| Integrations Access | View [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
-| Integrations Configure| Create and edit integrations. | `cloudSoarIntegrationsConfigure` |
-| Playbooks Access | View playbooks. | `cloudSoarPlaybooksAccess` |
-| Playbooks Configure| Create and edit playbooks. | `cloudSoarPlaybooksConfigure` |
-| Bridge Monitoring Access |Monitor Bridge operations. | `cloudSoarBridgeMonitoringAccess` |
-| Observability Access | Access automation in the SaaS Log UI. | `cloudSoarObservabilityAccess` |
-| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | `cloudSoarObservabilityManagement` |
+| View Tasks | View tasks in [playbooks](/docs/platform-services/automation-service/playbooks/) in read-only mode. | `cloudSoarIncidentTaskView` |
+| Access Tasks | Access your tasks in playbooks. | `cloudSoarIncidentTaskAccess` |
+| Access All Tasks| Access all user tasks in playbooks. | `cloudSoarIncidentTaskAccessAll` |
+| Edit Tasks| Create, edit, and close tasks in playbooks. | `cloudSoarIncidentTaskEdit` |
+| Reassign Tasks | Reassign tasks in playbooks to users. | `cloudSoarIncidentTaskReassign` |
+| Access App Central | View and install [Playbook](/docs/integrations/playbook-templates/) & [Integration](/docs/integrations/automation-integrations/) packages. | `cloudSoarAppCentralAccess` |
+| Export App Central | Export integrations, playbooks, rules, actions, and templates from App Central. | `cloudSoarAppCentralExport` |
+| View Integrations | View and test [integrations](/docs/platform-services/automation-service/automation-service-integrations/). | `cloudSoarIntegrationsAccess` |
+| Manage Integrations | Create, edit, and manage integrations. | `cloudSoarIntegrationsConfigure` |
+| Access Playbooks | View and export playbooks. | `cloudSoarPlaybooksAccess` |
+| Configure Playbooks | Create, edit, and manage playbooks, including import, duplicate, and execute. | `cloudSoarPlaybooksConfigure` |
+| Access Bridge Monitoring |Monitor Bridge operations. | `cloudSoarBridgeMonitoringAccess` |
+| Access Observability | Access and monitor playbook executions in the Automation Service. | `cloudSoarObservabilityAccess` |
+| Configure Observability | Interact with running automations and perform manual actions during playbook execution. | `cloudSoarObservabilityManagement` |
 
 ## Alerting
 
@@ -125,6 +130,7 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | View Alerts | View alerts on the [Alert page](/docs/alerts/monitors/alert-response). | `viewAlerts` |
 | View Muting Schedules | View [Muting Schedules](/docs/alerts/monitors/muting-schedules). | `viewMutingSchedules` |
 | Manage Muting Schedules | Create, edit, and delete Muting Schedules. | `manageMutingSchedules` |
+| Credit Usage Alerts | Create and manage the credit usage alerts. | `manageMonitorsV2` |
 
 <!-- 
 ## Open Analytics
@@ -189,54 +195,54 @@ If you use the [createRoleV2 API](https://api.sumologic.com/docs/#operation/crea
 | Capability category | Capability | Description| <ApiCreateRole/> |
 | :-- | :-- | :-- |:--|
 |View Cloud SOAR||Show “Cloud SOAR” link in nav.| `viewCloudSoar`|
-|Incident|View|View all [incidents](/docs/cloud-soar/incidents-triage/).|`cloudSoarIncidentView`|
-|Incident|Access|Access your incidents.|`cloudSoarIncidentAccess`|
-|Incident|Access All|Access all incidents.|`cloudSoarIncidentAccessAll`|
-|Incident|Edit|Create, edit, delete incidents.|`cloudSoarIncidentEdit`|
-|Incident|Bulk Operations|Manage incident bulk operations.|`cloudSoarIncidentBulkOperations`|
+|Incident|View Incidents|View all [incidents](/docs/cloud-soar/incidents-triage/).|`cloudSoarIncidentView`|
+|Incident|Access Incidents|Access your incidents.|`cloudSoarIncidentAccess`|
+|Incident|Access All Incidents|Access all incidents.|`cloudSoarIncidentAccessAll`|
+|Incident|Edit Incidents|Create, edit, delete incidents.|`cloudSoarIncidentEdit`|
+|Incident|Bulk Operate on Incidents|Manage incident bulk operations.|`cloudSoarIncidentBulkOperations`|
 |Incident|Manage Investigators|Assign/remove investigators.|`cloudSoarIncidentManageInvestigators`|
-|Incident|Change Ownership|Change incident ownership.|`cloudSoarIncidentChangeOwnership`|
-|Triage|View|View all [triage](/docs/cloud-soar/incidents-triage/).|`cloudSoarIncidentTriageView`|
-|Triage|Access|Access your triage events.|`cloudSoarIncidentTriageAccess`|
-|Triage|Access All|Access all triage events.|`cloudSoarIncidentTriageAccessAll`|
-|Triage|Change Ownership|Change triage ownership.|`cloudSoarIncidentTriageChangeOwnership`|
-|Triage|Edit|Create, edit, delete triage events.|`cloudSoarIncidentTriageEdit`|
-|Triage|Bulk Physical Delete|Bulk-delete triage events.|`cloudSoarIncidentTriageBulkPhysicalDelete`|
-|Folders|Edit|Create, edit, delete playbook folders.|`cloudSoarIncidentFoldersEdit`|
-|Attachments|Access|View attachments.|`cloudSoarIncidentAttachmentsAccess`|
-|Attachments|Edit|Create, edit, delete attachments.|`cloudSoarIncidentAttachmentsEdit`|
-|Incident Playbook|Access|View playbooks.|`cloudSoarIncidentPlaybooksAccess`|
-|Incident Playbook|Edit|Create, edit, delete playbooks.|`cloudSoarIncidentPlaybooksEdit`|
-|Incident Playbook|Manage|Manage playbook lifecycle.|`cloudSoarIncidentPlaybooksManage`|
-|Note|Access|View notes.|`cloudSoarIncidentNotesAccess`|
-|Note|Edit|Create, edit, delete notes.|`cloudSoarIncidentNotesEdit`|
-|War Room|Use|Participate in War Room.|`cloudSoarIncidentWarRoomUse`|
-|Settings General|Configure|Configure global settings.|`cloudSoarGeneralConfigure`|
-|User Management|Groups|Manage groups.|`cloudSoarUserManagementGroups`|
-|Notification|Configure|Configure notifications.|`cloudSoarNotificationConfigure`|
-|Customization|Logo|Customize logo.|`cloudSoarCustomizationLogo`|
-|Customization|Fields|Customize fields.|`cloudSoarCustomizationFields`|
-|Customization|Incident Labels|Customize incident labels.|`cloudSoarCustomizationIncidentLabels`|
-|Customization|Triage|Customize triage UI.| `cloudSoarNotificationTriage` |
-|Audit & Info|License Information|View license audit info.|`cloudSoarAuditAndInformationLicenseInformation`|
-|Audit & Info|Audit Trail|View audit trail.|`cloudSoarAuditAndInformationAuditTrail`|
+|Incident|Change Ownership of Incidents|Change incident ownership.|`cloudSoarIncidentChangeOwnership`|
+|Triage|View Triage|View all [triage](/docs/cloud-soar/incidents-triage/).|`cloudSoarIncidentTriageView`|
+|Triage|Access Triage|Access your triage events.|`cloudSoarIncidentTriageAccess`|
+|Triage|Access All Triage|Access all triage events.|`cloudSoarIncidentTriageAccessAll`|
+|Triage|Change Ownership of Triage|Change triage ownership.|`cloudSoarIncidentTriageChangeOwnership`|
+|Triage|Edit Triage|Create, edit, delete triage events.|`cloudSoarIncidentTriageEdit`|
+|Triage|Bulk Physical Delete Triage|Bulk-delete triage events.|`cloudSoarIncidentTriageBulkPhysicalDelete`|
+|Folders|Edit Folders|Create, edit, delete playbook folders.|`cloudSoarIncidentFoldersEdit`|
+|Attachments|Access Attachments|View attachments.|`cloudSoarIncidentAttachmentsAccess`|
+|Attachments|Edit Attachments|Create, edit, delete attachments.|`cloudSoarIncidentAttachmentsEdit`|
+|Incident Playbook|Access Incident Playbooks|View playbooks.|`cloudSoarIncidentPlaybooksAccess`|
+|Incident Playbook|Edit Incident Playbooks|Create, edit, delete playbooks.|`cloudSoarIncidentPlaybooksEdit`|
+|Incident Playbook|Manage Incident Playbooks|Manage playbook lifecycle.|`cloudSoarIncidentPlaybooksManage`|
+|Note|Access Notes|View notes.|`cloudSoarIncidentNotesAccess`|
+|Note|Edit Notes|Create, edit, delete notes.|`cloudSoarIncidentNotesEdit`|
+|War Room|Use War Room|Participate in War Room.|`cloudSoarIncidentWarRoomUse`|
+|Settings General|Configure General Settings|Configure global settings.|`cloudSoarGeneralConfigure`|
+|User Management|Manage User Groups|Manage groups.|`cloudSoarUserManagementGroups`|
+|Notification|Configure Notifications|Configure notifications.|`cloudSoarNotificationConfigure`|
+|Customization|Manage Logo|Customize logo.|`cloudSoarCustomizationLogo`|
+|Customization|Manage Fields|Customize fields.|`cloudSoarCustomizationFields`|
+|Customization|Manage Incident Labels|Customize incident labels.|`cloudSoarCustomizationIncidentLabels`|
+|Customization|Manage Triage|Customize triage UI.| `cloudSoarNotificationTriage` |
+|Audit & Info|View License Information|View license audit info.|`cloudSoarAuditAndInformationLicenseInformation`|
+|Audit & Info|View Audit Trail|View audit trail.|`cloudSoarAuditAndInformationAuditTrail`|
 |Audit & Info|Configure Audit Trail|Configure audit trail.|`cloudSoarAuditAndInformationConfigureAuditTrail`|
-|API|Use|Use the Cloud SOAR API.|`cloudSoarAPIUse`|
-|API|API Admin|Administer Cloud SOAR API.| `cloudSoarAPIAdmin` |
-|API|Email Read|Read email artifacts.|`cloudSoarAPIEmailRead`|
-|API|Email Edit|Create, edit, delete email artifacts.|`cloudSoarAPIEmailEdit`|
-|Incident Templates|Access|View incident templates.|`cloudSoarIncidentTemplatesAccess`|
-|Incident Templates|Configure|Configure incident templates.|`cloudSoarIncidentTemplatesConfigure`|
-|Automation Rules|Access|View automation rules.|`cloudSoarAutomationRulesAccess`|
-|Automation Rules|Configure|Configure automation rules.|`cloudSoarAutomationRulesConfigure`|
-|Entities|Access|View entities.|`cloudSoarEntitiesAccess`|
-|Entities|Manage|Create, edit, delete entities.|`cloudSoarEntitiesManage`|
-|Entities|Bulk Physical Delete|Bulk-delete entities.|`cloudSoarEntitiesBulkPhysicalDelete`|
-|Report|Access|View reports.|`cloudSoarReportAccess`|
-|Report|Access All|Access all reports.|`cloudSoarReportAll`|
-|Dashboard|Access|View dashboards.|`cloudSoarDashboardAccess`|
-|Dashboard|Access All|Access all dashboards.|`cloudSoarDashboardAll`|
-|Widgets|Use All|Use all widgets.|`cloudSoarWidgetsAll`|
+|API|Use API|Use the Cloud SOAR API.|`cloudSoarAPIUse`|
+|API|Manage API|Administer Cloud SOAR API.| `cloudSoarAPIAdmin` |
+|API|Read Emails|Read email artifacts.|`cloudSoarAPIEmailRead`|
+|API|Edit Emails|Create, edit, delete email artifacts.|`cloudSoarAPIEmailEdit`|
+|Incident Templates|Access Incident Templates|View incident templates.|`cloudSoarIncidentTemplatesAccess`|
+|Incident Templates|Configure Incident Templates|Configure incident templates.|`cloudSoarIncidentTemplatesConfigure`|
+|Automation Rules|Access Automation Rules|View automation rules.|`cloudSoarAutomationRulesAccess`|
+|Automation Rules|Configure Automation Rules|Configure automation rules.|`cloudSoarAutomationRulesConfigure`|
+|Entities|Access Entities|View entities.|`cloudSoarEntitiesAccess`|
+|Entities|Manage Entities|Create, edit, delete entities.|`cloudSoarEntitiesManage`|
+|Entities|Bulk Physical Delete Entities|Bulk-delete entities.|`cloudSoarEntitiesBulkPhysicalDelete`|
+|Report|Access Reports|View reports.|`cloudSoarReportAccess`|
+|Report|Access All Reports|Access all reports.|`cloudSoarReportAll`|
+|Dashboard|Access Dashboards|View dashboards.|`cloudSoarDashboardAccess`|
+|Dashboard|Access All Dashboards|Access all dashboards.|`cloudSoarDashboardAll`|
+|Widgets|Use All Widgets|Use all widgets.|`cloudSoarWidgetsAll`|
 
 ## Cloud SIEM
 

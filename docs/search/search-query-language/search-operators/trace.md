@@ -2,9 +2,14 @@
 id: trace
 title: trace Search Operator
 sidebar_label: trace
+description: Use the trace operator as a sophisticated filter to connect related log messages using identifying values like user IDs, IP addresses, or session IDs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+:::note
+Looking for Traces, the distributed tracing product? See [Traces](/docs/apm/traces). This page covers the `trace` search operator, which connects related log messages.
+:::
 
 The `trace` operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator, such as a user ID, IP address, or session ID, to retrieve a comprehensive set of activity associated to that original ID.
 
@@ -15,9 +20,7 @@ Trace operators require the following:
 
 ## Syntax
 
-```sql
-trace "<regex>" "<starting_value>"
-```
+`trace "<regex>" "<starting_value>"`
 
 ## Tracing session IDs
 
@@ -27,7 +30,7 @@ Let's say that your product uses a variety of session IDs to track requests as t
 
 Imagine that an error happened at some point in the process, generating an error including "PROCESSING FAILED: webID=7F92. Starting from this information, we can use a trace operator in our query to following the chain of activity:
 
-```sql
+```sumo
 * | trace "ID=([0-9a-fA-F]{4})" "7F92" | where _raw matches "*ERROR*"
 ```
 

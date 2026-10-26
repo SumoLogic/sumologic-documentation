@@ -67,7 +67,7 @@ The query sample provided in this section is from the **Failed Login Reasons** p
 * `Failed_Signon:*`
 * `Authentication_Failure_Message:*`
 
-```sql title="Query String"
+```sumo title="Query String"
 _sourceCategory=workday_logs and _sourceName=signonlogs
 | json auto
 | where Failed_Signon=1

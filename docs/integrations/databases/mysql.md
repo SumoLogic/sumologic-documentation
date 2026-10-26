@@ -94,7 +94,7 @@ This sample query is from the MySQL - Logs dashboard > Logs panel.
 
 <TabItem value="k8s">
 
-```sql title="Query String - Top 10 Slow Queries by Average Execution Time"
+```sumo title="Query String - Top 10 Slow Queries by Average Execution Time"
 db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"  
 | parse regex "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
 | parse regex field=query_block "# User@Host: \S+?\[(?<user>\S*?)\] @ (?<host_name>\S+)\s\[(?<ip_addr>\S*?)\]" nodrop // Pttrn1-vrtn1
@@ -115,7 +115,7 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 </TabItem>
 <TabItem value="non-k8s">
 
-```sql title="Query String - Top 10 Slow Queries by Average Execution Time"
+```sumo title="Query String - Top 10 Slow Queries by Average Execution Time"
 db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"  
 | parse regex "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
 | parse regex field=query_block "# User@Host: \S+?\[(?<user>\S*?)\] @ (?<host_name>\S+)\s\[(?<ip_addr>\S*?)\]" nodrop // Pttrn1-vrtn1

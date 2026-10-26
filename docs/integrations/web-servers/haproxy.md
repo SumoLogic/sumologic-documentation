@@ -60,7 +60,7 @@ May 13 08:24:43 localhost haproxy[21813]: \
 ### Sample queries
 
 This query example is from the [**HAProxy - Overview** dashboard](#overview) > **Top 5 Clients causing Errors** panels.
-```sql
+```sumo
 <HAProxy_Cluster_Filter> proxy_system=haproxy component=proxy
 | json "log" as _rawlog nodrop
 | if (isEmpty(_rawlog), _raw, _rawlog) as haproxy_log_message
@@ -371,7 +371,7 @@ Follow the steps below to enable HAProxy logs to go to log files:
 
 
 Verify logs are flowing into Sumo Logic by running the following logs query:
-```sql
+```sumo
 component="proxy" proxy_cluster="<Your-HAProxy-Server>" proxy_system="haproxy"
 ```
 

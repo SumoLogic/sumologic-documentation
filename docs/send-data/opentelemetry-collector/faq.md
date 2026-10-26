@@ -28,13 +28,13 @@ To install the script manually on your OS, refer to one of the following docs:
 
 You will need to manage configuration files on your own.
 
-#### Why is the Sumo OpenTelemetry Collector not starting up after I updated or added a new config file?
+#### Why is the Sumo Logic OpenTelemetry Collector not starting up after I updated or added a new config file?
 
 Most likely the issue is because the `config.YAML` file is malformed. Make sure that it is a valid YAML with appropriate indentation.
 
 #### Is it possible to install the Sumo Logic OpenTelemetry Collector without root or admin permissions?
 
-If you do not have root or admin permissions, you can still install the Sumo OpenTelemetry Collector manually by copying the Collector binary to a local directory in your PATH. The steps for manual installation are detailed in the [official repository's documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md#manual-installation).
+If you do not have root or admin permissions, you can still install the Sumo Logic OpenTelemetry Collector manually by copying the Collector binary to a local directory in your PATH. The steps for manual installation are detailed in the [official repository's documentation](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/installation.md#manual-installation).
 
 However, note that some functionalities, such as certain host metrics, may not be available when running the Collector as a non-root user.
 
@@ -98,13 +98,50 @@ Changing the collector's name will result in re-registering the collector with S
 
 
 
-#### How do I uninstall the Sumo OpenTelemetry Collector?
+#### How do I uninstall the Sumo Logic OpenTelemetry Collector?
 
 Refer to the Uninstall section in the following docs:
 * [Linux](/docs/send-data/opentelemetry-collector/install-collector/linux/#uninstall)
-* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstall)
+* [Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/#uninstalling-the-collector)
 * [macOS](/docs/send-data/opentelemetry-collector/install-collector/macos/#uninstall)
 
+
+#### How can I verify the SHA256 checksum of a downloaded collector binary?
+
+GitHub provides a SHA256 digest for every asset on the [releases page](https://github.com/SumoLogic/sumologic-otel-collector/releases/latest). Expand an asset on the releases page to view its digest, or fetch all digests at once with the GitHub CLI:
+
+```bash
+gh api repos/SumoLogic/sumologic-otel-collector/releases/latest \
+  --jq '.assets[] | "\(.digest)  \(.name)"'
+```
+
+Then verify locally using the digest value (without the `sha256:` prefix):
+
+<Tabs groupId="os" defaultValue="linux" values={[{label:'Linux',value:'linux'},{label:'macOS',value:'macos'},{label:'Windows',value:'windows'}]}>
+<TabItem value="linux">
+
+```bash
+echo "<sha256>  <filename>" | sha256sum --check
+```
+
+</TabItem>
+<TabItem value="macos">
+
+```bash
+echo "<sha256>  <filename>" | shasum -a 256 --check
+```
+
+</TabItem>
+<TabItem value="windows">
+
+```powershell
+(Get-FileHash -Algorithm SHA256 "<filename>").Hash -eq "<sha256>".ToUpper()
+```
+
+</TabItem>
+</Tabs>
+
+A successful check prints `OK` (Linux/macOS) or `True` (Windows).
 
 ## Data ingestion and forwarding
 
@@ -176,11 +213,11 @@ This means that the `sumologicexporter` is not able to send data as quickly as i
 
 If the problem is intermittent and caused by temporary spike in data volume, increasing the queue size for the exporter with `sending_queue.queue_size` property might be enough to accommodate temporary additional load.
 
-If you see `429 Too Many Requests` HTTP response codes from Sumo in exporter logs, this means the exporter is being throttled by Sumo backend. In this case, you need to either decrease the volume of data sent, or reach out to Sumo support to increase the quota.
+If you see `429 Too Many Requests` HTTP response codes from Sumo Logic in exporter logs, this means the exporter is being throttled by Sumo Logic backend. In this case, you need to either decrease the volume of data sent, or reach out to Sumo Logic support to increase the quota.
 
-If the exporter is not being throttled the best option might be to increase the number of consumers sending data from queue to Sumo with `sending_queue.num_consumers`.
+If the exporter is not being throttled the best option might be to increase the number of consumers sending data from queue to Sumo Logic with `sending_queue.num_consumers`.
 
-The `sumologicexporter` sends data to Sumo in batches. If the batches are small, more requests need to be performed to send data. If you have set the `max_request_body_size` setting to a low value, consider increasing it to make batches bigger and in effect make sending more efficient.
+The `sumologicexporter` sends data to Sumo Logic in batches. If the batches are small, more requests need to be performed to send data. If you have set the `max_request_body_size` setting to a low value, consider increasing it to make batches bigger and in effect make sending more efficient.
 
 
 ## App installation errors
@@ -191,7 +228,7 @@ If you are using the **Upstream OpenTelemetry collector** (instead of the **Sumo
 
 ## HTTP checks
 
-#### Does Sumo OpenTelemetry support HTTP checks?
+#### Does Sumo Logic OpenTelemetry support HTTP checks?
 
 Yes, our OpenTelemetry Collector supports HTTP checks, allowing you to ping public HTTPs URLs and monitor up/down status.
 
@@ -211,7 +248,6 @@ service:
         - httpcheck/my-public-sites
       processors:
         - memory_limiter
-        - batch
       exporters:
         - sumologic
 ```

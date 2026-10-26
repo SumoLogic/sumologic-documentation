@@ -2,6 +2,7 @@
 id: sum
 title: sum Metrics Operator
 sidebar_label: sum
+description: Use the sum metrics operator to calculate the sum of metric values that match the query. When grouping is specified, it calculates the sum for each group.
 ---
 
 
@@ -9,7 +10,7 @@ The `sum` operator calculates the sum of the metrics values that match the query
 
 ## Syntax
 
-```sql
+```metrics
 sum [by FIELD [, FIELD, ...]]
 ```
 
@@ -19,7 +20,7 @@ sum [by FIELD [, FIELD, ...]]
 
 This query calculates the total of the `CPU_Sys` metric values across all time series whose `dep` tag equals “prod”.
 
-```sql
+```metrics
 dep=prod metric=CPU_Sys | sum
 ```
 
@@ -27,6 +28,6 @@ dep=prod metric=CPU_Sys | sum
 
 This query calculates the total of the `CPU_Sys` metric values across all time series whose `dep` tag equals “prod” by node.
 
-```sql
+```metrics
 dep=prod metric=CPU_Sys | sum by node
 ```  

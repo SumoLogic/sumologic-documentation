@@ -36,7 +36,7 @@ If not already present, the following [Fields](/docs/manage/fields/) are created
 MySQL logs are stored in log files. Slow query logs must be explicitly enabled to be able to be written to a log file. To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
    1. Open `my.cnf` in a text editor.
    2. Set the following parameters in the `[mysqld]` section:
-   ```sql
+   ```sumo
    [mysqld]
        log_error = /var/log/mysql/error.log
        slow_query_log=1

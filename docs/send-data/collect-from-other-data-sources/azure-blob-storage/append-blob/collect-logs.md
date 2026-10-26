@@ -64,14 +64,14 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
 1. Download the [appendblobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/AppendBlobReader/src/appendblobreaderdeploy.json) ARM template.
 1. Click **Create a Resource**, search for **Template deployment** in the Azure Portal, and then click **Create.**
 1. On the Custom deployment blade, click **Build your own template in the editor**.
-1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-arm.png')} alt="edit-template" style={{border: '1px solid gray'}} width="800"/>
+1. Copy the contents of the template and paste it into the editor window.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-arm.png')} alt="Edit template" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Save**.
 1. On the Custom deployment blade, do the following:
    1. Create a new Resource Group (recommended) or select an existing one.
    1. Choose Location.
    1. Set the values of the following parameters:
      * **DeployingAgainForSameStorageAccount**. Choose 'yes' if you are deploying the ARM template again for the same storage account, else choose 'no'.
-     * **EventGridSystemTopicName**. If you are deploying the ARM template again for the same storage account, then provide the existing System Topic Name for the StorageAccount, else it will be created automatically.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-reuse-sa.png')} alt="edit-template" style={{border: '1px solid gray'}} width="800"/>
+     * **EventGridSystemTopicName**. If you are deploying the ARM template again for the same storage account, then provide the existing System Topic Name for the StorageAccount, else it will be created automatically.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-reuse-sa.png')} alt="Edit template" style={{border: '1px solid gray'}} width="800"/>
      * **SumoEndpointURL**. URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
      * **StorageAccountName**. Name of the storage account where you are storing logs from the Azure Service that you configured in [Step 1](#step-1-configure-azure-storage-account) above.
      * **StorageAccountResourceGroupName**. Name of the resource group of the storage account you configured in [Step 1](#step-1-configure-azure-storage-account) above.
@@ -82,7 +82,7 @@ In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) templat
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-rg.png')} alt="Azure_Blob_Storage_Custom_Deploymente" style={{border: '1px solid gray'}} width="400"/>
 1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<img src={useBaseUrl('/img/send-data/appendblob/appendblob-notification.png')} alt="Notifications" style={{border: '1px solid gray'}} width="800"/>
-1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
+1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/appendblob/appendblob-resources.png')} alt="Azure Blob all resources" style={{border:"1px solid gray"}} width="800"/>
 
 :::tip
 If logs from Azure Blob Storage do not start to flow into Sumo Logic, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection).
@@ -111,7 +111,7 @@ To authorize the App Service to list the storage account key, do the following:
 1. Click the **Add** **+** at the top of the page.<br/><img src={useBaseUrl('img/send-data/AzureBlob_IAM_Add.png')} alt="Azure Blob IAM add" style={{border: '1px solid gray'}} width="800" />
 
 1. Select **Add role assignment** from dropdown.
-1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="storage-blob-data-reader" width="800"/>
+1. In the **Add role assignment** window, go to **Role** tab and choose **Storage Blob Data Reader**. Click **Next**. <br/><img src={useBaseUrl('/img/send-data/storage-blob-data-reader.png')} alt="Storage Blob Data Reader" width="800"/>
 1. In **Members** tab, select **Managed Identity**.
 1. In the **Select Managed identities** window:
 

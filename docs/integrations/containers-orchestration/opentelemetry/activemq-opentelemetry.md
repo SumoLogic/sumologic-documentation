@@ -136,6 +136,10 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the YAML file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
 <EnvVarOpt/>
@@ -261,7 +265,7 @@ sumo.datasource=activemq deployment.environment={{deployment.environment}} messa
 
 This sample metrics query from the **Average Enqueue Latency** panel of the **ActiveMQ - Destinations** dashboard.
 
-```sql
+```metrics
 sumo.datasource=activemq deployment.environment={{deployment.environment}} messaging.cluster.name={{messaging.cluster.name}} messaging.node.name={{messaging.node.name}} destination={{destination}} !(destination=activemq.*)  metric=activemq.message.wait_time.avg | avg by destination,messaging.cluster.name
 ```
 

@@ -131,7 +131,7 @@ The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/do
 
 This section contains the sample queries of both the `Events` and `Alerts`.
 
-```sql title="User Access Controls"
+```sumo title="User Access Controls"
 _sourceCategory="docusign_src"
 | json "object","userId","eventId","action","property","source","ipAddressLocation.latitude","ipAddressLocation.longitude","result","ipAddressLocation.city","ipAddressLocation.state","ipAddressLocation.country","data" as object,user_id,event_id,action,property,source,latitude,longitude,result,city,state,country,data nodrop
 | where object matches "{{object}}" and action matches"{{action}}" and source matches"{{source}}"
@@ -144,7 +144,7 @@ _sourceCategory="docusign_src"
 | top 100 time,object,action,property,data,source,result,city,state,country by time
 ```
 
-```sql title="Alerts by Severity Over Time"
+```sumo title="Alerts by Severity Over Time"
 _sourceCategory="docusign_src"
 | json "object","userId","eventId","action","property","source","ipAddressLocation.latitude","ipAddressLocation.longitude","result","ipAddressLocation.city","ipAddressLocation.state","ipAddressLocation.country" as object,user_id,event_id,action,property,source,latitude,longitude,result,city,state,country nodrop
 | where object matches "{{object}}" and action matches"{{action}}" and source matches"{{source}}"

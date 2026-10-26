@@ -77,7 +77,7 @@ The Sumo Logic app for Azure SQL app uses the following log types:
 
 ### Sample queries
 
-```sql title="Top 10 Errors"
+```sumo title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent
 | json "LogicalServerName", "SubscriptionId", "ResourceGroup", "resourceId", "category", "operationName", "properties" nodrop
 | json field=properties "severity", "error_number", "DatabaseName", "message", "user_defined", "state"

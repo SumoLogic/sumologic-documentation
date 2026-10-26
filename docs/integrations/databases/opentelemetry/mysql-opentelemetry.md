@@ -155,7 +155,7 @@ log:"2022-10-14T09:16:02.430542Z 63707 [Note] [MY-010926] [Server] Access denied
 
 This sample query is from the **Top 10 Slow Queries by Average Execution Time** panel.
 
-```sql
+```sumo
 db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 | parse regex "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
 | parse regex field=query_block "# User@Host: \S+?\[(?<user>\S*?)\] @ (?<host_name>\S+)\s\[(?<ip_addr>\S*?)\]" nodrop
@@ -168,7 +168,7 @@ db.system=mysql db.cluster.name={{db.cluster.name}} "User@Host"  "Query_time" 
 
 This sample metrics query is from the **FSync Op Count** panel.
 
-```sql title="Sample metrics query"
+```metrics title="Sample metrics query"
 sumo.datasource=mysql deployment.environment=* db.cluster.name=* db.node.name=* metric=mysql.operations operation=fsyncs  | sum
 ```
 

@@ -234,7 +234,7 @@ The Zimperium app leverages the threat events collected via Zimperium Webhook.
 
 ### Sample queries
 
-```sql title="Threat Summary"
+```sumo title="Threat Summary"
 _sourceCategory=*zimperium* system_token  mitigated
 | json field=_raw "additional_public_forensics", "team_name", "account_id", "device_owner", "device_info", "user_info", "eventtimestamp", "location", "mitigated", "forensics", "event_id", "risk_posture", "severity" nodrop 
 | json field=_raw "mitigated" 
@@ -277,7 +277,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Security
 
-The **Zimperium - Security** dashboard enables you to monitor mobile threats by severity, investigate malicious network connections, and correlate detections with specific users for targeted response. It highlights top actionable threats, vulnerable OS versions, jailbroken devices, and system tampering events, while providing visibility into device risk posture to prioritize high-risk assets and track mitigation efforts for compliance. The dashboard streamlines detection, investigation, and remediation of mobile security incidents.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/zimperium/Zimperium+-+Security.png' alt="Zimperium-Security" />
+The **Zimperium - Security** dashboard enables you to monitor mobile threats by severity, investigate malicious network connections, and correlate detections with specific users for targeted response. It highlights top actionable threats, vulnerable OS versions, jailbroken devices, and system tampering events, while providing visibility into device risk posture to prioritize high-risk assets and track mitigation efforts for compliance. The dashboard streamlines detection, investigation, and remediation of mobile security incidents.<br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/zimperium/Zimperium+-+Security.png' alt="Zimperium Security" />
 
 ## Create monitors for the Zimperium app
 

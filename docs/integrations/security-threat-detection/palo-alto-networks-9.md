@@ -79,7 +79,7 @@ Oct 09 10:21:11 SumPunFw07.sumotest.com 1,2019/10/09
 
 In the **Palo Alto Networks 9 - Threat Overview** dashboard, the following query detects **Dest IPs Observing Multiple Threats**.
 
-```sql
+```sumo
 _sourceCategory=Loggen/PAN* ",THREAT," !(",file," or ",url,")
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action, 32 as urlORFileName, 33 as Threat_Content_Name, 34 as category, 35 as severity, 36 as direction, 37 as seqNum, 38 as action_flags, 39 as src_country, 40 as dest_country, 41 as f4, 42 as content_type, 43 as pcap_id, 44 as filedigest, 45 as cloud, 46 as url_idx, 47 as user_agent, 48 as filetype, 49 as xff, 50 as referer, 51 as sender, 52 as subject, 53 as recipient, 54 as reportid, 55 as Device_Group_Hierarchy_l1, 56 as Device_Group_Hierarchy_l2, 57 as Device_Group_Hierarchy_l3, 58 as Device_Group_Hierarchy_l4, 59 as vsys_name, 60 as DeviceName, 61 as f5, 62 as Source_VM_UUID, 63 as Destination_VM_UUID, 64 as method, 65 as Tunnel_ID_IMSI, 66 as Monitor_Tag_IMEI, 67 as Parent_Session_ID, 68 as parent_start_time, 69 as Tunnel, 70 as thr_category, 71 as contentver, 72 as f6, 73 as SCTP_Association_ID, 74 as Payload_Protocol_ID, 75 as http_headers, 76 as URLCategoryList, 77 as UUIDforrule, 78 as HTTP2Connection
 | where type = "THREAT" and subtype not in ("file", "url")
@@ -165,7 +165,7 @@ To verify the logs in Palo Alto Networks, do the following:
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, sign in to Sumo Logic.
 3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as:    
-   ```sql
+   ```sumo
    _sourceCategory = NW/PAN/V9
    ```
 

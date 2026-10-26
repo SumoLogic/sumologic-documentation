@@ -28,20 +28,26 @@ Learn how to install the Sumo Logic OpenTelemetry Collector on various platforms
   </div>
   <div className="box smallbox card">
    <div className="container">
+   <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/docker')}><img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="docker" width="100"/><h4>Install Collector on Docker</h4></a>
+    <p>Install the OpenTelemetry collector using Docker.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+   <div className="container">
    <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/ansible')}><img src={useBaseUrl('img/send-data/ansible-logo.png')} alt="ansible" width="20"/><h4>Install Collector on Ansible</h4></a>
-    <p>Install the OpenTelemetry collector on Ansible.</p>
+    <p>Install the OpenTelemetry collector using Ansible.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
     <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/puppet')}><img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="puppet icon" width="20"/><h4>Install Collector on Puppet</h4></a>
-      <p>Install the OpenTelemetry collector on Puppet.</p>
+      <p>Install the OpenTelemetry collector using Puppet.</p>
       </div>
     </div>
   <div className="box smallbox card">
    <div className="container">
    <a href={useBaseUrl('docs/send-data/opentelemetry-collector/install-collector/chef')}><img src={useBaseUrl('img/send-data/chef-logo.png')} alt="chef" width="20"/><h4>Install Collector on Chef</h4></a>
-    <p>Install the OpenTelemetry collector on Chef.</p>
+    <p>Install the OpenTelemetry collector using Chef.</p>
     </div>
   </div>
     <div className="box smallbox card">

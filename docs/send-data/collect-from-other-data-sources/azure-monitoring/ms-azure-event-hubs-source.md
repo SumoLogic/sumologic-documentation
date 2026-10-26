@@ -10,6 +10,10 @@ import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
+:::note
+This source does not support Microsoft GCC High environments. For GCC High-compatible log collection, see the [MS Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source/).
+:::
+
 import TerraformLink from '../../../reuse/terraform-link.md';
 
 :::tip

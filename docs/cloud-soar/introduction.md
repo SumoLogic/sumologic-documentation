@@ -2,11 +2,16 @@
 id: introduction
 title: Introduction to Cloud SOAR
 sidebar_label: Introduction
+keywords:
+  - cloud soar
+  - soar
+  - incident response
+  - security automation
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article provides an introduction to Cloud SOAR for analysts and administrators. 
+Cloud SOAR is Sumo Logic's Security Orchestration, Automation, and Response solution, which helps SOC analysts and administrators orchestrate and automate incident response using playbooks, dashboards, and case management. This article provides an introduction to Cloud SOAR for analysts and administrators. 
 
 If you are unsure whether you are an analyst or administrator, you can view your role in **Preferences** (see [Onboarding Checklists](/docs/get-started/onboarding-checklists/)).
 
@@ -18,7 +23,7 @@ Cloud SOAR can help security analysts orchestrate and automate many pieces of th
 
 #### Security Orchestration, Automation, and Response
 
-Broadly speaking, Security Orchestration Automation and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. In this introduction, we’ll be focusing on a few tools in particular:
+Broadly speaking, Security Orchestration, Automation, and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. In this introduction, we’ll be focusing on a few tools in particular:
 
 * **Threat Intel**. A database of information gathered by external sources about various entities, such as host names, file hashes, IP addresses, and other known Indicators of Compromise. 
 * **Playbooks**. A collection of automated or semi-automated workflows that use Cloud SOAR integrations, tasks, and a variety of flow control decisions such as conditional statements.
@@ -32,7 +37,7 @@ The cybersecurity cycle is an iterative, scientific process, much like troublesh
 
 <img src={useBaseUrl('img/cloud-soar/incident-response-process.png')} alt="Incident response process" style={{border: '1px solid gray'}} width="600" />
 
-While Security Information Event Management (SIEM) tools help automate the threat hunting and investigation process, Security Orchestration Automation and Response (SOAR) tools are typically used in response to an active or potential threat. Both these tools work together as part of the security pipeline in your security operations center (SOC).
+While Security Information and Event Management (SIEM) tools help automate the threat hunting and investigation process, Security Orchestration, Automation, and Response (SOAR) tools are typically used in response to an active or potential threat. Both these tools work together as part of the security pipeline in your security operations center (SOC).
 
 All of Sumo Logic’s security solutions can help with every step of this process. However, broadly speaking, [Cloud SIEM](/docs/cse/) focuses on the investigation phase, and Cloud SOAR focuses on the response phase. All our solutions can be used on their own, or together. For example, you can investigate an insight in Cloud SIEM, then use the **Actions** button inside the insight to send the information to Cloud SOAR, where you can orchestrate the response to the incident.
 
@@ -64,7 +69,7 @@ Finally, you can take the insights from Cloud SIEM and automatically respond to 
 Sumo Logic’s Cloud SOAR is a cloud-based web application available as an add-on to existing Sumo Logic deployments. Some of Cloud SOAR’s key features include:
 
 * **War Room**. A central location for all the information, analysis, and actions related to an incident. This includes notes, documentation, and knowledge transfer as well as tools for collecting data and assessing, investigating, and correlating different incidents.
-* **App Central**. A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started. 
+* **App Catalog**. A large out-of-the-box library of apps, playbooks, integrations, and use cases for different threats to get you started. 
 * **Cybersecurity best practices**. Cloud SOAR’s design and architecture meets many cybersecurity industry standards, regulatory frameworks, and best practices from organizations like ISO, GDPR, OASIS, NIST, and many others.
 
 Below is the SecOps and Dashboard page.  
@@ -97,7 +102,7 @@ In this section, you’ll get to know the different parts of the Cloud SOAR UI.
 
 ### Case management
 
-#### Cloud SOAR case management
+#### What is Cloud SOAR case management?
 
 Case management is like project management, but the project you’re working on is a cybersecurity threat. Case management helps set priorities, assign tasks, and communicate information across different teams.
 
@@ -113,7 +118,7 @@ When you log in to Cloud SOAR, you can use these main pages to get a sense of wh
 
 Since Cloud SOAR integrates with hundreds of technologies, you can also interact with multiple ticketing and case management systems. The API-based communication between technologies is bidirectional, meaning Cloud SOAR can both receive and send information, at any time.
 
-#### Threat Investigation with Cloud SOAR
+#### What is threat investigation in Cloud SOAR?
 
 One major component of case management is threat investigation.
 
@@ -165,7 +170,7 @@ In this section, you’ll investigate an incident, gather information, and decid
 2. Click the column configuration icon in the upper right.<br/><img src={useBaseUrl('img/cloud-soar/column-configuration-icon.png')} alt="Column configuration icon" style={{border: '1px solid gray'}} width="100" />
 1. Make sure **Short Description** is under the **Active** column. If it isn’t, click the **+** next to **Short Description** in the **Available** column. Do the same with the **Type** and **Category** fields. Then click **Apply**. You’ll now see a short description based on the [MITRE ATT&CK framework](https://attack.mitre.org/matrices/enterprise/) of each incident.
 1. Click any incident with a status of **Open**.
-1. As you click on the incident, you'll see a popup asking if you want to make yourself the investigator for this incident. Select the role to assign yourself (for example, **Analyst**), then click **Yes** to add yourself as an investigator.<br/><img src={useBaseUrl('img/cloud-soar/add-investigator-example.png')} alt="Add investigator example" style={{border: '1px solid gray'}} width="400" />
+1. As you click the incident, you'll see a popup asking if you want to make yourself the investigator for this incident. Select the role to assign yourself (for example, **Analyst**), then click **Yes** to add yourself as an investigator.<br/><img src={useBaseUrl('img/cloud-soar/add-investigator-example.png')} alt="Add investigator example" style={{border: '1px solid gray'}} width="400" />
 1. Click the **Overview** tab. Here you’ll see basic information about the incident, like the entities involved in the incident and the time the incident was opened. If the incident was imported from Sumo Logic Cloud SIEM, it contains the Cloud SIEM incident ID as well as a short description based on the MITRE ATT&CK framework.
 1. On the right side of the **Overview** tab you can open up a sidebar with various widgets showing the list of investigators, ownership history, relationships, incident status history, and/or incident description.<br/><img src={useBaseUrl('img/cloud-soar/sidebar-example.png')} alt="Sidebar example" style={{border: '1px solid gray'}} width="400" />
 1. Click the **Operations** tab, and click the **War Room** tab underneath it.<br/><img src={useBaseUrl('img/cloud-soar/war-room-example-2.png')} alt="War Room example" style={{border: '1px solid gray'}} width="800" /><br/>The War Room contains a history of the incident, including any tasks and investigators that have been assigned, playbooks that have been executed, entities that are being tracked, and any other notes or attachments.   
@@ -197,20 +202,20 @@ For example, let’s say one of the employees at your company accidentally downl
  
 The main way to respond to an incident in Cloud SOAR is by executing a playbook. Playbooks are automated, or partially automated, workflows that act based on information from an incident. You typically execute a playbook after you have identified a threat. The playbook will then automatically orchestrate many parts of the investigation, containment, eradication, and recovery processes.
 
-For example, let’s say you identified potential malware on an employee’s computer. First you must investigate to verify that the threat isn’t a false positive, for example by checking the data against an external threat intelligence database. Once the threat is verified, notifications have to be sent to relevant teams through Slack. You then need to contain the threat by quarantining the infected machine with a Palo Alto firewall to block the IP address source of the attack. Containment might also include resetting passwords via an SSO service like Okta. Finally, you can open a Jira ticket to assign the IT department to provision a new laptop to infected users to recover and restore. And finally, you need to open another Jira ticket for the HR department to assign cybersecurity training to the infected employees, as part of lessons learned. 
+For example, let’s say you identified potential malware on an employee’s computer. First you must investigate to verify that the threat is not a false positive, for example by checking the data against an external threat intelligence database. Once the threat is verified, notifications have to be sent to relevant teams through Slack. You then need to contain the threat by quarantining the infected machine with a Palo Alto firewall to block the IP address source of the attack. Containment might also include resetting passwords via a Single Sign-On (SSO) service like Okta. Finally, you can open a Jira ticket to assign the IT department to provision a new laptop to infected users to recover and restore. And finally, you need to open another Jira ticket for the HR department to assign cybersecurity training to the infected employees, as part of lessons learned. 
 
-Many of these tasks can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called "Malware Detected" in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can simply click "Run" on the playbook, and all the tasks will be done automatically. 
+Many of these tasks can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called "Malware Detected" in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can click "Run" on the playbook, and all the tasks will be done automatically. 
 
 Here are some other workflows you could automate with a playbook:
 * **Phishing**. An employee reports suspicious email. A playbook uses threat intel to decide if it’s a phishing attempt. It confirms the employee didn’t click any links, then blocks the malicious email address.
-* **Brute force**. A user gets a request for multi-factor authentication access. When they confirm they weren’t trying to log into their account, a playbook automatically investigates the source of the login attempt and resets the user's password.
+* **Brute force**. A user gets a request for multi-factor authentication access. When they confirm they weren’t trying to log into their account, a playbook automatically investigates the source of the login attempt and resets your password.
 * **Data exfiltration**. If network activity spikes, a playbook automatically investigates to determine whether data is being exfiltrated legitimately. It can prevent the flow of data by applying endpoint patches and increasing firewall security.
 
 Cloud SOAR has hundreds of prebuilt playbooks and templates, so you can quickly and easily automate any of these tasks, or create new custom playbooks to suit your specific business needs. Normally, playbooks are automatically attached to incidents based on information like entities and severity scores. 
 
-#### App Central, custom integrations, and other automations
+#### App Catalog, custom integrations, and other automations
 
-Cloud SOAR has hundreds of [pre-built playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
+Cloud SOAR has hundreds of [pre-built playbooks](/docs/integrations/playbook-templates/) which you can use as-is or customize. You can also build your own custom playbooks, which you can learn about in the Cloud SIEM Administration class. 
 
 Both pre-built and custom playbooks are simply combinations of various integrations and automations. These integrations can also be used stand-alone rather than as part of a playbook. Typically, an integration in Cloud SOAR contains one or more of these actions:
 * **Enrichment**. Adds information, metadata, or context, such as from a threat intelligence database.
@@ -219,11 +224,11 @@ Both pre-built and custom playbooks are simply combinations of various integrati
 * **Notification**. An alert sent via email, Slack, PagerDuty, or most other services you can connect with an API.
 * **Custom**. Scripts and any other automations you can create using Perl, Python, PowerShell or Bash.
 
-Actions are the building blocks of integrations. You can find many pre-built playbooks, integrations, and automations in Cloud SOAR’s [App Central](/docs/platform-services/automation-service/app-central/). From App Central, analysts can easily install and deploy a wide variety of automations that leverage these actions.
+Actions are the building blocks of integrations. You can find many pre-built playbooks, integrations, and automations in Cloud SOAR’s [App Catalog](/docs/integrations/). From App Catalog, analysts can easily install and deploy a wide variety of automations that leverage these actions.
 
-The Sumo Logic Cloud SOAR team is constantly adding new integrations, playbooks, and use cases to App Central. These playbooks in App Central are only a starting point, however. You can build off of them and create custom playbooks of your own as well.
+The Sumo Logic Cloud SOAR team is constantly adding new integrations, playbooks, and use cases to App Catalog. These playbooks in App Catalog are only a starting point, however. You can build off of them and create custom playbooks of your own as well.
 
-App Central may not be available to all users. Ask your Cloud SOAR admin if you need access to App Central.
+App Catalog may not be available to all users. Ask your Cloud SOAR admin if you need access to App Catalog.
 
 When you open a playbook, you'll see a flowchart like the one below. 
 
@@ -246,7 +251,7 @@ To respond to an incident you [investigated previously](#investigate-an-incident
 1. Click the **Operations** tab, then click **Playbooks**. 
 1. Click the **+** icon.<br/><img src={useBaseUrl('img/cloud-soar/add-playbook-example.png')} alt="Add a playbook to an incident" style={{border: '1px solid gray'}} width="700" />
 1. Search for a playbook to respond to the incident.<br/>You can drag the playbook flowchart around and use scroll to zoom in and out on the different pieces. You can also click each node to find out more about it. Take a moment to explore the playbook and familiarize yourself with it so you know how it will respond to the incident.
-1. Click the checkbox next to the playbook, then click **ADD**.
+1. Click the check box next to the playbook, then click **ADD**.
 1. Click **Run** (play button icon) at the bottom.<br/><img src={useBaseUrl('img/cloud-soar/run-playbook-example.png')} alt="Run a playbook for an incident" style={{border: '1px solid gray'}} width="700" /> 
 1. Watch the playbook run. <br/>The playbook may take several minutes to run. You can track its progress by looking for green **Success** messages at each step. You can cancel the playbook execution at any time by hitting the **Kill** button at the bottom.
 1. Verify that the playbook ran successfully.
@@ -273,13 +278,13 @@ In this section, you’ll create and customize a dashboard using widgets.
 1. Navigate to the Cloud SOAR SecOps page.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR > SecOps & Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **SecOps & Dashboard**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu select **Cloud SOAR**.
 1. Near the top left corner, above your user name, click **Dashboard**.
 1. Click the **+** icon in the upper right to create a new dashboard.  
-1. Click on the default dashboard name (**Dashboard #**) and change the name.  Add a description if desired by clicking on the **No description available** field and adding some text.
+1. Click the default dashboard name (**Dashboard #**) and change the name.  Add a description if desired by clicking the **No description available** field and adding some text.
 1. Click the **Edit** control in the top right corner to enter edit mode.
-1. Click **Public** in the sidebar and click on one or more widgets to add the widget to your dashboard. Note that you can drag and place the widget in different places and arrangements on the dashboard screen.
+1. Click **Public** in the sidebar and click one or more widgets to add the widget to your dashboard. Note that you can drag and place the widget in different places and arrangements on the dashboard screen.
 1. Click **My Widgets** in the sidebar and click **New** to create a new widget.
 1. In the **New Widget** dialog, enter a query to find incidents, choose the display type (pie chart, flow chart, text, and so on), choose grouping, and name the widget.  
 1. Click **Save** in the lower right corner.
-1. Back on the edit sidebar, click on your new widget to add it to your dashboard.  You can rearrange the dashboard by dragging widgets to different locations.
+1. Back on the edit sidebar, click your new widget to add it to your dashboard.  You can rearrange the dashboard by dragging widgets to different locations.
 1. Click **Edit** in the upper right to turn off edit mode. 
 
 #### Creating and exporting reports
@@ -295,7 +300,7 @@ You can use KPI reports to aggregate incidents that satisfy certain conditions. 
 
 You can get creative with filters and create any kind of report you like.
 
-#### Best practices for dashboards and reports
+#### What are the best practices for dashboards and reports?
 
 There are several considerations when designing a dashboard or report. Here are a few best practices:
 * **Above the fold**. In print newspapers, the most important articles are placed "above the fold," which means the top half of the front page. When designing a dashboard or report, place the most important information at the top, so people will see it right away without needing to scroll.
@@ -309,7 +314,7 @@ You can use Cloud SOAR to make downloadable reports, using the same information 
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > Report**. You can also click the **Go To...** menu at the top of the screen and select **Report**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Report**. 
 1. In the report view, you'll have a blank page view and a sidebar on the right with the available widgets (similar to the dashboard edit view).<br/><img src={useBaseUrl('img/cloud-soar/example-report-dialog.png')} alt="Report dialog" style={{border: '1px solid gray'}} width="700" /> 
-1. Click on one or more of the available widgets to add them to the report. (You can create new widgets using the same process as in the previous section about [creating a dashboard](#create-a-dashboard)).
+1. Click one or more of the available widgets to add them to the report. (You can create new widgets using the same process as in the previous section about [creating a dashboard](#create-a-dashboard)).
 1. Click **Save** when you've finished designing your report. 
 1. After saving your report, click **Export** at the bottom of the page to download your report in PDF form.
 
@@ -317,14 +322,14 @@ You can use Cloud SOAR to make downloadable reports, using the same information 
 
 ### What is Cloud SOAR administration?
 
-Broadly speaking, Security Orchestration Automation and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. As a Cloud SOAR administrator, you’ll be focusing on a few areas in particular:
+Broadly speaking, Security Orchestration, Automation, and Response (SOAR) is a collection of scripts, APIs, playbooks, daemons, threat intelligence databases, dashboards, and other tools. As a Cloud SOAR administrator, you’ll be focusing on a few areas in particular:
 * **Role-based access controls**. Admins can create different roles and user groups with different levels of edit and view access to various areas within Cloud SOAR.
 * **Dashboards and reports**. Admins manage the default settings, create templates, and configure the look and feel of Cloud SOAR dashboards and reports for their organization.
 * **Playbooks and automations**. Admins configure and manage the playbooks, automations, integrations, and tasks in Cloud SOAR. This requires access keys and knowledge of APIs.
 
 Administrators configure these and other settings to help SOC analysts automate and orchestrate many processes that are a routine part of responding to security incidents. Playbook automation offloads many tedious and repetitive tasks from the SOC team, reducing response time and allowing SOC analysts to focus on other mission-critical tasks. Dashboards and reports help distribute knowledge to different teams to work together to orchestrate their response in a timely, synchronized manner. RBAC ensures that only authorized members of your SOC team can perform certain actions.
 
-#### The incident response cycle
+#### What is the incident response cycle?
 
 As a Cloud SOAR administrator, your task is to set up RBAC controls, configure settings, create templates, and use APIs. Your ultimate goal is to enable Cloud SOAR to automate and orchestrate many parts of the incident response cycle. The more tasks you can automate with Cloud SOAR, the more time the SOC analysts on your team can devote to other activities like threat hunting.
 
@@ -342,15 +347,15 @@ Let’s briefly review the incident response cycle:
 
 Let’s say one of the employees at your company accidentally downloaded some malware onto their laptop, despite your preparation by installing VPNs and firewalls on all employee machines. Once you have identified the malware, you must investigate to verify that the threat isn’t a false positive, for example by checking the data against an external threat intelligence database like CrowdStrike or VirusTotal. You may want to quarantine the infected laptop by putting it behind a firewall to contain it. Containment might also include resetting passwords via an SSO service like Okta. You might also want to scan all the laptops in your company for that same malware, and block the IP address that’s the source of the malware download to eradicate the threat. Then, you can open a Jira ticket to assign the IT department to provision a new laptop to infected users to recover and restore. And finally, you need to open another Jira ticket for the HR department to assign cybersecurity training to the infected employees, as part of lessons learned. 
 
-Many of these tasks, from identifying malware to restoring the system, can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called “Malware Detected” in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can simply click “Execute” on the playbook, and all the tasks will be done automatically. We can even use Cloud SOAR to export a report after the incident is closed, and use that report to jumpstart the lessons learned discussion.
+Many of these tasks, from identifying malware to restoring the system, can be automated through APIs and other integrations. All of these steps can be bundled together in a playbook. We could create a playbook called “Malware Detected” in Cloud SOAR. Then, instead of remembering to do each of these tasks individually, we can click “Execute” on the playbook, and all the tasks will be done automatically. We can even use Cloud SOAR to export a report after the incident is closed, and use that report to jumpstart the lessons learned discussion.
 
-#### Exploring Cloud SOAR settings for administrators
+#### What settings can Cloud SOAR administrators configure?
 
 Cloud SOAR administrators have privileged access to the Settings and Automation sections of the Cloud SOAR UI.
 
 ##### General settings
 
-The **General** settings page includes sections for **System**, **Incidents**, and **Instant Messaging**.  Administrators can set proxy settings and date/time formats in the **System** section.  The **Incidents** section can control incident processing settings and file extension whitelisting. You can also configure integrations like Slack under **Instant Messaging**. For more information, see [General](/docs/cloud-soar/settings/#general).
+The **General** settings page includes sections for **System**, **Incidents**, and **Instant Messaging**.  Administrators can set proxy settings and date/time formats in the **System** section.  The **Incidents** section can control incident processing settings and file extension allowlisting. You can also configure integrations like Slack under **Instant Messaging**. For more information, see [General](/docs/cloud-soar/settings/#general).
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
 
@@ -387,7 +392,7 @@ See:
 * [Incident labels](/docs/cloud-soar/settings/#incident-labels)
 * [Triage](/docs/cloud-soar/settings/#triage)
 
-#### Exploring Cloud SOAR Automations
+#### What automation features are available to Cloud SOAR administrators?
 
 In addition to settings, Cloud SOAR administrators have privileged access to the Automation section of the platform. For more information, see [Cloud SOAR Automation](/docs/cloud-soar/automation/). 
 
@@ -398,7 +403,6 @@ In addition to settings, Cloud SOAR administrators have privileged access to the
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-menu.png')} alt="Cloud SOAR Automation menu" style={{border: '1px solid gray'}} width="400"/>
 
 Within Automation, you’ll see subsections for:
-* [App Central](/docs/platform-services/automation-service/app-central/). A large out-of-the-box library of playbooks, integrations, and use cases for different threats to get you started with orchestrating and automating your SOC.
 * [Playbooks](/docs/platform-services/automation-service/playbooks/). Allows you to create new playbooks and edit, delete, and manage existing ones.
 * [Template](/docs/cloud-soar/automation/#incident-templates). Allows you to create new incident templates and edit, delete, and manage existing ones.
 * [Integrations](/docs/platform-services/automation-service/automation-service-integrations/). Lets you connect third party tools through APIs.
@@ -439,7 +443,7 @@ To test the new field, we'll create a new incident manually.
 1. Scroll down to the bottom to see your new field. Your field may appear in either the left or right column. It may be near the bottom or several rows up.
 1. Type a value in your new field. For example, if your new field is for a source IP, you could type in an IP address, such as **1.1.1.1**.
 1. For **Incident ID**, enter a unique identifier.
-1. For for **Type** select **General**, for **Purpose** select **Generic**, and for **Category** select **General**. 
+1. For **Type** select **General**, for **Purpose** select **Generic**, and for **Category** select **General**. 
 1. Leave other fields as their defaults, then click **Create**.
 
 :::note
@@ -478,7 +482,7 @@ Sometimes your system may record events that are unverified, or have a low confi
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access the **Triage** screen, in the main Sumo Logic menu select **Cloud SOAR**. Then in the upper left of the **SecOps** screen click **Incidents > Triage**.
 
-Any recorded events that have not been converted to an incident will be displayed in a sortable table. Click on any column to sort by that field. By default, you will see two fields, **Status** and **Type**. 
+Any recorded events that have not been converted to an incident will be displayed in a sortable table. Click any column to sort by that field. By default, you will see two fields, **Status** and **Type**. 
 
 <img src={useBaseUrl('img/cloud-soar/triage.png')} alt="Triage screen" style={{border: '1px solid gray'}} width="800"/>
 
@@ -488,7 +492,7 @@ To add additional custom fields (up to 100), select **Triage** from the **Custom
 
 ##### Triaging an event
 
-In the **Triage** page, you can begin triaging an event by assigning the event to a user. Hover over an event and click on the person icon to assign or "grab" that event.<br/><img src={useBaseUrl('img/cloud-soar/grab-event.png')} alt="Grab event" style={{border: '1px solid gray'}} width="150"/>
+In the **Triage** page, you can begin triaging an event by assigning the event to a user. Hover over an event and click the person icon to assign or "grab" that event.<br/><img src={useBaseUrl('img/cloud-soar/grab-event.png')} alt="Grab event" style={{border: '1px solid gray'}} width="150"/>
 
 Grabbing an event assigns that event to the selected analyst, and any playbooks defined for that incident type will be automatically executed, with the results displayed on the event details screen. Because all playbooks for the specified incident type are executed automatically, it is recommended to create separate incident types and playbooks for triage use.
 
@@ -511,17 +515,17 @@ Typically, each playbook in Sumo Logic Cloud SOAR will help automate or partiall
 
 <img src={useBaseUrl('img/cloud-soar/incident-response-cycle.png')} alt="Incident response cycle" width="600"/>
 
-#### Import and configure an integration through App Central
+#### Import and configure an integration through App Catalog
 
-Cloud SOAR comes with hundreds of pre-built playbooks and integrations as part of App Central. For more information, see [App Central](/docs/platform-services/automation-service/automation-service-app-central/). 
+Cloud SOAR comes with hundreds of pre-built playbooks and integrations as part of App Catalog. For more information, see [App Catalog](/docs/integrations/). 
 
-As a Cloud SOAR administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SOAR to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SOAR can be a single, central location for orchestrating your security response. 
+As a Cloud SOAR administrator, you can explore App Catalog and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SOAR to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SOAR can be a single, central location for orchestrating your security response. 
 
-Let's walk through how to install and configure useful integrations through App Central.
+Let's walk through how to install and configure useful integrations through App Catalog.
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Automation** and then and click **App Central** in the left navigation bar. 
-2. Click on the **Integrations** tab in the top tab row.<br/>The App Central integrations page shows a long list of installed and available integrations to augment Cloud SOAR functionality with both Sumo Logic and third-party vendor functionality.<br/><img src={useBaseUrl('img/cloud-soar/app-central-integrations-tab.png')} alt="App Central Integrations tab" style={{border: '1px solid gray'}} width="600"/>
-1. Choose a sample integration from the list and click on it. A popup window will appear showing the details of the integration, including version, description, and a list of actions that are supported in automations.
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **App Catalog** in the left navigation bar. 
+2. Click the **Integrations** tab in the top tab row.<br/>The automation integrations page shows a long list of installed and available integrations to augment Cloud SOAR functionality with both Sumo Logic and third-party vendor functionality.<br/><img src={useBaseUrl('img/cloud-soar/app-central-integrations-tab.png')} alt="App Catalog Integrations tab" style={{border: '1px solid gray'}} width="600"/>
+1. Choose a sample integration from the list and click it. You'll see the details of the integration, including version, description, and a list of actions that are supported in automations.
 1. Navigate to the **Integrations** view to show installed integrations.<br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>In this view, you can see the integrations that have already been installed and configured in the system.
 1. Click an integration. The panel on the right will show the integration details, including available actions.  Many integrations after install will require appropriate configuration using "resources".
 1. Move the mouse cursor over the resource, then click the **Edit** (pencil) icon.<br/><img src={useBaseUrl('img/cloud-soar/example-integration-resource.png')} alt="Example integration resource" style={{border: '1px solid gray'}} width="600"/>
@@ -561,7 +565,7 @@ Custom actions can also include trigger actions, which run based on an event typ
 
 ##### Best practices
 
-Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Central to see if an out-of-the-box playbook that does what you want already exists, or if you can modify a existing playbook that’s similar to what you have in mind. 
+Before you begin creating or customizing a playbook, decide what you’d like to automate. Think about what conditions you want met, and what actions or integrations you want to accomplish based on different flows. Once you have a design in mind for the flow of your playbook, you can create or customize a new one. Search App Catalog to see if an out-of-the-box playbook that does what you want already exists, or if you can modify a existing playbook that’s similar to what you have in mind. 
 
 #### Create a custom playbook for Cloud SIEM insights
 
@@ -570,13 +574,13 @@ Cloud SOAR allows us to create automations that will run whenever Cloud SIEM ins
 Let’s create a playbook for use in Cloud SIEM.
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
-1. To explore an existing playbook, click on it to open the playbook diagram in the right sidebar. Here, you can view the individual nodes and sequences, providing insight into the types of actions and structures you can create with custom playbooks. Playbooks can include multiple actions and branching conditions to handle different action sequences based on specific criteria. Click any playbook component to see detailed information about each node.
+1. To explore an existing playbook, click it to open the playbook diagram in the right sidebar. Here, you can view the individual nodes and sequences, providing insight into the types of actions and structures you can create with custom playbooks. Playbooks can include multiple actions and branching conditions to handle different action sequences based on specific criteria. Click any playbook component to see detailed information about each node.
 1. Click the **+** icon near the top to create a new playbook.   
    1. Enter a name, for example, **Test Playbook**. You can optionally enter a description.  Select **Cloud SIEM** as the **Type** for the playbook.
    1. Click **Create** when finished.<br/>On the following screen you will see the starting template for your new (empty) playbook, with "Start" and "End" nodes.  
-1. Switch to edit mode by clicking on the **Edit** (pencil) icon in the bottom toolbar.
+1. Switch to edit mode by clicking the **Edit** (pencil) icon in the bottom toolbar.
 1. Before we start adding actions to our playbook, we’ll want to set up the initial configuration of the playbook so we get the proper inputs from the Cloud SIEM insight.  
-   1. Mouse over the Start node, and click on the Edit (pencil) icon.  
+   1. Mouse over the Start node, and click the Edit (pencil) icon.  
    1. In the Edit Node popup, select **Insight** from the playbook input parameters dropdown. Choosing **Insight** will automatically populate the popup with input parameters that will be added to the playbook from the corresponding insight.
    1. Click **Update** to save and close the input parameters.
 1. Add an action node:
@@ -617,8 +621,8 @@ Let’s create a playbook for use in Cloud SIEM.
    1. **Action**: **Send Email**.
    1. For **Recipients**, enter an email address (real or fake). Make sure you press Enter after typing the email address to signal the **Recipients** field to parse and accept the email address.
    1. Type in a subject into the **Subject** field: “High Severity Insight Detected”.
-   1. In **HTML Content (Body)**, click on the `{ }` icon to add a parameter field to your text. When composing content for an email notification, you have the option of using input parameters from earlier nodes in the playbook in addition to any desired custom text. 
-   1. Click on the red parameter box that appears and select a source for the desired input parameter (for instance, **Get Insight Details.output.name**). The parameter box will turn green once you have selected a valid source parameter. You can add custom text before or after the source parameter.
+   1. In **HTML Content (Body)**, click the `{ }` icon to add a parameter field to your text. When composing content for an email notification, you have the option of using input parameters from earlier nodes in the playbook in addition to any desired custom text. 
+   1. Click the red parameter box that appears and select a source for the desired input parameter (for instance, **Get Insight Details.output.name**). The parameter box will turn green once you have selected a valid source parameter. You can add custom text before or after the source parameter.
    1. Add one or more source parameters and accompanying custom text to outline what you want the email to say (for instance, explain that a high severity insight has been detected with the following details: name, timestamp, and so on).
    1. Click **Create** when finished with this action.
 1. When you’ve created your final node(s) for your playbook, manually drag the mouse cursor from the gray connection circle on the right side of the **Email Notification** node to the left connection area of the **End** node. Drag and connect the “failure” end of the condition node to the **End** node as well.
@@ -661,6 +665,48 @@ Let's create a custom automation rule. This rule will pull information from Clou
 1. For **Search performed every**, type **5** then select **Hours**. 
 1. Leave the other fields as their defaults, then click **Save**. 
 1. As a best practice, you can enable and test the new rule, but then disable it, since it can disrupt your environment. Continue testing your rule until their behavior is expected before deciding to enable it.
+
+## FAQ
+
+### What is Cloud SOAR?
+
+Cloud SOAR is Sumo Logic's Security Orchestration, Automation, and Response solution. It helps SOC analysts orchestrate and automate incident response with playbooks, and gives administrators role-based access controls, dashboards, and automation settings to configure it for their organization.
+
+### How is Cloud SOAR different from Cloud SIEM?
+
+Cloud SIEM focuses on the investigation phase of the security pipeline, while Cloud SOAR focuses on the response phase. You can use them together: investigate an insight in Cloud SIEM, then use the Actions button to send the information to Cloud SOAR to orchestrate the response.
+
+### What are playbooks in Cloud SOAR?
+
+Playbooks are automated or partially automated workflows made up of nodes, such as actions, conditions, and notifications, that respond to an incident. Cloud SOAR includes hundreds of prebuilt playbooks in App Catalog, and you can also build custom playbooks.
+
+### What cloud logging strategy should I use?
+
+Centralize logs from all your cloud, hybrid, and on-premises sources into one platform so you can query and visualize them together. Sumo Logic's security pipeline takes it further: ingested logs feed threat intelligence and Cloud SIEM, and Cloud SOAR then automates your response to the insights that pipeline surfaces.
+
+### How do I secure my cloud infrastructure?
+
+Combine centralized log collection, threat intelligence, and automated response. Sumo Logic's Log Analytics Platform ingests and correlates your cloud infrastructure logs, Cloud SIEM investigates the resulting insights, and Cloud SOAR automates the response with playbooks so your SOC team can contain, eradicate, and recover from incidents faster.
+
+### What should I monitor in my cloud environment?
+
+At minimum, monitor authentication events, network traffic, and infrastructure configuration changes, since this data is what Cloud SIEM's rules and Cloud SOAR's playbooks most commonly act on to generate and respond to insights.
+
+### How does Cloud SOAR help with incident response?
+
+Cloud SOAR uses playbooks to automate incident containment, eradication, and recovery, so your SOC team responds faster and more consistently. It also provides case management to track investigations, and dashboards and reports to communicate results across teams.
+
+### How do I find trusted log analytics solutions for cloud-native infrastructure?
+
+Look for a log analytics platform that ingests data from cloud-native sources, like Kubernetes and container orchestration platforms, correlates it with threat intelligence, and integrates with a response tool. Sumo Logic's Log Analytics Platform, paired with Cloud SIEM and Cloud SOAR, provides that full pipeline for cloud-native environments.
+
+### What cloud native logging solutions are available for developers and DevOps teams?
+
+Sumo Logic offers cloud-native logging through hosted collectors, Kubernetes and container observability integrations, and OpenTelemetry support, giving developers and DevOps teams a single platform to collect, search, and visualize logs without managing their own logging infrastructure.
+
+### What's the difference between SIEM, EDR, XDR, and SOAR?
+
+SIEM (Security Information and Event Management) collects and correlates security data into insights. EDR (Endpoint Detection and Response) and XDR (Extended Detection and Response) focus on detecting threats on endpoints or across multiple security layers. SOAR (Security Orchestration, Automation, and Response) automates the response once a threat is detected. In a modern SOC workflow, Sumo Logic's Cloud SIEM handles the SIEM-style investigation, while Cloud SOAR handles the SOAR automation layer.
 
 ## Additional resources
 

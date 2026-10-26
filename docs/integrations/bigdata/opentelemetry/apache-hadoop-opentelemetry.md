@@ -116,6 +116,10 @@ Below are the inputs required for configuration:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
 <EnvVarOpt/>
@@ -204,7 +208,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 ## Sample log queries
 
-```sql
+```sumo
 _source="hadoop/filelog"
 | json "message" nodrop
 | if (_raw matches "{*", message, _raw) as message

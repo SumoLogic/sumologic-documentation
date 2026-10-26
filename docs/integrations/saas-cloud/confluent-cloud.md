@@ -23,7 +23,7 @@ The Confluent Cloud app uses metrics:
 
 Sumo Logic supports collecting metrics using the Cloud-to-Cloud integration framework:
 
-* Configure a [Confluent Cloud Metrics Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/)
+* Configure a [Confluent Metrics Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-metrics-source/)
 
 ## Installing the Confluent Cloud app
 

@@ -67,7 +67,7 @@ The Sumo Logic integration for iLert ingests alert events into Sumo Logic throug
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/ilert"
 | json "id", "summary", "details", "reportTime", "status", "eventType", "priority", "alertSource.name", "assignedTo.username", "assignedTo.email", "responders[0].user.username", "responders[0].user.email" as id, summary, detail, reportTime, status, eventType, priority, alertSource, assignedUserName, assignedEmail, responderUserName, responderEmail nodrop
 | where id matches "{{alertId}}" and alertSource matches "{{alertSource}}" and eventType matches "{{eventType}}" and status matches "{{status}}" and  priority matches "{{priority}}"
@@ -105,7 +105,7 @@ Follow the steps to configure the iLert Webhook.
     specific condition if required.
 7. Click **Save**.
 8. Verify iLert events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/ilert`
 ```
 
@@ -130,7 +130,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 The **iLert - Overview** dashboard presents a comprehensive insight into the alert management system, featuring a range of informative panels. Starting with Unique Alert Generation statistics, it displays alerts categorized by their sources and highlights High-Priority alerts for immediate attention. The dashboard also tracks Pending and Resolved Alerts, providing a real-time overview of the alert status. Additionally, it offers a breakdown of alerts by priority, identifies the Top Active Responders, and analyses alert data based on event types and source trends. Users can efficiently spot event-type trends and review a concise summary of recent alerts.
 
-<img src={useBaseUrl('img/integrations/webhooks/iLert_overview.png')} style={{border: '1px solid black'}} alt="iLert-Overview"/>
+<img src={useBaseUrl('img/integrations/webhooks/iLert_overview.png')} style={{border: '1px solid black'}} alt="iLert Overview"/>
 
 ## Upgrade/Downgrade the iLert app (Optional)
 

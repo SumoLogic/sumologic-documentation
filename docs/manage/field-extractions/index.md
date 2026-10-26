@@ -1,7 +1,7 @@
 ---
 slug: /manage/field-extractions
 title: Field Extractions
-description: Field Extraction speeds the search process by parsing fields as log messages are ingested.
+description: Use Field Extraction Rules (FERs) to parse fields from log messages at ingestion time, improving search performance for alerts, dashboards, and ad hoc queries.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -27,7 +27,7 @@ You can see the suggestions only if there are two or more responses for the same
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule. 
 :::
 
-<img src={useBaseUrl('img/field-extraction-rules/fer-page.png')} alt="fer-page" style={{border:'1px solid gray'}} width="800"/>
+<img src={useBaseUrl('img/field-extraction-rules/fer-page.png')} alt="Fer page" style={{border:'1px solid gray'}} width="800"/>
 
 The Field Extraction Rules page displays the following information: 
 

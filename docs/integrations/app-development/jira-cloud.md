@@ -39,7 +39,7 @@ This section provides a sample query from the **Unassigned Issues** panel on the
 * Issue:*
 * Issue_Summary:*
 
-```sql title="Query String"
+```sumo title="Query String"
 _sourceCategory="jira_cloud" *issue*
 | json field=_raw "webhookEvent", "issue_event_type_name", "changelog", "issue.fields.creator.displayName", "issue.self",  "issue.key", "timestamp", "issue.fields.issuetype.name", "issue.fields.status.name", "issue.fields.resolution.name", "issue.fields.project.name", "issue.fields.status.statusCategory.name", "user.active",  "issue.fields.assignee.displayName", "issue.fields.summary", "issue.fields.priority.name", "issue.fields.components", "issue.fields.labels" as  event_name, event_type, change_log, issue_creator, jira_self, issue_key, timestamp, type, status, resolution, project_name, status_category, is_active, issue_assignee, issue_summary, priority, components, labels  nodrop
 | where   project_name matches "*" AND issue_key matches "*" AND type matches "*" AND priority matches "*" AND status_category matches "*" AND status matches "*"
@@ -234,3 +234,7 @@ Use this dashboard to:
 * Monitor and audit all administrative activities related to the creation and modification of Jira Cloud users.
 
 <img src={useBaseUrl('img/integrations/app-development/Jira_Cloud_User_Events.png')} alt="jira cloud" />
+
+## Additional resources
+
+- Use the [Atlassian Jira Cloud Automation Service Integration](/docs/integrations/automation-integrations/atlassian-jira-cloud/) to automate response actions directly from Cloud SOAR playbooks.

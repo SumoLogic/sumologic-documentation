@@ -2,7 +2,7 @@
 id: automox-source
 title: Automox Source
 sidebar_label: Automox
-tags:
+keywords:
   - cloud-to-cloud
   - automox
 description: The Automox Source provides a secure endpoint to receive all events objects, audit trail events, and device inventory details from the Automox platform.
@@ -11,7 +11,7 @@ description: The Automox Source provides a secure endpoint to receive all events
 import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/automox-logo.png')} alt="automox-logo" width="50" />
+<img src={useBaseUrl('img/send-data/automox-logo.png')} alt="Automox logo" width="50" />
 
 Automox is a cloud-based platform for automated IT operations, offering patching, software deployment, and configuration management across Windows, macOS, and Linux devices. It enhances security by automating vulnerability remediation and ensuring systems stay up-to-date.
 
@@ -57,7 +57,7 @@ To configure a Automox Source:
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 
-:::info
+:::tip
 After configuring the Automox source, consider installing the Sumo Logic app for [Automox](/docs/integrations/saas-cloud/automox/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -106,3 +106,7 @@ https://github.com/SumoLogic/sumologic-documentation/blob/main/static/files/c2c/
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Automox Automation Service Integration](/docs/integrations/automation-integrations/automox/) to automate response actions directly from Cloud SOAR playbooks.

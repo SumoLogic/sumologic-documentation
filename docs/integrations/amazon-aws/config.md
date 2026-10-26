@@ -37,7 +37,7 @@ Amazon Web Services (AWS) Config provides a simple web services interface that c
 
 ### Sample queries
 
-```sql title="Latest Resource Modifications (from App)"
+```sumo title="Latest Resource Modifications (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | json "Message", "Type"
 | where type == "Notification"
@@ -50,7 +50,7 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | sort by _messageTime desc
 ```
 
-```sql title=Configuration Activity by AWS Region** (from App)"
+```sumo title=Configuration Activity by AWS Region** (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | json "Message", "Type" as single_message, type | where type == "Notification"
 | json field=single_message "configurationItem.awsRegion" as awsRegion

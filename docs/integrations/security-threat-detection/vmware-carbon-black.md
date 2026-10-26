@@ -114,18 +114,18 @@ To add an S3 source for VMware Carbon Black Cloud Endpoint Standard, do the foll
 
 ### Configure VMware Carbon Black Cloud Endpoint Standard to send alerts and events to S3
 
-**VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo logic S3](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) source.
+**VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo Logic S3](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) source.
 
 To configure the Event Forwarder, follow the steps mentioned [here](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/eventforwarder-api/). Please carefully evaluate this information to assure that your configuration reflects the data set you would like to send to Sumo Logic.
 
 Utilize the S3 bucket created in the previous steps while configuring the Event Forwarder.
 
 
-### Step 4: Verify Sumo is receiving findings
+### Step 4: Verify Sumo Logic is receiving findings
 
-In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving findings. Search by the source category you assigned to the HTTP Source that receives the log data, for example:
+In Sumo Logic, open a Live Tail tab and run a search to verify Sumo Logic is receiving findings. Search by the source category you assigned to the HTTP Source that receives the log data, for example:
 
-```sql
+```sumo
 _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
@@ -281,7 +281,7 @@ This section provides a sample query from the **Top Processes** panel of the **C
 #### Query String
 
 
-```
+```sumo
 _sourceCategory="Labs/cb-edr-json" | parse regex "(?:process_name)(?:\"\:\"|=')
 (?<process_name>.*?)(?:\"|')" multi | parse regex "ioc_type(?:\"\:\"|=')(?<ioc_type>.*?)(?:\"|')
 " nodrop | parse regex "feed_name(?:\"\:\"|=')(?<feed_name>.*?)(?:\"|')" nodrop | parse regex

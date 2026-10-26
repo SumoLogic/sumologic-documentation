@@ -36,7 +36,7 @@ Use the following guidelines to customize your Threat Intel queries:
 * Use general search optimization rules
 
 For example:
-```
+```sumo
 _sourceCategory=cylance "IP Address"
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where !isNull(ip_address)
@@ -61,7 +61,7 @@ You can further optimize and enhance these queries for the log and events types 
 
 For example, here is the query used for the **Threat Count** panel in the [Threat Intel Quick Analysis - IP](#ip) dashboard:
 
-```
+```sumo
 _sourceCategory=<source-category-name>
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
@@ -97,7 +97,7 @@ _sourceCategory=<source-category-name>
 Use [Field Extraction Rules (FER)](/docs/manage/field-extractions/create-field-extraction-rule) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with lookup operator.
 
 1. Create the FER For example, for Cylance Security Events, create and use the following Field Extraction Rule:
-   ```sql
+   ```sumo
    parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Name: *, Path: *, Drive Type: *, SHA256: *, MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *, Detected By: *" as event_type,event_name,device_name,src_ip,dest_ip,file_name,path,drive_type,sha,md5,status,score,found,file_type,isRunning,autoRun,detected
    ```
 1. Customize your query so you can use parsed fields from FER with the lookup operator, where src_ip is the parsed field from FER (see step # 1). For example:
@@ -150,7 +150,7 @@ Use scheduled views with the threat lookup operator to find threats. Scheduled v
    ```
    -->
 2. Now, you can run your Threat Intel query on top of this view:
-     ```sql
+     ```sumo
      _view=cylance_threat
      | count by src_ip
      ```
@@ -188,7 +188,7 @@ It could be a case-sensitivity issue. In Sumo Logic, the equal sign (`=`) and th
 #### I already have parsed fields such as IPs, domain, URL, Email, or File Name. Can I use them with this app, instead of parsing each log line again?
 Yes, you can customize the query in the app. For example:
 
-```
+```sumo
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
 | where Your_IP != "0.0.0.0" and Your_IP != "127.0.0.1"
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=Your_IP
@@ -198,7 +198,7 @@ _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/R
 ```
 
 <!-- Per DOCS-643, replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
-```
+```sumo
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
 | where Your_IP != "0.0.0.0" and Your_IP != "127.0.0.1"
 | threatlookup singleIndicator Your_IP
@@ -213,7 +213,7 @@ _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/R
 You can use (`*`) to scan all of your ingested logs for threat, but depending on the volume of logs it can impact the performance of the search query and the app.
 
 For optimal performance, use a subset of the logs. For example:
-```
+```sumo
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
 ```
 
@@ -238,7 +238,7 @@ _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/R
 
 <!-- Per DOCS-643, replace the preceding code with the following after `sumo://threat/cs` is replaced by `threatlookup`:
 
-```
+```sumo
 | parse regex "(?\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | threatlookup singleIndicator ip_address

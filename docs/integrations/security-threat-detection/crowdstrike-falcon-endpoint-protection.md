@@ -179,7 +179,7 @@ For more information on Events, refer to the [Streaming API Event Dictionary](ht
 
 This section provides query examples for each event type.
 
-```sql title="Detection Event"
+```sumo title="Detection Event"
 _sourceCategory={{Logsdatasource}}  eventType EppDetectionSummaryEvent event SeverityName
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.Tactic","event.Technique", "event.Objective", "event.ComputerName", "event.UserName", "event.CompositeId", "event.Description", "event.Severity", "event.SeverityName", "event.FileName", "event.FilePath", "event.CommandLine", "event.MD5String", "event.SHA256String", "event.MachineDomain" , "event.FalconHostLink","event.LocalIP", "event.MACAddress", "event.ProcessEndTime" as event_type, customer_id, event_time, tactic, technique, objective, computer_name, user_name, composite_id, detect_desc, severity, severity_name, file_name, file_path, cmd_line, md5_string, sha256_string, machine_domain, falconHost_link, local_ip, mac_adderess, process_endTIme nodrop
 
@@ -191,7 +191,7 @@ _sourceCategory={{Logsdatasource}}  eventType EppDetectionSummaryEvent event Sev
 | sort by _count, severity_name
 ```
 
-```sql title="Authentication Event"
+```sumo title="Authentication Event"
 _sourceCategory={{Logsdatasource}} eventType AuthActivityAuditEvent event OperationName
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.UserId", "event.UserIp", "event.OperationName", "event.ServiceName", "event.Success", "event.UTCTimestamp" as event_type, customer_id, event_time, src_user, user_ip, operation_name, service_name, success, operation_time nodrop
 
@@ -203,7 +203,7 @@ _sourceCategory={{Logsdatasource}} eventType AuthActivityAuditEvent event Operat
 | sort by _count, operation_name
 ```
 
-```sql title="Detection Status Update"
+```sumo title="Detection Status Update"
 _sourceCategory={{Logsdatasource}} eventType UserActivityAuditEvent event OperationName quarantined_file_update
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime", "event.OperationName",  "event.UserId", "event.UserIp", "event.ServiceName", "event.AuditKeyValues" as event_type, customer_id, event_time, operation_name, src_user, user_ip, service_name, audit_values nodrop
 

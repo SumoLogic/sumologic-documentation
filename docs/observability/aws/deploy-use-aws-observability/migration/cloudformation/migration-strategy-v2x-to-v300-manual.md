@@ -1,0 +1,318 @@
+---
+id: migration-strategy-v2x-to-v300-manual
+title: Manually Migrate AWS Observability from v2.x to v3.0.0 using CloudFormation
+sidebar_label: Manual
+description: Step-by-step guide to manually migrate your AWS Observability CloudFormation stack from v2.x to v3.0.0.
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This documentation walks you through manually migrating an existing [AWS Observability CloudFormation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/) deployment from v2.x to v3.0.0.
+
+:::danger
+- This guide supports only active AWSO versions listed [here](/docs/observability/aws/deploy-use-aws-observability/changelog#awso-lifecycle). If your current version is inactive, contact the support team. <br/>
+
+- Ensure that the account aliases used in your v2.x.x deployment are carried over during migration. The same aliases will be reused in v3.0.0.
+
+- During the migration of the AWSO solution, the allowlist for login and APIs must remain disabled. Please refer to the [documentation](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/before-you-deploy#prerequisites) for the required prerequisites and [instructions on disabling the allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses/#disable-allowlist-settings).
+:::
+
+:::warning
+This migration deletes your v2.x CloudFormation stack. Your Sumo Logic collector, sources, and S3 buckets are preserved, but the stack deletion cannot be undone.
+:::
+
+:::note
+- If you prefer an automated approach, see [Migrate AWS Observability from v2.x to v3.0.0 using the migration script](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-cloudformation/).
+- Verify that Sumo Logic IPs are allowlisted in your AWS environment.
+:::
+
+## Prerequisites
+
+Before making any changes, create backups of the following resources:
+
+- **[Field Extraction Rules](/docs/manage/field-extractions/)**. Export from **Manage Data > Logs > Field Extraction Rules**.
+- **[Metric Rules](/docs/metrics/metric-rules-editor/)**. Record them from **Manage Data > Metrics > Metric Rules**.
+
+You will also need:
+- Your Sumo Logic **Access ID** and **Access Key** with the Administrator role. For more information, see [Access Keys](/docs/manage/security/access-keys/).
+- Your Sumo Logic **Org ID**, found at **Administration > Account > Org ID**.
+- The **S3 bucket name(s)** used by your existing v2.x stack — you will need these when deploying v3.0.0.
+
+## Step 1: Set RemoveOnDeleteStack to false
+
+This is the most critical step. Before deleting the v2.x stack, ensure that `RemoveOnDeleteStack` is set to `false`. If this parameter is `true` when the stack is deleted, the Sumo Logic Lambda helper permanently deletes the collector and all associated sources.
+
+1. Navigate to **AWS Console > CloudFormation > Stacks** and select your v2.x stack.
+2. Click **Update**.
+3. Select **Use existing template** and click **Next**.
+4. In the parameters screen, find **Delete Sumo Logic Resources when stack is deleted** and set it to **false**.
+
+<img src={useBaseUrl('img/observability/migration-remove-on-delete.png')} alt="CloudFormation Update Stack showing RemoveOnDeleteStack set to false" />
+
+5. Click through the remaining steps and submit the update.
+6. Wait for the stack to reach `UPDATE_COMPLETE` before proceeding.
+
+## Step 2: Delete the v2.x stack
+
+1. Go to **AWS Console > CloudFormation > Stacks**.
+2. Select your v2.x stack and click **Delete**.
+3. Confirm the deletion.
+4. Wait for the stack to reach `DELETE_COMPLETE`. If the deletion gets stuck in `DELETE_FAILED`, this is expected — the S3 bucket cannot be deleted because it contains logs. In this case, use **Force delete** to complete the deletion while leaving the bucket intact.
+
+## Step 3: Verify your Sumo Logic resources are intact
+
+After the stack is deleted, verify that your collector and sources are still present in Sumo Logic:
+
+1. Go to **Manage Data > Collection > Collection**.
+2. Find the collector named `aws-observability-<alias>-<accountId>`.
+3. Confirm that all sources that were present in your v2.x stack are still listed. Depending on which sources you had enabled, you may see some or all of the following:
+   - `alb-logs`
+   - `classic-lb-logs`
+   - `cloudtrail-logs`
+   - `cloudwatch-metrics`
+   - `kinesis-firehose-cloudwatch-logs`
+
+:::warning
+For each S3-based source (`alb-logs`, `classic-lb-logs`, `cloudtrail-logs`), note the **S3 bucket name** configured on the source and verify it matches the bucket name shown in your v2.x CloudFormation stack parameters. If they differ, the source may be referencing a stale or incorrect bucket — deploying v3.0.0 with the wrong bucket name means no log data will be ingested.
+:::
+
+## Step 4: Clean up Field Extraction Rules
+
+The v3.0.0 deployment creates 17 new AWSO Field Extraction Rules. If they already exist from your v2.x installation, the v3.0.0 deployment will fail due to a quota conflict. You must rename or delete them before deploying.
+
+Additionally, v3.0.0 needs **17 free slots** in your FER quota. Check the quota indicator at the top of the Field Extraction Rules page before proceeding. If fewer than 17 slots are free, delete or consolidate unused rules.
+
+1. Navigate to **Manage Data > Logs > Field Extraction Rules**.
+2. Confirm you have at least 17 free quota slots available.
+3. Find all AWSO rules (names beginning with `AwsObservability`).
+4. Rename each one (for example, prefix with `v2_backup_`) or delete them.
+
+## Step 5: Clean up Metric Rules
+
+The v3.0.0 deployment creates 4 AWSO Metric Rules that may already exist from your v2.x install. Delete them before deploying:
+
+1. Go to **Manage Data > Metrics > Metric Rules**.
+2. Delete any of the following rules that exist (v2.x and v3.0.0 may use different names):
+   - `AwsObservabilityRDSClusterMetricsRule` or `AwsObservabilityRDSClusterMetricsEntityRule`
+   - `AwsObservabilityRDSInstanceMetricsRule` or `AwsObservabilityRDSInstanceMetricsEntityRule`
+   - `AwsObservabilityNLBMetricsRule` or `AwsObservabilityNLBMetricsEntityRule`
+   - `AwsObservabilityAPIGatewayMetricsRule` or `AwsObservabilityApiGatewayApiNameMetricsEntityRule`
+
+## Step 6: Deploy v3.0.0
+
+Deploy the v3.0.0 CloudFormation stack using the parameter mapping table below. Use the same account alias, Sumo Logic credentials, and source creation options as your v2.x stack. When v3.0.0 detects existing Sumo Logic sources with matching names on the collector, it reuses them — no data gap occurs and no duplicate sources are created.
+
+Template URL:
+```
+https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml
+```
+
+### Parameter mapping
+
+Use the following table to map your v2.x parameter values to v3.0.0:
+
+<table style={{width: '100%', tableLayout: 'fixed'}}>
+<thead>
+<tr>
+<th style={{width: '36%'}}>v2.x Parameter</th>
+<th style={{width: '36%'}}>v3.0.0 Parameter</th>
+<th style={{width: '28%'}}>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section1aSumoLogicDeployment</code></td><td><code style={{wordBreak: 'break-word'}}>Section1aSumoLogicDeployment</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section1bSumoLogicAccessID</code></td><td><code style={{wordBreak: 'break-word'}}>Section1bSumoLogicAccessID</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section1cSumoLogicAccessKey</code></td><td><code style={{wordBreak: 'break-word'}}>Section1cSumoLogicAccessKey</code></td><td>Same value (re-enter — masked in CFN)</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section1dSumoLogicOrganizationId</code></td><td><code style={{wordBreak: 'break-word'}}>Section1dSumoLogicOrganizationId</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section1eSumoLogicResourceRemoveOnDeleteStack</code></td><td><code style={{wordBreak: 'break-word'}}>Section1eSumoLogicResourceRemoveOnDeleteStack</code></td><td>Set to <code>false</code></td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section1fSumoLogicSendTelemetry</code></td><td><code style={{wordBreak: 'break-word'}}>Section1fSumoLogicSendTelemetry</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section2aAccountAlias</code></td><td><code style={{wordBreak: 'break-word'}}>Section2aAccountAlias</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section2bAccountAliasMappingS3URL</code></td><td><code style={{wordBreak: 'break-word'}}>Section2bAccountAliasMappingS3URL</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section3aInstallObservabilityApps</code></td><td><code style={{wordBreak: 'break-word'}}>Section3aInstallObservabilityApps</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section4aCreateMetricsSourceOptions</code></td><td><code style={{wordBreak: 'break-word'}}>Section4aCreateMetricsSourceOptions</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section4bMetricsNameSpaces</code></td><td><code style={{wordBreak: 'break-word'}}>Section4bMetricsNameSpaces</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section4cCloudWatchExistingSourceAPIUrl</code></td><td><code style={{wordBreak: 'break-word'}}>Section4cCloudWatchExistingSourceAPIUrl</code></td><td>Leave empty (create new)</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section4dAWSMetricsTagFilters</code></td><td><code style={{wordBreak: 'break-word'}}>Section4dAWSMetricsTagFilters</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section5aAutoEnableS3LogsALBResourcesOptions</code></td><td><code style={{wordBreak: 'break-word'}}>Section5aAutoEnableS3LogsALBResourcesOptions</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section5bALBCreateLogSource</code></td><td><code style={{wordBreak: 'break-word'}}>Section5bALBCreateLogSource</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section5cALBLogsSourceUrl</code></td><td><code style={{wordBreak: 'break-word'}}>Section5cALBLogsSourceUrl</code></td><td>Leave empty (create new)</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section5dALBS3LogsBucketName</code></td><td><code style={{wordBreak: 'break-word'}}>Section5dALBS3LogsBucketName</code></td><td>Use the existing bucket name from your v2.x stack</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section5eALBS3BucketPathExpression</code></td><td><code style={{wordBreak: 'break-word'}}>Section5eALBS3BucketPathExpression</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section6aCreateCloudTrailLogSource</code></td><td><code style={{wordBreak: 'break-word'}}>Section6aCreateCloudTrailLogSource</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section6bCloudTrailLogsSourceUrl</code></td><td><code style={{wordBreak: 'break-word'}}>Section6bCloudTrailLogsSourceUrl</code></td><td>Leave empty (create new)</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section6cCloudTrailLogsBucketName</code></td><td><code style={{wordBreak: 'break-word'}}>Section6cCloudTrailLogsBucketName</code></td><td>Use the existing bucket name from your v2.x stack</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section6dCloudTrailBucketPathExpression</code></td><td><code style={{wordBreak: 'break-word'}}>Section6dCloudTrailBucketPathExpression</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section7aLambdaCreateCloudWatchLogsSourceOptions</code></td><td><code style={{wordBreak: 'break-word'}}>Section7aCreateCloudWatchLogsSourceOptions</code></td><td><strong>Renamed</strong> — drop <code>Lambda</code> from key name</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section7bLambdaCloudWatchLogsSourceUrl</code></td><td><code style={{wordBreak: 'break-word'}}>Section7bCloudWatchLogsSourceUrl</code></td><td><strong>Renamed</strong> — drop <code>Lambda</code>; leave empty (create new)</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section7cAutoSubscribeLogGroupsOptions</code></td><td><code style={{wordBreak: 'break-word'}}>Section7cAutoSubscribeLogGroupsOptions</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section7dAutoSubscribeLogGroupPattern</code></td><td><code style={{wordBreak: 'break-word'}}>Section7dAutoSubscribeLogGroupPattern</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section7eAutoSubscribeLogGroupByTags</code></td><td><code style={{wordBreak: 'break-word'}}>Section7eAutoSubscribeLogGroupByTags</code></td><td>Same value</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section9aAutoEnableS3LogsELBResourcesOptions</code></td><td><code style={{wordBreak: 'break-word'}}>Section8aAutoEnableS3LogsELBResourcesOptions</code></td><td><strong>Renamed</strong> — Section 9 → Section 8</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section9bELBCreateLogSource</code></td><td><code style={{wordBreak: 'break-word'}}>Section8bELBCreateLogSource</code></td><td><strong>Renamed</strong> — Section 9 → Section 8</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section9cELBLogsSourceUrl</code></td><td><code style={{wordBreak: 'break-word'}}>Section8cELBLogsSourceUrl</code></td><td><strong>Renamed</strong> — Section 9 → Section 8; leave empty (create new)</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section9dELBS3LogsBucketName</code></td><td><code style={{wordBreak: 'break-word'}}>Section8dELBS3LogsBucketName</code></td><td><strong>Renamed</strong> — Section 9 → Section 8; use existing bucket name</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section9eELBS3BucketPathExpression</code></td><td><code style={{wordBreak: 'break-word'}}>Section8eELBS3BucketPathExpression</code></td><td><strong>Renamed</strong> — Section 9 → Section 8</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section10aAppInstallLocation</code></td><td><em>(removed)</em></td><td><strong>Removed in v3.0.0</strong> — do not include</td></tr>
+<tr><td><code style={{wordBreak: 'break-word'}}>Section10bShare</code></td><td><em>(removed)</em></td><td><strong>Removed in v3.0.0</strong> — do not include</td></tr>
+</tbody>
+</table>
+
+:::note
+Setting the source URL parameter (for example, `Section5cALBLogsSourceUrl`) to an empty string forces v3.0.0 into **create new** mode. When v3.0.0 detects existing sources with matching names on the collector, it reuses them. So, there's no data gap.
+:::
+
+## Step 7: Update source IAM role ARNs
+
+After v3.0.0 deploys successfully, update each existing Sumo Logic source with the new IAM role ARN that v3.0.0 creates. Although deleting the v2.x stack removes the old IAM role, the sources continue to reference it until you update them.
+
+### Find the new IAM role ARN
+
+1. Go to **AWS Console > CloudFormation > Stacks** and select your new v3.0.0 stack.
+2. In the **Resources** tab, find the nested stack named `CreateCommonResources` and click on it.
+
+<img src={useBaseUrl('img/observability/migration-arn-cfn-stack-resources.png')} alt="CloudFormation main stack Resources tab with CreateCommonResources highlighted" />
+
+3. In the `CreateCommonResources` stack, go to the **Resources** tab and search for `SumoLogicSourceRole`. Click the **Physical ID** link to open the IAM role.
+
+<img src={useBaseUrl('img/observability/migration-arn-common-resources-role.png')} alt="CreateCommonResources stack Resources tab with SumoLogicSourceRole highlighted" />
+
+4. On the IAM role page, copy the **ARN** shown in the Summary section.
+
+<img src={useBaseUrl('img/observability/migration-arn-iam-role-summary.png')} alt="IAM role summary page with ARN highlighted" />
+
+### Update the role ARN in Sumo Logic
+
+For each S3-based source on your collector (`alb-logs`, `classic-lb-logs`, `cloudtrail-logs`):
+
+1. Go to **Manage Data > Collection > Collection**.
+2. Find your AWSO collector and click on the source.
+3. Update the **AWS Role ARN** field with the new ARN from the step above.
+4. Save the source.
+
+## Step 8: Verify the migration
+
+1. Go to **Manage Data > Collection > Collection** and confirm all sources show a green status.
+2. Check that logs and metrics are flowing into Sumo Logic by running a search:
+   - `_sourceCategory=aws/observability/cloudtrail/logs`
+   - `_sourceCategory=aws/observability/cloudwatch/metrics`
+
+### Additional checks
+
+**S3 bucket policies** — verify each log bucket grants the required service principals:
+- CloudTrail bucket must allow `cloudtrail.amazonaws.com` to write.
+- ALB and ELB buckets must allow `delivery.logs.amazonaws.com` to write.
+
+The v3.0.0 stack only creates a bucket policy when it creates a new bucket. Since migration reuses existing buckets, the policy must already exist. If log delivery is silently failing, check the bucket policy in **AWS Console > S3 > your bucket > Permissions > Bucket policy**.
+
+**CloudTrail trail** — the `Aws-Observability-*` trail created by v2.x is deleted with the old stack. v3.0.0 does not recreate a trail when reusing an existing bucket. If no active trail is writing to your CloudTrail bucket, create one manually from **AWS Console > CloudTrail > Trails**.
+
+**S3 bucket notifications** — the SNS topic that notifies Sumo Logic of new S3 objects is also deleted with the v2.x stack. If your S3 sources stop receiving new events, check the bucket notification configuration in **AWS Console > S3 > your bucket > Properties > Event notifications** and verify the SNS topic exists. If the topic was deleted, you will need to create a new one, subscribe the Sumo Logic source endpoint to it, and update the bucket notification configuration.
+
+## Troubleshooting
+
+| Issue | Cause | Resolution |
+|:--|:--|:--|
+| Stack deletion stuck in `DELETE_FAILED` | S3 bucket is non-empty and cannot be deleted by CloudFormation | Use **Force delete** on the stack — the bucket will be preserved. This is expected when the bucket contains existing log data. |
+| v3.0.0 deploy fails with `fer:invalid_extraction_rule` | AWSO Field Extraction Rules from v2.x still exist | Complete [Step 4](#step-4-clean-up-field-extraction-rules) and retry. |
+| v3.0.0 deploy fails due to FER quota limit | Fewer than 17 free FER slots available | Delete or consolidate unused Field Extraction Rules until 17 slots are free, then retry. |
+| v3.0.0 deploy fails with `metrics:rule_already_exists` | AWSO Metric Rules from v2.x still exist | Complete [Step 5](#step-5-clean-up-metric-rules) and retry. Note that v2.x metric rule names differ from v3.0.0 — check both name variants listed in Step 5. |
+| Sources show errors after migration | Sources still reference the old deleted IAM role ARN | Complete [Step 7](#step-7-update-source-iam-role-arns). |
+| Collector or sources not found after stack deletion | `RemoveOnDeleteStack` was `true` when the stack was deleted | Resources cannot be recovered — redeploy v3.0.0 with fresh sources. |
+| S3 sources not receiving new log data | Bucket policy missing required service principal, or SNS notification topic was deleted with the v2.x stack | Check the bucket policy and S3 event notification configuration as described in [Step 8](#step-8-verify-the-migration). |
+| No CloudTrail data after migration | The v2.x `Aws-Observability-*` trail was deleted with the old stack | Create a new CloudTrail trail pointing at the same S3 bucket from **AWS Console > CloudTrail > Trails**. |
+
+---
+
+## StackSet migration (manual)
+
+Use this section if AWSO is deployed via a CloudFormation StackSet across multiple accounts and/or regions and you prefer not to use the automation script.
+
+:::note
+For the automated approach, see the [StackSet migration section in the automation guide](/docs/observability/aws/deploy-use-aws-observability/migration/cloudformation/migration-strategy-v2x-to-v300-cloudformation/#stackset-migrationmulti-regions-and-accounts).
+:::
+
+### Step 1: Set RemoveOnDeleteStack to false on all instances
+
+Before deleting any instances, ensure `RemoveOnDeleteStack=false` is set on every stack instance. If `true` at deletion time, the Sumo Logic Lambda helper will permanently delete the collector and all sources.
+
+From the **StackSet management account**, update all instances in the affected accounts and regions:
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your v2.x StackSet.
+2. Click **Actions > Edit StackSet details**.
+3. On the **Parameters** screen, set **Delete Sumo Logic Resources when stack is deleted** to **false**.
+4. On the **Deployment options** screen, scope the update to the specific accounts and regions you intend to migrate.
+5. Submit the update and wait for all instances to reach `CURRENT`.
+
+### Step 2: Delete stack instances
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your StackSet.
+2. Click **Actions > Delete stacks from StackSet**.
+3. Enter the account IDs and regions to migrate.
+4. Under **Retain stacks**, select **No** to fully delete the CloudFormation stacks in each account/region (your Sumo Logic resources are preserved because `RemoveOnDeleteStack=false`).
+5. Submit and wait for the operation to reach `SUCCEEDED`.
+
+If the operation ends in `FAILED` for any account/region (commonly caused by a non-empty S3 bucket), go to the affected account/region, use **Force delete** on the stuck stack, then remove the instance from the StackSet using **Delete stacks from StackSet** with **Retain stacks = Yes** for that specific account/region.
+
+### Step 3: Verify Sumo Logic resources are intact
+
+For each migrated account, follow [Step 3 of the single-stack guide](#step-3-verify-your-sumo-logic-resources-are-intact) to confirm the collector and sources are still present.
+
+### Step 4: Clean up Field Extraction Rules
+
+Follow [Step 4 of the single-stack guide](#step-4-clean-up-field-extraction-rules). This is an org-level operation — do it once, not once per account.
+
+### Step 5: Clean up Metric Rules
+
+Follow [Step 5 of the single-stack guide](#step-5-clean-up-metric-rules). This is also org-level — do it once.
+
+### Step 6: Update the StackSet to v3.0.0
+
+You have two options depending on whether you want to reuse the existing StackSet name or create a new one.
+
+**Option A — Update the existing StackSet in-place**
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your StackSet.
+2. Click **Actions > Edit StackSet details**.
+3. On the **Template** screen, select **Replace current template** and enter:
+   ```
+   https://sumologic-appdev-aws-sam-apps.s3.us-east-1.amazonaws.com/aws-observability-versions/v3.0.0/templates/sumologic_observability.master.template.yaml
+   ```
+4. Apply the v3.0.0 parameter mapping from the [single-stack parameter table](#parameter-mapping). Set `Section1eSumoLogicResourceRemoveOnDeleteStack` to `false`.
+5. On the deployment options screen, choose **No overrides** — there are no instances yet, so the update is definition-only.
+6. Submit and wait for `SUCCEEDED`.
+
+**Option B — Create a new StackSet**
+
+1. Go to **AWS Console > CloudFormation > StackSets** and click **Create StackSet**.
+2. Enter the v3.0.0 template URL above.
+3. Provide a new StackSet name (for example, `SUMO-LOGIC-AWS-OBSERVABILITY-V300`).
+4. Apply the v3.0.0 base parameters from the parameter mapping table above.
+5. Do not add any deployment targets yet — you will add instances in the next step.
+
+### Step 7: Create new stack instances
+
+For each account/region pair, create a new stack instance with the correct per-account alias and S3 bucket names.
+
+1. Go to **AWS Console > CloudFormation > StackSets** and select your v3.0.0 StackSet.
+2. Click **Actions > Add stacks to StackSet**.
+3. Enter the target account IDs and regions.
+4. Under **Parameter overrides**, set at minimum:
+   - `Section2aAccountAlias` — the account alias (for example, `prod`)
+   - `Section5dALBS3LogsBucketName` — ALB log bucket for this region (if used)
+   - `Section6cCloudTrailLogsBucketName` — CloudTrail log bucket for this region (if used)
+   - `Section8dELBS3LogsBucketName` — ELB log bucket for this region (if used)
+5. Submit and wait for `SUCCEEDED`.
+
+Repeat for each unique account/region combination. Each region requires its own instance because S3 bucket names differ per region.
+
+### Step 8: Update source IAM role ARNs
+
+For each account/region, follow [Step 7 of the single-stack guide](#step-7-update-source-iam-role-arns) to find the new `SumoLogicSourceRole` ARN from the v3.0.0 nested stack and update it on each Sumo Logic source.
+
+:::note
+The `CreateCommonResources` nested stack and `SumoLogicSourceRole` exist inside each member account's deployed CloudFormation stack. Assume the appropriate IAM role in each member account to access them.
+:::
+
+### Step 9: Verify the migration
+
+For each account/region, follow [Step 8 of the single-stack guide](#step-8-verify-the-migration) to confirm sources are healthy and data is flowing.

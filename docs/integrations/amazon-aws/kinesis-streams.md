@@ -52,7 +52,7 @@ The app uses Kinesis logs and metrics for:
 
 ### Sample queries
 
-```sql title="Details of errors in events"
+```sumo title="Details of errors in events"
 _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | json field=_raw "eventSource", "eventName", "awsRegion", "sourceIPAddress","userAgent" nodrop
 | json field=_raw "requestParameters.streamName" as streamName nodrop

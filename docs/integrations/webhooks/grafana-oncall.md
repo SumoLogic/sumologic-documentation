@@ -43,7 +43,7 @@ Follow the steps to configure the Grafana OnCall webhook.
     - **Forward All**. Enable this option to send the entire webhook payload of the alert group and context data to the webhook's URL.
 6. Click **Create Webhook**.
 7. Verify Grafana OnCall alerts are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/grafanaoncall`
 ```
 

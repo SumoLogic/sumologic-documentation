@@ -2,7 +2,7 @@
 id: netskope-webtx-source
 title: Netskope WebTx Source
 sidebar_label: Netskope WebTx
-tags:
+keywords:
   - cloud-to-cloud
   - netskope-webtx
 description: Our Netskope WebTx API integration ingests Web Transaction logs from Netskope Event Stream.
@@ -51,7 +51,7 @@ When you create a Netskope WebTx API Source, you add it to a Hosted Collector. B
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Netskope WebTx API**.
-1. Enter a **Name** to display the Source in the Sumo web application. The description is optional.
+1. Enter a **Name** to display the Source in the Sumo Logic web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse/). <br/><ForwardToSiem/>
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.

@@ -619,7 +619,7 @@ output:
 
 Other example (using action's input):
 
-```
+```sumo
 integration: 'Testing Purpose'
 name: 'testing Scheduled'
 type: Scheduled

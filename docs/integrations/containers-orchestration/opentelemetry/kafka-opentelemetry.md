@@ -137,7 +137,7 @@ started (kafka.server.KafkaServer)
 
 This is a sample log query from the **Events by Severity** panel in the **Kafka - Logs** dashboard.
 
-```sql
+```sumo
 sumo.datasource=kafka messaging.cluster.name={{messaging.cluster.name}}
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as kafka_log_message

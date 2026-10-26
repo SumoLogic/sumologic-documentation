@@ -45,7 +45,7 @@ Follow the below steps to configure the Gremlin webhook.
     - **Events**. Select the event types for which you want to send notifications to Sumo Logic.
 6. Click **Save**.    
 7. Verify Gremlin events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/gremlin`
 ```
 

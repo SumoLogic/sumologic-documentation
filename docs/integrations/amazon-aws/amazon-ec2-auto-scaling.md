@@ -76,7 +76,7 @@ The Amazon EC2 Auto Scaling app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Events by status (CloudTrail logs)"
+```sumo title="Events by status (CloudTrail logs)"
 account="account" region="region" "\"eventsource\":\"autoscaling.amazonaws.com\""
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage", "apiVersion" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message, api_version nodrop
 | where event_source = "autoscaling.amazonaws.com"
@@ -142,7 +142,7 @@ Applied at: Ingest Time
 Scope (Specific Data): account=* eventSource eventName
 ```
 
-```sql title="Parse Expression"
+```sumo title="Parse Expression"
 json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop
 | json field=requestParameters "autoScalingGroupName" as autoscalinggroup nodrop
 | where eventSource = "autoscaling.amazonaws.com"

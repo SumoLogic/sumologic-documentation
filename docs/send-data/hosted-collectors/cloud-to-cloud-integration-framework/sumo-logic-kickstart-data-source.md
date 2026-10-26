@@ -62,7 +62,7 @@ To focus only on your own data in search, use a filter to exclude Kickstart logs
 
 Add a line like the following to your query:
 
-```sql
+```sumo
 _sourceCategory=custom_data/logs
 | where !(_sourceCategory=datagen_otel)
 ```

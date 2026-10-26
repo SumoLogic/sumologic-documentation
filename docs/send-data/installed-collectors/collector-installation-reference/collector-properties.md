@@ -93,6 +93,9 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | collector.syslog.udp.readBufferSize | integer  | Maximum size in bytes to buffer payloads received via UDP with Syslog Sources. | 2048 |
 | collector.wildcard.fpSize | integer  | Fingerprint size to use (in bytes) when determining new file rotation. | 2048 |
 | collector.wildcard.pathMatcher | string   | Path expression matcher to use when evaluating file paths. | RegexPathExpressionMatcher |
+| collector.windows.active.directory.log.escape.special.characters | boolean | Allows escaping of special characters in Windows Active Directory Inventory Logs Source. | false  |
+| collector.windows.automatic.retry.events.collection | boolean | Master switch for record number reset detection. Set this parameter to true to enable the feature. During recovery, this may occasionally create 3–4 duplicate events at the timestamp boundary to prevent data loss. | false  |
+| collector.windows.constant.sleep.interval.retry.windows.event | boolean | Allows to wait for a constant time to retry sending data whenever we get some invalid data. | false  |
 | collector.winlog.dcom.connectionTimeout | integer  | WMI connection timeout in milliseconds for Windows Event Log Sources. | 60000 |
 | collector.winlog.dcom.notificationSessionTimeout | integer  | WMI notification session timeout in milliseconds for Windows Event Log Sources. | 1800000 |
 | collector.winlog.dcom.querySessionTimeout | integer  | WMI query session timeout in milliseconds for Windows Event Log Sources. | 30000 |
@@ -164,5 +167,3 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | windows.local.jni | boolean  | Enable using JNI for local Windows Event Log Sources. | true |
 | wrapper.out.oom | string   | Custom message to log upon OutOfMemory exception from Wrapper. | The JVM has run out of memory. |
 | wrapper.out.stop | string   | Custom message to log upon stopping the Wrapper. | Wrapper Stopped |
-| collector.windows.active.directory.log.escape.special.characters | boolean | Allows escaping of special characters in Windows Active Directory Inventory Logs Source. | false  |
-| collector.windows.constant.sleep.interval.retry.windows.event | boolean | Allows to wait for a constant time to retry sending data whenever we get some invalid data. | false  |

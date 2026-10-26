@@ -4,14 +4,16 @@ title: Math Expressions
 description: Use general mathematical expressions on numerical data extracted from log lines.
 ---
 
+import MobotCallout from '../../../reuse/mobot-callout.md';
+
+<MobotCallout/>
+
 You can use general mathematical expressions on numerical data extracted
 from log lines. 
 
 ## Syntax
 
-```sql
-| expression [as <field>]
-```
+`| expression [as <field>]`
 
 ## Rules
 
@@ -34,7 +36,7 @@ The Sumo Logic Java library includes the Math class functions, though they are n
 
 The following example uses the `pow()` function:
 
-```sql
+```sumo
 | 10 as number | pow(number, 10) as newnumber
 ```
 

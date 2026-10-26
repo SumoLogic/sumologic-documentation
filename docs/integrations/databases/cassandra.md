@@ -386,7 +386,7 @@ Based on your infrastructure and networking setup choose one of these methods to
    * OFF
 
   To permanently add debug logging to a class permanently using the logback framework, use nodetool setlogginglevel to check you have the right class before you set it in the logback.xml file in install_location/conf. Modify to include the following line or similar at the end of the file:
-   ```sql
+   ```xml
    <logger name="org.apache.cassandra.gms.FailureDetector" level="DEBUG"/>
    ```
   Restart the node to invoke the change.

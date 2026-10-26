@@ -45,7 +45,7 @@ The Sumo Logic app for Google Cloud Load Balancer uses the following three [metr
 
 ### Sample logs queries
 
-```bash title="Status codes per load balancer"
+```sumo title="Status codes per load balancer"
 _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/requests"
@@ -66,11 +66,11 @@ project_id=* region=global cloud.platform=gcp_loadbalancing url_map_name=*  metr
 
 ## Collect Logs for Google Cloud Load Balancing
 
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Load Balancing.
+This page describes the Sumo Logic pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Load Balancing.
 
 ### Collection Process for GCP Services
 
-The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
+The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo Logic’s Google Cloud Platform (GCP) source running on a hosted collector.
 
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Google Cloud Logging [Log Router](https://cloud.google.com/logging/docs/routing/overview). You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 

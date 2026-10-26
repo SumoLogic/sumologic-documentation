@@ -110,7 +110,7 @@ scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
 
-```sql
+```sumo
 _sourceCategory = "EKS_LOGS"
 and _sourceName = kube-apiserver-audit*
 | json field=_raw "message.responseStatus.code" as status_code
@@ -126,7 +126,7 @@ and _sourceName = kube-apiserver-audit*
 
 ## Collecting logs and metrics for the Amazon EKS - Control Plane app
 
-This section has instructions for collecting logs and metrics for the Sumo app for Amazon EKS - Control Plane. This is a two step process:
+This section has instructions for collecting logs and metrics for the Sumo Logic app for Amazon EKS - Control Plane. This is a two step process:
 * Setting up collection and installing the Sumo Logic Kubernetes app.
 * Configuring CloudWatch log collection.
 

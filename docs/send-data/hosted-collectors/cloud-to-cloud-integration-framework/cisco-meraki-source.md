@@ -2,7 +2,7 @@
 id: cisco-meraki-source
 title: Cisco Meraki Source
 sidebar_label: Cisco Meraki
-tags:
+keywords:
   - cloud-to-cloud
   - cisco-meraki
 description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Meraki Organization.
@@ -73,7 +73,7 @@ To configure Cisco Meraki Source:
 12. (Optional) The **Infra Polling Interval** is set to 24 hours by default. You can adjust this value as needed.
 13. When you are finished configuring the Source, click **Save**.
 
-:::info
+:::tip
 After configuring the Cisco Meraki source, consider installing the Sumo Logic app for [Cisco Meraki](/docs/integrations/saas-cloud/cisco-meraki-c2c/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -119,7 +119,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
   }
   ```
 
-* The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`. It indicates that the API key configured in the Cisco Meraki Source is invalid, revoked, or does not have the required permissions. To resolve this issue, verify that you are using the correct and active API key generated from the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) by navigating to **My Profile → API access → Generate new API key**. If the issue still persists after generating a new API key, then contact the **Cisco Meraki support team**.
+* The following error occurs when the Cisco Meraki API returns a 401 Unauthorized response with the message `Invalid API key`.
 
   ```json
   {
@@ -129,6 +129,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
       "errorInfo": "cisco meraki api response 401 Unauthorized: {\"errors\":[\"Invalid API key\"]}"
   }
   ```
+
+  Verify that the API key configured in the Source is valid, and make sure the Source is set up with the correct key. Revisit the steps in [Vendor configuration](#vendor-configuration) to generate a new API key if needed.
 
 * The following error occurs when the API call to Cisco Meraki fails because the Meraki organization or network associated with the API key does not have a valid license. API access is available only for actively licensed Meraki organizations, and the issue may occur if the organization’s license has expired or if the API key is associated with an unlicensed or trial organization. In this case, visit the [Cisco Meraki Dashboard](https://dashboard.meraki.com/) and check the license status under **Organization → Configure → License info**.
 
@@ -153,3 +155,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Cisco Meraki Automation Service Integration](/docs/integrations/automation-integrations/cisco-meraki/) to automate response actions directly from Cloud SOAR playbooks.

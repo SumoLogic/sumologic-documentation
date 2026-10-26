@@ -2,7 +2,7 @@
 id: iis-10-opentelemetry
 title: IIS 10 - OpenTelemetry Collector
 sidebar_label: IIS 10 - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry app for IIS 10.
+description: Monitor IIS 10 availability and performance using the Sumo Logic OpenTelemetry app with dashboards for requests, latency, errors, and traffic patterns.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -88,7 +88,7 @@ Perform the following task, if logging on your IIS Server is not already enabled
 
 For more information about IIS log format and log configuration refer to this [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 
-Once the logs are configured to be written into a local file follow the below step to configure collection in Sumo.
+Once the logs are configured to be written into a local file follow the below step to configure collection in Sumo Logic.
 
 ## Collection configuration and app installation
 
@@ -113,6 +113,10 @@ The path of the log file configured to capture IIS logs is needed to be given he
 Metrics for IIS app are collected through windows perf counters. You can specify the **Collection Interval** to specify at what interval should the metrics be scrapped. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. 
 
 Click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
@@ -183,7 +187,7 @@ A warning message will be printed if any one of the specified performance counte
 ```
 
 ## Sample metrics
-```
+```json
 {
     "queryId": "A",
     "_source": "iis/windowsperfcounters",
@@ -218,13 +222,13 @@ A warning message will be printed if any one of the specified performance counte
 
 This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 
-```sql title="Query String"
+```sumo title="Query String"
 " %\"sumo.datasource\"=iis %\"webengine.cluster.name\"=* | json \"log\" as _rawlog nodrop \n| if (isEmpty(_rawlog), _raw, _rawlog) as iis_log_message\n| parse regex field=iis_log_message \"(?<server_ip>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}) (?<method>\\S+?) (?<cs_uri_stem>\\S+?) (?<cs_uri_query>\\S+?) (?<s_port>\\S+?) (?<cs_username>\\S+?) (?<c_ip>\\S+?) (?<cs_User_Agent>\\S+?) (?<cs_referer>\\S+?) (?<sc_status>\\S+?) (?<sc_substatus>\\S+?) (?<sc_win32_status>\\S+?) (?<time_taken>\\S+?)$\"\n| count by c_ip\n| lookup latitude, longitude, country_name from geo://location on ip=c_ip\n| where !isNull(latitude)"
 ```
 
 ## Sample metric query
 
-```sql title="Running Application pool"
+```metrics title="Running Application pool"
 sumo.datasource=iis  deployment.environment=* webengine.cluster.name=* webengine.node.name=* instance=*  metric=win.app.pool.was.Current.Application.Pool.State  | filter latest = 3 | count
 ```
 
@@ -292,31 +296,31 @@ The **IIS - Visitor Traffic Insight** Dashboard provides detailed information on
 
 The **IIS - Application Pool** dashboard provides a high-level view of Application Pool State, Information and Worker Process Metrics.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Application-Pool.png' alt="IIS-Application-Pool" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Application-Pool.png' alt="IIS Application Pool" />
 
 ### ASP.NET
 
 The **IIS - ASP.NET** dashboard provides a high-level view of the ASP.NET global performance counters. This dashboard helps you to analyse the state server sessions, monitor applications performance, and understand the request execution and wait time.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET.png' alt="IIS-ASP.NET" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET.png' alt="IIS ASP.NET" />
 
 ### ASP.NET Applications
 
 The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters. This dashboard helps you to monitor compilations, errors, cache, requests executing, requests in application queue, pipeline instance count, and output cache.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET-Applications.png' alt="IIS-ASP.NET-Applications" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-ASP.NET-Applications.png' alt="IIS ASP.NET Applications" />
 
 ### Cache Performance
 
 The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the output cache, cache memory, file cache, and URI cache.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Cache-Performance.png' alt="IIS-Cache-Performance" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Cache-Performance.png' alt="IIS Cache Performance" />
 
 ### Web Service
 
 The **IIS - Web Service** dashboard provides a high-level view of the Web Service object includes counters specific to the World Wide Web Publishing Service. This dashboard helps you to monitor the total site, connections, site uptime, method, and miscellaneous.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Service.png' alt="IIS-Web-Service" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/IIS-OpenTelemetry/IIS-Web-Service.png' alt="IIS Web Service" />
 
 ## Create monitors for IIS app
 

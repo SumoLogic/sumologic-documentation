@@ -49,7 +49,7 @@ By default, the OpenTelemetry Collector will flush data either every second or e
 
 The default cache size for the Sumo Logic OpenTelemetry Collector is 5000 batches, each containing up to 1024 data points. The actual on-disk size of the cache depends on the size of the data points, but it's typically around 700 bytes per data point.
 
-The collector caches data when it’s unable to send it to the Sumo backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo, and others.
+The collector caches data when it’s unable to send it to the Sumo Logic backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo Logic, and others.
 
 #### Does the Sumo Logic backend know when a OpenTelemetry Collector is down? How does that work?
 
@@ -82,7 +82,7 @@ Because the OpenTelemetry Collector is connected to the terminal, it will stop r
 
 This means the collector is having trouble connecting to the Sumo Logic backend.
 
-While data should still be collected and shipped to Sumo, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
+While data should still be collected and shipped to Sumo Logic, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
 
 ## Collector installation errors
 
@@ -157,7 +157,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors logs in Sumo Logic by performing a log search similar to the following:
-```
+```sumo
 _collector="<collector name>" and _sourceName="/var/log/otelcol.log"
 ```
 
@@ -215,7 +215,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors metrics in Sumo Logic by performing a metrics search similar to the following:
-```
+```sumo
 _collector="<collector name>"  _sourcename="otc metric input"
 ```
 
@@ -260,13 +260,34 @@ After successful registration of collector, if you delete the collector in Sumo 
 
 To work around this, delete the local collector registration file at `~/.sumologic-otel-collector/`. The collector will re-register on next run.
 
-### Enabling `clobber` property re-registers collector on every restart
+### Enabling the clobber flag re-registers collector on every restart
 
-If you set the `extensions.sumologic.clobber` property to `true`, a new collector registration that replaces the previously existing registration will be created on every run of the collector.
+If you set the `extensions.sumologic.clobber` flag to `true`, a new collector registration that replaces the previously existing registration will be created on every run of the collector.
 
 This affects the `_collectorId` attribute, which is different for every new collector registration.
 
-To prevent this, remove the `extensions.sumologic.clobber` property or set it to `false`.
+To prevent this, remove the `extensions.sumologic.clobber` flag or set it to `false`.
+
+### Registration is rejected with an HTTP 429 error when the clobber flag is enabled
+
+If the collector fails to register with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`) and the following message, Sumo Logic has rate limited your registration requests:
+
+```
+Too many collector registrations with clobber=true for collector name '<name>'. This usually indicates multiple machines are attempting to register with the same collector name simultaneously. Use unique collector names per machine or disable clobber.
+```
+
+This rate limit applies to OpenTelemetry collectors only, not installed collectors. Registration is rejected after about 50 registration attempts with `extensions.sumologic.clobber` set to `true` and the same collector name within an hour. A common cause is multiple machines that share a collector name, each deleting the other's collector when it registers.
+
+To resolve this:
+
+1. Find any other running collector that uses the same collector name, on this machine or a different one.
+1. Do one of the following:
+   * Use a unique `collector_name` for each machine.
+   * Remove the `extensions.sumologic.clobber` flag or set it to `false`. Use `clobber` only to replace a collector that is no longer running.
+1. Stop all registration attempts with that name and wait about an hour before you try again. Each attempt, including a rejected one, resets the one-hour timer.
+1. Restart the collector.
+
+For more information, see [Clobber rate limiting](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/#clobber-rate-limiting).
 
 ### Cannot start reading file logs from specific point in time
 
@@ -322,9 +343,9 @@ sudo systemctl start otelcol-sumo
 <TabItem value="Windows">
   
 ```powershell
-net stop otelcol-sumo
+net stop OtelcolSumo
 Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\*" -Force
-net start otelcol-sumo
+net start OtelcolSumo
 ```
 
 </TabItem>

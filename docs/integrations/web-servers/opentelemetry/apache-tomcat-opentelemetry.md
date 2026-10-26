@@ -101,6 +101,10 @@ For metrics, you're required to provide the JMX endpoint (default is `localhost:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click the **Download YAML File** button to get the YAML file.
 
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
+
 import EnvVarOpt from '../../../reuse/apps/opentelemetry/env-var-optional.md';
 
 <EnvVarOpt/>
@@ -190,7 +194,7 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 
 ## Sample log queries
 
-```sql
+```sumo
  %"sumo.datasource"=tomcat %"webengine.cluster.name"=*
 | json "log" as _rawlog nodrop 
 | if (isEmpty(_rawlog), _raw, _rawlog) as _raw 
@@ -202,7 +206,7 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 ```
 
 ## Sample metrics
-```
+```json
 {
   "queryId":"A",
   "_source":"apache-tomcat-otel",

@@ -20,12 +20,12 @@ Services maps are built automatically from distributed tracing data in real time
 
 * Zoom in on the map to see a more granular level of detail, or zoom out to get a higher-level overview
 * Hover over a service to see its connections to other services and the last 15 minutes of activity in terms of latency, requests, and errors
-* Click on a service to open the Entity Inspector for further drill down into traces, metrics, and the service dashboard
+* Click a service to open the Entity Inspector for further drill down into traces, metrics, and the service dashboard
 * Filter by application, if your tracing data has the application tag (`application=[app-name]`)
 * Filter by environment (up to 10 values), if your tracing data has the deployment environment tag (`deployment.environment=[environment]`)
 * Search for a service by name
 
-<img src={useBaseUrl('img/apm/services-map.png')} style={{border: '1px solid gray'}} alt="services-map" width="800"/>
+<img src={useBaseUrl('img/apm/services-map.png')} style={{border: '1px solid gray'}} alt="Services map" width="800"/>
 
 ### Settings
 
@@ -33,7 +33,7 @@ Use the **General Settings** to configure [anomaly detection](#anomaly-detection
 
 ### Map legend
 
-<img src={useBaseUrl('img/apm/services-map-legend.png')} style={{border: '1px solid gray'}} alt="services-map-legend" width="500"/>
+<img src={useBaseUrl('img/apm/services-map-legend.png')} style={{border: '1px solid gray'}} alt="Services map legend" width="500"/>
 
 * **Color** of services:
   * Red represents anomalies.
@@ -52,9 +52,9 @@ Use the **General Settings** to configure [anomaly detection](#anomaly-detection
 
 The **Services List** view provides a compact, high-level overview of your application service health insights, alerts, and KPIs. You can filter and sort your KPI data using the filters and column headers.
 
-<img src={useBaseUrl('/img/apm/services-list-filters.png')} alt="services-list-filters" style={{border: '1px solid gray'}} width="800"/>
+<img src={useBaseUrl('/img/apm/services-list-filters.png')} alt="Services list filters" style={{border: '1px solid gray'}} width="800"/>
 
-KPIs listed in the table reflect the previous 15 minutes of data. Clicking on any service will open the Entities panel allowing for further drill-down.
+KPIs listed in the table reflect the previous 15 minutes of data. Clicking any service will open the Entities panel allowing for further drill-down.
 
 ### Alerts
 
@@ -62,7 +62,7 @@ Alerts in the Service List are displayed based on the configured [monitors](/doc
 
 The **Alert Status** column displays the most severe alert status along with the total number of alerts associated with a given service.
 
-To view an alert's details, click on a row and view it in the right-hand-side panel.
+To view an alert's details, click a row and view it in the right-hand-side panel.
 
 Additionally, you can narrow down the list of visible services by the type of active alerts for a given service. Service List can filter based on the following alert statuses:
 
@@ -75,8 +75,8 @@ A service is displayed in the list if at least one of the alerts is in the selec
 
 ### Settings
 
-* Use the general settings to configure [anomaly detection](#anomaly-detection).<br/><img src={useBaseUrl('img/apm/services-list-settings.png')} style={{border: '1px solid gray'}} alt="services-list-settings" width="300" />
-* Use the columns display settings to display and hide columns.<br/><img src={useBaseUrl('img/apm/services-list-display.png')} style={{border: '1px solid gray'}} alt="services-list-settings" width="300" />
+* Use the general settings to configure [anomaly detection](#anomaly-detection).<br/><img src={useBaseUrl('img/apm/services-list-settings.png')} style={{border: '1px solid gray'}} alt="Services list settings" width="300" />
+* Use the columns display settings to display and hide columns.<br/><img src={useBaseUrl('img/apm/services-list-display.png')} style={{border: '1px solid gray'}} alt="Services list settings" width="300" />
 
 ## Anomaly detection
 
@@ -104,19 +104,19 @@ If the **Alerts** option is enabled, the status of a service will be influenced 
 
 ## Add services panel to dashboard
 
-The **Services Map** and **Services List** panels, available out of the box, enable you to explore your application environment and review all traces from a dashboard. You can duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
+The **Services Map** and **Services List** panels, available out of the box, enable you to explore your application environment and review all traces from a dashboard. You can duplicate or add multiple panels with different filtering or queries to refine views and support your org.
 
 To add a services panel to a dashboard:
 
 1. Open an existing dashboard or [create a new one](/docs/dashboards/create-dashboard-new).
-1. On an existing dashboard, click **Add Panel** > **Services**, or, if you're creating a new dashboard, click **Services**.<br/><img src={useBaseUrl('img/apm/services-map-dashboard.png')} style={{border: '1px solid gray'}} alt="add-servicemap" width="800"/>
-1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type**, dropdown and select **Table** (Services List) or **Graph** (Services Map). <br/> <img src={useBaseUrl('img/apm/create-servicemap.png')} style={{border: '1px solid gray'}} alt="create-servicemap" width="500"/>
-1. (Optional) Select from the dropdown menus to filter by the following:<br/> <img src={useBaseUrl('img/apm/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="filter-servicemap" width="800"/>
+1. On an existing dashboard, click **Add Panel** > **Services**, or, if you're creating a new dashboard, click **Services**.<br/><img src={useBaseUrl('img/apm/services-map-dashboard.png')} style={{border: '1px solid gray'}} alt="Add servicemap" width="800"/>
+1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type** dropdown menu and select **Table** (Services List) or **Graph** (Services Map). <br/> <img src={useBaseUrl('img/apm/create-servicemap.png')} style={{border: '1px solid gray'}} alt="Create servicemap" width="500"/>
+1. (Optional) Select from the dropdown menus to filter by the following:<br/> <img src={useBaseUrl('img/apm/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="Filter servicemap" width="800"/>
    * **Application**. Your application name. You can use this if your tracing data has the tag called `application=[app-name]` To pass the variables from dashboard filters, set `application={{application}}`
    * **Environment**. Your production, staging, or development environment name. You can use this if your tracing data has the tag called `deployment.environment=[environment-name]`. To pass the variables from dashboard filters, set `deployment.environment={{deployment.environment}}`
    * **Service(s)**. Your application name, which should be always there. To pass the variables from dashboard filters, set `service={{service}}`.
 1. Go to the **General** tab to configure your panel details (name, **Title Font Size**, and **Description**). <br/> <img src={useBaseUrl('img/apm/traces/tracelist-details.png')}  alt="panel details" width="330"/>
-1. For **Table** chart type only: Go to **Display Settings** and set the column data and services you'd like to see displayed.<br/> <img src={useBaseUrl('img/apm/traces/display-settings-setup.png')} style={{border: '1px solid gray'}} alt="display-settings-setup" width="500"/>
+1. For **Table** chart type only: Go to **Display Settings** and set the column data and services you'd like to see displayed.<br/> <img src={useBaseUrl('img/apm/traces/display-settings-setup.png')} style={{border: '1px solid gray'}} alt="Display settings setup" width="500"/>
 1. Click **Add to Dashboard**. The panel loads in your dashboard to review your applications and services according to filtering.
 
 :::tip

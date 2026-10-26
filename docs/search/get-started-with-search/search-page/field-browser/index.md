@@ -27,7 +27,7 @@ In addition to the fields found in your logs, the Field Browser shows **Time**, 
   The **Searchable Time** field will only be displayed in the field browser.
   :::
   
-<img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="FB_Field-Browser_Display-Fields" width="300"/>
+<img src={useBaseUrl('/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png')} style={{border:'1px solid gray'}} alt="Field Browser display fields" width="300"/>
 
 - A. Search for fields by entering text in this field.
 - B. List of Fields shown in the Messages tab.

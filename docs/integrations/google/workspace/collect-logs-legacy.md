@@ -55,7 +55,7 @@ This section provides a sample Google Workspace Alert Center log message.
 
 The query sample provided in this section is from the **Google Workspace Activity by Users with Compromised Credentials** panel of the **Google Workspace - Alert Center - Investigations** Dashboard.
 
-```sql
+```sumo
 _sourceCategory=googleworkspace_google_apps
 | json "actor", "events", "id" nodrop
 | json field=actor "email"

@@ -95,7 +95,7 @@ This app uses Sumo Logic’s CrowdStrike-FDR Host Inventory Source to collect [i
 
 ### Sample queries
 
-```sql title="Devices by Platform"
+```sumo title="Devices by Platform"
 _sourceCategory="crowdStrikeFDRHostInventory"
 | json "status", "platform_name", "os_version", "system_manufacturer", "provision_status", "device_id" as status, platform_name, version, manufacturer, provision_status, device_id nodrop
 // global filters

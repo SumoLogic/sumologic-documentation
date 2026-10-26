@@ -125,7 +125,7 @@ For details, see the [Schema for Gmail logs in BigQuery](https://support.google.
 
 ### Sample queries
 
-```sql title="Gmail messages classifications"
+```sumo title="Gmail messages classifications"
 _sourceCategory=Labs/GmailTraceLogs
 | json "event_info.success", "message_info.action_type", "message_info.attachment[*].file_extension_type", "message_info.attachment", "message_info.subject", "message_info.attachment[*].malware_family", "message_info.attachment[*].sha256", "message_info.connection_info.client_ip", "message_info.connection_info.ip_geo_city", "message_info.connection_info.ip_geo_country", "message_info.connection_info.is_internal", "message_info.connection_info.smtp_response_reason", "message_info.connection_info.smtp_reply_code", "message_info.connection_info.smtp_tls_state", "message_info.destination[*].address", "message_info.is_spam", "message_info.spam_info.classification_reason", "message_info.spam_info.disposition", "message_info.message_set[*].type", "message_info.source.address" as is_event_success, action_type, file_extension_type, message_attachment, message_subject, message_malware_family, message_sha256, client_ip,  client_city,  client_country, is_message_internal, smtp_response_reason, smtp_reply_code, smtp_tls_state, destination_email, is_spam, spam_classification_reason, spam_disposition, message_set_type, message_source_email  nodrop
 | parse regex field=message_set_type "(?<message_setType>[\w]+)" multi

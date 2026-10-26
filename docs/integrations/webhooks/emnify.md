@@ -41,7 +41,7 @@ Follow the below steps to configure the EMnify webhook.
     - **DESTINATION**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 6. Click **CREATE**.
 7. Verify EMnify events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/emnify`
 ``` 
 

@@ -33,13 +33,13 @@ This app uses [Message Trace](https://learn.microsoft.com/en-us/graph/api/messag
 
 ### Sample query
 
-```sql title="Delivered Messages"
-_sourceCategory={{Logsdatasource}} id senderAddress recipientAddress delivered 
+```sumo title="Delivered Messages"
+_sourceCategory={{Logsdatasource}} id senderAddress recipientAddress delivered
 | json "id","fromIP","toIP","status","senderAddress","recipientAddress" as id,from_ip,top_ip,status,sender_address,recipient_address nodrop
 
 | where status = "delivered"
 
-// Global filter 
+// Global filter
 | lookup  country_name from geo://location on ip = from_ip
 | country_name as source
 | lookup  country_name from geo://location on ip = top_ip
@@ -52,7 +52,7 @@ _sourceCategory={{Logsdatasource}} id senderAddress recipientAddress delivered
 
 // Panel specific
 | count by id,sender_address,recipient_address,_messagetime
-| count 
+| count
 ```
 ## Collection configuration and app installation
 
@@ -94,7 +94,7 @@ If you are using version 1.0.x of the [Microsoft Exchange Trace Logs C2C source]
 
 ### Overview
 
-The **Microsoft Exchange Trace Logs Overview** dashboard provides a comprehensive view of email flow and performance across your Exchange environment. It highlights key metrics such as message volumes, delivery success and failure rates, and total data transmitted. The dashboard also offers insights into top senders and recipients, geo-location patterns, and inbound or outbound domain activity. Additionally, it includes trend analyses and detailed message-level information to help identify anomalies, monitor high-volume transmissions, and ensure smooth mail operations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Microsoft-Exchange-Trace-Logs-Overview.png')} alt="Microsoft Exchange Trace Logs - Overview" width="900"/>
+The **Microsoft Exchange Trace Logs Overview** dashboard provides a comprehensive view of email flow and performance across your Exchange environment. It highlights key metrics such as message volumes, delivery success and failure rates, and total data transmitted. The dashboard also offers insights into top senders and recipients, geo-location patterns, and inbound or outbound domain activity. Additionally, it includes trend analyses and detailed message-level information to help identify anomalies, monitor high-volume transmissions, and ensure smooth mail operations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/microsoft-exchange-trace-logs-overview.png')} alt="Microsoft Exchange Trace Logs - Overview" width="900"/>
 
 ### Security Overview
 

@@ -94,7 +94,7 @@ The Dropbox App for Sumo Logic uses [Team events from Dropbox](https://www.dropb
 
 ### Sample queries
 
-```sql title="Active Team Members"
+```sumo title="Active Team Members"
 _sourceCategory="dropboxSource"
 | json "$['actor']['.tag']","$['actor']*['.tag']","$['actor']*['account_id']","$['actor']*['display_name']","$['actor']*['email']","$['actor']*['team_member_id']","$['event_type']['.tag']","$['event_type']['description']","details.app_info.display_name", "origin.geo_location.ip_address", "origin.geo_location.country","$['event_category']['.tag']","involve_non_team_member" as actor,actor_is_team_member,actor_account_id, actor_display_name, actor_email,actor_team_member_id, event_type, event_type_description, app_name,location,country, event_category,involve_non_team_member nodrop
 | where actor matches"{{actor}}"
@@ -118,7 +118,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 <CollectionConfiguration/>
 
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for Dropbox](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Dropbox app is properly integrated and configured to collect and analyze your Dropbox data.
 :::
 
@@ -175,3 +175,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Dropbox Automation Service Integration](/docs/integrations/automation-integrations/dropbox/) to automate response actions directly from Cloud SOAR playbooks.

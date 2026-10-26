@@ -127,7 +127,7 @@ This app uses Sumo Logic’s [Kaltura Source](/docs/send-data/hosted-collectors/
 
 ### Sample queries
 
-```sql title="Entries by Status"
+```sumo title="Entries by Status"
 _sourceCategory="Labs/Kaltura" accessControlId
 | json "id", "status", "type", "objectType", "application", "displayInSearch", "moderationStatus", "replacementStatus", "licenseType", "userId", "name", "description", "creatorId", "dataUrl", "updatedAt" as id, status, type, object_type, application, display_in_search, moderation_status, replacement_status, license_type, user_id, name, description, creator_id, data_url, updated_at nodrop
 

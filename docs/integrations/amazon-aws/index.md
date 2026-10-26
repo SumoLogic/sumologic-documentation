@@ -1,12 +1,12 @@
 ---
 slug: /integrations/amazon-aws
 title: Amazon and AWS
-description: Learn how to use Sumo Logic apps for Amazon and AWS.
+description: Browse all Sumo Logic apps for Amazon Web Services, including integrations for AppFlow, Athena, Bedrock, EC2, RDS, Lambda, and dozens of other AWS services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide has documentation for all of the apps that Sumo provides for Amazon and AWS. See also: [AWS Observability Solution](/docs/observability/aws).
+This guide has documentation for all of the apps that Sumo Logic provides for Amazon and AWS. See also: [AWS Observability Solution](/docs/observability/aws).
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
@@ -245,6 +245,13 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
         <img src={useBaseUrl('img/integrations/amazon-aws/amazon-sagemaker-logo.png')} alt="Amazon SageMaker icon" width="50"/>
         <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-sagemaker')}>Amazon SageMaker</a></h4>
         <p>Get insights into CloudTrail, CloudWatch Logs, and performance metrics for your Amazon SageMaker service.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
+        <img src={useBaseUrl('img/integrations/amazon-aws/amazon-security-lake-logo.png')} alt="Amazon Security Lake icon" width="50"/>
+        <h4><a href={useBaseUrl('docs/integrations/amazon-aws/amazon-security-lake')}>Amazon Security Lake</a></h4>
+        <p>Learn about security monitoring and analytics across your AWS environment by ingesting security events from Amazon Security Lake.</p>
         </div>
       </div>
       <div className="box smallbox card">
@@ -553,27 +560,6 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
   <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="CIS for AWS icon" width="50"/>
   <h4><a href={useBaseUrl('docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws')}>Cloud Infrastructure Security for AWS</a></h4>
   <p>A guide to our Cloud Infrastructure Security for AWS app.</p>
-  </div>    
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="GuardDuty Benchmark icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-guardduty')}>Global Intelligence for Amazon GuardDuty</a></h4>
-  <p>A guide to the Sumo Logic app for Global Intelligence for Amazon GuardDuty.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Global Intelligence Devops icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops')}>Global Intelligence for AWS CloudTrail DevOps</a></h4>
-  <p>A guide to the Global Intelligence for AWS CloudTrail DevOps app.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Global Intelligence Secops icon" width="50"/>
-  <h4><a href={useBaseUrl('docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops')}>Global Intelligence for AWS CloudTrail SecOps</a></h4>
-  <p>A guide to the Global Intelligence for AWS CloudTrail SecOps app.</p>
   </div>
 </div>
 <div className="box smallbox card">

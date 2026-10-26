@@ -67,7 +67,7 @@ The Sumo Logic integration for Mailgun ingests email events into Sumo Logic thro
 
 ### Sample queries
 
-```sql
+```sumo
 _sourceCategory="webhook/mailgun"
 | json "event-data.id", "event-data.event", "event-data.log-level" as id, event, loglevel nodrop
 | where event matches "{{event}}" and loglevel matches "{{logLevel}}"
@@ -100,7 +100,7 @@ Follow the below steps to configure the Mailgun webhook.
     - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 5. Click **Create Webhook**.
 6. Verify Mailgun events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/mailgun`
 ```
 

@@ -36,7 +36,7 @@ This App has been tested with the following Kafka versions:
 
 This sample query string is from the Logs panel of the **Strimzi Kafka - Logs** dashboard.
 
-```sql
+```sumo
 messaging_cluster=* messaging_system="kafka" \
 | json auto maxdepth 1 nodrop | if (isEmpty(log), _raw, log) as kafka_log_message \
 | parse field=kafka_log_message "[*] * *" as date_time,severity,msg | where severity in ("ERROR", "FATAL") \
@@ -197,7 +197,7 @@ If your Kafka helm chart/pod is writing the logs to standard output, then the [S
    ```
 
 3. The Sumo Logic Kubernetes collection will automatically start collecting logs and metrics from the pods having the annotations and labels defined in the previous steps. Verify logs and metrics are flowing into Sumo Logic by running the following query in [Log Search](/docs/search/get-started-with-search/search-basics/about-search-basics/) and [Metrics Search](/docs/metrics/introduction/#metrics-queries):
-   ```sql
+   ```sumo
    component="messaging" and messaging_system="kafka"
    ```
 

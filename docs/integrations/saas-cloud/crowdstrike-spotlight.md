@@ -377,7 +377,7 @@ This app uses Sumo Logic’s CrowdStrike Spotlight Source to collect [Vulnerabil
 
 ## Sample queries
 
-```sql title="Recent Access Activities"
+```sumo title="Recent Access Activities"
 _sourceCategory="Labs/CrowdstrikeSpotlight"
 | json "status", "cve.severity", "id", "host_info.hostname", "suppression_info.is_suppressed", "host_info.internet_exposure", "host_info.platform", "host_info.os_version", "confidence", "cve.remediation_level", "host_info.asset_criticality", "host_info.local_ip", "remediation.entities[0].action", "host_info.system_manufacturer", "host_info.host_last_seen_timestamp", "created_timestamp", "updated_timestamp", "cve.id", "cve.base_score", "cve.exploitability_score" as status, severity, id, hostname, is_suppressed, internet_exposure, os_type, os_version, confidence, remediation_level, asset_criticality, local_ip, remediation_action, system_manufacturer, host_last_seen_timestamp, vuln_created_timestamp, vuln_updated_timestamp, cve_id, base_score, exploitability_score nodrop
 
@@ -433,7 +433,7 @@ The **CrowdStrike Spotlight - Overview** dashboard provides security analysts wi
 
 The dashboard categorizes vulnerabilities by severity (Critical, High, Medium, and Low), operating system type (Windows and Linux), and internet exposure, helping analysts prioritize threats based on risk factors. Geolocation data highlights the location of the most severe vulnerabilities aiding in threat localization. The panel showing vulnerabilities by remediation level tracks the organization's progress in resolving these issues. 
 
-Analysts can also monitor top affected hosts, asset criticality, and vulnerabilities over time to spot trends and potential areas of concern. Additional detailed views provide information on vulnerability remediation actions, pending patches, and asset details, helping teams focus on closing security gaps promptly and efficiently. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CrowdStrike-Spotlight/CrowdStrike-Spotlight-Overview.png' alt="CrowdStrike-Spotlight-Overview" />
+Analysts can also monitor top affected hosts, asset criticality, and vulnerabilities over time to spot trends and potential areas of concern. Additional detailed views provide information on vulnerability remediation actions, pending patches, and asset details, helping teams focus on closing security gaps promptly and efficiently. <br/><img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/CrowdStrike-Spotlight/CrowdStrike-Spotlight-Overview.png' alt="CrowdStrike Spotlight Overview" />
 
 ## Create monitors for CrowdStrike Spotlight app
 

@@ -43,7 +43,7 @@ eShopCart.azurewebsites.net 200 0 0 3098 1008 1000
 
 ### Sample queries
 
-```sql title="Traffic over time outlier"
+```sumo title="Traffic over time outlier"
 _sourceCategory=Azure/Web-app
 | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<s_sitename>\S+) (?<cs_method>\S+) (?<cs_uri_stem>\S+) (?<cs_uri_query>\S+) (?<src_port>\S+) (?<src_user>\S+) (?<client_ip>\S+) (?<cs_user_agent>\S+) (?<cs_cookie>\S+) (?<cs_referrer>\S+) (?<cs_host>\S+) (?<sc_status>\S+) (?<sc_substatus>\S+) (?<sc_win32_status>\S+) (?<sc_bytes>\S+) (?<cs_bytes>\S+) (?<time_taken>\S+)"
 | timeslice 5m

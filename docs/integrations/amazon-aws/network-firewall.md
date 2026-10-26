@@ -109,7 +109,7 @@ This section provides an example of AWS Network Firewall Alert and Netflow log m
 
 This section provides a sample from the **Traffic By Application** panel on the **AWS Network Firewall - Netflow Overview** dashboard.
 
-```
+```sumo
 _sourceCategory=aws/vanta/*
 | json "firewall_name", "availability_zone", "event" nodrop
 | json field=event "event_type", "src_ip", "src_port", "dest_ip", "dest_port", "proto", "app_proto", "netflow" nodrop

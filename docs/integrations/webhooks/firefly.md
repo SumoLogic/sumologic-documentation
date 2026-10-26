@@ -50,7 +50,7 @@ Follow the below steps to configure the Firefly webhook.
     - **Destination**. Select the webhook name created above.
 9. Click **Create**.    
 10. Verify Firefly events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-    ```sql
+    ```sumo
     _sourceCategory=webhook/firefly
     ```
 

@@ -45,7 +45,7 @@ Follow the below steps to configure the mParticle webhook.
 10. Activate the connection by enabling the **Connection Status**.
 11. Click **Add Connection**. Click **Done**.
 12. Verify mParticle events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/mparticle`
 ```
 
