@@ -77,15 +77,77 @@ To manually upload threat intelligence indicators from a file:
 When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/security/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
 :::
 
+## Edit a source
+
+Follow the steps below to edit a source:
+1. Select a source in the list of sources. Details of the source appear in a sidebar. Click the **More Actions** dropdown and then select **Edit**.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source-from-sidebar.png')} alt="threat intel edit source from sidebar panel" style={{border: '1px solid gray'}} width="800" /><br/>Or, click the ellipsis icon and select **Edit** from the source details page.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source.png')} alt="threat intel edit source" style={{border: '1px solid gray'}} width="800" />
+    - You can edit the description of the source.
+    - You can click the **Search All Indicators** button to view all the active indicators associated with that source.
+        <img src={useBaseUrl('img/security/threat-intelligence-edit-source-panel.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
+
+## View and search indicators
+
+Follow the steps below to open the **Indicators** tab:
+
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
+1. Click the **Indicators** tab.<br/><img src={useBaseUrl('img/security/indicators-threat-intelligence.png')} alt="Threat Intelligence indicators" style={{border: '1px solid gray'}} width="800" />
+
+:::note
+* The **Indicators** tab shows only active indicators. Expired indicators, and indicators from deleted sources, are not listed.
+* After a source ingests an indicator, it can take up to 10 minutes to appear on the **Indicators** tab. Search results are eventually consistent, so an indicator you just added may not be visible right away.
+:::
+
+The table lists indicators with the following details:
+
+| Column | Description |
+|:--|:--|
+| **Indicator Value** | The value of the indicator, such as an IP address, URL, domain, or file hash. Long values are truncated in the table. Select a row to see the full value. |
+| **Type** | The indicator type, such as `ipv4-addr`, `url`, `artifact`, `file:hashes.MD5`, or `file:hashes.'SHA-256'`. |
+| **Confidence** | The confidence score for the indicator, as a number. |
+| **Last Updated** | How long ago the indicator was last updated, for example "9 minutes ago". |
+| **Source** | The threat intelligence source that supplied the indicator. |
+| **Expires** | The date the indicator expires. |
+
+### Search indicators
+
+To find indicators by value, enter text in the **Search by indicator value** box. The search is case-sensitive.
+
+You can combine a search with filters. The table updates to show only indicators that match both.<br/><img src={useBaseUrl('img/security/threat-intelligence-search-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
+
+### Filter indicators
+
+To narrow the list, click **Add a filter** and choose a field. You can add more than one filter.
+
+You can filter by:
+
+* **Source**. Select one or more sources. The list shows only sources that have at least one indicator.
+* **Type**. Select one or more indicator types. The list shows only types present in your indicators.
+* **Confidence**. Specify a range of confidence scores.
+
+### View indicator details
+
+To see more about an indicator, click its row. A details panel opens on the right side of the page with the following information:
+
+| Field | Description |
+|:--|:--|
+| **Indicator Value** | The full indicator value. |
+| **Type** | The indicator type. |
+| **Confidence** | The confidence score. |
+| **Source** | The source that supplied the indicator. |
+| **Last Updated** | When the indicator was last updated. |
+| **Expires** | The date the indicator expires. |
+| **Raw IOC Data** | The original indicator record in JSON format, as ingested. This is read-only. |
+
+<img src={useBaseUrl('img/security/threat-intelligence-indicator-details.png')} alt="Indicator details panel" style={{border: '1px solid gray'}} width="800" />
+
+To search your logs for activity related to an indicator, click **View in Log Search** at the top of the panel.
+
 ## Delete threat intelligence indicators
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, navigate to **Data Management > Threat Intelligence**. You can also click the **Go To...** menu at the top of the screen and select **Threat Intelligence**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.
 1. Select a source in the list of sources. Details of the source appear in a sidebar.
-1. Click the **More Actions** dropdown and then select **Delete Indicators**.<br/><img src={useBaseUrl('img/security/threat-intelligence-source-delete.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
-<!-- 1. When the following dialog appears, select which indicators you'd like to delete from the source:<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
-   * **Delete all indicators**. Remove all indicators from the source.
-   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute, enter `validUntil` and for a value, enter a date. The attributes and values you enter must match attributes and values in the indicators. -->
-1. Click **Delete** on the **Delete Indicators** dialog.
+   * **Delete all indicators**. Remove all indicators from the source by clicking the **More Actions** dropdown and then select **Delete Indicators**.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-all-indicators.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
+   * **Delete selected indicators**. Click the **Search All Indicators** button to view all the active indicators associated with that source. Select which indicators you'd like to delete and click **Delete** in the sidebar panel.<br/><img src={useBaseUrl('img/security/threat-intelligence-delete-selected-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
 
 You do not have to wait until indicators reach the end of their retention period to delete them. You can [delete indicators](#delete-threat-intelligence-indicators) from the **Sources** tab in the **Threat Intelligence** page, as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
