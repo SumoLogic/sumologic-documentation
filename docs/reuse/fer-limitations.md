@@ -4,6 +4,7 @@ Ingest Time FERs have the following limitations:
     :::note
     Enterprise and Enterprise Suite users can create a maximum of 400 fields.
     :::
+* Each Ingest Time rule can extract a maximum of 200 fields. This limit is independent of the aggregate field limit.
 * Ingest Time rule expressions are limited to a maximum of 16k (16,384) characters.
 * Ingest Time rules can extract up to a maximum of 16k (16,384) characters for each field.
 * The cumulative size of all fields extracted by a rule for a message/event is limited to 64kb, regardless of the maximum log message size.
