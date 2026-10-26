@@ -2,7 +2,7 @@
 id: proofpoint-tap-source
 title: Proofpoint TAP Source
 sidebar_label: Proofpoint TAP
-tags:
+keywords:
     - proofpoint-tap
 description: The Proofpoint TAP Source provides a secure endpoint to receive data from the Proofpoint TAP SIEM API.
 ---
@@ -262,4 +262,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Proofpoint TAP Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Proofpoint TAP Automation Service Integration](/docs/integrations/automation-integrations/proofpoint-tap/) to automate response actions directly from Cloud SOAR playbooks.

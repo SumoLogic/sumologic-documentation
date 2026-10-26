@@ -2,7 +2,7 @@
 id: zimperium-mtd-source
 title: Zimperium MTD Source
 sidebar_label: Zimperium MTD
-tags:
+keywords:
   - cloud-to-cloud
   - zimperium-mtd
 description: Learn how to collect the device logs from the Zimperium API and send it to Sumo Logic.

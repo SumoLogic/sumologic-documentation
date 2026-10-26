@@ -2,7 +2,7 @@
 id: vectra-source
 title: Vectra Source
 sidebar_label: Vectra
-tags:
+keywords:
   - cloud-to-cloud
   - vectra
 description: Learn how to collect the list of threats detected in the Vectra platform.
@@ -92,4 +92,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Vectra Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/vectra/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Vectra Automation Service Integration](/docs/integrations/automation-integrations/vectra/) to automate response actions directly from Cloud SOAR playbooks.

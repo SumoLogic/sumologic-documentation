@@ -2,7 +2,7 @@
 id: abnormal-security-source
 title: Abnormal Security Source
 sidebar_label: Abnormal Security
-tags:
+keywords:
   - cloud-to-cloud
   - abnormal-security
 description: Learn how to collect abnormal threat and case logs from the Abnormal Security source.
@@ -98,4 +98,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Abnormal Security Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Abnormal Security Automation Service Integration](/docs/integrations/automation-integrations/abnormal-security/) to automate response actions directly from Cloud SOAR playbooks.

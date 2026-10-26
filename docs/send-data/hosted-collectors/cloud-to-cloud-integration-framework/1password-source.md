@@ -3,7 +3,7 @@ id: 1password-source
 title: 1Password Source
 sidebar_label: 1Password
 image: 'https://app_icons.s3.amazonaws.com/1Password.png'
-tags:
+keywords:
   - cloud-to-cloud
   - 1password
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
@@ -125,4 +125,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [1Password Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/1password/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [1Password Automation Service Integration](/docs/integrations/automation-integrations/1password/) to automate response actions directly from Cloud SOAR playbooks.

@@ -2,7 +2,7 @@
 id: mandiant-threat-intel-source
 title: Mandiant Threat Intel Source
 sidebar_label: Mandiant Threat Intel
-tags:
+keywords:
   - cloud-to-cloud
   - mandiant-threat-intel
 description: Learn how to collect indicators list from Mandiant Threat Intel platform.
@@ -95,4 +95,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Mandiant Advantage Threat Intelligence Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/mandiant-advantage-threat-intelligence/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Mandiant Advantage Threat Intelligence Automation Service Integration](/docs/integrations/automation-integrations/mandiant-advantage-threat-intelligence/) to automate response actions directly from Cloud SOAR playbooks.

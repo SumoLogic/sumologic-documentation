@@ -5,7 +5,7 @@ sidebar_label: Mobot ✨
 description: Troubleshoot logs, create monitors and dashboards, and learn the platform using plain-language questions with Mobot, Sumo Logic's AI assistant.
 keywords:
   - mobot
-  - dojo ai
+  - dojoai
   - ai assistant
   - agent
   - log analysis
@@ -20,7 +20,7 @@ import Iframe from 'react-iframe';
 import MSSPfeatureMgmt from '../../reuse/mssp-feat-mgmt.md';
 import ConvPlaybookLimits from '../../reuse/conv-playbook-limits.md';
 
-<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Search icon" width="35"/>
+<img src={useBaseUrl('img/icons/operations/mobot.png')} alt="Mobot icon" width="35"/>
 
 Mobot is Sumo Logic's AI-powered conversational assistant for security analysts, on-call engineers, administrators, and other Sumo Logic users. Ask questions in plain language to investigate log data or learn how to use the platform without selecting an agent or writing queries from scratch.
 
@@ -33,6 +33,7 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 * **Security**. Investigate login attempts, data exfiltration, and threat intelligence matches. For example, `Have any IPs or domains in my logs been flagged by threat intelligence?` See [Security investigations](/docs/search/mobot/example-prompts#security-investigations) for more examples.
 * **Observability**. Spot error spikes, latency anomalies, and timeouts. For example, `Are there any error spikes happening in the last 15 minutes?` See [Observability investigations](/docs/search/mobot/example-prompts#observability-investigations) for more examples.
 * **Platform administration**. Check on Collectors, data sources, and data usage. For example, `Any collectors that have gone silent in the last few hours?` See [Platform administration](/docs/search/mobot/example-prompts#platform-administration) for more examples.
+* **Data volume and billing**. Ask about ingest volume by collector, source category, tier, or time range and get answers in any unit, without writing a query against the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/) directly. Useful for admins tracking noisy sources and finance teams attributing spend. For example, `What are my top 10 source categories by daily ingest volume?` See [Data volume](/docs/search/mobot/example-prompts#data-volume) for more examples.
 * **How-to questions**. Get setup guidance and answers about the platform, sourced from official Sumo Logic documentation. For example, `How do I configure OpenTelemetry for my service?` See [Sumo Logic how-to questions](/docs/search/mobot/example-prompts#sumo-logic-how-to-questions) for more examples.
 
 ## Key capabilities
@@ -56,8 +57,8 @@ In a single conversation, Mobot determines whether you have a log data or a how-
 
 <SumoAcademy/>
 
-* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
-* **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and Dojo AI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
+* **Self-paced**. [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+* **Instructor-led virtual classes**. [Workshops: Hands on with Mobot and DojoAI](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
 :::
 
 :::training Micro Lesson
@@ -573,7 +574,7 @@ No. All processing happens within your region's cluster. RAG context is scoped t
 
 ### Does a fourth party have access to Mobot customer data?
 
-No. Mobot uses foundation models securely hosted through Amazon Bedrock. See our [AI and Machine Learning FAQ](/docs/get-started/ai-machine-learning/#does-any-third-party-have-access-to-dojo-ai-customer-data) for more information.
+No. Mobot uses foundation models securely hosted through Amazon Bedrock. See our [AI and Machine Learning FAQ](/docs/get-started/ai-machine-learning/#does-any-third-party-have-access-to-dojoai-customer-data) for more information.
 
 ### Does Mobot use any open-source libraries, GenAI providers, or cloud providers?
 
@@ -632,7 +633,7 @@ Mobot shares a single **AI features** toggle with Parse Assist — turning it of
 
 Parent and child orgs have AI features enabled by default. A parent org administrator can toggle AI features for the parent org and for its child orgs. Child org administrators cannot toggle AI features for their own org or for other child orgs.
 
-<MSSPfeatureMgmt/> 
+<MSSPfeatureMgmt/>
 
 <img src={useBaseUrl('img/search/mobot/feature-management.png')} alt="Feature Management page showing the AI features, MCP Server access, and SOC Analyst Agent toggles" style={{border: '1px solid gray'}} width="800" />
 
@@ -643,6 +644,6 @@ For help, contact our [Support team](https://support.sumologic.com/support/s/).
 ## Additional resources
 
 * [AI and Machine Learning with Sumo Logic](/docs/get-started/ai-machine-learning)
-* **Self-paced**. [Hands on with Mobot and Dojo AI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
+* **Self-paced**. [Hands on with Mobot and DojoAI](https://learn.sumologic.com/hands-on-with-mobot-and-dojo-ai).
 * [Mobot Instructor-Led Virtual Workshops](https://www.sumologic.com/learn/training?_workshops=hands-on-mobot-dojo-ai#section-2).
-* [Dojo AI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about Dojo AI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.
+* [DojoAI Overview](https://www.sumologic.com/solutions/dojo-ai). Learn about DojoAI, the multi-agent platform Mobot is part of, alongside the SOC Analyst Agent and other specialized agents.

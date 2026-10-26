@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/sumoapps.png')} alt="Sumo Logic Apps icon" width="75"/>
 
-Sumo Logic provides a number of apps you can use to monitor your Sumo org, for instance, to understand data volume or see information about audit events.
+Sumo Logic provides a number of apps you can use to monitor your Sumo Logic org, for instance, to understand data volume or see information about audit events.
 
 **Requesting Sumo Logic Enterprise Apps**
 
@@ -58,7 +58,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-audit-collector-data-forwarding-mssp')}><img src={useBaseUrl('img/integrations/sumo-apps/data_collection.png')} alt="Thumbnail icon" width="40"/><h4>Enterprise Audit - Collector and Data Forwarding for MSSP</h4></a>
+  <a href={useBaseUrl('docs/integrations/sumo-apps/enterprise-audit-collector-data-forwarding-mssp')}><img src={useBaseUrl('img/integrations/sumo-apps/data_collection.png')} alt="Data Collection icon" width="40"/><h4>Enterprise Audit - Collector and Data Forwarding for MSSP</h4></a>
   <p>Collector, Sources activities, and data forwarding trends for child orgs under a MSSP org.</p>
   </div>
 </div>

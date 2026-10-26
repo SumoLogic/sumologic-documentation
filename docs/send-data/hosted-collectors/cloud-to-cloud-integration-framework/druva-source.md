@@ -2,7 +2,7 @@
 id: druva-source
 title: Druva Source
 sidebar_label: Druva
-tags:
+keywords:
   - cloud-to-cloud
   - druva
 description: Learn how to configure the Druva Cloud-to-Cloud source setup in your Sumo Logic environment.
@@ -124,4 +124,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Druva Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/druva/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Druva Automation Service Integration](/docs/integrations/automation-integrations/druva/) to automate response actions directly from Cloud SOAR playbooks.

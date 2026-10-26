@@ -2,7 +2,7 @@
 id: zendesk-source
 title: Zendesk Source
 sidebar_label: Zendesk
-tags:
+keywords:
   - cloud-to-cloud
   - zendesk
 description: Learn how to collect audit logs using the Zendesk API.
@@ -92,4 +92,4 @@ Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 
 ## Additional resources
 
-- Use the [Zendesk Automation Service Integration](/docs/platform-services/automation-service/app-central/integrations/zendesk/) to automate response actions directly from Cloud SOAR playbooks.
+- Use the [Zendesk Automation Service Integration](/docs/integrations/automation-integrations/zendesk/) to automate response actions directly from Cloud SOAR playbooks.

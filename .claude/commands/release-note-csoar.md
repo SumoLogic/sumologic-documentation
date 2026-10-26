@@ -134,7 +134,7 @@ Examples:
 **For Content Release:**
 ```yaml
 ---
-title: {Month DD, YYYY} - Content Release
+title: {Month D, YYYY} - Content Release
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -147,7 +147,7 @@ keywords:
 **For Application Update:**
 ```yaml
 ---
-title: {Month DD, YYYY} - Application Update
+title: {Month D, YYYY} - Application Update
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -157,12 +157,8 @@ keywords:
 ```
 
 **Title formatting:**
-* Start with full date: "Month DD, YYYY" (e.g., "June 05, 2024" or "March 06, 2026")
-* Follow with " - Content Release" or " - Application Update"
-
-**Date formatting:**
-* Use full month name (January, February, March, etc.)
-* Use zero-padded day (01, 05, 06, 08, not 1, 5, 6, 8)
+* Start with the date, then " - Content Release" or " - Application Update" (e.g., "June 5, 2024 - Content Release")
+* Dates follow the [style guide](/docs/contributing/style-guide/#release-notes): full month name, no ordinal, no leading zero
 
 **Keywords:**
 * **Always ask user to confirm keywords before creating file**
@@ -187,7 +183,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 **Content Release template:**
 ```markdown
 ---
-title: June 05, 2024 - Content Release
+title: June 5, 2024 - Content Release
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -202,8 +198,8 @@ This release introduces new integrations, new playbooks, and several updates.
 
 ### Integrations
 
-* [New] [AWS WAF](/docs/platform-services/automation-service/app-central/integrations/aws-waf)
-* [Updated] [Okta](/docs/platform-services/automation-service/app-central/integrations/okta)
+* [New] [AWS WAF](/docs/integrations/automation-integrations/aws-waf)
+* [Updated] [Okta](/docs/integrations/automation-integrations/okta)
 
 ### Playbooks
 
@@ -214,7 +210,7 @@ This release introduces new integrations, new playbooks, and several updates.
 **Application Update template:**
 ```markdown
 ---
-title: March 06, 2026 - Application Update
+title: March 6, 2026 - Application Update
 hide_table_of_contents: true
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
@@ -253,6 +249,8 @@ Fixed an issue where [description of bug and fix].
 
 ### Step 7: Content formatting guidelines
 
+Voice and wording follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide. The formatting below is specific to Cloud SOAR release notes.
+
 ## Content Release Formatting
 
 #### Intro Paragraph
@@ -268,16 +266,16 @@ Fixed an issue where [description of bug and fix].
 * Simple bulleted list with [New] or [Updated] tags
 * Format: `* [Tag] [Integration Name](link)`
 * NO descriptions needed - just link to integration doc
-* Links use full path: `/docs/platform-services/automation-service/app-central/integrations/{slug}`
+* Links use full path: `/docs/integrations/automation-integrations/{slug}`
 
 **Example:**
 ```markdown
 ### Integrations
 
-* [New] [AWS WAF](/docs/platform-services/automation-service/app-central/integrations/aws-waf)
-* [New] [Cyberint](/docs/platform-services/automation-service/app-central/integrations/cyberint)
-* [Updated] [Okta](/docs/platform-services/automation-service/app-central/integrations/okta)
-* [Updated] [ServiceNow V2](/docs/platform-services/automation-service/app-central/integrations/servicenow-v2)
+* [New] [AWS WAF](/docs/integrations/automation-integrations/aws-waf)
+* [New] [Cyberint](/docs/integrations/automation-integrations/cyberint)
+* [Updated] [Okta](/docs/integrations/automation-integrations/okta)
+* [Updated] [ServiceNow V2](/docs/integrations/automation-integrations/servicenow-v2)
 ```
 
 #### Playbooks Section (H3)
@@ -310,7 +308,7 @@ Fixed an issue where [description of bug and fix].
 **Integrations subsection:**
 * Use tags: `[Added]` for new integrations, `[Updated]` for existing ones
 * Format: `[Tag] [Integration Name](link) - Description.`
-* Link to integration documentation in `/docs/platform-services/automation-service/app-central/integrations/`
+* Link to integration documentation in `/docs/integrations/automation-integrations/`
 * Be specific about what action or feature was added/updated
 * Can mention specific actions: "Added 'Count Occurrence Of Value' action"
 
@@ -318,8 +316,8 @@ Fixed an issue where [description of bug and fix].
 ```markdown
 #### Integrations
 
-* [Added] [Sumo Logic Automation Tools](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-automation-tools/) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
-* [Updated] [ThreatConnect V3](/docs/platform-services/automation-service/app-central/integrations/threatconnect-v3/) - Added observations parameter to the Update Intelligence action to enable recording observation counts for indicators.
+* [Added] [Sumo Logic Automation Tools](/docs/integrations/automation-integrations/sumo-logic-automation-tools/) - Added "Count Occurrence Of Value" action to count the occurrence of a specified value in texts.
+* [Updated] [ThreatConnect V3](/docs/integrations/automation-integrations/threatconnect-v3/) - Added observations parameter to the Update Intelligence action to enable recording observation counts for indicators.
 ```
 
 **Platform subsection:**
@@ -356,7 +354,7 @@ Fixed an issue where [description of bug and fix].
 
 #### Integrations
 
-* In the [Microsoft EWS (Graph)](/docs/platform-services/automation-service/app-central/integrations/microsoft-ews-graph/) integration, removed the default values for the `has_attachments` and `un_read` fields in the Search Emails Extended action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
+* In the [Microsoft EWS (Graph)](/docs/integrations/automation-integrations/microsoft-ews-graph/) integration, removed the default values for the `has_attachments` and `un_read` fields in the Search Emails Extended action. The change allows users to search for emails without being forced to filter by attachment status or read/unread status.
 
 #### Platform
 
@@ -372,8 +370,8 @@ Fixed issues while selecting variables containing the period character in textar
 **For Content Release:**
 * [ ] File created in `/blog-csoar/` directory
 * [ ] Filename is `YYYY-MM-DD-content-release.md`
-* [ ] Title is "Month DD, YYYY - Content Release" (zero-padded day)
-* [ ] Date uses full month name with zero-padded day (e.g., "June 05")
+* [ ] Title is "Month D, YYYY - Content Release" (no ordinal, no leading zero)
+* [ ] Date uses full month name, no leading zero (e.g., "June 5")
 * [ ] Image URL: Standard Sumo Logic preview image
 * [ ] Keywords: automation service, cloud soar, soar (three keywords)
 * [ ] `hide_table_of_contents: true` is present
@@ -387,14 +385,15 @@ Fixed issues while selecting variables containing the period character in textar
 **For Application Update:**
 * [ ] File created in `/blog-csoar/` directory
 * [ ] Filename is `YYYY-MM-DD-application-update.md`
-* [ ] Title is "Month DD, YYYY - Application Update" (zero-padded day)
-* [ ] Date uses full month name with zero-padded day (e.g., "March 06")
+* [ ] Title is "Month D, YYYY - Application Update" (no ordinal, no leading zero)
+* [ ] Date uses full month name, no leading zero (e.g., "March 6")
 * [ ] Image URL: Standard Sumo Logic preview image
 * [ ] Keywords: automation service, cloud soar (two keywords)
 * [ ] `hide_table_of_contents: true` is present
 * [ ] Import statement included
 * [ ] H2 header: "## {Month} release"
 * [ ] Intro: "Following are the updates made in {Month} {YYYY}."
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] Integration changes use [Added]/[Updated] WITH descriptions
 * [ ] Integration links point to correct paths
 * [ ] All sections properly formatted (H3 for main, H4 for subsections)
@@ -412,7 +411,7 @@ Claude:
 2. Confirms date: June 5, 2024
 3. Creates: blog-csoar/2024-06-05-content-release.md
 4. Generates frontmatter:
-   - title: "June 05, 2024 - Content Release"
+   - title: "June 5, 2024 - Content Release"
    - image: Standard Sumo Logic preview image
    - keywords: automation service, cloud soar, soar
 5. Writes content with:
@@ -433,7 +432,7 @@ Claude:
 3. Confirms release month: February
 4. Creates: blog-csoar/2026-03-06-application-update.md
 5. Generates frontmatter:
-   - title: "March 06, 2026 - Application Update"
+   - title: "March 6, 2026 - Application Update"
    - keywords: automation service, cloud soar
 6. Writes content with:
    - H2: "## February release"
@@ -447,14 +446,14 @@ Claude:
 
 Integration docs are located at:
 ```
-/docs/platform-services/automation-service/app-central/integrations/{integration-slug}/
+/docs/integrations/automation-integrations/{integration-slug}/
 ```
 
 **Common integrations:**
-* Microsoft EWS (Graph): `/docs/platform-services/automation-service/app-central/integrations/microsoft-ews-graph/`
-* ThreatConnect V3: `/docs/platform-services/automation-service/app-central/integrations/threatconnect-v3/`
-* Atlassian Opsgenie: `/docs/platform-services/automation-service/app-central/integrations/atlassian-opsgenie/`
-* Sumo Logic Automation Tools: `/docs/platform-services/automation-service/app-central/integrations/sumo-logic-automation-tools/`
+* Microsoft EWS (Graph): `/docs/integrations/automation-integrations/microsoft-ews-graph/`
+* ThreatConnect V3: `/docs/integrations/automation-integrations/threatconnect-v3/`
+* Atlassian Opsgenie: `/docs/integrations/automation-integrations/atlassian-opsgenie/`
+* Sumo Logic Automation Tools: `/docs/integrations/automation-integrations/sumo-logic-automation-tools/`
 
 **Tip**: Integration slugs are lowercase with hyphens. If unsure, use Grep to find the integration doc.
 
@@ -466,22 +465,15 @@ Cloud SOAR API docs:
 
 ## Date formatting rules
 
-**Format: "Month DD, YYYY"**
-
-Month names (full):
-* January, February, March, April, May, June
-* July, August, September, October, November, December
-
-Day: Zero-padded two digits (use 01, 06, 08, 15... not 1, 6, 8)
+Titles use the [style guide](/docs/contributing/style-guide/#release-notes) date format: `Month D, YYYY`, full month name, no ordinal, no leading zero.
 
 **Examples:**
-* ✅ March 06, 2026
-* ✅ January 08, 2026
+* ✅ March 6, 2026
+* ✅ January 8, 2026
 * ✅ December 31, 2025
-* ✅ June 05, 2024
-* ❌ March 6, 2026 (not zero-padded)
-* ❌ March 6th, 2026 (has ordinal)
-* ❌ Mar 06, 2026 (abbreviated month)
+* ❌ March 06, 2026 (leading zero)
+* ❌ March 6th, 2026 (ordinal)
+* ❌ Mar 6, 2026 (abbreviated month)
 * ❌ 2026-03-06 (wrong format)
 
 ## Release timing
@@ -601,5 +593,5 @@ Would you like me to help refine any sections or add additional details?
 * [Cloud SOAR Release Notes](https://sumologic.com/help/release-notes-csoar)
 * [Cloud SOAR Documentation](/docs/cloud-soar)
 * [Automation Service](/docs/platform-services/automation-service)
-* [App Central Integrations](/docs/platform-services/automation-service/app-central/integrations)
+* [Automation Integrations Catalog](/docs/integrations/automation-integrations/)
 * [Style Guide](/docs/contributing/style-guide)

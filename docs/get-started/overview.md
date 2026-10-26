@@ -73,13 +73,13 @@ The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opente
 
 #### Installed Collector
 
-Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source). Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud in real time. A single Sumo Logic Collector can collect up to 15,000 events per second and has fault tolerance during network or service outages. See [Installed Collector System Requirements](system-requirements.md).
+Sumo Logic [Installed Collectors](/docs/send-data/installed-collectors/sources) receive data from one or more [Sources](/docs/send-data/choose-collector-source). Collectors collect raw log data, compress it, encrypt it, and send it to Sumo Logic Cloud in real time. A single Sumo Logic Collector can collect up to 15,000 events per second and has fault tolerance during network or service outages. See [Installed Collector System Requirements](system-requirements.md).
 
 If you'd like to collect non-traditional machine data, [Script Sources](/docs/send-data/installed-collectors/sources/script-source) and [Script Actions](/docs/send-data/installed-collectors/sources/script-action) can provide a great deal of flexibility to collect files.
 
 #### Hosted Collector
 
-Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted in the Sumo Cloud and receive data from one or more [Sources](/docs/send-data/choose-collector-source). You can configure it to collect data from various cloud services like Amazon Web Services, Google Cloud Platform, G Suite, and Microsoft Office 365. It offers [Cloud Syslog Sources](/docs/send-data/hosted-collectors/cloud-syslog-source) to receive syslog data and [HTTP Sources](/docs/send-data/hosted-collectors/http-source/logs-metrics) to receive logs and metrics.
+Sumo Logic [Hosted Collectors](/docs/send-data/hosted-collectors) are hosted in the Sumo Logic Cloud and receive data from one or more [Sources](/docs/send-data/choose-collector-source). You can configure it to collect data from various cloud services like Amazon Web Services, Google Cloud Platform, G Suite, and Microsoft Office 365. It offers [Cloud Syslog Sources](/docs/send-data/hosted-collectors/cloud-syslog-source) to receive syslog data and [HTTP Sources](/docs/send-data/hosted-collectors/http-source/logs-metrics) to receive logs and metrics.
 
 The Hosted Collector is not an installed software agent, but rather a collection of endpoints and integration that collects logs from various cloud data sources.
 
@@ -98,7 +98,7 @@ Sumo Logic provides access from anywhere since it is fully browser-based. It als
 This section describes local collection, centralized collection, and data collection best practices.
 
 * [Basics](/docs/send-data/best-practices#local-and-centralized-data-collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
-* [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, etc.). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
+* [Local Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review local collection and its pros and cons. Local collector installation is the concept of installing a collector agent onto each and every target machine (a 1-to-1 relationship between collectors and hosts). This concept is usually accomplished using some level of automation tooling (Chef, Puppet, Terraform, Ansible, Shell Scripting, and so on). The collectors will use the compute and memory resources from their host machines and will require outbound internet access in order to send the logs to Sumo Logic.
 * [Centralized Collection](/docs/send-data/best-practices#local-and-centralized-data-collection). Review centralized collection and its pros and cons. Centralized collector installation involves dedicated collection machines that run the collector agent and collect logs from many different target machines at once (a 1-to-many relationship between collectors and hosts). This concept prevents resource usage on the target machines and removes the need for outbound internet access on the target machines.
 
 :::training Micro Lesson
@@ -125,9 +125,9 @@ Once you've set up a collector and source, read these tips on configuring and ma
 ### Data volume and retention
 
 * [Data Retention](/docs/manage/partitions/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary.
-* [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
+* [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo Logic tool.
 * [Audit Index](/docs/manage/security/audit-indexes/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
-* [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
+* [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in the Sumo Logic App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](/docs/integrations/sumo-apps/audit). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 
 
@@ -163,9 +163,9 @@ If applicable, identify a set of logs to be pre-parsed by a FER. When you create
 
 ## Training and certification
 
-The [Sumo Logic Training and Certification](https://www.sumologic.com/learn/training/) program is offered to you at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, self-paced training, and a wide range of certifications. We’ve done studies showing that when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently, and build impactful dashboards.
+[Sumo Logic Academy](/docs/get-started/training-certification-faq/) offers self-paced courses and public virtual instructor-led classes at no cost. You can grow your understanding of Sumo Logic through interactive tutorials, instructor-led training, self-paced training, and a range of certifications. We’ve done studies showing that when you are Sumo Logic Certified, you gain greater insight into your data, search more efficiently, and build impactful dashboards.
 
 Our instructor-led training options include:
-* [Cert Jams.](https://www.sumologic.com/learn/training/#workshops) We deliver in-person public training classes called Cert Jams that train users and help them attain various certifications.
-* [Virtual Cert Jams.](https://www.sumologic.com/learn/training/#training-courses) In addition to in-person Cert Jams, online sessions covering the certification material are open to all.
+* [Public virtual classes.](https://www.sumologic.com/learn/training#section-2) Free online classes covering our training curriculum are open to all, whether you are a customer, partner or testing out Sumo Logic.
+* Private training. Dedicated virtual or on-site sessions are available for purchase. For details, see [Training and Certifications FAQ](/docs/get-started/training-certification-faq/).
 * Professional Services. For professional services and offerings, [contact our sales team](mailto:sales@sumologic.com) or your account representative.
