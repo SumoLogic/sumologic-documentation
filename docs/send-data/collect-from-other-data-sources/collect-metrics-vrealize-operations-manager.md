@@ -1,6 +1,6 @@
 ---
 id: collect-metrics-vrealize-operations-manager
-title: Collect Metrics from VMware vRealize Operations Manager 8 Enterprise
+title: Collect VMware vRealize Operations Manager Metrics
 sidebar_label: VMware vRealize Operations Manager
 description: Collect performance metrics from VMware vRealize Operations Manager (vRops) into Sumo Logic to monitor physical, virtual, and cloud infrastructure.
 ---
@@ -51,7 +51,7 @@ Without adequate permissions (read/write/execute) for the directories in which t
 
 ## Step 2: Download and install the Collector
 
-An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
+An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo Logic service. The Collector runs as a service and starts automatically after installing or rebooting.
 
 To install a Collector to collect logs and metrics, see [Installed Collectors](/docs/send-data/installed-collectors) for installation instructions.
 

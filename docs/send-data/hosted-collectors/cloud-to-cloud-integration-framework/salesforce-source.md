@@ -2,7 +2,7 @@
 id: salesforce-source
 title: Salesforce Source
 sidebar_label: Salesforce
-tags:
+keywords:
     - salesforce
     - cloud-SIEM-enterprise
 ---
@@ -14,6 +14,10 @@ import ForwardToSiem from '/docs/reuse/forward-to-siem.md';
 <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Salesforce icon" width="75"/>
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
+
+:::note
+Upgrade the Salesforce source to the latest version 4.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 ## Data collected
 
@@ -78,13 +82,14 @@ To configure a Salesforce Source:
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **API Collection.** Select the checkbox depending on the type of data that you wish to collect.
+   * **Full EventLogFile Monitoring/Shield add-on.** Select the checkbox to collect full EventLogFile monitoring or if the Shield add-on is enabled.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
     :::note
     <CollBegin/>
     :::
 1. When you are finished configuring the Source, click **Submit**.
 
-:::info
+:::tip
 After configuring the Salesforce source, consider installing the Sumo Logic app for [Salesforce](/docs/integrations/saas-cloud/salesforce/) to visualize and analyze the collected data using prebuilt dashboards and monitor alerts.
 :::
 
@@ -120,6 +125,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
 | collectAuditData | Boolean | No | True | Set to true to collect the audit events data.|  |
 | collectEventLogFileData | Boolean | No | True | Set to true to collect the event log files data.|  |
+| fullEventLogFileMonitoring | Boolean | No | True | Set to true to collect full EventLogFile monitoring or when the Shield add-on is enabled.|  |
 
 ### JSON example
 
@@ -253,3 +259,7 @@ You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has 
 :::info
 Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
 :::
+
+## Additional resources
+
+- Use the [Salesforce Automation Service Integration](/docs/integrations/automation-integrations/salesforce/) to automate response actions directly from Cloud SOAR playbooks.

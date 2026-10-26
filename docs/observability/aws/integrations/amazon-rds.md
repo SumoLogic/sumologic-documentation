@@ -174,7 +174,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Average Database Connections in Use (Metric based)"
+```metrics title="Average Database Connections in Use (Metric based)"
 Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
 ```
 
@@ -318,7 +318,7 @@ Use this dashboard to:
 * Quickly identify problems in resource utilization.
 * Monitor databases performance insights such as relative CPU load, non-CPU load, and overall database load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} width="800" />
 
 ### 2. Amazon RDS - CloudTrail Audit Events
 

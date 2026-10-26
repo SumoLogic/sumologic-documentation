@@ -2,6 +2,7 @@
 id: sort
 title: sort Search Operator
 sidebar_label: sort
+description: Use the sort operator to order aggregated search results in descending order by default.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

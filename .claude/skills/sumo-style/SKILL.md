@@ -78,12 +78,10 @@ Every doc should include:
 id: page-slug          # required for content pages; kebab-case, short
 title: Page Title      # required; Title Case; max 60 chars for SEO; include keywords
 sidebar_label: Label   # optional; what appears in sidebar nav
-description: One or two sentences for search engines.
+description: One or two sentences for search engines. 140–160 characters. Plain text only — no backticks or Markdown. Do not start with "This page" or "This doc."
 keywords:              # optional but recommended
   - keyword1
   - keyword2
-tags:                  # optional
-  - tag1
 ---
 ```
 
@@ -219,3 +217,4 @@ These are Sumo Logic- and repo-specific facts that override general assumptions.
 - **Numbered list items always use `1.`** (not `1.`, `2.`, `3.`). Docusaurus handles rendering.
 - **Capitalized product terms.** Collector, Source, Hosted Collector, Library. User-created objects (dashboards, folders) are lowercase.
 - **C2C sources and apps have distinct openers.** Do not use the app opener for a source doc or vice versa.
+- **Release notes have their own rules.** Voice, openers (no announcement framing), title date format, and per-folder conventions live in [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide. Apply that section when writing or editing anything in `blog-service`, `blog-collector`, `blog-cse`, `blog-csoar`, or `blog-developer`.

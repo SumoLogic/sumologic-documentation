@@ -2,6 +2,7 @@
 id: threatip
 title: threatip Search Operator
 sidebar_label: threatip
+description: Use the threatip operator to identify suspicious IP addresses in your log data for security analytics and threat detection.
 ---
 
 The `threatip` operator looks for suspicious IP addresses in your log data. Using the operator provides security analytics that help you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks.

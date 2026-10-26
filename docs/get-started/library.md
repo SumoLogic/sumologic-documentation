@@ -14,7 +14,7 @@ Open the **Library** page to expose additional search options and to organize an
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Library**, and then click **Open library page**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). At the top of the screen, select the **Library** (folder) tab.
 1. You'll see two **View as** options:
     * **Me**. See your own saved searches and dashboards.
-    * **Content Administrator**. Available if you have a Sumo Logic role that grants you [Manage Content capability](/docs/manage/users-roles/roles/role-capabilities/#data-management), this option turns off your personal content in the library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode. <br/><img src={useBaseUrl('img/get-started/view-as.png')} alt="View As" style={{border: '1px solid gray'}} width="200" />
+    * **Content Administrator**. Available if you have a Sumo Logic role that grants you [Manage Content capability](/docs/manage/users-roles/roles/role-capabilities/#data-management), this option turns off your personal content in the library and allows you to see the entire Sumo Logic file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode. <br/><img src={useBaseUrl('img/get-started/view-as.png')} alt="View As" style={{border: '1px solid gray'}} width="200" />
 1. Once you've made your choice of what you want to see, you can enter a string in the **Search** bar to display matching search results. <br/><img src={useBaseUrl('img/get-started/library/library-preview.png')} alt="Library preview" style={{border: '1px solid gray'}} width="300" />
 
 ## Explore the library
@@ -121,7 +121,7 @@ In the future, any apps that you install in this published folder will be automa
 
 ## Favorites
 
-Keep track of content you use regularly with Favorites, or content that you want to keep handy. Just click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to **Favorites** in the left nav for easy access.
+Keep track of content you use regularly with Favorites, or content that you want to keep handy. Click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to **Favorites** in the left nav for easy access.
 
 You can also [favorite saved searches](/docs/search/get-started-with-search/search-page/add-saved-search-to-favorites) from the **Search** page, and favorite dashboards from the **Dashboards** page.
 
@@ -182,7 +182,7 @@ the following prefixes:
 
 ### Recent searches
 
-When you run a search in Sumo Logic, that search and its results are saved automatically in **Recent** in the left nav. This is useful in case you lose your browser session, accidentally close the Search tab, log out, or just want to refer to a search you performed recently.
+When you run a search in Sumo Logic, that search and its results are saved automatically in **Recent** in the left nav. This is useful in case you lose your browser session, accidentally close the Search tab, log out, or want to refer to a search you performed recently.
 
 Recent Searches that are still running are paused after 15 minutes. If not reopened or restarted, the search is deleted after three hours.
 

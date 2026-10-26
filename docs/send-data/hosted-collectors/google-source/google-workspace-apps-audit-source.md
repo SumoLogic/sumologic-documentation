@@ -41,12 +41,12 @@ Authentication must be with a new Google Workspace Apps Audit Source. We do not
 :::
 
 ### Manage Third party app access
-In order to provide Sumo logic access to google services, please follow the manage third-party app access steps as follows. See Google's [Manage Third-party App Access](https://support.google.com/a/answer/7281227#zippy=%2Cstep-manage-third-party-app-access-to-google-services-add-apps) documentation for more details.
+In order to provide Sumo Logic access to google services, please follow the manage third-party app access steps as follows. See Google's [Manage Third-party App Access](https://support.google.com/a/answer/7281227#zippy=%2Cstep-manage-third-party-app-access-to-google-services-add-apps) documentation for more details.
 1. In the Admin console, go to **Menu** > **Security** > **Access and data control** > **API controls**.
 1. In App access control, click **Manage Third-Party App Access**.
 1. Click **Add app** and search for Sumo Logic OAuth client.
 1. Select the app with the following client ID:<br/>
-`788305497335-k5jf772fpotskbco66orgh48jbvug8uo.apps.googleusercontent.com`
+`788305497335-k5j5772fpotskboo66orgh48jbvug8uo.apps.googleusercontent.com`
 1. Click **Change access**.
 1. Choose the **Trusted** option to allow access to all Google services. <img src={useBaseUrl('img/send-data/g-suite-change-access.png')} alt="G Suite change access" />
 1. Click **Change**.
@@ -94,8 +94,8 @@ To provide feedback on these limitations, and known issues, contact Google sup
 
 ### Access Tokens
 
-An access token is granted by a third party service, such as Google Workspace, to Sumo for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo will continue to try to update a token for about a week. After several failures, we recommend recreating the Google Workspace Apps Audit Source.
+An access token is granted by a third party service, such as Google Workspace, to Sumo Logic for accessing audit log APIs required for collecting audit events. Access tokens are stored encrypted and have a short expiration time of several hours. Sumo Logic automatically updates them before they expire to prevent data loss. Successful and failed token-update events are logged in the Audit Index. If the request fails Sumo Logic will continue to try to update a token for about a week. After several failures, we recommend recreating the Google Workspace Apps Audit Source.
 
 ### Subscription Watchpoints
 
-A subscription is a channel established with the third party service to receive notification events. Similar to access tokens, subscriptions are valid only before the expiration time. Before a subscription expires, Sumo invalidates the current subscription and obtains a new subscription. In the event of failure to update a subscription, an entry is logged in the Audit Index.
+A subscription is a channel established with the third party service to receive notification events. Similar to access tokens, subscriptions are valid only before the expiration time. Before a subscription expires, Sumo Logic invalidates the current subscription and obtains a new subscription. In the event of failure to update a subscription, an entry is logged in the Audit Index.

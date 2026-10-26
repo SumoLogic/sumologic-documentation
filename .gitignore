@@ -9,6 +9,7 @@
 .cache-loader
 
 # Misc
+.idea
 .DS_Store
 .env
 .env.local

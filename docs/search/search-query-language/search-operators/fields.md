@@ -2,6 +2,7 @@
 id: fields
 title: fields Search Operator
 sidebar_label: fields
+description: Use the fields operator to specify which fields to display and their order in query results, reducing clutter from irrelevant fields.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -118,7 +119,7 @@ For example, if you used:
 | fields status_code, method
 ```
 
-Sumo displays the **status_code** field first, then the **method** field second.
+Sumo Logic displays the **status_code** field first, then the **method** field second.
 
 In an aggregate result, field and column order follows the requested order of the query.
 
@@ -128,4 +129,4 @@ For example, if you used:
 | count by status_code, method
 ```
 
-Sumo displays the **status_code** field first, and the **method** field second.
+Sumo Logic displays the **status_code** field first, and the **method** field second.

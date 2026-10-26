@@ -26,19 +26,21 @@ Run the following command to upgrade to the latest version:
 
 `apt-get update --quiet && apt-get install otelcol-sumo --only-upgrade`
 
-For Debian-based systems, the command first updates the package lists quietly, then upgrades only the otelcol-sumo package (without reinstalling or affecting other packages). This ensures your collector is updated to the latest version from the official repository.
+For Debian-based systems, the command first updates the package lists quietly, then upgrades only the otelcol-sumo package (without reinstalling or affecting other packages). This ensures your collector is up to date with the latest version from the official repository.
 
 ### Windows
 
-Run the following command to upgrade to the latest version:
+Run the following command to upgrade to the latest version using winget (recommended):
 
 ```
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol =[System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>"
+winget upgrade otelcol-sumo
 ```
-Important points:
-- Windows installations require an installation token. Replace `<TOKEN>` with your valid Sumo Logic installation token.
-- The script automatically downloads and installs (or upgrades) the latest version of the collector.
-- Ensure PowerShell is being run with administrative privileges.
+
+Run the following command to upgrade to the latest version using install script:
+
+```
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Upgrade
+```
 
 ### macOS
 
@@ -68,10 +70,16 @@ For Linux systems, FIPS packages use the otelcol-sumo-fips package name instead 
 
 #### Windows (FIPS)
 
-Run the following command to upgrade to the latest FIPS-compliant version:
+Run the following command to upgrade to the latest version using winget (recommended):
 
 ```
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Fips $True
+winget upgrade otelcol-sumo-fips
+```
+
+Run the following command to upgrade to the latest version using install script:
+
+```
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://download-otel.sumologic.com/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -Fips $True -Upgrade
 ```
 
 Important points:

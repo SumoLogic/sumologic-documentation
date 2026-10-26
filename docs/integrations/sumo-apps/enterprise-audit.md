@@ -96,6 +96,15 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/sumo-apps/EA_Collector_Sources_Activities.png')} alt="EA_Collector_Sources_Activities" />
 
+#### Installed Collector Upgrade
+
+The **Enterprise Audit - Installed Collector Upgrade** dashboard provides detailed information on upgrade requests, upgrade successes, and upgrade failures. You can also use pre-populated filters for a more granular view of selected data.
+
+Use this dashboard to:
+* Review upgrade activity by collector, requester, and version path (fromVersion to toVersion).
+* Investigate failed upgrades by reviewing failure reasons and identifying impacted Installed Collectors.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/EA_Installed_Collector_Upgrade.png')} alt="EA_Installed_Collector_Upgrade" />
 
 #### Data Forwarding Management Overview
 

@@ -2,7 +2,7 @@
 id: code42-incydr-source
 title: Code42 Incydr Source
 sidebar_label: Code42 Incydr
-tags:
+keywords:
   - cloud-to-cloud
   - code42-incydr
 description: Learn how to collect sessions, file events, and audit logs from the Code42 Incydr.
@@ -15,6 +15,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Code42 Incydr is an insider risk management solution that allows you to detect and respond to data exposure and exfiltration from corporate computer, cloud, and email systems. It provides the visibility, context, and controls needed to protect data without overwhelming security teams or inhibiting employee productivity.
 
 Code42 Incydr source is used to analyze and fetch sessions, file events, and audit logs using the [Code42 Incydr API](https://developer.code42.com/api) and send it to Sumo Logic.
+
+:::note
+Upgrade the Code42 Incydr source to the latest version 2.x.x for seamless data collection experience. Older versions may be discontinued, so upgrading ensures continued support and the latest improvements. For upgrade instructions, see [Cloud-to-Cloud Source Versions](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions/)
+:::
 
 ## Data collected
 
@@ -35,6 +39,12 @@ The Code42 Incydr source requires you to provide the **Base URL**, **Client ID**
     - api.us2.code42.com
     - api.ie.code42.com
     - api.gov.code42.com
+    - api.us7.code42.com
+    - api.uk.code42.com
+    - api.au.code42.com
+    - api.ca.code42.com
+    - api.de.code42.com
+    - api.za.code42.com
     :::info
     Make sure that all API requests are made using HTTPs.
     :::
@@ -86,7 +96,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| baseURL | String | Yes | `null` | API Key to used for Authorization.  |  |
+| baseURL | String | Yes | `null` | Domain from which you want to retrieve the source data from the Incydr API.  |  |
 | clientID | Boolean | No | `null` | Client ID generated from the Code42 Incydr platform. |  |
 | secretKey | String | No | `null` | Secret Key generated secured from the Code42 Incydr platform. |  |
 | dataCollection | String | No | `null` | Type of source from which you want to collect the data from. |  |

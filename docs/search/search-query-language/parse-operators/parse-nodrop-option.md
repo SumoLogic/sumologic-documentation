@@ -1,6 +1,7 @@
 ---
 id: parse-nodrop-option
 title: Parse nodrop option
+description: Use the nodrop option with parse operators to include messages that do not match any segment of the parse expression in your results.
 ---
 
 

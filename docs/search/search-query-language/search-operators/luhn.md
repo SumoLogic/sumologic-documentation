@@ -2,6 +2,7 @@
 id: luhn
 title: luhn Search Operator
 sidebar_label: luhn
+description: Use the luhn operator to validate potential credit card numbers in log messages using Luhn's algorithm.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

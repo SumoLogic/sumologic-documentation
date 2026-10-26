@@ -2,6 +2,11 @@
 id: cloud-infrastructure-security-for-aws
 title: Cloud Infrastructure Security for AWS
 description: Cloud Infrastructure Security for AWS provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity.
+keywords:
+  - aws security
+  - cloud infrastructure security
+  - aws cloudtrail
+  - aws guardduty
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -9,7 +14,7 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
-The Cloud Infrastructure Security for AWS app provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
+Cloud Infrastructure Security for AWS is a Sumo Logic app that provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure, spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
 Key features of the solution include:
 * **Risk overview**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
@@ -154,7 +159,6 @@ The Sumo Logic Cloud Infrastructure Security solution supports the following [AW
 * Asia Pacific (Hong Kong)
 * Asia Pacific (Tokyo)
 * Asia Pacific (Seoul)
-* Asia Pacific (Mumbai)
 * Asia Pacific (Singapore)
 * Asia Pacific (Sydney)
 * Canada (Central)
@@ -289,7 +293,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Scroll down to the **Parameters** section.
 1. In **Deployment**, enter **No** if you want to install to only one account, or **Yes** if you want to install to all accounts in your organization.
 1. In **1. Sumo Logic configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
-   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, fed, or ch. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
+   * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, ch, de, esc, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
    * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
    * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
 1. In **2. AWS Organization configuration**, enter the following. (This step is required only if you are installing the solution to all accounts in your AWS organization.)
@@ -329,7 +333,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
 1. Scroll down to the **Parameters** section.
 1. In **1. Sumo Logic Configuration**, you can accept the defaults. <br/>If fields are missing, or you need to change them, do the following:
       * **Deploy to Organization (All Accounts)**. Select **Yes** to deploy to all accounts in your AWS organization, or select **No** to deploy only to your account.
-      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, kr, fed, or ch. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
+      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, ch, de, esc, eu, jp, us2, us1, in, kr, or fed. For information about Sumo Logic deployment locations, see [API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started/).
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
       * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under [Account](/docs/get-started/account-settings-preferences).
@@ -360,7 +364,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        In this section, you configure Amazon GuardDuty. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
        
        If fields are missing, or you need to change them, do the following:
-       * **4.1 GuardDuty Sumo log source configuration**
+       * **4.1 GuardDuty Sumo Logic log source configuration**
           * **Create Sumo Logic HTTP logs source**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, enter your existing source category name for the GuardDuty logs. 
        * **4.2 GuardDuty service configuration**
@@ -375,7 +379,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        In this section, you configure AWS CloudTrail. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
        
        If fields are missing, or you need to change them, do the following:
-       * **5.1 CloudTrail Sumo log source configuration**. 
+       * **5.1 CloudTrail Sumo Logic log source configuration**. 
           * **Create Sumo Logic S3 logs source for CloudTrail**. **Yes** is the default value. Select **No** if you already have a source.
           * **Path expression for logs**. The path expression must match the folder structure for CloudTrail logs (for example, `AWSLogs/*/CloudTrail/*`).
           * **Sumo Logic CloudTrail logs source category name**. The source category name to be created. If you selected **No** in the preceding field for creating an S3 log source, enter the name of an existing Sumo Logic source category that's collecting CloudTrail logs. 
@@ -396,7 +400,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        In this section, you configure AWS Security Hub. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
        
        If fields are missing, or you need to change them, do the following:
-       * **6.1 Security Hub Sumo Log Source configuration**.
+       * **6.1 Security Hub Sumo Logic Log Source configuration**.
           * **Create Sumo Logic HTTP logs source**. **Yes** is the default value. Select **No** if you already have a logs source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, provide an existing source category name from the Security Hub logs.  
        * **6.2 Security Hub Service Configuration**. 
@@ -648,4 +652,26 @@ To see all events a particular user has been involved with, click a user on a pa
 The **Suspicious Web Activity** dashboard shows suspicious activity on the Web. It shows suspicious blocked requests, including by trend and geo location.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-suspicious-web-activity.png')} alt="Suspicious Web Activity dashboard" style={{border: '1px solid gray'}} width="600"/>
+
+## FAQ
+
+### What does Cloud Infrastructure Security for AWS do?
+
+Cloud Infrastructure Security for AWS gives you a unified view of risks, misconfigurations, and active threats across your AWS accounts and regions, using data from AWS CloudTrail, GuardDuty, Network Firewall, Security Hub, and WAF.
+
+### What AWS log sources does Cloud Infrastructure Security for AWS use?
+
+It uses Amazon CloudTrail, Amazon GuardDuty, AWS Network Firewall, AWS Security Hub, and AWS Web Application Firewall (WAF) log data.
+
+### Can I deploy Cloud Infrastructure Security for AWS across multiple AWS accounts?
+
+Yes. You can deploy the solution to a single AWS account and region, or to all accounts and multiple regions in your AWS organization.
+
+### Does Cloud Infrastructure Security for AWS come with pre-built alerts?
+
+Yes. The solution ships with pre-packaged alerts as Sumo Logic Monitors, covering findings like Admin Privileges Granted, Amazon GuardDuty BruteForce, Root Account Login, and CloudTrail Changes.
+
+### Can Cloud Infrastructure Security for AWS monitor multiple AWS regions?
+
+Yes. You can enable multi-region collection for GuardDuty, Security Hub, CloudTrail, AWS Firewall Manager, and AWS WAF, as long as you configure each service to deliver logs to a single S3 bucket or Kinesis stream per account.
 

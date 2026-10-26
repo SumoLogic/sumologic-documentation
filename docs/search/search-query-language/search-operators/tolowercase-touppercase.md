@@ -2,6 +2,7 @@
 id: tolowercase-touppercase
 title: toLowerCase, toUpperCase Search Operators
 sidebar_label: toLowerCase, toUpperCase
+description: Use the toLowerCase and toUpperCase operators to convert strings to all lowercase or uppercase letters.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +12,7 @@ The `toLowerCase` operator takes a string and converts it to all lower case le
 These operators can be useful for normalizing source logs with inconsistent capitalization, such as Windows Event logs, or changing file names and paths for files systems that require all lower case letters. They are especially useful for queries that include conditionals and grouping, in order to reduce the number of groups in the search results.
 
 :::tip
-**toLowerCase** and **toUpperCase** are useful when you use the following equating conditions with Sumo operators: the equal to sign (`=`) and the not equal to sign (!`=`) sign. These conditions are case-sensitive in Sumo Logic. [Learn more](#using-tolowercaseor-touppercase-with-an-equating-condition).
+**toLowerCase** and **toUpperCase** are useful when you use the following equating conditions with Sumo Logic operators: the equal to sign (`=`) and the not equal to sign (!`=`) sign. These conditions are case-sensitive in Sumo Logic. [Learn more](#using-tolowercaseor-touppercase-with-an-equating-condition).
 :::
 
 ## Syntax
@@ -42,7 +43,7 @@ which provides results like:
 
 ### Using toLowerCase or toUpperCase with an equating condition
 
-**toLowerCase** and **toUpperCase** are useful when you use the equal to sign (`=`) or the not equal to sign (`!=`) with Sumo operators. These conditions are case-sensitive in Sumo Logic. The following example uses **toLowerCase** to convert the hash value to lower case before performing the lookup. 
+**toLowerCase** and **toUpperCase** are useful when you use the equal to sign (`=`) or the not equal to sign (`!=`) with Sumo Logic operators. These conditions are case-sensitive in Sumo Logic. The following example uses **toLowerCase** to convert the hash value to lower case before performing the lookup. 
 
 ```sumo
 *

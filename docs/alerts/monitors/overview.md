@@ -91,6 +91,10 @@ A Sumo Logic monitor continuously queries logs or metrics and send notifications
 To understand when to use a monitor versus a scheduled search, refer to [Monitors vs. Scheduled Searches](/docs/alerts/difference-from-scheduled-searches/).
 :::
 
+:::tip
+Instead of configuring a monitor manually, describe what you want to track in [Mobot](/docs/alerts/monitors/create-monitor-with-mobot), Sumo Logic's AI-powered conversational assistant. Mobot suggests the query, trigger conditions, and notifications from your prompt, and creates the monitor once you confirm.
+:::
+
 ## What permissions are required to use monitors?
 
 The **Manage Monitors** role capability is required to create, edit, or delete monitors. The **View Monitors** capability is required to view them. [Learn more](/docs/alerts/monitors/settings/#monitor-folder-permissions) about controlling permissions at the monitor or folder level.
@@ -118,10 +122,9 @@ See [Trigger Type (Logs)](/docs/alerts/monitors/create-monitor/#trigger-type-log
 
 Log monitors in a triggered state can auto-resolve.
 
-- **Static Fields** log monitors will trigger/resolve based on the value of a field returned by their search. If no data is returned by the query, then chart data is not ingested. If it has been a full detection window or more since a trigger condition was matched, then no data results in the monitor/group getting resolved.
-- **Missing Data** monitors will auto-resolve if they have not seen any data for the last 24 consecutive hours.
-  - Non-grouped monitors will trigger again after auto-resolving if there is still no data.
-  - Grouped monitors will be removed and no longer considered after being auto-resolved, unless data for this group is seen again.
+**Missing Data** monitors will auto-resolve if they have not seen any data for the last 24 consecutive hours.
+- Non-grouped monitors will trigger again after auto-resolving if there is still no data.
+- Grouped monitors will be removed and no longer considered after being auto-resolved, unless data for this group is seen again.
 
 ## What are the rules specific to metric monitors?
 

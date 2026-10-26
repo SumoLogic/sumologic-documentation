@@ -2,6 +2,7 @@
 id: outlier
 title: outlier Metrics Operator
 sidebar_label: outlier
+description: Use the outlier metrics operator to identify data points outside the range of expected values by tracking moving average and standard deviation over a specified time window.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,7 +17,7 @@ You cannot directly reference the `outlier` operator in a metrics monitor, howev
 
 ## Syntax
 
-```sql
+```metrics
 outlier [window=<time_unit_or_number>, threshold=<number>, direction=[ +- | + | - ]]
 ```
 

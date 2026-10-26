@@ -6,7 +6,7 @@ description: Stay current with Sumo Logic release notes covering new features an
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Explore the individual release notes pages to see what's new.
+Stay up to date with the latest Sumo Logic enhancements, features, and fixes. Explore the individual release notes pages to see what's new. See [Preview Releases](/docs/preview) for information on our customer preview release types, including Private Preview, Extended Preview, and Public Preview.
 
 ## Release Notes by product
 

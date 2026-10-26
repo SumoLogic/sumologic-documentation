@@ -2,11 +2,12 @@
 id: compare
 title: compare Search Operator
 sidebar_label: compare
+description: Use the compare operator to compare current aggregate query results against one or multiple past time periods.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The `compare` operator can be used with the [**Time Compare**](/docs/search/time-compare) button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. The following information can also be found documented in Time Compare.
+The `compare` operator can be used with the [**Time Compare**](/docs/search/time-compare) button in the Sumo Logic interface, which automatically generates the appropriate syntax and adds it to your aggregate query. The following information can also be found documented in Time Compare.
 
 You can use `compare` to:
 
