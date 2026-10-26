@@ -99,7 +99,7 @@ Instead of configuring a monitor manually, describe what you want to track in [M
 
 The **Manage Monitors** role capability is required to create, edit, or delete monitors. The **View Monitors** capability is required to view them. [Learn more](/docs/alerts/monitors/settings/#monitor-folder-permissions) about controlling permissions at the monitor or folder level.
 
-## How often does a monitor evaluate data?
+## How often does a monitor evaluate data? {#rules}
 
 Evaluation frequency depends on the underlying query, the operators used, and the detection window. This frequency can range from a few seconds to several minutes. 
 

@@ -121,7 +121,7 @@ You can use Terraform to provide a field extraction rule with the [`sumologic_fi
 />
 :::
 
-## How to create a field extraction rule?
+## How to create a field extraction rule? {#creating-a-new-field-extraction-rule}
 
 To create a Field Extraction Rule:
 
@@ -212,7 +212,7 @@ The following operators can be used as part of the **Parse Expression** in an In
 The **multi** and **auto** options are not supported in field extraction rules.
 :::
 
-## What are the limits for field extraction rules?
+## What are the limits for field extraction rules? {#limitations}
 
 The `parse multi` operator is not supported in FERs.
 

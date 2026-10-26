@@ -107,7 +107,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 | CloudFlex | Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-## What are the requirements and limits for ingest budgets?
+## What are the requirements and limits for ingest budgets? {#rules}
 
 * A maximum of **100 ingest budgets** per account.
 * Bytes are calculated in base 2 (binary format, 1024 based).
@@ -119,7 +119,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
-## How does ingest budget scope work?
+## How does ingest budget scope work? {#budget-assignment}
 
 The scope feature allows you to assign ingest budgets to your log data using one of the following options:
 
@@ -130,7 +130,7 @@ The value supports a single wildcard, such as `_sourceCategory=prod*payment`. F
 
 [V2 ingest budgets](/docs/api/ingest-budget-v2/) provide you the ability to assign budgets to your log data by either [fields](/docs/manage/fields) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
-## How do certain source types behave when ingestion is stopped?
+## How do certain source types behave when ingestion is stopped? {#source-type-behavior}
 
 Some hosted collector sources behave differently when a **Stop Collecting** action is triggered:
 
@@ -140,7 +140,7 @@ Some hosted collector sources behave differently when a **Stop Collecting** acti
 | AWS S3-based sources | Skips objects. |
 | Cloud Syslog sources | Keeps the connection open but drops incoming syslog messages. |
 
-## How to manage ingest budgets?
+## How to manage ingest budgets? {#manage-ingest-budgets}
 
 Use the **Ingest Budgets** page to manage your ingest budgets.
 
@@ -174,7 +174,7 @@ budget:
 
 When hovering over a row in the Ingest Budgets table there are icons that appear on the far right for editing and deleting the ingest budget.
 
-## How to create an ingest budget?
+## How to create an ingest budget? {#create-ingest-budget}
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
 1. Click the **+ Add Budget** button on the top right of the table. A panel named **Create Ingest Budget** appears to the right of the Ingest Budgets table.
@@ -188,13 +188,13 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
    * **Reset every day at**. Ingest budgets automatically reset their capacity utilization tracking every 24 hours based on the time and time zone you specify.
      * **Time**. Set the time of day to reset the capacity tracking.
      * **Time zone**. Set the time zone of the reset time.
-     * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are [audited](#audit-index-queries).
+     * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are [audited](#audit-ingest-budgets).
        * **Stop** Collecting - Collection stops immediately. There are important differences depending on the [source type](#source-type-behavior).
        * **Keep** Collecting - Collection remains the same.
    * **Audit Threshold**. The threshold, as a percentage, of when an ingest budget's capacity usage is logged in the Audit Index.
 1. When you're finished configuring the ingest budget click **Add**.
 
-## How to reset an ingest budget manually?
+## How to reset an ingest budget manually? {#reset-ingest-budget}
 
 You can manually reset a budget at any time to set its capacity utilization tracking to zero. This won't affect the next scheduled reset time and can be done as many times as needed.
 
@@ -202,13 +202,13 @@ You can manually reset a budget at any time to set its capacity utilization tra
 1. In the table find the ingest budget you want to reset and click the row to open its details pane.
 1. Click the **Reset** button.
 
-## How to edit an ingest budget?
+## How to edit an ingest budget? {#edit-ingest-budget}
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
 1. In the table find the ingest budget you want to edit and click the edit icon <img src={useBaseUrl('img/manage/ingestion-volume/pencil-edit-icon.png')} alt="Pencil edit icon" width="25" /> on the right of the row or click the row and then click the edit icon in the details panel.
 1. Make your changes and click **Update**.
 
-## How to delete an ingest budget?
+## How to delete an ingest budget? {#delete-ingest-budget}
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Ingest Budget**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Budget**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Ingest Budgets**. 
 1. In the table find the ingest budget you want to delete and click the delete icon <img src={useBaseUrl('img/manage/ingestion-volume/delete-trash-icon.png')} alt="Delete trash icon" width="25" /> on the right of the row or click the row and then click the delete icon in the details panel.
@@ -218,7 +218,7 @@ You can manually reset a budget at any time to set its capacity utilization tra
 
 You can assign collectors and sources with [fields](/docs/manage/fields) based on teams and services. For example, a field could be `team=<name of the team>` or `service=<name of the service>`. With these fields assigned, you can create a budget with the scope `team=<name of the team>` to achieve team based budgets. You can leverage source fields for finer control over the scope of the budget. You can map a model of your deployment or organization to metadata fields and then create ingest budgets with a scope referencing them.
 
-## Can a log message match against multiple budgets?
+## Can a log message match against multiple budgets? {#budget-assignment-examples}
 
 Yes. Log messages can match against multiple budgets if two or more budgets have overlapping scopes. For example, see the following two budgets:
 
@@ -265,7 +265,7 @@ To ensure the combined daily ingestion for the infrastructure components ALB, Ka
      * Capacity= 100 GB
      * Action = “stop collecting”
 
-## How do I get alerted when an ingest budget is approaching its limit?
+## How do I get alerted when an ingest budget is approaching its limit? {#audit-ingest-budgets}
 
 The [Audit Index](/docs/manage/security/audit-indexes/audit-index) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
 
