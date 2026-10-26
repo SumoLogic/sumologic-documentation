@@ -78,7 +78,13 @@ The panel shows the following details:
 
 #### Threat Intelligence Enrichment
 
-This tab shows the threat intelligence that was evaluated for the entity when the signal was created. The data is a snapshot, so it doesn't change if an indicator is later updated or expires.<br/><img src={useBaseUrl('img/cse/threat-intelligence-enrichment-panel.png')} alt="Entity details panel" style={{border: '1px solid gray'}} width="800" />
+Threat intelligence enrichment data is available in two locations:
+
+- **Signals Details page**. View the threat intelligence enrichment data in the **Enrichments** tab, as shown below.
+    <img src={useBaseUrl('img/cse/signals-enrichment-tab.png')} alt="threat intelligence enrichment panel" style={{border: '1px solid gray'}} width="800" />
+
+- **Entity details panel**. View the threat intelligence enrichment details evaluated for the entity when the signal was created. This data is a snapshot and does not change if an indicator is later updated or expires.
+    <img src={useBaseUrl('img/cse/threat-intelligence-enrichment-panel.png')} alt="threat intelligence enrichment panel" style={{border: '1px solid gray'}} width="800" />
 
 A banner at the top of the tab shows the result of the threat intelligence evaluation:
 
