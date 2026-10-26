@@ -62,15 +62,13 @@ If you are configuring log collection for VPC flow logs, see [Collect Amazon VP
 
 Define variables in the `Environment` section of the CloudFormation template.
 
-```
-"Environment": {
-    "Variables": {
-        "SOURCE_CATEGORY_OVERRIDE": "<insert-value-here>"
-        "SOURCE_HOST_OVERRIDE": "<insert-value-here>"
-        "SOURCE_NAME_OVERRIDE": "<insert-value-here>"
-        "SOURCE_FIELDS_OVERRIDE": "<insert-value-here>"
-    }
-}
+```yaml
+Environment:
+    Variables:
+        SOURCE_CATEGORY_OVERRIDE: <insert-value-here>
+        SOURCE_HOST_OVERRIDE: <insert-value-here>
+        SOURCE_NAME_OVERRIDE: <insert-value-here>
+        SOURCE_FIELDS_OVERRIDE: <insert-value-here>
 ```
 
 ### Configure threshold for DeadLetterQueue
@@ -81,83 +79,56 @@ If you don’t want to use the `SumoCWSpilloverAlarm`, as described below in [Re
 
 In the CloudFormation template, define the number of messages in the Dead Letter Queue that will trigger the SumoCWSpilloverAlarm, using the `Threshold` attribute in the alarm definition.  
 
-```json
-{
-  "SumoCWSpilloverAlarm":{
-    "Type":"AWS::CloudWatch::Alarm",
-    "Properties":{
-      "AlarmActions":[
-        {
-          "Ref":"SumoCWEmailSNSTopic"
-        }
-      ],
-      "AlarmDescription":"Notify via email if number of messages in DeadLetterQueue exceeds threshold",
-      "ComparisonOperator":"GreaterThanThreshold",
-      "Dimensions":[
-        {
-          "Name":"QueueName",
-          "Value":"SumoCWDeadLetterQueue"
-        }
-      ],
-      "EvaluationPeriods":"1",
-      "MetricName":"ApproximateNumberOfMessagesVisible",
-      "Namespace":"AWS/SQS",
-      "Period":"3600",
-      "Statistic":"Sum",
-      "Threshold":"100000"
-    },
-    "DependsOn":[
-      "SumoCWEmailSNSTopic"
-    ]
-  }
-}
+```yaml
+SumoCWSpilloverAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+        AlarmActions:
+            - !Ref SumoCWEmailSNSTopic
+        AlarmDescription: Notify via email if number of messages in DeadLetterQueue exceeds threshold
+        ComparisonOperator: GreaterThanThreshold
+        Dimensions:
+            - Name: QueueName
+              Value: !GetAtt SumoCWDeadLetterQueue.QueueName
+        EvaluationPeriods: '1'
+        MetricName: ApproximateNumberOfMessagesVisible
+        Namespace: AWS/SQS
+        Period: '3600'
+        Statistic: Sum
+        Threshold: '100000'
+    DependsOn:
+        - SumoCWEmailSNSTopic
 ```
 
 ### Remove alarm resources (Optional)
 
 If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the definitions of the `SumoCWEmailSNSTopic` and `SumoCWSpilloverAlarm` resources from the CloudFormation template. Delete the sections shown below.
 
-```json
-{
-  "SumoCWEmailSNSTopic":{
-    "Type":"AWS::SNS::Topic",
-    "Properties":{
-      "Subscription":[
-        {
-          "Endpoint":"xyz@sumologic.com",
-          "Protocol":"email"
-        }
-      ]
-    }
-  },
-  "SumoCWSpilloverAlarm":{
-    "Type":"AWS::CloudWatch::Alarm",
-    "Properties":{
-      "AlarmActions":[
-        {
-          "Ref":"SumoCWEmailSNSTopic"
-        }
-      ],
-      "AlarmDescription":"Notify via email if number of messages in DeadLetterQueue exceeds threshold",
-      "ComparisonOperator":"GreaterThanThreshold",
-      "Dimensions":[
-        {
-          "Name":"QueueName",
-          "Value":"SumoCWDeadLetterQueue"
-        }
-      ],
-      "EvaluationPeriods":"1",
-      "MetricName":"ApproximateNumberOfMessagesVisible",
-      "Namespace":"AWS/SQS",
-      "Period":"3600",
-      "Statistic":"Sum",
-      "Threshold":"100000"
-    },
-    "DependsOn":[
-      "SumoCWEmailSNSTopic"
-    ]
-  }
-}
+```yaml
+SumoCWEmailSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+        Subscription:
+            - Endpoint: !Ref EmailID
+              Protocol: email
+SumoCWSpilloverAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+        AlarmActions:
+            - !Ref SumoCWEmailSNSTopic
+        AlarmDescription: Notify via email if number of messages in DeadLetterQueue exceeds threshold
+        ComparisonOperator: GreaterThanThreshold
+        Dimensions:
+            - Name: QueueName
+              Value: !GetAtt SumoCWDeadLetterQueue.QueueName
+        EvaluationPeriods: '1'
+        MetricName: ApproximateNumberOfMessagesVisible
+        Namespace: AWS/SQS
+        Period: '3600'
+        Statistic: Sum
+        Threshold: '100000'
+    DependsOn:
+        - SumoCWEmailSNSTopic
 ```
 
 ## Step 4: Create a stack on the AWS CloudFormation console
