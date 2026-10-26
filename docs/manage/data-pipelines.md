@@ -109,7 +109,7 @@ Data Pipelines do not use versions. Each pipeline has a published version that p
 
 1. In the graph, select a processing group.
 1. Enter a name that describes its purpose, such as `Extract required fields`. To rename a group, click its name.
-1. (Optional) To run the group only on some messages, under **Filter Condition**, turn on **Filter Expression**. Select a **Key** and enter a **Value**. Messages that don't meet the condition skip the group. To write the condition as a query, click **Switch to Advanced**.<br/><img src={useBaseUrl('img/manage/data-pipelines/processor-group-filter-condition.png')} alt="Processor group Filter Condition and Add Processor button" style={{border: '1px solid gray'}} width="450"/>
+1. To run the group only on some messages, under **Filter Condition**, turn on **Filter Expression**. Select a **Key** and enter a **Value**. Messages that don't meet the condition skip the group. To write the condition as a query, click **Switch to Advanced**.<br/><img src={useBaseUrl('img/manage/data-pipelines/processor-group-filter-condition.png')} alt="Processor group Filter Condition and Add Processor button" style={{border: '1px solid gray'}} width="450"/>
 1. Under **Processing Steps**, click **Add Processor**, choose a processor type, and click **Add**. Then configure it. For example, add a field named `environment` with a value.<br/><img src={useBaseUrl('img/manage/data-pipelines/add-processor-dialog.png')} alt="Add Processor dialog" style={{border: '1px solid gray'}} width="450"/>
 1. Repeat to add more processors. They run in the order listed.
 1. Click **Save**.
@@ -118,7 +118,7 @@ To add more groups or routers, insert them between existing nodes in the graph.
 
 ## Test and publish a pipeline
 
-Use test mode to run sample messages through your draft before you publish it. Test mode is especially useful when your pipeline has many parse or masking expressions.
+Use **Test Mode** to run sample messages through your draft before you publish it. Test mode is especially useful when your pipeline has many parse or masking expressions.
 
 1. Open the pipeline in draft mode.
 1. In the graph, click the node you want to test. For example, click a processing group.
@@ -163,8 +163,6 @@ From the Data Pipelines page, you can:
 To open the **Duplicate**, **Disable**, **Export as JSON**, and **Delete** options, select a pipeline in the list and click **More Actions**.
 
 <img src={useBaseUrl('img/manage/data-pipelines/pipeline-details-panel.png')} alt="Pipeline details panel with More Actions menu" style={{border: '1px solid gray'}} width="350"/>
-
-Export and import let you copy a pipeline configuration to another environment, such as from a development to a production organization.
 
 ## Monitor pipeline health
 
