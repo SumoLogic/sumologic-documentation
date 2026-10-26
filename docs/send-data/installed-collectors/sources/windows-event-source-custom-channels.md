@@ -70,5 +70,5 @@ The Sumo Logic collector does not collect events from the following channels:
 * Debug ETW channels
 
 :::note
-Sumo does not support import of data directly from `.evtx` files. Sumo makes an API call to the Windows Event Log service to pull the data contained in the `.evtx` files. 
+Sumo Logic does not support import of data directly from `.evtx` files. Sumo Logic makes an API call to the Windows Event Log service to pull the data contained in the `.evtx` files. 
 :::

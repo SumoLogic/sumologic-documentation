@@ -1,7 +1,7 @@
 ---
 id: amazon-vpc-flow
-title: Amazon VPC Flow Cloud Security Monitoring and Analytics
-sidebar_label: Amazon VPC Flow - Cloud Security Monitoring and Analytics
+title: Amazon VPC Flow Cloud Security Monitoring
+sidebar_label: Amazon VPC Flow
 description: The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Analytics app thoroughly assess Amazon VPC Flow logs to gain a better understanding of your environment and associated traffic patterns.
 ---
 
@@ -138,7 +138,7 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 4. Click **Next**.
 5. Select **JSON** for **Log Format**.
 6. Click **Next**.
-7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo.
+7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo Logic.
 
 
 ## Collect Amazon VPC Flow Logs Using an Amazon S3 Source

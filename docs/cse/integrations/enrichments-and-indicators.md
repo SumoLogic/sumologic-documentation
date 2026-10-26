@@ -14,15 +14,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can view the results of enrichments in Cloud SIEM by navigating to the **Enrichments** tab (which will appear on the entity, signal, and insight details pages if there are any enrichments to display):
 
-<img src={useBaseUrl('img/cse/enrichments.png')} alt="Examples of enrichments" width="800"/>
+<img src={useBaseUrl('img/cse/insights-enrichment.png')} alt="Examples of enrichments" width="800"/>
 
 Keep in mind that:
 * Enrichments are grouped by entity, not by enrichment source.
-* Groups can be collapsed and expanded.
 * The list can be filtered.
 * Empty fields (fields with a null or empty value) can be optionally hidden.
 * Links, if set by the enrichment, will be displayed and open in a new tab if clicked.
-* [Threat indicator labels](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicator-labels-in-the-cloud-siem-ui), if set by the enrichment, will be displayed.
+* [Threat indicator labels](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#how-to-view-threat-indicator-labels-in-the-cloud-siem-ui), if set by the enrichment, will be displayed.
 
 ## Enrichment attributes
 

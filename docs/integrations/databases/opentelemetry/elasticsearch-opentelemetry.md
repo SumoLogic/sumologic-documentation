@@ -168,7 +168,7 @@ db.system=elasticsearch %"deployment.environment"={{deployment.environment}} db.
 
 This is a sample metrics query from the **JVM Memory Used (MB)** panel.
 
-```sql
+```metrics
 deployment.environment=* metric=jvm.memory.heap.used db.cluster.name=* db.node.name=* | sum by db.cluster.name, db.node.name
 ```
 

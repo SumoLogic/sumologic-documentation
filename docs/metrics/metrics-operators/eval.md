@@ -2,6 +2,7 @@
 id: eval
 title: eval Metrics Operator
 sidebar_label: eval
+description: Use the eval metrics operator to evaluate time series based on user-specified arithmetic or mathematical functions.
 ---
 
 
@@ -9,8 +10,8 @@ The eval operator evaluates a time series based on a user-specified arithmetic o
 
 ## Syntax
 
-```sql
-eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
+```metrics
+eval [REDUCER BOOLEAN EXPRESSION | _value EXPRESSION] [_granularity]
 ```
 
 * `expr` is basic arithmetic or mathematical function:  +, -, *, /, sin, cos, abs, log, round, ceil, floor, tan, exp, sqrt, min, max
@@ -29,7 +30,7 @@ eval expr([REDUCER BOOLEAN EXPRESSION | _value] [_granularity])
 
 ## Examples
 
-**Example 1**
+### Multiply metric values
 
 This query returns the value of the `CPU_Idle` metric, multiplied by 100.
 
@@ -37,7 +38,7 @@ This query returns the value of the `CPU_Idle` metric, multiplied by 100.
 metric=CPU_Idle | eval _value * 100
 ```
 
-**Example 2**
+### Set each point to the series average
 
 This query sets the value of each point in a single time series to the average of all values in that time series.
 
@@ -59,7 +60,7 @@ m1: (0, 2) (1, 2) (2, 2)
 m2: (0, 6) (1, 6) (2, 6)
 ```
 
-**Example 3**
+### Calculate rate of change per second
 
 This query returns the rate of change per second for the metric.
 

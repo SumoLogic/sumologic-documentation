@@ -118,7 +118,7 @@ _sourceCategory=oursite
 | transaction on ip with states aboutus, company, blog, shopping, api in urlprefix
 ```
 
-<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/unordered-transaction-table.png')} alt="Unordered transaction table" style={{border: '1px solid gray'}} width="800>" />
+<img src={useBaseUrl('img/search/searchquerylanguage/transaction-analytics/unordered-transaction-table.png')} alt="Unordered transaction table" style={{border: '1px solid gray'}} width="800" />
 
 </TabItem>
 <TabItem value="tab2">

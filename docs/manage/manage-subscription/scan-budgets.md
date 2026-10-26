@@ -33,9 +33,11 @@ To create the query size limit using the **Advanced** configuration:
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Account > Scan Budget**. <br/> [**New UI**](/docs/get-started/sumo-logic-ui/). In the Sumo Logic main menu select **Administration**, and then under **Account**, select **Scan Budget**. You can also click the **Go To...** menu at the top of the screen and select **Scan Budget**.<br/><img src={useBaseUrl('/img/manage/account/scan-budget-advanced.png')} alt="Scan budget advanced" style={{border:'1px solid gray'}} width="800"/>
 1. Click **+ Create Scan Budget**.
 1. **Scope**. Include or exclude the users and roles for whom the scan budget should apply.
+    - **Request Source**. Select **All Sources** to apply the budget to all chargeable query types, or select **Filtered Request Sources** to scope it to specific sources, such as **Search API**, **AI Search (MCP)**, or **Mobot**.
 1. **Capacity**. You can set either query level or time-phased budgets. You can also check the query size of the last 10 queries by clicking on the **Click here** button to help you determine the appropriate size limit.
     - **Query level budgets**. Select **Query** from the **Budget Type** dropdown and enter the GB value based on your needs. Sumo Logic recommends setting a GB value per query based on the 95th percentile to stay within safe limits. 
     - **Time-phased budgets**. Select **Daily**, **Weekly**, or **Monthly** from the **Budget Type** dropdown and enter the maximum amount of budget in GB. You can set a single shared budget for an entire group by selecting the **Capacity for the Group** option, whereas, you can set a budget for individual user in the selected scope by selecting the **Capacity per User** option.
+    - If you selected **Filtered Request Sources**, the per-user option is labeled **Capacity per user for selected Requested Source** and applies only to combined usage from the selected request sources.
     :::note
     - For **Daily** budgets, the capacity resets every day at midnight (00:00 PST).
     - For **Weekly** budgets, the capacity resets each Monday at 00:00 PST.
@@ -44,6 +46,7 @@ To create the query size limit using the **Advanced** configuration:
 1. **Action**. Select the type of action/response you require when the budget limit is reached.
     - **Show Warning to the user**. Query result will be displayed with a the error message.
     - **Only allow background query scans**. A warning message will be displayed if you run a query that exceeds the budget set. This will block the foreground searches but will not impact any background searches/automated queries.
+    - **Stop all scans**. Blocks all scans, including foreground interactive searches, background scans, and automated queries, once the budget limit is reached. Once blocked, you see an error asking you to contact your admin.
     :::info
     Sumo Logic defines scan as two types:
     - **Foreground interactive search**. Search page UI, Mobot, and dashboards.
@@ -76,6 +79,7 @@ To view the selected scan budget:
   - **Status**. Describes if the scan budget is active or inactive.
   - **Usage Category**. Describes the type of scan. For Flex this is shown as **Flex Scan** and for data tier this is shown as **Infrequent Scan**.
   - **Scope**. Displays the list of roles or users for whom the selected scan budget is applied for or excluded from.
+  - **Requested Source**. Displays the request sources that the scan budget applies to, such as Search API, AI Search (MCP), or Mobot. Shows **All Sources** if the budget applies to every request source.
   - **Capacity (per user)**. Describes the budget set for individual user search.
   - **Action when capacity reached**. Describes the type of action sected to notify when the budget limit is reached.
   - **Reset every day/week/month at**. Displays the time phase when the budget can reset.
@@ -83,6 +87,10 @@ To view the selected scan budget:
   - **Modified**. The user that most recently modified the scan budget.
   - **Audit Logs**. Records the budget definition changes. Click on **View Details** to view the budget definition changes.
   - **System Audit**. Records the breaches and budget enforcement. Click on **View Details** to view the list of breaches.
+
+## Limitations
+
+- **Scan budgets per organization**. Each organization can have a maximum of 1,500 scan budgets. The UI doesn't show your current count against this limit.
 
 ## FAQs
 

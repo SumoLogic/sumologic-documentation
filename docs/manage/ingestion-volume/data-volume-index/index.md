@@ -41,6 +41,23 @@ Granular data tracking is a part of usage management that allows you to proactiv
 1. Click the gear icon <img src={useBaseUrl('/img/manage/account/gear-icon-accounts-page.png')} alt="Gear icon accounts page" width="40"/> in the top left panel of the **Account Overview** page.
 1. Click **Disable Granular Data Tracking**.<br/><img src={useBaseUrl('/img/manage/account/disable-granular-data-tracking.png')} alt="Disable Granular Data Tracking" style={{border:'1px solid gray'}} width="700"/> 
 
+## Ask Mobot about data volume
+
+You can ask [Mobot](/docs/search/mobot/) natural-language questions about your ingest volume without writing queries against the Data Volume Index directly. The Data Volume skill is part of Mobot's Platform Optimization Agent and is available to all Mobot users with no separate opt-in required. It is included at no additional cost for active credit subscriptions.
+
+Admins can use it to identify noisy sources and explain month-over-month fluctuations. Finance teams can use it to attribute spend, reconcile credits, and forecast renewals.
+
+Example questions:
+
+- `Show me the daily ingest for the last week.`
+- `What are my top 10 source categories by daily ingest volume?`
+- `How much data went to the Infrequent tier last month?`
+- `Which collector is ingesting the most?`
+
+Mobot parses your question to identify the time window, units, and breakdown you're asking for, queries this index, and returns a structured answer in any unit (GB, TB, MB, bytes, or event counts). If this index is not yet enabled, Mobot detects that and guides you through turning it on.
+
+For more example questions, see [Data volume](/docs/search/mobot/example-prompts#data-volume) in Mobot Example Prompts.
+
 ## Guide contents
 
 In this section, we'll introduce the following concepts:

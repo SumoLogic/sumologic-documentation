@@ -170,8 +170,6 @@ We also provide a selection of security-focused partner apps with specialized de
 
 <img src={useBaseUrl('img/kubernetes/K8s_PartnerApps_Security.png')} alt="Sumo Logic Security partner apps" style={{border: '1px solid gray'}} width="800" />
 
-### Get certified
+### Get trained
 
-Make the most of our Kubernetes Observability offerings by enrolling in our free training, where you'll learn more about using OpenTelemetry collectors, tracing agents, and our Reliability Management features. The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
-
-<a href="https://www.sumologic.com/learn/training/"><img src={useBaseUrl('img/kubernetes/K8s_Kubernetes_Analyst_Cert.png')} alt="Kubernetes Analyst Cert icon" width="450"/></a>
+Make the most of our Kubernetes Observability offerings with free training from [Sumo Logic Academy](https://www.sumologic.com/learn/training/). The Kubernetes on Sumo Logic Self-Paced course covers Kubernetes architecture and using Sumo Logic to monitor and troubleshoot a Kubernetes environment. The Observability Administration Self-Paced course covers setting up collection on Kubernetes, using OpenTelemetry collectors and agents for tracing, and using Reliability Management features.

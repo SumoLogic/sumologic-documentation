@@ -9,7 +9,6 @@ import SumoLogicDocsLogo from '../../static/img/reuse/sumo-logic-docs.svg';
 import { Feature } from '../components/Feature';
 import { features } from '../helper/features';
 import ErrorBoundary from '../components/ErrorBoundary';
-import GoogleTranslateNavbarItem from '../theme/NavbarItem/GoogleTranslateNavbarItem';
 
 export const Home = () => {
   const [tab, setTab] = useState('0');
@@ -62,7 +61,6 @@ export const Home = () => {
             }}
             width='100%'
           />
-        <GoogleTranslateNavbarItem/>
         </Typography>
 
         {/* Hero */}
@@ -130,14 +128,9 @@ export const Home = () => {
                   </Typography>
                   {[
                     {
-                      children: 'Start a free trial',
-                      description: 'Sign up for a Sumo Logic free trial',
-                      href: 'https://www.sumologic.com/sign-up/',
-                    },
-                    {
                       children: '1. Set up collector and source',
                       description: 'Set up a Sumo Logic collector and source',
-                      to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo',
+                      to: '/docs/get-started/quickstart#step-1-get-your-data-into-sumo-logic',
                     },
                     {
                       children: '2. Explore your data insights',
@@ -239,7 +232,7 @@ export const Home = () => {
                 {[
                   'Security',
                   'Log Search',
-                  'Dojo AI',
+                  'DojoAI',
                   'Observability',
                   'Alerts, Apps, Dashboards',
                 ].map((label, index) => (

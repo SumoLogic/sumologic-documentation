@@ -2,6 +2,7 @@
 id: formatdate
 title: formatDate Search Operator
 sidebar_label: formatDate
+description: Use the formatDate operator to format dates in log files as strings in your required format, such as U.S.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

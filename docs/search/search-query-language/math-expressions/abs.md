@@ -14,8 +14,20 @@ The absolute function calculates the absolute value of x.
 
 The function cannot be nested.
 
-## Example
+## Examples
+
+### Get the absolute value of a literal number
 
 ```sumo
 * | abs(-1.5) as v
+```
+
+### Calculate the absolute difference between two fields
+
+Use `abs` with parsed numeric fields to compute the absolute difference:
+
+```sumo
+_sourceCategory=application/backend
+| parse "latency=* baseline=*" as latency, baseline
+| abs(latency - baseline) as deviation
 ```

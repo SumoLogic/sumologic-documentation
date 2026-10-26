@@ -6,17 +6,7 @@ description: Learn about the collection process for the Sumo Logic Upwind integr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href={useBaseUrl('docs/preview')}><span className="preview-private">Private Preview</span></a></p>
-
-:::info
-This feature is in Private Preview. For more information, contact your Sumo Logic account representative.
-:::
-
-<img src={useBaseUrl('img/integrations/webhooks/upwind-logo.png')} alt="thumbnail icon" width="55"/>
+<img src={useBaseUrl('img/integrations/webhooks/upwind-logo.png')} alt="Upwind icon" width="55"/>
 
 Upwind is a runtime-powered cloud security platform that helps monitor cloud threats, configuration findings, and security operations activity. You can use a custom webhook in Upwind to forward events to the Sumo Logic HTTP endpoint. Using these logs, you can monitor audit activity, configuration findings, and threat detections in Sumo Logic.
 
@@ -57,7 +47,7 @@ The following log types are used in the Upwind Sumo Logic app:
 
 ### Sample queries
 
-```sql
+```metrics
 _sourceCategory="Labs/Upwind" id severity status category mitre_attacks
 | json "id", "severity", "status", "category", "resource.cloud_provider" as id, severity, status, category, cloud_provider nodrop
 
@@ -100,7 +90,7 @@ Follow the steps below to configure the Upwind webhook and workflow.
 8. Select the webhook integration created above and save the workflow.
 9. Verify Upwind events are getting ingested in Sumo Logic by executing the following query in Log Search:
 
-```sql
+```metrics
 _sourceCategory=webhook/upwind
 ```
 
@@ -178,3 +168,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Upwind Automation Service Integration](/docs/integrations/automation-integrations/upwind/) to automate response actions directly from Cloud SOAR playbooks.

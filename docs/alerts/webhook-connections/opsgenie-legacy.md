@@ -35,7 +35,7 @@ Your final configurations at Opsgenie should look like this:
 In Sumo Logic, scheduled searches send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Opsgenie :
 
 1. [Create a Webhook](#create-a-webhook).
-1. [Use the Webhook in a Sumo scheduled search configuration](#configure-a-scheduled-search).
+1. [Use the Webhook in a Sumo Logic scheduled search configuration](#configure-a-scheduled-search).
 
 ### Create a webhook
 

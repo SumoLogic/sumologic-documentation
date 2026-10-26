@@ -21,7 +21,7 @@ This app includes [built-in monitors](#netskope-alerts). For details on creating
 
 The Netskope app provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
 
-For more information on Netskope, refer to the Netskope [documentation](https://www.netskope.com/platform/how-it-works).
+To set up log collection, see [Netskope Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source). For details on the Netskope API used for log collection, see the Netskope [REST API v2 data export documentation](https://docs.netskope.com/en/using-the-rest-api-v2-dataexport-iterator-endpoints/).
 
 ### Sample log message
 
@@ -104,7 +104,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 
 <CollectionConfiguration/>
 
-:::important
+:::tip
 Use the [Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Netskope app is properly integrated and configured to collect and analyze your Netskope data.
 :::
 
@@ -269,3 +269,7 @@ import AppUpdate from '../../reuse/apps/app-update.md';
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
+
+## Additional resources
+
+- Use the [Netskope Automation Service Integration](/docs/integrations/automation-integrations/netskope/) to automate response actions directly from Cloud SOAR playbooks.

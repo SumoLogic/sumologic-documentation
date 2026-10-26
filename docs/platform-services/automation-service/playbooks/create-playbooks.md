@@ -8,10 +8,11 @@ description: Create and configure Automation Service playbooks to run automated 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CartesianProduct from '../../../reuse/cartesian-product.md';
 import TerraformLink from '../../../reuse/terraform-link.md';
+import ConvPlaybookLimits from '../../../reuse/conv-playbook-limits.md';
 
 ## View playbooks
 
-The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central).
+The following procedure describes how to view playbooks already installed in your environment. To add more playbooks, [create a playbook](#create-a-new-playbook), or [install a playbook from App Catalog](/docs/integrations/playbook-templates/#install-an-out-of-the-box-playbook-from-app-catalog).
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>The list of playbooks displays. <br/> <img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" style={{border:'1px solid gray'}} width="700"/>
 1. Select a playbook to see the elements in the workflow.<br/><img src={useBaseUrl('img/cse/automations-open-playbook.png')} style={{border:'1px solid gray'}} alt="Opened playbook" width="700"/>
@@ -19,19 +20,17 @@ The following procedure describes how to view playbooks already installed in you
 
 ## Create a new playbook
 
-Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Central](/docs/platform-services/automation-service/playbooks-in-app-central/#install-an-out-of-the-box-playbook-from-app-central) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
+Before you create your own playbook, first [view playbooks](#view-playbooks) to make sure there isn't one already that does what you want to accomplish, and also check to see if you can [install a playbook from App Catalog](/docs/integrations/playbook-templates/#install-an-out-of-the-box-playbook-from-app-catalog) that does what you need. After you create a playbook, you can run it in automations for [monitors](/docs/alerts/monitors/use-playbooks-with-monitors/), [Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/), or [Cloud SOAR](/docs/cloud-soar/automation/). 
 
 :::tip
 The following procedure provides a brief introduction to how to create a playbook. For detailed examples of how to create playbooks, see the [Cloud SIEM automation examples](/docs/cse/automation/cloud-siem-automation-examples/).
 :::
 
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation**. <br/>Previously-created playbooks display.
-1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-button.png')} style={{border:'1px solid gray'}} alt="New playbook button" width="400"/>
-1. A new configuration box will be displayed. Name your new playbook.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" width="400"/>
-1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
+1. Click the **+ Create Playbook** button.
+1. Click the untitled playbook and rename it.<br/><img src={useBaseUrl('img/cse/automations-new-playbook-dialog.png')} style={{border:'1px solid gray'}} alt="New playbook dialog" />
 1. Enter a **Description** of the playbook to help others understand how to use it.
-1. Click **Create**. The new playbook appears in the list of available playbooks.
-1. To configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.<br/><img src={useBaseUrl('img/cse/automations-new-empty-playbook.png')} alt="New playbook" style={{border:'1px solid gray'}} width="600"/>
+1. Select the incident **Type**. (For example, for Cloud SIEM automations, select **Cloud SIEM**. For playbooks run from inside another playbook, you can select another incident type to associate with it, for example, **Denial of Service**, **Malware**, **Phishing**, and so on.)
 1. The **Start** node displays a **+** icon and an **Edit** icon. Click the **Edit** icon.  <br/><img src={useBaseUrl('img/platform-services/automation-service/start-node.png')} alt="Start node" style={{border:'1px solid gray'}} width="100"/> <br/>The **Edit node** dialog appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/edit-start-node.png')} alt="Edit node dialog" style={{border:'1px solid gray'}} width="500"/>
 1. Click the dropdown arrow on **Add one or more params as a playbook input** and select the kind of trigger that will execute the playbook:
     * **Insight**. An [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) from an [automation in Cloud SIEM](/docs/cse/automation/automations-in-cloud-siem/).
@@ -44,7 +43,6 @@ The following procedure provides a brief introduction to how to create a playboo
 1. To add the first node in the playbook, click the **+** on the **Start** node. The **Add node** page is displayed.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="500"/>
 
 See [Add nodes to a playbook](/docs/platform-services/automation-service/playbooks/create-playbooks/#add-nodes-to-a-playbook) for next steps.
-
 
 ## Add nodes to a playbook
 
@@ -217,7 +215,7 @@ Perform the following steps to use the user choice responder variables in nodes 
 
 #### User choice nodes in out-of-the-box playbooks
 
-Here are just a few of the [out-of-the-box playbooks](/docs/platform-services/automation-service/playbooks-in-app-central/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
+Here are just a few of the [out-of-the-box playbooks](/docs/integrations/playbook-templates/) that contain user choice nodes. Look at the user choice nodes in these playbooks to get an idea of how to structure them: 
 * 18 - DDoS
 * 21 - DLP Alert
 * 24 - DoS with Decision Tree
@@ -253,14 +251,14 @@ A filter node filters results from the preceding action based on the condition y
 
 ## Action types
 
-Every [automation integration](/docs/platform-services/automation-service/app-central/integrations/) contains different types of actions you can perform to help with incident remediation, such as sending notifications, adding additional information (enrichment), containment, and so on. Following are the different types of actions available in integrations:
+Every [automation integration](/docs/integrations/automation-integrations/) contains different types of actions you can perform to help with incident remediation, such as sending notifications, adding additional information (enrichment), containment, and so on. Following are the different types of actions available in integrations:
 * [**Containment**](#containment). Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
 * [**Custom**](#custom). Performs an action defined in a custom action YAML file.
 * [**Enrichment**](#enrichment). Enriches data with additional information, such as adding information about a known malicious IP address.
 * [**Notification**](#notification). Sends a notification, for example, an email or a post in a messaging service.
 * [**Scheduled**](#scheduled). Runs an action on a schedule once the playbook starts.
 
-Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
+Every action in an integration is assigned an action type. If you take a look at the [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/), you'll see each has a list of available actions with the type of action listed for each. For example, here are some of the actions in the Sumo Logic Cloud SIEM integration:
 * **Get Entity** *(Enrichment)* - Get Entity details.
 * **Add Network Block** *(Containment)* - Add an address into the Network Blocks.
 * **Add Comment To Insight** *(Notification)* - Add a comment to an existing Insight.
@@ -276,7 +274,7 @@ When you [add an action node to a playbook](#add-an-action-node-to-a-playbook), 
 1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
 1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
 1. Select **Action**.
-1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
+1. In the **Integration** field, select the integration you want to use. In this example, we've selected the [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/) integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/sumo-logic-cloud-siem-integration-selected.png')} alt="Sumo Logic Cloud SIEM integration selected in the Add Node dialog" style={{border:'1px solid gray'}} width="400"/>
 1. Click the **Type** field to select the type of action you want to perform. The drop-down menu shows only the types available in the selected integration:<br/><img src={useBaseUrl('img/platform-services/automation-service/action-types-on-cloud-siem-integration.png')} alt="Action types on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
 1. Click the **Action** field to select the action to run in the playbook. Only actions of that type in the integration are listed:<br/><img src={useBaseUrl('img/platform-services/automation-service/enrichment-actions-on-cloud-siem.png')} alt="Enrichment actions on Sumo Logic Cloud SIEM integration" style={{border:'1px solid gray'}} width="400"/>
 1. Proceed with the rest of the steps to [add an action node to a playbook](#add-an-action-node-to-a-playbook).
@@ -293,84 +291,79 @@ Containment actions perform some sort of response or remediation action, such as
 * Disconnect devices from the network
 
 Many integrations offer containment actions. Here are just a few:
-* [Active Directory V2](/docs/platform-services/automation-service/app-central/integrations/active-directory-v2/)
-* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
-* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
-* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
-* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
-* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
-* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
-* [Okta](/docs/platform-services/automation-service/app-central/integrations/okta/)
-* [OneLogin](/docs/platform-services/automation-service/app-central/integrations/onelogin/)
-* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
+* [Active Directory V2](/docs/integrations/automation-integrations/active-directory-v2/)
+* [AWS IAM](/docs/integrations/automation-integrations/aws-iam/)
+* [Azure AD](/docs/integrations/automation-integrations/azure-ad/)
+* [Cortex XDR](/docs/integrations/automation-integrations/cortex-xdr/)
+* [CrowdStrike Falcon](/docs/integrations/automation-integrations/crowdstrike-falcon/)
+* [Gmail](/docs/integrations/automation-integrations/gmail/)
+* [Microsoft Defender ATP](/docs/integrations/automation-integrations/microsoft-defender-atp/)
+* [Okta](/docs/integrations/automation-integrations/okta/)
+* [OneLogin](/docs/integrations/automation-integrations/onelogin/)
+* [Slack](/docs/integrations/automation-integrations/slack/)
 
 ### Custom
 
 Custom actions perform an activity defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
 
-A few [integrations](/docs/platform-services/automation-service/app-central/integrations/) also offer actions labelled as custom types:
-* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp)
-* [Triage Tools](/docs/platform-services/automation-service/app-central/integrations/triage-tools/)
+A few [integrations](/docs/integrations/automation-integrations/) also offer actions labelled as custom types:
+* [Microsoft Defender ATP](/docs/integrations/automation-integrations/microsoft-defender-atp)
+* [Triage Tools](/docs/integrations/automation-integrations/triage-tools/)
 
 ### Enrichment
 
 Enrichment actions enrich data with additional information, such as adding information about a known malicious IP address.
 
 Many integrations offer enrichment actions. Here are just a few:
-* [Abnormal Security](/docs/platform-services/automation-service/app-central/integrations/abnormal-security/)
-* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
-* [AWS IAM](/docs/platform-services/automation-service/app-central/integrations/aws-iam/)
-* [Azure AD](/docs/platform-services/automation-service/app-central/integrations/azure-ad/)
-* [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/)
-* [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip/)
-* [CrowdStrike Falcon](/docs/platform-services/automation-service/app-central/integrations/crowdstrike-falcon/)
-* [IP Quality Score](/docs/platform-services/automation-service/app-central/integrations/ip-quality-score/)
-* [Salesforce](/docs/platform-services/automation-service/app-central/integrations/salesforce/)
-* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
-* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
+* [Abnormal Security](/docs/integrations/automation-integrations/abnormal-security/)
+* [Atlassian Jira V2](/docs/integrations/automation-integrations/atlassian-jira-v2/)
+* [AWS IAM](/docs/integrations/automation-integrations/aws-iam/)
+* [Azure AD](/docs/integrations/automation-integrations/azure-ad/)
+* [Cortex XDR](/docs/integrations/automation-integrations/cortex-xdr/)
+* [Criminal IP](/docs/integrations/automation-integrations/criminal-ip/)
+* [CrowdStrike Falcon](/docs/integrations/automation-integrations/crowdstrike-falcon/)
+* [IP Quality Score](/docs/integrations/automation-integrations/ip-quality-score/)
+* [Salesforce](/docs/integrations/automation-integrations/salesforce/)
+* [SentinelOne](/docs/integrations/automation-integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/)
+* [VirusTotal](/docs/integrations/automation-integrations/virustotal/)
 
 ### Notification
 
 Notification actions send a notification, for example, an email or a post in a messaging service.
 
 Many integrations offer notification actions. Here are just a few:
-* [Basic Tools](/docs/platform-services/automation-service/app-central/integrations/basic-tools/)
-* [Gmail](/docs/platform-services/automation-service/app-central/integrations/gmail/)
-* [Slack](/docs/platform-services/automation-service/app-central/integrations/slack/)
-* [SMTP V3](/docs/platform-services/automation-service/app-central/integrations/smtp-v3/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
+* [Basic Tools](/docs/integrations/automation-integrations/basic-tools/)
+* [Gmail](/docs/integrations/automation-integrations/gmail/)
+* [Slack](/docs/integrations/automation-integrations/slack/)
+* [SMTP V3](/docs/integrations/automation-integrations/smtp-v3/)
+* [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/)
 
 ### Scheduled
 
 Scheduled actions run on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
 
 Many integrations offer scheduled actions. Here are just a few:
-* [Atlassian Jira V2](/docs/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/)
-* [Microsoft Defender ATP](/docs/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/)
-* [SentinelOne](/docs/platform-services/automation-service/app-central/integrations/sentinelone/)
-* [Sumo Logic Cloud SIEM](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-cloud-siem/)
-* [Sumo Logic Notifications by Microsoft](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications-by-microsoft/)
-* [Sumo Logic Notifications](/docs/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/)
-* [VirusTotal](/docs/platform-services/automation-service/app-central/integrations/virustotal/)
+* [Atlassian Jira V2](/docs/integrations/automation-integrations/atlassian-jira-v2/)
+* [Microsoft Defender ATP](/docs/integrations/automation-integrations/microsoft-defender-atp/)
+* [SentinelOne](/docs/integrations/automation-integrations/sentinelone/)
+* [Sumo Logic Cloud SIEM](/docs/integrations/automation-integrations/sumo-logic-cloud-siem/)
+* [Sumo Logic Notifications by Microsoft](/docs/integrations/automation-integrations/sumo-logic-notifications-by-microsoft/)
+* [Sumo Logic Notifications](/docs/integrations/automation-integrations/sumo-logic-notifications/)
+* [VirusTotal](/docs/integrations/automation-integrations/virustotal/)
 
 ## Playbook versioning
 
 ### Autosave
 
-Every time you edit a playbook draft, the draft is automatically saved, and the following notification briefly appears in the lower right corner of the playbook screen:<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} width="200"/>
-
-When the automatic save is complete, the following notification lets you know.<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-2.png')} alt="Playbook autosave complete" style={{border:'1px solid gray'}} width="200"/>
-
-To enable or disable autosave, use [playbook preferences](#playbook-preferences).
+Every time you create or edit a playbook, the changes in the playbook are saved automatically and the following notification appears on the playbook screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/autosave-playbook-1.png')} alt="Playbook autosave" style={{border:'1px solid gray'}} />
 
 ### Versions
 
-To publish a playbook so that others may use it, click the publish button at the bottom of the playbook screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-publish-button.png')} alt="Playbook publish button" style={{border:'1px solid gray'}} width="300"/>
+To publish a playbook so that others may use it, click the publish button at the top right corner of the playbook window.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
 
-Every time you publish a playbook, a new version of the playbook is retained. In the screen image below, notice how all the versions of the playbook are listed (#4 being the published version as indicated by the publish icon). Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
-
-<img src={useBaseUrl('img/platform-services/automation-service/playbook-versions.png')} alt="Playbook versions" style={{border:'1px solid gray'}} width="800"/>
+Every time you publish a playbook, a new version of the playbook is retained. You can also click the dropdown to view all the versions of the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-versions-dropdown.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/><br/>
+Click on a version to edit it, and if you want, publish it. In this way, you maintain version control of your playbooks, and ensure that all versions are retained.
 
 ## Enable or disable playbooks
 
@@ -386,28 +379,18 @@ When enabling or disabling playbooks, keep in mind:
 
 ### How to enable or disable a playbook
 
-To enable or disable a playbook, open the playbook and click the toggle.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} width="400"/><br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-toggle.png')} alt="Playbook disabled toggle" style={{border:'1px solid gray'}} width="400"/>
+You can enable or disable a playbook in the playbook details page<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-toggle.png')} alt="Playbook enabled toggle" style={{border:'1px solid gray'}} />
+or while editing the playbook.<br/><img src={useBaseUrl('img/platform-services/automation-service/disable-playbook.png')} alt="Playbook disable" style={{border:'1px solid gray'}} width="400" />
 
-The **Status** column shows whether a playbook is enabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-enabled-symbol.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} width="30"/> or disabled <img src={useBaseUrl('img/platform-services/automation-service/playbook-disabled-symbol.png')} alt="Playbook disabled symbol" style={{border:'1px solid gray'}} width="30"/>.  
-
-<img src={useBaseUrl('img/platform-services/automation-service/playbook-status-enabled-disabled.png')} alt="Playbook status column" style={{border:'1px solid gray'}} width="800"/>
+The **Status** column shows whether a playbook is Published or in draft.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-status.png')} alt="Playbook enabled symbol" style={{border:'1px solid gray'}} /> 
 
 ### Enable on publish
 
-To publish a playbook, click the **Publish** button at the bottom of the playbook window:<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
+To publish a playbook, click the **Publish** button at the top right corner of the playbook window.<br/><img src={useBaseUrl('img/cse/automations-publish-playbook.png')} style={{border:'1px solid gray'}} alt="Publish the playbook" width="300"/>
 
 When you publish a playbook:
 * Playbooks without any published versions are automatically enabled. 
 * Playbooks that have previously published versions will display an **Enable playbook on publish** option if they are in a disabled state:<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-enable-on-publish-toggle.png')} style={{border:'1px solid gray'}} alt="Publish enable on publish" width="400"/>
-
-## Playbook preferences
-
-1. Click the preferences button in the upper-right corner of the screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-preferences.png')} alt="Playbook preferences button" style={{border:'1px solid gray'}} width="200"/>
-2. Configure preferences in the **Playbooks Preferences** screen.<br/><img src={useBaseUrl('img/platform-services/automation-service/playbook-preferences-screen.png')} alt="Playbook preferences screen" style={{border:'1px solid gray'}} width="400"/>
-
-### Autosave preference
-
-Select **Enable Autosave for all playbooks** to ensure that while editing a playbook, all changes will be automatically saved to the draft. For more information, see [Autosave](#autosave).
 
 ## Export and import playbooks
 

@@ -2,7 +2,7 @@
 id: amazon-security-lake-source
 title: Amazon Security Lake Source
 sidebar_label: Amazon Security Lake
-description: Learn how to configure the Amazon Security Lake source setup using the Sumo logic environment.
+description: Learn how to configure the Amazon Security Lake source setup using the Sumo Logic environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,12 +13,12 @@ This makes AWS log setup relatively easy. In addition, the data available from v
 
 ## Configure Amazon Security Lake Setup
 
-### Step 1. Grant Sumo logic access to Amazon Security Lake console
+### Step 1. Grant Sumo Logic access to Amazon Security Lake console
 
-To grant Sumo Logic access to the Amazon Security Lake source, you need to provide the Sumo Account ID and External ID.
+To grant Sumo Logic access to the Amazon Security Lake source, you need to provide the Sumo Logic Account ID and External ID.
 1. **Account ID**. Remember to copy and secure your `Sumo Logic ID`: `************`. You will require this ID in further steps.
 2. **External ID**. The External ID is formed from your Sumo Logic region identifier. It is a unique identifier that is used to authenticate the connection between your Sumo Logic account and your Amazon Security Lake source. The format of your Sumo Logic account identifier is: `SumoDeployment`: `SumoAccountId` where:
-   * `SumoDeployment` is your Sumo Logic deployment that has to be entered in lowercase such as `au`, `ca`, `de`, `eu`, `fed`, `jp`, `kr`, `us1`, `us2`, or `ch`. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started).
+   * `SumoDeployment` is your Sumo Logic deployment that has to be entered in lowercase such as `au`, `ca`, `ch`, `de`, `esc`, `eu`, `fed`, `jp`, `kr`, `us1`, or `us2`. To find your deployment, see [Sumo Logic API Authentication, Endpoints, and Security](/docs/api/about-apis/getting-started).
    * `SumoAccountId` is the Organization ID shown on your Account Overview page in the Sumo Logic UI. You can access it by navigating to the [**Account Overview**](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#account-overview).
 
 After the authentication is successful, you can create the subscriber.
@@ -66,7 +66,7 @@ To create an Amazon Security Lake Source, follow the steps below:
    * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a checkmark shows up when a field exists and is enabled in the Fields table schema.
    * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point shows up when the field doesn't exist or is disabled in the **Fields table schema**.
     :::important
-    In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
+    In this case, an option to automatically add or enable the nonexistent fields to the **Fields table schema** is provided. If a field is sent to Sumo Logic that does not exist in the **Fields table schema** or is disabled, it will be ignored and known as dropped field.
     :::
 1. In **Role ARN**: Paste the AWS Role ID from your Amazon Security Lake console, see above [Step 2.11](#step-2-set-up-subscriber-in-amazon-security-lake-console).<br/><img src={useBaseUrl('img/send-data/role-arn-id.png')} alt="Role ARN ID" width="400"/>
 1. Click **Save**. A pop-up will appear with the subscription endpoint. <br/> <img src={useBaseUrl('img/send-data/subscription-endpoint.png')} alt="Subscription endpoint" width="400"/>
