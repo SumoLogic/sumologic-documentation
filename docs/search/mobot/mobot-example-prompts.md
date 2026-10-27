@@ -152,3 +152,17 @@ For more information, see [Create a Monitor with Mobot](/docs/alerts/monitors/cr
 * `Explain what would happen if this playbook ran on a Critical insight right now.`
 
 For more information, see [Create Playbooks with Mobot](/docs/platform-services/automation-service/playbooks/create-playbooks-with-mobot).
+
+## Rule creation
+
+* `Create a match rule that fires when a user logs in from a country they haven't logged in from before.`
+* `Create a threshold rule that fires when a single IP address has 10 failed logins within 5 minutes.`
+* `Create a chain rule that detects a failed login followed by a successful login from the same user within 10 minutes.`
+* `Create a rule that detects when an AWS IAM user creates a new access key for another user.`
+* `Create a High severity rule that detects PowerShell running with an encoded command.`
+* `Change the severity of this rule from Medium to High.`
+* `Update this rule's expression to exclude service accounts.`
+* `Increase the threshold in this rule from 10 to 20 and the time window to 15 minutes.`
+* `Summarize what this rule detects, step by step.`
+
+For more information, see [Create Rules with Mobot](/docs/cse/rules/create-rules-with-mobot.md).
