@@ -20,3 +20,7 @@ From the tab, you can:
 - Select an indicator to see its details and raw IOC data, and open related activity in Log Search.
 
 New indicators can take up to 10 minutes to appear. [Learn more](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators).
+
+:::note
+The expired indicator retention period setting is deprecated in this release.
+:::
