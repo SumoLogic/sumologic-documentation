@@ -80,10 +80,10 @@ When you add indicators, the event is recorded in the Audit Event Index. See [Au
 ## Edit a source
 
 Follow the steps below to edit a source:
-1. Select a source in the list of sources. Details of the source appear in a sidebar. Click the **More Actions** dropdown and then select **Edit**.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source-from-sidebar.png')} alt="Edit source from sidebar panel" style={{border: '1px solid gray'}} width="800" /><br/>Or, click the ellipsis icon and select **Edit** from the source details page.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source.png')} alt="Edit source" style={{border: '1px solid gray'}} width="800" />
+1. Select a source in the list of sources. The source details appear in a sidebar. Click the **More Actions** dropdown and then select **Edit**.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source-from-sidebar.png')} alt="Edit source from sidebar panel" style={{border: '1px solid gray'}} width="800" /><br/>Or, click the ellipsis icon and select **Edit** from the source details page.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source.png')} alt="Edit source" style={{border: '1px solid gray'}} width="800" />
     - You can edit the description of the source.
     - You can click the **Search All Indicators** button to view all the active indicators associated with that source.
-        <img src={useBaseUrl('img/security/threat-intelligence-edit-source-panel.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
+        <img src={useBaseUrl('img/security/threat-intelligence-edit-source-panel.png')} alt="threat intelligence edit source panel" style={{border: '1px solid gray'}} width="800" />
 
 ## View and search indicators
 
@@ -93,7 +93,7 @@ Follow the steps below to open the **Indicators** tab:
 1. Click the **Indicators** tab.<br/><img src={useBaseUrl('img/security/indicators-threat-intelligence.png')} alt="Threat Intelligence indicators" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-* The **Indicators** tab shows only active indicators. Expired indicators, and indicators from deleted sources, are not listed.
+* The **Indicators** tab shows only active indicators. Expired indicators and indicators from deleted sources are not listed.
 * After a source ingests an indicator, it can take up to 10 minutes to appear on the **Indicators** tab. Search results are eventually consistent, so an indicator you just added may not be visible right away.
 :::
 
