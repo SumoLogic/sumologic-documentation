@@ -20,6 +20,7 @@ keywords:
    - mcp server
    - root cause agent
    - dojoai credits
+   - recommendations
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -57,7 +58,7 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 [Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
 
 * **Log Analysis Agent**. Guides you through analysis using natural language prompts, delivering structured findings and suggested next steps. It also allows you to create and edit dashboards and monitors without writing complex queries.
-* **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation.
+* **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation. It also powers [DojoAI Recommendations](/docs/get-started/dojoai-recommendations-preview), which proactively surfaces these same kinds of issues without you having to ask.
 
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language such as monitors, dashboards, and playbooks.
 
@@ -72,6 +73,12 @@ Investigations start when an alert matches a trigger you configure, or you can s
 :::note
 The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Contact your Sumo Logic account representative for access.
 :::
+
+### Recommendations
+
+<a href={useBaseUrl('docs/preview')}><span className="preview-extended">Extended Preview</span></a>
+
+[DojoAI Recommendations](/docs/get-started/dojoai-recommendations-preview) is the proactive side of the Platform Optimization Agent. Instead of waiting for you to ask Mobot a question, it continuously monitors your environment and automatically catches ingestion inefficiencies and performance bottlenecks, such as duplicate logs, debug-log overload, slow queries, and dashboard sprawl, with plain-language insights and previewable fixes. All proactive insights are consolidated on the **Recommendations** page, which has its own entry in the left nav.
 
 ### DojoAI Credits
 
@@ -174,7 +181,7 @@ AI features are on by default. We offer two methods for opting out:
 They're still here, but renamed and repositioned as their capabilities have evolved.
 
 - **Query Agent → Log Analysis Agent**. The original Query Agent helped users write Sumo Logic queries. The Log Analysis Agent goes further, interpreting intent, guiding investigations, and surfacing relevant data through natural language.
-- **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform.
+- **Knowledge Agent → Platform Optimization Agent**. The original Knowledge Agent answered how-to questions from product documentation. The Platform Optimization Agent expands on that, helping users troubleshoot issues, optimize queries, understand data usage, and generally get more from the platform. It also powers [DojoAI Recommendations](/docs/get-started/dojoai-recommendations-preview), which surfaces these same issues proactively.
 - **Summary Agent → absorbed into SOC Analyst Agent**. Summary Agent's signal summarization capability is now a core part of how the SOC Analyst Agent contextualizes and presents its findings.
 
 ### Can DojoAI access be controlled at a user level?
