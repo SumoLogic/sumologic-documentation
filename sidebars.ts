@@ -1520,7 +1520,7 @@ module.exports = {
           'dashboards/create-panel-with-mobot',
           'alerts/monitors/create-monitor-with-mobot',
           'platform-services/automation-service/playbooks/create-playbooks-with-mobot',
-          'cse/rules/create-rules-with-mobot',         
+          'cse/rules/create-rules-with-mobot',
       ],
     },
     {

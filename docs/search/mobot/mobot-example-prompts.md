@@ -165,4 +165,4 @@ For more information, see [Create Playbooks with Mobot](/docs/platform-services/
 * `Increase the threshold in this rule from 10 to 20 and the time window to 15 minutes.`
 * `Summarize what this rule detects, step by step.`
 
-For more information, see [Create Rules with Mobot](/docs/cse/rules/create-rules-with-mobot.md).
+For more information, see [Create Rules with Mobot](/docs/cse/rules/create-rules-with-mobot/).
