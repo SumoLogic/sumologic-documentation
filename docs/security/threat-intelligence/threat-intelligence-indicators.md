@@ -80,7 +80,7 @@ When you add indicators, the event is recorded in the Audit Event Index. See [Au
 ## Edit a source
 
 Follow the steps below to edit a source:
-1. Select a source in the list of sources. Details of the source appear in a sidebar. Click the **More Actions** dropdown and then select **Edit**.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source-from-sidebar.png')} alt="threat intel edit source from sidebar panel" style={{border: '1px solid gray'}} width="800" /><br/>Or, click the ellipsis icon and select **Edit** from the source details page.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source.png')} alt="threat intel edit source" style={{border: '1px solid gray'}} width="800" />
+1. Select a source in the list of sources. Details of the source appear in a sidebar. Click the **More Actions** dropdown and then select **Edit**.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source-from-sidebar.png')} alt="Edit source from sidebar panel" style={{border: '1px solid gray'}} width="800" /><br/>Or, click the ellipsis icon and select **Edit** from the source details page.<br/><img src={useBaseUrl('img/security/threat-intelligence-edit-source.png')} alt="Edit source" style={{border: '1px solid gray'}} width="800" />
     - You can edit the description of the source.
     - You can click the **Search All Indicators** button to view all the active indicators associated with that source.
         <img src={useBaseUrl('img/security/threat-intelligence-edit-source-panel.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
