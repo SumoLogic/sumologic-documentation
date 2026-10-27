@@ -112,7 +112,7 @@ The table lists indicators with the following details:
 
 To find indicators by value, enter text in the **Search by indicator value** box. The search is case-sensitive.
 
-You can combine a search with filters. The table updates to show only indicators that match both.<br/><img src={useBaseUrl('img/security/threat-intelligence-search-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="800" />
+You can combine a search with filters. The table updates to show only indicators that match both.<br/><img src={useBaseUrl('img/security/threat-intelligence-search-indicators.png')} alt="Search indicators" style={{border: '1px solid gray'}} width="800" />
 
 ### Filter indicators
 
