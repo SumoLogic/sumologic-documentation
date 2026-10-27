@@ -305,6 +305,8 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Rollup table](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage)**. Metric data are stored in Sumo Logic as raw data points, and aggregated over one minute and one hour resolutions. The one minute and one hour aggregated metrics are referred to as rollup tables. Raw data are retained for 7 days, one-minute rollups for 30 days and one-hour rollups for 13 months.
 
+**[Root Cause Agent](/docs/alerts/monitors/root-cause-agent)**. An agentic AI investigator for observability alerts. Started on demand from the Alerts list or an alert's details page, it gathers telemetry across logs and metrics, returns a verdict with supporting evidence, and lets you continue the investigation in Mobot.
+
 **[Rule](/docs/cse/rules/about-cse-rules)**. In Cloud SIEM, a set of logic that fires on incoming records and creates signals when its conditions are met. Cloud SIEM includes six rule types: **Match** (fires on a single record match), **Threshold** (fires when a record matches a minimum number of times in a time window), **Chain** (fires on combinations of event types over a time window), **Aggregation** (fires when aggregation conditions are met), **First Seen** (fires when an entity exhibits a behavior for the first time), and **Outlier** (fires when entity behavior deviates from its established baseline).
 
 

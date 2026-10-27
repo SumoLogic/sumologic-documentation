@@ -65,19 +65,18 @@ See also: [Mobot Example Prompts](/docs/search/mobot/example-prompts).
 
 ### Root Cause Agent
 
-The Root Cause Agent investigates alerts. It gathers telemetry, follows signals across logs and metrics, and returns a verdict, findings, supporting evidence, and a recommended next step. Each finding links to the query that produced it, so you can run it in search and verify the result. You can continue the investigation in Mobot.
+The [Root Cause Agent](/docs/alerts/monitors/root-cause-agent) investigates observability alerts. It gathers telemetry, follows signals across logs and metrics, and returns a verdict, findings, supporting evidence, and recommended actions. Each finding links to the log search or metrics query that produced it, so you can verify the result yourself. You can continue the investigation in Mobot.
 
-Investigations start when an alert matches a trigger you configure, or you can start one on demand. The agent can also investigate alerts that come from outside Sumo Logic.
-
-:::note
-The Root Cause Agent is in Preview for Sumo Logic Log Analytics customers. Contact your Sumo Logic account representative for access.
-:::
+<!-- SME REVIEW (DOCS-1928): confirm whether GA supports starting an investigation only on demand (from the Alerts list or an alert's details page), or also automatically via a trigger you configure. The root-cause-agent.md GA draft currently documents on-demand only, per the DOCS-1928 Jira meeting notes. Also confirm whether external (non-Sumo Logic) alerts are investigable at GA - root-cause-agent.md currently says not yet. -->
+You start an investigation on demand from the **Alerts** list or an alert's details page.
 
 ### DojoAI Credits
 
-DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts and SOC Analyst Agent investigated insights use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
+DojoAI Credits is a shared, organization-wide monthly credit pool for DojoAI usage, instead of per-user daily prompt limits. Mobot prompts, SOC Analyst Agent investigated insights, and Root Cause Agent investigations use credits from the pool. Alerts notify you at 80%, 90%, and 100% of the pool. Agents keep running if you exceed the monthly allocation.
 
 You can also keep the daily free Mobot prompts instead of using a credit pool. To size a pool, contact your Sumo Logic account team.
+
+<!-- SME REVIEW (DOCS-1928): confirm Root Cause Agent's specific credit cost per investigation (not given in the source meeting), the 60-day GA promo terms and daily caps, and overage/cap behavior once the capping capability ships (expected end of November). -->
 
 ### SOC Analyst Agent
 
