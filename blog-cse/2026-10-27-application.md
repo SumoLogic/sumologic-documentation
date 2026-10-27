@@ -22,5 +22,5 @@ From the tab, you can:
 New indicators can take up to 10 minutes to appear. [Learn more](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators).
 
 :::note
-The expired indicator retention period setting is deprecated in this release.
+The expired indicator retention period setting is deprecated with this release.
 :::
