@@ -8,23 +8,23 @@ description: Learn how to use the Sumo Logic Real User Monitoring (RUM) Dashboar
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-## Installing the RUM App (Optional)
+## Installing the RUM app (Optional)
 
-Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your organization. **No action is required**.
+Once Sumo Logic detects data coming from user browsers, the RUM app will be installed automatically for all users of your org. **No action is required**.
 
-The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Installed Apps** folder. Do not modify or delete content in this folder, as it is maintained by Sumo Logic.
+The data will populate in your org's **Sumo Logic RUM - default** dashboards, located inside of your **Installed Apps** folder. Do not modify or delete content in this folder, as it is maintained by Sumo Logic.
 
 If your RUM app is removed accidentally, you'll need to install it manually
 
 import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-## Upgrade/Downgrade the RUM App (Optional)
+## Upgrade/Downgrade the RUM app (Optional)
 
 import AppUpdate from '../../reuse/apps/app-update.md';
 
 <AppUpdate/>
 
-## Uninstalling the RUM App (Optional)
+## Uninstalling the RUM app (Optional)
 
 import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
@@ -50,9 +50,9 @@ Once the RUM app has been installed, use the Real User Monitoring view to gain v
 Example:<br/><img src={useBaseUrl('img/rum/explore-view-rum.png')} alt="Real User Monitoring Load Action Dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
-## Navigating RUM Dashboards
+## Navigating RUM dashboards
 
-### RUM Overview Dashboards
+### RUM overview dashboards
 
 The **RUM Overview** dashboards (**Application**, **Service**, **Service with Environment**, **Action Type**, and **Action**) show the user experience for performance and requests metrics for your selected application, service, environment, and action. Data is broken down by top geo-locations, operating systems, and browsers.
 
@@ -61,9 +61,9 @@ Use these dashboards to:
 * View information about [core web vitals, XHR processing times/errors, and log errors](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics).
 * Understand what top browsers, operating systems, and geolocations are active with your website.
 
-You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
+You can select the timing metric type in the **statistic** dropdown menu on the dashboard header. This will change the browser time metrics types on charts.
 
-You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill down to traces representing user transactions from the selected time point.
+You can also click any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill down to traces representing user transactions from the selected time point.
 
 Overview dashboards on all view levels have a panel showing geographical user activity for the selected entity. Geographic dashboards measure user activity as dot size and performance as a color.
 
@@ -71,7 +71,7 @@ Overview dashboards on all view levels have a panel showing geographical user ac
 
 <img src={useBaseUrl('img/rum/RUM-Overview-Application-Service.png')} alt="RUM Overview Application and RUM Overview Service dashboards" style={{border: '1px solid gray'}} width="800" />
 
-### RUM TopN Application/Service
+### RUM TopN application/service
 
 The **RUM - TopN - Application** and **RUM - TopN - Application Service** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application**, **service**, or **environment**.
 
@@ -81,25 +81,25 @@ Use these dashboards to:
 * Understand [XHR and log errors](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics) your users are experiencing.
 * Find out which browsers and operating systems are in use by your users and where are they are geographically located.
 
-You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
+You can select the timing metric type in the **statistic** dropdown menu on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
 
 <img src={useBaseUrl('img/rum/RUM-TopN-Application.png')} alt="RUM TopN Application and RUM TopN Service dashboards" style={{border: '1px solid gray'}} width="800" />
 
-### RUM Performance Analytics Application/Service
+### RUM performance analytics application/service
 
 The **RUM Performance Analytics** dashboards for **Application**, **Service**, and **Environment** show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
 
 Use these dashboards to:
 * Filter data for specific combinations of browser, operating system, and/or geolocation.
 * Understand [XHR, load, timing metrics](/docs/apm/real-user-monitoring/metrics/#xhr-monitoring-metrics) for the selected user cohort.
-* Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with dropdown.
+* Compare your selected timings against data for a different time period by selecting the appropriate option in the compare_with dropdown menu.
 
-You can click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.
+You can click any data point on the charts to open a details panel and view the **Infrastructure** tab to drill down to traces representing user transactions from the selected time point. For cross-dimensional metrics, only the average statistic type is available.
 
 <img src={useBaseUrl('img/rum/RUM-Performance-Analytics-Application.png')} alt="RUM Performance Analytics Application dashboard" style={{border: '1px solid gray'}} width="800" />
 
 
-## Collecting Browser Errors
+## Collecting browser errors
 
 Sometimes browser UI breaks in an unhandled way, failing to deliver the transaction and degrading user experience. That can happen in situations of unhandled [errors](https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event) or [rejections](https://developer.mozilla.org/en-US/docs/Web/API/Window/unhandledrejection_event), or [failed](https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event) resources. Also, developers can design the page to write erroneous messages to the console.
 
@@ -109,7 +109,7 @@ This way, you can have full visibility into the flow and categories of errors ge
 
 Browser error logs, although collected via RUM script, contribute to your log Continuous Tier quota and credit consumption.
 
-### Working with Browser Errors data
+### Working with browser errors data
 
 Data in the index is query-able using normal log search query. Here’s a sample query and results:
 

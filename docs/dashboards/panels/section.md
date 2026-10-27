@@ -8,6 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Grouping panels into sections helps you to better organize complex dashboards by grouping related panels into logical sections. Each section can be expanded or collapsed, allowing you to focus on specific insights while keeping dashboards clean, structured, and easier to navigate. Sections can help improve dashboard performance by loading and refreshing only the panels in expanded sections. By reducing the number of active panel queries, sections can also help reduce unnecessary query scans and associated costs.
 
+## Section limits
+
+The following limits apply to sections:
+
+- **Sections per dashboard**. A dashboard can have a maximum of 10 sections.
+- **Panels per section**. Each section can contain a maximum of 20 panels.
+
 ## How to add a section
 
 To add a section to your dashboard, follow the below steps: 
@@ -64,6 +71,10 @@ When deleting a section, you can choose to either remove the section only (your 
 #### Do collapsed sections affect dashboard performance?
 
 No. Queries run only for panels in expanded sections. Panels in collapsed sections do not execute queries or incur scan costs until you expand them.
+
+#### How many sections and panels can a dashboard have?
+
+A dashboard can have a maximum of 10 sections, and each section can contain a maximum of 20 panels. See [Section limits](#section-limits).
 
 #### Can sections be nested within other sections?
 

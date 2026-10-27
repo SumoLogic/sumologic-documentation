@@ -26,7 +26,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 
 * **Self-paced**: [Security courses](https://learn.sumologic.com/path/sumo-security)
 * **Instructor-led virtual classes**:
-    * [Workshops: Essential Cloud SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-cloud-siem-skills-for-soc-analysts#section-2)
+    * [Workshops: Essential Cloud SIEM Skills for SOC Analysts](https://www.sumologic.com/learn/training?_workshops=essential-siem-skills-for-soc-analysts#section-2)
     * [Workshops: Automation Workshop](https://www.sumologic.com/learn/training?_workshops=automation-workshop#section-2)
     * [Certifications: Logs for Security](https://www.sumologic.com/learn/training?_certifications=logs-for-security#section-2)
     * [Certifications: Cloud SIEM](https://www.sumologic.com/learn/training?_certifications=cloud-siem#section-2)
@@ -61,7 +61,7 @@ Following are features available with our security solutions. If you have any qu
 | Tags (MITRE ATT&CK, custom tag schema, network blocks) | | &#10003; | |
 | Automation Service | &#10003; | &#10003; | |
 | Open Integration Framework (OIF) | &#10003; | &#10003; | &#10003; |
-| App Central | &#10003; | &#10003; | &#10003; |
+| App Catalog | &#10003; | &#10003; | &#10003; |
 | Playbook |&#10003; | &#10003; | &#10003; |
 | SecOps dashboard | | | &#10003; |
 | Case Manager | | | &#10003; |
