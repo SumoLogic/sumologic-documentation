@@ -140,7 +140,7 @@ Here is the typical workflow to set up and use threat intelligence indicators:
 
 ## Audit logging for threat intelligence
 
-Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) to view events for threat indicators, such as adding indicators, removing indicators, or changing the retention period.
+Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) to view events for threat indicators, such as adding indicators or removing indicators.
 
 Use a search like the following:
 
