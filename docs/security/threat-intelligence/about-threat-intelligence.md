@@ -106,7 +106,7 @@ After threat indicator sources are ingested, they appear on the Threat Intellige
 * When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
 :::
 
-## Threat Intelligence indicators
+## Threat intelligence indicators
 
 Use the **Indicators** tab to view, search, and filter the individual indicators in your threat intelligence data store. For example, you can confirm that an indicator was ingested, check which source supplied it, or verify that a source is delivering data. For details, see [View and search indicators](/docs/security/threat-intelligence/threat-intelligence-indicators/#view-and-search-indicators).<br/><img src={useBaseUrl('img/security/indicators-threat-intelligence.png')} alt="Threat Intelligence indicators" style={{border: '1px solid gray'}} width="800" />
 
