@@ -93,7 +93,7 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | clientId | String | Yes | `null` | Provide the Sophos Client ID you want to use to authenticate collection requests. |  |
-| clientSecret` | String | Yes | `null` | Provide the Sophos Secrete you want to use to authenticate collection requests. |  |
+| clientSecret | String | Yes | `null` | Provide the Sophos Client Secret you want to use to authenticate collection requests. |  |
 | supported_apis | Array of strings | No | `["alerts"]`  | Define one or more of the available APIs to collect: `alerts`, `events`, `cases`, and `detections`. | `["alerts","events","cases","detections"]` |
 | pollingInterval | Integer | No | 300 | This sets how often the Source checks for new data. |  |
 
