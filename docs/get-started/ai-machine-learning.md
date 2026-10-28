@@ -20,7 +20,6 @@ keywords:
    - mcp server
    - root cause agent
    - dojoai credits
-   - recommendations
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
