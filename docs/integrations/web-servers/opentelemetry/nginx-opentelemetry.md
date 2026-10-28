@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Thumbnail icon" width="75"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Nginx icon" width="75"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="OpenTelemetry color icon" width="45"/>
 
 Nginx is a web server used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic app for Nginx helps you monitor activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used, and information about server activity, including bots, observed, and error information.
 
@@ -81,106 +81,37 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+Follow these steps to set up and deploy the source template to collect data in Sumo Logic from a remotely managed OpenTelemetry collector.
 
-<ConfigAppInstall/>
+### Step 1: Set up remotely managed OpenTelemetry collector
 
-### Step 1: Set up OpenTelemetry Collector
+import OtelCollectorInstallation from '../../../reuse/apps/opentelemetry/otel-collector-installation.md';
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+:::note
+If you want to configure your source locally, you can do so by downloading the YAML file. For details, see [Configure OpenTelemetry collectors locally](/docs/integrations/sumo-apps/opentelemetry-collector-insights/#configure-opentelemetry-collectors-locally).
+:::
 
-<SetupColl/>
+<OtelCollectorInstallation/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-Collector.png' style={{border:'1px solid gray'}} alt="Access" />
+### Step 2: Configure the source template
 
-### Step 2: Configure integration
+import NginxConfigureSourceTemplate from '../../../reuse/send-data/nginx-configure-source-template.md';
 
-In this step, you will configure the yaml required for Nginx Collection.
+<NginxConfigureSourceTemplate/>
 
-Below are the inputs required:
+import TimestampParsing from '../../../reuse/apps/opentelemetry/timestamp-parsing.md';
 
-- **Endpoint**. The URL of the status endpoint (default: `http://localhost:80/status`).
-- **Access File log Path**. Enter the path to the Access log file for your nginx instance.
-- **Error file log path**. Enter the path to the error log file for your nginx instance.
-- **Fields**. `webengine.cluster.name` User configured. Enter a name to identify this nginx cluster. This cluster name will be shown in the Sumo Logic dashboards.
+<TimestampParsing/>
 
-Click on the **Download YAML File** button to get the yaml file.
+import ProcessingRules from '../../../reuse/opentelemetry/processing-rules.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Nginx-OpenTelemetry/Nginx-YAML.png' style={{border:'1px solid gray'}} alt="Nginx-YAML" />
+<ProcessingRules/>
 
-### Step 3: Send logs and metrics to Sumo Logic
+### Step 3: Push the source template to the desired remotely managed collectors
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+import DataConfiguration from '../../../reuse/apps/opentelemetry/data-configuration.md';
 
-<LogsIntro/>
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="Linux"
-  values={[
-    {label: 'Linux', value: 'Linux'},
-    {label: 'Windows', value: 'Windows'},
-    {label: 'macOS', value: 'macOS'},
-    {label: 'Chef', value: 'Chef'},
-    {label: 'Ansible', value: 'Ansible'},
-    {label: 'Puppet', value: 'Puppet'},
-  ]}>
-
-<TabItem value="Linux">
-
-1. Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder for the Nginx instance which needs to be monitored.
-2. Restart the collector using:
-  ```sh
-  sudo systemctl restart otelcol-sumo
-  ```
-
-</TabItem>
-<TabItem value="Windows">
-
-1. Copy the yaml to the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2. Restart the collector using 
-  ```sh
-  Restart-Service -Name OtelcolSumo
-  ```
-
-</TabItem>
-<TabItem value="macOS">
-
-1. Copy the yaml to the `/etc/otelcol-sumo/conf.d/` folder in the Nginx instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command:
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-  ```
-
-</TabItem>
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
-</Tabs>
-
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+<DataConfiguration/>
 
 ## Viewing the Nginx dashboards
 

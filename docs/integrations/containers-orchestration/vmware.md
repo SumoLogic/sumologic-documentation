@@ -26,8 +26,8 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 
 The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMware:
 
-* VMware Events using the Events API. See [Events API](https://code.vmware.com/apis/196/vsphere/doc/vim.event.EventManager.html) for more details.
-* VMware Metrics using the Performance API. For more information, see [Performance API](https://code.vmware.com/apis/196/vsphere/doc/vim.PerformanceManager.html).
+* VMware Events using the Events API. See [Events API](https://developer.broadcom.com/xapis/vsphere-web-services-api/latest/vim.event.EventManager.html) for more details.
+* VMware Metrics using the Performance API. For more information, see [Performance API](https://developer.broadcom.com/xapis/vsphere-web-services-api/latest/vim.PerformanceManager.html).
 
 The dashboards provide real-time monitoring with visual data displays, allowing you to analyze events and performance metrics for efficient detection and troubleshooting.
 
@@ -44,7 +44,7 @@ computeResource=esx1.sumolabscluster.com,,,key=3553,,,chainId=3269
 ### Sample queries
 
 The following query is from the vSphere Errors Trend panel of the vCenter Errors - Analysis Dashboard.
-```sql
+```sumo
 _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 | parse "message=*,,," as err_msg
 | parse "host=*,,," as esx_host
@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 ### Step 2: Set up the Sumo Logic Installed Collector
 
-Our Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
+Our Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo Logic service. The Collector runs as a service and starts automatically after installing or rebooting.
 
 See [Installed Collectors](/docs/send-data/installed-collectors) for installation instructions.
 
@@ -167,7 +167,7 @@ Test running a Python script from the directory containing the Sumo Logic script
    </details>
 
 2. Once you are satisfied with the output, modify the **cron_vcenter_events.sh** with the required parameters and create a cron job to periodically run the **cron_vcenter_events.sh** script at the desired time interval.
-   * If utilizing a syslog source, provide the target and target port parameters where the Sumo Collector is installed. If utilizing a local or remote source, use the file parameter to generate the file and configure the **File Path** for a local file source or **Path Expression** for a Remote file source.
+   * If utilizing a syslog source, provide the target and target port parameters where the Sumo Logic Collector is installed. If utilizing a local or remote source, use the file parameter to generate the file and configure the **File Path** for a local file source or **Path Expression** for a Remote file source.
    * The cron job needs to run as root or as a user who has read and write access to the script directories.
    * For more detailed information, see the shell script for configuration options.
 
@@ -183,7 +183,7 @@ For a file source, configure a local or remote file source in one of the followi
 You can also add a wildcard to the path like /var/log/vmware/output/*evt.out for sending only the script-generated files.
 :::
 * **For a syslog source**, configure the syslog source as follows:
-  1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu, select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+  1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
   1. Click **Add Source**.
   2. Select **Syslog** for the Source type.
   3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.

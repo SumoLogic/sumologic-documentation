@@ -5,6 +5,17 @@ sidebar_label: Changelog
 description: Changelog for Redis source template for OpenTelemetry.
 ---
 
+## [5.0.0] - 2026-06-18
+### Added
+- Hashing functionality
+- Validation for field table
+### Removed
+- Removed batch processor in favour of batching through sumologic exporter
+
+## [4.0.0] - 2025-11-07
+### Added
+- Validation for regular expression
+
 ## [3.0.1] - 2025-04-23
 ### Added
 - FAQ for source template

@@ -24,18 +24,18 @@ Essentials plans are ideal for:
 - IT professionals, developers, and analysts who need rapid access to advanced features for security, monitoring, and analytics.
 
 <details>
-<summary>What's a Sumo Credit?</summary>
+<summary>What's a Sumo Logic Credit?</summary>
 
-Sumo Credit is a unit of measure used to flexibly pay for any products (for example; logs, metrics, or storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
+Sumo Logic Credit is a unit of measure used to flexibly pay for any products (for example; logs, metrics, or storage) within your plan. It allows you to allocate resources as needed, helping to avoid unnecessary waste.
 
 </details>
 
 Steps to upgrade:
 
-1. Navigate to the **Manage Plan** page.
-   * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration > Account > Manage Plan**.  
-   * **[New UI](/docs/get-started/sumo-logic-ui)**. From the top navigation menu, go to **Administration > Account > Manage Plan**.
-
+1. Navigate to the **Manage Plan** page.  
+   * **[New UI](/docs/get-started/sumo-logic-ui)**. In the main Sumo Logic menu select **Administration**, and then under **Account** select **Manage Plan**.
+   * **[Classic UI](/docs/get-started/sumo-logic-ui-classic)**. From the left navigation menu, go to **Administration > Account > Manage Plan**.
+   
 1. Select your Essentials plan.
    - Choose **Troubleshoot**, **Collaborate**, or **Orchestrate** ([learn more](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#essentials)).
    - Choose **monthly** or **annual** billing.

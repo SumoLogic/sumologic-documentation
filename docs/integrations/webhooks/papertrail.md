@@ -5,7 +5,7 @@ description: Learn about the collection process for the Sumo Logic Papertrail in
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/webhooks/papertrail-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/webhooks/papertrail-logo.png')} alt="Papertrail icon" width="50"/>
 
 Papertrail provides hosted log aggregation and log management for servers, apps, and cloud services. You can use a webhook in the Papertrail platform to forward saved search-generated events from the Papertrail platform to the Sumo Logic HTTP endpoint. Using these logs, you can monitor error events in Sumo Logic. For more details, refer to the [Papertrail Documentation](https://www.papertrail.com/help/papertrail-documentation/).
 
@@ -39,7 +39,7 @@ Follow the below steps to configure the Papertrail webhook.
     - **URL**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
 6. Click **Create Alerts**.
 7. Verify Papertrail events are getting ingested in Sumo Logic by executing the following query on Sumo Logic's Log Search panel.
-```sql
+```sumo
 `_sourceCategory=webhook/papertrail`
 ```
 

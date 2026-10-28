@@ -2,13 +2,18 @@
 id: cloud-siem-automation-examples
 title: Cloud SIEM Automation Examples
 sidebar_label: Automation Examples
-description: See examples that show you how to create automations for different situations.   
+description: Learn to create Cloud SIEM automations using the Automation Service, with examples ranging from simple enrichments to advanced custom integration workflows.
+keywords:
+  - cloud siem automation
+  - automation service
+  - playbooks
+  - enrichment
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ActionsLimit from '../../reuse/actions-limit.md';
 
-Following are examples that show you how to create Cloud SIEM automations using the [Automation Service](/docs/platform-services/automation-service/). The examples, which are listed in order from simple (performing a basic automation using an out-of-the-box integration) to advanced (creating a custom integration), illustrate many of the tasks you’ll perform on a regular basis when you create your own automations.
+This article walks through four examples of creating Cloud SIEM automations using the [Automation Service](/docs/platform-services/automation-service/), ranging from a simple enrichment using an out-of-the-box integration to an advanced custom integration. The examples illustrate many of the tasks you’ll perform on a regular basis when you create your own automations.
 
 :::note
 <ActionsLimit/>
@@ -19,14 +24,14 @@ Following are examples that show you how to create Cloud SIEM automations using 
 The following example shows how to add an enrichment to an insight using the “IP Reputation V3” action from VirusTotal.
 
 1. Edit the VirusTotal OIF resource:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.   
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.   <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
    1. Select **VirusTotal OIF**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
    1. In the **Edit resource** dialog, enter the **API URL**: `https://www.virustotal.com`.
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" style={{border: '1px solid gray'}} width="400"/>
 1. Create the playbook:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation > Playbooks**. 
    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" width="300"/>
    1. In the **New playbook** dialog, give your playbook a **Name**.
    1. For **Type**, enter **CSE**.
@@ -59,10 +64,10 @@ The following example shows how to add an enrichment to an insight using the “
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-   1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+   1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Automation**. 
    1. At the top of the **Automation** tab, click **+ Add Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
    1. For **Object (expects attributes for)**, select **Insight**.
@@ -89,16 +94,16 @@ Depending on the action, you may need to select a playbook input. The playbook i
 The following example shows how to configure a notification that sends an email upon completion of an action to perform a log search in Sumo Logic core platform.
 
 1. Edit the Sumo Logic resource: 
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-edit-sumo-logic-resource.png')} alt="Edit a resource" style={{border: '1px solid gray'}} width="400"/>
 1. Create the playbook:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" style={{border: '1px solid gray'}} width="300"/>
    1. In the **New playbook** dialog, give your playbook a **Name**, such as **Notification for a log search**.
    1. For **Type**, enter **CSE**.
@@ -131,10 +136,10 @@ The following example shows how to configure a notification that sends an email 
    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-   1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+   1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu of Cloud SIEM select **Configuration**, and then under **Integrations** select **Automation**. 
    1. At the top of the **Automation** tab, click **+ Add Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
    1. For **Object (expects attributes for)**, select **Insight**.
@@ -163,16 +168,16 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Log in.
     1. Go to your [account settings](https://www.ipqualityscore.com/user/settings) and  copy the **API Key**. You will use this key later.
 1. Create a new IP Quality Score integration:
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
     1. Click the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-integration-button.png')} alt="Add integration button" style={{border: '1px solid gray'}} width="300"/>
-    1. Download this file: <a href="/files/IP-Quality-Score-Test.yaml" target="_blank">IP-Quality-Score-Test.yaml</a>.
+    1. Download this file: <a href={useBaseUrl('files/IP-Quality-Score-Test.yaml')} target="_blank">IP-Quality-Score-Test.yaml</a>.
     1. In the **New Integration** dialog, click **Upload File**.
     1. Drag the file into the **Select File** box.
     1. Click **Upload**. An IP Quality Score integration is created.
     1. Open the new **IP Quality Score** integration.
     1. Hover your mouse over the **IP Quality Score** name and click the **Upload** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-upload-button.png')} alt="Upload button" style={{border: '1px solid gray'}} width="250"/>
     1. In the **Upload** dialog, select **Action** in the **Type** field and click **Next**.
-    1. Download this file: <a href="/files/IP-Reputation.yaml" target="_blank">IP-Reputation.yaml</a>.
+    1. Download this file: <a href={useBaseUrl('files/IP-Reputation.yaml')} target="_blank">IP-Reputation.yaml</a>.
     1. In the **Upload** dialog, click **Upload File**. 
     1. Drag the file into the **Select File** box.
     1. Click **Upload**. The **IP Reputation** action appears in the IP Quality Score integration.
@@ -187,7 +192,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
        * **Proxy options**: Select **Use no proxy**.
     1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-resource-ip-quality-score.png')} alt="Add resource for IP Quality Score" style={{border: '1px solid gray'}} style={{border: '1px solid gray'}} width="400"/>   
 1. Create the playbook:
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
     1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" style={{border: '1px solid gray'}} width="300"/>
     1. Give your playbook a **Name**, such as **Custom Enrichment with IP Quality Score**.
     1. For **Type**, select **CSE**.
@@ -235,10 +240,10 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+    1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation in Cloud SIEM to run the playbook:
-    1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+    1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Automation**. 
     1. At the top of the **Automation** tab, click **+ Add Automation**.
     1. For **Playbook**, select the playbook you created in the previous steps.
     1. For **Object (expects attributes for)**, select **Insight**.
@@ -271,25 +276,25 @@ The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/
 The following example pulls together elements of the [Simple example](#simple-example-configure-an-enrichment) and [Intermediate example](#intermediate-example-configure-a-notification) above. The resulting playbook runs an enrichment using VirusTotal, performs a Sumo Logic search, and sends an email notification.
 
 1. Edit the VirusTotal OIF resource:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. 
    1. Select **VirusTotal OIF**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="500"/>
    1. In the **Edit resource** dialog, enter the **API URL**: `https://www.virustotal.com`.
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" style={{border: '1px solid gray'}} width="400"/>
 1. Edit the Sumo Logic resource:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the top Cloud SIEM menu select **Configuration**, and then under **Integrations** select **Automation**. 
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" style={{border: '1px solid gray'}} width="600"/>
-   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+   1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-an-access-key) and copy the resulting access ID and access key.
    1. Enter the **Access ID** and the **Access Key**.
    1. Select your **Time Zone**.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-edit-sumo-logic-resource.png')} alt="Edit a resource" style={{border: '1px solid gray'}} style={{border: '1px solid gray'}} width="400"/>
 1. Create the playbook:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Automation > Playbooks**. 
    1. Click the **+** button to the left of **Playbook**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-playbook-button.png')} alt="Add playbook button" style={{border: '1px solid gray'}} width="300"/>
    1. In the **New playbook** dialog, give your playbook a **Name**.
    1. For **Type**, enter **CSE**.
@@ -358,10 +363,10 @@ The following example pulls together elements of the [Simple example](#simple-ex
     1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+    1. To [test the playbook](/docs/platform-services/automation-service/playbooks/troubleshoot-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/automation-example-playbook-4.png')} alt="Complex playbook" style={{border: '1px solid gray'}} width="800"/> 
 1. Create an automation in Cloud SIEM to run the playbook:
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the top menu select **Configuration**, and then under **Integrations** select **Automation**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. 
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Cloud SIEM**, and then under **Cloud SIEM Integrations** select **Automation**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Cloud SIEM**. In the main Sumo Logic menu select **Data Management**, and then under **Integrations** select **Automation**. 
    1. For **Playbook**, select the playbook you created in the previous steps.
    1. For **Object (expects attributes for)**, select **Insight**.
    1. For **Execution**, select **Manually Done**.
@@ -375,3 +380,25 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. View the **Status** field to find out if the playbook has a status of Success or another status such as **Completed with errors**.
    1. Click **View Playbook** to see details of the playbook run. Each node in the playbook will show either **Success** or **Failed**.
    1. Click a node to download results of that node’s run.
+
+## FAQ
+
+### What's the easiest way to start automating Cloud SIEM tasks?
+
+Start with the simple enrichment example on this page, which adds an IP reputation lookup to an insight using an out-of-the-box VirusTotal integration and requires no custom code.
+
+### Do I need a custom integration to automate Cloud SIEM tasks?
+
+No. Most automations, including enrichments and notifications, can be built using out-of-the-box integrations like VirusTotal, Sumo Logic, and Basic Tools. Custom integrations are only needed for services without a built-in integration.
+
+### Can Cloud SIEM automations run outside the Sumo Logic cloud?
+
+Yes. Actions can run from the Sumo Logic cloud, or from other environments using the [Automation Service Bridge](/docs/platform-services/automation-service/automation-service-bridge/), which is required for custom integrations.
+
+### What's the difference between the simple, intermediate, and advanced examples on this page?
+
+The simple example configures an enrichment using an out-of-the-box integration (VirusTotal). The intermediate example adds a notification action, sending an email, after an enrichment. The advanced examples build a custom integration from YAML files, or combine enrichment, search, and notification into one complex playbook.
+
+### Can I add enrichment to entities instead of insights?
+
+Yes. Use the same custom integration steps as for insight enrichment, but select **Entity** instead of **Insight** as the playbook input, and use the **Add Entity Enrichment** action instead of **Add Insight Enrichment**.

@@ -49,7 +49,7 @@ By default, the OpenTelemetry Collector will flush data either every second or e
 
 The default cache size for the Sumo Logic OpenTelemetry Collector is 5000 batches, each containing up to 1024 data points. The actual on-disk size of the cache depends on the size of the data points, but it's typically around 700 bytes per data point.
 
-The collector caches data when it’s unable to send it to the Sumo backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo, and others.
+The collector caches data when it’s unable to send it to the Sumo Logic backend at the rate the data it is being produced. This can be due to various reasons, such as network issues or temporary unavailability of Sumo Logic, and others.
 
 #### Does the Sumo Logic backend know when a OpenTelemetry Collector is down? How does that work?
 
@@ -78,11 +78,11 @@ Because the OpenTelemetry Collector is connected to the terminal, it will stop r
 
 #### I am seeing some errors related to Sumo Logic OpenTelemetry Collector stating that `Unable to get a heartbeat`. Does this mean my collector is not collecting any data?
 
-<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="error2-faq.png" width="950" />
+<img src={useBaseUrl('img/send-data/error2-faq.png')} alt="Unable to get a heartbeat error" width="950" />
 
 This means the collector is having trouble connecting to the Sumo Logic backend.
 
-While data should still be collected and shipped to Sumo, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
+While data should still be collected and shipped to Sumo Logic, the collector may appear as down in the user interface. In general, these types of errors can occur during normal operations. They can be safely ignored as long as they are not persistent.
 
 ## Collector installation errors
 
@@ -157,7 +157,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors logs in Sumo Logic by performing a log search similar to the following:
-```
+```sumo
 _collector="<collector name>" and _sourceName="/var/log/otelcol.log"
 ```
 
@@ -215,7 +215,7 @@ service:
 ```
 
 Doing this will allow you to search the collectors metrics in Sumo Logic by performing a metrics search similar to the following:
-```
+```sumo
 _collector="<collector name>"  _sourcename="otc metric input"
 ```
 
@@ -235,7 +235,7 @@ To work around this, you need to delete the existing collector registration and 
 1. Delete the local collector registration file in `~/.sumologic-otel-collector/` and wait for 10 minutes for the collector to get offline.
 1. Remove the collector in Sumo Logic UI.
    1. Sign in to Sumo Logic platform.
-   1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
+   1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
    1. Find your collector.
 
 After that, the collector will register on the next run.
@@ -260,13 +260,34 @@ After successful registration of collector, if you delete the collector in Sumo 
 
 To work around this, delete the local collector registration file at `~/.sumologic-otel-collector/`. The collector will re-register on next run.
 
-### Enabling `clobber` property re-registers collector on every restart
+### Enabling the clobber flag re-registers collector on every restart
 
-If you set the `extensions.sumologic.clobber` property to `true`, a new collector registration that replaces the previously existing registration will be created on every run of the collector.
+If you set the `extensions.sumologic.clobber` flag to `true`, a new collector registration that replaces the previously existing registration will be created on every run of the collector.
 
 This affects the `_collectorId` attribute, which is different for every new collector registration.
 
-To prevent this, remove the `extensions.sumologic.clobber` property or set it to `false`.
+To prevent this, remove the `extensions.sumologic.clobber` flag or set it to `false`.
+
+### Registration is rejected with an HTTP 429 error when the clobber flag is enabled
+
+If the collector fails to register with an HTTP `429` response (`ot-collector-registration:clobber_rate_limit_exceeded`) and the following message, Sumo Logic has rate limited your registration requests:
+
+```
+Too many collector registrations with clobber=true for collector name '<name>'. This usually indicates multiple machines are attempting to register with the same collector name simultaneously. Use unique collector names per machine or disable clobber.
+```
+
+This rate limit applies to OpenTelemetry collectors only, not installed collectors. Registration is rejected after about 50 registration attempts with `extensions.sumologic.clobber` set to `true` and the same collector name within an hour. A common cause is multiple machines that share a collector name, each deleting the other's collector when it registers.
+
+To resolve this:
+
+1. Find any other running collector that uses the same collector name, on this machine or a different one.
+1. Do one of the following:
+   * Use a unique `collector_name` for each machine.
+   * Remove the `extensions.sumologic.clobber` flag or set it to `false`. Use `clobber` only to replace a collector that is no longer running.
+1. Stop all registration attempts with that name and wait about an hour before you try again. Each attempt, including a rejected one, resets the one-hour timer.
+1. Restart the collector.
+
+For more information, see [Clobber rate limiting](/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference/#clobber-rate-limiting).
 
 ### Cannot start reading file logs from specific point in time
 
@@ -282,3 +303,61 @@ The other problem is that it is not currently possible for Filelog receiver to s
 There is currently no workaround for this.
 
 [filelogreceiver_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.71.0/receiver/filelogreceiver/README.md
+
+### Collector name not updating after configuration change for locally managed collectors
+
+Starting from **Sumo Logic OpenTelemetry Collector version `0.137.0-sumo-0`**, changing the `extensions.sumologic.collector.name` property in the configuration file **does not automatically update** the locally managed collector name upon restart.
+
+#### Cause
+The collector retains the previous name from the local credentials file and does not regenerate it unless the credentials are removed.
+
+#### Resolution
+To apply the new collector name after modifying the configuration:
+
+1. **Stop** the collector.
+2. **Delete all files in the local credentials directory** (path differs by OS).
+3. **Start** the collector again.
+
+
+#### Example commands
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Windows', value: 'Windows'},
+    {label: 'macOS', value: 'macOS'}
+  ]}>
+
+<TabItem value="Linux">
+  
+```bash
+sudo systemctl stop otelcol-sumo
+sudo rm /var/lib/otelcol-sumo/credentials/*
+sudo systemctl start otelcol-sumo
+```
+
+</TabItem>
+
+<TabItem value="Windows">
+  
+```powershell
+net stop OtelcolSumo
+Remove-Item "C:\ProgramData\Sumo Logic\OpenTelemetry Collector\data\credentials\*" -Force
+net start OtelcolSumo
+```
+
+</TabItem>
+
+<TabItem value="macOS">
+  
+```bash
+sudo launchctl unload /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+sudo rm /var/lib/otelcol-sumo/credentials/*
+sudo launchctl load /Library/LaunchDaemons/com.sumologic.otelcol-sumo.plist
+```
+
+</TabItem>
+
+</Tabs>

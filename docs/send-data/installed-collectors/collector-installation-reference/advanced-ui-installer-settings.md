@@ -23,7 +23,7 @@ Follow the below steps to provide **Full Control** privileges for the Custom Use
 1. Open the registry editor from the start menu.
 1. Navigate to the below path and search for **sumo-collector** folder.
     `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sumo-collector`
-1. Right-click on the **sumo-collector** folder and select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="registry-editor" width="600" style={{border: '1px solid gray'}} />
+1. Right-click on the **sumo-collector** folder and select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="Registry editor" width="600" style={{border: '1px solid gray'}} />
 1. In the **Permissions for sumo-collector** pop-up:
     1. Click **Add**.
     1. Select the **Full Control** **Allow** checkbox.
@@ -35,7 +35,7 @@ Follow the below steps to provide **Full Control** privileges for the Custom Use
 1. After the collector is installed, open the registry editor from the start menu.
 1. Navigate to the below path and search for **sumo-collector** folder.
     `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sumo-collector`
-1. Right-click on the **sumo-collector** folder and select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="registry-editor" width="600" style={{border: '1px solid gray'}} />
+1. Right-click on the **sumo-collector** folder and select **Permissions** from the dropdown menu.<br/><img src={useBaseUrl('img/send-data/registry-editor.png')} alt="Registry editor" width="600" style={{border: '1px solid gray'}} />
 1. In the **Permissions for sumo-collector** pop-up:
     1. Click **Add**.
     1. Select the **Full Control** **Allow** checkbox.
@@ -63,8 +63,8 @@ Data Collection API.
 | Time Zone | Time zone to use when it is not extracted from the timestamp. |
 | CPU Target Percentage | You can choose to set a [CPU target](/docs/send-data/collection/set-collector-cpu-usage-target.md) to limit the amount of CPU processing a Collector uses. |
 | Ephemeral | When true, the collector will be deleted after 12 hours of inactivity. For more information, see [Setting a Collector as Ephemeral](set-collector-as-ephemeral.md). |
-| Clobber | When selected, if there is any existing Collector with the same name, that Collector will be deleted (clobbered). See Forcing a Collector's Name with Clobber for more information. |
-| FIPS-compliant JCE | When selected, FIPS 140-2 compliant Java Cryptography Extension (JCE) will be enabled.<br/>This option is only supported in specific deployments, ask your Sumo account representative for details. |
+| Clobber | When selected, if there is any existing Collector with the same name, that Collector will be deleted (clobbered). See [Forcing a Collector's Name with Clobber](force-collectors-name-clobber.md) for more information. |
+| FIPS-compliant JCE | When selected, FIPS 140-2 compliant Java Cryptography Extension (JCE) will be enabled.<br/>This option is only supported in specific deployments, ask your Sumo Logic account representative for details. |
 
 ## Proxy Settings
 

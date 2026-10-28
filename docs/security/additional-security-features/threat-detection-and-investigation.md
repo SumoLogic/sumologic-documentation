@@ -7,19 +7,20 @@ description: Learn how to use Sumo Logic to monitor security data and investigat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+Sumo Logic helps you detect and investigate threats by collecting your security logs in one place, then using pre-built apps, monitors, and search to find and trace suspicious activity. The key use cases on this page are detecting brute force attempts, detecting impossible travel (land speed violations), and checking logged IP addresses against threat intelligence.
+
 To use Sumo Logic for threat detection and investigation, you can use [pre-built apps](#pre-built-apps-for-threat-detection-and-investigation), or [build your own dashboards](#build-a-dashboard-for-threat-detection-and-investigation).
 
 ## Pre-built apps for threat detection and investigation
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
-* [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
-* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
+* [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For example, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage Sumo Logic [threat intelligence](/docs/security/threat-intelligence/).
 * [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.
 * [**Global Intelligence Service**](/docs/integrations/global-intelligence/). Apps that provide real-time security intelligence for detection, prioritization, investigation, and workflow.
 
 ## About threat detection and investigation
 
-Threat detection and investigation refers to identifying and exploring threats or security-related events within an asset, application, or network as quickly and effectively as possible.
+*Threat detection and investigation* refers to identifying and exploring threats or security-related events within an asset, application, or network as quickly and effectively as possible.
 
 *Threat detection* identifies threats within cloud-based, hybrid, and on-premises infrastructure and applications before they cause major issues for a business. The sooner security teams uncover a security-related event, the quicker they can investigate and mitigate it.
 
@@ -42,7 +43,7 @@ Increase the velocity and accuracy of threat detection with integrations to appl
 
 #### Step 3: Configure robust alerting policies to notify SecOps teams when changes or outliers occur
 
-The quicker your team can get to work, the quicker investigation and mitigation can happen. With [Sumo Logic Monitors](/docs/alerts/monitors/create-monitor/), teams can track and build alerts that fit their unique requirements, instead of getting hit with alerts that are too vague or numerous. You can create fine-grained conditions under which alerts trigger, letting you customize them to reduce noise.
+The quicker your team can get to work, the quicker investigation and mitigation can happen. With Sumo Logic's [monitors](/docs/alerts/monitors/create-monitor/), teams can track and build alerts that fit their unique requirements, instead of getting hit with alerts that are too vague or numerous. You can create fine-grained conditions under which alerts trigger, letting you customize them to reduce noise.
 
 #### Step 4: Perform root cause analysis to investigate the threat fully
 
@@ -62,28 +63,28 @@ The steps in this section describe how to query [AWS CloudTrail](/docs/integrati
 After you build the dashboard to find and monitor security events, we'll show you how to enhance the dashboard to do the following threat investigations:
 
 * Detect brute force attempts by monitoring AWS CloudTrail data for a high number of failed login attempts within a period of time. Brute force attacks are when a hacker tries many different passwords to attempt to gain access. These attacks are a common cause of security breaches on governments, businesses, organizations, and private individuals.
-* Detect land speed violations by using geo lookup location data and combining it with timestamps and the Haversine formula. Land speed violations, also known as impossible travel, are a type of suspicious activity where a user logs in to an account in two different locations within a short period of time. If there are two logins to the same account on opposite sides of the globe in the same hour, at least one of those logins was probably illegitimate.
+* Detect land speed violations by using geo lookup location data and combining it with timestamps and the Haversine formula. Land speed violations, also known as impossible travel, are a type of suspicious activity where a user logs in to an account in two different locations within a short period of time. If a user logs in to the same account from opposite sides of the globe within an hour, at least one of those logins was probably illegitimate.
 * Look up user information with Sumo Logic [threat intelligence](/docs/security/threat-intelligence/find-threats/) to see if any of the IP addresses you have logged are known threats or have been tied to malicious activity.   
 
 ### Step 1: Monitor user activity with a dashboard
 
 We are going to create a dashboard to look at our security activity in several different ways.  In this step you will query CloudTrail logs to create a Top 10 User Activity list, turn it into a bar chart, and add it to your dashboard.  
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Dashboard**. 
 1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="A screenshot showing Time Series selected" style={{border: '1px solid gray'}} width="600"/>
 1. Create a CloudTrail query to identify bad actors.  
    1. Copy or type the following query to the query window. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
-     ```
-     _sourceCategory=Labs/AWS/CloudTrail
-     | json field=_raw "userIdentity.userName" as actor
-     | json field=_raw "eventType" as event_type
-     | json field=_raw "sourceIPAddress" as src_ip
-     | json field=_raw "eventName" as event_name
-     | count by actor,event_type,event_name
-     | top 10 actor by event_type,_count
-     | transpose row actor column event_type
-     ```
-     <br/>Notice how this query searches AWS CloudTrail logs to extract the user, event, IP addresses, and event names as metadata using a parse json command, so you can use the extracted values to monitor user activity.
+        ```
+        _sourceCategory=Labs/AWS/CloudTrail
+        | json field=_raw "userIdentity.userName" as actor
+        | json field=_raw "eventType" as event_type
+        | json field=_raw "sourceIPAddress" as src_ip
+        | json field=_raw "eventName" as event_name
+        | count by actor,event_type,event_name
+        | top 10 actor by event_type,_count
+        | transpose row actor column event_type
+        ```
+       Notice how this query searches AWS CloudTrail logs to extract the user, event, IP addresses, and event names as metadata using a parse json command, so you can use the extracted values to monitor user activity.
    1. In the upper right, change the time frame for the query to be for the last 24 hours.<br/><img src={useBaseUrl('img/csa/24-hours.png')} alt="A screenshot showing 24 hours selected" style={{border: '1px solid gray'}} width="300"/>
    1. Press Enter or click the magnifying glass icon to run the search.
 1. In the **Panel Settings** area, change the chart type to **Bar**.<br/><img src={useBaseUrl('img/csa/bar-chart-setting.png')} alt="Chart tab showing the Bar chart type selected" style={{border: '1px solid gray'}} width="800"/>
@@ -94,7 +95,7 @@ We are going to create a dashboard to look at our security activity in several d
 
 You can add more flexibility to your queries and dashboard outputs by using template variables.
 1. In the upper right corner of the dashboard, change the time range to 24 hours.
-1. Click on the filter icon to display the template variable bar.<br/><img src={useBaseUrl('img/csa/filter-icon.png')} alt="Filter icon" style={{border: '1px solid gray'}} width="200"/>
+1. Click the filter icon to display the template variable bar.<br/><img src={useBaseUrl('img/csa/filter-icon.png')} alt="Filter icon" style={{border: '1px solid gray'}} width="200"/>
 1. In the template variable bar, select **Create a Template Variable**.<br/><img src={useBaseUrl('img/csa/create-template-variable.png')} alt="Create a template variable" style={{border: '1px solid gray'}} width="800"/>
 1. In this panel for the **Variable Name** enter **event_type** and for the **Variable Type**, select **Logs Search**.<br/><img src={useBaseUrl('img/csa/create-template-variable-dialog.png')} alt="Create a template variable dialog" style={{border: '1px solid gray'}} width="800"/>
 1. For the query paste the following. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -122,7 +123,7 @@ You can add more flexibility to your queries and dashboard outputs by using temp
 1. Your results look like something like this. <br/><img src={useBaseUrl('img/csa/create-variable-2.png')} alt="Create another template variable" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Create Template Variable** button.
 1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name.
-1. Click on the three vertical dots in the upper right corner of the **Top 10 User Activity** panel.
+1. Click the three vertical dots in the upper right corner of the **Top 10 User Activity** panel.
 1. Select the **Edit** option so you can modify your query.
 1. We want to filter by event_type in our panel, but allow the dashboard viewer options to pick the event type. Add a new line to the query by pressing Shift + Enter and type or copy the following code:
    ```
@@ -199,7 +200,7 @@ Your dashboard should now look something like this:<br/><img src={useBaseUrl('im
 
 In the previous steps, we showed you how to build a dashboard to detect and monitor security data. In the following steps, we'll enhance the dashboard to perform threat investigation.
 
-In this step, we'll show you how to detect brute force attacks. Brute force attacks are generally noted by a user failing to login a number of times, and then logging in successfully. Let's write a query to look for this and display the results.
+In this step, we'll show you how to detect brute force attacks. Brute force attacks are generally noted by a user failing to log in a number of times, and then logging in successfully. Let's write a query to look for this and display the results.
 
 1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -269,7 +270,7 @@ A "landspeed violation" occurs when a user logs in from an IP address and then l
      * Converts the IP address to a decimal and moves through the users' IP addresses getting both the last login time and the previous login time.
      * Converts the decimal IP address back to an IPv4 address.
      * Looks up the country information for each IP address and filters out any NULL values.             
-     * Uses the [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to calculate the kilometers in distance between the two locations.   
+     * Uses the [haversine formula](https://en.wikipedia.org/wiki/Haversine_formula) to calculate the kilometers in distance between the two locations.   
      * Calculates the time difference between the latest and previous logins, and then calculates, based on the distance, how fast that user must have been traveling in order to have personally logged in at both locations and times.
      * Adds the speed threshold above which the calculated speed would be considered "suspicious" or "unrealistic" (we use 500 km/hr in this case).  
      * Clean up the results and format for better presentation on the dashboard.
@@ -298,7 +299,12 @@ We need a way to see if any of the IP addresses we have logged are known threats
    | fields - ip_address,malicious_confidence,actor,kill_chains,ip_address_types,_sourceCategory,_source | count by _timeslice
    | outlier _count window=5,threshold=3,consecutive=1,direction=+-
    ```
-<!-- Per DOCS-643, replace code example with this after `sumo://threat/cs` is replaced by `threatlookup`:
+1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. 
+1. Under **Chart Type**, select **Line Chart**.
+1. Rename this panel **IP Threat Count**.
+1. Click the **Add to Dashboard** button.
+
+<!-- Per DOCS-643, replace code example above with this after `sumo://threat/cs` is replaced by `threatlookup`:
    ```
    _sourceCategory=Labs/AWS/CloudTrail 
    | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
@@ -329,11 +335,49 @@ We need a way to see if any of the IP addresses we have logged are known threats
    |sum (ip_count) as threat_count
    ```
    -->
-1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame. 
-1. Under **Chart Type**, select **Line Chart**.
-1. Rename this panel **IP Threat Count**.
-1. Click the **Add to Dashboard** button.
 
 :::tip
 Now that you've created a dashboard, you can [share it](/docs/dashboards/share-dashboard-new) or [export it](/docs/dashboards/export-dashboard-new). [Exporting and importing](/docs/get-started/library/#import-and-export-content-in-the-library) dashboards lets you use dashboards created in one org or account on another org or account. 
 :::
+
+## FAQ
+
+### What cloud logging strategy should I use?
+
+Centralize logs from your cloud, hybrid, and on-premises sources in one platform so you can search and correlate them together. A [data lake](/docs/security/additional-security-features/data-lake/) gives you one place to aggregate structured and unstructured security data, which is the first step in the [best practices guide](#best-practices-guide-for-implementing-threat-detection-and-investigation) on this page.
+
+### How do I secure my cloud infrastructure?
+
+Collect and aggregate your security data, use integrations to surface trends and threats, set alerting policies so your team is notified quickly, and use search for root cause analysis. For AWS, [Cloud Infrastructure Security for AWS](/docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/) adds pre-built security monitoring.
+
+### What should I monitor in my cloud environment?
+
+At minimum, monitor authentication events, network traffic, and infrastructure configuration changes. The example dashboard on this page monitors AWS CloudTrail for user activity, console login locations, and failed login attempts.
+
+### How do I detect security threats in my cloud environment?
+
+Collect your cloud audit logs, such as AWS CloudTrail, then build searches and dashboards for suspicious activity. This page shows how to [detect brute force attempts](#step-5-detect-brute-force-attacks) from failed logins, [detect landspeed violations](#step-6-detect-landspeed-violations), and look up IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/). Use [monitors](/docs/alerts/monitors/create-monitor/) to be alerted when these conditions occur.
+
+### How do I centralize security log data for threat detection?
+
+Send logs from your workloads, databases, and other sources to Sumo Logic using [collectors and sources](/docs/send-data/), then store and analyze them in one place. Aggregating security data in a [data lake](/docs/security/additional-security-features/data-lake/) lets you run detection and investigation across all of it.
+
+### What logs do I need to investigate a phishing incident?
+
+Start with the logs from your email security tools and your sign-in and authentication logs. Sumo Logic has [Cloud-to-Cloud sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) for tools such as [Proofpoint](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source/), [Mimecast](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source/), and [Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/). Check any IP addresses you find against [threat intelligence](/docs/security/threat-intelligence/find-threats/).
+
+### What is a checklist for investigating a compromised account?
+
+1. Review failed logins and [brute force attempts](#step-5-detect-brute-force-attacks) for the account.
+1. Check [console login locations](#step-3-monitor-geolocation-of-console-logins) and [landspeed violations](#step-6-detect-landspeed-violations).
+1. Look up the source IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/).
+1. Search the account's activity in your AWS CloudTrail logs to see what it accessed or changed.
+1. Contain the account, then keep monitoring it with a [monitor](/docs/alerts/monitors/create-monitor/). See [What is incident response?](/docs/cloud-soar/introduction/#what-is-incident-response).
+
+### What information do I need to collect during a security incident?
+
+Try to answer who, what, where, when, why, and how the event occurred. In Cloud SIEM, open the insight to see its entities, signals, and timeline. You can also pivot to Sumo Logic search for deeper investigation. See [Investigating an insight](/docs/cse/get-started-with-cloud-siem/intro-for-analysts/#investigating-an-insight).
+
+### How do I build an incident response runbook?
+
+Base the runbook on the [incident response cycle](/docs/cloud-soar/introduction/#what-is-incident-response): preparation, identification, containment, eradication, recovery, and lessons learned. Then automate steps with [Cloud SOAR playbooks](/docs/cloud-soar/introduction/#how-can-playbooks-help-with-incident-response), which can help with incident containment, eradication, and recovery.

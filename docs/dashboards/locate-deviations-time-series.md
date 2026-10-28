@@ -5,7 +5,7 @@ description: Learn how to create charts that locate deviations in a time series 
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-An **outlier** is a data point that is outside the range of expected values. This page shows you how to locate deviations beyond thresholds in a time series. 
+An **outlier** is a data point that is outside the range of expected values. This page shows you how to locate deviations beyond thresholds in a time series.
 
 :::note
 Currently, the feature is only available for logs queries.
@@ -13,15 +13,15 @@ Currently, the feature is only available for logs queries.
 
 ## Graphing log queries to find outliers
 
-You can graph log queries to determine where there are deviations from normal behavior in a time series. Locating outliers can help you understand the behavior trends of a time series. For more  in-depth information, see [outlier operator](/docs/search/search-query-language/search-operators/outlier).
+You can graph log queries to determine where there are deviations from normal behavior in a time series. Locating outliers can help you understand the behavior trends of a time series. For more in-depth information, see [`outlier` operator](/docs/search/search-query-language/search-operators/outlier).
 
 To graph a log query and determine outliers, do the following:
 
-1. In Sumo Logic, go to and open a Dashboard.
-1. In the upper right corner click **Add Panel** and select **Time Series** as the panel type.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/example-time-series.png')} alt="example time series" style={{border: '1px solid gray'}} width="300" />
+1. In Sumo Logic, go to and open a dashboard.
+1. In the upper right corner click **Add Panel** and select **Time Series** as the panel type.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/example-time-series.png')} alt="example time series" style={{border: '1px solid gray'}} width="800" />
 1. By default, the query builder is set for a **Logs** query.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/Add_Panel_Logs_Query_option.png')} alt="Add_Panel_Logs_Query_option" style={{border: '1px solid gray'}} width="200" />
 1. Enter your log query in the text field on the right and press **Return** to run the query. We used the following query for our example.
-    ```sql
+    ```sumo
     (_sourceCategory=airflow-service)
     | parse "in time *" as response_time
     | timeslice 10m
@@ -45,7 +45,7 @@ To customize the visual appearance of the graph, do the following:
     * **Line Type**. Boundary line of the outlier region.
     * **Fill Opacity**. Denseness of the fill color in the outlier region.
     * **Line Thickness**. Thickness of the line bordering the outlier region.
-    * **Marker Color**. Color of the marker for an outlier peak value. <br/><img src={useBaseUrl('/img/dashboards/locate-deviations/Outlier_Visual_Settings.png')} alt="Outlier_Visual_Settings.png" style={{border: '1px solid gray'}} width="200" />
-1. In the upper right corner, click **Add to Dashboard**.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/AddPanel_Add_to_Dashboard.png')} alt="AddPanel_Add_to_Dashboard.png" style={{border: '1px solid gray'}} width="400" />
+    * **Marker Color**. Color of the marker for an outlier peak value. <br/><img src={useBaseUrl('/img/dashboards/locate-deviations/Outlier_Visual_Settings.png')} alt="Outlier visual settings" style={{border: '1px solid gray'}} width="200" />
+1. In the upper right corner, click **Add to Dashboard**.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/AddPanel_Add_to_Dashboard.png')} alt="Add to dashboard option" style={{border: '1px solid gray'}} width="400" />
 
 <br/>The panel appears on your dashboard.<br/><img src={useBaseUrl('/img/dashboards/locate-deviations/Outlier_Panel_on_Dashboard.png')} alt="Outlier_Panel_on_Dashboard" style={{border: '1px solid gray'}} width="700" />

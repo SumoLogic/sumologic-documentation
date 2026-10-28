@@ -1,0 +1,15 @@
+{
+	"api.version": "v1",
+	"source": {
+  		"name": "Proofpoint TRAP",
+  		"baseURL": "https://threatprotection-api.proofpoint.com",
+  		"authBaseURL": "https://auth.proofpoint.com",
+  		"clientId": "bf7gs36gfs-r54392c-lkdsdas",
+  		"clientSecret": "452852c1xxe95eec390",
+  		"pollingIntervalMin": "5m"
+    },
+		"schemaRef": {
+			"type": "Proofpoint TRAP"
+		},
+		"sourceType": "Universal"
+}

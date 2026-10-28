@@ -6,7 +6,7 @@ dashboard: The Sumo Logic app for Payment Card Industry (PCI) Compliance for Lin
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
+<img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="PCI icon" width="90"/>
 
 This guide helps you set up Sumo Logic Collectors, install the PCI Compliance for Linux app, and create dashboards from samples so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 

@@ -7,7 +7,7 @@ description: Detect and respond to threats in real time to ensure compliance and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Akamai icon" width="100"/>
 
 The Sumo Logic app for Akamai Client-Side Protection (CPC) helps organizations monitor and secure their client-side web applications. It provides real-time visibility into alerts, threat indicators, and data exposure risks from client-side scripts, enabling fast and accurate threat detection. Using Akamai’s data, the app identifies threats like data exfiltration, script-based attacks, policy violations, and insecure handling of sensitive data. Pre-configured dashboards show alert trends, risk levels, and anomalies, helping analysts investigate incidents and respond efficiently. With clear visualizations and detailed event insights, the app supports compliance (e.g., PCI) and strengthens the security of client-facing digital assets.
 
@@ -202,7 +202,7 @@ This app uses Sumo Logic’s [Akamai CPC Source](/docs/send-data/hosted-collecto
 
 ### Sample queries
 
-```sql title="Total Alerts"
+```sumo title="Total Alerts"
 _sourceCategory="Labs/AkamaiCPC"
 | json "cpcConfigId", "cpcAlertId", "cpcAlertLink", "cpcAlertType", "severityLevel", "cpcAlertStatus", "cpcAlertFlags", "alertTime", "firstSeenTime", "lastSeenTime","details.dataSubtypes[*].dataSubtype","details.threatIndicators","details.destination.destinationHostname","details.destination.vendor","details.destination.hostnameRiskScore","details.destination.destinationUrls","details.scriptSource.vendor","details.scriptSource.hostnameRiskScore","details.scriptSource.scriptOrigin","details.scriptSource.scriptUrls","details.scriptSource.scriptHostname","details.affectedSessionCount","details.dataSubtypes[*].dataOperations[*]" as cpc_config_id, cpc_alert_id, cpc_alert_link, cpc_alert_type, severity_level, cpc_alert_status, cpc_alert_flags, alert_time, first_seen_time, last_seen_time,data_sub_type, threat_indicators,destination_hostname,destination_vendor,destination_hostname_risk_score,destination_urls, source_script_vendor, source_hostname_risk_score, source_script_origin, source_script_urls,source_hostname,affected_session_count,data_operations nodrop
 
@@ -253,11 +253,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The **Akamai CPC - Overview** dashboard provides a comprehensive snapshot of your client-side security posture and alert trends. It highlights alert volumes, severity levels, and configuration health over time, helping you quickly spot anomalies and areas needing attention. Security teams can monitor threat activity, identify impacted configurations, and understand common alert types. The dashboard also surfaces recurring risk indicators, such as compromised scripts, suspicious behavior, and sensitive data exposure, offering critical context for prioritizing incidents. By consolidating this information into one view, it enables faster threat response and more informed risk mitigation decisions. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Akamai+CPC/Akamai+CPC+-+Overview.png')} alt="Akamai-CPC-Overview" width="800"/>
+The **Akamai CPC - Overview** dashboard provides a comprehensive snapshot of your client-side security posture and alert trends. It highlights alert volumes, severity levels, and configuration health over time, helping you quickly spot anomalies and areas needing attention. Security teams can monitor threat activity, identify impacted configurations, and understand common alert types. The dashboard also surfaces recurring risk indicators, such as compromised scripts, suspicious behavior, and sensitive data exposure, offering critical context for prioritizing incidents. By consolidating this information into one view, it enables faster threat response and more informed risk mitigation decisions. <br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Akamai+CPC/Akamai+CPC+-+Overview.png')} alt="Akamai CPC Overview" width="800"/>
 
 ### Security Overview
 
-The **Akamai CPC - Security Overview** dashboard provides deep visibility into client-side security risks, enabling proactive detection of suspicious behavior and policy violations. It highlights critical indicators such as data exfiltration attempts, access to suspicious domains, abnormal script activity, and insecure data transmissions. With detailed event tracking and contextual insights, it helps security teams identify hidden threats, assess exposure, and ensure compliance. The dashboard supports investigations into high-risk scenarios, including compromised code, misconfigurations, and attempts to bypass protections—helping organizations safeguard user data, enforce security policies, and protect client-side environments.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Akamai+CPC/Akamai+CPC+-+Security+Overview.png')} alt="Akamai-CPC-Security-Overview" width="800"/>
+The **Akamai CPC - Security Overview** dashboard provides deep visibility into client-side security risks, enabling proactive detection of suspicious behavior and policy violations. It highlights critical indicators such as data exfiltration attempts, access to suspicious domains, abnormal script activity, and insecure data transmissions. With detailed event tracking and contextual insights, it helps security teams identify hidden threats, assess exposure, and ensure compliance. The dashboard supports investigations into high-risk scenarios, including compromised code, misconfigurations, and attempts to bypass protections—helping organizations safeguard user data, enforce security policies, and protect client-side environments.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Akamai+CPC/Akamai+CPC+-+Security+Overview.png')} alt="Akamai CPC Security Overview" width="800"/>
 
 ## Create monitors for Akamai CPC app
 

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="85"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Windows icon" width="85"/>
 
 Windows - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log app that ingests distribution of Windows data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards provide insight into user accounts, login activity, and Windows updates.
 
@@ -56,6 +56,10 @@ In this step, you will configure the YAML file required for Windows event logs a
 Any custom fields can be tagged along with the data in this step.
 
 Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
+
+import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
+
+<CollectorVersionNote/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border: '1px solid gray'}} alt="YAML" />
 

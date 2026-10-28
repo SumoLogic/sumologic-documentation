@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudNetworkTopology.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudNetworkTopology.png')} alt="Google Cloud Network Topology icon" width="50"/>
 
 Network Topology is a visualization tool that shows the topology of your Virtual Private Cloud (VPC) networks, hybrid connectivity to and from your on-premises networks, connectivity to Google-managed services, and the associated metrics. For further details, refer to the [GCP documentation](https://cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview).
 

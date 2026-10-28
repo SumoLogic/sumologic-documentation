@@ -10,7 +10,8 @@ resource "sumologic_cloud_to_cloud_source" "slack" {
     "user_id": "WA7PQK3U5",
     "team_id": "EFSFVS",
     "enterprise_id": "EASFEF",
-    "team_name": "Test Slack App"
+    "team_name": "Test Slack App",
+    "is_gov": false
   })
 }
 resource "sumologic_collector" "collector" {

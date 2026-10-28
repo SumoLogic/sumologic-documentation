@@ -5,6 +5,8 @@ sidebar_label: Edit or Cancel a Scheduled Search
 description: You can edit or cancel a Scheduled Search at any time.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can edit or cancel a Scheduled Search at any time from your [Library](/docs/get-started/library). If you cancel a scheduled search, it will revert to a saved search.
 
 :::important
@@ -14,8 +16,8 @@ If the user who "owns" a Scheduled Search is removed from your org, the Schedule
 ## Cancel a Scheduled Search
 
 1. Go to your **Library** and find the scheduled search you want to cancel. For information about finding an item in the Library, see [Search the Library](/docs/get-started/library#search-the-library). 
-1. Click the more options menu to the right of the scheduled search and select **Edit**. <br/>![Library scheduled search edit](/img/alerts/list-of-sched-searches.png)
-1. In the **Edit Search** dialog, click **Edit this search's schedule**.<br/>![edit search](/img/alerts/edit-search.png)
+1. Click the more options menu to the right of the scheduled search and select **Edit**. <br/><img src={useBaseUrl('img/alerts/list-of-sched-searches.png')} alt="Library scheduled search edit" style={{border: '1px solid gray'}} width="800" />
+1. In the **Edit Search** dialog, click **Edit this search's schedule**.<br/><img src={useBaseUrl('img/alerts/edit-search.png')} alt="Edit search" style={{border: '1px solid gray'}} width="500" />
 1. From the **Run Frequency** menu, choose **Never** to cancel the scheduled search.
 1. Click **Update**.
 
@@ -35,7 +37,7 @@ If Sumo Logic presents a "Cannot Edit Scheduled Search" message, refer to the se
 
 ### Edit permissions
 
-A scheduled search runs in the context of the Sumo user that scheduled the search. In other words, when the search is shared with other users, the scheduler's role filter governs what data is returned by the search. 
+A scheduled search runs in the context of the Sumo Logic user that scheduled the search. In other words, when the search is shared with other users, the scheduler's role filter governs what data is returned by the search. 
 
 When you try to edit a scheduled search query, add a schedule to a saved search, or edit a saved search's schedule, you will not be allowed to edit the scheduled search unless you have the **Change Data Access Level** role capability. 
 
@@ -48,4 +50,4 @@ You have two options to resolve the issue:
 If you don’t have the **Change Data Access Level** capability, your Sumo Logic administrator will need to update your role to include it.
 :::
 
-![edit search](/img/alerts/cannot-edit-scheduled-search.png)
+<img src={useBaseUrl('img/alerts/cannot-edit-scheduled-search.png')} alt="Edit search" style={{border: '1px solid gray'}} width="400" />

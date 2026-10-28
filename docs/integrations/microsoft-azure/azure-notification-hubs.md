@@ -6,7 +6,7 @@ description: Learn about the Sumo Logic collection process for the Azure Notific
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-notification-hubs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-notification-hubs.png')} alt="Azure Notification Hubs icon" width="50"/>
 
 [Azure Notification Hubs](https://learn.microsoft.com/en-us/azure/notification-hubs/notification-hubs-push-notification-overview) provide an easy-to-use and scaled-out push engine that enables you to send notifications to any platform (iOS, Android, Windows, etc.) from any back-end (cloud or on-premises). This integration helps in monitoring the operations and actions that are conducted against your Azure Notification Hubs namespace.
 

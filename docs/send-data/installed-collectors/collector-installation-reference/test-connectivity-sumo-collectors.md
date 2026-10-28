@@ -4,16 +4,13 @@ title: Test Connectivity for Sumo Logic Collectors
 description: Learn how you can test access and connectivity from an installed Collector to the Sumo Logic service.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Make sure you have the required access and connectivity to the Sumo Logic service by running these checks from the machine where you want the Collector installed.
 
 Choose one of these testing options:
 
-* **Browser-based test.** Open a browser and go to [https://collectors.sumologic.com](https://collectors.sumologic.com/). You should see the word "Tweep". 
-
-    ![image](/img/send-data/tweep.png)
-
+* **Browser-based test.** Open a browser and go to [https://collectors.sumologic.com](https://collectors.sumologic.com/). You should see the word "Tweep". <br/><img src={useBaseUrl('img/send-data/tweep.png')} alt="Tweep" style={{border: '1px solid gray'}} width="300" />
 * **Telnet.** Telnet session to **collectors.sumologic.com 443** and you should see a result like this one:
 
     ```bash
@@ -38,7 +35,7 @@ If these commands do not work or are very slow, read the error messages and chec
 
 If your results show a connection failure, it can be a firewall issue.
 
-* Check your firewall settings to verify that connectivity is allowed for collection endpoints. Refer to [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for firewall-related suggestions.
+* Check your firewall settings to verify that connectivity is allowed for collection endpoints. Refer to [Sumo Logic Endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for firewall-related suggestions.
 * For Windows firewalls, you can create an outbound rule to allow outbound Collector connections, and try again.
 
 These are instructions for a Windows 2008r2 system for your convenience. If you are installing on another version of Windows, follow the instructions for that version.

@@ -6,7 +6,7 @@ description: Learn about the collection process for the Amazon CloudSearch servi
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/amazon-cloudsearch-logo.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon-cloudsearch-logo.png')} alt="Amazon CloudSearch icon" width="50"/>
 
 Amazon CloudSearch is a fully managed service in the cloud that makes it easy to set up, manage, and scale a search solution for your website or application.
 

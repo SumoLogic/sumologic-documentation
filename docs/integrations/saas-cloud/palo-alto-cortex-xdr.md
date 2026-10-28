@@ -7,7 +7,7 @@ description: The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/integrations/security-threat-detection/pan6.png')} alt="icon" width="100"/>
+<img src={useBaseUrl('/img/integrations/security-threat-detection/pan6.png')} alt="Palo Alto icon" width="100"/>
 
 The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents from the Palo Alto Networks Cortex XDR platform. Our app empowers your security teams to proactively monitor and respond to security threats, strengthen incident response processes, improve overall security posture, and protect critical assets from advanced threats and attacks.
 
@@ -136,7 +136,7 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 <details>
 <summary>View sample queries</summary>
 
-```sql title="Alerts Triggered"
+```sumo title="Alerts Triggered"
 _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
 | json "alert_id","name","severity","source","host_ip","alert_type","action_pretty","agent_os_type","category","detection_timestamp","is_whitelisted","resolution_status" as alert_id,name,severity,source,host_ip,alert_type,action_pretty,agent_os_type,category,detection_timestamp,is_whitelisted,resolution_status nodrop
 | action_pretty as action
@@ -150,7 +150,7 @@ _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
 | count_distinct(alert_id)
 ```
 
-```sql title="Incidents Created"
+```sumo title="Incidents Created"
 _sourceCategory="palo_alto_cortex_xdr" "incident_id" "incident_name"
 | json "incident_id","incident_name","creation_time","modification_time","status","severity","assigned_user_mail","alert_count","high_severity_alert_count","critical_severity_alert_count","user_count","xdr_url","wildfire_hits","alerts_grouping_status","mitre_tactics_ids_and_names","mitre_techniques_ids_and_names" as incident_id,incident_name,creation_time,modification_time,status,severity,assigned_user_mail,alert_count,high_severity_alert_count,critical_severity_alert_count,user_count,xdr_url,wildfire_hits,alerts_grouping_status,mitre_tactics_ids_and_names,mitre_techniques_ids_and_names nodrop
 | where alerts_grouping_status matches"{{alerts_grouping_status}}"
@@ -196,11 +196,11 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Alerts Overview
 
-The **Palo Alto Cortex XDR - Alerts Overview** dashboard provides real-time analysis of the alerts triggered and white-listed. This dashboard offers insights into the alerts based on severity over time, most frequent sources, types of triggered alerts,  geo location of all alerts, and alerts originating from high-risk countries. This dashboard provides information on the most frequent actions taken in response to alerts, the top categories of alerts, and a summary of recent alerts for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Alerts-Overview.png')} alt="Palo-Alto-Cortex-XDR-Alerts-Overview" width="800"/>
+The **Palo Alto Cortex XDR - Alerts Overview** dashboard provides real-time analysis of the alerts triggered and white-listed. This dashboard offers insights into the alerts based on severity over time, most frequent sources, types of triggered alerts,  geo location of all alerts, and alerts originating from high-risk countries. This dashboard provides information on the most frequent actions taken in response to alerts, the top categories of alerts, and a summary of recent alerts for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Alerts-Overview.png')} alt="Palo Alto Cortex XDR Alerts Overview" width="800"/>
 
 ### Incidents Overview
 
-The **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo-Alto-Cortex-XDR-Incidents-Overview" width="800"/>
+The **Palo Alto Cortex XDR - Incidents Overview** dashboard provides the number of incidents created and disabled. This dashboard offers insights into the incidents based on severity over time and incidents by status. This dashboard also highlights the most frequently assigned users to handle incidents, information about the commonly observed MITRE techniques and tactics utilized, and a summary of recent incidents for quick reference.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Palo-Alto-Cortex-XDR-Incidents-Overview.png')} alt="Palo Alto Cortex XDR Incidents Overview" width="800"/>
 
 ## Upgrade/Downgrade the Palo Alto Cortex XDR app (Optional)
 

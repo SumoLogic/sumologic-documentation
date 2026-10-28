@@ -8,12 +8,10 @@ Hyperbolic sine of argument in radians.
 
 ## Syntax
 
-```sql
-sinh(<x>) as <field>
-```
+`sinh(<x>) as <field>`
 
 ## Example
 
-```sql
+```sumo
 * | sinh(1) as v
 ```

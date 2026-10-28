@@ -25,12 +25,12 @@ These instructions apply to vRealize Log Insight 8.0, may differ for earlier ver
 To set up vRealize Log Insight log collection for Sumo Logic, do the following:
 
 1. Sign in to vRealize Log Insight UI, and navigate to **Management > Event Forwarding**.<br/><img src={useBaseUrl('/img/send-data/vRealize_EventForwarding.png')} alt="vRealize_EventForwarding" style={{border: '1px solid gray'}} width="400"/>
-1. Add a new connection by clicking **New Destination**.<br/><img src={useBaseUrl('/img/send-data/vRealize_New-Destination.png')} alt="vRealize_New-Destination" style={{border: '1px solid gray'}} width="600"/>
+1. Add a new connection by clicking **New Destination**.<br/><img src={useBaseUrl('/img/send-data/vRealize_New-Destination.png')} alt="VRealize New Destination" style={{border: '1px solid gray'}} width="600"/>
 1. In the Edit Destination dialog, specify the following information. Optionally, you can also add additional tags and also filter the events on this popup.
    :::note
    Select the **Transport** type as **UDP** if you are handling multiple messages.
    :::
-   <br/><img src={useBaseUrl('/img/send-data/vRealize_Edit-Destination.png')} alt="vRealize_Edit-Destination" style={{border: '1px solid gray'}} width="600"/>
+   <br/><img src={useBaseUrl('/img/send-data/vRealize_Edit-Destination.png')} alt="VRealize Edit Destination" style={{border: '1px solid gray'}} width="600"/>
 1. **Test** and **Save** the connection.
 1. Verify logs in Sumo Logic. The following is a sample log message of vRealize forwarded events.
    ```

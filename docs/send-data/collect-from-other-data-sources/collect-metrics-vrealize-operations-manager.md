@@ -1,9 +1,11 @@
 ---
 id: collect-metrics-vrealize-operations-manager
-title: Collect Metrics from VMware vRealize Operations Manager 8 Enterprise
+title: Collect VMware vRealize Operations Manager Metrics
 sidebar_label: VMware vRealize Operations Manager
-description: This page provides instructions for collecting metrics from vRops.
+description: Collect performance metrics from VMware vRealize Operations Manager (vRops) into Sumo Logic to monitor physical, virtual, and cloud infrastructure.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 With vRealize Operations Manager (vRops) software, you can proactively identify and solve emerging issues with predictive analysis and smart alerts, ensuring optimal performance and availability of system resources - across physical, virtual, and cloud infrastructures. 
 
@@ -49,7 +51,7 @@ Without adequate permissions (read/write/execute) for the directories in which t
 
 ## Step 2: Download and install the Collector
 
-An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
+An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo Logic service. The Collector runs as a service and starts automatically after installing or rebooting.
 
 To install a Collector to collect logs and metrics, see [Installed Collectors](/docs/send-data/installed-collectors) for installation instructions.
 
@@ -100,7 +102,7 @@ The number of threads can be controlled using a property `THREADSIZE_POOL` in th
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1. <br/>![VMware.png](/img/send-data/VMware.png)
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1. <br/><img src={useBaseUrl('img/send-data/VMware.png')} alt="VMware" style={{border: '1px solid gray'}} width="600" />
 
 1. Edit the properties in the bundled config.json properties file, as necessary.
 1. Go to the directory for the Sumo Logic scripts, and run the **sumologic-vrops-metric-collection.py** script—which queries the vRops Server for metrics—from that location with the following command:

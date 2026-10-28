@@ -16,7 +16,7 @@ description: Parse the common fields in your Microsoft IIS Logs using the FER te
 
 **Parsing Rule:**
 
-```sql
+```sumo
 parse regex "^[^#].*?(?<s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<cs_method>\S+?) (?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\d+?) (?<cs_username>\S+?) (?<c_ip>.+?) (?<cs_User_Agent>\S+?) (?<cs_Referer>\S+?) (?<sc_status>\d+?) (?<sc_substatus>\d+?) (?<sc_win32_status>\d+?) (?<time_taken>\d+?)$"
 ```
 

@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudFilestore.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudFilestore.png')} alt="Google Cloud Filestore icon" width="50"/>
 
 Filestore instances are fully managed file servers on Google Cloud that can be connected to Compute Engine VMs, GKE clusters, and external datastores. For more details, refer to the [GCP documentation](https://cloud.google.com/filestore/docs/overview)
 

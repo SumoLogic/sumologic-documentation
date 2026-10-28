@@ -1,6 +1,6 @@
 ---
 id: ruby-on-rails
-title: Ruby on Rails OpenTelemetry auto-instrumentation
+title: Ruby on Rails OpenTelemetry Auto-Instrumentation
 sidebar_label: Ruby on Rails
 description: Learn how to collect telemetry data from Ruby on Rails applications.
 ---
@@ -20,9 +20,9 @@ Installation of the packages listed below is required to apply the instrumentati
    gem install opentelemetry-exporter-otlp -v 0.28.1
    ```
 
-* **bundler**, the packages have to be inserted into your **gemfile** and the **bundle install** command has to be run:  
+* **bundler**. Insert the packages into your **gemfile** and run the **bundle install** command:  
 
-   ```bash
+   ```ruby
    gem 'opentelemetry-sdk', '1.5.0'
    gem 'opentelemetry-exporter-otlp', '0.28.1'
    ```
@@ -31,7 +31,7 @@ Installation of the gems above is mandatory. The next step is to install instrum
 
 There are two solutions:
 
-* Installation of the specific package - for example, if the application is a **Rails** Web server that is also performing some database queries using **MySQL** package. To get traces from libraries used in the project, corresponding instrumented packages have to be installed:  
+* Installation of the specific package - for example, if the application is a **Rails** Web server that is also performing some database queries using **MySQL** package. To get traces from libraries used in the project, install the corresponding instrumented packages:  
 
    ```bash
    gem install opentelemetry-instrumentation-rails -v 0.31.1
@@ -51,11 +51,11 @@ There are two solutions:
 
 ## Step 2. Code changes  
 
-To enable instrumentation in the Ruby on Rails application and export the telemetry data it is enough to add the code below to the project. Two examples below present a specific package and an "all in one" instrumentation. The code has to be added in the **config/environment.rb** file before application initialization as in the examples below:
+To enable instrumentation in the Ruby on Rails application and export the telemetry data it is enough to add the code below to the project. Two examples below present a specific package and an "all in one" instrumentation. Add the code to the **config/environment.rb** file before application initialization as in the examples below:
 
 * Specific package instrumentation - in this example only Rails library will be instrumented:  
 
-   ```bash
+   ```ruby
    require 'opentelemetry/sdk'
    require_relative 'application'
 
@@ -73,7 +73,7 @@ To enable instrumentation in the Ruby on Rails application and export the teleme
 
 * "All in one" instrumentation - this configuration will instrument Rails and other supported and used in project libraries:  
 
-   ```bash
+   ```ruby
    require 'opentelemetry/sdk'
    require_relative 'application'
 
@@ -92,19 +92,19 @@ The final step is to configure the exporter host, service and application name.
 
 * `OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318` - environment variable configures the endpoint where telemetry data will be sent.  
 
- This should be OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
+ This should be [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector)/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma-separated key=value pairs. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Add services panel to dashboard](/docs/apm/services-list-map/#add-services-panel-to-dashboard).
 
-## TraceID, SpanID and operation data injection into logs
+## Trace ID, span ID, and operation data injection into logs
 
-Additional information like TraceID, SpanID or operation data in the application logs could be very helpful to correlate traces, spans and operations with specific logs. To add this data to the logs it is required to obtain it from `OpenTelemetry::Trace` and modify logger.
+Additional information like TraceID, SpanID or operation data in the application logs could be helpful to correlate traces, spans and operations with specific logs. To add this data to the logs it is required to obtain it from `OpenTelemetry::Trace` and modify logger.
 
-Please see example code:
+See example code:
 
-```bash
+```ruby
 logger = ::Logger.new(STDOUT)
 logger.formatter = proc do |severity, time, progname, msg|
   span_id = OpenTelemetry::Trace.current_span.context.hex_span_id
@@ -122,6 +122,6 @@ set :logger, logger
 
 Example output:  
 
-```json
+```log
 "2022-02-28 13:01:25 +0000, INFO: {:remote_ip=>\"127.0.0.6\", :request_path=>\"/get_beans\", :query_string=>\"\", :request_method=>\"POST\", :execution_time_sec=>0.00033453479409217834, :response_status_code=>200} - trace_id=cdd460d538917f82560cbb91373a05a6 - span_id=12a09921c89fd6e9 - operation=POST /get_beans
 ```

@@ -2,7 +2,10 @@
 id: diff
 title: diff Search Operator
 sidebar_label: diff
+description: Use the diff operator to calculate the rate of change in a numeric field between consecutive rows.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `diff` operator calculates the rate of change in a field between consecutive rows. To produce results, `diff` requires that a specified field contain numeric data; any non-numerical values are removed from the search results.
 
@@ -14,7 +17,7 @@ Adding a group by function to a diff operator query calculates the difference 
 
 ## Syntax
 
-* `diff <field> [as <field>] [by <field1>, <field2>, ...]`
+`diff <field> [as <field>] [by <field1>, <field2>, ...]`
 
 ## Rules
 
@@ -36,13 +39,13 @@ points.
 
 Using `diff` with `timeslice`, you can run a query similar to:
 
-```sql
+```sumo
 * | parse "bytes transmitted: '*'" as bytes | timeslice 1m | sum(bytes) as bytes by _timeslice | sort _timeslice | diff bytes as diff_bytes
 ```
 
 to produce results similar to:
 
-![diffoperator.png](/img/search/searchquerylanguage/search-operators/diffoperator.png)
+<img src={useBaseUrl('img/search/searchquerylanguage/search-operators/diffoperator.png')} alt="Diff operator" style={{border: '1px solid gray'}} width="600" />
 
 Note that there is no value for diff_bytes in line 1, as expected.
 
@@ -50,7 +53,7 @@ Note that there is no value for diff_bytes in line 1, as expected.
 included in a single query. For example, to calculate the diff of bytes
 and compressed bytes:
 
-```sql
+```sumo
 * | parse "data: '*'" as Bytes  | diff Bytes as b  | parse "compress: '*'" as Compressed  | diff Compressed as c
 ```
 
@@ -58,7 +61,7 @@ and compressed bytes:
 includes a **diff** operator, make sure to structure your query similar
 to:
 
-```sql
+```sumo
 * | parse "encoded: '*'" as e  | parse "compressed: '*'" as c  | count by e,c  | diff e as d
 ```
 

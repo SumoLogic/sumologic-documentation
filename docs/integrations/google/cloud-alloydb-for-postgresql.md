@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudAlloyDBforPostgreSQL.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudAlloyDBforPostgreSQL.png')} alt="Google Cloud AlloyDB for PostgreSQL icon" width="50"/>
 
 AlloyDB for PostgreSQL is a fully managed, PostgreSQL-compatible database service that's designed for your most demanding workloads, including hybrid transactional and analytical processing. For more details, refer to the GCP [documentation](https://cloud.google.com/alloydb/docs/overview)
 

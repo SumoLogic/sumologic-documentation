@@ -1,8 +1,8 @@
 ---
 id: integration-framework-output
-title: Integration Framework Output
+title: Open Integration Framework Output
 sidebar_label: Output
-description: Learn how to work with output from the integration framework. 
+description: Learn how to work with output from the integration framework.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ This article describes the format of integration output. To edit the output of a
 
 ## About integration output
 
-Integrations primarily use JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, in order to pass data returned from an action to a future action in a runbook or to other internal components, the output from an integration action must be returned in JSON, and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas.
+Integrations primarily use JSON to pass data between actions and other internal components. There is no requirement that integrations return JSON results; integrations will execute regardless of the data or data type they return. However, to pass data returned from an action to a future action in a runbook or to other internal components, the output from an integration action must be returned in JSON, and the JSON fields must be defined in the output:path attributes of the action definition file. In other words, if the action output is not returned in JSON, it will not be able to be used in any other areas.
 
 Most APIs can return JSON data, either by default or as an option. If an integration does not return JSON natively, the returned data may be converted to JSON prior to being returned by the action code so long as it matches the structure specified in the output:path attributes of the action definition file. For example, to return JSON data using Python, the output should be printed as follows:
 
@@ -86,7 +86,7 @@ script:
                </dl>
             </body>
           </html>
-    '''    
+    '''
     print(art)
 src_doc: 'rawOutput'
 ```
@@ -219,7 +219,7 @@ With the same action used in [Use mult-select in output](#use-multi-select-in-ou
 
 Pipe function `join('separator')`:
 
-```
+```sumo
 output:
   - path : '[].guid | join(,)'
 ```

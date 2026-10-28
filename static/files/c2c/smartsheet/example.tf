@@ -7,6 +7,7 @@ resource "sumologic_cloud_to_cloud_source" "smartsheet-source" {
         "name": "smartsheet",
         "app_client_id": "<your client id>",
         "client_secret": "***********",
+        "base_url": "https://api.smartsheet.com/2.0",
         "authorization_code": "***********",
         "polling_interval": 10
   })

@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/databases/cassandra.png')} alt="Cassandra icon" width="75"/>
 
 The Cassandra app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Cassandra clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, cache/Gossip/Memtable statistics, compaction, garbage collection, thread pools, and write paths.
 
@@ -372,7 +372,7 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 
 This section provides instructions for configuring log collection for Cassandra running on a non-Kubernetes environment.
 
-By default, Cassandra logs are stored in a log file. Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/local-file-source) via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements).
+By default, Cassandra logs are stored in a log file. Sumo Logic supports collecting logs from a local log file by using a [local file source](/docs/send-data/installed-collectors/sources/local-file-source) via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect Cassandra logs and follow the instructions below to set up log collection:
 
@@ -386,7 +386,7 @@ Based on your infrastructure and networking setup choose one of these methods to
    * OFF
 
   To permanently add debug logging to a class permanently using the logback framework, use nodetool setlogginglevel to check you have the right class before you set it in the logback.xml file in install_location/conf. Modify to include the following line or similar at the end of the file:
-   ```sql
+   ```xml
    <logger name="org.apache.cassandra.gms.FailureDetector" level="DEBUG"/>
    ```
   Restart the node to invoke the change.

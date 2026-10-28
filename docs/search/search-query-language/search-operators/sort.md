@@ -2,7 +2,10 @@
 id: sort
 title: sort Search Operator
 sidebar_label: sort
+description: Use the sort operator to order aggregated search results in descending order by default.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The `sort` operator orders aggregated search results. The default sort order is descending. Then you can use the top or limit operators to reduce the number of sorted results returned.
 
@@ -10,29 +13,17 @@ The `order` operator is synonymous with the `sort` operator. You can use them in
 
 ## Syntax
 
-```sql
-sort by <field> (displays results as descending, by default)
-```
+`sort by <field> (displays results as descending, by default)`
 
-```sql
-order by <field> (displays results as descending, by default)
-```
+`order by <field> (displays results as descending, by default)`
 
-```sql
-sort by +<field> (displays results as ascending)
-```
+`sort by +<field> (displays results as ascending)`
 
-```sql
-sort by <field> asc (displays results as ascending)
-```
+`sort by <field> asc (displays results as ascending)`
 
-```sql
-sort by <fieldA>, <fieldB>
-```
+`sort by <fieldA>, <fieldB>`
 
-```sql
-top <#> <field>​​​​​​​ by <group_by_operator>
-```
+`top <#> <field>​​​​​​​ by <group_by_operator>`
 
 ## Rules
 
@@ -43,19 +34,19 @@ top <#> <field>​​​​​​​ by <group_by_operator>
 
 ## Examples
 
-```sql
+```sumo
 status AND down | extract "user=(?<user>.*?):" | count (*) group by user | sort by _count
 ```
 
-```sql
+```sumo
 ... | count user | top 2 user by _count
 ```
 
-```sql
+```sumo
 ... | count user | sort by _count asc
 ```
 
-```sql
+```sumo
 | parse "GET * " as url | count by url | order by _count
 | order by _count asc
 ```
@@ -64,7 +55,7 @@ status AND down | extract "user=(?<user>.*?):" | count (*) group by user | sort 
 
 This example counts page hits by sourceHost, sorts them by page hits, and limits the results to the top 10.
 
-```sql
+```sumo
 _sourceCategory=Labs/Apache/Access
 | count as page_hits by _sourceHost
 | sort by page_hits
@@ -73,6 +64,6 @@ _sourceCategory=Labs/Apache/Access
 
 which provides results like:
 
-![sort](/img/reuse/query-search/sort_operator_example.png)
+<img src={useBaseUrl('img/reuse/query-search/sort_operator_example.png')} alt="Sort" style={{border: '1px solid gray'}} width="300" />
 
 For more information, see [Top](top.md) operator or [Limit](limit.md) operator.

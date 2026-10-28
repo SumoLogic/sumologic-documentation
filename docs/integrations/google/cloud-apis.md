@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudAPIs.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudAPIs.png')} alt="Google Cloud APIs icon" width="50"/>
 
 Google Cloud APIs are programmatic interfaces to Google Cloud Platform services. For more details, refer to the [GCP documentation](https://cloud.google.com/apis/docs/monitoring).
 

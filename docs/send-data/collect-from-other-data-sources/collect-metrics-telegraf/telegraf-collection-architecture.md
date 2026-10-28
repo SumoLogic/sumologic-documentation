@@ -4,6 +4,8 @@ title: Telegraf Collection Architecture
 description: Learn about using Telegraf in metric collection pipelines, inside Kubernetes and in non-Kubernetes environments.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This topic describes how to configure Telegraf plugins to fetch metrics from your applications and send them to Sumo Logic.
 
 Telegraf is an open source, plugin-based collector/agent that uses built-in *input plugins* to fetch metrics from the managed application, service, or third-party API where Telegraf is running, and then uses *output plugins* to send those collected metrics to another system, such as Sumo Logic. The Sumo Logic output plugin sends the metrics collected by the input plugin to an HTTP Source running on a Sumo Logic Hosted Collector.
@@ -16,7 +18,7 @@ Collection architecture varies depending on whether you’re monitoring resource
 
 The diagram below illustrates where Telegraf fits into a non-Kubernetes environment monitored by Sumo Logic. In this example, we’re running Redis on an Amazon EC2 host.
 
-![Telegraf-NON-K8s.png](/img/send-data/Telegraf-NON-K8s.png)
+<img src={useBaseUrl('img/send-data/Telegraf-NON-K8s.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
 
 ### Metrics collection pipeline
 
@@ -38,9 +40,10 @@ You select an existing HTTP Source on a Hosted Collection as the destination for
 ## Telegraf in a Kubernetes deployment
 
 The diagram below illustrates where Telegraf fits into a Kubernetes environment monitored by Sumo Logic.
+
 In this example, we’re monitoring an Nginx in a Kubernetes cluster.
 
-![Telegraf-K8s.png](/img/send-data/Telegraf-K8s.png)
+<img src={useBaseUrl('img/send-data/Telegraf-K8s.png')} alt="Telegraf in a Kubernetes environment" style={{border: '1px solid gray'}} width="600" />
 
 [Telegraf Operator](https://github.com/influxdata/telegraf-operator) intercepts requests related to pods in the cluster, using the mutating webhooks functionality in Kubernetes.
 Telegraf Operator reads the pod annotations in the request and if an annotation says to add a Telegraf sidecar, then Telegraf Operator adds that instance as an additional container within that pod.

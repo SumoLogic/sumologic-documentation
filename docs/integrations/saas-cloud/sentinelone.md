@@ -7,7 +7,7 @@ description: The Sumo Logic app for SentinelOne offers functionality for monitor
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="sentinelone-icon.png" width="50" />
+<img src={useBaseUrl('img/send-data/sentinelone-icon.png')} alt="SentinelOne icon" width="50" />
 
 The SentinelOne app for Sumo Logic provides security professionals with a comprehensive view of their organization's security posture. The app, based on Sumo Logic’s SentinelOne Source, allows you to quickly ingest data from your SentinelOne agents into Sumo Logic for real-time analysis.
 
@@ -321,7 +321,7 @@ The Sumo Logic app for SentinelOne consumes Threats and Agents logs, refer to th
 
 ## Sample queries
 
-```sql title="Suspicious threats detected"
+```sumo title="Suspicious threats detected"
 _sourceCategory=sentinelone  threatInfo
 | json "id", "threatInfo.incidentStatus", "threatInfo.classificationSource", "threatInfo.confidenceLevel", "threatInfo.detectionEngines", "threatInfo.initiatedBy", "threatInfo.rebootRequired", "threatInfo.createdAt", "threatInfo.detectionType", "threatInfo.mitigationStatus", "threatInfo.analystVerdict", "threatInfo.threatName", "agentRealtimeInfo.siteName","agentRealtimeInfo.agentOsType", "agentRealtimeInfo.agentMachineType" as id, incidentStatus, classificationSource, confidenceLevel, detectionEngines, initiatedBy, rebootRequired, createdAt, detectionType, mitigationStatus, analystVerdict, threatName, siteName, agentOsType, agentMachineType nodrop
 | where siteName matches "{{site}}" or isNull(siteName)
@@ -333,9 +333,9 @@ _sourceCategory=sentinelone  threatInfo
 | count_distinct(id)
 ```
 
-```sql title="Total Agents"
+```sumo title="Total Agents"
 _sourceCategory=sentinelone  uuid
-| Json "uuid","scanStatus","siteName","mitigationMode","infected","firewallEnabled","activeThreats","installerType","osName","mitigationModeSuspicious","isPendingUninstall","networkStatus","osType","isActive","isUninstalled","isDecommissioned","externalIp","modelName","machineType" as id,scan_status,site_name,mitigation_mode,infected,firewall_enabled,active_threats,installer_type,os_name,mitigation,is_pending_uninstall,network_status,os_type,is_active,is_uninstalled,is_decommissioned,ip,model_name,machine_type nodrop
+| json "uuid","scanStatus","siteName","mitigationMode","infected","firewallEnabled","activeThreats","installerType","osName","mitigationModeSuspicious","isPendingUninstall","networkStatus","osType","isActive","isUninstalled","isDecommissioned","externalIp","modelName","machineType" as id,scan_status,site_name,mitigation_mode,infected,firewall_enabled,active_threats,installer_type,os_name,mitigation,is_pending_uninstall,network_status,os_type,is_active,is_uninstalled,is_decommissioned,ip,model_name,machine_type nodrop
 | where site_name matches "{{site}}" or isNull(site_name)
 | where os_type matches "{{os}}" or isNull(os_type)
 | where machine_type matches "{{machine}}" or isNull(machine_type)
@@ -385,13 +385,13 @@ Additionally, the dashboard includes information on the frequency of agents by i
 
 The SentinelOne Agent Overview enables organizations to quickly identify any issues with agent deployment or performance and take corrective action to improve their overall security posture. It is a powerful tool for any organization looking to ensure the effectiveness and efficiency of its threat protection solutions.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Agent-Overview.png')} alt="SentinelOne-Agent-Overview.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Agent-Overview.png')} alt="SentinelOne - Agent Overview dashboard" width="600"/>
 
 ### Threat Overview
 
 The **SentinelOne - Threat Overview** provides a comprehensive overview of threats detected by SentinelOne, a threat intelligence and response platform. The dashboard includes widgets that display key information on unresolved threats, suspicious threats detected, threats to be mitigated, resolved threats, and threats that require a reboot. The dashboard also provides insights into the types of threats detected, their current status, and their classification source. With this dashboard, security teams can quickly identify and respond to potential security threats, minimizing the risk of security breaches and data loss.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Overview.png')} alt="SentinelOne-Threat-Overview.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Overview.png')} alt="SentinelOne - Threat Overview dashboard" width="600"/>
 
 ### Threat Analysis
 
@@ -399,7 +399,23 @@ The **SentinelOne - Threat Analysis** provides a comprehensive view of the threa
 
 With the information provided by this dashboard, security teams can effectively prioritize and manage their response to potential security threats. They can quickly identify the most critical threats, monitor the effectiveness of their threat detection engines, and respond to the most heavily infected devices. The "SentinelOne - Threat Analysis" is a valuable tool for any organization looking to proactively manage their cybersecurity risk.
 
-<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne-Threat-Analysis.png" width="600"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/SentinelOne-Threat-Analysis.png')} alt="SentinelOne - Threat Analysis dashboard" width="600"/>
+
+## Create monitors for SentinelOne app
+
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
+
+<CreateMonitors/>
+
+### SentinelOne alerts
+
+| Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | 
+|:--|:--|:--|:--|
+| `SentinelOne - Embargoed Geo Locations of External Ips` | Monitors and highlights external ips located in sanctioned or embargoed regions to maintain adherence to legal and regulatory standards. | Critical | Count > 0 |
+| `SentinelOne - Multiple Malicious Threat in Recent Time` | Monitors and highlights multiple malicious threat in recent time. | Critical | Count > 10 |
+| `SentinelOne - Multiple Suspicious Threat in Recent Time` | Monitors and highlights multiple suspicious threat in recent time. | Critical | Count > 10 |
+| `Sentinelone - Open Malicious Threat Since More than 24 Hours` | Monitors and highlights open malicious threat since more than 24 hours. | Critical | Count > 0 |
+| `Sentinelone - Open Suspicious Threat Since More than 24 Hours` | Monitors and highlights open suspicious threat since more than 24 hours. | Critical | Count > 0 |
 
 ## Upgrade/Downgrade the SentinelOne app (Optional)
 

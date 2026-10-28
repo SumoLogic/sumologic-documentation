@@ -7,7 +7,7 @@ description: The Sumo Logic app for Confluent Cloud offers deep visibility into 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud/confluent-cloud.png')} alt="Confluent Cloud icon" width="100"/>
 
 Confluent Cloud is a fully managed, cloud-native data streaming platform based on Apache Kafka. It enables real-time data processing, integration, and movement across applications and systems without managing infrastructure. With built-in support for connectors, ksqlDB, and stream governance, it simplifies building scalable, event-driven architectures.
 
@@ -23,7 +23,7 @@ The Confluent Cloud app uses metrics:
 
 Sumo Logic supports collecting metrics using the Cloud-to-Cloud integration framework:
 
-* Configure a [Confluent Cloud Metrics Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-cloud-metrics-source/)
+* Configure a [Confluent Metrics Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/confluent-metrics-source/)
 
 ## Installing the Confluent Cloud app
 
@@ -119,3 +119,15 @@ Use this dashboard to:
 * Correlate request counts with operation types to identify unusual spikes or drops in schema-related activities.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ConfluentCloud/Confluent-Cloud-Schema-Registry.png')} alt="Confluent Cloud - Schema Registry" style={{border: '1px solid gray'}} width="800" />
+
+## Upgrade/Downgrade the Confluent Cloud app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Confluent Cloud app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>

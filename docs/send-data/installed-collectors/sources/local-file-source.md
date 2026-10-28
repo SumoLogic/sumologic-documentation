@@ -9,6 +9,10 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
+:::note
+Local file sources for Installed Collectors (IC) are supported, but Sumo Logic recommends switching to OpenTelemetry (OTEL) source templates for improved scalability, consistency, and future enhancements. To learn more, see [Convert Installed Collector Local File Sources to OpenTelemetry Source Templates](/docs/send-data/installed-collectors/sources/convert-ic-local-file-source-to-otel-st).
+:::
+
 * The Source will run a scan to the target path every two seconds.
 * Compressed files that end with the following file extensions are not collected: * tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files
 
@@ -19,6 +23,14 @@ tar.gz files are supported.
 If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected logs will not be retroactively changed.
 
 For details on the limitations of Installed Collectors and how they work see About Installed Collectors.
+
+import TerraformLink from '../../../reuse/terraform-link.md';
+
+:::tip
+You can use Terraform to provide a local file source with the [`sumologic_local_file_source`](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/local_file_source) resource.
+
+<TerraformLink/>
+:::
 
 ## Supported encoding for local file sources
 
@@ -37,20 +49,14 @@ UTF-16 formats are often used internationally; additionally they are common with
 
 ## Avoiding file contention
 
-When the Sumo collector accesses a log file to read its content, the collector opens the file in non-exclusive read mode. The file is opened for read access only, and no read or write locks are requested. File contention issues are still possible, however. For example, if another process attempts to open a file with a read lock at the same time the file is being read by the collector, that attempt will fail. The Add-Content PowerShell cmdlet is known to require a read lock, and should therefore never be used to populate a file being watched by a Sumo collector.
+When the Sumo Logic collector accesses a log file to read its content, the collector opens the file in non-exclusive read mode. The file is opened for read access only, and no read or write locks are requested. File contention issues are still possible, however. For example, if another process attempts to open a file with a read lock at the same time the file is being read by the collector, that attempt will fail. The Add-Content PowerShell cmdlet is known to require a read lock, and should therefore never be used to populate a file being watched by a Sumo Logic collector.
 
 ## Configure a Local File Source
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
-1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
-
-    ![img](/img/send-data/add-source.png)    
-1. Select **Local File** for the Source type.
-
-    ![local file source icon.png](/img/send-data/local-file-source-icon.png) 
-1. Set the following choices:
-
-    ![local file source.png](/img/send-data/local-file-source.png)
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.<br/><img src={useBaseUrl('img/send-data/add-source.png')} alt="Add source button" style={{border: '1px solid gray'}} width="800" />
+1. Select **Local File** for the Source type.<br/><img src={useBaseUrl('img/send-data/local-file-source-icon.png')} alt="Local file source icon" style={{border: '1px solid gray'}} width="100" />
+1. Set the following choices:<br/><img src={useBaseUrl('img/send-data/local-file-source.png')} alt="Local file source" style={{border: '1px solid gray'}} width="600" />
 
    * **Name**. Type the name you'd like to display for the new Source. Description is optional.
 
@@ -66,7 +72,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
     :::
 
-    Review [timestamp considerations](/docs/send-data/reference-information/time-reference) to understand how Sumo interprets and processes timestamps.
+    Review [timestamp considerations](/docs/send-data/reference-information/time-reference) to understand how Sumo Logic interprets and processes timestamps.
 
     You can either:
 
@@ -87,8 +93,8 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+      * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+      * <img src={useBaseUrl('img/reuse/orange-exclamation-point.png')} alt="Orange exclamation point" width="20"/> An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, you'll see an option to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo Logic but isn’t present or enabled in the schema, it’s ignored and marked as **Dropped**.
 
 1. Set any of the following options under **Advanced**:
 <img src={useBaseUrl('/img/send-data/advanced-options-local-file-source.png')} alt="Advanced options for log" style={{border: '1px solid gray'}} width="600"/>
@@ -175,7 +181,7 @@ Otherwise, instead of denylisting certain paths, you can specify specific log fo
 ## Troubleshooting
 
 ### Fingerprint
-To keep track of what it has already sent to the Sumo service, the Collector tracks a file by its fingerprint (the first 2048 bytes of the file) and by a read pointer that indicates the last line read by the Collector. This fingerprint is then compared to a list of known fingerprints from that Source. If the fingerprint does not match one in the known list we start reading that file's content from the beginning and send it to Sumo. If a matching fingerprint is found in the list we start reading from the last known byte mark of that file. The Collector updates this information approximately every second. A file's fingerprint is retained for some period of time after file deletion, otherwise it is removed.
+To keep track of what it has already sent to the Sumo Logic service, the Collector tracks a file by its fingerprint (the first 2048 bytes of the file) and by a read pointer that indicates the last line read by the Collector. This fingerprint is then compared to a list of known fingerprints from that Source. If the fingerprint does not match one in the known list we start reading that file's content from the beginning and send it to Sumo Logic. If a matching fingerprint is found in the list we start reading from the last known byte mark of that file. The Collector updates this information approximately every second. A file's fingerprint is retained for some period of time after file deletion, otherwise it is removed.
 
 An issue that could arise is seeing duplicated log messages for a log file that is written to very slowly. When a file is slowly written and the first messages in the file are not larger than 2kb the fingerprint for the Source file can be overwritten with each log line, up to the point those first lines add up to 2kb.
 

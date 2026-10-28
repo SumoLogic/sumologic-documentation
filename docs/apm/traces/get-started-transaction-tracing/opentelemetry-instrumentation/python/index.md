@@ -9,7 +9,7 @@ OpenTelemetry Python instrumentation provides the ability to capture telemetry d
 
 ## How to instrument your app
 
-The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.26.0/0.47b0** with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.26.0/exporter/opentelemetry-exporter-otlp-proto-http).
+The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. You only need to install a few Python packages to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.26.0/0.47b0** with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.26.0/exporter/opentelemetry-exporter-otlp-proto-http).
 
 ## Mandatory packages installation
 
@@ -22,13 +22,13 @@ pip install opentelemetry-exporter-otlp-proto-http==1.26.0
 
 If requirements.txt is used to manage dependencies in the project add:
 
-```bash
+```text
 opentelemetry-distro==0.47b0 opentelemetry-exporter-otlp-proto-http==1.26.0
 ```
 
 If pipfile, add these dependencies instead of using the pip commands. For example:
 
-```bash
+```toml
 opentelemetry-distro = "0.47b0" opentelemetry-exporter-otlp-proto-http = "1.26.0"
 ```
 
@@ -70,7 +70,7 @@ OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
 OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318
 ```
 
-This should be OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
+This should be [OpenTelemetry Collector](/docs/send-data/opentelemetry-collector)/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 
 * Configures the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 
@@ -86,7 +86,7 @@ OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
 
 ## Application execution
 
-When everything is configured it is very simple to run an instrumented application.
+When everything is configured it is simple to run an instrumented application.
 
 ```bash
 opentelemetry-instrument python3 SCRIPT_NAME.py
@@ -94,7 +94,7 @@ opentelemetry-instrument python3 SCRIPT_NAME.py
 
 To enable auto-instrumentation, you will need to include `opentelemetry-instrument` at the beginning of your application execution. If this is not an option for you, you will need to follow the usage instructions for each instrumentation library you install. For example, for Django instrumentation, you will need to add the following two lines to your code (outlined in the [Usage section](https://opentelemetry-python-contrib.readthedocs.io/en/latest/instrumentation/django/django.html#id1) of the library documentation):
 
-```
+```python
 from opentelemetry.instrumentation.django import DjangoInstrumentor
 
 DjangoInstrumentor().instrument()     ##This goes inside of main
@@ -160,11 +160,11 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 
 ## Instrumentation notes
 
-* For **Flask application** instrumentation debug mode has to be disabled (`debug=false`).
-* In case of **Django**, the application server has to be run with `--noreload` flag such as:
+* For **Flask application** instrumentation, disable debug mode (`debug=false`).
+* For **Django**, run the application server with the `--noreload` flag, such as:
 
    ```bash
-   opentelemetry-instrument python3 manage.py runserver ---noreload
+   opentelemetry-instrument python3 manage.py runserver --noreload
    ```
 
 ## Log correlation
@@ -174,11 +174,11 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
 
 ## Examples
 
-### Django Instrumentation
+### Django instrumentation
 
 [This article](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#django-instrumentation) will show you how to use the `opentelemetry-instrumentation-django` library to automatically instrument a Django app. It covers how to reference the library manually within your code, as well as how to use [Auto-instrumentation](https://opentelemetry-python.readthedocs.io/en/stable/examples/django/README.html#auto-instrumentation) without having to edit your code.
 
-### Sample Flask App Instrumentation
+### Sample Flask app instrumentation
 
 [This article](https://opentelemetry.io/docs/languages/python/getting-started/) walks you through deploying a simple Flask app and configuring instrumentation for it. The example demonstrates how to log traces to the console for basic testing.
 

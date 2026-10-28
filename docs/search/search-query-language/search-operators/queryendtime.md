@@ -2,6 +2,7 @@
 id: queryendtime
 title: queryEndTime Search Operator
 sidebar_label: queryEndTime()
+description: Use the queryEndTime operator to return the end time of the search time range in milliseconds.
 ---
 
 The `queryEndTime()` operator returns the end time of the search [time range](/docs/search/get-started-with-search/build-search/set-time-range) in milliseconds. You can use it in combination with [`queryStartTime()`](querystarttime.md) to establish times and ranges for your non-continuous queries.
@@ -12,9 +13,7 @@ For dashboards in live mode, `queryTimeRange()` is a more suitable option. In mo
 
 ## Syntax
 
-```sql
-queryEndTime() as <field>
-```
+`queryEndTime() as <field>`
 
 ## Rules
 
@@ -24,14 +23,14 @@ queryEndTime() as <field>
 
 To get a duration of your query:
 
-```sql
+```sumo
 error
 | (queryEndTime() - queryStartTime()) as duration
 ```
 
 To list start time, end time, and duration:
 
-```sql
+```sumo
 error
 | queryStartTime() as starttime
 | queryEndTime() as endtime

@@ -12,7 +12,7 @@ The Sumo Logic query language allows alphanumeric characters and underscores for
 
 For example:
 
-```sql
+```sumo
 | keyvalue regex " ([A-Z_-]+?)='([^']+?)'" keys "TYPE", "CHANNEL", "DOCUMENT-URI"
 | count by %"document-uri"
 ```

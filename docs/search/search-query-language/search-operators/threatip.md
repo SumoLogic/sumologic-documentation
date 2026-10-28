@@ -2,6 +2,7 @@
 id: threatip
 title: threatip Search Operator
 sidebar_label: threatip
+description: Use the threatip operator to identify suspicious IP addresses in your log data for security analytics and threat detection.
 ---
 
 The `threatip` operator looks for suspicious IP addresses in your log data. Using the operator provides security analytics that help you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks.
@@ -16,9 +17,7 @@ The only Indicators of Compromise (IOC) supported is IP address.
 
 ## Syntax
 
-```sql
-threatip <ip_address_field>
-```
+`threatip <ip_address_field>`
 
 #### Response Fields
 
@@ -29,7 +28,7 @@ threatip <ip_address_field>
 
 ## Example
 
-```
+```sumo
 _sourceCategory=Labs/*
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | threatip ip_address

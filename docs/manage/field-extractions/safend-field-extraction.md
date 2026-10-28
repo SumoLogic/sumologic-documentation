@@ -19,13 +19,13 @@ description: Create a field extraction rule for Safend.
 
 **Scope:**
 
-```sql
+```sumo
 _sourceCategory=safend
 ```
 
 **Extraction Rule:**
 
-```sql
+```sumo
 | parse regex "Action: (?<action>[^,]*)" nodrop
 | parse " * [" as host nodrop | parse "] *:" as alert_type nodrop
 | parse "User: *," as user nodrop

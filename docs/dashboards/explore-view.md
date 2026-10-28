@@ -15,18 +15,18 @@ Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of y
 * **Infrastructure Monitoring**
 * **Application Monitoring**
 * **Real User Monitoring**
- 
 
-## Navigating 
+
+## Navigating
 
 To navigate, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**. 
-3. Drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**.
+3. Drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards.
 
 ### Stack linking
 
-Stack linking connects dashboards so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards/explore/stack-linking.png')} alt="Stack linking" style={{border: '1px solid gray'}}  width="500"/>
+Stack linking connects dashboards so you can view dashboards when exploring infrastructure components. [Learn more](/docs/dashboards/link-dashboards.md). <br/><img src={useBaseUrl('img/dashboards/explore/stack-linking.png')} alt="Stack linking" style={{border: '1px solid gray'}} width="500"/>
 
 ## Monitoring dashboard categories
 
@@ -34,7 +34,7 @@ Monitoring dashboards are available for the following apps and solutions.
 
 ### AWS Observability
 
-AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From this tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
+AWS Observability provides an intuitive dashboard framework that mirrors industry-standard AWS hierarchies. You can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. From this tab, you can quickly navigate across multiple AWS accounts and view resources hosted in multiple locations worldwide. [Learn more](/docs/observability/aws/deploy-use-aws-observability/v2.15.0/view-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/aws-view.png')} alt="AWS Observability" style={{border: '1px solid gray'}} width="400"/>
 
 ### Kubernetes Views
 
@@ -48,7 +48,7 @@ Application Monitoring provides three Service and Application dashboard views. T
 
 [Real User Monitoring](/docs/apm/real-user-monitoring) allows you to visualize Real User Monitoring (RUM) metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.<br/><img src={useBaseUrl('img/dashboards/explore/real-user-monitoring.png')} alt="RUM" style={{border: '1px solid gray'}} width="500" />
 
-### Database View​
+### Database View
 
 Sumo Logic provides a set of dashboards for various components of your application that allow you to review the state of individual parts of your system. You can track errors, performance, and usage of application components, grouped by their type and logical clusters.
 
@@ -57,9 +57,9 @@ This feature is currently supported only for Database apps. To learn more, go to
 :::
 
 1. Select the **Database View** category.
-1. Select an environment (e.g., `dev` or `prod`).
+1. Select an environment (for example, `dev` or `prod`).
    * **Application Components - Environments Overview** will appear on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
-1. Select from the list of that environment's components (e.g., `Elastisearch Clusters`).
+1. Select from the list of that environment's components (for example, `Elastisearch Clusters`).
    * The respective dashboard will appear in the right nav.
 1. Then choose a specific database .
 1. Drill down into hierarchy to find specific component entities to view dashboards at more granular levels.
@@ -77,7 +77,7 @@ You can filter your view so you can focus on specific entities and sections of y
 
     The **Filter** menu allows you to select a saved filter or write a new one. If you have any saved filters they are available in the dropdown menu **Filter**. The default value is **None Selected**. The **Clear All** button is available to clear any filters that are already applied.
 
-3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400"/>
+3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown list will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400"/>
 
 4. Enter or select the keys you want to filter by then click **Apply**. Filters of the same key behave as an **OR** condition and different keys behave as an **AND** condition.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_apply_filters.png')} alt="Apply filters" width="500"/>
 
@@ -110,7 +110,7 @@ The default filter is displayed in the **Filter** dropdown menu with a **Default
 
 ## Linking to entities
 
-### Obtaining Links
+### Obtaining links
 
 Use the link button to the right of the dashboard title to copy the link to your specific entity view in the dashboard. This is related to [Stack Linking](/docs/dashboards/link-dashboards.md).<br/><img src={useBaseUrl('img/dashboards/explore/link-explore-dashboard.png')} alt="Link dashboards" />
 
@@ -125,7 +125,7 @@ https://<endpoint>/ui/#/explore/[@<startMs>,<endMs>]@topology=<topologyId>@<enti
 ```
 
 Required:
-* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
+* `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
 * `<entityKey>` is the type of entity you want to explore, such as cluster, deployment, service, node, account, region, namespace, or pod.
 * `<entityValue>` is the value of the entity to explore.
 
@@ -147,7 +147,7 @@ Dashboard:
 
 Let’s create a URL to open on the `primary-eks `cluster, `kube-system` namespace, and `metrics-server` service.
 
-The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+The custom URL that launches this log query in the Sumo Logic Search page would be similar to the following. The exact URL would depend on your Sumo Logic account endpoint, as listed in [Sumo Logic Endpoints and Firewall Security](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
 https://service.us2.sumologic.com/ui/#/explore/@cluster=primary-eks@namespace=kube-system@service=metrics-server
 ```
@@ -161,7 +161,7 @@ https://service.us2.sumologic.com/ui/#/explore/@1601092800000,1601389990282@clus
 
 Navigation capabilities allow you to quickly locate the object that needs debugging in a physical stack. This section walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-:::sumo micro lesson
+:::training Micro Lesson
 
 <Iframe url="https://fast.wistia.net/embed/iframe/6kfzt3kzos?web_component=true&seo=true&videoFoam=false"
   width="854px"
@@ -179,7 +179,7 @@ Navigation capabilities allow you to quickly locate the object that needs debugg
 
 ### Step 1: Analyzing the cluster
 
-We suspect there's a problem with a Kubernetes cluster but aren't sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Cluster_Overview.png')} alt="Cluster overview" />
+We suspect there's a problem with a Kubernetes cluster but are not sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Cluster_Overview.png')} alt="Cluster overview" />
 
 ### Step 2: Exploring a namespace
 
@@ -187,4 +187,4 @@ To further pinpoint the problem with our cluster, we investigated the namespace 
 
 ### Step 3: Drilling down into a pod
 
-Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example,  you can select the Details icon for a panel to view that data in a search. Or, you can review the actual logs in the Log Stream panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" />
+Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example, you can select the **Details** icon for a panel to view that data in a search. Or, you can review the actual logs in the Log Stream panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" />

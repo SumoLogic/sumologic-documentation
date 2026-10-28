@@ -11,10 +11,9 @@ This article describes the various setup and configuration options for the Cloud
 
 ## General
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access general settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access general settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General**. You can also click the **Go To...** menu at the top of the screen and select **General**.
-
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-general-settings.png')} alt="General Settings" style={{border: '1px solid gray'}} width="800"/>
 
@@ -29,15 +28,15 @@ This article describes the various setup and configuration options for the Cloud
 Use these settings to configure how Cloud SOAR handles [incidents](/docs/cloud-soar/incidents-triage/#incidents).
 
 * **Duplicates**.
-    * **Prohibit duplicate naming**. Select this checkbox to prevent incidents from being named identically.
+    * **Prohibit duplicate naming**. Select this check box to prevent incidents from being named identically.
     * **Default suffix for duplicated incident name**. Select the suffix to add to the end of incident names to differentiate incidents that are named the same.
     * **Use suffix on non-duplicate**. Use the selected suffix on all incidents, regardless of whether they are named the same.
 * **Objects**. Gather objects, such as IP addresses, domains and email addresses, and add them to the appropriate object's section within the incident.
     * **Extract from**:
        * **Incident field**. Gather objects from the incident properties.
        * **Task field**. Gather objects from the incident tasks.
-       * **Note field**. Gather objects from the the incident notes.
-    * **Filename extension whitelist**. Enter filename extensions to allow when gathering objects.
+       * **Note field**. Gather objects from the incident notes.
+    * **Filename extension allowlist**. Enter filename extensions to allow when gathering objects.
 * **Process Phase**. Configure phases for monitoring progress of incidents as they progress. Determine whether the phase is **Mandatory**, and the **Status** of the incident when the phase is reached. Select **Show Deleted** to show phases on deleted incidents.
 * **Mandatory Closing Note**. Make a final incident note mandatory before the incident can be closed.
 
@@ -56,11 +55,11 @@ For additional setup needed for Slack, see [Configure Slack for Cloud SOAR](/doc
 
 A *group* in Cloud SOAR is a collection of users that can be added as incident investigators. When you have a number of users to add as investigators, adding a group of users is faster and easier than adding each user individually. In addition, you can assign everyone in the group the same profile (role), limiting them as incident investigators to only the rights that the profile gives them.
 
-For example, let's say that you have a team of SOC analysts that share responsibility for investigating incidents. You can add all the members of the team to a group and give its members the "Analyst" profile. Then when you need to add the SOC analysts as investigators to incidents, you can simply select the group as the investigator.
+For example, let's say that you have a team of SOC analysts that share responsibility for investigating incidents. You can add all the members of the team to a group and give its members the "Analyst" profile. Then when you need to add the SOC analysts as investigators to incidents, you can select the group as the investigator.
 
 ### Create a group
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.<br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**.<br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **User Management > Groups**.
 1. The **Groups** dialog displays. Click the **+** icon next to **Groups**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/><br/>The **Add Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-group.png')} alt="Add Group dialog" style={{border: '1px solid gray'}} width="600"/>
 1. In **Name** enter a name for the group.
 1. In **Profile** select the role to assign to members of the group. These are [roles](/docs/manage/users-roles/roles/) already created in the system.
@@ -72,7 +71,7 @@ For example, let's say that you have a team of SOC analysts that share responsib
 ### Assign a group as an incident investigator
 
 To add a group as an incident investigator, follow the same steps as described in [Add investigators](/docs/cloud-soar/incidents-triage/#add-investigators):
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). At the top of the screen, click **Incidents**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Cloud SOAR > Incidents**. You can also click the **Go To...** menu at the top of the screen and select **Incidents**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). At the top of the screen, click **Incidents**. 
 1. Check the incidents you want to add investigators to.
 1. Click the three-dot kebab menu in the upper left-hand corner of the screen.
 1. Select **Add Investigator**.<br/>The **Add Investigator** screen is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-investigator.png')} alt="Add Investigator dialog" style={{border: '1px solid gray'}} width="700"/>
@@ -84,7 +83,7 @@ To add a group as an incident investigator, follow the same steps as described i
 
 ### Group role assignments
 
-The role specified in an assigned group profile supersedes the user's [role assignments in the Sumo Logic Log Analytics Platform](/docs/manage/users-roles/roles/add-remove-users-role/). The group permissions are persistent until the user leaves the group, the profile is removed from the group, or the group is deleted.
+The role specified in an assigned group profile supersedes your [role assignments in the Sumo Logic Log Analytics Platform](/docs/manage/users-roles/roles/add-remove-users-role/). The group permissions are persistent until the user leaves the group, the profile is removed from the group, or the group is deleted.
 
 | User | Result |
 | :-- | :-- |
@@ -95,10 +94,9 @@ The role specified in an assigned group profile supersedes the user's [role assi
 
 ## Notifications
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access notification settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access notification settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Notifications > Event Triggers**.
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access notification settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Notifications**. You can also click the **Go To...** menu at the top of the screen and select **Notifications**.
-
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-event-triggers.png')} alt="Events Triggers dialog" style={{border: '1px solid gray'}} width="700"/>
 
@@ -106,10 +104,9 @@ Select the icon to the right of an event to trigger a notification to be sent wh
 
 ## Custom fields
 
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access custom field settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Fields**.
+
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access custom fields settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Fields**.
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access custom field settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**.
-
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-custom-fields.png')} alt="Cloud SOAR custom fields page" style={{border: '1px solid gray'}} width="700"/>
 
@@ -130,14 +127,14 @@ A complete list of field types is listed below. Additional fields are required o
 | Field Type        | Description                                                                                       |
 |:--|:--|
 | Calculation  | Perform a calculation between two fields or between a field and a static value. |
-| Checkbox   | Checkbox. |
+| Check box   | Check box. |
 | Color Picker  | Interactive color picker to select a color. |
 | Date | Date only picker. |
-| Date & Time   | Date and time picker. |
-| Email Address | Email address available to use in actions which require a email input.    |
+| Date and Time   | Date and time picker. |
+| Email Address | Email address available to use in actions which require an email input.    |
 | Filename | Filename available to use in actions which require a filename input.   |
 | Hash | Hash value available to use in actions which require a hash input.  |
-| IP Address    | IP address available to use in actions which require a IP address input.    |
+| IP Address    | IP address available to use in actions which require an IP address input.    |
 | List   | Dropdown list.  |
 | Multi Select List | Multiselect list box.  |
 | Numeric Textbox   | Accepting numeric values only.  |
@@ -146,11 +143,11 @@ A complete list of field types is listed below. Additional fields are required o
 | Time Interval     | Numeric time interval which can be used as a value in another calculated field.  |
 | Timezone   | Timezone list dropdown. |
 | URL | URL available to use in actions which require a URL input. |
-| User Details | User details, such as a user name. Available to use in actions which require a user details input. |
+| User Details | User details, such as a user name. Available to use in actions which require user details input. |
 
 ### Using custom fields for SLAs
 
-Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of `Date`, `Date & Time`, and `Time Interval` type fields.
+Custom fields can be used to calculate any number of custom service level agreements (SLAs). This can be achieved using combinations of `Date`, `Date and Time`, and `Time Interval` type fields.
 
 In the following example, custom fields provide information on the status of an organization's notification SLA. Two of the custom fields require user input:
 * **Notification SLA Requirement** is used to store the SLA time interval, such as 30 minutes.
@@ -172,8 +169,8 @@ The **Incident label** page allows you to define labels for different types of [
 
 To create an incident label:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui/). In the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Incident Labels**.
-1. Click **+** to the left of **Incident label**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-incident-labels.png')} alt="Cloud SOAR incident label page" style={{border: '1px solid gray'}} width="700"/>
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Incident Labels**.
+1. Click **+** to the left of **Incident label**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Incident labels**. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-incident-labels.png')} alt="Cloud SOAR incident label page" style={{border: '1px solid gray'}} width="700"/>
 1. Enter the following on the **New label** dialog:
     1. **Name**. Enter a name for the label. This name will not appear in the label itself.
     1. **Description**. Enter a description for what the label will be used for.
@@ -191,9 +188,9 @@ To create an incident label:
 
 ## Triage
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access triage configuration settings, in the main Sumo Logic menu select **Cloud SOAR**, and then under **Cloud SOAR Configurations** select **Triage**.
 
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access triage configuration settings, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Triage**.
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). To access triage configuration settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and on the left menu select **Customization > Triage**.
 
 <img src={useBaseUrl('img/cloud-soar/cloud-soar-triage-configuration.png')} alt="Cloud SOAR triage configuration page" style={{border: '1px solid gray'}} width="700"/>
 
@@ -236,7 +233,7 @@ If you need to follow HIPAA compliance, it is important to explicitly communicat
 
 You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
 
-In order to do that, please open a [Support ticket](/docs/get-started/help#support) with your request.
+In order to do that, Open a [Support ticket](/docs/get-started/help#support) with your request.
 
 ## Static IP addresses
 

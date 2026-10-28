@@ -13,25 +13,24 @@ To safeguard content in your organization's Sumo Logic account perform the foll
 A user designated as Account Owner cannot be deleted. To transfer ownership, the account owner must do this on the **Account** page. For more information, see [Cloud Flex Legacy Accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts) or [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts), depending on your Sumo Logic packaging.
 
 :::note
-If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
+If the account owner leaves your organization and you cannot transfer the account ownership, [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
 :::
 
 ## Check for allowlisted IP addresses
 
 Verify if the user has an IP address that should be removed on the Service AllowList Settings page.
 
-[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Service AllowList Settings page, in the main Sumo Logic menu select **Administration > Security > Service AllowList Settings**. 
-
-[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Service AllowList Settings page, in the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**.
+[**New UI**](/docs/get-started/sumo-logic-ui/). To access the Service AllowList Settings page, in the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**.
  
+[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access the Service AllowList Settings page, in the main Sumo Logic menu select **Administration > Security > Service AllowList Settings**. 
 
 ## Check for access to any shared Access IDs and Keys
 
-If a deleted user's Access IDs and Keys are used in automation tools like Chef or Puppet to register new Collectors, registrations will fail. Delete and recreate any Access IDs and Keys as necessary.
+If a deleted user's access IDs and keys are used in automation tools like Chef or Puppet to register new Collectors, registrations will fail. Delete and recreate any [access IDs and keys](/docs/manage/security/access-keys/) as necessary.
 
 ## Deactivate or delete the user
 
 Once these steps are complete, you can deactivate or delete the user. For instructions, see:
 
-* [Deactivate a User](deactivate-activate-user.md)
-* [Delete a User](delete-user.md)
+* [Deactivate a user](/docs/manage/users-roles/users/deactivate-activate-user/#deactivate-a-user)
+* [Delete a User](/docs/manage/users-roles/users/delete-user/)

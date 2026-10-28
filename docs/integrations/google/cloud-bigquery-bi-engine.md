@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudBigQueryBIEngine.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudBigQueryBIEngine.png')} alt="Google Cloud BigQuery icon" width="50"/>
 
 BigQuery BI Engine is a fast, in-memory analysis service that accelerates many SQL queries in BigQuery by intelligently caching the data you use most frequently. For more details, refer to the [GCP documentation](https://cloud.google.com/bigquery/docs/bi-engine-intro).
 

@@ -1,0 +1,68 @@
+{
+   "action": "created",
+   "installation": {
+      "uuid": "04ff0c7e-ead5-4b0a-93d6-5b571468239d"
+   },
+   "data": {
+      "issue": {
+         "url": "https://zorlinaxomrel.xyz/api/0/organizations/cal-ia/issues/1752473492887/",
+         "web_url": "https://zorlinaxomrel.xyz/issues/1752473492887/",
+         "project_url": "https://zorlinaxomrel.xyz/issues/?project=SnapFlow",
+         "id": 1752473492887,
+         "shareId": null,
+         "shortId": "PYTHON-2",
+         "title": "ZeroDivisionError: division by zero",
+         "culprit": "__main__ in &lt;module&gt;",
+         "permalink": null,
+         "logger": null,
+         "level": "error",
+         "status": "resolved",
+         "statusDetails": {},
+         "substatus": "resolved",
+         "isPublic": false,
+         "platform": "python",
+         "project": {
+            "id": 2,
+            "name": "python",
+            "slug": "python",
+            "platform": "python"
+         },
+         "type": "error",
+         "metadata": {
+            "value": "division by zero",
+            "type": "ZeroDivisionError",
+            "filename": "sentry.py",
+            "function": "&lt;module&gt;",
+            "in_app_frame_mix": "in-app-only",
+            "sdk": {
+               "name": "sentry.python",
+               "name_normalized": "sentry.python"
+            },
+            "initial_priority": 75
+         },
+         "numComments": 0,
+         "assignedTo": null,
+         "isBookmarked": false,
+         "isSubscribed": false,
+         "subscriptionDetails": null,
+         "hasSeen": false,
+         "annotations": [],
+         "issueType": "error",
+         "issueCategory": "error",
+         "priority": "high",
+         "priorityLockedAt": null,
+         "seerFixabilityScore": null,
+         "seerAutofixLastTriggered": null,
+         "isUnhandled": true,
+         "count": "1",
+         "userCount": 0,
+         "firstSeen": "2025-07-14T11:41:32+053031+00:00",
+         "lastSeen": "2025-07-14T11:41:32+053031+00:00"
+      }
+   },
+   "actor": {
+      "type": "application",
+      "id": "sentry",
+      "name": "Sentry"
+   }
+}

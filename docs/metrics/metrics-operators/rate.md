@@ -2,10 +2,11 @@
 id: rate
 title: rate Metrics Operator
 sidebar_label: rate
+description: Use the rate metrics operator to calculate the per-second rate of change between data points in time series.
 ---
 
 
-The rate operator calculates the per-second rate of change between data points in the time series. There are two different modes in which the rate operator can work:
+The `rate` operator calculates the per-second rate of change between data points in the time series. There are two different modes in which the rate operator can work:
 
 * Regular `rate` (without `over` modifier) calculates the rate of change between consecutive data points. It divides the difference in values of consecutive data points by the difference in their timestamps in seconds.
 * `rate over TIME`, on the other hand, allows you to calculate an average rate of change over a specified time window. This is achieved by considering the first and the last metric value in the given time window, extrapolating to the ends of the window if necessary.
@@ -14,7 +15,7 @@ The rate operator also assigns the value of the metric tag to be `rate($metric)`
 
 ## Syntax
 
-```sql
+```metrics
 rate [increasing | decreasing | counter] [[over] INTERVAL]
 ```
 where `INTERVAL` is the duration over which you want to calculate and average rate, in seconds (`s`) , minutes (`m`), hours (`h`), or days (`d`).
@@ -35,7 +36,7 @@ You can also use the `increasing` or `decreasing` option to make `rate` consider
 
 This query calculates the increase or decrease per second in the `Net_InBytes` metric from one collected data point to the next. 
 
-```sql
+```metrics
 metric=Net_InBytes Interface=eth0 | rate
 ```
 
@@ -43,7 +44,7 @@ metric=Net_InBytes Interface=eth0 | rate
 
 This query calculates the increase in `apiserver_request_total` counter value from one collected data point to the next. 
 
-```sql
+```metrics
 metric=apiserver_request_total | rate counter
 ```
 
@@ -51,6 +52,6 @@ metric=apiserver_request_total | rate counter
 
 This query calculates the average rate of `apiserver_request_total` counter value changes over a 5-minute time window
 
-```sql
+```metrics
 metric=apiserver_request_total | rate counter over 5m
 ```

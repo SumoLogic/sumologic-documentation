@@ -8,12 +8,10 @@ Returns the inverse tangent of the argument.
 
 ## Syntax
 
-```sql
-atan(<x>) as <field>
-```
+`atan(<x>) as <field>`
 
 ## Example
 
-```sql
+```sumo
 * | atan(1) as v
 ```

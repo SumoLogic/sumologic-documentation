@@ -35,33 +35,36 @@ standard way across records. `normalizedAction` is meant to describe an attempt
 
 | Enforced Output Value | Description |
 |:--|:--|
-| abort | Use for actions synonymous with "abort". For instance, in an event describing the attempt, successful or not, to interrupt an ongoing task. |
-| allow | Use for actions synonymous with "allow”. For instance, in an event describing the attempt, successful or not, to permit an object or the occurrence of an activity. This is common in actions pertaining to network traffic.                                            |
-| change | Use for actions synonymous with "change". For instance, in an event describing the attempt, successful or not, to modify a resource. |
-| clean | Use for actions synonymous with "clean". For instance, in an event describing the attempt, successful or not, of the sanitization of a resource. Common in actions pertaining to anti-malware. |
-| create | Use for actions synonymous with "create". For instance, in an event describing the attempt, successful or not, to create a resource. |
-| decrypt | Use for actions synonymous with "decrypt". For instance, in an event describing the attempt, successful or not, of the decryption of a resource |
-| delete | Use for actions synonymous with "delete". For instance, in an event describing the attempt, successful or not, to create a resource. |
-| deny | Use for actions synonymous with "deny". For instance, in an event describing the attempt, successful or not, to reject an object or the occurrence of an activity. Common in actions pertaining to network traffic. |
-| domainLogon | Use for events describing the attempt, successful or not, to leverage domain resources to attempt credential validation. |
-| disable | Use for actions synonymous with "disable". For instance, in an event describing the attempt, successful or not, to render a resource inactive and/or unable. Common in actions pertaining to identity and access management. |
-| enable | Use for actions synonymous with "enable". For instance, in an event describing the attempt, successful or not, to render a resource active and/or able. Common in actions pertaining to identity and access management. |
-| execute | Use for actions synonymous with "execute". For instance, in an event describing the attempt, successful or not, to initiate the performance of a task. |
-| ignore | Use for actions synonymous with "ignore". For instance, in an event describing the attempt, successful or not, to disregard a resource or the occurrence of an activity. |
-| inspect | Use for actions synonymous with "inspect". For instance, in an event describing the attempt, successful or not, to submit a resource to further scrutiny. |
-| install | Use for actions synonymous with "install". For instance, in an event describing the attempt, successful or not, of the installation of a piece of software or hardware. |
-| lock | Use for actions synonymous with "lock". For instance, in an event describing the attempt, successful or not, to make a resource secure or inaccessible. Common in actions pertaining to identity and access management. |
-| logoff | Use for actions synonymous with "logoff". For instance, in an event describing the attempt, successful or not, of a computer, service, or user account logging off. |
-| logon | Use for actions synonymous with "logon". For instance, in an event describing the attempt, successful or not, of a computer, service, or user account logging in. |
-| quarantine | Use for actions synonymous with "quarantine". For instance, in an event describing the attempt, successful or not, of isolating a resource. Common in actions pertaining to anti-malware. |
-| receive | Use for actions synonymous with "receive". For instance, in an event describing the attempt, successful or not, to accept the arrival of a resource. Common in actions pertaining to email. |
-| reset | Use for actions synonymous with "reset". For instance, in an event describing the attempt, successful or not, to discard the current state of a resource. Common in actions pertaining to network network traffic and identity access management, depending on context. |
-| restore | Use for actions synonymous with "restore". For instance, in an event describing the attempt, successful or not, to re-establish the prior state of a resource. Common in actions pertaining to backups. |
-| scan | Use for actions synonymous with "scan". For instance, in an event describing the attempt, successful or not, to initiate a scan of a resource. Common in actions pertaining to anti-malware. |
-| send | Use for actions synonymous with "send". For instance, in an event describing the attempt, successful or not, to dispatch a resource. Common in actions pertaining to email. |
-| start | Use for actions synonymous with "start". For instance, in an event describing the attempt, successful or not, to initiate an activity. |
-| stop | Use for actions synonymous with "stop". For instance, in an event describing the attempt, successful or not, to cease an activity. |
-| uninstall | Use for actions synonymous with "uninstall". For instance, in an event describing the attempt, successful or not, to remove a piece of software or hardware. |
+| allow | Use for actions synonymous with "allow". Such as in an event describing the attempt, successful or not, to permit an object or the occurrence of an activity. Common to actions pertaining to network traffic. |
+| abort | Use for actions synonymous with "abort". Such as in an event describing the attempt, successful or not, of an interruption of an ongoing task. |
+| access | Use for actions synonymous with "access". Such as in an event describing the attempt, successful or not, to open a file. Not to be confused with "inspect", which denotes access for the purpose of further examining a resource. |
+| deny | Use for actions synonymous with "deny". Such as in an event describing the attempt, successful or not, to reject an object or the occurrence of an activity. Common to actions pertaining to network traffic. |
+| bypass | Use for actions synonymous with "bypass". Such as in an event describing the attempt, successful or not, of the circumvention of a normal process for something. For example, network traffic not being subject to IDS/IPS rules. Common to actions directed at network traffic. |
+| change | Use for actions synonymous with "change". Such as in an event describing the attempt, successful or not, to modify a resource. |
+| clean | Use for actions synonymous with "clean". Such as in an event describing the attempt, successful or not, of the sanitization of a resource. Common in actions pertaining to anti-malware. |
+| create | Use for actions synonymous with "create". Such as in an event describing the attempt, successful or not, to create a resource. |
+| decrypt | Use for actions synonymous with "decrypt". Such as in an event describing the attempt, successful or not, of the decryption of a resource. |
+| delete | Use for actions synonymous with "delete". Such as in an event describing the attempt, successful or not, to delete a resource. |
+| disable | Use for actions synonymous with "disable". Such as in an event describing the attempt, successful or not, to render a resource inactive and/or unable. Common to actions pertaining to identity and access management. |
+| domainLogon | Use for authentication activity related to accessing domain resources. Such as in an event describing the attempt, successful or not, to request a Kerberos TGT or access a network share. |
+| enable | Use for actions synonymous with "enable". Such as in an event describing the attempt, successful or not, to render a resource active and/or able. Common to actions pertaining to identity and access management. |
+| execute | Use for actions synonymous with "execute". Such as in an event describing the attempt, successful or not, to initiate the performance of a task. |
+| ignore | Use for actions synonymous with "ignore". Such as in an event describing the attempt, successful or not, to disregard a resource or the occurrence of an activity. |
+| inspect | Use for actions synonymous with "inspect". Such as in an event describing the attempt, successful or not, to submit a resource to further scrutiny. |
+| install | Use for actions synonymous with "install". Such as in an event describing the attempt, successful or not, of the installation of a piece of software or hardware. |
+| load | Use for actions synonymous with "load". Such as in an event describing the attempt, successful or not, to initialize a DLL file in process memory. |
+| lock | Use for actions synonymous with "lock". Such as in an event describing the attempt, successful or not, to make a resource secure or inaccessible. Common to actions pertaining to identity and access management. |
+| logoff | Use for actions synonymous with "logoff". Such as in an event describing the attempt, successful or not, of a computer, service, or user account logging off. |
+| logon | Use for actions synonymous with "logon". Such as in an event describing the attempt, successful or not, of a computer, service, or user account logging in to a specific machine. |
+| quarantine | Use for actions synonymous with "quarantine". Such as in an event describing the attempt, successful or not, of isolating a resource. Common in actions pertaining to anti-malware. |
+| receive | Use for actions synonymous with "receive". Such as in an event describing the attempt, successful or not, to accept the arrival of a resource. Common to actions pertaining to e-mail. |
+| reset | Use for actions synonymous with "reset". Such as in an event describing the attempt, successful or not, to discard the current state of a resource. Common to actions pertaining to network traffic and identity access management depending on context. |
+| restore | Use for actions synonymous with "restore". Such as in an event describing the attempt, successful or not, to re-establish the prior state of a resource. Common to actions pertaining to backups. |
+| scan | Use for actions synonymous with "scan". Such as in an event describing the attempt, successful or not, to initiate a scan of a resource. Common to actions pertaining to anti-malware. |
+| send | Use for actions synonymous with "send". Such as in an event describing the attempt, successful or not, to dispatch a resource. Common to actions pertaining to e-mail. |
+| start | Use for actions synonymous with "start". Such as in an event describing the attempt, successful or not, of the initiation of an activity. |
+| stop | Use for actions synonymous with "stop". Such as in an event describing the attempt, successful or not, of the cessation of an activity. |
+| uninstall | Use for actions synonymous with "uninstall". Such as in an event describing the attempt, successful or not, of the removal of a piece of software or hardware. |
 
 ## normalizedResource
 

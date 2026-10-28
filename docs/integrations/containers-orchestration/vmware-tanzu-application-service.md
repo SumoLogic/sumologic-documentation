@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/vmware-tanzu.png')} alt="VMware Tanzu Application Service" width="40" />
 
-The Sumo Logic Nozzle for [VMware Tanzu Firehose](https://docs.vmware.com/en/Tile-Developer-Guide/3.0/tile-dev-guide/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the VMware Tanzu platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
+The Sumo Logic Nozzle for [VMware Tanzu Firehose](https://techdocs.broadcom.com/us/en/vmware-tanzu/platform/tile-developer-guide/3-2/tile-dev-tanzu/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the VMware Tanzu platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
 
 The nozzle filters out messages per your tile configuration and securely sends those logs and metrics to an HTTP API in the Sumo Logic SaaS service. The tile allows you to configure batching intervals, toggle verbose logging mode, and add metadata to your logs and metrics.
 
@@ -45,7 +45,7 @@ Follow the below steps to configure the Hosted Collector to receive VMware Tanzu
 
 ### Vendor configuration
 
-1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/sumologic-nozzle).            
+1. Download the product file from [Broadcom Products](https://support.broadcom.com/group/ecx/productdownloads?subfamily=Sumo%20Logic%20Nozzle%20for%20VMware%20Tanzu).            
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.                     
 1. Under the **Import a Product** button, click **+** next to the version number of Sumo Logic Nozzle for VMware Tanzu. This adds the tile to your staging area.
 1. Click the newly added **Sumo Logic Nozzle** for VMware Tanzu tile to access the configuration settings.<br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumoTile.png')} alt="Sumo tile" style={{border: '1px solid gray'}} width="800" />
@@ -63,10 +63,10 @@ Follow the below steps to configure the Hosted Collector to receive VMware Tanzu
    1. (Optional) **Sumo Logic Host**. If you have a local file source, you can specify a hostname. If you are using a Remote Host, do not use this field.
 	1. (Optional) **Custom Metadata**. Add custom metadata to the JSON. For example, `key1:value1,key2:value2`.
 	1. (Optional) **Include Only Matching Filter**. Include only designated events.
-	1. (Optional) **Exclude Always Filter**. Exclude specific events that are not pertinent to your search, such as `cf\_app\_name:sumo-logic-nozzle-0.1.0`.
+	1. (Optional) **Exclude Always Filter**. Exclude specific events that are not pertinent to your search, such as `cf\_app\_name:sumo-logic-nozzle-1.0.8`.
 	1. Click **Save**.<br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumologicSettings.png')} alt="Sumo Logic settings" style={{border: '1px solid gray'}} width="800" />
 1. Configure **Cloud Foundry Settings**.
-   1. **Cloud Foundry API Endpoint**. Enter your [API endpoint](https://docs.pivotal.io/pivotalcf/2-1/opsguide/api-endpoint.html). 
+   1. **Cloud Foundry API Endpoint**. Enter your [API endpoint](https://techdocs.broadcom.com/us/en/vmware-tanzu/platform/elastic-application-runtime/10-2/eart/api-endpoint.html). 
    1. **Cloud Foundry User**. Specify your Cloud Foundry username.
    1. **Cloud Foundry Password**. Enter Cloud Foundry password.
    1. **Log Events Batch Size**. Choose how many messages need to occur before they are sent to Sumo Logic.
@@ -86,7 +86,7 @@ Follow the below steps to configure the Hosted Collector to receive VMware Tanzu
 This section describes how to use Sumo Logic Nozzle for VMware Tanzu. After installation, the Sumo Logic Nozzle is available in the Apps Manager.
 
 1. From the **system** drop-down menu, select **sumo-logic-nozzle-org**.
-1. Under Apps, select the name of the build you want. For example, **sumo-logic-nozzle-0.1.0-build3**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/selectnozzle.png')} alt="Select Nozzle" style={{border: '1px solid gray'}} width="800" />
+1. Under Apps, select the name of the build you want. For example, **sumo-logic-nozzle-1.0.8-build1**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/selectnozzle.png')} alt="Select Nozzle" style={{border: '1px solid gray'}} width="800" />
 1. Push the **Start** button to begin running the nozzle.<br/> <img src={useBaseUrl('img/integrations/containers-orchestration/selectplay.png')} alt="Select play" style={{border: '1px solid gray'}} width="400" />
 1. Cloud Foundry will provision the VMs and begin running the nozzle service.
 1. Verify Sumo Logic Nozzle for VMware Tanzu tile is installed and started running the nozzle service by [running searches](/docs/search/search-cheat-sheets/general-search-examples/). If this is your first time using Sumo Logic, see [Getting Started with Search](/docs/search/get-started-with-search/).
@@ -108,3 +108,4 @@ To troubleshoot the Sumo Logic Nozzle integration with VMware Tanzu:
 
 - For detailed version information, refer to the [changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md) file.
 - For support, contact [VMware Tanzu Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or [Sumo Logic Support](https://support.sumologic.com).
+- For support, contact [Sumo Logic Support](https://support.sumologic.com/support/s/) for help with the Sumo Logic components. For help with the Operations Manager tile contact [Broadcom Support](https://support.broadcom.com/).

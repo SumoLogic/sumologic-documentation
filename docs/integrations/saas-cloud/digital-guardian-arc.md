@@ -7,7 +7,7 @@ description: The Sumo Logic app for Digital Guardian ARC provides a comprehensiv
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/send-data/digital-guardian-logo.svg')} alt="Digital Guardian icon" width="50"/>
 
 The Sumo Logic app for Digital Guardian ARC provides a comprehensive suite of dashboards and alerts to help security analysts monitor, detect, and respond to critical events within their data protection environment. Designed to integrate seamlessly with Digital Guardian's Advanced Reporting and Analytics (ARC), this app offers actionable insights into endpoint activities, user behavior, and policy violations to enhance data security.
 
@@ -35,7 +35,7 @@ This app also includes [built-in monitors](#digital-guardian-arc-monitors). For 
 
 ## Log types
 
-This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source/) to collect event logs from Digital Guardian ARC.
+This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-arc-source/) to collect event logs from Digital Guardian ARC.
 
 ### Sample log messages
 
@@ -312,7 +312,7 @@ This app uses Sumo Logic’s [Digital Guardian ARC Source](/docs/send-data/hoste
 
 ### Sample query
 
-```sql title="Activities By Protocol"
+```sumo title="Activities By Protocol"
 _sourceCategory="Labs/DigitalGuardian"
 | json "dg_guid", "dg_utype", "dg_cn", "dg_user", "dg_machine_name", "dg_proc_file_name", "dg_time", "ua_pt" as id, operation_type, company_name, user, computer, application_name, time, protocol nodrop
 
@@ -333,7 +333,7 @@ import CollectionConfiguration from '../../reuse/apps/collection-configuration.m
 <CollectionConfiguration/>
 
 :::important
-Use the [Cloud-to-Cloud Integration for Digital Guardian ARC](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Digital Guardian ARC app is properly integrated and configured to collect and analyze your Digital Guardian ARC data.
+Use the [Cloud-to-Cloud Integration for Digital Guardian ARC](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/digital-guardian-arc-source) to create the source and use the same source category while installing the app. By following these steps, you can ensure that your Digital Guardian ARC app is properly integrated and configured to collect and analyze your Digital Guardian ARC data.
 :::
 
 ### Create a new collector and install the app
@@ -366,7 +366,7 @@ The **Digital Guardian ARC - Overview** dashboard offers a centralized view of d
 
 The dashboard includes geolocation maps for sender and recipient activity to identify unusual or risky data transfers across regions. It also highlights potentially risky geographies associated with flagged behaviors. Authentication insights, such as failed login attempts, enable analysts to investigate credential misuse or brute-force attempts. Process monitoring lists metadata like file size, path, and user domain to identify risky operations. Historical activity trends help detect abnormal surges or patterns.
 
-This tool is particularly effective for detecting incidents, managing insider threats, and ensuring compliance by tracking rule-violated activities. It supports threat-hunting efforts by correlating risky behaviors with geolocation and operational context. The focus on endpoint activity, unauthorized operations, and certificate analysis strengthens an organization’s data security posture. Security analysts can leverage these insights to identify and mitigate risks proactively, securing critical assets and sensitive data. The dashboard integrates seamlessly with Digital Guardian ARC, enabling a robust framework for real-time monitoring and investigation. <br/> <img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Digital-Guardian-ARC/Digital-Guardian-ARC-Overview.png' alt="Digital-Guardian-ARC-Overview" />
+This tool is particularly effective for detecting incidents, managing insider threats, and ensuring compliance by tracking rule-violated activities. It supports threat-hunting efforts by correlating risky behaviors with geolocation and operational context. The focus on endpoint activity, unauthorized operations, and certificate analysis strengthens an organization’s data security posture. Security analysts can leverage these insights to identify and mitigate risks proactively, securing critical assets and sensitive data. The dashboard integrates seamlessly with Digital Guardian ARC, enabling a robust framework for real-time monitoring and investigation. <br/> <img src='https://sumologic-app-data-v2.s3.us-east-1.amazonaws.com/dashboards/Digital-Guardian-ARC/Digital-Guardian-ARC-Overview.png' alt="Digital Guardian ARC Overview" />
 
 ## Create monitors for Digital Guardian ARC app
 

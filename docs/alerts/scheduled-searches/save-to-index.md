@@ -5,11 +5,13 @@ sidebar_label: Save to Index
 description: When you save the results of a scheduled search to an Index you can search your data using _index=index_name with increased search performance.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 When you create a Scheduled Search, you can save the results to an Index. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.
 
 For example, you could use the following query to find successful logins on a Linux system, then save the results to an Index using the **Save to Index** alert type for your Scheduled Search.
 
-```sql
+```sumo
 _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("Accepted" and "pam") or "session" or ("to" and "on")) !"closed"
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\w*):\s+(?<message>.*)$" nodrop
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_host>\S*)\s(?:\S*)\[\d+\]:\s+(?<message>.*)$" nodrop
@@ -30,15 +32,15 @@ In most cases, if you can use a [Scheduled View](/docs/manage/scheduled-views)�
 
 * When you use Save to Index, metadata fields from the Collector (for example, _collector) will be dropped. 
 * Role filters may not work. If the filter depends on any field that doesn't exist in the Index (or has been altered like _collector), then it won't work.
-* No more than 512 results can be saved each time the Scheduled Search completes.
+* For [aggregate queries](/docs/search/search-query-language/group-aggregate-operators) (for example, `... | timeslice 1m | count by batch, parsedfield`) saved via Save to Index, the Message (`_raw`) field will now be empty. No data is lost and all values remain fully available in their named fields (`_count`, `batch`, `parsedfield`, etc.). If your queries currently parse or search against the `_raw`/Message field for data saved through Save to Index, update them to reference the named fields instead.
 
 ## Save the results of a scheduled search as an Index
 
 1. [Save a search](/docs/search/get-started-with-search/search-basics/save-search). 
-1. Click **Schedule this search**.<br/>![SaveToIndex.png](/img/alerts/SaveToIndex.png)
+1. Click **Schedule this search**.<br/><img src={useBaseUrl('img/alerts/SaveToIndex.png')} alt="Save to index" style={{border: '1px solid gray'}} width="500" />
 1. For all configuration options, see [Schedule a Search](schedule-search.md). 
 1. **Alert Type**. Select **Save to Index**.
-1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores (`_`) are the only special characters allowed.
+1. **Index Name**. Enter a name that you'll use to search the data in a query. Use a name that's descriptive and easy to remember. Names can be comprised of alphanumeric characters; underscores (`_`) are the only special characters allowed. 
 1. Click **Save**.
 
 Once you have saved your Scheduled Search as an Index, you can cancel or edit the Scheduled Search, but you cannot delete an Index. 

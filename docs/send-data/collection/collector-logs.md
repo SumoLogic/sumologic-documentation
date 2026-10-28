@@ -56,6 +56,6 @@ The default settings in the rolling file appender section for collector.log a
 <DefaultRolloverStrategy max="10"/>
 ```
 
-With the default settings, Sumo will allow 10 rotations of the collector.log file, creating collector.log, collector.log.1, collector.log.2, up to collector.log.9. Logging will rotate when a file reaches 5 MB.
+With the default settings, Sumo Logic will allow 10 rotations of the collector.log file, creating collector.log, collector.log.1, collector.log.2, up to collector.log.9. Logging will rotate when a file reaches 5 MB.
 
 Once 10 rotations have occurred, resulting in a total space used of 50 MB, the oldest log file data is dropped. 

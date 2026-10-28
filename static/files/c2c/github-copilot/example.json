@@ -1,0 +1,18 @@
+{
+	"api.version": "v1",
+	"source": {
+	  "config": {
+		"name": "Github Copilot",
+		"organization": "sanlabs",
+		"patToken": " github_pat_11AYxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
+		"collectTeamMetrics": true,
+		"metricPeriodInDays": 1,
+		"teamNames": ["dev-team", "cse-team"]
+	  },
+	  "schemaRef": {
+		"type": "Github Copilot"
+	  },
+	  "sourceType": "Universal"
+	}
+  }
+  

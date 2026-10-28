@@ -7,7 +7,7 @@ description: Learn about the Sumo Logic collection process for the Google Cloud 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/google/GoogleCloudTrafficDirector.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/integrations/google/GoogleCloudTrafficDirector.png')} alt="Google Cloud Traffic Eirector icon" width="50"/>
 
 Traffic Director is Google Cloud's fully managed application networking platform and service mesh. For more details, refer to the [GCP documentation](https://cloud.google.com/traffic-director/docs).
 

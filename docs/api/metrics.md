@@ -7,7 +7,7 @@ description: Use HTTP endpoints to access your metric data.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="50"/>
+<img src={useBaseUrl('img/icons/metrics.png')} alt="Metrics icon" width="50"/>
 
 The legacy version of the Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.
 
@@ -27,7 +27,7 @@ You will need:
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/about-apis/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An `HTTP 301 Moved` error suggests that the wrong endpoint was specified.
 
