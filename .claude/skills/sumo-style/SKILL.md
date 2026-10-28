@@ -223,6 +223,14 @@ Every post filename must start with `YYYY-MM-DD-`. Docusaurus takes the publish 
 
 ### Structure and frontmatter
 
+- When a note runs long, write a one to two paragraph introduction, add `<!--truncate-->`, then the full notes. List views show only text above that line.
+- Copy frontmatter from a recent post in the same folder. Two fields matter for every release note:
+  - `hide_table_of_contents: true` — renders the note clean and full-width.
+  - `image` — used by the RSS feed and social card. Use a screenshot from the note if it has one, otherwise the Sumo Logic logo: `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg`
+
+### Per-folder conventions
+
+Filename, title format, and structure are specific to each folder. Match the slash command for the folder you're editing: `.claude/commands/release-note-service.md`, `release-note-collector.md`, `release-note-cse.md`, `release-note-csoar.md`, `release-note-developer.md`. These are local files, so this works even when the live style guide fetch fails.
 
 **Choosing between Service and Developer:** Use Developer when the primary audience is someone writing code to connect to Sumo Logic API endpoints, auth flows, and the MCP server. Use Service when the audience is a Sumo Logic user, even if the feature has an API.
 
