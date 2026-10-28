@@ -73,7 +73,7 @@ After you do, the new time range is shown in blue, and a more options menu is av
 
 ### Set default time ranges
 
-As noted above, you can set a new default time range for a dashboard and individual panels. To do so, you open the options menu next to a modified time range (shown in blue), and click **Set as Default**.   
+As noted above, you can set a new default time range for a dashboard and individual panels. To do so, you open the options menu next to a modified time range (shown in blue), and click **Set as Default**.
 
 When you make a modified time range the default, the time range appears in grey, and the more options menu is no longer available.
 

@@ -1,7 +1,7 @@
 ---
 id: about
 title: About Dashboards
-description: Learn the benefits of Dashboard and how it seamlessly integrates log, metric, and trace data.
+description: Learn the benefits of dashboard and how it seamlessly integrates log, metric, and trace data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,9 +12,9 @@ Dashboard allows you to analyze metric and log data on the same dashboard, i
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
-## What's great about Dashboard 
+## What’s great about dashboard
 
-Dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view. This gives you control over the visual display of metric data as well as log data. Dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features. 
+Dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view. This gives you control over the visual display of metric data as well as log data. Dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features.
 
 [Template variables](filter-template-variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
 
@@ -25,10 +25,10 @@ See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 :::
 
 * Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
-* Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
+* Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
 * Dashboard utilizes the [Metrics Search](/docs/metrics/metrics-queries/metrics-explorer/) with full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
-The following table shows the availability of features for Dashboard.
+The following table shows the availability of features for dashboard.
 
 | Feature |Dashboard|
 | :-- | :-- |
@@ -54,9 +54,9 @@ The following table shows the availability of features for Dashboard.
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
-## Restricted operators in Dashboard
+## Restricted operators in dashboard
 
-The following operators cannot be used with Dashboard:
+The following operators cannot be used with dashboard:
 
 * `details`
 * `logreduce`
@@ -65,7 +65,7 @@ The following operators cannot be used with Dashboard:
 * `transaction`
 
 :::note
-Live mode restrictions do not apply to Dashboard. 
+Live mode restrictions do not apply to dashboard.
 :::
 
 ## Limitations

@@ -18,7 +18,7 @@ This feature requires two parts to work:
 
 The web interface autocomplete feature for log search variables has the following limitations:
 
-* It is updated every night for the last 24 hours starting from 10PM PT to the previous day at 10PM PT. 
+* It is updated every night for the last 24 hours starting from 10:00pm PT to the previous day at 10:00pm PT.
 * Only dashboards that were viewed in the last 3 days are updated.
 * Up to 10,000 log values and 1,000 metric values are displayed.
 * Values for template variables (except Scope-based Variable) are based on the time range of the dashboard.
@@ -33,7 +33,7 @@ In the **Dashboard** top menu bar, click the filter icon to show the variables o
 There are four types of template variables you can use as a dashboard filter:
 
 * Custom List - a custom set of options
-* Metrics Metadata Search - metrics metadata based options 
+* Metrics Metadata Search - metrics metadata based options
 * Log Search - logs query based options
 * Scope-based Variable - define scope variables to automatically apply to all log queries
 
@@ -50,7 +50,7 @@ To add a Custom List variable to a dashboard, do the following:
 1. **List Items** are your variable values. Use a comma separated list for variable options, separating individual options with a comma. For example, `small, medium, large`.
 1. (Optional) **Include the option to select all values (\*)** will be selected by default. This includes a wildcard asterisk (\*) in the available options.
 1. (Optional) Provide a **Default Value** for the variable.
-1. Click **Create Template Variable** to apply the variable to the dashboard. 
+1. Click **Create Template Variable** to apply the variable to the dashboard.
 
 ### Add a Metrics Metadata Search variable
 

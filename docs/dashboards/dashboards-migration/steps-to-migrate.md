@@ -11,7 +11,7 @@ This document walks you through the entire process of migrating classic dashboar
 We do not guarantee 100% conversion from classic to dashboard, although we do provide an exhaustive list of incompatibilities that need to be taken care of. You can still keep your old dashboard after migration.
 :::
 
-## Migration steps 
+## Migration steps
 
 This section explains to you the step-by-step process to migrate your dashboards.
 

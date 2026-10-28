@@ -31,7 +31,7 @@ Share a dashboard inside your organization.
 
 ## Sharing a dashboard within your organization
 
-Sharing dashboards allow you to extend the insights you gain from Sumo Logic with others within your organization. You can specify specific permissions for the user with whom you share the dashboard, as well as controlling the data that appears in the dashboard. 
+Sharing dashboards allow you to extend the insights you gain from Sumo Logic with others within your organization. You can specify specific permissions for the user with whom you share the dashboard, as well as controlling the data that appears in the dashboard.
 
 When you share a dashboard, you specify the dashboard access rights for the users—View, Edit, or Manage. Dashboard access rights are described in [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels).
 
@@ -44,7 +44,7 @@ permissions:
 
 * **Share with specific users and roles**. This is where you select the users or roles with whom you wish to share the dashboard.
 * **See who has access**. Lists the users and roles with whom the dashboard is already shared.
-* **Shareable URL**. Shows the URL for the shared dashboard, with options for sharing the dashboard with filters and time range and filter settings. 
+* **Shareable URL**. Shows the URL for the shared dashboard, with options for sharing the dashboard with filters and time range and filter settings.
 
 <br/><img src={useBaseUrl('/img/dashboards/share-dashboard/Share-Dashboard-New.png')} alt="Share Dashboard New" />
 
@@ -55,10 +55,10 @@ This section walks you through the process of sharing a dashboard with other peo
 To share a dashboard within your organization, do the following:
 
 1. Click the share icon on the dashboard or share it from the [Library](/docs/get-started/library).<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/share-icon.png')} alt="share icon" />
-1. Click in the **Share with specific users and roles** field and select with whom to share the dashboard from the dropdown list. If you choose **Your Entire Organization**, all users in your organization will be granted the access permissions you specify in the next step. 
-1. In the **Access** area, select the user permissions you want to grant from the dropdown list: **Edit**, **View**, or **Manage.** 
+1. Click in the **Share with specific users and roles** field and select with whom to share the dashboard from the dropdown list. If you choose **Your Entire Organization**, all users in your organization will be granted the access permissions you specify in the next step.
+1. In the **Access** area, select the user permissions you want to grant from the dropdown list: **Edit**, **View**, or **Manage.**
       :::note
-      If a user with Edit or Manage access deletes a panel from a shared dashboard, a confirmation dialog warns them that the change may impact other users. Learn more in [Delete a Panel](/docs/dashboards/panels/#delete-a-panel).
+      If a user with Edit or Manage access deletes a panel from a shared dashboard, a confirmation dialog warns them that the change may impact other users. Learn more in [Delete a Panel](/docs/dashboards/panels/about#delete-a-panel).
       :::
 1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels](/docs/manage/content-sharing#available-permission-levels) section of the [Share Content](/docs/manage/content-sharing) page.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_Advanced_Access.png')} alt="ShareDashboard_Advanced_Access" />
 1. To share the dashboard with another set of users, but with different access permissions, click **Add users with another access level** and repeat steps 2 and 3.<br/><img src={useBaseUrl('/img/dashboards/share-dashboard/ShareDashboard_User_Roles.png')} alt="ShareDashboard_User_Roles" />

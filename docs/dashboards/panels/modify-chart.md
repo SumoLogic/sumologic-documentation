@@ -18,7 +18,7 @@ Begin the customization process by selecting the dashboard panel with the chart
 
 To edit a panel, do the following:
 
-1. On the chart panel, click the kebab icon. 
+1. On the chart panel, click the kebab icon.
 1. Select **Edit** from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-new-panel.png')} style={{border: '1px solid gray'}} alt="edit new panel" width="300"/>
     <br/>The **Chart** page appears with the panel settings menu bar on the far right. The **Display** options are shown by default.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/edit-panel-options.png')} style={{border: '1px solid gray'}} alt="edit panel options" width="700"/>
 
@@ -37,7 +37,7 @@ Any changes made to the variable values within the panel will only affect the cu
 To modify general settings click the **General** icon in the menu bar.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/mar-21-general-settings.png')} style={{border: '1px solid gray'}} alt="mar 21 general settings" width="400"/>
 
 * To change the name of the chart, click in the **Chart Title** field and enter a new name.
-* To change the font size click the **Title Font Size** arrows up or down. 
+* To change the font size click the **Title Font Size** arrows up or down.
 * To add a helpful description, click in the **Description** field and enter a brief explanation of the chart's purpose.
 
 To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC Update dashboard" width="300"/>
@@ -52,7 +52,7 @@ You can select parsing mode between manual and [Auto Parse Mode](../../search/ge
 
 ### Link dashboards
 
-You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill-down-to-discover-root-causes.md) you will have an option to click linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
+You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill-down-to-discover-root-causes.md) you will have an option to click linked dashboards. This allows you to quickly reference other related dashboards to investigate.
 
 1. Click the **Add Dashboard Link** from the bottom of the general settings menu.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/mar-21-add-dashboard-link.png')} style={{border: '1px solid gray'}} alt="mar 21 add dashboard link" width="400"/>
 1. Click in the **Dashboard Name** input area and select or enter the name of the dashboard you want the panel to link to.
@@ -153,7 +153,7 @@ To change chart axes displays, do the following:
    * **Scale**. Options vary according to chart type
    * **Range**. Range of data for the axis
    * **Label**. The name applied to the data.
-   * **Unit**. How the data measurement is expressed. You have variousunits of measurements to select from. 
+   * **Unit**. How the data measurement is expressed. You have variousunits of measurements to select from.
    * **Decimals**. Sets the precision of units displayed. Select the number of decimals to show with a unit, up to 9.
 
     The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](#overridedashboard-displays) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/display-override-right-y-axis.png')} style={{border: '1px solid gray'}} alt="display override right y-axis" width="400"/>
@@ -183,7 +183,7 @@ To modify the chart legend, do the following:
     * **Wrap Text**. Text display, toggle On or Off.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Legend_DisplayProperties.png')} style={{border: '1px solid gray'}} alt="MC_Legend_DisplayProperties" width="300"/>
 1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/MC_Update_Dashboard.png')} style={{border: '1px solid gray'}} alt="MC_Update_Dashboard" width="300"/>
 
-## Modify chart JSON 
+## Modify chart JSON
 
 The JSON for each chart is available for you to customize the visual settings beyond the options Sumo Logic provides in the user interface. You can add settings from [canvasJS](https://canvasjs.com/docs/charts/basics-of-creating-html5-chart/) to the `visualSettings` section of the JSON.
 
@@ -280,8 +280,8 @@ use the following JSON:
             }
     }
 ]
-```  
- 
+```
+
 ### Resize data label font size
 
 To resize the font size of data labels in a pie chart: <br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/data-label-font-size.png')} style={{border: '1px solid gray'}} alt="Data label font size" width="600"/>

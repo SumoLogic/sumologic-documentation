@@ -13,7 +13,7 @@ Role search filters affect the data that a viewer can see in the shared dashboar
 
 ## Types of data access level
 
-* **Viewer’s data access level**. When shared, the dashboard will run with the viewer's role search filter. Only data to which the viewer’s role filter allows access will appear in the dashboard. 
+* **Viewer’s data access level**. When shared, the dashboard will run with the viewer's role search filter. Only data to which the viewer’s role filter allows access will appear in the dashboard.
 * **My data access level**. When shared, the dashboard will run in your context. Users who view the dashboard will be able to see data allowed by your role filter. Be careful when sharing a dashboard with this access level:  viewers might see data to which they otherwise do not have access.
 * **[*User's*] data access level**. This option is available when you set the data access level for a dashboard whose current access level is other than your own. In the option text, [*User's*] is replaced by the name of the user whose search role filter is currently applied to the dashboard.
 

@@ -12,7 +12,7 @@ There is **not** an automatic conversion method from classic dashboards to the
 
 ## How do I add filters to the dashboards?
 
-In the dashboard framework, we have created a variables feature that follows the standard set by other dashboard providers. Variables take the place of filters from classic dashboards and can be used in a similar fashion to reduce the scope of data displayed on your dashboards. 
+In the dashboard framework, we have created a variables feature that follows the standard set by other dashboard providers. Variables take the place of filters from classic dashboards and can be used in a similar fashion to reduce the scope of data displayed on your dashboards.
 
 The dashboard variables will function much like a [parameterized search](/docs/search/get-started-with-search/build-search/search-templates) that allows you to define where you want to put your variables and flexibly reuse them throughout the queries.
 

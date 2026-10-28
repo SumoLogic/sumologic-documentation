@@ -7,13 +7,13 @@ description: Learn about the various Dashboard panels and the types of data best
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-## Time Series panel 
+## Time Series panel
 
 <img src={useBaseUrl('/img/dashboards/panels/time-series-panel.png')} style={{border: '1px solid gray'}} alt="time series panel" width="75"/>
 
 Time series panels provide information on a series of data points ordered in time. Typically, a time series is a sequence taken at successive equally spaced points in time. Examples of time series are CPU and Memory over time.
 
-In a time series, time is often the independent variable and the goal is usually to make a forecast for the future. Time series are frequently plotted with area or line charts. 
+In a time series, time is often the independent variable and the goal is usually to make a forecast for the future. Time series are frequently plotted with area or line charts.
 
 These are best used for looking at statistics taken over time. Things like CPU, Memory, and disk usage statistics fall into this category.
 
@@ -75,7 +75,7 @@ The types of charts you’ll find in the time series panel include:
 
 <img src={useBaseUrl('/img/dashboards/panels/categorical-icon.png')} style={{border: '1px solid gray'}} alt="categorical icon" width="75"/>
 
-Categorical panels provide information on the number of occurrences (frequency) of distinct values. Categorical frequencies are typically shown in pie, table, and column charts. 
+Categorical panels provide information on the number of occurrences (frequency) of distinct values. Categorical frequencies are typically shown in pie, table, and column charts.
 
 These are best used to understand the distribution of data by categories. For example, understanding the number of CPUs used by machine type, or the number of requests handled by a pod.
 
@@ -128,7 +128,7 @@ There is no limit to the number of Text Panels you can add to dashboards. These 
 To add a Text Panel:
 
 1. With the dashboard open, click the **Add Panel** button.<br/><img src={useBaseUrl('/img/dashboards/panels/add-panel.png')} style={{border: '1px solid gray'}} alt="add panel" width="800"/>
-1. Choose **Text **as the Panel Type**.** 
+1. Choose **Text **as the Panel Type**.**
 1. The **Text Editor** and **Visual Settings** are displayed.<br/><img src={useBaseUrl('/img/dashboards/panels/Display-options.png')} style={{border: '1px solid gray'}} alt="Display options" width="800"/>
     1. Input your **Text** or **Markdown** syntax in the **Text Editor** pane. See [Markdown Syntax](markdown-syntax.md) for details on what is supported.
     1. The **Visual Settings** options allow you to adjust the font, colors, and alignment of your data.
@@ -142,7 +142,7 @@ To add a Text Panel:
 
 Text panels can provide links to URLs or other dashboards with markdown syntax. To create a link to a URL, surround your linked text with square brackets `[]`, then add your URL in parenthesis `()`, as shown.
 
-To add a link to a Panel in order to drill down to another dashboard, see [Add Dashboard Link](/docs/dashboards/panels/#add-links-to-text-panels).
+To add a link to a Panel in order to drill down to another dashboard, see [Add Dashboard Link](/docs/dashboards/panels/about#add-links-to-text-panels).
 
 ### Syntax
 
@@ -180,7 +180,7 @@ To add a Services panel:
 
 <img src={useBaseUrl('/img/dashboards/panels/icon-trace-list.png')} style={{border: '1px solid gray'}} alt="Icon trace list" width="75"/>
 
-Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/spans), and a breakdown of services. The panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel. 
+Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](/docs/apm/spans), and a breakdown of services. The panel displays the [Traces page](/docs/apm/traces/) table to give at-a-glance tracking for traces through your dashboard. To view transaction and service details ([Trace View](/docs/apm/traces/view-and-investigate-traces)), click a trace from the panel.
 
 See the [Dashboard](/docs/dashboards/about) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
@@ -194,11 +194,11 @@ To add a Traces panel:
 
 1. With the dashboard open, click the **Add Panel** button. <br/><img src={useBaseUrl('/img/apm/traces/add-tracelist.png')} style={{border: '1px solid gray'}} alt="add-tracelist" width="800"/>
 1. A panel configuration page opens. <br/><img src={useBaseUrl('/img/dashboards/panels/create-tracelist.png')} style={{border: '1px solid gray'}} alt="create-tracelist" width="800"/>
-1. Configure a [Trace query](/docs/apm/traces/view-and-investigate-traces) to search for desired set of traces. 
+1. Configure a [Trace query](/docs/apm/traces/view-and-investigate-traces) to search for desired set of traces.
 1. Select a time range or [create a custom range](/docs/dashboards/set-custom-time-ranges) for the panel. You can set this when creating or at any time when viewing the dashboard panel.<br/><img src={useBaseUrl('/img/dashboards/panels/timerange.png')} style={{border: '1px solid gray'}} alt="timerange" width="300"/>
 1. Select **Chart Type** as either:
    1. **Table**. showing table with traces.
-   1. **Breakdown chart**. showing aggregated Trace Duration Breakdown Chart.  
+   1. **Breakdown chart**. showing aggregated Trace Duration Breakdown Chart.
    If you choose **Table**, complete the following steps:
 1. Enter the **Rows Per Page** for the panel, between 5 to 100. The default amount is 15. The panel automatically paginates traces to browse through and view all traces.
 1. Select the Table columns of trace data to load in the panel:
@@ -213,7 +213,7 @@ To add a Traces panel:
     | Number of errors | 0 | The number of errors in the trace. |
     | Status | 200 | The HTTP status code of the trace. |
 1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.<br/><img src={useBaseUrl('/img/apm/traces/tracelist-details.png')} style={{border: '1px solid gray'}} alt="tracelist details" width="400"/>
-1. Click **Add to Dashboard**. 
+1. Click **Add to Dashboard**.
 
 ## Delete a panel
 

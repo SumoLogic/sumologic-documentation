@@ -14,7 +14,7 @@ Dashboards often contain sensitive information, so you usually share them only w
 Sharing outside an organization is always view-only.
 :::
 
-You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist. 
+You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist.
 
 Before you share a dashboard with users external to your organization, you must enable a security policy, ensure that you have the right role capabilities, and enable the service allowlist depending on your option selection.
 
@@ -22,7 +22,7 @@ Before you share a dashboard with users external to your organization, you must 
 
 In this step, you'll enable the ability to share dashboards outside your organization. You must have admin privileges to enable the policy.
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Administration > Security > Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.   
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Administration > Security > Policies** <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**.
 1. Select the **Enable** checkbox for **Share Dashboards Outside of the Organization**.
 1. The policy is changed. It can take up to 5 minutes for the policy to go into effect.
 
@@ -31,9 +31,9 @@ In this step, you'll enable the ability to share dashboards outside your organiz
 You must have specific role capabilities to share a dashboard with external users.
 
 * **Share Dashboards with the Allowlist.** Share dashboards with users only on the allowlist.
-* **Share Dashboards with the World.** Share dashboards with external users. 
+* **Share Dashboards with the World.** Share dashboards with external users.
 
-If you do not already have a role that grants you the required capability, an admin user can assign you one. See the [Assign Roles to Users](/docs/manage/users-roles/roles/add-remove-users-role) documentation. Or create a new role as required, see the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles). 
+If you do not already have a role that grants you the required capability, an admin user can assign you one. See the [Assign Roles to Users](/docs/manage/users-roles/roles/add-remove-users-role) documentation. Or create a new role as required, see the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles).
 
 ## Add external users to service allowlist
 
@@ -53,11 +53,11 @@ Administrator privileges are required to enable the service allowlist.
 1.  If you want viewers to see the current time range in the URL, toggle the **Include current time range in the URL** option.
 1.  If you want viewers to see the current variable values in the URL, toggle the **Include current variable values in the URL** option.
 1.  Toggle the **Public Dashboard** on.
-1.  Select **Anyone** or **Allowlist only** as the visibility access, and click **Save**. 
+1.  Select **Anyone** or **Allowlist only** as the visibility access, and click **Save**.
 
-The URL that external users can use to access the dashboard appears under the **Shareable URL** section of the page. 
+The URL that external users can use to access the dashboard appears under the **Shareable URL** section of the page.
 
-## Restrictions and limitations for external sharing 
+## Restrictions and limitations for external sharing
 
 * Sharing outside an organization is always view-only.
 * Panels that are incompatible with auto-refresh will only show data for viewers who have a login.
@@ -68,7 +68,7 @@ The URL that external users can use to access the dashboard appears under the **
 
 ## Logging for externally shared dashboards
 
-If you have the [Audit Index](/docs/manage/security/audit-indexes/audit-index) enabled, Sumo Logic logs the key-sharing events. 
+If you have the [Audit Index](/docs/manage/security/audit-indexes/audit-index) enabled, Sumo Logic logs the key-sharing events.
 
 When a user shares a dashboard outside of the organization, Sumo Logic logs the following information:
 * Dashboard name

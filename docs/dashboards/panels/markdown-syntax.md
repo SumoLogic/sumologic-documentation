@@ -47,7 +47,7 @@ Text can be set to one of six levels, by preceding the text with `#`:
 ### Ordered Lists
 
 To create a numbered list, precede each list item with a number and a
-period. Indent by adding a space. 
+period. Indent by adding a space.
 
 ```markdown
 1. Item One

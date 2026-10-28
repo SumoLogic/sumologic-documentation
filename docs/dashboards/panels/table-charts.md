@@ -13,12 +13,12 @@ For example, you'd use the following query to create a simple table chart:
 
 which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="500" />
 
-## Create a Table chart 
+## Create a Table chart
 
 To add a panel with a table chart:
 
 1. Create or open a dashboard and click **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/time-series-or-categorical.png')} alt="time series or categorical" style={{border: '1px solid gray'}} width="600" />
-1. Provide a Metric or Log query and press **Enter** for it to run. You can create Log and Metric queries on the same panel.
+1. Provide a metric or log query and press **Enter** for it to run. You can create Log and Metric queries on the same panel.
 
     **Log query:**
 
@@ -45,8 +45,8 @@ When you create a table chart panel, and if your query looks for URLs, then use 
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
 ```sumo
-_sourceCategory=aws/cloudtrail 
-| keyvalue "LoginTo" 
+_sourceCategory=aws/cloudtrail
+| keyvalue "LoginTo"
 | count loginto
 | sort - _count
 ```

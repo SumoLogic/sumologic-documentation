@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## Linking multiple dashboards
 
 You can link dashboards together to quickly view related data. Each panel can have links to other dashboards. Links have options to include metadata and time range. When you select a data point on
-the panel you will have an option to click linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
+the panel you will have an option to click linked dashboards. This allows you to quickly reference other related dashboards to investigate.
 
 1. Click the **Add Dashboard Link** from the general settings menu when [modifying a chart in a panel](/docs/dashboards/panels/modify-chart).<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/add-link.png')} alt="add link" style={{border: '1px solid gray'}} width="300" />
 1. Click in the **Dashboard Name** input area and select or enter the name of the dashboard you want the panel to link to.<br/><img src={useBaseUrl('/img/dashboards/panels/modify-chart/Add-dashboard-link.png')} alt="Add dashboard link" style={{border: '1px solid gray'}} width="300" />
@@ -48,11 +48,11 @@ To link a custom dashboard to your stack in monitoring dashboards, do the follo
 1. If you would like to further specify for which entities of a given type the dashboard is displayed, you can input the relevant **Entity Name** (as displayed in the monitoring dashboards tab). If you would like to see the dashboards for all entities of a given type, you can use (`*`) as the **Entity Name**. <br/><img src={useBaseUrl('img/dashboards/link-dashboard-explore/dashboard-stack-linking.png')} alt="Time series or categorical" width="600"/>
 1. You can add more entity associations by clicking **Add another entity type/name pair**.
 1. Click **Apply** to apply the stack link.
-1. Now when you navigate in a monitoring dashboard to an entity with matching entity type and entity name, you will have the option to view your **Dashboard** in the monitoring dashboards view.  
-     
+1. Now when you navigate in a monitoring dashboard to an entity with matching entity type and entity name, you will have the option to view your **Dashboard** in the monitoring dashboards view.
+
 ## View linked dashboards
 
-In monitoring dashboards, when navigating to components you will have the option to select other dashboards that are linked. 
+In monitoring dashboards, when navigating to components you will have the option to select other dashboards that are linked.
 
 From the **Dashboards** dropdown menu, select the name of the linked dashboard to load it in monitoring dashboards. When hovering over available dashboards the tooltip provides the location and creator so it is easier to identify.<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/explore-with-location-tooltip.png')} alt="explore with location tooltip" style={{border: '1px solid gray'}} width="400" />
 

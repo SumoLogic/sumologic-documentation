@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This table shows the complete list of features that are changed after the implementation of the **Migrate to Dashboards** feature.
 
 | Features |  Supported    |   Not Supported   |
-| :--------   | :-------------    |   :------------  |  
+| :--------   | :-------------    |   :------------  |
 | Theme      | No effect; migrated as-is | N/A  |
 | Dashboard Layout | Panel position in the grid stays the same<br/><br/>Panel heights might slightly differ | N/A |
 | Chart colors | Exact colors won’t be preserved, however, color families will be preserved. [Learn more](#color-mapping). |  N/A |
@@ -33,7 +33,7 @@ This table shows the complete list of features that are changed after the implem
 
 ## Color mapping
 
-Dashboards (Classic) had 6 color schemes, while dashboards have 11 color schemes. The color mapping from the Classic to the dashboard is shown in the image below.
+Classic Dashboards had 6 color schemes, while current dashboards have 11 color schemes. The color mapping from the Classic to current dashboards is shown in the image below.
 
 With Dashboards (Classic), you could choose chart colors while setting it up. With dashboards, you cannot choose your colors upfront, but you can [modify your color palette afterwards](/docs/dashboards/panels/modify-chart/#modifydisplay-settings).
 

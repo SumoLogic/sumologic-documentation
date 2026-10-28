@@ -40,7 +40,7 @@ error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), min (b), pct(b,25),
 The [Sumo Logic App for Amazon VPC Flow Logs](/docs/integrations/amazon-aws/vpc-flow-logs) uses a query that creates a box plot chart. It is:
 
 ```sumo
-_sourceCategory=vpc  
+_sourceCategory=vpc
 | json "message","logStream","logGroup"
 | parse field=message "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status
 | timeslice 1m

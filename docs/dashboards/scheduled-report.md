@@ -33,7 +33,7 @@ To schedule a dashboard email report, do the following:
    * **Select theme**. Choose **Light** or **Dark** theme for the report. By default, the selected theme matches the dashboard's current theme.
    * **Select variables**. If the dashboard supports template variables, select the values which you need for the scheduled report for the dashboard.
    * **Select Time Range**. Set the time range for the dashboard by selecting a predefined interval from a dropdown list or by choosing a recently used time range.
-   * **Select a frequency**. Choose the frequency settings for the scheduled dashboard report: 
+   * **Select a frequency**. Choose the frequency settings for the scheduled dashboard report:
       * **Frequency**. Choose the frequency Daily, Weekly, or Monthly.
       * **Every.** The options depend on the Frequency you selected.
          * **Daily.** Choose Every day, Weekdays, or Weekends.
@@ -41,7 +41,7 @@ To schedule a dashboard email report, do the following:
          * **Monthly.** Choose which day of which week of the month you want the report to be sent.
       * **Time.** Choose the time of day you want the dashboard to be sent.
       * **Time Zone.** Choose your time zone.
-   * **Add recipients**. 
+   * **Add recipients**.
       * **Email to.** Enter the email addresses where you want the dashboard to be sent.
       * **Subject.** Enter a subject for the email.
       * **Message.** Enter the body of the email.
