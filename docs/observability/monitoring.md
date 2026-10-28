@@ -11,7 +11,7 @@ After you have set up [collection](set-up-collection.md), you can start monitori
 
 ## Get real-time notifications about issues
 
-With [monitors](/docs/alerts/monitors/create-monitor/), you can set up meaningful alerts that instantaneously notify you and your team about changes in state of your system. The intelligent alerting framework minimizes alert noise and alert fatigue so you and your team are not inundated with a lot of notifications, by de-duplicating them, and auto-remediating issues when the system returns to a normal state. The alerting framework is designed to integrate with your incident management workflows with  features such as notification customization, multi-channel notifications, and priority-based notification handling. 
+With [monitors](/docs/alerts/monitors/create-monitor/), you can set up meaningful alerts that instantaneously notify you and your team about changes in state of your system. The intelligent alerting framework minimizes alert noise and alert fatigue so you and your team are not inundated with a lot of notifications, by de-duplicating them, and auto-remediating issues when the system returns to a normal state. The alerting framework is designed to integrate with your incident management workflows with  features such as notification customization, multi-channel notifications, and priority-based notification handling.
 
 <img src={useBaseUrl('img/observability/observability-monitors.png')} alt="Observability monitors" style={{border: '1px solid gray'}} width="800" />
 
@@ -39,4 +39,4 @@ Compared to apps, solutions offer more supporting content plus a high-level view
 If you and your team are using AWS services directly, you can leverage [AWS Observability](https://www.sumologic.com/lp/aws-observability/) for over 40 dashboards that monitor infrastructure on AWS in a comprehensive and intuitive manner across AWS accounts, regions, and resource types down to individual entities.
 
 If you're using Kubernetes to orchestrate your application, you can leverage [Kubernetes Observability](/docs/observability/kubernetes/monitoring) with views for every major entity in the Kubernetes environment, arranged to help you slice and dice along the dimensions that matter.
- 
+
