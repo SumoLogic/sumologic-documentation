@@ -44,7 +44,7 @@ categories. This includes:
 * Bubble Charts
 * Scatter Charts
 
-The **time series** panel type is designed to graph data over time. Time series panels accept aggregate fields with epoch values (milliseconds since 1970). You can use the [timeslice](/docs/search/search-query-language/search-operators/timeslice) operator to provide a time series.
+The **time series** panel type is designed to graph data over time. Time series panels accept aggregate fields with epoch values (milliseconds since 1970). You can use the [`timeslice`](/docs/search/search-query-language/search-operators/timeslice) operator to provide a time series.
 
 The types of charts you will find in the time series panel include:
 
@@ -60,4 +60,4 @@ One of the valuable features in dashboards is that you can graph data on to the 
 
 To switch between a metrics query row and a logs query row, you just have to select the Logs query dropdown after the **#A** and change it to Metrics. To add multiple logs or metrics rows, hover over the last query row and press the + button.<br/><img src={useBaseUrl('/img/dashboards/dashboard-faq/Logs-and-metrics-query-options.png')} alt="Logs and metrics query options" style={{border: '1px solid gray'}} width="600" />
 
-If you are in a time series panel, you can only graph items over time. This means that every logs query must be [timesliced](/docs/search/search-query-language/search-operators/timeslice) if you are going to graph it in a time series chart. If you want to count across categories, pick a category chart.
+If you are in a time series panel, you can only graph items over time. This means that every logs query must be [`timesliced`](/docs/search/search-query-language/search-operators/timeslice) if you are going to graph it in a time series chart. If you want to count across categories, pick a category chart.

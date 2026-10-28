@@ -18,7 +18,7 @@ error | timeslice 1m | count by _timeslice
 
 which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/line-charts/timeResult.png')} style={{border: '1px solid gray'}} alt="timeResult" width="300"/>
 
-### Create a line chart
+### Create a Line chart
 
 To add a panel with a line:
 

@@ -15,14 +15,14 @@ Sumo Logic provides monitoring dashboards for an intuitive visual hierarchy of y
 * **Infrastructure Monitoring**
 * **Application Monitoring**
 * **Real User Monitoring**
- 
 
-## Navigating 
+
+## Navigating
 
 To navigate, do the following:
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**. 
-3. Drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then select options under **Infrastructure Monitoring** or **Application Monitoring**.
+3. Drill down further until you find your desired component which you'd like to explore. Metrics will be displayed/visualized as dashboards.
 
 ### Stack linking
 
@@ -77,7 +77,7 @@ You can filter your view so you can focus on specific entities and sections of y
 
     The **Filter** menu allows you to select a saved filter or write a new one. If you have any saved filters they are available in the dropdown menu **Filter**. The default value is **None Selected**. The **Clear All** button is available to clear any filters that are already applied.
 
-3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400"/>
+3. To create a new filter click in the **Enter a key value pair to create a filter** input area. A dropdown list will appear showing you available keys you can filter by. You may only provide a **value** without a key.<br/><img src={useBaseUrl('img/dashboards/explore/select-filter.png')} alt="Select filter" width="400"/>
 
 4. Enter or select the keys you want to filter by then click **Apply**. Filters of the same key behave as an **OR** condition and different keys behave as an **AND** condition.<br/><img src={useBaseUrl('img/dashboards/explore/brand_theme_apply_filters.png')} alt="Apply filters" width="500"/>
 
@@ -187,4 +187,4 @@ To further pinpoint the problem with our cluster, we investigated the namespace 
 
 ### Step 3: Drilling down into a pod
 
-Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example,  you can select the Details icon for a panel to view that data in a search. Or, you can review the actual logs in the Log Stream panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" />
+Once we've determined which pod is having problems, we can drill down into the pod for more granular data. For example,  you can select the **Details** icon for a panel to view that data in a search. Or, you can review the actual logs in the Log Stream panel.<br/><img src={useBaseUrl('img/dashboards/explore/Explore_TS_Pod_drill-down.png')} alt="Pod drilldown" />

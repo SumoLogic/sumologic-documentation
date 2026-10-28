@@ -1359,6 +1359,7 @@ module.exports = {
           link: {type: 'doc', id: 'dashboards/panels/index'},
           items: [
             'dashboards/panels/modify-chart',
+            'dashboards/panels/section',
             'dashboards/panels/area-charts',
             'dashboards/panels/bar-charts',
             'dashboards/panels/box-plot-charts',
@@ -1371,7 +1372,6 @@ module.exports = {
             'dashboards/panels/pie-charts',
             'dashboards/panels/sankey-charts',
             'dashboards/panels/scatter-charts',
-            'dashboards/panels/section',
             'dashboards/panels/single-value-charts',
             'dashboards/panels/table-charts',
           ],

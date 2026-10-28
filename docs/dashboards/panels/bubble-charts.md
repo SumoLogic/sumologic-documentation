@@ -24,7 +24,7 @@ _sourceCategory=service "message=User logged in" remote_ip
 | count as logins by city, latitude, longitude
 ```
 
-## Create a bubble chart
+## Create a Bubble chart
 
 To add a panel with a bubble chart:
 

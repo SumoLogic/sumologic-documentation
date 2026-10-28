@@ -18,7 +18,7 @@ the panel you will have an option to click linked dashboards. This allows you 
 
 ### Using links
 
-When you click a data point on a dashboard chart the **Summary** tab provides your Linked dashboards.
+When you click a data point on a dashboard chart the **Summary** tab provides your Linked Dashboards.
 
 * The following image shows a Summary panel from a selected log data point. The **Linked Dashboards** section is at the bottom.<br/><img src={useBaseUrl('/img/dashboards/drill-root-causes/summary-v2-logs.png')} alt="summary v2 logs" style={{border: '1px solid gray'}} width="300" />
 * The following image shows a Summary panel from a selected metric data point. The **Linked Dashboards** section is at the bottom.<br/><img src={useBaseUrl('/img/dashboards/drill-root-causes/metrics-summary-v2.png')} alt="metrics summary v2" style={{border: '1px solid gray'}} width="300" />
@@ -32,9 +32,9 @@ You link a dashboard by specifying metadata key-value pairs:
 * **Entity Type**. Predefined entity object representing a given part of your system and its related set of data (such as EC2 Instance, Application, MySQL Cluster).
 * **Entity Name**. Name of a given entity, as displayed in the monitoring dashboards tab. An asterisk (`*`) can be used to match all entities of a given type.
 
-The metadata keys assigned to your dashboard Stack Linking must be the same as the explored component for the dashboard to show as an option. For example, if your component is named `tablename`, and has `account`, `region`, and `namespace` metadata assigned to it, as seen in the following monitoring dashboards screenshot:<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/stack-linking-keys.png')} alt="stack linking keys" style={{border: '1px solid gray'}} width="800" />
+The metadata keys assigned to your Dashboard Stack Linking must be the same as the explored component for the dashboard to show as an option. For example, if your component is named `tablename`, and has `account`, `region`, and `namespace` metadata assigned to it, as seen in the following monitoring dashboards screenshot:<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/stack-linking-keys.png')} alt="stack linking keys" style={{border: '1px solid gray'}} width="800" />
 
-The keys assigned to the dashboard Stack Linking would need to include those, for example:<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/dashboard-new-stack-link-keys.png')} alt="dashboard new stack link keys" style={{border: '1px solid gray'}} width="400" />
+The keys assigned to the Dashboard Stack Linking would need to include those, for example:<br/><img src={useBaseUrl('/img/dashboards/link-dashboard-explore/dashboard-new-stack-link-keys.png')} alt="dashboard new stack link keys" style={{border: '1px solid gray'}} width="400" />
 
 To link a custom dashboard to your stack in monitoring dashboards, do the following:
 

@@ -1,7 +1,6 @@
 ---
 id: about
-title: About Dashboard
-sidebar_label: About Dashboard
+title: About Dashboards
 description: Learn the benefits of Dashboard and how it seamlessly integrates log, metric, and trace data.
 ---
 
@@ -34,12 +33,12 @@ The following table shows the availability of features for Dashboard.
 | Feature |Dashboard|
 | :-- | :-- |
 | Filtering a dashboard | [Template Variable Based Filters](/docs/dashboards/filter-template-variables/) with greater control on filter values, data type, and acceptable input. |
-| Adding Queries to dashboards | Add a panel from Search or Metrics<br/>Ability to [add panels inline](/docs/dashboards/filter-template-variables/) through Add a Panel button |
+| Adding Queries to dashboards | Add a panel from Search or Metrics<br/>Ability to [add panels inline](/docs/dashboards/filter-template-variables/) through the **Add Panel** button |
 | Log Visualizations | [Area](/docs/dashboards/panels/area-charts/)<br/>[Bar](/docs/dashboards/panels/bar-charts/)<br/>[Box Plot](/docs/dashboards/panels/box-plot-charts/)<br/>[Bubble](/docs/dashboards/panels/bubble-charts/)<br/>[Cluster Map](/docs/dashboards/panels/map-charts/)<br/>[Column](/docs/dashboards/panels/column-charts/)<br/>[Combo](/docs/dashboards/panels/combo-charts/)<br/>Connection Map<br/>[Funnel](/docs/metrics/metrics-queries/funnel-chart/)<br/>[Geo Heat Map](/docs/dashboards/panels/map-charts/)<br/>[Heat Map](/docs/metrics/metrics-queries/heat-map/)<br/>Honeycomb<br/>[Line](/docs/dashboards/panels/line-charts/)<br/>[Pie](/docs/dashboards/panels/pie-charts/)<br/>[Sankey Diagram](/docs/dashboards/panels/sankey-charts/)<br/>[Scatter](/docs/dashboards/panels/scatter-charts/)<br/>[Single Value](/docs/dashboards/panels/single-value-charts/)<br/>[Table](/docs/dashboards/panels/table-charts/) |
 | Metric Visualizations |  [Area](/docs/dashboards/panels/area-charts/)<br/>[Bar](/docs/dashboards/panels/bar-charts/)<br/>[Box Plot](/docs/dashboards/panels/box-plot-charts/)<br/>[Bubble](/docs/dashboards/panels/bubble-charts/)<br/>[Cluster Map](/docs/dashboards/panels/map-charts/)<br/>[Column](/docs/dashboards/panels/column-charts/)<br/>[Combo](/docs/dashboards/panels/combo-charts/)<br/>Connection Map<br/>[Funnel](/docs/metrics/metrics-queries/funnel-chart/)<br/>[Geo Heat Map](/docs/dashboards/panels/map-charts/)<br/>[Heat Map](/docs/metrics/metrics-queries/heat-map/)<br/>Honeycomb<br/>[Line](/docs/dashboards/panels/line-charts/)<br/>[Pie](/docs/dashboards/panels/pie-charts/)<br/>[Sankey Diagram](/docs/dashboards/panels/sankey-charts/)<br/>[Scatter](/docs/dashboards/panels/scatter-charts/)<br/>[Single Value](/docs/dashboards/panels/single-value-charts/)<br/>[Table](/docs/dashboards/panels/table-charts/) |
 | Text Panel | [Supported](/docs/dashboards/panels/markdown-syntax/) |
 | Real Time Dashboarding | [Auto Refresh](/docs/dashboards/about/#auto-refresh) |
-| Dashboards as Wall Monitors | Public Dashboards<br/>Whitelisting |
+| Dashboards as Wall Monitors | Public Dashboards<br/>Allowlisting |
 | Dashboard Sharing with Variables and Time Range preserved | [Supported](/docs/dashboards/share-dashboard-new/) |
 | Dashboard Content Item Sharing | [Supported](/docs/dashboards/share-dashboard-new/#sharing-a-dashboard-within-your-organization) |
 | Run As Creator / Data Access Level Control | Supported |
@@ -55,15 +54,15 @@ The following table shows the availability of features for Dashboard.
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
-## Restricted Operators in Dashboard
+## Restricted operators in Dashboard
 
 The following operators cannot be used with Dashboard:
 
-* Details
-* LogReduce
-* LogCompare
-* Save
-* Transaction
+* `details`
+* `logreduce`
+* `logcompare`
+* `save`
+* `transaction`
 
 :::note
 Live mode restrictions do not apply to Dashboard. 
@@ -87,13 +86,13 @@ Live mode restrictions do not apply to Dashboard. 
    * An operator is not supported at this refresh interval.
    * The number of grouped elements is too large for the requested interval.
 
-## Dark Theme
+## Dark theme
 
 Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="400" />
 
 You can also select a Light or Dark theme when you [export a dashboard](/docs/dashboards/export-dashboard-new/) or create a [scheduled report](/docs/dashboards/scheduled-report/).
 
-## Clickable Legend
+## Clickable legend
 
 If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards/about-dashboard/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />
 
@@ -106,7 +105,7 @@ To view the dashboard information, follow the steps below:
 2. Click the three-dot kebab menu icon in the top right corner of the dashboard and select **Info** from the dropdown menu.<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info.png')} alt="dashboard_info" style={{border: '1px solid gray'}} width="230"/>
 3. A popup pane will appear, displaying the following dashboard information:<br/><img src={useBaseUrl('img/dashboards/dashboard_info/dashboard_info_panel.png')} alt="dashboard_info_panel" style={{border: '1px solid gray'}} width="600"/>
     - **Dashboard Name**. Name of the dashboard.
-    - **Created By**. The user who created the dashboard. 
+    - **Created By**. The user who created the dashboard.
     - **Time Range Expression**. The time range selected for the dashboard.
     - **Start**. The current start time based on the selected time range.
     - **End**. The current end time based on the selected time range.
@@ -115,7 +114,7 @@ To view the dashboard information, follow the steps below:
     - **Dashboard ID**. A unique identification ID for the dashboard. Copy and use the dashboard ID within the APIs to identify the dashboard when making requests.
 
 
-## Auto Refresh
+## Auto refresh
 
 **Auto Refresh** automatically updates dashboard panels with the latest data at a configured interval. Consider disabling it or increasing the minimum refresh interval when frequent updates are not required. For Flex customers, this helps reduce avoidable scan costs from unnecessary refreshes. For Tiered customers, it minimizes unnecessary panel reloads and helps improve dashboard performance.
 
@@ -127,13 +126,13 @@ To enable or disable this feature, you must be an **Administrator** or a role wi
 
 In this section, you will enable the ability to disable your dashboard auto refresh. By default, auto refresh will be enabled with **30 seconds** minimum time interval. Follow the below steps to change this configuration:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
 1. Uncheck the **Allow Auto-Refresh Configuration for all dashboards** checkbox to disable the auto-refresh.
-1. If checked, select the minimum auto-refresh interval from the dropdown based on your requirement. You can select from 30 seconds to 1 day.
+1. If checked, select the minimum auto-refresh interval from the dropdown list based on your requirement. You can select from 30 seconds to 1 day.
 
 <img src={useBaseUrl('img/get-started/auto-refresh.png')} alt="Auto-Refresh" style={{border: '1px solid gray'}} width="500" />
 
-### Using auto refresh 
+### Using auto refresh
 
 Once you have enabled the **Auto-Refresh**, you can now see the panels getting refreshed as per the selected auto-refresh interval. If required, you can configure the refresh interval rate by clicking the dropdown arrow next to the **Run** button. Select the refresh interval of your choice from the list.
 
@@ -175,7 +174,7 @@ To resume the panel:
 * Click **Retry Panel** on the affected panel to resume that panel only.
 * Click the dashboard **Run** button to resume all excluded panels.
 
-## Auto Run
+## Auto run
 
 **Auto Run** lets you control whether dashboard panels run automatically or require manual execution. Use this when you want explicit control over dashboard execution. For example, you may want to open a dashboard with a fixed absolute time range or make several dashboard variable changes before loading data. Disabling auto run prevents unnecessary panel reloads after each change and helps Flex customers reduce avoidable scan costs.
 :::note
@@ -186,7 +185,7 @@ To enable or disable this feature, you must be an **Administrator** or a role wi
 
 In this section, you will enable the ability to auto run your dashboard panels. By default, auto run will be enabled, to disable it follow the below steps:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Policies**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Administration > Security > Policies**.
 1. Uncheck the **Enable Auto-Run for all dashboards** checkbox.
 
 <img src={useBaseUrl('img/get-started/auto-run.png')} alt="Auto-Run" style={{border: '1px solid gray'}} width="600" />

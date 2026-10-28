@@ -33,7 +33,7 @@ Rather watch a short micro lesson video?
 You can also create dashboard panels by typing a description of the panel you want directly into Mobot, instead of configuring panels manually. For details, see [Create Dashboard Panels with Mobot](/docs/dashboards/create-panel-with-mobot).
 :::
 
-## Dashboard AutoSave
+## Dashboard autosave
 
 When you rename or add a panel to a dashboard it is automatically saved in your Sumo Logic Personal folder. Likewise, ongoing changes and additions to the dashboard are saved. This ensures the integrity of your work and prevents any loss due to unforeseen interruptions or outages.
 
@@ -67,7 +67,7 @@ See [Choosing a panel type](/docs/dashboards/panels) for details.
 
 You can create Log and Metric queries on the same panel.
 
-### Log Query
+### Log query
 
 Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. A few important things to note are:
 
@@ -75,13 +75,13 @@ Enter your aggregate [search query](/docs/search/search-query-language/group-agg
 * By default, the query builder is set to **Logs**. 
 * Joining log queries in a separate query is not supported.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="800" />
 
-### Metrics Query
+### Metrics query
 
 Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.
 
 To create a metrics query utilize the [Metrics Search](../metrics/metrics-queries/metrics-explorer.md).
 
-### Multiple Query
+### Multiple query
 
 To add another query to a panel click the plus **+** icon on the last query row. Each query is assigned a letter for reference.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/add-query.png')} alt="add query" style={{border: '1px solid gray'}} width="800" />
 
@@ -103,7 +103,7 @@ To copy a panel to another dashboard:
 
 1. Go to the dashboard that has the panel you want to copy.
 1. On the panel, click the three-dot kebab menu icon and select **Copy to Dashboard**.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-menu.png')} alt="Copy to Dashboard menu option" style={{border: '1px solid gray'}} width="300" />
-1. In the **Add Panel to Dashboard** window, enter a **Panel Title** and select the **Dashboard** you want to copy the panel to. To copy it to a new dashboard, enter a name and select **Create New Dashboard** from the dropdown.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-dialog.png')} alt="Copy to Dashboard dialog" style={{border: '1px solid gray'}} width="400" />
+1. In the **Add Panel to Dashboard** window, enter a **Panel Title** and select the **Dashboard** you want to copy the panel to. To copy it to a new dashboard, enter a name and select **Create New Dashboard** from the dropdown list.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/copy-to-dashboard-dialog.png')} alt="Copy to Dashboard dialog" style={{border: '1px solid gray'}} width="400" />
 1. Choose how the copied panel handles its time range:
    * **Inherit time range from dashboard**. The panel uses the time range of the destination dashboard.
    * **Use current time range as panel default**. The panel keeps its own time range, independent of the destination dashboard.

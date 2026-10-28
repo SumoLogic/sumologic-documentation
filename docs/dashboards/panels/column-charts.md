@@ -15,7 +15,7 @@ For example, you'd use the following query to create a simple column chart:
 
 which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/bubble-charts/categorical.png')} style={{border: '1px solid gray'}} alt="categorical" width="600"/>
 
-## Create a column chart
+## Create a Column chart
 
 To add a panel with a column chart:
 

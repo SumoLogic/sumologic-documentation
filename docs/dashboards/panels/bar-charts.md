@@ -15,7 +15,7 @@ For example, you'd use the following query to create a simple Bar chart:
 
 which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/bar-charts/AggResult.png')} style={{border: '1px solid gray'}} alt="AggResult" width="500"/>
 
-## Create a bar chart
+## Create a Bar chart
 
 To add a panel with a bar chart:
 

@@ -5,7 +5,7 @@ description: Learn how to drill into related content to discover the root cause 
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you see a spike of interest on a dashboard that requires further investigation, you can easily drill into the related content to discover the root cause. This page shows you how you can easily discover related dashboards and corresponding logs searches that pertain to an issue in your environment.
+When you see a spike of interest on a dashboard that requires further investigation, you can easily drill into the related content to discover the root cause. This page shows you how you can easily discover related dashboards and corresponding log searches that pertain to an issue in your environment.
 
 ## Drilling into related content
 
@@ -58,7 +58,7 @@ Click the **Triggered monitors** row to view the related Monitors. You can clic
 ## Limitations
 
 * Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, Application Components, and Host domains are supported.
-* A few Panel types do not support the features documented on this page. You will not have the option to click a data point to view the Summary and Entities tabs on the following Panel types:
-    * [Single Value Panel](/docs/dashboards/panels#single-value-panel)
-    * [Map Panel](/docs/dashboards/panels#map-panel)
-    * [Text Panel](/docs/dashboards/panels#text-panel)
+* A few panel types do not support the features documented on this page. You will not have the option to click a data point to view the Summary and Entities tabs on the following panel types:
+    * [Single Value panel](/docs/dashboards/panels/about#single-value-panel)
+    * [Map panel](/docs/dashboards/panels/about#map-panel)
+    * [Text panel](/docs/dashboards/panels/about#text-panel)

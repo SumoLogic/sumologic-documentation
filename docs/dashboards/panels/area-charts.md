@@ -17,7 +17,7 @@ error | timeslice 1m | count by _timeslice
 
 which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/area-charts/Result.png')} style={{border: '1px solid gray'}} alt="Result" width="400"/>
 
-## Create an area chart
+## Create an Area chart
 
 To add a panel with an area chart:
 1. Create or open a dashboard and click **Add Panel > Time Series** or **Add Panel > Categorical**.<br/><img src={useBaseUrl('/img/dashboards/panels/area-charts/time-series-or-categorical.png')} style={{border: '1px solid gray'}} alt="time series or categorical" width="600"/>

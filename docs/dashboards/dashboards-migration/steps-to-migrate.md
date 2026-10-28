@@ -11,7 +11,7 @@ This document walks you through the entire process of migrating classic dashboar
 We do not guarantee 100% conversion from classic to dashboard, although we do provide an exhaustive list of incompatibilities that need to be taken care of. You can still keep your old dashboard after migration.
 :::
 
-## Migration Steps 
+## Migration steps 
 
 This section explains to you the step-by-step process to migrate your dashboards.
 
@@ -21,7 +21,7 @@ This section explains to you the step-by-step process to migrate your dashboards
     1. **Warning State.** Showing any warnings during migrations: warnings don’t fail the migration process, however, it might be something that you have to fix on your own or is a feature that is not yet supported on the dashboard.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard4.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
     2. **Error State.** The process can sometimes run into an error state, this fails the migration and the dashboard is not created.<br/><img src={useBaseUrl('img/dashboards/migrate-dashboard5.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
 
-### Bulk Migration
+### Bulk migration
 
 The bulk migration feature is an extension to the dashboard migration feature that allows the user to migrate multiple classic dashboards at once:
 

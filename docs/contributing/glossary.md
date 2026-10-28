@@ -345,7 +345,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Time Compare](/docs/search/time-compare)**. Time Compare uses the compare operator to compare current aggregated search results with aggregated data from a past time period.
 
-**[Time series](/docs/dashboards/panels#time-series-panel)**. A set of timestamped values of a specific measurement.
+**[Time series](/docs/dashboards/panels/about#time-series-panel)**. A set of timestamped values of a specific measurement.
 
 **[`timeslice` operator](/docs/search/search-query-language/search-operators/timeslice)**. A search operator that groups log results into fixed time buckets, either by duration or by a bucket count. It is the log-search counterpart of the `quantize` metrics operator.
 

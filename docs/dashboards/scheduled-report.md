@@ -80,7 +80,7 @@ To cancel a scheduled report:
 
 ## Duplicate a scheduled report
 
-To duplicate to an existing a Scheduled Report:
+To duplicate to an existing a scheduled report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Scheduled Reports** to open the scheduled reports list.
 1. Click the kebab menu and select **Save As...** against the required report.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/duplicate_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
@@ -92,7 +92,7 @@ To duplicate to an existing a Scheduled Report:
 You will not be able to unsubscribe if you are the only recipient.
 :::
 
-To subscribe to an existing a Scheduled Report:
+To subscribe to an existing a scheduled report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Scheduled Reports** to open the scheduled reports list.
 1. Click the kebab menu and select **Subscribe** against the required report to automatically inject your user email into the list of recipients. <br/><img src={useBaseUrl('img/dashboards/scheduled_reports/subscribe_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>

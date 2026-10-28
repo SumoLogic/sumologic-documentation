@@ -13,7 +13,7 @@ For example, you'd use the following query to create a simple table chart:
 
 which would produce results such as:<br/><img src={useBaseUrl('/img/dashboards/panels/table-charts/AggResult.png')} alt="AggResult" style={{border: '1px solid gray'}} width="500" />
 
-## Create a table chart 
+## Create a Table chart 
 
 To add a panel with a table chart:
 
@@ -38,7 +38,7 @@ To add a panel with a table chart:
 1. [Modify the chart](./modify-chart.md) as desired.
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards/create-dashboard/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
-## URL Links in table chart panels
+## URL links in table chart panels
 
 When you create a table chart panel, and if your query looks for URLs, then use the [`tourl`](/docs/search/search-query-language/search-operators/tourl/) operator to display the URL in the table as working links.
 

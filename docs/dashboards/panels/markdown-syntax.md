@@ -1,11 +1,12 @@
 ---
 id: markdown-syntax
-title: Markdown Syntax
+title: Markdown Syntax for Dashboards
+sidebar_label: Markdown Syntax
 description: Markdown Syntax options are supported in Dashboards.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The following Markdown Syntax options are supported in dashboards. When your syntax is supported, you will see "Markdown Supported" near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
+The following Markdown syntax options are supported in dashboards. When your syntax is supported, you will see `Markdown Supported` near the bottom left corner of the text box. Unsupported syntax prevents you from clicking the **Submit** button.
 
 :::important
 Images, blockquotes, code blocks, URLs, and email addresses are not supported in the text panels.
@@ -58,7 +59,7 @@ period. Indent by adding a space. 
     1. Indented Item Two
 ```
 
-This will be displayed in the Text Panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_ordered_list.png')} alt="Ordered list" style={{border: '1px solid gray'}} width="400" /> 
+This will be displayed in the Text panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_ordered_list.png')} alt="Ordered list" style={{border: '1px solid gray'}} width="400" />
 
 ### Unordered Lists
 
@@ -73,7 +74,7 @@ will produce a bullet. Indent by adding a space.
     * Bullet Indent Two
 ```
 
- This will be displayed in the Text Panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_unordered_list.png')} alt="Markdown unordered list" style={{border: '1px solid gray'}} width="400" /> 
+ This will be displayed in the Text panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_unordered_list.png')} alt="Markdown unordered list" style={{border: '1px solid gray'}} width="400" />
 
 ## Combined Lists
 
@@ -89,7 +90,7 @@ To created a combined, nested list of numbered and bulleted items, just precede 
     * Bullet Indent Two
 ```
 
-This will be displayed in the Text Panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_combined_list.png')} alt="Combined list" style={{border: '1px solid gray'}} width="400" /> 
+This will be displayed in the Text panel as:<br/><img src={useBaseUrl('/img/reuse/monitor-alert/markdown_combined_list.png')} alt="Combined list" style={{border: '1px solid gray'}} width="400" />
 
 :::info
 To learn more about the supported markdown elements, refer to the [Markdown guide](https://markdownguide.offshoot.io/basic-syntax/#blockquotes-1).
