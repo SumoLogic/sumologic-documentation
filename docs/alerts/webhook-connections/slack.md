@@ -45,7 +45,7 @@ These examples are provided as a reference on Slack's supported Webhook payloads
 You can use `blocks` as an alternative to `attachments`. However, our default payload still uses `attachments`.
 :::
 
-### Send Scheduled Search results
+### Send scheduled search results
 
 Here is an example JSON payload to send most of the available Webhook variables including `ResultsJson`.
 

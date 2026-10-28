@@ -83,7 +83,7 @@ You can choose one of the following formats. The Legacy format is enabled by def
 | Legacy (default) | `06/23/2025 09:19:45 AM AEST` | 12-hour time with AM/PM, in `MM/dd/yyyy hh:mm:ss a z` format. |
 | ISO | `2025-06-23 09:19:45 AEST` | 24-hour time without AM/PM, in `yyyy-MM-dd HH:mm:ss z` format. |
 
-The selected format applies to all timestamp fields in alert and recovery notifications, including **Created On Date**, **Trigger Time Range**, and **Recovery Time**. It applies consistently across Connections, Webhooks, Slack, and Microsoft Teams, for both Monitor alerts and Scheduled Search notifications.
+The selected format applies to all timestamp fields in alert and recovery notifications, including **Created On Date**, **Trigger Time Range**, and **Recovery Time**. It applies consistently across Connections, Webhooks, Slack, and Microsoft Teams, for both monitor alerts and scheduled search notifications.
 
 <img src={useBaseUrl('img/get-started/timestamp-policies.png')} alt="Notification Settings Standards policy showing Legacy and ISO date and time format options" style={{border: '1px solid gray'}} width="700"/>
 

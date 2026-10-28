@@ -228,7 +228,7 @@ For general DevOps and security industry terms, see our [DevOps and Security Glo
 
 **[Mobot](/docs/search/mobot)**. Sumo Logic's AI assistant. Ask questions in natural language to search logs, investigate security insights, get platform guidance, and more. Mobot automatically routes questions to specialized agents based on your intent.
 
-**[Monitor](/docs/alerts/monitors/overview)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
+**[Monitor](/docs/alerts/monitors/about)**. An object you configure in Sumo Logic that tracks your metrics and logs data in real time and sends notifications when noteworthy changes happen in your production applications. A monitor checks for specific events of interest against a data source based on your conditions, then notifies you according to your preferences.
 
 **[Multiline](/docs/send-data/reference-information/collect-multiline-logs)**. Log messages that span multiple lines are called multiline messages.
 

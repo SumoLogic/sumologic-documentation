@@ -69,7 +69,7 @@ Variables must be enclosed by double curly brackets.
 :::
 
 ### Common variables for alerts
-You can use variables to customize your notification payload from Monitors and Scheduled Searches. The table below shows a list of variables along with information on which area of the product these are supported. We have also provided a brief description of each of the variables.
+You can use variables to customize your notification payload from monitors and scheduled searches. The table below shows a list of variables along with information on which area of the product these are supported. We have also provided a brief description of each of the variables.
 
 :::note
 All variables are case-insensitive.
@@ -101,7 +101,7 @@ All variables are case-insensitive.
 <details>
 <summary>Legacy variables</summary>
 
-This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
+This section provides the old variables available for alert notifications from metrics monitors and scheduled searches. The following table shows where the old variables are supported.
 
 :::tip
 We recommend using the new common variables instead of these legacy variables, which will be deprecated.
@@ -247,7 +247,7 @@ The following valid JSON is sent in the payload of the POST request.
 
 ### Example authorization header
 
-Use HTTP Basic Authentication, this is a standard used across the world wide web, Sumo Logic doesn't require anything different or special. The username and password are concatenated, base64-encoded, and passed in the `Authorization` HTTP header. The Authorization field is constructed as follows:
+Use HTTP Basic Authentication, this is a standard used across the world wide web, Sumo Logic does not require anything different or special. The username and password are concatenated, base64-encoded, and passed in the `Authorization` HTTP header. The Authorization field is constructed as follows:
 
 * Combine the username and password with a single colon.
 * Encode using the [RFC2045-MIME](https://www.ietf.org/rfc/rfc2045.txt) variant of Base64. You can use any encoder, including the [base64](/docs/search/search-query-language/search-operators/base64encode) search operator to do this.
@@ -279,7 +279,7 @@ After configuring the connection, click the **Test Connection** button at the 
 
 <img src={useBaseUrl('img/connection-and-integration/test-connection-button.png')} alt="Test connection button" style={{border: '1px solid gray'}} width="600" />
 
-If the connection is successful, you'll see a message appearing in the third-party tool. This won't contain any information from the scheduled search, it will just have the text in the payload.
+If the connection is successful, you'll see a message appearing in the third-party tool. This will not contain any information from the scheduled search, it will just have the text in the payload.
 
 ### Troubleshooting Webhook payload
 

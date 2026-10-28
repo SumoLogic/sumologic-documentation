@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/security/SOC.png')} alt="SOC icon" width="50"/>
 
-[Cloud SOAR](/docs/cloud-soar) can receive alerts from Sumo Logic Monitors and Scheduled Searches to create Incidents. First, you'll need to create a Cloud SOAR connection. Then you can use the connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
+[Cloud SOAR](/docs/cloud-soar) can receive alerts from Sumo Logic monitors and scheduled searches to create Incidents. First, you'll need to create a Cloud SOAR connection. Then you can use the connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
 
 :::warning before you begin
 * You need to have Cloud SOAR enabled on your account for this connection to be available.
@@ -58,7 +58,7 @@ A `template_id` is required in the payload in order to configure the connection:
     ```
     :::note
     * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables).
-    * For information on additional fields, please refer to the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
+    * For information on additional fields, see the [Cloud SOAR APIs](/docs/api/cloud-soar/) documentation.
     * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
     :::
 1. Click **Test Alert**. If the connection is made to your Cloud SOAR function successfully, you will see a `200 OK` response message.

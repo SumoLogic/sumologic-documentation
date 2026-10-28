@@ -13,14 +13,13 @@ You could group by `_collector` field, for example, and one alert would be gener
 <img src={useBaseUrl('img/alerts/monitors/alert_grouping.png')} alt="Alert grouping diagram" />
 
 
-## Setup
+## Set up alert grouping
 
 Alert grouping works for both logs and metrics monitors.
 
-
 ### Metrics
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**.
 2. Click **Add a New monitor**.
 3. Select **Metrics** as the type of monitor.
 4. Enter your metrics query, then select your desired alert grouping option.
@@ -32,7 +31,7 @@ Alert grouping works for both logs and metrics monitors.
 
 ### Logs
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**.
 2. Click **Add a New monitor**.
 3. Select **Logs** as the type of monitor.
 4. Enter your logs query, then select your desired alert grouping option:
@@ -151,7 +150,7 @@ Although we validate the fields used in alert grouping when monitor is created/u
 
 For example, if over a period of time the structure of log messages changes and the field no longer exists in the logs. If the monitor is not edited to reflect the new log structure, non-existent fields of null values might happen. If this happens, then the monitor will still work fine, but it will behave exactly like the **One alert per monitor** case.
 
-#### What happens if the field(s) used for alert grouping have very high cardinality, will I still get alerts for each unique field values?
+#### What happens if the field(s) used for alert grouping have high cardinality, will I still get alerts for each unique field values?
 
 We do support high cardinality for alert grouping, but there is a limit. If you have more than 1000 unique values of field(s) in a given monitor execution run, then only top 1000 unique values will generate an alert.
 
@@ -159,6 +158,6 @@ For example, let's say that you configured a monitor to generate one alert per c
 
 #### What fields are not allowed for alert grouping?
 
-Fields with very high cardinality such as `_blockid`, `_raw`, `_messagetime`, `_receipttime`, and `_messageid` are not allowed for alert grouping.
+Fields with high cardinality such as `_blockid`, `_raw`, `_messagetime`, `_receipttime`, and `_messageid` are not allowed for alert grouping.
 
 Fields from aggregate operators such as [`_count`](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent/#count), [`_avg`](/docs/search/search-query-language/group-aggregate-operators/avg), and [`_sum`](/docs/search/search-query-language/group-aggregate-operators/sum) are not allowed.
