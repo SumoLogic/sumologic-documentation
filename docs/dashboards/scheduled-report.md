@@ -32,8 +32,8 @@ To schedule a dashboard email report, do the following:
    * **Select report width**. Set the width of the report, in pixels, anywhere from 1,500 to 6,000. The default is 1,500. Increase the resolution for a sharper image on large displays, such as wall monitors or TV screens.
    * **Select theme**. Choose **Light** or **Dark** theme for the report. By default, the selected theme matches the dashboard's current theme.
    * **Select variables**. If the dashboard supports template variables, select the values which you need for the scheduled report for the dashboard.
-   * **Select Time Range**. Set the time range for the dashboard by selecting a predefined interval from a drop-down list or by choosing a recently used time range.
-   * **Select a frequency**. Choose the frequency settings for the scheduled dashboard report: 
+   * **Select Time Range**. Set the time range for the dashboard by selecting a predefined interval from a dropdown list or by choosing a recently used time range.
+   * **Select a frequency**. Choose the frequency settings for the scheduled dashboard report:
       * **Frequency**. Choose the frequency Daily, Weekly, or Monthly.
       * **Every.** The options depend on the Frequency you selected.
          * **Daily.** Choose Every day, Weekdays, or Weekends.
@@ -41,7 +41,7 @@ To schedule a dashboard email report, do the following:
          * **Monthly.** Choose which day of which week of the month you want the report to be sent.
       * **Time.** Choose the time of day you want the dashboard to be sent.
       * **Time Zone.** Choose your time zone.
-   * **Add recipients**. 
+   * **Add recipients**.
       * **Email to.** Enter the email addresses where you want the dashboard to be sent.
       * **Subject.** Enter a subject for the email.
       * **Message.** Enter the body of the email.
@@ -78,21 +78,21 @@ To cancel a scheduled report:
 1. Click the kebab menu and select **Delete** against the required report.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/delete_scheduled_report_1.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 1. In the popup window, click **Delete**. <br/><img src={useBaseUrl('img/dashboards/scheduled_reports/delete_scheduled_report.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="500"/>
 
-## Duplicate a Scheduled Report
+## Duplicate a scheduled report
 
-To duplicate to an existing a Scheduled Report:
+To duplicate to an existing a scheduled report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Scheduled Reports** to open the scheduled reports list.
 1. Click the kebab menu and select **Save As...** against the required report.<br/><img src={useBaseUrl('img/dashboards/scheduled_reports/duplicate_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 1. Make your desired changes. When you're done, click **Schedule**. <br/><img src={useBaseUrl('/img/dashboards/scheduled_reports/scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 
-## Subscribe/Unsubscribe to a Scheduled Report
+## Subscribe/unsubscribe to a scheduled report
 
 :::info
 You will not be able to unsubscribe if you are the only recipient.
 :::
 
-To subscribe to an existing a Scheduled Report:
+To subscribe to an existing a scheduled report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Scheduled Reports** to open the scheduled reports list.
 1. Click the kebab menu and select **Subscribe** against the required report to automatically inject your user email into the list of recipients. <br/><img src={useBaseUrl('img/dashboards/scheduled_reports/subscribe_scheduled_report.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>

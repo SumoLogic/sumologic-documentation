@@ -405,13 +405,13 @@ Typically, each playbook in Cloud SIEM will help partially or fully automate one
 
 ### Automations and integrations
 
-Cloud SIEM comes with hundreds of pre-built playbooks, integrations, and use cases as part of [App Central](/docs/platform-services/automation-service/app-central/). 
+Cloud SIEM comes with hundreds of pre-built playbooks, integrations, and use cases as part of [App Catalog](/docs/integrations/). 
 
-As a Cloud SIEM administrator, you can explore App Central and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SIEM to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SIEM can be a single, central location for orchestrating your security response. 
+As a Cloud SIEM administrator, you can explore App Catalog and install any integrations your team requests. You can also create custom integrations using APIs from the **Integrations** page. These integrations will connect Cloud SIEM to other tools like CrowdStrike, ServiceNow, or Jira. Once all your tools are integrated, Cloud SIEM can be a single, central location for orchestrating your security response. 
 
 ### Install a new integration
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Automation** and then and click **App Central** in the left navigation bar. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **App Catalog**. You can also click the **Go To...** menu at the top of the screen and select **App Catalog**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **App Catalog** in the left navigation bar. 
 1. Click **Integrations** at the top of the window.
 1. Find any integration that is not already installed and click **Install**. If an integration has already been installed by another user, you will not see the option to download it. Instead, it will say **Installed**. 
 1. A popup window will appear, summarizing the actions that will become available once the integration has been installed. Once you have reviewed these actions, click **Install**. The actions will vary based on which integration you chose to install. 

@@ -106,7 +106,7 @@ The **AI Investigation** tab in the details page of a Cloud SIEM insight is an a
        1. Click **View Details** on the confirmation to see details about the playbook automation, and then you should see a confirmation:<br/><img src={useBaseUrl('img/cse/playbook-automation-confirmation.png')} alt="Playbook automation confirmation" style={{border: '1px solid gray'}} width="400" /> <br/>
        1. The playbook execution details are displayed on the [**Automations**](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) tab of the insight. Click **View Playbook** on an automation to see the progress of the playbook execution.<br/><img src={useBaseUrl('img/cse/automations-tab-for-recommended-action.png')} alt="Automations tab" style={{border: '1px solid gray'}} width="700" />
           :::note
-          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/platform-services/automation-service/configure-authentication-for-integrations/).
+          To run playbooks from **Recommended Actions**, the integrations they use must be properly configured. See [Configure Authentication for Automation Integrations](/docs/integrations/automation-integrations/configure-authentication/).
           :::
           -->
    1. **Key Findings**. The main points uncovered by AI analysis. Details about these findings can be found in the signals that fired for the insight.
@@ -287,6 +287,42 @@ Yes. An insight's **AI Verdict**, **Key Findings**, and **What Happened** summar
 ### Can the agent take containment actions on its own?
 
 No. The agent renders verdicts and findings to guide your investigation; it does not take remediation or containment actions itself.
+
+### Is an AI SOC deterministic?
+
+Not in the way a fixed rule is. A Cloud SIEM rule fires on the same match every time, while the SOC Analyst Agent applies agentic reasoning that adapts to the insight's context, so its verdicts can vary. Treat each verdict as an evidence-backed assessment, and review the supporting evidence and tool calls.
+
+### How does the agent handle hallucinations?
+
+Verdicts draw on your normalized security data, correlated entities, threat intelligence, and enrichment data. Every tool call the agent makes is logged to Cloud SIEM so you can review how it reached a verdict, and senior analysts regularly review a sample of verdicts. You can also override a verdict and flag feedback.
+
+### What guardrails apply to autonomous action for an AI SOC?
+
+The agent can't take remediation or containment actions itself. It renders verdicts and findings to guide your investigation, investigates insights only up to your organization's committed daily volume, and lets you exclude insights from auto-investigation. See [Configure SOC Analyst Agent settings](#configure-soc-analyst-agent-settings).
+
+### How much manual work is required with an AI SOC?
+
+The agent automatically investigates insights in priority order and delivers a verdict on each, so analysts don't have to start every investigation by hand. Analysts still review verdicts, can manually investigate any insight that wasn't auto-investigated, and decide on any response.
+
+### Will AI replace SOC analysts?
+
+The SOC Analyst Agent is designed to assist analysts, not replace them. It speeds up triage and investigation, while analysts review verdicts, override them, direct the investigation conversationally, and take any containment actions.
+
+### How does the agent help reduce false positives?
+
+The agent labels each insight as **Malicious**, **Suspicious**, or **Benign** and explains its reasoning, so you can quickly see which insights are likely benign. This helps reduce false-positive noise and keeps your attention on higher-priority insights.
+
+### Does the agent help reduce analyst burnout?
+
+By investigating insights automatically and surfacing a verdict with its reasoning, the agent reduces the time analysts spend on manual triage, so they can focus on investigations that need human judgment.
+
+### What software supports Tier 1 and Tier 2 SOC analysts?
+
+Cloud SIEM gives analysts prioritized insights with correlated entities, and the SOC Analyst Agent adds an AI verdict on each insight. Tier 1 analysts can use the verdict to triage faster, and Tier 2 analysts can continue the investigation in Mobot. Cloud SOAR adds playbook automation for response.
+
+### Does the agent provide contextual alerting?
+
+Cloud SIEM groups related signals for the same entity into insights, so analysts triage one prioritized item instead of many separate alerts. The agent adds a verdict and a summary of the threat based on the triggered signals.
 
 ## Additional resources
 
