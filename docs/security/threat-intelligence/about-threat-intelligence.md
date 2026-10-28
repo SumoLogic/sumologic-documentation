@@ -120,7 +120,7 @@ Add the following capabilities:
 You do not need to be assigned these role capabilities to [find threats with log queries](/docs/security/threat-intelligence/find-threats/).
 
 :::note
-Role capabilities alone don't make the Threat Intelligence tab visible. The tab also requires Cloud SIEM.
+Role capabilities alone do not make the Threat Intelligence tab visible. The tab also requires Cloud SIEM.
 :::
 
 ### Allowlist Sumo Logic static IP addresses
