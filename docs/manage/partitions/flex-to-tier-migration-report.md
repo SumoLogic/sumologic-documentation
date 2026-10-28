@@ -20,7 +20,7 @@ The Flex to Tier Migration Report shows your partitions and their readiness for 
 |:--|:--|
 | **Partition Name** | Name of the partition. |
 | **Ingestion Volume** | Total ingestion volume associated with the partition. |
-| **Current Scope** | Indicates whether the partition is currently included or excluded from the migration scope. |
+| **Is Included** | Indicates whether the partition is currently included or excluded from the migration scope. |
 | **SIEM Forwarding** | Indicates whether SIEM forwarding is enabled for the partition (`true` / `false`). |
 | **Unsupported Features Detected When Moving Towards Tiered** | Displays any unsupported dependencies detected for the partition after migration to Tiered storage. For example, `true [monitor, slo]`. |
 | **Unsupported Monitor** | Lists monitor names currently using the partition that may not function after migration. |
@@ -34,10 +34,10 @@ The **Recommendation** column displays one of the following messages based on th
 
 | Is Included | Unsupported Features Detected | SIEM Forwarding | Recommendation |
 |:--|:--|:--|:--|
-| `true` | `false` | Any | No action needed. |
+| `true` | `false` | `true` or `false` | No action needed. |
 | `false` | `false` | `false` | No action needed. |
 | `false` | `false` | `true` | Switch to Included (Continuous). SIEM Forwarding will not work correctly on an excluded partition. |
-| `false` | `true` | Any | Switch to Included (Continuous). Monitors/SLOs/Scheduled Views will not work correctly on an excluded partition. |
+| `false` | `true` | `true` or `false` | Switch to Included (Continuous). Monitors/SLOs/Scheduled Views will not work correctly on an excluded partition. |
 
 ## FAQ
 
