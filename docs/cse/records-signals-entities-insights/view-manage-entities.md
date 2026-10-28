@@ -89,7 +89,7 @@ the entity appears.
 | k | **Audit Log**. This area will list any audit events that have been logged for the entity. An audit log is generated each time an entity is suppressed or unsuppressed.|
 | l | **Recent Activity**. Provides a count of how many signals or insights included the entity within the last 30 days. Click the plus sign (+) next to **Signals** or **Insights** to expand the list. |
 | m | **Activity**. This tab displays a visualization of signals on the entity over time.The x-axis is time, the y-axis is severity. The icons represent signals.
-| n | **Enrichments** tab. If you use Cloud SIEM’s automation as a service, entity enrichments obtained from Cloud SOAR may be available on this tab.   |
+| n | **Enrichments** tab. If you use Cloud SIEM’s automation as a service, entity enrichments obtained from Cloud SOAR and threat intelligence may be available on this tab.   |
 | o | **Timeline**. A timeline appears for the entity's activity over a three-day period. For more information, see [About the Entity Timeline tab](#about-the-entity-timeline-tab).|
 | p | **Related Entities**. Entities related to the current entity. |
 | q | **Automations**. [Automations](/docs/cse/automation/automations-in-cloud-siem/#view-results-of-an-automation) that have been run on the entity. |
