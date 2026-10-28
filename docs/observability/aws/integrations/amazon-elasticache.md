@@ -62,7 +62,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 
 Cache Hit Rate:
 
-```sql title="Metric"
+```metrics title="Metric"
 account=dev region=us-east-1 namespace=aws/elasticache metric=CacheHitRate statistic=Average CacheClusterId=* CacheNodeId=* | avg by account, region, namespace, CacheClusterId, CacheNodeId
 ``` 
 

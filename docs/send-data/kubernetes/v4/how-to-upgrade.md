@@ -205,7 +205,7 @@ If you've changed the values of either of these two options, you'll need to adju
 Both source types will be created by the setup job. The settings discussed here affect which source is actually used.
 :::
 
-**When?**: You use the `_sourceName` or `_source` fields in your Sumo queries.
+**When?**: You use the `_sourceName` or `_source` fields in your Sumo Logic queries.
 
 The only solution is to change the queries in question. In general, it's an antipattern to write queries against specific sources, instead of semantic attributes of the data.
 

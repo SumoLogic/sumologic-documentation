@@ -194,7 +194,7 @@ The Sumo Logic app for Amazon RDS uses the following logs and metrics:
 
 ### Sample queries
 
-```sql title="Average Database Connections in Use (Metric based)"
+```metrics title="Average Database Connections in Use (Metric based)"
 Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
 ```
 
@@ -461,7 +461,7 @@ Follow the steps below to add custom fields when configuring the CloudWatch log 
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs

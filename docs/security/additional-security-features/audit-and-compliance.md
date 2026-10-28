@@ -81,19 +81,19 @@ Create filters and search parameters with Sumo Logic to find any data at any tim
 
 #### Step 4: Use out-of-the-box content
 
-Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from out-of-the-box integrations, like our [PCI dashboards](/docs/integrations/pci-compliance), allow you to monitor many security tools you already use.
+Leverage machine learning analytics to improve and streamline audit processes and expedite compliance using tools. Tools from our out-of-the-box integrations like [PCI dashboards](/docs/integrations/pci-compliance) let you monitor many security tools you already use.
 
 #### Step 5: Retain data
 
 Retain data for as long as you need it to perform your audit and compliance process.  
 
-#### Step 6: Monitor in real-time
+#### Step 6: Monitor in real time
 
-Sumo Logic monitors incoming data and security controls in real-time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
+Sumo Logic monitors incoming data and security controls in real time to identify anomalies that could signal a vulnerability, threat, or non-compliance.
 
 #### Step 7: Create a unified system
 
-Use Sumo Logic's countless data integrations and out-of-the box applications ensure that all data is properly collected and cataloged as it’s generated.
+Use Sumo Logic's countless data integrations and out-of-the-box applications ensure that all data is properly collected and cataloged as it’s generated.
 
 ### Use case: PCI compliance
 
@@ -176,6 +176,40 @@ To use Sumo Logic to start an audit of AWS root for compliance, perform these st
 1. Next to the clock icon, select a time frame that covers the time you want to audit. 
 1. Click the magnifying glass icon or press Enter to start the search.
 1. Click the **Aggregates** tab in the results. In the results, see API calls using the root account type. You can work with your AWS administrators to find out if this use of root is necessary and legitimate or not.
+
+## FAQ
+
+### What logs do I need to collect for compliance?
+
+The logs you need depend on the framework you must meet, so confirm the required sources with your auditor. Common sources include authentication and access logs, cloud audit logs such as AWS CloudTrail, Azure Activity Log, and Google Cloud Audit, firewall and network logs, and the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) for activity in your Sumo Logic account. See [Pre-built apps for audit and compliance](#pre-built-apps-for-audit-and-compliance).
+
+### What logs do I need for PCI DSS compliance?
+
+PCI DSS requirement 10 requires you to track and monitor all access to network resources and cardholder data, and requirement 1 covers firewall configuration. See the [PCI requirements](#pci-requirements) table on this page. Sumo Logic's [PCI Compliance apps](/docs/integrations/pci-compliance/), for example for Palo Alto Networks, build dashboards from your firewall logs. See [Perform a PCI compliance audit](#perform-a-pci-compliance-audit).
+
+### How detailed do compliance logs need to be?
+
+Your framework and auditor set the required level of detail. As a general rule, a log entry should show who did what, when, and from where, such as the user, action, timestamp, and source IP address. The example queries on this page extract those fields from AWS CloudTrail logs.
+
+### What retention period should I use for different log types?
+
+Your framework or auditor sets the minimum retention period. In Sumo Logic, you set the retention period for each partition, so you can keep different log types for different lengths of time. You can also mark a partition as compliance data so its routing expression and retention period can't be changed. See [Create a partition](/docs/manage/partitions/flex/create-edit-partition-flex/) and [Manage indexes with variable retention](/docs/manage/partitions/manage-indexes-variable-retention/).
+
+### Should I log personally identifiable information (PII)?
+
+Log only what you need, and check your legal and privacy requirements, such as GDPR. If your logs contain sensitive values, use [mask rules](/docs/send-data/collection/processing-rules/mask-rules/) or [hash rules](/docs/send-data/collection/processing-rules/hash-rules/) to hide them before they are ingested.
+
+### How do I create an audit report from my logs?
+
+Run a search for the activity you need to report on, then add it to a dashboard. You can use a [scheduled report](/docs/dashboards/scheduled-report/) to email the dashboard as a PDF or PNG on a schedule, which also captures the state of the dashboard for compliance. For activity in your own Sumo Logic account, install the [Sumo Logic Audit](/docs/integrations/sumo-apps/audit/) app.
+
+### How do I detect compliance violations in my logs?
+
+Write a query for the activity that breaks your policy, such as the [AWS root account query](#perform-a-query-for-aws-root-activity) on this page, then create a [monitor](/docs/alerts/monitors/create-monitor/) so you are alerted when it matches.
+
+### What's the difference between compliance logging and security logging?
+
+Compliance logging records the evidence a framework or auditor requires, such as who accessed what, and keeps it for a required period. Security logging collects data so you can detect and investigate threats. The same logs often serve both purposes, but the requirements and retention differ. See [Regulatory compliance and security controls](#regulatory-compliance-and-security-controls).
 
 ## Additional resources
 

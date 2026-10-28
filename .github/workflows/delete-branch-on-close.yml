@@ -1,0 +1,36 @@
+name: Delete Branch on PR Close
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+
+jobs:
+  delete-branch:
+    # GitHub's own "automatically delete head branches" setting already covers
+    # merged PRs, so this only needs to handle PRs closed without merging.
+    if: github.event.pull_request.merged == false && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete head branch
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const ref = context.payload.pull_request.head.ref;
+            try {
+              await github.rest.git.deleteRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `heads/${ref}`,
+              });
+              core.info(`Deleted branch ${ref}`);
+            } catch (e) {
+              if (e.status === 404) {
+                core.info(`Branch ${ref} already deleted or does not exist.`);
+              } else {
+                throw e;
+              }
+            }

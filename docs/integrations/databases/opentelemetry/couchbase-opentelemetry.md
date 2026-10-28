@@ -66,7 +66,7 @@ If you want to use an existing OTel Collector, this step can be skipped by selec
 
 If you want to create a new Collector please select **Add a new Collector** option.
 
-Select the platform for which you want to install the Sumo OpenTelemetry Collector.
+Select the platform for which you want to install the Sumo Logic OpenTelemetry Collector.
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
@@ -83,7 +83,7 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 * For Access Log: `/opt/couchbase/var/lib/couchbase/logs/http_access.log`
 * For Query Log: `/opt/couchbase/var/lib/couchbase/logs/query.log`
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo.
+You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
 Click on the **Download YAML File** button to get the yaml file.
 
 import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-version-note.md';
@@ -92,7 +92,7 @@ import CollectorVersionNote from '../../../reuse/apps/opentelemetry/collector-ve
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 

@@ -176,7 +176,7 @@ Install and configure Telegraf to read your data for sending through the Sumo Lo
 
 ### Configure and Collect Metrics
 
-To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic). Configure the following options for the plugin. See [Supported HTTP Headers](../hosted-collectors/http-source/logs-metrics/upload-metrics.md) for additional Sumo supported options.
+To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic). Configure the following options for the plugin. See [Supported HTTP Headers](../hosted-collectors/http-source/logs-metrics/upload-metrics.md) for additional Sumo Logic supported options.
 
 **URL.** A unique URL generated for your HTTP Metrics Source. Use the following address to send metrics to:
 
@@ -194,7 +194,7 @@ When unset, Telegraf will use the influx serializer by default which is current
 |:--|:--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon2](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2`<br/>This is the default setting. |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../hosted-collectors/http-source/logs-metrics/upload-metrics.md#prometheus-metrics-not-accepted-by-sumo). |
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo Logic won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo Logic](../hosted-collectors/http-source/logs-metrics/upload-metrics.md#prometheus-metrics-not-accepted-by-sumo-logic). |
 
 **Timeout.** Set a timeout for the HTTP request.
 

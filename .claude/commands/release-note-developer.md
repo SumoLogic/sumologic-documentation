@@ -13,10 +13,12 @@ When you invoke `release-note-developer`, Claude will guide you through:
 
 ## When to use this command
 
+Use this feed when the **primary audience is someone writing code to connect to Sumo Logic** — a developer building an integration, not a Sumo Logic end user. If the feature is something a user accesses in the UI that also happens to have an API, it belongs in the Service release notes instead.
+
 * Announcing new API endpoints or features
 * Documenting API changes, deprecations, or breaking changes
 * Releasing developer tools or CLI updates
-* Announcing platform changes affecting developers
+* Announcing platform changes affecting developers (MCP server, OAuth, auth flows)
 * Documenting authentication or integration changes
 * Publishing deprecation notices
 
@@ -91,9 +93,7 @@ hide_table_of_contents: true
 * Keep topic concise but descriptive
 
 **Date formatting:**
-* Use full month name (January, February, March, etc.)
-* Use day without ordinal suffix (1, 9, 23, not 1st, 9th, 23rd)
-* Format: "Month Day, YYYY"
+* `Month D, YYYY`, per the [style guide](/docs/contributing/style-guide/#release-notes): full month name, no ordinal, no leading zero.
 
 **Image:**
 * Always use the standard Sumo Logic preview image
@@ -152,6 +152,8 @@ hide_table_of_contents: true
 
 ### Step 6: Content formatting guidelines
 
+Follow [Release notes](/docs/contributing/style-guide/#release-notes) in the style guide for voice, conciseness, and "Learn more" links. The guidance below is only what is specific to developer release notes.
+
 #### API Changes
 
 For API announcements, include:
@@ -168,7 +170,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 hide_table_of_contents: true
 ---
 
-We're excited to announce new API endpoints for managing Field Extraction Rules (FERs) programmatically. These endpoints enable you to create, update, delete, and list FERs via the REST API, making it easier to automate and scale your field extraction configurations.
+New API endpoints for managing Field Extraction Rules (FERs) are now available. These endpoints enable you to create, update, delete, and list FERs via the REST API, making it easier to automate and scale your field extraction configurations.
 
 #### New endpoints
 
@@ -246,7 +248,7 @@ image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-cente
 hide_table_of_contents: true
 ---
 
-We've made the following improvements to our APIs:
+The following API improvements are now available:
 
 * **Audit logging**: When performing create, update, and delete requests through Sumo Logic APIs, the API accessID is now included within the operator field of your related [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index) messages.
 * **Search Job API**: Now returns query execution statistics in response headers for better monitoring and debugging.
@@ -262,6 +264,7 @@ Before finishing, verify:
 * [ ] Date format uses full month name, no ordinal (e.g., "April 9" not "April 9th")
 * [ ] `hide_table_of_contents: true` is present
 * [ ] Standard image URL is used
+* [ ] Content opens with a direct statement — no announcement framing ("We're excited to...", "We're pleased to announce...")
 * [ ] Content is clear and includes relevant links
 * [ ] Breaking changes are clearly marked (use bold or H4 sections)
 * [ ] Documentation links use relative paths (start with `/docs/`)
@@ -312,19 +315,13 @@ Claude:
 
 ## Date formatting rules
 
-**Format: "Month Day, YYYY"**
-
-Month names (full):
-* January, February, March, April, May, June
-* July, August, September, October, November, December
-
-Day: No ordinal suffix (use 1, 2, 3... not 1st, 2nd, 3rd)
+Titles use the [style guide](/docs/contributing/style-guide/#release-notes) date format: `Month D, YYYY`, full month name, no ordinal, no leading zero.
 
 **Examples:**
 * ✅ March 23, 2026
 * ✅ January 1, 2026
 * ✅ December 31, 2025
-* ❌ March 23rd, 2026 (no ordinal)
+* ❌ March 23rd, 2026 (ordinal)
 * ❌ Mar 23, 2026 (abbreviated month)
 * ❌ 2026-03-23 (wrong format)
 
@@ -455,4 +452,4 @@ Would you like me to help refine the content or add additional details?
 * [Developer Release Notes](https://sumologic.com/help/release-notes-developer)
 * [Release Notes Index](/docs/release-notes)
 * [API Documentation](/docs/api)
-* [Style Guide](/docs/contributing/style-guide)
+* [Style Guide: Release notes](/docs/contributing/style-guide/#release-notes)

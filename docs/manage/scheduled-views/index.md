@@ -17,6 +17,10 @@ Scheduled Views speed the search process for small and historical subsets of you
 * You can use Scheduled Views in Scheduled Searches, Dashboards, and ad hoc searches. Your Dashboards can include a large quantity of data without sacrificing performance. 
 * Scheduled Views are assigned to the **InternalCollector** index.
 * Account Admins and users whose role grants the "Manage Scheduled Views" [role capability](../users-roles/roles/role-capabilities.md) can set up Scheduled Views, but anyone in an organization can run searches against them. Other users' data access to a Scheduled View is governed by the search filters associated with their roles; they will only be able to see data to which their roles allow them access. For more information, see [Construct a Search Filter for a Role](../users-roles/roles/construct-search-filter-for-role.md).
+* For the Flex model, scan and storage charges apply to scheduled views. Storage usage for each view is based on the non-aggregated data ingested into that view over its retention period.
+* For the Tier model, scheduled views are only supported in the Continuous tier.
+  - Aggregated scheduled views do not incur charges for storage, ingestion, or querying. Storage is always displayed as 0 bytes, regardless of the actual data size.
+  - Non-aggregated scheduled views do not incur charges for querying. However, ingestion and storage charges apply. Storage is calculated based on the charged ingest volume accumulated over the retention period.
 
 ## How could my organization use Scheduled Views?
 

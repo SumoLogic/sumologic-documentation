@@ -23,7 +23,7 @@ There are two primary configuration requirements to enable remote event log coll
 
 ## User account
 
-When configuring the Source, you will enter a domain name, user name, and password. This user account will be used by the Collector to perform the remote collection of event log records. The credentials are stored in Sumo's database encrypted and in the Collector's memory. The account must be configured such that it has permissions to read the event log from each of the specified remote systems.
+When configuring the Source, you will enter a domain name, user name, and password. This user account will be used by the Collector to perform the remote collection of event log records. The credentials are stored in Sumo Logic's database encrypted and in the Collector's memory. The account must be configured such that it has permissions to read the event log from each of the specified remote systems.
 
 <img src={useBaseUrl('img/send-data/remotewin-sourceuser.png')} alt="User account configuration" style={{border: '1px solid gray'}} width="500" />
 

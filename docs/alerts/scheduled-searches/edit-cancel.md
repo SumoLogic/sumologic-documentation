@@ -37,7 +37,7 @@ If Sumo Logic presents a "Cannot Edit Scheduled Search" message, refer to the se
 
 ### Edit permissions
 
-A scheduled search runs in the context of the Sumo user that scheduled the search. In other words, when the search is shared with other users, the scheduler's role filter governs what data is returned by the search. 
+A scheduled search runs in the context of the Sumo Logic user that scheduled the search. In other words, when the search is shared with other users, the scheduler's role filter governs what data is returned by the search. 
 
 When you try to edit a scheduled search query, add a schedule to a saved search, or edit a saved search's schedule, you will not be allowed to edit the scheduled search unless you have the **Change Data Access Level** role capability. 
 

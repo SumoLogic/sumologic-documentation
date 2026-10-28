@@ -72,11 +72,11 @@ After your rule starts generating signals, evaluate them to determine if they tr
 If the records gathered for a baseline exceed 50 million, the historical baseline capabilities to generate a baseline via a query become inefficient and it’s better to let the baseline gather data over time. You will be notified of this state in the UI, and can either let the baseline gather over the days set in the baseline, or edit the rule to filter more records or reduce the baseline period to keep it under 50 million records.
 
 :::tip
-Sumo Logic ensures that rule processing does not impact the reliability of production environments through the implementation of "circuit breakers." If a rule matches too many records in too short a period of time, the circuit breaker will trip and the rule will move to a degraded state, and outlier rules are no exception.
+Sumo Logic uses circuit breakers to prevent rule processing from affecting production environments. If a rule matches too many records in a short period, the circuit breaker trips and the rule enters a Degraded state. Outlier rules are also subject to these limits.
 
-On the rule detail page, if you view the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
+On the rule detail page, click the degraded message for details about the problem and how to resolve it. A degraded rule usually needs to be tuned for your environment.
 
-For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
+An outlier rule can also have a baseline-building failure when the overall record volume is high or the rule matches a large number of records. In this case, generating a historical baseline through a query may be inefficient. You can let the baseline gather data over the period configured in the rule, or edit the rule to filter more records. For more information, see [Troubleshoot baseline problems](/docs/cse/rules/rules-status/#troubleshoot-baseline-problems).
 :::
 
 ## Example rule
@@ -107,6 +107,9 @@ The settings in the **If Triggered** section are divided into two subsections, o
     The [baseline for an outlier rule](#baselines-for-outlier-rules) is recalculated if a rule tuning expression that applies to the selected rule is updated. However, the baseline is not recalculated if the rule tuning expression applies to all rules.
     :::
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
+   :::note
+   The baseline window sets how data is grouped into data points. It doesn't reduce the amount of data the baseline has to process. If the rule's baseline fails because the rule matches too many records, switching from daily to hourly is unlikely to resolve it. Narrow the rule expression or add a tuning expression instead.
+   :::
 1. **for the entity(ies)**. Select one or more record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
 1. **Baseline Retention Period (days)**. The number of days after which the data points in the baseline will expire (be dropped from the baseline). The minimum is 4, and the maximum is 90. The default is 90 days.
    :::note
@@ -171,6 +174,24 @@ This section shows how an outlier rule would function with a daily baseline.
  :::tip
  If you are unsure what to set the minimum count value to from the default value of 1, consider providing the value which is beyond the normal acceptable behavior for a given time window for a particular entity. The **Minimum Count Value** is geared towards false positive reduction and improving the fidelity of signals generated, and will vary based upon the use case and type of logs collected.
  :::
+
+## FAQ
+
+### How does Cloud SIEM identify abnormal user behavior?
+
+Outlier rules automatically build a baseline model of normal behavior for an entity, such as a user. After the baseline learning period, they fire a signal when behavior deviates from that baseline. [First seen rules](/docs/cse/rules/write-first-seen-rule/) fire when an entity does something new, such as logging in from a new location.
+
+### Can Cloud SIEM detect insider threats?
+
+Outlier and first seen rules surface behavior that is unusual for a user, such as a spike in failed logins, a login from a new location, or a new admin account. These behavioral signals help you spot insider threats. See [Use case for a spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user).
+
+### Do I need a separate tool to detect abnormal user behavior?
+
+No. Outlier rules are a Cloud SIEM rule type, so they run on the data already in Cloud SIEM, and you don't need to replace your existing security tools to use them.
+
+### Do outlier rules help reduce alert fatigue?
+
+Outlier rules generate signals, not standalone alerts. Cloud SIEM groups related signals for the same entity into insights, so you triage fewer, prioritized items.
 
 ## Additional resources
 

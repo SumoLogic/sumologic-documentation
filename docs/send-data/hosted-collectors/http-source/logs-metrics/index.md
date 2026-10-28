@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
-With an HTTP Logs and Metrics Source, you can upload logs and metrics from data sources where you cannot install a Collector. For example, you can export data from a platform-as-a-service (PaaS) or infrastructure-as-a-service (IaaS) provider, allowing you to gain visibility into your billing system service provider while leveraging the same Sumo tools your organization already uses. Check with your IaaS or PaaS providers for information about using their APIs to forward log or metric data to Sumo Logic's HTTP endpoint.
+With an HTTP Logs and Metrics Source you can upload logs and metrics from data sources where you cannot install a Collector. For example, you can export data from a platform as a service (PaaS) or an infrastructure as a service (IaaS) provider, allowing you to gain visibility, for instance, into your billing system service provider, leveraging the same Sumo Logic tools your organization already uses. Check with your IaaS or PaaS providers for information about using their APIs to forward log or metric data to Sumo Logic's HTTP endpoint.
 
 When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information, see [Generating a new URL](../generate-new-url.md).
 
@@ -28,7 +28,7 @@ You can use Terraform to provide an HTTP source with the [`sumologic_http_source
 We recommend that the data payload of a POST request have a size, before compression, of 100KB to 1MB.
 
 :::note
-HTTP POST payloads larger than 1 MB are not guaranteed to unroll correctly during source configuration.
+HTTP POST payloads larger than 1MB are not guaranteed to unroll correctly during source configuration.
 :::
 
 As a best practice, Sumo Logic recommends batching data into each POST request to reduce the number of requests being sent over the network. Batching data into a single request minimizes the number of requests required to move a given volume of data and reduces resource utilization on the sending machine. You may send batched requests up to but not exceeding 1MB of uncompressed data. However, the optimal batch size for a given use case depends on the rate and cadence at which logs or metrics are generated in your system.
@@ -40,7 +40,7 @@ To configure an HTTP Logs and Metrics Source:
 1. [**New UI**](/docs/get-started/sumo-logic-ui). In the Sumo Logic main menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. In the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
-1. Enter a **Name** to display for the Source in the Sumo web application. Description is optional.
+1. Enter a **Name** to display for the Source in the Sumo Logic web application. Description is optional.
 1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1. **Forward to SIEM**. This option is present if [Cloud SIEM](/docs/cse/) is enabled. Click the checkbox to send the logs collected by the source to Cloud SIEM.
 1. **Fields/Metadata.** Click the **+Add** link to define the fields you want to associate. Each field needs a name (key) and value.
@@ -55,11 +55,12 @@ To configure an HTTP Logs and Metrics Source:
          :::note
          * This option is available only for HTTP log sources.
          * HTTP POST payloads exceeding 1MB are not guaranteed to unroll correctly.
+         * JSON Unroll expects the request payload to be a single JSON object. The object can span multiple lines (for example, pretty-printed JSON), but newline-delimited JSON (NDJSON), multiple separate JSON objects in one payload, isn't supported.
          :::
-         * **Default**. Uses the JSON path `$` to unroll an array at the root of the JSON payload.<br/><img src={useBaseUrl('img/send-data/default-JSON-unroll.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
+         * **Default**. Uses the JSON path `$` to unroll an array at the root of the JSON payload.<br/><img src={useBaseUrl('img/send-data/default-JSON-unroll.png')} alt="Default JSON Unroll configuration" style={{border: '1px solid gray'}} width="600"/>
          * **Custom Unrolling**. Select this option to specify the JSON path of the array you want to unroll.
             * **JSON Path**. Enter the [JSON path](https://github.com/json-path/jsonpath) of the array, such as `$.Records`. If you leave this field blank, `$` is used, which refers to the root of the JSON payload.
-            * (Optional) **New Field Name**. Enter a field name to wrap each unrolled item, such as `record`. If you leave this field blank, the field name is derived from the JSON path. For example, `$.Records` uses `Records` as the field name. If the JSON path is `$`, no wrapper field is added.<br/><img src={useBaseUrl('img/send-data/custom-JSON-unroll.png')} alt="HTTP Source Address with presigned URL" style={{border: '1px solid gray'}} width="600"/>
+            * (Optional) **New Field Name**. Enter a field name to wrap each unrolled item, such as `record`. If you leave this field blank, the field name is derived from the JSON path. For example, `$.Records` uses `Records` as the field name. If the JSON path is `$`, no wrapper field is added.<br/><img src={useBaseUrl('img/send-data/custom-JSON-unroll.png')} alt="Custom JSON Unroll configuration" style={{border: '1px solid gray'}} width="600"/>
          * **Test JSON string**. Use the JSON Unroll Tester to preview how your configuration processes JSON data before saving the source. Enter or paste a sample JSON payload to see the resulting unrolled messages based on the configured JSON path and field name.
       * **Multiline Processing**. By default, messages spanning multiple lines are detected. See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option to avoid unnecessary processing when collecting single-message-per-line files, such as a Linux `system.log`.
          * **Infer Message Boundaries.**
@@ -134,7 +135,7 @@ For basic multiline processing, select **Infer Boundaries**; if this results in 
 
 Also, in your HTTP Source configuration, make sure the **Enable One Message Per Request** checkbox is **unchecked**. This option allows you to specify that all data sent in a single HTTP request to an HTTP Source endpoint should be treated as a single log message. 
 
-Sumo expects that the entire content of an individual log message will be sent to Sumo within the same HTTP request. Multiline processing rules are applied only to the data sent in a single HTTP request. This means that a multiline log that is sent to Sumo across multiple HTTP requests will not be detected as a single message. It will be broken into separate log messages. Sumo does not currently have the ability to detect and thread together a distinct log message sent across multiple HTTP requests. 
+Sumo Logic expects that the entire content of an individual log message will be sent to Sumo Logic within the same HTTP request. Multiline processing rules are only applied within the bounds of the data sent within a single HTTP request. This means that a multiline log that is sent to Sumo Logic across multiple HTTP requests will not be detected as a single message. It will be broken into separate log messages. Sumo Logic does not currently have the ability to detect and thread together a distinct log message that has been sent via multiple HTTP requests. 
 
 For tools to help you batch messages, see [Sumo Logic .NET Appenders](https://github.com/SumoLogic/sumologic-net-appenders).
 

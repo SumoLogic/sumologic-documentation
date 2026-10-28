@@ -37,7 +37,7 @@ Create the script and save it to a folder on the host with the Installed Collect
 
 ## Step 3. Set up Script Action
 
-You can set up a Script Action using the Sumo web app, described in [Option A](#option-a-set-up-script-action-using-ui) below, or by specifying it in a JSON file, described in [Option B](#option-b-set-up-script-action-in-json-file).
+You can set up a Script Action using the Sumo Logic web app, described in [Option A](#option-a-set-up-script-action-using-ui) below, or by specifying it in a JSON file, described in [Option B](#option-b-set-up-script-action-in-json-file).
 
 ### Option A. Set up Script Action using UI
 
@@ -89,7 +89,7 @@ The first time the Scheduled Search executes, output files will begin to be gene
 
 1. Save a search. 
 1. Click **Schedule this search**. <br/><img src={useBaseUrl('img/send-data/sched-search.png')} alt="Click Schedule this search" style={{border: '1px solid gray'}} width="500" />
-1. For all configuration options, see Schedule a Search. 
+1. For all configuration options, see [Schedule a Search](/docs/alerts/scheduled-searches/schedule-search). 
 1. **Alert Type**. Select **Script Action**.
 1. **Script Action**. Select the name of the Script Action (displayed with its Collector's name) from the menu.
 1. Click **Save**.

@@ -99,7 +99,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/get-started/ai-machine-learning')}><img src={useBaseUrl('img/icons/general/generic-agent-icon.png')} alt="Generic AI and agent icon" width="40"/><h4>AI and Machine Learning with Sumo Logic</h4></a>
-  <p>Investigate incidents, triage insights, and optimize your platform with Dojo AI's agents, powered by AI- and ML-backed features across Sumo Logic.</p>
+  <p>Investigate incidents, triage insights, and optimize your platform with DojoAI's agents, powered by AI- and ML-backed features across Sumo Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -111,7 +111,7 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 <div className="box smallbox card">
   <div className="container">
   <a href={useBaseUrl('docs/get-started/help')}><img src={useBaseUrl('img/icons/business/support.png')} alt="Support icon" width="50"/><h4>Help</h4></a>
-  <p>Get help from Sumo Docs, Support, and more.</p>
+  <p>Get help from Sumo Logic docs, Support, and more.</p>
   </div>
 </div>
 <div className="box smallbox card">

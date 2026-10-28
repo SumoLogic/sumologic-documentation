@@ -17,7 +17,7 @@ For more information about AWS CloudFormation, see the [AWS CloudFormation Prod
 
 You can use either the [AWS Command Line Interface](https://aws.amazon.com/cli/) (CLI) or [create a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) to set up the SNS subscription.
 
-Both methods require a YAML file with the template. You can create a file with the provided [YAML template](#yaml-template-to-create-topic-and-sns-subscription) or download the template from the Sumo interface. When creating the Source click **Create URL** and a **Generate event-based polling template** button becomes available.
+Both methods require a YAML file with the template. You can create a file with the provided [YAML template](#yaml-template-to-create-topic-and-sns-subscription) or download the template from the Sumo Logic interface. When creating the Source click **Create URL** and a **Generate event-based polling template** button becomes available.
 
 <img src={useBaseUrl('img/send-data/generate-cloudformation-template-event-subscription.png')} alt="Generate cloudformation template event subscription" style={{border: '1px solid gray'}} width="500" />
 
@@ -29,10 +29,10 @@ Both methods require a YAML file with the template. You can create a file with t
     Make sure that the AWS region is the same as the S3 bucket when uploading the template.
     :::
 
-1. Specify Details. Provide an appropriate **Stack Name**, the S3 **bucket-name** and **endpoint** URL you obtained when creating the Source in Sumo and click **Next**. See [Specifying Stack Name and Parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) for details.
+1. Specify Details. Provide an appropriate **Stack Name**, the S3 **bucket-name** and **endpoint** URL you obtained when creating the Source in Sumo Logic and click **Next**. See [Specifying Stack Name and Parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) for details.
 
     :::note
-    If you downloaded and used the template from the Sumo interface AWS will not prompt you for **Parameters**.
+    If you downloaded and used the template from the Sumo Logic interface AWS will not prompt you for **Parameters**.
     :::
     
     <img src={useBaseUrl('img/send-data/specify-details.png')} alt="Specify details" style={{border: '1px solid gray'}} width="800" />
@@ -114,7 +114,7 @@ Resources:
 
 You can grant Sumo Logic access to your AWS Product with an IAM Role using CloudFormation. You can use the [AWS Command Line Interface](https://aws.amazon.com/cli/) (CLI) or [create a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
 
-Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-toset-up-an-iam-role) or download a generated template from the Sumo interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
+Both methods require a YAML file with the CloudFormation template. You can create a file with the provided [YAML template](#yaml-template-toset-up-an-iam-role) or download a generated template from the Sumo Logic interface when creating your Source by clicking the **Generate role-based access template** button. The button will only become available after you input the bucket name.
 
 <img src={useBaseUrl('img/send-data/iam-role-generate-cloudformation-template-in-UI.png')} alt="IA< role generate CloudFormation" style={{border: '1px solid gray'}} width="500" />
 
@@ -132,7 +132,7 @@ Both methods require a YAML file with the CloudFormation template. You can creat
     Now that you have completed these steps and have created an IAM Role you need to wait two to five minutes before using it for an AWS Source's authentication. This is to account for AWS's [eventual consistency](https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency).
     :::
 
-1. Copy the Role ARN back to Sumo.
+1. Copy the Role ARN back to Sumo Logic.
 
 ## Create a Stack on the AWS CloudFormation console
 
@@ -147,7 +147,7 @@ Both methods require a YAML file with the CloudFormation template. You can creat
     Now that you have completed these steps and have created an IAM Role you need to wait two to five minutes before using it for an AWS Source's authentication. This is to account for AWS's [eventual consistency](https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency).
     :::
 
-1. Copy the Role ARN back to Sumo.
+1. Copy the Role ARN back to Sumo Logic.
 
 ## YAML Template to set up an IAM Role
 

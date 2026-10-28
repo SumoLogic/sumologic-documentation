@@ -1,12 +1,13 @@
 ---
-title: JSON Unroll for HTTP Log Sources (Collection)
+title: Kubernetes Helm Chart v6 (Collection)
 image: https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg?mtime=1617040082
 keywords:
-  - json-unroll
-  - http
-  - source
+  - kubernetes
+  - helm chart
+  - sourceless mode
+  - metrics pipeline
   - collection
-hide_table_of_contents: true    
+hide_table_of_contents: true
 ---
 
-We’re excited to announce that you can now configure HTTP log sources to automatically split JSON arrays into individual log messages while preserving top-level metadata. [Learn more](/docs/send-data/hosted-collectors/http-source/logs-metrics/#configure-an-httplogs-and-metrics-source).
+V6 of the Sumo Logic Kubernetes Helm chart, which enables sourceless mode and metrics pipeline unification by default. Sourceless mode removes the Hosted Collector dependency, and a single metrics pipeline means fewer pods, lower latency, and simpler configuration. [Learn more](/docs/send-data/kubernetes/v6/how-to-upgrade/).
