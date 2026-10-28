@@ -34,19 +34,19 @@ Given that we use an account alias, we recommend you use StackSets to automati
 
 ## Apps Setup
 
-### Step 0: Sumo Logic access configuration 
+### Step 0: Sumo Logic access configuration
 
 The below table displays the response to each prompt during Step 2.
 
 | Prompt | Guideline |
 |:--|:--|
 | Sumo Logic Deployment Name | Enter au, ca, ch, de, eu, jp, s2, fed, kr, us1, or us2. See [Sumo Logic endpoints by deployment and firewall security](/docs/api/about-apis/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
-| Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys/#create-an-access-key) for more information.  |
-| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls.  |
-| Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-your-account-settings) page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.  |
+| Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys/#create-an-access-key) for more information. |
+| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
+| Sumo Logic Organization ID | You can find your org on the [Preferences](/docs/get-started/account-settings-preferences/#accessing-your-account-settings) page in the Sumo Logic UI. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
 | Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
 
-### Step 3: AWS account alias 
+### Step 3: AWS account alias
 
 The below table displays the response to each prompt during Step 3.
 
@@ -59,11 +59,11 @@ The below table displays the response to each prompt during Step 3.
 
 Perform the following steps to install apps.
 * Install the apps by running the AWS CloudFormation Stack once in any given account and region. Use the configuration below to set up only app dashboards.
-* Install AWS Observability Apps and Monitors templates **Yes**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_1.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
+* Install AWS Observability Apps and Monitors templates **Yes**. <br/><img src={useBaseUrl('img/observability/Multiaccount_1.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
 
 ### Step 4: Sumo Logic AWS CloudWatch Metrics Sources
 
-1. Select the Sumo Logic AWS CloudWatch Metrics Source as **None**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_2.png')} alt="Select the Sumo Logic Metrics Sources to create" style={{border: '1px solid gray'}} width="800" />
+1. Select the Sumo Logic AWS CloudWatch Metrics Source as **None**. <br/><img src={useBaseUrl('img/observability/Multiaccount_2.png')} alt="Select the Sumo Logic Metrics Sources to create" style={{border: '1px solid gray'}} width="800" />
 
 ### Step 5: Sumo Logic AWS ALB Log Source
 
@@ -71,7 +71,7 @@ Perform the following steps to install apps.
 
 ### Step 6: Sumo Logic AWS CloudTrail Source
 
-1. Create Sumo Logic CloudTrail Logs Source as **No**.  <br/><img src={useBaseUrl('img/observability/Multiaccount_4.png')} alt="Create Sumo Logic CloudTrail Logs Source" style={{border: '1px solid gray'}} width="800" />
+1. Create Sumo Logic CloudTrail Logs Source as **No**. <br/><img src={useBaseUrl('img/observability/Multiaccount_4.png')} alt="Create Sumo Logic CloudTrail Logs Source" style={{border: '1px solid gray'}} width="800" />
 
 ### Step 7: Sumo Logic CloudWatch Logs Source
 
@@ -96,7 +96,7 @@ The following are examples of the CSV file format to use (`accountid,alias`):
 * `234234234324,dev`
 * `214324324324,prod`
 
-Upload this file to an Amazon S3 bucket and make it accessible to the account from where you are going to run the CloudFormation template. 
+Upload this file to an Amazon S3 bucket and make it accessible to the account from where you are going to run the CloudFormation template.
 
 In case you do not provide a CSV file or if we detect that it does not have the right format, the AWS `account-id` will be used as the alias and this value will be used for the “account” field in Sumo Logic.
 
@@ -110,8 +110,8 @@ In case you do not provide a CSV file or if we detect that it does not have the 
    ```
    <img src={useBaseUrl('img/observability/multi-create-stack.png')} alt="Create stack with S3 URL" style={{border: '1px solid gray'}} width="800" />
 1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy and Use AWS Observability](/docs/observability/aws/deploy-use-aws-observability/v3.0.0) section with the following exception:
-    1. Leave the field “Alias for AWS Account Identification” blank.  <br/><img src={useBaseUrl('img/observability/aws-field.png')} alt="AWS field" style={{border: '1px solid gray'}} width="800" />
-    1. Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”.  <br/><img src={useBaseUrl('img/observability/aws-url.png')} alt="AWS URL" style={{border: '1px solid gray'}} width="600" />
+    1. Leave the field “Alias for AWS Account Identification” blank. <br/><img src={useBaseUrl('img/observability/aws-field.png')} alt="AWS field" style={{border: '1px solid gray'}} width="800" />
+    1. Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”. <br/><img src={useBaseUrl('img/observability/aws-url.png')} alt="AWS URL" style={{border: '1px solid gray'}} width="600" />
     1. Answer **No** in Section 3 of the template "Sumo Logic AWS Observability Apps and Alerts". <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_3.png')} alt="Install AWS Observability Apps" style={{border: '1px solid gray'}} width="800" />
       :::note
       The remaining parameters will use the default values. You can update them based on your requirements. [Parameters details](/docs/observability/aws/deploy-use-aws-observability/v3.0.0/deploy-with-aws-cloudformation/#step-1-sumo-logic-access-configuration)
@@ -122,7 +122,7 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 
 1. Review the details, select the capabilities and click **Submit**. <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_7.png')} alt="Select the capabilities" style={{border: '1px solid gray'}} width="800" />
 
-1. Increasing the **Maximum concurrent actions** to be more than 3 is not recommended and can cause your StackSet deployment to fail. Stack sets should be deployed one at a time, sequentially. Click **Next**.  <br/>
+1. Increasing the **Maximum concurrent actions** to be more than 3 is not recommended and can cause your StackSet deployment to fail. Stack sets should be deployed one at a time, sequentially. Click **Next**. <br/>
    :::danger
    The solution recommends deploying across regions **sequentially rather than in parallel**. If parallel deployment is required, the maximum recommended limit is **3 regions at a time**. Exceeding this limit may result in **SumoLogic API rate-limiting errors**.
    :::
@@ -133,6 +133,6 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 ## Add more accounts to the same StackSet
 
 1. Select **Add new stacks to StackSet**.<br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_8.png')} alt="Add new stacks to StackSet" style={{border: '1px solid gray'}} width="800" />
-1. In ‘**Set deployment options**’, Enter the account number and regions you want to deploy the stack.  <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_9.png')} alt="Set deployment options" style={{border: '1px solid gray'}} width="800" />
+1. In ‘**Set deployment options**’, Enter the account number and regions you want to deploy the stack. <br/><img src={useBaseUrl('img/observability/ClodFormation_Stackset_9.png')} alt="Set deployment options" style={{border: '1px solid gray'}} width="800" />
 1. Verify the S3 mapping file contains the mapping for the new Account ID.
 1. Review the details, select the capabilities, and click **Submit**.

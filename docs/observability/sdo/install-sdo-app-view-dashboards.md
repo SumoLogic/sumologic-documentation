@@ -23,8 +23,8 @@ Each of the Software Development Optimization Solution apps provides a set of p
 
 The SDO solution comprises multiple apps listed below.
 
-* [Software Development Optimization](install-sdo-app-view-dashboards.md). Dashboards in this app provide insights into the four DORA metrics that help measure application release velocity and availability as well as help you monitor and troubleshoot issues in individual phases of your DevOps pipelines. 
-* [Jira Cloud App](/docs/integrations/app-development/jira-cloud) and [Jira (Server) App](/docs/integrations/app-development/jira). Dashboards in these apps provide insights into the “Plan” phase of the DevOps plan phase that so as to enable you to more effectively plan, assign, track, report, and manage work across multiple teams. 
+* [Software Development Optimization](install-sdo-app-view-dashboards.md). Dashboards in this app provide insights into the four DORA metrics that help measure application release velocity and availability as well as help you monitor and troubleshoot issues in individual phases of your DevOps pipelines.
+* [Jira Cloud App](/docs/integrations/app-development/jira-cloud) and [Jira (Server) App](/docs/integrations/app-development/jira). Dashboards in these apps provide insights into the “Plan” phase of the DevOps plan phase that so as to enable you to more effectively plan, assign, track, report, and manage work across multiple teams.
 * [Bitbucket App](/docs/integrations/app-development/bitbucket). Dashboards in this app provide insights into Bitbucket issues, pull requests, builds, and deployments.
 * [Opsgenie App](/docs/integrations/saas-cloud/opsgenie) and [PagerDuty App](/docs/integrations/saas-cloud/pagerduty-v3). Dashboards in these apps provide insights into how production incidents are being created and resolved.
 * [GitHub App](/docs/integrations/app-development/github). Dashboards in this app provide analytics around GitHub branch operations, issues, pull requests, user activity, and security events.
@@ -33,7 +33,7 @@ The SDO solution comprises multiple apps listed below.
 * [CircleCI App](https://circleci.com/docs/2.0/insights-partnerships/#sumo-logic-integration). The CircleCI app for Sumo Logic provides advanced views to track the performance and health of your continuous integration and deployment pipelines.
 
 
-## Dashboard Filter with Template Variables
+## Dashboard filter with Template Variables
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](../../dashboards/filter-template-variables.md) help page.
 
@@ -47,9 +47,9 @@ These dashboards calculate four DORA metrics that help measure application relea
 
 ### SDO - DORA Metrics Overview
 
-The **Software Development Optimization- DORA Metrics Overview** dashboard calculates the four key DORA metrics identified in the [State of DevOps](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) report, which help you measure application development velocity and application reliability. 
+The **Software Development Optimization- DORA Metrics Overview** dashboard calculates the four key DORA metrics identified in the [State of DevOps](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf) report, which help you measure application development velocity and application reliability.
 
-The four metrics are: 
+The four metrics are:
 
 * Lead time, which quantifies how long it takes to go from code commit to completed production deployment. This is identified by the time taken from when a merge commit event occurs to when that commit is successfully deployed to production.
 * Deployment Frequency measures how often code is deployed to production.
@@ -78,11 +78,11 @@ Use this dashboard to:
 
 ### SDO - Deployment Frequency
 
-The **Software Development Optimization- Deployment Frequency** dashboard provides insight on how deploys to production affect your overall deployment frequency. 
+The **Software Development Optimization- Deployment Frequency** dashboard provides insight on how deploys to production affect your overall deployment frequency.
 
 Use this dashboard to:
 
-* Determine the overall deployment frequency. 
+* Determine the overall deployment frequency.
 * Monitor trends of successful and failed deploy to determine how it affects deployment frequency.
 * Identify deploys by service, team, and deployment environments (production, test, staging, and similar) to determine areas of improvement.
 * Monitor deployment frequency trends and quickly identify any unexpected highs and lows.
@@ -166,16 +166,16 @@ These dashboards help you monitor and troubleshoot issues in individual phases o
 
 ### SDO - Pipeline Overview
 
-The **Software Development Optimization- Pipeline Overview** dashboard gives you at a glance view of all critical aspects of your DevOps pipelines. such as alerts, deploys, builds, pull requests, and issues. 
+The **Software Development Optimization- Pipeline Overview** dashboard gives you at a glance view of all critical aspects of your DevOps pipelines. such as alerts, deploys, builds, pull requests, and issues.
 
 Use this dashboard to:
 
-* Quickly identify the most critical and important events in each DevOps phase. 
+* Quickly identify the most critical and important events in each DevOps phase.
 * Monitor trends across all phases and across multiple CI/CD pipelines and investigate any unexpected behavior.
 
 <img src={useBaseUrl('img/sdo/Software-Development-Optimization-Pipeline-Overview.png')} alt="SDO - Pipeline Overview dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### SDO - Alerts 
+### SDO - Alerts
 
 The **Software Development Optimization- Alerts** dashboard provides insights into how alerts are being created, escalated, and resolved.
 
@@ -190,11 +190,11 @@ Use this dashboard to:
 
 ### SDO - Deployment
 
-The **Software Development Optimization- Deployment** dashboard provides detailed information around all deploy events to various environments and helps you identify deploys by repository, service, and team. 
+The **Software Development Optimization- Deployment** dashboard provides detailed information around all deploy events to various environments and helps you identify deploys by repository, service, and team.
 
 Use this dashboard to:
 
-* Determine if code was successfully deployed to a given production or non-production environment. 
+* Determine if code was successfully deployed to a given production or non-production environment.
 * Identify and drill down into commits that led to failed deployments or that led to production or testing issues.
 * Identify which services and teams have the most deployment failures.
 * Monitor successful/failure deploy events across repositories, services, teams, and environments.
@@ -220,13 +220,13 @@ The **Software Development Optimization - Pipeline Stage Monitoring** dashboard 
 Use this dashboard to:
 
 * Identify which pipelines are taking the longest to complete.
-* Drilldown to slowest stages and steps within each pipeline. 
-* Compare pipeline executions to identify which runs slower or faster than others. 
+* Drilldown to slowest stages and steps within each pipeline.
+* Compare pipeline executions to identify which runs slower or faster than others.
 * Identify the failed pipeline stages and steps.
 
 <img src={useBaseUrl('img/sdo/Software-Development-Optimization-Pipeline-Stage-Monitoring.png')} alt="SDO - Pipeline Stage Monitoring dashboard" style={{border: '1px solid gray'}} width="800" />
 
-### SDO - Pull Requests 
+### SDO - Pull Requests
 
 The **Software Development Optimization- Pull Requests** dashboard provides insights into how pull requests are being created and merged across all your repositories.
 

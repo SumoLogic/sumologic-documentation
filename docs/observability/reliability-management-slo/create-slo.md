@@ -23,10 +23,10 @@ You have multiple configurations for creating SLOs:
 
 The following table lists the available options for an SLO:
 
-|    | Window-based      | Request-based    |
+| | Window-based | Request-based |
 |:---------|:-----|:---------|
-| **Metrics-based SLO** | Ratio and Threshold | Ratio Only   |
-| **Logs-based SLO**   | Ratio and Threshold | Ratio and Threshold |
+| **Metrics-based SLO** | Ratio and Threshold | Ratio Only |
+| **Logs-based SLO** | Ratio and Threshold | Ratio and Threshold |
 
 import TerraformLink from '../../reuse/terraform-link.md';
 
@@ -38,7 +38,7 @@ You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry
 
 ## Create an SLO (general)
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
 2. Click **Add** > **New SLO**. Optionally, you can also:
    * Create folders to manage your SLOs.
    * Import an SLO. <br/>To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-and-export-content-in-the-library) for complete details.
@@ -56,14 +56,14 @@ You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry
     * **Window-based**. Select the time frame window for the events. Window sizes should be between 1m to 60m.<br/><img src={useBaseUrl('img/observability/slo-create-window-base.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="400" />
     * **Request-based.**<br/><img src={useBaseUrl('img/observability/slo-create-request-base.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="400" />
 
-    Select the **Query Type** to select and build your queries for the SLI data. You have a choice of metrics or logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. 
+    Select the **Query Type** to select and build your queries for the SLI data. You have a choice of metrics or logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation.
 
     Follow the instructions below based on the query type:
 
 <table>
   <tr>
    <td>Metrics: Ratio-based</td>
-   <td>Metrics: Threshold-based   </td>
+   <td>Metrics: Threshold-based </td>
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:<ol><li>Specify Total Events query.</li>
@@ -81,8 +81,8 @@ You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry
 
 <table>
   <tr>
-   <td>Logs: Ratio-based   </td>
-   <td>Logs: Threshold-based   </td>
+   <td>Logs: Ratio-based </td>
+   <td>Logs: Threshold-based </td>
   </tr>
   <tr>
    <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:<ol><li>Specify Total Events query.</li>
@@ -101,7 +101,7 @@ You can use Terraform to manage SLOs with the [`sumologic_slo`](https://registry
 5. Define your SLO for target amount and duration period to monitor:
    * **Target**. The value in percentage you want to target for the SLO (for example, you'd enter `99` for 99%).
    * **Compliance Type**. **Rolling** provides a sequence of recent days for the Compliance Period, such as the last 7d or last 30d. **Calendar** calculates over a window of time for a Week.
-   * **Timezone**. Selecting a timezone is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59 PM in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="400" />
+   * **Timezone**. Selecting a timezone is important to accurately assign events on the boundary of a compliance period, such as events received at 11:59pm in a particular time zone.<br/><img src={useBaseUrl('img/observability/slo-create-slo.png')} alt="Reliability Management SLO SLI" style={{border: '1px solid gray'}} width="400" />
 6. Enter SLO Details:
    * **Name**. Name of the SLO.
    * **Description**. Short explanation of your SLO.
@@ -125,7 +125,7 @@ You can create SLOs directly from your Sumo Logic log search. This allows you to
 
 To create an SLO from the **Metrics** page:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Metrics > All Metric Searches**. You can also click the **Go To...** menu at the top of the screen and select **All Metric Searches**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Metrics > All Metric Searches**. You can also click the **Go To...** menu at the top of the screen and select **All Metric Searches**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Metrics**.
 1. Under **Metrics Search**, select your desired **Metric** and **Filters**. Optionally, you can **Add Operator**.<br/><img src={useBaseUrl('img/observability/metrics-slo.png')} alt="Metrics SLO" style={{border: '1px solid gray'}} width="800" />
 1. Click the three-dot kebab icon, then select **Create an SLO**.
 1. Follow the instructions under [Create an SLO (general)](#create-an-slo-general).
@@ -144,9 +144,9 @@ As an example, say you have an existing monitor that fires a **Critical** alert 
 Your monitor must be in an **active** state.
 :::
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**.
 1. Click any active monitor to open its panel.
-1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" />   <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" /><br/>
+1. Choose one of the methods below:<br/>Click **More Actions** > **Create SLO**.<br/><img src={useBaseUrl('img/observability/more-actions-create-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" /> <br/>Or, click <strong>Monitor-based SLO</strong> > <strong>Add Monitor-based SLO</strong>.<br/><img src={useBaseUrl('img/observability/add-monitor-based-slo.png')} alt="Monitor-based SLO" style={{border: '1px solid gray'}} width="500" /><br/>
 This will open the **New SLO** window.
 1. **Define your SLI**. Your monitor's **Source**, **Signal Type**, and **Trigger Event** settings will auto-populate here (you can override these if you need to).<br/><img src={useBaseUrl('img/observability/new-slo1.png')} alt="Monitor-based SLO" width="800" />
 1. **Define your SLO**. Set your window-based threshold here.<br/><img src={useBaseUrl('img/observability/new-slo2.png')} alt="Monitor-based SLO" width="500" />
@@ -180,12 +180,12 @@ You can use the [monitor Terraform provider (`sumologic_monitor`)](https://regis
 
 ## Managing your SLOs
 
-Below are some best practices for managing your SLOs. 
+Below are some best practices for managing your SLOs.
 
 [**New UI**](/docs/get-started/sumo-logic-ui/). To access SLOs, in the main Sumo Logic menu select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.
 
 [**Classic UI**](/docs/get-started/sumo-logic-ui-classic). To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**.
- 
+
 ### Tags and Filters
 
 You can add key/value pair tags to your SLOs to allow you to better organize and filter them. For example, you might find it useful to add tags for `team`, `service`, and `application`.
@@ -252,7 +252,7 @@ You can make further modifications to a saved filter view later using kebab menu
 
 <img src={useBaseUrl('img/observability/MenuOptionsForAnExistingFilter.png')} alt="Menu options for an existing filter" style={{border: '1px solid gray'}} width="800" />
 
-:::note  
+:::note
 * A maximum of 10 saved views are allowed per user.
 * Saved filter views are only visible to you and cannot be shared with other users in your org.
 :::

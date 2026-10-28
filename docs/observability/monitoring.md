@@ -1,6 +1,6 @@
 ---
 id: monitoring
-title: Monitoring with the Observability Solution
+title: Monitoring Applications with the Observability Solution
 sidebar_label: Monitoring Applications
 description: Sumo Logic provides a suite of tools to make discovering issues faster.
 ---
@@ -32,7 +32,7 @@ You can [create dashboards](/docs/dashboards/create-dashboard-new) to analyze me
 
 <img src={useBaseUrl('img/observability/visual-example.png')} alt="Visual example" style={{border: '1px solid gray'}} width="800" />
 
-## Leverage pre-built content for Your infrastructure
+## Leverage pre-built content for your infrastructure
 
 Compared to apps, solutions offer more supporting content plus a high-level view of what you may need given your use case.
 

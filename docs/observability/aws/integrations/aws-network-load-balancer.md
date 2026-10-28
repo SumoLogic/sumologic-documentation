@@ -15,7 +15,7 @@ The AWS Network Load Balancer dashboards provide insights to ensure that your ne
 
 The AWS Network Load Balancer app uses [AWS Network Load Balancer metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html).
 
-### Sample queries  
+### Sample queries
 
 ```metrics title="Active Flows (Connections) by Load Balancer (Metric based)"
 Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum account=dev region=us-east-1 LoadBalancer=* | sum by account, region, namespace, LoadBalancer
@@ -31,9 +31,9 @@ import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
 The **AWS Network Load Balancer - Overview** dashboard provides detailed insights into a view of network utilization and performance. The dashboard provides information about the errors, health, and traffic handled by the load balancer.
 
-Use this dashboard to: 
+Use this dashboard to:
 
-* Get an at-a-glance view of the number of errors and status of backend hosts. 
+* Get an at-a-glance view of the number of errors and status of backend hosts.
 * Identify load balancers with the most number of unhealthy hosts.
 * Monitor trends around active connections, bytes processed, and reset packets to ensure load balancers are operating as expected.
 
@@ -45,7 +45,7 @@ The **AWS Network Load Balancer - Active and New Flows** dashboard provides deta
 
 Use this dashboard to:
 
-* Monitor trends around active and new flows (connections) to make sure they line up with expectations and then use that information to scale up/scale down backend hosts. 
+* Monitor trends around active and new flows (connections) to make sure they line up with expectations and then use that information to scale up/scale down backend hosts.
 
 <img src={useBaseUrl('img/observability/networklb1.png')} alt="AWS Network Load Balancer - Active and New Flows dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -77,7 +77,7 @@ The **AWS Network Load Balancer - Reset (RST) Packets** dashboard provides detai
 
 Use this dashboard to:
 
-* To monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service. 
+* To monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service.
 
 <img src={useBaseUrl('img/observability/networklb4.png')} alt="AWS Network Load Balancer - Reset (RST) Packets dashboard" style={{border: '1px solid gray'}} width="800" />
 
@@ -101,6 +101,6 @@ You only pay for the number of LCUs that you use per hour.
 
 Use this dashboard to:
 
-* Optimize load balancer costs by monitoring trends around the number of load balancer capacity units (LCU) used by network protocol. 
+* Optimize load balancer costs by monitoring trends around the number of load balancer capacity units (LCU) used by network protocol.
 
 <img src={useBaseUrl('img/observability/networklb6.png')} alt="AWS Network Load Balancer - Consumed LCUs dashboard" style={{border: '1px solid gray'}} width="800" />

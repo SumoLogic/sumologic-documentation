@@ -34,7 +34,7 @@ Kubernetes views provide a visual representation of your Kubernetes stack.
 
 To navigate and analyze your Kubernetes environment, do the following:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Infrastructure Monitoring**, select **Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**.
 1. In the upper-left corner of the screen, select the Kubernetes view you want from the dropdown menu.
 1. Click the arrow to the left of a content name to expand and view its contents.<br/><img src={useBaseUrl('img/kubernetes/Explore_cluster_contents.png')} alt="Explore cluster contents" style={{border: '1px solid gray'}} width="400" />
 1. Dead entities are shown faded:<br/><img src={useBaseUrl('img/kubernetes/faded-entity-explore.png')} alt="Dead entities" style={{border: '1px solid gray'}} width="300" />
@@ -47,17 +47,17 @@ To navigate and analyze your Kubernetes environment, do the following:
     <img src={useBaseUrl('img/kubernetes/Explore_Collapsed_view.png')} alt="Explore collapsed view" style={{border: '1px solid gray'}} width="800" />
 
     * If this is your first time using the view, the window at the right will be empty.
-    * If you have already installed a Sumo Logic App for Kubernetes, a dashboard displaying data for the selected deployment appears on the right. For instructions on installing the Sumo Logic Kubernetes App, see the [Kubernetes Solution help pages](collection-setup.md). 
+    * If you have already installed a Sumo Logic App for Kubernetes, a dashboard displaying data for the selected deployment appears on the right. For instructions on installing the Sumo Logic Kubernetes App, see the [Kubernetes Solution help pages](collection-setup.md).
 
 1. Now you can navigate your Kubernetes environment and analyze the landscape.
 
-### Analyzing the Kubernetes landscape 
+### Analyzing the Kubernetes landscape
 
 The views allow you to quickly navigate through your Kubernetes environment and assess the landscape of the hierarchy. The navigation panel on the left shows a list of all your clusters with the namespaces, containers, and pods nested underneath each cluster.
 
 -->
 
-### Drilling into related content 
+### Drilling into related content
 
 Sumo Logic provides relevant log searches and dashboards to consider investigating, as well as other locations with relevant content. This facilitates quickly discovering the root cause and devising a plan of action.
 
@@ -96,7 +96,7 @@ Once you have created the stack linking, your custom dashboard should appear in 
 <!--
 ## Explore a Visual Kubernetes Hierarchy
 
-**Explore** is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces. Explore accomplishes this by translating metadata fields into an easy to understand mental model so you can quickly check system states at various levels and proactively troubleshoot issues. 
+**Explore** is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces. Explore accomplishes this by translating metadata fields into an easy to understand mental model so you can quickly check system states at various levels and proactively troubleshoot issues.
 
 <img src={useBaseUrl('img/kubernetes/K8s_Views_overview.png')} alt="Kubernetes views overview" style={{border: '1px solid gray'}} width="800" />
 
@@ -130,7 +130,7 @@ Sumo Logic provides scraper utility that collects Prometheus formatted metrics f
 
 ## Using metadata to power your search
 
-You can create fields with key-value pairs that label logs with custom metadata. Referencing log data with fields based on meaningful associations makes searches easier and more intuitive. Sumo Logic allows you to add custom fields to collectors that define key-value pairs at the source level. The custom fields in the metadata streams are then automatically extracted for searching, querying, and graphing. This allows you to view results for intuitively referenced subsets not traditionally tagged as source categories. 
+You can create fields with key-value pairs that label logs with custom metadata. Referencing log data with fields based on meaningful associations makes searches easier and more intuitive. Sumo Logic allows you to add custom fields to collectors that define key-value pairs at the source level. The custom fields in the metadata streams are then automatically extracted for searching, querying, and graphing. This allows you to view results for intuitively referenced subsets not traditionally tagged as source categories.
 
 This page shows you how to define a custom field on a collector, and then how to effectively use the custom metadata to search log data.
 
@@ -140,19 +140,19 @@ To learn more about adding meaningful information to your data so you have mor
 
 ### Adding custom fields to collectors
 
-You can add custom fields to collectors for more intuitive searches, partitions, and Role-Based Access Control (RBAC) queries. After which, the log data that passes through the collector automatically inherits the custom metadata. You can create a custom field label for anything that is "collected" and adapt your logs to familiar naming conventions. 
+You can add custom fields to collectors for more intuitive searches, partitions, and Role-Based Access Control (RBAC) queries. After which, the log data that passes through the collector automatically inherits the custom metadata. You can create a custom field label for anything that is "collected" and adapt your logs to familiar naming conventions.
 
 :::note
 Custom metadata is usually set up by your administrator. Check with your site administrator before adding a custom key-value pair to a collector.
 :::
 
-The following task shows you how to create a custom field for a collector. In this process, you assign a custom key-value pair in the field to tag the metadata. In this example, we create two fields with a key-value pairs, one for a cluster and one for a pod. 
+The following task shows you how to create a custom field for a collector. In this process, you assign a custom key-value pair in the field to tag the metadata. In this example, we create two fields with a key-value pairs, one for a cluster and one for a pod.
 
 To add a custom field to a collector, do the following:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic).  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu select **Data Management**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**.
 1. Select the collector to which you want to add a custom key-value pair. In this example, we've selected the Falco collector.<br/><img src={useBaseUrl('img/kubernetes/MM_Collection_Select_Collector.png')} alt="Select collector" style={{border: '1px solid gray'}} width="800" /><br/>
-    The Edit Collector dialog appears.
+    The **Edit Collector** dialog appears.
 1. Click **Add Field**.<br/><img src={useBaseUrl('img/kubernetes/MM_Add-Field.png')} alt="Add field" style={{border: '1px solid gray'}} width="600" />
 1. Enter a field name and value in the respective text fields. In this example, we created a field for a **cluster** with the label **k8s.dev** and a pod with the name **pod_test** and label **k8s.test**. This allows you to easily search for log data for that cluster or pod.
     * <img src={useBaseUrl('img/reuse/green-check-circle.png')} alt="Green check circle" width="20"/> A green circle with a check mark appears when the field exists and is enabled in the fields table schema.
@@ -167,12 +167,12 @@ In this section, you'll learn how to use metadata to search by components of t
 
 To use metadata to view Kubernetes components and display Kubernetes label results, do the following:
 
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Log Search**.
 1. Indicate the metadata namespace. In this example, we entered `namespace=sumologic`.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace.png')} alt="namespace=sumologic" style={{border: '1px solid gray'}} width="800" />
 1. Click **Start** to run the query, then under **Hidden Fields** on the **Messages** tab, click **namespace** to display the metadata for that Kubernetes component. Notice that the namespace field moves **Hidden Fields** to **Display Fields**.<br/><img src={useBaseUrl('img/kubernetes/MWT_namespace_Display_Fields.png')} alt="Namespace display fields" style={{border: '1px solid gray'}} width="500" />
 1. To view metadata for a key-value pair, enter the key-value pair in the query text field. In our example, we wanted to view the metadata for the prometheus container and entered `container=prometheus`.
 1. Then we expanded the search range by changing the time interval from the last 15 minutes to the **Last 60 minutes**.
-1. To further investigate the container, we clicked **LogReduce®**, which groups common log messages into signature groupings. 
+1. To further investigate the container, we clicked **LogReduce®**, which groups common log messages into signature groupings.
 1. To examine the details of the smaller set of signatures that appear, under **Select Count** we selected. Oftentimes when troubleshooting a problem, our lesser quantity contains the root cause.<br/><img src={useBaseUrl('img/kubernetes/MWT_LogReduce_1.png')} alt="Select Count" style={{border: '1px solid gray'}} width="800" /><br/>
     The warning `Endpoints ended with: too old resource version` may be something to investigate or just the indication of an ongoing upgrade.
 1. To view data for other Kubernetes components, we can enable them one by one by selecting the checkbox next to **namespace**, **cluster**, **container**, **pod**, **service**, and/or **Source Host**.

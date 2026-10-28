@@ -12,8 +12,8 @@ To make EC2 hosts part of the AWS Observability hierarchy, the EC2 host metrics 
 
 | Field Name | Description | Availability in Host Metrics |
 |:--|:--|:--|
-| Account    | This is an alias for your AWS account—for example, production, development, or stage—that you supply when you install the solution. | No |
-| Namespace  | This is the name of the AWS service (AWS/EC2). | No |
+| Account | This is an alias for your AWS account—for example, production, development, or stage—that you supply when you install the solution. | No |
+| Namespace | This is the name of the AWS service (AWS/EC2). | No |
 
 Account and Namespace are added to the metrics by adding both as Fields to Host Metrics source in Sumo Logic.
 
@@ -65,7 +65,7 @@ An existing stack can be updated using a new version of CloudFormation template 
 
 To update an existing stack, follow the steps below:
 
-1. Locate the **Main Stack** created using CloudFormation template and Click **Update**.  <br/>  <img src={useBaseUrl('img/observability/add-fields3.png')} alt="Update button" style={{border: '1px solid gray'}} width="800" />
+1. Locate the **Main Stack** created using CloudFormation template and Click **Update**. <br/> <img src={useBaseUrl('img/observability/add-fields3.png')} alt="Update button" style={{border: '1px solid gray'}} width="800" />
 1. Select ‘Use Current Template’ and select **Next**.<br/><img src={useBaseUrl('img/observability/add-fields4.png')} alt="Select Use Current Template" style={{border: '1px solid gray'}} width="800" />
 1. Click **Create Stack**.
 1. Add 1 to the **Force Update the Stack** parameter value and click **Next.** <br/><img src={useBaseUrl('img/observability/add-fields5.png')} alt="Force Update the Stack parameter" style={{border: '1px solid gray'}} width="800" />

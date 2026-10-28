@@ -2,17 +2,18 @@
 id: application-components
 title: Application Components Solution
 sidebar_label: Application Components Solution
+description: Group and monitor related application components with pre-configured dashboards to quickly identify and troubleshoot issues.
 ---
 
 The Application Components Solution allows a better structure and grouping of various application components. This provides the ability to easily monitor and troubleshoot potential issues with applications.
 
-Pre-configured dashboards available for application components solve many common use cases:
+Pre-configured [dashboards](/docs/dashboards) available for application components solve many common use cases:
 * Identifying which part of the infrastructure is experiencing problems.
 * Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
 :::warning Limitations
-This solution is currently supported for the following apps only:
+This solution is supported only for the following apps:
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Couchbase](/docs/integrations/databases/couchbase)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
@@ -93,7 +94,7 @@ By default, all other parameters are set up to automatically collect logs and me
 **Required**: Yes <br/>
 **Description**: Your Sumo Logic Access Key, which is used for Sumo Logic API calls. See [Access Keys](/docs/manage/security/access-keys) for more information.
 
----  
+---
 **Parameter**: `sumologic_organization_id`<br/>
 **Required**: Yes <br/>
 **Description**: Your Sumo Logic Organization ID. You can find your org on the Preferences page in the Sumo Logic UI. Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. For more information, see your [preferences](/docs/get-started/account-settings-preferences#my-profile).
@@ -134,7 +135,7 @@ By default, all other parameters are set up to automatically collect logs and me
 **Parameters**: `email_notifications_critical`, `email_notifications_warning`, `email_notifications_missingdata` <br/>
 **Required**: No <br/>
 **Description**: To send notification from the monitors as email set these parameters for critical, warning and missing data monitors respectively. Update the recipients in the below example.
-```json
+```hcl
 email_notifications_critical = [
    {
      connection_type       = "Email",
@@ -151,7 +152,7 @@ email_notifications_critical = [
 **Parameters**: `connection_notifications_critical`, `connection_notifications_warning`, `connection_notifications_missingdata` <br/>
 **Required**: No <br/>
 **Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
-```json
+```hcl
 connection_notifications_critical = [
     {
       connection_type       = "PagerDuty",
@@ -258,7 +259,7 @@ This section shows how to use the [monitoring dashboards](/docs/dashboards/explo
 ### Navigate Application Components view
 
 To open the Application Components view:
-1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**. 
+1. [**New UI**](/docs/get-started/sumo-logic-ui). In the main Sumo Logic menu, select **Observability**, and then under **Application Monitoring**, select **Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic). Go to the **Home** screen and select **Explore**.
 1. In the upper-left corner of the screen, select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the panel.
 1. Select an environment to view a list of its components.
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
@@ -280,7 +281,7 @@ Assuming your last terraform application run was successful and you have the tfs
 #### How do I view changes introduced in the new version?
 See the [CHANGELOG.md file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/CHANGELOG.md) for bug fixes or enhancements in the latest solution version.
 
-#### How do I view all resources created by the solution?  
+#### How do I view all resources created by the solution?
 See the [RESOURCES.md file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/application-components/RESOURCES.md) to view all resources and modules present in the solution.
 
 #### If I already have data flowing into Sumo Logic, how do I migrate to this solution?
