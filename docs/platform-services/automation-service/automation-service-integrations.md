@@ -2,12 +2,12 @@
 id: automation-service-integrations
 title: Integrations
 sidebar_label: Integrations
-description: Learn how integrations are connectors to applications from industry-leading network and security vendors.   
+description: Learn how integrations are connectors to applications from industry-leading network and security vendors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
+Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.
 
 Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View integrations](#view-integrations)). Integrations that are available for installation appear in App Catalog (see [Automation Integrations in App Catalog](/docs/integrations/automation-integrations/)).
 
@@ -66,7 +66,7 @@ To create a new integration in the Automation Service, you must supply an integr
 
 To create a new integration:
 1. Create an integration definition YAML file, as well as an action definition YAML file for each action in the integration.
-1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar.  
+1. [**New UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. <br/>[**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu click **Automation**. Then click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar.
 1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="500"/>
 1. A **New Integration** dialog appears. Drag the integration definition YAML file into the **New Integration** dialog.<br/><img src={useBaseUrl('img/platform-services/automation-service/new-integration-dialog.png')} alt="Add Integration button" width="300"/>
 1. Click **Upload**. The new integration is listed on the **Integrations** page.

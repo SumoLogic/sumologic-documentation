@@ -63,7 +63,7 @@ This word list gives the preferred spelling, capitalization, and punctuation for
 
 **Em dash**. Try not to use em dashes. Rewrite with a period, semicolon, colon, or parentheses instead. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 
-**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
+**Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.
 
 **En dash**. Use the en dash (–) only for numeric and date ranges. See [Dashes](/docs/contributing/style-guide/#dashes) in the style guide.
 

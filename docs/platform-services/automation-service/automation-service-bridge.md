@@ -2,7 +2,7 @@
 id: automation-service-bridge
 title: Automation Bridge
 sidebar_label: Automation Bridge
-description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
+description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -65,7 +65,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
    systemctl enable docker
    ```
 
-### Using a proxy   
+### Using a proxy
 1. If Docker has to use a proxy to pull images, follow the below instructions:
    ```sh
    mkdir -p /etc/systemd/system/docker.service.d
@@ -356,7 +356,7 @@ In both the setups, check the **Bridge** tab in the [Automation Service UI](/doc
 
         ##### Resolution:
 
-           * Consider upgrading bridge to version v3.2.2 and later.  
+           * Consider upgrading bridge to version v3.2.2 and later.
            * Start the bridge using a new installation token.
 
    * #### Bridge runs for a while and then goes offline

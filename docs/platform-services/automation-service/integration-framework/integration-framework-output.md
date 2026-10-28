@@ -2,7 +2,7 @@
 id: integration-framework-output
 title: Open Integration Framework Output
 sidebar_label: Output
-description: Learn how to work with output from the integration framework. 
+description: Learn how to work with output from the integration framework.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -86,7 +86,7 @@ script:
                </dl>
             </body>
           </html>
-    '''    
+    '''
     print(art)
 src_doc: 'rawOutput'
 ```

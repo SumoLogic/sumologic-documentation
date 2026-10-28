@@ -2,7 +2,7 @@
 id: about-integration-framework
 title: About the Open Integration Framework
 sidebar_label: About
-description: Get an overview of how the open integration framework (OIF) works. 
+description: Get an overview of how the open integration framework (OIF) works.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -104,7 +104,7 @@ Both the integration definition file and the action definition file are YAML fil
       * `textarea`
       * `upload`
    * **required** `*` [Boolean]: Is the field required (true/false).
-   * **validator** `*` [String]: Input validator type. Acceptable values are:  
+   * **validator** `*` [String]: Input validator type. Acceptable values are:
      * `datetime`
      * `domain`
      * `e-mail`
@@ -154,7 +154,7 @@ Both the integration definition file and the action definition file are YAML fil
         * `detected_urls.[].url`
         * `detected_urls.[].positives`
 
-      *Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:   
+      *Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:
            ```
            {
              "payload": {
@@ -340,7 +340,7 @@ YAML example:
  exit_condition:
    - path: 'exit_condition'
      string: 'false'
- re-execution: 'force'  
+ re-execution: 'force'
  scheduled:
      - every: '10s'
        expire: '120s'
@@ -363,7 +363,7 @@ Or using strings array:
         - 'Open'
         - 'Pending'
         - 'Waiting'
- re-execution: 'force'  
+ re-execution: 'force'
  scheduled:
      - every: '10s'
        expire: '120s'
@@ -597,7 +597,7 @@ When users interact with the custom action trigger button, they can provide a te
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
-show_modal: true        
+show_modal: true
 script:
  code: |
    import json
@@ -644,7 +644,7 @@ null
 integration: 'Incident Tools'
 name: 'Custom trigger button'
 type: Trigger
-show_modal: false        
+show_modal: false
 script:
  code: |
    import json
@@ -690,7 +690,7 @@ For other example YAML files, see:
 
 #### show_modal
 
-Specifies whether to display the textual input. Default value is `true`. 
+Specifies whether to display the textual input. Default value is `true`.
 
 #### check_not_null_field
 
@@ -759,6 +759,6 @@ For another example YAML file of a webhook trigger, see [Trigger webhook definit
 
 ## Additional resources
 
-Blogs: 
+Blogs:
 * [Uncovering the power of Cloud SOAR’s Open Integration Framework](https://www.sumologic.com/blog/uncovering-the-powers-of-cloud-soars-open-integration-framework)
 * [Daemons in Cloud SOAR: proactively enhancing SecOps](https://www.sumologic.com/blog/daemons-in-cloud-soar-proactively-enhancing-secops)
