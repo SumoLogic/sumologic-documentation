@@ -50,7 +50,7 @@ To access Threat Intelligence in Sumo Logic,
 * [**Classic UI**](/docs/get-started/sumo-logic-ui-classic/). In the main Sumo Logic menu, select **Manage Data > Threat Intelligence**.<br/><img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence overview" style={{border: '1px solid gray'}} width="800" />
 
 :::note
-Access to the Threat Intelligence tab requires Cloud SIEM. Without Cloud SIEM, you won't see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches.
+Access to the Threat Intelligence tab requires Cloud SIEM. Without Cloud SIEM, you will not see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches.
 :::
 
 Cloud SIEM analysts can use all sources shown in the **Sources** tab of the **Threat Intelligence** page to find threats (see [Find Threats with Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/)). All Sumo Logic users can also run queries against the indicators in the Sumo Logic threat intelligence sources (see [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/)).
