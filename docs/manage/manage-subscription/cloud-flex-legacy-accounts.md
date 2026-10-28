@@ -118,7 +118,7 @@ The **Account** page displays information about your Sumo Logic organization, 
 
 The top panel of the Account Overview page provides an at-a-glance view of your account information:
 
-* **Organization.** Displays the name of your Sumo Logic organization, and its hexadecimal organization ID number. This helps Sumo identify your account.
+* **Organization.** Displays the name of your Sumo Logic organization, and its hexadecimal organization ID number. This helps Sumo Logic identify your account.
 * **Plan Type.** Displays your account type for your Sumo Logic subscription such as Professional or Enterprise edition and whether you are billed on the Cloud Flex or Classic Plan.
 * **Contract Period**. Displays the start and end date of the current contract period.
 * **Current Billing Period.** Displays the start and end date of the current billing period.

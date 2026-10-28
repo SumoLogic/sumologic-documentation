@@ -364,7 +364,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        In this section, you configure Amazon GuardDuty. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
        
        If fields are missing, or you need to change them, do the following:
-       * **4.1 GuardDuty Sumo log source configuration**
+       * **4.1 GuardDuty Sumo Logic log source configuration**
           * **Create Sumo Logic HTTP logs source**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, enter your existing source category name for the GuardDuty logs. 
        * **4.2 GuardDuty service configuration**
@@ -379,7 +379,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        In this section, you configure AWS CloudTrail. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
        
        If fields are missing, or you need to change them, do the following:
-       * **5.1 CloudTrail Sumo log source configuration**. 
+       * **5.1 CloudTrail Sumo Logic log source configuration**. 
           * **Create Sumo Logic S3 logs source for CloudTrail**. **Yes** is the default value. Select **No** if you already have a source.
           * **Path expression for logs**. The path expression must match the folder structure for CloudTrail logs (for example, `AWSLogs/*/CloudTrail/*`).
           * **Sumo Logic CloudTrail logs source category name**. The source category name to be created. If you selected **No** in the preceding field for creating an S3 log source, enter the name of an existing Sumo Logic source category that's collecting CloudTrail logs. 
@@ -400,7 +400,7 @@ If you selected **Create New Source** for any source on the [**Configure Sources
        In this section, you configure AWS Security Hub. Fields have been autofilled based on your choices on the [**Configure Sources** screen](#install-cloud-infrastructure-security-for-aws). You only need to change values if any are missing or incorrect. Carefully review the values to ensure they are correct.
        
        If fields are missing, or you need to change them, do the following:
-       * **6.1 Security Hub Sumo Log Source configuration**.
+       * **6.1 Security Hub Sumo Logic Log Source configuration**.
           * **Create Sumo Logic HTTP logs source**. **Yes** is the default value. Select **No** if you already have a logs source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, provide an existing source category name from the Security Hub logs.  
        * **6.2 Security Hub Service Configuration**. 

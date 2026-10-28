@@ -526,6 +526,28 @@ Rate limits may be increased for customers with higher needs. Contact your Sumo 
 * **Audit trails**. All MCP interactions are logged for compliance and security review.
 * **Multi-tenant isolation**. Tenant-level security controls are enforced at the gateway.
 
+### IP allowlisting and MCP tools
+
+All MCP tools forward your original client IP to Sumo Logic, so IP allowlisting works consistently across all tools, including log search (`runLogSearch`) and [Mobot](/docs/search/mobot).
+
+## Troubleshooting
+
+### MCP tool calls fail with 401 Request blocked by IP allowlist policy
+
+#### Symptom
+
+One or more MCP tool calls fail with `401 "Request blocked by IP allowlist policy"`.
+
+#### Cause
+
+Your org has an IP allowlist configured and the client IP making the MCP request is not on it.
+
+#### Resolution
+
+1. Confirm your client's IP address is included in your org's IP allowlist. See [Create an Allowlist for IP or CIDR Addresses](/docs/manage/security/create-allowlist-ip-cidr-addresses/).
+1. If the IP is already allowlisted and calls are still failing, note the exact error text, the failing tool name, and the time of failure in UTC.
+1. Contact [Sumo Logic Support](https://support.sumologic.com/support/s) with those details and your deployment region.
+
 ## FAQ
 
 ### Can MCP handle multiple operations in a single request?
@@ -560,9 +582,49 @@ Yes. Add your subdomain to the front of your deployment's MCP server URL, for ex
 
 MCP clients authenticate with OAuth 2.0. CIMD is the recommended mechanism and requires no manually created credentials; clients that don't support CIMD can connect with a manually created, pre-registered OAuth client instead.
 
+### Why does an MCP tool call fail with 401 Request blocked by IP allowlist policy?
+
+Your org has an IP allowlist configured and the client IP making the request is not on it. Check that your client's IP is included in your allowlist. See [MCP tool calls fail with 401 Request blocked by IP allowlist policy](#mcp-tool-calls-fail-with-401-request-blocked-by-ip-allowlist-policy) for troubleshooting steps.
+
+### What is MCP?
+
+Model Context Protocol (MCP) is a protocol that lets AI clients connect to external tools and data sources. The Sumo Logic MCP server lets MCP-compatible clients, such as Claude Code, query your logs, investigate Cloud SIEM insights, and manage alerts and dashboards using natural language.
+
+### Which observability or SIEM tools have an MCP server?
+
+Sumo Logic provides an MCP server for log search, Cloud SIEM insights, alerts, and dashboards. It's available in all commercial Sumo Logic deployments except Zurich and AWS European Sovereign Cloud, including the FedRAMP deployment. See the [MCP server URL table](#mcp-server-url-for-your-deployment).
+
+### How do autonomous agents connect to the MCP server?
+
+The agent needs an MCP client that supports HTTP/SSE transport and OAuth 2.0. Clients that support CIMD can connect directly. Clients that don't can use a pre-registered OAuth client with the Authorization Code or Client Credentials flow. See [OAuth clients](/docs/manage/security/oauth/).
+
+### How do I secure access to the Sumo Logic MCP server?
+
+Access uses OAuth 2.0, and tools are scoped to the connecting user's role permissions. Administrators control whether CIMD clients are allowed and can restrict access to pre-registered clients only, and an IP allowlist policy applies to MCP requests. See [OAuth clients](/docs/manage/security/oauth/) and [How does Sumo Logic secure MCP access?](#how-does-sumo-logic-secure-mcp-access).
+
+### How do I build guardrails for agents using MCP?
+
+Use OAuth scopes and role permissions to limit which tools an agent can call. Remove scopes you don't want the client to have, and use a dedicated role for the client's user or service account. Rate limits of 4 requests per second per user and 10 concurrent requests per access key also cap how fast an agent can act. See [What are the MCP server rate limits?](#what-are-the-mcp-server-rate-limits).
+
+### Can MCP servers or agents access data they shouldn't?
+
+Access is limited to what the user's roles and the OAuth client's scopes allow. Effective permissions are the intersection of the two, and the MCP server hides tools that require a scope the client doesn't have. See [How permissions work](/docs/manage/security/oauth/#how-permissions-work).
+
+### How do I limit what an autonomous agent can do through MCP?
+
+Configure the agent's OAuth client with only the scopes it needs. An administrator can [edit a CIMD client's scopes](/docs/manage/security/oauth/#edit-cimd-scopes) at any time, and users can [clear scopes on the consent page](/docs/manage/security/oauth/#clear-scopes-on-the-consent-page) when they authorize a client. The role of the user or service account further limits what the agent can do.
+
+### Can I set permissions per agent for MCP tools?
+
+Yes. Permissions are set per OAuth client, so each agent that uses its own client can have its own scopes. The agent's effective permissions are limited by those scopes and by the roles of the user or service account it runs as. See [How permissions work](/docs/manage/security/oauth/#how-permissions-work).
+
+### What are the security considerations for MCP servers?
+
+Review the scopes you grant each client, the roles of the connecting users or service accounts, whether to restrict CIMD to pre-registered clients, and your IP allowlist. See [How do I secure access to the Sumo Logic MCP server?](#how-do-i-secure-access-to-the-sumo-logic-mcp-server) and [How do I build guardrails for agents using MCP?](#how-do-i-build-guardrails-for-agents-using-mcp). Also review the [rate limits](#what-are-the-mcp-server-rate-limits) and the [limitations](#at-a-glance), because the server isn't intended for bulk data extraction.
+
 ## Additional resources
 
-* [Dojo AI](https://www.sumologic.com/solutions/dojo-ai)
+* [DojoAI](https://www.sumologic.com/solutions/dojo-ai)
 * [Skills vs. MCP: You’re probably reaching for the wrong one | Sumo Logic Blog](https://www.sumologic.com/blog/skills-vs-model-context-protocol-mcp)
 * [Token Torching: How I’d burn your AI budget (so you can fix it) | Sumo Logic Blog](https://www.sumologic.com/blog/token-torching-ai-attack)
 * [Closing the AI compliance and visibility gap: Integrate the Claude Compliance API with Sumo Logic | Sumo Logic Blog](https://www.sumologic.com/blog/sumo-logic-claude-compliance-api-integration)

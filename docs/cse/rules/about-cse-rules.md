@@ -162,6 +162,10 @@ If you maintain a multi-org implementation of Sumo Logic and you need to push Cl
 1. Click the **Import** button. 
 1. Select the JSON file of the previously exported rule.<img src={useBaseUrl('img/cse/rule-import-button.png')} alt="Rule import button" style={{border: '1px solid gray'}} width="600" /> 
 
+### Import rules from Sigma
+
+If you have existing [Sigma](https://sigmahq.io/) detection rules, you can convert them to Cloud SIEM rule JSON using the Sumo Logic pySigma backend and then import them. See [Convert Sigma Rules](/docs/cse/rules/convert-sigma-rules/).
+
 ## Rules and other content
 
 This section describes two key Cloud SIEM features that enable you to write richer rules that can look up information about the entities that are actors in a record. For example, you could compare a domain in a record to a list of allowed listed domains. Or you could compare an IP address to a list of IP addresses known to be indicators of compromise.  

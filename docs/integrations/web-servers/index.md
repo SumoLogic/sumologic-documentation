@@ -6,7 +6,7 @@ description: Learn how to use Sumo Logic apps for web servers.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This guide has documentation for Sumo apps for web servers.
+This guide has documentation for Sumo Logic apps for web servers.
 
 <div className="box-wrapper">
 <div className="box smallbox card">

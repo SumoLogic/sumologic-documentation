@@ -278,11 +278,11 @@ account=* region=* namespace=aws/bedrock/agentcore _sourcehost=/aws/vendedlogs/b
 | limit 25
 ```
 
-```sql title="Runtime Invocations (CloudWatch Metric)"
+```metrics title="Runtime Invocations (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock/agentcore metric=invocations operation=InvokeAgentRuntime statistic=sum | quantize using sum | sum
 ```
 
-```sql title="Gateway Average Latency (CloudWatch Metric)"
+```metrics title="Gateway Average Latency (CloudWatch Metric)"
 account=* region=* namespace=aws/bedrock/agentcore metric=latency operation=InvokeGateway statistic=average | quantize using avg | avg
 ```
 
@@ -414,7 +414,7 @@ Scope (Specific Data): account=* region=* _sourcehost=/aws/vendedlogs/bedrock-ag
 
 In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map a proper AWS account friendly name/alias. Create it if not already present / update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
@@ -437,7 +437,7 @@ Enter a parse expression to create an "account" field that maps to the alias you
 
 In case you have a centralized collection of CloudWatch logs and are ingesting them from all accounts into a single Sumo Logic CloudWatch log source, create the following Field Extraction Rule to map a proper AWS account friendly name/alias. Create it if not already present, or update it as required.
 
-```sql
+```metrics
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudwatch/logs

@@ -37,7 +37,6 @@ Use the **Cloud SOAR** sidebar menu to access:
 Click **Automation** in the main Sumo Logic menu to open the sidebar menu.<br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-sidebar-menu.png')} alt="Cloud SOAR sidebar menu" style={{border: '1px solid gray'}} width="350"/>
 
 Use the **Automation** sidebar menu to access:
-* [**App Central**](/docs/platform-services/automation-service/app-central/). Add new integrations and playbooks to your environment.
 * [**Playbooks**](/docs/platform-services/automation-service/playbooks/). Create playbooks to run automated actions.
 * [**Template**](/docs/cloud-soar/automation/#incident-templates). Create incident templates.
 * [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations). Manage integrations with vendors.

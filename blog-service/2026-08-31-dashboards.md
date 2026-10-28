@@ -8,7 +8,7 @@ keywords:
 hide_table_of_contents: true
 ---
 
-We're excited to introduce the below new guardrails to [dashboard auto-refresh](/docs/dashboards/about/#auto-refresh):
+The below new guardrails to [dashboard auto-refresh](/docs/dashboards/about/#auto-refresh):
 
 * **Hidden tab pause**. Auto-refresh pauses when you switch away from a dashboard tab for more than 10 minutes, and resumes automatically when you return.
 * **Panel failure exclusion**. A panel is excluded from auto-refresh after 5 consecutive query failures, so it stops disrupting other healthy panels.

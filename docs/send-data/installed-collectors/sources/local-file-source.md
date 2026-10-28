@@ -49,7 +49,7 @@ UTF-16 formats are often used internationally; additionally they are common with
 
 ## Avoiding file contention
 
-When the Sumo collector accesses a log file to read its content, the collector opens the file in non-exclusive read mode. The file is opened for read access only, and no read or write locks are requested. File contention issues are still possible, however. For example, if another process attempts to open a file with a read lock at the same time the file is being read by the collector, that attempt will fail. The Add-Content PowerShell cmdlet is known to require a read lock, and should therefore never be used to populate a file being watched by a Sumo collector.
+When the Sumo Logic collector accesses a log file to read its content, the collector opens the file in non-exclusive read mode. The file is opened for read access only, and no read or write locks are requested. File contention issues are still possible, however. For example, if another process attempts to open a file with a read lock at the same time the file is being read by the collector, that attempt will fail. The Add-Content PowerShell cmdlet is known to require a read lock, and should therefore never be used to populate a file being watched by a Sumo Logic collector.
 
 ## Configure a Local File Source
 
@@ -72,7 +72,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
     :::
 
-    Review [timestamp considerations](/docs/send-data/reference-information/time-reference) to understand how Sumo interprets and processes timestamps.
+    Review [timestamp considerations](/docs/send-data/reference-information/time-reference) to understand how Sumo Logic interprets and processes timestamps.
 
     You can either:
 
@@ -181,7 +181,7 @@ Otherwise, instead of denylisting certain paths, you can specify specific log fo
 ## Troubleshooting
 
 ### Fingerprint
-To keep track of what it has already sent to the Sumo service, the Collector tracks a file by its fingerprint (the first 2048 bytes of the file) and by a read pointer that indicates the last line read by the Collector. This fingerprint is then compared to a list of known fingerprints from that Source. If the fingerprint does not match one in the known list we start reading that file's content from the beginning and send it to Sumo. If a matching fingerprint is found in the list we start reading from the last known byte mark of that file. The Collector updates this information approximately every second. A file's fingerprint is retained for some period of time after file deletion, otherwise it is removed.
+To keep track of what it has already sent to the Sumo Logic service, the Collector tracks a file by its fingerprint (the first 2048 bytes of the file) and by a read pointer that indicates the last line read by the Collector. This fingerprint is then compared to a list of known fingerprints from that Source. If the fingerprint does not match one in the known list we start reading that file's content from the beginning and send it to Sumo Logic. If a matching fingerprint is found in the list we start reading from the last known byte mark of that file. The Collector updates this information approximately every second. A file's fingerprint is retained for some period of time after file deletion, otherwise it is removed.
 
 An issue that could arise is seeing duplicated log messages for a log file that is written to very slowly. When a file is slowly written and the first messages in the file are not larger than 2kb the fingerprint for the Source file can be overwritten with each log line, up to the point those first lines add up to 2kb.
 

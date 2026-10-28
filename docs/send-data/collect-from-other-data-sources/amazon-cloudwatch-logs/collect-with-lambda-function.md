@@ -28,7 +28,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 ## Step 2: Create Lambda function
 
-Sumo provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
+Sumo Logic provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
 
 To add an Amazon Lambda function:
 1. Sign in to the [AWS Lambda Console](https://console.aws.amazon.com/lambda/home#/functions).

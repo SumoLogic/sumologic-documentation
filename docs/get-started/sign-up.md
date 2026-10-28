@@ -102,13 +102,13 @@ Once your account is activated, you'll be guided through our personalized onboar
 
 You’ll walk through step-by-step instructions to:
 
-* Explore **Kickstart Data**, preloaded with sample log data and dashboards so you can try out features immediately—no setup or ingestion required.
+* Explore **Kickstart Data**, preloaded with sample log data and dashboards so you can try out features immediately with no setup or ingestion required.
 * Perform log searches, visualize data through dashboards, and test out real-time alerts.
 * Install recommended apps from the App Catalog.
 * Invite teammates and collaborate.
 * Start ingesting your own data when you’re ready.
 
-Whether you’re evaluating the platform or just getting started, this hands-on experience is designed to help you quickly understand the value of Sumo Logic and get up and running with confidence.
+Whether you’re evaluating the platform or getting started for the first time, this hands-on experience is designed to help you quickly understand the value of Sumo Logic and get up and running with confidence.
 
 ### Sign in to Sumo Logic
 
@@ -121,7 +121,7 @@ If you're on the AWS Marketplace trial or have upgraded to a paid plan, you can 
 1. Choose your platform: AWS, Kubernetes, Linux, Windows, or macOS. This installs the OpenTelemetry collector and relevant dashboards.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 2. For AWS, deploy a single account using a CloudFormation Template, CLI, or Terraform. For Kubernetes, Linux, Windows, or macOS, run the provided install command in your Terminal or PowerShell.
 
-Once installation is complete, click **Start using Sumo**. Your data will begin flowing within a few minutes, and you’ll be guided through a step-by-step onboarding to visualize data in dashboards, run log searches, set up alerts, and more.
+Once installation is complete, click **Start using Sumo Logic**. Your data will begin flowing within a few minutes, and you’ll be guided through a step-by-step onboarding to visualize data in dashboards, run log searches, set up alerts, and more.
 
 Alternatively, you can skip setup and browse our [App Catalog](/docs/integrations) to explore prebuilt apps with guided installation.<br/><img src={useBaseUrl('img/get-started/data-onboarding.png')} alt="Data onboarding screen showing platform collection options like AWS, Kubernetes, Windows, macOS" style={{border: '1px solid gray'}} width="600" />
 

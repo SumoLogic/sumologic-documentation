@@ -15,7 +15,7 @@ The Sumo Logic app for PostgreSQL is a unified logs and metrics app for monitori
 
 The Sumo Logic app for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
-This guide provides an overview of the Sumo app for PostgreSQL features and Dashboards, as well as instructions for collecting logs and metrics from PostgreSQL and installing the app.
+This guide provides an overview of the Sumo Logic app for PostgreSQL features and Dashboards, as well as instructions for collecting logs and metrics from PostgreSQL and installing the app.
 
 [PostgreSQL](https://www.postgresql.org/) is an open source object-relational database that extends the robustness SQL language to safely store and scale extensive data workloads.
 

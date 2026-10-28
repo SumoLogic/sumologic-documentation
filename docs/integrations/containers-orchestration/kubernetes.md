@@ -63,7 +63,7 @@ getsockopt: connection refused"}
 
 ## Collecting Metrics and Logs for the Kubernetes app
 
-This section contains instructions for collecting logs and metrics for the Sumo App for Kubernetes.
+This section contains instructions for collecting logs and metrics for the Sumo Logic App for Kubernetes.
 
 :::note Prerequisites  
 Set the following fields in the Sumo Logic UI before configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards.
@@ -472,3 +472,7 @@ The app is compatible with the latest version of the Sumo Logic Kubernetes Colle
 ### Can the Kubernetes app detect security issues?
 
 Yes. The Security Overview and Security Rules Triggered dashboards rely on Falco to show anomalous container, application, host, and network activity, and which out-of-the-box Falco rules were triggered.
+
+### Does Sumo Logic offer cloud-native log management for Kubernetes?
+
+Yes. Sumo Logic is a cloud-native platform, and the Kubernetes app collects and visualizes your cluster's application logs and metrics using the Sumo Logic Kubernetes Collection Helm chart, with no logging infrastructure for you to run. The security dashboards use Falco to show anomalous activity, so your security operations team can use the same data.

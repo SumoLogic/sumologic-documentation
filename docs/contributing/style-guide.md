@@ -319,7 +319,18 @@ Append `#L4-L5` to the URL to embed only those lines, and add a title with `json
 
 Use a [Docusaurus `<details>` block](https://docusaurus.io/docs/markdown-features#details) to fold away long optional content: verbose examples, long code samples, or big reference lists. Put the title between the `<summary>` tags and the content after them. Collapsed content is still indexed for search.
 
-Never put required steps or instructions in a collapsible block.
+| Use case | Use | Why |
+|:---------|:----|:----|
+| **FAQ sections** | ❌ DON'T | Hidden content cannot be cited by AI tools or search engines. FAQ content must be immediately visible and scannable. |
+| **Troubleshooting sections** | ❌ DON'T | Users searching for solutions need immediate access to troubleshooting steps. |
+| **Critical instructions** | ❌ DON'T | Required steps and warnings must always be visible. |
+| **Long code samples** | ✅ DO | Code samples over 100 lines benefit from collapsing to reduce page scrolling. |
+| **Multiple installation methods** | ✅ DO | Collapse each method so users can jump to their preferred approach. |
+| **Alternative configuration options** | ✅ DO | Collapse alternatives (e.g., AWS regions, authentication methods) to reduce clutter. |
+
+### Format FAQ questions as headings
+
+Write each FAQ question as a heading (`H3` or `H4`), not as bold text. Headings are discrete, citable units that AI tools and answer engines can chunk and reference individually; bold is purely visual with no semantic weight. Use `H3` for questions under an `H2` section (e.g., `## FAQs` → `### How do I reset my password?`) and `H4` under an `H3` sub-category (e.g., `### Security and privacy` → `#### Is my data encrypted?`).
 
 <Tabs
   defaultValue="Markdown"
@@ -746,7 +757,7 @@ Here's how to make a [table](#tables).
 
 ```md
 * Learn how to [sign up with Sumo](../get-started/sign-up.md); or
-* Learn how to [sign up with Sumo](/docs/get-started/sign-up).
+* Learn how to [sign up with Sumo Logic](/docs/get-started/sign-up).
 ```
 
 #### Linking to external URLs
@@ -876,19 +887,27 @@ The top navigation bar is configured in [`docusaurus.config.js`](https://docusau
 * For numbers 100,000 and higher, use “K”, “M”, and “B” to indicate thousands, millions, or billions.
 * Use an en-dash without a space on either side for number ranges.
 
-## Patents and trademarks
+## Trademarks
 
-Protecting our patents and trademarks is important to do correctly. We do not want to expose the company to a loss of trademark or patent just because we did not list it correctly.
+Protecting our trademarks is important. Failing to mark a trademarked term can put the company at risk of losing that trademark.
 
-This is a partial list of trademarked terms, which should be capitalized exactly as shown below.
+Use the trademark (™) or registered (®) symbol on the first reference to a trademarked term on a page, then drop it. The following terms must use the symbol shown.
 
-* Sumo Logic
-* Big Data for Real Time IT
-* Log Reduce
-* Elastic Log Processing
-* Push Analytics
+Currently, LogReduce® is the only trademarked term that is used in Sumo Logic docs. For the full list, see [Trademarks](https://www.sumologic.com/legal/trademarks).
 
-Never use Sumo Logic in the plural or possessive form.
+Use trademarked terms as adjectives, not as nouns or verbs. Never use them in the plural or possessive form.
+
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| Use the LogReduce® feature to reduce log volume. | Use LogReduce® to reduce log volume. |
+
+Always write "Sumo Logic" in full, not "Sumo". To be more conversational, "we" is also fine. Never use a Sumo Logic product or feature name in the plural or possessive form, whether trademarked or not. For example, write "the Sumo Logic OpenTelemetry Collector", not "Sumo Logic's OpenTelemetry Collector".
+
+| &#9989; **Do** | &#10060; **Don't** |
+|:---------------|:-------------------|
+| the LogReduce values-details operator | LogReduce's values-details operator |
+
+Generic possessives referring to the company are acceptable ("Sumo Logic's platform" is fine).
 
 ## Preview releases
 
@@ -1070,17 +1089,55 @@ Punctuation is placed outside of quotation marks, U.K.-style English (for exampl
 
 ## Release notes
 
-Release notes (our changelog) publish to both the [docs site](/docs/release-notes) and an RSS feed. Keep them concise and link to the relevant documentation.
+Release notes are our changelog. They publish to the [docs site](/docs/release-notes) and to an RSS feed, and readers scan them to see what changed and whether it affects them. Keep every note short and link out for detail.
 
-1. In the matching blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-csoar](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-csoar), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)), add a file named like the other posts in that folder. For blog-service it's `YYYY-MM-DD-<product-or-feature>`; for Cloud SIEM and SOAR it's `YYYY-MM-DD-application-update` or `YYYY-MM-DD-content-update`.
-1. Copy the frontmatter from a recent post in the same folder and update the values. Two fields are specific to release notes:
-    * `hide_table_of_contents: true`. Hides the TOC so the notes render clean and full-width.
-    * `image`. Used by the RSS feed and social card. If the note has no screenshot to feature, point it at the Sumo Logic logo: `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg`.
+Each product area has its own blog folder: [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service), [blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-csoar](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-csoar), and [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer). Add your note to the matching folder and copy a recent post in that folder as your model for filename, frontmatter, and structure. Conventions that differ by folder are in [Per-folder conventions](#per-folder-conventions).
 
-   For service release notes, append the category in parentheses to the `title` (for example, `Automatic Log Level Detection (Search)`). Check recent service notes for category names.
-1. Write the note. Add links, bullets, and images as needed.
+Every post filename must start with `YYYY-MM-DD-`. The Docusaurus blog plugin takes the publish date and sort order from that prefix, not from frontmatter or the title.
 
-For lengthy release notes, write a 1-2 paragraph introduction, then add a truncate line (`<!--truncate-->`), followed by the full set of release notes.
+### Writing style
+
+These rules apply to every release note, in every folder.
+
+* **Open with a direct statement of what changed.** Do not use excitement or announcement phrases. Announcement framing ("We're excited to...") delays the information and adds nothing the reader can act on. This is the [Professional description](#voice-and-tone) principle applied to the changelog: state the change and let it speak for itself. This applies to the opening framing, not to warmth elsewhere in the note.
+   | &#9989; **Do** | &#10060; **Don't** |
+   |:---------------|:-------------------|
+   | "Multi-child-org search results now include an `_orgName` field alongside `_orgId`, so MSSP users can identify which child org a result came from." | "We're excited to announce that multi-child-org search results now include an `_orgName` field alongside `_orgId`, so MSSP users can identify which child org a result came from." |
+   | "A native Sumo Logic HTTP Source webhook integration for LiteLLM is now available, enabling you to collect LiteLLM usage and proxy log data." | "We are excited to announce the addition of a native Sumo Logic HTTP Source webhook integration for LiteLLM, enabling you to collect LiteLLM usage and proxy log data." |
+   | "This release includes security and stability fixes." | "We've enhanced the security and stability of the Collector." |
+* **Lead with the benefit.** Say what the reader can now do and why it matters, not how it was built.
+* **Be concise.** Two to three sentences for a feature. One sentence per list item.
+* **End the opening paragraph with a "Learn more" link** to the relevant doc, using a [relative path](#links) that starts with `/docs/`.
+* **Mark breaking changes and prerequisites** with an [admonition](#admonitions).
+* **Add screenshots** with `useBaseUrl` ([learn more](#images)).
+* **Write title dates as `Month D, YYYY`.** Full month name, no ordinal, no leading zero - `March 9, 2026`, not `March 9th, 2026` or `March 09, 2026` ([learn more](#dates)).
+
+### Structure and frontmatter
+
+When a note runs long, write a one to two paragraph introduction, add a truncate line (`<!--truncate-->`), then the full set of notes. List views on the site and in the RSS feed show only the text above that line.
+
+Copy the frontmatter from a recent post in the same folder. Two fields matter for every release note:
+
+* `hide_table_of_contents: true`. Renders the note clean and full-width.
+* `image`. Used by the RSS feed and the social card. Use a screenshot from the note if it has one, otherwise the Sumo Logic logo: `https://assets-www.sumologic.com/company-logos/_800x418_crop_center-center_82_none/SumoLogic_Preview_600x600.jpg`.
+
+Add `keywords` when they aid discoverability.
+
+### Per-folder conventions
+
+**Choosing between Service and Developer.** Use *Developer* when the primary audience is someone writing code to connect to Sumo Logic API endpoints, auth flows, and the MCP server. Use *Service* when the audience is a Sumo Logic user, even if the feature has an API.
+
+Service and Collector titles are specific enough to stand alone without a date. CSE and CSOAR titles ("Content Release", "Application Update") are generic, so they include the date to be meaningful in an RSS feed. Developer follows the same pattern for the same reason.
+
+Everything above is shared. These are the differences by folder. When in doubt, match a recent post in the same folder.
+
+| Folder | Filename | Title | Date in title? | Feature heading | Notes |
+|:---|:---|:---|:---|:---|:---|
+| `blog-service` | `YYYY-MM-DD-<category-or-feature>` | Feature description in title case, then the category in parentheses: `(Apps)`, `(Collection)`, `(Manage)`, `(Search)`, `(New UI)`. | No | n/a | One feature per note. |
+| `blog-collector` | `YYYY-MM-DD-installed` or `YYYY-MM-DD-otel` | Installed Collector: `Installed Collector Version X.Y.Z-N`. OpenTelemetry: feature name in title case, no category. | No | H4: `Security fix`, `Bug fix`, `Feature` | Order sections security, then bug fixes, then features. Cite CVE or GHSA IDs. |
+| `blog-cse` | `YYYY-MM-DD-content` or `YYYY-MM-DD-application` | `Month D, YYYY - Content Release` or `Month D, YYYY - Application Update` | Yes | H3 per feature | Content releases: tag entries `[New]` or `[Updated]` and group them under Rules, Log Mappers, and Parsers. |
+| `blog-csoar` | `YYYY-MM-DD-content-release` or `YYYY-MM-DD-application-update` | `Month D, YYYY - Content Release` or `Month D, YYYY - Application Update` | Yes | Content: H3. Application: H3 with H4 sub-sections. | Content releases are simple lists. Application updates carry descriptions and a Bug Fixes section. |
+| `blog-developer` | `YYYY-MM-DD-<slug>` | `Month D, YYYY - Topic` | Yes | H4 sub-sections | Note the impact: breaking change, deprecation, new feature, or minor change. |
 
 ## Reusing content
 
@@ -1110,7 +1167,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-Sumo conventions:
+Sumo Logic conventions:
 
 * **Use `groupId`** when the same choice appears more than once on a page, or across pages, so the reader's selection syncs and sticks (for example, `groupId="k8s-nonk8s"`).
 * **Make each tab self-contained.** A reader who picks one tab and ignores the rest should still get every step for that path. Do not split a procedure so that step 3 is under one tab and step 4 under another.

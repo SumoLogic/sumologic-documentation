@@ -7,7 +7,7 @@ sidebar_label: Troubleshooting
 
 ## Check HTTP status codes
 
-If you believe some data that was uploaded to a source was not ingested, check the HTTP status codes for requests sent to the source. Each request should receive a 200 status code indicating the data was successfully received by Sumo. Status codes other than 200 may indicate an issue with the HTTP source. Key status codes are listed below.
+If you believe some data that was uploaded to a source was not ingested, check the HTTP status codes for requests sent to the source. Each request should receive a 200 status code indicating the data was successfully received by Sumo Logic. Status codes other than 200 may indicate an issue with the HTTP source. Key status codes are listed below.
 
 | Status Code | Description |
 |:--|:--|
@@ -15,8 +15,8 @@ If you believe some data that was uploaded to a source was not ingested, check t
 | `401` | HTTP request was rejected due to missing or invalid URL token. |
 | `408` | HTTP request was accepted, but timed out processing. For more information, see [Request Timeouts](#request-timeouts). |
 | `429` | HTTP request was rejected due to quota-based throttling. For more information, see [Throttling](#throttling), below. |
-| `503` | HTTP request was rejected due to server issues. Check the **Status** page in the Sumo web app (**Manage > Collection > Status**) for information about collector status. |
-| `504` | HTTP request was rejected due to server issue. Check the **Status** page in the Sumo web app (**Manage** > **Collection** > **Status**) for information about collector status. |
+| `503` | HTTP request was rejected due to server issues. Check the **Status** page in the Sumo Logic web app (**Manage > Collection > Status**) for information about collector status. |
+| `504` | HTTP request was rejected due to server issue. Check the **Status** page in the Sumo Logic web app (**Manage** > **Collection** > **Status**) for information about collector status. |
 
 ## Client not sending data
 
@@ -31,9 +31,9 @@ If you use a Heroku HTTPS drain to send logs to a Sumo Logic HTTP source, Heroku
 
 `2013-04-17T19:04:46+00:00 d.1234-drain-identifier-567 heroku logplex - - Error L10 (output buffer overflow): 500 messages dropped since 2013-04-17T19:04:46+00:00.`
 
-This can occur when the Heroku app engine hits a timeout, does a retry, and experiences a buffer overflow. Sumo ELBs have inactivity timeouts—if a session is inactive for 30 seconds, our ELBs will close the session.
+This can occur when the Heroku app engine hits a timeout, does a retry, and experiences a buffer overflow. Sumo Logic ELBs have inactivity timeouts—if a session is inactive for 30 seconds, our ELBs will close the session.
 
-You can run this query in Sumo to confirm the issue:
+You can run this query in Sumo Logic to confirm the issue:
 
 ```sumo
 “Error L10 (output buffer overflow)" | parse ": * messages dropped" as num_dropped | sum(num_dropped) _collector,_source | sort by _sum
@@ -72,7 +72,7 @@ A 429 response code like the following indicates that the collectors in your acc
 
 `STATUS 429 You have temporarily exceeded your Sumo Logic quota. Please try again at a later time`
 
-When this occurs, Sumo will temporarily throttle data sent to your account. Once the data ingestion rate goes back below the burst rate limit, the HTTP source will start receiving data again.
+When this occurs, Sumo Logic will temporarily throttle data sent to your account. Once the data ingestion rate goes back below the burst rate limit, the HTTP source will start receiving data again.
 
 :::important
 Data will be dropped during throttling. In that case, the sending HTTP client must re-send the data that was dropped
@@ -88,7 +88,7 @@ The following pages will help you troubleshoot a throttling incident:
 
 ## Timestamp issues
 
-If you have verified that the HTTP source is receiving data, but you cannot see the data in search results, it may be that the timestamps in your data do not fall within the time range of your search. This could indicate that the Sumo is not parsing the timestamps correctly. 
+If you have verified that the HTTP source is receiving data, but you cannot see the data in search results, it may be that the timestamps in your data do not fall within the time range of your search. This could indicate that the Sumo Logic is not parsing the timestamps correctly. 
 
 You can figure that out by searching for data from that source using the **Use Receipt Time** option. When you run a search with this option, the results include log data with any timestamp, in reverse order of receipt time, so you can view the difference in timestamp and receipt time to identify sources that may be generating incorrect timestamps. For more information, see [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time).
 

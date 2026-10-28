@@ -144,7 +144,7 @@ There are two places you can access the Sumo Logic add-on for Heroku: from the H
 
 Heroku users can use all Sumo Logic features associated with their account type, with a few exceptions.
 
-All Heroku add-on user accounts are created as Sumo Logic administrators, but no user information or roles can be added or edited in Sumo. You can only log into Sumo Logic from the Heroku application panel. For this reason, you cannot change your password once your account is created, and as required by Heroku, you cannot log out of Sumo Logic once you have installed the add-on.
+All Heroku add-on user accounts are created as Sumo Logic administrators, but no user information or roles can be added or edited in Sumo Logic. You can only log into Sumo Logic from the Heroku application panel. For this reason, you cannot change your password once your account is created, and as required by Heroku, you cannot log out of Sumo Logic once you have installed the add-on.
 
 In addition, the following features are not supported:
 
@@ -194,7 +194,7 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
         * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
-        * **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
+        * **Parse Expression**. For each Heroku application reporting data to Sumo Logic, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
 
         ```sumo
         if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName

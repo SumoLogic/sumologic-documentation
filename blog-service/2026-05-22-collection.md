@@ -8,4 +8,4 @@ keywords:
 hide_table_of_contents: true    
 ---
 
-We’re excited to introduce the new Sumo Logic source for Claude Compliance. This source enables organizations to ingest Claude chat logs and metadata into Sumo Logic for centralized monitoring and analysis. Using Claude’s Compliance API, you can support auditing, security, and regulatory compliance with structured access to conversational AI activity. [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/).
+The new Sumo Logic source for Claude Compliance. This source enables organizations to ingest Claude chat logs and metadata into Sumo Logic for centralized monitoring and analysis. Using Claude’s Compliance API, you can support auditing, security, and regulatory compliance with structured access to conversational AI activity. [Learn more](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/claude-compliance-source/).

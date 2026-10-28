@@ -15,17 +15,17 @@ Sumo Logic OTel Python Lambda layer supports:
 * Python version between 3.9 and 3.13
 * x86_64 and arm64 architectures
 
-## Sumo Logic Distribution for OpenTelemetry Lambda Layer
+## Sumo Logic Distribution for OpenTelemetry Lambda layer
 
 [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.40.0](https://github.com/SumoLogic/sumologic-otel-lambda/releases/tag/python-v1.40.0) provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel Lambda as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
 
 ### Lambda function requirements
 
-It is very simple to instrument your AWS Python Lambda function using the Sumo Logic Distro for Lambda layer. You'll need the following:
+It is simple to instrument your AWS Python Lambda function using the Sumo Logic Distro for Lambda layer. You'll need the following:
 
 * Python version between 3.9 and 3.13
 * Lambda layers add permissions
-* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
+* Sumo Logic OTLP/HTTP source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Deployment
 
@@ -44,9 +44,9 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
      * `application=YOUR_APPLICATION_NAME` - The string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - Set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as: `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
-   * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
+   * Set `SUMO_OTLP_HTTP_ENDPOINT_URL` to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing source or create a new one, if needed.
     :::note
-    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
+    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
 
      <img src={useBaseUrl('img/apm/traces/lambda-python3.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
@@ -126,12 +126,12 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 * Docker
 * Python version between 3.9 and 3.13
-* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
+* Sumo Logic OTLP/HTTP source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Lambda function image changes
 
 1. Download and extract Sumo Logic Distribution for OpenTelemetry Python Lambda Layer archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.40.0/opentelemetry-python-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/python-v1.40.0/opentelemetry-python-arm64.zip).
-1. Extracted instrumentation libraries have to be added to the image in /opt directory. Please see Dockerfile example:
+1. Add the extracted instrumentation libraries to the image in the /opt directory. See Dockerfile example:
 
     ```dockerfile
     FROM public.ecr.aws/lambda/python:3.12-arm64
@@ -164,9 +164,9 @@ Instrumentation of container based AWS Lambda function requires some changes in 
      * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair), such as `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
-   * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
+   * Set `SUMO_OTLP_HTTP_ENDPOINT_URL` to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing source or create a new one, if needed.
     :::note
-    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
+    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
 
       <img src={useBaseUrl('img/apm/traces/lambda-python4.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />

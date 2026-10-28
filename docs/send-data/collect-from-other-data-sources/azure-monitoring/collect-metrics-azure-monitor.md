@@ -18,8 +18,8 @@ For information about Azure metrics, see [Overview of metrics in Microsoft Azure
 Here’s how the solution fits together:
 
 * Azure Monitor collects metrics for most Microsoft Azure services and streams the data to an Azure event hub. 
-* Azure Event Hubs is a data streaming platform and event ingestion service. In this pipeline, an event hub streams the metrics collected by Azure Monitor to a Sumo-provided Azure function. 
-* The Azure function is a small piece of code triggered by the event hub to send metrics to the Sumo HTTP Source from the event hub, function logs to one Storage Account, and failover data to another. The trigger has to be activated by the customer.
+* Azure Event Hubs is a data streaming platform and event ingestion service. In this pipeline, an event hub streams the metrics collected by Azure Monitor to a Sumo Logic-provided Azure function. 
+* The Azure function is a small piece of code triggered by the event hub to send metrics to the Sumo Logic HTTP Source from the event hub, function logs to one Storage Account, and failover data to another. The trigger has to be activated by the customer.
 
 For more information about the solution strategy, see [Azure Monitoring](/docs/send-data/collect-from-other-data-sources/azure-monitoring).
 
@@ -38,7 +38,7 @@ In this step, you configure an HTTP source to receive logs from the Azure functi
 
 ### Step 2. Configure Azure resources using ARM template
 
-In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub.
+In this step, you use a Sumo Logic-provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub.
 
 1. Download the [azuredeploy_metrics.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/EventHubs/src/azuredeploy_metrics.json) ARM template.
 1. Go to azure portal and search for **template deployment** in the search bar. Select **Template deployment (deploy using custom templates)** under **Marketplace**.<br/><img src={useBaseUrl('/img/send-data/azure-metrics/azure-template-deploy.png')} alt="Azure template deploy" style={{border: '1px solid gray'}} width="800" />

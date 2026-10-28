@@ -36,12 +36,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href={useBaseUrl('docs/platform-services/automation-service/app-central/')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="SIEM Challenges icon" width="40"/><h4>App Central</h4></a>
-  <p>Learn how to use App Central to get new applications and tools.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href={useBaseUrl('docs/platform-services/automation-service/playbooks/create-playbooks/#add-an-action-node-to-a-playbook')}><img src={useBaseUrl('img/icons/security/siem-challenges.png')} alt="SIEM Challenges icon" width="40"/><h4>Playbooks</h4></a>
   <p>Learn about playbooks. A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type.</p>
   </div>
