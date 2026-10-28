@@ -290,11 +290,11 @@ No. The agent renders verdicts and findings to guide your investigation; it does
 
 ### Is an AI SOC deterministic?
 
-Not in the way a fixed rule is. A Cloud SIEM rule fires on the same match every time, while the SOC Analyst Agent applies agentic reasoning that adapts to the insight's context. Because of that, treat each verdict as an evidence-backed assessment, and review the supporting evidence and tool calls.
+Not in the way a fixed rule is. A Cloud SIEM rule fires on the same match every time, while the SOC Analyst Agent applies agentic reasoning that adapts to the insight's context, so its verdicts can vary. Treat each verdict as an evidence-backed assessment, and review the supporting evidence and tool calls.
 
 ### How does the agent handle hallucinations?
 
-Verdicts are based only on your normalized security data, correlated entities, threat intelligence, and enrichment data. Every tool call the agent makes is logged to Cloud SIEM so you can review how it reached a verdict, and senior analysts regularly review a sample of verdicts. You can also override a verdict and flag feedback.
+Verdicts draw on your normalized security data, correlated entities, threat intelligence, and enrichment data. Every tool call the agent makes is logged to Cloud SIEM so you can review how it reached a verdict, and senior analysts regularly review a sample of verdicts. You can also override a verdict and flag feedback.
 
 ### What guardrails apply to autonomous action for an AI SOC?
 

@@ -342,27 +342,27 @@ Now that you've created a dashboard, you can [share it](/docs/dashboards/share-d
 
 ## FAQ
 
-### What cloud logging strategy should you use?
+### What cloud logging strategy should I use?
 
 Centralize logs from your cloud, hybrid, and on-premises sources in one platform so you can search and correlate them together. A [data lake](/docs/security/additional-security-features/data-lake/) gives you one place to aggregate structured and unstructured security data, which is the first step in the [best practices guide](#best-practices-guide-for-implementing-threat-detection-and-investigation) on this page.
 
-### How to secure your cloud infrastructure?
+### How do I secure my cloud infrastructure?
 
 Collect and aggregate your security data, use integrations to surface trends and threats, set alerting policies so your team is notified quickly, and use search for root cause analysis. For AWS, [Cloud Infrastructure Security for AWS](/docs/security/additional-security-features/cloud-infrastructure-security/cloud-infrastructure-security-for-aws/) adds pre-built security monitoring.
 
-### What should you monitor in your cloud environment?
+### What should I monitor in my cloud environment?
 
 At minimum, monitor authentication events, network traffic, and infrastructure configuration changes. The example dashboard on this page monitors AWS CloudTrail for user activity, console login locations, and failed login attempts.
 
-### How to detect security threats in your cloud environment?
+### How do I detect security threats in my cloud environment?
 
 Collect your cloud audit logs, such as AWS CloudTrail, then build searches and dashboards for suspicious activity. This page shows how to [detect brute force attempts](#step-5-detect-brute-force-attacks) from failed logins, find impossible travel, and look up IP addresses in [threat intelligence](/docs/security/threat-intelligence/find-threats/). Use [monitors](/docs/alerts/monitors/create-monitor/) to be alerted when these conditions occur.
 
-### How to centralize security log data for threat detection?
+### How do I centralize security log data for threat detection?
 
 Send logs from your workloads, databases, and other sources to Sumo Logic using [collectors and sources](/docs/send-data/), then store and analyze them in one place. Aggregating security data in a [data lake](/docs/security/additional-security-features/data-lake/) lets you run detection and investigation across all of it.
 
-### What logs do you need to investigate a phishing incident?
+### What logs do I need to investigate a phishing incident?
 
 Typically, you need email gateway or email security logs, sign-in and authentication logs for the affected users, and DNS, web proxy, or firewall logs that show who visited the linked sites. Check any URLs, domains, and IP addresses you find against [threat intelligence](/docs/security/threat-intelligence/find-threats/). Sumo Logic has [Cloud-to-Cloud sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/) for collecting many email and security tools.
 
@@ -374,10 +374,10 @@ Typically, you need email gateway or email security logs, sign-in and authentica
 1. Look for privilege changes and use of root or administrator accounts.
 1. Contain the account, for example by resetting credentials, then keep monitoring it with a [monitor](/docs/alerts/monitors/create-monitor/).
 
-### What information do you need to collect during a security incident?
+### What information do I need to collect during a security incident?
 
 Collect who was involved (users and hosts), what happened (actions and events), when it happened (timestamps), and where it came from (source IP addresses and locations). Also gather related logs from the affected systems and any threat intelligence matches, so you can build a timeline and decide how to respond.
 
-### How to build an incident response runbook?
+### How do I build an incident response runbook?
 
 Define what triggers the runbook, who is responsible for each step, and the actions for containment, eradication, and recovery. Then automate repeatable steps with [Cloud SOAR playbooks](/docs/cloud-soar/introduction/), which can help with incident containment, eradication, and recovery.

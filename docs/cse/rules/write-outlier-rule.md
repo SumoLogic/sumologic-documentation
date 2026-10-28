@@ -185,7 +185,7 @@ Outlier rules automatically build a baseline model of normal behavior for an ent
 
 Outlier and first seen rules surface behavior that is unusual for a user, such as a spike in failed logins, a login from a new location, or a new admin account. These behavioral signals help you spot insider threats. See [Use case for a spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user).
 
-### Do you need a separate tool to detect abnormal user behavior?
+### Do I need a separate tool to detect abnormal user behavior?
 
 No. Outlier rules are a Cloud SIEM rule type, so they run on the data already in Cloud SIEM, and you don't need to replace your existing security tools to use them.
 

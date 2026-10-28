@@ -250,7 +250,7 @@ All new AI capabilities and features undergo comprehensive legal, compliance, an
 
 Recurring reviews are also conducted with every major update, particularly when a capability introduces new analytics or processes previously unused data types, to maintain ongoing trust and compliance.
 
-### How to use AI in a SOC with Sumo Logic?
+### How do I use AI in a SOC with Sumo Logic?
 
 Use the [SOC Analyst Agent](/docs/cse/get-started-with-cloud-siem/soc-analyst-agent/) to get an AI verdict on each Cloud SIEM insight, continue investigations conversationally in [Mobot](/docs/search/mobot/), and connect external AI clients through the [Sumo Logic MCP server](/docs/api/mcp-server/). The agent doesn't take containment actions itself, so analysts stay in control of the response.
 

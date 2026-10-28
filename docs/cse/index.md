@@ -129,7 +129,7 @@ SIEM (Security Information and Event Management) collects, correlates, and prior
 
 ### What is a security operations center (SOC) and how does a SIEM fit into it?
 
-A SOC is the team and process that monitors for and responds to security threats. A SIEM supports it by helping automate threat hunting and investigation, and a SOAR tool is typically used to respond. Both work together as part of the security pipeline in your SOC.
+A SOC is the team and process that monitors for and responds to security threats. A SIEM supports it by collecting, correlating, and prioritizing security data so analysts can investigate threats, and a SOAR tool is typically used to respond. Both work together as part of the security pipeline in your SOC.
 
 ### What is SIEM and how does it help with SOC log management?
 
@@ -145,7 +145,7 @@ A SIEM collects and correlates security data in one place, which helps you monit
 
 ### Which SOC SIEM integrates with log management tools, handles alerts, and supports playbooks?
 
-Cloud SIEM integrates with the Sumo Logic core platform, so it works with the logs you already collect. It creates prioritized insights from the activity it detects, and the [Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem/) runs playbooks that act on those insights. If you also use Cloud SOAR, its automation features supersede the standalone Automation Service.
+Cloud SIEM works with the logs you already collect (see [What is SIEM and how does it help with SOC log management?](#what-is-siem-and-how-does-it-help-with-soc-log-management)). It creates insights from the signals it detects, and the [Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem/) runs playbooks that act on those insights. Cloud SOAR offers a broader set of automation capabilities. See [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
 ### Are there scalable SIEM options designed for hybrid IT infrastructures?
 

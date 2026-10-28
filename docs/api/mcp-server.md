@@ -598,29 +598,29 @@ Sumo Logic provides an MCP server for log search, Cloud SIEM insights, alerts, a
 
 The agent needs an MCP client that supports HTTP/SSE transport and OAuth 2.0. Clients that support CIMD can connect directly. Clients that don't can use a pre-registered OAuth client with the Authorization Code or Client Credentials flow. See [OAuth clients](/docs/manage/security/oauth/).
 
-### How to secure access to the Sumo Logic MCP server?
+### How do I secure access to the Sumo Logic MCP server?
 
-Access uses OAuth 2.0, and tools are scoped to the connecting user's role permissions. Administrators control whether CIMD clients are allowed and can restrict access to pre-registered clients only, and an IP allowlist policy applies to MCP requests. See [OAuth clients](/docs/manage/security/oauth/).
+Access uses OAuth 2.0, and tools are scoped to the connecting user's role permissions. Administrators control whether CIMD clients are allowed and can restrict access to pre-registered clients only, and an IP allowlist policy applies to MCP requests. See [OAuth clients](/docs/manage/security/oauth/) and [How does Sumo Logic secure MCP access?](#how-does-sumo-logic-secure-mcp-access).
 
-### How to build guardrails for agents using MCP?
+### How do I build guardrails for agents using MCP?
 
 Use OAuth scopes and role permissions to limit which tools an agent can call. Remove scopes you don't want the client to have, and use a dedicated role for the client's user or service account. Rate limits of 4 requests per second per user and 10 concurrent requests also cap how fast an agent can act. See [What are the MCP server rate limits?](#what-are-the-mcp-server-rate-limits).
 
 ### Can MCP servers or agents access data they shouldn't?
 
-Not through the Sumo Logic MCP server. Effective permissions are the intersection of the user's roles and the OAuth client's scopes, and the MCP server hides tools that require a scope the client doesn't have. See [How permissions work](/docs/manage/security/oauth/#how-permissions-work).
+Access is limited to what the user's roles and the OAuth client's scopes allow. Effective permissions are the intersection of the two, and the MCP server hides tools that require a scope the client doesn't have. See [How permissions work](/docs/manage/security/oauth/#how-permissions-work).
 
-### How to limit what an autonomous agent can do through MCP?
+### How do I limit what an autonomous agent can do through MCP?
 
-Configure the agent's OAuth client with only the scopes it needs. An administrator can edit a CIMD client's scopes at any time, and users can clear scopes on the consent page when they authorize a client. The role of the user or service account further limits what the agent can do.
+Configure the agent's OAuth client with only the scopes it needs. An administrator can [edit a CIMD client's scopes](/docs/manage/security/oauth/#edit-cimd-scopes) at any time, and users can [clear scopes on the consent page](/docs/manage/security/oauth/#clear-scopes-on-the-consent-page) when they authorize a client. The role of the user or service account further limits what the agent can do.
 
-### Can you set permissions per agent for MCP tools?
+### Can I set permissions per agent for MCP tools?
 
 Yes. Permissions are set per OAuth client, so each agent that uses its own client can have its own scopes. The agent's effective permissions are limited by those scopes and by the roles of the user or service account it runs as. See [How permissions work](/docs/manage/security/oauth/#how-permissions-work).
 
 ### What are the security considerations for MCP servers?
 
-For the Sumo Logic MCP server, consider which scopes you grant each client, which roles the connecting users or service accounts have, whether to restrict CIMD to pre-registered clients, and your IP allowlist. Also review the [rate limits](#what-are-the-mcp-server-rate-limits) and the [limitations](#at-a-glance), because the server isn't intended for bulk data extraction or model training.
+Review the scopes you grant each client, the roles of the connecting users or service accounts, whether to restrict CIMD to pre-registered clients, and your IP allowlist. See [How do I secure access to the Sumo Logic MCP server?](#how-do-i-secure-access-to-the-sumo-logic-mcp-server) and [How do I build guardrails for agents using MCP?](#how-do-i-build-guardrails-for-agents-using-mcp). Also review the [rate limits](#what-are-the-mcp-server-rate-limits) and the [limitations](#at-a-glance), because the server isn't intended for bulk data extraction.
 
 ## Additional resources
 

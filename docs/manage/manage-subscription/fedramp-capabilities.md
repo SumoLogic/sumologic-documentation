@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Yes. Sumo Logic is FedRAMP® Moderate Authorized (package ID FR1918740338), and the FedRAMP offering includes log collection, Logs for Security, and Cloud SIEM for log aggregation and SOC SIEM use cases. Cloud SOAR and the Automation Service aren't included. The offering gives federal agencies and commercial entities the same core observability and security platform as the standard product, with a small set of capability differences. For more information, see the [FedRAMP Authorization](https://www.sumologic.com/fedramp/) page on our Sumo Logic site, or [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338).
+Sumo Logic is FedRAMP® Moderate Authorized (package ID FR1918740338), and the FedRAMP offering includes log collection, Logs for Security, and Cloud SIEM for log aggregation and SOC SIEM use cases. Cloud SOAR and the Automation Service aren't included. The offering gives federal agencies and commercial entities the same core observability and security platform as the standard product, with a small set of capability differences. For more information, see the [FedRAMP Authorization](https://www.sumologic.com/fedramp/) page on our Sumo Logic site, or [Sumo Logic in the FedRAMP Marketplace](https://marketplace.fedramp.gov/products/FR1918740338).
 
 ## What capabilities does Sumo Logic's FedRAMP offering include?
 
