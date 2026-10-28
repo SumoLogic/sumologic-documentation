@@ -4942,7 +4942,7 @@
   "/07Sumo_Logic_Apps/14Hosts_and_Operating_Systems/Linux/Suggested_Searches_for_Linux_OS": "/docs/integrations/hosts-operating-systems/linux",
   "/07Sumo_Logic_Apps/18SAAS_and_Cloud_Apps/Salesforce/Salesforce-App-Dashboards": "/docs/integrations/saas-cloud/salesforce",
   "/Search/Get-Started-with-Search/How-to-Build-a-Search/Use_a_URL_to_Run_a_Search": "/docs/search/get-started-with-search/build-search",
-  "/Search/Anomaly-Detection/Anomalies-Page/About-Events-and-Incidents": "/docs/monitors/alerts",
+  "/Search/Anomaly-Detection/Anomalies-Page/About-Events-and-Incidents": "/docs/alerts/monitors",
   "/docs/search/search-query-language/search-operators/field-expressions": "/docs/search/search-query-language/field-expressions",
   "/docs/search/logreduce-operator": "/docs/search/behavior-insights/logreduce/logreduce-operator",
   "/docs/search/search-operators/parse-operator": "/docs/search/search-query-language/parse-operators",
