@@ -57,7 +57,7 @@ Sumo Logic’s AI capabilities span from classical machine learning to generativ
 [Mobot](/docs/search/mobot) is the conversational interface for DojoAI. Ask questions in plain language to analyze log data, investigate incidents, or get answers sourced from official documentation, without writing queries. Mobot connects you to specialized agents, including:
 
 * **Log Analysis Agent**. Guides you through analysis using natural language prompts, delivering structured findings and suggested next steps. It also allows you to create and edit dashboards and monitors without writing complex queries.
-* **Platform Optimization Agent**. Answers how-to questions and helps you troubleshoot issues, optimize queries, understand data usage, tune dashboards, and get more from the platform, sourced directly from our official documentation. It also powers [DojoAI Recommendations](/docs/get-started/dojoai-recommendations-preview), which proactively surfaces these same kinds of issues without you having to ask.
+* **Platform Optimization Agent**. Recommends data management and performance improvement actions on queries and dashboards, surfaces underused features, identifies data blind spots and get more from the platform, sourced directly from our official documentation. It also powers [DojoAI Recommendations](/docs/get-started/dojoai-recommendations-preview), which proactively surfaces these same kinds of issues without you having to ask.
 
 Beyond analysis and platform guidance, Mobot also lets you create, edit, and summarize content through natural language such as monitors, dashboards, and playbooks.
 
