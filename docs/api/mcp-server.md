@@ -586,9 +586,9 @@ MCP clients authenticate with OAuth 2.0. CIMD is the recommended mechanism and r
 
 Your org has an IP allowlist configured and the client IP making the request is not on it. Check that your client's IP is included in your allowlist. See [MCP tool calls fail with 401 Request blocked by IP allowlist policy](#mcp-tool-calls-fail-with-401-request-blocked-by-ip-allowlist-policy) for troubleshooting steps.
 
-### What is Model Context Protocol (MCP)?
+### What is MCP?
 
-MCP is a protocol that lets AI clients connect to external tools and data sources. The Sumo Logic MCP server lets MCP-compatible clients, such as Claude Code, query your logs, investigate Cloud SIEM insights, and manage alerts and dashboards using natural language.
+Model Context Protocol (MCP) is a protocol that lets AI clients connect to external tools and data sources. The Sumo Logic MCP server lets MCP-compatible clients, such as Claude Code, query your logs, investigate Cloud SIEM insights, and manage alerts and dashboards using natural language.
 
 ### Which observability or SIEM tools have an MCP server?
 
