@@ -110,6 +110,12 @@ import SumoAcademy from '../reuse/sumo-logic-academy.md';
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href={useBaseUrl('docs/get-started/limitations')}><img src={useBaseUrl('img/icons/general/legal-notice.png')} alt="Limits icon" width="50"/><h4>Limits and Quotas</h4></a>
+  <p>Maximum limits and quotas across Sumo Logic features and services.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href={useBaseUrl('docs/get-started/help')}><img src={useBaseUrl('img/icons/business/support.png')} alt="Support icon" width="50"/><h4>Help</h4></a>
   <p>Get help from Sumo Logic docs, Support, and more.</p>
   </div>
