@@ -234,7 +234,7 @@ Every post filename must start with `YYYY-MM-DD-`. Docusaurus takes the publish 
 
 Filename, title format, and structure are specific to each folder. Match the slash command for the folder you're editing: `.claude/commands/release-note-service.md`, `release-note-collector.md`, `release-note-cse.md`, `release-note-csoar.md`, `release-note-developer.md`. These are local files, so this works even when the live style guide fetch fails.
 
-**Choosing between Service and Developer:** Use Developer when the primary audience is someone writing code to connect to Sumo Logic API endpoints, auth flows, and the MCP server. Use Service when the audience is a Sumo Logic user, even if the feature has an API.
+**Choosing between Service and Developer:** Use Developer when the primary audience is someone writing code to connect to Sumo Logic API endpoints, auth flows, and the MCP server. Use Service when the audience is a Sumo Logic user, even if the feature has an API. 
 
 ---
 
