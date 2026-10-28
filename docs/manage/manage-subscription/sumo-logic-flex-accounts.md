@@ -137,7 +137,7 @@ The following table provides a summary list of key features by Flex package acco
 | Software Development Optimization | &#10003; | &#10003; | &#10003; | &#10003; |
 | Sumo Logic Apps | &#10003; | &#10003; | &#10003; | &#10003; |
 | Support | &#10003; | &#10003; | &#10003; | &#10003; |
-| Threat Intelligence |  | &#10003; | &#10003; | &#10003; |
+| Threat Intelligence |  | &#10003; | &#10003; | Cloud SIEM required** |
 | Traces | &#10003;<br/>Up to 1.5GB per day* | &#10003;<br/>Up to 5GB per day | &#10003;<br/>5GB per day| &#10003;<br/>Up to 5GB per day |
 | Scan Budget |  |  | | &#10003; |
 | Organization Usage Limits | &#10003; | &#10003; | &#10003; | &#10003; |
@@ -145,6 +145,8 @@ The following table provides a summary list of key features by Flex package acco
 | War Room | |  | | &#10003; |
 
 \* Contact your account manager to customize your account to meet your organization's needs.
+
+\*\* The **Threat Intelligence** tab is available only to Cloud SIEM users. Without Cloud SIEM, you will not see this menu option, but can still use Sumo Logic's global threat intelligence feeds in log searches. See [Find Threats with Log Queries](/docs/security/threat-intelligence/find-threats/).
 
 ## Account Overview
 
