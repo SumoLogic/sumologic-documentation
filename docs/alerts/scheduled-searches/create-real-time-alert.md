@@ -10,10 +10,10 @@ title: Deprecation of Real-Time Scheduled Searches
 <!-- Article added by DOCS-780. -->
 
 :::warning Deprecated Feature
-As of May 29, 2024, creating new Real-Time Scheduled Searches has been disabled. Existing Real-Time Scheduled Searches will continue to function as-is. For new alerting needs, we recommend using [Monitors](/docs/alerts/monitors/overview).
+As of May 29, 2024, creating new Real-Time Scheduled Searches has been disabled. Existing Real-Time Scheduled Searches will continue to function as-is. For new alerting needs, we recommend using [Monitors](/docs/alerts/monitors/about).
 :::
 
-Sumo Logic has deprecated Real-Time Scheduled Searches as part of our ongoing platform improvements. While existing searches continue to operate, [Monitors](/docs/alerts/monitors/overview) are the recommended solution for real-time and scheduled alerting going forward.
+Sumo Logic has deprecated Real-Time Scheduled Searches as part of our ongoing platform improvements. While existing searches continue to operate, [Monitors](/docs/alerts/monitors/about) are the recommended solution for real-time and scheduled alerting going forward.
 
 ## Deprecation timeline
 

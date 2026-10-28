@@ -1,6 +1,6 @@
 ---
-id: overview
-title: Monitors Overview
+id: about
+title: About Monitors
 sidebar_label: Overview
 description: Sumo Logic monitors continuously query your logs or metrics and sends notifications when specific events occur, such as critical, warning, and missing data.
 ---
@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Monitors track your metrics and logs data in real time and send notifications when noteworthy changes happen in your production applications.
 
 :::note
-Learn how [monitors differ from Scheduled Searches](/docs/alerts/difference-from-scheduled-searches).
+Learn how [monitors differ from scheduled searches](/docs/alerts/difference-from-scheduled-searches).
 :::
 
 :::tip

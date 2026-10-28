@@ -1257,7 +1257,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
-            'alerts/monitors/overview',
+            'alerts/monitors/about',
             'alerts/monitors/create-monitor',
             'alerts/monitors/create-monitor-with-mobot',
             'alerts/monitors/settings',
@@ -3199,20 +3199,6 @@ integrations: [
             'cse/schema/parsing-language-reference-guide',
             'cse/schema/parsing-patterns',
             'cse/schema/username-and-hostname-normalization',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Sensors',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'cse/sensors/index'},
-          items: [
-            'cse/sensors/ingest-zeek-logs',
-            'cse/sensors/sensor-download-locations',
-            'cse/sensors/network-sensor-deployment-guide',
-            'cse/sensors/network-sensor-troubleshooting',
-            'cse/sensors/log-sensor-troubleshooting',
           ],
         },
         {
