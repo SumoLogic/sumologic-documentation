@@ -10,5 +10,5 @@ In this release, we've upgraded the Collector JRE and a dependency to address se
 
 #### Security fixes
 
-- Upgraded Collector JRE to **Amazon Corretto Version 17.0.21.0.1** to address [CVE-2026-91403](https://nvd.nist.gov/vuln/detail/cve-2026-91403) by distrusting the compromised eMudhra emSign root CA.
+- Upgraded Collector JRE to **Amazon Corretto Version 17.0.21.0.10** to address [CVE-2026-91403](https://nvd.nist.gov/vuln/detail/cve-2026-91403) by distrusting the compromised eMudhra emSign root CA.
 - Upgraded `com.fasterxml.jackson.core:jackson-databind` to `2.21.8` to address [CVE-2026-110879](https://nvd.nist.gov/vuln/detail/cve-2026-110879).
